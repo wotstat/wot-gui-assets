@@ -44,16 +44,19 @@ game-unpack-pipeline workflow_dispatch
   → временная VM в Selectel
   → три изолированных ephemeral JIT runner на одной VM
   → game-snapshot-builder собирает и запечатывает GameSnapshot
-  → wot-src и wot-gui-assets workflow параллельно получают локальный путь и identity snapshot
+  → pinned reusable workflows wot-src и wot-gui-assets получают локальный путь и identity snapshot
   → каждый publisher проверяет snapshot и создаёт version commit в своей data-ветке
   → runner registrations и ресурсы Selectel удаляются
 ```
 
-Snapshot не передаётся через Actions artifacts: publisher runner читают один immutable локальный
+Snapshot не передаётся через Actions artifacts: publisher runners читают один immutable локальный
 путь на VM, работая под отдельными Unix-пользователями и в разных рабочих каталогах.
 
-Оркестратор вызывает workflow [`publish-snapshot.yml`](.github/workflows/publish-snapshot.yml)
-только из служебной ветки `main`. Publisher независимо проверяет canonical descriptor, маркер
+Оркестратор переиспользует [`publish-snapshot.yml`](.github/workflows/publish-snapshot.yml) через
+`workflow_call` по закреплённому commit SHA. Workflow выполняется как часть основного run, но
+checkout делает из собственного `job.workflow_repository` на `job.workflow_sha`; data-ветка и
+publisher-код поэтому остаются в этом репозитории, а JIT runner принадлежит caller-репозиторию.
+Publisher независимо проверяет canonical descriptor, маркер
 `READY`, snapshot identity, manifest hashes, payload hashes и полное manifest coverage. Затем он
 проецирует `res/gui`, исключает `.xml` и `.py`, создаёт commit с версией из корневого
 `version.xml` snapshot и отправляет его в ветку целевого региона. История data-ветки загружается
@@ -64,6 +67,12 @@ Production-ветки принимают только `full` snapshot. Light-п�
 служебные метаданные изменением данных. При неизменных ресурсах publisher возвращает `unchanged`
 без commit и push; при изменениях создаёт новый commit с тем же сообщением версии и обновлёнными
 метаданными.
+
+Если суммарный размер изменённых Git blobs превышает 1 ГБ, publisher заранее загружает их
+порциями не более 1 ГБ через уникальную временную ветку `publication-staging/...`. Пока эта ветка
+существует, финальный push version commit переиспользует уже известные GitHub объекты и не создаёт
+единый pack больше 2 ГБ. Временная ветка удаляется после финального push, включая ошибочный путь;
+отдельный файл по-прежнему не может превышать лимит GitHub 100 МиБ.
 
 ## Служебная ветка `main`
 
