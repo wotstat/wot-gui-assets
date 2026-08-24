@@ -18,9 +18,9 @@ Actions workflows находятся в ветке
 | Мир танков — Public Test | [`mt-public-test`](https://github.com/wotstat/wot-gui-assets/tree/mt-public-test) |
 
 Каждая production data-ветка начинается с bootstrap commit `init`, содержащего этот README. Каждый
-следующий commit соответствует одной версии клиента: сообщение берётся из корневого
-`version.xml` snapshot в формате `v.2.3.1.0 #903`, а точный release name записывается в
-`.version_name`.
+следующий commit соответствует одной версии клиента: сообщение строится из корневого
+`version.xml` snapshot без префикса `v.` в формате `2.3.1.0 #903`, а точный release name
+записывается в `.version_name`.
 
 ## Структура data-ветки
 

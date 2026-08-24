@@ -137,7 +137,7 @@ def test_wargaming_projection_preserves_gui_root_and_keeps_all_locales(
     assert publication["snapshot_id"] == snapshot_id
     assert publication["descriptor_sha256"] == descriptor_sha256
     assert publication["default_locale"] == "EN"
-    assert publication["commit_subject"] == "v.2.3.1.0 #903"
+    assert publication["commit_subject"] == "2.3.1.0 #903"
     assert publication["counts"] == {
         "assets": 4,
         "locales": {"EN": 2, "RU": 2},
@@ -180,7 +180,7 @@ def test_lesta_projection_uses_base_and_ignores_locale_layers(tmp_path: Path) ->
     assert not (output / "locales").exists()
     publication = json.loads((output / ".publication.json").read_text())
     assert publication["publisher"] == "lesta"
-    assert publication["commit_subject"] == "v.1.37.0.0 #4001"
+    assert publication["commit_subject"] == "1.37.0.0 #4001"
     assert "default_locale" not in publication
 
 
