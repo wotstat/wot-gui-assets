@@ -24,7 +24,7 @@ GIT_OBJECT_ID_RE = re.compile(r"^(?:[a-f0-9]{40}|[a-f0-9]{64})$")
 SNAPSHOT_ID_RE = re.compile(r"^sha256:[a-f0-9]{64}$")
 LANGUAGE_RE = re.compile(r"^[A-Z]{2}(?:_[A-Z]{2})?$")
 VERSION_XML_COMMIT_RE = re.compile(r"^v\.[0-9]+(?:\.[0-9]+){3} #[0-9]+$")
-EXCLUDED_SUFFIXES = frozenset({".py", ".xml"})
+EXCLUDED_SUFFIXES = frozenset({".py"})
 GUI_PREFIX = "res/gui/"
 RES_PREFIX = "res/"
 MANIFEST_NAMES = ("files", "actionscript", "stubs", "packages", "conflicts")
@@ -38,6 +38,7 @@ LEGACY_BOOTSTRAP_README_SHA256S = frozenset(
     {
         "303f554f8d407038781ff6d5c8ff85f3fb20fb6737ae10969bf854bef2750c62",
         "38921c09592e1fa1e205eb65b9ff4f79f3b193d11dbe6d094d932a4e109059fa",
+        "65598489722b7891514fa605db001bf8a267f0eafc0c0004b702d351b931225a",
     }
 )
 REGION_BRANCHES = (
@@ -1218,12 +1219,12 @@ Actions workflows находятся в ветке [`main`]({REPOSITORY_URL}/tre
 README.md
 .version_name
 .publication.json
-gui/                   # res/gui: base + default locale overlay; всё кроме .xml и .py
+gui/                   # res/gui: base + default locale overlay; всё кроме .py
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
 ```
 
-Префикс `res/` удаляется, а папка `gui/` остаётся в корне data-ветки. Файлы с расширениями `.xml`
-и `.py` не публикуются. Для клиентов Wargaming default locale накладывается поверх `base` в
+Префикс `res/` удаляется, а папка `gui/` остаётся в корне data-ветки. Файлы с расширением `.py`
+не публикуются. Для клиентов Wargaming default locale накладывается поверх `base` в
 `gui/`, а все локали, включая default locale, также сохраняются в `locales/<LANG>/gui/`.
 У клиентов Lesta отдельного дерева `locales/` нет: локализованные ресурсы уже входят в `base`.
 """  # noqa: RUF001 - the generated README intentionally contains Russian prose

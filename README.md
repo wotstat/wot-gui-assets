@@ -28,12 +28,12 @@
 README.md
 .version_name
 .publication.json
-gui/                   # res/gui: base + default locale overlay; всё кроме .xml и .py
+gui/                   # res/gui: base + default locale overlay; всё кроме .py
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
 ```
 
-Префикс `res/` удаляется, а папка `gui/` остаётся в корне data-ветки. Файлы с расширениями `.xml`
-и `.py` не публикуются. Для клиентов Wargaming default locale накладывается поверх `base` в
+Префикс `res/` удаляется, а папка `gui/` остаётся в корне data-ветки. Файлы с расширением `.py`
+не публикуются. Для клиентов Wargaming default locale накладывается поверх `base` в
 `gui/`, а все локали, включая default locale, также сохраняются в `locales/<LANG>/gui/`.
 У клиентов Lesta отдельного дерева `locales/` нет: локализованные ресурсы уже входят в `base`.
 
@@ -56,7 +56,7 @@ Snapshot не передаётся через Actions artifacts: publisher runne
 commit SHA. Data-ветка, конфигурация и publisher-код остаются здесь, а workflow, Environment и JIT
 runner принадлежат `game-unpack-pipeline`. Publisher независимо проверяет canonical descriptor, маркер
 `READY`, snapshot identity, manifest hashes, payload hashes и полное manifest coverage. Затем он
-проецирует `res/gui`, исключает `.xml` и `.py`, создаёт commit с версией из корневого
+проецирует `res/gui`, исключает `.py`, создаёт commit с версией из корневого
 `version.xml` snapshot и отправляет его в ветку целевого региона. История data-ветки загружается
 как commit-only partial fetch; payload предыдущих версий не скачивается.
 

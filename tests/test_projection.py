@@ -67,7 +67,7 @@ def test_wargaming_projection_preserves_gui_root_and_keeps_all_locales(
         release_name="2.3.1.5400",
         base_files={
             "version.xml": VERSION_XML,
-            "res/gui/config.xml": b"<excluded/>\n",
+            "res/gui/config.xml": b"<base/>\n",
             "res/gui/controller.PY": b"EXCLUDED = True\n",
             "res/gui/flash/App.swf": b"base-swf",
             "res/gui/gameface/app.js": b"console.log('base')\n",
@@ -76,7 +76,7 @@ def test_wargaming_projection_preserves_gui_root_and_keeps_all_locales(
         },
         locale_files={
             "EN": {
-                "res/gui/config.xml": b"<excluded-english/>\n",
+                "res/gui/config.xml": b"<english/>\n",
                 "res/gui/flash/App.swf": b"english-swf",
                 "res/gui/maps/english.png": b"english-png",
             },
@@ -104,12 +104,12 @@ def test_wargaming_projection_preserves_gui_root_and_keeps_all_locales(
     assert (output / "gui/gameface/app.js").is_file()
     assert (output / "gui/maps/icon.DDS").read_bytes() == b"base-dds"
     assert not (output / "res").exists()
-    assert not (output / "gui/config.xml").exists()
+    assert (output / "gui/config.xml").read_bytes() == b"<english/>\n"
     assert not (output / "gui/controller.PY").exists()
     assert not (output / "scripts").exists()
     assert (output / "locales/EN/gui/flash/App.swf").read_bytes() == b"english-swf"
     assert (output / "locales/EN/gui/maps/english.png").is_file()
-    assert not (output / "locales/EN/gui/config.xml").exists()
+    assert (output / "locales/EN/gui/config.xml").read_bytes() == b"<english/>\n"
     assert (output / "locales/RU/gui/flash/App.swf").read_bytes() == b"russian-swf"
     assert (output / "locales/RU/gui/maps/russian.png").is_file()
 
@@ -139,8 +139,8 @@ def test_wargaming_projection_preserves_gui_root_and_keeps_all_locales(
     assert publication["default_locale"] == "EN"
     assert publication["commit_subject"] == "2.3.1.0 #903"
     assert publication["counts"] == {
-        "assets": 4,
-        "locales": {"EN": 2, "RU": 2},
+        "assets": 5,
+        "locales": {"EN": 3, "RU": 2},
     }
 
 
@@ -158,7 +158,7 @@ def test_lesta_projection_uses_base_and_ignores_locale_layers(tmp_path: Path) ->
 </version.xml>
 """,
             "res/gui/flash/App.swf": b"lesta-base",
-            "res/gui/settings.xml": b"<excluded/>\n",
+            "res/gui/settings.xml": b"<settings/>\n",
         },
         locale_files={"RU": {"res/gui/flash/App.swf": b"must-not-overlay"}},
         actionscript_files={},
@@ -176,7 +176,7 @@ def test_lesta_projection_uses_base_and_ignores_locale_layers(tmp_path: Path) ->
 
     assert result.returncode == 0, result.stderr
     assert (output / "gui/flash/App.swf").read_bytes() == b"lesta-base"
-    assert not (output / "gui/settings.xml").exists()
+    assert (output / "gui/settings.xml").read_bytes() == b"<settings/>\n"
     assert not (output / "locales").exists()
     publication = json.loads((output / ".publication.json").read_text())
     assert publication["publisher"] == "lesta"
@@ -228,10 +228,9 @@ def test_projection_rejects_snapshot_without_publishable_base_gui_assets(
         release_name="2.3.1.5400",
         base_files={
             "version.xml": VERSION_XML,
-            "res/gui/config.xml": b"<excluded/>\n",
             "res/gui/controller.py": b"EXCLUDED = True\n",
         },
-        locale_files={"EN": {"res/gui/locale.xml": b"<excluded/>\n"}},
+        locale_files={"EN": {"res/gui/locale.py": b"EXCLUDED = True\n"}},
         actionscript_files={},
         stub_files={},
     )

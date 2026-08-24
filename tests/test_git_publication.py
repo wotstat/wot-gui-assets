@@ -131,7 +131,7 @@ def _snapshot(
         base_files={
             "version.xml": VERSION_XML,
             "res/gui/flash/App.swf": b"base-swf",
-            "res/gui/settings.xml": b"<excluded/>\n",
+            "res/gui/settings.xml": b"<settings/>\n",
         },
         locale_files={"EN": {"res/gui/flash/App.swf": gui_payload}},
         actionscript_files={"base_app/scripts/App.as": b"package {}\n"},
@@ -376,7 +376,7 @@ def test_publish_creates_orphan_data_branch_and_is_idempotent(tmp_path: Path) ->
     assert not (data_checkout / "pyproject.toml").exists()
     assert (data_checkout / "gui/flash/App.swf").read_bytes() == b"english-swf"
     assert not (data_checkout / "res").exists()
-    assert not (data_checkout / "gui/settings.xml").exists()
+    assert (data_checkout / "gui/settings.xml").read_bytes() == b"<settings/>\n"
 
     second = _publish(
         repository,
@@ -524,12 +524,21 @@ def _legacy_bootstrap_readme() -> str:
         "корневого\n`version.xml` snapshot без префикса `v.` в формате `2.3.1.0 #903`, а точный "  # noqa: RUF001
         "release name\nзаписывается в `.version_name`.",  # noqa: RUF001
     )
-    legacy = previous.replace("строится", "берётся").replace(
-        "без префикса `v.` в формате `2.3.1.0 #903`",
-        "в формате `v.2.3.1.0 #903`",
-    ).replace(
-        "release name\nзаписывается в `.version_name`.",  # noqa: RUF001
-        "release name записывается в\n`.version_name`.",
+    legacy = (
+        previous.replace("строится", "берётся")
+        .replace(
+            "без префикса `v.` в формате `2.3.1.0 #903`",
+            "в формате `v.2.3.1.0 #903`",
+        )
+        .replace(
+            "release name\nзаписывается в `.version_name`.",  # noqa: RUF001
+            "release name записывается в\n`.version_name`.",
+        )
+        .replace("всё кроме .py", "всё кроме .xml и .py")
+        .replace(
+            "Файлы с расширением `.py`\nне публикуются.",  # noqa: RUF001
+            "Файлы с расширениями `.xml`\nи `.py` не публикуются.",  # noqa: RUF001
+        )
     )
     assert legacy != previous != current
     return legacy
