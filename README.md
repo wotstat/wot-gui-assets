@@ -1,26 +1,27 @@
 # wot-gui-assets
 
-Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и
-reusable workflow находятся в ветке
-[`main`](https://github.com/wotstat/wot-gui-assets/tree/main), а данные каждого клиента — в
-отдельной региональной ветке.
+Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и reusable workflow находятся в ветке [`main`](https://github.com/wotstat/wot-gui-assets/tree/main), а данные каждого клиента — в отдельной региональной ветке.
 
 ## Регионы
 
-| Клиент | Data-ветка |
-| --- | --- |
-| World of Tanks — Europe | [`wot-eu`](https://github.com/wotstat/wot-gui-assets/tree/wot-eu) |
-| World of Tanks — North America | [`wot-na`](https://github.com/wotstat/wot-gui-assets/tree/wot-na) |
-| World of Tanks — Asia | [`wot-asia`](https://github.com/wotstat/wot-gui-assets/tree/wot-asia) |
-| World of Tanks — China | [`wot-cn`](https://github.com/wotstat/wot-gui-assets/tree/wot-cn) |
-| World of Tanks — Common Test | [`wot-common-test`](https://github.com/wotstat/wot-gui-assets/tree/wot-common-test) |
-| Мир танков — Россия | [`mt-ru`](https://github.com/wotstat/wot-gui-assets/tree/mt-ru) |
-| Мир танков — Public Test | [`mt-public-test`](https://github.com/wotstat/wot-gui-assets/tree/mt-public-test) |
+| Клиент                         | Data-ветка                                                                          |
+| ------------------------------ | ----------------------------------------------------------------------------------- |
+| World of Tanks — Europe        | [`wot-eu`](https://github.com/wotstat/wot-gui-assets/tree/wot-eu)                   |
+| World of Tanks — North America | [`wot-na`](https://github.com/wotstat/wot-gui-assets/tree/wot-na)                   |
+| World of Tanks — Asia          | [`wot-asia`](https://github.com/wotstat/wot-gui-assets/tree/wot-asia)               |
+| World of Tanks — China         | [`wot-cn`](https://github.com/wotstat/wot-gui-assets/tree/wot-cn)                   |
+| World of Tanks — Common Test   | [`wot-common-test`](https://github.com/wotstat/wot-gui-assets/tree/wot-common-test) |
+| Мир танков — Россия            | [`mt-ru`](https://github.com/wotstat/wot-gui-assets/tree/mt-ru)                     |
+| Мир танков — Public Test       | [`mt-public-test`](https://github.com/wotstat/wot-gui-assets/tree/mt-public-test)   |
 
-Первая публикация создаёт data-ветку сразу на version commit. Его сообщение строится из корневого
-`version.xml` snapshot без префикса `v.` в формате `2.3.1.0 #903`, а точный release name
-записывается в `.version_name`.
-Транспортные staging commits в историю data-ветки не входят.
+Версия игры с которой снят снепшот записывается в commit сообщение и `.version_name`.
+
+---
+Рекомендуется скачивать только последнее актуальное состояние репозитория без истории изменений:
+
+```bash
+git clone --depth 1 --no-single-branch https://github.com/wotstat/wot-gui-assets.git
+```
 
 ## Структура data-ветки
 
@@ -30,64 +31,4 @@ README.md
 .publication.json
 gui/                   # res/gui: base + default locale overlay; всё кроме .py
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
-```
-
-Префикс `res/` удаляется, а папка `gui/` остаётся в корне data-ветки. Файлы с расширением `.py`
-не публикуются. Для клиентов Wargaming default locale накладывается поверх `base` в
-`gui/`, а все локали, включая default locale, также сохраняются в `locales/<LANG>/gui/`.
-У клиентов Lesta отдельного дерева `locales/` нет: локализованные ресурсы уже входят в `base`.
-
-## Общая логика pipeline
-
-```text
-game-unpack-pipeline workflow_dispatch
-  → временная VM в Selectel
-  → три изолированных ephemeral JIT runner на одной VM
-  → game-snapshot-builder собирает и запечатывает GameSnapshot
-  → pinned reusable workflows data-репозиториев получают локальный путь и identity snapshot
-  → каждый publisher проверяет snapshot и создаёт version commit в своей data-ветке
-  → runner registrations и ресурсы Selectel удаляются
-```
-
-Snapshot не передаётся через Actions artifacts: publisher runners читают один immutable локальный
-путь на VM, работая под отдельными Unix-пользователями и в разных рабочих каталогах.
-
-`game-unpack-pipeline` вызывает `.github/workflows/publish-snapshot.yml` напрямую через
-`uses: wotstat/wot-gui-assets/.github/workflows/publish-snapshot.yml@<commit-sha>`. Workflow
-checkout’ит собственный репозиторий через `job.workflow_repository` и `job.workflow_sha`, поэтому
-исполняемый publisher-код совпадает с закреплённой версией workflow. Environment и JIT runner
-принадлежат caller run, а data-ветка, конфигурация и весь publication lifecycle — этому репозиторию.
-
-Publisher независимо проверяет canonical descriptor, маркер `READY`, snapshot identity, manifest
-hashes, payload hashes и полное manifest coverage. Затем он проецирует `res/gui`, исключает `.py` и
-публикует результат в настроенную production data-ветку target. Отсутствующая ветка создаётся
-первой публикацией; существующая ветка без `.publication.json` считается чужой и приводит к hard
-failure. Повторная публикация той же версии сравнивает только GUI-ресурсы, не считая служебные
-метаданные изменением данных. При неизменных ресурсах publisher возвращает `unchanged` без commit и
-push; при изменениях создаёт новый commit с тем же сообщением версии и обновлёнными метаданными.
-
-Если суммарный размер изменённых Git blobs превышает 1 ГБ, publisher загружает их порциями не
-более 1 ГБ как цепочку служебных commits, начинающуюся от текущей data-версии, через уникальную
-временную ветку `publication-staging/...`. Каждый commit кумулятивно дополняет tree следующей
-порцией; tree последнего commit должен точно совпасть с локальным publication tree. Затем publisher
-через GitHub Git Database API создаёт на уже загруженном tree один version commit и без force
-обновляет production-ref. Временный ref удаляется и при успехе, и при ошибке; служебные commits не
-попадают в production-историю.
-Отдельный файл по-прежнему не может превышать лимит GitHub 100 МиБ.
-
-Причины этой схемы и обязательные инварианты описаны в
-[`docs/publication-transport.md`](docs/publication-transport.md).
-
-## Служебная ветка `main`
-
-В `main` находятся конфигурация targets, publisher и тесты. Эти файлы не копируются в
-data-ветки; там остаются только README, метаданные публикации и GUI-ресурсы конкретной версии.
-
-Локальные проверки:
-
-```bash
-uv sync --frozen
-uv run pytest
-uv run ruff check .
-uv run mypy
 ```

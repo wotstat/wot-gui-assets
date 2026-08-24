@@ -1188,14 +1188,18 @@ def _data_readme_intro(branch: str) -> str:
     )
     readme = f"""# wot-gui-assets
 
-Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный код и GitHub
-Actions workflows находятся в ветке [`main`]({REPOSITORY_URL}/tree/main), а данные каждого
-клиента — в отдельной региональной ветке.
+Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и reusable workflow находятся в ветке [`main`]({REPOSITORY_URL}/tree/main), а данные каждого клиента — в отдельной региональной ветке.
 
 Скачать только текущую data-ветку без истории:
 
 ```bash
 git clone --branch {branch} --single-branch --depth 1 {REPOSITORY_URL}.git
+```
+
+Скачать все data-ветки без истории:
+
+```bash
+git clone --depth 1 --no-single-branch {REPOSITORY_URL}.git
 ```
 
 ## Регионы
@@ -1204,10 +1208,7 @@ git clone --branch {branch} --single-branch --depth 1 {REPOSITORY_URL}.git
 | --- | --- |
 {region_rows}
 
-Первая публикация создаёт data-ветку сразу на version commit. Его сообщение строится из корневого
-`version.xml` snapshot без префикса `v.` в формате `2.3.1.0 #903`, а точный release name
-записывается в `.version_name`.
-Транспортные staging commits в историю data-ветки не входят.
+Версия игры с которой снят снепшот записывается в commit сообщение и `.version_name`.
 
 ## Структура data-ветки
 
@@ -1218,11 +1219,6 @@ README.md
 gui/                   # res/gui: base + default locale overlay; всё кроме .py
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
 ```
-
-Префикс `res/` удаляется, а папка `gui/` остаётся в корне data-ветки. Файлы с расширением `.py`
-не публикуются. Для клиентов Wargaming default locale накладывается поверх `base` в
-`gui/`, а все локали, включая default locale, также сохраняются в `locales/<LANG>/gui/`.
-У клиентов Lesta отдельного дерева `locales/` нет: локализованные ресурсы уже входят в `base`.
 """  # noqa: RUF001 - the generated README intentionally contains Russian prose
     return readme
 
