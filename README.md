@@ -1,7 +1,7 @@
 # wot-gui-assets
 
-Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный код и GitHub
-Actions workflows находятся в ветке
+Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код
+находится в ветке
 [`main`](https://github.com/wotstat/wot-gui-assets/tree/main), а данные каждого клиента — в
 отдельной региональной ветке.
 
@@ -44,7 +44,7 @@ game-unpack-pipeline workflow_dispatch
   → временная VM в Selectel
   → три изолированных ephemeral JIT runner на одной VM
   → game-snapshot-builder собирает и запечатывает GameSnapshot
-  → pinned reusable workflows wot-src и wot-gui-assets получают локальный путь и identity snapshot
+  → orchestrator-owned publisher jobs получают локальный путь и identity snapshot
   → каждый publisher проверяет snapshot и создаёт version commit в своей data-ветке
   → runner registrations и ресурсы Selectel удаляются
 ```
@@ -52,11 +52,9 @@ game-unpack-pipeline workflow_dispatch
 Snapshot не передаётся через Actions artifacts: publisher runners читают один immutable локальный
 путь на VM, работая под отдельными Unix-пользователями и в разных рабочих каталогах.
 
-Оркестратор переиспользует [`publish-snapshot.yml`](.github/workflows/publish-snapshot.yml) через
-`workflow_call` по закреплённому commit SHA. Workflow выполняется как часть основного run, но
-checkout делает из собственного `job.workflow_repository` на `job.workflow_sha`; data-ветка и
-publisher-код поэтому остаются в этом репозитории, а JIT runner принадлежит caller-репозиторию.
-Publisher независимо проверяет canonical descriptor, маркер
+Оркестратор владеет lifecycle publication job и checkout’ит этот репозиторий по закреплённому
+commit SHA. Data-ветка, конфигурация и publisher-код остаются здесь, а workflow, Environment и JIT
+runner принадлежат `game-unpack-pipeline`. Publisher независимо проверяет canonical descriptor, маркер
 `READY`, snapshot identity, manifest hashes, payload hashes и полное manifest coverage. Затем он
 проецирует `res/gui`, исключает `.xml` и `.py`, создаёт commit с версией из корневого
 `version.xml` snapshot и отправляет его в ветку целевого региона. История data-ветки загружается
@@ -76,7 +74,7 @@ Production-ветки принимают только `full` snapshot. Light-п�
 
 ## Служебная ветка `main`
 
-В `main` находятся workflow, конфигурация targets, publisher и тесты. Эти файлы не копируются в
+В `main` находятся конфигурация targets, publisher и тесты. Эти файлы не копируются в
 data-ветки; там остаются только README, метаданные публикации и GUI-ресурсы конкретной версии.
 
 Локальные проверки:
