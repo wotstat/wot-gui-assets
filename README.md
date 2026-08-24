@@ -1,7 +1,7 @@
 # wot-gui-assets
 
-Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код
-находится в ветке
+Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и
+reusable workflow находятся в ветке
 [`main`](https://github.com/wotstat/wot-gui-assets/tree/main), а данные каждого клиента — в
 отдельной региональной ветке.
 
@@ -17,9 +17,9 @@
 | Мир танков — Россия | [`mt-ru`](https://github.com/wotstat/wot-gui-assets/tree/mt-ru) |
 | Мир танков — Public Test | [`mt-public-test`](https://github.com/wotstat/wot-gui-assets/tree/mt-public-test) |
 
-Каждая production data-ветка начинается с bootstrap commit `init`, содержащего этот README. Каждая
-публикация завершается version commit: его сообщение строится из корневого `version.xml` snapshot
-без префикса `v.` в формате `2.3.1.0 #903`, а точный release name записывается в `.version_name`.
+Первая публикация создаёт data-ветку сразу на version commit. Его сообщение строится из корневого
+`version.xml` snapshot без префикса `v.` в формате `2.3.1.0 #903`, а точный release name
+записывается в `.version_name`.
 Транспортные staging commits в историю data-ветки не входят.
 
 ## Структура data-ветки
@@ -44,7 +44,7 @@ game-unpack-pipeline workflow_dispatch
   → временная VM в Selectel
   → три изолированных ephemeral JIT runner на одной VM
   → game-snapshot-builder собирает и запечатывает GameSnapshot
-  → orchestrator-owned publisher jobs получают локальный путь и identity snapshot
+  → pinned reusable workflows data-репозиториев получают локальный путь и identity snapshot
   → каждый publisher проверяет snapshot и создаёт version commit в своей data-ветке
   → runner registrations и ресурсы Selectel удаляются
 ```
@@ -52,19 +52,19 @@ game-unpack-pipeline workflow_dispatch
 Snapshot не передаётся через Actions artifacts: publisher runners читают один immutable локальный
 путь на VM, работая под отдельными Unix-пользователями и в разных рабочих каталогах.
 
-Оркестратор владеет lifecycle publication job и checkout’ит этот репозиторий по закреплённому
-commit SHA. Data-ветка, конфигурация и publisher-код остаются здесь, а workflow, Environment и JIT
-runner принадлежат `game-unpack-pipeline`. Publisher независимо проверяет canonical descriptor, маркер
-`READY`, snapshot identity, manifest hashes, payload hashes и полное manifest coverage. Затем он
-проецирует `res/gui`, исключает `.py`, создаёт commit с версией из корневого
-`version.xml` snapshot и отправляет его в ветку целевого региона. История data-ветки загружается
-как commit-only partial fetch; payload предыдущих версий не скачивается.
+`game-unpack-pipeline` вызывает `.github/workflows/publish-snapshot.yml` напрямую через
+`uses: wotstat/wot-gui-assets/.github/workflows/publish-snapshot.yml@<commit-sha>`. Workflow
+checkout’ит собственный репозиторий через `job.workflow_repository` и `job.workflow_sha`, поэтому
+исполняемый publisher-код совпадает с закреплённой версией workflow. Environment и JIT runner
+принадлежат caller run, а data-ветка, конфигурация и весь publication lifecycle — этому репозиторию.
 
-Production-ветки принимают только `full` snapshot. Light-прогоны публикуются во временные ветки
-`test/light-<target>`. Повторная публикация той же версии сравнивает только GUI-ресурсы, не считая
-служебные метаданные изменением данных. При неизменных ресурсах publisher возвращает `unchanged`
-без commit и push; при изменениях создаёт новый commit с тем же сообщением версии и обновлёнными
-метаданными.
+Publisher независимо проверяет canonical descriptor, маркер `READY`, snapshot identity, manifest
+hashes, payload hashes и полное manifest coverage. Затем он проецирует `res/gui`, исключает `.py` и
+публикует результат в настроенную production data-ветку target. Отсутствующая ветка создаётся
+первой публикацией; существующая ветка без `.publication.json` считается чужой и приводит к hard
+failure. Повторная публикация той же версии сравнивает только GUI-ресурсы, не считая служебные
+метаданные изменением данных. При неизменных ресурсах publisher возвращает `unchanged` без commit и
+push; при изменениях создаёт новый commit с тем же сообщением версии и обновлёнными метаданными.
 
 Если суммарный размер изменённых Git blobs превышает 1 ГБ, publisher загружает их порциями не
 более 1 ГБ как цепочку служебных commits, начинающуюся от текущей data-версии, через уникальную
@@ -75,7 +75,7 @@ Production-ветки принимают только `full` snapshot. Light-п�
 попадают в production-историю.
 Отдельный файл по-прежнему не может превышать лимит GitHub 100 МиБ.
 
-Причины этой схемы, обязательные инварианты и inventory удаляемой legacy-совместимости описаны в
+Причины этой схемы и обязательные инварианты описаны в
 [`docs/publication-transport.md`](docs/publication-transport.md).
 
 ## Служебная ветка `main`

@@ -87,7 +87,7 @@ Publisher обязан проверить remote ref перед повтором
 Тесты могут быть переписаны при cleanup, но должны продолжать доказывать через interface публикации:
 
 - batch не превышает budget, а blob больше 100 МиБ отклоняется;
-- large path работает для новой и существующей/bootstrap ветки;
+- large path работает для новой и существующей publisher-owned ветки;
 - каждый staging push ограничен, прямого большого push в production нет;
 - последний staging tree равен локальному publication tree;
 - GitHub API получает точные tree и parent, ref обновляется с `force: false`;
@@ -100,26 +100,18 @@ Publisher обязан проверить remote ref перед повтором
 Локальный bare remote проверяет граф Git и историю, но не моделирует GitHub pack/API limits. Поэтому
 изменение large path требует отдельного реального full-run до production pin.
 
-## Inventory обратной совместимости
+## Жизненный цикл data-ветки
 
-Проверено по remote heads 2026-08-24:
+Все data-ветки, существовавшие до первого release, намеренно удалены 2026-08-24. Bootstrap state и
+старые README hashes больше не являются поддерживаемым входом:
 
-- `wot-eu` уже содержит `.publication.json` и от bootstrap README hash не зависит;
-- `wot-na`, `wot-asia`, `wot-cn`, `wot-common-test`, `mt-ru`, `mt-public-test` указывают на один
-  README-only commit `2db13afad6909adc9f210fad23addd43531d5796` с README SHA-256
-  `38921c09592e1fa1e205eb65b9ff4f79f3b193d11dbe6d094d932a4e109059fa`;
-- legacy hashes `303f554f8d407038781ff6d5c8ff85f3fb20fb6737ae10969bf854bef2750c62` и
-  `65598489722b7891514fa605db001bf8a267f0eafc0c0004b702d351b931225a` не используются текущими
-  remote heads и являются кандидатами на удаление после повторной проверки.
-
-Когда все README-only ветки будут опубликованы или намеренно заменены, можно удалить весь legacy
-hash set и ветку совместимости `_validate_bootstrap_branch`. До этого удаление hash `38921...`
-сломает первую публикацию в шесть production-веток.
+- если ref отсутствует, первая публикация создаёт его сразу на проверенном version commit;
+- если ref существует, он обязан содержать `.publication.json`;
+- существующий markerless ref считается чужим состоянием и приводит к hard failure.
 
 ## Checklist изменения транспорта
 
-1. Повторно проверить remote heads и bootstrap inventory, не полагаясь только на этот датированный
-   снимок.
+1. Сохранить правила создания отсутствующей ветки и отказа на markerless ref.
 2. Сохранить один CLI interface; не выносить детали staging в workflow caller.
 3. Прогнать `uv run pytest -q`, `uv run ruff check .`, `uv run mypy src`.
 4. Если тот же transport меняется в `wot-src`, обновить его симметрично либо явно документировать
