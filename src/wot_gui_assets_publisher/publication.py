@@ -31,7 +31,10 @@ OBJECT_STAGING_THRESHOLD_BYTES = 1_000_000_000
 OBJECT_STAGING_BATCH_BYTES = 1_000_000_000
 GITHUB_MAX_BLOB_BYTES = 100 * 1024 * 1024
 LEGACY_BOOTSTRAP_README_SHA256S = frozenset(
-    {"38921c09592e1fa1e205eb65b9ff4f79f3b193d11dbe6d094d932a4e109059fa"}
+    {
+        "303f554f8d407038781ff6d5c8ff85f3fb20fb6737ae10969bf854bef2750c62",
+        "38921c09592e1fa1e205eb65b9ff4f79f3b193d11dbe6d094d932a4e109059fa",
+    }
 )
 REGION_BRANCHES = (
     ("World of Tanks — Europe", "wot-eu"),
@@ -138,6 +141,12 @@ class _GitBlob:
     mode: str
     object_id: str
     size: int
+
+
+@dataclass(frozen=True, slots=True)
+class _StagedObjects:
+    remote_ref: str
+    tip_commit: str
 
 
 def _run_git(
@@ -350,7 +359,7 @@ def _prestage_large_git_objects(
     branch: str,
     commit_sha: str,
     changed_files: Sequence[str],
-) -> Iterator[str | None]:
+) -> Iterator[_StagedObjects | None]:
     blobs = _changed_git_blobs(publication_worktree, changed_files)
     total_bytes = sum(blob.size for blob in blobs)
     batches = _partition_git_blobs(
@@ -382,6 +391,14 @@ def _prestage_large_git_objects(
         remote_ref=remote_ref,
     )
     try:
+        parent = _run_git(
+            publication_worktree,
+            "rev-parse",
+            "--verify",
+            f"{commit_sha}^",
+            check=False,
+        )
+        staging_base = parent.stdout.strip() if parent.returncode == 0 else commit_sha
         _run_git(
             repository,
             "worktree",
@@ -389,9 +406,17 @@ def _prestage_large_git_objects(
             "--detach",
             "--no-checkout",
             str(staging_worktree),
-            "HEAD",
+            staging_base,
         )
         registered = True
+        if parent.returncode != 0:
+            _run_git(
+                staging_worktree,
+                "switch",
+                "--orphan",
+                f"publication-staging-{commit_sha[:12]}",
+            )
+            _run_git(staging_worktree, "read-tree", "--empty")
         for batch_number, batch in enumerate(batches, start=1):
             batch_bytes = sum(blob.size for blob in batch)
             _run_git(staging_worktree, "read-tree", "--empty")
@@ -426,7 +451,8 @@ def _prestage_large_git_objects(
                 commit=staging_commit[:12],
             )
         _progress("stage-objects", "completed", remote_ref=remote_ref)
-        yield remote_ref
+        staging_tip = _run_git(staging_worktree, "rev-parse", "HEAD").stdout.strip()
+        yield _StagedObjects(remote_ref=remote_ref, tip_commit=staging_tip)
     finally:
         if pushed_ref:
             _delete_remote_ref(repository, remote_ref)
@@ -447,7 +473,6 @@ def _push_commit(
     remote_ref: str,
     commit_sha: str,
     *,
-    staged_remote_ref: str | None = None,
     retry_delays: Sequence[float] = (5.0, 15.0),
 ) -> None:
     attempts = len(retry_delays) + 1
@@ -461,17 +486,13 @@ def _push_commit(
             commit=commit_sha[:12],
             remote_ref=remote_ref,
         )
-        arguments = ["push", "--progress", "origin", f"HEAD:{remote_ref}"]
-        if staged_remote_ref is not None:
-            arguments = [
-                "push",
-                "--progress",
-                "--atomic",
-                "origin",
-                f"+HEAD:{staged_remote_ref}",
-                f"HEAD:{remote_ref}",
-            ]
-        result = _run_git_streaming(worktree, *arguments)
+        result = _run_git_streaming(
+            worktree,
+            "push",
+            "--progress",
+            "origin",
+            f"HEAD:{remote_ref}",
+        )
         elapsed_seconds = round(time.monotonic() - started_at, 3)
         if result.returncode == 0:
             _progress(
@@ -912,10 +933,10 @@ Actions workflows находятся в ветке [`main`]({REPOSITORY_URL}/tre
 | --- | --- |
 {region_rows}
 
-Каждая production data-ветка начинается с bootstrap commit `init`, содержащего этот README. Каждый
-следующий commit соответствует одной версии клиента: сообщение строится из корневого
-`version.xml` snapshot без префикса `v.` в формате `2.3.1.0 #903`, а точный release name
-записывается в `.version_name`.
+Каждая production data-ветка начинается с bootstrap commit `init`, содержащего этот README. Каждая
+публикация завершается version commit: его сообщение строится из корневого `version.xml` snapshot
+без префикса `v.` в формате `2.3.1.0 #903`, а точный release name записывается в `.version_name`.
+Перед version commit большой публикации в истории могут находиться служебные staging commits.
 
 ## Структура data-ветки
 
@@ -1386,12 +1407,29 @@ def publish_snapshot(
             branch=branch,
             commit_sha=commit_sha,
             changed_files=changed_files,
-        ) as staged_remote_ref:
+        ) as staged_objects:
+            if staged_objects is not None:
+                provisional_commit = commit_sha
+                _progress(
+                    "stage-objects",
+                    "finalize_started",
+                    parent=staged_objects.tip_commit[:12],
+                    provisional_commit=provisional_commit[:12],
+                )
+                _run_git(worktree, "reset", "--soft", staged_objects.tip_commit)
+                _run_git(worktree, "commit", "--reuse-message", provisional_commit)
+                commit_sha = _run_git(worktree, "rev-parse", "HEAD").stdout.strip()
+                _push_commit(worktree, staged_objects.remote_ref, commit_sha)
+                _progress(
+                    "stage-objects",
+                    "finalize_completed",
+                    commit=commit_sha[:12],
+                    remote_ref=staged_objects.remote_ref,
+                )
             _push_commit(
                 worktree,
                 remote_ref,
                 commit_sha,
-                staged_remote_ref=staged_remote_ref,
             )
         _progress(
             "publication",
