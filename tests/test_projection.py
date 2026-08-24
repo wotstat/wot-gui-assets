@@ -102,6 +102,12 @@ def test_wargaming_projection_preserves_gui_root_and_keeps_all_locales(
         "mt-public-test",
     ):
         assert f"https://github.com/wotstat/wot-gui-assets/tree/{branch}" in readme
+    clone_command = (
+        "git clone --branch wot-eu --single-branch --depth 1 "
+        "https://github.com/wotstat/wot-gui-assets.git"
+    )
+    assert clone_command in readme
+    assert readme.index(clone_command) < readme.index("## Регионы")
     assert "## Структура data-ветки" in readme
     assert "Target: `wot-eu`" in readme
     assert "Ветка: `wot-eu`" in readme
@@ -154,6 +160,11 @@ def test_lesta_projection_uses_base_and_ignores_locale_layers(tmp_path: Path) ->
     assert (output / "gui/flash/App.swf").read_bytes() == b"lesta-base"
     assert (output / "gui/settings.xml").read_bytes() == b"<settings/>\n"
     assert not (output / "locales").exists()
+    readme = (output / "README.md").read_text()
+    assert (
+        "git clone --branch mt-ru --single-branch --depth 1 "
+        "https://github.com/wotstat/wot-gui-assets.git"
+    ) in readme
     publication = json.loads((output / ".publication.json").read_text())
     assert publication["publisher"] == "lesta"
     assert publication["commit_subject"] == "1.37.0.0 #4001"
