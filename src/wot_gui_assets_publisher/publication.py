@@ -1243,7 +1243,7 @@ def _data_readme(
 """
 
 
-def project_snapshot(
+def _project_snapshot(
     snapshot_path: Path,
     output_path: Path,
     *,
@@ -1465,7 +1465,7 @@ def publish_snapshot(
     staging_worktree = temporary / "staging-worktree"
     worktree_registered = False
     try:
-        publication = project_snapshot(
+        publication = _project_snapshot(
             snapshot_path,
             projected_tree,
             target=target,
@@ -1662,6 +1662,5 @@ def publish_snapshot(
 
 __all__ = [
     "PublicationError",
-    "project_snapshot",
     "publish_snapshot",
 ]

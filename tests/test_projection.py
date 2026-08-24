@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 from snapshot_fixture import create_snapshot
 
-from wot_gui_assets_publisher.publication import PublicationError, project_snapshot
+import wot_gui_assets_publisher.publication as publication_module
 
 ROOT = Path(__file__).parents[1]
 VERSION_XML = b"""<version.xml>
@@ -23,7 +23,7 @@ def _project(
     snapshot_id: str,
     descriptor_sha256: str,
 ) -> dict[str, object]:
-    return project_snapshot(
+    return publication_module._project_snapshot(
         snapshot,
         output,
         target=target,
@@ -179,7 +179,10 @@ def test_projection_rejects_snapshot_without_publishable_base_gui_assets(
     )
     output = tmp_path / "output"
 
-    with pytest.raises(PublicationError, match="no base res/gui assets after exclusions"):
+    with pytest.raises(
+        publication_module.PublicationError,
+        match="no base res/gui assets after exclusions",
+    ):
         _project(
             snapshot,
             output,
