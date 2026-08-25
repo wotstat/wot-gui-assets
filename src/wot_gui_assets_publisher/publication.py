@@ -1181,12 +1181,12 @@ def _commit_subject(files: tuple[PayloadFile, ...]) -> str:
     return subject.removeprefix("v.")
 
 
-def _data_readme_intro(branch: str) -> str:
+def _data_readme_intro(branch: str, commit_subject: str) -> str:
     region_rows = "\n".join(
         f"| {client} | [`{data_branch}`]({REPOSITORY_URL}/tree/{data_branch}) |"
         for client, data_branch in REGION_BRANCHES
     )
-    readme = f"""# wot-gui-assets
+    readme = f"""# wot-gui-assets • {branch} • {commit_subject}
 
 Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и reusable workflow находятся в ветке [`main`]({REPOSITORY_URL}/tree/main), а данные каждого клиента — в отдельной региональной ветке.
 
@@ -1228,10 +1228,11 @@ def _data_readme(
     target: str,
     branch: str,
     release_name: str,
+    commit_subject: str,
     publisher: str,
     snapshot_id: str,
 ) -> str:
-    return f"""{_data_readme_intro(branch)}
+    return f"""{_data_readme_intro(branch, commit_subject)}
 
 ## Текущая публикация
 
@@ -1361,6 +1362,7 @@ def _project_snapshot(
                 target=target,
                 branch=branch,
                 release_name=release_name,
+                commit_subject=commit_subject,
                 publisher=publisher,
                 snapshot_id=expected_snapshot_id,
             ),
