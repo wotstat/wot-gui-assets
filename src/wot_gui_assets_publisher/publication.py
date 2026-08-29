@@ -31,7 +31,8 @@ MANIFEST_NAMES = ("files", "actionscript", "stubs", "packages", "conflicts")
 REPOSITORY_URL = "https://github.com/wotstat/wot-gui-assets"
 OBJECT_STAGING_THRESHOLD_BYTES = 1_000_000_000
 OBJECT_STAGING_BATCH_BYTES = 1_000_000_000
-GITHUB_MAX_BLOB_BYTES = 100 * 1024 * 1024
+MEBIBYTE_BYTES = 1024 * 1024
+GITHUB_MAX_BLOB_BYTES = 100 * MEBIBYTE_BYTES
 GITHUB_API_VERSION = "2022-11-28"
 GITHUB_REPOSITORY_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 REGION_BRANCHES = (
@@ -1134,6 +1135,21 @@ def _is_gui_asset(path: str) -> bool:
     )
 
 
+def _without_oversized_assets(
+    assets: dict[str, PayloadFile],
+    *,
+    output_prefix: str = "",
+) -> tuple[dict[str, PayloadFile], tuple[tuple[str, int], ...]]:
+    included: dict[str, PayloadFile] = {}
+    excluded: list[tuple[str, int]] = []
+    for path, item in assets.items():
+        if item.size > GITHUB_MAX_BLOB_BYTES:
+            excluded.append((f"{output_prefix}{path}", item.size))
+        else:
+            included[path] = item
+    return included, tuple(excluded)
+
+
 def _copy(item: PayloadFile, root: Path, relative_path: str) -> None:
     destination = root.joinpath(*PurePosixPath(relative_path).parts)
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -1186,9 +1202,15 @@ def _data_readme_intro(branch: str, commit_subject: str) -> str:
         f"| {client} | [`{data_branch}`]({REPOSITORY_URL}/tree/{data_branch}) |"
         for client, data_branch in REGION_BRANCHES
     )
+    description = (
+        "Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». "
+        "Служебный publisher-код и reusable workflow находятся в ветке "
+        f"[`main`]({REPOSITORY_URL}/tree/main), а данные каждого клиента — в отдельной "  # noqa: RUF001
+        "региональной ветке."
+    )
     readme = f"""# wot-gui-assets • {branch} • {commit_subject}
 
-Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и reusable workflow находятся в ветке [`main`]({REPOSITORY_URL}/tree/main), а данные каждого клиента — в отдельной региональной ветке.
+{description}
 
 Скачать только текущую data-ветку без истории:
 
@@ -1216,11 +1238,15 @@ git clone --depth 1 --no-single-branch {REPOSITORY_URL}.git
 README.md
 .version_name
 .publication.json
-gui/                   # res/gui: base + default locale overlay; всё кроме .py
+gui/                   # res/gui: base + default locale overlay; всё кроме .py и файлов > 100 MiB
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
 ```
 """  # noqa: RUF001 - the generated README intentionally contains Russian prose
     return readme
+
+
+def _format_mebibytes(size: int) -> str:
+    return f"{size / MEBIBYTE_BYTES:.2f}".replace(".", ",")
 
 
 def _data_readme(
@@ -1231,8 +1257,9 @@ def _data_readme(
     commit_subject: str,
     publisher: str,
     snapshot_id: str,
+    excluded_assets: Sequence[tuple[str, int]],
 ) -> str:
-    return f"""{_data_readme_intro(branch, commit_subject)}
+    readme = f"""{_data_readme_intro(branch, commit_subject)}
 
 ## Текущая публикация
 
@@ -1243,6 +1270,19 @@ def _data_readme(
 - GameSnapshot: `{snapshot_id}`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
+"""
+    if not excluded_assets:
+        return readme
+    excluded_lines = "\n".join(
+        f"- `{path}` — **{_format_mebibytes(size)} MiB**"
+        for path, size in sorted(excluded_assets, key=lambda item: (-item[1], item[0]))
+    )
+    return f"""{readme}
+## Исключённые файлы
+
+Эти файлы не включены в публикацию, потому что их размер превышает 100 MiB:
+
+{excluded_lines}
 """
 
 
@@ -1321,6 +1361,18 @@ def _project_snapshot(
         if layered_publisher
         else {}
     )
+    assets, excluded_assets = _without_oversized_assets(assets)
+    filtered_locale_assets: dict[str, dict[str, PayloadFile]] = {}
+    excluded_asset_list = list(excluded_assets)
+    for language, items in locale_assets.items():
+        filtered, locale_excluded = _without_oversized_assets(
+            items,
+            output_prefix=f"locales/{language}/",
+        )
+        filtered_locale_assets[language] = filtered
+        excluded_asset_list.extend(locale_excluded)
+    locale_assets = filtered_locale_assets
+    excluded_assets = tuple(excluded_asset_list)
 
     output = output_path.absolute()
     if output.exists():
@@ -1365,6 +1417,7 @@ def _project_snapshot(
                 commit_subject=commit_subject,
                 publisher=publisher,
                 snapshot_id=expected_snapshot_id,
+                excluded_assets=excluded_assets,
             ),
             encoding="utf-8",
         )
