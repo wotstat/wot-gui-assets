@@ -45,6 +45,6 @@ locales/<LANG>/gui/    # все res/gui locale overlays WG, включая defau
 - Ветка: `wot-eu`
 - Версия: `2.3.1.5412`
 - Publisher: `wargaming`
-- GameSnapshot: `sha256:a76a24830d62c0b6178e360564e7044d7781bee30ba282c56c69a524c0b73130`
+- GameSnapshot: `sha256:218dcc83d09b52174da37ab61bb0cb9c33daa92e6bc4bab01c617987df2cdd2a`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
