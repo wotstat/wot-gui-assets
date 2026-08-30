@@ -80,6 +80,12 @@ def test_readme_lists_excluded_assets_by_size() -> None:
     )
 
     section = readme.split("## Исключённые файлы\n", maxsplit=1)[1]
+    assert (
+        "[![mt-ru status](https://img.shields.io/endpoint?"
+        "url=https%3A%2F%2Fwotstat.github.io%2F"
+        "game-unpack-pipeline%2Fbadges%2Fmt-ru.json)]"
+        "(https://github.com/wotstat/wot-gui-assets/tree/mt-ru)"
+    ) in readme
     assert section.index("_tutorialinitial.usm") < section.index("smaller.usm")
     assert "- `gui/flash/videos/_tutorialinitial.usm` — **110,24 MiB**" in section
     assert "- `gui/flash/videos/smaller.usm` — **100,00 MiB**" in section

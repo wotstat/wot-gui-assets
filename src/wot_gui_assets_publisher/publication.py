@@ -1201,7 +1201,16 @@ def _commit_subject(files: tuple[PayloadFile, ...]) -> str:
     return f"{match.group('version')} #{match.group('build')}"
 
 
-def _data_readme_intro(branch: str, commit_subject: str) -> str:
+def _status_badge(target: str, branch: str) -> str:
+    endpoint = (
+        "https://img.shields.io/endpoint?"
+        "url=https%3A%2F%2Fwotstat.github.io%2F"
+        f"game-unpack-pipeline%2Fbadges%2F{target}.json"
+    )
+    return f"[![{target} status]({endpoint})]({REPOSITORY_URL}/tree/{branch})"
+
+
+def _data_readme_intro(target: str, branch: str, commit_subject: str) -> str:
     region_rows = "\n".join(
         f"| {client} | [`{data_branch}`]({REPOSITORY_URL}/tree/{data_branch}) |"
         for client, data_branch in REGION_BRANCHES
@@ -1212,7 +1221,10 @@ def _data_readme_intro(branch: str, commit_subject: str) -> str:
         f"[`main`]({REPOSITORY_URL}/tree/main), а данные каждого клиента — в отдельной "  # noqa: RUF001
         "региональной ветке."
     )
+    status_badge = _status_badge(target, branch)
     readme = f"""# wot-gui-assets • {branch} • {commit_subject}
+
+{status_badge}
 
 {description}
 
@@ -1263,7 +1275,7 @@ def _data_readme(
     snapshot_id: str,
     excluded_assets: Sequence[tuple[str, int]],
 ) -> str:
-    readme = f"""{_data_readme_intro(branch, commit_subject)}
+    readme = f"""{_data_readme_intro(target, branch, commit_subject)}
 
 ## Текущая публикация
 
