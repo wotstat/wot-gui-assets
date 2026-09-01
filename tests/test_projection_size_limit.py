@@ -28,6 +28,79 @@ def test_common_test_version_is_normalized_for_commit_subject(tmp_path: Path) ->
     assert publication_module._commit_subject((version_file,)) == "2.4.0.0 #927"
 
 
+def test_projection_includes_gui_under_arbitrary_resource_root_prefixes(
+    tmp_path: Path,
+) -> None:
+    snapshot = tmp_path / "snapshot"
+    snapshot_id, descriptor_sha256 = create_snapshot(
+        snapshot,
+        target="mt-ru",
+        publisher="lesta",
+        release_name="1.44.0.8017",
+        base_files={
+            "version.xml": VERSION_XML,
+            "res/gui/maps/root.png": b"root",
+            "res/comp7/gui/maps/rank.png": b"rank",
+            "res/story_mode/gui/layout.xml": b"layout",
+            "res/comp7/gui/controller.py": b"excluded Python",
+            "res/scripts/client/gui/layout.xml": b"deep gui directory",
+            "res/events/comp7/gui/layout.xml": b"two-segment root prefix",
+        },
+    )
+    output = tmp_path / "output"
+
+    result = publication_module._project_snapshot(
+        snapshot,
+        output,
+        target="mt-ru",
+        expected_snapshot_id=snapshot_id,
+        expected_descriptor_sha256=descriptor_sha256,
+        config_path=ROOT / "config/targets.json",
+    )
+
+    assert (output / "gui/maps/root.png").read_bytes() == b"root"
+    assert (output / "comp7/gui/maps/rank.png").read_bytes() == b"rank"
+    assert (output / "story_mode/gui/layout.xml").read_bytes() == b"layout"
+    assert not (output / "comp7/gui/controller.py").exists()
+    assert not (output / "scripts/client/gui/layout.xml").exists()
+    assert not (output / "events/comp7/gui/layout.xml").exists()
+    assert result["counts"] == {"assets": 3, "locales": {}}
+
+
+def test_default_locale_overlays_root_prefixed_gui_assets(
+    tmp_path: Path,
+) -> None:
+    snapshot = tmp_path / "snapshot"
+    snapshot_id, descriptor_sha256 = create_snapshot(
+        snapshot,
+        target="wot-eu",
+        publisher="wargaming",
+        release_name="1.44.0.8017",
+        base_files={
+            "version.xml": VERSION_XML,
+            "res/gui/maps/root.png": b"root",
+            "res/comp7/gui/maps/rank.png": b"base rank",
+        },
+        locale_files={"EN": {"res/comp7/gui/maps/rank.png": b"localized rank"}},
+    )
+    output = tmp_path / "output"
+
+    result = publication_module._project_snapshot(
+        snapshot,
+        output,
+        target="wot-eu",
+        expected_snapshot_id=snapshot_id,
+        expected_descriptor_sha256=descriptor_sha256,
+        config_path=ROOT / "config/targets.json",
+    )
+
+    assert (output / "comp7/gui/maps/rank.png").read_bytes() == b"localized rank"
+    assert (
+        output / "locales/EN/comp7/gui/maps/rank.png"
+    ).read_bytes() == b"localized rank"
+    assert result["counts"] == {"assets": 2, "locales": {"EN": 1}}
+
+
 def test_projection_excludes_assets_larger_than_github_limit(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -42,7 +115,7 @@ def test_projection_excludes_assets_larger_than_github_limit(
         base_files={
             "version.xml": VERSION_XML,
             "res/gui/flash/videos/at-limit.usm": b"x" * 10,
-            "res/gui/flash/videos/too-large.usm": b"x" * 11,
+            "res/comp7/gui/flash/videos/too-large.usm": b"x" * 11,
             "res/gui/maps/icon.png": b"icon",
         },
     )
@@ -58,11 +131,11 @@ def test_projection_excludes_assets_larger_than_github_limit(
     )
 
     assert (output / "gui/flash/videos/at-limit.usm").is_file()
-    assert not (output / "gui/flash/videos/too-large.usm").exists()
+    assert not (output / "comp7/gui/flash/videos/too-large.usm").exists()
     assert result["counts"] == {"assets": 2, "locales": {}}
     readme = (output / "README.md").read_text()
     assert "## Исключённые файлы" in readme
-    assert "`gui/flash/videos/too-large.usm`" in readme
+    assert "`comp7/gui/flash/videos/too-large.usm`" in readme
 
 
 def test_readme_lists_excluded_assets_by_size() -> None:

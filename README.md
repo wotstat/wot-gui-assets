@@ -42,8 +42,13 @@ README.md
 .version_name
 .publication.json
 gui/                   # res/gui: base + default locale overlay; всё кроме .py и файлов > 100 MiB
+<RESOURCE_ROOT>/gui/   # res/<RESOURCE_ROOT>/gui: произвольный root-prefix + тот же overlay
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
+locales/<LANG>/<RESOURCE_ROOT>/gui/
 ```
+
+`RESOURCE_ROOT` — произвольный первый сегмент пути под `res`, а не имя физического `.pkg`.
+Более глубокие каталоги с именем `gui`, например `res/scripts/client/gui`, в эту проекцию не входят.
 
 Файлы больше 100 MiB не публикуются в Git. Если такие файлы есть в снепшоте, README соответствующей
 data-ветки содержит их пути и размеры.

@@ -28,8 +28,6 @@ VERSION_XML_COMMIT_RE = re.compile(
     r"(?: [A-Za-z]+(?: [A-Za-z]+)*)? #(?P<build>[0-9]+)$"
 )
 EXCLUDED_SUFFIXES = frozenset({".py"})
-GUI_PREFIX = "res/gui/"
-RES_PREFIX = "res/"
 MANIFEST_NAMES = ("files", "actionscript", "stubs", "packages", "conflicts")
 REPOSITORY_URL = "https://github.com/wotstat/wot-gui-assets"
 OBJECT_STAGING_THRESHOLD_BYTES = 1_000_000_000
@@ -1129,13 +1127,39 @@ def _verify_snapshot(
     )
 
 
-def _is_gui_asset(path: str) -> bool:
-    folded = path.casefold()
-    return (
-        folded.startswith(GUI_PREFIX)
-        and len(path) > len(GUI_PREFIX)
-        and PurePosixPath(path).suffix.casefold() not in EXCLUDED_SUFFIXES
+def _gui_projection_path(path: str) -> str | None:
+    parts = PurePosixPath(path).parts
+    folded_parts = tuple(part.casefold() for part in parts)
+    root_gui = (
+        len(parts) >= 3
+        and folded_parts[0] == "res"
+        and folded_parts[1] == "gui"
     )
+    root_prefixed_gui = (
+        len(parts) >= 4
+        and folded_parts[0] == "res"
+        and folded_parts[2] == "gui"
+    )
+    if not root_gui and not root_prefixed_gui:
+        return None
+    if PurePosixPath(path).suffix.casefold() in EXCLUDED_SUFFIXES:
+        return None
+    return PurePosixPath(*parts[1:]).as_posix()
+
+
+def _select_gui_assets(
+    files: Sequence[PayloadFile],
+    *,
+    language: str | None,
+) -> dict[str, PayloadFile]:
+    selected: dict[str, PayloadFile] = {}
+    for item in files:
+        if item.language != language:
+            continue
+        projection_path = _gui_projection_path(item.path)
+        if projection_path is not None:
+            selected[projection_path] = item
+    return selected
 
 
 def _without_oversized_assets(
@@ -1255,8 +1279,13 @@ README.md
 .version_name
 .publication.json
 gui/                   # res/gui: base + default locale overlay; всё кроме .py и файлов > 100 MiB
+<RESOURCE_ROOT>/gui/   # res/<RESOURCE_ROOT>/gui: произвольный root-prefix + тот же overlay
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
+locales/<LANG>/<RESOURCE_ROOT>/gui/
 ```
+
+`RESOURCE_ROOT` — произвольный первый сегмент пути под `res`, а не имя физического `.pkg`.
+Более глубокие каталоги с именем `gui`, например `res/scripts/client/gui`, в эту проекцию не входят.
 """  # noqa: RUF001 - the generated README intentionally contains Russian prose
     return readme
 
@@ -1344,32 +1373,18 @@ def _project_snapshot(
     }:
         raise PublicationError(f"default locale {default_locale} is absent from the snapshot")
 
-    base_assets = {
-        item.path[len(RES_PREFIX) :]: item
-        for item in snapshot.files
-        if item.language is None and _is_gui_asset(item.path)
-    }
+    base_assets = _select_gui_assets(snapshot.files, language=None)
     if not base_assets:
         raise PublicationError(
-            "snapshot has no base res/gui assets after exclusions; "
+            "snapshot has no base res/gui or res/<root>/gui assets after exclusions; "
             "refusing an incomplete publication"
         )
     assets = dict(base_assets)
     if layered_publisher:
-        assets.update(
-            {
-                item.path[len(RES_PREFIX) :]: item
-                for item in snapshot.files
-                if item.language == default_locale and _is_gui_asset(item.path)
-            }
-        )
+        assets.update(_select_gui_assets(snapshot.files, language=default_locale))
     locale_assets = (
         {
-            language: {
-                item.path[len(RES_PREFIX) :]: item
-                for item in snapshot.files
-                if item.language == language and _is_gui_asset(item.path)
-            }
+            language: _select_gui_assets(snapshot.files, language=language)
             for language in sorted(
                 {item.language for item in snapshot.files if item.language is not None}
             )
