@@ -664,6 +664,8 @@ def _prestage_large_git_objects(
                 f"publication-staging-{commit_sha[:12]}",
             )
             _run_git(staging_worktree, "read-tree", "--empty")
+        else:
+            _run_git(staging_worktree, "read-tree", staging_base)
         deleted_paths = sorted(set(changed_files) - {blob.path for blob in blobs})
         if deleted_paths:
             _run_git(
