@@ -1,5 +1,7 @@
 # wot-gui-assets • wot-eu • 2.3.1.3 #926
 
+[![wot-eu status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-eu.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-eu)
+
 Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и reusable workflow находятся в ветке [`main`](https://github.com/wotstat/wot-gui-assets/tree/main), а данные каждого клиента — в отдельной региональной ветке.
 
 Скачать только текущую data-ветку без истории:
@@ -34,9 +36,14 @@ git clone --depth 1 --no-single-branch https://github.com/wotstat/wot-gui-assets
 README.md
 .version_name
 .publication.json
-gui/                   # res/gui: base + default locale overlay; всё кроме .py
+gui/                   # res/gui: base + default locale overlay; всё кроме .py и файлов > 100 MiB
+<RESOURCE_ROOT>/gui/   # res/<RESOURCE_ROOT>/gui: произвольный root-prefix + тот же overlay
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
+locales/<LANG>/<RESOURCE_ROOT>/gui/
 ```
+
+`RESOURCE_ROOT` — произвольный первый сегмент пути под `res`, а не имя физического `.pkg`.
+Более глубокие каталоги с именем `gui`, например `res/scripts/client/gui`, в эту проекцию не входят.
 
 
 ## Текущая публикация
@@ -48,3 +55,12 @@ locales/<LANG>/gui/    # все res/gui locale overlays WG, включая defau
 - GameSnapshot: `sha256:218dcc83d09b52174da37ab61bb0cb9c33daa92e6bc4bab01c617987df2cdd2a`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
+
+## Исключённые файлы
+
+Эти файлы не включены в публикацию, потому что их размер превышает 100 MiB:
+
+- `story_mode/gui/flash/videos/intro.usm` — **185,28 MiB**
+- `story_mode/gui/flash/videos/scc_intro.usm` — **151,27 MiB**
+- `story_mode/gui/flash/videos/scc_outro.usm` — **139,57 MiB**
+- `story_mode/gui/flash/videos/d_day.usm` — **103,84 MiB**
