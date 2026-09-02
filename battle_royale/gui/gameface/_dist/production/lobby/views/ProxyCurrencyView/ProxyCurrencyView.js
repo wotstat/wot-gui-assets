@@ -157,13 +157,13 @@
             addPreloadTexture: () => s,
             children: () => r,
             displayStatus: () => o.W,
-            displayStatusIs: () => M,
+            displayStatusIs: () => P,
             events: () => i.U,
             extraSize: () => k,
             forceTriggerMouseMove: () => T,
             freezeTextureBeforeResize: () => E,
             getBrowserTexturePath: () => l,
-            getDisplayStatus: () => P,
+            getDisplayStatus: () => M,
             getScale: () => b,
             getSize: () => _,
             getViewGlobalPosition: () => w,
@@ -239,10 +239,10 @@
         function T() {
           viewEnv.forceTriggerMouseMove();
         }
-        function P() {
+        function M() {
           return viewEnv.getShowingStatus();
         }
-        const M = Object.keys(o.W).reduce(
+        const P = Object.keys(o.W).reduce(
             (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
             {},
           ),
@@ -664,7 +664,7 @@
           };
         var y = n(7572);
         const T = o.instance,
-          P = {
+          M = {
             DataTracker: i.Z,
             ViewModel: y.Z,
             ViewEventType: c,
@@ -753,7 +753,7 @@
             SystemLocale: a,
             UserLocale: s,
           };
-        window.ViewEnvHelper = P;
+        window.ViewEnvHelper = M;
       },
       3266: (e, t, n) => {
         var r = n(6179),
@@ -847,13 +847,13 @@
                 for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                 return o;
               })(e, l);
-            const P = (0, r.useRef)({
+            const M = (0, r.useRef)({
                 timeoutId: 0,
                 isVisible: !1,
                 prevTarget: null,
                 hideTimerId: null,
               }),
-              M = (0, r.useMemo)(
+              P = (0, r.useMemo)(
                 () =>
                   g ||
                   ((e = 1) => {
@@ -873,31 +873,31 @@
                 [g],
               ),
               k = (0, r.useCallback)(() => {
-                (P.current.isVisible && P.current.timeoutId) ||
-                  (u(n, m, { isMouseEvent: !0, on: !0, arguments: d(o) }, M),
+                (M.current.isVisible && M.current.timeoutId) ||
+                  (u(n, m, { isMouseEvent: !0, on: !0, arguments: d(o) }, P),
                   O && O(),
-                  (P.current.isVisible = !0));
-              }, [n, m, o, M, O]),
+                  (M.current.isVisible = !0));
+              }, [n, m, o, P, O]),
               A = (0, r.useCallback)(() => {
-                if (P.current.isVisible || P.current.timeoutId) {
-                  const e = P.current.timeoutId;
-                  (e > 0 && (clearTimeout(e), (P.current.timeoutId = 0)),
-                    u(n, m, { on: !1 }, M),
-                    P.current.isVisible && y && y(),
-                    (P.current.isVisible = !1));
+                if (M.current.isVisible || M.current.timeoutId) {
+                  const e = M.current.timeoutId;
+                  (e > 0 && (clearTimeout(e), (M.current.timeoutId = 0)),
+                    u(n, m, { on: !1 }, P),
+                    M.current.isVisible && y && y(),
+                    (M.current.isVisible = !1));
                 }
-              }, [n, m, M, y]),
+              }, [n, m, P, y]),
               S = (0, r.useCallback)((e) => {
-                P.current.isVisible &&
-                  ((P.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                  (P.current.hideTimerId = window.setTimeout(() => {
+                M.current.isVisible &&
+                  ((M.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+                  (M.current.hideTimerId = window.setTimeout(() => {
                     const t = document.elementFromPoint(e.clientX, e.clientY);
-                    t && !t.isSameNode(P.current.prevTarget) && A();
+                    t && !t.isSameNode(M.current.prevTarget) && A();
                   }, 200)));
               }, []);
             return (
               (0, r.useEffect)(() => {
-                const e = P.current.hideTimerId;
+                const e = M.current.hideTimerId;
                 return (
                   document.addEventListener("wheel", S, { capture: !0 }),
                   () => {
@@ -927,7 +927,7 @@
                           ((C = t.props.onMouseEnter),
                           (e) => {
                             (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                              ((P.current.timeoutId = window.setTimeout(k, v ? 100 : 400)),
+                              ((M.current.timeoutId = window.setTimeout(k, v ? 100 : 400)),
                               i && i(e),
                               C && C(e));
                           }),
@@ -948,12 +948,12 @@
             );
             var C;
           };
-        var v = n(3403);
+        var v = n(3282);
         function w() {
           return !1;
         }
         console.log;
-        var E = n(9174),
+        var E = n(3915),
           b = n(3138);
         function m(e, t) {
           (null == t || t > e.length) && (t = e.length);
@@ -1082,11 +1082,11 @@
                         observableModel: {
                           array: (t, n) => {
                             const r = null != n ? n : s(t),
-                              o = E.LO.box(r, { equals: w });
+                              o = E.observable.box(r, { equals: w });
                             return (
                               "real" === e &&
                                 a.subscribe(
-                                  (0, E.aD)((e) => o.set(e)),
+                                  (0, E.action)((e) => o.set(e)),
                                   t,
                                 ),
                               o
@@ -1094,11 +1094,11 @@
                           },
                           object: (t, n) => {
                             const r = null != n ? n : s(t),
-                              o = E.LO.box(r, { equals: w });
+                              o = E.observable.box(r, { equals: w });
                             return (
                               "real" === e &&
                                 a.subscribe(
-                                  (0, E.aD)((e) => o.set(e)),
+                                  (0, E.action)((e) => o.set(e)),
                                   t,
                                 ),
                               o
@@ -1107,11 +1107,14 @@
                           primitives: (t, n) => {
                             const r = s(n);
                             if (Array.isArray(t)) {
-                              const o = t.reduce((e, t) => ((e[t] = E.LO.box(r[t], {})), e), {});
+                              const o = t.reduce(
+                                (e, t) => ((e[t] = E.observable.box(r[t], {})), e),
+                                {},
+                              );
                               return (
                                 "real" === e &&
                                   a.subscribe(
-                                    (0, E.aD)((e) => {
+                                    (0, E.action)((e) => {
                                       t.forEach((t) => {
                                         o[t].set(e[t]);
                                       });
@@ -1124,11 +1127,14 @@
                             {
                               const o = t,
                                 i = Object.entries(o),
-                                s = i.reduce((e, [t, n]) => ((e[n] = E.LO.box(r[t], {})), e), {});
+                                s = i.reduce(
+                                  (e, [t, n]) => ((e[n] = E.observable.box(r[t], {})), e),
+                                  {},
+                                );
                               return (
                                 "real" === e &&
                                   a.subscribe(
-                                    (0, E.aD)((e) => {
+                                    (0, E.action)((e) => {
                                       i.forEach(([t, n]) => {
                                         s[n].set(e[t]);
                                       });
@@ -1180,7 +1186,7 @@
           })),
           f = p[0],
           g = p[1],
-          O = (0, v.Pi)(() => {
+          O = (0, v.observer)(() => {
             const e = g(),
               t = e.model,
               n = e.controls.click,
@@ -1237,7 +1243,7 @@
     var t = __webpack_module_cache__[e];
     if (void 0 !== t) return t.exports;
     var n = (__webpack_module_cache__[e] = { exports: {} });
-    return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+    return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1288,7 +1294,6 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 708),
     (() => {
       var e = { 708: 0 };
       __webpack_require__.O.j = (t) => 0 === e[t];

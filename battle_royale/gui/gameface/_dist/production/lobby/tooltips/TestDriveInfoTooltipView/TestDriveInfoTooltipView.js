@@ -1166,21 +1166,21 @@
             )
           );
         });
-        var C = t(3403),
+        var C = t(3282),
           B = t(6247),
           _ = t(6490);
         function l() {
           return !1;
         }
         console.log;
-        var d = t(9174);
+        var d = t(3915);
         function v(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
           return r;
         }
         const m = (u) => (0 === u ? window : window.subViews.get(u));
-        var g = t(3946);
+        var g = t(6517);
         const p = ((u, e) => {
             const t = (0, r.createContext)({});
             return [
@@ -1318,10 +1318,10 @@
                               defPrice: u.defPrice.get(),
                               discount: u.discount.get(),
                             }),
-                          r = (0, g.Om)(t(e.rentDrive), { equals: l }),
-                          n = (0, g.Om)(t(e.testDrive), { equals: l }),
-                          E = (0, g.Om)(() => (0, _.b)(e.testDrive.price.get())),
-                          A = (0, g.Om)(() => (0, _.b)(e.rentDrive.price.get()));
+                          r = (0, g.computedFn)(t(e.rentDrive), { equals: l }),
+                          n = (0, g.computedFn)(t(e.testDrive), { equals: l }),
+                          E = (0, g.computedFn)(() => (0, _.b)(e.testDrive.price.get())),
+                          A = (0, g.computedFn)(() => (0, _.b)(e.rentDrive.price.get()));
                         return Object.assign({}, e, {
                           computes: {
                             rentDrivePrice: r,
@@ -1337,11 +1337,11 @@
                         observableModel: {
                           array: (e, t) => {
                             const r = null != t ? t : F(e),
-                              n = d.LO.box(r, { equals: l });
+                              n = d.observable.box(r, { equals: l });
                             return (
                               "real" === u &&
                                 A.subscribe(
-                                  (0, d.aD)((u) => n.set(u)),
+                                  (0, d.action)((u) => n.set(u)),
                                   e,
                                 ),
                               n
@@ -1349,11 +1349,11 @@
                           },
                           object: (e, t) => {
                             const r = null != t ? t : F(e),
-                              n = d.LO.box(r, { equals: l });
+                              n = d.observable.box(r, { equals: l });
                             return (
                               "real" === u &&
                                 A.subscribe(
-                                  (0, d.aD)((u) => n.set(u)),
+                                  (0, d.action)((u) => n.set(u)),
                                   e,
                                 ),
                               n
@@ -1362,11 +1362,14 @@
                           primitives: (e, t) => {
                             const r = F(t);
                             if (Array.isArray(e)) {
-                              const n = e.reduce((u, e) => ((u[e] = d.LO.box(r[e], {})), u), {});
+                              const n = e.reduce(
+                                (u, e) => ((u[e] = d.observable.box(r[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   A.subscribe(
-                                    (0, d.aD)((u) => {
+                                    (0, d.action)((u) => {
                                       e.forEach((e) => {
                                         n[e].set(u[e]);
                                       });
@@ -1379,11 +1382,14 @@
                             {
                               const n = e,
                                 E = Object.entries(n),
-                                F = E.reduce((u, [e, t]) => ((u[t] = d.LO.box(r[e], {})), u), {});
+                                F = E.reduce(
+                                  (u, [e, t]) => ((u[t] = d.observable.box(r[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   A.subscribe(
-                                    (0, d.aD)((u) => {
+                                    (0, d.action)((u) => {
                                       E.forEach(([e, t]) => {
                                         F[t].set(u[e]);
                                       });
@@ -1433,7 +1439,7 @@
           })(0, function () {}),
           b = p[0],
           h = p[1],
-          w = (0, C.Pi)(() => {
+          w = (0, C.observer)(() => {
             const u = h().model,
               e = u.computes,
               t = e.rentDrivePrice,
@@ -1729,7 +1735,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1780,7 +1786,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 539),
     (() => {
       var u = { 539: 0, 335: 0, 56: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

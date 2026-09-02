@@ -2788,7 +2788,7 @@
               d = x().mediaSize;
             (0, r.useEffect)(() => {
               (o.O.view.resize(J[d].width, J[d].height, "rem"),
-                e.changeLayout({ top: 0, right: 0, left: 0 }));
+                e.changeLayout({ top: 0, right: -14, left: 0 }));
             }, [e, d]);
             const c = D - Date.now() / 1e3,
               B = fe(c, 1),

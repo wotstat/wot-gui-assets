@@ -783,7 +783,7 @@
             }
           }, [e, u, t]);
         }
-        var F = t(3403);
+        var F = t(3282);
         let c, d;
         var _;
         (!(function (u) {
@@ -1011,13 +1011,13 @@
               },
               [i, s, E],
             ),
-            L = (0, n.useCallback)(
+            P = (0, n.useCallback)(
               (u) => {
                 A && A(u);
               },
               [A],
             ),
-            P = (0, n.useCallback)(
+            L = (0, n.useCallback)(
               (u) => {
                 i || (c && c(u), v(!1));
               },
@@ -1067,8 +1067,8 @@
                 ref: D,
                 className: I,
                 onMouseEnter: S,
-                onMouseMove: L,
-                onMouseUp: P,
+                onMouseMove: P,
+                onMouseUp: L,
                 onMouseDown: N,
                 onMouseLeave: H,
                 onClick: M,
@@ -1136,7 +1136,7 @@
             return t;
           });
         }
-        const L = (u, e, t = {}, n = 0) => {
+        const P = (u, e, t = {}, n = 0) => {
             viewEnv.handleViewEvent(
               Object.assign(
                 {
@@ -1150,7 +1150,7 @@
               ),
             );
           },
-          P = (u) => {
+          L = (u) => {
             let e = u.children,
               t = u.contentId,
               r = u.args,
@@ -1188,7 +1188,7 @@
               w = (0, n.useMemo)(() => m || D().resId, [m]),
               b = (0, n.useCallback)(() => {
                 (p.current.isVisible && p.current.timeoutId) ||
-                  (L(t, d, { isMouseEvent: !0, on: !0, arguments: S(r) }, w),
+                  (P(t, d, { isMouseEvent: !0, on: !0, arguments: S(r) }, w),
                   h && h(),
                   (p.current.isVisible = !0));
               }, [t, d, r, w, h]),
@@ -1196,7 +1196,7 @@
                 if (p.current.isVisible || p.current.timeoutId) {
                   const u = p.current.timeoutId;
                   (u > 0 && (clearTimeout(u), (p.current.timeoutId = 0)),
-                    L(t, d, { on: !1 }, w),
+                    P(t, d, { on: !1 }, w),
                     p.current.isVisible && g && g(),
                     (p.current.isVisible = !1));
                 }
@@ -1300,7 +1300,7 @@
               return u;
             }, [a, t, o, i, s]);
             return r().createElement(
-              P,
+              L,
               H(
                 {
                   contentId:
@@ -1395,7 +1395,7 @@
                 a.type !== j.absent && "DialogTemplateButton_label__noTooltip_14",
               );
             return r().createElement(
-              P,
+              L,
               c,
               r().createElement(
                 "div",
@@ -1881,14 +1881,14 @@
           return !1;
         }
         console.log;
-        var Au = t(9174);
+        var Au = t(3915);
         function Fu(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var t = 0, n = new Array(e); t < e; t++) n[t] = u[t];
           return n;
         }
         const cu = (u) => (0 === u ? window : window.subViews.get(u));
-        var du = t(3946);
+        var du = t(6517);
         const _u = ((u, e) => {
             const t = (0, n.createContext)({});
             return [
@@ -2008,7 +2008,7 @@
                             displayFlags: u.array("displayFlags", []),
                             buttons: u.array("buttons", []),
                           },
-                          t = (0, du.Om)(() => {
+                          t = (0, du.computedFn)(() => {
                             return (
                               (u = e.displayFlags.get()),
                               (t = (u) => u),
@@ -2026,11 +2026,11 @@
                         observableModel: {
                           array: (e, t) => {
                             const n = null != t ? t : s(e),
-                              r = Au.LO.box(n, { equals: Eu });
+                              r = Au.observable.box(n, { equals: Eu });
                             return (
                               "real" === u &&
                                 i.subscribe(
-                                  (0, Au.aD)((u) => r.set(u)),
+                                  (0, Au.action)((u) => r.set(u)),
                                   e,
                                 ),
                               r
@@ -2038,11 +2038,11 @@
                           },
                           object: (e, t) => {
                             const n = null != t ? t : s(e),
-                              r = Au.LO.box(n, { equals: Eu });
+                              r = Au.observable.box(n, { equals: Eu });
                             return (
                               "real" === u &&
                                 i.subscribe(
-                                  (0, Au.aD)((u) => r.set(u)),
+                                  (0, Au.action)((u) => r.set(u)),
                                   e,
                                 ),
                               r
@@ -2051,11 +2051,14 @@
                           primitives: (e, t) => {
                             const n = s(t);
                             if (Array.isArray(e)) {
-                              const r = e.reduce((u, e) => ((u[e] = Au.LO.box(n[e], {})), u), {});
+                              const r = e.reduce(
+                                (u, e) => ((u[e] = Au.observable.box(n[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   i.subscribe(
-                                    (0, Au.aD)((u) => {
+                                    (0, Au.action)((u) => {
                                       e.forEach((e) => {
                                         r[e].set(u[e]);
                                       });
@@ -2068,11 +2071,14 @@
                             {
                               const r = e,
                                 o = Object.entries(r),
-                                a = o.reduce((u, [e, t]) => ((u[t] = Au.LO.box(n[e], {})), u), {});
+                                a = o.reduce(
+                                  (u, [e, t]) => ((u[t] = Au.observable.box(n[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   i.subscribe(
-                                    (0, Au.aD)((u) => {
+                                    (0, Au.action)((u) => {
                                       o.forEach(([e, t]) => {
                                         a[t].set(u[e]);
                                       });
@@ -2146,7 +2152,7 @@
               { className: "Title_base_de" },
               R.strings.battle_royale_progression.leaveBattleView.title(),
             ),
-          hu = (0, F.Pi)(() => {
+          hu = (0, F.observer)(() => {
             const u = Bu(),
               e = u.controls,
               t = u.model;
@@ -2180,7 +2186,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -2231,7 +2237,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 67),
     (() => {
       var u = { 67: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

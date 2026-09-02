@@ -1255,8 +1255,8 @@
           };
         var P = t(493),
           O = t.n(P);
-        let N, H, I, G, U, W, X, j, q;
-        function V(u) {
+        let N, H, I, G, W, U, X, j, q;
+        function z(u) {
           engine.call("PlaySound", u);
         }
         (!(function (u) {
@@ -1322,7 +1322,14 @@
             (u.DogTagType = "dogTagComponents"),
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
-            (u.RewardsSlots = "rewardsSlots"));
+            (u.RewardsSlots = "rewardsSlots"),
+            (u.WtStamp = "stamp"),
+            (u.WtHunter = "wt_hunter"),
+            (u.WtBoss = "wt_boss"),
+            (u.WtHunterCollection = "hunter_collection"),
+            (u.WtTicket = "wtevent_ticket"),
+            (u.WtMainPrizeDiscount = "main_prize_discount"),
+            (u.WtTicket25 = "wtevent_ticket25"));
         })(N || (N = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1397,10 +1404,10 @@
               (u.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
               (u.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
               (u.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"));
-          })(U || (U = {})),
+          })(W || (W = {})),
           (function (u) {
             u.BATTLE_BOOSTER = "battleBooster";
-          })(W || (W = {})),
+          })(U || (U = {})),
           (function (u) {
             ((u.BATTLE_BOOSTER = "battleBooster"),
               (u.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
@@ -1422,7 +1429,7 @@
           (function (u) {
             u.ProgressionStyle = "progressionStyle";
           })(q || (q = {})));
-        const Y = {
+        const V = {
             base: "TextButton_base_b6",
             base__right: "TextButton_base__right_39",
             icon: "TextButton_icon_17",
@@ -1440,7 +1447,7 @@
             base__left: "TextButton_base__left_ff",
             shine: "TextButton_shine_e2",
           },
-          z = [
+          Y = [
             "caption",
             "onClick",
             "goto",
@@ -1475,7 +1482,7 @@
               (this._onMouseEnter = (u) => (e) => {
                 (u && u(e),
                   this.setState({ hover: !0 }),
-                  this.props.soundHover && V(this.props.soundHover));
+                  this.props.soundHover && z(this.props.soundHover));
               }),
               (this._onMouseLeave = (u) => (e) => {
                 (u && u(e), this.setState({ hover: !1, click: !1 }));
@@ -1483,7 +1490,7 @@
               (this._onMouseDown = (u) => (e) => {
                 (u && u(e),
                   this.setState({ click: !0 }),
-                  this.props.soundClick && V(this.props.soundClick));
+                  this.props.soundClick && z(this.props.soundClick));
               }),
               (this._onMouseUp = (u) => (e) => {
                 (u && u(e), this.setState({ click: !1 }));
@@ -1514,12 +1521,12 @@
                     a = Object.keys(u);
                   for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                   return n;
-                })(u, z)),
-              A = C()(Y.base, Y[`base__${o}`], Y[`base__${a}`], null == i ? void 0 : i.base),
-              F = C()(Y.icon, Y[`icon__${o}`], Y[`icon__${a}`], null == i ? void 0 : i.icon),
-              D = C()(Y.glow, null == i ? void 0 : i.glow),
-              m = C()(Y.caption, Y[`caption__${o}`], null == i ? void 0 : i.caption),
-              d = C()(Y.goto, null == i ? void 0 : i.goto);
+                })(u, Y)),
+              A = C()(V.base, V[`base__${o}`], V[`base__${a}`], null == i ? void 0 : i.base),
+              F = C()(V.icon, V[`icon__${o}`], V[`icon__${a}`], null == i ? void 0 : i.icon),
+              D = C()(V.glow, null == i ? void 0 : i.glow),
+              m = C()(V.caption, V[`caption__${o}`], null == i ? void 0 : i.caption),
+              d = C()(V.goto, null == i ? void 0 : i.goto);
             return n().createElement(
               "div",
               K(
@@ -1535,7 +1542,7 @@
                 },
                 c,
               ),
-              "info" !== o && n().createElement("div", { className: Y.shine }),
+              "info" !== o && n().createElement("div", { className: V.shine }),
               n().createElement(
                 "div",
                 { className: F },
@@ -2060,11 +2067,11 @@
                   computedClassNames: e,
                 };
               }, [t, a, s, E, c, F, N, O, y, B, M, x, S]),
-              U = G.computedStyle,
-              W = G.computedClassNames;
+              W = G.computedStyle,
+              U = G.computedClassNames;
             return n().createElement(
               "div",
-              hu({ className: C()(Cu.base, ...W, e), style: U }, I),
+              hu({ className: C()(Cu.base, ...U, e), style: W }, I),
               H,
             );
           });
@@ -2224,8 +2231,8 @@
         const Hu = Object.keys(Ru()),
           Iu = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
           Gu = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
-          Uu = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
-          Wu =
+          Wu = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
+          Uu =
             (Object.keys({
               XL: { mt: "XL", mr: "XL", mb: "XL", ml: "XL" },
               LG: { mt: "LG", mr: "LG", mb: "LG", ml: "LG" },
@@ -2246,17 +2253,17 @@
               "heading-H22": Gu,
               "heading-H20R": Gu,
               "heading-H18": Gu,
-              "heading-H15": Uu,
-              "heading-H14": Uu,
+              "heading-H15": Wu,
+              "heading-H14": Wu,
               "paragraph-P24": Gu,
               "paragraph-P18": Gu,
               "paragraph-P16": Gu,
-              "paragraph-P14": Uu,
-              "paragraph-P12": Uu,
-              "paragraph-P10": Uu,
+              "paragraph-P14": Wu,
+              "paragraph-P12": Wu,
+              "paragraph-P10": Wu,
             }),
           Xu =
-            (Object.keys(Wu),
+            (Object.keys(Uu),
             (u) =>
               u
                 ? ((u) => Hu.includes(u))(u)
@@ -2303,10 +2310,10 @@
                 {
                   className: C()(Pu.base, t && Pu[t], p, a),
                   style: h,
-                  mt: !0 === l ? Wu[t || "paragraph-P16"].mt : l,
-                  mr: !0 === _ ? Wu[t || "paragraph-P16"].mr : _,
-                  mb: !0 === A ? Wu[t || "paragraph-P16"].mb : A,
-                  ml: !0 === D ? Wu[t || "paragraph-P16"].ml : D,
+                  mt: !0 === l ? Uu[t || "paragraph-P16"].mt : l,
+                  mr: !0 === _ ? Uu[t || "paragraph-P16"].mr : _,
+                  mb: !0 === A ? Uu[t || "paragraph-P16"].mb : A,
+                  ml: !0 === D ? Uu[t || "paragraph-P16"].ml : D,
                 },
                 B,
               ),
@@ -2314,7 +2321,7 @@
             );
           }),
           qu = R.strings.armory_yard.purchaseStage.buyTokens.description,
-          Vu = (0, r.memo)(() =>
+          zu = (0, r.memo)(() =>
             n().createElement(
               "div",
               { className: "Description_base_b8" },
@@ -2322,7 +2329,7 @@
               n().createElement(ju, { className: "Description_description_be", text: qu.body() }),
             ),
           ),
-          Yu = {
+          Vu = {
             base: "CButton_base_40",
             base__main: "CButton_base__main_42",
             base__primary: "CButton_base__primary_7f",
@@ -2345,7 +2352,7 @@
             base__highlightActive: "CButton_base__highlightActive_b2",
             content: "CButton_content_cc",
           };
-        let zu, Ku;
+        let Yu, Ku;
         (!(function (u) {
           ((u.main = "main"),
             (u.primary = "primary"),
@@ -2353,7 +2360,7 @@
             (u.primaryRed = "primaryRed"),
             (u.secondary = "secondary"),
             (u.ghost = "ghost"));
-        })(zu || (zu = {})),
+        })(Yu || (Yu = {})),
           (function (u) {
             ((u.extraSmall = "extraSmall"), (u.small = "small"), (u.medium = "medium"));
           })(Ku || (Ku = {})));
@@ -2400,7 +2407,7 @@
             ),
             T = (0, r.useCallback)(
               (u) => {
-                o || (null !== s && V(s), E && E(u), x(!0));
+                o || (null !== s && z(s), E && E(u), x(!0));
               },
               [o, s, E],
             ),
@@ -2418,7 +2425,7 @@
             ),
             k = (0, r.useCallback)(
               (u) => {
-                o || (null !== l && V(l), c && c(u), t && w(), v(!0));
+                o || (null !== l && z(l), c && c(u), t && w(), v(!0));
               },
               [o, l, c, w, t],
             ),
@@ -2429,18 +2436,18 @@
               [o, F],
             ),
             O = C()(
-              Yu.base,
-              Yu[`base__${a}`],
+              Vu.base,
+              Vu[`base__${a}`],
               {
-                [Yu.base__disabled]: o,
-                [Yu[`base__${e}`]]: e,
-                [Yu.base__focus]: B,
-                [Yu.base__highlightActive]: p,
-                [Yu.base__firstHover]: f,
+                [Vu.base__disabled]: o,
+                [Vu[`base__${e}`]]: e,
+                [Vu.base__focus]: B,
+                [Vu.base__highlightActive]: p,
+                [Vu.base__firstHover]: f,
               },
               i,
             ),
-            N = C()(Yu.state, Yu.state__default);
+            N = C()(Vu.state, Vu.state__default);
           return (
             (0, r.useEffect)(
               () => (
@@ -2466,30 +2473,30 @@
                 onMouseLeave: P,
                 onClick: y,
               },
-              a !== zu.ghost &&
+              a !== Yu.ghost &&
                 n().createElement(
                   n().Fragment,
                   null,
-                  n().createElement("div", { className: Yu.back }),
-                  n().createElement("span", { className: Yu.texture }),
+                  n().createElement("div", { className: Vu.back }),
+                  n().createElement("span", { className: Vu.texture }),
                 ),
               n().createElement(
                 "span",
                 { className: N },
-                n().createElement("span", { className: Yu.stateDisabled }),
-                n().createElement("span", { className: Yu.stateHighlightHover }),
-                n().createElement("span", { className: Yu.stateHighlightActive }),
+                n().createElement("span", { className: Vu.stateDisabled }),
+                n().createElement("span", { className: Vu.stateHighlightHover }),
+                n().createElement("span", { className: Vu.stateHighlightActive }),
               ),
               n().createElement(
                 "span",
-                { className: Yu.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                { className: Vu.content, lang: R.strings.settings.LANGUAGE_CODE() },
                 u,
               ),
             )
           );
         };
         $u.defaultProps = {
-          type: zu.primary,
+          type: Yu.primary,
           isFocused: !1,
           soundHover: "highlight",
           soundClick: "play",
@@ -2881,7 +2888,7 @@
           me = "TokensStepper_btn__scaled_9a",
           de = "play",
           Be = /\d+/,
-          Ce = () => V("highlight"),
+          Ce = () => z("highlight"),
           ge = ({
             value: u,
             minValue: e,
@@ -2991,7 +2998,7 @@
                   ),
                   onMouseEnter: Ce,
                   onClick: () => {
-                    _ && (V(de), l());
+                    _ && (z(de), l());
                   },
                 }),
                 n().createElement("div", {
@@ -3004,7 +3011,7 @@
                   ),
                   onMouseEnter: Ce,
                   onClick: () => {
-                    c && (V(de), E());
+                    c && (z(de), E());
                   },
                 }),
               ),
@@ -3034,10 +3041,10 @@
               {
                 className: pe.base,
                 onClick: () => {
-                  (e(u), i(!1), V("play"));
+                  (e(u), i(!1), z("play"));
                 },
                 onMouseEnter: () => {
-                  t || (i(!0), V("highlight"));
+                  t || (i(!0), z("highlight"));
                 },
                 onMouseLeave: () => {
                   t || i(!1);
@@ -3186,7 +3193,7 @@
                     n().createElement(
                       Qu,
                       {
-                        type: zu.main,
+                        type: Yu.main,
                         mixClass: "Footer_buyButton_d2",
                         onClick: () => i(l, f),
                         disabled: !b,
@@ -3300,7 +3307,7 @@
                   n().createElement(
                     "div",
                     { className: "App_description_ab" },
-                    n().createElement(Vu, null),
+                    n().createElement(zu, null),
                   ),
                   n().createElement("div", { className: "App_tokenImage_13" }),
                 ),

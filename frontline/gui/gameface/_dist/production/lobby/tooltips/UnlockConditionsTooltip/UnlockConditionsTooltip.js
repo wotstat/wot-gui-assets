@@ -71,7 +71,7 @@
             getScale: () => H,
             getSize: () => L,
             getViewGlobalPosition: () => y,
-            isClientAccessible: () => j,
+            isClientAccessible: () => N,
             isEventHandled: () => X,
             isFocused: () => G,
             pxToRem: () => O,
@@ -79,7 +79,7 @@
             resize: () => M,
             sendEvent: () => f,
             setAnimateWindow: () => W,
-            setEventHandled: () => N,
+            setEventHandled: () => j,
             setInputPaddingsRem: () => v,
             setSidePaddingsRem: () => S,
             whenTutorialReady: () => V,
@@ -290,10 +290,10 @@
         function G() {
           return viewEnv.isFocused();
         }
-        function j() {
+        function N() {
           return viewEnv.isClientAccessible();
         }
-        function N() {
+        function j() {
           return viewEnv.setEventHandled();
         }
         function X() {
@@ -907,11 +907,11 @@
                   computedClassNames: e,
                 };
               }, [t, A, r, a, i, l, O, H, w, d, M, p, b]),
-              j = G.computedStyle,
-              N = G.computedClassNames;
+              N = G.computedStyle,
+              j = G.computedClassNames;
             return Y().createElement(
               "div",
-              vu({ className: n()(fu.base, ...N, e), style: j }, W),
+              vu({ className: n()(fu.base, ...j, e), style: N }, W),
               P,
             );
           });
@@ -996,7 +996,7 @@
                 );
         var Wu = t(3532),
           Gu = t.n(Wu);
-        const ju = {
+        const Nu = {
             "paragraph-P10": "Text_paragraph-P10_2c",
             "paragraph-P12": "Text_paragraph-P12_22",
             "paragraph-P14": "Text_paragraph-P14_a7",
@@ -1040,7 +1040,7 @@
             BOND: "Text_BOND_be",
             PROM: "Text_PROM_65",
           },
-          Nu = [
+          ju = [
             "text",
             "variant",
             "className",
@@ -1107,7 +1107,7 @@
             (u) =>
               u
                 ? ((u) => Iu.includes(u))(u)
-                  ? { colorClassName: ju[u] }
+                  ? { colorClassName: Nu[u] }
                   : { colorStyle: { color: u } }
                 : {}),
           Ku = xu((u) => {
@@ -1134,7 +1134,7 @@
                   E = Object.keys(u);
                 for (A = 0; A < E.length; A++) ((t = E[A]), e.indexOf(t) >= 0 || (F[t] = u[t]));
                 return F;
-              })(u, Nu);
+              })(u, ju);
             const c = (0, K.useMemo)(() => {
                 const u = Uu(F),
                   e = u.colorClassName,
@@ -1148,7 +1148,7 @@
               Lu,
               Xu(
                 {
-                  className: n()(ju.base, t && ju[t], _, A),
+                  className: n()(Nu.base, t && Nu[t], _, A),
                   style: g,
                   mt: !0 === D ? Vu[t || "paragraph-P16"].mt : D,
                   mr: !0 === B ? Vu[t || "paragraph-P16"].mr : B,
@@ -1160,12 +1160,12 @@
               void 0 !== s ? Y().createElement(Pu, Xu({}, s, { text: e })) : e,
             );
           });
-        var Yu = t(3403);
+        var Yu = t(3282);
         function qu() {
           return !1;
         }
         console.log;
-        var Qu = t(9174);
+        var Qu = t(3915);
         function Zu(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var t = 0, A = new Array(e); t < e; t++) A[t] = u[t];
@@ -1296,11 +1296,11 @@
                         observableModel: {
                           array: (e, t) => {
                             const A = null != t ? t : D(e),
-                              F = Qu.LO.box(A, { equals: qu });
+                              F = Qu.observable.box(A, { equals: qu });
                             return (
                               "real" === u &&
                                 r.subscribe(
-                                  (0, Qu.aD)((u) => F.set(u)),
+                                  (0, Qu.action)((u) => F.set(u)),
                                   e,
                                 ),
                               F
@@ -1308,11 +1308,11 @@
                           },
                           object: (e, t) => {
                             const A = null != t ? t : D(e),
-                              F = Qu.LO.box(A, { equals: qu });
+                              F = Qu.observable.box(A, { equals: qu });
                             return (
                               "real" === u &&
                                 r.subscribe(
-                                  (0, Qu.aD)((u) => F.set(u)),
+                                  (0, Qu.action)((u) => F.set(u)),
                                   e,
                                 ),
                               F
@@ -1321,11 +1321,14 @@
                           primitives: (e, t) => {
                             const A = D(t);
                             if (Array.isArray(e)) {
-                              const F = e.reduce((u, e) => ((u[e] = Qu.LO.box(A[e], {})), u), {});
+                              const F = e.reduce(
+                                (u, e) => ((u[e] = Qu.observable.box(A[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   r.subscribe(
-                                    (0, Qu.aD)((u) => {
+                                    (0, Qu.action)((u) => {
                                       e.forEach((e) => {
                                         F[e].set(u[e]);
                                       });
@@ -1338,11 +1341,14 @@
                             {
                               const F = e,
                                 E = Object.entries(F),
-                                D = E.reduce((u, [e, t]) => ((u[t] = Qu.LO.box(A[e], {})), u), {});
+                                D = E.reduce(
+                                  (u, [e, t]) => ((u[t] = Qu.observable.box(A[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   r.subscribe(
-                                    (0, Qu.aD)((u) => {
+                                    (0, Qu.action)((u) => {
                                       E.forEach(([e, t]) => {
                                         D[t].set(u[e]);
                                       });
@@ -1393,7 +1399,7 @@
           ee = ue[0],
           te = ue[1],
           Ae = R.strings.fl_supply_objects.tooltip,
-          Fe = (0, Yu.Pi)(() => {
+          Fe = (0, Yu.observer)(() => {
             const u = te().model.root.get().object;
             return Y().createElement(
               "div",
@@ -1424,7 +1430,7 @@
     var F = t[u];
     if (void 0 !== F) return F.exports;
     var E = (t[u] = { exports: {} });
-    return (e[u](E, E.exports, A), E.exports);
+    return (e[u].call(E.exports, E, E.exports, A), E.exports);
   }
   ((A.m = e),
     (u = []),
@@ -1471,7 +1477,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (A.j = 294),
     (() => {
       var u = { 294: 0 };
       A.O.j = (e) => 0 === u[e];

@@ -877,7 +877,14 @@
             (u.DogTagType = "dogTagComponents"),
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
-            (u.RewardsSlots = "rewardsSlots"));
+            (u.RewardsSlots = "rewardsSlots"),
+            (u.WtStamp = "stamp"),
+            (u.WtHunter = "wt_hunter"),
+            (u.WtBoss = "wt_boss"),
+            (u.WtHunterCollection = "hunter_collection"),
+            (u.WtTicket = "wtevent_ticket"),
+            (u.WtMainPrizeDiscount = "main_prize_discount"),
+            (u.WtTicket25 = "wtevent_ticket25"));
         })(s || (s = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1326,6 +1333,11 @@
             s.PremiumPlusUniversal,
             s.GoldenTicket,
             s.RewardsSlots,
+            s.WtStamp,
+            s.WtTicket,
+            s.WtMainPrizeDiscount,
+            s.WtHunter,
+            s.WtHunterCollection,
           ],
           L = [s.Gold, s.Credits, s.Crystal, s.FreeXp],
           N = [s.BattlePassPoints],
@@ -1669,8 +1681,8 @@
               ? u
               : null
             : u;
-        var V = t(3138);
-        const z = {
+        var z = t(3138);
+        const V = {
           extraLarge: { weight: 4, width: 2560, height: 1440 },
           large: { weight: 3, width: 1920, height: 1080 },
           medium: { weight: 2, width: 1600, height: 900 },
@@ -1743,10 +1755,10 @@
             (u.smallHeight = "smallHeight"),
             (u.extraSmallHeight = "extraSmallHeight"));
         })(K || (K = {}));
-        const Z = V.O.client.getSize("rem"),
+        const Z = z.O.client.getSize("rem"),
           J = Z.width,
           uu = Z.height,
-          eu = Object.assign({ width: J, height: uu }, Q(J, uu, z)),
+          eu = Object.assign({ width: J, height: uu }, Q(J, uu, V)),
           tu = (0, r.createContext)(eu),
           ru = ["children"],
           nu = (u) => {
@@ -1830,9 +1842,9 @@
             a = t[0],
             i = t[1],
             s = (0, r.useCallback)((u, e) => {
-              const t = V.O.view.pxToRem(u),
-                r = V.O.view.pxToRem(e);
-              i(Object.assign({ width: t, height: r }, Q(t, r, z)));
+              const t = z.O.view.pxToRem(u),
+                r = z.O.view.pxToRem(e);
+              i(Object.assign({ width: t, height: r }, Q(t, r, V)));
             }, []);
           (((u) => {
             const e = (0, r.useRef)(!1);
@@ -1845,25 +1857,25 @@
           return n().createElement(tu.Provider, { value: o }, u);
         }),
           (function (u) {
-            ((u[(u.ExtraSmall = z.extraSmall.width)] = "ExtraSmall"),
-              (u[(u.Small = z.small.width)] = "Small"),
-              (u[(u.Medium = z.medium.width)] = "Medium"),
-              (u[(u.Large = z.large.width)] = "Large"),
-              (u[(u.ExtraLarge = z.extraLarge.width)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = V.extraSmall.width)] = "ExtraSmall"),
+              (u[(u.Small = V.small.width)] = "Small"),
+              (u[(u.Medium = V.medium.width)] = "Medium"),
+              (u[(u.Large = V.large.width)] = "Large"),
+              (u[(u.ExtraLarge = V.extraLarge.width)] = "ExtraLarge"));
           })(au || (au = {})),
           (function (u) {
-            ((u[(u.ExtraSmall = z.extraSmall.width)] = "ExtraSmall"),
-              (u[(u.Small = z.small.width)] = "Small"),
-              (u[(u.Medium = z.medium.width)] = "Medium"),
-              (u[(u.Large = z.large.width)] = "Large"),
-              (u[(u.ExtraLarge = z.extraLarge.width)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = V.extraSmall.width)] = "ExtraSmall"),
+              (u[(u.Small = V.small.width)] = "Small"),
+              (u[(u.Medium = V.medium.width)] = "Medium"),
+              (u[(u.Large = V.large.width)] = "Large"),
+              (u[(u.ExtraLarge = V.extraLarge.width)] = "ExtraLarge"));
           })(iu || (iu = {})),
           (function (u) {
-            ((u[(u.ExtraSmall = z.extraSmall.height)] = "ExtraSmall"),
-              (u[(u.Small = z.small.height)] = "Small"),
-              (u[(u.Medium = z.medium.height)] = "Medium"),
-              (u[(u.Large = z.large.height)] = "Large"),
-              (u[(u.ExtraLarge = z.extraLarge.height)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = V.extraSmall.height)] = "ExtraSmall"),
+              (u[(u.Small = V.small.height)] = "Small"),
+              (u[(u.Medium = V.medium.height)] = "Medium"),
+              (u[(u.Large = V.large.height)] = "Large"),
+              (u[(u.ExtraLarge = V.extraLarge.height)] = "ExtraLarge"));
           })(su || (su = {})));
         const ou = ["xl", "lg", "md", "sm", "xs"],
           Eu = (u) => u.includes("_") && ((u) => ou.includes(u))(u.split("_").at(-1)),
@@ -2458,7 +2470,7 @@
                         return {
                           subscribe: (t, a) => {
                             const s = "string" == typeof a ? `${r}.${a}` : r,
-                              o = V.O.view.addModelObserver(s, e, !0);
+                              o = z.O.view.addModelObserver(s, e, !0);
                             return (n.set(o, t), u && t(i(a)), o);
                           },
                           readByPath: i,
@@ -2651,8 +2663,8 @@
             ];
           })(0, function () {}),
           $u = qu[0],
-          Vu = qu[1],
-          zu = {
+          zu = qu[1],
+          Vu = {
             base: "App_base_c0",
             slotWrapper: "App_slotWrapper_04",
             title: "App_title_c3",
@@ -2695,17 +2707,17 @@
         })(Ku || (Ku = {}));
         const Zu = R.strings.cosmicEvent.cosmicLootboxTooltipExtended,
           Ju = (0, Uu.observer)(() => {
-            const u = Vu().model,
+            const u = zu().model,
               e = u.computes.getLootboxSlots(),
               t = u.root.get().lootboxName;
             return n().createElement(
               "div",
-              { className: zu.base },
+              { className: Vu.base },
               n().createElement(Iu, {
                 text: R.strings.lootboxes.userName.$dyn(t),
-                className: zu.title,
+                className: Vu.title,
               }),
-              n().createElement(Iu, { text: Zu.slotTitle(), className: zu.slotTitle }),
+              n().createElement(Iu, { text: Zu.slotTitle(), className: Vu.slotTitle }),
               e.map(
                 (
                   { description: u, bonuses: t, probability: r, vehicleNames: a, slotType: i },
@@ -2740,45 +2752,45 @@
                     D = 0 !== s;
                   return n().createElement(
                     "div",
-                    { className: zu.slotWrapper, key: s },
-                    D && n().createElement("div", { className: zu.separator }),
+                    { className: Vu.slotWrapper, key: s },
+                    D && n().createElement("div", { className: Vu.separator }),
                     n().createElement(
                       "div",
-                      { key: s, className: zu.row },
+                      { key: s, className: Vu.row },
                       n().createElement(
                         "div",
-                        { className: zu.probabilityTitleWrapper },
-                        n().createElement(Iu, { text: u, className: zu.probabilityTitle }),
+                        { className: Vu.probabilityTitleWrapper },
+                        n().createElement(Iu, { text: u, className: Vu.probabilityTitle }),
                         n().createElement(Iu, {
                           text: Zu.percentage(),
                           format: { binding: { percent: r } },
-                          className: zu.probabilityValue,
+                          className: Vu.probabilityValue,
                         }),
                       ),
                       Boolean(a.length) &&
                         n().createElement(
                           "div",
-                          { className: zu.specialSlotWrapper },
-                          n().createElement("div", { className: zu.vehicleImg }),
-                          n().createElement("div", { className: zu.glow }),
-                          n().createElement(Iu, { text: a.join(", "), className: zu.vehicleNames }),
+                          { className: Vu.specialSlotWrapper },
+                          n().createElement("div", { className: Vu.vehicleImg }),
+                          n().createElement("div", { className: Vu.glow }),
+                          n().createElement(Iu, { text: a.join(", "), className: Vu.vehicleNames }),
                         ),
                       n().createElement(
                         "div",
-                        { className: B()(zu.rewardsWrapper, c && zu.lastElementWrapper) },
+                        { className: B()(Vu.rewardsWrapper, c && Vu.lastElementWrapper) },
                         A.map((u, e) => {
                           const t = e === A.length - 1;
                           return n().createElement(
                             "div",
-                            { className: zu.rewardItemWrapper, key: e },
-                            t && !c && n().createElement("div", { className: zu.rewardGlow }),
-                            n().createElement(j, Qu({ size: E.Small, className: zu.reward }, u)),
+                            { className: Vu.rewardItemWrapper, key: e },
+                            t && !c && n().createElement("div", { className: Vu.rewardGlow }),
+                            n().createElement(j, Qu({ size: E.Small, className: Vu.reward }, u)),
                           );
                         }),
                         i === Ku.LootBox &&
                           n().createElement(Iu, {
                             text: Zu.rewardExtraText(),
-                            className: zu.rewardsExtraText,
+                            className: Vu.rewardsExtraText,
                           }),
                       ),
                     ),
@@ -2859,9 +2871,9 @@
                 if (!u) return;
                 const e = u.scrollWidth,
                   t = u.scrollHeight;
-                V.O.view.resize(e, t);
+                z.O.view.resize(e, t);
                 const r = window.getComputedStyle(u);
-                V.O.view.setSidePaddingsRem({
+                z.O.view.setSidePaddingsRem({
                   left: parseInt(r.getPropertyValue("padding-left"), 10),
                   top: parseInt(r.getPropertyValue("padding-top"), 10),
                   right: parseInt(r.getPropertyValue("padding-right"), 10),

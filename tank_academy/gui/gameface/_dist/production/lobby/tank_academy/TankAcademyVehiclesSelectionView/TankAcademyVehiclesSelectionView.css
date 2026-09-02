@@ -1120,7 +1120,6 @@
   transition: none;
   animation: TabItem_is-new-glow-rotate_24 20s linear infinite;
   pointer-events: none;
-  backface-visibility: hidden;
 }
 .mediaMedium .TabItem_isNew_4a {
   width: 144rem;
@@ -1133,8 +1132,7 @@
   transition-delay: 0.3s;
 }
 .TabItem_isNew__big__selected_f7 {
-  opacity: 0;
-  transition: none;
+  background: none;
 }
 .TabItem_isNewCounter_37 {
   width: 24rem;

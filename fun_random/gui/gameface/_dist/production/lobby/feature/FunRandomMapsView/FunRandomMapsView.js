@@ -241,7 +241,7 @@
             setEventHandled: () => h,
             setInputPaddingsRem: () => s,
             setSidePaddingsRem: () => E,
-            whenTutorialReady: () => S,
+            whenTutorialReady: () => x,
           }));
         var r = t(3722),
           n = t(6112),
@@ -317,7 +317,7 @@
               viewEnv.getExtraSizeRem(u, e);
             },
           },
-          S = Promise.all([
+          x = Promise.all([
             new Promise((u) => {
               window.isDomBuilt ? u() : a.U.onDomBuilt(u);
             }),
@@ -838,9 +838,9 @@
         var n = {};
         (t.r(n),
           t.d(n, {
-            Area: () => xe,
+            Area: () => Se,
             Bar: () => we,
-            Default: () => Se,
+            Default: () => xe,
             useVerticalScrollApi: () => Be,
           }));
         var a = t(6179),
@@ -1039,7 +1039,7 @@
           f = t.n(h),
           v = t(926),
           b = t.n(v);
-        let w, M, S;
+        let w, M, x;
         (!(function (u) {
           ((u[(u.ExtraSmall = E.extraSmall.width)] = "ExtraSmall"),
             (u[(u.Small = E.small.width)] = "Small"),
@@ -1060,8 +1060,8 @@
               (u[(u.Medium = E.medium.height)] = "Medium"),
               (u[(u.Large = E.large.height)] = "Large"),
               (u[(u.ExtraLarge = E.extraLarge.height)] = "ExtraLarge"));
-          })(S || (S = {})));
-        const x = () => {
+          })(x || (x = {})));
+        const S = () => {
             const u = (0, a.useContext)(B),
               e = u.width,
               t = u.height,
@@ -1100,17 +1100,17 @@
               o = ((u) => {
                 switch (!0) {
                   case u.extraLargeHeight:
-                    return S.ExtraLarge;
+                    return x.ExtraLarge;
                   case u.largeHeight:
-                    return S.Large;
+                    return x.Large;
                   case u.mediumHeight:
-                    return S.Medium;
+                    return x.Medium;
                   case u.smallHeight:
-                    return S.Small;
+                    return x.Small;
                   case u.extraSmallHeight:
-                    return S.ExtraSmall;
+                    return x.ExtraSmall;
                   default:
-                    return (console.error("Unreachable media context resolution"), S.ExtraSmall);
+                    return (console.error("Unreachable media context resolution"), x.ExtraSmall);
                 }
               })(u);
             return {
@@ -1144,20 +1144,20 @@
             [M.ExtraLarge]: `${b().SMALL_WIDTH} ${b().MEDIUM_WIDTH} ${b().LARGE_WIDTH} ${b().EXTRA_LARGE_WIDTH}`,
           },
           N = {
-            [S.ExtraSmall]: "",
-            [S.Small]: b().SMALL_HEIGHT,
-            [S.Medium]: `${b().SMALL_HEIGHT} ${b().MEDIUM_HEIGHT}`,
-            [S.Large]: `${b().SMALL_HEIGHT} ${b().MEDIUM_HEIGHT} ${b().LARGE_HEIGHT}`,
-            [S.ExtraLarge]: `${b().SMALL_HEIGHT} ${b().MEDIUM_HEIGHT} ${b().LARGE_HEIGHT} ${b().EXTRA_LARGE_HEIGHT}`,
+            [x.ExtraSmall]: "",
+            [x.Small]: b().SMALL_HEIGHT,
+            [x.Medium]: `${b().SMALL_HEIGHT} ${b().MEDIUM_HEIGHT}`,
+            [x.Large]: `${b().SMALL_HEIGHT} ${b().MEDIUM_HEIGHT} ${b().LARGE_HEIGHT}`,
+            [x.ExtraLarge]: `${b().SMALL_HEIGHT} ${b().MEDIUM_HEIGHT} ${b().LARGE_HEIGHT} ${b().EXTRA_LARGE_HEIGHT}`,
           },
-          O = {
+          k = {
             [w.ExtraSmall]: "",
             [w.Small]: b().SMALL,
             [w.Medium]: `${b().SMALL} ${b().MEDIUM}`,
             [w.Large]: `${b().SMALL} ${b().MEDIUM} ${b().LARGE}`,
             [w.ExtraLarge]: `${b().SMALL} ${b().MEDIUM} ${b().LARGE} ${b().EXTRA_LARGE}`,
           },
-          k = (u) => {
+          P = (u) => {
             let e = u.children,
               t = u.className,
               r = (function (u, e) {
@@ -1169,13 +1169,13 @@
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
               })(u, L);
-            const n = x(),
+            const n = S(),
               a = n.mediaWidth,
               i = n.mediaHeight,
               s = n.mediaSize;
-            return o().createElement("div", y({ className: f()(t, T[a], N[i], O[s]) }, r), e);
+            return o().createElement("div", y({ className: f()(t, T[a], N[i], k[s]) }, r), e);
           },
-          P = ["children"],
+          O = ["children"],
           H = (u) => {
             let e = u.children,
               t = (function (u, e) {
@@ -1186,22 +1186,22 @@
                   a = Object.keys(u);
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
-              })(u, P);
-            return o().createElement(p, null, o().createElement(k, t, e));
+              })(u, O);
+            return o().createElement(p, null, o().createElement(P, t, e));
           };
-        var I = t(3403);
+        var I = t(3282);
         function W() {
           return !1;
         }
         console.log;
-        var G = t(9174);
+        var G = t(3915);
         function U(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
           return r;
         }
-        const j = (u) => (0 === u ? window : window.subViews.get(u));
-        var V = t(3946);
+        const V = (u) => (0 === u ? window : window.subViews.get(u));
+        var j = t(6517);
         const $ = (u) =>
             (function (u, e) {
               return Array.isArray(u)
@@ -1218,7 +1218,7 @@
                     const a = (function ({
                         initializer: u = !0,
                         rootId: e = 0,
-                        getRoot: t = j,
+                        getRoot: t = V,
                         context: r = "model",
                       } = {}) {
                         const n = new Map();
@@ -1329,9 +1329,11 @@
                             mapsList: u.array("maps", []),
                             selectedMap: u.object("selectedMapModel"),
                           },
-                          t = (0, V.Om)(() => $(e.mapsList.get()), { equals: W }),
-                          r = (0, V.Om)(() => $(e.selectedMap.get().points), { equals: W }),
-                          n = (0, V.Om)(() => $(e.selectedMap.get().modifiers), { equals: W });
+                          t = (0, j.computedFn)(() => $(e.mapsList.get()), { equals: W }),
+                          r = (0, j.computedFn)(() => $(e.selectedMap.get().points), { equals: W }),
+                          n = (0, j.computedFn)(() => $(e.selectedMap.get().modifiers), {
+                            equals: W,
+                          });
                         return Object.assign({}, e, {
                           computes: {
                             getMaps: t,
@@ -1346,11 +1348,11 @@
                         observableModel: {
                           array: (e, t) => {
                             const r = null != t ? t : i(e),
-                              n = G.LO.box(r, { equals: W });
+                              n = G.observable.box(r, { equals: W });
                             return (
                               "real" === u &&
                                 o.subscribe(
-                                  (0, G.aD)((u) => n.set(u)),
+                                  (0, G.action)((u) => n.set(u)),
                                   e,
                                 ),
                               n
@@ -1358,11 +1360,11 @@
                           },
                           object: (e, t) => {
                             const r = null != t ? t : i(e),
-                              n = G.LO.box(r, { equals: W });
+                              n = G.observable.box(r, { equals: W });
                             return (
                               "real" === u &&
                                 o.subscribe(
-                                  (0, G.aD)((u) => n.set(u)),
+                                  (0, G.action)((u) => n.set(u)),
                                   e,
                                 ),
                               n
@@ -1371,11 +1373,14 @@
                           primitives: (e, t) => {
                             const r = i(t);
                             if (Array.isArray(e)) {
-                              const n = e.reduce((u, e) => ((u[e] = G.LO.box(r[e], {})), u), {});
+                              const n = e.reduce(
+                                (u, e) => ((u[e] = G.observable.box(r[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   o.subscribe(
-                                    (0, G.aD)((u) => {
+                                    (0, G.action)((u) => {
                                       e.forEach((e) => {
                                         n[e].set(u[e]);
                                       });
@@ -1388,11 +1393,14 @@
                             {
                               const n = e,
                                 a = Object.entries(n),
-                                i = a.reduce((u, [e, t]) => ((u[t] = G.LO.box(r[e], {})), u), {});
+                                i = a.reduce(
+                                  (u, [e, t]) => ((u[t] = G.observable.box(r[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   o.subscribe(
-                                    (0, G.aD)((u) => {
+                                    (0, G.action)((u) => {
                                       a.forEach(([e, t]) => {
                                         i[t].set(u[e]);
                                       });
@@ -1647,7 +1655,7 @@
             const t = (
               (u, e = Au) =>
               (t) => {
-                const r = x().mediaSize,
+                const r = S().mediaSize,
                   n = (0, a.useMemo)(() => e(t, r), [t, r]);
                 return o().createElement(u, n);
               }
@@ -1774,19 +1782,19 @@
                     void 0
                   : b,
               M = u.alignItems,
-              S =
+              x =
                 void 0 === M
                   ? (C ? "flex-start" : g && "center") || (p && "flex-end") || void 0
                   : M,
-              x = u.alignSelf,
+              S = u.alignSelf,
               L = u.wrap,
               y = u.flexWrap,
               T = void 0 === y ? (L ? "wrap" : void 0) : y,
               N = u.grow,
               R = u.shrink,
-              O = u.flex,
-              k = void 0 === O ? (N || R ? `${N ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : O,
-              P = u.style,
+              k = u.flex,
+              P = void 0 === k ? (N || R ? `${N ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : k,
+              O = u.style,
               H = u.children,
               I = (function (u, e) {
                 if (null == u) return {};
@@ -1810,20 +1818,20 @@
                       return ("number" == typeof r && (e[Cu[t]] = r + "rem"), e);
                     }, {}))(u);
                 return {
-                  computedStyle: Object.assign({}, P, n, {
+                  computedStyle: Object.assign({}, O, n, {
                     width: void 0 !== t && "number" == typeof t ? t + "rem" : t,
                     height: void 0 !== r && "number" == typeof r ? r + "rem" : r,
-                    flex: k,
-                    alignSelf: x,
-                    display: B || S ? "flex" : void 0,
+                    flex: P,
+                    alignSelf: S,
+                    display: B || x ? "flex" : void 0,
                     flexDirection: B,
                     flexWrap: T,
                     justifyContent: w,
-                    alignItems: S,
+                    alignItems: x,
                   }),
                   computedClassNames: e,
                 };
-              }, [t, r, s, c, A, m, P, k, x, B, T, w, S]),
+              }, [t, r, s, c, A, m, O, P, S, B, T, w, x]),
               G = W.computedStyle,
               U = W.computedClassNames;
             return o().createElement(
@@ -1877,7 +1885,7 @@
                 .match(u);
           })(),
           Mu = ["zh_cn", "zh_sg", "zh_tw"],
-          Su = ({ binding: u, text: e = "", classMix: t, alignment: r = pu.left }) =>
+          xu = ({ binding: u, text: e = "", classMix: t, alignment: r = pu.left }) =>
             null === e
               ? (console.error("FormatText was supplied with 'null'"), null)
               : o().createElement(
@@ -1914,8 +1922,8 @@
                     ),
                   ),
                 );
-        var xu = t(3532),
-          Lu = t.n(xu);
+        var Su = t(3532),
+          Lu = t.n(Su);
         const yu = {
             "paragraph-P10": "Text_paragraph-P10_2c",
             "paragraph-P12": "Text_paragraph-P12_22",
@@ -1989,9 +1997,9 @@
         }
         Object.keys(su());
         const Ru = Object.keys(Lu()),
-          Ou = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
-          ku = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
-          Pu = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
+          ku = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
+          Pu = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
+          Ou = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
           Hu =
             (Object.keys({
               XL: { mt: "XL", mr: "XL", mb: "XL", ml: "XL" },
@@ -2005,22 +2013,22 @@
             {
               "heading-H144": { mt: "XL", mr: "LG", mb: "LG", ml: "LG" },
               "heading-H73": { mt: "LG", mr: "MD", mb: "MD", ml: "MD" },
-              "heading-H56": Ou,
-              "heading-H36": Ou,
-              "heading-H28": ku,
-              "heading-H24": ku,
-              "heading-H24R": ku,
-              "heading-H22": ku,
-              "heading-H20R": ku,
-              "heading-H18": ku,
-              "heading-H15": Pu,
-              "heading-H14": Pu,
-              "paragraph-P24": ku,
-              "paragraph-P18": ku,
-              "paragraph-P16": ku,
-              "paragraph-P14": Pu,
-              "paragraph-P12": Pu,
-              "paragraph-P10": Pu,
+              "heading-H56": ku,
+              "heading-H36": ku,
+              "heading-H28": Pu,
+              "heading-H24": Pu,
+              "heading-H24R": Pu,
+              "heading-H22": Pu,
+              "heading-H20R": Pu,
+              "heading-H18": Pu,
+              "heading-H15": Ou,
+              "heading-H14": Ou,
+              "paragraph-P24": Pu,
+              "paragraph-P18": Pu,
+              "paragraph-P16": Pu,
+              "paragraph-P14": Ou,
+              "paragraph-P12": Ou,
+              "paragraph-P10": Ou,
             }),
           Iu =
             (Object.keys(Hu),
@@ -2077,7 +2085,7 @@
                 },
                 B,
               ),
-              void 0 !== D ? o().createElement(Su, Nu({}, D, { text: e })) : e,
+              void 0 !== D ? o().createElement(xu, Nu({}, D, { text: e })) : e,
             );
           }),
           Gu = {
@@ -2091,7 +2099,7 @@
             lineSeparator: "ModsList_lineSeparator_8d",
           };
         var Uu = t(4179);
-        const ju = [
+        const Vu = [
           "children",
           "contentId",
           "args",
@@ -2107,7 +2115,7 @@
           "onShow",
           "onHide",
         ];
-        function Vu(u) {
+        function ju(u) {
           return Object.entries(u || {}).map(([u, e]) => {
             const t = { __Type: "GFValueProxy", name: u };
             switch (typeof e) {
@@ -2167,7 +2175,7 @@
                   a = Object.keys(u);
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
-              })(u, ju);
+              })(u, Vu);
             const h = (0, a.useRef)({
                 timeoutId: 0,
                 isVisible: !1,
@@ -2195,7 +2203,7 @@
               ),
               v = (0, a.useCallback)(() => {
                 (h.current.isVisible && h.current.timeoutId) ||
-                  ($u(t, m, { isMouseEvent: !0, on: !0, arguments: Vu(r) }, f),
+                  ($u(t, m, { isMouseEvent: !0, on: !0, arguments: ju(r) }, f),
                   C && C(),
                   (h.current.isVisible = !0));
               }, [t, m, r, f, C]),
@@ -2481,7 +2489,7 @@
           for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
           return r;
         }
-        var re = t(7030);
+        var re = t(8552);
         let ne;
         !(function (u) {
           ((u[(u.Next = -1)] = "Next"), (u[(u.Prev = 1)] = "Prev"));
@@ -3237,7 +3245,7 @@
             bar: "VerticalScroll_bar_1e",
             area: "VerticalScroll_area_af",
           },
-          Se = ({
+          xe = ({
             children: u,
             api: e,
             className: t,
@@ -3259,12 +3267,12 @@
               o().createElement(
                 "div",
                 { className: f()(Me.area, n) },
-                o().createElement(xe, { className: i, classNames: s, api: A }, u),
+                o().createElement(Se, { className: i, classNames: s, api: A }, u),
               ),
               o().createElement(we, { getStepByRailClick: l, api: e, onDrag: c, classNames: E }),
             );
           },
-          xe = ({ className: u, classNames: e, children: t, api: r }) => (
+          Se = ({ className: u, classNames: e, children: t, api: r }) => (
             (0, a.useEffect)(() => Zu(r.recalculateContent)),
             o().createElement(
               "div",
@@ -3276,15 +3284,15 @@
               ),
             )
           );
-        xe.Default = Se;
+        Se.Default = xe;
         const Le = { Vertical: n, Horizontal: r },
           ye = { type: "idle" },
           Te = "MapsCarousel_carouselTitleLine_0f",
           Ne = "MapsCarousel_animatedLight_2a",
           Re = "MapsCarousel_carouselDivider_43",
-          Oe = "MapsCarousel_carouselDivider__hidden_9d",
-          ke = "MapsCarousel_arrow_93",
-          Pe = "MapsCarousel_arrow__enabled_f9",
+          ke = "MapsCarousel_carouselDivider__hidden_9d",
+          Pe = "MapsCarousel_arrow_93",
+          Oe = "MapsCarousel_arrow__enabled_f9",
           He = "MapsCarousel_arrow__disabled_eb",
           Ie = "MapsCarousel_arrow__hidden_09",
           We = (0, a.memo)(({ className: u, mapData: e, selectMapControl: t }) => {
@@ -3325,7 +3333,7 @@
         const Ue = (u) => {
           console.error(u.type + ": useKeydownListener hook :: Callback is not defined");
         };
-        function je(u = Ge.n.NONE, e = Ue, t = !1) {
+        function Ve(u = Ge.n.NONE, e = Ue, t = !1) {
           (0, a.useEffect)(() => {
             if (u !== Ge.n.NONE)
               return (
@@ -3342,7 +3350,7 @@
             }
           }, [e, u, t]);
         }
-        const Ve = R.strings.fun_random.mapsView.carousel.title,
+        const je = R.strings.fun_random.mapsView.carousel.title,
           $e = (0, a.memo)(
             ({
               isHover: u,
@@ -3444,20 +3452,20 @@
                   );
                 }, [i, d.left, d.right]));
               const _ = f()(
-                  ke,
+                  Pe,
                   "MapsCarousel_arrow__left_8b",
-                  l === d.left ? He : Pe,
+                  l === d.left ? He : Oe,
                   d.right <= 0 && Ie,
                 ),
                 D = f()(
-                  ke,
+                  Pe,
                   "MapsCarousel_arrow__right_2e",
-                  l === d.right ? He : Pe,
+                  l === d.right ? He : Oe,
                   d.right <= 0 && Ie,
                 ),
-                B = f()(Re, "MapsCarousel_carouselDivider__left_90", d.right <= 0 && Oe),
-                C = f()(Re, "MapsCarousel_carouselDivider__right_1e", d.right <= 0 && Oe);
-              (je(Ge.n.ARROW_LEFT, n), je(Ge.n.ARROW_RIGHT, r));
+                B = f()(Re, "MapsCarousel_carouselDivider__left_90", d.right <= 0 && ke),
+                C = f()(Re, "MapsCarousel_carouselDivider__right_1e", d.right <= 0 && ke);
+              (Ve(Ge.n.ARROW_LEFT, n), Ve(Ge.n.ARROW_RIGHT, r));
               const g = f()(
                 "MapsCarousel_scrollWrapper_b5",
                 d.right <= 0 && "MapsCarousel_scrollWrapper__centered_32",
@@ -3476,7 +3484,7 @@
                   ),
                   o().createElement(Wu, {
                     className: "MapsCarousel_carouselTitleText_e2",
-                    text: u ? Ve.visible() : Ve.hidden(),
+                    text: u ? je.visible() : je.hidden(),
                   }),
                   o().createElement(
                     "div",
@@ -3640,7 +3648,7 @@
           (function (u) {
             u["34_redshire"] = "c_34_Redshire";
           })(rt || (rt = {})));
-        const nt = (0, I.Pi)(() => {
+        const nt = (0, I.observer)(() => {
             const u = K(),
               e = u.model,
               t = u.controls,
@@ -3658,7 +3666,7 @@
             var _;
             return (
               (_ = t.onClose),
-              je(Ge.n.ESCAPE, _),
+              Ve(Ge.n.ESCAPE, _),
               o().createElement(
                 "div",
                 { className: ze.base },
@@ -3734,7 +3742,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -3785,7 +3793,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 821),
     (() => {
       var u = { 821: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

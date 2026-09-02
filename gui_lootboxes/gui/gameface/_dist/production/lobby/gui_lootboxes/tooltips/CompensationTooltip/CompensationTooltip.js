@@ -159,7 +159,7 @@
             displayStatus: () => s.W,
             displayStatusIs: () => T,
             events: () => r.U,
-            extraSize: () => f,
+            extraSize: () => S,
             forceTriggerMouseMove: () => h,
             freezeTextureBeforeResize: () => B,
             getBrowserTexturePath: () => c,
@@ -178,7 +178,7 @@
             setEventHandled: () => v,
             setInputPaddingsRem: () => a,
             setSidePaddingsRem: () => A,
-            whenTutorialReady: () => S,
+            whenTutorialReady: () => f,
           }));
         var n = t(3722),
           s = t(6112),
@@ -246,7 +246,7 @@
             (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === s.W[e]), u),
             {},
           ),
-          f = {
+          S = {
             set: (u, e) => {
               viewEnv.setExtraSizeRem(u, e);
             },
@@ -254,7 +254,7 @@
               viewEnv.getExtraSizeRem(u, e);
             },
           },
-          S = Promise.all([
+          f = Promise.all([
             new Promise((u) => {
               window.isDomBuilt ? u() : r.U.onDomBuilt(u);
             }),
@@ -876,7 +876,7 @@
             : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
         }
         var p = t(6517);
-        let g, v, b, h, w, T, f, S, P;
+        let g, v, b, h, w, T, S, f, P;
         var y, x, k;
         (!(function (u) {
           ((u.Items = "items"),
@@ -941,7 +941,14 @@
             (u.DogTagType = "dogTagComponents"),
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
-            (u.RewardsSlots = "rewardsSlots"));
+            (u.RewardsSlots = "rewardsSlots"),
+            (u.WtStamp = "stamp"),
+            (u.WtHunter = "wt_hunter"),
+            (u.WtBoss = "wt_boss"),
+            (u.WtHunterCollection = "hunter_collection"),
+            (u.WtTicket = "wtevent_ticket"),
+            (u.WtMainPrizeDiscount = "main_prize_discount"),
+            (u.WtTicket25 = "wtevent_ticket25"));
         })(g || (g = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1014,7 +1021,7 @@
           (x.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
           (x.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
           ((T || (T = {})).BATTLE_BOOSTER = "battleBooster"),
-          ((y = f || (f = {})).BATTLE_BOOSTER = "battleBooster"),
+          ((y = S || (S = {})).BATTLE_BOOSTER = "battleBooster"),
           (y.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
           (y.BUILT_IN_EQUIPMENT = "builtInEquipment"),
           (y.EQUIPMENT_PLUS = "equipmentPlus"),
@@ -1029,7 +1036,7 @@
           (y.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
           (function (u) {
             ((u.Small = "400x300"), (u.Big = "600x450"));
-          })(S || (S = {})),
+          })(f || (f = {})),
           (function (u) {
             u.ProgressionStyle = "progressionStyle";
           })(P || (P = {})));
@@ -1083,6 +1090,11 @@
           g.PremiumPlusUniversal,
           g.GoldenTicket,
           g.RewardsSlots,
+          g.WtStamp,
+          g.WtTicket,
+          g.WtMainPrizeDiscount,
+          g.WtHunter,
+          g.WtHunterCollection,
           g.Gold,
           g.Credits,
           g.Crystal,
@@ -1611,8 +1623,8 @@
               () => (0, o.useContext)(t),
             ];
           })(),
-          V = G[0],
-          Y = G[1];
+          W = G[0],
+          V = G[1];
         let z;
         (!(function (u) {
           ((u.Heavy = "heavyTank"),
@@ -1625,8 +1637,8 @@
           R.strings.gui_lootboxes.time.hours(),
           R.strings.gui_lootboxes.time.minutes(),
           R.strings.gui_lootboxes.time.seconds());
-        const X = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
-          W = (u) => {
+        const Y = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
+          X = (u) => {
             switch (u) {
               case z.Heavy:
                 return R.images.gui.maps.icons.vehicleTypes.big.heavyTank_elite();
@@ -1684,11 +1696,11 @@
                       i().createElement(
                         "div",
                         { className: H.vehicleNameLevel },
-                        ((r = u.vehicleLvl), X[r] || ""),
+                        ((r = u.vehicleLvl), Y[r] || ""),
                       ),
                       i().createElement("div", {
                         className: H.vehicleNameType,
-                        style: { backgroundImage: `url(${W(u.type)})` },
+                        style: { backgroundImage: `url(${X(u.type)})` },
                       }),
                       i().createElement("div", { className: H.vehicleNameText }, u.label),
                     ),
@@ -1757,7 +1769,7 @@
               ),
             ),
           uu = (0, D.observer)(() => {
-            const u = Y().model,
+            const u = V().model,
               e = u.computes.getItemAfter(),
               t = u.computes.getItemsBefore();
             return i().createElement(
@@ -1770,7 +1782,7 @@
           });
         engine.whenReady.then(() => {
           l().render(
-            i().createElement(V, null, i().createElement(A, null, i().createElement(uu, null))),
+            i().createElement(W, null, i().createElement(A, null, i().createElement(uu, null))),
             document.getElementById("root"),
           );
         });

@@ -2,7 +2,7 @@
   "use strict";
   var u,
     e = {
-      939: (u, e, F) => {
+      5939: (u, e, F) => {
         var A = {};
         (F.r(A), F.d(A, { mouse: () => i, onResize: () => o }));
         var E = {};
@@ -32,20 +32,20 @@
             getScale: () => k,
             getSize: () => T,
             getViewGlobalPosition: () => S,
-            isClientAccessible: () => I,
-            isEventHandled: () => W,
-            isFocused: () => N,
+            isClientAccessible: () => L,
+            isEventHandled: () => j,
+            isFocused: () => I,
             pxToRem: () => z,
-            remToPx: () => L,
+            remToPx: () => M,
             resize: () => O,
             sendEvent: () => p,
-            setAnimateWindow: () => M,
-            setEventHandled: () => j,
+            setAnimateWindow: () => N,
+            setEventHandled: () => W,
             setInputPaddingsRem: () => h,
             setSidePaddingsRem: () => y,
             whenTutorialReady: () => U,
           }));
-        var B = F(483),
+        var B = F(6483),
           C = F.n(B);
         function n(u) {
           return (e) => (
@@ -231,7 +231,7 @@
         }
         function S(u = "rem") {
           const e = viewEnv.getViewGlobalPositionRem();
-          return "rem" === u ? e : { x: L(e.x), y: L(e.y) };
+          return "rem" === u ? e : { x: M(e.x), y: M(e.y) };
         }
         function P() {
           viewEnv.freezeTextureBeforeResize();
@@ -242,22 +242,22 @@
         function z(u) {
           return viewEnv.pxToRem(u);
         }
-        function L(u) {
+        function M(u) {
           return viewEnv.remToPx(u);
         }
-        function M(u, e) {
+        function N(u, e) {
           viewEnv.setAnimateWindow(u, e);
         }
-        function N() {
+        function I() {
           return viewEnv.isFocused();
         }
-        function I() {
+        function L() {
           return viewEnv.isClientAccessible();
         }
-        function j() {
+        function W() {
           return viewEnv.setEventHandled();
         }
-        function W() {
+        function j() {
           return viewEnv.isEventHandled();
         }
         function V() {
@@ -285,7 +285,7 @@
             engine.whenReady,
           ]),
           q = { view: t, client: E };
-        var Q = F(179),
+        var Q = F(6179),
           X = F.n(Q);
         const Z = {
             base: "TooltipDecorator_base_c9",
@@ -384,19 +384,19 @@
         });
         var uu = F(493),
           eu = F.n(uu),
-          Fu = F(515);
+          Fu = F(3282);
         function Au() {
           return !1;
         }
         console.log;
-        var Eu = F(174);
+        var Eu = F(3915);
         function Du(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var F = 0, A = new Array(e); F < e; F++) A[F] = u[F];
           return A;
         }
         const tu = (u) => (0 === u ? window : window.subViews.get(u));
-        var Bu = F(946);
+        var Bu = F(6517);
         const Cu = ((u, e) => {
             const F = (0, Q.createContext)({});
             return [
@@ -513,7 +513,7 @@
                       n = (u) => t.current.push(u),
                       r = (({ observableModel: u }) => {
                         const e = { selectedRewards: u.array("selectedRewards", []) },
-                          F = (0, Bu.Om)(() => e.selectedRewards.get().length);
+                          F = (0, Bu.computedFn)(() => e.selectedRewards.get().length);
                         return Object.assign({}, e, { computes: { selectedRewardsLength: F } });
                       })({
                         mode: u,
@@ -522,11 +522,11 @@
                         observableModel: {
                           array: (e, F) => {
                             const A = null != F ? F : C(e),
-                              E = Eu.LO.box(A, { equals: Au });
+                              E = Eu.observable.box(A, { equals: Au });
                             return (
                               "real" === u &&
                                 B.subscribe(
-                                  (0, Eu.aD)((u) => E.set(u)),
+                                  (0, Eu.action)((u) => E.set(u)),
                                   e,
                                 ),
                               E
@@ -534,11 +534,11 @@
                           },
                           object: (e, F) => {
                             const A = null != F ? F : C(e),
-                              E = Eu.LO.box(A, { equals: Au });
+                              E = Eu.observable.box(A, { equals: Au });
                             return (
                               "real" === u &&
                                 B.subscribe(
-                                  (0, Eu.aD)((u) => E.set(u)),
+                                  (0, Eu.action)((u) => E.set(u)),
                                   e,
                                 ),
                               E
@@ -547,11 +547,14 @@
                           primitives: (e, F) => {
                             const A = C(F);
                             if (Array.isArray(e)) {
-                              const E = e.reduce((u, e) => ((u[e] = Eu.LO.box(A[e], {})), u), {});
+                              const E = e.reduce(
+                                (u, e) => ((u[e] = Eu.observable.box(A[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   B.subscribe(
-                                    (0, Eu.aD)((u) => {
+                                    (0, Eu.action)((u) => {
                                       e.forEach((e) => {
                                         E[e].set(u[e]);
                                       });
@@ -564,11 +567,14 @@
                             {
                               const E = e,
                                 D = Object.entries(E),
-                                t = D.reduce((u, [e, F]) => ((u[F] = Eu.LO.box(A[e], {})), u), {});
+                                t = D.reduce(
+                                  (u, [e, F]) => ((u[F] = Eu.observable.box(A[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   B.subscribe(
-                                    (0, Eu.aD)((u) => {
+                                    (0, Eu.action)((u) => {
                                       D.forEach(([e, F]) => {
                                         t[F].set(u[e]);
                                       });
@@ -876,7 +882,7 @@
           );
         }
         const ku = (u) => ({ exp: u.expDiscount, credit: u.creditDiscount }),
-          zu = (0, Fu.Pi)(() => {
+          zu = (0, Fu.observer)(() => {
             const u = ru().model,
               e = u.computes.selectedRewardsLength();
             return X().createElement(
@@ -911,7 +917,7 @@
     var E = F[u];
     if (void 0 !== E) return E.exports;
     var D = (F[u] = { exports: {} });
-    return (e[u](D, D.exports, A), D.exports);
+    return (e[u].call(D.exports, D, D.exports, A), D.exports);
   }
   ((A.m = e),
     (u = []),
@@ -958,7 +964,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (A.j = 383),
     (() => {
       var u = { 383: 0 };
       A.O.j = (e) => 0 === u[e];
@@ -978,6 +983,6 @@
         F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
       (F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F))));
     })());
-  var E = A.O(void 0, [503], () => A(939));
+  var E = A.O(void 0, [503], () => A(5939));
   E = A.O(E);
 })();

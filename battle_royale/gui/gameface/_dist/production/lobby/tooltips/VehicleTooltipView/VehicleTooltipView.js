@@ -1177,21 +1177,21 @@
             if ("string" == typeof t) return t;
             throw new Error(`ReadString  ${e} is invalid `);
           };
-        var d = t(3403),
+        var d = t(3282),
           v = t(6247),
           m = t(6490);
         function g() {
           return !1;
         }
         console.log;
-        var p = t(9174);
+        var p = t(3915);
         function b(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
           return r;
         }
         const h = (u) => (0 === u ? window : window.subViews.get(u));
-        var w = t(3946);
+        var w = t(6517);
         const f = ((u, e) => {
             const t = (0, r.createContext)({});
             return [
@@ -1329,18 +1329,18 @@
                               defPrice: u.defPrice.get(),
                               discount: u.discount.get(),
                             }),
-                          r = (0, w.Om)(t(e.rentDrive), { equals: g }),
-                          n = (0, w.Om)(t(e.testDrive), { equals: g }),
-                          E = (0, w.Om)(() => {
+                          r = (0, w.computedFn)(t(e.rentDrive), { equals: g }),
+                          n = (0, w.computedFn)(t(e.testDrive), { equals: g }),
+                          E = (0, w.computedFn)(() => {
                             const u = e.root.get().rentState;
                             return u === B || "testDriveAvailable" === u;
                           }),
-                          A = (0, w.Om)(() => {
+                          A = (0, w.computedFn)(() => {
                             const u = !E() && e.testDrive.price.get().length > 0,
                               t = E() && e.rentDrive.price.get().length > 0;
                             return u || t;
                           }),
-                          F = (0, w.Om)(() => (0, m.b)(e.rentDrive.price.get()));
+                          F = (0, w.computedFn)(() => (0, m.b)(e.rentDrive.price.get()));
                         return Object.assign({}, e, {
                           computes: {
                             hasRentPriceBrCoin: F,
@@ -1357,11 +1357,11 @@
                         observableModel: {
                           array: (e, t) => {
                             const r = null != t ? t : F(e),
-                              n = p.LO.box(r, { equals: g });
+                              n = p.observable.box(r, { equals: g });
                             return (
                               "real" === u &&
                                 A.subscribe(
-                                  (0, p.aD)((u) => n.set(u)),
+                                  (0, p.action)((u) => n.set(u)),
                                   e,
                                 ),
                               n
@@ -1369,11 +1369,11 @@
                           },
                           object: (e, t) => {
                             const r = null != t ? t : F(e),
-                              n = p.LO.box(r, { equals: g });
+                              n = p.observable.box(r, { equals: g });
                             return (
                               "real" === u &&
                                 A.subscribe(
-                                  (0, p.aD)((u) => n.set(u)),
+                                  (0, p.action)((u) => n.set(u)),
                                   e,
                                 ),
                               n
@@ -1382,11 +1382,14 @@
                           primitives: (e, t) => {
                             const r = F(t);
                             if (Array.isArray(e)) {
-                              const n = e.reduce((u, e) => ((u[e] = p.LO.box(r[e], {})), u), {});
+                              const n = e.reduce(
+                                (u, e) => ((u[e] = p.observable.box(r[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   A.subscribe(
-                                    (0, p.aD)((u) => {
+                                    (0, p.action)((u) => {
                                       e.forEach((e) => {
                                         n[e].set(u[e]);
                                       });
@@ -1399,11 +1402,14 @@
                             {
                               const n = e,
                                 E = Object.entries(n),
-                                F = E.reduce((u, [e, t]) => ((u[t] = p.LO.box(r[e], {})), u), {});
+                                F = E.reduce(
+                                  (u, [e, t]) => ((u[t] = p.observable.box(r[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   A.subscribe(
-                                    (0, p.aD)((u) => {
+                                    (0, p.action)((u) => {
                                       E.forEach(([e, t]) => {
                                         F[t].set(u[e]);
                                       });
@@ -1470,7 +1476,7 @@
             status__rented: "Content_status__rented_78",
             status__rentableBlub: "Content_status__rentableBlub_18",
           },
-          x = (0, d.Pi)(() => {
+          x = (0, d.observer)(() => {
             const u = P().model,
               e = u.root.get(),
               t = e.vehicleName,
@@ -1809,7 +1815,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1860,7 +1866,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 285),
     (() => {
       var u = { 285: 0, 335: 0, 56: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

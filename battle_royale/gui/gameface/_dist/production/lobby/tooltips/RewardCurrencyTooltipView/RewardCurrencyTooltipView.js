@@ -19,29 +19,29 @@
         (n.r(a),
           n.d(a, {
             addModelObserver: () => A,
-            addPreloadTexture: () => S,
+            addPreloadTexture: () => O,
             children: () => i,
             displayStatus: () => x,
             displayStatusIs: () => W,
             events: () => P,
             extraSize: () => J,
             forceTriggerMouseMove: () => Q,
-            freezeTextureBeforeResize: () => V,
-            getBrowserTexturePath: () => z,
+            freezeTextureBeforeResize: () => B,
+            getBrowserTexturePath: () => j,
             getDisplayStatus: () => U,
-            getScale: () => L,
+            getScale: () => I,
             getSize: () => F,
-            getViewGlobalPosition: () => D,
+            getViewGlobalPosition: () => V,
             isClientAccessible: () => $,
             isEventHandled: () => q,
-            isFocused: () => G,
-            pxToRem: () => B,
-            remToPx: () => I,
+            isFocused: () => L,
+            pxToRem: () => N,
+            remToPx: () => D,
             resize: () => k,
-            sendEvent: () => O,
-            setAnimateWindow: () => N,
+            sendEvent: () => S,
+            setAnimateWindow: () => G,
             setEventHandled: () => H,
-            setInputPaddingsRem: () => j,
+            setInputPaddingsRem: () => z,
             setSidePaddingsRem: () => M,
             whenTutorialReady: () => K,
           }));
@@ -201,7 +201,7 @@
             return viewEnv.handleViewEvent({ __Type: n, type: e });
             var r;
           },
-          O = {
+          S = {
             close(e) {
               C("popover" === e ? 2 : 32);
             },
@@ -212,13 +212,13 @@
               C(16, { isMouseEvent: !0, on: e });
             },
           };
-        function S(e) {
+        function O(e) {
           viewEnv.addPreloadTexture(e);
         }
-        function j(e) {
+        function z(e) {
           viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
         }
-        function z(e, t, n, r = 1) {
+        function j(e, t, n, r = 1) {
           return viewEnv.getWebBrowserTexturePath(e, t, n, r);
         }
         function A(e, t, n) {
@@ -233,26 +233,26 @@
         function k(e, t, n = "px") {
           return "rem" === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
         }
-        function D(e = "rem") {
+        function V(e = "rem") {
           const t = viewEnv.getViewGlobalPositionRem();
-          return "rem" === e ? t : { x: I(t.x), y: I(t.y) };
+          return "rem" === e ? t : { x: D(t.x), y: D(t.y) };
         }
-        function V() {
+        function B() {
           viewEnv.freezeTextureBeforeResize();
         }
-        function L() {
+        function I() {
           return viewEnv.getScale();
         }
-        function B(e) {
+        function N(e) {
           return viewEnv.pxToRem(e);
         }
-        function I(e) {
+        function D(e) {
           return viewEnv.remToPx(e);
         }
-        function N(e, t) {
+        function G(e, t) {
           viewEnv.setAnimateWindow(e, t);
         }
-        function G() {
+        function L() {
           return viewEnv.isFocused();
         }
         function $() {
@@ -384,19 +384,19 @@
             )
           );
         });
-        var ne = n(3403);
+        var ne = n(3282);
         function re() {
           return !1;
         }
         console.log;
-        var oe = n(9174);
+        var oe = n(3915);
         function ie(e, t) {
           (null == t || t > e.length) && (t = e.length);
           for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
           return r;
         }
         const ae = (e) => (0 === e ? window : window.subViews.get(e));
-        var se = n(3946);
+        var se = n(6517);
         const ce = ["credits", "xp", "brcoin"],
           ue = ((e, t) => {
             const n = (0, s.createContext)({});
@@ -514,7 +514,7 @@
                       u = (e) => a.current.push(e),
                       l = (({ observableModel: e }) => {
                         const t = { root: e.object() },
-                          n = (0, se.Om)(() => ce.includes(t.root.get().currencyType));
+                          n = (0, se.computedFn)(() => ce.includes(t.root.get().currencyType));
                         return Object.assign({}, t, { computes: { isPremFactor: n } });
                       })({
                         mode: e,
@@ -523,11 +523,11 @@
                         observableModel: {
                           array: (t, n) => {
                             const r = null != n ? n : c(t),
-                              o = oe.LO.box(r, { equals: re });
+                              o = oe.observable.box(r, { equals: re });
                             return (
                               "real" === e &&
                                 s.subscribe(
-                                  (0, oe.aD)((e) => o.set(e)),
+                                  (0, oe.action)((e) => o.set(e)),
                                   t,
                                 ),
                               o
@@ -535,11 +535,11 @@
                           },
                           object: (t, n) => {
                             const r = null != n ? n : c(t),
-                              o = oe.LO.box(r, { equals: re });
+                              o = oe.observable.box(r, { equals: re });
                             return (
                               "real" === e &&
                                 s.subscribe(
-                                  (0, oe.aD)((e) => o.set(e)),
+                                  (0, oe.action)((e) => o.set(e)),
                                   t,
                                 ),
                               o
@@ -548,11 +548,14 @@
                           primitives: (t, n) => {
                             const r = c(n);
                             if (Array.isArray(t)) {
-                              const o = t.reduce((e, t) => ((e[t] = oe.LO.box(r[t], {})), e), {});
+                              const o = t.reduce(
+                                (e, t) => ((e[t] = oe.observable.box(r[t], {})), e),
+                                {},
+                              );
                               return (
                                 "real" === e &&
                                   s.subscribe(
-                                    (0, oe.aD)((e) => {
+                                    (0, oe.action)((e) => {
                                       t.forEach((t) => {
                                         o[t].set(e[t]);
                                       });
@@ -565,11 +568,14 @@
                             {
                               const o = t,
                                 i = Object.entries(o),
-                                a = i.reduce((e, [t, n]) => ((e[n] = oe.LO.box(r[t], {})), e), {});
+                                a = i.reduce(
+                                  (e, [t, n]) => ((e[n] = oe.observable.box(r[t], {})), e),
+                                  {},
+                                );
                               return (
                                 "real" === e &&
                                   s.subscribe(
-                                    (0, oe.aD)((e) => {
+                                    (0, oe.action)((e) => {
                                       i.forEach(([t, n]) => {
                                         a[n].set(e[t]);
                                       });
@@ -639,7 +645,7 @@
             premiumText: "Content_premiumText_1b",
           },
           me = R.strings.battle_royale.rewardCurrencyTooltip,
-          fe = (0, ne.Pi)(() => {
+          fe = (0, ne.observer)(() => {
             const e = de().model,
               t = e.root.get().currencyType,
               n =
@@ -696,7 +702,7 @@
     var o = n[e];
     if (void 0 !== o) return o.exports;
     var i = (n[e] = { exports: {} });
-    return (t[e](i, i.exports, r), i.exports);
+    return (t[e].call(i.exports, i, i.exports, r), i.exports);
   }
   ((r.m = t),
     (e = []),
@@ -743,7 +749,6 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (r.j = 121),
     (() => {
       var e = { 121: 0 };
       r.O.j = (t) => 0 === e[t];

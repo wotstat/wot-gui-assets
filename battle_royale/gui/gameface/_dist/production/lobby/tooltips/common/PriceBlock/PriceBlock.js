@@ -243,13 +243,13 @@
             addPreloadTexture: () => o,
             children: () => r,
             displayStatus: () => i.W,
-            displayStatusIs: () => O,
+            displayStatusIs: () => k,
             events: () => _.U,
             extraSize: () => R,
             forceTriggerMouseMove: () => P,
             freezeTextureBeforeResize: () => g,
             getBrowserTexturePath: () => c,
-            getDisplayStatus: () => k,
+            getDisplayStatus: () => O,
             getScale: () => m,
             getSize: () => d,
             getViewGlobalPosition: () => E,
@@ -325,10 +325,10 @@
         function P() {
           viewEnv.forceTriggerMouseMove();
         }
-        function k() {
+        function O() {
           return viewEnv.getShowingStatus();
         }
-        const O = Object.keys(i.W).reduce(
+        const k = Object.keys(i.W).reduce(
             (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === i.W[n]), e),
             {},
           ),
@@ -750,7 +750,7 @@
           };
         var C = t(7572);
         const P = i.instance,
-          k = {
+          O = {
             DataTracker: _.Z,
             ViewModel: C.Z,
             ViewEventType: s,
@@ -839,7 +839,7 @@
             SystemLocale: a,
             UserLocale: o,
           };
-        window.ViewEnvHelper = k;
+        window.ViewEnvHelper = O;
       },
       1596: (e, n, t) => {
         t.d(n, { a: () => d });
@@ -1042,7 +1042,7 @@
     var n = __webpack_module_cache__[e];
     if (void 0 !== n) return n.exports;
     var t = (__webpack_module_cache__[e] = { exports: {} });
-    return (__webpack_modules__[e](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[e].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1093,7 +1093,6 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 335),
     (() => {
       var e = { 335: 0 };
       __webpack_require__.O.j = (n) => 0 === e[n];

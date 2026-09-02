@@ -983,7 +983,7 @@
               month: R.strings.menu.dateTime.months.$num(n + 1),
             });
           },
-          k = (u) => {
+          x = (u) => {
             const e = S(u),
               t = e.day,
               n = e.month;
@@ -992,13 +992,13 @@
               month: R.strings.menu.dateTime.months.$num(n + 1),
             });
           },
-          x = ({ state: u, startTime: e, leftTime: t, endTime: n, currentSize: E }) => {
+          k = ({ state: u, startTime: e, leftTime: t, endTime: n, currentSize: E }) => {
             const F = ((u, e, t, n) => {
                 switch (u) {
                   case p.Before:
                     return [M(e), !1];
                   case p.Active:
-                    return t > C ? [k(n), !1] : [P(t), !0];
+                    return t > C ? [x(n), !1] : [P(t), !0];
                   case p.NotPrimeTime:
                     return [P(t), !0];
                   default:
@@ -1136,7 +1136,7 @@
               }),
               A().createElement("div", { className: U.header }, _.capsUserName()),
               A().createElement(L, { state: F, currentSize: o }),
-              A().createElement(x, {
+              A().createElement(k, {
                 state: F,
                 startTime: e,
                 leftTime: E,
@@ -1156,7 +1156,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1207,7 +1207,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 51),
     (() => {
       var u = { 51: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

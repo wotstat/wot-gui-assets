@@ -1235,7 +1235,7 @@
           for (var t = 0, n = new Array(u); t < u; t++) n[t] = e[t];
           return n;
         }
-        var X = t(7030);
+        var X = t(8552);
         let Y;
         !(function (e) {
           ((e[(e.Next = -1)] = "Next"), (e[(e.Prev = 1)] = "Prev"));
@@ -2248,7 +2248,7 @@
             }
           }, [u, e, t]);
         }
-        var Ie = t(3403);
+        var Ie = t(3282);
         const He = (0, i.memo)(({ text: e, children: u, classMix: t }) =>
           s().createElement(
             "div",
@@ -2264,7 +2264,7 @@
           return !1;
         }
         console.log;
-        var Ue = t(9174);
+        var Ue = t(3915);
         function Ge(e, u) {
           (null == u || u > e.length) && (u = e.length);
           for (var t = 0, n = new Array(u); t < u; t++) n[t] = e[t];
@@ -2287,7 +2287,7 @@
                     )
               : e,
           Xe = (e) => $e(e);
-        var Ye = t(3946);
+        var Ye = t(6517);
         const Ke = ((e, u) => {
             const t = (0, i.createContext)({});
             return [
@@ -2411,11 +2411,11 @@
                             winTablePoints: e.array("winTablePoints", []),
                             loseTablePoints: e.array("loseTablePoints", []),
                           },
-                          t = (0, Ye.Om)(() => Ve(u.validVehicleLevels.get(), We)),
-                          n = (0, Ye.Om)(() => Ve(u.ranksWithPoints.get(), We)),
-                          r = (0, Ye.Om)(() => Ve(u.skillsCategories.get(), We)),
-                          a = (0, Ye.Om)(() => Xe(u.winTablePoints.get()), { equals: je }),
-                          i = (0, Ye.Om)(() => Xe(u.loseTablePoints.get()), { equals: je });
+                          t = (0, Ye.computedFn)(() => Ve(u.validVehicleLevels.get(), We)),
+                          n = (0, Ye.computedFn)(() => Ve(u.ranksWithPoints.get(), We)),
+                          r = (0, Ye.computedFn)(() => Ve(u.skillsCategories.get(), We)),
+                          a = (0, Ye.computedFn)(() => Xe(u.winTablePoints.get()), { equals: je }),
+                          i = (0, Ye.computedFn)(() => Xe(u.loseTablePoints.get()), { equals: je });
                         return Object.assign({}, u, {
                           computes: {
                             getValidVehicleLevels: t,
@@ -2432,11 +2432,11 @@
                         observableModel: {
                           array: (u, t) => {
                             const n = null != t ? t : s(u),
-                              r = Ue.LO.box(n, { equals: je });
+                              r = Ue.observable.box(n, { equals: je });
                             return (
                               "real" === e &&
                                 i.subscribe(
-                                  (0, Ue.aD)((e) => r.set(e)),
+                                  (0, Ue.action)((e) => r.set(e)),
                                   u,
                                 ),
                               r
@@ -2444,11 +2444,11 @@
                           },
                           object: (u, t) => {
                             const n = null != t ? t : s(u),
-                              r = Ue.LO.box(n, { equals: je });
+                              r = Ue.observable.box(n, { equals: je });
                             return (
                               "real" === e &&
                                 i.subscribe(
-                                  (0, Ue.aD)((e) => r.set(e)),
+                                  (0, Ue.action)((e) => r.set(e)),
                                   u,
                                 ),
                               r
@@ -2457,11 +2457,14 @@
                           primitives: (u, t) => {
                             const n = s(t);
                             if (Array.isArray(u)) {
-                              const r = u.reduce((e, u) => ((e[u] = Ue.LO.box(n[u], {})), e), {});
+                              const r = u.reduce(
+                                (e, u) => ((e[u] = Ue.observable.box(n[u], {})), e),
+                                {},
+                              );
                               return (
                                 "real" === e &&
                                   i.subscribe(
-                                    (0, Ue.aD)((e) => {
+                                    (0, Ue.action)((e) => {
                                       u.forEach((u) => {
                                         r[u].set(e[u]);
                                       });
@@ -2474,11 +2477,14 @@
                             {
                               const r = u,
                                 a = Object.entries(r),
-                                s = a.reduce((e, [u, t]) => ((e[t] = Ue.LO.box(n[u], {})), e), {});
+                                s = a.reduce(
+                                  (e, [u, t]) => ((e[t] = Ue.observable.box(n[u], {})), e),
+                                  {},
+                                );
                               return (
                                 "real" === e &&
                                   i.subscribe(
-                                    (0, Ue.aD)((e) => {
+                                    (0, Ue.action)((e) => {
                                       a.forEach(([u, t]) => {
                                         s[t].set(e[u]);
                                       });
@@ -2954,7 +2960,7 @@
           Ru = "AboutSection_tableCell__centered_c2",
           Tu = R.strings.fl_info_page.about,
           Lu = [5, 20, 30],
-          Mu = (0, Ie.Pi)(() => {
+          Mu = (0, Ie.observer)(() => {
             const e = Ze().model,
               u = e.computes.getWinTablePoints(),
               t = e.computes.getLoseTablePoints(),
@@ -3338,8 +3344,9 @@
             ? s().createElement(ju, Ku({}, u, { contentId: r || i }), n)
             : s().createElement(zu, u, n);
         };
-        var Zu = t(8045);
-        let Qu, Ju, et;
+        var Zu = t(9050),
+          Qu = t.n(Zu);
+        let Ju, et, ut;
         (!(function (e) {
           ((e[(e.Word = 0)] = "Word"),
             (e[(e.LineBreak = 1)] = "LineBreak"),
@@ -3347,19 +3354,19 @@
             (e[(e.NoBreakSymbol = 3)] = "NoBreakSymbol"),
             (e[(e.NoBreakWrapper = 4)] = "NoBreakWrapper"),
             (e[(e.Binding = 5)] = "Binding"));
-        })(Qu || (Qu = {})),
+        })(Ju || (Ju = {})),
           (function (e) {
             ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"));
-          })(Ju || (Ju = {})),
+          })(et || (et = {})),
           (function (e) {
             ((e.NBSP = " "), (e.ZWNBSP = "\ufeff"), (e.NEW_LINE = "\n"));
-          })(et || (et = {})));
-        const ut = {
-            [et.NBSP]: Qu.NoBreakSymbol,
-            [et.ZWNBSP]: Qu.NoBreakSymbol,
-            [et.NEW_LINE]: Qu.LineBreak,
+          })(ut || (ut = {})));
+        const tt = {
+            [ut.NBSP]: Ju.NoBreakSymbol,
+            [ut.ZWNBSP]: Ju.NoBreakSymbol,
+            [ut.NEW_LINE]: Ju.LineBreak,
           },
-          tt = {
+          nt = {
             blackReal: "colors_blackReal_fc",
             whiteReal: "colors_whiteReal_31",
             white: "colors_white_45",
@@ -3384,56 +3391,56 @@
             bond: "colors_bond_ce",
             prom: "colors_prom_83",
           },
-          nt = (e) => ({ color: `#${e}` }),
-          rt = ({ elementList: e, textBlock: u, key: t }) => {
+          rt = (e) => ({ color: `#${e}` }),
+          at = ({ elementList: e, textBlock: u, key: t }) => {
             const n = u.colorTag;
             return n
-              ? tt[n]
+              ? nt[n]
                 ? s().createElement(
                     "span",
-                    { key: t, "data-block-type": u.blockType, className: tt[n] },
+                    { key: t, "data-block-type": u.blockType, className: nt[n] },
                     e,
                   )
                 : s().createElement(
                     "span",
-                    { key: t, "data-block-type": u.blockType, style: nt(n) },
+                    { key: t, "data-block-type": u.blockType, style: rt(n) },
                     e,
                   )
               : s().createElement("span", { key: t, "data-block-type": u.blockType }, e);
           },
-          at = {
-            [Qu.Word]: rt,
-            [Qu.NoBreakSymbol]: rt,
-            [Qu.Binding]: ({ elementList: e, textBlock: u, key: t }) =>
+          it = {
+            [Ju.Word]: at,
+            [Ju.NoBreakSymbol]: at,
+            [Ju.Binding]: ({ elementList: e, textBlock: u, key: t }) =>
               s().createElement(
                 "span",
                 { key: t, "data-block-type": u.blockType },
                 e.map((e) => s().createElement(s().Fragment, { key: t }, e)),
               ),
-            [Qu.LineBreak]: ({ key: e }) =>
+            [Ju.LineBreak]: ({ key: e }) =>
               s().createElement("span", {
                 key: e,
-                "data-block-type": Qu.LineBreak,
+                "data-block-type": Ju.LineBreak,
                 className: "renderers_lineBreak_b5",
               }),
-            [Qu.NewLine]: ({ elementList: e, key: u }) =>
+            [Ju.NewLine]: ({ elementList: e, key: u }) =>
               s().createElement(
                 "span",
-                { key: u, "data-block-type": Qu.NewLine, className: "renderers_newLine_bd" },
+                { key: u, "data-block-type": Ju.NewLine, className: "renderers_newLine_bd" },
                 e,
               ),
-            [Qu.NoBreakWrapper]: ({ elementList: e, key: u }) =>
+            [Ju.NoBreakWrapper]: ({ elementList: e, key: u }) =>
               s().createElement(
                 "span",
                 {
                   key: u,
-                  "data-block-type": Qu.NoBreakWrapper,
+                  "data-block-type": Ju.NoBreakWrapper,
                   className: "renderers_noBreakWrapper_10",
                 },
                 e,
               ),
           },
-          it = (e, u, t) => {
+          st = (e, u, t) => {
             const n = [];
             return (
               e.childList.forEach((r, a) => {
@@ -3441,21 +3448,21 @@
                 if (((e) => void 0 !== e.childList)(r)) {
                   const e = r,
                     u = e.blockType,
-                    t = it(e, at[u], i);
+                    t = st(e, it[u], i);
                   n.push(...t);
                 } else n.push(u({ elementList: [r], textBlock: e, key: i }));
               }),
               n
             );
           },
-          st = (e, u, t, n) => {
+          ot = (e, u, t, n) => {
             let r = u.exec(e),
               a = 0;
             for (; r;)
               (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
             a !== e.length && t(e.slice(a));
           },
-          ot = (e) => {
+          lt = (e) => {
             const u = /[\s\u002d]/g;
             let t = u.exec(e);
             if (!t) return [e];
@@ -3464,27 +3471,27 @@
             for (; t;) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
             return (r !== e.length && n.push(e.slice(r)), n);
           },
-          lt = (e, u = "") => {
+          ct = (e, u = "") => {
             const t = [];
             return (
-              st(
+              ot(
                 e,
                 /(\n+|[\xa0\ufeff]+)/g,
                 (e) => {
-                  t.push({ blockType: Qu.Word, colorTag: u, childList: ot(e) });
+                  t.push({ blockType: Ju.Word, colorTag: u, childList: lt(e) });
                 },
                 (e) => {
                   const n = e[0],
-                    r = ut[n.charAt(0)];
-                  r === Qu.LineBreak
+                    r = tt[n.charAt(0)];
+                  r === Ju.LineBreak
                     ? t.push(
                         ...((e) => {
                           const u = [
-                            { blockType: Qu.LineBreak, colorTag: "", childList: [e.charAt(0)] },
+                            { blockType: Ju.LineBreak, colorTag: "", childList: [e.charAt(0)] },
                           ];
                           for (let t = 0; t < e.length - 1; t++)
                             u.push({
-                              blockType: Qu.NewLine,
+                              blockType: Ju.NewLine,
                               colorTag: "",
                               childList: [e.charAt(0)],
                             });
@@ -3497,48 +3504,48 @@
               t
             );
           },
-          ct = (e, u, t = "") => {
+          mt = (e, u, t = "") => {
             const n = [];
             return (
-              st(
+              ot(
                 e,
                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                 (e) => {
-                  n.push(...lt(e, t));
+                  n.push(...ct(e, t));
                 },
                 (e) => {
                   const r = e[1],
                     a = void 0 === u[r] ? e[0] : u[r];
                   "string" == typeof a || "number" == typeof a
-                    ? n.push(...lt(String(a), t))
-                    : n.push({ blockType: Qu.Binding, colorTag: t, childList: [a] });
+                    ? n.push(...ct(String(a), t))
+                    : n.push({ blockType: Ju.Binding, colorTag: t, childList: [a] });
                 },
               ),
               n
             );
           },
-          mt = (e, u) => {
+          Et = (e, u) => {
             if (!e) return [u];
             const t = [],
               n = Object.assign({}, u, { childList: u.childList.splice(0, 1) });
-            if (e.blockType === Qu.NoBreakWrapper) (e.childList.push(n), t.push(e));
+            if (e.blockType === Ju.NoBreakWrapper) (e.childList.push(n), t.push(e));
             else {
               const u = Object.assign({}, e, { childList: e.childList.splice(-1) });
               (e.childList.length > 0 && t.push(e),
-                t.push({ blockType: Qu.NoBreakWrapper, colorTag: "", childList: [u, n] }));
+                t.push({ blockType: Ju.NoBreakWrapper, colorTag: "", childList: [u, n] }));
             }
             return (u.childList.length > 0 && t.push(u), t);
           },
-          Et = (e, u = {}) => {
+          _t = (e, u = {}) => {
             if (!e) return [];
             const t = ((e) => {
               const u = [];
               let t = !1;
               return (
                 e.forEach((e) => {
-                  e.blockType === Qu.NoBreakSymbol
-                    ? ((t = !0), u.push(...mt(u.pop(), e)))
-                    : (t ? u.push(...mt(u.pop(), e)) : u.push(e), (t = !1));
+                  e.blockType === Ju.NoBreakSymbol
+                    ? ((t = !0), u.push(...Et(u.pop(), e)))
+                    : (t ? u.push(...Et(u.pop(), e)) : u.push(e), (t = !1));
                 }),
                 u
               );
@@ -3546,14 +3553,14 @@
               ((e, u) => {
                 const t = [];
                 return (
-                  st(
+                  ot(
                     e,
                     /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})/g,
                     (e) => {
-                      t.push(...ct(e, u));
+                      t.push(...mt(e, u));
                     },
                     (e) => {
-                      t.push(...ct(e[2], u, e[1]));
+                      t.push(...mt(e[2], u, e[1]));
                     },
                   ),
                   t
@@ -3568,10 +3575,10 @@
                     ...((e, u) => {
                       const t = [],
                         n = e.blockType,
-                        r = at[n],
-                        a = it(e, r, u);
+                        r = it[n],
+                        a = st(e, r, u);
                       return (
-                        n === Qu.NoBreakWrapper
+                        n === Ju.NoBreakWrapper
                           ? t.push(r({ elementList: a, textBlock: e, key: `${u}` }))
                           : t.push(...a),
                         t
@@ -3583,12 +3590,12 @@
               );
             })(t);
           },
-          _t = (e, u) => !e || e.offsetTop + e.offsetHeight > u,
-          dt = (e, u) => e.offsetLeft + e.offsetWidth - u,
-          At = (e, u, t) => {
+          dt = (e, u) => !e || e.offsetTop + e.offsetHeight > u,
+          At = (e, u) => e.offsetLeft + e.offsetWidth - u,
+          gt = (e, u, t) => {
             if (!e || !e.textContent) return [!1, 0];
             if (e.offsetLeft > u) return [!1, 0];
-            const n = dt(e, u),
+            const n = At(e, u),
               r = e.textContent.length,
               a = e.offsetWidth / r,
               i = Math.ceil(n / a);
@@ -3599,16 +3606,16 @@
             const s = Math.max(t + i, 0);
             return r < s ? [!1, 0] : [!0, s];
           },
-          gt = (e, u, t, n, r, a) => {
+          Ft = (e, u, t, n, r, a) => {
             let i = -1,
               o = null;
             for (let l = t; l >= 0; l--) {
               const t = e[l],
                 c = Number(e[l].getAttribute("data-block-type"));
-              if (c === Qu.LineBreak || c === Qu.NewLine || c === Qu.Binding) continue;
+              if (c === Ju.LineBreak || c === Ju.NewLine || c === Ju.Binding) continue;
               const m = t.textContent || "";
               if (!(t.childElementCount > 1)) {
-                const e = At(t, n, r),
+                const e = gt(t, n, r),
                   c = e[0],
                   E = e[1];
                 if (!c) {
@@ -3624,7 +3631,7 @@
                 const e = t.children,
                   c = u[l],
                   E = c.props.children,
-                  _ = gt(e, E, e.length - 1, n, r, a),
+                  _ = Ft(e, E, e.length - 1, n, r, a),
                   d = _[0],
                   A = _[1];
                 if (!(d < 0)) {
@@ -3637,7 +3644,7 @@
             }
             return [i, o];
           },
-          Ft = s().memo(
+          Dt = s().memo(
             ({
               text: e,
               classMix: u,
@@ -3646,8 +3653,8 @@
               isTooltipEnable: r = !1,
               isTruncationAvailable: a = !1,
               targetId: o,
-              justifyContent: l = Ju.FlexStart,
-              alignContent: c = Ju.FlexStart,
+              justifyContent: l = et.FlexStart,
+              alignContent: c = et.FlexStart,
               truncateIdentify: m = "...",
             }) => {
               const E = (0, i.useRef)(null),
@@ -3655,7 +3662,7 @@
                 d = (0, i.useState)({ elementList: [], isTruncated: !1, isTruncateFinished: !1 }),
                 A = d[0],
                 g = d[1],
-                F = (0, i.useMemo)(() => Et(e, n), [n, e]),
+                F = (0, i.useMemo)(() => _t(e, n), [n, e]),
                 D = (0, i.useMemo)(() => {
                   if (r && A.isTruncated)
                     return {
@@ -3675,19 +3682,19 @@
                         const i = t.height,
                           s = t.width,
                           o = a.lastElementChild;
-                        if (!_t(o, i) && dt(o, s) <= 0) return [r, !1];
+                        if (!dt(o, i) && At(o, s) <= 0) return [r, !1];
                         const l = a.children,
                           c = ((e, u) => {
                             let t = 0,
                               n = e.length - 1;
                             for (; n - t >= 0;) {
                               const r = t + Math.ceil(0.5 * (n - t));
-                              _t(e[r], u) ? (n = r - 1) : (t = r + 1);
+                              dt(e[r], u) ? (n = r - 1) : (t = r + 1);
                             }
                             return t - 1;
                           })(l, i);
                         if (c < 0) return [r, !1];
-                        const m = gt(l, r, c, s, n.length, n),
+                        const m = Ft(l, r, c, s, n.length, n),
                           E = m[0],
                           _ = m[1];
                         return (_ && (r.splice(E, 1, _), r.splice(E + 1)), [r, !0]);
@@ -3710,7 +3717,7 @@
                   );
                   (0, i.useEffect)(() => {
                     if (!e.current || !t) return;
-                    const u = new Zu.Z((e) => n(e));
+                    const u = new (Qu())((e) => n(e));
                     return (
                       u.observe(e.current),
                       () => {
@@ -3750,7 +3757,7 @@
               );
             },
           ),
-          Dt = (0, i.memo)(({ withDivider: e = !0, classMix: u, children: t }) =>
+          pt = (0, i.memo)(({ withDivider: e = !0, classMix: u, children: t }) =>
             s().createElement(
               "div",
               { className: f()("DividedSection_base_dd", u) },
@@ -3758,9 +3765,9 @@
               e && s().createElement("div", { className: "DividedSection_divider_6e" }),
             ),
           ),
-          pt = (0, i.memo)(({ validVehicleLevels: e, withBattlePass: u }) =>
+          Bt = (0, i.memo)(({ validVehicleLevels: e, withBattlePass: u }) =>
             s().createElement(
-              Dt,
+              pt,
               { withDivider: u },
               s().createElement(
                 "div",
@@ -3797,17 +3804,17 @@
                     { key: n, className: "AddonsSection_column_fb" },
                     s().createElement("div", { className: eu }, e),
                     t
-                      ? s().createElement(Ft, { text: u, binding: t })
+                      ? s().createElement(Dt, { text: u, binding: t })
                       : s().createElement("div", { className: "AddonsSection_text_08" }, u),
                   ),
                 ),
               ),
             ),
           ),
-          Bt = "LevelUpSection_level_e3",
-          Ct = (0, i.memo)(({ validVehicleLevels: e, unlockableInBattleVehicleLevel: u }) =>
+          Ct = "LevelUpSection_level_e3",
+          ft = (0, i.memo)(({ validVehicleLevels: e, unlockableInBattleVehicleLevel: u }) =>
             s().createElement(
-              Dt,
+              pt,
               null,
               s().createElement(
                 "div",
@@ -3829,13 +3836,13 @@
                   "div",
                   { className: "LevelUpSection_img_a3" },
                   s().createElement("div", {
-                    className: f()(Bt, "LevelUpSection_level__left_fa"),
+                    className: f()(Ct, "LevelUpSection_level__left_fa"),
                     style: {
                       backgroundImage: `url(R.images.frontline.gui.maps.icons.levelChange.level_${Math.min(...e)})`,
                     },
                   }),
                   s().createElement("div", {
-                    className: f()(Bt, "LevelUpSection_level__right_0e"),
+                    className: f()(Ct, "LevelUpSection_level__right_0e"),
                     style: {
                       backgroundImage: `url(R.images.frontline.gui.maps.icons.levelChange.level_${u})`,
                     },
@@ -3844,8 +3851,8 @@
               ),
             ),
           ),
-          ft = "MainInfoSection_cell_b3",
-          ht = (0, i.memo)(
+          ht = "MainInfoSection_cell_b3",
+          vt = (0, i.memo)(
             ({
               withBattlePass: e,
               duration: u,
@@ -3853,7 +3860,7 @@
               unlockableInBattleVehicleLevel: n,
             }) =>
               s().createElement(
-                Dt,
+                pt,
                 { classMix: "MainInfoSection_base_81" },
                 s().createElement(
                   "div",
@@ -3947,7 +3954,7 @@
                       e && u && t
                         ? s().createElement(
                             "div",
-                            { key: n, className: ft },
+                            { key: n, className: ht },
                             s().createElement("div", {
                               className: "MainInfoSection_cellImage_ec",
                               style: { backgroundImage: `url(${t})` },
@@ -3956,35 +3963,35 @@
                               "div",
                               { className: "MainInfoSection_cellContent_bb" },
                               e.binding
-                                ? s().createElement(Ft, {
+                                ? s().createElement(Dt, {
                                     text: e.value,
                                     binding: e.binding,
                                     classMix: eu,
                                   })
                                 : s().createElement("div", { className: eu }, e.value),
-                              s().createElement(Ft, { text: u.value, binding: u.binding }),
+                              s().createElement(Dt, { text: u.value, binding: u.binding }),
                             ),
                           )
-                        : s().createElement("div", { key: n, className: ft }),
+                        : s().createElement("div", { key: n, className: ht }),
                     ),
                   ),
                 ),
               ),
           ),
-          vt = "ProgressionSection_caption_98",
-          bt = "ProgressionSection_captionDescription_e4",
-          St = "ProgressionSection_captionImgContainer_a1",
-          xt = "ProgressionSection_tableColumn_78",
-          wt = "ProgressionSection_tableCell_60",
-          yt = "ProgressionSection_tableCell__header_a9",
-          Rt = "SupplyProgression_wrappedText_3a",
-          Tt = "SupplyProgression_targetImage_94",
-          Lt = "SupplyProgression_targetImage__visible_cd",
-          Mt = "objects",
-          Nt = ["tasks", Mt, "directions"],
-          kt = R.images.frontline.gui.maps.infopage.progressInfo,
-          Pt = R.strings.fl_info_page.progression,
-          Ot = (0, i.memo)(() => {
+          bt = "ProgressionSection_caption_98",
+          St = "ProgressionSection_captionDescription_e4",
+          xt = "ProgressionSection_captionImgContainer_a1",
+          wt = "ProgressionSection_tableColumn_78",
+          yt = "ProgressionSection_tableCell_60",
+          Rt = "ProgressionSection_tableCell__header_a9",
+          Tt = "SupplyProgression_wrappedText_3a",
+          Lt = "SupplyProgression_targetImage_94",
+          Mt = "SupplyProgression_targetImage__visible_cd",
+          Nt = "objects",
+          kt = ["tasks", Nt, "directions"],
+          Pt = R.images.frontline.gui.maps.infopage.progressInfo,
+          Ot = R.strings.fl_info_page.progression,
+          It = (0, i.memo)(() => {
             const e = (0, i.useState)(1),
               u = e[0],
               t = e[1];
@@ -3999,13 +4006,13 @@
                 "div",
                 { className: "SupplyProgression_base_63" },
                 s().createElement(xu, {
-                  className: f()("SupplyProgression_subtitle_96", Rt),
-                  text: Pt.subTitle(),
+                  className: f()("SupplyProgression_subtitle_96", Tt),
+                  text: Ot.subTitle(),
                 }),
                 s().createElement(
                   "div",
                   { className: "SupplyProgression_progressionWrapper_c5" },
-                  Nt.map((e) =>
+                  kt.map((e) =>
                     s().createElement(
                       "div",
                       { className: "SupplyProgression_progressionBlock_4c", key: `block_${e}` },
@@ -4014,20 +4021,20 @@
                         { className: "SupplyProgression_imageWrapper_26" },
                         s().createElement("div", {
                           className: f()(
-                            e === Mt
+                            e === Nt
                               ? "SupplyProgression_objectsImage_83"
                               : "SupplyProgression_image_2c",
                           ),
-                          style: { backgroundImage: `url(${kt.$dyn(e)})` },
+                          style: { backgroundImage: `url(${Pt.$dyn(e)})` },
                         }),
                       ),
                       s().createElement(xu, {
                         className: eu,
-                        text: Pt.progressionBlock.title.$dyn(e),
+                        text: Ot.progressionBlock.title.$dyn(e),
                       }),
                       s().createElement(xu, {
-                        className: Rt,
-                        text: Pt.progressionBlock.description.$dyn(e),
+                        className: Tt,
+                        text: Ot.progressionBlock.description.$dyn(e),
                       }),
                     ),
                   ),
@@ -4041,59 +4048,59 @@
                     { className: "SupplyProgression_targetDescription_8b" },
                     s().createElement(xu, {
                       className: eu,
-                      text: Pt.progressionBlock.title.targets(),
+                      text: Ot.progressionBlock.title.targets(),
                     }),
                     s().createElement(xu, {
-                      className: Rt,
-                      text: Pt.progressionBlock.description.targets(),
+                      className: Tt,
+                      text: Ot.progressionBlock.description.targets(),
                     }),
                   ),
                   s().createElement("div", {
-                    className: f()(Tt, 1 === u && Lt),
-                    style: { backgroundImage: `url(${kt.beforeAfter_1()})` },
+                    className: f()(Lt, 1 === u && Mt),
+                    style: { backgroundImage: `url(${Pt.beforeAfter_1()})` },
                   }),
                   s().createElement("div", {
-                    className: f()(Tt, 2 === u && Lt),
-                    style: { backgroundImage: `url(${kt.beforeAfter_2()})` },
+                    className: f()(Lt, 2 === u && Mt),
+                    style: { backgroundImage: `url(${Pt.beforeAfter_2()})` },
                   }),
                 ),
                 s().createElement(xu, {
                   className: "SupplyProgression_footerText_d3",
-                  text: Pt.footer(),
+                  text: Ot.footer(),
                 }),
                 s().createElement("div", { className: "SupplyProgression_progressSeparator_cd" }),
               )
             );
           }),
-          It = R.strings.fl_info_page.progression,
-          Ht = [null, It.ranksTable.frontExperienceCell(), It.ranksTable.bonusCell()],
-          Wt = (0, Ie.Pi)(({ withBattlePass: e }) => {
+          Ht = R.strings.fl_info_page.progression,
+          Wt = [null, Ht.ranksTable.frontExperienceCell(), Ht.ranksTable.bonusCell()],
+          jt = (0, Ie.observer)(({ withBattlePass: e }) => {
             const u = Ze().model.computes.getRanksWithPoints();
             return s().createElement(
-              Dt,
+              pt,
               null,
-              s().createElement(xu, { className: Je, text: It.sectionHeader() }),
-              s().createElement(Ot, null),
+              s().createElement(xu, { className: Je, text: Ht.sectionHeader() }),
+              s().createElement(It, null),
               s().createElement(xu, {
                 className: "ProgressionSection_description_1e",
-                text: It.text(),
+                text: Ht.text(),
               }),
               s().createElement(
                 "div",
                 null,
                 s().createElement(
                   "div",
-                  { className: vt },
+                  { className: bt },
                   s().createElement(
                     "div",
-                    { className: St },
+                    { className: xt },
                     s().createElement("div", { className: "ProgressionSection_captionImg_56" }),
                   ),
                   s().createElement(
                     "div",
-                    { className: bt },
-                    s().createElement(xu, { className: eu, text: It.ranksSection.header() }),
-                    s().createElement(xu, { text: It.ranksSection.text() }),
+                    { className: St },
+                    s().createElement(xu, { className: eu, text: Ht.ranksSection.header() }),
+                    s().createElement(xu, { text: Ht.ranksSection.text() }),
                   ),
                 ),
               ),
@@ -4102,13 +4109,13 @@
                 { className: "ProgressionSection_table_3f" },
                 s().createElement(
                   "div",
-                  { className: xt },
-                  Ht.map((e, u) =>
+                  { className: wt },
+                  Wt.map((e, u) =>
                     s().createElement(
                       "div",
                       {
                         key: u,
-                        className: f()(wt, e ? "ProgressionSection_tableCell__right_98" : yt),
+                        className: f()(yt, e ? "ProgressionSection_tableCell__right_98" : Rt),
                       },
                       s().createElement(xu, { text: e }),
                     ),
@@ -4117,22 +4124,22 @@
                 Ve(u, ({ rankName: e, rankPoints: u }, t) =>
                   s().createElement(
                     "div",
-                    { key: t, className: xt },
+                    { key: t, className: wt },
                     s().createElement(
                       "div",
-                      { className: f()(wt, yt) },
+                      { className: f()(yt, Rt) },
                       s().createElement("div", {
                         className: "ProgressionSection_rankImg_50",
                         style: {
                           backgroundImage: `url(${R.images.gui.maps.icons.library.epicRank.$dyn(`msg_rank_${e}`)})`,
                         },
                       }),
-                      s().createElement(xu, { className: eu, text: It.ranksTable.$dyn(e) }),
+                      s().createElement(xu, { className: eu, text: Ht.ranksTable.$dyn(e) }),
                     ),
                     Ve(u, (e, u) => {
                       return s().createElement(
                         "div",
-                        { key: u, className: f()(wt, "ProgressionSection_tableCell__centered_6d") },
+                        { key: u, className: f()(yt, "ProgressionSection_tableCell__centered_6d") },
                         0 === u
                           ? `${(t = e) > 0 ? "+" : ""}${a.Z5.getNumberFormat(t, a.B3.GOLD)}`
                           : ((e) => `${e > 0 ? "+" : ""}${e}%`)(e),
@@ -4144,26 +4151,26 @@
               ),
               s().createElement(
                 "div",
-                { className: vt },
+                { className: bt },
                 s().createElement(
                   "div",
-                  { className: St },
+                  { className: xt },
                   s().createElement("div", { className: "ProgressionSection_captionBadge_5b" }),
                 ),
                 s().createElement(
                   "div",
-                  { className: bt },
-                  s().createElement(xu, { className: eu, text: It.levelsSection.header() }),
-                  s().createElement(xu, { text: It.levelsSection.experienceText() }),
-                  s().createElement(Ft, {
-                    text: e ? It.levelsSection.rewardsText() : It.levelsSection.rewardsTextNoBP(),
+                  { className: St },
+                  s().createElement(xu, { className: eu, text: Ht.levelsSection.header() }),
+                  s().createElement(xu, { text: Ht.levelsSection.experienceText() }),
+                  s().createElement(Dt, {
+                    text: e ? Ht.levelsSection.rewardsText() : Ht.levelsSection.rewardsTextNoBP(),
                     classMix: "ProgressionSection_captionText_e3",
                   }),
                 ),
               ),
             );
           }),
-          jt = [
+          Ut = [
             {
               icon: null,
               label: null,
@@ -4199,7 +4206,7 @@
               cells: [3, 3, 3],
             },
           ],
-          Ut = [
+          Gt = [
             [
               { isImg: !1, value: null },
               {
@@ -4251,12 +4258,12 @@
               { isImg: !0, value: R.images.gui.maps.icons.specialization.medium_tactics() },
             ],
           ],
-          Gt = "ReserveCategoriesSection_categoryCell_16",
-          zt = "ReserveCategoriesSection_progressionTableCell_85",
-          Vt = (0, Ie.Pi)(() => {
+          zt = "ReserveCategoriesSection_categoryCell_16",
+          Vt = "ReserveCategoriesSection_progressionTableCell_85",
+          $t = (0, Ie.observer)(() => {
             const e = Ze().model.computes.getSkillsCategories();
             return s().createElement(
-              Dt,
+              pt,
               null,
               s().createElement(
                 "div",
@@ -4277,7 +4284,7 @@
                     { key: t, className: "ReserveCategoriesSection_categoryColumn_b1" },
                     s().createElement(
                       "div",
-                      { className: f()(Gt, "ReserveCategoriesSection_categoryCell__title_1b") },
+                      { className: f()(zt, "ReserveCategoriesSection_categoryCell__title_1b") },
                       s().createElement("div", {
                         className: "ReserveCategoriesSection_categoryTypeIcon_bb",
                         style: {
@@ -4289,7 +4296,7 @@
                     Ve(u, (e, u) =>
                       s().createElement(
                         "div",
-                        { key: u, className: Gt },
+                        { key: u, className: zt },
                         s().createElement(
                           "div",
                           { className: "ReserveCategoriesSection_categoryCell__imgContainer_86" },
@@ -4333,13 +4340,13 @@
                 s().createElement(
                   "div",
                   { className: "ReserveCategoriesSection_progressionTable_aa" },
-                  jt.map(({ label: e, icon: u, cells: t }, n) =>
+                  Ut.map(({ label: e, icon: u, cells: t }, n) =>
                     s().createElement(
                       "div",
                       { key: n, className: "ReserveCategoriesSection_progressionTableColumn_34" },
                       s().createElement(
                         "div",
-                        { className: zt },
+                        { className: Vt },
                         s().createElement("div", {
                           className: "ReserveCategoriesSection_progressionTableHeaderIcon_dd",
                           style: Object.assign({}, u && { backgroundImage: `url(${u})` }),
@@ -4356,12 +4363,12 @@
                           {
                             key: u,
                             className: f()(
-                              zt,
+                              Vt,
                               !n && "ReserveCategoriesSection_progressionTableCell__accentStart_4f",
                             ),
                           },
                           Number.isInteger(e)
-                            ? s().createElement(Ft, {
+                            ? s().createElement(Dt, {
                                 text: R.strings.fl_info_page.reserveCategories.progression.tableCell(),
                                 binding: { level: Ou(e) },
                               })
@@ -4391,7 +4398,7 @@
                   s().createElement(
                     "div",
                     { className: "ReserveCategoriesSection_configurationTable_96" },
-                    Ut.map((e, u) =>
+                    Gt.map((e, u) =>
                       s().createElement(
                         "div",
                         {
@@ -4434,10 +4441,10 @@
               ),
             );
           }),
-          $t = "RulesSection_armorText_8a",
-          Xt = (0, i.memo)((e) =>
+          Xt = "RulesSection_armorText_8a",
+          Yt = (0, i.memo)((e) =>
             s().createElement(
-              Dt,
+              pt,
               { classMix: "RulesSection_base_e7" },
               s().createElement(
                 "div",
@@ -4496,7 +4503,7 @@
                     }),
                     s().createElement("div", { className: eu }, u),
                     t.map((e, u) =>
-                      s().createElement(Ft, { text: e, key: u, classMix: "RulesSection_text_e7" }),
+                      s().createElement(Dt, { text: e, key: u, classMix: "RulesSection_text_e7" }),
                     ),
                     n &&
                       s().createElement(
@@ -4511,7 +4518,7 @@
                               { className: "RulesSection_listBullet_32" },
                               "•",
                             ),
-                            s().createElement(Ft, {
+                            s().createElement(Dt, {
                               text: e.value,
                               classMix: "RulesSection_listItemText_9f",
                               binding: e.binding,
@@ -4524,22 +4531,22 @@
               ),
               s().createElement(
                 "div",
-                { className: f()($t, "RulesSection_armorSide_19") },
+                { className: f()(Xt, "RulesSection_armorSide_19") },
                 e.sideDestructiblesArmor,
               ),
               s().createElement(
                 "div",
-                { className: f()($t, "RulesSection_armorBack_69") },
+                { className: f()(Xt, "RulesSection_armorBack_69") },
                 e.backDestructiblesArmor,
               ),
               s().createElement(
                 "div",
-                { className: f()($t, "RulesSection_armorDoor_9b") },
+                { className: f()(Xt, "RulesSection_armorDoor_9b") },
                 e.doorDestructiblesArmor,
               ),
               s().createElement(
                 "div",
-                { className: f()($t, "RulesSection_armorVentilation_d1") },
+                { className: f()(Xt, "RulesSection_armorVentilation_d1") },
                 e.ventilationDestructiblesArmor,
               ),
               s().createElement(
@@ -4563,31 +4570,31 @@
               ),
             ),
           ),
-          Yt = R.strings.fl_info_page.subTitle,
-          Kt = R.strings.menu.dateTime.months,
-          qt = (0, i.memo)(({ startTimestamp: e, endTimestamp: u }) => {
+          Kt = R.strings.fl_info_page.subTitle,
+          qt = R.strings.menu.dateTime.months,
+          Zt = (0, i.memo)(({ startTimestamp: e, endTimestamp: u }) => {
             const t = new Date(1e3 * e),
               n = new Date(1e3 * u),
               r = {
                 from: t.getDate(),
                 to: n.getDate(),
-                startMonth: Kt.$num(t.getMonth() + 1),
-                endMonth: Kt.$num(n.getMonth() + 1),
+                startMonth: qt.$num(t.getMonth() + 1),
+                endMonth: qt.$num(n.getMonth() + 1),
                 startYear: t.getFullYear(),
                 endYear: n.getFullYear(),
               },
-              a = r.startMonth === r.endMonth ? Yt.sameMonth() : Yt.differentMonth(),
-              i = r.startYear === r.endYear ? a : Yt.differentYears();
+              a = r.startMonth === r.endMonth ? Kt.sameMonth() : Kt.differentMonth(),
+              i = r.startYear === r.endYear ? a : Kt.differentYears();
             return s().createElement("div", { className: "SubTitle_base_07" }, Se(i, r));
           }),
-          Zt = "SectionItem_zonesText_1c",
-          Qt = "SectionItem_damageBlockText_4b",
-          Jt = "SectionItem_damageBlockText__param_66",
-          en = "SectionItem_damageBlockText__light_76",
-          un = R.images.frontline.gui.maps.infopage.supplyInfo,
-          tn = R.strings.fl_info_page.supply,
-          nn = tn.item.damageZones,
-          rn = (0, i.memo)(
+          Qt = "SectionItem_zonesText_1c",
+          Jt = "SectionItem_damageBlockText_4b",
+          en = "SectionItem_damageBlockText__param_66",
+          un = "SectionItem_damageBlockText__light_76",
+          tn = R.images.frontline.gui.maps.infopage.supplyInfo,
+          nn = R.strings.fl_info_page.supply,
+          rn = nn.item.damageZones,
+          an = (0, i.memo)(
             ({
               name: e,
               className: u,
@@ -4614,23 +4621,23 @@
                 a &&
                   s().createElement("div", {
                     className: "SectionItem_typeIcon_8e",
-                    style: { backgroundImage: `url(${un.$dyn(a)})` },
+                    style: { backgroundImage: `url(${tn.$dyn(a)})` },
                   }),
                 s().createElement(
                   "div",
-                  { className: m, style: { backgroundImage: `url(${un.$dyn(e)})` } },
+                  { className: m, style: { backgroundImage: `url(${tn.$dyn(e)})` } },
                   l &&
                     s().createElement(
                       "div",
                       { className: "SectionItem_zonesWrapper_93" },
                       s().createElement(xu, {
-                        className: f()(Zt, "SectionItem_zonesText__turret_09"),
-                        text: nn.damage(),
+                        className: f()(Qt, "SectionItem_zonesText__turret_09"),
+                        text: rn.damage(),
                         format: { binding: { number: d } },
                       }),
                       s().createElement(xu, {
-                        className: f()(Zt, "SectionItem_zonesText__hull_43"),
-                        text: nn.damage(),
+                        className: f()(Qt, "SectionItem_zonesText__hull_43"),
+                        text: rn.damage(),
                         format: { binding: { number: _ } },
                       }),
                     ),
@@ -4638,41 +4645,41 @@
                 s().createElement(
                   "div",
                   { className: "SectionItem_cardContent_ff" },
-                  s().createElement(xu, { className: eu, text: tn.item.name.$dyn(e) }),
+                  s().createElement(xu, { className: eu, text: nn.item.name.$dyn(e) }),
                   s().createElement(xu, {
                     className: f()(
                       "SectionItem_descriptionText_ee",
                       l && "SectionItem_descriptionText__inAirship_a8",
                     ),
-                    text: tn.item.description.$dyn(e),
+                    text: nn.item.description.$dyn(e),
                     format: { binding: { value: E } },
                   }),
                   l &&
                     s().createElement(
                       "div",
                       null,
-                      s().createElement(xu, { className: Qt, text: nn.title() }),
+                      s().createElement(xu, { className: Jt, text: rn.title() }),
                       s().createElement(xu, {
-                        className: f()(Qt, Jt),
-                        text: nn.hullText(),
+                        className: f()(Jt, en),
+                        text: rn.hullText(),
                         format: {
                           binding: {
                             value: s().createElement(xu, {
-                              className: en,
-                              text: nn.damage(),
+                              className: un,
+                              text: rn.damage(),
                               format: { binding: { number: _ } },
                             }),
                           },
                         },
                       }),
                       s().createElement(xu, {
-                        className: f()(Qt, Jt),
-                        text: nn.turretText(),
+                        className: f()(Jt, en),
+                        text: rn.turretText(),
                         format: {
                           binding: {
                             value: s().createElement(xu, {
-                              className: en,
-                              text: nn.damage(),
+                              className: un,
+                              text: rn.damage(),
                               format: { binding: { number: d } },
                             }),
                           },
@@ -4684,12 +4691,12 @@
               );
             },
           ),
-          an = "SupplyObjectsSection_contentWrapper_03",
-          sn = "SupplyObjectsSection_titleMargin_b0",
-          on = "SupplyObjectsSection_sectionItem_98";
-        function ln() {
+          sn = "SupplyObjectsSection_contentWrapper_03",
+          on = "SupplyObjectsSection_titleMargin_b0",
+          ln = "SupplyObjectsSection_sectionItem_98";
+        function cn() {
           return (
-            (ln =
+            (cn =
               Object.assign ||
               function (e) {
                 for (var u = 1; u < arguments.length; u++) {
@@ -4698,11 +4705,11 @@
                 }
                 return e;
               }),
-            ln.apply(this, arguments)
+            cn.apply(this, arguments)
           );
         }
-        const cn = R.strings.fl_info_page.supply;
-        let mn;
+        const mn = R.strings.fl_info_page.supply;
+        let En;
         !(function (e) {
           ((e.Pillbox = "pillbox"),
             (e.Flamer = "flamer"),
@@ -4710,17 +4717,17 @@
             (e.Mortar = "mortar"),
             (e.Airship = "airship"),
             (e.Respawn = "respawn"));
-        })(mn || (mn = {}));
-        const En = [
-            { name: mn.Pillbox, isWithLine: !0 },
-            { name: mn.Flamer, typeIcon: "defend" },
+        })(En || (En = {}));
+        const _n = [
+            { name: En.Pillbox, isWithLine: !0 },
+            { name: En.Flamer, typeIcon: "defend" },
           ],
-          _n = [
-            { name: mn.Mortar, isWithLine: !0 },
-            { name: mn.Airship, typeIcon: "attack" },
-            { name: mn.Respawn, isBig: !0, isLast: !0 },
+          dn = [
+            { name: En.Mortar, isWithLine: !0 },
+            { name: En.Airship, typeIcon: "attack" },
+            { name: En.Respawn, isBig: !0, isLast: !0 },
           ],
-          dn = (0, i.memo)(
+          An = (0, i.memo)(
             ({
               repairSpeedPlayerCap: e,
               mortarRespawnTime: u,
@@ -4732,42 +4739,42 @@
               flamerRespawnTime: o,
             }) => {
               const l = (r) =>
-                r === mn.Flamer
+                r === En.Flamer
                   ? o
-                  : r === mn.Pillbox
+                  : r === En.Pillbox
                     ? i
-                    : r === mn.Repair
+                    : r === En.Repair
                       ? e
-                      : r === mn.Mortar
+                      : r === En.Mortar
                         ? u
-                        : r === mn.Airship
+                        : r === En.Airship
                           ? t
-                          : r === mn.Respawn
+                          : r === En.Respawn
                             ? n
                             : void 0;
               return s().createElement(
-                Dt,
+                pt,
                 null,
-                s().createElement(xu, { className: Je, text: cn.titel() }),
+                s().createElement(xu, { className: Je, text: mn.titel() }),
                 s().createElement(xu, {
                   className: "SupplyObjectsSection_mainTextWrapper_1c",
-                  text: cn.description.main(),
+                  text: mn.description.main(),
                 }),
                 s().createElement(xu, {
                   className: "SupplyObjectsSection_subtitleText_e8",
-                  text: cn.description.secondary(),
+                  text: mn.description.secondary(),
                 }),
-                s().createElement(xu, { className: f()(eu, sn), text: cn.subTitle.defend() }),
+                s().createElement(xu, { className: f()(eu, on), text: mn.subTitle.defend() }),
                 s().createElement(
                   "div",
-                  { className: an },
-                  En.map((e) =>
+                  { className: sn },
+                  _n.map((e) =>
                     s().createElement(
-                      rn,
-                      ln(
+                      an,
+                      cn(
                         {
                           key: `defend_supply_${e.name}`,
-                          className: f()(on, "SupplyObjectsSection_sectionItem__small_5d"),
+                          className: f()(ln, "SupplyObjectsSection_sectionItem__small_5d"),
                         },
                         e,
                         { value: l(e.name) },
@@ -4775,18 +4782,18 @@
                     ),
                   ),
                 ),
-                s().createElement(xu, { className: f()(eu, sn), text: cn.subTitle.attack() }),
+                s().createElement(xu, { className: f()(eu, on), text: mn.subTitle.attack() }),
                 s().createElement(
                   "div",
-                  { className: an },
-                  _n.map((e) =>
+                  { className: sn },
+                  dn.map((e) =>
                     s().createElement(
-                      rn,
-                      ln(
+                      an,
+                      cn(
                         {
                           key: `attack_supply_${e.name}`,
                           className: f()(
-                            on,
+                            ln,
                             e.isLast && "SupplyObjectsSection_sectionItem__last_b2",
                           ),
                         },
@@ -4803,15 +4810,15 @@
               );
             },
           ),
-          An = "WinStrategySection_winText_7d",
-          gn = [
+          gn = "WinStrategySection_winText_7d",
+          Fn = [
             R.strings.fl_info_page.winStrategy.firstLine(),
             R.strings.fl_info_page.winStrategy.secondLine(),
             R.strings.fl_info_page.winStrategy.thirdLine(),
           ],
-          Fn = (0, i.memo)(() =>
+          Dn = (0, i.memo)(() =>
             s().createElement(
-              Dt,
+              pt,
               { classMix: "WinStrategySection_base_b6" },
               s().createElement(
                 "div",
@@ -4826,16 +4833,16 @@
                   ),
                   s().createElement(
                     "div",
-                    { className: An },
+                    { className: gn },
                     R.strings.fl_info_page.winStrategy.mapZones(),
                   ),
-                  gn.map((e, u) => s().createElement(Ft, { key: u, text: e, classMix: An })),
+                  Fn.map((e, u) => s().createElement(Dt, { key: u, text: e, classMix: gn })),
                 ),
                 s().createElement("div", { className: "WinStrategySection_img_9f" }),
               ),
             ),
           ),
-          Dn = (0, Ie.Pi)(() => {
+          pn = (0, Ie.observer)(() => {
             const e = oe(),
               u = Ze(),
               t = u.model,
@@ -4892,7 +4899,7 @@
                     text: R.strings.fl_info_page.page.headerUpper(),
                     classMix: "InfoViewApp_pageTitle_5d",
                   },
-                  s().createElement(qt, { startTimestamp: E, endTimestamp: _ }),
+                  s().createElement(Zt, { startTimestamp: E, endTimestamp: _ }),
                 ),
                 c &&
                   s().createElement(ve, {
@@ -4916,13 +4923,13 @@
                     ),
                     api: e,
                   },
-                  s().createElement(ht, {
+                  s().createElement(vt, {
                     withBattlePass: m,
                     duration: y,
                     validVehicleLevels: w,
                     unlockableInBattleVehicleLevel: d,
                   }),
-                  s().createElement(dn, {
+                  s().createElement(An, {
                     repairSpeedPlayerCap: p,
                     mortarRespawnTime: B,
                     airshipRespawnTime: C,
@@ -4932,21 +4939,21 @@
                     pillboxRespawnTime: S,
                     flamerRespawnTime: x,
                   }),
-                  s().createElement(Vt, null),
+                  s().createElement($t, null),
                   0 !== d &&
-                    s().createElement(Ct, {
+                    s().createElement(ft, {
                       validVehicleLevels: w,
                       unlockableInBattleVehicleLevel: d,
                     }),
-                  s().createElement(Xt, {
+                  s().createElement(Yt, {
                     sideDestructiblesArmor: A,
                     backDestructiblesArmor: g,
                     doorDestructiblesArmor: F,
                     ventilationDestructiblesArmor: D,
                   }),
-                  s().createElement(Wt, { withBattlePass: m }),
-                  s().createElement(Fn, null),
-                  s().createElement(pt, { withBattlePass: m, validVehicleLevels: w }),
+                  s().createElement(jt, { withBattlePass: m }),
+                  s().createElement(Dn, null),
+                  s().createElement(Bt, { withBattlePass: m, validVehicleLevels: w }),
                   m && s().createElement(Mu, null),
                 ),
               )
@@ -4954,7 +4961,7 @@
           });
         engine.whenReady.then(() => {
           H().render(
-            s().createElement(O, null, s().createElement(qe, null, s().createElement(Dn, null))),
+            s().createElement(O, null, s().createElement(qe, null, s().createElement(pn, null))),
             document.getElementById("root"),
           );
         });
@@ -4966,7 +4973,7 @@
     var u = __webpack_module_cache__[e];
     if (void 0 !== u) return u.exports;
     var t = (__webpack_module_cache__[e] = { exports: {} });
-    return (__webpack_modules__[e](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[e].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -5017,7 +5024,6 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 153),
     (() => {
       var e = { 153: 0 };
       __webpack_require__.O.j = (u) => 0 === e[u];

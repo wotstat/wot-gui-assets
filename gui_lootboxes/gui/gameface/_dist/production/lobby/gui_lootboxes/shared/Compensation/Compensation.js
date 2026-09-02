@@ -81,7 +81,14 @@
               (e.DogTagType = "dogTagComponents"),
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
-              (e.RewardsSlots = "rewardsSlots"));
+              (e.RewardsSlots = "rewardsSlots"),
+              (e.WtStamp = "stamp"),
+              (e.WtHunter = "wt_hunter"),
+              (e.WtBoss = "wt_boss"),
+              (e.WtHunterCollection = "hunter_collection"),
+              (e.WtTicket = "wtevent_ticket"),
+              (e.WtMainPrizeDiscount = "main_prize_discount"),
+              (e.WtTicket25 = "wtevent_ticket25"));
           })(n || (n = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -225,6 +232,11 @@
           n.E4.PremiumPlusUniversal,
           n.E4.GoldenTicket,
           n.E4.RewardsSlots,
+          n.E4.WtStamp,
+          n.E4.WtTicket,
+          n.E4.WtMainPrizeDiscount,
+          n.E4.WtHunter,
+          n.E4.WtHunterCollection,
           n.E4.Gold,
           n.E4.Credits,
           n.E4.Crystal,
@@ -413,9 +425,9 @@
             addPreloadTexture: () => a,
             children: () => n,
             displayStatus: () => i.W,
-            displayStatusIs: () => f,
+            displayStatusIs: () => k,
             events: () => r.U,
-            extraSize: () => k,
+            extraSize: () => f,
             forceTriggerMouseMove: () => O,
             freezeTextureBeforeResize: () => m,
             getBrowserTexturePath: () => l,
@@ -498,11 +510,11 @@
         function R() {
           return viewEnv.getShowingStatus();
         }
-        const f = Object.keys(i.W).reduce(
+        const k = Object.keys(i.W).reduce(
             (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
             {},
           ),
-          k = {
+          f = {
             set: (e, t) => {
               viewEnv.setExtraSizeRem(e, t);
             },
@@ -920,7 +932,7 @@
           };
         var S = o(7572);
         const O = i.instance,
-          f = {
+          k = {
             DataTracker: r.Z,
             ViewModel: S.Z,
             ViewEventType: _,
@@ -1009,7 +1021,7 @@
             SystemLocale: s,
             UserLocale: a,
           };
-        window.ViewEnvHelper = f;
+        window.ViewEnvHelper = k;
       },
       3458: (e, t, o) => {
         let n, i;

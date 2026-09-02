@@ -737,7 +737,7 @@
         "use strict";
         t.d(e, { q: () => s });
         var r = t(4598),
-          n = t(9174),
+          n = t(3915),
           a = t(6179),
           o = t.n(a),
           i = t(8246);
@@ -765,11 +765,11 @@
                       observableModel: {
                         array: (u, e) => {
                           const a = null != e ? e : E(u),
-                            o = n.LO.box(a, { equals: r.jv });
+                            o = n.observable.box(a, { equals: r.jv });
                           return (
                             "real" === t &&
                               c.subscribe(
-                                (0, n.aD)((u) => o.set(u)),
+                                (0, n.action)((u) => o.set(u)),
                                 u,
                               ),
                             o
@@ -777,11 +777,11 @@
                         },
                         object: (u, e) => {
                           const a = null != e ? e : E(u),
-                            o = n.LO.box(a, { equals: r.jv });
+                            o = n.observable.box(a, { equals: r.jv });
                           return (
                             "real" === t &&
                               c.subscribe(
-                                (0, n.aD)((u) => o.set(u)),
+                                (0, n.action)((u) => o.set(u)),
                                 u,
                               ),
                             o
@@ -790,11 +790,14 @@
                         primitives: (u, e) => {
                           const r = E(e);
                           if (Array.isArray(u)) {
-                            const a = u.reduce((u, e) => ((u[e] = n.LO.box(r[e], {})), u), {});
+                            const a = u.reduce(
+                              (u, e) => ((u[e] = n.observable.box(r[e], {})), u),
+                              {},
+                            );
                             return (
                               "real" === t &&
                                 c.subscribe(
-                                  (0, n.aD)((e) => {
+                                  (0, n.action)((e) => {
                                     u.forEach((u) => {
                                       a[u].set(e[u]);
                                     });
@@ -807,11 +810,14 @@
                           {
                             const a = u,
                               o = Object.entries(a),
-                              i = o.reduce((u, [e, t]) => ((u[t] = n.LO.box(r[e], {})), u), {});
+                              i = o.reduce(
+                                (u, [e, t]) => ((u[t] = n.observable.box(r[e], {})), u),
+                                {},
+                              );
                             return (
                               "real" === t &&
                                 c.subscribe(
-                                  (0, n.aD)((u) => {
+                                  (0, n.action)((u) => {
                                     o.forEach(([e, t]) => {
                                       i[t].set(u[e]);
                                     });
@@ -1909,7 +1915,7 @@
         (t.r(n),
           t.d(n, {
             Area: () => Nu,
-            Bar: () => Ou,
+            Bar: () => ku,
             Default: () => Ru,
             useVerticalScrollApi: () => bu,
           }),
@@ -2075,11 +2081,11 @@
                     (L && "space-around") ||
                     void 0
                   : y,
-              O = u.alignItems,
-              k =
-                void 0 === O
+              k = u.alignItems,
+              O =
+                void 0 === k
                   ? (w ? "flex-start" : x && "center") || (S && "flex-end") || void 0
-                  : O,
+                  : k,
               R = u.alignSelf,
               N = u.wrap,
               P = u.flexWrap,
@@ -2117,15 +2123,15 @@
                     height: void 0 !== r && "number" == typeof r ? r + "rem" : r,
                     flex: G,
                     alignSelf: R,
-                    display: b || k ? "flex" : void 0,
+                    display: b || O ? "flex" : void 0,
                     flexDirection: b,
                     flexWrap: H,
                     justifyContent: T,
-                    alignItems: k,
+                    alignItems: O,
                   }),
                   computedClassNames: e,
                 };
-              }, [t, r, l, E, F, _, U, G, R, b, H, T, k]),
+              }, [t, r, l, E, F, _, U, G, R, b, H, T, O]),
               V = z.computedStyle,
               $ = z.computedClassNames;
             return o().createElement("div", C({ className: s()(d.base, ...$, e), style: V }, X), Y);
@@ -2208,8 +2214,8 @@
         const L = Object.keys(w()),
           y = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
           T = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
-          O = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
-          k =
+          k = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
+          O =
             (Object.keys({
               XL: { mt: "XL", mr: "XL", mb: "XL", ml: "XL" },
               LG: { mt: "LG", mr: "LG", mb: "LG", ml: "LG" },
@@ -2230,17 +2236,17 @@
               "heading-H22": T,
               "heading-H20R": T,
               "heading-H18": T,
-              "heading-H15": O,
-              "heading-H14": O,
+              "heading-H15": k,
+              "heading-H14": k,
               "paragraph-P24": T,
               "paragraph-P18": T,
               "paragraph-P16": T,
-              "paragraph-P14": O,
-              "paragraph-P12": O,
-              "paragraph-P10": O,
+              "paragraph-P14": k,
+              "paragraph-P12": k,
+              "paragraph-P10": k,
             }),
           N =
-            (Object.keys(k),
+            (Object.keys(O),
             (u) =>
               u
                 ? ((u) => L.includes(u))(u)
@@ -2287,10 +2293,10 @@
                 {
                   className: s()(x.base, t && x[t], h, r),
                   style: g,
-                  mt: !0 === c ? k[t || "paragraph-P16"].mt : c,
-                  mr: !0 === A ? k[t || "paragraph-P16"].mr : A,
-                  mb: !0 === m ? k[t || "paragraph-P16"].mb : m,
-                  ml: !0 === D ? k[t || "paragraph-P16"].ml : D,
+                  mt: !0 === c ? O[t || "paragraph-P16"].mt : c,
+                  mr: !0 === A ? O[t || "paragraph-P16"].mr : A,
+                  mb: !0 === m ? O[t || "paragraph-P16"].mb : m,
+                  ml: !0 === D ? O[t || "paragraph-P16"].ml : D,
                 },
                 C,
               ),
@@ -2307,7 +2313,7 @@
             (u.Flamer = "flamer"),
             (u.Airship = "airship"));
         })(W || (W = {}));
-        var j = t(3403);
+        var j = t(3282);
         let G, U;
         (!(function (u) {
           ((u[(u.W_1024 = 1024)] = "W_1024"),
@@ -2393,7 +2399,7 @@
                     )
               : u,
           Q = (u) => J(u);
-        var uu = t(3946);
+        var uu = t(6517);
         const eu = (0, q.q)()(
             ({ observableModel: u }) => {
               const e = {
@@ -2401,8 +2407,8 @@
                   supplyObjects: u.array("supplyObjects"),
                   supplyParams: u.array("supplyParams"),
                 },
-                t = (0, uu.Om)(() => Q(e.supplyObjects.get()), { equals: K.jv }),
-                r = (0, uu.Om)(() => Q(e.supplyParams.get()), { equals: K.jv });
+                t = (0, uu.computedFn)(() => Q(e.supplyObjects.get()), { equals: K.jv }),
+                r = (0, uu.computedFn)(() => Q(e.supplyParams.get()), { equals: K.jv });
               return Object.assign({}, e, {
                 computes: { getSupplyObjects: t, getSupplyParams: r },
               });
@@ -2443,7 +2449,7 @@
           for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
           return r;
         }
-        var cu = t(7030);
+        var cu = t(8552);
         let Eu;
         !(function (u) {
           ((u[(u.Next = -1)] = "Next"), (u[(u.Prev = 1)] = "Prev"));
@@ -3006,7 +3012,7 @@
             u.contentRef.current && e(u.contentRef.current);
           },
           Tu = (u, e) => Math.max(20, u.offsetHeight * e),
-          Ou = (0, a.memo)(
+          ku = (0, a.memo)(
             ({ api: u, classNames: e = {}, getStepByRailClick: t = Lu, onDrag: r = Su }) => {
               const n = (0, a.useRef)(null),
                 i = (0, a.useRef)(null),
@@ -3201,7 +3207,7 @@
               );
             },
           ),
-          ku = {
+          Ou = {
             content: "VerticalScroll_content_cb",
             defaultScroll: "VerticalScroll_defaultScroll_f8",
             bar: "VerticalScroll_bar_1e",
@@ -3220,28 +3226,28 @@
           }) => {
             const A = (0, a.useMemo)(() => {
                 const u = r || {};
-                return Object.assign({}, u, { base: s()(ku.base, u.base) });
+                return Object.assign({}, u, { base: s()(Ou.base, u.base) });
               }, [r]),
               F = (0, a.useMemo)(() => Object.assign({}, e, { handleMouseWheel: () => {} }), [e]);
             return o().createElement(
               "div",
-              { className: s()(ku.defaultScroll, t), onWheel: e.handleMouseWheel },
+              { className: s()(Ou.defaultScroll, t), onWheel: e.handleMouseWheel },
               o().createElement(
                 "div",
-                { className: s()(ku.area, n) },
+                { className: s()(Ou.area, n) },
                 o().createElement(Nu, { className: i, classNames: l, api: F }, u),
               ),
-              o().createElement(Ou, { getStepByRailClick: c, api: e, onDrag: E, classNames: A }),
+              o().createElement(ku, { getStepByRailClick: c, api: e, onDrag: E, classNames: A }),
             );
           },
           Nu = ({ className: u, classNames: e, children: t, api: r }) => (
             (0, a.useEffect)(() => (0, ru.v)(r.recalculateContent)),
             o().createElement(
               "div",
-              { className: s()(ku.base, u), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
+              { className: s()(Ou.base, u), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
               o().createElement(
                 "div",
-                { className: s()(ku.content, null == e ? void 0 : e.content), ref: r.contentRef },
+                { className: s()(Ou.content, null == e ? void 0 : e.content), ref: r.contentRef },
                 t,
               ),
             )
@@ -3303,7 +3309,7 @@
             );
           }),
           Yu = R.strings.fl_supply_objects.page.object.damageZones,
-          Xu = (0, j.Pi)(({ selectedObj: u, clearSelectedObj: e }) => {
+          Xu = (0, j.observer)(({ selectedObj: u, clearSelectedObj: e }) => {
             const t = tu().model,
               r = (0, a.useState)(!0),
               n = r[0],
@@ -3708,7 +3714,7 @@
             descriptionBlock: "App_descriptionBlock_ad",
             descriptionBlock__visible: "App_descriptionBlock__visible_02",
           };
-        ((0, j.Pi)(() => {
+        ((0, j.observer)(() => {
           const u = tu(),
             e = u.model,
             t = u.controls,
@@ -3891,7 +3897,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -3942,7 +3948,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 805),
     (() => {
       var u = { 805: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

@@ -424,7 +424,7 @@
     var r = t[e];
     if (void 0 !== r) return r.exports;
     var o = (t[e] = { exports: {} });
-    return (n[e](o, o.exports, i), o.exports);
+    return (n[e].call(o.exports, o, o.exports, i), o.exports);
   }
   ((i.m = n),
     (e = []),
@@ -471,7 +471,6 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (i.j = 479),
     (() => {
       var e = { 479: 0 };
       i.O.j = (n) => 0 === e[n];

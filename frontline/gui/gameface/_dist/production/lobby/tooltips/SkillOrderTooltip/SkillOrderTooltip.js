@@ -45,8 +45,8 @@
             setSidePaddingsRem: () => O,
             whenTutorialReady: () => J,
           }));
-        var n = e(6179),
-          t = e.n(n),
+        var t = e(6179),
+          n = e.n(t),
           C = e(493),
           r = e.n(C),
           i = e(6483),
@@ -92,16 +92,16 @@
                     let E = !0;
                     const D = `mouse${F}`,
                       B = l[F]((u) => e([u, "outside"]));
-                    function n(u) {
+                    function t(u) {
                       e([u, "inside"]);
                     }
                     return (
-                      window.addEventListener(D, n),
+                      window.addEventListener(D, t),
                       A(),
                       () => {
                         E &&
                           (B(),
-                          window.removeEventListener(D, n),
+                          window.removeEventListener(D, t),
                           (u.listeners -= 1),
                           A(),
                           (E = !1));
@@ -309,7 +309,7 @@
             uu.apply(this, arguments)
           );
         }
-        const Fu = t().forwardRef(function (u, F) {
+        const Fu = n().forwardRef(function (u, F) {
           let e = u.children,
             A = u.className,
             E = u.theme,
@@ -324,14 +324,14 @@
               return E;
             })(u, Y);
           const C = (function () {
-              const u = (0, n.useRef)(0);
+              const u = (0, t.useRef)(0);
               var F;
               return (
                 (F = () => {
                   window.cancelAnimationFrame(u.current);
                 }),
-                (0, n.useEffect)(() => F, []),
-                (0, n.useMemo)(
+                (0, t.useEffect)(() => F, []),
+                (0, t.useMemo)(
                   () => ({
                     run: (F) => {
                       (window.cancelAnimationFrame(u.current),
@@ -352,7 +352,7 @@
                 )
               );
             })(),
-            r = t().useRef(null);
+            r = n().useRef(null);
           var i;
           return (
             (i = () => {
@@ -371,8 +371,8 @@
                 });
               });
             }),
-            (0, n.useEffect)(i, []),
-            t().createElement(
+            (0, t.useEffect)(i, []),
+            n().createElement(
               "div",
               uu({}, B, {
                 className: o()(X.base, X[`base__theme-${D}`], A),
@@ -380,7 +380,7 @@
                   ((r.current = u), "function" == typeof F ? F(u) : F && (F.current = u));
                 },
               }),
-              t().createElement("div", { className: X.decorator }, e),
+              n().createElement("div", { className: X.decorator }, e),
             )
           );
         });
@@ -407,40 +407,40 @@
                 .source,
             "gum",
           ));
-        const Eu = (0, n.memo)(({ category: u, classMix: F, showArrow: e }) => {
-            const A = (0, n.useMemo)(
+        const Eu = (0, t.memo)(({ category: u, classMix: F, showArrow: e }) => {
+            const A = (0, t.useMemo)(
                 () => ({
                   backgroundImage: `url(R.images.gui.maps.icons.epicBattles.category.dark.${u})`,
                 }),
                 [u],
               ),
               E = o()("CategoryIcon_base_d6", F);
-            return t().createElement(
+            return n().createElement(
               "div",
               { className: E, style: A },
-              e && t().createElement("div", { className: "CategoryIcon_arrow_11" }),
+              e && n().createElement("div", { className: "CategoryIcon_arrow_11" }),
             );
           }),
-          Du = (0, n.memo)(({ vehicleType: u, categories: F, classMix: e }) => {
-            const A = (0, n.useMemo)(() => {
+          Du = (0, t.memo)(({ vehicleType: u, categories: F, classMix: e }) => {
+            const A = (0, t.useMemo)(() => {
                 return {
                   backgroundImage: `url('R.images.gui.maps.icons.vehicleTypes.big.${((F = u), F.replace(/-/g, "_"))}')`,
                 };
                 var F;
               }, [u]),
               E = o()("Item_base_f5", e);
-            return t().createElement(
+            return n().createElement(
               "div",
               { className: E },
-              t().createElement("div", { className: "Item_vehicleIcon_c5", style: A }),
-              t().createElement(
+              n().createElement("div", { className: "Item_vehicleIcon_c5", style: A }),
+              n().createElement(
                 "div",
                 { className: "Item_categories_23" },
                 F.map((u, F) =>
-                  t().createElement(
-                    t().Fragment,
+                  n().createElement(
+                    n().Fragment,
                     { key: u },
-                    t().createElement(Eu, {
+                    n().createElement(Eu, {
                       category: u,
                       showArrow: F > 0,
                       classMix: "Item_category_0d",
@@ -457,39 +457,39 @@
             divider: "SkillOrderTooltipApp_divider_78",
             items: "SkillOrderTooltipApp_items_6d",
           },
-          nu = [
+          tu = [
             ["lightTank", [eu.Reconnaissance, eu.Tactics, eu.Firesupport]],
             ["AT-SPG", [eu.Reconnaissance, eu.Firesupport, eu.Tactics]],
             ["mediumTank", [eu.Tactics, eu.Firesupport, eu.Reconnaissance]],
             ["SPG", [eu.Firesupport, eu.Reconnaissance, eu.Tactics]],
             ["heavyTank", [eu.Firesupport, eu.Tactics, eu.Reconnaissance]],
           ],
-          tu = (0, n.memo)(() =>
-            t().createElement(
+          nu = (0, t.memo)(() =>
+            n().createElement(
               Fu,
               null,
-              t().createElement(
+              n().createElement(
                 "div",
                 { className: Bu.base },
-                t().createElement(
+                n().createElement(
                   "div",
                   { className: Bu.title },
                   R.strings.fl_tooltips.skillOrderTooltip.header(),
                 ),
-                t().createElement(
+                n().createElement(
                   "div",
                   { className: Bu.body },
                   R.strings.fl_tooltips.skillOrderTooltip.body(),
                 ),
-                t().createElement(
+                n().createElement(
                   "div",
                   { className: Bu.container },
-                  t().createElement("div", { className: Bu.divider }),
-                  t().createElement(
+                  n().createElement("div", { className: Bu.divider }),
+                  n().createElement(
                     "div",
                     { className: Bu.items },
-                    nu.map(([u, F]) =>
-                      t().createElement(Du, { key: u, vehicleType: u, categories: F }),
+                    tu.map(([u, F]) =>
+                      n().createElement(Du, { key: u, vehicleType: u, categories: F }),
                     ),
                   ),
                 ),
@@ -497,7 +497,7 @@
             ),
           );
         engine.whenReady.then(() => {
-          r().render(t().createElement(tu, null), document.getElementById("root"));
+          r().render(n().createElement(nu, null), document.getElementById("root"));
         });
       },
     },
@@ -506,7 +506,7 @@
     var E = e[u];
     if (void 0 !== E) return E.exports;
     var D = (e[u] = { exports: {} });
-    return (F[u](D, D.exports, A), D.exports);
+    return (F[u].call(D.exports, D, D.exports, A), D.exports);
   }
   ((A.m = F),
     (u = []),
@@ -514,11 +514,11 @@
       if (!e) {
         var B = 1 / 0;
         for (r = 0; r < u.length; r++) {
-          for (var [e, E, D] = u[r], n = !0, t = 0; t < e.length; t++)
-            (!1 & D || B >= D) && Object.keys(A.O).every((u) => A.O[u](e[t]))
-              ? e.splice(t--, 1)
-              : ((n = !1), D < B && (B = D));
-          if (n) {
+          for (var [e, E, D] = u[r], t = !0, n = 0; n < e.length; n++)
+            (!1 & D || B >= D) && Object.keys(A.O).every((u) => A.O[u](e[n]))
+              ? e.splice(n--, 1)
+              : ((t = !1), D < B && (B = D));
+          if (t) {
             u.splice(r--, 1);
             var C = E();
             void 0 !== C && (F = C);
@@ -553,18 +553,17 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (A.j = 1),
     (() => {
       var u = { 1: 0 };
       A.O.j = (F) => 0 === u[F];
       var F = (F, e) => {
           var E,
             D,
-            [B, n, t] = e,
+            [B, t, n] = e,
             C = 0;
           if (B.some((F) => 0 !== u[F])) {
-            for (E in n) A.o(n, E) && (A.m[E] = n[E]);
-            if (t) var r = t(A);
+            for (E in t) A.o(t, E) && (A.m[E] = t[E]);
+            if (n) var r = n(A);
           }
           for (F && F(e); C < B.length; C++)
             ((D = B[C]), A.o(u, D) && u[D] && u[D][0](), (u[D] = 0));

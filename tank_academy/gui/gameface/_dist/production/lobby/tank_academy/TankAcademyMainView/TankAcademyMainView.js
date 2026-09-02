@@ -57,7 +57,7 @@
       },
       67: (e, u, t) => {
         "use strict";
-        t.d(u, { O: () => V });
+        t.d(u, { O: () => W });
         var a = {};
         (t.r(a), t.d(a, { mouse: () => _, onResize: () => l }));
         var r = {};
@@ -98,9 +98,9 @@
             getScale: () => y,
             getSize: () => S,
             getViewGlobalPosition: () => R,
-            isClientAccessible: () => k,
+            isClientAccessible: () => I,
             isEventHandled: () => O,
-            isFocused: () => I,
+            isFocused: () => k,
             pxToRem: () => N,
             remToPx: () => T,
             resize: () => x,
@@ -301,10 +301,10 @@
         function M(e, u) {
           viewEnv.setAnimateWindow(e, u);
         }
-        function I() {
+        function k() {
           return viewEnv.isFocused();
         }
-        function k() {
+        function I() {
           return viewEnv.isClientAccessible();
         }
         function L() {
@@ -337,7 +337,7 @@
             }),
             engine.whenReady,
           ]),
-          V = { view: s, client: r };
+          W = { view: s, client: r };
       },
       521: (e, u, t) => {
         "use strict";
@@ -1132,8 +1132,8 @@
               })(e, T);
             return r().createElement(F, null, r().createElement(N, t, u));
           };
-        var I = t(493),
-          k = t.n(I),
+        var k = t(493),
+          I = t.n(k),
           L = t(282);
         const O = (e, u) => {
             let t;
@@ -1167,11 +1167,11 @@
             base__medium: "ProgressBarBlink_base__medium_ec",
             base__small: "ProgressBarBlink_base__small_0f",
           },
-          V = ({ size: e }) => {
+          W = ({ size: e }) => {
             const u = p()(q.base, q[`base__${e}`]);
             return r().createElement("div", { className: u });
           },
-          $ = {
+          V = {
             base: "ProgressLineImpose_base_80",
             base__disabled: "ProgressLineImpose_base__disabled_cc",
             base__finished: "ProgressLineImpose_base__finished_d4",
@@ -1182,7 +1182,7 @@
             glow: "ProgressLineImpose_glow_a5",
             glow__left: "ProgressLineImpose_glow__left_d8",
           },
-          W = (0, a.memo)(
+          $ = (0, a.memo)(
             ({
               size: e,
               lineRef: u,
@@ -1192,19 +1192,19 @@
               withoutBounce: s,
             }) => {
               const o = p()(
-                  $.base,
-                  $[`base__${e}`],
-                  t && $.base__disabled,
-                  n && $.base__finished,
-                  s && $.base__withoutBounce,
+                  V.base,
+                  V[`base__${e}`],
+                  t && V.base__disabled,
+                  n && V.base__finished,
+                  s && V.base__withoutBounce,
                 ),
                 i = !t && !n;
               return r().createElement(
                 "div",
                 { className: o, style: a, ref: u },
-                r().createElement("div", { className: $.pattern }),
-                r().createElement("div", { className: $.gradient }),
-                i && r().createElement(V, { size: e }),
+                r().createElement("div", { className: V.pattern }),
+                r().createElement("div", { className: V.gradient }),
+                i && r().createElement(W, { size: e }),
               );
             },
           ),
@@ -1215,7 +1215,7 @@
               (0, a.useEffect)(() => {
                 i && s && s();
               }, [i, s]),
-              r().createElement(W, {
+              r().createElement($, {
                 size: e,
                 disabled: n,
                 baseStyles: o,
@@ -1297,7 +1297,7 @@
                     r().createElement(
                       "div",
                       { style: g ? D : p, className: "ProgressBarDeltaSimple_delta_99" },
-                      r().createElement(V, { size: s }),
+                      r().createElement(W, { size: s }),
                     ),
                   );
             },
@@ -1325,7 +1325,7 @@
               return r().createElement(
                 r().Fragment,
                 null,
-                r().createElement(W, {
+                r().createElement($, {
                   size: u,
                   lineRef: n,
                   disabled: s,
@@ -1411,7 +1411,7 @@
                 r().createElement(
                   "div",
                   { style: D ? C : B, className: "ProgressBarDeltaGrow_glow_68" },
-                  r().createElement(V, { size: s }),
+                  r().createElement(W, { size: s }),
                 ),
               );
             },
@@ -1446,7 +1446,7 @@
               return r().createElement(
                 r().Fragment,
                 null,
-                r().createElement(W, {
+                r().createElement($, {
                   size: u,
                   lineRef: n,
                   disabled: s,
@@ -1746,10 +1746,10 @@
           );
         let ve, fe, we, Se, xe, Re, Pe, ye, Ne, Te;
         function Me() {}
-        function Ie(e) {
+        function ke(e) {
           return e;
         }
-        function ke() {
+        function Ie() {
           return !1;
         }
         (!(function (e) {
@@ -1815,7 +1815,14 @@
             (e.DogTagType = "dogTagComponents"),
             (e.GoldenTicket = "goldenticket"),
             (e.LbStyleProgress = "lbStyleProgress"),
-            (e.RewardsSlots = "rewardsSlots"));
+            (e.RewardsSlots = "rewardsSlots"),
+            (e.WtStamp = "stamp"),
+            (e.WtHunter = "wt_hunter"),
+            (e.WtBoss = "wt_boss"),
+            (e.WtHunterCollection = "hunter_collection"),
+            (e.WtTicket = "wtevent_ticket"),
+            (e.WtMainPrizeDiscount = "main_prize_discount"),
+            (e.WtTicket25 = "wtevent_ticket25"));
         })(ve || (ve = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -2047,7 +2054,7 @@
                         observableModel: {
                           array: (e, u) => {
                             const a = null != u ? u : l(e),
-                              r = Le.observable.box(a, { equals: ke });
+                              r = Le.observable.box(a, { equals: Ie });
                             return (
                               "real" === t &&
                                 i.subscribe(
@@ -2059,7 +2066,7 @@
                           },
                           object: (e, u) => {
                             const a = null != u ? u : l(e),
-                              r = Le.observable.box(a, { equals: ke });
+                              r = Le.observable.box(a, { equals: Ie });
                             return (
                               "real" === t &&
                                 i.subscribe(
@@ -2158,18 +2165,18 @@
             ? e.map(u)
             : e.map((e, t, a) => u(null == e ? void 0 : e.value, t, a));
         }
-        const Ve = (e) =>
+        const We = (e) =>
           null !== e && "object" == typeof e
             ? "CoherentArrayProxy" === e.constructor.name
-              ? qe(e, (e) => ("object" == typeof e ? Ve(e) : e))
+              ? qe(e, (e) => ("object" == typeof e ? We(e) : e))
               : Array.isArray(e)
-                ? e.map((e) => ("object" == typeof e ? Ve(e) : e))
+                ? e.map((e) => ("object" == typeof e ? We(e) : e))
                 : Object.fromEntries(
-                    Object.entries(e).map(([e, u]) => [e, "object" == typeof u ? Ve(u) : u]),
+                    Object.entries(e).map(([e, u]) => [e, "object" == typeof u ? We(u) : u]),
                   )
             : e;
-        var $e = t(517);
-        const We = "vehicle",
+        var Ve = t(517);
+        const $e = "vehicle",
           ze = "tokenVehicle";
         var je = t(364);
         class Xe extends r().PureComponent {
@@ -2221,6 +2228,11 @@
             ve.PremiumPlusUniversal,
             ve.GoldenTicket,
             ve.RewardsSlots,
+            ve.WtStamp,
+            ve.WtTicket,
+            ve.WtMainPrizeDiscount,
+            ve.WtHunter,
+            ve.WtHunterCollection,
           ],
           Ke = [ve.Gold, ve.Credits, ve.Crystal, ve.FreeXp],
           Ze = [ve.BattlePassPoints],
@@ -2418,7 +2430,7 @@
               r = a.$dyn(e);
             return String(null != r ? r : a.$dyn(t));
           },
-          ou = [ze, We],
+          ou = [ze, $e],
           iu = (e) => e.some((e) => ou.includes(e.name)),
           lu = (e) => R.strings.tank_academy.mainView.questRewards.descriptions.$dyn(e),
           cu = (e) => {
@@ -2475,14 +2487,14 @@
                 t = Le.observable.box(!1),
                 a = Le.observable.box(du.None),
                 r = Le.observable.box(void 0),
-                n = (0, $e.computedFn)(
+                n = (0, Ve.computedFn)(
                   () => {
-                    return ((e = u.questGroups.get()), Ve(e));
+                    return ((e = u.questGroups.get()), We(e));
                     var e;
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                s = (0, $e.computedFn)((e) => n()[e], { equals: ke }),
+                s = (0, Ve.computedFn)((e) => n()[e], { equals: Ie }),
                 o = (e) => {
                   const u = n();
                   let t = e;
@@ -2562,15 +2574,15 @@
                   D(e.activeQuestGroupIndex),
                   p(e.activeQuestIndex));
               });
-              const B = (0, $e.computedFn)(
+              const B = (0, Ve.computedFn)(
                   (e, u) => {
                     const t = e >= 0 && s(e);
                     return t ? t.quests[u] : null;
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                C = (0, $e.computedFn)(() => B(g.get(), F.get()), { equals: ke }),
-                v = (0, $e.computedFn)(
+                C = (0, Ve.computedFn)(() => B(g.get(), F.get()), { equals: Ie }),
+                v = (0, Ve.computedFn)(
                   (e, u) => {
                     var t;
                     const a = B(e, u);
@@ -2579,9 +2591,9 @@
                       ? t
                       : null;
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                f = (0, $e.computedFn)(
+                f = (0, Ve.computedFn)(
                   () => {
                     var e;
                     const u = C();
@@ -2590,9 +2602,9 @@
                       ? e
                       : null;
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                w = (0, $e.computedFn)(
+                w = (0, Ve.computedFn)(
                   (e) => {
                     const u = n();
                     let t = e;
@@ -2606,13 +2618,13 @@
                     }
                     return null;
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                S = (0, $e.computedFn)((e) => {
+                S = (0, Ve.computedFn)((e) => {
                   const u = w(e);
                   return !!u && u.maxProgress > 0;
                 }),
-                x = (0, $e.computedFn)(
+                x = (0, Ve.computedFn)(
                   ({
                     questGroupIndex: e,
                     questIndex: u,
@@ -2647,9 +2659,9 @@
                           ))({ count: c, questGroupIndex: e, questIndex: u, hasVehicle: o });
                     return { data: i, count: c, boxRewardTooltip: _ };
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                P = (0, $e.computedFn)(
+                P = (0, Ve.computedFn)(
                   ({ imageSize: e, isTooltipEnabled: u, showValue: t }) =>
                     x({
                       questGroupIndex: g.get(),
@@ -2658,15 +2670,15 @@
                       isTooltipEnabled: u,
                       showValue: t,
                     }),
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                y = (0, $e.computedFn)(() => {
+                y = (0, Ve.computedFn)(() => {
                   var e, t;
                   const a = null != (e = u.progression.countCompleted.get()) ? e : 0,
                     r = null != (t = u.progression.totalQuests.get()) ? t : 0;
                   return a === r && r > 0;
                 }),
-                N = (0, $e.computedFn)(() => {
+                N = (0, Ve.computedFn)(() => {
                   const e = u.progression.countCompleted.get(),
                     t = u.progression.lastSeenProgress.get();
                   return void 0 !== e && t < e;
@@ -2838,13 +2850,13 @@
               },
               [s, l, d, S, t],
             ),
-            I = (0, a.useCallback)(
+            k = (0, a.useCallback)(
               (e) => {
                 s || (E && E(e), C(!1));
               },
               [s, E],
             ),
-            k = p()(
+            I = p()(
               Du.base,
               Du[`base__${n}`],
               {
@@ -2874,12 +2886,12 @@
               "div",
               {
                 ref: g,
-                className: k,
+                className: I,
                 onMouseEnter: y,
                 onMouseMove: N,
                 onMouseUp: T,
                 onMouseDown: M,
-                onMouseLeave: I,
+                onMouseLeave: k,
                 onClick: P,
               },
               n !== pu.ghost &&
@@ -3254,22 +3266,22 @@
           }),
           Tu = "HorizontalBar_base__nonActive_82",
           Mu = "disable",
-          Iu = { pending: !1, offset: 0 },
-          ku = (e) => {
+          ku = { pending: !1, offset: 0 },
+          Iu = (e) => {
             var u;
             return 0.9 * (null != (u = e.getWrapperSize()) ? u : 0);
           },
           Lu = () => {},
           Ou = (e, u) => Math.max(20, e.offsetWidth * u),
           Hu = (0, a.memo)(
-            ({ api: e, classNames: u = {}, getStepByRailClick: t = ku, onDrag: n = Lu }) => {
+            ({ api: e, classNames: u = {}, getStepByRailClick: t = Iu, onDrag: n = Lu }) => {
               const s = (0, a.useRef)(null),
                 o = (0, a.useRef)(null),
                 i = (0, a.useRef)(null),
                 l = (0, a.useRef)(null),
                 c = (0, a.useRef)(null),
                 _ = e.stepTimeout || 100,
-                d = (0, a.useState)(Iu),
+                d = (0, a.useState)(ku),
                 m = d[0],
                 E = d[1],
                 A = (0, a.useCallback)(
@@ -3368,7 +3380,7 @@
                         n({ type: "dragging", thumb: s, thumbOffset: o, contentOffset: i }));
                     },
                     t = () => {
-                      (window.removeEventListener("mousemove", u), A(Iu));
+                      (window.removeEventListener("mousemove", u), A(ku));
                     };
                   return (
                     window.addEventListener("mousemove", u),
@@ -3530,17 +3542,17 @@
           )));
         var Uu = t(887),
           qu = t.n(Uu);
-        const Vu = ["xl", "lg", "md", "sm", "xs"],
-          $u = (e) => e.includes("_") && ((e) => Vu.includes(e))(e.split("_").at(-1)),
-          Wu = [B.ExtraLarge, B.Large, B.Medium, B.Small, B.ExtraSmall],
+        const Wu = ["xl", "lg", "md", "sm", "xs"],
+          Vu = (e) => e.includes("_") && ((e) => Wu.includes(e))(e.split("_").at(-1)),
+          $u = [B.ExtraLarge, B.Large, B.Medium, B.Small, B.ExtraSmall],
           zu = (e, u) =>
             Object.keys(e).reduce((t, a) => {
               if (a in t) return t;
-              if ($u(a)) {
+              if (Vu(a)) {
                 const r = a.split("_").slice(0, -1).join("_");
                 if (r in t) return t;
-                const n = Wu.indexOf(u),
-                  s = (-1 !== n ? Vu.slice(n) : [])
+                const n = $u.indexOf(u),
+                  s = (-1 !== n ? Wu.slice(n) : [])
                     .map((e) => r + "_" + e)
                     .find((u) => void 0 !== e[u]),
                   o = s ? e[s] : void 0;
@@ -3549,7 +3561,7 @@
               const r = e[a];
               return (
                 void 0 === r ||
-                  ((e, u) => Vu.some((t) => void 0 !== u[`${e}_${t}`]))(a, e) ||
+                  ((e, u) => Wu.some((t) => void 0 !== u[`${e}_${t}`]))(a, e) ||
                   (t[a] = r),
                 t
               );
@@ -3564,7 +3576,7 @@
               }
             )(e, u);
             return r().memo((u) =>
-              Object.keys(u).some((e) => $u(e) && void 0 !== u[e])
+              Object.keys(u).some((e) => Vu(e) && void 0 !== u[e])
                 ? r().createElement(t, u)
                 : r().createElement(e, u),
             );
@@ -3695,8 +3707,8 @@
               N = void 0 === y ? (P ? "wrap" : void 0) : y,
               T = e.grow,
               M = e.shrink,
-              I = e.flex,
-              k = void 0 === I ? (T || M ? `${T ? 1 : 0} ${M ? 1 : 0} auto` : void 0) : I,
+              k = e.flex,
+              I = void 0 === k ? (T || M ? `${T ? 1 : 0} ${M ? 1 : 0} auto` : void 0) : k,
               L = e.style,
               O = e.children,
               H = (function (e, u) {
@@ -3724,7 +3736,7 @@
                   computedStyle: Object.assign({}, L, a, {
                     width: void 0 !== t && "number" == typeof t ? t + "rem" : t,
                     height: void 0 !== n && "number" == typeof n ? n + "rem" : n,
-                    flex: k,
+                    flex: I,
                     alignSelf: R,
                     display: D || x ? "flex" : void 0,
                     flexDirection: D,
@@ -3734,7 +3746,7 @@
                   }),
                   computedClassNames: u,
                 };
-              }, [t, n, i, c, d, E, L, k, R, D, N, w, x]),
+              }, [t, n, i, c, d, E, L, I, R, D, N, w, x]),
               G = Q.computedStyle,
               U = Q.computedClassNames;
             return r().createElement(
@@ -4288,7 +4300,7 @@
               ? r().createElement(ft, Tt({}, u, { contentId: n || o }), a)
               : r().createElement(xt, u, a);
           },
-          It = {
+          kt = {
             base: "Reward_base_ea",
             base__s48x48: "Reward_base__s48x48_46",
             base__small: "Reward_base__small_c0",
@@ -4313,7 +4325,7 @@
             info__premiumTank: "Reward_info__premiumTank_d3",
             timer: "Reward_timer_d3",
           },
-          kt = ({
+          It = ({
             name: e,
             image: u,
             isPeriodic: t = !1,
@@ -4386,31 +4398,31 @@
               })(s, o);
             return r().createElement(
               "div",
-              { className: p()(It.base, It[`base__${a}`], l), style: i },
+              { className: p()(kt.base, kt[`base__${a}`], l), style: i },
               r().createElement(
                 Mt,
-                { tooltipArgs: _, className: It.tooltipWrapper },
+                { tooltipArgs: _, className: kt.tooltipWrapper },
                 r().createElement(
                   r().Fragment,
                   null,
                   r().createElement(
                     "div",
-                    { className: p()(It.image, null == c ? void 0 : c.image) },
+                    { className: p()(kt.image, null == c ? void 0 : c.image) },
                     m &&
                       r().createElement("div", {
-                        className: p()(It.highlight, null == c ? void 0 : c.highlight),
+                        className: p()(kt.highlight, null == c ? void 0 : c.highlight),
                         style: {
                           backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${a}.${m}_highlight)`,
                         },
                       }),
                     u &&
                       r().createElement("div", {
-                        className: p()(It.icon, null == c ? void 0 : c.rewardIcon),
+                        className: p()(kt.icon, null == c ? void 0 : c.rewardIcon),
                         style: { backgroundImage: `url(${u})` },
                       }),
                     E &&
                       r().createElement("div", {
-                        className: p()(It.overlay, null == c ? void 0 : c.overlay),
+                        className: p()(kt.overlay, null == c ? void 0 : c.overlay),
                         style: {
                           backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${a}.${E}_overlay)`,
                         },
@@ -4421,9 +4433,9 @@
                       "div",
                       {
                         className: p()(
-                          It.info,
-                          It[`info__${e}`],
-                          o === Se.MULTI && It.info__multi,
+                          kt.info,
+                          kt[`info__${e}`],
+                          o === Se.MULTI && kt.info__multi,
                           null == c ? void 0 : c.info,
                         ),
                       },
@@ -4436,7 +4448,7 @@
                   Mt,
                   { tooltipArgs: d },
                   r().createElement("div", {
-                    className: p()(It.timer, null == c ? void 0 : c.periodicIcon),
+                    className: p()(kt.timer, null == c ? void 0 : c.periodicIcon),
                   }),
                 ),
             );
@@ -4461,8 +4473,8 @@
             qt.apply(this, arguments)
           );
         }
-        const Vt = R.strings.tank_academy.mainView.questRewards,
-          $t = (0, a.memo)(
+        const Wt = R.strings.tank_academy.mainView.questRewards,
+          Vt = (0, a.memo)(
             ({
               classNames: e,
               imageSize: u,
@@ -4501,7 +4513,7 @@
                     r().createElement(
                       "div",
                       { className: Qt },
-                      r().createElement(kt, qt({ size: u }, e, { classNames: d })),
+                      r().createElement(It, qt({ size: u }, e, { classNames: d })),
                       s &&
                         r().createElement(
                           "div",
@@ -4540,7 +4552,7 @@
                         r().createElement(
                           "div",
                           { className: Qt },
-                          r().createElement(kt, {
+                          r().createElement(It, {
                             name: "more",
                             image: A,
                             size: u,
@@ -4561,7 +4573,7 @@
                           r().createElement(
                             r().Fragment,
                             null,
-                            r().createElement(bt, { className: Lt, text: Vt.box.name() }),
+                            r().createElement(bt, { className: Lt, text: Wt.box.name() }),
                             r().createElement(bt, { className: Ot, text: lu("box") }),
                           ),
                       ),
@@ -4570,7 +4582,7 @@
               );
             },
           ),
-          Wt = (0, L.observer)(
+          $t = (0, L.observer)(
             ({ questGroupIndex: e, questIndex: u, classNames: t, questState: a }) => {
               const n = Au().model.computes.getQuestRewardsProps({
                 questGroupIndex: e,
@@ -4580,7 +4592,7 @@
               return r().createElement(
                 "div",
                 { className: t },
-                r().createElement($t, {
+                r().createElement(Vt, {
                   classNames: { reward: "Rewards_reward_25" },
                   rewards: n,
                   imageSize: we.Small,
@@ -4672,9 +4684,9 @@
                 N = x.isSelected,
                 T = x.isLocked,
                 M = x.questNumber,
-                I = Boolean(F),
-                k = ((e, u) => {
-                  const t = e && u && u.name === We;
+                k = Boolean(F),
+                I = ((e, u) => {
+                  const t = e && u && u.name === $e;
                   return {
                     backgroundImage:
                       u && t
@@ -4702,7 +4714,7 @@
               const G = p()(
                   zt.card,
                   N && zt.card__selected,
-                  I && zt.card__hasVehicle,
+                  k && zt.card__hasVehicle,
                   R && zt.card__final,
                   y && zt.card__done,
                   T && zt.card__locked,
@@ -4728,13 +4740,13 @@
                       r().Fragment,
                       null,
                       r().createElement(bt, { className: zt.questNumber, text: M.toString() }),
-                      I
+                      k
                         ? r().createElement(
                             r().Fragment,
                             null,
                             r().createElement("div", {
                               className: p()(zt.vehicle, D && zt.vehicle__premium),
-                              style: k,
+                              style: I,
                             }),
                             (null == F ? void 0 : F.name) === ze &&
                               r().createElement("div", {
@@ -4746,7 +4758,7 @@
                             r().Fragment,
                             null,
                             r().createElement("div", { className: zt.divider }),
-                            r().createElement(Wt, {
+                            r().createElement($t, {
                               classNames: zt.rewards,
                               questGroupIndex: e,
                               questIndex: u,
@@ -4788,7 +4800,7 @@
                   r().createElement(
                     "div",
                     { className: zt.marks },
-                    !I && r().createElement("div", { className: p()(zt.mark, zt.mark__top) }),
+                    !k && r().createElement("div", { className: p()(zt.mark, zt.mark__top) }),
                     r().createElement("div", { className: p()(zt.mark, zt.mark__down) }),
                   ),
               );
@@ -4824,17 +4836,17 @@
                 t = Le.observable.box(!1),
                 a = Le.observable.box(Zt.None),
                 r = Le.observable.box(void 0),
-                n = (0, $e.computedFn)(() =>
+                n = (0, Ve.computedFn)(() =>
                   qe(u.intermediateQuests.get(), (e) =>
-                    Object.assign({}, e, { rewards: qe(e.rewards, Ie) }),
+                    Object.assign({}, e, { rewards: qe(e.rewards, ke) }),
                   ),
                 ),
-                s = (0, $e.computedFn)(() =>
-                  qe(u.quests.get(), (e) => Object.assign({}, e, { rewards: qe(e.rewards, Ie) })),
+                s = (0, Ve.computedFn)(() =>
+                  qe(u.quests.get(), (e) => Object.assign({}, e, { rewards: qe(e.rewards, ke) })),
                 ),
-                o = (0, $e.computedFn)(() => s().length),
-                i = (0, $e.computedFn)((e) => Ge(s(), e), { equals: ke }),
-                l = (0, $e.computedFn)(
+                o = (0, Ve.computedFn)(() => s().length),
+                i = (0, Ve.computedFn)((e) => Ge(s(), e), { equals: Ie }),
+                l = (0, Ve.computedFn)(
                   (e, u) => {
                     const t = i(e),
                       a = t
@@ -4863,31 +4875,31 @@
                         : void 0,
                     };
                   },
-                  { equals: ke },
+                  { equals: Ie },
                 ),
-                c = (0, $e.computedFn)(() =>
+                c = (0, Ve.computedFn)(() =>
                   (function (e, u) {
                     for (let u = e.length - 1; u >= 0; u--)
                       if (Ue(e, u).state === Kt.Done) return u;
                   })(s()),
                 ),
-                _ = (0, $e.computedFn)(() =>
+                _ = (0, Ve.computedFn)(() =>
                   (function (e, u) {
                     for (let u = 0; u < e.length; u++)
                       if (Ue(e, u).state === Kt.InProgress) return u;
                   })(s()),
                 ),
-                d = (0, $e.computedFn)(() => {
+                d = (0, Ve.computedFn)(() => {
                   const e = c(),
                     t = u.progression.lastSeenProgress.get();
                   return void 0 !== e && t - 1 < e;
                 }),
-                m = (0, $e.computedFn)(() => {
+                m = (0, Ve.computedFn)(() => {
                   const e = _(),
                     u = c();
                   return void 0 === e ? u : e;
                 }),
-                E = (0, $e.computedFn)((e) => {
+                E = (0, Ve.computedFn)((e) => {
                   const u = i(e);
                   return u ? u.maxProgress > 0 : void 0;
                 });
@@ -4969,20 +4981,24 @@
                 P = S[1],
                 y = c !== o.progression.countCompleted.get() && g === A.quests.length,
                 N = 0 === b && 0 === g,
-                T = x || i,
-                M = s > C.Medium ? 250 : 200,
-                I = (0, a.useCallback)(() => gu(R.sounds.ta_progress_bar_stop()), []),
-                k = (0, a.useMemo)(
+                T = y || N,
+                M = x || i,
+                k = s > C.Medium ? 250 : 200,
+                I = (0, a.useMemo)(
                   () =>
-                    T
+                    M
                       ? { from: 0, to: 0 }
-                      : { from: m && N ? 0 : b * M + M / 2 + 28 * b, to: v * M + M / 2 + 28 * v },
-                  [M, b, m, N, v, T],
+                      : { from: m && N ? 0 : b * k + k / 2 + 28 * b, to: v * k + k / 2 + 28 * v },
+                  [k, b, m, N, v, M],
                 );
               return (
                 (0, a.useEffect)(() => {
-                  k.to > k.from && gu(R.sounds.ta_progress_bar_start());
-                }, [k]),
+                  if (I.to > I.from)
+                    return (
+                      gu(R.sounds.ta_progress_bar_start()),
+                      O(() => gu(R.sounds.ta_progress_bar_stop()), he / (T ? 2 : 1))
+                    );
+                }, [I, T]),
                 (0, a.useEffect)(() => {
                   w(b);
                 }, [b]),
@@ -5012,12 +5028,11 @@
                     ),
                   ),
                   r().createElement(ge, {
-                    value: k.to,
-                    deltaFrom: k.from,
-                    disabled: T,
-                    onEndAnimation: I,
-                    maxValue: ta(A.questProgress.totalQuests, M),
-                    animationSettings: y || N ? be : pe,
+                    value: I.to,
+                    deltaFrom: I.from,
+                    disabled: M,
+                    maxValue: ta(A.questProgress.totalQuests, k),
+                    animationSettings: T ? be : pe,
                   }),
                 )
               );
@@ -5477,6 +5492,7 @@
                   { className: "Header_title_info_37" },
                   r().createElement(bt, { className: "Header_info_text_7c", text: ma.title() }),
                   r().createElement(da, {
+                    classNames: { base: "Header_text_35" },
                     caption: ma.infoButton(),
                     type: "info",
                     onClick: u.showInfoPage,
@@ -5577,29 +5593,29 @@
             }, [P, y, N, l, _, E]);
             const T = l.number,
               M = u === Te.Done,
-              I = u === Te.InProgress,
-              k = u === Te.Unavailable,
+              k = u === Te.InProgress,
+              I = u === Te.Unavailable,
               L = (0, a.useMemo)(
                 () =>
-                  I || _ || P
+                  k || _ || P
                     ? Da.title.inProgress()
                     : M
                       ? Da.title.done()
                       : Da.title.unavailable(),
-                [M, I, P, _],
+                [M, k, P, _],
               ),
-              O = k ? Da.subtitle.unavailable() : l.condition,
+              O = I ? Da.subtitle.unavailable() : l.condition,
               H = p()(
                 "QuestCard_base_99",
                 M && "QuestCard_base__done_84",
                 x && "QuestCard_base__doneAnimated_15",
-                I && "QuestCard_base__inProgress_0a",
-                k && "QuestCard_base__unavailable_b5",
+                k && "QuestCard_base__inProgress_0a",
+                I && "QuestCard_base__unavailable_b5",
                 h && "QuestCard_base__withTransition_8b",
                 e,
               ),
               Q = o < B.Large ? hu.small : hu.medium,
-              G = l.maxProgress > 0 && !(M && i === du.None) && !k,
+              G = l.maxProgress > 0 && !(M && i === du.None) && !I,
               U = { progressToShow: v, lastShowedProgress: g, setLastShowedProgress: F };
             ((0, a.useEffect)(() => {
               i === du.ToDoneFinished && (b(!0), gu("ta_widget_complete"));
@@ -5607,7 +5623,7 @@
               (0, a.useEffect)(() => {
                 b(!1);
               }, [l]));
-            const q = I && l.hasTutorial;
+            const q = k && l.hasTutorial;
             return r().createElement(
               pa.Provider,
               { value: U },
@@ -5621,7 +5637,7 @@
                   r().createElement(bt, { className: "QuestCard_number_78", text: T.toString() }),
                   r().createElement(
                     Nt,
-                    { isEnabled: !k, header: l.title, body: l.description },
+                    { isEnabled: !I, header: l.title, body: l.description },
                     r().createElement("div", { className: "QuestCard_icon_6e" }),
                   ),
                   r().createElement(
@@ -5735,11 +5751,11 @@
           Na = R.strings.tank_academy.mainView.questVehicleRewards,
           Ta = "unavailable",
           Ma = "acquired";
-        var Ia;
+        var ka;
         !(function (e) {
           ((e.SMALL = "small"), (e.MEDIUM = "medium"), (e.LARGE = "large"));
-        })(Ia || (Ia = {}));
-        const ka = (0, L.observer)(({ classNames: e, questState: u, onShowVehicleClick: t }) => {
+        })(ka || (ka = {}));
+        const Ia = (0, L.observer)(({ classNames: e, questState: u, onShowVehicleClick: t }) => {
           const n = f().mediaSize,
             s = Au(),
             o = s.model,
@@ -5748,7 +5764,7 @@
             c = o.computes.getSelectedQuestVehicle(),
             _ = null == c ? void 0 : c.isPremium,
             d = u === Te.Done,
-            m = d && (null == c ? void 0 : c.name) === We,
+            m = d && (null == c ? void 0 : c.name) === $e,
             E = (0, a.useState)(!1),
             A = E[0],
             g = E[1],
@@ -5767,9 +5783,9 @@
               [m, null == c ? void 0 : c.icon],
             ),
             C = (0, a.useMemo)(() => {
-              let e = Ia.LARGE;
+              let e = ka.LARGE;
               return (
-                n < B.Medium ? (e = Ia.SMALL) : n < B.Large && (e = Ia.MEDIUM),
+                n < B.Medium ? (e = ka.SMALL) : n < B.Large && (e = ka.MEDIUM),
                 {
                   backgroundImage: `url('R.images.tank_academy.gui.maps.icons.mainView.platforms.${m ? "acquired" : "available"}.${e}')`,
                 }
@@ -5882,7 +5898,7 @@
                     "div",
                     { className: p()(Ra, "QuestVehicleRewards_rewardsBlock_additional_3b") },
                     r().createElement(bt, { className: p()(Pa, d && ya), text: D }),
-                    r().createElement($t, {
+                    r().createElement(Vt, {
                       classNames: { reward: "QuestVehicleRewards_reward_fa" },
                       rewards: v,
                       imageSize: h,
@@ -6001,7 +6017,7 @@
                 "div",
                 { className: Ha.reward_wrapper },
                 r().createElement(
-                  kt,
+                  It,
                   Qa({ size: i }, c, {
                     classNames: { info: Ha.rewardInfo, image: Ha.rewardImage },
                   }),
@@ -6076,18 +6092,18 @@
             blinker_with_pause: "Award_blinker_with_pause_14",
             blinker: "Award_blinker_73",
           };
-        let qa, Va;
+        let qa, Wa;
         (!(function (e) {
           ((e.Coin = "Coin"), (e.Award = "Award"));
         })(qa || (qa = {})),
           (function (e) {
             ((e.Small = "small"), (e.Big = "big"));
-          })(Va || (Va = {})));
-        const $a = R.strings.tank_academy.mainView.widget,
-          Wa = ({ type: e, count: u, onClick: t, size: n }) => {
+          })(Wa || (Wa = {})));
+        const Va = R.strings.tank_academy.mainView.widget,
+          $a = ({ type: e, count: u, onClick: t, size: n }) => {
             const s = {
-                Award: $a.tokens.allRewards,
-                Coin: $a.tokens.$dyn(u ? "active" : "inactive"),
+                Award: Va.tokens.allRewards,
+                Coin: Va.tokens.$dyn(u ? "active" : "inactive"),
               }[e],
               o = s.$dyn("title"),
               i = s.$dyn("tooltip"),
@@ -6154,7 +6170,7 @@
               n = t.model,
               s = t.controls,
               o = f().mediaSize,
-              i = (0, a.useMemo)(() => (za.includes(o) ? Va.Big : Va.Small), [o]),
+              i = (0, a.useMemo)(() => (za.includes(o) ? Wa.Big : Wa.Small), [o]),
               l = (0, a.useCallback)(() => {
                 s.viewVehicles();
               }, [s]);
@@ -6162,7 +6178,7 @@
               "div",
               { className: p()("RewardFlags_base_ea", e) },
               u &&
-                r().createElement(Wa, {
+                r().createElement($a, {
                   type: qa.Coin,
                   size: i,
                   count: n.unobtainedVehiclesCount.get(),
@@ -6274,13 +6290,13 @@
                 Ka(e, u, t);
               })({ callback: u.close }));
             const T = (0, a.useMemo)(() => !!n && iu(n.rewards), [n]),
-              M = (0, a.useMemo)(() => !!n && n.rewards.some((e) => e.name === We), [n]),
-              I = t.computes.getSelectedQuestRewardsProps({
+              M = (0, a.useMemo)(() => !!n && n.rewards.some((e) => e.name === $e), [n]),
+              k = t.computes.getSelectedQuestRewardsProps({
                 imageSize: N,
                 isTooltipEnabled: !0,
                 showValue: !0,
               }),
-              k = 1 === I.data.length;
+              I = 1 === k.data.length;
             ((0, a.useEffect)(() => {
               d || f(!0);
             }, [d]),
@@ -6315,7 +6331,7 @@
                       className: p()(Za.vignette, T && Za.vignette__withVehicle),
                     }),
                     T
-                      ? r().createElement(ka, {
+                      ? r().createElement(Ia, {
                           classNames: p()(Za.questVehicleRewards, L),
                           questState: h,
                           onShowVehicleClick: () => n && u.showQuestVehicle(n.number),
@@ -6324,15 +6340,15 @@
                           r().Fragment,
                           null,
                           r().createElement("div", { className: p()(Za.ribbon, L) }),
-                          k
+                          I
                             ? r().createElement(Ga, {
                                 classNames: p()(Za.questRewards, L),
                                 showOverlayImage: !0,
                                 questState: h,
                               })
-                            : r().createElement($t, {
+                            : r().createElement(Vt, {
                                 classNames: Object.assign({}, er, { base: p()(er.base, L) }),
-                                rewards: I,
+                                rewards: k,
                                 imageSize: N,
                                 showAdditionalInfo: !0,
                                 showOverlayImage: !0,
@@ -6347,7 +6363,7 @@
             );
           });
         engine.whenReady.then(() => {
-          k().render(
+          I().render(
             r().createElement(M, null, r().createElement(Eu, null, r().createElement(ur, null))),
             document.getElementById("root"),
           );

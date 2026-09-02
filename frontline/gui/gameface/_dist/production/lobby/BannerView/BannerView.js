@@ -161,12 +161,12 @@
             events: () => i.U,
             extraSize: () => y,
             forceTriggerMouseMove: () => f,
-            freezeTextureBeforeResize: () => D,
+            freezeTextureBeforeResize: () => _,
             getBrowserTexturePath: () => E,
             getDisplayStatus: () => b,
             getScale: () => d,
             getSize: () => c,
-            getViewGlobalPosition: () => _,
+            getViewGlobalPosition: () => D,
             isClientAccessible: () => h,
             isEventHandled: () => p,
             isFocused: () => w,
@@ -205,11 +205,11 @@
         function l(u, e, t = "px") {
           return "rem" === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
         }
-        function _(u = "rem") {
+        function D(u = "rem") {
           const e = viewEnv.getViewGlobalPositionRem();
           return "rem" === u ? e : { x: C(e.x), y: C(e.y) };
         }
-        function D() {
+        function _() {
           viewEnv.freezeTextureBeforeResize();
         }
         function d() {
@@ -572,8 +572,8 @@
           F = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
           c = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
           l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-        var _ = t(5521),
-          D = t(3138);
+        var D = t(5521),
+          _ = t(3138);
         const d = ["args"];
         function B(u, e, t, n, r, i, a) {
           try {
@@ -660,7 +660,7 @@
           },
           h = () => w(s.CLOSE),
           v = (u, e) => {
-            u.keyCode === _.n.ESCAPE && e();
+            u.keyCode === D.n.ESCAPE && e();
           };
         var p = t(7572);
         const f = r.instance,
@@ -686,17 +686,17 @@
               });
             },
             sendShowPopOverEvent: (u, e, t, n, r = R.invalid("resId"), i) => {
-              const a = D.O.view.getViewGlobalPosition(),
+              const a = _.O.view.getViewGlobalPosition(),
                 o = t.getBoundingClientRect(),
                 E = o.x,
                 A = o.y,
                 F = o.width,
                 c = o.height,
                 l = {
-                  x: D.O.view.pxToRem(E) + a.x,
-                  y: D.O.view.pxToRem(A) + a.y,
-                  width: D.O.view.pxToRem(F),
-                  height: D.O.view.pxToRem(c),
+                  x: _.O.view.pxToRem(E) + a.x,
+                  y: _.O.view.pxToRem(A) + a.y,
+                  width: _.O.view.pxToRem(F),
+                  height: _.O.view.pxToRem(c),
                 };
               w(s.POP_OVER, {
                 isMouseEvent: !0,
@@ -798,8 +798,8 @@
           (c.YEAR = "year"),
           (c.DATE_YEAR = "date-year"));
         var l = t(4179);
-        const _ = 1e3,
-          D = 86400;
+        const D = 1e3,
+          _ = 86400;
         Date.now();
         const d = () => {};
         var B = t(3138);
@@ -923,10 +923,10 @@
                     const n = Date.now(),
                       i = setInterval(
                         () => {
-                          const e = u - Math.floor((Date.now() - n) / _);
+                          const e = u - Math.floor((Date.now() - n) / D);
                           null !== t && e <= t ? (o(t), r && r(), clearInterval(i)) : o(e);
                         },
-                        (e || (u > 120 ? 60 : 1)) * _,
+                        (e || (u > 120 ? 60 : 1)) * D,
                       );
                     return () => {
                       clearInterval(i);
@@ -963,7 +963,7 @@
             S("yes1");
           },
         };
-        var T = t(7030);
+        var T = t(8552);
         let O;
         !(function (u) {
           ((u.Big = "big"),
@@ -983,7 +983,7 @@
           ((u.Normal = "normal"), (u.Hover = "hover"));
         })(x || (x = {}));
         const L = (u) => (u < 0.5 ? 4 * u * u * u : (u - 1) * (2 * u - 2) * (2 * u - 2) + 1),
-          N = (u) => u - Math.floor(Date.now() / _),
+          N = (u) => u - Math.floor(Date.now() / D),
           I = {
             base: "BannerContent_base_28",
             icon: "BannerContent_icon_a2",
@@ -1003,7 +1003,7 @@
           },
           U = (0, n.memo)(({ frontlineState: u, endDate: e, currentSize: t }) => {
             const i = b(N(e), 60),
-              a = i < D,
+              a = i < _,
               o = u === y.Frozen,
               E = (0, n.useRef)(null),
               A = (0, n.useRef)(null),
@@ -1038,7 +1038,7 @@
                     }
                     return "";
                   })(),
-                  r = new Date(e * _),
+                  r = new Date(e * D),
                   s = r.getDate(),
                   E = r.getMonth(),
                   A = ((u, e) =>
@@ -1051,8 +1051,8 @@
                         : F(R.strings.fl_banner.date.lessThanMinute(), { minute: 1 }))(
                     (function (u = 0) {
                       let e = u;
-                      const t = Math.trunc(e / D);
-                      e -= t * D;
+                      const t = Math.trunc(e / _);
+                      e -= t * _;
                       const n = Math.trunc(e / 3600);
                       e -= 3600 * n;
                       const r = Math.trunc(e / 60);
@@ -1214,9 +1214,9 @@
               F = u.ignoreMouseClick,
               c = void 0 !== F && F,
               l = u.decoratorId,
-              _ = void 0 === l ? 0 : l,
-              D = u.isEnabled,
-              d = void 0 === D || D,
+              D = void 0 === l ? 0 : l,
+              _ = u.isEnabled,
+              d = void 0 === _ || _,
               B = u.targetId,
               m = void 0 === B ? 0 : B,
               w = u.onShow,
@@ -1239,19 +1239,19 @@
               f = (0, n.useMemo)(() => m || C().resId, [m]),
               b = (0, n.useCallback)(() => {
                 (p.current.isVisible && p.current.timeoutId) ||
-                  (q(t, _, { isMouseEvent: !0, on: !0, arguments: j(r) }, f),
+                  (q(t, D, { isMouseEvent: !0, on: !0, arguments: j(r) }, f),
                   w && w(),
                   (p.current.isVisible = !0));
-              }, [t, _, r, f, w]),
+              }, [t, D, r, f, w]),
               g = (0, n.useCallback)(() => {
                 if (p.current.isVisible || p.current.timeoutId) {
                   const u = p.current.timeoutId;
                   (u > 0 && (clearTimeout(u), (p.current.timeoutId = 0)),
-                    q(t, _, { on: !1 }, f),
+                    q(t, D, { on: !1 }, f),
                     p.current.isVisible && h && h(),
                     (p.current.isVisible = !1));
                 }
-              }, [t, _, f, h]),
+              }, [t, D, f, h]),
               y = (0, n.useCallback)((u) => {
                 p.current.isVisible &&
                   ((p.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
@@ -1609,8 +1609,8 @@
               F = void 0 === A ? 0 : A,
               c = u.lastFrameIndex,
               l = void 0 === c ? a - 1 : c,
-              _ = u.loop,
-              D = void 0 === _ || _,
+              D = u.loop,
+              _ = void 0 === D || D,
               d = u.state,
               B = void 0 === d ? "play" : d,
               C = u.onAnimationDone,
@@ -1647,7 +1647,7 @@
                               t(i),
                               r === l &&
                                 (null == m || m(),
-                                D || (null == C || C(), window.clearInterval(n))))
+                                _ || (null == C || C(), window.clearInterval(n))))
                             : console.error("frameImage was not provided in frameImages Map");
                         }, E);
                       return () => window.clearInterval(n);
@@ -1666,7 +1666,7 @@
                   default:
                     return console.error("[CanvasSequence] Unreachable state!");
                 }
-              }, [E, i, F, l, D, o, m, C, w, B]),
+              }, [E, i, F, l, _, o, m, C, w, B]),
               r().createElement("canvas", su({}, h, { width: e, height: t, ref: v }))
             );
           }),
@@ -1708,7 +1708,7 @@
             base__thinExtraSmall: "BannerSequence_base__thinExtraSmall_0c",
             base__gray: "BannerSequence_base__gray_20",
           },
-          _u = (0, n.memo)(
+          Du = (0, n.memo)(
             ({
               type: u = x.Normal,
               cardSize: e = O.Big,
@@ -1749,7 +1749,7 @@
               );
             },
           ),
-          Du = (0, n.memo)(
+          _u = (0, n.memo)(
             ({
               children: u,
               isVisible: e = !0,
@@ -1806,7 +1806,7 @@
               l = (0, n.useCallback)(() => {
                 F(!1);
               }, []),
-              _ = (0, n.useCallback)(() => {
+              D = (0, n.useCallback)(() => {
                 (k.playClick(), o());
               }, [o]),
               d = (() => {
@@ -1832,7 +1832,7 @@
               C = d.width,
               m = d.height,
               w = M[`${C}*${m}`] || O.Big,
-              h = N(t) < D,
+              h = N(t) < _,
               v = e === y.Frozen,
               p = e === y.Finished && i,
               b = a !== g.LowRisk,
@@ -1845,29 +1845,29 @@
               R = s()(du.base, du[`base__${w}`], v && du.base__frozen, A && du.base__hover);
             return r().createElement(
               T.animated.div,
-              { className: R, onClick: _, onMouseLeave: l, onMouseEnter: c, style: S },
+              { className: R, onClick: D, onMouseLeave: l, onMouseEnter: c, style: S },
               r().createElement("div", { className: du.bg }),
               r().createElement("div", { className: du.stroke }),
               r().createElement(
-                Du,
+                _u,
                 { classMix: du.sequence, isVisible: A },
-                r().createElement(_u, {
+                r().createElement(Du, {
                   type: x.Hover,
                   cardSize: w,
                   isPerformanceRisk: b,
                   isGray: v,
                 }),
               ),
-              r().createElement(Du, { classMix: du.hoverEffect, isVisible: A }),
+              r().createElement(_u, { classMix: du.hoverEffect, isVisible: A }),
               v
                 ? r().createElement("div", { className: du.frozen })
                 : h && r().createElement("div", { className: du.highlight }),
               b
                 ? r().createElement(au, { performanceRisk: a, currentSize: w })
                 : r().createElement(
-                    Du,
+                    _u,
                     { classMix: du.sequence, isVisible: !A },
-                    r().createElement(_u, { type: x.Normal, cardSize: w, isGray: v }),
+                    r().createElement(Du, { type: x.Normal, cardSize: w, isGray: v }),
                   ),
               r().createElement(U, { frontlineState: e, endDate: t, currentSize: w }),
               p &&
@@ -1897,7 +1897,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1948,7 +1948,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 301),
     (() => {
       var u = { 301: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

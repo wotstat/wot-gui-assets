@@ -167,7 +167,7 @@
             getScale: () => l,
             getSize: () => B,
             getViewGlobalPosition: () => C,
-            isClientAccessible: () => h,
+            isClientAccessible: () => b,
             isEventHandled: () => p,
             isFocused: () => v,
             pxToRem: () => d,
@@ -175,7 +175,7 @@
             resize: () => s,
             sendEvent: () => n.qP,
             setAnimateWindow: () => m,
-            setEventHandled: () => b,
+            setEventHandled: () => h,
             setInputPaddingsRem: () => D,
             setSidePaddingsRem: () => i,
             whenTutorialReady: () => y,
@@ -227,10 +227,10 @@
         function v() {
           return viewEnv.isFocused();
         }
-        function h() {
+        function b() {
           return viewEnv.isClientAccessible();
         }
-        function b() {
+        function h() {
           return viewEnv.setEventHandled();
         }
         function p() {
@@ -677,8 +677,8 @@
             } else viewEnv.handleViewEvent({ __Type: t, type: u });
             var E;
           },
-          h = () => v(D.CLOSE),
-          b = (u, e) => {
+          b = () => v(D.CLOSE),
+          h = (u, e) => {
             u.keyCode === C.n.ESCAPE && e();
           };
         var p = t(7572);
@@ -693,7 +693,7 @@
             DateFormatType: s,
             makeGlobalBoundingBox: _,
             sendMoveEvent: (u) => v(D.MOVE, { isMouseEvent: !0, on: u }),
-            sendCloseEvent: h,
+            sendCloseEvent: b,
             sendClosePopOverEvent: () => v(D.POP_OVER, { on: !1 }),
             sendShowContextMenuEvent: (u, e, t = 0) => {
               v(D.CONTEXT_MENU, {
@@ -729,14 +729,14 @@
               });
             },
             addEscapeListener: (u) => {
-              const e = (e) => b(e, u);
+              const e = (e) => h(e, u);
               return (
                 window.addEventListener("keydown", e),
                 () => window.removeEventListener("keydown", e)
               );
             },
             closeOnEsc: (u) => {
-              b(u, h);
+              h(u, b);
             },
             handleViewEvent: v,
             onBindingsReady: m,
@@ -884,7 +884,7 @@
             )
           );
         });
-        var l = t(3403),
+        var l = t(3282),
           d = t(5210);
         function _(u) {
           return u;
@@ -893,13 +893,13 @@
           return !1;
         }
         console.log;
-        var v = t(9174);
-        function h(u, e) {
+        var v = t(3915);
+        function b(u, e) {
           (null == e || e > u.length) && (e = u.length);
           for (var t = 0, E = new Array(e); t < e; t++) E[t] = u[t];
           return E;
         }
-        const b = (u) => (0 === u ? window : window.subViews.get(u));
+        const h = (u) => (0 === u ? window : window.subViews.get(u));
         let p;
         function g(u, e) {
           return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
@@ -961,12 +961,12 @@
             (u.YEAR = "year"),
             (u.DATE_YEAR = "date-year"));
         })(M || (M = {}));
-        var P = t(4179);
-        const N = 3600,
-          x = 86400;
+        var N = t(4179);
+        const x = 3600,
+          P = 86400;
         Date.now();
         var S = t(9480),
-          k = t(3946);
+          k = t(6517);
         const L = R.strings.battle_royale.tooltip.widget.hangar,
           U = { 0: L.header.battleLeaveTime.today(), 1: L.header.battleLeaveTime.tomorrow() },
           I = { 0: "start", 1: "end" },
@@ -980,7 +980,7 @@
                     const F = (function ({
                         initializer: u = !0,
                         rootId: e = 0,
-                        getRoot: t = b,
+                        getRoot: t = h,
                         context: E = "model",
                       } = {}) {
                         const A = new Map();
@@ -1038,7 +1038,7 @@
                                     Array.isArray(u) ||
                                     (t = (function (u, e) {
                                       if (u) {
-                                        if ("string" == typeof u) return h(u, e);
+                                        if ("string" == typeof u) return b(u, e);
                                         var t = Object.prototype.toString.call(u).slice(8, -1);
                                         return (
                                           "Object" === t &&
@@ -1048,7 +1048,7 @@
                                             ? Array.from(u)
                                             : "Arguments" === t ||
                                                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-                                              ? h(u, e)
+                                              ? b(u, e)
                                               : void 0
                                         );
                                       }
@@ -1094,8 +1094,8 @@
                               battleModes: u.array("leaderBoard.battleModes"),
                             },
                           ),
-                          t = (0, k.Om)(() => S.UI(e.battleTypes.get(), _), { equals: m }),
-                          E = (0, k.Om)(
+                          t = (0, k.computedFn)(() => S.UI(e.battleTypes.get(), _), { equals: m }),
+                          E = (0, k.computedFn)(
                             () =>
                               S.UI(e.battleSchedule.get(), (u, e) =>
                                 S.UI(u, (u, t) => ({
@@ -1106,42 +1106,42 @@
                                         switch (e) {
                                           case M.SHORT_DATE:
                                             return t
-                                              ? P.Z5.getDateFormat(u, P.kH.SHORT_FORMAT)
-                                              : P.cy.getTimeFormat("%d.%m.%y", u, !0);
+                                              ? N.Z5.getDateFormat(u, N.kH.SHORT_FORMAT)
+                                              : N.cy.getTimeFormat("%d.%m.%y", u, !0);
                                           case M.SHORT_TIME:
                                             return t
-                                              ? P.Z5.getTimeFormat(u, P.lf.SHORT_FORMAT)
-                                              : P.cy.getTimeFormat("%I:%M %p", u, !0);
+                                              ? N.Z5.getTimeFormat(u, N.lf.SHORT_FORMAT)
+                                              : N.cy.getTimeFormat("%I:%M %p", u, !0);
                                           case M.SHORT_DATE_TIME:
                                             return t
-                                              ? `${P.Z5.getDateFormat(u, P.kH.SHORT_FORMAT)}, ${P.Z5.getTimeFormat(u, P.lf.SHORT_FORMAT)}`
-                                              : P.cy.getTimeFormat("%d.%m.%y, %I:%M %p", u, !0);
+                                              ? `${N.Z5.getDateFormat(u, N.kH.SHORT_FORMAT)}, ${N.Z5.getTimeFormat(u, N.lf.SHORT_FORMAT)}`
+                                              : N.cy.getTimeFormat("%d.%m.%y, %I:%M %p", u, !0);
                                           case M.FULL_DATE:
                                             return t
-                                              ? P.Z5.getDateFormat(u, P.kH.LONG_FORMAT)
-                                              : P.cy.getTimeFormat("%B %d, %Y", u, !0);
+                                              ? N.Z5.getDateFormat(u, N.kH.LONG_FORMAT)
+                                              : N.cy.getTimeFormat("%B %d, %Y", u, !0);
                                           case M.FULL_DATE_TIME:
                                             return t
-                                              ? `${P.Z5.getDateFormat(u, P.kH.LONG_FORMAT)}, ${P.Z5.getTimeFormat(u, P.lf.SHORT_FORMAT)}`
-                                              : P.cy.getTimeFormat("%B %d, %Y, %I:%M %p", u, !0);
+                                              ? `${N.Z5.getDateFormat(u, N.kH.LONG_FORMAT)}, ${N.Z5.getTimeFormat(u, N.lf.SHORT_FORMAT)}`
+                                              : N.cy.getTimeFormat("%B %d, %Y, %I:%M %p", u, !0);
                                           case M.MONTH:
-                                            return P.cy.getTimeFormat("%B", u, !0);
+                                            return N.cy.getTimeFormat("%B", u, !0);
                                           case M.MONTH_DATE:
-                                            return P.cy.getTimeFormat("%B %e", u, !0);
+                                            return N.cy.getTimeFormat("%B %e", u, !0);
                                           case M.DATE_MONTH:
-                                            return P.cy.getTimeFormat("%e %B", u, !0);
+                                            return N.cy.getTimeFormat("%e %B", u, !0);
                                           case M.MONTH_YEAR:
-                                            return P.cy.getTimeFormat("%B %Y", u, !0);
+                                            return N.cy.getTimeFormat("%B %Y", u, !0);
                                           case M.WEEK_DAY:
-                                            return P.cy.getTimeFormat("%A", u, !0);
+                                            return N.cy.getTimeFormat("%A", u, !0);
                                           case M.WEEK_DAY_TIME:
                                             return t
-                                              ? `${P.cy.getTimeFormat("%A", u, !0)} ${P.Z5.getTimeFormat(u, P.lf.SHORT_FORMAT)}`
-                                              : P.cy.getTimeFormat("%A, %I:%M %p", u, !0);
+                                              ? `${N.cy.getTimeFormat("%A", u, !0)} ${N.Z5.getTimeFormat(u, N.lf.SHORT_FORMAT)}`
+                                              : N.cy.getTimeFormat("%A, %I:%M %p", u, !0);
                                           case M.YEAR:
-                                            return P.cy.getTimeFormat("%Y", u, !0);
+                                            return N.cy.getTimeFormat("%Y", u, !0);
                                           case M.DATE_YEAR:
-                                            return P.cy.getTimeFormat("%d, %Y", u, !0);
+                                            return N.cy.getTimeFormat("%d, %Y", u, !0);
                                         }
                                       })(e, M.SHORT_TIME, !0)),
                                       u
@@ -1153,20 +1153,20 @@
                               ),
                             { equals: m },
                           ),
-                          A = (0, k.Om)(() => {
+                          A = (0, k.computedFn)(() => {
                             const u = e.time.get();
-                            return u >= x
+                            return u >= P
                               ? {
                                   text: L.header.subTitle.text(),
                                   time: g(R.strings.common.duration.days(), {
-                                    days: Math.trunc(u / x),
+                                    days: Math.trunc(u / P),
                                   }),
                                 }
-                              : u >= N
+                              : u >= x
                                 ? {
                                     text: L.header.subTitle.text(),
                                     time: g(R.strings.common.duration.hours(), {
-                                      hours: Math.trunc(u / N),
+                                      hours: Math.trunc(u / x),
                                     }),
                                   }
                                 : {
@@ -1186,11 +1186,11 @@
                         observableModel: {
                           array: (e, t) => {
                             const E = null != t ? t : r(e),
-                              A = v.LO.box(E, { equals: m });
+                              A = v.observable.box(E, { equals: m });
                             return (
                               "real" === u &&
                                 n.subscribe(
-                                  (0, v.aD)((u) => A.set(u)),
+                                  (0, v.action)((u) => A.set(u)),
                                   e,
                                 ),
                               A
@@ -1198,11 +1198,11 @@
                           },
                           object: (e, t) => {
                             const E = null != t ? t : r(e),
-                              A = v.LO.box(E, { equals: m });
+                              A = v.observable.box(E, { equals: m });
                             return (
                               "real" === u &&
                                 n.subscribe(
-                                  (0, v.aD)((u) => A.set(u)),
+                                  (0, v.action)((u) => A.set(u)),
                                   e,
                                 ),
                               A
@@ -1211,11 +1211,14 @@
                           primitives: (e, t) => {
                             const E = r(t);
                             if (Array.isArray(e)) {
-                              const A = e.reduce((u, e) => ((u[e] = v.LO.box(E[e], {})), u), {});
+                              const A = e.reduce(
+                                (u, e) => ((u[e] = v.observable.box(E[e], {})), u),
+                                {},
+                              );
                               return (
                                 "real" === u &&
                                   n.subscribe(
-                                    (0, v.aD)((u) => {
+                                    (0, v.action)((u) => {
                                       e.forEach((e) => {
                                         A[e].set(u[e]);
                                       });
@@ -1228,11 +1231,14 @@
                             {
                               const A = e,
                                 F = Object.entries(A),
-                                r = F.reduce((u, [e, t]) => ((u[t] = v.LO.box(E[e], {})), u), {});
+                                r = F.reduce(
+                                  (u, [e, t]) => ((u[t] = v.observable.box(E[e], {})), u),
+                                  {},
+                                );
                               return (
                                 "real" === u &&
                                   n.subscribe(
-                                    (0, v.aD)((u) => {
+                                    (0, v.action)((u) => {
                                       F.forEach(([e, t]) => {
                                         r[t].set(u[e]);
                                       });
@@ -1319,8 +1325,8 @@
                     ),
                   ),
                 ),
-          q = R.strings.battle_royale.tooltip.widget.hangar,
-          Y = (0, l.Pi)(() => {
+          Y = R.strings.battle_royale.tooltip.widget.hangar,
+          q = (0, l.observer)(() => {
             const u = V().model;
             return A().createElement(
               "div",
@@ -1332,7 +1338,7 @@
                   "div",
                   { className: "Schedule_title_0b" },
                   A().createElement("div", { className: "Schedule_icon_b3" }),
-                  A().createElement("div", { className: "Schedule_text_83" }, q.timeTable.title()),
+                  A().createElement("div", { className: "Schedule_text_83" }, Y.timeTable.title()),
                 ),
                 A().createElement(
                   "div",
@@ -1348,7 +1354,7 @@
                           {
                             className: o()("Schedule_period_6e", t && "Schedule_period__today_17"),
                           },
-                          A().createElement(K, { text: q.battleSchedule.schedule(), binding: u }),
+                          A().createElement(K, { text: Y.battleSchedule.schedule(), binding: u }),
                         ),
                         A().createElement("div", { className: "Schedule_description_83" }, e),
                       ),
@@ -1370,7 +1376,7 @@
             description: "Footer_description_4a",
           },
           z = R.strings.battle_royale.tooltip.widget.hangar.performance,
-          G = (0, l.Pi)(() => {
+          G = (0, l.observer)(() => {
             const u = V().model.performance.get();
             return A().createElement(
               "div",
@@ -1399,7 +1405,7 @@
             text: "Header_text_23",
           },
           Z = R.strings.battle_royale.tooltip.widget.hangar,
-          X = (0, l.Pi)(() => {
+          X = (0, l.observer)(() => {
             const u = V().model,
               e = u.progressionState.get(),
               t = u.computes.battleLeaveTime(),
@@ -1423,7 +1429,7 @@
               ),
             );
           }),
-          Q = (0, l.Pi)(() => {
+          Q = (0, l.observer)(() => {
             const u = V().model,
               e = u.progressionState.get(),
               t = u.computes.getBattleTypes();
@@ -1436,7 +1442,7 @@
                 A().createElement(X, null),
                 e === D.InProgress &&
                   A().createElement(d.i, { battleModes: u.battleModes.get(), battleType: t }),
-                A().createElement(Y, null),
+                A().createElement(q, null),
                 A().createElement(G, null),
               ),
             );
@@ -1522,7 +1528,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1573,7 +1579,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 996),
     (() => {
       var u = { 996: 0, 267: 0, 863: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

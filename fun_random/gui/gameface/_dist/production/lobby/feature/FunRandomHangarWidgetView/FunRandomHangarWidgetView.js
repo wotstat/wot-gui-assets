@@ -157,13 +157,13 @@
             addPreloadTexture: () => r,
             children: () => a,
             displayStatus: () => i.W,
-            displayStatusIs: () => A,
+            displayStatusIs: () => O,
             events: () => s.U,
             extraSize: () => D,
             forceTriggerMouseMove: () => S,
             freezeTextureBeforeResize: () => p,
             getBrowserTexturePath: () => c,
-            getDisplayStatus: () => O,
+            getDisplayStatus: () => A,
             getScale: () => b,
             getSize: () => _,
             getViewGlobalPosition: () => g,
@@ -239,10 +239,10 @@
         function S() {
           viewEnv.forceTriggerMouseMove();
         }
-        function O() {
+        function A() {
           return viewEnv.getShowingStatus();
         }
-        const A = Object.keys(i.W).reduce(
+        const O = Object.keys(i.W).reduce(
             (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
             {},
           ),
@@ -664,7 +664,7 @@
           };
         var y = n(7572);
         const S = i.instance,
-          O = {
+          A = {
             DataTracker: s.Z,
             ViewModel: y.Z,
             ViewEventType: l,
@@ -753,7 +753,7 @@
             SystemLocale: o,
             UserLocale: r,
           };
-        window.ViewEnvHelper = O;
+        window.ViewEnvHelper = A;
       },
       8932: (e, t, n) => {
         var a = n(6179),
@@ -776,7 +776,7 @@
             c("yes1");
           },
         };
-        var u = n(3403),
+        var u = n(3282),
           _ = n(3138),
           m = n(4179);
         const g = [
@@ -856,13 +856,13 @@
                 for (a = 0; a < s.length; a++) ((n = s[a]), t.indexOf(n) >= 0 || (i[n] = e[n]));
                 return i;
               })(e, g);
-            const O = (0, a.useRef)({
+            const A = (0, a.useRef)({
                 timeoutId: 0,
                 isVisible: !1,
                 prevTarget: null,
                 hideTimerId: null,
               }),
-              A = (0, a.useMemo)(
+              O = (0, a.useMemo)(
                 () =>
                   h ||
                   ((e = 1) => {
@@ -882,31 +882,31 @@
                 [h],
               ),
               D = (0, a.useCallback)(() => {
-                (O.current.isVisible && O.current.timeoutId) ||
-                  (b(n, v, { isMouseEvent: !0, on: !0, arguments: p(i) }, A),
+                (A.current.isVisible && A.current.timeoutId) ||
+                  (b(n, v, { isMouseEvent: !0, on: !0, arguments: p(i) }, O),
                   P && P(),
-                  (O.current.isVisible = !0));
-              }, [n, v, i, A, P]),
+                  (A.current.isVisible = !0));
+              }, [n, v, i, O, P]),
               k = (0, a.useCallback)(() => {
-                if (O.current.isVisible || O.current.timeoutId) {
-                  const e = O.current.timeoutId;
-                  (e > 0 && (clearTimeout(e), (O.current.timeoutId = 0)),
-                    b(n, v, { on: !1 }, A),
-                    O.current.isVisible && y && y(),
-                    (O.current.isVisible = !1));
+                if (A.current.isVisible || A.current.timeoutId) {
+                  const e = A.current.timeoutId;
+                  (e > 0 && (clearTimeout(e), (A.current.timeoutId = 0)),
+                    b(n, v, { on: !1 }, O),
+                    A.current.isVisible && y && y(),
+                    (A.current.isVisible = !1));
                 }
-              }, [n, v, A, y]),
+              }, [n, v, O, y]),
               M = (0, a.useCallback)((e) => {
-                O.current.isVisible &&
-                  ((O.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                  (O.current.hideTimerId = window.setTimeout(() => {
+                A.current.isVisible &&
+                  ((A.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+                  (A.current.hideTimerId = window.setTimeout(() => {
                     const t = document.elementFromPoint(e.clientX, e.clientY);
-                    t && !t.isSameNode(O.current.prevTarget) && k();
+                    t && !t.isSameNode(A.current.prevTarget) && k();
                   }, 200)));
               }, []);
             return (
               (0, a.useEffect)(() => {
-                const e = O.current.hideTimerId;
+                const e = A.current.hideTimerId;
                 return (
                   document.addEventListener("wheel", M, { capture: !0 }),
                   () => {
@@ -936,7 +936,7 @@
                           ((C = t.props.onMouseEnter),
                           (e) => {
                             (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                              ((O.current.timeoutId = window.setTimeout(D, d ? 100 : 400)),
+                              ((A.current.timeoutId = window.setTimeout(D, d ? 100 : 400)),
                               s && s(e),
                               C && C(e));
                           }),
@@ -998,14 +998,14 @@
           return !1;
         }
         console.log;
-        var y = n(9174);
+        var y = n(3915);
         function S(e, t) {
           (null == t || t > e.length) && (t = e.length);
           for (var n = 0, a = new Array(t); n < t; n++) a[n] = e[n];
           return a;
         }
-        const O = (e) => (0 === e ? window : window.subViews.get(e)),
-          A = ((e, t) => {
+        const A = (e) => (0 === e ? window : window.subViews.get(e)),
+          O = ((e, t) => {
             const n = (0, a.createContext)({});
             return [
               function ({ mode: e = "real", options: s, children: o, mocks: r }) {
@@ -1015,7 +1015,7 @@
                     const s = (function ({
                         initializer: e = !0,
                         rootId: t = 0,
-                        getRoot: n = O,
+                        getRoot: n = A,
                         context: a = "model",
                       } = {}) {
                         const i = new Map();
@@ -1131,11 +1131,11 @@
                         observableModel: {
                           array: (t, n) => {
                             const a = null != n ? n : r(t),
-                              i = y.LO.box(a, { equals: P });
+                              i = y.observable.box(a, { equals: P });
                             return (
                               "real" === e &&
                                 o.subscribe(
-                                  (0, y.aD)((e) => i.set(e)),
+                                  (0, y.action)((e) => i.set(e)),
                                   t,
                                 ),
                               i
@@ -1143,11 +1143,11 @@
                           },
                           object: (t, n) => {
                             const a = null != n ? n : r(t),
-                              i = y.LO.box(a, { equals: P });
+                              i = y.observable.box(a, { equals: P });
                             return (
                               "real" === e &&
                                 o.subscribe(
-                                  (0, y.aD)((e) => i.set(e)),
+                                  (0, y.action)((e) => i.set(e)),
                                   t,
                                 ),
                               i
@@ -1156,11 +1156,14 @@
                           primitives: (t, n) => {
                             const a = r(n);
                             if (Array.isArray(t)) {
-                              const i = t.reduce((e, t) => ((e[t] = y.LO.box(a[t], {})), e), {});
+                              const i = t.reduce(
+                                (e, t) => ((e[t] = y.observable.box(a[t], {})), e),
+                                {},
+                              );
                               return (
                                 "real" === e &&
                                   o.subscribe(
-                                    (0, y.aD)((e) => {
+                                    (0, y.action)((e) => {
                                       t.forEach((t) => {
                                         i[t].set(e[t]);
                                       });
@@ -1173,11 +1176,14 @@
                             {
                               const i = t,
                                 s = Object.entries(i),
-                                r = s.reduce((e, [t, n]) => ((e[n] = y.LO.box(a[t], {})), e), {});
+                                r = s.reduce(
+                                  (e, [t, n]) => ((e[n] = y.observable.box(a[t], {})), e),
+                                  {},
+                                );
                               return (
                                 "real" === e &&
                                   o.subscribe(
-                                    (0, y.aD)((e) => {
+                                    (0, y.action)((e) => {
                                       s.forEach(([t, n]) => {
                                         r[n].set(e[t]);
                                       });
@@ -1225,8 +1231,8 @@
               () => (0, a.useContext)(n),
             ];
           })(0, ({ externalModel: e }) => ({ showInfo: e.createCallbackNoArgs("onShowInfo") })),
-          D = A[0],
-          k = A[1],
+          D = O[0],
+          k = O[1],
           M = {
             base: "ProgressBar_base_45",
             base__medium: "ProgressBar_base__medium_62",
@@ -1250,11 +1256,11 @@
             base__medium: "ProgressBarBlink_base__medium_ec",
             base__small: "ProgressBarBlink_base__small_0f",
           },
-          L = ({ size: e }) => {
+          N = ({ size: e }) => {
             const t = l()(I.base, I[`base__${e}`]);
             return i().createElement("div", { className: t });
           },
-          N = {
+          L = {
             base: "ProgressLineImpose_base_80",
             base__disabled: "ProgressLineImpose_base__disabled_cc",
             base__finished: "ProgressLineImpose_base__finished_d4",
@@ -1275,19 +1281,19 @@
               withoutBounce: o,
             }) => {
               const r = l()(
-                  N.base,
-                  N[`base__${e}`],
-                  n && N.base__disabled,
-                  s && N.base__finished,
-                  o && N.base__withoutBounce,
+                  L.base,
+                  L[`base__${e}`],
+                  n && L.base__disabled,
+                  s && L.base__finished,
+                  o && L.base__withoutBounce,
                 ),
                 c = !n && !s;
               return i().createElement(
                 "div",
                 { className: r, style: a, ref: t },
-                i().createElement("div", { className: N.pattern }),
-                i().createElement("div", { className: N.gradient }),
-                c && i().createElement(L, { size: e }),
+                i().createElement("div", { className: L.pattern }),
+                i().createElement("div", { className: L.gradient }),
+                c && i().createElement(N, { size: e }),
               );
             },
           ),
@@ -1316,14 +1322,14 @@
               ("function" == typeof n && n(), clearTimeout(a));
             };
           };
-        let W, z;
+        let z, V;
         (!(function (e) {
           ((e.Idle = "Idle"), (e.Grow = "Grow"), (e.Shrink = "Shrink"), (e.End = "End"));
-        })(W || (W = {})),
+        })(z || (z = {})),
           (function (e) {
             ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"));
-          })(z || (z = {})));
-        const V = (0, a.memo)(
+          })(V || (V = {})));
+        const W = (0, a.memo)(
             ({
               transitionDuration: e,
               transitionDelay: t,
@@ -1335,12 +1341,12 @@
               onChangeAnimationState: c,
             }) => {
               const d = r < s,
-                u = (0, a.useState)(z.Idle),
+                u = (0, a.useState)(V.Idle),
                 _ = u[0],
                 m = u[1],
-                g = _ === z.In,
-                p = _ === z.End,
-                b = _ === z.Idle,
+                g = _ === V.In,
+                p = _ === V.End,
+                b = _ === V.Idle,
                 v = (0, a.useCallback)(
                   (e) => {
                     (m(e), c && c(e));
@@ -1350,13 +1356,13 @@
               ((0, a.useEffect)(() => {
                 if (b && !n)
                   return B(() => {
-                    v(z.In);
+                    v(V.In);
                   }, t);
               }, [v, n, b, t]),
                 (0, a.useEffect)(() => {
                   if (g)
                     return B(() => {
-                      (l && l(), v(z.End));
+                      (l && l(), v(V.End));
                     }, e + t);
                 }, [v, g, l, t, e]));
               const E = (0, a.useMemo)(
@@ -1389,7 +1395,7 @@
                     i().createElement(
                       "div",
                       { style: b ? E : f, className: "ProgressBarDeltaSimple_delta_99" },
-                      i().createElement(L, { size: o }),
+                      i().createElement(N, { size: o }),
                     ),
                   );
             },
@@ -1425,7 +1431,7 @@
                   baseStyles: u,
                 }),
                 n >= 0 &&
-                  i().createElement(V, {
+                  i().createElement(W, {
                     transitionDuration: l.delta.duration,
                     transitionDelay: l.delta.delay,
                     freezed: l.freezed,
@@ -1454,13 +1460,13 @@
               className: u,
             }) => {
               const _ = r < s,
-                m = (0, a.useState)(W.Idle),
+                m = (0, a.useState)(z.Idle),
                 g = m[0],
                 p = m[1],
-                b = g === W.End,
-                v = g === W.Idle,
-                E = g === W.Grow,
-                f = g === W.Shrink,
+                b = g === z.End,
+                v = g === z.Idle,
+                E = g === z.Grow,
+                f = g === z.Shrink,
                 w = (0, a.useCallback)(
                   (e) => {
                     (p(e), d && d(e));
@@ -1477,33 +1483,33 @@
               (0, a.useEffect)(() => {
                 if (!n)
                   return v
-                    ? h(W.Grow, t)
+                    ? h(z.Grow, t)
                     : E
-                      ? h(W.Shrink, e)
+                      ? h(z.Shrink, e)
                       : f
-                        ? h(W.End, e)
+                        ? h(z.End, e)
                         : void (b && c && c());
               }, [h, n, b, E, v, f, c, t, e]);
               const P = (0, a.useMemo)(() => Object.assign({ width: "100%" }, H(e), $(_)), [_, e]),
                 y = (0, a.useMemo)(() => Object.assign({ width: "0%" }, H(e), $(_)), [_, e]),
                 S = (0, a.useMemo)(() => Object.assign({ width: "0%" }, G(_, s), H(e)), [s, _, e]),
-                O = (0, a.useMemo)(
+                A = (0, a.useMemo)(
                   () => Object.assign({ width: `${Math.abs(r - s)}%` }, G(_, s), H(e)),
                   [s, _, r, e],
                 );
               if (b) return null;
-              const A = l()(
+              const O = l()(
                 "ProgressBarDeltaGrow_base_7e",
                 u,
                 _ && 0 === r && "ProgressBarDeltaGrow_base__withoutBounce_b5",
               );
               return i().createElement(
                 "div",
-                { style: v ? S : O, className: A },
+                { style: v ? S : A, className: O },
                 i().createElement(
                   "div",
                   { style: f ? y : P, className: "ProgressBarDeltaGrow_glow_68" },
-                  i().createElement(L, { size: o }),
+                  i().createElement(N, { size: o }),
                 ),
               );
             },
@@ -1526,7 +1532,7 @@
                 g = _[1],
                 p = (0, a.useCallback)(
                   (e) => {
-                    (e === W.Shrink && g(!0), d && d(e));
+                    (e === z.Shrink && g(!0), d && d(e));
                   },
                   [d],
                 ),
@@ -1780,52 +1786,51 @@
             (e.COMPLETED_FINAL = "completedFinal"),
             (e.COMPLETED_RESETTABLE = "completedResettable"));
         })(ce || (ce = {}));
-        var de = n(9459),
-          ue = n(9762),
-          _e = n(6457);
-        let me, ge;
+        var de = n(8079),
+          ue = n(5785);
+        let _e, me;
         (!(function (e) {
           ((e.Init = "init"),
             (e.Active = "active"),
             (e.NonActive = "nonActive"),
             (e.UpdateState = "updateState"));
-        })(me || (me = {})),
+        })(_e || (_e = {})),
           (function (e) {
             ((e.CheckDataUpdate = "checkDataUpdate"),
               (e.UpdateStageData = "updateStageData"),
               (e.SwitchState = "switchState"));
-          })(ge || (ge = {})));
-        const pe = (e) => e === ce.ACTIVE_RESETTABLE || e === ce.ACTIVE_FINAL,
-          be = (e) => pe(e.status),
-          ve = (e) => !pe(e.status),
-          Ee = (e, t) => e.status !== t.status && fe(e, t),
-          fe = (e, t) =>
+          })(me || (me = {})));
+        const ge = (e) => e === ce.ACTIVE_RESETTABLE || e === ce.ACTIVE_FINAL,
+          pe = (e) => ge(e.status),
+          be = (e) => !ge(e.status),
+          ve = (e, t) => e.status !== t.status && Ee(e, t),
+          Ee = (e, t) =>
             t.stage === e.stage &&
             t.currentPoints === e.currentPoints &&
             t.maximumPoints === e.maximumPoints &&
             0 === e.earnedPoints,
-          we = (e, t) =>
-            pe(t.status) &&
+          fe = (e, t) =>
+            ge(t.status) &&
             ((1 === t.stage && 0 === t.currentPoints) ||
               (t.stage === e.stage && e.maximumPoints !== t.maximumPoints)),
-          he = (e, t) =>
+          we = (e, t) =>
             t.stage === e.stage &&
             t.currentPoints === e.currentPoints &&
             t.maximumPoints === e.maximumPoints &&
             0 !== e.earnedPoints,
-          Pe = (e, t) =>
+          he = (e, t) =>
             t.stage === e.stage &&
             t.currentPoints !== e.currentPoints &&
             t.maximumPoints === e.maximumPoints,
-          ye = (e, t) => t.stage > e.stage && e.currentPoints < e.maximumPoints,
-          Se = (e, t) => t.stage > e.stage && e.currentPoints === e.maximumPoints,
-          Oe = (e, t) => t.stage < e.stage && e.currentPoints > 0,
+          Pe = (e, t) => t.stage > e.stage && e.currentPoints < e.maximumPoints,
+          ye = (e, t) => t.stage > e.stage && e.currentPoints === e.maximumPoints,
+          Se = (e, t) => t.stage < e.stage && e.currentPoints > 0,
           Ae = (e, t) => t.stage < e.stage && 0 === e.currentPoints,
-          De = (e, t) => e.status !== t.status && pe(t.status),
-          ke = (e) => {
+          Oe = (e, t) => e.status !== t.status && ge(t.status),
+          De = (e) => {
             e.isSoundEnabled && 0 !== e.earnedPoints && c("ev_fep_progress_bar");
           },
-          Me = {
+          ke = {
             base: "Status_base_a8",
             base__noDomains: "Status_base__noDomains_92",
             base__completedResettable: "Status_base__completedResettable_61",
@@ -1840,7 +1845,7 @@
             fadeInWithScale: "Status_fadeInWithScale_9b",
             slideDown: "Status_slideDown_d6",
           },
-          Ce = (0, u.Pi)(({ className: e, onStatusUpdate: t, isWithoutDomains: n }) => {
+          Me = (0, u.observer)(({ className: e, onStatusUpdate: t, isWithoutDomains: n }) => {
             const s = k().model,
               o = s.progressionState.get(),
               r = o.status,
@@ -1861,38 +1866,38 @@
                   }),
                   300,
                   (n = t),
-                  (0, ue.C)(
+                  (0, ue.createMachine)(
                     {
                       preserveActionOrder: !0,
                       id: "widget-fsm",
-                      initial: me.Init,
+                      initial: _e.Init,
                       context: e,
                       states: {
-                        [me.Init]: { always: { target: me.UpdateState } },
-                        [me.UpdateState]: {
+                        [_e.Init]: { always: { target: _e.UpdateState } },
+                        [_e.UpdateState]: {
                           always: [
-                            { target: me.Active, cond: be },
-                            { target: me.NonActive, cond: ve },
+                            { target: _e.Active, cond: pe },
+                            { target: _e.NonActive, cond: be },
                           ],
                         },
-                        [me.Active]: {
+                        [_e.Active]: {
                           on: {
-                            [ge.CheckDataUpdate]: [
+                            [me.CheckDataUpdate]: [
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e, t) => ({
-                                    type: ge.SwitchState,
+                                  (0, ue.send)((e, t) => ({
+                                    type: me.SwitchState,
                                     status: t.status,
                                   })),
                                 ],
-                                cond: Ee,
+                                cond: ve,
                               },
-                              { target: me.Active, cond: fe },
+                              { target: _e.Active, cond: Ee },
                               {
-                                target: me.UpdateState,
+                                target: _e.UpdateState,
                                 actions: [
-                                  (0, _e.f0)({
+                                  (0, ue.assign)({
                                     status: (e, t) => t.status,
                                     stage: (e, t) => t.stage,
                                     currentPoints: (e, t) => t.currentPoints,
@@ -1901,35 +1906,35 @@
                                   }),
                                   () => {},
                                 ],
-                                cond: we,
+                                cond: fe,
                               },
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e) => ({
-                                    type: ge.UpdateStageData,
+                                  (0, ue.send)((e) => ({
+                                    type: me.UpdateStageData,
                                     stage: e.stage,
                                     currentPoints: e.maximumPoints,
                                     maximumPoints: e.maximumPoints,
                                     earnedPoints: e.maximumPoints - e.currentPoints,
                                   })),
                                 ],
-                                cond: ye,
+                                cond: Pe,
                               },
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e, t) => ({
-                                    type: ge.UpdateStageData,
+                                  (0, ue.send)((e, t) => ({
+                                    type: me.UpdateStageData,
                                     stage: t.stage,
                                     currentPoints: 0,
                                     maximumPoints: t.maximumPoints,
                                     earnedPoints: 0,
                                   })),
                                   () => {},
-                                  (0, _e.lW)(
+                                  (0, ue.send)(
                                     (e, t) => ({
-                                      type: ge.UpdateStageData,
+                                      type: me.UpdateStageData,
                                       stage: t.stage,
                                       currentPoints: t.currentPoints,
                                       maximumPoints: t.maximumPoints,
@@ -1938,56 +1943,56 @@
                                     { delay: 300 },
                                   ),
                                 ],
-                                cond: Se,
+                                cond: ye,
                               },
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e, t) => ({
-                                    type: ge.UpdateStageData,
+                                  (0, ue.send)((e, t) => ({
+                                    type: me.UpdateStageData,
                                     stage: e.stage,
                                     currentPoints: t.currentPoints,
                                     maximumPoints: e.maximumPoints,
                                     earnedPoints: t.currentPoints - e.currentPoints,
                                   })),
                                 ],
-                                cond: Pe,
+                                cond: he,
                               },
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e) => ({
-                                    type: ge.UpdateStageData,
+                                  (0, ue.send)((e) => ({
+                                    type: me.UpdateStageData,
                                     stage: e.stage,
                                     currentPoints: e.currentPoints,
                                     maximumPoints: e.maximumPoints,
                                     earnedPoints: 0,
                                   })),
-                                  (0, _e.lW)((e, t) => ({
-                                    type: ge.SwitchState,
+                                  (0, ue.send)((e, t) => ({
+                                    type: me.SwitchState,
                                     status: t.status,
                                   })),
                                 ],
-                                cond: he,
+                                cond: we,
                               },
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e) => ({
-                                    type: ge.UpdateStageData,
+                                  (0, ue.send)((e) => ({
+                                    type: me.UpdateStageData,
                                     stage: e.stage,
                                     currentPoints: 0,
                                     maximumPoints: e.maximumPoints,
                                     earnedPoints: -e.currentPoints,
                                   })),
                                 ],
-                                cond: Oe,
+                                cond: Se,
                               },
                               {
-                                target: me.Active,
+                                target: _e.Active,
                                 actions: [
-                                  (0, _e.lW)((e, t) => ({
-                                    type: ge.UpdateStageData,
+                                  (0, ue.send)((e, t) => ({
+                                    type: me.UpdateStageData,
                                     stage: t.stage,
                                     currentPoints: t.currentPoints,
                                     maximumPoints: t.maximumPoints,
@@ -1998,33 +2003,33 @@
                                 cond: Ae,
                               },
                             ],
-                            [ge.UpdateStageData]: {
-                              target: me.Active,
+                            [me.UpdateStageData]: {
+                              target: _e.Active,
                               actions: [
-                                (0, _e.f0)({
+                                (0, ue.assign)({
                                   stage: (e, t) => t.stage,
                                   currentPoints: (e, t) => t.currentPoints,
                                   maximumPoints: (e, t) => t.maximumPoints,
                                   earnedPoints: (e, t) => t.earnedPoints,
                                 }),
-                                ke,
+                                De,
                               ],
                             },
-                            [ge.SwitchState]: {
-                              target: me.UpdateState,
+                            [me.SwitchState]: {
+                              target: _e.UpdateState,
                               actions: [
                                 (e, t) => n(t.status),
-                                (0, _e.f0)({ status: (e, t) => t.status }),
+                                (0, ue.assign)({ status: (e, t) => t.status }),
                               ],
                             },
                           },
                         },
-                        [me.NonActive]: {
+                        [_e.NonActive]: {
                           on: {
-                            [ge.CheckDataUpdate]: {
-                              target: me.UpdateState,
+                            [me.CheckDataUpdate]: {
+                              target: _e.UpdateState,
                               actions: [
-                                (0, _e.f0)({
+                                (0, ue.assign)({
                                   status: (e, t) => t.status,
                                   stage: (e, t) => t.stage,
                                   currentPoints: (e, t) => t.currentPoints,
@@ -2033,11 +2038,11 @@
                                 }),
                                 () => {},
                               ],
-                              cond: De,
+                              cond: Oe,
                             },
-                            [ge.SwitchState]: {
-                              target: me.UpdateState,
-                              actions: (0, _e.f0)({ status: (e, t) => t.status }),
+                            [me.SwitchState]: {
+                              target: _e.UpdateState,
+                              actions: (0, ue.assign)({ status: (e, t) => t.status }),
                             },
                           },
                         },
@@ -2045,18 +2050,18 @@
                     },
                     {
                       guards: {
-                        hasActiveStatus: be,
-                        hasNonActiveStatus: ve,
-                        isStatusUpdate: Ee,
-                        isTaskSwitchingUpdate: we,
-                        isNoUpdate: fe,
-                        isUpdateCurrentStageWithZeroEarnPoints: he,
-                        isUpdateCurrentStageWithCurrentPoints: Pe,
-                        isUpdateToNextStageWithoutFillMax: Se,
-                        isUpdateToNextStageWithFillMax: ye,
-                        isUpdateToPrevStageWithReset: Oe,
+                        hasActiveStatus: pe,
+                        hasNonActiveStatus: be,
+                        isStatusUpdate: ve,
+                        isTaskSwitchingUpdate: fe,
+                        isNoUpdate: Ee,
+                        isUpdateCurrentStageWithZeroEarnPoints: we,
+                        isUpdateCurrentStageWithCurrentPoints: he,
+                        isUpdateToNextStageWithoutFillMax: ye,
+                        isUpdateToNextStageWithFillMax: Pe,
+                        isUpdateToPrevStageWithReset: Se,
                         isUpdateToPrevStageWithoutReset: Ae,
-                        isUpdateWithActiveSwitch: De,
+                        isUpdateWithActiveSwitch: Oe,
                       },
                     },
                   )
@@ -2069,7 +2074,7 @@
               E = p.context.status === ce.DISABLED;
             (0, a.useEffect)(() => {
               b({
-                type: ge.CheckDataUpdate,
+                type: me.CheckDataUpdate,
                 status: r,
                 stage: c,
                 currentPoints: u,
@@ -2078,7 +2083,7 @@
             }, [r, u, _, c, b]);
             const f = (0, a.useCallback)(() => {
                 b({
-                  type: ge.CheckDataUpdate,
+                  type: me.CheckDataUpdate,
                   status: r,
                   stage: c,
                   currentPoints: u,
@@ -2086,11 +2091,11 @@
                 });
               }, [u, _, c, r, b]),
               w = l()(
-                Me.base,
-                Me[`base__${p.context.status}`],
+                ke.base,
+                ke[`base__${p.context.status}`],
                 e,
-                n && Me.base__noDomains,
-                n && Me[`base__${p.context.status}__noDomains`],
+                n && ke.base__noDomains,
+                n && ke[`base__${p.context.status}__noDomains`],
               );
             return i().createElement(
               v,
@@ -2102,14 +2107,14 @@
               i().createElement(
                 "div",
                 { className: w },
-                i().createElement("div", { className: Me.statusIcon }),
+                i().createElement("div", { className: ke.statusIcon }),
                 i().createElement(
                   "div",
-                  { className: Me.progress },
-                  i().createElement("div", { className: Me.progressLevel }, p.context.stage),
+                  { className: ke.progress },
+                  i().createElement("div", { className: ke.progressLevel }, p.context.stage),
                   i().createElement(
                     "div",
-                    { className: Me.progressBar },
+                    { className: ke.progressBar },
                     i().createElement(le, {
                       value: p.context.currentPoints,
                       maxValue: p.context.maximumPoints,
@@ -2123,7 +2128,7 @@
               ),
             );
           }),
-          Te = {
+          Ce = {
             base: "App_base_59",
             animContainer: "App_animContainer_b4",
             slideDown: "App_slideDown_0e",
@@ -2137,16 +2142,16 @@
             status: "App_status_1c",
             fadeInWithScale: "App_fadeInWithScale_72",
           },
-          Re = R.images.fun_random.gui.maps.icons.feature.asset_packs,
-          xe = (e, t) => {
+          Te = R.images.fun_random.gui.maps.icons.feature.asset_packs,
+          Re = (e, t) => {
             var n;
             const a = t ? "sub_modes" : "modes",
-              i = Re.$dyn(a);
+              i = Te.$dyn(a);
             return null != (n = i.$dyn(e)) ? n : i.$dyn("undefined");
           },
-          Ie = R.strings.fun_random.sub_modes,
-          Le = (e) => Math.round(50 * (e - 1)),
-          Ne = (0, u.Pi)(() => {
+          xe = R.strings.fun_random.sub_modes,
+          Ie = (e) => Math.round(50 * (e - 1)),
+          Ne = (0, u.observer)(() => {
             const e = k(),
               t = e.model,
               n = e.controls,
@@ -2172,8 +2177,8 @@
                 );
               })(),
               u = t.activeModeResName.get(),
-              m = Ie.$dyn(u) ? u : "undefined",
-              g = Ie.$dyn(m).capsUserName(),
+              m = xe.$dyn(u) ? u : "undefined",
+              g = xe.$dyn(m).capsUserName(),
               p = (0, a.useState)(s),
               b = p[0],
               v = p[1],
@@ -2186,16 +2191,16 @@
             }),
               (0, a.useEffect)(f, []),
               (0, a.useEffect)(() => {
-                s !== b && pe(s) && v(s);
+                s !== b && ge(s) && v(s);
               }, [s, b]));
             const w = 0 === o.length;
             return i().createElement(
               "div",
-              { className: l()(Te.base, Te[`base__${b}`]) },
+              { className: l()(Ce.base, Ce[`base__${b}`]) },
               i().createElement(
                 "div",
                 {
-                  className: Te.animContainer,
+                  className: Ce.animContainer,
                   onClick: () => {
                     (c(R.sounds.yes()), n.showInfo());
                   },
@@ -2203,24 +2208,24 @@
                 },
                 i().createElement(
                   "div",
-                  { className: Te.backgroundWrapper },
+                  { className: Ce.backgroundWrapper },
                   i().createElement("img", {
-                    style: { transform: `translate(-50%, ${Le(r)}%) scale(${r})` },
-                    src: xe(m, !0).hangar_widget.ribbon(),
+                    style: { transform: `translate(-50%, ${Ie(r)}%) scale(${r})` },
+                    src: Re(m, !0).hangar_widget.ribbon(),
                   }),
                 ),
                 i().createElement(
                   "div",
-                  { className: Te.modifications },
+                  { className: Ce.modifications },
                   (function (e, t) {
                     return Array.isArray(e)
                       ? e.map(t)
                       : e.map((e, n, a) => t(null == e ? void 0 : e.value, n));
                   })(o, (e, t) => i().createElement(h, { key: t, modifiersDomain: e })),
                 ),
-                i().createElement("div", { className: l()(Te.title, w && Te.title__noDomains) }, g),
-                i().createElement(Ce, {
-                  className: Te.status,
+                i().createElement("div", { className: l()(Ce.title, w && Ce.title__noDomains) }, g),
+                i().createElement(Me, {
+                  className: Ce.status,
                   onStatusUpdate: E,
                   isWithoutDomains: w,
                 }),
@@ -2241,7 +2246,7 @@
     var t = __webpack_module_cache__[e];
     if (void 0 !== t) return t.exports;
     var n = (__webpack_module_cache__[e] = { exports: {} });
-    return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+    return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -2292,7 +2297,6 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(e, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 808),
     (() => {
       var e = { 808: 0 };
       __webpack_require__.O.j = (t) => 0 === e[t];

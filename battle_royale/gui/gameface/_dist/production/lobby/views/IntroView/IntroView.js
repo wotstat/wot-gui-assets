@@ -990,13 +990,13 @@
               },
               [n, c],
             ),
-            k = (0, r.useCallback)(
+            O = (0, r.useCallback)(
               (u) => {
                 n || (null !== E && m(E), o && o(u), x(!0));
               },
               [n, E, o],
             ),
-            O = (0, r.useCallback)(
+            k = (0, r.useCallback)(
               (u) => {
                 A && A(u);
               },
@@ -1051,8 +1051,8 @@
               {
                 ref: D,
                 className: W,
-                onMouseEnter: k,
-                onMouseMove: O,
+                onMouseEnter: O,
+                onMouseMove: k,
                 onMouseUp: H,
                 onMouseDown: P,
                 onMouseLeave: N,
@@ -1196,10 +1196,10 @@
             (u.smallHeight = "smallHeight"),
             (u.extraSmallHeight = "extraSmallHeight"));
         })(y || (y = {}));
-        const k = f.O.client.getSize("rem"),
-          O = k.width,
-          H = k.height,
-          P = Object.assign({ width: O, height: H }, T(O, H, M)),
+        const O = f.O.client.getSize("rem"),
+          k = O.width,
+          H = O.height,
+          P = Object.assign({ width: k, height: H }, T(k, H, M)),
           N = (0, r.createContext)(P),
           W = ["children"],
           I = (u) => {
@@ -1375,11 +1375,11 @@
             remScreenHeight: t,
           };
         };
-        let j;
+        let K;
         !(function (u) {
           ((u[(u.left = 0)] = "left"), (u[(u.right = 1)] = "right"));
-        })(j || (j = {}));
-        const K =
+        })(K || (K = {}));
+        const j =
             (new RegExp(
               /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                 .source +
@@ -1401,7 +1401,7 @@
             }, []);
             return a().createElement(
               "div",
-              { className: K, onClick: i },
+              { className: j, onClick: i },
               a().createElement("div", { className: "DescriptionBlock_title_41" }, e),
               a().createElement("div", {
                 className: "DescriptionBlock_icon_bc",
@@ -1496,8 +1496,8 @@
                 M = x[0],
                 y = x[1],
                 T = (0, r.useState)(!1),
-                k = T[0],
-                O = T[1],
+                O = T[0],
+                k = T[1],
                 R = _.length,
                 H = 1 === f && !t,
                 P = f === R && !t,
@@ -1548,9 +1548,9 @@
               const G = (0, r.useCallback)(
                   Z(function* () {
                     H ||
-                      k ||
+                      O ||
                       i ||
-                      (t && O(!0),
+                      (t && k(!0),
                       yield (0, o.Eu)(),
                       s && s(),
                       L(f - 1),
@@ -1559,21 +1559,21 @@
                           Z(function* () {
                             y(!0);
                             const u = _.concat();
-                            (u.unshift(u.pop()), c(u), L(f), yield (0, o.Eu)(), y(!1), O(!1));
+                            (u.unshift(u.pop()), c(u), L(f), yield (0, o.Eu)(), y(!1), k(!1));
                           }),
                           600,
                         ),
                       m("play"),
                       m("bp_glide_01"));
                   }),
-                  [f, L, H, t, s, _, k, i],
+                  [f, L, H, t, s, _, O, i],
                 ),
                 V = (0, r.useCallback)(
                   Z(function* () {
                     P ||
-                      k ||
+                      O ||
                       i ||
-                      (t && O(!0),
+                      (t && k(!0),
                       yield (0, o.Eu)(),
                       E && E(),
                       L(f + 1),
@@ -1582,14 +1582,14 @@
                           Z(function* () {
                             y(!0);
                             const u = _.concat();
-                            (u.push(u.shift()), c(u), L(f), yield (0, o.Eu)(), y(!1), O(!1));
+                            (u.push(u.shift()), c(u), L(f), yield (0, o.Eu)(), y(!1), k(!1));
                           }),
                           600,
                         ),
                       m("play"),
                       m("bp_glide_01"));
                   }),
-                  [f, L, P, t, E, _, k, i],
+                  [f, L, P, t, E, _, O, i],
                 ),
                 $ = () => m("highlight");
               (S(p.n.ARROW_LEFT, G), S(p.n.ARROW_RIGHT, V));
@@ -1597,21 +1597,21 @@
                   () => (t ? { width: "auto" } : { width: `${C}rem` }),
                   [C, t],
                 ),
-                j = (0, r.useMemo)(
+                K = (0, r.useMemo)(
                   () =>
                     t
                       ? { transform: `translateX(${-v * f + C / 2 + v / 2}rem)` }
                       : { transform: `translateX(-${C * (f - 1)}rem)` },
                   [C, v, f, t],
                 ),
-                K = (0, r.useMemo)(() => (e ? { top: e } : {}), [e]),
+                j = (0, r.useMemo)(() => (e ? { top: e } : {}), [e]),
                 q = B()(
                   Y.base,
                   F && Y.base__large,
                   t && Y.base__carousel,
                   t && F && Y.base__carouselLarge,
                   M && Y.base__withoutAnimation,
-                  k && Y.base__withoutPointer,
+                  O && Y.base__withoutPointer,
                 ),
                 X = B()(Y.prev, H && Y.prev__disabled),
                 J = B()(Y.next, P && Y.next__disabled),
@@ -1620,9 +1620,9 @@
                 "div",
                 { className: q },
                 W &&
-                  a().createElement("div", { className: X, onClick: G, onMouseEnter: $, style: K }),
+                  a().createElement("div", { className: X, onClick: G, onMouseEnter: $, style: j }),
                 W &&
-                  a().createElement("div", { className: J, onClick: V, onMouseEnter: $, style: K }),
+                  a().createElement("div", { className: J, onClick: V, onMouseEnter: $, style: j }),
                 n &&
                   a().createElement(
                     "div",
@@ -1636,7 +1636,7 @@
                   { className: Y.trackWrapper, ref: l },
                   a().createElement(
                     "div",
-                    { className: Y.track, style: j },
+                    { className: Y.track, style: K },
                     _.map((u, e) => {
                       const r = e + 2 === f,
                         i = e === f;
@@ -1727,10 +1727,10 @@
                 })(),
               [c, E],
             );
-            const k = (0, r.useCallback)(() => {
+            const O = (0, r.useCallback)(() => {
               n();
             }, [n]);
-            var O;
+            var k;
             return (
               (0, r.useEffect)(() => {
                 if (F)
@@ -1744,8 +1744,8 @@
                     };
                   })();
               }, [F, s]),
-              (O = k),
-              S(p.n.ESCAPE, O),
+              (k = O),
+              S(p.n.ESCAPE, k),
               a().createElement(
                 "div",
                 { className: T, style: { backgroundImage: `url(${l})` } },
@@ -1794,7 +1794,7 @@
                     { className: "IntroView_buttonWrapper_bb" },
                     a().createElement(
                       b,
-                      { type: g.primary, size: y, mixClass: "IntroView_close_2d", onClick: k },
+                      { type: g.primary, size: y, mixClass: "IntroView_close_2d", onClick: O },
                       t,
                     ),
                   ),
@@ -1909,7 +1909,7 @@
     var e = __webpack_module_cache__[u];
     if (void 0 !== e) return e.exports;
     var t = (__webpack_module_cache__[u] = { exports: {} });
-    return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+    return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
   }
   ((__webpack_require__.m = __webpack_modules__),
     (deferred = []),
@@ -1960,7 +1960,6 @@
         Object.defineProperty(u, Symbol.toStringTag, { value: "Module" }),
         Object.defineProperty(u, "__esModule", { value: !0 }));
     }),
-    (__webpack_require__.j = 801),
     (() => {
       var u = { 801: 0 };
       __webpack_require__.O.j = (e) => 0 === u[e];

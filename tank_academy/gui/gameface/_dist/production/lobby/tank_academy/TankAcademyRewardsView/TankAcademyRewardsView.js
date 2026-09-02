@@ -1046,7 +1046,14 @@
             (u.DogTagType = "dogTagComponents"),
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
-            (u.RewardsSlots = "rewardsSlots"));
+            (u.RewardsSlots = "rewardsSlots"),
+            (u.WtStamp = "stamp"),
+            (u.WtHunter = "wt_hunter"),
+            (u.WtBoss = "wt_boss"),
+            (u.WtHunterCollection = "hunter_collection"),
+            (u.WtTicket = "wtevent_ticket"),
+            (u.WtMainPrizeDiscount = "main_prize_discount"),
+            (u.WtTicket25 = "wtevent_ticket25"));
         })(y || (y = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1196,6 +1203,11 @@
             y.PremiumPlusUniversal,
             y.GoldenTicket,
             y.RewardsSlots,
+            y.WtStamp,
+            y.WtTicket,
+            y.WtMainPrizeDiscount,
+            y.WtHunter,
+            y.WtHunterCollection,
           ],
           j = [y.Gold, y.Credits, y.Crystal, y.FreeXp],
           q = [y.BattlePassPoints],
@@ -3079,7 +3091,7 @@
                   return String(E[u.slice(e, -e)]);
                 }));
             var l, E;
-            const c = Z({}, R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"));
+            const c = Z({ showCount: e }, R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"));
             return n().createElement(
               "div",
               { className: "RewardList_base_b1" },

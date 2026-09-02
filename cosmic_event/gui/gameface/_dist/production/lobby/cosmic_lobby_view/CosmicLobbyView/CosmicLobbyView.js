@@ -1332,7 +1332,7 @@
             H.apply(this, arguments)
           );
         }
-        const U = (e) => {
+        const W = (e) => {
             let u = e.onClick,
               t = e.className,
               r = e.caption,
@@ -1362,7 +1362,7 @@
               ),
             );
           },
-          W = [
+          U = [
             "children",
             "contentId",
             "args",
@@ -1438,7 +1438,7 @@
                   a = Object.keys(e);
                 for (r = 0; r < a.length; r++) ((t = a[r]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                 return n;
-              })(e, W);
+              })(e, U);
             const C = (0, a.useRef)({
                 timeoutId: 0,
                 isVisible: !1,
@@ -2042,7 +2042,7 @@
                 for (r = 0; r < a.length; r++) ((t = a[r]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                 return n;
               })(e, De);
-            const U = (0, a.useMemo)(() => {
+            const W = (0, a.useMemo)(() => {
                 const e = { mt: i, mr: m, mb: d, ml: A },
                   u = ((e) =>
                     Ce.reduce((u, t) => {
@@ -2069,11 +2069,11 @@
                   computedClassNames: u,
                 };
               }, [t, r, i, m, d, A, O, N, R, D, M, w, y]),
-              W = U.computedStyle,
-              G = U.computedClassNames;
+              U = W.computedStyle,
+              G = W.computedClassNames;
             return o().createElement(
               "div",
-              Be({ className: c()(Fe.base, ...G, u), style: W }, H),
+              Be({ className: c()(Fe.base, ...G, u), style: U }, H),
               I,
             );
           });
@@ -2233,8 +2233,8 @@
         const Oe = Object.keys(Te()),
           Ie = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
           He = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
-          Ue = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
-          We =
+          We = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
+          Ue =
             (Object.keys({
               XL: { mt: "XL", mr: "XL", mb: "XL", ml: "XL" },
               LG: { mt: "LG", mr: "LG", mb: "LG", ml: "LG" },
@@ -2255,17 +2255,17 @@
               "heading-H22": He,
               "heading-H20R": He,
               "heading-H18": He,
-              "heading-H15": Ue,
-              "heading-H14": Ue,
+              "heading-H15": We,
+              "heading-H14": We,
               "paragraph-P24": He,
               "paragraph-P18": He,
               "paragraph-P16": He,
-              "paragraph-P14": Ue,
-              "paragraph-P12": Ue,
-              "paragraph-P10": Ue,
+              "paragraph-P14": We,
+              "paragraph-P12": We,
+              "paragraph-P10": We,
             }),
           Ge =
-            (Object.keys(We),
+            (Object.keys(Ue),
             (e) =>
               e
                 ? ((e) => Oe.includes(e))(e)
@@ -2312,10 +2312,10 @@
                 {
                   className: c()(xe.base, t && xe[t], C, r),
                   style: f,
-                  mt: !0 === l ? We[t || "paragraph-P16"].mt : l,
-                  mr: !0 === E ? We[t || "paragraph-P16"].mr : E,
-                  mb: !0 === _ ? We[t || "paragraph-P16"].mb : _,
-                  ml: !0 === p ? We[t || "paragraph-P16"].ml : p,
+                  mt: !0 === l ? Ue[t || "paragraph-P16"].mt : l,
+                  mr: !0 === E ? Ue[t || "paragraph-P16"].mr : E,
+                  mb: !0 === _ ? Ue[t || "paragraph-P16"].mb : _,
+                  ml: !0 === p ? Ue[t || "paragraph-P16"].ml : p,
                 },
                 D,
               ),
@@ -2997,7 +2997,14 @@
             (e.DogTagType = "dogTagComponents"),
             (e.GoldenTicket = "goldenticket"),
             (e.LbStyleProgress = "lbStyleProgress"),
-            (e.RewardsSlots = "rewardsSlots"));
+            (e.RewardsSlots = "rewardsSlots"),
+            (e.WtStamp = "stamp"),
+            (e.WtHunter = "wt_hunter"),
+            (e.WtBoss = "wt_boss"),
+            (e.WtHunterCollection = "hunter_collection"),
+            (e.WtTicket = "wtevent_ticket"),
+            (e.WtMainPrizeDiscount = "main_prize_discount"),
+            (e.WtTicket25 = "wtevent_ticket25"));
         })(bu || (bu = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -3172,7 +3179,7 @@
           }
         }
         Hu.defaultProps = { format: "integral" };
-        const Uu = [
+        const Wu = [
             bu.Items,
             bu.Equipment,
             bu.Xp,
@@ -3212,8 +3219,13 @@
             bu.PremiumPlusUniversal,
             bu.GoldenTicket,
             bu.RewardsSlots,
+            bu.WtStamp,
+            bu.WtTicket,
+            bu.WtMainPrizeDiscount,
+            bu.WtHunter,
+            bu.WtHunterCollection,
           ],
-          Wu = [bu.Gold, bu.Credits, bu.Crystal, bu.FreeXp],
+          Uu = [bu.Gold, bu.Credits, bu.Crystal, bu.FreeXp],
           Gu = [bu.BattlePassPoints],
           Vu = [bu.PremiumPlus, bu.Premium];
         let $u;
@@ -4399,9 +4411,9 @@
                 value: e.value,
                 valueType:
                   ((u = e.name),
-                  Uu.includes(u)
+                  Wu.includes(u)
                     ? yu.MULTI
-                    : Wu.includes(u)
+                    : Uu.includes(u)
                       ? yu.CURRENCY
                       : Gu.includes(u)
                         ? yu.NUMBER
@@ -4420,10 +4432,10 @@
           Ot = "ArtefactProgress_divider_45",
           It = "ArtefactProgress_divider_end_77",
           Ht = "ArtefactProgress_pointsMark_b0",
-          Ut = "ArtefactProgress_pointsMark_group_99";
-        function Wt() {
+          Wt = "ArtefactProgress_pointsMark_group_99";
+        function Ut() {
           return (
-            (Wt =
+            (Ut =
               Object.assign ||
               function (e) {
                 for (var u = 1; u < arguments.length; u++) {
@@ -4432,7 +4444,7 @@
                 }
                 return e;
               }),
-            Wt.apply(this, arguments)
+            Ut.apply(this, arguments)
           );
         }
         const Gt = R.strings.cosmicEvent.tooltip.marsPoints,
@@ -4520,7 +4532,7 @@
                     { className: c()("ArtefactProgress_flexContainer_2f") },
                     o().createElement(
                       "div",
-                      { className: Ut },
+                      { className: Wt },
                       o().createElement("div", { className: Ot }),
                       o().createElement("div", { className: c()(Ht, !A(0) && Tt) }, "0"),
                     ),
@@ -4557,7 +4569,7 @@
                         ),
                         o().createElement(
                           "div",
-                          { className: Ut },
+                          { className: Wt },
                           o().createElement("div", { className: Ot }),
                           o().createElement(Ve, {
                             className: c()(
@@ -4581,7 +4593,7 @@
                     { className: Nt },
                     o().createElement(
                       "div",
-                      { className: Ut },
+                      { className: Wt },
                       o().createElement("div", { className: It }),
                     ),
                     g.map(({ bonuses: e }, u) =>
@@ -4610,7 +4622,7 @@
                             e.map((e, u) =>
                               o().createElement(
                                 Qu,
-                                Wt(
+                                Ut(
                                   {
                                     size: Su.Small,
                                     key: u,
@@ -4866,9 +4878,9 @@
               O = (0, a.useState)(S || 1),
               I = O[0],
               H = O[1],
-              U = (0, a.useState)(!1),
-              W = U[0],
-              G = U[1],
+              W = (0, a.useState)(!1),
+              U = W[0],
+              G = W[1],
               V = (0, a.useState)(!1),
               $ = V[0],
               z = V[1],
@@ -5170,12 +5182,12 @@
                   J || (P.current && (P.current.paused ? P.current.play() : P.current.pause())));
               },
               Le = (0, a.useRef)(I),
-              Me = (0, a.useRef)(W),
+              Me = (0, a.useRef)(U),
               Te = (0, a.useRef)(S || 1),
               xe = (0, a.useRef)(d);
             ((0, a.useEffect)(() => {
-              ((Le.current = I), (Me.current = W));
-            }, [I, W]),
+              ((Le.current = I), (Me.current = U));
+            }, [I, U]),
               (0, a.useEffect)(() => {
                 I > 0 && (Te.current = I);
               }, [I]),
@@ -5275,7 +5287,7 @@
                 },
                 [Ie, ke, ge],
               ),
-              Ue = (0, a.useCallback)(
+              We = (0, a.useCallback)(
                 (e) => {
                   if (re.current) {
                     ge();
@@ -5285,19 +5297,19 @@
                 },
                 [Ie, ke, ge],
               ),
-              We = (0, a.useCallback)(() => {
+              Ue = (0, a.useCallback)(() => {
                 re.current && (ge(), (re.current = !1), ne.current ? Y((e) => e) : Y(!1));
               }, [ge]);
             (0, a.useEffect)(
               () => (
-                document.addEventListener("mousemove", Ue),
-                document.addEventListener("mouseup", We),
+                document.addEventListener("mousemove", We),
+                document.addEventListener("mouseup", Ue),
                 () => {
-                  (document.removeEventListener("mousemove", Ue),
-                    document.removeEventListener("mouseup", We));
+                  (document.removeEventListener("mousemove", We),
+                    document.removeEventListener("mouseup", Ue));
                 }
               ),
-              [Ue, We],
+              [We, Ue],
             );
             const Ge = (0, a.useCallback)(() => {
                 ge();
@@ -5313,14 +5325,14 @@
                 const u = Te.current > 0 ? Te.current : S || 1;
                 ((e.muted = !1), ke(u));
               }, [S, ge, ke]),
-              Ve = W || 0 === I;
+              Ve = U || 0 === I;
             return o().createElement(
               o().Fragment,
               null,
               o().createElement(
                 "video",
                 er(
-                  { muted: W, src: u, className: t, loop: m, ref: P, autoPlay: n, onClick: v },
+                  { muted: U, src: u, className: t, loop: m, ref: P, autoPlay: n, onClick: v },
                   R,
                   { onError: R.onError, style: Object.assign({}, ye, R.style) },
                 ),
@@ -5412,12 +5424,12 @@
                             { className: Zt.volumeSliderTrack },
                             o().createElement("div", {
                               className: Zt.volumeSliderFill,
-                              style: { width: 100 * (W ? 0 : I) + "%" },
+                              style: { width: 100 * (U ? 0 : I) + "%" },
                             }),
                           ),
                           o().createElement("div", {
                             className: Zt.volumeSliderThumb,
-                            style: { left: 100 * (W ? 0 : I) + "%" },
+                            style: { left: 100 * (U ? 0 : I) + "%" },
                           }),
                         ),
                       ),
@@ -6149,8 +6161,8 @@
         const Or = () => m(R.sounds.ev_cosmic_lobby_hover()),
           Ir = () => m(R.sounds.ev_cosmic_rover_hover()),
           Hr = () => m(R.sounds.ev_cosmic_lobby_tab_click()),
-          Ur = () => m(R.sounds.ev_cosmic_lobby_character_click()),
-          Wr = () => m(R.sounds.ev_cosmic_lobby_character_hover()),
+          Wr = () => m(R.sounds.ev_cosmic_lobby_character_click()),
+          Ur = () => m(R.sounds.ev_cosmic_lobby_character_hover()),
           Gr = R.strings.cosmicEvent,
           Vr = R.images.cosmic_event.gui.maps.icons,
           $r = (0, h.observer)(({ className: e }) => {
@@ -6211,7 +6223,7 @@
                 w(g.Artefact, Hr);
               }, [w]),
               y = (0, a.useCallback)(() => {
-                w(g.Pickups, Ur);
+                w(g.Pickups, Wr);
               }, [w]),
               P = (e) => {
                 (n.onVehicleChange(e), m(R.sounds.ev_cosmic_rover_click()), p(e));
@@ -6232,7 +6244,7 @@
                   },
                   o().createElement(
                     "div",
-                    { onClick: y, onMouseEnter: Wr },
+                    { onClick: y, onMouseEnter: Ur },
                     o().createElement(wr, { className: c()(kr.rulesEntryPoint, $t.fromLeft) }),
                   ),
                 ),
@@ -6782,7 +6794,7 @@
                   o().createElement(
                     "div",
                     { className: c()($t.close), onMouseEnter: mn },
-                    o().createElement(U, d.exitModeProps),
+                    o().createElement(W, d.exitModeProps),
                   ),
               ),
             );
