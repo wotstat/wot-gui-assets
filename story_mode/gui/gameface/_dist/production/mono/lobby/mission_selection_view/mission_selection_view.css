@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -105,10 +112,17 @@ html[lang=th] input {
   font-size: 26rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 15rem rgba(23, 23, 23, 0.2), 0 0 7rem rgba(23, 23, 23, 0.2), 0 2rem rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 0 15rem rgba(23, 23, 23, 0.2),
+    0 0 7rem rgba(23, 23, 23, 0.2),
+    0 2rem rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   opacity: 0.9;
-  transition: opacity 0.2s, transform 0.2s, text-shadow 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    text-shadow 0.2s,
+    color 0.2s;
 }
 .mediaMedium .MenuItem_label_8c0d77ba {
   font-size: 28rem;
@@ -121,21 +135,31 @@ html[lang=th] input {
 }
 .MenuItem_base__enabledState_6f88d3d1:hover .MenuItem_label_8c0d77ba {
   color: #fcf6eb;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.17);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.17);
 }
 
 .MenuItem_titleWrapper_cf46ff6b {
   display: flex;
   align-items: center;
   color: rgba(238, 237, 233, 0.9);
-  transition: opacity 0.2s, transform 0.2s, text-shadow 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    text-shadow 0.2s,
+    color 0.2s;
 }
 .MenuItem_base__disabledState_28be5e00 .MenuItem_titleWrapper_cf46ff6b {
   opacity: 0.5;
 }
 .MenuItem_base__enabledState_6f88d3d1:hover .MenuItem_titleWrapper_cf46ff6b {
   color: #fcf6eb;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.17);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.17);
   transform: translateX(6rem);
 }
 
@@ -143,7 +167,10 @@ html[lang=th] input {
   font-size: 20rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 15rem rgba(23, 23, 23, 0.2), 0 0 7rem rgba(23, 23, 23, 0.2), 0 2rem rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 0 15rem rgba(23, 23, 23, 0.2),
+    0 0 7rem rgba(23, 23, 23, 0.2),
+    0 2rem rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   opacity: 0.9;
 }
@@ -178,7 +205,10 @@ html[lang=th] input {
   font-size: 16rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 40px rgba(255, 76, 60, 0.6), 0 0 24rem rgba(255, 233, 187, 0.3), 0 0 8rem rgba(255, 251, 239, 0.2);
+  text-shadow:
+    0 0 40px rgba(255, 76, 60, 0.6),
+    0 0 24rem rgba(255, 233, 187, 0.3),
+    0 0 8rem rgba(255, 251, 239, 0.2);
   letter-spacing: 0.02em;
 }
 .mediaMedium .MenuItem_modeName_36c0339e {
@@ -206,10 +236,11 @@ html[lang=th] input {
   width: 24rem;
   height: 24rem;
   margin-right: 8rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -233,21 +264,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -259,10 +296,11 @@ html[lang=th] input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -286,21 +324,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -322,7 +366,8 @@ html[lang=th] input {
   height: 16rem;
   margin-top: 2rem;
   padding: 0 12rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.info_blue") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.info_blue") no-repeat 50% /
+    contain;
   position: relative;
 }
 .mediaExtraLarge .AboutButton_icon_d14880da {
@@ -330,10 +375,11 @@ html[lang=th] input {
   height: 73rem;
   margin: 2rem -23rem 0;
   background-image: url("R.images.story_mode.gui.maps.icons.missionSelection.info_blue_extraLarge");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -357,21 +403,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -415,18 +467,21 @@ html[lang=th] input {
   width: 1688rem;
   height: 950rem;
   margin-top: -32rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.ribbon") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.ribbon") no-repeat 50% /
+    contain;
   z-index: 0;
 }
 .mediaLarge .LockOverlay_ribbon_88606474 {
   width: 1920rem;
   height: 1081rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.ribbon_large") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.ribbon_large") no-repeat
+    50% / contain;
 }
 .mediaExtraLarge .LockOverlay_ribbon_88606474 {
   width: 2224rem;
   height: 1252rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.ribbon_extraLarge") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.ribbon_extraLarge") no-repeat
+    50% / contain;
 }
 
 .LockOverlay_envelope_6f1862d4 {
@@ -440,7 +495,8 @@ html[lang=th] input {
   align-items: center;
   width: 648rem;
   height: 396rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.envelope") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.envelope") no-repeat 50% /
+    contain;
   z-index: 1;
 }
 .mediaLarge .LockOverlay_envelope_6f1862d4 {
@@ -475,7 +531,12 @@ html[lang=th] input {
   width: 400rem;
   height: 1rem;
   margin-top: 4rem;
-  background: linear-gradient(270deg, rgba(255, 221, 153, 0) 0%, #fd9 50%, rgba(255, 221, 153, 0) 100%);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 221, 153, 0) 0%,
+    #fd9 50%,
+    rgba(255, 221, 153, 0) 100%
+  );
   opacity: 0.5;
 }
 
@@ -486,7 +547,8 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   width: 90rem;
   height: 90rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_body_lock") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_body_lock")
+    no-repeat 50% / contain;
 }
 .mediaExtraLarge .LockOverlay_lock_b6f325cb {
   background-image: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_body_lock_extraLarge");
@@ -539,10 +601,11 @@ html[lang=th] input {
   font-weight: 700;
   line-height: 1.3em;
   font-weight: 600;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -566,21 +629,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -620,7 +689,8 @@ html[lang=th] input {
 .Countdown_icon_d6ccfe65 {
   width: 37rem;
   height: 37rem;
-  background: url("R.images.gui.maps.icons.missions.daily.widgets.clock_icon") no-repeat 50%/contain;
+  background: url("R.images.gui.maps.icons.missions.daily.widgets.clock_icon") no-repeat 50% /
+    contain;
   z-index: 2;
 }
 
@@ -630,7 +700,8 @@ html[lang=th] input {
   transform: translateY(-50%);
   width: 309rem;
   height: 232rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.timer.bg") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.timer.bg") no-repeat 50% /
+    contain;
   left: -70rem;
   z-index: 1;
 }
@@ -651,10 +722,11 @@ html[lang=th] input {
     filter: brightness(1.1);
     opacity: 1;
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -678,21 +750,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -752,17 +830,21 @@ html[lang=th] input {
 }
 
 .TaskDescription_time_9ed754ce {
-  text-shadow: 0 0 15rem #e52, 0 0 8rem #ff2a00, 0 0 4rem rgba(255, 127, 0, 0.25);
+  text-shadow:
+    0 0 15rem #e52,
+    0 0 8rem #ff2a00,
+    0 0 4rem rgba(255, 127, 0, 0.25);
 }
 
 .TaskDescription_clock_81bcabef {
   width: 32rem;
   height: 32rem;
-  background: url("R.images.story_mode.gui.maps.icons.common.clock") no-repeat 50%/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+  background: url("R.images.story_mode.gui.maps.icons.common.clock") no-repeat 50% / contain;
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -786,21 +868,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -821,7 +909,8 @@ html[lang=th] input {
   transform: translateY(-50%);
   width: 392rem;
   height: 292rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.task_frame_glow") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.task_frame_glow")
+    no-repeat 50% / contain;
   opacity: 0.35;
   mix-blend-mode: screen;
   top: -5rem;
@@ -847,7 +936,8 @@ html[lang=th] input {
   transform: translateY(-50%);
   width: 90rem;
   height: 90rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_body_attack") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_body_attack")
+    no-repeat 50% / contain;
   left: -44rem;
 }
 .TaskIcon_base__completed_a946400a .TaskIcon_iconBody_e49fbd34 {
@@ -863,7 +953,8 @@ html[lang=th] input {
   transform: translateY(-50%);
   width: 90rem;
   height: 90rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_glow_attack") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_glow_attack")
+    no-repeat 50% / contain;
   opacity: 0;
   left: -44rem;
   transition: opacity 0.2s ease-in-out;
@@ -878,7 +969,8 @@ html[lang=th] input {
 .TaskIcon_base__hover_a946400a .TaskIcon_iconGlow_8f8031c7 {
   opacity: 1;
 }
-.TaskIcon_iconGlow__switch_ebfee4f8, .TaskIcon_iconGlow__unlock_da6602e {
+.TaskIcon_iconGlow__switch_ebfee4f8,
+.TaskIcon_iconGlow__unlock_da6602e {
   opacity: 1;
   top: -3rem;
   z-index: 2;
@@ -892,10 +984,11 @@ html[lang=th] input {
 .TaskIcon_iconGlow__unlock_da6602e {
   background-image: url("R.images.story_mode.gui.maps.icons.missionSelection.task.icon_glow_check");
   filter: brightness(1.2) hue-rotate(-45deg) saturate(0.5);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -919,21 +1012,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -950,10 +1049,11 @@ html[lang=th] input {
 
 .TrackedReward_info_3fdceea1 {
   font-size: 16rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -977,21 +1077,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1035,10 +1141,11 @@ html[lang=th] input {
 .TaskRewards_rewards_2b6754c2 {
   display: flex;
   margin-bottom: 10rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1062,21 +1169,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1101,7 +1214,8 @@ html[lang=th] input {
 .TaskListItem_frameImg_d444c880 {
   width: 100%;
   height: 100%;
-  border-image: url("R.images.story_mode.gui.maps.icons.missionSelection.task.task_frame") 16 fill/16rem/0 0 0 10rem;
+  border-image: url("R.images.story_mode.gui.maps.icons.missionSelection.task.task_frame") 16
+    fill/16rem/0 0 0 10rem;
   opacity: 0.5;
   position: absolute;
   top: 0;
@@ -1113,17 +1227,19 @@ html[lang=th] input {
   opacity: 1;
 }
 .mediaExtraLarge .TaskListItem_frameImg_d444c880 {
-  border-image: url("R.images.story_mode.gui.maps.icons.missionSelection.task.task_frame_extraLarge") 16 fill/16rem/0 0 0 10rem;
+  border-image: url("R.images.story_mode.gui.maps.icons.missionSelection.task.task_frame_extraLarge")
+    16 fill/16rem/0 0 0 10rem;
 }
 
 .TaskListItem_description_be63c553 {
   width: 100%;
   height: 100%;
   pointer-events: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1147,21 +1263,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1177,10 +1299,11 @@ html[lang=th] input {
 }
 .mediaExtraLarge .TaskList_31802e {
   margin-top: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1204,21 +1327,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1319,10 +1448,11 @@ html[lang=th] input {
   height: 98rem;
   margin-top: 15rem;
   line-height: 1.1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1346,21 +1476,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1386,7 +1522,7 @@ html[lang=th] input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   transition: opacity 0.3s ease-in-out;
 }
 .DifficultyButton_backSelected__normal_27d5c9f8,
@@ -1489,7 +1625,8 @@ html[lang=th] input {
 .DifficultyButton_686d798d:hover .DifficultyButton_displayName_3efdefd {
   color: #f2f2f7;
 }
-.DifficultyButton_686d798d.DifficultyButton_base__selected_5b8779fb:hover .DifficultyButton_displayName_3efdefd {
+.DifficultyButton_686d798d.DifficultyButton_base__selected_5b8779fb:hover
+  .DifficultyButton_displayName_3efdefd {
   color: #feab34;
 }
 .mediaMedium .DifficultyButton_displayName_3efdefd {
@@ -1529,18 +1666,21 @@ html[lang=th] input {
   opacity: 1;
 }
 .DifficultyButton_video__static_cc7fca85 {
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.back_glow_fist_frame") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.back_glow_fist_frame")
+    no-repeat 50% / contain;
 }
 .DifficultyButton_base__selected_5b8779fb .DifficultyButton_video__normal_468938c1 {
   opacity: 0.7;
 }
-.DifficultyButton_base__selected_5b8779fb .DifficultyButton_video__hard_5b8779fb, .DifficultyButton_base__selected_5b8779fb .DifficultyButton_video__very_hard_38885378 {
+.DifficultyButton_base__selected_5b8779fb .DifficultyButton_video__hard_5b8779fb,
+.DifficultyButton_base__selected_5b8779fb .DifficultyButton_video__very_hard_38885378 {
   filter: brightness(1.5);
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1564,21 +1704,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1630,7 +1776,8 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   width: 52rem;
   height: 52rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.normal") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.normal") no-repeat
+    50% / contain;
   filter: brightness(1);
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
@@ -1657,7 +1804,8 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   width: 92rem;
   height: 92rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.selected") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.selected") no-repeat
+    50% / contain;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.7);
   transition: all 0.3s ease-in-out;
@@ -1680,7 +1828,8 @@ html[lang=th] input {
   width: 68rem;
   height: 42rem;
   margin-top: 8rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.swords_shadow") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.swords_shadow")
+    no-repeat 50% / contain;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.7);
   transition: all 0.3s ease-in-out;
@@ -1704,7 +1853,8 @@ html[lang=th] input {
   width: 52rem;
   height: 52rem;
   margin-top: 24rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.swords_glow") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.swords_glow")
+    no-repeat 50% / contain;
   opacity: 0.8;
   mix-blend-mode: screen;
   transform: translate(-50%, -50%) scale(0.7);
@@ -1730,7 +1880,8 @@ html[lang=th] input {
   width: 40rem;
   height: 40rem;
   margin-top: 24rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.swords") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.swords") no-repeat
+    50% / contain;
 }
 .mediaExtraLarge .MissionButton_icon_32f13f90 {
   width: 44rem;
@@ -1747,7 +1898,8 @@ html[lang=th] input {
   margin-top: 25rem;
   background-image: url("R.images.story_mode.gui.maps.icons.missionSelection.button.extraLarge.lock");
 }
-.MissionButton_base__locked_4bda7104.MissionButton_base__selected_f3ab184a .MissionButton_icon_32f13f90 {
+.MissionButton_base__locked_4bda7104.MissionButton_base__selected_f3ab184a
+  .MissionButton_icon_32f13f90 {
   filter: brightness(1);
 }
 
@@ -1758,7 +1910,8 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   width: 57rem;
   height: 57rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.hover") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.hover") no-repeat
+    50% / contain;
   opacity: 0;
   transition: opacity 0.16s ease-in-out;
 }
@@ -1779,7 +1932,10 @@ html[lang=th] input {
   font-weight: 400;
   line-height: 1.3;
   margin-top: -2rem;
-  text-shadow: 0 0 15rem rgba(238, 85, 34, 0), 0 0 8rem rgba(255, 42, 0, 0), 0 0 4rem rgba(255, 127, 0, 0);
+  text-shadow:
+    0 0 15rem rgba(238, 85, 34, 0),
+    0 0 8rem rgba(255, 42, 0, 0),
+    0 0 4rem rgba(255, 127, 0, 0);
   transform: translate(-50%, -50%) scale(0.65);
   transition: all 0.3s ease-in-out;
 }
@@ -1788,7 +1944,10 @@ html[lang=th] input {
 }
 .MissionButton_base__selected_f3ab184a .MissionButton_missionId_4b0294df {
   margin-top: -2rem;
-  text-shadow: 0 0 15rem #e52, 0 0 8rem #ff2a00, 0 0 4rem rgba(255, 127, 0, 0.25);
+  text-shadow:
+    0 0 15rem #e52,
+    0 0 8rem #ff2a00,
+    0 0 4rem rgba(255, 127, 0, 0.25);
   transform: translate(-50%, -50%) scale(1);
 }
 .mediaExtraLarge .MissionButton_base__selected_f3ab184a .MissionButton_missionId_4b0294df {
@@ -1825,14 +1984,16 @@ html[lang=th] input {
   opacity: 1;
 }
 .MissionButton_video__static_73511407 {
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.back_glow_fist_frame") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.button.back_glow_fist_frame")
+    no-repeat 50% / contain;
 }
 .mediaExtraLarge .MissionButton_video_b6a3c861 {
   transform: translate(-50%, -50%) scale(1.2);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1856,21 +2017,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1912,10 +2079,11 @@ html[lang=th] input {
 }
 .mediaExtraLarge .MissionSelector_line__selected_e9253750 {
   width: 26rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1939,21 +2107,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1994,17 +2168,19 @@ html[lang=th] input {
   width: 16rem;
   height: 16rem;
   margin: 3rem 0 0 6rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.info_white_orange") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.info_white_orange") no-repeat
+    50% / contain;
 }
 .mediaMedium .MissionVehicle_icon_7d9e858 {
   margin-top: 3rem;
 }
 .mediaExtraLarge .MissionVehicle_icon_7d9e858 {
   margin-top: 8rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2028,21 +2204,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2067,10 +2249,11 @@ html[lang=th] input {
 
 .AssetItem_imgLoader_6b833910 {
   display: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2094,21 +2277,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2122,10 +2311,11 @@ html[lang=th] input {
   left: 50%;
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2149,21 +2339,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2179,10 +2375,11 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
   pointer-events: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2206,21 +2403,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2243,7 +2446,10 @@ html[lang=th] input {
   font-weight: 400;
   line-height: 1.25;
   font-size: 15rem;
-  text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.75), 0 0 3rem rgba(0, 0, 0, 0.5), 0 0 6rem rgba(0, 0, 0, 0.75);
+  text-shadow:
+    0 1rem 1rem rgba(0, 0, 0, 0.75),
+    0 0 3rem rgba(0, 0, 0, 0.5),
+    0 0 6rem rgba(0, 0, 0, 0.75);
   position: relative;
   transition: opacity 0.16s ease-in-out;
 }
@@ -2271,11 +2477,14 @@ html[lang=th] input {
 }
 .TabItem_base__selected_7fd0198b .TabItem_tab_8e3e07cd {
   color: #feab34;
-  text-shadow: 0 0 7rem #ff7a00, 0 0 24rem #ff7a00;
-}/* stylelint-disable selector-no-qualifying-type */
+  text-shadow:
+    0 0 7rem #ff7a00,
+    0 0 24rem #ff7a00;
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2299,21 +2508,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2327,7 +2542,15 @@ html[lang=th] input {
   align-items: center;
   width: 1090rem;
   height: 33rem;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 50%, transparent 100%), linear-gradient(90deg, transparent 15%, rgba(0, 0, 0, 0.5) 38%, rgba(0, 0, 0, 0.5) 62%, transparent 85%);
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 50%, transparent 100%),
+    linear-gradient(
+      90deg,
+      transparent 15%,
+      rgba(0, 0, 0, 0.5) 38%,
+      rgba(0, 0, 0, 0.5) 62%,
+      transparent 85%
+    );
   position: relative;
 }
 
@@ -2337,16 +2560,22 @@ html[lang=th] input {
   transform: translate(-50%);
   width: 592rem;
   height: 1rem;
-  background: linear-gradient(90deg, transparent 0%, rgba(145, 132, 124, 0.28) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(145, 132, 124, 0.28) 50%,
+    transparent 100%
+  );
   top: 0;
 }
 .Tabs_line__second_eef62bb7 {
   top: auto;
   bottom: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2370,21 +2599,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2421,14 +2656,29 @@ html[lang=th] input {
 .MissionSelectionViewApp_shadowTop_65560dd6 {
   width: 100vw;
   height: 284rem;
-  background: radial-gradient(40% 50% at 50% -5%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.2) 47%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 97%);
+  background:
+    radial-gradient(
+      40% 50% at 50% -5%,
+      rgb(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.2) 47%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0) 97%
+    );
   position: absolute;
 }
 
 .MissionSelectionViewApp_shadowMissions_1872614 {
   width: 717rem;
   height: 231rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.top_shadow") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.top_shadow") no-repeat 50% /
+    contain;
   position: absolute;
   top: calc(11rem + var(--external-padding-top) + 33rem);
   left: auto;
@@ -2446,7 +2696,8 @@ html[lang=th] input {
 .MissionSelectionViewApp_shadowLeft_536e08dd {
   width: 460rem;
   height: 100vh;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.background") repeat 50%/100%;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.task.background") repeat
+    50%/100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -2466,7 +2717,8 @@ html[lang=th] input {
 .MissionSelectionViewApp_shadowBottom_3cc6c587 {
   width: 1800rem;
   height: 131rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.bottom_shadow") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.bottom_shadow") no-repeat
+    50% / contain;
   position: absolute;
   bottom: 0;
   left: auto;
@@ -2540,7 +2792,8 @@ html[lang=th] input {
 .MissionSelectionViewApp_leftSparkles_89820688 {
   width: 1024rem;
   height: 768rem;
-  background: url("R.images.story_mode.gui.maps.icons.common.sparkles.left_extraSmall") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.common.sparkles.left_extraSmall") no-repeat
+    50% / contain;
   opacity: 0.5;
   position: absolute;
   bottom: 0;
@@ -2565,7 +2818,8 @@ html[lang=th] input {
 .MissionSelectionViewApp_rightSparkles_e9be7b23 {
   width: 1024rem;
   height: 768rem;
-  background: url("R.images.story_mode.gui.maps.icons.common.sparkles.right_extraSmall") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.common.sparkles.right_extraSmall") no-repeat
+    50% / contain;
   opacity: 0.5;
   position: absolute;
   right: 0;
@@ -2590,7 +2844,8 @@ html[lang=th] input {
 .MissionSelectionViewApp_logo_a9918fd {
   width: 202rem;
   height: 94rem;
-  background: url("R.images.story_mode.gui.maps.icons.missionSelection.logo202x94") no-repeat 50%/100%;
+  background: url("R.images.story_mode.gui.maps.icons.missionSelection.logo202x94") no-repeat
+    50%/100%;
   position: absolute;
   right: 16rem;
   bottom: 36rem;

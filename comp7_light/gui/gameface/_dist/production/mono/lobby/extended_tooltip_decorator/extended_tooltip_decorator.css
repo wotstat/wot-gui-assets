@@ -134,8 +134,9 @@
 .Divider_1eaf72bd {
   width: 302rem;
   height: 9rem;
-  background: url("R.images.comp7_light.gui.maps.icons.tooltip.divider_dotty") no-repeat center/cover;
-}/* stylelint-disable selector-no-qualifying-type */
+  background: url("R.images.comp7_light.gui.maps.icons.tooltip.divider_dotty") no-repeat
+    center/cover;
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes ExtendedTooltipDecorator_fadeIn_d4c2e366 {
@@ -291,7 +292,8 @@
   margin: 8rem 0 2rem;
   line-height: 20rem;
 }
-.ExtendedTooltipDecorator_base__invertedColors_d4c2e366 .ExtendedTooltipDecorator_description_edb17499 {
+.ExtendedTooltipDecorator_base__invertedColors_d4c2e366
+  .ExtendedTooltipDecorator_description_edb17499 {
   color: rgba(var(--color-general-primary-rgb), 0.9);
 }
 

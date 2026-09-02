@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -64,7 +71,7 @@ html[lang=th] input {
 .BattleResultDifficultyInfo_icon_6393c396 {
   width: 16rem;
   height: 16rem;
-  background: url("R.images.gui.maps.icons.dogtags.icons.icon_info") no-repeat 50%/contain;
+  background: url("R.images.gui.maps.icons.dogtags.icons.icon_info") no-repeat 50% / contain;
 }
 .mediaMedium .BattleResultDifficultyInfo_icon_6393c396 {
   margin-top: 3rem;
@@ -82,10 +89,11 @@ html[lang=th] input {
   font-size: 16rem;
   font-weight: 400;
   line-height: 1.25;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -109,21 +117,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -152,19 +166,23 @@ html[lang=th] input {
   width: 176rem;
   height: 176rem;
   margin: -44rem 0 -63rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 .mediaMedium .BattleResultMissionProgress_icon_5b3e6120 {
   width: 264rem;
   height: 264rem;
   margin: -66rem 0 -94rem;
 }
-.mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_icon_5b3e6120 {
+.mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_icon_5b3e6120 {
   width: 176rem;
   height: 176rem;
   margin: -47rem 0 -63rem;
 }
-.mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_icon_5b3e6120 {
+.mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_icon_5b3e6120 {
   width: 264rem;
   height: 264rem;
   margin: -66rem 0 -94rem;
@@ -178,19 +196,83 @@ html[lang=th] input {
 .mediaMedium .BattleResultMissionProgress_stat_3d84d803 {
   top: 105rem;
 }
-html[lang=ja] .mediaMedium .BattleResultMissionProgress_stat_3d84d803, html[lang=ko] .mediaMedium .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_tw] .mediaMedium .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_sg] .mediaMedium .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_cn] .mediaMedium .BattleResultMissionProgress_stat_3d84d803, html[lang=vi] .mediaMedium .BattleResultMissionProgress_stat_3d84d803, html[lang=th] .mediaMedium .BattleResultMissionProgress_stat_3d84d803 {
+html[lang="ja"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803,
+html[lang="ko"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_tw"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_sg"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_cn"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803,
+html[lang="vi"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803,
+html[lang="th"] .mediaMedium .BattleResultMissionProgress_stat_3d84d803 {
   top: 104rem;
 }
-.mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803 {
+.mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803 {
   top: 74rem;
 }
-html[lang=ja] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=ko] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_tw] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_sg] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_cn] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=vi] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=th] .mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803 {
+html[lang="ja"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="ko"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_tw"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_sg"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_cn"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="vi"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="th"]
+  .mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803 {
   top: 74rem;
 }
-.mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803 {
+.mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803 {
   top: 103rem;
 }
-html[lang=ja] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=ko] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_tw] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_sg] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=zh_cn] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=vi] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803, html[lang=th] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_stat_3d84d803 {
+html[lang="ja"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="ko"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_tw"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_sg"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="zh_cn"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="vi"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803,
+html[lang="th"]
+  .mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_stat_3d84d803 {
   top: 103rem;
 }
 
@@ -206,12 +288,16 @@ html[lang=ja] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4
   font-weight: 700;
   line-height: 1.3em;
 }
-.mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_value_95229e27 {
+.mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_value_95229e27 {
   font-size: 22rem;
   font-weight: 700;
   line-height: 1.3em;
 }
-.mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_value_95229e27 {
+.mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_value_95229e27 {
   font-size: 28rem;
   font-weight: 700;
   line-height: 1.3em;
@@ -230,12 +316,16 @@ html[lang=ja] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4
   line-height: 1.3em;
   margin: -2rem 3rem 0;
 }
-.mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_slash_2ca505a6 {
+.mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_slash_2ca505a6 {
   font-size: 16rem;
   font-weight: 400;
   line-height: 1.3em;
 }
-.mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_slash_2ca505a6 {
+.mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_slash_2ca505a6 {
   font-size: 20rem;
   font-weight: 400;
   line-height: 1.3em;
@@ -253,15 +343,25 @@ html[lang=ja] .mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4
   font-weight: 400;
   line-height: 1.3em;
 }
-html[lang=ja] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lang=ko] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lang=zh_tw] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lang=zh_sg] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lang=zh_cn] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lang=vi] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lang=th] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2 {
+html[lang="ja"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2,
+html[lang="ko"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2,
+html[lang="zh_tw"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2,
+html[lang="zh_sg"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2,
+html[lang="zh_cn"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2,
+html[lang="vi"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2,
+html[lang="th"] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2 {
   margin-top: -1rem;
 }
-.mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_total_cc1b12a2 {
+.mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_total_cc1b12a2 {
   font-size: 16rem;
   font-weight: 400;
   line-height: 1.3em;
 }
-.mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_total_cc1b12a2 {
+.mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_total_cc1b12a2 {
   font-size: 20rem;
   font-weight: 400;
   line-height: 1.3em;
@@ -288,7 +388,9 @@ html[lang=ja] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lan
   margin-top: 39rem;
   line-height: 1;
 }
-.mediaMedium .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_name_67da33ea {
+.mediaMedium
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_name_67da33ea {
   font-size: 16rem;
   font-weight: 400;
   line-height: 1.3em;
@@ -296,7 +398,9 @@ html[lang=ja] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lan
   margin-top: 30rem;
   line-height: 1;
 }
-.mediaExtraLarge .BattleResultMissionProgress_base__withRewards_c4383b00 .BattleResultMissionProgress_name_67da33ea {
+.mediaExtraLarge
+  .BattleResultMissionProgress_base__withRewards_c4383b00
+  .BattleResultMissionProgress_name_67da33ea {
   color: #fd9;
   font-size: 22rem;
   font-weight: 400;
@@ -304,10 +408,11 @@ html[lang=ja] .mediaMedium .BattleResultMissionProgress_total_cc1b12a2, html[lan
   width: 130rem;
   margin-top: 39rem;
   line-height: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -331,21 +436,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -374,10 +485,11 @@ html[lang=th] input {
   100% {
     transform: scale(1);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -401,21 +513,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -443,7 +561,7 @@ html[lang=th] input {
 .BattleResultProgress_icon_52dffe27 {
   width: 90rem;
   height: 90rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 .mediaMedium .BattleResultProgress_icon_52dffe27 {
   width: 128rem;
@@ -453,7 +571,9 @@ html[lang=th] input {
   width: 90rem;
   height: 90rem;
 }
-.mediaExtraLarge .BattleResultProgress_base__withRewards_81e18a4d .BattleResultProgress_icon_52dffe27 {
+.mediaExtraLarge
+  .BattleResultProgress_base__withRewards_81e18a4d
+  .BattleResultProgress_icon_52dffe27 {
   width: 128rem;
   height: 128rem;
 }
@@ -477,7 +597,9 @@ html[lang=th] input {
   line-height: 1.3em;
   margin: -24rem 0 30rem;
 }
-.mediaExtraLarge .BattleResultProgress_base__withRewards_81e18a4d .BattleResultProgress_value_adf24ead {
+.mediaExtraLarge
+  .BattleResultProgress_base__withRewards_81e18a4d
+  .BattleResultProgress_value_adf24ead {
   font-size: 28rem;
   font-weight: 700;
   line-height: 1.3em;
@@ -511,7 +633,9 @@ html[lang=th] input {
   margin-top: -28rem;
   line-height: 1;
 }
-.mediaExtraLarge .BattleResultProgress_base__withRewards_81e18a4d .BattleResultProgress_name_4bc4abe3 {
+.mediaExtraLarge
+  .BattleResultProgress_base__withRewards_81e18a4d
+  .BattleResultProgress_name_4bc4abe3 {
   color: #f2f2f7;
   font-size: 22rem;
   font-weight: 400;
@@ -519,10 +643,11 @@ html[lang=th] input {
   width: 130rem;
   margin-top: -20rem;
   line-height: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -546,21 +671,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -602,14 +733,15 @@ html[lang=th] input {
 
 .MainReward_icon_9c43dcbe {
   margin-top: 2rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 .mediaMedium .MainReward_icon_9c43dcbe {
   margin-top: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -633,21 +765,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -735,7 +873,7 @@ html[lang=th] input {
 .BattleResultRewards_ribbon_f399ddf6 {
   width: 1920rem;
   height: 520rem;
-  background: url("R.images.story_mode.gui.maps.icons.battleResult.ribbon") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.battleResult.ribbon") no-repeat 50% / contain;
   position: absolute;
   top: -70rem;
   left: 50%;
@@ -751,10 +889,11 @@ html[lang=th] input {
 }
 .mediaExtraLarge .BattleResultRewards_ribbon_f399ddf6 {
   top: -220rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -778,21 +917,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -828,7 +973,8 @@ html[lang=th] input {
   right: 0;
 }
 .BattleResultVehicle_back_92a232ac {
-  background: url("R.images.story_mode.gui.maps.icons.battleResult.vehicle.background_lose") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.battleResult.vehicle.background_lose")
+    no-repeat 50% / contain;
 }
 .mediaLarge .BattleResultVehicle_back_92a232ac {
   background-image: url("R.images.story_mode.gui.maps.icons.battleResult.vehicle.large.background_lose");
@@ -862,7 +1008,8 @@ html[lang=th] input {
   right: 0;
 }
 .BattleResultVehicle_fore_b539c6eb {
-  background: url("R.images.story_mode.gui.maps.icons.battleResult.vehicle.foreground_lose") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.battleResult.vehicle.foreground_lose")
+    no-repeat 50% / contain;
 }
 .mediaLarge .BattleResultVehicle_fore_b539c6eb {
   background-image: url("R.images.story_mode.gui.maps.icons.battleResult.vehicle.large.foreground_lose");
@@ -877,7 +1024,7 @@ html[lang=th] input {
 .BattleResultVehicle_vehicle_d121788b {
   width: 360rem;
   height: 270rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   position: absolute;
   right: 16rem;
   bottom: -45rem;
@@ -896,10 +1043,11 @@ html[lang=th] input {
 }
 .mediaExtraLarge .BattleResultVehicle_vehicle_d121788b {
   right: 150rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -923,21 +1071,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -960,7 +1114,7 @@ html[lang=th] input {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url("R.images.story_mode.gui.maps.icons.battleResult.sparks") no-repeat 50%/cover;
+  background: url("R.images.story_mode.gui.maps.icons.battleResult.sparks") no-repeat 50% / cover;
   mix-blend-mode: screen;
 }
 
@@ -993,7 +1147,8 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   width: 1500rem;
   height: 1100rem;
-  background: url("R.images.story_mode.gui.maps.icons.battleResult.text_back") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.battleResult.text_back") no-repeat 50% /
+    contain;
 }
 
 .BattleResultViewApp_titleGlow_c8f61e8e {
@@ -1011,7 +1166,7 @@ html[lang=th] input {
   width: 632rem;
   height: 125rem;
   margin-top: -130rem;
-  background: url("R.images.story_mode.gui.maps.icons.battleResult.flash") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.battleResult.flash") no-repeat 50% / contain;
   opacity: 0;
   mix-blend-mode: screen;
 }

@@ -150,7 +150,7 @@
 .VehicleRole_base__48x48_741b56a9 .VehicleRole_icon_a3da323b {
   width: 48rem;
   height: 48rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -311,25 +311,29 @@
 .VehicleName_base__24x24_8fe58b49 .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 20rem;
 }
-.VehicleName_base__24x24_8fe58b49.VehicleName_base__elite_e43b4676 .VehicleName_vehicleTypeContainer_36afa7ec {
+.VehicleName_base__24x24_8fe58b49.VehicleName_base__elite_e43b4676
+  .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 24rem;
 }
 .VehicleName_base__48x48_35a6aa3f .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 32rem;
 }
-.VehicleName_base__48x48_35a6aa3f.VehicleName_base__elite_e43b4676 .VehicleName_vehicleTypeContainer_36afa7ec {
+.VehicleName_base__48x48_35a6aa3f.VehicleName_base__elite_e43b4676
+  .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 42rem;
 }
 .VehicleName_base__64x64_7c908cf0 .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 44rem;
 }
-.VehicleName_base__64x64_7c908cf0.VehicleName_base__elite_e43b4676 .VehicleName_vehicleTypeContainer_36afa7ec {
+.VehicleName_base__64x64_7c908cf0.VehicleName_base__elite_e43b4676
+  .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 64rem;
 }
 .VehicleName_base__96x96_669f3978 .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 66rem;
 }
-.VehicleName_base__96x96_669f3978.VehicleName_base__elite_e43b4676 .VehicleName_vehicleTypeContainer_36afa7ec {
+.VehicleName_base__96x96_669f3978.VehicleName_base__elite_e43b4676
+  .VehicleName_vehicleTypeContainer_36afa7ec {
   width: 80rem;
 }
 

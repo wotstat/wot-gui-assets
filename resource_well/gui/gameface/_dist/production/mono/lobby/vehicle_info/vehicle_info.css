@@ -42,7 +42,8 @@
 .PersonalNumber_shadow_bf3f7582 {
   width: 460rem;
   height: 162rem;
-  background: url("R.images.resource_well.gui.maps.icons.award.number_shadow") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.award.number_shadow") no-repeat
+    center/contain;
   opacity: 0.7;
   position: absolute;
   left: 50%;
@@ -140,7 +141,7 @@
 }
 .mediaLarge .PersonalNumber_contentTooltip_d86aa872 {
   width: 170rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .VehicleInfo_vehicleText_e88e8c87 {

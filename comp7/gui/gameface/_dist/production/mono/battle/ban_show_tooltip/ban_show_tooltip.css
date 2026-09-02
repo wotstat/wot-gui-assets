@@ -130,14 +130,14 @@
   margin: 4rem 5rem 8rem;
 }
 
-.TooltipDecorator_decoratorInner_5b7cf9de {
+.TooltipDecorator_decoratorInner_ed88e863 {
   padding: 1rem;
-  border-image-source: url("R.images.comp7.gui.maps.icons.icons.tooltip_bg");
+  border-image-source: url("R.images.comp7_core.gui.maps.icons.library.tooltip_bg");
   border-image-slice: 4 fill;
   border-image-width: 4rem;
   border-image-repeat: round;
   box-shadow: 0 0 8rem rgba(15, 15, 15, 0.8);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

@@ -10,7 +10,8 @@
 .App_base__visible_0::before {
   width: 860rem;
   height: 190rem;
-  background: url("R.images.resource_well.gui.maps.icons.vehiclePreviewBottomPanel.shadow_small") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.vehiclePreviewBottomPanel.shadow_small")
+    no-repeat center/contain;
   mix-blend-mode: screen;
   content: "";
   position: absolute;

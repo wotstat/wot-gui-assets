@@ -141,13 +141,25 @@
   padding: 24rem 20rem;
 }
 .App_section__bg_b6da9bb8 {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05) 40%, rgba(235, 235, 235, 0.05) 60%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(235, 235, 235, 0.05) 60%,
+    transparent
+  );
   position: relative;
 }
 .App_section__bg_b6da9bb8::after {
   width: 360rem;
   height: 1rem;
-  background: linear-gradient(to right, rgba(201, 201, 182, 0.2) 33.33%, rgba(201, 201, 182, 0) 33.33%, rgba(201, 201, 182, 0)) repeat right/3rem 1rem;
+  background: linear-gradient(
+      to right,
+      rgba(201, 201, 182, 0.2) 33.33%,
+      rgba(201, 201, 182, 0) 33.33%,
+      rgba(201, 201, 182, 0)
+    )
+    repeat right/3rem 1rem;
   mask: linear-gradient(90deg, transparent, rgb(0, 0, 0) 5%, rgb(0, 0, 0) 95%, transparent);
   content: "";
   position: absolute;

@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -86,7 +93,7 @@ html[lang=th] input {
   transform: translate(-50%);
   width: 1920rem;
   height: 660rem;
-  background: url("R.images.story_mode.gui.maps.icons.common.victory_back") no-repeat 50%/cover;
+  background: url("R.images.story_mode.gui.maps.icons.common.victory_back") no-repeat 50% / cover;
   opacity: 0.6;
   top: 0;
 }
@@ -168,10 +175,14 @@ html[lang=th] input {
   display: flex;
   margin-top: -17rem;
 }
-.mediaMedium .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_awards_de559bb5 {
+.mediaMedium
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_awards_de559bb5 {
   margin-top: -38rem;
 }
-.mediaLarge .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_awards_de559bb5 {
+.mediaLarge
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_awards_de559bb5 {
   margin-top: -23rem;
 }
 
@@ -185,19 +196,23 @@ html[lang=th] input {
   width: 400rem;
   height: 300rem;
   margin-top: -44rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 .mediaMedium .CongratulationsWindowApp_medalImage_71f98f07 {
   width: 600rem;
   height: 450rem;
   margin-top: -66rem;
 }
-.mediaMedium .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_medalImage_71f98f07 {
+.mediaMedium
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_medalImage_71f98f07 {
   width: 400rem;
   height: 300rem;
   margin-top: -44rem;
 }
-.mediaLarge .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_medalImage_71f98f07 {
+.mediaLarge
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_medalImage_71f98f07 {
   width: 600rem;
   height: 450rem;
   margin-top: -66rem;
@@ -224,13 +239,17 @@ html[lang=th] input {
   line-height: 1.3em;
   font-weight: 600;
 }
-.mediaMedium .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_medalName_65e0b982 {
+.mediaMedium
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_medalName_65e0b982 {
   font-size: 22rem;
   font-weight: 700;
   line-height: 1.3em;
   font-weight: 600;
 }
-.mediaLarge .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_medalName_65e0b982 {
+.mediaLarge
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_medalName_65e0b982 {
   font-size: 26rem;
   font-weight: 700;
   line-height: 1.3em;
@@ -278,7 +297,8 @@ html[lang=th] input {
   width: 1366rem;
   height: 356rem;
   margin-top: 44rem;
-  background: url("R.images.story_mode.gui.maps.icons.congratulations.ribbon.extraSmall") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.congratulations.ribbon.extraSmall") no-repeat
+    50% / contain;
 }
 .mediaMedium .CongratulationsWindowApp_ribbonImage_ac4ece96 {
   width: 1600rem;
@@ -291,10 +311,14 @@ html[lang=th] input {
   margin-top: 80rem;
   background-image: url("R.images.story_mode.gui.maps.icons.congratulations.ribbon.large");
 }
-.mediaMedium .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_ribbonImage_ac4ece96 {
+.mediaMedium
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_ribbonImage_ac4ece96 {
   margin-top: 40rem;
 }
-.mediaLarge .CongratulationsWindowApp_base__withBadge_f39aff0b .CongratulationsWindowApp_ribbonImage_ac4ece96 {
+.mediaLarge
+  .CongratulationsWindowApp_base__withBadge_f39aff0b
+  .CongratulationsWindowApp_ribbonImage_ac4ece96 {
   margin-top: 80rem;
 }
 
@@ -313,7 +337,7 @@ html[lang=th] input {
   width: 800rem;
   height: 800rem;
   margin-top: -14rem;
-  background: url("swf://gui/flash/animations/glows/rays.swf") no-repeat 50%/contain;
+  background: url("swf://gui/flash/animations/glows/rays.swf") no-repeat 50% / contain;
   mix-blend-mode: additive;
 }
 .mediaMedium .CongratulationsWindowApp_shine_265957ca {
@@ -339,7 +363,8 @@ html[lang=th] input {
   animation: CongratulationsWindowApp_rotation_f39aff0b 120s linear infinite;
   width: 920rem;
   height: 920rem;
-  background: url("R.images.story_mode.gui.maps.icons.common.radial_lines.extraSmall") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.common.radial_lines.extraSmall") no-repeat
+    50% / contain;
   mix-blend-mode: additive;
 }
 .mediaMedium .CongratulationsWindowApp_linesImage_969e3b26 {

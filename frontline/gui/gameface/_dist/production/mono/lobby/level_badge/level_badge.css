@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -24,21 +25,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -99,7 +106,9 @@ html {
 .LevelBadge_level_494681b3 {
   font-size: 28rem;
   font-weight: 700;
-  text-shadow: 0 0 6rem #000, 0 0 9rem #000;
+  text-shadow:
+    0 0 6rem #000,
+    0 0 9rem #000;
   mask: linear-gradient(rgb(255, 255, 255) 40%, rgba(255, 255, 255, 0));
   mask-repeat: repeat;
   position: absolute;
@@ -131,7 +140,8 @@ html {
 .LevelBadge_base__c_190x190_522816c .LevelBadge_level_494681b3 {
   font-size: 40rem;
 }
-.LevelBadge_base__c_270x270_464e79e8 .LevelBadge_level_494681b3, .LevelBadge_base__c_320x320_6fc19afc .LevelBadge_level_494681b3 {
+.LevelBadge_base__c_270x270_464e79e8 .LevelBadge_level_494681b3,
+.LevelBadge_base__c_320x320_6fc19afc .LevelBadge_level_494681b3 {
   font-size: 56rem;
 }
 

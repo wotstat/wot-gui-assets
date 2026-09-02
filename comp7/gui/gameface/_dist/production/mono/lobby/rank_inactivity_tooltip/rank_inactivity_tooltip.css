@@ -144,5 +144,7 @@
   pointer-events: none;
 }
 .App_timer__active_d318a2be {
-  background-image: url("R.images.comp7.gui.maps.icons.icons.timer_165x94"), url("R.images.comp7.gui.maps.icons.icons.red_highlight_165x94");
+  background-image:
+    url("R.images.comp7.gui.maps.icons.icons.timer_165x94"),
+    url("R.images.comp7.gui.maps.icons.icons.red_highlight_165x94");
 }

@@ -21,8 +21,12 @@
 .App_separator_6a28805 {
   width: 100%;
   height: 1rem;
-  background: linear-gradient(to right, transparent 50%, rgb(18, 17, 11) 50%), linear-gradient(270deg, #12110b 0%, #c9c9b6 50%, #12110b 100%);
-  background-size: 3rem 2rem, 100% 100%;
+  background:
+    linear-gradient(to right, transparent 50%, rgb(18, 17, 11) 50%),
+    linear-gradient(270deg, #12110b 0%, #c9c9b6 50%, #12110b 100%);
+  background-size:
+    3rem 2rem,
+    100% 100%;
   opacity: 0.2;
   position: absolute;
   right: 0;
@@ -36,7 +40,13 @@
 }
 
 .App_bg_856460fd {
-  background: linear-gradient(90deg, rgba(201, 201, 182, 0) 0%, #c9c9b6 38.22%, #c9c9b6 64.56%, rgba(201, 201, 182, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(201, 201, 182, 0) 0%,
+    #c9c9b6 38.22%,
+    #c9c9b6 64.56%,
+    rgba(201, 201, 182, 0) 100%
+  );
   opacity: 0.07;
   position: absolute;
   top: 0;

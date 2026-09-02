@@ -48,7 +48,8 @@
   animation-iteration-count: 1, infinite;
   width: 100%;
   height: 100%;
-  background: url("R.images.battle_royale.gui.maps.icons.battleQuestAwards.rays") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleQuestAwards.rays") no-repeat
+    center/contain;
   mix-blend-mode: additive;
   position: absolute;
   top: 0;
@@ -66,7 +67,8 @@
 .AnimatedBackground_staticHighlight_11296398 {
   width: 550rem;
   height: 550rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleQuestAwards.highlight") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleQuestAwards.highlight") no-repeat
+    center/contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -79,7 +81,7 @@
 .mediaLarge .AnimatedBackground_staticHighlight_11296398 {
   width: 900rem;
   height: 900rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .AwardsList_fd6f2000 {
@@ -159,7 +161,7 @@
 .mediaExtraLarge .AwardsList_ribbon_fe6a9359 {
   width: 75vw;
   height: 75vh;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Header_bbfb94eb {
@@ -198,7 +200,7 @@
 }
 .mediaExtraLarge .Header_title_50f7af56 {
   font-size: 73rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .App_cbeb77a5 {

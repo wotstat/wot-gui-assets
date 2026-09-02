@@ -150,6 +150,16 @@
 
 .LaceDivider_line_646a66 {
   flex: 1 1 auto;
-  background: linear-gradient(180deg, transparent 3rem, #c0deef 3rem, #c0deef 4rem, transparent 4rem, transparent 6rem, #c0deef 6rem, #c0deef 7rem, transparent 7rem);
+  background: linear-gradient(
+    180deg,
+    transparent 3rem,
+    #c0deef 3rem,
+    #c0deef 4rem,
+    transparent 4rem,
+    transparent 6rem,
+    #c0deef 6rem,
+    #c0deef 7rem,
+    transparent 7rem
+  );
   background-size: 1rem 14rem;
 }

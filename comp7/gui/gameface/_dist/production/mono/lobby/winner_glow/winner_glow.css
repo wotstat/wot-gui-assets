@@ -172,7 +172,7 @@
   to {
     transform: rotate(360deg);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -337,7 +337,7 @@
   right: 5rem;
   bottom: 5rem;
   left: 6rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -576,7 +576,7 @@
 }
 .mediaExtraLarge .TeamLogo_winner_4f446a77 {
   bottom: -62rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -851,7 +851,7 @@
 .FundDistribution_team__position3_3267b599 .FundDistribution_gradientText_5a984c4d {
   color: #ca7921;
   mask-image: linear-gradient(136deg, rgba(197, 102, 0, 0.8) 21%, rgba(255, 255, 255, 0) 100%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1070,7 +1070,7 @@
 .mediaLarge .LiveMatchFooter_text_c54972e4 {
   margin: 0 48rem;
   font-size: 18rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1257,7 +1257,12 @@
   width: 1rem;
   height: 30rem;
   margin: 0 12rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.07));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.07)
+  );
 }
 
 .Footer_result_7805495d {
@@ -1298,7 +1303,7 @@
 .Footer_teamLogo__loser_df3967bf {
   filter: grayscale(1);
   opacity: 0.6;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1500,7 +1505,7 @@
   width: 580rem;
   height: 162rem;
   margin-bottom: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1697,7 +1702,7 @@
   line-height: 1.3em;
   margin-top: 30rem;
   color: var(--color-general-primary);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1948,7 +1953,7 @@
   height: 2196rem;
   top: -614rem;
   left: -396rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2177,7 +2182,7 @@
 .mediaLarge .NextMatch_matchType_5bb91584 {
   width: 164rem;
   font-size: 22rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2444,7 +2449,7 @@
   bottom: 0;
   left: 0;
   pointer-events: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2652,7 +2657,7 @@
 .mediaExtraLarge .ShopBlock_buttonWrapper_a5da9ae8 {
   bottom: 32rem;
   left: 32rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2800,7 +2805,8 @@
 }
 
 .TokenStore_background_8bf67484 {
-  background: url("R.images.comp7.gui.maps.icons.tournaments.ols.token_213x108") no-repeat right bottom/cover;
+  background: url("R.images.comp7.gui.maps.icons.tournaments.ols.token_213x108") no-repeat right
+    bottom/cover;
   position: absolute;
   top: 6rem;
   right: 6rem;
@@ -2851,7 +2857,11 @@
   width: 24rem;
   height: 24rem;
   background: url("R.images.gui.maps.icons.ui_kit.datetime.x24x24.accent") no-repeat center/contain;
-  text-shadow: 0 0 6rem rgba(255, 228, 159, 0.16), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 12rem rgba(255, 61, 0, 0.32), 0 1rem 0 rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 6rem rgba(255, 228, 159, 0.16),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 1rem 0 rgba(0, 0, 0, 0.3);
 }
 
 .TokenStore_time_28b74cad {
@@ -2860,7 +2870,8 @@
   line-height: 1.3em;
   color: #edcb9e;
   font-weight: 500;
-  filter: drop-shadow(0 1rem 0 rgba(0, 0, 0, 0.3)) drop-shadow(0 0 12px rgba(255, 61, 0, 0.32)) drop-shadow(0 0 10px rgba(255, 177, 86, 0.24)) drop-shadow(0 0 6px rgba(255, 128, 169, 0.16));
+  filter: drop-shadow(0 1rem 0 rgba(0, 0, 0, 0.3)) drop-shadow(0 0 12px rgba(255, 61, 0, 0.32))
+    drop-shadow(0 0 10px rgba(255, 177, 86, 0.24)) drop-shadow(0 0 6px rgba(255, 128, 169, 0.16));
   position: relative;
 }
 
@@ -2880,7 +2891,7 @@
 .mediaExtraLarge .TokenStore_buttonWrapper_a751996c {
   bottom: 32rem;
   left: 32rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3071,7 +3082,8 @@
 }
 
 .OverviewTabContent_frameBg_59bad249 {
-  background: rgba(204, 188, 188, 0.05) url("R.images.comp7.gui.maps.icons.tournaments.prize_frame") no-repeat center/100% 100%;
+  background: rgba(204, 188, 188, 0.05) url("R.images.comp7.gui.maps.icons.tournaments.prize_frame")
+    no-repeat center/100% 100%;
   position: absolute;
   top: 6rem;
   right: 6rem;
@@ -3148,7 +3160,7 @@
 .mediaLarge .OverviewTabContent_tooltipIcon_3a3c6d8a {
   width: 32rem;
   height: 32rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3303,7 +3315,12 @@
   width: 1rem;
   height: 30rem;
   margin: 0 12rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.07));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.07)
+  );
 }
 
 .Counter_bestOf_4929e990 {
@@ -3315,7 +3332,7 @@
 }
 .mediaLarge .Counter_bestOf_4929e990 {
   font-size: 18rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3628,7 +3645,7 @@
 .MatchByDate_loser_90c34627 {
   filter: grayscale(1);
   opacity: 0.6;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3789,7 +3806,7 @@
 .DailySchedule_arrow_79f2d923 {
   width: 14rem;
   height: 7rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3955,7 +3972,7 @@
 }
 .ScheduleTabContent_base__withMask_fbcb0d72::after {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4248,7 +4265,7 @@
   justify-content: center;
   flex: 1 1 auto;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

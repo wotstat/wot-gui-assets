@@ -1,2 +1,4899 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../../../lib/lib.css","../../../entry_point/entry_point.css"])))=>i.map(i=>d[i]);
-import{h as e,o as t,x as a,y as s,j as n,f as o,t as r,r as i,z as l,i as c,R as d,A as u,p as m,q as _,m as p,B as g,D as h,E as f}from"../../../chunks/vendor.js";import{i as b,n as v,c as y,O as x,Q as C,V as w,W as P,X as j,Y as I,Z as N,_ as k,$ as S,a0 as M,d as E,a1 as A,a2 as B,a3 as $,G as T,a4 as W,a5 as L,B as O,a6 as q,a7 as H,a8 as D,a9 as V,L as z,aa as Q,ab as G,ac as F,ad as U,ae as K,af as X,ag as J,ah as Y,ai as Z,m as ee,aj as te,ak as ae,al as se,am as ne,an as oe,u as re,ao as ie,ap as le,aq as ce,ar as de,as as ue,at as me,au as _e,av as pe,aw as ge,ax as he,ay as fe,az as be,aA as ve,aB as ye,aC as xe,aD as Ce,aE as we,aF as Pe,aG as je,aH as Ie,aI as Ne,aJ as ke,aK as Se,aL as Me,aM as Ee,aN as Ae,aO as Re,aP as Be,aQ as $e,p as Te,h as We,aR as Le,aS as Oe,aT as qe,aU as He,aV as De,aW as Ve,aX as ze,aY as Qe,aZ as Ge,w as Fe,F as Ue,o as Ke,a_ as Xe,a$ as Je,b0 as Ye,N as Ze,U as et,r as tt,b1 as at}from"../../../chunks/lib.js";import{S as st}from"../../../chunks/enums.js";import{D as nt}from"../../../chunks/daily_bonus.js";import{P as ot}from"../../../chunks/proxy_currency.js";import{u as rt,A as it,a as lt}from"../../../chunks/model.js";import{B as ct}from"../../../chunks/battle_type_selector_view_model.js";/* empty css                     */const[dt,ut]=b()(({observableModel:t})=>{const a={root:t.object()},s=e(()=>a.root.get().subMode===st.StPatrick?{mainMenu:{modeIconPath:"R.images.gui.maps.st_patrick.icons.battleTypes.c_64x64.battleRoyaleQueue"}}:{mainMenu:{modeIconPath:"R.images.gui.maps.icons.battleTypes.c_64x64.battleRoyaleQueue"}});return{...a,computes:{eventSettings:s}}},v),[mt,_t]=b("HeroTankModelProvider")(e=>{const{observableModel:t}=e;return{...t.primitives(["name","type"]),heroTankMarker:t.object("heroTankMarker")}},v),[pt,gt]=b("SpaceInteractionModel")(v,({externalModel:e})=>({sceneWrapper:{onMoveSpace:e.createCallback(e=>e,"onMoveSpace"),onMouseOver3dScene:e.createCallback(e=>e,"onMouseOver3dScene")}})),ht={umg_widget_quest_progress:"umg_widget_quest_progress",umg_widget_quest_complete:"umg_widget_quest_complete",umg_widget_quest_reward:"umg_widget_quest_reward",umg_widget_quest_disappear:"umg_widget_quest_disappear",umg_widget_block_move:"umg_widget_block_move",umg_widget_block_stop:"umg_widget_block_stop",umg_widget_quest_complete_secondary:"umg_widget_quest_complete_secondary",umg_widget_quest_reward_secondary:"umg_widget_quest_reward_secondary",umg_widget_quest_disappear_secondary:"umg_widget_quest_disappear_secondary",umg_widget_quest_complete_all:"umg_widget_quest_complete_all",umg_widget_quest_progress_secondary:"umg_widget_quest_progress_secondary",umg_widget_quest_backlog:"umg_widget_quest_backlog",umg_widget_event_appear:"umg_widget_event_appear",umg_widget_event_hover_loop:"umg_widget_event_hover_loop",umg_widget_event_hover_loop_stop:"umg_widget_event_hover_loop_stop",umg_widget_event_timer:"umg_widget_event_timer",umg_widget_event_inactive:"umg_widget_event_inactive",umg_widget_event_reward:"umg_widget_event_reward",umg_widget_event_timer_simple:"umg_widget_event_timer_simple"},ft=Object.values(ht).reduce((e,t)=>({...e,[t]:y(t)}),{}),bt="emptySlot",vt="left",yt="right",xt="both",Ct="none",wt=189,Pt=245,jt={default:{single:wt,double:wt},breakpoints:{medium:{single:224},large:{single:Pt,double:Pt},extraLarge:{single:302}}},[It,Nt]=b()(({observableModel:e})=>({...e.primitives(["carouselRowCount"]),nationsOrder:e.arrayClone("nationsOrder")}),v);const[kt,St]=b()(e=>{const n={...e.observableModel.primitives(["currentVehicleIntCD","currentVehicleInventoryId"]),vehicles:e.observableModel.dictRef("vehicles")},o=t.box([],{deep:!1}),r=x.structural(e=>{const t=n.vehicles.get(e);if(-1!==e&&t)return function(e){try{return JSON.parse(e)}catch(t){throw console.error(`Error parsing JSON for element ${e}:`,t),t}}(t)}),i=x.shallow(()=>{const e=n.currentVehicleIntCD.get();return r(e)}),l=x.primitive(()=>o.get().some(e=>"inPrebattle"===e.status));return e.cleanup(a(()=>{const t=[];for(const[e,s]of n.vehicles.entries())try{t.push(JSON.parse(s.get()))}catch(i){console.error(`Error parsing JSON for element ${e}:`,i)}const a=e.requires.filters.model.nationsOrder.get(),r=t.sort((e,t)=>a.indexOf(C(e.nationId))-a.indexOf(C(t.nationId)));s(()=>o.set(r))})),{inventoryId:n.currentVehicleInventoryId,prebattleModeActive:l,selectedVehicle:i,getVehicle:r,current:{list:()=>o.get(),ids:x.shallow(()=>o.get().map(e=>e.id))}}},e=>({select:e.externalModel.createCallback(e=>({id:e}),"onSelect")}),{useRequires:()=>({filters:Nt()})}),Mt="Slot_mainContainer_e894477a",Et="Slot_disabledOverlay_1c919925",At="Slot_content_1a27c8cf",Rt="Slot_selected_18aa5577",Bt="Slot_selected__border_9be57c4",$t=w("Slot","Slot_977dd8f1",{variants:{active:{true:"Slot_base__active_71f19f5c"},selected:{true:"Slot_base__selected_71f19f5c"},disabled:{true:"Slot_base__disabled_334cc10f"},empty:{true:"Slot_base__empty_d386066c"},stPatrick:{true:"Slot_base__stPatrick_71f19f5c"}}});function Tt({children:e,selected:t=!1,disabled:a=!1,active:s,className:r,...i}){const l=a||void 0===i.onClick,c=ut().model.root.get().subMode;return n.jsx($t,{...i,selected:t,disabled:a,empty:l,active:s,stPatrick:c===st.StPatrick,className:r,children:n.jsxs("div",{className:At,children:[n.jsxs("div",{className:Mt,children:[e,a&&n.jsx("div",{className:Et})]}),t&&n.jsx("div",{className:o(Rt,Bt)}),n.jsx("div",{className:Rt})]})})}const Wt="undamaged",Lt="ammoNotFull",Ot="crewNotFull",qt="exploded",Ht="destroyed",Dt="damaged",Vt="rentable",zt="rentableAgain",Qt="rentalIsOver",Gt="tooHeavy",Ft="unsuitableToQueue",Ut="unsuitableToUnit",Kt="inPrebattle",Xt="battle",Jt="wot_plus_exclusive_vehicle_disabled",Yt={[Lt]:"ammo",[Ot]:"crew",[qt]:"repair",[Ht]:"repair",[Dt]:"repair",[Vt]:"rental",[zt]:"rental",[Qt]:"rental",[Gt]:"notSuitable",[Ft]:"notSuitable",[Ut]:"notSuitable",[Kt]:"inPlatoon",[Xt]:"inBattle",[Jt]:"notSuitable"},Zt={base:"Background_2f756423",base__selected:"Background_base__selected_55780014",base__stPatrick:"Background_base__stPatrick_26effab7",flag:"Background_flag_57525fcb",base__double:"Background_base__double_26effab7",flag__active:"Background_flag__active_de322c1b",vehicle:"Background_vehicle_23ef6e2b",vehicle__dimmed:"Background_vehicle__dimmed_4dddd8fc"};function ea({vehicle:e,selected:t,active:a}){return n.jsx(j,{className:o(Zt.flag,t||a&&Zt.flag__active),path:`hangar.carousel.cards.flags.x400x300.${C(e.nationId)}`,position:"top left"})}const ta=r(function({vehicle:e,dimmed:t,active:a,selected:s,doubleRow:r}){const i=ut().model.root.get().subMode;return n.jsxs("div",{className:o(Zt.base,Zt[`base__${i}`],r&&Zt.base__double,s&&Zt.base__selected),children:[n.jsx(ea,{vehicle:e,active:a,selected:s}),n.jsx(P,{className:o(Zt.vehicle,(e?.status&&e.status!==Wt||t)&&Zt.vehicle__dimmed),name:e.name})]})}),aa="Information_f314e2aa",sa="Information_info_34007a93",na="Information_details_e5340a0c",oa="Information_base__double_6e8d4f26",ra="Information_text_730f3788";function ia({vehicle:e}){return n.jsxs("div",{className:na,children:[N(e.type)&&n.jsx(I.Type,{type:e.type,size:I.Type.sizes.x24x24}),n.jsx(I.Name,{className:ra,children:e.shortName})]})}function la({vehicle:e,doubleRow:t}){return n.jsx("div",{className:o(aa,t&&oa),children:n.jsx(I,{className:sa,children:n.jsx(ia,{vehicle:e})})})}const ca="Overlay_c657baf9",da="Overlay_alert_db4a0e15",ua="Overlay_alertIcon_3d7c077a",ma="Overlay_base__double_3c7155a",_a="Overlay_alertText_e237f4fd",pa="Overlay_alertText__light_bece984e";function ga({status:e}){const t=k.resolve("images"),a=S(`hangar.carousel.cards.alerts.${Yt[e]}`,`hangar.carousel.cards.alerts.${Yt[e]}_upscale`),s=S("hangar.carousel.cards.alerts.notSuitable","hangar.carousel.cards.alerts.notSuitable_upscale"),r=e===Xt||e===Kt;return n.jsxs("div",{className:da,children:[n.jsx(j,{className:ua,path:t.has(a)?a:s}),n.jsx(M,{upgradeLegacy:!0,className:o(_a,r&&pa),path:`menu.tankCarousel.vehicleStates.${e}`,params:{icon:n.jsx(j,{path:"library.premium_small",width:34,height:16})}})]})}function ha({vehicleStatus:e,doubleRow:t}){return e===Wt?null:n.jsx("div",{className:o(ca,t&&ma),children:n.jsx(ga,{status:e})})}const fa="Card_e79008fd",ba="Card_base__double_f8b7f334",va="Card_content_a6141b08",ya="Card_dailyBonus_60c06806",xa="Card_border_e9cb9a85",Ca=k.resolve("aliases"),wa=k.resolve("views"),Pa=r(function({vehicleId:e,selected:t=!1,doubleRow:a,children:s,...r}){const i=St(),l=i.model.inventoryId.get(),c=i.model.getVehicle(e),d=E(),u=i.model.prebattleModeActive(),m=A({resId:Ca.read(e=>e.battle_royale.VehiclesInventory("resId")),contentId:wa.read(e=>e.battle_royale.mono.lobby.tooltips.vehicle("resId")),args:{intCD:e}});if(!c)return n.jsx(Tt,{...r});return n.jsxs(Tt,{...r,className:o("vehicle-card",r.className),selected:t,"data-test-id":`vehicleCard-${e}`,onMouseEnter:function(e){d.play("mouse-enter",{target:"vehicle-card",original:e}),m.onMouseEnter(e)},onClick:function(e){m.onClick(),u||c&&c.inventoryId===l||(d.play("click",{target:"vehicle-card",original:e}),i.controls.select(c.inventoryId),r.onClick?.(e))},onMouseLeave:m.onMouseLeave,children:[n.jsx(ta,{vehicle:c,dimmed:u,selected:t,doubleRow:a}),n.jsx(ja,{vehicle:c,disableContextMenu:u,doubleRow:a})]})});function ja({vehicle:e,doubleRow:t,disableContextMenu:a}){const s=B("brVehicle",i.useMemo(()=>({inventoryId:e?.inventoryId}),[e?.inventoryId]));return n.jsxs("div",{...!a&&s,className:o(fa,t&&ba),children:[n.jsxs("div",{className:va,children:[e.hasDailyBonus&&n.jsx(nt,{className:ya,dailyBonusFactor:e.dailyBonusFactor,coinType:e.coinType}),n.jsx(la,{vehicle:e,doubleRow:t})]}),n.jsx(ha,{vehicleStatus:e.status,doubleRow:t})]})}const Ia={empty:"ActiveSlots_empty_9aab1ce1",doubleSlots:"ActiveSlots_doubleSlots_2ce42013",slot__double:"ActiveSlots_slot__double_e321ab18"};function Na({width:e,className:t}){return n.jsx("div",{className:Ia.empty,children:n.jsx(Tt,{className:t,style:{width:`${e}px`},children:n.jsx("div",{className:Ia.vehicleSlot})})})}function ka({slotId:e,width:t,currentVehicleId:a,double:s,className:r}){return void 0===e?null:e===bt?n.jsx(Na,{className:o(xa,r),width:t}):n.jsx(Pa,{vehicleId:e,selected:e===a,doubleRow:s,className:o(xa,r),style:{width:t}})}function Sa({chunkedSlots:e,classNames:t,...a}){return void 0===e?null:n.jsx("div",{className:Ia.doubleSlots,children:e.map((e,s)=>n.jsx(ka,{...a,slotId:e,className:o(Ia.slot__double,t?.slot)},s))})}const Ma={base:"CarouselScroll_3690a837",areaContent:"CarouselScroll_areaContent_f5dd7772"},Ea="dragging",Aa="idle";function Ra({api:e,children:t,className:a,areaClassNames:s,staticContent:r,disabled:l,onDraggingState:c}){const{animationScroll:d,applyScroll:u,setDisabled:m}=e,_=$(e,L.horizontal,void 0,{gapBeforeStart:5});return i.useEffect(()=>{c?.(_.type===Ea)},[_.type,c]),i.useEffect(()=>{m(l)},[l,m]),i.useEffect(()=>T(()=>{_.type===Aa&&d.scrollPosition.idle&&u(d.scrollPosition.get())}),[d.scrollPosition,_,u]),n.jsx("div",{className:o(Ma.base,a),children:n.jsxs(W,{className:s?.base,classNames:{wrapper:o(Ma.areaWrapper,s?.wrapper),content:o(Ma.areaContent,s?.content)},children:[t,r]})})}const Ba={button:"ArrowButton_button_7654af94",icon:"ArrowButton_icon_35e5294f",button__left:"ArrowButton_button__left_5327085d",background:"ArrowButton_background_5327085d",border:"ArrowButton_border_5327085d",overlay:"ArrowButton_overlay_c36cbc33",content:"ArrowButton_content_ff5598c7"};function $a({direction:e,className:t,...a}){return n.jsx(O,{...a,classNames:{base:o(Ba.button,Ba[`button__${e}`],t),background:Ba.background,border:Ba.border,overlay:Ba.overlay,content:Ba.content},theme:O.themes.secondary,size:O.sizes.small,autoAlignContent:!1,soundTarget:"carousel:arrow_button",children:n.jsx(j,{path:"hangar.carousel.buttonArrow",className:Ba.icon})})}$a.direction={up:"up",right:"right",down:"down",left:"left"};const Ta={navButtonWrapper:"CarouselNavButtons_navButtonWrapper_a13c2a68",navButton:"CarouselNavButtons_navButton_adcc2e9b",navButton__left:"CarouselNavButtons_navButton__left_5f6dc3a0",navButton__right:"CarouselNavButtons_navButton__right_66b4f03f",navButton__hidden:"CarouselNavButtons_navButton__hidden_69011a0b",mask:"CarouselNavButtons_mask_17bb1a0e",mask__both:"CarouselNavButtons_mask__both_7294632e",mask__left:"CarouselNavButtons_mask__left_e8bc4c90",mask__right:"CarouselNavButtons_mask__right_6be519f7"};function Wa(e){return({button:t})=>{0===t&&e()}}function La({itemWidth:e,api:t,children:a}){const s=i.useRef(null),[r,l]=i.useState(!1),{applyScroll:c,animationScroll:d,disabled:u}=t,[m,_]=q(t),p=m||u,g=_||u;function h(t){function a(){const a=d.scrollPosition.get();c(a+t*e)}r||(a(),s.current=window.setInterval(a,100),l(!0))}function f(){null!==s.current&&(clearInterval(s.current),s.current=null),l(!1)}return n.jsxs("div",{className:Ta.navButtonWrapper,children:[n.jsx($a,{direction:$a.direction.left,onMouseDown:Wa(()=>h(-1)),onMouseUp:f,onMouseLeave:f,className:o(Ta.navButton,Ta.navButton__left,p&&Ta.navButton__hidden)}),n.jsx("div",{className:o(Ta.mask,Ta[`mask__${b=m,v=_,b||v?b?v?Ct:yt:vt:xt}`]),children:a}),n.jsx($a,{direction:$a.direction.right,onMouseDown:Wa(()=>h(1)),onMouseUp:f,onMouseLeave:f,className:o(Ta.navButton,Ta.navButton__right,g&&Ta.navButton__hidden)})]});var b,v}const Oa="CarouselSkeleton_1ac002e3",qa="CarouselSkeleton_content_b18f8dd7",Ha="CarouselSkeleton_scroll_badf82c7";function Da(e){return n.jsx("div",{...e,className:o(qa,e.className)})}function Va({api:e,widthElement:t,totalElements:a,disabled:s,onDraggingState:r,renderElement:i,classNames:l}){return n.jsx("div",{className:o(Oa,l?.base),children:n.jsx(La,{api:e,itemWidth:t,children:n.jsx(H,{api:e,elementWidth:t-D(1),direction:"horizontal",totalElements:a,wrappers:{Content:Da},className:o(Ha,l?.scroll),renderScroll:t=>n.jsx(Ra,{...t,api:e,disabled:s,onDraggingState:r,children:t.children}),renderElement:e=>i?i(e):n.jsx(Na,{className:l?.element,width:t})})})})}function za({api:e,carouselRows:t}){const a=function(e){const t=F(jt.default,jt.breakpoints);return D(2===e?t.double:t.single)}(t),[s,n]=i.useState({carouselRows:0,cardWidth:0,visibleSlots:0});return i.useLayoutEffect(()=>{function s(){const s=e.getWrapperSize();s&&n(2!==t?{visibleSlots:Math.ceil(s/a),cardWidth:a,carouselRows:t}:{visibleSlots:Math.ceil(s/a*t),cardWidth:a,carouselRows:t})}s();return(new V).add(e.events.on("resizeHandled",s)).add(e.events.on("recalculateContent",s)).dispose},[e,a,t]),s}const Qa="CarouselContent_draggingOverlay_197a34b",Ga="CarouselContent_c99c427d",Fa="CarouselContent_base__visible_7c3ff06f",Ua="CarouselContent_card_b986acca",Ka="CarouselContent_card__inactive_d480be2c",Xa=r(function(){const[e,t]=i.useState(!1),a=St(),s=Nt(),{api:r}=U(),c=s.model.carouselRowCount.get(),d=a.model.prebattleModeActive(),u=a.model.current.ids(),m=a.model.current.list(),_=a.model.selectedVehicle(),{currentIndex:p}=function(e,t){return i.useMemo(()=>{if(!t)return{currentIndex:-1,currentPosition:-1};const a=e.indexOf(t);return{currentIndex:a,currentPosition:a>=0?a+1:-1}},[e,t])}(u,_?.id),{carouselRows:g,cardWidth:h,visibleSlots:f}=za({api:r,carouselRows:c}),{activeSlotsAmount:b,activeSlotsIds:v}=(y=u,x=f,i.useMemo(()=>{if(!x)return{activeSlotsAmount:0,activeSlotsIds:[]};const e=y.length,t=Math.max(0,x-e);return{activeSlotsAmount:e,activeSlotsIds:[...y,...Array(t).fill(bt)]}},[y,x]));var y,x;const C=(w=v,i.useMemo(()=>{const e=[];for(let t=0;t<w.length;t+=2)e.push(w.slice(t,t+2));return 1===e.at(-1)?.length&&e.at(-1)?.push(bt),e},[w]));var w;!function(e,t,a,s,n,o){const r=i.useRef(null);i.useLayoutEffect(()=>{function i(){const i=e.getWrapperSize(),l=e.animationScroll.scrollPosition.get();if(!i)return;o&&e.applyScroll(0,{immediate:!0});const c=a-D(1),d=l,u=l+i,m=c*Math.floor(t/s),_=m+c,p=m-Math.floor(i/c)/2*c;m>d&&_<u?(r.current&&n&&0!==r.current-n&&e.applyScroll(p,{immediate:!0}),r.current=n):(r.current=n,e.applyScroll(p,{immediate:!0}))}return i(),(new V).add(e.events.on("resizeHandled",i)).add(e.events.on("recalculateContent",i)).dispose},[t,e,a,s,o,n])}(r,p,h,g,u.length,f>b),function(e,t,a,s,n){const o=2===s;function r(s){a(-1!==e?t[e+s].inventoryId:t[0].inventoryId)}const i=[{key:z.ARROW_DOWN,blockKey:!o||e%s===s-1||e===t.length-1,action:()=>r(1)},{key:z.ARROW_UP,blockKey:!o||e%s===0,action:()=>r(-1)},{key:z.ARROW_LEFT,blockKey:o?e<s:0===e,action:()=>r(-s)},{key:z.ARROW_RIGHT,blockKey:o?e>t.length-(s+1):e===t.length-1,action:()=>r(s)},{key:z.HOME,blockKey:0===t.length,action:()=>a(t[0].inventoryId)},{key:z.END,blockKey:0===t.length,action:()=>a(t[t.length-1].inventoryId)}];for(const{key:l,blockKey:c,action:d}of i){const e=n||c?z.NONE:l;Q(e,d)}}(p,m,a.controls.select,g,0===u.length||d);const P=function(e,t){const[a,s]=i.useState(0===t),n=G();return i.useEffect(()=>{if(a||0===t)return s(!0);function o(){s(!0),r.dispose(),n.clear()}n.run(o);const r=(new V).add(n.clear).add(e.events.on("resizeHandled",()=>n.run(o))).add(e.events.on("recalculateContent",()=>n.run(o)));return r.dispose},[e,t,a,n]),a}(r,u.length);return n.jsxs(n.Fragment,{children:[n.jsx(Va,{api:r,widthElement:h,totalElements:2===g?C.length:v.length,disabled:f>b,onDraggingState:t,classNames:{base:o(Ga,P&&Fa),element:o(Ua,e&&Ka)},renderElement:t=>{const a=o(Ua,e&&Ka);return 2===g?n.jsx(K,{failure:()=>n.jsx(Na,{className:a,width:h}),children:n.jsx(Sa,{chunkedSlots:C[t],currentVehicleId:_?.id,width:h,classNames:{slot:a},double:2===g},t)}):n.jsx(K,{failure:()=>n.jsx(Na,{className:a,width:h}),children:n.jsx(ka,{slotId:v[t],currentVehicleId:_?.id,width:h,className:a,double:2===g},v[t]??t)})}}),l.createPortal(e&&n.jsx("div",{className:Qa}),document.body)]})}),Ja=function(){const e="undefined"!=typeof document&&document.createElement("link").relList;return e&&e.supports&&e.supports("modulepreload")?"modulepreload":"preload"}(),Ya={},Za=function(e,t,a){let s=Promise.resolve();if(t&&t.length>0){let e=function(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:"fulfilled",value:e}),e=>({status:"rejected",reason:e}))))};const n=document.getElementsByTagName("link"),o=document.querySelector("meta[property=csp-nonce]"),r=o?.nonce||o?.getAttribute("nonce");s=e(t.map(e=>{if(e=function(e,t){return new URL(e,t).href}(e,a),e in Ya)return;Ya[e]=!0;const t=e.endsWith(".css"),s=t?'[rel="stylesheet"]':"";if(a)for(let a=n.length-1;a>=0;a--){const s=n[a];if(s.href===e&&(!t||"stylesheet"===s.rel))return}else if(document.querySelector(`link[href="${e}"]${s}`))return;const o=document.createElement("link");return o.rel=t?"stylesheet":Ja,t||(o.as="script"),o.crossOrigin="",o.href=e,r&&o.setAttribute("nonce",r),document.head.appendChild(o),t?new Promise((t,a)=>{o.addEventListener("load",t),o.addEventListener("error",()=>a(new Error(`Unable to preload CSS for ${e}`)))}):void 0}))}function n(e){const t=new Event("vite:preloadError",{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return s.then(t=>{for(const e of t||[])"rejected"===e.status&&n(e.reason);return e().catch(n)})},es="EntryPoint_368cd93c",ts="EntryPoint_content_ec86add3",as=i.lazy(()=>Za(()=>import("../../../chunks/entry_point.js"),__vite__mapDeps([0,1]),import.meta.url));function ss(){const e=k.resolve("aliases").read(e=>e.hangar.shared.LootboxEntryPoint("resId"));return n.jsx(X,{id:e,children:n.jsx(i.Suspense,{children:n.jsx("div",{className:es,children:n.jsx("div",{className:ts,children:n.jsx(as,{})})})})})}const ns=i.memo(function(){return n.jsxs(K,{children:[n.jsx(J,{children:n.jsx(Xa,{})}),n.jsx(ss,{})]})}),os="Perk_41a4186b",rs=k.resolve("aliases");function is({name:e,tooltipId:t}){const a=Y({resId:rs.read(e=>e.battle_royale.loadoutPanelContainer.Commander("resId")),args:{tooltipId:t}}),s=F({value:"x48x48"},{medium:{value:"x48x48"},large:{value:"x64x64"},extraLarge:{value:"x80x80"}});return n.jsx("div",{...a,className:os,style:{backgroundImage:`url(${o=s.value,r=e,`R.images.battle_royale.gui.maps.icons.commanderPerks.${o}.${r}`})`}});var o,r}const[ls,cs]=b()(({observableModel:t})=>{const a={root:t.object(),eventInfo:t.object("eventInfo")},s=e(e=>a.eventInfo.get().subMode===st.StPatrick?{commanderIconPath:R.images.battle_royale.gui.maps.st_patrick.icons.commanders.$dyn(e)}:{commanderIconPath:R.images.battle_royale.gui.maps.icons.commanders.$dyn(e)},{equals:c.structural});return{...t.primitives(["nation"]),perks:t.arrayClone("perkList"),eventInfo:t.object("eventInfo"),computes:{settings:s}}},v),ds="Commander_98c5d9f0",us="Commander_c6dda4fe",ms="Commander_perks_e59f3f5c",_s=k.resolve("views"),ps=r(function(){const{model:e}=cs(),t=e.nation.get(),a=e.computes.settings(t).commanderIconPath,s=Z("commander",d.useMemo(()=>({commanderNation:t,resId:_s.read(e=>e.battle_royale.mono.lobby.tooltips.commander("resId"))}),[t]));return n.jsxs("div",{className:ds,children:[n.jsx("div",{...s,className:us,style:{backgroundImage:`url(${a})`}}),n.jsx("div",{className:ms,children:ee(e.perks.get(),e=>e.name?n.jsx(is,{name:e.name,tooltipId:e.tooltipID},e.name):null)})]})}),[gs,hs]=b()(({observableModel:e})=>({shells:e.arrayClone("shells"),equipment:e.arrayClone("equipment"),respawnAbility:e.object("respawnAbility")}),({externalModel:e})=>({showUpgrades:e.createCallbackNoArgs("showUpgrades")})),fs={base:"Item_d8443c58",icon:"Item_icon_121f9b9c",counter:"Item_counter_4fba53c1",base__shell:"Item_base__shell_5f6fcc69"};function bs(e){const t=Z(e.type,d.useMemo(()=>({...e.tooltipArgs}),[e.tooltipArgs])),{resId:a,...s}=e.tooltipArgs,r=Y({args:{...s},resId:a}),i="shell"!==e.type?t:r;return n.jsxs("div",{className:o(fs.base,fs[`base__${e.type}`],e.className),...i,children:[n.jsx("div",{className:fs.icon,style:{backgroundImage:`url(${e.imagePath})`}}),Boolean(e.quantity)&&n.jsx("div",{className:fs.counter,children:e.quantity})]})}const vs=bs,ys=bs,xs=bs,Cs="Content_8fd0e0d7",ws="Content_shell_293b22aa",Ps="Content_ability_4a4627b3",js="Content_respawn_64e3af9f",Is=k.resolve("aliases"),Ns=k.resolve("images"),ks=k.resolve("views"),Ss=ks.read(e=>e.battle_royale.mono.lobby.tooltips.ability("resId")),Ms=ks.read(e=>e.battle_royale.mono.lobby.tooltips.respawn("resId")),Es=Is.read(e=>e.battle_royale.loadoutPanelContainer.Loadout("resId")),As=r(function(){const{model:e}=hs(),{platoonTimeToResurrect:t,platoonRespawnPeriod:a,soloRespawnPeriod:s}=e.respawnAbility.get(),o=F({value:["small","c_48x48"]},{medium:{value:["small","c_48x48"]},large:{value:["x64x64","c_64x64"]},extraLarge:{value:["medium","c_80x80"]}}),[r,i]=o.value;return n.jsxs("div",{className:Cs,children:[e.shells.get().map(({iconName:e,intCD:t,quantity:a})=>n.jsx(xs,{quantity:a,imagePath:Ns.readOrEmpty(`shell.${r}.${e}`),type:"shell",tooltipArgs:{intCD:t,resId:Es},className:ws},t)),e.equipment.get().map(({quantity:e,iconName:t,title:a,cooldownSeconds:s,description:o,intCD:r})=>n.jsx(vs,{quantity:e,imagePath:Ns.readOrEmpty(`battleRoyale.artefact.${i}.${t}`),className:Ps,type:"ability",tooltipArgs:{iconName:t,title:a,cooldownSeconds:s,description:o,resId:Ss}},r)),n.jsx(ys,{imagePath:Ns.readOrEmpty(`battleRoyale.artefact.${i}.respawn`),className:js,type:"respawn",tooltipArgs:{platoonTimeToResurrect:t,platoonRespawnPeriod:a,soloRespawnPeriod:s,resId:Ms}})]})}),Rs="UpgradesButton_6e5b700c",Bs="UpgradesButton_icon_3c7ab7cc",$s="UpgradesButton_overlay_3ece025a",Ts=k.resolve("views"),Ws=r(function(){const{controls:e}=hs(),t=E(),a=Z("upgrades button",{resId:Ts.read(e=>e.battle_royale.mono.lobby.tooltips.upgrades_button("resId"))});return n.jsxs("div",{className:Rs,onMouseEnter:function(e){a.onMouseEnter(e),t.play("mouse-enter")},onMouseLeave:a.onMouseLeave,onClick:function(){a.onClick(),e.showUpgrades(),t.play("click")},"data-test-id":"BattleRoyaleUpgradesButton",children:[n.jsx("div",{className:Bs}),n.jsx("div",{className:$s})]})}),Ls="Loadout_45650ebe",Os="Loadout_tankPanel_103e0171",qs="Loadout_upgradeButton_3aed177e",Hs="Loadout_background_d2d81a6a",Ds=d.memo(function(){return n.jsx(ls,{options:{rootId:Vd},children:n.jsx(gs,{options:{rootId:Dd},children:n.jsxs("div",{className:Ls,children:[n.jsxs("div",{className:Os,children:[n.jsx("div",{className:Hs}),n.jsx(ps,{}),n.jsx(As,{})]}),n.jsx("div",{className:qs,children:n.jsx(Ws,{})})]})})})}),Vs="HeroTankMarker_7a1c486d",zs="HeroTankMarker_base__visible_d8b5c003",Qs="HeroTankMarker_vehicleName_a789e6e5",Gs="HeroTankMarker_vehicleType_d8b5c003",Fs=w("HeroTankInfo"),Us=r(i.forwardRef(function(e,t){const{model:a}=_t(),s=a.type.get(),r=i.useRef(null),[l,c]=i.useState(!1);return i.useEffect(()=>u(()=>{const e=a.heroTankMarker.get();c(e.isVisible);const t=r.current;if(!t)return null;t.style.transform=`translate(${D(e.posx)}px, ${D(e.posy)}px) translate(-50%, -50%)`}),[a.heroTankMarker]),n.jsxs(Fs,{...e,ref:te([t,r]),className:o(Vs,l&&zs),children:[n.jsx("div",{className:Qs,children:a.name.get()}),n.jsx("div",{className:Gs,children:s&&n.jsx(j,{path:`vehicleTypes.gold.${ae(s)}`,width:32,height:32})})]})})),Ks="disabled",Xs="shop",Js="storage",Ys="techtree",Zs="barracks",en="tournament",tn="clans",an="clan",sn="missions",nn="personalMissions",on="modeSelector",rn="achievements",ln="replays",cn={[Xs]:"shop",[Js]:"storage",[Ys]:"techtree",[Zs]:"barracks",[en]:"tournament",[tn]:"clans",[an]:"clan",[sn]:"missions",[nn]:"personalMissions",[on]:"modeSelector",[rn]:"profile",[ln]:"replays"},dn=e=>i.createElement("svg",{width:7,height:18,viewBox:"0 0 7 18",fill:"none",xmlns:"http://www.w3.org/2000/svg",...e},i.createElement("path",{d:"M6.5 0H4.04686L0 9L4.04686 18H6.5L2.5 9L6.5 0Z",fill:"#EEEDE9",fillOpacity:.9})),un={base:"MenuItem_92bbc5da",base__modeSelectorName:"MenuItem_base__modeSelectorName_28be5e00",base__enabledState:"MenuItem_base__enabledState_6f88d3d1",modeSelector:"MenuItem_modeSelector_1c338d85",modeIcon:"MenuItem_modeIcon_cfd63447",label:"MenuItem_label_8c0d77ba",base__disabledState:"MenuItem_base__disabledState_28be5e00",titleWrapper:"MenuItem_titleWrapper_cf46ff6b",title:"MenuItem_title_8d412cc5",arrow:"MenuItem_arrow_da9a9320",modeName:"MenuItem_modeName_36c0339e",clanEmblem:"MenuItem_clanEmblem_fe5255ab"},mn="forts",_n=k.resolve("intl"),pn=k.resolve("strings"),gn={[on]:"tooltips.header.battleType",[en]:"tooltips.header.buttons.tournaments",[rn]:"tooltips.header.buttons.profile"},hn={[tn]:"tooltips.header.buttons.clans.turnedOff",[nn]:"tooltips.header.buttons.personalMissionsDisabled",[mn]:"tooltips.header.buttons.forts.turnedOff"};function fn(e){return _n.toUpperCase(pn.readOrEmpty(`menu.headerButtons.${cn[e]}`)||pn.readOrEmpty(`menu.headerButtons.${e}`)||`{${e}}`)}function bn({name:e,state:t,modeName:a,modeId:s,techTreeEvents:r,clanEmblem:l,onClick:c,modeIconPath:d,battleTypesPath:u="R.images.gui.maps.icons"}){const m=E(),_=e===tn&&l,p=se(i.useMemo(()=>function(e,t){const a=(t&&hn[e]||gn[e])??`tooltips.header.buttons.${e}`;return{header:pn.readOrEmpty(`${a}.header`),body:pn.readOrEmpty(`${a}.body`)}}(_?mn:e,t===Ks),[e,t,_])),g=ne("techtreeDiscount"),h=r&&"techtree"===e?g:p;const f=d??`${u}.battleTypes.c_64x64.${s}`;return n.jsx("div",{...h,className:o(un.base,un[`base__${t}State`],un[`base__${e}Name`]),"data-test-id":e,onMouseEnter:function(e){h.onMouseEnter(e),t!==Ks&&m.play("mouse-enter",{target:"main-menu-widget:menu-item",original:e})},onClick:function(a){h.onClick(),t!==Ks&&(c(e),m.play("click",{target:"main-menu-widget:menu-item",original:a}))},children:(()=>{switch(e){case on:return n.jsxs(n.Fragment,{children:[n.jsxs("div",{className:un.modeSelector,children:[n.jsx("div",{className:un.label,children:fn(e)}),a&&n.jsx("div",{className:un.modeName,children:_n.toUpperCase(a)}),n.jsx("div",{className:un.modeIcon,style:{backgroundImage:`url(${f})`}})]}),n.jsx(dn,{className:un.arrow})]});case tn:return n.jsxs("div",{className:un.titleWrapper,children:[l&&n.jsx("div",{style:{backgroundImage:`url(${l})`},className:un.clanEmblem}),n.jsx("div",{className:un.title,children:fn(_?"clan":e)})]});default:return n.jsx("div",{className:un.titleWrapper,children:n.jsx("div",{className:un.title,children:fn(e)})})}})()})}const[vn,yn]=b()(({observableModel:e})=>({menuItems:e.arrayClone("menuItems"),...e.primitives(["modeName","modeId","hasTechTreeEvents","clanEmblem"])}),({externalModel:e})=>({navigateTo:e.createCallback(e=>({name:e}),"onNavigate")})),xn="MainMenu_222da7b7",Cn=r(function({className:e,battleTypesPath:t,modeIconPath:a}){const{model:s,controls:r}=yn(),l=s.menuItems.get(),c=s.modeName.get(),d=s.modeId.get(),u=s.hasTechTreeEvents.get(),m=s.clanEmblem.get();return n.jsx("div",{className:o(xn,e),children:ee(l,e=>i.createElement(bn,{...e,key:e.name,battleTypesPath:t,modeIconPath:a,onClick:r.navigateTo,modeName:c,modeId:d,techTreeEvents:u,clanEmblem:m}))})});function wn(e){const{className:t,battleTypesPath:a,modeIconPath:s,...o}=e;return n.jsx(vn,{...o,children:n.jsx(Cn,{className:t,battleTypesPath:a,modeIconPath:s})})}function Pn({className:e}){const{controls:t}=gt();return n.jsx("div",{className:e,children:n.jsx(oe,{moveSpace:t.sceneWrapper.onMoveSpace,onMouseOver3dScene:t.sceneWrapper.onMouseOver3dScene})})}const jn=e=>{const t=e?.showDelay||400,a=i.useRef({...e.args}),s=i.useRef(null),n=le(),o=A({...e,showDelay:0,args:a.current});return{containerRef:s,tooltipProps:{...o,onMouseEnter:r=>{n.run(()=>{if(s.current){const t=s.current.getBoundingClientRect(),n=s.current.parentElement?.getBoundingClientRect();Object.assign(a.current,e.args),a.current.positionY=Math.floor(ce(t.y))-13,a.current.positionX=Math.floor(ce(n?.x||t.x))-10}o.onMouseEnter(r)},t)},onMouseLeave:()=>{n.clear(),o.onMouseLeave()}}}};function In(){const{screenWidthRem:e}=re();return e<ie.large.width}const Nn=d.createContext(void 0);function kn(){const e=i.useContext(Nn);return de(void 0!==e,"WidgetAnimationContext is undefined"),e}const Sn="small",Mn="big",En="full",An="medium",Rn="small",Bn="appear",$n="fadeIn",Tn="slideUpIn",Wn="battlePass",Ln="missions",On={from:{y:0,x:0,opacity:0,height:0,width:0}};function qn(e){const t=new Map;for(let a=0;a<=e.length;a++){const s=e[a];t.set(s,{rowIndex:a,columnIndex:0,size:En})}return t}function Hn(e){return-(Math.cos(Math.PI*e)-1)/2}const Dn={duration:400,easing:Hn};const Vn=100;function zn(e,t,a,s=!0){const n=a.getCardAnimationProps(e),o=a.getCardRow(e),r=a.getMaxCardRow(t),i=a.getVisibleRowsAmount(),l=s?Dn.duration:0,c=t.includes(e);return{from:c?{...n,opacity:0}:{},to:n,delay:c?l+Math.max((i-r)*Vn,0):Math.max((i-r-o)*Vn,0),config:Dn}}function Qn(e){return{to:{x:D(ce(e)+100),opacity:0},config:{duration:700,easing:Hn}}}function Gn(e,t,a){const s=e.dataset.id,n=t.getCard(s),o=t.getCardHeight(s);if(!n||!o)return"";const r=ce(n.getPropValue("opacity")),i=ce(n.getPropValue("height"));if(i<o||0===r)return"";const l=ce(n.getPropValue("width")),c=ce(n.getPropValue("y")),d=ce(n.getPropValue("x")),u=t.getCardSize(s)!==En,m=Math.round(d),_=Math.round(d+l)-1,p=Math.round(c),g={top:`H${m}x${p}`,bottom:`H${m}x${Math.round(c+i)-1}`,left:`V${p}x${m}`,right:`V${p}x${_}`},h={};return Object.keys(g).forEach(e=>{const t=!a.has(g[e])||u&&("top"===e||"bottom"===e);t&&a.add(g[e]),h[e]=t}),function(e){return[e?.top,e?.right,e?.bottom,e?.left].map(e=>void 0===e||e?"1rem":"0").join(" ")}(h)}const Fn={[Sn]:{gap:0,cardHeight:74,cardWidth:241},[Mn]:{gap:0,cardHeight:74,cardWidth:319}},Un={[En]:1,[An]:.5,[Rn]:1/3};function Kn(e,t){return{...Fn[e],...t?.[e]}}function Xn(e){return Array.from(e.entries()).sort((e,t)=>e[1].position-t[1].position)}class Jn{constructor(e){this._widgetConfig=e,this._sortedGroups=Xn(this._widgetConfig.groups)}_sortedGroups;_cards=new Map;_cachedLayout;get _layout(){return void 0===this._cachedLayout&&(this._cachedLayout=this._buildLayout()),this._cachedLayout}_buildLayout(){const e={sortedCards:[],animationProps:new Map,groupCardIds:new Map,cardToRow:new Map,cardSizes:new Map,rowsAmountByGroup:new Map,visibleRowsAmount:0};var t;e.sortedCards=Xn(this._cards),t=e.groupCardIds,e.sortedCards.forEach(([e,{groupId:a}])=>{t.has(a)||t.set(a,[]),t.get(a)?.push(e)});let a=0,s=0;return this._sortedGroups.forEach(([t,n])=>{const o=e.groupCardIds.get(t);if(!o)return;const{gap:r,cardHeight:i,cardWidth:l,maxRowsAmount:c}=Kn(this._widgetConfig.size,n.adaptive);a>0&&r&&(a+=D(r));const d=D(i),u=o.filter(e=>this._cards.get(e)?.visible),m=(n.layoutCreator||qn)(u);let _=0;for(const p of o){const t=m.get(p);if(!t){e.animationProps.set(p,On);continue}const{rowIndex:n,columnIndex:o,size:r}=t,i=Math.ceil(l*Un[r]),u=n+1,g=s+u,h=void 0===c||u<=c;e.cardToRow.set(p,g),e.cardSizes.set(p,r),e.animationProps.set(p,{height:d,width:D(i),opacity:h&&this._widgetConfig.visibleRowsAmount>=g?1:0,x:D(o*(i-1)),y:a+n*(d-1)}),h&&(_=Math.max(u,_))}a+=(d-1)*_,s+=_,e.rowsAmountByGroup.set(t,_)}),e.visibleRowsAmount=s,e}clearCachedLayout(){this._cachedLayout=void 0}register(e,t){this._cards.set(e,t),this.clearCachedLayout()}updateCard(e,t){const a=this._cards.get(e);a&&(Object.assign(a,t),this.clearCachedLayout())}unregister(e){this._cards.delete(e),this.clearCachedLayout()}updateWidgetConfig(e){Object.assign(this._widgetConfig,e),void 0!==e.groups&&(this._sortedGroups=Xn(this._widgetConfig.groups)),this.clearCachedLayout()}getCard(e){return this._cards.get(e)}getCardAnimationProps(e){return this._layout.animationProps.get(e)||On}getCardRow(e){return this._layout.cardToRow.get(e)||0}getCardSize(e){return this._layout.cardSizes.get(e)||En}getCardHeight(e){const t=this.getCard(e)?.groupId;if(!t)return;const a=this._widgetConfig.groups.get(t);return Kn(this._widgetConfig.size,a?.adaptive).cardHeight}getMaxCardRow(e){return Math.max(...e.map(e=>this.getCardRow(e)))}getVisibleRowsAmount(){return this._layout.visibleRowsAmount}getGroupCardIds(e){return this._layout.groupCardIds.get(e)||[]}findMaxVisibleRowsInGroup(e){const t=this._widgetConfig.groups.get(e);if(!t)return 0;let a=0;for(let s=0;s<this._sortedGroups.length;s++){const[n]=this._sortedGroups[s];if(n===e){const{maxRowsAmount:e}=Kn(this._widgetConfig.size,t.adaptive),s=this._widgetConfig.visibleRowsAmount-a;return e?Math.min(s,e):s}const o=this._layout.rowsAmountByGroup.get(n);o&&(a+=o)}return 0}isCardDisplaying(e){return void 0!==this._layout.cardToRow.get(e)}async runCardAnimations(e){await Promise.all(this._layout.sortedCards.map(async([t,a])=>{const s=e(t,a);s&&await a.startLayoutAnimation(s)}))}}const Yn="Card_82475c",Zn="Card_borderHelper_9f37b536",eo="Card_border_a649c143",to="Card_card__enabled_4c476d8b",ao={[Bn]:function(e,t,a){const s=zn(e,t,a,!1);return{...s,from:t.includes(e)?{...s.from,height:0}:s.from}},[$n]:zn,[Tn]:function(e,t,a){const s=zn(e,t,a,!1);if(t.includes(e)){const t=a.getCardAnimationProps(e).y+D(a.getCardHeight(e));return{...s,from:{...s.from,y:t}}}return s}};function so({children:e,groups:t,maxVisibleRowsAmount:a}){const s=In()?Sn:Mn,{screenHeightRem:o}=re(),r=a??function(e){return e>900?e>1016?7:6:5}(o),{enqueue:l,runDequeue:c}=function(){const e=i.useRef([]),t=i.useRef(!1),a=i.useRef(!1),s=ue(()=>{if(t.current||!a.current)return;const n=e.current.shift();n&&(t.current=!0,n.promise().then(()=>{t.current=!1,n.resolve(),s()}).catch(()=>{t.current=!1,n.reject(),s()}))});return{enqueue:ue(t=>new Promise((a,n)=>{e.current.push({promise:t,resolve:a,reject:n}),s()})),runDequeue:ue(()=>{a.current=!0,s()})}}(),d=i.useRef(null),u=i.useRef(!1),m=i.useRef(new Jn({size:s,visibleRowsAmount:r,groups:t})),_=ue(e=>{const t=d.current?.querySelectorAll(`.${Zn}`);t&&function(e,t,a){const s=new Set;a&&(a.style.borderImageWidth=Gn(a,t,s));for(let n=e.length-1;n>=0;n--){const o=e[n];o!==a&&(o.style.borderImageWidth=Gn(o,t,s))}}(t,m.current,e)}),p=ue(async e=>{_(),await m.current.runCardAnimations((t,a)=>{const s=e({id:t,settings:a});if(void 0!==s)return{...s,onChange:()=>_()}}),_()}),g=ue(async(e=!0)=>{let t=0,a=0;await p(({id:s,settings:n})=>{const o=m.current.getCardAnimationProps(s),r=o.y,i=n.getPropGoalValue("y");let l=0;return i!==r&&(0===n.getPropGoalValue("x")&&(i>r?t++:a++),l=i>r?t:a),{delay:e?0:l*Vn,to:o,immediate:e,config:Dn}})}),h=ue(async(e,t=Bn)=>{const a=e.filter(e=>{const t=m.current.getCard(e);return void 0!==t&&!t.visible});if(!a.length)return;a.forEach(e=>{m.current.updateCard(e,{visible:!0})});const s=ao[t];await p(e=>s(e.id,a,m.current))}),f=ue((e,t=!0)=>!(t&&!m.current.getCard(e)?.visible)&&m.current.isCardDisplaying(e)),b=i.useMemo(()=>({registerCard:(e,t)=>{m.current.register(e,t)},unregisterCard:e=>{m.current.unregister(e)},updateCard:(e,t)=>{m.current.updateCard(e,t)},isVisible:e=>Boolean(m.current.getCard(e)?.visible),isUnmounting:e=>Boolean(m.current.getCard(e)?.unmounting),isDisplaying:f,findMaxVisibleRowsInGroup:e=>m.current.findMaxVisibleRowsInGroup(e),applyLayout:g,appear:h,disappear:async e=>{m.current.updateCard(e,{visible:!1}),await p(t=>{if(e===t.id)return Qn(t.settings.getPropGoalValue("x"))})},disappearGroups:async e=>{const t=[];e.forEach(e=>{for(const a of m.current.getGroupCardIds(e))t.push(a)}),t.forEach(e=>m.current.updateCard(e,{visible:!1,unmounting:!0})),await p(e=>{const a=t.indexOf(e.id);if(-1!==a)return{...Qn(e.settings.getPropGoalValue("x")),delay:Vn*(t.length-a)}})},updateBorders:_,readyForAnimations:u,enqueue:l}),[f,g,h,_,l,p]);return i.useEffect(()=>{m.current.updateWidgetConfig({size:s,visibleRowsAmount:r}),g()},[g,s,r]),i.useEffect(()=>{u.current||(u.current=!0,c())}),i.useEffect(()=>me(()=>{m.current.clearCachedLayout(),g()}),[g]),n.jsx(Nn.Provider,{value:b,children:n.jsx("div",{ref:d,children:e})})}const no=i.createContext(null);function oo(){const e=i.useContext(no);return de(null!==e,"AnimationsContext is null"),e}function ro(e,t,a=e){return e+"+"+t+"+"+a}function io(e,t,...a){let s=e.current;if(0==a.length)return!1;for(let n=0;n<a.length-1;n++){const e=a[n];s[e]=s[e]??{},s=s[e]}return s[a[a.length-1]]=t,!0}function lo(e,...t){const a=(e,s)=>{if(s===t.length)return _e(e);const n=t[s];return n in e&&((s===t.length-1||a(e[n],s+1))&&delete e[n],_e(e))};return a(e.current,0)}function co(e,...t){let a=e.current;return t.reduce((e,t)=>e?.[t],a)}function uo(e,...t){let a=e.current;return void 0!==t.reduce((e,t)=>e?.[t],a)}function mo(e,t,a,s){Object.entries(t).forEach(([t,n])=>{_e(n)?uo(a,e,t,e)&&s(t,e):Object.entries(n).forEach(([n,o])=>{const r=n||e;uo(a,e,t,r)&&s(t,r,o)})})}function _o({storage:e,id:t,emitter:a,providerCfg:s}){uo(e,t)||po({id:t,emitter:a,providerCfg:s})}function po({id:e,emitter:t,providerCfg:a}){const s=a?.triggerId||e;t.trigger(s,{id:e,...a?.triggerParams}),a?.triggerCallback?.({id:e,...a?.triggerParams})}function go({sound:e,soundCfg:t}){e&&t&&("string"==typeof t?e.play(t):e.play(t.eventName,t?.event))}function ho({children:e}){const t=pe(),a=i.useRef({}),s=i.useRef({}),o=i.useRef({}),r=ge(),l=ue(({id:e,animName:t,elementId:s=e})=>uo(a,e,t,s)),c=ue((e,t,s=e)=>{lo(a,e,t,s)}),d=ue(({id:e,animName:t,config:s,elementId:n=e})=>(io(a,s,e,t,n),()=>c(e,t,n))),u=ue(({id:e,animName:t,elementId:s=e,animCallParams:n,providerCfg:o,soundCfg:i})=>{const l=co(a,e,t,s);l&&(o?.skip?l.skip({...n,...o?.animCallParams}):l.start({...n,...o?.animCallParams})),go({sound:r,soundCfg:i})}),m=ue(({id:e,animName:a,elementId:n=e,providerCfg:o={}})=>{const r=t.on(ro(e,a,n),()=>{lo(s,e,a,n),_o({storage:s,id:e,emitter:t,providerCfg:o}),r()});io(s,!0,e,a,n)}),_=ue(({complexId:e,id:a,animName:s,elementId:n=a,providerCfg:r})=>{const i=t.on(ro(a,s,n),function(){!function({storage:e,complexId:t,groupId:a,animName:s,elementId:n,emitter:o,providerCfg:r}){let i=co(e,t,a,s);i&&(i.delete(n),i.size||lo(e,t,a,s),_o({storage:e,id:t,emitter:o,providerCfg:r}))}({storage:o,complexId:e,groupId:a,animName:s,elementId:n,emitter:t,providerCfg:r}),i()}),l=co(o,e,a,s);l?l.add(n):io(o,(new Set).add(n),e,a,s)}),p=ue(({groupId:e,groupCfg:n,providerCfg:o,soundCfg:i})=>{lo(s,e),o?.skip||o?.skipTrigger||mo(e,n,a,(t,a)=>{m({id:e,animName:t,elementId:a,providerCfg:o})}),mo(e,n,a,(t,a,s)=>{u({id:e,animName:t,elementId:a,animCallParams:s,providerCfg:o})}),go({sound:r,soundCfg:i}),o?.skip&&!o?.skipTrigger&&po({id:e,emitter:t,providerCfg:o})}),g=ue(({complexId:e,complexCfg:s,providerCfg:n,soundCfg:i})=>{if(lo(o,e),!n?.skip&&!n?.skipTrigger)for(let[t,o]of Object.entries(s))mo(t,o,a,(a,s)=>{_({complexId:e,id:t,animName:a,elementId:s,providerCfg:n})});for(let[t,o]of Object.entries(s))mo(t,o,a,(e,a,s)=>{u({id:t,animName:e,elementId:a,animCallParams:s,providerCfg:n})});go({sound:r,soundCfg:i}),n?.skip&&!n?.skipTrigger&&po({id:e,emitter:t,providerCfg:n})}),h=i.useMemo(()=>({registerAnimation:d,unRegistrateAnimation:c,startAnimation:u,startGroupAnimation:p,startComplexAnimation:g,checkRegisteredInStorage:l,emitter:t}),[l,t,d,u,g,p,c]);return n.jsx(no.Provider,{value:h,children:e})}const fo="battlePass",bo="shopEntryPoint",vo="missions",yo="progressionEntryPoint",xo=new Map([[fo,{position:0}],[yo,{position:1,adaptive:{[Sn]:{gap:45},[Mn]:{gap:45}}}],[bo,{position:2,adaptive:{[Sn]:{cardHeight:54},[Mn]:{cardHeight:54}}}],[vo,{position:200,maxRowsAmount:5,adaptive:{[Sn]:{gap:14,maxRowsAmount:5},[Mn]:{gap:20,maxRowsAmount:5}}}]]);var Co=(e=>(e.Intro="intro",e.Progression="progression",e.Completed="completed",e))(Co||{}),wo=(e=>(e.Waiting="waiting",e.Ready="ready",e.Played="played",e))(wo||{});const Po=i.forwardRef(function({children:e,id:t,groupId:a,position:s,isDisabled:o=!1,visible:r=!1,className:l,onMouseEnter:c,onMouseLeave:d,...u},g){const h=kn(),[f,b]=m(()=>On,[]),y=i.useRef(null),x=i.useRef(v),C=i.useRef(null),w=ue(e=>{C.current&&y.current&&!o&&h.updateBorders(e?C.current:void 0)}),P=ue(e=>f[e].get()),j=ue(e=>f[e].goal),I=ue(async e=>{await new Promise(t=>{x.current=t,Promise.all(b.start(e)).then(()=>{t(),x.current=v})})});return be(()=>{h.registerCard(t,{position:s,groupId:a,getPropValue:P,getPropGoalValue:j,startLayoutAnimation:I,visible:r})}),ve(()=>{x.current?.(),h.unregisterCard(t)}),n.jsxs(_.div,{...u,style:{...f,pointerEvents:f.opacity.to(e=>1===e?"auto":"none")},className:p(Yn,!o&&to,l),ref:te([g,y]),onMouseEnter:e=>{w(!0),c?.(e)},onMouseLeave:e=>{w(!1),d?.(e)},children:[n.jsx("div",{className:eo}),e,n.jsx("div",{className:Zn,"data-id":t,ref:C})]})});function jo(e,t){i.useEffect(()=>{e&&t()})}function Io({registerAnimation:e,id:t,animName:a,elementId:s=t,config:n}){i.useLayoutEffect(()=>e?.({id:t,animName:a,elementId:s,config:n}),[t,a,n,s,e])}const No={from:{opacity:0},config:{duration:400,easing:Hn}},ko={from:{opacity:0},to:{opacity:1}};const So={helperContainer:"BorderAnimation_helperContainer_fe323668",base:"BorderAnimation_2d8409c9",base__medium:"BorderAnimation_base__medium_47492bdb",base__small:"BorderAnimation_base__small_67aa3793",border_animation:"BorderAnimation_389afe4",helper:"BorderAnimation_helper_fcc3c5b0",helper__one:"BorderAnimation_helper__one_df08a331",helper__two:"BorderAnimation_helper__two_9bfa23dc",helper__three:"BorderAnimation_helper__three_e87e7b8e"},Mo="widgetCardBorderFadeIn",Eo=i.memo(function({id:e,elementId:t,size:a=En,className:s}){const{registerAnimation:r,emitter:l}=oo(),c=ue(()=>l.trigger(ro(e,Mo,t),e,t)),{baseSpring:d,config:u}=function(e){const[t,a]=m(()=>No),s=ue(({immediate:t})=>{a.start({...ko,immediate:t,onRest:e})});return{baseSpring:t,config:i.useMemo(()=>({start:s,skip:v}),[s])}}(c);return Io({id:e,elementId:t,registerAnimation:r,animName:Mo,config:u}),n.jsx(_.div,{style:d,className:o(So.base,So[`base__${a}`],s),children:n.jsxs("div",{className:So.helperContainer,children:[n.jsx("div",{className:o(So.helper,So.helper__one)}),n.jsx("div",{className:o(So.helper,So.helper__two)}),n.jsx("div",{className:o(So.helper,So.helper__three)})]})})}),Ao={to:{val:100},config:{duration:1e3,easing:Hn}},Ro={from:{val:100},to:{val:0}};function Bo(e){return`brightness(${1+e/100}) contrast(${1+e/100*.5})`}const $o="bgContrastAnimation";const To={from:{val:0},config:{duration:600,easing:Hn}},Wo={from:{val:0},to:{val:50}};function Lo(e){return`${50+e}% ${50+e}%`}const Oo="maskAnimation";const qo="maskAppearAnimationHook",Ho={[$o]:{},[Oo]:{},[Mo]:{}};function Do({id:e,elementId:t,onComplete:a}){const{startGroupAnimation:s,registerAnimation:n,emitter:o}=oo(),r=i.useCallback(()=>o.trigger(ro(e,$o,t),e,t),[t,o,e]),l=i.useCallback(()=>o.trigger(ro(e,Oo,t),e,t),[t,o,e]),c=i.useCallback(async({immediate:s})=>{await(a?.(s)),o.trigger(ro(e,qo,t),e,t)},[t,o,e,a]),{backgroundContrast:d,config:u}=function(e){const t=i.useCallback(()=>e?.(),[e]),[a,s]=m(()=>({...Ao,onRest:t})),n=i.useCallback(e=>s.start({...Ro,immediate:e}),[s]),o=ue(({immediate:e})=>n(e));return{backgroundContrast:a,config:i.useMemo(()=>({start:o,skip:v}),[o])}}(r),{maskPosition:_,config:p}=function(e){const t=i.useCallback(()=>e?.(),[e]),[a,s]=m(()=>({...To,onRest:t})),n=i.useCallback(e=>s.start({...Wo,immediate:e}),[s]),o=ue(({immediate:e})=>n(e));return{maskPosition:a,config:i.useMemo(()=>({start:o,skip:v}),[o])}}(l),g=ue(async t=>{s({groupId:e,groupCfg:Ho,providerCfg:{triggerParams:t,animCallParams:t,triggerCallback:c}})}),h=i.useMemo(()=>({start:g,skip:v}),[g]);return Io({id:e,elementId:t,registerAnimation:n,animName:qo,config:h}),Io({id:e,elementId:t,registerAnimation:n,animName:$o,config:u}),Io({id:e,elementId:t,registerAnimation:n,animName:Oo,config:p}),i.useMemo(()=>({maskPosition:_,backgroundContrast:d}),[d,_])}const Vo="battlePassCardId",zo={base__x60x60:"Emblem_base__x60x60_d8756e36",base__x100x100:"Emblem_base__x100x100_547cf3ad",base__x160x160:"Emblem_base__x160x160_c9c06954",base__x200x200:"Emblem_base__x200x200_2ddeb5ee",base__x240x240:"Emblem_base__x240x240_308c1aa9",base__x360x360:"Emblem_base__x360x360_98f20cf9",shield:"Emblem_shield_451cf2c9",icon:"Emblem_icon_73d84087",shield__x74x74:"Emblem_shield__x74x74_a298d905",shield__x120x120:"Emblem_shield__x120x120_c8aa5234",shield__x200x200:"Emblem_shield__x200x200_f1ed9db0",shield__x260x260:"Emblem_shield__x260x260_ef1c262b",shield__x300x300:"Emblem_shield__x300x300_7c6d6f97",shield__x456x456:"Emblem_shield__x456x456_c818292e",icon__x28x28:"Emblem_icon__x28x28_6ea3e635",icon__x48x48:"Emblem_icon__x48x48_f2526f88",icon__x60x60:"Emblem_icon__x60x60_628dbf9a",icon__x80x80:"Emblem_icon__x80x80_34079478",icon__x100x100:"Emblem_icon__x100x100_e8181a63",icon__x120x120:"Emblem_icon__x120x120_c8aa5234",icon__x160x160:"Emblem_icon__x160x160_aec06e5c"},Qo="x60x60",Go="x74x74",Fo="x120x120",Uo="x200x200",Ko="x260x260",Xo="x300x300",Jo="x456x456",Yo="x600x600",Zo="x912x912",er="x28x28",tr="x48x48",ar="x60x60",sr="x80x80",nr="x100x100",or="x120x120",rr="x160x160",ir="x240x240",lr="x320x320",cr=k.resolve("images"),dr=function({iconSize:e,shieldSize:t,containerSize:a,chapterID:s,bpPurchased:r,className:i=""}){const l=r?"purchased":"basic",c=String(s).slice(-1),d=t===Go?Fo:t===Fo?Ko:t===Uo?Jo:t===Ko||t===Xo?Yo:Zo,u=e===er?ar:e===tr?nr:e===ar?or:e===sr?rr:e===nr||e===or?ir:lr,m=cr.readOrEmpty(`battlePass.emblem.shield.c_${s}.${l}.${S(t,d)}`,"silent")||cr.readOrEmpty(`battlePass.emblem.shield.default.${l}.${t}`),_=cr.readOrEmpty(`battlePass.emblem.icon.c_${s}.${l}.${S(e,u)}`,"silent")||cr.readOrEmpty(`battlePass.emblem.icon.default_${c}.${l}.${e}`);return n.jsxs("div",{className:o(zo.base,zo[`base__${a}`],i),children:[n.jsx("div",{className:o(zo.shield,zo[`shield__${t}`]),style:{backgroundImage:`url(${m})`}}),n.jsx("div",{className:o(zo.icon,zo[`icon__${e}`]),style:{backgroundImage:`url(${s>0?_:cr.readOrEmpty(`battlePass.emblem.icon.not_chosen.${S(e,ar)}`)})`}})]})};function ur(e,t){const[a,s]=m(()=>({from:{opacity:0},config:{duration:400,easing:Hn},onRest:t})),n=ue(({immediate:t})=>{s.start({from:{opacity:0},to:{opacity:1},delay:t?0:e,immediate:t})});return{spring:a,config:i.useMemo(()=>({start:n,skip:v}),[n])}}const[mr,_r]=b()(({observableModel:e})=>{const t={...e.primitives(["widgetState","level","tooltipID","chapterID","season","isBought","isExtraChapter","isHoliday","isPaused","hasExtraChapter","isExtraChapterHighlighted","appearAnimationState","timeLeft","pointsEarned","levelPoints","rewardsHash"]),lastSeenState:e.object("lastSeenState")},a=x.primitive(()=>t.widgetState.get()===Co.Completed);return{...t,computes:{isCompleted:a}}},({externalModel:e})=>({openBattlePass:e.createCallbackNoArgs("onOpenBattlePass"),notifyIntroAnimationPlayed:e.createCallbackNoArgs("onIntroAnimationPlayed")})),pr="Emblem_6b62c957",gr="Emblem_base__paused_e22ad928",hr="Emblem_4187dd4f",fr="emblemFadeInAnimation",br=r(function({id:e,elementId:t,className:a}){const{model:s}=_r(),r=s.chapterID.get(),i=s.isBought.get(),{registerAnimation:l,emitter:c}=oo(),d=ue(()=>c.trigger(ro(e,fr,t),e,t)),{spring:u,config:m}=ur(0,d);return Io({id:e,elementId:t,registerAnimation:l,animName:fr,config:m}),n.jsx("div",{className:o(pr,s.isPaused.get()&&gr,a),children:n.jsx(_.div,{style:u,children:n.jsx(dr,{iconSize:er,shieldSize:Go,containerSize:Qo,bpPurchased:i,chapterID:r,className:hr})})})});function vr(e,t){const{readyForAnimations:a}=kn();i.useEffect(()=>{if(a.current)return e()},t)}const yr=k.resolve("images"),xr=k.resolve("views"),Cr=k.resolve("strings"),wr=k.resolve("aliases"),Pr=k.resolve("videos"),jr=i.createContext(!1);function Ir(e,t,a,s,n,o){const r=`${t}${a?"_extra":""}${s?"_holiday":""}${o?"_small":""}`;return{seasonPath:`${e}.season_${n}.${r}`,defaultPath:`${e}.default.${r}`}}function Nr(e,t,a,s,n){const{seasonPath:o,defaultPath:r}=Ir("battlePass.widget.background",e,t,a,s,n);return yr.has(o)?o:r}function kr(){return i.useContext(jr)}function Sr(e,t){return e&&(t===Co.Intro||t===Co.Progression)}const Mr=r(function({useAdaptiveFormat:e=!0}){const{model:t}=_r(),a=In(),s=a?ye.format.compact:ye.format.default,o=t.timeLeft.get();return n.jsx(ye,{start:o,size:a?ye.size.x16x16:ye.size.x24x24,format:e?s:ye.format.default},o)}),Er="Labels_e5066e86",Ar="Labels_title_d94e713e",Rr="Labels_subTitleWrapper_79f4007c",Br="Labels_subTitleItem_b9fe06e5",$r="Labels_subTitle_c850cc3d",Tr="Labels_lockIcon_c336fd47",Wr="Labels_descriptionText_1d25fcad",Lr=k.resolve("strings"),Or="labelsFadeInAnimation",qr=r(function({id:e,elementId:t,className:a}){const{model:s}=_r(),r=(l=s.hasExtraChapter.get(),c=s.isHoliday.get(),s.computes.isCompleted()?"completed":c?"see_new_progression":l?"activate_extra_chapter":"select_chapter");var l,c;const{registerAnimation:d,emitter:u}=oo(),p=ue(()=>u.trigger(ro(e,Or,t),e,t)),{spring:g,config:h}=ur(1e3,p);Io({id:e,elementId:t,registerAnimation:d,animName:Or,config:h});const{labelStyle:f,countdownStyle:b,lockStyle:v}=function(){const e=kr(),{model:t}=_r(),a=t.widgetState.get(),s=t.isPaused.get(),n=Sr(e,a),o=i.useRef(n),r=i.useRef(s),l={duration:400,easing:Hn},[c,d]=m(()=>({from:{opacity:s?1:0,x:0},config:l})),[u,_]=m(()=>({from:{opacity:n&&!s?1:0,x:0},config:l})),[p,g]=m(()=>({from:{opacity:n||s?0:1,x:0},config:l}));return vr(()=>{if(r.current===s&&o.current===n)return;const e=(e,t)=>e?d:t?_:g,t=e(r.current,o.current),a=e(s,n),i=[_,d,g];Promise.all(t.start({from:{opacity:1,x:0},to:{opacity:0,x:D(40)}})).then(()=>{i.forEach(e=>{e.start({from:{opacity:0},immediate:!0})}),a.start({from:{opacity:0,x:D(-20)},to:{opacity:1,x:0}})}),o.current=n,r.current=s},[_,d,g,s,n,a]),{countdownStyle:u,lockStyle:c,labelStyle:p}}();return s.widgetState.get()!==Co.Progression||s.isPaused.get()?n.jsxs(_.div,{style:g,className:o(Er,a),children:[n.jsx("div",{className:Ar,children:Lr.read("user_missions.battle_pass_widget.title")}),n.jsxs("div",{className:Rr,children:[n.jsxs(_.div,{style:v,className:o(Br,$r),children:[n.jsx("div",{className:Tr}),Lr.read("user_missions.battle_pass_widget.sub_title.unavailable")]}),n.jsx(_.div,{style:b,className:Br,children:n.jsx(Mr,{useAdaptiveFormat:!1})}),n.jsx(_.div,{style:f,className:o(Br,$r),children:n.jsx(xe,{text:Lr.read(`user_missions.battle_pass_widget.sub_title.${r}`),classMix:o(Wr),isTruncationAvailable:!0})})]})]}):null}),Hr={[Mo]:{},[Or]:{},[fr]:{},[qo]:{}};async function Dr(e,t=!1){await new Promise(a=>{e({groupId:Vo,providerCfg:{triggerCallback:a,animCallParams:{immediate:t}},groupCfg:Hr})})}function Vr(e,t,a,s,n){e.isUnmounting(Vo)||(t===wo.Ready?e.enqueue(async()=>{a(ht.umg_widget_event_appear),await e.appear([Vo]),await Dr(n)}).then(()=>{s()}):t===wo.Played&&(e.updateCard(Vo,{visible:!0}),Dr(n,!0),e.enqueue(async()=>e.applyLayout())))}const zr={duration:700,easing:Hn},Qr={from:{translateX:"-160%"},config:zr},Gr={from:{opacity:0},config:zr},Fr={from:{translateX:"-160%"},to:{translateX:"160%"}},Ur={from:{opacity:0},to:[{opacity:1},{opacity:0,config:{duration:1e3}}]};const Kr="HighlightAnimation_splashContainer_6f7161d2",Xr="HighlightAnimation_helperContainer_67199b30",Jr="HighlightAnimation_a926f19b",Yr="HighlightAnimation_helper_ab64de86",Zr="HighlightAnimation_helper__one_bf874504",ei="HighlightAnimation_helper__two_5ddebb7f",ti="HighlightAnimation_helper__three_e838fe5d",ai="widgetCardHighlight",si=i.memo(function({id:e,elementId:t,withOverlaySplash:a=!1,children:s,className:r}){const{registerAnimation:l,emitter:c}=oo(),d=ue(()=>c.trigger(ro(e,ai,t),e,t)),{highlightStyles:u,splashStyles:p,config:g}=function(e){const[t,a]=m(()=>Qr),[s,n]=m(()=>Gr),o=ue(()=>{a.start({...Fr,reset:!0}),n.start({...Ur,reset:!0,onRest:e})});return i.useMemo(()=>({highlightStyles:t,splashStyles:s,config:{start:o,skip:v}}),[t,s,o])}(d);return Io({id:e,elementId:t,registerAnimation:l,animName:ai,config:g}),n.jsxs(n.Fragment,{children:[a&&n.jsx(_.div,{style:p,className:Kr,children:s}),n.jsx("div",{className:o(Jr,r),children:n.jsxs(_.div,{style:u,className:Xr,children:[n.jsx("div",{className:o(Yr,Zr)}),n.jsx("div",{className:o(Yr,ei)}),n.jsx("div",{className:o(Yr,ti)})]})})]})});const ni=k.resolve("strings"),oi="progressionLabelsAnimation",ri=r(function({className:e,id:t,elementId:a}){const{spring:s,config:r}=function(){const[e,t]=m(()=>({from:{x:0,opacity:0},config:{duration:400,easing:Hn}})),a=i.useCallback((e,a)=>{e?t.start({from:{opacity:0,x:D(-20)},to:{opacity:1,x:0},delay:400,immediate:a}):t.start({from:{opacity:1,x:0},to:{opacity:0,x:D(40)},immediate:a})},[t]),s=ue(({isPaused:e})=>{a(e)}),n=ue(({isPaused:e})=>{a(e,!0)});return i.useMemo(()=>({spring:e,config:{start:s,skip:n}}),[n,e,s])}(),{registerAnimation:l}=oo();return Io({id:t,elementId:a,registerAnimation:l,animName:oi,config:r}),n.jsxs(_.div,{style:s,className:o(Er,e),children:[n.jsx("div",{className:Ar,children:ni.read("user_missions.battle_pass_widget.title")}),n.jsx("div",{className:Rr,children:n.jsxs("div",{className:o(Br,$r),children:[n.jsx("div",{className:Tr}),ni.read("user_missions.battle_pass_widget.sub_title.unavailable")]})})]})}),ii={pointsEarned:0,deltaLeft:0,deltaWidth:0,level:0,immediate:!0},li={from:{opacity:1,x:0},config:{duration:400,easing:Hn}},ci={from:{opacity:0},config:{duration:200,easing:Hn}},di={init:{from:{opacity:1,x:0},config:{duration:400,easing:Hn}},paused:{from:{opacity:1,x:0},to:{opacity:0,x:D(40)}},unPaused:{from:{opacity:0,x:D(-20)},to:{opacity:1,x:0},delay:400}},ui="progressOpacity";const mi="progressAnimation";const _i="SelectRewardIcon_79dc47ef",pi="SelectRewardIcon_animatedIcon_7df05741",gi="rewardIconAnimation",hi={to:1,config:{duration:750}},fi={to:0,config:{duration:500}},bi={from:{opacity:0},to:[{opacity:1},{opacity:0},{opacity:1},{opacity:0}],config:{duration:1e3},pause:!0},vi=i.memo(function({id:e,className:t}){const{registerAnimation:a}=oo(),{play:s}=E(),{opacity:r,config:l}=function(e,t){const a=ue(()=>t?.()),s=g(e,{onRest:a}),n=ue(e=>{e?.to!=s.get()&&s.start({...e})}),o=ue(e=>{s.start({...e,delay:0,immediate:!0,config:{duration:0}})});return i.useMemo(()=>({opacity:s,config:{start:n,skip:o}}),[s,o,n])}(0),[c,d]=m(()=>bi),u=ue(({isPaused:e})=>{e?l.start(fi):(s(ht.umg_widget_event_reward),l.start(hi),d.start({...bi,pause:!1,reset:!0}))}),p=ue(({isPaused:e})=>{e?l.skip(fi):l.skip(hi)}),h=i.useMemo(()=>({start:u,skip:p}),[p,u]);return Io({registerAnimation:a,id:e,animName:gi,config:h}),n.jsx(_.div,{style:{opacity:r},className:o(_i,t),children:n.jsx(_.div,{style:c,className:pi})})});function yi({current:e,earned:t,max:a,level:s}){return{pointsEarned:e+t,level:s,deltaLeft:we(e,a),deltaWidth:we(t,a),config:{duration:50*t}}}function xi(e,t,a,s){const n=t!=e.level,o=s-e.pointsEarned,r=a-e.pointsEarned,i={phase_1:yi({current:e.pointsEarned,earned:n?o:r,max:s,level:e.level})};return n&&(i.phase_2=yi({current:0,earned:a,max:s,level:t})),i}const Ci={highlight:{id:Vo,animName:ai},rewardIcon:{id:Vo,animName:gi}};function wi(){const e=je(),t=kn(),{model:a,controls:s}=_r(),{play:n}=E(),o=a.isPaused.get(),r=a.level.get(),i=a.pointsEarned.get(),l=a.levelPoints.get(),c=a.rewardsHash.get(),d=a.isExtraChapterHighlighted.get(),u=a.appearAnimationState.get(),m=a.lastSeenState.get(),_=a.widgetState.get(),p=a.chapterID.get();!function({lastSeenState:e,level:t,pointsEarned:a,levelPoints:s,rewardsHash:n,isPaused:o,api:r,appearAnimationState:i,notifyIntroAnimationPlayed:l,play:c}){const{startAnimation:d,startGroupAnimation:u}=oo();be(()=>{const m=n>0,_=m&&n!=e.rewardsHash;if(t!=e.level||a!=e.pointsEarned){const n=xi(e,t,a,s);d({id:Vo,animName:mi,animCallParams:n})}else _&&!o&&d({id:Vo,animName:ai});m&&d({...Ci.rewardIcon,providerCfg:{skip:!_},animCallParams:{isPaused:o}}),d({id:Vo,animName:ui,animCallParams:{isPaused:o},providerCfg:{skip:!0}}),d({id:Vo,animName:oi,animCallParams:{isPaused:o},providerCfg:{skip:!0}}),Vr(r,i,c,l,u)})}({level:r,pointsEarned:i,levelPoints:l,rewardsHash:c,lastSeenState:m,isPaused:o,play:n,api:t,notifyIntroAnimationPlayed:s.notifyIntroAnimationPlayed,appearAnimationState:u}),function({isFirstRender:e,appearAnimationState:t,isExtraChapterHighlighted:a,widgetState:s,api:n,notifyIntroAnimationPlayed:o,play:r}){const{startGroupAnimation:i}=oo(),l=Ce(t),c=Ce(a),d=Ce(s);jo(!e,()=>{a===c&&d===s||n.enqueue(async()=>{r(ht.umg_widget_event_appear),await Dr(i)})}),jo(!e,()=>{t!==l&&Vr(n,t,r,o,i)})}({api:t,appearAnimationState:u,isExtraChapterHighlighted:d,widgetState:_,isFirstRender:e,notifyIntroAnimationPlayed:s.notifyIntroAnimationPlayed,play:n}),function({isFirstRender:e,lastSeenState:t,level:a,pointsEarned:s,levelPoints:n,chapterID:o}){const{startAnimation:r}=oo(),i=Ce(o);jo(!e&&o>0&&-1!=i,()=>{const e=s!=t.pointsEarned||a!=t.level,l=o!==i;if(e&&!l){const e=xi(t,a,s,n);r({id:Vo,animName:mi,animCallParams:e})}else l&&r(Ci.highlight)})}({isFirstRender:e,lastSeenState:m,level:r,pointsEarned:i,levelPoints:l,chapterID:p}),function({isFirstRender:e,rewardsHash:t,isPaused:a}){const{startAnimation:s}=oo(),n=Ce(t),o=Ce(a);jo(!e,()=>{const e=a!=o,r=t>0&&t!=n;e&&(s({id:Vo,animName:ui,animCallParams:{isPaused:a}}),s({id:Vo,animName:oi,animCallParams:{isPaused:a}})),(r||e)&&s({...Ci.rewardIcon,animCallParams:{isPaused:a}}),r&&!a&&s(Ci.highlight),e&&!a&&s({id:Vo,animName:Mo})})}({isFirstRender:e,rewardsHash:c,isPaused:o})}const Pi=r(function({className:e}){const{model:t}=_r();return t.isPaused.get()?null:n.jsx(Eo,{id:Vo,className:e})}),ji="IntroOverlay_glow_48b8ad88",Ii="IntroOverlay_hoverHelper_9cec2539",Ni="IntroOverlay_8d89d328",ki="IntroOverlay_base__extraChapter_2f0d6d76",Si="IntroOverlay_base__holiday_2f0d6d76",Mi="IntroOverlay_hoverHelper__withOverlay_ce4fe777",Ei="IntroOverlay_borderNoise_3087bf34",Ai=r(function({className:e,withOverlay:t=!0}){const{model:a}=_r();if(a.isPaused.get())return null;const s=a.widgetState.get()===Co.Intro?a.hasExtraChapter.get():a.isExtraChapter.get()||a.isExtraChapterHighlighted.get(),r=a.isHoliday.get();return n.jsxs("div",{className:o(Ni,s&&ki,r&&Si,e),children:[n.jsx("div",{className:ji}),n.jsx("div",{className:o(Ii,t&&Mi)}),n.jsx("div",{className:Ei})]})}),Ri=r(function({id:e,elementId:t,className:a}){const{model:s}=_r(),{startAnimation:o}=oo(),r=kr(),i=s.isExtraChapterHighlighted.get(),l=s.widgetState.get(),c=!i&&l===Co.Progression;return vr(()=>{if(Sr(r,l)){const t=l===Co.Intro?ht.umg_widget_event_timer:ht.umg_widget_event_timer_simple;o({id:e,animName:ai,soundCfg:t})}},[r,l]),n.jsx(si,{id:e,elementId:t,withOverlaySplash:c,className:a,children:c&&n.jsxs(n.Fragment,{children:[n.jsx(Ai,{id:e,className:a,withOverlay:!1}),n.jsx(Pi,{id:e,className:a})]})})}),Bi="CompletedOverlay_b04581f5";const $i="Intro_backgroundWrapper_8eb03c0d",Ti="Intro_background_e3bffd74",Wi="Intro_eda21734",Li="Intro_base__paused_129a2cdc",Oi="Intro_backgroundSize_6e0dec55",qi="Intro_icon_946c0059",Hi=r(function({id:e,elementId:t,className:a}){const{model:s}=_r(),r=s.isPaused.get(),l=s.isHoliday.get(),{imagePath:c,videoPath:d}=function(e="bg"){const{model:t}=_r(),a=In(),{seasonPath:s}=Ir("battle_pass.widget.background",e,t.hasExtraChapter.get(),t.isHoliday.get(),t.season.get(),a);return{imagePath:Nr(e,t.hasExtraChapter.get(),t.isHoliday.get(),t.season.get(),a),videoPath:Pr.read(s)}}(),[u,p]=m(()=>({from:{opacity:0},config:{duration:400,easing:Hn}})),g=i.useCallback(async e=>{await Promise.all(p.start({to:{opacity:1},immediate:e}))},[p]),{maskPosition:h,backgroundContrast:f}=Do({id:e,elementId:t,onComplete:g});return n.jsxs(_.div,{style:{maskPosition:h.val.to(e=>Lo(-e)),filter:f.val.to(Bo)},className:o(Wi,r&&Li,a),children:[n.jsx(_.div,{style:{maskPosition:h.val.to(Lo)},className:$i,children:d?n.jsx("div",{className:Oi,children:n.jsx(Ie,{src:d,className:Ti,autoplay:!0,loop:!0},d)}):n.jsx(j,{path:c,className:Ti})}),!l&&n.jsx(_.div,{style:u,children:n.jsx(j,{path:"battlePass.widget.not_chosen",className:qi,width:60,height:60})})]})}),Di="Index_f505a04a",Vi=i.memo(function(e){return n.jsx(Ne,{...e,classNames:{background:Di}})}),zi={from:{opacity:1,x:0},config:{duration:400,easing:Hn}},Qi={from:{opacity:0,x:D(-20)},to:{opacity:1,x:0}};const Gi="Progression_de15ce34",Fi="Progression_label_67b446d",Ui="Progression_levelWrapper_20ffa2cd",Ki="Progression_countdownWrapper_32ed00dc",Xi="Progression_countdownSeparator_8d7ba9e7",Ji="Progression_progress_f05295ff",Yi="Progression_pointsEarned_f0502458",Zi="Progression_progressSeparator_9c752d50",el="Progression_progressBar_9c5d3f74",tl="Progression_levelPoints_f1c3b9c0",al="Progression_delta_2b36b7f6",sl="Progression_glow_bdccbc96",nl=r(function({id:e,elementId:t,className:a}){const{model:s}=_r(),r=kr(),l=s.levelPoints.get(),{pointsEarned:c,level:d}=s.lastSeenState.get(),u=function(){const e=kr(),{model:t}=_r(),[a,s]=m(()=>zi),n=Sr(e,t.widgetState.get());return vr(()=>{n&&s.start(Qi)},[n,s]),a}(),{baseSpring:p}=function({id:e,elementId:t}){const{registerAnimation:a}=oo(),[s,n]=m(()=>di.init),o=ue(e=>{e.isPaused?n.start({...di.paused}):n.start({...di.unPaused})}),r=ue(e=>{e.isPaused?n.start({...di.paused,immediate:!0}):n.start({...di.unPaused,delay:0,immediate:!0})}),l=i.useMemo(()=>({start:o,skip:r}),[r,o]);return Io({id:e,elementId:t,registerAnimation:a,animName:ui,config:l}),i.useMemo(()=>({baseSpring:s}),[s])}({id:e,elementId:t}),{pointsEarnedSpring:g,progressPoints:h,deltaGlowSpring:f,levelSpring:b}=function({id:e,elementId:t,pointsEarned:a,level:s,levelPoints:n}){const{startAnimation:o,registerAnimation:r}=oo(),[l,c]=i.useState(a),[d,u]=m(()=>({...li})),[_,p]=m(()=>({...ci})),[g,h]=m(()=>({from:{pointsEarned:a,level:s,deltaLeft:we(a,n),deltaWidth:0}})),f=ue(e=>{const{phase_1:t,phase_2:a}=e;p.start({opacity:1}),h.start({to:async e=>{await e({deltaWidth:0,deltaLeft:t.deltaLeft,immediate:!0}),await Pe(500),await e(t),c(t.pointsEarned),a&&(await e({...ii,level:t.level}),c(0),await Promise.all(u.start({to:async t=>{await t({x:D(40),opacity:0}),await t({x:D(-20),opacity:0,immediate:!0}),o({id:Vo,animName:ai}),await e({level:a.level,immediate:!0}),await t({x:0,opacity:1})}})),await e(a),c(a.pointsEarned)),p.start({opacity:0})}})}),b=i.useMemo(()=>({start:f,skip:v}),[f]);return Io({id:e,elementId:t,registerAnimation:r,animName:mi,config:b}),i.useMemo(()=>({pointsEarnedSpring:g,progressPoints:l,deltaGlowSpring:_,levelSpring:d}),[_,d,g,l])}({id:e,elementId:t,pointsEarned:c,level:d,levelPoints:l});return n.jsxs(_.div,{style:p,className:o(Gi,a),children:[n.jsxs("div",{className:Fi,children:[n.jsxs("div",{className:Ui,children:[n.jsx(_.div,{style:b,children:n.jsx(M,{path:"user_missions.battle_pass_widget.stage",params:{level:n.jsx(_.div,{children:g.level.to(e=>Math.ceil(e))})}})}),r&&n.jsxs(_.div,{style:u,className:Ki,children:[n.jsx(M,{className:Xi,path:"user_missions.battle_pass_widget.countdownSeparator"}),n.jsx(Mr,{})]})]}),n.jsx(M,{className:Ji,path:"user_missions.battle_pass_widget.progress",params:{pointsEarned:n.jsx(_.div,{className:Yi,children:g.pointsEarned.to(e=>Math.round(e)%l)}),levelPoints:n.jsx("div",{className:tl,children:l}),progressSeparatorClass:Zi}})]}),l>0&&n.jsx(Vi,{size:"small",className:el,value:h,maxValue:l,children:n.jsx(_.div,{style:{width:g.deltaWidth.to(e=>`${e}%`),left:g.deltaLeft.to(e=>`${e}%`)},className:al,children:n.jsx(_.div,{style:f,className:sl})})})]})}),ol="ProgressionOverlay_3554586a",rl="ProgressionOverlay_wrapper_db2f9b96",il="ProgressionOverlay_base__paused_ecd0a7ba",ll="ProgressionOverlay_hoverHelper_9949a6b8",cl=r(function({className:e,id:t}){const{model:a}=_r(),s=a.isExtraChapterHighlighted.get(),o=g(s?1:0,{config:{duration:400,easing:Hn}});return vr(()=>{o.start(s?1:0)},[s,o]),n.jsxs("div",{className:p(ol,a.isPaused.get()&&il),children:[n.jsxs(_.div,{style:{opacity:o},className:rl,children:[n.jsx(Ai,{id:t,className:e,withOverlay:!1}),n.jsx(Pi,{id:t,className:e})]}),n.jsx(_.div,{style:{opacity:o.to(e=>1-e)},className:p(e,ll)})]})}),dl="BattlePass_layer_1bbff8f0",ul="BattlePass_96294458",ml="BattlePass_base__enabled_8ccab86c",_l="BattlePass_rewardIcon_25776ae1",pl=new Map([[Co.Intro,[Hi,Ai,qr,Pi]],[Co.Progression,[nl,cl,ri,br]],[Co.Completed,[qr,function({className:e}){return n.jsx("div",{className:p(Bi,e)})},br]]]),gl=r(function(){const{model:e,controls:t}=_r();wi();const{play:a}=E(),s=e.widgetState.get(),r=e.timeLeft.get(),l=e.isPaused.get(),c=Ce(l),d=i.useRef(!1),u=e.rewardsHash.get(),m=function(e,t){const a=wr.read(e=>e.user_missions.hangarWidget.BattlePass("resId"));return t?{resId:a,contentId:xr.read(e=>e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId")),decoratorId:xr.read(e=>e.common.tooltip_window.tooltip_window.TooltipWindow("resId")),args:{body:Cr.read("battle_pass.tooltips.entryPoint.disabled.body"),header:Cr.read("battle_pass.tooltips.entryPoint.disabled.header")}}:{resId:a,contentId:e}}(e.tooltipID.get(),l),{containerRef:_,tooltipProps:p}=jn(m),g=r-259200,[h,f]=i.useState(r>0&&g<=0),b=()=>{d.current&&(d.current=!1,a(ht.umg_widget_event_hover_loop_stop))};i.useEffect(()=>{if(g>0){f(!1);const e=window.setTimeout(()=>{f(!0)},Math.min(g*ke,Se));return()=>window.clearTimeout(e)}r>0&&f(!0)},[g,r]),i.useEffect(()=>{l&&!c&&a(ht.umg_widget_event_inactive)}),ve(b);const v=pl.get(s);return n.jsxs(Po,{...p,id:Vo,groupId:Wn,position:0,className:o(ul,!l&&ml),isDisabled:l,onClick:()=>{p.onClick(),l||(b(),t.openBattlePass())},onMouseEnter:e=>{p.onMouseEnter(e),l||(a("mouse-enter"),s===Co.Intro&&(d.current=!0,a(ht.umg_widget_event_hover_loop)))},onMouseLeave:()=>{p.onMouseLeave(),b()},ref:_,children:[n.jsxs(jr.Provider,{value:h,children:[v&&v.map((e,t)=>n.jsx(e,{id:Vo,className:dl},`${s}-${t}`)),n.jsx(Ri,{id:Vo,className:dl})]}),u>0&&n.jsx(vi,{id:Vo,className:_l})]})}),hl={rootId:k.resolve("aliases").read(e=>e.user_missions.hangarWidget.BattlePass("resId"))},fl=i.memo(function(){return n.jsx(mr,{options:hl,children:n.jsx(gl,{})})}),[bl,vl]=b()(({observableModel:e})=>({...{...e.primitives(["isMissionsEnable"]),quests:e.arrayClone("quests")}}),({externalModel:e})=>({onMissionClick:e.createCallback(e=>({questId:e}),"onMissionClick"),markAsViewed:e.createCallbackNoArgs("onMarkAsViewed")})),yl="daily",xl="premium_daily",Cl="bonus",wl="weekly",Pl=new Set([yl,Cl,xl]),jl=32,Il="dailyQuestsCompleted",Nl="allQuestsCompleted",kl={base:"ProgressCount_1bbbcb2",slash:"ProgressCount_slash_ac34047e",slash__fullWidth:"ProgressCount_slash__fullWidth_c807c2b",current:"ProgressCount_current_6cb06e0d",current__slashCenter:"ProgressCount_current__slashCenter_6ce420af",total:"ProgressCount_total_faa00922",total__slashCenter:"ProgressCount_total__slashCenter_bb7952a3"},Sl="fullWidth",Ml=k.resolve("intl"),El=i.memo(function({current:e,total:t,children:a,displayType:s=Sl,className:r,classNames:i}){return n.jsxs("div",{className:o(kl.base,r),children:[n.jsx("div",{className:o(kl.current,kl[`current__${s}`],i?.current),children:a??Ml.formatNumber("integral",e)}),n.jsx("div",{className:o(kl.slash,kl[`slash__${s}`],i?.slash),children:"/"}),n.jsx("div",{className:o(kl.total,kl[`total__${s}`],i?.total),children:Ml.formatNumber("integral",t)})]})}),Al=k.resolve("strings"),Rl=k.resolve("images"),Bl="SpecConditionsIcons_ab3f13c7",$l="SpecConditionsIcons_icon_d767e7b4";function Tl({specConditions:e,className:t,...a}){return n.jsx("div",{...a,className:o(Bl,t),children:ee(e,e=>n.jsx(j,{width:24,height:24,path:e.iconPath,className:$l},e.id))})}const Wl={from:{y:0,opacity:1},config:{duration:200,easing:Hn}},Ll={from:{opacity:0},config:{duration:200,easing:Hn}},Ol={to:{scale:1,opacity:1},config:{duration:300,easing:Hn}},ql={to:{scale:0,opacity:0},config:{duration:300,easing:Hn}},Hl={opacity:1,y:0};const Dl=e=>e>=1e4?"aboveTenThousand":e>=1e3?"aboveThousand":e>=100?"aboveHundred":e>=10?"aboveTens":0===e?"fullSize":e<10?"digits":void 0,Vl={icon:"QuestCard_icon_9c76dd70",contentWrapper:"QuestCard_contentWrapper_89591e48",rewardsWrapper:"QuestCard_rewardsWrapper_d0b2cb69",hoverBg:"QuestCard_hoverBg_934f6a72",completeBg:"QuestCard_completeBg_4b5463bc",base:"QuestCard_89591e48",base__completed:"QuestCard_base__completed_46165daa",content:"QuestCard_content_375953dc",iconWrapper:"QuestCard_iconWrapper_fcde788c",description:"QuestCard_description_76d28250",description__noProgress:"QuestCard_description__noProgress_f530c11",description__allDailyDone:"QuestCard_description__allDailyDone_cef471f5",progressCounter:"QuestCard_progressCounter_906d0d2f",progressBar:"QuestCard_progressBar_ddc689d",countdown:"QuestCard_countdown_94011796",descriptionText:"QuestCard_descriptionText_901d9d35",condition:"QuestCard_condition_bf90cd2e",base__fullSize:"QuestCard_base__fullSize_9c76dd70",base__digits:"QuestCard_base__digits_9c76dd70",condition__bonus:"QuestCard_condition__bonus_525c74c2",base__aboveTens:"QuestCard_base__aboveTens_9c76dd70",base__aboveHundred:"QuestCard_base__aboveHundred_9c76dd70",base__aboveThousand:"QuestCard_base__aboveThousand_9c76dd70",base__aboveTenThousand:"QuestCard_base__aboveTenThousand_9c76dd70",specialConditions:"QuestCard_specialConditions_96e6d495",delta:"QuestCard_delta_eaef15ad",glow:"QuestCard_glow_b3b6f1b4",pulse:"QuestCard_pulse_9c76dd70"},zl=k.resolve("aliases"),Ql=k.resolve("views"),Gl=k.resolve("intl"),Fl=k.resolve("images"),Ul=k.resolve("strings"),Kl=zl.read(e=>e.user_missions.hangarWidget.Quests("resId")),Xl=Ql.read(e=>e.mono.user_missions.tooltips.daily_quest_tooltip("resId")),Jl=Ql.read(e=>e.mono.user_missions.tooltips.weekly_quest_tooltip("resId")),Yl=Ee.Small,Zl=i.forwardRef(function({id:e,animationId:t,totalProgress:a,currentProgress:s,earned:r,isCompleted:l,icon:c,description:d,commonConditionId:u,specialConditionIds:p,missionType:g,bonuses:f,countdown:b,position:v,onClick:y,tooltipParams:x},C){const w=In(),{play:P}=E(),I=a>0,N=Me(p,e=>({id:e,textPath:`weekly_quests.condition.special.c_${e}`,iconPath:`userMissions.weekly.specialCond.c_${e}`}),e=>void 0!==Al.read(e.textPath)&&Rl.has(e.iconPath));const k=g===Cl,M=S(`userMissions.missionIcons.c_32.${c}_gold`,`userMissions.missionIcons.c_64.${c}_gold`),A=S(`userMissions.missionIcons.c_32.${c}_silver`,`userMissions.missionIcons.c_64.${c}_silver`),{containerRef:R,tooltipProps:B}=jn(x??{args:{questID:e},resId:Kl,contentId:g===wl?Jl:Xl}),$=(()=>{switch(g){case xl:return M;case wl:return`userMissions.weekly.commonCond.x32x32.c_${u}`;default:return A}})(),T=g===wl?((e,t)=>{const a=Al.readOrEmpty(`weekly_quests.condition.common.c_${e}`),s=Al.readOrEmpty("weekly_quests.specialCondition.container"),n=Al.readOrEmpty("weekly_quests.specialCondition.separator"),o=t.map(e=>Al.readOrEmpty(e.textPath)).join(n);return`${a}${o?s.replace("{{specialConditions}}",o):""}`})(u,N):Ae(d),W=(e=>{const t=e.length>5,a=t?4:Math.min(e.length,5),s=[];return Te(a,t=>{const a=We(e,t);a&&s.push({size:Yl,name:a.name,image:Oe(a,Yl),value:a.value,valueType:Le(a.name)})}),t&&s.push({size:Yl,name:"more",image:`${Fl.readOrEmpty(`quests.bonuses.${Yl}.default`)}`,value:qe(Ul.readOrEmpty("tooltips.quests.awards.additional.bottom"),{count:e.length-a})}),s})(f),{contentStyle:L,iconStyle:O,completedIconStyle:q,rewardStyles:H,progressStyle:V,deltaGlowStyle:z,actualProgress:Q,cardRef:G}=function(e,t,a,s,n){const o=t-a,[r,l]=i.useState(o),c=i.useRef(null),{play:d}=E(),[u,_]=m(()=>Wl),[p,g]=m(()=>({to:{currentProgress:o,deltaLeft:0,deltaWidth:0},config:{duration:1e3,easing:Hn}})),[f,b]=m(()=>Ll),[v,y]=m(()=>Ol),[x,C]=m(()=>ql),[w,P]=h(s,()=>({to:{y:D(-15),opacity:0},config:{duration:300,easing:Hn}})),j=ue(async t=>{if(e>0){b.start({opacity:1}),d(ht.umg_widget_quest_progress);const a=t<r,s=we(a?t:r,e);await Promise.all(g.start({from:{currentProgress:r,deltaLeft:s,deltaWidth:a?we(r-t,e):0},to:{currentProgress:t,deltaWidth:a?0:we(t,e)-s,deltaLeft:s},[a?"onStart":"onRest"]:()=>l(t)})),b.start({opacity:0})}}),I=ue(async()=>{t!==r&&await j(t)}),N=ue(async(t,a)=>{j(e),t&&await Pe(1e3),await Promise.all(y.start(ql.to)),d(a?ht.umg_widget_quest_complete_secondary:ht.umg_widget_quest_complete),await Promise.all(C.start(Ol.to)),await Promise.all(_.start({opacity:0,y:D(15)})),d(a?ht.umg_widget_quest_reward_secondary:ht.umg_widget_quest_reward),await Promise.all(P.start(e=>({...Hl,delay:200*e})))});return i.useImperativeHandle(n,()=>({playProgressAnimation:I,playCompletedAnimation:N})),{contentStyle:u,progressStyle:p,deltaGlowStyle:f,iconStyle:v,completedIconStyle:x,rewardStyles:w,actualProgress:r,cardRef:c}}(a,s,r,W.length,C);return n.jsxs(Po,{id:t,groupId:Ln,position:v,...B,onMouseEnter:e=>{l||(P("mouse-enter"),B.onMouseEnter(e))},ref:te([R,G]),className:o(Vl.base,l&&Vl.base__completed,Vl[`base__${Dl(a)}`]),onClick:y,children:[n.jsx(_.div,{style:{opacity:q.opacity},className:Vl.completeBg}),n.jsxs(_.div,{style:L,className:Vl.contentWrapper,children:[n.jsx(_.div,{style:{opacity:q.opacity},className:Vl.completeBg}),n.jsx("div",{className:Vl.hoverBg}),n.jsxs("div",{className:Vl.iconWrapper,children:[n.jsx(_.div,{style:O,className:Vl.icon,children:n.jsx(j,{path:$,width:jl,height:jl})}),n.jsx(_.div,{style:q,className:Vl.icon,children:n.jsx(j,{path:"userMissions.icons.check_green",width:jl,height:jl})})]}),n.jsxs("div",{className:Vl.content,children:[n.jsxs("div",{className:o(Vl.description,Vl.description__noProgress),children:[n.jsx(xe,{text:T,classMix:o(Vl.descriptionText,Vl.condition,k&&Vl.condition__bonus),isTruncationAvailable:!0}),I&&n.jsx(El,{className:Vl.progressCounter,total:a,children:n.jsx(_.div,{children:V.currentProgress.to(e=>Gl.formatNumber("integral",Math.ceil(e)))})})]},T),I&&n.jsx(Vi,{className:Vl.progressBar,size:"small",value:Q,maxValue:a,children:n.jsx(_.div,{style:{width:V.deltaWidth.to(e=>`${e}%`),left:V.deltaLeft.to(e=>`${e}%`)},className:Vl.delta,children:n.jsx(_.div,{style:z,className:Vl.glow})})})]}),g===wl&&n.jsx(Tl,{specConditions:N,className:Vl.specialConditions}),b>0&&n.jsx("div",{className:Vl.countdown,children:n.jsx(ye,{start:b,format:w?Be.superCompact:Be.default,size:Re.x24x24},b)})]}),n.jsx("div",{className:Vl.rewardsWrapper,children:W.map((e,t)=>n.jsx(_.div,{style:H?.[t],children:n.jsx($e,{...e})},t))})]})}),ec={scale:0,opacity:0},tc={duration:500,easing:Hn},ac={from:ec,to:{opacity:1,scale:1}};function sc(){return{x:D(-20),opacity:0}}const nc=k.resolve("aliases"),oc=k.resolve("views"),rc=k.resolve("strings"),ic=nc.read(e=>e.user_missions.hangarWidget.Quests("resId")),lc=oc.read(e=>e.mono.user_missions.tooltips.all_quests_done_tooltip("resId")),cc=i.forwardRef(function({id:e,areAllQuestsDone:t=!1,onClick:a,position:s,tooltipResId:r},l){const{iconStyle:c,contentStyle:d}=function(e,t,a){const s=kn().isVisible(e),[n,o]=m(()=>({from:ec,config:tc})),[r,l]=m(()=>({from:sc(),config:tc})),c=ue((e=!1)=>{o.start({...ac,immediate:e}),l.start({from:sc(),to:{x:0,opacity:1},immediate:e})}),d=ue(()=>{o.start({to:ec,immediate:!0}),l.start({to:sc(),immediate:!0})});return i.useImperativeHandle(a,()=>({resetAnimations:d,runAnimations:c})),i.useEffect(()=>{(t||s)&&c(!0)},[t,s,c]),{iconStyle:n,contentStyle:r}}(e,t,l),u=e===Il,{containerRef:p,tooltipProps:g}=jn({resId:r??ic,contentId:lc,disabled:u});return n.jsxs(Po,{id:e,groupId:Ln,...g,position:s,ref:p,className:Vl.base,onClick:a,children:[t&&n.jsx("div",{className:Vl.hoverBg}),u&&n.jsx(_.div,{style:{opacity:c.opacity},className:Vl.completeBg}),n.jsxs("div",{className:Vl.contentWrapper,children:[n.jsx("div",{className:Vl.iconWrapper,children:n.jsx(_.div,{style:c,className:Vl.icon,children:n.jsx(j,{className:Vl.icon,path:u?"userMissions.icons.check_green":"userMissions.icons.check_white",width:jl,height:jl})})}),n.jsx(_.div,{style:d,className:Vl.content,children:n.jsx("div",{className:o(Vl.description,Vl.description__allDailyDone),children:n.jsx("div",{className:Vl.descriptionText,children:u?rc.read("user_missions.quests.daily_quests.completed"):rc.read("user_missions.quests.daily_quests.all_completed")})})})]})]})});function dc(e){return!e.isCompleted||e.animateCompletion}function uc(e,t){return De(e,e=>e.isCompleted&&e.animateCompletion&&e.missionType===t)}function mc(e,t,a){if(e.current!==t)return e.current=t,t?async t=>{e.current&&await a(t)}:void 0}function _c({data:e,appearedPredicate:t,api:a,allDailyCompletedRef:s,allCompletedRef:n,previousMap:o}){let r=!0,i=!0;const l=[],c=[],d=[],u=[],m=new Set,_=(e,t)=>{e&&l.push({animationHandler:t})};e.forEach(e=>{m.add(e.animationId),r=r&&e.isCompleted,Pl.has(e.missionType)&&(i=i&&e.isCompleted),e.isCompleted&&e.animateCompletion?d.push(e):e.isCompleted||(t(e)?u.push(e.animationId):c.push(e))});const p=mc(s,i,fc),g=void 0!==p;if(o)for(const[f]of o)if(!m.has(f)){_(0===d.length&&0===u.length,pc);break}_(!r&&a.isVisible(Nl),gc),_(d.length>0,async e=>{await async function({api:e,play:t},a){a.forEach((t,s)=>{e.updateCard(t.animationId,{position:10+s-a.length})}),t(ht.umg_widget_quest_backlog),await e.applyLayout(!1)}(e,d)}),_(d.length>0,async e=>{await async function(e,t,a){const{api:s,play:n}=e,o=s.findMaxVisibleRowsInGroup(Ln),r=Ve(t,Math.max(o,1));for(let i=0;i<r.length;i++)await hc(e,r[i]),i!==r.length-1&&(n(ht.umg_widget_quest_backlog),await s.applyLayout(!1),await Pe(200));a||await s.applyLayout(!1)}(e,d,u.length>0||g)}),_(u.length>0,async t=>{await async function({api:e,play:t},a,s){a.some(t=>e.isDisplaying(t,!1))&&t(ht.umg_widget_quest_backlog);s.forEach(({animationId:t},a)=>e.updateCard(t,{position:10+a})),await e.appear(a,Tn)}(t,u,e)}),_(c.length>0,async e=>{await async function({questCardRefs:e},t){await Promise.all(t.map(async t=>{await(e.get(t.animationId)?.playProgressAnimation())}))}(e,c)});const h=mc(n,r,bc);return _(g,p),_(void 0!==h,h),l}async function pc({api:e}){await e.applyLayout(!1)}async function gc({play:e,api:t}){e(ht.umg_widget_quest_disappear),await t.disappear(Nl)}async function hc({questCardRefs:e,play:t,api:a},s){const n=s.some(e=>e.totalProgress>0);await Promise.all(s.map(async({animationId:s},o)=>{const r=o>0;await Pe(400*o),await(e.get(s)?.playCompletedAnimation(n,r)),await Pe(500),t(r?ht.umg_widget_quest_disappear_secondary:ht.umg_widget_quest_disappear),await a.disappear(s)}))}async function fc({api:e,play:t,allDailyCompletedCard:a}){t(ht.umg_widget_quest_complete_all),a?.resetAnimations(),await e.appear([Il],$n),a?.runAnimations(),await Pe(1500),t(ht.umg_widget_quest_disappear),await e.disappear(Il),await e.applyLayout(!1)}async function bc({api:e,play:t,allCompletedCard:a}){t(ht.umg_widget_quest_complete_all),a?.resetAnimations(),await e.appear([Nl],$n),a?.runAnimations(),await Pe(1500)}function vc(){const{model:e,controls:t}=vl(),a=kn(),s=i.useRef(new Map),n=e.quests.get(),o=i.useRef(null),r=i.useRef([]),l=i.useRef(null),c=i.useRef(null),d=i.useRef(!1),u=i.useRef(!1),m=i.useRef(!1),_=je(),{play:p}=E(),g=i.useRef(!1),h=i.useRef([]),[f,b]=i.useState(()=>{const{data:e,allDailyCompleted:t,allCompleted:s,appeared:i}=function(e){let t=!0,a=!0;const s=[],n=uc(e,xl),o=uc(e,yl),r=[];return He(e,e=>{t=t&&e.isCompleted&&!e.animateCompletion,Pl.has(e.missionType)&&(a=a&&e.isCompleted&&!e.animateCompletion),(e.missionType===xl&&!e.isCompleted&&n||e.missionType===Cl&&!e.isCompleted&&o)&&r.push(e.animationId),s.push(e)}),{data:s.filter(dc),allCompleted:t,allDailyCompleted:a,appeared:r}}(n);return r.current=i,o.current=n,d.current=t,u.current=s,h.current.push(..._c({data:e,appearedPredicate:({animationId:e})=>i.includes(e),api:a,allDailyCompletedRef:d,allCompletedRef:u})),e}),v=ue(async e=>{const s=new Set;f.forEach(({animationId:e})=>{a.updateCard(e,{visible:!1}),s.add(e)}),e.forEach(e=>{const t=e.isCompleted&&e.animateCompletion;a.updateCard(e.animationId,{visible:s.has(e.animationId)||t})}),t.markAsViewed(),b(e)}),y=ue(async e=>{if(void 0!==e.data)m.current=!1,await v(e.data),h.current.shift();else if(await(e?.animationHandler?.({api:a,questCardRefs:s.current,allDailyCompletedCard:l.current,allCompletedCard:c.current,play:p})),h.current.shift(),h.current.length){const e=h.current[0];await y(e)}});return jo(_,()=>{!function(e,t,a){let s=!0;e.forEach(e=>{s=s&&e.isCompleted&&!e.animateCompletion,a.updateCard(e.animationId,{visible:!t.includes(e.animationId)&&dc(e)})}),s&&a.updateCard(Nl,{visible:!0})}(f,r.current,a),a.enqueue(async()=>a.applyLayout()),t.markAsViewed()}),i.useEffect(()=>{if(!he.structural(n,o.current)){const e=function(e){return new Map(ee(e,e=>[e.animationId,e]))}(o.current),t=function(e,t){return ee(e,e=>({...e,animateCompletion:!t.get(e.animationId)?.isCompleted&&e.isCompleted})).filter(dc)}(n,e);h.current.push({data:t},..._c({data:t,appearedPredicate:t=>!e.has(t.animationId)||!0===e.get(t.animationId)?.isCompleted&&!t.isCompleted,api:a,allDailyCompletedRef:d,allCompletedRef:u,previousMap:e}),{data:t.filter(({isCompleted:e})=>!e)})}o.current=n},[n,a]),i.useEffect(()=>{m.current=!0},[f]),i.useEffect(()=>{!g.current&&m.current&&h.current.length&&(g.current=!0,a.enqueue(async()=>await y(h.current[0])).then(()=>{g.current=!1}))}),{questData:f,questCardRefs:s,allDailyCompletedCardRef:l,allCompletedCardRef:c}}const yc=r(function(){const{controls:e}=vl(),{questData:t,questCardRefs:a,allDailyCompletedCardRef:s,allCompletedCardRef:o}=vc(),{play:r}=E(),i=t.every(e=>e.isCompleted&&!e.animateCompletion);return n.jsxs(n.Fragment,{children:[t.map((t,s)=>n.jsx(Zl,{position:10+s,...t,onClick:()=>{t.isCompleted||(r("click"),e.onMissionClick(t.id))},ref:e=>{e?a.current.set(t.animationId,e):a.current.delete(t.animationId)}},t.animationId)),n.jsx(cc,{ref:s,id:Il,position:0}),n.jsx(cc,{ref:o,id:Nl,areAllQuestsDone:i,position:1,onClick:()=>e.onMissionClick(null)})]})}),xc={rootId:k.resolve("aliases").read(e=>e.user_missions.hangarWidget.Quests("resId"))};function Cc(){return n.jsx(bl,{options:xc,children:n.jsx(yc,{})})}var wc=(e=>(e[e.Disabled=0]="Disabled",e[e.Active=1]="Active",e))(wc||{});const[Pc,jc]=b()(({observableModel:t})=>{const a={root:t.object(),eventInfo:t.object("eventInfo")},s=e(()=>{const{status:e,isCompleted:t}=a.root.get();return e===wc.Active&&!t}),n=e(()=>a.eventInfo.get().subMode===st.StPatrick?{card:R.videos.st_patrick.umg.card_effect(),icon:R.videos.st_patrick.umg.icon_bg_effect()}:{card:R.videos.umg.card_effect(),icon:R.videos.umg.icon_bg_effect()});return{...a,computes:{isActiveProgress:s,videos:n},battleTypes:t.transform(e=>ee(e,e=>e),"leaderBoard.battleTypes"),battleModes:t.transform(e=>ee(e,e=>ee(e,e=>({...e}))),"leaderBoard.battleModes")}},({externalModel:e})=>({openProgression:e.createCallbackNoArgs("showProgression"),progressionAnimationEnd:e.createCallbackNoArgs("onProgressionAnimationCompleted")})),Ic={base:"Progress_b5a185f8",progress:"Progress_bab84485",container:"Progress_container_c9a11713",counter:"Progress_counter_fc4dff84",counterDivider:"Progress_counterDivider_5eb79cd9",total:"Progress_total_30003ccd",current:"Progress_current_eb3d0369",base__hovered:"Progress_base__hovered_71ab735e",base__default:"Progress_base__default_71ab735e",base__stPatrick:"Progress_base__stPatrick_71ab735e",progressBackground:"Progress_progressBackground_2a4077d9",pattern:"Progress_pattern_a730c2f0"},Nc=r(function({hovered:e}){const{model:t,controls:a}=jc(),{stageProgress:s,prevStageProgress:r,stagePoints:i}=t.root.get(),l=ut().model.root.get().subMode;return n.jsxs("div",{className:o(Ic.base,Ic[`base__${l}`],e&&Ic.base__hovered),children:[n.jsx("div",{className:Ic.container,children:n.jsx(ze,{text:R.strings.battle_royale_extention.progress.counter(),params:{current:n.jsx("span",{className:Ic.current,children:s}),divider:n.jsx("span",{className:Ic.counterDivider,children:"/"}),total:n.jsx("span",{className:Ic.total,children:i})},className:Ic.counter})}),n.jsx("div",{className:Ic.progress,children:n.jsx(Ne,{value:s,maxValue:i,animationEnabled:!0,size:"small",classNames:{background:Ic.progressBackground},filledClassNames:{pattern:Ic.pattern},children:n.jsx(Qe,{initValue:r,initMaxValue:i,animationProps:{onRest:a.progressionAnimationEnd}})})})]})}),kc=r(function({animated:e,className:t,...a}){const s=i.useRef(null),[o,r]=Ge(()=>{const e=s.current?.getCachedKeyframes();return!e?.length||(s.current?.goToAndStop(0),!1)});return be(()=>(o(),r)),i.useEffect(()=>Fe(()=>{e?s.current?.play():s.current?.stop()},e?0:200),[e]),n.jsx(Ie,{className:t,ref:s,preload:"auto",...a})}),Sc={hoverBg:"ProgressionEntryPoint_hoverBg_1cba4166",background:"ProgressionEntryPoint_background_9855e8e2",base:"ProgressionEntryPoint_5c0716bb",base__default:"ProgressionEntryPoint_base__default_cd4dbad9",base__stPatrick:"ProgressionEntryPoint_base__stPatrick_cd4dbad9",effect:"ProgressionEntryPoint_effect_a8795aaf",iconVideo:"ProgressionEntryPoint_iconVideo_77919c99",cardVideo:"ProgressionEntryPoint_cardVideo_eae0e238",icon:"ProgressionEntryPoint_icon_3c1e7b7d",base__activeProgress:"ProgressionEntryPoint_base__activeProgress_cd4dbad9",label:"ProgressionEntryPoint_label_73e2f07e",content:"ProgressionEntryPoint_content_25c59db2",progressionComplete:"ProgressionEntryPoint_progressionComplete_6fd8d1c5",pulse:"ProgressionEntryPoint_pulse_cd4dbad9"},Mc=k.resolve("aliases"),Ec=k.resolve("views"),Ac="progressionEntryPoint",Rc=r(()=>{const{model:e,controls:t}=jc(),{stage:a,status:s}=e.root.get(),r=e.eventInfo.get().subMode,l=e.computes.videos(),c=kn(),{play:d}=E(),[u,m]=i.useState(!1),p=e.computes.isActiveProgress(),g=f(s,{key:s,from:{opacity:0},enter:{opacity:1},leave:{opacity:0},config:{duration:300},exitBeforeEnter:!0}),{containerRef:h,tooltipProps:b}=jn({resId:Mc.read(e=>e.battle_royale.hangarWidget.Progression("resId")),contentId:Ec.read(e=>e.battle_royale.mono.lobby.tooltips.progression_widget("resId"))});return be(()=>{c.enqueue(async()=>{c.updateCard(Ac,{visible:!0}),await c.applyLayout()})}),n.jsxs(Po,{position:1,id:Ac,groupId:yo,className:o(Sc.base,p&&Sc.base__activeProgress,Sc[`base__${r}`]),onClick:function(){d("click"),t.openProgression(),b.onClick()},onMouseEnter:function(e){d("mouse-enter"),b.onMouseEnter(e),m(!0)},onMouseLeave:function(){b.onMouseLeave(),m(!1)},ref:h,children:[n.jsx("div",{className:Sc.background}),p&&n.jsx("div",{className:Sc.effect}),n.jsx("div",{className:Sc.hoverBg}),p&&n.jsx(kc,{src:l.card,animated:u,className:Sc.cardVideo,autoplay:!1,loop:!0}),g((e,t)=>n.jsxs(_.div,{className:Sc.content,style:e,children:[n.jsxs("div",{className:o(Sc.icon,Sc[`icon__${t}`]),children:[p&&n.jsx(Ie,{className:Sc.iconVideo,src:l.icon,autoplay:!0,loop:!0}),p&&n.jsx("div",{className:Sc.label,children:a})]}),p?n.jsx(Nc,{hovered:u}):n.jsx("div",{className:Sc.progressionComplete,children:n.jsx(ze,{text:R.strings.battle_royale_extention.progressionComplete()})})]}))]})}),[Bc,$c]=b()(({observableModel:e})=>({...e.primitives(["balance","isWGMoneyAvailable"])}),({externalModel:e})=>({openShop:e.createCallbackNoArgs("openShop")})),Tc={hoverBg:"ShopButton_hoverBg_16f2a05",background:"ShopButton_background_2d6c1f5e",base:"ShopButton_4bc85d12",base__default:"ShopButton_base__default_a770931",base__stPatrick:"ShopButton_base__stPatrick_a770931",content:"ShopButton_content_c384b577",amount:"ShopButton_amount_ec015af2",text:"ShopButton_text_f38dd54f",pulse:"ShopButton_pulse_a770931"},Wc=k.resolve("views"),Lc=k.resolve("aliases"),Oc=r(function(){const{model:e,controls:t}=$c(),{subMode:a,coinType:s}=ut().model.root.get(),{play:r}=E(),i=e.balance.get(),l=e.isWGMoneyAvailable.get(),{containerRef:c,tooltipProps:d}=jn({resId:Lc.read(e=>e.battle_royale.hangarWidget.EventShop("resId")),contentId:Wc.read(e=>e.battle_royale.mono.lobby.tooltips.shop_button("resId"))});return n.jsxs(Po,{position:0,id:"entryPoint",groupId:bo,visible:!0,className:o(Tc.base,Tc[`base__${a}`]),onClick:function(){r("click"),d.onClick(),t.openShop()},onMouseEnter:function(e){r("mouse-enter"),d.onMouseEnter(e)},onMouseLeave:d.onMouseLeave,ref:c,children:[n.jsx("div",{className:Tc.background}),n.jsx("div",{className:Tc.hoverBg}),n.jsxs("div",{className:Tc.content,children:[n.jsx("div",{className:Tc.text,children:n.jsx(Ue,{text:R.strings.battle_royale_extention.eventShop()})}),n.jsxs("div",{className:Tc.amount,children:[l&&i>=0?n.jsx(Ke,{value:i}):R.strings.common.common.dashes(),n.jsx(ot,{type:s})]})]})]})}),[qc,Hc]=b()(({observableModel:e})=>({...e.primitives(["isBattlePassActive","isAnyEntryPointAvailable","areMissionsActive"])}),({externalModel:e})=>({choosePresenter:e.createCallback(e=>({resId:e}),"onPresenterDisappear")})),Dc="Widget_9097a2b5",Vc=k.resolve("aliases"),zc=Vc.read(e=>e.user_missions.hangarWidget.Quests("resId")),Qc=r(()=>{const{model:e,controls:t}=Hc(),a=function(e){const t=kn(),a=i.useRef([]),s=i.useRef(!1),[n,o]=i.useState(e);return i.useEffect(()=>{he.shallow(n,e)||a.current.push(e)}),i.useEffect(()=>{if(s.current)return;const e=a.current.shift();if(!e)return;s.current=!0;const r=fe(Object.entries(e),([e,t])=>n[e]&&!t,([e])=>e);t.enqueue(async()=>{r.length&&(await t.disappearGroups(r),await t.applyLayout(!1))}).then(()=>{s.current=!1,o(e)})}),n}({[fo]:e.isBattlePassActive.get(),[yo]:e.isAnyEntryPointAvailable.get(),[vo]:e.areMissionsActive.get(),[bo]:!0}),s=i.useMemo(()=>({[Vc.read(e=>e.user_missions.hangarWidget.BattlePass("resId"))]:a.battlePass,[Vc.read(e=>e.battle_royale.hangarWidget.Progression("resId"))]:a.progressionEntryPoint,[Vc.read(e=>e.battle_royale.hangarWidget.EventShop("resId"))]:a.shopEntryPoint,[zc]:a.missions}),[a.battlePass,a.missions,a.progressionEntryPoint,a.shopEntryPoint]),o=i.useRef(s);i.useEffect(()=>{const e=o.current;Object.keys(s).forEach(a=>{!s[a]&&e[a]&&t.choosePresenter(a)}),o.current=s},[t,s]);const r=Xe(zc);return n.jsxs("div",{className:Dc,children:[a.battlePass&&n.jsx(fl,{}),a.progressionEntryPoint&&n.jsx(Rc,{}),a.shopEntryPoint&&n.jsx(Oc,{}),a.missions&&r&&n.jsx(Cc,{})]})}),Gc=()=>n.jsx(ho,{children:n.jsx(so,{groups:xo,children:n.jsx(Qc,{})})}),Fc="Message_a512f824",Uc="Message_container_fdc74d3c",Kc="Message_background_ab9441f7",Xc="Message_tooltipContainer_fdc74d3c",Jc="Message_alertText_771b8cbf",Yc="Message_icon_fdc90528",Zc="Message_button_42eac0db",ed="Message_buttonContent_2adf24d6",td=k.resolve("strings"),ad=k.resolve("views"),sd=r(function(){const{model:e,controls:t}=rt(),a=e.computes.battleSchedule(),s=e.alertType.get(),o=s===it.ModeIsFinished||s===it.None,r=s===it.ModeIsUnavailable||s===it.CeasefireCurrentServer,i=Z("ceasefire",d.useMemo(()=>({battleSchedule:a,alertType:s,resId:ad.read(e=>e.battle_royale.mono.lobby.tooltips.ceasefire("resId"))}),[a,s]),{disabled:o});return n.jsxs("div",{className:Fc,children:[n.jsx("div",{className:Kc}),n.jsxs("div",{className:Uc,children:[n.jsxs("div",{...i,className:Xc,children:[n.jsx("div",{className:Yc}),n.jsx("div",{className:Jc,children:td.readOrEmpty(`battle_royale.alertMessage.${s}`)})]}),r&&n.jsx(O,{theme:"secondary",size:"small",classNames:{base:Zc,content:ed},onClick:t.changeServer,autoAlignContent:!1,children:R.strings.battle_royale.alertMessage.changeServerButton()})]})]})}),[nd,od]=b()(({observableModel:e})=>({...e.primitives(["selectedTab"])}),({externalModel:e})=>({select:e.createCallback(e=>({tabId:e}),"onSelectTab")})),rd={base:"Tab_95f1dfc2",base__active:"Tab_base__active_8ed0d5bc",imgContainer:"Tab_imgContainer_d1f44ac2",selectedImg:"Tab_selectedImg_3fe1b8ab",unselectedImg:"Tab_unselectedImg_b04ff918",label:"Tab_label_e971bd70",base__default:"Tab_base__default_0",base__stPatrick:"Tab_base__stPatrick_0"},id=k.resolve("views");function ld(e,t,a){return a===st.StPatrick?`R.images.battle_royale.gui.maps.st_patrick.icons.battleTypeSelector.${e}.${t}`:`R.images.battle_royale.gui.maps.icons.battleTypeSelector.${e}.${t}`}function cd({selectedTab:e,tabId:t,onClick:a,subMode:s,className:r}){const l=E(),c=e===t,d=Z("battle_selector",i.useMemo(()=>({tabId:t,resId:id.read(e=>e.battle_royale.mono.lobby.tooltips.battle_selector("resId"))}),[t]));return n.jsxs("div",{className:o(rd.base,rd[`base__${s}`],c&&rd.base__active,r),onClick:function(){d.onClick(),c||(a(t),l.play("click"))},onMouseEnter:function(e){d.onMouseEnter(e),c||l.play("mouse-enter")},onMouseLeave:d.onMouseLeave,"data-test-id":`BattleRoyaleTab-${t}`,children:[n.jsxs("div",{className:rd.imgContainer,children:[n.jsx("div",{className:rd.selectedImg,style:{backgroundImage:`url(${ld("selected",t,s)})`}}),n.jsx("div",{className:rd.unselectedImg,style:{backgroundImage:`url(${ld("unselected",t,s)})`}})]}),n.jsx("div",{className:rd.label,children:`${R.strings.battle_royale_extention.tab.label.$dyn(t)}`})]})}const dd="App_61b49552",ud="App_tab_d1d66e0b",md=[ct.Solo,ct.Platoon,ct.Team],_d=r(function(){const{model:e,controls:t}=od(),a=e.selectedTab.get(),s=ut().model.root.get().subMode;return n.jsx("div",{className:dd,children:md.map(e=>n.jsx(cd,{selectedTab:a,tabId:e,onClick:t.select,className:ud,subMode:s},e))})}),pd={rootId:k.resolve("aliases").read(e=>e.battle_royale.BattleSelector("resId"))};function gd(){return n.jsx(nd,{options:pd,children:n.jsx(_d,{})})}var hd=(e=>(e.Alert="alert",e.BattleSelector="battleSelector",e))(hd||{});const[fd,bd]=b()(({observableModel:e})=>({...e.primitives(["modeStatus"])}),v),vd=r(function(){const{model:e}=bd(),t=e.modeStatus.get();switch(t){case hd.Alert:return n.jsx(sd,{});case hd.BattleSelector:return n.jsx(gd,{});default:return console.warn(`Unsupported header modeStatus: ${t}`),null}}),yd="HangarScreen_332e247",xd="HangarScreen_vignette_cc61e026",Cd="HangarScreen_dust_d8ab7d08",wd="HangarScreen_sceneWrapper_7399211",Pd="HangarScreen_shadow_ee5adb00",jd="HangarScreen_shadow__center_5f549a97",Id="HangarScreen_shadow__corner_1516f78a",Nd="HangarScreen_shadow__left_top_41295511",kd="HangarScreen_shadow__left_bottom_4bc55100",Sd="HangarScreen_shadow__right_top_e9ef09d8",Md="HangarScreen_shadow__right_bottom_a838e83a",Ed="HangarScreen_mainMenu_df15cee4",Ad="HangarScreen_hangarWidget_81fee245",Rd=k.resolve("aliases"),Bd=Rd.read(e=>e.hangar.shared.HeroTank("resId")),$d={rootId:Rd.read(e=>e.hangar.shared.MainMenu("resId"))},Td=r(function(){const{modeIconPath:e}=ut().model.computes.eventSettings().mainMenu;return n.jsxs("div",{className:yd,children:[n.jsx("div",{className:xd}),n.jsxs("div",{className:Cd,children:[n.jsx("div",{className:o(Pd,jd)}),n.jsx("div",{className:o(Pd,Id,Nd)}),n.jsx("div",{className:o(Pd,Id,kd)}),n.jsx("div",{className:o(Pd,Id,Sd)}),n.jsx("div",{className:o(Pd,Id,Md)})]}),n.jsx(X,{id:Bd,children:n.jsx(Us,{})}),n.jsx(Pn,{className:wd}),n.jsx(vd,{}),n.jsx(wn,{className:Ed,options:$d,modeIconPath:e}),n.jsx("div",{className:Ad,children:n.jsx(K,{children:n.jsx(Gc,{})})})]})}),Wd="Page_d023d87f",Ld="Page_carousel_2e3eb473",Od="Page_carousel__double_b4782e51",qd="Page_loadout_757c2bdf",Hd=k.resolve("aliases"),Dd=Hd.read(e=>e.battle_royale.loadoutPanelContainer.Loadout("resId")),Vd=Hd.read(e=>e.battle_royale.loadoutPanelContainer.Commander("resId"));const zd=r(function(){const e=Nt().model.carouselRowCount.get(),t=function(){const e=Xe(Dd),t=Xe(Vd);return e&&t}();return d.useEffect(()=>{Je(!0)},[]),n.jsxs("div",{className:Wd,children:[n.jsx(Td,{}),n.jsx("div",{className:qd,children:t&&n.jsx(Ds,{})}),n.jsx("div",{className:o(Ld,2===e&&Od),children:n.jsx(ns,{})})]})}),Qd="App_7ac91f18";function Gd(){return n.jsx("div",{className:Qd,children:n.jsx(zd,{})})}const Fd=k.resolve("aliases");function Ud(e,t,a){return{options:{rootId:t.read(e)},...a}}const Kd=Ye(ft);tt((new Ze).addWithProps(et,{soundsOverrides:Kd}).addWithProps(dt,Ud(e=>e.battle_royale.Events("resId"),Fd)).addWithProps(It,Ud(e=>e.battle_royale.VehiclesFilter("resId"),Fd)).addWithProps(kt,Ud(e=>e.battle_royale.VehiclesInventory("resId"),Fd)).addWithProps(lt,Ud(e=>e.battle_royale.AlertMessage("resId"),Fd)).addWithProps(fd,Ud(e=>e.battle_royale.Header("resId"),Fd)).addWithProps(pt,Ud(e=>e.hangar.shared.SpaceInteraction("resId"),Fd)).addWithProps(mt,Ud(e=>e.hangar.shared.HeroTank("resId"),Fd)).addWithProps(qc,Ud(e=>e.battle_royale.UserMissions("resId"),Fd)).addWithProps(Bc,Ud(e=>e.battle_royale.hangarWidget.EventShop("resId"),Fd)).addWithProps(Pc,Ud(e=>e.battle_royale.hangarWidget.Progression("resId"),Fd)).render(n.jsx(Gd,{})),{fullScreen:!0}).then(()=>at(!1)).then(()=>Je(!1));
+const __vite__mapDeps = (
+  i,
+  m = __vite__mapDeps,
+  d = m.f || (m.f = ["../../../lib/lib.css", "../../../entry_point/entry_point.css"]),
+) => i.map((i) => d[i]);
+import {
+  h as e,
+  o as t,
+  x as s,
+  y as a,
+  j as n,
+  f as r,
+  t as o,
+  r as i,
+  z as l,
+  i as d,
+  R as c,
+  A as u,
+  p as m,
+  q as _,
+  m as g,
+  B as p,
+  D as h,
+  E as f,
+} from "../../../chunks/vendor.js";
+import {
+  i as b,
+  n as v,
+  O as y,
+  Q as x,
+  c as C,
+  V as w,
+  W as I,
+  X as N,
+  Y as j,
+  Z as P,
+  _ as S,
+  $ as k,
+  a0 as M,
+  a1 as E,
+  d as A,
+  a2 as B,
+  a3 as $,
+  a4 as T,
+  G as W,
+  a5 as O,
+  a6 as L,
+  B as q,
+  a7 as H,
+  a8 as D,
+  a9 as V,
+  aa as G,
+  L as z,
+  ab as Q,
+  ac as U,
+  ad as F,
+  ae as K,
+  af as X,
+  ag as J,
+  ah as Y,
+  ai as Z,
+  aj as ee,
+  m as te,
+  ak as se,
+  al as ae,
+  am as ne,
+  an as re,
+  ao as oe,
+  u as ie,
+  ap as le,
+  aq as de,
+  ar as ce,
+  as as ue,
+  at as me,
+  au as _e,
+  av as ge,
+  aw as pe,
+  ax as he,
+  ay as fe,
+  az as be,
+  aA as ve,
+  aB as ye,
+  aC as xe,
+  aD as Ce,
+  aE as we,
+  aF as Ie,
+  aG as Ne,
+  aH as je,
+  aI as Pe,
+  aJ as Se,
+  aK as ke,
+  aL as Me,
+  aM as Ee,
+  aN as Ae,
+  aO as Re,
+  aP as Be,
+  aQ as $e,
+  aR as Te,
+  p as We,
+  h as Oe,
+  aS as Le,
+  aT as qe,
+  aU as He,
+  aV as De,
+  aW as Ve,
+  aX as Ge,
+  aY as ze,
+  aZ as Qe,
+  a_ as Ue,
+  w as Fe,
+  F as Ke,
+  o as Xe,
+  a$ as Je,
+  b0 as Ye,
+  b1 as Ze,
+  N as et,
+  U as tt,
+  r as st,
+  b2 as at,
+} from "../../../chunks/lib.js";
+import { S as nt } from "../../../chunks/enums.js";
+import { D as rt } from "../../../chunks/daily_bonus.js";
+import { P as ot } from "../../../chunks/proxy_currency.js";
+import { u as it, A as lt, a as dt } from "../../../chunks/model.js";
+import { B as ct } from "../../../chunks/battle_type_selector_view_model.js";
+/* empty css                     */ const [ut, mt] = b()(({ observableModel: t }) => {
+    const s = { root: t.object() },
+      a = e(() =>
+        s.root.get().subMode === nt.StPatrick
+          ? {
+              mainMenu: {
+                modeIconPath:
+                  "R.images.gui.maps.st_patrick.icons.battleTypes.c_64x64.battleRoyaleQueue",
+              },
+            }
+          : {
+              mainMenu: {
+                modeIconPath: "R.images.gui.maps.icons.battleTypes.c_64x64.battleRoyaleQueue",
+              },
+            },
+      );
+    return { ...s, computes: { eventSettings: a } };
+  }, v),
+  [_t, gt] = b("HeroTankModelProvider")((e) => {
+    const { observableModel: t } = e;
+    return { ...t.primitives(["name", "type"]), heroTankMarker: t.object("heroTankMarker") };
+  }, v),
+  [pt, ht] = b("SpaceInteractionModel")(v, ({ externalModel: e }) => ({
+    sceneWrapper: {
+      onMoveSpace: e.createCallback((e) => e, "onMoveSpace"),
+      onMouseOver3dScene: e.createCallback((e) => e, "onMouseOver3dScene"),
+    },
+  })),
+  [ft, bt] = b()(
+    ({ observableModel: e }) => {
+      const t = {
+          ...e.primitives(["selectedSlide"]),
+          plugins: e.dict("plugins"),
+          slides: e.array("slides"),
+          visibleGroups: e.array("visibleGroups"),
+        },
+        s = y.structural(() =>
+          t.plugins.values().map((e) => {
+            const { url: t, dependencies: s } = e.get();
+            return { url: t, dependencies: x(s) };
+          }),
+        ),
+        a = y.primitive(() => t.selectedSlide.get());
+      return {
+        ...t,
+        computes: {
+          pathToPlugins: s,
+          selectedSlide: a,
+          isGroupVisible: (e) => x(t.visibleGroups.get()).includes(e),
+          isSlideActive: (e) => x(t.slides.get()).some((t) => t.id === e),
+        },
+      };
+    },
+    ({ externalModel: e }) => ({
+      onSlideChanged: e.createCallback((e, t) => ({ sliderId: e, slideId: t }), "onSlideChanged"),
+    }),
+  ),
+  vt = {
+    umg_widget_quest_progress: "umg_widget_quest_progress",
+    umg_widget_quest_complete: "umg_widget_quest_complete",
+    umg_widget_quest_reward: "umg_widget_quest_reward",
+    umg_widget_quest_disappear: "umg_widget_quest_disappear",
+    umg_widget_block_move: "umg_widget_block_move",
+    umg_widget_block_stop: "umg_widget_block_stop",
+    umg_widget_quest_complete_secondary: "umg_widget_quest_complete_secondary",
+    umg_widget_quest_reward_secondary: "umg_widget_quest_reward_secondary",
+    umg_widget_quest_disappear_secondary: "umg_widget_quest_disappear_secondary",
+    umg_widget_quest_complete_all: "umg_widget_quest_complete_all",
+    umg_widget_quest_progress_secondary: "umg_widget_quest_progress_secondary",
+    umg_widget_quest_backlog: "umg_widget_quest_backlog",
+    umg_widget_event_appear: "umg_widget_event_appear",
+    umg_widget_event_hover_loop: "umg_widget_event_hover_loop",
+    umg_widget_event_hover_loop_stop: "umg_widget_event_hover_loop_stop",
+    umg_widget_event_timer: "umg_widget_event_timer",
+    umg_widget_event_inactive: "umg_widget_event_inactive",
+    umg_widget_event_reward: "umg_widget_event_reward",
+    umg_widget_event_timer_simple: "umg_widget_event_timer_simple",
+  },
+  yt = Object.values(vt).reduce((e, t) => ({ ...e, [t]: C(t) }), {}),
+  xt = "emptySlot",
+  Ct = "left",
+  wt = "right",
+  It = "both",
+  Nt = "none",
+  jt = 189,
+  Pt = 245,
+  St = {
+    default: { single: jt, double: jt },
+    breakpoints: {
+      medium: { single: 224 },
+      large: { single: Pt, double: Pt },
+      extraLarge: { single: 302 },
+    },
+  },
+  [kt, Mt] = b()(
+    ({ observableModel: e }) => ({
+      ...e.primitives(["carouselRowCount"]),
+      nationsOrder: e.arrayClone("nationsOrder"),
+    }),
+    v,
+  );
+const [Et, At] = b()(
+    (e) => {
+      const n = {
+          ...e.observableModel.primitives(["currentVehicleIntCD", "currentVehicleInventoryId"]),
+          vehicles: e.observableModel.dictRef("vehicles"),
+        },
+        r = t.box([], { deep: !1 }),
+        o = y.structural((e) => {
+          const t = n.vehicles.get(e);
+          if (-1 !== e && t)
+            return (function (e) {
+              try {
+                return JSON.parse(e);
+              } catch (t) {
+                throw (console.error(`Error parsing JSON for element ${e}:`, t), t);
+              }
+            })(t);
+        }),
+        i = y.shallow(() => {
+          const e = n.currentVehicleIntCD.get();
+          return o(e);
+        }),
+        l = y.primitive(() => r.get().some((e) => "inPrebattle" === e.status));
+      return (
+        e.cleanup(
+          s(() => {
+            const t = [];
+            for (const [e, a] of n.vehicles.entries())
+              try {
+                t.push(JSON.parse(a.get()));
+              } catch (i) {
+                console.error(`Error parsing JSON for element ${e}:`, i);
+              }
+            const s = e.requires.filters.model.nationsOrder.get(),
+              o = t.sort((e, t) => s.indexOf(w(e.nationId)) - s.indexOf(w(t.nationId)));
+            a(() => r.set(o));
+          }),
+        ),
+        {
+          inventoryId: n.currentVehicleInventoryId,
+          prebattleModeActive: l,
+          selectedVehicle: i,
+          getVehicle: o,
+          current: { list: () => r.get(), ids: y.shallow(() => r.get().map((e) => e.id)) },
+        }
+      );
+    },
+    (e) => ({ select: e.externalModel.createCallback((e) => ({ id: e }), "onSelect") }),
+    { useRequires: () => ({ filters: Mt() }) },
+  ),
+  Rt = "Slot_mainContainer_e894477a",
+  Bt = "Slot_disabledOverlay_1c919925",
+  $t = "Slot_content_1a27c8cf",
+  Tt = "Slot_selected_18aa5577",
+  Wt = "Slot_selected__border_9be57c4",
+  Ot = I("Slot", "Slot_977dd8f1", {
+    variants: {
+      active: { true: "Slot_base__active_71f19f5c" },
+      selected: { true: "Slot_base__selected_71f19f5c" },
+      disabled: { true: "Slot_base__disabled_334cc10f" },
+      empty: { true: "Slot_base__empty_d386066c" },
+      stPatrick: { true: "Slot_base__stPatrick_71f19f5c" },
+    },
+  });
+function Lt({ children: e, selected: t = !1, disabled: s = !1, active: a, className: o, ...i }) {
+  const l = s || void 0 === i.onClick,
+    d = mt().model.root.get().subMode;
+  return n.jsx(Ot, {
+    ...i,
+    selected: t,
+    disabled: s,
+    empty: l,
+    active: a,
+    stPatrick: d === nt.StPatrick,
+    className: o,
+    children: n.jsxs("div", {
+      className: $t,
+      children: [
+        n.jsxs("div", { className: Rt, children: [e, s && n.jsx("div", { className: Bt })] }),
+        t && n.jsx("div", { className: r(Tt, Wt) }),
+        n.jsx("div", { className: Tt }),
+      ],
+    }),
+  });
+}
+const qt = "undamaged",
+  Ht = "ammoNotFull",
+  Dt = "crewNotFull",
+  Vt = "exploded",
+  Gt = "destroyed",
+  zt = "damaged",
+  Qt = "rentable",
+  Ut = "rentableAgain",
+  Ft = "rentalIsOver",
+  Kt = "tooHeavy",
+  Xt = "unsuitableToQueue",
+  Jt = "unsuitableToUnit",
+  Yt = "inPrebattle",
+  Zt = "battle",
+  es = "wot_plus_exclusive_vehicle_disabled",
+  ts = {
+    [Ht]: "ammo",
+    [Dt]: "crew",
+    [Vt]: "repair",
+    [Gt]: "repair",
+    [zt]: "repair",
+    [Qt]: "rental",
+    [Ut]: "rental",
+    [Ft]: "rental",
+    [Kt]: "notSuitable",
+    [Xt]: "notSuitable",
+    [Jt]: "notSuitable",
+    [Yt]: "inPlatoon",
+    [Zt]: "inBattle",
+    [es]: "notSuitable",
+  },
+  ss = {
+    base: "Background_2f756423",
+    base__selected: "Background_base__selected_55780014",
+    base__stPatrick: "Background_base__stPatrick_26effab7",
+    flag: "Background_flag_57525fcb",
+    base__double: "Background_base__double_26effab7",
+    flag__active: "Background_flag__active_de322c1b",
+    vehicle: "Background_vehicle_23ef6e2b",
+    vehicle__dimmed: "Background_vehicle__dimmed_4dddd8fc",
+  };
+function as({ vehicle: e, selected: t, active: s }) {
+  return n.jsx(j, {
+    className: r(ss.flag, t || (s && ss.flag__active)),
+    path: `hangar.carousel.cards.flags.x400x300.${w(e.nationId)}`,
+    position: "top left",
+  });
+}
+const ns = o(function ({ vehicle: e, dimmed: t, active: s, selected: a, doubleRow: o }) {
+    const i = mt().model.root.get().subMode;
+    return n.jsxs("div", {
+      className: r(ss.base, ss[`base__${i}`], o && ss.base__double, a && ss.base__selected),
+      children: [
+        n.jsx(as, { vehicle: e, active: s, selected: a }),
+        n.jsx(N, {
+          className: r(ss.vehicle, ((e?.status && e.status !== qt) || t) && ss.vehicle__dimmed),
+          name: e.name,
+        }),
+      ],
+    });
+  }),
+  rs = "Information_f314e2aa",
+  os = "Information_info_34007a93",
+  is = "Information_details_e5340a0c",
+  ls = "Information_base__double_6e8d4f26",
+  ds = "Information_text_730f3788";
+function cs({ vehicle: e }) {
+  return n.jsxs("div", {
+    className: is,
+    children: [
+      S(e.type) && n.jsx(P.Type, { type: e.type, size: P.Type.sizes.x24x24 }),
+      n.jsx(P.Name, { className: ds, children: e.shortName }),
+    ],
+  });
+}
+function us({ vehicle: e, doubleRow: t }) {
+  return n.jsx("div", {
+    className: r(rs, t && ls),
+    children: n.jsx(P, { className: os, children: n.jsx(cs, { vehicle: e }) }),
+  });
+}
+const ms = "Overlay_c657baf9",
+  _s = "Overlay_alert_db4a0e15",
+  gs = "Overlay_alertIcon_3d7c077a",
+  ps = "Overlay_base__double_3c7155a",
+  hs = "Overlay_alertText_e237f4fd",
+  fs = "Overlay_alertText__light_bece984e";
+function bs({ status: e }) {
+  const t = k.resolve("images"),
+    s = M(`hangar.carousel.cards.alerts.${ts[e]}`, `hangar.carousel.cards.alerts.${ts[e]}_upscale`),
+    a = M(
+      "hangar.carousel.cards.alerts.notSuitable",
+      "hangar.carousel.cards.alerts.notSuitable_upscale",
+    ),
+    o = e === Zt || e === Yt;
+  return n.jsxs("div", {
+    className: _s,
+    children: [
+      n.jsx(j, { className: gs, path: t.has(s) ? s : a }),
+      n.jsx(E, {
+        upgradeLegacy: !0,
+        className: r(hs, o && fs),
+        path: `menu.tankCarousel.vehicleStates.${e}`,
+        params: { icon: n.jsx(j, { path: "library.premium_small", width: 34, height: 16 }) },
+      }),
+    ],
+  });
+}
+function vs({ vehicleStatus: e, doubleRow: t }) {
+  return e === qt
+    ? null
+    : n.jsx("div", { className: r(ms, t && ps), children: n.jsx(bs, { status: e }) });
+}
+const ys = "Card_e79008fd",
+  xs = "Card_base__double_f8b7f334",
+  Cs = "Card_content_a6141b08",
+  ws = "Card_dailyBonus_60c06806",
+  Is = "Card_border_e9cb9a85",
+  Ns = k.resolve("aliases"),
+  js = k.resolve("views"),
+  Ps = o(function ({ vehicleId: e, selected: t = !1, doubleRow: s, children: a, ...o }) {
+    const i = At(),
+      l = i.model.inventoryId.get(),
+      d = i.model.getVehicle(e),
+      c = A(),
+      u = i.model.prebattleModeActive(),
+      m = B({
+        resId: Ns.read((e) => e.battle_royale.VehiclesInventory("resId")),
+        contentId: js.read((e) => e.battle_royale.mono.lobby.tooltips.vehicle("resId")),
+        args: { intCD: e },
+      });
+    if (!d) return n.jsx(Lt, { ...o });
+    return n.jsxs(Lt, {
+      ...o,
+      className: r("vehicle-card", o.className),
+      selected: t,
+      "data-test-id": `vehicleCard-${e}`,
+      onMouseEnter: function (e) {
+        (c.play("mouse-enter", { target: "vehicle-card", original: e }), m.onMouseEnter(e));
+      },
+      onClick: function (e) {
+        (m.onClick(),
+          u ||
+            (d && d.inventoryId === l) ||
+            (c.play("click", { target: "vehicle-card", original: e }),
+            i.controls.select(d.inventoryId),
+            o.onClick?.(e)));
+      },
+      onMouseLeave: m.onMouseLeave,
+      children: [
+        n.jsx(ns, { vehicle: d, dimmed: u, selected: t, doubleRow: s }),
+        n.jsx(Ss, { vehicle: d, disableContextMenu: u, doubleRow: s }),
+      ],
+    });
+  });
+function Ss({ vehicle: e, doubleRow: t, disableContextMenu: s }) {
+  const a = $(
+    "brVehicle",
+    i.useMemo(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
+  );
+  return n.jsxs("div", {
+    ...(!s && a),
+    className: r(ys, t && xs),
+    children: [
+      n.jsxs("div", {
+        className: Cs,
+        children: [
+          e.hasDailyBonus &&
+            n.jsx(rt, {
+              className: ws,
+              dailyBonusFactor: e.dailyBonusFactor,
+              coinType: e.coinType,
+            }),
+          n.jsx(us, { vehicle: e, doubleRow: t }),
+        ],
+      }),
+      n.jsx(vs, { vehicleStatus: e.status, doubleRow: t }),
+    ],
+  });
+}
+const ks = {
+  empty: "ActiveSlots_empty_9aab1ce1",
+  doubleSlots: "ActiveSlots_doubleSlots_2ce42013",
+  slot__double: "ActiveSlots_slot__double_e321ab18",
+};
+function Ms({ width: e, className: t }) {
+  return n.jsx("div", {
+    className: ks.empty,
+    children: n.jsx(Lt, {
+      className: t,
+      style: { width: `${e}px` },
+      children: n.jsx("div", { className: ks.vehicleSlot }),
+    }),
+  });
+}
+function Es({ slotId: e, width: t, currentVehicleId: s, double: a, className: o }) {
+  return void 0 === e
+    ? null
+    : e === xt
+      ? n.jsx(Ms, { className: r(Is, o), width: t })
+      : n.jsx(Ps, {
+          vehicleId: e,
+          selected: e === s,
+          doubleRow: a,
+          className: r(Is, o),
+          style: { width: t },
+        });
+}
+function As({ chunkedSlots: e, classNames: t, ...s }) {
+  return void 0 === e
+    ? null
+    : n.jsx("div", {
+        className: ks.doubleSlots,
+        children: e.map((e, a) =>
+          n.jsx(Es, { ...s, slotId: e, className: r(ks.slot__double, t?.slot) }, a),
+        ),
+      });
+}
+const Rs = { base: "CarouselScroll_3690a837", areaContent: "CarouselScroll_areaContent_f5dd7772" },
+  Bs = "dragging",
+  $s = "idle";
+function Ts({
+  api: e,
+  children: t,
+  className: s,
+  areaClassNames: a,
+  staticContent: o,
+  disabled: l,
+  onDraggingState: d,
+}) {
+  const { animationScroll: c, applyScroll: u, setDisabled: m } = e,
+    _ = T(e, L.horizontal, void 0, { gapBeforeStart: 5 });
+  return (
+    i.useEffect(() => {
+      d?.(_.type === Bs);
+    }, [_.type, d]),
+    i.useEffect(() => {
+      m(l);
+    }, [l, m]),
+    i.useEffect(
+      () =>
+        W(() => {
+          _.type === $s && c.scrollPosition.idle && u(c.scrollPosition.get());
+        }),
+      [c.scrollPosition, _, u],
+    ),
+    n.jsx("div", {
+      className: r(Rs.base, s),
+      children: n.jsxs(O, {
+        className: a?.base,
+        classNames: {
+          wrapper: r(Rs.areaWrapper, a?.wrapper),
+          content: r(Rs.areaContent, a?.content),
+        },
+        children: [t, o],
+      }),
+    })
+  );
+}
+const Ws = {
+  button: "ArrowButton_button_7654af94",
+  icon: "ArrowButton_icon_35e5294f",
+  button__left: "ArrowButton_button__left_5327085d",
+  background: "ArrowButton_background_5327085d",
+  border: "ArrowButton_border_5327085d",
+  overlay: "ArrowButton_overlay_c36cbc33",
+  content: "ArrowButton_content_ff5598c7",
+};
+function Os({ direction: e, className: t, ...s }) {
+  return n.jsx(q, {
+    ...s,
+    classNames: {
+      base: r(Ws.button, Ws[`button__${e}`], t),
+      background: Ws.background,
+      border: Ws.border,
+      overlay: Ws.overlay,
+      content: Ws.content,
+    },
+    theme: q.themes.secondary,
+    size: q.sizes.small,
+    autoAlignContent: !1,
+    soundTarget: "carousel:arrow_button",
+    children: n.jsx(j, { path: "hangar.carousel.buttonArrow", className: Ws.icon }),
+  });
+}
+Os.direction = { up: "up", right: "right", down: "down", left: "left" };
+const Ls = {
+  navButtonWrapper: "CarouselNavButtons_navButtonWrapper_a13c2a68",
+  navButton: "CarouselNavButtons_navButton_adcc2e9b",
+  navButton__left: "CarouselNavButtons_navButton__left_5f6dc3a0",
+  navButton__right: "CarouselNavButtons_navButton__right_66b4f03f",
+  navButton__hidden: "CarouselNavButtons_navButton__hidden_69011a0b",
+  mask: "CarouselNavButtons_mask_17bb1a0e",
+  mask__both: "CarouselNavButtons_mask__both_7294632e",
+  mask__left: "CarouselNavButtons_mask__left_e8bc4c90",
+  mask__right: "CarouselNavButtons_mask__right_6be519f7",
+};
+function qs(e) {
+  return ({ button: t }) => {
+    0 === t && e();
+  };
+}
+function Hs({ itemWidth: e, api: t, children: s }) {
+  const a = i.useRef(null),
+    [o, l] = i.useState(!1),
+    { applyScroll: d, animationScroll: c, disabled: u } = t,
+    [m, _] = H(t),
+    g = m || u,
+    p = _ || u;
+  function h(t) {
+    function s() {
+      const s = c.scrollPosition.get();
+      d(s + t * e);
+    }
+    o || (s(), (a.current = window.setInterval(s, 100)), l(!0));
+  }
+  function f() {
+    (null !== a.current && (clearInterval(a.current), (a.current = null)), l(!1));
+  }
+  return n.jsxs("div", {
+    className: Ls.navButtonWrapper,
+    children: [
+      n.jsx(Os, {
+        direction: Os.direction.left,
+        onMouseDown: qs(() => h(-1)),
+        onMouseUp: f,
+        onMouseLeave: f,
+        className: r(Ls.navButton, Ls.navButton__left, g && Ls.navButton__hidden),
+      }),
+      n.jsx("div", {
+        className: r(
+          Ls.mask,
+          Ls[`mask__${((b = m), (v = _), b || v ? (b ? (v ? Nt : wt) : Ct) : It)}`],
+        ),
+        children: s,
+      }),
+      n.jsx(Os, {
+        direction: Os.direction.right,
+        onMouseDown: qs(() => h(1)),
+        onMouseUp: f,
+        onMouseLeave: f,
+        className: r(Ls.navButton, Ls.navButton__right, p && Ls.navButton__hidden),
+      }),
+    ],
+  });
+  var b, v;
+}
+const Ds = "CarouselSkeleton_1ac002e3",
+  Vs = "CarouselSkeleton_content_b18f8dd7",
+  Gs = "CarouselSkeleton_scroll_badf82c7";
+function zs(e) {
+  return n.jsx("div", { ...e, className: r(Vs, e.className) });
+}
+function Qs({
+  api: e,
+  widthElement: t,
+  totalElements: s,
+  disabled: a,
+  onDraggingState: o,
+  renderElement: i,
+  classNames: l,
+}) {
+  return n.jsx("div", {
+    className: r(Ds, l?.base),
+    children: n.jsx(Hs, {
+      api: e,
+      itemWidth: t,
+      children: n.jsx(D, {
+        api: e,
+        elementWidth: t - V(1),
+        direction: "horizontal",
+        totalElements: s,
+        wrappers: { Content: zs },
+        className: r(Gs, l?.scroll),
+        renderScroll: (t) =>
+          n.jsx(Ts, { ...t, api: e, disabled: a, onDraggingState: o, children: t.children }),
+        renderElement: (e) => (i ? i(e) : n.jsx(Ms, { className: l?.element, width: t })),
+      }),
+    }),
+  });
+}
+function Us({ api: e, carouselRows: t }) {
+  const s = (function (e) {
+      const t = F(St.default, St.breakpoints);
+      return V(2 === e ? t.double : t.single);
+    })(t),
+    [a, n] = i.useState({ carouselRows: 0, cardWidth: 0, visibleSlots: 0 });
+  return (
+    i.useLayoutEffect(() => {
+      function a() {
+        const a = e.getWrapperSize();
+        a &&
+          n(
+            2 !== t
+              ? { visibleSlots: Math.ceil(a / s), cardWidth: s, carouselRows: t }
+              : { visibleSlots: Math.ceil((a / s) * t), cardWidth: s, carouselRows: t },
+          );
+      }
+      a();
+      return new G().add(e.events.on("resizeHandled", a)).add(e.events.on("recalculateContent", a))
+        .dispose;
+    }, [e, s, t]),
+    a
+  );
+}
+const Fs = "CarouselContent_draggingOverlay_197a34b",
+  Ks = "CarouselContent_c99c427d",
+  Xs = "CarouselContent_base__visible_7c3ff06f",
+  Js = "CarouselContent_card_b986acca",
+  Ys = "CarouselContent_card__inactive_d480be2c",
+  Zs = o(function () {
+    const [e, t] = i.useState(!1),
+      s = At(),
+      a = Mt(),
+      { api: o } = K(),
+      d = a.model.carouselRowCount.get(),
+      c = s.model.prebattleModeActive(),
+      u = s.model.current.ids(),
+      m = s.model.current.list(),
+      _ = s.model.selectedVehicle(),
+      { currentIndex: g } = (function (e, t) {
+        return i.useMemo(() => {
+          if (!t) return { currentIndex: -1, currentPosition: -1 };
+          const s = e.indexOf(t);
+          return { currentIndex: s, currentPosition: s >= 0 ? s + 1 : -1 };
+        }, [e, t]);
+      })(u, _?.id),
+      { carouselRows: p, cardWidth: h, visibleSlots: f } = Us({ api: o, carouselRows: d }),
+      { activeSlotsAmount: b, activeSlotsIds: v } =
+        ((y = u),
+        (x = f),
+        i.useMemo(() => {
+          if (!x) return { activeSlotsAmount: 0, activeSlotsIds: [] };
+          const e = y.length,
+            t = Math.max(0, x - e);
+          return { activeSlotsAmount: e, activeSlotsIds: [...y, ...Array(t).fill(xt)] };
+        }, [y, x]));
+    var y, x;
+    const C =
+      ((w = v),
+      i.useMemo(() => {
+        const e = [];
+        for (let t = 0; t < w.length; t += 2) e.push(w.slice(t, t + 2));
+        return (1 === e.at(-1)?.length && e.at(-1)?.push(xt), e);
+      }, [w]));
+    var w;
+    (!(function (e, t, s, a, n, r) {
+      const o = i.useRef(null);
+      i.useLayoutEffect(() => {
+        function i() {
+          const i = e.getWrapperSize(),
+            l = e.animationScroll.scrollPosition.get();
+          if (!i) return;
+          r && e.applyScroll(0, { immediate: !0 });
+          const d = s - V(1),
+            c = l,
+            u = l + i,
+            m = d * Math.floor(t / a),
+            _ = m + d,
+            g = m - (Math.floor(i / d) / 2) * d;
+          m > c && _ < u
+            ? (o.current && n && 0 !== o.current - n && e.applyScroll(g, { immediate: !0 }),
+              (o.current = n))
+            : ((o.current = n), e.applyScroll(g, { immediate: !0 }));
+        }
+        return (
+          i(),
+          new G().add(e.events.on("resizeHandled", i)).add(e.events.on("recalculateContent", i))
+            .dispose
+        );
+      }, [t, e, s, a, r, n]);
+    })(o, g, h, p, u.length, f > b),
+      (function (e, t, s, a, n) {
+        const r = 2 === a;
+        function o(a) {
+          s(-1 !== e ? t[e + a].inventoryId : t[0].inventoryId);
+        }
+        const i = [
+          {
+            key: z.ARROW_DOWN,
+            blockKey: !r || e % a === a - 1 || e === t.length - 1,
+            action: () => o(1),
+          },
+          { key: z.ARROW_UP, blockKey: !r || e % a === 0, action: () => o(-1) },
+          { key: z.ARROW_LEFT, blockKey: r ? e < a : 0 === e, action: () => o(-a) },
+          {
+            key: z.ARROW_RIGHT,
+            blockKey: r ? e > t.length - (a + 1) : e === t.length - 1,
+            action: () => o(a),
+          },
+          { key: z.HOME, blockKey: 0 === t.length, action: () => s(t[0].inventoryId) },
+          { key: z.END, blockKey: 0 === t.length, action: () => s(t[t.length - 1].inventoryId) },
+        ];
+        for (const { key: l, blockKey: d, action: c } of i) {
+          const e = n || d ? z.NONE : l;
+          Q(e, c);
+        }
+      })(g, m, s.controls.select, p, 0 === u.length || c));
+    const I = (function (e, t) {
+      const [s, a] = i.useState(0 === t),
+        n = U();
+      return (
+        i.useEffect(() => {
+          if (s || 0 === t) return a(!0);
+          function r() {
+            (a(!0), o.dispose(), n.clear());
+          }
+          n.run(r);
+          const o = new G()
+            .add(n.clear)
+            .add(e.events.on("resizeHandled", () => n.run(r)))
+            .add(e.events.on("recalculateContent", () => n.run(r)));
+          return o.dispose;
+        }, [e, t, s, n]),
+        s
+      );
+    })(o, u.length);
+    return n.jsxs(n.Fragment, {
+      children: [
+        n.jsx(Qs, {
+          api: o,
+          widthElement: h,
+          totalElements: 2 === p ? C.length : v.length,
+          disabled: f > b,
+          onDraggingState: t,
+          classNames: { base: r(Ks, I && Xs), element: r(Js, e && Ys) },
+          renderElement: (t) => {
+            const s = r(Js, e && Ys);
+            return 2 === p
+              ? n.jsx(X, {
+                  failure: () => n.jsx(Ms, { className: s, width: h }),
+                  children: n.jsx(
+                    As,
+                    {
+                      chunkedSlots: C[t],
+                      currentVehicleId: _?.id,
+                      width: h,
+                      classNames: { slot: s },
+                      double: 2 === p,
+                    },
+                    t,
+                  ),
+                })
+              : n.jsx(X, {
+                  failure: () => n.jsx(Ms, { className: s, width: h }),
+                  children: n.jsx(
+                    Es,
+                    {
+                      slotId: v[t],
+                      currentVehicleId: _?.id,
+                      width: h,
+                      className: s,
+                      double: 2 === p,
+                    },
+                    v[t] ?? t,
+                  ),
+                });
+          },
+        }),
+        l.createPortal(e && n.jsx("div", { className: Fs }), document.body),
+      ],
+    });
+  }),
+  ea = (function () {
+    const e = "undefined" != typeof document && document.createElement("link").relList;
+    return e && e.supports && e.supports("modulepreload") ? "modulepreload" : "preload";
+  })(),
+  ta = {},
+  sa = function (e, t, s) {
+    let a = Promise.resolve();
+    if (t && t.length > 0) {
+      let e = function (e) {
+        return Promise.all(
+          e.map((e) =>
+            Promise.resolve(e).then(
+              (e) => ({ status: "fulfilled", value: e }),
+              (e) => ({ status: "rejected", reason: e }),
+            ),
+          ),
+        );
+      };
+      const n = document.getElementsByTagName("link"),
+        r = document.querySelector("meta[property=csp-nonce]"),
+        o = r?.nonce || r?.getAttribute("nonce");
+      a = e(
+        t.map((e) => {
+          if (
+            ((e = (function (e, t) {
+              return new URL(e, t).href;
+            })(e, s)),
+            e in ta)
+          )
+            return;
+          ta[e] = !0;
+          const t = e.endsWith(".css"),
+            a = t ? '[rel="stylesheet"]' : "";
+          if (s)
+            for (let s = n.length - 1; s >= 0; s--) {
+              const a = n[s];
+              if (a.href === e && (!t || "stylesheet" === a.rel)) return;
+            }
+          else if (document.querySelector(`link[href="${e}"]${a}`)) return;
+          const r = document.createElement("link");
+          return (
+            (r.rel = t ? "stylesheet" : ea),
+            t || (r.as = "script"),
+            (r.crossOrigin = ""),
+            (r.href = e),
+            o && r.setAttribute("nonce", o),
+            document.head.appendChild(r),
+            t
+              ? new Promise((t, s) => {
+                  (r.addEventListener("load", t),
+                    r.addEventListener("error", () =>
+                      s(new Error(`Unable to preload CSS for ${e}`)),
+                    ));
+                })
+              : void 0
+          );
+        }),
+      );
+    }
+    function n(e) {
+      const t = new Event("vite:preloadError", { cancelable: !0 });
+      if (((t.payload = e), window.dispatchEvent(t), !t.defaultPrevented)) throw e;
+    }
+    return a.then((t) => {
+      for (const e of t || []) "rejected" === e.status && n(e.reason);
+      return e().catch(n);
+    });
+  },
+  aa = "EntryPoint_368cd93c",
+  na = "EntryPoint_content_ec86add3",
+  ra = i.lazy(() =>
+    sa(() => import("../../../chunks/entry_point.js"), __vite__mapDeps([0, 1]), import.meta.url),
+  );
+function oa() {
+  const e = k.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
+  return n.jsx(J, {
+    id: e,
+    children: n.jsx(i.Suspense, {
+      children: n.jsx("div", {
+        className: aa,
+        children: n.jsx("div", { className: na, children: n.jsx(ra, {}) }),
+      }),
+    }),
+  });
+}
+const ia = i.memo(function () {
+    return n.jsxs(X, { children: [n.jsx(Y, { children: n.jsx(Zs, {}) }), n.jsx(oa, {})] });
+  }),
+  la = "Perk_41a4186b",
+  da = k.resolve("aliases");
+function ca({ name: e, tooltipId: t }) {
+  const s = Z({
+      resId: da.read((e) => e.battle_royale.loadoutPanelContainer.Commander("resId")),
+      args: { tooltipId: t },
+    }),
+    a = F(
+      { value: "x48x48" },
+      { medium: { value: "x48x48" }, large: { value: "x64x64" }, extraLarge: { value: "x80x80" } },
+    );
+  return n.jsx("div", {
+    ...s,
+    className: la,
+    style: {
+      backgroundImage: `url(${((r = a.value), (o = e), `R.images.battle_royale.gui.maps.icons.commanderPerks.${r}.${o}`)})`,
+    },
+  });
+  var r, o;
+}
+const [ua, ma] = b()(({ observableModel: t }) => {
+    const s = { root: t.object(), eventInfo: t.object("eventInfo") },
+      a = e(
+        (e) =>
+          s.eventInfo.get().subMode === nt.StPatrick
+            ? {
+                commanderIconPath:
+                  R.images.battle_royale.gui.maps.st_patrick.icons.commanders.$dyn(e),
+              }
+            : { commanderIconPath: R.images.battle_royale.gui.maps.icons.commanders.$dyn(e) },
+        { equals: d.structural },
+      );
+    return {
+      ...t.primitives(["nation"]),
+      perks: t.arrayClone("perkList"),
+      eventInfo: t.object("eventInfo"),
+      computes: { settings: a },
+    };
+  }, v),
+  _a = "Commander_98c5d9f0",
+  ga = "Commander_c6dda4fe",
+  pa = "Commander_perks_e59f3f5c",
+  ha = k.resolve("views"),
+  fa = o(function () {
+    const { model: e } = ma(),
+      t = e.nation.get(),
+      s = e.computes.settings(t).commanderIconPath,
+      a = ee(
+        "commander",
+        c.useMemo(
+          () => ({
+            commanderNation: t,
+            resId: ha.read((e) => e.battle_royale.mono.lobby.tooltips.commander("resId")),
+          }),
+          [t],
+        ),
+      );
+    return n.jsxs("div", {
+      className: _a,
+      children: [
+        n.jsx("div", { ...a, className: ga, style: { backgroundImage: `url(${s})` } }),
+        n.jsx("div", {
+          className: pa,
+          children: te(e.perks.get(), (e) =>
+            e.name ? n.jsx(ca, { name: e.name, tooltipId: e.tooltipID }, e.name) : null,
+          ),
+        }),
+      ],
+    });
+  }),
+  [ba, va] = b()(
+    ({ observableModel: e }) => ({
+      shells: e.arrayClone("shells"),
+      equipment: e.arrayClone("equipment"),
+      respawnAbility: e.object("respawnAbility"),
+    }),
+    ({ externalModel: e }) => ({ showUpgrades: e.createCallbackNoArgs("showUpgrades") }),
+  ),
+  ya = {
+    base: "Item_d8443c58",
+    icon: "Item_icon_121f9b9c",
+    counter: "Item_counter_4fba53c1",
+    base__shell: "Item_base__shell_5f6fcc69",
+  };
+function xa(e) {
+  const t = ee(
+      e.type,
+      c.useMemo(() => ({ ...e.tooltipArgs }), [e.tooltipArgs]),
+    ),
+    { resId: s, ...a } = e.tooltipArgs,
+    o = Z({ args: { ...a }, resId: s }),
+    i = "shell" !== e.type ? t : o;
+  return n.jsxs("div", {
+    className: r(ya.base, ya[`base__${e.type}`], e.className),
+    ...i,
+    children: [
+      n.jsx("div", { className: ya.icon, style: { backgroundImage: `url(${e.imagePath})` } }),
+      Boolean(e.quantity) && n.jsx("div", { className: ya.counter, children: e.quantity }),
+    ],
+  });
+}
+const Ca = xa,
+  wa = xa,
+  Ia = xa,
+  Na = "Content_8fd0e0d7",
+  ja = "Content_shell_293b22aa",
+  Pa = "Content_ability_4a4627b3",
+  Sa = "Content_respawn_64e3af9f",
+  ka = k.resolve("aliases"),
+  Ma = k.resolve("images"),
+  Ea = k.resolve("views"),
+  Aa = Ea.read((e) => e.battle_royale.mono.lobby.tooltips.ability("resId")),
+  Ra = Ea.read((e) => e.battle_royale.mono.lobby.tooltips.respawn("resId")),
+  Ba = ka.read((e) => e.battle_royale.loadoutPanelContainer.Loadout("resId")),
+  $a = o(function () {
+    const { model: e } = va(),
+      {
+        platoonTimeToResurrect: t,
+        platoonRespawnPeriod: s,
+        soloRespawnPeriod: a,
+      } = e.respawnAbility.get(),
+      r = F(
+        { value: ["small", "c_48x48"] },
+        {
+          medium: { value: ["small", "c_48x48"] },
+          large: { value: ["x64x64", "c_64x64"] },
+          extraLarge: { value: ["medium", "c_80x80"] },
+        },
+      ),
+      [o, i] = r.value;
+    return n.jsxs("div", {
+      className: Na,
+      children: [
+        e.shells
+          .get()
+          .map(({ iconName: e, intCD: t, quantity: s }) =>
+            n.jsx(
+              Ia,
+              {
+                quantity: s,
+                imagePath: Ma.readOrEmpty(`shell.${o}.${e}`),
+                type: "shell",
+                tooltipArgs: { intCD: t, resId: Ba },
+                className: ja,
+              },
+              t,
+            ),
+          ),
+        e.equipment
+          .get()
+          .map(
+            ({
+              quantity: e,
+              iconName: t,
+              title: s,
+              cooldownSeconds: a,
+              description: r,
+              intCD: o,
+            }) =>
+              n.jsx(
+                Ca,
+                {
+                  quantity: e,
+                  imagePath: Ma.readOrEmpty(`battleRoyale.artefact.${i}.${t}`),
+                  className: Pa,
+                  type: "ability",
+                  tooltipArgs: {
+                    iconName: t,
+                    title: s,
+                    cooldownSeconds: a,
+                    description: r,
+                    resId: Aa,
+                  },
+                },
+                o,
+              ),
+          ),
+        n.jsx(wa, {
+          imagePath: Ma.readOrEmpty(`battleRoyale.artefact.${i}.respawn`),
+          className: Sa,
+          type: "respawn",
+          tooltipArgs: {
+            platoonTimeToResurrect: t,
+            platoonRespawnPeriod: s,
+            soloRespawnPeriod: a,
+            resId: Ra,
+          },
+        }),
+      ],
+    });
+  }),
+  Ta = "UpgradesButton_6e5b700c",
+  Wa = "UpgradesButton_icon_3c7ab7cc",
+  Oa = "UpgradesButton_overlay_3ece025a",
+  La = k.resolve("views"),
+  qa = o(function () {
+    const { controls: e } = va(),
+      t = A(),
+      s = ee("upgrades button", {
+        resId: La.read((e) => e.battle_royale.mono.lobby.tooltips.upgrades_button("resId")),
+      });
+    return n.jsxs("div", {
+      className: Ta,
+      onMouseEnter: function (e) {
+        (s.onMouseEnter(e), t.play("mouse-enter"));
+      },
+      onMouseLeave: s.onMouseLeave,
+      onClick: function () {
+        (s.onClick(), e.showUpgrades(), t.play("click"));
+      },
+      "data-test-id": "BattleRoyaleUpgradesButton",
+      children: [n.jsx("div", { className: Wa }), n.jsx("div", { className: Oa })],
+    });
+  }),
+  Ha = "Loadout_45650ebe",
+  Da = "Loadout_tankPanel_103e0171",
+  Va = "Loadout_upgradeButton_3aed177e",
+  Ga = "Loadout_background_d2d81a6a",
+  za = c.memo(function () {
+    return n.jsx(ua, {
+      options: { rootId: Vc },
+      children: n.jsx(ba, {
+        options: { rootId: Dc },
+        children: n.jsxs("div", {
+          className: Ha,
+          children: [
+            n.jsxs("div", {
+              className: Da,
+              children: [n.jsx("div", { className: Ga }), n.jsx(fa, {}), n.jsx($a, {})],
+            }),
+            n.jsx("div", { className: Va, children: n.jsx(qa, {}) }),
+          ],
+        }),
+      }),
+    });
+  }),
+  Qa = "HeroTankMarker_7a1c486d",
+  Ua = "HeroTankMarker_base__visible_d8b5c003",
+  Fa = "HeroTankMarker_vehicleName_a789e6e5",
+  Ka = "HeroTankMarker_vehicleType_d8b5c003",
+  Xa = I("HeroTankInfo"),
+  Ja = o(
+    i.forwardRef(function (e, t) {
+      const { model: s } = gt(),
+        a = s.type.get(),
+        o = i.useRef(null),
+        [l, d] = i.useState(!1);
+      return (
+        i.useEffect(
+          () =>
+            u(() => {
+              const e = s.heroTankMarker.get();
+              d(e.isVisible);
+              const t = o.current;
+              if (!t) return null;
+              t.style.transform = `translate(${V(e.posx)}px, ${V(e.posy)}px) translate(-50%, -50%)`;
+            }),
+          [s.heroTankMarker],
+        ),
+        n.jsxs(Xa, {
+          ...e,
+          ref: se([t, o]),
+          className: r(Qa, l && Ua),
+          children: [
+            n.jsx("div", { className: Fa, children: s.name.get() }),
+            n.jsx("div", {
+              className: Ka,
+              children:
+                a && n.jsx(j, { path: `vehicleTypes.gold.${ae(a)}`, width: 32, height: 32 }),
+            }),
+          ],
+        })
+      );
+    }),
+  ),
+  Ya = "disabled",
+  Za = "shop",
+  en = "storage",
+  tn = "techtree",
+  sn = "barracks",
+  an = "tournament",
+  nn = "clans",
+  rn = "clan",
+  on = "missions",
+  ln = "personalMissions",
+  dn = "modeSelector",
+  cn = "achievements",
+  un = "replays",
+  mn = {
+    [Za]: "shop",
+    [en]: "storage",
+    [tn]: "techtree",
+    [sn]: "barracks",
+    [an]: "tournament",
+    [nn]: "clans",
+    [rn]: "clan",
+    [on]: "missions",
+    [ln]: "personalMissions",
+    [dn]: "modeSelector",
+    [cn]: "profile",
+    [un]: "replays",
+  },
+  _n = (e) =>
+    i.createElement(
+      "svg",
+      {
+        width: 7,
+        height: 18,
+        viewBox: "0 0 7 18",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      i.createElement("path", {
+        d: "M6.5 0H4.04686L0 9L4.04686 18H6.5L2.5 9L6.5 0Z",
+        fill: "#EEEDE9",
+        fillOpacity: 0.9,
+      }),
+    ),
+  gn = {
+    base: "MenuItem_92bbc5da",
+    base__modeSelectorName: "MenuItem_base__modeSelectorName_28be5e00",
+    base__enabledState: "MenuItem_base__enabledState_6f88d3d1",
+    modeSelector: "MenuItem_modeSelector_1c338d85",
+    modeIcon: "MenuItem_modeIcon_cfd63447",
+    label: "MenuItem_label_8c0d77ba",
+    base__disabledState: "MenuItem_base__disabledState_28be5e00",
+    titleWrapper: "MenuItem_titleWrapper_cf46ff6b",
+    title: "MenuItem_title_8d412cc5",
+    arrow: "MenuItem_arrow_da9a9320",
+    modeName: "MenuItem_modeName_36c0339e",
+    clanEmblem: "MenuItem_clanEmblem_fe5255ab",
+  },
+  pn = "forts",
+  hn = k.resolve("intl"),
+  fn = k.resolve("strings"),
+  bn = {
+    [dn]: "tooltips.header.battleType",
+    [an]: "tooltips.header.buttons.tournaments",
+    [cn]: "tooltips.header.buttons.profile",
+  },
+  vn = {
+    [nn]: "tooltips.header.buttons.clans.turnedOff",
+    [ln]: "tooltips.header.buttons.personalMissionsDisabled",
+    [pn]: "tooltips.header.buttons.forts.turnedOff",
+  };
+function yn(e) {
+  return hn.toUpperCase(
+    fn.readOrEmpty(`menu.headerButtons.${mn[e]}`) ||
+      fn.readOrEmpty(`menu.headerButtons.${e}`) ||
+      `{${e}}`,
+  );
+}
+function xn({
+  name: e,
+  state: t,
+  modeName: s,
+  modeId: a,
+  techTreeEvents: o,
+  clanEmblem: l,
+  onClick: d,
+  modeIconPath: c,
+  battleTypesPath: u = "R.images.gui.maps.icons",
+}) {
+  const m = A(),
+    _ = e === nn && l,
+    g = ne(
+      i.useMemo(
+        () =>
+          (function (e, t) {
+            const s = ((t && vn[e]) || bn[e]) ?? `tooltips.header.buttons.${e}`;
+            return { header: fn.readOrEmpty(`${s}.header`), body: fn.readOrEmpty(`${s}.body`) };
+          })(_ ? pn : e, t === Ya),
+        [e, t, _],
+      ),
+    ),
+    p = re("techtreeDiscount"),
+    h = o && "techtree" === e ? p : g;
+  const f = c ?? `${u}.battleTypes.c_64x64.${a}`;
+  return n.jsx("div", {
+    ...h,
+    className: r(gn.base, gn[`base__${t}State`], gn[`base__${e}Name`]),
+    "data-test-id": e,
+    onMouseEnter: function (e) {
+      (h.onMouseEnter(e),
+        t !== Ya && m.play("mouse-enter", { target: "main-menu-widget:menu-item", original: e }));
+    },
+    onClick: function (s) {
+      (h.onClick(),
+        t !== Ya && (d(e), m.play("click", { target: "main-menu-widget:menu-item", original: s })));
+    },
+    children: (() => {
+      switch (e) {
+        case dn:
+          return n.jsxs(n.Fragment, {
+            children: [
+              n.jsxs("div", {
+                className: gn.modeSelector,
+                children: [
+                  n.jsx("div", { className: gn.label, children: yn(e) }),
+                  s && n.jsx("div", { className: gn.modeName, children: hn.toUpperCase(s) }),
+                  n.jsx("div", { className: gn.modeIcon, style: { backgroundImage: `url(${f})` } }),
+                ],
+              }),
+              n.jsx(_n, { className: gn.arrow }),
+            ],
+          });
+        case nn:
+          return n.jsxs("div", {
+            className: gn.titleWrapper,
+            children: [
+              l &&
+                n.jsx("div", { style: { backgroundImage: `url(${l})` }, className: gn.clanEmblem }),
+              n.jsx("div", { className: gn.title, children: yn(_ ? "clan" : e) }),
+            ],
+          });
+        default:
+          return n.jsx("div", {
+            className: gn.titleWrapper,
+            children: n.jsx("div", { className: gn.title, children: yn(e) }),
+          });
+      }
+    })(),
+  });
+}
+const [Cn, wn] = b()(
+    ({ observableModel: e }) => ({
+      menuItems: e.arrayClone("menuItems"),
+      ...e.primitives(["modeName", "modeId", "hasTechTreeEvents", "clanEmblem"]),
+    }),
+    ({ externalModel: e }) => ({
+      navigateTo: e.createCallback((e) => ({ name: e }), "onNavigate"),
+    }),
+  ),
+  In = "MainMenu_222da7b7",
+  Nn = o(function ({ className: e, battleTypesPath: t, modeIconPath: s }) {
+    const { model: a, controls: o } = wn(),
+      l = a.menuItems.get(),
+      d = a.modeName.get(),
+      c = a.modeId.get(),
+      u = a.hasTechTreeEvents.get(),
+      m = a.clanEmblem.get();
+    return n.jsx("div", {
+      className: r(In, e),
+      children: te(l, (e) =>
+        i.createElement(xn, {
+          ...e,
+          key: e.name,
+          battleTypesPath: t,
+          modeIconPath: s,
+          onClick: o.navigateTo,
+          modeName: d,
+          modeId: c,
+          techTreeEvents: u,
+          clanEmblem: m,
+        }),
+      ),
+    });
+  });
+function jn(e) {
+  const { className: t, battleTypesPath: s, modeIconPath: a, ...r } = e;
+  return n.jsx(Cn, {
+    ...r,
+    children: n.jsx(Nn, { className: t, battleTypesPath: s, modeIconPath: a }),
+  });
+}
+function Pn({ className: e }) {
+  const { controls: t } = ht();
+  return n.jsx("div", {
+    className: e,
+    children: n.jsx(oe, {
+      moveSpace: t.sceneWrapper.onMoveSpace,
+      onMouseOver3dScene: t.sceneWrapper.onMouseOver3dScene,
+    }),
+  });
+}
+const Sn = (e) => {
+  const t = e?.showDelay || 400,
+    s = i.useRef({ ...e.args }),
+    a = i.useRef(null),
+    n = de(),
+    r = B({ ...e, showDelay: 0, args: s.current });
+  return {
+    containerRef: a,
+    tooltipProps: {
+      ...r,
+      onMouseEnter: (o) => {
+        n.run(() => {
+          if (a.current) {
+            const t = a.current.getBoundingClientRect(),
+              n = a.current.parentElement?.getBoundingClientRect();
+            (Object.assign(s.current, e.args),
+              (s.current.positionY = Math.floor(ce(t.y)) - 13),
+              (s.current.positionX = Math.floor(ce(n?.x || t.x)) - 10));
+          }
+          r.onMouseEnter(o);
+        }, t);
+      },
+      onMouseLeave: () => {
+        (n.clear(), r.onMouseLeave());
+      },
+    },
+  };
+};
+function kn() {
+  const { screenWidthRem: e } = ie();
+  return e < le.large.width;
+}
+const Mn = c.createContext(void 0);
+function En() {
+  const e = i.useContext(Mn);
+  return (ue(void 0 !== e, "WidgetAnimationContext is undefined"), e);
+}
+const An = "small",
+  Rn = "big",
+  Bn = "full",
+  $n = "medium",
+  Tn = "small",
+  Wn = "appear",
+  On = "fadeIn",
+  Ln = "slideUpIn",
+  qn = "battlePass",
+  Hn = "missions",
+  Dn = { from: { y: 0, x: 0, opacity: 0, height: 0, width: 0 } };
+function Vn(e) {
+  const t = new Map();
+  for (let s = 0; s <= e.length; s++) {
+    const a = e[s];
+    t.set(a, { rowIndex: s, columnIndex: 0, size: Bn });
+  }
+  return t;
+}
+function Gn(e) {
+  return -(Math.cos(Math.PI * e) - 1) / 2;
+}
+const zn = { duration: 400, easing: Gn };
+const Qn = 100,
+  Un = { duration: 200, easing: Gn };
+function Fn(e, t, s, a = !0) {
+  const n = s.getCardAnimationProps(e),
+    r = s.getCardRow(e),
+    o = s.getMaxCardRow(t),
+    i = s.getVisibleRowsAmount(),
+    l = a ? zn.duration : 0,
+    d = t.includes(e);
+  return {
+    from: d ? { ...n, opacity: 0 } : {},
+    to: n,
+    delay: d ? l + Math.max((i - o) * Qn, 0) : Math.max((i - o - r) * Qn, 0),
+    config: zn,
+  };
+}
+function Kn(e) {
+  return { to: { x: V(ce(e) + 100), opacity: 0 }, config: { duration: 300, easing: Gn } };
+}
+function Xn(e, t, s) {
+  const a = e.dataset.id,
+    n = t.getCard(a),
+    r = t.getCardHeight(a);
+  if (!n || !r) return "";
+  const o = ce(n.getPropValue("opacity")),
+    i = ce(n.getPropValue("height"));
+  if (i < r || 0 === o) return "";
+  const l = ce(n.getPropValue("width")),
+    d = ce(n.getPropValue("y")),
+    c = ce(n.getPropValue("x")),
+    u = t.getCardSize(a) !== Bn,
+    m = Math.round(c),
+    _ = Math.round(c + l) - 1,
+    g = Math.round(d),
+    p = {
+      top: `H${m}x${g}`,
+      bottom: `H${m}x${Math.round(d + i) - 1}`,
+      left: `V${g}x${m}`,
+      right: `V${g}x${_}`,
+    },
+    h = {};
+  return (
+    Object.keys(p).forEach((e) => {
+      const t = !s.has(p[e]) || (u && ("top" === e || "bottom" === e));
+      (t && s.add(p[e]), (h[e] = t));
+    }),
+    (function (e) {
+      return [e?.top, e?.right, e?.bottom, e?.left]
+        .map((e) => (void 0 === e || e ? "1rem" : "0"))
+        .join(" ");
+    })(h)
+  );
+}
+const Jn = {
+    [An]: { gap: 0, cardHeight: 74, cardWidth: 241 },
+    [Rn]: { gap: 0, cardHeight: 74, cardWidth: 319 },
+  },
+  Yn = { [Bn]: 1, [$n]: 0.5, [Tn]: 1 / 3 };
+function Zn(e, t) {
+  return { ...Jn[e], ...t?.[e] };
+}
+class er {
+  constructor(e) {
+    this._widgetConfig = e;
+  }
+  _sortedGroupsCache;
+  _cards = new Map();
+  _cachedLayout;
+  _sliders;
+  get _layout() {
+    return (
+      void 0 === this._cachedLayout && (this._cachedLayout = this._buildLayout()),
+      this._cachedLayout
+    );
+  }
+  get _sortedGroups() {
+    var e, t;
+    return (
+      void 0 === this._sortedGroupsCache &&
+        (this._sortedGroupsCache =
+          ((e = this._widgetConfig.groups),
+          (t = this._groupPositionOverride),
+          Array.from(e.entries()).sort(
+            (e, s) => (t?.get(e[0]) ?? e[1].position) - (t?.get(s[0]) ?? s[1].position),
+          ))),
+      this._sortedGroupsCache
+    );
+  }
+  get _groupPositionOverride() {
+    return new Map(
+      this.sliders.reduce((e, { sliderId: t, items: s }) => {
+        const a = this._widgetConfig.groups.get(t).position + 1;
+        return (s.forEach(({ id: t }) => e.push([t, a])), e);
+      }, []),
+    );
+  }
+  _buildLayout() {
+    const e = {
+        sortedCards: [],
+        animationProps: new Map(),
+        groupCardIds: new Map(),
+        cardToRow: new Map(),
+        cardSizes: new Map(),
+        rowsAmountByGroup: new Map(),
+        visibleRowsAmount: 0,
+      },
+      t = new Map(
+        this.sliders.reduce(
+          (e, { selectedSlideId: t, items: s }) => (
+            s.forEach(({ id: s }) => e.push([s, t === s])),
+            e
+          ),
+          [],
+        ),
+      ),
+      s = this._widgetConfig.visibleRowsAmount + this.sliders.length,
+      a = this._groupPositionOverride;
+    var n;
+    ((e.sortedCards = Array.from(this._cards).sort(([, e], [, t]) => {
+      if (e.groupId !== t.groupId) {
+        const s = this._widgetConfig.groups.get(e.groupId),
+          n = this._widgetConfig.groups.get(t.groupId);
+        if (s && n) {
+          return (a.get(e.groupId) ?? s.position) - (a.get(t.groupId) ?? n.position);
+        }
+      }
+      return e.position - t.position;
+    })),
+      (n = e.groupCardIds),
+      e.sortedCards.forEach(([e, { groupId: t }]) => {
+        (n.has(t) || n.set(t, []), n.get(t)?.push(e));
+      }));
+    let r = 0,
+      o = 0;
+    return (
+      this._sortedGroups.forEach(([a, n]) => {
+        const i = e.groupCardIds.get(a);
+        if (!i || !1 === t.get(a)) return;
+        const {
+          gap: l,
+          cardHeight: d,
+          cardWidth: c,
+          maxRowsAmount: u,
+          layoutCreator: m,
+        } = Zn(this._widgetConfig.size, n.adaptive);
+        r > 0 && !t.has(a) && l && (r += V(l));
+        const _ = V(d),
+          g = i.filter((e) => this._cards.get(e)?.visible),
+          p = (m || n.layoutCreator || Vn)(g, this._widgetConfig.media);
+        let h = 0;
+        for (const t of i) {
+          const a = p.get(t);
+          if (!a) {
+            e.animationProps.set(t, Dn.from);
+            continue;
+          }
+          const { rowIndex: n, columnIndex: i, size: l } = a,
+            d = Math.ceil(c * Yn[l]),
+            m = n + 1,
+            g = o + m,
+            f = void 0 === u || m <= u;
+          (e.cardToRow.set(t, g),
+            e.cardSizes.set(t, l),
+            e.animationProps.set(t, {
+              height: _,
+              width: V(d),
+              opacity: f && s >= g ? 1 : 0,
+              x: V(i * (d - 1)),
+              y: r + n * (_ - 1),
+            }),
+            f && (h = Math.max(m, h)));
+        }
+        ((r += (_ - 1) * h), (o += h), e.rowsAmountByGroup.set(a, h));
+      }),
+      (e.visibleRowsAmount = o),
+      e
+    );
+  }
+  _buildSlidersCache() {
+    const e = (e) =>
+      Array.from(this.getRegisteredCards().entries()).some(([, t]) => t.visible && t.groupId === e);
+    return Array.from(this.getWidgetConfig().groups.entries())
+      .filter(([, { slider: t }]) => void 0 !== t && t.items.filter(({ id: t }) => e(t)).length > 1)
+      .map(([t, { slider: s }]) => {
+        const a = s.items.filter(({ id: t }) => e(t)).sort((e, t) => e.weight - t.weight);
+        return {
+          sliderId: t,
+          selectedSlideId: s.selectedSlideId && e(s.selectedSlideId) ? s.selectedSlideId : a[0].id,
+          items: a,
+        };
+      });
+  }
+  clearGroupsCache() {
+    this._sortedGroupsCache = void 0;
+  }
+  clearCachedLayout() {
+    this._cachedLayout = void 0;
+  }
+  clearSliderCache() {
+    this._sliders = void 0;
+  }
+  clearCache() {
+    (this.clearCachedLayout(), this.clearSliderCache(), this.clearGroupsCache());
+  }
+  register(e, t) {
+    (this._cards.set(e, t), this.clearCache());
+  }
+  updateCard(e, t) {
+    const s = this._cards.get(e);
+    s && (Object.assign(s, t), this.clearCache());
+  }
+  unregister(e) {
+    (this._cards.delete(e), this.clearCache());
+  }
+  getRegisteredCards() {
+    return this._cards;
+  }
+  getWidgetConfig() {
+    return this._widgetConfig;
+  }
+  updateWidgetConfig(e) {
+    (Object.assign(this._widgetConfig, e), this.clearCache());
+  }
+  getCard(e) {
+    return this._cards.get(e);
+  }
+  getCardAnimationProps(e) {
+    return this._layout.animationProps.get(e) || Dn.from;
+  }
+  getCardRow(e) {
+    return this._layout.cardToRow.get(e) || 0;
+  }
+  getCardSize(e) {
+    return this._layout.cardSizes.get(e) || Bn;
+  }
+  getCardHeight(e) {
+    const t = this.getCard(e)?.groupId;
+    if (!t) return;
+    const s = this._widgetConfig.groups.get(t);
+    return Zn(this._widgetConfig.size, s?.adaptive).cardHeight;
+  }
+  getMaxCardRow(e) {
+    return Math.max(...e.map((e) => this.getCardRow(e)));
+  }
+  getVisibleRowsAmount() {
+    return this._layout.visibleRowsAmount;
+  }
+  getGroupCardIds(e) {
+    return this._layout.groupCardIds.get(e) || [];
+  }
+  getSliderById(e) {
+    return this.sliders.find((t) => e === t.sliderId);
+  }
+  get sliders() {
+    return (void 0 === this._sliders && (this._sliders = this._buildSlidersCache()), this._sliders);
+  }
+  get cardPositionsInLayout() {
+    return new Map(this._layout.sortedCards.map(([e], t) => [e, t]));
+  }
+  findMaxVisibleRowsInGroup(e) {
+    const t = this._widgetConfig.groups.get(e);
+    if (!t) return 0;
+    let s = 0;
+    for (let a = 0; a < this._sortedGroups.length; a++) {
+      const [n] = this._sortedGroups[a];
+      if (n === e) {
+        const { maxRowsAmount: e } = Zn(this._widgetConfig.size, t.adaptive),
+          a = this._widgetConfig.visibleRowsAmount - s;
+        return e ? Math.min(a, e) : a;
+      }
+      const r = this._layout.rowsAmountByGroup.get(n);
+      r && (s += r);
+    }
+    return 0;
+  }
+  isCardDisplaying(e) {
+    return void 0 !== this._layout.cardToRow.get(e);
+  }
+  async runCardAnimations(e) {
+    await Promise.all(
+      this._layout.sortedCards.map(async ([t, s]) => {
+        const a = e(t, s);
+        a && (await s.startLayoutAnimation(a));
+      }),
+    );
+  }
+}
+const tr = "Card_82475c",
+  sr = "Card_borderHelper_9f37b536",
+  ar = "Card_border_a649c143",
+  nr = "Card_card__enabled_4c476d8b",
+  rr = {
+    [Wn]: function (e, t, s) {
+      const a = Fn(e, t, s, !1);
+      return { ...a, from: t.includes(e) ? { ...a.from, height: 0 } : a.from };
+    },
+    [On]: Fn,
+    [Ln]: function (e, t, s) {
+      const a = Fn(e, t, s, !1);
+      if (t.includes(e)) {
+        const t = s.getCardAnimationProps(e).y + V(s.getCardHeight(e));
+        return { ...a, from: { ...a.from, y: t } };
+      }
+      return a;
+    },
+  };
+function or({
+  children: e,
+  groups: t,
+  maxVisibleRowsAmount: s,
+  onSlideChanged: a,
+  slidersConfig: r,
+  autostart: o = !0,
+}) {
+  const l = kn() ? An : Rn,
+    d = ie(),
+    c = s ?? ((u = d.screenHeightRem) > 900 ? (u > 1016 ? 7 : 6) : 5);
+  var u;
+  const { enqueue: m, runDequeue: _ } = (function () {
+      const e = i.useRef([]),
+        t = i.useRef(!1),
+        s = i.useRef(!1),
+        a = me(() => {
+          if (t.current || !s.current) return;
+          const n = e.current.shift();
+          n &&
+            ((t.current = !0),
+            n
+              .promise()
+              .then(() => {
+                ((t.current = !1), n.resolve(), a());
+              })
+              .catch(() => {
+                ((t.current = !1), n.reject(), a());
+              }));
+        });
+      return {
+        enqueue: me(
+          (t) =>
+            new Promise((s, n) => {
+              (e.current.push({ promise: t, resolve: s, reject: n }), a());
+            }),
+        ),
+        runDequeue: me(() => {
+          ((s.current = !0), a());
+        }),
+      };
+    })(),
+    g = i.useRef(null),
+    p = i.useRef(o),
+    h = i.useRef(!1),
+    f = i.useRef(new er({ size: l, visibleRowsAmount: c, groups: t, media: d })),
+    b = i.useRef(new Map()),
+    v = me((e) => {
+      const t = g.current?.querySelectorAll(`.${sr}`);
+      t &&
+        (function (e, t, s) {
+          const a = new Set();
+          s && (s.style.borderImageWidth = Xn(s, t, a));
+          const n = t.cardPositionsInLayout;
+          Array.from(e)
+            .sort((e, t) => {
+              const s = n.get(e.dataset.id) ?? 0;
+              return (n.get(t.dataset.id) ?? 0) - s;
+            })
+            .forEach((e) => {
+              e !== s && (e.style.borderImageWidth = Xn(e, t, a));
+            });
+        })(t, f.current, e);
+    }),
+    y = me(async (e) => {
+      (v(),
+        await f.current.runCardAnimations((t, s) => {
+          const a = e({ id: t, settings: s });
+          if (void 0 !== a) return { ...a, onChange: () => v() };
+        }),
+        v());
+    }),
+    x = me(async (e = !0) => {
+      if (!p.current) return;
+      let t = 0,
+        s = 0;
+      await y(({ id: a, settings: n }) => {
+        const r = f.current.getCardAnimationProps(a),
+          o = r.y,
+          i = n.getPropGoalValue("y");
+        let l = 0;
+        return (
+          i !== o && (0 === n.getPropGoalValue("x") && (i > o ? t++ : s++), (l = i > o ? t : s)),
+          { delay: e ? 0 : l * Qn, to: r, immediate: e, config: zn }
+        );
+      });
+    }),
+    C = me(async (e, t = Wn) => {
+      const s = e.filter((e) => {
+        const t = f.current.getCard(e);
+        return void 0 !== t && !t.visible;
+      });
+      if (!s.length) return;
+      s.forEach((e) => {
+        f.current.updateCard(e, { visible: !0 });
+      });
+      const a = rr[t];
+      await y((e) => a(e.id, s, f.current));
+    }),
+    w = me((e, t = !0) => !(t && !f.current.getCard(e)?.visible) && f.current.isCardDisplaying(e)),
+    I = _e(),
+    N = me((e, t) => {
+      const s = f.current.getSliderById(e),
+        n = b.current.get(e) || s?.selectedSlideId;
+      if (!s || !s.items.some(({ id: e }) => t === e) || n === t) return;
+      const r = n,
+        o =
+          s.items.findIndex(({ id: e }) => e === r) < s.items.findIndex(({ id: e }) => e === t)
+            ? "left"
+            : "right",
+        i = (e, t) =>
+          Array.from(f.current.getRegisteredCards().entries())
+            .filter(([, t]) => t.groupId === e)
+            .forEach(([e]) => t(e)),
+        l = b.current.has(e);
+      (b.current.set(e, t),
+        I.trigger("change", e, t, r, o),
+        a?.(e, t),
+        l ||
+          m(async () => {
+            const t = new Map(f.current.getWidgetConfig().groups),
+              s = t.get(e);
+            if (!s || !s.slider) return;
+            const a = b.current.get(e);
+            if ((b.current.delete(e), a === s.slider.selectedSlideId)) return;
+            const n = new Map();
+            (i(r, (e) =>
+              n.set(
+                e,
+                (function (e, t, s) {
+                  const a = s.getCardAnimationProps(e);
+                  if (1 !== a.opacity) return;
+                  const n = "left" === t ? -1 : 1;
+                  return { to: { x: a.x + V(50 * n), opacity: 0 }, config: Un };
+                })(e, o, f.current),
+              ),
+            ),
+              (s.slider.selectedSlideId = a),
+              f.current.updateWidgetConfig({ groups: t }),
+              i(a, (e) =>
+                n.set(
+                  e,
+                  (function (e, t, s) {
+                    const a = s.getCardAnimationProps(e);
+                    if (1 !== a.opacity) return;
+                    const n = "left" === t ? -1 : 1;
+                    return {
+                      from: { ...a, x: a.x - V(50 * n), opacity: 0 },
+                      to: { x: a.x, opacity: 1 },
+                      delay: Un.duration,
+                      config: Un,
+                    };
+                  })(e, o, f.current),
+                ),
+              ),
+              await y((e) => n.get(e.id)));
+          }));
+    }),
+    j = me(() => {
+      (p.current ? console.warn("Animations loop already started") : ((p.current = !0), x()),
+        h.current || ((h.current = !0), _()));
+    }),
+    P = i.useMemo(() => {
+      const e = (e, t) => {
+          const s = new Map(f.current.getWidgetConfig().groups);
+          (s.set(e, t), f.current.updateWidgetConfig({ groups: s }));
+        },
+        t = (e) => {
+          const t = new Map(f.current.getWidgetConfig().groups);
+          (t.delete(e), f.current.updateWidgetConfig({ groups: t }));
+        },
+        s = (e, t) => {
+          const s = f.current.getSliderById(e);
+          void 0 === s || t < 0 || s.items.length <= t || N(e, s.items[t].id);
+        };
+      return {
+        getImmutableGroupsConfig: () => new Map(f.current.getWidgetConfig().groups),
+        updateGroupsConfig: (e) => {
+          const t = new Map(f.current.getWidgetConfig().groups);
+          (Array.from(e.entries()).forEach((e) => t.set(...e)),
+            f.current.updateWidgetConfig({ groups: t }));
+        },
+        registerCard: (e, t) => {
+          f.current.register(e, t);
+        },
+        unregisterCard: (e) => {
+          f.current.unregister(e);
+        },
+        updateCard: (e, t) => {
+          f.current.updateCard(e, t);
+        },
+        isVisible: (e) => Boolean(f.current.getCard(e)?.visible),
+        isUnmounting: (e) => Boolean(f.current.getCard(e)?.unmounting),
+        isDisplaying: w,
+        findMaxVisibleRowsInGroup: (e) => f.current.findMaxVisibleRowsInGroup(e),
+        applyLayout: x,
+        appear: C,
+        addGroupConfig: e,
+        removeGroupConfig: t,
+        slider: {
+          addSlider: (t, s) => {
+            (e(t, s), I.trigger("configUpdated"));
+          },
+          removeSlider: (e) => {
+            void 0 !== f.current.getWidgetConfig().groups.get(e)?.slider
+              ? (t(e), I.trigger("configUpdated"))
+              : console.warn(`Trying to remove regular group ${e} from removeSlider`);
+          },
+          changeSlide: N,
+          addSlide: (e, t, s = !0) => {
+            if (s) {
+              const s = r?.get(e)?.items.some(({ id: e }) => e === t.id);
+              if (!s) return void console.warn(`Slide ${t.id} is disabled`);
+            }
+            const a = f.current.getWidgetConfig().groups.get(e);
+            void 0 !== a?.slider
+              ? a.slider.items.some(({ id: e }) => e === t.id)
+                ? console.warn(`Slide ${t.id} already exists`)
+                : (a.slider.items.push(t), f.current.clearCache(), I.trigger("configUpdated"))
+              : console.warn(`No slider with id ${e}`);
+          },
+          removeSlide: (e, t) => {
+            const s = f.current.getWidgetConfig().groups.get(e);
+            if (void 0 === s?.slider) return;
+            const a = s.slider.items.findIndex(({ id: e }) => e === t);
+            -1 !== a &&
+              (s.slider.items.splice(a, 1), f.current.clearCache(), I.trigger("configUpdated"));
+          },
+          slideToIndex: s,
+          slideNext: (e) => {
+            const t = f.current.getSliderById(e);
+            if (void 0 === t) return;
+            const a = b.current.get(e) || t.selectedSlideId;
+            if (void 0 === a) return void s(e, 1);
+            const n = t.items.findIndex(({ id: e }) => e === a);
+            -1 !== n && s(e, (n + 1) % t.items.length);
+          },
+          slidePrev: (e) => {
+            const t = f.current.getSliderById(e);
+            if (void 0 === t) return;
+            const a = b.current.get(e) || t.selectedSlideId;
+            if (void 0 === a) return void s(e, t.items.length - 1);
+            const n = t.items.findIndex(({ id: e }) => e === a);
+            -1 !== n && s(e, (n + t.items.length - 1) % t.items.length);
+          },
+          rebuild: () => {
+            (f.current.clearCache(), I.trigger("configUpdated"));
+          },
+          getSliders: () => f.current.sliders,
+          events: { on: I.on, off: I.off },
+        },
+        disappear: async (e) => {
+          (f.current.updateCard(e, { visible: !1 }),
+            await y((t) => {
+              if (e === t.id) return Kn(t.settings.getPropGoalValue("x"));
+            }));
+        },
+        disappearGroups: async (e) => {
+          const t = [];
+          (e.forEach((e) => {
+            for (const s of f.current.getGroupCardIds(e)) t.push(s);
+          }),
+            t.forEach((e) => f.current.updateCard(e, { visible: !1, unmounting: !0 })),
+            await y((e) => {
+              const s = t.indexOf(e.id);
+              if (-1 !== s)
+                return { ...Kn(e.settings.getPropGoalValue("x")), delay: Qn * (t.length - s) };
+            }));
+        },
+        updateBorders: v,
+        readyForAnimations: h,
+        enqueue: m,
+        start: j,
+      };
+    }, [w, x, C, v, m, j, y, N, I, r]);
+  return (
+    i.useEffect(() => {
+      (f.current.updateWidgetConfig({ size: l, visibleRowsAmount: c, media: d }), x());
+    }, [x, l, c, d]),
+    i.useEffect(() => {
+      const e = f.current.getWidgetConfig().groups;
+      void 0 !== r &&
+        (Array.from(r.entries()).forEach(([t, s]) => {
+          const a = e.get(t);
+          a && (a.slider = { ...s });
+        }),
+        f.current.clearCache(),
+        I.trigger("configUpdated"));
+    }, [r, I]),
+    i.useEffect(() => {
+      p.current && !h.current && ((h.current = !0), _());
+    }),
+    i.useEffect(
+      () =>
+        ge(() => {
+          (f.current.clearCache(), x());
+        }),
+      [x],
+    ),
+    n.jsx(Mn.Provider, { value: P, children: n.jsx("div", { ref: g, children: e }) })
+  );
+}
+const ir = i.createContext(null);
+function lr() {
+  const e = i.useContext(ir);
+  return (ue(null !== e, "AnimationsContext is null"), e);
+}
+function dr(e, t, s = e) {
+  return e + "+" + t + "+" + s;
+}
+function cr(e, t, ...s) {
+  let a = e.current;
+  if (0 == s.length) return !1;
+  for (let n = 0; n < s.length - 1; n++) {
+    const e = s[n];
+    ((a[e] = a[e] ?? {}), (a = a[e]));
+  }
+  return ((a[s[s.length - 1]] = t), !0);
+}
+function ur(e, ...t) {
+  const s = (e, a) => {
+    if (a === t.length) return pe(e);
+    const n = t[a];
+    return n in e && ((a === t.length - 1 || s(e[n], a + 1)) && delete e[n], pe(e));
+  };
+  return s(e.current, 0);
+}
+function mr(e, ...t) {
+  let s = e.current;
+  return t.reduce((e, t) => e?.[t], s);
+}
+function _r(e, ...t) {
+  let s = e.current;
+  return void 0 !== t.reduce((e, t) => e?.[t], s);
+}
+function gr(e, t, s, a) {
+  Object.entries(t).forEach(([t, n]) => {
+    pe(n)
+      ? _r(s, e, t, e) && a(t, e)
+      : Object.entries(n).forEach(([n, r]) => {
+          const o = n || e;
+          _r(s, e, t, o) && a(t, o, r);
+        });
+  });
+}
+function pr({ storage: e, id: t, emitter: s, providerCfg: a }) {
+  _r(e, t) || hr({ id: t, emitter: s, providerCfg: a });
+}
+function hr({ id: e, emitter: t, providerCfg: s }) {
+  const a = s?.triggerId || e;
+  (t.trigger(a, { id: e, ...s?.triggerParams }),
+    s?.triggerCallback?.({ id: e, ...s?.triggerParams }));
+}
+function fr({ sound: e, soundCfg: t }) {
+  e && t && ("string" == typeof t ? e.play(t) : e.play(t.eventName, t?.event));
+}
+function br({ children: e }) {
+  const t = _e(),
+    s = i.useRef({}),
+    a = i.useRef({}),
+    r = i.useRef({}),
+    o = he(),
+    l = me(({ id: e, animName: t, elementId: a = e }) => _r(s, e, t, a)),
+    d = me((e, t, a = e) => {
+      ur(s, e, t, a);
+    }),
+    c = me(
+      ({ id: e, animName: t, config: a, elementId: n = e }) => (
+        cr(s, a, e, t, n),
+        () => d(e, t, n)
+      ),
+    ),
+    u = me(
+      ({
+        id: e,
+        animName: t,
+        elementId: a = e,
+        animCallParams: n,
+        providerCfg: r,
+        soundCfg: i,
+      }) => {
+        const l = mr(s, e, t, a);
+        (l &&
+          (r?.skip
+            ? l.skip({ ...n, ...r?.animCallParams })
+            : l.start({ ...n, ...r?.animCallParams })),
+          fr({ sound: o, soundCfg: i }));
+      },
+    ),
+    m = me(({ id: e, animName: s, elementId: n = e, providerCfg: r = {} }) => {
+      const o = t.on(dr(e, s, n), () => {
+        (ur(a, e, s, n), pr({ storage: a, id: e, emitter: t, providerCfg: r }), o());
+      });
+      cr(a, !0, e, s, n);
+    }),
+    _ = me(({ complexId: e, id: s, animName: a, elementId: n = s, providerCfg: o }) => {
+      const i = t.on(dr(s, a, n), function () {
+          (!(function ({
+            storage: e,
+            complexId: t,
+            groupId: s,
+            animName: a,
+            elementId: n,
+            emitter: r,
+            providerCfg: o,
+          }) {
+            let i = mr(e, t, s, a);
+            i &&
+              (i.delete(n),
+              i.size || ur(e, t, s, a),
+              pr({ storage: e, id: t, emitter: r, providerCfg: o }));
+          })({
+            storage: r,
+            complexId: e,
+            groupId: s,
+            animName: a,
+            elementId: n,
+            emitter: t,
+            providerCfg: o,
+          }),
+            i());
+        }),
+        l = mr(r, e, s, a);
+      l ? l.add(n) : cr(r, new Set().add(n), e, s, a);
+    }),
+    g = me(({ groupId: e, groupCfg: n, providerCfg: r, soundCfg: i }) => {
+      (ur(a, e),
+        r?.skip ||
+          r?.skipTrigger ||
+          gr(e, n, s, (t, s) => {
+            m({ id: e, animName: t, elementId: s, providerCfg: r });
+          }),
+        gr(e, n, s, (t, s, a) => {
+          u({ id: e, animName: t, elementId: s, animCallParams: a, providerCfg: r });
+        }),
+        fr({ sound: o, soundCfg: i }),
+        r?.skip && !r?.skipTrigger && hr({ id: e, emitter: t, providerCfg: r }));
+    }),
+    p = me(({ complexId: e, complexCfg: a, providerCfg: n, soundCfg: i }) => {
+      if ((ur(r, e), !n?.skip && !n?.skipTrigger))
+        for (let [t, r] of Object.entries(a))
+          gr(t, r, s, (s, a) => {
+            _({ complexId: e, id: t, animName: s, elementId: a, providerCfg: n });
+          });
+      for (let [t, r] of Object.entries(a))
+        gr(t, r, s, (e, s, a) => {
+          u({ id: t, animName: e, elementId: s, animCallParams: a, providerCfg: n });
+        });
+      (fr({ sound: o, soundCfg: i }),
+        n?.skip && !n?.skipTrigger && hr({ id: e, emitter: t, providerCfg: n }));
+    }),
+    h = i.useMemo(
+      () => ({
+        registerAnimation: c,
+        unRegistrateAnimation: d,
+        startAnimation: u,
+        startGroupAnimation: g,
+        startComplexAnimation: p,
+        checkRegisteredInStorage: l,
+        emitter: t,
+      }),
+      [l, t, c, u, p, g, d],
+    );
+  return n.jsx(ir.Provider, { value: h, children: e });
+}
+const vr = "battlePass",
+  yr = "shopEntryPoint",
+  xr = "missions",
+  Cr = "progressionEntryPoint",
+  wr = new Map([
+    [vr, { position: 0 }],
+    [Cr, { position: 1, adaptive: { [An]: { gap: 45 }, [Rn]: { gap: 45 } } }],
+    [yr, { position: 2, adaptive: { [An]: { cardHeight: 54 }, [Rn]: { cardHeight: 54 } } }],
+    [
+      xr,
+      {
+        position: 200,
+        maxRowsAmount: 5,
+        adaptive: { [An]: { gap: 14, maxRowsAmount: 5 }, [Rn]: { gap: 20, maxRowsAmount: 5 } },
+      },
+    ],
+  ]);
+var Ir = ((e) => (
+    (e.Intro = "intro"),
+    (e.Progression = "progression"),
+    (e.Completed = "completed"),
+    e
+  ))(Ir || {}),
+  Nr = ((e) => ((e.Waiting = "waiting"), (e.Ready = "ready"), (e.Played = "played"), e))(Nr || {});
+const jr = i.forwardRef(function (
+  {
+    children: e,
+    id: t,
+    groupId: s,
+    position: a,
+    isDisabled: r = !1,
+    visible: o = !1,
+    className: l,
+    classNames: d,
+    onMouseEnter: c,
+    onMouseLeave: u,
+    ...p
+  },
+  h,
+) {
+  const f = En(),
+    [b, y] = m(() => Dn, []),
+    x = i.useRef(null),
+    C = i.useRef(v),
+    w = i.useRef(null),
+    I = me((e) => {
+      w.current && x.current && !r && f.updateBorders(e ? w.current : void 0);
+    }),
+    N = me((e) => b[e].get()),
+    j = me((e) => b[e].goal),
+    P = me(async (e) => {
+      await new Promise((t) => {
+        ((C.current = t),
+          Promise.all(y.start(e)).then(() => {
+            (t(), (C.current = v));
+          }));
+      });
+    });
+  return (
+    ve(() => {
+      f.registerCard(t, {
+        position: a,
+        groupId: s,
+        getPropValue: N,
+        getPropGoalValue: j,
+        startLayoutAnimation: P,
+        visible: o,
+      });
+    }),
+    ye(() => {
+      (C.current?.(), f.unregisterCard(t));
+    }),
+    n.jsxs(_.div, {
+      ...p,
+      style: { ...b, pointerEvents: b.opacity.to((e) => (1 === e ? "auto" : "none")), ...p?.style },
+      className: g(tr, !r && nr, l),
+      ref: se([h, x]),
+      onMouseEnter: (e) => {
+        (I(!0), c?.(e));
+      },
+      onMouseLeave: (e) => {
+        (I(!1), u?.(e));
+      },
+      children: [
+        n.jsx("div", { className: g(ar, d?.border) }),
+        e,
+        n.jsx("div", { className: g(sr, d?.borderHelper), "data-id": t, ref: w }),
+      ],
+    })
+  );
+});
+function Pr(e, t) {
+  i.useEffect(() => {
+    e && t();
+  });
+}
+function Sr({ registerAnimation: e, id: t, animName: s, elementId: a = t, config: n }) {
+  i.useLayoutEffect(() => e?.({ id: t, animName: s, elementId: a, config: n }), [t, s, n, a, e]);
+}
+const kr = { from: { opacity: 0 }, config: { duration: 400, easing: Gn } },
+  Mr = { from: { opacity: 0 }, to: { opacity: 1 } };
+const Er = {
+    helperContainer: "BorderAnimation_helperContainer_fe323668",
+    base: "BorderAnimation_2d8409c9",
+    base__medium: "BorderAnimation_base__medium_47492bdb",
+    base__small: "BorderAnimation_base__small_67aa3793",
+    border_animation: "BorderAnimation_389afe4",
+    helper: "BorderAnimation_helper_fcc3c5b0",
+    helper__one: "BorderAnimation_helper__one_df08a331",
+    helper__two: "BorderAnimation_helper__two_9bfa23dc",
+    helper__three: "BorderAnimation_helper__three_e87e7b8e",
+  },
+  Ar = "widgetCardBorderFadeIn",
+  Rr = i.memo(function ({ id: e, elementId: t, size: s = Bn, className: a }) {
+    const { registerAnimation: o, emitter: l } = lr(),
+      d = me(() => l.trigger(dr(e, Ar, t), e, t)),
+      { baseSpring: c, config: u } = (function (e) {
+        const [t, s] = m(() => kr),
+          a = me(({ immediate: t }) => {
+            s.start({ ...Mr, immediate: t, onRest: e });
+          });
+        return { baseSpring: t, config: i.useMemo(() => ({ start: a, skip: v }), [a]) };
+      })(d);
+    return (
+      Sr({ id: e, elementId: t, registerAnimation: o, animName: Ar, config: u }),
+      n.jsx(_.div, {
+        style: c,
+        className: r(Er.base, Er[`base__${s}`], a),
+        children: n.jsxs("div", {
+          className: Er.helperContainer,
+          children: [
+            n.jsx("div", { className: r(Er.helper, Er.helper__one) }),
+            n.jsx("div", { className: r(Er.helper, Er.helper__two) }),
+            n.jsx("div", { className: r(Er.helper, Er.helper__three) }),
+          ],
+        }),
+      })
+    );
+  }),
+  Br = { to: { val: 100 }, config: { duration: 1e3, easing: Gn } },
+  $r = { from: { val: 100 }, to: { val: 0 } };
+function Tr(e) {
+  return `brightness(${1 + e / 100}) contrast(${1 + (e / 100) * 0.5})`;
+}
+const Wr = "bgContrastAnimation";
+const Or = { from: { val: 0 }, config: { duration: 600, easing: Gn } },
+  Lr = { from: { val: 0 }, to: { val: 50 } };
+function qr(e) {
+  return `${50 + e}% ${50 + e}%`;
+}
+const Hr = "maskAnimation";
+const Dr = "maskAppearAnimationHook",
+  Vr = { [Wr]: {}, [Hr]: {}, [Ar]: {} };
+function Gr({ id: e, elementId: t, onComplete: s }) {
+  const { startGroupAnimation: a, registerAnimation: n, emitter: r } = lr(),
+    o = i.useCallback(() => r.trigger(dr(e, Wr, t), e, t), [t, r, e]),
+    l = i.useCallback(() => r.trigger(dr(e, Hr, t), e, t), [t, r, e]),
+    d = i.useCallback(
+      async ({ immediate: a }) => {
+        (await s?.(a), r.trigger(dr(e, Dr, t), e, t));
+      },
+      [t, r, e, s],
+    ),
+    { backgroundContrast: c, config: u } = (function (e) {
+      const t = i.useCallback(() => e?.(), [e]),
+        [s, a] = m(() => ({ ...Br, onRest: t })),
+        n = i.useCallback((e) => a.start({ ...$r, immediate: e }), [a]),
+        r = me(({ immediate: e }) => n(e));
+      return { backgroundContrast: s, config: i.useMemo(() => ({ start: r, skip: v }), [r]) };
+    })(o),
+    { maskPosition: _, config: g } = (function (e) {
+      const t = i.useCallback(() => e?.(), [e]),
+        [s, a] = m(() => ({ ...Or, onRest: t })),
+        n = i.useCallback((e) => a.start({ ...Lr, immediate: e }), [a]),
+        r = me(({ immediate: e }) => n(e));
+      return { maskPosition: s, config: i.useMemo(() => ({ start: r, skip: v }), [r]) };
+    })(l),
+    p = me(async (t) => {
+      a({
+        groupId: e,
+        groupCfg: Vr,
+        providerCfg: { triggerParams: t, animCallParams: t, triggerCallback: d },
+      });
+    }),
+    h = i.useMemo(() => ({ start: p, skip: v }), [p]);
+  return (
+    Sr({ id: e, elementId: t, registerAnimation: n, animName: Dr, config: h }),
+    Sr({ id: e, elementId: t, registerAnimation: n, animName: Wr, config: u }),
+    Sr({ id: e, elementId: t, registerAnimation: n, animName: Hr, config: g }),
+    i.useMemo(() => ({ maskPosition: _, backgroundContrast: c }), [c, _])
+  );
+}
+const zr = "battlePassCardId",
+  Qr = {
+    base__x60x60: "Emblem_base__x60x60_d8756e36",
+    base__x100x100: "Emblem_base__x100x100_547cf3ad",
+    base__x160x160: "Emblem_base__x160x160_c9c06954",
+    base__x200x200: "Emblem_base__x200x200_2ddeb5ee",
+    base__x240x240: "Emblem_base__x240x240_308c1aa9",
+    base__x360x360: "Emblem_base__x360x360_98f20cf9",
+    shield: "Emblem_shield_451cf2c9",
+    icon: "Emblem_icon_73d84087",
+    shield__x74x74: "Emblem_shield__x74x74_a298d905",
+    shield__x120x120: "Emblem_shield__x120x120_c8aa5234",
+    shield__x200x200: "Emblem_shield__x200x200_f1ed9db0",
+    shield__x260x260: "Emblem_shield__x260x260_ef1c262b",
+    shield__x300x300: "Emblem_shield__x300x300_7c6d6f97",
+    shield__x456x456: "Emblem_shield__x456x456_c818292e",
+    icon__x28x28: "Emblem_icon__x28x28_6ea3e635",
+    icon__x48x48: "Emblem_icon__x48x48_f2526f88",
+    icon__x60x60: "Emblem_icon__x60x60_628dbf9a",
+    icon__x80x80: "Emblem_icon__x80x80_34079478",
+    icon__x100x100: "Emblem_icon__x100x100_e8181a63",
+    icon__x120x120: "Emblem_icon__x120x120_c8aa5234",
+    icon__x160x160: "Emblem_icon__x160x160_aec06e5c",
+  },
+  Ur = "x60x60",
+  Fr = "x74x74",
+  Kr = "x120x120",
+  Xr = "x200x200",
+  Jr = "x260x260",
+  Yr = "x300x300",
+  Zr = "x456x456",
+  eo = "x600x600",
+  to = "x912x912",
+  so = "x28x28",
+  ao = "x48x48",
+  no = "x60x60",
+  ro = "x80x80",
+  oo = "x100x100",
+  io = "x120x120",
+  lo = "x160x160",
+  co = "x240x240",
+  uo = "x320x320",
+  mo = k.resolve("images"),
+  _o = function ({
+    iconSize: e,
+    shieldSize: t,
+    containerSize: s,
+    chapterID: a,
+    bpPurchased: o,
+    className: i = "",
+  }) {
+    const l = o ? "purchased" : "basic",
+      d = String(a).slice(-1),
+      c = t === Fr ? Kr : t === Kr ? Jr : t === Xr ? Zr : t === Jr || t === Yr ? eo : to,
+      u =
+        e === so
+          ? no
+          : e === ao
+            ? oo
+            : e === no
+              ? io
+              : e === ro
+                ? lo
+                : e === oo || e === io
+                  ? co
+                  : uo,
+      m =
+        mo.readOrEmpty(`battlePass.emblem.shield.c_${a}.${l}.${M(t, c)}`, "silent") ||
+        mo.readOrEmpty(`battlePass.emblem.shield.default.${l}.${t}`),
+      _ =
+        mo.readOrEmpty(`battlePass.emblem.icon.c_${a}.${l}.${M(e, u)}`, "silent") ||
+        mo.readOrEmpty(`battlePass.emblem.icon.default_${d}.${l}.${e}`);
+    return n.jsxs("div", {
+      className: r(Qr.base, Qr[`base__${s}`], i),
+      children: [
+        n.jsx("div", {
+          className: r(Qr.shield, Qr[`shield__${t}`]),
+          style: { backgroundImage: `url(${m})` },
+        }),
+        n.jsx("div", {
+          className: r(Qr.icon, Qr[`icon__${e}`]),
+          style: {
+            backgroundImage: `url(${a > 0 ? _ : mo.readOrEmpty(`battlePass.emblem.icon.not_chosen.${M(e, no)}`)})`,
+          },
+        }),
+      ],
+    });
+  };
+function go(e, t) {
+  const [s, a] = m(() => ({
+      from: { opacity: 0 },
+      config: { duration: 400, easing: Gn },
+      onRest: t,
+    })),
+    n = me(({ immediate: t }) => {
+      a.start({ from: { opacity: 0 }, to: { opacity: 1 }, delay: t ? 0 : e, immediate: t });
+    });
+  return { spring: s, config: i.useMemo(() => ({ start: n, skip: v }), [n]) };
+}
+const [po, ho] = b()(
+    ({ observableModel: e }) => {
+      const t = {
+          ...e.primitives([
+            "widgetState",
+            "level",
+            "tooltipID",
+            "chapterID",
+            "season",
+            "isBought",
+            "isExtraChapter",
+            "isHoliday",
+            "isPaused",
+            "hasExtraChapter",
+            "isExtraChapterHighlighted",
+            "appearAnimationState",
+            "timeLeft",
+            "pointsEarned",
+            "levelPoints",
+            "rewardsHash",
+          ]),
+          lastSeenState: e.object("lastSeenState"),
+        },
+        s = y.primitive(() => t.widgetState.get() === Ir.Completed);
+      return { ...t, computes: { isCompleted: s } };
+    },
+    ({ externalModel: e }) => ({
+      openBattlePass: e.createCallbackNoArgs("onOpenBattlePass"),
+      notifyIntroAnimationPlayed: e.createCallbackNoArgs("onIntroAnimationPlayed"),
+      widgetUnmounted: e.createCallbackNoArgs("onWidgetUnmounted"),
+    }),
+  ),
+  fo = "Emblem_6b62c957",
+  bo = "Emblem_base__paused_e22ad928",
+  vo = "Emblem_4187dd4f",
+  yo = "emblemFadeInAnimation",
+  xo = o(function ({ id: e, elementId: t, className: s }) {
+    const { model: a } = ho(),
+      o = a.chapterID.get(),
+      i = a.isBought.get(),
+      { registerAnimation: l, emitter: d } = lr(),
+      c = me(() => d.trigger(dr(e, yo, t), e, t)),
+      { spring: u, config: m } = go(0, c);
+    return (
+      Sr({ id: e, elementId: t, registerAnimation: l, animName: yo, config: m }),
+      n.jsx("div", {
+        className: r(fo, a.isPaused.get() && bo, s),
+        children: n.jsx(_.div, {
+          style: u,
+          children: n.jsx(_o, {
+            iconSize: so,
+            shieldSize: Fr,
+            containerSize: Ur,
+            bpPurchased: i,
+            chapterID: o,
+            className: vo,
+          }),
+        }),
+      })
+    );
+  });
+function Co(e, t) {
+  const { readyForAnimations: s } = En();
+  i.useEffect(() => {
+    if (s.current) return e();
+  }, t);
+}
+const wo = k.resolve("images"),
+  Io = k.resolve("views"),
+  No = k.resolve("strings"),
+  jo = k.resolve("aliases"),
+  Po = k.resolve("videos"),
+  So = i.createContext(!1);
+function ko(e, t, s, a, n, r) {
+  const o = `${t}${s ? "_extra" : ""}${a ? "_holiday" : ""}${r ? "_small" : ""}`;
+  return { seasonPath: `${e}.season_${n}.${o}`, defaultPath: `${e}.default.${o}` };
+}
+function Mo(e, t, s, a, n) {
+  const { seasonPath: r, defaultPath: o } = ko("battlePass.widget.background", e, t, s, a, n);
+  return wo.has(r) ? r : o;
+}
+function Eo() {
+  return i.useContext(So);
+}
+function Ao(e, t) {
+  return e && (t === Ir.Intro || t === Ir.Progression);
+}
+const Ro = o(function ({ useAdaptiveFormat: e = !0 }) {
+    const { model: t } = ho(),
+      s = kn(),
+      a = s ? xe.format.compact : xe.format.default,
+      r = t.timeLeft.get();
+    return n.jsx(
+      xe,
+      { start: r, size: s ? xe.size.x16x16 : xe.size.x24x24, format: e ? a : xe.format.default },
+      r,
+    );
+  }),
+  Bo = "Labels_e5066e86",
+  $o = "Labels_title_d94e713e",
+  To = "Labels_subTitleWrapper_79f4007c",
+  Wo = "Labels_subTitleItem_b9fe06e5",
+  Oo = "Labels_subTitle_c850cc3d",
+  Lo = "Labels_lockIcon_c336fd47",
+  qo = "Labels_descriptionText_1d25fcad",
+  Ho = k.resolve("strings"),
+  Do = "labelsFadeInAnimation",
+  Vo = o(function ({ id: e, elementId: t, className: s }) {
+    const { model: a } = ho(),
+      o =
+        ((l = a.hasExtraChapter.get()),
+        (d = a.isHoliday.get()),
+        a.computes.isCompleted()
+          ? "completed"
+          : d
+            ? "see_new_progression"
+            : l
+              ? "activate_extra_chapter"
+              : "select_chapter");
+    var l, d;
+    const { registerAnimation: c, emitter: u } = lr(),
+      g = me(() => u.trigger(dr(e, Do, t), e, t)),
+      { spring: p, config: h } = go(1e3, g);
+    Sr({ id: e, elementId: t, registerAnimation: c, animName: Do, config: h });
+    const {
+      labelStyle: f,
+      countdownStyle: b,
+      lockStyle: v,
+    } = (function () {
+      const e = Eo(),
+        { model: t } = ho(),
+        s = t.widgetState.get(),
+        a = t.isPaused.get(),
+        n = Ao(e, s),
+        r = i.useRef(n),
+        o = i.useRef(a),
+        l = { duration: 400, easing: Gn },
+        [d, c] = m(() => ({ from: { opacity: a ? 1 : 0, x: 0 }, config: l })),
+        [u, _] = m(() => ({ from: { opacity: n && !a ? 1 : 0, x: 0 }, config: l })),
+        [g, p] = m(() => ({ from: { opacity: n || a ? 0 : 1, x: 0 }, config: l }));
+      return (
+        Co(() => {
+          if (o.current === a && r.current === n) return;
+          const e = (e, t) => (e ? c : t ? _ : p),
+            t = e(o.current, r.current),
+            s = e(a, n),
+            i = [_, c, p];
+          (Promise.all(t.start({ from: { opacity: 1, x: 0 }, to: { opacity: 0, x: V(40) } })).then(
+            () => {
+              (i.forEach((e) => {
+                e.start({ from: { opacity: 0 }, immediate: !0 });
+              }),
+                s.start({ from: { opacity: 0, x: V(-20) }, to: { opacity: 1, x: 0 } }));
+            },
+          ),
+            (r.current = n),
+            (o.current = a));
+        }, [_, c, p, a, n, s]),
+        { countdownStyle: u, lockStyle: d, labelStyle: g }
+      );
+    })();
+    return a.widgetState.get() !== Ir.Progression || a.isPaused.get()
+      ? n.jsxs(_.div, {
+          style: p,
+          className: r(Bo, s),
+          children: [
+            n.jsx("div", {
+              className: $o,
+              children: Ho.read("user_missions.battle_pass_widget.title"),
+            }),
+            n.jsxs("div", {
+              className: To,
+              children: [
+                n.jsxs(_.div, {
+                  style: v,
+                  className: r(Wo, Oo),
+                  children: [
+                    n.jsx("div", { className: Lo }),
+                    Ho.read("user_missions.battle_pass_widget.sub_title.unavailable"),
+                  ],
+                }),
+                n.jsx(_.div, {
+                  style: b,
+                  className: Wo,
+                  children: n.jsx(Ro, { useAdaptiveFormat: !1 }),
+                }),
+                n.jsx(_.div, {
+                  style: f,
+                  className: r(Wo, Oo),
+                  children: n.jsx(Ce, {
+                    text: Ho.read(`user_missions.battle_pass_widget.sub_title.${o}`),
+                    classMix: r(qo),
+                    isTruncationAvailable: !0,
+                  }),
+                }),
+              ],
+            }),
+          ],
+        })
+      : null;
+  }),
+  Go = { [Ar]: {}, [Do]: {}, [yo]: {}, [Dr]: {} };
+async function zo(e, t = !1) {
+  await new Promise((s) => {
+    e({
+      groupId: zr,
+      providerCfg: { triggerCallback: s, animCallParams: { immediate: t } },
+      groupCfg: Go,
+    });
+  });
+}
+function Qo(e, t, s, a, n) {
+  e.isUnmounting(zr) ||
+    (t === Nr.Ready
+      ? e
+          .enqueue(async () => {
+            (s(vt.umg_widget_event_appear), await e.appear([zr]), await zo(n));
+          })
+          .then(() => {
+            a();
+          })
+      : t === Nr.Played &&
+        (e.updateCard(zr, { visible: !0 }), zo(n, !0), e.enqueue(async () => e.applyLayout())));
+}
+const Uo = { duration: 700, easing: Gn },
+  Fo = { from: { translateX: "-160%" }, config: Uo },
+  Ko = { from: { opacity: 0 }, config: Uo },
+  Xo = { from: { translateX: "-160%" }, to: { translateX: "160%" } },
+  Jo = { from: { opacity: 0 }, to: [{ opacity: 1 }, { opacity: 0, config: { duration: 1e3 } }] };
+const Yo = "HighlightAnimation_splashContainer_6f7161d2",
+  Zo = "HighlightAnimation_helperContainer_67199b30",
+  ei = "HighlightAnimation_a926f19b",
+  ti = "HighlightAnimation_helper_ab64de86",
+  si = "HighlightAnimation_helper__one_bf874504",
+  ai = "HighlightAnimation_helper__two_5ddebb7f",
+  ni = "HighlightAnimation_helper__three_e838fe5d",
+  ri = "widgetCardHighlight",
+  oi = i.memo(function ({
+    id: e,
+    elementId: t,
+    withOverlaySplash: s = !1,
+    children: a,
+    className: o,
+  }) {
+    const { registerAnimation: l, emitter: d } = lr(),
+      c = me(() => d.trigger(dr(e, ri, t), e, t)),
+      {
+        highlightStyles: u,
+        splashStyles: g,
+        config: p,
+      } = (function (e) {
+        const [t, s] = m(() => Fo),
+          [a, n] = m(() => Ko),
+          r = me(() => {
+            (s.start({ ...Xo, reset: !0 }), n.start({ ...Jo, reset: !0, onRest: e }));
+          });
+        return i.useMemo(
+          () => ({ highlightStyles: t, splashStyles: a, config: { start: r, skip: v } }),
+          [t, a, r],
+        );
+      })(c);
+    return (
+      Sr({ id: e, elementId: t, registerAnimation: l, animName: ri, config: p }),
+      n.jsxs(n.Fragment, {
+        children: [
+          s && n.jsx(_.div, { style: g, className: Yo, children: a }),
+          n.jsx("div", {
+            className: r(ei, o),
+            children: n.jsxs(_.div, {
+              style: u,
+              className: Zo,
+              children: [
+                n.jsx("div", { className: r(ti, si) }),
+                n.jsx("div", { className: r(ti, ai) }),
+                n.jsx("div", { className: r(ti, ni) }),
+              ],
+            }),
+          }),
+        ],
+      })
+    );
+  });
+const ii = k.resolve("strings"),
+  li = "progressionLabelsAnimation",
+  di = o(function ({ className: e, id: t, elementId: s }) {
+    const { spring: a, config: o } = (function () {
+        const [e, t] = m(() => ({
+            from: { x: 0, opacity: 0 },
+            config: { duration: 400, easing: Gn },
+          })),
+          s = i.useCallback(
+            (e, s) => {
+              e
+                ? t.start({
+                    from: { opacity: 0, x: V(-20) },
+                    to: { opacity: 1, x: 0 },
+                    delay: 400,
+                    immediate: s,
+                  })
+                : t.start({
+                    from: { opacity: 1, x: 0 },
+                    to: { opacity: 0, x: V(40) },
+                    immediate: s,
+                  });
+            },
+            [t],
+          ),
+          a = me(({ isPaused: e }) => {
+            s(e);
+          }),
+          n = me(({ isPaused: e }) => {
+            s(e, !0);
+          });
+        return i.useMemo(() => ({ spring: e, config: { start: a, skip: n } }), [n, e, a]);
+      })(),
+      { registerAnimation: l } = lr();
+    return (
+      Sr({ id: t, elementId: s, registerAnimation: l, animName: li, config: o }),
+      n.jsxs(_.div, {
+        style: a,
+        className: r(Bo, e),
+        children: [
+          n.jsx("div", {
+            className: $o,
+            children: ii.read("user_missions.battle_pass_widget.title"),
+          }),
+          n.jsx("div", {
+            className: To,
+            children: n.jsxs("div", {
+              className: r(Wo, Oo),
+              children: [
+                n.jsx("div", { className: Lo }),
+                ii.read("user_missions.battle_pass_widget.sub_title.unavailable"),
+              ],
+            }),
+          }),
+        ],
+      })
+    );
+  }),
+  ci = { pointsEarned: 0, deltaLeft: 0, deltaWidth: 0, level: 0, immediate: !0 },
+  ui = { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: Gn } },
+  mi = { from: { opacity: 0 }, config: { duration: 200, easing: Gn } },
+  _i = {
+    init: { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: Gn } },
+    paused: { from: { opacity: 1, x: 0 }, to: { opacity: 0, x: V(40) } },
+    unPaused: { from: { opacity: 0, x: V(-20) }, to: { opacity: 1, x: 0 }, delay: 400 },
+  },
+  gi = "progressOpacity";
+const pi = "progressAnimation";
+const hi = "SelectRewardIcon_79dc47ef",
+  fi = "SelectRewardIcon_animatedIcon_7df05741",
+  bi = "rewardIconAnimation",
+  vi = { to: 1, config: { duration: 750 } },
+  yi = { to: 0, config: { duration: 500 } },
+  xi = {
+    from: { opacity: 0 },
+    to: [{ opacity: 1 }, { opacity: 0 }, { opacity: 1 }, { opacity: 0 }],
+    config: { duration: 1e3 },
+    pause: !0,
+  },
+  Ci = i.memo(function ({ id: e, className: t }) {
+    const { registerAnimation: s } = lr(),
+      { play: a } = A(),
+      { opacity: o, config: l } = (function (e, t) {
+        const s = me(() => t?.()),
+          a = p(e, { onRest: s }),
+          n = me((e) => {
+            e?.to != a.get() && a.start({ ...e });
+          }),
+          r = me((e) => {
+            a.start({ ...e, delay: 0, immediate: !0, config: { duration: 0 } });
+          });
+        return i.useMemo(() => ({ opacity: a, config: { start: n, skip: r } }), [a, r, n]);
+      })(0),
+      [d, c] = m(() => xi),
+      u = me(({ isPaused: e }) => {
+        e
+          ? l.start(yi)
+          : (a(vt.umg_widget_event_reward), l.start(vi), c.start({ ...xi, pause: !1, reset: !0 }));
+      }),
+      g = me(({ isPaused: e }) => {
+        e ? l.skip(yi) : l.skip(vi);
+      }),
+      h = i.useMemo(() => ({ start: u, skip: g }), [g, u]);
+    return (
+      Sr({ registerAnimation: s, id: e, animName: bi, config: h }),
+      n.jsx(_.div, {
+        style: { opacity: o },
+        className: r(hi, t),
+        children: n.jsx(_.div, { style: d, className: fi }),
+      })
+    );
+  });
+function wi({ current: e, earned: t, max: s, level: a }) {
+  return {
+    pointsEarned: e + t,
+    level: a,
+    deltaLeft: Ie(e, s),
+    deltaWidth: Ie(t, s),
+    config: { duration: 50 * t },
+  };
+}
+function Ii(e, t, s, a) {
+  const n = t != e.level,
+    r = a - e.pointsEarned,
+    o = s - e.pointsEarned,
+    i = { phase_1: wi({ current: e.pointsEarned, earned: n ? r : o, max: a, level: e.level }) };
+  return (n && (i.phase_2 = wi({ current: 0, earned: s, max: a, level: t })), i);
+}
+const Ni = { highlight: { id: zr, animName: ri }, rewardIcon: { id: zr, animName: bi } };
+function ji() {
+  const e = je(),
+    t = En(),
+    { model: s, controls: a } = ho(),
+    { play: n } = A(),
+    r = s.isPaused.get(),
+    o = s.level.get(),
+    i = s.pointsEarned.get(),
+    l = s.levelPoints.get(),
+    d = s.rewardsHash.get(),
+    c = s.isExtraChapterHighlighted.get(),
+    u = s.appearAnimationState.get(),
+    m = s.lastSeenState.get(),
+    _ = s.widgetState.get(),
+    g = s.chapterID.get();
+  (!(function ({
+    lastSeenState: e,
+    level: t,
+    pointsEarned: s,
+    levelPoints: a,
+    rewardsHash: n,
+    isPaused: r,
+    api: o,
+    appearAnimationState: i,
+    notifyIntroAnimationPlayed: l,
+    play: d,
+  }) {
+    const { startAnimation: c, startGroupAnimation: u } = lr();
+    ve(() => {
+      const m = n > 0,
+        _ = m && n != e.rewardsHash;
+      if (t != e.level || s != e.pointsEarned) {
+        const n = Ii(e, t, s, a);
+        c({ id: zr, animName: pi, animCallParams: n });
+      } else _ && !r && c({ id: zr, animName: ri });
+      (m && c({ ...Ni.rewardIcon, providerCfg: { skip: !_ }, animCallParams: { isPaused: r } }),
+        c({ id: zr, animName: gi, animCallParams: { isPaused: r }, providerCfg: { skip: !0 } }),
+        c({ id: zr, animName: li, animCallParams: { isPaused: r }, providerCfg: { skip: !0 } }),
+        Qo(o, i, d, l, u));
+    });
+  })({
+    level: o,
+    pointsEarned: i,
+    levelPoints: l,
+    rewardsHash: d,
+    lastSeenState: m,
+    isPaused: r,
+    play: n,
+    api: t,
+    notifyIntroAnimationPlayed: a.notifyIntroAnimationPlayed,
+    appearAnimationState: u,
+  }),
+    (function ({
+      isFirstRender: e,
+      appearAnimationState: t,
+      isExtraChapterHighlighted: s,
+      widgetState: a,
+      api: n,
+      notifyIntroAnimationPlayed: r,
+      play: o,
+    }) {
+      const { startGroupAnimation: i } = lr(),
+        l = we(t),
+        d = we(s),
+        c = we(a);
+      (Pr(!e, () => {
+        (s === d && c === a) ||
+          n.enqueue(async () => {
+            (o(vt.umg_widget_event_appear), await zo(i));
+          });
+      }),
+        Pr(!e, () => {
+          t !== l && Qo(n, t, o, r, i);
+        }));
+    })({
+      api: t,
+      appearAnimationState: u,
+      isExtraChapterHighlighted: c,
+      widgetState: _,
+      isFirstRender: e,
+      notifyIntroAnimationPlayed: a.notifyIntroAnimationPlayed,
+      play: n,
+    }),
+    (function ({
+      isFirstRender: e,
+      lastSeenState: t,
+      level: s,
+      pointsEarned: a,
+      levelPoints: n,
+      chapterID: r,
+    }) {
+      const { startAnimation: o } = lr(),
+        i = we(r);
+      Pr(!e && r > 0 && -1 != i, () => {
+        const e = a != t.pointsEarned || s != t.level,
+          l = r !== i;
+        if (e && !l) {
+          const e = Ii(t, s, a, n);
+          o({ id: zr, animName: pi, animCallParams: e });
+        } else l && o(Ni.highlight);
+      });
+    })({
+      isFirstRender: e,
+      lastSeenState: m,
+      level: o,
+      pointsEarned: i,
+      levelPoints: l,
+      chapterID: g,
+    }),
+    (function ({ isFirstRender: e, rewardsHash: t, isPaused: s }) {
+      const { startAnimation: a } = lr(),
+        n = we(t),
+        r = we(s);
+      Pr(!e, () => {
+        const e = s != r,
+          o = t > 0 && t != n;
+        (e &&
+          (a({ id: zr, animName: gi, animCallParams: { isPaused: s } }),
+          a({ id: zr, animName: li, animCallParams: { isPaused: s } })),
+          (o || e) && a({ ...Ni.rewardIcon, animCallParams: { isPaused: s } }),
+          o && !s && a(Ni.highlight),
+          e && !s && a({ id: zr, animName: Ar }));
+      });
+    })({ isFirstRender: e, rewardsHash: d, isPaused: r }));
+}
+const Pi = o(function ({ className: e }) {
+    const { model: t } = ho();
+    return t.isPaused.get() ? null : n.jsx(Rr, { id: zr, className: e });
+  }),
+  Si = "IntroOverlay_glow_5fc31c94",
+  ki = "IntroOverlay_hoverHelper_9cec2539",
+  Mi = "IntroOverlay_8d89d328",
+  Ei = "IntroOverlay_base__extraChapter_d35cc3d4",
+  Ai = "IntroOverlay_base__holiday_2f0d6d76",
+  Ri = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
+  Bi = "IntroOverlay_borderNoise_3087bf34",
+  $i = o(function ({ className: e, withOverlay: t = !0 }) {
+    const { model: s } = ho();
+    if (s.isPaused.get()) return null;
+    const a =
+        s.widgetState.get() === Ir.Intro
+          ? s.hasExtraChapter.get()
+          : s.isExtraChapter.get() || s.isExtraChapterHighlighted.get(),
+      o = s.isHoliday.get();
+    return n.jsxs("div", {
+      className: r(Mi, a && Ei, o && Ai, e),
+      children: [
+        n.jsx("div", { className: Si }),
+        n.jsx("div", { className: r(ki, t && Ri) }),
+        n.jsx("div", { className: Bi }),
+      ],
+    });
+  }),
+  Ti = o(function ({ id: e, elementId: t, className: s }) {
+    const { model: a } = ho(),
+      { startAnimation: r } = lr(),
+      o = Eo(),
+      i = a.isExtraChapterHighlighted.get(),
+      l = a.widgetState.get(),
+      d = !i && l === Ir.Progression;
+    return (
+      Co(() => {
+        if (Ao(o, l)) {
+          const t = l === Ir.Intro ? vt.umg_widget_event_timer : vt.umg_widget_event_timer_simple;
+          r({ id: e, animName: ri, soundCfg: t });
+        }
+      }, [o, l]),
+      n.jsx(oi, {
+        id: e,
+        elementId: t,
+        withOverlaySplash: d,
+        className: s,
+        children:
+          d &&
+          n.jsxs(n.Fragment, {
+            children: [
+              n.jsx($i, { id: e, className: s, withOverlay: !1 }),
+              n.jsx(Pi, { id: e, className: s }),
+            ],
+          }),
+      })
+    );
+  }),
+  Wi = "CompletedOverlay_b04581f5";
+const Oi = "Intro_backgroundWrapper_8eb03c0d",
+  Li = "Intro_background_e3bffd74",
+  qi = "Intro_eda21734",
+  Hi = "Intro_base__paused_129a2cdc",
+  Di = "Intro_backgroundSize_6e0dec55",
+  Vi = "Intro_icon_946c0059",
+  Gi = o(function ({ id: e, elementId: t, className: s }) {
+    const { model: a } = ho(),
+      o = a.isPaused.get(),
+      l = a.isHoliday.get(),
+      { imagePath: d, videoPath: c } = (function (e = "bg") {
+        const { model: t } = ho(),
+          s = kn(),
+          { seasonPath: a } = ko(
+            "battle_pass.widget.background",
+            e,
+            t.hasExtraChapter.get(),
+            t.isHoliday.get(),
+            t.season.get(),
+            s,
+          );
+        return {
+          imagePath: Mo(e, t.hasExtraChapter.get(), t.isHoliday.get(), t.season.get(), s),
+          videoPath: Po.read(a),
+        };
+      })(),
+      [u, g] = m(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: Gn } })),
+      p = i.useCallback(
+        async (e) => {
+          await Promise.all(g.start({ to: { opacity: 1 }, immediate: e }));
+        },
+        [g],
+      ),
+      { maskPosition: h, backgroundContrast: f } = Gr({ id: e, elementId: t, onComplete: p });
+    return n.jsxs(_.div, {
+      style: { maskPosition: h.val.to((e) => qr(-e)), filter: f.val.to(Tr) },
+      className: r(qi, o && Hi, s),
+      children: [
+        n.jsx(_.div, {
+          style: { maskPosition: h.val.to(qr) },
+          className: Oi,
+          children: c
+            ? n.jsx("div", {
+                className: Di,
+                children: n.jsx(Pe, { src: c, className: Li, autoplay: !0, loop: !0 }, c),
+              })
+            : n.jsx(j, { path: d, className: Li }),
+        }),
+        !l &&
+          n.jsx(_.div, {
+            style: u,
+            children: n.jsx(j, {
+              path: "battlePass.widget.not_chosen",
+              className: Vi,
+              width: 60,
+              height: 60,
+            }),
+          }),
+      ],
+    });
+  }),
+  zi = "Index_f505a04a",
+  Qi = i.memo(function (e) {
+    return n.jsx(Se, { ...e, classNames: { background: zi } });
+  }),
+  Ui = { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: Gn } },
+  Fi = { from: { opacity: 0, x: V(-20) }, to: { opacity: 1, x: 0 } };
+const Ki = "Progression_de15ce34",
+  Xi = "Progression_label_67b446d",
+  Ji = "Progression_levelWrapper_20ffa2cd",
+  Yi = "Progression_countdownWrapper_32ed00dc",
+  Zi = "Progression_countdownSeparator_8d7ba9e7",
+  el = "Progression_progress_f05295ff",
+  tl = "Progression_pointsEarned_f0502458",
+  sl = "Progression_progressSeparator_9c752d50",
+  al = "Progression_progressBar_9c5d3f74",
+  nl = "Progression_levelPoints_f1c3b9c0",
+  rl = "Progression_delta_2b36b7f6",
+  ol = "Progression_glow_bdccbc96",
+  il = o(function ({ id: e, elementId: t, className: s }) {
+    const { model: a } = ho(),
+      o = Eo(),
+      l = a.levelPoints.get(),
+      { pointsEarned: d, level: c } = a.lastSeenState.get(),
+      u = (function () {
+        const e = Eo(),
+          { model: t } = ho(),
+          [s, a] = m(() => Ui),
+          n = Ao(e, t.widgetState.get());
+        return (
+          Co(() => {
+            n && a.start(Fi);
+          }, [n, a]),
+          s
+        );
+      })(),
+      { baseSpring: g } = (function ({ id: e, elementId: t }) {
+        const { registerAnimation: s } = lr(),
+          [a, n] = m(() => _i.init),
+          r = me((e) => {
+            e.isPaused ? n.start({ ..._i.paused }) : n.start({ ..._i.unPaused });
+          }),
+          o = me((e) => {
+            e.isPaused
+              ? n.start({ ..._i.paused, immediate: !0 })
+              : n.start({ ..._i.unPaused, delay: 0, immediate: !0 });
+          }),
+          l = i.useMemo(() => ({ start: r, skip: o }), [o, r]);
+        return (
+          Sr({ id: e, elementId: t, registerAnimation: s, animName: gi, config: l }),
+          i.useMemo(() => ({ baseSpring: a }), [a])
+        );
+      })({ id: e, elementId: t }),
+      {
+        pointsEarnedSpring: p,
+        progressPoints: h,
+        deltaGlowSpring: f,
+        levelSpring: b,
+      } = (function ({ id: e, elementId: t, pointsEarned: s, level: a, levelPoints: n }) {
+        const { startAnimation: r, registerAnimation: o } = lr(),
+          [l, d] = i.useState(s),
+          [c, u] = m(() => ({ ...ui })),
+          [_, g] = m(() => ({ ...mi })),
+          [p, h] = m(() => ({
+            from: { pointsEarned: s, level: a, deltaLeft: Ie(s, n), deltaWidth: 0 },
+          })),
+          f = me((e) => {
+            const { phase_1: t, phase_2: s } = e;
+            (g.start({ opacity: 1 }),
+              h.start({
+                to: async (e) => {
+                  (await e({ deltaWidth: 0, deltaLeft: t.deltaLeft, immediate: !0 }),
+                    await Ne(500),
+                    await e(t),
+                    d(t.pointsEarned),
+                    s &&
+                      (await e({ ...ci, level: t.level }),
+                      d(0),
+                      await Promise.all(
+                        u.start({
+                          to: async (t) => {
+                            (await t({ x: V(40), opacity: 0 }),
+                              await t({ x: V(-20), opacity: 0, immediate: !0 }),
+                              r({ id: zr, animName: ri }),
+                              await e({ level: s.level, immediate: !0 }),
+                              await t({ x: 0, opacity: 1 }));
+                          },
+                        }),
+                      ),
+                      await e(s),
+                      d(s.pointsEarned)),
+                    g.start({ opacity: 0 }));
+                },
+              }));
+          }),
+          b = i.useMemo(() => ({ start: f, skip: v }), [f]);
+        return (
+          Sr({ id: e, elementId: t, registerAnimation: o, animName: pi, config: b }),
+          i.useMemo(
+            () => ({
+              pointsEarnedSpring: p,
+              progressPoints: l,
+              deltaGlowSpring: _,
+              levelSpring: c,
+            }),
+            [_, c, p, l],
+          )
+        );
+      })({ id: e, elementId: t, pointsEarned: d, level: c, levelPoints: l });
+    return n.jsxs(_.div, {
+      style: g,
+      className: r(Ki, s),
+      children: [
+        n.jsxs("div", {
+          className: Xi,
+          children: [
+            n.jsxs("div", {
+              className: Ji,
+              children: [
+                n.jsx(_.div, {
+                  style: b,
+                  children: n.jsx(E, {
+                    path: "user_missions.battle_pass_widget.stage",
+                    params: { level: n.jsx(_.div, { children: p.level.to((e) => Math.ceil(e)) }) },
+                  }),
+                }),
+                o &&
+                  n.jsxs(_.div, {
+                    style: u,
+                    className: Yi,
+                    children: [
+                      n.jsx(E, {
+                        className: Zi,
+                        path: "user_missions.battle_pass_widget.countdownSeparator",
+                      }),
+                      n.jsx(Ro, {}),
+                    ],
+                  }),
+              ],
+            }),
+            n.jsx(E, {
+              className: el,
+              path: "user_missions.battle_pass_widget.progress",
+              params: {
+                pointsEarned: n.jsx(_.div, {
+                  className: tl,
+                  children: p.pointsEarned.to((e) => Math.round(e) % l),
+                }),
+                levelPoints: n.jsx("div", { className: nl, children: l }),
+                progressSeparatorClass: sl,
+              },
+            }),
+          ],
+        }),
+        l > 0 &&
+          n.jsx(Qi, {
+            size: "small",
+            className: al,
+            value: h,
+            maxValue: l,
+            children: n.jsx(_.div, {
+              style: {
+                width: p.deltaWidth.to((e) => `${e}%`),
+                left: p.deltaLeft.to((e) => `${e}%`),
+              },
+              className: rl,
+              children: n.jsx(_.div, { style: f, className: ol }),
+            }),
+          }),
+      ],
+    });
+  }),
+  ll = "ProgressionOverlay_3554586a",
+  dl = "ProgressionOverlay_wrapper_db2f9b96",
+  cl = "ProgressionOverlay_base__paused_ecd0a7ba",
+  ul = "ProgressionOverlay_hoverHelper_9949a6b8",
+  ml = o(function ({ className: e, id: t }) {
+    const { model: s } = ho(),
+      a = s.isExtraChapterHighlighted.get(),
+      r = p(a ? 1 : 0, { config: { duration: 400, easing: Gn } });
+    return (
+      Co(() => {
+        r.start(a ? 1 : 0);
+      }, [a, r]),
+      n.jsxs("div", {
+        className: g(ll, s.isPaused.get() && cl),
+        children: [
+          n.jsxs(_.div, {
+            style: { opacity: r },
+            className: dl,
+            children: [
+              n.jsx($i, { id: t, className: e, withOverlay: !1 }),
+              n.jsx(Pi, { id: t, className: e }),
+            ],
+          }),
+          n.jsx(_.div, { style: { opacity: r.to((e) => 1 - e) }, className: g(e, ul) }),
+        ],
+      })
+    );
+  }),
+  _l = "BattlePass_layer_1bbff8f0",
+  gl = "BattlePass_96294458",
+  pl = "BattlePass_base__enabled_8ccab86c",
+  hl = "BattlePass_rewardIcon_25776ae1",
+  fl = new Map([
+    [Ir.Intro, [Gi, $i, Vo, Pi]],
+    [Ir.Progression, [il, ml, di, xo]],
+    [
+      Ir.Completed,
+      [
+        Vo,
+        function ({ className: e }) {
+          return n.jsx("div", { className: g(Wi, e) });
+        },
+        xo,
+      ],
+    ],
+  ]),
+  bl = o(function () {
+    const { model: e, controls: t } = ho();
+    ji();
+    const { play: s } = A(),
+      a = e.widgetState.get(),
+      o = e.timeLeft.get(),
+      l = e.isPaused.get(),
+      d = we(l),
+      c = i.useRef(!1),
+      u = e.rewardsHash.get(),
+      m = (function (e, t) {
+        const s = jo.read((e) => e.user_missions.hangarWidget.BattlePass("resId"));
+        return t
+          ? {
+              resId: s,
+              contentId: Io.read((e) =>
+                e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId"),
+              ),
+              decoratorId: Io.read((e) =>
+                e.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
+              ),
+              args: {
+                body: No.read("battle_pass.tooltips.entryPoint.disabled.body"),
+                header: No.read("battle_pass.tooltips.entryPoint.disabled.header"),
+              },
+            }
+          : { resId: s, contentId: e };
+      })(e.tooltipID.get(), l),
+      { containerRef: _, tooltipProps: g } = Sn(m),
+      p = o - 259200,
+      [h, f] = i.useState(o > 0 && p <= 0),
+      b = () => {
+        c.current && ((c.current = !1), s(vt.umg_widget_event_hover_loop_stop));
+      };
+    (i.useEffect(() => {
+      if (p > 0) {
+        f(!1);
+        const e = window.setTimeout(
+          () => {
+            f(!0);
+          },
+          Math.min(p * ke, Me),
+        );
+        return () => window.clearTimeout(e);
+      }
+      o > 0 && f(!0);
+    }, [p, o]),
+      i.useEffect(() => {
+        l && !d && s(vt.umg_widget_event_inactive);
+      }),
+      ye(() => {
+        (b(), t.widgetUnmounted());
+      }));
+    const v = fl.get(a);
+    return n.jsxs(jr, {
+      ...g,
+      id: zr,
+      groupId: qn,
+      position: 0,
+      className: r(gl, !l && pl),
+      isDisabled: l,
+      onClick: () => {
+        (g.onClick(), l || (b(), t.openBattlePass()));
+      },
+      onMouseEnter: (e) => {
+        (g.onMouseEnter(e),
+          l ||
+            (s("mouse-enter"),
+            a === Ir.Intro && ((c.current = !0), s(vt.umg_widget_event_hover_loop))));
+      },
+      onMouseLeave: () => {
+        (g.onMouseLeave(), b());
+      },
+      ref: _,
+      children: [
+        n.jsxs(So.Provider, {
+          value: h,
+          children: [
+            v && v.map((e, t) => n.jsx(e, { id: zr, className: _l }, `${a}-${t}`)),
+            n.jsx(Ti, { id: zr, className: _l }),
+          ],
+        }),
+        u > 0 && n.jsx(Ci, { id: zr, className: hl }),
+      ],
+    });
+  }),
+  vl = {
+    rootId: k.resolve("aliases").read((e) => e.user_missions.hangarWidget.BattlePass("resId")),
+  },
+  yl = i.memo(function () {
+    return n.jsx(po, { options: vl, children: n.jsx(bl, {}) });
+  }),
+  [xl, Cl] = b()(
+    ({ observableModel: e }) => ({
+      ...{ ...e.primitives(["isMissionsEnable"]), quests: e.arrayClone("quests") },
+    }),
+    ({ externalModel: e }) => ({
+      onMissionClick: e.createCallback((e) => ({ questId: e }), "onMissionClick"),
+      markAsViewed: e.createCallbackNoArgs("onMarkAsViewed"),
+    }),
+  ),
+  wl = "daily",
+  Il = "premium_daily",
+  Nl = "bonus",
+  jl = "weekly",
+  Pl = new Set([wl, Nl, Il]),
+  Sl = 32,
+  kl = "dailyQuestsCompleted",
+  Ml = "allQuestsCompleted",
+  El = {
+    base: "ProgressCount_1bbbcb2",
+    slash: "ProgressCount_slash_ac34047e",
+    slash__fullWidth: "ProgressCount_slash__fullWidth_c807c2b",
+    current: "ProgressCount_current_6cb06e0d",
+    current__slashCenter: "ProgressCount_current__slashCenter_6ce420af",
+    total: "ProgressCount_total_faa00922",
+    total__slashCenter: "ProgressCount_total__slashCenter_bb7952a3",
+  },
+  Al = "fullWidth",
+  Rl = k.resolve("intl"),
+  Bl = i.memo(function ({
+    current: e,
+    total: t,
+    children: s,
+    displayType: a = Al,
+    className: o,
+    classNames: i,
+  }) {
+    return n.jsxs("div", {
+      className: r(El.base, o),
+      children: [
+        n.jsx("div", {
+          className: r(El.current, El[`current__${a}`], i?.current),
+          children: s ?? Rl.formatNumber("integral", e),
+        }),
+        n.jsx("div", { className: r(El.slash, El[`slash__${a}`], i?.slash), children: "/" }),
+        n.jsx("div", {
+          className: r(El.total, El[`total__${a}`], i?.total),
+          children: Rl.formatNumber("integral", t),
+        }),
+      ],
+    });
+  }),
+  $l = k.resolve("strings"),
+  Tl = k.resolve("images"),
+  Wl = "SpecConditionsIcons_ab3f13c7",
+  Ol = "SpecConditionsIcons_icon_d767e7b4";
+function Ll({ specConditions: e, className: t, ...s }) {
+  return n.jsx("div", {
+    ...s,
+    className: r(Wl, t),
+    children: te(e, (e) =>
+      n.jsx(j, { width: 24, height: 24, path: e.iconPath, className: Ol }, e.id),
+    ),
+  });
+}
+const ql = { from: { y: 0, opacity: 1 }, config: { duration: 200, easing: Gn } },
+  Hl = { from: { opacity: 0 }, config: { duration: 200, easing: Gn } },
+  Dl = { to: { scale: 1, opacity: 1 }, config: { duration: 300, easing: Gn } },
+  Vl = { to: { scale: 0, opacity: 0 }, config: { duration: 300, easing: Gn } },
+  Gl = { opacity: 1, y: 0 };
+const zl = (e) =>
+    e >= 1e4
+      ? "aboveTenThousand"
+      : e >= 1e3
+        ? "aboveThousand"
+        : e >= 100
+          ? "aboveHundred"
+          : e >= 10
+            ? "aboveTens"
+            : 0 === e
+              ? "fullSize"
+              : e < 10
+                ? "digits"
+                : void 0,
+  Ql = {
+    icon: "QuestCard_icon_9c76dd70",
+    contentWrapper: "QuestCard_contentWrapper_89591e48",
+    rewardsWrapper: "QuestCard_rewardsWrapper_d0b2cb69",
+    hoverBg: "QuestCard_hoverBg_934f6a72",
+    completeBg: "QuestCard_completeBg_4b5463bc",
+    base: "QuestCard_89591e48",
+    base__completed: "QuestCard_base__completed_46165daa",
+    content: "QuestCard_content_375953dc",
+    iconWrapper: "QuestCard_iconWrapper_fcde788c",
+    description: "QuestCard_description_76d28250",
+    description__noProgress: "QuestCard_description__noProgress_f530c11",
+    description__allDailyDone: "QuestCard_description__allDailyDone_cef471f5",
+    progressCounter: "QuestCard_progressCounter_906d0d2f",
+    progressBar: "QuestCard_progressBar_ddc689d",
+    countdown: "QuestCard_countdown_94011796",
+    descriptionText: "QuestCard_descriptionText_901d9d35",
+    condition: "QuestCard_condition_bf90cd2e",
+    base__fullSize: "QuestCard_base__fullSize_9c76dd70",
+    base__digits: "QuestCard_base__digits_9c76dd70",
+    condition__bonus: "QuestCard_condition__bonus_525c74c2",
+    base__aboveTens: "QuestCard_base__aboveTens_9c76dd70",
+    base__aboveHundred: "QuestCard_base__aboveHundred_9c76dd70",
+    base__aboveThousand: "QuestCard_base__aboveThousand_9c76dd70",
+    base__aboveTenThousand: "QuestCard_base__aboveTenThousand_9c76dd70",
+    specialConditions: "QuestCard_specialConditions_96e6d495",
+    delta: "QuestCard_delta_eaef15ad",
+    glow: "QuestCard_glow_b3b6f1b4",
+    pulse: "QuestCard_pulse_9c76dd70",
+  },
+  Ul = k.resolve("aliases"),
+  Fl = k.resolve("views"),
+  Kl = k.resolve("intl"),
+  Xl = k.resolve("images"),
+  Jl = k.resolve("strings"),
+  Yl = Ul.read((e) => e.user_missions.hangarWidget.Quests("resId")),
+  Zl = Fl.read((e) => e.mono.user_missions.tooltips.daily_quest_tooltip("resId")),
+  ed = Fl.read((e) => e.mono.user_missions.tooltips.weekly_quest_tooltip("resId")),
+  td = Ae.Small,
+  sd = i.forwardRef(function (
+    {
+      id: e,
+      animationId: t,
+      totalProgress: s,
+      currentProgress: a,
+      earned: o,
+      isCompleted: l,
+      icon: d,
+      description: c,
+      commonConditionId: u,
+      specialConditionIds: g,
+      missionType: p,
+      bonuses: f,
+      countdown: b,
+      position: v,
+      onClick: y,
+      tooltipParams: x,
+    },
+    C,
+  ) {
+    const w = kn(),
+      { play: I } = A(),
+      N = s > 0,
+      P = Ee(
+        g,
+        (e) => ({
+          id: e,
+          textPath: `weekly_quests.condition.special.c_${e}`,
+          iconPath: `userMissions.weekly.specialCond.c_${e}`,
+        }),
+        (e) => void 0 !== $l.read(e.textPath) && Tl.has(e.iconPath),
+      );
+    const S = p === Nl,
+      k = M(`userMissions.missionIcons.c_32.${d}_gold`, `userMissions.missionIcons.c_64.${d}_gold`),
+      E = M(
+        `userMissions.missionIcons.c_32.${d}_silver`,
+        `userMissions.missionIcons.c_64.${d}_silver`,
+      ),
+      { containerRef: R, tooltipProps: B } = Sn(
+        x ?? { args: { questID: e }, resId: Yl, contentId: p === jl ? ed : Zl },
+      ),
+      $ = (() => {
+        switch (p) {
+          case Il:
+            return k;
+          case jl:
+            return `userMissions.weekly.commonCond.x32x32.c_${u}`;
+          default:
+            return E;
+        }
+      })(),
+      T =
+        p === jl
+          ? ((e, t) => {
+              const s = $l.readOrEmpty(`weekly_quests.condition.common.c_${e}`),
+                a = $l.readOrEmpty("weekly_quests.specialCondition.container"),
+                n = $l.readOrEmpty("weekly_quests.specialCondition.separator"),
+                r = t.map((e) => $l.readOrEmpty(e.textPath)).join(n);
+              return `${s}${r ? a.replace("{{specialConditions}}", r) : ""}`;
+            })(u, P)
+          : Re(c),
+      W = ((e) => {
+        const t = e.length > 5,
+          s = t ? 4 : Math.min(e.length, 5),
+          a = [];
+        return (
+          We(s, (t) => {
+            const s = Oe(e, t);
+            s &&
+              a.push({
+                size: td,
+                name: s.name,
+                image: qe(s, td),
+                value: s.value,
+                valueType: Le(s.name),
+              });
+          }),
+          t &&
+            a.push({
+              size: td,
+              name: "more",
+              image: `${Xl.readOrEmpty(`quests.bonuses.${td}.default`)}`,
+              value: He(Jl.readOrEmpty("tooltips.quests.awards.additional.bottom"), {
+                count: e.length - s,
+              }),
+            }),
+          a
+        );
+      })(f),
+      {
+        contentStyle: O,
+        iconStyle: L,
+        completedIconStyle: q,
+        rewardStyles: H,
+        progressStyle: D,
+        deltaGlowStyle: G,
+        actualProgress: z,
+      } = (function (e, t, s, a, n) {
+        const r = t - s,
+          [o, l] = i.useState(r),
+          { play: d } = A(),
+          [c, u] = m(() => ql),
+          [_, g] = m(() => ({
+            to: { currentProgress: r, deltaLeft: 0, deltaWidth: 0 },
+            config: { duration: 1e3, easing: Gn },
+          })),
+          [p, f] = m(() => Hl),
+          [b, v] = m(() => Dl),
+          [y, x] = m(() => Vl),
+          [C, w] = h(a, () => ({
+            to: { y: V(-15), opacity: 0 },
+            config: { duration: 300, easing: Gn },
+          })),
+          I = me(async (t) => {
+            if (e > 0) {
+              (f.start({ opacity: 1 }), d(vt.umg_widget_quest_progress));
+              const s = t < o,
+                a = Ie(s ? t : o, e);
+              (await Promise.all(
+                g.start({
+                  from: { currentProgress: o, deltaLeft: a, deltaWidth: s ? Ie(o - t, e) : 0 },
+                  to: { currentProgress: t, deltaWidth: s ? 0 : Ie(t, e) - a, deltaLeft: a },
+                  [s ? "onStart" : "onRest"]: () => l(t),
+                }),
+              ),
+                f.start({ opacity: 0 }));
+            }
+          }),
+          N = me(async () => {
+            t !== o && (await I(t));
+          }),
+          j = me(async (t, s) => {
+            (I(e),
+              t && (await Ne(1e3)),
+              await Promise.all(v.start(Vl.to)),
+              d(s ? vt.umg_widget_quest_complete_secondary : vt.umg_widget_quest_complete),
+              await Promise.all(x.start(Dl.to)),
+              await Promise.all(u.start({ opacity: 0, y: V(15) })),
+              d(s ? vt.umg_widget_quest_reward_secondary : vt.umg_widget_quest_reward),
+              await Promise.all(w.start((e) => ({ ...Gl, delay: 200 * e }))));
+          });
+        return (
+          i.useImperativeHandle(n, () => ({ playProgressAnimation: N, playCompletedAnimation: j })),
+          {
+            contentStyle: c,
+            progressStyle: _,
+            deltaGlowStyle: p,
+            iconStyle: b,
+            completedIconStyle: y,
+            rewardStyles: C,
+            actualProgress: o,
+          }
+        );
+      })(s, a, o, W.length, C);
+    return n.jsxs(jr, {
+      id: t,
+      groupId: Hn,
+      position: v,
+      ...B,
+      onMouseEnter: (e) => {
+        l || (I("mouse-enter"), B.onMouseEnter(e));
+      },
+      ref: R,
+      className: r(Ql.base, l && Ql.base__completed, Ql[`base__${zl(s)}`]),
+      onClick: y,
+      children: [
+        n.jsx(_.div, { style: { opacity: q.opacity }, className: Ql.completeBg }),
+        n.jsxs(_.div, {
+          style: O,
+          className: Ql.contentWrapper,
+          children: [
+            n.jsx(_.div, { style: { opacity: q.opacity }, className: Ql.completeBg }),
+            n.jsx("div", { className: Ql.hoverBg }),
+            n.jsxs("div", {
+              className: Ql.iconWrapper,
+              children: [
+                n.jsx(_.div, {
+                  style: L,
+                  className: Ql.icon,
+                  children: n.jsx(j, { path: $, width: Sl, height: Sl }),
+                }),
+                n.jsx(_.div, {
+                  style: q,
+                  className: Ql.icon,
+                  children: n.jsx(j, {
+                    path: "userMissions.icons.check_green",
+                    width: Sl,
+                    height: Sl,
+                  }),
+                }),
+              ],
+            }),
+            n.jsxs("div", {
+              className: Ql.content,
+              children: [
+                n.jsxs(
+                  "div",
+                  {
+                    className: r(Ql.description, Ql.description__noProgress),
+                    children: [
+                      n.jsx(Ce, {
+                        text: T,
+                        classMix: r(Ql.descriptionText, Ql.condition, S && Ql.condition__bonus),
+                        isTruncationAvailable: !0,
+                      }),
+                      N &&
+                        n.jsx(Bl, {
+                          className: Ql.progressCounter,
+                          total: s,
+                          children: n.jsx(_.div, {
+                            children: D.currentProgress.to((e) =>
+                              Kl.formatNumber("integral", Math.ceil(e)),
+                            ),
+                          }),
+                        }),
+                    ],
+                  },
+                  T,
+                ),
+                N &&
+                  n.jsx(Qi, {
+                    className: Ql.progressBar,
+                    size: "small",
+                    value: z,
+                    maxValue: s,
+                    children: n.jsx(_.div, {
+                      style: {
+                        width: D.deltaWidth.to((e) => `${e}%`),
+                        left: D.deltaLeft.to((e) => `${e}%`),
+                      },
+                      className: Ql.delta,
+                      children: n.jsx(_.div, { style: G, className: Ql.glow }),
+                    }),
+                  }),
+              ],
+            }),
+            p === jl && n.jsx(Ll, { specConditions: P, className: Ql.specialConditions }),
+            b > 0 &&
+              n.jsx("div", {
+                className: Ql.countdown,
+                children: n.jsx(
+                  xe,
+                  { start: b, format: w ? $e.superCompact : $e.default, size: Be.x24x24 },
+                  b,
+                ),
+              }),
+          ],
+        }),
+        n.jsx("div", {
+          className: Ql.rewardsWrapper,
+          children: W.map((e, t) =>
+            n.jsx(_.div, { style: H?.[t], children: n.jsx(Te, { ...e }) }, t),
+          ),
+        }),
+      ],
+    });
+  }),
+  ad = { scale: 0, opacity: 0 },
+  nd = { duration: 500, easing: Gn },
+  rd = { from: ad, to: { opacity: 1, scale: 1 } };
+function od() {
+  return { x: V(-20), opacity: 0 };
+}
+const id = k.resolve("aliases"),
+  ld = k.resolve("views"),
+  dd = k.resolve("strings"),
+  cd = id.read((e) => e.user_missions.hangarWidget.Quests("resId")),
+  ud = ld.read((e) => e.mono.user_missions.tooltips.all_quests_done_tooltip("resId")),
+  md = i.forwardRef(function (
+    { id: e, areAllQuestsDone: t = !1, onClick: s, position: a, tooltipResId: o },
+    l,
+  ) {
+    const { iconStyle: d, contentStyle: c } = (function (e, t, s) {
+        const a = En().isVisible(e),
+          [n, r] = m(() => ({ from: ad, config: nd })),
+          [o, l] = m(() => ({ from: od(), config: nd })),
+          d = me((e = !1) => {
+            (r.start({ ...rd, immediate: e }),
+              l.start({ from: od(), to: { x: 0, opacity: 1 }, immediate: e }));
+          }),
+          c = me(() => {
+            (r.start({ to: ad, immediate: !0 }), l.start({ to: od(), immediate: !0 }));
+          });
+        return (
+          i.useImperativeHandle(s, () => ({ resetAnimations: c, runAnimations: d })),
+          i.useEffect(() => {
+            (t || a) && d(!0);
+          }, [t, a, d]),
+          { iconStyle: n, contentStyle: o }
+        );
+      })(e, t, l),
+      u = e === kl,
+      { containerRef: g, tooltipProps: p } = Sn({ resId: o ?? cd, contentId: ud, disabled: u });
+    return n.jsxs(jr, {
+      id: e,
+      groupId: Hn,
+      ...p,
+      position: a,
+      ref: g,
+      className: Ql.base,
+      onClick: s,
+      children: [
+        t && n.jsx("div", { className: Ql.hoverBg }),
+        u && n.jsx(_.div, { style: { opacity: d.opacity }, className: Ql.completeBg }),
+        n.jsxs("div", {
+          className: Ql.contentWrapper,
+          children: [
+            n.jsx("div", {
+              className: Ql.iconWrapper,
+              children: n.jsx(_.div, {
+                style: d,
+                className: Ql.icon,
+                children: n.jsx(j, {
+                  className: Ql.icon,
+                  path: u ? "userMissions.icons.check_green" : "userMissions.icons.check_white",
+                  width: Sl,
+                  height: Sl,
+                }),
+              }),
+            }),
+            n.jsx(_.div, {
+              style: c,
+              className: Ql.content,
+              children: n.jsx("div", {
+                className: r(Ql.description, Ql.description__allDailyDone),
+                children: n.jsx("div", {
+                  className: Ql.descriptionText,
+                  children: u
+                    ? dd.read("user_missions.quests.daily_quests.completed")
+                    : dd.read("user_missions.quests.daily_quests.all_completed"),
+                }),
+              }),
+            }),
+          ],
+        }),
+      ],
+    });
+  });
+function _d(e) {
+  return !e.isCompleted || e.animateCompletion;
+}
+function gd(e, t) {
+  return Ve(e, (e) => e.isCompleted && e.animateCompletion && e.missionType === t);
+}
+function pd(e, t, s) {
+  if (e.current !== t)
+    return (
+      (e.current = t),
+      t
+        ? async (t) => {
+            e.current && (await s(t));
+          }
+        : void 0
+    );
+}
+function hd({
+  data: e,
+  appearedPredicate: t,
+  api: s,
+  allDailyCompletedRef: a,
+  allCompletedRef: n,
+  previousMap: r,
+}) {
+  let o = !0,
+    i = !0;
+  const l = [],
+    d = [],
+    c = [],
+    u = [],
+    m = new Set(),
+    _ = (e, t) => {
+      e && l.push({ animationHandler: t });
+    };
+  e.forEach((e) => {
+    (m.add(e.animationId),
+      (o = o && e.isCompleted),
+      Pl.has(e.missionType) && (i = i && e.isCompleted),
+      e.isCompleted && e.animateCompletion
+        ? c.push(e)
+        : e.isCompleted || (t(e) ? u.push(e.animationId) : d.push(e)));
+  });
+  const g = pd(a, i, yd),
+    p = void 0 !== g;
+  if (r)
+    for (const [f] of r)
+      if (!m.has(f)) {
+        _(0 === c.length && 0 === u.length, fd);
+        break;
+      }
+  (_(!o && s.isVisible(Ml), bd),
+    _(c.length > 0, async (e) => {
+      await (async function ({ api: e, play: t }, s) {
+        (s.forEach((t, a) => {
+          e.updateCard(t.animationId, { position: 10 + a - s.length });
+        }),
+          t(vt.umg_widget_quest_backlog),
+          await e.applyLayout(!1));
+      })(e, c);
+    }),
+    _(c.length > 0, async (e) => {
+      await (async function (e, t, s) {
+        const { api: a, play: n } = e,
+          r = a.findMaxVisibleRowsInGroup(Hn),
+          o = Ge(t, Math.max(r, 1));
+        for (let i = 0; i < o.length; i++)
+          (await vd(e, o[i]),
+            i !== o.length - 1 &&
+              (n(vt.umg_widget_quest_backlog), await a.applyLayout(!1), await Ne(200)));
+        s || (await a.applyLayout(!1));
+      })(e, c, u.length > 0 || p);
+    }),
+    _(u.length > 0, async (t) => {
+      await (async function ({ api: e, play: t }, s, a) {
+        s.some((t) => e.isDisplaying(t, !1)) && t(vt.umg_widget_quest_backlog);
+        (a.forEach(({ animationId: t }, s) => e.updateCard(t, { position: 10 + s })),
+          await e.appear(s, Ln));
+      })(t, u, e);
+    }),
+    _(d.length > 0, async (e) => {
+      await (async function ({ questCardRefs: e }, t) {
+        await Promise.all(
+          t.map(async (t) => {
+            await e.get(t.animationId)?.playProgressAnimation();
+          }),
+        );
+      })(e, d);
+    }));
+  const h = pd(n, o, xd);
+  return (_(p, g), _(void 0 !== h, h), l);
+}
+async function fd({ api: e }) {
+  await e.applyLayout(!1);
+}
+async function bd({ play: e, api: t }) {
+  (e(vt.umg_widget_quest_disappear), await t.disappear(Ml));
+}
+async function vd({ questCardRefs: e, play: t, api: s }, a) {
+  const n = a.some((e) => e.totalProgress > 0);
+  await Promise.all(
+    a.map(async ({ animationId: a }, r) => {
+      const o = r > 0;
+      (await Ne(400 * r),
+        await e.get(a)?.playCompletedAnimation(n, o),
+        await Ne(500),
+        t(o ? vt.umg_widget_quest_disappear_secondary : vt.umg_widget_quest_disappear),
+        await s.disappear(a));
+    }),
+  );
+}
+async function yd({ api: e, play: t, allDailyCompletedCard: s }) {
+  (t(vt.umg_widget_quest_complete_all),
+    s?.resetAnimations(),
+    await e.appear([kl], On),
+    s?.runAnimations(),
+    await Ne(1500),
+    t(vt.umg_widget_quest_disappear),
+    await e.disappear(kl),
+    await e.applyLayout(!1));
+}
+async function xd({ api: e, play: t, allCompletedCard: s }) {
+  (t(vt.umg_widget_quest_complete_all),
+    s?.resetAnimations(),
+    await e.appear([Ml], On),
+    s?.runAnimations(),
+    await Ne(1500));
+}
+function Cd() {
+  const { model: e, controls: t } = Cl(),
+    s = En(),
+    a = i.useRef(new Map()),
+    n = e.quests.get(),
+    r = i.useRef(null),
+    o = i.useRef([]),
+    l = i.useRef(null),
+    d = i.useRef(null),
+    c = i.useRef(!1),
+    u = i.useRef(!1),
+    m = i.useRef(!1),
+    _ = je(),
+    { play: g } = A(),
+    p = i.useRef(!1),
+    h = i.useRef([]),
+    [f, b] = i.useState(() => {
+      const {
+        data: e,
+        allDailyCompleted: t,
+        allCompleted: a,
+        appeared: i,
+      } = (function (e) {
+        let t = !0,
+          s = !0;
+        const a = [],
+          n = gd(e, Il),
+          r = gd(e, wl),
+          o = [];
+        return (
+          De(e, (e) => {
+            ((t = t && e.isCompleted && !e.animateCompletion),
+              Pl.has(e.missionType) && (s = s && e.isCompleted && !e.animateCompletion),
+              ((e.missionType === Il && !e.isCompleted && n) ||
+                (e.missionType === Nl && !e.isCompleted && r)) &&
+                o.push(e.animationId),
+              a.push(e));
+          }),
+          { data: a.filter(_d), allCompleted: t, allDailyCompleted: s, appeared: o }
+        );
+      })(n);
+      return (
+        (o.current = i),
+        (r.current = n),
+        (c.current = t),
+        (u.current = a),
+        h.current.push(
+          ...hd({
+            data: e,
+            appearedPredicate: ({ animationId: e }) => i.includes(e),
+            api: s,
+            allDailyCompletedRef: c,
+            allCompletedRef: u,
+          }),
+        ),
+        e
+      );
+    }),
+    v = me(async (e) => {
+      const a = new Set();
+      (f.forEach(({ animationId: e }) => {
+        (s.updateCard(e, { visible: !1 }), a.add(e));
+      }),
+        e.forEach((e) => {
+          const t = e.isCompleted && e.animateCompletion;
+          s.updateCard(e.animationId, { visible: a.has(e.animationId) || t });
+        }),
+        t.markAsViewed(),
+        b(e));
+    }),
+    y = me(async (e) => {
+      if (void 0 !== e.data) ((m.current = !1), await v(e.data), h.current.shift());
+      else if (
+        (await e?.animationHandler?.({
+          api: s,
+          questCardRefs: a.current,
+          allDailyCompletedCard: l.current,
+          allCompletedCard: d.current,
+          play: g,
+        }),
+        h.current.shift(),
+        h.current.length)
+      ) {
+        const e = h.current[0];
+        await y(e);
+      }
+    });
+  return (
+    Pr(_, () => {
+      (!(function (e, t, s) {
+        let a = !0;
+        (e.forEach((e) => {
+          ((a = a && e.isCompleted && !e.animateCompletion),
+            s.updateCard(e.animationId, { visible: !t.includes(e.animationId) && _d(e) }));
+        }),
+          a && s.updateCard(Ml, { visible: !0 }));
+      })(f, o.current, s),
+        s.enqueue(async () => s.applyLayout()),
+        t.markAsViewed());
+    }),
+    i.useEffect(() => {
+      if (!fe.structural(n, r.current)) {
+        const e = (function (e) {
+            return new Map(te(e, (e) => [e.animationId, e]));
+          })(r.current),
+          t = (function (e, t) {
+            return te(e, (e) => ({
+              ...e,
+              animateCompletion: !t.get(e.animationId)?.isCompleted && e.isCompleted,
+            })).filter(_d);
+          })(n, e);
+        h.current.push(
+          { data: t },
+          ...hd({
+            data: t,
+            appearedPredicate: (t) =>
+              !e.has(t.animationId) || (!0 === e.get(t.animationId)?.isCompleted && !t.isCompleted),
+            api: s,
+            allDailyCompletedRef: c,
+            allCompletedRef: u,
+            previousMap: e,
+          }),
+          { data: t.filter(({ isCompleted: e }) => !e) },
+        );
+      }
+      r.current = n;
+    }, [n, s]),
+    i.useEffect(() => {
+      m.current = !0;
+    }, [f]),
+    i.useEffect(() => {
+      !p.current &&
+        m.current &&
+        h.current.length &&
+        ((p.current = !0),
+        s
+          .enqueue(async () => await y(h.current[0]))
+          .then(() => {
+            p.current = !1;
+          }));
+    }),
+    { questData: f, questCardRefs: a, allDailyCompletedCardRef: l, allCompletedCardRef: d }
+  );
+}
+const wd = o(function () {
+    const { controls: e } = Cl(),
+      {
+        questData: t,
+        questCardRefs: s,
+        allDailyCompletedCardRef: a,
+        allCompletedCardRef: r,
+      } = Cd(),
+      { play: o } = A(),
+      i = t.every((e) => e.isCompleted && !e.animateCompletion);
+    return n.jsxs(n.Fragment, {
+      children: [
+        t.map((t, a) =>
+          n.jsx(
+            sd,
+            {
+              position: 10 + a,
+              ...t,
+              onClick: () => {
+                t.isCompleted || (o("click"), e.onMissionClick(t.id));
+              },
+              ref: (e) => {
+                e ? s.current.set(t.animationId, e) : s.current.delete(t.animationId);
+              },
+            },
+            t.animationId,
+          ),
+        ),
+        n.jsx(md, { ref: a, id: kl, position: 0 }),
+        n.jsx(md, {
+          ref: r,
+          id: Ml,
+          areAllQuestsDone: i,
+          position: 1,
+          onClick: () => e.onMissionClick(null),
+        }),
+      ],
+    });
+  }),
+  Id = { rootId: k.resolve("aliases").read((e) => e.user_missions.hangarWidget.Quests("resId")) };
+function Nd() {
+  return n.jsx(xl, { options: Id, children: n.jsx(wd, {}) });
+}
+var jd = ((e) => ((e[(e.Disabled = 0)] = "Disabled"), (e[(e.Active = 1)] = "Active"), e))(jd || {});
+const [Pd, Sd] = b()(
+    ({ observableModel: t }) => {
+      const s = { root: t.object(), eventInfo: t.object("eventInfo") },
+        a = e(() => {
+          const { status: e, isCompleted: t } = s.root.get();
+          return e === jd.Active && !t;
+        }),
+        n = e(() =>
+          s.eventInfo.get().subMode === nt.StPatrick
+            ? {
+                card: R.videos.st_patrick.umg.card_effect(),
+                icon: R.videos.st_patrick.umg.icon_bg_effect(),
+              }
+            : { card: R.videos.umg.card_effect(), icon: R.videos.umg.icon_bg_effect() },
+        );
+      return {
+        ...s,
+        computes: { isActiveProgress: a, videos: n },
+        battleTypes: t.transform((e) => te(e, (e) => e), "leaderBoard.battleTypes"),
+        battleModes: t.transform(
+          (e) => te(e, (e) => te(e, (e) => ({ ...e }))),
+          "leaderBoard.battleModes",
+        ),
+      };
+    },
+    ({ externalModel: e }) => ({
+      openProgression: e.createCallbackNoArgs("showProgression"),
+      progressionAnimationEnd: e.createCallbackNoArgs("onProgressionAnimationCompleted"),
+    }),
+  ),
+  kd = {
+    base: "Progress_b5a185f8",
+    progress: "Progress_bab84485",
+    container: "Progress_container_c9a11713",
+    counter: "Progress_counter_fc4dff84",
+    counterDivider: "Progress_counterDivider_5eb79cd9",
+    total: "Progress_total_30003ccd",
+    current: "Progress_current_eb3d0369",
+    base__hovered: "Progress_base__hovered_71ab735e",
+    base__default: "Progress_base__default_71ab735e",
+    base__stPatrick: "Progress_base__stPatrick_71ab735e",
+    progressBackground: "Progress_progressBackground_2a4077d9",
+    pattern: "Progress_pattern_a730c2f0",
+  },
+  Md = o(function ({ hovered: e }) {
+    const { model: t, controls: s } = Sd(),
+      { stageProgress: a, prevStageProgress: o, stagePoints: i } = t.root.get(),
+      l = mt().model.root.get().subMode;
+    return n.jsxs("div", {
+      className: r(kd.base, kd[`base__${l}`], e && kd.base__hovered),
+      children: [
+        n.jsx("div", {
+          className: kd.container,
+          children: n.jsx(ze, {
+            text: R.strings.battle_royale_extention.progress.counter(),
+            params: {
+              current: n.jsx("span", { className: kd.current, children: a }),
+              divider: n.jsx("span", { className: kd.counterDivider, children: "/" }),
+              total: n.jsx("span", { className: kd.total, children: i }),
+            },
+            className: kd.counter,
+          }),
+        }),
+        n.jsx("div", {
+          className: kd.progress,
+          children: n.jsx(Se, {
+            value: a,
+            maxValue: i,
+            animationEnabled: !0,
+            size: "small",
+            classNames: { background: kd.progressBackground },
+            filledClassNames: { pattern: kd.pattern },
+            children: n.jsx(Qe, {
+              initValue: o,
+              initMaxValue: i,
+              animationProps: { onRest: s.progressionAnimationEnd },
+            }),
+          }),
+        }),
+      ],
+    });
+  }),
+  Ed = o(function ({ animated: e, className: t, ...s }) {
+    const a = i.useRef(null),
+      [r, o] = Ue(() => {
+        const e = a.current?.getCachedKeyframes();
+        return !e?.length || (a.current?.goToAndStop(0), !1);
+      });
+    return (
+      ve(() => (r(), o)),
+      i.useEffect(
+        () =>
+          Fe(
+            () => {
+              e ? a.current?.play() : a.current?.stop();
+            },
+            e ? 0 : 200,
+          ),
+        [e],
+      ),
+      n.jsx(Pe, { className: t, ref: a, preload: "auto", ...s })
+    );
+  }),
+  Ad = {
+    hoverBg: "ProgressionEntryPoint_hoverBg_1cba4166",
+    background: "ProgressionEntryPoint_background_9855e8e2",
+    base: "ProgressionEntryPoint_5c0716bb",
+    base__default: "ProgressionEntryPoint_base__default_cd4dbad9",
+    base__stPatrick: "ProgressionEntryPoint_base__stPatrick_cd4dbad9",
+    effect: "ProgressionEntryPoint_effect_a8795aaf",
+    iconVideo: "ProgressionEntryPoint_iconVideo_77919c99",
+    cardVideo: "ProgressionEntryPoint_cardVideo_eae0e238",
+    icon: "ProgressionEntryPoint_icon_3c1e7b7d",
+    base__activeProgress: "ProgressionEntryPoint_base__activeProgress_cd4dbad9",
+    label: "ProgressionEntryPoint_label_73e2f07e",
+    content: "ProgressionEntryPoint_content_25c59db2",
+    progressionComplete: "ProgressionEntryPoint_progressionComplete_6fd8d1c5",
+    pulse: "ProgressionEntryPoint_pulse_cd4dbad9",
+  },
+  Rd = k.resolve("aliases"),
+  Bd = k.resolve("views"),
+  $d = "progressionEntryPoint",
+  Td = o(() => {
+    const { model: e, controls: t } = Sd(),
+      { stage: s, status: a } = e.root.get(),
+      o = e.eventInfo.get().subMode,
+      l = e.computes.videos(),
+      d = En(),
+      { play: c } = A(),
+      [u, m] = i.useState(!1),
+      g = e.computes.isActiveProgress(),
+      p = f(a, {
+        key: a,
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        config: { duration: 300 },
+        exitBeforeEnter: !0,
+      }),
+      { containerRef: h, tooltipProps: b } = Sn({
+        resId: Rd.read((e) => e.battle_royale.hangarWidget.Progression("resId")),
+        contentId: Bd.read((e) => e.battle_royale.mono.lobby.tooltips.progression_widget("resId")),
+      });
+    return (
+      ve(() => {
+        d.enqueue(async () => {
+          (d.updateCard($d, { visible: !0 }), await d.applyLayout());
+        });
+      }),
+      n.jsxs(jr, {
+        position: 1,
+        id: $d,
+        groupId: Cr,
+        className: r(Ad.base, g && Ad.base__activeProgress, Ad[`base__${o}`]),
+        onClick: function () {
+          (c("click"), t.openProgression(), b.onClick());
+        },
+        onMouseEnter: function (e) {
+          (c("mouse-enter"), b.onMouseEnter(e), m(!0));
+        },
+        onMouseLeave: function () {
+          (b.onMouseLeave(), m(!1));
+        },
+        ref: h,
+        children: [
+          n.jsx("div", { className: Ad.background }),
+          g && n.jsx("div", { className: Ad.effect }),
+          n.jsx("div", { className: Ad.hoverBg }),
+          g &&
+            n.jsx(Ed, {
+              src: l.card,
+              animated: u,
+              className: Ad.cardVideo,
+              autoplay: !1,
+              loop: !0,
+            }),
+          p((e, t) =>
+            n.jsxs(_.div, {
+              className: Ad.content,
+              style: e,
+              children: [
+                n.jsxs("div", {
+                  className: r(Ad.icon, Ad[`icon__${t}`]),
+                  children: [
+                    g &&
+                      n.jsx(Pe, { className: Ad.iconVideo, src: l.icon, autoplay: !0, loop: !0 }),
+                    g && n.jsx("div", { className: Ad.label, children: s }),
+                  ],
+                }),
+                g
+                  ? n.jsx(Md, { hovered: u })
+                  : n.jsx("div", {
+                      className: Ad.progressionComplete,
+                      children: n.jsx(ze, {
+                        text: R.strings.battle_royale_extention.progressionComplete(),
+                      }),
+                    }),
+              ],
+            }),
+          ),
+        ],
+      })
+    );
+  }),
+  [Wd, Od] = b()(
+    ({ observableModel: e }) => ({ ...e.primitives(["balance", "isWGMoneyAvailable"]) }),
+    ({ externalModel: e }) => ({ openShop: e.createCallbackNoArgs("openShop") }),
+  ),
+  Ld = {
+    hoverBg: "ShopButton_hoverBg_16f2a05",
+    background: "ShopButton_background_2d6c1f5e",
+    base: "ShopButton_4bc85d12",
+    base__default: "ShopButton_base__default_a770931",
+    base__stPatrick: "ShopButton_base__stPatrick_a770931",
+    content: "ShopButton_content_c384b577",
+    amount: "ShopButton_amount_ec015af2",
+    text: "ShopButton_text_f38dd54f",
+    pulse: "ShopButton_pulse_a770931",
+  },
+  qd = k.resolve("views"),
+  Hd = k.resolve("aliases"),
+  Dd = o(function () {
+    const { model: e, controls: t } = Od(),
+      { subMode: s, coinType: a } = mt().model.root.get(),
+      { play: o } = A(),
+      i = e.balance.get(),
+      l = e.isWGMoneyAvailable.get(),
+      { containerRef: d, tooltipProps: c } = Sn({
+        resId: Hd.read((e) => e.battle_royale.hangarWidget.EventShop("resId")),
+        contentId: qd.read((e) => e.battle_royale.mono.lobby.tooltips.shop_button("resId")),
+      });
+    return n.jsxs(jr, {
+      position: 0,
+      id: "entryPoint",
+      groupId: yr,
+      visible: !0,
+      className: r(Ld.base, Ld[`base__${s}`]),
+      onClick: function () {
+        (o("click"), c.onClick(), t.openShop());
+      },
+      onMouseEnter: function (e) {
+        (o("mouse-enter"), c.onMouseEnter(e));
+      },
+      onMouseLeave: c.onMouseLeave,
+      ref: d,
+      children: [
+        n.jsx("div", { className: Ld.background }),
+        n.jsx("div", { className: Ld.hoverBg }),
+        n.jsxs("div", {
+          className: Ld.content,
+          children: [
+            n.jsx("div", {
+              className: Ld.text,
+              children: n.jsx(Ke, { text: R.strings.battle_royale_extention.eventShop() }),
+            }),
+            n.jsxs("div", {
+              className: Ld.amount,
+              children: [
+                l && i >= 0 ? n.jsx(Xe, { value: i }) : R.strings.common.common.dashes(),
+                n.jsx(ot, { type: a }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    });
+  }),
+  Vd = "Widget_9097a2b5",
+  Gd = k.resolve("aliases").read((e) => e.user_missions.hangarWidget.Quests("resId")),
+  zd = o(() => {
+    const { model: e, controls: t } = bt(),
+      s = (function (e) {
+        const t = En(),
+          s = i.useRef([]),
+          a = i.useRef(!1),
+          [n, r] = i.useState(e);
+        return (
+          i.useEffect(() => {
+            fe.shallow(n, e) || s.current.push(e);
+          }),
+          i.useEffect(() => {
+            if (a.current) return;
+            const e = s.current.shift();
+            if (!e) return;
+            a.current = !0;
+            const o = be(
+              Object.entries(e),
+              ([e, t]) => n[e] && !t,
+              ([e]) => e,
+            );
+            t.enqueue(async () => {
+              o.length && (await t.disappearGroups(o), await t.applyLayout(!1));
+            }).then(() => {
+              ((a.current = !1), r(e));
+            });
+          }),
+          n
+        );
+      })({
+        [vr]: e.computes.isGroupVisible(vr),
+        [Cr]: e.computes.isGroupVisible(Cr),
+        [xr]: e.computes.isGroupVisible(xr),
+        [yr]: !0,
+      }),
+      a = Je(Gd);
+    return n.jsxs("div", {
+      className: Vd,
+      children: [
+        s.battlePass && n.jsx(yl, {}),
+        s.progressionEntryPoint && n.jsx(Td, {}),
+        s.shopEntryPoint && n.jsx(Dd, {}),
+        s.missions && a && n.jsx(Nd, {}),
+      ],
+    });
+  }),
+  Qd = () => n.jsx(br, { children: n.jsx(or, { groups: wr, children: n.jsx(zd, {}) }) }),
+  Ud = "Message_a512f824",
+  Fd = "Message_container_fdc74d3c",
+  Kd = "Message_background_ab9441f7",
+  Xd = "Message_tooltipContainer_fdc74d3c",
+  Jd = "Message_alertText_771b8cbf",
+  Yd = "Message_icon_fdc90528",
+  Zd = "Message_button_42eac0db",
+  ec = "Message_buttonContent_2adf24d6",
+  tc = k.resolve("strings"),
+  sc = k.resolve("views"),
+  ac = o(function () {
+    const { model: e, controls: t } = it(),
+      s = e.computes.battleSchedule(),
+      a = e.alertType.get(),
+      r = a === lt.ModeIsFinished || a === lt.None,
+      o = a === lt.ModeIsUnavailable || a === lt.CeasefireCurrentServer,
+      i = ee(
+        "ceasefire",
+        c.useMemo(
+          () => ({
+            battleSchedule: s,
+            alertType: a,
+            resId: sc.read((e) => e.battle_royale.mono.lobby.tooltips.ceasefire("resId")),
+          }),
+          [s, a],
+        ),
+        { disabled: r },
+      );
+    return n.jsxs("div", {
+      className: Ud,
+      children: [
+        n.jsx("div", { className: Kd }),
+        n.jsxs("div", {
+          className: Fd,
+          children: [
+            n.jsxs("div", {
+              ...i,
+              className: Xd,
+              children: [
+                n.jsx("div", { className: Yd }),
+                n.jsx("div", {
+                  className: Jd,
+                  children: tc.readOrEmpty(`battle_royale.alertMessage.${a}`),
+                }),
+              ],
+            }),
+            o &&
+              n.jsx(q, {
+                theme: "secondary",
+                size: "small",
+                classNames: { base: Zd, content: ec },
+                onClick: t.changeServer,
+                autoAlignContent: !1,
+                children: R.strings.battle_royale.alertMessage.changeServerButton(),
+              }),
+          ],
+        }),
+      ],
+    });
+  }),
+  [nc, rc] = b()(
+    ({ observableModel: e }) => ({ ...e.primitives(["selectedTab"]) }),
+    ({ externalModel: e }) => ({ select: e.createCallback((e) => ({ tabId: e }), "onSelectTab") }),
+  ),
+  oc = {
+    base: "Tab_95f1dfc2",
+    base__active: "Tab_base__active_8ed0d5bc",
+    imgContainer: "Tab_imgContainer_d1f44ac2",
+    selectedImg: "Tab_selectedImg_3fe1b8ab",
+    unselectedImg: "Tab_unselectedImg_b04ff918",
+    label: "Tab_label_e971bd70",
+    base__default: "Tab_base__default_0",
+    base__stPatrick: "Tab_base__stPatrick_0",
+  },
+  ic = k.resolve("views");
+function lc(e, t, s) {
+  return s === nt.StPatrick
+    ? `R.images.battle_royale.gui.maps.st_patrick.icons.battleTypeSelector.${e}.${t}`
+    : `R.images.battle_royale.gui.maps.icons.battleTypeSelector.${e}.${t}`;
+}
+function dc({ selectedTab: e, tabId: t, onClick: s, subMode: a, className: o }) {
+  const l = A(),
+    d = e === t,
+    c = ee(
+      "battle_selector",
+      i.useMemo(
+        () => ({
+          tabId: t,
+          resId: ic.read((e) => e.battle_royale.mono.lobby.tooltips.battle_selector("resId")),
+        }),
+        [t],
+      ),
+    );
+  return n.jsxs("div", {
+    className: r(oc.base, oc[`base__${a}`], d && oc.base__active, o),
+    onClick: function () {
+      (c.onClick(), d || (s(t), l.play("click")));
+    },
+    onMouseEnter: function (e) {
+      (c.onMouseEnter(e), d || l.play("mouse-enter"));
+    },
+    onMouseLeave: c.onMouseLeave,
+    "data-test-id": `BattleRoyaleTab-${t}`,
+    children: [
+      n.jsxs("div", {
+        className: oc.imgContainer,
+        children: [
+          n.jsx("div", {
+            className: oc.selectedImg,
+            style: { backgroundImage: `url(${lc("selected", t, a)})` },
+          }),
+          n.jsx("div", {
+            className: oc.unselectedImg,
+            style: { backgroundImage: `url(${lc("unselected", t, a)})` },
+          }),
+        ],
+      }),
+      n.jsx("div", {
+        className: oc.label,
+        children: `${R.strings.battle_royale_extention.tab.label.$dyn(t)}`,
+      }),
+    ],
+  });
+}
+const cc = "App_61b49552",
+  uc = "App_tab_d1d66e0b",
+  mc = [ct.Solo, ct.Platoon, ct.Team],
+  _c = o(function () {
+    const { model: e, controls: t } = rc(),
+      s = e.selectedTab.get(),
+      a = mt().model.root.get().subMode;
+    return n.jsx("div", {
+      className: cc,
+      children: mc.map((e) =>
+        n.jsx(dc, { selectedTab: s, tabId: e, onClick: t.select, className: uc, subMode: a }, e),
+      ),
+    });
+  }),
+  gc = { rootId: k.resolve("aliases").read((e) => e.battle_royale.BattleSelector("resId")) };
+function pc() {
+  return n.jsx(nc, { options: gc, children: n.jsx(_c, {}) });
+}
+var hc = ((e) => ((e.Alert = "alert"), (e.BattleSelector = "battleSelector"), e))(hc || {});
+const [fc, bc] = b()(({ observableModel: e }) => ({ ...e.primitives(["modeStatus"]) }), v),
+  vc = o(function () {
+    const { model: e } = bc(),
+      t = e.modeStatus.get();
+    switch (t) {
+      case hc.Alert:
+        return n.jsx(ac, {});
+      case hc.BattleSelector:
+        return n.jsx(pc, {});
+      default:
+        return (console.warn(`Unsupported header modeStatus: ${t}`), null);
+    }
+  }),
+  yc = "HangarScreen_332e247",
+  xc = "HangarScreen_vignette_cc61e026",
+  Cc = "HangarScreen_dust_d8ab7d08",
+  wc = "HangarScreen_sceneWrapper_7399211",
+  Ic = "HangarScreen_shadow_ee5adb00",
+  Nc = "HangarScreen_shadow__center_5f549a97",
+  jc = "HangarScreen_shadow__corner_1516f78a",
+  Pc = "HangarScreen_shadow__left_top_41295511",
+  Sc = "HangarScreen_shadow__left_bottom_4bc55100",
+  kc = "HangarScreen_shadow__right_top_e9ef09d8",
+  Mc = "HangarScreen_shadow__right_bottom_a838e83a",
+  Ec = "HangarScreen_mainMenu_df15cee4",
+  Ac = "HangarScreen_hangarWidget_81fee245",
+  Rc = k.resolve("aliases"),
+  Bc = Rc.read((e) => e.hangar.shared.HeroTank("resId")),
+  $c = { rootId: Rc.read((e) => e.hangar.shared.MainMenu("resId")) },
+  Tc = o(function () {
+    const { modeIconPath: e } = mt().model.computes.eventSettings().mainMenu;
+    return n.jsxs("div", {
+      className: yc,
+      children: [
+        n.jsx("div", { className: xc }),
+        n.jsxs("div", {
+          className: Cc,
+          children: [
+            n.jsx("div", { className: r(Ic, Nc) }),
+            n.jsx("div", { className: r(Ic, jc, Pc) }),
+            n.jsx("div", { className: r(Ic, jc, Sc) }),
+            n.jsx("div", { className: r(Ic, jc, kc) }),
+            n.jsx("div", { className: r(Ic, jc, Mc) }),
+          ],
+        }),
+        n.jsx(J, { id: Bc, children: n.jsx(Ja, {}) }),
+        n.jsx(Pn, { className: wc }),
+        n.jsx(vc, {}),
+        n.jsx(jn, { className: Ec, options: $c, modeIconPath: e }),
+        n.jsx("div", { className: Ac, children: n.jsx(X, { children: n.jsx(Qd, {}) }) }),
+      ],
+    });
+  }),
+  Wc = "Page_d023d87f",
+  Oc = "Page_carousel_2e3eb473",
+  Lc = "Page_carousel__double_b4782e51",
+  qc = "Page_loadout_757c2bdf",
+  Hc = k.resolve("aliases"),
+  Dc = Hc.read((e) => e.battle_royale.loadoutPanelContainer.Loadout("resId")),
+  Vc = Hc.read((e) => e.battle_royale.loadoutPanelContainer.Commander("resId"));
+const Gc = o(function () {
+    const e = Mt().model.carouselRowCount.get(),
+      t = (function () {
+        const e = Je(Dc),
+          t = Je(Vc);
+        return e && t;
+      })();
+    return (
+      c.useEffect(() => {
+        Ye(!0);
+      }, []),
+      n.jsxs("div", {
+        className: Wc,
+        children: [
+          n.jsx(Tc, {}),
+          n.jsx("div", { className: qc, children: t && n.jsx(za, {}) }),
+          n.jsx("div", { className: r(Oc, 2 === e && Lc), children: n.jsx(ia, {}) }),
+        ],
+      })
+    );
+  }),
+  zc = "App_7ac91f18";
+function Qc() {
+  return n.jsx("div", { className: zc, children: n.jsx(Gc, {}) });
+}
+const Uc = k.resolve("aliases");
+function Fc(e, t, s) {
+  return { options: { rootId: t.read(e) }, ...s };
+}
+const Kc = Ze(yt);
+st(
+  new et()
+    .addWithProps(tt, { soundsOverrides: Kc })
+    .addWithProps(
+      ut,
+      Fc((e) => e.battle_royale.Events("resId"), Uc),
+    )
+    .addWithProps(
+      kt,
+      Fc((e) => e.battle_royale.VehiclesFilter("resId"), Uc),
+    )
+    .addWithProps(
+      Et,
+      Fc((e) => e.battle_royale.VehiclesInventory("resId"), Uc),
+    )
+    .addWithProps(
+      dt,
+      Fc((e) => e.battle_royale.AlertMessage("resId"), Uc),
+    )
+    .addWithProps(
+      fc,
+      Fc((e) => e.battle_royale.Header("resId"), Uc),
+    )
+    .addWithProps(
+      pt,
+      Fc((e) => e.hangar.shared.SpaceInteraction("resId"), Uc),
+    )
+    .addWithProps(
+      _t,
+      Fc((e) => e.hangar.shared.HeroTank("resId"), Uc),
+    )
+    .addWithProps(
+      ft,
+      Fc((e) => e.battle_royale.UserMissions("resId"), Uc),
+    )
+    .addWithProps(
+      Wd,
+      Fc((e) => e.battle_royale.hangarWidget.EventShop("resId"), Uc),
+    )
+    .addWithProps(
+      Pd,
+      Fc((e) => e.battle_royale.hangarWidget.Progression("resId"), Uc),
+    )
+    .render(n.jsx(Qc, {})),
+  { fullScreen: !0 },
+)
+  .then(() => at(!1))
+  .then(() => Ye(!1));

@@ -13,7 +13,7 @@
 }
 .mediaExtraLarge .Footer_affirmative_416d3b79 {
   bottom: 110rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Timer_content_23e8ba68 {
@@ -37,12 +37,16 @@
 
 .Timer_content__endingSoon_6ee5dd6c .Timer_time_7dd62be4 {
   color: #edcb9e;
-  text-shadow: 0 0 0 rgba(0, 0, 0, 0.3), 0 0 12rem rgba(255, 61, 0, 0.3), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 6rem rgba(255, 228, 159, 0.16);
+  text-shadow:
+    0 0 0 rgba(0, 0, 0, 0.3),
+    0 0 12rem rgba(255, 61, 0, 0.3),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 6rem rgba(255, 228, 159, 0.16);
 }
 
 .Timer_2dc5a913 {
   height: 24rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Header_5380af7a {
@@ -91,7 +95,7 @@
 .Header_br_b2b829d8 {
   flex-basis: 100%;
   height: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .VehicleReceivedState_title_bfc8d322::before {
   position: absolute;
@@ -122,7 +126,8 @@
 .VehicleReceivedState_title_bfc8d322::before {
   width: 500rem;
   height: 157rem;
-  background: url("R.images.resource_well.gui.maps.icons.counterStates.received_small") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.counterStates.received_small") no-repeat
+    center/contain;
   content: "";
   pointer-events: none;
 }
@@ -130,7 +135,7 @@
   width: 600rem;
   height: 188rem;
   background-image: url("R.images.resource_well.gui.maps.icons.counterStates.received");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Counter_counterBackground_8ac9070 {
   position: absolute;
@@ -149,14 +154,20 @@
   font-size: 38rem;
   font-weight: 600;
   line-height: 44rem;
-  text-shadow: 0 0 12rem rgba(255, 61, 0, 0.32), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 4rem rgba(255, 228, 159, 0.16);
+  text-shadow:
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 4rem rgba(255, 228, 159, 0.16);
   position: relative;
 }
 .mediaLarge .Counter_8743d17f {
   font-size: 60rem;
 }
 .Counter_counter__glow_5214be6e {
-  text-shadow: 0 0 15rem #ee4d18, 0 0 4rem #ff2a00, 0 1rem 2rem rgba(255, 0, 0, 0.25);
+  text-shadow:
+    0 0 15rem #ee4d18,
+    0 0 4rem #ff2a00,
+    0 1rem 2rem rgba(255, 0, 0, 0.25);
 }
 .Counter_counter__over_76b00b88 {
   margin-top: 12rem;
@@ -178,7 +189,8 @@
 .Counter_counterBackground_8ac9070 {
   width: 280rem;
   height: 180rem;
-  background: url("R.images.resource_well.gui.maps.icons.counterStates.active.base_small") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.counterStates.active.base_small") no-repeat
+    center/contain;
   position: absolute;
   pointer-events: none;
 }
@@ -206,7 +218,7 @@
   width: 600rem;
   height: 108rem;
   background-image: url("R.images.resource_well.gui.maps.icons.counterStates.active.empty");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .ActiveState_d9c278e5 {
@@ -231,7 +243,9 @@
   margin-top: 14rem;
 }
 .ActiveState_title__withGlow_8235d582 {
-  text-shadow: 0 0 30rem #ff2a00, 0 0 30rem rgba(255, 42, 0, 0.3);
+  text-shadow:
+    0 0 30rem #ff2a00,
+    0 0 30rem rgba(255, 42, 0, 0.3);
 }
 
 .ActiveState_button_37561140 {
@@ -239,7 +253,7 @@
 }
 .mediaLarge .ActiveState_button_37561140 {
   margin-top: 32rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .DisabledState_text_9bc58d8f::before {
   position: absolute;
@@ -273,7 +287,8 @@
 .DisabledState_text_9bc58d8f::before {
   width: 440rem;
   height: 104rem;
-  background: url("R.images.resource_well.gui.maps.icons.counterStates.disabled_small") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.counterStates.disabled_small") no-repeat
+    center/contain;
   content: "";
   z-index: -1;
   pointer-events: none;
@@ -282,7 +297,7 @@
   width: 520rem;
   height: 144rem;
   background-image: url("R.images.resource_well.gui.maps.icons.counterStates.disabled");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .ErrorState_icon_f0d58ac7 {
   position: absolute;
@@ -305,7 +320,8 @@
 .ErrorState_icon_f0d58ac7 {
   width: 500rem;
   height: 98rem;
-  background: url("R.images.resource_well.gui.maps.icons.counterStates.error_small") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.counterStates.error_small") no-repeat
+    center/contain;
   position: absolute;
   pointer-events: none;
 }
@@ -313,7 +329,7 @@
   width: 600rem;
   height: 108rem;
   background-image: url("R.images.resource_well.gui.maps.icons.counterStates.error");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .CounterStates_activeState_9bffc64d {
@@ -348,7 +364,7 @@
 }
 .mediaLarge .CounterStates_vehicleReceivedState_b586d061 {
   margin-top: 26rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .VehicleDust_27e6230e {
@@ -364,7 +380,7 @@
   width: 1070rem;
   height: 890rem;
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .VehicleImage_858e9dea {
@@ -436,7 +452,7 @@
 }
 .VehicleImage_tankLight__state--show_96771558 {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .VehicleInfo_infoIcon_b4d1c36e::before {
   position: absolute;
@@ -511,7 +527,7 @@
   height: 24rem;
   background: url("R.images.resource_well.gui.maps.icons.icon_info") no-repeat center/contain;
   content: "";
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Rewards_ec437daa {
@@ -536,42 +552,76 @@
   height: 1900rem;
 }
 
-.Rewards_dust_28514631 {
-  position: absolute;
-  top: -64rem;
-  z-index: 1;
-}
-.Rewards_index--0_2c9b85f6 .Rewards_dust_28514631 {
-  left: 50%;
-  transform: translateX(-50%);
-}
-.mediaMedium .Rewards_index--0_2c9b85f6 .Rewards_dust_28514631 {
-  top: 75rem;
-}
-.mediaLarge .Rewards_index--0_2c9b85f6 .Rewards_dust_28514631 {
-  top: 215rem;
-}
-.mediaExtraLarge .Rewards_index--0_2c9b85f6 .Rewards_dust_28514631 {
-  top: 579rem;
-}
-
-.Rewards_dustParts_bdb5e153 {
+.Rewards_dust_51cf4c77 {
   position: absolute;
   top: 0;
   z-index: 1;
 }
-.Rewards_index--0_2c9b85f6 .Rewards_dustParts_bdb5e153 {
-  left: 50%;
-  transform: translateX(-50%);
+.Rewards_index--0_6f1fad32 .Rewards_dust_51cf4c77 {
+  left: 210rem;
 }
-.mediaMedium .Rewards_index--0_2c9b85f6 .Rewards_dustParts_bdb5e153 {
-  top: 48rem;
+.mediaMedium .Rewards_index--0_6f1fad32 .Rewards_dust_51cf4c77 {
+  top: 103rem;
+  left: 280rem;
 }
-.mediaLarge .Rewards_index--0_2c9b85f6 .Rewards_dustParts_bdb5e153 {
-  top: 90rem;
+.mediaLarge .Rewards_index--0_6f1fad32 .Rewards_dust_51cf4c77 {
+  top: 240rem;
+  left: 445rem;
 }
-.mediaExtraLarge .Rewards_index--0_2c9b85f6 .Rewards_dustParts_bdb5e153 {
-  top: 274rem;
+.mediaExtraLarge .Rewards_index--0_6f1fad32 .Rewards_dust_51cf4c77 {
+  top: 556rem;
+  left: 760rem;
+}
+.Rewards_index--1_507b16e2 .Rewards_dust_51cf4c77 {
+  right: 265rem;
+}
+.mediaMedium .Rewards_index--1_507b16e2 .Rewards_dust_51cf4c77 {
+  top: 103rem;
+  right: 412rem;
+}
+.mediaLarge .Rewards_index--1_507b16e2 .Rewards_dust_51cf4c77 {
+  top: 240rem;
+  right: 608rem;
+}
+.mediaExtraLarge .Rewards_index--1_507b16e2 .Rewards_dust_51cf4c77 {
+  top: 556rem;
+  right: 915rem;
+}
+
+.Rewards_dustParts_51cf4c77 {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.Rewards_index--0_6f1fad32 .Rewards_dustParts_51cf4c77 {
+  left: 210rem;
+}
+.mediaMedium .Rewards_index--0_6f1fad32 .Rewards_dustParts_51cf4c77 {
+  top: 103rem;
+  left: 280rem;
+}
+.mediaLarge .Rewards_index--0_6f1fad32 .Rewards_dustParts_51cf4c77 {
+  top: 240rem;
+  left: 445rem;
+}
+.mediaExtraLarge .Rewards_index--0_6f1fad32 .Rewards_dustParts_51cf4c77 {
+  top: 556rem;
+  left: 760rem;
+}
+.Rewards_index--1_507b16e2 .Rewards_dustParts_51cf4c77 {
+  right: 265rem;
+}
+.mediaMedium .Rewards_index--1_507b16e2 .Rewards_dustParts_51cf4c77 {
+  top: 103rem;
+  right: 412rem;
+}
+.mediaLarge .Rewards_index--1_507b16e2 .Rewards_dustParts_51cf4c77 {
+  top: 240rem;
+  right: 608rem;
+}
+.mediaExtraLarge .Rewards_index--1_507b16e2 .Rewards_dustParts_51cf4c77 {
+  top: 556rem;
+  right: 915rem;
 }
 
 .Rewards_vehicleInfoWrapper_f394a3e3 {
@@ -586,24 +636,50 @@
 .Rewards_vehicleInfoWrapper_f394a3e3::before {
   width: 600rem;
   height: 350rem;
-  background: url("R.images.resource_well.gui.maps.icons.shadow_vehicle_info") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.shadow_vehicle_info") no-repeat
+    center/contain;
   content: "";
   position: absolute;
-  top: 48%;
+  top: 50%;
   z-index: -1;
   transform: translateY(-50%);
   pointer-events: none;
 }
-.Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_2c9b85f6 {
-  top: 52%;
-  left: 50%;
-  transform: translateX(-50%);
+.Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_6f1fad32 {
+  left: 29%;
 }
-.mediaMedium .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_2c9b85f6 {
-  top: 55%;
+.mediaSmall .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_6f1fad32 {
+  left: 29%;
 }
-.mediaExtraLarge .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_2c9b85f6 {
-  top: 62%;
+.mediaMedium .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_6f1fad32 {
+  top: 47%;
+  left: 30%;
+}
+.mediaLarge .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_6f1fad32 {
+  top: 48%;
+  left: 31%;
+}
+.mediaExtraLarge .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--0_6f1fad32 {
+  top: 48%;
+  left: 33%;
+}
+.Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--1_507b16e2 {
+  right: 29%;
+}
+.mediaSmall .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--1_507b16e2 {
+  right: 29%;
+}
+.mediaMedium .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--1_507b16e2 {
+  top: 47%;
+  right: 30%;
+}
+.mediaLarge .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--1_507b16e2 {
+  top: 48%;
+  right: 31%;
+}
+.mediaExtraLarge .Rewards_vehicleInfoWrapper_f394a3e3.Rewards_index--1_507b16e2 {
+  top: 48%;
+  right: 33%;
 }
 
 .Rewards_preview_fc0a7b9f {
@@ -619,7 +695,7 @@
 .Rewards_previewLabel_ac2fb8e8 {
   width: 200rem;
   text-align: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes App_fadeOut_0 {

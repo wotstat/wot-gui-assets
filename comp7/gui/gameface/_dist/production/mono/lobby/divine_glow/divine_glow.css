@@ -138,5 +138,6 @@
   position: relative;
 }
 .DivineGlow_glow__bg_a3df35d7 {
-  background: url("R.images.comp7.gui.maps.icons.icons.divine_glow_700x700") no-repeat center/contain;
+  background: url("R.images.comp7.gui.maps.icons.icons.divine_glow_700x700") no-repeat
+    center/contain;
 }

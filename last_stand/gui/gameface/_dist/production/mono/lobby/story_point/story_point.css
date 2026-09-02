@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -50,7 +57,7 @@ html[lang=th] input {
 .StoryPoint_c7387a68 {
   display: flex;
   justify-content: center;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   position: relative;
 }
 .StoryPoint_base__size16x16_43e66d80 {
@@ -84,7 +91,7 @@ html[lang=th] input {
   height: 256rem;
 }
 
-.StoryPoint_label_13768815 {
+.StoryPoint_label_35ab4bc4 {
   font-size: 15rem;
   font-weight: 700;
   line-height: 1.3em;
@@ -92,7 +99,7 @@ html[lang=th] input {
   font-weight: 500;
   position: absolute;
 }
-.StoryPoint_base__size16x16_43e66d80 .StoryPoint_label_13768815 {
+.StoryPoint_base__size16x16_43e66d80 .StoryPoint_label_35ab4bc4 {
   margin-top: -1rem;
   color: #fff7eb;
   font-size: 20rem;
@@ -101,22 +108,34 @@ html[lang=th] input {
   letter-spacing: 0.4rem;
   position: static;
 }
-.StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_13768815 {
+.StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4 {
   color: #fff7eb;
   font-size: 80rem;
   right: -40rem;
   bottom: 40rem;
 }
-.StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_13768815[lang=th] {
+html[lang="ja"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4,
+html[lang="ko"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4,
+html[lang="zh_tw"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4,
+html[lang="zh_sg"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4,
+html[lang="zh_cn"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4,
+html[lang="vi"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4,
+html[lang="th"] .StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_35ab4bc4 {
   right: -95rem;
 }
-.StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_13768815 {
+.StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4 {
   color: #fff7eb;
   font-size: 120rem;
   font-weight: 600;
   right: -62rem;
   bottom: 48rem;
 }
-.StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_13768815[lang=th] {
+html[lang="ja"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4,
+html[lang="ko"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4,
+html[lang="zh_tw"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4,
+html[lang="zh_sg"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4,
+html[lang="zh_cn"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4,
+html[lang="vi"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4,
+html[lang="th"] .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_35ab4bc4 {
   right: -80rem;
 }

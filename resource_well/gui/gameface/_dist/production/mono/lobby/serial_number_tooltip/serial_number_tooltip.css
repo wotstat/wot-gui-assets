@@ -9,7 +9,8 @@
   width: 100%;
   height: 200rem;
   margin-bottom: 13rem;
-  background: url("R.images.resource_well.gui.maps.icons.tooltips.unique_style") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.tooltips.unique_style") no-repeat
+    center/contain;
 }
 
 .App_content_b4a44207 {
@@ -39,7 +40,8 @@
   height: 1rem;
   margin-top: 15rem;
   margin-bottom: 12rem;
-  background: linear-gradient(90deg, transparent, transparent 2rem, #c9c9b6 2rem, #c9c9b6 3rem) repeat 50% 50%/3rem 100%;
+  background: linear-gradient(90deg, transparent, transparent 2rem, #c9c9b6 2rem, #c9c9b6 3rem)
+    repeat 50% 50%/3rem 100%;
   mask-image: linear-gradient(90deg, transparent, #000, transparent);
   opacity: 0.12;
 }
@@ -61,5 +63,6 @@
   width: 14rem;
   height: 14rem;
   margin-top: 3rem;
-  background: url("R.images.resource_well.gui.maps.icons.tooltips.icon_info") center/contain no-repeat;
+  background: url("R.images.resource_well.gui.maps.icons.tooltips.icon_info") center/contain
+    no-repeat;
 }

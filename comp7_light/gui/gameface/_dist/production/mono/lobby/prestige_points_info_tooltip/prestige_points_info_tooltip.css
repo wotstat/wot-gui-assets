@@ -128,14 +128,14 @@
   margin: 4rem 5rem 8rem;
 }
 
-.TooltipDecorator_decoratorInner_11d8e15d {
+.TooltipDecorator_decoratorInner_ed88e863 {
   padding: 1rem;
-  border-image-source: url("R.images.comp7_light.gui.maps.icons.icons.tooltip_bg");
+  border-image-source: url("R.images.comp7_core.gui.maps.icons.library.tooltip_bg");
   border-image-slice: 4 fill;
   border-image-width: 4rem;
   border-image-repeat: round;
   box-shadow: 0 0 8rem rgba(15, 15, 15, 0.8);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes App_fadeIn_0 {
@@ -286,7 +286,8 @@
   width: 48rem;
   height: 48rem;
   margin-right: 8rem;
-  background: url("R.images.comp7_light.gui.maps.icons.prestigePoints.s48x48") no-repeat center/contain;
+  background: url("R.images.comp7_light.gui.maps.icons.prestigePoints.s48x48") no-repeat
+    center/contain;
   position: absolute;
   top: 11rem;
 }

@@ -39,7 +39,7 @@
   width: 48rem;
   height: 48rem;
   background: no-repeat center/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .PlayerBattleTypeStatus_b333f313 {
@@ -70,12 +70,13 @@
 .PlayerBattleTypeStatus_icon_5e9cf20f {
   width: 48rem;
   height: 48rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_type.solo") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_type.solo") no-repeat
+    center/contain;
 }
 
 .PlayerBattleTypeStatus_button_7801e3 {
   margin-left: 16rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Content_3b36767b {
@@ -136,7 +137,8 @@
   height: 20rem;
   margin-left: 5rem;
   margin-top: 4rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.anon_br_postbattle") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.anon_br_postbattle")
+    no-repeat center/contain;
   opacity: 0;
   transition: opacity 0.1s;
 }
@@ -186,7 +188,7 @@
   width: 16rem;
   margin-left: 642rem;
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .LeaderboardRow_81f65c34 {
@@ -201,7 +203,11 @@
 }
 .LeaderboardRow_base__leader_66a98c39 {
   border-top: 1rem solid rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(50% 16380% at 50% 50%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  background-image: radial-gradient(
+    50% 16380% at 50% 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
 }
 
 .LeaderboardRow_place_7b0d0710 {
@@ -216,7 +222,8 @@
 }
 .LeaderboardRow_base__leader_66a98c39 .LeaderboardRow_place_7b0d0710 {
   height: 20rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.place_1") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.place_1")
+    no-repeat center/contain;
   color: transparent;
   opacity: 1;
 }
@@ -229,7 +236,7 @@
 }
 .LeaderboardRow_base__platoon_33865fd8 .LeaderboardRow_players_cb86b55 {
   padding-bottom: 10rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Leaderboard_706487af {
@@ -264,14 +271,16 @@
 .Leaderboard_damage_d1a5ae13 {
   width: 32rem;
   height: 32rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.damage") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.damage")
+    no-repeat center/contain;
 }
 
 .Leaderboard_kills_282ff7c1 {
   width: 32rem;
   height: 32rem;
   margin-left: 22rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.kills") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.leaderboard.kills") no-repeat
+    center/contain;
 }
 
 .Leaderboard_content_db78b069 {
@@ -283,7 +292,7 @@
 }
 .mediaExtraLarge .Leaderboard_content_db78b069 {
   padding-top: 100rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes Label_hideLevel_e3f8b3ce {
@@ -507,7 +516,10 @@
 }
 .Label_text__filtered_1f239dc7 {
   color: #000;
-  text-shadow: 0 1rem 0 #000, 0 4rem 10rem #000, 0 -1rem 2rem rgba(255, 157, 114, 0.4);
+  text-shadow:
+    0 1rem 0 #000,
+    0 4rem 10rem #000,
+    0 -1rem 2rem rgba(255, 157, 114, 0.4);
   position: absolute;
 }
 .Label_text__rewardScreen_d9d7e5f7 {
@@ -553,7 +565,7 @@
   animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
   animation-delay: 0.8s;
   animation-iteration-count: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes EmblemLabels_hideLevel_970963d7 {
@@ -655,28 +667,37 @@
 .EmblemLabels_label__hasProgress_c9b9b180 {
   top: 12rem;
 }
-.EmblemLabels_label__hasProgress_c9b9b180[lang=ja], .EmblemLabels_label__hasProgress_c9b9b180[lang=zh_sg], .EmblemLabels_label__hasProgress_c9b9b180[lang=zh_cn], .EmblemLabels_label__hasProgress_c9b9b180[lang=zh_tw] {
+.EmblemLabels_label__hasProgress_c9b9b180[lang="ja"],
+.EmblemLabels_label__hasProgress_c9b9b180[lang="zh_sg"],
+.EmblemLabels_label__hasProgress_c9b9b180[lang="zh_cn"],
+.EmblemLabels_label__hasProgress_c9b9b180[lang="zh_tw"] {
   top: 15rem;
 }
-.EmblemLabels_label__hasProgress_c9b9b180[lang=ko] {
+.EmblemLabels_label__hasProgress_c9b9b180[lang="ko"] {
   top: 19rem;
 }
 .EmblemLabels_label__hasProgressProgression_c9b9b180 {
   top: 12rem;
 }
-.EmblemLabels_label__hasProgressProgression_c9b9b180[lang=ja], .EmblemLabels_label__hasProgressProgression_c9b9b180[lang=zh_sg], .EmblemLabels_label__hasProgressProgression_c9b9b180[lang=zh_cn], .EmblemLabels_label__hasProgressProgression_c9b9b180[lang=zh_tw] {
+.EmblemLabels_label__hasProgressProgression_c9b9b180[lang="ja"],
+.EmblemLabels_label__hasProgressProgression_c9b9b180[lang="zh_sg"],
+.EmblemLabels_label__hasProgressProgression_c9b9b180[lang="zh_cn"],
+.EmblemLabels_label__hasProgressProgression_c9b9b180[lang="zh_tw"] {
   top: 20rem;
 }
-.EmblemLabels_label__hasProgressProgression_c9b9b180[lang=ko] {
+.EmblemLabels_label__hasProgressProgression_c9b9b180[lang="ko"] {
   top: 20rem;
 }
 .EmblemLabels_label__hasProgressSmall_1ac76daa {
   top: 10rem;
 }
-.EmblemLabels_label__hasProgressSmall_1ac76daa[lang=ja], .EmblemLabels_label__hasProgressSmall_1ac76daa[lang=zh_tw], .EmblemLabels_label__hasProgressSmall_1ac76daa[lang=zh_sg], .EmblemLabels_label__hasProgressSmall_1ac76daa[lang=zh_cn] {
+.EmblemLabels_label__hasProgressSmall_1ac76daa[lang="ja"],
+.EmblemLabels_label__hasProgressSmall_1ac76daa[lang="zh_tw"],
+.EmblemLabels_label__hasProgressSmall_1ac76daa[lang="zh_sg"],
+.EmblemLabels_label__hasProgressSmall_1ac76daa[lang="zh_cn"] {
   top: 11rem;
 }
-.EmblemLabels_label__hasProgressSmall_1ac76daa[lang=ko] {
+.EmblemLabels_label__hasProgressSmall_1ac76daa[lang="ko"] {
   top: 15rem;
 }
 .EmblemLabels_label__show_c754cdaf {
@@ -772,7 +793,8 @@
   animation-iteration-count: 1;
   opacity: 0;
 }
-.EmblemLabels_icon__animatedSmall_970963d7, .EmblemLabels_icon__animatedMicro_f824e4de {
+.EmblemLabels_icon__animatedSmall_970963d7,
+.EmblemLabels_icon__animatedMicro_f824e4de {
   animation-name: EmblemLabels_showIconSmall_970963d7;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -780,7 +802,7 @@
   animation-delay: 1s;
   animation-iteration-count: 1;
   opacity: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes EmblemProgressBar_hideLevel_67c6e18c {
@@ -899,7 +921,7 @@
 }
 .EmblemProgressBar_base__hidden_1502c221 {
   display: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes Emblem_hideLevel_9b4d607c {
@@ -1065,7 +1087,7 @@
   width: 100rem;
   height: 100rem;
   top: 40rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattlePassEmblem_2351dcce {
@@ -1131,7 +1153,10 @@
   font-weight: 700;
   line-height: 1.15;
   align-self: center;
-  text-shadow: 0 0 7px rgba(255, 46, 0, 0.39), 0 1px 1px rgba(185, 55, 0, 0.7), 0 1px 7px rgba(95, 28, 0, 0.41);
+  text-shadow:
+    0 0 7px rgba(255, 46, 0, 0.39),
+    0 1px 1px rgba(185, 55, 0, 0.7),
+    0 1px 7px rgba(95, 28, 0, 0.41);
   position: absolute;
   bottom: -5rem;
 }
@@ -1141,7 +1166,7 @@
   font-weight: 700;
   line-height: 1.2;
   bottom: -8rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattlePassWidget_d5279d8c {
@@ -1175,7 +1200,9 @@
   margin-top: -4rem;
   margin-bottom: 2rem;
 }
-.mediaMedium .BattlePassWidget_base__progressionCompleted_1675fd0d .BattlePassWidget_title_69f8fcdb {
+.mediaMedium
+  .BattlePassWidget_base__progressionCompleted_1675fd0d
+  .BattlePassWidget_title_69f8fcdb {
   margin-top: 2rem;
   margin-bottom: 6rem;
 }
@@ -1244,7 +1271,8 @@
   width: 16rem;
   height: 16rem;
   margin-top: 2rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.rewards.battlePassPoints_small") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.rewards.battlePassPoints_small")
+    no-repeat center/contain;
 }
 
 .BattlePassWidget_progressionCompleted_92074950 {
@@ -1284,7 +1312,7 @@
 .BattlePassWidget_notUsedPoints_faef1edf {
   margin-right: 2rem;
   color: #e9e2bf;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattleQuestsWidget_ee36b159 {
@@ -1310,19 +1338,22 @@
 .BattleQuestsWidget_emblem_57107f2e {
   width: 64rem;
   height: 54rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.battle_quests_small") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.battle_quests_small")
+    no-repeat center/contain;
 }
 .mediaMedium .BattleQuestsWidget_emblem_57107f2e {
   width: 96rem;
   height: 96rem;
   margin-top: 2rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.battle_quests") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.battle_quests")
+    no-repeat center/contain;
 }
 
 .BattleQuestsWidget_glow_546b9d19 {
   width: 100rem;
   height: 100rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.light_small") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.light_small")
+    no-repeat center/contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1333,7 +1364,8 @@
 .mediaMedium .BattleQuestsWidget_glow_546b9d19 {
   width: 120rem;
   height: 120rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.light") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_quests.light")
+    no-repeat center/contain;
 }
 
 .BattleQuestsWidget_title_36c24202 {
@@ -1365,7 +1397,7 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 4rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattleRewardItem_currency_bd140696 {
@@ -1392,13 +1424,13 @@
 }
 .BattleRewardItem_currencyIcon__brProgressionToken_42621f68 {
   transform: translateX(6rem);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattleRewardList_f5767d42 {
   display: flex;
   align-items: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .PremiumRewardItem_currency_43917007 {
@@ -1421,7 +1453,7 @@
 }
 .PremiumRewardItem_currencyIcon__brProgressionToken_f952c334 {
   transform: translateX(2rem);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .PremiumRewards_2697080b {
@@ -1451,7 +1483,9 @@
 .PremiumRewards_ribbonDot_1d3c4dba {
   width: 2rem;
   height: 2rem;
-  box-shadow: 0 0 4px rgba(255, 204, 192, 0.81), 0 0 8px #fec0c0;
+  box-shadow:
+    0 0 4px rgba(255, 204, 192, 0.81),
+    0 0 8px #fec0c0;
   background: #ffa48f;
   position: absolute;
 }
@@ -1552,7 +1586,7 @@
 
 .PremiumRewards_rewardsItem_48ce88c3 {
   margin: 0 6rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Ribbon_b5924be8 {
@@ -1565,7 +1599,8 @@
 .Ribbon_shadow_5750a94c {
   width: 100%;
   height: 160rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.shadow_1920x120") no-repeat top center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.shadow_1920x120") no-repeat
+    top center/contain;
   position: absolute;
 }
 .Ribbon_shadow__top_4e9e43d {
@@ -1598,18 +1633,22 @@
 .Ribbon_ribbonIcon_304ae885 {
   /* for patrick - separate 4 states */
 }
-.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__prem_18efb3f8.Ribbon_base__win_18efb3f8 .Ribbon_ribbonIcon_304ae885 {
+.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__prem_18efb3f8.Ribbon_base__win_18efb3f8
+  .Ribbon_ribbonIcon_304ae885 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.battleResults.battle_reward.ribbon_green_prem");
 }
-.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__prem_18efb3f8.Ribbon_base__loose_18efb3f8 .Ribbon_ribbonIcon_304ae885 {
+.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__prem_18efb3f8.Ribbon_base__loose_18efb3f8
+  .Ribbon_ribbonIcon_304ae885 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.battleResults.battle_reward.ribbon_dark_green_prem");
 }
-.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__basic_18efb3f8.Ribbon_base__win_18efb3f8 .Ribbon_ribbonIcon_304ae885 {
+.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__basic_18efb3f8.Ribbon_base__win_18efb3f8
+  .Ribbon_ribbonIcon_304ae885 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.battleResults.battle_reward.ribbon_green");
 }
-.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__basic_18efb3f8.Ribbon_base__loose_18efb3f8 .Ribbon_ribbonIcon_304ae885 {
+.Ribbon_base__stPatrick_18efb3f8.Ribbon_base__basic_18efb3f8.Ribbon_base__loose_18efb3f8
+  .Ribbon_ribbonIcon_304ae885 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.battleResults.battle_reward.ribbon_dark_green");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .StatItem_bbd9f141 {
@@ -1630,7 +1669,8 @@
 .StatItem_wreathImage_9050a2b8 {
   width: 60rem;
   height: 53rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.stat_list.wreath") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.stat_list.wreath") no-repeat
+    center/contain;
   opacity: 0.5;
   position: absolute;
   top: 0;
@@ -1693,13 +1733,13 @@
   justify-content: center;
   color: rgba(var(--color-general-primary-rgb), 0.5);
   text-align: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .StatsList_38af7f56 {
   display: flex;
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Title_2dc5a334 {
@@ -1728,7 +1768,8 @@
   width: 100%;
   max-width: 1920rem;
   height: 381rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.title.winBgAdd") no-repeat center/100% 100%;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.title.winBgAdd")
+    no-repeat center/100% 100%;
   opacity: 0;
   mix-blend-mode: screen;
   position: absolute;
@@ -1742,7 +1783,9 @@
 .Title_titleBg__enterActive_b4f9c96 {
   opacity: 1;
   transform: translateX(-50%) scaleX(1);
-  transition: opacity 0.4s, transform 0.4s;
+  transition:
+    opacity 0.4s,
+    transform 0.4s;
   transition-delay: 0.2s;
   transition-timing-function: ease-out;
 }
@@ -1758,7 +1801,12 @@
   line-height: 1;
   text-align: center;
   opacity: 0;
-  mask: linear-gradient(180deg, #e4e4e4 12.5%, rgba(227, 227, 227, 0.3) 72.5%, rgba(237, 237, 237, 0) 87%);
+  mask: linear-gradient(
+    180deg,
+    #e4e4e4 12.5%,
+    rgba(227, 227, 227, 0.3) 72.5%,
+    rgba(237, 237, 237, 0) 87%
+  );
   position: absolute;
   top: -75rem;
   left: 50%;
@@ -1786,7 +1834,12 @@
 }
 .Title_base__firstPlace_2e63cf3 .Title_place_3b10ba5c {
   color: #fefeec;
-  mask: linear-gradient(180deg, #e9e2bf 14.5%, rgba(233, 226, 191, 0.3) 73%, rgba(233, 226, 191, 0) 86.5%);
+  mask: linear-gradient(
+    180deg,
+    #e9e2bf 14.5%,
+    rgba(233, 226, 191, 0.3) 73%,
+    rgba(233, 226, 191, 0) 86.5%
+  );
 }
 
 .Title_wreathIcon_407217cb {
@@ -1824,13 +1877,23 @@
   color: #fff;
   font-weight: 700;
   opacity: 0;
-  mask: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 18%, rgba(255, 255, 255, 0.3) 65%, rgba(255, 255, 255, 0) 90.5%);
+  mask: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 18%,
+    rgba(255, 255, 255, 0.3) 65%,
+    rgba(255, 255, 255, 0) 90.5%
+  );
   position: relative;
   mask-repeat: repeat;
 }
 .Title_base__firstPlace_2e63cf3 .Title_titleText_b8fd1bb1 {
   color: #fefeec;
-  mask: linear-gradient(180deg, rgba(249, 238, 217, 0.95) 16%, rgba(234, 220, 194, 0.9) 41.5%, rgba(255, 248, 210, 0) 85%);
+  mask: linear-gradient(
+    180deg,
+    rgba(249, 238, 217, 0.95) 16%,
+    rgba(234, 220, 194, 0.9) 41.5%,
+    rgba(255, 248, 210, 0) 85%
+  );
 }
 .Title_base__lose_2e63cf3 .Title_titleText_b8fd1bb1 {
   font-size: 48rem;
@@ -1878,7 +1941,7 @@
   line-height: 1.3em;
   color: rgba(var(--color-general-primary-rgb), 0.9);
   letter-spacing: 0.05em;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Transitions_wreathIcon_f2758db7 {
@@ -1893,7 +1956,9 @@
 .Transitions_titleBg_8a52fd60 {
   opacity: 1;
   transform: translateX(-50%) scaleX(1);
-  transition: opacity 0.4s, transform 0.4s;
+  transition:
+    opacity 0.4s,
+    transform 0.4s;
   transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
 }
 .Transitions_titleBg__enterDone_a653ce7f {
@@ -1918,7 +1983,9 @@
 
 .Transitions_vehicle_769d9aac {
   opacity: 1;
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
   transition-delay: 0s;
   transition-timing-function: ease-out;
 }
@@ -1927,7 +1994,7 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Result_a4461d66 {
@@ -2083,20 +2150,24 @@
 }
 .Result_widgetsContainer__hoverable_122fd31 {
   pointer-events: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Transitions_itemsBase_58669360 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
   transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
 }
 
 .Transitions_ribbon_cc4c8fc9 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   transition-delay: 0.2s;
   transition-timing-function: ease-out;
 }
@@ -2104,7 +2175,9 @@
 .Transitions_battlePassWidget_cc4c8fc9 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   transition-delay: 0.2s;
   transition-timing-function: ease-out;
 }
@@ -2112,7 +2185,9 @@
 .Transitions_battleQuetsWidget_cc4c8fc9 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   transition-delay: 0.2s;
   transition-timing-function: ease-out;
 }
@@ -2120,7 +2195,9 @@
 .Transitions_baseEnterActive_6d456240 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   transition-delay: 0s;
   transition-timing-function: ease-out;
 }
@@ -2129,7 +2206,7 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .App_dbdd4869 {
@@ -2213,7 +2290,8 @@
 .App_shadow_6f771cb2 {
   width: 100%;
   height: 100%;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.loseGradient") no-repeat center/cover;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.loseGradient")
+    no-repeat center/cover;
   position: absolute;
   top: 0;
   right: 0;
@@ -2241,12 +2319,14 @@
   font-weight: 700;
   line-height: 1.3em;
   color: rgba(var(--color-general-primary-rgb), 0.9);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Transitions_background_9d382f89 {
   opacity: 1;
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
   transition-delay: 0.2s;
   transition-timing-function: ease-out;
 }
@@ -2254,7 +2334,9 @@
 .Transitions_horizontalTabs_2044ee27 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
   transition-delay: 0.2s;
   transition-timing-function: ease-out;
 }
@@ -2262,7 +2344,9 @@
 .Transitions_baseEnterActive_6d456240 {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   transition-delay: 0s;
   transition-timing-function: ease-out;
 }

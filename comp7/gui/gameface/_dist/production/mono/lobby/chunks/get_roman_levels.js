@@ -1,1 +1,3 @@
-import{ah as o,ep as s}from"./lib.js";const a=(a,i)=>o(a,o=>s(o)).join(i);export{a as g};
+import { as as s, ep as o } from "./lib.js";
+const a = (a, i) => s(a, (s) => o(s)).join(i);
+export { a as g };
