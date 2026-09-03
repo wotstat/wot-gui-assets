@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -233,7 +240,8 @@ html[lang=th] input {
 .TankCard_gradient_70c376f2 {
   width: 100%;
   height: 100%;
-  background: url("R.images.white_tiger.gui.maps.icons.carousel.effect_hover") no-repeat center/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.carousel.effect_hover") no-repeat
+    center/contain;
   opacity: 0;
   position: absolute;
   top: 0;
@@ -259,7 +267,9 @@ html[lang=th] input {
   color: #fff;
   font-size: 18rem;
   font-weight: 700;
-  text-shadow: 0 4px 8px rgba(0, 75, 198, 0.25), 0 0 4px #0860f1;
+  text-shadow:
+    0 4px 8px rgba(0, 75, 198, 0.25),
+    0 0 4px #0860f1;
 }
 
 .TankCard_quantityIcon_ad32a0ec {
@@ -290,7 +300,9 @@ html[lang=th] input {
   font-size: 15rem;
   font-weight: 700;
   text-align: center;
-  text-shadow: 0 4px 8px rgba(0, 75, 198, 0.25), 0 0 4px #0860f1;
+  text-shadow:
+    0 4px 8px rgba(0, 75, 198, 0.25),
+    0 0 4px #0860f1;
 }
 .TankCard_wrapper__large_201c940f .TankCard_message_be5df5ab {
   font-size: 18rem;
@@ -333,7 +345,8 @@ html[lang=th] input {
 .TankCard_shadow__inBattle_ae722d28 {
   opacity: 0.7;
 }
-.TankCard_shadow__inPlatoon_d6dc4063, .TankCard_shadow__unsuitable_e0f00844 {
+.TankCard_shadow__inPlatoon_d6dc4063,
+.TankCard_shadow__unsuitable_e0f00844 {
   opacity: 0.35;
 }
 
@@ -349,15 +362,23 @@ html[lang=th] input {
 }
 .TankCard_wrapper_420ab964:hover .TankCard_border_d5f8a2f9 {
   border: 1rem solid rgba(160, 247, 243, 0.35);
-  box-shadow: 0 0 8px rgba(92, 44, 226, 0.35), 0 0 4px rgba(38, 47, 255, 0.35), 0 0 2px rgba(38, 73, 255, 0.35);
+  box-shadow:
+    0 0 8px rgba(92, 44, 226, 0.35),
+    0 0 4px rgba(38, 47, 255, 0.35),
+    0 0 2px rgba(38, 73, 255, 0.35);
 }
-.TankCard_wrapper__selected_d6dc4063 .TankCard_border_d5f8a2f9, .TankCard_wrapper__selected_d6dc4063:hover .TankCard_border_d5f8a2f9 {
+.TankCard_wrapper__selected_d6dc4063 .TankCard_border_d5f8a2f9,
+.TankCard_wrapper__selected_d6dc4063:hover .TankCard_border_d5f8a2f9 {
   border: 1rem solid rgba(160, 247, 243, 0.9);
-  box-shadow: 0 0 8px rgba(92, 44, 226, 0.9), 0 0 4px rgba(38, 47, 255, 0.9), 0 0 2px rgba(38, 73, 255, 0.9);
-}/* stylelint-disable selector-no-qualifying-type */
+  box-shadow:
+    0 0 8px rgba(92, 44, 226, 0.9),
+    0 0 4px rgba(38, 47, 255, 0.9),
+    0 0 2px rgba(38, 73, 255, 0.9);
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -381,21 +402,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -507,14 +534,17 @@ html[lang=th] input {
   display: flex;
   width: 880rem;
   padding: 8rem 0;
-  background: url("R.images.white_tiger.gui.maps.icons.carousel.carousel_bg_small") no-repeat center/cover;
+  background: url("R.images.white_tiger.gui.maps.icons.carousel.carousel_bg_small") no-repeat
+    center/cover;
   position: relative;
 }
-.CarouselApp_content__small_4d56afb2, .CarouselApp_content__medium_4e76f9ae {
+.CarouselApp_content__small_4d56afb2,
+.CarouselApp_content__medium_4e76f9ae {
   justify-content: center;
   width: 1100rem;
 }
-.CarouselApp_content__large_4d56afb2, .CarouselApp_content__extraLarge_250ba53 {
+.CarouselApp_content__large_4d56afb2,
+.CarouselApp_content__extraLarge_250ba53 {
   justify-content: center;
   width: 1461rem;
   padding: 12rem 0;
@@ -527,7 +557,10 @@ html[lang=th] input {
   padding: 0 26rem;
   position: relative;
 }
-.CarouselApp_content__small_4d56afb2 .CarouselApp_wrapper_ee4ae30, .CarouselApp_content__medium_4e76f9ae .CarouselApp_wrapper_ee4ae30, .CarouselApp_content__large_4d56afb2 .CarouselApp_wrapper_ee4ae30, .CarouselApp_content__extraLarge_250ba53 .CarouselApp_wrapper_ee4ae30 {
+.CarouselApp_content__small_4d56afb2 .CarouselApp_wrapper_ee4ae30,
+.CarouselApp_content__medium_4e76f9ae .CarouselApp_wrapper_ee4ae30,
+.CarouselApp_content__large_4d56afb2 .CarouselApp_wrapper_ee4ae30,
+.CarouselApp_content__extraLarge_250ba53 .CarouselApp_wrapper_ee4ae30 {
   justify-content: center;
   width: auto;
 }
@@ -537,10 +570,12 @@ html[lang=th] input {
   overflow: hidden;
   position: relative;
 }
-.CarouselApp_content__small_4d56afb2 .CarouselApp_carouselBodyWrapper_15294632, .CarouselApp_content__medium_4e76f9ae .CarouselApp_carouselBodyWrapper_15294632 {
+.CarouselApp_content__small_4d56afb2 .CarouselApp_carouselBodyWrapper_15294632,
+.CarouselApp_content__medium_4e76f9ae .CarouselApp_carouselBodyWrapper_15294632 {
   width: 1000rem;
 }
-.CarouselApp_content__large_4d56afb2 .CarouselApp_carouselBodyWrapper_15294632, .CarouselApp_content__extraLarge_250ba53 .CarouselApp_carouselBodyWrapper_15294632 {
+.CarouselApp_content__large_4d56afb2 .CarouselApp_carouselBodyWrapper_15294632,
+.CarouselApp_content__extraLarge_250ba53 .CarouselApp_carouselBodyWrapper_15294632 {
   width: auto;
   overflow: visible;
 }
@@ -557,7 +592,8 @@ html[lang=th] input {
 .CarouselApp_carouselBody__moveTwice_1902cfef {
   transform: translateX(-376rem);
 }
-.CarouselApp_content__large_4d56afb2 .CarouselApp_carouselBody_1b99e374, .CarouselApp_content__extraLarge_250ba53 .CarouselApp_carouselBody_1b99e374 {
+.CarouselApp_content__large_4d56afb2 .CarouselApp_carouselBody_1b99e374,
+.CarouselApp_content__extraLarge_250ba53 .CarouselApp_carouselBody_1b99e374 {
   width: auto;
   transform: none;
 }
@@ -630,10 +666,11 @@ html[lang=th] input {
 }
 .CarouselApp_cardWrapper__large_dab27ca {
   padding: 0 6rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -657,21 +694,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -798,10 +841,11 @@ html[lang=th] input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -825,21 +869,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -947,7 +997,7 @@ html[lang=th] input {
   width: 526rem;
   height: 80rem;
   margin-top: 20rem;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.items_bg_big") no-repeat 0 0/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.items_bg_big") no-repeat 0 0 / contain;
 }
 
 .AmmunitionPanel_group_f03acf1e {
@@ -958,10 +1008,11 @@ html[lang=th] input {
 }
 .AmmunitionPanel_group_f03acf1e + .AmmunitionPanel_group_f03acf1e {
   border-left: 1rem solid rgba(255, 255, 255, 0.17);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -985,21 +1036,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1102,7 +1159,7 @@ html[lang=th] input {
 .VehicleName_titleIcon_dbdab937 {
   width: 64rem;
   height: 64rem;
-  background: no-repeat 0 0/contain;
+  background: no-repeat 0 0 / contain;
   position: absolute;
   top: -16rem;
   left: -32rem;
@@ -1113,11 +1170,16 @@ html[lang=th] input {
   color: #fff;
   font-size: 24rem;
   line-height: 28rem;
-  text-shadow: 0 0 24px rgba(0, 75, 198, 0.25), 0 0 24px #0060ff, 0 0 24px rgba(0, 75, 198, 0.25), 0 0 24px #0060ff;
-}/* stylelint-disable selector-no-qualifying-type */
+  text-shadow:
+    0 0 24px rgba(0, 75, 198, 0.25),
+    0 0 24px #0060ff,
+    0 0 24px rgba(0, 75, 198, 0.25),
+    0 0 24px #0060ff;
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1141,21 +1203,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1261,7 +1329,8 @@ html[lang=th] input {
   align-items: center;
   width: 772rem;
   height: 81rem;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.bgTicket_small") no-repeat 0 0/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.bgTicket_small") no-repeat 0 0 /
+    contain;
   text-align: center;
 }
 .ChangeVehiclePanel_base__large_674a8925 {
@@ -1287,7 +1356,9 @@ html[lang=th] input {
   line-height: 1.3;
   padding-left: 22rem;
   padding-bottom: 13rem;
-  text-shadow: 0 0 8px rgba(0, 75, 198, 0.25), 0 0 4px #0860f1;
+  text-shadow:
+    0 0 8px rgba(0, 75, 198, 0.25),
+    0 0 4px #0860f1;
 }
 .ChangeVehiclePanel_base__large_674a8925 .ChangeVehiclePanel_description_1b9f6d59 {
   padding-left: 0;
@@ -1297,7 +1368,8 @@ html[lang=th] input {
 .ChangeVehiclePanel_descriptionIcon_e853db5d {
   width: 16rem;
   height: 16rem;
-  background: url("R.images.white_tiger.gui.maps.icons.tickets.ticket_16") no-repeat center center/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.tickets.ticket_16") no-repeat center
+    center/contain;
   position: absolute;
   top: 31rem;
   left: 0;
@@ -1327,10 +1399,11 @@ html[lang=th] input {
 .ChangeVehiclePanel_button_f8b7370c {
   min-width: 130rem;
   margin: 0 8rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1354,21 +1427,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1483,10 +1562,11 @@ html[lang=th] input {
   flex-direction: column;
   margin-bottom: -9rem;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1510,21 +1590,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1562,7 +1648,8 @@ html[lang=th] input {
   line-height: 30rem;
 }
 
-.CrewInfoApp_header-h26_84a72510, .mediaLarge .CrewInfoApp_name_7f8c94ed {
+.CrewInfoApp_header-h26_84a72510,
+.mediaLarge .CrewInfoApp_name_7f8c94ed {
   font-size: 26rem;
   font-weight: 400;
   line-height: 28rem;
@@ -1576,14 +1663,16 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.CrewInfoApp_header-h22_84a72510, .mediaMedium .CrewInfoApp_name_7f8c94ed {
+.CrewInfoApp_header-h22_84a72510,
+.mediaMedium .CrewInfoApp_name_7f8c94ed {
   font-size: 22rem;
   font-weight: 400;
   line-height: 24rem;
   letter-spacing: 0.2rem;
 }
 
-.CrewInfoApp_header-h20_84a72510, .CrewInfoApp_name_7f8c94ed {
+.CrewInfoApp_header-h20_84a72510,
+.CrewInfoApp_name_7f8c94ed {
   font-size: 20rem;
   font-weight: 400;
   line-height: 22rem;
@@ -1603,21 +1692,25 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.CrewInfoApp_paragraph-p20_84a72510, .mediaLarge .CrewInfoApp_type_d5cf34b6 {
+.CrewInfoApp_paragraph-p20_84a72510,
+.mediaLarge .CrewInfoApp_type_d5cf34b6 {
   font-size: 20rem;
   font-weight: 400;
   line-height: 22rem;
   letter-spacing: 0.2rem;
 }
 
-.CrewInfoApp_paragraph-p18_84a72510, .CrewInfoApp_type_d5cf34b6, .mediaLarge .CrewInfoApp_description_21d102e6 {
+.CrewInfoApp_paragraph-p18_84a72510,
+.CrewInfoApp_type_d5cf34b6,
+.mediaLarge .CrewInfoApp_description_21d102e6 {
   font-size: 18rem;
   font-weight: 400;
   line-height: 20rem;
   letter-spacing: 0.2rem;
 }
 
-.CrewInfoApp_paragraph-p16_84a72510, .CrewInfoApp_description_21d102e6 {
+.CrewInfoApp_paragraph-p16_84a72510,
+.CrewInfoApp_description_21d102e6 {
   font-size: 16rem;
   font-weight: 400;
   line-height: 18rem;
@@ -1628,7 +1721,8 @@ html[lang=th] input {
   width: 365rem;
   height: 170rem;
   padding: 18rem 0 0 165rem;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.shadowBgSmall") no-repeat center center/cover;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.shadowBgSmall") no-repeat center
+    center/cover;
   overflow: hidden;
   position: relative;
 }
@@ -1708,10 +1802,11 @@ html[lang=th] input {
   width: 100vw;
   height: 100vh;
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1735,21 +1830,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1852,12 +1953,14 @@ html[lang=th] input {
 .AlertIcon_icon_52f4712b {
   width: 24rem;
   height: 24rem;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.widgets.alert") no-repeat center/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.widgets.alert") no-repeat
+    center/contain;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1881,21 +1984,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2021,14 +2130,14 @@ html[lang=th] input {
 .LootboxEntryPointApp_content_2f9a0382 {
   width: 160rem;
   height: 120rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   pointer-events: none;
 }
 
 .LootboxEntryPointApp_glow_6eff4c52 {
   width: 150%;
   height: 150%;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.widgets.glow") no-repeat 50%/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.widgets.glow") no-repeat 50% / contain;
   opacity: 0;
   transition: opacity 0.3s;
   position: absolute;
@@ -2050,7 +2159,9 @@ html[lang=th] input {
   filter: brightness(1.3);
   transform: scale(1.02);
 }
-.mediaMedium .LootboxEntryPointApp_container_fd96ad5b:hover .LootboxEntryPointApp_animation_fd413183 {
+.mediaMedium
+  .LootboxEntryPointApp_container_fd96ad5b:hover
+  .LootboxEntryPointApp_animation_fd413183 {
   transform: scale(1.03);
 }
 .LootboxEntryPointApp_container_fd96ad5b:active .LootboxEntryPointApp_animation_fd413183 {
@@ -2073,7 +2184,10 @@ html[lang=th] input {
   font-size: 14rem;
   font-weight: 400;
   line-height: 1.3;
-  text-shadow: 0 0 15rem rgb(238, 85, 34), 0 0 8rem rgb(255, 42, 0), 0 0 4rem rgb(255, 127, 0);
+  text-shadow:
+    0 0 15rem rgb(238, 85, 34),
+    0 0 8rem rgb(255, 42, 0),
+    0 0 4rem rgb(255, 127, 0);
 }
 .LootboxEntryPointApp_text__hasBoxes_4c048224 {
   color: #e9e2bf;
@@ -2090,10 +2204,11 @@ html[lang=th] input {
 }
 .LootboxEntryPointApp_alert__hasBoxes_8d2ade97 {
   top: 75rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2117,21 +2232,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2278,7 +2399,8 @@ html[lang=th] input {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.widget.main_wt_small") no-repeat center top/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.widget.main_wt_small") no-repeat
+    center top/contain;
   transition: opacity 1s cubic-bezier(0.07, 0.82, 0.17, 1);
 }
 .mediaMedium .ProgressionWidgetApp_image_23947342 {
@@ -2307,7 +2429,8 @@ html[lang=th] input {
 .ProgressionWidgetApp_checkmark_698172cc {
   width: 48rem;
   height: 48rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.widget.check_green") center/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.widget.check_green")
+    center/contain no-repeat;
 }
 .mediaMedium .ProgressionWidgetApp_checkmark_698172cc {
   width: 64rem;
@@ -2320,7 +2443,8 @@ html[lang=th] input {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.widget.main_wt_small_hover") no-repeat center top/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.widget.main_wt_small_hover")
+    no-repeat center top/contain;
   opacity: 0;
   transition: opacity 1s cubic-bezier(0.07, 0.82, 0.17, 1);
 }
@@ -2410,13 +2534,15 @@ html[lang=th] input {
   left: 0rem;
   pointer-events: none;
 }
-.ProgressionWidgetApp_progressionCountWrapper_7d798a50 .ProgressionWidgetApp_progressbarWrapper_93efa0c5 {
+.ProgressionWidgetApp_progressionCountWrapper_7d798a50
+  .ProgressionWidgetApp_progressbarWrapper_93efa0c5 {
   width: 45%;
   padding: 0 6rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2440,21 +2566,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2540,7 +2672,8 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.Advantage_paragraph-p18_9c9f3d6d, .Advantage_text_6554de34 {
+.Advantage_paragraph-p18_9c9f3d6d,
+.Advantage_text_6554de34 {
   font-size: 18rem;
   font-weight: 400;
   line-height: 20rem;
@@ -2577,10 +2710,11 @@ html[lang=th] input {
   margin-left: 48rem;
   color: rgba(var(--color-general-primary-rgb), 0.9);
   text-shadow: 0rem 0rem 5rem #000;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2604,21 +2738,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2704,7 +2844,8 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.Features_paragraph-p18_d7f3cdfa, .Features_4b447bec {
+.Features_paragraph-p18_d7f3cdfa,
+.Features_4b447bec {
   font-size: 18rem;
   font-weight: 400;
   line-height: 20rem;
@@ -2723,10 +2864,11 @@ html[lang=th] input {
   padding-bottom: 14rem;
   color: rgba(var(--color-general-primary-rgb), 0.9);
   text-shadow: 0rem 0rem 5rem #000;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2750,21 +2892,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2802,7 +2950,8 @@ html[lang=th] input {
   line-height: 30rem;
 }
 
-.Panel_header-h26_18ee09b6, .Panel_title_d5c3516b {
+.Panel_header-h26_18ee09b6,
+.Panel_title_d5c3516b {
   font-size: 26rem;
   font-weight: 400;
   line-height: 28rem;
@@ -2867,7 +3016,8 @@ html[lang=th] input {
 .Panel_f8f7fe7 {
   width: 347rem;
   padding: 12rem 24rem 12rem 60rem;
-  background: url("R.images.white_tiger.gui.maps.icons.characteristicPanel.chars_bg") no-repeat 100% 100%/100% 100%;
+  background: url("R.images.white_tiger.gui.maps.icons.characteristicPanel.chars_bg") no-repeat 100%
+    100%/100% 100%;
   cursor: default;
 }
 .Panel_base__small_db9c3013 {
@@ -2893,7 +3043,8 @@ html[lang=th] input {
   width: 243rem;
   height: 1rem;
   margin: 10rem 17rem 7rem 0;
-  background: url("R.images.white_tiger.gui.maps.icons.characteristicPanel.chars_separator") no-repeat 100% 100%/100% 100%;
+  background: url("R.images.white_tiger.gui.maps.icons.characteristicPanel.chars_separator")
+    no-repeat 100% 100%/100% 100%;
 }
 .Panel_base__small_db9c3013 .Panel_separator_83a4966a {
   width: 222rem;
@@ -2902,10 +3053,11 @@ html[lang=th] input {
 
 .Panel_itemList_f5f66484 {
   margin-left: -6rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2929,21 +3081,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3047,10 +3205,11 @@ html[lang=th] input {
   position: absolute;
   top: 0;
   right: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3074,21 +3233,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3246,10 +3411,17 @@ html[lang=th] input {
   font-size: 26rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 15rem rgba(23, 23, 23, 0.2), 0 0 7rem rgba(23, 23, 23, 0.2), 0 2rem rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 0 15rem rgba(23, 23, 23, 0.2),
+    0 0 7rem rgba(23, 23, 23, 0.2),
+    0 2rem rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   opacity: 0.9;
-  transition: opacity 0.2s, transform 0.2s, text-shadow 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    text-shadow 0.2s,
+    color 0.2s;
 }
 .mediaMedium .MenuItem_label_8c0d77ba {
   font-size: 28rem;
@@ -3262,21 +3434,31 @@ html[lang=th] input {
 }
 .MenuItem_base__enabledState_6f88d3d1:hover .MenuItem_label_8c0d77ba {
   color: #fcf6eb;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.17);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.17);
 }
 
 .MenuItem_titleWrapper_cf46ff6b {
   display: flex;
   align-items: center;
   color: rgba(238, 237, 233, 0.9);
-  transition: opacity 0.2s, transform 0.2s, text-shadow 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    text-shadow 0.2s,
+    color 0.2s;
 }
 .MenuItem_base__disabledState_28be5e00 .MenuItem_titleWrapper_cf46ff6b {
   opacity: 0.5;
 }
 .MenuItem_base__enabledState_6f88d3d1:hover .MenuItem_titleWrapper_cf46ff6b {
   color: #fcf6eb;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.17);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.17);
   transform: translateX(6rem);
 }
 
@@ -3284,7 +3466,10 @@ html[lang=th] input {
   font-size: 20rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 15rem rgba(23, 23, 23, 0.2), 0 0 7rem rgba(23, 23, 23, 0.2), 0 2rem rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 0 15rem rgba(23, 23, 23, 0.2),
+    0 0 7rem rgba(23, 23, 23, 0.2),
+    0 2rem rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   opacity: 0.9;
 }
@@ -3319,7 +3504,10 @@ html[lang=th] input {
   font-size: 16rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 40px rgba(255, 76, 60, 0.6), 0 0 24rem rgba(255, 233, 187, 0.3), 0 0 8rem rgba(255, 251, 239, 0.2);
+  text-shadow:
+    0 0 40px rgba(255, 76, 60, 0.6),
+    0 0 24rem rgba(255, 233, 187, 0.3),
+    0 0 8rem rgba(255, 251, 239, 0.2);
   letter-spacing: 0.02em;
 }
 .mediaMedium .MenuItem_modeName_36c0339e {
@@ -3347,10 +3535,11 @@ html[lang=th] input {
   width: 24rem;
   height: 24rem;
   margin-right: 8rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3374,21 +3563,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3492,10 +3687,11 @@ html[lang=th] input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3519,21 +3715,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3672,10 +3874,11 @@ html[lang=th] input {
 .Parallax_layer__selected_ac12e19d .Parallax_layer_selectedImage_240b45af {
   opacity: 1;
   visibility: visible;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3699,21 +3902,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3819,10 +4028,11 @@ html[lang=th] input {
   position: absolute;
   top: 0;
   left: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3846,21 +4056,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4054,7 +4270,8 @@ html[lang=th] input {
 .HangarScreen_info_4dc6c07b {
   width: 16rem;
   height: 16rem;
-  background: url("R.images.gui.maps.icons.header_footer.info_icon_Info_small") no-repeat 50%/contain;
+  background: url("R.images.gui.maps.icons.header_footer.info_icon_Info_small") no-repeat 50% /
+    contain;
 }
 .mediaExtraLarge .HangarScreen_info_4dc6c07b {
   width: 24rem;
@@ -4090,7 +4307,8 @@ html[lang=th] input {
   width: 24rem;
   height: 24rem;
   margin-right: 4rem;
-  background: url("R.images.white_tiger.gui.maps.icons.narrative.narrative_icon") no-repeat 50%/100% 100%;
+  background: url("R.images.white_tiger.gui.maps.icons.narrative.narrative_icon") no-repeat 50%/100%
+    100%;
 }
 
 .HangarScreen_crewInfoWrapper_c57dc417 {
@@ -4129,10 +4347,11 @@ html[lang=th] input {
   100% {
     filter: blur(12rem);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4156,21 +4375,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4326,7 +4551,12 @@ html[lang=th] input {
   justify-content: center;
   align-items: flex-end;
   margin-top: 2rem;
-  background: radial-gradient(78.04% 100% at 50% 100%, rgba(240, 218, 191, 0.1) 0%, rgba(90, 90, 90, 0) 70%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(
+    78.04% 100% at 50% 100%,
+    rgba(240, 218, 191, 0.1) 0%,
+    rgba(90, 90, 90, 0) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
   position: relative;
 }
 .ProgressionContentApp_progress_top__current_30f9dab3 {
@@ -4352,7 +4582,8 @@ html[lang=th] input {
   margin-bottom: 6rem;
   position: relative;
 }
-.ProgressionContentApp_stage_img_f085aeb9, .ProgressionContentApp_stage_glow_1201439a {
+.ProgressionContentApp_stage_img_f085aeb9,
+.ProgressionContentApp_stage_glow_1201439a {
   display: none;
 }
 .ProgressionContentApp_stage__current_59fc5296 {
@@ -4376,7 +4607,8 @@ html[lang=th] input {
   align-items: center;
   width: 200rem;
   height: 176rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.progress.lvl") top right/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.progress.lvl") top right/contain
+    no-repeat;
   opacity: 0.7;
   mix-blend-mode: screen;
   position: absolute;
@@ -4416,15 +4648,24 @@ html[lang=th] input {
   position: relative;
 }
 .ProgressionContentApp_progress_content__done_46cb5399 {
-  background: radial-gradient(60% 40% at 50% 100%, rgba(240, 218, 191, 0.1) 0%, rgba(90, 90, 90, 0) 100%);
+  background: radial-gradient(
+    60% 40% at 50% 100%,
+    rgba(240, 218, 191, 0.1) 0%,
+    rgba(90, 90, 90, 0) 100%
+  );
   background-position: bottom;
   background-size: cover;
 }
 .ProgressionContentApp_progress_content__done_46cb5399 .ProgressionContentApp_reward_2ea25a0 {
   opacity: 0.5;
 }
-.ProgressionContentApp_progress_bottom_652b15cf .ProgressionContentApp_progress_content__done_46cb5399 {
-  background: radial-gradient(60% 80% at 50% 0%, rgba(240, 218, 191, 0.05) 0%, rgba(90, 90, 90, 0) 100%);
+.ProgressionContentApp_progress_bottom_652b15cf
+  .ProgressionContentApp_progress_content__done_46cb5399 {
+  background: radial-gradient(
+    60% 80% at 50% 0%,
+    rgba(240, 218, 191, 0.05) 0%,
+    rgba(90, 90, 90, 0) 100%
+  );
   background-position: bottom;
   background-size: cover;
 }
@@ -4438,7 +4679,12 @@ html[lang=th] input {
 .ProgressionContentApp_progress_bottom_652b15cf::before {
   width: 100%;
   height: 84rem;
-  background: radial-gradient(126.66% 103.83% at 50% 0%, rgba(254, 228, 198, 0.1) 0%, rgba(49, 49, 49, 0) 60%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(
+    126.66% 103.83% at 50% 0%,
+    rgba(254, 228, 198, 0.1) 0%,
+    rgba(49, 49, 49, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
   content: "";
   position: absolute;
   top: 0;
@@ -4548,7 +4794,8 @@ html[lang=th] input {
   opacity: 1;
 }
 .ProgressionContentApp_numberAnimated__enterActive_606ffb5d {
-  animation: ProgressionContentApp_highlightScale_c8e7524 1s cubic-bezier(0.07, 0.82, 0.17, 1) 0.25s 1 forwards;
+  animation: ProgressionContentApp_highlightScale_c8e7524 1s cubic-bezier(0.07, 0.82, 0.17, 1) 0.25s
+    1 forwards;
 }
 .ProgressionContentApp_numberAnimated__enterDone_3be7f944 {
   opacity: 0;
@@ -4570,7 +4817,8 @@ html[lang=th] input {
   margin-top: 14rem;
 }
 .ProgressionContentApp_numberGlow__active_d8ea74bc {
-  animation: ProgressionContentApp_circleOut_c8e7524 2s cubic-bezier(0.39, 0.57, 0.56, 1) 0.25s 1 both;
+  animation: ProgressionContentApp_circleOut_c8e7524 2s cubic-bezier(0.39, 0.57, 0.56, 1) 0.25s 1
+    both;
 }
 .ProgressionContentApp_numberGlow__exit_5e223141 {
   width: 0;
@@ -4587,7 +4835,8 @@ html[lang=th] input {
   min-height: 24rem;
   margin-top: 13rem;
   padding-right: 32rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.progress.token_mark") right center/24rem 24rem no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.progress.token_mark") right
+    center/24rem 24rem no-repeat;
   color: #f2f2f7;
   font-size: 18rem;
   font-weight: 700;
@@ -4627,7 +4876,8 @@ html[lang=th] input {
 .ProgressionContentApp_buttonLight_98c94373 {
   width: 176rem;
   height: 113rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.button_light_small") center/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.button_light_small")
+    center/contain no-repeat;
   opacity: 0.6;
   mix-blend-mode: additive;
   position: absolute;
@@ -4642,7 +4892,10 @@ html[lang=th] input {
 }
 
 .ProgressionContentApp_buttonInner_b973d7cb {
-  box-shadow: 0 0 12rem 1rem rgba(255, 0, 0, 0.25), inset 0 0 12rem 0 rgba(255, 0, 0, 0.3), 0 2rem 4rem rgba(107, 52, 0, 0.2);
+  box-shadow:
+    0 0 12rem 1rem rgba(255, 0, 0, 0.25),
+    inset 0 0 12rem 0 rgba(255, 0, 0, 0.3),
+    0 2rem 4rem rgba(107, 52, 0, 0.2);
   overflow: hidden;
   position: relative;
 }
@@ -4653,7 +4906,9 @@ html[lang=th] input {
   border-radius: 2rem;
   box-shadow: none;
   background: rgba(0, 0, 0, 0.2);
-  transition: background-color 0.16s ease-in-out, border-color 0.16s ease-in-out;
+  transition:
+    background-color 0.16s ease-in-out,
+    border-color 0.16s ease-in-out;
 }
 .ProgressionContentApp_button_c4746970:hover {
   border-color: #ffe49d;
@@ -4682,7 +4937,8 @@ html[lang=th] input {
 }
 
 @keyframes ProgressionContentApp_move_c8e7524 {
-  0%, 40% {
+  0%,
+  40% {
     opacity: 0.3;
     transform: translateX(-200%);
   }
@@ -4715,10 +4971,11 @@ html[lang=th] input {
   100% {
     opacity: 0;
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4742,21 +4999,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4886,29 +5149,36 @@ html[lang=th] input {
   border-color: rgba(2, 98, 108, 0.9);
   background: linear-gradient(180deg, rgba(9, 226, 225, 0.05) 0%, rgba(9, 226, 225, 0.1) 100%);
 }
-.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514 .ProgressionDailyQuestCard_dailyQuest_description_688b3ab1 {
+.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514
+  .ProgressionDailyQuestCard_dailyQuest_description_688b3ab1 {
   color: #09e2ff;
 }
-.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514 .ProgressionDailyQuestCard_dailyQuest_top_left_440acf5f,
-.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514 .ProgressionDailyQuestCard_dailyQuest_top_right_7cb4a193 {
+.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514
+  .ProgressionDailyQuestCard_dailyQuest_top_left_440acf5f,
+.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514
+  .ProgressionDailyQuestCard_dailyQuest_top_right_7cb4a193 {
   border-color: rgba(2, 98, 108, 0.9);
 }
 .ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312 {
   border-color: rgba(255, 221, 153, 0.2);
   background: linear-gradient(180deg, rgba(255, 221, 153, 0.05) 0%, rgba(255, 221, 153, 0.1) 100%);
 }
-.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312 .ProgressionDailyQuestCard_dailyQuest_description_688b3ab1 {
+.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312
+  .ProgressionDailyQuestCard_dailyQuest_description_688b3ab1 {
   color: #fd9;
 }
-.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312 .ProgressionDailyQuestCard_dailyQuest_top_left_440acf5f,
-.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312 .ProgressionDailyQuestCard_dailyQuest_top_right_7cb4a193 {
+.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312
+  .ProgressionDailyQuestCard_dailyQuest_top_left_440acf5f,
+.ProgressionDailyQuestCard_dailyQuest__completed_6ae29514.ProgressionDailyQuestCard_dailyQuest__special_102a9312
+  .ProgressionDailyQuestCard_dailyQuest_top_right_7cb4a193 {
   border-color: rgba(255, 221, 153, 0.2);
 }
 .ProgressionDailyQuestCard_dailyQuest_top_3d501f7a {
   display: flex;
   width: 100%;
 }
-.ProgressionDailyQuestCard_dailyQuest_top_left_440acf5f, .ProgressionDailyQuestCard_dailyQuest_top_right_7cb4a193 {
+.ProgressionDailyQuestCard_dailyQuest_top_left_440acf5f,
+.ProgressionDailyQuestCard_dailyQuest_top_right_7cb4a193 {
   display: flex;
   flex: 1 0 auto;
   height: 10rem;
@@ -4924,12 +5194,15 @@ html[lang=th] input {
   display: flex;
   width: 27rem;
   height: 7rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light") no-repeat center center/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light")
+    no-repeat center center/contain;
   position: absolute;
   top: -3rem;
 }
-.ProgressionDailyQuestCard_dailyQuest__special_102a9312 .ProgressionDailyQuestCard_dailyQuest_top_borderGradient_c7d9298f {
-  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light_special") no-repeat center center/contain;
+.ProgressionDailyQuestCard_dailyQuest__special_102a9312
+  .ProgressionDailyQuestCard_dailyQuest_top_borderGradient_c7d9298f {
+  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light_special")
+    no-repeat center center/contain;
 }
 .ProgressionDailyQuestCard_dailyQuest_top_borderGradient__left_11bffb3 {
   left: 84rem;
@@ -4956,14 +5229,17 @@ html[lang=th] input {
   display: flex;
   width: 100rem;
   height: 100rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.blue_glow") no-repeat center center/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.blue_glow")
+    no-repeat center center/contain;
   position: absolute;
   top: -37rem;
   left: -35rem;
   z-index: 1;
 }
-.ProgressionDailyQuestCard_dailyQuest__special_102a9312 .ProgressionDailyQuestCard_dailyQuest_glow_3808989e {
-  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.gold_glow") no-repeat center center/contain;
+.ProgressionDailyQuestCard_dailyQuest__special_102a9312
+  .ProgressionDailyQuestCard_dailyQuest_glow_3808989e {
+  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.gold_glow")
+    no-repeat center center/contain;
 }
 .ProgressionDailyQuestCard_dailyQuest_centerBlock_fc4d81b4 {
   flex: 1 0 auto;
@@ -4991,7 +5267,8 @@ html[lang=th] input {
   font-weight: 700;
   line-height: 1.1;
 }
-.ProgressionDailyQuestCard_dailyQuest__special_102a9312 .ProgressionDailyQuestCard_dailyQuest_accent_fb7995e6 {
+.ProgressionDailyQuestCard_dailyQuest__special_102a9312
+  .ProgressionDailyQuestCard_dailyQuest_accent_fb7995e6 {
   color: #fd9;
 }
 .ProgressionDailyQuestCard_dailyQuest_progress_21863c3d {
@@ -5009,7 +5286,8 @@ html[lang=th] input {
   height: 48rem;
   text-align: initial;
 }
-.ProgressionDailyQuestCard_dailyQuest_reward_6d63de00 .ProgressionDailyQuestCard_rewardInfo_b9b81037 {
+.ProgressionDailyQuestCard_dailyQuest_reward_6d63de00
+  .ProgressionDailyQuestCard_rewardInfo_b9b81037 {
   margin-top: -7rem;
 }
 .ProgressionDailyQuestCard_dailyQuest_bottomText_274f5c48 {
@@ -5028,13 +5306,15 @@ html[lang=th] input {
   font-weight: 400;
   line-height: 1.3;
 }
-.ProgressionDailyQuestCard_dailyQuest_bottomText__isCompleted_129c0501, .ProgressionDailyQuestCard_dailyQuest_bottomText_completed_ea2a6c3a {
+.ProgressionDailyQuestCard_dailyQuest_bottomText__isCompleted_129c0501,
+.ProgressionDailyQuestCard_dailyQuest_bottomText_completed_ea2a6c3a {
   margin-left: 3rem;
   color: #09e2ff;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5058,21 +5338,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5192,27 +5478,44 @@ html[lang=th] input {
   align-items: center;
   width: 888rem;
   border: 1rem solid rgba(255, 255, 255, 0.1);
-  border-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.12) 60%, rgba(255, 255, 255, 0.12) 97%, rgba(255, 255, 255, 0) 100%) 1;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 0) 100%);
+  border-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.12) 60%,
+      rgba(255, 255, 255, 0.12) 97%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.25) 10%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
   position: relative;
   transition: width 0.2s ease-in-out;
 }
 .ProgressionQuestsApp_container__fourQuests_f1409a85 {
   width: 1180rem;
 }
-.ProgressionQuestsApp_container__fourQuests_f1409a85 .ProgressionQuestsApp_container_top_borderGradient__left_d005e562 {
+.ProgressionQuestsApp_container__fourQuests_f1409a85
+  .ProgressionQuestsApp_container_top_borderGradient__left_d005e562 {
   left: 316rem;
 }
-.ProgressionQuestsApp_container__fourQuests_f1409a85 .ProgressionQuestsApp_container_top_borderGradient__right_2777273c {
+.ProgressionQuestsApp_container__fourQuests_f1409a85
+  .ProgressionQuestsApp_container_top_borderGradient__right_2777273c {
   right: 316rem;
 }
 .ProgressionQuestsApp_container__threeQuests_1565a67e {
   width: 888rem;
 }
-.ProgressionQuestsApp_container__threeQuests_1565a67e .ProgressionQuestsApp_container_top_borderGradient__left_d005e562 {
+.ProgressionQuestsApp_container__threeQuests_1565a67e
+  .ProgressionQuestsApp_container_top_borderGradient__left_d005e562 {
   left: 170rem;
 }
-.ProgressionQuestsApp_container__threeQuests_1565a67e .ProgressionQuestsApp_container_top_borderGradient__right_2777273c {
+.ProgressionQuestsApp_container__threeQuests_1565a67e
+  .ProgressionQuestsApp_container_top_borderGradient__right_2777273c {
   right: 170rem;
 }
 .ProgressionQuestsApp_container_top_ab896449 {
@@ -5221,7 +5524,8 @@ html[lang=th] input {
   margin-bottom: -30rem;
   position: relative;
 }
-.ProgressionQuestsApp_container_top_left_d916cab5, .ProgressionQuestsApp_container_top_right_7a0014eb {
+.ProgressionQuestsApp_container_top_left_d916cab5,
+.ProgressionQuestsApp_container_top_right_7a0014eb {
   display: flex;
   flex: 1 0 auto;
   height: 10rem;
@@ -5238,7 +5542,8 @@ html[lang=th] input {
   display: flex;
   width: 27rem;
   height: 7rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light") no-repeat center center/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.dailyMissions.edge_light")
+    no-repeat center center/contain;
   opacity: 1;
   position: absolute;
   top: -3rem;
@@ -5247,7 +5552,10 @@ html[lang=th] input {
 .ProgressionQuestsApp_container_top_borderGradient__right_2777273c {
   transform: scaleX(-1);
 }
-.ProgressionQuestsApp_container__fourQuests_f1409a85 .ProgressionQuestsApp_container_top_borderGradient_ec8d6f3e, .ProgressionQuestsApp_container__threeQuests_1565a67e .ProgressionQuestsApp_container_top_borderGradient_ec8d6f3e {
+.ProgressionQuestsApp_container__fourQuests_f1409a85
+  .ProgressionQuestsApp_container_top_borderGradient_ec8d6f3e,
+.ProgressionQuestsApp_container__threeQuests_1565a67e
+  .ProgressionQuestsApp_container_top_borderGradient_ec8d6f3e {
   animation: ProgressionQuestsApp_fadeIn_fad1629e 0.1s ease-in 0.2s both;
 }
 
@@ -5270,20 +5578,34 @@ html[lang=th] input {
   position: relative;
 }
 .ProgressionQuestsApp_tab__active_483d566e {
-  border-image: linear-gradient(0deg, rgba(0, 179, 255, 0.1) 0%, rgba(68, 164, 193, 0.8) 50%, rgba(0, 179, 255, 0.1) 100%) 1;
+  border-image: linear-gradient(
+      0deg,
+      rgba(0, 179, 255, 0.1) 0%,
+      rgba(68, 164, 193, 0.8) 50%,
+      rgba(0, 179, 255, 0.1) 100%
+    )
+    1;
 }
 .ProgressionQuestsApp_tab__active_483d566e .ProgressionQuestsApp_tab_shadow_2ccd4c36 {
   width: 339rem;
   height: 168rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.active_shadow") top right/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.active_shadow") top
+    right/contain no-repeat;
 }
 .ProgressionQuestsApp_tab__active_483d566e .ProgressionQuestsApp_tab_light_25c323bd {
   width: 230rem;
   height: 84rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.active_light") top right/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.active_light") top
+    right/contain no-repeat;
 }
 .ProgressionQuestsApp_tab__inactive_4d4e9238 {
-  border-image: linear-gradient(0deg, rgba(117, 122, 125, 0.2) 0%, rgba(165, 192, 200, 0.2) 50%, rgba(117, 122, 125, 0.2) 100%) 1;
+  border-image: linear-gradient(
+      0deg,
+      rgba(117, 122, 125, 0.2) 0%,
+      rgba(165, 192, 200, 0.2) 50%,
+      rgba(117, 122, 125, 0.2) 100%
+    )
+    1;
 }
 .ProgressionQuestsApp_tab__inactive_4d4e9238:hover {
   background-color: rgba(9, 226, 255, 0.1);
@@ -5295,7 +5617,8 @@ html[lang=th] input {
 .ProgressionQuestsApp_tab__inactive_4d4e9238 .ProgressionQuestsApp_tab_shadow_2ccd4c36 {
   width: 192rem;
   height: 51rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.inactive_shadow") top right/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.inactive_shadow") top
+    right/contain no-repeat;
 }
 .ProgressionQuestsApp_tab__inactive_4d4e9238 .ProgressionQuestsApp_tab_texture_beea1798 {
   display: none;
@@ -5309,7 +5632,8 @@ html[lang=th] input {
 .ProgressionQuestsApp_tab__inactive_4d4e9238 .ProgressionQuestsApp_tab_light_25c323bd {
   width: 30rem;
   height: 30rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.inactive_light") top right/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.inactive_light") top
+    right/contain no-repeat;
 }
 .ProgressionQuestsApp_tab_shadow_2ccd4c36 {
   position: absolute;
@@ -5328,7 +5652,8 @@ html[lang=th] input {
 .ProgressionQuestsApp_tab_texture_beea1798 {
   width: 339rem;
   height: 168rem;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.top_highlight") top right/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.navigation.top_highlight") top
+    right/contain no-repeat;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -5449,10 +5774,11 @@ html[lang=th] input {
   to {
     opacity: 1;
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5476,21 +5802,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5498,7 +5830,8 @@ html[lang=th] input {
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.ProgressionScreen_header-h80_dbdeb549, .mediaMedium .ProgressionScreen_heading_a17a7e85 {
+.ProgressionScreen_header-h80_dbdeb549,
+.mediaMedium .ProgressionScreen_heading_a17a7e85 {
   font-size: 80rem;
   font-weight: 700;
   line-height: 88rem;
@@ -5583,7 +5916,8 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.ProgressionScreen_paragraph-p16_dbdeb549, .ProgressionScreen_subheading_9ae52a7d {
+.ProgressionScreen_paragraph-p16_dbdeb549,
+.ProgressionScreen_subheading_9ae52a7d {
   font-size: 16rem;
   font-weight: 400;
   line-height: 18rem;
@@ -5593,7 +5927,8 @@ html[lang=th] input {
 .ProgressionScreen_4a2f1b8a {
   width: 100%;
   height: 100%;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.background.background") center/cover no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.background.background")
+    center/cover no-repeat;
   overflow: hidden;
   position: relative;
 }
@@ -5601,7 +5936,8 @@ html[lang=th] input {
 .ProgressionScreen_bgDecoration_topRight_e114c511 {
   width: 100%;
   height: 100%;
-  background: url("R.images.white_tiger.gui.maps.icons.progression.background.drafting_table") top center/contain no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.progression.background.drafting_table") top
+    center/contain no-repeat;
   position: absolute;
   top: 0;
   left: 50%;
@@ -5670,10 +6006,11 @@ html[lang=th] input {
   position: absolute;
   top: 30rem;
   right: 30rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5697,21 +6034,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5824,10 +6167,11 @@ html[lang=th] input {
   flex-direction: column;
   background-color: #0c1922;
   color: #ede6d9;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5851,21 +6195,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }

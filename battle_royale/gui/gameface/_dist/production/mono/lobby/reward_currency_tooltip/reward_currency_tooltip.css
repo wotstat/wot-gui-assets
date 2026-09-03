@@ -82,7 +82,8 @@
   margin-left: 5rem;
   margin-top: 2rem;
   margin-right: 5rem;
-  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.icon_prem") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.battleResults.battle_reward.icon_prem")
+    no-repeat center/contain;
 }
 
 .App_dailyBonusContainer_ff199845 {
@@ -99,7 +100,8 @@
 .App_base__stpcoin_0 .App_dailyBonusIcon_b013af51::after {
   width: 46rem;
   height: 28rem;
-  background: url("R.images.battle_royale.gui.maps.st_patrick.icons.stpcoin_bonus_46x28") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.st_patrick.icons.stpcoin_bonus_46x28") no-repeat
+    center/contain;
   content: "";
   position: absolute;
   top: 0;

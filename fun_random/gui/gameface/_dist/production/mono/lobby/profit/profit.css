@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -61,7 +68,8 @@ body {
   align-items: center;
   position: relative;
 }
-.Profit_base__big_6b8f37cd, .Profit_base__large_e3f34b22 {
+.Profit_base__big_6b8f37cd,
+.Profit_base__large_e3f34b22 {
   flex-direction: row-reverse;
 }
 
@@ -85,7 +93,8 @@ body {
 .Profit_base__small_6b8f37cd .Profit_icon__tankmenXP-small_6ee2c7d5 {
   transform: translateY(-1rem);
 }
-.Profit_icon__tankmenXP-big_6b8f37cd, .Profit_icon__tankmenXP-large_f01250f8 {
+.Profit_icon__tankmenXP-big_6b8f37cd,
+.Profit_icon__tankmenXP-large_f01250f8 {
   width: 48rem;
   height: 48rem;
   background-image: url("R.images.fun_random.gui.maps.icons.feature.profit.tankmenXP");
@@ -93,7 +102,8 @@ body {
 .Profit_icon__credits-small_1a506f8b {
   background-image: url("R.images.gui.maps.icons.library.CreditsIcon_2");
 }
-.Profit_icon__credits-big_6b8f37cd, .Profit_icon__credits-large_bbc8996c {
+.Profit_icon__credits-big_6b8f37cd,
+.Profit_icon__credits-large_bbc8996c {
   width: 48rem;
   height: 48rem;
   margin-right: -1rem;
@@ -105,7 +115,8 @@ body {
 .Profit_base__small_6b8f37cd .Profit_icon__gold-small_b9565eb {
   transform: translateY(-1rem);
 }
-.Profit_icon__gold-big_6b8f37cd, .Profit_icon__gold-large_c1d230b5 {
+.Profit_icon__gold-big_6b8f37cd,
+.Profit_icon__gold-large_c1d230b5 {
   width: 48rem;
   height: 48rem;
   margin-right: -1rem;
@@ -117,7 +128,8 @@ body {
 .Profit_base__small_6b8f37cd .Profit_icon__crystal-small_a1140ac6 {
   transform: translateY(-1rem);
 }
-.Profit_icon__crystal-big_6b8f37cd, .Profit_icon__crystal-large_8668202 {
+.Profit_icon__crystal-big_6b8f37cd,
+.Profit_icon__crystal-large_8668202 {
   width: 48rem;
   height: 48rem;
   margin-right: -1rem;
@@ -141,12 +153,14 @@ body {
 .Profit_base__small_6b8f37cd .Profit_icon__xp-small_4bee637e {
   transform: translateY(-2rem);
 }
-.Profit_icon__xp-big_6b8f37cd, .Profit_icon__xp-large_ad32f830 {
+.Profit_icon__xp-big_6b8f37cd,
+.Profit_icon__xp-large_ad32f830 {
   width: 48rem;
   height: 48rem;
   background-image: url("R.images.gui.maps.shop.rewards.c_48x48.exp");
 }
-.Profit_base__big_6b8f37cd .Profit_icon__xp-big_6b8f37cd, .Profit_base__big_6b8f37cd .Profit_icon__xp-large_ad32f830 {
+.Profit_base__big_6b8f37cd .Profit_icon__xp-big_6b8f37cd,
+.Profit_base__big_6b8f37cd .Profit_icon__xp-large_ad32f830 {
   transform: translateY(-1rem);
 }
 .Profit_icon__freeXP-small_2558eb64 {
@@ -155,7 +169,8 @@ body {
 .Profit_base__small_6b8f37cd .Profit_icon__freeXP-small_2558eb64 {
   transform: translateY(-1rem);
 }
-.Profit_icon__freeXP-big_6b8f37cd, .Profit_icon__freeXP-large_102a16b4 {
+.Profit_icon__freeXP-big_6b8f37cd,
+.Profit_icon__freeXP-large_102a16b4 {
   width: 48rem;
   height: 48rem;
   background-image: url("R.images.gui.maps.shop.rewards.c_48x48.freeExp");

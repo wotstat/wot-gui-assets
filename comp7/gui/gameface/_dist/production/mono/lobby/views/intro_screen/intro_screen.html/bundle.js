@@ -1,1 +1,226 @@
-import{j as e,W as s,V as i,r as a}from"../../../chunks/vendor.js";import{i as n,F as t,C as o,a as r,b as c,e as l,f as d,g as m,p as _,k as u,h,j as p,B as x,l as g,r as j,U as b}from"../../../chunks/lib.js";import{u as f,S as v}from"../../../chunks/schedule_model.js";import{g as S}from"../../../chunks/get_button_size.js";import{S as N}from"../../../chunks/schedule_subheading.js";import{u as k}from"../../../chunks/use_server_time_polling.js";import{A as w}from"../../../chunks/arrow_button.js";import{g as C}from"../../../chunks/get_roman_levels.js";/* empty css                     */import"../../../chunks/get_season_name.js";const[D,L]=n()(({observableModel:e})=>({root:e.object(),vehicleLevels:e.array("vehicleLevels")}),({externalModel:e})=>({close:e.createCallbackNoArgs("onClose")})),A="CountDownSubheading_3410a94d",T="CountDownSubheading_highlight_8ca1da33",I="CountDownSubheading_timeLeftText_83a0f10d",M="CountDownSubheading_countDownContainer_95936a62",$="CountDownSubheading_countDownText_c438ad0f",y="CountDownSubheading_timer_dfa1cd55",z=({timeLeft:i,className:a})=>e.jsx("div",{className:s(A,a),children:e.jsx(t,{text:R.strings.comp7_ext.countDown.text(),binding:{timeLeft:e.jsxs("div",{className:M,children:[e.jsx("div",{className:T}),e.jsx("div",{className:y}),e.jsx(o,{duration:i,icon:r.None,classNames:{text:$}})]})},classMix:I})}),W={countDown:"IntroSubheading_countDown_674b18af"},E=i(()=>{const{model:s,controls:i}=f(),a=s.season.startTimestamp.get(),n=s.season.endTimestamp.get(),t=s.season.serverTimestamp.get();return k(t,n,i.pollServerTime),e.jsx("div",{className:W.base,children:t<a?e.jsx(z,{timeLeft:a-t,className:W.countDown}):e.jsx(N,{})})}),O="Slide_680b9fee",B="Slide_title_442d6e94",q="Slide_icon_2921c32",F="Slide_description_a6104f8",G=i(({id:s})=>{const{model:i}=L(),{model:a}=f(),{qualificationBattlesCount:n}=i.root.get(),o=`url(${"ranks"===s?R.images.comp7.gui.maps.icons.metaIntro.$dyn(`ranks_${a.season.name.get()}`):R.images.comp7.gui.maps.icons.metaIntro.$dyn(s)})`,r=C(i.vehicleLevels.get(),R.strings.comp7_ext.listSeparator());return e.jsxs("div",{className:O,children:[e.jsx(t,{text:String(R.strings.comp7_ext.intro.title.$dyn(s)),classMix:B}),e.jsx("div",{className:q,style:{backgroundImage:o}}),e.jsx(t,{text:`${R.strings.comp7_ext.intro.description.$plural(s,n)}`,binding:{count:n,levels:r},classMix:F})]})}),H="Slider_caaf79d4",P="Slider_trackWrapper_9b67f47e",U="Slider_track_e521f890",V="Slider_track__withoutTransition_df13aef3",J="Slider_slide_727efd4",K="Slider_slide__active_b616c59f",Q="Slider_arrow_4c311c25",X="Slider_arrow__left_5cd6617d",Y="Slider_arrow__right_5676bbb7",Z="Slider_counter_8cf4b130",ee="Slider_counterDivider_3d5ed95",se=["vehiclesOnMap","banPhase","onslaughtModifiers","pointsOfInterest","roleSkills","draw","nightMaps","qualification","ranks"],ie=se.length,ae=(e,s)=>()=>{e||(s(),_.click(),_.sound(R.sounds.bp_glide_01()))},ne=({className:i})=>{const[n,t]=a.useState(0),[o,r]=a.useState(!1),_=0===n,h=n===ie-1;c(()=>{const e=()=>{r(!0)};return window.addEventListener("resize",e),()=>{window.removeEventListener("resize",e)}}),a.useEffect(()=>l(()=>d(()=>{o&&r(!1)},500)),[o]);const p=ae(_,()=>t(n-1)),x=ae(h,()=>t(n+1));return m(u.ARROW_LEFT,p),m(u.ARROW_RIGHT,x),e.jsxs("div",{className:s(H,i),style:{"--currentSlideIndex":n,"--transitionDuration":"500ms"},children:[e.jsx(w,{size:"medium",direction:"left",disabled:_,className:s(Q,X),onClick:p}),e.jsx(w,{size:"medium",direction:"right",disabled:h,className:s(Q,Y),onClick:x}),e.jsxs("div",{className:P,children:[e.jsxs("div",{className:Z,children:[n+1,e.jsx("div",{className:ee,children:"/"}),ie]}),e.jsx("div",{className:s(U,o&&V),children:se.map((i,a)=>e.jsx("div",{className:s(J,a===n&&K),children:e.jsx(G,{id:i})},`slide-${a}`))})]})]})},te="App_33100033",oe="App_content_24a8a318",re="App_slider_87749c8a",ce="App_buttonWrapper_bc918676",le="App_button_b6edc495",de=i(function(){const{controls:s}=L(),{mediaSize:i}=h();return p(s.close),e.jsxs("div",{className:te,children:[e.jsx(E,{}),e.jsx("div",{className:oe,children:e.jsx(ne,{className:re})}),e.jsx("div",{className:ce,children:e.jsx(x,{theme:x.themes.primary,size:S(i),className:le,onClick:s.close,children:R.strings.comp7_ext.intro.confirmButton()})})]})});g("comp7/gui/maps/icons/backgrounds/comp7_bg.dds");j(e.jsx(b,{children:e.jsx(D,{children:e.jsx(v,{options:{context:"model.scheduleInfo"},children:e.jsx(de,{})})})}),{fullScreen:!0});
+import { j as e, W as s, V as i, r as a } from "../../../chunks/vendor.js";
+import {
+  i as n,
+  F as t,
+  C as o,
+  a as r,
+  b as c,
+  e as l,
+  f as d,
+  g as m,
+  p as _,
+  k as u,
+  h,
+  j as p,
+  B as x,
+  l as g,
+  r as j,
+  U as b,
+} from "../../../chunks/lib.js";
+import { u as f, S as v } from "../../../chunks/schedule_model.js";
+import { g as S } from "../../../chunks/get_button_size.js";
+import { S as N } from "../../../chunks/schedule_subheading.js";
+import { u as k } from "../../../chunks/use_server_time_polling.js";
+import { A as w } from "../../../chunks/arrow_button.js";
+import { g as C } from "../../../chunks/get_roman_levels.js";
+/* empty css                     */ import "../../../chunks/get_season_name.js";
+const [D, L] = n()(
+    ({ observableModel: e }) => ({ root: e.object(), vehicleLevels: e.array("vehicleLevels") }),
+    ({ externalModel: e }) => ({ close: e.createCallbackNoArgs("onClose") }),
+  ),
+  A = "CountDownSubheading_3410a94d",
+  T = "CountDownSubheading_highlight_8ca1da33",
+  I = "CountDownSubheading_timeLeftText_83a0f10d",
+  M = "CountDownSubheading_countDownContainer_95936a62",
+  $ = "CountDownSubheading_countDownText_c438ad0f",
+  y = "CountDownSubheading_timer_dfa1cd55",
+  z = ({ timeLeft: i, className: a }) =>
+    e.jsx("div", {
+      className: s(A, a),
+      children: e.jsx(t, {
+        text: R.strings.comp7_ext.countDown.text(),
+        binding: {
+          timeLeft: e.jsxs("div", {
+            className: M,
+            children: [
+              e.jsx("div", { className: T }),
+              e.jsx("div", { className: y }),
+              e.jsx(o, { duration: i, icon: r.None, classNames: { text: $ } }),
+            ],
+          }),
+        },
+        classMix: I,
+      }),
+    }),
+  W = { countDown: "IntroSubheading_countDown_674b18af" },
+  E = i(() => {
+    const { model: s, controls: i } = f(),
+      a = s.season.startTimestamp.get(),
+      n = s.season.endTimestamp.get(),
+      t = s.season.serverTimestamp.get();
+    return (
+      k(t, n, i.pollServerTime),
+      e.jsx("div", {
+        className: W.base,
+        children: t < a ? e.jsx(z, { timeLeft: a - t, className: W.countDown }) : e.jsx(N, {}),
+      })
+    );
+  }),
+  O = "Slide_680b9fee",
+  B = "Slide_title_442d6e94",
+  q = "Slide_icon_2921c32",
+  F = "Slide_description_a6104f8",
+  G = i(({ id: s }) => {
+    const { model: i } = L(),
+      { model: a } = f(),
+      { qualificationBattlesCount: n } = i.root.get(),
+      o = `url(${"ranks" === s ? R.images.comp7.gui.maps.icons.metaIntro.$dyn(`ranks_${a.season.name.get()}`) : R.images.comp7.gui.maps.icons.metaIntro.$dyn(s)})`,
+      r = C(i.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
+    return e.jsxs("div", {
+      className: O,
+      children: [
+        e.jsx(t, { text: String(R.strings.comp7_ext.intro.title.$dyn(s)), classMix: B }),
+        e.jsx("div", { className: q, style: { backgroundImage: o } }),
+        e.jsx(t, {
+          text: `${R.strings.comp7_ext.intro.description.$plural(s, n)}`,
+          binding: { count: n, levels: r },
+          classMix: F,
+        }),
+      ],
+    });
+  }),
+  H = "Slider_caaf79d4",
+  P = "Slider_trackWrapper_9b67f47e",
+  U = "Slider_track_e521f890",
+  V = "Slider_track__withoutTransition_df13aef3",
+  J = "Slider_slide_727efd4",
+  K = "Slider_slide__active_b616c59f",
+  Q = "Slider_arrow_4c311c25",
+  X = "Slider_arrow__left_5cd6617d",
+  Y = "Slider_arrow__right_5676bbb7",
+  Z = "Slider_counter_8cf4b130",
+  ee = "Slider_counterDivider_3d5ed95",
+  se = [
+    "vehiclesOnMap",
+    "banPhase",
+    "onslaughtModifiers",
+    "pointsOfInterest",
+    "roleSkills",
+    "draw",
+    "nightMaps",
+    "qualification",
+    "ranks",
+  ],
+  ie = se.length,
+  ae = (e, s) => () => {
+    e || (s(), _.click(), _.sound(R.sounds.bp_glide_01()));
+  },
+  ne = ({ className: i }) => {
+    const [n, t] = a.useState(0),
+      [o, r] = a.useState(!1),
+      _ = 0 === n,
+      h = n === ie - 1;
+    (c(() => {
+      const e = () => {
+        r(!0);
+      };
+      return (
+        window.addEventListener("resize", e),
+        () => {
+          window.removeEventListener("resize", e);
+        }
+      );
+    }),
+      a.useEffect(
+        () =>
+          l(() =>
+            d(() => {
+              o && r(!1);
+            }, 500),
+          ),
+        [o],
+      ));
+    const p = ae(_, () => t(n - 1)),
+      x = ae(h, () => t(n + 1));
+    return (
+      m(u.ARROW_LEFT, p),
+      m(u.ARROW_RIGHT, x),
+      e.jsxs("div", {
+        className: s(H, i),
+        style: { "--currentSlideIndex": n, "--transitionDuration": "500ms" },
+        children: [
+          e.jsx(w, {
+            size: "medium",
+            direction: "left",
+            disabled: _,
+            className: s(Q, X),
+            onClick: p,
+          }),
+          e.jsx(w, {
+            size: "medium",
+            direction: "right",
+            disabled: h,
+            className: s(Q, Y),
+            onClick: x,
+          }),
+          e.jsxs("div", {
+            className: P,
+            children: [
+              e.jsxs("div", {
+                className: Z,
+                children: [n + 1, e.jsx("div", { className: ee, children: "/" }), ie],
+              }),
+              e.jsx("div", {
+                className: s(U, o && V),
+                children: se.map((i, a) =>
+                  e.jsx(
+                    "div",
+                    { className: s(J, a === n && K), children: e.jsx(G, { id: i }) },
+                    `slide-${a}`,
+                  ),
+                ),
+              }),
+            ],
+          }),
+        ],
+      })
+    );
+  },
+  te = "App_33100033",
+  oe = "App_content_24a8a318",
+  re = "App_slider_87749c8a",
+  ce = "App_buttonWrapper_bc918676",
+  le = "App_button_b6edc495",
+  de = i(function () {
+    const { controls: s } = L(),
+      { mediaSize: i } = h();
+    return (
+      p(s.close),
+      e.jsxs("div", {
+        className: te,
+        children: [
+          e.jsx(E, {}),
+          e.jsx("div", { className: oe, children: e.jsx(ne, { className: re }) }),
+          e.jsx("div", {
+            className: ce,
+            children: e.jsx(x, {
+              theme: x.themes.primary,
+              size: S(i),
+              className: le,
+              onClick: s.close,
+              children: R.strings.comp7_ext.intro.confirmButton(),
+            }),
+          }),
+        ],
+      })
+    );
+  });
+g("comp7/gui/maps/icons/backgrounds/comp7_bg.dds");
+j(
+  e.jsx(b, {
+    children: e.jsx(D, {
+      children: e.jsx(v, { options: { context: "model.scheduleInfo" }, children: e.jsx(de, {}) }),
+    }),
+  }),
+  { fullScreen: !0 },
+);

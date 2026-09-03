@@ -66,7 +66,7 @@
 .Article_divider_c3c15108 {
   width: 20rem;
   height: 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Details_82317705 {
@@ -121,7 +121,7 @@
 
 .Details_textBlock_51423ea5 + .Details_textBlock_51423ea5 {
   margin-top: 29rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .InfoBlock_bc3a412a {
@@ -173,9 +173,10 @@
   width: 100%;
   height: 1rem;
   margin: 60rem 0;
-  background: rgba(196, 211, 241, 0.25) url("R.images.battle_royale.gui.maps.icons.noise_100x100") repeat-x left bottom/100rem 100rem;
+  background: rgba(196, 211, 241, 0.25) url("R.images.battle_royale.gui.maps.icons.noise_100x100")
+    repeat-x left bottom/100rem 100rem;
   opacity: 0.25;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Header_2427389a {
@@ -248,7 +249,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Mosaic_255afcd9 {
@@ -305,7 +306,7 @@
   line-height: 1.3em;
   margin-bottom: 36rem;
   color: rgba(var(--color-general-primary-rgb), 0.5);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .TableBp_ceecd909 {
@@ -375,7 +376,7 @@
 
 .TableBp_dash_8ba26b41 {
   margin: 0 14rem 0 16rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Column_dc60da96 {
@@ -420,8 +421,9 @@
 .Column_reward_bb1636fd {
   width: 16rem;
   height: 16rem;
-  background: url("R.images.battle_royale.gui.maps.icons.token_battle_royale_16x16") no-repeat center/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+  background: url("R.images.battle_royale.gui.maps.icons.token_battle_royale_16x16") no-repeat
+    center/contain;
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .TableSh_ef0a0d78 {
@@ -430,7 +432,7 @@
   flex: 1;
   padding-bottom: 30rem;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .TowerBlock_20368ecb {
@@ -484,7 +486,7 @@
 .TowerBlock_image_53afacf6 {
   width: 143rem;
   height: 140rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Vehicles_header_5be1213 {
@@ -634,7 +636,7 @@
 .Vehicles_type_707e0352 {
   width: 64rem;
   height: 64rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .App_9dacc05d {
@@ -651,7 +653,8 @@
   z-index: 2;
 }
 .App_base__stPatrick_5f32278c {
-  background: url("R.images.battle_royale.gui.maps.st_patrick.icons.progression.main_bg") no-repeat center/cover;
+  background: url("R.images.battle_royale.gui.maps.st_patrick.icons.progression.main_bg") no-repeat
+    center/cover;
 }
 
 .App_scrollBar_d2538d18 {
@@ -697,7 +700,8 @@
 .App_divider_f99a45d4 {
   width: 100%;
   height: 1rem;
-  background: rgba(196, 211, 241, 0.25) url("R.images.battle_royale.gui.maps.icons.noise_100x100") repeat-x left bottom/100rem 100rem;
+  background: rgba(196, 211, 241, 0.25) url("R.images.battle_royale.gui.maps.icons.noise_100x100")
+    repeat-x left bottom/100rem 100rem;
   opacity: 0.25;
 }
 

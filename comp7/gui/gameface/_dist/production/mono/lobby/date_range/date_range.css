@@ -144,7 +144,13 @@
 .mediaLargeWidth .DateRange_label_a9603586 {
   font-size: 18rem;
 }
-html[lang=ja] .DateRange_label_a9603586, html[lang=ko] .DateRange_label_a9603586, html[lang=zh_tw] .DateRange_label_a9603586, html[lang=zh_sg] .DateRange_label_a9603586, html[lang=zh_cn] .DateRange_label_a9603586, html[lang=vi] .DateRange_label_a9603586, html[lang=th] .DateRange_label_a9603586 {
+html[lang="ja"] .DateRange_label_a9603586,
+html[lang="ko"] .DateRange_label_a9603586,
+html[lang="zh_tw"] .DateRange_label_a9603586,
+html[lang="zh_sg"] .DateRange_label_a9603586,
+html[lang="zh_cn"] .DateRange_label_a9603586,
+html[lang="vi"] .DateRange_label_a9603586,
+html[lang="th"] .DateRange_label_a9603586 {
   font-size: 14rem;
 }
 .DateRange_label_a9603586 > span {

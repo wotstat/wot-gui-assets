@@ -284,7 +284,7 @@
 }
 .CloseButton_49a682e7:active .CloseButton_iconHover_b5894825 {
   opacity: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes Page_fadeIn_fefb19c8 {
@@ -547,7 +547,7 @@
   position: absolute;
   top: 30rem;
   right: 30rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes AnimatedBackground_fadeIn_bf2475f4 {
@@ -825,7 +825,8 @@
   animation-iteration-count: 1, infinite;
   width: 100%;
   height: 100%;
-  background: url("R.images.comp7_light.gui.maps.icons.battleQuestAwards.rays") no-repeat center/contain;
+  background: url("R.images.comp7_light.gui.maps.icons.battleQuestAwards.rays") no-repeat
+    center/contain;
   mix-blend-mode: additive;
   position: absolute;
   top: 0;
@@ -843,7 +844,8 @@
 .AnimatedBackground_staticHighlight_80e8711f {
   width: 550rem;
   height: 550rem;
-  background: url("R.images.comp7_light.gui.maps.icons.battleQuestAwards.highlight") no-repeat center/contain;
+  background: url("R.images.comp7_light.gui.maps.icons.battleQuestAwards.highlight") no-repeat
+    center/contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -856,7 +858,7 @@
 .mediaLarge .AnimatedBackground_staticHighlight_80e8711f {
   width: 900rem;
   height: 900rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes AwardsList_fadeIn_bcb7b6e7 {
@@ -1071,7 +1073,7 @@
 .mediaExtraLarge .AwardsList_ribbon_ff406dec {
   width: 75vw;
   height: 75vh;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes Header_fadeIn_65f475ba {
@@ -1240,7 +1242,7 @@
   font-size: 73rem;
   font-weight: 700;
   line-height: 1.1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes App_fadeIn_0 {
@@ -1375,7 +1377,8 @@
   height: 100%;
   padding-top: 50rem;
   padding-bottom: 50rem;
-  background: url("R.images.comp7_light.gui.maps.icons.backgrounds.rewards_screen_bg") no-repeat center/cover;
+  background: url("R.images.comp7_light.gui.maps.icons.backgrounds.rewards_screen_bg") no-repeat
+    center/cover;
   position: relative;
 }
 .mediaLarge .App_fef06415 {

@@ -194,7 +194,7 @@
   font-weight: 400;
   line-height: 1.3em;
   margin-top: -5rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -387,7 +387,7 @@
 .Footer_button_48301d58 {
   min-width: 86rem;
   margin-left: 14rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -519,7 +519,7 @@
   width: var(--imageSize);
   height: var(--imageSize);
   background: no-repeat center/cover;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -785,7 +785,7 @@
 .Content_speech_8f7c6898 {
   width: 112rem;
   height: 112rem;
-  background: no-repeat 50% 50%/contain;
+  background: no-repeat 50% 50% / contain;
   opacity: 0.4;
   mix-blend-mode: screen;
 }
@@ -795,7 +795,7 @@
   height: 100%;
   background: no-repeat center/contain;
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -942,7 +942,7 @@
 }
 .Controls_icon__chat_4a3ad20c {
   background-image: url("R.images.comp7.gui.maps.icons.ban.icon_chat");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1104,7 +1104,7 @@
   100% {
     transform: rotate(360deg);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1258,7 +1258,7 @@
 .PlayerCard_border_ae9c6cb4 {
   width: 274rem;
   height: 96rem;
-  background: url("R.images.comp7.gui.maps.icons.ban.border_blue") no-repeat 50% 50%/contain;
+  background: url("R.images.comp7.gui.maps.icons.ban.border_blue") no-repeat 50% 50% / contain;
   position: absolute;
   top: -16rem;
   left: -82rem;
@@ -1299,7 +1299,7 @@
 .mediaMedium .PlayerCard_vehicleToBanContainer_e220cbf1 {
   right: -36rem;
   bottom: -38rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1444,7 +1444,7 @@
 }
 .mediaMedium .PlayersList_card_e54d4676 + .PlayersList_card_e54d4676 {
   margin-left: 30rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1605,7 +1605,7 @@
 }
 .Separator_venzel__right_c056c714 {
   transform: scaleX(-1);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1758,7 +1758,7 @@
 }
 .Votes_voteImage__confirmed_30d90e95 {
   background-image: url("R.images.comp7.gui.maps.icons.ban.confirmed_30x26");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1915,7 +1915,7 @@
 }
 .AllyVehicleMarks_mark__orange_ab6805b8 {
   background-image: url("R.images.comp7.gui.maps.icons.ban.orange_line");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2094,7 +2094,8 @@
   width: 160rem;
   height: 102rem;
 }
-.VehicleCard_b1d6cc88:hover .VehicleCard_flag_53aa7ae0, .VehicleCard_base__selected_c56bbe58 .VehicleCard_flag_53aa7ae0 {
+.VehicleCard_b1d6cc88:hover .VehicleCard_flag_53aa7ae0,
+.VehicleCard_base__selected_c56bbe58 .VehicleCard_flag_53aa7ae0 {
   opacity: 1;
 }
 
@@ -2311,7 +2312,7 @@
 .mediaExtraLarge .VehicleCard_votes_f0b6067f {
   right: 3rem;
   left: 3rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2492,7 +2493,7 @@
 }
 .mediaExtraLarge .VehicleRoleGroup_cards_d48e3935 {
   --width: 121rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2653,7 +2654,7 @@
 .mediaLarge .VehicleTypeGroup_vehicleTypeImage_4734e915 {
   width: 48rem;
   height: 48rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2811,7 +2812,22 @@
   width: 120rem;
   height: 80rem;
   border: 1rem solid rgba(242, 242, 247, 0.2);
-  background: linear-gradient(34deg, transparent 49%, rgba(255, 255, 255, 0.2) 49%, rgba(255, 255, 255, 0.2) 51%, transparent 51%), linear-gradient(-34deg, transparent 49%, rgba(255, 255, 255, 0.2) 49%, rgba(255, 255, 255, 0.2) 51%, transparent 51%) no-repeat center/cover;
+  background:
+    linear-gradient(
+      34deg,
+      transparent 49%,
+      rgba(255, 255, 255, 0.2) 49%,
+      rgba(255, 255, 255, 0.2) 51%,
+      transparent 51%
+    ),
+    linear-gradient(
+        -34deg,
+        transparent 49%,
+        rgba(255, 255, 255, 0.2) 49%,
+        rgba(255, 255, 255, 0.2) 51%,
+        transparent 51%
+      )
+      no-repeat center/cover;
   overflow: hidden;
   position: relative;
   z-index: 0;
@@ -2864,7 +2880,7 @@
   width: 48rem;
   height: 48rem;
   background: url("R.images.comp7.gui.maps.icons.ban.no_vehicle") no-repeat center/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3015,7 +3031,8 @@
 .App_highlight_8320c8ca {
   width: 720rem;
   height: 550rem;
-  background: url("R.images.comp7.gui.maps.icons.ban.red_highlight_1240x950") no-repeat right bottom/contain;
+  background: url("R.images.comp7.gui.maps.icons.ban.red_highlight_1240x950") no-repeat right
+    bottom/contain;
   opacity: 0.8;
   position: absolute;
   right: 0;
@@ -3135,7 +3152,8 @@
 .App_image_f27323ae {
   width: 86rem;
   height: 86rem;
-  background: url(R.images.gui.maps.icons.header_footer.backNavigation_medium_default) center/contain no-repeat;
+  background: url(R.images.gui.maps.icons.header_footer.backNavigation_medium_default)
+    center/contain no-repeat;
   position: absolute;
   top: 50%;
   left: 0;

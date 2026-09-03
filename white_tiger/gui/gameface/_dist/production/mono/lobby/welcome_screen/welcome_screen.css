@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -84,7 +91,8 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.TextBlock_header-h24_636071ba, .TextBlock_textBlock_title_85557484 {
+.TextBlock_header-h24_636071ba,
+.TextBlock_textBlock_title_85557484 {
   font-size: 24rem;
   font-weight: 600;
   line-height: 26rem;
@@ -125,7 +133,8 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.TextBlock_paragraph-p18_636071ba, .TextBlock_textBlock_text_972037fc {
+.TextBlock_paragraph-p18_636071ba,
+.TextBlock_textBlock_text_972037fc {
   font-size: 18rem;
   font-weight: 400;
   line-height: 20rem;
@@ -164,11 +173,14 @@ html[lang=th] input {
 }
 .TextBlock_textBlock_text_972037fc {
   color: #b2afab;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3), 0px 1px 15px rgba(23, 23, 23, 0.4);
-}/* stylelint-disable selector-no-qualifying-type */
+  text-shadow:
+    0px 1px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 15px rgba(23, 23, 23, 0.4);
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -192,21 +204,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -214,7 +232,8 @@ html[lang=th] input {
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.WelcomeScreenApp_header-h80_efe62a27, .WelcomeScreenApp_base_title_7a61718c {
+.WelcomeScreenApp_header-h80_efe62a27,
+.WelcomeScreenApp_base_title_7a61718c {
   font-size: 80rem;
   font-weight: 700;
   line-height: 88rem;
@@ -309,7 +328,8 @@ html[lang=th] input {
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -332,21 +352,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -365,7 +391,8 @@ html[lang=th] input {
   align-items: center;
   height: 100%;
   padding: 100rem 0 96rem;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.welcomeScreen.welcomeScreenBackground") no-repeat center/cover;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.welcomeScreen.welcomeScreenBackground")
+    no-repeat center/cover;
   transition: opacity 0.6s;
 }
 .mediaLarge .WelcomeScreenApp_95e9a7ce {
@@ -398,7 +425,8 @@ html[lang=th] input {
 .WelcomeScreenApp_base_videoPlayButton_79ef36b {
   width: 154rem;
   height: 154rem;
-  background: url("R.images.white_tiger.gui.maps.icons.hangar.welcomeScreen.welcomeScreenVideoPlayButton") no-repeat center/cover;
+  background: url("R.images.white_tiger.gui.maps.icons.hangar.welcomeScreen.welcomeScreenVideoPlayButton")
+    no-repeat center/cover;
   transition: all 0.3s ease;
   animation: WelcomeScreenApp_fadeIn_efe62a27 0.7s ease;
   cursor: pointer;

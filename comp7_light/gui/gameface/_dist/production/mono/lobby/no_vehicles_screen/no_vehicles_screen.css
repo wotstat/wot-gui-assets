@@ -185,7 +185,7 @@
   height: 100rem;
   margin-bottom: 10rem;
   background: no-repeat center/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes App_fadeIn_0 {
@@ -442,7 +442,8 @@
   height: 100vh;
   padding-top: var(--external-padding-top);
   padding-bottom: var(--external-padding-bottom);
-  background: url("R.images.comp7_light.gui.maps.icons.backgrounds.no_vehicles_bg") no-repeat center/cover;
+  background: url("R.images.comp7_light.gui.maps.icons.backgrounds.no_vehicles_bg") no-repeat
+    center/cover;
   overflow: hidden;
   position: relative;
 }

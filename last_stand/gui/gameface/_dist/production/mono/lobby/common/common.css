@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -82,7 +89,8 @@ html[lang=th] input {
 .DifficultyItem_base__locked_84d51887 .DifficultyItem_storyPointsWrapper_e7223a99 {
   opacity: 0.5;
 }
-.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_storyPointsWrapper_e7223a99, .DifficultyItem_base__selected_84d51887 .DifficultyItem_storyPointsWrapper_e7223a99 {
+.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_storyPointsWrapper_e7223a99,
+.DifficultyItem_base__selected_84d51887 .DifficultyItem_storyPointsWrapper_e7223a99 {
   opacity: 1;
 }
 .DifficultyItem_storyPointsWrapper_e7223a99 {
@@ -106,7 +114,8 @@ html[lang=th] input {
   transform: translate(-50%, -50%);
   width: 124rem;
   height: 78rem;
-  background: url("R.images.last_stand.gui.maps.icons.difficulties.story_point_shine") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.difficulties.story_point_shine") no-repeat
+    50% / contain;
 }
 
 .DifficultyItem_border_3ef02768 {
@@ -116,11 +125,12 @@ html[lang=th] input {
 .DifficultyItem_base__locked_84d51887 .DifficultyItem_border_3ef02768 {
   opacity: 0.25;
 }
-.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_border_3ef02768, .DifficultyItem_base__selected_84d51887 .DifficultyItem_border_3ef02768 {
+.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_border_3ef02768,
+.DifficultyItem_base__selected_84d51887 .DifficultyItem_border_3ef02768 {
   opacity: 1;
 }
 .DifficultyItem_border_3ef02768 {
-  background: url("R.images.last_stand.gui.maps.icons.difficulties.border") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.difficulties.border") no-repeat 50% / contain;
 }
 
 .DifficultyItem_bgHelper_e2cbb8de {
@@ -129,7 +139,7 @@ html[lang=th] input {
   right: 3rem;
   bottom: 3rem;
   left: 3rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 .DifficultyItem_bgHelper__selected_aa403705 {
   opacity: 0;
@@ -148,7 +158,8 @@ html[lang=th] input {
 .DifficultyItem_base__locked_84d51887 .DifficultyItem_bgHelper__hover_da7a02c3 {
   opacity: 0;
 }
-.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_bgHelper__hover_da7a02c3, .DifficultyItem_base__selected_84d51887 .DifficultyItem_bgHelper__hover_da7a02c3 {
+.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_bgHelper__hover_da7a02c3,
+.DifficultyItem_base__selected_84d51887 .DifficultyItem_bgHelper__hover_da7a02c3 {
   opacity: 1;
 }
 .DifficultyItem_bgHelper__hover_da7a02c3 {
@@ -168,7 +179,8 @@ html[lang=th] input {
 .DifficultyItem_base__locked_84d51887 .DifficultyItem_progress_c50db54a {
   opacity: 0.5;
 }
-.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_progress_c50db54a, .DifficultyItem_base__selected_84d51887 .DifficultyItem_progress_c50db54a {
+.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_progress_c50db54a,
+.DifficultyItem_base__selected_84d51887 .DifficultyItem_progress_c50db54a {
   opacity: 1;
 }
 .DifficultyItem_progress_c50db54a {
@@ -196,7 +208,8 @@ html[lang=th] input {
 .DifficultyItem_progressIcon_4ec65bf6 {
   width: 22rem;
   height: 26rem;
-  background: url("R.images.last_stand.gui.maps.icons.difficulties.progression.progress_small") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.difficulties.progression.progress_small")
+    no-repeat 50% / contain;
 }
 .DifficultyItem_progressIcon__completed_4fedf01e {
   width: 48rem;
@@ -212,7 +225,8 @@ html[lang=th] input {
 .DifficultyItem_base__locked_84d51887 .DifficultyItem_label_e0bd4ef3 {
   opacity: 0.4;
 }
-.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_label_e0bd4ef3, .DifficultyItem_base__selected_84d51887 .DifficultyItem_label_e0bd4ef3 {
+.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_label_e0bd4ef3,
+.DifficultyItem_base__selected_84d51887 .DifficultyItem_label_e0bd4ef3 {
   opacity: 1;
 }
 .DifficultyItem_label_e0bd4ef3 {
@@ -235,7 +249,8 @@ html[lang=th] input {
   transform: translate(-50%);
   width: 24rem;
   height: 24rem;
-  background: url("R.images.last_stand.gui.maps.icons.difficulties.icon_lock") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.difficulties.icon_lock") no-repeat 50% /
+    contain;
   position: absolute;
   bottom: -7rem;
   z-index: 2;

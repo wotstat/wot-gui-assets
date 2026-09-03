@@ -60,7 +60,8 @@
   width: 16rem;
   height: 16rem;
   margin-top: 1rem;
-  background: url("R.images.battle_royale.gui.maps.icons.token_battle_royale_16x16") no-repeat center/cover;
+  background: url("R.images.battle_royale.gui.maps.icons.token_battle_royale_16x16") no-repeat
+    center/cover;
 }
 
 .Column_dash_f9b9a2c {
@@ -69,7 +70,7 @@
   line-height: 1.3em;
   margin-right: 15rem;
   color: var(--color-general-secondary);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Table_8cfe9af4 {
@@ -103,8 +104,17 @@
 .Table_separator_eea24026 {
   width: 100%;
   height: 1rem;
-  background: linear-gradient(to right, rgba(18, 17, 11, 0.8) 0%, transparent 50%, rgba(18, 17, 11, 0.8) 100%), linear-gradient(90deg, #c9c9b6 0px, #c9c9b6 1px, #12110b 1px, #12110b 2px);
-  background-size: 100% 1px, 2px 1px;
+  background:
+    linear-gradient(
+      to right,
+      rgba(18, 17, 11, 0.8) 0%,
+      transparent 50%,
+      rgba(18, 17, 11, 0.8) 100%
+    ),
+    linear-gradient(90deg, #c9c9b6 0px, #c9c9b6 1px, #12110b 1px, #12110b 2px);
+  background-size:
+    100% 1px,
+    2px 1px;
   opacity: 0.2;
   position: relative;
   z-index: 1;

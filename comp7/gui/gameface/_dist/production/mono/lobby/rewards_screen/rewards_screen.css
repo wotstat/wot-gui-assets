@@ -137,7 +137,7 @@
   left: 50%;
   z-index: -1;
   transform: translate(-50%, -50%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -301,7 +301,7 @@
   top: 50%;
   left: -16rem;
   transform: translateY(-50%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -466,7 +466,7 @@
 }
 .RankAnimation_rankEmblemGhost__visible_ec12c9bd {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -776,7 +776,7 @@
 }
 .mediaExtraLarge .Achievement_notice_17bb36b {
   bottom: 50rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -926,7 +926,7 @@
 
 .AppContainer_close_8c51fefb {
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1093,7 +1093,7 @@
 }
 .mediaExtraLarge .AppHeader_title_d9d173d5 {
   font-size: 73rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1232,7 +1232,7 @@
 }
 .Buttons_button_9889e05c + .Buttons_button_9889e05c {
   margin-left: 24rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1380,7 +1380,7 @@
 }
 .ScreenBackground_layer__blurred_9ac55ca6 {
   filter: blur(10px);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1523,7 +1523,7 @@
 .DivisionApp_content_1a0c9a1e {
   flex: 1 1 auto;
   width: 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1660,7 +1660,9 @@
   background: no-repeat center/cover;
   filter: blur(0px);
   opacity: 0;
-  transition: filter 1s, opacity 1s;
+  transition:
+    filter 1s,
+    opacity 1s;
 }
 .QualificationBackground_rankBg__blurred_e4de0e50 {
   filter: blur(10px);
@@ -1676,7 +1678,7 @@
   bottom: 0;
   left: 0;
   background: no-repeat center/cover;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1816,7 +1818,7 @@
 
 .BattleItem_item_b8e00cd3 {
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2015,7 +2017,7 @@
 }
 .showFooter .QualificationRank_notice_6d3c429d {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2177,7 +2179,7 @@
 .showFooter .QualificationApp_buttons_e44cbb30 {
   opacity: 1;
   pointer-events: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2444,7 +2446,7 @@
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2592,7 +2594,7 @@
   font-weight: 400;
   line-height: 1.3;
   margin: -7rem -12rem 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2972,10 +2974,14 @@
 .MainRewards_base__singleMainReward_56da68ed .MainRewards_rewardLabel__currency_68781aae {
   transform: translateY(100%);
 }
-.mediaMedium .MainRewards_base__singleMainReward_56da68ed .MainRewards_rewardLabel__currency_68781aae {
+.mediaMedium
+  .MainRewards_base__singleMainReward_56da68ed
+  .MainRewards_rewardLabel__currency_68781aae {
   transform: translateY(0);
 }
-.mediaLarge .MainRewards_base__singleMainReward_56da68ed .MainRewards_rewardLabel__currency_68781aae {
+.mediaLarge
+  .MainRewards_base__singleMainReward_56da68ed
+  .MainRewards_rewardLabel__currency_68781aae {
   transform: translateY(100%);
 }
 .MainRewards_base__shopInfo_56da68ed .MainRewards_rewardLabel_b10d2a42 {
@@ -2996,7 +3002,7 @@
 .mediaLarge .MainRewards_base__shopInfo_56da68ed .MainRewards_rewardLabel_b10d2a42 {
   bottom: -19rem;
   transform: translateY(100%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3175,7 +3181,7 @@
   font-size: 18rem;
   font-weight: 400;
   line-height: 1.3em;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3486,7 +3492,7 @@
 }
 .mediaExtraLarge .RewardList_shopInfoContainer_df512c7a {
   transform: translateY(-50rem);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3672,10 +3678,14 @@
   margin-bottom: 10rem;
   padding-top: 80rem;
 }
-.mediaLarge .BaseRewardList_base__singleMainReward_8f7b8d83 .BaseRewardList_additionalContainer_3d47ca8f {
+.mediaLarge
+  .BaseRewardList_base__singleMainReward_8f7b8d83
+  .BaseRewardList_additionalContainer_3d47ca8f {
   padding-top: 60rem;
 }
-.mediaExtraLarge .BaseRewardList_base__singleMainReward_8f7b8d83 .BaseRewardList_additionalContainer_3d47ca8f {
+.mediaExtraLarge
+  .BaseRewardList_base__singleMainReward_8f7b8d83
+  .BaseRewardList_additionalContainer_3d47ca8f {
   padding-top: 100rem;
 }
 .BaseRewardList_base__shopInfo_808e9ac2 .BaseRewardList_additionalContainer_3d47ca8f {
@@ -3692,7 +3702,9 @@
   margin-bottom: 38rem;
   padding-top: 78rem;
 }
-.mediaExtraLarge .BaseRewardList_base__shopInfo_808e9ac2 .BaseRewardList_additionalContainer_3d47ca8f {
+.mediaExtraLarge
+  .BaseRewardList_base__shopInfo_808e9ac2
+  .BaseRewardList_additionalContainer_3d47ca8f {
   margin-bottom: 115rem;
   padding-top: 120rem;
   transform: translateY(0);
@@ -3712,7 +3724,7 @@
 }
 .mediaLarge .BaseRewardList_base__shopInfo_808e9ac2 .BaseRewardList_additionalTitle_4abc3a65 {
   margin-bottom: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3867,7 +3879,7 @@
 }
 .mediaExtraLarge .RankApp_rewardList__singleMainReward_acbe8146 {
   top: -120rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4020,19 +4032,25 @@
 .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4 .SelectedRewardsApp_mainRewards_f764bab3 {
   top: -15rem;
 }
-.mediaMedium .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4 .SelectedRewardsApp_mainRewards_f764bab3 {
+.mediaMedium
+  .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4
+  .SelectedRewardsApp_mainRewards_f764bab3 {
   top: -40rem;
 }
-.mediaLarge .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4 .SelectedRewardsApp_mainRewards_f764bab3 {
+.mediaLarge
+  .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4
+  .SelectedRewardsApp_mainRewards_f764bab3 {
   top: -10rem;
 }
-.mediaExtraLarge .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4 .SelectedRewardsApp_mainRewards_f764bab3 {
+.mediaExtraLarge
+  .SelectedRewardsApp_rewardList__singleMainReward_c67bf1e4
+  .SelectedRewardsApp_mainRewards_f764bab3 {
   top: -60rem;
 }
 
 .SelectedRewardsApp_rewardLabel_95ad1240 {
   bottom: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4175,7 +4193,7 @@
 }
 .mediaExtraLarge .TokensRewardsApp_rewardList__singleMainReward_f81b0e20 {
   top: -120rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4333,7 +4351,7 @@
 }
 .mediaMedium .Header_titleInner_3b7107a2 {
   padding: 0 50rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4529,7 +4547,7 @@
 .SeasonResult_seasonName_d5602aaa {
   color: rgba(255, 255, 255, 0.6);
   font-size: 14rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4695,7 +4713,7 @@
   margin-left: 8rem;
   color: rgba(255, 255, 255, 0.6);
   font-size: 14rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -4868,7 +4886,7 @@
 }
 .showPoints .SeasonsResultsHeading_yearResult_272164c1 {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -5144,7 +5162,7 @@
 .showButtons .SharedStyles_buttons_ad38a864 {
   opacity: 1;
   pointer-events: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

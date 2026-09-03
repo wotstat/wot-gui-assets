@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,28 +26,35 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.CallToActionAnimation_15bd18c5, .CallToActionAnimation_rays_76b917a {
+.CallToActionAnimation_15bd18c5,
+.CallToActionAnimation_rays_76b917a {
   position: absolute;
   top: 0;
   right: 0;
@@ -95,7 +103,14 @@ html[lang=th] input {
 .CallToActionAnimation_base__horizontal_7cb89466 .CallToActionAnimation_glow_b4696bff {
   width: 150%;
   height: 100%;
-  background-image: linear-gradient(90deg, rgba(237, 230, 217, 0) 0%, rgba(237, 230, 217, 0.06) 16%, rgba(255, 255, 255, 0.22) 50%, rgba(237, 230, 217, 0.06) 83%, rgba(237, 230, 217, 0) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(237, 230, 217, 0) 0%,
+    rgba(237, 230, 217, 0.06) 16%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(237, 230, 217, 0.06) 83%,
+    rgba(237, 230, 217, 0) 100%
+  );
   top: 0;
   left: -25%;
   animation-name: CallToActionAnimation_glowSlideHorizontal_7cb89466;
@@ -117,7 +132,14 @@ html[lang=th] input {
 .CallToActionAnimation_base__vertical_7cb89466 .CallToActionAnimation_glow_b4696bff {
   width: 100%;
   height: 150%;
-  background-image: linear-gradient(180deg, rgba(237, 230, 217, 0) 0%, rgba(237, 230, 217, 0.06) 16%, rgba(255, 255, 255, 0.22) 50%, rgba(237, 230, 217, 0.06) 83%, rgba(237, 230, 217, 0) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(237, 230, 217, 0) 0%,
+    rgba(237, 230, 217, 0.06) 16%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(237, 230, 217, 0.06) 83%,
+    rgba(237, 230, 217, 0) 100%
+  );
   top: -25%;
   left: 0;
   animation-name: CallToActionAnimation_glowSlideVertical_7cb89466;
@@ -177,10 +199,11 @@ html[lang=th] input {
   100% {
     transform: translateY(150%);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -204,21 +227,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -268,7 +297,7 @@ html[lang=th] input {
 
 .ArtefactItem_overlay_67626f84 {
   height: 125rem;
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.light") no-repeat 50%/cover;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.light") no-repeat 50% / cover;
   position: absolute;
   right: 0;
   bottom: 24rem;
@@ -299,7 +328,7 @@ html[lang=th] input {
   transform: translate(-50%);
   width: 16rem;
   height: 16rem;
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.check") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.check") no-repeat 50% / contain;
   bottom: 25rem;
 }
 
@@ -309,12 +338,17 @@ html[lang=th] input {
   align-items: center;
   width: 100%;
   height: 398rem;
-  background: radial-gradient(126.66% 103.83% at 50% 0%, rgba(255, 255, 255, 0.06) 0%, rgba(49, 49, 49, 0) 100%);
+  background: radial-gradient(
+    126.66% 103.83% at 50% 0%,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(49, 49, 49, 0) 100%
+  );
   position: relative;
 }
 
 .ArtefactItem_selected_a9ecccae {
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.rewards_inprogress_bg") no-repeat 50%/100% 100%;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.rewards_inprogress_bg") no-repeat
+    50%/100% 100%;
   animation: ArtefactItem_fadeIn_8bfb1d48 0.3s 1.5s ease-in-out both;
 }
 
@@ -336,10 +370,11 @@ html[lang=th] input {
   margin-top: 10rem;
   margin-bottom: 10rem;
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -363,21 +398,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -400,10 +441,11 @@ html[lang=th] input {
 .ProgressionHeader_spIcon_9d24495b {
   display: flex;
   align-self: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -427,21 +469,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -497,7 +545,12 @@ html[lang=th] input {
 .Artefacts_divider_423e6820 {
   width: 1rem;
   height: 328rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 24%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 24%,
+    rgba(255, 255, 255, 0) 100%
+  );
   opacity: 0;
   animation: Artefacts_fadeIn_f836ebac 0.3s 1.5s ease-in-out both;
 }
@@ -512,10 +565,11 @@ html[lang=th] input {
   right: 0;
   left: 0;
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -539,21 +593,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -564,7 +624,8 @@ html[lang=th] input {
 .BundleCard_4232f0d2 {
   width: 362rem;
   height: 160rem;
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.card_small") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.card_small") no-repeat 50% /
+    contain;
   position: relative;
 }
 .mediaLarge .BundleCard_4232f0d2 {
@@ -577,7 +638,8 @@ html[lang=th] input {
   width: 349rem;
   height: 148rem;
   margin: 6rem;
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.bundle_bg_small") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.bundle_bg_small") no-repeat 50% /
+    contain;
 }
 .mediaLarge .BundleCard_bg_2bc5119 {
   width: 378rem;
@@ -609,10 +671,11 @@ html[lang=th] input {
 .mediaLarge .BundleCard_button_f32dc703 {
   min-width: 200rem;
   bottom: 30rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -636,21 +699,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -661,7 +730,8 @@ html[lang=th] input {
 .DailyQuestsCard_8452735 {
   width: 362rem;
   height: 160rem;
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.card_small") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.card_small") no-repeat 50% /
+    contain;
   position: relative;
 }
 .mediaLarge .DailyQuestsCard_8452735 {
@@ -688,7 +758,7 @@ html[lang=th] input {
 .DailyQuestsCard_icon_e3692c40 {
   width: 48rem;
   height: 48rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   position: absolute;
   top: 24rem;
   left: 19rem;
@@ -775,10 +845,11 @@ html[lang=th] input {
 
 .DailyQuestsCard_reward_461f11ab {
   margin: 0 10rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -802,21 +873,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -845,10 +922,11 @@ html[lang=th] input {
   height: 100%;
   margin: 0 20rem;
   background: rgba(196, 198, 192, 0.16);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -872,21 +950,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -911,7 +995,8 @@ html[lang=th] input {
 }
 
 .RewardPathApp_vignette_b928ef12 {
-  background: url("R.images.last_stand.gui.maps.icons.backgrounds.vignette_simple") no-repeat 50%/100% 100%;
+  background: url("R.images.last_stand.gui.maps.icons.backgrounds.vignette_simple") no-repeat
+    50%/100% 100%;
   mix-blend-mode: normal;
   pointer-events: none;
 }
@@ -919,7 +1004,8 @@ html[lang=th] input {
 .RewardPathApp_bg_6166d40a {
   width: 100%;
   height: 100%;
-  background: url("R.images.last_stand.gui.maps.icons.backgrounds.progression_bg") no-repeat 50%/cover;
+  background: url("R.images.last_stand.gui.maps.icons.backgrounds.progression_bg") no-repeat 50% /
+    cover;
   opacity: 1;
   position: absolute;
   top: 50%;
@@ -989,7 +1075,7 @@ html[lang=th] input {
   align-self: center;
   width: 16rem;
   height: 17rem;
-  background: url("R.images.last_stand.gui.maps.icons.rewardPath.icon_info") no-repeat 50%/contain;
+  background: url("R.images.last_stand.gui.maps.icons.rewardPath.icon_info") no-repeat 50% / contain;
 }
 
 .RewardPathApp_header_aca0c837 {

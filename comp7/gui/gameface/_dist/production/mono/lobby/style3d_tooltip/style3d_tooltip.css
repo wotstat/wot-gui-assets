@@ -135,7 +135,7 @@
   width: 226rem;
   height: 102rem;
   margin-bottom: 12rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 
 .App_section_33f04f1b {
@@ -145,7 +145,13 @@
   position: relative;
 }
 .App_section__bg_be804357 {
-  background: linear-gradient(90deg, transparent, rgba(201, 201, 182, 0.07) 37%, rgba(201, 201, 182, 0.07) 63%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 201, 182, 0.07) 37%,
+    rgba(201, 201, 182, 0.07) 63%,
+    transparent
+  );
 }
 .App_section__bottom_df7c9a59 {
   padding-bottom: 24rem;

@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -144,7 +151,13 @@ html[lang=th] input {
   flex-direction: column;
   width: 400rem;
   padding-top: 14rem;
-  background-image: linear-gradient(180deg, rgba(51, 51, 41, 0.3) 0%, transparent 16%, transparent 88%, rgba(51, 51, 41, 0.1) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(51, 51, 41, 0.3) 0%,
+    transparent 16%,
+    transparent 88%,
+    rgba(51, 51, 41, 0.1) 100%
+  );
 }
 .AmmunitionPanelTooltipApp_base__hasAnimation_a99cfcee {
   width: 416rem;
@@ -176,7 +189,8 @@ html[lang=th] input {
   margin-bottom: 25rem;
   padding: 0 22rem 0 75rem;
 }
-.AmmunitionPanelTooltipApp_base__hasAnimation_a99cfcee .AmmunitionPanelTooltipApp_description_4cfa6afa {
+.AmmunitionPanelTooltipApp_base__hasAnimation_a99cfcee
+  .AmmunitionPanelTooltipApp_description_4cfa6afa {
   margin-bottom: 14rem;
 }
 
@@ -191,14 +205,26 @@ html[lang=th] input {
   padding: 15rem 22rem 13rem;
 }
 .AmmunitionPanelTooltipApp_textWrapper__hasGradient_eda547f {
-  background-image: linear-gradient(270deg, transparent 0%, rgba(255, 255, 230, 0.1) 38%, rgba(255, 255, 230, 0.1) 65%, transparent 100%);
+  background-image: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgba(255, 255, 230, 0.1) 38%,
+    rgba(255, 255, 230, 0.1) 65%,
+    transparent 100%
+  );
 }
 
 .AmmunitionPanelTooltipApp_additionalTextWrapper_a2862797 {
   display: flex;
   flex-direction: column;
   padding: 11rem 22rem 18rem;
-  background-image: linear-gradient(270deg, transparent 0%, rgba(255, 255, 230, 0.1) 38%, rgba(255, 255, 230, 0.1) 65%, transparent 100%);
+  background-image: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgba(255, 255, 230, 0.1) 38%,
+    rgba(255, 255, 230, 0.1) 65%,
+    transparent 100%
+  );
 }
 
 .AmmunitionPanelTooltipApp_subtitle_82714034 {

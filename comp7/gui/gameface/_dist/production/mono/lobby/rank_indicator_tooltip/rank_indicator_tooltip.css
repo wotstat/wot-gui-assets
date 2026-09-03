@@ -168,7 +168,13 @@
 
 .App_bgSection_dcd190a7 {
   padding: 28rem 20rem;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05) 40%, rgba(235, 235, 235, 0.05) 60%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(235, 235, 235, 0.05) 60%,
+    transparent
+  );
 }
 
 .App_section_9843de37 {

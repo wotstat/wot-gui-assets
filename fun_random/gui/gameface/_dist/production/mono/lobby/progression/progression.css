@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -261,7 +268,9 @@ body {
   margin-bottom: 4rem;
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s ease-out 0.5s, transform 0.3s ease-out 0.5s;
+  transition:
+    opacity 0.3s ease-out 0.5s,
+    transform 0.3s ease-out 0.5s;
 }
 .Timer_base__hide_9f6d0c7b {
   opacity: 0;
@@ -363,10 +372,11 @@ body {
 .Timer_secondLine_461c25ce .Timer_countdown_11b34534 {
   position: relative;
   right: 5rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -390,21 +400,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -633,7 +649,9 @@ body {
   position: relative;
   z-index: 1;
   transform: translateY(0);
-  transition: opacity 0.3s ease-out 0.5s, transform 0.3s ease-out 0.5s;
+  transition:
+    opacity 0.3s ease-out 0.5s,
+    transform 0.3s ease-out 0.5s;
 }
 .Header_base__hide_a308bf0e {
   opacity: 0;
@@ -686,14 +704,17 @@ body {
   text-align: center;
   position: relative;
   transform: translateY(0);
-  transition: opacity 0.3s ease-out 0.5s, transform 0.3s ease-out 0.5s;
+  transition:
+    opacity 0.3s ease-out 0.5s,
+    transform 0.3s ease-out 0.5s;
 }
 .mediaMedium .Header_congratsSubtitle_cf2caa72 {
   font-size: 40rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -717,21 +738,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -974,11 +1001,13 @@ body {
   height: 118rem;
   padding-top: 11rem;
 }
-.CardEdge_base__detached_f2682522, .CardEdge_base__deactivating_cc80ab9b {
+.CardEdge_base__detached_f2682522,
+.CardEdge_base__deactivating_cc80ab9b {
   background-size: 100% 100%;
   transform: translate(-1%, -10%) rotate(-4deg);
 }
-.CardEdge_base__detaching_f2682522, .CardEdge_base__detaching_active_47dc97b9 {
+.CardEdge_base__detaching_f2682522,
+.CardEdge_base__detaching_active_47dc97b9 {
   background-size: 100% 100%;
   animation: CardEdge_edge_f2682522 0.15s 0.4s cubic-bezier(0, 0.01, 0.68, 0.99) forwards;
 }
@@ -1005,7 +1034,10 @@ body {
 .CardEdge_base__big_a0bd992 .CardEdge_shadow_bbbbc58e {
   height: 118rem;
 }
-.CardEdge_base__detached_f2682522 .CardEdge_shadow_bbbbc58e, .CardEdge_base__detaching_f2682522 .CardEdge_shadow_bbbbc58e, .CardEdge_base__deactivating_cc80ab9b .CardEdge_shadow_bbbbc58e, .CardEdge_base__inactive_f2682522 .CardEdge_shadow_bbbbc58e {
+.CardEdge_base__detached_f2682522 .CardEdge_shadow_bbbbc58e,
+.CardEdge_base__detaching_f2682522 .CardEdge_shadow_bbbbc58e,
+.CardEdge_base__deactivating_cc80ab9b .CardEdge_shadow_bbbbc58e,
+.CardEdge_base__inactive_f2682522 .CardEdge_shadow_bbbbc58e {
   display: block;
 }
 
@@ -1062,10 +1094,11 @@ body {
 }
 .CardEdge_base__detaching_f2682522 .CardEdge_blinkEdge_c9e993dd {
   animation: CardEdge_blink-edge_f2682522 0.2s 0.5s ease-in forwards;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1089,21 +1122,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1361,7 +1400,10 @@ body {
 .CardContent_reward_9582bb4b {
   transition: opacity 0.2s 0.6s ease-out;
 }
-.CardContent_base__detached_d7ebe82e .CardContent_reward_9582bb4b, .CardContent_base__detaching_d7ebe82e .CardContent_reward_9582bb4b, .CardContent_base__detaching_active_d7ebe82e .CardContent_reward_9582bb4b, .CardContent_base__deactivating_d7ebe82e .CardContent_reward_9582bb4b {
+.CardContent_base__detached_d7ebe82e .CardContent_reward_9582bb4b,
+.CardContent_base__detaching_d7ebe82e .CardContent_reward_9582bb4b,
+.CardContent_base__detaching_active_d7ebe82e .CardContent_reward_9582bb4b,
+.CardContent_base__deactivating_d7ebe82e .CardContent_reward_9582bb4b {
   opacity: 0.5;
 }
 
@@ -1407,7 +1449,8 @@ body {
 .CardContent_base__infinite_d7ebe82e .CardContent_cardNumber_2e0af128 {
   margin-top: 2rem;
 }
-.CardContent_base__big_d7ebe82e.CardContent_base__infinite_d7ebe82e .CardContent_cardNumber_2e0af128 {
+.CardContent_base__big_d7ebe82e.CardContent_base__infinite_d7ebe82e
+  .CardContent_cardNumber_2e0af128 {
   margin-top: 3rem;
 }
 
@@ -1451,7 +1494,10 @@ body {
 .CardContent_base__big_d7ebe82e .CardContent_shadow_45f4b2db {
   height: 295rem;
 }
-.CardContent_base__detached_d7ebe82e .CardContent_shadow_45f4b2db, .CardContent_base__detaching_d7ebe82e .CardContent_shadow_45f4b2db, .CardContent_base__deactivating_d7ebe82e .CardContent_shadow_45f4b2db, .CardContent_base__inactive_d7ebe82e .CardContent_shadow_45f4b2db {
+.CardContent_base__detached_d7ebe82e .CardContent_shadow_45f4b2db,
+.CardContent_base__detaching_d7ebe82e .CardContent_shadow_45f4b2db,
+.CardContent_base__deactivating_d7ebe82e .CardContent_shadow_45f4b2db,
+.CardContent_base__inactive_d7ebe82e .CardContent_shadow_45f4b2db {
   display: block;
 }
 
@@ -1470,10 +1516,11 @@ body {
   mask-position: 0 0;
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1497,21 +1544,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1736,7 +1789,11 @@ body {
   width: 220rem;
   height: 400rem;
 }
-.Card_base__inactive_f4c22d1c, .Card_base__detached_f4c22d1c, .Card_base__detaching_f4c22d1c, .Card_base__deactivating_f4c22d1c, .Card_base__activating_c8c39979 {
+.Card_base__inactive_f4c22d1c,
+.Card_base__detached_f4c22d1c,
+.Card_base__detaching_f4c22d1c,
+.Card_base__deactivating_f4c22d1c,
+.Card_base__activating_c8c39979 {
   transform: scale(0.9) translateY(5%);
 }
 
@@ -1756,7 +1813,9 @@ body {
   transform: translateX(-50%);
   pointer-events: none;
 }
-.Card_base__active_f4c22d1c .Card_glow_154b3a6, .Card_base__animation_hiding_glow_f4c22d1c .Card_glow_154b3a6, .Card_base__animation_showing_glow_f4c22d1c .Card_glow_154b3a6 {
+.Card_base__active_f4c22d1c .Card_glow_154b3a6,
+.Card_base__animation_hiding_glow_f4c22d1c .Card_glow_154b3a6,
+.Card_base__animation_showing_glow_f4c22d1c .Card_glow_154b3a6 {
   display: block;
 }
 .Card_base__animation_showing_glow_f4c22d1c .Card_glow_154b3a6 {
@@ -1772,7 +1831,8 @@ body {
   display: none;
   width: 100%;
   height: 10%;
-  background: url("../../R.images.fun_random.gui.maps.icons.feature.progression.cards.particles") 0 0/100% 100% no-repeat;
+  background: url("../../R.images.fun_random.gui.maps.icons.feature.progression.cards.particles") 0
+    0/100% 100% no-repeat;
   opacity: 1;
   mix-blend-mode: screen;
   position: absolute;
@@ -1780,7 +1840,8 @@ body {
   z-index: 2;
   pointer-events: none;
 }
-.Card_base__detaching_f4c22d1c .Card_particles_6bfd2d4b, .Card_base__detaching_active_f4c22d1c .Card_particles_6bfd2d4b {
+.Card_base__detaching_f4c22d1c .Card_particles_6bfd2d4b,
+.Card_base__detaching_active_f4c22d1c .Card_particles_6bfd2d4b {
   display: block;
   opacity: 0;
   animation: Card_dissolve_f4c22d1c 0.3s 0.5s ease-out forwards;
@@ -1827,10 +1888,11 @@ body {
 .Card_base__big_247c97ce .Card_image_3408eba8 {
   height: 295rem;
   top: 105rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1854,21 +1916,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1917,10 +1985,11 @@ body {
 
 .CardsFan_cardHidden_f4a79f83 {
   display: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1944,21 +2013,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1984,10 +2059,11 @@ body {
 
 .CardsProgression_cardsFan_83cbdc49 {
   width: 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2011,21 +2087,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2269,7 +2351,8 @@ body {
 .InfiniteTitle_glow_d67d6df9 {
   width: 800rem;
   height: 500rem;
-  background: url("../../../R.images.fun_random.gui.maps.icons.feature.progression.congrats_glow") 0 0/100% 100% no-repeat;
+  background: url("../../../R.images.fun_random.gui.maps.icons.feature.progression.congrats_glow") 0
+    0/100% 100% no-repeat;
   opacity: 0;
   position: absolute;
   top: -173rem;
@@ -2279,9 +2362,13 @@ body {
   pointer-events: none;
 }
 .InfiniteTitle_glow__show_76624e20 {
-  animation: InfiniteTitle_show_2273dd54 0.3s ease-in 0.5s forwards, InfiniteTitle_hide_2273dd54 0.5s ease-in 2.5s forwards;
+  animation:
+    InfiniteTitle_show_2273dd54 0.3s ease-in 0.5s forwards,
+    InfiniteTitle_hide_2273dd54 0.5s ease-in 2.5s forwards;
 }
-.InfiniteTitle_base__medium_2273dd54 .InfiniteTitle_glow_d67d6df9, .InfiniteTitle_base__large_2273dd54 .InfiniteTitle_glow_d67d6df9, .InfiniteTitle_base__extraLarge_2273dd54 .InfiniteTitle_glow_d67d6df9 {
+.InfiniteTitle_base__medium_2273dd54 .InfiniteTitle_glow_d67d6df9,
+.InfiniteTitle_base__large_2273dd54 .InfiniteTitle_glow_d67d6df9,
+.InfiniteTitle_base__extraLarge_2273dd54 .InfiniteTitle_glow_d67d6df9 {
   width: 1200rem;
   height: 800rem;
   top: -300rem;
@@ -2317,7 +2404,9 @@ body {
 .InfiniteTitle_congrats_53b68d3 {
   margin-top: 4rem;
   transform: translateY(0);
-  transition: opacity 0.5s ease-in 1.7s, transform 0.5s ease-in 1.7s;
+  transition:
+    opacity 0.5s ease-in 1.7s,
+    transform 0.5s ease-in 1.7s;
 }
 .InfiniteTitle_congrats__hidden_9600cf7d {
   opacity: 0;
@@ -2337,7 +2426,9 @@ body {
 .InfiniteTitle_subtitle__faded_ec6e77fd {
   opacity: 0;
 }
-.InfiniteTitle_base__medium_2273dd54 .InfiniteTitle_subtitle_a77973ac, .InfiniteTitle_base__large_2273dd54 .InfiniteTitle_subtitle_a77973ac, .InfiniteTitle_base__extraLarge_2273dd54 .InfiniteTitle_subtitle_a77973ac {
+.InfiniteTitle_base__medium_2273dd54 .InfiniteTitle_subtitle_a77973ac,
+.InfiniteTitle_base__large_2273dd54 .InfiniteTitle_subtitle_a77973ac,
+.InfiniteTitle_base__extraLarge_2273dd54 .InfiniteTitle_subtitle_a77973ac {
   font-size: 73rem;
 }
 
@@ -2354,18 +2445,23 @@ body {
   text-align: center;
   position: relative;
   transform: translateY(0);
-  transition: opacity 0.5s ease-in 1.7s, transform 0.5s ease-in 1.7s;
+  transition:
+    opacity 0.5s ease-in 1.7s,
+    transform 0.5s ease-in 1.7s;
 }
 .InfiniteTitle_congratsSubtitle__hidden_29c7c9af {
   opacity: 0;
   transform: translateY(-20rem);
 }
-.InfiniteTitle_base__medium_2273dd54 .InfiniteTitle_congratsSubtitle_5fe682a2, .InfiniteTitle_base__large_2273dd54 .InfiniteTitle_congratsSubtitle_5fe682a2, .InfiniteTitle_base__extraLarge_2273dd54 .InfiniteTitle_congratsSubtitle_5fe682a2 {
+.InfiniteTitle_base__medium_2273dd54 .InfiniteTitle_congratsSubtitle_5fe682a2,
+.InfiniteTitle_base__large_2273dd54 .InfiniteTitle_congratsSubtitle_5fe682a2,
+.InfiniteTitle_base__extraLarge_2273dd54 .InfiniteTitle_congratsSubtitle_5fe682a2 {
   font-size: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2389,21 +2485,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2641,17 +2743,22 @@ body {
 .CompletedProgression_base__final_413e479e .CompletedProgression_container_d7c47390 {
   animation: CompletedProgression_show-up_413e479e 0.8s ease-out 2.4s forwards;
 }
-.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e .CompletedProgression_container_d7c47390 {
+.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e
+  .CompletedProgression_container_d7c47390 {
   animation-duration: 0s;
   animation-delay: 0s;
 }
 .CompletedProgression_base__infinite_413e479e .CompletedProgression_container_d7c47390 {
   top: 20rem;
 }
-.mediaMedium .CompletedProgression_base__infinite_413e479e .CompletedProgression_container_d7c47390 {
+.mediaMedium
+  .CompletedProgression_base__infinite_413e479e
+  .CompletedProgression_container_d7c47390 {
   top: 60rem;
 }
-.mediaExtraLarge .CompletedProgression_base__infinite_413e479e .CompletedProgression_container_d7c47390 {
+.mediaExtraLarge
+  .CompletedProgression_base__infinite_413e479e
+  .CompletedProgression_container_d7c47390 {
   top: 92rem;
 }
 .mediaMedium .CompletedProgression_container_d7c47390 {
@@ -2664,7 +2771,8 @@ body {
 .CompletedProgression_glow_dc3db05a {
   width: 800rem;
   height: 500rem;
-  background: url("../../R.images.fun_random.gui.maps.icons.feature.progression.congrats_glow") 0 0/100% 100% no-repeat;
+  background: url("../../R.images.fun_random.gui.maps.icons.feature.progression.congrats_glow") 0
+    0/100% 100% no-repeat;
   opacity: 0;
   position: absolute;
   top: -173rem;
@@ -2675,7 +2783,8 @@ body {
 .CompletedProgression_base__final_413e479e .CompletedProgression_glow_dc3db05a {
   animation: CompletedProgression_completed-glow_413e479e 0.8s ease-out 3.2s forwards;
 }
-.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e .CompletedProgression_glow_dc3db05a {
+.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e
+  .CompletedProgression_glow_dc3db05a {
   animation-duration: 0s;
   animation-delay: 0s;
 }
@@ -2685,10 +2794,13 @@ body {
 .mediaLarge .CompletedProgression_base__resettable_413e479e .CompletedProgression_glow_dc3db05a {
   top: -230rem;
 }
-.mediaExtraLarge .CompletedProgression_base__resettable_413e479e .CompletedProgression_glow_dc3db05a {
+.mediaExtraLarge
+  .CompletedProgression_base__resettable_413e479e
+  .CompletedProgression_glow_dc3db05a {
   top: -190rem;
 }
-.CompletedProgression_base__infinite_413e479e.CompletedProgression_base__resettable_413e479e .CompletedProgression_glow_dc3db05a {
+.CompletedProgression_base__infinite_413e479e.CompletedProgression_base__resettable_413e479e
+  .CompletedProgression_glow_dc3db05a {
   display: none;
 }
 .mediaLarge .CompletedProgression_glow_dc3db05a {
@@ -2762,7 +2874,8 @@ body {
 .CompletedProgression_base__final_413e479e .CompletedProgression_congratsSubtitle_e8dbd002 {
   animation: CompletedProgression_completed-congrats_413e479e 0.5s ease-out 3.2s forwards;
 }
-.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e .CompletedProgression_congratsSubtitle_e8dbd002 {
+.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e
+  .CompletedProgression_congratsSubtitle_e8dbd002 {
   animation-duration: 0s;
   animation-delay: 0s;
 }
@@ -2786,7 +2899,8 @@ body {
 .CompletedProgression_base__final_413e479e .CompletedProgression_timer_4f044f1e {
   animation: CompletedProgression_completed-congrats_413e479e 0.5s ease-out 3.2s forwards;
 }
-.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e .CompletedProgression_timer_4f044f1e {
+.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e
+  .CompletedProgression_timer_4f044f1e {
   animation-duration: 0s;
   animation-delay: 0s;
 }
@@ -2796,7 +2910,9 @@ body {
 .mediaLarge .CompletedProgression_base__infinite_413e479e .CompletedProgression_timer_4f044f1e {
   top: 100rem;
 }
-.mediaExtraLarge .CompletedProgression_base__infinite_413e479e .CompletedProgression_timer_4f044f1e {
+.mediaExtraLarge
+  .CompletedProgression_base__infinite_413e479e
+  .CompletedProgression_timer_4f044f1e {
   top: 120rem;
 }
 .mediaMedium .CompletedProgression_timer_4f044f1e {
@@ -2819,7 +2935,8 @@ body {
 .CompletedProgression_base__final_413e479e .CompletedProgression_button_de4a031d {
   animation: CompletedProgression_show_413e479e 0.8s ease-out 2.4s forwards;
 }
-.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e .CompletedProgression_button_de4a031d {
+.CompletedProgression_base__final_413e479e.CompletedProgression_base__static_413e479e
+  .CompletedProgression_button_de4a031d {
   animation-duration: 0s;
   animation-delay: 0s;
 }
@@ -2834,10 +2951,11 @@ body {
 }
 .mediaExtraLarge .CompletedProgression_button_de4a031d {
   bottom: 96rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2861,21 +2979,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2964,10 +3088,11 @@ body {
 }
 .Point_base__completed_d8b7e333 .Point_score_ae8e52b {
   color: var(--color-status-done);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2991,21 +3116,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3427,10 +3558,11 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 44rem 37rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3454,21 +3586,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3746,7 +3884,9 @@ body {
   transform: translate(6%, 1%) rotate(3deg);
 }
 .InfiniteCard_base__second_655c9b4 .InfiniteCard_cardWrapper__enter_78f9326b {
-  animation: InfiniteCard_second2firstTranslate_55fb4fdf 0.3s ease-in forwards, InfiniteCard_second2firstRotate_55fb4fdf 0.3s ease-in 1.1s forwards;
+  animation:
+    InfiniteCard_second2firstTranslate_55fb4fdf 0.3s ease-in forwards,
+    InfiniteCard_second2firstRotate_55fb4fdf 0.3s ease-in 1.1s forwards;
 }
 .InfiniteCard_base__second_655c9b4 .InfiniteCard_cardWrapper__enterDone_a0d8bbd2 {
   transform: translate(0%, 0%) rotate(0);
@@ -3766,10 +3906,11 @@ body {
 
 .InfiniteCard_shadow_a39e06c2 {
   opacity: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3793,21 +3934,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3830,10 +3977,11 @@ body {
 }
 .InfiniteCards_base__big_c727fc86 {
   bottom: 26rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3857,21 +4005,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4146,7 +4300,10 @@ body {
   color: var(--color-status-link);
   line-height: 100%;
   text-align: right;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.16);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.16);
   position: absolute;
   right: 0;
 }
@@ -4157,10 +4314,11 @@ body {
 .InfiniteQuestCondition_currentPointItem__exit_75d8133e {
   opacity: 1;
   animation: InfiniteQuestCondition_pointFadeOut_b4fe04b9 0.4s ease-out 4s forwards;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4184,21 +4342,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4450,10 +4614,11 @@ body {
 
 .InfiniteProgression_questCondition_ec8c8f62 {
   margin: 10rem 24rem 24rem 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4477,21 +4642,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4761,10 +4932,11 @@ body {
 }
 .CurrentPoints_base__oneQuest_3970c66e .CurrentPoints_text_3c1f1e29 {
   font-size: 40rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4788,21 +4960,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5025,7 +5203,9 @@ body {
   align-items: center;
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s ease-out 0.5s, transform 0.3s ease-out 0.5s;
+  transition:
+    opacity 0.3s ease-out 0.5s,
+    transform 0.3s ease-out 0.5s;
 }
 .QuestsList_base__hide_de43f8d1 {
   opacity: 0;
@@ -5082,7 +5262,8 @@ body {
 .mediaExtraLarge .QuestsList_twoQuests_cd14c93 .QuestsList_quest_bd9ab1be {
   width: 435rem;
 }
-.QuestsList_twoQuests_cd14c93 .QuestsList_quest_bd9ab1be, .QuestsList_severalQuests_e2a33221 .QuestsList_quest_bd9ab1be {
+.QuestsList_twoQuests_cd14c93 .QuestsList_quest_bd9ab1be,
+.QuestsList_severalQuests_e2a33221 .QuestsList_quest_bd9ab1be {
   background-color: rgba(0, 0, 0, 0.15);
 }
 .QuestsList_oneQuest_dffa979c .QuestsList_quest_bd9ab1be {
@@ -5188,7 +5369,10 @@ body {
   height: 22rem;
   padding-left: 2rem;
   color: #ffe4c0;
-  text-shadow: 0 0 35rem rgba(255, 61, 0, 0.35), 0 0 20rem rgba(255, 177, 86, 0.35), 0 0 7rem rgba(255, 228, 159, 0.2);
+  text-shadow:
+    0 0 35rem rgba(255, 61, 0, 0.35),
+    0 0 20rem rgba(255, 177, 86, 0.35),
+    0 0 7rem rgba(255, 228, 159, 0.2);
 }
 .mediaMedium .QuestsList_currentProgressPointsEarned_158dc815 {
   height: 26rem;
@@ -5204,10 +5388,11 @@ body {
 }
 .mediaMedium .QuestsList_oneQuest_dffa979c .QuestsList_currentProgressPointsEarned_158dc815 {
   height: 52rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5231,21 +5416,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5494,7 +5685,12 @@ body {
   left: 0;
   width: 100%;
   height: 90%;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.3) 0%, transparent 50%, transparent 100%);
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 50%,
+    transparent 100%
+  );
   opacity: 0;
   content: "";
   transition: opacity 0.5s;
@@ -5511,7 +5707,10 @@ body {
   margin-top: 10rem;
   color: var(--color-status-link);
   text-align: center;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.16);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.16);
 }
 .mediaMedium .RandomRewardsButton_text_52bc847e {
   font-size: 18rem;
@@ -5522,10 +5721,11 @@ body {
   font-size: 20rem;
   font-weight: 400;
   line-height: 1.3em;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5549,21 +5749,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6030,7 +6236,7 @@ body {
 .App_bg_a782f950 {
   width: 100%;
   height: 100%;
-  background: no-repeat 50%/cover;
+  background: no-repeat 50% / cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -6135,7 +6341,9 @@ body {
   bottom: calc(10rem + var(--external-padding-bottom));
   left: 50%;
   transform: translate(-50%, 0);
-  transition: opacity 0.3s ease-out 0.5s, transform 0.3s ease-out 0.5s;
+  transition:
+    opacity 0.3s ease-out 0.5s,
+    transform 0.3s ease-out 0.5s;
 }
 .App_base__completedAnimated_0 .App_toRandomRewards_1b8efbf0 {
   opacity: 0;

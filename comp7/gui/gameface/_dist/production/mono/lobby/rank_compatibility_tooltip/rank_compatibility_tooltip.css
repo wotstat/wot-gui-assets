@@ -169,7 +169,7 @@
 
 .RankCompatibilityTable_divider_e6a19cf8 {
   margin: 10rem 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -310,5 +310,11 @@
 }
 
 .App_table_8784516a {
-  background: linear-gradient(90deg, rgba(201, 201, 182, 0) 0%, rgba(201, 201, 182, 0.07) 38.22%, rgba(201, 201, 182, 0.07) 64.56%, rgba(201, 201, 182, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(201, 201, 182, 0) 0%,
+    rgba(201, 201, 182, 0.07) 38.22%,
+    rgba(201, 201, 182, 0.07) 64.56%,
+    rgba(201, 201, 182, 0) 100%
+  );
 }

@@ -151,7 +151,7 @@
 
 .Candidates_accent_44bd75ba {
   color: rgba(var(--color-general-primary-rgb), 0.9);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -297,7 +297,12 @@
   height: 100%;
   margin: 0 3rem;
   padding: 0 3rem;
-  background: linear-gradient(180deg, rgba(123, 123, 123, 0) 0%, rgba(123, 123, 123, 0.5) 52.4%, rgba(123, 123, 123, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(123, 123, 123, 0) 0%,
+    rgba(123, 123, 123, 0.5) 52.4%,
+    rgba(123, 123, 123, 0) 100%
+  );
   color: rgba(var(--color-general-primary-rgb), 0.9);
 }
 
@@ -334,7 +339,7 @@
   width: 18rem;
   height: 18rem;
   background: url("R.images.comp7.gui.maps.icons.ban.dice") no-repeat center/cover;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -487,7 +492,7 @@
 
 .BanResult_reverse_f36dedc0 {
   flex-direction: row-reverse;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -649,7 +654,7 @@
   right: -1rem;
   bottom: -10rem;
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

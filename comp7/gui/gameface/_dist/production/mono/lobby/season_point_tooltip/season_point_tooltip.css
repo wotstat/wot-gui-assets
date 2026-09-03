@@ -140,7 +140,13 @@
 
 .App_header_cfd235ff {
   padding: 15rem 0 11rem;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05) 40%, rgba(235, 235, 235, 0.05) 60%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(235, 235, 235, 0.05) 60%,
+    transparent
+  );
 }
 
 .App_body_dc3af66 {

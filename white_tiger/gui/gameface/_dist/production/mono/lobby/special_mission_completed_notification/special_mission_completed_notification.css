@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -160,14 +167,16 @@ html[lang=th] input {
   bottom: 0;
   left: 0;
 }
-.SpecialMissionCompletedNotificationApp_base__popUp_9986409e .SpecialMissionCompletedNotificationApp_background_b7f87d0f {
+.SpecialMissionCompletedNotificationApp_base__popUp_9986409e
+  .SpecialMissionCompletedNotificationApp_background_b7f87d0f {
   background: url("R.images.white_tiger.gui.maps.icons.notifications.bg") center/cover no-repeat;
 }
 
 .SpecialMissionCompletedNotificationApp_close_53e33d19 {
   width: 12rem;
   height: 12rem;
-  background: url(R.images.gui.maps.icons.skillTree.notifications.perk_available.close) center/cover no-repeat;
+  background: url(R.images.gui.maps.icons.skillTree.notifications.perk_available.close) center/cover
+    no-repeat;
   filter: brightness(1);
   position: absolute;
   top: 55rem;
@@ -192,18 +201,22 @@ html[lang=th] input {
 .SpecialMissionCompletedNotificationApp_decoration_icon_45bdc63 {
   width: 60rem;
   height: 34rem;
-  background: url("R.images.white_tiger.gui.maps.icons.notifications.decoration_icon") center/cover no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.notifications.decoration_icon") center/cover
+    no-repeat;
 }
-.SpecialMissionCompletedNotificationApp_base__popUp_9986409e .SpecialMissionCompletedNotificationApp_decoration_icon_45bdc63 {
+.SpecialMissionCompletedNotificationApp_base__popUp_9986409e
+  .SpecialMissionCompletedNotificationApp_decoration_icon_45bdc63 {
   margin-top: -18rem;
 }
 .SpecialMissionCompletedNotificationApp_decoration_glow_5c3140bc {
   width: 158rem;
   height: 37rem;
   margin-top: 19rem;
-  background: url("R.images.white_tiger.gui.maps.icons.notifications.decoration_glow") center/cover no-repeat;
+  background: url("R.images.white_tiger.gui.maps.icons.notifications.decoration_glow") center/cover
+    no-repeat;
 }
-.SpecialMissionCompletedNotificationApp_base__popUp_9986409e .SpecialMissionCompletedNotificationApp_decoration_89263ce2 {
+.SpecialMissionCompletedNotificationApp_base__popUp_9986409e
+  .SpecialMissionCompletedNotificationApp_decoration_89263ce2 {
   top: -15rem;
 }
 
@@ -220,7 +233,8 @@ html[lang=th] input {
   position: relative;
   z-index: 1;
 }
-.SpecialMissionCompletedNotificationApp_base__popUp_9986409e .SpecialMissionCompletedNotificationApp_text_15d9e689 {
+.SpecialMissionCompletedNotificationApp_base__popUp_9986409e
+  .SpecialMissionCompletedNotificationApp_text_15d9e689 {
   margin-top: 63rem;
 }
 

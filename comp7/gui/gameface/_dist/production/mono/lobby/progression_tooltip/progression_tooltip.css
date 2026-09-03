@@ -203,7 +203,7 @@
   top: 0;
   left: 0;
   transform: translate(-44rem, -13rem);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -354,7 +354,7 @@
 
 .EliteRankContent_formatTextString_42aa1ae3 {
   justify-content: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -529,7 +529,7 @@
 }
 .GeneralRankContent_progressValue__right_86d8e17 {
   right: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -705,7 +705,11 @@
   width: 24rem;
   height: 24rem;
   background: url("R.images.gui.maps.icons.ui_kit.datetime.x24x24.accent") no-repeat center/contain;
-  text-shadow: 0 0 6rem rgba(255, 228, 159, 0.16), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 12rem rgba(255, 61, 0, 0.32), 0 1rem 0 rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 6rem rgba(255, 228, 159, 0.16),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 1rem 0 rgba(0, 0, 0, 0.3);
   transform: translate(2rem, -2rem);
 }
 
@@ -715,7 +719,8 @@
   margin-bottom: 18rem;
   color: #edcb9e;
   font-weight: 500;
-  filter: drop-shadow(0 1rem 0 rgba(0, 0, 0, 0.3)) drop-shadow(0 0 12px rgba(255, 61, 0, 0.32)) drop-shadow(0 0 10px rgba(255, 177, 86, 0.24)) drop-shadow(0 0 6px rgba(255, 128, 169, 0.16));
+  filter: drop-shadow(0 1rem 0 rgba(0, 0, 0, 0.3)) drop-shadow(0 0 12px rgba(255, 61, 0, 0.32))
+    drop-shadow(0 0 10px rgba(255, 177, 86, 0.24)) drop-shadow(0 0 6px rgba(255, 128, 169, 0.16));
 }
 
 .QualificationContent_battles_e24cc168 {
@@ -736,7 +741,7 @@
   justify-content: center;
   margin-top: 8rem;
   color: rgba(var(--color-general-primary-rgb), 0.5);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -870,7 +875,8 @@
   align-items: center;
   width: 338rem;
   padding: 18rem 30rem 28rem;
-  background: url("R.images.comp7.gui.maps.icons.backgrounds.progression_tooltip_bg") no-repeat top/cover;
+  background: url("R.images.comp7.gui.maps.icons.backgrounds.progression_tooltip_bg") no-repeat
+    top/cover;
   overflow: hidden;
   position: relative;
 }

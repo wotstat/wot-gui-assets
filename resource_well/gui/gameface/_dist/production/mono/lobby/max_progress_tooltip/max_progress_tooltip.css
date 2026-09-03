@@ -68,7 +68,8 @@
 .Content_separator_e45b18cd {
   width: 300rem;
   height: 9rem;
-  background: url("R.images.resource_well.gui.maps.icons.tooltips.divider_small") center/contain no-repeat;
+  background: url("R.images.resource_well.gui.maps.icons.tooltips.divider_small") center/contain
+    no-repeat;
 }
 
 .Content_progressWrapper_368d6a2c {
@@ -78,7 +79,8 @@
   height: 72rem;
   margin-bottom: -8rem;
   padding: 2rem 19rem 8rem;
-  background: url("R.images.resource_well.gui.maps.icons.tooltips.white_bg") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.tooltips.white_bg") no-repeat
+    center/contain;
 }
 
 .Content_icon_47c83453 {
