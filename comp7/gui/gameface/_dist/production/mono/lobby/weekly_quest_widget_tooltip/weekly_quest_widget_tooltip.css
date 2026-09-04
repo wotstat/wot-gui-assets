@@ -137,7 +137,7 @@
   width: 302rem;
   height: 9rem;
   background: url("R.images.comp7.gui.maps.icons.icons.divider_dotty") no-repeat center/cover;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -308,7 +308,7 @@
   font-weight: 700;
   line-height: 1.3em;
   color: rgba(var(--color-general-primary-rgb), 0.9);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -469,7 +469,7 @@
   width: 48rem;
   height: 48rem;
   background: url("R.images.comp7.gui.maps.icons.icons.deluxe_gift_48x48") no-repeat center/cover;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -664,7 +664,7 @@
 
 .Waiting_newMissionsTimer_6bf867a3 {
   flex: 0 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

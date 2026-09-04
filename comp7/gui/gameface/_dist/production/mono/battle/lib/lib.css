@@ -187,7 +187,7 @@
   --color-status-done-rgb: 100, 186, 33;
   --color-team-killer: #09e2ff;
   --color-team-killer-rgb: 9, 226, 255;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -324,7 +324,11 @@
   position: relative;
   cursor: pointer;
 }
-.Cbutton_base__main_2f199578, .Cbutton_base__primary_9da8a692, .Cbutton_base__primaryGreen_74301f4e, .Cbutton_base__primaryRed_d184ac, .Cbutton_base__secondary_22ff48c2 {
+.Cbutton_base__main_2f199578,
+.Cbutton_base__primary_9da8a692,
+.Cbutton_base__primaryGreen_74301f4e,
+.Cbutton_base__primaryRed_d184ac,
+.Cbutton_base__secondary_22ff48c2 {
   background-size: 100% 100%;
 }
 .Cbutton_base__main_2f199578 {
@@ -344,14 +348,17 @@
 }
 .Cbutton_base__ghost_fd3acf91 {
   border-radius: 3rem;
-  box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.3), 0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+  box-shadow:
+    0 0 0 1rem rgba(0, 0, 0, 0.3),
+    0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
   background-color: rgba(0, 0, 0, 0.15);
 }
 .Cbutton_base__extraSmall_f64ebb9e {
   min-height: 17rem;
   padding: 0 16rem;
 }
-.Cbutton_base__small_a71bc2a9, .Cbutton_base__medium_d82a1b14 {
+.Cbutton_base__small_a71bc2a9,
+.Cbutton_base__medium_d82a1b14 {
   padding: 0 20rem;
 }
 .Cbutton_base__small_a71bc2a9 {
@@ -432,7 +439,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Cbutton_stateHighlightHover_7e2b860e {
-  background-image: linear-gradient(180deg, rgba(252, 248, 235, 0.25) 0%, rgba(252, 248, 235, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(252, 248, 235, 0.25) 0%,
+    rgba(252, 248, 235, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
   opacity: 0;
 }
 .Cbutton_24fc9a0c:hover .Cbutton_stateHighlightHover_7e2b860e {
@@ -478,10 +490,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   letter-spacing: 0.03em;
   transform: translateY(-1rem);
 }
-.Cbutton_content_faaa9067[lang=ja], .Cbutton_content_faaa9067[lang=ko], .Cbutton_content_faaa9067[lang=zh_tw], .Cbutton_content_faaa9067[lang=zh_sg], .Cbutton_content_faaa9067[lang=zh_cn], .Cbutton_content_faaa9067[lang=th] {
+.Cbutton_content_faaa9067[lang="ja"],
+.Cbutton_content_faaa9067[lang="ko"],
+.Cbutton_content_faaa9067[lang="zh_tw"],
+.Cbutton_content_faaa9067[lang="zh_sg"],
+.Cbutton_content_faaa9067[lang="zh_cn"],
+.Cbutton_content_faaa9067[lang="th"] {
   font-weight: 400;
 }
-.Cbutton_base__main_2f199578 .Cbutton_content_faaa9067, .Cbutton_base__primaryRed_d184ac .Cbutton_content_faaa9067 {
+.Cbutton_base__main_2f199578 .Cbutton_content_faaa9067,
+.Cbutton_base__primaryRed_d184ac .Cbutton_content_faaa9067 {
   text-shadow: 0 -1rem 1rem #600;
 }
 .Cbutton_base__secondary_22ff48c2 .Cbutton_content_faaa9067 {
@@ -504,7 +522,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Cbutton_base__disabled_96f239bb .Cbutton_content_faaa9067 {
   opacity: 0.6;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -635,9 +653,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Formattext_bb80854d {
   display: flex;
   flex-wrap: wrap;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Thumb_background_7f3dd6ac, .Thumb_border_5749138b {
+.Thumb_background_7f3dd6ac,
+.Thumb_border_5749138b {
   position: absolute;
   top: 0;
   right: 0;
@@ -771,7 +790,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   }
 }
 /* should be percentage of screen width */
-.Thumb_border_5749138b, .Thumb_innerBorder_42bafd18, .Thumb_icon_dca8bf26, .Thumb_background_7f3dd6ac {
+.Thumb_border_5749138b,
+.Thumb_innerBorder_42bafd18,
+.Thumb_icon_dca8bf26,
+.Thumb_background_7f3dd6ac {
   position: absolute;
   pointer-events: none;
 }
@@ -801,7 +823,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_texture) center/100% auto repeat-y;
 }
 .Thumb_base__horizontal_27ca7ace .Thumb_background_7f3dd6ac {
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_texture) center/auto 100% repeat-x;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_texture) center/auto 100%
+    repeat-x;
 }
 .Thumb_base__active_830942bb .Thumb_background_7f3dd6ac {
   opacity: 1;
@@ -812,7 +835,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Thumb_base__horizontal_27ca7ace .Thumb_icon_dca8bf26 {
   width: 8rem;
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_grip) center left/7rem 6rem no-repeat;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_grip) center left/7rem 6rem
+    no-repeat;
   top: 2rem;
   bottom: 2rem;
   left: 50%;
@@ -820,7 +844,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Thumb_base__vertical_55a67c91 .Thumb_icon_dca8bf26 {
   height: 8rem;
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_grip) top center/5rem 9rem no-repeat;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_grip) top center/5rem 9rem
+    no-repeat;
   top: 50%;
   right: 2rem;
   left: 2rem;
@@ -845,7 +870,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   border-image-slice: 4;
   border-image-width: 4rem;
   border-image-repeat: round;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1017,11 +1042,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   background-position: bottom;
   right: 0;
 }
-.HorizontalBar_4df27ac3:hover .HorizontalBar_rail_37858d8f, .HorizontalBar_4df27ac3:active .HorizontalBar_rail_37858d8f {
+.HorizontalBar_4df27ac3:hover .HorizontalBar_rail_37858d8f,
+.HorizontalBar_4df27ac3:active .HorizontalBar_rail_37858d8f {
   opacity: 1;
 }
 
-.forwardDisabled .HorizontalBar_button__right_e8f0aa2d, .backwardDisabled .HorizontalBar_button__left_da330e13 {
+.forwardDisabled .HorizontalBar_button__right_e8f0aa2d,
+.backwardDisabled .HorizontalBar_button__left_da330e13 {
   opacity: 0.2;
   cursor: default;
   pointer-events: none;
@@ -1030,7 +1057,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .HorizontalBar_button_cbabd91 {
   width: 8rem;
   height: 11rem;
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_arrow) top right/contain no-repeat;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_arrow) top right/contain
+    no-repeat;
   opacity: 0.2;
   transition: opacity 0.2s ease-in;
   cursor: pointer;
@@ -1039,9 +1067,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .HorizontalBar_button__left_da330e13 {
   transform: rotate(180deg);
 }
-.HorizontalBar_4df27ac3:hover .HorizontalBar_button_cbabd91, .HorizontalBar_4df27ac3:active .HorizontalBar_button_cbabd91 {
+.HorizontalBar_4df27ac3:hover .HorizontalBar_button_cbabd91,
+.HorizontalBar_4df27ac3:active .HorizontalBar_button_cbabd91 {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1192,7 +1221,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
   width: 100%;
   margin-bottom: 7rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1366,11 +1395,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   background-position: bottom;
   bottom: 0;
 }
-.VerticalBar_7187fa00:hover .VerticalBar_rail_3d663c9, .VerticalBar_7187fa00:active .VerticalBar_rail_3d663c9 {
+.VerticalBar_7187fa00:hover .VerticalBar_rail_3d663c9,
+.VerticalBar_7187fa00:active .VerticalBar_rail_3d663c9 {
   opacity: 1;
 }
 
-.forwardDisabled .VerticalBar_button__bottom_6880f123, .backwardDisabled .VerticalBar_button__top_b8383775 {
+.forwardDisabled .VerticalBar_button__bottom_6880f123,
+.backwardDisabled .VerticalBar_button__top_b8383775 {
   opacity: 0.2;
   cursor: default;
   pointer-events: none;
@@ -1391,9 +1422,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .VerticalBar_button__bottom_6880f123 {
   transform: translateX(-1rem) rotate(180deg);
 }
-.VerticalBar_7187fa00:hover .VerticalBar_button_7b0e4aca, .VerticalBar_7187fa00:active .VerticalBar_button_7b0e4aca {
+.VerticalBar_7187fa00:hover .VerticalBar_button_7b0e4aca,
+.VerticalBar_7187fa00:active .VerticalBar_button_7b0e4aca {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1547,7 +1579,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .VerticalScroll_area_a3c0086a {
   flex: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1771,7 +1803,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Formattextwithcolortags_parNoWidth_bb0f73ce {
   width: 0;
   color: #8c8c7e;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1903,9 +1935,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   border: none;
   background: none;
   cursor: pointer;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Button_background_98ebcfb8, .Button_background_98ebcfb8::after, .Button_border_7e6390d7, .Button_overlay_174632c8, .Button_overlay_174632c8::before {
+.Button_background_98ebcfb8,
+.Button_background_98ebcfb8::after,
+.Button_border_7e6390d7,
+.Button_overlay_174632c8,
+.Button_overlay_174632c8::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -2042,7 +2078,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Button_background_98ebcfb8, .Button_background_98ebcfb8::after, .Button_border_7e6390d7, .Button_overlay_174632c8, .Button_overlay_174632c8::before {
+.Button_background_98ebcfb8,
+.Button_background_98ebcfb8::after,
+.Button_border_7e6390d7,
+.Button_overlay_174632c8,
+.Button_overlay_174632c8::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -2099,7 +2139,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Button_base__theme-primary_8ba55469 .Button_background_98ebcfb8 {
   background-image: radial-gradient(51% 50% at 50% 50%, #d9d2c5 0%, #afb1a4 100%);
 }
-.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover .Button_background_98ebcfb8 {
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_background_98ebcfb8 {
   background-color: rgba(237, 230, 217, 0.32);
 }
 .Button_background_98ebcfb8::after {
@@ -2113,7 +2154,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   background-image: url(R.images.gui.maps.icons.ui_kit.common.primary_background);
   opacity: 0.48;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover .Button_background_98ebcfb8::after {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_background_98ebcfb8::after {
   opacity: 0.7;
 }
 .Button_base__theme-secondary_3fa4afc .Button_background_98ebcfb8::after {
@@ -2125,16 +2167,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   transition: opacity 0.1s ease-out;
 }
 .Button_base__theme-primary_8ba55469 .Button_border_7e6390d7 {
-  border-image: url(R.images.gui.maps.icons.ui_kit.button.primary_button_border_pattern) 2/2rem repeat;
+  border-image: url(R.images.gui.maps.icons.ui_kit.button.primary_button_border_pattern) 2/2rem
+    repeat;
   box-shadow: 0 0 0 1rem rgba(13, 14, 16, 0.4);
 }
 .Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40 .Button_border_7e6390d7 {
   opacity: 0.8;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover .Button_border_7e6390d7 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_border_7e6390d7 {
   opacity: 1;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active .Button_border_7e6390d7 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_border_7e6390d7 {
   opacity: 0.9;
 }
 .Button_base__theme-primary_8ba55469.Button_base__disabled_b713e04a .Button_border_7e6390d7 {
@@ -2144,12 +2189,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   border-width: 1rem;
   border-style: solid;
   border-image: url(R.images.gui.maps.icons.ui_kit.common.secondary_border_pattern) 4/4rem round;
-  box-shadow: 0 0 0 1rem rgba(13, 14, 16, 0.4), inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
+  box-shadow:
+    0 0 0 1rem rgba(13, 14, 16, 0.4),
+    inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
 }
 .Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40 .Button_border_7e6390d7 {
   opacity: 0.9;
 }
-.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover .Button_border_7e6390d7 {
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_border_7e6390d7 {
   opacity: 1;
 }
 .Button_base__theme-secondary_3fa4afc.Button_base__disabled_b713e04a .Button_border_7e6390d7 {
@@ -2160,18 +2208,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   border-radius: 2rem;
   opacity: 0;
   mix-blend-mode: overlay;
-  transition: opacity 0.1s ease-out, background-color 0.1s ease-out;
+  transition:
+    opacity 0.1s ease-out,
+    background-color 0.1s ease-out;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover .Button_overlay_174632c8 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_overlay_174632c8 {
   background-color: #fff;
   opacity: 0.4;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active .Button_overlay_174632c8, .Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active .Button_overlay_174632c8 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_overlay_174632c8,
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_overlay_174632c8 {
   background-color: #000;
   opacity: 0.24;
 }
 .Button_base__disabled_b713e04a .Button_overlay_174632c8 {
-  background: url(R.images.gui.maps.icons.ui_kit.patterns.disable_overlay_pattern) repeat center/10rem 10rem;
+  background: url(R.images.gui.maps.icons.ui_kit.patterns.disable_overlay_pattern) repeat
+    center/10rem 10rem;
   opacity: 0.12;
 }
 .Button_overlay_174632c8::before {
@@ -2191,25 +2246,49 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778 {
   padding-bottom: 2rem;
 }
-html[lang=ja] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778 {
   padding-bottom: 4rem;
 }
 .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778 {
   padding-bottom: 1rem;
 }
-html[lang=ja] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778 {
   padding-bottom: 4rem;
 }
 .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778 {
   padding-bottom: 2rem;
 }
-html[lang=ja] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778 {
   padding-bottom: 5rem;
 }
 .Button_base__size-large_83da852e .Button_content__fontAligned_66115778 {
   padding-bottom: 2rem;
 }
-html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778 {
   padding-bottom: 4rem;
 }
 .Button_base__theme-primary_8ba55469 .Button_content_298de63f {
@@ -2218,7 +2297,8 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 .Button_base__theme-secondary_3fa4afc .Button_content_298de63f {
   font-weight: 500;
 }
-.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active .Button_content_298de63f {
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_content_298de63f {
   opacity: 0.9;
 }
 .Button_base__theme-primary_8ba55469.Button_base__disabled_b713e04a .Button_content_298de63f {
@@ -2238,7 +2318,7 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 }
 .Button_base__size-large_83da852e .Button_content_298de63f {
   font-size: 28rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2371,9 +2451,11 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Content_8eaaf71a, .Content_ab8563af::after, .Content_disabledOverlay_af87c441 {
+.Content_8eaaf71a,
+.Content_ab8563af::after,
+.Content_disabledOverlay_af87c441 {
   position: absolute;
   top: 0;
   right: 0;
@@ -2509,7 +2591,9 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 /* should be percentage of screen width */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Content_8eaaf71a, .Content_ab8563af::after, .Content_disabledOverlay_af87c441 {
+.Content_8eaaf71a,
+.Content_ab8563af::after,
+.Content_disabledOverlay_af87c441 {
   position: absolute;
   top: 0;
   right: 0;
@@ -2532,7 +2616,13 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   overflow: hidden;
 }
 .Content_base__multiple_da09528a .Content_ab8563af {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--corner-height)),
+    calc(100% - var(--corner-width)) 100%,
+    0 100%
+  );
 }
 .Content_ab8563af::after {
   border: 1rem solid transparent;
@@ -2546,7 +2636,8 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 .Content_base__hover_da09528a .Content_ab8563af::after {
   opacity: 0.4;
 }
-.Content_base__selectedHover_da09528a .Content_ab8563af::after, .Content_base__selected_da09528a .Content_ab8563af::after {
+.Content_base__selectedHover_da09528a .Content_ab8563af::after,
+.Content_base__selected_da09528a .Content_ab8563af::after {
   opacity: 0.7;
 }
 
@@ -2564,7 +2655,7 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 .Content_disabledOverlay_af87c441 {
   background: url(R.images.gui.maps.icons.ui_kit.card.disabled_pattern) 0 0/8rem 8rem repeat;
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2742,25 +2833,58 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   bottom: -6rem;
   left: 0;
 }
-.Status_base__done_35b9a31c .Status_line_8f933ea7, .Status_base__doneSmall_35b9a31c .Status_line_8f933ea7 {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02) 100%), linear-gradient(90deg, rgba(100, 186, 33, 0) 25%, rgba(100, 186, 33, 0.5) 50%, rgba(100, 186, 33, 0) 75%);
+.Status_base__done_35b9a31c .Status_line_8f933ea7,
+.Status_base__doneSmall_35b9a31c .Status_line_8f933ea7 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.02) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(100, 186, 33, 0) 25%,
+      rgba(100, 186, 33, 0.5) 50%,
+      rgba(100, 186, 33, 0) 75%
+    );
 }
-.Status_base__alert_35b9a31c .Status_line_8f933ea7, .Status_base__alertSmall_35b9a31c .Status_line_8f933ea7 {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02) 100%), linear-gradient(90deg, rgba(238, 112, 0, 0) 25%, rgba(238, 112, 0, 0.5) 50%, rgba(238, 112, 0, 0) 75%);
+.Status_base__alert_35b9a31c .Status_line_8f933ea7,
+.Status_base__alertSmall_35b9a31c .Status_line_8f933ea7 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.02) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(238, 112, 0, 0) 25%,
+      rgba(238, 112, 0, 0.5) 50%,
+      rgba(238, 112, 0, 0) 75%
+    );
 }
 
 .Status_shadow_fc30bf98 {
   flex-shrink: 0;
   width: 30rem;
   height: 1rem;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   opacity: 0.8;
   position: absolute;
   bottom: -6rem;
   left: 50%;
   transform: translateX(-12rem);
 }
-.Status_base__doneSmall_35b9a31c .Status_shadow_fc30bf98, .Status_base__alertSmall_35b9a31c .Status_shadow_fc30bf98, .Status_base__lockedSmall_35b9a31c .Status_shadow_fc30bf98 {
+.Status_base__doneSmall_35b9a31c .Status_shadow_fc30bf98,
+.Status_base__alertSmall_35b9a31c .Status_shadow_fc30bf98,
+.Status_base__lockedSmall_35b9a31c .Status_shadow_fc30bf98 {
   width: 16rem;
   transform: translateX(-5rem);
 }
@@ -2773,11 +2897,21 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   bottom: -3rem;
   left: 3rem;
 }
-.Status_base__done_35b9a31c .Status_glowInner_f8eb475a, .Status_base__doneSmall_35b9a31c .Status_glowInner_f8eb475a {
-  background: radial-gradient(82% 111% at 50% 145%, rgba(100, 186, 33, 0.05) 0%, rgba(100, 186, 33, 0) 100%), radial-gradient(69% 95% at 50% 145%, rgba(100, 186, 33, 0.2) 0%, rgba(100, 186, 33, 0) 100%), radial-gradient(86% 117% at 50% 198%, rgba(100, 186, 33, 0.6) 0%, rgba(100, 186, 33, 0) 100%), radial-gradient(47% 65% at 50% 156%, #64ba21 0%, rgba(100, 186, 33, 0) 100%);
+.Status_base__done_35b9a31c .Status_glowInner_f8eb475a,
+.Status_base__doneSmall_35b9a31c .Status_glowInner_f8eb475a {
+  background:
+    radial-gradient(82% 111% at 50% 145%, rgba(100, 186, 33, 0.05) 0%, rgba(100, 186, 33, 0) 100%),
+    radial-gradient(69% 95% at 50% 145%, rgba(100, 186, 33, 0.2) 0%, rgba(100, 186, 33, 0) 100%),
+    radial-gradient(86% 117% at 50% 198%, rgba(100, 186, 33, 0.6) 0%, rgba(100, 186, 33, 0) 100%),
+    radial-gradient(47% 65% at 50% 156%, #64ba21 0%, rgba(100, 186, 33, 0) 100%);
 }
-.Status_base__alert_35b9a31c .Status_glowInner_f8eb475a, .Status_base__alertSmall_35b9a31c .Status_glowInner_f8eb475a {
-  background: radial-gradient(82% 111% at 50% 145%, rgba(238, 112, 0, 0.05) 0%, rgba(238, 112, 0, 0) 100%), radial-gradient(69% 95% at 50% 145%, rgba(238, 112, 0, 0.2) 0%, rgba(238, 112, 0, 0) 100%), radial-gradient(86% 117% at 50% 198%, rgba(238, 112, 0, 0.6) 0%, rgba(238, 112, 0, 0) 100%), radial-gradient(47% 65% at 50% 156%, #ee7000 0%, rgba(238, 112, 0, 0) 100%);
+.Status_base__alert_35b9a31c .Status_glowInner_f8eb475a,
+.Status_base__alertSmall_35b9a31c .Status_glowInner_f8eb475a {
+  background:
+    radial-gradient(82% 111% at 50% 145%, rgba(238, 112, 0, 0.05) 0%, rgba(238, 112, 0, 0) 100%),
+    radial-gradient(69% 95% at 50% 145%, rgba(238, 112, 0, 0.2) 0%, rgba(238, 112, 0, 0) 100%),
+    radial-gradient(86% 117% at 50% 198%, rgba(238, 112, 0, 0.6) 0%, rgba(238, 112, 0, 0) 100%),
+    radial-gradient(47% 65% at 50% 156%, #ee7000 0%, rgba(238, 112, 0, 0) 100%);
 }
 
 .Status_blur_5675b854 {
@@ -2787,10 +2921,12 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   left: 50%;
   transform: translate(-18rem, 0);
 }
-.Status_base__done_35b9a31c .Status_blur_5675b854, .Status_base__doneSmall_35b9a31c .Status_blur_5675b854 {
+.Status_base__done_35b9a31c .Status_blur_5675b854,
+.Status_base__doneSmall_35b9a31c .Status_blur_5675b854 {
   fill: #64ba21;
 }
-.Status_base__alert_35b9a31c .Status_blur_5675b854, .Status_base__alertSmall_35b9a31c .Status_blur_5675b854 {
+.Status_base__alert_35b9a31c .Status_blur_5675b854,
+.Status_base__alertSmall_35b9a31c .Status_blur_5675b854 {
   fill: #ee7000;
 }
 
@@ -2802,12 +2938,14 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   bottom: -3rem;
   left: 3rem;
 }
-.Status_base__done_35b9a31c .Status_glowBig_5954041c, .Status_base__doneSmall_35b9a31c .Status_glowBig_5954041c {
+.Status_base__done_35b9a31c .Status_glowBig_5954041c,
+.Status_base__doneSmall_35b9a31c .Status_glowBig_5954041c {
   background: linear-gradient(180deg, rgba(100, 186, 33, 0) 0, rgba(100, 186, 33, 0.06) 100%);
 }
-.Status_base__alert_35b9a31c .Status_glowBig_5954041c, .Status_base__alertSmall_35b9a31c .Status_glowBig_5954041c {
+.Status_base__alert_35b9a31c .Status_glowBig_5954041c,
+.Status_base__alertSmall_35b9a31c .Status_glowBig_5954041c {
   background: linear-gradient(180deg, rgba(238, 112, 0, 0) 0, rgba(238, 112, 0, 0.06) 100%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2947,7 +3085,9 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 .Card_base__disableMouse_5cd80216 {
   cursor: auto;
 }
-.Card_base__hover_f4c22d1c, .Card_base__selected_f4c22d1c, .Card_base__hoverSelected_43ce242d {
+.Card_base__hover_f4c22d1c,
+.Card_base__selected_f4c22d1c,
+.Card_base__hoverSelected_43ce242d {
   z-index: 1;
 }
 
@@ -2992,9 +3132,10 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 .Card_base__hover_f4c22d1c .Card_centerBorder_8a0f28ae {
   border: 1rem solid rgba(255, 255, 255, 0.18);
 }
-.Card_base__selectedHover_f4c22d1c .Card_centerBorder_8a0f28ae, .Card_base__selected_f4c22d1c .Card_centerBorder_8a0f28ae {
+.Card_base__selectedHover_f4c22d1c .Card_centerBorder_8a0f28ae,
+.Card_base__selected_f4c22d1c .Card_centerBorder_8a0f28ae {
   border: 1rem solid rgba(255, 255, 255, 0.45);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3132,7 +3273,7 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   background: url(R.images.gui.maps.icons.ui_kit.card.noise_outer) repeat center/contain;
   opacity: 0.15;
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -3291,7 +3432,7 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
   bottom: -1rem;
   left: 0;
   pointer-events: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

@@ -11,7 +11,7 @@
   border-image-slice: 24 fill;
   border-image-width: 24rem;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --color-general-primary: #ede6d9;

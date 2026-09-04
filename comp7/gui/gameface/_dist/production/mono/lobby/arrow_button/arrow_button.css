@@ -189,7 +189,9 @@
 .ArrowButton_base__disabled_66128a31:active .ArrowButton_layer__active_a807ac2e {
   opacity: 0;
 }
-.ArrowButton_base__disabled_66128a31 .ArrowButton_layer__default_5f556b05, .ArrowButton_base__disabled_66128a31 .ArrowButton_layer__hover_5f556b05, .ArrowButton_base__disabled_66128a31 .ArrowButton_layer__active_a807ac2e {
+.ArrowButton_base__disabled_66128a31 .ArrowButton_layer__default_5f556b05,
+.ArrowButton_base__disabled_66128a31 .ArrowButton_layer__hover_5f556b05,
+.ArrowButton_base__disabled_66128a31 .ArrowButton_layer__active_a807ac2e {
   opacity: 0;
 }
 .ArrowButton_base__disabled_66128a31 .ArrowButton_layer__disabled_2af2a5f5 {

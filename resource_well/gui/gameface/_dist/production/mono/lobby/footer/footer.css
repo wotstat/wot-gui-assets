@@ -1,6 +1,7 @@
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.PreviewDelta_86b01c3e, .PreviewDelta_positive_d5d478a9 {
+.PreviewDelta_86b01c3e,
+.PreviewDelta_positive_d5d478a9 {
   position: absolute;
   top: 0;
   right: 0;
@@ -15,9 +16,10 @@
 
 .PreviewDelta_positive_d5d478a9 {
   background-color: #fff;
-  filter: drop-shadow(0 0 16rem rgba(255, 154, 82, 0.5)) drop-shadow(0 0 8rem rgba(255, 196, 108, 0.24)) drop-shadow(0 0 4rem rgba(252, 246, 235, 0.16));
+  filter: drop-shadow(0 0 16rem rgba(255, 154, 82, 0.5))
+    drop-shadow(0 0 8rem rgba(255, 196, 108, 0.24)) drop-shadow(0 0 4rem rgba(252, 246, 235, 0.16));
   transition: width 0.2s;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .VehicleInfo_text_5f991786 {
@@ -50,7 +52,7 @@
 }
 .mediaLarge .VehicleInfo_base__header_9c9aeed .VehicleInfo_type_64138e7c {
   margin: 0 -3rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .ActiveState_e74cd00e {
@@ -165,7 +167,7 @@
 .mediaLarge .ActiveState_description_e5878c93 {
   font-size: 18rem;
   line-height: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Forbidden_icon_9b9e87dc::before {
   position: absolute;
@@ -199,7 +201,8 @@
 .Forbidden_icon_9b9e87dc::before {
   width: 28rem;
   height: 28rem;
-  background: url("R.images.resource_well.gui.maps.icons.footer.error_icon") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.footer.error_icon") no-repeat
+    center/contain;
   content: "";
 }
 
@@ -220,7 +223,7 @@
 }
 .mediaLarge .Forbidden_button_8b828d1d {
   margin-top: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .NoProgress_title_c5c00e94 {
@@ -279,7 +282,7 @@
   margin-top: 14rem;
   font-size: 18rem;
   line-height: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .NoVehiclesState_title_a847f92f {
@@ -312,7 +315,7 @@
 }
 .mediaLarge .NoVehiclesState_button_7b7c67b5 {
   margin-top: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Footer_c298eb1 {
@@ -331,7 +334,14 @@
 .Footer_backgroundBlur_b741fe83 {
   width: 1400rem;
   height: 218rem;
-  mask: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 20%, #fff 50%, #fff 80%, rgba(255, 255, 255, 0) 100%);
+  mask: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 20%,
+    #fff 50%,
+    #fff 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
   position: absolute;
   top: 0;
   left: 50%;
@@ -352,7 +362,8 @@
 .Footer_background_3a3b1d42 {
   width: 1280rem;
   height: 230rem;
-  background: url("R.images.resource_well.gui.maps.icons.footer.small_background") no-repeat center/cover;
+  background: url("R.images.resource_well.gui.maps.icons.footer.small_background") no-repeat
+    center/cover;
   position: absolute;
   top: -12rem;
   left: 50%;

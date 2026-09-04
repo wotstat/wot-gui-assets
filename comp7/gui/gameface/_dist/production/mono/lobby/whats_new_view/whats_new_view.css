@@ -135,8 +135,9 @@
   height: 100%;
 }
 .BackgroundVideo_video__bg_277575c1 {
-  background: url("R.images.comp7.gui.maps.icons.backgrounds.yearly_styles") no-repeat center/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+  background: url("R.images.comp7.gui.maps.icons.backgrounds.yearly_styles") no-repeat
+    center/contain;
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -303,7 +304,7 @@
 }
 .Tag_base__experimental_48eda667 {
   background-color: #cd6911;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -449,7 +450,7 @@
 }
 .mediaLarge .WatchVideo_text_6df0b12 {
   font-size: 24rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -668,7 +669,7 @@
 
 .Banner_tag_b884e5f0 {
   margin-left: 10rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -968,7 +969,7 @@
   font-size: 18rem;
   font-weight: 400;
   line-height: 1.3em;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1117,7 +1118,8 @@
 }
 
 .Map_gradient_aa55b2e6 {
-  background: radial-gradient(143% 140% at 1% 100%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%) no-repeat center/contain;
+  background: radial-gradient(143% 140% at 1% 100%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+    no-repeat center/contain;
 }
 
 .Map_content_3c0f8b58 {
@@ -1144,7 +1146,9 @@
   font-weight: 700;
   line-height: 1.3em;
   color: rgba(var(--color-general-primary-rgb), 0.9);
-  text-shadow: 0 4rem 4rem rgba(0, 0, 0, 0.4), 0 4rem 4rem rgba(0, 0, 0, 0.25);
+  text-shadow:
+    0 4rem 4rem rgba(0, 0, 0, 0.4),
+    0 4rem 4rem rgba(0, 0, 0, 0.25);
 }
 .mediaLarge .Map_name_cdb35f0e {
   font-size: 22rem;
@@ -1182,7 +1186,7 @@
   border-color: #fff;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1340,7 +1344,7 @@
 }
 .mediaLarge .Grid_cell_95a78ad9 {
   margin-top: 30rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1474,7 +1478,7 @@
 
 .MapChanges_legend_92b285b6 {
   margin-bottom: 14rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1615,7 +1619,8 @@
 }
 
 .Vehicle_gradient_66189772 {
-  background: radial-gradient(143% 140% at 1% 100%, rgba(0, 0, 0, 0.4), transparent) no-repeat center/contain;
+  background: radial-gradient(143% 140% at 1% 100%, rgba(0, 0, 0, 0.4), transparent) no-repeat
+    center/contain;
   position: absolute;
   top: 0;
   right: 0;
@@ -1643,7 +1648,7 @@
 }
 .mediaLarge .Vehicle_vehicleName_3c00f9a6 {
   font-size: 22rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1773,7 +1778,7 @@
 /* should be percentage of screen width */
 .RentalVehicles_header_4faf333a {
   margin-bottom: 28rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -1936,7 +1941,7 @@
 
 .SeasonalUpdate_tag_fe951f3d {
   margin-left: 10rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */
@@ -2373,7 +2378,7 @@
 
 .Main_noSuperPlatoonsImage_526967b1 {
   background-image: url("R.images.comp7.gui.maps.icons.whatsNewView.no_super_platoons");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 /* should be percentage of screen width */

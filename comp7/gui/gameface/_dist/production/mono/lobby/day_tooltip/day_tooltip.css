@@ -211,7 +211,8 @@
 .App_penaltyIcon_6ee6018b::before {
   width: 111rem;
   height: 58rem;
-  background: url("R.images.comp7.gui.maps.icons.icons.rankInactivity_111x58") no-repeat center/cover;
+  background: url("R.images.comp7.gui.maps.icons.icons.rankInactivity_111x58") no-repeat
+    center/cover;
   content: "";
   position: absolute;
   top: 50%;

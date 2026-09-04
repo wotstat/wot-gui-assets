@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -24,21 +25,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -124,10 +131,11 @@ html {
   --color-status-done-rgb: 100, 186, 33;
   --color-team-killer: #09e2ff;
   --color-team-killer-rgb: 9, 226, 255;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -150,21 +158,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -206,7 +220,13 @@ html {
   white-space: normal;
   overflow-wrap: normal;
 }
-html[lang=ja] .FormatText_db904f12 span, html[lang=ko] .FormatText_db904f12 span, html[lang=zh_tw] .FormatText_db904f12 span, html[lang=zh_sg] .FormatText_db904f12 span, html[lang=zh_cn] .FormatText_db904f12 span, html[lang=vi] .FormatText_db904f12 span, html[lang=th] .FormatText_db904f12 span {
+html[lang="ja"] .FormatText_db904f12 span,
+html[lang="ko"] .FormatText_db904f12 span,
+html[lang="zh_tw"] .FormatText_db904f12 span,
+html[lang="zh_sg"] .FormatText_db904f12 span,
+html[lang="zh_cn"] .FormatText_db904f12 span,
+html[lang="vi"] .FormatText_db904f12 span,
+html[lang="th"] .FormatText_db904f12 span {
   overflow-wrap: anywhere;
 }
 
@@ -285,10 +305,11 @@ html[lang=ja] .FormatText_db904f12 span, html[lang=ko] .FormatText_db904f12 span
 }
 .FormatText_colorLegacy__prom {
   color: #a29b70;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -311,21 +332,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -413,10 +440,11 @@ html {
 }
 .media-upscale .CloseButton_base__x32x32_6466ea31:hover {
   background-image: url(R.images.gui.maps.icons.ui_kit.close_button.icon_x32x32_hover);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -439,21 +467,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -479,7 +513,8 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Thumb_background_7f3dd6ac, .Thumb_border_5749138b {
+.Thumb_background_7f3dd6ac,
+.Thumb_border_5749138b {
   position: absolute;
   top: 0;
   right: 0;
@@ -487,7 +522,10 @@ html {
   left: 0;
 }
 
-.Thumb_border_5749138b, .Thumb_innerBorder_42bafd18, .Thumb_icon_dca8bf26, .Thumb_background_7f3dd6ac {
+.Thumb_border_5749138b,
+.Thumb_innerBorder_42bafd18,
+.Thumb_icon_dca8bf26,
+.Thumb_background_7f3dd6ac {
   position: absolute;
   pointer-events: none;
 }
@@ -517,7 +555,8 @@ html {
   background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_texture) center/100% auto repeat-y;
 }
 .Thumb_base__horizontal_27ca7ace .Thumb_background_7f3dd6ac {
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_texture) center/auto 100% repeat-x;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_texture) center/auto 100%
+    repeat-x;
 }
 .Thumb_base__active_830942bb .Thumb_background_7f3dd6ac {
   opacity: 1;
@@ -528,7 +567,8 @@ html {
 }
 .Thumb_base__horizontal_27ca7ace .Thumb_icon_dca8bf26 {
   width: 8rem;
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_grip) center left/7rem 6rem no-repeat;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_grip) center left/7rem 6rem
+    no-repeat;
   top: 2rem;
   bottom: 2rem;
   left: 50%;
@@ -536,7 +576,8 @@ html {
 }
 .Thumb_base__vertical_55a67c91 .Thumb_icon_dca8bf26 {
   height: 8rem;
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_grip) top center/5rem 9rem no-repeat;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_grip) top center/5rem 9rem
+    no-repeat;
   top: 50%;
   right: 2rem;
   left: 2rem;
@@ -561,10 +602,11 @@ html {
   border-image-slice: 4;
   border-image-width: 4rem;
   border-image-repeat: round;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -587,21 +629,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -671,11 +719,13 @@ html {
   background-position: bottom;
   right: 0;
 }
-.HorizontalBar_4df27ac3:hover .HorizontalBar_rail_37858d8f, .HorizontalBar_4df27ac3:active .HorizontalBar_rail_37858d8f {
+.HorizontalBar_4df27ac3:hover .HorizontalBar_rail_37858d8f,
+.HorizontalBar_4df27ac3:active .HorizontalBar_rail_37858d8f {
   opacity: 1;
 }
 
-.forwardDisabled .HorizontalBar_button__right_e8f0aa2d, .backwardDisabled .HorizontalBar_button__left_da330e13 {
+.forwardDisabled .HorizontalBar_button__right_e8f0aa2d,
+.backwardDisabled .HorizontalBar_button__left_da330e13 {
   opacity: 0.2;
   cursor: default;
   pointer-events: none;
@@ -684,7 +734,8 @@ html {
 .HorizontalBar_button_cbabd91 {
   width: 8rem;
   height: 11rem;
-  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_arrow) top right/contain no-repeat;
+  background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_arrow) top right/contain
+    no-repeat;
   opacity: 0.2;
   transition: opacity 0.2s ease-in;
   cursor: pointer;
@@ -693,12 +744,14 @@ html {
 .HorizontalBar_button__left_da330e13 {
   transform: rotate(180deg);
 }
-.HorizontalBar_4df27ac3:hover .HorizontalBar_button_cbabd91, .HorizontalBar_4df27ac3:active .HorizontalBar_button_cbabd91 {
+.HorizontalBar_4df27ac3:hover .HorizontalBar_button_cbabd91,
+.HorizontalBar_4df27ac3:active .HorizontalBar_button_cbabd91 {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -721,21 +774,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -784,10 +843,11 @@ html {
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
   width: 100%;
   margin-bottom: 7rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -810,21 +870,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -896,11 +962,13 @@ html {
   background-position: bottom;
   bottom: 0;
 }
-.VerticalBar_7187fa00:hover .VerticalBar_rail_3d663c9, .VerticalBar_7187fa00:active .VerticalBar_rail_3d663c9 {
+.VerticalBar_7187fa00:hover .VerticalBar_rail_3d663c9,
+.VerticalBar_7187fa00:active .VerticalBar_rail_3d663c9 {
   opacity: 1;
 }
 
-.forwardDisabled .VerticalBar_button__bottom_6880f123, .backwardDisabled .VerticalBar_button__top_b8383775 {
+.forwardDisabled .VerticalBar_button__bottom_6880f123,
+.backwardDisabled .VerticalBar_button__top_b8383775 {
   opacity: 0.2;
   cursor: default;
   pointer-events: none;
@@ -921,12 +989,14 @@ html {
 .VerticalBar_button__bottom_6880f123 {
   transform: translateX(-1rem) rotate(180deg);
 }
-.VerticalBar_7187fa00:hover .VerticalBar_button_7b0e4aca, .VerticalBar_7187fa00:active .VerticalBar_button_7b0e4aca {
+.VerticalBar_7187fa00:hover .VerticalBar_button_7b0e4aca,
+.VerticalBar_7187fa00:active .VerticalBar_button_7b0e4aca {
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -949,21 +1019,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1015,10 +1091,11 @@ html {
 
 .VerticalScroll_area_a3c0086a {
   flex: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1041,21 +1118,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1090,10 +1173,11 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1116,21 +1200,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1156,7 +1246,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.HorizontalTabs_background_5e3af03e, .HorizontalTabs_outerBorderImage_8085e49e, .HorizontalTabs_mainBorderImage_558d1c3f {
+.HorizontalTabs_background_5e3af03e,
+.HorizontalTabs_outerBorderImage_8085e49e,
+.HorizontalTabs_mainBorderImage_558d1c3f {
   position: absolute;
   top: 0;
   right: 0;
@@ -1233,10 +1325,11 @@ html {
   width: 100%;
   height: 100%;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1259,21 +1352,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1299,7 +1398,10 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Tab_border_a63aeb3f, .Tab_background_4c9b3eb9, .Tab_backgroundPattern_417be4b5, .Tab_innerBorderImage_adadda5f {
+.Tab_border_a63aeb3f,
+.Tab_background_4c9b3eb9,
+.Tab_backgroundPattern_417be4b5,
+.Tab_innerBorderImage_adadda5f {
   position: absolute;
   top: 0;
   right: 0;
@@ -1312,7 +1414,9 @@ html {
   justify-content: center;
   align-items: center;
   position: relative;
-  transition: background-color 0.24s ease-out, color 0.24s ease-out;
+  transition:
+    background-color 0.24s ease-out,
+    color 0.24s ease-out;
   cursor: pointer;
 }
 .Tab_base__theme-primary_90fd5ee {
@@ -1363,7 +1467,8 @@ html {
   opacity: 0.15;
 }
 .Tab_base__theme-primary_90fd5ee .Tab_backgroundPattern_417be4b5 {
-  background: url(R.images.gui.maps.icons.ui_kit.patterns.default_background_pattern) repeat center/100% auto;
+  background: url(R.images.gui.maps.icons.ui_kit.patterns.default_background_pattern) repeat
+    center/100% auto;
 }
 
 .Tab_base__theme-primary_90fd5ee .Tab_innerBorderImage_adadda5f {
@@ -1373,10 +1478,11 @@ html {
   border-image-repeat: repeat;
   opacity: 0.3;
   mix-blend-mode: color-dodge;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1399,21 +1505,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1466,10 +1578,11 @@ html {
 }
 .Currency_base__tankXP_1707c68b {
   color: var(--color-currency-combat-experience);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1492,21 +1605,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1554,7 +1673,8 @@ html {
 .WithDiscount_icon__extraSmall_97673105 {
   transform: translate(-46%, -52%);
 }
-.WithDiscount_icon__small_60ee455a, .WithDiscount_icon__medium_2877fd99 {
+.WithDiscount_icon__small_60ee455a,
+.WithDiscount_icon__medium_2877fd99 {
   transform: translate(-43%, -50%);
 }
 .WithDiscount_icon__large_6c06eeb7 {
@@ -1565,10 +1685,11 @@ html {
 }
 .WithDiscount_icon__xxl_4080bb18 {
   transform: translate(-42%, -50%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1591,21 +1712,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1700,7 +1827,9 @@ html {
   flex-direction: column;
   flex: 1 1 auto;
   border-radius: 3rem;
-  box-shadow: 0 8px 16px -4px rgba(18, 17, 15, 0.2), 0 8px 24px -4px rgba(18, 17, 15, 0.8);
+  box-shadow:
+    0 8px 16px -4px rgba(18, 17, 15, 0.2),
+    0 8px 24px -4px rgba(18, 17, 15, 0.8);
   background: url(R.images.gui.maps.icons.ui.popover.background) repeat center/contain;
   position: relative;
 }
@@ -1725,10 +1854,11 @@ html {
 }
 .Popover_close_ad4a9c7b:active {
   opacity: 0.5;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1751,21 +1881,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1792,7 +1928,9 @@ html {
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .PopoverTip_163a336f {
-  background: #d3d3d3 0 0%/100rem 100rem repeat, linear-gradient(0deg, #d3d3d3 37.5%, #aea9a5 100%);
+  background:
+    #d3d3d3 0 0%/100rem 100rem repeat,
+    linear-gradient(0deg, #d3d3d3 37.5%, #aea9a5 100%);
   position: absolute;
   pointer-events: none;
 }
@@ -1837,10 +1975,11 @@ html {
   position: absolute;
   top: 15rem;
   left: 50%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1863,21 +2002,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -1910,10 +2055,11 @@ html {
   font-weight: 400;
   line-height: 1.3em;
   color: var(--color-general-primary);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -1936,21 +2082,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2017,10 +2169,11 @@ html {
 .VehicleType_icon_b15d2628 {
   width: 100%;
   height: 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2043,21 +2196,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2087,10 +2246,11 @@ html {
   border: none;
   background: none;
   cursor: pointer;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2113,21 +2273,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2184,10 +2350,11 @@ html {
 
 .Table_contentResponsiveCellWrapper_ddee221c {
   display: flex;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2210,21 +2377,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2255,10 +2428,11 @@ html {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2281,21 +2455,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2380,10 +2560,11 @@ html {
 
 .PlayerInfo_stripeBadge_605bfd0a {
   z-index: -1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2406,21 +2587,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2457,10 +2644,11 @@ html {
 .VehicleImage_base__x380x304_274f87fe {
   width: 380rem;
   height: 304rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2483,21 +2671,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2523,7 +2717,11 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Button_background_98ebcfb8, .Button_background_98ebcfb8::after, .Button_border_7e6390d7, .Button_overlay_174632c8, .Button_overlay_174632c8::before {
+.Button_background_98ebcfb8,
+.Button_background_98ebcfb8::after,
+.Button_border_7e6390d7,
+.Button_overlay_174632c8,
+.Button_overlay_174632c8::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -2534,7 +2732,11 @@ html {
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Button_background_98ebcfb8, .Button_background_98ebcfb8::after, .Button_border_7e6390d7, .Button_overlay_174632c8, .Button_overlay_174632c8::before {
+.Button_background_98ebcfb8,
+.Button_background_98ebcfb8::after,
+.Button_border_7e6390d7,
+.Button_overlay_174632c8,
+.Button_overlay_174632c8::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -2591,7 +2793,8 @@ html {
 .Button_base__theme-primary_8ba55469 .Button_background_98ebcfb8 {
   background-image: radial-gradient(51% 50% at 50% 50%, #d9d2c5 0%, #afb1a4 100%);
 }
-.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover .Button_background_98ebcfb8 {
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_background_98ebcfb8 {
   background-color: rgba(237, 230, 217, 0.32);
 }
 .Button_background_98ebcfb8::after {
@@ -2605,7 +2808,8 @@ html {
   background-image: url(R.images.gui.maps.icons.ui_kit.common.primary_background);
   opacity: 0.48;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover .Button_background_98ebcfb8::after {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_background_98ebcfb8::after {
   opacity: 0.7;
 }
 .Button_base__theme-secondary_3fa4afc .Button_background_98ebcfb8::after {
@@ -2617,16 +2821,19 @@ html {
   transition: opacity 0.1s ease-out;
 }
 .Button_base__theme-primary_8ba55469 .Button_border_7e6390d7 {
-  border-image: url(R.images.gui.maps.icons.ui_kit.button.primary_button_border_pattern) 2/2rem repeat;
+  border-image: url(R.images.gui.maps.icons.ui_kit.button.primary_button_border_pattern) 2/2rem
+    repeat;
   box-shadow: 0 0 0 1rem rgba(13, 14, 16, 0.4);
 }
 .Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40 .Button_border_7e6390d7 {
   opacity: 0.8;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover .Button_border_7e6390d7 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_border_7e6390d7 {
   opacity: 1;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active .Button_border_7e6390d7 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_border_7e6390d7 {
   opacity: 0.9;
 }
 .Button_base__theme-primary_8ba55469.Button_base__disabled_b713e04a .Button_border_7e6390d7 {
@@ -2636,12 +2843,15 @@ html {
   border-width: 1rem;
   border-style: solid;
   border-image: url(R.images.gui.maps.icons.ui_kit.common.secondary_border_pattern) 4/4rem round;
-  box-shadow: 0 0 0 1rem rgba(13, 14, 16, 0.4), inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
+  box-shadow:
+    0 0 0 1rem rgba(13, 14, 16, 0.4),
+    inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
 }
 .Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40 .Button_border_7e6390d7 {
   opacity: 0.9;
 }
-.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover .Button_border_7e6390d7 {
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_border_7e6390d7 {
   opacity: 1;
 }
 .Button_base__theme-secondary_3fa4afc.Button_base__disabled_b713e04a .Button_border_7e6390d7 {
@@ -2652,18 +2862,25 @@ html {
   border-radius: 2rem;
   opacity: 0;
   mix-blend-mode: overlay;
-  transition: opacity 0.1s ease-out, background-color 0.1s ease-out;
+  transition:
+    opacity 0.1s ease-out,
+    background-color 0.1s ease-out;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover .Button_overlay_174632c8 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:hover
+  .Button_overlay_174632c8 {
   background-color: #fff;
   opacity: 0.4;
 }
-.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active .Button_overlay_174632c8, .Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active .Button_overlay_174632c8 {
+.Button_base__theme-primary_8ba55469.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_overlay_174632c8,
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_overlay_174632c8 {
   background-color: #000;
   opacity: 0.24;
 }
 .Button_base__disabled_b713e04a .Button_overlay_174632c8 {
-  background: url(R.images.gui.maps.icons.ui_kit.patterns.disable_overlay_pattern) repeat center/10rem 10rem;
+  background: url(R.images.gui.maps.icons.ui_kit.patterns.disable_overlay_pattern) repeat
+    center/10rem 10rem;
   opacity: 0.12;
 }
 .Button_overlay_174632c8::before {
@@ -2683,25 +2900,49 @@ html {
 .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778 {
   padding-bottom: 2rem;
 }
-html[lang=ja] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-extraSmall_d0cdb5ed .Button_content__fontAligned_66115778 {
   padding-bottom: 4rem;
 }
 .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778 {
   padding-bottom: 1rem;
 }
-html[lang=ja] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-small_fc7095a4 .Button_content__fontAligned_66115778 {
   padding-bottom: 4rem;
 }
 .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778 {
   padding-bottom: 2rem;
 }
-html[lang=ja] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-medium_814d61f0 .Button_content__fontAligned_66115778 {
   padding-bottom: 5rem;
 }
 .Button_base__size-large_83da852e .Button_content__fontAligned_66115778 {
   padding-bottom: 2rem;
 }
-html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=ko] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=zh_tw] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=zh_sg] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=zh_cn] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=vi] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778, html[lang=th] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778 {
+html[lang="ja"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="ko"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="zh_tw"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="zh_sg"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="zh_cn"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="vi"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778,
+html[lang="th"] .Button_base__size-large_83da852e .Button_content__fontAligned_66115778 {
   padding-bottom: 4rem;
 }
 .Button_base__theme-primary_8ba55469 .Button_content_298de63f {
@@ -2710,7 +2951,8 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 .Button_base__theme-secondary_3fa4afc .Button_content_298de63f {
   font-weight: 500;
 }
-.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active .Button_content_298de63f {
+.Button_base__theme-secondary_3fa4afc.Button_base__enabled_96634d40.Button_70871946:active
+  .Button_content_298de63f {
   opacity: 0.9;
 }
 .Button_base__theme-primary_8ba55469.Button_base__disabled_b713e04a .Button_content_298de63f {
@@ -2730,10 +2972,11 @@ html[lang=ja] .Button_base__size-large_83da852e .Button_content__fontAligned_661
 }
 .Button_base__size-large_83da852e .Button_content_298de63f {
   font-size: 28rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2756,21 +2999,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -2796,7 +3045,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Checkbox_background_ae1fc797, .Checkbox_border_e1946121, .Checkbox_overlay_de55e0a5 {
+.Checkbox_background_ae1fc797,
+.Checkbox_border_e1946121,
+.Checkbox_overlay_de55e0a5 {
   position: absolute;
   top: 0;
   right: 0;
@@ -2806,7 +3057,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Checkbox_background_ae1fc797, .Checkbox_border_e1946121, .Checkbox_overlay_de55e0a5 {
+.Checkbox_background_ae1fc797,
+.Checkbox_border_e1946121,
+.Checkbox_overlay_de55e0a5 {
   position: absolute;
   top: 0;
   right: 0;
@@ -2845,7 +3098,8 @@ html {
   color: var(--color-general-secondary);
   opacity: 1;
 }
-.Checkbox_base__enabled_5bfdfae9:hover .Checkbox_label_58a00a56, .Checkbox_base__checked_70ef629e .Checkbox_label_58a00a56 {
+.Checkbox_base__enabled_5bfdfae9:hover .Checkbox_label_58a00a56,
+.Checkbox_base__checked_70ef629e .Checkbox_label_58a00a56 {
   color: var(--color-general-primary);
 }
 .Checkbox_base__enabled_5bfdfae9:active .Checkbox_label_58a00a56 {
@@ -2905,10 +3159,13 @@ html {
   border-image-slice: 4;
   border-image-width: 4rem;
   border-image-repeat: repeat;
-  box-shadow: inset 0 0 0 1rem rgba(13, 14, 16, 0.24), 0 0 0 1rem rgba(13, 14, 16, 0.24);
+  box-shadow:
+    inset 0 0 0 1rem rgba(13, 14, 16, 0.24),
+    0 0 0 1rem rgba(13, 14, 16, 0.24);
   opacity: 0.9;
 }
-.Checkbox_base__enabled_5bfdfae9:hover .Checkbox_border_e1946121, .Checkbox_base__checked_70ef629e .Checkbox_border_e1946121 {
+.Checkbox_base__enabled_5bfdfae9:hover .Checkbox_border_e1946121,
+.Checkbox_base__checked_70ef629e .Checkbox_border_e1946121 {
   opacity: 1;
 }
 .Checkbox_base__enabled_5bfdfae9:active .Checkbox_border_e1946121 {
@@ -2932,10 +3189,11 @@ html {
 .Checkbox_base__enabled_5bfdfae9:active .Checkbox_overlay_de55e0a5 {
   background-color: rgba(0, 0, 0, 0.24);
   mix-blend-mode: overlay;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -2958,21 +3216,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3062,10 +3326,11 @@ html {
 }
 .VehiclePrestigeLevel_base__enamel_4426b46c .VehiclePrestigeLevel_level_10f410ba {
   color: #fbbb57;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3088,21 +3353,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3156,10 +3427,11 @@ html {
 .VehicleRole_icon_7f7f6256 {
   width: 100%;
   height: 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3182,21 +3454,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3237,12 +3515,16 @@ html {
 }
 .VehicleInfo_name__premium_258b3b93 {
   color: #ffe4c0;
-  text-shadow: 0 0 24rem rgba(255, 61, 0, 0.35), 0 0 20rem rgba(255, 177, 86, 0.35), 0 0 7rem rgba(255, 228, 159, 0.2);
+  text-shadow:
+    0 0 24rem rgba(255, 61, 0, 0.35),
+    0 0 20rem rgba(255, 177, 86, 0.35),
+    0 0 7rem rgba(255, 228, 159, 0.2);
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3265,21 +3547,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3309,10 +3597,11 @@ html {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3335,21 +3624,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3388,10 +3683,11 @@ html {
 }
 body .Arrow_arrow__opened_134476cd {
   transform: rotate(0);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3414,21 +3710,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3460,10 +3762,11 @@ html {
 .Details_content__opened_cc21f43f {
   display: flex;
   flex-direction: column;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3486,21 +3789,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3549,10 +3858,11 @@ html {
   display: flex;
   align-items: center;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3575,21 +3885,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3620,10 +3936,11 @@ html {
   flex-direction: column;
   color: #fcf7e5;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3646,21 +3963,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3691,10 +4014,11 @@ html {
 }
 .ScrollVelocityGuardContent_base__disableInteractivity_e6c30513 {
   pointer-events: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3717,21 +4041,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3760,7 +4090,8 @@ html {
 .IconCounter_33c660e9 {
   width: 16rem;
   height: 16rem;
-  background: url(R.images.gui.maps.icons.ui_kit.rental_counter.rent_x16x16) no-repeat center/contain;
+  background: url(R.images.gui.maps.icons.ui_kit.rental_counter.rent_x16x16) no-repeat
+    center/contain;
 }
 .mediaMedium .IconCounter_33c660e9 {
   width: 24rem;
@@ -3769,10 +4100,11 @@ html {
 }
 .media-upscale .IconCounter_33c660e9 {
   background-image: url(R.images.gui.maps.icons.ui_kit.rental_counter.rent_x48x48);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3795,21 +4127,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3845,7 +4183,11 @@ html {
   font-size: 16rem;
   font-weight: 500;
   line-height: 1.2;
-  text-shadow: 0 1rem 0 rgba(0, 0, 0, 0.3), 0 0 12rem rgba(255, 61, 0, 0.32), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 6rem rgba(255, 228, 159, 0.16);
+  text-shadow:
+    0 1rem 0 rgba(0, 0, 0, 0.3),
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 6rem rgba(255, 228, 159, 0.16);
   letter-spacing: 0.01em;
 }
 .mediaMedium .ShortCounter_text_ecf2e742 {
@@ -3854,10 +4196,11 @@ html {
 
 .ShortCounter_count_d7a74fd8 {
   margin-right: -6rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -3880,21 +4223,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -3920,7 +4269,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Input_disabledOverlay_3e980046, .Input_icon_ed3c6a4a::before, .Input_clearButton_d26b0bd5::before {
+.Input_disabledOverlay_3e980046,
+.Input_icon_ed3c6a4a::before,
+.Input_clearButton_d26b0bd5::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -3930,7 +4281,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Input_disabledOverlay_3e980046, .Input_icon_ed3c6a4a::before, .Input_clearButton_d26b0bd5::before {
+.Input_disabledOverlay_3e980046,
+.Input_icon_ed3c6a4a::before,
+.Input_clearButton_d26b0bd5::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -3943,35 +4296,43 @@ html {
   width: 100%;
   border: 1rem solid transparent;
   border-radius: 2rem;
-  box-shadow: 0 0 0 1rem rgba(13, 14, 16, 0.4), inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
+  box-shadow:
+    0 0 0 1rem rgba(13, 14, 16, 0.4),
+    inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
   background: url(R.images.gui.maps.icons.ui_kit.common.secondary_background) center/100% auto;
   position: relative;
   z-index: 0;
-  transition: background-color 0.24s ease-out, border-color 0.24s ease-out;
+  transition:
+    background-color 0.24s ease-out,
+    border-color 0.24s ease-out;
   cursor: text;
 }
 .Input_decoration_b561de7a:hover {
   background-color: rgba(237, 230, 217, 0.12);
 }
-.Input_decoration__focused_494bd5d6, .Input_decoration_b561de7a:hover {
+.Input_decoration__focused_494bd5d6,
+.Input_decoration_b561de7a:hover {
   border-color: rgba(237, 230, 217, 0.12);
 }
 .Input_decoration__alertState_a3c7d971 {
   border-color: rgba(238, 112, 0, 0.75);
 }
-.Input_decoration__alertState_a3c7d971.Input_decoration__focused_494bd5d6, .Input_decoration__alertState_a3c7d971:hover {
+.Input_decoration__alertState_a3c7d971.Input_decoration__focused_494bd5d6,
+.Input_decoration__alertState_a3c7d971:hover {
   border-color: #ee7000;
 }
 .Input_decoration__errorState_a889ba00 {
   border-color: rgba(243, 18, 1, 0.75);
 }
-.Input_decoration__errorState_a889ba00.Input_decoration__focused_494bd5d6, .Input_decoration__errorState_a889ba00:hover {
+.Input_decoration__errorState_a889ba00.Input_decoration__focused_494bd5d6,
+.Input_decoration__errorState_a889ba00:hover {
   border-color: #f31201;
 }
 .Input_decoration__doneState_273150be {
   border-color: rgba(100, 186, 33, 0.75);
 }
-.Input_decoration__doneState_273150be.Input_decoration__focused_494bd5d6, .Input_decoration__doneState_273150be:hover {
+.Input_decoration__doneState_273150be.Input_decoration__focused_494bd5d6,
+.Input_decoration__doneState_273150be:hover {
   border-color: #64ba21;
 }
 .Input_decoration__disabled_74e25c08 {
@@ -3995,7 +4356,8 @@ html {
 
 .Input_disabledOverlay_3e980046 {
   border-radius: 2rem;
-  background: url(R.images.gui.maps.icons.ui_kit.patterns.disable_overlay_pattern) repeat center/10rem 10rem;
+  background: url(R.images.gui.maps.icons.ui_kit.patterns.disable_overlay_pattern) repeat
+    center/10rem 10rem;
   opacity: 0;
   z-index: -1;
   transition: opacity 0.24s ease-out;
@@ -4040,7 +4402,13 @@ html {
 .Input_field__mediumSize_7a1efba0 {
   padding: 2rem 3rem 0;
 }
-html[lang=ja] .Input_field__mediumSize_7a1efba0, html[lang=ko] .Input_field__mediumSize_7a1efba0, html[lang=zh_tw] .Input_field__mediumSize_7a1efba0, html[lang=zh_sg] .Input_field__mediumSize_7a1efba0, html[lang=zh_cn] .Input_field__mediumSize_7a1efba0, html[lang=vi] .Input_field__mediumSize_7a1efba0, html[lang=th] .Input_field__mediumSize_7a1efba0 {
+html[lang="ja"] .Input_field__mediumSize_7a1efba0,
+html[lang="ko"] .Input_field__mediumSize_7a1efba0,
+html[lang="zh_tw"] .Input_field__mediumSize_7a1efba0,
+html[lang="zh_sg"] .Input_field__mediumSize_7a1efba0,
+html[lang="zh_cn"] .Input_field__mediumSize_7a1efba0,
+html[lang="vi"] .Input_field__mediumSize_7a1efba0,
+html[lang="th"] .Input_field__mediumSize_7a1efba0 {
   padding-top: 3rem;
 }
 .Input_fieldWrapper_a4454e66:first-child .Input_field__mediumSize_7a1efba0 {
@@ -4052,7 +4420,13 @@ html[lang=ja] .Input_field__mediumSize_7a1efba0, html[lang=ko] .Input_field__med
 .Input_field__largeSize_2b4f0b27 {
   padding: 6rem 5rem 0;
 }
-html[lang=ja] .Input_field__largeSize_2b4f0b27, html[lang=ko] .Input_field__largeSize_2b4f0b27, html[lang=zh_tw] .Input_field__largeSize_2b4f0b27, html[lang=zh_sg] .Input_field__largeSize_2b4f0b27, html[lang=zh_cn] .Input_field__largeSize_2b4f0b27, html[lang=vi] .Input_field__largeSize_2b4f0b27, html[lang=th] .Input_field__largeSize_2b4f0b27 {
+html[lang="ja"] .Input_field__largeSize_2b4f0b27,
+html[lang="ko"] .Input_field__largeSize_2b4f0b27,
+html[lang="zh_tw"] .Input_field__largeSize_2b4f0b27,
+html[lang="zh_sg"] .Input_field__largeSize_2b4f0b27,
+html[lang="zh_cn"] .Input_field__largeSize_2b4f0b27,
+html[lang="vi"] .Input_field__largeSize_2b4f0b27,
+html[lang="th"] .Input_field__largeSize_2b4f0b27 {
   padding-top: 7rem;
 }
 .Input_fieldWrapper_a4454e66:first-child .Input_field__largeSize_2b4f0b27 {
@@ -4088,7 +4462,13 @@ html[lang=ja] .Input_field__largeSize_2b4f0b27, html[lang=ko] .Input_field__larg
   right: 3rem;
   left: 3rem;
 }
-html[lang=ja] .Input_placeholder__mediumSize_2b8cbadc, html[lang=ko] .Input_placeholder__mediumSize_2b8cbadc, html[lang=zh_tw] .Input_placeholder__mediumSize_2b8cbadc, html[lang=zh_sg] .Input_placeholder__mediumSize_2b8cbadc, html[lang=zh_cn] .Input_placeholder__mediumSize_2b8cbadc, html[lang=vi] .Input_placeholder__mediumSize_2b8cbadc, html[lang=th] .Input_placeholder__mediumSize_2b8cbadc {
+html[lang="ja"] .Input_placeholder__mediumSize_2b8cbadc,
+html[lang="ko"] .Input_placeholder__mediumSize_2b8cbadc,
+html[lang="zh_tw"] .Input_placeholder__mediumSize_2b8cbadc,
+html[lang="zh_sg"] .Input_placeholder__mediumSize_2b8cbadc,
+html[lang="zh_cn"] .Input_placeholder__mediumSize_2b8cbadc,
+html[lang="vi"] .Input_placeholder__mediumSize_2b8cbadc,
+html[lang="th"] .Input_placeholder__mediumSize_2b8cbadc {
   padding-top: 3rem;
 }
 .Input_fieldWrapper_a4454e66:first-child .Input_placeholder__mediumSize_2b8cbadc {
@@ -4102,7 +4482,13 @@ html[lang=ja] .Input_placeholder__mediumSize_2b8cbadc, html[lang=ko] .Input_plac
   right: 5rem;
   left: 5rem;
 }
-html[lang=ja] .Input_placeholder__largeSize_6dbe7ba2, html[lang=ko] .Input_placeholder__largeSize_6dbe7ba2, html[lang=zh_tw] .Input_placeholder__largeSize_6dbe7ba2, html[lang=zh_sg] .Input_placeholder__largeSize_6dbe7ba2, html[lang=zh_cn] .Input_placeholder__largeSize_6dbe7ba2, html[lang=vi] .Input_placeholder__largeSize_6dbe7ba2, html[lang=th] .Input_placeholder__largeSize_6dbe7ba2 {
+html[lang="ja"] .Input_placeholder__largeSize_6dbe7ba2,
+html[lang="ko"] .Input_placeholder__largeSize_6dbe7ba2,
+html[lang="zh_tw"] .Input_placeholder__largeSize_6dbe7ba2,
+html[lang="zh_sg"] .Input_placeholder__largeSize_6dbe7ba2,
+html[lang="zh_cn"] .Input_placeholder__largeSize_6dbe7ba2,
+html[lang="vi"] .Input_placeholder__largeSize_6dbe7ba2,
+html[lang="th"] .Input_placeholder__largeSize_6dbe7ba2 {
   padding-top: 7rem;
 }
 .Input_fieldWrapper_a4454e66:first-child .Input_placeholder__largeSize_6dbe7ba2 {
@@ -4123,7 +4509,8 @@ html[lang=ja] .Input_placeholder__largeSize_6dbe7ba2, html[lang=ko] .Input_place
 .Input_message__visible_a76c109c {
   opacity: 1;
 }
-.Input_message__alertType_34d13f9f::before, .Input_message__errorType_c0d7caba::before {
+.Input_message__alertType_34d13f9f::before,
+.Input_message__errorType_c0d7caba::before {
   background: no-repeat center/contain;
 }
 .Input_message__alertType_34d13f9f::before {
@@ -4188,7 +4575,8 @@ html[lang=ja] .Input_placeholder__largeSize_6dbe7ba2, html[lang=ko] .Input_place
 .Input_decoration_b561de7a:hover .Input_icon_ed3c6a4a {
   opacity: 0.5;
 }
-.Input_icon__focused_a76c109c, .Input_decoration_b561de7a:hover .Input_icon__focused_a76c109c {
+.Input_icon__focused_a76c109c,
+.Input_decoration_b561de7a:hover .Input_icon__focused_a76c109c {
   opacity: 1;
 }
 .Input_icon__mediumSize_f7d15078 {
@@ -4239,10 +4627,12 @@ html[lang=ja] .Input_placeholder__largeSize_6dbe7ba2, html[lang=ko] .Input_place
 .Input_decoration_b561de7a:hover .Input_clearButton__visible_8d3756eb {
   opacity: 0.5;
 }
-.Input_clearButton__visible_8d3756eb:hover, .Input_decoration_b561de7a .Input_clearButton__visible_8d3756eb:hover {
+.Input_clearButton__visible_8d3756eb:hover,
+.Input_decoration_b561de7a .Input_clearButton__visible_8d3756eb:hover {
   opacity: 1;
 }
-.Input_clearButton__visible_8d3756eb:active, .Input_decoration_b561de7a .Input_clearButton__visible_8d3756eb:active {
+.Input_clearButton__visible_8d3756eb:active,
+.Input_decoration_b561de7a .Input_clearButton__visible_8d3756eb:active {
   opacity: 0.8;
 }
 .Input_clearButton_d26b0bd5::before {
@@ -4258,10 +4648,11 @@ html[lang=ja] .Input_placeholder__largeSize_6dbe7ba2, html[lang=ko] .Input_place
 }
 .Input_clearButton__upscale_494bd5d6::before {
   background-image: url(R.images.gui.maps.icons.ui_kit.close_button.icon_medium);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4284,21 +4675,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4376,7 +4773,9 @@ html {
   right: 2rem;
   bottom: 2rem;
   left: 2rem;
-  transition: background-color 0.24s ease-out, opacity 0.24s ease-out;
+  transition:
+    background-color 0.24s ease-out,
+    opacity 0.24s ease-out;
 }
 .Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_background_78cd67c0 {
   background-color: rgba(var(--color-general-secondary-rgb), 0.3);
@@ -4385,29 +4784,36 @@ html {
   background-position: center;
   background-size: cover;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__fullSizeContent_1b52d9ec .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__fullSizeContent_1b52d9ec
+  .Toggle_background_78cd67c0 {
   background-image: none;
 }
 .Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:active .Toggle_background_78cd67c0 {
   background-color: rgba(0, 0, 0, 0.23);
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080:active .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080:active
+  .Toggle_background_78cd67c0 {
   background-image: none;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec
+  .Toggle_background_78cd67c0 {
   background-color: transparent;
   z-index: 1;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec.Toggle_base__activated_d584e080:hover .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec.Toggle_base__activated_d584e080:hover
+  .Toggle_background_78cd67c0 {
   background-color: rgba(255, 255, 255, 0.32);
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b
+  .Toggle_background_78cd67c0 {
   opacity: 0.6;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b
+  .Toggle_background_78cd67c0 {
   background-color: rgba(var(--color-general-tertiary-rgb), 0.4);
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec.Toggle_base__activated_d584e080:active .Toggle_background_78cd67c0 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec.Toggle_base__activated_d584e080:active
+  .Toggle_background_78cd67c0 {
   background-color: rgba(0, 0, 0, 0.23);
 }
 
@@ -4423,12 +4829,15 @@ html {
   border-width: 1rem;
   border-style: solid;
   border-image: url(R.images.gui.maps.icons.ui_kit.toggle.border) 6/6rem repeat;
-  box-shadow: inset 0 0 0 1rem rgba(13, 14, 16, 0.32), 0 0 0 1rem rgba(13, 14, 16, 0.32);
+  box-shadow:
+    inset 0 0 0 1rem rgba(13, 14, 16, 0.32),
+    0 0 0 1rem rgba(13, 14, 16, 0.32);
   background-color: rgba(13, 14, 16, 0.32);
   opacity: 0.8;
   transition: opacity 0.24s ease-out;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover .Toggle_border_3d0d0d39, .Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_border_3d0d0d39 {
+.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover .Toggle_border_3d0d0d39,
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_border_3d0d0d39 {
   opacity: 1;
 }
 .Toggle_base__theme-primary_3e3de333.Toggle_base__disabled_b564a69b .Toggle_border_3d0d0d39 {
@@ -4437,7 +4846,15 @@ html {
 
 .Toggle_base__theme-primary_3e3de333 .Toggle_bulb_fe6d0fba {
   height: 1rem;
-  background: repeating-linear-gradient(to right, #0d0e10, #0d0e10 1rem, #fff 2rem, #fff 10rem, #0d0e10 11rem, #0d0e10 12rem);
+  background: repeating-linear-gradient(
+    to right,
+    #0d0e10,
+    #0d0e10 1rem,
+    #fff 2rem,
+    #fff 10rem,
+    #0d0e10 11rem,
+    #0d0e10 12rem
+  );
   background-repeat: no-repeat;
   background-position: center;
   background-size: 12rem;
@@ -4448,14 +4865,17 @@ html {
   left: 0;
   transition: filter 0.24s ease-out;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover .Toggle_bulb_fe6d0fba, .Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_bulb_fe6d0fba {
+.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover .Toggle_bulb_fe6d0fba,
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_bulb_fe6d0fba {
   filter: brightness(1);
   z-index: 1;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b .Toggle_bulb_fe6d0fba {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b
+  .Toggle_bulb_fe6d0fba {
   filter: brightness(0.6);
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover:active .Toggle_bulb_fe6d0fba, .Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080:active .Toggle_bulb_fe6d0fba {
+.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover:active .Toggle_bulb_fe6d0fba,
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080:active .Toggle_bulb_fe6d0fba {
   filter: brightness(0.53);
 }
 
@@ -4476,10 +4896,12 @@ html {
   opacity: 1;
 }
 .Toggle_base__theme-primary_3e3de333.Toggle_base__disabled_b564a69b .Toggle_overlay_e2999686 {
-  background: url(R.images.gui.maps.icons.ui_kit.common.disable_overlay_pattern_2) repeat center/8rem 8rem;
+  background: url(R.images.gui.maps.icons.ui_kit.common.disable_overlay_pattern_2) repeat
+    center/8rem 8rem;
   opacity: 0.24;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b .Toggle_overlay_e2999686 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080.Toggle_base__disabled_b564a69b
+  .Toggle_overlay_e2999686 {
   opacity: 0.12;
 }
 
@@ -4498,7 +4920,8 @@ html {
   opacity: 0.6;
   transition: opacity 0.24s ease-out;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover .Toggle_content_17eff4d2, .Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_content_17eff4d2 {
+.Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:hover .Toggle_content_17eff4d2,
+.Toggle_base__theme-primary_3e3de333.Toggle_base__activated_d584e080 .Toggle_content_17eff4d2 {
   opacity: 1;
 }
 .Toggle_base__theme-primary_3e3de333.Toggle_cdf77db0:active .Toggle_content_17eff4d2 {
@@ -4507,12 +4930,14 @@ html {
 .Toggle_base__theme-primary_3e3de333.Toggle_base__disabled_b564a69b .Toggle_content_17eff4d2 {
   opacity: 0.3;
 }
-.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec .Toggle_content_17eff4d2 {
+.Toggle_base__theme-primary_3e3de333.Toggle_base__fullSizeContent_1b52d9ec
+  .Toggle_content_17eff4d2 {
   padding-bottom: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4535,21 +4960,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4575,7 +5006,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.KeyButton_background_8a852f95, .KeyButton_background_8a852f95::after, .KeyButton_border_b1c50f01 {
+.KeyButton_background_8a852f95,
+.KeyButton_background_8a852f95::after,
+.KeyButton_border_b1c50f01 {
   position: absolute;
   top: 0;
   right: 0;
@@ -4585,7 +5018,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.KeyButton_background_8a852f95, .KeyButton_background_8a852f95::after, .KeyButton_border_b1c50f01 {
+.KeyButton_background_8a852f95,
+.KeyButton_background_8a852f95::after,
+.KeyButton_border_b1c50f01 {
   position: absolute;
   top: 0;
   right: 0;
@@ -4628,7 +5063,9 @@ html {
   border-style: solid;
   border-radius: 2rem;
   border-image: url(R.images.gui.maps.icons.ui_kit.common.secondary_border_pattern) 4/4rem round;
-  box-shadow: 0 0 0 1rem rgba(13, 14, 16, 0.4), inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
+  box-shadow:
+    0 0 0 1rem rgba(13, 14, 16, 0.4),
+    inset 0 0 0 1rem rgba(13, 14, 16, 0.32);
   opacity: 0.9;
   transition: opacity 0.1s ease;
 }
@@ -4647,19 +5084,26 @@ html {
   letter-spacing: 0.03em;
   position: relative;
 }
-html[lang=ja] .KeyButton_content_3ab1d990, html[lang=ko] .KeyButton_content_3ab1d990, html[lang=zh_tw] .KeyButton_content_3ab1d990, html[lang=zh_sg] .KeyButton_content_3ab1d990, html[lang=zh_cn] .KeyButton_content_3ab1d990, html[lang=vi] .KeyButton_content_3ab1d990, html[lang=th] .KeyButton_content_3ab1d990 {
+html[lang="ja"] .KeyButton_content_3ab1d990,
+html[lang="ko"] .KeyButton_content_3ab1d990,
+html[lang="zh_tw"] .KeyButton_content_3ab1d990,
+html[lang="zh_sg"] .KeyButton_content_3ab1d990,
+html[lang="zh_cn"] .KeyButton_content_3ab1d990,
+html[lang="vi"] .KeyButton_content_3ab1d990,
+html[lang="th"] .KeyButton_content_3ab1d990 {
   padding-bottom: 2rem;
 }
 .KeyButton_content_3ab1d990 {
   /* stylelint-disable-next-line selector-no-qualifying-type */
 }
-html[lang=ko] .KeyButton_content_3ab1d990 {
+html[lang="ko"] .KeyButton_content_3ab1d990 {
   padding-top: 2rem;
   padding-bottom: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4682,21 +5126,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4722,7 +5172,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Background_39e8f2ed, .Background_pattern_8cad1521, .Background_noise_e3254bb3 {
+.Background_39e8f2ed,
+.Background_pattern_8cad1521,
+.Background_noise_e3254bb3 {
   position: absolute;
   top: 0;
   right: 0;
@@ -4741,10 +5193,11 @@ html {
 .Background_noise_e3254bb3 {
   background-image: url(R.images.gui.maps.icons.ui.background_noise);
   opacity: 0.07;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -4767,21 +5220,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -4807,7 +5266,13 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Switcher_background_a88161d0, .Switcher_border_a19f907, .Switcher_overlay_de650936, .Switcher_selectedOverlay_959b7a8f, .Switcher_selectedItemBackground_f3f7ed7e, .Switcher_selectedItemBackground_f3f7ed7e::after, .Switcher_selectedItemBorder_7a1a3dd5 {
+.Switcher_background_a88161d0,
+.Switcher_border_a19f907,
+.Switcher_overlay_de650936,
+.Switcher_selectedOverlay_959b7a8f,
+.Switcher_selectedItemBackground_f3f7ed7e,
+.Switcher_selectedItemBackground_f3f7ed7e::after,
+.Switcher_selectedItemBorder_7a1a3dd5 {
   position: absolute;
   top: 0;
   right: 0;
@@ -4817,7 +5282,13 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Switcher_background_a88161d0, .Switcher_border_a19f907, .Switcher_overlay_de650936, .Switcher_selectedOverlay_959b7a8f, .Switcher_selectedItemBackground_f3f7ed7e, .Switcher_selectedItemBackground_f3f7ed7e::after, .Switcher_selectedItemBorder_7a1a3dd5 {
+.Switcher_background_a88161d0,
+.Switcher_border_a19f907,
+.Switcher_overlay_de650936,
+.Switcher_selectedOverlay_959b7a8f,
+.Switcher_selectedItemBackground_f3f7ed7e,
+.Switcher_selectedItemBackground_f3f7ed7e::after,
+.Switcher_selectedItemBorder_7a1a3dd5 {
   position: absolute;
   top: 0;
   right: 0;
@@ -4871,7 +5342,8 @@ html {
   transition: background-color 0.1s ease-out;
 }
 .Switcher_base__disabled_863a5f47 .Switcher_overlay_de650936 {
-  background: url(R.images.gui.maps.icons.ui_kit.common.disable_overlay_pattern) repeat center/10rem 10rem;
+  background: url(R.images.gui.maps.icons.ui_kit.common.disable_overlay_pattern) repeat center/10rem
+    10rem;
   opacity: 0.24;
   z-index: 2;
 }
@@ -4983,10 +5455,11 @@ html {
   width: 100%;
   height: 100%;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5009,21 +5482,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5049,7 +5528,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Slot_selectedOverlay_5b63484a, .Slot_disabledOverlay_4d0ab64b, .Slot_content_dbf98123 {
+.Slot_selectedOverlay_5b63484a,
+.Slot_disabledOverlay_4d0ab64b,
+.Slot_content_dbf98123 {
   position: absolute;
   top: 0;
   right: 0;
@@ -5059,7 +5540,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Slot_selectedOverlay_5b63484a, .Slot_disabledOverlay_4d0ab64b, .Slot_content_dbf98123 {
+.Slot_selectedOverlay_5b63484a,
+.Slot_disabledOverlay_4d0ab64b,
+.Slot_content_dbf98123 {
   position: absolute;
   top: 0;
   right: 0;
@@ -5126,7 +5609,8 @@ html {
 }
 
 .Slot_disabledOverlay_4d0ab64b {
-  background: url(R.images.gui.maps.icons.ui_kit.common.disable_overlay_pattern_2) repeat center/8rem 8rem;
+  background: url(R.images.gui.maps.icons.ui_kit.common.disable_overlay_pattern_2) repeat
+    center/8rem 8rem;
   opacity: 0.24;
 }
 
@@ -5146,10 +5630,11 @@ html {
   width: 16rem;
   height: 16rem;
   background: url(R.images.gui.maps.icons.ui_kit.slot.plus_empty_slot) center/100% 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5172,21 +5657,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5221,7 +5712,11 @@ html {
   position: relative;
   cursor: pointer;
 }
-.Cbutton_base__main_2f199578, .Cbutton_base__primary_9da8a692, .Cbutton_base__primaryGreen_74301f4e, .Cbutton_base__primaryRed_d184ac, .Cbutton_base__secondary_22ff48c2 {
+.Cbutton_base__main_2f199578,
+.Cbutton_base__primary_9da8a692,
+.Cbutton_base__primaryGreen_74301f4e,
+.Cbutton_base__primaryRed_d184ac,
+.Cbutton_base__secondary_22ff48c2 {
   background-size: 100% 100%;
 }
 .Cbutton_base__main_2f199578 {
@@ -5241,14 +5736,17 @@ html {
 }
 .Cbutton_base__ghost_fd3acf91 {
   border-radius: 3rem;
-  box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.3), 0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+  box-shadow:
+    0 0 0 1rem rgba(0, 0, 0, 0.3),
+    0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
   background-color: rgba(0, 0, 0, 0.15);
 }
 .Cbutton_base__extraSmall_f64ebb9e {
   min-height: 17rem;
   padding: 0 16rem;
 }
-.Cbutton_base__small_a71bc2a9, .Cbutton_base__medium_d82a1b14 {
+.Cbutton_base__small_a71bc2a9,
+.Cbutton_base__medium_d82a1b14 {
   padding: 0 20rem;
 }
 .Cbutton_base__small_a71bc2a9 {
@@ -5329,7 +5827,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Cbutton_stateHighlightHover_7e2b860e {
-  background-image: linear-gradient(180deg, rgba(252, 248, 235, 0.25) 0%, rgba(252, 248, 235, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(252, 248, 235, 0.25) 0%,
+    rgba(252, 248, 235, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
   opacity: 0;
 }
 .Cbutton_24fc9a0c:hover .Cbutton_stateHighlightHover_7e2b860e {
@@ -5375,10 +5878,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   letter-spacing: 0.03em;
   transform: translateY(-1rem);
 }
-.Cbutton_content_faaa9067[lang=ja], .Cbutton_content_faaa9067[lang=ko], .Cbutton_content_faaa9067[lang=zh_tw], .Cbutton_content_faaa9067[lang=zh_sg], .Cbutton_content_faaa9067[lang=zh_cn], .Cbutton_content_faaa9067[lang=th] {
+.Cbutton_content_faaa9067[lang="ja"],
+.Cbutton_content_faaa9067[lang="ko"],
+.Cbutton_content_faaa9067[lang="zh_tw"],
+.Cbutton_content_faaa9067[lang="zh_sg"],
+.Cbutton_content_faaa9067[lang="zh_cn"],
+.Cbutton_content_faaa9067[lang="th"] {
   font-weight: 400;
 }
-.Cbutton_base__main_2f199578 .Cbutton_content_faaa9067, .Cbutton_base__primaryRed_d184ac .Cbutton_content_faaa9067 {
+.Cbutton_base__main_2f199578 .Cbutton_content_faaa9067,
+.Cbutton_base__primaryRed_d184ac .Cbutton_content_faaa9067 {
   text-shadow: 0 -1rem 1rem #600;
 }
 .Cbutton_base__secondary_22ff48c2 .Cbutton_content_faaa9067 {
@@ -5401,10 +5910,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Cbutton_base__disabled_96f239bb .Cbutton_content_faaa9067 {
   opacity: 0.6;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5427,21 +5937,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5481,7 +5997,7 @@ html {
   width: 35rem;
   height: 30rem;
   margin-bottom: 10rem;
-  background: url("R.images.gui.maps.icons.library.icon_alert_32x32") no-repeat 50% 50%/contain;
+  background: url("R.images.gui.maps.icons.library.icon_alert_32x32") no-repeat 50% 50% / contain;
 }
 
 .Error_errorCaption_89c19a4f {
@@ -5493,10 +6009,11 @@ html {
 
 .Error_button_2d8a41b6 {
   width: 100rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5519,21 +6036,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5609,10 +6132,11 @@ html {
   100% {
     transform: rotate(20deg);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5635,21 +6159,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5691,10 +6221,11 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5717,21 +6248,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5808,10 +6345,11 @@ html {
 }
 .FormattedValue_detailedSeparator__x80x80_2c1c84ee {
   margin: -4rem 20rem 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5834,21 +6372,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -5964,16 +6508,21 @@ html {
 .Timer_label__accent_ac7d4f7b {
   color: #edcb9e;
   font-weight: 500;
-  text-shadow: 0 0 6rem rgba(255, 228, 159, 0.16), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 12rem rgba(255, 61, 0, 0.32), 0 1rem 0 rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 6rem rgba(255, 228, 159, 0.16),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 1rem 0 rgba(0, 0, 0, 0.3);
 }
 .Timer_label__cooldown_c2349ab9 {
   color: rgba(var(--color-general-primary-rgb), 0.9);
   font-weight: 400;
   opacity: 0.8;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -5996,21 +6545,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6097,10 +6652,11 @@ html {
   background-image: url(R.images.gui.maps.icons.ui.progressbar.filled_pattern_medium);
   background-repeat: repeat-x;
   background-size: 100rem 22rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6123,21 +6679,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6163,7 +6725,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.ProgressBar_background_b40cdfdf, .ProgressBar_background_b40cdfdf::before, .ProgressBar_background_b40cdfdf::after {
+.ProgressBar_background_b40cdfdf,
+.ProgressBar_background_b40cdfdf::before,
+.ProgressBar_background_b40cdfdf::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -6195,7 +6759,8 @@ html {
 .ProgressBar_base__small_61ccd4be .ProgressBar_background_b40cdfdf {
   border-radius: 1rem;
 }
-.ProgressBar_base__medium_478d985a .ProgressBar_background_b40cdfdf, .ProgressBar_base_full_13ab2776 .ProgressBar_background_b40cdfdf {
+.ProgressBar_base__medium_478d985a .ProgressBar_background_b40cdfdf,
+.ProgressBar_base_full_13ab2776 .ProgressBar_background_b40cdfdf {
   border-radius: 2rem;
 }
 .ProgressBar_background_b40cdfdf::before {
@@ -6207,7 +6772,8 @@ html {
   bottom: 1rem;
   left: 1rem;
 }
-.ProgressBar_base__medium_478d985a .ProgressBar_background_b40cdfdf::before, .ProgressBar_base__full_be7f12da .ProgressBar_background_b40cdfdf::before {
+.ProgressBar_base__medium_478d985a .ProgressBar_background_b40cdfdf::before,
+.ProgressBar_base__full_be7f12da .ProgressBar_background_b40cdfdf::before {
   border-radius: 1rem;
 }
 .ProgressBar_background_b40cdfdf::after {
@@ -6220,7 +6786,8 @@ html {
 .ProgressBar_base_small_13ab2776 .ProgressBar_background_b40cdfdf::after {
   border-radius: 1rem;
 }
-.ProgressBar_base__medium_478d985a .ProgressBar_background_b40cdfdf::after, .ProgressBar_base__full_be7f12da .ProgressBar_background_b40cdfdf::after {
+.ProgressBar_base__medium_478d985a .ProgressBar_background_b40cdfdf::after,
+.ProgressBar_base__full_be7f12da .ProgressBar_background_b40cdfdf::after {
   border-radius: 2rem;
 }
 
@@ -6247,10 +6814,11 @@ html {
 .ProgressBar_base__medium_478d985a .ProgressBar_backgroundPattern_7e932276 {
   background-repeat: repeat-x;
   background-size: 100rem 22rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6273,21 +6841,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6325,10 +6899,11 @@ html {
 
 .SceneWrapper_base__moveSpaceDisabled_1b1cd939 {
   cursor: auto;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6351,21 +6926,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6394,10 +6975,11 @@ html {
 .Formattext_bb80854d {
   display: flex;
   flex-wrap: wrap;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6420,21 +7002,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6488,10 +7076,11 @@ html {
 }
 .Controls_button__disabled_ebe779af:active {
   opacity: 0.25;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6514,21 +7103,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6558,10 +7153,11 @@ html {
   width: 100%;
   height: 100%;
   cursor: pointer;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6584,21 +7180,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6665,10 +7267,11 @@ html {
 .LimitationArea_base__medium_87cf0441 .LimitationArea_pattern_33f143bb {
   background-repeat: repeat-x;
   background-size: 100rem 22rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6691,21 +7294,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6778,7 +7387,8 @@ html {
   width: 4rem;
   height: 16rem;
 }
-.Thumb_base__medium_830942bb .Thumb_grip_b0aabe58::before, .Thumb_base__full_830942bb .Thumb_grip_b0aabe58::before {
+.Thumb_base__medium_830942bb .Thumb_grip_b0aabe58::before,
+.Thumb_base__full_830942bb .Thumb_grip_b0aabe58::before {
   width: 1rem;
   height: 100%;
   box-shadow: 0 1rem 0 0 rgba(255, 255, 255, 0.7);
@@ -6788,7 +7398,8 @@ html {
   top: 0;
   left: 0;
 }
-.Thumb_base__medium_830942bb .Thumb_grip_b0aabe58::after, .Thumb_base__full_830942bb .Thumb_grip_b0aabe58::after {
+.Thumb_base__medium_830942bb .Thumb_grip_b0aabe58::after,
+.Thumb_base__full_830942bb .Thumb_grip_b0aabe58::after {
   width: 1rem;
   height: 100%;
   box-shadow: 0 1rem 0 0 rgba(255, 255, 255, 0.7);
@@ -6801,10 +7412,11 @@ html {
 
 .Thumb_94183346 .Thumb_content_efe659d0 {
   padding: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6827,21 +7439,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6925,12 +7543,14 @@ html {
 .Slider_border_4aa39164 .Slider_2f883184:hover {
   opacity: 1;
 }
-.Slider_base__disabled_913c9ec5 .Slider_border_4aa39164, .Slider_base__disabled_913c9ec5:hover .Slider_border_4aa39164 {
+.Slider_base__disabled_913c9ec5 .Slider_border_4aa39164,
+.Slider_base__disabled_913c9ec5:hover .Slider_border_4aa39164 {
   opacity: 0.6;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -6953,21 +7573,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -6993,7 +7619,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Content_8eaaf71a, .Content_ab8563af::after, .Content_disabledOverlay_af87c441 {
+.Content_8eaaf71a,
+.Content_ab8563af::after,
+.Content_disabledOverlay_af87c441 {
   position: absolute;
   top: 0;
   right: 0;
@@ -7003,7 +7631,9 @@ html {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Content_8eaaf71a, .Content_ab8563af::after, .Content_disabledOverlay_af87c441 {
+.Content_8eaaf71a,
+.Content_ab8563af::after,
+.Content_disabledOverlay_af87c441 {
   position: absolute;
   top: 0;
   right: 0;
@@ -7026,7 +7656,13 @@ html {
   overflow: hidden;
 }
 .Content_base__multiple_da09528a .Content_ab8563af {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--corner-height)),
+    calc(100% - var(--corner-width)) 100%,
+    0 100%
+  );
 }
 .Content_ab8563af::after {
   border: 1rem solid transparent;
@@ -7040,7 +7676,8 @@ html {
 .Content_base__hover_da09528a .Content_ab8563af::after {
   opacity: 0.4;
 }
-.Content_base__selectedHover_da09528a .Content_ab8563af::after, .Content_base__selected_da09528a .Content_ab8563af::after {
+.Content_base__selectedHover_da09528a .Content_ab8563af::after,
+.Content_base__selected_da09528a .Content_ab8563af::after {
   opacity: 0.7;
 }
 
@@ -7058,10 +7695,11 @@ html {
 .Content_disabledOverlay_af87c441 {
   background: url(R.images.gui.maps.icons.ui_kit.card.disabled_pattern) 0 0/8rem 8rem repeat;
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7084,21 +7722,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7174,25 +7818,58 @@ html {
   bottom: -6rem;
   left: 0;
 }
-.Status_base__done_35b9a31c .Status_line_8f933ea7, .Status_base__doneSmall_35b9a31c .Status_line_8f933ea7 {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02) 100%), linear-gradient(90deg, rgba(100, 186, 33, 0) 25%, rgba(100, 186, 33, 0.5) 50%, rgba(100, 186, 33, 0) 75%);
+.Status_base__done_35b9a31c .Status_line_8f933ea7,
+.Status_base__doneSmall_35b9a31c .Status_line_8f933ea7 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.02) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(100, 186, 33, 0) 25%,
+      rgba(100, 186, 33, 0.5) 50%,
+      rgba(100, 186, 33, 0) 75%
+    );
 }
-.Status_base__alert_35b9a31c .Status_line_8f933ea7, .Status_base__alertSmall_35b9a31c .Status_line_8f933ea7 {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02) 100%), linear-gradient(90deg, rgba(238, 112, 0, 0) 25%, rgba(238, 112, 0, 0.5) 50%, rgba(238, 112, 0, 0) 75%);
+.Status_base__alert_35b9a31c .Status_line_8f933ea7,
+.Status_base__alertSmall_35b9a31c .Status_line_8f933ea7 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.02) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(238, 112, 0, 0) 25%,
+      rgba(238, 112, 0, 0.5) 50%,
+      rgba(238, 112, 0, 0) 75%
+    );
 }
 
 .Status_shadow_fc30bf98 {
   flex-shrink: 0;
   width: 30rem;
   height: 1rem;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   opacity: 0.8;
   position: absolute;
   bottom: -6rem;
   left: 50%;
   transform: translateX(-12rem);
 }
-.Status_base__doneSmall_35b9a31c .Status_shadow_fc30bf98, .Status_base__alertSmall_35b9a31c .Status_shadow_fc30bf98, .Status_base__lockedSmall_35b9a31c .Status_shadow_fc30bf98 {
+.Status_base__doneSmall_35b9a31c .Status_shadow_fc30bf98,
+.Status_base__alertSmall_35b9a31c .Status_shadow_fc30bf98,
+.Status_base__lockedSmall_35b9a31c .Status_shadow_fc30bf98 {
   width: 16rem;
   transform: translateX(-5rem);
 }
@@ -7205,11 +7882,21 @@ html {
   bottom: -3rem;
   left: 3rem;
 }
-.Status_base__done_35b9a31c .Status_glowInner_f8eb475a, .Status_base__doneSmall_35b9a31c .Status_glowInner_f8eb475a {
-  background: radial-gradient(82% 111% at 50% 145%, rgba(100, 186, 33, 0.05) 0%, rgba(100, 186, 33, 0) 100%), radial-gradient(69% 95% at 50% 145%, rgba(100, 186, 33, 0.2) 0%, rgba(100, 186, 33, 0) 100%), radial-gradient(86% 117% at 50% 198%, rgba(100, 186, 33, 0.6) 0%, rgba(100, 186, 33, 0) 100%), radial-gradient(47% 65% at 50% 156%, #64ba21 0%, rgba(100, 186, 33, 0) 100%);
+.Status_base__done_35b9a31c .Status_glowInner_f8eb475a,
+.Status_base__doneSmall_35b9a31c .Status_glowInner_f8eb475a {
+  background:
+    radial-gradient(82% 111% at 50% 145%, rgba(100, 186, 33, 0.05) 0%, rgba(100, 186, 33, 0) 100%),
+    radial-gradient(69% 95% at 50% 145%, rgba(100, 186, 33, 0.2) 0%, rgba(100, 186, 33, 0) 100%),
+    radial-gradient(86% 117% at 50% 198%, rgba(100, 186, 33, 0.6) 0%, rgba(100, 186, 33, 0) 100%),
+    radial-gradient(47% 65% at 50% 156%, #64ba21 0%, rgba(100, 186, 33, 0) 100%);
 }
-.Status_base__alert_35b9a31c .Status_glowInner_f8eb475a, .Status_base__alertSmall_35b9a31c .Status_glowInner_f8eb475a {
-  background: radial-gradient(82% 111% at 50% 145%, rgba(238, 112, 0, 0.05) 0%, rgba(238, 112, 0, 0) 100%), radial-gradient(69% 95% at 50% 145%, rgba(238, 112, 0, 0.2) 0%, rgba(238, 112, 0, 0) 100%), radial-gradient(86% 117% at 50% 198%, rgba(238, 112, 0, 0.6) 0%, rgba(238, 112, 0, 0) 100%), radial-gradient(47% 65% at 50% 156%, #ee7000 0%, rgba(238, 112, 0, 0) 100%);
+.Status_base__alert_35b9a31c .Status_glowInner_f8eb475a,
+.Status_base__alertSmall_35b9a31c .Status_glowInner_f8eb475a {
+  background:
+    radial-gradient(82% 111% at 50% 145%, rgba(238, 112, 0, 0.05) 0%, rgba(238, 112, 0, 0) 100%),
+    radial-gradient(69% 95% at 50% 145%, rgba(238, 112, 0, 0.2) 0%, rgba(238, 112, 0, 0) 100%),
+    radial-gradient(86% 117% at 50% 198%, rgba(238, 112, 0, 0.6) 0%, rgba(238, 112, 0, 0) 100%),
+    radial-gradient(47% 65% at 50% 156%, #ee7000 0%, rgba(238, 112, 0, 0) 100%);
 }
 
 .Status_blur_5675b854 {
@@ -7219,10 +7906,12 @@ html {
   left: 50%;
   transform: translate(-18rem, 0);
 }
-.Status_base__done_35b9a31c .Status_blur_5675b854, .Status_base__doneSmall_35b9a31c .Status_blur_5675b854 {
+.Status_base__done_35b9a31c .Status_blur_5675b854,
+.Status_base__doneSmall_35b9a31c .Status_blur_5675b854 {
   fill: #64ba21;
 }
-.Status_base__alert_35b9a31c .Status_blur_5675b854, .Status_base__alertSmall_35b9a31c .Status_blur_5675b854 {
+.Status_base__alert_35b9a31c .Status_blur_5675b854,
+.Status_base__alertSmall_35b9a31c .Status_blur_5675b854 {
   fill: #ee7000;
 }
 
@@ -7234,15 +7923,18 @@ html {
   bottom: -3rem;
   left: 3rem;
 }
-.Status_base__done_35b9a31c .Status_glowBig_5954041c, .Status_base__doneSmall_35b9a31c .Status_glowBig_5954041c {
+.Status_base__done_35b9a31c .Status_glowBig_5954041c,
+.Status_base__doneSmall_35b9a31c .Status_glowBig_5954041c {
   background: linear-gradient(180deg, rgba(100, 186, 33, 0) 0, rgba(100, 186, 33, 0.06) 100%);
 }
-.Status_base__alert_35b9a31c .Status_glowBig_5954041c, .Status_base__alertSmall_35b9a31c .Status_glowBig_5954041c {
+.Status_base__alert_35b9a31c .Status_glowBig_5954041c,
+.Status_base__alertSmall_35b9a31c .Status_glowBig_5954041c {
   background: linear-gradient(180deg, rgba(238, 112, 0, 0) 0, rgba(238, 112, 0, 0.06) 100%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7265,21 +7957,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7317,7 +8015,9 @@ html {
 .Card_base__disableMouse_5cd80216 {
   cursor: auto;
 }
-.Card_base__hover_f4c22d1c, .Card_base__selected_f4c22d1c, .Card_base__hoverSelected_43ce242d {
+.Card_base__hover_f4c22d1c,
+.Card_base__selected_f4c22d1c,
+.Card_base__hoverSelected_43ce242d {
   z-index: 1;
 }
 
@@ -7362,12 +8062,14 @@ html {
 .Card_base__hover_f4c22d1c .Card_centerBorder_8a0f28ae {
   border: 1rem solid rgba(255, 255, 255, 0.18);
 }
-.Card_base__selectedHover_f4c22d1c .Card_centerBorder_8a0f28ae, .Card_base__selected_f4c22d1c .Card_centerBorder_8a0f28ae {
+.Card_base__selectedHover_f4c22d1c .Card_centerBorder_8a0f28ae,
+.Card_base__selected_f4c22d1c .Card_centerBorder_8a0f28ae {
   border: 1rem solid rgba(255, 255, 255, 0.45);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7390,21 +8092,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7440,10 +8148,11 @@ html {
   background: url(R.images.gui.maps.icons.ui_kit.card.noise_outer) repeat center/contain;
   opacity: 0.15;
   position: absolute;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7466,21 +8175,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7537,10 +8252,11 @@ html {
   bottom: -1rem;
   left: 0;
   pointer-events: none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7563,21 +8279,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7618,7 +8340,10 @@ html {
   padding: 0 4rem;
   border-radius: 2rem;
   border-image: url(R.images.gui.maps.icons.library.notification.border) 2 fill/2rem round;
-  box-shadow: 0 0 15rem 0 rgba(255, 23, 2, 0.6), 0 0 7rem 0 #ff3a28, 0 1rem 1rem 0 #c13629;
+  box-shadow:
+    0 0 15rem 0 rgba(255, 23, 2, 0.6),
+    0 0 7rem 0 #ff3a28,
+    0 1rem 1rem 0 #c13629;
   background-color: #ffe4c0;
   position: relative;
 }
@@ -7659,10 +8384,11 @@ html {
 .Value_value__medium_62a482c {
   font-size: 16rem;
   line-height: 1.1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7685,21 +8411,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7730,10 +8462,11 @@ html {
 }
 .Bubble_base__hidden_1700314d {
   opacity: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -7756,21 +8489,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -7800,11 +8539,13 @@ html {
   width: 24rem;
   height: 24rem;
 }
-.Reward_base__s48x48_21f091ec, .Reward_base__small_3eddf28d {
+.Reward_base__s48x48_21f091ec,
+.Reward_base__small_3eddf28d {
   width: 48rem;
   height: 48rem;
 }
-.Reward_base__s80x80_21f091ec, .Reward_base__big_e23f2c77 {
+.Reward_base__s80x80_21f091ec,
+.Reward_base__big_e23f2c77 {
   width: 80rem;
   height: 80rem;
 }
@@ -7869,13 +8610,15 @@ html {
   width: 48rem;
   height: 48rem;
 }
-.Reward_base__s48x48_21f091ec .Reward_overlay_8cbe65c9, .Reward_base__small_3eddf28d .Reward_overlay_8cbe65c9 {
+.Reward_base__s48x48_21f091ec .Reward_overlay_8cbe65c9,
+.Reward_base__small_3eddf28d .Reward_overlay_8cbe65c9 {
   width: 96rem;
   height: 96rem;
   background-size: 100%;
   overflow: visible;
 }
-.Reward_base__s80x80_21f091ec .Reward_overlay_8cbe65c9, .Reward_base__big_e23f2c77 .Reward_overlay_8cbe65c9 {
+.Reward_base__s80x80_21f091ec .Reward_overlay_8cbe65c9,
+.Reward_base__big_e23f2c77 .Reward_overlay_8cbe65c9 {
   width: 128rem;
   height: 128rem;
 }
@@ -7912,11 +8655,13 @@ html {
   width: 24rem;
   height: 24rem;
 }
-.Reward_image__s48x48_21f091ec, .Reward_image__small_3eddf28d {
+.Reward_image__s48x48_21f091ec,
+.Reward_image__small_3eddf28d {
   width: 48rem;
   height: 48rem;
 }
-.Reward_image__s80x80_21f091ec, .Reward_image__big_e23f2c77 {
+.Reward_image__s80x80_21f091ec,
+.Reward_image__big_e23f2c77 {
   width: 80rem;
   height: 80rem;
 }
@@ -7969,14 +8714,16 @@ html {
   margin-top: 0;
   white-space: nowrap;
 }
-.Reward_base__s48x48_21f091ec .Reward_info_26d38c48, .Reward_base__small_3eddf28d .Reward_info_26d38c48 {
+.Reward_base__s48x48_21f091ec .Reward_info_26d38c48,
+.Reward_base__small_3eddf28d .Reward_info_26d38c48 {
   margin: -8rem -10rem 0;
 }
 .Reward_info__multi_465d34bd {
   justify-content: flex-end;
   margin-right: 2rem;
 }
-.Reward_base__s48x48_21f091ec .Reward_info__multi_465d34bd, .Reward_base__small_3eddf28d .Reward_info__multi_465d34bd {
+.Reward_base__s48x48_21f091ec .Reward_info__multi_465d34bd,
+.Reward_base__small_3eddf28d .Reward_info__multi_465d34bd {
   margin-right: 0;
 }
 .Reward_info__credits_1643219 {
@@ -8017,23 +8764,26 @@ html {
   position: absolute;
   z-index: 1;
 }
-.Reward_base__s48x48_21f091ec .Reward_timer_22ba7b8b, .Reward_base__small_3eddf28d .Reward_timer_22ba7b8b {
+.Reward_base__s48x48_21f091ec .Reward_timer_22ba7b8b,
+.Reward_base__small_3eddf28d .Reward_timer_22ba7b8b {
   width: 23rem;
   height: 23rem;
   background-image: url(R.images.gui.maps.icons.quests.bonuses.small.timer);
   top: -6rem;
   right: -6rem;
 }
-.Reward_base__s80x80_21f091ec .Reward_timer_22ba7b8b, .Reward_base__big_e23f2c77 .Reward_timer_22ba7b8b {
+.Reward_base__s80x80_21f091ec .Reward_timer_22ba7b8b,
+.Reward_base__big_e23f2c77 .Reward_timer_22ba7b8b {
   width: 48rem;
   height: 48rem;
   background-image: url(R.images.gui.maps.icons.quests.bonuses.big.timer);
   top: -14rem;
   right: -14rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -8056,21 +8806,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -8112,10 +8868,11 @@ html {
 
 .RewardsList_boxRewardClassName_882c908d {
   align-items: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -8138,21 +8895,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -8189,10 +8952,11 @@ html {
   border-image-slice: 24 fill;
   border-image-width: 24rem;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -8215,21 +8979,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -8266,10 +9036,11 @@ html {
   border-image-slice: 24 fill;
   border-image-width: 24rem;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -8292,21 +9063,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -8362,7 +9139,10 @@ html {
 .Counter_bg_8a824820 {
   border: 1rem solid #fe4e0f;
   border-radius: 7rem;
-  box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.3), 0 0 6rem rgba(254, 103, 0, 0.2), 0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+  box-shadow:
+    0 0 0 1rem rgba(0, 0, 0, 0.3),
+    0 0 6rem rgba(254, 103, 0, 0.2),
+    0 0 12rem 4rem rgba(249, 0, 0, 0.3);
   background-image: url("R.images.gui.maps.icons.components.counter.pattern");
   position: absolute;
   top: 0;
@@ -8444,10 +9224,11 @@ html {
   100% {
     transform: scale(0);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -8470,21 +9251,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -8526,10 +9313,11 @@ html {
   font-size: 14rem;
   font-weight: 400;
   line-height: 1.3;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -8552,21 +9340,27 @@ input {
   font-weight: 400;
   letter-spacing: 0.02em;
 }
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -8610,7 +9404,8 @@ html {
   background: no-repeat center/contain;
   position: relative;
 }
-.Textbutton_icon__back_599b35e4, .Textbutton_icon__forward_4ef35d4d {
+.Textbutton_icon__back_599b35e4,
+.Textbutton_icon__forward_4ef35d4d {
   margin: -1rem -5rem;
   background-image: url("R.images.gui.maps.icons.components.text_button.back");
   transform: translateY(1rem);
@@ -8636,7 +9431,8 @@ html {
   top: 0;
   transition: opacity 0.16s;
 }
-.Textbutton_icon__back_599b35e4 .Textbutton_glow_1ddc70ba, .Textbutton_icon__forward_4ef35d4d .Textbutton_glow_1ddc70ba {
+.Textbutton_icon__back_599b35e4 .Textbutton_glow_1ddc70ba,
+.Textbutton_icon__forward_4ef35d4d .Textbutton_glow_1ddc70ba {
   background-image: url("R.images.gui.maps.icons.components.text_button.back_hover");
 }
 .Textbutton_icon__close_b2af8bd5 .Textbutton_glow_1ddc70ba {
@@ -8654,30 +9450,52 @@ html {
 
 .Textbutton_caption_4350685c {
   position: relative;
-  transition: color 0.16s, text-shadow 0.16s;
+  transition:
+    color 0.16s,
+    text-shadow 0.16s;
 }
-.Textbutton_caption__back_599b35e4, .Textbutton_caption__forward_599b35e4, .Textbutton_caption__close_c29bdb5 {
+.Textbutton_caption__back_599b35e4,
+.Textbutton_caption__forward_599b35e4,
+.Textbutton_caption__close_c29bdb5 {
   color: #ffdd99;
-  text-shadow: 0 0 10rem #ff2a00, 0 0 10rem rgba(255, 42, 0, 0.4), 0 0 10rem rgba(255, 42, 0, 0.4), 0 0 2rem rgba(255, 42, 0, 0.4), 0 0 1rem rgba(255, 42, 0, 0.4), 0 0 2rem rgba(255, 42, 0, 0.4), 0 0 1rem rgba(255, 42, 0, 0.4);
+  text-shadow:
+    0 0 10rem #ff2a00,
+    0 0 10rem rgba(255, 42, 0, 0.4),
+    0 0 10rem rgba(255, 42, 0, 0.4),
+    0 0 2rem rgba(255, 42, 0, 0.4),
+    0 0 1rem rgba(255, 42, 0, 0.4),
+    0 0 2rem rgba(255, 42, 0, 0.4),
+    0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.Textbutton_b1283086:hover .Textbutton_caption__back_599b35e4, .Textbutton_b1283086:hover .Textbutton_caption__forward_599b35e4, .Textbutton_b1283086:hover .Textbutton_caption__close_c29bdb5 {
+.Textbutton_b1283086:hover .Textbutton_caption__back_599b35e4,
+.Textbutton_b1283086:hover .Textbutton_caption__forward_599b35e4,
+.Textbutton_b1283086:hover .Textbutton_caption__close_c29bdb5 {
   color: #fffa9f;
 }
-.Textbutton_b1283086:active .Textbutton_caption__back_599b35e4, .Textbutton_b1283086:active .Textbutton_caption__forward_599b35e4, .Textbutton_b1283086:active .Textbutton_caption__close_c29bdb5 {
+.Textbutton_b1283086:active .Textbutton_caption__back_599b35e4,
+.Textbutton_b1283086:active .Textbutton_caption__forward_599b35e4,
+.Textbutton_b1283086:active .Textbutton_caption__close_c29bdb5 {
   color: #ffdd99;
 }
 .Textbutton_caption__info_ccd96b67 {
   padding: 0 5rem;
   color: #ccffff;
-  text-shadow: 0 0 12rem rgba(31, 68, 255, 0.8), 0 0 8rem #00eaff;
+  text-shadow:
+    0 0 12rem rgba(31, 68, 255, 0.8),
+    0 0 8rem #00eaff;
 }
 .Textbutton_b1283086:hover .Textbutton_caption__info_ccd96b67 {
   color: #e3ffff;
-  text-shadow: 0 0 12rem rgba(31, 68, 255, 0.8), 0 0 12rem #00eaff, 0 0 8rem #00eaff;
+  text-shadow:
+    0 0 12rem rgba(31, 68, 255, 0.8),
+    0 0 12rem #00eaff,
+    0 0 8rem #00eaff;
 }
 .Textbutton_b1283086:active .Textbutton_caption__info_ccd96b67 {
   color: #ccffff;
-  text-shadow: 0 0 12rem rgba(31, 68, 255, 0.6), 0 0 8rem #00eaff;
+  text-shadow:
+    0 0 12rem rgba(31, 68, 255, 0.6),
+    0 0 8rem #00eaff;
 }
 
 .Textbutton_goto_d2c81cbd {

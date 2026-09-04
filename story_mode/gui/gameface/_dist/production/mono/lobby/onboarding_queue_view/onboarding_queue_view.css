@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -53,7 +60,7 @@ html[lang=th] input {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("R.images.story_mode.gui.maps.icons.queue.back") no-repeat 50%/cover;
+  background: url("R.images.story_mode.gui.maps.icons.queue.back") no-repeat 50% / cover;
 }
 
 .OnboardingQueueViewApp_waiting_67c1c941 {
@@ -75,7 +82,7 @@ html[lang=th] input {
 .OnboardingQueueViewApp_gear_ef3bec2f {
   width: 132rem;
   height: 138rem;
-  background: url("R.images.story_mode.gui.maps.icons.queue.GearBitmap") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.queue.GearBitmap") no-repeat 50% / contain;
   animation: OnboardingQueueViewApp_rotating_2bf4753 5s linear infinite;
 }
 
@@ -83,7 +90,7 @@ html[lang=th] input {
   width: 132rem;
   height: 138rem;
   margin-top: -130rem;
-  background: url("R.images.story_mode.gui.maps.icons.queue.waitingLogo") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.queue.waitingLogo") no-repeat 50% / contain;
   z-index: 0;
 }
 

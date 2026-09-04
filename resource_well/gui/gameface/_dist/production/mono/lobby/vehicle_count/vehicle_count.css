@@ -78,7 +78,8 @@
 .VehicleCount_text__glow_6d87b5ec::before {
   width: 500rem;
   height: 90rem;
-  background: url("R.images.resource_well.gui.maps.icons.resourcesLoading.glow") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.resourcesLoading.glow") no-repeat
+    center/contain;
   opacity: 0.8;
   content: "";
   position: absolute;
@@ -92,17 +93,23 @@
   color: #ffe4c0;
   font-size: 22rem;
   font-weight: 700;
-  text-shadow: 0 0 12rem rgba(255, 61, 0, 0.32), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 6rem rgba(255, 228, 159, 0.16);
+  text-shadow:
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 6rem rgba(255, 228, 159, 0.16);
   position: relative;
 }
 .VehicleCount_counter__red_5e767458 {
   color: #ffe8cc;
-  text-shadow: 0 0 15rem #ee4d18, 0 0 4rem #ff2a00;
+  text-shadow:
+    0 0 15rem #ee4d18,
+    0 0 4rem #ff2a00;
 }
 .VehicleCount_counter__red_5e767458::before {
   width: 600rem;
   height: 170rem;
-  background: url("R.images.resource_well.gui.maps.icons.resourcesLoading.counter_bg") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.resourcesLoading.counter_bg") no-repeat
+    center/contain;
   opacity: 0.6;
   content: "";
   position: absolute;
@@ -117,7 +124,8 @@
   width: 29rem;
   height: 27rem;
   margin-right: -2rem;
-  background: url("R.images.resource_well.gui.maps.icons.resourcesLoading.icon_alert") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.resourcesLoading.icon_alert") no-repeat
+    center/contain;
 }
 
 .VehicleCount_counterWrapper_be9b1706 {

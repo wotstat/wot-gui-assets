@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -65,7 +72,7 @@ html[lang=th] input {
   width: 220rem;
   height: 220rem;
   margin: 13rem 0 13rem 34rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 
 .BadgeTooltipApp_preview_7b123797 {
@@ -78,7 +85,7 @@ html[lang=th] input {
   width: 24rem;
   height: 24rem;
   margin-left: 4rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
 }
 
 .BadgeTooltipApp_playerName_41cd2979 {
@@ -103,7 +110,7 @@ html[lang=th] input {
 .BadgeTooltipApp_vehicleIcon_bc14bff8 {
   width: 90rem;
   height: 24rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   position: relative;
 }
 
@@ -132,5 +139,6 @@ html[lang=th] input {
   width: 328rem;
   height: 1rem;
   margin: 15rem 0;
-  background: url("R.images.gui.maps.icons.achievements.tooltips.separator_dots_short") no-repeat 50%/contain;
+  background: url("R.images.gui.maps.icons.achievements.tooltips.separator_dots_short") no-repeat
+    50% / contain;
 }

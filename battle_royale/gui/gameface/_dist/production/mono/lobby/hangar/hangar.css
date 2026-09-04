@@ -1,6 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Slot_mainContainer_e894477a, .Slot_mainContainer_e894477a::after, .Slot_disabledOverlay_1c919925 {
+.Slot_mainContainer_e894477a,
+.Slot_mainContainer_e894477a::after,
+.Slot_disabledOverlay_1c919925 {
   position: absolute;
   top: 0;
   right: 0;
@@ -65,10 +67,13 @@
 .Slot_977dd8f1:hover .Slot_selected_18aa5577 {
   border: 1rem solid rgba(255, 255, 255, 0.18);
 }
-.Slot_base__selected_71f19f5c.Slot_977dd8f1:hover .Slot_selected_18aa5577, .Slot_base__selected_71f19f5c .Slot_selected_18aa5577 {
+.Slot_base__selected_71f19f5c.Slot_977dd8f1:hover .Slot_selected_18aa5577,
+.Slot_base__selected_71f19f5c .Slot_selected_18aa5577 {
   border: 1rem solid rgba(255, 141, 60, 0.5);
 }
-.Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c.Slot_977dd8f1:hover .Slot_selected_18aa5577, .Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c .Slot_selected_18aa5577 {
+.Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c.Slot_977dd8f1:hover
+  .Slot_selected_18aa5577,
+.Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c .Slot_selected_18aa5577 {
   border: 1rem solid #32ff7f;
 }
 .Slot_base__empty_d386066c.Slot_977dd8f1:hover .Slot_selected_18aa5577 {
@@ -77,10 +82,13 @@
 .Slot_selected__border_9be57c4 {
   border: 2rem solid rgba(255, 255, 255, 0);
 }
-.Slot_base__selected_71f19f5c.Slot_977dd8f1:hover .Slot_selected__border_9be57c4, .Slot_base__selected_71f19f5c .Slot_selected__border_9be57c4 {
+.Slot_base__selected_71f19f5c.Slot_977dd8f1:hover .Slot_selected__border_9be57c4,
+.Slot_base__selected_71f19f5c .Slot_selected__border_9be57c4 {
   border: 2rem solid rgba(255, 141, 60, 0.5);
 }
-.Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c.Slot_977dd8f1:hover .Slot_selected__border_9be57c4, .Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c .Slot_selected__border_9be57c4 {
+.Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c.Slot_977dd8f1:hover
+  .Slot_selected__border_9be57c4,
+.Slot_base__selected_71f19f5c.Slot_base__stPatrick_71f19f5c .Slot_selected__border_9be57c4 {
   border: 2rem solid #32ff7f;
 }
 
@@ -104,7 +112,8 @@
 .Slot_977dd8f1:hover .Slot_mainContainer_e894477a::after {
   opacity: 0.4;
 }
-.Slot_base__selected_71f19f5c.Slot_977dd8f1:hover .Slot_mainContainer_e894477a::after, .Slot_base__selected_71f19f5c .Slot_mainContainer_e894477a::after {
+.Slot_base__selected_71f19f5c.Slot_977dd8f1:hover .Slot_mainContainer_e894477a::after,
+.Slot_base__selected_71f19f5c .Slot_mainContainer_e894477a::after {
   opacity: 0.7;
 }
 .Slot_base__empty_d386066c.Slot_977dd8f1:hover .Slot_mainContainer_e894477a::after {
@@ -114,7 +123,7 @@
 .Slot_disabledOverlay_1c919925 {
   background: url(R.images.gui.maps.icons.ui_kit.card.disabled_pattern) 0 0/8rem 8rem repeat;
   z-index: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Background_2f756423 {
   position: absolute;
@@ -128,7 +137,8 @@
 .Background_2f756423 {
   width: 100%;
   height: 100%;
-  background: url("R.images.battle_royale.gui.maps.icons.carouselCard.default") no-repeat left bottom/cover;
+  background: url("R.images.battle_royale.gui.maps.icons.carouselCard.default") no-repeat left
+    bottom/cover;
   pointer-events: none;
 }
 .Background_base__selected_55780014 {
@@ -171,7 +181,8 @@
   width: 208rem;
   height: 156rem;
 }
-.vehicle-card:hover .Background_flag_57525fcb, .Background_flag__active_de322c1b {
+.vehicle-card:hover .Background_flag_57525fcb,
+.Background_flag__active_de322c1b {
   opacity: 0.9;
 }
 
@@ -206,7 +217,7 @@
 .mediaExtraLarge .Background_base__double_26effab7 .Background_vehicle_23ef6e2b {
   width: 340rem;
   height: 272rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Information_f314e2aa {
@@ -248,7 +259,9 @@
   font-size: 18rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 1rem 15rem rgba(23, 23, 23, 0.4), 0 1rem 0 rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 1rem 15rem rgba(23, 23, 23, 0.4),
+    0 1rem 0 rgba(0, 0, 0, 0.3);
   letter-spacing: 0.03em;
   opacity: 0.9;
   transition: color 0.2s;
@@ -272,9 +285,10 @@
 .mediaExtraLarge .Information_base__double_6e8d4f26 .Information_text_730f3788 {
   font-size: 20rem;
   line-height: 1.2;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Overlay_c657baf9, .Overlay_alert_db4a0e15 {
+.Overlay_c657baf9,
+.Overlay_alert_db4a0e15 {
   position: absolute;
   top: 0;
   right: 0;
@@ -284,7 +298,9 @@
 
 /* stylelint-disable scss/dollar-variable-pattern */
 .Overlay_c657baf9 {
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(52, 52, 52, 0.3), rgba(0, 0, 0, 0.3)), url(R.images.gui.maps.icons.hangar.carousel.cards.disable);
+  background-image:
+    radial-gradient(50% 50% at 50% 50%, rgba(52, 52, 52, 0.3), rgba(0, 0, 0, 0.3)),
+    url(R.images.gui.maps.icons.hangar.carousel.cards.disable);
 }
 
 .Overlay_alert_db4a0e15 {
@@ -329,7 +345,7 @@
 }
 .Overlay_base__double_3c7155a .Overlay_alertText_e237f4fd {
   font-size: 18rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Card_e79008fd {
   position: absolute;
@@ -392,7 +408,7 @@
   right: -3rem;
   bottom: -3rem;
   left: -3rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .ActiveSlots_empty_9aab1ce1 {
@@ -416,7 +432,7 @@
 }
 .mediaExtraLarge .ActiveSlots_slot__double_e321ab18 {
   height: 109rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .CarouselScroll_3690a837 {
@@ -427,7 +443,7 @@
 .CarouselScroll_areaContent_f5dd7772 {
   display: flex;
   align-content: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .ArrowButton_button_7654af94 {
@@ -466,7 +482,7 @@
 }
 .ArrowButton_button__left_5327085d .ArrowButton_content_ff5598c7 {
   margin-left: 3rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .CarouselNavButtons_navButtonWrapper_a13c2a68 {
@@ -511,7 +527,7 @@
 }
 .CarouselNavButtons_mask__right_6be519f7 {
   mask: linear-gradient(to left, transparent, #000 4%);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .CarouselSkeleton_1ac002e3 {
@@ -527,7 +543,7 @@
 
 .CarouselSkeleton_scroll_badf82c7 {
   max-width: 100%;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .CarouselContent_draggingOverlay_197a34b {
   position: absolute;
@@ -556,7 +572,7 @@
 .CarouselContent_draggingOverlay_197a34b {
   z-index: 1000;
   cursor: move;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .EntryPoint_368cd93c {
@@ -583,7 +599,7 @@
 }
 .mediaExtraLarge .EntryPoint_content_ec86add3 {
   bottom: 5rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Perk_41a4186b {
@@ -605,7 +621,7 @@
 }
 .Perk_41a4186b:first-child {
   margin-left: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Commander_98c5d9f0 {
@@ -645,7 +661,7 @@
 .Commander_perks_e59f3f5c {
   display: flex;
   align-items: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Item_d8443c58 {
@@ -673,7 +689,10 @@
   font-weight: 400;
   line-height: 1.3em;
   color: var(--color-general-primary);
-  text-shadow: -1rem 0 0 rgba(0, 0, 0, 0.6), -2rem 0 0 rgba(0, 0, 0, 0.6), 0 1rem 6rem rgba(0, 0, 0, 0.5);
+  text-shadow:
+    -1rem 0 0 rgba(0, 0, 0, 0.6),
+    -2rem 0 0 rgba(0, 0, 0, 0.6),
+    0 1rem 6rem rgba(0, 0, 0, 0.5);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -686,7 +705,7 @@
 }
 .mediaExtraLarge .Item_base__shell_5f6fcc69 .Item_counter_4fba53c1 {
   right: 10rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Content_8fd0e0d7 {
@@ -739,7 +758,7 @@
 }
 .mediaExtraLarge .Content_respawn_64e3af9f {
   margin-left: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .UpgradesButton_6e5b700c {
@@ -763,7 +782,8 @@
 .UpgradesButton_icon_3c7ab7cc {
   width: 92rem;
   height: 92rem;
-  background: url("R.images.battle_royale.gui.maps.icons.upgrades.small.background") no-repeat center/cover;
+  background: url("R.images.battle_royale.gui.maps.icons.upgrades.small.background") no-repeat
+    center/cover;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -799,7 +819,7 @@
 .UpgradesButton_6e5b700c:active .UpgradesButton_overlay_3ece025a {
   background-color: rgba(0, 0, 0, 0.24);
   opacity: 1;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Loadout_45650ebe {
@@ -839,7 +859,8 @@
 .Loadout_background_d2d81a6a {
   width: 100%;
   height: 100%;
-  background: url("R.images.battle_royale.gui.maps.icons.loadout.background_small") no-repeat center/cover;
+  background: url("R.images.battle_royale.gui.maps.icons.loadout.background_small") no-repeat
+    center/cover;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -851,7 +872,7 @@
 }
 .mediaExtraLarge .Loadout_background_d2d81a6a {
   background-image: url("R.images.battle_royale.gui.maps.icons.loadout.background_big");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .HeroTankMarker_7a1c486d {
@@ -870,7 +891,10 @@
 .HeroTankMarker_vehicleName_a789e6e5 {
   color: #fff4d1;
   font-size: 20rem;
-  text-shadow: 0 0 10px #fcb586, 0 0 20px #f4761c, 0 0 50px #f4401c;
+  text-shadow:
+    0 0 10px #fcb586,
+    0 0 20px #f4761c,
+    0 0 50px #f4401c;
   white-space: nowrap;
   position: absolute;
   bottom: 100%;
@@ -882,7 +906,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .MenuItem_92bbc5da {
@@ -943,10 +967,17 @@
   font-size: 26rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 15rem rgba(23, 23, 23, 0.2), 0 0 7rem rgba(23, 23, 23, 0.2), 0 2rem rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 0 15rem rgba(23, 23, 23, 0.2),
+    0 0 7rem rgba(23, 23, 23, 0.2),
+    0 2rem rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   opacity: 0.9;
-  transition: opacity 0.2s, transform 0.2s, text-shadow 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    text-shadow 0.2s,
+    color 0.2s;
 }
 .mediaMedium .MenuItem_label_8c0d77ba {
   font-size: 28rem;
@@ -959,21 +990,31 @@
 }
 .MenuItem_base__enabledState_6f88d3d1:hover .MenuItem_label_8c0d77ba {
   color: #fcf6eb;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.17);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.17);
 }
 
 .MenuItem_titleWrapper_cf46ff6b {
   display: flex;
   align-items: center;
   color: rgba(238, 237, 233, 0.9);
-  transition: opacity 0.2s, transform 0.2s, text-shadow 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    text-shadow 0.2s,
+    color 0.2s;
 }
 .MenuItem_base__disabledState_28be5e00 .MenuItem_titleWrapper_cf46ff6b {
   opacity: 0.5;
 }
 .MenuItem_base__enabledState_6f88d3d1:hover .MenuItem_titleWrapper_cf46ff6b {
   color: #fcf6eb;
-  text-shadow: 0 0 16rem rgba(255, 154, 82, 0.5), 0 0 8rem rgba(255, 196, 108, 0.24), 0 0 4rem rgba(252, 246, 235, 0.17);
+  text-shadow:
+    0 0 16rem rgba(255, 154, 82, 0.5),
+    0 0 8rem rgba(255, 196, 108, 0.24),
+    0 0 4rem rgba(252, 246, 235, 0.17);
   transform: translateX(6rem);
 }
 
@@ -981,7 +1022,10 @@
   font-size: 20rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 15rem rgba(23, 23, 23, 0.2), 0 0 7rem rgba(23, 23, 23, 0.2), 0 2rem rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 0 15rem rgba(23, 23, 23, 0.2),
+    0 0 7rem rgba(23, 23, 23, 0.2),
+    0 2rem rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   opacity: 0.9;
 }
@@ -1016,7 +1060,10 @@
   font-size: 16rem;
   font-weight: 500;
   line-height: 1;
-  text-shadow: 0 0 40px rgba(255, 76, 60, 0.6), 0 0 24rem rgba(255, 233, 187, 0.3), 0 0 8rem rgba(255, 251, 239, 0.2);
+  text-shadow:
+    0 0 40px rgba(255, 76, 60, 0.6),
+    0 0 24rem rgba(255, 233, 187, 0.3),
+    0 0 8rem rgba(255, 251, 239, 0.2);
   letter-spacing: 0.02em;
 }
 .mediaMedium .MenuItem_modeName_36c0339e {
@@ -1044,16 +1091,17 @@
   width: 24rem;
   height: 24rem;
   margin-right: 8rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .MainMenu_222da7b7 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Card_82475c .Card_borderHelper_9f37b536, .Card_border_a649c143 {
+.Card_82475c .Card_borderHelper_9f37b536,
+.Card_border_a649c143 {
   position: absolute;
   top: 0;
   right: 0;
@@ -1098,7 +1146,7 @@
 }
 .Card_card__enabled_4c476d8b:hover .Card_border_a649c143 {
   border: 1rem solid rgba(255, 255, 255, 0.18);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .BorderAnimation_helperContainer_fe323668 {
   position: absolute;
@@ -1110,23 +1158,89 @@
 
 /* stylelint-disable scss/dollar-variable-pattern */
 .BorderAnimation_2d8409c9 {
-  clip-path: polygon(0 0, 235rem 0, 235rem 2rem, 2rem 2rem, 2rem 66rem, 233rem 66rem, 233rem 2rem, 235rem 2rem, 235rem 68rem, 0 68rem);
+  clip-path: polygon(
+    0 0,
+    235rem 0,
+    235rem 2rem,
+    2rem 2rem,
+    2rem 66rem,
+    233rem 66rem,
+    233rem 2rem,
+    235rem 2rem,
+    235rem 68rem,
+    0 68rem
+  );
   pointer-events: none;
 }
 .mediaLargeWidth .BorderAnimation_2d8409c9 {
-  clip-path: polygon(0 0, 313rem 0, 313rem 2rem, 2rem 2rem, 2rem 66rem, 311rem 66rem, 311rem 2rem, 313rem 2rem, 313rem 68rem, 0 68rem);
+  clip-path: polygon(
+    0 0,
+    313rem 0,
+    313rem 2rem,
+    2rem 2rem,
+    2rem 66rem,
+    311rem 66rem,
+    311rem 2rem,
+    313rem 2rem,
+    313rem 68rem,
+    0 68rem
+  );
 }
 .BorderAnimation_base__medium_47492bdb {
-  clip-path: polygon(0 0, 115rem 0, 115rem 2rem, 2rem 2rem, 2rem 66rem, 113rem 66rem, 113rem 2rem, 115rem 2rem, 115rem 68rem, 0 68rem);
+  clip-path: polygon(
+    0 0,
+    115rem 0,
+    115rem 2rem,
+    2rem 2rem,
+    2rem 66rem,
+    113rem 66rem,
+    113rem 2rem,
+    115rem 2rem,
+    115rem 68rem,
+    0 68rem
+  );
 }
 .mediaLargeWidth .BorderAnimation_base__medium_47492bdb {
-  clip-path: polygon(0 0, 154rem 0, 154rem 2rem, 2rem 2rem, 2rem 66rem, 152rem 66rem, 152rem 2rem, 154rem 2rem, 154rem 68rem, 0 68rem);
+  clip-path: polygon(
+    0 0,
+    154rem 0,
+    154rem 2rem,
+    2rem 2rem,
+    2rem 66rem,
+    152rem 66rem,
+    152rem 2rem,
+    154rem 2rem,
+    154rem 68rem,
+    0 68rem
+  );
 }
 .BorderAnimation_base__small_67aa3793 {
-  clip-path: polygon(0 0, 75rem 0, 75rem 2rem, 2rem 2rem, 2rem 66rem, 73rem 66rem, 73rem 2rem, 75rem 2rem, 75rem 68rem, 0 68rem);
+  clip-path: polygon(
+    0 0,
+    75rem 0,
+    75rem 2rem,
+    2rem 2rem,
+    2rem 66rem,
+    73rem 66rem,
+    73rem 2rem,
+    75rem 2rem,
+    75rem 68rem,
+    0 68rem
+  );
 }
 .mediaLargeWidth .BorderAnimation_base__small_67aa3793 {
-  clip-path: polygon(0 0, 101rem 0, 101rem 2rem, 2rem 2rem, 2rem 66rem, 99rem 66rem, 99rem 2rem, 101rem 2rem, 101rem 68rem, 0 68rem);
+  clip-path: polygon(
+    0 0,
+    101rem 0,
+    101rem 2rem,
+    2rem 2rem,
+    2rem 66rem,
+    99rem 66rem,
+    99rem 2rem,
+    101rem 2rem,
+    101rem 68rem,
+    0 68rem
+  );
 }
 
 .BorderAnimation_helperContainer_fe323668 {
@@ -1165,7 +1279,7 @@
   100% {
     transform: translateX(400rem);
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Emblem_base__x60x60_d8756e36 {
@@ -1274,7 +1388,7 @@
   width: 160rem;
   height: 160rem;
   background-size: 160rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Emblem_6b62c957 {
@@ -1293,7 +1407,7 @@
 .Emblem_4187dd4f {
   display: flex;
   position: relative;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes Labels_pulse_b6dc3d7c {
@@ -1372,9 +1486,10 @@
 }
 .mediaLargeWidth .Labels_descriptionText_1d25fcad {
   width: 211rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.HighlightAnimation_splashContainer_6f7161d2, .HighlightAnimation_helperContainer_67199b30 {
+.HighlightAnimation_splashContainer_6f7161d2,
+.HighlightAnimation_helperContainer_67199b30 {
   position: absolute;
   top: 0;
   right: 0;
@@ -1416,7 +1531,7 @@
   width: 40rem;
   margin-right: 0;
   opacity: 0.8;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .SelectRewardIcon_79dc47ef {
@@ -1433,9 +1548,10 @@
   position: absolute;
   top: 0;
   left: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.IntroOverlay_glow_5fc31c94, .IntroOverlay_hoverHelper_9cec2539 {
+.IntroOverlay_glow_5fc31c94,
+.IntroOverlay_hoverHelper_9cec2539 {
   position: absolute;
   top: 0;
   right: 0;
@@ -1502,7 +1618,7 @@
   100% {
     opacity: 1;
   }
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes CompletedOverlay_pulse_80562f86 {
@@ -1519,9 +1635,10 @@
 .CompletedOverlay_b04581f5 {
   background-color: rgba(255, 255, 255, var(--hover-opacity));
   transition: background-color 0.24s ease-out;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Intro_backgroundWrapper_8eb03c0d, .Intro_background_e3bffd74 {
+.Intro_backgroundWrapper_8eb03c0d,
+.Intro_background_e3bffd74 {
   position: absolute;
   top: 0;
   right: 0;
@@ -1582,7 +1699,7 @@
 }
 .Intro_base__paused_129a2cdc .Intro_icon_946c0059 {
   opacity: 0;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Index_f505a04a {
@@ -1591,7 +1708,7 @@
 }
 .Index_f505a04a::after {
   border: 0 none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 @keyframes Progression_pulse_61efd8f5 {
@@ -1693,11 +1810,15 @@
 .Progression_glow_bdccbc96 {
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 5rem rgba(255, 254, 249, 0.5), 0 0 10rem rgba(255, 246, 227, 0.3), 0 0 30rem rgba(255, 230, 201, 0.4);
+  box-shadow:
+    0 0 5rem rgba(255, 254, 249, 0.5),
+    0 0 10rem rgba(255, 246, 227, 0.3),
+    0 0 30rem rgba(255, 230, 201, 0.4);
   background: #edebe7;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.ProgressionOverlay_3554586a, .ProgressionOverlay_wrapper_db2f9b96 {
+.ProgressionOverlay_3554586a,
+.ProgressionOverlay_wrapper_db2f9b96 {
   position: absolute;
   top: 0;
   right: 0;
@@ -1727,7 +1848,7 @@
 .ProgressionOverlay_hoverHelper_9949a6b8 {
   background-color: rgba(255, 255, 255, var(--hover-opacity));
   transition: background-color 0.24s ease-out;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattlePass_layer_1bbff8f0 {
@@ -1765,7 +1886,7 @@
   position: absolute;
   top: 4rem;
   left: 4rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .ProgressCount_1bbbcb2 {
@@ -1823,7 +1944,7 @@
   top: 2rem;
   left: 100%;
   transform: translateX(1rem);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .SpecConditionsIcons_ab3f13c7 {
@@ -1832,9 +1953,11 @@
 
 .SpecConditionsIcons_icon_d767e7b4 {
   margin-left: 3rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.QuestCard_icon_9c76dd70, .QuestCard_contentWrapper_89591e48, .QuestCard_rewardsWrapper_d0b2cb69 {
+.QuestCard_icon_9c76dd70,
+.QuestCard_contentWrapper_89591e48,
+.QuestCard_rewardsWrapper_d0b2cb69 {
   position: absolute;
   top: 0;
   right: 0;
@@ -1843,7 +1966,8 @@
 }
 
 /* stylelint-disable scss/dollar-variable-pattern */
-.QuestCard_hoverBg_934f6a72, .QuestCard_completeBg_4b5463bc {
+.QuestCard_hoverBg_934f6a72,
+.QuestCard_completeBg_4b5463bc {
   position: absolute;
   top: 3rem;
   right: 3rem;
@@ -1916,7 +2040,10 @@
   width: 100%;
   margin: -4rem 0 6rem;
   color: rgba(var(--color-general-primary-rgb), 0.9);
-  text-shadow: 0 0rem 7rem rgba(23, 23, 23, 0.4), 0 0rem 4rem rgba(23, 23, 23, 0.25), 0 1rem rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0rem 7rem rgba(23, 23, 23, 0.4),
+    0 0rem 4rem rgba(23, 23, 23, 0.25),
+    0 1rem rgba(0, 0, 0, 0.3);
   letter-spacing: 0.02em;
   position: relative;
 }
@@ -2058,9 +2185,12 @@
 .QuestCard_glow_b3b6f1b4 {
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 5rem rgba(255, 254, 249, 0.5), 0 0 10rem rgba(255, 246, 227, 0.3), 0 0 30rem rgba(255, 230, 201, 0.4);
+  box-shadow:
+    0 0 5rem rgba(255, 254, 249, 0.5),
+    0 0 10rem rgba(255, 246, 227, 0.3),
+    0 0 30rem rgba(255, 230, 201, 0.4);
   background: #edebe7;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Progress_b5a185f8 {
@@ -2123,10 +2253,11 @@
 
 .Progress_base__stPatrick_71ab735e .Progress_pattern_a730c2f0 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.umg.progress.filled_pattern_small");
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.ProgressionEntryPoint_hoverBg_1cba4166, .ProgressionEntryPoint_background_9855e8e2 {
+.ProgressionEntryPoint_hoverBg_1cba4166,
+.ProgressionEntryPoint_background_9855e8e2 {
   position: absolute;
   top: 3rem;
   right: 3rem;
@@ -2162,13 +2293,17 @@
 .ProgressionEntryPoint_base__default_cd4dbad9 .ProgressionEntryPoint_background_9855e8e2 {
   background-image: url("R.images.battle_royale.gui.maps.icons.umg.background_progression_s");
 }
-.mediaLarge .ProgressionEntryPoint_base__default_cd4dbad9 .ProgressionEntryPoint_background_9855e8e2 {
+.mediaLarge
+  .ProgressionEntryPoint_base__default_cd4dbad9
+  .ProgressionEntryPoint_background_9855e8e2 {
   background-image: url("R.images.battle_royale.gui.maps.icons.umg.background_progression_m");
 }
 .ProgressionEntryPoint_base__stPatrick_cd4dbad9 .ProgressionEntryPoint_background_9855e8e2 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.umg.background_progression_s");
 }
-.mediaLarge .ProgressionEntryPoint_base__stPatrick_cd4dbad9 .ProgressionEntryPoint_background_9855e8e2 {
+.mediaLarge
+  .ProgressionEntryPoint_base__stPatrick_cd4dbad9
+  .ProgressionEntryPoint_background_9855e8e2 {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.umg.background_progression_m");
 }
 
@@ -2232,19 +2367,23 @@
   bottom: -5rem;
   left: -4rem;
   z-index: 0;
-  transition: filter 0.2s ease-in-out, bottom 0.2s ease-in-out;
+  transition:
+    filter 0.2s ease-in-out,
+    bottom 0.2s ease-in-out;
   pointer-events: none;
 }
 .ProgressionEntryPoint_base__default_cd4dbad9 .ProgressionEntryPoint_icon_3c1e7b7d {
   background-image: url("R.images.battle_royale.gui.maps.icons.umg.emblem.disabled");
 }
-.ProgressionEntryPoint_base__default_cd4dbad9.ProgressionEntryPoint_base__activeProgress_cd4dbad9 .ProgressionEntryPoint_icon_3c1e7b7d {
+.ProgressionEntryPoint_base__default_cd4dbad9.ProgressionEntryPoint_base__activeProgress_cd4dbad9
+  .ProgressionEntryPoint_icon_3c1e7b7d {
   background-image: url("R.images.battle_royale.gui.maps.icons.umg.emblem.active");
 }
 .ProgressionEntryPoint_base__stPatrick_cd4dbad9 .ProgressionEntryPoint_icon_3c1e7b7d {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.umg.emblem.disabled");
 }
-.ProgressionEntryPoint_base__stPatrick_cd4dbad9.ProgressionEntryPoint_base__activeProgress_cd4dbad9 .ProgressionEntryPoint_icon_3c1e7b7d {
+.ProgressionEntryPoint_base__stPatrick_cd4dbad9.ProgressionEntryPoint_base__activeProgress_cd4dbad9
+  .ProgressionEntryPoint_icon_3c1e7b7d {
   background-image: url("R.images.battle_royale.gui.maps.st_patrick.icons.umg.emblem.active");
 }
 .ProgressionEntryPoint_5c0716bb:hover .ProgressionEntryPoint_icon_3c1e7b7d {
@@ -2264,11 +2403,21 @@
 }
 .ProgressionEntryPoint_base__default_cd4dbad9 .ProgressionEntryPoint_label_73e2f07e {
   text-stroke: 1rem #d86e40;
-  text-shadow: 0 1rem 12rem rgb(255, 89, 0), 0 1rem 7rem rgb(255, 89, 0), 0 11rem 10rem rgb(255, 89, 0), 0 0 4rem rgba(0, 0, 0, 0.6), 0 0 1rem rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 1rem 12rem rgb(255, 89, 0),
+    0 1rem 7rem rgb(255, 89, 0),
+    0 11rem 10rem rgb(255, 89, 0),
+    0 0 4rem rgba(0, 0, 0, 0.6),
+    0 0 1rem rgba(0, 0, 0, 0.6);
 }
 .ProgressionEntryPoint_base__stPatrick_cd4dbad9 .ProgressionEntryPoint_label_73e2f07e {
   text-stroke: 1rem #4fd141;
-  text-shadow: 0 1rem 12rem rgba(10, 230, 72, 0.6), 0 1rem 7rem rgba(191, 255, 209, 0.6), 0 11rem 10rem rgba(13, 162, 56, 0.6), 0 0 4rem rgba(0, 0, 0, 0.6), 0 0 1rem rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 1rem 12rem rgba(10, 230, 72, 0.6),
+    0 1rem 7rem rgba(191, 255, 209, 0.6),
+    0 11rem 10rem rgba(13, 162, 56, 0.6),
+    0 0 4rem rgba(0, 0, 0, 0.6),
+    0 0 1rem rgba(0, 0, 0, 0.6);
 }
 
 .ProgressionEntryPoint_content_25c59db2 {
@@ -2294,10 +2443,11 @@
 }
 .ProgressionEntryPoint_5c0716bb:hover .ProgressionEntryPoint_progressionComplete_6fd8d1c5 {
   filter: brightness(1.2);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.ShopButton_hoverBg_16f2a05, .ShopButton_background_2d6c1f5e {
+.ShopButton_hoverBg_16f2a05,
+.ShopButton_background_2d6c1f5e {
   position: absolute;
   top: 3rem;
   right: 3rem;
@@ -2395,7 +2545,7 @@
 }
 .ShopButton_4bc85d12:hover .ShopButton_text_f38dd54f {
   color: var(--color-general-primary);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Widget_9097a2b5 {
@@ -2406,7 +2556,7 @@
 }
 .mediaLargeWidth .Widget_9097a2b5 {
   width: 319rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Message_a512f824 {
@@ -2423,7 +2573,8 @@
 .Message_background_ab9441f7 {
   width: 471rem;
   height: 130rem;
-  background: url("R.images.battle_royale.gui.maps.icons.backgrounds.background_alert_message") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.icons.backgrounds.background_alert_message")
+    no-repeat center/contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2448,7 +2599,8 @@
   display: flex;
   width: 48rem;
   height: 48rem;
-  background: url("R.images.battle_royale.gui.maps.icons.icons.alertIcon_48x48") no-repeat center/cover;
+  background: url("R.images.battle_royale.gui.maps.icons.icons.alertIcon_48x48") no-repeat
+    center/cover;
 }
 
 .Message_button_42eac0db {
@@ -2460,7 +2612,7 @@
   font-size: 18rem;
   font-weight: 400;
   line-height: 1.3em;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Tab_95f1dfc2 {
@@ -2507,7 +2659,8 @@
 .Tab_95f1dfc2:hover .Tab_unselectedImg_b04ff918 {
   opacity: 1;
 }
-.Tab_base__active_8ed0d5bc .Tab_unselectedImg_b04ff918, .Tab_base__active_8ed0d5bc.Tab_95f1dfc2:hover .Tab_unselectedImg_b04ff918 {
+.Tab_base__active_8ed0d5bc .Tab_unselectedImg_b04ff918,
+.Tab_base__active_8ed0d5bc.Tab_95f1dfc2:hover .Tab_unselectedImg_b04ff918 {
   opacity: 0;
 }
 
@@ -2527,16 +2680,20 @@
   margin-top: -4rem;
   color: rgba(var(--color-general-primary-rgb), 0.7);
   text-align: center;
-  text-shadow: 0 2rem 0 rgba(13, 14, 16, 0.4), 0 0 4rem rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 2rem 0 rgba(13, 14, 16, 0.4),
+    0 0 4rem rgba(0, 0, 0, 0.5);
   transition: color 0.1s;
 }
 .Tab_95f1dfc2:hover .Tab_label_e971bd70 {
   color: var(--color-general-primary);
 }
-.Tab_base__default_0.Tab_base__active_8ed0d5bc .Tab_label_e971bd70, .Tab_base__default_0.Tab_base__active_8ed0d5bc.Tab_95f1dfc2:hover .Tab_label_e971bd70 {
+.Tab_base__default_0.Tab_base__active_8ed0d5bc .Tab_label_e971bd70,
+.Tab_base__default_0.Tab_base__active_8ed0d5bc.Tab_95f1dfc2:hover .Tab_label_e971bd70 {
   color: #ffb16d;
 }
-.Tab_base__stPatrick_0.Tab_base__active_8ed0d5bc .Tab_label_e971bd70, .Tab_base__stPatrick_0.Tab_base__active_8ed0d5bc.Tab_95f1dfc2:hover .Tab_label_e971bd70 {
+.Tab_base__stPatrick_0.Tab_base__active_8ed0d5bc .Tab_label_e971bd70,
+.Tab_base__stPatrick_0.Tab_base__active_8ed0d5bc.Tab_95f1dfc2:hover .Tab_label_e971bd70 {
   color: #3cee78;
 }
 .mediaLarge .Tab_label_e971bd70 {
@@ -2547,7 +2704,7 @@
   width: 116rem;
   margin-top: -5rem;
   font-size: 22rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .App_61b49552 {
@@ -2565,9 +2722,12 @@
 }
 .mediaExtraLarge .App_tab_d1d66e0b {
   margin-right: 19rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.HangarScreen_332e247, .HangarScreen_vignette_cc61e026, .HangarScreen_dust_d8ab7d08, .HangarScreen_sceneWrapper_7399211 {
+.HangarScreen_332e247,
+.HangarScreen_vignette_cc61e026,
+.HangarScreen_dust_d8ab7d08,
+.HangarScreen_sceneWrapper_7399211 {
   position: absolute;
   top: 0;
   right: 0;
@@ -2587,7 +2747,21 @@
 }
 
 .HangarScreen_vignette_cc61e026 {
-  background: linear-gradient(90deg, rgba(17, 18, 18, 0.5) 0%, transparent 30%, transparent 55%, rgba(17, 18, 18, 0.6) 100%), linear-gradient(180deg, rgba(17, 18, 18, 0.5) 0%, transparent 20%, transparent 50%, rgba(17, 18, 18, 0.9) 100%);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 18, 18, 0.5) 0%,
+      transparent 30%,
+      transparent 55%,
+      rgba(17, 18, 18, 0.6) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(17, 18, 18, 0.5) 0%,
+      transparent 20%,
+      transparent 50%,
+      rgba(17, 18, 18, 0.9) 100%
+    );
 }
 
 .HangarScreen_shadow_ee5adb00 {
@@ -2669,7 +2843,7 @@
 }
 .mediaExtraLarge .HangarScreen_hangarWidget_81fee245 {
   top: calc(var(--external-padding-top) + 70rem);
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Page_d023d87f {
@@ -2722,7 +2896,7 @@
 }
 .mediaExtraLarge .Page_loadout_757c2bdf {
   margin-bottom: 20rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .App_7ac91f18 {

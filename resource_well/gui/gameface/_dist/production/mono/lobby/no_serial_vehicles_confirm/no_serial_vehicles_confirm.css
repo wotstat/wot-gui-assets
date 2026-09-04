@@ -126,7 +126,8 @@
 .App_image_9e0e59ff {
   width: 96rem;
   height: 75rem;
-  background: url("R.images.resource_well.gui.maps.icons.confirm.iconAlert") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.confirm.iconAlert") no-repeat
+    center/contain;
   position: relative;
   z-index: 1;
 }
@@ -138,7 +139,8 @@
 .App_image_9e0e59ff::before {
   width: 1200rem;
   height: 676rem;
-  background: url("R.images.resource_well.gui.maps.icons.confirm.alertOrange") no-repeat center/contain;
+  background: url("R.images.resource_well.gui.maps.icons.confirm.alertOrange") no-repeat
+    center/contain;
   mix-blend-mode: screen;
   content: "";
   position: absolute;

@@ -151,7 +151,9 @@
 .App_base__third_0 .App_topContentBg_b84f059 {
   background-image: url("R.images.comp7.gui.maps.icons.backgrounds.entry_point_tooltip_bg_third");
 }
-.App_base__notStarted_0 .App_topContentBg_b84f059, .App_base__disabled_0 .App_topContentBg_b84f059, .App_base__end_0 .App_topContentBg_b84f059 {
+.App_base__notStarted_0 .App_topContentBg_b84f059,
+.App_base__disabled_0 .App_topContentBg_b84f059,
+.App_base__end_0 .App_topContentBg_b84f059 {
   filter: grayscale(1);
 }
 
@@ -214,7 +216,13 @@
   letter-spacing: 0.14rem;
   filter: drop-shadow(0rem 1rem 0rem rgba(53, 54, 56, 0.6));
 }
-html[lang=ja] .App_modeBtn_aeb48bc5, html[lang=ko] .App_modeBtn_aeb48bc5, html[lang=zh_tw] .App_modeBtn_aeb48bc5, html[lang=zh_sg] .App_modeBtn_aeb48bc5, html[lang=zh_cn] .App_modeBtn_aeb48bc5, html[lang=vi] .App_modeBtn_aeb48bc5, html[lang=th] .App_modeBtn_aeb48bc5 {
+html[lang="ja"] .App_modeBtn_aeb48bc5,
+html[lang="ko"] .App_modeBtn_aeb48bc5,
+html[lang="zh_tw"] .App_modeBtn_aeb48bc5,
+html[lang="zh_sg"] .App_modeBtn_aeb48bc5,
+html[lang="zh_cn"] .App_modeBtn_aeb48bc5,
+html[lang="vi"] .App_modeBtn_aeb48bc5,
+html[lang="th"] .App_modeBtn_aeb48bc5 {
   font-size: 12rem;
 }
 

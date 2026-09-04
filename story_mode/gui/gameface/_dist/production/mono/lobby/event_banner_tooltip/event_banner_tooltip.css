@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -60,17 +67,23 @@ html[lang=th] input {
   line-height: 1.25;
   margin-left: -2rem;
   font-weight: 500;
-  text-shadow: 0 1rem 0 rgba(0, 0, 0, 0.3), 0 0 12rem rgba(255, 61, 0, 0.32), 0 0 10rem rgba(255, 177, 86, 0.24), 0 0 6rem rgba(255, 228, 159, 0.16);
+  text-shadow:
+    0 1rem 0 rgba(0, 0, 0, 0.3),
+    0 0 12rem rgba(255, 61, 0, 0.32),
+    0 0 10rem rgba(255, 177, 86, 0.24),
+    0 0 6rem rgba(255, 228, 159, 0.16);
 }
 
 .Countdown_icon_17addfe {
   width: 24rem;
   height: 24rem;
-  background: url("R.images.story_mode.gui.maps.icons.eventBannerTooltip.icon_clock") no-repeat 50%/contain;
-}/* stylelint-disable selector-no-qualifying-type */
+  background: url("R.images.story_mode.gui.maps.icons.eventBannerTooltip.icon_clock") no-repeat
+    50% / contain;
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -94,21 +107,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -126,7 +145,8 @@ html[lang=th] input {
 .EventBannerTooltipApp_banner_30944031 {
   width: 338rem;
   height: 180rem;
-  background: url("R.images.story_mode.gui.maps.icons.eventBannerTooltip.banner") no-repeat 50%/contain;
+  background: url("R.images.story_mode.gui.maps.icons.eventBannerTooltip.banner") no-repeat 50% /
+    contain;
 }
 
 .EventBannerTooltipApp_title_66abf4a2 {
@@ -182,7 +202,8 @@ html[lang=th] input {
   width: 328rem;
   height: 1rem;
   margin: 5rem;
-  background: url("R.images.gui.maps.icons.achievements.tooltips.separator_dots_short") no-repeat 50%/contain;
+  background: url("R.images.gui.maps.icons.achievements.tooltips.separator_dots_short") no-repeat
+    50% / contain;
 }
 
 .EventBannerTooltipApp_eventTitle_40807a1f {

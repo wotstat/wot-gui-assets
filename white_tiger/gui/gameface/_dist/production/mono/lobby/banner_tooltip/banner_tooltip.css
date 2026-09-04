@@ -1,7 +1,8 @@
 /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -25,21 +26,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -161,10 +168,11 @@ html[lang=th] input {
 }
 .mediaLargeWidth .DateRange_image_68220085 {
   margin-right: -5rem;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -188,21 +196,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -308,10 +322,11 @@ html[lang=th] input {
 }
 .Index_f505a04a::after {
   border: 0 none;
-}/* stylelint-disable selector-no-qualifying-type */
+} /* stylelint-disable selector-no-qualifying-type */
 :root {
   --hangar-highlight-shadow:
-      0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+    0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4),
+    0rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* stylelint-disable selector-max-id */
@@ -335,21 +350,27 @@ input {
   letter-spacing: 0.02em;
 }
 
-html[lang=ja] body, html[lang=ko] body, html[lang=zh_tw] body, html[lang=zh_sg] body, html[lang=zh_cn] body, html[lang=vi] body, html[lang=th] body,
-html[lang=ja] button,
-html[lang=ko] button,
-html[lang=zh_tw] button,
-html[lang=zh_sg] button,
-html[lang=zh_cn] button,
-html[lang=vi] button,
-html[lang=th] button,
-html[lang=ja] input,
-html[lang=ko] input,
-html[lang=zh_tw] input,
-html[lang=zh_sg] input,
-html[lang=zh_cn] input,
-html[lang=vi] input,
-html[lang=th] input {
+html[lang="ja"] body,
+html[lang="ko"] body,
+html[lang="zh_tw"] body,
+html[lang="zh_sg"] body,
+html[lang="zh_cn"] body,
+html[lang="vi"] body,
+html[lang="th"] body,
+html[lang="ja"] button,
+html[lang="ko"] button,
+html[lang="zh_tw"] button,
+html[lang="zh_sg"] button,
+html[lang="zh_cn"] button,
+html[lang="vi"] button,
+html[lang="th"] button,
+html[lang="ja"] input,
+html[lang="ko"] input,
+html[lang="zh_tw"] input,
+html[lang="zh_sg"] input,
+html[lang="zh_cn"] input,
+html[lang="vi"] input,
+html[lang="th"] input {
   font-family: Warhelios;
   letter-spacing: 0;
 }
@@ -394,7 +415,8 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.BannerTooltipApp_header-h24_c818429a, .BannerTooltipApp_header_15e112b7 {
+.BannerTooltipApp_header-h24_c818429a,
+.BannerTooltipApp_header_15e112b7 {
   font-size: 24rem;
   font-weight: 600;
   line-height: 26rem;
@@ -435,7 +457,15 @@ html[lang=th] input {
   letter-spacing: 0.2rem;
 }
 
-.BannerTooltipApp_paragraph-p18_c818429a, .BannerTooltipApp_year_9fefb07c, .BannerTooltipApp_description_65f0fb86, .BannerTooltipApp_descriptionText_d33d1f76, .BannerTooltipApp_progressionCounter_16c94a79, .BannerTooltipApp_hint_text_7486b384, .BannerTooltipApp_title_d595f0a, .BannerTooltipApp_title__withIcon_dec67f66, .BannerTooltipApp_text_60e4b2c6 {
+.BannerTooltipApp_paragraph-p18_c818429a,
+.BannerTooltipApp_year_9fefb07c,
+.BannerTooltipApp_description_65f0fb86,
+.BannerTooltipApp_descriptionText_d33d1f76,
+.BannerTooltipApp_progressionCounter_16c94a79,
+.BannerTooltipApp_hint_text_7486b384,
+.BannerTooltipApp_title_d595f0a,
+.BannerTooltipApp_title__withIcon_dec67f66,
+.BannerTooltipApp_text_60e4b2c6 {
   font-size: 18rem;
   font-weight: 400;
   line-height: 20rem;
@@ -459,7 +489,8 @@ html[lang=th] input {
 .BannerTooltipApp_img_49a5faf7 {
   width: 339rem;
   height: 180rem;
-  background: url("R.images.white_tiger.gui.maps.icons.tooltips.banner.img") no-repeat center center/cover;
+  background: url("R.images.white_tiger.gui.maps.icons.tooltips.banner.img") no-repeat center
+    center/cover;
   position: absolute;
   top: 4rem;
   left: 6rem;
@@ -514,7 +545,8 @@ html[lang=th] input {
   width: 24rem;
   height: 24rem;
   margin: -2rem 4rem 0;
-  background: url("R.images.white_tiger.gui.maps.icons.tooltips.banner.progression_wheel") no-repeat 50%/contain;
+  background: url("R.images.white_tiger.gui.maps.icons.tooltips.banner.progression_wheel") no-repeat
+    50% / contain;
 }
 
 .BannerTooltipApp_progressionCompleted_187cbb96 {
@@ -584,7 +616,7 @@ html[lang=th] input {
 .BannerTooltipApp_icon_bd4436c5 {
   width: 16rem;
   height: 16rem;
-  background: no-repeat 50%/contain;
+  background: no-repeat 50% / contain;
   position: absolute;
   top: 2rem;
   left: 0;
@@ -601,8 +633,20 @@ html[lang=th] input {
   height: 1rem;
   margin-top: 21rem;
   margin-bottom: 13rem;
-  background: linear-gradient(90deg, rgba(201, 201, 182, 0.2) 0%, rgba(201, 201, 182, 0.2) 33%, rgba(201, 201, 182, 0) 33%, rgba(201, 201, 182, 0) 100%) 0 0/3rem 1rem repeat-x;
-  mask-image: linear-gradient(90deg, rgba(201, 201, 182, 0) 0%, rgb(201, 201, 182) 50%, rgba(201, 201, 182, 0) 100%);
+  background: linear-gradient(
+      90deg,
+      rgba(201, 201, 182, 0.2) 0%,
+      rgba(201, 201, 182, 0.2) 33%,
+      rgba(201, 201, 182, 0) 33%,
+      rgba(201, 201, 182, 0) 100%
+    )
+    0 0/3rem 1rem repeat-x;
+  mask-image: linear-gradient(
+    90deg,
+    rgba(201, 201, 182, 0) 0%,
+    rgb(201, 201, 182) 50%,
+    rgba(201, 201, 182, 0) 100%
+  );
 }
 
 .BannerTooltipApp_date_7248741a {
@@ -627,12 +671,13 @@ html[lang=th] input {
   height: 32rem;
 }
 .BannerTooltipApp_date_icon_open_5e9dbe35 {
-  background: url("R.images.gui.maps.icons.components.countdown.big.clock") no-repeat 50%/cover;
+  background: url("R.images.gui.maps.icons.components.countdown.big.clock") no-repeat 50% / cover;
 }
 .BannerTooltipApp_date_icon_lock_4c0448d9 {
   width: 24rem;
   height: 24rem;
-  background: url("R.images.gui.maps.icons.personal_missions_30.main.menu.icons.lock_closed") no-repeat 50%/cover;
+  background: url("R.images.gui.maps.icons.personal_missions_30.main.menu.icons.lock_closed")
+    no-repeat 50% / cover;
 }
 .BannerTooltipApp_date_wrapper_c1d2c0f2 {
   display: flex;

@@ -28,7 +28,8 @@
 .DailyBonus_dailyBonusIcon__stpcoin_f19cd0df::after {
   width: 50rem;
   height: 30rem;
-  background: url("R.images.battle_royale.gui.maps.st_patrick.icons.stpcoin_bonus_x50x30") no-repeat center/contain;
+  background: url("R.images.battle_royale.gui.maps.st_patrick.icons.stpcoin_bonus_x50x30") no-repeat
+    center/contain;
   content: "";
   position: absolute;
   top: 0;
