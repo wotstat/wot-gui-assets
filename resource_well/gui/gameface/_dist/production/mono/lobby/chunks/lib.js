@@ -7054,15 +7054,45 @@ function Currency({
   });
 }
 ((Currency.sizes = sizes), (Currency.types = types));
+const base$1 = "Tooltip_6d997cee",
+  decorator$1 = "Tooltip_decorator_b3486d4e",
+  styles$1 = { base: base$1, decorator: decorator$1 },
+  Base = defineStyledComponent("Base", styles$1.base),
+  Decorator = defineStyledComponent("Decorator", styles$1.decorator),
+  Tooltip = reactExports.forwardRef(function ({ children: e, ...t }, s) {
+    const r = reactExports.useRef(null);
+    return (
+      useRefResizeObserver(r, (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLElement)) return;
+        resize$1(t.scrollWidth, t.scrollHeight);
+        const s = window.getComputedStyle(t);
+        setSidePaddingsRem$1({
+          top: parseInt(s.getPropertyValue("padding-top"), 10),
+          left: parseInt(s.getPropertyValue("padding-left"), 10),
+          right: parseInt(s.getPropertyValue("padding-right"), 10),
+          bottom: parseInt(s.getPropertyValue("padding-bottom"), 10),
+        });
+      }),
+      jsxRuntimeExports.jsx(Base, {
+        ...t,
+        ref: function (e) {
+          ((r.current = e), "function" == typeof s ? s(e) : s && (s.current = e));
+        },
+        children: e,
+      })
+    );
+  });
+Tooltip.Decorator = Decorator;
 const useMount = (e) => {
     reactExports.useEffect(e, []);
   },
-  base$1 = "Tooltipdecorator_ea72f443",
-  decorator$1 = "Tooltipdecorator_decorator_3580e101",
-  styles$1 = {
-    base: base$1,
+  base = "Tooltipdecorator_ea72f443",
+  decorator = "Tooltipdecorator_decorator_3580e101",
+  styles = {
+    base: base,
     "base__theme-default": "Tooltipdecorator_base__theme-default_a254689f",
-    decorator: decorator$1,
+    decorator: decorator,
   },
   TooltipDecorator = React.forwardRef(function (
     { children: e, className: t, theme: s = "default", ...r },
@@ -7092,44 +7122,14 @@ const useMount = (e) => {
       }),
       jsxRuntimeExports.jsx("div", {
         ...r,
-        className: cx(styles$1.base, styles$1[`base__theme-${s}`], t),
+        className: cx(styles.base, styles[`base__theme-${s}`], t),
         ref: function (e) {
           ((a.current = e), "function" == typeof n ? n(e) : n && (n.current = e));
         },
-        children: jsxRuntimeExports.jsx("div", { className: styles$1.decorator, children: e }),
-      })
-    );
-  }),
-  base = "Tooltip_6d997cee",
-  decorator = "Tooltip_decorator_b3486d4e",
-  styles = { base: base, decorator: decorator },
-  Base = defineStyledComponent("Base", styles.base),
-  Decorator = defineStyledComponent("Decorator", styles.decorator),
-  Tooltip = reactExports.forwardRef(function ({ children: e, ...t }, s) {
-    const r = reactExports.useRef(null);
-    return (
-      useRefResizeObserver(r, (e) => {
-        const t = e.target;
-        if (!(t instanceof HTMLElement)) return;
-        resize$1(t.scrollWidth, t.scrollHeight);
-        const s = window.getComputedStyle(t);
-        setSidePaddingsRem$1({
-          top: parseInt(s.getPropertyValue("padding-top"), 10),
-          left: parseInt(s.getPropertyValue("padding-left"), 10),
-          right: parseInt(s.getPropertyValue("padding-right"), 10),
-          bottom: parseInt(s.getPropertyValue("padding-bottom"), 10),
-        });
-      }),
-      jsxRuntimeExports.jsx(Base, {
-        ...t,
-        ref: function (e) {
-          ((r.current = e), "function" == typeof s ? s(e) : s && (s.current = e));
-        },
-        children: e,
+        children: jsxRuntimeExports.jsx("div", { className: styles.decorator, children: e }),
       })
     );
   });
-Tooltip.Decorator = Decorator;
 export {
   noop as $,
   useTimeout as A,
@@ -7160,8 +7160,8 @@ export {
   useProgressBar as Z,
   ProgressBar as _,
   useHandleKeydown as a,
-  TooltipDecorator as a0,
-  Tooltip as a1,
+  Tooltip as a0,
+  TooltipDecorator as a1,
   emptyFunction as a2,
   setContentReady as b,
   useCloseOnEsc as c,

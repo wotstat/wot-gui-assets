@@ -1,14 +1,14 @@
-import { j as e, F as a, h as s, E as d, r, a4 as i } from "../../../chunks/vendor.js";
+import { j as e, F as a, h as s, E as d, r, a0 as i } from "../../../chunks/vendor.js";
 import {
   J as n,
-  dg as t,
+  da as t,
   j as l,
-  dh as _,
+  db as _,
   a as o,
   c,
   g as m,
-  di as w,
-  dj as u,
+  dc as w,
+  dd as u,
   d as b,
   e as x,
   h as p,
@@ -19,22 +19,22 @@ import {
   a9 as N,
   p as v,
   R as y,
-  dk as M,
+  de as M,
   a6 as A,
   a5 as C,
 } from "../../../chunks/lib.js";
 import { g as I, c as S } from "../../../chunks/readResource.js";
 const $ = "Footer_f09fca09",
-  k = "Footer_buttonContainer_cc670971",
-  z = (e) => (e >= l.Medium ? _.medium : _.small),
+  z = "Footer_buttonContainer_cc670971",
+  k = (e) => (e >= l.Medium ? _.medium : _.small),
   P = ({ onClick: s, className: d }) => {
     const { mediaSize: r } = n();
     return e.jsx("div", {
       className: a($, d),
       children: e.jsx("div", {
-        className: k,
+        className: z,
         children: e.jsx(t, {
-          size: z(r),
+          size: k(r),
           onClick: s,
           children: R.strings.fun_random.rewardsView.footer.acceptButton(),
         }),

@@ -3,13 +3,13 @@ import {
   a as r,
   m as o,
   I as a,
-  ar as p,
+  av as p,
   N as l,
-  X as d,
-  ax as n,
+  Y as n,
+  ay as d,
   P as m,
   e as c,
-  a1 as _,
+  a2 as _,
   E as g,
 } from "../../../../chunks/lib.js";
 import { d as h } from "../../../../chunks/TooltipDecorator2.js";
@@ -52,24 +52,24 @@ const w = "PerformanceWarning_b17f004",
           description: i.readOrEmpty("white_tiger_lobby.tooltips.high_risk.subtitle"),
         },
       },
-      { title: a, titleClasses: p, description: d } = o[t] || r;
+      { title: a, titleClasses: p, description: n } = o[t] || r;
     return s.jsxs("div", {
       className: w,
       children: [
         s.jsx("div", { className: p, children: a }),
-        s.jsx("div", { className: v, children: d }),
+        s.jsx("div", { className: v, children: n }),
       ],
     });
   },
   N = {
     base: "ProgressionWidgetTooltipApp_26926b0a",
-    heading: "ProgressionWidgetTooltipApp_heading_710814d3",
+    heading: "ProgressionWidgetTooltipApp_heading_1b75575c",
     base__completed: "ProgressionWidgetTooltipApp_base__completed_edd64607",
     timeLeft: "ProgressionWidgetTooltipApp_timeLeft_c340fa24",
     timeLeft_accent: "ProgressionWidgetTooltipApp_timeLeft_accent_9fd73971",
     timeLeft__progressionFinished:
       "ProgressionWidgetTooltipApp_timeLeft__progressionFinished_7b70a8f6",
-    currentStage: "ProgressionWidgetTooltipApp_currentStage_4a416f88",
+    currentStage: "ProgressionWidgetTooltipApp_currentStage_2fe2a24",
     currentStage_description: "ProgressionWidgetTooltipApp_currentStage_description_27b6c9f3",
     stamps: "ProgressionWidgetTooltipApp_stamps_78de0d2c",
     stamps_accent: "ProgressionWidgetTooltipApp_stamps_accent_b0aefb48",
@@ -114,12 +114,12 @@ const w = "PerformanceWarning_b17f004",
             ],
           }),
         f >= 0 &&
-          s.jsx(d, {
+          s.jsx(n, {
             className: i(N.timeLeft, !r && N.timeLeft__progressionFinished),
             params: {
               timeLeft: s.jsx("span", {
                 className: N.timeLeft_accent,
-                children: s.jsx(n, { duration: f }),
+                children: s.jsx(d, { duration: f }),
               }),
             },
             text: w.readOrEmpty("white_tiger_lobby.tooltips.subtitle"),
@@ -139,7 +139,7 @@ const w = "PerformanceWarning_b17f004",
               s.jsxs("div", {
                 className: N.stamps,
                 children: [
-                  s.jsx(d, {
+                  s.jsx(n, {
                     params: {
                       stampsCurrent: s.jsx("span", { className: N.stamps_accent, children: h }),
                       stampsMax: b,

@@ -1,21 +1,21 @@
 import { D as e, j as s, r as t } from "../../../chunks/vendor.js";
 import {
-  bx as a,
-  by as l,
-  c2 as i,
+  by as a,
+  bz as l,
+  c3 as i,
   G as c,
-  a6 as r,
+  a8 as r,
   i as o,
-  d5 as n,
-  b as d,
-  B as m,
+  X as n,
+  b as m,
+  B as d,
   j as u,
   dd as p,
-  a9 as v,
+  ab as v,
   r as b,
   U as x,
-  d2 as h,
-  d3 as _,
+  d3 as h,
+  d4 as _,
 } from "../../../chunks/lib.js";
 import { u as j, D as f } from "../../../chunks/common.js";
 import { M as N, g as y } from "../../../chunks/date-time-utils.js";
@@ -26,8 +26,8 @@ const g = e(function ({
     classNames: t,
     iconSize: o = c.x48x48,
     vehicleId: n,
-    vehicleType: d,
-    isPremium: m,
+    vehicleType: m,
+    isPremium: d,
     isElite: u,
     vehicleName: p,
     vehicleLvl: v,
@@ -46,7 +46,7 @@ const g = e(function ({
             direction: a.Prestige.direction.left,
           }),
         s.jsx(a.Level, { className: t?.level, value: v, numberType: i.numberTypes.roman }),
-        l(d) && s.jsx(a.Type, { className: t?.type, type: d, premium: m || u, size: o }),
+        l(m) && s.jsx(a.Type, { className: t?.type, type: m, premium: d || u, size: o }),
         s.jsx(a.Name, { className: t?.name, children: p }),
         b &&
           s.jsx(a.Role, {
@@ -86,8 +86,8 @@ function S({ className: e, timerStartTime: a }) {
 }
 const Q = "PrebattleQueueApp_sceneWrapper_de517c82",
   k = "PrebattleQueueApp_vignette_7c7f8ce2",
-  M = "PrebattleQueueApp_container_26435402",
-  z = "PrebattleQueueApp_dad90a27",
+  z = "PrebattleQueueApp_container_26435402",
+  M = "PrebattleQueueApp_dad90a27",
   B = "PrebattleQueueApp_topShadow_6589c225",
   D = "PrebattleQueueApp_difficulty_caaef6b0",
   E = "PrebattleQueueApp_timer_744d2724",
@@ -102,8 +102,8 @@ const Q = "PrebattleQueueApp_sceneWrapper_de517c82",
   $ = e(function () {
     const { model: e, controls: t } = P();
     n(t.openMenu);
-    const a = d({ value: m.sizes.small }, { medium: { value: m.sizes.large } }),
-      l = d({ size: c.x24x24 }, { medium: { size: c.x48x48 }, extraLarge: { size: c.x64x64 } }),
+    const a = m({ value: d.sizes.small }, { medium: { value: d.sizes.large } }),
+      l = m({ size: c.x24x24 }, { medium: { size: c.x48x48 }, extraLarge: { size: c.x64x64 } }),
       i = e.selectedDifficulty.get(),
       r = e.selectedVehicle.get(),
       o = u({
@@ -112,7 +112,7 @@ const Q = "PrebattleQueueApp_sceneWrapper_de517c82",
         disabled: !1,
       });
     return s.jsxs("div", {
-      className: z,
+      className: M,
       children: [
         s.jsx("div", { className: k }),
         s.jsx("div", { className: B }),
@@ -121,7 +121,7 @@ const Q = "PrebattleQueueApp_sceneWrapper_de517c82",
           children: s.jsx(p, { moveSpace: t.moveSpace, onMouseOver3dScene: v }),
         }),
         s.jsxs("div", {
-          className: M,
+          className: z,
           children: [
             s.jsx("div", {
               ...o,
@@ -144,8 +144,8 @@ const Q = "PrebattleQueueApp_sceneWrapper_de517c82",
             e.isExitButtonAvailable.get() &&
               s.jsx("div", {
                 className: V,
-                children: s.jsx(m, {
-                  theme: m.themes.secondary,
+                children: s.jsx(d, {
+                  theme: d.themes.secondary,
                   size: a.value,
                   onClick: t.exitBattle,
                   children: R.strings.last_stand_lobby.preBattle.leave(),

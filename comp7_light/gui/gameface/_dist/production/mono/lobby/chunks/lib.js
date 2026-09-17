@@ -6053,276 +6053,6 @@ const VideoForwarded = reactExports.forwardRef(function (
     );
   }),
   Video = reactExports.memo(VideoForwarded),
-  DAYS_IN_WEEK = 7,
-  HOURS_IN_DAY = 24,
-  MS_IN_SECOND = 1e3,
-  ONE_MINUTE = 60,
-  ONE_HOUR = 60 * ONE_MINUTE,
-  ONE_DAY = HOURS_IN_DAY * ONE_HOUR,
-  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
-  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
-function getTimeUnits(e = 0) {
-  let t = e;
-  const s = Math.trunc(t / ONE_DAY);
-  t -= s * ONE_DAY;
-  const r = Math.trunc(t / ONE_HOUR);
-  t -= r * ONE_HOUR;
-  const a = Math.trunc(t / ONE_MINUTE);
-  return ((t -= a * ONE_MINUTE), { days: s, hours: r, minutes: a, seconds: t });
-}
-const getRoundedTimeUnitDescription = (e, t = !0) =>
-    e.days > DAYS_IN_WEEK && t
-      ? format(R.strings.common.duration.days(), { days: e.days })
-      : e.days >= 1
-        ? 0 === e.hours
-          ? format(R.strings.common.duration.days(), { days: e.days })
-          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
-        : e.hours >= 1
-          ? 0 === e.minutes
-            ? format(R.strings.common.duration.hours(), { hours: e.hours })
-            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
-          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
-  DateTime = ({
-    datetime: e,
-    format: t = DateTimeFormatsEnum.ShortDate,
-    isConvertedToLocal: s = !0,
-  }) =>
-    Object.values(DateTimeFormatsEnum).includes(t)
-      ? getRegionalDateTime(e, t, s)
-      : getFormattedDateTime(e, t, s),
-  DateTime$1 = reactExports.memo(DateTime),
-  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
-  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
-  white = "Formattextwithcolortags_white_e509d98",
-  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
-  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
-  par = "Formattextwithcolortags_par_485c5228",
-  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
-  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
-  red = "Formattextwithcolortags_red_9f8bd43",
-  redDark = "Formattextwithcolortags_redDark_5f4161da",
-  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
-  orange = "Formattextwithcolortags_orange_11869493",
-  cream = "Formattextwithcolortags_cream_12fdbea3",
-  brown = "Formattextwithcolortags_brown_e49e35ef",
-  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
-  green = "Formattextwithcolortags_green_55b7d967",
-  greenDark = "Formattextwithcolortags_greenDark_2b347344",
-  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
-  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
-  cred = "Formattextwithcolortags_cred_b30a4efa",
-  gold = "Formattextwithcolortags_gold_616e4d7",
-  bond = "Formattextwithcolortags_bond_b29091",
-  prom = "Formattextwithcolortags_prom_85aada4f",
-  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
-  fadeIn$m = "Formattextwithcolortags_fadeIn_7219dca0",
-  fadeInThreeQuarters$m = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
-  fadeInHalf$m = "Formattextwithcolortags_fadeInHalf_7219dca0",
-  fadeOut$m = "Formattextwithcolortags_fadeOut_7219dca0",
-  fadeInWithScale$m = "Formattextwithcolortags_fadeInWithScale_7219dca0",
-  slideUp$m = "Formattextwithcolortags_slideUp_7219dca0",
-  scale$m = "Formattextwithcolortags_scale_7219dca0",
-  raysAppearance$m = "Formattextwithcolortags_raysAppearance_7219dca0",
-  rotate$m = "Formattextwithcolortags_rotate_7219dca0",
-  glowAppearance$m = "Formattextwithcolortags_glowAppearance_7219dca0",
-  highlightAppearance$m = "Formattextwithcolortags_highlightAppearance_7219dca0",
-  blink$m = "Formattextwithcolortags_blink_7219dca0",
-  slideUpIn$m = "Formattextwithcolortags_slideUpIn_7219dca0",
-  styles$13 = {
-    blackReal: blackReal,
-    whiteReal: whiteReal,
-    white: white,
-    whiteOrange: whiteOrange,
-    whiteSpanish: whiteSpanish,
-    par: par,
-    parSecondary: parSecondary,
-    parTertiary: parTertiary,
-    red: red,
-    redDark: redDark,
-    yellow: yellow,
-    orange: orange,
-    cream: cream,
-    brown: brown,
-    greenBright: greenBright,
-    green: green,
-    greenDark: greenDark,
-    blueBooster: blueBooster,
-    blueTeamkiller: blueTeamkiller,
-    cred: cred,
-    gold: gold,
-    bond: bond,
-    prom: prom,
-    parNoWidth: parNoWidth,
-    fadeIn: fadeIn$m,
-    fadeInThreeQuarters: fadeInThreeQuarters$m,
-    fadeInHalf: fadeInHalf$m,
-    fadeOut: fadeOut$m,
-    fadeInWithScale: fadeInWithScale$m,
-    slideUp: slideUp$m,
-    scale: scale$m,
-    raysAppearance: raysAppearance$m,
-    rotate: rotate$m,
-    "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
-    glowAppearance: glowAppearance$m,
-    highlightAppearance: highlightAppearance$m,
-    blink: blink$m,
-    slideUpIn: slideUpIn$m,
-  },
-  TAGGED_PHRASE_REGEXP =
-    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-  COLOR_REGEXP = new RegExp("(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))"),
-  WORDS_REGEXP = new RegExp("(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))"),
-  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
-    const r = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
-      a = reactExports.useMemo(() => t || {}, [t]);
-    let n = TAGGED_PHRASE_REGEXP.exec(e),
-      o = e,
-      i = 0;
-    for (; n;) {
-      const s = n[0],
-        u = COLOR_REGEXP.exec(s),
-        l = WORDS_REGEXP.exec(s),
-        c = n[1];
-      if (u && l) {
-        const e = u[0],
-          n = e + i++ + e;
-        ((o = o.replace(s, `%(${n})`)),
-          (a[n] = styles$13[e]
-            ? jsxRuntimeExports.jsx("span", {
-                className: styles$13[e],
-                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
-              })
-            : jsxRuntimeExports.jsx("span", {
-                style: r(e),
-                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
-              })));
-      }
-      n = TAGGED_PHRASE_REGEXP.exec(e);
-    }
-    return jsxRuntimeExports.jsx(FormatText$1, { text: o, classMix: s, binding: a });
-  },
-  FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent),
-  defaultOnFinish = () => {},
-  useCountdown$1 = (e = 0, t, s = 0, r = defaultOnFinish) => {
-    const [a, n] = reactExports.useState(e);
-    return (
-      reactExports.useEffect(() => {
-        if (e > 0) {
-          n(e);
-          const a = Date.now(),
-            o = setInterval(
-              () => {
-                const t = e - Math.floor((Date.now() - a) / MS_IN_SECOND);
-                null !== s && t <= s ? (n(s), r && r(), clearInterval(o)) : n(t);
-              },
-              (t || (e > 2 * ONE_MINUTE ? ONE_MINUTE : 1)) * MS_IN_SECOND,
-            );
-          return () => {
-            clearInterval(o);
-          };
-        }
-      }, [e, t, s, r]),
-      a
-    );
-  },
-  createTimeoutInEffect = (e, t) => {
-    let s;
-    const r = setTimeout(() => {
-      s = e();
-    }, t);
-    return () => {
-      ("function" == typeof s && s(), clearTimeout(r));
-    };
-  };
-(DataTracker.instance, DataTracker.instance);
-const useCountdown = useCountdown$1,
-  useScaleState = () => {
-    const [e, t] = reactExports.useState(env.view.getScale());
-    return (
-      reactExports.useEffect(() => {
-        const e = () => {
-          t(env.view.getScale());
-        };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
-      }, []),
-      e
-    );
-  };
-var CountdownIcon = ((e) => (
-    (e.Timer = "timer"),
-    (e.Countdown = "countdown"),
-    (e.Cooldown = "cooldown"),
-    (e.None = "none"),
-    e
-  ))(CountdownIcon || {}),
-  CountdownStyle = ((e) => (
-    (e.Description = "description"),
-    (e.Short = "short"),
-    (e.Long = "long"),
-    (e.Extended = "extended"),
-    e
-  ))(CountdownStyle || {});
-const base$V = "Countdown_99fa8328",
-  icon$a = "Countdown_icon_b50ebafb",
-  description = "Countdown_description_91ad95d2",
-  styles$12 = { base: base$V, icon: icon$a, description: description },
-  formatUnit = (e) => e.toString().padStart(2, "0"),
-  formatTimeUnits = (e, t) => {
-    switch (t) {
-      case CountdownStyle.Description:
-        return getRoundedTimeUnitDescription(e);
-      case CountdownStyle.Short:
-        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Long:
-        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Extended:
-        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-    }
-  },
-  IMAGES = R.images.gui.maps.icons.components.countdown,
-  getIcon = (e, t) => {
-    const s = 2 === t ? IMAGES.big : IMAGES;
-    switch (e) {
-      case CountdownIcon.Timer:
-        return s.clock();
-      case CountdownIcon.Countdown:
-        return s.hourglass();
-      case CountdownIcon.Cooldown:
-        return s.lock();
-    }
-  },
-  Countdown = ({
-    duration: e,
-    icon: t = CountdownIcon.Timer,
-    style: s = CountdownStyle.Description,
-    onTimeReached: r,
-    refreshRate: a,
-    className: n = "",
-    classNames: o = {},
-  }) => {
-    const i = a ?? (s !== CountdownStyle.Description ? 1 : void 0),
-      u = useCountdown(e, i),
-      l = useScaleState();
-    r && r[u] && r[u]();
-    const c = formatTimeUnits(getTimeUnits(u), s);
-    return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$12.base, n),
-      children: [
-        t !== CountdownIcon.None &&
-          jsxRuntimeExports.jsx("div", {
-            className: cx(styles$12.icon, o.icon),
-            style: { backgroundImage: `url('${getIcon(t, l)}')` },
-          }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$12.description, o.text), children: c }),
-      ],
-    });
-  },
-  Countdown$1 = reactExports.memo(Countdown),
   UNKNOWN_NATION = "none",
   list = [
     "ussr",
@@ -6625,7 +6355,7 @@ const border$7 = "Popover_border_d0a76717",
   divider = "Popover_divider_46fe6f15",
   decoration$1 = "Popover_decoration_134219d5",
   close = "Popover_close_ad4a9c7b",
-  styles$11 = {
+  styles$13 = {
     border: border$7,
     title: title$1,
     subtitle: subtitle,
@@ -6659,7 +6389,7 @@ const border$7 = "Popover_border_d0a76717",
             n.play("mouse-enter", { target: "react-popover:close", original: e }));
         },
         ref: r,
-        className: clsx(styles$11.close, e),
+        className: clsx(styles$13.close, e),
         children: t ?? jsxRuntimeExports.jsx(Image$1, { path: o, width: 24, height: 24 }),
       })
     );
@@ -6829,24 +6559,24 @@ function updatePosition(e, t, s, r, a, n, o, i) {
     applyTransform(s, a.top - u, r, i, o);
   }
 }
-const base$U = "PopoverTip_163a336f",
+const base$V = "PopoverTip_163a336f",
   arrow$1 = "PopoverTip_arrow_44c7d6a5",
   glow$3 = "PopoverTip_glow_da3f9be9",
-  fadeIn$l = "PopoverTip_fadeIn_a48d88bb",
-  fadeInThreeQuarters$l = "PopoverTip_fadeInThreeQuarters_a48d88bb",
-  fadeInHalf$l = "PopoverTip_fadeInHalf_a48d88bb",
-  fadeOut$l = "PopoverTip_fadeOut_a48d88bb",
-  fadeInWithScale$l = "PopoverTip_fadeInWithScale_a48d88bb",
-  slideUp$l = "PopoverTip_slideUp_a48d88bb",
-  scale$l = "PopoverTip_scale_a48d88bb",
-  raysAppearance$l = "PopoverTip_raysAppearance_a48d88bb",
-  rotate$l = "PopoverTip_rotate_a48d88bb",
-  glowAppearance$l = "PopoverTip_glowAppearance_a48d88bb",
-  highlightAppearance$l = "PopoverTip_highlightAppearance_a48d88bb",
-  blink$l = "PopoverTip_blink_a48d88bb",
-  slideUpIn$l = "PopoverTip_slideUpIn_a48d88bb",
-  styles$10 = {
-    base: base$U,
+  fadeIn$m = "PopoverTip_fadeIn_a48d88bb",
+  fadeInThreeQuarters$m = "PopoverTip_fadeInThreeQuarters_a48d88bb",
+  fadeInHalf$m = "PopoverTip_fadeInHalf_a48d88bb",
+  fadeOut$m = "PopoverTip_fadeOut_a48d88bb",
+  fadeInWithScale$m = "PopoverTip_fadeInWithScale_a48d88bb",
+  slideUp$m = "PopoverTip_slideUp_a48d88bb",
+  scale$m = "PopoverTip_scale_a48d88bb",
+  raysAppearance$m = "PopoverTip_raysAppearance_a48d88bb",
+  rotate$m = "PopoverTip_rotate_a48d88bb",
+  glowAppearance$m = "PopoverTip_glowAppearance_a48d88bb",
+  highlightAppearance$m = "PopoverTip_highlightAppearance_a48d88bb",
+  blink$m = "PopoverTip_blink_a48d88bb",
+  slideUpIn$m = "PopoverTip_slideUpIn_a48d88bb",
+  styles$12 = {
+    base: base$V,
     "base__flip-left": "PopoverTip_base__flip-left_3cc0dadc",
     "base__flip-right": "PopoverTip_base__flip-right_6a5605b6",
     "base__flip-top": "PopoverTip_base__flip-top_6bcc69e1",
@@ -6857,20 +6587,20 @@ const base$U = "PopoverTip_163a336f",
     "arrow__position-left": "PopoverTip_arrow__position-left_ca4ced33",
     "arrow__position-right": "PopoverTip_arrow__position-right_9dc94f7a",
     glow: glow$3,
-    fadeIn: fadeIn$l,
-    fadeInThreeQuarters: fadeInThreeQuarters$l,
-    fadeInHalf: fadeInHalf$l,
-    fadeOut: fadeOut$l,
-    fadeInWithScale: fadeInWithScale$l,
-    slideUp: slideUp$l,
-    scale: scale$l,
-    raysAppearance: raysAppearance$l,
-    rotate: rotate$l,
+    fadeIn: fadeIn$m,
+    fadeInThreeQuarters: fadeInThreeQuarters$m,
+    fadeInHalf: fadeInHalf$m,
+    fadeOut: fadeOut$m,
+    fadeInWithScale: fadeInWithScale$m,
+    slideUp: slideUp$m,
+    scale: scale$m,
+    raysAppearance: raysAppearance$m,
+    rotate: rotate$m,
     "reverse-rotate": "PopoverTip_reverse-rotate_a48d88bb",
-    glowAppearance: glowAppearance$l,
-    highlightAppearance: highlightAppearance$l,
-    blink: blink$l,
-    slideUpIn: slideUpIn$l,
+    glowAppearance: glowAppearance$m,
+    highlightAppearance: highlightAppearance$m,
+    blink: blink$m,
+    slideUpIn: slideUpIn$m,
   },
   verticals = [positions.top, positions.bottom],
   horizontals = [positions.left, positions.right],
@@ -6920,15 +6650,15 @@ const base$U = "PopoverTip_163a336f",
           right: "right" === o ? "0" : "auto",
           ...e.style,
         },
-        className: clsx(styles$10.base, e.flipped && styles$10[`base__flipped-${o}`], e.className),
+        className: clsx(styles$12.base, e.flipped && styles$12[`base__flipped-${o}`], e.className),
         children: [
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$10.arrow, styles$10[`arrow__position-${o}`]),
+            className: clsx(styles$12.arrow, styles$12[`arrow__position-${o}`]),
             style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
           }),
           !1 === e.noGlow &&
             jsxRuntimeExports.jsx("div", {
-              className: styles$10.glow,
+              className: styles$12.glow,
               style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
             }),
         ],
@@ -6940,19 +6670,19 @@ function Trigger({ children: e }) {
   return e({ onClick: t.toggle, "data-popover-trigger-id": t.id }, t);
 }
 Tip.positions = positions;
-const Title = defineStyledComponent("Title", styles$11.title),
-  Subtitle = defineStyledComponent("Subtitle", styles$11.subtitle),
-  Header$1 = defineStyledComponent("Header", styles$11.header),
-  Divider = defineStyledComponent("Divider", styles$11.divider),
-  Body$1 = defineStyledComponent("Body", styles$11.body),
-  Decoration$1 = defineStyledComponent("Decoration", styles$11.decoration),
+const Title = defineStyledComponent("Title", styles$13.title),
+  Subtitle = defineStyledComponent("Subtitle", styles$13.subtitle),
+  Header$1 = defineStyledComponent("Header", styles$13.header),
+  Divider = defineStyledComponent("Divider", styles$13.divider),
+  Body$1 = defineStyledComponent("Body", styles$13.body),
+  Decoration$1 = defineStyledComponent("Decoration", styles$13.decoration),
   Display = reactExports.forwardRef((e, t) => {
     const s = usePopoverOptional();
     return jsxRuntimeExports.jsxs(Decoration$1, {
       ...e,
       ref: t,
       "data-popover-display-id": s?.id,
-      children: [jsxRuntimeExports.jsx("div", { className: styles$11.border }), e.children],
+      children: [jsxRuntimeExports.jsx("div", { className: styles$13.border }), e.children],
     });
   });
 function Popover(e) {
@@ -7035,8 +6765,8 @@ function mergeProps(e, t) {
 function getElementRef(e) {
   return e.props.ref || e.ref;
 }
-const base$T = "TruncateText_dcb41d92",
-  styles$$ = { base: base$T },
+const base$U = "TruncateText_dcb41d92",
+  styles$11 = { base: base$U },
   TruncatedText = reactExports.forwardRef(function (
     { text: e, tooltipParams: t, className: s, ...r },
     a,
@@ -7058,7 +6788,7 @@ const base$T = "TruncateText_dcb41d92",
       jsxRuntimeExports.jsx("div", {
         ...r,
         ref: assignRefs([a, o]),
-        className: clsx(styles$$.base, s),
+        className: clsx(styles$11.base, s),
         ...(i ? n : {}),
         children: e,
       })
@@ -7264,47 +6994,47 @@ const scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
   background$9 = "Thumb_background_7f3dd6ac",
   border$6 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
-  icon$9 = "Thumb_icon_dca8bf26",
-  base$S = "Thumb_6ff3e706",
+  icon$a = "Thumb_icon_dca8bf26",
+  base$T = "Thumb_6ff3e706",
   base__vertical$2 = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
   base__active$2 = "Thumb_base__active_830942bb",
-  fadeIn$k = "Thumb_fadeIn_830942bb",
-  fadeInThreeQuarters$k = "Thumb_fadeInThreeQuarters_830942bb",
-  fadeInHalf$k = "Thumb_fadeInHalf_830942bb",
-  fadeOut$k = "Thumb_fadeOut_830942bb",
-  fadeInWithScale$k = "Thumb_fadeInWithScale_830942bb",
-  slideUp$k = "Thumb_slideUp_830942bb",
-  scale$k = "Thumb_scale_830942bb",
-  raysAppearance$k = "Thumb_raysAppearance_830942bb",
-  rotate$k = "Thumb_rotate_830942bb",
-  glowAppearance$k = "Thumb_glowAppearance_830942bb",
-  highlightAppearance$k = "Thumb_highlightAppearance_830942bb",
-  blink$k = "Thumb_blink_830942bb",
-  slideUpIn$k = "Thumb_slideUpIn_830942bb",
-  styles$_ = {
+  fadeIn$l = "Thumb_fadeIn_830942bb",
+  fadeInThreeQuarters$l = "Thumb_fadeInThreeQuarters_830942bb",
+  fadeInHalf$l = "Thumb_fadeInHalf_830942bb",
+  fadeOut$l = "Thumb_fadeOut_830942bb",
+  fadeInWithScale$l = "Thumb_fadeInWithScale_830942bb",
+  slideUp$l = "Thumb_slideUp_830942bb",
+  scale$l = "Thumb_scale_830942bb",
+  raysAppearance$l = "Thumb_raysAppearance_830942bb",
+  rotate$l = "Thumb_rotate_830942bb",
+  glowAppearance$l = "Thumb_glowAppearance_830942bb",
+  highlightAppearance$l = "Thumb_highlightAppearance_830942bb",
+  blink$l = "Thumb_blink_830942bb",
+  slideUpIn$l = "Thumb_slideUpIn_830942bb",
+  styles$10 = {
     background: background$9,
     border: border$6,
     innerBorder: innerBorder,
-    icon: icon$9,
-    base: base$S,
+    icon: icon$a,
+    base: base$T,
     base__vertical: base__vertical$2,
     base__horizontal: base__horizontal,
     base__active: base__active$2,
-    fadeIn: fadeIn$k,
-    fadeInThreeQuarters: fadeInThreeQuarters$k,
-    fadeInHalf: fadeInHalf$k,
-    fadeOut: fadeOut$k,
-    fadeInWithScale: fadeInWithScale$k,
-    slideUp: slideUp$k,
-    scale: scale$k,
-    raysAppearance: raysAppearance$k,
-    rotate: rotate$k,
+    fadeIn: fadeIn$l,
+    fadeInThreeQuarters: fadeInThreeQuarters$l,
+    fadeInHalf: fadeInHalf$l,
+    fadeOut: fadeOut$l,
+    fadeInWithScale: fadeInWithScale$l,
+    slideUp: slideUp$l,
+    scale: scale$l,
+    raysAppearance: raysAppearance$l,
+    rotate: rotate$l,
     "reverse-rotate": "Thumb_reverse-rotate_830942bb",
-    glowAppearance: glowAppearance$k,
-    highlightAppearance: highlightAppearance$k,
-    blink: blink$k,
-    slideUpIn: slideUpIn$k,
+    glowAppearance: glowAppearance$l,
+    highlightAppearance: highlightAppearance$l,
+    blink: blink$l,
+    slideUpIn: slideUpIn$l,
   },
   BOUNCING_OFFSET = 2,
   MIN_THUMB_SIZE = 13,
@@ -7344,14 +7074,14 @@ function Thumb$1(e) {
       ? o.start({
           to: e.styles.opened,
           onRest() {
-            t.current?.classList.add(styles$_.base__active);
+            t.current?.classList.add(styles$10.base__active);
           },
         })
       : o.start({
           to: e.styles.closed,
           delay: 500,
           onRest() {
-            t.current?.classList.remove(styles$_.base__active);
+            t.current?.classList.remove(styles$10.base__active);
           },
         });
   }, [s, e.dragging, e.styles.closed, e.styles.opened, o]);
@@ -7408,15 +7138,15 @@ function Thumb$1(e) {
     }, [c, u, l]),
     jsxRuntimeExports.jsxs(animated.div, {
       ref: assignRefs([t, e.thumbRef]),
-      className: clsx(styles$_.base, styles$_[`base__${e.direction}`], e.className),
+      className: clsx(styles$10.base, styles$10[`base__${e.direction}`], e.className),
       style: n,
       onMouseEnter: () => r(!0),
       onMouseLeave: () => r(!1),
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$_.background }),
-        jsxRuntimeExports.jsx("div", { className: styles$_.border }),
-        jsxRuntimeExports.jsx("div", { className: styles$_.innerBorder }),
-        jsxRuntimeExports.jsx("div", { className: styles$_.icon }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.background }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.border }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.innerBorder }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.icon }),
       ],
     })
   );
@@ -7577,16 +7307,16 @@ function useBarHandlers(e, t, s, r, a, n, o) {
   );
 }
 const rail$1 = "HorizontalBar_rail_37858d8f",
-  base$R = "HorizontalBar_4df27ac3",
+  base$S = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
   button__right = "HorizontalBar_button__right_e8f0aa2d",
   button__left = "HorizontalBar_button__left_da330e13",
   button$3 = "HorizontalBar_button_cbabd91",
-  styles$Z = {
+  styles$$ = {
     rail: rail$1,
-    base: base$R,
+    base: base$S,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
@@ -7640,7 +7370,7 @@ const rail$1 = "HorizontalBar_rail_37858d8f",
         scrollOrientations.horizontal,
       );
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$Z.base, e.base),
+      className: clsx(styles$$.base, e.base),
       ref: s,
       onWheel: d.handleMouseWheel,
       onMouseDown: h,
@@ -7648,15 +7378,15 @@ const rail$1 = "HorizontalBar_rail_37858d8f",
       children: [
         jsxRuntimeExports.jsx("div", {
           ref: r,
-          className: clsx(styles$Z.button, styles$Z.button__left, e.leftButton),
+          className: clsx(styles$$.button, styles$$.button__left, e.leftButton),
         }),
         jsxRuntimeExports.jsxs("div", {
           ref: n,
-          className: clsx(styles$Z.track, e.track),
+          className: clsx(styles$$.track, e.track),
           children: [
             jsxRuntimeExports.jsx("div", {
               ref: i,
-              className: clsx(styles$Z.rail, styles$Z.rail__left, e.leftRail),
+              className: clsx(styles$$.rail, styles$$.rail__left, e.leftRail),
             }),
             jsxRuntimeExports.jsx(Thumb$1, {
               dragging: l,
@@ -7674,21 +7404,21 @@ const rail$1 = "HorizontalBar_rail_37858d8f",
             }),
             jsxRuntimeExports.jsx("div", {
               ref: u,
-              className: clsx(styles$Z.rail, styles$Z.rail__right, e.rightRail),
+              className: clsx(styles$$.rail, styles$$.rail__right, e.rightRail),
             }),
           ],
         }),
         jsxRuntimeExports.jsx("div", {
           ref: a,
-          className: clsx(styles$Z.button, styles$Z.button__right, e.rightButton),
+          className: clsx(styles$$.button, styles$$.button__right, e.rightButton),
         }),
       ],
     });
   }),
-  base$Q = "HorizontalScroll_5b201d2b",
+  base$R = "HorizontalScroll_5b201d2b",
   wrapper$3 = "HorizontalScroll_wrapper_2fb60496",
   defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
-  styles$Y = { base: base$Q, wrapper: wrapper$3, defaultScrollArea: defaultScrollArea },
+  styles$_ = { base: base$R, wrapper: wrapper$3, defaultScrollArea: defaultScrollArea },
   DefaultScroll$1 = ({
     children: e,
     className: t,
@@ -7701,14 +7431,14 @@ const rail$1 = "HorizontalBar_rail_37858d8f",
     const { api: i } = useHorizontalScroll(),
       u = reactExports.useMemo(() => {
         const e = s || {};
-        return { ...e, base: clsx(styles$Y.base, e.base) };
+        return { ...e, base: clsx(styles$_.base, e.base) };
       }, [s]);
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$Y.defaultScroll, t),
+      className: clsx(styles$_.defaultScroll, t),
       onWheel: i.handleMouseWheel,
       children: [
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$Y.defaultScrollArea, r),
+          className: clsx(styles$_.defaultScrollArea, r),
           children: jsxRuntimeExports.jsx(Area$1, { className: n, classNames: a, children: e }),
         }),
         jsxRuntimeExports.jsx(Bar$1, { onDrag: o, classNames: u }),
@@ -7718,13 +7448,13 @@ const rail$1 = "HorizontalBar_rail_37858d8f",
 function Area$1({ className: e, classNames: t, children: s }) {
   const { api: r } = useHorizontalScroll();
   return jsxRuntimeExports.jsx("div", {
-    className: clsx(styles$Y.base, e),
+    className: clsx(styles$_.base, e),
     children: jsxRuntimeExports.jsx("div", {
-      className: clsx(styles$Y.wrapper, t?.wrapper),
+      className: clsx(styles$_.wrapper, t?.wrapper),
       onWheel: r.handleMouseWheel,
       ref: r.wrapperRef,
       children: jsxRuntimeExports.jsx("div", {
-        className: clsx(styles$Y.content, t?.content),
+        className: clsx(styles$_.content, t?.content),
         ref: r.contentRef,
         children: s,
       }),
@@ -7886,16 +7616,16 @@ const DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$P = "VerticalBar_7187fa00",
+  base$Q = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
   button__bottom = "VerticalBar_button__bottom_6880f123",
   button__top = "VerticalBar_button__top_b8383775",
   button$2 = "VerticalBar_button_7b0e4aca",
-  styles$X = {
+  styles$Z = {
     rail: rail,
-    base: base$P,
+    base: base$Q,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
@@ -7949,7 +7679,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
         scrollOrientations.vertical,
       );
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$X.base, e.base),
+      className: clsx(styles$Z.base, e.base),
       ref: s,
       onWheel: d.handleMouseWheel,
       onMouseDown: h,
@@ -7957,15 +7687,15 @@ const DEFAULT_VERTICAL_API_CONFIG = {
       children: [
         jsxRuntimeExports.jsx("div", {
           ref: r,
-          className: clsx(styles$X.button, styles$X.button__top, e.topButton),
+          className: clsx(styles$Z.button, styles$Z.button__top, e.topButton),
         }),
         jsxRuntimeExports.jsxs("div", {
           ref: n,
-          className: clsx(styles$X.track, e.track),
+          className: clsx(styles$Z.track, e.track),
           children: [
             jsxRuntimeExports.jsx("div", {
               ref: i,
-              className: clsx(styles$X.rail, styles$X.rail__top, e.topRail),
+              className: clsx(styles$Z.rail, styles$Z.rail__top, e.topRail),
             }),
             jsxRuntimeExports.jsx(Thumb$1, {
               dragging: l,
@@ -7983,13 +7713,13 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             }),
             jsxRuntimeExports.jsx("div", {
               ref: u,
-              className: clsx(styles$X.rail, styles$X.rail__bottom, e.bottomRail),
+              className: clsx(styles$Z.rail, styles$Z.rail__bottom, e.bottomRail),
             }),
           ],
         }),
         jsxRuntimeExports.jsx("div", {
           ref: a,
-          className: clsx(styles$X.button, styles$X.button__bottom, e.bottomButton),
+          className: clsx(styles$Z.button, styles$Z.button__bottom, e.bottomButton),
         }),
       ],
     });
@@ -8010,20 +7740,20 @@ const DEFAULT_VERTICAL_API_CONFIG = {
   defaultScroll = "VerticalScroll_defaultScroll_c69fa70e",
   bar = "VerticalScroll_bar_c5afe570",
   area = "VerticalScroll_area_a3c0086a",
-  fadeIn$j = "VerticalScroll_fadeIn_29606297",
-  fadeInThreeQuarters$j = "VerticalScroll_fadeInThreeQuarters_29606297",
-  fadeInHalf$j = "VerticalScroll_fadeInHalf_29606297",
-  fadeOut$j = "VerticalScroll_fadeOut_29606297",
-  fadeInWithScale$j = "VerticalScroll_fadeInWithScale_29606297",
-  slideUp$j = "VerticalScroll_slideUp_29606297",
-  scale$j = "VerticalScroll_scale_29606297",
-  raysAppearance$j = "VerticalScroll_raysAppearance_29606297",
-  rotate$j = "VerticalScroll_rotate_29606297",
-  glowAppearance$j = "VerticalScroll_glowAppearance_29606297",
-  highlightAppearance$j = "VerticalScroll_highlightAppearance_29606297",
-  blink$j = "VerticalScroll_blink_29606297",
-  slideUpIn$j = "VerticalScroll_slideUpIn_29606297",
-  styles$W = {
+  fadeIn$k = "VerticalScroll_fadeIn_29606297",
+  fadeInThreeQuarters$k = "VerticalScroll_fadeInThreeQuarters_29606297",
+  fadeInHalf$k = "VerticalScroll_fadeInHalf_29606297",
+  fadeOut$k = "VerticalScroll_fadeOut_29606297",
+  fadeInWithScale$k = "VerticalScroll_fadeInWithScale_29606297",
+  slideUp$k = "VerticalScroll_slideUp_29606297",
+  scale$k = "VerticalScroll_scale_29606297",
+  raysAppearance$k = "VerticalScroll_raysAppearance_29606297",
+  rotate$k = "VerticalScroll_rotate_29606297",
+  glowAppearance$k = "VerticalScroll_glowAppearance_29606297",
+  highlightAppearance$k = "VerticalScroll_highlightAppearance_29606297",
+  blink$k = "VerticalScroll_blink_29606297",
+  slideUpIn$k = "VerticalScroll_slideUpIn_29606297",
+  styles$Y = {
     content: content$c,
     content__top: content__top,
     content__bottom: content__bottom,
@@ -8031,20 +7761,20 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     defaultScroll: defaultScroll,
     bar: bar,
     area: area,
-    fadeIn: fadeIn$j,
-    fadeInThreeQuarters: fadeInThreeQuarters$j,
-    fadeInHalf: fadeInHalf$j,
-    fadeOut: fadeOut$j,
-    fadeInWithScale: fadeInWithScale$j,
-    slideUp: slideUp$j,
-    scale: scale$j,
-    raysAppearance: raysAppearance$j,
-    rotate: rotate$j,
+    fadeIn: fadeIn$k,
+    fadeInThreeQuarters: fadeInThreeQuarters$k,
+    fadeInHalf: fadeInHalf$k,
+    fadeOut: fadeOut$k,
+    fadeInWithScale: fadeInWithScale$k,
+    slideUp: slideUp$k,
+    scale: scale$k,
+    raysAppearance: raysAppearance$k,
+    rotate: rotate$k,
     "reverse-rotate": "VerticalScroll_reverse-rotate_29606297",
-    glowAppearance: glowAppearance$j,
-    highlightAppearance: highlightAppearance$j,
-    blink: blink$j,
-    slideUpIn: slideUpIn$j,
+    glowAppearance: glowAppearance$k,
+    highlightAppearance: highlightAppearance$k,
+    blink: blink$k,
+    slideUpIn: slideUpIn$k,
   },
   DefaultScroll = ({
     children: e,
@@ -8058,14 +7788,14 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     const { api: i } = useVerticalScroll(),
       u = reactExports.useMemo(() => {
         const e = s || {};
-        return { ...e, base: clsx(styles$W.base, e.base) };
+        return { ...e, base: clsx(styles$Y.base, e.base) };
       }, [s]);
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$W.defaultScroll, t),
+      className: clsx(styles$Y.defaultScroll, t),
       onWheel: i.handleMouseWheel,
       children: [
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$W.area, r),
+          className: clsx(styles$Y.area, r),
           children: jsxRuntimeExports.jsx(Area, { className: a, classNames: n, children: e }),
         }),
         jsxRuntimeExports.jsx(Bar, { onDrag: o, classNames: u }),
@@ -8079,12 +7809,12 @@ const DEFAULT_VERTICAL_API_CONFIG = {
         createLayoutReadyInEffect$1(() => createLayoutReadyInEffect$1(a.recalculateContent)),
       ),
       jsxRuntimeExports.jsx("div", {
-        className: clsx(styles$W.base, t?.wrapper, e),
+        className: clsx(styles$Y.base, t?.wrapper, e),
         ref: a.wrapperRef,
         onWheel: a.handleMouseWheel,
         children: jsxRuntimeExports.jsx("div", {
           ...r,
-          className: clsx(styles$W.content, t?.content),
+          className: clsx(styles$Y.content, t?.content),
           ref: a.contentRef,
           children: s,
         }),
@@ -8096,7 +7826,7 @@ function MaskArea({ classNames: e, ...t }) {
     [r, a] = useScrollBounding(s);
   return jsxRuntimeExports.jsx(Area, {
     ...t,
-    classNames: { ...e, content: clsx(styles$W[`content__${getMaskDirection(r, a)}`], e?.content) },
+    classNames: { ...e, content: clsx(styles$Y[`content__${getMaskDirection(r, a)}`], e?.content) },
   });
 }
 function Base$s({ children: e }) {
@@ -8273,7 +8003,7 @@ function useInputInstance({ value: e, size: t, type: s, state: r, disabled: a })
   );
 }
 const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
-  icon$8 = "Input_icon_ed3c6a4a",
+  icon$9 = "Input_icon_ed3c6a4a",
   clearButton = "Input_clearButton_d26b0bd5",
   decoration = "Input_decoration_b561de7a",
   decoration__focused = "Input_decoration__focused_494bd5d6",
@@ -8306,22 +8036,22 @@ const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
   clearButton__largeSize = "Input_clearButton__largeSize_240e111e",
   clearButton__visible = "Input_clearButton__visible_8d3756eb",
   clearButton__upscale = "Input_clearButton__upscale_494bd5d6",
-  fadeIn$i = "Input_fadeIn_494bd5d6",
-  fadeInThreeQuarters$i = "Input_fadeInThreeQuarters_494bd5d6",
-  fadeInHalf$i = "Input_fadeInHalf_494bd5d6",
-  fadeOut$i = "Input_fadeOut_494bd5d6",
-  fadeInWithScale$i = "Input_fadeInWithScale_494bd5d6",
-  slideUp$i = "Input_slideUp_494bd5d6",
-  scale$i = "Input_scale_494bd5d6",
-  raysAppearance$i = "Input_raysAppearance_494bd5d6",
-  rotate$i = "Input_rotate_494bd5d6",
-  glowAppearance$i = "Input_glowAppearance_494bd5d6",
-  highlightAppearance$i = "Input_highlightAppearance_494bd5d6",
-  blink$i = "Input_blink_494bd5d6",
-  slideUpIn$i = "Input_slideUpIn_494bd5d6",
-  styles$V = {
+  fadeIn$j = "Input_fadeIn_494bd5d6",
+  fadeInThreeQuarters$j = "Input_fadeInThreeQuarters_494bd5d6",
+  fadeInHalf$j = "Input_fadeInHalf_494bd5d6",
+  fadeOut$j = "Input_fadeOut_494bd5d6",
+  fadeInWithScale$j = "Input_fadeInWithScale_494bd5d6",
+  slideUp$j = "Input_slideUp_494bd5d6",
+  scale$j = "Input_scale_494bd5d6",
+  raysAppearance$j = "Input_raysAppearance_494bd5d6",
+  rotate$j = "Input_rotate_494bd5d6",
+  glowAppearance$j = "Input_glowAppearance_494bd5d6",
+  highlightAppearance$j = "Input_highlightAppearance_494bd5d6",
+  blink$j = "Input_blink_494bd5d6",
+  slideUpIn$j = "Input_slideUpIn_494bd5d6",
+  styles$X = {
     disabledOverlay: disabledOverlay$2,
-    icon: icon$8,
+    icon: icon$9,
     clearButton: clearButton,
     decoration: decoration,
     decoration__focused: decoration__focused,
@@ -8354,34 +8084,34 @@ const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
     clearButton__largeSize: clearButton__largeSize,
     clearButton__visible: clearButton__visible,
     clearButton__upscale: clearButton__upscale,
-    fadeIn: fadeIn$i,
-    fadeInThreeQuarters: fadeInThreeQuarters$i,
-    fadeInHalf: fadeInHalf$i,
-    fadeOut: fadeOut$i,
-    fadeInWithScale: fadeInWithScale$i,
-    slideUp: slideUp$i,
-    scale: scale$i,
-    raysAppearance: raysAppearance$i,
-    rotate: rotate$i,
+    fadeIn: fadeIn$j,
+    fadeInThreeQuarters: fadeInThreeQuarters$j,
+    fadeInHalf: fadeInHalf$j,
+    fadeOut: fadeOut$j,
+    fadeInWithScale: fadeInWithScale$j,
+    slideUp: slideUp$j,
+    scale: scale$j,
+    raysAppearance: raysAppearance$j,
+    rotate: rotate$j,
     "reverse-rotate": "Input_reverse-rotate_494bd5d6",
-    glowAppearance: glowAppearance$i,
-    highlightAppearance: highlightAppearance$i,
-    blink: blink$i,
-    slideUpIn: slideUpIn$i,
+    glowAppearance: glowAppearance$j,
+    highlightAppearance: highlightAppearance$j,
+    blink: blink$j,
+    slideUpIn: slideUpIn$j,
   },
   soundPlayEventTarget$1 = "Input:ClearButton",
   ClearButton = reactExports.forwardRef(function ({ className: e, children: t, ...s }, r) {
     const a = useSounds(),
       { value: n, clear: o, size: i, disabled: u, focus: l } = useInput(),
-      c = useUpscale(void 0, styles$V.clearButton__upscale);
+      c = useUpscale(void 0, styles$X.clearButton__upscale);
     return jsxRuntimeExports.jsx("button", {
       ...s,
       type: "button",
       ref: r,
       className: clsx(
-        styles$V.clearButton,
-        n && !u && styles$V.clearButton__visible,
-        styles$V[`clearButton__${i}Size`],
+        styles$X.clearButton,
+        n && !u && styles$X.clearButton__visible,
+        styles$X[`clearButton__${i}Size`],
         c,
         e,
       ),
@@ -8407,10 +8137,10 @@ const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
       ...s,
       ref: r,
       className: clsx(
-        styles$V.decoration,
-        styles$V[`decoration__${n}State`],
-        o && styles$V.decoration__disabled,
-        i && styles$V.decoration__focused,
+        styles$X.decoration,
+        styles$X[`decoration__${n}State`],
+        o && styles$X.decoration__disabled,
+        i && styles$X.decoration__focused,
         e,
       ),
       onMouseEnter: function (e) {
@@ -8419,7 +8149,7 @@ const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
       onClick: function (e) {
         (a.play("click", { target: soundPlayEventTarget, original: e }), u(), s.onClick?.(e));
       },
-      children: [jsxRuntimeExports.jsx("div", { className: styles$V.disabledOverlay }), t],
+      children: [jsxRuntimeExports.jsx("div", { className: styles$X.disabledOverlay }), t],
     });
   }),
   allowSeparators = new Set([",", "."]);
@@ -8456,9 +8186,9 @@ const Placeholder = reactExports.forwardRef(function (
         ...r,
         ref: a,
         className: clsx(
-          styles$V.placeholder,
-          u && styles$V.placeholder__disabled,
-          styles$V[`placeholder__${i}Size`],
+          styles$X.placeholder,
+          u && styles$X.placeholder__disabled,
+          styles$X[`placeholder__${i}Size`],
           t,
         ),
         children: s,
@@ -8494,7 +8224,7 @@ const Placeholder = reactExports.forwardRef(function (
       setFocused: m,
     } = useInput();
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$V.fieldWrapper, t?.wrapper),
+      className: clsx(styles$X.fieldWrapper, t?.wrapper),
       ref: s,
       children: [
         jsxRuntimeExports.jsx("input", {
@@ -8505,10 +8235,10 @@ const Placeholder = reactExports.forwardRef(function (
           disabled: c,
           type: typeToHtmlType[u] ?? u,
           className: clsx(
-            styles$V.field,
-            styles$V[`field__${d}Size`],
-            _ && styles$V.field__focused,
-            c && styles$V.field__disabled,
+            styles$X.field,
+            styles$X[`field__${d}Size`],
+            _ && styles$X.field__focused,
+            c && styles$X.field__disabled,
             e,
           ),
           onChange: function (e) {
@@ -8543,15 +8273,15 @@ const Placeholder = reactExports.forwardRef(function (
   iconsSet = new Set(Object.values(icons)),
   Icon = reactExports.forwardRef(function ({ className: e, icon: t, children: s, ...r }, a) {
     const { size: n, focused: o } = useInput(),
-      i = useUpscale(void 0, styles$V.icon__upscale);
+      i = useUpscale(void 0, styles$X.icon__upscale);
     return jsxRuntimeExports.jsx("div", {
       ...r,
       ref: a,
       className: clsx(
-        styles$V.icon,
-        styles$V[`icon__${n}Size`],
-        o && styles$V.icon__focused,
-        t && iconsSet.has(t) && styles$V[`icon__${t}Icon`],
+        styles$X.icon,
+        styles$X[`icon__${n}Size`],
+        o && styles$X.icon__focused,
+        t && iconsSet.has(t) && styles$X[`icon__${t}Icon`],
         i,
         e,
       ),
@@ -8568,10 +8298,10 @@ const Placeholder = reactExports.forwardRef(function (
       ...a,
       ref: n,
       className: clsx(
-        styles$V.message,
-        s && styles$V.message__visible,
-        styles$V[`message__${t}Type`],
-        styles$V[`message__${o}Size`],
+        styles$X.message,
+        s && styles$X.message__visible,
+        styles$X[`message__${t}Type`],
+        styles$X[`message__${o}Size`],
         e,
       ),
       children: r,
@@ -8612,7 +8342,7 @@ const Input = reactExports.forwardRef(function (
   (Input.ClearButton = ClearButton));
 const toggleThemes = { primary: "primary", custom: "custom" },
   toggleSizes = { extraSmall: "extraSmall", small: "small", medium: "medium" },
-  base$O = "Toggle_cdf77db0",
+  base$P = "Toggle_cdf77db0",
   base__fullSizeContent = "Toggle_base__fullSizeContent_1b52d9ec",
   base__activated = "Toggle_base__activated_d584e080",
   base__disabled$6 = "Toggle_base__disabled_b564a69b",
@@ -8621,8 +8351,8 @@ const toggleThemes = { primary: "primary", custom: "custom" },
   bulb = "Toggle_bulb_fe6d0fba",
   overlay$3 = "Toggle_overlay_e2999686",
   content$b = "Toggle_content_17eff4d2",
-  styles$U = {
-    base: base$O,
+  styles$W = {
+    base: base$P,
     "base__size-small": "Toggle_base__size-small_b76142a1",
     "base__size-medium": "Toggle_base__size-medium_a0d408f5",
     base__fullSizeContent: base__fullSizeContent,
@@ -8635,19 +8365,19 @@ const toggleThemes = { primary: "primary", custom: "custom" },
     overlay: overlay$3,
     content: content$b,
   },
-  Base$r = defineStyledComponent("Toggle", styles$U.base, {
+  Base$r = defineStyledComponent("Toggle", styles$W.base, {
     variants: {
       theme: {
-        [toggleThemes.primary]: styles$U["base__theme-primary"],
+        [toggleThemes.primary]: styles$W["base__theme-primary"],
         [toggleThemes.custom]: void 0,
       },
       size: {
-        [toggleSizes.extraSmall]: styles$U["base__size-extraSmall"],
-        [toggleSizes.small]: styles$U["base__size-small"],
-        [toggleSizes.medium]: styles$U["base__size-medium"],
+        [toggleSizes.extraSmall]: styles$W["base__size-extraSmall"],
+        [toggleSizes.small]: styles$W["base__size-small"],
+        [toggleSizes.medium]: styles$W["base__size-medium"],
       },
-      activated: { true: styles$U.base__activated },
-      disabled: { true: styles$U.base__disabled },
+      activated: { true: styles$W.base__activated },
+      disabled: { true: styles$W.base__disabled },
     },
     defaultVariants: { theme: toggleThemes.primary, size: toggleSizes.extraSmall },
   }),
@@ -8682,22 +8412,22 @@ const toggleThemes = { primary: "primary", custom: "custom" },
       ref: i,
       size: t,
       theme: s,
-      className: clsx(n, r && styles$U.base__fullSizeContent, a?.base),
+      className: clsx(n, r && styles$W.base__fullSizeContent, a?.base),
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$U.border, a?.border) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$U.background, a?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$U.bulb, a?.bulb) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$U.overlay, a?.overlay) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$W.border, a?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$W.background, a?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$W.bulb, a?.bulb) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$W.overlay, a?.overlay) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$U.content, a?.content),
+          className: clsx(styles$W.content, a?.content),
           children: e,
         }),
       ],
     });
   });
 ((Toggle.themes = toggleThemes), (Toggle.sizes = toggleSizes));
-const base$N = "VehicleLevel_3c938122",
-  styles$T = { base: base$N },
+const base$O = "VehicleLevel_3c938122",
+  styles$V = { base: base$O },
   numberTypes = { arabic: "arabic", roman: "roman" };
 function getLevelType(e, t) {
   return e || (t ? numberTypes.arabic : numberTypes.roman);
@@ -8707,7 +8437,7 @@ const VehicleLevel = reactExports.forwardRef(function ({ value: e, numberType: t
   return jsxRuntimeExports.jsx("div", {
     ...s,
     "data-name": "VehicleLevel",
-    className: clsx(styles$T.base, s.className),
+    className: clsx(styles$V.base, s.className),
     ref: r,
     children: a,
   });
@@ -9187,46 +8917,46 @@ const SvgAssaultX16X16 = (e) =>
     [`${roles$1.universal}_x48x48`]: SvgUniversalX48X48,
     [`${roles$1.scout}_x48x48`]: SvgScoutX48X48,
   },
-  base$M = "VehicleRole_e70537d3",
+  base$N = "VehicleRole_e70537d3",
   base__x16x16 = "VehicleRole_base__x16x16_f444f190",
   base__x24x24$1 = "VehicleRole_base__x24x24_cc02d077",
   base__x32x32 = "VehicleRole_base__x32x32_2180a099",
   base__x48x48$1 = "VehicleRole_base__x48x48_2a01e86c",
-  icon$7 = "VehicleRole_icon_7f7f6256",
-  fadeIn$h = "VehicleRole_fadeIn_741b56a9",
-  fadeInThreeQuarters$h = "VehicleRole_fadeInThreeQuarters_741b56a9",
-  fadeInHalf$h = "VehicleRole_fadeInHalf_741b56a9",
-  fadeOut$h = "VehicleRole_fadeOut_741b56a9",
-  fadeInWithScale$h = "VehicleRole_fadeInWithScale_741b56a9",
-  slideUp$h = "VehicleRole_slideUp_741b56a9",
-  scale$h = "VehicleRole_scale_741b56a9",
-  raysAppearance$h = "VehicleRole_raysAppearance_741b56a9",
-  rotate$h = "VehicleRole_rotate_741b56a9",
-  glowAppearance$h = "VehicleRole_glowAppearance_741b56a9",
-  highlightAppearance$h = "VehicleRole_highlightAppearance_741b56a9",
-  blink$h = "VehicleRole_blink_741b56a9",
-  slideUpIn$h = "VehicleRole_slideUpIn_741b56a9",
-  styles$S = {
-    base: base$M,
+  icon$8 = "VehicleRole_icon_7f7f6256",
+  fadeIn$i = "VehicleRole_fadeIn_741b56a9",
+  fadeInThreeQuarters$i = "VehicleRole_fadeInThreeQuarters_741b56a9",
+  fadeInHalf$i = "VehicleRole_fadeInHalf_741b56a9",
+  fadeOut$i = "VehicleRole_fadeOut_741b56a9",
+  fadeInWithScale$i = "VehicleRole_fadeInWithScale_741b56a9",
+  slideUp$i = "VehicleRole_slideUp_741b56a9",
+  scale$i = "VehicleRole_scale_741b56a9",
+  raysAppearance$i = "VehicleRole_raysAppearance_741b56a9",
+  rotate$i = "VehicleRole_rotate_741b56a9",
+  glowAppearance$i = "VehicleRole_glowAppearance_741b56a9",
+  highlightAppearance$i = "VehicleRole_highlightAppearance_741b56a9",
+  blink$i = "VehicleRole_blink_741b56a9",
+  slideUpIn$i = "VehicleRole_slideUpIn_741b56a9",
+  styles$U = {
+    base: base$N,
     base__x16x16: base__x16x16,
     base__x24x24: base__x24x24$1,
     base__x32x32: base__x32x32,
     base__x48x48: base__x48x48$1,
-    icon: icon$7,
-    fadeIn: fadeIn$h,
-    fadeInThreeQuarters: fadeInThreeQuarters$h,
-    fadeInHalf: fadeInHalf$h,
-    fadeOut: fadeOut$h,
-    fadeInWithScale: fadeInWithScale$h,
-    slideUp: slideUp$h,
-    scale: scale$h,
-    raysAppearance: raysAppearance$h,
-    rotate: rotate$h,
+    icon: icon$8,
+    fadeIn: fadeIn$i,
+    fadeInThreeQuarters: fadeInThreeQuarters$i,
+    fadeInHalf: fadeInHalf$i,
+    fadeOut: fadeOut$i,
+    fadeInWithScale: fadeInWithScale$i,
+    slideUp: slideUp$i,
+    scale: scale$i,
+    raysAppearance: raysAppearance$i,
+    rotate: rotate$i,
     "reverse-rotate": "VehicleRole_reverse-rotate_741b56a9",
-    glowAppearance: glowAppearance$h,
-    highlightAppearance: highlightAppearance$h,
-    blink: blink$h,
-    slideUpIn: slideUpIn$h,
+    glowAppearance: glowAppearance$i,
+    highlightAppearance: highlightAppearance$i,
+    blink: blink$i,
+    slideUpIn: slideUpIn$i,
   },
   sizes$f = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
   VehicleRole = reactExports.forwardRef(function (
@@ -9238,8 +8968,8 @@ const SvgAssaultX16X16 = (e) =>
       return jsxRuntimeExports.jsx("div", {
         ...r,
         ref: a,
-        className: clsx(styles$S.base, styles$S[`base__${t}`], s?.base),
-        children: jsxRuntimeExports.jsx(n, { className: clsx(styles$S.icon, s?.icon) }),
+        className: clsx(styles$U.base, styles$U[`base__${t}`], s?.base),
+        children: jsxRuntimeExports.jsx(n, { className: clsx(styles$U.icon, s?.icon) }),
       });
     console.error(`Unknown vehicle role type ${e} with size ${t}`);
   });
@@ -9253,7 +8983,7 @@ const sizes$e = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: 
     [types$3.SPG]: "spg",
     [types$3["AT-SPG"]]: "tank_destroyer",
   },
-  base$L = "VehicleType_30b4aab0",
+  base$M = "VehicleType_30b4aab0",
   base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
   base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
   base__x64x64 = "VehicleType_base__x64x64_bb9b890",
@@ -9262,22 +8992,22 @@ const sizes$e = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: 
   base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
   base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
   base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
-  icon$6 = "VehicleType_icon_b15d2628",
-  fadeIn$g = "VehicleType_fadeIn_4e0d61e4",
-  fadeInThreeQuarters$g = "VehicleType_fadeInThreeQuarters_4e0d61e4",
-  fadeInHalf$g = "VehicleType_fadeInHalf_4e0d61e4",
-  fadeOut$g = "VehicleType_fadeOut_4e0d61e4",
-  fadeInWithScale$g = "VehicleType_fadeInWithScale_4e0d61e4",
-  slideUp$g = "VehicleType_slideUp_4e0d61e4",
-  scale$g = "VehicleType_scale_4e0d61e4",
-  raysAppearance$g = "VehicleType_raysAppearance_4e0d61e4",
-  rotate$g = "VehicleType_rotate_4e0d61e4",
-  glowAppearance$g = "VehicleType_glowAppearance_4e0d61e4",
-  highlightAppearance$g = "VehicleType_highlightAppearance_4e0d61e4",
-  blink$g = "VehicleType_blink_4e0d61e4",
-  slideUpIn$g = "VehicleType_slideUpIn_4e0d61e4",
-  styles$R = {
-    base: base$L,
+  icon$7 = "VehicleType_icon_b15d2628",
+  fadeIn$h = "VehicleType_fadeIn_4e0d61e4",
+  fadeInThreeQuarters$h = "VehicleType_fadeInThreeQuarters_4e0d61e4",
+  fadeInHalf$h = "VehicleType_fadeInHalf_4e0d61e4",
+  fadeOut$h = "VehicleType_fadeOut_4e0d61e4",
+  fadeInWithScale$h = "VehicleType_fadeInWithScale_4e0d61e4",
+  slideUp$h = "VehicleType_slideUp_4e0d61e4",
+  scale$h = "VehicleType_scale_4e0d61e4",
+  raysAppearance$h = "VehicleType_raysAppearance_4e0d61e4",
+  rotate$h = "VehicleType_rotate_4e0d61e4",
+  glowAppearance$h = "VehicleType_glowAppearance_4e0d61e4",
+  highlightAppearance$h = "VehicleType_highlightAppearance_4e0d61e4",
+  blink$h = "VehicleType_blink_4e0d61e4",
+  slideUpIn$h = "VehicleType_slideUpIn_4e0d61e4",
+  styles$T = {
+    base: base$M,
     base__x24x24: base__x24x24,
     base__x48x48: base__x48x48,
     base__x64x64: base__x64x64,
@@ -9286,21 +9016,21 @@ const sizes$e = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: 
     base__premium__x48x48: base__premium__x48x48,
     base__premium__x64x64: base__premium__x64x64,
     base__premium__x96x96: base__premium__x96x96,
-    icon: icon$6,
-    fadeIn: fadeIn$g,
-    fadeInThreeQuarters: fadeInThreeQuarters$g,
-    fadeInHalf: fadeInHalf$g,
-    fadeOut: fadeOut$g,
-    fadeInWithScale: fadeInWithScale$g,
-    slideUp: slideUp$g,
-    scale: scale$g,
-    raysAppearance: raysAppearance$g,
-    rotate: rotate$g,
+    icon: icon$7,
+    fadeIn: fadeIn$h,
+    fadeInThreeQuarters: fadeInThreeQuarters$h,
+    fadeInHalf: fadeInHalf$h,
+    fadeOut: fadeOut$h,
+    fadeInWithScale: fadeInWithScale$h,
+    slideUp: slideUp$h,
+    scale: scale$h,
+    raysAppearance: raysAppearance$h,
+    rotate: rotate$h,
     "reverse-rotate": "VehicleType_reverse-rotate_4e0d61e4",
-    glowAppearance: glowAppearance$g,
-    highlightAppearance: highlightAppearance$g,
-    blink: blink$g,
-    slideUpIn: slideUpIn$g,
+    glowAppearance: glowAppearance$h,
+    highlightAppearance: highlightAppearance$h,
+    blink: blink$h,
+    slideUpIn: slideUpIn$h,
   },
   VehicleType = reactExports.forwardRef(function (
     { type: e, size: t = sizes$e.x48x48, premium: s = !1, fit: r = "contain", ...a },
@@ -9312,8 +9042,8 @@ const sizes$e = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: 
       ref: n,
       fit: r,
       className: clsx(
-        styles$R.base,
-        s ? styles$R[`base__premium__${t}`] : styles$R[`base__${t}`],
+        styles$T.base,
+        s ? styles$T[`base__premium__${t}`] : styles$T[`base__${t}`],
         a.className,
       ),
       path: `ui_kit.vehicle_type.${o}.${s ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${o}`,
@@ -9347,8 +9077,8 @@ function createOptionalDLProvider(e, t) {
   };
 }
 ((VehicleType.types = types$3), (VehicleType.sizes = sizes$e));
-const base$K = "AnimatedDetails_c70d3863",
-  styles$Q = { base: base$K },
+const base$L = "AnimatedDetails_c70d3863",
+  styles$S = { base: base$L },
   AnimatedDetails = reactExports.forwardRef(function (
     { opened: e, children: t, className: s, animationSettings: r = {}, ...a },
     n,
@@ -9386,7 +9116,7 @@ const base$K = "AnimatedDetails_c70d3863",
       jsxRuntimeExports.jsx(animated.div, {
         ...a,
         ref: assignRefs([n, o]),
-        className: clsx(styles$Q.base, s),
+        className: clsx(styles$S.base, s),
         style: { ...a.style, ...u },
         children: jsxRuntimeExports.jsx("div", { ref: i, children: t }),
       })
@@ -9400,7 +9130,7 @@ function useAccordion() {
 }
 const arrow = "Arrow_f1570a91",
   arrow__opened = "Arrow_arrow__opened_134476cd",
-  styles$P = { arrow: arrow, arrow__opened: arrow__opened },
+  styles$R = { arrow: arrow, arrow__opened: arrow__opened },
   images$1 = resources.resolve("images"),
   Arrow = reactExports.forwardRef(function (e, t) {
     const { opened: s } = useAccordion();
@@ -9411,25 +9141,25 @@ const arrow = "Arrow_f1570a91",
         backgroundImage: `url(${images$1.readOrEmpty("library.arrow_accordion")})`,
         ...e.style,
       },
-      className: clsx(styles$P.arrow, s && styles$P.arrow__opened, e.className),
+      className: clsx(styles$R.arrow, s && styles$R.arrow__opened, e.className),
     });
   }),
   content$a = "Details_content_a5a56462",
   content__opened = "Details_content__opened_cc21f43f",
-  styles$O = { content: content$a, content__opened: content__opened },
+  styles$Q = { content: content$a, content__opened: content__opened },
   Details = reactExports.forwardRef(function (e, t) {
     const { opened: s } = useAccordion();
     return jsxRuntimeExports.jsx("div", {
       ...e,
       ref: t,
-      className: clsx(styles$O.content, s && styles$O.content__opened, e.className),
+      className: clsx(styles$Q.content, s && styles$Q.content__opened, e.className),
     });
   }),
   headerWrapper = "Summary_headerWrapper_d7c7115",
   background$7 = "Summary_background_48ba2ab7",
   background__scrollable = "Summary_background__scrollable_a41402ee",
   header$1 = "Summary_header_789c868e",
-  styles$N = {
+  styles$P = {
     headerWrapper: headerWrapper,
     background: background$7,
     background__scrollable: background__scrollable,
@@ -9442,17 +9172,17 @@ const arrow = "Arrow_f1570a91",
     return jsxRuntimeExports.jsxs("div", {
       ...r,
       ref: a,
-      className: clsx(styles$N.headerWrapper, r.className),
+      className: clsx(styles$P.headerWrapper, r.className),
       children: [
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$N.background, t && styles$N.background__scrollable, s),
+          className: clsx(styles$P.background, t && styles$P.background__scrollable, s),
         }),
-        jsxRuntimeExports.jsx("div", { className: styles$N.header, children: e }),
+        jsxRuntimeExports.jsx("div", { className: styles$P.header, children: e }),
       ],
     });
   }),
-  base$J = "Accordion_2b56632",
-  styles$M = { base: base$J },
+  base$K = "Accordion_2b56632",
+  styles$O = { base: base$K },
   Accordion = reactExports.forwardRef(function ({ opened: e, ...t }, s) {
     return jsxRuntimeExports.jsx(Context$2.Provider, {
       value: { opened: e },
@@ -9460,7 +9190,7 @@ const arrow = "Arrow_f1570a91",
         ...t,
         "data-name": "Accordion",
         ref: s,
-        className: clsx(styles$M.base, t.className),
+        className: clsx(styles$O.base, t.className),
       }),
     });
   });
@@ -9473,9 +9203,9 @@ const MIN_LEVEL = 1,
   directions$1 = { left: "left", right: "right" },
   lengths = { short: "short", medium: "medium", long: "long" },
   iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
-  icon$5 = (e, t, s) => (t === TYPE_PRESTIGE ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${s}`),
-  base$I = "VehiclePrestigeLevel_a750cce",
-  icon$4 = "VehiclePrestigeLevel_icon_ef024cc3",
+  icon$6 = (e, t, s) => (t === TYPE_PRESTIGE ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${s}`),
+  base$J = "VehiclePrestigeLevel_a750cce",
+  icon$5 = "VehiclePrestigeLevel_icon_ef024cc3",
   base__left$1 = "VehiclePrestigeLevel_base__left_4426b46c",
   level = "VehiclePrestigeLevel_level_10f410ba",
   level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
@@ -9487,22 +9217,22 @@ const MIN_LEVEL = 1,
   base__silver = "VehiclePrestigeLevel_base__silver_4426b46c",
   base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
   base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
-  fadeIn$f = "VehiclePrestigeLevel_fadeIn_4426b46c",
-  fadeInThreeQuarters$f = "VehiclePrestigeLevel_fadeInThreeQuarters_4426b46c",
-  fadeInHalf$f = "VehiclePrestigeLevel_fadeInHalf_4426b46c",
-  fadeOut$f = "VehiclePrestigeLevel_fadeOut_4426b46c",
-  fadeInWithScale$f = "VehiclePrestigeLevel_fadeInWithScale_4426b46c",
-  slideUp$f = "VehiclePrestigeLevel_slideUp_4426b46c",
-  scale$f = "VehiclePrestigeLevel_scale_4426b46c",
-  raysAppearance$f = "VehiclePrestigeLevel_raysAppearance_4426b46c",
-  rotate$f = "VehiclePrestigeLevel_rotate_4426b46c",
-  glowAppearance$f = "VehiclePrestigeLevel_glowAppearance_4426b46c",
-  highlightAppearance$f = "VehiclePrestigeLevel_highlightAppearance_4426b46c",
-  blink$f = "VehiclePrestigeLevel_blink_4426b46c",
-  slideUpIn$f = "VehiclePrestigeLevel_slideUpIn_4426b46c",
-  styles$L = {
-    base: base$I,
-    icon: icon$4,
+  fadeIn$g = "VehiclePrestigeLevel_fadeIn_4426b46c",
+  fadeInThreeQuarters$g = "VehiclePrestigeLevel_fadeInThreeQuarters_4426b46c",
+  fadeInHalf$g = "VehiclePrestigeLevel_fadeInHalf_4426b46c",
+  fadeOut$g = "VehiclePrestigeLevel_fadeOut_4426b46c",
+  fadeInWithScale$g = "VehiclePrestigeLevel_fadeInWithScale_4426b46c",
+  slideUp$g = "VehiclePrestigeLevel_slideUp_4426b46c",
+  scale$g = "VehiclePrestigeLevel_scale_4426b46c",
+  raysAppearance$g = "VehiclePrestigeLevel_raysAppearance_4426b46c",
+  rotate$g = "VehiclePrestigeLevel_rotate_4426b46c",
+  glowAppearance$g = "VehiclePrestigeLevel_glowAppearance_4426b46c",
+  highlightAppearance$g = "VehiclePrestigeLevel_highlightAppearance_4426b46c",
+  blink$g = "VehiclePrestigeLevel_blink_4426b46c",
+  slideUpIn$g = "VehiclePrestigeLevel_slideUpIn_4426b46c",
+  styles$N = {
+    base: base$J,
+    icon: icon$5,
     base__left: base__left$1,
     level: level,
     level__short: level__short,
@@ -9514,20 +9244,20 @@ const MIN_LEVEL = 1,
     base__silver: base__silver,
     base__gold: base__gold$1,
     base__enamel: base__enamel,
-    fadeIn: fadeIn$f,
-    fadeInThreeQuarters: fadeInThreeQuarters$f,
-    fadeInHalf: fadeInHalf$f,
-    fadeOut: fadeOut$f,
-    fadeInWithScale: fadeInWithScale$f,
-    slideUp: slideUp$f,
-    scale: scale$f,
-    raysAppearance: raysAppearance$f,
-    rotate: rotate$f,
+    fadeIn: fadeIn$g,
+    fadeInThreeQuarters: fadeInThreeQuarters$g,
+    fadeInHalf: fadeInHalf$g,
+    fadeOut: fadeOut$g,
+    fadeInWithScale: fadeInWithScale$g,
+    slideUp: slideUp$g,
+    scale: scale$g,
+    raysAppearance: raysAppearance$g,
+    rotate: rotate$g,
     "reverse-rotate": "VehiclePrestigeLevel_reverse-rotate_4426b46c",
-    glowAppearance: glowAppearance$f,
-    highlightAppearance: highlightAppearance$f,
-    blink: blink$f,
-    slideUpIn: slideUpIn$f,
+    glowAppearance: glowAppearance$g,
+    highlightAppearance: highlightAppearance$g,
+    blink: blink$g,
+    slideUpIn: slideUpIn$g,
   };
 function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: a, ...n }) {
   return e < MIN_LEVEL || "undefined" === s
@@ -9535,38 +9265,38 @@ function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: 
     : jsxRuntimeExports.jsxs("div", {
         ...n,
         className: clsx(
-          styles$L.base,
-          styles$L[`base__${s}`],
-          styles$L[`base__${r}`],
+          styles$N.base,
+          styles$N[`base__${s}`],
+          styles$N[`base__${r}`],
           n.className,
           a?.base,
         ),
         children: [
           jsxRuntimeExports.jsx(Image$1, {
-            path: `prestige.tab.${icon$5(e, s, t)}`,
-            className: clsx(styles$L.icon, a?.icon),
+            path: `prestige.tab.${icon$6(e, s, t)}`,
+            className: clsx(styles$N.icon, a?.icon),
           }),
           s !== TYPE_PRESTIGE &&
             jsxRuntimeExports.jsx("div", {
-              className: clsx(styles$L.level, styles$L[`level__${iconLength(e)}`], a?.level),
+              className: clsx(styles$N.level, styles$N[`level__${iconLength(e)}`], a?.level),
               children: e,
             }),
         ],
       });
 }
 PrestigeLevel.direction = directions$1;
-const base$H = "VehicleInfo_1732f1f0",
+const base$I = "VehicleInfo_1732f1f0",
   name$1 = "VehicleInfo_name_3989ca04",
   name__premium = "VehicleInfo_name__premium_258b3b93",
-  styles$K = { base: base$H, name: name$1, name__premium: name__premium },
-  VehicleName = defineStyledComponent("VehicleName", styles$K.name, {
-    variants: { premium: { true: styles$K.name__premium } },
+  styles$M = { base: base$I, name: name$1, name__premium: name__premium },
+  VehicleName = defineStyledComponent("VehicleName", styles$M.name, {
+    variants: { premium: { true: styles$M.name__premium } },
   }),
   VehicleInfo = reactExports.forwardRef(function (e, t) {
     return jsxRuntimeExports.jsx("div", {
       ...e,
       ref: t,
-      className: clsx(styles$K.base, e.className),
+      className: clsx(styles$M.base, e.className),
     });
   });
 function useParamTooltipApadter(e) {
@@ -9650,7 +9380,7 @@ const BackportTooltip = createTooltipComponent(useBackdropTooltip, "BackportTool
     [sizes$d.extraLarge]: { width: "140rem", height: "84rem" },
     [sizes$d.xxl]: { width: "140rem", height: "84rem" },
   },
-  base$G = "Currency_72d4be39",
+  base$H = "Currency_72d4be39",
   base__reverse = "Currency_base__reverse_f12e61b0",
   base__notEnough = "Currency_base__notEnough_9a7842f",
   base__credits = "Currency_base__credits_7b9ae721",
@@ -9658,21 +9388,21 @@ const BackportTooltip = createTooltipComponent(useBackdropTooltip, "BackportTool
   base__freeXP = "Currency_base__freeXP_d29d5a57",
   base__crystal = "Currency_base__crystal_f830cb47",
   base__tankXP = "Currency_base__tankXP_1707c68b",
-  fadeIn$e = "Currency_fadeIn_271064ec",
-  fadeInThreeQuarters$e = "Currency_fadeInThreeQuarters_271064ec",
-  fadeInHalf$e = "Currency_fadeInHalf_271064ec",
-  fadeOut$e = "Currency_fadeOut_271064ec",
-  fadeInWithScale$e = "Currency_fadeInWithScale_271064ec",
-  slideUp$e = "Currency_slideUp_271064ec",
-  scale$e = "Currency_scale_271064ec",
-  raysAppearance$e = "Currency_raysAppearance_271064ec",
-  rotate$e = "Currency_rotate_271064ec",
-  glowAppearance$e = "Currency_glowAppearance_271064ec",
-  highlightAppearance$e = "Currency_highlightAppearance_271064ec",
-  blink$e = "Currency_blink_271064ec",
-  slideUpIn$e = "Currency_slideUpIn_271064ec",
-  styles$J = {
-    base: base$G,
+  fadeIn$f = "Currency_fadeIn_271064ec",
+  fadeInThreeQuarters$f = "Currency_fadeInThreeQuarters_271064ec",
+  fadeInHalf$f = "Currency_fadeInHalf_271064ec",
+  fadeOut$f = "Currency_fadeOut_271064ec",
+  fadeInWithScale$f = "Currency_fadeInWithScale_271064ec",
+  slideUp$f = "Currency_slideUp_271064ec",
+  scale$f = "Currency_scale_271064ec",
+  raysAppearance$f = "Currency_raysAppearance_271064ec",
+  rotate$f = "Currency_rotate_271064ec",
+  glowAppearance$f = "Currency_glowAppearance_271064ec",
+  highlightAppearance$f = "Currency_highlightAppearance_271064ec",
+  blink$f = "Currency_blink_271064ec",
+  slideUpIn$f = "Currency_slideUpIn_271064ec",
+  styles$L = {
+    base: base$H,
     base__reverse: base__reverse,
     base__notEnough: base__notEnough,
     base__credits: base__credits,
@@ -9680,24 +9410,24 @@ const BackportTooltip = createTooltipComponent(useBackdropTooltip, "BackportTool
     base__freeXP: base__freeXP,
     base__crystal: base__crystal,
     base__tankXP: base__tankXP,
-    fadeIn: fadeIn$e,
-    fadeInThreeQuarters: fadeInThreeQuarters$e,
-    fadeInHalf: fadeInHalf$e,
-    fadeOut: fadeOut$e,
-    fadeInWithScale: fadeInWithScale$e,
-    slideUp: slideUp$e,
-    scale: scale$e,
-    raysAppearance: raysAppearance$e,
-    rotate: rotate$e,
+    fadeIn: fadeIn$f,
+    fadeInThreeQuarters: fadeInThreeQuarters$f,
+    fadeInHalf: fadeInHalf$f,
+    fadeOut: fadeOut$f,
+    fadeInWithScale: fadeInWithScale$f,
+    slideUp: slideUp$f,
+    scale: scale$f,
+    raysAppearance: raysAppearance$f,
+    rotate: rotate$f,
     "reverse-rotate": "Currency_reverse-rotate_271064ec",
-    glowAppearance: glowAppearance$e,
-    highlightAppearance: highlightAppearance$e,
-    blink: blink$e,
-    slideUpIn: slideUpIn$e,
+    glowAppearance: glowAppearance$f,
+    highlightAppearance: highlightAppearance$f,
+    blink: blink$f,
+    slideUpIn: slideUpIn$f,
   },
   intl$1 = resources.resolve("intl"),
-  Base$q = defineStyledComponent("Currency", styles$J.base, {
-    variants: { reverse: { true: styles$J.base__reverse } },
+  Base$q = defineStyledComponent("Currency", styles$L.base, {
+    variants: { reverse: { true: styles$L.base__reverse } },
   });
 function formatCurrencyValue(e, t) {
   const s = t === types$1.gold ? "gold" : "integral";
@@ -9725,7 +9455,7 @@ function Currency({
     _ = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
   return jsxRuntimeExports.jsxs(Base$q, {
     ...i,
-    className: clsx(r?.base, o ? styles$J[`base__${t}`] : styles$J.base__notEnough, s),
+    className: clsx(r?.base, o ? styles$L[`base__${t}`] : styles$L.base__notEnough, s),
     children: [
       p &&
         jsxRuntimeExports.jsx(Image$1, { width: u, height: u, path: a ?? _, className: r?.icon }),
@@ -9734,52 +9464,52 @@ function Currency({
   });
 }
 ((Currency.sizes = sizes$d), (Currency.types = types$1));
-const base$F = "WithDiscount_b8b3aa7f",
+const base$G = "WithDiscount_b8b3aa7f",
   discount = "WithDiscount_discount_f7ce1b97",
-  icon$3 = "WithDiscount_icon_a6c57ca8",
+  icon$4 = "WithDiscount_icon_a6c57ca8",
   icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
   icon__small = "WithDiscount_icon__small_60ee455a",
   icon__medium = "WithDiscount_icon__medium_2877fd99",
   icon__large = "WithDiscount_icon__large_6c06eeb7",
   icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
   icon__xxl = "WithDiscount_icon__xxl_4080bb18",
-  fadeIn$d = "WithDiscount_fadeIn_60ee455a",
-  fadeInThreeQuarters$d = "WithDiscount_fadeInThreeQuarters_60ee455a",
-  fadeInHalf$d = "WithDiscount_fadeInHalf_60ee455a",
-  fadeOut$d = "WithDiscount_fadeOut_60ee455a",
-  fadeInWithScale$d = "WithDiscount_fadeInWithScale_60ee455a",
-  slideUp$d = "WithDiscount_slideUp_60ee455a",
-  scale$d = "WithDiscount_scale_60ee455a",
-  raysAppearance$d = "WithDiscount_raysAppearance_60ee455a",
-  rotate$d = "WithDiscount_rotate_60ee455a",
-  glowAppearance$d = "WithDiscount_glowAppearance_60ee455a",
-  highlightAppearance$d = "WithDiscount_highlightAppearance_60ee455a",
-  blink$d = "WithDiscount_blink_60ee455a",
-  slideUpIn$d = "WithDiscount_slideUpIn_60ee455a",
-  styles$I = {
-    base: base$F,
+  fadeIn$e = "WithDiscount_fadeIn_60ee455a",
+  fadeInThreeQuarters$e = "WithDiscount_fadeInThreeQuarters_60ee455a",
+  fadeInHalf$e = "WithDiscount_fadeInHalf_60ee455a",
+  fadeOut$e = "WithDiscount_fadeOut_60ee455a",
+  fadeInWithScale$e = "WithDiscount_fadeInWithScale_60ee455a",
+  slideUp$e = "WithDiscount_slideUp_60ee455a",
+  scale$e = "WithDiscount_scale_60ee455a",
+  raysAppearance$e = "WithDiscount_raysAppearance_60ee455a",
+  rotate$e = "WithDiscount_rotate_60ee455a",
+  glowAppearance$e = "WithDiscount_glowAppearance_60ee455a",
+  highlightAppearance$e = "WithDiscount_highlightAppearance_60ee455a",
+  blink$e = "WithDiscount_blink_60ee455a",
+  slideUpIn$e = "WithDiscount_slideUpIn_60ee455a",
+  styles$K = {
+    base: base$G,
     discount: discount,
-    icon: icon$3,
+    icon: icon$4,
     icon__extraSmall: icon__extraSmall,
     icon__small: icon__small,
     icon__medium: icon__medium,
     icon__large: icon__large,
     icon__extraLarge: icon__extraLarge,
     icon__xxl: icon__xxl,
-    fadeIn: fadeIn$d,
-    fadeInThreeQuarters: fadeInThreeQuarters$d,
-    fadeInHalf: fadeInHalf$d,
-    fadeOut: fadeOut$d,
-    fadeInWithScale: fadeInWithScale$d,
-    slideUp: slideUp$d,
-    scale: scale$d,
-    raysAppearance: raysAppearance$d,
-    rotate: rotate$d,
+    fadeIn: fadeIn$e,
+    fadeInThreeQuarters: fadeInThreeQuarters$e,
+    fadeInHalf: fadeInHalf$e,
+    fadeOut: fadeOut$e,
+    fadeInWithScale: fadeInWithScale$e,
+    slideUp: slideUp$e,
+    scale: scale$e,
+    raysAppearance: raysAppearance$e,
+    rotate: rotate$e,
     "reverse-rotate": "WithDiscount_reverse-rotate_60ee455a",
-    glowAppearance: glowAppearance$d,
-    highlightAppearance: highlightAppearance$d,
-    blink: blink$d,
-    slideUpIn: slideUpIn$d,
+    glowAppearance: glowAppearance$e,
+    highlightAppearance: highlightAppearance$e,
+    blink: blink$e,
+    slideUpIn: slideUpIn$e,
   };
 function WithDiscount({
   children: e,
@@ -9793,22 +9523,22 @@ function WithDiscount({
 }) {
   const u = r ?? discountSizesConfig[s];
   return jsxRuntimeExports.jsxs("div", {
-    className: clsx(styles$I.base, i?.base, o),
+    className: clsx(styles$K.base, i?.base, o),
     children: [
       e,
       n &&
         jsxRuntimeExports.jsx("div", {
           className: clsx(
-            styles$I.discount,
+            styles$K.discount,
             i?.discount,
-            a === discountTypes.experience && styles$I.discount__experience,
+            a === discountTypes.experience && styles$K.discount__experience,
           ),
           children: jsxRuntimeExports.jsx(Image$1, {
             width: u.width,
             height: u.height,
             path:
               t ?? `library.currency.discount_${a}_${s === sizes$d.xxl ? sizes$d.extraLarge : s}`,
-            className: clsx(styles$I.icon, i?.icon, styles$I[`icon__${s}`]),
+            className: clsx(styles$K.icon, i?.icon, styles$K[`icon__${s}`]),
           }),
         }),
     ],
@@ -9844,7 +9574,7 @@ function useCardsWrapperContextOptional() {
   return reactExports.useContext(CardsWrapperContext);
 }
 const CardsWrapperContextProvider = CardsWrapperContext.Provider,
-  base$E = "Content_8eaaf71a",
+  base$F = "Content_8eaaf71a",
   content$9 = "Content_ab8563af",
   disabledOverlay$1 = "Content_disabledOverlay_af87c441",
   base__multiple = "Content_base__multiple_da09528a",
@@ -9853,8 +9583,8 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
   base__selectedHover$1 = "Content_base__selectedHover_da09528a",
   base__selected$1 = "Content_base__selected_da09528a",
   multipleCorner = "Content_multipleCorner_151c26ee",
-  styles$H = {
-    base: base$E,
+  styles$J = {
+    base: base$F,
     content: content$9,
     disabledOverlay: disabledOverlay$1,
     base__multiple: base__multiple,
@@ -9865,14 +9595,14 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
     multipleCorner: multipleCorner,
   },
   MULTIPLE_CORNER_SIZE = 20,
-  Base$p = defineStyledComponent("Content", styles$H.base, {
+  Base$p = defineStyledComponent("Content", styles$J.base, {
     variants: {
-      multiple: { true: styles$H.base__multiple },
-      selected: { true: styles$H.base__selected },
-      hover: { true: styles$H.base__hover },
-      disabled: { true: styles$H.base__disabled },
+      multiple: { true: styles$J.base__multiple },
+      selected: { true: styles$J.base__selected },
+      hover: { true: styles$J.base__hover },
+      disabled: { true: styles$J.base__disabled },
     },
-    compoundVariants: [{ hover: !0, selected: !0, className: styles$H.base__selectedHover }],
+    compoundVariants: [{ hover: !0, selected: !0, className: styles$J.base__selectedHover }],
   }),
   MainContainer = ({ children: e, classNames: t }) => {
     const s = React.useRef(null),
@@ -9896,12 +9626,12 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
         hover: r.hover,
         disabled: r.disabled,
         children: [
-          r.multiple && jsxRuntimeExports.jsx("div", { className: styles$H.multipleCorner }),
+          r.multiple && jsxRuntimeExports.jsx("div", { className: styles$J.multipleCorner }),
           jsxRuntimeExports.jsxs("div", {
             ref: s,
-            className: clsx(styles$H.content, t?.mainContainerContent),
+            className: clsx(styles$J.content, t?.mainContainerContent),
             children: [
-              r.disabled && jsxRuntimeExports.jsx("div", { className: styles$H.disabledOverlay }),
+              r.disabled && jsxRuntimeExports.jsx("div", { className: styles$J.disabledOverlay }),
               e,
             ],
           }),
@@ -9909,8 +9639,8 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
       })
     );
   },
-  base$D = "Status_68bd9bc6",
-  icon$2 = "Status_icon_cef4536",
+  base$E = "Status_68bd9bc6",
+  icon$3 = "Status_icon_cef4536",
   base__done = "Status_base__done_35b9a31c",
   base__doneSmall = "Status_base__doneSmall_35b9a31c",
   base__alert = "Status_base__alert_35b9a31c",
@@ -9921,22 +9651,22 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
   glowInner = "Status_glowInner_f8eb475a",
   blur = "Status_blur_5675b854",
   glowBig = "Status_glowBig_5954041c",
-  fadeIn$c = "Status_fadeIn_35b9a31c",
-  fadeInThreeQuarters$c = "Status_fadeInThreeQuarters_35b9a31c",
-  fadeInHalf$c = "Status_fadeInHalf_35b9a31c",
-  fadeOut$c = "Status_fadeOut_35b9a31c",
-  fadeInWithScale$c = "Status_fadeInWithScale_35b9a31c",
-  slideUp$c = "Status_slideUp_35b9a31c",
-  scale$c = "Status_scale_35b9a31c",
-  raysAppearance$c = "Status_raysAppearance_35b9a31c",
-  rotate$c = "Status_rotate_35b9a31c",
-  glowAppearance$c = "Status_glowAppearance_35b9a31c",
-  highlightAppearance$c = "Status_highlightAppearance_35b9a31c",
-  blink$c = "Status_blink_35b9a31c",
-  slideUpIn$c = "Status_slideUpIn_35b9a31c",
-  styles$G = {
-    base: base$D,
-    icon: icon$2,
+  fadeIn$d = "Status_fadeIn_35b9a31c",
+  fadeInThreeQuarters$d = "Status_fadeInThreeQuarters_35b9a31c",
+  fadeInHalf$d = "Status_fadeInHalf_35b9a31c",
+  fadeOut$d = "Status_fadeOut_35b9a31c",
+  fadeInWithScale$d = "Status_fadeInWithScale_35b9a31c",
+  slideUp$d = "Status_slideUp_35b9a31c",
+  scale$d = "Status_scale_35b9a31c",
+  raysAppearance$d = "Status_raysAppearance_35b9a31c",
+  rotate$d = "Status_rotate_35b9a31c",
+  glowAppearance$d = "Status_glowAppearance_35b9a31c",
+  highlightAppearance$d = "Status_highlightAppearance_35b9a31c",
+  blink$d = "Status_blink_35b9a31c",
+  slideUpIn$d = "Status_slideUpIn_35b9a31c",
+  styles$I = {
+    base: base$E,
+    icon: icon$3,
     base__done: base__done,
     base__doneSmall: base__doneSmall,
     base__alert: base__alert,
@@ -9947,28 +9677,28 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
     glowInner: glowInner,
     blur: blur,
     glowBig: glowBig,
-    fadeIn: fadeIn$c,
-    fadeInThreeQuarters: fadeInThreeQuarters$c,
-    fadeInHalf: fadeInHalf$c,
-    fadeOut: fadeOut$c,
-    fadeInWithScale: fadeInWithScale$c,
-    slideUp: slideUp$c,
-    scale: scale$c,
-    raysAppearance: raysAppearance$c,
-    rotate: rotate$c,
+    fadeIn: fadeIn$d,
+    fadeInThreeQuarters: fadeInThreeQuarters$d,
+    fadeInHalf: fadeInHalf$d,
+    fadeOut: fadeOut$d,
+    fadeInWithScale: fadeInWithScale$d,
+    slideUp: slideUp$d,
+    scale: scale$d,
+    raysAppearance: raysAppearance$d,
+    rotate: rotate$d,
     "reverse-rotate": "Status_reverse-rotate_35b9a31c",
-    glowAppearance: glowAppearance$c,
-    highlightAppearance: highlightAppearance$c,
-    blink: blink$c,
-    slideUpIn: slideUpIn$c,
+    glowAppearance: glowAppearance$d,
+    highlightAppearance: highlightAppearance$d,
+    blink: blink$d,
+    slideUpIn: slideUpIn$d,
   },
   strings$2 = resources.resolve("strings");
-defineStyledComponent("Status", styles$G.base, {
+defineStyledComponent("Status", styles$I.base, {
   variants: {
     status: {
-      done: styles$G.base__done,
-      alert: styles$G.base__alert,
-      locked: styles$G.base__locked,
+      done: styles$I.base__done,
+      alert: styles$I.base__alert,
+      locked: styles$I.base__locked,
     },
   },
 });
@@ -9991,30 +9721,30 @@ const SMALL_SIZE_BREAKPOINT = 100,
         : {},
       u = useSimpleTooltip(i);
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$G.base, styles$G[n], t?.wrapper),
+      className: clsx(styles$I.base, styles$I[n], t?.wrapper),
       ref: s,
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$G.glowBig }),
-        jsxRuntimeExports.jsx("div", { className: styles$G.line }),
-        jsxRuntimeExports.jsx("div", { className: styles$G.shadow }),
-        jsxRuntimeExports.jsx("div", { className: styles$G.glowInner }),
+        jsxRuntimeExports.jsx("div", { className: styles$I.glowBig }),
+        jsxRuntimeExports.jsx("div", { className: styles$I.line }),
+        jsxRuntimeExports.jsx("div", { className: styles$I.shadow }),
+        jsxRuntimeExports.jsx("div", { className: styles$I.glowInner }),
         jsxRuntimeExports.jsx("svg", {
           width: "42",
           height: "42",
           viewBox: "0 0 42 42",
-          className: styles$G.blur,
+          className: styles$I.blur,
           children: jsxRuntimeExports.jsx("g", {
             children: jsxRuntimeExports.jsx("circle", { cx: "21", cy: "21", r: "3" }),
           }),
         }),
         jsxRuntimeExports.jsx("div", {
           ...(tooltipEnabled(i) && u),
-          className: clsx(styles$G.icon, t?.icon),
+          className: clsx(styles$I.icon, t?.icon),
         }),
       ],
     });
   },
-  base$C = "Card_f0963ece",
+  base$D = "Card_f0963ece",
   base__wrapped = "Card_base__wrapped_c6eb8737",
   base__disableMouse = "Card_base__disableMouse_5cd80216",
   base__hover = "Card_base__hover_f4c22d1c",
@@ -10026,7 +9756,7 @@ const SMALL_SIZE_BREAKPOINT = 100,
   base__selectedHover = "Card_base__selectedHover_f4c22d1c",
   centerBorder = "Card_centerBorder_8a0f28ae",
   cardStyles = {
-    base: base$C,
+    base: base$D,
     base__wrapped: base__wrapped,
     base__disableMouse: base__disableMouse,
     base__hover: base__hover,
@@ -10222,7 +9952,7 @@ class LinesOptimizer {
 }
 const lineInner = "LinesBuilder_lineInner_a52dc157",
   lineOuter = "LinesBuilder_lineOuter_c57514b2",
-  styles$F = { lineInner: lineInner, lineOuter: lineOuter };
+  styles$H = { lineInner: lineInner, lineOuter: lineOuter };
 function buildLines(e, t, s) {
   const r = [],
     a = new LinesOptimizer(t);
@@ -10234,10 +9964,10 @@ function buildLines(e, t, s) {
         `Card rect has zero size by one side: ${o.width}x${o.height} (${t.getAttribute("data-test-id")}) `,
       );
     (s !== borderTypes.none && r.push({ x: o.x, y: o.y, width: o.width, height: o.height }),
-      a.addLine(o.x, o.y, o.width, LINE_THICKNESS, styles$F.lineInner),
-      a.addLine(o.x, o.y + o.height, o.width, LINE_THICKNESS, styles$F.lineInner),
-      a.addLine(o.x, o.y, LINE_THICKNESS, o.height, styles$F.lineInner),
-      a.addLine(o.x + o.width, o.y, LINE_THICKNESS, o.height + OFFSET, styles$F.lineInner));
+      a.addLine(o.x, o.y, o.width, LINE_THICKNESS, styles$H.lineInner),
+      a.addLine(o.x, o.y + o.height, o.width, LINE_THICKNESS, styles$H.lineInner),
+      a.addLine(o.x, o.y, LINE_THICKNESS, o.height, styles$H.lineInner),
+      a.addLine(o.x + o.width, o.y, LINE_THICKNESS, o.height + OFFSET, styles$H.lineInner));
   }
   if (s !== borderTypes.none) {
     const e = buildContour(r);
@@ -10252,7 +9982,7 @@ function buildLines(e, t, s) {
           Math.min(r.y, n.y),
           s ? Math.abs(n.x - r.x) : LINE_THICKNESS,
           s ? LINE_THICKNESS : Math.abs(n.y - r.y) + OFFSET,
-          styles$F.lineOuter,
+          styles$H.lineOuter,
         );
       }
       t = e;
@@ -10287,17 +10017,17 @@ const Lines = reactExports.memo(
       );
     },
   ),
-  base$B = "CardsWrapper_3b6cc4f6",
+  base$C = "CardsWrapper_3b6cc4f6",
   card = "CardsWrapper_card_c7fc9ee7",
   centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
   outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
-  styles$E = {
-    base: base$B,
+  styles$G = {
+    base: base$C,
     card: card,
     centerBorderCommon: centerBorderCommon,
     outerBorderCommon: outerBorderCommon,
   },
-  Base$n = defineStyledComponent("CardsWrapper", styles$E.base),
+  Base$n = defineStyledComponent("CardsWrapper", styles$G.base),
   CardsWrapper = reactExports.forwardRef(function (
     {
       children: e,
@@ -10357,12 +10087,12 @@ const Lines = reactExports.memo(
   }),
   CardSingle = reactExports.forwardRef(({ className: e, classNames: t, ...s }, r) =>
     jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$E.base, t?.wrapper),
+      className: clsx(styles$G.base, t?.wrapper),
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$E.centerBorderCommon }),
-        jsxRuntimeExports.jsx("div", { className: styles$E.outerBorderCommon }),
+        jsxRuntimeExports.jsx("div", { className: styles$G.centerBorderCommon }),
+        jsxRuntimeExports.jsx("div", { className: styles$G.outerBorderCommon }),
         jsxRuntimeExports.jsx(Card, {
-          className: clsx(styles$E.card, e, t?.card),
+          className: clsx(styles$G.card, e, t?.card),
           classNames: t,
           ...s,
           ref: r,
@@ -10371,23 +10101,23 @@ const Lines = reactExports.memo(
     }),
   ),
   statusTypes = { done: "done", alert: "alert" },
-  base$A = "Discount_bbbebfd",
+  base$B = "Discount_bbbebfd",
   percent = "Discount_percent_b7ab402",
-  fadeIn$b = "Discount_fadeIn_4a3faf4f",
-  fadeInThreeQuarters$b = "Discount_fadeInThreeQuarters_4a3faf4f",
-  fadeInHalf$b = "Discount_fadeInHalf_4a3faf4f",
-  fadeOut$b = "Discount_fadeOut_4a3faf4f",
-  fadeInWithScale$b = "Discount_fadeInWithScale_4a3faf4f",
-  slideUp$b = "Discount_slideUp_4a3faf4f",
-  scale$b = "Discount_scale_4a3faf4f",
-  raysAppearance$b = "Discount_raysAppearance_4a3faf4f",
-  rotate$b = "Discount_rotate_4a3faf4f",
-  glowAppearance$b = "Discount_glowAppearance_4a3faf4f",
-  highlightAppearance$b = "Discount_highlightAppearance_4a3faf4f",
-  blink$b = "Discount_blink_4a3faf4f",
-  slideUpIn$b = "Discount_slideUpIn_4a3faf4f",
-  styles$D = {
-    base: base$A,
+  fadeIn$c = "Discount_fadeIn_4a3faf4f",
+  fadeInThreeQuarters$c = "Discount_fadeInThreeQuarters_4a3faf4f",
+  fadeInHalf$c = "Discount_fadeInHalf_4a3faf4f",
+  fadeOut$c = "Discount_fadeOut_4a3faf4f",
+  fadeInWithScale$c = "Discount_fadeInWithScale_4a3faf4f",
+  slideUp$c = "Discount_slideUp_4a3faf4f",
+  scale$c = "Discount_scale_4a3faf4f",
+  raysAppearance$c = "Discount_raysAppearance_4a3faf4f",
+  rotate$c = "Discount_rotate_4a3faf4f",
+  glowAppearance$c = "Discount_glowAppearance_4a3faf4f",
+  highlightAppearance$c = "Discount_highlightAppearance_4a3faf4f",
+  blink$c = "Discount_blink_4a3faf4f",
+  slideUpIn$c = "Discount_slideUpIn_4a3faf4f",
+  styles$F = {
+    base: base$B,
     "base__color-red": "Discount_base__color-red_ce40ab53",
     "base__color-blue": "Discount_base__color-blue_29162735",
     "base__size-medium": "Discount_base__size-medium_50e2ae9a",
@@ -10397,32 +10127,32 @@ const Lines = reactExports.memo(
     "percent__color-red": "Discount_percent__color-red_4a3faf4f",
     "percent__color-blue": "Discount_percent__color-blue_4a3faf4f",
     "percent__size-large": "Discount_percent__size-large_8384c978",
-    fadeIn: fadeIn$b,
-    fadeInThreeQuarters: fadeInThreeQuarters$b,
-    fadeInHalf: fadeInHalf$b,
-    fadeOut: fadeOut$b,
-    fadeInWithScale: fadeInWithScale$b,
-    slideUp: slideUp$b,
-    scale: scale$b,
-    raysAppearance: raysAppearance$b,
-    rotate: rotate$b,
+    fadeIn: fadeIn$c,
+    fadeInThreeQuarters: fadeInThreeQuarters$c,
+    fadeInHalf: fadeInHalf$c,
+    fadeOut: fadeOut$c,
+    fadeInWithScale: fadeInWithScale$c,
+    slideUp: slideUp$c,
+    scale: scale$c,
+    raysAppearance: raysAppearance$c,
+    rotate: rotate$c,
     "reverse-rotate": "Discount_reverse-rotate_4a3faf4f",
-    glowAppearance: glowAppearance$b,
-    highlightAppearance: highlightAppearance$b,
-    blink: blink$b,
-    slideUpIn: slideUpIn$b,
+    glowAppearance: glowAppearance$c,
+    highlightAppearance: highlightAppearance$c,
+    blink: blink$c,
+    slideUpIn: slideUpIn$c,
   },
   colors = { blue: "blue", red: "red" },
   sizes$c = { medium: "medium", large: "large" },
-  StyledDiscount = defineStyledComponent("Discount", styles$D.base, {
+  StyledDiscount = defineStyledComponent("Discount", styles$F.base, {
     variants: {
       color: {
-        [colors.blue]: styles$D["base__color-blue"],
-        [colors.red]: styles$D["base__color-red"],
+        [colors.blue]: styles$F["base__color-blue"],
+        [colors.red]: styles$F["base__color-red"],
       },
       size: {
-        [sizes$c.medium]: styles$D["base__size-medium"],
-        [sizes$c.large]: styles$D["base__size-large"],
+        [sizes$c.medium]: styles$F["base__size-medium"],
+        [sizes$c.large]: styles$F["base__size-large"],
       },
     },
   }),
@@ -10440,9 +10170,9 @@ const Lines = reactExports.memo(
         a.children,
         jsxRuntimeExports.jsx("div", {
           className: clsx(
-            styles$D.percent,
-            styles$D[`percent__color-${e}`],
-            styles$D[`percent__size-${r}`],
+            styles$F.percent,
+            styles$F[`percent__color-${e}`],
+            styles$F[`percent__size-${r}`],
             s?.percent,
           ),
         }),
@@ -10453,7 +10183,7 @@ const Lines = reactExports.memo(
 const background$6 = "Checkbox_background_ae1fc797",
   border$4 = "Checkbox_border_e1946121",
   overlay$2 = "Checkbox_overlay_de55e0a5",
-  base$z = "Checkbox_e00b9a0",
+  base$A = "Checkbox_e00b9a0",
   base__enabled = "Checkbox_base__enabled_5bfdfae9",
   label = "Checkbox_label_58a00a56",
   base__small$a = "Checkbox_base__small_70ef629e",
@@ -10461,11 +10191,11 @@ const background$6 = "Checkbox_background_ae1fc797",
   base__checked = "Checkbox_base__checked_70ef629e",
   checkIcon = "Checkbox_checkIcon_968885f3",
   check = "Checkbox_check_8341731a",
-  styles$C = {
+  styles$E = {
     background: background$6,
     border: border$4,
     overlay: overlay$2,
-    base: base$z,
+    base: base$A,
     base__enabled: base__enabled,
     label: label,
     base__small: base__small$a,
@@ -10478,21 +10208,21 @@ const background$6 = "Checkbox_background_ae1fc797",
     return jsxRuntimeExports.jsxs("div", {
       ...s,
       ref: r,
-      className: clsx(styles$C.check, s.className, e?.base),
+      className: clsx(styles$E.check, s.className, e?.base),
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$C.background, e?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$C.border, e?.border) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$C.overlay, e?.overlay) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$E.background, e?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$E.border, e?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$E.overlay, e?.overlay) }),
         t,
       ],
     });
   }),
   sizes$b = { medium: "medium", small: "small" },
-  Base$m = defineStyledComponent("Checkbox", styles$C.base, {
+  Base$m = defineStyledComponent("Checkbox", styles$E.base, {
     variants: {
-      size: { [sizes$b.small]: styles$C.base__small, [sizes$b.medium]: styles$C.base__medium },
-      checked: { true: styles$C.base__checked },
-      state: { enabled: styles$C.base__enabled },
+      size: { [sizes$b.small]: styles$E.base__small, [sizes$b.medium]: styles$E.base__medium },
+      checked: { true: styles$E.base__checked },
+      state: { enabled: styles$E.base__enabled },
     },
   }),
   HeadlessCheckbox = reactExports.forwardRef(function (
@@ -10525,7 +10255,7 @@ const background$6 = "Checkbox_background_ae1fc797",
     });
   });
 function Label({ className: e, children: t }) {
-  return jsxRuntimeExports.jsx("div", { className: clsx(styles$C.label, e), children: t });
+  return jsxRuntimeExports.jsx("div", { className: clsx(styles$E.label, e), children: t });
 }
 const Checkbox = reactExports.forwardRef(function (
   { checked: e, classNames: t, children: s, checkPath: r = "ui_kit.checkbox.icon_check", ...a },
@@ -10540,7 +10270,7 @@ const Checkbox = reactExports.forwardRef(function (
         className: t?.check,
         children: jsxRuntimeExports.jsx(Image$1, {
           path: r,
-          className: clsx(styles$C.checkIcon, t?.checkIcon),
+          className: clsx(styles$E.checkIcon, t?.checkIcon),
         }),
       }),
       s && jsxRuntimeExports.jsx(Label, { className: t?.label, children: s }),
@@ -10571,7 +10301,7 @@ class ErrorHandler extends reactExports.Component {
 const base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
   base__x190x152 = "VehicleImage_base__x190x152_41379c70",
   base__x380x304 = "VehicleImage_base__x380x304_274f87fe",
-  styles$B = {
+  styles$D = {
     base__x120x96: base__x120x96,
     base__x190x152: base__x190x152,
     base__x380x304: base__x380x304,
@@ -10579,13 +10309,13 @@ const base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
   sizes$a = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
   Base$l = defineStyledComponent("VehicleImage", {
     element: Image$1,
-    className: styles$B.base,
+    className: styles$D.base,
     cva: {
       variants: {
         size: {
-          [sizes$a.x120x96]: styles$B.base__x120x96,
-          [sizes$a.x190x152]: styles$B.base__x190x152,
-          [sizes$a.x380x304]: styles$B.base__x380x304,
+          [sizes$a.x120x96]: styles$D.base__x120x96,
+          [sizes$a.x190x152]: styles$D.base__x190x152,
+          [sizes$a.x380x304]: styles$D.base__x380x304,
         },
       },
     },
@@ -10635,15 +10365,15 @@ function useCalculateLeftTime(e) {
         : hours(0);
 }
 ((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$a));
-const base$y = "IconCounter_33c660e9",
-  styles$A = { base: base$y };
+const base$z = "IconCounter_33c660e9",
+  styles$C = { base: base$z };
 function IconCounter({ className: e }) {
-  return jsxRuntimeExports.jsx("div", { className: clsx(styles$A.base, e) });
+  return jsxRuntimeExports.jsx("div", { className: clsx(styles$C.base, e) });
 }
-const base$x = "ShortCounter_d2d7b370",
+const base$y = "ShortCounter_d2d7b370",
   text = "ShortCounter_text_ecf2e742",
   count = "ShortCounter_count_d7a74fd8",
-  styles$z = { base: base$x, text: text, count: count },
+  styles$B = { base: base$y, text: text, count: count },
   ShortCounter = reactExports.forwardRef(function (
     { time: e, wins: t, battles: s, classNames: r, ...a },
     n,
@@ -10665,16 +10395,16 @@ const base$x = "ShortCounter_d2d7b370",
       return jsxRuntimeExports.jsxs("div", {
         ...a,
         ref: n,
-        className: clsx(styles$z.base, r?.base),
+        className: clsx(styles$B.base, r?.base),
         children: [
           jsxRuntimeExports.jsx(IconCounter, { className: r?.icon }),
           jsxRuntimeExports.jsx(FormatPluralString, {
-            className: clsx(styles$z.text, r?.text),
+            className: clsx(styles$B.text, r?.text),
             path: u.path,
             count: u.count,
             params: {
               count: jsxRuntimeExports.jsxs("span", {
-                className: styles$z.count,
+                className: styles$B.count,
                 children: [o.formatNumber("integral", u.count), " "],
               }),
             },
@@ -10996,10 +10726,10 @@ function useKeyButtonContext() {
 }
 const background$5 = "KeyButton_background_8a852f95",
   border$3 = "KeyButton_border_b1c50f01",
-  base$w = "KeyButton_8fd343f8",
+  base$x = "KeyButton_8fd343f8",
   content$7 = "KeyButton_content_3ab1d990",
-  styles$y = { background: background$5, border: border$3, base: base$w, content: content$7 },
-  StyledBase = defineStyledComponent("KeyButton", styles$y.base);
+  styles$A = { background: background$5, border: border$3, base: base$x, content: content$7 },
+  StyledBase = defineStyledComponent("KeyButton", styles$A.base);
 function Base$k({ children: e, onClick: t, onMouseEnter: s, ...r }) {
   const a = useSounds(),
     { soundTarget: n, silent: o } = useKeyButtonContext();
@@ -11062,12 +10792,12 @@ const KeyButton = function ({
     soundTarget: a,
     children: jsxRuntimeExports.jsxs(Base$k, {
       ...u,
-      className: clsx(styles$y.base, o, n?.base),
+      className: clsx(styles$A.base, o, n?.base),
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$y.background, n?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$y.border, n?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$A.background, n?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$A.border, n?.border) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$y.content, n?.content),
+          className: clsx(styles$A.content, n?.content),
           children: i,
         }),
       ],
@@ -11075,22 +10805,22 @@ const KeyButton = function ({
   });
 };
 KeyButton.Code = Code;
-const base$v = "Background_39e8f2ed",
+const base$w = "Background_39e8f2ed",
   pattern$4 = "Background_pattern_8cad1521",
   noise = "Background_noise_e3254bb3",
-  styles$x = { base: base$v, pattern: pattern$4, noise: noise };
+  styles$z = { base: base$w, pattern: pattern$4, noise: noise };
 function Background({ className: e, classNames: t }) {
   return jsxRuntimeExports.jsxs("div", {
-    className: clsx(e, styles$x.base),
+    className: clsx(e, styles$z.base),
     children: [
-      jsxRuntimeExports.jsx("div", { className: clsx(t?.pattern, styles$x.pattern) }),
-      jsxRuntimeExports.jsx("div", { className: clsx(t?.noise, styles$x.noise) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(t?.pattern, styles$z.pattern) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(t?.noise, styles$z.noise) }),
     ],
   });
 }
-const base$u = "ScrollVelocityGuardContent_6b5de46d",
+const base$v = "ScrollVelocityGuardContent_6b5de46d",
   base__disableInteractivity = "ScrollVelocityGuardContent_base__disableInteractivity_e6c30513",
-  styles$w = { base: base$u, base__disableInteractivity: base__disableInteractivity },
+  styles$y = { base: base$v, base__disableInteractivity: base__disableInteractivity },
   DEFAULT_VELOCITY_LIMITATION = 1;
 function ScrollVelocityGuardContent({
   api: e,
@@ -11107,7 +10837,7 @@ function ScrollVelocityGuardContent({
     ),
     jsxRuntimeExports.jsx(DefaultWrapper, {
       ...r,
-      className: clsx(styles$w.base, a && styles$w.base__disableInteractivity, t),
+      className: clsx(styles$y.base, a && styles$y.base__disableInteractivity, t),
     })
   );
 }
@@ -11205,7 +10935,7 @@ const background$4 = "Switcher_background_a88161d0",
   selectedOverlay$1 = "Switcher_selectedOverlay_959b7a8f",
   selectedItemBackground = "Switcher_selectedItemBackground_f3f7ed7e",
   selectedItemBorder = "Switcher_selectedItemBorder_7a1a3dd5",
-  base$t = "Switcher_825add0a",
+  base$u = "Switcher_825add0a",
   base__disabled$4 = "Switcher_base__disabled_863a5f47",
   content$6 = "Switcher_content_c83e02e5",
   content__fontAligned = "Switcher_content__fontAligned_9342bb29",
@@ -11214,14 +10944,14 @@ const background$4 = "Switcher_background_a88161d0",
   selectedItem = "Switcher_selectedItem_c6995287",
   selectedItem__moved = "Switcher_selectedItem__moved_5f74b720",
   selectedItemContent = "Switcher_selectedItemContent_34994102",
-  styles$v = {
+  styles$x = {
     background: background$4,
     border: border$2,
     overlay: overlay$1,
     selectedOverlay: selectedOverlay$1,
     selectedItemBackground: selectedItemBackground,
     selectedItemBorder: selectedItemBorder,
-    base: base$t,
+    base: base$u,
     base__disabled: base__disabled$4,
     "base__size-small": "Switcher_base__size-small_df4dee40",
     "base__size-medium": "Switcher_base__size-medium_d287fe48",
@@ -11238,16 +10968,16 @@ const background$4 = "Switcher_background_a88161d0",
 function SelectedItem({ children: e, classNames: t }) {
   const { checked: s } = useSwitcherContext();
   return jsxRuntimeExports.jsx("div", {
-    className: clsx(styles$v.selectedOverlay, s && styles$v.selectedOverlay__moved, t?.base),
+    className: clsx(styles$x.selectedOverlay, s && styles$x.selectedOverlay__moved, t?.base),
     children: jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$v.selectedItem, s && styles$v.selectedItem__moved, t?.item),
+      className: clsx(styles$x.selectedItem, s && styles$x.selectedItem__moved, t?.item),
       children: [
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$v.selectedItemBackground, t?.background),
+          className: clsx(styles$x.selectedItemBackground, t?.background),
         }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$v.selectedItemBorder, t?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$x.selectedItemBorder, t?.border) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$v.selectedItemContent, t?.content),
+          className: clsx(styles$x.selectedItemContent, t?.content),
           children: e,
         }),
       ],
@@ -11256,21 +10986,21 @@ function SelectedItem({ children: e, classNames: t }) {
 }
 const sizes$9 = { small: "small", medium: "medium" },
   types = { vertical: "vertical", horizontal: "horizontal" },
-  Base$j = defineStyledComponent("Button", styles$v.base, {
+  Base$j = defineStyledComponent("Button", styles$x.base, {
     variants: {
       type: {
-        [types.horizontal]: styles$v["base__type-horizontal"],
-        [types.vertical]: styles$v["base__type-vertical"],
+        [types.horizontal]: styles$x["base__type-horizontal"],
+        [types.vertical]: styles$x["base__type-vertical"],
       },
       size: {
-        [sizes$9.small]: styles$v["base__size-small"],
-        [sizes$9.medium]: styles$v["base__size-medium"],
+        [sizes$9.small]: styles$x["base__size-small"],
+        [sizes$9.medium]: styles$x["base__size-medium"],
       },
-      state: { disabled: styles$v.base__disabled },
+      state: { disabled: styles$x.base__disabled },
     },
     defaultVariants: { type: types.vertical, size: sizes$9.small },
   }),
-  Item = defineStyledComponent("ButtonItem", styles$v.item),
+  Item = defineStyledComponent("ButtonItem", styles$x.item),
   Switcher$1 = reactExports.forwardRef(function (
     {
       type: e = types.vertical,
@@ -11307,11 +11037,11 @@ const sizes$9 = { small: "small", medium: "medium" },
           (E.play("click", { target: Base$j.displayName, original: e }), r(!t), a?.(e));
         },
         children: [
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$v.background, u?.background) }),
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$v.border, u?.border) }),
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$v.overlay, u?.overlay) }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$x.background, u?.background) }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$x.border, u?.border) }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$x.overlay, u?.overlay) }),
           jsxRuntimeExports.jsxs("div", {
-            className: clsx(styles$v.content, i && styles$v.content__fontAligned, u?.content),
+            className: clsx(styles$x.content, i && styles$x.content__fontAligned, u?.content),
             children: [_, m, f],
           }),
         ],
@@ -11438,7 +11168,7 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
   slot__extraLarge = "Slot_slot__extraLarge_d8070c25",
   content__disabled = "Slot_content__disabled_1d609e12",
   emptyContent = "Slot_emptyContent_ba97d4d8",
-  styles$u = {
+  styles$w = {
     selectedOverlay: selectedOverlay,
     disabledOverlay: disabledOverlay,
     content: content$5,
@@ -11453,20 +11183,20 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
   },
   sizes$7 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
   Content$1 = defineStyledComponent("SlotContent"),
-  Base$h = defineStyledComponent("Slot", styles$u.slot, {
+  Base$h = defineStyledComponent("Slot", styles$w.slot, {
     variants: {
       size: {
-        [sizes$7.small]: styles$u.slot__small,
-        [sizes$7.medium]: styles$u.slot__medium,
-        [sizes$7.large]: styles$u.slot__large,
-        [sizes$7.extraLarge]: styles$u.slot__extraLarge,
+        [sizes$7.small]: styles$w.slot__small,
+        [sizes$7.medium]: styles$w.slot__medium,
+        [sizes$7.large]: styles$w.slot__large,
+        [sizes$7.extraLarge]: styles$w.slot__extraLarge,
       },
-      hovered: { true: styles$u.slot__hovered },
-      selected: { true: styles$u.slot__selected },
-      disabled: { true: styles$u.slot__disabled },
+      hovered: { true: styles$w.slot__hovered },
+      selected: { true: styles$w.slot__selected },
+      disabled: { true: styles$w.slot__disabled },
     },
   }),
-  EmptySlot = defineStyledComponent("EmptySlot", styles$u.emptyContent),
+  EmptySlot = defineStyledComponent("EmptySlot", styles$w.emptyContent),
   Slot = reactExports.forwardRef(function (
     {
       children: e,
@@ -11492,14 +11222,14 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
       children: [
         a &&
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$u.selectedOverlay, n?.selectedOverlay),
+            className: clsx(styles$w.selectedOverlay, n?.selectedOverlay),
           }),
         s &&
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$u.disabledOverlay, n?.disabledOverlay),
+            className: clsx(styles$w.disabledOverlay, n?.disabledOverlay),
           }),
         jsxRuntimeExports.jsx(Content$1, {
-          className: clsx(styles$u.content, s && styles$u.content__disabled, n?.content),
+          className: clsx(styles$w.content, s && styles$w.content__disabled, n?.content),
           "data-drop-item": i,
           children: e || jsxRuntimeExports.jsx(EmptySlot, { className: n?.emptyContent }),
         }),
@@ -11720,7 +11450,7 @@ var ButtonType = ((e) => (
     (e.large = "large"),
     e
   ))(ButtonSize || {});
-const base$s = "Cbutton_24fc9a0c",
+const base$t = "Cbutton_24fc9a0c",
   base__main = "Cbutton_base__main_2f199578",
   base__primary = "Cbutton_base__primary_9da8a692",
   base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
@@ -11741,21 +11471,21 @@ const base$s = "Cbutton_24fc9a0c",
   stateDisabled = "Cbutton_stateDisabled_7b91392f",
   base__highlightActive = "Cbutton_base__highlightActive_180a9717",
   content$4 = "Cbutton_content_faaa9067",
-  fadeIn$a = "Cbutton_fadeIn_180a9717",
-  fadeInThreeQuarters$a = "Cbutton_fadeInThreeQuarters_180a9717",
-  fadeInHalf$a = "Cbutton_fadeInHalf_180a9717",
-  fadeOut$a = "Cbutton_fadeOut_180a9717",
-  fadeInWithScale$a = "Cbutton_fadeInWithScale_180a9717",
-  slideUp$a = "Cbutton_slideUp_180a9717",
-  scale$a = "Cbutton_scale_180a9717",
-  raysAppearance$a = "Cbutton_raysAppearance_180a9717",
-  rotate$a = "Cbutton_rotate_180a9717",
-  glowAppearance$a = "Cbutton_glowAppearance_180a9717",
-  highlightAppearance$a = "Cbutton_highlightAppearance_180a9717",
-  blink$a = "Cbutton_blink_180a9717",
-  slideUpIn$a = "Cbutton_slideUpIn_180a9717",
-  styles$t = {
-    base: base$s,
+  fadeIn$b = "Cbutton_fadeIn_180a9717",
+  fadeInThreeQuarters$b = "Cbutton_fadeInThreeQuarters_180a9717",
+  fadeInHalf$b = "Cbutton_fadeInHalf_180a9717",
+  fadeOut$b = "Cbutton_fadeOut_180a9717",
+  fadeInWithScale$b = "Cbutton_fadeInWithScale_180a9717",
+  slideUp$b = "Cbutton_slideUp_180a9717",
+  scale$b = "Cbutton_scale_180a9717",
+  raysAppearance$b = "Cbutton_raysAppearance_180a9717",
+  rotate$b = "Cbutton_rotate_180a9717",
+  glowAppearance$b = "Cbutton_glowAppearance_180a9717",
+  highlightAppearance$b = "Cbutton_highlightAppearance_180a9717",
+  blink$b = "Cbutton_blink_180a9717",
+  slideUpIn$b = "Cbutton_slideUpIn_180a9717",
+  styles$v = {
+    base: base$t,
     base__main: base__main,
     base__primary: base__primary,
     base__primaryGreen: base__primaryGreen,
@@ -11776,20 +11506,20 @@ const base$s = "Cbutton_24fc9a0c",
     stateDisabled: stateDisabled,
     base__highlightActive: base__highlightActive,
     content: content$4,
-    fadeIn: fadeIn$a,
-    fadeInThreeQuarters: fadeInThreeQuarters$a,
-    fadeInHalf: fadeInHalf$a,
-    fadeOut: fadeOut$a,
-    fadeInWithScale: fadeInWithScale$a,
-    slideUp: slideUp$a,
-    scale: scale$a,
-    raysAppearance: raysAppearance$a,
-    rotate: rotate$a,
+    fadeIn: fadeIn$b,
+    fadeInThreeQuarters: fadeInThreeQuarters$b,
+    fadeInHalf: fadeInHalf$b,
+    fadeOut: fadeOut$b,
+    fadeInWithScale: fadeInWithScale$b,
+    slideUp: slideUp$b,
+    scale: scale$b,
+    raysAppearance: raysAppearance$b,
+    rotate: rotate$b,
     "reverse-rotate": "Cbutton_reverse-rotate_180a9717",
-    glowAppearance: glowAppearance$a,
-    highlightAppearance: highlightAppearance$a,
-    blink: blink$a,
-    slideUpIn: slideUpIn$a,
+    glowAppearance: glowAppearance$b,
+    highlightAppearance: highlightAppearance$b,
+    blink: blink$b,
+    slideUpIn: slideUpIn$b,
   },
   Button = ({
     children: e,
@@ -11828,12 +11558,12 @@ const base$s = "Cbutton_24fc9a0c",
       jsxRuntimeExports.jsxs("div", {
         ref: m,
         className: cx(
-          styles$t.base,
-          styles$t[`base__${d}`],
-          s && styles$t.base__disabled,
-          t && styles$t[`base__${t}`],
-          f && styles$t.base__focus,
-          g && styles$t.base__highlightActive,
+          styles$v.base,
+          styles$v[`base__${d}`],
+          s && styles$v.base__disabled,
+          t && styles$v[`base__${t}`],
+          f && styles$v.base__focus,
+          g && styles$v.base__highlightActive,
           r,
         ),
         onMouseEnter: function (e) {
@@ -11863,20 +11593,20 @@ const base$s = "Cbutton_24fc9a0c",
           d !== ButtonType.ghost &&
             jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
               children: [
-                jsxRuntimeExports.jsx("div", { className: styles$t.back }),
-                jsxRuntimeExports.jsx("span", { className: styles$t.texture }),
+                jsxRuntimeExports.jsx("div", { className: styles$v.back }),
+                jsxRuntimeExports.jsx("span", { className: styles$v.texture }),
               ],
             }),
           jsxRuntimeExports.jsxs("span", {
-            className: cx(styles$t.state, styles$t.state__default),
+            className: cx(styles$v.state, styles$v.state__default),
             children: [
-              jsxRuntimeExports.jsx("span", { className: styles$t.stateDisabled }),
-              jsxRuntimeExports.jsx("span", { className: styles$t.stateHighlightHover }),
-              jsxRuntimeExports.jsx("span", { className: styles$t.stateHighlightActive }),
+              jsxRuntimeExports.jsx("span", { className: styles$v.stateDisabled }),
+              jsxRuntimeExports.jsx("span", { className: styles$v.stateHighlightHover }),
+              jsxRuntimeExports.jsx("span", { className: styles$v.stateHighlightActive }),
             ],
           }),
           jsxRuntimeExports.jsx("span", {
-            className: styles$t.content,
+            className: styles$v.content,
             lang: R.strings.settings.LANGUAGE_CODE(),
             children: e,
           }),
@@ -11885,46 +11615,46 @@ const base$s = "Cbutton_24fc9a0c",
     );
   },
   CButton = Button,
-  base$r = "Error_741eaf3c",
+  base$s = "Error_741eaf3c",
   alertIcon = "Error_alertIcon_e771a05c",
   errorCaption = "Error_errorCaption_89c19a4f",
   button$1 = "Error_button_2d8a41b6",
-  styles$s = { base: base$r, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
+  styles$u = { base: base$s, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
   Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: s }) =>
     jsxRuntimeExports.jsxs("div", {
-      className: styles$s.base,
+      className: styles$u.base,
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$s.alertIcon }),
-        jsxRuntimeExports.jsx("div", { className: styles$s.errorCaption, children: s }),
+        jsxRuntimeExports.jsx("div", { className: styles$u.alertIcon }),
+        jsxRuntimeExports.jsx("div", { className: styles$u.errorCaption, children: s }),
         jsxRuntimeExports.jsx(CButton, {
           size: ButtonSize.medium,
-          mixClass: styles$s.button,
+          mixClass: styles$u.button,
           onClick: e,
           children: t,
         }),
       ],
     }),
-  base$q = "Spinner_9ec19f90",
+  base$r = "Spinner_9ec19f90",
   caption$1 = "Spinner_caption_a44b585",
   gear = "Spinner_gear_13ca7433",
   logo = "Spinner_logo_22e624b",
-  styles$r = { base: base$q, caption: caption$1, gear: gear, logo: logo },
+  styles$t = { base: base$r, caption: caption$1, gear: gear, logo: logo },
   Spinner = ({ message: e, className: t, classNames: s }) =>
     jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$r.base, t),
+      className: cx(styles$t.base, t),
       children: [
         e &&
           jsxRuntimeExports.jsx("div", {
-            className: cx(styles$r.caption, s?.caption),
+            className: cx(styles$t.caption, s?.caption),
             children: e,
           }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$r.gear, s?.gear) }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$r.logo, s?.logo) }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$t.gear, s?.gear) }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$t.logo, s?.logo) }),
       ],
     }),
-  base$p = "Waiting_f97f6e4b",
+  base$q = "Waiting_f97f6e4b",
   blackOverlay = "Waiting_blackOverlay_e659a6de",
-  styles$q = { base: base$p, blackOverlay: blackOverlay },
+  styles$s = { base: base$q, blackOverlay: blackOverlay },
   Waiting = ({
     errorBtnClickHandler: e,
     message: t = "",
@@ -11940,9 +11670,9 @@ const base$s = "Cbutton_24fc9a0c",
         e && n && (e.style.opacity = n);
       }, [o, n]),
       jsxRuntimeExports.jsxs("div", {
-        className: styles$q.base,
+        className: styles$s.base,
         children: [
-          jsxRuntimeExports.jsx("div", { className: styles$q.blackOverlay, ref: o }),
+          jsxRuntimeExports.jsx("div", { className: styles$s.blackOverlay, ref: o }),
           s
             ? jsxRuntimeExports.jsx(Error$1, {
                 errorBtnLabel: a,
@@ -11973,9 +11703,9 @@ function isSerializableReactNode(e) {
     (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
   );
 }
-const base$o = "MultilineOverflow_ec9f8e47",
+const base$p = "MultilineOverflow_ec9f8e47",
   content$3 = "MultilineOverflow_content_b539970d",
-  styles$p = { base: base$o, content: content$3 };
+  styles$r = { base: base$p, content: content$3 };
 function isSerializableParams(e) {
   return !e || Object.values(e).every(isSerializableReactNode);
 }
@@ -12022,7 +11752,7 @@ const MultilineOverflow = reactExports.forwardRef(function (
       const e = t.children[0];
       if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
       (r.remove(),
-        (r.className = clsx(styles$p.content, t.children[0].className)),
+        (r.className = clsx(styles$r.content, t.children[0].className)),
         (r.innerHTML = ""),
         e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
       const a = e.childNodes.length - 1;
@@ -12101,7 +11831,7 @@ const MultilineOverflow = reactExports.forwardRef(function (
       (i?.(e), l || v.onMouseLeave());
     },
     ref: assignRefs([g, h]),
-    className: clsx(styles$p.base, d, p?.base),
+    className: clsx(styles$r.base, d, p?.base),
     style: { ..._, ...m },
     children: [
       jsxRuntimeExports.jsx(FormatText, {
@@ -12157,56 +11887,56 @@ const fill = "Filled_fill_32930ca9",
   filled__small = "Filled_filled__small_94d1350d",
   pattern$3 = "Filled_pattern_6ec8608d",
   filled__medium = "Filled_filled__medium_94d1350d",
-  fadeIn$9 = "Filled_fadeIn_94d1350d",
-  fadeInThreeQuarters$9 = "Filled_fadeInThreeQuarters_94d1350d",
-  fadeInHalf$9 = "Filled_fadeInHalf_94d1350d",
-  fadeOut$9 = "Filled_fadeOut_94d1350d",
-  fadeInWithScale$9 = "Filled_fadeInWithScale_94d1350d",
-  slideUp$9 = "Filled_slideUp_94d1350d",
-  scale$9 = "Filled_scale_94d1350d",
-  raysAppearance$9 = "Filled_raysAppearance_94d1350d",
-  rotate$9 = "Filled_rotate_94d1350d",
-  glowAppearance$9 = "Filled_glowAppearance_94d1350d",
-  highlightAppearance$9 = "Filled_highlightAppearance_94d1350d",
-  blink$9 = "Filled_blink_94d1350d",
-  slideUpIn$9 = "Filled_slideUpIn_94d1350d",
-  styles$o = {
+  fadeIn$a = "Filled_fadeIn_94d1350d",
+  fadeInThreeQuarters$a = "Filled_fadeInThreeQuarters_94d1350d",
+  fadeInHalf$a = "Filled_fadeInHalf_94d1350d",
+  fadeOut$a = "Filled_fadeOut_94d1350d",
+  fadeInWithScale$a = "Filled_fadeInWithScale_94d1350d",
+  slideUp$a = "Filled_slideUp_94d1350d",
+  scale$a = "Filled_scale_94d1350d",
+  raysAppearance$a = "Filled_raysAppearance_94d1350d",
+  rotate$a = "Filled_rotate_94d1350d",
+  glowAppearance$a = "Filled_glowAppearance_94d1350d",
+  highlightAppearance$a = "Filled_highlightAppearance_94d1350d",
+  blink$a = "Filled_blink_94d1350d",
+  slideUpIn$a = "Filled_slideUpIn_94d1350d",
+  styles$q = {
     fill: fill,
     filled: filled,
     wrapper: wrapper$2,
     filled__small: filled__small,
     pattern: pattern$3,
     filled__medium: filled__medium,
-    fadeIn: fadeIn$9,
-    fadeInThreeQuarters: fadeInThreeQuarters$9,
-    fadeInHalf: fadeInHalf$9,
-    fadeOut: fadeOut$9,
-    fadeInWithScale: fadeInWithScale$9,
-    slideUp: slideUp$9,
-    scale: scale$9,
-    raysAppearance: raysAppearance$9,
-    rotate: rotate$9,
+    fadeIn: fadeIn$a,
+    fadeInThreeQuarters: fadeInThreeQuarters$a,
+    fadeInHalf: fadeInHalf$a,
+    fadeOut: fadeOut$a,
+    fadeInWithScale: fadeInWithScale$a,
+    slideUp: slideUp$a,
+    scale: scale$a,
+    raysAppearance: raysAppearance$a,
+    rotate: rotate$a,
     "reverse-rotate": "Filled_reverse-rotate_94d1350d",
-    glowAppearance: glowAppearance$9,
-    highlightAppearance: highlightAppearance$9,
-    blink: blink$9,
-    slideUpIn: slideUpIn$9,
+    glowAppearance: glowAppearance$a,
+    highlightAppearance: highlightAppearance$a,
+    blink: blink$a,
+    slideUpIn: slideUpIn$a,
   },
   Filled = reactExports.forwardRef(function ({ className: e, classNames: t, ...s }, r) {
     const a = useProgressBar();
     return jsxRuntimeExports.jsx("div", {
       ...s,
       ref: r,
-      className: clsx(styles$o.filled, styles$o[`filled__${a.size}`], e),
+      className: clsx(styles$q.filled, styles$q[`filled__${a.size}`], e),
       children: jsxRuntimeExports.jsxs("div", {
-        className: clsx(styles$o.wrapper, t?.wrapper),
+        className: clsx(styles$q.wrapper, t?.wrapper),
         children: [
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$o.fill, t?.fill),
+            className: clsx(styles$q.fill, t?.fill),
             style: { width: 100 * a.percentage + "%" },
           }),
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$o.pattern, t?.pattern),
+            className: clsx(styles$q.pattern, t?.pattern),
             style: { width: 100 * a.percentage + "%" },
           }),
         ],
@@ -12253,25 +11983,25 @@ function ProgressBarProvider(e) {
   return jsxRuntimeExports.jsx(Context$1.Provider, { value: d, children: e.children });
 }
 const background$3 = "ProgressBar_background_b40cdfdf",
-  base$n = "ProgressBar_27c2305c",
+  base$o = "ProgressBar_27c2305c",
   base__small$8 = "ProgressBar_base__small_61ccd4be",
   base__medium$3 = "ProgressBar_base__medium_478d985a",
   base__full$1 = "ProgressBar_base__full_be7f12da",
   backgroundPattern$2 = "ProgressBar_backgroundPattern_7e932276",
-  styles$n = {
+  styles$p = {
     background: background$3,
-    base: base$n,
+    base: base$o,
     base__small: base__small$8,
     base__medium: base__medium$3,
     base__full: base__full$1,
     backgroundPattern: backgroundPattern$2,
   },
-  Base$g = defineStyledComponent("ProgressBar", styles$n.base, {
+  Base$g = defineStyledComponent("ProgressBar", styles$p.base, {
     variants: {
       size: {
-        small: styles$n.base__small,
-        medium: styles$n.base__medium,
-        full: styles$n.base__full,
+        small: styles$p.base__small,
+        medium: styles$p.base__medium,
+        full: styles$p.base__full,
       },
     },
   });
@@ -12290,9 +12020,9 @@ function ProgressBar$1({
       size: e,
       className: t,
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$n.background, s?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$p.background, s?.background) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$n.backgroundPattern, s?.backgroundPattern),
+          className: clsx(styles$p.backgroundPattern, s?.backgroundPattern),
         }),
         jsxRuntimeExports.jsx(Filled, { className: r, classNames: a }),
         n.children,
@@ -12648,10 +12378,10 @@ const multiValueTypes = [
   base__s296x222 = "Reward_base__s296x222_52f0615b",
   base__s400x300 = "Reward_base__s400x300_a8627e1b",
   base__s600x450 = "Reward_base__s600x450_e27f3852",
-  base$m = "Reward_d65e1e12",
+  base$n = "Reward_d65e1e12",
   base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
   tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
-  icon$1 = "Reward_icon_e152f13b",
+  icon$2 = "Reward_icon_e152f13b",
   overlay = "Reward_overlay_8cbe65c9",
   highlight = "Reward_highlight_f1cd08e0",
   image__s24x24 = "Reward_image__s24x24_954b5cee",
@@ -12675,20 +12405,20 @@ const multiValueTypes = [
   info__premiumTank = "Reward_info__premiumTank_7862152",
   title = "Reward_title_fbcf4b5",
   timer = "Reward_timer_22ba7b8b",
-  fadeIn$8 = "Reward_fadeIn_21f091ec",
-  fadeInThreeQuarters$8 = "Reward_fadeInThreeQuarters_21f091ec",
-  fadeInHalf$8 = "Reward_fadeInHalf_21f091ec",
-  fadeOut$8 = "Reward_fadeOut_21f091ec",
-  fadeInWithScale$8 = "Reward_fadeInWithScale_21f091ec",
-  slideUp$8 = "Reward_slideUp_21f091ec",
-  scale$8 = "Reward_scale_21f091ec",
-  raysAppearance$8 = "Reward_raysAppearance_21f091ec",
-  rotate$8 = "Reward_rotate_21f091ec",
-  glowAppearance$8 = "Reward_glowAppearance_21f091ec",
-  highlightAppearance$8 = "Reward_highlightAppearance_21f091ec",
-  blink$8 = "Reward_blink_21f091ec",
-  slideUpIn$8 = "Reward_slideUpIn_21f091ec",
-  styles$m = {
+  fadeIn$9 = "Reward_fadeIn_21f091ec",
+  fadeInThreeQuarters$9 = "Reward_fadeInThreeQuarters_21f091ec",
+  fadeInHalf$9 = "Reward_fadeInHalf_21f091ec",
+  fadeOut$9 = "Reward_fadeOut_21f091ec",
+  fadeInWithScale$9 = "Reward_fadeInWithScale_21f091ec",
+  slideUp$9 = "Reward_slideUp_21f091ec",
+  scale$9 = "Reward_scale_21f091ec",
+  raysAppearance$9 = "Reward_raysAppearance_21f091ec",
+  rotate$9 = "Reward_rotate_21f091ec",
+  glowAppearance$9 = "Reward_glowAppearance_21f091ec",
+  highlightAppearance$9 = "Reward_highlightAppearance_21f091ec",
+  blink$9 = "Reward_blink_21f091ec",
+  slideUpIn$9 = "Reward_slideUpIn_21f091ec",
+  styles$o = {
     base__s24x24: base__s24x24,
     base__s48x48: base__s48x48,
     base__small: base__small$7,
@@ -12700,10 +12430,10 @@ const multiValueTypes = [
     base__s296x222: base__s296x222,
     base__s400x300: base__s400x300,
     base__s600x450: base__s600x450,
-    base: base$m,
+    base: base$n,
     base__dynamicBox: base__dynamicBox,
     tooltipWrapper: tooltipWrapper,
-    icon: icon$1,
+    icon: icon$2,
     overlay: overlay,
     highlight: highlight,
     image__s24x24: image__s24x24,
@@ -12727,20 +12457,20 @@ const multiValueTypes = [
     info__premiumTank: info__premiumTank,
     title: title,
     timer: timer,
-    fadeIn: fadeIn$8,
-    fadeInThreeQuarters: fadeInThreeQuarters$8,
-    fadeInHalf: fadeInHalf$8,
-    fadeOut: fadeOut$8,
-    fadeInWithScale: fadeInWithScale$8,
-    slideUp: slideUp$8,
-    scale: scale$8,
-    raysAppearance: raysAppearance$8,
-    rotate: rotate$8,
+    fadeIn: fadeIn$9,
+    fadeInThreeQuarters: fadeInThreeQuarters$9,
+    fadeInHalf: fadeInHalf$9,
+    fadeOut: fadeOut$9,
+    fadeInWithScale: fadeInWithScale$9,
+    slideUp: slideUp$9,
+    scale: scale$9,
+    raysAppearance: raysAppearance$9,
+    rotate: rotate$9,
     "reverse-rotate": "Reward_reverse-rotate_21f091ec",
-    glowAppearance: glowAppearance$8,
-    highlightAppearance: highlightAppearance$8,
-    blink: blink$8,
-    slideUpIn: slideUpIn$8,
+    glowAppearance: glowAppearance$9,
+    highlightAppearance: highlightAppearance$9,
+    blink: blink$9,
+    slideUpIn: slideUpIn$9,
   },
   images = resources.resolve("images"),
   SIZE_MAP = new Map([
@@ -12775,7 +12505,7 @@ const multiValueTypes = [
       }),
       b = useSimpleTooltip({ header: _?.header, body: _?.body });
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$m.base, styles$m[`base__${a}`], !r && styles$m.base__dynamicBox, c),
+      className: cx(styles$o.base, styles$o[`base__${a}`], !r && styles$o.base__dynamicBox, c),
       style: l,
       ...h,
       children: [
@@ -12783,26 +12513,26 @@ const multiValueTypes = [
           children: [
             jsxRuntimeExports.jsxs("div", {
               className: cx(
-                styles$m.image,
-                r ? styles$m.image__fixedBox : styles$m[`image__${a}`],
+                styles$o.image,
+                r ? styles$o.image__fixedBox : styles$o[`image__${a}`],
                 d?.image,
               ),
               children: [
                 f &&
                   jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$m.highlight, d?.highlight),
+                    className: cx(styles$o.highlight, d?.highlight),
                     style: {
                       backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${m}.${f}_highlight`)})`,
                     },
                   }),
                 t &&
                   jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$m.icon, d?.rewardIcon),
+                    className: cx(styles$o.icon, d?.rewardIcon),
                     style: { backgroundImage: `url(${t})` },
                   }),
                 E &&
                   jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$m.overlay, d?.overlay),
+                    className: cx(styles$o.overlay, d?.overlay),
                     style: {
                       backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${m}.${E}_overlay`)})`,
                     },
@@ -12812,27 +12542,27 @@ const multiValueTypes = [
             g &&
               jsxRuntimeExports.jsx("div", {
                 className: cx(
-                  styles$m.info,
-                  styles$m[`info__${e}`],
-                  i === ValueTypes.MULTI && styles$m.info__multi,
+                  styles$o.info,
+                  styles$o[`info__${e}`],
+                  i === ValueTypes.MULTI && styles$o.info__multi,
                   d?.info,
                 ),
                 children: g,
               }),
-            u && jsxRuntimeExports.jsx("div", { className: styles$m.title, children: u }),
+            u && jsxRuntimeExports.jsx("div", { className: styles$o.title, children: u }),
           ],
         }),
-        s && jsxRuntimeExports.jsx("div", { className: cx(styles$m.timer, d?.periodicIcon), ...b }),
+        s && jsxRuntimeExports.jsx("div", { className: cx(styles$o.timer, d?.periodicIcon), ...b }),
       ],
     });
   },
-  base$l = "RewardsList_b956755b",
+  base$m = "RewardsList_b956755b",
   base__vertical$1 = "RewardsList_base__vertical_59db3c9f",
   reward$1 = "RewardsList_reward_fc200613",
   reward__vertical$1 = "RewardsList_reward__vertical_5f09c6e0",
   boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
-  styles$l = {
-    base: base$l,
+  styles$n = {
+    base: base$m,
     base__vertical: base__vertical$1,
     reward: reward$1,
     reward__vertical: reward__vertical$1,
@@ -12864,7 +12594,7 @@ const multiValueTypes = [
           count: e.length - (a || 0),
         });
     return jsxRuntimeExports.jsx("div", {
-      className: cx(styles$l.base, r && styles$l.base__vertical, n),
+      className: cx(styles$n.base, r && styles$n.base__vertical, n),
       children:
         void 0 !== _
           ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
@@ -12875,7 +12605,7 @@ const multiValueTypes = [
                     jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: cx(styles$l.reward, r && styles$l.reward__vertical, o),
+                        className: cx(styles$n.reward, r && styles$n.reward__vertical, o),
                         children: jsxRuntimeExports.jsx(Reward, {
                           size: s,
                           isFixedBoxSize: t,
@@ -12886,7 +12616,7 @@ const multiValueTypes = [
                     ),
                   ),
                 jsxRuntimeExports.jsx("div", {
-                  className: cx(styles$l.reward, r && styles$l.reward__vertical, o),
+                  className: cx(styles$n.reward, r && styles$n.reward__vertical, o),
                   children: jsxRuntimeExports.jsx(Reward, {
                     name: "more",
                     isFixedBoxSize: t,
@@ -12894,7 +12624,7 @@ const multiValueTypes = [
                     size: s,
                     value: m,
                     tooltipArgs: i,
-                    className: cx(styles$l.boxRewardClassName, l),
+                    className: cx(styles$n.boxRewardClassName, l),
                     classNames: c,
                   }),
                 }),
@@ -12904,7 +12634,7 @@ const multiValueTypes = [
               jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: cx(styles$l.reward, r && styles$l.reward__vertical, o),
+                  className: cx(styles$n.reward, r && styles$n.reward__vertical, o),
                   children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
                 },
                 a,
@@ -12918,30 +12648,67 @@ var Size = ((e) => ((e.Small = "small"), (e.Medium = "medium"), (e.Default = "me
   AnimationType = ((e) => ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e))(
     AnimationType || {},
   );
-const base$k = "Progressbar_a6e35bd7",
+const base$l = "Progressbar_a6e35bd7",
   base__small$6 = "Progressbar_base__small_7338ff19",
   background$2 = "Progressbar_background_27d9dd7c",
   background__small = "Progressbar_background__small_7338ff19",
   lineWrapper = "Progressbar_lineWrapper_fc5022a6",
-  fadeIn$7 = "Progressbar_fadeIn_27f917f7",
-  fadeInThreeQuarters$7 = "Progressbar_fadeInThreeQuarters_27f917f7",
-  fadeInHalf$7 = "Progressbar_fadeInHalf_27f917f7",
-  fadeOut$7 = "Progressbar_fadeOut_27f917f7",
-  fadeInWithScale$7 = "Progressbar_fadeInWithScale_27f917f7",
-  slideUp$7 = "Progressbar_slideUp_27f917f7",
-  scale$7 = "Progressbar_scale_27f917f7",
-  raysAppearance$7 = "Progressbar_raysAppearance_27f917f7",
-  rotate$7 = "Progressbar_rotate_27f917f7",
-  glowAppearance$7 = "Progressbar_glowAppearance_27f917f7",
-  highlightAppearance$7 = "Progressbar_highlightAppearance_27f917f7",
-  blink$7 = "Progressbar_blink_27f917f7",
-  slideUpIn$7 = "Progressbar_slideUpIn_27f917f7",
-  styles$k = {
-    base: base$k,
+  fadeIn$8 = "Progressbar_fadeIn_27f917f7",
+  fadeInThreeQuarters$8 = "Progressbar_fadeInThreeQuarters_27f917f7",
+  fadeInHalf$8 = "Progressbar_fadeInHalf_27f917f7",
+  fadeOut$8 = "Progressbar_fadeOut_27f917f7",
+  fadeInWithScale$8 = "Progressbar_fadeInWithScale_27f917f7",
+  slideUp$8 = "Progressbar_slideUp_27f917f7",
+  scale$8 = "Progressbar_scale_27f917f7",
+  raysAppearance$8 = "Progressbar_raysAppearance_27f917f7",
+  rotate$8 = "Progressbar_rotate_27f917f7",
+  glowAppearance$8 = "Progressbar_glowAppearance_27f917f7",
+  highlightAppearance$8 = "Progressbar_highlightAppearance_27f917f7",
+  blink$8 = "Progressbar_blink_27f917f7",
+  slideUpIn$8 = "Progressbar_slideUpIn_27f917f7",
+  styles$m = {
+    base: base$l,
     base__small: base__small$6,
     background: background$2,
     background__small: background__small,
     lineWrapper: lineWrapper,
+    fadeIn: fadeIn$8,
+    fadeInThreeQuarters: fadeInThreeQuarters$8,
+    fadeInHalf: fadeInHalf$8,
+    fadeOut: fadeOut$8,
+    fadeInWithScale: fadeInWithScale$8,
+    slideUp: slideUp$8,
+    scale: scale$8,
+    raysAppearance: raysAppearance$8,
+    rotate: rotate$8,
+    "reverse-rotate": "Progressbar_reverse-rotate_27f917f7",
+    glowAppearance: glowAppearance$8,
+    highlightAppearance: highlightAppearance$8,
+    blink: blink$8,
+    slideUpIn: slideUpIn$8,
+  },
+  ProgressBarBackground = ({ size: e = Size.Default }) => {
+    const t = cx(styles$m.background, styles$m[`background__${e}`]);
+    return jsxRuntimeExports.jsx("div", { className: t });
+  },
+  base$k = "Progressbarblink_c6146c1c",
+  base__small$5 = "Progressbarblink_base__small_9a4d3786",
+  fadeIn$7 = "Progressbarblink_fadeIn_6fa3e54",
+  fadeInThreeQuarters$7 = "Progressbarblink_fadeInThreeQuarters_6fa3e54",
+  fadeInHalf$7 = "Progressbarblink_fadeInHalf_6fa3e54",
+  fadeOut$7 = "Progressbarblink_fadeOut_6fa3e54",
+  fadeInWithScale$7 = "Progressbarblink_fadeInWithScale_6fa3e54",
+  slideUp$7 = "Progressbarblink_slideUp_6fa3e54",
+  scale$7 = "Progressbarblink_scale_6fa3e54",
+  raysAppearance$7 = "Progressbarblink_raysAppearance_6fa3e54",
+  rotate$7 = "Progressbarblink_rotate_6fa3e54",
+  glowAppearance$7 = "Progressbarblink_glowAppearance_6fa3e54",
+  highlightAppearance$7 = "Progressbarblink_highlightAppearance_6fa3e54",
+  blink$7 = "Progressbarblink_blink_6fa3e54",
+  slideUpIn$7 = "Progressbarblink_slideUpIn_6fa3e54",
+  styles$l = {
+    base: base$k,
+    base__small: base__small$5,
     fadeIn: fadeIn$7,
     fadeInThreeQuarters: fadeInThreeQuarters$7,
     fadeInHalf: fadeInHalf$7,
@@ -12951,34 +12718,48 @@ const base$k = "Progressbar_a6e35bd7",
     scale: scale$7,
     raysAppearance: raysAppearance$7,
     rotate: rotate$7,
-    "reverse-rotate": "Progressbar_reverse-rotate_27f917f7",
+    "reverse-rotate": "Progressbarblink_reverse-rotate_6fa3e54",
     glowAppearance: glowAppearance$7,
     highlightAppearance: highlightAppearance$7,
     blink: blink$7,
     slideUpIn: slideUpIn$7,
   },
-  ProgressBarBackground = ({ size: e = Size.Default }) => {
-    const t = cx(styles$k.background, styles$k[`background__${e}`]);
+  ProgressBarBlink = ({ size: e }) => {
+    const t = cx(styles$l.base, styles$l[`base__${e}`]);
     return jsxRuntimeExports.jsx("div", { className: t });
   },
-  base$j = "Progressbarblink_c6146c1c",
-  base__small$5 = "Progressbarblink_base__small_9a4d3786",
-  fadeIn$6 = "Progressbarblink_fadeIn_6fa3e54",
-  fadeInThreeQuarters$6 = "Progressbarblink_fadeInThreeQuarters_6fa3e54",
-  fadeInHalf$6 = "Progressbarblink_fadeInHalf_6fa3e54",
-  fadeOut$6 = "Progressbarblink_fadeOut_6fa3e54",
-  fadeInWithScale$6 = "Progressbarblink_fadeInWithScale_6fa3e54",
-  slideUp$6 = "Progressbarblink_slideUp_6fa3e54",
-  scale$6 = "Progressbarblink_scale_6fa3e54",
-  raysAppearance$6 = "Progressbarblink_raysAppearance_6fa3e54",
-  rotate$6 = "Progressbarblink_rotate_6fa3e54",
-  glowAppearance$6 = "Progressbarblink_glowAppearance_6fa3e54",
-  highlightAppearance$6 = "Progressbarblink_highlightAppearance_6fa3e54",
-  blink$6 = "Progressbarblink_blink_6fa3e54",
-  slideUpIn$6 = "Progressbarblink_slideUpIn_6fa3e54",
-  styles$j = {
+  base$j = "Progresslineimpose_24e17c02",
+  base__disabled$2 = "Progresslineimpose_base__disabled_bcd461f4",
+  base__finished = "Progresslineimpose_base__finished_803677d6",
+  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
+  pattern$2 = "Progresslineimpose_pattern_491cb9c0",
+  base__small$4 = "Progresslineimpose_base__small_577e82cf",
+  gradient = "Progresslineimpose_gradient_513e2b1d",
+  glow$2 = "Progresslineimpose_glow_76f8072f",
+  glow__left = "Progresslineimpose_glow__left_c2e964b3",
+  fadeIn$6 = "Progresslineimpose_fadeIn_577e82cf",
+  fadeInThreeQuarters$6 = "Progresslineimpose_fadeInThreeQuarters_577e82cf",
+  fadeInHalf$6 = "Progresslineimpose_fadeInHalf_577e82cf",
+  fadeOut$6 = "Progresslineimpose_fadeOut_577e82cf",
+  fadeInWithScale$6 = "Progresslineimpose_fadeInWithScale_577e82cf",
+  slideUp$6 = "Progresslineimpose_slideUp_577e82cf",
+  scale$6 = "Progresslineimpose_scale_577e82cf",
+  raysAppearance$6 = "Progresslineimpose_raysAppearance_577e82cf",
+  rotate$6 = "Progresslineimpose_rotate_577e82cf",
+  glowAppearance$6 = "Progresslineimpose_glowAppearance_577e82cf",
+  highlightAppearance$6 = "Progresslineimpose_highlightAppearance_577e82cf",
+  blink$6 = "Progresslineimpose_blink_577e82cf",
+  slideUpIn$6 = "Progresslineimpose_slideUpIn_577e82cf",
+  styles$k = {
     base: base$j,
-    base__small: base__small$5,
+    base__disabled: base__disabled$2,
+    base__finished: base__finished,
+    base__withoutBounce: base__withoutBounce$1,
+    pattern: pattern$2,
+    base__small: base__small$4,
+    gradient: gradient,
+    glow: glow$2,
+    glow__left: glow__left,
     fadeIn: fadeIn$6,
     fadeInThreeQuarters: fadeInThreeQuarters$6,
     fadeInHalf: fadeInHalf$6,
@@ -12988,62 +12769,11 @@ const base$k = "Progressbar_a6e35bd7",
     scale: scale$6,
     raysAppearance: raysAppearance$6,
     rotate: rotate$6,
-    "reverse-rotate": "Progressbarblink_reverse-rotate_6fa3e54",
+    "reverse-rotate": "Progresslineimpose_reverse-rotate_577e82cf",
     glowAppearance: glowAppearance$6,
     highlightAppearance: highlightAppearance$6,
     blink: blink$6,
     slideUpIn: slideUpIn$6,
-  },
-  ProgressBarBlink = ({ size: e }) => {
-    const t = cx(styles$j.base, styles$j[`base__${e}`]);
-    return jsxRuntimeExports.jsx("div", { className: t });
-  },
-  base$i = "Progresslineimpose_24e17c02",
-  base__disabled$2 = "Progresslineimpose_base__disabled_bcd461f4",
-  base__finished = "Progresslineimpose_base__finished_803677d6",
-  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
-  pattern$2 = "Progresslineimpose_pattern_491cb9c0",
-  base__small$4 = "Progresslineimpose_base__small_577e82cf",
-  gradient = "Progresslineimpose_gradient_513e2b1d",
-  glow$2 = "Progresslineimpose_glow_76f8072f",
-  glow__left = "Progresslineimpose_glow__left_c2e964b3",
-  fadeIn$5 = "Progresslineimpose_fadeIn_577e82cf",
-  fadeInThreeQuarters$5 = "Progresslineimpose_fadeInThreeQuarters_577e82cf",
-  fadeInHalf$5 = "Progresslineimpose_fadeInHalf_577e82cf",
-  fadeOut$5 = "Progresslineimpose_fadeOut_577e82cf",
-  fadeInWithScale$5 = "Progresslineimpose_fadeInWithScale_577e82cf",
-  slideUp$5 = "Progresslineimpose_slideUp_577e82cf",
-  scale$5 = "Progresslineimpose_scale_577e82cf",
-  raysAppearance$5 = "Progresslineimpose_raysAppearance_577e82cf",
-  rotate$5 = "Progresslineimpose_rotate_577e82cf",
-  glowAppearance$5 = "Progresslineimpose_glowAppearance_577e82cf",
-  highlightAppearance$5 = "Progresslineimpose_highlightAppearance_577e82cf",
-  blink$5 = "Progresslineimpose_blink_577e82cf",
-  slideUpIn$5 = "Progresslineimpose_slideUpIn_577e82cf",
-  styles$i = {
-    base: base$i,
-    base__disabled: base__disabled$2,
-    base__finished: base__finished,
-    base__withoutBounce: base__withoutBounce$1,
-    pattern: pattern$2,
-    base__small: base__small$4,
-    gradient: gradient,
-    glow: glow$2,
-    glow__left: glow__left,
-    fadeIn: fadeIn$5,
-    fadeInThreeQuarters: fadeInThreeQuarters$5,
-    fadeInHalf: fadeInHalf$5,
-    fadeOut: fadeOut$5,
-    fadeInWithScale: fadeInWithScale$5,
-    slideUp: slideUp$5,
-    scale: scale$5,
-    raysAppearance: raysAppearance$5,
-    rotate: rotate$5,
-    "reverse-rotate": "Progresslineimpose_reverse-rotate_577e82cf",
-    glowAppearance: glowAppearance$5,
-    highlightAppearance: highlightAppearance$5,
-    blink: blink$5,
-    slideUpIn: slideUpIn$5,
   },
   ProgressLineImposeComponent = ({
     size: e,
@@ -13054,11 +12784,11 @@ const base$k = "Progressbar_a6e35bd7",
     withoutBounce: n,
   }) => {
     const o = cx(
-        styles$i.base,
-        styles$i[`base__${e}`],
-        s && styles$i.base__disabled,
-        a && styles$i.base__finished,
-        n && styles$i.base__withoutBounce,
+        styles$k.base,
+        styles$k[`base__${e}`],
+        s && styles$k.base__disabled,
+        a && styles$k.base__finished,
+        n && styles$k.base__withoutBounce,
       ),
       i = !s && !a;
     return jsxRuntimeExports.jsxs("div", {
@@ -13066,13 +12796,22 @@ const base$k = "Progressbar_a6e35bd7",
       style: r,
       ref: t,
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$i.pattern }),
-        jsxRuntimeExports.jsx("div", { className: styles$i.gradient }),
+        jsxRuntimeExports.jsx("div", { className: styles$k.pattern }),
+        jsxRuntimeExports.jsx("div", { className: styles$k.gradient }),
         i && jsxRuntimeExports.jsx(ProgressBarBlink, { size: e }),
       ],
     });
   },
-  ProgressLineImpose = reactExports.memo(ProgressLineImposeComponent);
+  ProgressLineImpose = reactExports.memo(ProgressLineImposeComponent),
+  createTimeoutInEffect = (e, t) => {
+    let s;
+    const r = setTimeout(() => {
+      s = e();
+    }, t);
+    return () => {
+      ("function" == typeof s && s(), clearTimeout(r));
+    };
+  };
 var GrowAnimationState = ((e) => (
     (e.Idle = "Idle"),
     (e.Grow = "Grow"),
@@ -13083,10 +12822,10 @@ var GrowAnimationState = ((e) => (
   SimpleAnimationState = ((e) => ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e))(
     SimpleAnimationState || {},
   );
-const base$h = "Progressbardeltagrow_c42a7a2c",
+const base$i = "Progressbardeltagrow_c42a7a2c",
   base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
   glow$1 = "Progressbardeltagrow_glow_e08fafeb",
-  styles$h = { base: base$h, base__withoutBounce: base__withoutBounce, glow: glow$1 },
+  styles$j = { base: base$i, base__withoutBounce: base__withoutBounce, glow: glow$1 },
   getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
   getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
   getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
@@ -13151,13 +12890,13 @@ const base$h = "Progressbardeltagrow_c42a7a2c",
         [r, l, n, e],
       );
     if (p) return null;
-    const $ = cx(styles$h.base, u, l && 0 === n && styles$h.base__withoutBounce);
+    const $ = cx(styles$j.base, u, l && 0 === n && styles$j.base__withoutBounce);
     return jsxRuntimeExports.jsx("div", {
       style: _ ? x : y,
       className: $,
       children: jsxRuntimeExports.jsx("div", {
         style: f ? b : h,
-        className: styles$h.glow,
+        className: styles$j.glow,
         children: jsxRuntimeExports.jsx(ProgressBarBlink, { size: a }),
       }),
     });
@@ -13213,9 +12952,9 @@ const base$h = "Progressbardeltagrow_c42a7a2c",
     });
   },
   ProgressBarGrowLine = reactExports.memo(ProgressBarGrowLineComponent),
-  base$g = "Progressbardeltasimple_4b8901e3",
+  base$h = "Progressbardeltasimple_4b8901e3",
   delta = "Progressbardeltasimple_delta_9a540ec7",
-  styles$g = { base: base$g, delta: delta },
+  styles$i = { base: base$h, delta: delta },
   ProgressBarDeltaSimpleComponent = ({
     transitionDuration: e,
     transitionDelay: t,
@@ -13276,11 +13015,11 @@ const base$h = "Progressbardeltagrow_c42a7a2c",
     return p
       ? null
       : jsxRuntimeExports.jsx("div", {
-          className: styles$g.base,
+          className: styles$i.base,
           style: g,
           children: jsxRuntimeExports.jsx("div", {
             style: _ ? f : E,
-            className: styles$g.delta,
+            className: styles$i.delta,
             children: jsxRuntimeExports.jsx(ProgressBarBlink, { size: a }),
           }),
         });
@@ -13542,7 +13281,7 @@ const defaultTheme = Orange,
   }) => {
     const m = useCalculatePercents(o, e, i);
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$k.base, _, styles$k[`base__${s}`]),
+      className: cx(styles$m.base, _, styles$m[`base__${s}`]),
       style: createSkin(t),
       children: [
         !n && jsxRuntimeExports.jsx(ProgressBarBackground, { size: s }),
@@ -13562,11 +13301,11 @@ const defaultTheme = Orange,
     });
   },
   ProgressBar = reactExports.memo(ProgressBarComponent),
-  base$f = "SceneWrapper_52fcfc1e",
+  base$g = "SceneWrapper_52fcfc1e",
   base__down = "SceneWrapper_base__down_4ece5089",
   base__moveSpaceDisabled = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
-  styles$f = {
-    base: base$f,
+  styles$h = {
+    base: base$g,
     base__down: base__down,
     base__moveSpaceDisabled: base__moveSpaceDisabled,
   },
@@ -13614,9 +13353,9 @@ function SceneWrapper({
       ...o,
       ref: _,
       className: clsx(
-        styles$f.base,
-        i && styles$f.base__down,
-        !a && styles$f.base__moveSpaceDisabled,
+        styles$h.base,
+        i && styles$h.base__down,
+        !a && styles$h.base__moveSpaceDisabled,
         n,
       ),
       onMouseDown: function (e) {
@@ -13661,14 +13400,14 @@ const themes = { primary: "primary", custom: "custom" },
   sizes$6 = { large: "large", medium: "medium", small: "small" },
   outerBorderImage = "HorizontalTabs_outerBorderImage_8085e49e",
   mainBorderImage = "HorizontalTabs_mainBorderImage_558d1c3f",
-  base$e = "HorizontalTabs_69e3c6f3",
+  base$f = "HorizontalTabs_69e3c6f3",
   outerBorder = "HorizontalTabs_outerBorder_3255d0c5",
   mainBorder = "HorizontalTabs_mainBorder_61e34c2c",
   content$2 = "HorizontalTabs_content_1ae3c4bd",
-  styles$e = {
+  styles$g = {
     outerBorderImage: outerBorderImage,
     mainBorderImage: mainBorderImage,
-    base: base$e,
+    base: base$f,
     "base__size-small": "HorizontalTabs_base__size-small_75fae891",
     "base__size-medium": "HorizontalTabs_base__size-medium_afc0934f",
     "base__size-large": "HorizontalTabs_base__size-large_12c75e24",
@@ -13677,14 +13416,14 @@ const themes = { primary: "primary", custom: "custom" },
     mainBorder: mainBorder,
     content: content$2,
   },
-  Base$f = defineStyledComponent("Tabs", styles$e.base, {
+  Base$f = defineStyledComponent("Tabs", styles$g.base, {
     variants: {
       size: {
-        [sizes$6.large]: styles$e["base__size-large"],
-        [sizes$6.medium]: styles$e["base__size-medium"],
-        [sizes$6.small]: styles$e["base__size-small"],
+        [sizes$6.large]: styles$g["base__size-large"],
+        [sizes$6.medium]: styles$g["base__size-medium"],
+        [sizes$6.small]: styles$g["base__size-small"],
       },
-      theme: { [themes.primary]: styles$e["base__theme-primary"], [themes.custom]: void 0 },
+      theme: { [themes.primary]: styles$g["base__theme-primary"], [themes.custom]: void 0 },
     },
   }),
   Switcher = reactExports.forwardRef(function ({ children: e, classNames: t, ...s }, r) {
@@ -13696,19 +13435,19 @@ const themes = { primary: "primary", custom: "custom" },
       size: a.size,
       theme: a.theme,
       children: jsxRuntimeExports.jsxs("div", {
-        className: clsx(styles$e.outerBorder, t?.outerBorder),
+        className: clsx(styles$g.outerBorder, t?.outerBorder),
         children: [
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$e.outerBorderImage, t?.outerBorderImage),
+            className: clsx(styles$g.outerBorderImage, t?.outerBorderImage),
           }),
           jsxRuntimeExports.jsxs("div", {
-            className: clsx(styles$e.mainBorder, t?.mainBorder),
+            className: clsx(styles$g.mainBorder, t?.mainBorder),
             children: [
               jsxRuntimeExports.jsx("div", {
-                className: clsx(styles$e.mainBorderImage, t?.mainBorderImage),
+                className: clsx(styles$g.mainBorderImage, t?.mainBorderImage),
               }),
               jsxRuntimeExports.jsx("div", {
-                className: clsx(styles$e.content, t?.content),
+                className: clsx(styles$g.content, t?.content),
                 children: e,
               }),
             ],
@@ -13721,16 +13460,16 @@ const themes = { primary: "primary", custom: "custom" },
   background$1 = "Tab_background_4c9b3eb9",
   backgroundPattern$1 = "Tab_backgroundPattern_417be4b5",
   innerBorderImage = "Tab_innerBorderImage_adadda5f",
-  base$d = "Tab_f59c2b00",
+  base$e = "Tab_f59c2b00",
   content$1 = "Tab_content_b3f6c22b",
   base__active = "Tab_base__active_0",
   base__inactive = "Tab_base__inactive_0",
-  styles$d = {
+  styles$f = {
     border: border$1,
     background: background$1,
     backgroundPattern: backgroundPattern$1,
     innerBorderImage: innerBorderImage,
-    base: base$d,
+    base: base$e,
     "base__theme-primary": "Tab_base__theme-primary_90fd5ee",
     content: content$1,
     "base__size-small": "Tab_base__size-small_0",
@@ -13739,15 +13478,15 @@ const themes = { primary: "primary", custom: "custom" },
     base__active: base__active,
     base__inactive: base__inactive,
   },
-  Base$e = defineStyledComponent("Tab", styles$d.base, {
+  Base$e = defineStyledComponent("Tab", styles$f.base, {
     variants: {
       size: {
-        [sizes$6.large]: styles$d["base__size-large"],
-        [sizes$6.medium]: styles$d["base__size-medium"],
-        [sizes$6.small]: styles$d["base__size-small"],
+        [sizes$6.large]: styles$f["base__size-large"],
+        [sizes$6.medium]: styles$f["base__size-medium"],
+        [sizes$6.small]: styles$f["base__size-small"],
       },
-      theme: { [themes.primary]: styles$d["base__theme-primary"], [themes.custom]: void 0 },
-      state: { active: styles$d.base__active, inactive: styles$d.base__inactive },
+      theme: { [themes.primary]: styles$f["base__theme-primary"], [themes.custom]: void 0 },
+      state: { active: styles$f.base__active, inactive: styles$f.base__inactive },
     },
     defaultVariants: { size: sizes$6.medium, theme: themes.primary },
   }),
@@ -13785,13 +13524,13 @@ function Tab({ tabId: e, classNames: t, className: s, children: r, ...a }) {
       (a.onClick?.(t), n.change(e));
     },
     children: [
-      jsxRuntimeExports.jsx("div", { className: clsx(styles$d.background, t?.background) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(styles$f.background, t?.background) }),
       jsxRuntimeExports.jsx("div", {
-        className: clsx(styles$d.backgroundPattern, t?.backgroundPattern),
+        className: clsx(styles$f.backgroundPattern, t?.backgroundPattern),
       }),
-      jsxRuntimeExports.jsx("div", { className: clsx(styles$d.border, t?.border) }),
-      jsxRuntimeExports.jsx("div", { className: clsx(styles$d.innerBorderImage, t?.borderImage) }),
-      jsxRuntimeExports.jsx("div", { className: clsx(styles$d.content, t?.content), children: r }),
+      jsxRuntimeExports.jsx("div", { className: clsx(styles$f.border, t?.border) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(styles$f.innerBorderImage, t?.borderImage) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(styles$f.content, t?.content), children: r }),
     ],
   });
 }
@@ -13906,17 +13645,17 @@ function SliderProvider({
     );
   return jsxRuntimeExports.jsx(Context.Provider, { value: $, children: n });
 }
-const base$c = "Controls_9c96becc",
+const base$d = "Controls_9c96becc",
   button = "Controls_button_1d659791",
   button__plus = "Controls_button__plus_f8015a9d",
   button__disabled = "Controls_button__disabled_ebe779af",
-  styles$c = {
-    base: base$c,
+  styles$e = {
+    base: base$d,
     button: button,
     button__plus: button__plus,
     button__disabled: button__disabled,
   },
-  Base$d = defineStyledComponent("Controls", styles$c.base),
+  Base$d = defineStyledComponent("Controls", styles$e.base),
   Controls = reactExports.forwardRef(function ({ classNames: e, ...t }, s) {
     const {
       step: r,
@@ -13938,8 +13677,8 @@ const base$c = "Controls_9c96becc",
               width: "24rem",
               height: "24rem",
               className: clsx(
-                styles$c.button,
-                a <= 0 && styles$c.button__disabled,
+                styles$e.button,
+                a <= 0 && styles$e.button__disabled,
                 e?.button,
                 e?.minusButton,
               ),
@@ -13950,9 +13689,9 @@ const base$c = "Controls_9c96becc",
               width: "24rem",
               height: "24rem",
               className: clsx(
-                styles$c.button,
-                styles$c.button__plus,
-                a >= u && styles$c.button__disabled,
+                styles$e.button,
+                styles$e.button__plus,
+                a >= u && styles$e.button__disabled,
                 e?.button,
                 e?.plusButton,
               ),
@@ -13961,8 +13700,8 @@ const base$c = "Controls_9c96becc",
           ],
         });
   }),
-  base$b = "InteractiveArea_8d75e351",
-  styles$b = { base: base$b },
+  base$c = "InteractiveArea_8d75e351",
+  styles$d = { base: base$c },
   InteractiveArea = reactExports.forwardRef(function (
     { className: e, onClick: t, onMouseDown: s, ...r },
     a,
@@ -13973,7 +13712,7 @@ const base$c = "Controls_9c96becc",
       : jsxRuntimeExports.jsx("div", {
           ...r,
           ref: a,
-          className: clsx(styles$b.base, e),
+          className: clsx(styles$d.base, e),
           onClick: (e) => {
             (u(e), t?.(e));
           },
@@ -13983,32 +13722,92 @@ const base$c = "Controls_9c96becc",
           onWheel: i,
         });
   }),
-  base$a = "LimitationArea_2c45b7ff",
+  base$b = "LimitationArea_2c45b7ff",
   base__disabled$1 = "LimitationArea_base__disabled_fc664e1d",
   wrapper$1 = "LimitationArea_wrapper_d530fcbf",
   base__small$3 = "LimitationArea_base__small_87cf0441",
   pattern$1 = "LimitationArea_pattern_33f143bb",
   base__medium$2 = "LimitationArea_base__medium_87cf0441",
-  fadeIn$4 = "LimitationArea_fadeIn_87cf0441",
-  fadeInThreeQuarters$4 = "LimitationArea_fadeInThreeQuarters_87cf0441",
-  fadeInHalf$4 = "LimitationArea_fadeInHalf_87cf0441",
-  fadeOut$4 = "LimitationArea_fadeOut_87cf0441",
-  fadeInWithScale$4 = "LimitationArea_fadeInWithScale_87cf0441",
-  slideUp$4 = "LimitationArea_slideUp_87cf0441",
-  scale$4 = "LimitationArea_scale_87cf0441",
-  raysAppearance$4 = "LimitationArea_raysAppearance_87cf0441",
-  rotate$4 = "LimitationArea_rotate_87cf0441",
-  glowAppearance$4 = "LimitationArea_glowAppearance_87cf0441",
-  highlightAppearance$4 = "LimitationArea_highlightAppearance_87cf0441",
-  blink$4 = "LimitationArea_blink_87cf0441",
-  slideUpIn$4 = "LimitationArea_slideUpIn_87cf0441",
-  styles$a = {
-    base: base$a,
+  fadeIn$5 = "LimitationArea_fadeIn_87cf0441",
+  fadeInThreeQuarters$5 = "LimitationArea_fadeInThreeQuarters_87cf0441",
+  fadeInHalf$5 = "LimitationArea_fadeInHalf_87cf0441",
+  fadeOut$5 = "LimitationArea_fadeOut_87cf0441",
+  fadeInWithScale$5 = "LimitationArea_fadeInWithScale_87cf0441",
+  slideUp$5 = "LimitationArea_slideUp_87cf0441",
+  scale$5 = "LimitationArea_scale_87cf0441",
+  raysAppearance$5 = "LimitationArea_raysAppearance_87cf0441",
+  rotate$5 = "LimitationArea_rotate_87cf0441",
+  glowAppearance$5 = "LimitationArea_glowAppearance_87cf0441",
+  highlightAppearance$5 = "LimitationArea_highlightAppearance_87cf0441",
+  blink$5 = "LimitationArea_blink_87cf0441",
+  slideUpIn$5 = "LimitationArea_slideUpIn_87cf0441",
+  styles$c = {
+    base: base$b,
     base__disabled: base__disabled$1,
     wrapper: wrapper$1,
     base__small: base__small$3,
     pattern: pattern$1,
     base__medium: base__medium$2,
+    fadeIn: fadeIn$5,
+    fadeInThreeQuarters: fadeInThreeQuarters$5,
+    fadeInHalf: fadeInHalf$5,
+    fadeOut: fadeOut$5,
+    fadeInWithScale: fadeInWithScale$5,
+    slideUp: slideUp$5,
+    scale: scale$5,
+    raysAppearance: raysAppearance$5,
+    rotate: rotate$5,
+    "reverse-rotate": "LimitationArea_reverse-rotate_87cf0441",
+    glowAppearance: glowAppearance$5,
+    highlightAppearance: highlightAppearance$5,
+    blink: blink$5,
+    slideUpIn: slideUpIn$5,
+  },
+  LimitationArea = reactExports.forwardRef(function ({ className: e, classNames: t, ...s }, r) {
+    const { limit: a, size: n, maxValue: o, disabled: i } = useSlider();
+    if (a <= 0) return null;
+    const u = a / o;
+    return jsxRuntimeExports.jsx("div", {
+      ...s,
+      ref: r,
+      className: clsx(styles$c.base, styles$c[`base__${n}`], i && styles$c.base__disabled, e),
+      children: jsxRuntimeExports.jsx("div", {
+        className: clsx(styles$c.wrapper, t?.wrapper),
+        children: jsxRuntimeExports.jsx("div", {
+          className: clsx(styles$c.pattern, t?.pattern),
+          style: { width: u >= 1 ? "100%" : 100 * u + "%" },
+        }),
+      }),
+    });
+  }),
+  base$a = "Thumb_94183346",
+  base__small$2 = "Thumb_base__small_ecf8adad",
+  thumb = "Thumb_caea3cfd",
+  base__medium$1 = "Thumb_base__medium_830942bb",
+  grip = "Thumb_grip_b0aabe58",
+  base__full = "Thumb_base__full_830942bb",
+  content = "Thumb_content_efe659d0",
+  fadeIn$4 = "Thumb_fadeIn_830942bb",
+  fadeInThreeQuarters$4 = "Thumb_fadeInThreeQuarters_830942bb",
+  fadeInHalf$4 = "Thumb_fadeInHalf_830942bb",
+  fadeOut$4 = "Thumb_fadeOut_830942bb",
+  fadeInWithScale$4 = "Thumb_fadeInWithScale_830942bb",
+  slideUp$4 = "Thumb_slideUp_830942bb",
+  scale$4 = "Thumb_scale_830942bb",
+  raysAppearance$4 = "Thumb_raysAppearance_830942bb",
+  rotate$4 = "Thumb_rotate_830942bb",
+  glowAppearance$4 = "Thumb_glowAppearance_830942bb",
+  highlightAppearance$4 = "Thumb_highlightAppearance_830942bb",
+  blink$4 = "Thumb_blink_830942bb",
+  slideUpIn$4 = "Thumb_slideUpIn_830942bb",
+  styles$b = {
+    base: base$a,
+    base__small: base__small$2,
+    thumb: thumb,
+    base__medium: base__medium$1,
+    grip: grip,
+    base__full: base__full,
+    content: content,
     fadeIn: fadeIn$4,
     fadeInThreeQuarters: fadeInThreeQuarters$4,
     fadeInHalf: fadeInHalf$4,
@@ -14018,78 +13817,18 @@ const base$c = "Controls_9c96becc",
     scale: scale$4,
     raysAppearance: raysAppearance$4,
     rotate: rotate$4,
-    "reverse-rotate": "LimitationArea_reverse-rotate_87cf0441",
+    "reverse-rotate": "Thumb_reverse-rotate_830942bb",
     glowAppearance: glowAppearance$4,
     highlightAppearance: highlightAppearance$4,
     blink: blink$4,
     slideUpIn: slideUpIn$4,
   },
-  LimitationArea = reactExports.forwardRef(function ({ className: e, classNames: t, ...s }, r) {
-    const { limit: a, size: n, maxValue: o, disabled: i } = useSlider();
-    if (a <= 0) return null;
-    const u = a / o;
-    return jsxRuntimeExports.jsx("div", {
-      ...s,
-      ref: r,
-      className: clsx(styles$a.base, styles$a[`base__${n}`], i && styles$a.base__disabled, e),
-      children: jsxRuntimeExports.jsx("div", {
-        className: clsx(styles$a.wrapper, t?.wrapper),
-        children: jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$a.pattern, t?.pattern),
-          style: { width: u >= 1 ? "100%" : 100 * u + "%" },
-        }),
-      }),
-    });
-  }),
-  base$9 = "Thumb_94183346",
-  base__small$2 = "Thumb_base__small_ecf8adad",
-  thumb = "Thumb_caea3cfd",
-  base__medium$1 = "Thumb_base__medium_830942bb",
-  grip = "Thumb_grip_b0aabe58",
-  base__full = "Thumb_base__full_830942bb",
-  content = "Thumb_content_efe659d0",
-  fadeIn$3 = "Thumb_fadeIn_830942bb",
-  fadeInThreeQuarters$3 = "Thumb_fadeInThreeQuarters_830942bb",
-  fadeInHalf$3 = "Thumb_fadeInHalf_830942bb",
-  fadeOut$3 = "Thumb_fadeOut_830942bb",
-  fadeInWithScale$3 = "Thumb_fadeInWithScale_830942bb",
-  slideUp$3 = "Thumb_slideUp_830942bb",
-  scale$3 = "Thumb_scale_830942bb",
-  raysAppearance$3 = "Thumb_raysAppearance_830942bb",
-  rotate$3 = "Thumb_rotate_830942bb",
-  glowAppearance$3 = "Thumb_glowAppearance_830942bb",
-  highlightAppearance$3 = "Thumb_highlightAppearance_830942bb",
-  blink$3 = "Thumb_blink_830942bb",
-  slideUpIn$3 = "Thumb_slideUpIn_830942bb",
-  styles$9 = {
-    base: base$9,
-    base__small: base__small$2,
-    thumb: thumb,
-    base__medium: base__medium$1,
-    grip: grip,
-    base__full: base__full,
-    content: content,
-    fadeIn: fadeIn$3,
-    fadeInThreeQuarters: fadeInThreeQuarters$3,
-    fadeInHalf: fadeInHalf$3,
-    fadeOut: fadeOut$3,
-    fadeInWithScale: fadeInWithScale$3,
-    slideUp: slideUp$3,
-    scale: scale$3,
-    raysAppearance: raysAppearance$3,
-    rotate: rotate$3,
-    "reverse-rotate": "Thumb_reverse-rotate_830942bb",
-    glowAppearance: glowAppearance$3,
-    highlightAppearance: highlightAppearance$3,
-    blink: blink$3,
-    slideUpIn: slideUpIn$3,
-  },
-  Base$c = defineStyledComponent("Base", styles$9.base, {
+  Base$c = defineStyledComponent("Base", styles$b.base, {
     variants: {
       size: {
-        small: styles$9.base__small,
-        medium: styles$9.base__medium,
-        full: styles$9.base__full,
+        small: styles$b.base__small,
+        medium: styles$b.base__medium,
+        full: styles$b.base__full,
       },
     },
   }),
@@ -14105,19 +13844,19 @@ const base$c = "Controls_9c96becc",
         ref: n,
         disabled: i,
         theme: "primary",
-        className: clsx(styles$9.thumb, t?.thumb, styles$9[`thumb__${o}`], e),
-        classNames: { ...s, content: clsx(styles$9.content, s?.content) },
+        className: clsx(styles$b.thumb, t?.thumb, styles$b[`thumb__${o}`], e),
+        classNames: { ...s, content: clsx(styles$b.content, s?.content) },
         style: { left: 100 * u + "%" },
         onMouseDown: (e) => {
           (l(e), r?.(e));
         },
         onWheel: c,
-        children: jsxRuntimeExports.jsx("div", { className: clsx(styles$9.grip, t?.grip) }),
+        children: jsxRuntimeExports.jsx("div", { className: clsx(styles$b.grip, t?.grip) }),
       }),
     });
   }),
   hover = "Slider_hover_9553506b",
-  base$8 = "Slider_2f883184",
+  base$9 = "Slider_2f883184",
   base__disabled = "Slider_base__disabled_913c9ec5",
   base__small$1 = "Slider_base__small_263edf46",
   base__medium = "Slider_base__medium_263edf46",
@@ -14125,9 +13864,9 @@ const base$c = "Controls_9c96becc",
   filledPattern__active = "Slider_filledPattern__active_cb8375a5",
   backgroundPattern = "Slider_backgroundPattern_8ea0dcf1",
   border = "Slider_border_4aa39164",
-  styles$8 = {
+  styles$a = {
     hover: hover,
-    base: base$8,
+    base: base$9,
     base__disabled: base__disabled,
     base__small: base__small$1,
     base__medium: base__medium,
@@ -14136,12 +13875,12 @@ const base$c = "Controls_9c96becc",
     backgroundPattern: backgroundPattern,
     border: border,
   },
-  Base$b = defineStyledComponent(BASE_COMPONENT_NAME, styles$8.base, {
+  Base$b = defineStyledComponent(BASE_COMPONENT_NAME, styles$a.base, {
     variants: {
       size: {
-        small: styles$8.base__small,
-        medium: styles$8.base__medium,
-        full: styles$8.base__full,
+        small: styles$a.base__small,
+        medium: styles$a.base__medium,
+        full: styles$a.base__full,
       },
     },
   }),
@@ -14167,14 +13906,14 @@ const base$c = "Controls_9c96becc",
     const m = reactExports.useRef(null),
       f = useSounds();
     return jsxRuntimeExports.jsxs(Base$b, {
-      className: clsx(l && styles$8.base__disabled, o),
+      className: clsx(l && styles$a.base__disabled, o),
       ref: assignRefs([_, m]),
       size: t,
       onMouseEnter: function (e) {
         f.play("mouse-enter", { target: Base$b.displayName, original: e });
       },
       children: [
-        !l && jsxRuntimeExports.jsx("div", { className: clsx(styles$8.hover, i?.hover) }),
+        !l && jsxRuntimeExports.jsx("div", { className: clsx(styles$a.hover, i?.hover) }),
         jsxRuntimeExports.jsx(ProgressBar$1, {
           value: e,
           size: t,
@@ -14182,11 +13921,11 @@ const base$c = "Controls_9c96becc",
           className: u?.className,
           classNames: {
             ...i,
-            backgroundPattern: clsx(styles$8.backgroundPattern, i?.backgroundPattern),
-            border: clsx(styles$8.border, i?.border),
+            backgroundPattern: clsx(styles$a.backgroundPattern, i?.backgroundPattern),
+            border: clsx(styles$a.border, i?.border),
           },
           filledClassNames: {
-            pattern: clsx(styles$8.filledPattern, !l && styles$8.filledPattern__active, c?.pattern),
+            pattern: clsx(styles$a.filledPattern, !l && styles$a.filledPattern__active, c?.pattern),
             ...c,
           },
           ...p,
@@ -14203,14 +13942,275 @@ const base$c = "Controls_9c96becc",
       ],
     });
   });
-function makeId(e) {
-  return Symbol.for(e.split("mono/")[1] || "unknown");
-}
 ((Slider.sizes = sizes$5),
   (Slider.LimitationArea = LimitationArea),
   (Slider.InteractiveArea = InteractiveArea),
   (Slider.Thumb = Thumb),
   (Slider.Controls = Controls));
+const DAYS_IN_WEEK = 7,
+  HOURS_IN_DAY = 24,
+  MS_IN_SECOND = 1e3,
+  ONE_MINUTE = 60,
+  ONE_HOUR = 60 * ONE_MINUTE,
+  ONE_DAY = HOURS_IN_DAY * ONE_HOUR,
+  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
+  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
+function getTimeUnits(e = 0) {
+  let t = e;
+  const s = Math.trunc(t / ONE_DAY);
+  t -= s * ONE_DAY;
+  const r = Math.trunc(t / ONE_HOUR);
+  t -= r * ONE_HOUR;
+  const a = Math.trunc(t / ONE_MINUTE);
+  return ((t -= a * ONE_MINUTE), { days: s, hours: r, minutes: a, seconds: t });
+}
+const getRoundedTimeUnitDescription = (e, t = !0) =>
+    e.days > DAYS_IN_WEEK && t
+      ? format(R.strings.common.duration.days(), { days: e.days })
+      : e.days >= 1
+        ? 0 === e.hours
+          ? format(R.strings.common.duration.days(), { days: e.days })
+          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
+        : e.hours >= 1
+          ? 0 === e.minutes
+            ? format(R.strings.common.duration.hours(), { hours: e.hours })
+            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
+          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
+  DateTime = ({
+    datetime: e,
+    format: t = DateTimeFormatsEnum.ShortDate,
+    isConvertedToLocal: s = !0,
+  }) =>
+    Object.values(DateTimeFormatsEnum).includes(t)
+      ? getRegionalDateTime(e, t, s)
+      : getFormattedDateTime(e, t, s),
+  DateTime$1 = reactExports.memo(DateTime),
+  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
+  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
+  white = "Formattextwithcolortags_white_e509d98",
+  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
+  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
+  par = "Formattextwithcolortags_par_485c5228",
+  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
+  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
+  red = "Formattextwithcolortags_red_9f8bd43",
+  redDark = "Formattextwithcolortags_redDark_5f4161da",
+  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
+  orange = "Formattextwithcolortags_orange_11869493",
+  cream = "Formattextwithcolortags_cream_12fdbea3",
+  brown = "Formattextwithcolortags_brown_e49e35ef",
+  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
+  green = "Formattextwithcolortags_green_55b7d967",
+  greenDark = "Formattextwithcolortags_greenDark_2b347344",
+  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
+  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
+  cred = "Formattextwithcolortags_cred_b30a4efa",
+  gold = "Formattextwithcolortags_gold_616e4d7",
+  bond = "Formattextwithcolortags_bond_b29091",
+  prom = "Formattextwithcolortags_prom_85aada4f",
+  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
+  fadeIn$3 = "Formattextwithcolortags_fadeIn_7219dca0",
+  fadeInThreeQuarters$3 = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
+  fadeInHalf$3 = "Formattextwithcolortags_fadeInHalf_7219dca0",
+  fadeOut$3 = "Formattextwithcolortags_fadeOut_7219dca0",
+  fadeInWithScale$3 = "Formattextwithcolortags_fadeInWithScale_7219dca0",
+  slideUp$3 = "Formattextwithcolortags_slideUp_7219dca0",
+  scale$3 = "Formattextwithcolortags_scale_7219dca0",
+  raysAppearance$3 = "Formattextwithcolortags_raysAppearance_7219dca0",
+  rotate$3 = "Formattextwithcolortags_rotate_7219dca0",
+  glowAppearance$3 = "Formattextwithcolortags_glowAppearance_7219dca0",
+  highlightAppearance$3 = "Formattextwithcolortags_highlightAppearance_7219dca0",
+  blink$3 = "Formattextwithcolortags_blink_7219dca0",
+  slideUpIn$3 = "Formattextwithcolortags_slideUpIn_7219dca0",
+  styles$9 = {
+    blackReal: blackReal,
+    whiteReal: whiteReal,
+    white: white,
+    whiteOrange: whiteOrange,
+    whiteSpanish: whiteSpanish,
+    par: par,
+    parSecondary: parSecondary,
+    parTertiary: parTertiary,
+    red: red,
+    redDark: redDark,
+    yellow: yellow,
+    orange: orange,
+    cream: cream,
+    brown: brown,
+    greenBright: greenBright,
+    green: green,
+    greenDark: greenDark,
+    blueBooster: blueBooster,
+    blueTeamkiller: blueTeamkiller,
+    cred: cred,
+    gold: gold,
+    bond: bond,
+    prom: prom,
+    parNoWidth: parNoWidth,
+    fadeIn: fadeIn$3,
+    fadeInThreeQuarters: fadeInThreeQuarters$3,
+    fadeInHalf: fadeInHalf$3,
+    fadeOut: fadeOut$3,
+    fadeInWithScale: fadeInWithScale$3,
+    slideUp: slideUp$3,
+    scale: scale$3,
+    raysAppearance: raysAppearance$3,
+    rotate: rotate$3,
+    "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
+    glowAppearance: glowAppearance$3,
+    highlightAppearance: highlightAppearance$3,
+    blink: blink$3,
+    slideUpIn: slideUpIn$3,
+  },
+  TAGGED_PHRASE_REGEXP =
+    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+  COLOR_REGEXP = new RegExp("(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))"),
+  WORDS_REGEXP = new RegExp("(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))"),
+  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
+    const r = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
+      a = reactExports.useMemo(() => t || {}, [t]);
+    let n = TAGGED_PHRASE_REGEXP.exec(e),
+      o = e,
+      i = 0;
+    for (; n;) {
+      const s = n[0],
+        u = COLOR_REGEXP.exec(s),
+        l = WORDS_REGEXP.exec(s),
+        c = n[1];
+      if (u && l) {
+        const e = u[0],
+          n = e + i++ + e;
+        ((o = o.replace(s, `%(${n})`)),
+          (a[n] = styles$9[e]
+            ? jsxRuntimeExports.jsx("span", {
+                className: styles$9[e],
+                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
+              })
+            : jsxRuntimeExports.jsx("span", {
+                style: r(e),
+                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
+              })));
+      }
+      n = TAGGED_PHRASE_REGEXP.exec(e);
+    }
+    return jsxRuntimeExports.jsx(FormatText$1, { text: o, classMix: s, binding: a });
+  },
+  FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent),
+  defaultOnFinish = () => {},
+  useCountdown$1 = (e = 0, t, s = 0, r = defaultOnFinish) => {
+    const [a, n] = reactExports.useState(e);
+    return (
+      reactExports.useEffect(() => {
+        if (e > 0) {
+          n(e);
+          const a = Date.now(),
+            o = setInterval(
+              () => {
+                const t = e - Math.floor((Date.now() - a) / MS_IN_SECOND);
+                null !== s && t <= s ? (n(s), r && r(), clearInterval(o)) : n(t);
+              },
+              (t || (e > 2 * ONE_MINUTE ? ONE_MINUTE : 1)) * MS_IN_SECOND,
+            );
+          return () => {
+            clearInterval(o);
+          };
+        }
+      }, [e, t, s, r]),
+      a
+    );
+  };
+(DataTracker.instance, DataTracker.instance);
+const useCountdown = useCountdown$1,
+  useScaleState = () => {
+    const [e, t] = reactExports.useState(env.view.getScale());
+    return (
+      reactExports.useEffect(() => {
+        const e = () => {
+          t(env.view.getScale());
+        };
+        return (
+          window.addEventListener("resize", e),
+          () => {
+            window.removeEventListener("resize", e);
+          }
+        );
+      }, []),
+      e
+    );
+  };
+var CountdownIcon = ((e) => (
+    (e.Timer = "timer"),
+    (e.Countdown = "countdown"),
+    (e.Cooldown = "cooldown"),
+    (e.None = "none"),
+    e
+  ))(CountdownIcon || {}),
+  CountdownStyle = ((e) => (
+    (e.Description = "description"),
+    (e.Short = "short"),
+    (e.Long = "long"),
+    (e.Extended = "extended"),
+    e
+  ))(CountdownStyle || {});
+const base$8 = "Countdown_99fa8328",
+  icon$1 = "Countdown_icon_b50ebafb",
+  description = "Countdown_description_91ad95d2",
+  styles$8 = { base: base$8, icon: icon$1, description: description },
+  formatUnit = (e) => e.toString().padStart(2, "0"),
+  formatTimeUnits = (e, t) => {
+    switch (t) {
+      case CountdownStyle.Description:
+        return getRoundedTimeUnitDescription(e);
+      case CountdownStyle.Short:
+        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Long:
+        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Extended:
+        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+    }
+  },
+  IMAGES = R.images.gui.maps.icons.components.countdown,
+  getIcon = (e, t) => {
+    const s = 2 === t ? IMAGES.big : IMAGES;
+    switch (e) {
+      case CountdownIcon.Timer:
+        return s.clock();
+      case CountdownIcon.Countdown:
+        return s.hourglass();
+      case CountdownIcon.Cooldown:
+        return s.lock();
+    }
+  },
+  Countdown = ({
+    duration: e,
+    icon: t = CountdownIcon.Timer,
+    style: s = CountdownStyle.Description,
+    onTimeReached: r,
+    refreshRate: a,
+    className: n = "",
+    classNames: o = {},
+  }) => {
+    const i = a ?? (s !== CountdownStyle.Description ? 1 : void 0),
+      u = useCountdown(e, i),
+      l = useScaleState();
+    r && r[u] && r[u]();
+    const c = formatTimeUnits(getTimeUnits(u), s);
+    return jsxRuntimeExports.jsxs("div", {
+      className: cx(styles$8.base, n),
+      children: [
+        t !== CountdownIcon.None &&
+          jsxRuntimeExports.jsx("div", {
+            className: cx(styles$8.icon, o.icon),
+            style: { backgroundImage: `url('${getIcon(t, l)}')` },
+          }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$8.description, o.text), children: c }),
+      ],
+    });
+  },
+  Countdown$1 = reactExports.memo(Countdown);
+function makeId(e) {
+  return Symbol.for(e.split("mono/")[1] || "unknown");
+}
 let injected = !1;
 const plugins = new Map(),
   loading = new Map();
@@ -15314,238 +15314,238 @@ const RewardComponent = ({ reward: e, size: t }) => {
     });
   };
 export {
-  NUMBERS_ALPHABET as $,
-  roles$1 as A,
+  useSimpleTooltip as $,
+  vehicleState as A,
   Button$1 as B,
   CanvasSequence as C,
-  identity as D,
-  atSpgRoles as E,
+  getRoleByKey as D,
+  comparer as E,
   FormatText$1 as F,
-  lightTankRoles as G,
-  mediumTankRoles as H,
+  getVehicleImageKey as G,
+  resources as H,
   ImageSize$1 as I,
   JSXBuilder as J,
-  heavyTankRoles as K,
-  isRentVehicle as L,
+  createString as K,
+  renderResolvedString as L,
   MediaSize as M,
-  nationById as N,
-  vehicleState as O,
-  getRoleByKey as P,
-  comparer as Q,
+  assert as N,
+  LOWER_ALPHABET as O,
+  NUMBERS_ALPHABET as P,
+  sameTanksRemap as Q,
   Reward$1 as R,
-  getVehicleImageKey as S,
+  iter as S,
   Timer as T,
   UIProvider as U,
   Video as V,
-  resources as W,
-  createString as X,
-  renderResolvedString as Y,
-  assert as Z,
-  LOWER_ALPHABET as _,
+  sort as W,
+  isNumber as X,
+  makeActions as Y,
+  mapNonNullable as Z,
+  Sprite as _,
   addChunkIndexToEndPath as a,
-  filterMap as a$,
-  sameTanksRemap as a0,
-  iter as a1,
-  sort as a2,
-  isNumber as a3,
-  makeActions as a4,
-  mapNonNullable as a5,
-  Sprite as a6,
-  useSimpleTooltip as a7,
-  useTimeout as a8,
-  useSounds as a9,
-  placeholderVisibility as aA,
-  sendEvent$1 as aB,
-  useInput as aC,
-  createParser as aD,
-  useBackdropTooltip as aE,
-  every as aF,
-  findIndexLast as aG,
-  findIndex as aH,
-  usePrevious as aI,
-  useUnmount as aJ,
-  Accordion as aK,
-  reduce as aL,
-  useTooltip as aM,
-  VehicleInfo as aN,
-  isTypeValidValue as aO,
-  useLazyModel as aP,
-  useEvent as aQ,
-  some as aR,
-  useAdaptive as aS,
-  sizes$i as aT,
-  SimpleTooltip as aU,
-  themes$1 as aV,
-  sizes$d as aW,
-  Currency as aX,
-  types$1 as aY,
-  BackportTooltip as aZ,
-  WithDiscount as a_,
-  writeClipboard as aa,
-  usePopover as ab,
-  HeadlessButton as ac,
-  TruncatedText as ad,
-  asMemoized as ae,
-  useHoverState as af,
-  Slot$1 as ag,
-  useVerticalScroll as ah,
-  useScrollBounding as ai,
-  Area as aj,
-  Popover as ak,
-  MediaWrapperElement as al,
-  Base$s as am,
-  Bar as an,
-  Slottable as ao,
-  Toggle as ap,
-  toggleSizes as aq,
-  toggleThemes as ar,
-  FormatString as as,
-  DefaultScroll as at,
-  useUpscale as au,
-  Image$1 as av,
-  VehicleType as aw,
-  VehicleRole as ax,
-  VehicleLevel as ay,
-  Input as az,
+  Discount as a$,
+  useTimeout as a0,
+  useSounds as a1,
+  writeClipboard as a2,
+  usePopover as a3,
+  HeadlessButton as a4,
+  TruncatedText as a5,
+  asMemoized as a6,
+  useHoverState as a7,
+  Slot$1 as a8,
+  useVerticalScroll as a9,
+  findIndexLast as aA,
+  findIndex as aB,
+  usePrevious as aC,
+  useUnmount as aD,
+  Accordion as aE,
+  reduce as aF,
+  useTooltip as aG,
+  VehicleInfo as aH,
+  isTypeValidValue as aI,
+  useLazyModel as aJ,
+  useKeydownListener as aK,
+  useEvent as aL,
+  some as aM,
+  useAdaptive as aN,
+  sizes$i as aO,
+  SimpleTooltip as aP,
+  themes$1 as aQ,
+  sizes$d as aR,
+  Currency as aS,
+  types$1 as aT,
+  BackportTooltip as aU,
+  WithDiscount as aV,
+  filterMap as aW,
+  get as aX,
+  breakpointsByType as aY,
+  easings as aZ,
+  CardSingle as a_,
+  useScrollBounding as aa,
+  createLayoutReadyInEffect$1 as ab,
+  Area as ac,
+  Popover as ad,
+  MediaWrapperElement as ae,
+  Base$s as af,
+  Bar as ag,
+  Slottable as ah,
+  Toggle as ai,
+  toggleSizes as aj,
+  toggleThemes as ak,
+  FormatString as al,
+  DefaultScroll as am,
+  useUpscale as an,
+  Image$1 as ao,
+  VehicleType as ap,
+  VehicleRole as aq,
+  VehicleLevel as ar,
+  Input as as,
+  placeholderVisibility as at,
+  sendEvent$1 as au,
+  useInput as av,
+  keyCodes as aw,
+  createParser as ax,
+  useBackdropTooltip as ay,
+  every as az,
   useMedia as b,
-  sizes$8 as b$,
-  get as b0,
-  breakpointsByType as b1,
-  easings as b2,
-  CardSingle as b3,
-  Discount as b4,
-  normalizeResource as b5,
-  sizes$e as b6,
-  useSkipFrame as b7,
-  addEventListener as b8,
-  unsafeGet as b9,
-  useScrollByDragElements as bA,
-  Area$1 as bB,
-  dragDirections as bC,
-  List as bD,
-  useHandleKeydown as bE,
-  useHorizontalScroll as bF,
-  throttle as bG,
-  ErrorHandler as bH,
-  __vitePreload as bI,
-  KeyButton as bJ,
-  useAdaptiveWidth as bK,
-  ScrollVelocityGuardContent as bL,
-  groupMapBy as bM,
-  toArray as bN,
-  fromModel as bO,
-  roles as bP,
-  perkStates as bQ,
-  Tooltip as bR,
-  normilizeVehicleType as bS,
-  createOptionalDLProvider as bT,
-  matchPath as bU,
-  useHandleKeyup as bV,
-  Base$t as bW,
-  useThrottle as bX,
-  Switcher$1 as bY,
-  breakpoints as bZ,
-  overlayTypes as b_,
-  useEmitter as ba,
-  mouse as bb,
-  clamp$1 as bc,
-  mapExists as bd,
-  filter as be,
-  find as bf,
-  BackdropTooltip as bg,
-  useSpecialTooltip as bh,
-  LazyModel as bi,
-  SimpleTooltip$1 as bj,
-  Checkbox as bk,
-  sizes$b as bl,
-  MaskArea as bm,
-  WITHOUT_ROLE as bn,
-  useIsFirstRender as bo,
-  OPEN_ANIMATION_DURATION as bp,
-  useExternalPaddings as bq,
-  isEqual as br,
-  discountTypes as bs,
-  VehicleImage as bt,
-  RentalCounter as bu,
-  intl$2 as bv,
-  directions$1 as bw,
-  useSpecialContextMenu as bx,
-  DisposeBuilder as by,
-  remToPx$1 as bz,
+  useResize as b$,
+  normalizeResource as b0,
+  sizes$e as b1,
+  useSkipFrame as b2,
+  addEventListener as b3,
+  unsafeGet as b4,
+  useEmitter as b5,
+  mouse as b6,
+  clamp$1 as b7,
+  mapExists as b8,
+  filter as b9,
+  useHandleKeydown as bA,
+  useHorizontalScroll as bB,
+  throttle as bC,
+  ErrorHandler as bD,
+  __vitePreload as bE,
+  KeyButton as bF,
+  useAdaptiveWidth as bG,
+  ScrollVelocityGuardContent as bH,
+  groupMapBy as bI,
+  toArray as bJ,
+  fromModel as bK,
+  roles as bL,
+  perkStates as bM,
+  Tooltip as bN,
+  normilizeVehicleType as bO,
+  createOptionalDLProvider as bP,
+  matchPath as bQ,
+  useHandleKeyup as bR,
+  Base$t as bS,
+  useThrottle as bT,
+  Switcher$1 as bU,
+  breakpoints as bV,
+  overlayTypes as bW,
+  sizes$8 as bX,
+  useDragAndDrop as bY,
+  useScaleState$1 as bZ,
+  DragAndDrop as b_,
+  find as ba,
+  BackdropTooltip as bb,
+  useSpecialTooltip as bc,
+  useMount as bd,
+  LazyModel as be,
+  SimpleTooltip$1 as bf,
+  Checkbox as bg,
+  sizes$b as bh,
+  MaskArea as bi,
+  WITHOUT_ROLE as bj,
+  useIsFirstRender as bk,
+  OPEN_ANIMATION_DURATION as bl,
+  useExternalPaddings as bm,
+  isEqual as bn,
+  discountTypes as bo,
+  VehicleImage as bp,
+  RentalCounter as bq,
+  intl$2 as br,
+  directions$1 as bs,
+  useSpecialContextMenu as bt,
+  DisposeBuilder as bu,
+  remToPx$1 as bv,
+  useScrollByDragElements as bw,
+  Area$1 as bx,
+  dragDirections as by,
+  List as bz,
   createGridImgSourceGetter as c,
-  Tabs as c$,
-  useDragAndDrop as c0,
-  useScaleState$1 as c1,
-  DragAndDrop as c2,
-  useResize as c3,
-  mouseButtons as c4,
-  isNonNullable as c5,
-  Slot as c6,
-  LoadoutItem as c7,
-  get$1 as c8,
-  debounce as c9,
-  ImageSize as cA,
-  capitalize as cB,
-  sizes$h as cC,
-  formats as cD,
-  Reward as cE,
-  formatPrintf as cF,
-  getRewardValueType as cG,
-  getRewardImage as cH,
-  forEach as cI,
-  chunks as cJ,
-  defaultAnimationSettings as cK,
-  Size as cL,
-  MediaWrapper as cM,
-  SceneWrapper as cN,
-  useWulfTooltip as cO,
-  imageSizes$1 as cP,
-  currencyTypes as cQ,
-  sizes$5 as cR,
-  Slider as cS,
-  forceTriggerMouseMove$1 as cT,
-  MultilineOverflow as cU,
-  getRealFormat as cV,
-  useCardContext as cW,
-  Card as cX,
-  statusTypes as cY,
-  useCardsWrapperContext as cZ,
-  CardsWrapper as c_,
-  useDebounce as ca,
-  useInsideEvent as cb,
-  useParamTooltip as cc,
-  createSoundPlay as cd,
-  SoundsProvider as ce,
-  readKey as cf,
-  Loader as cg,
-  getKeyNameFromScanCode as ch,
-  renderString as ci,
-  format$2 as cj,
-  subtract as ck,
-  seconds as cl,
-  now as cm,
-  useClickOutside as cn,
-  pxToRem$1 as co,
-  onRescale as cp,
-  isEmptyObject as cq,
-  useSoundsOptional as cr,
-  assignRefs as cs,
-  ExtendedText as ct,
-  calcPercent as cu,
-  delay as cv,
-  ProgressBar$1 as cw,
-  MS_IN_SECOND$1 as cx,
-  MAX_i32 as cy,
-  mapFilter as cz,
+  Switch as c$,
+  mouseButtons as c0,
+  isNonNullable as c1,
+  Slot as c2,
+  LoadoutItem as c3,
+  get$1 as c4,
+  debounce as c5,
+  useDebounce as c6,
+  useInsideEvent as c7,
+  useParamTooltip as c8,
+  createSoundPlay as c9,
+  Reward as cA,
+  formatPrintf as cB,
+  getRewardValueType as cC,
+  getRewardImage as cD,
+  forEach as cE,
+  chunks as cF,
+  defaultAnimationSettings as cG,
+  Size as cH,
+  MediaWrapper as cI,
+  SceneWrapper as cJ,
+  useWulfTooltip as cK,
+  imageSizes$1 as cL,
+  currencyTypes as cM,
+  sizes$5 as cN,
+  Slider as cO,
+  forceTriggerMouseMove$1 as cP,
+  MultilineOverflow as cQ,
+  getRealFormat as cR,
+  useCardContext as cS,
+  Card as cT,
+  statusTypes as cU,
+  useCardsWrapperContext as cV,
+  CardsWrapper as cW,
+  Tabs as cX,
+  themes as cY,
+  sizes$6 as cZ,
+  Background as c_,
+  SoundsProvider as ca,
+  readKey as cb,
+  Loader as cc,
+  getKeyNameFromScanCode as cd,
+  renderString as ce,
+  format$2 as cf,
+  subtract as cg,
+  seconds as ch,
+  now as ci,
+  useClickOutside as cj,
+  pxToRem$1 as ck,
+  onRescale as cl,
+  isEmptyObject as cm,
+  useSoundsOptional as cn,
+  assignRefs as co,
+  ExtendedText as cp,
+  calcPercent as cq,
+  delay as cr,
+  ProgressBar$1 as cs,
+  MS_IN_SECOND$1 as ct,
+  MAX_i32 as cu,
+  mapFilter as cv,
+  ImageSize as cw,
+  capitalize as cx,
+  sizes$h as cy,
+  formats as cz,
   FormatText as d,
   DateTime$1 as d$,
-  themes as d0,
-  sizes$6 as d1,
-  Background as d2,
-  Switch as d3,
-  Route as d4,
-  createMultipleTargetOverrides as d5,
-  setSkipFramesAllowed as d6,
+  Route as d0,
+  createMultipleTargetOverrides as d1,
+  setSkipFramesAllowed as d2,
+  Countdown$1 as d3,
+  CountdownIcon as d4,
+  createTimeoutInEffect$1 as d5,
+  addPreloadTexture$1 as d6,
   formatPrintf$1 as d7,
   arabicToRoman as d8,
   DateTimeFormatsEnum as d9,
@@ -15622,19 +15622,19 @@ export {
   initializeModelWithContext as i,
   useRouter as j,
   ModelRouterProvider as k,
-  Countdown$1 as l,
+  mapRange as l,
   map as m,
   noop as n,
-  CountdownIcon as o,
+  roles$1 as o,
   play$1 as p,
-  useMount as q,
+  identity as q,
   runView as r,
-  createLayoutReadyInEffect$1 as s,
-  createTimeoutInEffect$1 as t,
+  atSpgRoles as s,
+  types$3 as t,
   useCallbackOnEsc as u,
-  useKeydownListener as v,
-  keyCodes as w,
-  addPreloadTexture$1 as x,
-  mapRange as y,
-  types$3 as z,
+  lightTankRoles as v,
+  mediumTankRoles as w,
+  heavyTankRoles as x,
+  isRentVehicle as y,
+  nationById as z,
 };

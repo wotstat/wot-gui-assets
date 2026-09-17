@@ -1,15 +1,15 @@
 import { j as s, R as e } from "../../../../chunks/vendor.js";
 import {
-  I as a,
+  aa as a,
   df as i,
   dg as r,
   dh as c,
   di as o,
   dj as t,
-  r as l,
+  o as l,
   de as n,
-  F as d,
-  b as p,
+  a9 as d,
+  cB as p,
 } from "../../../../chunks/lib.js";
 import { D as _ } from "../../../../chunks/divider.js";
 var x = ((s) => (
@@ -69,8 +69,8 @@ function y({ vehicleType: i, categories: r }) {
 }
 const b = "SkillOrderTooltip_f3653ea",
   N = "SkillOrderTooltip_header_9ae5d7b9",
-  I = "SkillOrderTooltip_title_d1916d0b",
-  O = "SkillOrderTooltip_body_852ba1c",
+  O = "SkillOrderTooltip_title_d1916d0b",
+  I = "SkillOrderTooltip_body_852ba1c",
   F = "SkillOrderTooltip_container_49c73b81",
   S = "SkillOrderTooltip_items_b8016673",
   w = "SkillOrderTooltip_infoText_52a8e30b",
@@ -92,11 +92,11 @@ function A() {
             className: N,
             children: [
               s.jsx("div", {
-                className: I,
+                className: O,
                 children: C.readOrEmpty("fl_tooltips.skillOrderTooltip.header"),
               }),
               s.jsx("div", {
-                className: O,
+                className: I,
                 children: C.readOrEmpty("fl_tooltips.skillOrderTooltip.body"),
               }),
             ],

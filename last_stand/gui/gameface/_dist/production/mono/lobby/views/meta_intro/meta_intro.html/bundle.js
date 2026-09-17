@@ -1,22 +1,22 @@
 import { j as e, R as a, r as s } from "../../../chunks/vendor.js";
 import {
   u as t,
-  aU as o,
+  aV as o,
   m as i,
   p as n,
   E as r,
   A as l,
   i as c,
-  d5 as d,
+  X as d,
   K as m,
-  aT as g,
+  Y as g,
   b as _,
   B as p,
   C as b,
   r as y,
   U as u,
 } from "../../../chunks/lib.js";
-import { h } from "../../../chunks/sound.js";
+import { d as h } from "../../../chunks/sound.js";
 import { S as f } from "../../../chunks/spring_wrapper.js";
 const I = { y: 0, opacity: 1 };
 var x = ((e) => (
@@ -55,8 +55,8 @@ function B({ image: a, imageBig: s }) {
 const N = "InfoBlock_f854eb14",
   A = "InfoBlock_infoBlock_6c954df0",
   v = "InfoBlock_title_2476dc97",
-  T = "InfoBlock_subTitle_a648caba",
-  E = a.memo(function ({ items: a, canceledAnim: t = !1 }) {
+  E = "InfoBlock_subTitle_a648caba",
+  M = a.memo(function ({ items: a, canceledAnim: t = !1 }) {
     return e.jsx("div", {
       className: N,
       children: i(a, (a, o) =>
@@ -73,7 +73,7 @@ const N = "InfoBlock_f854eb14",
                 children: [
                   e.jsx("div", { className: v, children: a.header }),
                   e.jsx(r, {
-                    classMix: T,
+                    classMix: E,
                     text: a.text,
                     alignContent: l.Center,
                     justifyContent: l.Center,
@@ -87,7 +87,7 @@ const N = "InfoBlock_f854eb14",
       ),
     });
   }),
-  [M, z] = c()(
+  [T, z] = c()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs("onClose") }),
   ),
@@ -96,8 +96,8 @@ const N = "InfoBlock_f854eb14",
   O = "MetaIntroApp_container_1d43a669",
   S = "MetaIntroApp_content_7027a85a",
   K = "MetaIntroApp_header_b706abdc",
-  U = "MetaIntroApp_bottomContainer_341b7343",
-  $ = "MetaIntroApp_topContainer_9352c5d0",
+  $ = "MetaIntroApp_bottomContainer_341b7343",
+  U = "MetaIntroApp_topContainer_9352c5d0",
   D = "MetaIntroApp_btn_4fa2f453",
   H = "MetaIntroApp_closeBtn_f6844130",
   P = [
@@ -120,7 +120,7 @@ const N = "InfoBlock_f854eb14",
       imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
     },
   ],
-  q = () => {
+  V = () => {
     const { controls: a } = z(),
       [t, o] = s.useState(!1);
     (d(a.onClose), m(g.ENTER, a.onClose), m(g.SPACE, a.onClose));
@@ -139,7 +139,7 @@ const N = "InfoBlock_f854eb14",
         e.jsx(b, { className: H, onClose: a.onClose }),
         e.jsx("div", { className: w }),
         e.jsx(f, {
-          className: $,
+          className: U,
           isCanceled: t,
           ...C[x.HEADER],
           children: e.jsx("div", {
@@ -151,12 +151,12 @@ const N = "InfoBlock_f854eb14",
           className: O,
           children: e.jsx("div", {
             className: S,
-            children: e.jsx(E, { canceledAnim: t, items: P }),
+            children: e.jsx(M, { canceledAnim: t, items: P }),
           }),
         }),
         e.jsx(f, {
           isCanceled: t,
-          className: U,
+          className: $,
           ...C[x.BUTTON],
           children: e.jsx("div", {
             className: D,
@@ -171,4 +171,4 @@ const N = "InfoBlock_f854eb14",
       ],
     });
   };
-y(e.jsx(u, { children: e.jsx(M, { children: e.jsx(q, {}) }) }));
+y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(V, {}) }) }));

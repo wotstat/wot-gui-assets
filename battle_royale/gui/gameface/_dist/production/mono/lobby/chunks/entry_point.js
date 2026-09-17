@@ -4,14 +4,14 @@ import {
   bN as c,
   bO as l,
   $ as d,
-  bp as u,
+  bs as u,
   bP as m,
   i as p,
   aI as g,
   aY as b,
   u as x,
-  ap as f,
-  aC as h,
+  ap as h,
+  aC as f,
   a2 as y,
   t as v,
 } from "./lib.js";
@@ -42,17 +42,17 @@ class N extends i {
   }
 }
 const I = "lootbox_images",
-  E = "lootbox_sounds";
+  w = "lootbox_sounds";
 (d.register(I, e(() => new u(window.R.images)).singleton()),
-  d.register(E, e(() => new N(window.R.sounds)).singleton()));
-const w = d.resolve(I),
+  d.register(w, e(() => new N(window.R.sounds)).singleton()));
+const E = d.resolve(I),
   O = d.resolve("videos"),
-  j = d.resolve(E),
+  j = d.resolve(w),
   $ = d.resolve("strings"),
   C = (e, t) => {
     switch (e) {
       case R.images:
-        return w.readOrEmpty(t, "silent");
+        return E.readOrEmpty(t, "silent");
       case R.videos:
         return O.readOrEmpty(t, "silent");
       case R.sounds:
@@ -97,7 +97,7 @@ const T = {
       hoverZone: { width: "38%", height: "39%", horizontalOffset: "30.8%", verticalOffset: "39%" },
       backgroundColor: "#111",
     },
-    COMMON: { guaranteed: { accent: 5, visibleAt: 10 } },
+    COMMON: { guaranteed: { accent: 5, visibleAt: 10 }, hasFooterShadow: !0 },
   },
   k = {
     DEFAULT_CONFIG: T,
@@ -148,7 +148,7 @@ const L = (e, t) => {
     }
     return s;
   },
-  V = ({ type: e, filePath: t, eventName: s }, o = !1) => {
+  S = ({ type: e, filePath: t, eventName: s }, o = !1) => {
     const {
       parent: n,
       path: a,
@@ -183,13 +183,13 @@ const L = (e, t) => {
       ? { eventResource: o ? L(n, a) : C(n, a), defaultResource: o ? L(n, r) : C(n, r) }
       : null;
   },
-  G = (e, t, s) =>
+  V = (e, t, s) =>
     Object.keys(e).reduce((o, n) => {
       const a = e[n];
       return (
         void 0 !== a &&
           (o[n] = (({ type: e, filePath: t, eventName: s }) => {
-            const o = V({ type: e, filePath: t, eventName: s });
+            const o = S({ type: e, filePath: t, eventName: s });
             if (!o || (!o.eventResource && !o.defaultResource))
               return (console.info(`Unreachable code: unknown resource (${e} ${s} ${t})`), "");
             const { eventResource: n, defaultResource: a } = o;
@@ -198,10 +198,10 @@ const L = (e, t) => {
         o
       );
     }, {}),
-  S = (e, t) =>
+  G = (e, t) =>
     Object.keys(e).reduce((s, o) => {
       const n = e[o];
-      return n ? ((s[o] = G(n, o, t)), s) : s;
+      return n ? ((s[o] = V(n, o, t)), s) : s;
     }, {}),
   D = {
     images: {
@@ -221,7 +221,7 @@ var z = ((e) => ((e.Boxes = "boxes"), (e.Empty = "empty"), e))(z || {});
 const [H, Y] = p()(
     ({ observableModel: e }) => {
       const o = e.object().get().eventName,
-        n = { root: e.object(), style: t.box(B(o, P.EntryPoint)), resources: t.box(S(D, o)) },
+        n = { root: e.object(), style: t.box(B(o, P.EntryPoint)), resources: t.box(G(D, o)) },
         a = s(() => {
           const { boxesCount: e } = n.root.get();
           return e ? "boxes" : "empty";
@@ -294,7 +294,7 @@ const oe = {
       { texts: o } = t.resources.get(),
       { boxesCount: r, eventExpireTime: i } = t.root.get(),
       c = t.computes.getState(),
-      l = s.weight > f.small.weight ? h.size.x32x32 : h.size.x24x24,
+      l = s.weight > h.small.weight ? f.size.x32x32 : f.size.x24x24,
       d = 259200 >= i,
       u = d || c === z.Empty;
     return n.jsxs("div", {
@@ -304,7 +304,7 @@ const oe = {
           n.jsx("div", {
             className: a(oe.additional, c !== z.Boxes && oe.additional__center),
             children: d
-              ? n.jsx(h, {
+              ? n.jsx(f, {
                   className: oe.timer,
                   classNames: { label: oe.timerLabel },
                   start: i,
@@ -342,8 +342,8 @@ const me = o(function () {
     { isEnabled: m } = l.root.get(),
     p = l.computes.getState(),
     { images: g, videos: b, sounds: x } = l.resources.get(),
-    f = l.style.get(),
-    h = i ? 1 + f.icon[`${p}IconBrightness`] : 1,
+    h = l.style.get(),
+    f = i ? 1 + h.icon[`${p}IconBrightness`] : 1,
     _ = p === z.Empty ? g.iconEmpty : g.iconGold;
   return n.jsx("div", {
     className: a(ae, !m && ie),
@@ -362,7 +362,7 @@ const me = o(function () {
         children: [
           n.jsx(ne, { className: de }),
           p === z.Boxes && m && n.jsx(Q, { className: ce, hover: i }),
-          n.jsx(ee, { disabled: !m, image: _, brightness: h, className: ue }),
+          n.jsx(ee, { disabled: !m, image: _, brightness: f, className: ue }),
         ],
       }),
     }),

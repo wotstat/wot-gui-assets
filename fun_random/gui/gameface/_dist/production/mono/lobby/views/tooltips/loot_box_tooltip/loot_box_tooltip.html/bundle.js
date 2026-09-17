@@ -4,10 +4,10 @@ import {
   c as t,
   g as d,
   d as l,
-  e as n,
-  h as i,
+  e as i,
+  h as n,
   a8 as c,
-  dn as p,
+  dp as p,
   U as _,
   Q as m,
   v as x,
@@ -26,9 +26,9 @@ const [f, v] = o()(({ observableModel: a }) => {
           if (!a) throw Error(`No reward found with index: ${e}`);
           return {
             ...a,
-            image: i(a),
+            image: n(a),
             special: a.overlayType,
-            valueType: n(a.name),
+            valueType: i(a.name),
             tooltipArgs: l({ tooltipId: a.tooltipId }, Number(a.tooltipContentId)),
           };
         },
@@ -50,15 +50,15 @@ const [f, v] = o()(({ observableModel: a }) => {
     const { model: a } = v(),
       o = a.computes.length(),
       t = a.computes.reward(e),
-      { probability: d, label: l, valueType: n } = t,
-      i = o > 5 ? e > 1 : e > 0,
-      c = n === p.CURRENCY;
+      { probability: d, label: l, valueType: i } = t,
+      n = o > 5 ? e > 1 : e > 0,
+      c = i === p.CURRENCY;
     return r.jsxs("div", {
       className: g.base,
       children: [
-        i && r.jsx("div", { className: g.separator }),
+        n && r.jsx("div", { className: g.separator }),
         r.jsxs("div", {
-          className: s(g.item, i && g.item__separator),
+          className: s(g.item, n && g.item__separator),
           children: [
             r.jsx("div", {
               className: g.rewardWrapper,
@@ -94,14 +94,14 @@ const [f, v] = o()(({ observableModel: a }) => {
       { iconKey: a, label: o, assetsPointer: t } = e.root.get(),
       d = e.computes.length(),
       l = d > 5,
-      n = j(t).progression.bonuses.small;
+      i = j(t).progression.bonuses.small;
     return r.jsxs("div", {
       className: s(y, l && B),
       children: [
         r.jsxs("div", {
           className: A,
           children: [
-            r.jsx("div", { className: L, style: { backgroundImage: `url(${n.$dyn(a)})` } }),
+            r.jsx("div", { className: L, style: { backgroundImage: `url(${i.$dyn(a)})` } }),
             r.jsx("div", { className: C, children: o }),
             r.jsx("div", {
               className: T,

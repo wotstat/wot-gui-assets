@@ -1,5 +1,5 @@
 import { s as i, t as e, j as t } from "../../../../chunks/vendor.js";
-import { a as o, ar as s, N as c, E as a } from "../../../../chunks/lib.js";
+import { a as o, av as s, N as c, E as a } from "../../../../chunks/lib.js";
 import { d as l } from "../../../../chunks/TooltipDecorator2.js";
 /* empty css                                 */ const [p, r] = o()(
     ({ observableModel: i }) => ({ root: i.object() }),
@@ -10,8 +10,8 @@ import { d as l } from "../../../../chunks/TooltipDecorator2.js";
   T = "TicketTooltipApp_title_ce962669",
   n = "TicketTooltipApp_description_3935aecb",
   m = "TicketTooltipApp_descriptionTitle_1b276ae0",
-  b = "TicketTooltipApp_iconBig_5aea0238",
-  v = "TicketTooltipApp_iconSmall_41ac25c4",
+  v = "TicketTooltipApp_iconBig_5aea0238",
+  b = "TicketTooltipApp_iconSmall_41ac25c4",
   j = "TicketTooltipApp_divider_24569859",
   h = "TicketTooltipApp_divider__top_ba1f1acd",
   k = "TicketTooltipApp_divider__bottom_9fdeb1dd",
@@ -33,7 +33,7 @@ import { d as l } from "../../../../chunks/TooltipDecorator2.js";
             className: T,
             children: s.readOrEmpty("white_tiger_lobby.ticketTooltip.title"),
           }),
-          t.jsx("div", { className: b }),
+          t.jsx("div", { className: v }),
           t.jsx("div", {
             className: n,
             children: s.readOrEmpty("white_tiger_lobby.ticketTooltip.description"),
@@ -43,7 +43,7 @@ import { d as l } from "../../../../chunks/TooltipDecorator2.js";
             className: x,
             children: [
               t.jsx("div", { className: y, children: o }),
-              t.jsx("div", { className: v }),
+              t.jsx("div", { className: b }),
               t.jsx("div", {
                 className: y,
                 children: s.readOrEmpty("white_tiger_lobby.ticketTooltip.quantity"),

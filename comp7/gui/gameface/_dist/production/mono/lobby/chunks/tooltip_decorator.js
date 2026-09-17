@@ -1,5 +1,5 @@
 import { j as r, W as o } from "./vendor.js";
-import { es as e } from "./lib.js";
+import { et as e } from "./lib.js";
 const s = "TooltipDecorator_decorator_81525906",
   a = "TooltipDecorator_decoratorInner_ed88e863";
 function c({ children: c, classNames: n }) {

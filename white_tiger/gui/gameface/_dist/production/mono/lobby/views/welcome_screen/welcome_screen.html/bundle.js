@@ -1,17 +1,17 @@
-import { s as e, j as t, t as s, r as l } from "../../../chunks/vendor.js";
+import { s as e, j as t, t as s, r as o } from "../../../chunks/vendor.js";
 import {
-  a as o,
-  X as c,
+  a as l,
+  Y as c,
   z as a,
-  am as i,
-  an as r,
+  an as i,
+  ao as r,
   B as n,
   E as _,
   U as d,
   G as m,
   H as b,
 } from "../../../chunks/lib.js";
-/* empty css                              */ const [h, x] = o()(
+/* empty css                              */ const [h, x] = l()(
     ({ observableModel: e }) => ({ ...{ root: e.object() } }),
     ({ externalModel: e }) => ({
       onVideoPlay: e.createCallbackNoArgs("onVideoPlay"),
@@ -23,12 +23,12 @@ import {
   p = "TextBlock_textBlock_text_972037fc",
   w = "TextBlock_textBlock_ead49a2e",
   j = "TextBlock_textBlock__lastItem_636071ba",
-  k = e(({ title: e, text: l, lastItem: o }) =>
+  k = e(({ title: e, text: o, lastItem: l }) =>
     t.jsxs("div", {
-      className: s(w, o && j),
+      className: s(w, l && j),
       children: [
         t.jsx(c, { split: !0, className: g, text: e }),
-        t.jsx(c, { split: !0, className: p, text: l }),
+        t.jsx(c, { split: !0, className: p, text: o }),
       ],
     }),
   ),
@@ -54,12 +54,12 @@ import {
   ],
   f = e(() => {
     const { controls: e } = x(),
-      { onVideoPlay: s, onClose: o, onViewLoaded: c } = e,
-      [_, d] = l.useState(!1),
-      [m, b] = l.useState(!1);
-    a(o);
+      { onVideoPlay: s, onClose: l, onViewLoaded: c } = e,
+      [_, d] = o.useState(!1),
+      [m, b] = o.useState(!1);
+    a(l);
     return (
-      l.useEffect(
+      o.useEffect(
         () =>
           i(() => {
             m || (c(), b(!0));
@@ -94,7 +94,7 @@ import {
                 size: "small",
                 onMouseEnter: () => r("highlight"),
                 onClick: () => {
-                  o();
+                  l();
                 },
                 className: v,
                 children: R.strings.white_tiger_lobby.welcomeScreen.button(),

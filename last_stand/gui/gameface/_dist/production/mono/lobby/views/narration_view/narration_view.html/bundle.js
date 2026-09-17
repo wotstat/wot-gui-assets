@@ -2,24 +2,24 @@ import { D as e, j as a, f as r, r as s } from "../../../chunks/vendor.js";
 import {
   i as t,
   d as n,
-  aq as i,
+  as as i,
   e as o,
   d6 as l,
-  aK as d,
-  aH as c,
-  aL as _,
+  aM as d,
+  aJ as c,
+  aN as _,
   d7 as u,
   d8 as x,
-  b9 as m,
+  ba as m,
   B as N,
   x as f,
-  d5 as b,
+  X as b,
   C as h,
   d9 as p,
   r as g,
   U as j,
 } from "../../../chunks/lib.js";
-import { d as v } from "../../../chunks/sound.js";
+import { e as v } from "../../../chunks/sound.js";
 import { P as T, V as S } from "../../../chunks/index.js";
 const [y, C] = t()(
     ({ observableModel: e }) => ({ root: e.object() }),
@@ -41,34 +41,34 @@ const [y, C] = t()(
   B = "NarrationText_scrollTextWrapper_2966ec7f",
   O = "NarrationText_scrollContentWrapper_5d272dcd",
   I = "NarrationText_text_7fbf87ef",
-  L = "NarrationText_highlightText_c7174a16",
-  V = "NarrationText_highlightText__secondary_e31000ce",
-  D = "NarrationText_titleParagraph_117b3e67",
-  M = "NarrationText_paragraph_a1fd10d6",
-  q = "NarrationText_nowrap_e19b022d",
-  H =
+  V = "NarrationText_highlightText_c7174a16",
+  L = "NarrationText_highlightText__secondary_e31000ce",
+  M = "NarrationText_titleParagraph_117b3e67",
+  D = "NarrationText_paragraph_a1fd10d6",
+  J = "NarrationText_nowrap_e19b022d",
+  U =
     /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u3000-\u303F\uFF00-\uFFEF\]]/u,
-  K = { split: J };
-let U = 0;
+  X = { split: H };
+let q = 0;
 function G() {
-  return "ls-" + ++U;
+  return "ls-" + ++q;
 }
-function J(e) {
+function H(e) {
   return Array.isArray(e)
     ? (function (e) {
         const r = [];
         for (let t = 0; t < e.length; t++) {
           const n = e[t],
             i = e[t + 1];
-          if ("string" != typeof i || !H.test(i)) {
-            r.push(J(n));
+          if ("string" != typeof i || !U.test(i)) {
+            r.push(H(n));
             continue;
           }
-          const o = Q(i.slice(1));
+          const o = K(i.slice(1));
           (r.push(
             a.jsxs(
               s.Fragment,
-              { children: [a.jsxs("span", { className: q, children: [J(n), i[0]] }), o] },
+              { children: [a.jsxs("span", { className: J, children: [H(n), i[0]] }), o] },
               G(),
             ),
           ),
@@ -77,14 +77,14 @@ function J(e) {
         return r;
       })(e)
     : "string" == typeof e
-      ? a.jsx(s.Fragment, { children: Q(e) }, G())
+      ? a.jsx(s.Fragment, { children: K(e) }, G())
       : e;
 }
-function Q(e) {
+function K(e) {
   const r = n.resolve("langCode");
   return u(x(e, r), r, (e, r) => e && a.jsx("span", { children: e }, `${e}${r}`));
 }
-const X = e(function ({ index: e, isFirst: s, isAnimationPlaying: t }) {
+const Q = e(function ({ index: e, isFirst: s, isAnimationPlaying: t }) {
     const u = n.resolve("strings"),
       { model: x, controls: m } = C();
     return a.jsxs("div", {
@@ -125,15 +125,15 @@ const X = e(function ({ index: e, isFirst: s, isAnimationPlaying: t }) {
                           children: a.jsx(o, {
                             split: !0,
                             params: {
-                              pargraphStart: a.jsx("div", { className: M }),
-                              titleParagraph: a.jsx("div", { className: D }),
-                              highlightText: L,
-                              highlightSecondaryText: r(L, V),
+                              pargraphStart: a.jsx("div", { className: D }),
+                              titleParagraph: a.jsx("div", { className: M }),
+                              highlightText: V,
+                              highlightSecondaryText: r(V, L),
                             },
                             text: u.readOrEmpty(
                               `R.strings.last_stand_lobby.narration.narrationText.ls_narration_${e}`,
                             ),
-                            formatters: K,
+                            formatters: X,
                           }),
                         }),
                       }),
@@ -175,7 +175,7 @@ const X = e(function ({ index: e, isFirst: s, isAnimationPlaying: t }) {
           }),
         }),
         a.jsx("div", { className: Y }),
-        a.jsx(X, { index: s, isAnimationPlaying: n, isFirst: t && o }),
+        a.jsx(Q, { index: s, isAnimationPlaying: n, isFirst: t && o }),
       ],
     });
   },

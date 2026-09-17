@@ -9302,6 +9302,128 @@ const base$4 = "RewardsList_b956755b",
       );
     }),
   ),
+  DAYS_IN_WEEK = 7,
+  HOURS_IN_DAY = 24,
+  MS_IN_SECOND = 1e3,
+  ONE_MINUTE = 60,
+  ONE_HOUR = 60 * ONE_MINUTE,
+  ONE_DAY = HOURS_IN_DAY * ONE_HOUR,
+  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
+  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
+function getTimeUnits(e = 0) {
+  let t = e;
+  const s = Math.trunc(t / ONE_DAY);
+  t -= s * ONE_DAY;
+  const r = Math.trunc(t / ONE_HOUR);
+  t -= r * ONE_HOUR;
+  const n = Math.trunc(t / ONE_MINUTE);
+  return ((t -= n * ONE_MINUTE), { days: s, hours: r, minutes: n, seconds: t });
+}
+const getRoundedTimeUnitDescription = (e, t = !0) =>
+    e.days > DAYS_IN_WEEK && t
+      ? format(R.strings.common.duration.days(), { days: e.days })
+      : e.days >= 1
+        ? 0 === e.hours
+          ? format(R.strings.common.duration.days(), { days: e.days })
+          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
+        : e.hours >= 1
+          ? 0 === e.minutes
+            ? format(R.strings.common.duration.hours(), { hours: e.hours })
+            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
+          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
+  DateTime = ({
+    datetime: e,
+    format: t = DateTimeFormatsEnum.ShortDate,
+    isConvertedToLocal: s = !0,
+  }) =>
+    Object.values(DateTimeFormatsEnum).includes(t)
+      ? getRegionalDateTime(e, t, s)
+      : getFormattedDateTime(e, t, s),
+  DateTime$1 = reactExports.memo(DateTime),
+  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
+  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
+  white = "Formattextwithcolortags_white_e509d98",
+  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
+  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
+  par = "Formattextwithcolortags_par_485c5228",
+  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
+  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
+  red = "Formattextwithcolortags_red_9f8bd43",
+  redDark = "Formattextwithcolortags_redDark_5f4161da",
+  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
+  orange = "Formattextwithcolortags_orange_11869493",
+  cream = "Formattextwithcolortags_cream_12fdbea3",
+  brown = "Formattextwithcolortags_brown_e49e35ef",
+  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
+  green = "Formattextwithcolortags_green_55b7d967",
+  greenDark = "Formattextwithcolortags_greenDark_2b347344",
+  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
+  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
+  cred = "Formattextwithcolortags_cred_b30a4efa",
+  gold = "Formattextwithcolortags_gold_616e4d7",
+  bond = "Formattextwithcolortags_bond_b29091",
+  prom = "Formattextwithcolortags_prom_85aada4f",
+  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
+  styles$4 = {
+    blackReal: blackReal,
+    whiteReal: whiteReal,
+    white: white,
+    whiteOrange: whiteOrange,
+    whiteSpanish: whiteSpanish,
+    par: par,
+    parSecondary: parSecondary,
+    parTertiary: parTertiary,
+    red: red,
+    redDark: redDark,
+    yellow: yellow,
+    orange: orange,
+    cream: cream,
+    brown: brown,
+    greenBright: greenBright,
+    green: green,
+    greenDark: greenDark,
+    blueBooster: blueBooster,
+    blueTeamkiller: blueTeamkiller,
+    cred: cred,
+    gold: gold,
+    bond: bond,
+    prom: prom,
+    parNoWidth: parNoWidth,
+  },
+  TAGGED_PHRASE_REGEXP =
+    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+  COLOR_REGEXP = new RegExp("(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))"),
+  WORDS_REGEXP = new RegExp("(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))"),
+  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
+    const r = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
+      n = reactExports.useMemo(() => t || {}, [t]);
+    let a = TAGGED_PHRASE_REGEXP.exec(e),
+      u = e,
+      o = 0;
+    for (; a;) {
+      const s = a[0],
+        i = COLOR_REGEXP.exec(s),
+        l = WORDS_REGEXP.exec(s),
+        c = a[1];
+      if (i && l) {
+        const e = i[0],
+          a = e + o++ + e;
+        ((u = u.replace(s, `%(${a})`)),
+          (n[a] = styles$4[e]
+            ? jsxRuntimeExports.jsx("span", {
+                className: styles$4[e],
+                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
+              })
+            : jsxRuntimeExports.jsx("span", {
+                style: r(e),
+                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
+              })));
+      }
+      a = TAGGED_PHRASE_REGEXP.exec(e);
+    }
+    return jsxRuntimeExports.jsx(FormatText$1, { text: u, classMix: s, binding: n });
+  },
+  FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent),
   RewardComponent = ({ reward: e, size: t }) => {
     const s = e.RewardWrapper || null;
     return s
@@ -9315,7 +9437,7 @@ const base$4 = "RewardsList_b956755b",
   base__vertical = "Rewards_base__vertical_32f04b98",
   reward = "Rewards_reward_9abc0f4a",
   reward__vertical = "Rewards_reward__vertical_dd4a02c5",
-  styles$4 = {
+  styles$3 = {
     base: base$3,
     base__vertical: base__vertical,
     reward: reward,
@@ -9334,10 +9456,10 @@ const base$4 = "RewardsList_b956755b",
     boxRewardClassNames: l,
   }) => {
     const c = r && r < e.length,
-      d = cx(styles$4.reward, s && styles$4.reward__vertical, a),
+      d = cx(styles$3.reward, s && styles$3.reward__vertical, a),
       m = c ? r : e.length;
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$4.base, s && styles$4.base__vertical, n),
+      className: cx(styles$3.base, s && styles$3.base__vertical, n),
       children: [
         e
           .slice(0, m)
@@ -9380,36 +9502,7 @@ var Alignment = ((e) => (
 const THAI_LANGUAGE_CODE = "th",
   SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", THAI_LANGUAGE_CODE];
 SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE().toLowerCase());
-const DAYS_IN_WEEK = 7,
-  HOURS_IN_DAY = 24,
-  MS_IN_SECOND = 1e3,
-  ONE_MINUTE = 60,
-  ONE_HOUR = 60 * ONE_MINUTE,
-  ONE_DAY = HOURS_IN_DAY * ONE_HOUR,
-  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
-  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
-function getTimeUnits(e = 0) {
-  let t = e;
-  const s = Math.trunc(t / ONE_DAY);
-  t -= s * ONE_DAY;
-  const r = Math.trunc(t / ONE_HOUR);
-  t -= r * ONE_HOUR;
-  const n = Math.trunc(t / ONE_MINUTE);
-  return ((t -= n * ONE_MINUTE), { days: s, hours: r, minutes: n, seconds: t });
-}
-const getRoundedTimeUnitDescription = (e, t = !0) =>
-    e.days > DAYS_IN_WEEK && t
-      ? format(R.strings.common.duration.days(), { days: e.days })
-      : e.days >= 1
-        ? 0 === e.hours
-          ? format(R.strings.common.duration.days(), { days: e.days })
-          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
-        : e.hours >= 1
-          ? 0 === e.minutes
-            ? format(R.strings.common.duration.hours(), { hours: e.hours })
-            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
-          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
-  defaultOnFinish = () => {},
+const defaultOnFinish = () => {},
   useCountdown$1 = (e = 0, t, s = 0, r = defaultOnFinish) => {
     const [n, a] = reactExports.useState(e);
     return (
@@ -9468,7 +9561,7 @@ var CountdownIcon = ((e) => (
 const base$2 = "Countdown_99fa8328",
   icon = "Countdown_icon_b50ebafb",
   description = "Countdown_description_91ad95d2",
-  styles$3 = { base: base$2, icon: icon, description: description },
+  styles$2 = { base: base$2, icon: icon, description: description },
   formatUnit = (e) => e.toString().padStart(2, "0"),
   formatTimeUnits = (e, t) => {
     switch (t) {
@@ -9509,14 +9602,14 @@ const base$2 = "Countdown_99fa8328",
     r && r[i] && r[i]();
     const c = formatTimeUnits(getTimeUnits(i), s);
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$3.base, a),
+      className: cx(styles$2.base, a),
       children: [
         t !== CountdownIcon.None &&
           jsxRuntimeExports.jsx("div", {
-            className: cx(styles$3.icon, u.icon),
+            className: cx(styles$2.icon, u.icon),
             style: { backgroundImage: `url('${getIcon(t, l)}')` },
           }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$3.description, u.text), children: c }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$2.description, u.text), children: c }),
       ],
     });
   },
@@ -9525,7 +9618,7 @@ const base$2 = "Countdown_99fa8328",
   wrapper = "Optimizedprogressbar_wrapper_70ce38b3",
   backgroundWrapper = "Optimizedprogressbar_backgroundWrapper_405830ed",
   background = "Optimizedprogressbar_background_74cf6541",
-  styles$2 = {
+  styles$1 = {
     base: base$1,
     wrapper: wrapper,
     backgroundWrapper: backgroundWrapper,
@@ -9568,16 +9661,16 @@ const base$2 = "Countdown_99fa8328",
     return (
       (e.current.update = c),
       jsxRuntimeExports.jsx("div", {
-        className: cx(styles$2.base, n),
+        className: cx(styles$1.base, n),
         ref: u,
         children: jsxRuntimeExports.jsxs("div", {
-          className: styles$2.wrapper,
+          className: styles$1.wrapper,
           children: [
             jsxRuntimeExports.jsx("div", {
-              className: styles$2.backgroundWrapper,
+              className: styles$1.backgroundWrapper,
               children: jsxRuntimeExports.jsx("div", {
                 style: d,
-                className: styles$2.background,
+                className: styles$1.background,
                 ref: i,
                 children: jsxRuntimeExports.jsx(ProgressBarBackground, { size: a.size }),
               }),
@@ -9595,99 +9688,6 @@ const base$2 = "Countdown_99fa8328",
       })
     );
   },
-  DateTime = ({
-    datetime: e,
-    format: t = DateTimeFormatsEnum.ShortDate,
-    isConvertedToLocal: s = !0,
-  }) =>
-    Object.values(DateTimeFormatsEnum).includes(t)
-      ? getRegionalDateTime(e, t, s)
-      : getFormattedDateTime(e, t, s),
-  DateTime$1 = reactExports.memo(DateTime),
-  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
-  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
-  white = "Formattextwithcolortags_white_e509d98",
-  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
-  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
-  par = "Formattextwithcolortags_par_485c5228",
-  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
-  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
-  red = "Formattextwithcolortags_red_9f8bd43",
-  redDark = "Formattextwithcolortags_redDark_5f4161da",
-  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
-  orange = "Formattextwithcolortags_orange_11869493",
-  cream = "Formattextwithcolortags_cream_12fdbea3",
-  brown = "Formattextwithcolortags_brown_e49e35ef",
-  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
-  green = "Formattextwithcolortags_green_55b7d967",
-  greenDark = "Formattextwithcolortags_greenDark_2b347344",
-  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
-  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
-  cred = "Formattextwithcolortags_cred_b30a4efa",
-  gold = "Formattextwithcolortags_gold_616e4d7",
-  bond = "Formattextwithcolortags_bond_b29091",
-  prom = "Formattextwithcolortags_prom_85aada4f",
-  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
-  styles$1 = {
-    blackReal: blackReal,
-    whiteReal: whiteReal,
-    white: white,
-    whiteOrange: whiteOrange,
-    whiteSpanish: whiteSpanish,
-    par: par,
-    parSecondary: parSecondary,
-    parTertiary: parTertiary,
-    red: red,
-    redDark: redDark,
-    yellow: yellow,
-    orange: orange,
-    cream: cream,
-    brown: brown,
-    greenBright: greenBright,
-    green: green,
-    greenDark: greenDark,
-    blueBooster: blueBooster,
-    blueTeamkiller: blueTeamkiller,
-    cred: cred,
-    gold: gold,
-    bond: bond,
-    prom: prom,
-    parNoWidth: parNoWidth,
-  },
-  TAGGED_PHRASE_REGEXP =
-    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-  COLOR_REGEXP = new RegExp("(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))"),
-  WORDS_REGEXP = new RegExp("(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))"),
-  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
-    const r = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
-      n = reactExports.useMemo(() => t || {}, [t]);
-    let a = TAGGED_PHRASE_REGEXP.exec(e),
-      u = e,
-      o = 0;
-    for (; a;) {
-      const s = a[0],
-        i = COLOR_REGEXP.exec(s),
-        l = WORDS_REGEXP.exec(s),
-        c = a[1];
-      if (i && l) {
-        const e = i[0],
-          a = e + o++ + e;
-        ((u = u.replace(s, `%(${a})`)),
-          (n[a] = styles$1[e]
-            ? jsxRuntimeExports.jsx("span", {
-                className: styles$1[e],
-                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
-              })
-            : jsxRuntimeExports.jsx("span", {
-                style: r(e),
-                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
-              })));
-      }
-      a = TAGGED_PHRASE_REGEXP.exec(e);
-    }
-    return jsxRuntimeExports.jsx(FormatText$1, { text: u, classMix: s, binding: n });
-  },
-  FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent),
   base = "Tooltip_6d997cee",
   decorator = "Tooltip_decorator_b3486d4e",
   styles = { base: base, decorator: decorator },
@@ -9816,13 +9816,13 @@ export {
   setContentReady as b0,
   createTargetOverrides as b1,
   setSkipFramesAllowed as b2,
-  unwrapItem as b3,
-  formatString as b4,
-  Alignment$1 as b5,
-  clamp$1 as b6,
-  unsafeGet as b7,
-  makeActions as b8,
-  GreenNoise as b9,
+  constFalse as b3,
+  DateTime$1 as b4,
+  DateTimeFormatsEnum as b5,
+  usePreloadImagesState as b6,
+  FormatTextWithColorTags as b7,
+  unwrapItem as b8,
+  formatString as b9,
   defaultBrackets as bA,
   render as bB,
   defaultFormatters as bC,
@@ -9839,28 +9839,28 @@ export {
   concatWithPath as bN,
   logBySeverity$1 as bO,
   snakeToCamel as bP,
-  formatPrintf$1 as ba,
-  Alignment as bb,
-  Rewards as bc,
-  Countdown$1 as bd,
-  CountdownStyle as be,
-  CountdownIcon as bf,
-  AnimationType as bg,
-  getInitialApi as bh,
-  OptimizedProgressBar as bi,
-  RewardType$1 as bj,
-  useHorizontalDrag as bk,
-  Bar$1 as bl,
-  useServerTimePolling as bm,
-  DateTime$1 as bn,
-  DateTimeFormatsEnum as bo,
-  ImagesRClassProvider as bp,
-  getRewardTooltipConfig$1 as bq,
-  getRewardValueType$1 as br,
-  getRewardImage$1 as bs,
-  constFalse as bt,
-  usePreloadImagesState as bu,
-  FormatTextWithColorTags as bv,
+  Alignment$1 as ba,
+  clamp$1 as bb,
+  unsafeGet as bc,
+  makeActions as bd,
+  GreenNoise as be,
+  formatPrintf$1 as bf,
+  Alignment as bg,
+  Rewards as bh,
+  Countdown$1 as bi,
+  CountdownStyle as bj,
+  CountdownIcon as bk,
+  AnimationType as bl,
+  getInitialApi as bm,
+  OptimizedProgressBar as bn,
+  RewardType$1 as bo,
+  useHorizontalDrag as bp,
+  Bar$1 as bq,
+  useServerTimePolling as br,
+  ImagesRClassProvider as bs,
+  getRewardTooltipConfig$1 as bt,
+  getRewardValueType$1 as bu,
+  getRewardImage$1 as bv,
   Tooltip as bw,
   createParser as bx,
   types as by,
