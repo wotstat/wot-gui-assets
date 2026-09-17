@@ -1,32 +1,32 @@
-import { L as t, j as e } from "../../../../chunks/vendor.js";
-import { i, aC as s, de as a, cF as l, b as o } from "../../../../chunks/lib.js";
-const [d, r] = i()(
+import { W as t, j as e } from "../../../../chunks/vendor.js";
+import { i, n as s, de as l, c8 as a, cB as o } from "../../../../chunks/lib.js";
+const [d, c] = i()(
     ({ observableModel: t }) => ({ ...t.primitives(["name", "videoName", "description"]) }),
     s,
   ),
-  c = "BattleAbilityAltTooltip_d5041564",
+  r = "BattleAbilityAltTooltip_d5041564",
   n = "BattleAbilityAltTooltip_name_76054ad5",
   m = "BattleAbilityAltTooltip_description_276f2bbd",
-  b = "BattleAbilityAltTooltip_videoWrapper_3a3622f1",
-  p = "BattleAbilityAltTooltip_video_db3faea6",
+  p = "BattleAbilityAltTooltip_videoWrapper_3a3622f1",
+  b = "BattleAbilityAltTooltip_video_db3faea6",
   j = t(function () {
-    const { model: t } = r();
-    return e.jsx(a, {
-      children: e.jsx(a.Decorator, {
+    const { model: t } = c();
+    return e.jsx(l, {
+      children: e.jsx(l.Decorator, {
         children: e.jsxs("div", {
-          className: c,
+          className: r,
           children: [
-            e.jsx(l, { text: t.name.get(), className: n }),
+            e.jsx(a, { text: t.name.get(), className: n }),
             e.jsx("div", {
-              className: b,
+              className: p,
               children: e.jsx("video", {
-                className: p,
+                className: b,
                 src: R.videos.battleAblity.$dyn(t.videoName.get()),
                 loop: !0,
                 autoPlay: !0,
               }),
             }),
-            e.jsx(l, { text: t.description.get(), className: m }),
+            e.jsx(a, { text: t.description.get(), className: m }),
           ],
         }),
       }),

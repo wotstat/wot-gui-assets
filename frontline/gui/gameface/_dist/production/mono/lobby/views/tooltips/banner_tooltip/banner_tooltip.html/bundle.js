@@ -1,15 +1,15 @@
-import { L as e, r as a, j as s, K as t } from "../../../../chunks/vendor.js";
+import { W as e, r as a, j as s, a3 as t } from "../../../../chunks/vendor.js";
 import {
   i as o,
-  aC as n,
-  M as r,
-  F as i,
+  n,
+  c6 as r,
+  a9 as i,
   dc as l,
-  D as c,
-  cA as d,
-  cD as p,
+  cR as c,
+  c0 as d,
+  c5 as p,
   dd as m,
-  b as _,
+  cB as _,
 } from "../../../../chunks/lib.js";
 import { F as f, I as x, A as h, a as T, b } from "../../../../chunks/event_banner_state.js";
 import { D as u } from "../../../../chunks/divider.js";
@@ -66,7 +66,7 @@ const [j, v] = o()(
       }),
     }[e];
   },
-  A = e(function ({ type: e }) {
+  E = e(function ({ type: e }) {
     const { model: t } = v(),
       o = t.eventStartDate.get(),
       n = t.eventEndDate.get(),
@@ -82,7 +82,7 @@ const [j, v] = o()(
       s.jsx("div", { className: g, children: S(e, o, n, i) })
     );
   }),
-  C = {
+  A = {
     [b]: {
       isDisabled: !1,
       shouldShowPoints: !0,
@@ -99,17 +99,17 @@ const [j, v] = o()(
       specificDescriptionKey: "fl_tooltips.bannerTooltip.descriptionEnded",
     },
   },
-  E = "HeaderDecorator_wrapper_47003ef5";
+  C = "HeaderDecorator_wrapper_47003ef5";
 function F({ children: e, isDisabled: a = !1 }) {
   const t = a
     ? R.images.frontline.gui.maps.icons.hangarEventBanners.tooltips.header_disabled()
     : R.images.frontline.gui.maps.icons.hangarEventBanners.tooltips.header_enabled();
-  return s.jsx("div", { className: E, style: { backgroundImage: `url(${t})` }, children: e });
+  return s.jsx("div", { className: C, style: { backgroundImage: `url(${t})` }, children: e });
 }
 const M = "ProgressPoints_a5cbe757",
   H = "ProgressPoints_progressionValuesWrapper_e7ef156c",
-  K = "ProgressPoints_currentProgress_25705c74",
-  z = "ProgressPoints_progressIcon_9b37bf52",
+  z = "ProgressPoints_currentProgress_25705c74",
+  K = "ProgressPoints_progressIcon_9b37bf52",
   V = "ProgressPoints_description_281855c9",
   $ = e(function () {
     const { model: e } = v(),
@@ -126,9 +126,9 @@ const M = "ProgressPoints_a5cbe757",
                 s.jsx(i, {
                   className: V,
                   path: "fl_tooltips.bannerTooltip.progress",
-                  params: { value: s.jsx("div", { className: K, children: t }), maxValue: a },
+                  params: { value: s.jsx("div", { className: z, children: t }), maxValue: a },
                 }),
-                s.jsx("div", { className: z }),
+                s.jsx("div", { className: K }),
               ],
             }),
             s.jsx(p, { size: "small", value: t, maxValue: a }),
@@ -159,7 +159,7 @@ const M = "ProgressPoints_a5cbe757",
         shouldShowTierData: p,
         specificDescriptionKey: _,
         dateInfoType: x,
-      } = C[a.get()],
+      } = A[a.get()],
       h = a.get() !== f,
       T = _ || "fl_tooltips.bannerTooltip.description";
     return s.jsx(m, {
@@ -231,7 +231,7 @@ const M = "ProgressPoints_a5cbe757",
                 }),
               ],
             }),
-          x && s.jsxs(s.Fragment, { children: [s.jsx(u, {}), s.jsx(A, { type: x })] }),
+          x && s.jsxs(s.Fragment, { children: [s.jsx(u, {}), s.jsx(E, { type: x })] }),
         ],
       }),
     });

@@ -8,7 +8,7 @@ import {
   n as i,
   r as l,
   U as _,
-  a1 as p,
+  a0 as p,
 } from "../../../../chunks/lib.js";
 const [d, m] = s()(
     ({ observableModel: e }) => ({ root: e.object(), rewards: e.array("rewards") }),

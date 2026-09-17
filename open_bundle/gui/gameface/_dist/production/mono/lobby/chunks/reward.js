@@ -1,17 +1,17 @@
 import { j as e, e as s, r as t } from "./vendor.js";
 import { c as a, e as i } from "./resources.js";
 import {
-  a8 as r,
-  _ as m,
-  R as n,
-  N as o,
-  a9 as c,
+  a9 as r,
+  X as m,
+  P as n,
+  L as o,
+  aa as c,
   r as u,
-  a4 as l,
+  a5 as l,
   F as g,
-  aa as d,
-  ab as h,
-  S,
+  ab as d,
+  ac as h,
+  Q as S,
 } from "./lib.js";
 var x = ((e) => (
   (e.Big = "big"),
@@ -355,8 +355,8 @@ const T = {
   base__l: "Image_base__l_f239db79",
 };
 const B = "LoupeButton_5495857f",
-  C = "LoupeButton_icon_e65c88cd",
-  P = (e) => e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+  P = "LoupeButton_icon_e65c88cd",
+  C = (e) => e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "),
   q = { base: "TankName_b9b19397", type: "TankName_type_564fa82d" },
   I = (e, s, t) => ({
     backgroundImage: `url(${`R.images.gui.maps.icons.vehicleTypes.${t ? "c_48x48" : "c_24x24"}.${`${e.replace("-", "_")}${s ? "_elite" : ""}`}`})`,
@@ -399,7 +399,7 @@ const W = "Reward_bfa36689",
         return !1;
     }
   },
-  E = t.forwardRef(function (
+  L = t.forwardRef(function (
     { reward: a, template: i, tooltipDisabled: r = !1, className: m = "", ...n },
     o,
   ) {
@@ -418,7 +418,7 @@ const W = "Reward_bfa36689",
       children: n.children,
     });
   });
-((E.Highlight = function ({ size: t, special: a, className: i }) {
+((L.Highlight = function ({ size: t, special: a, className: i }) {
   const r = l(t, a);
   return e.jsx("div", {
     className: s(k, i),
@@ -427,7 +427,7 @@ const W = "Reward_bfa36689",
     },
   });
 }),
-  (E.Image = function ({
+  (L.Image = function ({
     template: t,
     showCounter: a,
     count: i,
@@ -452,7 +452,7 @@ const W = "Reward_bfa36689",
         }),
     });
   }),
-  (E.Name = function ({
+  (L.Name = function ({
     reward: t,
     multiTextSize: a,
     nameHeight: i,
@@ -469,23 +469,23 @@ const W = "Reward_bfa36689",
           : e.jsx(h, {
               className: u,
               classNames: { text: j.innerText },
-              text: P(c),
+              text: C(c),
               styleBase: { fontSize: r, maxHeight: a },
               tooltipDisabled: !0,
             }),
     });
   }),
-  (E.Overlay = function ({ size: t, name: a, special: i, className: r }) {
+  (L.Overlay = function ({ size: t, name: a, special: i, className: r }) {
     const m = _({ size: t, name: a, special: i });
     return e.jsx("div", { className: s(F, r), style: { backgroundImage: `url(${m})` } });
   }),
-  (E.LoupeButton = ({ onClick: t, onMouseEnter: a, icon: i, className: r = "" }) =>
+  (L.LoupeButton = ({ onClick: t, onMouseEnter: a, icon: i, className: r = "" }) =>
     e.jsx("div", {
       className: s(B, r),
       onClick: t,
       onMouseEnter: a,
       children: e.jsx("div", {
-        className: s(C, i.className),
+        className: s(P, i.className),
         style: { backgroundImage: `url(${i.img})` },
       }),
     })));
@@ -493,11 +493,11 @@ export {
   y as C,
   x as I,
   v as P,
-  E as R,
+  L as R,
   H as T,
   p as a,
   _ as b,
-  P as f,
+  C as f,
   z as g,
   $ as h,
   X as i,

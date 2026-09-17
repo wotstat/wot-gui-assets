@@ -1,11 +1,11 @@
-import { s as i, j as o, f as e } from "../../../../chunks/vendor.js";
+import { s as i, j as e, f as o } from "../../../../chunks/vendor.js";
 import {
   a as s,
   N as a,
-  ao as t,
+  ap as t,
   B as c,
-  ap as l,
-  aq as n,
+  aq as l,
+  ar as n,
   E as p,
   U as d,
 } from "../../../../chunks/lib.js";
@@ -31,27 +31,27 @@ const [r, m] = s()(
     const { model: i, controls: s } = m(),
       p = i.isPopUp.get(),
       d = a.resolve("strings");
-    return o.jsx(t, {
-      children: o.jsxs("div", {
-        className: e(_, p && N),
+    return e.jsx(t, {
+      children: e.jsxs("div", {
+        className: o(_, p && N),
         children: [
-          o.jsx("div", { className: f }),
-          o.jsxs("div", {
+          e.jsx("div", { className: f }),
+          e.jsxs("div", {
             className: j,
-            children: [p && o.jsx("div", { className: C }), o.jsx("div", { className: x })],
+            children: [p && e.jsx("div", { className: C }), e.jsx("div", { className: x })],
           }),
-          p && o.jsx("div", { className: b, onClick: s.close }),
-          o.jsx("div", {
+          p && e.jsx("div", { className: b, onClick: s.close }),
+          e.jsx("div", {
             className: h,
             children: d.readOrEmpty("white_tiger_lobby.notification.title"),
           }),
-          o.jsx("div", { className: v }),
-          o.jsx(c, {
+          e.jsx("div", { className: v }),
+          e.jsx(c, {
             size: n.small,
             theme: l.secondary,
             onClick: s.onGoToBadge,
             classNames: { base: A },
-            children: o.jsx("div", {
+            children: e.jsx("div", {
               className: M,
               children: d.readOrEmpty("white_tiger_lobby.notification.button"),
             }),
@@ -60,4 +60,4 @@ const [r, m] = s()(
       }),
     });
   });
-p(o.jsx(r, { children: o.jsx(d, { children: o.jsx(g, {}) }) }));
+p(e.jsx(r, { children: e.jsx(d, { children: e.jsx(g, {}) }) }));

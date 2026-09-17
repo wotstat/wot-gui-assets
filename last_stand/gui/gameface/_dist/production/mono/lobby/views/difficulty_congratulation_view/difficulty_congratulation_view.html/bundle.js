@@ -2,9 +2,9 @@ import { D as s, r as e, j as a } from "../../../chunks/vendor.js";
 import {
   i,
   d as t,
-  d5 as o,
+  X as o,
   K as r,
-  aT as l,
+  Y as l,
   b as n,
   B as c,
   I as d,
@@ -19,9 +19,9 @@ import {
 } from "../../../chunks/lib.js";
 import { E as b, S as j } from "../../../chunks/spring_wrapper.js";
 import { S as x } from "../../../chunks/story_point.js";
-import { c as h } from "../../../chunks/sound.js";
+import { M as h } from "../../../chunks/sound.js";
 import { g as A, a as z, b as E, c as D } from "../../../chunks/utils.js";
-const [T, N] = i()(
+const [N, T] = i()(
     ({ observableModel: s }) => ({ root: s.object(), rewards: s.array("rewards") }),
     ({ externalModel: s }) => ({ close: s.createCallbackNoArgs("onClose") }),
   ),
@@ -66,21 +66,21 @@ const I = 500,
   U = "DifficultyCongratulationApp_rewards_fd607614",
   H = "DifficultyCongratulationApp_rewardLabel_f328651f",
   K = "DifficultyCongratulationApp_rewardList_cb286ad5",
-  q = "DifficultyCongratulationApp_reward_ccc9cf18",
-  F = "DifficultyCongratulationApp_closeBtn_ec8e894",
-  G = 600 + k[S.REWARDS].delay,
-  J = { from: { opacity: 0, y: -5 } };
-function Q() {
+  X = "DifficultyCongratulationApp_reward_ccc9cf18",
+  Y = "DifficultyCongratulationApp_closeBtn_ec8e894",
+  q = 600 + k[S.REWARDS].delay,
+  F = { from: { opacity: 0, y: -5 } };
+function G() {
   _.sound(h);
 }
-const V = t.resolve("strings"),
-  X = s(function () {
-    const { model: s, controls: i } = N(),
+const J = t.resolve("strings"),
+  Q = s(function () {
+    const { model: s, controls: i } = T(),
       { level: t, modifier: _ } = s.root.get(),
       C = s.rewards.get();
     (o(i.close), r(l.ENTER, i.close), r(l.SPACE, i.close));
     const [g, h] = e.useState(!1),
-      T = n(
+      N = n(
         { size: c.sizes.extraSmall },
         {
           medium: { size: c.sizes.small },
@@ -96,7 +96,7 @@ const V = t.resolve("strings"),
         h(!0);
       },
       children: [
-        a.jsx(f, { className: F, onClose: i.close }),
+        a.jsx(f, { className: Y, onClose: i.close }),
         a.jsxs("div", {
           className: W,
           children: [
@@ -122,7 +122,7 @@ const V = t.resolve("strings"),
               children: a.jsx(m, {
                 classMix: M,
                 justifyContent: u.Center,
-                text: V.readOrEmpty(
+                text: J.readOrEmpty(
                   `R.strings.last_stand_lobby.difficultyWindow.header.level_${t}`,
                 ),
               }),
@@ -136,7 +136,7 @@ const V = t.resolve("strings"),
                 isTruncationAvailable: !0,
                 isTooltipEnable: !0,
                 binding: { modifier: _ },
-                text: V.readOrEmpty(
+                text: J.readOrEmpty(
                   `R.strings.last_stand_lobby.difficultyWindow.description.level_${t}`,
                 ),
               }),
@@ -157,14 +157,14 @@ const V = t.resolve("strings"),
                       a.jsx(
                         "div",
                         {
-                          className: q,
+                          className: X,
                           children: a.jsx(j, {
-                            ...J,
+                            ...F,
                             duration: 800,
-                            delay: G + 120 * e,
+                            delay: q + 120 * e,
                             easingType: b.EaseOutBack,
                             isCanceled: g,
-                            onStart: Q,
+                            onStart: G,
                             children: a.jsx(y, {
                               name: s.name,
                               value: D(s),
@@ -190,7 +190,7 @@ const V = t.resolve("strings"),
           isCanceled: g,
           children: a.jsx(c, {
             theme: c.themes.primary,
-            size: T.size,
+            size: N.size,
             onClick: i.close,
             children: R.strings.last_stand_lobby.common.yes(),
           }),
@@ -198,4 +198,4 @@ const V = t.resolve("strings"),
       ],
     });
   });
-C(a.jsx(g, { children: a.jsx(T, { children: a.jsx(X, {}) }) }));
+C(a.jsx(g, { children: a.jsx(N, { children: a.jsx(Q, {}) }) }));

@@ -3,12 +3,12 @@ import {
   p as a,
   q as s,
   j as n,
-  s as t,
-  t as i,
-  i as c,
-  v as o,
-  w as l,
-  k as d,
+  v as t,
+  s as i,
+  h as c,
+  w as o,
+  t as l,
+  i as d,
   r as m,
 } from "../../../chunks/vendor.js";
 import {
@@ -16,19 +16,19 @@ import {
   m as h,
   u as _,
   M as b,
-  F as u,
-  a as x,
-  p,
-  b as y,
-  C as j,
-  B as v,
+  h as u,
+  y as x,
+  p as y,
+  z as p,
+  A as j,
+  D as v,
   r as N,
   U as f,
 } from "../../../chunks/lib.js";
 import { C as g, B as V } from "../../../chunks/enums.js";
-import { N as B, a as S } from "../../../chunks/constants.js";
-import { g as C } from "../../../chunks/get_vehicle_image.js";
-/* empty css                     */ const [A, w] = r()(
+import { a as B, N as S } from "../../../chunks/constants.js";
+import { g as A } from "../../../chunks/get_vehicle_image.js";
+/* empty css                     */ const [C, w] = r()(
     (s) => {
       const n = {
           root: s.observableModel.object(),
@@ -54,8 +54,8 @@ import { g as C } from "../../../chunks/get_vehicle_image.js";
     },
     ({ externalModel: e }) => ({ open: e.createCallbackNoArgs("onOpen") }),
   ),
-  k = "Candidates_dbb5d56c",
-  I = "Candidates_description_88b130d5",
+  I = "Candidates_dbb5d56c",
+  k = "Candidates_description_88b130d5",
   M = "Candidates_divider_a8b91d7e",
   E = "Candidates_accent_44bd75ba",
   T = s(() => {
@@ -65,10 +65,10 @@ import { g as C } from "../../../chunks/get_vehicle_image.js";
       t = e.vehicleToBan.get(),
       i = e.computes.confirmedChoiceVehicles();
     return n.jsxs("div", {
-      className: k,
+      className: I,
       children: [
         n.jsx("div", {
-          className: I,
+          className: k,
           children: (() => {
             switch (a) {
               case g.NoSelected:
@@ -102,7 +102,7 @@ import { g as C } from "../../../chunks/get_vehicle_image.js";
             children: [
               n.jsx("div", { className: M }),
               n.jsx("div", {
-                className: I,
+                className: k,
                 children: n.jsx(u, {
                   text: `${R.strings.comp7_ext.banView.factory.pick()}`,
                   binding: {
@@ -118,11 +118,11 @@ import { g as C } from "../../../chunks/get_vehicle_image.js";
       ],
     });
   }),
-  $ = "BanResultSection_9868ea69",
-  D = "BanResultSection_part_9154a720",
+  D = "BanResultSection_9868ea69",
+  $ = "BanResultSection_part_9154a720",
   X = "BanResultSection_votesCount_3b77e1d1",
-  F = "BanResultSection_teamType_f208449e",
-  z = "BanResultSection_name_ad9c5dae",
+  z = "BanResultSection_teamType_f208449e",
+  F = "BanResultSection_name_ad9c5dae",
   q = "BanResultSection_banItem_2673f0f5",
   U = "BanResultSection_icon_e242507c",
   W = "BanResultSection_vehicle_53692df2",
@@ -138,10 +138,10 @@ function G({
   hasAnimation: b = !0,
 }) {
   const u = x({ body: R.strings.comp7_ext.banWidget.tooltip() }),
-    p = t(),
     y = t(),
+    p = t(),
     j = i(s.techName, {
-      ref: p,
+      ref: y,
       from: {
         opacity: b ? 0 : 1,
         transform: b ? "translate(-50%, -50%) scale(2)" : "translate(-50%, -50%) scale(1)",
@@ -155,7 +155,7 @@ function G({
       },
     }),
     v = c({
-      ref: y,
+      ref: p,
       from: { opacity: b ? 0 : 0.9, zIndex: 2 },
       to: { opacity: 0.9 },
       delay: b ? 1300 : 0,
@@ -166,26 +166,26 @@ function G({
       },
     });
   return (
-    o([p, y], b ? [0, 0.5] : [0, 0]),
+    o([y, p], b ? [0, 0.5] : [0, 0]),
     n.jsxs("div", {
-      className: l($, _?.base),
+      className: l(D, _?.base),
       children: [
         m && n.jsx("div", { className: O, ...u }),
-        e >= 0 && n.jsx("div", { className: l(D, X, _?.votesCount), children: e }),
+        e >= 0 && n.jsx("div", { className: l($, X, _?.votesCount), children: e }),
         n.jsx("div", {
-          className: l(D, F, _?.teamType),
+          className: l($, z, _?.teamType),
           children: `${R.strings.comp7_ext.banWidget.$dyn(a)}`,
         }),
         n.jsx("div", {
-          className: l(D, z, _?.name),
+          className: l($, F, _?.name),
           children: s.name ? s.name : R.strings.comp7_ext.banView.noBan(),
         }),
         n.jsxs("div", {
-          className: l(D, q),
+          className: l($, q),
           children: [
             n.jsx(d.div, { className: U, style: v }),
             j((e, a) =>
-              a ? n.jsx(d.div, { className: W, style: { backgroundImage: C(a), ...e } }) : void 0,
+              a ? n.jsx(d.div, { className: W, style: { backgroundImage: A(a), ...e } }) : void 0,
             ),
           ],
         }),
@@ -233,14 +233,14 @@ const H = "allies",
         config: { duration: 500 },
       }),
       N = m.useCallback(() => {
-        b.current || ((b.current = !0), p.sound("comp_7_bans_pict_animation"));
+        b.current || ((b.current = !0), y.sound("comp_7_bans_pict_animation"));
       }, []),
       f = m.useCallback(() => {
-        u.current || ((u.current = !0), p.sound("comp_7_bans_crossed_label"));
+        u.current || ((u.current = !0), y.sound("comp_7_bans_crossed_label"));
       }, []);
     return (
-      y(() => {
-        r && p.sound("comp_7_bans_text_animation");
+      p(() => {
+        r && y.sound("comp_7_bans_text_animation");
       }),
       n.jsxs("div", {
         className: l(K, h),
@@ -318,7 +318,7 @@ const H = "allies",
                   className: ne,
                   children: [
                     e.techName &&
-                      n.jsx("div", { className: ie, style: { backgroundImage: C(e.techName) } }),
+                      n.jsx("div", { className: ie, style: { backgroundImage: A(e.techName) } }),
                     e.count > 1 && n.jsx("div", { className: ce, children: e.count }),
                   ],
                 },
@@ -357,4 +357,4 @@ const H = "allies",
             }),
     });
   });
-N(n.jsx(f, { children: n.jsx(A, { children: n.jsx(he, {}) }) }));
+N(n.jsx(f, { children: n.jsx(C, { children: n.jsx(he, {}) }) }));

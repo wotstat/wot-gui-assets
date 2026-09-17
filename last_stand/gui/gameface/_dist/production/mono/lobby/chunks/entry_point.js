@@ -7,11 +7,11 @@ import {
   dL as u,
   dM as m,
   i as p,
-  ba as g,
+  bb as g,
   e as b,
   u as x,
-  aU as f,
-  b5 as h,
+  aV as h,
+  b6 as f,
   j as y,
   p as v,
 } from "./lib.js";
@@ -42,17 +42,17 @@ class N extends i {
   }
 }
 const I = "lootbox_images",
-  E = "lootbox_sounds";
+  w = "lootbox_sounds";
 (d.register(I, e(() => new u(window.R.images)).singleton()),
-  d.register(E, e(() => new N(window.R.sounds)).singleton()));
-const w = d.resolve(I),
+  d.register(w, e(() => new N(window.R.sounds)).singleton()));
+const E = d.resolve(I),
   O = d.resolve("videos"),
-  j = d.resolve(E),
+  j = d.resolve(w),
   $ = d.resolve("strings"),
   C = (e, t) => {
     switch (e) {
       case R.images:
-        return w.readOrEmpty(t, "silent");
+        return E.readOrEmpty(t, "silent");
       case R.videos:
         return O.readOrEmpty(t, "silent");
       case R.sounds:
@@ -97,7 +97,7 @@ const T = {
       hoverZone: { width: "38%", height: "39%", horizontalOffset: "30.8%", verticalOffset: "39%" },
       backgroundColor: "#111",
     },
-    COMMON: { guaranteed: { accent: 5, visibleAt: 10 } },
+    COMMON: { guaranteed: { accent: 5, visibleAt: 10 }, hasFooterShadow: !0 },
   },
   k = {
     DEFAULT_CONFIG: T,
@@ -218,7 +218,7 @@ const L = (e, t) => {
     sounds: { entryHover: "gui_lb_icon_hover" },
   };
 var z = ((e) => ((e.Boxes = "boxes"), (e.Empty = "empty"), e))(z || {});
-const [H, W] = p()(
+const [H, F] = p()(
     ({ observableModel: e }) => {
       const o = e.object().get().eventName,
         n = { root: e.object(), style: t.box(B(o, P.EntryPoint)), resources: t.box(G(D, o)) },
@@ -230,9 +230,9 @@ const [H, W] = p()(
     },
     ({ externalModel: e }) => ({ showLanding: e.createCallbackNoArgs("onEntryClick") }),
   ),
-  Y = (e) => !!e && !e.includes("customizable/default"),
-  F = (e, t) => {
-    return ((s = e), Y((o = t)) ? o : Y(s) ? s : o || s);
+  W = (e) => !!e && !e.includes("customizable/default"),
+  Y = (e, t) => {
+    return ((s = e), W((o = t)) ? o : W(s) ? s : o || s);
     var s, o;
   },
   U = "video";
@@ -242,11 +242,11 @@ const J = "Glow_2571a3a9",
   Z = "Glow_video_2d774833",
   q = "Glow_img_90334d0",
   Q = o(function ({ hover: e = !1, className: t }) {
-    const { model: s } = W(),
+    const { model: s } = F(),
       { images: o, videos: r } = s.resources.get(),
       i = s.style.get(),
       c = ((e, t) => {
-        const s = F(e, t),
+        const s = Y(e, t),
           o = s.split(":")[0];
         return { src: s, type: o };
       })(o.shine, r.glow);
@@ -289,12 +289,12 @@ const oe = {
     timerLabel: "Info_timerLabel_7982abd0",
   },
   ne = o(function ({ className: e }) {
-    const { model: t } = W(),
+    const { model: t } = F(),
       { breakpoint: s } = x(),
       { texts: o } = t.resources.get(),
       { boxesCount: r, eventExpireTime: i } = t.root.get(),
       c = t.computes.getState(),
-      l = s.weight > f.small.weight ? h.size.x32x32 : h.size.x24x24,
+      l = s.weight > h.small.weight ? f.size.x32x32 : f.size.x24x24,
       d = 259200 >= i,
       u = d || c === z.Empty;
     return n.jsxs("div", {
@@ -304,7 +304,7 @@ const oe = {
           n.jsx("div", {
             className: a(oe.additional, c !== z.Boxes && oe.additional__center),
             children: d
-              ? n.jsx(h, {
+              ? n.jsx(f, {
                   className: oe.timer,
                   classNames: { label: oe.timerLabel },
                   start: i,
@@ -338,12 +338,12 @@ const me = o(function () {
       contentId: s.read((e) => e.mono.lootbox.tooltips.entry_point("resId")),
     }),
     [i, c] = r.useState(!1),
-    { model: l, controls: u } = W(),
+    { model: l, controls: u } = F(),
     { isEnabled: m } = l.root.get(),
     p = l.computes.getState(),
     { images: g, videos: b, sounds: x } = l.resources.get(),
-    f = l.style.get(),
-    h = i ? 1 + f.icon[`${p}IconBrightness`] : 1,
+    h = l.style.get(),
+    f = i ? 1 + h.icon[`${p}IconBrightness`] : 1,
     _ = p === z.Empty ? g.iconEmpty : g.iconGold;
   return n.jsx("div", {
     className: a(ae, !m && ie),
@@ -362,7 +362,7 @@ const me = o(function () {
         children: [
           n.jsx(ne, { className: de }),
           p === z.Boxes && m && n.jsx(Q, { className: ce, hover: i }),
-          n.jsx(ee, { disabled: !m, image: _, brightness: h, className: ue }),
+          n.jsx(ee, { disabled: !m, image: _, brightness: f, className: ue }),
         ],
       }),
     }),

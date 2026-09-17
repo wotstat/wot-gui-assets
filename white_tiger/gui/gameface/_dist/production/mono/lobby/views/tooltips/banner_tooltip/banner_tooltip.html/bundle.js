@@ -3,12 +3,12 @@ import {
   N as r,
   d as o,
   as as i,
-  X as t,
+  Y as t,
   at as s,
   au as p,
   a as _,
-  ar as d,
-  av as c,
+  av as d,
+  aw as c,
   E as l,
 } from "../../../../chunks/lib.js";
 import { d as m } from "../../../../chunks/TooltipDecorator2.js";
@@ -112,8 +112,8 @@ const [N, k] = _()(({ observableModel: e }) => ({ root: e.object() }), d),
     date_wrapper: "BannerTooltipApp_date_wrapper_c1d2c0f2",
     nextTimeEnabled: "BannerTooltipApp_nextTimeEnabled_2e31cc3e",
   },
-  D = R.strings.white_tiger_tooltips.bannerTooltip,
-  w = () => {
+  w = R.strings.white_tiger_tooltips.bannerTooltip,
+  D = () => {
     const { model: n } = k(),
       {
         performanceRisk: r,
@@ -138,8 +138,8 @@ const [N, k] = _()(({ observableModel: e }) => ({ root: e.object() }), d),
         e.jsxs("div", {
           className: C.container,
           children: [
-            e.jsx("div", { className: C.header, children: D.header() }),
-            e.jsx("div", { className: C.year, children: D.year() }),
+            e.jsx("div", { className: C.header, children: w.header() }),
+            e.jsx("div", { className: C.year, children: w.year() }),
             e.jsxs("div", {
               className: C.description,
               children: [
@@ -179,16 +179,16 @@ const [N, k] = _()(({ observableModel: e }) => ({ root: e.object() }), d),
                       p === s &&
                         e.jsx("div", {
                           className: C.progressionCompleted,
-                          children: D.allStagesAreCompleted(),
+                          children: w.allStagesAreCompleted(),
                         }),
                     ],
                   }),
-                e.jsx(t, { split: !0, className: C.descriptionText, text: D.description() }),
+                e.jsx(t, { split: !0, className: C.descriptionText, text: w.description() }),
                 e.jsxs("div", {
                   className: C.hint,
                   children: [
-                    e.jsx("div", { className: C.hint_icon, children: D.mode() }),
-                    e.jsx("div", { className: C.hint_text, children: D.modeHint() }),
+                    e.jsx("div", { className: C.hint_icon, children: w.mode() }),
+                    e.jsx("div", { className: C.hint_text, children: w.modeHint() }),
                   ],
                 }),
               ],
@@ -202,9 +202,9 @@ const [N, k] = _()(({ observableModel: e }) => ({ root: e.object() }), d),
                   r !== j.LowRisk && e.jsx("div", { className: C.icon }),
                   e.jsx("div", {
                     className: a(C.title, r !== j.LowRisk && C.title__withIcon),
-                    children: D.performanceRisk.title.$dyn(r),
+                    children: w.performanceRisk.title.$dyn(r),
                   }),
-                  e.jsx("div", { className: C.text, children: D.performanceRisk.text.$dyn(r) }),
+                  e.jsx("div", { className: C.text, children: w.performanceRisk.text.$dyn(r) }),
                 ],
               }),
             e.jsx("div", { className: C.divider }),
@@ -213,13 +213,13 @@ const [N, k] = _()(({ observableModel: e }) => ({ root: e.object() }), d),
               children: [
                 l &&
                   0 !== u &&
-                  e.jsx("div", { className: C.date_text, children: D.expiryDate.frozen() }),
+                  e.jsx("div", { className: C.date_text, children: w.expiryDate.frozen() }),
                 g &&
-                  e.jsx("div", { className: C.date_text, children: D.expiryDate.technicalPause() }),
+                  e.jsx("div", { className: C.date_text, children: w.expiryDate.technicalPause() }),
                 m &&
                   e.jsx("div", {
                     className: C.date_announcementText,
-                    children: D.expiryDate.inAnnouncement(),
+                    children: w.expiryDate.inAnnouncement(),
                   }),
                 !g &&
                   !(m && !T) &&
@@ -250,4 +250,4 @@ const [N, k] = _()(({ observableModel: e }) => ({ root: e.object() }), d),
       ],
     });
   };
-l(e.jsx(N, { children: e.jsx(m, { children: e.jsx(w, {}) }) }));
+l(e.jsx(N, { children: e.jsx(m, { children: e.jsx(D, {}) }) }));

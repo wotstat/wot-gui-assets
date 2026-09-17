@@ -1,9 +1,9 @@
 import { r as e, u as s, j as a, E as t, t as o, D as r } from "../../../chunks/vendor.js";
 import {
   i,
-  cr as n,
+  cs as n,
   p as c,
-  d5 as d,
+  X as d,
   K as l,
   N as h,
   W as m,
@@ -46,7 +46,7 @@ const H = 1e3,
   z = "ContainerAnimation_base__started_448f44b3",
   K = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
   Q = (e, s, a, t) => (a ? t.width / e : t.height / s),
-  q = e.memo(function ({
+  X = e.memo(function ({
     isStarted: r,
     scaleCover: i,
     screenWidth: n,
@@ -94,12 +94,12 @@ const H = 1e3,
       })
     );
   }),
-  F = "PromoApp_vignetteBg_ae9ebec",
-  G = "PromoApp_6e17783a",
-  I = "PromoApp_container_c21d069a",
-  J = "PromoApp_header_70c24a9c",
-  V = "PromoApp_base__started_a4fe4c39",
-  X = "PromoApp_subheader_e22f84af",
+  q = "PromoApp_vignetteBg_ae9ebec",
+  F = "PromoApp_6e17783a",
+  G = "PromoApp_container_c21d069a",
+  I = "PromoApp_header_70c24a9c",
+  J = "PromoApp_base__started_a4fe4c39",
+  V = "PromoApp_subheader_e22f84af",
   Y = "PromoApp_gradient_5d52cdb6",
   Z = "PromoApp_bottomContainer_8e2a2910",
   ee = "PromoApp_topContainer_609c5a3b",
@@ -142,13 +142,13 @@ const H = 1e3,
         (c.sound(E), L(), m(L), p(L));
       }, []),
       a.jsxs("div", {
-        className: t(G, y && V),
+        className: t(F, y && J),
         children: [
           a.jsx(u, { className: ae, onClose: B }),
           a.jsx("div", {
-            className: I,
+            className: G,
             style: { width: w * W, height: S * W, transform: `scale(${H.scaleCover})` },
-            children: a.jsx(q, {
+            children: a.jsx(X, {
               isStarted: y,
               scaleCover: H.scaleCover,
               screenHeight: H.height,
@@ -157,18 +157,18 @@ const H = 1e3,
               isCoverWidth: H.isCoverWidth,
             }),
           }),
-          a.jsx("div", { className: F }),
+          a.jsx("div", { className: q }),
           a.jsx("div", { className: Y }),
           a.jsx(A, {
             className: ee,
             ...U[k.HEADER],
-            children: a.jsx("div", { className: J, children: te.header() }),
+            children: a.jsx("div", { className: I, children: te.header() }),
           }),
           a.jsx(A, {
             className: ee,
             ...U[k.SUBHEADER],
             children: a.jsx(_, {
-              classMix: X,
+              classMix: V,
               text: te.subheader(),
               binding: {
                 dateRange: a.jsx(g, {

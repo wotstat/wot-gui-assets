@@ -2270,82 +2270,6 @@ html[lang="th"] .FormatText_db904f12 span {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.Rewards_36f5662a {
-  display: flex;
-}
-.Rewards_base__vertical_32f04b98 {
-  flex-direction: column;
-}
-
-.Rewards_reward_9abc0f4a {
-  margin: 0 10rem;
-}
-.Rewards_reward__vertical_dd4a02c5 {
-  margin: 15rem 0;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-.Countdown_99fa8328 {
-  display: flex;
-  align-items: center;
-}
-
-.Countdown_icon_b50ebafb {
-  width: 32rem;
-  height: 32rem;
-  background: no-repeat center/contain;
-}
-
-.Countdown_description_91ad95d2 {
-  color: #ffdd99;
-  font-size: 14rem;
-  font-weight: 400;
-  line-height: 1.3;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.Optimizedprogressbar_e894d6c {
-  width: 100%;
-  padding: 30rem 0;
-  overflow: hidden;
-}
-
-.Optimizedprogressbar_wrapper_70ce38b3 {
-  position: relative;
-}
-
-.Optimizedprogressbar_line_5190e4c3 {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.Optimizedprogressbar_backgroundWrapper_405830ed {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.Optimizedprogressbar_background_74cf6541 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 8001px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
 .Formattextwithcolortags_blackReal_55a1402e {
   color: #000000;
 }
@@ -2442,6 +2366,82 @@ html[lang="th"] .FormatText_db904f12 span {
 .Formattextwithcolortags_parNoWidth_bb0f73ce {
   width: 0;
   color: #8c8c7e;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+.Rewards_36f5662a {
+  display: flex;
+}
+.Rewards_base__vertical_32f04b98 {
+  flex-direction: column;
+}
+
+.Rewards_reward_9abc0f4a {
+  margin: 0 10rem;
+}
+.Rewards_reward__vertical_dd4a02c5 {
+  margin: 15rem 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+.Countdown_99fa8328 {
+  display: flex;
+  align-items: center;
+}
+
+.Countdown_icon_b50ebafb {
+  width: 32rem;
+  height: 32rem;
+  background: no-repeat center/contain;
+}
+
+.Countdown_description_91ad95d2 {
+  color: #ffdd99;
+  font-size: 14rem;
+  font-weight: 400;
+  line-height: 1.3;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.Optimizedprogressbar_e894d6c {
+  width: 100%;
+  padding: 30rem 0;
+  overflow: hidden;
+}
+
+.Optimizedprogressbar_wrapper_70ce38b3 {
+  position: relative;
+}
+
+.Optimizedprogressbar_line_5190e4c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.Optimizedprogressbar_backgroundWrapper_405830ed {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Optimizedprogressbar_background_74cf6541 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 8001px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */

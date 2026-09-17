@@ -1,5 +1,5 @@
 import { h as t, i as s, t as e, j as i, f as o } from "../../../../chunks/vendor.js";
-import { i as n, n as a, bv as r, r as l, U as c, bw as p } from "../../../../chunks/lib.js";
+import { i as n, n as a, b7 as r, r as l, U as c, bw as p } from "../../../../chunks/lib.js";
 import { P as d, a as _ } from "../../../../chunks/proxy_currency.js";
 import { S as x } from "../../../../chunks/enums.js";
 /* empty css                        */ const [b, h] = n()(({ observableModel: e }) => {
@@ -24,8 +24,8 @@ import { S as x } from "../../../../chunks/enums.js";
   j = "App_9188ef79",
   m = "App_headerContainer_bd668828",
   u = "App_title_65c0c363",
-  v = "App_subtitle_39585678",
-  f = "App_separator_649b3a29",
+  f = "App_subtitle_39585678",
+  v = "App_separator_649b3a29",
   g = "App_description_c0f41308",
   y = "App_image_a56d3071",
   k = "App_info_cb654453",
@@ -41,10 +41,10 @@ import { S as x } from "../../../../chunks/enums.js";
           className: m,
           children: [
             i.jsx("div", { className: u, children: e }),
-            i.jsx("div", { className: o(v, A), children: i.jsx(r, { text: n }) }),
+            i.jsx("div", { className: o(f, A), children: i.jsx(r, { text: n }) }),
           ],
         }),
-        i.jsx("div", { className: f }),
+        i.jsx("div", { className: v }),
         i.jsxs("div", {
           className: o(g, A),
           children: [
