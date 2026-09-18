@@ -22,48 +22,49 @@ import {
   T as x,
   g as v,
   Q as j,
-  R as f,
-  V as y,
-  W as C,
-  P as N,
-  e as w,
-  S as P,
-  m as A,
-  X as I,
+  R as y,
+  V as f,
+  W as N,
+  X as C,
+  P as w,
+  e as P,
+  S as A,
+  m as I,
   Y as k,
   Z as Q,
   _ as E,
   $ as M,
   a0 as T,
-  z as B,
-  B as S,
-  x as V,
-  i as O,
-  a1 as D,
+  a1 as B,
+  z as S,
+  B as V,
+  x as O,
+  i as D,
   a2 as W,
   a3 as H,
   a4 as L,
-  I as G,
-  a5 as $,
+  a5 as G,
+  I as $,
   a6 as z,
   a7 as F,
   a8 as q,
   a9 as X,
   aa as K,
   ab as U,
-  y as Y,
-  ac as J,
+  ac as Y,
+  y as J,
   ad as Z,
   ae as ee,
-  U as se,
-  af as ae,
-  E as te,
-  G as re,
-  H as oe,
+  af as se,
+  U as ae,
+  ag as te,
+  E as re,
+  G as oe,
+  H as ne,
 } from "../../../chunks/lib.js";
-import { T as ne, W as ie } from "../../../chunks/progress_bar_themes.js";
-/* empty css                              */ import { f as le } from "../../../chunks/wt_reward_helper.js";
-const [de, _e] = c()(
+import { T as ie, W as le } from "../../../chunks/progress_bar_themes.js";
+/* empty css                              */ import { f as de } from "../../../chunks/wt_reward_helper.js";
+const [_e, ce] = c()(
   ({ observableModel: s }) => {
     const a = { ...s.primitives(["isDisableAll"]), root: s.object(), tanks: s.arrayClone("tanks") },
       t = e(() => p(a.tanks.get(), (e) => !e.isHunter)),
@@ -72,41 +73,41 @@ const [de, _e] = c()(
   },
   ({ externalModel: e }) => ({ onClick: e.createCallback((e) => ({ id: e }), "onClick") }),
 );
-var ce = ((e) => (
+var pe = ((e) => (
   (e.Hunter = "Hunter"),
   (e.CommonBoss = "CommonBoss"),
   (e.SpecialBoss = "specialBoss"),
   e
-))(ce || {});
-const pe = "TankCard_wrapper_420ab964",
-  me = "TankCard_wrapper__large_201c940f",
-  ge = "TankCard_wrapper__disabled_4ad19ae3",
-  ue = "TankCard_labelWrapper_64ac495a",
-  he = "TankCard_label_4d8dc3b0",
-  be = "TankCard_labelIcon_1e919e50",
-  xe = "TankCard_labelIcon__hunter_6cab5b6d",
-  ve = "TankCard_labelIcon__boss_697361dc",
-  je = "TankCard_image_818bc943",
+))(pe || {});
+const me = "TankCard_wrapper_420ab964",
+  ge = "TankCard_wrapper__large_201c940f",
+  ue = "TankCard_wrapper__disabled_4ad19ae3",
+  he = "TankCard_labelWrapper_64ac495a",
+  be = "TankCard_label_4d8dc3b0",
+  xe = "TankCard_labelIcon_1e919e50",
+  ve = "TankCard_labelIcon__hunter_6cab5b6d",
+  je = "TankCard_labelIcon__boss_697361dc",
+  ye = "TankCard_image_818bc943",
   fe = "TankCard_effect_681dfee",
-  ye = "TankCard_effect__special_ae2467b9",
+  Ne = "TankCard_effect__special_ae2467b9",
   Ce = "TankCard_wrapper__selected_d6dc4063",
-  Ne = "TankCard_gradient_70c376f2",
-  we = "TankCard_quantityWrapper_f8b1d97e",
-  Pe = "TankCard_quantity_76b47111",
-  Ae = "TankCard_quantityIcon_ad32a0ec",
-  Ie = "TankCard_messageWrapper_8492169a",
-  ke = "TankCard_message_be5df5ab",
-  Qe = "TankCard_message__ticket_b4e46747",
-  Ee = "TankCard_icon_700e3eaf",
-  Me = "TankCard_icon__inBattle_4afa21ed",
-  Te = "TankCard_icon__inPlatoon_d00f9d50",
-  Re = "TankCard_icon__unsuitable_2403c57f",
-  Be = "TankCard_shadow_65521859",
-  Se = "TankCard_shadow__inBattle_ae722d28",
-  Ve = "TankCard_shadow__inPlatoon_d6dc4063",
-  Oe = "TankCard_shadow__unsuitable_e0f00844",
-  De = "TankCard_border_d5f8a2f9",
-  We = s(
+  we = "TankCard_gradient_70c376f2",
+  Pe = "TankCard_quantityWrapper_f8b1d97e",
+  Ae = "TankCard_quantity_76b47111",
+  Ie = "TankCard_quantityIcon_ad32a0ec",
+  ke = "TankCard_messageWrapper_8492169a",
+  Qe = "TankCard_message_be5df5ab",
+  Ee = "TankCard_message__ticket_b4e46747",
+  Me = "TankCard_icon_700e3eaf",
+  Te = "TankCard_icon__inBattle_4afa21ed",
+  Re = "TankCard_icon__inPlatoon_d00f9d50",
+  Be = "TankCard_icon__unsuitable_2403c57f",
+  Se = "TankCard_shadow_65521859",
+  Ve = "TankCard_shadow__inBattle_ae722d28",
+  Oe = "TankCard_shadow__inPlatoon_d6dc4063",
+  De = "TankCard_shadow__unsuitable_e0f00844",
+  We = "TankCard_border_d5f8a2f9",
+  He = s(
     ({
       title: e,
       id: s,
@@ -120,10 +121,10 @@ const pe = "TankCard_wrapper_420ab964",
       icon: p,
       iconSmall: v,
     }) => {
-      const { model: j, controls: f } = _e(),
-        { breakpoint: y } = m(),
-        C = y.name == g.large,
-        N = j.isDisableAll.get(),
+      const { model: j, controls: y } = ce(),
+        { breakpoint: f } = m(),
+        N = f.name == g.large,
+        C = j.isDisableAll.get(),
         w = u.resolve("strings"),
         P = a.useMemo(
           () =>
@@ -136,15 +137,15 @@ const pe = "TankCard_wrapper_420ab964",
           [d, _, c],
         ),
         A = ((e, s) => (e ? "Hunter" : s ? "specialBoss" : "CommonBoss"))(i, l),
-        I = !P && A === ce.CommonBoss && 0 === o,
-        k = t(pe, C && me, n && Ce, N && ge),
-        Q = t(be, i ? xe : ve),
-        E = C ? p : v,
+        I = !P && A === pe.CommonBoss && 0 === o,
+        k = t(me, N && ge, n && Ce, C && ue),
+        Q = t(xe, i ? ve : je),
+        E = N ? p : v,
         M = a.useMemo(() => ({ backgroundImage: `url(${E})` }), [E]),
-        T = t(ke, I && Qe),
-        B = t(fe, A === ce.SpecialBoss && ye),
-        S = t(Be, "inBattle" === P && Se, ("inPlatoon" === P || N) && Ve, "unsuitable" === P && Oe),
-        V = t(Ee, "inBattle" === P && Me, "inPlatoon" === P && Te, "unsuitable" === P && Re),
+        T = t(Qe, I && Ee),
+        B = t(fe, A === pe.SpecialBoss && Ne),
+        S = t(Se, "inBattle" === P && Ve, ("inPlatoon" === P || C) && Oe, "unsuitable" === P && De),
+        V = t(Me, "inBattle" === P && Te, "inPlatoon" === P && Re, "unsuitable" === P && Be),
         O = a.useCallback(() => {
           h.sound(R.sounds.carousel());
         }, []),
@@ -154,9 +155,9 @@ const pe = "TankCard_wrapper_420ab964",
               (e
                 ? h.sound("ev_white_tiger_hangar_select_tank_hunters")
                 : h.sound("ev_white_tiger_hangar_select_tank_krieger")),
-              f.onClick(s));
+              y.onClick(s));
           },
-          [s, f, n],
+          [s, y, n],
         ),
         W = a.useMemo(() => ({ id: s }), [s]),
         H = b(w.readOrEmpty("white_tiger_lobby.award.value"), { count: o }),
@@ -170,21 +171,21 @@ const pe = "TankCard_wrapper_420ab964",
             targetId: R.aliases.white_tiger.shared.Carousel("resId"),
             contentId: R.views.white_tiger.mono.lobby.tooltips.carousel_vehicle_tooltip("resId"),
             args: W,
-            children: r.jsx("div", { className: De }),
+            children: r.jsx("div", { className: We }),
           }),
-          r.jsx("div", { className: Ne }),
+          r.jsx("div", { className: we }),
           r.jsx("div", { className: B }),
           r.jsx("div", { className: S }),
-          r.jsx("div", { className: je, style: M }),
+          r.jsx("div", { className: ye, style: M }),
           r.jsxs("div", {
-            className: ue,
+            className: he,
             children: [
               r.jsx("div", { className: Q }),
-              r.jsx("div", { className: he, children: e }),
+              r.jsx("div", { className: be, children: e }),
             ],
           }),
           r.jsxs("div", {
-            className: Ie,
+            className: ke,
             children: [
               r.jsx("div", { className: V }),
               "inBattle" === P &&
@@ -209,15 +210,15 @@ const pe = "TankCard_wrapper_420ab964",
                 }),
             ],
           }),
-          A === ce.CommonBoss &&
+          A === pe.CommonBoss &&
             r.jsx(x, {
               targetId: R.aliases.white_tiger.shared.Carousel("resId"),
               contentId: R.views.white_tiger.mono.lobby.tooltips.ticket_tooltip("resId"),
               children: r.jsxs("div", {
-                className: we,
+                className: Pe,
                 children: [
-                  r.jsx("div", { className: Ae }),
-                  r.jsx("div", { className: Pe, children: o > 0 ? (o > 1e3 ? L : H) : "0" }),
+                  r.jsx("div", { className: Ie }),
+                  r.jsx("div", { className: Ae, children: o > 0 ? (o > 1e3 ? L : H) : "0" }),
                 ],
               }),
             }),
@@ -225,83 +226,83 @@ const pe = "TankCard_wrapper_420ab964",
       });
     },
   ),
-  He = a.memo(We),
-  Le = "CarouselApp_64028480",
-  Ge = "CarouselApp_content_8d03980e",
-  $e = "CarouselApp_content__small_4d56afb2",
-  ze = "CarouselApp_content__medium_4e76f9ae",
-  Fe = "CarouselApp_content__large_4d56afb2",
-  qe = "CarouselApp_content__extraLarge_250ba53",
-  Xe = "CarouselApp_wrapper_ee4ae30",
-  Ke = "CarouselApp_carouselBodyWrapper_15294632",
-  Ue = "CarouselApp_carouselBody_1b99e374",
-  Ye = "CarouselApp_carouselBody__moveOnce_5ec12f50",
-  Je = "CarouselApp_carouselBody__moveTwice_1902cfef",
-  Ze = "CarouselApp_arrow_1c6fad97",
-  es = "CarouselApp_arrow__disabled_a5c43be8",
-  ss = "CarouselApp_arrow__left_ac9a773c",
-  as = "CarouselApp_arrow__right_c7929c83",
-  ts = "CarouselApp_arrowBorder_c5535644",
-  rs = "CarouselApp_divider_bac6f7ff",
-  os = "CarouselApp_dividerContent_3259328",
-  ns = "CarouselApp_cardWrapper_23e3a170",
-  is = "CarouselApp_cardWrapper__large_dab27ca",
-  ls = s(({ className: e }) => {
-    const { model: s } = _e(),
+  Le = a.memo(He),
+  Ge = "CarouselApp_64028480",
+  $e = "CarouselApp_content_8d03980e",
+  ze = "CarouselApp_content__small_4d56afb2",
+  Fe = "CarouselApp_content__medium_4e76f9ae",
+  qe = "CarouselApp_content__large_4d56afb2",
+  Xe = "CarouselApp_content__extraLarge_250ba53",
+  Ke = "CarouselApp_wrapper_ee4ae30",
+  Ue = "CarouselApp_carouselBodyWrapper_15294632",
+  Ye = "CarouselApp_carouselBody_1b99e374",
+  Je = "CarouselApp_carouselBody__moveOnce_5ec12f50",
+  Ze = "CarouselApp_carouselBody__moveTwice_1902cfef",
+  es = "CarouselApp_arrow_1c6fad97",
+  ss = "CarouselApp_arrow__disabled_a5c43be8",
+  as = "CarouselApp_arrow__left_ac9a773c",
+  ts = "CarouselApp_arrow__right_c7929c83",
+  rs = "CarouselApp_arrowBorder_c5535644",
+  os = "CarouselApp_divider_bac6f7ff",
+  ns = "CarouselApp_dividerContent_3259328",
+  is = "CarouselApp_cardWrapper_23e3a170",
+  ls = "CarouselApp_cardWrapper__large_dab27ca",
+  ds = s(({ className: e }) => {
+    const { model: s } = ce(),
       { breakpoint: o } = m(),
       n = o.name == g.extraSmall,
       i = o.name == g.small,
       l = o.name == g.medium,
       d = o.name == g.large,
       _ = o.name == g.extraLarge,
-      c = t(Ge, i && $e, l && ze, d && Fe, _ && qe),
+      c = t($e, i && ze, l && Fe, d && qe, _ && Xe),
       [p, u] = a.useState(!1),
       [b, x] = a.useState(!1),
       [v, j] = a.useState(!1),
-      f = s.computes.getBossList(),
-      y = s.computes.getHunterList(),
-      C = a.useCallback(() => {
+      y = s.computes.getBossList(),
+      f = s.computes.getHunterList(),
+      N = a.useCallback(() => {
         (h.sound(R.sounds.tank_selection()), u((e) => !e));
       }, []);
     (a.useEffect(() => {
-      p ? (2 === f.length && n ? j((e) => !e) : x((e) => !e)) : (x(!1), j(!1));
-    }, [p, f.length, n]),
+      p ? (2 === y.length && n ? j((e) => !e) : x((e) => !e)) : (x(!1), j(!1));
+    }, [p, y.length, n]),
       a.useEffect(() => {
         u(!1);
       }, [o]));
-    const N = a.useCallback(() => {
+    const C = a.useCallback(() => {
         h.sound(R.sounds.carousel());
       }, []),
-      w = t(Ze, ss, !p && es),
-      P = t(Ze, as, p && es),
-      A = t(Ue, b && Ye, v && Je),
-      I = t(ns, d && is),
-      k = n || (i && 2 === f.length) || (l && 2 === f.length && f.length >= 1);
+      w = t(es, as, !p && ss),
+      P = t(es, ts, p && ss),
+      A = t(Ye, b && Je, v && Ze),
+      I = t(is, d && ls),
+      k = n || (i && 2 === y.length) || (l && 2 === y.length && y.length >= 1);
     return r.jsx("div", {
-      className: Le,
+      className: Ge,
       children: r.jsx("div", {
         className: c,
         children: r.jsxs("div", {
-          className: Xe,
+          className: Ke,
           children: [
             k &&
               r.jsx("div", {
                 className: w,
-                onClick: C,
-                onMouseEnter: N,
-                children: r.jsx("div", { className: ts }),
+                onClick: N,
+                onMouseEnter: C,
+                children: r.jsx("div", { className: rs }),
               }),
             r.jsx("div", {
-              className: Ke,
+              className: Ue,
               children: r.jsxs("div", {
                 className: A,
                 children: [
-                  f.map((e, s) =>
-                    r.jsx("div", { className: I, children: r.jsx(He, { ...e }) }, `tank_${s}`),
-                  ),
-                  r.jsx("div", { className: rs, children: r.jsx("div", { className: os }) }),
                   y.map((e, s) =>
-                    r.jsx("div", { className: I, children: r.jsx(He, { ...e }) }, `tank_${s}`),
+                    r.jsx("div", { className: I, children: r.jsx(Le, { ...e }) }, `tank_${s}`),
+                  ),
+                  r.jsx("div", { className: os, children: r.jsx("div", { className: ns }) }),
+                  f.map((e, s) =>
+                    r.jsx("div", { className: I, children: r.jsx(Le, { ...e }) }, `tank_${s}`),
                   ),
                 ],
               }),
@@ -309,20 +310,20 @@ const pe = "TankCard_wrapper_420ab964",
             k &&
               r.jsx("div", {
                 className: P,
-                onClick: C,
-                onMouseEnter: N,
-                children: r.jsx("div", { className: ts }),
+                onClick: N,
+                onMouseEnter: C,
+                children: r.jsx("div", { className: rs }),
               }),
           ],
         }),
       }),
     });
   }),
-  ds = o.memo(function (e) {
+  _s = o.memo(function (e) {
     const s = a.useMemo(() => ({ rootId: R.aliases.white_tiger.shared.Carousel("resId") }), []);
-    return r.jsx(de, { options: s, children: r.jsx(ls, { ...e }) });
+    return r.jsx(_e, { options: s, children: r.jsx(ds, { ...e }) });
   }),
-  [_s, cs] = c()(
+  [cs, ps] = c()(
     ({ observableModel: e }) => ({
       ...{ root: e.object(), ...e.primitives(["title", "icon", "quantity", "tankType"]) },
     }),
@@ -331,10 +332,10 @@ const pe = "TankCard_wrapper_420ab964",
       onBuyTicket: e.createCallbackNoArgs("onBuyTicket"),
     }),
   ),
-  ps = "AmmunitionIcon_ec5c1311",
-  ms = "AmmunitionIcon_icon_e4b59008",
-  gs = "AmmunitionIcon_infinity_f8fa7376",
-  us = a.memo(({ icon: e, id: s, tooltipId: t, isInfinite: o }) => {
+  ms = "AmmunitionIcon_ec5c1311",
+  gs = "AmmunitionIcon_icon_e4b59008",
+  us = "AmmunitionIcon_infinity_f8fa7376",
+  hs = a.memo(({ icon: e, id: s, tooltipId: t, isInfinite: o }) => {
     const n = { backgroundImage: `url(${e})` },
       i = a.useMemo(() => {
         const e = { id: s, tooltipId: t };
@@ -347,28 +348,28 @@ const pe = "TankCard_wrapper_420ab964",
           : { args: e, targetId: R.aliases.white_tiger.shared.ConsumablesPanel("resId") };
       }, [s, t]);
     return r.jsxs("div", {
-      className: ps,
+      className: ms,
       children: [
-        r.jsx(v, { tooltipArgs: i, children: r.jsx("div", { className: ms, style: n }) }),
-        o && r.jsx("div", { className: gs }),
+        r.jsx(v, { tooltipArgs: i, children: r.jsx("div", { className: gs, style: n }) }),
+        o && r.jsx("div", { className: us }),
       ],
     });
   }),
-  hs = "AmmunitionPanel_c19fcc76",
-  bs = "AmmunitionPanel_group_f03acf1e",
-  xs = s(() => {
-    const { model: e } = cs(),
+  bs = "AmmunitionPanel_c19fcc76",
+  xs = "AmmunitionPanel_group_f03acf1e",
+  vs = s(() => {
+    const { model: e } = ps(),
       s = e.root.get().equipments;
     return r.jsx("div", {
-      className: hs,
+      className: bs,
       children: s.items.map(
         (e, s) =>
           r.jsx(
             "div",
             {
-              className: bs,
+              className: xs,
               children: e.value.group.items.map((e) =>
-                a.createElement(us, { ...e.value, key: e.value.id }),
+                a.createElement(hs, { ...e.value, key: e.value.id }),
               ),
             },
             s,
@@ -377,73 +378,73 @@ const pe = "TankCard_wrapper_420ab964",
       ),
     });
   }),
-  vs = "VehicleName_titleIcon_dbdab937",
-  js = "VehicleName_title_79b052b",
+  js = "VehicleName_titleIcon_dbdab937",
+  ys = "VehicleName_title_79b052b",
   fs = s(() => {
-    const { model: e } = cs(),
+    const { model: e } = ps(),
       s = e.title.get(),
       a = { backgroundImage: `url(${e.icon.get()})` };
     return r.jsxs(r.Fragment, {
       children: [
-        r.jsx("div", { className: vs, style: a }),
-        r.jsx("div", { className: js, children: s }),
+        r.jsx("div", { className: js, style: a }),
+        r.jsx("div", { className: ys, children: s }),
       ],
     });
   }),
-  ys = "ChangeVehiclePanel_4b69e64c",
+  Ns = "ChangeVehiclePanel_4b69e64c",
   Cs = "ChangeVehiclePanel_base__large_674a8925",
-  Ns = "ChangeVehiclePanel_titleWrapper_6b8ebb05",
-  ws = "ChangeVehiclePanel_descriptionWrapper_1d6cfc04",
-  Ps = "ChangeVehiclePanel_description_1b9f6d59",
-  As = "ChangeVehiclePanel_descriptionIcon_e853db5d",
-  Is = "ChangeVehiclePanel_buttonHolder_c88f2606",
-  ks = "ChangeVehiclePanel_buttonText_48339e04",
-  Qs = "ChangeVehiclePanel_button_f8b7370c",
-  Es = u.resolve("strings"),
-  Ms = s(() => {
-    const { controls: e } = cs(),
+  ws = "ChangeVehiclePanel_titleWrapper_6b8ebb05",
+  Ps = "ChangeVehiclePanel_descriptionWrapper_1d6cfc04",
+  As = "ChangeVehiclePanel_description_1b9f6d59",
+  Is = "ChangeVehiclePanel_descriptionIcon_e853db5d",
+  ks = "ChangeVehiclePanel_buttonHolder_c88f2606",
+  Qs = "ChangeVehiclePanel_buttonText_48339e04",
+  Es = "ChangeVehiclePanel_button_f8b7370c",
+  Ms = u.resolve("strings"),
+  Ts = s(() => {
+    const { controls: e } = ps(),
       { breakpoint: s } = m(),
       a = s.name === g.extraLarge || s.name === g.large,
-      t = n(ys, a && Cs);
+      t = n(Ns, a && Cs);
     return r.jsxs("div", {
       className: t,
       children: [
-        r.jsx("div", { className: Ns, children: r.jsx(fs, {}) }),
+        r.jsx("div", { className: ws, children: r.jsx(fs, {}) }),
         r.jsxs("div", {
-          className: ws,
+          className: Ps,
           children: [
             r.jsx(x, {
               targetId: R.aliases.white_tiger.shared.ConsumablesPanel("resId"),
               contentId: R.views.white_tiger.mono.lobby.tooltips.ticket_tooltip("resId"),
-              children: r.jsx("div", { className: As }),
+              children: r.jsx("div", { className: Is }),
             }),
             r.jsx("div", {
-              className: Ps,
-              children: Es.readOrEmpty("white_tiger_lobby.TicketMessageView.boss.description"),
+              className: As,
+              children: Ms.readOrEmpty("white_tiger_lobby.TicketMessageView.boss.description"),
             }),
           ],
         }),
         r.jsxs("div", {
-          className: Is,
+          className: ks,
           children: [
             r.jsx(j, {
               type: "primary",
               size: "small",
               onClick: e.onOpenTasks,
-              mixClass: Qs,
+              mixClass: Es,
               children: r.jsx("span", {
-                className: ks,
-                children: Es.readOrEmpty("white_tiger_lobby.TicketMessageView.taskText"),
+                className: Qs,
+                children: Ms.readOrEmpty("white_tiger_lobby.TicketMessageView.taskText"),
               }),
             }),
             r.jsx(j, {
               type: "main",
               size: "small",
               onClick: e.onBuyTicket,
-              mixClass: Qs,
+              mixClass: Es,
               children: r.jsx("span", {
-                className: ks,
-                children: Es.readOrEmpty("white_tiger_lobby.TicketMessageView.buyText"),
+                className: Qs,
+                children: Ms.readOrEmpty("white_tiger_lobby.TicketMessageView.buyText"),
               }),
             }),
           ],
@@ -451,42 +452,42 @@ const pe = "TankCard_wrapper_420ab964",
       ],
     });
   }),
-  Ts = a.memo(Ms),
-  Rs = "ConsumablesPanelApp_6f3866a6",
-  Bs = "ConsumablesPanelApp_titleWrapper_8e0a9c7",
-  Ss = "ConsumablesPanelApp_vehicleNameWrapper_68cc8932",
-  Vs = s(() => {
-    const { model: e } = cs(),
+  Rs = a.memo(Ts),
+  Bs = "ConsumablesPanelApp_6f3866a6",
+  Ss = "ConsumablesPanelApp_titleWrapper_8e0a9c7",
+  Vs = "ConsumablesPanelApp_vehicleNameWrapper_68cc8932",
+  Os = s(() => {
+    const { model: e } = ps(),
       s = e.quantity.get(),
       a = e.tankType.get();
-    return -1 === s && a === ne.Boss
+    return -1 === s && a === ie.Boss
       ? null
       : r.jsx("div", {
-          className: Rs,
+          className: Bs,
           children:
-            0 === s && a === ne.Boss
-              ? r.jsx(Ts, {})
+            0 === s && a === ie.Boss
+              ? r.jsx(Rs, {})
               : r.jsxs("div", {
-                  className: Bs,
+                  className: Ss,
                   children: [
-                    r.jsx("div", { className: Ss, children: r.jsx(fs, {}) }),
-                    r.jsx(xs, {}),
+                    r.jsx("div", { className: Vs, children: r.jsx(fs, {}) }),
+                    r.jsx(vs, {}),
                   ],
                 }),
         });
   }),
-  Os = o.memo(function () {
+  Ds = o.memo(function () {
     const e = a.useMemo(
       () => ({ rootId: R.aliases.white_tiger.shared.ConsumablesPanel("resId") }),
       [],
     );
-    return r.jsx(_s, { options: e, children: r.jsx(Vs, {}) });
+    return r.jsx(cs, { options: e, children: r.jsx(Os, {}) });
   }),
-  [Ds, Ws] = c()(
+  [Ws, Hs] = c()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({}),
   ),
-  Hs = {
+  Ls = {
     root: "CrewInfoApp_root_84a72510",
     "header-h80": "CrewInfoApp_header-h80_ed14d214",
     "header-h56": "CrewInfoApp_header-h56_8651e1cc",
@@ -514,158 +515,162 @@ const pe = "TankCard_wrapper_420ab964",
     member__hunter_4: "CrewInfoApp_member__hunter_4_4a8772e1",
     tooltipArea: "CrewInfoApp_tooltipArea_f4400383",
   },
-  Ls = s(() => {
-    const { model: e } = Ws(),
+  Gs = s(() => {
+    const { model: e } = Hs(),
       { name: s, tankmanID: a } = e.root.get(),
       o = u.resolve("strings"),
-      n = t(Hs.member, Hs[`member__${a}`]);
+      n = t(Ls.member, Ls[`member__${a}`]);
     return r.jsxs("div", {
-      className: Hs.base,
+      className: Ls.base,
       children: [
         r.jsx("div", { className: n }),
         r.jsx("div", {
-          className: Hs.type,
+          className: Ls.type,
           children: o.readOrEmpty(`white_tiger_lobby.crewPanel.role.${a}`),
         }),
-        r.jsx("div", { className: Hs.name, children: s }),
+        r.jsx("div", { className: Ls.name, children: s }),
         r.jsx("div", {
-          className: Hs.description,
+          className: Ls.description,
           children: o.readOrEmpty(`white_tiger_lobby.crewPanel.slogan.${a}`),
         }),
         r.jsx(x, {
           targetId: R.aliases.white_tiger.shared.Crewman("resId"),
           contentId: R.views.white_tiger.mono.lobby.tooltips.crew_info_tooltip("resId"),
-          children: r.jsx("div", { className: Hs.tooltipArea }),
+          children: r.jsx("div", { className: Ls.tooltipArea }),
         }),
       ],
     });
   }),
-  Gs = o.memo(function () {
+  $s = o.memo(function () {
     const e = a.useMemo(() => ({ rootId: R.aliases.white_tiger.shared.Crewman("resId") }), []);
-    return r.jsx(Ds, { options: e, children: r.jsx(Ls, {}) });
+    return r.jsx(Ws, { options: e, children: r.jsx(Gs, {}) });
   }),
-  [$s, zs] = c()(
+  [zs, Fs] = c()(
     ({ observableModel: e }) => ({
       ...{ ...e.primitives(["isEnabled", "boxesCount", "eventName"]) },
     }),
     ({ externalModel: e }) => ({ onEntryClick: e.createCallback(() => ({}), "onEntryClick") }),
   ),
-  Fs = "AlertIcon_icon_52f4712b",
-  qs = ({ className: e }) => r.jsx("div", { className: n(Fs, e) }),
-  Xs = {
-    base: "LootboxEntryPointApp_87fec1bb",
-    base__hovered: "LootboxEntryPointApp_base__hovered_1d5af12c",
-    container: "LootboxEntryPointApp_container_fd96ad5b",
-    base__disabled: "LootboxEntryPointApp_base__disabled_3510bfe1",
-    content: "LootboxEntryPointApp_content_2f9a0382",
-    glow: "LootboxEntryPointApp_glow_6eff4c52",
-    glow__hovered: "LootboxEntryPointApp_glow__hovered_b60ea876",
-    animation: "LootboxEntryPointApp_animation_fd413183",
-    bottomContainer: "LootboxEntryPointApp_bottomContainer_df191767",
-    bottomContainer__hasBoxes: "LootboxEntryPointApp_bottomContainer__hasBoxes_f0167f9c",
-    text: "LootboxEntryPointApp_text_78b273e2",
-    text__hasBoxes: "LootboxEntryPointApp_text__hasBoxes_4c048224",
-    alert: "LootboxEntryPointApp_alert_940a41d4",
-    alert__hasBoxes: "LootboxEntryPointApp_alert__hasBoxes_8d2ade97",
-  },
-  Ks = R.images.white_tiger.gui.maps.icons.hangar.widgets.lootbox_entry_point,
-  Us = s(({ className: e }) => {
-    const { model: s, controls: o } = zs(),
-      n = s.isEnabled.get(),
-      i = s.boxesCount.get(),
-      l = s.eventName.get(),
-      d = i > 0,
-      [_, c] = a.useState(!1),
-      p = l in Ks ? Ks[l] : void 0;
-    if (!p)
-      return (console.warn(l, "eventName is not valid. Valid options:", Object.keys(Ks)), null);
-    const m = d ? p.lootboxGold() : p.lootboxEmpty(),
-      g =
-        i > 999
+  qs = "AlertIcon_icon_52f4712b",
+  Xs = ({ className: e }) => r.jsx("div", { className: n(qs, e) }),
+  Ks = "LootboxEntryPointApp_eb3dee07",
+  Us = "LootboxEntryPointApp_base__hovered_1d5af12c",
+  Ys = "LootboxEntryPointApp_container_e20e75d5",
+  Js = "LootboxEntryPointApp_base__disabled_3510bfe1",
+  Zs = "LootboxEntryPointApp_content_62df5862",
+  ea = "LootboxEntryPointApp_glow_8f9ce0a6",
+  sa = "LootboxEntryPointApp_glow__hovered_104be0a0",
+  aa = "LootboxEntryPointApp_glowVideo_230d9545",
+  ta = "LootboxEntryPointApp_animation_a07d3e85",
+  ra = "LootboxEntryPointApp_contentMask_5a79107e",
+  oa = "LootboxEntryPointApp_bottomContainer_de2d7a24",
+  na = "LootboxEntryPointApp_bottomContainer__hasBoxes_d9ae9d0d",
+  ia = "LootboxEntryPointApp_text_b7693058",
+  la = "LootboxEntryPointApp_text__hasBoxes_363f13bc",
+  da = "LootboxEntryPointApp_alert_940a41d4",
+  _a = "LootboxEntryPointApp_alert__hasBoxes_8d2ade97",
+  ca = R.images.white_tiger.gui.maps.icons.hangar.widgets.lootbox_entry_point,
+  pa = s(({ className: e }) => {
+    const s = u.resolve("videos").readOrEmpty("lootbox.customizable.wt.entryPoint.glow"),
+      { model: o, controls: n } = Fs(),
+      i = o.isEnabled.get(),
+      l = o.boxesCount.get(),
+      d = o.eventName.get(),
+      _ = l > 0,
+      [c, p] = a.useState(!1),
+      m = d in ca ? ca[d] : void 0;
+    if (!m)
+      return (console.warn(d, "eventName is not valid. Valid options:", Object.keys(ca)), null);
+    const g = _ ? m.lootboxGold() : m.lootboxEmpty(),
+      b =
+        l > 999
           ? R.strings.white_tiger_lobby.lootboxEntry.maxBoxesCount()
-          : f(y(R.strings.white_tiger_lobby.lootboxEntry.count()), { count: i });
-    return n
+          : y(f(R.strings.white_tiger_lobby.lootboxEntry.count()), { count: l });
+    return i
       ? r.jsx(x, {
           targetId: R.aliases.white_tiger.shared.LootboxEntryPoint("resId"),
           contentId: R.views.mono.lootbox.tooltips.entry_point("resId"),
           children: r.jsxs("div", {
             "data-test-id": "wt-lootbox-entry",
-            className: t(Xs.base, e, _ && Xs.base__hovered, !n && Xs.base__disabled),
+            className: t(Ks, e, c && Us, !i && Js),
             onMouseLeave: () => {
-              n && c(!1);
+              i && p(!1);
             },
             onMouseEnter: () => {
-              n && (h.sound("gui_lb_icon_hover"), c(!0));
+              i && (h.sound("gui_lb_icon_hover"), p(!0));
             },
             onClick: () => {
-              n && (h.click(), o.onEntryClick());
+              i && (h.click(), n.onEntryClick());
             },
             children: [
               r.jsxs("div", {
-                className: Xs.container,
+                className: Ys,
                 children: [
-                  r.jsx("div", { className: t(Xs.glow, _ && d && Xs.glow__hovered) }),
                   r.jsx("div", {
-                    className: Xs.animation,
+                    className: t(ea, _ && sa),
+                    children: s && r.jsx(N, { autoplay: !0, loop: !0, className: aa, src: s }),
+                  }),
+                  r.jsx("div", {
+                    className: ta,
                     children: r.jsx("div", {
-                      className: Xs.content,
-                      style: { backgroundImage: `url('${m}')` },
+                      className: Zs,
+                      style: { backgroundImage: `url('${g}')` },
                     }),
                   }),
                   r.jsx("div", {
-                    className: Xs.contentMask,
+                    className: ra,
                     children: r.jsx("div", {
-                      className: t(Xs.bottomContainer, d && Xs.bottomContainer__hasBoxes),
+                      className: t(oa, _ && na),
                       children: r.jsx("div", {
-                        className: t(Xs.text, d && Xs.text__hasBoxes),
-                        children: d ? g : R.strings.white_tiger_lobby.lootboxEntry.boxes(),
+                        className: t(ia, _ && la),
+                        children: _ ? b : R.strings.white_tiger_lobby.lootboxEntry.boxes(),
                       }),
                     }),
                   }),
                 ],
               }),
-              !n && r.jsx(qs, { className: t(Xs.alert, d && Xs.alert__hasBoxes) }),
+              !i && r.jsx(Xs, { className: t(da, _ && _a) }),
             ],
           }),
         })
       : null;
   }),
-  Ys = o.memo(function (e) {
+  ma = o.memo(function (e) {
     const s = a.useMemo(
       () => ({ rootId: R.aliases.white_tiger.shared.LootboxEntryPoint("resId") }),
       [],
     );
-    return r.jsx($s, { options: s, children: r.jsx(Us, { ...e }) });
+    return r.jsx(zs, { options: s, children: r.jsx(pa, { ...e }) });
   }),
-  Js = { root: "/whiteTigerHangarMode/{root}", progression: "/whiteTigerHangarMode/progression" },
-  [Zs, ea] = c()(
+  ga = { root: "/whiteTigerHangarMode/{root}", progression: "/whiteTigerHangarMode/progression" },
+  [ua, ha] = c()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ onClick: e.createCallbackNoArgs("onClick") }),
   ),
-  sa = "ProgressionWidgetApp_604d3b1",
-  aa = "ProgressionWidgetApp_wrapper_3b8cf271",
-  ta = "ProgressionWidgetApp_image_23947342",
-  ra = "ProgressionWidgetApp_image__isHidden_e8080a36",
-  oa = "ProgressionWidgetApp_image__allCollected_41bf9341",
-  na = "ProgressionWidgetApp_checkmarkWrapper_c7ae8fc0",
-  ia = "ProgressionWidgetApp_checkmark_698172cc",
-  la = "ProgressionWidgetApp_imageHover_8fadad9c",
-  da = "ProgressionWidgetApp_imageHover__isVisible_779c0907",
-  _a = "ProgressionWidgetApp_imageHover__allCollected_32131829",
-  ca = "ProgressionWidgetApp_newItemAnimation_bbed1ad6",
-  pa = "ProgressionWidgetApp_newItemAnimation__isVisible_779c0907",
-  ma = "ProgressionWidgetApp_hoverArea_259b7ed1",
-  ga = "ProgressionWidgetApp_hoverAreaWrapper_42967fed",
-  ua = "ProgressionWidgetApp_hoverAreaWrapper__allCollected_894d0d6f",
-  ha = "ProgressionWidgetApp_progressionValue_7d3c74aa",
-  ba = "ProgressionWidgetApp_progressionCountWrapper_7d798a50",
-  xa = "ProgressionWidgetApp_progressbarWrapper_93efa0c5",
-  va = s(() => {
+  ba = "ProgressionWidgetApp_604d3b1",
+  xa = "ProgressionWidgetApp_wrapper_3b8cf271",
+  va = "ProgressionWidgetApp_image_23947342",
+  ja = "ProgressionWidgetApp_image__isHidden_e8080a36",
+  ya = "ProgressionWidgetApp_image__allCollected_41bf9341",
+  fa = "ProgressionWidgetApp_checkmarkWrapper_c7ae8fc0",
+  Na = "ProgressionWidgetApp_checkmark_698172cc",
+  Ca = "ProgressionWidgetApp_imageHover_8fadad9c",
+  wa = "ProgressionWidgetApp_imageHover__isVisible_779c0907",
+  Pa = "ProgressionWidgetApp_imageHover__allCollected_32131829",
+  Aa = "ProgressionWidgetApp_newItemAnimation_bbed1ad6",
+  Ia = "ProgressionWidgetApp_newItemAnimation__isVisible_779c0907",
+  ka = "ProgressionWidgetApp_hoverArea_259b7ed1",
+  Qa = "ProgressionWidgetApp_hoverAreaWrapper_42967fed",
+  Ea = "ProgressionWidgetApp_hoverAreaWrapper__allCollected_894d0d6f",
+  Ma = "ProgressionWidgetApp_progressionValue_7d3c74aa",
+  Ta = "ProgressionWidgetApp_progressionCountWrapper_7d798a50",
+  Ra = "ProgressionWidgetApp_progressbarWrapper_93efa0c5",
+  Ba = s(() => {
     const e = C(),
-      { model: s } = ea(),
+      { model: s } = ha(),
       { isNewItem: t, allCollected: o, currentProgression: i, totalProgression: l } = s.root.get(),
       [d, _] = a.useState(!1),
-      c = n(ta, d && ra, o && oa);
+      c = n(va, d && ja, o && ya);
     a.useEffect(() => {
       h.sound("ev_white_tiger_hangar_collection_appear");
     }, []);
@@ -676,14 +681,14 @@ const pe = "TankCard_wrapper_420ab964",
         (h.sound("ev_white_tiger_hangar_collection_rollout"), _(!1));
       }, []),
       g = a.useRef(null),
-      u = n(la, o && _a, d && da),
-      b = n(ca, (t || d) && pa);
+      u = n(Ca, o && Pa, d && wa),
+      b = n(Aa, (t || d) && Ia);
     return r.jsxs("div", {
       "data-test-id": "wt-progression-entry",
-      className: sa,
+      className: ba,
       children: [
         r.jsxs("div", {
-          className: aa,
+          className: xa,
           children: [
             r.jsx("div", { className: c }),
             r.jsx("div", { className: u }),
@@ -691,10 +696,10 @@ const pe = "TankCard_wrapper_420ab964",
           ],
         }),
         o
-          ? r.jsx("div", { className: na, children: r.jsx("div", { className: ia }) })
-          : r.jsx("div", { className: ha, children: i + 1 }),
+          ? r.jsx("div", { className: fa, children: r.jsx("div", { className: Na }) })
+          : r.jsx("div", { className: Ma, children: i + 1 }),
         r.jsxs("div", {
-          className: n(ga, o && ua),
+          className: n(Qa, o && Ea),
           ref: g,
           children: [
             r.jsx(x, {
@@ -702,21 +707,21 @@ const pe = "TankCard_wrapper_420ab964",
               contentId:
                 R.views.white_tiger.mono.lobby.tooltips.progression_widget_tooltip("resId"),
               children: r.jsx("div", {
-                className: ma,
+                className: ka,
                 onMouseEnter: p,
                 onMouseLeave: m,
                 onClick: function () {
-                  (h.sound("ev_white_tiger_hangar_collection_click"), e.push(Js.progression));
+                  (h.sound("ev_white_tiger_hangar_collection_click"), e.push(ga.progression));
                 },
               }),
             }),
             r.jsx("div", {
-              className: ba,
+              className: Ta,
               children:
                 !o &&
                 r.jsx("div", {
-                  className: xa,
-                  children: r.jsx(N, { size: P.Default, value: i, maxValue: l, theme: w }),
+                  className: Ra,
+                  children: r.jsx(w, { size: A.Default, value: i, maxValue: l, theme: P }),
                 }),
             }),
           ],
@@ -724,22 +729,22 @@ const pe = "TankCard_wrapper_420ab964",
       ],
     });
   }),
-  ja = () => {
+  Sa = () => {
     const e = a.useMemo(() => ({ rootId: R.aliases.white_tiger.shared.Progression("resId") }), []);
-    return r.jsx(Zs, { options: e, children: r.jsx(va, {}) });
+    return r.jsx(ua, { options: e, children: r.jsx(Ba, {}) });
   },
-  [fa, ya] = c()(
+  [Va, Oa] = c()(
     ({ observableModel: e }) => ({
       root: e.object(),
-      pros: e.transform((e) => A(e, (e) => ({ ...e })), "pros"),
-      cons: e.transform((e) => A(e, (e) => ({ ...e })), "cons"),
+      pros: e.transform((e) => I(e, (e) => ({ ...e })), "pros"),
+      cons: e.transform((e) => I(e, (e) => ({ ...e })), "cons"),
     }),
     ({ externalModel: e }) => ({}),
   ),
-  Ca = "Advantage_text_6554de34",
-  Na = "Advantage_item_1b5a59f5",
-  wa = "Advantage_icon_cdead8ed",
-  Pa = a.memo(({ parameter: e, icon: s }) => {
+  Da = "Advantage_text_6554de34",
+  Wa = "Advantage_item_1b5a59f5",
+  Ha = "Advantage_icon_cdead8ed",
+  La = a.memo(({ parameter: e, icon: s }) => {
     const a = { backgroundImage: `url('${s}')` },
       t = u.resolve("strings").readOrEmpty(`white_tiger_lobby.ttx.${e}`),
       o = { parameter: e };
@@ -748,69 +753,69 @@ const pe = "TankCard_wrapper_420ab964",
       contentId: R.views.white_tiger.mono.lobby.tooltips.tank_info_tooltip("resId"),
       args: o,
       children: r.jsxs("div", {
-        className: Na,
+        className: Wa,
         children: [
-          r.jsx("span", { className: wa, style: a }),
-          r.jsx("span", { className: Ca, children: t }),
+          r.jsx("span", { className: Ha, style: a }),
+          r.jsx("span", { className: Da, children: t }),
         ],
       }),
     });
   }),
-  Aa = "Features_4b447bec",
-  Ia = s(() => {
-    const { model: e } = ya(),
+  Ga = "Features_4b447bec",
+  $a = s(() => {
+    const { model: e } = Oa(),
       s = e.root.get().specialInfo;
-    return s ? r.jsx("div", { className: Aa, children: r.jsx(I, { split: !0, text: s }) }) : null;
+    return s ? r.jsx("div", { className: Ga, children: r.jsx(k, { split: !0, text: s }) }) : null;
   }),
-  ka = "Panel_title_d5c3516b",
-  Qa = "Panel_f8f7fe7",
-  Ea = "Panel_base__small_db9c3013",
-  Ma = "Panel_separator_83a4966a",
-  Ta = "Panel_itemList_f5f66484",
-  Ra = s(() => {
-    const { model: e } = ya(),
+  za = "Panel_title_d5c3516b",
+  Fa = "Panel_f8f7fe7",
+  qa = "Panel_base__small_db9c3013",
+  Xa = "Panel_separator_83a4966a",
+  Ka = "Panel_itemList_f5f66484",
+  Ua = s(() => {
+    const { model: e } = Oa(),
       s = u.resolve("strings"),
       a = e.pros.get(),
       o = e.cons.get(),
       { breakpoint: n } = m(),
       i = n.name == g.extraSmall || n.name == g.small,
-      l = t(Qa, i && Ea);
+      l = t(Fa, i && qa);
     return r.jsxs("div", {
       className: l,
       children: [
         r.jsx("span", {
-          className: ka,
+          className: za,
           children: s.readOrEmpty("white_tiger_lobby.characteristicsPanel.pros"),
         }),
         r.jsx("div", {
-          className: Ta,
-          children: a.map((e) => r.jsx(Pa, { parameter: e.parameter, icon: e.icon }, e.parameter)),
+          className: Ka,
+          children: a.map((e) => r.jsx(La, { parameter: e.parameter, icon: e.icon }, e.parameter)),
         }),
-        r.jsx("div", { className: Ma }),
+        r.jsx("div", { className: Xa }),
         r.jsx("span", {
-          className: ka,
+          className: za,
           children: s.readOrEmpty("white_tiger_lobby.characteristicsPanel.cons"),
         }),
         r.jsx("div", {
-          className: Ta,
-          children: o.map((e) => r.jsx(Pa, { parameter: e.parameter, icon: e.icon }, e.parameter)),
+          className: Ka,
+          children: o.map((e) => r.jsx(La, { parameter: e.parameter, icon: e.icon }, e.parameter)),
         }),
-        r.jsx("div", { className: Ma }),
+        r.jsx("div", { className: Xa }),
         r.jsx("span", {
-          className: ka,
+          className: za,
           children: s.readOrEmpty("white_tiger_lobby.characteristicsPanel.features"),
         }),
-        r.jsx("div", { className: Ta, children: r.jsx(Ia, {}) }),
+        r.jsx("div", { className: Ka, children: r.jsx($a, {}) }),
       ],
     });
   }),
-  Ba = "TankInfoApp_1abc38b",
-  Sa = () => r.jsx("div", { className: Ba, children: r.jsx(Ra, {}) }),
-  Va = o.memo(function () {
+  Ya = "TankInfoApp_1abc38b",
+  Ja = () => r.jsx("div", { className: Ya, children: r.jsx(Ua, {}) }),
+  Za = o.memo(function () {
     const e = a.useMemo(() => ({ rootId: R.aliases.white_tiger.shared.VehicleStats("resId") }), []);
-    return r.jsx(fa, { options: e, children: r.jsx(Sa, {}) });
+    return r.jsx(Va, { options: e, children: r.jsx(Ja, {}) });
   }),
-  [Oa, Da] = c()(
+  [et, st] = c()(
     (e) => {
       const { observableModel: s } = e;
       return { root: s.object() };
@@ -822,34 +827,34 @@ const pe = "TankCard_wrapper_420ab964",
       openNarrative: e.createCallbackNoArgs("onNarrativeClicked"),
     }),
   ),
-  Wa = "disabled",
-  Ha = "shop",
-  La = "storage",
-  Ga = "techtree",
-  $a = "barracks",
-  za = "tournament",
-  Fa = "clans",
-  qa = "clan",
-  Xa = "missions",
-  Ka = "personalMissions",
-  Ua = "modeSelector",
-  Ya = "achievements",
-  Ja = "replays",
-  Za = {
-    [Ha]: "shop",
-    [La]: "storage",
-    [Ga]: "techtree",
-    [$a]: "barracks",
-    [za]: "tournament",
-    [Fa]: "clans",
-    [qa]: "clan",
-    [Xa]: "missions",
-    [Ka]: "personalMissions",
-    [Ua]: "modeSelector",
-    [Ya]: "profile",
-    [Ja]: "replays",
+  at = "disabled",
+  tt = "shop",
+  rt = "storage",
+  ot = "techtree",
+  nt = "barracks",
+  it = "tournament",
+  lt = "clans",
+  dt = "clan",
+  _t = "missions",
+  ct = "personalMissions",
+  pt = "modeSelector",
+  mt = "achievements",
+  gt = "replays",
+  ut = {
+    [tt]: "shop",
+    [rt]: "storage",
+    [ot]: "techtree",
+    [nt]: "barracks",
+    [it]: "tournament",
+    [lt]: "clans",
+    [dt]: "clan",
+    [_t]: "missions",
+    [ct]: "personalMissions",
+    [pt]: "modeSelector",
+    [mt]: "profile",
+    [gt]: "replays",
   },
-  et = (e) =>
+  ht = (e) =>
     a.createElement(
       "svg",
       {
@@ -866,7 +871,7 @@ const pe = "TankCard_wrapper_420ab964",
         fillOpacity: 0.9,
       }),
     ),
-  st = {
+  bt = {
     root: "MenuItem_root_28be5e00",
     "header-h80": "MenuItem_header-h80_5c1e51b1",
     "header-h56": "MenuItem_header-h56_23a7abcc",
@@ -895,27 +900,27 @@ const pe = "TankCard_wrapper_420ab964",
     modeName: "MenuItem_modeName_36c0339e",
     clanEmblem: "MenuItem_clanEmblem_fe5255ab",
   },
-  at = "forts",
-  tt = u.resolve("intl"),
-  rt = u.resolve("strings"),
-  ot = {
-    [Ua]: "tooltips.header.battleType",
-    [za]: "tooltips.header.buttons.tournaments",
-    [Ya]: "tooltips.header.buttons.profile",
+  xt = "forts",
+  vt = u.resolve("intl"),
+  jt = u.resolve("strings"),
+  yt = {
+    [pt]: "tooltips.header.battleType",
+    [it]: "tooltips.header.buttons.tournaments",
+    [mt]: "tooltips.header.buttons.profile",
   },
-  nt = {
-    [Fa]: "tooltips.header.buttons.clans.turnedOff",
-    [Ka]: "tooltips.header.buttons.personalMissionsDisabled",
-    [at]: "tooltips.header.buttons.forts.turnedOff",
+  ft = {
+    [lt]: "tooltips.header.buttons.clans.turnedOff",
+    [ct]: "tooltips.header.buttons.personalMissionsDisabled",
+    [xt]: "tooltips.header.buttons.forts.turnedOff",
   };
-function it(e) {
-  return tt.toUpperCase(
-    rt.readOrEmpty(`menu.headerButtons.${Za[e]}`) ||
-      rt.readOrEmpty(`menu.headerButtons.${e}`) ||
+function Nt(e) {
+  return vt.toUpperCase(
+    jt.readOrEmpty(`menu.headerButtons.${ut[e]}`) ||
+      jt.readOrEmpty(`menu.headerButtons.${e}`) ||
       `{${e}}`,
   );
 }
-function lt({
+function Ct({
   name: e,
   state: s,
   modeName: t,
@@ -926,68 +931,68 @@ function lt({
   modeIconPath: _,
   battleTypesPath: c = "R.images.gui.maps.icons",
 }) {
-  const p = k(),
-    m = e === Fa && l,
-    g = Q(
+  const p = Q(),
+    m = e === lt && l,
+    g = E(
       a.useMemo(
         () =>
           (function (e, s) {
-            const a = ((s && nt[e]) || ot[e]) ?? `tooltips.header.buttons.${e}`;
-            return { header: rt.readOrEmpty(`${a}.header`), body: rt.readOrEmpty(`${a}.body`) };
-          })(m ? at : e, s === Wa),
+            const a = ((s && ft[e]) || yt[e]) ?? `tooltips.header.buttons.${e}`;
+            return { header: jt.readOrEmpty(`${a}.header`), body: jt.readOrEmpty(`${a}.body`) };
+          })(m ? xt : e, s === at),
         [e, s, m],
       ),
     ),
-    u = E("techtreeDiscount"),
+    u = M("techtreeDiscount"),
     h = i && "techtree" === e ? u : g;
   const b = _ ?? `${c}.battleTypes.c_64x64.${o}`;
   return r.jsx("div", {
     ...h,
-    className: n(st.base, st[`base__${s}State`], st[`base__${e}Name`]),
+    className: n(bt.base, bt[`base__${s}State`], bt[`base__${e}Name`]),
     "data-test-id": e,
     onMouseEnter: function (e) {
       (h.onMouseEnter(e),
-        s !== Wa && p.play("mouse-enter", { target: "main-menu-widget:menu-item", original: e }));
+        s !== at && p.play("mouse-enter", { target: "main-menu-widget:menu-item", original: e }));
     },
     onClick: function (a) {
       (h.onClick(),
-        s !== Wa && (d(e), p.play("click", { target: "main-menu-widget:menu-item", original: a })));
+        s !== at && (d(e), p.play("click", { target: "main-menu-widget:menu-item", original: a })));
     },
     children: (() => {
       switch (e) {
-        case Ua:
+        case pt:
           return r.jsxs(r.Fragment, {
             children: [
               r.jsxs("div", {
-                className: st.modeSelector,
+                className: bt.modeSelector,
                 children: [
-                  r.jsx("div", { className: st.label, children: it(e) }),
-                  t && r.jsx("div", { className: st.modeName, children: tt.toUpperCase(t) }),
-                  r.jsx("div", { className: st.modeIcon, style: { backgroundImage: `url(${b})` } }),
+                  r.jsx("div", { className: bt.label, children: Nt(e) }),
+                  t && r.jsx("div", { className: bt.modeName, children: vt.toUpperCase(t) }),
+                  r.jsx("div", { className: bt.modeIcon, style: { backgroundImage: `url(${b})` } }),
                 ],
               }),
-              r.jsx(et, { className: st.arrow }),
+              r.jsx(ht, { className: bt.arrow }),
             ],
           });
-        case Fa:
+        case lt:
           return r.jsxs("div", {
-            className: st.titleWrapper,
+            className: bt.titleWrapper,
             children: [
               l &&
-                r.jsx("div", { style: { backgroundImage: `url(${l})` }, className: st.clanEmblem }),
-              r.jsx("div", { className: st.title, children: it(m ? "clan" : e) }),
+                r.jsx("div", { style: { backgroundImage: `url(${l})` }, className: bt.clanEmblem }),
+              r.jsx("div", { className: bt.title, children: Nt(m ? "clan" : e) }),
             ],
           });
         default:
           return r.jsx("div", {
-            className: st.titleWrapper,
-            children: r.jsx("div", { className: st.title, children: it(e) }),
+            className: bt.titleWrapper,
+            children: r.jsx("div", { className: bt.title, children: Nt(e) }),
           });
       }
     })(),
   });
 }
-const [dt, _t] = c()(
+const [wt, Pt] = c()(
     ({ observableModel: e }) => ({
       menuItems: e.arrayClone("menuItems"),
       ...e.primitives(["modeName", "modeId", "hasTechTreeEvents", "clanEmblem"]),
@@ -996,18 +1001,18 @@ const [dt, _t] = c()(
       navigateTo: e.createCallback((e) => ({ name: e }), "onNavigate"),
     }),
   ),
-  ct = "MainMenu_222da7b7",
-  pt = i(function ({ className: e, battleTypesPath: s, modeIconPath: t }) {
-    const { model: o, controls: i } = _t(),
+  At = "MainMenu_222da7b7",
+  It = i(function ({ className: e, battleTypesPath: s, modeIconPath: t }) {
+    const { model: o, controls: i } = Pt(),
       l = o.menuItems.get(),
       d = o.modeName.get(),
       _ = o.modeId.get(),
       c = o.hasTechTreeEvents.get(),
       p = o.clanEmblem.get();
     return r.jsx("div", {
-      className: n(ct, e),
-      children: A(l, (e) =>
-        a.createElement(lt, {
+      className: n(At, e),
+      children: I(l, (e) =>
+        a.createElement(Ct, {
           ...e,
           key: e.name,
           battleTypesPath: s,
@@ -1021,23 +1026,23 @@ const [dt, _t] = c()(
       ),
     });
   });
-function mt(e) {
+function kt(e) {
   const { className: s, battleTypesPath: a, modeIconPath: t, ...o } = e;
-  return r.jsx(dt, {
+  return r.jsx(wt, {
     ...o,
-    children: r.jsx(pt, { className: s, battleTypesPath: a, modeIconPath: t }),
+    children: r.jsx(It, { className: s, battleTypesPath: a, modeIconPath: t }),
   });
 }
-const gt = u.resolve("strings");
-function ut(e) {
+const Qt = u.resolve("strings");
+function Et(e) {
   const s = { rootId: R.aliases.hangar.shared.MainMenu("resId") },
-    a = Q({
-      header: gt.readOrEmpty("white_tiger_lobby.tooltips.mainMenu.modeSelector.header"),
-      body: gt.readOrEmpty("white_tiger_lobby.tooltips.mainMenu.modeSelector.description"),
+    a = E({
+      header: Qt.readOrEmpty("white_tiger_lobby.tooltips.mainMenu.modeSelector.header"),
+      body: Qt.readOrEmpty("white_tiger_lobby.tooltips.mainMenu.modeSelector.description"),
     });
-  return r.jsx("div", { ...a, children: r.jsx(mt, { options: s, ...e }) });
+  return r.jsx("div", { ...a, children: r.jsx(kt, { options: s, ...e }) });
 }
-var ht = ((e) => (
+var Mt = ((e) => (
   (e.NONE = "none"),
   (e.BT110 = "BT110"),
   (e.BT220 = "BT220"),
@@ -1046,86 +1051,86 @@ var ht = ((e) => (
   (e.FOUDRE = "FOUDRE"),
   (e.POJISTKA = "POJISTKA"),
   e
-))(ht || {});
-const bt = [
+))(Mt || {});
+const Tt = [
     {
-      vehicle: ht.NONE,
+      vehicle: Mt.NONE,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_5(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_5(),
       speedX: 0.001,
       speedY: 0.001,
     },
     {
-      vehicle: ht.RESISTOR,
+      vehicle: Mt.RESISTOR,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_4(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_4_selected(),
       speedX: 0.004,
       speedY: 0.002,
     },
     {
-      vehicle: ht.THUNDERBOLT,
+      vehicle: Mt.THUNDERBOLT,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_3(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_3_selected(),
       speedX: 0.008,
       speedY: 0.004,
     },
     {
-      vehicle: ht.POJISTKA,
+      vehicle: Mt.POJISTKA,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_2(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_2_selected(),
       speedX: 0.012,
       speedY: 0.006,
     },
     {
-      vehicle: ht.FOUDRE,
+      vehicle: Mt.FOUDRE,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_1(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_1_selected(),
       speedX: 0.016,
       speedY: 0.008,
     },
     {
-      vehicle: ht.BT220,
+      vehicle: Mt.BT220,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_0_special_selected(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_0_special_selected(),
       speedX: 0.02,
       speedY: 0.01,
     },
     {
-      vehicle: ht.BT110,
+      vehicle: Mt.BT110,
       path: R.images.white_tiger.gui.maps.icons.hangarParallax.c_0(),
       pathSelected: R.images.white_tiger.gui.maps.icons.hangarParallax.c_0_selected(),
       speedX: 0.02,
       speedY: 0.01,
     },
   ],
-  xt = "Parallax_642396e4",
-  vt = "Parallax_layer_cdf6ae01",
-  jt = "Parallax_layer_selectedImage_240b45af",
-  ft = "Parallax_layer__selected_ac12e19d",
-  yt = bt.reduce((e, s) => {
+  Rt = "Parallax_642396e4",
+  Bt = "Parallax_layer_cdf6ae01",
+  St = "Parallax_layer_selectedImage_240b45af",
+  Vt = "Parallax_layer__selected_ac12e19d",
+  Ot = Tt.reduce((e, s) => {
     const a = Math.abs(s.speedX);
     return a > e ? a : e;
   }, 0),
-  Ct = s(() => {
-    const { model: e } = Da(),
+  Dt = s(() => {
+    const { model: e } = st(),
       { selectedVehicle: s } = e.root.get(),
       { screenWidthRem: t } = m(),
       o = a.createRef(),
-      i = yt * t,
-      [d] = M(o),
-      _ = s == ht.BT220;
+      i = Ot * t,
+      [d] = T(o),
+      _ = s == Mt.BT220;
     return r.jsx("div", {
       ref: o,
-      className: xt,
-      children: bt.map((e, a) => {
+      className: Rt,
+      children: Tt.map((e, a) => {
         const o = s === e.vehicle;
         if (_) {
-          if (e.vehicle == ht.BT110) return;
-        } else if (e.vehicle === ht.BT220) return;
+          if (e.vehicle == Mt.BT110) return;
+        } else if (e.vehicle === Mt.BT220) return;
         return r.jsx(
           l.div,
           {
-            className: n(vt, o && ft),
+            className: n(Bt, o && Vt),
             style: {
               width: `${t + 2 * i}rem`,
               left: -i + "rem",
@@ -1135,7 +1140,7 @@ const bt = [
             },
             children: r.jsx(
               "div",
-              { className: jt, style: { backgroundImage: `url(${e.pathSelected})` } },
+              { className: St, style: { backgroundImage: `url(${e.pathSelected})` } },
               a,
             ),
           },
@@ -1144,109 +1149,109 @@ const bt = [
       }),
     });
   }),
-  Nt = "ParallaxContainer_ea8010a4",
-  wt = bt.map((e) => e.path),
-  Pt = s(({ className: e }) => {
-    const { controls: s } = Da(),
+  Wt = "ParallaxContainer_ea8010a4",
+  Ht = Tt.map((e) => e.path),
+  Lt = s(({ className: e }) => {
+    const { controls: s } = st(),
       t = d({ to: { opacity: 1 }, config: { duration: 300 } }),
-      o = "pending" !== T(wt);
+      o = "pending" !== B(Ht);
     return (
       a.useEffect(() => {
         o && s.viewLoaded();
       }, [o, s]),
-      r.jsx(l.div, { className: n(Nt, e), style: t, children: r.jsx(Ct, {}) })
+      r.jsx(l.div, { className: n(Wt, e), style: t, children: r.jsx(Dt, {}) })
     );
   }),
-  At = "HangarScreen_aa319094",
-  It = "HangarScreen_mainMenu_2901d4d4",
-  kt = "HangarScreen_fullscreen_237fe26b",
-  Qt = "HangarScreen_progressionWrapper_13547914",
-  Et = "HangarScreen_menuWrapper_551a56fd",
-  Mt = "HangarScreen_aboutWrapper_38607731",
-  Tt = "HangarScreen_info_4dc6c07b",
-  Rt = "HangarScreen_aboutBtn_1a8c3de7",
-  Bt = "HangarScreen_narrativeBtn_513afb63",
-  St = "HangarScreen_narrativeBtnText_81244265",
-  Vt = "HangarScreen_narrativeImage_ae799998",
-  Ot = "HangarScreen_crewInfoWrapper_c57dc417",
-  Dt = "HangarScreen_carouselWrapper_9b96b9e9",
-  Wt = s(() => {
-    const { model: e, controls: s } = Da(),
+  Gt = "HangarScreen_aa319094",
+  $t = "HangarScreen_mainMenu_2901d4d4",
+  zt = "HangarScreen_fullscreen_237fe26b",
+  Ft = "HangarScreen_progressionWrapper_13547914",
+  qt = "HangarScreen_menuWrapper_551a56fd",
+  Xt = "HangarScreen_aboutWrapper_38607731",
+  Kt = "HangarScreen_info_4dc6c07b",
+  Ut = "HangarScreen_aboutBtn_1a8c3de7",
+  Yt = "HangarScreen_narrativeBtn_513afb63",
+  Jt = "HangarScreen_narrativeBtnText_81244265",
+  Zt = "HangarScreen_narrativeImage_ae799998",
+  er = "HangarScreen_crewInfoWrapper_c57dc417",
+  sr = "HangarScreen_carouselWrapper_9b96b9e9",
+  ar = s(() => {
+    const { model: e, controls: s } = st(),
       a = e.root.get().isNarrativeAvailable;
-    B(s.openMenu);
+    S(s.openMenu);
     const t = u.resolve("strings"),
-      o = r.jsxs(S, {
+      o = r.jsxs(V, {
         onClick: s.openNarrative,
-        className: Bt,
-        theme: S.themes.secondary,
-        size: S.sizes.small,
+        className: Yt,
+        theme: V.themes.secondary,
+        size: V.sizes.small,
         autoAlignContent: !1,
         disabled: !a,
         children: [
-          r.jsx("div", { className: Vt }),
+          r.jsx("div", { className: Zt }),
           r.jsx("div", {
-            className: St,
+            className: Jt,
             children: t.readOrEmpty("white_tiger_lobby.navigation.narrativeStory"),
           }),
         ],
       });
     return r.jsxs("div", {
-      className: At,
+      className: Gt,
       children: [
-        r.jsx(Pt, {}),
+        r.jsx(Lt, {}),
         r.jsxs("div", {
-          className: kt,
+          className: zt,
           children: [
             r.jsxs("div", {
-              className: Mt,
+              className: Xt,
               children: [
-                r.jsx(S, {
-                  className: Rt,
-                  theme: S.themes.secondary,
+                r.jsx(V, {
+                  className: Ut,
+                  theme: V.themes.secondary,
                   onClick: s.openInfo,
-                  size: S.sizes.small,
+                  size: V.sizes.small,
                   autoAlignContent: !1,
-                  children: r.jsx("div", { className: Tt }),
+                  children: r.jsx("div", { className: Kt }),
                 }),
                 a
                   ? o
-                  : r.jsx(V, {
+                  : r.jsx(O, {
                       header: t.readOrEmpty("white_tiger_lobby.navigation.narrative.tooltipHeader"),
                       body: t.readOrEmpty("white_tiger_lobby.navigation.narrative.tooltipBody"),
                       children: o,
                     }),
               ],
             }),
-            r.jsx("div", { className: Et, children: r.jsx(ut, { className: It }) }),
-            r.jsx("div", { className: Ot, children: r.jsx(Gs, {}) }),
-            r.jsxs("div", { className: Dt, children: [r.jsx(Os, {}), r.jsx(ds, {})] }),
-            r.jsx(Va, {}),
-            r.jsx("div", { className: Qt, children: r.jsx(ja, {}) }),
-            r.jsx(Ys, {}),
+            r.jsx("div", { className: qt, children: r.jsx(Et, { className: $t }) }),
+            r.jsx("div", { className: er, children: r.jsx($s, {}) }),
+            r.jsxs("div", { className: sr, children: [r.jsx(Ds, {}), r.jsx(_s, {})] }),
+            r.jsx(Za, {}),
+            r.jsx("div", { className: Ft, children: r.jsx(Sa, {}) }),
+            r.jsx(ma, {}),
           ],
         }),
       ],
     });
   }),
-  [Ht, Lt] = c()(
+  [tr, rr] = c()(
     ({ observableModel: s }) => {
       const a = { root: s.object(), stages: s.array("stages") },
         t = e(() =>
-          A(a.stages.get(), (e, s) => ({
+          I(a.stages.get(), (e, s) => ({
             ...e,
             stageMaxPoints: (s + 1) * a.root.get().stampsNeededPerStage,
-            rewards: A(e.rewards, O),
+            rewards: I(e.rewards, D),
           })),
         );
       return { ...a, computes: { getStages: t } };
     },
     ({ externalModel: e }) => ({}),
   ),
-  Gt = ({ reward: e, ...s }) => {
-    const a = le(e);
-    return r.jsx(D, { ...a, ...s });
+  or = ({ reward: e, ...s }) => {
+    const a = de(e);
+    return r.jsx(W, { ...a, ...s });
   },
-  $t = {
+  nr = {
     base: "ProgressionContentApp_677c8fc4",
     base_container: "ProgressionContentApp_base_container_babed4eb",
     scrollWrap: "ProgressionContentApp_scrollWrap_b93b917a",
@@ -1288,20 +1293,20 @@ const bt = [
     stamps: "ProgressionContentApp_stamps_eee8d8c5",
     stamps_max: "ProgressionContentApp_stamps_max_8f0c7819",
   },
-  zt = 1e3,
-  Ft = {
-    enter: $t.numberAnimated__enter,
-    enterActive: $t.numberAnimated__enterActive,
-    enterDone: $t.numberAnimated__enterDone,
+  ir = 1e3,
+  lr = {
+    enter: nr.numberAnimated__enter,
+    enterActive: nr.numberAnimated__enterActive,
+    enterDone: nr.numberAnimated__enterDone,
   },
-  qt = { enterActive: $t.numberGlow__active, enterDone: $t.numberGlow__exit },
-  Xt = (e) => {
-    e === $.Grow
+  dr = { enterActive: nr.numberGlow__active, enterDone: nr.numberGlow__exit },
+  _r = (e) => {
+    e === z.Grow
       ? h.sound(R.sounds.ev_white_tiger_hangar_ui_progress_bar_start())
-      : e === $.End && h.sound(R.sounds.ev_white_tiger_hangar_ui_progress_bar_stop());
+      : e === z.End && h.sound(R.sounds.ev_white_tiger_hangar_ui_progress_bar_stop());
   },
-  Kt = s(() => {
-    const { model: e } = Lt(),
+  cr = s(() => {
+    const { model: e } = rr(),
       s = a.useRef(null),
       o = a.useRef(null),
       i = e.computes.getStages(),
@@ -1315,132 +1320,132 @@ const bt = [
       u = Math.min(l, g),
       h = d - 1,
       b = i[h]?.stageMaxPoints ?? g,
-      v = W(),
+      v = H(),
       { applyScroll: j } = v,
-      { screenWidthRem: f } = m(),
-      y = a.useCallback(() => {
-        const e = Math.max(0, 193 * h + 96.5 - (0.95 * f) / 2);
+      { screenWidthRem: y } = m(),
+      f = a.useCallback(() => {
+        const e = Math.max(0, 193 * h + 96.5 - (0.95 * y) / 2);
         j(viewEnv.remToPx(e), { immediate: !1, reset: !1 });
-      }, [h, f, j]);
+      }, [h, y, j]);
     a.useEffect(() => {
-      const e = setTimeout(() => y(), 300);
+      const e = setTimeout(() => f(), 300);
       return (
-        engine.on("clientResized", y),
+        engine.on("clientResized", f),
         () => {
-          (engine.off("clientResized", y), clearTimeout(e));
+          (engine.off("clientResized", f), clearTimeout(e));
         }
       );
-    }, [d, y]);
-    const C = u === g,
-      P = (e) => e === h && !C,
-      A = (e) => e < h || (((e) => e === i.length - 1)(e) && C),
+    }, [d, f]);
+    const N = u === g,
+      C = (e) => e === h && !N,
+      A = (e) => e < h || (((e) => e === i.length - 1)(e) && N),
       I = i.map(({ rewards: e, stageMaxPoints: s }) => ({ bonuses: e, stageMaxPoints: s })),
       k = { "--sections-amount": I.length, "--rewards-wrap-width": "193rem" },
       [Q, E] = a.useState(!1);
     return (
       a.useEffect(
         () =>
-          H(() => {
+          L(() => {
             E(!0);
-          }, zt),
+          }, ir),
         [],
       ),
       r.jsx("div", {
-        className: n($t.base, $t.base_container),
+        className: n(nr.base, nr.base_container),
         children: r.jsxs("div", {
-          className: $t.base,
+          className: nr.base,
           style: k,
           children: [
-            r.jsx("div", { className: $t.fadeBackground }),
-            r.jsx("div", { className: n($t.fadeBackground, $t.fadeBackground__out) }),
-            r.jsx(L.Horizontal.Area.Default, {
-              className: $t.scrollWrap,
+            r.jsx("div", { className: nr.fadeBackground }),
+            r.jsx("div", { className: n(nr.fadeBackground, nr.fadeBackground__out) }),
+            r.jsx(G.Horizontal.Area.Default, {
+              className: nr.scrollWrap,
               api: v,
               children: r.jsxs("div", {
-                className: $t.wrapper,
+                className: nr.wrapper,
                 children: [
                   r.jsx("div", {
-                    className: $t.top,
+                    className: nr.top,
                     children: I.map(({ stageMaxPoints: e }, a) =>
                       r.jsxs(
                         "div",
                         {
-                          className: n($t.progress_top, P(a) && $t.progress_top__current),
+                          className: n(nr.progress_top, C(a) && nr.progress_top__current),
                           children: [
                             0 === a &&
                               r.jsxs("div", {
-                                className: $t.pointsMark_group,
+                                className: nr.pointsMark_group,
                                 children: [
                                   r.jsx("div", {
                                     className: t(
-                                      $t.pointsMark,
-                                      !P(a) && A(a) && $t.pointsMark__faded,
+                                      nr.pointsMark,
+                                      !C(a) && A(a) && nr.pointsMark__faded,
                                     ),
                                     children: "0",
                                   }),
-                                  r.jsx("div", { className: $t.divider }),
+                                  r.jsx("div", { className: nr.divider }),
                                 ],
                               }),
                             r.jsx("div", {
-                              className: t($t.progress_content, A(a) && $t.progress_content__done),
+                              className: t(nr.progress_content, A(a) && nr.progress_content__done),
                               children: r.jsxs("div", {
                                 className: t(
-                                  $t.stage,
-                                  A(a) && $t.stage__done,
-                                  P(a) && $t.stage__current,
+                                  nr.stage,
+                                  A(a) && nr.stage__done,
+                                  C(a) && nr.stage__current,
                                 ),
                                 children: [
-                                  r.jsx("div", { className: $t.stage_glow }),
+                                  r.jsx("div", { className: nr.stage_glow }),
                                   r.jsx("img", {
                                     src: R.images.white_tiger.gui.maps.icons.progression.progress.tick(),
-                                    className: $t.stage_img,
+                                    className: nr.stage_img,
                                   }),
-                                  P(a) &&
+                                  C(a) &&
                                     r.jsxs(r.Fragment, {
                                       children: [
                                         r.jsx("div", {
-                                          className: t($t.glow, P(a) && $t.glow__inProgress),
+                                          className: t(nr.glow, C(a) && nr.glow__inProgress),
                                         }),
                                         r.jsx(_, {
                                           nodeRef: s,
                                           in: Q,
                                           timeout: 5e3,
-                                          className: $t.numberGlow,
-                                          classNames: qt,
+                                          className: nr.numberGlow,
+                                          classNames: dr,
                                           children: r.jsx("div", { ref: s }),
                                         }),
                                       ],
                                     }),
-                                  P(a)
+                                  C(a)
                                     ? r.jsxs("div", {
-                                        className: $t.stage_text,
+                                        className: nr.stage_text,
                                         children: [
                                           a + 1,
                                           r.jsx(_, {
                                             nodeRef: o,
                                             in: Q,
                                             timeout: 5e3,
-                                            className: t($t.numberInProgress, $t.numberAnimated),
-                                            classNames: Ft,
+                                            className: t(nr.numberInProgress, nr.numberAnimated),
+                                            classNames: lr,
                                             children: r.jsx("div", { ref: o, children: a + 1 }),
                                           }),
                                         ],
                                       })
-                                    : r.jsx("div", { className: $t.stage_text, children: a + 1 }),
+                                    : r.jsx("div", { className: nr.stage_text, children: a + 1 }),
                                 ],
                               }),
                             }),
                             r.jsxs("div", {
-                              className: $t.pointsMark_group,
+                              className: nr.pointsMark_group,
                               children: [
                                 r.jsx("div", {
                                   className: t(
-                                    $t.pointsMark,
-                                    !P(a) && A(a) && $t.pointsMark__faded,
+                                    nr.pointsMark,
+                                    !C(a) && A(a) && nr.pointsMark__faded,
                                   ),
                                   children: e,
                                 }),
-                                r.jsx("div", { className: $t.divider }),
+                                r.jsx("div", { className: nr.divider }),
                               ],
                             }),
                           ],
@@ -1449,30 +1454,30 @@ const bt = [
                       ),
                     ),
                   }),
-                  r.jsx(N, {
+                  r.jsx(w, {
                     value: u,
                     maxValue: g,
                     deltaFrom: c,
-                    theme: w,
-                    onChangeAnimationState: Xt,
+                    theme: P,
+                    onChangeAnimationState: _r,
                   }),
                   r.jsxs("div", {
-                    className: t($t.bottom),
+                    className: t(nr.bottom),
                     children: [
-                      r.jsx("div", { className: $t.divider_end }),
+                      r.jsx("div", { className: nr.divider_end }),
                       I.map(({ bonuses: e }, s) =>
                         r.jsxs(
                           "div",
                           {
-                            className: n($t.progress_bottom, P(s) && $t.progress_bottom__current),
+                            className: n(nr.progress_bottom, C(s) && nr.progress_bottom__current),
                             children: [
                               r.jsxs("div", {
                                 className: t(
-                                  $t.progress_content,
-                                  A(s) && $t.progress_content__done,
+                                  nr.progress_content,
+                                  A(s) && nr.progress_content__done,
                                 ),
                                 children: [
-                                  P(s) &&
+                                  C(s) &&
                                     r.jsx(x, {
                                       targetId:
                                         R.aliases.white_tiger.shared.ProgressionContent("resId"),
@@ -1481,29 +1486,29 @@ const bt = [
                                           "resId",
                                         ),
                                       children: r.jsxs("div", {
-                                        className: $t.stamps,
+                                        className: nr.stamps,
                                         children: [
                                           u,
                                           r.jsxs("span", {
-                                            className: $t.stamps_max,
+                                            className: nr.stamps_max,
                                             children: ["/", b],
                                           }),
                                         ],
                                       }),
                                     }),
                                   r.jsx("div", {
-                                    className: $t.rewards_group,
+                                    className: nr.rewards_group,
                                     children: e.map((s, a) =>
                                       r.jsx(
-                                        Gt,
+                                        or,
                                         {
                                           reward: s,
-                                          size: G.Small,
+                                          size: $.Small,
                                           className: t(
-                                            $t.reward,
-                                            e.length > 3 && $t.reward__compressed,
+                                            nr.reward,
+                                            e.length > 3 && nr.reward__compressed,
                                           ),
-                                          classNames: { info: $t.rewardInfo },
+                                          classNames: { info: nr.rewardInfo },
                                         },
                                         a,
                                       ),
@@ -1511,7 +1516,7 @@ const bt = [
                                   }),
                                 ],
                               }),
-                              r.jsx("div", { className: $t.divider_end }),
+                              r.jsx("div", { className: nr.divider_end }),
                             ],
                           },
                           s,
@@ -1527,20 +1532,20 @@ const bt = [
       })
     );
   }),
-  Ut = () => {
+  pr = () => {
     const e = a.useMemo(
       () => ({ rootId: R.aliases.white_tiger.shared.ProgressionContent("resId") }),
       [],
     );
-    return r.jsx(Ht, { options: e, children: r.jsx(Kt, {}) });
+    return r.jsx(tr, { options: e, children: r.jsx(cr, {}) });
   },
-  Yt = ["firstCondition", "secondCondition"],
-  Jt = (e, s) => {
+  mr = ["firstCondition", "secondCondition"],
+  gr = (e, s) => {
     const a = [];
     if ("or" === e.conditionType || "and" === e.conditionType)
       e.items.forEach((e) => {
-        const t = F(e);
-        t && a.push(...Jt(t, s));
+        const t = q(e);
+        t && a.push(...gr(t, s));
       });
     else {
       const t = e,
@@ -1552,7 +1557,7 @@ const bt = [
           currentValue: i,
           maxValue: l,
         },
-        c = q(s, 0);
+        c = X(s, 0);
       (c &&
         ((_.currentValue = c.current),
         (_.lastValue = c.current - c.earned),
@@ -1563,16 +1568,16 @@ const bt = [
     }
     return a;
   },
-  Zt = (e, s, a) => {
+  ur = (e, s, a) => {
     const t = {};
     let r = {},
       o = "";
     return (
-      Jt(e, s).forEach(
+      gr(e, s).forEach(
         ({ condition: e, lastValue: s, currentValue: a, maxValue: n, iconKey: i }, l) => {
-          l > Yt.length - 1 ||
-            ((t[Yt[l]] = ((e, s) =>
-              X(e, K.left)
+          l > mr.length - 1 ||
+            ((t[mr[l]] = ((e, s) =>
+              K(e, U.left)
                 .flat()
                 .map((e, a) => (0 === a && s > 0 && (e = e.toLowerCase()), e)))(e, l)),
             (o = i),
@@ -1582,8 +1587,8 @@ const bt = [
       { taskConditions: [{ conditions: t, progression: { status: a, ...r } }], taskBattleIcon: o }
     );
   },
-  er = (e) => ({ ...e }),
-  [sr, ar] = c()(
+  hr = (e) => ({ ...e }),
+  [br, xr] = c()(
     ({ observableModel: s }) => {
       const a = {
           root: s.object(),
@@ -1594,43 +1599,43 @@ const bt = [
         },
         t = e(
           () =>
-            A(a.engineerQuests.get(), (e) => ({
+            I(a.engineerQuests.get(), (e) => ({
               ...e,
-              ...Zt(e.postBattleCondition, e.bonusCondition.items, e.status),
-              bonuses: A(e.bonuses, er),
+              ...ur(e.postBattleCondition, e.bonusCondition.items, e.status),
+              bonuses: I(e.bonuses, hr),
               preBattleCondition: {
                 ...e.preBattleCondition,
-                items: A(e.preBattleCondition.items, er),
+                items: I(e.preBattleCondition.items, hr),
               },
               postBattleCondition: {
                 ...e.preBattleCondition,
-                items: A(e.preBattleCondition.items, er),
+                items: I(e.preBattleCondition.items, hr),
               },
-              bonusCondition: { ...e.bonusCondition, items: A(e.bonusCondition.items, er) },
+              bonusCondition: { ...e.bonusCondition, items: I(e.bonusCondition.items, hr) },
             })),
-          { equals: z },
+          { equals: F },
         ),
         r = e(
           () =>
-            A(a.harrierQuests.get(), (e) => ({
+            I(a.harrierQuests.get(), (e) => ({
               ...e,
-              ...Zt(e.postBattleCondition, e.bonusCondition.items, e.status),
-              bonuses: A(e.bonuses, er),
+              ...ur(e.postBattleCondition, e.bonusCondition.items, e.status),
+              bonuses: I(e.bonuses, hr),
               preBattleCondition: {
                 ...e.preBattleCondition,
-                items: A(e.preBattleCondition.items, er),
+                items: I(e.preBattleCondition.items, hr),
               },
               postBattleCondition: {
                 ...e.preBattleCondition,
-                items: A(e.preBattleCondition.items, er),
+                items: I(e.preBattleCondition.items, hr),
               },
-              bonusCondition: { ...e.bonusCondition, items: A(e.bonusCondition.items, er) },
+              bonusCondition: { ...e.bonusCondition, items: I(e.bonusCondition.items, hr) },
             })),
-          { equals: z },
+          { equals: F },
         ),
         o = e(() => a.root.get().activeTab),
-        n = e(() => A(a.engineerQuestsVisited.get(), (e) => Boolean(e))),
-        i = e(() => A(a.harrierQuestsVisited.get(), (e) => Boolean(e)));
+        n = e(() => I(a.engineerQuestsVisited.get(), (e) => Boolean(e))),
+        i = e(() => I(a.harrierQuestsVisited.get(), (e) => Boolean(e)));
       return {
         ...a,
         computes: {
@@ -1646,9 +1651,9 @@ const bt = [
       onSelectedTab: e.createCallback((e) => ({ tab: e }), "onSelectedTab"),
     }),
   );
-var tr = ((e) => ((e.Done = "done"), (e.Locked = "notAvailable"), (e.Active = ""), e))(tr || {}),
-  rr = ((e) => ((e.ENGINEER = "ENGINEER"), (e.HARRIER = "HARRIER"), e))(rr || {});
-const or = {
+var vr = ((e) => ((e.Done = "done"), (e.Locked = "notAvailable"), (e.Active = ""), e))(vr || {}),
+  jr = ((e) => ((e.ENGINEER = "ENGINEER"), (e.HARRIER = "HARRIER"), e))(jr || {});
+const yr = {
     dailyQuest: "ProgressionDailyQuestCard_dailyQuest_ffb9b8f8",
     dailyQuest__incomplete: "ProgressionDailyQuestCard_dailyQuest__incomplete_5bbb0741",
     dailyQuest__completed: "ProgressionDailyQuestCard_dailyQuest__completed_6ae29514",
@@ -1679,7 +1684,7 @@ const or = {
     dailyQuest_bottomText_completed:
       "ProgressionDailyQuestCard_dailyQuest_bottomText_completed_ea2a6c3a",
   },
-  nr = ({
+  fr = ({
     icon: e,
     isComplete: s,
     maxMissions: t,
@@ -1704,53 +1709,53 @@ const or = {
       : e;
     return r.jsxs("div", {
       className: n(
-        or.dailyQuest,
-        s ? or.dailyQuest__completed : or.dailyQuest__incomplete,
-        h && or.dailyQuest__progressBarAnimation,
-        p && or.dailyQuest__progressBarAnimationComplete,
-        i && or.dailyQuest__visited,
-        l && or.dailyQuest__special,
+        yr.dailyQuest,
+        s ? yr.dailyQuest__completed : yr.dailyQuest__incomplete,
+        h && yr.dailyQuest__progressBarAnimation,
+        p && yr.dailyQuest__progressBarAnimationComplete,
+        i && yr.dailyQuest__visited,
+        l && yr.dailyQuest__special,
       ),
       children: [
         r.jsxs("div", {
-          className: or.dailyQuest_top,
+          className: yr.dailyQuest_top,
           children: [
-            r.jsx("div", { className: or.dailyQuest_top_left }),
+            r.jsx("div", { className: yr.dailyQuest_top_left }),
             r.jsx("div", {
               className: n(
-                or.dailyQuest_top_borderGradient,
-                or.dailyQuest_top_borderGradient__left,
+                yr.dailyQuest_top_borderGradient,
+                yr.dailyQuest_top_borderGradient__left,
               ),
             }),
             r.jsxs("div", {
-              className: or.dailyQuest_top_content,
+              className: yr.dailyQuest_top_content,
               children: [
-                r.jsx("div", { className: or.dailyQuest_glow }),
-                r.jsx("img", { src: x, className: or.dailyQuest_icon }),
+                r.jsx("div", { className: yr.dailyQuest_glow }),
+                r.jsx("img", { src: x, className: yr.dailyQuest_icon }),
               ],
             }),
-            r.jsx("div", { className: or.dailyQuest_top_right }),
+            r.jsx("div", { className: yr.dailyQuest_top_right }),
             r.jsx("div", {
               className: n(
-                or.dailyQuest_top_borderGradient,
-                or.dailyQuest_top_borderGradient__right,
+                yr.dailyQuest_top_borderGradient,
+                yr.dailyQuest_top_borderGradient__right,
               ),
             }),
           ],
         }),
-        r.jsx("div", { className: or.dailyQuest_description, children: c }),
+        r.jsx("div", { className: yr.dailyQuest_description, children: c }),
         r.jsx("div", {
-          className: or.dailyQuest_centerBlock,
+          className: yr.dailyQuest_centerBlock,
           children:
             !s &&
             g &&
             r.jsxs(r.Fragment, {
               children: [
-                r.jsx(I, {
-                  className: or.dailyQuest_points,
+                r.jsx(k, {
+                  className: yr.dailyQuest_points,
                   params: {
                     currentPoints: r.jsx("span", {
-                      className: or.dailyQuest_accent,
+                      className: yr.dailyQuest_accent,
                       children: g.progression.currentValue,
                     }),
                     maxPoints: g.progression.maxValue,
@@ -1758,14 +1763,14 @@ const or = {
                   text: b.readOrEmpty("white_tiger_lobby.progression.pointsFormat"),
                 }),
                 r.jsx("div", {
-                  className: or.dailyQuest_progress,
+                  className: yr.dailyQuest_progress,
                   children:
                     g &&
                     r.jsx("div", {
-                      className: or.dailyQuest_progress,
-                      children: r.jsx(N, {
-                        size: P.Small,
-                        theme: l ? ie : w,
+                      className: yr.dailyQuest_progress,
+                      children: r.jsx(w, {
+                        size: A.Small,
+                        theme: l ? le : P,
                         value: g.progression.currentValue,
                         deltaFrom: 0,
                         maxValue: g.progression.maxValue,
@@ -1777,17 +1782,17 @@ const or = {
             }),
         }),
         r.jsx("div", {
-          className: or.dailyQuest_rewards,
+          className: yr.dailyQuest_rewards,
           children:
             d &&
             d.map((e, s) =>
               r.jsx(
-                Gt,
+                or,
                 {
                   reward: e,
-                  className: or.dailyQuest_reward,
-                  classNames: { info: or.rewardInfo },
-                  size: G.Small,
+                  className: yr.dailyQuest_reward,
+                  classNames: { info: yr.rewardInfo },
+                  size: $.Small,
                 },
                 s,
               ),
@@ -1796,12 +1801,12 @@ const or = {
         Boolean(t) &&
           r.jsxs("div", {
             className: n(
-              or.dailyQuest_bottomText,
-              t === o && or.dailyQuest_bottomText__isCompleted,
+              yr.dailyQuest_bottomText,
+              t === o && yr.dailyQuest_bottomText__isCompleted,
             ),
             children: [
               b.readOrEmpty("white_tiger_lobby.progression.completed"),
-              r.jsx("span", { className: or.dailyQuest_bottomText_completed, children: o }),
+              r.jsx("span", { className: yr.dailyQuest_bottomText_completed, children: o }),
               "/",
               t,
             ],
@@ -1809,89 +1814,89 @@ const or = {
       ],
     });
   },
-  ir = "ProgressionQuestsApp_150a567a",
-  lr = "ProgressionQuestsApp_container_e24758d9",
-  dr = "ProgressionQuestsApp_container__fourQuests_f1409a85",
-  _r = "ProgressionQuestsApp_container_top_borderGradient__left_d005e562",
-  cr = "ProgressionQuestsApp_container_top_borderGradient__right_2777273c",
-  pr = "ProgressionQuestsApp_container__threeQuests_1565a67e",
-  mr = "ProgressionQuestsApp_container_top_ab896449",
-  gr = "ProgressionQuestsApp_container_top_left_d916cab5",
-  ur = "ProgressionQuestsApp_container_top_right_7a0014eb",
-  hr = "ProgressionQuestsApp_container_top_borderGradient_ec8d6f3e",
-  br = "ProgressionQuestsApp_tabs_fdb874ca",
-  xr = "ProgressionQuestsApp_tab_a0808371",
-  vr = "ProgressionQuestsApp_tab__active_483d566e",
-  jr = "ProgressionQuestsApp_tab_shadow_2ccd4c36",
-  fr = "ProgressionQuestsApp_tab_light_25c323bd",
-  yr = "ProgressionQuestsApp_tab__inactive_4d4e9238",
-  Cr = "ProgressionQuestsApp_tab_title_d86b71bd",
-  Nr = "ProgressionQuestsApp_tab_texture_beea1798",
-  wr = "ProgressionQuestsApp_tab_counter_28e1a2ad",
-  Pr = "ProgressionQuestsApp_tab_counter_total_52eb5778",
-  Ar = "ProgressionQuestsApp_dailyQuests_56c1bea9",
-  Ir = "ProgressionQuestsApp_timer_fb5d0d3c",
-  kr = "ProgressionQuestsApp_timer_content_c827998e",
-  Qr = "ProgressionQuestsApp_timer_highlight_e839f85e",
-  Er = "ProgressionQuestsApp_timer_highlight__rotated_2f31d623",
-  Mr = "ProgressionQuestsApp_specialTimer_c3332337",
-  Tr = "ProgressionQuestsApp_specialTimer_content_c827998e",
-  Rr = { [rr.HARRIER]: "getHarrierQuestsVisited", [rr.ENGINEER]: "getEngineerQuestsVisited" },
-  Br = { [rr.HARRIER]: "getHarrierQuests", [rr.ENGINEER]: "getEngineerQuests" },
-  Sr = (e, s) => e + (s.status === tr.Done ? 1 : 0),
-  Vr = s(() => {
-    const { model: e, controls: s } = ar(),
+  Nr = "ProgressionQuestsApp_150a567a",
+  Cr = "ProgressionQuestsApp_container_e24758d9",
+  wr = "ProgressionQuestsApp_container__fourQuests_f1409a85",
+  Pr = "ProgressionQuestsApp_container_top_borderGradient__left_d005e562",
+  Ar = "ProgressionQuestsApp_container_top_borderGradient__right_2777273c",
+  Ir = "ProgressionQuestsApp_container__threeQuests_1565a67e",
+  kr = "ProgressionQuestsApp_container_top_ab896449",
+  Qr = "ProgressionQuestsApp_container_top_left_d916cab5",
+  Er = "ProgressionQuestsApp_container_top_right_7a0014eb",
+  Mr = "ProgressionQuestsApp_container_top_borderGradient_ec8d6f3e",
+  Tr = "ProgressionQuestsApp_tabs_fdb874ca",
+  Rr = "ProgressionQuestsApp_tab_a0808371",
+  Br = "ProgressionQuestsApp_tab__active_483d566e",
+  Sr = "ProgressionQuestsApp_tab_shadow_2ccd4c36",
+  Vr = "ProgressionQuestsApp_tab_light_25c323bd",
+  Or = "ProgressionQuestsApp_tab__inactive_4d4e9238",
+  Dr = "ProgressionQuestsApp_tab_title_d86b71bd",
+  Wr = "ProgressionQuestsApp_tab_texture_beea1798",
+  Hr = "ProgressionQuestsApp_tab_counter_28e1a2ad",
+  Lr = "ProgressionQuestsApp_tab_counter_total_52eb5778",
+  Gr = "ProgressionQuestsApp_dailyQuests_56c1bea9",
+  $r = "ProgressionQuestsApp_timer_fb5d0d3c",
+  zr = "ProgressionQuestsApp_timer_content_c827998e",
+  Fr = "ProgressionQuestsApp_timer_highlight_e839f85e",
+  qr = "ProgressionQuestsApp_timer_highlight__rotated_2f31d623",
+  Xr = "ProgressionQuestsApp_specialTimer_c3332337",
+  Kr = "ProgressionQuestsApp_specialTimer_content_c827998e",
+  Ur = { [jr.HARRIER]: "getHarrierQuestsVisited", [jr.ENGINEER]: "getEngineerQuestsVisited" },
+  Yr = { [jr.HARRIER]: "getHarrierQuests", [jr.ENGINEER]: "getEngineerQuests" },
+  Jr = (e, s) => e + (s.status === vr.Done ? 1 : 0),
+  Zr = s(() => {
+    const { model: e, controls: s } = xr(),
       a = e.computes.getActiveTab(),
       { onSelectedTab: t } = s,
       { updateCountdown: o, eventCountdown: i } = e.root.get(),
-      l = e.computes[Br[a]](),
-      d = a === rr.HARRIER,
+      l = e.computes[Yr[a]](),
+      d = a === jr.HARRIER,
       _ = l.length,
-      c = e.computes[Rr[a]](),
+      c = e.computes[Ur[a]](),
       p = e.computes.getHarrierQuests(),
       m = e.computes.getEngineerQuests(),
-      g = p.reduce(Sr, 0),
-      b = m.reduce(Sr, 0),
-      x = a === rr.ENGINEER,
-      v = n(xr, d ? vr : yr),
-      j = n(xr, x ? vr : yr),
-      f = n(lr, 4 === _ ? dr : pr),
-      y = u.resolve("strings"),
-      C = u.resolve("images"),
-      N = l.some((e) => e.isSpecialMission && e.status !== tr.Done),
+      g = p.reduce(Jr, 0),
+      b = m.reduce(Jr, 0),
+      x = a === jr.ENGINEER,
+      v = n(Rr, d ? Br : Or),
+      j = n(Rr, x ? Br : Or),
+      y = n(Cr, 4 === _ ? wr : Ir),
+      f = u.resolve("strings"),
+      N = u.resolve("images"),
+      C = l.some((e) => e.isSpecialMission && e.status !== vr.Done),
       w = () => {
         h.highlight();
       };
     return r.jsx("div", {
-      className: ir,
+      className: Nr,
       children: r.jsxs("div", {
-        className: f,
+        className: y,
         children: [
           r.jsxs("div", {
-            className: mr,
+            className: kr,
             children: [
-              r.jsx("div", { className: gr }),
-              r.jsx("div", { className: n(hr, _r) }, `${a}-left`),
+              r.jsx("div", { className: Qr }),
+              r.jsx("div", { className: n(Mr, Pr) }, `${a}-left`),
               r.jsxs("div", {
-                className: br,
+                className: Tr,
                 children: [
                   r.jsxs("div", {
                     className: v,
                     onMouseEnter: w,
                     onClick: () => {
-                      (t(rr.HARRIER), h.click());
+                      (t(jr.HARRIER), h.click());
                     },
                     children: [
-                      r.jsx("div", { className: fr }),
-                      r.jsx("div", { className: Nr }),
-                      r.jsx("div", { className: jr }),
+                      r.jsx("div", { className: Vr }),
+                      r.jsx("div", { className: Wr }),
+                      r.jsx("div", { className: Sr }),
                       r.jsx("div", {
-                        className: Cr,
-                        children: y.readOrEmpty("white_tiger_lobby.progression.tab.harrier"),
+                        className: Dr,
+                        children: f.readOrEmpty("white_tiger_lobby.progression.tab.harrier"),
                       }),
                       r.jsxs("div", {
-                        className: wr,
-                        children: [g, r.jsxs("span", { className: Pr, children: ["/", p.length] })],
+                        className: Hr,
+                        children: [g, r.jsxs("span", { className: Lr, children: ["/", p.length] })],
                       }),
                     ],
                   }),
@@ -1899,44 +1904,44 @@ const or = {
                     className: j,
                     onMouseEnter: w,
                     onClick: () => {
-                      (t(rr.ENGINEER), h.click());
+                      (t(jr.ENGINEER), h.click());
                     },
                     children: [
-                      r.jsx("div", { className: fr }),
-                      r.jsx("div", { className: Nr }),
-                      r.jsx("div", { className: jr }),
+                      r.jsx("div", { className: Vr }),
+                      r.jsx("div", { className: Wr }),
+                      r.jsx("div", { className: Sr }),
                       r.jsx("div", {
-                        className: Cr,
-                        children: y.readOrEmpty("white_tiger_lobby.progression.tab.engineer"),
+                        className: Dr,
+                        children: f.readOrEmpty("white_tiger_lobby.progression.tab.engineer"),
                       }),
                       r.jsxs("div", {
-                        className: wr,
-                        children: [b, r.jsxs("span", { className: Pr, children: ["/", m.length] })],
+                        className: Hr,
+                        children: [b, r.jsxs("span", { className: Lr, children: ["/", m.length] })],
                       }),
                     ],
                   }),
                 ],
               }),
-              r.jsx("div", { className: ur }),
-              r.jsx("div", { className: n(hr, cr) }, `${a}-right`),
+              r.jsx("div", { className: Er }),
+              r.jsx("div", { className: n(Mr, Ar) }, `${a}-right`),
             ],
           }),
           r.jsx(
             "div",
             {
-              className: Ar,
+              className: Gr,
               children: l.map((e, s) =>
                 r.jsx(
-                  nr,
+                  fr,
                   {
-                    isComplete: e.status === tr.Done,
+                    isComplete: e.status === vr.Done,
                     isVisited: c[s] ?? !1,
                     isSpecialMission: e.isSpecialMission,
                     maxMissions: x ? (e.maxMissions ?? 1) : 0,
                     completedMissions: (x && e.completedMissions) || 0,
                     rewards: e.bonuses,
                     description: e.description,
-                    icon: C.readOrEmpty(
+                    icon: N.readOrEmpty(
                       `R.images.white_tiger.gui.maps.icons.postbattle.c_64_${e.icon}_silver`,
                     ),
                     taskConditions: e.taskConditions,
@@ -1951,34 +1956,34 @@ const or = {
             r.jsxs(r.Fragment, {
               children: [
                 r.jsxs("div", {
-                  className: Ir,
+                  className: $r,
                   children: [
                     r.jsx("img", {
-                      className: Qr,
-                      src: C.readOrEmpty(
+                      className: Fr,
+                      src: N.readOrEmpty(
                         "R.images.white_tiger.gui.maps.icons.progression.navigation.timer_highlight",
                       ),
                     }),
-                    r.jsx(I, {
-                      className: kr,
-                      params: { countdown: r.jsx(U, { duration: o }) },
-                      text: y.readOrEmpty("white_tiger_lobby.progression.timer"),
+                    r.jsx(k, {
+                      className: zr,
+                      params: { countdown: r.jsx(Y, { duration: o }) },
+                      text: f.readOrEmpty("white_tiger_lobby.progression.timer"),
                     }),
                     r.jsx("img", {
-                      className: n(Qr, Er),
-                      src: C.readOrEmpty(
+                      className: n(Fr, qr),
+                      src: N.readOrEmpty(
                         "R.images.white_tiger.gui.maps.icons.progression.navigation.timer_highlight",
                       ),
                     }),
                   ],
                 }),
-                N &&
+                C &&
                   r.jsx("div", {
-                    className: Mr,
-                    children: r.jsx(I, {
-                      className: Tr,
-                      params: { countdown: r.jsx(U, { duration: i }) },
-                      text: y.readOrEmpty("white_tiger_lobby.progression.specialTimer"),
+                    className: Xr,
+                    children: r.jsx(k, {
+                      className: Kr,
+                      params: { countdown: r.jsx(Y, { duration: i }) },
+                      text: f.readOrEmpty("white_tiger_lobby.progression.specialTimer"),
                     }),
                   }),
               ],
@@ -1987,77 +1992,77 @@ const or = {
       }),
     });
   }),
-  Or = () => {
+  eo = () => {
     const e = a.useMemo(
       () => ({ rootId: R.aliases.white_tiger.shared.ProgressionQuests("resId") }),
       [],
     );
-    return r.jsx(sr, { options: e, children: r.jsx(Vr, {}) });
+    return r.jsx(br, { options: e, children: r.jsx(Zr, {}) });
   },
-  Dr = "ProgressionScreen_heading_a17a7e85",
-  Wr = "ProgressionScreen_subheading_9ae52a7d",
-  Hr = "ProgressionScreen_4a2f1b8a",
-  Lr = "ProgressionScreen_bgDecoration_topRight_e114c511",
-  Gr = "ProgressionScreen_fullscreen_6c50def5",
-  $r = "ProgressionScreen_infoButton_8a2eb0b1",
-  zr = "ProgressionScreen_content_e6375fa1",
-  Fr = s(() => {
-    const { controls: e } = Da(),
+  so = "ProgressionScreen_heading_a17a7e85",
+  ao = "ProgressionScreen_subheading_9ae52a7d",
+  to = "ProgressionScreen_4a2f1b8a",
+  ro = "ProgressionScreen_bgDecoration_topRight_e114c511",
+  oo = "ProgressionScreen_fullscreen_6c50def5",
+  no = "ProgressionScreen_infoButton_8a2eb0b1",
+  io = "ProgressionScreen_content_e6375fa1",
+  lo = s(() => {
+    const { controls: e } = st(),
       s = C();
     return (
-      B(function () {
-        s.push(Js.root);
+      S(function () {
+        s.push(ga.root);
       }),
       a.useEffect(() => {
         e.viewLoaded();
       }, [e]),
       r.jsxs("div", {
-        className: Hr,
+        className: to,
         children: [
-          r.jsx("div", { className: Lr }),
+          r.jsx("div", { className: ro }),
           r.jsxs("div", {
-            className: Gr,
+            className: oo,
             children: [
               r.jsx("div", {
-                className: $r,
-                children: r.jsx(Y, {
+                className: no,
+                children: r.jsx(J, {
                   caption: R.strings.white_tiger_lobby.navigation.information(),
                   type: "info",
                   onClick: e.openInfo,
                 }),
               }),
               r.jsx("div", {
-                className: Dr,
+                className: so,
                 children: R.strings.white_tiger_lobby.progression.title(),
               }),
               r.jsx("div", {
-                className: Wr,
+                className: ao,
                 children: R.strings.white_tiger_lobby.progression.subtitle(),
               }),
-              r.jsxs("div", { className: zr, children: [r.jsx(Or, {}), r.jsx(Ut, {})] }),
+              r.jsxs("div", { className: io, children: [r.jsx(eo, {}), r.jsx(pr, {})] }),
             ],
           }),
         ],
       })
     );
   }),
-  qr = "Page_89be34b7",
-  Xr = s(function () {
+  _o = "Page_89be34b7",
+  co = s(function () {
     return r.jsx("div", {
-      className: qr,
-      children: r.jsxs(J, {
+      className: _o,
+      children: r.jsxs(Z, {
         children: [
-          r.jsx(Z, { path: Js.root, component: Wt, exact: !0 }),
-          r.jsx(Z, { path: Js.progression, component: Fr }),
+          r.jsx(ee, { path: ga.root, component: ar, exact: !0 }),
+          r.jsx(ee, { path: ga.progression, component: lo }),
         ],
       }),
     });
   }),
-  Kr = "App_54c70e4";
-function Ur() {
-  return r.jsx("div", { className: Kr, children: r.jsx(Xr, {}) });
+  po = "App_54c70e4";
+function mo() {
+  return r.jsx("div", { className: po, children: r.jsx(co, {}) });
 }
 u.resolve("aliases");
-te(new ee().add(se).addWithProps(ae, { context: "model.router" }).add(Oa).render(r.jsx(Ur, {})))
-  .then(() => re(document.getElementById("root")))
-  .then(() => oe());
+re(new se().add(ae).addWithProps(te, { context: "model.router" }).add(et).render(r.jsx(mo, {})))
+  .then(() => oe(document.getElementById("root")))
+  .then(() => ne());

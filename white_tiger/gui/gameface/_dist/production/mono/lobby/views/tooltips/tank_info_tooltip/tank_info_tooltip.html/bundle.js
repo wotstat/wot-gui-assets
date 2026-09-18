@@ -1,9 +1,9 @@
 import { s as o, j as s } from "../../../../chunks/vendor.js";
-import { a, ar as r, N as e, E as n } from "../../../../chunks/lib.js";
+import { a, av as e, N as n, E as r } from "../../../../chunks/lib.js";
 import { d as t } from "../../../../chunks/TooltipDecorator2.js";
 /* empty css                                 */ const [c, i] = a()(
     ({ observableModel: o }) => ({ root: o.object() }),
-    r,
+    e,
   ),
   l = "TankInfoTooltipApp_110414c8",
   p = "TankInfoTooltipApp_icon_9fc22c97",
@@ -12,9 +12,9 @@ import { d as t } from "../../../../chunks/TooltipDecorator2.js";
   j = "TankInfoTooltipApp_description_1a5cf366",
   T = o(() => {
     const { model: o } = i(),
-      { parameter: a, icon: r, description: n } = o.root.get(),
-      t = { backgroundImage: `url('${r}')` },
-      c = e.resolve("strings").readOrEmpty(`white_tiger_lobby.ttx.${a}`);
+      { parameter: a, icon: e, description: r } = o.root.get(),
+      t = { backgroundImage: `url('${e}')` },
+      c = n.resolve("strings").readOrEmpty(`white_tiger_lobby.ttx.${a}`);
     return s.jsxs("div", {
       className: l,
       children: [
@@ -23,10 +23,10 @@ import { d as t } from "../../../../chunks/TooltipDecorator2.js";
           className: d,
           children: [
             s.jsx("span", { className: m, children: c }),
-            s.jsx("span", { className: j, children: n }),
+            s.jsx("span", { className: j, children: r }),
           ],
         }),
       ],
     });
   });
-n(s.jsx(c, { children: s.jsx(t, { children: s.jsx(T, {}) }) }));
+r(s.jsx(c, { children: s.jsx(t, { children: s.jsx(T, {}) }) }));

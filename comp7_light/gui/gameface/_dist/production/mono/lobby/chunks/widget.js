@@ -1,26 +1,26 @@
 import { U as e, r as s, j as a, f as t } from "./vendor.js";
 import {
-  a4 as r,
+  Y as r,
   e5 as n,
   e6 as o,
   i,
-  a9 as d,
-  W as c,
+  a1 as d,
+  H as c,
   e7 as l,
-  cl as _,
-  cm as p,
+  ch as _,
+  ci as p,
   e8 as m,
   e9 as f,
   ea as g,
-  cy as u,
+  cu as u,
   eb as b,
-  ec as T,
-  ct as h,
-  l as x,
+  ec as h,
+  cp as T,
+  d3 as x,
   ed as v,
 } from "./lib.js";
 var N = ((e) => ((e.News = "news"), (e.ShopPromo = "shopPromo"), (e.None = "none"), e))(N || {});
-const y = {
+const w = {
     getter: n({
       type: N.News,
       description:
@@ -30,7 +30,7 @@ const y = {
     }),
     controls: () => r(o("onClick", "onClose")),
   },
-  [w, j] = i("TeaserModel")(
+  [y, j] = i("TeaserModel")(
     ({ observableModel: e }) =>
       e.primitives([
         "type",
@@ -82,8 +82,8 @@ const y = {
   W = e(function ({ className: e, classNames: r }) {
     const { model: n, controls: o } = j(),
       i = n.type.get() || N.News,
-      y = n.postCounter.get(),
-      w = n.text.get(),
+      w = n.postCounter.get(),
+      y = n.text.get(),
       W = n.description.get(),
       I = n.finishTime.get(),
       A = n.isVideo.get(),
@@ -111,25 +111,25 @@ const y = {
         e && (clearTimeout(e), (e = void 0));
       };
     }, [I]);
-    const [$, L] = s.useState(null),
-      [O, V] = s.useState(!1);
+    const [$, H] = s.useState(null),
+      [L, O] = s.useState(!1);
     return (
       s.useEffect(() => {
         const e = new Image();
         return (
           (e.src = M),
           (e.onload = () => {
-            (L({ path: M, height: e.height, width: e.width }), V(!0));
+            (H({ path: M, height: e.height, width: e.width }), O(!0));
           }),
           (e.onerror = () => {
-            V(!0);
+            O(!0);
           }),
           () => {
-            ((e.src = ""), L(null));
+            ((e.src = ""), H(null));
           }
         );
       }, [M]),
-      O
+      L
         ? a.jsxs("div", {
             className: t(C.base, C[`base__${i}Type`], A && C.base__video, e),
             onClick: function (e) {
@@ -163,19 +163,19 @@ const y = {
                     className: t(C.title, r?.title),
                     children: [
                       E.readOrEmpty("menu.promo.teaser.title"),
-                      Boolean(y) &&
-                        y > 0 &&
-                        a.jsx(b, { className: t(C.counter, r?.counter), value: y, size: "small" }),
+                      Boolean(w) &&
+                        w > 0 &&
+                        a.jsx(b, { className: t(C.counter, r?.counter), value: w, size: "small" }),
                     ],
                   }),
-                  a.jsx(T, {
+                  a.jsx(h, {
                     type: "close",
                     side: "right",
                     classNames: { base: t(C.closeButton, r?.closeButton) },
                     onClick: S,
                     caption: "",
                   }),
-                  w && a.jsx("div", { className: t(C.text, r?.text), children: w }),
+                  y && a.jsx("div", { className: t(C.text, r?.text), children: y }),
                   (W || P) &&
                     a.jsxs("div", {
                       className: C.bottomContent,
@@ -183,7 +183,7 @@ const y = {
                         W &&
                           a.jsx("div", {
                             className: t(C.description, r?.description),
-                            children: a.jsx(h, {
+                            children: a.jsx(T, {
                               classMix: C.extendedText,
                               text: W,
                               isTruncationAvailable: !0,
@@ -200,10 +200,10 @@ const y = {
     );
   });
 function I({ className: e, classNames: s, ...t }) {
-  return a.jsx(w, {
+  return a.jsx(y, {
     ...t,
     mode: "real",
-    mocks: y,
+    mocks: w,
     children: a.jsx(W, { className: e, classNames: s }),
   });
 }

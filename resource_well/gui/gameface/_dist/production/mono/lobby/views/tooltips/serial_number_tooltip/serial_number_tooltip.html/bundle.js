@@ -1,5 +1,5 @@
 import { j as s } from "../../../../chunks/vendor.js";
-import { r as e, a1 as a } from "../../../../chunks/lib.js";
+import { r as e, a0 as a } from "../../../../chunks/lib.js";
 /* empty css                        */ const i = {
     base: "App_5d8dfdbd",
     images: "App_images_5814a79f",

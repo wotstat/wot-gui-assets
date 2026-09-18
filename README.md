@@ -1,4 +1,4 @@
-# wot-gui-assets • wot-na • 2.4.0.0 #945
+# wot-gui-assets • wot-na • 2.4.0.1 #950
 
 [![wot-eu status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-eu.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-eu)
 [![wot-na status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-na.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-na)
@@ -56,9 +56,9 @@ locales/<LANG>/<RESOURCE_ROOT>/gui/
 
 - Target: `wot-na`
 - Ветка: `wot-na`
-- Версия: `2.4.0.5438`
+- Версия: `2.4.0.5451`
 - Publisher: `wargaming`
-- GameSnapshot: `sha256:417c274a0ae00ec2b0a3387c9b22981468f05cf0109d5516a9781c6c4f65c494`
+- GameSnapshot: `sha256:e9fc28cb580035ca99a91471eedd593a02e7a914c86d9b36b534dc5ad9518495`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
 

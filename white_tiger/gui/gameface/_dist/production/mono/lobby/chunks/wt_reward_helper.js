@@ -1,4 +1,4 @@
-import { ay as e, az as s, I as i, aA as a, aB as n, aC as t, N as o, aD as r } from "./lib.js";
+import { az as e, aA as s, I as i, aB as a, aC as n, aD as t, N as o, aE as r } from "./lib.js";
 const m = ["wtevent_ticket", "lootBox_wt", "wtevent_lootBox", "stamp", "wtevent_badge"],
   u = [1, 2, 3, 7, 14, 30, 90, 180, 360],
   l = [s.CURRENCY, s.NUMBER],
@@ -36,11 +36,11 @@ const m = ["wtevent_ticket", "lootBox_wt", "wtevent_lootBox", "stamp", "wtevent_
       R = f ? a.PremiumUniversal : v,
       y = m.includes(R) ? s.MULTI : n(R),
       $ = g && !l.includes(y) && "label" in o,
-      P = !c.includes(y),
-      h = {
+      E = !c.includes(y),
+      P = {
         name: f ? a.PremiumUniversal : _ ? v || o.item : v,
         image: w(o, r, d),
-        value: P ? b : void 0,
+        value: E ? b : void 0,
         valueType: y,
         tooltipArgs: p
           ? t({ rewardType: v, tooltipId: o.tooltipId }, Number(o.tooltipContentId))
@@ -49,9 +49,9 @@ const m = ["wtevent_ticket", "lootBox_wt", "wtevent_lootBox", "stamp", "wtevent_
       };
     if (_) {
       const e = o;
-      ((h.special = e.overlayType), (h.isCompensation = e.isCompensation));
+      ((P.special = e.overlayType), (P.isCompensation = e.isCompensation));
     }
-    return h;
+    return P;
   },
   _ = (e, s = 0) => ({ appear: s + 400 + 200 * e, enter: 600 }),
   f = (e) => 1300 + 400 * e;

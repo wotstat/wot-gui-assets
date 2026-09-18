@@ -11,10 +11,10 @@ import {
   u as untracked,
   R as React,
   g as ReactDOM,
-  h as cx,
+  h as useSpring,
+  i as animated,
   l as loadDefaultJapaneseParser,
-  i as useSpring,
-  k as animated,
+  k as cx,
   m as cva,
 } from "./vendor.js";
 const resources = createContainer();
@@ -2013,293 +2013,7 @@ reactExports.forwardRef(function (e, t) {
     jsxRuntimeExports.jsx("div", { ...e, ref: assignRefs([t, u]) })
   );
 });
-var MOUSE_BUTTON_CODES = ((e) => (
-  (e[(e.LEFT = 0)] = "LEFT"),
-  (e[(e.WHEEL = 1)] = "WHEEL"),
-  (e[(e.RIGHT = 2)] = "RIGHT"),
-  (e[(e.FOURTH = 3)] = "FOURTH"),
-  (e[(e.FIFTH = 4)] = "FIFTH"),
-  e
-))(MOUSE_BUTTON_CODES || {});
-function playSound$1(e) {
-  engine.call("PlaySound", e).catch((t) => {
-    console.error("[lib/sounds.js] playSound(", e, "): ", t);
-  });
-}
-var ButtonType = ((e) => (
-    (e.main = "main"),
-    (e.primary = "primary"),
-    (e.primaryGreen = "primaryGreen"),
-    (e.primaryRed = "primaryRed"),
-    (e.secondary = "secondary"),
-    (e.ghost = "ghost"),
-    e
-  ))(ButtonType || {}),
-  ButtonSize = ((e) => (
-    (e.extraSmall = "extraSmall"),
-    (e.small = "small"),
-    (e.medium = "medium"),
-    (e.large = "large"),
-    e
-  ))(ButtonSize || {});
-const base$c = "Cbutton_24fc9a0c",
-  base__main = "Cbutton_base__main_2f199578",
-  base__primary = "Cbutton_base__primary_9da8a692",
-  base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
-  base__primaryRed = "Cbutton_base__primaryRed_d184ac",
-  base__secondary = "Cbutton_base__secondary_22ff48c2",
-  base__ghost = "Cbutton_base__ghost_fd3acf91",
-  base__extraSmall = "Cbutton_base__extraSmall_f64ebb9e",
-  base__small = "Cbutton_base__small_a71bc2a9",
-  base__medium = "Cbutton_base__medium_d82a1b14",
-  base__large = "Cbutton_base__large_f02aee17",
-  base__disabled$2 = "Cbutton_base__disabled_96f239bb",
-  back = "Cbutton_back_ffaa618f",
-  texture = "Cbutton_texture_f462b307",
-  state = "Cbutton_state_bf8d0bab",
-  base__focus = "Cbutton_base__focus_180a9717",
-  stateHighlightHover = "Cbutton_stateHighlightHover_7e2b860e",
-  stateHighlightActive = "Cbutton_stateHighlightActive_f3d8fd6a",
-  stateDisabled = "Cbutton_stateDisabled_7b91392f",
-  base__highlightActive = "Cbutton_base__highlightActive_180a9717",
-  content$3 = "Cbutton_content_faaa9067",
-  fadeIn$4 = "Cbutton_fadeIn_180a9717",
-  fadeInThreeQuarters$4 = "Cbutton_fadeInThreeQuarters_180a9717",
-  fadeInHalf$4 = "Cbutton_fadeInHalf_180a9717",
-  fadeOut$4 = "Cbutton_fadeOut_180a9717",
-  fadeInWithScale$4 = "Cbutton_fadeInWithScale_180a9717",
-  slideUp$4 = "Cbutton_slideUp_180a9717",
-  scale$4 = "Cbutton_scale_180a9717",
-  raysAppearance$4 = "Cbutton_raysAppearance_180a9717",
-  rotate$4 = "Cbutton_rotate_180a9717",
-  glowAppearance$4 = "Cbutton_glowAppearance_180a9717",
-  highlightAppearance$4 = "Cbutton_highlightAppearance_180a9717",
-  blink$4 = "Cbutton_blink_180a9717",
-  slideUpIn$4 = "Cbutton_slideUpIn_180a9717",
-  styles$d = {
-    base: base$c,
-    base__main: base__main,
-    base__primary: base__primary,
-    base__primaryGreen: base__primaryGreen,
-    base__primaryRed: base__primaryRed,
-    base__secondary: base__secondary,
-    base__ghost: base__ghost,
-    base__extraSmall: base__extraSmall,
-    base__small: base__small,
-    base__medium: base__medium,
-    base__large: base__large,
-    base__disabled: base__disabled$2,
-    back: back,
-    texture: texture,
-    state: state,
-    base__focus: base__focus,
-    stateHighlightHover: stateHighlightHover,
-    stateHighlightActive: stateHighlightActive,
-    stateDisabled: stateDisabled,
-    base__highlightActive: base__highlightActive,
-    content: content$3,
-    fadeIn: fadeIn$4,
-    fadeInThreeQuarters: fadeInThreeQuarters$4,
-    fadeInHalf: fadeInHalf$4,
-    fadeOut: fadeOut$4,
-    fadeInWithScale: fadeInWithScale$4,
-    slideUp: slideUp$4,
-    scale: scale$4,
-    raysAppearance: raysAppearance$4,
-    rotate: rotate$4,
-    "reverse-rotate": "Cbutton_reverse-rotate_180a9717",
-    glowAppearance: glowAppearance$4,
-    highlightAppearance: highlightAppearance$4,
-    blink: blink$4,
-    slideUpIn: slideUpIn$4,
-  },
-  Button$1 = ({
-    children: e,
-    size: t,
-    disabled: u,
-    mixClass: n,
-    onMouseEnter: r,
-    onMouseMove: s,
-    onMouseDown: a,
-    onMouseUp: o,
-    onMouseLeave: i,
-    onClick: c,
-    isFocused: l = !1,
-    type: d = ButtonType.primary,
-    soundHover: E = "highlight",
-    soundClick: A = "play",
-  }) => {
-    const p = reactExports.useRef(null),
-      [m, F] = reactExports.useState(l),
-      [h, f] = reactExports.useState(!1);
-    return (
-      reactExports.useEffect(() => {
-        function e(e) {
-          m && null !== p.current && !p.current.contains(e.target) && F(!1);
-        }
-        return (
-          document.addEventListener("mousedown", e),
-          () => {
-            document.removeEventListener("mousedown", e);
-          }
-        );
-      }, [m]),
-      reactExports.useEffect(() => {
-        F(l);
-      }, [l]),
-      jsxRuntimeExports.jsxs("div", {
-        ref: p,
-        className: cx(
-          styles$d.base,
-          styles$d[`base__${d}`],
-          u && styles$d.base__disabled,
-          t && styles$d[`base__${t}`],
-          m && styles$d.base__focus,
-          h && styles$d.base__highlightActive,
-          n,
-        ),
-        onMouseEnter: function (e) {
-          u || (null !== E && playSound$1(E), r && r(e));
-        },
-        onMouseMove: function (e) {
-          s && s(e);
-        },
-        onMouseUp: function (e) {
-          u || (o && o(e), f(!1));
-        },
-        onMouseDown: function (e) {
-          if (u) return;
-          const t = e.button === MOUSE_BUTTON_CODES.LEFT;
-          (null !== A && t && playSound$1(A),
-            a && a(e),
-            l && (u || (p.current && (p.current.focus(), F(!0)))),
-            t && f(!0));
-        },
-        onMouseLeave: function (e) {
-          u || (i && i(e), f(!1));
-        },
-        onClick: function (e) {
-          u || (c && c(e));
-        },
-        children: [
-          d !== ButtonType.ghost &&
-            jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-              children: [
-                jsxRuntimeExports.jsx("div", { className: styles$d.back }),
-                jsxRuntimeExports.jsx("span", { className: styles$d.texture }),
-              ],
-            }),
-          jsxRuntimeExports.jsxs("span", {
-            className: cx(styles$d.state, styles$d.state__default),
-            children: [
-              jsxRuntimeExports.jsx("span", { className: styles$d.stateDisabled }),
-              jsxRuntimeExports.jsx("span", { className: styles$d.stateHighlightHover }),
-              jsxRuntimeExports.jsx("span", { className: styles$d.stateHighlightActive }),
-            ],
-          }),
-          jsxRuntimeExports.jsx("span", {
-            className: styles$d.content,
-            lang: R.strings.settings.LANGUAGE_CODE(),
-            children: e,
-          }),
-        ],
-      })
-    );
-  },
-  CButton = Button$1;
-var Alignment = ((e) => ((e[(e.left = 0)] = "left"), (e[(e.right = 1)] = "right"), e))(
-  Alignment || {},
-);
-function format(e, t) {
-  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
-}
-const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
-  addSeparatorToRight = (e, t, u) => {
-    if (u % 2) {
-      const u = e.pop();
-      return [...e, u + t];
-    }
-    return [...e, t];
-  },
-  addSeparatorToLeft = (e, t, u) => {
-    if (0 === u) return [t];
-    if (u % 2) return [...e, " " === t ? " " : t];
-    {
-      const u = e.pop();
-      return [...e, u + t];
-    }
-  },
-  splitAndFormat = (e, t, u = 0) =>
-    e.split(t).reduce(0 === u ? addSeparatorToRight : addSeparatorToLeft, []),
-  splitEuropean = (e, t = 0) => {
-    let u = [];
-    const n = new RegExp(
-        "(?<=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])(\\x2D)(?=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])",
-        "gu",
-      ),
-      r = convertNbsp(e);
-    return (splitAndFormat(r, /( )/, t).forEach((e) => (u = u.concat(splitAndFormat(e, n, 0)))), u);
-  },
-  splitChinese = (() => {
-    const e = new RegExp(
-      [
-        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-      ]
-        .map((e) => e.source)
-        .join("|"),
-      "gum",
-    );
-    return (t) =>
-      t
-        .replace(/&nbsp;/g, " ")
-        .replace(/ /g, " ")
-        .match(e);
-  })(),
-  CHINESE_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw"],
-  splitWords = (e, t = 0) => {
-    const u = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-    if (CHINESE_LANGUAGE_CODES.includes(u)) return splitChinese(e);
-    if ("ja" === u) {
-      return loadDefaultJapaneseParser()
-        .parse(e)
-        .map((e) => convertNbsp(e));
-    }
-    return splitEuropean(e, t);
-  },
-  formatString = (e, t, u) =>
-    e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (u && e in u ? u[e] : splitWords(e, t))),
-  base$b = "Formattext_bb80854d",
-  styles$c = { base: base$b },
-  FormatText = ({
-    binding: e,
-    text: t = "",
-    classMix: u,
-    alignment: n = Alignment.left,
-    formatWithBrackets: r,
-  }) => {
-    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
-    const s = r && e ? format(t, e) : t;
-    return jsxRuntimeExports.jsx(reactExports.Fragment, {
-      children: s
-        .split("\n")
-        .map((t, r) =>
-          jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: cx(styles$c.base, u),
-              children: formatString(t, n, e).map((e, t) =>
-                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
-              ),
-            },
-            `${t}-${r}`,
-          ),
-        ),
-    });
-  },
-  Context$1 = reactExports.createContext(void 0);
+const Context$1 = reactExports.createContext(void 0);
 function useHorizontalScroll() {
   const e = reactExports.useContext(Context$1);
   if (!e)
@@ -2464,46 +2178,46 @@ const defaultSettings = {
   border$1 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
   icon$1 = "Thumb_icon_dca8bf26",
-  base$a = "Thumb_6ff3e706",
+  base$c = "Thumb_6ff3e706",
   base__vertical = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
   base__active$1 = "Thumb_base__active_830942bb",
-  fadeIn$3 = "Thumb_fadeIn_830942bb",
-  fadeInThreeQuarters$3 = "Thumb_fadeInThreeQuarters_830942bb",
-  fadeInHalf$3 = "Thumb_fadeInHalf_830942bb",
-  fadeOut$3 = "Thumb_fadeOut_830942bb",
-  fadeInWithScale$3 = "Thumb_fadeInWithScale_830942bb",
-  slideUp$3 = "Thumb_slideUp_830942bb",
-  scale$3 = "Thumb_scale_830942bb",
-  raysAppearance$3 = "Thumb_raysAppearance_830942bb",
-  rotate$3 = "Thumb_rotate_830942bb",
-  glowAppearance$3 = "Thumb_glowAppearance_830942bb",
-  highlightAppearance$3 = "Thumb_highlightAppearance_830942bb",
-  blink$3 = "Thumb_blink_830942bb",
-  slideUpIn$3 = "Thumb_slideUpIn_830942bb",
-  styles$b = {
+  fadeIn$4 = "Thumb_fadeIn_830942bb",
+  fadeInThreeQuarters$4 = "Thumb_fadeInThreeQuarters_830942bb",
+  fadeInHalf$4 = "Thumb_fadeInHalf_830942bb",
+  fadeOut$4 = "Thumb_fadeOut_830942bb",
+  fadeInWithScale$4 = "Thumb_fadeInWithScale_830942bb",
+  slideUp$4 = "Thumb_slideUp_830942bb",
+  scale$4 = "Thumb_scale_830942bb",
+  raysAppearance$4 = "Thumb_raysAppearance_830942bb",
+  rotate$4 = "Thumb_rotate_830942bb",
+  glowAppearance$4 = "Thumb_glowAppearance_830942bb",
+  highlightAppearance$4 = "Thumb_highlightAppearance_830942bb",
+  blink$4 = "Thumb_blink_830942bb",
+  slideUpIn$4 = "Thumb_slideUpIn_830942bb",
+  styles$d = {
     background: background$1,
     border: border$1,
     innerBorder: innerBorder,
     icon: icon$1,
-    base: base$a,
+    base: base$c,
     base__vertical: base__vertical,
     base__horizontal: base__horizontal,
     base__active: base__active$1,
-    fadeIn: fadeIn$3,
-    fadeInThreeQuarters: fadeInThreeQuarters$3,
-    fadeInHalf: fadeInHalf$3,
-    fadeOut: fadeOut$3,
-    fadeInWithScale: fadeInWithScale$3,
-    slideUp: slideUp$3,
-    scale: scale$3,
-    raysAppearance: raysAppearance$3,
-    rotate: rotate$3,
+    fadeIn: fadeIn$4,
+    fadeInThreeQuarters: fadeInThreeQuarters$4,
+    fadeInHalf: fadeInHalf$4,
+    fadeOut: fadeOut$4,
+    fadeInWithScale: fadeInWithScale$4,
+    slideUp: slideUp$4,
+    scale: scale$4,
+    raysAppearance: raysAppearance$4,
+    rotate: rotate$4,
     "reverse-rotate": "Thumb_reverse-rotate_830942bb",
-    glowAppearance: glowAppearance$3,
-    highlightAppearance: highlightAppearance$3,
-    blink: blink$3,
-    slideUpIn: slideUpIn$3,
+    glowAppearance: glowAppearance$4,
+    highlightAppearance: highlightAppearance$4,
+    blink: blink$4,
+    slideUpIn: slideUpIn$4,
   },
   BOUNCING_OFFSET = 2,
   MIN_THUMB_SIZE = 13,
@@ -2543,14 +2257,14 @@ function Thumb(e) {
       ? a.start({
           to: e.styles.opened,
           onRest() {
-            t.current?.classList.add(styles$b.base__active);
+            t.current?.classList.add(styles$d.base__active);
           },
         })
       : a.start({
           to: e.styles.closed,
           delay: 500,
           onRest() {
-            t.current?.classList.remove(styles$b.base__active);
+            t.current?.classList.remove(styles$d.base__active);
           },
         });
   }, [u, e.dragging, e.styles.closed, e.styles.opened, a]);
@@ -2607,15 +2321,15 @@ function Thumb(e) {
     }, [l, i, c]),
     jsxRuntimeExports.jsxs(animated.div, {
       ref: assignRefs([t, e.thumbRef]),
-      className: clsx(styles$b.base, styles$b[`base__${e.direction}`], e.className),
+      className: clsx(styles$d.base, styles$d[`base__${e.direction}`], e.className),
       style: s,
       onMouseEnter: () => n(!0),
       onMouseLeave: () => n(!1),
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$b.background }),
-        jsxRuntimeExports.jsx("div", { className: styles$b.border }),
-        jsxRuntimeExports.jsx("div", { className: styles$b.innerBorder }),
-        jsxRuntimeExports.jsx("div", { className: styles$b.icon }),
+        jsxRuntimeExports.jsx("div", { className: styles$d.background }),
+        jsxRuntimeExports.jsx("div", { className: styles$d.border }),
+        jsxRuntimeExports.jsx("div", { className: styles$d.innerBorder }),
+        jsxRuntimeExports.jsx("div", { className: styles$d.icon }),
       ],
     })
   );
@@ -2776,16 +2490,16 @@ function useBarHandlers(e, t, u, n, r, s, a) {
   );
 }
 const rail$1 = "HorizontalBar_rail_37858d8f",
-  base$9 = "HorizontalBar_4df27ac3",
+  base$b = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
   button__right = "HorizontalBar_button__right_e8f0aa2d",
   button__left = "HorizontalBar_button__left_da330e13",
   button$1 = "HorizontalBar_button_cbabd91",
-  styles$a = {
+  styles$c = {
     rail: rail$1,
-    base: base$9,
+    base: base$b,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
@@ -2837,7 +2551,7 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
       scrollOrientations.horizontal,
     );
   return jsxRuntimeExports.jsxs("div", {
-    className: clsx(styles$a.base, e.base),
+    className: clsx(styles$c.base, e.base),
     ref: u,
     onWheel: d.handleMouseWheel,
     onMouseDown: f,
@@ -2845,15 +2559,15 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
     children: [
       jsxRuntimeExports.jsx("div", {
         ref: n,
-        className: clsx(styles$a.button, styles$a.button__left, e.leftButton),
+        className: clsx(styles$c.button, styles$c.button__left, e.leftButton),
       }),
       jsxRuntimeExports.jsxs("div", {
         ref: s,
-        className: clsx(styles$a.track, e.track),
+        className: clsx(styles$c.track, e.track),
         children: [
           jsxRuntimeExports.jsx("div", {
             ref: o,
-            className: clsx(styles$a.rail, styles$a.rail__left, e.leftRail),
+            className: clsx(styles$c.rail, styles$c.rail__left, e.leftRail),
           }),
           jsxRuntimeExports.jsx(Thumb, {
             dragging: c,
@@ -2871,13 +2585,13 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
           }),
           jsxRuntimeExports.jsx("div", {
             ref: i,
-            className: clsx(styles$a.rail, styles$a.rail__right, e.rightRail),
+            className: clsx(styles$c.rail, styles$c.rail__right, e.rightRail),
           }),
         ],
       }),
       jsxRuntimeExports.jsx("div", {
         ref: r,
-        className: clsx(styles$a.button, styles$a.button__right, e.rightButton),
+        className: clsx(styles$c.button, styles$c.button__right, e.rightButton),
       }),
     ],
   });
@@ -2899,16 +2613,16 @@ const DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$8 = "VerticalBar_7187fa00",
+  base$a = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
   button__bottom = "VerticalBar_button__bottom_6880f123",
   button__top = "VerticalBar_button__top_b8383775",
   button = "VerticalBar_button_7b0e4aca",
-  styles$9 = {
+  styles$b = {
     rail: rail,
-    base: base$8,
+    base: base$a,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
@@ -2967,7 +2681,7 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
       scrollOrientations.vertical,
     );
   return jsxRuntimeExports.jsxs("div", {
-    className: clsx(styles$9.base, e.base),
+    className: clsx(styles$b.base, e.base),
     ref: u,
     onWheel: d.handleMouseWheel,
     onMouseDown: f,
@@ -2975,15 +2689,15 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
     children: [
       jsxRuntimeExports.jsx("div", {
         ref: n,
-        className: clsx(styles$9.button, styles$9.button__top, e.topButton),
+        className: clsx(styles$b.button, styles$b.button__top, e.topButton),
       }),
       jsxRuntimeExports.jsxs("div", {
         ref: s,
-        className: clsx(styles$9.track, e.track),
+        className: clsx(styles$b.track, e.track),
         children: [
           jsxRuntimeExports.jsx("div", {
             ref: o,
-            className: clsx(styles$9.rail, styles$9.rail__top, e.topRail),
+            className: clsx(styles$b.rail, styles$b.rail__top, e.topRail),
           }),
           jsxRuntimeExports.jsx(Thumb, {
             dragging: c,
@@ -3001,18 +2715,110 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
           }),
           jsxRuntimeExports.jsx("div", {
             ref: i,
-            className: clsx(styles$9.rail, styles$9.rail__bottom, e.bottomRail),
+            className: clsx(styles$b.rail, styles$b.rail__bottom, e.bottomRail),
           }),
         ],
       }),
       jsxRuntimeExports.jsx("div", {
         ref: r,
-        className: clsx(styles$9.button, styles$9.button__bottom, e.bottomButton),
+        className: clsx(styles$b.button, styles$b.button__bottom, e.bottomButton),
       }),
     ],
   });
 });
-const blackReal = "Formattextwithcolortags_blackReal_55a1402e",
+var Alignment = ((e) => ((e[(e.left = 0)] = "left"), (e[(e.right = 1)] = "right"), e))(
+  Alignment || {},
+);
+function format(e, t) {
+  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
+}
+const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
+  addSeparatorToRight = (e, t, u) => {
+    if (u % 2) {
+      const u = e.pop();
+      return [...e, u + t];
+    }
+    return [...e, t];
+  },
+  addSeparatorToLeft = (e, t, u) => {
+    if (0 === u) return [t];
+    if (u % 2) return [...e, " " === t ? " " : t];
+    {
+      const u = e.pop();
+      return [...e, u + t];
+    }
+  },
+  splitAndFormat = (e, t, u = 0) =>
+    e.split(t).reduce(0 === u ? addSeparatorToRight : addSeparatorToLeft, []),
+  splitEuropean = (e, t = 0) => {
+    let u = [];
+    const n = new RegExp(
+        "(?<=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])(\\x2D)(?=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])",
+        "gu",
+      ),
+      r = convertNbsp(e);
+    return (splitAndFormat(r, /( )/, t).forEach((e) => (u = u.concat(splitAndFormat(e, n, 0)))), u);
+  },
+  splitChinese = (() => {
+    const e = new RegExp(
+      [
+        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+      ]
+        .map((e) => e.source)
+        .join("|"),
+      "gum",
+    );
+    return (t) =>
+      t
+        .replace(/&nbsp;/g, " ")
+        .replace(/ /g, " ")
+        .match(e);
+  })(),
+  CHINESE_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw"],
+  splitWords = (e, t = 0) => {
+    const u = R.strings.settings.LANGUAGE_CODE().toLowerCase();
+    if (CHINESE_LANGUAGE_CODES.includes(u)) return splitChinese(e);
+    if ("ja" === u) {
+      return loadDefaultJapaneseParser()
+        .parse(e)
+        .map((e) => convertNbsp(e));
+    }
+    return splitEuropean(e, t);
+  },
+  formatString = (e, t, u) =>
+    e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (u && e in u ? u[e] : splitWords(e, t))),
+  base$9 = "Formattext_bb80854d",
+  styles$a = { base: base$9 },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: u,
+    alignment: n = Alignment.left,
+    formatWithBrackets: r,
+  }) => {
+    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
+    const s = r && e ? format(t, e) : t;
+    return jsxRuntimeExports.jsx(reactExports.Fragment, {
+      children: s
+        .split("\n")
+        .map((t, r) =>
+          jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: cx(styles$a.base, u),
+              children: formatString(t, n, e).map((e, t) =>
+                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
+              ),
+            },
+            `${t}-${r}`,
+          ),
+        ),
+    });
+  },
+  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
   whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
   white = "Formattextwithcolortags_white_e509d98",
   whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
@@ -3036,20 +2842,20 @@ const blackReal = "Formattextwithcolortags_blackReal_55a1402e",
   bond = "Formattextwithcolortags_bond_b29091",
   prom = "Formattextwithcolortags_prom_85aada4f",
   parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
-  fadeIn$2 = "Formattextwithcolortags_fadeIn_7219dca0",
-  fadeInThreeQuarters$2 = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
-  fadeInHalf$2 = "Formattextwithcolortags_fadeInHalf_7219dca0",
-  fadeOut$2 = "Formattextwithcolortags_fadeOut_7219dca0",
-  fadeInWithScale$2 = "Formattextwithcolortags_fadeInWithScale_7219dca0",
-  slideUp$2 = "Formattextwithcolortags_slideUp_7219dca0",
-  scale$2 = "Formattextwithcolortags_scale_7219dca0",
-  raysAppearance$2 = "Formattextwithcolortags_raysAppearance_7219dca0",
-  rotate$2 = "Formattextwithcolortags_rotate_7219dca0",
-  glowAppearance$2 = "Formattextwithcolortags_glowAppearance_7219dca0",
-  highlightAppearance$2 = "Formattextwithcolortags_highlightAppearance_7219dca0",
-  blink$2 = "Formattextwithcolortags_blink_7219dca0",
-  slideUpIn$2 = "Formattextwithcolortags_slideUpIn_7219dca0",
-  styles$8 = {
+  fadeIn$3 = "Formattextwithcolortags_fadeIn_7219dca0",
+  fadeInThreeQuarters$3 = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
+  fadeInHalf$3 = "Formattextwithcolortags_fadeInHalf_7219dca0",
+  fadeOut$3 = "Formattextwithcolortags_fadeOut_7219dca0",
+  fadeInWithScale$3 = "Formattextwithcolortags_fadeInWithScale_7219dca0",
+  slideUp$3 = "Formattextwithcolortags_slideUp_7219dca0",
+  scale$3 = "Formattextwithcolortags_scale_7219dca0",
+  raysAppearance$3 = "Formattextwithcolortags_raysAppearance_7219dca0",
+  rotate$3 = "Formattextwithcolortags_rotate_7219dca0",
+  glowAppearance$3 = "Formattextwithcolortags_glowAppearance_7219dca0",
+  highlightAppearance$3 = "Formattextwithcolortags_highlightAppearance_7219dca0",
+  blink$3 = "Formattextwithcolortags_blink_7219dca0",
+  slideUpIn$3 = "Formattextwithcolortags_slideUpIn_7219dca0",
+  styles$9 = {
     blackReal: blackReal,
     whiteReal: whiteReal,
     white: white,
@@ -3074,20 +2880,20 @@ const blackReal = "Formattextwithcolortags_blackReal_55a1402e",
     bond: bond,
     prom: prom,
     parNoWidth: parNoWidth,
-    fadeIn: fadeIn$2,
-    fadeInThreeQuarters: fadeInThreeQuarters$2,
-    fadeInHalf: fadeInHalf$2,
-    fadeOut: fadeOut$2,
-    fadeInWithScale: fadeInWithScale$2,
-    slideUp: slideUp$2,
-    scale: scale$2,
-    raysAppearance: raysAppearance$2,
-    rotate: rotate$2,
+    fadeIn: fadeIn$3,
+    fadeInThreeQuarters: fadeInThreeQuarters$3,
+    fadeInHalf: fadeInHalf$3,
+    fadeOut: fadeOut$3,
+    fadeInWithScale: fadeInWithScale$3,
+    slideUp: slideUp$3,
+    scale: scale$3,
+    raysAppearance: raysAppearance$3,
+    rotate: rotate$3,
     "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
-    glowAppearance: glowAppearance$2,
-    highlightAppearance: highlightAppearance$2,
-    blink: blink$2,
-    slideUpIn: slideUpIn$2,
+    glowAppearance: glowAppearance$3,
+    highlightAppearance: highlightAppearance$3,
+    blink: blink$3,
+    slideUpIn: slideUpIn$3,
   },
   TAGGED_PHRASE_REGEXP =
     /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
@@ -3108,9 +2914,9 @@ const blackReal = "Formattextwithcolortags_blackReal_55a1402e",
         const e = i[0],
           s = e + o++ + e;
         ((a = a.replace(u, `%(${s})`)),
-          (r[s] = styles$8[e]
+          (r[s] = styles$9[e]
             ? jsxRuntimeExports.jsx("span", {
-                className: styles$8[e],
+                className: styles$9[e],
                 children: jsxRuntimeExports.jsx(FormatText, { text: l, binding: t }),
               })
             : jsxRuntimeExports.jsx("span", {
@@ -3158,11 +2964,11 @@ function cleanProps(e, t) {
   for (const n of e) delete u[n];
   return u;
 }
-const base$7 = "HeadlessButton_df8536fc",
-  styles$7 = { base: base$7 },
+const base$8 = "HeadlessButton_df8536fc",
+  styles$8 = { base: base$8 },
   HeadlessButtonBase = defineStyledComponent("Button", {
     element: "button",
-    className: styles$7.base,
+    className: styles$8.base,
   }),
   HeadlessButton = reactExports.forwardRef(function (
     {
@@ -3192,55 +2998,55 @@ const base$7 = "HeadlessButton_df8536fc",
   background = "Button_background_98ebcfb8",
   border = "Button_border_7e6390d7",
   overlay = "Button_overlay_174632c8",
-  base$6 = "Button_70871946",
+  base$7 = "Button_70871946",
   base__enabled = "Button_base__enabled_96634d40",
-  base__disabled$1 = "Button_base__disabled_b713e04a",
-  content$2 = "Button_content_298de63f",
+  base__disabled$2 = "Button_base__disabled_b713e04a",
+  content$3 = "Button_content_298de63f",
   content__fontAligned = "Button_content__fontAligned_66115778",
-  fadeIn$1 = "Button_fadeIn_6bcdc8c",
-  fadeInThreeQuarters$1 = "Button_fadeInThreeQuarters_6bcdc8c",
-  fadeInHalf$1 = "Button_fadeInHalf_6bcdc8c",
-  fadeOut$1 = "Button_fadeOut_6bcdc8c",
-  fadeInWithScale$1 = "Button_fadeInWithScale_6bcdc8c",
-  slideUp$1 = "Button_slideUp_6bcdc8c",
-  scale$1 = "Button_scale_6bcdc8c",
-  raysAppearance$1 = "Button_raysAppearance_6bcdc8c",
-  rotate$1 = "Button_rotate_6bcdc8c",
-  glowAppearance$1 = "Button_glowAppearance_6bcdc8c",
-  highlightAppearance$1 = "Button_highlightAppearance_6bcdc8c",
-  blink$1 = "Button_blink_6bcdc8c",
-  slideUpIn$1 = "Button_slideUpIn_6bcdc8c",
-  styles$6 = {
+  fadeIn$2 = "Button_fadeIn_6bcdc8c",
+  fadeInThreeQuarters$2 = "Button_fadeInThreeQuarters_6bcdc8c",
+  fadeInHalf$2 = "Button_fadeInHalf_6bcdc8c",
+  fadeOut$2 = "Button_fadeOut_6bcdc8c",
+  fadeInWithScale$2 = "Button_fadeInWithScale_6bcdc8c",
+  slideUp$2 = "Button_slideUp_6bcdc8c",
+  scale$2 = "Button_scale_6bcdc8c",
+  raysAppearance$2 = "Button_raysAppearance_6bcdc8c",
+  rotate$2 = "Button_rotate_6bcdc8c",
+  glowAppearance$2 = "Button_glowAppearance_6bcdc8c",
+  highlightAppearance$2 = "Button_highlightAppearance_6bcdc8c",
+  blink$2 = "Button_blink_6bcdc8c",
+  slideUpIn$2 = "Button_slideUpIn_6bcdc8c",
+  styles$7 = {
     background: background,
     border: border,
     overlay: overlay,
-    base: base$6,
+    base: base$7,
     base__enabled: base__enabled,
-    base__disabled: base__disabled$1,
+    base__disabled: base__disabled$2,
     "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
     "base__size-small": "Button_base__size-small_fc7095a4",
     "base__size-medium": "Button_base__size-medium_814d61f0",
     "base__size-large": "Button_base__size-large_83da852e",
     "base__theme-primary": "Button_base__theme-primary_8ba55469",
     "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
-    content: content$2,
+    content: content$3,
     content__fontAligned: content__fontAligned,
-    fadeIn: fadeIn$1,
-    fadeInThreeQuarters: fadeInThreeQuarters$1,
-    fadeInHalf: fadeInHalf$1,
-    fadeOut: fadeOut$1,
-    fadeInWithScale: fadeInWithScale$1,
-    slideUp: slideUp$1,
-    scale: scale$1,
-    raysAppearance: raysAppearance$1,
-    rotate: rotate$1,
+    fadeIn: fadeIn$2,
+    fadeInThreeQuarters: fadeInThreeQuarters$2,
+    fadeInHalf: fadeInHalf$2,
+    fadeOut: fadeOut$2,
+    fadeInWithScale: fadeInWithScale$2,
+    slideUp: slideUp$2,
+    scale: scale$2,
+    raysAppearance: raysAppearance$2,
+    rotate: rotate$2,
     "reverse-rotate": "Button_reverse-rotate_6bcdc8c",
-    glowAppearance: glowAppearance$1,
-    highlightAppearance: highlightAppearance$1,
-    blink: blink$1,
-    slideUpIn: slideUpIn$1,
+    glowAppearance: glowAppearance$2,
+    highlightAppearance: highlightAppearance$2,
+    blink: blink$2,
+    slideUpIn: slideUpIn$2,
   },
-  Button = reactExports.forwardRef(function (
+  Button$1 = reactExports.forwardRef(function (
     {
       children: e,
       size: t = sizes.large,
@@ -3260,10 +3066,10 @@ const base$7 = "HeadlessButton_df8536fc",
       silent: r,
       disabled: n,
       className: clsx(
-        styles$6.base,
-        styles$6[`base__size-${t}`],
-        styles$6[`base__theme-${u}`],
-        n ? styles$6.base__disabled : styles$6.base__enabled,
+        styles$7.base,
+        styles$7[`base__size-${t}`],
+        styles$7[`base__theme-${u}`],
+        n ? styles$7.base__disabled : styles$7.base__enabled,
         o,
         a?.base,
       ),
@@ -3271,17 +3077,17 @@ const base$7 = "HeadlessButton_df8536fc",
         n || i.onClick?.(e);
       },
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$6.background, a?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$6.border, a?.border) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$6.overlay, a?.overlay) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$7.background, a?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$7.border, a?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$7.overlay, a?.overlay) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$6.content, s && styles$6.content__fontAligned, a?.content),
+          className: clsx(styles$7.content, s && styles$7.content__fontAligned, a?.content),
           children: e,
         }),
       ],
     });
   });
-((Button.themes = themes), (Button.sizes = sizes));
+((Button$1.themes = themes), (Button$1.sizes = sizes));
 const clamp = (e, t, u) => (u < e ? e : u > t ? t : u),
   createLayoutReadyInEffect = (e) => {
     let t,
@@ -3393,20 +3199,20 @@ const mouse = initMouseEvents(),
       { value: "Module" },
     ),
   );
-function playSound(e) {
+function playSound$1(e) {
   engine.call("PlaySound", e).catch((t) => {
     console.error(`playSound('${e}'): `, t);
   });
 }
 const client = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, events: events$1, playSound: playSound },
+      { __proto__: null, events: events$1, playSound: playSound$1 },
       Symbol.toStringTag,
       { value: "Module" },
     ),
   ),
   sounds = { highlight: "highlight", click: "play", yes1: "yes1" },
-  plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound(sounds[t])), e), {}),
+  plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound$1(sounds[t])), e), {}),
   ROMAN = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"],
   ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
@@ -3817,8 +3623,8 @@ const VideoForwarded = reactExports.forwardRef(function (
     );
   }),
   Video = reactExports.memo(VideoForwarded),
-  base$5 = "TruncateText_dcb41d92",
-  styles$5 = { base: base$5 },
+  base$6 = "TruncateText_dcb41d92",
+  styles$6 = { base: base$6 },
   TruncatedText = reactExports.forwardRef(function (
     { text: e, tooltipParams: t, className: u, ...n },
     r,
@@ -3840,7 +3646,7 @@ const VideoForwarded = reactExports.forwardRef(function (
       jsxRuntimeExports.jsx("div", {
         ...n,
         ref: assignRefs([r, a]),
-        className: clsx(styles$5.base, u),
+        className: clsx(styles$6.base, u),
         ...(o ? s : {}),
         children: e,
       })
@@ -4351,35 +4157,35 @@ function useCardsWrapperContextOptional() {
   return reactExports.useContext(CardsWrapperContext);
 }
 const CardsWrapperContextProvider = CardsWrapperContext.Provider,
-  base$4 = "Content_8eaaf71a",
-  content$1 = "Content_ab8563af",
+  base$5 = "Content_8eaaf71a",
+  content$2 = "Content_ab8563af",
   disabledOverlay = "Content_disabledOverlay_af87c441",
   base__multiple = "Content_base__multiple_da09528a",
-  base__disabled = "Content_base__disabled_da09528a",
+  base__disabled$1 = "Content_base__disabled_da09528a",
   base__hover$1 = "Content_base__hover_da09528a",
   base__selectedHover$1 = "Content_base__selectedHover_da09528a",
   base__selected$1 = "Content_base__selected_da09528a",
   multipleCorner = "Content_multipleCorner_151c26ee",
-  styles$4 = {
-    base: base$4,
-    content: content$1,
+  styles$5 = {
+    base: base$5,
+    content: content$2,
     disabledOverlay: disabledOverlay,
     base__multiple: base__multiple,
-    base__disabled: base__disabled,
+    base__disabled: base__disabled$1,
     base__hover: base__hover$1,
     base__selectedHover: base__selectedHover$1,
     base__selected: base__selected$1,
     multipleCorner: multipleCorner,
   },
   MULTIPLE_CORNER_SIZE = 20,
-  Base$3 = defineStyledComponent("Content", styles$4.base, {
+  Base$3 = defineStyledComponent("Content", styles$5.base, {
     variants: {
-      multiple: { true: styles$4.base__multiple },
-      selected: { true: styles$4.base__selected },
-      hover: { true: styles$4.base__hover },
-      disabled: { true: styles$4.base__disabled },
+      multiple: { true: styles$5.base__multiple },
+      selected: { true: styles$5.base__selected },
+      hover: { true: styles$5.base__hover },
+      disabled: { true: styles$5.base__disabled },
     },
-    compoundVariants: [{ hover: !0, selected: !0, className: styles$4.base__selectedHover }],
+    compoundVariants: [{ hover: !0, selected: !0, className: styles$5.base__selectedHover }],
   }),
   MainContainer = ({ children: e, classNames: t }) => {
     const u = React.useRef(null),
@@ -4403,12 +4209,12 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
         hover: n.hover,
         disabled: n.disabled,
         children: [
-          n.multiple && jsxRuntimeExports.jsx("div", { className: styles$4.multipleCorner }),
+          n.multiple && jsxRuntimeExports.jsx("div", { className: styles$5.multipleCorner }),
           jsxRuntimeExports.jsxs("div", {
             ref: u,
-            className: clsx(styles$4.content, t?.mainContainerContent),
+            className: clsx(styles$5.content, t?.mainContainerContent),
             children: [
-              n.disabled && jsxRuntimeExports.jsx("div", { className: styles$4.disabledOverlay }),
+              n.disabled && jsxRuntimeExports.jsx("div", { className: styles$5.disabledOverlay }),
               e,
             ],
           }),
@@ -4416,7 +4222,7 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
       })
     );
   },
-  base$3 = "Status_68bd9bc6",
+  base$4 = "Status_68bd9bc6",
   icon = "Status_icon_cef4536",
   base__done = "Status_base__done_35b9a31c",
   base__doneSmall = "Status_base__doneSmall_35b9a31c",
@@ -4428,21 +4234,21 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
   glowInner = "Status_glowInner_f8eb475a",
   blur = "Status_blur_5675b854",
   glowBig = "Status_glowBig_5954041c",
-  fadeIn = "Status_fadeIn_35b9a31c",
-  fadeInThreeQuarters = "Status_fadeInThreeQuarters_35b9a31c",
-  fadeInHalf = "Status_fadeInHalf_35b9a31c",
-  fadeOut = "Status_fadeOut_35b9a31c",
-  fadeInWithScale = "Status_fadeInWithScale_35b9a31c",
-  slideUp = "Status_slideUp_35b9a31c",
-  scale = "Status_scale_35b9a31c",
-  raysAppearance = "Status_raysAppearance_35b9a31c",
-  rotate = "Status_rotate_35b9a31c",
-  glowAppearance = "Status_glowAppearance_35b9a31c",
-  highlightAppearance = "Status_highlightAppearance_35b9a31c",
-  blink = "Status_blink_35b9a31c",
-  slideUpIn = "Status_slideUpIn_35b9a31c",
-  styles$3 = {
-    base: base$3,
+  fadeIn$1 = "Status_fadeIn_35b9a31c",
+  fadeInThreeQuarters$1 = "Status_fadeInThreeQuarters_35b9a31c",
+  fadeInHalf$1 = "Status_fadeInHalf_35b9a31c",
+  fadeOut$1 = "Status_fadeOut_35b9a31c",
+  fadeInWithScale$1 = "Status_fadeInWithScale_35b9a31c",
+  slideUp$1 = "Status_slideUp_35b9a31c",
+  scale$1 = "Status_scale_35b9a31c",
+  raysAppearance$1 = "Status_raysAppearance_35b9a31c",
+  rotate$1 = "Status_rotate_35b9a31c",
+  glowAppearance$1 = "Status_glowAppearance_35b9a31c",
+  highlightAppearance$1 = "Status_highlightAppearance_35b9a31c",
+  blink$1 = "Status_blink_35b9a31c",
+  slideUpIn$1 = "Status_slideUpIn_35b9a31c",
+  styles$4 = {
+    base: base$4,
     icon: icon,
     base__done: base__done,
     base__doneSmall: base__doneSmall,
@@ -4454,28 +4260,28 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
     glowInner: glowInner,
     blur: blur,
     glowBig: glowBig,
-    fadeIn: fadeIn,
-    fadeInThreeQuarters: fadeInThreeQuarters,
-    fadeInHalf: fadeInHalf,
-    fadeOut: fadeOut,
-    fadeInWithScale: fadeInWithScale,
-    slideUp: slideUp,
-    scale: scale,
-    raysAppearance: raysAppearance,
-    rotate: rotate,
+    fadeIn: fadeIn$1,
+    fadeInThreeQuarters: fadeInThreeQuarters$1,
+    fadeInHalf: fadeInHalf$1,
+    fadeOut: fadeOut$1,
+    fadeInWithScale: fadeInWithScale$1,
+    slideUp: slideUp$1,
+    scale: scale$1,
+    raysAppearance: raysAppearance$1,
+    rotate: rotate$1,
     "reverse-rotate": "Status_reverse-rotate_35b9a31c",
-    glowAppearance: glowAppearance,
-    highlightAppearance: highlightAppearance,
-    blink: blink,
-    slideUpIn: slideUpIn,
+    glowAppearance: glowAppearance$1,
+    highlightAppearance: highlightAppearance$1,
+    blink: blink$1,
+    slideUpIn: slideUpIn$1,
   },
   strings = resources.resolve("strings");
-defineStyledComponent("Status", styles$3.base, {
+defineStyledComponent("Status", styles$4.base, {
   variants: {
     status: {
-      done: styles$3.base__done,
-      alert: styles$3.base__alert,
-      locked: styles$3.base__locked,
+      done: styles$4.base__done,
+      alert: styles$4.base__alert,
+      locked: styles$4.base__locked,
     },
   },
 });
@@ -4498,48 +4304,48 @@ const SMALL_SIZE_BREAKPOINT = 100,
         : {},
       i = useSimpleTooltip(o);
     return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$3.base, styles$3[s], t?.wrapper),
+      className: clsx(styles$4.base, styles$4[s], t?.wrapper),
       ref: u,
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$3.glowBig }),
-        jsxRuntimeExports.jsx("div", { className: styles$3.line }),
-        jsxRuntimeExports.jsx("div", { className: styles$3.shadow }),
-        jsxRuntimeExports.jsx("div", { className: styles$3.glowInner }),
+        jsxRuntimeExports.jsx("div", { className: styles$4.glowBig }),
+        jsxRuntimeExports.jsx("div", { className: styles$4.line }),
+        jsxRuntimeExports.jsx("div", { className: styles$4.shadow }),
+        jsxRuntimeExports.jsx("div", { className: styles$4.glowInner }),
         jsxRuntimeExports.jsx("svg", {
           width: "42",
           height: "42",
           viewBox: "0 0 42 42",
-          className: styles$3.blur,
+          className: styles$4.blur,
           children: jsxRuntimeExports.jsx("g", {
             children: jsxRuntimeExports.jsx("circle", { cx: "21", cy: "21", r: "3" }),
           }),
         }),
         jsxRuntimeExports.jsx("div", {
           ...(tooltipEnabled(o) && i),
-          className: clsx(styles$3.icon, t?.icon),
+          className: clsx(styles$4.icon, t?.icon),
         }),
       ],
     });
   },
-  base$2 = "Card_f0963ece",
+  base$3 = "Card_f0963ece",
   base__wrapped = "Card_base__wrapped_c6eb8737",
   base__disableMouse = "Card_base__disableMouse_5cd80216",
   base__hover = "Card_base__hover_f4c22d1c",
   base__selected = "Card_base__selected_f4c22d1c",
   card$1 = "Card_f7ddaa4a",
-  content = "Card_content_b6f6a22a",
+  content$1 = "Card_content_b6f6a22a",
   base__active = "Card_base__active_f4c22d1c",
   base__activeHover = "Card_base__activeHover_f4c22d1c",
   base__selectedHover = "Card_base__selectedHover_f4c22d1c",
   centerBorder = "Card_centerBorder_8a0f28ae",
   cardStyles = {
-    base: base$2,
+    base: base$3,
     base__wrapped: base__wrapped,
     base__disableMouse: base__disableMouse,
     base__hover: base__hover,
     base__selected: base__selected,
     card: card$1,
-    content: content,
+    content: content$1,
     base__active: base__active,
     base__activeHover: base__activeHover,
     base__selectedHover: base__selectedHover,
@@ -4729,7 +4535,7 @@ class LinesOptimizer {
 }
 const lineInner = "LinesBuilder_lineInner_a52dc157",
   lineOuter = "LinesBuilder_lineOuter_c57514b2",
-  styles$2 = { lineInner: lineInner, lineOuter: lineOuter };
+  styles$3 = { lineInner: lineInner, lineOuter: lineOuter };
 function buildLines(e, t, u) {
   const n = [],
     r = new LinesOptimizer(t);
@@ -4741,10 +4547,10 @@ function buildLines(e, t, u) {
         `Card rect has zero size by one side: ${a.width}x${a.height} (${t.getAttribute("data-test-id")}) `,
       );
     (u !== borderTypes.none && n.push({ x: a.x, y: a.y, width: a.width, height: a.height }),
-      r.addLine(a.x, a.y, a.width, LINE_THICKNESS, styles$2.lineInner),
-      r.addLine(a.x, a.y + a.height, a.width, LINE_THICKNESS, styles$2.lineInner),
-      r.addLine(a.x, a.y, LINE_THICKNESS, a.height, styles$2.lineInner),
-      r.addLine(a.x + a.width, a.y, LINE_THICKNESS, a.height + OFFSET, styles$2.lineInner));
+      r.addLine(a.x, a.y, a.width, LINE_THICKNESS, styles$3.lineInner),
+      r.addLine(a.x, a.y + a.height, a.width, LINE_THICKNESS, styles$3.lineInner),
+      r.addLine(a.x, a.y, LINE_THICKNESS, a.height, styles$3.lineInner),
+      r.addLine(a.x + a.width, a.y, LINE_THICKNESS, a.height + OFFSET, styles$3.lineInner));
   }
   if (u !== borderTypes.none) {
     const e = buildContour(n);
@@ -4759,7 +4565,7 @@ function buildLines(e, t, u) {
           Math.min(n.y, s.y),
           u ? Math.abs(s.x - n.x) : LINE_THICKNESS,
           u ? LINE_THICKNESS : Math.abs(s.y - n.y) + OFFSET,
-          styles$2.lineOuter,
+          styles$3.lineOuter,
         );
       }
       t = e;
@@ -4794,17 +4600,17 @@ const Lines = reactExports.memo(
       );
     },
   ),
-  base$1 = "CardsWrapper_3b6cc4f6",
+  base$2 = "CardsWrapper_3b6cc4f6",
   card = "CardsWrapper_card_c7fc9ee7",
   centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
   outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
-  styles$1 = {
-    base: base$1,
+  styles$2 = {
+    base: base$2,
     card: card,
     centerBorderCommon: centerBorderCommon,
     outerBorderCommon: outerBorderCommon,
   },
-  Base$1 = defineStyledComponent("CardsWrapper", styles$1.base),
+  Base$1 = defineStyledComponent("CardsWrapper", styles$2.base),
   CardsWrapper = reactExports.forwardRef(function (
     {
       children: e,
@@ -4864,12 +4670,12 @@ const Lines = reactExports.memo(
   });
 reactExports.forwardRef(({ className: e, classNames: t, ...u }, n) =>
   jsxRuntimeExports.jsxs("div", {
-    className: clsx(styles$1.base, t?.wrapper),
+    className: clsx(styles$2.base, t?.wrapper),
     children: [
-      jsxRuntimeExports.jsx("div", { className: styles$1.centerBorderCommon }),
-      jsxRuntimeExports.jsx("div", { className: styles$1.outerBorderCommon }),
+      jsxRuntimeExports.jsx("div", { className: styles$2.centerBorderCommon }),
+      jsxRuntimeExports.jsx("div", { className: styles$2.outerBorderCommon }),
       jsxRuntimeExports.jsx(Card, {
-        className: clsx(styles$1.card, e, t?.card),
+        className: clsx(styles$2.card, e, t?.card),
         classNames: t,
         ...u,
         ref: n,
@@ -4877,7 +4683,201 @@ reactExports.forwardRef(({ className: e, classNames: t, ...u }, n) =>
     ],
   }),
 );
-const base = "Tooltip_6d997cee",
+var MOUSE_BUTTON_CODES = ((e) => (
+  (e[(e.LEFT = 0)] = "LEFT"),
+  (e[(e.WHEEL = 1)] = "WHEEL"),
+  (e[(e.RIGHT = 2)] = "RIGHT"),
+  (e[(e.FOURTH = 3)] = "FOURTH"),
+  (e[(e.FIFTH = 4)] = "FIFTH"),
+  e
+))(MOUSE_BUTTON_CODES || {});
+function playSound(e) {
+  engine.call("PlaySound", e).catch((t) => {
+    console.error("[lib/sounds.js] playSound(", e, "): ", t);
+  });
+}
+var ButtonType = ((e) => (
+    (e.main = "main"),
+    (e.primary = "primary"),
+    (e.primaryGreen = "primaryGreen"),
+    (e.primaryRed = "primaryRed"),
+    (e.secondary = "secondary"),
+    (e.ghost = "ghost"),
+    e
+  ))(ButtonType || {}),
+  ButtonSize = ((e) => (
+    (e.extraSmall = "extraSmall"),
+    (e.small = "small"),
+    (e.medium = "medium"),
+    (e.large = "large"),
+    e
+  ))(ButtonSize || {});
+const base$1 = "Cbutton_24fc9a0c",
+  base__main = "Cbutton_base__main_2f199578",
+  base__primary = "Cbutton_base__primary_9da8a692",
+  base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
+  base__primaryRed = "Cbutton_base__primaryRed_d184ac",
+  base__secondary = "Cbutton_base__secondary_22ff48c2",
+  base__ghost = "Cbutton_base__ghost_fd3acf91",
+  base__extraSmall = "Cbutton_base__extraSmall_f64ebb9e",
+  base__small = "Cbutton_base__small_a71bc2a9",
+  base__medium = "Cbutton_base__medium_d82a1b14",
+  base__large = "Cbutton_base__large_f02aee17",
+  base__disabled = "Cbutton_base__disabled_96f239bb",
+  back = "Cbutton_back_ffaa618f",
+  texture = "Cbutton_texture_f462b307",
+  state = "Cbutton_state_bf8d0bab",
+  base__focus = "Cbutton_base__focus_180a9717",
+  stateHighlightHover = "Cbutton_stateHighlightHover_7e2b860e",
+  stateHighlightActive = "Cbutton_stateHighlightActive_f3d8fd6a",
+  stateDisabled = "Cbutton_stateDisabled_7b91392f",
+  base__highlightActive = "Cbutton_base__highlightActive_180a9717",
+  content = "Cbutton_content_faaa9067",
+  fadeIn = "Cbutton_fadeIn_180a9717",
+  fadeInThreeQuarters = "Cbutton_fadeInThreeQuarters_180a9717",
+  fadeInHalf = "Cbutton_fadeInHalf_180a9717",
+  fadeOut = "Cbutton_fadeOut_180a9717",
+  fadeInWithScale = "Cbutton_fadeInWithScale_180a9717",
+  slideUp = "Cbutton_slideUp_180a9717",
+  scale = "Cbutton_scale_180a9717",
+  raysAppearance = "Cbutton_raysAppearance_180a9717",
+  rotate = "Cbutton_rotate_180a9717",
+  glowAppearance = "Cbutton_glowAppearance_180a9717",
+  highlightAppearance = "Cbutton_highlightAppearance_180a9717",
+  blink = "Cbutton_blink_180a9717",
+  slideUpIn = "Cbutton_slideUpIn_180a9717",
+  styles$1 = {
+    base: base$1,
+    base__main: base__main,
+    base__primary: base__primary,
+    base__primaryGreen: base__primaryGreen,
+    base__primaryRed: base__primaryRed,
+    base__secondary: base__secondary,
+    base__ghost: base__ghost,
+    base__extraSmall: base__extraSmall,
+    base__small: base__small,
+    base__medium: base__medium,
+    base__large: base__large,
+    base__disabled: base__disabled,
+    back: back,
+    texture: texture,
+    state: state,
+    base__focus: base__focus,
+    stateHighlightHover: stateHighlightHover,
+    stateHighlightActive: stateHighlightActive,
+    stateDisabled: stateDisabled,
+    base__highlightActive: base__highlightActive,
+    content: content,
+    fadeIn: fadeIn,
+    fadeInThreeQuarters: fadeInThreeQuarters,
+    fadeInHalf: fadeInHalf,
+    fadeOut: fadeOut,
+    fadeInWithScale: fadeInWithScale,
+    slideUp: slideUp,
+    scale: scale,
+    raysAppearance: raysAppearance,
+    rotate: rotate,
+    "reverse-rotate": "Cbutton_reverse-rotate_180a9717",
+    glowAppearance: glowAppearance,
+    highlightAppearance: highlightAppearance,
+    blink: blink,
+    slideUpIn: slideUpIn,
+  },
+  Button = ({
+    children: e,
+    size: t,
+    disabled: u,
+    mixClass: n,
+    onMouseEnter: r,
+    onMouseMove: s,
+    onMouseDown: a,
+    onMouseUp: o,
+    onMouseLeave: i,
+    onClick: c,
+    isFocused: l = !1,
+    type: d = ButtonType.primary,
+    soundHover: E = "highlight",
+    soundClick: A = "play",
+  }) => {
+    const p = reactExports.useRef(null),
+      [m, F] = reactExports.useState(l),
+      [h, f] = reactExports.useState(!1);
+    return (
+      reactExports.useEffect(() => {
+        function e(e) {
+          m && null !== p.current && !p.current.contains(e.target) && F(!1);
+        }
+        return (
+          document.addEventListener("mousedown", e),
+          () => {
+            document.removeEventListener("mousedown", e);
+          }
+        );
+      }, [m]),
+      reactExports.useEffect(() => {
+        F(l);
+      }, [l]),
+      jsxRuntimeExports.jsxs("div", {
+        ref: p,
+        className: cx(
+          styles$1.base,
+          styles$1[`base__${d}`],
+          u && styles$1.base__disabled,
+          t && styles$1[`base__${t}`],
+          m && styles$1.base__focus,
+          h && styles$1.base__highlightActive,
+          n,
+        ),
+        onMouseEnter: function (e) {
+          u || (null !== E && playSound(E), r && r(e));
+        },
+        onMouseMove: function (e) {
+          s && s(e);
+        },
+        onMouseUp: function (e) {
+          u || (o && o(e), f(!1));
+        },
+        onMouseDown: function (e) {
+          if (u) return;
+          const t = e.button === MOUSE_BUTTON_CODES.LEFT;
+          (null !== A && t && playSound(A),
+            a && a(e),
+            l && (u || (p.current && (p.current.focus(), F(!0)))),
+            t && f(!0));
+        },
+        onMouseLeave: function (e) {
+          u || (i && i(e), f(!1));
+        },
+        onClick: function (e) {
+          u || (c && c(e));
+        },
+        children: [
+          d !== ButtonType.ghost &&
+            jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+              children: [
+                jsxRuntimeExports.jsx("div", { className: styles$1.back }),
+                jsxRuntimeExports.jsx("span", { className: styles$1.texture }),
+              ],
+            }),
+          jsxRuntimeExports.jsxs("span", {
+            className: cx(styles$1.state, styles$1.state__default),
+            children: [
+              jsxRuntimeExports.jsx("span", { className: styles$1.stateDisabled }),
+              jsxRuntimeExports.jsx("span", { className: styles$1.stateHighlightHover }),
+              jsxRuntimeExports.jsx("span", { className: styles$1.stateHighlightActive }),
+            ],
+          }),
+          jsxRuntimeExports.jsx("span", {
+            className: styles$1.content,
+            lang: R.strings.settings.LANGUAGE_CODE(),
+            children: e,
+          }),
+        ],
+      })
+    );
+  },
+  CButton = Button,
+  base = "Tooltip_6d997cee",
   decorator = "Tooltip_decorator_b3486d4e",
   styles = { base: base, decorator: decorator },
   Base = defineStyledComponent("Base", styles.base),
@@ -4908,41 +4908,41 @@ const base = "Tooltip_6d997cee",
   });
 Tooltip.Decorator = Decorator;
 export {
-  useInterval as A,
-  ButtonSize as B,
-  CButton as C,
-  setRTPC as D,
+  CButton as A,
+  Button$1 as B,
+  Card as C,
+  ButtonSize as D,
   Tooltip as E,
-  FormatText as F,
+  FormatTextWithColorTags as F,
   noop$1 as G,
   MediaSize as M,
   TruncatedText as T,
   UIProvider as U,
   Video as V,
-  useSimpleTooltip as a,
-  useMount$1 as b,
-  findIndex as c,
-  reduce as d,
-  forEach as e,
+  findIndex as a,
+  reduce as b,
+  forEach as c,
+  useCallbackOnEsc as d,
+  useKeydownListener as e,
   find as f,
   get as g,
-  useCallbackOnEsc as h,
+  FormatText as h,
   initializeModelWithContext as i,
-  useKeydownListener as j,
-  FormatTextWithColorTags as k,
-  Button as l,
+  Tooltip$1 as j,
+  keyCodes as k,
+  useCardsWrapperContext as l,
   map as m,
-  keyCodes as n,
-  normalizeResource as o,
+  normalizeResource as n,
+  createLayoutReadyInEffect$1 as o,
   play as p,
-  Tooltip$1 as q,
+  CardsWrapper as q,
   runView as r,
-  Card as s,
+  Base$4 as s,
   toArray as t,
   useMedia as u,
-  useCardsWrapperContext as v,
-  createLayoutReadyInEffect$1 as w,
-  CardsWrapper as x,
-  Base$4 as y,
-  createTargetOverrides as z,
+  createTargetOverrides as v,
+  useInterval as w,
+  setRTPC as x,
+  useSimpleTooltip as y,
+  useMount$1 as z,
 };

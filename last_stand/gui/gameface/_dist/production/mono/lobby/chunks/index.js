@@ -12,13 +12,13 @@ import {
 import {
   da as n,
   db as d,
-  ba as m,
-  i as u,
+  bb as u,
+  i as m,
   o as p,
   m as g,
   q as h,
   dc as x,
-  am as f,
+  ao as f,
 } from "./lib.js";
 const S = (a, r) => {
     const t = a.width / a.height,
@@ -28,13 +28,13 @@ const S = (a, r) => {
       [a.height, a.width, r, o, t, s],
     );
   },
-  y = "VideoBackground_videoBackground_1a24cf5e",
-  b = "VideoBackground_video_102f3645",
+  b = "VideoBackground_videoBackground_1a24cf5e",
+  y = "VideoBackground_video_102f3645",
   $ = { width: 1920, height: 1080 };
 function j({ className: t, src: s, paused: o, rotated: i = !1, onPlay: c }) {
   const l = S($, 1),
     n = e.useRef(null),
-    u = () => {
+    m = () => {
       c && c();
     };
   return (
@@ -45,21 +45,21 @@ function j({ className: t, src: s, paused: o, rotated: i = !1, onPlay: c }) {
     d.isLow()
       ? null
       : a.jsx("div", {
-          className: r(y, t),
+          className: r(b, t),
           style: { transform: `scale(${l}) ${i ? "rotate(180deg)" : ""}` },
-          children: a.jsx(m, {
+          children: a.jsx(u, {
             ref: n,
-            onPlay: u,
-            onTimeUpdate: u,
+            onPlay: m,
+            onTimeUpdate: m,
             src: s,
-            className: b,
+            className: y,
             loop: !0,
             autoplay: !0,
           }),
         })
   );
 }
-const [N, _] = u()(
+const [N, _] = m()(
     ({ observableModel: e }) => {
       const a = { root: e.object(), parallax: e.array("parallax") },
         r = t(
@@ -179,10 +179,10 @@ const [N, _] = u()(
   H = s(function ({ refParent: e, dioramaLoaded: r }) {
     const { model: t } = _(),
       { xTilt: s, xTiltRange: i, yTilt: c, yTiltRange: l, xSlide: n, ySlide: d } = t.parallax.get(),
-      [m] = x({ xTilt: s, xTiltRange: i, yTilt: c, yTiltRange: l }, e);
+      [u] = x({ xTilt: s, xTiltRange: i, yTilt: c, yTiltRange: l }, e);
     return a.jsx(I, {
       children: a.jsx(o.div, {
-        style: { x: m.x.to((e) => e * n), y: m.y.to((e) => e * d), rotateX: m.xR, rotateY: m.yR },
+        style: { x: u.x.to((e) => e * n), y: u.y.to((e) => e * d), rotateX: u.xR, rotateY: u.yR },
         className: A,
         children: a.jsx("div", { className: T, children: a.jsx(L, { dioramaLoaded: r }) }),
       }),
@@ -204,27 +204,27 @@ const E = "ParallaxApp_a1dd5662",
   V = s(function ({ refParent: r, backgroundPath: t, slideIndex: s, onLoadCompleted: i }) {
     const { model: l, controls: n } = _(),
       d = S(k, 1),
-      [m, u] = c(() => ({ from: { opacity: 1 } })),
+      [u, m] = c(() => ({ from: { opacity: 1 } })),
       p = e.useCallback(() => {
-        u.start({
+        m.start({
           from: { opacity: 1 },
           to: { opacity: 0 },
           config: { duration: 100 },
           onStart: i,
         });
-      }, [u, i]);
+      }, [m, i]);
     return (
       e.useEffect(() => {
         (n.onSlide(s),
-          u.set({ opacity: 1 }),
-          u.start({
+          m.set({ opacity: 1 }),
+          m.start({
             from: { opacity: 1 },
             to: { opacity: 0 },
             delay: 1e3,
             config: { duration: 100 },
             onRest: i,
           }));
-      }, [u, n, i, s]),
+      }, [m, n, i, s]),
       a.jsxs("div", {
         className: E,
         children: [
@@ -235,7 +235,7 @@ const E = "ParallaxApp_a1dd5662",
               ? a.jsx(H, { dioramaLoaded: p, refParent: r })
               : a.jsx(B, { className: q, backgroundPath: t, onLoaded: p }),
           }),
-          a.jsx(o.div, { className: W, style: m }),
+          a.jsx(o.div, { className: W, style: u }),
         ],
       })
     );

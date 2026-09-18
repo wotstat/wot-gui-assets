@@ -2307,20 +2307,6 @@ html[lang="th"] .Input_placeholder__largeSize_6dbe7ba2 {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-.Tooltipdecorator_ea72f443 {
-  display: flex;
-  position: absolute;
-}
-
-.Tooltipdecorator_base__theme-default_a254689f .Tooltipdecorator_decorator_3580e101 {
-  padding: 4rem 6rem 8rem;
-  border-image-source: url("R.atlases.components.tooltip_background");
-  border-image-slice: 24 fill;
-  border-image-width: 24rem;
-  position: relative;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
 .Tooltip_6d997cee {
   display: flex;
   position: absolute;
@@ -2329,6 +2315,20 @@ html[lang="th"] .Input_placeholder__largeSize_6dbe7ba2 {
 .Tooltip_decorator_b3486d4e {
   padding: 4rem 6rem 8rem;
   border-image-source: url(R.atlases.components.tooltip_background) repeat center/contain;
+  border-image-slice: 24 fill;
+  border-image-width: 24rem;
+  position: relative;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+.Tooltipdecorator_ea72f443 {
+  display: flex;
+  position: absolute;
+}
+
+.Tooltipdecorator_base__theme-default_a254689f .Tooltipdecorator_decorator_3580e101 {
+  padding: 4rem 6rem 8rem;
+  border-image-source: url("R.atlases.components.tooltip_background");
   border-image-slice: 24 fill;
   border-image-width: 24rem;
   position: relative;

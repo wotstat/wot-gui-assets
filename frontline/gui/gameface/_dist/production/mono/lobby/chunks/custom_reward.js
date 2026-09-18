@@ -1,9 +1,9 @@
 import { j as a, f as e } from "./vendor.js";
-import { d6 as s, d7 as i, d8 as t, d9 as o, d5 as l } from "./lib.js";
+import { cI as s, d7 as i, d8 as t, d9 as o, cG as l } from "./lib.js";
 var r = ((a) => ((a.Static = "static"), (a.Claimable = "claimable"), a))(r || {});
 const m = "CustomReward_197314c4",
-  d = "CustomReward_base__disable_51f6e5f1",
-  c = "CustomReward_animWrapper_f3d190a6",
+  c = "CustomReward_base__disable_51f6e5f1",
+  d = "CustomReward_animWrapper_f3d190a6",
   n = "CustomReward_glow_11133e2",
   p = "CustomReward_glowReverse_48fff15c";
 function u({
@@ -20,11 +20,11 @@ function u({
 }) {
   const N = u === r.Claimable;
   return a.jsxs("div", {
-    className: e(m, w && d, g),
+    className: e(m, w && c, g),
     children: [
       N &&
         a.jsxs("div", {
-          className: c,
+          className: d,
           children: [a.jsx("div", { className: n }), a.jsx("div", { className: p })],
         }),
       a.jsx(s, {

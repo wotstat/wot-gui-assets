@@ -1,8 +1,8 @@
 import { m as s, j as e } from "../../../../chunks/vendor.js";
-import { i as t, n as r, ac as a, F as o, T as n, j as c } from "../../../../chunks/lib.js";
+import { i as t, n as a, a3 as r, F as o, a0 as n, j as c } from "../../../../chunks/lib.js";
 import { B as i } from "../../../../chunks/background.js";
 import { g as m } from "../../../../chunks/resources.js";
-const [p, d] = t()(({ observableModel: s }) => ({ root: s.object() }), r),
+const [p, d] = t()(({ observableModel: s }) => ({ root: s.object() }), a),
   l = "App_1fbf2405",
   j = "App_background_c63be452",
   x = "App_header_58edbea5",
@@ -10,10 +10,10 @@ const [p, d] = t()(({ observableModel: s }) => ({ root: s.object() }), r),
   u = "App_timerInfo_9d97cea5",
   f = s(function () {
     const { model: s } = d(),
-      { timeLeft: t, bundleType: r } = s.root.get(),
-      { getExtImage: c, getText: p } = m(r);
-    return e.jsx(a, {
-      children: e.jsx(a.Decorator, {
+      { timeLeft: t, bundleType: a } = s.root.get(),
+      { getExtImage: c, getText: p } = m(a);
+    return e.jsx(r, {
+      children: e.jsx(r.Decorator, {
         children: e.jsxs("div", {
           className: l,
           children: [
@@ -31,4 +31,4 @@ const [p, d] = t()(({ observableModel: s }) => ({ root: s.object() }), r),
       }),
     });
   });
-c(e.jsx(p, { children: e.jsx(f, {}) })).then(r);
+c(e.jsx(p, { children: e.jsx(f, {}) })).then(a);
