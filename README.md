@@ -1,4 +1,4 @@
-# wot-gui-assets • mt-public-test • 1.45.0.0 #2271
+# wot-gui-assets • mt-public-test • 1.45.0.0 #2273
 
 [![wot-eu status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-eu.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-eu)
 [![wot-na status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-na.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-na)
@@ -56,9 +56,9 @@ locales/<LANG>/<RESOURCE_ROOT>/gui/
 
 - Target: `mt-public-test`
 - Ветка: `mt-public-test`
-- Версия: `1.45.0.8114`
+- Версия: `1.45.0.8208`
 - Publisher: `lesta`
-- GameSnapshot: `sha256:8569eeee33389dc77d295c8abbf81a434edcdeb971ce47edb35393a9ece814b5`
+- GameSnapshot: `sha256:76704c0e9942b16f6f727273a7ff6fa9227114d21364e6793aa152e05c873c6d`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
 
