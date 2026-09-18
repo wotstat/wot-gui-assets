@@ -1,5 +1,5 @@
 import { r as e, j as t, f as a } from "./vendor.js";
-import { i as l, bY as C } from "./lib.js";
+import { i as l, bZ as C } from "./lib.js";
 const n = -1,
   i = "disabled",
   r = "paused",

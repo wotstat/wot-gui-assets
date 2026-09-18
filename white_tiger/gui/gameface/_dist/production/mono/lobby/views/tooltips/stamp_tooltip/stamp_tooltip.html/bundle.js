@@ -1,5 +1,5 @@
 import { t as e, j as i } from "../../../../chunks/vendor.js";
-import { N as t, a as s, ar as p, E as a } from "../../../../chunks/lib.js";
+import { N as t, a as s, av as p, E as a } from "../../../../chunks/lib.js";
 import { d as o } from "../../../../chunks/TooltipDecorator2.js";
 /* empty css                                 */ const r = "StampTooltipApp_bb28b309",
   l = "StampTooltipApp_content_f77536b0",

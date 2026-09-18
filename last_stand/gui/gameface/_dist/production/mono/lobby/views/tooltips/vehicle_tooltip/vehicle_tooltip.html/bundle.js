@@ -1,45 +1,45 @@
 import { j as e, f as s, Q as t, D as a } from "../../../../chunks/vendor.js";
 import {
   i,
-  X as r,
-  co as l,
-  a9 as c,
-  Y as n,
+  Z as r,
+  cp as l,
+  ab as c,
+  _ as n,
   dA as o,
-  cW as m,
+  cX as m,
   dB as d,
   dC as u,
-  at as p,
+  av as p,
   d as h,
-  aN as _,
+  aP as _,
   m as x,
-  bj as v,
-  ao as g,
-  bO as j,
+  bk as v,
+  aq as g,
+  bP as j,
   w as f,
-  aP as y,
+  aR as y,
   dD as N,
-  a6 as b,
+  a8 as b,
   dE as T,
   n as C,
-  c2 as E,
-  bE as R,
-  _ as S,
+  c3 as R,
+  bF as S,
+  a0 as E,
   dF as w,
-  dG as O,
-  k,
-  cF as P,
+  dG as k,
+  k as O,
+  cG as P,
   h as L,
-  bb as I,
-  dH as $,
-  dk as G,
+  bc as G,
+  dH as I,
+  dk as $,
   D as A,
   G as M,
-  cx as D,
+  cy as D,
   U as H,
   r as V,
 } from "../../../../chunks/lib.js";
-import { e as B, g as z, T as W, M as F, h as X } from "../../../../chunks/tankman_role.js";
+import { e as B, g as z, T as F, M as W, h as X } from "../../../../chunks/tankman_role.js";
 const [Q, U] = i("VehicleTooltipModelProvider")(({ observableModel: e }) => {
     const s = {
         ...e.primitives(["status", "stateLevel", "bpEntityValid"]),
@@ -81,17 +81,17 @@ const [Q, U] = i("VehicleTooltipModelProvider")(({ observableModel: e }) => {
       },
     };
   }, c),
-  K = "INACTIVE",
-  Y = "ACTIVE",
-  Z = "CANCELLED",
-  q = "critical",
-  J = "info",
+  Z = "INACTIVE",
+  q = "ACTIVE",
+  K = "CANCELLED",
+  J = "critical",
+  Y = "info",
   ee = { 1: 3, 2: 2, 3: 1, 4: 4 },
   se = (e) => {
     switch (e) {
-      case q:
-        return "#f31201";
       case J:
+        return "#f31201";
+      case Y:
         return "#7ab300";
       default:
         return "#ee7000";
@@ -151,7 +151,7 @@ const _e = "Crew_2339425e",
           {
             className: xe,
             children: [
-              e.jsx(W, { role: v(s.roles, 0), className: ve }),
+              e.jsx(F, { role: v(s.roles, 0), className: ve }),
               s.roles.length > 1 &&
                 e.jsx("div", { className: ge, children: r.readOrEmpty("crew_perks.sign.plus") }),
             ],
@@ -196,9 +196,9 @@ const Te = t(function () {
           : null;
   }),
   Ce = "Role_c276c189",
-  Ee = "Role_vehicleRoleIcon_a0c92760",
-  Re = "Role_property_8f6d69d9",
-  Se = t(function ({ className: t }) {
+  Re = "Role_vehicleRoleIcon_a0c92760",
+  Se = "Role_property_8f6d69d9",
+  Ee = t(function ({ className: t }) {
     const { model: a } = U(),
       { type: i, role: r } = a.statistics.get(),
       l = h.resolve("strings");
@@ -206,23 +206,23 @@ const Te = t(function () {
       className: s(Ce, t),
       title: re,
       children: [
-        e.jsx(y, { classNames: { icon: Ee }, roleKey: b(r), size: N.x16x16 }),
+        e.jsx(y, { classNames: { icon: Re }, roleKey: b(r), size: N.x16x16 }),
         te(i) &&
           e.jsx("div", {
-            className: Re,
+            className: Se,
             children: l.readOrEmpty(`menu.roleExp.roleGroupName.role_${ae[i]}_${b(r)}`),
           }),
       ],
     });
   }),
   we = h.resolve("strings"),
-  Oe = t(function ({ className: s }) {
+  ke = t(function ({ className: s }) {
     return e.jsx(he, {
       className: s,
       children: we.readOrEmpty("tooltips.vehicle.telecomRentalsRenting"),
     });
   }),
-  ke = {
+  Oe = {
     leftColumn: "TradeIn_leftColumn_e8d75ad6",
     tradeInIcon: "TradeIn_tradeInIcon_2cde5b72",
     text: "TradeIn_text_1e5d2ead",
@@ -230,19 +230,19 @@ const Te = t(function () {
   Pe = h.resolve("strings"),
   Le = t(function ({ className: t }) {
     return e.jsxs(he, {
-      className: s(ke.base, t),
+      className: s(Oe.base, t),
       children: [
         e.jsx("div", {
-          className: ke.leftColumn,
-          children: e.jsx("div", { className: ke.tradeInIcon }),
+          className: Oe.leftColumn,
+          children: e.jsx("div", { className: Oe.tradeInIcon }),
         }),
-        e.jsx("div", { className: ke.text, children: Pe.readOrEmpty("tooltips.vehicle.trade") }),
+        e.jsx("div", { className: Oe.text, children: Pe.readOrEmpty("tooltips.vehicle.trade") }),
       ],
     });
   }),
-  Ie = "WotPlus_wotPlus_c07472c2",
-  $e = "WotPlus_wotPlus__timer_fb00f649",
-  Ge = t(function ({ className: t }) {
+  Ge = "WotPlus_wotPlus_c07472c2",
+  Ie = "WotPlus_wotPlus__timer_fb00f649",
+  $e = t(function ({ className: t }) {
     const { model: a } = U(),
       { wotPlusExpiryTime: i, wotPlusState: r } = a.earnings.get(),
       l = h.resolve("strings");
@@ -251,25 +251,25 @@ const Te = t(function () {
         e.jsx(he, {
           className: t,
           children: e.jsx("div", {
-            className: Ie,
+            className: Ge,
             children: l.readOrEmpty("tooltips.vehicle.wotPlusRenting.title"),
           }),
         }),
-        r !== Y &&
+        r !== q &&
           e.jsx(he, {
             className: t,
             children: (() => {
               switch (r) {
-                case Z:
+                case K:
                   return e.jsx(_, {
                     upgradeLegacy: !0,
-                    className: s(Ie, $e),
+                    className: s(Ge, Ie),
                     path: "tooltips.vehicle.wotPlusRenting.remainingTime",
                     params: { time: e.jsx(T, { datetime: i, format: "ShortDateTime" }) },
                   });
-                case K:
+                case Z:
                   return e.jsx("div", {
-                    className: s(Ie, $e),
+                    className: s(Ge, Ie),
                     children: l.readOrEmpty("tooltips.vehicle.wotPlusRenting.inactive"),
                   });
                 default:
@@ -301,28 +301,28 @@ const Te = t(function () {
           children: e.jsx(_, {
             className: He,
             path: `tooltips.tankCaruselTooltip.vehicleType.tier.${o ? "elite" : "normal"}.${C(n)}`,
-            params: { tier: e.jsx(E, { value: m, className: De }) },
+            params: { tier: e.jsx(R, { value: m, className: De }) },
           }),
         }),
-        d !== R && d !== S.spg && e.jsx(Se, { className: Ve }),
+        d !== S && d !== E.spg && e.jsx(Ee, { className: Ve }),
         e.jsx(je, { className: Ve }),
-        a && e.jsx(Ge, { className: Ve }),
-        i && e.jsx(Oe, { className: Ve }),
+        a && e.jsx($e, { className: Ve }),
+        i && e.jsx(ke, { className: Ve }),
         r && e.jsx(Le, {}),
         e.jsx(Te, {}),
       ],
     });
   }),
-  We = "EliteSystem_leftColumn_6aa7810f",
-  Fe = "EliteSystem_c476a5a0",
+  Fe = "EliteSystem_leftColumn_6aa7810f",
+  We = "EliteSystem_c476a5a0",
   Xe = "EliteSystem_eliteSystem_5a135969",
   Qe = "EliteSystem_eliteSystem__prestige_2b06b89c",
   Ue = "EliteSystem_values_c91f1a15",
-  Ke = "EliteSystem_currency_4591b107",
-  Ye = "EliteSystem_icon_505ae9fd",
-  Ze = "EliteSystem_slash_f65daa35",
-  qe = "EliteSystem_xp_4e0b1db9",
-  Je = "EliteSystem_progressBarBorder_45636892",
+  Ze = "EliteSystem_currency_4591b107",
+  qe = "EliteSystem_icon_505ae9fd",
+  Ke = "EliteSystem_slash_f65daa35",
+  Je = "EliteSystem_xp_4e0b1db9",
+  Ye = "EliteSystem_progressBarBorder_45636892",
   es = t(function ({ className: t }) {
     const a = h.resolve("strings"),
       { model: i } = U(),
@@ -333,13 +333,13 @@ const Te = t(function () {
         prestigeXp: n,
         prestigeXpNextLevel: o,
       } = i.serviceRecords.get(),
-      m = c === $.prestige;
+      m = c === I.prestige;
     return e.jsxs(he, {
-      className: s(Fe, t),
+      className: s(We, t),
       children: [
         e.jsx("div", {
-          className: We,
-          children: e.jsx(w, { level: r, grade: l, type: c, size: O.xs }),
+          className: Fe,
+          children: e.jsx(w, { level: r, grade: l, type: c, size: k.xs }),
         }),
         e.jsxs("div", {
           className: s(Xe, m && Qe),
@@ -354,24 +354,24 @@ const Te = t(function () {
                   ),
                 }),
                 !m &&
-                  e.jsxs(k, {
+                  e.jsxs(O, {
                     reverse: !0,
                     size: L.small,
                     type: P.tankXP,
-                    classNames: { base: Ke, icon: Ye },
+                    classNames: { base: Ze, icon: qe },
                     children: [
                       e.jsx("div", { children: j.formatNumber("integral", o) }),
                       e.jsx("div", {
-                        className: Ze,
+                        className: Ke,
                         children: a.readOrEmpty("common.common.slash"),
                       }),
-                      e.jsx("div", { className: qe, children: j.formatNumber("integral", n) }),
+                      e.jsx("div", { className: Je, children: j.formatNumber("integral", n) }),
                     ],
                   }),
               ],
             }),
             !m &&
-              e.jsx(I, { value: n, size: "small", maxValue: o, classNames: { background: Je } }),
+              e.jsx(G, { value: n, size: "small", maxValue: o, classNames: { background: Ye } }),
           ],
         }),
       ],
@@ -491,7 +491,7 @@ const rs = p("ServiceRecords", ss.base),
                     className: cs.leftColumn,
                     children: e.jsx(f, {
                       path:
-                        s.rank === F.GOLD
+                        s.rank === W.GOLD
                           ? `vehicle_hub.mechanics.special.x48x48.${s.name}`
                           : `vehicle_hub.mechanics.x48x48.${s.name}`,
                       width: 48,
@@ -534,9 +534,9 @@ const rs = p("ServiceRecords", ss.base),
   gs = a(function ({ className: t }) {
     const { model: a } = U(),
       { type: i } = a.statistics.get();
-    return e.jsx(G, {
+    return e.jsx($, {
       className: t,
-      children: e.jsxs(G.Decorator, {
+      children: e.jsxs($.Decorator, {
         className: ms,
         children: [
           te(i) &&

@@ -10,15 +10,15 @@ import {
 } from "../../../chunks/vendor.js";
 import {
   i as l,
-  a9 as c,
-  cm as d,
-  bw as m,
-  cn as _,
+  ab as c,
+  cn as d,
+  bx as m,
+  co as _,
   p as u,
   m as p,
   l as b,
   I as g,
-  bm as x,
+  bn as x,
   b as f,
   j as h,
   E as y,
@@ -26,27 +26,27 @@ import {
   d as v,
   u as A,
   B as C,
-  aU as N,
-  am as w,
-  av as I,
-  b5 as P,
+  aV as N,
+  ao as w,
+  ax as I,
+  b6 as P,
   g as z,
-  d5 as T,
-  aG as k,
-  cZ as D,
-  d0 as Q,
-  cx as S,
+  X as T,
+  aI as k,
+  c_ as D,
+  d1 as Q,
+  cy as S,
   U as $,
   r as M,
-  d2 as B,
-  d3 as H,
+  d3 as B,
+  d4 as H,
 } from "../../../chunks/lib.js";
 import { t as V, a as E, b as F } from "../../../chunks/sounds.js";
 import { S as L } from "../../../chunks/spring_wrapper.js";
 import { Q as W } from "../../../chunks/sound.js";
-import { g as K, a as O, c as U, d as G, b as Z, e as q } from "../../../chunks/utils.js";
+import { g as K, a as O, c as U, d as X, b as q, e as G } from "../../../chunks/utils.js";
 import { S as J } from "../../../chunks/story_point.js";
-const [X, Y] = l("BundleCardProvider")(
+const [Y, Z] = l("BundleCardProvider")(
     ({ observableModel: e }) => ({ ...e.primitives(["id", "descriptionKey"]) }),
     ({ externalModel: e }) => ({ click: e.createCallback((e) => ({ id: e }), "onClick") }),
   ),
@@ -138,11 +138,11 @@ const le = "ArtefactItem_selected_a9ecccae",
   he = "ArtefactItem_reward__completed_b917ecc",
   ye = "ArtefactItem_reward__booster_ca49785a";
 function je(e, s = !1) {
-  return e.name === G
+  return e.name === X
     ? s
       ? `R.images.last_stand.gui.maps.icons.boosters.c_68x68.${e.icon}`
       : `R.images.last_stand.gui.maps.icons.boosters.c_68x68.disabled.${e.icon}`
-    : Z(e, g.Small);
+    : q(e, g.Small);
 }
 function ve({
   id: e,
@@ -190,7 +190,7 @@ function ve({
                 {
                   name: t.name,
                   value: U(t),
-                  className: a(fe, m && he, t.name === G && ye),
+                  className: a(fe, m && he, t.name === X && ye),
                   classNames: { rewardIcon: xe },
                   special: t.overlayType,
                   size: g.Small,
@@ -237,7 +237,7 @@ const Ae = r(function () {
             alignContent: j.FlexEnd,
             binding: {
               artefactIndex: a?.index,
-              currentProgress: s.jsx("div", { className: Ne, children: q(e.points.get(), t) }),
+              currentProgress: s.jsx("div", { className: Ne, children: G(e.points.get(), t) }),
               maxProgress: t,
               icon: s.jsx("div", { ...o, className: we, children: s.jsx(J, { size: i.size }) }),
             },
@@ -306,7 +306,7 @@ const Ae = r(function () {
   Ee = "BundleCard_button_f32dc703",
   Fe = v.resolve("strings"),
   Le = r(function ({ className: e }) {
-    const { model: a, controls: t } = Y(),
+    const { model: a, controls: t } = Z(),
       {
         breakpoint: { weight: i },
       } = A(),
@@ -340,17 +340,17 @@ const Ae = r(function () {
 function We(e) {
   const a = R.aliases.last_stand.shared.BundleCard("resId"),
     t = i.useMemo(() => ({ rootId: a }), [a]);
-  return s.jsx(w, { id: a, children: s.jsx(X, { options: t, children: s.jsx(Le, { ...e }) }) });
+  return s.jsx(w, { id: a, children: s.jsx(Y, { options: t, children: s.jsx(Le, { ...e }) }) });
 }
 const Ke = "DailyQuestsCard_8452735",
   Oe = "DailyQuestsCard_content_9dfeafcb",
   Ue = "DailyQuestsCard_timer_88092dd5",
-  Ge = "DailyQuestsCard_icon_e3692c40",
-  Ze = "DailyQuestsCard_description_716ab6d8",
-  qe = "DailyQuestsCard_base__completed_2dd05187",
+  Xe = "DailyQuestsCard_icon_e3692c40",
+  qe = "DailyQuestsCard_description_716ab6d8",
+  Ge = "DailyQuestsCard_base__completed_2dd05187",
   Je = "DailyQuestsCard_progress_a181f69d",
-  Xe = "DailyQuestsCard_currentProgress_a63d05d7",
-  Ye = "DailyQuestsCard_progressValue_59475865",
+  Ye = "DailyQuestsCard_currentProgress_a63d05d7",
+  Ze = "DailyQuestsCard_progressValue_59475865",
   es = "DailyQuestsCard_rewards_a8cdf255",
   ss = "DailyQuestsCard_reward_461f11ab",
   as = r(function ({ className: e, callToAction: t }) {
@@ -377,7 +377,7 @@ const Ke = "DailyQuestsCard_8452735",
     return _
       ? null
       : s.jsx("div", {
-          className: a(Ke, m && qe, e),
+          className: a(Ke, m && Ge, e),
           children: s.jsxs("div", {
             className: Oe,
             children: [
@@ -394,7 +394,7 @@ const Ke = "DailyQuestsCard_8452735",
                   }),
                 }),
               s.jsx("div", {
-                className: Ge,
+                className: Xe,
                 style: {
                   backgroundImage: `url(${m ? "R.images.gui.maps.icons.userMissions.hub.basic.done_icon_m" : `'R.images.gui.maps.icons.userMissions.missionIcons.c_80.${n}_silver'`})`,
                 },
@@ -402,7 +402,7 @@ const Ke = "DailyQuestsCard_8452735",
               s.jsx(
                 y,
                 {
-                  classMix: Ze,
+                  classMix: qe,
                   text: r,
                   justifyContent: v ? j.FlexStart : j.Center,
                   isTruncationAvailable: !0,
@@ -414,10 +414,10 @@ const Ke = "DailyQuestsCard_8452735",
                   className: Je,
                   children: [
                     s.jsx(y, {
-                      classMix: Ye,
+                      classMix: Ze,
                       text: R.strings.last_stand_lobby.common.progress(),
                       binding: {
-                        value: s.jsx("div", { className: Xe, children: z(c, 1) }),
+                        value: s.jsx("div", { className: Ye, children: z(c, 1) }),
                         maxValue: z(d, 1),
                       },
                     }),
@@ -441,7 +441,7 @@ const Ke = "DailyQuestsCard_8452735",
                       className: ss,
                       special: e.overlayType,
                       size: C,
-                      image: Z(e, C),
+                      image: q(e, C),
                       valueType: O(e.name),
                       tooltipArgs: K(e, R.aliases.last_stand.shared.Quests("resId")),
                     },
@@ -465,7 +465,7 @@ const os = "Header_e83ca27a",
   ns = "Header_divider_1ed29076",
   ls = r(function ({ className: e, canceledAnim: a, playQuestAnimation: t }) {
     const { model: i } = se(),
-      { model: o } = Y(),
+      { model: o } = Z(),
       r = [
         { component: s.jsx(is, { callToAction: t }), visible: !i.root.get().isHidden },
         { component: s.jsx(We, {}), visible: Boolean(o.id.get()) },
@@ -553,7 +553,7 @@ M(
   new S()
     .addWithProps($, { soundsOverrides: hs })
     .add(ae)
-    .addWithProps(X, { options: { rootId: R.aliases.last_stand.shared.BundleCard("resId") } })
+    .addWithProps(Y, { options: { rootId: R.aliases.last_stand.shared.BundleCard("resId") } })
     .addWithProps(ee, { options: { rootId: R.aliases.last_stand.shared.Quests("resId") } })
     .render(s.jsx(fs, {})),
 )

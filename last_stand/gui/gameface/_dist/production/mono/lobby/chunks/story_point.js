@@ -1,5 +1,5 @@
 import { j as s, f as e } from "./vendor.js";
-import { dz as _ } from "./lib.js";
+import { dv as _ } from "./lib.js";
 const i = {
     root: "StoryPoint_root_fb5c04d4",
     base: "StoryPoint_c7387a68",

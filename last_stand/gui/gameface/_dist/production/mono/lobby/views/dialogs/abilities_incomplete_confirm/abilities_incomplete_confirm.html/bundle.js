@@ -1,17 +1,17 @@
 import { j as e, f as s, r as a, E as t } from "../../../../chunks/vendor.js";
 import {
   C as i,
-  cr as n,
+  cs as n,
   m as l,
   i as o,
-  a9 as c,
+  ab as c,
   d as r,
-  K as d,
-  aT as m,
-  d5 as _,
+  K as m,
+  Y as d,
+  X as _,
   B as u,
-  r as g,
-  U as b,
+  r as b,
+  U as g,
 } from "../../../../chunks/lib.js";
 const p = "Warning_167127e0",
   h = "Warning_icon_621a0c49";
@@ -47,13 +47,13 @@ function E({
   title: o,
   content: c,
   buttons: r,
-  footer: d,
-  displayFlags: m = [],
+  footer: m,
+  displayFlags: d = [],
   classNames: _,
   className: u,
 }) {
-  const { responsiveHeader: g, disableResponsiveContentPosition: b } = ((e, s) =>
-      Object.keys(s).reduce((s, a) => ((s[a] = e.includes(a)), s), {}))(m, f),
+  const { responsiveHeader: b, disableResponsiveContentPosition: g } = ((e, s) =>
+      Object.keys(s).reduce((s, a) => ((s[a] = e.includes(a)), s), {}))(d, f),
     p = a.useCallback(() => {
       n && n();
     }, [n]);
@@ -62,13 +62,13 @@ function E({
     children: [
       e.jsx(i, { onClose: p, className: z }),
       e.jsxs("div", {
-        className: t(x, l && C, s && D, !b && N, _?.center),
+        className: t(x, l && C, s && D, !g && N, _?.center),
         children: [
-          l && e.jsx("div", { className: t(T, g && y, _?.icon), children: l }),
-          o && e.jsx("div", { className: t(k, g && I, _?.title), children: o }),
+          l && e.jsx("div", { className: t(T, b && y, _?.icon), children: l }),
+          o && e.jsx("div", { className: t(k, b && I, _?.title), children: o }),
           c && e.jsx("div", { className: P, children: c }),
-          e.jsx("div", { className: t($, !c && B, !d && M, _?.divider) }),
-          d && e.jsx("div", { className: A, children: d }),
+          e.jsx("div", { className: t($, !c && B, !m && M, _?.divider) }),
+          m && e.jsx("div", { className: A, children: m }),
           r && e.jsx("div", { className: w, children: r }),
         ],
       }),
@@ -83,13 +83,13 @@ const F = "Icon_e30b139a",
   W = "bottomAlignment",
   K = "centredAndThroughContent",
   U = "moveContentBelow";
-function q({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], icons: o }) {
+function X({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], icons: o }) {
   const [c, r] = a.useState(0),
-    d = a.useCallback((e) => {
+    m = a.useCallback((e) => {
       r(((e) => Math.max(e, 135))(e.currentTarget.height));
     }, []),
-    m = n(),
-    _ = a.useMemo(() => ({ transform: `scale(${m})` }), [m]);
+    d = n(),
+    _ = a.useMemo(() => ({ transform: `scale(${d})` }), [d]);
   return e.jsx("div", {
     className: F,
     style: (() => {
@@ -123,7 +123,7 @@ function q({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], ic
               s &&
               e.jsx(
                 "div",
-                { className: L, children: e.jsx("img", { alt: "", src: s, style: _, onLoad: d }) },
+                { className: L, children: e.jsx("img", { alt: "", src: s, style: _, onLoad: m }) },
                 s,
               ),
           ),
@@ -141,48 +141,48 @@ function q({ iconPositionLogic: s = U, backgrounds: t = [], overlays: i = [], ic
     }),
   });
 }
-const [G, J] = o("AbilitiesIncompleteConfirmProvider")(c, ({ externalModel: e }) => ({
+const [Y, q] = o("AbilitiesIncompleteConfirmProvider")(c, ({ externalModel: e }) => ({
     submit: e.createCallbackNoArgs("onSubmitClick"),
     cancel: e.createCallbackNoArgs("onCancelClick"),
     close: e.createCallbackNoArgs("onCloseClick"),
   })),
-  Q = "App_buttons_cb654453",
-  V = "App_button_fb12011c",
-  X = r.resolve("strings");
-function Y() {
-  const { controls: s } = J();
+  G = "App_buttons_cb654453",
+  J = "App_button_fb12011c",
+  Q = r.resolve("strings");
+function V() {
+  const { controls: s } = q();
   return (
-    d(m.ENTER, s.submit, !0),
+    m(d.ENTER, s.submit, !0),
     _(s.close),
     e.jsx(E, {
       onClose: s.close,
-      title: X.readOrEmpty("R.strings.last_stand_lobby.abilitiesIncomplete.title"),
+      title: Q.readOrEmpty("R.strings.last_stand_lobby.abilitiesIncomplete.title"),
       displayFlags: ["disableResponsiveContentPosition"],
-      icon: e.jsx(q, {
+      icon: e.jsx(X, {
         iconPositionLogic: "moveContentBelow",
         icons: ["R.images.last_stand.gui.maps.icons.dialogs.abilities_incomplete.content"],
       }),
       content: e.jsx(v, { text: R.strings.last_stand_lobby.abilitiesIncomplete.warning() }),
       buttons: e.jsxs("div", {
-        className: Q,
+        className: G,
         children: [
           e.jsx(u, {
-            className: V,
+            className: J,
             theme: u.themes.primary,
             size: u.sizes.medium,
             onClick: s.submit,
-            children: X.read("R.strings.last_stand_lobby.abilitiesIncomplete.submit"),
+            children: Q.read("R.strings.last_stand_lobby.abilitiesIncomplete.submit"),
           }),
           e.jsx(u, {
-            className: V,
+            className: J,
             theme: u.themes.secondary,
             size: u.sizes.medium,
             onClick: s.cancel,
-            children: X.read("R.strings.last_stand_lobby.abilitiesIncomplete.cancel"),
+            children: Q.read("R.strings.last_stand_lobby.abilitiesIncomplete.cancel"),
           }),
         ],
       }),
     })
   );
 }
-g(e.jsx(b, { children: e.jsx(G, { children: e.jsx(Y, {}) }) }));
+b(e.jsx(g, { children: e.jsx(Y, { children: e.jsx(V, {}) }) }));

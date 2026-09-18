@@ -1,5 +1,5 @@
 import { D as o, j as e, E as s } from "../../../../chunks/vendor.js";
-import { i as t, a9 as a, E as r, r as l, dr as i } from "../../../../chunks/lib.js";
+import { i as t, ab as a, E as r, r as l, ds as i } from "../../../../chunks/lib.js";
 const [p, d] = t()(({ observableModel: o }) => ({ root: o.object() }), a),
   c = "SimpleFormatTooltipApp_887dc02e",
   n = "SimpleFormatTooltipApp_header_23807e55",

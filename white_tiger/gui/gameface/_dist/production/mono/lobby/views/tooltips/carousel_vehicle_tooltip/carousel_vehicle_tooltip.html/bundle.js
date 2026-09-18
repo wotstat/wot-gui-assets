@@ -1,7 +1,7 @@
 import { s as e, j as s } from "../../../../chunks/vendor.js";
-import { a as o, ar as l, X as i, E as t } from "../../../../chunks/lib.js";
+import { a as o, av as l, Y as i, E as t } from "../../../../chunks/lib.js";
 import { d as c } from "../../../../chunks/TooltipDecorator2.js";
-/* empty css                                 */ const [r, a] = o()(
+/* empty css                                 */ const [a, r] = o()(
     ({ observableModel: e }) => ({ root: e.object() }),
     l,
   ),
@@ -12,15 +12,15 @@ import { d as c } from "../../../../chunks/TooltipDecorator2.js";
   j = "CarouselVehicleTooltipApp_description_df858c15",
   m = "CarouselVehicleTooltipApp_titleIcon_452e804d",
   u = e(() => {
-    const { model: e } = a(),
+    const { model: e } = r(),
       { title: o, subtitle: l, description: t, icon: c } = e.root.get(),
-      r = { backgroundImage: `url(${c})` };
+      a = { backgroundImage: `url(${c})` };
     return s.jsx("div", {
       className: p,
       children: s.jsxs("div", {
         className: d,
         children: [
-          s.jsx("div", { className: m, style: r }),
+          s.jsx("div", { className: m, style: a }),
           s.jsx("div", { className: n, children: o }),
           s.jsx("div", { className: h, children: l }),
           s.jsx(i, { split: !0, className: j, text: t }),
@@ -28,4 +28,4 @@ import { d as c } from "../../../../chunks/TooltipDecorator2.js";
       }),
     });
   });
-t(s.jsx(r, { children: s.jsx(c, { children: s.jsx(u, {}) }) }));
+t(s.jsx(a, { children: s.jsx(c, { children: s.jsx(u, {}) }) }));

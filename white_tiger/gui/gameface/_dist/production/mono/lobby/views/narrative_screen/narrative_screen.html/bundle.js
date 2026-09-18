@@ -2,13 +2,13 @@ import { s as e, j as a } from "../../../chunks/vendor.js";
 import {
   a as s,
   N as r,
-  ag as t,
-  X as o,
-  n as i,
+  ah as t,
+  Y as i,
+  n as o,
   A as l,
   o as c,
   z as n,
-  ah as d,
+  ai as d,
   E as v,
   U as x,
   G as _,
@@ -21,8 +21,8 @@ const [N, p] = s()(
       onVoiceoverToggle: e.createCallbackNoArgs("onVoiceoverToggle"),
     }),
   ),
-  g = "NarrativeText_5153bf5c",
-  b = "NarrativeText_voicerToggle_6b1aacd5",
+  b = "NarrativeText_5153bf5c",
+  g = "NarrativeText_voicerToggle_6b1aacd5",
   j = "NarrativeText_voicerImage_32269b1a",
   h = "NarrativeText_textWrapper_b67109a8",
   T = "NarrativeText_title_1dbf2725",
@@ -39,10 +39,10 @@ const [N, p] = s()(
         .map((e) => e.trim())
         .filter(Boolean);
     return a.jsxs("div", {
-      className: g,
+      className: b,
       children: [
         a.jsxs(t, {
-          className: b,
+          className: g,
           size: t.sizes.small,
           onClick: n.onVoiceoverToggle,
           activated: s.root.get().isVoiceoverActive,
@@ -54,19 +54,19 @@ const [N, p] = s()(
         a.jsxs("div", {
           className: h,
           children: [
-            a.jsx(o, {
+            a.jsx(i, {
               text: e.readOrEmpty("R.strings.white_tiger_lobby.narrativeView.title"),
               className: T,
             }),
             a.jsx("div", {
               className: f,
-              children: a.jsxs(i, {
+              children: a.jsxs(o, {
                 children: [
                   a.jsx(l, {
                     className: C,
                     children: a.jsx("div", {
                       className: u,
-                      children: d.map((e, s) => a.jsx(o, { split: !0, text: e, className: y }, s)),
+                      children: d.map((e, s) => a.jsx(i, { split: !0, text: e, className: y }, s)),
                     }),
                   }),
                   a.jsx(c, {}),
