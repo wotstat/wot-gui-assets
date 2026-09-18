@@ -1,0 +1,45 @@
+import { r as a } from "./rolldown-runtime.js";
+import { Si as e, c as s, f as i, fo as t, h as o, m as l, p as r, uo as m } from "./lib.js";
+var c = (function (a) {
+    return ((a.Static = "static"), (a.Claimable = "claimable"), a);
+  })({}),
+  n = (t(), "CustomReward_197314c4"),
+  d = "CustomReward_base__disable_51f6e5f1",
+  u = "CustomReward_animWrapper_f3d190a6",
+  p = "CustomReward_glow_11133e2",
+  f = "CustomReward_glowReverse_48fff15c",
+  _ = e();
+function v({
+  claimState: a,
+  name: e,
+  icon: t,
+  rewardSize: v,
+  value: w,
+  tooltipId: b,
+  tooltipContentId: C,
+  isDisable: j,
+  className: g,
+  overlayType: x,
+}) {
+  const N = a === c.Claimable;
+  return (0, _.jsxs)("div", {
+    className: m(n, j && d, g),
+    children: [
+      N &&
+        (0, _.jsxs)("div", {
+          className: u,
+          children: [(0, _.jsx)("div", { className: p }), (0, _.jsx)("div", { className: f })],
+        }),
+      (0, _.jsx)(s, {
+        name: e,
+        image: i({ name: e, icon: t }, o.Big),
+        size: v,
+        value: w.toString(),
+        valueType: l(e),
+        tooltipArgs: r({ tooltipId: b }, Number(C)),
+        special: x,
+      }),
+    ],
+  });
+}
+export { v as t };

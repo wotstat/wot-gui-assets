@@ -1,0 +1,20 @@
+import { Ir as o, Lr as t, Rr as a, Wa as e, ca as i, oa as r, zr as s } from "./lib.js";
+var l = (o) => ("overlayType" in o ? o.overlayType : void 0);
+function p(p, n) {
+  const d = ((o, t) => t || (o >= i.Medium ? s.Big : s.Small))(r().mediaSize, n);
+  return {
+    parsedRewards: e(p, ({ ...e }) => ({
+      ...e,
+      special: l(e),
+      image: o(e, d),
+      size: d,
+      valueType: a(e.name),
+      tooltipArgs: t(
+        { tooltipId: e.tooltipId, tooltipContentId: e.tooltipContentId },
+        Number(e.tooltipContentId),
+      ),
+    })),
+    imageSize: d,
+  };
+}
+export { p as t };

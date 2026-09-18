@@ -1,0 +1,2 @@
+var a = 9999;
+export { a as t };

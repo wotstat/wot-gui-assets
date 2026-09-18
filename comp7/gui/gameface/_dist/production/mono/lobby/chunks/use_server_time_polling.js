@@ -1,0 +1,10 @@
+import { da as o } from "./lib.js";
+function i(i, t, a, r = 950) {
+  o(
+    () => {
+      a();
+    },
+    i < t ? r : void 0,
+  );
+}
+export { i as t };

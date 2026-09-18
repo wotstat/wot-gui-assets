@@ -1,0 +1,17 @@
+import { r } from "./rolldown-runtime.js";
+import { Pa as o, et as e, ws as a } from "./lib.js";
+import { i as s } from "./vendor.js";
+a();
+var t = r(s()),
+  n = "TooltipDecorator_decorator_81525906",
+  d = "TooltipDecorator_decoratorInner_ed88e863",
+  i = r(o());
+function c({ children: r, classNames: o }) {
+  return (0, i.jsx)(e, {
+    children: (0, i.jsx)("div", {
+      className: (0, t.default)(n, o?.decoratorInner),
+      children: (0, i.jsx)("div", { className: (0, t.default)(d, o?.decoratorInner), children: r }),
+    }),
+  });
+}
+export { c as t };

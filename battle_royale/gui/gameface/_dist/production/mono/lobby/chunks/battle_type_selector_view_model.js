@@ -1,0 +1,4 @@
+var o = (function (o) {
+  return ((o.Solo = "solo"), (o.Platoon = "platoon"), (o.Team = "team"), o);
+})({});
+export { o as t };

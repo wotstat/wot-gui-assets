@@ -1,4 +1,12 @@
-# wot-gui-assets • wot-common-test • 2.4.0.0 #927
+# wot-gui-assets • wot-common-test • 2.4.1.0 #953
+
+[![wot-eu status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-eu.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-eu)
+[![wot-na status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-na.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-na)
+[![wot-asia status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-asia.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-asia)
+[![wot-cn status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-cn.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-cn)
+[![wot-common-test status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-common-test.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-common-test)
+[![mt-ru status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fmt-ru.json)](https://github.com/wotstat/wot-gui-assets/tree/mt-ru)
+[![mt-public-test status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fmt-public-test.json)](https://github.com/wotstat/wot-gui-assets/tree/mt-public-test)
 
 Публичная история GUI-ресурсов клиентов World of Tanks и «Мира танков». Служебный publisher-код и reusable workflow находятся в ветке [`main`](https://github.com/wotstat/wot-gui-assets/tree/main), а данные каждого клиента — в отдельной региональной ветке.
 
@@ -35,16 +43,32 @@ README.md
 .version_name
 .publication.json
 gui/                   # res/gui: base + default locale overlay; всё кроме .py и файлов > 100 MiB
+<RESOURCE_ROOT>/gui/   # res/<RESOURCE_ROOT>/gui: произвольный root-prefix + тот же overlay
 locales/<LANG>/gui/    # все res/gui locale overlays WG, включая default locale
+locales/<LANG>/<RESOURCE_ROOT>/gui/
 ```
+
+`RESOURCE_ROOT` — произвольный первый сегмент пути под `res`, а не имя физического `.pkg`.
+Более глубокие каталоги с именем `gui`, например `res/scripts/client/gui`, в эту проекцию не входят.
 
 
 ## Текущая публикация
 
 - Target: `wot-common-test`
 - Ветка: `wot-common-test`
-- Версия: `2.4.0.5415`
+- Версия: `2.4.1.5448`
 - Publisher: `wargaming`
-- GameSnapshot: `sha256:730fe865448d853d8a80facf050481a0e7f977b0f6720438200f707985514e0c`
+- GameSnapshot: `sha256:1e3bcba37b4f32ddf5ca8422f6b1da50c42a6a4c02bbf0e36a157f21d377d84f`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
+
+## Исключённые файлы
+
+Эти файлы не включены в публикацию, потому что их размер превышает 100 MiB:
+
+- `story_mode/gui/flash/videos/intro.usm` — **185,28 MiB**
+- `story_mode/gui/flash/videos/scc_intro.usm` — **151,27 MiB**
+- `halloween/gui/videos/halloween/artefacts/bg_1.webm` — **140,26 MiB**
+- `story_mode/gui/flash/videos/scc_outro.usm` — **139,57 MiB**
+- `halloween/gui/videos/halloween/artefacts/bg_2.webm` — **122,03 MiB**
+- `story_mode/gui/flash/videos/d_day.usm` — **103,84 MiB**

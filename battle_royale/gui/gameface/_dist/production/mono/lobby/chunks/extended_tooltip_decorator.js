@@ -1,0 +1,42 @@
+import { I as e, L as s, M as a, Nn as t, O as r, qr as i, t as d } from "./lib.js";
+var o = "Divider_7a72bfaf",
+  c = "Divider_b60e7313",
+  l = t(),
+  x = ({ className: e }) =>
+    (0, l.jsx)("div", { className: i(o, e), children: (0, l.jsx)("div", { className: c }) }),
+  n = "ExtendedTooltipDecorator_312a767e",
+  m = "ExtendedTooltipDecorator_header_420fb2c1",
+  j = "ExtendedTooltipDecorator_description_a984d854",
+  p = "ExtendedTooltipDecorator_timerBlock_7b7647e1",
+  _ = "ExtendedTooltipDecorator_divider_24cd0041";
+function h({
+  header: t,
+  description: i,
+  timerText: o,
+  timerTimeLeft: c = 0,
+  isTruncationAvailable: h = !0,
+  children: v,
+}) {
+  return (0, l.jsx)(d, {
+    children: (0, l.jsx)(d.Decorator, {
+      children: (0, l.jsxs)("div", {
+        className: n,
+        children: [
+          t && (0, l.jsx)(s, { text: t, className: m }),
+          h ? (0, l.jsx)(a, { text: i, classMix: j }) : (0, l.jsx)(s, { text: i, className: j }),
+          v,
+          c > 0 &&
+            o &&
+            (0, l.jsxs)("div", {
+              className: p,
+              children: [
+                (0, l.jsx)(x, { className: _ }),
+                (0, l.jsx)(e, { path: o, params: { timeLeft: (0, l.jsx)(r, { start: c }) } }),
+              ],
+            }),
+        ],
+      }),
+    }),
+  });
+}
+export { x as n, h as t };

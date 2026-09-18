@@ -1,0 +1,4 @@
+var t = (function (t) {
+  return ((t.Default = "default"), (t.StPatrick = "stPatrick"), t);
+})({});
+export { t };

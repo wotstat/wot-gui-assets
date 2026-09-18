@@ -1,0 +1,10 @@
+import { r as o } from "./rolldown-runtime.js";
+import { N as a, Vo as r, j as t, sa as i } from "./lib.js";
+r();
+var s = o(i());
+function n(o) {
+  return (0, s.jsx)(t, { theme: a, ...o });
+}
+var m = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { duration: 300 } },
+  c = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 100, config: { duration: 300 } };
+export { m as n, n as r, c as t };
