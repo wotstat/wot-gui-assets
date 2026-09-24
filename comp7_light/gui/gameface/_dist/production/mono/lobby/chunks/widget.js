@@ -1,8 +1,8 @@
 import { r as e } from "./rolldown-runtime.js";
 import {
   Aa as a,
-  Fo as s,
-  G as t,
+  E as s,
+  Fo as t,
   Io as r,
   Mo as o,
   No as n,
@@ -11,15 +11,15 @@ import {
   Qr as l,
   Vo as c,
   Wo as _,
-  Zr as p,
-  ai as m,
-  cr as f,
+  X as p,
+  Zr as m,
+  ai as f,
   ha as g,
   jo as u,
   n as h,
   sa as b,
   t as T,
-  ur as x,
+  w as x,
   zo as v,
 } from "./lib.js";
 import { a as N } from "./vendor.js";
@@ -37,7 +37,7 @@ var y = {
     }),
     controls: () => a(i("onClick", "onClose")),
   },
-  [j, C] = p("TeaserModel")(
+  [j, C] = m("TeaserModel")(
     ({ observableModel: e }) =>
       e.primitives([
         "type",
@@ -91,30 +91,30 @@ var y = {
   M = N(function ({ className: e, classNames: a }) {
     const { model: i, controls: l } = C(),
       c = i.type.get() || w.News,
-      p = i.postCounter.get(),
+      m = i.postCounter.get(),
       b = i.text.get(),
       N = i.description.get(),
       y = i.finishTime.get(),
       j = i.isVideo.get(),
       M = i.image.get(),
-      P = m(),
-      S = _.resolve("strings");
-    const B = (0, k.useCallback)(
+      E = f(),
+      P = _.resolve("strings");
+    const S = (0, k.useCallback)(
         (e) => {
           (e.stopPropagation(), l.onClose());
         },
         [l],
       ),
-      [E, O] = (0, k.useState)(null);
+      [B, O] = (0, k.useState)(null);
     (0, k.useLayoutEffect)(() => {
       let e;
-      const a = u(r(y || 0), s());
+      const a = u(r(y || 0), t());
       if (!y || a <= 0) return void O(null);
-      const t = Math.floor(n.seconds(a)),
-        i = d(r(y), o(1)) ? x.Extended : x.Long;
-      if ((O({ duration: t, style: i }), i === x.Extended)) {
-        const a = u(r(t + 1), o(1));
-        e = setTimeout(() => O((e) => ({ ...e, style: x.Long })), Math.min(a, g));
+      const i = Math.floor(n.seconds(a)),
+        l = d(r(y), o(1)) ? s.Extended : s.Long;
+      if ((O({ duration: i, style: l }), l === s.Extended)) {
+        const a = u(r(i + 1), o(1));
+        e = setTimeout(() => O((e) => ({ ...e, style: s.Long })), Math.min(a, g));
       }
       return () => {
         e && (clearTimeout(e), (e = void 0));
@@ -142,10 +142,10 @@ var y = {
         ? (0, I.jsxs)("div", {
             className: v(W.base, W[`base__${c}Type`], j && W.base__video, e),
             onClick: function (e) {
-              (P.play("click", { target: A, original: e }), l.onClick());
+              (E.play("click", { target: A, original: e }), l.onClick());
             },
             onMouseEnter: function (e) {
-              P.play("mouse-enter", { target: A, original: e });
+              E.play("mouse-enter", { target: A, original: e });
             },
             children: [
               (0, I.jsx)("div", {
@@ -171,12 +171,12 @@ var y = {
                   (0, I.jsxs)("div", {
                     className: v(W.title, a?.title),
                     children: [
-                      S.readOrEmpty("menu.promo.teaser.title"),
-                      Boolean(p) &&
-                        p > 0 &&
+                      P.readOrEmpty("menu.promo.teaser.title"),
+                      Boolean(m) &&
+                        m > 0 &&
                         (0, I.jsx)(h, {
                           className: v(W.counter, a?.counter),
-                          value: p,
+                          value: m,
                           size: "small",
                         }),
                     ],
@@ -185,24 +185,24 @@ var y = {
                     type: "close",
                     side: "right",
                     classNames: { base: v(W.closeButton, a?.closeButton) },
-                    onClick: B,
+                    onClick: S,
                     caption: "",
                   }),
                   b && (0, I.jsx)("div", { className: v(W.text, a?.text), children: b }),
-                  (N || E) &&
+                  (N || B) &&
                     (0, I.jsxs)("div", {
                       className: W.bottomContent,
                       children: [
                         N &&
                           (0, I.jsx)("div", {
                             className: v(W.description, a?.description),
-                            children: (0, I.jsx)(t, {
+                            children: (0, I.jsx)(p, {
                               classMix: W.extendedText,
                               text: N,
                               isTruncationAvailable: !0,
                             }),
                           }),
-                        E && (0, I.jsx)(f, { className: v(W.countdown, a?.countdown), ...E }),
+                        B && (0, I.jsx)(x, { className: v(W.countdown, a?.countdown), ...B }),
                       ],
                     }),
                 ],
@@ -212,7 +212,7 @@ var y = {
         : null
     );
   });
-function P({ className: e, classNames: a, ...s }) {
+function E({ className: e, classNames: a, ...s }) {
   return (0, I.jsx)(j, {
     ...s,
     mode: "real",
@@ -220,4 +220,4 @@ function P({ className: e, classNames: a, ...s }) {
     children: (0, I.jsx)(M, { className: e, classNames: a }),
   });
 }
-export { P as default };
+export { E as default };

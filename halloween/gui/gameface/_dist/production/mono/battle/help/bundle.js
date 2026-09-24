@@ -8,16 +8,16 @@ import {
   R as l,
   V as c,
   dt as o,
-  f as r,
-  j as d,
-  p as _,
-  pt as p,
-  st as m,
+  j as r,
+  n as d,
+  pt as _,
+  st as p,
+  t as m,
   z as u,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { t as b } from "../chunks/vendor.js";
-var g = e(p()),
+var g = e(_()),
   x = t();
 function h({ tooltipArgs: e, children: s }) {
   return (0, x.jsx)("div", { ...l(e), children: s });
@@ -195,8 +195,8 @@ function E({ sourceCount: e, className: s }) {
       (0, x.jsxs)("div", {
         className: $,
         children: [
-          (0, x.jsx)(r, { classMix: z, text: O.$dyn(`title_${e}`) }),
-          (0, x.jsx)(r, { classMix: F, text: O.$dyn(`description_${e}`) }),
+          (0, x.jsx)(m, { classMix: z, text: O.$dyn(`title_${e}`) }),
+          (0, x.jsx)(m, { classMix: F, text: O.$dyn(`description_${e}`) }),
         ],
       }),
     ],
@@ -213,7 +213,7 @@ var Q = "HelpApp_a4ec8984",
   U = "HelpApp_bottomBg_7e66c3a1",
   W = new Array(4).fill(0),
   X = () => {
-    c(() => m.close());
+    c(() => p.close());
     const e = a({
       from: { opacity: 0 },
       to: { opacity: 1 },
@@ -235,7 +235,7 @@ var Q = "HelpApp_a4ec8984",
               }),
               (0, x.jsx)("div", {
                 className: D,
-                children: (0, x.jsx)(_, { size: _.size.small, onClose: m.close }),
+                children: (0, x.jsx)(d, { size: d.size.small, onClose: p.close }),
               }),
             ],
           }),
@@ -265,4 +265,4 @@ var Q = "HelpApp_a4ec8984",
     });
   },
   Y = { yes1: n("yes1") };
-d((0, x.jsx)(s, { soundsOverrides: Y, children: (0, x.jsx)(X, {}) }));
+r((0, x.jsx)(s, { soundsOverrides: Y, children: (0, x.jsx)(X, {}) }));

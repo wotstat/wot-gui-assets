@@ -2578,6 +2578,81 @@ html[lang="ko"] .KeyButton_content_3ab1d990 {
   padding-bottom: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.GradientText_textOverlay_2d67fbb8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+.GradientText_5009d812 {
+  position: relative;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.PlayerInfo_89eea88b {
+  display: flex;
+  align-items: center;
+}
+
+.PlayerInfo_badge_9f134a01 {
+  margin-right: 2rem;
+}
+
+.PlayerInfo_name_120449f9 {
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+  color: var(--color-general-primary);
+  opacity: 0.9;
+}
+.PlayerInfo_name__medium_4066d463 {
+  font-size: 16rem;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+.PlayerInfo_name__big_4119f7ab {
+  font-size: 24rem;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+.PlayerInfo_clanTag_120449f9 {
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+  color: var(--color-general-primary);
+  opacity: 0.9;
+}
+.PlayerInfo_clanTag__medium_4066d463 {
+  font-size: 16rem;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+.PlayerInfo_clanTag__big_4119f7ab {
+  font-size: 24rem;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+.PlayerInfo_stripe_65882a8f {
+  display: flex;
+  align-items: center;
+  margin-left: -50rem;
+}
+.PlayerInfo_stripe__medium_cc0a2a19 {
+  margin-left: -35rem;
+}
+.PlayerInfo_stripe__big_ccbc3007 {
+  margin-left: -80rem;
+}
+
+.PlayerInfo_stripeBadge_605bfd0a {
+  z-index: -1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
 .Horizontalbar_bdf22414 {
   display: flex;
@@ -3195,81 +3270,6 @@ html[lang="ko"] .KeyButton_content_3ab1d990 {
 .Checkbox_base__enabled_5bfdfae9:active .Checkbox_overlay_de55e0a5 {
   background-color: rgba(0, 0, 0, 0.24);
   mix-blend-mode: overlay;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.GradientText_textOverlay_2d67fbb8 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-/* stylelint-disable scss/dollar-variable-pattern */
-.GradientText_5009d812 {
-  position: relative;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.PlayerInfo_89eea88b {
-  display: flex;
-  align-items: center;
-}
-
-.PlayerInfo_badge_9f134a01 {
-  margin-right: 2rem;
-}
-
-.PlayerInfo_name_120449f9 {
-  margin-right: 2rem;
-  padding-bottom: 2rem;
-  color: var(--color-general-primary);
-  opacity: 0.9;
-}
-.PlayerInfo_name__medium_4066d463 {
-  font-size: 16rem;
-  font-weight: 400;
-  line-height: 1.3em;
-}
-.PlayerInfo_name__big_4119f7ab {
-  font-size: 24rem;
-  font-weight: 700;
-  line-height: 1.3em;
-}
-
-.PlayerInfo_clanTag_120449f9 {
-  margin-right: 2rem;
-  padding-bottom: 2rem;
-  color: var(--color-general-primary);
-  opacity: 0.9;
-}
-.PlayerInfo_clanTag__medium_4066d463 {
-  font-size: 16rem;
-  font-weight: 400;
-  line-height: 1.3em;
-}
-.PlayerInfo_clanTag__big_4119f7ab {
-  font-size: 24rem;
-  font-weight: 700;
-  line-height: 1.3em;
-}
-
-.PlayerInfo_stripe_65882a8f {
-  display: flex;
-  align-items: center;
-  margin-left: -50rem;
-}
-.PlayerInfo_stripe__medium_cc0a2a19 {
-  margin-left: -35rem;
-}
-.PlayerInfo_stripe__big_ccbc3007 {
-  margin-left: -80rem;
-}
-
-.PlayerInfo_stripeBadge_605bfd0a {
-  z-index: -1;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */

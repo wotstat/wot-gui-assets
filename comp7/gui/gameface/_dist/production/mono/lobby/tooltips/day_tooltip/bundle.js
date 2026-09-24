@@ -1,12 +1,12 @@
 import { r as a } from "../../chunks/rolldown-runtime.js";
 import {
-  Hr as e,
-  Mr as n,
-  Pa as i,
+  $ as e,
+  Pa as n,
+  Sr as i,
   Uo as t,
   _i as s,
   fi as r,
-  q as _,
+  tt as _,
   ws as o,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
@@ -56,7 +56,7 @@ var m = a(p(), 1),
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  A = a(i(), 1),
+  A = a(n(), 1),
   b = d(() => {
     const { model: a } = y(),
       { seasonName: e } = a.root.get();
@@ -85,7 +85,7 @@ var m = a(p(), 1),
     rank: d(() => {
       const { model: a } = y(),
         {
-          seasonName: e,
+          seasonName: n,
           diff: i,
           rank: t,
           division: s,
@@ -98,7 +98,7 @@ var m = a(p(), 1),
           (0, A.jsxs)("div", {
             className: k.rankContainer,
             children: [
-              (0, A.jsx)(c, { rank: t, size: l.x22, seasonName: e, division: s }),
+              (0, A.jsx)(c, { rank: t, size: l.x22, seasonName: n, division: s }),
               (0, A.jsx)("div", {
                 className: (0, m.default)(k.heading, k[`heading__rank_${f[t]}`]),
                 children: (0, A.jsx)(_, { value: r }),
@@ -106,7 +106,7 @@ var m = a(p(), 1),
             ],
           }),
           0 === o
-            ? (0, A.jsx)(n, {
+            ? (0, A.jsx)(e, {
                 text: `${R.strings.comp7_ext.dayTooltip.ratingDiff()}`,
                 binding: { diff: j(i) },
                 classMix: k.ratingDiffText,
@@ -115,10 +115,10 @@ var m = a(p(), 1),
                 className: k.penaltyContainer,
                 children: [
                   (0, A.jsx)("div", { className: k.penaltyIcon }),
-                  (0, A.jsx)(n, {
+                  (0, A.jsx)(e, {
                     text: `${R.strings.comp7_ext.dayTooltip.rankInactivity()}`,
                     binding: {
-                      penalty: (0, A.jsx)(n, {
+                      penalty: (0, A.jsx)(e, {
                         text: `${R.strings.comp7_ext.dayTooltip.rankInactivityPenalty(Math.abs(o))}`,
                         binding: { pointsCount: o },
                         classMix: k.penaltyText,
@@ -151,21 +151,21 @@ function I({ index: a, currentDayIndex: e, hasBattles: n }) {
 }
 var T = d(function () {
   const { model: a } = y(),
-    { index: e, isQualification: i, rank: t, currentDayIndex: s, hasBattles: r } = a.root.get(),
+    { index: n, isQualification: i, rank: t, currentDayIndex: s, hasBattles: r } = a.root.get(),
     _ =
       v[
         (function ({ isQualification: a, index: e, currentDayIndex: n, rank: i }) {
           return a ? "qualification" : e <= n && i > 0 ? "rank" : "empty";
-        })({ isQualification: i, index: e, currentDayIndex: s, rank: t })
+        })({ isQualification: i, index: n, currentDayIndex: s, rank: t })
       ];
   return _
     ? (0, A.jsxs)("div", {
         className: (0, m.default)(g.base, k.base),
         children: [
           (0, A.jsx)(_, {}),
-          (0, A.jsx)(n, {
-            text: I({ index: e, currentDayIndex: s, hasBattles: r }),
-            binding: { index: e + 1 },
+          (0, A.jsx)(e, {
+            text: I({ index: n, currentDayIndex: s, hasBattles: r }),
+            binding: { index: n + 1 },
             classMix: k.day,
           }),
         ],
@@ -174,6 +174,6 @@ var T = d(function () {
 });
 r(
   (0, A.jsx)(u, {
-    children: (0, A.jsx)(e, { children: (0, A.jsx)(x, { children: (0, A.jsx)(T, {}) }) }),
+    children: (0, A.jsx)(i, { children: (0, A.jsx)(x, { children: (0, A.jsx)(T, {}) }) }),
   }),
 );

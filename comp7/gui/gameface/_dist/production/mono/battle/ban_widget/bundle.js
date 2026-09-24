@@ -11,13 +11,13 @@ import {
   S as d,
   _ as r,
   b as m,
-  d as h,
-  f as u,
-  g as _,
-  h as b,
-  m as x,
-  p as y,
-  q as f,
+  f as h,
+  g as u,
+  h as _,
+  m as b,
+  n as x,
+  q as y,
+  r as f,
   w as p,
   x as v,
   y as j,
@@ -35,7 +35,7 @@ var [A, C] = r()(
           bannedByAlliesVehicle: e.observableModel.object("bannedByAlliesVehicle"),
           bannedByEnemiesVehicle: e.observableModel.object("bannedByEnemiesVehicle"),
         },
-        s = _(
+        s = u(
           () =>
             i(
               n.bannedByAlliesVehicles.get(),
@@ -238,15 +238,15 @@ var G = "allies",
         immediate: !l,
         config: { duration: 500 },
       }),
-      y = (0, D.useCallback)(() => {
-        h.current || ((h.current = !0), f.sound("comp_7_bans_pict_animation"));
+      f = (0, D.useCallback)(() => {
+        h.current || ((h.current = !0), y.sound("comp_7_bans_pict_animation"));
       }, []),
       p = (0, D.useCallback)(() => {
-        u.current || ((u.current = !0), f.sound("comp_7_bans_crossed_label"));
+        u.current || ((u.current = !0), y.sound("comp_7_bans_crossed_label"));
       }, []);
     return (
       s(() => {
-        l && f.sound("comp_7_bans_text_animation");
+        l && y.sound("comp_7_bans_text_animation");
       }),
       (0, M.jsxs)("div", {
         className: (0, $.default)(K, o),
@@ -260,7 +260,7 @@ var G = "allies",
               bannedVehicle: i,
               randomlySelected: n,
               onShowIconAnimation: p,
-              onShowVehicleAnimation: y,
+              onShowVehicleAnimation: f,
               classNames: r?.section,
               hasAnimation: l,
             }),
@@ -275,7 +275,7 @@ var G = "allies",
               bannedVehicle: c,
               randomlySelected: t,
               onShowIconAnimation: p,
-              onShowVehicleAnimation: y,
+              onShowVehicleAnimation: f,
               classNames: { ...r?.section, base: (0, $.default)(ae, r?.section?.base) },
               hasAnimation: l,
             }),
@@ -358,8 +358,8 @@ var G = "allies",
                 }),
                 (0, M.jsx)("div", {
                   className: ue,
-                  children: (0, M.jsx)(u, {
-                    size: y.medium,
+                  children: (0, M.jsx)(x, {
+                    size: f.medium,
                     onClick: a.open,
                     disabled: n === g.None,
                     children: R.strings.comp7_ext.banView.button.ban(),
@@ -369,4 +369,4 @@ var G = "allies",
             }),
     });
   });
-b((0, M.jsx)(x, { children: (0, M.jsx)(A, { children: (0, M.jsx)(_e, {}) }) }));
+_((0, M.jsx)(b, { children: (0, M.jsx)(A, { children: (0, M.jsx)(_e, {}) }) }));

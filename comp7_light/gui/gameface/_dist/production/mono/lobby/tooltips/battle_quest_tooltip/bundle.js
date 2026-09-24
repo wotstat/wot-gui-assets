@@ -1,57 +1,57 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
-  B as s,
-  Co as o,
-  H as t,
-  I as r,
+  Co as s,
+  G as o,
+  J as t,
+  K as r,
   Kr as a,
-  U as i,
-  V as n,
+  V as i,
+  W as n,
   Wa as l,
   Wo as d,
   Zr as p,
-  sa as c,
-  z as u,
+  q as c,
+  sa as u,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { a as m } from "../../chunks/vendor.js";
 import { n as v, t as I } from "../../chunks/extended_tooltip_decorator.js";
-var T = e(c(), 1);
-function b({ bonuses: e, questId: o, size: t, resId: a, ...d }) {
-  const p = l(e, (e) => {
+var T = e(u(), 1);
+function b({ bonuses: e, questId: s, size: a, resId: d, ...p }) {
+  const c = l(e, (e) => {
       return {
-        size: t,
+        size: a,
         name: e.name,
-        image: u(e, t),
+        image: n(e, a),
         value: e.value,
-        valueType: n(e.name),
+        valueType: r(e.name),
         special:
           "overlayType" in e &&
           e.overlayType &&
-          ((r = e.overlayType),
-          ("string" == typeof r && Object.values(i).includes(r)) ||
-            (console.warn(`Invalid overlayType value: ${r}`), 0))
+          ((i = e.overlayType),
+          ("string" == typeof i && Object.values(t).includes(i)) ||
+            (console.warn(`Invalid overlayType value: ${i}`), 0))
             ? e.overlayType
             : void 0,
         tooltipArgs: {
-          ...s(
-            { tooltipId: `${o}:${e.tooltipId}` },
+          ...o(
+            { tooltipId: `${s}:${e.tooltipId}` },
             Number(e.tooltipContentId) ||
               R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
                 "resId",
               ),
           ),
-          resId: a,
+          resId: d,
         },
       };
-      var r;
+      var i;
     }),
-    c = {
+    u = {
       contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"),
-      args: { showFromIndex: d.count, questId: o },
-      resId: a,
+      args: { showFromIndex: p.count, questId: s },
+      resId: d,
     };
-  return (0, T.jsx)(r, { ...d, data: p, boxRewardTooltip: c, size: t });
+  return (0, T.jsx)(i, { ...p, data: c, boxRewardTooltip: u, size: a });
 }
 var [w, g] = p()(({ observableModel: e }) => ({
     ...e.primitives([
@@ -76,22 +76,22 @@ var [w, g] = p()(({ observableModel: e }) => ({
   f = R.strings.comp7_light.battleQuestTooltips,
   C = m(function () {
     const { model: e } = g(),
-      s = e.bonuses.get(),
-      r = e.countdown.get();
+      o = e.bonuses.get(),
+      t = e.countdown.get();
     return (0, T.jsxs)(I, {
       header: f.mission(),
-      description: o(e.description.get()),
+      description: s(e.description.get()),
       invertedColors: !0,
       timerText: f.expiresIn(),
-      timerTimeLeft: r,
+      timerTimeLeft: t,
       children: [
         (0, T.jsx)(v, { className: y }),
-        (0, T.jsx)("div", { className: x, children: f.rewards(s.length) }),
+        (0, T.jsx)("div", { className: x, children: f.rewards(o.length) }),
         (0, T.jsx)(b, {
-          bonuses: s,
+          bonuses: o,
           questId: e.id.get(),
           resId: j.read((e) => e.comp7_light.shared.Quests("resId")),
-          size: t.Small,
+          size: c.Small,
           rewardItemClassMix: _,
           count: 3,
           classMix: h,

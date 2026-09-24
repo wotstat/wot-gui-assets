@@ -1,27 +1,27 @@
 import {
   Bt as s,
-  C as a,
-  Gt as e,
-  L as t,
-  Nn as r,
-  S as c,
-  T as i,
-  Ut as n,
+  Gt as a,
+  H as e,
+  Nn as t,
+  Ut as r,
+  _ as c,
+  d as i,
+  h as n,
   jr as o,
-  ni as p,
-  t as l,
-  y as d,
+  m as p,
+  ni as l,
+  t as d,
   zt as m,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
-import { i as j } from "../../chunks/vendor.js";
-import { t as u } from "../../chunks/common.js";
-var [x, _] = e()((s) => {
+import { i as _ } from "../../chunks/vendor.js";
+import { t as j } from "../../chunks/common.js";
+var [u, x] = a()((s) => {
   const a = s.observableModel.primitives(["params", "type"]);
   return {
     type: a.type,
     computes: {
-      params: n.primitive(function (s) {
+      params: r.primitive(function (s) {
         return s(a.params.get());
       }),
     },
@@ -30,27 +30,27 @@ var [x, _] = e()((s) => {
 var h,
   v = "App_21e3a147",
   g = "App_header_62566856",
-  y = "App_icon_24de08c2",
-  N = "App_headerContainer_b23d7c80",
-  b = "App_title_5ec15df",
-  f = "App_cooldown_1072bf2a",
+  N = "App_icon_24de08c2",
+  b = "App_headerContainer_b23d7c80",
+  f = "App_title_5ec15df",
+  y = "App_cooldown_1072bf2a",
   A = "App_content_80741629",
   k = "App_container_58b78fd8",
   w = "App_description_fecd9a89",
-  S = r(),
+  S = t(),
   L = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
-  C =
-    ((h = d(a({ title: i(), iconName: i(), cooldownSeconds: c(), description: i() }))),
+  $ =
+    ((h = i(n({ title: c(), iconName: c(), cooldownSeconds: p(), description: c() }))),
     function () {
-      return _().model.computes.params(h);
+      return x().model.computes.params(h);
     }),
-  T = p.resolve("strings"),
-  $ = j(function () {
-    const { title: s, iconName: a, cooldownSeconds: e, description: r } = C(),
-      c = u(T.readOrEmpty("tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime")),
-      i = u(r);
-    return (0, S.jsx)(l, {
-      children: (0, S.jsx)(l.Decorator, {
+  z = l.resolve("strings"),
+  B = _(function () {
+    const { title: s, iconName: a, cooldownSeconds: t, description: r } = $(),
+      c = j(z.readOrEmpty("tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime")),
+      i = j(r);
+    return (0, S.jsx)(d, {
+      children: (0, S.jsx)(d.Decorator, {
         children: (0, S.jsx)("div", {
           className: v,
           children: (0, S.jsxs)("div", {
@@ -60,21 +60,21 @@ var h,
                 className: g,
                 children: [
                   (0, S.jsx)("div", {
-                    className: y,
+                    className: N,
                     style: { backgroundImage: `url(${L.$dyn(a)})` },
                   }),
                   (0, S.jsxs)("div", {
-                    className: N,
+                    className: b,
                     children: [
-                      (0, S.jsx)("div", { className: b, children: s }),
+                      (0, S.jsx)("div", { className: f, children: s }),
                       c.map(({ text: s, params: a }) =>
                         (0, S.jsx)(
-                          t,
+                          e,
                           {
                             upgradeLegacy: !0,
                             text: s,
-                            params: { ...a, cooldown: e },
-                            className: f,
+                            params: { ...a, cooldown: t },
+                            className: y,
                           },
                           s,
                         ),
@@ -87,7 +87,7 @@ var h,
                 className: A,
                 children: i.map(({ text: s, params: a }) =>
                   (0, S.jsx)(
-                    t,
+                    e,
                     { upgradeLegacy: !0, text: s, params: { ...a }, className: w, split: !0 },
                     s,
                   ),
@@ -99,4 +99,4 @@ var h,
       }),
     });
   });
-s((0, S.jsxs)(m, { children: [(0, S.jsx)(x, { children: (0, S.jsx)($, {}) }), ","] }));
+s((0, S.jsxs)(m, { children: [(0, S.jsx)(u, { children: (0, S.jsx)(B, {}) }), ","] }));

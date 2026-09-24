@@ -1,38 +1,38 @@
 import {
   Bt as e,
-  C as s,
-  Gt as a,
-  L as r,
-  Nn as t,
-  Ut as i,
-  jr as l,
-  ni as c,
-  t as d,
-  w as n,
-  x as p,
+  Gt as s,
+  H as a,
+  Nn as r,
+  Ut as t,
+  g as i,
+  h as l,
+  jr as c,
+  ni as d,
+  p as n,
+  t as p,
   zt as o,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { i as h } from "../../chunks/vendor.js";
 import { i as m, n as u } from "../../chunks/model.js";
-var j = s({ alertType: p(m), battleSchedule: u }),
-  [_, x] = a()((e) => {
+var j = l({ alertType: n(m), battleSchedule: u }),
+  [_, b] = s()((e) => {
     const s = e.observableModel.primitives(["params", "type"]);
     return {
       type: s.type,
       computes: {
-        params: i.primitive(() => {
+        params: t.primitive(() => {
           try {
-            return n(j, JSON.parse(s.params.get()));
+            return i(j, JSON.parse(s.params.get()));
           } catch (e) {
             return (console.error(e), { alertType: m.None, battleSchedule: [] });
           }
         }),
       },
     };
-  }, l);
-function b() {
-  return x().model.computes.params();
+  }, c);
+function x() {
+  return b().model.computes.params();
 }
 var v = {
     base: "App_b217f952",
@@ -47,11 +47,11 @@ var v = {
     period: "App_period_b93939b2",
     goal: "App_goal_d5b93517",
   },
-  f = t(),
-  N = c.resolve("strings"),
+  f = r(),
+  N = d.resolve("strings"),
   y = R.strings.battle_royale.ceasefire,
   A = h(function () {
-    const { battleSchedule: e } = b();
+    const { battleSchedule: e } = x();
     return (0, f.jsxs)("div", {
       className: v.battleSchedule,
       children: [
@@ -60,7 +60,7 @@ var v = {
           className: v.scheduleContainer,
           children: [
             (0, f.jsx)("div", { className: v.scheduleTitle, children: y.header.schedule() }),
-            e.map(({ goal: e, periods: s }, a) =>
+            e.map(({ goal: e, periods: s }, r) =>
               (0, f.jsxs)(
                 "div",
                 {
@@ -68,22 +68,22 @@ var v = {
                   children: [
                     (0, f.jsx)("div", {
                       className: v.periodList,
-                      children: s.map(([e, s], a) =>
+                      children: s.map(([e, s], r) =>
                         (0, f.jsx)(
-                          r,
+                          a,
                           {
                             text: y.template.schedule(),
                             params: { start: e, end: s },
                             className: v.period,
                           },
-                          `${a}-${e}-${s}`,
+                          `${r}-${e}-${s}`,
                         ),
                       ),
                     }),
                     (0, f.jsx)("div", { className: v.goal, children: e }),
                   ],
                 },
-                e + a,
+                e + r,
               ),
             ),
           ],
@@ -92,10 +92,10 @@ var v = {
     });
   }),
   C = h(function () {
-    const { alertType: e } = b(),
+    const { alertType: e } = x(),
       s = e === m.CeasefireAllServers || e === m.CeasefireCurrentServer;
-    return (0, f.jsx)(d, {
-      children: (0, f.jsx)(d.Decorator, {
+    return (0, f.jsx)(p, {
+      children: (0, f.jsx)(p.Decorator, {
         children: (0, f.jsxs)("div", {
           className: v.base,
           children: [
@@ -108,7 +108,7 @@ var v = {
                 }),
                 (0, f.jsx)("div", {
                   className: v.description,
-                  children: (0, f.jsx)(r, {
+                  children: (0, f.jsx)(a, {
                     text: N.readOrEmpty(`battle_royale.ceasefire.text.${e}`),
                     split: !0,
                   }),

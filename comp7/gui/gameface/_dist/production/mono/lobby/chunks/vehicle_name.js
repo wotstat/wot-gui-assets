@@ -1,8 +1,8 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Ar as a, Pa as l, Qa as s, jr as i, ss as _, vn as c, ws as r } from "./lib.js";
-import { i as n } from "./vendor.js";
-r();
-var o = e(n()),
+import { An as a, Pa as l, Qa as s, Zt as i, ss as _, ws as c, z as n } from "./lib.js";
+import { i as r } from "./vendor.js";
+c();
+var o = e(r()),
   t = {
     base: "VehicleRole_b05c9386",
     icon: "VehicleRole_icon_a3da323b",
@@ -29,19 +29,19 @@ var o = e(n()),
   b = (function (e) {
     return ((e.x16 = "16x16"), (e.x24 = "24x24"), (e.x32 = "32x32"), (e.x48 = "32x32"), e);
   })({});
-function d({ role: e, size: a = "24x24", roleIconFolderPath: l, className: s, classNames: i }) {
-  const r = (function (e) {
+function d({ role: e, size: l = "24x24", roleIconFolderPath: s, className: i, classNames: c }) {
+  const n = (function (e) {
     const a = e.split("_");
     return a[a.length - 1] || "";
   })(_(e));
   return (0, h.jsx)("div", {
-    className: (0, o.default)(t.base, t[`base__${a}`], s),
-    children: l
+    className: (0, o.default)(t.base, t[`base__${l}`], i),
+    children: s
       ? (0, h.jsx)("div", {
-          className: (0, o.default)(t.icon, i?.icon),
-          style: { backgroundImage: `url(${l?.$dyn(r)})` },
+          className: (0, o.default)(t.icon, c?.icon),
+          style: { backgroundImage: `url(${s?.$dyn(n)})` },
         })
-      : (0, h.jsx)(c, { roleKey: r, size: `x${a}`, classNames: { base: i?.base } }),
+      : (0, h.jsx)(a, { roleKey: n, size: `x${l}`, classNames: { base: c?.base } }),
   });
 }
 var m = {
@@ -78,10 +78,10 @@ var m = {
   f = (e) => R.images.comp7.gui.maps.icons.vehicleTypes.$dyn(`c_${e}`);
 function V({
   name: e,
-  tier: l,
-  type: c,
-  role: r,
-  vehicleCD: n,
+  tier: a,
+  type: l,
+  role: c,
+  vehicleCD: r,
   size: t = "24x24",
   typeIconFolderPath: b = f(t),
   isPremium: x = !1,
@@ -91,19 +91,19 @@ function V({
   roleClassName: v,
   roleClassNames: I,
 }) {
-  const g = _(c),
+  const g = _(l),
     y = x ? `${g}_elite` : g,
     j = `url(${b?.$dyn(y)})`;
   return (0, h.jsxs)("div", {
     className: (0, o.default)(m.base, m[`base__${t}`], x && m.base__elite, V),
     children: [
-      (0, h.jsx)(a, {
+      (0, h.jsx)(n, {
         args: u,
         isEnabled: void 0 !== u,
         children: (0, h.jsxs)("div", {
           className: (0, o.default)(m.nameContainer, N?.nameContainer),
           children: [
-            (0, h.jsx)("div", { className: N?.level, children: s(l) }),
+            (0, h.jsx)("div", { className: N?.level, children: s(a) }),
             (0, h.jsx)("div", {
               className: (0, o.default)(m.vehicleTypeContainer, N?.vehicleTypeContainer),
               children: (0, h.jsx)("div", {
@@ -118,15 +118,15 @@ function V({
           ],
         }),
       }),
-      r &&
+      c &&
         (0, h.jsx)(i, {
           contentId: R.views.lobby.ranked.tooltips.RankedBattlesRolesTooltipView("resId"),
-          args: { vehicleCD: n },
+          args: { vehicleCD: r },
           ignoreShowDelay: !0,
-          isEnabled: void 0 !== n,
+          isEnabled: void 0 !== r,
           children: (0, h.jsx)("div", {
             className: (0, o.default)(m.roleContainer, I?.roleContainer),
-            children: (0, h.jsx)(d, { role: r, size: p[t], className: v, classNames: I }),
+            children: (0, h.jsx)(d, { role: c, size: p[t], className: v, classNames: I }),
           }),
         }),
     ],

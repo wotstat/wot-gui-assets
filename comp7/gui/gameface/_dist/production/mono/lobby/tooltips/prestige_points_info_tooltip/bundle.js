@@ -1,5 +1,5 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Hr as i, Pa as t, fi as o } from "../../chunks/lib.js";
+import { Pa as i, Sr as t, fi as o } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 /* empty css                  */ import { t as e } from "../../chunks/tooltip_decorator.js";
 var p = "App_c6f34e00",
@@ -8,7 +8,7 @@ var p = "App_c6f34e00",
   n = "App_divider_8b5ac59e",
   _ = "App_bulletLine_aa4edbb",
   c = "App_bullet_581f55cf",
-  a = s(t(), 1),
+  a = s(i(), 1),
   d = () =>
     (0, a.jsxs)("div", {
       className: p,
@@ -50,4 +50,4 @@ var p = "App_c6f34e00",
         }),
       ],
     });
-o((0, a.jsx)(i, { children: (0, a.jsx)(e, { children: (0, a.jsx)(d, {}) }) }));
+o((0, a.jsx)(t, { children: (0, a.jsx)(e, { children: (0, a.jsx)(d, {}) }) }));

@@ -395,472 +395,6 @@ html[lang="th"] input {
   --color-team-killer-rgb: 9, 226, 255;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-/* should be percentage of screen width */
-@keyframes Cbutton_fadeIn_180a9717 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Cbutton_fadeInThreeQuarters_180a9717 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Cbutton_fadeInHalf_180a9717 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Cbutton_fadeOut_180a9717 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Cbutton_fadeInWithScale_180a9717 {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Cbutton_slideUp_180a9717 {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Cbutton_scale_180a9717 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Cbutton_raysAppearance_180a9717 {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Cbutton_rotate_180a9717 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Cbutton_reverse-rotate_180a9717 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Cbutton_glowAppearance_180a9717 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Cbutton_highlightAppearance_180a9717 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Cbutton_blink_180a9717 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Cbutton_slideUpIn_180a9717 {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* should be percentage of screen width */
-.Cbutton_24fc9a0c {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2rem;
-  box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
-  position: relative;
-  cursor: pointer;
-}
-.Cbutton_base__main_2f199578,
-.Cbutton_base__primary_9da8a692,
-.Cbutton_base__primaryGreen_74301f4e,
-.Cbutton_base__primaryRed_d184ac,
-.Cbutton_base__secondary_22ff48c2 {
-  background-size: 100% 100%;
-}
-.Cbutton_base__main_2f199578 {
-  background-image: url("R.images.gui.maps.icons.components.button.back_main");
-}
-.Cbutton_base__primary_9da8a692 {
-  background-image: url("R.images.gui.maps.icons.components.button.back_primary");
-}
-.Cbutton_base__primaryGreen_74301f4e {
-  background-image: url("R.images.gui.maps.icons.components.button.back_primary_green");
-}
-.Cbutton_base__primaryRed_d184ac {
-  background-image: url("R.images.gui.maps.icons.components.button.back_primary_red");
-}
-.Cbutton_base__secondary_22ff48c2 {
-  background-image: url("R.images.gui.maps.icons.components.button.back_secondary");
-}
-.Cbutton_base__ghost_fd3acf91 {
-  border-radius: 3rem;
-  box-shadow:
-    0 0 0 1rem rgba(0, 0, 0, 0.3),
-    0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-  background-color: rgba(0, 0, 0, 0.15);
-}
-.Cbutton_base__extraSmall_f64ebb9e {
-  min-height: 17rem;
-  padding: 0 16rem;
-}
-.Cbutton_base__small_a71bc2a9,
-.Cbutton_base__medium_d82a1b14 {
-  padding: 0 20rem;
-}
-.Cbutton_base__small_a71bc2a9 {
-  min-height: 18rem;
-}
-.Cbutton_base__medium_d82a1b14 {
-  min-height: 32rem;
-}
-.Cbutton_base__large_f02aee17 {
-  min-height: 48rem;
-}
-.Cbutton_base__disabled_96f239bb {
-  cursor: default;
-}
-
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
-The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
-between 'border-image-width' and 'fill'.
-This bug is reproduced in Google Chrome 81.0.4044.113
-*/
-.Cbutton_back_ffaa618f {
-  border-image-slice: 4 fill;
-  border-image-width: 4rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.Cbutton_base__main_2f199578 .Cbutton_back_ffaa618f {
-  border-image-source: url("R.images.gui.maps.icons.components.button.back_main");
-}
-.Cbutton_base__primary_9da8a692 .Cbutton_back_ffaa618f {
-  border-image-source: url("R.images.gui.maps.icons.components.button.back_primary");
-}
-.Cbutton_base__primaryGreen_74301f4e .Cbutton_back_ffaa618f {
-  border-image-source: url("R.images.gui.maps.icons.components.button.back_primary_green");
-}
-.Cbutton_base__primaryRed_d184ac .Cbutton_back_ffaa618f {
-  border-image-source: url("R.images.gui.maps.icons.components.button.back_primary_red");
-}
-.Cbutton_base__secondary_22ff48c2 .Cbutton_back_ffaa618f {
-  border-image-source: url("R.images.gui.maps.icons.components.button.back_secondary");
-}
-
-.Cbutton_texture_f462b307 {
-  background: url("R.images.gui.maps.icons.components.button.standard_texture_file");
-  background-size: 155rem 31rem;
-  mix-blend-mode: soft-light;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.Cbutton_state_bf8d0bab {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: box-shadow 0.16s ease-in-out;
-}
-.Cbutton_base__focus_180a9717 .Cbutton_state_bf8d0bab {
-  border-radius: 2rem;
-  box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
-
-.Cbutton_stateHighlightHover_7e2b860e,
-.Cbutton_stateHighlightActive_f3d8fd6a,
-.Cbutton_stateDisabled_7b91392f {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.Cbutton_stateHighlightHover_7e2b860e {
-  background-image: linear-gradient(
-    180deg,
-    rgba(252, 248, 235, 0.25) 0%,
-    rgba(252, 248, 235, 0.1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  opacity: 0;
-}
-.Cbutton_24fc9a0c:hover .Cbutton_stateHighlightHover_7e2b860e {
-  opacity: 1;
-}
-.Cbutton_24fc9a0c:active .Cbutton_stateHighlightHover_7e2b860e {
-  opacity: 0;
-}
-.Cbutton_base__disabled_96f239bb:hover .Cbutton_stateHighlightHover_7e2b860e {
-  opacity: 0;
-}
-.Cbutton_base__ghost_fd3acf91 .Cbutton_stateHighlightHover_7e2b860e {
-  box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-  background-color: rgba(8, 6, 0, 0.18);
-  background-image: none;
-}
-
-.Cbutton_stateHighlightActive_f3d8fd6a {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
-  opacity: 0;
-}
-.Cbutton_base__highlightActive_180a9717 .Cbutton_stateHighlightActive_f3d8fd6a {
-  opacity: 1;
-}
-
-.Cbutton_stateDisabled_7b91392f {
-  background-color: rgba(0, 0, 0, 0.25);
-  background-image: url("R.images.gui.maps.icons.components.button.texture_disable");
-  background-size: 15rem 15rem;
-  visibility: hidden;
-}
-.Cbutton_base__disabled_96f239bb .Cbutton_stateDisabled_7b91392f {
-  visibility: inherit;
-}
-
-.Cbutton_content_faaa9067 {
-  display: flex;
-  align-items: center;
-  color: #f2f2e6;
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 0 -1rem 1rem #000;
-  letter-spacing: 0.03em;
-  transform: translateY(-1rem);
-}
-.Cbutton_content_faaa9067[lang="ja"],
-.Cbutton_content_faaa9067[lang="ko"],
-.Cbutton_content_faaa9067[lang="zh_tw"],
-.Cbutton_content_faaa9067[lang="zh_sg"],
-.Cbutton_content_faaa9067[lang="zh_cn"],
-.Cbutton_content_faaa9067[lang="th"] {
-  font-weight: 400;
-}
-.Cbutton_base__main_2f199578 .Cbutton_content_faaa9067,
-.Cbutton_base__primaryRed_d184ac .Cbutton_content_faaa9067 {
-  text-shadow: 0 -1rem 1rem #600;
-}
-.Cbutton_base__secondary_22ff48c2 .Cbutton_content_faaa9067 {
-  color: rgba(254, 254, 236, 0.75);
-}
-.Cbutton_base__primaryGreen_74301f4e .Cbutton_content_faaa9067 {
-  text-shadow: 0 -1rem 1rem #1c2502;
-}
-.Cbutton_base__extraSmall_f64ebb9e .Cbutton_content_faaa9067 {
-  font-size: 12rem;
-}
-.Cbutton_base__small_a71bc2a9 .Cbutton_content_faaa9067 {
-  font-size: 14rem;
-}
-.Cbutton_base__medium_d82a1b14 .Cbutton_content_faaa9067 {
-  font-size: 15rem;
-}
-.Cbutton_base__large_f02aee17 .Cbutton_content_faaa9067 {
-  font-size: 18rem;
-}
-.Cbutton_base__disabled_96f239bb .Cbutton_content_faaa9067 {
-  opacity: 0.6;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-/* should be percentage of screen width */
-@keyframes Formattext_fadeIn_5d59be47 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Formattext_fadeInThreeQuarters_5d59be47 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Formattext_fadeInHalf_5d59be47 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Formattext_fadeOut_5d59be47 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Formattext_fadeInWithScale_5d59be47 {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Formattext_slideUp_5d59be47 {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Formattext_scale_5d59be47 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Formattext_raysAppearance_5d59be47 {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Formattext_rotate_5d59be47 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Formattext_reverse-rotate_5d59be47 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Formattext_glowAppearance_5d59be47 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Formattext_highlightAppearance_5d59be47 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Formattext_blink_5d59be47 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Formattext_slideUpIn_5d59be47 {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* should be percentage of screen width */
-.Formattext_bb80854d {
-  display: flex;
-  flex-wrap: wrap;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
 .Thumb_background_b893084a,
 .Thumb_border_5749138b {
   position: absolute;
@@ -1796,6 +1330,137 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .VerticalScroll_area_a3c0086a {
   flex: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+/* should be percentage of screen width */
+@keyframes Formattext_fadeIn_5d59be47 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Formattext_fadeInThreeQuarters_5d59be47 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Formattext_fadeInHalf_5d59be47 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Formattext_fadeOut_5d59be47 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Formattext_fadeInWithScale_5d59be47 {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Formattext_slideUp_5d59be47 {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Formattext_scale_5d59be47 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Formattext_raysAppearance_5d59be47 {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Formattext_rotate_5d59be47 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Formattext_reverse-rotate_5d59be47 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Formattext_glowAppearance_5d59be47 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Formattext_highlightAppearance_5d59be47 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Formattext_blink_5d59be47 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Formattext_slideUpIn_5d59be47 {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* should be percentage of screen width */
+.Formattext_bb80854d {
+  display: flex;
+  flex-wrap: wrap;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
@@ -3649,6 +3314,341 @@ html[lang="th"] .Button_base__size-large_83da852e .Button_content__fontAligned_6
   bottom: -1rem;
   left: 0;
   pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+/* should be percentage of screen width */
+@keyframes Cbutton_fadeIn_180a9717 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Cbutton_fadeInThreeQuarters_180a9717 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Cbutton_fadeInHalf_180a9717 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Cbutton_fadeOut_180a9717 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Cbutton_fadeInWithScale_180a9717 {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Cbutton_slideUp_180a9717 {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Cbutton_scale_180a9717 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Cbutton_raysAppearance_180a9717 {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Cbutton_rotate_180a9717 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Cbutton_reverse-rotate_180a9717 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Cbutton_glowAppearance_180a9717 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Cbutton_highlightAppearance_180a9717 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Cbutton_blink_180a9717 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Cbutton_slideUpIn_180a9717 {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* should be percentage of screen width */
+.Cbutton_24fc9a0c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+  position: relative;
+  cursor: pointer;
+}
+.Cbutton_base__main_2f199578,
+.Cbutton_base__primary_9da8a692,
+.Cbutton_base__primaryGreen_74301f4e,
+.Cbutton_base__primaryRed_d184ac,
+.Cbutton_base__secondary_22ff48c2 {
+  background-size: 100% 100%;
+}
+.Cbutton_base__main_2f199578 {
+  background-image: url("R.images.gui.maps.icons.components.button.back_main");
+}
+.Cbutton_base__primary_9da8a692 {
+  background-image: url("R.images.gui.maps.icons.components.button.back_primary");
+}
+.Cbutton_base__primaryGreen_74301f4e {
+  background-image: url("R.images.gui.maps.icons.components.button.back_primary_green");
+}
+.Cbutton_base__primaryRed_d184ac {
+  background-image: url("R.images.gui.maps.icons.components.button.back_primary_red");
+}
+.Cbutton_base__secondary_22ff48c2 {
+  background-image: url("R.images.gui.maps.icons.components.button.back_secondary");
+}
+.Cbutton_base__ghost_fd3acf91 {
+  border-radius: 3rem;
+  box-shadow:
+    0 0 0 1rem rgba(0, 0, 0, 0.3),
+    0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.Cbutton_base__extraSmall_f64ebb9e {
+  min-height: 17rem;
+  padding: 0 16rem;
+}
+.Cbutton_base__small_a71bc2a9,
+.Cbutton_base__medium_d82a1b14 {
+  padding: 0 20rem;
+}
+.Cbutton_base__small_a71bc2a9 {
+  min-height: 18rem;
+}
+.Cbutton_base__medium_d82a1b14 {
+  min-height: 32rem;
+}
+.Cbutton_base__large_f02aee17 {
+  min-height: 48rem;
+}
+.Cbutton_base__disabled_96f239bb {
+  cursor: default;
+}
+
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.Cbutton_back_ffaa618f {
+  border-image-slice: 4 fill;
+  border-image-width: 4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.Cbutton_base__main_2f199578 .Cbutton_back_ffaa618f {
+  border-image-source: url("R.images.gui.maps.icons.components.button.back_main");
+}
+.Cbutton_base__primary_9da8a692 .Cbutton_back_ffaa618f {
+  border-image-source: url("R.images.gui.maps.icons.components.button.back_primary");
+}
+.Cbutton_base__primaryGreen_74301f4e .Cbutton_back_ffaa618f {
+  border-image-source: url("R.images.gui.maps.icons.components.button.back_primary_green");
+}
+.Cbutton_base__primaryRed_d184ac .Cbutton_back_ffaa618f {
+  border-image-source: url("R.images.gui.maps.icons.components.button.back_primary_red");
+}
+.Cbutton_base__secondary_22ff48c2 .Cbutton_back_ffaa618f {
+  border-image-source: url("R.images.gui.maps.icons.components.button.back_secondary");
+}
+
+.Cbutton_texture_f462b307 {
+  background: url("R.images.gui.maps.icons.components.button.standard_texture_file");
+  background-size: 155rem 31rem;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Cbutton_state_bf8d0bab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: box-shadow 0.16s ease-in-out;
+}
+.Cbutton_base__focus_180a9717 .Cbutton_state_bf8d0bab {
+  border-radius: 2rem;
+  box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+
+.Cbutton_stateHighlightHover_7e2b860e,
+.Cbutton_stateHighlightActive_f3d8fd6a,
+.Cbutton_stateDisabled_7b91392f {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Cbutton_stateHighlightHover_7e2b860e {
+  background-image: linear-gradient(
+    180deg,
+    rgba(252, 248, 235, 0.25) 0%,
+    rgba(252, 248, 235, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+}
+.Cbutton_24fc9a0c:hover .Cbutton_stateHighlightHover_7e2b860e {
+  opacity: 1;
+}
+.Cbutton_24fc9a0c:active .Cbutton_stateHighlightHover_7e2b860e {
+  opacity: 0;
+}
+.Cbutton_base__disabled_96f239bb:hover .Cbutton_stateHighlightHover_7e2b860e {
+  opacity: 0;
+}
+.Cbutton_base__ghost_fd3acf91 .Cbutton_stateHighlightHover_7e2b860e {
+  box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+  background-color: rgba(8, 6, 0, 0.18);
+  background-image: none;
+}
+
+.Cbutton_stateHighlightActive_f3d8fd6a {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+  opacity: 0;
+}
+.Cbutton_base__highlightActive_180a9717 .Cbutton_stateHighlightActive_f3d8fd6a {
+  opacity: 1;
+}
+
+.Cbutton_stateDisabled_7b91392f {
+  background-color: rgba(0, 0, 0, 0.25);
+  background-image: url("R.images.gui.maps.icons.components.button.texture_disable");
+  background-size: 15rem 15rem;
+  visibility: hidden;
+}
+.Cbutton_base__disabled_96f239bb .Cbutton_stateDisabled_7b91392f {
+  visibility: inherit;
+}
+
+.Cbutton_content_faaa9067 {
+  display: flex;
+  align-items: center;
+  color: #f2f2e6;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 -1rem 1rem #000;
+  letter-spacing: 0.03em;
+  transform: translateY(-1rem);
+}
+.Cbutton_content_faaa9067[lang="ja"],
+.Cbutton_content_faaa9067[lang="ko"],
+.Cbutton_content_faaa9067[lang="zh_tw"],
+.Cbutton_content_faaa9067[lang="zh_sg"],
+.Cbutton_content_faaa9067[lang="zh_cn"],
+.Cbutton_content_faaa9067[lang="th"] {
+  font-weight: 400;
+}
+.Cbutton_base__main_2f199578 .Cbutton_content_faaa9067,
+.Cbutton_base__primaryRed_d184ac .Cbutton_content_faaa9067 {
+  text-shadow: 0 -1rem 1rem #600;
+}
+.Cbutton_base__secondary_22ff48c2 .Cbutton_content_faaa9067 {
+  color: rgba(254, 254, 236, 0.75);
+}
+.Cbutton_base__primaryGreen_74301f4e .Cbutton_content_faaa9067 {
+  text-shadow: 0 -1rem 1rem #1c2502;
+}
+.Cbutton_base__extraSmall_f64ebb9e .Cbutton_content_faaa9067 {
+  font-size: 12rem;
+}
+.Cbutton_base__small_a71bc2a9 .Cbutton_content_faaa9067 {
+  font-size: 14rem;
+}
+.Cbutton_base__medium_d82a1b14 .Cbutton_content_faaa9067 {
+  font-size: 15rem;
+}
+.Cbutton_base__large_f02aee17 .Cbutton_content_faaa9067 {
+  font-size: 18rem;
+}
+.Cbutton_base__disabled_96f239bb .Cbutton_content_faaa9067 {
+  opacity: 0.6;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */

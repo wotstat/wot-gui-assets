@@ -1,5 +1,5 @@
 import { r as i } from "../../chunks/rolldown-runtime.js";
-import { Hr as s, Pa as n, fi as a, ws as m } from "../../chunks/lib.js";
+import { Pa as s, Sr as n, fi as a, ws as m } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 /* empty css                  */ import {
   a as o,
@@ -9,7 +9,7 @@ import "../../chunks/_wg-global-styles.js";
   r as c,
 } from "../../chunks/winner_glow.js";
 m();
-var g = i(n(), 1),
+var g = i(s(), 1),
   p = ({ children: i }) =>
     (0, g.jsx)(r.Provider, {
       value: {
@@ -42,7 +42,7 @@ var g = i(n(), 1),
       children: i,
     });
 a(
-  (0, g.jsx)(s, {
+  (0, g.jsx)(n, {
     children: (0, g.jsx)(p, { children: (0, g.jsx)(e, { children: (0, g.jsx)(c, {}) }) }),
   }),
   { fullScreen: !0 },

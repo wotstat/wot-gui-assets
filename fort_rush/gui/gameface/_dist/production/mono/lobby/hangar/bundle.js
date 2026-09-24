@@ -15865,7 +15865,7 @@ const lA = "Depot_dots_e22e1616",
     });
   },
   fA = "MechanicHeader_200c7176",
-  vA = "MechanicHeader_textLabel_4d8ca1c4",
+  vA = "MechanicHeader_textLabel_4f093ea6",
   bA = f.resolve("strings"),
   xA = f.resolve("images"),
   yA = f.resolve("views"),

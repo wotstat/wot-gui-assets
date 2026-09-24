@@ -1,22 +1,22 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
-  Lr as a,
-  Mr as s,
-  Pa as t,
+  $ as a,
+  Pa as s,
+  Q as t,
   Sa as n,
   Uo as i,
-  Vo as r,
-  _i as c,
+  Vo as c,
+  _i as r,
   _o as o,
   bo as l,
-  fi as d,
-  gi as _,
-  ho as m,
-  kr as p,
+  et as d,
+  fi as _,
+  gi as m,
+  ho as p,
   no as b,
-  q as v,
-  wo as k,
-  ws as f,
+  tt as v,
+  wo as f,
+  ws as k,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as h, i as x } from "../../chunks/vendor.js";
@@ -27,26 +27,26 @@ import { i as w, n as y } from "../../chunks/get_rank_name.js";
 import { n as N, t as A } from "../../chunks/get_division_points_step.js";
 import { t as B } from "../../chunks/tooltip_decorator.js";
 var U = e(x(), 1),
-  [H, S] = c("ProgressionTableTooltipModel")(({ observableModel: e }) => {
+  [H, S] = r("ProgressionTableTooltipModel")(({ observableModel: e }) => {
     const a = { root: e.object(), items: e.array("items") },
-      s = _(
+      s = m(
         (e) => {
           const s = l(a.items.get(), e);
           if (!s) throw new Error(`progression item with index ${e} was not found`);
-          const { hasRankInactivity: t, rank: n, from: i, to: r } = s;
-          return { hasRankInactivity: t, rank: n, from: i, to: r };
+          const { hasRankInactivity: t, rank: n, from: i, to: c } = s;
+          return { hasRankInactivity: t, rank: n, from: i, to: c };
         },
         { equals: n.shallow },
       ),
-      t = _(
+      t = m(
         (e) => {
           const s = l(a.items.get(), e);
           if (!s) throw new Error(`progression item with index ${e} was not found`);
-          return k(s.divisions, (e) => ({ ...e }));
+          return f(s.divisions, (e) => ({ ...e }));
         },
-        { equals: r },
+        { equals: c },
       ),
-      i = _(
+      i = m(
         () => {
           const e = a.root.get().currentItemIndex,
             s = t(e),
@@ -57,7 +57,7 @@ var U = e(x(), 1),
       );
     return { ...a, computes: { item: s, divisions: t, currentDivision: i } };
   }, i),
-  M = {
+  E = {
     base: "RankInactivityBlock_d683def8",
     heading: "RankInactivityBlock_heading_82d158ec",
     description: "RankInactivityBlock_description_6907b70d",
@@ -77,54 +77,54 @@ var U = e(x(), 1),
     blink: "RankInactivityBlock_blink_4aecaefd",
     slideUpIn: "RankInactivityBlock_slideUpIn_4aecaefd",
   },
-  E = e(t(), 1),
-  L = h(({ className: e }) => {
-    const { model: s } = S(),
-      { rankInactivityCount: t, rankInactivityPointsCount: n, currentItemIndex: i } = s.root.get(),
-      r = s.computes.item(i).hasRankInactivity;
-    return (0, E.jsx)("div", {
-      className: (0, U.default)(M.base, r && M.base__active, e),
-      children: r
-        ? (0, E.jsxs)(E.Fragment, {
+  M = e(s(), 1),
+  $ = h(({ className: e }) => {
+    const { model: a } = S(),
+      { rankInactivityCount: s, rankInactivityPointsCount: n, currentItemIndex: i } = a.root.get(),
+      c = a.computes.item(i).hasRankInactivity;
+    return (0, M.jsx)("div", {
+      className: (0, U.default)(E.base, c && E.base__active, e),
+      children: c
+        ? (0, M.jsxs)(M.Fragment, {
             children: [
-              (0, E.jsx)("div", {
-                className: M.heading,
+              (0, M.jsx)("div", {
+                className: E.heading,
                 children:
                   R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.active(),
               }),
-              (0, E.jsx)(p, {
+              (0, M.jsx)(t, {
                 text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.description.active(
                   n,
                 ),
                 binding: { count: n },
-                classMix: M.description,
+                classMix: E.description,
               }),
-              (0, E.jsx)(p, {
+              (0, M.jsx)(t, {
                 text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.daysLeft(),
-                binding: { rankInactivityCount: t },
-                classMix: M.daysLeft,
+                binding: { rankInactivityCount: s },
+                classMix: E.daysLeft,
               }),
             ],
           })
-        : (0, E.jsxs)(E.Fragment, {
+        : (0, M.jsxs)(M.Fragment, {
             children: [
-              (0, E.jsx)("div", {
-                className: M.heading,
+              (0, M.jsx)("div", {
+                className: E.heading,
                 children:
                   R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.notActive(),
               }),
-              (0, E.jsx)(p, {
-                text: a(
+              (0, M.jsx)(t, {
+                text: d(
                   R.strings.comp7_ext.progressionTableTooltip.rankInactivity.description.notActive(),
                   {
-                    rankList: m(
-                      s.items.get(),
+                    rankList: p(
+                      a.items.get(),
                       (e) => e.hasRankInactivity,
                       (e) => w(e.rank),
                     ).join(R.strings.comp7_ext.listSeparator()),
                   },
                 ),
-                classMix: M.description,
+                classMix: E.description,
               }),
             ],
           }),
@@ -133,28 +133,28 @@ var U = e(x(), 1),
   C = "TableHeader_35da86a5",
   D = "TableHeader_container_fb71aa54",
   F = "TableHeader_cell_56183287",
-  P = "TableHeader_cell__rank_fb9e8504",
-  $ = h(({ className: e }) => {
+  L = "TableHeader_cell__rank_fb9e8504",
+  P = h(({ className: e }) => {
     const { model: a } = S(),
       s = a.computes.divisions(0);
-    return (0, E.jsx)("div", {
+    return (0, M.jsx)("div", {
       className: (0, U.default)(C, e),
-      children: (0, E.jsxs)("div", {
+      children: (0, M.jsxs)("div", {
         className: D,
         children: [
-          (0, E.jsx)("div", {
-            className: (0, U.default)(F, P),
+          (0, M.jsx)("div", {
+            className: (0, U.default)(F, L),
             children: R.strings.comp7_ext.progressionTableTooltip.table.heading.rank(),
           }),
           b(s.length, (e) =>
-            (0, E.jsx)("div", { className: F, children: s[e] ? T(s[e].name) : "" }, e),
+            (0, M.jsx)("div", { className: F, children: s[e] ? T(s[e].name) : "" }, e),
           ),
         ],
       }),
     });
   }),
-  q =
-    (f(),
+  Q =
+    (k(),
     {
       base: "TableRow_42854519",
       base__active: "TableRow_base__active_48eb2f3",
@@ -183,44 +183,44 @@ var U = e(x(), 1),
       slideUpIn: "TableRow_slideUpIn_94d4bc08",
     }),
   O = h(({ itemIndex: e }) => {
-    const { model: a } = S(),
-      { topPercentage: t } = a.root.get(),
-      { rank: n, from: i, to: r } = a.computes.item(e),
-      c = a.computes.divisions(e),
-      o = a.computes.currentDivision();
+    const { model: s } = S(),
+      { topPercentage: t } = s.root.get(),
+      { rank: n, from: i, to: c } = s.computes.item(e),
+      r = s.computes.divisions(e),
+      o = s.computes.currentDivision();
     switch (n) {
       case u.Sixth:
-        return (0, E.jsx)("div", {
-          className: (0, U.default)(q.cell, q.cell__united),
-          children: (0, E.jsx)(s, {
+        return (0, M.jsx)("div", {
+          className: (0, U.default)(Q.cell, Q.cell__united),
+          children: (0, M.jsx)(a, {
             text: R.strings.comp7_ext.progressionTableTooltip.topRank(),
             binding: { topPercentage: t },
           }),
         });
       case u.Fifth:
-        return (0, E.jsx)("div", {
-          className: (0, U.default)(q.cell, q.cell__united),
-          children: (0, E.jsx)(s, {
+        return (0, M.jsx)("div", {
+          className: (0, U.default)(Q.cell, Q.cell__united),
+          children: (0, M.jsx)(a, {
             text: R.strings.comp7_ext.progressionTableTooltip.pointsFrom(),
-            binding: { from: (0, E.jsx)(v, { value: i }) },
+            binding: { from: (0, M.jsx)(v, { value: i }) },
           }),
         });
       default:
-        return (0, E.jsx)(E.Fragment, {
-          children: b(c.length, (e) => {
-            const a = A(i, r, c.length),
-              t = i + a * e;
-            return (0, E.jsx)(
+        return (0, M.jsx)(M.Fragment, {
+          children: b(r.length, (e) => {
+            const s = A(i, c, r.length),
+              t = i + s * e;
+            return (0, M.jsx)(
               "div",
               {
-                className: (0, U.default)(q.cell, q.cell__range),
-                children: (0, E.jsx)(s, {
+                className: (0, U.default)(Q.cell, Q.cell__range),
+                children: (0, M.jsx)(a, {
                   text: R.strings.comp7_ext.progressionTableTooltip.pointsRange(),
                   binding: {
-                    from: (0, E.jsx)(v, { value: t }),
-                    to: (0, E.jsx)(v, { value: t + a - 1 }),
+                    from: (0, M.jsx)(v, { value: t }),
+                    to: (0, M.jsx)(v, { value: t + s - 1 }),
                   },
-                  classMix: (0, U.default)(q.text, e === o.index && q.text__active),
+                  classMix: (0, U.default)(Q.text, e === o.index && Q.text__active),
                 }),
               },
               `${e}_${t}`,
@@ -229,39 +229,39 @@ var U = e(x(), 1),
         });
     }
   }),
-  Q = h(({ itemIndex: e, className: a, hasDivider: s = !0 }) => {
+  W = h(({ itemIndex: e, className: a, hasDivider: s = !0 }) => {
     const { model: t } = S(),
       { seasonName: n, currentItemIndex: i } = t.root.get(),
-      { rank: r } = t.computes.item(e);
-    return (0, E.jsxs)("div", {
-      className: (0, U.default)(q.base, i === e && q.base__active, a),
+      { rank: c } = t.computes.item(e);
+    return (0, M.jsxs)("div", {
+      className: (0, U.default)(Q.base, i === e && Q.base__active, a),
       children: [
-        (0, E.jsxs)("div", {
-          className: q.container,
+        (0, M.jsxs)("div", {
+          className: Q.container,
           children: [
-            (0, E.jsxs)("div", {
-              className: (0, U.default)(q.cell, q.cell__rank),
+            (0, M.jsxs)("div", {
+              className: (0, U.default)(Q.cell, Q.cell__rank),
               children: [
-                (0, E.jsx)(j, { rank: r, size: g.x22, seasonName: n, className: q.rankEmblem }),
-                (0, E.jsx)("div", { className: q.rankName, children: w(r) }),
+                (0, M.jsx)(j, { rank: c, size: g.x22, seasonName: n, className: Q.rankEmblem }),
+                (0, M.jsx)("div", { className: Q.rankName, children: w(c) }),
               ],
             }),
-            (0, E.jsx)(O, { itemIndex: e }),
+            (0, M.jsx)(O, { itemIndex: e }),
           ],
         }),
-        s && (0, E.jsx)("div", { className: q.divider }),
+        s && (0, M.jsx)("div", { className: Q.divider }),
       ],
     });
   }),
-  W = "Table_24abbb5a",
+  q = "Table_24abbb5a",
   z = h(({ className: e }) => {
     const { model: a } = S(),
       s = a.items.get().length - 1;
-    return (0, E.jsxs)("div", {
-      className: (0, U.default)(W, e),
+    return (0, M.jsxs)("div", {
+      className: (0, U.default)(q, e),
       children: [
-        (0, E.jsx)($, {}),
-        b(a.items.get().length, (e) => (0, E.jsx)(Q, { itemIndex: e, hasDivider: e < s }, e)),
+        (0, M.jsx)(P, {}),
+        b(a.items.get().length, (e) => (0, M.jsx)(W, { itemIndex: e, hasDivider: e < s }, e)),
       ],
     });
   }),
@@ -278,7 +278,7 @@ var U = e(x(), 1),
   te = "App_rankText_edc4b160",
   ne = "App_division_aae1175d",
   ie = "App_table_a2ca34a1",
-  re = h(() => {
+  ce = h(() => {
     const { model: e } = S(),
       {
         seasonName: a,
@@ -287,47 +287,47 @@ var U = e(x(), 1),
         rankInactivityCount: n,
       } = e.root.get(),
       i = e.computes.item(s),
-      r = e.computes.currentDivision(),
-      c = I(i.rank),
-      o = y(i.rank) + (c ? `${R.strings.common.common.dot()} ` : "");
-    return (0, E.jsxs)("div", {
+      c = e.computes.currentDivision(),
+      r = I(i.rank),
+      o = y(i.rank) + (r ? `${R.strings.common.common.dot()} ` : "");
+    return (0, M.jsxs)("div", {
       className: V,
       children: [
-        (0, E.jsx)("div", { className: (0, U.default)(G, i.hasRankInactivity && n <= 3 && J) }),
-        (0, E.jsxs)("div", {
+        (0, M.jsx)("div", { className: (0, U.default)(G, i.hasRankInactivity && n <= 3 && J) }),
+        (0, M.jsxs)("div", {
           className: K,
           children: [
-            (0, E.jsxs)("div", {
+            (0, M.jsxs)("div", {
               className: X,
               children: [
-                (0, E.jsx)(j, {
+                (0, M.jsx)(j, {
                   rank: i.rank,
                   size: g.x150,
                   seasonName: a,
-                  division: r.name,
+                  division: c.name,
                   className: ee,
                 }),
-                (0, E.jsxs)("div", {
+                (0, M.jsxs)("div", {
                   className: ae,
                   children: [
-                    (0, E.jsx)("div", { className: se, children: (0, E.jsx)(v, { value: t }) }),
-                    (0, E.jsxs)("div", {
+                    (0, M.jsx)("div", { className: se, children: (0, M.jsx)(v, { value: t }) }),
+                    (0, M.jsxs)("div", {
                       className: te,
                       children: [
-                        (0, E.jsx)("div", { children: o }),
-                        c && r.name && (0, E.jsx)("div", { className: ne, children: T(r.name) }),
+                        (0, M.jsx)("div", { children: o }),
+                        r && c.name && (0, M.jsx)("div", { className: ne, children: T(c.name) }),
                       ],
                     }),
                   ],
                 }),
               ],
             }),
-            (0, E.jsx)("div", { className: Z }),
-            (0, E.jsx)("div", { className: Y, children: (0, E.jsx)(L, {}) }),
+            (0, M.jsx)("div", { className: Z }),
+            (0, M.jsx)("div", { className: Y, children: (0, M.jsx)($, {}) }),
           ],
         }),
-        (0, E.jsx)(z, { className: ie }),
+        (0, M.jsx)(z, { className: ie }),
       ],
     });
   });
-d((0, E.jsx)(H, { children: (0, E.jsx)(B, { children: (0, E.jsx)(re, {}) }) }));
+_((0, M.jsx)(H, { children: (0, M.jsx)(B, { children: (0, M.jsx)(ce, {}) }) }));

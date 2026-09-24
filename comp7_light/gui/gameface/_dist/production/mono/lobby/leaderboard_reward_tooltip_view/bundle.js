@@ -2,12 +2,12 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   Cr as s,
   Kr as a,
-  Vo as d,
-  Zr as t,
-  co as i,
-  cr as l,
-  lr as r,
-  sa as p,
+  T as d,
+  Vo as t,
+  Zr as i,
+  co as l,
+  sa as r,
+  w as p,
   wr as c,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
@@ -21,7 +21,7 @@ var _ = e(n(), 1),
       e
     );
   })({}),
-  [f, b] = (d(), t()(({ observableModel: e }) => ({ root: e.object() }), i)),
+  [f, b] = (t(), i()(({ observableModel: e }) => ({ root: e.object() }), l)),
   x = R.strings.comp7_light.leaderboardRewardTooltip,
   h = [
     { victoryPoints: 5, defeatPoints: 3, place: x.top.c_0() },
@@ -40,7 +40,7 @@ var _ = e(n(), 1),
   P = "Table_reward_34902bd5",
   y = "Table_point_e3b5c2ca",
   k = "Table_separator_b233bbf2",
-  E = e(p(), 1),
+  E = e(r(), 1),
   C = R.strings.comp7_light.leaderboardRewardTooltip,
   M = () =>
     (0, E.jsxs)("div", {
@@ -119,14 +119,14 @@ var _ = e(n(), 1),
   U = R.strings.comp7_light.leaderboardRewardTooltip,
   B = o(() => {
     const { model: e } = b(),
-      { state: a, seasonEndTimestamp: d } = e.root.get(),
-      t = a === m.Simplified;
+      { state: a, seasonEndTimestamp: t } = e.root.get(),
+      i = a === m.Simplified;
     return (0, E.jsx)(s, {
       children: (0, E.jsx)(s.Decorator, {
         children: (0, E.jsxs)("div", {
           className: (0, _.default)(S.base, S[`base__${a}`]),
           children: [
-            !t &&
+            !i &&
               (0, E.jsx)(E.Fragment, {
                 children: (0, E.jsxs)("div", {
                   className: S.header,
@@ -136,9 +136,9 @@ var _ = e(n(), 1),
                       text: U.eventEnds(),
                       classMix: S.eventEnds,
                       binding: {
-                        countdown: (0, E.jsx)(l, {
-                          duration: d,
-                          icon: r.None,
+                        countdown: (0, E.jsx)(p, {
+                          duration: t,
+                          icon: d.None,
                           classNames: { text: S.eventEnds },
                         }),
                       },

@@ -1,7 +1,7 @@
 import { r as a } from "./rolldown-runtime.js";
-import { Ds as s, Es as e, Nr as i, Pa as t, as as l, lr as m, rr as r, ws as n } from "./lib.js";
+import { Ds as s, Er as e, Es as i, Pa as t, as as l, mn as m, ws as n, yr as r } from "./lib.js";
 var o = a(n(), 1),
-  d = a(i(), 1),
+  d = a(m(), 1),
   u = { small: "small", big: "big" },
   c = { full: "full", medium: "medium", small: "small" },
   p = { appear: "appear", fadeIn: "fadeIn", slideUpIn: "slideUpIn" },
@@ -18,17 +18,17 @@ var o = a(n(), 1),
   x = a(t(), 1),
   b = s.resolve("strings"),
   v = { full: "full", numeric: "numeric", compact: "compact" },
-  _ = { [v.full]: e.DayMonthFull, [v.numeric]: e.DayMonthNumeric };
-function w({ startDate: a, endDate: s, className: e, size: i, isAdaptive: t, isMode: n }) {
+  _ = { [v.full]: i.DayMonthFull, [v.numeric]: i.DayMonthNumeric };
+function w({ startDate: a, endDate: s, className: i, size: t, isAdaptive: m, isMode: n }) {
   const u = l,
-    p = i === c.medium,
-    f = i === c.small,
+    p = t === c.medium,
+    f = t === c.small,
     M = (0, o.useMemo)(
-      () => (f || (t && p && n) ? w.format.compact : t || p ? w.format.numeric : w.format.full),
-      [t, p, n, f],
+      () => (f || (m && p && n) ? w.format.compact : m || p ? w.format.numeric : w.format.full),
+      [m, p, n, f],
     );
   return (0, x.jsxs)("div", {
-    className: (0, d.default)(h, e),
+    className: (0, d.default)(h, i),
     children: [
       (0, x.jsx)(r, {
         className: D,
@@ -38,7 +38,7 @@ function w({ startDate: a, endDate: s, className: e, size: i, isAdaptive: t, isM
         adaptive: { medium: { path: "ui_kit.datetime.x24x24.cooldown", width: 24, height: 24 } },
       }),
       M !== v.compact
-        ? (0, x.jsx)(m, {
+        ? (0, x.jsx)(e, {
             className: g,
             text: b.readOrEmpty("user_missions.common.daterange.divider"),
             split: !0,

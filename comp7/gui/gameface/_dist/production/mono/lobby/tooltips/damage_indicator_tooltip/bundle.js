@@ -1,7 +1,7 @@
 import { r as a } from "../../chunks/rolldown-runtime.js";
-import { Hr as e, Mr as s, Pa as i, Uo as o, _i as t, fi as d, q as r } from "../../chunks/lib.js";
+import { $ as e, Pa as s, Sr as i, Uo as o, _i as t, fi as d, tt as c } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { a as c, i as n } from "../../chunks/vendor.js";
+import { a as r, i as n } from "../../chunks/vendor.js";
 /* empty css                  */ import { o as l } from "../../chunks/enums.js";
 import { t as m } from "../../chunks/tooltip_decorator.js";
 var g = a(n(), 1),
@@ -13,11 +13,11 @@ var g = a(n(), 1),
   b = "App_count_d181c83a",
   u = "App_description_35a8fa7c",
   f = "App_vehicleName_e27f46e4",
-  D = a(i(), 1),
-  N = c(() => {
+  D = a(s(), 1),
+  N = r(() => {
     const { model: a } = x(),
       {
-        statisticsMode: e,
+        statisticsMode: s,
         averageDamageDealt: i,
         recordDamageDealt: o,
         recordDamageDealtVehicleName: t,
@@ -28,20 +28,20 @@ var g = a(n(), 1),
         (0, D.jsxs)("div", {
           className: j,
           children: [
-            (0, D.jsx)(s, {
+            (0, D.jsx)(e, {
               text:
-                e === l.Season
+                s === l.Season
                   ? R.strings.comp7_ext.damageIndicatorTooltip.damage.season.heading()
                   : R.strings.comp7_ext.damageIndicatorTooltip.damage.day.heading(),
               binding: {
                 averageDamageDealt: (0, D.jsx)("div", {
                   className: b,
-                  children: (0, D.jsx)(r, { value: i }),
+                  children: (0, D.jsx)(c, { value: i }),
                 }),
               },
               classMix: v,
             }),
-            (0, D.jsx)(s, {
+            (0, D.jsx)(e, {
               text: R.strings.comp7_ext.damageIndicatorTooltip.damage.description(),
               classMix: u,
             }),
@@ -50,20 +50,20 @@ var g = a(n(), 1),
         (0, D.jsxs)("div", {
           className: (0, g.default)(j, _),
           children: [
-            (0, D.jsx)(s, {
+            (0, D.jsx)(e, {
               text:
-                e === l.Season
+                s === l.Season
                   ? R.strings.comp7_ext.damageIndicatorTooltip.damageRecord.season.heading()
                   : R.strings.comp7_ext.damageIndicatorTooltip.damageRecord.day.heading(),
               binding: {
                 recordDamageDealt: (0, D.jsx)("div", {
                   className: b,
-                  children: (0, D.jsx)(r, { value: o }),
+                  children: (0, D.jsx)(c, { value: o }),
                 }),
               },
               classMix: v,
             }),
-            (0, D.jsx)(s, {
+            (0, D.jsx)(e, {
               text: R.strings.comp7_ext.damageIndicatorTooltip.damageRecord.description(),
               binding: { vehicleName: (0, D.jsx)("div", { className: f, children: t }) },
               classMix: u,
@@ -75,6 +75,6 @@ var g = a(n(), 1),
   });
 d(
   (0, D.jsx)(p, {
-    children: (0, D.jsx)(e, { children: (0, D.jsx)(m, { children: (0, D.jsx)(N, {}) }) }),
+    children: (0, D.jsx)(i, { children: (0, D.jsx)(m, { children: (0, D.jsx)(N, {}) }) }),
   }),
 );

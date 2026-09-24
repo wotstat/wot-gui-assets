@@ -6,51 +6,51 @@ import {
   At as a,
   Ci as i,
   Cr as o,
-  Fi as n,
-  Ii as d,
-  In as u,
-  Ir as l,
-  It as c,
-  Lt as g,
-  On as m,
-  Or as _,
-  Qn as p,
-  Ri as f,
-  Rn as h,
-  Sn as v,
-  Sr as C,
-  Tn as w,
-  Un as y,
-  Vi as b,
-  W as x,
-  Wn as I,
-  Zn as k,
-  Zt as j,
-  _r as P,
-  en as A,
-  hi as N,
-  j as M,
+  E as n,
+  Fi as d,
+  G as u,
+  Ii as l,
+  In as c,
+  Ir as g,
+  It as m,
+  Lt as _,
+  On as p,
+  Or as f,
+  Qn as h,
+  Ri as v,
+  Rn as w,
+  Sn as C,
+  Sr as y,
+  Tn as b,
+  Un as x,
+  Vi as I,
+  Wn as k,
+  Zn as j,
+  Zt as P,
+  _r as A,
+  en as N,
+  hi as M,
   jn as B,
   jt as S,
-  k as q,
-  kn as L,
-  li as z,
-  mi as G,
-  mr as H,
-  nr as Q,
-  ri as V,
-  ui as E,
-  vr as K,
+  kn as q,
+  li as L,
+  mi as z,
+  mr as G,
+  nr as H,
+  ri as Q,
+  ui as V,
+  vr as E,
+  w as K,
   yi as T,
-  yr as W,
+  yr as $,
 } from "./lib.js";
-import { n as $ } from "./vendor.js";
+import { n as W } from "./vendor.js";
 import { b as D, v as O, y as F } from "./sound.js";
 import { n as U, o as Z, r as X } from "./utils.js";
 import { t as Y } from "./number_animation.js";
 import { n as J, t as ee } from "./key_icon.js";
-var te = e(f(), 1),
-  re = K(),
+var te = e(v(), 1),
+  re = E(),
   se = {
     umg_widget_quest_progress: "umg_widget_quest_progress",
     umg_widget_quest_complete: "umg_widget_quest_complete",
@@ -88,9 +88,9 @@ function ne(e, t, ...r) {
 }
 function de(e, ...t) {
   const r = (e, s) => {
-    if (s === t.length) return M(e);
+    if (s === t.length) return n(e);
     const a = t[s];
-    return a in e && ((s === t.length - 1 || r(e[a], s + 1)) && delete e[a], M(e));
+    return a in e && ((s === t.length - 1 || r(e[a], s + 1)) && delete e[a], n(e));
   };
   return r(e.current, 0);
 }
@@ -104,7 +104,7 @@ function le(e, ...t) {
 }
 function ce(e, t, r, s) {
   Object.entries(t).forEach(([t, a]) => {
-    M(a)
+    n(a)
       ? le(r, e, t, e) && s(t, e)
       : Object.entries(a).forEach(([a, i]) => {
           const o = a || e;
@@ -128,18 +128,18 @@ function pe({ children: e }) {
     s = (0, te.useRef)({}),
     a = (0, te.useRef)({}),
     i = (0, te.useRef)({}),
-    o = L(),
-    n = Q(({ id: e, animName: t, elementId: r = e }) => le(s, e, t, r)),
-    d = Q((e, t, r = e) => {
+    o = q(),
+    n = H(({ id: e, animName: t, elementId: r = e }) => le(s, e, t, r)),
+    d = H((e, t, r = e) => {
       de(s, e, t, r);
     }),
-    u = Q(
+    u = H(
       ({ id: e, animName: t, config: r, elementId: a = e }) => (
         ne(s, r, e, t, a),
         () => d(e, t, a)
       ),
     ),
-    l = Q(
+    l = H(
       ({
         id: e,
         animName: t,
@@ -156,13 +156,13 @@ function pe({ children: e }) {
           _e({ sound: o, soundCfg: n }));
       },
     ),
-    c = Q(({ id: e, animName: t, elementId: s = e, providerCfg: i = {} }) => {
+    c = H(({ id: e, animName: t, elementId: s = e, providerCfg: i = {} }) => {
       const o = r.on(oe(e, t, s), () => {
         (de(a, e, t, s), ge({ storage: a, id: e, emitter: r, providerCfg: i }), o());
       });
       ne(a, !0, e, t, s);
     }),
-    g = Q(({ complexId: e, id: t, animName: s, elementId: a = t, providerCfg: o }) => {
+    g = H(({ complexId: e, id: t, animName: s, elementId: a = t, providerCfg: o }) => {
       const n = r.on(oe(t, s, a), function () {
           (!(function ({
             storage: e,
@@ -192,7 +192,7 @@ function pe({ children: e }) {
         d = ue(i, e, t, s);
       d ? d.add(a) : ne(i, new Set().add(a), e, t, s);
     }),
-    m = Q(({ groupId: e, groupCfg: t, providerCfg: i, soundCfg: n }) => {
+    m = H(({ groupId: e, groupCfg: t, providerCfg: i, soundCfg: n }) => {
       (de(a, e),
         i?.skip ||
           i?.skipTrigger ||
@@ -205,7 +205,7 @@ function pe({ children: e }) {
         _e({ sound: o, soundCfg: n }),
         i?.skip && !i?.skipTrigger && me({ id: e, emitter: r, providerCfg: i }));
     }),
-    _ = Q(({ complexId: e, complexCfg: t, providerCfg: a, soundCfg: n }) => {
+    _ = H(({ complexId: e, complexCfg: t, providerCfg: a, soundCfg: n }) => {
       if ((de(i, e), !a?.skip && !a?.skipTrigger))
         for (let [r, i] of Object.entries(t))
           ce(r, i, s, (t, s) => {
@@ -238,8 +238,8 @@ function he() {
   return (s(void 0 !== e, "WidgetAnimationContext is undefined"), e);
 }
 var ve = { small: "small", medium: "medium", big: "big" },
-  Ce = "full",
-  we = "medium",
+  we = "full",
+  Ce = "medium",
   ye = "small",
   be = { appear: "appear", fadeIn: "fadeIn", slideUpIn: "slideUpIn" },
   xe = { battlePass: "battlePass", events: "events", missions: "missions" },
@@ -249,7 +249,7 @@ function Re(e) {
   const t = new Map();
   for (let r = 0; r <= e.length; r++) {
     const s = e[r];
-    t.set(s, { rowIndex: r, columnIndex: 0, size: Ce });
+    t.set(s, { rowIndex: r, columnIndex: 0, size: we });
   }
   return t;
 }
@@ -271,20 +271,20 @@ function Pe(e, t, r, s = !0) {
   };
 }
 function Ae(e) {
-  return { to: { x: E(z(e) + 100), opacity: 0 }, config: { duration: 500, easing: n.easeInCubic } };
+  return { to: { x: V(L(e) + 100), opacity: 0 }, config: { duration: 500, easing: d.easeInCubic } };
 }
 function Ne(e, t, r) {
   const s = e.dataset.id,
     a = t.getCard(s),
     i = t.getCardHeight(s);
   if (!a || !i) return "";
-  const o = z(a.getPropValue("opacity")),
-    n = z(a.getPropValue("height"));
+  const o = L(a.getPropValue("opacity")),
+    n = L(a.getPropValue("height"));
   if (n < i || 0 === o) return "";
-  const d = z(a.getPropValue("width")),
-    u = z(a.getPropValue("y")),
-    l = z(a.getPropValue("x")),
-    c = t.getCardSize(s) !== Ce,
+  const d = L(a.getPropValue("width")),
+    u = L(a.getPropValue("y")),
+    l = L(a.getPropValue("x")),
+    c = t.getCardSize(s) !== we,
     g = Math.round(l),
     m = Math.round(l + d) - 1,
     _ = Math.round(u),
@@ -312,7 +312,7 @@ var Me = {
     [ve.medium]: { gap: 0, cardWidth: 319, cardHeight: 74 },
     [ve.big]: { gap: 0, cardWidth: 401, cardHeight: 92 },
   },
-  Be = { [Ce]: 1, [we]: 0.5, [ye]: 1 / 3 };
+  Be = { [we]: 1, [Ce]: 0.5, [ye]: 1 / 3 };
 function Se(e, t) {
   return { ...Me[e], ...t?.[e] };
 }
@@ -361,8 +361,8 @@ var Le = class {
             cardWidth: d,
             maxRowsAmount: u,
           } = Se(this._widgetConfig.size, a.adaptive);
-          r > 0 && o && (r += E(o));
-          const l = E(n),
+          r > 0 && o && (r += V(o));
+          const l = V(n),
             c = i.filter((e) => this._cards.get(e)?.visible),
             g = (a.layoutCreator || Re)(c);
           let m = 0;
@@ -381,9 +381,9 @@ var Le = class {
               e.cardSizes.set(_, o),
               e.animationProps.set(_, {
                 height: l,
-                width: E(n),
+                width: V(n),
                 opacity: f && this._widgetConfig.visibleRowsAmount >= p ? 1 : 0,
-                x: E(i * (n - 1)),
+                x: V(i * (n - 1)),
                 y: r + a * (l - 1),
               }),
               f && (m = Math.max(c, m)));
@@ -422,7 +422,7 @@ var Le = class {
       return this._layout.cardToRow.get(e) || 0;
     }
     getCardSize(e) {
-      return this._layout.cardSizes.get(e) || Ce;
+      return this._layout.cardSizes.get(e) || we;
     }
     getCardHeight(e) {
       const t = this.getCard(e)?.groupId;
@@ -485,15 +485,15 @@ var Le = class {
     [be.slideUpIn]: function (e, t, r) {
       const s = Pe(e, t, r, !1);
       if (t.includes(e)) {
-        const t = r.getCardAnimationProps(e).y + E(r.getCardHeight(e));
+        const t = r.getCardAnimationProps(e).y + V(r.getCardHeight(e));
         return { ...s, from: { ...s.from, y: t } };
       }
       return s;
     },
   };
 function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
-  const s = H({ size: ve.small }, { large: { size: ve.medium }, extraLarge: { size: ve.big } }),
-    { screenHeightRem: a } = P(),
+  const s = G({ size: ve.small }, { large: { size: ve.medium }, extraLarge: { size: ve.big } }),
+    { screenHeightRem: a } = A(),
     i =
       r ??
       (function (e) {
@@ -503,7 +503,7 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
       const e = (0, te.useRef)([]),
         t = (0, te.useRef)(!1),
         r = (0, te.useRef)(!1),
-        s = Q(() => {
+        s = H(() => {
           if (t.current || !r.current) return;
           const a = e.current.shift();
           a &&
@@ -518,13 +518,13 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
               }));
         });
       return {
-        enqueue: Q(
+        enqueue: H(
           (t) =>
             new Promise((r, a) => {
               (e.current.push({ promise: t, resolve: r, reject: a }), s());
             }),
         ),
-        runDequeue: Q(() => {
+        runDequeue: H(() => {
           ((r.current = !0), s());
         }),
       };
@@ -532,7 +532,7 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
     d = (0, te.useRef)(null),
     u = (0, te.useRef)(!1),
     l = (0, te.useRef)(new Le({ size: s.size, visibleRowsAmount: i, groups: t })),
-    c = Q((e) => {
+    c = H((e) => {
       const t = d.current?.querySelectorAll(`.${ze.borderHelper}`);
       t &&
         (function (e, t, r) {
@@ -544,7 +544,7 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
           }
         })(t, l.current, e);
     }),
-    g = Q(async (e) => {
+    g = H(async (e) => {
       (c(),
         await l.current.runCardAnimations((t, r) => {
           const s = e({ id: t, settings: r });
@@ -552,7 +552,7 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
         }),
         c());
     }),
-    m = Q(async (e = !0) => {
+    m = H(async (e = !0) => {
       let t = 0,
         r = 0;
       await g(({ id: s, settings: a }) => {
@@ -566,7 +566,7 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
         );
       });
     }),
-    _ = Q(async (e, t = be.appear) => {
+    _ = H(async (e, t = be.appear) => {
       const r = e.filter((e) => {
         const t = l.current.getCard(e);
         return void 0 !== t && !t.visible;
@@ -578,7 +578,7 @@ function He({ children: e, groups: t, maxVisibleRowsAmount: r }) {
       const s = Ge[t];
       await g((e) => s(e.id, r, l.current));
     }),
-    p = Q((e, t = !0) => !(t && !l.current.getCard(e)?.visible) && l.current.isCardDisplaying(e)),
+    p = H((e, t = !0) => !(t && !l.current.getCard(e)?.visible) && l.current.isCardDisplaying(e)),
     f = (0, te.useMemo)(
       () => ({
         registerCard: (e, t) => {
@@ -676,8 +676,8 @@ var Qe = { rewardPath: "rewardPath", quests: "quests", keys: "keys", shop: "shop
     const t = e?.showDelay || 400,
       r = (0, te.useRef)({ ...e.args }),
       s = (0, te.useRef)(null),
-      a = h(),
-      i = u({ ...e, showDelay: 0, args: r.current });
+      a = w(),
+      i = c({ ...e, showDelay: 0, args: r.current });
     return {
       containerRef: s,
       tooltipProps: {
@@ -688,8 +688,8 @@ var Qe = { rewardPath: "rewardPath", quests: "quests", keys: "keys", shop: "shop
               const t = s.current.getBoundingClientRect(),
                 a = s.current.parentElement?.getBoundingClientRect();
               (Object.assign(r.current, e.args),
-                (r.current.positionY = Math.floor(z(t.y)) - 16),
-                (r.current.positionX = Math.floor(z(a?.x || t.x)) - 10));
+                (r.current.positionY = Math.floor(L(t.y)) - 16),
+                (r.current.positionX = Math.floor(L(a?.x || t.x)) - 10));
             }
             i.onMouseEnter(o);
           }, t);
@@ -707,14 +707,14 @@ function Te(e) {
     [a, i] = (0, te.useState)(e);
   return (
     (0, te.useEffect)(() => {
-      C.shallow(a, e) || r.current.push(e);
+      y.shallow(a, e) || r.current.push(e);
     }),
     (0, te.useEffect)(() => {
       if (s.current) return;
       const e = r.current.shift();
       if (!e) return;
       s.current = !0;
-      const o = l(
+      const o = g(
         Object.entries(e),
         ([e, t]) => a[e] && !t,
         ([e]) => e,
@@ -728,7 +728,7 @@ function Te(e) {
     a
   );
 }
-var We = (0, te.forwardRef)(function (
+var $e = (0, te.forwardRef)(function (
     {
       children: e,
       id: t,
@@ -738,38 +738,38 @@ var We = (0, te.forwardRef)(function (
       visible: i = !0,
       hovered: o = !1,
       active: n = !0,
-      extraLarge: u = !1,
-      hasFullBorder: l = !1,
+      extraLarge: d = !1,
+      hasFullBorder: u = !1,
       leaveSound: c,
-      hoverSound: g = N.highlight,
-      clickSound: m = N.click,
+      hoverSound: g = M.highlight,
+      clickSound: m = M.click,
       className: _,
-      onClick: f,
-      onHover: h,
-      onActive: C,
+      onClick: p,
+      onHover: f,
+      onActive: v,
       onMouseEnter: w,
-      onMouseLeave: b,
-      ...x
+      onMouseLeave: y,
+      ...b
     },
-    R,
+    I,
   ) {
-    const j = he(),
-      [P, A] = I(() => Ie, []),
-      M = (0, te.useRef)(null),
-      B = (0, te.useRef)(V),
-      S = Q((e) => P[e].get()),
-      q = Q((e) => P[e].goal),
-      L = Q(async (e) => {
+    const R = he(),
+      [P, A] = k(() => Ie, []),
+      N = (0, te.useRef)(null),
+      B = (0, te.useRef)(Q),
+      S = H((e) => P[e].get()),
+      q = H((e) => P[e].goal),
+      L = H(async (e) => {
         await new Promise((t) => {
           ((B.current = t),
             Promise.all(A.start(e)).then(() => {
-              (t(), (B.current = V));
+              (t(), (B.current = Q));
             }));
         });
       });
     return (
-      k(() => {
-        j.registerCard(t, {
+      j(() => {
+        R.registerCard(t, {
           position: s,
           groupId: r,
           getPropValue: S,
@@ -778,33 +778,33 @@ var We = (0, te.forwardRef)(function (
           visible: i,
         });
       }),
-      p(() => {
-        (B.current?.(), j.unregisterCard(t));
+      h(() => {
+        (B.current?.(), R.unregisterCard(t));
       }),
-      (0, re.jsxs)(y.div, {
-        ...x,
+      (0, re.jsxs)(x.div, {
+        ...b,
         style: { ...P, pointerEvents: P.opacity.to((e) => (1 === e ? "auto" : "none")) },
-        className: d(
+        className: l(
           ze.base,
-          l && ze.base__fullBorder,
+          u && ze.base__fullBorder,
           o && ze.base__hovered,
           n && ze.base__active,
-          u && ze.base__extraLarge,
+          d && ze.base__extraLarge,
           _,
         ),
-        ref: v([R, M]),
+        ref: C([I, N]),
         onClick: () => {
-          a || (G.sound(m), f());
+          a || (z.sound(m), p());
         },
-        onMouseUp: () => C && C(!1),
+        onMouseUp: () => v && v(!1),
         onMouseEnter: (e) => {
-          (w?.(e), a || (g && G.sound(g), h && h(!0)));
+          (w?.(e), a || (g && z.sound(g), f && f(!0)));
         },
         onMouseLeave: () => {
-          (b?.(), a || (c && G.sound(c), h && h(!1), C && C(!1)));
+          (y?.(), a || (c && z.sound(c), f && f(!1), v && v(!1)));
         },
         onMouseDown: () => {
-          a || (C && C(!0));
+          a || (v && v(!0));
         },
         children: [
           (0, re.jsx)("div", { className: ze.bg }),
@@ -814,7 +814,7 @@ var We = (0, te.forwardRef)(function (
       })
     );
   }),
-  [$e, De] = w()(
+  [We, De] = b()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ click: e.createCallbackNoArgs("onClick") }),
   ),
@@ -836,10 +836,10 @@ var We = (0, te.forwardRef)(function (
     key: "KeyCard_key_84788ae6",
     keyIcon: "KeyCard_keyIcon_e3907da8",
   },
-  Fe = $(({ hasFullBorder: e, withBackground: t, className: r }) => {
+  Fe = W(({ hasFullBorder: e, withBackground: t, className: r }) => {
     const { model: s, controls: o } = De(),
-      { keys: n, isCompleted: u, isDisabled: l } = s.root.get(),
-      { breakpoint: c } = P(),
+      { keys: n, isCompleted: d, isDisabled: u } = s.root.get(),
+      { breakpoint: c } = A(),
       [g, m] = (0, te.useState)(!1),
       [_, p] = (0, te.useState)(!1),
       f = he();
@@ -847,29 +847,29 @@ var We = (0, te.forwardRef)(function (
       f.applyLayout();
     }, [f]);
     const h = (0, te.useRef)(n),
-      C = n > 9999,
-      w = C ? `${i(9999, 0)}+` : i(n, 0);
+      v = n > 9999,
+      w = v ? `${i(9999, 0)}+` : i(n, 0);
     ((0, te.useEffect)(() => {
       h.current !== n && (h.current = n);
     }, [n]),
       (0, te.useEffect)(() => {
         let e, t;
         return (
-          u ||
+          d ||
             _ ||
             g ||
             (e = setTimeout(() => {
-              (G.sound(O),
+              (z.sound(O),
                 (t = setInterval(() => {
-                  G.sound(O);
+                  z.sound(O);
                 }, 25e3)));
             }, 5e3)),
           () => {
             (clearTimeout(e), clearInterval(t));
           }
         );
-      }, [_, u, g]));
-    const y = H(
+      }, [_, d, g]));
+    const y = G(
         { value: J.C24x24 },
         { large: { value: J.C70x70 }, extraLarge: { value: J.C86x86 } },
       ),
@@ -887,8 +887,8 @@ var We = (0, te.forwardRef)(function (
         resId: R.aliases.halloween.shared.Keys("resId"),
         contentId: R.views.halloween.mono.lobby.tooltips.key_tooltip("resId"),
       });
-    return (0, re.jsx)(We, {
-      ref: v([b, I]),
+    return (0, re.jsx)($e, {
+      ref: C([b, I]),
       ...x,
       id: "keys",
       groupId: Qe.keys,
@@ -897,10 +897,10 @@ var We = (0, te.forwardRef)(function (
       onHover: (e) => m(e),
       hovered: g,
       active: _,
-      onClick: l ? V : o.click,
+      onClick: u ? Q : o.click,
       className: r,
       hasFullBorder: e,
-      isDisabled: l,
+      isDisabled: u,
       hoverSound: F,
       leaveSound: D,
       children: (0, re.jsxs)("div", {
@@ -916,13 +916,13 @@ var We = (0, te.forwardRef)(function (
             ...k,
             className: Oe.key,
             children: (0, re.jsx)("div", {
-              className: d(Oe.blink, !_ && !g && n > 0 && Oe.blink__anim),
+              className: l(Oe.blink, !_ && !g && n > 0 && Oe.blink__anim),
               children: (0, re.jsxs)("div", {
-                className: d(Oe.blink, g ? Oe.blink__hoverAnim : Oe.blink__unhoverAnim),
+                className: l(Oe.blink, g ? Oe.blink__hoverAnim : Oe.blink__unhoverAnim),
                 children: [
                   (0, re.jsx)("div", {
                     className: Oe.keyText,
-                    children: C
+                    children: v
                       ? w
                       : (0, re.jsx)(Y, {
                           isFormatted: !0,
@@ -944,15 +944,15 @@ var We = (0, te.forwardRef)(function (
   });
 function Ue(e) {
   const t = R.aliases.halloween.shared.Keys("resId");
-  return (0, re.jsx)(x, {
+  return (0, re.jsx)(u, {
     id: t,
-    children: (0, re.jsx)($e, {
+    children: (0, re.jsx)(We, {
       options: (0, te.useMemo)(() => ({ rootId: t }), [t]),
       children: (0, re.jsx)(Fe, { ...e }),
     }),
   });
 }
-var [Ze, Xe] = w()(({ observableModel: e }) => ({ quests: e.arrayClone("quests") }), V),
+var [Ze, Xe] = b()(({ observableModel: e }) => ({ quests: e.arrayClone("quests") }), Q),
   Ye = { from: { opacity: 0 }, config: { duration: 200, easing: je } },
   Je = { to: { scale: 1, opacity: 0.8 }, config: { duration: 300, easing: je } },
   et = { to: { scale: 0, opacity: 0 }, config: { duration: 300, easing: je } };
@@ -974,13 +974,13 @@ var tt = "QuestsCard_icon_aa7c2d27",
   ft = "QuestsCard_progressTextsBlock_eee8f0d1",
   ht = "QuestsCard_currentProgress_482c8d7e",
   vt = "QuestsCard_delta_30b150db",
-  Ct = "QuestsCard_glow_6baa2b09",
-  wt = "QuestsCard_reward_28bd9040",
-  yt = b.resolve("intl"),
+  wt = "QuestsCard_glow_6baa2b09",
+  Ct = "QuestsCard_reward_28bd9040",
+  yt = I.resolve("intl"),
   bt = (e, t, r) => {
     let s;
     return (
-      (s = t === W.extraLarge ? "c_48x48" : r ? "c_72x72" : "c_36x36"),
+      (s = t === $.extraLarge ? "c_48x48" : r ? "c_72x72" : "c_36x36"),
       `R.images.halloween.gui.maps.icons.gsw.conditions.${s}.${e}`
     );
   },
@@ -992,37 +992,37 @@ var tt = "QuestsCard_icon_aa7c2d27",
       conditionName: a,
       currentProgress: i,
       maximumProgress: n,
-      earned: u,
-      bonus: l,
-      isHangar: p = !1,
-      hasFullBorder: f = !1,
+      earned: d,
+      bonus: u,
+      isHangar: c = !1,
+      hasFullBorder: g = !1,
       className: h,
     },
     v,
   ) {
-    const C = P(),
-      w = H(
-        { iconSize: 36, rewardSize: g.Small },
-        { extraLarge: { iconSize: 48, rewardSize: g.Big } },
+    const w = A(),
+      C = G(
+        { iconSize: 36, rewardSize: _.Small },
+        { extraLarge: { iconSize: 48, rewardSize: _.Big } },
       ),
       {
-        iconStyle: b,
-        completedIconStyle: x,
-        progressStyle: k,
-        deltaGlowStyle: N,
+        iconStyle: y,
+        completedIconStyle: b,
+        progressStyle: I,
+        deltaGlowStyle: j,
         actualProgress: M,
       } = (function (e, t, r, s) {
         const a = t - r,
           [i, n] = (0, te.useState)(a),
-          { play: d } = m(),
-          [u, l] = I(() => ({
+          { play: d } = p(),
+          [u, l] = k(() => ({
             to: { currentProgress: a, deltaLeft: 0, deltaWidth: 0 },
             config: { duration: 1e3, easing: je },
           })),
-          [c, g] = I(() => Ye),
-          [p, f] = I(() => Je),
-          [h, v] = I(() => et),
-          C = Q(async (t) => {
+          [c, g] = k(() => Ye),
+          [m, _] = k(() => Je),
+          [h, v] = k(() => et),
+          w = H(async (t) => {
             if (e > 0) {
               (g.start({ opacity: 1 }), d(se.umg_widget_quest_progress));
               const r = t < i,
@@ -1037,69 +1037,69 @@ var tt = "QuestsCard_icon_aa7c2d27",
                 g.start({ opacity: 0 }));
             }
           }),
-          w = Q(async () => {
-            t !== i && (await C(t));
+          C = H(async () => {
+            t !== i && (await w(t));
           }),
-          y = Q(async (t, r = !1) => {
+          y = H(async (t, r = !1) => {
             if (r)
               return (
-                f.start({ ...et.to, immediate: !0 }),
+                _.start({ ...et.to, immediate: !0 }),
                 void v.start({ ...Je.to, immediate: !0 })
               );
-            (C(e),
-              t && (await _(1e3)),
-              await Promise.all(f.start(et.to)),
+            (w(e),
+              t && (await f(1e3)),
+              await Promise.all(_.start(et.to)),
               d(se.umg_widget_quest_complete),
               await Promise.all(v.start(Je.to)),
               d(se.umg_widget_quest_reward));
           });
         return (
           (0, te.useImperativeHandle)(s, () => ({
-            playProgressAnimation: w,
+            playProgressAnimation: C,
             playCompletedAnimation: y,
           })),
           {
             progressStyle: u,
             actualProgress: i,
             deltaGlowStyle: c,
-            iconStyle: p,
+            iconStyle: m,
             completedIconStyle: h,
           }
         );
-      })(n, i, u, v),
-      { containerRef: B, tooltipProps: L } = Ke({
+      })(n, i, d, v),
+      { containerRef: B, tooltipProps: q } = Ke({
         resId: R.aliases.halloween.shared.Quests("resId"),
         contentId: R.views.halloween.mono.lobby.tooltips.daily_quests_tooltip("resId"),
         args: { questId: t },
       });
-    return (0, re.jsx)(We, {
+    return (0, re.jsx)($e, {
       id: t,
       groupId: Qe.quests,
       position: e,
       ref: B,
-      ...L,
-      hasFullBorder: f,
+      ...q,
+      hasFullBorder: g,
       isDisabled: !0,
-      className: d(nt, h),
+      className: l(nt, h),
       active: !1,
       children: (0, re.jsxs)("div", {
         className: dt,
         children: [
-          (0, re.jsx)(y.div, { style: { opacity: x.opacity }, className: ut }),
-          !p && (0, re.jsx)("div", { className: lt }),
+          (0, re.jsx)(x.div, { style: { opacity: b.opacity }, className: ut }),
+          !c && (0, re.jsx)("div", { className: lt }),
           (0, re.jsxs)("div", {
             className: ct,
             children: [
-              (0, re.jsx)(y.div, {
-                style: b,
+              (0, re.jsx)(x.div, {
+                style: y,
                 className: tt,
-                children: (0, re.jsx)(A, {
-                  path: bt(a, C.breakpoint.name, C.upscale),
-                  width: w.iconSize,
-                  height: w.iconSize,
+                children: (0, re.jsx)(N, {
+                  path: bt(a, w.breakpoint.name, w.upscale),
+                  width: C.iconSize,
+                  height: C.iconSize,
                 }),
               }),
-              (0, re.jsx)(y.div, { style: x, className: rt }),
+              (0, re.jsx)(x.div, { style: b, className: rt }),
             ],
           }),
           n > 0
@@ -1109,14 +1109,14 @@ var tt = "QuestsCard_icon_aa7c2d27",
                   (0, re.jsxs)("div", {
                     className: ft,
                     children: [
-                      (0, re.jsx)(j, { text: s, tooltipDisabled: !0, className: mt }),
+                      (0, re.jsx)(P, { text: s, tooltipDisabled: !0, className: mt }),
                       (0, re.jsx)(r, {
                         className: _t,
                         text: R.strings.halloween_lobby.common.progress(),
                         params: {
-                          value: (0, re.jsx)(y.div, {
+                          value: (0, re.jsx)(x.div, {
                             className: ht,
-                            children: k.currentProgress.to((e) =>
+                            children: I.currentProgress.to((e) =>
                               yt.formatNumber("integral", Math.ceil(e)),
                             ),
                           }),
@@ -1125,7 +1125,7 @@ var tt = "QuestsCard_icon_aa7c2d27",
                       }),
                     ],
                   }),
-                  (0, re.jsxs)(q, {
+                  (0, re.jsxs)(K, {
                     size: "small",
                     className: st,
                     classNames: { background: ot, backgroundPattern: at },
@@ -1134,28 +1134,28 @@ var tt = "QuestsCard_icon_aa7c2d27",
                     maxValue: n,
                     children: [
                       (0, re.jsx)("div", { className: it }),
-                      (0, re.jsx)(y.div, {
+                      (0, re.jsx)(x.div, {
                         style: {
-                          width: k.deltaWidth.to((e) => `${e}%`),
-                          left: k.deltaLeft.to((e) => `${e}%`),
+                          width: I.deltaWidth.to((e) => `${e}%`),
+                          left: I.deltaLeft.to((e) => `${e}%`),
                         },
                         className: vt,
-                        children: (0, re.jsx)(y.div, { style: N, className: Ct }),
+                        children: (0, re.jsx)(x.div, { style: j, className: wt }),
                       }),
                     ],
                   }),
                 ],
               })
-            : (0, re.jsx)(j, { text: s, tooltipDisabled: !0, className: gt }),
+            : (0, re.jsx)(P, { text: s, tooltipDisabled: !0, className: gt }),
           (0, re.jsx)(S, {
-            name: l.name,
-            value: Z(l),
-            className: wt,
-            size: w.rewardSize,
-            special: l.overlayType,
-            image: X(l, w.rewardSize),
-            valueType: c(l.name),
-            tooltipArgs: U(l, t, R.aliases.halloween.shared.Quests("resId")),
+            name: u.name,
+            value: Z(u),
+            className: Ct,
+            size: C.rewardSize,
+            special: u.overlayType,
+            image: X(u, C.rewardSize),
+            valueType: m(u.name),
+            tooltipArgs: U(u, t, R.aliases.halloween.shared.Quests("resId")),
           }),
         ],
       }),
@@ -1163,7 +1163,7 @@ var tt = "QuestsCard_icon_aa7c2d27",
   });
 function It({ children: e }) {
   const t = R.aliases.halloween.shared.Quests("resId");
-  return (0, re.jsx)(x, {
+  return (0, re.jsx)(u, {
     id: t,
     children: (0, re.jsx)(Ze, {
       options: (0, te.useMemo)(() => ({ rootId: t }), [t]),
@@ -1173,7 +1173,7 @@ function It({ children: e }) {
 }
 export {
   se as _,
-  We as a,
+  $e as a,
   Ee as c,
   He as d,
   be as f,

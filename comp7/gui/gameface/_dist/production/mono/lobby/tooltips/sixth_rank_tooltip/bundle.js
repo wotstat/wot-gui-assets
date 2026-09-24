@@ -1,5 +1,5 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Pa as o, Uo as r, _i as t, fi as e, kr as i, ws as n } from "../../chunks/lib.js";
+import { Pa as o, Q as t, Uo as r, _i as e, fi as i, ws as n } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a, i as c } from "../../chunks/vendor.js";
 /* empty css                  */ import { r as m } from "../../chunks/enums.js";
@@ -8,7 +8,7 @@ import { t as d } from "../../chunks/tooltip_decorator.js";
 import { t as p } from "../../chunks/tooltips.module.js";
 n();
 var h = s(c(), 1),
-  [j, u] = t()(({ observableModel: s }) => ({ root: s.object() }), r),
+  [j, u] = e()(({ observableModel: s }) => ({ root: s.object() }), r),
   k = s(o(), 1),
   x = a(() => {
     const { model: s } = u(),
@@ -19,7 +19,7 @@ var h = s(c(), 1),
         (0, k.jsx)("div", { className: p.heading, children: l(m.Sixth) }),
         (0, k.jsx)("div", {
           className: (0, h.default)(p.description, p.description__topIndent),
-          children: (0, k.jsx)(i, {
+          children: (0, k.jsx)(t, {
             text: R.strings.comp7_ext.sixthRankTooltip.description(),
             binding: { topPercentage: o },
           }),
@@ -27,4 +27,4 @@ var h = s(c(), 1),
       ],
     });
   });
-e((0, k.jsx)(j, { children: (0, k.jsx)(d, { children: (0, k.jsx)(x, {}) }) }));
+i((0, k.jsx)(j, { children: (0, k.jsx)(d, { children: (0, k.jsx)(x, {}) }) }));

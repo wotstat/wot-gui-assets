@@ -1,20 +1,20 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Mr as o, Pa as i, Uo as a, _i as e, fi as r, kr as n, q as t } from "../../chunks/lib.js";
+import { $ as o, Pa as i, Q as a, Uo as e, _i as r, fi as n, tt as t } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as l, i as d } from "../../chunks/vendor.js";
 /* empty css                  */ import { n as c, r as m } from "../../chunks/get_rank_name.js";
 import { t as j } from "../../chunks/tooltip_decorator.js";
 import { t as h } from "../../chunks/tooltips.module.js";
 var g = s(d(), 1),
-  [u, x] = e()(({ observableModel: s }) => ({ root: s.object() }), a),
+  [u, x] = r()(({ observableModel: s }) => ({ root: s.object() }), e),
   p = s(i(), 1),
   v = l(() => {
     const { model: s } = x(),
-      { divisions: i, rank: a, from: e, to: r } = s.root.get();
+      { divisions: i, rank: e, from: r, to: n } = s.root.get();
     return (0, p.jsxs)("div", {
       className: h.base,
       children: [
-        (0, p.jsx)("div", { className: h.heading, children: c(a) }),
+        (0, p.jsx)("div", { className: h.heading, children: c(e) }),
         (0, p.jsx)("div", {
           className: (0, g.default)(h.subHeading, h.subHeading__topIndent),
           children: (0, p.jsx)(o, {
@@ -25,15 +25,15 @@ var g = s(d(), 1),
         (0, p.jsx)("div", { className: h.divider }),
         (0, p.jsx)("div", {
           className: h.description,
-          children: (0, p.jsx)(n, {
-            text: m(R.strings.comp7_ext.generalRankTooltip.body, a),
+          children: (0, p.jsx)(a, {
+            text: m(R.strings.comp7_ext.generalRankTooltip.body, e),
             binding: {
-              fromScore: (0, p.jsx)(t, { value: e }),
-              toScore: (0, p.jsx)(t, { value: r }),
+              fromScore: (0, p.jsx)(t, { value: r }),
+              toScore: (0, p.jsx)(t, { value: n }),
             },
           }),
         }),
       ],
     });
   });
-r((0, p.jsx)(u, { children: (0, p.jsx)(j, { children: (0, p.jsx)(v, {}) }) }));
+n((0, p.jsx)(u, { children: (0, p.jsx)(j, { children: (0, p.jsx)(v, {}) }) }));

@@ -23442,379 +23442,7 @@ var background$1 = "ProgressBar_background_b4143753",
   (ProgressBar.sizes = sizes$3),
   (ProgressBar.statuses = statuses),
   (ProgressBar.animations = animations));
-var formats = {
-    superCompact: "superCompact",
-    compact: "compact",
-    default: "default",
-    detailed: "detailed",
-  },
-  sizes$2 = {
-    x16x16: "x16x16",
-    x24x24: "x24x24",
-    x32x32: "x32x32",
-    x48x48: "x48x48",
-    x80x80: "x80x80",
-  },
-  types$2 = { accent: "accent", cooldown: "cooldown" },
-  item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
-  item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
-  item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
-  item__x48x48 = "FormattedValue_item__x48x48_43bf6d1b",
-  item__x80x80 = "FormattedValue_item__x80x80_c03e8347",
-  part__x16x16 = "FormattedValue_part__x16x16_2186b32f",
-  part__x24x24 = "FormattedValue_part__x24x24_2186b32f",
-  part__x32x32 = "FormattedValue_part__x32x32_f9323fe3",
-  part__x48x48 = "FormattedValue_part__x48x48_bd002d69",
-  part__x80x80 = "FormattedValue_part__x80x80_dca9ec18",
-  detailedSeparator = "FormattedValue_detailedSeparator_30bfaeef",
-  detailedSeparator__x16x16 = "FormattedValue_detailedSeparator__x16x16_2b8550e4",
-  detailedSeparator__x24x24 = "FormattedValue_detailedSeparator__x24x24_2b8550e4",
-  detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
-  detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
-  detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
-  formatted_value_module_default = {
-    item__x16x16: item__x16x16,
-    item__x24x24: item__x24x24,
-    item__x32x32: item__x32x32,
-    item__x48x48: item__x48x48,
-    item__x80x80: item__x80x80,
-    part__x16x16: part__x16x16,
-    part__x24x24: part__x24x24,
-    part__x32x32: part__x32x32,
-    part__x48x48: part__x48x48,
-    part__x80x80: part__x80x80,
-    detailedSeparator: detailedSeparator,
-    detailedSeparator__x16x16: detailedSeparator__x16x16,
-    detailedSeparator__x24x24: detailedSeparator__x24x24,
-    detailedSeparator__x32x32: detailedSeparator__x32x32,
-    detailedSeparator__x48x48: detailedSeparator__x48x48,
-    detailedSeparator__x80x80: detailedSeparator__x80x80,
-  };
-function FormattedValue({ size: e, preFormatted: t }) {
-  const n = [];
-  for (let r = 0; r < t.items.length; ++r)
-    (t.separator &&
-      r > 0 &&
-      n.push(
-        (0, import_jsx_runtime.jsx)(
-          "span",
-          {
-            className: (0, import_classnames.default)(
-              formatted_value_module_default.detailedSeparator,
-              formatted_value_module_default[`detailedSeparator__${e}`],
-            ),
-          },
-          "separator",
-        ),
-      ),
-      n.push(
-        (0, import_jsx_runtime.jsx)(
-          "span",
-          {
-            className: (0, import_classnames.default)(
-              formatted_value_module_default.item,
-              formatted_value_module_default[`item__${e}`],
-            ),
-            children: t.items[r]
-              ?.split(" ")
-              .map((t, n) =>
-                (0, import_jsx_runtime.jsx)(
-                  "span",
-                  {
-                    className: (0, import_classnames.default)(
-                      formatted_value_module_default.part,
-                      formatted_value_module_default[`part__${e}`],
-                    ),
-                    children: t,
-                  },
-                  `part_${n}`,
-                ),
-              ),
-          },
-          `item_${r}`,
-        ),
-      ));
-  return n;
-}
-var STRING_RESOURCES = resources.resolve("strings"),
-  COLON = ":",
-  DAYS_FORMAT = "D",
-  HOURS_FORMAT = "h",
-  MINUTES_FORMAT = "m",
-  DEFAULT_MIN_VALUE = 1,
-  FORMAT_PARTS = {
-    [formats.compact]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
-    [formats.default]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
-    [formats.detailed]: [DAYS_FORMAT, "hh", "mm", "ss"],
-  },
-  FORMATTER = {
-    [formats.compact]: compactFormatter,
-    [formats.default]: defaultFormatter,
-    [formats.detailed]: detailedFormatter,
-  },
-  LOCALE_FORMATTERS = {
-    [DAYS_FORMAT]: (e) =>
-      format(
-        STRING_RESOURCES.readOr("common.timer.days", () => DAYS_FORMAT.toLowerCase()),
-        { days: e },
-      ),
-    [HOURS_FORMAT]: (e) =>
-      format(
-        STRING_RESOURCES.readOr("common.timer.hours", () => HOURS_FORMAT),
-        { hours: e },
-      ),
-    [MINUTES_FORMAT]: (e) =>
-      format(
-        STRING_RESOURCES.readOr("common.timer.minutes", () => MINUTES_FORMAT),
-        { minutes: e },
-      ),
-  };
-function detailedFormatter(e) {
-  const [t, ...n] = e,
-    r = n.join(COLON);
-  return { separator: !0, items: Number(t) > 0 ? [LOCALE_FORMATTERS[DAYS_FORMAT]?.(t), r] : [r] };
-}
-function defaultFormatter(e, t) {
-  let n = 0;
-  const r = e.length - 1,
-    a = FORMAT_PARTS[t],
-    o = { separator: !1, items: [] };
-  for (; n < r && !(Number(e[n]) > 0); ++n);
-  return (
-    a[n] === MINUTES_FORMAT && 0 === Number(e[n])
-      ? (o.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)])
-      : (o.items = [n, n + 1].map((t) => LOCALE_FORMATTERS[a[t]]?.(e[t]))),
-    o
-  );
-}
-function compactFormatter(e, t) {
-  const n = e.length,
-    r = FORMAT_PARTS[t],
-    a = { separator: !1, items: [] };
-  for (let o = 0; o < n; ++o)
-    if (Number(e[o]) > 0) return ((a.items = [LOCALE_FORMATTERS[r[o]]?.(e[o])]), a);
-  return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
-}
-var formatValue = (e, t) => FORMATTER[t]?.(format$1(e, FORMAT_PARTS[t]), t),
-  base$12 = "Timer_dac0a0aa",
-  icon$4 = "Timer_icon_a61415df",
-  icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
-  icon__accent = "Timer_icon__accent_2cf70c3b",
-  icon__cooldown = "Timer_icon__cooldown_4a26d3f",
-  icon__x24x24 = "Timer_icon__x24x24_31571381",
-  icon__x32x32 = "Timer_icon__x32x32_807dde34",
-  icon__x48x48 = "Timer_icon__x48x48_ae779a9e",
-  icon__x80x80 = "Timer_icon__x80x80_251aafea",
-  label$1 = "Timer_label_1565f308",
-  label__x16x16 = "Timer_label__x16x16_e3ff224",
-  label__x24x24 = "Timer_label__x24x24_ca748cca",
-  label__x32x32 = "Timer_label__x32x32_13cccf38",
-  label__x48x48 = "Timer_label__x48x48_e3a9b542",
-  label__x80x80 = "Timer_label__x80x80_10a84ee6",
-  label__accent = "Timer_label__accent_ac7d4f7b",
-  label__cooldown = "Timer_label__cooldown_c2349ab9",
-  timer_module_default = {
-    base: base$12,
-    icon: icon$4,
-    icon__x16x16: icon__x16x16,
-    icon__accent: icon__accent,
-    icon__cooldown: icon__cooldown,
-    icon__x24x24: icon__x24x24,
-    icon__x32x32: icon__x32x32,
-    icon__x48x48: icon__x48x48,
-    icon__x80x80: icon__x80x80,
-    label: label$1,
-    label__x16x16: label__x16x16,
-    label__x24x24: label__x24x24,
-    label__x32x32: label__x32x32,
-    label__x48x48: label__x48x48,
-    label__x80x80: label__x80x80,
-    label__accent: label__accent,
-    label__cooldown: label__cooldown,
-  };
-function Timer({
-  start: e,
-  limit: t = 0,
-  tick: n = 1,
-  size: r = sizes$2.x24x24,
-  type: a = types$2.accent,
-  format: o = formats.default,
-  autostart: i = !0,
-  className: s,
-  classNames: l,
-}) {
-  const [u] = useTicker(
-    (0, import_react.useMemo)(
-      () => ({
-        type: "countdown",
-        start: isDuration(e) ? e : seconds(e),
-        limit: isDuration(t) ? t : seconds(t),
-        tick: isDuration(n) ? n : seconds(n),
-        autostart: i,
-      }),
-      [i, t, e, n],
-    ),
-  );
-  return (0, import_jsx_runtime.jsxs)("div", {
-    className: (0, import_classnames.default)(timer_module_default.base, s),
-    children: [
-      (0, import_jsx_runtime.jsx)("div", {
-        className: (0, import_classnames.default)(
-          timer_module_default.icon,
-          timer_module_default[`icon__${r}`],
-          timer_module_default[`icon__${a}`],
-          l?.icon,
-        ),
-      }),
-      o !== formats.superCompact &&
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(
-            timer_module_default.label,
-            timer_module_default[`label__${r}`],
-            timer_module_default[`label__${a}`],
-            l?.label,
-          ),
-          children: (0, import_jsx_runtime.jsx)(FormattedValue, {
-            size: r,
-            preFormatted: formatValue(u, o),
-          }),
-        }),
-    ],
-  });
-}
-((Timer.format = formats), (Timer.size = sizes$2), (Timer.type = types$2));
-var makeOptionalCaller =
-    (e, t) =>
-    (...n) => {
-      if (e(...n)) return t(...n);
-    },
-  MOUSE_BUTTON_CODES = (function (e) {
-    return (
-      (e[(e.LEFT = 0)] = "LEFT"),
-      (e[(e.WHEEL = 1)] = "WHEEL"),
-      (e[(e.RIGHT = 2)] = "RIGHT"),
-      (e[(e.FOURTH = 3)] = "FOURTH"),
-      (e[(e.FIFTH = 4)] = "FIFTH"),
-      e
-    );
-  })({});
-function playSound(e) {
-  engine.call("PlaySound", e).catch((t) => {
-    console.error("[lib/sounds.js] playSound(", e, "): ", t);
-  });
-}
-var base$11 = "Iconbutton_4670fff1",
-  base__hovered = "Iconbutton_base__hovered_e242531a",
-  base__disabled$1 = "Iconbutton_base__disabled_dc15052c",
-  icon$3 = "Iconbutton_icon_a3c2367",
-  icon__preview = "Iconbutton_icon__preview_8d5c6527",
-  icon__compare = "Iconbutton_icon__compare_2797841f",
-  icon__small = "Iconbutton_icon__small_1ca760fc",
-  icon__normal = "Iconbutton_icon__normal_6c83ef9d",
-  base__mouseDown = "Iconbutton_base__mouseDown_81e1e86b",
-  label = "Iconbutton_label_bd93b7a9",
-  label__small = "Iconbutton_label__small_628c6c03",
-  label__normal = "Iconbutton_label__normal_252cb7af",
-  base__visibleLabel = "Iconbutton_base__visibleLabel_81e1e86b",
-  IconButton_module_default = {
-    base: base$11,
-    base__hovered: base__hovered,
-    base__disabled: base__disabled$1,
-    icon: icon$3,
-    icon__preview: icon__preview,
-    icon__compare: icon__compare,
-    icon__small: icon__small,
-    icon__normal: icon__normal,
-    base__mouseDown: base__mouseDown,
-    label: label,
-    label__small: label__small,
-    label__normal: label__normal,
-    base__visibleLabel: base__visibleLabel,
-  },
-  IconButton = ({
-    type: e,
-    children: t,
-    className: n,
-    classNames: r,
-    disabled: a = !1,
-    isVisibleLabel: o = !1,
-    soundHover: i = R.sounds.highlight(),
-    soundClick: s = R.sounds.play(),
-    size: l = "normal",
-    onClick: u,
-    onMouseEnter: c,
-    onMouseLeave: d,
-    onMouseDown: f,
-    onMouseUp: p,
-    onFocus: m,
-    onBlur: _,
-    ...h
-  }) => {
-    const [g, b] = (0, import_react.useState)(!1),
-      [v, y] = (0, import_react.useState)(!1),
-      w = (0, import_react.useRef)(null),
-      S = () => !1 === a,
-      x = (e) => S() && ((e) => e.button === MOUSE_BUTTON_CODES.LEFT)(e),
-      E = makeOptionalCaller(S, (e) => {
-        u?.(e);
-      }),
-      k = makeOptionalCaller(x, (e) => {
-        (b(!0), f?.(e), s && playSound(s));
-      }),
-      O = makeOptionalCaller(x, (e) => {
-        (b(!1), p?.(e));
-      }),
-      A = makeOptionalCaller(S, (e) => {
-        (y(!0), c?.(e), i && playSound(i));
-      }),
-      C = makeOptionalCaller(S, (e) => {
-        m?.(e);
-      }),
-      P = makeOptionalCaller(S, (e) => {
-        _?.(e);
-      });
-    return (0, import_jsx_runtime.jsxs)("div", {
-      ref: w,
-      className: (0, import_classnames.default)(
-        IconButton_module_default.base,
-        a && IconButton_module_default.base__disabled,
-        o && IconButton_module_default.base__visibleLabel,
-        !a && g && IconButton_module_default.base__mouseDown,
-        !a && v && IconButton_module_default.base__hovered,
-        n,
-      ),
-      onClick: E,
-      onMouseEnter: A,
-      onMouseLeave: (e) => {
-        (y(!1), b(!1), d?.(e));
-      },
-      onMouseDown: k,
-      onMouseUp: O,
-      onFocus: C,
-      onBlur: P,
-      ...h,
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(
-            IconButton_module_default.icon,
-            IconButton_module_default[`icon__${l}`],
-            IconButton_module_default[`icon__${e}`],
-            r?.icon,
-          ),
-        }),
-        t &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: (0, import_classnames.default)(
-              IconButton_module_default.label,
-              IconButton_module_default[`label__${l}`],
-              r?.label,
-            ),
-            children: t,
-          }),
-      ],
-    });
-  },
-  CardContext = (0, import_react.createContext)(void 0);
+var CardContext = (0, import_react.createContext)(void 0);
 function useCardContext() {
   const e = (0, import_react.useContext)(CardContext);
   if (!e) throw new Error("Card context must be used only within its provider");
@@ -23839,21 +23467,21 @@ function useCardsWrapperContextOptional() {
   return (0, import_react.useContext)(CardsWrapperContext);
 }
 var CardsWrapperContextProvider = CardsWrapperContext.Provider,
-  base$10 = "Content_8eaaf71a",
+  base$12 = "Content_8eaaf71a",
   content$2 = "Content_ab8563af",
   disabledOverlay$1 = "Content_disabledOverlay_af87c441",
   base__multiple = "Content_base__multiple_da09528a",
-  base__disabled = "Content_base__disabled_da09528a",
+  base__disabled$1 = "Content_base__disabled_da09528a",
   base__hover$1 = "Content_base__hover_da09528a",
   base__selectedHover$1 = "Content_base__selectedHover_da09528a",
   base__selected$1 = "Content_base__selected_da09528a",
   multipleCorner = "Content_multipleCorner_151c26ee",
   content_module_default = {
-    base: base$10,
+    base: base$12,
     content: content$2,
     disabledOverlay: disabledOverlay$1,
     base__multiple: base__multiple,
-    base__disabled: base__disabled,
+    base__disabled: base__disabled$1,
     base__hover: base__hover$1,
     base__selectedHover: base__selectedHover$1,
     base__selected: base__selected$1,
@@ -23912,8 +23540,8 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
       })
     );
   },
-  base$9 = "Status_68bd9bc6",
-  icon$2 = "Status_icon_cef4536",
+  base$11 = "Status_68bd9bc6",
+  icon$4 = "Status_icon_cef4536",
   base__done = "Status_base__done_35b9a31c",
   base__doneSmall = "Status_base__doneSmall_35b9a31c",
   base__alert = "Status_base__alert_35b9a31c",
@@ -23925,8 +23553,8 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   blur = "Status_blur_5675b854",
   glowBig = "Status_glowBig_5954041c",
   status_module_default = {
-    base: base$9,
-    icon: icon$2,
+    base: base$11,
+    icon: icon$4,
     base__done: base__done,
     base__doneSmall: base__doneSmall,
     base__alert: base__alert,
@@ -23992,7 +23620,7 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
       ],
     });
   },
-  base$8 = "Card_f0963ece",
+  base$10 = "Card_f0963ece",
   base__wrapped = "Card_base__wrapped_c6eb8737",
   base__disableMouse = "Card_base__disableMouse_5cd80216",
   base__hover = "Card_base__hover_f4c22d1c",
@@ -24005,7 +23633,7 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   base__selectedHover = "Card_base__selectedHover_f4c22d1c",
   centerBorder = "Card_centerBorder_8a0f28ae",
   card_module_default = {
-    base: base$8,
+    base: base$10,
     base__wrapped: base__wrapped,
     base__disableMouse: base__disableMouse,
     base__hover: base__hover,
@@ -24285,12 +23913,12 @@ var Lines = (0, import_react.memo)(
       );
     },
   ),
-  base$7 = "CardsWrapper_3b6cc4f6",
+  base$9 = "CardsWrapper_3b6cc4f6",
   card = "CardsWrapper_card_c7fc9ee7",
   centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
   outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
   cards_wrapper_module_default = {
-    base: base$7,
+    base: base$9,
     card: card,
     centerBorderCommon: centerBorderCommon,
     outerBorderCommon: outerBorderCommon,
@@ -24555,8 +24183,8 @@ var Direction = (function (e) {
   background = "Thumb_background_b893084a",
   border = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
-  icon$1 = "Thumb_icon_dca8bf26",
-  base$6 = "Thumb_6ff3e706",
+  icon$3 = "Thumb_icon_dca8bf26",
+  base$8 = "Thumb_6ff3e706",
   base__vertical = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
   base__active = "Thumb_base__active_830942bb",
@@ -24564,8 +24192,8 @@ var Direction = (function (e) {
     background: background,
     border: border,
     innerBorder: innerBorder,
-    icon: icon$1,
-    base: base$6,
+    icon: icon$3,
+    base: base$8,
     base__vertical: base__vertical,
     base__horizontal: base__horizontal,
     base__active: base__active,
@@ -24845,7 +24473,7 @@ function useBarHandlers(e, t, n, r, a, o, i) {
   );
 }
 var rail$1 = "HorizontalBar_rail_37858d8f",
-  base$5 = "HorizontalBar_4df27ac3",
+  base$7 = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
@@ -24854,7 +24482,7 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
   button$1 = "HorizontalBar_button_cbabd91",
   horizontal_bar_module_default = {
     rail: rail$1,
-    base: base$5,
+    base: base$7,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
@@ -24974,14 +24602,14 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
       ],
     });
   }),
-  base$4 = "HorizontalScroll_5b201d2b",
+  base$6 = "HorizontalScroll_5b201d2b",
   wrapper = "HorizontalScroll_wrapper_2fb60496",
   wrapper__left = "HorizontalScroll_wrapper__left_adacfff",
   wrapper__right = "HorizontalScroll_wrapper__right_a6825027",
   wrapper__both = "HorizontalScroll_wrapper__both_7917ea88",
   defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
   horizontal_scroll_module_default = {
-    base: base$4,
+    base: base$6,
     wrapper: wrapper,
     wrapper__left: wrapper__left,
     wrapper__right: wrapper__right,
@@ -25052,7 +24680,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$3 = "VerticalBar_7187fa00",
+  base$5 = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
@@ -25061,7 +24689,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   button = "VerticalBar_button_7b0e4aca",
   vertical_bar_module_default = {
     rail: rail,
-    base: base$3,
+    base: base$5,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
@@ -25250,7 +24878,7 @@ function Base$2({ settings: e, children: t }) {
 Area.Default = DefaultScroll;
 var states = { default: "default", alert: "alert", error: "error", done: "done" },
   messageTypes = { alert: "alert", error: "error" },
-  types$1 = {
+  types$2 = {
     text: "text",
     password: "password",
     number: "number",
@@ -25258,9 +24886,9 @@ var states = { default: "default", alert: "alert", error: "error", done: "done" 
     email: "email",
     integer: "integer",
   },
-  sizes$1 = { medium: "medium", large: "large" },
+  sizes$2 = { medium: "medium", large: "large" },
   icons = { search: "search" },
-  defaultConfig = { type: types$1.text, size: sizes$1.medium, state: states.default, disabled: !1 },
+  defaultConfig = { type: types$2.text, size: sizes$2.medium, state: states.default, disabled: !1 },
   placeholderVisibility = { focusedOrValue: "focusedOrValue", value: "value" },
   contextInstance = (0, import_react.createContext)(null);
 function useInput() {
@@ -25308,7 +24936,7 @@ function useInputInstance({ value: e, size: t, type: n, state: r, disabled: a })
   );
 }
 var disabledOverlay = "Input_disabledOverlay_3e980046",
-  icon = "Input_icon_ed3c6a4a",
+  icon$2 = "Input_icon_ed3c6a4a",
   clearButton = "Input_clearButton_d26b0bd5",
   decoration = "Input_decoration_b561de7a",
   decoration__focused = "Input_decoration__focused_494bd5d6",
@@ -25343,7 +24971,7 @@ var disabledOverlay = "Input_disabledOverlay_3e980046",
   clearButton__upscale = "Input_clearButton__upscale_494bd5d6",
   input_module_default = {
     disabledOverlay: disabledOverlay,
-    icon: icon,
+    icon: icon$2,
     clearButton: clearButton,
     decoration: decoration,
     decoration__focused: decoration__focused,
@@ -25525,9 +25153,9 @@ var Placeholder = (0, import_react.forwardRef)(function (
           onChange: function (e) {
             if (c) return (e.preventDefault(), void f.current?.blur());
             const { value: t } = e.target;
-            (l === types$1.number
+            (l === types$2.number
               ? (e.target.value = cleanInputNumber(t))
-              : l === types$1.integer && (e.target.value = cleanInputInteger(t)),
+              : l === types$2.integer && (e.target.value = cleanInputInteger(t)),
               i.onChange?.(e));
           },
           onFocus: function (e) {
@@ -25609,9 +25237,9 @@ var Input = (0, import_react.forwardRef)(function (
     }),
   });
 });
-((Input.types = types$1),
+((Input.types = types$2),
   (Input.messageTypes = messageTypes),
-  (Input.sizes = sizes$1),
+  (Input.sizes = sizes$2),
   (Input.states = states),
   (Input.icons = icons),
   (Input.Provider = Provider),
@@ -25621,7 +25249,7 @@ var Input = (0, import_react.forwardRef)(function (
   (Input.Message = Message),
   (Input.Icon = Icon),
   (Input.ClearButton = ClearButton));
-var types = {
+var types$1 = {
     tankXP: "tankXP",
     freeXP: "freeXP",
     credits: "credits",
@@ -25639,8 +25267,8 @@ var types = {
     brProgressionToken: "brProgressionToken",
     battlePassPoints: "battlePassPoints",
   },
-  currencyTypes = Object.values(types),
-  sizes = {
+  currencyTypes = Object.values(types$1),
+  sizes$1 = {
     extraSmall: "extraSmall",
     small: "small",
     medium: "medium",
@@ -25649,30 +25277,30 @@ var types = {
     xxl: "xxl",
   },
   imageSizes = {
-    [sizes.extraSmall]: 16,
-    [sizes.small]: 24,
-    [sizes.medium]: 32,
-    [sizes.large]: 48,
-    [sizes.extraLarge]: 80,
-    [sizes.xxl]: 96,
+    [sizes$1.extraSmall]: 16,
+    [sizes$1.small]: 24,
+    [sizes$1.medium]: 32,
+    [sizes$1.large]: 48,
+    [sizes$1.extraLarge]: 80,
+    [sizes$1.xxl]: 96,
   },
   upscaledImageSizes = {
-    [sizes.extraSmall]: 32,
-    [sizes.small]: 48,
-    [sizes.medium]: 32,
-    [sizes.large]: 96,
-    [sizes.extraLarge]: 80,
-    [sizes.xxl]: 96,
+    [sizes$1.extraSmall]: 32,
+    [sizes$1.small]: 48,
+    [sizes$1.medium]: 32,
+    [sizes$1.large]: 96,
+    [sizes$1.extraLarge]: 80,
+    [sizes$1.xxl]: 96,
   },
   discountSizesConfig = {
-    [sizes.extraSmall]: { width: "60rem", height: "36rem" },
-    [sizes.small]: { width: "80rem", height: "48rem" },
-    [sizes.medium]: { width: "80rem", height: "48rem" },
-    [sizes.large]: { width: "106rem", height: "64rem" },
-    [sizes.extraLarge]: { width: "140rem", height: "84rem" },
-    [sizes.xxl]: { width: "140rem", height: "84rem" },
+    [sizes$1.extraSmall]: { width: "60rem", height: "36rem" },
+    [sizes$1.small]: { width: "80rem", height: "48rem" },
+    [sizes$1.medium]: { width: "80rem", height: "48rem" },
+    [sizes$1.large]: { width: "106rem", height: "64rem" },
+    [sizes$1.extraLarge]: { width: "140rem", height: "84rem" },
+    [sizes$1.xxl]: { width: "140rem", height: "84rem" },
   },
-  base$2 = "Currency_72d4be39",
+  base$4 = "Currency_72d4be39",
   base__reverse = "Currency_base__reverse_f12e61b0",
   base__notEnough = "Currency_base__notEnough_9a7842f",
   base__credits = "Currency_base__credits_7b9ae721",
@@ -25681,7 +25309,7 @@ var types = {
   base__crystal = "Currency_base__crystal_f830cb47",
   base__tankXP = "Currency_base__tankXP_1707c68b",
   currency_module_default = {
-    base: base$2,
+    base: base$4,
     base__reverse: base__reverse,
     base__notEnough: base__notEnough,
     base__credits: base__credits,
@@ -25695,7 +25323,7 @@ var types = {
     variants: { reverse: { true: currency_module_default.base__reverse } },
   });
 function formatCurrencyValue(e, t) {
-  const n = t === types.gold ? "gold" : "integral";
+  const n = t === types$1.gold ? "gold" : "integral";
   return Array.isArray(e)
     ? e.map((e) => ("number" == typeof e ? intl.formatNumber(n, e) : e))
     : "number" == typeof e
@@ -25708,7 +25336,7 @@ function Currency({
   className: n,
   classNames: r,
   imagePath: a,
-  size: o = sizes.small,
+  size: o = sizes$1.small,
   enough: i = !0,
   ...s
 }) {
@@ -25737,8 +25365,380 @@ function Currency({
     ],
   });
 }
-((Currency.sizes = sizes), (Currency.types = types));
-var base$1 = "Tooltip_6d997cee",
+((Currency.sizes = sizes$1), (Currency.types = types$1));
+var formats = {
+    superCompact: "superCompact",
+    compact: "compact",
+    default: "default",
+    detailed: "detailed",
+  },
+  sizes = {
+    x16x16: "x16x16",
+    x24x24: "x24x24",
+    x32x32: "x32x32",
+    x48x48: "x48x48",
+    x80x80: "x80x80",
+  },
+  types = { accent: "accent", cooldown: "cooldown" },
+  item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
+  item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
+  item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
+  item__x48x48 = "FormattedValue_item__x48x48_43bf6d1b",
+  item__x80x80 = "FormattedValue_item__x80x80_c03e8347",
+  part__x16x16 = "FormattedValue_part__x16x16_2186b32f",
+  part__x24x24 = "FormattedValue_part__x24x24_2186b32f",
+  part__x32x32 = "FormattedValue_part__x32x32_f9323fe3",
+  part__x48x48 = "FormattedValue_part__x48x48_bd002d69",
+  part__x80x80 = "FormattedValue_part__x80x80_dca9ec18",
+  detailedSeparator = "FormattedValue_detailedSeparator_30bfaeef",
+  detailedSeparator__x16x16 = "FormattedValue_detailedSeparator__x16x16_2b8550e4",
+  detailedSeparator__x24x24 = "FormattedValue_detailedSeparator__x24x24_2b8550e4",
+  detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
+  detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
+  detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
+  formatted_value_module_default = {
+    item__x16x16: item__x16x16,
+    item__x24x24: item__x24x24,
+    item__x32x32: item__x32x32,
+    item__x48x48: item__x48x48,
+    item__x80x80: item__x80x80,
+    part__x16x16: part__x16x16,
+    part__x24x24: part__x24x24,
+    part__x32x32: part__x32x32,
+    part__x48x48: part__x48x48,
+    part__x80x80: part__x80x80,
+    detailedSeparator: detailedSeparator,
+    detailedSeparator__x16x16: detailedSeparator__x16x16,
+    detailedSeparator__x24x24: detailedSeparator__x24x24,
+    detailedSeparator__x32x32: detailedSeparator__x32x32,
+    detailedSeparator__x48x48: detailedSeparator__x48x48,
+    detailedSeparator__x80x80: detailedSeparator__x80x80,
+  };
+function FormattedValue({ size: e, preFormatted: t }) {
+  const n = [];
+  for (let r = 0; r < t.items.length; ++r)
+    (t.separator &&
+      r > 0 &&
+      n.push(
+        (0, import_jsx_runtime.jsx)(
+          "span",
+          {
+            className: (0, import_classnames.default)(
+              formatted_value_module_default.detailedSeparator,
+              formatted_value_module_default[`detailedSeparator__${e}`],
+            ),
+          },
+          "separator",
+        ),
+      ),
+      n.push(
+        (0, import_jsx_runtime.jsx)(
+          "span",
+          {
+            className: (0, import_classnames.default)(
+              formatted_value_module_default.item,
+              formatted_value_module_default[`item__${e}`],
+            ),
+            children: t.items[r]
+              ?.split(" ")
+              .map((t, n) =>
+                (0, import_jsx_runtime.jsx)(
+                  "span",
+                  {
+                    className: (0, import_classnames.default)(
+                      formatted_value_module_default.part,
+                      formatted_value_module_default[`part__${e}`],
+                    ),
+                    children: t,
+                  },
+                  `part_${n}`,
+                ),
+              ),
+          },
+          `item_${r}`,
+        ),
+      ));
+  return n;
+}
+var STRING_RESOURCES = resources.resolve("strings"),
+  COLON = ":",
+  DAYS_FORMAT = "D",
+  HOURS_FORMAT = "h",
+  MINUTES_FORMAT = "m",
+  DEFAULT_MIN_VALUE = 1,
+  FORMAT_PARTS = {
+    [formats.compact]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
+    [formats.default]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
+    [formats.detailed]: [DAYS_FORMAT, "hh", "mm", "ss"],
+  },
+  FORMATTER = {
+    [formats.compact]: compactFormatter,
+    [formats.default]: defaultFormatter,
+    [formats.detailed]: detailedFormatter,
+  },
+  LOCALE_FORMATTERS = {
+    [DAYS_FORMAT]: (e) =>
+      format(
+        STRING_RESOURCES.readOr("common.timer.days", () => DAYS_FORMAT.toLowerCase()),
+        { days: e },
+      ),
+    [HOURS_FORMAT]: (e) =>
+      format(
+        STRING_RESOURCES.readOr("common.timer.hours", () => HOURS_FORMAT),
+        { hours: e },
+      ),
+    [MINUTES_FORMAT]: (e) =>
+      format(
+        STRING_RESOURCES.readOr("common.timer.minutes", () => MINUTES_FORMAT),
+        { minutes: e },
+      ),
+  };
+function detailedFormatter(e) {
+  const [t, ...n] = e,
+    r = n.join(COLON);
+  return { separator: !0, items: Number(t) > 0 ? [LOCALE_FORMATTERS[DAYS_FORMAT]?.(t), r] : [r] };
+}
+function defaultFormatter(e, t) {
+  let n = 0;
+  const r = e.length - 1,
+    a = FORMAT_PARTS[t],
+    o = { separator: !1, items: [] };
+  for (; n < r && !(Number(e[n]) > 0); ++n);
+  return (
+    a[n] === MINUTES_FORMAT && 0 === Number(e[n])
+      ? (o.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)])
+      : (o.items = [n, n + 1].map((t) => LOCALE_FORMATTERS[a[t]]?.(e[t]))),
+    o
+  );
+}
+function compactFormatter(e, t) {
+  const n = e.length,
+    r = FORMAT_PARTS[t],
+    a = { separator: !1, items: [] };
+  for (let o = 0; o < n; ++o)
+    if (Number(e[o]) > 0) return ((a.items = [LOCALE_FORMATTERS[r[o]]?.(e[o])]), a);
+  return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
+}
+var formatValue = (e, t) => FORMATTER[t]?.(format$1(e, FORMAT_PARTS[t]), t),
+  base$3 = "Timer_dac0a0aa",
+  icon$1 = "Timer_icon_a61415df",
+  icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
+  icon__accent = "Timer_icon__accent_2cf70c3b",
+  icon__cooldown = "Timer_icon__cooldown_4a26d3f",
+  icon__x24x24 = "Timer_icon__x24x24_31571381",
+  icon__x32x32 = "Timer_icon__x32x32_807dde34",
+  icon__x48x48 = "Timer_icon__x48x48_ae779a9e",
+  icon__x80x80 = "Timer_icon__x80x80_251aafea",
+  label$1 = "Timer_label_1565f308",
+  label__x16x16 = "Timer_label__x16x16_e3ff224",
+  label__x24x24 = "Timer_label__x24x24_ca748cca",
+  label__x32x32 = "Timer_label__x32x32_13cccf38",
+  label__x48x48 = "Timer_label__x48x48_e3a9b542",
+  label__x80x80 = "Timer_label__x80x80_10a84ee6",
+  label__accent = "Timer_label__accent_ac7d4f7b",
+  label__cooldown = "Timer_label__cooldown_c2349ab9",
+  timer_module_default = {
+    base: base$3,
+    icon: icon$1,
+    icon__x16x16: icon__x16x16,
+    icon__accent: icon__accent,
+    icon__cooldown: icon__cooldown,
+    icon__x24x24: icon__x24x24,
+    icon__x32x32: icon__x32x32,
+    icon__x48x48: icon__x48x48,
+    icon__x80x80: icon__x80x80,
+    label: label$1,
+    label__x16x16: label__x16x16,
+    label__x24x24: label__x24x24,
+    label__x32x32: label__x32x32,
+    label__x48x48: label__x48x48,
+    label__x80x80: label__x80x80,
+    label__accent: label__accent,
+    label__cooldown: label__cooldown,
+  };
+function Timer({
+  start: e,
+  limit: t = 0,
+  tick: n = 1,
+  size: r = sizes.x24x24,
+  type: a = types.accent,
+  format: o = formats.default,
+  autostart: i = !0,
+  className: s,
+  classNames: l,
+}) {
+  const [u] = useTicker(
+    (0, import_react.useMemo)(
+      () => ({
+        type: "countdown",
+        start: isDuration(e) ? e : seconds(e),
+        limit: isDuration(t) ? t : seconds(t),
+        tick: isDuration(n) ? n : seconds(n),
+        autostart: i,
+      }),
+      [i, t, e, n],
+    ),
+  );
+  return (0, import_jsx_runtime.jsxs)("div", {
+    className: (0, import_classnames.default)(timer_module_default.base, s),
+    children: [
+      (0, import_jsx_runtime.jsx)("div", {
+        className: (0, import_classnames.default)(
+          timer_module_default.icon,
+          timer_module_default[`icon__${r}`],
+          timer_module_default[`icon__${a}`],
+          l?.icon,
+        ),
+      }),
+      o !== formats.superCompact &&
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(
+            timer_module_default.label,
+            timer_module_default[`label__${r}`],
+            timer_module_default[`label__${a}`],
+            l?.label,
+          ),
+          children: (0, import_jsx_runtime.jsx)(FormattedValue, {
+            size: r,
+            preFormatted: formatValue(u, o),
+          }),
+        }),
+    ],
+  });
+}
+((Timer.format = formats), (Timer.size = sizes), (Timer.type = types));
+var makeOptionalCaller =
+    (e, t) =>
+    (...n) => {
+      if (e(...n)) return t(...n);
+    },
+  MOUSE_BUTTON_CODES = (function (e) {
+    return (
+      (e[(e.LEFT = 0)] = "LEFT"),
+      (e[(e.WHEEL = 1)] = "WHEEL"),
+      (e[(e.RIGHT = 2)] = "RIGHT"),
+      (e[(e.FOURTH = 3)] = "FOURTH"),
+      (e[(e.FIFTH = 4)] = "FIFTH"),
+      e
+    );
+  })({});
+function playSound(e) {
+  engine.call("PlaySound", e).catch((t) => {
+    console.error("[lib/sounds.js] playSound(", e, "): ", t);
+  });
+}
+var base$2 = "Iconbutton_4670fff1",
+  base__hovered = "Iconbutton_base__hovered_e242531a",
+  base__disabled = "Iconbutton_base__disabled_dc15052c",
+  icon = "Iconbutton_icon_a3c2367",
+  icon__preview = "Iconbutton_icon__preview_8d5c6527",
+  icon__compare = "Iconbutton_icon__compare_2797841f",
+  icon__small = "Iconbutton_icon__small_1ca760fc",
+  icon__normal = "Iconbutton_icon__normal_6c83ef9d",
+  base__mouseDown = "Iconbutton_base__mouseDown_81e1e86b",
+  label = "Iconbutton_label_bd93b7a9",
+  label__small = "Iconbutton_label__small_628c6c03",
+  label__normal = "Iconbutton_label__normal_252cb7af",
+  base__visibleLabel = "Iconbutton_base__visibleLabel_81e1e86b",
+  IconButton_module_default = {
+    base: base$2,
+    base__hovered: base__hovered,
+    base__disabled: base__disabled,
+    icon: icon,
+    icon__preview: icon__preview,
+    icon__compare: icon__compare,
+    icon__small: icon__small,
+    icon__normal: icon__normal,
+    base__mouseDown: base__mouseDown,
+    label: label,
+    label__small: label__small,
+    label__normal: label__normal,
+    base__visibleLabel: base__visibleLabel,
+  },
+  IconButton = ({
+    type: e,
+    children: t,
+    className: n,
+    classNames: r,
+    disabled: a = !1,
+    isVisibleLabel: o = !1,
+    soundHover: i = R.sounds.highlight(),
+    soundClick: s = R.sounds.play(),
+    size: l = "normal",
+    onClick: u,
+    onMouseEnter: c,
+    onMouseLeave: d,
+    onMouseDown: f,
+    onMouseUp: p,
+    onFocus: m,
+    onBlur: _,
+    ...h
+  }) => {
+    const [g, b] = (0, import_react.useState)(!1),
+      [v, y] = (0, import_react.useState)(!1),
+      w = (0, import_react.useRef)(null),
+      S = () => !1 === a,
+      x = (e) => S() && ((e) => e.button === MOUSE_BUTTON_CODES.LEFT)(e),
+      E = makeOptionalCaller(S, (e) => {
+        u?.(e);
+      }),
+      k = makeOptionalCaller(x, (e) => {
+        (b(!0), f?.(e), s && playSound(s));
+      }),
+      O = makeOptionalCaller(x, (e) => {
+        (b(!1), p?.(e));
+      }),
+      A = makeOptionalCaller(S, (e) => {
+        (y(!0), c?.(e), i && playSound(i));
+      }),
+      C = makeOptionalCaller(S, (e) => {
+        m?.(e);
+      }),
+      P = makeOptionalCaller(S, (e) => {
+        _?.(e);
+      });
+    return (0, import_jsx_runtime.jsxs)("div", {
+      ref: w,
+      className: (0, import_classnames.default)(
+        IconButton_module_default.base,
+        a && IconButton_module_default.base__disabled,
+        o && IconButton_module_default.base__visibleLabel,
+        !a && g && IconButton_module_default.base__mouseDown,
+        !a && v && IconButton_module_default.base__hovered,
+        n,
+      ),
+      onClick: E,
+      onMouseEnter: A,
+      onMouseLeave: (e) => {
+        (y(!1), b(!1), d?.(e));
+      },
+      onMouseDown: k,
+      onMouseUp: O,
+      onFocus: C,
+      onBlur: P,
+      ...h,
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(
+            IconButton_module_default.icon,
+            IconButton_module_default[`icon__${l}`],
+            IconButton_module_default[`icon__${e}`],
+            r?.icon,
+          ),
+        }),
+        t &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: (0, import_classnames.default)(
+              IconButton_module_default.label,
+              IconButton_module_default[`label__${l}`],
+              r?.label,
+            ),
+            children: t,
+          }),
+      ],
+    });
+  },
+  base$1 = "Tooltip_6d997cee",
   decorator$1 = "Tooltip_decorator_b3486d4e",
   tooltip_module_default = { base: base$1, decorator: decorator$1 },
   Base = defineStyledComponent("Base", tooltip_module_default.base),
@@ -25866,41 +25866,41 @@ export {
   require_jsx_runtime as Y,
   find as Z,
   ProgressBar as _,
-  types as a,
+  Currency as a,
   setContentReady as at,
   VehicleInfo as b,
-  Base$2 as c,
+  Input as c,
   convertNbsp as ct,
-  useVerticalScroll as d,
+  Area as d,
   require_react_dom as dt,
   some as et,
-  statusTypes as f,
+  Bar as f,
   require_react as ft,
-  Timer as g,
-  IconButton as h,
+  Card as g,
+  CardsWrapper as h,
   resources as ht,
-  sizes as i,
+  Timer as i,
   clamp$1 as it,
   computeds as j,
   UIProvider as k,
-  Area as l,
+  useInput as l,
   easings$1 as lt,
-  Card as m,
+  statusTypes as m,
   DateTimeFormatsEnum as mt,
   Tooltip as n,
   emptyFunction as nt,
-  Input as o,
+  sizes$1 as o,
   play$1 as ot,
-  CardsWrapper as p,
+  useVerticalScroll as p,
   intl$2 as pt,
   observable as q,
-  Currency as r,
+  IconButton as r,
   noop$2 as rt,
-  useInput as s,
+  types$1 as s,
   getRegionalDateTime as st,
   TooltipDecorator as t,
   keyStringCodes as tt,
-  Bar as u,
+  Base$2 as u,
   clsx as ut,
   useProgressBar as v,
   CloseButton as w,

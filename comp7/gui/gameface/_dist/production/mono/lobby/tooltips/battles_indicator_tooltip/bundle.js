@@ -1,12 +1,12 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
-  Hr as t,
-  Mr as a,
-  Pa as o,
+  $ as t,
+  Pa as a,
+  Sr as o,
   Uo as e,
   _i as i,
   fi as l,
-  q as n,
+  tt as n,
   ws as c,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
@@ -27,16 +27,16 @@ var u = s(d(), 1),
   k = "App_icon_914cb923",
   C = "App_icon__solo_1bb3c1ec",
   B = "App_icon__platoon_65811861",
-  I = s(o(), 1),
+  I = s(a(), 1),
   T = r(function () {
     const { model: s } = x(),
-      { statisticsMode: t, soloBattlesCount: o, superPlatoonBattlesCount: e } = s.root.get();
+      { statisticsMode: a, soloBattlesCount: o, superPlatoonBattlesCount: e } = s.root.get();
     return (0, I.jsxs)("div", {
       className: h,
       children: [
-        (0, I.jsx)(a, {
+        (0, I.jsx)(t, {
           text:
-            t === p.Season
+            a === p.Season
               ? R.strings.comp7_ext.battlesIndicatorTooltip.season.heading()
               : R.strings.comp7_ext.battlesIndicatorTooltip.day.heading(),
           binding: {
@@ -58,7 +58,7 @@ var u = s(d(), 1),
               className: A,
               children: [
                 (0, I.jsx)("div", { className: (0, u.default)(k, C) }),
-                (0, I.jsx)(a, {
+                (0, I.jsx)(t, {
                   text: R.strings.comp7_ext.battlesIndicatorTooltip.soloBattlesCount(),
                   binding: {
                     soloBattlesCount: (0, I.jsx)("div", {
@@ -73,7 +73,7 @@ var u = s(d(), 1),
               className: A,
               children: [
                 (0, I.jsx)("div", { className: (0, u.default)(k, B) }),
-                (0, I.jsx)(a, {
+                (0, I.jsx)(t, {
                   text: R.strings.comp7_ext.battlesIndicatorTooltip.superPlatoonBattlesCount(),
                   binding: {
                     superPlatoonBattlesCount: (0, I.jsx)("div", {
@@ -91,6 +91,6 @@ var u = s(d(), 1),
   });
 l(
   (0, I.jsx)(j, {
-    children: (0, I.jsx)(t, { children: (0, I.jsx)(_, { children: (0, I.jsx)(T, {}) }) }),
+    children: (0, I.jsx)(o, { children: (0, I.jsx)(_, { children: (0, I.jsx)(T, {}) }) }),
   }),
 );

@@ -1,31 +1,31 @@
 import {
-  i as e,
-  n as a,
-  c as r,
-  a as n,
-  b as t,
-  g as s,
-  d as l,
-  u as c,
-  o,
-  e as i,
-  D as u,
-  f as d,
-  r as _,
+  d as e,
+  am as a,
+  f as r,
+  k as n,
+  b3 as t,
+  b4 as s,
+  b5 as l,
+  b6 as c,
+  b7 as o,
+  b8 as i,
+  b9 as u,
+  ba as d,
+  a_ as _,
 } from "../chunks/lib.js";
 import {
   h as m,
-  t as p,
+  H as p,
   r as f,
-  v as g,
-  j as b,
+  I as b,
+  j as g,
   f as y,
   m as h,
   l as C,
 } from "../chunks/vendor.js";
 var v = ((e) => ((e.None = "none"), (e.Text = "text"), (e.Respawn = "respawn"), e))(v || {});
 const [x, w] = e()(({ observableModel: e }) => {
-    const a = {
+    const n = {
         root: e.object(),
         ...e.primitives([
           "announcementType",
@@ -41,18 +41,18 @@ const [x, w] = e()(({ observableModel: e }) => {
         () => {
           const {
             allyScore: e,
-            enemyScore: r,
-            scoreCap: n,
+            enemyScore: a,
+            scoreCap: r,
             baseCount: t,
             allyCapturedBases: s,
             enemyCapturedBases: l,
             pendingAllyScore: c,
             pendingEnemyScore: o,
-          } = a.root.get();
+          } = n.root.get();
           return {
             allyScore: e,
-            enemyScore: r,
-            scoreCap: n,
+            enemyScore: a,
+            scoreCap: r,
             baseCount: t,
             allyCapturedBases: s,
             enemyCapturedBases: l,
@@ -60,28 +60,28 @@ const [x, w] = e()(({ observableModel: e }) => {
             pendingEnemyScore: o,
           };
         },
-        { equals: r },
+        { equals: a },
       ),
       s = m(
         () => {
-          const { allyScore: e, enemyScore: r } = a.root.get();
-          return { allyScore: e, enemyScore: r };
+          const { allyScore: e, enemyScore: a } = n.root.get();
+          return { allyScore: e, enemyScore: a };
         },
-        { equals: r },
+        { equals: a },
       ),
-      l = m((e) => a.captureIndicatorMap.get(e), { equals: n.structural }),
-      c = m((e) => a.captureIndicatorMap.get(e)?.captureProgress, { equals: n.identity }),
+      l = m((e) => n.captureIndicatorMap.get(e), { equals: r.structural }),
+      c = m((e) => n.captureIndicatorMap.get(e)?.captureProgress, { equals: r.identity }),
       o = m(
         () => {
-          const e = a.capturingPointUid.get();
+          const e = n.capturingPointUid.get();
           return l(e);
         },
-        { equals: r },
+        { equals: a },
       ),
-      i = m(() => a.capturePointsMarker.get().map((e) => e.uid), { equals: n.shallow }),
+      i = m(() => n.capturePointsMarker.get().map((e) => e.uid), { equals: r.shallow }),
       u = m(
         () =>
-          a.captureIndicatorMap
+          n.captureIndicatorMap
             .map((e) => ({
               uid: e.uid,
               label: e.label,
@@ -91,11 +91,11 @@ const [x, w] = e()(({ observableModel: e }) => {
               captureProgress: e.captureProgress,
             }))
             .sort((e, a) => e.label.localeCompare(a.label)),
-        { equals: n.structural },
+        { equals: r.structural },
       ),
-      d = m(() => ({ ...t(), captureIndicators: u() }), { equals: r });
+      d = m(() => ({ ...t(), captureIndicators: u() }), { equals: a });
     return {
-      ...a,
+      ...n,
       computes: {
         headerData: t,
         scoresData: s,
@@ -107,7 +107,7 @@ const [x, w] = e()(({ observableModel: e }) => {
         rawModelData: d,
       },
     };
-  }, a),
+  }, n),
   j = "Announcement_2f30b082",
   N = "Announcement_base__visible_5ca9be2b",
   P = "Announcement_content_59e3f1a4",
@@ -116,8 +116,8 @@ const [x, w] = e()(({ observableModel: e }) => {
   B = "Announcement_countdownAnimated_3490c1cb",
   I = "Announcement_countdownValue_d37110a2",
   H = "Announcement_heading_bb6fb1f9",
-  M = "Announcement_description_fd12345c",
-  k = "Announcement_description_text_5119b1b",
+  k = "Announcement_description_fd12345c",
+  M = "Announcement_description_text_5119b1b",
   A = (e, a = Date.now()) => Math.max(0, Math.ceil(e - a / 1e3)),
   F = p(function ({ className: e, ...a }) {
     const { model: r } = w(),
@@ -140,48 +140,48 @@ const [x, w] = e()(({ observableModel: e }) => {
         }
       );
     }, [s, t]);
-    const o = g(s ? l : null, {
+    const o = b(s ? l : null, {
       from: { opacity: 0, transform: "translate3d(0, -100%, 0)" },
       enter: { opacity: 1, transform: "translate3d(0, 0%, 0)" },
       leave: { opacity: 0, transform: "translate3d(0, 100%, 0)" },
       config: { mass: 1, tension: 280, friction: 24, clamp: !0 },
     });
-    return b.jsx("div", {
+    return g.jsx("div", {
       ...a,
       className: y(S, e),
-      children: b.jsx("div", {
+      children: g.jsx("div", {
         className: T,
         children: o((e, a) =>
           null === a
             ? null
-            : b.jsx(h.div, {
+            : g.jsx(h.div, {
                 style: e,
                 className: B,
-                children: b.jsx("span", { className: I, children: a }),
+                children: g.jsx("span", { className: I, children: a }),
               }),
         ),
       }),
     });
   });
 function $({ className: e, ...a }) {
-  return b.jsx("div", {
+  return g.jsx("div", {
     ...a,
     className: y(j, e),
     "data-bind-class-toggle": `${N}:{{model.isAnnouncementVisible}}`,
-    children: b.jsxs("div", {
+    children: g.jsxs("div", {
       className: P,
       children: [
-        b.jsx(F, {}),
-        b.jsx("div", {
+        g.jsx(F, {}),
+        g.jsx("div", {
           "data-bind-if": "{{model.announcementHeading}} !== ''",
           "data-bind-value": "{{model.announcementHeading}}",
           className: H,
         }),
-        b.jsx("div", {
+        g.jsx("div", {
           "data-bind-if": "{{model.announcementDescription}} !== ''",
-          className: M,
-          children: b.jsx("div", {
-            className: k,
+          className: k,
+          children: g.jsx("div", {
+            className: M,
             "data-bind-value": "{{model.announcementDescription}}",
           }),
         }),
@@ -272,14 +272,14 @@ const W = {
           z(r) ? { glowKey: o, glowTeam: null } : { glowKey: o, glowTeam: u }
         );
       })(a, c, r, n);
-    return b.jsxs("div", {
+    return g.jsxs("div", {
       ...s,
       className: y(W.base, t),
       children: [
-        d && b.jsx("div", { className: y(W.glow, W[`glow__${d}`]) }, u),
-        b.jsx("div", {
+        d && g.jsx("div", { className: y(W.glow, W[`glow__${d}`]) }, u),
+        g.jsx("div", {
           className: y(W.circle, i, r === q && W.circle__capturing),
-          children: b.jsx("span", { className: W.label, children: e }),
+          children: g.jsx("span", { className: W.label, children: e }),
         }),
       ],
     });
@@ -291,14 +291,14 @@ const W = {
       t = E();
     return n.length <= 0
       ? null
-      : b.jsx("div", {
+      : g.jsx("div", {
           ...a,
           className: y(e, O),
           children: n.map((e, a) =>
-            b.jsx(
+            g.jsx(
               f.Fragment,
               {
-                children: b.jsx(
+                children: g.jsx(
                   K,
                   { scoreFlashKey: t, label: e.label, ownerTeam: e.ownerTeam, state: e.state },
                   e.label,
@@ -340,7 +340,7 @@ function X({ team: e, score: a, scoreCap: r, progress: n, pendingScore: s }) {
     u = f.useRef(!0),
     d = f.useRef([]),
     [_, m] = f.useState("idle"),
-    [p, g] = f.useState(Q),
+    [p, b] = f.useState(Q),
     h = f.useCallback(() => {
       (d.current.forEach(window.clearTimeout), (d.current = []));
     }, []);
@@ -350,11 +350,11 @@ function X({ team: e, score: a, scoreCap: r, progress: n, pendingScore: s }) {
       r = i.current,
       t = a - e;
     if (t > 0 && n - r > 0) {
-      (h(), g({ score: t, fromProgress: r, toProgress: n }), m("hold"));
+      (h(), b({ score: t, fromProgress: r, toProgress: n }), m("hold"));
       const e = window.setTimeout(() => {
         m("merge");
         const e = window.setTimeout(() => {
-          (m("idle"), g(Q), (d.current = []));
+          (m("idle"), b(Q), (d.current = []));
         }, 600);
         d.current.push(e);
       }, 600);
@@ -377,18 +377,18 @@ function X({ team: e, score: a, scoreCap: r, progress: n, pendingScore: s }) {
     },
     S = v ? P : N,
     T = S.toProgress > S.fromProgress && S.score > 0;
-  return b.jsx("div", {
+  return g.jsx("div", {
     className: y(
       G.base,
       "merge" === _ && G.base__exit,
       w && G.base__win,
       C ? G.base__ally : G.base__enemy,
     ),
-    children: b.jsxs("div", {
+    children: g.jsxs("div", {
       className: G.content,
       children: [
-        b.jsx("div", { className: G.border }),
-        b.jsx("div", {
+        g.jsx("div", { className: G.border }),
+        g.jsx("div", {
           className: y(
             G.deltaFill,
             "pending" === S.variant && G.deltaFill__pending,
@@ -402,21 +402,21 @@ function X({ team: e, score: a, scoreCap: r, progress: n, pendingScore: s }) {
             [C ? "right" : "left"]: J(S.fromProgress),
           },
         }),
-        b.jsx("div", {
+        g.jsx("div", {
           className: G.fill,
           style: { width: J(x), ...(void 0 !== j ? { transition: j } : {}) },
         }),
         Array.from({ length: 3 }, (e, a) =>
-          b.jsx("div", { className: G.divider, style: { left: ((a + 1) / 4) * 100 + "%" } }, a),
+          g.jsx("div", { className: G.divider, style: { left: ((a + 1) / 4) * 100 + "%" } }, a),
         ),
-        b.jsx("div", {
+        g.jsx("div", {
           className: y(
             G.deltaLabel,
             "pending" === S.variant && G.deltaLabel__pending,
             "applied" === S.variant && G.deltaLabel__applied,
           ),
           style: C ? { right: J(S.toProgress) } : { left: J(S.toProgress) },
-          children: T && b.jsxs("span", { children: ["+", S.score] }),
+          children: T && g.jsxs("span", { children: ["+", S.score] }),
         }),
       ],
     }),
@@ -436,13 +436,13 @@ const Z = {
       s = t(0, a, r),
       l = e === U,
       c = n > 0;
-    return b.jsx(
+    return g.jsx(
       "span",
       {
         className: y(Z.base, l ? Z.base__ally : Z.base__enemy, c && Z.base__flash),
         children: Array.from({ length: a }, (e, a) => {
           const r = a < s;
-          return b.jsx(
+          return g.jsx(
             "span",
             {
               className: y(
@@ -473,20 +473,20 @@ function le({
   pendingScore: l,
   isEnemy: c = !1,
 }) {
-  return b.jsxs("section", {
+  return g.jsxs("section", {
     className: y(ae, c && re),
     children: [
-      b.jsx("div", {
+      g.jsx("div", {
         className: ne,
-        children: b.jsxs("div", {
+        children: g.jsxs("div", {
           className: te,
           children: [
-            b.jsx(ee, { team: e, slots: n, filled: t }),
-            b.jsx("span", { className: se, children: ce(a) }),
+            g.jsx(ee, { team: e, slots: n, filled: t }),
+            g.jsx("span", { className: se, children: ce(a) }),
           ],
         }),
       }),
-      b.jsx(X, { team: e, score: a, scoreCap: r, progress: s, pendingScore: l }),
+      g.jsx(X, { team: e, score: a, scoreCap: r, progress: s, pendingScore: l }),
     ],
   });
 }
@@ -501,8 +501,8 @@ const oe = "HudTimer_ad471bfc",
   me = "HudTimer_timerPart__seconds_680bd8e2",
   pe = "HudTimer_timerColon_c4061d95",
   fe = "HudTimer_emblem_30e39f31",
-  ge = "HudTimer_centerFlash_3d961397",
-  be = "HudTimer_centerFlashPulse_25c0d554",
+  be = "HudTimer_centerFlash_3d961397",
+  ge = "HudTimer_centerFlashPulse_25c0d554",
   ye = "HudTimer_centerFlashPulse__delayed_51339111",
   he = p(function () {
     const { model: e } = w(),
@@ -514,36 +514,36 @@ const oe = "HudTimer_ad471bfc",
           n = a % 60;
         return { minutes: String(r).padStart(2, "0"), seconds: String(n).padStart(2, "0") };
       })(a);
-    return b.jsxs("section", {
+    return g.jsxs("section", {
       className: oe,
       children: [
-        b.jsxs("span", {
+        g.jsxs("span", {
           className: ie,
           children: [
-            b.jsx("img", {
+            g.jsx("img", {
               src: R.images.fort_rush.gui.maps.icons.hud_header.emblem(),
               className: fe,
             }),
             r > 0 &&
-              b.jsxs(
+              g.jsxs(
                 "span",
                 {
-                  className: ge,
+                  className: be,
                   children: [
-                    b.jsx("span", { className: be }),
-                    b.jsx("span", { className: y(be, ye) }),
+                    g.jsx("span", { className: ge }),
+                    g.jsx("span", { className: y(ge, ye) }),
                   ],
                 },
                 r,
               ),
           ],
         }),
-        b.jsxs("span", {
+        g.jsxs("span", {
           className: ue,
           children: [
-            b.jsx("span", { className: y(de, _e), children: n.minutes }),
-            b.jsx("span", { className: pe, children: ":" }),
-            b.jsx("span", { className: y(de, me), children: n.seconds }),
+            g.jsx("span", { className: y(de, _e), children: n.minutes }),
+            g.jsx("span", { className: pe, children: ":" }),
+            g.jsx("span", { className: y(de, me), children: n.seconds }),
           ],
         }),
       ],
@@ -553,10 +553,10 @@ const Ce = "HudHeader_c601d9a2",
   ve = "ally",
   xe = "enemy";
 function we({ className: e, ...a }) {
-  return b.jsxs("div", {
+  return g.jsxs("div", {
     ...a,
     className: y(Ce, e),
-    children: [b.jsx(je, { team: ve }), b.jsx(he, {}), b.jsx(je, { team: xe, isEnemy: !0 })],
+    children: [g.jsx(je, { team: ve }), g.jsx(he, {}), g.jsx(je, { team: xe, isEnemy: !0 })],
   });
 }
 const je = p(function ({ team: e, isEnemy: a = !1 }) {
@@ -567,7 +567,7 @@ const je = p(function ({ team: e, isEnemy: a = !1 }) {
     c = a ? n.enemyScore : n.allyScore,
     o = a ? n.enemyCapturedBases : n.allyCapturedBases,
     i = a ? n.pendingEnemyScore : n.pendingAllyScore;
-  return b.jsx(le, {
+  return g.jsx(le, {
     team: e,
     score: c,
     scoreCap: l,
@@ -591,8 +591,8 @@ const Se = "BaseCaptureCircle_16d25b08",
   Be = "BaseCaptureCircle_layer_glow__ally_7a630463",
   Ie = "BaseCaptureCircle_layer_glow__enemy_ba3bb934",
   He = "BaseCaptureCircle_layer_glow__neutral_a17306c8",
-  Me = "BaseCaptureCircle_layer_contested_3249d044",
-  ke = "BaseCaptureCircle_layer_base_a5b4017f",
+  ke = "BaseCaptureCircle_layer_contested_3249d044",
+  Me = "BaseCaptureCircle_layer_base_a5b4017f",
   Ae = "BaseCaptureCircle_layer_base__ally_796ef68f",
   Fe = "BaseCaptureCircle_layer_base__enemy_a7de69bc",
   Re = "BaseCaptureCircle_layer_base__neutral_332acfc1",
@@ -628,17 +628,17 @@ function Oe({
     o = 360 * (a !== Ne.Neutral && r !== a ? 1 - n : n),
     i = `conic-gradient(from 0deg, black 0deg ${o}deg, transparent ${o}deg 360deg)`,
     u = e !== Pe.Idle ? Ne.Neutral : a;
-  return b.jsxs("div", {
+  return g.jsxs("div", {
     className: y(Se, l),
     children: [
-      null !== s && b.jsx("div", { className: y(Te, null !== s && We[s]) }, s),
+      null !== s && g.jsx("div", { className: y(Te, null !== s && We[s]) }, s),
       e === Pe.Contested &&
-        b.jsx("div", { className: Me, style: { backgroundImage: ze("contested") } }),
-      b.jsx("div", { className: y(ke, Ke[u], s === Ne.Neutral && $e) }),
+        g.jsx("div", { className: ke, style: { backgroundImage: ze("contested") } }),
+      g.jsx("div", { className: y(Me, Ke[u], s === Ne.Neutral && $e) }),
       e !== Pe.Idle &&
         c &&
-        b.jsx("div", { className: Ee, style: { backgroundImage: ze(c), mask: i } }),
-      b.jsx("div", {
+        g.jsx("div", { className: Ee, style: { backgroundImage: ze(c), mask: i } }),
+      g.jsx("div", {
         className: y(De, a === Ne.Ally && Ue, a === Ne.Enemy && Ve, null !== s && Le),
         children: t,
       }),
@@ -665,8 +665,8 @@ const Ye = "WorldBaseMarkers_79c2f0e1",
       d = f.useRef(null),
       [_, m] = f.useState(0),
       p = void 0 !== c ? c : 0,
-      g = d.current,
-      y = null !== g && ((0 === g && 1 === p) || (1 === g && 0 === p));
+      b = d.current,
+      y = null !== b && ((0 === b && 1 === p) || (1 === b && 0 === p));
     return (
       (d.current = p),
       C({
@@ -693,7 +693,7 @@ const Ye = "WorldBaseMarkers_79c2f0e1",
         );
       }, [t]),
       n && t && s && l
-        ? b.jsx(Oe, {
+        ? g.jsx(Oe, {
             className: a,
             state: n,
             ownerTeam: t,
@@ -738,11 +738,11 @@ const Ye = "WorldBaseMarkers_79c2f0e1",
           }
         );
       }, [o]),
-      b.jsx("div", {
+      g.jsx("div", {
         className: y(Ge, aa[u]),
         "data-bind-style-transform2d": l,
         "data-bind-style-opacity": c,
-        children: b.jsx(ea, { uid: a.toString(), className: Je }),
+        children: g.jsx(ea, { uid: a.toString(), className: Je }),
       })
     );
   },
@@ -766,11 +766,11 @@ const Ye = "WorldBaseMarkers_79c2f0e1",
       f.useEffect(() => o(t), [t]));
     const i = r.computes.markerUIDs(),
       u = r.capturingPointUid.get();
-    return b.jsx("div", {
+    return g.jsx("div", {
       ...a,
       ref: n,
       className: y(Ye, e),
-      children: i.map((e, a) => b.jsx(ra, { index: a, uid: e, capturingPointUid: u }, e)),
+      children: i.map((e, a) => g.jsx(ra, { index: a, uid: e, capturingPointUid: u }, e)),
     });
   }),
   ta = "FortRushHudApp_71fb006a",
@@ -789,15 +789,15 @@ const Ye = "WorldBaseMarkers_79c2f0e1",
     `${ua}:${_a("capturePointsMarker")}`,
   ].join(";");
 function pa() {
-  return b.jsxs("div", {
+  return g.jsxs("div", {
     className: ta,
     "data-name": "FortRushHudApp",
     "data-bind-class-toggle": ma,
     children: [
-      b.jsx(na, { className: da }),
-      b.jsx(we, { className: sa }),
-      b.jsx(Y, { className: ca }),
-      b.jsx($, { className: ia }),
+      g.jsx(na, { className: da }),
+      g.jsx(we, { className: sa }),
+      g.jsx(Y, { className: ca }),
+      g.jsx($, { className: ia }),
     ],
   });
 }
@@ -831,4 +831,4 @@ const fa = {
     }),
   }),
 };
-_(b.jsx(x, { mocks: fa, mode: "real", children: b.jsx(pa, {}) }), { fullScreen: !0 });
+_(g.jsx(x, { mocks: fa, mode: "real", children: g.jsx(pa, {}) }), { fullScreen: !0 });

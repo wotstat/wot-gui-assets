@@ -23,15 +23,15 @@ import {
   b as v,
   c as N,
   d as C,
-  g as j,
-  h as V,
-  i as k,
-  l as w,
-  m as T,
-  n as I,
+  f as j,
+  g as V,
+  h as k,
+  i as w,
+  l as T,
+  m as I,
   o as A,
-  q as B,
-  r as P,
+  p as B,
+  q as P,
   s as S,
   u as $,
   v as E,
@@ -72,7 +72,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           nationsOrder: e.observableModel.array("nationsOrder"),
           banProgression: e.observableModel.object("banProgression"),
         },
-        c = j(
+        c = V(
           (e) => {
             const a = u(i.players.get(), e);
             if (!a) throw new Error(`player with index ${e} was not found`);
@@ -113,7 +113,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        r = j(
+        r = V(
           (e) => {
             const a = u(i.players.get(), e);
             if (!a) throw new Error(`playerVehicle computed: player with index ${e} was not found`);
@@ -121,7 +121,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        l = j(
+        l = V(
           (e) => {
             const a = u(i.players.get(), e);
             if (!a)
@@ -130,7 +130,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        n = j(
+        n = V(
           (e) => {
             const a = h(i.players.get(), ({ id: a }) => a === e);
             if (!a)
@@ -141,7 +141,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        o = j(
+        o = V(
           (e) => {
             const a = h(i.players.get(), ({ id: a }) => a === e);
             if (!a)
@@ -152,7 +152,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        d = j(
+        d = V(
           () => {
             const e = L(i.players.get(), (e) => e.id === i.root.get().ownId);
             if (void 0 === e)
@@ -161,7 +161,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        m = j(
+        m = V(
           () => {
             const e = d();
             return {
@@ -171,8 +171,8 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.structural },
         ),
-        p = j(() => !d().confirmedChoice && i.root.get().isSelectionAvailable),
-        g = j(
+        p = V(() => !d().confirmedChoice && i.root.get().isSelectionAvailable),
+        g = V(
           () =>
             _(
               i.vehicles.get(),
@@ -202,7 +202,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
             ),
           { equals: a.shallow },
         ),
-        b = j(
+        b = V(
           (e) => {
             const a = g()[e],
               s = new Map(t(i.nationsOrder.get(), (e, a) => [e, a])),
@@ -218,7 +218,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.shallow },
         ),
-        x = j(
+        x = V(
           () => {
             const e = {};
             for (const { id: a, confirmedChoice: s, vehicleToBan: c } of f(i.players.get())) {
@@ -230,8 +230,8 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.shallow },
         ),
-        y = j((e) => x()[e] ?? []),
-        v = j(
+        y = V((e) => x()[e] ?? []),
+        v = V(
           () => {
             const e = {},
               { vehicleCD: a, originalVehicleCD: c } = o(i.root.get().ownId),
@@ -251,8 +251,8 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           },
           { equals: a.shallow },
         ),
-        N = j((e) => v()[e] ?? void 0),
-        C = j(() => {
+        N = V((e) => v()[e] ?? void 0),
+        C = V(() => {
           const e = [];
           return (
             s(i.players.get(), ({ vehicle: a }) => {
@@ -261,7 +261,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
             e.includes(n(i.root.get().ownId).vehicleCD)
           );
         }),
-        V = j(() => {
+        j = V(() => {
           switch (!0) {
             case i.banProgression.get().banState === O.Prepick:
               return {
@@ -306,7 +306,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
           playerVehicleToBan: l,
           personalPlayer: d,
           canMakeChoice: m,
-          footerState: V,
+          footerState: j,
           canSelect: p,
           allyChosenVehicle: N,
         },
@@ -362,7 +362,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
   he = "Footer_waiting_d3d4a17e",
   me = "Footer_alertIcon_d327b1f3",
   pe = "Footer_button_48301d58",
-  _e = (e) => (e >= l.Large ? N.sizes.large : e >= l.Medium ? N.sizes.medium : N.sizes.small),
+  _e = (e) => (e >= l.Large ? $.sizes.large : e >= l.Medium ? $.sizes.medium : $.sizes.small),
   ue = [W.Prepick, W.NotSelectedVehicle],
   fe = M(function ({ className: e }) {
     const { model: a, controls: s } = Y(),
@@ -382,7 +382,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
       p(s.close),
       i(r.ENTER, b),
       (0, Q.useEffect)(() => {
-        l === W.TeamAffect && B.sound("comp_7_bans_caution_icon");
+        l === W.TeamAffect && P.sound("comp_7_bans_caution_icon");
       }, [l]),
       (0, re.jsxs)("div", {
         className: g(le, e),
@@ -395,7 +395,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
                 (0, re.jsxs)("div", {
                   className: oe,
                   children: [
-                    (0, re.jsx)(w, {
+                    (0, re.jsx)(C, {
                       text: n,
                       binding: {
                         vehicleName: (0, re.jsx)("span", {
@@ -405,7 +405,7 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
                       },
                     }),
                     a === W.Confirmed &&
-                      (0, re.jsx)(C, {
+                      (0, re.jsx)(j, {
                         text: R.strings.comp7_ext.banView.actionButtons.description.wait(),
                         classMix: he,
                       }),
@@ -420,8 +420,8 @@ var q = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { durati
               style: e,
               children:
                 a &&
-                (0, re.jsx)(N, {
-                  theme: N.themes.primary,
+                (0, re.jsx)($, {
+                  theme: $.themes.primary,
                   size: _e(c),
                   className: pe,
                   onClick: () => s.confirm(t),
@@ -555,7 +555,7 @@ var xe = "RankEmblem_cd03f035",
               c &&
               (0, re.jsx)("div", {
                 className: Le,
-                children: (0, re.jsx)(S, {
+                children: (0, re.jsx)(T, {
                   className: De,
                   src: String(R.videos.comp7.speech()),
                   autoplay: !0,
@@ -577,7 +577,7 @@ var xe = "RankEmblem_cd03f035",
                   (0, re.jsx)("div", { className: Se, children: p }),
                 ],
               })
-            : (0, re.jsx)(C, { text: R.strings.common.common.nbsp() }),
+            : (0, re.jsx)(j, { text: R.strings.common.common.nbsp() }),
         }),
         (0, re.jsxs)("div", {
           className: Re,
@@ -594,7 +594,7 @@ var xe = "RankEmblem_cd03f035",
                     division: l,
                   }),
             }),
-            (0, re.jsx)(A, { className: Ee, text: i }),
+            (0, re.jsx)(N, { className: Ee, text: i }),
           ],
         }),
       ],
@@ -651,7 +651,7 @@ var xe = "RankEmblem_cd03f035",
         }),
         [o, r, t, c, l, n],
       );
-    return (0, re.jsx)(y, {
+    return (0, re.jsx)(S, {
       contentId: R.views.comp7.mono.battle.tooltips.ban_show_tooltip("resId"),
       args: h,
       children: (0, re.jsxs)("div", {
@@ -828,9 +828,9 @@ var xe = "RankEmblem_cd03f035",
       f = r.computes.allyChosenVehicle(i),
       g = f?.usersCount ?? 0,
       x = G(g > 0, Pa),
-      y = Boolean(f?.isOwnVehicle),
-      N = Boolean(f?.pickedByAlly);
-    return (0, re.jsxs)(P, {
+      N = Boolean(f?.isOwnVehicle),
+      C = Boolean(f?.pickedByAlly);
+    return (0, re.jsxs)(y, {
       className: (0, J.default)(xa, _ && wa, !_ && !p && ya, c),
       "data-vehicle-cd": i,
       selected: _,
@@ -838,8 +838,8 @@ var xe = "RankEmblem_cd03f035",
       classNames: { mainContainerContent: Ta },
       children: [
         (0, re.jsx)("div", { className: va, style: { backgroundImage: h } }),
-        y && (0, re.jsx)("div", { className: Ca }),
-        N && (0, re.jsx)("div", { className: ja }),
+        N && (0, re.jsx)("div", { className: Ca }),
+        C && (0, re.jsx)("div", { className: ja }),
         d.length > 0 && (0, re.jsx)("div", { className: Va }),
         (0, re.jsx)("div", { className: Na, style: { backgroundImage: m } }),
         (0, re.jsx)("div", { className: Ia, children: a }),
@@ -849,7 +849,7 @@ var xe = "RankEmblem_cd03f035",
             (0, re.jsx)(v.div, {
               className: Aa,
               style: e,
-              children: (0, re.jsx)(ba, { usersCount: g, isOwnVehicle: y }),
+              children: (0, re.jsx)(ba, { usersCount: g, isOwnVehicle: N }),
             }),
         ),
         u(
@@ -871,10 +871,10 @@ var xe = "RankEmblem_cd03f035",
       c = a.computes.votesToForbidVehicle(-1),
       r = -1 === s,
       t = G(c.length > 0, Pa);
-    return (0, re.jsxs)(P, {
+    return (0, re.jsxs)(y, {
       className: (0, J.default)(xa, r && wa, !r && !i && ya, e),
       selected: r,
-      onMouseEnter: B.highlight,
+      onMouseEnter: P.highlight,
       disableMouse: r || !i,
       "data-vehicle-cd": -1,
       children: [
@@ -893,7 +893,7 @@ var xe = "RankEmblem_cd03f035",
     });
   });
 function Ra({ vehicleGroup: e }) {
-  const a = k();
+  const a = A();
   return (
     (0, Q.useEffect)(() => n(a.recalculate), [e?.length, a.recalculate]),
     (0, re.jsx)(re.Fragment, {
@@ -924,7 +924,7 @@ var Ea = "VehicleRoleGroup_e5932ab",
         (0, re.jsx)("div", {
           className: Fa,
           style: { "--columnsCount": Oa[c] },
-          children: (0, re.jsx)(I, {
+          children: (0, re.jsx)(w, {
             className: Da,
             threshold: `${s}-${c}`,
             children: (0, re.jsx)(Ra, { vehicleGroup: e }),
@@ -1000,7 +1000,7 @@ var Ea = "VehicleRoleGroup_e5932ab",
           const a = e.target.closest("[data-vehicle-cd]")?.dataset.vehicleCd;
           if (a) {
             const e = parseInt(a, 10);
-            e !== i && (s.select(e), B.click());
+            e !== i && (s.select(e), P.click());
           }
         };
         return (
@@ -1031,7 +1031,7 @@ var Ea = "VehicleRoleGroup_e5932ab",
                           R.strings.comp7_ext.banView.withoutBan(),
                         ],
                       }),
-                      (0, re.jsx)(I, {
+                      (0, re.jsx)(w, {
                         threshold: "emptyVehicleCard",
                         children: (0, re.jsx)($a, {}),
                       }),
@@ -1118,7 +1118,7 @@ var Ea = "VehicleRoleGroup_e5932ab",
             className: Ya.vehicles,
             children: [
               (0, re.jsx)(na, { className: Ya.separator }),
-              (0, re.jsx)($, { children: (0, re.jsx)(Xa, {}) }),
+              (0, re.jsx)(B, { children: (0, re.jsx)(Xa, {}) }),
             ],
           }),
           (0, re.jsx)(fe, { className: Ya.footer }),
@@ -1126,8 +1126,8 @@ var Ea = "VehicleRoleGroup_e5932ab",
       })
     );
   });
-V(
-  (0, re.jsx)(T, {
+k(
+  (0, re.jsx)(I, {
     soundsOverrides: E({ click: { "react-ui:card": "carouselButton" } }),
     children: (0, re.jsx)(X, {
       children: (0, re.jsx)(D, {

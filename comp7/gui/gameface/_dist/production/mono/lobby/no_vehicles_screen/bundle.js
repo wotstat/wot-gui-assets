@@ -1,12 +1,12 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
-import { Lr as s, Mr as l, Pa as o, _i as i, fi as c, na as t, ws as a } from "../chunks/lib.js";
+import { $ as s, Pa as l, _i as o, et as i, fi as c, na as t, ws as a } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { a as r, i as n } from "../chunks/vendor.js";
 /* empty css               */ import { t as d } from "../chunks/schedule_model.js";
-import { t as m } from "../chunks/schedule_subheading.js";
-import { t as h } from "../chunks/get_roman_levels.js";
+import { t as m } from "../chunks/get_roman_levels.js";
+import { t as h } from "../chunks/schedule_subheading.js";
 a();
-var [_, p] = i()(
+var [_, p] = o()(
     ({ observableModel: e }) => ({ root: e.object(), vehicleLevels: e.array("vehicleLevels") }),
     ({ externalModel: e }) => ({ close: e.createCallbackNoArgs("onClose") }),
   ),
@@ -17,15 +17,15 @@ var [_, p] = i()(
   g = "HowToGetVehicles_item_1ba81632",
   u = "HowToGetVehicles_title_62dbf737",
   b = "HowToGetVehicles_image_616e4275",
-  N = e(o(), 1),
+  N = e(l(), 1),
   k = ["tasks", "premium", "reserves"],
-  w = ({ levelsStr: e, className: l }) =>
+  w = ({ levelsStr: e, className: s }) =>
     (0, N.jsxs)("div", {
-      className: (0, x.default)(v, l),
+      className: (0, x.default)(v, s),
       children: [
         (0, N.jsx)("div", {
           className: j,
-          children: s(R.strings.comp7_ext.noVehicles.howTo.title(), { levels: e }),
+          children: i(R.strings.comp7_ext.noVehicles.howTo.title(), { levels: e }),
         }),
         (0, N.jsx)("div", {
           className: f,
@@ -61,25 +61,25 @@ var [_, p] = i()(
   G = "App_title_3d1094ed",
   H = "App_divider_9e3d1876",
   M = "App_text_51f38cc1",
-  L = { context: "model.scheduleInfo" },
-  S = r(() => {
-    const { model: e, controls: s } = p(),
+  S = { context: "model.scheduleInfo" },
+  C = r(() => {
+    const { model: e, controls: l } = p(),
       { errorReason: o } = e.root.get();
-    t(s.close);
-    const i = h(e.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
+    t(l.close);
+    const i = m(e.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
     return (0, N.jsxs)("div", {
       className: V,
       children: [
         (0, N.jsx)("div", {
           className: A,
-          children: (0, N.jsx)(d, { options: L, children: (0, N.jsx)(m, {}) }),
+          children: (0, N.jsx)(d, { options: S, children: (0, N.jsx)(h, {}) }),
         }),
         (0, N.jsxs)("div", {
           className: T,
           children: [
             (0, N.jsx)("div", { className: $, children: (0, N.jsx)("div", { className: y }) }),
-            (0, N.jsx)(l, { text: `${R.strings.comp7_ext.noVehicles.title()}`, classMix: G }),
-            (0, N.jsx)(l, {
+            (0, N.jsx)(s, { text: `${R.strings.comp7_ext.noVehicles.title()}`, classMix: G }),
+            (0, N.jsx)(s, {
               text: `${R.strings.comp7_ext.noVehicles.text.$dyn(o)}`,
               binding: { levels: i },
               classMix: M,
@@ -91,4 +91,4 @@ var [_, p] = i()(
       ],
     });
   });
-c((0, N.jsx)(_, { children: (0, N.jsx)(S, {}) }), { fullScreen: !0 });
+c((0, N.jsx)(_, { children: (0, N.jsx)(C, {}) }), { fullScreen: !0 });

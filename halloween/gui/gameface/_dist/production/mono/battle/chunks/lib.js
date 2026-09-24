@@ -24349,50 +24349,198 @@ var defaultTheme = Orange,
     });
   },
   ProgressBar = (0, import_react.memo)(ProgressBarComponent),
-  base$7 = "CloseButton_7488a1b8",
-  base__medium = "CloseButton_base__medium_97d04067",
-  base__small = "CloseButton_base__small_c1b29bae",
-  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
-  base__x96x96$1 = "CloseButton_base__x96x96_8157b84d",
-  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
-  close_button_module_default = {
-    base: base$7,
-    base__medium: base__medium,
-    base__small: base__small,
-    base__extraSmall: base__extraSmall,
-    base__x96x96: base__x96x96$1,
-    base__x32x32: base__x32x32,
+  LogLevel = (function (e) {
+    return (
+      (e[(e.NonSet = 0)] = "NonSet"),
+      (e[(e.Debug = 10)] = "Debug"),
+      (e[(e.Info = 20)] = "Info"),
+      (e[(e.Warning = 30)] = "Warning"),
+      e
+    );
+  })({}),
+  CommonLogAction = (function (e) {
+    return (
+      (e.Click = "click"),
+      (e.KeyDown = "keydown"),
+      (e.Displayed = "displayed"),
+      (e.Viewed = "viewed"),
+      e
+    );
+  })({}),
+  PROPERTIES_LIMIT = 200,
+  METRICS_GROUP = "metrics",
+  convertMetricsParams = ({ partnerID: e, item: t, parentScreen: n, itemState: r, info: a }) => ({
+    item: t,
+    partnerID: e || null,
+    parent_screen: n || null,
+    item_state: r || null,
+    additional_info: a || null,
+  }),
+  _useLog = (e, t) => {
+    const n = (0, import_react.useCallback)(
+      (n, r = LogLevel.Info, a) => {
+        (a || (a = {}),
+          Object.keys(a).length >= PROPERTIES_LIMIT ||
+            window.uiLoggerModel.log({
+              feature: e,
+              group: t,
+              action: n,
+              logLevel: r,
+              params: JSON.stringify(a),
+            }));
+      },
+      [e, t],
+    );
+    return (e, t, r) => n(e, t, r);
   },
-  sizes$2 = { medium: "medium", small: "small", extraSmall: "extraSmall" },
-  upscaleImageSizes = {
-    [sizes$2.medium]: "x96x96",
-    [sizes$2.small]: sizes$2.medium,
-    [sizes$2.extraSmall]: "x32x32",
-  };
-function CloseButton({
-  size: e = sizes$2.medium,
-  hoverSound: t = sounds$1.highlight,
-  clickSound: n = sounds$1.click,
-  className: r,
-  onHover: a,
-  onClose: o,
-}) {
-  const i = useUpscale(
-    close_button_module_default[`base__${e}`],
-    close_button_module_default[`base__${upscaleImageSizes[e]}`],
-  );
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
-    onMouseEnter: () => {
-      (play$1.sound(t), a?.());
+  useMetricsLog = (e) => {
+    const t = _useLog(e, METRICS_GROUP),
+      n = (0, import_react.useCallback)(
+        (e) => {
+          t(e.action, e.logLevel, convertMetricsParams(e));
+        },
+        [t],
+      );
+    return (e) => n(e);
+  },
+  LIGHT_TANK = "lightTank",
+  MEDIUM_TANK = "mediumTank",
+  HEAVY_TANK = "heavyTank",
+  AT_SPG = "AT-SPG",
+  themes = { primary: "primary", secondary: "secondary", custom: "custom" },
+  sizes$2 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
+  base$7 = "HeadlessButton_df8536fc",
+  headless_button_module_default = { base: base$7 },
+  HeadlessButtonBase = defineStyledComponent("Button", {
+    element: "button",
+    className: headless_button_module_default.base,
+  }),
+  HeadlessButton = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      onClick: t,
+      onMouseEnter: n,
+      soundTarget: r,
+      disabled: a = !1,
+      silent: o = !1,
+      ...i
     },
-    onClick: () => {
-      (play$1.sound(n), o());
+    u,
+  ) {
+    const s = useSounds();
+    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
+      ...i,
+      ref: u,
+      onMouseEnter: function (e) {
+        (a || o || s.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
+      },
+      onClick: function (e) {
+        a || (o || s.play("click", { target: r || "Button", original: e }), t?.(e));
+      },
+      children: e,
+    });
+  }),
+  background = "Button_background_98ebcfb8",
+  border = "Button_border_7e6390d7",
+  overlay = "Button_overlay_174632c8",
+  base$6 = "Button_70871946",
+  base__enabled = "Button_base__enabled_96634d40",
+  base__disabled = "Button_base__disabled_b713e04a",
+  content = "Button_content_298de63f",
+  content__fontAligned = "Button_content__fontAligned_66115778",
+  button_module_default = {
+    background: background,
+    border: border,
+    overlay: overlay,
+    base: base$6,
+    base__enabled: base__enabled,
+    base__disabled: base__disabled,
+    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
+    "base__size-small": "Button_base__size-small_fc7095a4",
+    "base__size-medium": "Button_base__size-medium_814d61f0",
+    "base__size-large": "Button_base__size-large_83da852e",
+    "base__theme-primary": "Button_base__theme-primary_8ba55469",
+    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
+    content: content,
+    content__fontAligned: content__fontAligned,
+  },
+  Button = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      size: t = sizes$2.large,
+      theme: n = themes.primary,
+      disabled: r = !1,
+      silent: a = !1,
+      autoAlignContent: o = !0,
+      classNames: i,
+      className: u,
+      ...s
     },
+    l,
+  ) {
+    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
+      ...s,
+      ref: l,
+      silent: a,
+      disabled: r,
+      className: clsx(
+        button_module_default.base,
+        button_module_default[`base__size-${t}`],
+        button_module_default[`base__theme-${n}`],
+        r ? button_module_default.base__disabled : button_module_default.base__enabled,
+        u,
+        i?.base,
+      ),
+      onClick: function (e) {
+        r || s.onClick?.(e);
+      },
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.background, i?.background),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.border, i?.border),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.overlay, i?.overlay),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(
+            button_module_default.content,
+            o && button_module_default.content__fontAligned,
+            i?.content,
+          ),
+          children: e,
+        }),
+      ],
+    });
   });
-}
-CloseButton.size = sizes$2;
-var unicodeBlocks = [
+((Button.themes = themes), (Button.sizes = sizes$2));
+var IconSize = (function (e) {
+    return ((e.default = "default"), (e.x48 = "x48"), (e.x80 = "x80"), (e.x220 = "x220"), e);
+  })({}),
+  base$5 = "Badge_b4595e01",
+  base__default$1 = "Badge_base__default_6aaca100",
+  base__x48$1 = "Badge_base__x48_2b129eae",
+  Badge_module_default = { base: base$5, base__default: base__default$1, base__x48: base__x48$1 },
+  badgeFolders = {
+    [IconSize.default]: "c_24x24",
+    [IconSize.x48]: "c_48x48",
+    [IconSize.x80]: "c_80x80",
+    [IconSize.x220]: "c_220x220",
+  },
+  Badge = ({ badgeID: e, size: t = IconSize.default, className: n }) => {
+    const r = R.images.gui.maps.icons.library.badges.$dyn(badgeFolders[t]);
+    return (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        Badge_module_default.base,
+        Badge_module_default[`base__${t}`],
+        n,
+      ),
+      style: { backgroundImage: `url(${r.$dyn(`badge_${e}`)})` },
+    });
+  },
+  unicodeBlocks = [
     0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984,
     2048, 2112, 2144, 2208, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 3328, 3456, 3584, 3712,
     3840, 4096, 4256, 4352, 4608, 4992, 5024, 5120, 5760, 5792, 5888, 5920, 5952, 5984, 6016, 6144,
@@ -25318,229 +25466,7 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   },
   formatString = (e, t, n) =>
     e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (n && e in n ? n[e] : splitWords(e, t))),
-  base$6 = "Formattext_bb80854d",
-  FormatText_module_default = { base: base$6 },
-  FormatText = ({
-    binding: e,
-    text: t = "",
-    classMix: n,
-    alignment: r = Alignment.left,
-    formatWithBrackets: a,
-  }) =>
-    null === t
-      ? (console.error("FormatText was supplied with 'null'"), null)
-      : (0, import_jsx_runtime.jsx)(import_react.Fragment, {
-          children: (a && e ? format(t, e) : t)
-            .split("\n")
-            .map((t, a) =>
-              (0, import_jsx_runtime.jsx)(
-                "div",
-                {
-                  className: (0, import_classnames.default)(FormatText_module_default.base, n),
-                  children: formatString(t, r, e).map((e, t) =>
-                    (0, import_jsx_runtime.jsx)(
-                      import_react.Fragment,
-                      { children: e },
-                      `${t}-${e}`,
-                    ),
-                  ),
-                },
-                `${t}-${a}`,
-              ),
-            ),
-        }),
-  LogLevel = (function (e) {
-    return (
-      (e[(e.NonSet = 0)] = "NonSet"),
-      (e[(e.Debug = 10)] = "Debug"),
-      (e[(e.Info = 20)] = "Info"),
-      (e[(e.Warning = 30)] = "Warning"),
-      e
-    );
-  })({}),
-  CommonLogAction = (function (e) {
-    return (
-      (e.Click = "click"),
-      (e.KeyDown = "keydown"),
-      (e.Displayed = "displayed"),
-      (e.Viewed = "viewed"),
-      e
-    );
-  })({}),
-  PROPERTIES_LIMIT = 200,
-  METRICS_GROUP = "metrics",
-  convertMetricsParams = ({ partnerID: e, item: t, parentScreen: n, itemState: r, info: a }) => ({
-    item: t,
-    partnerID: e || null,
-    parent_screen: n || null,
-    item_state: r || null,
-    additional_info: a || null,
-  }),
-  _useLog = (e, t) => {
-    const n = (0, import_react.useCallback)(
-      (n, r = LogLevel.Info, a) => {
-        (a || (a = {}),
-          Object.keys(a).length >= PROPERTIES_LIMIT ||
-            window.uiLoggerModel.log({
-              feature: e,
-              group: t,
-              action: n,
-              logLevel: r,
-              params: JSON.stringify(a),
-            }));
-      },
-      [e, t],
-    );
-    return (e, t, r) => n(e, t, r);
-  },
-  useMetricsLog = (e) => {
-    const t = _useLog(e, METRICS_GROUP),
-      n = (0, import_react.useCallback)(
-        (e) => {
-          t(e.action, e.logLevel, convertMetricsParams(e));
-        },
-        [t],
-      );
-    return (e) => n(e);
-  },
-  LIGHT_TANK = "lightTank",
-  MEDIUM_TANK = "mediumTank",
-  HEAVY_TANK = "heavyTank",
-  AT_SPG = "AT-SPG",
-  themes = { primary: "primary", secondary: "secondary", custom: "custom" },
-  sizes$1 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
-  base$5 = "HeadlessButton_df8536fc",
-  headless_button_module_default = { base: base$5 },
-  HeadlessButtonBase = defineStyledComponent("Button", {
-    element: "button",
-    className: headless_button_module_default.base,
-  }),
-  HeadlessButton = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      onClick: t,
-      onMouseEnter: n,
-      soundTarget: r,
-      disabled: a = !1,
-      silent: o = !1,
-      ...i
-    },
-    u,
-  ) {
-    const s = useSounds();
-    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
-      ...i,
-      ref: u,
-      onMouseEnter: function (e) {
-        (a || o || s.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
-      },
-      onClick: function (e) {
-        a || (o || s.play("click", { target: r || "Button", original: e }), t?.(e));
-      },
-      children: e,
-    });
-  }),
-  background = "Button_background_98ebcfb8",
-  border = "Button_border_7e6390d7",
-  overlay = "Button_overlay_174632c8",
-  base$4 = "Button_70871946",
-  base__enabled = "Button_base__enabled_96634d40",
-  base__disabled = "Button_base__disabled_b713e04a",
-  content = "Button_content_298de63f",
-  content__fontAligned = "Button_content__fontAligned_66115778",
-  button_module_default = {
-    background: background,
-    border: border,
-    overlay: overlay,
-    base: base$4,
-    base__enabled: base__enabled,
-    base__disabled: base__disabled,
-    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
-    "base__size-small": "Button_base__size-small_fc7095a4",
-    "base__size-medium": "Button_base__size-medium_814d61f0",
-    "base__size-large": "Button_base__size-large_83da852e",
-    "base__theme-primary": "Button_base__theme-primary_8ba55469",
-    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
-    content: content,
-    content__fontAligned: content__fontAligned,
-  },
-  Button = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      size: t = sizes$1.large,
-      theme: n = themes.primary,
-      disabled: r = !1,
-      silent: a = !1,
-      autoAlignContent: o = !0,
-      classNames: i,
-      className: u,
-      ...s
-    },
-    l,
-  ) {
-    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
-      ...s,
-      ref: l,
-      silent: a,
-      disabled: r,
-      className: clsx(
-        button_module_default.base,
-        button_module_default[`base__size-${t}`],
-        button_module_default[`base__theme-${n}`],
-        r ? button_module_default.base__disabled : button_module_default.base__enabled,
-        u,
-        i?.base,
-      ),
-      onClick: function (e) {
-        r || s.onClick?.(e);
-      },
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.background, i?.background),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.border, i?.border),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.overlay, i?.overlay),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(
-            button_module_default.content,
-            o && button_module_default.content__fontAligned,
-            i?.content,
-          ),
-          children: e,
-        }),
-      ],
-    });
-  });
-((Button.themes = themes), (Button.sizes = sizes$1));
-var IconSize = (function (e) {
-    return ((e.default = "default"), (e.x48 = "x48"), (e.x80 = "x80"), (e.x220 = "x220"), e);
-  })({}),
-  base$3 = "Badge_b4595e01",
-  base__default$1 = "Badge_base__default_6aaca100",
-  base__x48$1 = "Badge_base__x48_2b129eae",
-  Badge_module_default = { base: base$3, base__default: base__default$1, base__x48: base__x48$1 },
-  badgeFolders = {
-    [IconSize.default]: "c_24x24",
-    [IconSize.x48]: "c_48x48",
-    [IconSize.x80]: "c_80x80",
-    [IconSize.x220]: "c_220x220",
-  },
-  Badge = ({ badgeID: e, size: t = IconSize.default, className: n }) => {
-    const r = R.images.gui.maps.icons.library.badges.$dyn(badgeFolders[t]);
-    return (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        Badge_module_default.base,
-        Badge_module_default[`base__${t}`],
-        n,
-      ),
-      style: { backgroundImage: `url(${r.$dyn(`badge_${e}`)})` },
-    });
-  },
-  base$2 = "Playernickname_23cd38ea",
+  base$4 = "Playernickname_23cd38ea",
   userName = "Playernickname_userName_fcb876e7",
   igrIcon = "Playernickname_igrIcon_c8baaf95",
   base__default = "Playernickname_base__default_4dc1c796",
@@ -25551,7 +25477,7 @@ var IconSize = (function (e) {
   suffixBadge = "Playernickname_suffixBadge_1bf5fe7f",
   anonymizedIcon = "Playernickname_anonymizedIcon_5d7db845",
   PlayerNickname_module_default = {
-    base: base$2,
+    base: base$4,
     userName: userName,
     igrIcon: igrIcon,
     base__default: base__default,
@@ -25730,7 +25656,7 @@ var IconSize = (function (e) {
     WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED: "wot_plus_exclusive_vehicle_disabled",
   },
   stateValues = Object.values(vehicleState),
-  sizes = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+  sizes$1 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
   upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
   mapTypes = {
     [types.lightTank]: "light_tank",
@@ -25739,22 +25665,22 @@ var IconSize = (function (e) {
     [types.SPG]: "spg",
     [types["AT-SPG"]]: "tank_destroyer",
   },
-  base$1 = "VehicleType_30b4aab0",
+  base$3 = "VehicleType_30b4aab0",
   base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
   base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
   base__x64x64 = "VehicleType_base__x64x64_bb9b890",
-  base__x96x96 = "VehicleType_base__x96x96_919f9f92",
+  base__x96x96$1 = "VehicleType_base__x96x96_919f9f92",
   base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
   base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
   base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
   base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
   icon = "VehicleType_icon_b15d2628",
   vehicle_type_module_default = {
-    base: base$1,
+    base: base$3,
     base__x24x24: base__x24x24,
     base__x48x48: base__x48x48,
     base__x64x64: base__x64x64,
-    base__x96x96: base__x96x96,
+    base__x96x96: base__x96x96$1,
     base__premium__x24x24: base__premium__x24x24,
     base__premium__x48x48: base__premium__x48x48,
     base__premium__x64x64: base__premium__x64x64,
@@ -25762,10 +25688,10 @@ var IconSize = (function (e) {
     icon: icon,
   },
   VehicleType = (0, import_react.forwardRef)(function (
-    { type: e, size: t = sizes.x48x48, premium: n = !1, fit: r = "contain", ...a },
+    { type: e, size: t = sizes$1.x48x48, premium: n = !1, fit: r = "contain", ...a },
     o,
   ) {
-    const i = useUpscale(sizes[t], upscaledSizes[t]);
+    const i = useUpscale(sizes$1[t], upscaledSizes[t]);
     return (0, import_jsx_runtime.jsx)(Image$1, {
       ...a,
       ref: o,
@@ -25780,9 +25706,9 @@ var IconSize = (function (e) {
       path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
     });
   });
-((VehicleType.types = types), (VehicleType.sizes = sizes));
-var base = "TruncateText_dcb41d92",
-  truncate_text_module_default = { base: base },
+((VehicleType.types = types), (VehicleType.sizes = sizes$1));
+var base$2 = "TruncateText_dcb41d92",
+  truncate_text_module_default = { base: base$2 },
   TruncatedText = (0, import_react.forwardRef)(function (
     { text: e, tooltipParams: t, className: n, ...r },
     a,
@@ -25809,7 +25735,81 @@ var base = "TruncateText_dcb41d92",
         children: e,
       })
     );
+  }),
+  base$1 = "CloseButton_7488a1b8",
+  base__medium = "CloseButton_base__medium_97d04067",
+  base__small = "CloseButton_base__small_c1b29bae",
+  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
+  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
+  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
+  close_button_module_default = {
+    base: base$1,
+    base__medium: base__medium,
+    base__small: base__small,
+    base__extraSmall: base__extraSmall,
+    base__x96x96: base__x96x96,
+    base__x32x32: base__x32x32,
+  },
+  sizes = { medium: "medium", small: "small", extraSmall: "extraSmall" },
+  upscaleImageSizes = {
+    [sizes.medium]: "x96x96",
+    [sizes.small]: sizes.medium,
+    [sizes.extraSmall]: "x32x32",
+  };
+function CloseButton({
+  size: e = sizes.medium,
+  hoverSound: t = sounds$1.highlight,
+  clickSound: n = sounds$1.click,
+  className: r,
+  onHover: a,
+  onClose: o,
+}) {
+  const i = useUpscale(
+    close_button_module_default[`base__${e}`],
+    close_button_module_default[`base__${upscaleImageSizes[e]}`],
+  );
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
+    onMouseEnter: () => {
+      (play$1.sound(t), a?.());
+    },
+    onClick: () => {
+      (play$1.sound(n), o());
+    },
   });
+}
+CloseButton.size = sizes;
+var base = "Formattext_bb80854d",
+  FormatText_module_default = { base: base },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: n,
+    alignment: r = Alignment.left,
+    formatWithBrackets: a,
+  }) =>
+    null === t
+      ? (console.error("FormatText was supplied with 'null'"), null)
+      : (0, import_jsx_runtime.jsx)(import_react.Fragment, {
+          children: (a && e ? format(t, e) : t)
+            .split("\n")
+            .map((t, a) =>
+              (0, import_jsx_runtime.jsx)(
+                "div",
+                {
+                  className: (0, import_classnames.default)(FormatText_module_default.base, n),
+                  children: formatString(t, r, e).map((e, t) =>
+                    (0, import_jsx_runtime.jsx)(
+                      import_react.Fragment,
+                      { children: e },
+                      `${t}-${e}`,
+                    ),
+                  ),
+                },
+                `${t}-${a}`,
+              ),
+            ),
+        });
 export {
   breakpointsByType as $,
   UIProvider as A,
@@ -25839,39 +25839,39 @@ export {
   useUpscale as Y,
   useMedia as Z,
   Video as _,
-  Button as a,
+  isTypeValidValue as a,
   identity as at,
   sizes$3 as b,
-  LIGHT_TANK as c,
+  AT_SPG as c,
   play$1 as ct,
-  CommonLogAction as d,
+  MEDIUM_TANK as d,
   clsx as dt,
   int as et,
-  FormatText as f,
+  useMetricsLog as f,
   require_react_dom as ft,
   ExtendedText as g,
   Size as h,
-  PlayerNickname as i,
+  VehicleType as i,
   constFalse as it,
   runView as j,
   useScrollBounding as k,
-  MEDIUM_TANK as l,
+  HEAVY_TANK as l,
   convertNbsp$1 as lt,
   ProgressBar as m,
-  VehicleType as n,
+  CloseButton as n,
   map as nt,
-  AT_SPG as o,
+  PlayerNickname as o,
   noop$2 as ot,
-  CloseButton as p,
+  CommonLogAction as p,
   require_react as pt,
   makeObservable as q,
-  isTypeValidValue as r,
+  TruncatedText as r,
   keyStringCodes as rt,
-  HEAVY_TANK as s,
+  Button as s,
   sendEvent$2 as st,
-  TruncatedText as t,
+  FormatText as t,
   find as tt,
-  useMetricsLog as u,
+  LIGHT_TANK as u,
   getNumberFormat as ut,
   Tooltip$1 as v,
   Image$1 as w,

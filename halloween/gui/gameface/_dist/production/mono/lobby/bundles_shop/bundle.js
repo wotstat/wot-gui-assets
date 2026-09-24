@@ -2,29 +2,29 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   At as a,
   Ci as s,
-  It as n,
-  Kn as t,
-  Lt as r,
-  Qr as i,
-  Ri as o,
-  Tn as l,
-  Un as c,
-  Vt as d,
-  Wn as u,
-  Wr as m,
-  Xn as _,
-  Yr as p,
-  Zt as h,
-  _r as b,
-  bn as N,
-  br as g,
-  ci as C,
-  gt as f,
-  ii as y,
-  it as x,
-  mi as S,
-  mt as v,
-  nt as j,
+  H as n,
+  It as t,
+  Kn as r,
+  Lt as i,
+  Qr as o,
+  Ri as l,
+  Tn as c,
+  Un as d,
+  Vt as u,
+  Wn as m,
+  Wr as _,
+  Xn as p,
+  Yr as h,
+  Zt as b,
+  _r as N,
+  bn as g,
+  br as C,
+  ci as f,
+  gt as y,
+  ii as x,
+  it as S,
+  mi as v,
+  mt as j,
   oi as w,
   si as E,
   ut as k,
@@ -35,7 +35,7 @@ import "../chunks/_wg-global-styles.js";
 import { n as D, t as U } from "../chunks/vendor.js";
 import { n as P } from "../chunks/spring_wrapper.js";
 import { i as T, r as B } from "../chunks/text.js";
-import { i as K, o as H, r as I, s as $ } from "../chunks/utils.js";
+import { i as H, o as K, r as I, s as $ } from "../chunks/utils.js";
 import { n as L, t as O } from "../chunks/key_icon.js";
 var V = (function (e) {
     return ((e.KeyWidget = "keyWidget"), (e.Decrypt = "decrypt"), (e.Skip = "skip"), e);
@@ -45,22 +45,22 @@ var V = (function (e) {
   G = (e, a) =>
     W.$dyn(
       ((e) =>
-        e.weight <= g.small.weight ? "small" : e.name === g.medium.name ? "medium" : "large")(e),
+        e.weight <= C.small.weight ? "small" : e.name === C.medium.name ? "medium" : "large")(e),
     ).$dyn(a),
   F = (e) =>
-    e.weight <= g.small.weight
+    e.weight <= C.small.weight
       ? { countInRow: 3, cardHeight: 366, gap: 0 }
-      : e.name === g.medium.name
+      : e.name === C.medium.name
         ? { countInRow: 5, cardHeight: 532, gap: 38 }
         : { countInRow: 6, cardHeight: 660, gap: 80 },
-  [X, Z] = l()(
+  [X, Z] = c()(
     ({ observableModel: e }) => ({ root: e.object(), bundles: e.array("bundles") }),
     ({ externalModel: e }) => ({
       close: e.createCallbackNoArgs("onClose"),
       purchase: e.createCallback((e, a) => ({ id: e, amount: a }), "onPurchase"),
     }),
   ),
-  Y = e(o(), 1),
+  Y = e(l(), 1),
   Q = e(U(), 1),
   q = "CardHeader_566c1c3f",
   J = "CardHeader_header_4144aa81",
@@ -68,18 +68,18 @@ var V = (function (e) {
   ae = "CardHeader_subHeaderText_2080ccc9",
   se = A(),
   ne = R.strings.halloween_lobby.bundleView.bundle,
-  te = ({ id: e, descrGroupKey: a, priceValue: s, className: n }) => {
-    const t = b();
+  te = ({ id: e, descrGroupKey: a, priceValue: s, className: t }) => {
+    const r = N();
     return (0, se.jsxs)("div", {
-      className: (0, Q.default)(q, n),
+      className: (0, Q.default)(q, t),
       children: [
-        (0, se.jsx)(h, {
+        (0, se.jsx)(b, {
           text: a ? ne.header.$dyn(a) : ne.header.$dyn(e),
-          style: { alignContent: j.Center, justifyContent: j.Center },
+          style: { alignContent: n.Center, justifyContent: n.Center },
           className: J,
         }),
         (0, se.jsx)(
-          h,
+          b,
           {
             text: a ? ne.subHeader.$dyn(a) : ne.subHeader.$dyn(e),
             params: a
@@ -89,7 +89,7 @@ var V = (function (e) {
             classNames: { text: ae },
             upgradeLegacy: !0,
           },
-          `${e}${t.breakpoint.name}`,
+          `${e}${r.breakpoint.name}`,
         ),
       ],
     });
@@ -145,16 +145,16 @@ var V = (function (e) {
     stepSize: n = 1,
     isFocused: t = !0,
     isDisabled: r = !1,
-    onChange: o = () => null,
+    onChange: i = () => null,
     isSmall: l = !1,
     className: c,
   }) {
-    const [u, m] = (0, Y.useState)(e),
+    const [d, m] = (0, Y.useState)(e),
       [_, p] = (0, Y.useState)(t),
       [h, b] = (0, Y.useState)(!1),
       [N, g] = (0, Y.useState)(!1),
       [C, f] = (0, Y.useState)(!1),
-      [x, v] = (0, Y.useState)(!1),
+      [y, S] = (0, Y.useState)(!1),
       j = (0, Y.useRef)(null),
       w = (0, Y.useRef)(e),
       E = (0, Y.useRef)(0),
@@ -167,7 +167,7 @@ var V = (function (e) {
       },
       M = (e) => Math.round(Math.min(s, Math.max(a, e)) / n) * n,
       D = (e) => {
-        e !== w.current && (m(e), (w.current = e), o(e));
+        e !== w.current && (m(e), (w.current = e), i(e));
       },
       U = () => {
         r || (j.current && j.current.focus());
@@ -175,36 +175,36 @@ var V = (function (e) {
       P = w.current >= s || r,
       T = w.current <= a || r,
       B = () => {
-        (A(), v(!1), f(!1));
+        (A(), S(!1), f(!1));
       },
-      K = (0, Y.useCallback)(() => {
+      H = (0, Y.useCallback)(() => {
         (A(), g(!1), b(!1));
       }, []),
-      H = (e, a) => {
+      K = (e, a) => {
         j.current && j.current.setSelectionRange(e, a);
       },
       I = () => {
         const e = Math.min(M(w.current) + n, s);
         D(e);
         const a = e.toString().length;
-        H(a, a);
+        K(a, a);
       },
       $ = () => {
         const e = Math.max(M(w.current) - n, a);
         D(e);
         const s = e.toString().length;
-        H(s, s);
+        K(s, s);
       },
       V = (e = 0) => {
-        const a = e === i.BACKSPACE,
-          s = e === i.DELETE;
+        const a = e === o.BACKSPACE,
+          s = e === o.DELETE;
         if (!j.current) return;
         const n = j.current.selectionStart || 0,
           t = j.current.selectionEnd || 0;
         let r = j.current.value;
-        const o = Math.max(n, t),
-          l = o;
-        (s && (r = r.substring(0, o) + r.substring(o + 1, r.length)),
+        const i = Math.max(n, t),
+          l = i;
+        (s && (r = r.substring(0, i) + r.substring(i + 1, r.length)),
           a && 1 === n && 1 === r.length && (r = "0"));
         const c = Number(r.trim().replace(/\D/g, "")),
           d = Number.isSafeInteger(c) ? c : Number.MAX_SAFE_INTEGER,
@@ -213,8 +213,8 @@ var V = (function (e) {
         j.current.value = u;
         const p = new RegExp(/\d/g);
         let h = 0;
-        for (let i = 0; i < l; i++) {
-          const e = r[i] || "",
+        for (let o = 0; o < l; o++) {
+          const e = r[o] || "",
             a = u[h] || "";
           if (e.match(p) || e === a) {
             for (; e !== u[h] && h < u.length;) h++;
@@ -223,18 +223,18 @@ var V = (function (e) {
         }
         ("" === r ? (h = 1) : m || (h = r.length),
           j.current && j.current.setSelectionRange(0, 0),
-          H(h, h),
+          K(h, h),
           D(d),
           (k.current = setTimeout(() => {
             const e = M(w.current);
-            e !== w.current && _ && (D(e), H(0, e.toString().length));
+            e !== w.current && _ && (D(e), K(0, e.toString().length));
           }, 1e3)));
       },
       z = () => {
-        r || S.highlight();
+        r || v.highlight();
       },
       W = () => {
-        r || S.click();
+        r || v.click();
       },
       G = (e, a = !1) => {
         P ||
@@ -242,7 +242,7 @@ var V = (function (e) {
           e.preventDefault(),
           A(),
           U(),
-          u < s &&
+          d < s &&
             (!a && W(),
             (0 === e.button || a) &&
               (I(), (E.current = window.setTimeout(() => G(e, !0), a ? 50 : 300)), b(!0))));
@@ -253,7 +253,7 @@ var V = (function (e) {
           e.preventDefault(),
           A(),
           U(),
-          u > a &&
+          d > a &&
             (!s && W(),
             (0 === e.button || s) &&
               ($(), (E.current = window.setTimeout(() => F(e, !0), s ? 50 : 300)), g(!0))));
@@ -261,16 +261,16 @@ var V = (function (e) {
     return (
       (0, Y.useEffect)(
         () => (
-          document.addEventListener("mouseup", K),
+          document.addEventListener("mouseup", H),
           () => {
-            (document.removeEventListener("mouseup", K), A());
+            (document.removeEventListener("mouseup", H), A());
           }
         ),
-        [K],
+        [H],
       ),
       (0, Y.useLayoutEffect)(() => {
         if (_) {
-          const e = u.toString().length,
+          const e = d.toString().length,
             a = j.current && j.current.selectionStart,
             s = j.current && j.current.selectionEnd,
             n = a === s ? e : a || 0;
@@ -279,8 +279,8 @@ var V = (function (e) {
               ? j.current && j.current.setSelectionRange(e, e)
               : j.current && j.current.setSelectionRange(n, e));
         }
-      }, [_, u]),
-      (0, se.jsx)(d, {
+      }, [_, d]),
+      (0, se.jsx)(u, {
         header: R.strings.halloween_lobby.bundleView.tooltip.stepper.header(),
         body: R.strings.halloween_lobby.bundleView.tooltip.stepper.body(),
         children: (0, se.jsx)("div", {
@@ -288,12 +288,12 @@ var V = (function (e) {
           children: (0, se.jsxs)("div", {
             className: ie,
             children: [
-              (0, se.jsx)("div", { className: le, children: y(a, s, u) }),
+              (0, se.jsx)("div", { className: le, children: x(a, s, d) }),
               (0, se.jsx)("input", {
                 ref: j,
                 className: ce,
                 type: "text",
-                value: u,
+                value: d,
                 disabled: r,
                 onWheel: (e) => {
                   !r && _ && (e.preventDefault(), e.deltaY < 0 ? $() : I());
@@ -307,56 +307,56 @@ var V = (function (e) {
                 onKeyDown: (e) => {
                   if (!r)
                     switch (
-                      (e.keyCode in i &&
-                        e.keyCode !== i.BACKSPACE &&
-                        e.keyCode !== i.DELETE &&
+                      (e.keyCode in o &&
+                        e.keyCode !== o.BACKSPACE &&
+                        e.keyCode !== o.DELETE &&
                         e.preventDefault(),
                       e.keyCode)
                     ) {
-                      case i.ARROW_UP:
-                      case i.NUM_PLUS:
-                      case i.PLUS:
+                      case o.ARROW_UP:
+                      case o.NUM_PLUS:
+                      case o.PLUS:
                         (h || b(!0), I());
                         break;
-                      case i.ARROW_DOWN:
-                      case i.NUM_MINUS:
-                      case i.MINUS:
+                      case o.ARROW_DOWN:
+                      case o.NUM_MINUS:
+                      case o.MINUS:
                         (N || g(!0), $());
                         break;
-                      case i.HOME:
+                      case o.HOME:
                         D(a);
                         break;
-                      case i.END:
+                      case o.END:
                         D(s);
                         break;
-                      case i.ENTER:
-                        if ((e.nativeEvent.stopImmediatePropagation(), u >= s)) {
+                      case o.ENTER:
+                        if ((e.nativeEvent.stopImmediatePropagation(), d >= s)) {
                           const e = s.toString().length;
-                          (D(s), H(0, e));
+                          (D(s), K(0, e));
                         }
                         break;
-                      case i.PAGE_UP:
+                      case o.PAGE_UP:
                         D(s);
                         break;
-                      case i.PAGE_DOWN:
+                      case o.PAGE_DOWN:
                         D(a);
                         break;
-                      case i.BACKSPACE:
-                      case i.DELETE:
+                      case o.BACKSPACE:
+                      case o.DELETE:
                         ((e) => {
-                          const a = e.keyCode === i.BACKSPACE,
-                            s = e.keyCode === i.DELETE,
+                          const a = e.keyCode === o.BACKSPACE,
+                            s = e.keyCode === o.DELETE,
                             { selectionStart: n, selectionEnd: t, value: r } = e.target,
-                            o = n !== t,
+                            i = n !== t,
                             l = new RegExp(/\D/),
                             c = a && n ? n - 1 : n || 0;
-                          if (o) return;
+                          if (i) return;
                           let d = c;
                           const u = l.test(r[c]);
                           if (s && u) for (; l.test(r[d]) && d < r.length;) d++;
                           if (a && u) for (; l.test(r[d]) && d > 0;) d--;
                           if (d !== c || (a && u))
-                            return (e.preventDefault(), (d = d < 0 ? 0 : d), void H(d, d));
+                            return (e.preventDefault(), (d = d < 0 ? 0 : d), void K(d, d));
                           ((a && 1 === n && 1 === r.length) || s) &&
                             (e.preventDefault(), V(e.keyCode));
                         })(e);
@@ -365,14 +365,14 @@ var V = (function (e) {
                 onKeyUp: (e) => {
                   if (!r)
                     switch (e.keyCode) {
-                      case i.ARROW_UP:
-                      case i.NUM_PLUS:
-                      case i.PLUS:
+                      case o.ARROW_UP:
+                      case o.NUM_PLUS:
+                      case o.PLUS:
                         b(!1);
                         break;
-                      case i.ARROW_DOWN:
-                      case i.NUM_MINUS:
-                      case i.MINUS:
+                      case o.ARROW_DOWN:
+                      case o.NUM_MINUS:
+                      case o.MINUS:
                         g(!1);
                     }
                 },
@@ -397,7 +397,7 @@ var V = (function (e) {
                   (0, se.jsx)("div", {
                     className: (0, Q.default)(_e, P && pe),
                     onClick: U,
-                    onMouseUp: K,
+                    onMouseUp: H,
                     onMouseLeave: B,
                     onMouseEnter: (e) => {
                       (f(!0), h && G(e, !0), P || z());
@@ -410,14 +410,14 @@ var V = (function (e) {
                   (0, se.jsx)("div", {
                     className: (0, Q.default)(_e, T && pe),
                     onClick: U,
-                    onMouseUp: K,
+                    onMouseUp: H,
                     onMouseLeave: B,
                     onMouseEnter: (e) => {
-                      (v(!0), N && F(e, !0), T || z());
+                      (S(!0), N && F(e, !0), T || z());
                     },
                     onMouseDown: F,
                     children: (0, se.jsx)("div", {
-                      className: (0, Q.default)(he, T && Ne, N && !T && Ce, x && !T && ye),
+                      className: (0, Q.default)(he, T && Ne, N && !T && Ce, y && !T && ye),
                     }),
                   }),
                 ],
@@ -439,8 +439,8 @@ var V = (function (e) {
   Pe = "KeyCard_keyContainer_cd2a9302",
   Te = "KeyCard_numericContainer_4ec8a3d7",
   Be = "KeyCard_currencyContainer_a19a3d72",
-  Ke = "KeyCard_currencyValue_9f3ff53a",
-  He = "KeyCard_header_666f2387",
+  He = "KeyCard_currencyValue_9f3ff53a",
+  Ke = "KeyCard_header_666f2387",
   Ie = R.strings.halloween_lobby.bundleView,
   $e = D(
     ({
@@ -454,10 +454,10 @@ var V = (function (e) {
       className: l,
     }) => {
       const { model: c } = Z(),
-        { breakpoint: d } = b(),
+        { breakpoint: d } = N(),
         [u, m] = (0, Y.useState)(i),
         _ = 1 === a,
-        p = d.weight <= g.small.weight;
+        p = d.weight <= C.small.weight;
       return (0, se.jsx)("div", {
         className: (0, Q.default)(De, l),
         children: (0, se.jsx)(P, {
@@ -470,10 +470,10 @@ var V = (function (e) {
               (0, se.jsx)("div", { className: Ue, style: { backgroundImage: `url(${G(d, e)})` } }),
               (0, se.jsx)("div", {
                 className: Ee,
-                children: (0, se.jsx)(x, {
+                children: (0, se.jsx)(S, {
                   className: ke,
-                  theme: x.themes.secondary,
-                  size: x.sizes.small,
+                  theme: S.themes.secondary,
+                  size: S.sizes.small,
                   onClick: () => o(e, _ ? u : n),
                   classNames: { content: Ae },
                   autoAlignContent: !1,
@@ -506,15 +506,15 @@ var V = (function (e) {
                 children: (0, se.jsx)(k, {
                   type: t.name,
                   enough: !(t.value * u > c.root.get().goldCount),
-                  size: p ? v.small : v.large,
+                  size: p ? j.small : j.large,
                   reverse: !0,
                   children: (0, se.jsx)("div", {
-                    className: Ke,
-                    children: s(_ ? y(1 * t.value, n * t.value, t.value * u) : t.value, 0),
+                    className: He,
+                    children: s(_ ? x(1 * t.value, n * t.value, t.value * u) : t.value, 0),
                   }),
                 }),
               }),
-              (0, se.jsx)(te, { id: e, priceValue: t.value, className: He }),
+              (0, se.jsx)(te, { id: e, priceValue: t.value, className: Ke }),
             ],
           }),
         }),
@@ -550,20 +550,20 @@ var V = (function (e) {
 function _a({
   id: e,
   descrGroupKey: s,
-  keysInBundle: t,
-  index: i,
+  keysInBundle: n,
+  index: r,
   bonuses: o,
   price: l,
-  onClick: d,
-  className: h,
+  onClick: c,
+  className: u,
 }) {
-  const [N, C] = (0, Y.useState)(!1),
-    [y, v] = (0, Y.useState)(!1),
-    { breakpoint: j } = b(),
-    w = j.weight <= g.small.weight,
+  const [b, g] = (0, Y.useState)(!1),
+    [f, x] = (0, Y.useState)(!1),
+    { breakpoint: j } = N(),
+    w = j.weight <= C.small.weight,
     k = ((e, a) =>
       e.length % a === 1
-        ? { bonusesHead: [...p(e, 0, e.length - 3)], bonusesTail: [...p(e, e.length - 2)] }
+        ? { bonusesHead: [...h(e, 0, e.length - 3)], bonusesTail: [...h(e, e.length - 2)] }
         : { bonusesHead: e, bonusesTail: void 0 })(o, F(j).countInRow),
     {
       rows: A,
@@ -585,45 +585,45 @@ function _a({
       };
     })(o.length, j, E()),
     T = 1 === A,
-    B = _(),
-    [$, V] = u(() => ({ y: 0 })),
-    [W, X] = u(() => ({ transform: "scale(1, 0)" }));
+    B = p(),
+    [$, V] = m(() => ({ y: 0 })),
+    [W, X] = m(() => ({ transform: "scale(1, 0)" }));
   return (
     (0, Y.useEffect)(() => {
-      w && y && !T
+      w && f && !T
         ? (X.start({
-            from: N ? { transform: `scale(1, ${D})` } : { transform: `scale(1, ${U})` },
-            to: N ? { transform: `scale(1, ${U})` } : { transform: `scale(1, ${D})` },
+            from: b ? { transform: `scale(1, ${D})` } : { transform: `scale(1, ${U})` },
+            to: b ? { transform: `scale(1, ${U})` } : { transform: `scale(1, ${D})` },
             immediate: B,
             config: ma,
           }),
           V.start({
-            from: N ? { y: -M } : { y: -R },
-            to: N ? { y: -R } : { y: -M },
+            from: b ? { y: -M } : { y: -R },
+            to: b ? { y: -R } : { y: -M },
             immediate: B,
             config: ma,
           }))
         : (X.set({ transform: `scale(1, ${U})` }), V.set({ y: -R }));
-    }, [V, X, B, N, w, R, M, D, U, y, T]),
+    }, [V, X, B, b, w, R, M, D, U, f, T]),
     (0, se.jsx)("div", {
-      className: (0, Q.default)(Fe, w && Ze, B && sa, N && !T && Ye, T && na, h),
+      className: (0, Q.default)(Fe, w && Ze, B && sa, b && !T && Ye, T && na, u),
       onMouseEnter: () => {
-        y && w && (C(!0), S.highlight());
+        f && w && (g(!0), v.highlight());
       },
       onMouseLeave: () => {
-        y && w && C(!1);
+        f && w && g(!1);
       },
       children: (0, se.jsx)(P, {
         from: z,
-        delay: 600 + 150 * i,
+        delay: 600 + 150 * r,
         duration: 750,
-        isCanceled: y,
-        onRest: () => v(!0),
+        isCanceled: f,
+        onRest: () => x(!0),
         children: (0, se.jsxs)("div", {
           className: Le,
           children: [
             (0, se.jsx)("div", { className: qe, style: { backgroundImage: `url(${G(j, e)})` } }),
-            (0, se.jsx)(c.div, { style: W, className: ea }, `${e}_${i}_gray`),
+            (0, se.jsx)(d.div, { style: W, className: ea }, `${e}_${r}_gray`),
             (0, se.jsxs)("div", {
               className: ia,
               children: [
@@ -635,7 +635,7 @@ function _a({
             (0, se.jsx)("div", {
               className: aa,
               children: (0, se.jsxs)(
-                c.div,
+                d.div,
                 {
                   style: $,
                   className: Je,
@@ -643,7 +643,7 @@ function _a({
                     (0, se.jsxs)("div", {
                       className: ta,
                       children: [
-                        (0, se.jsx)("div", { className: We, children: t }),
+                        (0, se.jsx)("div", { className: We, children: n }),
                         (0, se.jsx)(O, {
                           isTooltipEnable: !0,
                           className: Ge,
@@ -654,17 +654,17 @@ function _a({
                     (0, se.jsx)("div", { className: ra }),
                     (0, se.jsx)("div", {
                       className: la,
-                      children: m(k.bonusesHead, (e, a) =>
+                      children: _(k.bonusesHead, (e, a) =>
                         (0, se.jsx)(
-                          f,
+                          y,
                           {
                             name: e.name,
-                            value: H(e),
+                            value: K(e),
                             special: e.overlayType,
-                            image: I(e, r.Small),
-                            valueType: n(e.name),
-                            tooltipArgs: K(e),
-                            size: r.Small,
+                            image: I(e, i.Small),
+                            valueType: t(e.name),
+                            tooltipArgs: H(e),
+                            size: i.Small,
                             className: da,
                           },
                           `bonusesHead${e.name}${a}`,
@@ -676,15 +676,15 @@ function _a({
                         className: ca,
                         children: k.bonusesTail.map((e, a) =>
                           (0, se.jsx)(
-                            f,
+                            y,
                             {
                               name: e.name,
-                              value: H(e),
+                              value: K(e),
                               special: e.overlayType,
-                              image: I(e, r.Small),
-                              valueType: n(e.name),
-                              tooltipArgs: K(e),
-                              size: r.Small,
+                              image: I(e, i.Small),
+                              valueType: t(e.name),
+                              tooltipArgs: H(e),
+                              size: i.Small,
                               className: da,
                             },
                             `bonusesTail${e.name}${a}`,
@@ -693,16 +693,16 @@ function _a({
                       }),
                   ],
                 },
-                `${e}_${i}`,
+                `${e}_${r}`,
               ),
             }),
             (0, se.jsx)("div", {
               className: Oe,
-              children: (0, se.jsx)(x, {
+              children: (0, se.jsx)(S, {
                 className: Ve,
-                onClick: () => d(e, 1),
-                theme: x.themes.secondary,
-                size: x.sizes.small,
+                onClick: () => c(e, 1),
+                theme: S.themes.secondary,
+                size: S.sizes.small,
                 classNames: { content: ze },
                 autoAlignContent: !1,
                 children: (0, se.jsx)(a, { text: ua.btn.shop() }),
@@ -735,10 +735,10 @@ var pa = "BundlesShopApp_bf112439",
       : R.strings.halloween_lobby.bundleView.title.$dyn(e),
   va = D(() => {
     const { model: e, controls: a } = Z(),
-      { breakpoint: s } = b(),
-      { lackOfKeys: n, windowType: r, titleState: i, slide: o } = e.root.get();
+      { breakpoint: s } = N(),
+      { lackOfKeys: t, windowType: i, titleState: o, slide: l } = e.root.get();
     return (
-      t(a.close),
+      r(a.close),
       (0, se.jsxs)("div", {
         className: pa,
         children: [
@@ -749,25 +749,25 @@ var pa = "BundlesShopApp_bf112439",
             duration: 750,
             className: xa,
             children: (0, se.jsx)(B, {
-              text: Sa(i, r, n),
+              text: Sa(o, i, t),
               type: T.MetaHeading,
               className: ba,
-              alignContent: j.Center,
-              justifyContent: j.Center,
+              alignContent: n.Center,
+              justifyContent: n.Center,
               shadow: !0,
               binding: {
                 key: (0, se.jsxs)(se.Fragment, {
                   children: [
-                    (0, se.jsx)("div", { children: n }),
+                    (0, se.jsx)("div", { children: t }),
                     (0, se.jsx)(O, {
                       className: Na,
                       size:
-                        ((l = s.weight),
-                        l === g.medium.weight
+                        ((c = s.weight),
+                        c === C.medium.weight
                           ? O.sizes.C70x70
-                          : l === g.large.weight
+                          : c === C.large.weight
                             ? O.sizes.C86x86
-                            : l === g.extraLarge.weight
+                            : c === C.extraLarge.weight
                               ? O.sizes.C110x110
                               : O.sizes.C60x60),
                     }),
@@ -777,7 +777,7 @@ var pa = "BundlesShopApp_bf112439",
                   className: ga,
                   lang: R.strings.settings.LANGUAGE_CODE(),
                   children: [
-                    (0, se.jsx)("div", { className: fa, children: $(o) }),
+                    (0, se.jsx)("div", { className: fa, children: $(l) }),
                     (0, se.jsx)("div", { className: Ca }),
                   ],
                 }),
@@ -786,7 +786,7 @@ var pa = "BundlesShopApp_bf112439",
           }),
           (0, se.jsx)("div", {
             className: ya,
-            children: m(e.bundles.get(), (e, s) =>
+            children: _(e.bundles.get(), (e, s) =>
               (0, se.jsx)(
                 "div",
                 {
@@ -794,7 +794,7 @@ var pa = "BundlesShopApp_bf112439",
                     ? 0 !== e.maximumBundleCount &&
                       (0, se.jsx)(_a, { ...e, onClick: a.purchase, index: s })
                     : 0 !== e.maximumBundleCount &&
-                      (0, se.jsx)($e, { ...e, lackOfKeys: n, onClick: a.purchase, index: s }),
+                      (0, se.jsx)($e, { ...e, lackOfKeys: t, onClick: a.purchase, index: s }),
                 },
                 `cards${s}`,
               ),
@@ -803,8 +803,8 @@ var pa = "BundlesShopApp_bf112439",
         ],
       })
     );
-    var l;
+    var c;
   });
-N((0, se.jsx)(X, { children: (0, se.jsx)(M, { children: (0, se.jsx)(va, {}) }) }))
-  .then(() => C(document.getElementById("root")))
+g((0, se.jsx)(X, { children: (0, se.jsx)(M, { children: (0, se.jsx)(va, {}) }) }))
+  .then(() => f(document.getElementById("root")))
   .then(() => w());

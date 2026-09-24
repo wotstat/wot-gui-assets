@@ -1,4 +1,4 @@
-import { Br as e, C as r, Gt as a, Qr as s, T as o, Ut as t, b as n } from "./lib.js";
+import { Br as e, Gt as r, Qr as a, Ut as s, _ as o, f as t, h as n } from "./lib.js";
 var l = (function (e) {
     return (
       (e.None = "none"),
@@ -9,18 +9,18 @@ var l = (function (e) {
       e
     );
   })({}),
-  i = n(r({ goal: o(), periods: n(n(o())) }));
+  i = t(n({ goal: o(), periods: t(t(o())) }));
 function c(r) {
-  return r.map(([r, a]) => [e(r, s.ShortTime), e(a, s.ShortTime)]);
+  return r.map(([r, s]) => [e(r, a.ShortTime), e(s, a.ShortTime)]);
 }
-var [d, u] = a()(
+var [d, h] = r()(
   ({ observableModel: e }) => {
     const r = { ...e.primitives(["alertType"]) },
       a = e.dict("battleSchedule");
     return {
       ...r,
       computes: {
-        battleSchedule: t.shallow(() => {
+        battleSchedule: s.shallow(() => {
           const e = [];
           for (const [s, o] of a.entries())
             try {
@@ -35,4 +35,4 @@ var [d, u] = a()(
   },
   ({ externalModel: e }) => ({ changeServer: e.createCallbackNoArgs("onChangeServer") }),
 );
-export { l as i, i as n, u as r, d as t };
+export { l as i, i as n, h as r, d as t };

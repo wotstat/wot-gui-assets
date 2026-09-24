@@ -3,22 +3,22 @@ import {
   Bt as t,
   Ft as i,
   Gt as a,
-  L as s,
+  H as s,
   Lr as l,
   Nn as r,
-  Qr as o,
-  Ut as n,
-  Vt as c,
-  Wt as g,
-  Yr as p,
-  at as m,
-  gt as _,
-  kr as b,
-  n as d,
-  ot as f,
-  pn as h,
-  qr as u,
-  r as y,
+  P as o,
+  Qr as n,
+  Ut as c,
+  Vt as g,
+  Wt as p,
+  Yr as m,
+  at as _,
+  gt as b,
+  kr as d,
+  n as f,
+  ot as h,
+  pn as u,
+  qr as y,
   rn as x,
   vr as v,
   yr as k,
@@ -36,12 +36,12 @@ var [T, w] = a()(
           bp: e.array("modesBP"),
           eventInfo: e.object("eventInfo"),
         },
-        i = n.shallow((e) => {
+        i = c.shallow((e) => {
           const i = v(t.sh.types.get(), e);
           if (!i) throw Error("battleType is undefined");
           return i;
         }),
-        a = n.shallow(
+        a = c.shallow(
           () => {
             const e = v(
               k(t.bp.get(), (e) => e),
@@ -50,13 +50,13 @@ var [T, w] = a()(
             if (!e) throw Error("Tables of BP are undefined");
             return e;
           },
-          { equals: b },
+          { equals: d },
         ),
-        s = g(() => {
+        s = p(() => {
           const { subMode: e } = t.eventInfo.get();
           return e === P.StPatrick ? R.strings.battle_royale_infopage.stPatrickSubTitle() : "";
         }),
-        l = g(() => {
+        l = p(() => {
           const { subMode: e } = t.eventInfo.get();
           return e === P.StPatrick;
         });
@@ -327,7 +327,7 @@ var [T, w] = a()(
     default: R.strings.battle_royale_infopage.footer(),
     stPatrick: R.strings.battle_royale_infopage.stPatrickFooter(),
   },
-  Y = e(p(), 1),
+  Y = e(m(), 1),
   $ = {
     base: "Article_4c8e50ad",
     title: "Article_title_659722c4",
@@ -344,12 +344,12 @@ var [T, w] = a()(
   q = r(),
   O = ({ description: e, className: t, classNames: i, mapsStyle: a }) =>
     (0, q.jsxs)("div", {
-      className: u($.base, i?.alignCenter, t),
+      className: y($.base, i?.alignCenter, t),
       children: [
         (0, q.jsxs)("div", {
-          className: u($.head, i?.head),
+          className: y($.head, i?.head),
           children: [
-            (0, q.jsx)("div", { className: u($.title, i?.title), children: e.title }),
+            (0, q.jsx)("div", { className: y($.title, i?.title), children: e.title }),
             e.subtitles.map(({ subtitle: e }, t) =>
               (0, q.jsx)(
                 "div",
@@ -365,7 +365,7 @@ var [T, w] = a()(
         }),
         e.images &&
           (0, q.jsx)("div", {
-            className: u($.images, a && $.images__mapStyle),
+            className: y($.images, a && $.images__mapStyle),
             children: e.images.map(({ imagePath: e, title: t, subtitle: a }, s) =>
               (0, q.jsxs)(
                 Y.Fragment,
@@ -376,8 +376,8 @@ var [T, w] = a()(
                       {
                         className: $.imageContainer,
                         children: [
-                          (0, q.jsx)("img", { className: u($.image, i?.image), src: e, alt: t }),
-                          (0, q.jsx)("div", { className: u($.text, i?.text), children: t }),
+                          (0, q.jsx)("img", { className: y($.image, i?.image), src: e, alt: t }),
+                          (0, q.jsx)("div", { className: y($.text, i?.text), children: t }),
                           a && (0, q.jsx)("div", { className: $.subtitle, children: a }),
                         ],
                       },
@@ -404,12 +404,12 @@ var [T, w] = a()(
   le = "Details_textBlock_51423ea5",
   re = ({ description: e, reverse: t, smallImage: i, classNames: a, className: l, binding: r }) =>
     (0, q.jsxs)("div", {
-      className: u(Q, t && U, i && X, l),
+      className: y(Q, t && U, i && X, l),
       children: [
         (0, q.jsxs)("div", {
-          className: u(ae, a?.description),
+          className: y(ae, a?.description),
           children: [
-            e.title && (0, q.jsx)("div", { className: u(J, a?.titleStyling), children: e.title }),
+            e.title && (0, q.jsx)("div", { className: y(J, a?.titleStyling), children: e.title }),
             e.textBlock.map(({ subtitle: e, text: t }, i) =>
               (0, q.jsxs)(
                 "div",
@@ -434,7 +434,7 @@ var [T, w] = a()(
           ],
         }),
         (0, q.jsx)("div", { className: se }),
-        (0, q.jsx)("img", { className: u(!i && ie, a?.image), src: e.imagePath, alt: e.title }),
+        (0, q.jsx)("img", { className: y(!i && ie, a?.image), src: e.imagePath, alt: e.title }),
       ],
     }),
   oe = "InfoBlock_bc3a412a",
@@ -498,7 +498,7 @@ var [T, w] = a()(
       { openVideo: i } = e,
       { startDate: a, endDate: s } = t.root.get(),
       r = t.computes.headerSubtitle(),
-      n = t.computes.hasHeaderInfoBlock();
+      c = t.computes.hasHeaderInfoBlock();
     return (0, q.jsxs)("div", {
       className: fe,
       children: [
@@ -512,17 +512,17 @@ var [T, w] = a()(
             r && (0, q.jsx)("div", { className: ye, children: r }),
             (0, q.jsx)("div", {
               className: xe,
-              children: (0, q.jsx)(_, {
+              children: (0, q.jsx)(b, {
                 text: R.strings.battle_royale_infopage.eventTime(),
                 binding: {
-                  startDate: (0, q.jsx)(y, { datetime: a, format: o.ShortDate }),
-                  endDate: (0, q.jsx)(y, { datetime: s, format: o.ShortDate }),
+                  startDate: (0, q.jsx)(o, { datetime: a, format: n.ShortDate }),
+                  endDate: (0, q.jsx)(o, { datetime: s, format: n.ShortDate }),
                 },
               }),
             }),
           ],
         }),
-        n && (0, q.jsx)(de, {}),
+        c && (0, q.jsx)(de, {}),
         (0, q.jsxs)("div", {
           onClick: () => {
             (l.click(), i());
@@ -602,7 +602,7 @@ var [T, w] = a()(
               return (0, q.jsxs)(
                 "div",
                 {
-                  className: u(
+                  className: y(
                     Ie.cell,
                     l && Ie.cell__text,
                     0 === t && Ie.cell__inFirstRow,
@@ -622,7 +622,7 @@ var [T, w] = a()(
                           });
                       }
                     })(),
-                    (0, q.jsx)("div", { className: u(l && Ie.border) }),
+                    (0, q.jsx)("div", { className: y(l && Ie.border) }),
                   ],
                 },
                 s,
@@ -962,7 +962,7 @@ var nt = () => {
               (0, q.jsxs)(
                 "div",
                 {
-                  className: u(rt.tab, e === a && rt.tab__active),
+                  className: y(rt.tab, e === a && rt.tab__active),
                   onClick: () => (t(a), void l.click()),
                   children: [
                     (0, q.jsx)("img", {
@@ -971,8 +971,8 @@ var nt = () => {
                       alt: lt[i].name,
                     }),
                     (0, q.jsx)("div", { className: rt.tabTitle, children: lt[i].name }),
-                    (0, q.jsx)("div", { className: u(rt.tabGlow, rt.tabGlow__upper) }),
-                    (0, q.jsx)("div", { className: u(rt.tabGlow, rt.tabGlow__bottom) }),
+                    (0, q.jsx)("div", { className: y(rt.tabGlow, rt.tabGlow__upper) }),
+                    (0, q.jsx)("div", { className: y(rt.tabGlow, rt.tabGlow__bottom) }),
                   ],
                 },
                 a,
@@ -1030,7 +1030,7 @@ var nt = () => {
                             (0, q.jsx)("div", { className: rt.abilitiesTitle, children: e.title }),
                             (0, q.jsx)("div", {
                               className: rt.abilitiesSubtitle,
-                              children: (0, q.jsx)(d, { text: e.description }),
+                              children: (0, q.jsx)(f, { text: e.description }),
                             }),
                           ],
                         }),
@@ -1093,13 +1093,13 @@ var nt = () => {
     const { model: e, controls: t } = w(),
       a = e.eventInfo.get().subMode;
     return (
-      h(t.closeWindow),
+      u(t.closeWindow),
       (0, q.jsxs)("div", {
-        className: u(ct.base, ct[`base__${a}`]),
+        className: y(ct.base, ct[`base__${a}`]),
         children: [
           (0, q.jsx)(i, { className: ct.closeButton, onClose: t.closeWindow }),
-          (0, q.jsx)(m, {
-            children: (0, q.jsx)(f, {
+          (0, q.jsx)(_, {
+            children: (0, q.jsx)(h, {
               className: ct.scroll,
               barClassNames: gt,
               children: (0, q.jsx)("div", {
@@ -1121,7 +1121,7 @@ var nt = () => {
                     (0, q.jsx)("div", { className: ct.divider }),
                     (0, q.jsx)(O, {
                       description: S,
-                      classNames: { alignCenter: u(ct.alignCenter, ct.generalDescription) },
+                      classNames: { alignCenter: y(ct.alignCenter, ct.generalDescription) },
                     }),
                     (0, q.jsx)(nt, {}),
                     (0, q.jsx)(re, {
@@ -1234,7 +1234,7 @@ var nt = () => {
     );
   });
 t(
-  new c()
+  new g()
     .add(j)
     .add(T)
     .render((0, q.jsx)(pt, {})),

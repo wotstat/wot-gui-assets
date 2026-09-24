@@ -13741,80 +13741,11 @@ const useMount = (e) => {
       })
     );
   }),
-  RewardComponent = ({ reward: e, size: t }) => {
-    const s = e.RewardWrapper || null;
-    return s
-      ? jsxRuntimeExports.jsx(s, {
-          ...e.rewardWrapperProps,
-          children: jsxRuntimeExports.jsx(Reward, { size: t, ...e }),
-        })
-      : jsxRuntimeExports.jsx(Reward, { size: t, ...e });
-  },
-  base$1 = "Rewards_36f5662a",
-  base__vertical = "Rewards_base__vertical_32f04b98",
-  reward = "Rewards_reward_9abc0f4a",
-  reward__vertical = "Rewards_reward__vertical_dd4a02c5",
-  styles$1 = {
-    base: base$1,
-    base__vertical: base__vertical,
-    reward: reward,
-    reward__vertical: reward__vertical,
-  },
-  Rewards = ({
-    data: e,
-    size: t = ImageSize.Big,
-    isVertical: s = !1,
-    count: r,
-    classMix: n,
-    rewardItemClassMix: a,
-    boxRewardTooltip: o,
-    boxRewardValue: i,
-    boxRewardClassName: u,
-    boxRewardClassNames: l,
-  }) => {
-    const c = r && r < e.length,
-      d = cx(styles$1.reward, s && styles$1.reward__vertical, a),
-      _ = c ? r : e.length;
-    return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$1.base, s && styles$1.base__vertical, n),
-      children: [
-        e
-          .slice(0, _)
-          .map((e, s) =>
-            jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: d,
-                children: jsxRuntimeExports.jsx(RewardComponent, { reward: e, size: t }),
-              },
-              s,
-            ),
-          ),
-        c &&
-          jsxRuntimeExports.jsx("div", {
-            className: d,
-            children: jsxRuntimeExports.jsx(Reward, {
-              name: "more",
-              image: `R.images.gui.maps.icons.quests.bonuses.${t}.default`,
-              size: t,
-              value:
-                i ||
-                formatPrintf(R.strings.tooltips.quests.awards.additional.bottom(), {
-                  count: e.length - (r || 0),
-                }),
-              tooltipArgs: o,
-              className: u,
-              classNames: l,
-            }),
-          }),
-      ],
-    });
-  },
-  base = "Tooltip_6d997cee",
+  base$1 = "Tooltip_6d997cee",
   decorator = "Tooltip_decorator_b3486d4e",
-  styles = { base: base, decorator: decorator },
-  Base = defineStyledComponent("Base", styles.base),
-  Decorator = defineStyledComponent("Decorator", styles.decorator),
+  styles$1 = { base: base$1, decorator: decorator },
+  Base = defineStyledComponent("Base", styles$1.base),
+  Decorator = defineStyledComponent("Decorator", styles$1.decorator),
   Tooltip = reactExports.forwardRef(function ({ children: e, ...t }, s) {
     const r = reactExports.useRef(null);
     return (
@@ -13849,6 +13780,75 @@ const useMount = (e) => {
     );
   });
 Tooltip.Decorator = Decorator;
+const RewardComponent = ({ reward: e, size: t }) => {
+    const s = e.RewardWrapper || null;
+    return s
+      ? jsxRuntimeExports.jsx(s, {
+          ...e.rewardWrapperProps,
+          children: jsxRuntimeExports.jsx(Reward, { size: t, ...e }),
+        })
+      : jsxRuntimeExports.jsx(Reward, { size: t, ...e });
+  },
+  base = "Rewards_36f5662a",
+  base__vertical = "Rewards_base__vertical_32f04b98",
+  reward = "Rewards_reward_9abc0f4a",
+  reward__vertical = "Rewards_reward__vertical_dd4a02c5",
+  styles = {
+    base: base,
+    base__vertical: base__vertical,
+    reward: reward,
+    reward__vertical: reward__vertical,
+  },
+  Rewards = ({
+    data: e,
+    size: t = ImageSize.Big,
+    isVertical: s = !1,
+    count: r,
+    classMix: n,
+    rewardItemClassMix: a,
+    boxRewardTooltip: o,
+    boxRewardValue: i,
+    boxRewardClassName: u,
+    boxRewardClassNames: l,
+  }) => {
+    const c = r && r < e.length,
+      d = cx(styles.reward, s && styles.reward__vertical, a),
+      _ = c ? r : e.length;
+    return jsxRuntimeExports.jsxs("div", {
+      className: cx(styles.base, s && styles.base__vertical, n),
+      children: [
+        e
+          .slice(0, _)
+          .map((e, s) =>
+            jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: d,
+                children: jsxRuntimeExports.jsx(RewardComponent, { reward: e, size: t }),
+              },
+              s,
+            ),
+          ),
+        c &&
+          jsxRuntimeExports.jsx("div", {
+            className: d,
+            children: jsxRuntimeExports.jsx(Reward, {
+              name: "more",
+              image: `R.images.gui.maps.icons.quests.bonuses.${t}.default`,
+              size: t,
+              value:
+                i ||
+                formatPrintf(R.strings.tooltips.quests.awards.additional.bottom(), {
+                  count: e.length - (r || 0),
+                }),
+              tooltipArgs: o,
+              className: u,
+              classNames: l,
+            }),
+          }),
+      ],
+    });
+  };
 export {
   VehicleImage as $,
   useTableContext as A,
@@ -14092,9 +14092,9 @@ export {
   includes as dF,
   FormatNumber as dG,
   ValueTypes as dH,
-  Rewards as dI,
-  ProgressBar$1 as dJ,
-  Tooltip as dK,
+  Tooltip as dI,
+  Rewards as dJ,
+  ProgressBar$1 as dK,
   Route as da,
   RouterContext as db,
   ONE_DAY as dc,

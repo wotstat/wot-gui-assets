@@ -1,6 +1,6 @@
 import {
   t as e,
-  dK as s,
+  dI as s,
   ba as t,
   l as r,
   n as a,
@@ -64,11 +64,11 @@ const l = "Index_608c79e6",
       { Component: s.default },
     ]),
   );
-const O = d(function () {
+const I = d(function () {
   const { model: e } = g(),
     t = e.type.get(),
     r = v[t]?.Component;
   if (r) return i.jsx(s, { children: i.jsx(r, {}) });
   console.error(`Unknown tooltip type: ${t}`);
 });
-c(new o().add(y).render(i.jsx(O, {})));
+c(new o().add(y).render(i.jsx(I, {})));

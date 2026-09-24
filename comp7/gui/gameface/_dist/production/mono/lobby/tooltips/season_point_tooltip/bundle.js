@@ -1,12 +1,12 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Mr as e, Pa as t, Uo as a, _i as o, fi as p, kr as n, ws as i } from "../../chunks/lib.js";
+import { $ as e, Pa as t, Q as a, Uo as o, _i as p, fi as n, ws as i } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as _, i as r } from "../../chunks/vendor.js";
 /* empty css                  */ import { t as c } from "../../chunks/tooltip_decorator.js";
 import { t as d } from "../../chunks/tooltips.module.js";
 i();
 var l = s(r(), 1),
-  [x, h] = o()(({ observableModel: s }) => ({ root: s.object() }), a),
+  [x, h] = p()(({ observableModel: s }) => ({ root: s.object() }), o),
   A = {
     base: "App_eaae4c68",
     header: "App_header_cfd235ff",
@@ -36,7 +36,7 @@ var l = s(r(), 1),
   f = s(t(), 1),
   u = _(() => {
     const { model: s } = h(),
-      { ignoreState: t, state: a, seasonPointExchangeRate: o } = s.root.get();
+      { ignoreState: t, state: o, seasonPointExchangeRate: p } = s.root.get();
     return (0, f.jsxs)("div", {
       className: (0, l.default)(d.base, A.base),
       children: [
@@ -49,8 +49,8 @@ var l = s(r(), 1),
             }),
             !t &&
               (0, f.jsx)(e, {
-                text: `${R.strings.comp7_ext.seasonPointTooltip.status.$dyn(a)}`,
-                classMix: (0, l.default)(A.status, A[`status__${a}`]),
+                text: `${R.strings.comp7_ext.seasonPointTooltip.status.$dyn(o)}`,
+                classMix: (0, l.default)(A.status, A[`status__${o}`]),
               }),
           ],
         }),
@@ -65,11 +65,11 @@ var l = s(r(), 1),
               text: R.strings.comp7_ext.seasonPointTooltip.text.year(),
               classMix: A.text,
             }),
-            (0, f.jsx)(n, {
+            (0, f.jsx)(a, {
               text: R.strings.comp7_ext.seasonPointTooltip.text.compensate(),
               binding: {
                 bondsIcon: (0, f.jsx)("div", { className: A.bondsIcon }),
-                seasonPointExchangeRate: o,
+                seasonPointExchangeRate: p,
               },
               classMix: (0, l.default)(A.text),
             }),
@@ -78,4 +78,4 @@ var l = s(r(), 1),
       ],
     });
   });
-p((0, f.jsx)(x, { children: (0, f.jsx)(c, { children: (0, f.jsx)(u, {}) }) }));
+n((0, f.jsx)(x, { children: (0, f.jsx)(c, { children: (0, f.jsx)(u, {}) }) }));

@@ -2,7 +2,7 @@ import {
   A as e,
   M as t,
   Y as a,
-  g as s,
+  i as s,
   k as r,
   mt as n,
   n as c,

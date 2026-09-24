@@ -4,25 +4,25 @@ import {
   Br as s,
   Ct as o,
   Gt as r,
-  Ii as n,
-  Jn as t,
-  Kn as i,
-  Qt as l,
-  Ri as c,
-  Tn as d,
-  Wr as m,
-  Zt as p,
-  _r as _,
-  bn as h,
-  br as u,
-  cn as w,
-  dn as f,
-  en as x,
-  fr as b,
-  gn as y,
-  mi as C,
-  mn as N,
-  nt as W,
+  H as n,
+  Ii as t,
+  Jn as i,
+  Kn as l,
+  Qt as c,
+  Ri as d,
+  Tn as m,
+  Wr as p,
+  Zt as _,
+  _r as h,
+  bn as u,
+  br as w,
+  cn as f,
+  dn as x,
+  en as b,
+  fr as y,
+  gn as C,
+  mi as N,
+  mn as W,
   pi as v,
   pn as j,
   ri as g,
@@ -43,7 +43,7 @@ import { n as Q, r as F, t as G } from "../chunks/button.js";
 import { t as J } from "../chunks/close_button.js";
 import { t as K } from "../chunks/string-utils.js";
 import { t as V } from "../chunks/number_animation.js";
-var Z = a(c(), 1),
+var Z = a(d(), 1),
   q = a(M(), 1),
   Y = { y: 0, opacity: 1 },
   aa = (function (a) {
@@ -102,8 +102,8 @@ var Z = a(c(), 1),
   ta = "DataHeader_description_c843163a",
   ia = E();
 function la({ index: a, isAnimationCanceled: e, categoryName: s, className: o }) {
-  const { breakpoint: n, upscale: t } = _(),
-    i = n.weight >= u.medium.weight;
+  const { breakpoint: n, upscale: t } = h(),
+    i = n.weight >= w.medium.weight;
   return (0, ia.jsxs)(L, {
     ...ea[aa.ROW],
     isCanceled: e,
@@ -116,30 +116,30 @@ function la({ index: a, isAnimationCanceled: e, categoryName: s, className: o })
           asChild: !0,
           params: {
             body:
-              ((c = R.strings.halloween_lobby.comparisonWindow.categoryName.$dyn(s)),
-              c.replace(/\n/g, " ")),
+              ((l = R.strings.halloween_lobby.comparisonWindow.categoryName.$dyn(s)),
+              l.replace(/\n/g, " ")),
           },
           disabled: i,
-          children: (0, ia.jsx)(x, {
+          children: (0, ia.jsx)(b, {
             path: `R.images.halloween.gui.maps.icons.comparisonWindow.categoryIcons.${t ? s + "_upscale" : s}`,
             className: na,
           }),
         }),
       }),
       i &&
-        (0, ia.jsx)(l, {
+        (0, ia.jsx)(c, {
           className: ta,
           path: `halloween_lobby.comparisonWindow.categoryName.${s}`,
         }),
     ],
   });
-  var c;
+  var l;
 }
-var [ca, da] = d()(({ observableModel: a }) => {
+var [ca, da] = m()(({ observableModel: a }) => {
     const e = { vehicles: a.arrayClone("vehicles") },
       o = S(() => e.vehicles.get().length),
       r = S(() =>
-        m(e.vehicles.get(), (a) => ({
+        p(e.vehicles.get(), (a) => ({
           userName: a.userName,
           vehicleName: a.vehicleName,
           vehicleType: a.vehicleType,
@@ -212,7 +212,7 @@ function Ca({
       c && l(!0);
     }, [c]),
     m = (0, Z.useCallback)(() => {
-      C.sound(P);
+      N.sound(P);
     }, []);
   return (0, ia.jsxs)(L, {
     ...ea[aa.ROW_ITEM],
@@ -244,16 +244,16 @@ function Ca({
 var Na = "DataRow_7883cfd";
 function Wa({ index: a, values: e, isAnimationCanceled: s, className: o }) {
   const r = a,
-    t = (0, Z.useCallback)(() => {
-      C.sound($);
+    n = (0, Z.useCallback)(() => {
+      N.sound($);
     }, []);
   return (0, ia.jsx)(L, {
     ...ea[aa.ROW],
     isCanceled: s,
     delay: 1e3 + 650 * a,
-    className: n(Na, o),
-    onStart: t,
-    children: m(e, (a, o) =>
+    className: t(Na, o),
+    onStart: n,
+    children: p(e, (a, o) =>
       (0, ia.jsx)(
         Ca,
         {
@@ -285,22 +285,22 @@ function Da({
   userName: e,
   vehicleType: s,
   vehicleName: r,
-  isAnimationCanceled: t,
+  isAnimationCanceled: n,
   isUpscaled: i,
   className: l,
 }) {
   return (0, ia.jsxs)(L, {
     ...ea[aa.HEADER_ITEM],
-    isCanceled: t,
+    isCanceled: n,
     delay: 250 + 75 * a,
-    className: n(va, l),
+    className: t(va, l),
     children: [
       a > 0 &&
         (0, ia.jsxs)("div", {
           className: Ha,
           children: [
             (0, ia.jsx)("div", { className: Ta }),
-            (0, ia.jsx)("div", { className: n(Ta, ka) }),
+            (0, ia.jsx)("div", { className: t(Ta, ka) }),
           ],
         }),
       (0, ia.jsxs)("div", {
@@ -309,22 +309,22 @@ function Da({
       }),
       (0, ia.jsx)("div", {
         className: ja,
-        children: (0, ia.jsx)(x, { path: `vehicle.x380x304.${r}`, className: ga }),
+        children: (0, ia.jsx)(b, { path: `vehicle.x380x304.${r}`, className: ga }),
       }),
       (0, ia.jsxs)(L, {
         ...ea[aa.HEADER_ITEM_TXT],
-        isCanceled: t,
+        isCanceled: n,
         delay: 400 + 75 * a,
         className: Aa,
         children: [
           (0, ia.jsx)("div", {
             className: Ra,
-            children: (0, ia.jsx)(x, {
+            children: (0, ia.jsx)(b, {
               path: `R.images.halloween.gui.maps.icons.comparisonWindow.ttcIcons.${i ? r + "_upscale" : r}`,
               className: Sa,
             }),
           }),
-          (0, ia.jsx)(p, {
+          (0, ia.jsx)(_, {
             text: K(R.strings.halloween_lobby.comparisonWindow.tank.ttcType.$dyn(r)),
             classNames: { text: Ea },
           }),
@@ -340,14 +340,14 @@ var Ma = "Header_ca74c781",
         model: { computes: s },
       } = da(),
       o = s.header(),
-      r = _().upscale;
+      r = h().upscale;
     return (
-      (0, Z.useEffect)(() => C.sound(O), []),
+      (0, Z.useEffect)(() => N.sound(O), []),
       (0, ia.jsxs)("div", {
-        className: n(Ma, a),
+        className: t(Ma, a),
         children: [
           (0, ia.jsx)(L, { ...ea[aa.LIP], isCanceled: e, className: La }),
-          m(o, (a, s) =>
+          p(o, (a, s) =>
             (0, ia.jsx)(
               "div",
               {
@@ -400,8 +400,8 @@ var Ma = "Header_ca74c781",
       } = da(),
       s = a.vehicleCount(),
       o = a.params(),
-      [r, l] = (0, Z.useState)(!1),
-      c = b(
+      [r, c] = (0, Z.useState)(!1),
+      d = y(
         { isScrollEnable: s > 7 },
         {
           small: { isScrollEnable: s > 8 },
@@ -410,11 +410,11 @@ var Ma = "Header_ca74c781",
           extraLarge: { isScrollEnable: s > 11 },
         },
       );
-    (i(() => v.close()),
-      t(e.ENTER, () => v.close()),
+    (l(() => v.close()),
+      i(e.ENTER, () => v.close()),
       (0, Z.useEffect)(() => {
         const a = () => {
-          l(!0);
+          c(!0);
         };
         return (
           window.addEventListener("keydown", a),
@@ -423,14 +423,14 @@ var Ma = "Header_ca74c781",
           }
         );
       }, []));
-    const d = (0, Z.useCallback)(() => C.sound(z), []),
-      p = (0, Z.useCallback)(() => v.close(), []),
-      { api: _ } = A();
-    w(_);
-    const [h, u] = y(_);
+    const m = (0, Z.useCallback)(() => N.sound(z), []),
+      _ = (0, Z.useCallback)(() => v.close(), []),
+      { api: h } = A();
+    f(h);
+    const [u, w] = C(h);
     return (0, ia.jsxs)("div", {
-      className: n(Oa.base, c.isScrollEnable && Oa.base__withScroll),
-      onClick: () => l(!0),
+      className: t(Oa.base, d.isScrollEnable && Oa.base__withScroll),
+      onClick: () => c(!0),
       children: [
         (0, ia.jsx)(J, { className: Oa.closeBtn, onClose: () => v.close() }),
         (0, ia.jsx)(L, {
@@ -440,17 +440,17 @@ var Ma = "Header_ca74c781",
           children: (0, ia.jsx)(X, {
             type: U.MetaHeading,
             text: R.strings.halloween_lobby.comparisonWindow.title(),
-            justifyContent: W.Center,
+            justifyContent: n.Center,
             className: Oa.title,
             shadow: !0,
           }),
         }),
         (0, ia.jsxs)("div", {
-          className: n(Oa.content, c.isScrollEnable && Oa.content__withScroll),
+          className: t(Oa.content, d.isScrollEnable && Oa.content__withScroll),
           children: [
             (0, ia.jsx)("div", {
               className: Oa.dataHeaders,
-              children: m(o, ({ categoryName: a }, e) =>
+              children: p(o, ({ categoryName: a }, e) =>
                 (0, ia.jsx)(
                   la,
                   { index: e, isAnimationCanceled: r, categoryName: a, className: Oa.dataHeader },
@@ -458,27 +458,27 @@ var Ma = "Header_ca74c781",
                 ),
               ),
             }),
-            c.isScrollEnable &&
+            d.isScrollEnable &&
               (0, ia.jsx)("div", {
-                className: n(Oa.shadowWrapper, h && Oa.shadowWrapper__hide),
-                children: (0, ia.jsx)(x, {
+                className: t(Oa.shadowWrapper, u && Oa.shadowWrapper__hide),
+                children: (0, ia.jsx)(b, {
                   path: "R.images.halloween.gui.maps.icons.comparisonWindow.shadow",
                   className: Oa.scrollShadow,
                 }),
               }),
-            (0, ia.jsxs)(f, {
-              className: n(Oa.area, !c.isScrollEnable && Oa.area__withoutScroll),
+            (0, ia.jsxs)(x, {
+              className: t(Oa.area, !d.isScrollEnable && Oa.area__withoutScroll),
               classNames: {
-                wrapper: n(
+                wrapper: t(
                   Oa.scrollWrapper,
-                  Oa[`scrollWrapper__${j(h, u)}`],
-                  !c.isScrollEnable && Oa.scrollWrapper__withoutScroll,
+                  Oa[`scrollWrapper__${j(u, w)}`],
+                  !d.isScrollEnable && Oa.scrollWrapper__withoutScroll,
                 ),
-                content: n(c.isScrollEnable && Oa.scrollContent),
+                content: t(d.isScrollEnable && Oa.scrollContent),
               },
               children: [
                 (0, ia.jsx)(Ba, { className: Oa.headerRow, isAnimationCanceled: r }),
-                m(o, (a, e) =>
+                p(o, (a, e) =>
                   (0, ia.jsx)(
                     Wa,
                     { isAnimationCanceled: r, index: e, className: Oa.dataRow, ...a },
@@ -487,37 +487,37 @@ var Ma = "Header_ca74c781",
                 ),
               ],
             }),
-            c.isScrollEnable &&
+            d.isScrollEnable &&
               (0, ia.jsx)("div", {
-                className: n(
+                className: t(
                   Oa.shadowWrapper,
                   Oa.shadowWrapper__right,
-                  u && Oa.shadowWrapper__hide,
+                  w && Oa.shadowWrapper__hide,
                 ),
-                children: (0, ia.jsx)(x, {
+                children: (0, ia.jsx)(b, {
                   path: "R.images.halloween.gui.maps.icons.comparisonWindow.shadow",
-                  className: n(Oa.scrollShadow, Oa.scrollShadow__right),
+                  className: t(Oa.scrollShadow, Oa.scrollShadow__right),
                 }),
               }),
           ],
         }),
-        c.isScrollEnable && (0, ia.jsx)(N, { classNames: { base: Oa.scrollBar } }),
+        d.isScrollEnable && (0, ia.jsx)(W, { classNames: { base: Oa.scrollBar } }),
         (0, ia.jsx)(L, {
           ...ea[aa.BUTTON],
-          onStart: d,
+          onStart: m,
           isCanceled: r,
           className: Oa.btn,
           children: (0, ia.jsx)(G, {
             type: F.Secondary,
             caption: R.strings.halloween_lobby.common.yes(),
             size: Q.ExtraLarge,
-            onClick: p,
+            onClick: _,
           }),
         }),
       ],
     });
   });
-h(
+u(
   new H()
     .add(T)
     .add(ca)

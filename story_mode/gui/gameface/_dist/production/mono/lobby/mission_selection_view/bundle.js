@@ -26,12 +26,12 @@ import {
   et as g,
   f as T,
   h as j,
-  i as I,
-  it as M,
-  j as w,
-  k as E,
-  l as C,
-  m as A,
+  it as I,
+  j as M,
+  k as w,
+  l as E,
+  m as C,
+  n as A,
   nt as L,
   o as O,
   p as D,
@@ -115,8 +115,8 @@ var ne = e(L()),
     clanEmblem: "MenuItem_clanEmblem_fe5255ab",
   },
   Se = "forts",
-  ge = M.resolve("intl"),
-  Te = M.resolve("strings"),
+  ge = I.resolve("intl"),
+  Te = I.resolve("strings"),
   je = {
     [ke]: "tooltips.header.battleType",
     [me]: "tooltips.header.buttons.tournaments",
@@ -496,7 +496,7 @@ var Re = e(W(), 1),
   }) {
     const y = ls[r],
       N = s(),
-      S = w(n, {
+      S = M(n, {
         ref: N,
         from: o ? a : t,
         enter: {
@@ -760,7 +760,7 @@ var Re = e(W(), 1),
   Hs = (0, ne.memo)(
     ({ rewards: e, missionId: s, taskId: a }) => {
       const { breakpoint: i } = _(),
-        o = i.weight >= t.extraLarge.weight ? C.Big : C.Small;
+        o = i.weight >= t.extraLarge.weight ? E.Big : E.Small;
       return (0, ve.jsxs)("div", {
         className: Ps,
         children: [
@@ -982,7 +982,7 @@ var Re = e(W(), 1),
           Q,
           {
             ...Ge[Pe.SUB_TITLE],
-            children: (0, ve.jsx)(A, {
+            children: (0, ve.jsx)(C, {
               className: at,
               text: R.strings.sm_lobby.missionSelection.missionDescription.$num(n),
             }),
@@ -1096,7 +1096,7 @@ var Re = e(W(), 1),
                   ? (0, ve.jsx)("div", {
                       className: (0, Re.default)(nt.video, nt.video__static, nt[`video__${i}`]),
                     })
-                  : (0, ve.jsx)(I, {
+                  : (0, ve.jsx)($, {
                       className: (0, Re.default)(nt.video, nt[`video__${i}`]),
                       src: R.videos.story_mode.v_icon_fire(),
                       ref: c,
@@ -1190,7 +1190,7 @@ var Re = e(W(), 1),
               className: lt.video,
               children: x.isLow()
                 ? (0, ve.jsx)("div", { className: g(lt.video, lt.video__static) })
-                : (0, ve.jsx)($, {
+                : (0, ve.jsx)(A, {
                     className: lt.video,
                     src: R.videos.story_mode.v_icon_fire(),
                     ref: c,
@@ -1417,7 +1417,7 @@ var Re = e(W(), 1),
             },
             [e.xTilt, e.xTiltRange, e.yTilt, e.yTiltRange],
           ),
-          a = E(() => ({ x: 0, y: 0, xR: e.xTilt, yR: e.yTilt }), []);
+          a = w(() => ({ x: 0, y: 0, xR: e.xTilt, yR: e.yTilt }), []);
         return (
           (0, ne.useEffect)(() => {
             const i = ({ clientX: i, clientY: o }) => {
@@ -1518,7 +1518,7 @@ var Re = e(W(), 1),
   ca = "MissionSelectionViewApp_vignette_e6471868",
   la = "MissionSelectionViewApp_menuItems_c66c1866",
   da = "MissionSelectionViewApp_triggerHint_58ad728",
-  ra = { rootId: M.resolve("aliases").read((e) => e.hangar.shared.MainMenu("resId")) },
+  ra = { rootId: I.resolve("aliases").read((e) => e.hangar.shared.MainMenu("resId")) },
   ma = H(() => {
     const { controls: e, model: s } = $e(),
       [t, a] = (0, ne.useState)({ id: void 0, isTab: !1 }),
@@ -1531,7 +1531,7 @@ var Re = e(W(), 1),
       f = b === De.EVENT,
       k = t.isTab ? b : i.missionId,
       [h, p] = (0, ne.useState)(!1),
-      [x, v] = E(() => ({}));
+      [x, v] = w(() => ({}));
     ((0, ne.useEffect)(() => {
       t.id !== i.missionId && a({ id: i.missionId, isTab: !1 });
     }, [i.missionId]),

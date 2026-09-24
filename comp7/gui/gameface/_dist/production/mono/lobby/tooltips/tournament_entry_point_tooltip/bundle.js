@@ -1,5 +1,5 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
-import { Mr as t, Pa as a, _i as s, ct as n, fi as i, ws as o } from "../../chunks/lib.js";
+import { $ as t, Pa as a, _i as s, fi as n, gt as i, ws as o } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as p, i as r } from "../../chunks/vendor.js";
 import { s as l } from "../../chunks/enums.js";
@@ -46,12 +46,12 @@ var d = e(r(), 1),
   },
   A = e(a(), 1),
   u = [m.Live, m.BetweenShowmatches],
-  x = p(() => {
+  g = p(() => {
     const { model: e } = f(),
       {
         state: a,
         timeLeftUntilLiveMatch: s,
-        timeLeftUntilNextShowMatchDay: i,
+        timeLeftUntilNextShowMatchDay: n,
         tournamentName: o,
       } = e.root.get();
     return (0, A.jsxs)("div", {
@@ -85,11 +85,11 @@ var d = e(r(), 1),
                           ? R.strings.comp7_ext.tournamentsEntryPointTooltip.live()
                           : R.strings.comp7_ext.tournamentsEntryPointTooltip.showmatch(),
                       binding: {
-                        timer: (0, A.jsx)(n, {
-                          start: a === m.Live ? s : i,
-                          format: n.format.default,
-                          type: n.type.accent,
-                          size: n.size.x24x24,
+                        timer: (0, A.jsx)(i, {
+                          start: a === m.Live ? s : n,
+                          format: i.format.default,
+                          type: i.type.accent,
+                          size: i.size.x24x24,
                         }),
                       },
                     }),
@@ -101,4 +101,4 @@ var d = e(r(), 1),
       ],
     });
   });
-i((0, A.jsx)(h, { children: (0, A.jsx)(_, { children: (0, A.jsx)(x, {}) }) }));
+n((0, A.jsx)(h, { children: (0, A.jsx)(_, { children: (0, A.jsx)(g, {}) }) }));

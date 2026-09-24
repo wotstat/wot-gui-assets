@@ -1,17 +1,17 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
-import { Mr as t, Pa as s, _i as a, ct as r, fi as o, ws as i } from "../../chunks/lib.js";
+import { $ as t, Pa as s, _i as a, fi as o, gt as r, ws as i } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as n, i as p } from "../../chunks/vendor.js";
-/* empty css                  */ import { t as _ } from "../../chunks/get_season_name.js";
+/* empty css                  */ import { t as _ } from "../../chunks/date_range.js";
 import { t as l } from "../../chunks/use_server_time_polling.js";
 import { t as d } from "../../chunks/get_roman_levels.js";
-import { t as m } from "../../chunks/date_range.js";
+import { t as m } from "../../chunks/get_season_name.js";
 import { t as c } from "../../chunks/season_model.js";
 import { t as b } from "../../chunks/tooltip_decorator.js";
 import { t as f } from "../../chunks/tooltips.module.js";
 i();
-var x = e(p(), 1),
-  [g, h] = a()(
+var g = e(p(), 1),
+  [x, h] = a()(
     ({ observableModel: e }) => ({
       root: e.object(),
       vehicleLevels: e.array("vehicleLevels"),
@@ -34,7 +34,7 @@ var x = e(p(), 1),
       case c.NotStarted:
         return (0, A.jsx)(t, {
           text: R.strings.comp7_ext.entryPointTooltip.status.notStarted(),
-          binding: { timer: (0, A.jsx)(m, { startDate: o, endDate: i, format: m.format.full }) },
+          binding: { timer: (0, A.jsx)(_, { startDate: o, endDate: i, format: _.format.full }) },
         });
       case c.Disabled:
         return (0, A.jsx)(t, {
@@ -107,16 +107,16 @@ var x = e(p(), 1),
     const { model: e } = h(),
       s = e.season.name.get(),
       a = e.season.state.get(),
-      r = d(e.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
+      o = d(e.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
     return (0, A.jsxs)("div", {
-      className: (0, x.default)(v.base, v[`base__${s}`], v[`base__${j[a]}`]),
+      className: (0, g.default)(v.base, v[`base__${s}`], v[`base__${j[a]}`]),
       children: [
         (0, A.jsx)("div", { className: v.topContentBg }),
         (0, A.jsxs)("div", {
           className: v.topContent,
           children: [
             (0, A.jsx)("div", { className: v.title, children: R.strings.comp7_ext.featureName() }),
-            (0, A.jsx)("div", { className: v.subTitle, children: _(s) }),
+            (0, A.jsx)("div", { className: v.subTitle, children: m(s) }),
           ],
         }),
         (0, A.jsxs)("div", {
@@ -124,7 +124,7 @@ var x = e(p(), 1),
           children: [
             (0, A.jsx)(t, {
               text: R.strings.comp7_ext.entryPointTooltip.description(),
-              binding: { levels: r },
+              binding: { levels: o },
               classMix: v.paragraph,
             }),
             (0, A.jsx)(t, {
@@ -137,11 +137,11 @@ var x = e(p(), 1),
               },
               classMix: v.mode,
             }),
-            (0, A.jsx)("div", { className: (0, x.default)(f.divider, v.divider) }),
+            (0, A.jsx)("div", { className: (0, g.default)(f.divider, v.divider) }),
             (0, A.jsx)("div", { className: v.timerContainer, children: (0, A.jsx)(u, {}) }),
           ],
         }),
       ],
     });
   });
-o((0, A.jsx)(g, { children: (0, A.jsx)(b, { children: (0, A.jsx)(T, {}) }) }));
+o((0, A.jsx)(x, { children: (0, A.jsx)(b, { children: (0, A.jsx)(T, {}) }) }));

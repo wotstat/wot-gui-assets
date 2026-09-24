@@ -1,18 +1,18 @@
-import { Lr as r } from "./lib.js";
-import { r as s } from "./enums.js";
-var t = {
-    [s.First]: "first",
-    [s.Second]: "second",
-    [s.Third]: "third",
-    [s.Fourth]: "fourth",
-    [s.Fifth]: "fifth",
-    [s.Sixth]: "sixth",
+import { et as r } from "./lib.js";
+import { r as t } from "./enums.js";
+var s = {
+    [t.First]: "first",
+    [t.Second]: "second",
+    [t.Third]: "third",
+    [t.Fourth]: "fourth",
+    [t.Fifth]: "fifth",
+    [t.Sixth]: "sixth",
   },
-  e = (r, s) => `${r.$dyn(t[s])}`,
-  p = (r, s = { upperCase: !1 }) =>
-    e(s.upperCase ? R.strings.comp7_ext.rankUpper : R.strings.comp7_ext.rank, r),
-  a = (s, t = { upperCase: !1 }) =>
-    r(t.upperCase ? R.strings.comp7_ext.rankUpper.text() : R.strings.comp7_ext.rank.text(), {
-      rank: p(s, t),
+  e = (r, t) => `${r.$dyn(s[t])}`,
+  p = (r, t = { upperCase: !1 }) =>
+    e(t.upperCase ? R.strings.comp7_ext.rankUpper : R.strings.comp7_ext.rank, r),
+  a = (t, s = { upperCase: !1 }) =>
+    r(s.upperCase ? R.strings.comp7_ext.rankUpper.text() : R.strings.comp7_ext.rank.text(), {
+      rank: p(t, s),
     });
-export { p as i, a as n, e as r, t };
+export { p as i, a as n, e as r, s as t };

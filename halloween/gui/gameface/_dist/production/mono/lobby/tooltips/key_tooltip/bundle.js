@@ -12,8 +12,8 @@ import {
 import "../../chunks/_wg-global-styles.js";
 import { n as d, t as r } from "../../chunks/vendor.js";
 import { n as p } from "../../chunks/string-utils.js";
-import { n as h, t as m } from "../../chunks/key_icon.js";
-/* empty css              */ var _ = s(r(), 1),
+/* empty css              */ import { n as h, t as m } from "../../chunks/key_icon.js";
+var _ = s(r(), 1),
   [j, y] = i()(({ observableModel: s }) => ({ root: s.object() }), t),
   x = "KeyTooltipApp_18a6bea2",
   v = "KeyTooltipApp_header_f652b822",

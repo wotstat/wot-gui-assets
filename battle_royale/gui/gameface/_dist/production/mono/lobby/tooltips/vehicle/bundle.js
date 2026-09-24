@@ -1,14 +1,14 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Bt as s,
-  Gt as a,
-  H as i,
+  D as a,
+  Gt as i,
   Nn as t,
   Ut as n,
-  W as c,
-  Yr as o,
-  gt as l,
-  jr as r,
+  Yr as c,
+  gt as o,
+  jr as l,
+  k as r,
   ni as d,
   qr as _,
   t as p,
@@ -17,7 +17,7 @@ import {
 import "../../chunks/globals.js";
 import { i as m } from "../../chunks/vendor.js";
 import { t as h } from "../../chunks/daily_bonus.js";
-var [v, y] = a()(({ observableModel: e }) => {
+var [v, y] = i()(({ observableModel: e }) => {
     const s = {
         vehicleInfo: e.object(),
         techParams: e.object("tech"),
@@ -44,7 +44,7 @@ var [v, y] = a()(({ observableModel: e }) => {
       dailyBonus: s.dailyBonus,
       computes: { techParams: a },
     };
-  }, r),
+  }, l),
   j = "Section_7e479de1",
   b = "Section_sectionContainer_9b3feee3",
   x = "Section_indicator_3a17ac80",
@@ -58,12 +58,12 @@ var [v, y] = a()(({ observableModel: e }) => {
   T = "Section_description_2a41345d",
   $ = t(),
   P = d.resolve("strings"),
-  V = R.images.battle_royale.gui.maps.icons.techParams;
-function k({ type: e, className: s }) {
+  k = R.images.battle_royale.gui.maps.icons.techParams;
+function V({ type: e, className: s }) {
   return (0, $.jsxs)("div", {
     className: _(A, s),
     children: [
-      (0, $.jsx)("div", { className: I, style: { backgroundImage: `url(${V.$dyn(e)})` } }),
+      (0, $.jsx)("div", { className: I, style: { backgroundImage: `url(${k.$dyn(e)})` } }),
       (0, $.jsx)("div", {
         className: T,
         children: P.readOrEmpty(`battle_royale.techParams.type.${e}`),
@@ -90,7 +90,7 @@ function w({ type: e, indicatorsValue: s, className: a }) {
   return (0, $.jsxs)("div", {
     className: _(j, a),
     children: [
-      (0, $.jsx)(k, { type: e }),
+      (0, $.jsx)(V, { type: e }),
       (0, $.jsx)("div", {
         className: b,
         children: s.map(({ filledValueIndicator: e, baseValueIndicator: s }, a) =>
@@ -122,18 +122,18 @@ var C = {
     status__warning: "App_status__warning_48295791",
     section: "App_section_1f0fb308",
   },
-  M = e(o(), 1),
+  M = e(c(), 1),
   q = m(function () {
     const { model: e } = y(),
       {
         vehicleName: s,
-        vehicleNation: a,
+        vehicleNation: i,
         vehicleType: t,
         statusLevel: n,
-        statusText: o,
+        statusText: c,
       } = e.vehicleInfo.get(),
       {
-        hasDailyBonus: r,
+        hasDailyBonus: l,
         dailyBonusFactor: d,
         soloTopPlaces: p,
         squadTopPlaces: u,
@@ -148,11 +148,11 @@ var C = {
         (0, $.jsxs)("div", {
           className: C.vehicleInfo,
           children: [
-            c(t) && (0, $.jsx)(i.Type, { type: t, size: i.Type.sizes.x64x64 }),
+            r(t) && (0, $.jsx)(a.Type, { type: t, size: a.Type.sizes.x64x64 }),
             (0, $.jsxs)("div", {
               className: C.vehicleContainer,
               children: [
-                (0, $.jsx)(i.Name, { className: C.vehicleName, children: s }),
+                (0, $.jsx)(a.Name, { className: C.vehicleName, children: s }),
                 (0, $.jsx)("div", {
                   className: C.modeDescription,
                   children: R.strings.battle_royale.tooltips.vehicle.description(),
@@ -161,7 +161,7 @@ var C = {
             }),
           ],
         }),
-        r &&
+        l &&
           (0, $.jsxs)($.Fragment, {
             children: [
               (0, $.jsx)("div", { className: C.separator }),
@@ -177,7 +177,7 @@ var C = {
                   }),
                   (0, $.jsx)("div", {
                     className: C.dailyBonusText,
-                    children: (0, $.jsx)(l, {
+                    children: (0, $.jsx)(o, {
                       text: R.strings.battle_royale_extention.dailyBonus.description(),
                       binding: {
                         dailyBonus: (0, $.jsx)(h, { dailyBonusFactor: d, coinType: m }),
@@ -193,11 +193,11 @@ var C = {
         (0, $.jsx)("div", { className: C.separator }),
         (0, $.jsx)("div", {
           className: C.vehicleDescription,
-          children: `${R.strings.tooltips.battle_royale.hangar.vehicle.description.$dyn(a)}`,
+          children: `${R.strings.tooltips.battle_royale.hangar.vehicle.description.$dyn(i)}`,
         }),
         (0, $.jsx)("div", { className: C.separator }),
         j.map((e, s) => (0, M.createElement)(w, { ...e, key: s, className: C.section })),
-        (0, $.jsx)("div", { className: _(C.status, C[`status__${n}`]), children: o }),
+        (0, $.jsx)("div", { className: _(C.status, C[`status__${n}`]), children: c }),
       ],
     });
   });

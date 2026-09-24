@@ -8,7 +8,7 @@ import {
   t as l,
   de as o,
   cF as d,
-  dI as p,
+  dJ as p,
   cO as c,
   ak as n,
   dE as m,
@@ -46,15 +46,15 @@ const [f, v] = r()(({ observableModel: r }) => {
   M = "App_stageNumber_b71e6369",
   L = "App_doneIcon_1e93395",
   T = "App_lockIcon_864bf73b",
-  I = "App_stageMessage_47b5fd1a",
-  R = "App_subtitle_cf3ede98",
-  V = "App_progressRow_b42a5a16",
-  q = "App_completedLabel_849a18a2",
-  z = "App_rewardsBand_291fdeed",
-  C = "App_rewardsHeader_b665803c",
-  D = "App_timer_9c848660",
-  F = "App_timerLabel_4b254dc2",
-  H = l.resolve("strings"),
+  R = "App_stageMessage_47b5fd1a",
+  V = "App_subtitle_cf3ede98",
+  q = "App_progressRow_b42a5a16",
+  z = "App_completedLabel_849a18a2",
+  C = "App_rewardsBand_291fdeed",
+  D = "App_rewardsHeader_b665803c",
+  F = "App_timer_9c848660",
+  H = "App_timerLabel_4b254dc2",
+  I = l.resolve("strings"),
   B = u(() => {
     const { model: e } = v(),
       {
@@ -75,9 +75,9 @@ const [f, v] = r()(({ observableModel: r }) => {
         : g.jsx("div", { className: T }),
       f = s
         ? a
-          ? H.readOrEmpty("fort_rush.progression.widget.tooltip.allStagesCompleted")
+          ? I.readOrEmpty("fort_rush.progression.widget.tooltip.allStagesCompleted")
           : null
-        : H.readOrEmpty("fort_rush.progression.widget.tooltip.unavailable");
+        : I.readOrEmpty("fort_rush.progression.widget.tooltip.unavailable");
     return g.jsxs("div", {
       className: A,
       children: [
@@ -89,11 +89,11 @@ const [f, v] = r()(({ observableModel: r }) => {
               children: [
                 g.jsx("div", {
                   className: y,
-                  children: H.readOrEmpty("fort_rush.progression.widget.tooltip.title"),
+                  children: I.readOrEmpty("fort_rush.progression.widget.tooltip.title"),
                 }),
                 g.jsx("div", {
                   className: k,
-                  children: H.readOrEmpty("fort_rush.progression.widget.tooltip.titleSubtitle"),
+                  children: I.readOrEmpty("fort_rush.progression.widget.tooltip.titleSubtitle"),
                 }),
               ],
             }),
@@ -101,20 +101,20 @@ const [f, v] = r()(({ observableModel: r }) => {
               className: E,
               children: [g.jsx(b, { className: h(O, P) }), u, g.jsx(b, { className: h(O, S) })],
             }),
-            f && g.jsx("div", { className: I, children: f }),
+            f && g.jsx("div", { className: R, children: f }),
             m &&
               g.jsxs(g.Fragment, {
                 children: [
                   g.jsx("div", {
-                    className: R,
-                    children: H.readOrEmpty("fort_rush.progression.widget.tooltip.subtitle"),
+                    className: V,
+                    children: I.readOrEmpty("fort_rush.progression.widget.tooltip.subtitle"),
                   }),
                   g.jsxs("div", {
-                    className: V,
+                    className: q,
                     children: [
                       g.jsx("div", {
-                        className: q,
-                        children: H.readOrEmpty(
+                        className: z,
+                        children: I.readOrEmpty(
                           "fort_rush.progression.widget.tooltip.completedLabel",
                         ),
                       }),
@@ -135,11 +135,11 @@ const [f, v] = r()(({ observableModel: r }) => {
         }),
         m &&
           g.jsxs("div", {
-            className: z,
+            className: C,
             children: [
               g.jsx("div", {
-                className: C,
-                children: H.readOrEmpty("fort_rush.progression.widget.tooltip.rewardsHeader"),
+                className: D,
+                children: I.readOrEmpty("fort_rush.progression.widget.tooltip.rewardsHeader"),
               }),
               g.jsx(p, { data: n, size: o.Small }),
             ],
@@ -147,11 +147,11 @@ const [f, v] = r()(({ observableModel: r }) => {
         m &&
           l > 0 &&
           g.jsxs("div", {
-            className: D,
+            className: F,
             children: [
               g.jsx("span", {
-                className: F,
-                children: H.readOrEmpty("fort_rush.progression.widget.tooltip.timerLabel"),
+                className: H,
+                children: I.readOrEmpty("fort_rush.progression.widget.tooltip.timerLabel"),
               }),
               g.jsx(c, { start: _, format: c.format.default, type: c.type.accent }),
             ],

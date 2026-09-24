@@ -10,9 +10,9 @@ import {
   en as n,
   it as o,
   mr as u,
-  oi as p,
-  ri as m,
-  tt as d,
+  nt as p,
+  oi as m,
+  ri as d,
   vr as h,
   yn as v,
   yt as _,
@@ -73,7 +73,7 @@ var y = ({ className: e, timerStartTime: t }) => {
         selectedDifficultyLevel: l,
         isExitButtonAvailable: c,
         vehicleType: r,
-        vehicleName: p,
+        vehicleName: m,
         tip: h,
         isFirstTip: v,
         timerStartTime: x,
@@ -92,7 +92,7 @@ var y = ({ className: e, timerStartTime: t }) => {
         (0, w.jsx)("div", { className: z }),
         (0, w.jsx)("div", {
           className: g,
-          children: (0, w.jsx)(d, { moveSpace: i.moveSpace, onMouseOver3dScene: m }),
+          children: (0, w.jsx)(p, { moveSpace: i.moveSpace, onMouseOver3dScene: d }),
         }),
         (0, w.jsxs)("div", {
           className: P,
@@ -115,7 +115,7 @@ var y = ({ className: e, timerStartTime: t }) => {
             t(r) &&
               (0, w.jsxs)("div", {
                 className: C,
-                children: [(0, w.jsx)(_, { type: r, size: b.vehicleTypeSize, className: E }), p],
+                children: [(0, w.jsx)(_, { type: r, size: b.vehicleTypeSize, className: E }), m],
               }),
             (0, w.jsx)("div", { className: s($, v && D), children: h }),
             c &&
@@ -135,4 +135,4 @@ var y = ({ className: e, timerStartTime: t }) => {
   });
 c((0, w.jsx)(b, { children: (0, w.jsx)(v, { children: (0, w.jsx)(O, {}) }) }))
   .then(() => r(document.getElementById("root")))
-  .then(() => p());
+  .then(() => m());

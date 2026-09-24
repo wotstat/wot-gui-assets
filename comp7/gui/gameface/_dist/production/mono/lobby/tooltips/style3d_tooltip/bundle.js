@@ -1,11 +1,11 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Mr as e, Pa as i, Uo as t, _i as o, fi as l, ws as a } from "../../chunks/lib.js";
+import { $ as e, Pa as i, Uo as t, _i as o, fi as l, ws as a } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { a as c, i as r } from "../../chunks/vendor.js";
-/* empty css                  */ import { t as d } from "../../chunks/tooltip_decorator.js";
+import { a as c, i as d } from "../../chunks/vendor.js";
+/* empty css                  */ import { t as r } from "../../chunks/tooltip_decorator.js";
 import { t as p } from "../../chunks/tooltips.module.js";
 a();
-var n = s(r(), 1),
+var n = s(d(), 1),
   [m, _] = o()(({ observableModel: s }) => ({ root: s.object() }), t),
   h = "App_5750b50d",
   j = "App_image_44f419b9",
@@ -20,7 +20,7 @@ var n = s(r(), 1),
   N = "App_howToReceive_5cbf6889",
   k = "App_paragraph_5142910c",
   T = s(i(), 1),
-  w = c(() => {
+  $ = c(() => {
     const { model: s } = _(),
       { styleId: i, vehicles: t } = s.root.get();
     return (0, T.jsxs)("div", {
@@ -70,4 +70,4 @@ var n = s(r(), 1),
       ],
     });
   });
-l((0, T.jsx)(m, { children: (0, T.jsx)(d, { children: (0, T.jsx)(w, {}) }) }));
+l((0, T.jsx)(m, { children: (0, T.jsx)(r, { children: (0, T.jsx)($, {}) }) }));

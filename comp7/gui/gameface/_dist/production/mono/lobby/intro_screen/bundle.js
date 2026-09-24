@@ -1,64 +1,64 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  $o as s,
-  Dr as a,
-  Er as n,
-  Hr as t,
-  Ko as i,
-  Lo as r,
-  Mr as o,
-  Na as c,
-  Pa as l,
-  Rr as d,
-  _i as _,
-  ao as u,
-  fi as m,
-  io as h,
-  la as p,
-  na as g,
+  $ as s,
+  $o as a,
+  J as n,
+  Ko as t,
+  Lo as i,
+  Na as r,
+  Pa as o,
+  Sr as c,
+  _i as l,
+  ao as d,
+  fi as _,
+  io as u,
+  la as m,
+  na as h,
+  pr as p,
+  q as g,
   ra as f,
   ws as b,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { a as x, i as S } from "../chunks/vendor.js";
 /* empty css               */ import { n as j, t as v } from "../chunks/schedule_model.js";
-import { t as I } from "../chunks/get_button_size.js";
-import { t as k } from "../chunks/schedule_subheading.js";
-import { t as w } from "../chunks/use_server_time_polling.js";
-import { t as N } from "../chunks/arrow_button.js";
-import { t as D } from "../chunks/get_roman_levels.js";
-var A = e(b(), 1),
-  [C, L] = _()(
+import { t as I } from "../chunks/use_server_time_polling.js";
+import { t as k } from "../chunks/get_roman_levels.js";
+import { t as w } from "../chunks/get_button_size.js";
+import { t as N } from "../chunks/schedule_subheading.js";
+import { t as A } from "../chunks/arrow_button.js";
+var D = e(b(), 1),
+  [C, L] = l()(
     ({ observableModel: e }) => ({ root: e.object(), vehicleLevels: e.array("vehicleLevels") }),
     ({ externalModel: e }) => ({ close: e.createCallbackNoArgs("onClose") }),
   ),
   T = e(S(), 1),
   y = "CountDownSubheading_3410a94d",
-  M = "CountDownSubheading_highlight_8ca1da33",
-  $ = "CountDownSubheading_timeLeftText_83a0f10d",
+  $ = "CountDownSubheading_highlight_8ca1da33",
+  M = "CountDownSubheading_timeLeftText_83a0f10d",
   z = "CountDownSubheading_countDownContainer_95936a62",
   O = "CountDownSubheading_countDownText_c438ad0f",
   W = "CountDownSubheading_timer_dfa1cd55",
-  E = e(l(), 1),
-  H = ({ timeLeft: e, className: s }) =>
+  E = e(o(), 1),
+  U = ({ timeLeft: e, className: a }) =>
     (0, E.jsx)("div", {
-      className: (0, T.default)(y, s),
-      children: (0, E.jsx)(o, {
+      className: (0, T.default)(y, a),
+      children: (0, E.jsx)(s, {
         text: R.strings.comp7_ext.countDown.text(),
         binding: {
           timeLeft: (0, E.jsxs)("div", {
             className: z,
             children: [
-              (0, E.jsx)("div", { className: M }),
+              (0, E.jsx)("div", { className: $ }),
               (0, E.jsx)("div", { className: W }),
-              (0, E.jsx)(n, { duration: e, icon: a.None, classNames: { text: O } }),
+              (0, E.jsx)(g, { duration: e, icon: n.None, classNames: { text: O } }),
             ],
           }),
         },
-        classMix: $,
+        classMix: M,
       }),
     }),
-  U = {
+  q = {
     countDown: "IntroSubheading_countDown_674b18af",
     fadeIn: "IntroSubheading_fadeIn_4ca45996",
     fadeInThreeQuarters: "IntroSubheading_fadeInThreeQuarters_4ca45996",
@@ -75,17 +75,17 @@ var A = e(b(), 1),
     blink: "IntroSubheading_blink_4ca45996",
     slideUpIn: "IntroSubheading_slideUpIn_4ca45996",
   },
-  q = x(() => {
+  H = x(() => {
     const { model: e, controls: s } = j(),
       a = e.season.startTimestamp.get(),
       n = e.season.endTimestamp.get(),
       t = e.season.serverTimestamp.get();
     return (
-      w(t, n, s.pollServerTime),
+      I(t, n, s.pollServerTime),
       (0, E.jsx)("div", {
-        className: U.base,
+        className: q.base,
         children:
-          t < a ? (0, E.jsx)(H, { timeLeft: a - t, className: U.countDown }) : (0, E.jsx)(k, {}),
+          t < a ? (0, E.jsx)(U, { timeLeft: a - t, className: q.countDown }) : (0, E.jsx)(N, {}),
       })
     );
   }),
@@ -94,26 +94,26 @@ var A = e(b(), 1),
   Q = "Slide_icon_2921c32",
   F = "Slide_description_a6104f8",
   G = x(({ id: e }) => {
-    const { model: s } = L(),
-      { model: a } = j(),
-      { qualificationBattlesCount: n } = s.root.get(),
-      t = `url(${"ranks" === e ? R.images.comp7.gui.maps.icons.metaIntro.$dyn(`ranks_${a.season.name.get()}`) : R.images.comp7.gui.maps.icons.metaIntro.$dyn(e)})`,
-      i = D(s.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
+    const { model: a } = L(),
+      { model: n } = j(),
+      { qualificationBattlesCount: t } = a.root.get(),
+      i = `url(${"ranks" === e ? R.images.comp7.gui.maps.icons.metaIntro.$dyn(`ranks_${n.season.name.get()}`) : R.images.comp7.gui.maps.icons.metaIntro.$dyn(e)})`,
+      r = k(a.vehicleLevels.get(), R.strings.comp7_ext.listSeparator());
     return (0, E.jsxs)("div", {
       className: B,
       children: [
-        (0, E.jsx)(o, { text: String(R.strings.comp7_ext.intro.title.$dyn(e)), classMix: P }),
-        (0, E.jsx)("div", { className: Q, style: { backgroundImage: t } }),
-        (0, E.jsx)(o, {
-          text: `${R.strings.comp7_ext.intro.description.$plural(e, n)}`,
-          binding: { count: n, levels: i },
+        (0, E.jsx)(s, { text: String(R.strings.comp7_ext.intro.title.$dyn(e)), classMix: P }),
+        (0, E.jsx)("div", { className: Q, style: { backgroundImage: i } }),
+        (0, E.jsx)(s, {
+          text: `${R.strings.comp7_ext.intro.description.$plural(e, t)}`,
+          binding: { count: t, levels: r },
           classMix: F,
         }),
       ],
     });
   }),
-  K = "Slider_caaf79d4",
-  J = "Slider_trackWrapper_9b67f47e",
+  J = "Slider_caaf79d4",
+  K = "Slider_trackWrapper_9b67f47e",
   V = "Slider_track_e521f890",
   X = "Slider_track__withoutTransition_df13aef3",
   Y = "Slider_slide_727efd4",
@@ -135,15 +135,15 @@ var A = e(b(), 1),
     "ranks",
   ],
   re = ie.length,
-  oe = (e, a) => () => {
-    e || (a(), s.click(), s.sound(R.sounds.bp_glide_01()));
+  oe = (e, s) => () => {
+    e || (s(), a.click(), a.sound(R.sounds.bp_glide_01()));
   },
   ce = ({ className: e }) => {
-    const [s, a] = (0, A.useState)(0),
-      [n, t] = (0, A.useState)(!1),
-      i = 0 === s,
+    const [s, a] = (0, D.useState)(0),
+      [n, t] = (0, D.useState)(!1),
+      r = 0 === s,
       o = s === re - 1;
-    (p(() => {
+    (m(() => {
       const e = () => {
         t(!0);
       };
@@ -154,32 +154,32 @@ var A = e(b(), 1),
         }
       );
     }),
-      (0, A.useEffect)(
+      (0, D.useEffect)(
         () =>
-          u(() =>
-            h(() => {
+          d(() =>
+            u(() => {
               n && t(!1);
             }, 500),
           ),
         [n],
       ));
-    const c = oe(i, () => a(s - 1)),
+    const c = oe(r, () => a(s - 1)),
       l = oe(o, () => a(s + 1));
     return (
-      f(r.ARROW_LEFT, c),
-      f(r.ARROW_RIGHT, l),
+      f(i.ARROW_LEFT, c),
+      f(i.ARROW_RIGHT, l),
       (0, E.jsxs)("div", {
-        className: (0, T.default)(K, e),
+        className: (0, T.default)(J, e),
         style: { "--currentSlideIndex": s, "--transitionDuration": "500ms" },
         children: [
-          (0, E.jsx)(N, {
+          (0, E.jsx)(A, {
             size: "medium",
             direction: "left",
-            disabled: i,
+            disabled: r,
             className: (0, T.default)(ee, se),
             onClick: c,
           }),
-          (0, E.jsx)(N, {
+          (0, E.jsx)(A, {
             size: "medium",
             direction: "right",
             disabled: o,
@@ -187,7 +187,7 @@ var A = e(b(), 1),
             onClick: l,
           }),
           (0, E.jsxs)("div", {
-            className: J,
+            className: K,
             children: [
               (0, E.jsxs)("div", {
                 className: ne,
@@ -219,19 +219,19 @@ var A = e(b(), 1),
   me = "App_button_b6edc495",
   he = x(function () {
     const { controls: e } = L(),
-      { mediaSize: s } = c();
+      { mediaSize: s } = r();
     return (
-      g(e.close),
+      h(e.close),
       (0, E.jsxs)("div", {
         className: le,
         children: [
-          (0, E.jsx)(q, {}),
+          (0, E.jsx)(H, {}),
           (0, E.jsx)("div", { className: de, children: (0, E.jsx)(ce, { className: _e }) }),
           (0, E.jsx)("div", {
             className: ue,
-            children: (0, E.jsx)(d, {
-              theme: d.themes.primary,
-              size: I(s),
+            children: (0, E.jsx)(p, {
+              theme: p.themes.primary,
+              size: w(s),
               className: me,
               onClick: e.close,
               children: R.strings.comp7_ext.intro.confirmButton(),
@@ -241,9 +241,9 @@ var A = e(b(), 1),
       })
     );
   });
-(i("comp7/gui/maps/icons/backgrounds/comp7_bg.dds"),
-  m(
-    (0, E.jsx)(t, {
+(t("comp7/gui/maps/icons/backgrounds/comp7_bg.dds"),
+  _(
+    (0, E.jsx)(c, {
       children: (0, E.jsx)(C, {
         children: (0, E.jsx)(v, {
           options: { context: "model.scheduleInfo" },

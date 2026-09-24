@@ -5879,18 +5879,17 @@ body {
   overflow: hidden;
 }
 
-.Rewards_36f5662a {
+.Tooltip_6d997cee {
   display: flex;
-}
-.Rewards_base__vertical_32f04b98 {
-  flex-direction: column;
+  position: absolute;
 }
 
-.Rewards_reward_9abc0f4a {
-  margin: 0 10rem;
-}
-.Rewards_reward__vertical_dd4a02c5 {
-  margin: 15rem 0;
+.Tooltip_decorator_b3486d4e {
+  padding: 4rem 6rem 8rem;
+  border-image-source: url(R.atlases.components.tooltip_background) repeat center/contain;
+  border-image-slice: 24 fill;
+  border-image-width: 24rem;
+  position: relative;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
@@ -5903,15 +5902,16 @@ body {
   overflow: hidden;
 }
 
-.Tooltip_6d997cee {
+.Rewards_36f5662a {
   display: flex;
-  position: absolute;
+}
+.Rewards_base__vertical_32f04b98 {
+  flex-direction: column;
 }
 
-.Tooltip_decorator_b3486d4e {
-  padding: 4rem 6rem 8rem;
-  border-image-source: url(R.atlases.components.tooltip_background) repeat center/contain;
-  border-image-slice: 24 fill;
-  border-image-width: 24rem;
-  position: relative;
+.Rewards_reward_9abc0f4a {
+  margin: 0 10rem;
+}
+.Rewards_reward__vertical_dd4a02c5 {
+  margin: 15rem 0;
 }

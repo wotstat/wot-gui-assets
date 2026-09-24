@@ -27195,2332 +27195,7 @@ function safeParse(e, t, n) {
 function createParser(e) {
   return (t) => parse$2(e, JSON.parse(t));
 }
-function ColorsProvider(e) {
-  return (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: e.children });
-}
-function UIProvider(e) {
-  return (0, import_jsx_runtime.jsx)(ColorsProvider, {
-    children: (0, import_jsx_runtime.jsx)(SoundsProvider, {
-      overrides: e.soundsOverrides,
-      severity: e.soundSeverity,
-      silent: e.soundsOff,
-      children: e.children,
-    }),
-  });
-}
-var themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" },
-  sizes$19 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
-  base$80 = "HeadlessButton_df8536fc",
-  fadeIn$93 = "HeadlessButton_fadeIn_6a626904",
-  fadeInThreeQuarters$93 = "HeadlessButton_fadeInThreeQuarters_6a626904",
-  fadeInHalf$93 = "HeadlessButton_fadeInHalf_6a626904",
-  fadeOut$93 = "HeadlessButton_fadeOut_6a626904",
-  fadeInWithScale$93 = "HeadlessButton_fadeInWithScale_6a626904",
-  slideUp$93 = "HeadlessButton_slideUp_6a626904",
-  scale$93 = "HeadlessButton_scale_6a626904",
-  raysAppearance$93 = "HeadlessButton_raysAppearance_6a626904",
-  rotate$93 = "HeadlessButton_rotate_6a626904",
-  glowAppearance$93 = "HeadlessButton_glowAppearance_6a626904",
-  highlightAppearance$93 = "HeadlessButton_highlightAppearance_6a626904",
-  blink$93 = "HeadlessButton_blink_6a626904",
-  slideUpIn$93 = "HeadlessButton_slideUpIn_6a626904",
-  headless_button_module_default = {
-    base: base$80,
-    fadeIn: fadeIn$93,
-    fadeInThreeQuarters: fadeInThreeQuarters$93,
-    fadeInHalf: fadeInHalf$93,
-    fadeOut: fadeOut$93,
-    fadeInWithScale: fadeInWithScale$93,
-    slideUp: slideUp$93,
-    scale: scale$93,
-    raysAppearance: raysAppearance$93,
-    rotate: rotate$93,
-    "reverse-rotate": "HeadlessButton_reverse-rotate_6a626904",
-    glowAppearance: glowAppearance$93,
-    highlightAppearance: highlightAppearance$93,
-    blink: blink$93,
-    slideUpIn: slideUpIn$93,
-  },
-  HeadlessButtonBase = defineStyledComponent("Button", {
-    element: "button",
-    className: headless_button_module_default.base,
-  }),
-  HeadlessButton = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      onClick: t,
-      onMouseEnter: n,
-      soundTarget: r,
-      disabled: a = !1,
-      silent: o = !1,
-      ...i
-    },
-    s,
-  ) {
-    const l = useSounds();
-    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
-      ...i,
-      ref: s,
-      onMouseEnter: function (e) {
-        (a || o || l.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
-      },
-      onClick: function (e) {
-        a || (o || l.play("click", { target: r || "Button", original: e }), t?.(e));
-      },
-      children: e,
-    });
-  }),
-  background$11 = "Button_background_98ebcfb8",
-  border$10 = "Button_border_7e6390d7",
-  overlay$5 = "Button_overlay_174632c8",
-  base$79 = "Button_70871946",
-  base__enabled$1 = "Button_base__enabled_96634d40",
-  base__disabled$9 = "Button_base__disabled_b713e04a",
-  content$13 = "Button_content_298de63f",
-  content__fontAligned$1 = "Button_content__fontAligned_66115778",
-  fadeIn$92 = "Button_fadeIn_6bcdc8c",
-  fadeInThreeQuarters$92 = "Button_fadeInThreeQuarters_6bcdc8c",
-  fadeInHalf$92 = "Button_fadeInHalf_6bcdc8c",
-  fadeOut$92 = "Button_fadeOut_6bcdc8c",
-  fadeInWithScale$92 = "Button_fadeInWithScale_6bcdc8c",
-  slideUp$92 = "Button_slideUp_6bcdc8c",
-  scale$92 = "Button_scale_6bcdc8c",
-  raysAppearance$92 = "Button_raysAppearance_6bcdc8c",
-  rotate$92 = "Button_rotate_6bcdc8c",
-  glowAppearance$92 = "Button_glowAppearance_6bcdc8c",
-  highlightAppearance$92 = "Button_highlightAppearance_6bcdc8c",
-  blink$92 = "Button_blink_6bcdc8c",
-  slideUpIn$92 = "Button_slideUpIn_6bcdc8c",
-  button_module_default = {
-    background: background$11,
-    border: border$10,
-    overlay: overlay$5,
-    base: base$79,
-    base__enabled: base__enabled$1,
-    base__disabled: base__disabled$9,
-    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
-    "base__size-small": "Button_base__size-small_fc7095a4",
-    "base__size-medium": "Button_base__size-medium_814d61f0",
-    "base__size-large": "Button_base__size-large_83da852e",
-    "base__theme-primary": "Button_base__theme-primary_8ba55469",
-    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
-    content: content$13,
-    content__fontAligned: content__fontAligned$1,
-    fadeIn: fadeIn$92,
-    fadeInThreeQuarters: fadeInThreeQuarters$92,
-    fadeInHalf: fadeInHalf$92,
-    fadeOut: fadeOut$92,
-    fadeInWithScale: fadeInWithScale$92,
-    slideUp: slideUp$92,
-    scale: scale$92,
-    raysAppearance: raysAppearance$92,
-    rotate: rotate$92,
-    "reverse-rotate": "Button_reverse-rotate_6bcdc8c",
-    glowAppearance: glowAppearance$92,
-    highlightAppearance: highlightAppearance$92,
-    blink: blink$92,
-    slideUpIn: slideUpIn$92,
-  },
-  Button$1 = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      size: t = sizes$19.large,
-      theme: n = themes$1.primary,
-      disabled: r = !1,
-      silent: a = !1,
-      autoAlignContent: o = !0,
-      classNames: i,
-      className: s,
-      ...l
-    },
-    u,
-  ) {
-    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
-      ...l,
-      ref: u,
-      silent: a,
-      disabled: r,
-      className: clsx(
-        button_module_default.base,
-        button_module_default[`base__size-${t}`],
-        button_module_default[`base__theme-${n}`],
-        r ? button_module_default.base__disabled : button_module_default.base__enabled,
-        s,
-        i?.base,
-      ),
-      onClick: function (e) {
-        r || l.onClick?.(e);
-      },
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.background, i?.background),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.border, i?.border),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.overlay, i?.overlay),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(
-            button_module_default.content,
-            o && button_module_default.content__fontAligned,
-            i?.content,
-          ),
-          children: e,
-        }),
-      ],
-    });
-  });
-((Button$1.themes = themes$1), (Button$1.sizes = sizes$19));
-var unicodeBlocks = [
-    0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984,
-    2048, 2112, 2144, 2208, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 3328, 3456, 3584, 3712,
-    3840, 4096, 4256, 4352, 4608, 4992, 5024, 5120, 5760, 5792, 5888, 5920, 5952, 5984, 6016, 6144,
-    6320, 6400, 6480, 6528, 6624, 6656, 6688, 6832, 6912, 7040, 7104, 7168, 7248, 7296, 7312, 7360,
-    7376, 7424, 7552, 7616, 7680, 7936, 8192, 8304, 8352, 8400, 8448, 8528, 8592, 8704, 8960, 9216,
-    9280, 9312, 9472, 9600, 9632, 9728, 9984, 10176, 10224, 10240, 10496, 10624, 10752, 11008,
-    11264, 11360, 11392, 11520, 11568, 11648, 11744, 11776, 11904, 12032, 12272, 12288, 12352,
-    12448, 12544, 12592, 12688, 12704, 12736, 12784, 12800, 13056, 13312, 19904, 19968, 40960,
-    42128, 42192, 42240, 42560, 42656, 42752, 42784, 43008, 43056, 43072, 43136, 43232, 43264,
-    43312, 43360, 43392, 43488, 43520, 43616, 43648, 43744, 43776, 43824, 43888, 43968, 44032,
-    55216, 55296, 56192, 56320, 57344, 63744, 64256, 64336, 65024, 65040, 65056, 65072, 65104,
-    65136, 65280, 65520, 65536, 65664, 65792, 65856, 65936, 66e3, 66176, 66208, 66272, 66304, 66352,
-    66384, 66432, 66464, 66560, 66640, 66688, 66736, 66816, 66864, 67072, 67584, 67648, 67680,
-    67712, 67808, 67840, 67872, 67968, 68e3, 68096, 68192, 68224, 68288, 68352, 68416, 68448, 68480,
-    68608, 68736, 68864, 69216, 69248, 69376, 69424, 69552, 69600, 69632, 69760, 69840, 69888,
-    69968, 70016, 70112, 70144, 70272, 70320, 70400, 70656, 70784, 71040, 71168, 71264, 71296,
-    71424, 71680, 71840, 71936, 72096, 72192, 72272, 72384, 72704, 72816, 72960, 73056, 73440,
-    73648, 73664, 73728, 74752, 74880, 77824, 78896, 82944, 92160, 92736, 92880, 92928, 93760,
-    93952, 94176, 94208, 100352, 101120, 101632, 110592, 110848, 110896, 110960, 113664, 113824,
-    118784, 119040, 119296, 119520, 119552, 119648, 119808, 120832, 122880, 123136, 123584, 124928,
-    125184, 126064, 126208, 126464, 126976, 127024, 127136, 127232, 127488, 127744, 128512, 128592,
-    128640, 128768, 128896, 129024, 129280, 129536, 129648, 129792, 131072, 173824, 177984, 178208,
-    183984, 194560, 196608, 917504, 917760, 983040, 1048576,
-  ],
-  model = {
-    "BB2:108120": 1817,
-    "BP2:OO": 790,
-    "UB3:107": 714,
-    "UP3:B": -1495,
-    "TQ2:O108108108": -194,
-    "TB3:108108108": 562,
-    "UB4:108": -2271,
-    "UB3:108": 169,
-    "BQ1:O108108": -263,
-    "BB1:108107": 307,
-    "UB4:107": -1743,
-    "TB4:108108108": 306,
-    "UB3:109": -456,
-    "TB3:108109109": 1577,
-    "UP1:U": 251,
-    "UW3:に": 1629,
-    "BB2:109109": -2151,
-    "UW3:は": 2029,
-    "UW3:が": 2055,
-    "UB3:120": -213,
-    "UW4:こ": 1449,
-    "BQ3:O108107": 187,
-    "UB5:107": -851,
-    "UW4:お": 3275,
-    "UW3:と": 1059,
-    "BQ2:O120120": -379,
-    "BB3:108120": -298,
-    "UW3:の": 1199,
-    "UW4:て": -1379,
-    "UW3:し": -827,
-    "TB1:120120120": -242,
-    "BB3:108108": 849,
-    "TB2:108108107": -145,
-    "BQ1:B120120": 365,
-    "UW3:を": 2925,
-    "BB3:120108": 255,
-    "UW4:「": 3298,
-    "BB2:162162": -1613,
-    "UW4:あ": 1188,
-    "UW4:、": -3540,
-    "UW4:。": -1602,
-    "UW3:、": 2324,
-    "TB1:108120108": -243,
-    "UW3:も": 1399,
-    "UW4:の": -960,
-    "BQ1:O120120": -120,
-    "UW5:っ": 772,
-    "UW3:っ": -1870,
-    "TB2:108108108": -114,
-    "UB2:108": 97,
-    "TB1:108108108": -91,
-    "TB3:108120108": -250,
-    "UW5:で": -1030,
-    "UQ2:O120": -110,
-    "UB5:108": -66,
-    "UW4:い": 380,
-    "UB4:162": -257,
-    "UQ3:B108": -1112,
-    "UW4:そ": 1036,
-    "BB2:107999": 3411,
-    "UW5:う": 211,
-    "BQ2:B108120": -221,
-    "UW4:で": -924,
-    "UW4:る": -1805,
-    "TQ2:B108108108": -269,
-    "UW5:な": -645,
-    "BW3:もの": 2676,
-    "BB2:120120": -420,
-    "TQ2:B120108120": -336,
-    "BB3:107999": -1305,
-    "UW3:る": 756,
-    "UW4:っ": -1536,
-    "UP2:U": 113,
-    "UB6:107": -76,
-    "BB2:162999": 2668,
-    "UB1:162": -208,
-    "UW6:う": -420,
-    "BQ2:O107108": -896,
-    "UW5:き": 664,
-    "UW4:に": -1407,
-    "UW5:し": -357,
-    "UP1:B": -101,
-    "BB1:108108": -77,
-    "UQ3:B120": 626,
-    "BW2:とい": 691,
-    "UW5:に": -569,
-    "BB2:120999": 2291,
-    "UW4:は": -608,
-    "TQ1:O108108108": -281,
-    "UB1:108": 192,
-    "UQ1:O108": -86,
-    "UW5:が": -626,
-    "UW4:ら": -1582,
-    "TQ2:O120108108": -128,
-    "UQ3:O162": 222,
-    "UW3:れ": -759,
-    "TB3:120120120": -151,
-    "BB3:162999": -1821,
-    "BW3:とこ": 1286,
-    "UW5:は": -560,
-    "UW5:ん": 676,
-    "UW4:れ": -1489,
-    "BB1:162162": -251,
-    "UW3:う": 464,
-    "UW5:す": -771,
-    "UW3:く": 821,
-    "UW4:・": -2383,
-    "UW4:が": -678,
-    "UW6:に": 92,
-    "TQ1:O108120108": -410,
-    "UP2:O": -53,
-    "UW5:く": 411,
-    "UW2:の": 218,
-    "UW3:ま": -959,
-    "UW3:，": 1843,
-    "UW3:ら": 324,
-    "UP3:O": 121,
-    "TB4:120108108": 90,
-    "UB4:120": -421,
-    "BB2:108108": -92,
-    "UW3:で": 756,
-    "UW3:た": 484,
-    "BW3:とい": -1444,
-    "UW3:り": -223,
-    "UW4:ほ": 1294,
-    "TB1:120120108": 125,
-    "UW6:。": -99,
-    "BW3:いう": 861,
-    "UW3:き": -536,
-    "BW3:いい": 767,
-    "UW4:や": 650,
-    "UW6:た": -284,
-    "UW4:だ": -569,
-    "BW1:から": 816,
-    "TB2:109109109": -543,
-    "UW5:も": -405,
-    "UW3:今": 1340,
-    "UW5:あ": -618,
-    "UW3:］": 825,
-    "UW2:一": 760,
-    "BW1:いう": 298,
-    "UW5:を": -622,
-    "UW5:・": -668,
-    "TB1:120108120": -97,
-    "UW5:め": 308,
-    "UW4:，": -2523,
-    "BW2:であ": -1719,
-    "BW3:ちょ": 1343,
-    "UW1:と": 119,
-    "UB2:120": 38,
-    "TB3:108120120": 322,
-    "UW4:ど": 522,
-    "BQ3:O162162": -248,
-    "UW1:そ": 204,
-    "BW3:して": 220,
-    "BW2:てい": -522,
-    "UW4:つ": 682,
-    "BB1:162120": 397,
-    "UW2:と": -94,
-    "UW2:で": -227,
-    "UW5:と": -476,
-    "UW4:ん": -649,
-    "UW4:り": -690,
-    "BB2:109999": 1320,
-    "UW3:だ": -257,
-    "UW4:出": -72,
-    "UW4:を": -1092,
-    "UW2:っ": 55,
-    "BW2:ない": -1335,
-    "BW3:とき": 1220,
-    "TQ3:O162162162": -324,
-    "UB4:072": -103,
-    "BB2:108999": 1504,
-    "UW3:ち": -780,
-    "UW4:ご": 1047,
-    "UW5:つ": 584,
-    "UW3:間": 905,
-    "TB3:108162162": 317,
-    "UW5:れ": 265,
-    "UW4:！": -1144,
-    "UW5:来": -31,
-    "UW6:っ": 222,
-    "BB2:108072": -977,
-    "TB4:108108120": 84,
-    "UW3:ん": -302,
-    "UW2:て": -213,
-    "BW3:よう": -892,
-    "UW4:わ": 430,
-    "TB2:108120108": -413,
-    "UW3:人": 945,
-    "BW3:ため": 1073,
-    "BW3:出来": -1035,
-    "UW2:ん": 223,
-    "UW6:の": -137,
-    "BQ4:O108108": -136,
-    "UW3:て": 445,
-    "UB4:109": -440,
-    "UW5:の": -519,
-    "BW1:とが": -1211,
-    "UW1:な": -300,
-    "TB1:120108108": -188,
-    "UW4:す": 366,
-    "TW2:気に入": -1623,
-    "TW3:ている": -761,
-    "TQ3:O107120120": 60,
-    "BW1:では": -648,
-    "UW2:る": -273,
-    "UW3:か": 439,
-    "UW4:１": 304,
-    "UW1:に": -146,
-    "UW6:り": 273,
-    "BW2:てお": -1727,
-    "TQ2:O108120108": -160,
-    "UW5:こ": 104,
-    "TQ2:O109109109": -279,
-    "BQ4:U120120": -303,
-    "UW1:で": -124,
-    "BB2:107162": -766,
-    "UW3:い": 166,
-    "BW2:とし": 540,
-    "UW2:ま": 340,
-    "BB2:108162": 338,
-    "UW4:け": -819,
-    "TB4:109109109": 423,
-    "TB4:162162162": 297,
-    "UB5:162": -311,
-    "UW1:い": -104,
-    "UW2:毎": 867,
-    "UW2:そ": -298,
-    "TQ1:B108120120": -172,
-    "BW1:ない": 238,
-    "UW4:前": -559,
-    "UW4:］": -1127,
-    "TW4:くらい": 835,
-    "UW3:ば": 464,
-    "TW1:という": 264,
-    "UW4:ー": -655,
-    "UW3:中": 764,
-    "UW4:…": -669,
-    "UW4:ひ": 1182,
-    "UW3:・": 567,
-    "UW3:「": -514,
-    "BW2:です": -1109,
-    "BW3:なっ": -546,
-    "BQ2:O108108": -40,
-    "UW6:を": 84,
-    "UB6:109": -136,
-    "UW5:だ": -217,
-    "BW3:から": -702,
-    "UW3:日": 398,
-    "BW3:その": 1208,
-    "BB2:120162": 170,
-    "UW3:け": -354,
-    "BW3:こと": 522,
-    "TW3:と言っ": -1204,
-    "UB5:120": 60,
-    "UW5:え": 181,
-    "TB1:108107108": -673,
-    "BW3:かけ": 1145,
-    "UW5:イ": 666,
-    "UB4:087": -877,
-    "UW3:後": 1076,
-    "BW1:とも": -672,
-    "UW6:て": -186,
-    "BB2:087999": 836,
-    "UQ3:O108": -21,
-    "BQ2:O108120": 129,
-    "BB3:120999": -299,
-    "UW4:２": 433,
-    "UB3:072": 236,
-    "UW2:よ": 156,
-    "UW5:ー": 41,
-    "UW5:べ": 609,
-    "UW5:て": 119,
-    "UW1:て": 51,
-    "UW4:『": 979,
-    "TW4:ところ": 607,
-    "UW2:結": 700,
-    "UW4:（": 483,
-    "TQ4:O120120120": 208,
-    "TW2:ではな": -505,
-    "TQ4:O108107120": 204,
-    "UW6:０": 392,
-    "UW5:そ": -283,
-    "TQ2:O108107108": -212,
-    "BW1:こと": -434,
-    "UW1:の": -65,
-    "TQ1:O108108120": 87,
-    "BW1:かも": -928,
-    "UW4:よ": 310,
-    "BQ1:O107120": 180,
-    "UW5:い": 51,
-    "BW2:には": -422,
-    "TW4:ことが": -409,
-    "UW3:み": -339,
-    "TB4:162162999": -491,
-    "UW3:こ": -194,
-    "TB4:108120108": -129,
-    "UW3:さ": -328,
-    "UW6:ん": 142,
-    "UW3:お": -424,
-    "BW3:すぐ": 660,
-    "TQ3:B108108120": 158,
-    "BW3:この": 830,
-    "TB3:109108108": 130,
-    "UW1:あ": 111,
-    "BW1:んな": 174,
-    "TB4:108109108": 595,
-    "UW2:も": -199,
-    "BW3:わか": 536,
-    "UW4:思": 445,
-    "BB1:109120": -359,
-    "UW4:電": -301,
-    "UW1:お": -51,
-    "TB4:120108120": 61,
-    "TQ4:O120108120": -102,
-    "UW4:笑": -506,
-    "UW3:な": 215,
-    "UW4:間": -430,
-    "BW3:でき": 393,
-    "UW4:ま": 136,
-    "TW4:かなり": 680,
-    "TQ1:B108120108": 75,
-    "BQ2:B108108": -30,
-    "BW3:ない": 95,
-    "UW3:べ": -452,
-    "TB3:109120108": 169,
-    "BW2:と同": -602,
-    "BW1:てい": -357,
-    "UW6:、": 31,
-    "UW2:最": 406,
-    "UW3:や": 285,
-    "TW3:、ある": -784,
-    "UW4:か": -93,
-    "BW3:そし": -568,
-    "UW5:年": 428,
-    "BW1:れて": -342,
-    "UW3:昔": 637,
-    "UW2:し": 33,
-    "UW3:…": 298,
-    "UW6:と": -69,
-    "UW5:々": 556,
-    "BW1:より": 526,
-    "UW1:、": 17,
-    "BW3:した": 228,
-    "BW1:った": 105,
-    "UW2:さ": 238,
-    "TW3:という": 248,
-    "UW2:少": 449,
-    "UW4:も": -174,
-    "TQ2:B120120108": -76,
-    "UW2:き": 89,
-    "UW1:や": -201,
-    "TW3:である": -318,
-    "BW1:い、": -518,
-    "UW4:ろ": -287,
-    "UW2:全": 435,
-    "BW2:くな": -404,
-    "BW2:はな": -154,
-    "BW1:かし": 627,
-    "UW6:あ": -90,
-    "UW6:カ": 303,
-    "UW4:使": 204,
-    "UW5:ち": 161,
-    "UW1:っ": 74,
-    "UW3:ど": 134,
-    "TB3:109120120": -148,
-    "UW3:よ": -145,
-    "BW2:でき": -373,
-    "UW3:電": -286,
-    "BW2:いも": 373,
-    "BW1:しか": 228,
-    "BW1:たら": 328,
-    "BW3:かっ": -386,
-    "BQ4:O120109": -112,
-    "UW4:込": -315,
-    "UW2:お": -184,
-    "UW3:ー": 99,
-    "UW2:う": -44,
-    "BW3:どう": 258,
-    "UW4:な": 54,
-    "UW5:ご": 135,
-    "BW2:でし": -337,
-    "UW3:光": -182,
-    "UW4:み": 95,
-    "UW2:ー": -30,
-    "UW6:だ": -56,
-    "TB3:120162162": 69,
-    "UW2:た": -83,
-    "TQ1:O120120120": -14,
-    "UW1:す": 71,
-    "TW3:てしま": -305,
-    "UW3:。": 140,
-    "UW3:分": 178,
-    "BW1:とか": 206,
-    "TQ1:U120120108": 43,
-    "UW4:３": 82,
-    "UW2:人": 27,
-    "UW5:料": 317,
-    "BW1:んで": -191,
-    "UW4:？": -274,
-    "UW5:た": -80,
-    "TQ3:O120108108": -53,
-    "UQ2:O108": 14,
-    "UW5:せ": -122,
-    "BW1:しい": 135,
-    "UW4:物": -245,
-    "UW2:思": -15,
-    "UW5:ず": 179,
-    "UW6:思": -109,
-    "BW1:その": -159,
-    "BW1:思い": -244,
-    "UW4:．": -311,
-    "UW6:や": 68,
-    "BQ4:B120108": -105,
-    "BW2:のよ": -162,
-    "UW6:わ": 80,
-    "BW1:るの": -148,
-    "BW3:よく": 134,
-    "UW2:や": -67,
-    "UW2:関": 174,
-    "UQ1:U109": 39,
-    "TW4:ない。": 39,
-    "UW4:く": -106,
-    "UW6:さ": 40,
-    "TW4:ことに": -160,
-    "UW4:合": -148,
-    "TB4:162120108": 14,
-    "BW3:とて": 173,
-    "UW6:れ": -14,
-    "TB4:108109109": -67,
-    "BB3:120162": -27,
-    "BW3:すご": 173,
-    "UW1:「": -53,
-    "BW1:この": -91,
-    "UW6:は": -26,
-    "UW3:わ": -106,
-    "UW4:５": 117,
-    "TW4:こと。": 118,
-    "UW3:真": 185,
-    "UW2:く": -39,
-    "BW1:うに": -90,
-    "UW6:め": 118,
-    "UW4:通": -132,
-    "UW1:も": 13,
-    "TW3:ること": -38,
-    "BW2:たい": -155,
-    "BW1:少し": 106,
-    "TB4:120120108": 14,
-    "UW3:変": 91,
-    "UW2:が": 26,
-    "UW5:よ": -26,
-    "UW3:度": 90,
-    "TB3:108108120": 26,
-    "UW5:さ": -26,
-    "BW3:そう": -112,
-    "TW1:ことも": -13,
-    "UW5:け": -39,
-    "TQ3:O108162120": 52,
-    "BW1:の間": 103,
-    "BB2:072999": 78,
-    "UW6:え": -39,
-    "UW3:ご": -77,
-    "BW2:りし": 52,
-    "BW2:帯電": -52,
-    "TW3:らない": -76,
-    "TB2:108108162": 26,
-    "UW1:社": 51,
-    "UW4:と": -26,
-    "BW3:さん": -50,
-    "UW6:し": 13,
-    "UW6:く": 13,
-    "TQ3:O120120107": -25,
-    "TW4:ことも": -39,
-    "BW3:かか": 52,
-    "UW5:る": 13,
-    "UQ2:O109": -13,
-    "BW2:にも": -25,
-    "UW6:る": -13,
-    "BW2:、と": -13,
-    "UW3:ゃ": 13,
-    "BW1:とは": -13,
-    "UW1:く": 13,
-    "UW4:私": 12,
-  },
-  parseFromString = (e) => new DOMParser().parseFromString(e, "text/html"),
-  assert = console.assert,
-  ZWSP = "​",
-  NodeType = { ELEMENT_NODE: 1, TEXT_NODE: 3 },
-  DomAction = { Inline: 0, Block: 1, Skip: 2, Break: 3 },
-  domActions = {
-    AREA: DomAction.Skip,
-    BASE: DomAction.Skip,
-    BASEFONT: DomAction.Skip,
-    DATALIST: DomAction.Skip,
-    HEAD: DomAction.Skip,
-    LINK: DomAction.Skip,
-    META: DomAction.Skip,
-    NOEMBED: DomAction.Skip,
-    NOFRAMES: DomAction.Skip,
-    PARAM: DomAction.Skip,
-    RP: DomAction.Skip,
-    SCRIPT: DomAction.Skip,
-    STYLE: DomAction.Skip,
-    TEMPLATE: DomAction.Skip,
-    TITLE: DomAction.Skip,
-    NOSCRIPT: DomAction.Skip,
-    HR: DomAction.Break,
-    LISTING: DomAction.Skip,
-    PLAINTEXT: DomAction.Skip,
-    PRE: DomAction.Skip,
-    XMP: DomAction.Skip,
-    BR: DomAction.Break,
-    RT: DomAction.Skip,
-    INPUT: DomAction.Skip,
-    SELECT: DomAction.Skip,
-    BUTTON: DomAction.Skip,
-    TEXTAREA: DomAction.Skip,
-    ABBR: DomAction.Skip,
-    CODE: DomAction.Skip,
-    IFRAME: DomAction.Skip,
-    TIME: DomAction.Skip,
-    VAR: DomAction.Skip,
-  },
-  defaultBlockElements = new Set([
-    "HTML",
-    "BODY",
-    "ADDRESS",
-    "BLOCKQUOTE",
-    "CENTER",
-    "DIALOG",
-    "DIV",
-    "FIGURE",
-    "FIGCAPTION",
-    "FOOTER",
-    "FORM",
-    "HEADER",
-    "LEGEND",
-    "LISTING",
-    "MAIN",
-    "P",
-    "ARTICLE",
-    "ASIDE",
-    "H1",
-    "H2",
-    "H3",
-    "H4",
-    "H5",
-    "H6",
-    "HGROUP",
-    "NAV",
-    "SECTION",
-    "DIR",
-    "DD",
-    "DL",
-    "DT",
-    "MENU",
-    "OL",
-    "UL",
-    "LI",
-    "TABLE",
-    "CAPTION",
-    "COL",
-    "TR",
-    "TD",
-    "TH",
-    "FIELDSET",
-    "DETAILS",
-    "SUMMARY",
-    "MARQUEE",
-  ]);
-function actionForElement(e) {
-  const t = e.nodeName,
-    n = domActions[t];
-  if (void 0 !== n) return n;
-  if ("function" == typeof getComputedStyle) {
-    const t = getComputedStyle(e);
-    switch (t.whiteSpace) {
-      case "nowrap":
-      case "pre":
-        return DomAction.Skip;
-    }
-    const n = t.display;
-    if (n) return "inline" === n ? DomAction.Inline : DomAction.Block;
-  }
-  return defaultBlockElements.has(t) ? DomAction.Block : DomAction.Inline;
-}
-var Paragraph = class {
-    constructor(e) {
-      ((this.textNodes = []), (this.element = e));
-    }
-    hasText() {
-      return this.textNodes.length > 0;
-    }
-  },
-  HTMLProcessor = class {
-    constructor(e, t) {
-      ((this.separator = ZWSP),
-        (this.threshold = DEFAULT_THRES),
-        (this.parser_ = e),
-        void 0 !== t &&
-          (void 0 !== t.className && (this.className = t.className),
-          void 0 !== t.separator && (this.separator = t.separator),
-          void 0 !== t.threshold && (this.threshold = t.threshold)));
-    }
-    applyToElement(e) {
-      for (const t of this.getBlocks(e)) (assert(t.hasText()), this.applyToParagraph(t));
-    }
-    *getBlocks(e, t) {
-      if (
-        (assert(e.nodeType === NodeType.ELEMENT_NODE),
-        this.className && e.classList.contains(this.className))
-      )
-        return;
-      const n = actionForElement(e);
-      if (n === DomAction.Skip) return;
-      if (n === DomAction.Break)
-        return (t && t.hasText() && (yield t, (t.textNodes = [])), void assert(!e.firstChild));
-      assert(n === DomAction.Block || n === DomAction.Inline);
-      const r = !t || n === DomAction.Block,
-        a = r ? new Paragraph(e) : t;
-      assert(a);
-      for (const o of e.childNodes)
-        switch (o.nodeType) {
-          case NodeType.ELEMENT_NODE:
-            for (const e of this.getBlocks(o, a)) yield e;
-            break;
-          case NodeType.TEXT_NODE:
-            a.textNodes.push(o);
-        }
-      r && a.hasText() && (yield a);
-    }
-    applyToParagraph(e) {
-      const t = e.textNodes;
-      assert(t.length > 0);
-      const n = t.map((e) => e.nodeValue).join("");
-      if (/^\s*$/.test(n)) return;
-      const r = this.parser_.parse(n, this.threshold);
-      if (
-        (assert(r.length > 0),
-        assert(r.reduce((e, t) => e + t.length, 0) === n.length),
-        r.length <= 1)
-      )
-        return;
-      const a = [];
-      let o = 0;
-      for (const i of r) (assert(i.length > 0), (o += i.length), a.push(o));
-      (assert(a[0] > 0),
-        assert(a[a.length - 1] === n.length),
-        ++a[a.length - 1],
-        assert(a.length > 1),
-        this.splitTextNodes(t, a),
-        this.applyBlockStyle(e.element));
-    }
-    splitTextNodes(e, t) {
-      assert(t.length > 0);
-      const n = e.reduce((e, t) => e + (t.nodeValue ? t.nodeValue.length : 0), 0);
-      assert(t[t.length - 1] > n);
-      let r = 0,
-        a = t[0];
-      assert(a > 0);
-      let o = 0;
-      for (const i of e) {
-        const e = i.nodeValue;
-        if (!e) continue;
-        const n = o + e.length;
-        if (a >= n) {
-          o = n;
-          continue;
-        }
-        const s = [];
-        let l = 0;
-        for (; a < n;) {
-          const n = a - o;
-          (assert(n >= l), s.push(e.substring(l, n)), (l = n), ++r, assert(t[r] > a), (a = t[r]));
-        }
-        (assert(s.length > 0),
-          l < e.length && s.push(e.substring(l)),
-          this.splitTextNode(i, s),
-          (o = n));
-      }
-      (assert(o === n), assert(r < t.length), assert(t[r] >= n));
-    }
-    splitTextNode(e, t) {
-      (assert(t.length > 1), assert(e.nodeValue === t.join("")));
-      const n = this.separator;
-      if ("string" == typeof n) return void (e.nodeValue = t.join(n));
-      const r = e.ownerDocument;
-      let a = [];
-      for (const o of t) (o && a.push(r.createTextNode(o)), a.push(null));
-      (a.pop(), (a = a.map((e) => e || n.cloneNode(!0))), e.replaceWith(...a));
-    }
-    applyBlockStyle(e) {
-      if (this.className) return void e.classList.add(this.className);
-      const t = e.style;
-      ((t.wordBreak = "keep-all"), (t.overflowWrap = "break-word"));
-    }
-    static defineClassAs(e, t) {
-      const n = e.createElement("style");
-      ((n.textContent = `.${t} { word-break: keep-all; overflow-wrap: break-word; }`),
-        e.head.appendChild(n));
-    }
-  },
-  bisectRight = (e, t) => {
-    const n = Math.floor(e.length / 2);
-    return t === e[n]
-      ? n + 1
-      : t < e[n]
-        ? 1 === e.length
-          ? 0
-          : bisectRight(e.slice(0, n), t)
-        : 1 === e.length
-          ? 1
-          : n + bisectRight(e.slice(n), t);
-  },
-  DEFAULT_THRES = 1e3,
-  NODETYPE = { ELEMENT: 1, TEXT: 3 },
-  Parser = class e {
-    constructor(e) {
-      this.model = e;
-    }
-    static getUnicodeBlockFeature(e) {
-      if (!e || "▔" === e) return "▔";
-      const t = e.codePointAt(0);
-      return void 0 === t ? "▔" : `${bisectRight(unicodeBlocks, t)}`.padStart(3, "0");
-    }
-    static getFeature(t, n, r, a, o, i, s, l, u) {
-      const c = e.getUnicodeBlockFeature(t),
-        d = e.getUnicodeBlockFeature(n),
-        p = e.getUnicodeBlockFeature(r),
-        f = e.getUnicodeBlockFeature(a),
-        _ = e.getUnicodeBlockFeature(o),
-        m = e.getUnicodeBlockFeature(i),
-        h = {
-          UP1: s,
-          UP2: l,
-          UP3: u,
-          BP1: s + l,
-          BP2: l + u,
-          UW1: t,
-          UW2: n,
-          UW3: r,
-          UW4: a,
-          UW5: o,
-          UW6: i,
-          BW1: n + r,
-          BW2: r + a,
-          BW3: a + o,
-          TW1: t + n + r,
-          TW2: n + r + a,
-          TW3: r + a + o,
-          TW4: a + o + i,
-          UB1: c,
-          UB2: d,
-          UB3: p,
-          UB4: f,
-          UB5: _,
-          UB6: m,
-          BB1: d + p,
-          BB2: p + f,
-          BB3: f + _,
-          TB1: c + d + p,
-          TB2: d + p + f,
-          TB3: p + f + _,
-          TB4: f + _ + m,
-          UQ1: s + c,
-          UQ2: l + d,
-          UQ3: u + p,
-          BQ1: l + d + p,
-          BQ2: l + p + f,
-          BQ3: u + d + p,
-          BQ4: u + p + f,
-          TQ1: l + c + d + p,
-          TQ2: l + d + p + f,
-          TQ3: u + c + d + p,
-          TQ4: u + d + p + f,
-        };
-      return Object.entries(h)
-        .filter((e) => !e[1].includes("▔"))
-        .map(([e, t]) => `${e}:${t}`);
-    }
-    static hasChildTextNode(e) {
-      for (const t of e.childNodes) if (t.nodeType === NODETYPE.TEXT) return !0;
-      return !1;
-    }
-    parse(t, n = DEFAULT_THRES) {
-      if ("" === t) return [];
-      let r = "U",
-        a = "U",
-        o = "U";
-      const i = [t[0]];
-      for (let s = 1; s < t.length; s++) {
-        const l = e
-            .getFeature(
-              t[s - 3] || "▔",
-              t[s - 2] || "▔",
-              t[s - 1],
-              t[s],
-              t[s + 1] || "▔",
-              t[s + 2] || "▔",
-              r,
-              a,
-              o,
-            )
-            .map((e) => this.model.get(e) || 0)
-            .reduce((e, t) => e + t),
-          u = l > 0 ? "B" : "O";
-        (l > n && i.push(""), (i[i.length - 1] += t[s]), (r = a), (a = o), (o = u));
-      }
-      return i;
-    }
-    applyElement(e, t = DEFAULT_THRES) {
-      new HTMLProcessor(this, {
-        separator: e.ownerDocument.createElement("wbr"),
-        threshold: t,
-      }).applyToElement(e);
-    }
-    translateHTMLString(t, n = DEFAULT_THRES) {
-      if ("" === t) return t;
-      const r = parseFromString(t);
-      if (e.hasChildTextNode(r.body)) {
-        const e = r.createElement("span");
-        (e.append(...r.body.childNodes), r.body.append(e));
-      }
-      return (this.applyElement(r.body.childNodes[0], n), r.body.innerHTML);
-    }
-  },
-  loadDefaultJapaneseParser = () => new Parser(new Map(Object.entries(model))),
-  Alignment = (function (e) {
-    return ((e[(e.left = 0)] = "left"), (e[(e.right = 1)] = "right"), e);
-  })({});
-function format(e, t) {
-  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
-}
-function formatPrintf$1(e, t) {
-  return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-    const n = 0 === e.indexOf("%") ? 2 : 1;
-    return String(t[e.slice(n, -n)]);
-  });
-}
-var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
-  addSeparatorToRight = (e, t, n) => {
-    if (n % 2) {
-      const n = e.pop();
-      return [...e, n + t];
-    }
-    return [...e, t];
-  },
-  addSeparatorToLeft = (e, t, n) => {
-    if (0 === n) return [t];
-    if (n % 2) return [...e, " " === t ? " " : t];
-    {
-      const n = e.pop();
-      return [...e, n + t];
-    }
-  },
-  splitAndFormat = (e, t, n = 0) =>
-    e.split(t).reduce(0 === n ? addSeparatorToRight : addSeparatorToLeft, []),
-  splitEuropean = (e, t = 0) => {
-    let n = [];
-    const r =
-      /(?<=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])(\x2D)(?=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])/gu;
-    return (
-      splitAndFormat(convertNbsp(e), /( )/, t).forEach(
-        (e) => (n = n.concat(splitAndFormat(e, r, 0))),
-      ),
-      n
-    );
-  },
-  splitChinese = (() => {
-    const e = new RegExp(
-      [
-        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-      ]
-        .map((e) => e.source)
-        .join("|"),
-      "gum",
-    );
-    return (t) =>
-      t
-        .replace(/&nbsp;/g, " ")
-        .replace(/ /g, " ")
-        .match(e);
-  })(),
-  CHINESE_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw"],
-  splitWords = (e, t = 0) => {
-    const n = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-    return CHINESE_LANGUAGE_CODES.includes(n)
-      ? splitChinese(e)
-      : "ja" === n
-        ? loadDefaultJapaneseParser()
-            .parse(e)
-            .map((e) => convertNbsp(e))
-        : splitEuropean(e, t);
-  },
-  formatString = (e, t, n) =>
-    e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (n && e in n ? n[e] : splitWords(e, t))),
-  ClickOutsideManager$1 = class e {
-    entries = [];
-    _listenMouse = !1;
-    static __instance;
-    static get instance() {
-      return (e.__instance || (e.__instance = new e()), e.__instance);
-    }
-    register(e, t) {
-      (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
-    }
-    unregister(e, t) {
-      const n = e,
-        r = t;
-      ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== n || t !== r)),
-        this.removeMouseListener());
-    }
-    addMouseListener() {
-      this._listenMouse ||
-        (document.addEventListener("mousedown", this.onMouseDown), (this._listenMouse = !0));
-    }
-    removeMouseListener() {
-      this._listenMouse &&
-        0 === this.entries.length &&
-        (document.removeEventListener("mousedown", this.onMouseDown), (this._listenMouse = !1));
-    }
-    onMouseDown = (e) => {
-      this.entries.forEach(({ container: t, callback: n }) => {
-        let r = e.target;
-        do {
-          if (r === t) return;
-          r = r.parentNode;
-        } while (r);
-        n();
-      });
-    };
-  };
-function makeEngineEvent(e) {
-  return (t) => (
-    engine.on(e, t),
-    () => {
-      engine.off(e, t);
-    }
-  );
-}
-function setTrackMouseOutside(e) {
-  viewEnv.setTrackMouseOnStage(e);
-}
-var events_exports = __exportAll({
-    mouse: () => mouse,
-    off: () => off,
-    on: () => on$1,
-    onMinimize: () => onMinimize,
-    onResize: () => onResize,
-    onScaleUpdated: () => onScaleUpdated,
-  }),
-  onResize = makeEngineEvent("clientResized"),
-  onScaleUpdated = makeEngineEvent("self.onScaleUpdated"),
-  onMinimize = makeEngineEvent("clientMinimized"),
-  on$1 = (e, t) => engine.on(e, t),
-  off = (e, t) => engine.off(e, t),
-  internalMouse = {
-    down: makeEngineEvent("mousedown"),
-    up: makeEngineEvent("mouseup"),
-    move: makeEngineEvent("mousemove"),
-  };
-function initMouseEvents() {
-  const e = { listeners: 0, enabled: !0, initialized: !1 };
-  function t() {
-    e.enabled && setTrackMouseOutside(!1);
-  }
-  function n() {
-    e.enabled && setTrackMouseOutside(!0);
-  }
-  function r() {
-    e.enabled
-      ? e.listeners < 1
-        ? ((e.initialized = !1),
-          document.body.removeEventListener("mouseenter", t),
-          document.body.removeEventListener("mouseleave", n))
-        : e.initialized ||
-          ((e.initialized = !0),
-          document.body.addEventListener("mouseenter", t),
-          document.body.addEventListener("mouseleave", n))
-      : setTrackMouseOutside(!1);
-  }
-  return {
-    ...["down", "up", "move"].reduce(
-      (t, n) => (
-        (t[n] = (function (t) {
-          return (n) => {
-            e.listeners += 1;
-            let a = !0;
-            const o = `mouse${t}`,
-              i = internalMouse[t]((e) => n([e, "outside"]));
-            function s(e) {
-              n([e, "inside"]);
-            }
-            return (
-              window.addEventListener(o, s),
-              r(),
-              () => {
-                a && (i(), window.removeEventListener(o, s), (e.listeners -= 1), r(), (a = !1));
-              }
-            );
-          };
-        })(n)),
-        t
-      ),
-      {},
-    ),
-    disable() {
-      ((e.enabled = !1), r());
-    },
-    enable() {
-      ((e.enabled = !0), r());
-    },
-    enableOutside() {
-      e.enabled && setTrackMouseOutside(!0);
-    },
-    disableOutside() {
-      e.enabled && setTrackMouseOutside(!1);
-    },
-  };
-}
-var mouse = initMouseEvents();
-function playSound$1(e) {
-  engine.call("PlaySound", e).catch((t) => {
-    console.error(`playSound('${e}'): `, t);
-  });
-}
-function setRTPC(e, t) {
-  engine.call("SetRTPCGlobal", e, t).catch((n) => {
-    console.error(`setRTPC('${e}', '${t}'): `, n);
-  });
-}
-var client_exports = __exportAll({
-  events: () => events_exports,
-  getMouseGlobalPosition: () => getMouseGlobalPosition,
-  getSize: () => getSize$1,
-  graphicsQuality: () => graphicsQuality,
-  playSound: () => playSound$1,
-  setRTPC: () => setRTPC,
-});
-function getSize$1(e = "px") {
-  return "rem" === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
-}
-function getMouseGlobalPosition(e = "px") {
-  return "rem" === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
-}
-var graphicsQuality = {
-    isLow: () => 1 === viewEnv.getGraphicsQuality(),
-    isHigh: () => 0 === viewEnv.getGraphicsQuality(),
-    get: () => viewEnv.getGraphicsQuality(),
-  },
-  intl$3 = {
-    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
-    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
-  },
-  sounds = { highlight: "highlight", click: "play", yes1: "yes1" },
-  plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound$1(sounds[t])), e), {}),
-  play = { ...plays, sound: playSound$1 },
-  sound_default = { play: play, setRTPC: setRTPC },
-  ROMAN = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"],
-  ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-function arabic2roman$1(e) {
-  let t = "";
-  for (let n = ARABIC.length - 1; n >= 0; n--)
-    for (; e >= ARABIC[n];) ((t += ROMAN[n]), (e -= ARABIC[n]));
-  return t;
-}
-var ROMAN_FORBIDDEN_LANGUAGE_CODES = ["ko", "no"],
-  IS_ROMAN_FORBIDDEN = ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE()),
-  children_exports = __exportAll({ getBgUrl: () => getBgUrl, getTextureUrl: () => getTextureUrl });
-function getTextureUrl(e, t, n = 1) {
-  return viewEnv.getChildTexturePath(e, t.width, t.height, n);
-}
-function getBgUrl(e, t, n) {
-  return `url(${getTextureUrl(e, t, n)})`;
-}
-var displayStatus = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-  events = {
-    onTextureFrozen: makeEngineEvent("self.onTextureFrozen"),
-    onTextureReady: makeEngineEvent("self.onTextureReady"),
-    onDomBuilt: makeEngineEvent("self.onDomBuilt"),
-    onLoaded: makeEngineEvent("self.onLoaded"),
-    onDisplayChanged: makeEngineEvent("self.onShowingStatusChanged"),
-    onFocusUpdated: makeEngineEvent("self.onFocusChanged"),
-    children: {
-      onAdded: makeEngineEvent("children.onAdded"),
-      onLoaded: makeEngineEvent("children.onLoaded"),
-      onRemoved: makeEngineEvent("children.onRemoved"),
-      onAttached: makeEngineEvent("children.onAttached"),
-      onTextureReady: makeEngineEvent("children.onTextureReady"),
-      onRequestPosition: makeEngineEvent("children.requestPosition"),
-    },
-  },
-  viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
-  createViewEventArguments$1 = (e) =>
-    Object.entries(e).map(([e, t]) => {
-      const n = "GFValueProxy";
-      switch (typeof t) {
-        case "number":
-          return { __Type: n, name: e, number: t };
-        case "boolean":
-          return { __Type: n, name: e, bool: t };
-        default:
-          return { __Type: n, name: e, string: t.toString() };
-      }
-    }),
-  sendViewEvent = (e, t) => {
-    const n = "GFViewEventProxy";
-    if (void 0 !== t) {
-      const { args: r, ...a } = t;
-      return void 0 !== r
-        ? viewEnv.handleViewEvent({
-            __Type: n,
-            type: e,
-            ...a,
-            arguments: createViewEventArguments$1(r),
-          })
-        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
-    }
-    return viewEnv.handleViewEvent({ __Type: n, type: e });
-  },
-  sendEvent$1 = {
-    close(e) {
-      sendViewEvent("popover" === e ? viewEventTypes.closePopover : viewEventTypes.close);
-    },
-    minimize() {
-      sendViewEvent(viewEventTypes.minimize);
-    },
-    move(e) {
-      sendViewEvent(viewEventTypes.move, { isMouseEvent: !0, on: e });
-    },
-  },
-  view_exports = __exportAll({
-    addModelObserver: () => addModelObserver,
-    addPreloadTexture: () => addPreloadTexture,
-    arabic2roman: () => arabic2roman,
-    children: () => children_exports,
-    displayStatus: () => displayStatus,
-    displayStatusIs: () => displayStatusIs,
-    enableFullScreenModeSupported: () => enableFullScreenModeSupported,
-    events: () => events,
-    extraSize: () => extraSize,
-    forceTriggerMouseMove: () => forceTriggerMouseMove,
-    freezeTextureBeforeResize: () => freezeTextureBeforeResize,
-    getBrowserTexturePath: () => getBrowserTexturePath,
-    getDisplayStatus: () => getDisplayStatus,
-    getExternalPaddingsRem: () => getExternalPaddingsRem,
-    getFontNames: () => getFontNames,
-    getScale: () => getScale,
-    getSize: () => getSize,
-    getViewGlobalPosition: () => getViewGlobalPosition,
-    initExternalPaddings: () => initExternalPaddings,
-    isEventHandled: () => isEventHandled,
-    isFocused: () => isFocused,
-    pxToRem: () => pxToRem,
-    remToPx: () => remToPx,
-    resize: () => resize,
-    sendEvent: () => sendEvent$1,
-    setAnimateWindow: () => setAnimateWindow,
-    setEventHandled: () => setEventHandled,
-    setInputPaddingsRem: () => setInputPaddingsRem,
-    setSidePaddingsRem: () => setSidePaddingsRem,
-    whenTutorialReady: () => whenTutorialReady,
-  }),
-  ALL_SIDES = 15;
-function addPreloadTexture(e) {
-  viewEnv.addPreloadTexture(e);
-}
-function setInputPaddingsRem(e) {
-  viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
-}
-function getBrowserTexturePath(e, t, n, r = 1) {
-  return viewEnv.getWebBrowserTexturePath(e, t, n, r);
-}
-function addModelObserver(e, t, n) {
-  return viewEnv.addDataChangedCallback(e, t, n);
-}
-function setSidePaddingsRem(e) {
-  viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
-}
-function getSize(e = "px") {
-  return "rem" === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
-}
-function resize(e, t, n = "px") {
-  return "rem" === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
-}
-function getViewGlobalPosition(e = "rem") {
-  const t = viewEnv.getViewGlobalPositionRem();
-  return "rem" === e ? t : { x: remToPx(t.x), y: remToPx(t.y) };
-}
-function freezeTextureBeforeResize() {
-  viewEnv.freezeTextureBeforeResize();
-}
-function getScale() {
-  return viewEnv.getScale();
-}
-function pxToRem(e) {
-  return viewEnv.pxToRem(e);
-}
-function remToPx(e) {
-  return viewEnv.remToPx(e);
-}
-function setAnimateWindow(e, t) {
-  viewEnv.setAnimateWindow(e, t);
-}
-function isFocused() {
-  return viewEnv.isFocused();
-}
-function setEventHandled() {
-  return viewEnv.setEventHandled();
-}
-function isEventHandled() {
-  return viewEnv.isEventHandled();
-}
-function forceTriggerMouseMove() {
-  viewEnv.forceTriggerMouseMove();
-}
-function getDisplayStatus() {
-  return viewEnv.getShowingStatus();
-}
-var getFontNames = (() => {
-    let e = [];
-    return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
-  })(),
-  arabic2roman = arabic2roman$1;
-function getExternalPaddingsRem() {
-  return viewEnv.getExternalPaddingsRem();
-}
-var displayStatusIs = Object.keys(displayStatus).reduce(
-    (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === displayStatus[t]), e),
-    {},
-  ),
-  extraSize = {
-    set: (e, t) => {
-      viewEnv.setExtraSizeRem(e, t);
-    },
-    get: (e, t) => {
-      viewEnv.getExtraSizeRem(e, t);
-    },
-  },
-  whenTutorialReady = Promise.all([
-    new Promise((e) => {
-      window.isDomBuilt ? e() : events.onDomBuilt(e);
-    }),
-    engine.whenReady,
-  ]);
-function enableFullScreenModeSupported() {
-  viewEnv.setFullscreenModeSupported(!0);
-}
-function initExternalPaddings(e) {
-  function t() {
-    const { top: t, right: n, bottom: r, left: a } = viewEnv.getExternalPaddingsRem();
-    (e.style.setProperty("--external-padding-top", `${t}rem`),
-      e.style.setProperty("--external-padding-right", `${n}rem`),
-      e.style.setProperty("--external-padding-bottom", `${r}rem`),
-      e.style.setProperty("--external-padding-left", `${a}rem`));
-  }
-  (t(), engine.on("self.onPaddingsUpdated", () => t()));
-}
-var env = { view: view_exports, client: client_exports, sound: sound_default, intl: intl$3 },
-  DataTracker = class e {
-    _callbacks;
-    _updateHandler;
-    _views;
-    static __instance;
-    constructor() {
-      ((this._callbacks = {}), (this._views = {}), (this._updateHandler = void 0));
-    }
-    static get instance() {
-      return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
-    }
-    clear() {
-      (void 0 !== this._updateHandler &&
-        (this._updateHandler.clear(), (this._updateHandler = void 0)),
-        (this._callbacks = {}));
-    }
-    clearViewCallbacks = (e) => {
-      this._views[e] &&
-        (this._views[e].forEach((e) => {
-          delete this._callbacks[e];
-        }),
-        delete this._views[e]);
-    };
-    addCallback(e, t, n = 0, r = !0) {
-      void 0 === this._updateHandler &&
-        (this._updateHandler = engine.on("viewEnv.onDataChanged", this._emmitDataChanged, this));
-      const a = env.view.addModelObserver(e, n, r);
-      return (
-        a > 0
-          ? ((this._callbacks[a] = t),
-            n > 0 && (this._views[n] ? this._views[n].push(a) : (this._views[n] = [a])))
-          : console.error("Can't add callback for model:", e),
-        a
-      );
-    }
-    removeCallback(e, t = 0) {
-      let n = !1;
-      return (
-        void 0 !== e &&
-          void 0 !== this._callbacks[e] &&
-          ((n = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
-        n || console.error("Can't remove callback by id:", e),
-        n
-      );
-    }
-    _emmitDataChanged(e, t, n) {
-      n.forEach((n) => {
-        const r = this._callbacks[n];
-        void 0 !== r && r(e, t);
-      });
-    }
-  };
-function dumpViewModel(e) {
-  const t = {};
-  if ("object" != typeof e) return e;
-  for (const n in e)
-    if (Object.prototype.hasOwnProperty.call(e, n)) {
-      const r = Object.prototype.toString.call(e[n]);
-      if (r.startsWith("[object CoherentArrayProxy]")) {
-        const r = e[n];
-        t[n] = [];
-        for (let e = 0; e < r.length; e++) t[n].push({ value: dumpViewModel(r[e].value) });
-      } else
-        r.startsWith("[object class BW::WULF::ViewModel")
-          ? (t[n] = dumpViewModel(e[n]))
-          : (t[n] = e[n]);
-    }
-  return t;
-}
-var SystemLocale = {
-    getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-    getRealFormat: (e, t, n = 2) => systemLocale.getRealFormat(e, t, n),
-    getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
-    getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
-    toUpperCase: (e) => systemLocale.toUpperCase(e),
-    toLowerCase: (e) => systemLocale.toUpperCase(e),
-  },
-  UserLocale = {
-    getNumberFormat: (e) => userLocale.getNumberFormat(e),
-    getTimeFormat: (e, t, n) => userLocale.getTimeFormat(e, t, void 0 === n || n),
-    getTimeString: (e, t, n) => userLocale.getTimeString(e, t, void 0 === n || n),
-  },
-  RegionalDateTime = {
-    getRegionalDateTime: (e, t, n = !0) => regionalDateTime.getRegionalDateTime(e, t, n),
-    getFormattedDateTime: (e, t, n = !0) => regionalDateTime.getFormattedDateTime(e, t, n),
-  },
-  ViewEventType = (function (e) {
-    return (
-      (e[(e.UNDEFINED = 0)] = "UNDEFINED"),
-      (e[(e.TOOLTIP = 1)] = "TOOLTIP"),
-      (e[(e.POP_OVER = 2)] = "POP_OVER"),
-      (e[(e.CONTEXT_MENU = 4)] = "CONTEXT_MENU"),
-      (e[(e.DROP_DOWN = 8)] = "DROP_DOWN"),
-      (e[(e.MOVE = 16)] = "MOVE"),
-      (e[(e.CLOSE = 32)] = "CLOSE"),
-      (e[(e.MINIMIZE = 64)] = "MINIMIZE"),
-      e
-    );
-  })({}),
-  NumberFormatType = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-  RealFormatType = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-  TimeFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-  DateFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 }),
-  KEY_CODES = (function (e) {
-    return (
-      (e[(e.NONE = -1)] = "NONE"),
-      (e[(e.ALT = 165)] = "ALT"),
-      (e[(e.ENTER = 13)] = "ENTER"),
-      (e[(e.ESCAPE = 27)] = "ESCAPE"),
-      (e[(e.SPACE = 32)] = "SPACE"),
-      (e[(e.END = 35)] = "END"),
-      (e[(e.HOME = 36)] = "HOME"),
-      (e[(e.ARROW_LEFT = 37)] = "ARROW_LEFT"),
-      (e[(e.ARROW_UP = 38)] = "ARROW_UP"),
-      (e[(e.ARROW_RIGHT = 39)] = "ARROW_RIGHT"),
-      (e[(e.ARROW_DOWN = 40)] = "ARROW_DOWN"),
-      (e[(e.NUM_PLUS = 107)] = "NUM_PLUS"),
-      (e[(e.NUM_MINUS = 109)] = "NUM_MINUS"),
-      (e[(e.PLUS = 187)] = "PLUS"),
-      (e[(e.MINUS = 189)] = "MINUS"),
-      (e[(e.PAGE_UP = 33)] = "PAGE_UP"),
-      (e[(e.PAGE_DOWN = 34)] = "PAGE_DOWN"),
-      (e[(e.BACKSPACE = 8)] = "BACKSPACE"),
-      (e[(e.DELETE = 46)] = "DELETE"),
-      (e[(e.TAB = 9)] = "TAB"),
-      (e[(e.KEY_N = 78)] = "KEY_N"),
-      (e[(e.KEY_1 = 49)] = "KEY_1"),
-      (e[(e.KEY_2 = 50)] = "KEY_2"),
-      (e[(e.KEY_3 = 51)] = "KEY_3"),
-      (e[(e.KEY_4 = 52)] = "KEY_4"),
-      (e[(e.KEY_5 = 53)] = "KEY_5"),
-      (e[(e.KEY_6 = 54)] = "KEY_6"),
-      (e[(e.KEY_7 = 55)] = "KEY_7"),
-      (e[(e.KEY_8 = 56)] = "KEY_8"),
-      (e[(e.KEY_9 = 57)] = "KEY_9"),
-      e
-    );
-  })({}),
-  makeGlobalBoundingBox = (e) => ({
-    __Type: "GFBoundingBox",
-    x: e.x,
-    y: e.y,
-    width: e.width,
-    height: e.height,
-  }),
-  onBindingsReady = async () =>
-    !(!engine._BindingsReady || !engine._ContentLoaded) ||
-    new Promise((e) => {
-      engine.on("Ready", e);
-    }),
-  onLayoutReady = () =>
-    new Promise((e) => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          e();
-        });
-      });
-    }),
-  createViewEventArguments = (e) =>
-    Object.entries(e).map(([e, t]) => {
-      const n = { __Type: "GFValueProxy", name: e };
-      switch (typeof t) {
-        case "number":
-          n.number = t;
-          break;
-        case "boolean":
-          n.bool = t;
-          break;
-        default:
-          n.string = t.toString();
-      }
-      return n;
-    }),
-  handleViewEvent$1 = (e, t) => {
-    const n = "GFViewEventProxy";
-    if (void 0 !== t) {
-      const { args: r, ...a } = t;
-      void 0 !== r
-        ? viewEnv.handleViewEvent({
-            __Type: n,
-            type: e,
-            ...a,
-            arguments: createViewEventArguments(r),
-          })
-        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
-    } else viewEnv.handleViewEvent({ __Type: n, type: e });
-  },
-  sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
-  sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
-  sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
-  sendShowContextMenuEvent = (e, t, n = 0) => {
-    handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
-      isMouseEvent: !0,
-      contentID: e,
-      on: !0,
-      decoratorID: n,
-      args: t,
-    });
-  },
-  sendShowPopOverEvent = (e, t, n, r, a = R.invalid("resId"), o) => {
-    const i = env.view.getViewGlobalPosition(),
-      { x: s, y: l, width: u, height: c } = n.getBoundingClientRect(),
-      d = {
-        x: env.view.pxToRem(s) + i.x,
-        y: env.view.pxToRem(l) + i.y,
-        width: env.view.pxToRem(u),
-        height: env.view.pxToRem(c),
-      };
-    handleViewEvent$1(ViewEventType.POP_OVER, {
-      isMouseEvent: !0,
-      contentID: e,
-      decoratorID: r || R.invalid("resId"),
-      targetID: a,
-      direction: t,
-      bbox: makeGlobalBoundingBox(d),
-      on: !0,
-      args: o,
-    });
-  },
-  isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
-  isContextMenuShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.CONTEXT_MENU),
-  isPopOverShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.POP_OVER),
-  callOnEsc = (e, t) => {
-    e.keyCode === KEY_CODES.ESCAPE && t();
-  },
-  closeOnEsc = (e) => {
-    callOnEsc(e, sendCloseEvent);
-  },
-  addEscapeListener = (e) => {
-    const t = (t) => callOnEsc(t, e);
-    return (window.addEventListener("keydown", t), () => window.removeEventListener("keydown", t));
-  },
-  ViewModel$1 = class {
-    dataTracker;
-    modelPath;
-    callbacks;
-    data;
-    constructor(e, t = []) {
-      ((this.dataTracker = new DataTracker()),
-        (this.modelPath = e),
-        (this.callbacks = new Set()),
-        onBindingsReady().then(() => {
-          (this._addCallback(e),
-            t.forEach((t) => {
-              this._addCallback(e + "." + t);
-            }),
-            this._notifyObservers());
-        }));
-    }
-    subscribe(e) {
-      (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
-    }
-    unsubscribe(e) {
-      this.callbacks.delete(e);
-    }
-    destroy() {
-      (this.dataTracker.clear(), this.callbacks.clear());
-    }
-    _addCallback(e) {
-      this.dataTracker.addCallback(e, this._notifyObservers);
-    }
-    _notifyObservers = () => {
-      ((this.data = eval(this.modelPath)),
-        this.callbacks.forEach((e) => {
-          e(this.data);
-        }));
-    };
-  },
-  ClickOutsideManager = ClickOutsideManager$1.instance,
-  ViewEnvHelper = {
-    DataTracker: DataTracker,
-    ViewModel: ViewModel$1,
-    ViewEventType: ViewEventType,
-    NumberFormatType: NumberFormatType,
-    RealFormatType: RealFormatType,
-    TimeFormatType: TimeFormatType,
-    DateFormatType: DateFormatType,
-    makeGlobalBoundingBox: makeGlobalBoundingBox,
-    sendMoveEvent: sendMoveEvent,
-    sendCloseEvent: sendCloseEvent,
-    sendClosePopOverEvent: sendClosePopOverEvent,
-    sendShowContextMenuEvent: sendShowContextMenuEvent,
-    sendShowPopOverEvent: sendShowPopOverEvent,
-    addEscapeListener: addEscapeListener,
-    closeOnEsc: closeOnEsc,
-    handleViewEvent: handleViewEvent$1,
-    onBindingsReady: onBindingsReady,
-    onLayoutReady: onLayoutReady,
-    isTooltipShown: isTooltipShown,
-    isContextMenuShown: isContextMenuShown,
-    isPopOverShown: isPopOverShown,
-    dumpViewModel: dumpViewModel,
-    ClickOutsideManager: ClickOutsideManager,
-    SystemLocale: SystemLocale,
-    UserLocale: UserLocale,
-  };
-window.ViewEnvHelper = ViewEnvHelper;
-var DAYS_IN_WEEK = 7,
-  HOURS_IN_DAY = 24,
-  MS_IN_SECOND = 1e3,
-  ONE_MINUTE = 60,
-  ONE_HOUR = 3600,
-  ONE_DAY = 24 * ONE_HOUR,
-  ONE_WEEK = 7 * ONE_DAY,
-  NOW_IN_SECONDS = Date.now() / 1e3,
-  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
-  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
-function getTimeUnits(e = 0) {
-  let t = e;
-  const n = Math.trunc(t / ONE_DAY);
-  t -= n * ONE_DAY;
-  const r = Math.trunc(t / ONE_HOUR);
-  t -= r * ONE_HOUR;
-  const a = Math.trunc(t / 60);
-  return ((t -= 60 * a), { days: n, hours: r, minutes: a, seconds: t });
-}
-var getRoundedTimeUnitDescription = (e, t = !0) =>
-    e.days > 7 && t
-      ? format(R.strings.common.duration.days(), { days: e.days })
-      : e.days >= 1
-        ? 0 === e.hours
-          ? format(R.strings.common.duration.days(), { days: e.days })
-          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
-        : e.hours >= 1
-          ? 0 === e.minutes
-            ? format(R.strings.common.duration.hours(), { hours: e.hours })
-            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
-          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
-  DateTime = ({
-    datetime: e,
-    format: t = DateTimeFormatsEnum.ShortDate,
-    isConvertedToLocal: n = !0,
-  }) =>
-    Object.values(DateTimeFormatsEnum).includes(t)
-      ? getRegionalDateTime(e, t, n)
-      : getFormattedDateTime(e, t, n),
-  DateTime_default = (0, import_react.memo)(DateTime),
-  require_classnames = __commonJSMin((e, t) => {
-    !(function () {
-      var e = {}.hasOwnProperty;
-      function n() {
-        for (var e = "", t = 0; t < arguments.length; t++) {
-          var n = arguments[t];
-          n && (e = a(e, r(n)));
-        }
-        return e;
-      }
-      function r(t) {
-        if ("string" == typeof t || "number" == typeof t) return t;
-        if ("object" != typeof t) return "";
-        if (Array.isArray(t)) return n.apply(null, t);
-        if (
-          t.toString !== Object.prototype.toString &&
-          !t.toString.toString().includes("[native code]")
-        )
-          return t.toString();
-        var r = "";
-        for (var o in t) e.call(t, o) && t[o] && (r = a(r, o));
-        return r;
-      }
-      function a(e, t) {
-        return t ? (e ? e + " " + t : e + t) : e;
-      }
-      void 0 !== t && t.exports
-        ? ((n.default = n), (t.exports = n))
-        : "function" == typeof define && "object" == typeof define.amd && define.amd
-          ? define("classnames", [], function () {
-              return n;
-            })
-          : (window.classNames = n);
-    })();
-  }),
-  import_classnames = __toESM(require_classnames()),
-  base$78 = "Formattext_bb80854d",
-  fadeIn$91 = "Formattext_fadeIn_5d59be47",
-  fadeInThreeQuarters$91 = "Formattext_fadeInThreeQuarters_5d59be47",
-  fadeInHalf$91 = "Formattext_fadeInHalf_5d59be47",
-  fadeOut$91 = "Formattext_fadeOut_5d59be47",
-  fadeInWithScale$91 = "Formattext_fadeInWithScale_5d59be47",
-  slideUp$91 = "Formattext_slideUp_5d59be47",
-  scale$91 = "Formattext_scale_5d59be47",
-  raysAppearance$91 = "Formattext_raysAppearance_5d59be47",
-  rotate$91 = "Formattext_rotate_5d59be47",
-  glowAppearance$91 = "Formattext_glowAppearance_5d59be47",
-  highlightAppearance$91 = "Formattext_highlightAppearance_5d59be47",
-  blink$91 = "Formattext_blink_5d59be47",
-  slideUpIn$91 = "Formattext_slideUpIn_5d59be47",
-  FormatText_module_default = {
-    base: base$78,
-    fadeIn: fadeIn$91,
-    fadeInThreeQuarters: fadeInThreeQuarters$91,
-    fadeInHalf: fadeInHalf$91,
-    fadeOut: fadeOut$91,
-    fadeInWithScale: fadeInWithScale$91,
-    slideUp: slideUp$91,
-    scale: scale$91,
-    raysAppearance: raysAppearance$91,
-    rotate: rotate$91,
-    "reverse-rotate": "Formattext_reverse-rotate_5d59be47",
-    glowAppearance: glowAppearance$91,
-    highlightAppearance: highlightAppearance$91,
-    blink: blink$91,
-    slideUpIn: slideUpIn$91,
-  },
-  FormatText$1 = ({
-    binding: e,
-    text: t = "",
-    classMix: n,
-    alignment: r = Alignment.left,
-    formatWithBrackets: a,
-  }) =>
-    null === t
-      ? (console.error("FormatText was supplied with 'null'"), null)
-      : (0, import_jsx_runtime.jsx)(import_react.Fragment, {
-          children: (a && e ? format(t, e) : t)
-            .split("\n")
-            .map((t, a) =>
-              (0, import_jsx_runtime.jsx)(
-                "div",
-                {
-                  className: (0, import_classnames.default)(FormatText_module_default.base, n),
-                  children: formatString(t, r, e).map((e, t) =>
-                    (0, import_jsx_runtime.jsx)(
-                      import_react.Fragment,
-                      { children: e },
-                      `${t}-${e}`,
-                    ),
-                  ),
-                },
-                `${t}-${a}`,
-              ),
-            ),
-        }),
-  getFromCallStack = (e = 1) => {
-    const t = new Error().stack;
-    let n,
-      r = R.invalid("resId"),
-      a = "";
-    return (
-      t &&
-        ((a = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
-        (n = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
-        window.__feature &&
-          window.__feature !== n &&
-          window.subViews[n] &&
-          (r = window.subViews[n].id)),
-      { callerUrl: a, caller: n, stack: t, resId: r }
-    );
-  },
-  SHOW_DELAY_MIN = 100,
-  SHOW_DELAY_DEFAULT = 400;
-function getViewEventArguments(e) {
-  return Object.entries(e || {}).map(([e, t]) => {
-    const n = { __Type: "GFValueProxy", name: e };
-    switch (typeof t) {
-      case "number":
-        n.number = t;
-        break;
-      case "boolean":
-        n.bool = t;
-        break;
-      case "undefined":
-        break;
-      default:
-        n.string = t.toString();
-    }
-    return n;
-  });
-}
-var handleViewEvent = (e, t, n = {}, r = 0) => {
-    viewEnv.handleViewEvent({
-      __Type: "GFViewEventProxy",
-      type: ViewEventType.TOOLTIP,
-      contentID: e,
-      decoratorID: t,
-      targetID: r,
-      ...n,
-    });
-  },
-  Tooltip$2 = ({
-    children: e,
-    contentId: t,
-    args: n,
-    onMouseEnter: r,
-    onMouseLeave: a,
-    onMouseDown: o,
-    onClick: i,
-    ignoreShowDelay: s = !1,
-    ignoreMouseClick: l = !1,
-    decoratorId: u = 0,
-    isEnabled: c = !0,
-    targetId: d = 0,
-    onShow: p,
-    onHide: f,
-    ..._
-  }) => {
-    const m = (0, import_react.useRef)({
-        timeoutId: 0,
-        isVisible: !1,
-        prevTarget: null,
-        hideTimerId: null,
-      }),
-      h = (0, import_react.useMemo)(() => d || getFromCallStack().resId, [d]),
-      g = (0, import_react.useCallback)(() => {
-        (m.current.isVisible && m.current.timeoutId) ||
-          (handleViewEvent(
-            t,
-            u,
-            { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(n) },
-            h,
-          ),
-          p && p(),
-          (m.current.isVisible = !0));
-      }, [t, u, n, h, p]),
-      b = (0, import_react.useCallback)(() => {
-        if (m.current.isVisible || m.current.timeoutId) {
-          const e = m.current.timeoutId;
-          (e > 0 && (clearTimeout(e), (m.current.timeoutId = 0)),
-            handleViewEvent(t, u, { on: !1 }, h),
-            m.current.isVisible && f && f(),
-            (m.current.isVisible = !1));
-        }
-      }, [t, u, h, f]),
-      v = (0, import_react.useCallback)((e) => {
-        m.current.isVisible &&
-          ((m.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-          (m.current.hideTimerId = window.setTimeout(() => {
-            const t = document.elementFromPoint(e.clientX, e.clientY);
-            t && !t.isSameNode(m.current.prevTarget) && b();
-          }, 200)));
-      }, []);
-    ((0, import_react.useEffect)(() => {
-      const e = m.current.hideTimerId;
-      return (
-        document.addEventListener("wheel", v, { capture: !0 }),
-        () => {
-          (document.removeEventListener("wheel", v, { capture: !0 }), e && window.clearTimeout(e));
-        }
-      );
-    }, []),
-      (0, import_react.useEffect)(() => {
-        !1 === c && b();
-      }, [c, b]),
-      (0, import_react.useEffect)(
-        () => (
-          window.addEventListener("mouseleave", b),
-          () => {
-            (window.removeEventListener("mouseleave", b), b());
-          }
-        ),
-        [b],
-      ));
-    return c
-      ? (0, import_react.cloneElement)(e, {
-          onMouseEnter:
-            (($ = e.props.onMouseEnter),
-            (e) => {
-              (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                (clearTimeout(m.current.timeoutId),
-                (m.current.timeoutId = window.setTimeout(
-                  g,
-                  s ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT,
-                )),
-                r && r(e),
-                $ && $(e));
-            }),
-          onMouseLeave: ((e) => (t) => {
-            (b(), a?.(t), e?.(t));
-          })(e.props.onMouseLeave),
-          onClick: ((e) => (t) => {
-            (!1 === l && b(), i?.(t), e?.(t));
-          })(e.props.onClick),
-          onMouseDown: ((e) => (t) => {
-            (!1 === l && b(), o?.(t), e?.(t));
-          })(e.props.onMouseDown),
-          ..._,
-        })
-      : e;
-    var $;
-  },
-  BackportTooltip$1 = ({ children: e, ...t }) =>
-    (0, import_jsx_runtime.jsx)(Tooltip$2, {
-      contentId:
-        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
-      ignoreShowDelay: !0,
-      ...t,
-      children: e,
-    }),
-  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
-  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
-  white = "Formattextwithcolortags_white_e509d98",
-  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
-  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
-  par = "Formattextwithcolortags_par_485c5228",
-  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
-  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
-  red = "Formattextwithcolortags_red_9f8bd43",
-  redDark = "Formattextwithcolortags_redDark_5f4161da",
-  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
-  orange = "Formattextwithcolortags_orange_11869493",
-  cream = "Formattextwithcolortags_cream_12fdbea3",
-  brown = "Formattextwithcolortags_brown_e49e35ef",
-  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
-  green = "Formattextwithcolortags_green_55b7d967",
-  greenDark = "Formattextwithcolortags_greenDark_2b347344",
-  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
-  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
-  cred = "Formattextwithcolortags_cred_b30a4efa",
-  gold = "Formattextwithcolortags_gold_616e4d7",
-  bond = "Formattextwithcolortags_bond_b29091",
-  prom = "Formattextwithcolortags_prom_85aada4f",
-  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
-  fadeIn$90 = "Formattextwithcolortags_fadeIn_7219dca0",
-  fadeInThreeQuarters$90 = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
-  fadeInHalf$90 = "Formattextwithcolortags_fadeInHalf_7219dca0",
-  fadeOut$90 = "Formattextwithcolortags_fadeOut_7219dca0",
-  fadeInWithScale$90 = "Formattextwithcolortags_fadeInWithScale_7219dca0",
-  slideUp$90 = "Formattextwithcolortags_slideUp_7219dca0",
-  scale$90 = "Formattextwithcolortags_scale_7219dca0",
-  raysAppearance$90 = "Formattextwithcolortags_raysAppearance_7219dca0",
-  rotate$90 = "Formattextwithcolortags_rotate_7219dca0",
-  glowAppearance$90 = "Formattextwithcolortags_glowAppearance_7219dca0",
-  highlightAppearance$90 = "Formattextwithcolortags_highlightAppearance_7219dca0",
-  blink$90 = "Formattextwithcolortags_blink_7219dca0",
-  slideUpIn$90 = "Formattextwithcolortags_slideUpIn_7219dca0",
-  FormatTextWithColorTags_module_default = {
-    blackReal: blackReal,
-    whiteReal: whiteReal,
-    white: white,
-    whiteOrange: whiteOrange,
-    whiteSpanish: whiteSpanish,
-    par: par,
-    parSecondary: parSecondary,
-    parTertiary: parTertiary,
-    red: red,
-    redDark: redDark,
-    yellow: yellow,
-    orange: orange,
-    cream: cream,
-    brown: brown,
-    greenBright: greenBright,
-    green: green,
-    greenDark: greenDark,
-    blueBooster: blueBooster,
-    blueTeamkiller: blueTeamkiller,
-    cred: cred,
-    gold: gold,
-    bond: bond,
-    prom: prom,
-    parNoWidth: parNoWidth,
-    fadeIn: fadeIn$90,
-    fadeInThreeQuarters: fadeInThreeQuarters$90,
-    fadeInHalf: fadeInHalf$90,
-    fadeOut: fadeOut$90,
-    fadeInWithScale: fadeInWithScale$90,
-    slideUp: slideUp$90,
-    scale: scale$90,
-    raysAppearance: raysAppearance$90,
-    rotate: rotate$90,
-    "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
-    glowAppearance: glowAppearance$90,
-    highlightAppearance: highlightAppearance$90,
-    blink: blink$90,
-    slideUpIn: slideUpIn$90,
-  },
-  TAGGED_PHRASE_REGEXP =
-    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-  COLOR_REGEXP = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
-  WORDS_REGEXP = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: n }) => {
-    const r = (0, import_react.useCallback)((e) => ({ color: `#${e}` }), []),
-      a = (0, import_react.useMemo)(() => t || {}, [t]);
-    let o = TAGGED_PHRASE_REGEXP.exec(e),
-      i = e,
-      s = 0;
-    for (; o;) {
-      const n = o[0],
-        l = COLOR_REGEXP.exec(n),
-        u = WORDS_REGEXP.exec(n),
-        c = o[1];
-      if (l && u) {
-        const e = l[0],
-          o = e + s++ + e;
-        ((i = i.replace(n, `%(${o})`)),
-          (a[o] = FormatTextWithColorTags_module_default[e]
-            ? (0, import_jsx_runtime.jsx)("span", {
-                className: FormatTextWithColorTags_module_default[e],
-                children: (0, import_jsx_runtime.jsx)(FormatText$1, { text: c, binding: t }),
-              })
-            : (0, import_jsx_runtime.jsx)("span", {
-                style: r(e),
-                children: (0, import_jsx_runtime.jsx)(FormatText$1, { text: c, binding: t }),
-              })));
-      }
-      o = TAGGED_PHRASE_REGEXP.exec(e);
-    }
-    return (0, import_jsx_runtime.jsx)(FormatText$1, { text: i, classMix: n, binding: a });
-  },
-  FormatTextWithColorTags = (0, import_react.memo)(FormatTextWithColorTagsComponent),
-  defaultOnFinish = () => {},
-  useCountdown$1 = (e = 0, t, n = 0, r = defaultOnFinish) => {
-    const [a, o] = (0, import_react.useState)(e);
-    return (
-      (0, import_react.useEffect)(() => {
-        if (e > 0) {
-          o(e);
-          const a = Date.now(),
-            i = setInterval(
-              () => {
-                const t = e - Math.floor((Date.now() - a) / MS_IN_SECOND);
-                null !== n && t <= n ? (o(n), r && r(), clearInterval(i)) : o(t);
-              },
-              (t || (e > 120 ? 60 : 1)) * MS_IN_SECOND,
-            );
-          return () => {
-            clearInterval(i);
-          };
-        }
-      }, [e, t, n, r]),
-      a
-    );
-  },
-  createTimeoutInEffect = (e, t) => {
-    let n;
-    const r = setTimeout(() => {
-      n = e();
-    }, t);
-    return () => {
-      ("function" == typeof n && n(), clearTimeout(r));
-    };
-  },
-  tracker$1 = DataTracker.instance,
-  tracker = DataTracker.instance,
-  useCountdown = useCountdown$1,
-  useScaleState = () => {
-    const [e, t] = (0, import_react.useState)(env.view.getScale());
-    return (
-      (0, import_react.useEffect)(() => {
-        const e = () => {
-          t(env.view.getScale());
-        };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
-      }, []),
-      e
-    );
-  },
-  CountdownIcon = (function (e) {
-    return (
-      (e.Timer = "timer"),
-      (e.Countdown = "countdown"),
-      (e.Cooldown = "cooldown"),
-      (e.None = "none"),
-      e
-    );
-  })({}),
-  CountdownStyle = (function (e) {
-    return (
-      (e.Description = "description"),
-      (e.Short = "short"),
-      (e.Long = "long"),
-      (e.Extended = "extended"),
-      e
-    );
-  })({}),
-  base$77 = "Countdown_99fa8328",
-  icon$13 = "Countdown_icon_b50ebafb",
-  description = "Countdown_description_91ad95d2",
-  fadeIn$89 = "Countdown_fadeIn_52ed3dde",
-  fadeInThreeQuarters$89 = "Countdown_fadeInThreeQuarters_52ed3dde",
-  fadeInHalf$89 = "Countdown_fadeInHalf_52ed3dde",
-  fadeOut$89 = "Countdown_fadeOut_52ed3dde",
-  fadeInWithScale$89 = "Countdown_fadeInWithScale_52ed3dde",
-  slideUp$89 = "Countdown_slideUp_52ed3dde",
-  scale$89 = "Countdown_scale_52ed3dde",
-  raysAppearance$89 = "Countdown_raysAppearance_52ed3dde",
-  rotate$89 = "Countdown_rotate_52ed3dde",
-  glowAppearance$89 = "Countdown_glowAppearance_52ed3dde",
-  highlightAppearance$89 = "Countdown_highlightAppearance_52ed3dde",
-  blink$89 = "Countdown_blink_52ed3dde",
-  slideUpIn$89 = "Countdown_slideUpIn_52ed3dde",
-  Countdown_module_default = {
-    base: base$77,
-    icon: icon$13,
-    description: description,
-    fadeIn: fadeIn$89,
-    fadeInThreeQuarters: fadeInThreeQuarters$89,
-    fadeInHalf: fadeInHalf$89,
-    fadeOut: fadeOut$89,
-    fadeInWithScale: fadeInWithScale$89,
-    slideUp: slideUp$89,
-    scale: scale$89,
-    raysAppearance: raysAppearance$89,
-    rotate: rotate$89,
-    "reverse-rotate": "Countdown_reverse-rotate_52ed3dde",
-    glowAppearance: glowAppearance$89,
-    highlightAppearance: highlightAppearance$89,
-    blink: blink$89,
-    slideUpIn: slideUpIn$89,
-  },
-  formatUnit = (e) => e.toString().padStart(2, "0"),
-  formatTimeUnits = (e, t) => {
-    switch (t) {
-      case CountdownStyle.Description:
-        return getRoundedTimeUnitDescription(e);
-      case CountdownStyle.Short:
-        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Long:
-        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Extended:
-        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-    }
-  },
-  IMAGES = R.images.gui.maps.icons.components.countdown,
-  getIcon = (e, t) => {
-    const n = 2 === t ? IMAGES.big : IMAGES;
-    switch (e) {
-      case CountdownIcon.Timer:
-        return n.clock();
-      case CountdownIcon.Countdown:
-        return n.hourglass();
-      case CountdownIcon.Cooldown:
-        return n.lock();
-    }
-  },
-  Countdown = ({
-    duration: e,
-    icon: t = CountdownIcon.Timer,
-    style: n = CountdownStyle.Description,
-    onTimeReached: r,
-    refreshRate: a,
-    className: o = "",
-    classNames: i = {},
-  }) => {
-    const s = useCountdown(e, a ?? (n !== CountdownStyle.Description ? 1 : void 0)),
-      l = useScaleState();
-    r && r[s] && r[s]();
-    const u = formatTimeUnits(getTimeUnits(s), n);
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(Countdown_module_default.base, o),
-      children: [
-        t !== CountdownIcon.None &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: (0, import_classnames.default)(Countdown_module_default.icon, i.icon),
-            style: { backgroundImage: `url('${getIcon(t, l)}')` },
-          }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(Countdown_module_default.description, i.text),
-          children: u,
-        }),
-      ],
-    });
-  },
-  Countdown_default = (0, import_react.memo)(Countdown),
-  UNKNOWN_NATION = "none",
+var UNKNOWN_NATION = "none",
   list = [
     "ussr",
     "germany",
@@ -29713,41 +27388,41 @@ function parse$1(e, t) {
 }
 var COLORS =
     "blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom",
-  base$76 = "FormatText_db904f12",
+  base$80 = "FormatText_db904f12",
   base__fullSize = "FormatText_base__fullSize_a514958e",
   nowrap = "FormatText_nowrap_ff69eca3",
-  fadeIn$88 = "FormatText_fadeIn_d6a0698c",
-  fadeInThreeQuarters$88 = "FormatText_fadeInThreeQuarters_d6a0698c",
-  fadeInHalf$88 = "FormatText_fadeInHalf_d6a0698c",
-  fadeOut$88 = "FormatText_fadeOut_d6a0698c",
-  fadeInWithScale$88 = "FormatText_fadeInWithScale_d6a0698c",
-  slideUp$88 = "FormatText_slideUp_d6a0698c",
-  scale$88 = "FormatText_scale_d6a0698c",
-  raysAppearance$88 = "FormatText_raysAppearance_d6a0698c",
-  rotate$88 = "FormatText_rotate_d6a0698c",
-  glowAppearance$88 = "FormatText_glowAppearance_d6a0698c",
-  highlightAppearance$88 = "FormatText_highlightAppearance_d6a0698c",
-  blink$88 = "FormatText_blink_d6a0698c",
-  slideUpIn$88 = "FormatText_slideUpIn_d6a0698c",
+  fadeIn$93 = "FormatText_fadeIn_d6a0698c",
+  fadeInThreeQuarters$93 = "FormatText_fadeInThreeQuarters_d6a0698c",
+  fadeInHalf$93 = "FormatText_fadeInHalf_d6a0698c",
+  fadeOut$93 = "FormatText_fadeOut_d6a0698c",
+  fadeInWithScale$93 = "FormatText_fadeInWithScale_d6a0698c",
+  slideUp$93 = "FormatText_slideUp_d6a0698c",
+  scale$93 = "FormatText_scale_d6a0698c",
+  raysAppearance$93 = "FormatText_raysAppearance_d6a0698c",
+  rotate$93 = "FormatText_rotate_d6a0698c",
+  glowAppearance$93 = "FormatText_glowAppearance_d6a0698c",
+  highlightAppearance$93 = "FormatText_highlightAppearance_d6a0698c",
+  blink$93 = "FormatText_blink_d6a0698c",
+  slideUpIn$93 = "FormatText_slideUpIn_d6a0698c",
   format_text_module_default = {
     COLORS: COLORS,
-    base: base$76,
+    base: base$80,
     base__fullSize: base__fullSize,
     nowrap: nowrap,
-    fadeIn: fadeIn$88,
-    fadeInThreeQuarters: fadeInThreeQuarters$88,
-    fadeInHalf: fadeInHalf$88,
-    fadeOut: fadeOut$88,
-    fadeInWithScale: fadeInWithScale$88,
-    slideUp: slideUp$88,
-    scale: scale$88,
-    raysAppearance: raysAppearance$88,
-    rotate: rotate$88,
+    fadeIn: fadeIn$93,
+    fadeInThreeQuarters: fadeInThreeQuarters$93,
+    fadeInHalf: fadeInHalf$93,
+    fadeOut: fadeOut$93,
+    fadeInWithScale: fadeInWithScale$93,
+    slideUp: slideUp$93,
+    scale: scale$93,
+    raysAppearance: raysAppearance$93,
+    rotate: rotate$93,
     "reverse-rotate": "FormatText_reverse-rotate_d6a0698c",
-    glowAppearance: glowAppearance$88,
-    highlightAppearance: highlightAppearance$88,
-    blink: blink$88,
-    slideUpIn: slideUpIn$88,
+    glowAppearance: glowAppearance$93,
+    highlightAppearance: highlightAppearance$93,
+    blink: blink$93,
+    slideUpIn: slideUpIn$93,
   },
   legacyColors = new Set(format_text_module_default.COLORS?.split(", ") ?? []),
   keyId = 0;
@@ -29938,7 +27613,7 @@ function upgradeLegacy(e) {
   return pipe$1(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
 }
 var defaultBrackets = { start: "{{", end: "}}" },
-  FormatText = (0, import_react.memo)(function (e) {
+  FormatText$1 = (0, import_react.memo)(function (e) {
     const {
         brackets: t = defaultBrackets,
         text: n,
@@ -29981,13 +27656,13 @@ var defaultBrackets = { start: "{{", end: "}}" },
       : (0, import_jsx_runtime.jsx)("span", { ...u, className: _, children: f });
   });
 function FormatString({ path: e, ...t }) {
-  return (0, import_jsx_runtime.jsx)(FormatText, {
+  return (0, import_jsx_runtime.jsx)(FormatText$1, {
     text: resources.resolve("strings").readOrEmpty(e),
     ...t,
   });
 }
 function FormatPluralString({ path: e, count: t, ...n }) {
-  return (0, import_jsx_runtime.jsx)(FormatText, {
+  return (0, import_jsx_runtime.jsx)(FormatText$1, {
     text: resources.resolve("strings").pluralOrEmpty(e, t),
     ...n,
   });
@@ -30000,6 +27675,19 @@ function renderString(e, t = {}) {
 function renderResolvedString(e, t = {}) {
   const n = resources.resolve("strings").readOrEmpty(e);
   return 0 === n.length ? n : renderString(n, t);
+}
+function ColorsProvider(e) {
+  return (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: e.children });
+}
+function UIProvider(e) {
+  return (0, import_jsx_runtime.jsx)(ColorsProvider, {
+    children: (0, import_jsx_runtime.jsx)(SoundsProvider, {
+      overrides: e.soundsOverrides,
+      severity: e.soundSeverity,
+      silent: e.soundsOff,
+      children: e.children,
+    }),
+  });
 }
 if (!import_react.useState) throw new Error("mobx-react-lite requires React with Hooks support");
 if (!makeObservable$1)
@@ -30526,7 +28214,7 @@ function usePopoverInstance(e) {
     }, [e]);
   return (0, import_react.useMemo)(() => ({ ...r, ...t }), [r, t]);
 }
-var border$9 = "Popover_border_d0a76717",
+var border$10 = "Popover_border_d0a76717",
   title$3 = "Popover_title_e4a0437a",
   subtitle = "Popover_subtitle_1c7535c8",
   header$2 = "Popover_header_de23fc15",
@@ -30534,21 +28222,21 @@ var border$9 = "Popover_border_d0a76717",
   divider = "Popover_divider_46fe6f15",
   decoration$1 = "Popover_decoration_134219d5",
   close = "Popover_close_ad4a9c7b",
-  fadeIn$87 = "Popover_fadeIn_b6b2f5f6",
-  fadeInThreeQuarters$87 = "Popover_fadeInThreeQuarters_b6b2f5f6",
-  fadeInHalf$87 = "Popover_fadeInHalf_b6b2f5f6",
-  fadeOut$87 = "Popover_fadeOut_b6b2f5f6",
-  fadeInWithScale$87 = "Popover_fadeInWithScale_b6b2f5f6",
-  slideUp$87 = "Popover_slideUp_b6b2f5f6",
-  scale$87 = "Popover_scale_b6b2f5f6",
-  raysAppearance$87 = "Popover_raysAppearance_b6b2f5f6",
-  rotate$87 = "Popover_rotate_b6b2f5f6",
-  glowAppearance$87 = "Popover_glowAppearance_b6b2f5f6",
-  highlightAppearance$87 = "Popover_highlightAppearance_b6b2f5f6",
-  blink$87 = "Popover_blink_b6b2f5f6",
-  slideUpIn$87 = "Popover_slideUpIn_b6b2f5f6",
+  fadeIn$92 = "Popover_fadeIn_b6b2f5f6",
+  fadeInThreeQuarters$92 = "Popover_fadeInThreeQuarters_b6b2f5f6",
+  fadeInHalf$92 = "Popover_fadeInHalf_b6b2f5f6",
+  fadeOut$92 = "Popover_fadeOut_b6b2f5f6",
+  fadeInWithScale$92 = "Popover_fadeInWithScale_b6b2f5f6",
+  slideUp$92 = "Popover_slideUp_b6b2f5f6",
+  scale$92 = "Popover_scale_b6b2f5f6",
+  raysAppearance$92 = "Popover_raysAppearance_b6b2f5f6",
+  rotate$92 = "Popover_rotate_b6b2f5f6",
+  glowAppearance$92 = "Popover_glowAppearance_b6b2f5f6",
+  highlightAppearance$92 = "Popover_highlightAppearance_b6b2f5f6",
+  blink$92 = "Popover_blink_b6b2f5f6",
+  slideUpIn$92 = "Popover_slideUpIn_b6b2f5f6",
   popover_module_default = {
-    border: border$9,
+    border: border$10,
     title: title$3,
     subtitle: subtitle,
     header: header$2,
@@ -30556,20 +28244,20 @@ var border$9 = "Popover_border_d0a76717",
     divider: divider,
     decoration: decoration$1,
     close: close,
-    fadeIn: fadeIn$87,
-    fadeInThreeQuarters: fadeInThreeQuarters$87,
-    fadeInHalf: fadeInHalf$87,
-    fadeOut: fadeOut$87,
-    fadeInWithScale: fadeInWithScale$87,
-    slideUp: slideUp$87,
-    scale: scale$87,
-    raysAppearance: raysAppearance$87,
-    rotate: rotate$87,
+    fadeIn: fadeIn$92,
+    fadeInThreeQuarters: fadeInThreeQuarters$92,
+    fadeInHalf: fadeInHalf$92,
+    fadeOut: fadeOut$92,
+    fadeInWithScale: fadeInWithScale$92,
+    slideUp: slideUp$92,
+    scale: scale$92,
+    raysAppearance: raysAppearance$92,
+    rotate: rotate$92,
     "reverse-rotate": "Popover_reverse-rotate_b6b2f5f6",
-    glowAppearance: glowAppearance$87,
-    highlightAppearance: highlightAppearance$87,
-    blink: blink$87,
-    slideUpIn: slideUpIn$87,
+    glowAppearance: glowAppearance$92,
+    highlightAppearance: highlightAppearance$92,
+    blink: blink$92,
+    slideUpIn: slideUpIn$92,
   },
   Close = (0, import_react.forwardRef)(({ className: e, children: t, ...n }, r) => {
     const a = usePopoverOptional(),
@@ -30773,24 +28461,24 @@ function updatePosition(e, t, n, r, a, o, i, s) {
     applyTransform(n, a.top - l, r, s, i);
   }
 }
-var base$75 = "PopoverTip_163a336f",
+var base$79 = "PopoverTip_163a336f",
   arrow$2 = "PopoverTip_arrow_44c7d6a5",
   glow$3 = "PopoverTip_glow_da3f9be9",
-  fadeIn$86 = "PopoverTip_fadeIn_a48d88bb",
-  fadeInThreeQuarters$86 = "PopoverTip_fadeInThreeQuarters_a48d88bb",
-  fadeInHalf$86 = "PopoverTip_fadeInHalf_a48d88bb",
-  fadeOut$86 = "PopoverTip_fadeOut_a48d88bb",
-  fadeInWithScale$86 = "PopoverTip_fadeInWithScale_a48d88bb",
-  slideUp$86 = "PopoverTip_slideUp_a48d88bb",
-  scale$86 = "PopoverTip_scale_a48d88bb",
-  raysAppearance$86 = "PopoverTip_raysAppearance_a48d88bb",
-  rotate$86 = "PopoverTip_rotate_a48d88bb",
-  glowAppearance$86 = "PopoverTip_glowAppearance_a48d88bb",
-  highlightAppearance$86 = "PopoverTip_highlightAppearance_a48d88bb",
-  blink$86 = "PopoverTip_blink_a48d88bb",
-  slideUpIn$86 = "PopoverTip_slideUpIn_a48d88bb",
+  fadeIn$91 = "PopoverTip_fadeIn_a48d88bb",
+  fadeInThreeQuarters$91 = "PopoverTip_fadeInThreeQuarters_a48d88bb",
+  fadeInHalf$91 = "PopoverTip_fadeInHalf_a48d88bb",
+  fadeOut$91 = "PopoverTip_fadeOut_a48d88bb",
+  fadeInWithScale$91 = "PopoverTip_fadeInWithScale_a48d88bb",
+  slideUp$91 = "PopoverTip_slideUp_a48d88bb",
+  scale$91 = "PopoverTip_scale_a48d88bb",
+  raysAppearance$91 = "PopoverTip_raysAppearance_a48d88bb",
+  rotate$91 = "PopoverTip_rotate_a48d88bb",
+  glowAppearance$91 = "PopoverTip_glowAppearance_a48d88bb",
+  highlightAppearance$91 = "PopoverTip_highlightAppearance_a48d88bb",
+  blink$91 = "PopoverTip_blink_a48d88bb",
+  slideUpIn$91 = "PopoverTip_slideUpIn_a48d88bb",
   popover_tip_module_default = {
-    base: base$75,
+    base: base$79,
     "base__flip-left": "PopoverTip_base__flip-left_3cc0dadc",
     "base__flip-right": "PopoverTip_base__flip-right_6a5605b6",
     "base__flip-top": "PopoverTip_base__flip-top_6bcc69e1",
@@ -30801,20 +28489,20 @@ var base$75 = "PopoverTip_163a336f",
     "arrow__position-left": "PopoverTip_arrow__position-left_ca4ced33",
     "arrow__position-right": "PopoverTip_arrow__position-right_9dc94f7a",
     glow: glow$3,
-    fadeIn: fadeIn$86,
-    fadeInThreeQuarters: fadeInThreeQuarters$86,
-    fadeInHalf: fadeInHalf$86,
-    fadeOut: fadeOut$86,
-    fadeInWithScale: fadeInWithScale$86,
-    slideUp: slideUp$86,
-    scale: scale$86,
-    raysAppearance: raysAppearance$86,
-    rotate: rotate$86,
+    fadeIn: fadeIn$91,
+    fadeInThreeQuarters: fadeInThreeQuarters$91,
+    fadeInHalf: fadeInHalf$91,
+    fadeOut: fadeOut$91,
+    fadeInWithScale: fadeInWithScale$91,
+    slideUp: slideUp$91,
+    scale: scale$91,
+    raysAppearance: raysAppearance$91,
+    rotate: rotate$91,
     "reverse-rotate": "PopoverTip_reverse-rotate_a48d88bb",
-    glowAppearance: glowAppearance$86,
-    highlightAppearance: highlightAppearance$86,
-    blink: blink$86,
-    slideUpIn: slideUpIn$86,
+    glowAppearance: glowAppearance$91,
+    highlightAppearance: highlightAppearance$91,
+    blink: blink$91,
+    slideUpIn: slideUpIn$91,
   },
   verticals = [positions$2.top, positions$2.bottom],
   horizontals = [positions$2.left, positions$2.right],
@@ -30929,6 +28617,171 @@ function Popover(e) {
   (Popover.use = usePopover),
   (Popover.Portal = Portal$1),
   (Popover.Trigger = Trigger));
+var themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" },
+  sizes$19 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
+  base$78 = "HeadlessButton_df8536fc",
+  fadeIn$90 = "HeadlessButton_fadeIn_6a626904",
+  fadeInThreeQuarters$90 = "HeadlessButton_fadeInThreeQuarters_6a626904",
+  fadeInHalf$90 = "HeadlessButton_fadeInHalf_6a626904",
+  fadeOut$90 = "HeadlessButton_fadeOut_6a626904",
+  fadeInWithScale$90 = "HeadlessButton_fadeInWithScale_6a626904",
+  slideUp$90 = "HeadlessButton_slideUp_6a626904",
+  scale$90 = "HeadlessButton_scale_6a626904",
+  raysAppearance$90 = "HeadlessButton_raysAppearance_6a626904",
+  rotate$90 = "HeadlessButton_rotate_6a626904",
+  glowAppearance$90 = "HeadlessButton_glowAppearance_6a626904",
+  highlightAppearance$90 = "HeadlessButton_highlightAppearance_6a626904",
+  blink$90 = "HeadlessButton_blink_6a626904",
+  slideUpIn$90 = "HeadlessButton_slideUpIn_6a626904",
+  headless_button_module_default = {
+    base: base$78,
+    fadeIn: fadeIn$90,
+    fadeInThreeQuarters: fadeInThreeQuarters$90,
+    fadeInHalf: fadeInHalf$90,
+    fadeOut: fadeOut$90,
+    fadeInWithScale: fadeInWithScale$90,
+    slideUp: slideUp$90,
+    scale: scale$90,
+    raysAppearance: raysAppearance$90,
+    rotate: rotate$90,
+    "reverse-rotate": "HeadlessButton_reverse-rotate_6a626904",
+    glowAppearance: glowAppearance$90,
+    highlightAppearance: highlightAppearance$90,
+    blink: blink$90,
+    slideUpIn: slideUpIn$90,
+  },
+  HeadlessButtonBase = defineStyledComponent("Button", {
+    element: "button",
+    className: headless_button_module_default.base,
+  }),
+  HeadlessButton = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      onClick: t,
+      onMouseEnter: n,
+      soundTarget: r,
+      disabled: a = !1,
+      silent: o = !1,
+      ...i
+    },
+    s,
+  ) {
+    const l = useSounds();
+    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
+      ...i,
+      ref: s,
+      onMouseEnter: function (e) {
+        (a || o || l.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
+      },
+      onClick: function (e) {
+        a || (o || l.play("click", { target: r || "Button", original: e }), t?.(e));
+      },
+      children: e,
+    });
+  }),
+  background$11 = "Button_background_98ebcfb8",
+  border$9 = "Button_border_7e6390d7",
+  overlay$5 = "Button_overlay_174632c8",
+  base$77 = "Button_70871946",
+  base__enabled$1 = "Button_base__enabled_96634d40",
+  base__disabled$9 = "Button_base__disabled_b713e04a",
+  content$13 = "Button_content_298de63f",
+  content__fontAligned$1 = "Button_content__fontAligned_66115778",
+  fadeIn$89 = "Button_fadeIn_6bcdc8c",
+  fadeInThreeQuarters$89 = "Button_fadeInThreeQuarters_6bcdc8c",
+  fadeInHalf$89 = "Button_fadeInHalf_6bcdc8c",
+  fadeOut$89 = "Button_fadeOut_6bcdc8c",
+  fadeInWithScale$89 = "Button_fadeInWithScale_6bcdc8c",
+  slideUp$89 = "Button_slideUp_6bcdc8c",
+  scale$89 = "Button_scale_6bcdc8c",
+  raysAppearance$89 = "Button_raysAppearance_6bcdc8c",
+  rotate$89 = "Button_rotate_6bcdc8c",
+  glowAppearance$89 = "Button_glowAppearance_6bcdc8c",
+  highlightAppearance$89 = "Button_highlightAppearance_6bcdc8c",
+  blink$89 = "Button_blink_6bcdc8c",
+  slideUpIn$89 = "Button_slideUpIn_6bcdc8c",
+  button_module_default = {
+    background: background$11,
+    border: border$9,
+    overlay: overlay$5,
+    base: base$77,
+    base__enabled: base__enabled$1,
+    base__disabled: base__disabled$9,
+    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
+    "base__size-small": "Button_base__size-small_fc7095a4",
+    "base__size-medium": "Button_base__size-medium_814d61f0",
+    "base__size-large": "Button_base__size-large_83da852e",
+    "base__theme-primary": "Button_base__theme-primary_8ba55469",
+    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
+    content: content$13,
+    content__fontAligned: content__fontAligned$1,
+    fadeIn: fadeIn$89,
+    fadeInThreeQuarters: fadeInThreeQuarters$89,
+    fadeInHalf: fadeInHalf$89,
+    fadeOut: fadeOut$89,
+    fadeInWithScale: fadeInWithScale$89,
+    slideUp: slideUp$89,
+    scale: scale$89,
+    raysAppearance: raysAppearance$89,
+    rotate: rotate$89,
+    "reverse-rotate": "Button_reverse-rotate_6bcdc8c",
+    glowAppearance: glowAppearance$89,
+    highlightAppearance: highlightAppearance$89,
+    blink: blink$89,
+    slideUpIn: slideUpIn$89,
+  },
+  Button$1 = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      size: t = sizes$19.large,
+      theme: n = themes$1.primary,
+      disabled: r = !1,
+      silent: a = !1,
+      autoAlignContent: o = !0,
+      classNames: i,
+      className: s,
+      ...l
+    },
+    u,
+  ) {
+    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
+      ...l,
+      ref: u,
+      silent: a,
+      disabled: r,
+      className: clsx(
+        button_module_default.base,
+        button_module_default[`base__size-${t}`],
+        button_module_default[`base__theme-${n}`],
+        r ? button_module_default.base__disabled : button_module_default.base__enabled,
+        s,
+        i?.base,
+      ),
+      onClick: function (e) {
+        r || l.onClick?.(e);
+      },
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.background, i?.background),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.border, i?.border),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.overlay, i?.overlay),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(
+            button_module_default.content,
+            o && button_module_default.content__fontAligned,
+            i?.content,
+          ),
+          children: e,
+        }),
+      ],
+    });
+  });
+((Button$1.themes = themes$1), (Button$1.sizes = sizes$19));
 var Slot$1 = import_react.forwardRef((e, t) => {
   const { children: n, ...r } = e,
     a = import_react.Children.toArray(n),
@@ -30991,36 +28844,36 @@ function mergeProps$1(e, t) {
 function getElementRef(e) {
   return e.props.ref || e.ref;
 }
-var base$74 = "TruncateText_dcb41d92",
-  fadeIn$85 = "TruncateText_fadeIn_54cac51a",
-  fadeInThreeQuarters$85 = "TruncateText_fadeInThreeQuarters_54cac51a",
-  fadeInHalf$85 = "TruncateText_fadeInHalf_54cac51a",
-  fadeOut$85 = "TruncateText_fadeOut_54cac51a",
-  fadeInWithScale$85 = "TruncateText_fadeInWithScale_54cac51a",
-  slideUp$85 = "TruncateText_slideUp_54cac51a",
-  scale$85 = "TruncateText_scale_54cac51a",
-  raysAppearance$85 = "TruncateText_raysAppearance_54cac51a",
-  rotate$85 = "TruncateText_rotate_54cac51a",
-  glowAppearance$85 = "TruncateText_glowAppearance_54cac51a",
-  highlightAppearance$85 = "TruncateText_highlightAppearance_54cac51a",
-  blink$85 = "TruncateText_blink_54cac51a",
-  slideUpIn$85 = "TruncateText_slideUpIn_54cac51a",
+var base$76 = "TruncateText_dcb41d92",
+  fadeIn$88 = "TruncateText_fadeIn_54cac51a",
+  fadeInThreeQuarters$88 = "TruncateText_fadeInThreeQuarters_54cac51a",
+  fadeInHalf$88 = "TruncateText_fadeInHalf_54cac51a",
+  fadeOut$88 = "TruncateText_fadeOut_54cac51a",
+  fadeInWithScale$88 = "TruncateText_fadeInWithScale_54cac51a",
+  slideUp$88 = "TruncateText_slideUp_54cac51a",
+  scale$88 = "TruncateText_scale_54cac51a",
+  raysAppearance$88 = "TruncateText_raysAppearance_54cac51a",
+  rotate$88 = "TruncateText_rotate_54cac51a",
+  glowAppearance$88 = "TruncateText_glowAppearance_54cac51a",
+  highlightAppearance$88 = "TruncateText_highlightAppearance_54cac51a",
+  blink$88 = "TruncateText_blink_54cac51a",
+  slideUpIn$88 = "TruncateText_slideUpIn_54cac51a",
   truncate_text_module_default = {
-    base: base$74,
-    fadeIn: fadeIn$85,
-    fadeInThreeQuarters: fadeInThreeQuarters$85,
-    fadeInHalf: fadeInHalf$85,
-    fadeOut: fadeOut$85,
-    fadeInWithScale: fadeInWithScale$85,
-    slideUp: slideUp$85,
-    scale: scale$85,
-    raysAppearance: raysAppearance$85,
-    rotate: rotate$85,
+    base: base$76,
+    fadeIn: fadeIn$88,
+    fadeInThreeQuarters: fadeInThreeQuarters$88,
+    fadeInHalf: fadeInHalf$88,
+    fadeOut: fadeOut$88,
+    fadeInWithScale: fadeInWithScale$88,
+    slideUp: slideUp$88,
+    scale: scale$88,
+    raysAppearance: raysAppearance$88,
+    rotate: rotate$88,
     "reverse-rotate": "TruncateText_reverse-rotate_54cac51a",
-    glowAppearance: glowAppearance$85,
-    highlightAppearance: highlightAppearance$85,
-    blink: blink$85,
-    slideUpIn: slideUpIn$85,
+    glowAppearance: glowAppearance$88,
+    highlightAppearance: highlightAppearance$88,
+    blink: blink$88,
+    slideUpIn: slideUpIn$88,
   },
   TruncatedText = (0, import_react.forwardRef)(function (
     { text: e, tooltipParams: t, className: n, ...r },
@@ -31261,47 +29114,47 @@ var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
   background$10 = "Thumb_background_b893084a",
   border$8 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
-  icon$12 = "Thumb_icon_dca8bf26",
-  base$73 = "Thumb_6ff3e706",
+  icon$13 = "Thumb_icon_dca8bf26",
+  base$75 = "Thumb_6ff3e706",
   base__vertical$2 = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
   base__active$3 = "Thumb_base__active_830942bb",
-  fadeIn$84 = "Thumb_fadeIn_830942bb",
-  fadeInThreeQuarters$84 = "Thumb_fadeInThreeQuarters_830942bb",
-  fadeInHalf$84 = "Thumb_fadeInHalf_830942bb",
-  fadeOut$84 = "Thumb_fadeOut_830942bb",
-  fadeInWithScale$84 = "Thumb_fadeInWithScale_830942bb",
-  slideUp$84 = "Thumb_slideUp_830942bb",
-  scale$84 = "Thumb_scale_830942bb",
-  raysAppearance$84 = "Thumb_raysAppearance_830942bb",
-  rotate$84 = "Thumb_rotate_830942bb",
-  glowAppearance$84 = "Thumb_glowAppearance_830942bb",
-  highlightAppearance$84 = "Thumb_highlightAppearance_830942bb",
-  blink$84 = "Thumb_blink_830942bb",
-  slideUpIn$84 = "Thumb_slideUpIn_830942bb",
+  fadeIn$87 = "Thumb_fadeIn_830942bb",
+  fadeInThreeQuarters$87 = "Thumb_fadeInThreeQuarters_830942bb",
+  fadeInHalf$87 = "Thumb_fadeInHalf_830942bb",
+  fadeOut$87 = "Thumb_fadeOut_830942bb",
+  fadeInWithScale$87 = "Thumb_fadeInWithScale_830942bb",
+  slideUp$87 = "Thumb_slideUp_830942bb",
+  scale$87 = "Thumb_scale_830942bb",
+  raysAppearance$87 = "Thumb_raysAppearance_830942bb",
+  rotate$87 = "Thumb_rotate_830942bb",
+  glowAppearance$87 = "Thumb_glowAppearance_830942bb",
+  highlightAppearance$87 = "Thumb_highlightAppearance_830942bb",
+  blink$87 = "Thumb_blink_830942bb",
+  slideUpIn$87 = "Thumb_slideUpIn_830942bb",
   thumb_module_default$1 = {
     background: background$10,
     border: border$8,
     innerBorder: innerBorder,
-    icon: icon$12,
-    base: base$73,
+    icon: icon$13,
+    base: base$75,
     base__vertical: base__vertical$2,
     base__horizontal: base__horizontal,
     base__active: base__active$3,
-    fadeIn: fadeIn$84,
-    fadeInThreeQuarters: fadeInThreeQuarters$84,
-    fadeInHalf: fadeInHalf$84,
-    fadeOut: fadeOut$84,
-    fadeInWithScale: fadeInWithScale$84,
-    slideUp: slideUp$84,
-    scale: scale$84,
-    raysAppearance: raysAppearance$84,
-    rotate: rotate$84,
+    fadeIn: fadeIn$87,
+    fadeInThreeQuarters: fadeInThreeQuarters$87,
+    fadeInHalf: fadeInHalf$87,
+    fadeOut: fadeOut$87,
+    fadeInWithScale: fadeInWithScale$87,
+    slideUp: slideUp$87,
+    scale: scale$87,
+    raysAppearance: raysAppearance$87,
+    rotate: rotate$87,
     "reverse-rotate": "Thumb_reverse-rotate_830942bb",
-    glowAppearance: glowAppearance$84,
-    highlightAppearance: highlightAppearance$84,
-    blink: blink$84,
-    slideUpIn: slideUpIn$84,
+    glowAppearance: glowAppearance$87,
+    highlightAppearance: highlightAppearance$87,
+    blink: blink$87,
+    slideUpIn: slideUpIn$87,
   },
   BOUNCING_OFFSET = 2,
   FORWARD_DISABLED = "forwardDisabled",
@@ -31578,49 +29431,49 @@ function useBarHandlers(e, t, n, r, a, o, i) {
   );
 }
 var rail$1 = "HorizontalBar_rail_37858d8f",
-  base$72 = "HorizontalBar_4df27ac3",
+  base$74 = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
   button__right = "HorizontalBar_button__right_e8f0aa2d",
   button__left = "HorizontalBar_button__left_da330e13",
   button$3 = "HorizontalBar_button_cbabd91",
-  fadeIn$83 = "HorizontalBar_fadeIn_e8f0aa2d",
-  fadeInThreeQuarters$83 = "HorizontalBar_fadeInThreeQuarters_e8f0aa2d",
-  fadeInHalf$83 = "HorizontalBar_fadeInHalf_e8f0aa2d",
-  fadeOut$83 = "HorizontalBar_fadeOut_e8f0aa2d",
-  fadeInWithScale$83 = "HorizontalBar_fadeInWithScale_e8f0aa2d",
-  slideUp$83 = "HorizontalBar_slideUp_e8f0aa2d",
-  scale$83 = "HorizontalBar_scale_e8f0aa2d",
-  raysAppearance$83 = "HorizontalBar_raysAppearance_e8f0aa2d",
-  rotate$83 = "HorizontalBar_rotate_e8f0aa2d",
-  glowAppearance$83 = "HorizontalBar_glowAppearance_e8f0aa2d",
-  highlightAppearance$83 = "HorizontalBar_highlightAppearance_e8f0aa2d",
-  blink$83 = "HorizontalBar_blink_e8f0aa2d",
-  slideUpIn$83 = "HorizontalBar_slideUpIn_e8f0aa2d",
+  fadeIn$86 = "HorizontalBar_fadeIn_e8f0aa2d",
+  fadeInThreeQuarters$86 = "HorizontalBar_fadeInThreeQuarters_e8f0aa2d",
+  fadeInHalf$86 = "HorizontalBar_fadeInHalf_e8f0aa2d",
+  fadeOut$86 = "HorizontalBar_fadeOut_e8f0aa2d",
+  fadeInWithScale$86 = "HorizontalBar_fadeInWithScale_e8f0aa2d",
+  slideUp$86 = "HorizontalBar_slideUp_e8f0aa2d",
+  scale$86 = "HorizontalBar_scale_e8f0aa2d",
+  raysAppearance$86 = "HorizontalBar_raysAppearance_e8f0aa2d",
+  rotate$86 = "HorizontalBar_rotate_e8f0aa2d",
+  glowAppearance$86 = "HorizontalBar_glowAppearance_e8f0aa2d",
+  highlightAppearance$86 = "HorizontalBar_highlightAppearance_e8f0aa2d",
+  blink$86 = "HorizontalBar_blink_e8f0aa2d",
+  slideUpIn$86 = "HorizontalBar_slideUpIn_e8f0aa2d",
   horizontal_bar_module_default = {
     rail: rail$1,
-    base: base$72,
+    base: base$74,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
     button__right: button__right,
     button__left: button__left,
     button: button$3,
-    fadeIn: fadeIn$83,
-    fadeInThreeQuarters: fadeInThreeQuarters$83,
-    fadeInHalf: fadeInHalf$83,
-    fadeOut: fadeOut$83,
-    fadeInWithScale: fadeInWithScale$83,
-    slideUp: slideUp$83,
-    scale: scale$83,
-    raysAppearance: raysAppearance$83,
-    rotate: rotate$83,
+    fadeIn: fadeIn$86,
+    fadeInThreeQuarters: fadeInThreeQuarters$86,
+    fadeInHalf: fadeInHalf$86,
+    fadeOut: fadeOut$86,
+    fadeInWithScale: fadeInWithScale$86,
+    slideUp: slideUp$86,
+    scale: scale$86,
+    raysAppearance: raysAppearance$86,
+    rotate: rotate$86,
     "reverse-rotate": "HorizontalBar_reverse-rotate_e8f0aa2d",
-    glowAppearance: glowAppearance$83,
-    highlightAppearance: highlightAppearance$83,
-    blink: blink$83,
-    slideUpIn: slideUpIn$83,
+    glowAppearance: glowAppearance$86,
+    highlightAppearance: highlightAppearance$86,
+    blink: blink$86,
+    slideUpIn: slideUpIn$86,
   },
   THUMB_TO_RAIL_OFFSET$1 = 5,
   THUMB_STYLES$1 = {
@@ -31734,46 +29587,46 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
       ],
     });
   }),
-  base$71 = "HorizontalScroll_5b201d2b",
+  base$73 = "HorizontalScroll_5b201d2b",
   wrapper$2 = "HorizontalScroll_wrapper_2fb60496",
   wrapper__left = "HorizontalScroll_wrapper__left_adacfff",
   wrapper__right = "HorizontalScroll_wrapper__right_a6825027",
   wrapper__both = "HorizontalScroll_wrapper__both_7917ea88",
   defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
-  fadeIn$82 = "HorizontalScroll_fadeIn_176a4720",
-  fadeInThreeQuarters$82 = "HorizontalScroll_fadeInThreeQuarters_176a4720",
-  fadeInHalf$82 = "HorizontalScroll_fadeInHalf_176a4720",
-  fadeOut$82 = "HorizontalScroll_fadeOut_176a4720",
-  fadeInWithScale$82 = "HorizontalScroll_fadeInWithScale_176a4720",
-  slideUp$82 = "HorizontalScroll_slideUp_176a4720",
-  scale$82 = "HorizontalScroll_scale_176a4720",
-  raysAppearance$82 = "HorizontalScroll_raysAppearance_176a4720",
-  rotate$82 = "HorizontalScroll_rotate_176a4720",
-  glowAppearance$82 = "HorizontalScroll_glowAppearance_176a4720",
-  highlightAppearance$82 = "HorizontalScroll_highlightAppearance_176a4720",
-  blink$82 = "HorizontalScroll_blink_176a4720",
-  slideUpIn$82 = "HorizontalScroll_slideUpIn_176a4720",
+  fadeIn$85 = "HorizontalScroll_fadeIn_176a4720",
+  fadeInThreeQuarters$85 = "HorizontalScroll_fadeInThreeQuarters_176a4720",
+  fadeInHalf$85 = "HorizontalScroll_fadeInHalf_176a4720",
+  fadeOut$85 = "HorizontalScroll_fadeOut_176a4720",
+  fadeInWithScale$85 = "HorizontalScroll_fadeInWithScale_176a4720",
+  slideUp$85 = "HorizontalScroll_slideUp_176a4720",
+  scale$85 = "HorizontalScroll_scale_176a4720",
+  raysAppearance$85 = "HorizontalScroll_raysAppearance_176a4720",
+  rotate$85 = "HorizontalScroll_rotate_176a4720",
+  glowAppearance$85 = "HorizontalScroll_glowAppearance_176a4720",
+  highlightAppearance$85 = "HorizontalScroll_highlightAppearance_176a4720",
+  blink$85 = "HorizontalScroll_blink_176a4720",
+  slideUpIn$85 = "HorizontalScroll_slideUpIn_176a4720",
   horizontal_scroll_module_default = {
-    base: base$71,
+    base: base$73,
     wrapper: wrapper$2,
     wrapper__left: wrapper__left,
     wrapper__right: wrapper__right,
     wrapper__both: wrapper__both,
     defaultScrollArea: defaultScrollArea,
-    fadeIn: fadeIn$82,
-    fadeInThreeQuarters: fadeInThreeQuarters$82,
-    fadeInHalf: fadeInHalf$82,
-    fadeOut: fadeOut$82,
-    fadeInWithScale: fadeInWithScale$82,
-    slideUp: slideUp$82,
-    scale: scale$82,
-    raysAppearance: raysAppearance$82,
-    rotate: rotate$82,
+    fadeIn: fadeIn$85,
+    fadeInThreeQuarters: fadeInThreeQuarters$85,
+    fadeInHalf: fadeInHalf$85,
+    fadeOut: fadeOut$85,
+    fadeInWithScale: fadeInWithScale$85,
+    slideUp: slideUp$85,
+    scale: scale$85,
+    raysAppearance: raysAppearance$85,
+    rotate: rotate$85,
     "reverse-rotate": "HorizontalScroll_reverse-rotate_176a4720",
-    glowAppearance: glowAppearance$82,
-    highlightAppearance: highlightAppearance$82,
-    blink: blink$82,
-    slideUpIn: slideUpIn$82,
+    glowAppearance: glowAppearance$85,
+    highlightAppearance: highlightAppearance$85,
+    blink: blink$85,
+    slideUpIn: slideUpIn$85,
   },
   DefaultScroll$1 = ({
     children: e,
@@ -31980,49 +29833,49 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$70 = "VerticalBar_7187fa00",
+  base$72 = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
   button__bottom = "VerticalBar_button__bottom_6880f123",
   button__top = "VerticalBar_button__top_b8383775",
   button$2 = "VerticalBar_button_7b0e4aca",
-  fadeIn$81 = "VerticalBar_fadeIn_84418917",
-  fadeInThreeQuarters$81 = "VerticalBar_fadeInThreeQuarters_84418917",
-  fadeInHalf$81 = "VerticalBar_fadeInHalf_84418917",
-  fadeOut$81 = "VerticalBar_fadeOut_84418917",
-  fadeInWithScale$81 = "VerticalBar_fadeInWithScale_84418917",
-  slideUp$81 = "VerticalBar_slideUp_84418917",
-  scale$81 = "VerticalBar_scale_84418917",
-  raysAppearance$81 = "VerticalBar_raysAppearance_84418917",
-  rotate$81 = "VerticalBar_rotate_84418917",
-  glowAppearance$81 = "VerticalBar_glowAppearance_84418917",
-  highlightAppearance$81 = "VerticalBar_highlightAppearance_84418917",
-  blink$81 = "VerticalBar_blink_84418917",
-  slideUpIn$81 = "VerticalBar_slideUpIn_84418917",
+  fadeIn$84 = "VerticalBar_fadeIn_84418917",
+  fadeInThreeQuarters$84 = "VerticalBar_fadeInThreeQuarters_84418917",
+  fadeInHalf$84 = "VerticalBar_fadeInHalf_84418917",
+  fadeOut$84 = "VerticalBar_fadeOut_84418917",
+  fadeInWithScale$84 = "VerticalBar_fadeInWithScale_84418917",
+  slideUp$84 = "VerticalBar_slideUp_84418917",
+  scale$84 = "VerticalBar_scale_84418917",
+  raysAppearance$84 = "VerticalBar_raysAppearance_84418917",
+  rotate$84 = "VerticalBar_rotate_84418917",
+  glowAppearance$84 = "VerticalBar_glowAppearance_84418917",
+  highlightAppearance$84 = "VerticalBar_highlightAppearance_84418917",
+  blink$84 = "VerticalBar_blink_84418917",
+  slideUpIn$84 = "VerticalBar_slideUpIn_84418917",
   vertical_bar_module_default = {
     rail: rail,
-    base: base$70,
+    base: base$72,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
     button__bottom: button__bottom,
     button__top: button__top,
     button: button$2,
-    fadeIn: fadeIn$81,
-    fadeInThreeQuarters: fadeInThreeQuarters$81,
-    fadeInHalf: fadeInHalf$81,
-    fadeOut: fadeOut$81,
-    fadeInWithScale: fadeInWithScale$81,
-    slideUp: slideUp$81,
-    scale: scale$81,
-    raysAppearance: raysAppearance$81,
-    rotate: rotate$81,
+    fadeIn: fadeIn$84,
+    fadeInThreeQuarters: fadeInThreeQuarters$84,
+    fadeInHalf: fadeInHalf$84,
+    fadeOut: fadeOut$84,
+    fadeInWithScale: fadeInWithScale$84,
+    slideUp: slideUp$84,
+    scale: scale$84,
+    raysAppearance: raysAppearance$84,
+    rotate: rotate$84,
     "reverse-rotate": "VerticalBar_reverse-rotate_84418917",
-    glowAppearance: glowAppearance$81,
-    highlightAppearance: highlightAppearance$81,
-    blink: blink$81,
-    slideUpIn: slideUpIn$81,
+    glowAppearance: glowAppearance$84,
+    highlightAppearance: highlightAppearance$84,
+    blink: blink$84,
+    slideUpIn: slideUpIn$84,
   },
   THUMB_TO_RAIL_OFFSET = 5,
   THUMB_STYLES = {
@@ -32152,19 +30005,19 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   defaultScroll = "VerticalScroll_defaultScroll_c69fa70e",
   bar = "VerticalScroll_bar_c5afe570",
   area = "VerticalScroll_area_a3c0086a",
-  fadeIn$80 = "VerticalScroll_fadeIn_29606297",
-  fadeInThreeQuarters$80 = "VerticalScroll_fadeInThreeQuarters_29606297",
-  fadeInHalf$80 = "VerticalScroll_fadeInHalf_29606297",
-  fadeOut$80 = "VerticalScroll_fadeOut_29606297",
-  fadeInWithScale$80 = "VerticalScroll_fadeInWithScale_29606297",
-  slideUp$80 = "VerticalScroll_slideUp_29606297",
-  scale$80 = "VerticalScroll_scale_29606297",
-  raysAppearance$80 = "VerticalScroll_raysAppearance_29606297",
-  rotate$80 = "VerticalScroll_rotate_29606297",
-  glowAppearance$80 = "VerticalScroll_glowAppearance_29606297",
-  highlightAppearance$80 = "VerticalScroll_highlightAppearance_29606297",
-  blink$80 = "VerticalScroll_blink_29606297",
-  slideUpIn$80 = "VerticalScroll_slideUpIn_29606297",
+  fadeIn$83 = "VerticalScroll_fadeIn_29606297",
+  fadeInThreeQuarters$83 = "VerticalScroll_fadeInThreeQuarters_29606297",
+  fadeInHalf$83 = "VerticalScroll_fadeInHalf_29606297",
+  fadeOut$83 = "VerticalScroll_fadeOut_29606297",
+  fadeInWithScale$83 = "VerticalScroll_fadeInWithScale_29606297",
+  slideUp$83 = "VerticalScroll_slideUp_29606297",
+  scale$83 = "VerticalScroll_scale_29606297",
+  raysAppearance$83 = "VerticalScroll_raysAppearance_29606297",
+  rotate$83 = "VerticalScroll_rotate_29606297",
+  glowAppearance$83 = "VerticalScroll_glowAppearance_29606297",
+  highlightAppearance$83 = "VerticalScroll_highlightAppearance_29606297",
+  blink$83 = "VerticalScroll_blink_29606297",
+  slideUpIn$83 = "VerticalScroll_slideUpIn_29606297",
   vertical_scroll_module_default = {
     content: content$12,
     content__top: content__top,
@@ -32173,20 +30026,20 @@ var DEFAULT_VERTICAL_API_CONFIG = {
     defaultScroll: defaultScroll,
     bar: bar,
     area: area,
-    fadeIn: fadeIn$80,
-    fadeInThreeQuarters: fadeInThreeQuarters$80,
-    fadeInHalf: fadeInHalf$80,
-    fadeOut: fadeOut$80,
-    fadeInWithScale: fadeInWithScale$80,
-    slideUp: slideUp$80,
-    scale: scale$80,
-    raysAppearance: raysAppearance$80,
-    rotate: rotate$80,
+    fadeIn: fadeIn$83,
+    fadeInThreeQuarters: fadeInThreeQuarters$83,
+    fadeInHalf: fadeInHalf$83,
+    fadeOut: fadeOut$83,
+    fadeInWithScale: fadeInWithScale$83,
+    slideUp: slideUp$83,
+    scale: scale$83,
+    raysAppearance: raysAppearance$83,
+    rotate: rotate$83,
     "reverse-rotate": "VerticalScroll_reverse-rotate_29606297",
-    glowAppearance: glowAppearance$80,
-    highlightAppearance: highlightAppearance$80,
-    blink: blink$80,
-    slideUpIn: slideUpIn$80,
+    glowAppearance: glowAppearance$83,
+    highlightAppearance: highlightAppearance$83,
+    blink: blink$83,
+    slideUpIn: slideUpIn$83,
   },
   DefaultScroll = ({
     children: e,
@@ -32426,7 +30279,7 @@ function useInputInstance({ value: e, size: t, type: n, state: r, disabled: a })
   );
 }
 var disabledOverlay$2 = "Input_disabledOverlay_3e980046",
-  icon$11 = "Input_icon_ed3c6a4a",
+  icon$12 = "Input_icon_ed3c6a4a",
   clearButton = "Input_clearButton_d26b0bd5",
   decoration = "Input_decoration_b561de7a",
   decoration__focused = "Input_decoration__focused_494bd5d6",
@@ -32459,22 +30312,22 @@ var disabledOverlay$2 = "Input_disabledOverlay_3e980046",
   clearButton__largeSize = "Input_clearButton__largeSize_240e111e",
   clearButton__visible = "Input_clearButton__visible_8d3756eb",
   clearButton__upscale = "Input_clearButton__upscale_494bd5d6",
-  fadeIn$79 = "Input_fadeIn_494bd5d6",
-  fadeInThreeQuarters$79 = "Input_fadeInThreeQuarters_494bd5d6",
-  fadeInHalf$79 = "Input_fadeInHalf_494bd5d6",
-  fadeOut$79 = "Input_fadeOut_494bd5d6",
-  fadeInWithScale$79 = "Input_fadeInWithScale_494bd5d6",
-  slideUp$79 = "Input_slideUp_494bd5d6",
-  scale$79 = "Input_scale_494bd5d6",
-  raysAppearance$79 = "Input_raysAppearance_494bd5d6",
-  rotate$79 = "Input_rotate_494bd5d6",
-  glowAppearance$79 = "Input_glowAppearance_494bd5d6",
-  highlightAppearance$79 = "Input_highlightAppearance_494bd5d6",
-  blink$79 = "Input_blink_494bd5d6",
-  slideUpIn$79 = "Input_slideUpIn_494bd5d6",
+  fadeIn$82 = "Input_fadeIn_494bd5d6",
+  fadeInThreeQuarters$82 = "Input_fadeInThreeQuarters_494bd5d6",
+  fadeInHalf$82 = "Input_fadeInHalf_494bd5d6",
+  fadeOut$82 = "Input_fadeOut_494bd5d6",
+  fadeInWithScale$82 = "Input_fadeInWithScale_494bd5d6",
+  slideUp$82 = "Input_slideUp_494bd5d6",
+  scale$82 = "Input_scale_494bd5d6",
+  raysAppearance$82 = "Input_raysAppearance_494bd5d6",
+  rotate$82 = "Input_rotate_494bd5d6",
+  glowAppearance$82 = "Input_glowAppearance_494bd5d6",
+  highlightAppearance$82 = "Input_highlightAppearance_494bd5d6",
+  blink$82 = "Input_blink_494bd5d6",
+  slideUpIn$82 = "Input_slideUpIn_494bd5d6",
   input_module_default = {
     disabledOverlay: disabledOverlay$2,
-    icon: icon$11,
+    icon: icon$12,
     clearButton: clearButton,
     decoration: decoration,
     decoration__focused: decoration__focused,
@@ -32507,20 +30360,20 @@ var disabledOverlay$2 = "Input_disabledOverlay_3e980046",
     clearButton__largeSize: clearButton__largeSize,
     clearButton__visible: clearButton__visible,
     clearButton__upscale: clearButton__upscale,
-    fadeIn: fadeIn$79,
-    fadeInThreeQuarters: fadeInThreeQuarters$79,
-    fadeInHalf: fadeInHalf$79,
-    fadeOut: fadeOut$79,
-    fadeInWithScale: fadeInWithScale$79,
-    slideUp: slideUp$79,
-    scale: scale$79,
-    raysAppearance: raysAppearance$79,
-    rotate: rotate$79,
+    fadeIn: fadeIn$82,
+    fadeInThreeQuarters: fadeInThreeQuarters$82,
+    fadeInHalf: fadeInHalf$82,
+    fadeOut: fadeOut$82,
+    fadeInWithScale: fadeInWithScale$82,
+    slideUp: slideUp$82,
+    scale: scale$82,
+    raysAppearance: raysAppearance$82,
+    rotate: rotate$82,
     "reverse-rotate": "Input_reverse-rotate_494bd5d6",
-    glowAppearance: glowAppearance$79,
-    highlightAppearance: highlightAppearance$79,
-    blink: blink$79,
-    slideUpIn: slideUpIn$79,
+    glowAppearance: glowAppearance$82,
+    highlightAppearance: highlightAppearance$82,
+    blink: blink$82,
+    slideUpIn: slideUpIn$82,
   },
   soundPlayEventTarget$1 = "Input:ClearButton",
   ClearButton = (0, import_react.forwardRef)(function ({ className: e, children: t, ...n }, r) {
@@ -32768,7 +30621,7 @@ var Input = (0, import_react.forwardRef)(function (
   (Input.ClearButton = ClearButton));
 var toggleThemes = { primary: "primary", custom: "custom" },
   toggleSizes = { extraSmall: "extraSmall", small: "small", medium: "medium" },
-  base$69 = "Toggle_cdf77db0",
+  base$71 = "Toggle_cdf77db0",
   base__fullSizeContent = "Toggle_base__fullSizeContent_1b52d9ec",
   base__activated = "Toggle_base__activated_d584e080",
   base__disabled$8 = "Toggle_base__disabled_b564a69b",
@@ -32777,21 +30630,21 @@ var toggleThemes = { primary: "primary", custom: "custom" },
   bulb = "Toggle_bulb_fe6d0fba",
   overlay$4 = "Toggle_overlay_e2999686",
   content$11 = "Toggle_content_17eff4d2",
-  fadeIn$78 = "Toggle_fadeIn_d584e080",
-  fadeInThreeQuarters$78 = "Toggle_fadeInThreeQuarters_d584e080",
-  fadeInHalf$78 = "Toggle_fadeInHalf_d584e080",
-  fadeOut$78 = "Toggle_fadeOut_d584e080",
-  fadeInWithScale$78 = "Toggle_fadeInWithScale_d584e080",
-  slideUp$78 = "Toggle_slideUp_d584e080",
-  scale$78 = "Toggle_scale_d584e080",
-  raysAppearance$78 = "Toggle_raysAppearance_d584e080",
-  rotate$78 = "Toggle_rotate_d584e080",
-  glowAppearance$78 = "Toggle_glowAppearance_d584e080",
-  highlightAppearance$78 = "Toggle_highlightAppearance_d584e080",
-  blink$78 = "Toggle_blink_d584e080",
-  slideUpIn$78 = "Toggle_slideUpIn_d584e080",
+  fadeIn$81 = "Toggle_fadeIn_d584e080",
+  fadeInThreeQuarters$81 = "Toggle_fadeInThreeQuarters_d584e080",
+  fadeInHalf$81 = "Toggle_fadeInHalf_d584e080",
+  fadeOut$81 = "Toggle_fadeOut_d584e080",
+  fadeInWithScale$81 = "Toggle_fadeInWithScale_d584e080",
+  slideUp$81 = "Toggle_slideUp_d584e080",
+  scale$81 = "Toggle_scale_d584e080",
+  raysAppearance$81 = "Toggle_raysAppearance_d584e080",
+  rotate$81 = "Toggle_rotate_d584e080",
+  glowAppearance$81 = "Toggle_glowAppearance_d584e080",
+  highlightAppearance$81 = "Toggle_highlightAppearance_d584e080",
+  blink$81 = "Toggle_blink_d584e080",
+  slideUpIn$81 = "Toggle_slideUpIn_d584e080",
   toggle_module_default = {
-    base: base$69,
+    base: base$71,
     "base__size-small": "Toggle_base__size-small_b76142a1",
     "base__size-medium": "Toggle_base__size-medium_a0d408f5",
     base__fullSizeContent: base__fullSizeContent,
@@ -32803,20 +30656,20 @@ var toggleThemes = { primary: "primary", custom: "custom" },
     bulb: bulb,
     overlay: overlay$4,
     content: content$11,
-    fadeIn: fadeIn$78,
-    fadeInThreeQuarters: fadeInThreeQuarters$78,
-    fadeInHalf: fadeInHalf$78,
-    fadeOut: fadeOut$78,
-    fadeInWithScale: fadeInWithScale$78,
-    slideUp: slideUp$78,
-    scale: scale$78,
-    raysAppearance: raysAppearance$78,
-    rotate: rotate$78,
+    fadeIn: fadeIn$81,
+    fadeInThreeQuarters: fadeInThreeQuarters$81,
+    fadeInHalf: fadeInHalf$81,
+    fadeOut: fadeOut$81,
+    fadeInWithScale: fadeInWithScale$81,
+    slideUp: slideUp$81,
+    scale: scale$81,
+    raysAppearance: raysAppearance$81,
+    rotate: rotate$81,
     "reverse-rotate": "Toggle_reverse-rotate_d584e080",
-    glowAppearance: glowAppearance$78,
-    highlightAppearance: highlightAppearance$78,
-    blink: blink$78,
-    slideUpIn: slideUpIn$78,
+    glowAppearance: glowAppearance$81,
+    highlightAppearance: highlightAppearance$81,
+    blink: blink$81,
+    slideUpIn: slideUpIn$81,
   },
   Base$30 = defineStyledComponent("Toggle", toggle_module_default.base, {
     variants: {
@@ -32887,36 +30740,36 @@ var toggleThemes = { primary: "primary", custom: "custom" },
     });
   });
 ((Toggle.themes = toggleThemes), (Toggle.sizes = toggleSizes));
-var base$68 = "VehicleLevel_3c938122",
-  fadeIn$77 = "VehicleLevel_fadeIn_b3bd7071",
-  fadeInThreeQuarters$77 = "VehicleLevel_fadeInThreeQuarters_b3bd7071",
-  fadeInHalf$77 = "VehicleLevel_fadeInHalf_b3bd7071",
-  fadeOut$77 = "VehicleLevel_fadeOut_b3bd7071",
-  fadeInWithScale$77 = "VehicleLevel_fadeInWithScale_b3bd7071",
-  slideUp$77 = "VehicleLevel_slideUp_b3bd7071",
-  scale$77 = "VehicleLevel_scale_b3bd7071",
-  raysAppearance$77 = "VehicleLevel_raysAppearance_b3bd7071",
-  rotate$77 = "VehicleLevel_rotate_b3bd7071",
-  glowAppearance$77 = "VehicleLevel_glowAppearance_b3bd7071",
-  highlightAppearance$77 = "VehicleLevel_highlightAppearance_b3bd7071",
-  blink$77 = "VehicleLevel_blink_b3bd7071",
-  slideUpIn$77 = "VehicleLevel_slideUpIn_b3bd7071",
+var base$70 = "VehicleLevel_3c938122",
+  fadeIn$80 = "VehicleLevel_fadeIn_b3bd7071",
+  fadeInThreeQuarters$80 = "VehicleLevel_fadeInThreeQuarters_b3bd7071",
+  fadeInHalf$80 = "VehicleLevel_fadeInHalf_b3bd7071",
+  fadeOut$80 = "VehicleLevel_fadeOut_b3bd7071",
+  fadeInWithScale$80 = "VehicleLevel_fadeInWithScale_b3bd7071",
+  slideUp$80 = "VehicleLevel_slideUp_b3bd7071",
+  scale$80 = "VehicleLevel_scale_b3bd7071",
+  raysAppearance$80 = "VehicleLevel_raysAppearance_b3bd7071",
+  rotate$80 = "VehicleLevel_rotate_b3bd7071",
+  glowAppearance$80 = "VehicleLevel_glowAppearance_b3bd7071",
+  highlightAppearance$80 = "VehicleLevel_highlightAppearance_b3bd7071",
+  blink$80 = "VehicleLevel_blink_b3bd7071",
+  slideUpIn$80 = "VehicleLevel_slideUpIn_b3bd7071",
   vehicle_level_module_default = {
-    base: base$68,
-    fadeIn: fadeIn$77,
-    fadeInThreeQuarters: fadeInThreeQuarters$77,
-    fadeInHalf: fadeInHalf$77,
-    fadeOut: fadeOut$77,
-    fadeInWithScale: fadeInWithScale$77,
-    slideUp: slideUp$77,
-    scale: scale$77,
-    raysAppearance: raysAppearance$77,
-    rotate: rotate$77,
+    base: base$70,
+    fadeIn: fadeIn$80,
+    fadeInThreeQuarters: fadeInThreeQuarters$80,
+    fadeInHalf: fadeInHalf$80,
+    fadeOut: fadeOut$80,
+    fadeInWithScale: fadeInWithScale$80,
+    slideUp: slideUp$80,
+    scale: scale$80,
+    raysAppearance: raysAppearance$80,
+    rotate: rotate$80,
     "reverse-rotate": "VehicleLevel_reverse-rotate_b3bd7071",
-    glowAppearance: glowAppearance$77,
-    highlightAppearance: highlightAppearance$77,
-    blink: blink$77,
-    slideUpIn: slideUpIn$77,
+    glowAppearance: glowAppearance$80,
+    highlightAppearance: highlightAppearance$80,
+    blink: blink$80,
+    slideUpIn: slideUpIn$80,
   },
   numberTypes = { arabic: "arabic", roman: "roman" };
 function getLevelType(e, t) {
@@ -32933,44 +30786,44 @@ var VehicleLevel = (0, import_react.forwardRef)(function ({ value: e, numberType
   });
 });
 VehicleLevel.numberTypes = numberTypes;
-var base$67 = "VehicleRole_e70537d3",
+var base$69 = "VehicleRole_e70537d3",
   icon__x16x16$1 = "VehicleRole_icon__x16x16_f444f190",
   icon__x24x24$1 = "VehicleRole_icon__x24x24_cc02d077",
   icon__x32x32$1 = "VehicleRole_icon__x32x32_2180a099",
   icon__x48x48$1 = "VehicleRole_icon__x48x48_2a01e86c",
-  fadeIn$76 = "VehicleRole_fadeIn_741b56a9",
-  fadeInThreeQuarters$76 = "VehicleRole_fadeInThreeQuarters_741b56a9",
-  fadeInHalf$76 = "VehicleRole_fadeInHalf_741b56a9",
-  fadeOut$76 = "VehicleRole_fadeOut_741b56a9",
-  fadeInWithScale$76 = "VehicleRole_fadeInWithScale_741b56a9",
-  slideUp$76 = "VehicleRole_slideUp_741b56a9",
-  scale$76 = "VehicleRole_scale_741b56a9",
-  raysAppearance$76 = "VehicleRole_raysAppearance_741b56a9",
-  rotate$76 = "VehicleRole_rotate_741b56a9",
-  glowAppearance$76 = "VehicleRole_glowAppearance_741b56a9",
-  highlightAppearance$76 = "VehicleRole_highlightAppearance_741b56a9",
-  blink$76 = "VehicleRole_blink_741b56a9",
-  slideUpIn$76 = "VehicleRole_slideUpIn_741b56a9",
+  fadeIn$79 = "VehicleRole_fadeIn_741b56a9",
+  fadeInThreeQuarters$79 = "VehicleRole_fadeInThreeQuarters_741b56a9",
+  fadeInHalf$79 = "VehicleRole_fadeInHalf_741b56a9",
+  fadeOut$79 = "VehicleRole_fadeOut_741b56a9",
+  fadeInWithScale$79 = "VehicleRole_fadeInWithScale_741b56a9",
+  slideUp$79 = "VehicleRole_slideUp_741b56a9",
+  scale$79 = "VehicleRole_scale_741b56a9",
+  raysAppearance$79 = "VehicleRole_raysAppearance_741b56a9",
+  rotate$79 = "VehicleRole_rotate_741b56a9",
+  glowAppearance$79 = "VehicleRole_glowAppearance_741b56a9",
+  highlightAppearance$79 = "VehicleRole_highlightAppearance_741b56a9",
+  blink$79 = "VehicleRole_blink_741b56a9",
+  slideUpIn$79 = "VehicleRole_slideUpIn_741b56a9",
   vehicle_role_module_default = {
-    base: base$67,
+    base: base$69,
     icon__x16x16: icon__x16x16$1,
     icon__x24x24: icon__x24x24$1,
     icon__x32x32: icon__x32x32$1,
     icon__x48x48: icon__x48x48$1,
-    fadeIn: fadeIn$76,
-    fadeInThreeQuarters: fadeInThreeQuarters$76,
-    fadeInHalf: fadeInHalf$76,
-    fadeOut: fadeOut$76,
-    fadeInWithScale: fadeInWithScale$76,
-    slideUp: slideUp$76,
-    scale: scale$76,
-    raysAppearance: raysAppearance$76,
-    rotate: rotate$76,
+    fadeIn: fadeIn$79,
+    fadeInThreeQuarters: fadeInThreeQuarters$79,
+    fadeInHalf: fadeInHalf$79,
+    fadeOut: fadeOut$79,
+    fadeInWithScale: fadeInWithScale$79,
+    slideUp: slideUp$79,
+    scale: scale$79,
+    raysAppearance: raysAppearance$79,
+    rotate: rotate$79,
     "reverse-rotate": "VehicleRole_reverse-rotate_741b56a9",
-    glowAppearance: glowAppearance$76,
-    highlightAppearance: highlightAppearance$76,
-    blink: blink$76,
-    slideUpIn: slideUpIn$76,
+    glowAppearance: glowAppearance$79,
+    highlightAppearance: highlightAppearance$79,
+    blink: blink$79,
+    slideUpIn: slideUpIn$79,
   },
   sizes$17 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
   images$2 = resources.resolve("images"),
@@ -32999,7 +30852,7 @@ var sizes$16 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "
     [types$5.SPG]: "spg",
     [types$5["AT-SPG"]]: "tank_destroyer",
   },
-  base$66 = "VehicleType_30b4aab0",
+  base$68 = "VehicleType_30b4aab0",
   base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
   base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
   base__x64x64 = "VehicleType_base__x64x64_bb9b890",
@@ -33008,22 +30861,22 @@ var sizes$16 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "
   base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
   base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
   base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
-  icon$10 = "VehicleType_icon_b15d2628",
-  fadeIn$75 = "VehicleType_fadeIn_4e0d61e4",
-  fadeInThreeQuarters$75 = "VehicleType_fadeInThreeQuarters_4e0d61e4",
-  fadeInHalf$75 = "VehicleType_fadeInHalf_4e0d61e4",
-  fadeOut$75 = "VehicleType_fadeOut_4e0d61e4",
-  fadeInWithScale$75 = "VehicleType_fadeInWithScale_4e0d61e4",
-  slideUp$75 = "VehicleType_slideUp_4e0d61e4",
-  scale$75 = "VehicleType_scale_4e0d61e4",
-  raysAppearance$75 = "VehicleType_raysAppearance_4e0d61e4",
-  rotate$75 = "VehicleType_rotate_4e0d61e4",
-  glowAppearance$75 = "VehicleType_glowAppearance_4e0d61e4",
-  highlightAppearance$75 = "VehicleType_highlightAppearance_4e0d61e4",
-  blink$75 = "VehicleType_blink_4e0d61e4",
-  slideUpIn$75 = "VehicleType_slideUpIn_4e0d61e4",
+  icon$11 = "VehicleType_icon_b15d2628",
+  fadeIn$78 = "VehicleType_fadeIn_4e0d61e4",
+  fadeInThreeQuarters$78 = "VehicleType_fadeInThreeQuarters_4e0d61e4",
+  fadeInHalf$78 = "VehicleType_fadeInHalf_4e0d61e4",
+  fadeOut$78 = "VehicleType_fadeOut_4e0d61e4",
+  fadeInWithScale$78 = "VehicleType_fadeInWithScale_4e0d61e4",
+  slideUp$78 = "VehicleType_slideUp_4e0d61e4",
+  scale$78 = "VehicleType_scale_4e0d61e4",
+  raysAppearance$78 = "VehicleType_raysAppearance_4e0d61e4",
+  rotate$78 = "VehicleType_rotate_4e0d61e4",
+  glowAppearance$78 = "VehicleType_glowAppearance_4e0d61e4",
+  highlightAppearance$78 = "VehicleType_highlightAppearance_4e0d61e4",
+  blink$78 = "VehicleType_blink_4e0d61e4",
+  slideUpIn$78 = "VehicleType_slideUpIn_4e0d61e4",
   vehicle_type_module_default = {
-    base: base$66,
+    base: base$68,
     base__x24x24: base__x24x24,
     base__x48x48: base__x48x48,
     base__x64x64: base__x64x64,
@@ -33032,21 +30885,21 @@ var sizes$16 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "
     base__premium__x48x48: base__premium__x48x48,
     base__premium__x64x64: base__premium__x64x64,
     base__premium__x96x96: base__premium__x96x96,
-    icon: icon$10,
-    fadeIn: fadeIn$75,
-    fadeInThreeQuarters: fadeInThreeQuarters$75,
-    fadeInHalf: fadeInHalf$75,
-    fadeOut: fadeOut$75,
-    fadeInWithScale: fadeInWithScale$75,
-    slideUp: slideUp$75,
-    scale: scale$75,
-    raysAppearance: raysAppearance$75,
-    rotate: rotate$75,
+    icon: icon$11,
+    fadeIn: fadeIn$78,
+    fadeInThreeQuarters: fadeInThreeQuarters$78,
+    fadeInHalf: fadeInHalf$78,
+    fadeOut: fadeOut$78,
+    fadeInWithScale: fadeInWithScale$78,
+    slideUp: slideUp$78,
+    scale: scale$78,
+    raysAppearance: raysAppearance$78,
+    rotate: rotate$78,
     "reverse-rotate": "VehicleType_reverse-rotate_4e0d61e4",
-    glowAppearance: glowAppearance$75,
-    highlightAppearance: highlightAppearance$75,
-    blink: blink$75,
-    slideUpIn: slideUpIn$75,
+    glowAppearance: glowAppearance$78,
+    highlightAppearance: highlightAppearance$78,
+    blink: blink$78,
+    slideUpIn: slideUpIn$78,
   },
   VehicleType = (0, import_react.forwardRef)(function (
     { type: e, size: t = sizes$16.x48x48, premium: n = !1, fit: r = "contain", ...a },
@@ -33096,36 +30949,36 @@ function createOptionalDLProvider(e, t) {
   };
 }
 ((VehicleType.types = types$5), (VehicleType.sizes = sizes$16));
-var base$65 = "AnimatedDetails_c70d3863",
-  fadeIn$74 = "AnimatedDetails_fadeIn_6ce3d8ac",
-  fadeInThreeQuarters$74 = "AnimatedDetails_fadeInThreeQuarters_6ce3d8ac",
-  fadeInHalf$74 = "AnimatedDetails_fadeInHalf_6ce3d8ac",
-  fadeOut$74 = "AnimatedDetails_fadeOut_6ce3d8ac",
-  fadeInWithScale$74 = "AnimatedDetails_fadeInWithScale_6ce3d8ac",
-  slideUp$74 = "AnimatedDetails_slideUp_6ce3d8ac",
-  scale$74 = "AnimatedDetails_scale_6ce3d8ac",
-  raysAppearance$74 = "AnimatedDetails_raysAppearance_6ce3d8ac",
-  rotate$74 = "AnimatedDetails_rotate_6ce3d8ac",
-  glowAppearance$74 = "AnimatedDetails_glowAppearance_6ce3d8ac",
-  highlightAppearance$74 = "AnimatedDetails_highlightAppearance_6ce3d8ac",
-  blink$74 = "AnimatedDetails_blink_6ce3d8ac",
-  slideUpIn$74 = "AnimatedDetails_slideUpIn_6ce3d8ac",
+var base$67 = "AnimatedDetails_c70d3863",
+  fadeIn$77 = "AnimatedDetails_fadeIn_6ce3d8ac",
+  fadeInThreeQuarters$77 = "AnimatedDetails_fadeInThreeQuarters_6ce3d8ac",
+  fadeInHalf$77 = "AnimatedDetails_fadeInHalf_6ce3d8ac",
+  fadeOut$77 = "AnimatedDetails_fadeOut_6ce3d8ac",
+  fadeInWithScale$77 = "AnimatedDetails_fadeInWithScale_6ce3d8ac",
+  slideUp$77 = "AnimatedDetails_slideUp_6ce3d8ac",
+  scale$77 = "AnimatedDetails_scale_6ce3d8ac",
+  raysAppearance$77 = "AnimatedDetails_raysAppearance_6ce3d8ac",
+  rotate$77 = "AnimatedDetails_rotate_6ce3d8ac",
+  glowAppearance$77 = "AnimatedDetails_glowAppearance_6ce3d8ac",
+  highlightAppearance$77 = "AnimatedDetails_highlightAppearance_6ce3d8ac",
+  blink$77 = "AnimatedDetails_blink_6ce3d8ac",
+  slideUpIn$77 = "AnimatedDetails_slideUpIn_6ce3d8ac",
   animated_details_module_default = {
-    base: base$65,
-    fadeIn: fadeIn$74,
-    fadeInThreeQuarters: fadeInThreeQuarters$74,
-    fadeInHalf: fadeInHalf$74,
-    fadeOut: fadeOut$74,
-    fadeInWithScale: fadeInWithScale$74,
-    slideUp: slideUp$74,
-    scale: scale$74,
-    raysAppearance: raysAppearance$74,
-    rotate: rotate$74,
+    base: base$67,
+    fadeIn: fadeIn$77,
+    fadeInThreeQuarters: fadeInThreeQuarters$77,
+    fadeInHalf: fadeInHalf$77,
+    fadeOut: fadeOut$77,
+    fadeInWithScale: fadeInWithScale$77,
+    slideUp: slideUp$77,
+    scale: scale$77,
+    raysAppearance: raysAppearance$77,
+    rotate: rotate$77,
     "reverse-rotate": "AnimatedDetails_reverse-rotate_6ce3d8ac",
-    glowAppearance: glowAppearance$74,
-    highlightAppearance: highlightAppearance$74,
-    blink: blink$74,
-    slideUpIn: slideUpIn$74,
+    glowAppearance: glowAppearance$77,
+    highlightAppearance: highlightAppearance$77,
+    blink: blink$77,
+    slideUpIn: slideUpIn$77,
   },
   AnimatedDetails = (0, import_react.forwardRef)(function (
     { opened: e, children: t, className: n, animationSettings: r = {}, ...a },
@@ -33178,36 +31031,36 @@ function useAccordion() {
 }
 var arrow$1 = "Arrow_f1570a91",
   arrow__opened = "Arrow_arrow__opened_134476cd",
-  fadeIn$73 = "Arrow_fadeIn_4d7c987d",
-  fadeInThreeQuarters$73 = "Arrow_fadeInThreeQuarters_4d7c987d",
-  fadeInHalf$73 = "Arrow_fadeInHalf_4d7c987d",
-  fadeOut$73 = "Arrow_fadeOut_4d7c987d",
-  fadeInWithScale$73 = "Arrow_fadeInWithScale_4d7c987d",
-  slideUp$73 = "Arrow_slideUp_4d7c987d",
-  scale$73 = "Arrow_scale_4d7c987d",
-  raysAppearance$73 = "Arrow_raysAppearance_4d7c987d",
-  rotate$73 = "Arrow_rotate_4d7c987d",
-  glowAppearance$73 = "Arrow_glowAppearance_4d7c987d",
-  highlightAppearance$73 = "Arrow_highlightAppearance_4d7c987d",
-  blink$73 = "Arrow_blink_4d7c987d",
-  slideUpIn$73 = "Arrow_slideUpIn_4d7c987d",
+  fadeIn$76 = "Arrow_fadeIn_4d7c987d",
+  fadeInThreeQuarters$76 = "Arrow_fadeInThreeQuarters_4d7c987d",
+  fadeInHalf$76 = "Arrow_fadeInHalf_4d7c987d",
+  fadeOut$76 = "Arrow_fadeOut_4d7c987d",
+  fadeInWithScale$76 = "Arrow_fadeInWithScale_4d7c987d",
+  slideUp$76 = "Arrow_slideUp_4d7c987d",
+  scale$76 = "Arrow_scale_4d7c987d",
+  raysAppearance$76 = "Arrow_raysAppearance_4d7c987d",
+  rotate$76 = "Arrow_rotate_4d7c987d",
+  glowAppearance$76 = "Arrow_glowAppearance_4d7c987d",
+  highlightAppearance$76 = "Arrow_highlightAppearance_4d7c987d",
+  blink$76 = "Arrow_blink_4d7c987d",
+  slideUpIn$76 = "Arrow_slideUpIn_4d7c987d",
   arrow_module_default = {
     arrow: arrow$1,
     arrow__opened: arrow__opened,
-    fadeIn: fadeIn$73,
-    fadeInThreeQuarters: fadeInThreeQuarters$73,
-    fadeInHalf: fadeInHalf$73,
-    fadeOut: fadeOut$73,
-    fadeInWithScale: fadeInWithScale$73,
-    slideUp: slideUp$73,
-    scale: scale$73,
-    raysAppearance: raysAppearance$73,
-    rotate: rotate$73,
+    fadeIn: fadeIn$76,
+    fadeInThreeQuarters: fadeInThreeQuarters$76,
+    fadeInHalf: fadeInHalf$76,
+    fadeOut: fadeOut$76,
+    fadeInWithScale: fadeInWithScale$76,
+    slideUp: slideUp$76,
+    scale: scale$76,
+    raysAppearance: raysAppearance$76,
+    rotate: rotate$76,
     "reverse-rotate": "Arrow_reverse-rotate_4d7c987d",
-    glowAppearance: glowAppearance$73,
-    highlightAppearance: highlightAppearance$73,
-    blink: blink$73,
-    slideUpIn: slideUpIn$73,
+    glowAppearance: glowAppearance$76,
+    highlightAppearance: highlightAppearance$76,
+    blink: blink$76,
+    slideUpIn: slideUpIn$76,
   },
   images$1 = resources.resolve("images"),
   Arrow = (0, import_react.forwardRef)(function (e, t) {
@@ -33228,36 +31081,36 @@ var arrow$1 = "Arrow_f1570a91",
   }),
   content$10 = "Details_content_a5a56462",
   content__opened = "Details_content__opened_cc21f43f",
-  fadeIn$72 = "Details_fadeIn_43c92208",
-  fadeInThreeQuarters$72 = "Details_fadeInThreeQuarters_43c92208",
-  fadeInHalf$72 = "Details_fadeInHalf_43c92208",
-  fadeOut$72 = "Details_fadeOut_43c92208",
-  fadeInWithScale$72 = "Details_fadeInWithScale_43c92208",
-  slideUp$72 = "Details_slideUp_43c92208",
-  scale$72 = "Details_scale_43c92208",
-  raysAppearance$72 = "Details_raysAppearance_43c92208",
-  rotate$72 = "Details_rotate_43c92208",
-  glowAppearance$72 = "Details_glowAppearance_43c92208",
-  highlightAppearance$72 = "Details_highlightAppearance_43c92208",
-  blink$72 = "Details_blink_43c92208",
-  slideUpIn$72 = "Details_slideUpIn_43c92208",
+  fadeIn$75 = "Details_fadeIn_43c92208",
+  fadeInThreeQuarters$75 = "Details_fadeInThreeQuarters_43c92208",
+  fadeInHalf$75 = "Details_fadeInHalf_43c92208",
+  fadeOut$75 = "Details_fadeOut_43c92208",
+  fadeInWithScale$75 = "Details_fadeInWithScale_43c92208",
+  slideUp$75 = "Details_slideUp_43c92208",
+  scale$75 = "Details_scale_43c92208",
+  raysAppearance$75 = "Details_raysAppearance_43c92208",
+  rotate$75 = "Details_rotate_43c92208",
+  glowAppearance$75 = "Details_glowAppearance_43c92208",
+  highlightAppearance$75 = "Details_highlightAppearance_43c92208",
+  blink$75 = "Details_blink_43c92208",
+  slideUpIn$75 = "Details_slideUpIn_43c92208",
   details_module_default = {
     content: content$10,
     content__opened: content__opened,
-    fadeIn: fadeIn$72,
-    fadeInThreeQuarters: fadeInThreeQuarters$72,
-    fadeInHalf: fadeInHalf$72,
-    fadeOut: fadeOut$72,
-    fadeInWithScale: fadeInWithScale$72,
-    slideUp: slideUp$72,
-    scale: scale$72,
-    raysAppearance: raysAppearance$72,
-    rotate: rotate$72,
+    fadeIn: fadeIn$75,
+    fadeInThreeQuarters: fadeInThreeQuarters$75,
+    fadeInHalf: fadeInHalf$75,
+    fadeOut: fadeOut$75,
+    fadeInWithScale: fadeInWithScale$75,
+    slideUp: slideUp$75,
+    scale: scale$75,
+    raysAppearance: raysAppearance$75,
+    rotate: rotate$75,
     "reverse-rotate": "Details_reverse-rotate_43c92208",
-    glowAppearance: glowAppearance$72,
-    highlightAppearance: highlightAppearance$72,
-    blink: blink$72,
-    slideUpIn: slideUpIn$72,
+    glowAppearance: glowAppearance$75,
+    highlightAppearance: highlightAppearance$75,
+    blink: blink$75,
+    slideUpIn: slideUpIn$75,
   },
   Details = (0, import_react.forwardRef)(function (e, t) {
     const { opened: n } = useAccordion();
@@ -33275,38 +31128,38 @@ var arrow$1 = "Arrow_f1570a91",
   background$8 = "Summary_background_48ba2ab7",
   background__scrollable = "Summary_background__scrollable_a41402ee",
   header$1 = "Summary_header_789c868e",
-  fadeIn$71 = "Summary_fadeIn_e35a9ef7",
-  fadeInThreeQuarters$71 = "Summary_fadeInThreeQuarters_e35a9ef7",
-  fadeInHalf$71 = "Summary_fadeInHalf_e35a9ef7",
-  fadeOut$71 = "Summary_fadeOut_e35a9ef7",
-  fadeInWithScale$71 = "Summary_fadeInWithScale_e35a9ef7",
-  slideUp$71 = "Summary_slideUp_e35a9ef7",
-  scale$71 = "Summary_scale_e35a9ef7",
-  raysAppearance$71 = "Summary_raysAppearance_e35a9ef7",
-  rotate$71 = "Summary_rotate_e35a9ef7",
-  glowAppearance$71 = "Summary_glowAppearance_e35a9ef7",
-  highlightAppearance$71 = "Summary_highlightAppearance_e35a9ef7",
-  blink$71 = "Summary_blink_e35a9ef7",
-  slideUpIn$71 = "Summary_slideUpIn_e35a9ef7",
+  fadeIn$74 = "Summary_fadeIn_e35a9ef7",
+  fadeInThreeQuarters$74 = "Summary_fadeInThreeQuarters_e35a9ef7",
+  fadeInHalf$74 = "Summary_fadeInHalf_e35a9ef7",
+  fadeOut$74 = "Summary_fadeOut_e35a9ef7",
+  fadeInWithScale$74 = "Summary_fadeInWithScale_e35a9ef7",
+  slideUp$74 = "Summary_slideUp_e35a9ef7",
+  scale$74 = "Summary_scale_e35a9ef7",
+  raysAppearance$74 = "Summary_raysAppearance_e35a9ef7",
+  rotate$74 = "Summary_rotate_e35a9ef7",
+  glowAppearance$74 = "Summary_glowAppearance_e35a9ef7",
+  highlightAppearance$74 = "Summary_highlightAppearance_e35a9ef7",
+  blink$74 = "Summary_blink_e35a9ef7",
+  slideUpIn$74 = "Summary_slideUpIn_e35a9ef7",
   summary_module_default = {
     headerWrapper: headerWrapper,
     background: background$8,
     background__scrollable: background__scrollable,
     header: header$1,
-    fadeIn: fadeIn$71,
-    fadeInThreeQuarters: fadeInThreeQuarters$71,
-    fadeInHalf: fadeInHalf$71,
-    fadeOut: fadeOut$71,
-    fadeInWithScale: fadeInWithScale$71,
-    slideUp: slideUp$71,
-    scale: scale$71,
-    raysAppearance: raysAppearance$71,
-    rotate: rotate$71,
+    fadeIn: fadeIn$74,
+    fadeInThreeQuarters: fadeInThreeQuarters$74,
+    fadeInHalf: fadeInHalf$74,
+    fadeOut: fadeOut$74,
+    fadeInWithScale: fadeInWithScale$74,
+    slideUp: slideUp$74,
+    scale: scale$74,
+    raysAppearance: raysAppearance$74,
+    rotate: rotate$74,
     "reverse-rotate": "Summary_reverse-rotate_e35a9ef7",
-    glowAppearance: glowAppearance$71,
-    highlightAppearance: highlightAppearance$71,
-    blink: blink$71,
-    slideUpIn: slideUpIn$71,
+    glowAppearance: glowAppearance$74,
+    highlightAppearance: highlightAppearance$74,
+    blink: blink$74,
+    slideUpIn: slideUpIn$74,
   },
   Summary = (0, import_react.forwardRef)(function (
     { children: e, scrollable: t, background: n, ...r },
@@ -33331,36 +31184,36 @@ var arrow$1 = "Arrow_f1570a91",
       ],
     });
   }),
-  base$64 = "Accordion_2b56632",
-  fadeIn$70 = "Accordion_fadeIn_398361b3",
-  fadeInThreeQuarters$70 = "Accordion_fadeInThreeQuarters_398361b3",
-  fadeInHalf$70 = "Accordion_fadeInHalf_398361b3",
-  fadeOut$70 = "Accordion_fadeOut_398361b3",
-  fadeInWithScale$70 = "Accordion_fadeInWithScale_398361b3",
-  slideUp$70 = "Accordion_slideUp_398361b3",
-  scale$70 = "Accordion_scale_398361b3",
-  raysAppearance$70 = "Accordion_raysAppearance_398361b3",
-  rotate$70 = "Accordion_rotate_398361b3",
-  glowAppearance$70 = "Accordion_glowAppearance_398361b3",
-  highlightAppearance$70 = "Accordion_highlightAppearance_398361b3",
-  blink$70 = "Accordion_blink_398361b3",
-  slideUpIn$70 = "Accordion_slideUpIn_398361b3",
+  base$66 = "Accordion_2b56632",
+  fadeIn$73 = "Accordion_fadeIn_398361b3",
+  fadeInThreeQuarters$73 = "Accordion_fadeInThreeQuarters_398361b3",
+  fadeInHalf$73 = "Accordion_fadeInHalf_398361b3",
+  fadeOut$73 = "Accordion_fadeOut_398361b3",
+  fadeInWithScale$73 = "Accordion_fadeInWithScale_398361b3",
+  slideUp$73 = "Accordion_slideUp_398361b3",
+  scale$73 = "Accordion_scale_398361b3",
+  raysAppearance$73 = "Accordion_raysAppearance_398361b3",
+  rotate$73 = "Accordion_rotate_398361b3",
+  glowAppearance$73 = "Accordion_glowAppearance_398361b3",
+  highlightAppearance$73 = "Accordion_highlightAppearance_398361b3",
+  blink$73 = "Accordion_blink_398361b3",
+  slideUpIn$73 = "Accordion_slideUpIn_398361b3",
   accordion_module_default = {
-    base: base$64,
-    fadeIn: fadeIn$70,
-    fadeInThreeQuarters: fadeInThreeQuarters$70,
-    fadeInHalf: fadeInHalf$70,
-    fadeOut: fadeOut$70,
-    fadeInWithScale: fadeInWithScale$70,
-    slideUp: slideUp$70,
-    scale: scale$70,
-    raysAppearance: raysAppearance$70,
-    rotate: rotate$70,
+    base: base$66,
+    fadeIn: fadeIn$73,
+    fadeInThreeQuarters: fadeInThreeQuarters$73,
+    fadeInHalf: fadeInHalf$73,
+    fadeOut: fadeOut$73,
+    fadeInWithScale: fadeInWithScale$73,
+    slideUp: slideUp$73,
+    scale: scale$73,
+    raysAppearance: raysAppearance$73,
+    rotate: rotate$73,
     "reverse-rotate": "Accordion_reverse-rotate_398361b3",
-    glowAppearance: glowAppearance$70,
-    highlightAppearance: highlightAppearance$70,
-    blink: blink$70,
-    slideUpIn: slideUpIn$70,
+    glowAppearance: glowAppearance$73,
+    highlightAppearance: highlightAppearance$73,
+    blink: blink$73,
+    slideUpIn: slideUpIn$73,
   },
   Accordion = (0, import_react.forwardRef)(function ({ opened: e, ...t }, n) {
     return (0, import_jsx_runtime.jsx)(Context$3.Provider, {
@@ -34897,7 +32750,7 @@ var BailSignal = class extends Error {
           getDefaultProps(e, (e, t) => (/^on/.test(t) ? resolveProp(e, n) : e)),
         ),
         mergeActiveFn(this, e, "onProps"),
-        sendEvent(this, "onProps", e, this));
+        sendEvent$1(this, "onProps", e, this));
       const a = this._prepareNode(e);
       if (Object.isFrozen(this))
         throw Error(
@@ -34914,7 +32767,7 @@ var BailSignal = class extends Error {
             isPaused(this) ||
               (setPausedBit(this, !0),
               flushCalls(o.pauseQueue),
-              sendEvent(
+              sendEvent$1(
                 this,
                 "onPause",
                 getFinishedResult(this, checkFinished(this, this.animation.to)),
@@ -34926,7 +32779,7 @@ var BailSignal = class extends Error {
               (setPausedBit(this, !1),
               isAnimating(this) && this._resume(),
               flushCalls(o.resumeQueue),
-              sendEvent(
+              sendEvent$1(
                 this,
                 "onResume",
                 getFinishedResult(this, checkFinished(this, this.animation.to)),
@@ -35060,7 +32913,7 @@ var BailSignal = class extends Error {
       const e = this.animation;
       e.changed ||
         ((e.changed = !0),
-        sendEvent(this, "onStart", getFinishedResult(this, checkFinished(this, e.to)), this));
+        sendEvent$1(this, "onStart", getFinishedResult(this, checkFinished(this, e.to)), this));
     }
     _onChange(e, t) {
       (t || (this._onStart(), callProp(this.animation.onChange, e, this)),
@@ -35089,7 +32942,7 @@ var BailSignal = class extends Error {
           ? getCancelledResult(this.get())
           : getFinishedResult(this.get(), checkFinished(this, e ?? n.to));
         (flushCalls(this._pendingCalls, r),
-          n.changed && ((n.changed = !1), sendEvent(this, "onRest", r, this)));
+          n.changed && ((n.changed = !1), sendEvent$1(this, "onRest", r, this)));
       }
     }
   };
@@ -35136,7 +32989,7 @@ var ACTIVE_EVENTS = ["onStart", "onRest", "onChange", "onPause", "onResume"];
 function mergeActiveFn(e, t, n) {
   e.animation[n] = t[n] !== getDefaultProp(t, n) ? resolveProp(t[n], e.key) : void 0;
 }
-function sendEvent(e, t, ...n) {
+function sendEvent$1(e, t, ...n) {
   (e.animation[t]?.(...n), e.defaultProps[t]?.(...n));
 }
 var BATCHED_EVENTS = ["onStart", "onChange", "onRest"],
@@ -36056,9 +33909,9 @@ var animated = createHost(primitives, {
   directions$1 = { left: "left", right: "right" },
   lengths = { short: "short", medium: "medium", long: "long" },
   iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
-  icon$9 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
-  base$63 = "VehiclePrestigeLevel_a750cce",
-  icon$8 = "VehiclePrestigeLevel_icon_ef024cc3",
+  icon$10 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
+  base$65 = "VehiclePrestigeLevel_a750cce",
+  icon$9 = "VehiclePrestigeLevel_icon_ef024cc3",
   base__left$1 = "VehiclePrestigeLevel_base__left_4426b46c",
   level = "VehiclePrestigeLevel_level_10f410ba",
   level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
@@ -36070,22 +33923,22 @@ var animated = createHost(primitives, {
   base__silver = "VehiclePrestigeLevel_base__silver_4426b46c",
   base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
   base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
-  fadeIn$69 = "VehiclePrestigeLevel_fadeIn_4426b46c",
-  fadeInThreeQuarters$69 = "VehiclePrestigeLevel_fadeInThreeQuarters_4426b46c",
-  fadeInHalf$69 = "VehiclePrestigeLevel_fadeInHalf_4426b46c",
-  fadeOut$69 = "VehiclePrestigeLevel_fadeOut_4426b46c",
-  fadeInWithScale$69 = "VehiclePrestigeLevel_fadeInWithScale_4426b46c",
-  slideUp$69 = "VehiclePrestigeLevel_slideUp_4426b46c",
-  scale$69 = "VehiclePrestigeLevel_scale_4426b46c",
-  raysAppearance$69 = "VehiclePrestigeLevel_raysAppearance_4426b46c",
-  rotate$69 = "VehiclePrestigeLevel_rotate_4426b46c",
-  glowAppearance$69 = "VehiclePrestigeLevel_glowAppearance_4426b46c",
-  highlightAppearance$69 = "VehiclePrestigeLevel_highlightAppearance_4426b46c",
-  blink$69 = "VehiclePrestigeLevel_blink_4426b46c",
-  slideUpIn$69 = "VehiclePrestigeLevel_slideUpIn_4426b46c",
+  fadeIn$72 = "VehiclePrestigeLevel_fadeIn_4426b46c",
+  fadeInThreeQuarters$72 = "VehiclePrestigeLevel_fadeInThreeQuarters_4426b46c",
+  fadeInHalf$72 = "VehiclePrestigeLevel_fadeInHalf_4426b46c",
+  fadeOut$72 = "VehiclePrestigeLevel_fadeOut_4426b46c",
+  fadeInWithScale$72 = "VehiclePrestigeLevel_fadeInWithScale_4426b46c",
+  slideUp$72 = "VehiclePrestigeLevel_slideUp_4426b46c",
+  scale$72 = "VehiclePrestigeLevel_scale_4426b46c",
+  raysAppearance$72 = "VehiclePrestigeLevel_raysAppearance_4426b46c",
+  rotate$72 = "VehiclePrestigeLevel_rotate_4426b46c",
+  glowAppearance$72 = "VehiclePrestigeLevel_glowAppearance_4426b46c",
+  highlightAppearance$72 = "VehiclePrestigeLevel_highlightAppearance_4426b46c",
+  blink$72 = "VehiclePrestigeLevel_blink_4426b46c",
+  slideUpIn$72 = "VehiclePrestigeLevel_slideUpIn_4426b46c",
   vehicle_prestige_level_module_default = {
-    base: base$63,
-    icon: icon$8,
+    base: base$65,
+    icon: icon$9,
     base__left: base__left$1,
     level: level,
     level__short: level__short,
@@ -36097,20 +33950,20 @@ var animated = createHost(primitives, {
     base__silver: base__silver,
     base__gold: base__gold$1,
     base__enamel: base__enamel,
-    fadeIn: fadeIn$69,
-    fadeInThreeQuarters: fadeInThreeQuarters$69,
-    fadeInHalf: fadeInHalf$69,
-    fadeOut: fadeOut$69,
-    fadeInWithScale: fadeInWithScale$69,
-    slideUp: slideUp$69,
-    scale: scale$69,
-    raysAppearance: raysAppearance$69,
-    rotate: rotate$69,
+    fadeIn: fadeIn$72,
+    fadeInThreeQuarters: fadeInThreeQuarters$72,
+    fadeInHalf: fadeInHalf$72,
+    fadeOut: fadeOut$72,
+    fadeInWithScale: fadeInWithScale$72,
+    slideUp: slideUp$72,
+    scale: scale$72,
+    raysAppearance: raysAppearance$72,
+    rotate: rotate$72,
     "reverse-rotate": "VehiclePrestigeLevel_reverse-rotate_4426b46c",
-    glowAppearance: glowAppearance$69,
-    highlightAppearance: highlightAppearance$69,
-    blink: blink$69,
-    slideUpIn: slideUpIn$69,
+    glowAppearance: glowAppearance$72,
+    highlightAppearance: highlightAppearance$72,
+    blink: blink$72,
+    slideUpIn: slideUpIn$72,
   };
 function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: a, ...o }) {
   return e < 1 || "undefined" === n
@@ -36126,7 +33979,7 @@ function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: 
         ),
         children: [
           (0, import_jsx_runtime.jsx)(Image$1, {
-            path: `prestige.tab.${icon$9(e, n, t)}`,
+            path: `prestige.tab.${icon$10(e, n, t)}`,
             className: clsx(vehicle_prestige_level_module_default.icon, a?.icon),
           }),
           "prestige" !== n &&
@@ -36142,40 +33995,40 @@ function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: 
       });
 }
 PrestigeLevel.direction = directions$1;
-var base$62 = "VehicleInfo_1732f1f0",
+var base$64 = "VehicleInfo_1732f1f0",
   name$1 = "VehicleInfo_name_3989ca04",
   name__premium = "VehicleInfo_name__premium_258b3b93",
-  fadeIn$68 = "VehicleInfo_fadeIn_9c9aeed",
-  fadeInThreeQuarters$68 = "VehicleInfo_fadeInThreeQuarters_9c9aeed",
-  fadeInHalf$68 = "VehicleInfo_fadeInHalf_9c9aeed",
-  fadeOut$68 = "VehicleInfo_fadeOut_9c9aeed",
-  fadeInWithScale$68 = "VehicleInfo_fadeInWithScale_9c9aeed",
-  slideUp$68 = "VehicleInfo_slideUp_9c9aeed",
-  scale$68 = "VehicleInfo_scale_9c9aeed",
-  raysAppearance$68 = "VehicleInfo_raysAppearance_9c9aeed",
-  rotate$68 = "VehicleInfo_rotate_9c9aeed",
-  glowAppearance$68 = "VehicleInfo_glowAppearance_9c9aeed",
-  highlightAppearance$68 = "VehicleInfo_highlightAppearance_9c9aeed",
-  blink$68 = "VehicleInfo_blink_9c9aeed",
-  slideUpIn$68 = "VehicleInfo_slideUpIn_9c9aeed",
+  fadeIn$71 = "VehicleInfo_fadeIn_9c9aeed",
+  fadeInThreeQuarters$71 = "VehicleInfo_fadeInThreeQuarters_9c9aeed",
+  fadeInHalf$71 = "VehicleInfo_fadeInHalf_9c9aeed",
+  fadeOut$71 = "VehicleInfo_fadeOut_9c9aeed",
+  fadeInWithScale$71 = "VehicleInfo_fadeInWithScale_9c9aeed",
+  slideUp$71 = "VehicleInfo_slideUp_9c9aeed",
+  scale$71 = "VehicleInfo_scale_9c9aeed",
+  raysAppearance$71 = "VehicleInfo_raysAppearance_9c9aeed",
+  rotate$71 = "VehicleInfo_rotate_9c9aeed",
+  glowAppearance$71 = "VehicleInfo_glowAppearance_9c9aeed",
+  highlightAppearance$71 = "VehicleInfo_highlightAppearance_9c9aeed",
+  blink$71 = "VehicleInfo_blink_9c9aeed",
+  slideUpIn$71 = "VehicleInfo_slideUpIn_9c9aeed",
   vehicle_info_module_default = {
-    base: base$62,
+    base: base$64,
     name: name$1,
     name__premium: name__premium,
-    fadeIn: fadeIn$68,
-    fadeInThreeQuarters: fadeInThreeQuarters$68,
-    fadeInHalf: fadeInHalf$68,
-    fadeOut: fadeOut$68,
-    fadeInWithScale: fadeInWithScale$68,
-    slideUp: slideUp$68,
-    scale: scale$68,
-    raysAppearance: raysAppearance$68,
-    rotate: rotate$68,
+    fadeIn: fadeIn$71,
+    fadeInThreeQuarters: fadeInThreeQuarters$71,
+    fadeInHalf: fadeInHalf$71,
+    fadeOut: fadeOut$71,
+    fadeInWithScale: fadeInWithScale$71,
+    slideUp: slideUp$71,
+    scale: scale$71,
+    raysAppearance: raysAppearance$71,
+    rotate: rotate$71,
     "reverse-rotate": "VehicleInfo_reverse-rotate_9c9aeed",
-    glowAppearance: glowAppearance$68,
-    highlightAppearance: highlightAppearance$68,
-    blink: blink$68,
-    slideUpIn: slideUpIn$68,
+    glowAppearance: glowAppearance$71,
+    highlightAppearance: highlightAppearance$71,
+    blink: blink$71,
+    slideUpIn: slideUpIn$71,
   },
   VehicleName = defineStyledComponent("VehicleName", vehicle_info_module_default.name, {
     variants: { premium: { true: vehicle_info_module_default.name__premium } },
@@ -36209,13 +34062,48 @@ function createTooltipComponent(e, t) {
   (VehicleInfo.Type = VehicleType),
   (VehicleInfo.Name = VehicleName),
   (VehicleInfo.Role = VehicleRole));
-var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
+var Tooltip$2 = createTooltipComponent(useTooltip, "Tooltip"),
   SimpleTooltip$1 = createTooltipComponent(useSimpleTooltip, "SimpleTooltip"),
   ParamTooltip = createTooltipComponent(useParamTooltipApadter, "ParamsTooltip"),
   WulfTooltip = createTooltipComponent(useWulfTooltipAdapter, "WulfTooltip"),
   SpecialTooltip = createTooltipComponent(useSpecialTooltipAdapter, "SpecialTooltip"),
-  BackportTooltip = createTooltipComponent(useBackdropTooltip, "BackportTooltip"),
-  BackdropTooltip = BackportTooltip,
+  BackportTooltip$1 = createTooltipComponent(useBackdropTooltip, "BackportTooltip"),
+  BackdropTooltip = BackportTooltip$1,
+  require_classnames = __commonJSMin((e, t) => {
+    !(function () {
+      var e = {}.hasOwnProperty;
+      function n() {
+        for (var e = "", t = 0; t < arguments.length; t++) {
+          var n = arguments[t];
+          n && (e = a(e, r(n)));
+        }
+        return e;
+      }
+      function r(t) {
+        if ("string" == typeof t || "number" == typeof t) return t;
+        if ("object" != typeof t) return "";
+        if (Array.isArray(t)) return n.apply(null, t);
+        if (
+          t.toString !== Object.prototype.toString &&
+          !t.toString.toString().includes("[native code]")
+        )
+          return t.toString();
+        var r = "";
+        for (var o in t) e.call(t, o) && t[o] && (r = a(r, o));
+        return r;
+      }
+      function a(e, t) {
+        return t ? (e ? e + " " + t : e + t) : e;
+      }
+      void 0 !== t && t.exports
+        ? ((n.default = n), (t.exports = n))
+        : "function" == typeof define && "object" == typeof define.amd && define.amd
+          ? define("classnames", [], function () {
+              return n;
+            })
+          : (window.classNames = n);
+    })();
+  }),
   types$3 = {
     tankXP: "tankXP",
     freeXP: "freeXP",
@@ -36268,7 +34156,7 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
     [sizes$15.extraLarge]: { width: "140rem", height: "84rem" },
     [sizes$15.xxl]: { width: "140rem", height: "84rem" },
   },
-  base$61 = "Currency_72d4be39",
+  base$63 = "Currency_72d4be39",
   base__reverse = "Currency_base__reverse_f12e61b0",
   base__notEnough = "Currency_base__notEnough_9a7842f",
   base__credits = "Currency_base__credits_7b9ae721",
@@ -36276,21 +34164,21 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
   base__freeXP = "Currency_base__freeXP_d29d5a57",
   base__crystal = "Currency_base__crystal_f830cb47",
   base__tankXP = "Currency_base__tankXP_1707c68b",
-  fadeIn$67 = "Currency_fadeIn_271064ec",
-  fadeInThreeQuarters$67 = "Currency_fadeInThreeQuarters_271064ec",
-  fadeInHalf$67 = "Currency_fadeInHalf_271064ec",
-  fadeOut$67 = "Currency_fadeOut_271064ec",
-  fadeInWithScale$67 = "Currency_fadeInWithScale_271064ec",
-  slideUp$67 = "Currency_slideUp_271064ec",
-  scale$67 = "Currency_scale_271064ec",
-  raysAppearance$67 = "Currency_raysAppearance_271064ec",
-  rotate$67 = "Currency_rotate_271064ec",
-  glowAppearance$67 = "Currency_glowAppearance_271064ec",
-  highlightAppearance$67 = "Currency_highlightAppearance_271064ec",
-  blink$67 = "Currency_blink_271064ec",
-  slideUpIn$67 = "Currency_slideUpIn_271064ec",
+  fadeIn$70 = "Currency_fadeIn_271064ec",
+  fadeInThreeQuarters$70 = "Currency_fadeInThreeQuarters_271064ec",
+  fadeInHalf$70 = "Currency_fadeInHalf_271064ec",
+  fadeOut$70 = "Currency_fadeOut_271064ec",
+  fadeInWithScale$70 = "Currency_fadeInWithScale_271064ec",
+  slideUp$70 = "Currency_slideUp_271064ec",
+  scale$70 = "Currency_scale_271064ec",
+  raysAppearance$70 = "Currency_raysAppearance_271064ec",
+  rotate$70 = "Currency_rotate_271064ec",
+  glowAppearance$70 = "Currency_glowAppearance_271064ec",
+  highlightAppearance$70 = "Currency_highlightAppearance_271064ec",
+  blink$70 = "Currency_blink_271064ec",
+  slideUpIn$70 = "Currency_slideUpIn_271064ec",
   currency_module_default = {
-    base: base$61,
+    base: base$63,
     base__reverse: base__reverse,
     base__notEnough: base__notEnough,
     base__credits: base__credits,
@@ -36298,31 +34186,31 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
     base__freeXP: base__freeXP,
     base__crystal: base__crystal,
     base__tankXP: base__tankXP,
-    fadeIn: fadeIn$67,
-    fadeInThreeQuarters: fadeInThreeQuarters$67,
-    fadeInHalf: fadeInHalf$67,
-    fadeOut: fadeOut$67,
-    fadeInWithScale: fadeInWithScale$67,
-    slideUp: slideUp$67,
-    scale: scale$67,
-    raysAppearance: raysAppearance$67,
-    rotate: rotate$67,
+    fadeIn: fadeIn$70,
+    fadeInThreeQuarters: fadeInThreeQuarters$70,
+    fadeInHalf: fadeInHalf$70,
+    fadeOut: fadeOut$70,
+    fadeInWithScale: fadeInWithScale$70,
+    slideUp: slideUp$70,
+    scale: scale$70,
+    raysAppearance: raysAppearance$70,
+    rotate: rotate$70,
     "reverse-rotate": "Currency_reverse-rotate_271064ec",
-    glowAppearance: glowAppearance$67,
-    highlightAppearance: highlightAppearance$67,
-    blink: blink$67,
-    slideUpIn: slideUpIn$67,
+    glowAppearance: glowAppearance$70,
+    highlightAppearance: highlightAppearance$70,
+    blink: blink$70,
+    slideUpIn: slideUpIn$70,
   },
-  intl$2 = resources.resolve("intl"),
+  intl$3 = resources.resolve("intl"),
   Base$29 = defineStyledComponent("Currency", currency_module_default.base, {
     variants: { reverse: { true: currency_module_default.base__reverse } },
   });
 function formatCurrencyValue(e, t) {
   const n = t === types$3.gold ? "gold" : "integral";
   return Array.isArray(e)
-    ? e.map((e) => ("number" == typeof e ? intl$2.formatNumber(n, e) : e))
+    ? e.map((e) => ("number" == typeof e ? intl$3.formatNumber(n, e) : e))
     : "number" == typeof e
-      ? intl$2.formatNumber(n, e)
+      ? intl$3.formatNumber(n, e)
       : e;
 }
 function Currency({
@@ -36361,52 +34249,52 @@ function Currency({
   });
 }
 ((Currency.sizes = sizes$15), (Currency.types = types$3));
-var base$60 = "WithDiscount_b8b3aa7f",
+var base$62 = "WithDiscount_b8b3aa7f",
   discount = "WithDiscount_discount_f7ce1b97",
-  icon$7 = "WithDiscount_icon_a6c57ca8",
+  icon$8 = "WithDiscount_icon_a6c57ca8",
   icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
   icon__small$2 = "WithDiscount_icon__small_60ee455a",
   icon__medium$1 = "WithDiscount_icon__medium_2877fd99",
   icon__large = "WithDiscount_icon__large_6c06eeb7",
   icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
   icon__xxl = "WithDiscount_icon__xxl_4080bb18",
-  fadeIn$66 = "WithDiscount_fadeIn_60ee455a",
-  fadeInThreeQuarters$66 = "WithDiscount_fadeInThreeQuarters_60ee455a",
-  fadeInHalf$66 = "WithDiscount_fadeInHalf_60ee455a",
-  fadeOut$66 = "WithDiscount_fadeOut_60ee455a",
-  fadeInWithScale$66 = "WithDiscount_fadeInWithScale_60ee455a",
-  slideUp$66 = "WithDiscount_slideUp_60ee455a",
-  scale$66 = "WithDiscount_scale_60ee455a",
-  raysAppearance$66 = "WithDiscount_raysAppearance_60ee455a",
-  rotate$66 = "WithDiscount_rotate_60ee455a",
-  glowAppearance$66 = "WithDiscount_glowAppearance_60ee455a",
-  highlightAppearance$66 = "WithDiscount_highlightAppearance_60ee455a",
-  blink$66 = "WithDiscount_blink_60ee455a",
-  slideUpIn$66 = "WithDiscount_slideUpIn_60ee455a",
+  fadeIn$69 = "WithDiscount_fadeIn_60ee455a",
+  fadeInThreeQuarters$69 = "WithDiscount_fadeInThreeQuarters_60ee455a",
+  fadeInHalf$69 = "WithDiscount_fadeInHalf_60ee455a",
+  fadeOut$69 = "WithDiscount_fadeOut_60ee455a",
+  fadeInWithScale$69 = "WithDiscount_fadeInWithScale_60ee455a",
+  slideUp$69 = "WithDiscount_slideUp_60ee455a",
+  scale$69 = "WithDiscount_scale_60ee455a",
+  raysAppearance$69 = "WithDiscount_raysAppearance_60ee455a",
+  rotate$69 = "WithDiscount_rotate_60ee455a",
+  glowAppearance$69 = "WithDiscount_glowAppearance_60ee455a",
+  highlightAppearance$69 = "WithDiscount_highlightAppearance_60ee455a",
+  blink$69 = "WithDiscount_blink_60ee455a",
+  slideUpIn$69 = "WithDiscount_slideUpIn_60ee455a",
   with_discount_module_default = {
-    base: base$60,
+    base: base$62,
     discount: discount,
-    icon: icon$7,
+    icon: icon$8,
     icon__extraSmall: icon__extraSmall,
     icon__small: icon__small$2,
     icon__medium: icon__medium$1,
     icon__large: icon__large,
     icon__extraLarge: icon__extraLarge,
     icon__xxl: icon__xxl,
-    fadeIn: fadeIn$66,
-    fadeInThreeQuarters: fadeInThreeQuarters$66,
-    fadeInHalf: fadeInHalf$66,
-    fadeOut: fadeOut$66,
-    fadeInWithScale: fadeInWithScale$66,
-    slideUp: slideUp$66,
-    scale: scale$66,
-    raysAppearance: raysAppearance$66,
-    rotate: rotate$66,
+    fadeIn: fadeIn$69,
+    fadeInThreeQuarters: fadeInThreeQuarters$69,
+    fadeInHalf: fadeInHalf$69,
+    fadeOut: fadeOut$69,
+    fadeInWithScale: fadeInWithScale$69,
+    slideUp: slideUp$69,
+    scale: scale$69,
+    raysAppearance: raysAppearance$69,
+    rotate: rotate$69,
     "reverse-rotate": "WithDiscount_reverse-rotate_60ee455a",
-    glowAppearance: glowAppearance$66,
-    highlightAppearance: highlightAppearance$66,
-    blink: blink$66,
-    slideUpIn: slideUpIn$66,
+    glowAppearance: glowAppearance$69,
+    highlightAppearance: highlightAppearance$69,
+    blink: blink$69,
+    slideUpIn: slideUpIn$69,
   };
 function WithDiscount({
   children: e,
@@ -36475,7 +34363,7 @@ function useCardsWrapperContextOptional() {
   return (0, import_react.useContext)(CardsWrapperContext);
 }
 var CardsWrapperContextProvider = CardsWrapperContext.Provider,
-  base$59 = "Content_8eaaf71a",
+  base$61 = "Content_8eaaf71a",
   content$9 = "Content_ab8563af",
   disabledOverlay$1 = "Content_disabledOverlay_af87c441",
   base__multiple = "Content_base__multiple_da09528a",
@@ -36484,21 +34372,21 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   base__selectedHover$1 = "Content_base__selectedHover_da09528a",
   base__selected$1 = "Content_base__selected_da09528a",
   multipleCorner = "Content_multipleCorner_151c26ee",
-  fadeIn$65 = "Content_fadeIn_da09528a",
-  fadeInThreeQuarters$65 = "Content_fadeInThreeQuarters_da09528a",
-  fadeInHalf$65 = "Content_fadeInHalf_da09528a",
-  fadeOut$65 = "Content_fadeOut_da09528a",
-  fadeInWithScale$65 = "Content_fadeInWithScale_da09528a",
-  slideUp$65 = "Content_slideUp_da09528a",
-  scale$65 = "Content_scale_da09528a",
-  raysAppearance$65 = "Content_raysAppearance_da09528a",
-  rotate$65 = "Content_rotate_da09528a",
-  glowAppearance$65 = "Content_glowAppearance_da09528a",
-  highlightAppearance$65 = "Content_highlightAppearance_da09528a",
-  blink$65 = "Content_blink_da09528a",
-  slideUpIn$65 = "Content_slideUpIn_da09528a",
+  fadeIn$68 = "Content_fadeIn_da09528a",
+  fadeInThreeQuarters$68 = "Content_fadeInThreeQuarters_da09528a",
+  fadeInHalf$68 = "Content_fadeInHalf_da09528a",
+  fadeOut$68 = "Content_fadeOut_da09528a",
+  fadeInWithScale$68 = "Content_fadeInWithScale_da09528a",
+  slideUp$68 = "Content_slideUp_da09528a",
+  scale$68 = "Content_scale_da09528a",
+  raysAppearance$68 = "Content_raysAppearance_da09528a",
+  rotate$68 = "Content_rotate_da09528a",
+  glowAppearance$68 = "Content_glowAppearance_da09528a",
+  highlightAppearance$68 = "Content_highlightAppearance_da09528a",
+  blink$68 = "Content_blink_da09528a",
+  slideUpIn$68 = "Content_slideUpIn_da09528a",
   content_module_default = {
-    base: base$59,
+    base: base$61,
     content: content$9,
     disabledOverlay: disabledOverlay$1,
     base__multiple: base__multiple,
@@ -36507,20 +34395,20 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
     base__selectedHover: base__selectedHover$1,
     base__selected: base__selected$1,
     multipleCorner: multipleCorner,
-    fadeIn: fadeIn$65,
-    fadeInThreeQuarters: fadeInThreeQuarters$65,
-    fadeInHalf: fadeInHalf$65,
-    fadeOut: fadeOut$65,
-    fadeInWithScale: fadeInWithScale$65,
-    slideUp: slideUp$65,
-    scale: scale$65,
-    raysAppearance: raysAppearance$65,
-    rotate: rotate$65,
+    fadeIn: fadeIn$68,
+    fadeInThreeQuarters: fadeInThreeQuarters$68,
+    fadeInHalf: fadeInHalf$68,
+    fadeOut: fadeOut$68,
+    fadeInWithScale: fadeInWithScale$68,
+    slideUp: slideUp$68,
+    scale: scale$68,
+    raysAppearance: raysAppearance$68,
+    rotate: rotate$68,
     "reverse-rotate": "Content_reverse-rotate_da09528a",
-    glowAppearance: glowAppearance$65,
-    highlightAppearance: highlightAppearance$65,
-    blink: blink$65,
-    slideUpIn: slideUpIn$65,
+    glowAppearance: glowAppearance$68,
+    highlightAppearance: highlightAppearance$68,
+    blink: blink$68,
+    slideUpIn: slideUpIn$68,
   },
   MULTIPLE_CORNER_SIZE = 20,
   Base$28 = defineStyledComponent("Content", content_module_default.base, {
@@ -36575,8 +34463,8 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
       })
     );
   },
-  base$58 = "Status_68bd9bc6",
-  icon$6 = "Status_icon_cef4536",
+  base$60 = "Status_68bd9bc6",
+  icon$7 = "Status_icon_cef4536",
   base__done$1 = "Status_base__done_35b9a31c",
   base__doneSmall = "Status_base__doneSmall_35b9a31c",
   base__alert = "Status_base__alert_35b9a31c",
@@ -36587,22 +34475,22 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   glowInner = "Status_glowInner_f8eb475a",
   blur = "Status_blur_5675b854",
   glowBig = "Status_glowBig_5954041c",
-  fadeIn$64 = "Status_fadeIn_35b9a31c",
-  fadeInThreeQuarters$64 = "Status_fadeInThreeQuarters_35b9a31c",
-  fadeInHalf$64 = "Status_fadeInHalf_35b9a31c",
-  fadeOut$64 = "Status_fadeOut_35b9a31c",
-  fadeInWithScale$64 = "Status_fadeInWithScale_35b9a31c",
-  slideUp$64 = "Status_slideUp_35b9a31c",
-  scale$64 = "Status_scale_35b9a31c",
-  raysAppearance$64 = "Status_raysAppearance_35b9a31c",
-  rotate$64 = "Status_rotate_35b9a31c",
-  glowAppearance$64 = "Status_glowAppearance_35b9a31c",
-  highlightAppearance$64 = "Status_highlightAppearance_35b9a31c",
-  blink$64 = "Status_blink_35b9a31c",
-  slideUpIn$64 = "Status_slideUpIn_35b9a31c",
+  fadeIn$67 = "Status_fadeIn_35b9a31c",
+  fadeInThreeQuarters$67 = "Status_fadeInThreeQuarters_35b9a31c",
+  fadeInHalf$67 = "Status_fadeInHalf_35b9a31c",
+  fadeOut$67 = "Status_fadeOut_35b9a31c",
+  fadeInWithScale$67 = "Status_fadeInWithScale_35b9a31c",
+  slideUp$67 = "Status_slideUp_35b9a31c",
+  scale$67 = "Status_scale_35b9a31c",
+  raysAppearance$67 = "Status_raysAppearance_35b9a31c",
+  rotate$67 = "Status_rotate_35b9a31c",
+  glowAppearance$67 = "Status_glowAppearance_35b9a31c",
+  highlightAppearance$67 = "Status_highlightAppearance_35b9a31c",
+  blink$67 = "Status_blink_35b9a31c",
+  slideUpIn$67 = "Status_slideUpIn_35b9a31c",
   status_module_default = {
-    base: base$58,
-    icon: icon$6,
+    base: base$60,
+    icon: icon$7,
     base__done: base__done$1,
     base__doneSmall: base__doneSmall,
     base__alert: base__alert,
@@ -36613,20 +34501,20 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
     glowInner: glowInner,
     blur: blur,
     glowBig: glowBig,
-    fadeIn: fadeIn$64,
-    fadeInThreeQuarters: fadeInThreeQuarters$64,
-    fadeInHalf: fadeInHalf$64,
-    fadeOut: fadeOut$64,
-    fadeInWithScale: fadeInWithScale$64,
-    slideUp: slideUp$64,
-    scale: scale$64,
-    raysAppearance: raysAppearance$64,
-    rotate: rotate$64,
+    fadeIn: fadeIn$67,
+    fadeInThreeQuarters: fadeInThreeQuarters$67,
+    fadeInHalf: fadeInHalf$67,
+    fadeOut: fadeOut$67,
+    fadeInWithScale: fadeInWithScale$67,
+    slideUp: slideUp$67,
+    scale: scale$67,
+    raysAppearance: raysAppearance$67,
+    rotate: rotate$67,
     "reverse-rotate": "Status_reverse-rotate_35b9a31c",
-    glowAppearance: glowAppearance$64,
-    highlightAppearance: highlightAppearance$64,
-    blink: blink$64,
-    slideUpIn: slideUpIn$64,
+    glowAppearance: glowAppearance$67,
+    highlightAppearance: highlightAppearance$67,
+    blink: blink$67,
+    slideUpIn: slideUpIn$67,
   },
   strings$1 = resources.resolve("strings"),
   Base$27 = defineStyledComponent("Status", status_module_default.base, {
@@ -36682,7 +34570,7 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
       ],
     });
   },
-  base$57 = "Card_f0963ece",
+  base$59 = "Card_f0963ece",
   base__wrapped = "Card_base__wrapped_c6eb8737",
   base__disableMouse = "Card_base__disableMouse_5cd80216",
   base__hover = "Card_base__hover_f4c22d1c",
@@ -36694,21 +34582,21 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   base__activeHover = "Card_base__activeHover_f4c22d1c",
   base__selectedHover = "Card_base__selectedHover_f4c22d1c",
   centerBorder = "Card_centerBorder_8a0f28ae",
-  fadeIn$63 = "Card_fadeIn_f4c22d1c",
-  fadeInThreeQuarters$63 = "Card_fadeInThreeQuarters_f4c22d1c",
-  fadeInHalf$63 = "Card_fadeInHalf_f4c22d1c",
-  fadeOut$63 = "Card_fadeOut_f4c22d1c",
-  fadeInWithScale$63 = "Card_fadeInWithScale_f4c22d1c",
-  slideUp$63 = "Card_slideUp_f4c22d1c",
-  scale$63 = "Card_scale_f4c22d1c",
-  raysAppearance$63 = "Card_raysAppearance_f4c22d1c",
-  rotate$63 = "Card_rotate_f4c22d1c",
-  glowAppearance$63 = "Card_glowAppearance_f4c22d1c",
-  highlightAppearance$63 = "Card_highlightAppearance_f4c22d1c",
-  blink$63 = "Card_blink_f4c22d1c",
-  slideUpIn$63 = "Card_slideUpIn_f4c22d1c",
+  fadeIn$66 = "Card_fadeIn_f4c22d1c",
+  fadeInThreeQuarters$66 = "Card_fadeInThreeQuarters_f4c22d1c",
+  fadeInHalf$66 = "Card_fadeInHalf_f4c22d1c",
+  fadeOut$66 = "Card_fadeOut_f4c22d1c",
+  fadeInWithScale$66 = "Card_fadeInWithScale_f4c22d1c",
+  slideUp$66 = "Card_slideUp_f4c22d1c",
+  scale$66 = "Card_scale_f4c22d1c",
+  raysAppearance$66 = "Card_raysAppearance_f4c22d1c",
+  rotate$66 = "Card_rotate_f4c22d1c",
+  glowAppearance$66 = "Card_glowAppearance_f4c22d1c",
+  highlightAppearance$66 = "Card_highlightAppearance_f4c22d1c",
+  blink$66 = "Card_blink_f4c22d1c",
+  slideUpIn$66 = "Card_slideUpIn_f4c22d1c",
   card_module_default = {
-    base: base$57,
+    base: base$59,
     base__wrapped: base__wrapped,
     base__disableMouse: base__disableMouse,
     base__hover: base__hover,
@@ -36720,20 +34608,20 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
     base__activeHover: base__activeHover,
     base__selectedHover: base__selectedHover,
     centerBorder: centerBorder,
-    fadeIn: fadeIn$63,
-    fadeInThreeQuarters: fadeInThreeQuarters$63,
-    fadeInHalf: fadeInHalf$63,
-    fadeOut: fadeOut$63,
-    fadeInWithScale: fadeInWithScale$63,
-    slideUp: slideUp$63,
-    scale: scale$63,
-    raysAppearance: raysAppearance$63,
-    rotate: rotate$63,
+    fadeIn: fadeIn$66,
+    fadeInThreeQuarters: fadeInThreeQuarters$66,
+    fadeInHalf: fadeInHalf$66,
+    fadeOut: fadeOut$66,
+    fadeInWithScale: fadeInWithScale$66,
+    slideUp: slideUp$66,
+    scale: scale$66,
+    raysAppearance: raysAppearance$66,
+    rotate: rotate$66,
     "reverse-rotate": "Card_reverse-rotate_f4c22d1c",
-    glowAppearance: glowAppearance$63,
-    highlightAppearance: highlightAppearance$63,
-    blink: blink$63,
-    slideUpIn: slideUpIn$63,
+    glowAppearance: glowAppearance$66,
+    highlightAppearance: highlightAppearance$66,
+    blink: blink$66,
+    slideUpIn: slideUpIn$66,
   },
   Base$26 = defineStyledComponent("Card", card_module_default.base, {
     variants: {
@@ -36938,36 +34826,36 @@ var HORIZONTAL = "H",
   },
   lineInner = "LinesBuilder_lineInner_a52dc157",
   lineOuter = "LinesBuilder_lineOuter_c57514b2",
-  fadeIn$62 = "LinesBuilder_fadeIn_a416ba40",
-  fadeInThreeQuarters$62 = "LinesBuilder_fadeInThreeQuarters_a416ba40",
-  fadeInHalf$62 = "LinesBuilder_fadeInHalf_a416ba40",
-  fadeOut$62 = "LinesBuilder_fadeOut_a416ba40",
-  fadeInWithScale$62 = "LinesBuilder_fadeInWithScale_a416ba40",
-  slideUp$62 = "LinesBuilder_slideUp_a416ba40",
-  scale$62 = "LinesBuilder_scale_a416ba40",
-  raysAppearance$62 = "LinesBuilder_raysAppearance_a416ba40",
-  rotate$62 = "LinesBuilder_rotate_a416ba40",
-  glowAppearance$62 = "LinesBuilder_glowAppearance_a416ba40",
-  highlightAppearance$62 = "LinesBuilder_highlightAppearance_a416ba40",
-  blink$62 = "LinesBuilder_blink_a416ba40",
-  slideUpIn$62 = "LinesBuilder_slideUpIn_a416ba40",
+  fadeIn$65 = "LinesBuilder_fadeIn_a416ba40",
+  fadeInThreeQuarters$65 = "LinesBuilder_fadeInThreeQuarters_a416ba40",
+  fadeInHalf$65 = "LinesBuilder_fadeInHalf_a416ba40",
+  fadeOut$65 = "LinesBuilder_fadeOut_a416ba40",
+  fadeInWithScale$65 = "LinesBuilder_fadeInWithScale_a416ba40",
+  slideUp$65 = "LinesBuilder_slideUp_a416ba40",
+  scale$65 = "LinesBuilder_scale_a416ba40",
+  raysAppearance$65 = "LinesBuilder_raysAppearance_a416ba40",
+  rotate$65 = "LinesBuilder_rotate_a416ba40",
+  glowAppearance$65 = "LinesBuilder_glowAppearance_a416ba40",
+  highlightAppearance$65 = "LinesBuilder_highlightAppearance_a416ba40",
+  blink$65 = "LinesBuilder_blink_a416ba40",
+  slideUpIn$65 = "LinesBuilder_slideUpIn_a416ba40",
   lines_builder_module_default = {
     lineInner: lineInner,
     lineOuter: lineOuter,
-    fadeIn: fadeIn$62,
-    fadeInThreeQuarters: fadeInThreeQuarters$62,
-    fadeInHalf: fadeInHalf$62,
-    fadeOut: fadeOut$62,
-    fadeInWithScale: fadeInWithScale$62,
-    slideUp: slideUp$62,
-    scale: scale$62,
-    raysAppearance: raysAppearance$62,
-    rotate: rotate$62,
+    fadeIn: fadeIn$65,
+    fadeInThreeQuarters: fadeInThreeQuarters$65,
+    fadeInHalf: fadeInHalf$65,
+    fadeOut: fadeOut$65,
+    fadeInWithScale: fadeInWithScale$65,
+    slideUp: slideUp$65,
+    scale: scale$65,
+    raysAppearance: raysAppearance$65,
+    rotate: rotate$65,
     "reverse-rotate": "LinesBuilder_reverse-rotate_a416ba40",
-    glowAppearance: glowAppearance$62,
-    highlightAppearance: highlightAppearance$62,
-    blink: blink$62,
-    slideUpIn: slideUpIn$62,
+    glowAppearance: glowAppearance$65,
+    highlightAppearance: highlightAppearance$65,
+    blink: blink$65,
+    slideUpIn: slideUpIn$65,
   };
 function buildLines(e, t, n) {
   const r = [],
@@ -37032,42 +34920,42 @@ var Lines = (0, import_react.memo)(
       );
     },
   ),
-  base$56 = "CardsWrapper_3b6cc4f6",
+  base$58 = "CardsWrapper_3b6cc4f6",
   card = "CardsWrapper_card_c7fc9ee7",
   centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
   outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
-  fadeIn$61 = "CardsWrapper_fadeIn_448219e4",
-  fadeInThreeQuarters$61 = "CardsWrapper_fadeInThreeQuarters_448219e4",
-  fadeInHalf$61 = "CardsWrapper_fadeInHalf_448219e4",
-  fadeOut$61 = "CardsWrapper_fadeOut_448219e4",
-  fadeInWithScale$61 = "CardsWrapper_fadeInWithScale_448219e4",
-  slideUp$61 = "CardsWrapper_slideUp_448219e4",
-  scale$61 = "CardsWrapper_scale_448219e4",
-  raysAppearance$61 = "CardsWrapper_raysAppearance_448219e4",
-  rotate$61 = "CardsWrapper_rotate_448219e4",
-  glowAppearance$61 = "CardsWrapper_glowAppearance_448219e4",
-  highlightAppearance$61 = "CardsWrapper_highlightAppearance_448219e4",
-  blink$61 = "CardsWrapper_blink_448219e4",
-  slideUpIn$61 = "CardsWrapper_slideUpIn_448219e4",
+  fadeIn$64 = "CardsWrapper_fadeIn_448219e4",
+  fadeInThreeQuarters$64 = "CardsWrapper_fadeInThreeQuarters_448219e4",
+  fadeInHalf$64 = "CardsWrapper_fadeInHalf_448219e4",
+  fadeOut$64 = "CardsWrapper_fadeOut_448219e4",
+  fadeInWithScale$64 = "CardsWrapper_fadeInWithScale_448219e4",
+  slideUp$64 = "CardsWrapper_slideUp_448219e4",
+  scale$64 = "CardsWrapper_scale_448219e4",
+  raysAppearance$64 = "CardsWrapper_raysAppearance_448219e4",
+  rotate$64 = "CardsWrapper_rotate_448219e4",
+  glowAppearance$64 = "CardsWrapper_glowAppearance_448219e4",
+  highlightAppearance$64 = "CardsWrapper_highlightAppearance_448219e4",
+  blink$64 = "CardsWrapper_blink_448219e4",
+  slideUpIn$64 = "CardsWrapper_slideUpIn_448219e4",
   cards_wrapper_module_default = {
-    base: base$56,
+    base: base$58,
     card: card,
     centerBorderCommon: centerBorderCommon,
     outerBorderCommon: outerBorderCommon,
-    fadeIn: fadeIn$61,
-    fadeInThreeQuarters: fadeInThreeQuarters$61,
-    fadeInHalf: fadeInHalf$61,
-    fadeOut: fadeOut$61,
-    fadeInWithScale: fadeInWithScale$61,
-    slideUp: slideUp$61,
-    scale: scale$61,
-    raysAppearance: raysAppearance$61,
-    rotate: rotate$61,
+    fadeIn: fadeIn$64,
+    fadeInThreeQuarters: fadeInThreeQuarters$64,
+    fadeInHalf: fadeInHalf$64,
+    fadeOut: fadeOut$64,
+    fadeInWithScale: fadeInWithScale$64,
+    slideUp: slideUp$64,
+    scale: scale$64,
+    raysAppearance: raysAppearance$64,
+    rotate: rotate$64,
     "reverse-rotate": "CardsWrapper_reverse-rotate_448219e4",
-    glowAppearance: glowAppearance$61,
-    highlightAppearance: highlightAppearance$61,
-    blink: blink$61,
-    slideUpIn: slideUpIn$61,
+    glowAppearance: glowAppearance$64,
+    highlightAppearance: highlightAppearance$64,
+    blink: blink$64,
+    slideUpIn: slideUpIn$64,
   },
   Base$25 = defineStyledComponent("CardsWrapper", cards_wrapper_module_default.base),
   CardsWrapper = (0, import_react.forwardRef)(function (
@@ -37146,23 +35034,23 @@ var Lines = (0, import_react.memo)(
     }),
   ),
   statusTypes = { done: "done", locked: "locked", alert: "alert" },
-  base$55 = "Discount_bbbebfd",
+  base$57 = "Discount_bbbebfd",
   percent = "Discount_percent_b7ab402",
-  fadeIn$60 = "Discount_fadeIn_4a3faf4f",
-  fadeInThreeQuarters$60 = "Discount_fadeInThreeQuarters_4a3faf4f",
-  fadeInHalf$60 = "Discount_fadeInHalf_4a3faf4f",
-  fadeOut$60 = "Discount_fadeOut_4a3faf4f",
-  fadeInWithScale$60 = "Discount_fadeInWithScale_4a3faf4f",
-  slideUp$60 = "Discount_slideUp_4a3faf4f",
-  scale$60 = "Discount_scale_4a3faf4f",
-  raysAppearance$60 = "Discount_raysAppearance_4a3faf4f",
-  rotate$60 = "Discount_rotate_4a3faf4f",
-  glowAppearance$60 = "Discount_glowAppearance_4a3faf4f",
-  highlightAppearance$60 = "Discount_highlightAppearance_4a3faf4f",
-  blink$60 = "Discount_blink_4a3faf4f",
-  slideUpIn$60 = "Discount_slideUpIn_4a3faf4f",
+  fadeIn$63 = "Discount_fadeIn_4a3faf4f",
+  fadeInThreeQuarters$63 = "Discount_fadeInThreeQuarters_4a3faf4f",
+  fadeInHalf$63 = "Discount_fadeInHalf_4a3faf4f",
+  fadeOut$63 = "Discount_fadeOut_4a3faf4f",
+  fadeInWithScale$63 = "Discount_fadeInWithScale_4a3faf4f",
+  slideUp$63 = "Discount_slideUp_4a3faf4f",
+  scale$63 = "Discount_scale_4a3faf4f",
+  raysAppearance$63 = "Discount_raysAppearance_4a3faf4f",
+  rotate$63 = "Discount_rotate_4a3faf4f",
+  glowAppearance$63 = "Discount_glowAppearance_4a3faf4f",
+  highlightAppearance$63 = "Discount_highlightAppearance_4a3faf4f",
+  blink$63 = "Discount_blink_4a3faf4f",
+  slideUpIn$63 = "Discount_slideUpIn_4a3faf4f",
   discount_module_default = {
-    base: base$55,
+    base: base$57,
     "base__color-red": "Discount_base__color-red_ce40ab53",
     "base__color-blue": "Discount_base__color-blue_29162735",
     "base__size-medium": "Discount_base__size-medium_50e2ae9a",
@@ -37172,20 +35060,20 @@ var Lines = (0, import_react.memo)(
     "percent__color-red": "Discount_percent__color-red_4a3faf4f",
     "percent__color-blue": "Discount_percent__color-blue_4a3faf4f",
     "percent__size-large": "Discount_percent__size-large_8384c978",
-    fadeIn: fadeIn$60,
-    fadeInThreeQuarters: fadeInThreeQuarters$60,
-    fadeInHalf: fadeInHalf$60,
-    fadeOut: fadeOut$60,
-    fadeInWithScale: fadeInWithScale$60,
-    slideUp: slideUp$60,
-    scale: scale$60,
-    raysAppearance: raysAppearance$60,
-    rotate: rotate$60,
+    fadeIn: fadeIn$63,
+    fadeInThreeQuarters: fadeInThreeQuarters$63,
+    fadeInHalf: fadeInHalf$63,
+    fadeOut: fadeOut$63,
+    fadeInWithScale: fadeInWithScale$63,
+    slideUp: slideUp$63,
+    scale: scale$63,
+    raysAppearance: raysAppearance$63,
+    rotate: rotate$63,
     "reverse-rotate": "Discount_reverse-rotate_4a3faf4f",
-    glowAppearance: glowAppearance$60,
-    highlightAppearance: highlightAppearance$60,
-    blink: blink$60,
-    slideUpIn: slideUpIn$60,
+    glowAppearance: glowAppearance$63,
+    highlightAppearance: highlightAppearance$63,
+    blink: blink$63,
+    slideUpIn: slideUpIn$63,
   },
   colors = { blue: "blue", red: "red" },
   sizes$14 = { medium: "medium", large: "large" },
@@ -37225,7 +35113,815 @@ var Lines = (0, import_react.memo)(
     });
   });
 ((Discount.colors = colors), (Discount.sizes = sizes$14));
-var UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
+var import_classnames = __toESM(require_classnames()),
+  getFromCallStack = (e = 1) => {
+    const t = new Error().stack;
+    let n,
+      r = R.invalid("resId"),
+      a = "";
+    return (
+      t &&
+        ((a = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
+        (n = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
+        window.__feature &&
+          window.__feature !== n &&
+          window.subViews[n] &&
+          (r = window.subViews[n].id)),
+      { callerUrl: a, caller: n, stack: t, resId: r }
+    );
+  },
+  ClickOutsideManager$1 = class e {
+    entries = [];
+    _listenMouse = !1;
+    static __instance;
+    static get instance() {
+      return (e.__instance || (e.__instance = new e()), e.__instance);
+    }
+    register(e, t) {
+      (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
+    }
+    unregister(e, t) {
+      const n = e,
+        r = t;
+      ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== n || t !== r)),
+        this.removeMouseListener());
+    }
+    addMouseListener() {
+      this._listenMouse ||
+        (document.addEventListener("mousedown", this.onMouseDown), (this._listenMouse = !0));
+    }
+    removeMouseListener() {
+      this._listenMouse &&
+        0 === this.entries.length &&
+        (document.removeEventListener("mousedown", this.onMouseDown), (this._listenMouse = !1));
+    }
+    onMouseDown = (e) => {
+      this.entries.forEach(({ container: t, callback: n }) => {
+        let r = e.target;
+        do {
+          if (r === t) return;
+          r = r.parentNode;
+        } while (r);
+        n();
+      });
+    };
+  };
+function makeEngineEvent(e) {
+  return (t) => (
+    engine.on(e, t),
+    () => {
+      engine.off(e, t);
+    }
+  );
+}
+function setTrackMouseOutside(e) {
+  viewEnv.setTrackMouseOnStage(e);
+}
+var events_exports = __exportAll({
+    mouse: () => mouse,
+    off: () => off,
+    on: () => on$1,
+    onMinimize: () => onMinimize,
+    onResize: () => onResize,
+    onScaleUpdated: () => onScaleUpdated,
+  }),
+  onResize = makeEngineEvent("clientResized"),
+  onScaleUpdated = makeEngineEvent("self.onScaleUpdated"),
+  onMinimize = makeEngineEvent("clientMinimized"),
+  on$1 = (e, t) => engine.on(e, t),
+  off = (e, t) => engine.off(e, t),
+  internalMouse = {
+    down: makeEngineEvent("mousedown"),
+    up: makeEngineEvent("mouseup"),
+    move: makeEngineEvent("mousemove"),
+  };
+function initMouseEvents() {
+  const e = { listeners: 0, enabled: !0, initialized: !1 };
+  function t() {
+    e.enabled && setTrackMouseOutside(!1);
+  }
+  function n() {
+    e.enabled && setTrackMouseOutside(!0);
+  }
+  function r() {
+    e.enabled
+      ? e.listeners < 1
+        ? ((e.initialized = !1),
+          document.body.removeEventListener("mouseenter", t),
+          document.body.removeEventListener("mouseleave", n))
+        : e.initialized ||
+          ((e.initialized = !0),
+          document.body.addEventListener("mouseenter", t),
+          document.body.addEventListener("mouseleave", n))
+      : setTrackMouseOutside(!1);
+  }
+  return {
+    ...["down", "up", "move"].reduce(
+      (t, n) => (
+        (t[n] = (function (t) {
+          return (n) => {
+            e.listeners += 1;
+            let a = !0;
+            const o = `mouse${t}`,
+              i = internalMouse[t]((e) => n([e, "outside"]));
+            function s(e) {
+              n([e, "inside"]);
+            }
+            return (
+              window.addEventListener(o, s),
+              r(),
+              () => {
+                a && (i(), window.removeEventListener(o, s), (e.listeners -= 1), r(), (a = !1));
+              }
+            );
+          };
+        })(n)),
+        t
+      ),
+      {},
+    ),
+    disable() {
+      ((e.enabled = !1), r());
+    },
+    enable() {
+      ((e.enabled = !0), r());
+    },
+    enableOutside() {
+      e.enabled && setTrackMouseOutside(!0);
+    },
+    disableOutside() {
+      e.enabled && setTrackMouseOutside(!1);
+    },
+  };
+}
+var mouse = initMouseEvents();
+function playSound$1(e) {
+  engine.call("PlaySound", e).catch((t) => {
+    console.error(`playSound('${e}'): `, t);
+  });
+}
+function setRTPC(e, t) {
+  engine.call("SetRTPCGlobal", e, t).catch((n) => {
+    console.error(`setRTPC('${e}', '${t}'): `, n);
+  });
+}
+var client_exports = __exportAll({
+  events: () => events_exports,
+  getMouseGlobalPosition: () => getMouseGlobalPosition,
+  getSize: () => getSize$1,
+  graphicsQuality: () => graphicsQuality,
+  playSound: () => playSound$1,
+  setRTPC: () => setRTPC,
+});
+function getSize$1(e = "px") {
+  return "rem" === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
+}
+function getMouseGlobalPosition(e = "px") {
+  return "rem" === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
+}
+var graphicsQuality = {
+    isLow: () => 1 === viewEnv.getGraphicsQuality(),
+    isHigh: () => 0 === viewEnv.getGraphicsQuality(),
+    get: () => viewEnv.getGraphicsQuality(),
+  },
+  intl$2 = {
+    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+  },
+  sounds = { highlight: "highlight", click: "play", yes1: "yes1" },
+  plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound$1(sounds[t])), e), {}),
+  play = { ...plays, sound: playSound$1 },
+  sound_default = { play: play, setRTPC: setRTPC },
+  ROMAN = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"],
+  ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+function arabic2roman$1(e) {
+  let t = "";
+  for (let n = ARABIC.length - 1; n >= 0; n--)
+    for (; e >= ARABIC[n];) ((t += ROMAN[n]), (e -= ARABIC[n]));
+  return t;
+}
+var ROMAN_FORBIDDEN_LANGUAGE_CODES = ["ko", "no"],
+  IS_ROMAN_FORBIDDEN = ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE()),
+  children_exports = __exportAll({ getBgUrl: () => getBgUrl, getTextureUrl: () => getTextureUrl });
+function getTextureUrl(e, t, n = 1) {
+  return viewEnv.getChildTexturePath(e, t.width, t.height, n);
+}
+function getBgUrl(e, t, n) {
+  return `url(${getTextureUrl(e, t, n)})`;
+}
+var displayStatus = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+  events = {
+    onTextureFrozen: makeEngineEvent("self.onTextureFrozen"),
+    onTextureReady: makeEngineEvent("self.onTextureReady"),
+    onDomBuilt: makeEngineEvent("self.onDomBuilt"),
+    onLoaded: makeEngineEvent("self.onLoaded"),
+    onDisplayChanged: makeEngineEvent("self.onShowingStatusChanged"),
+    onFocusUpdated: makeEngineEvent("self.onFocusChanged"),
+    children: {
+      onAdded: makeEngineEvent("children.onAdded"),
+      onLoaded: makeEngineEvent("children.onLoaded"),
+      onRemoved: makeEngineEvent("children.onRemoved"),
+      onAttached: makeEngineEvent("children.onAttached"),
+      onTextureReady: makeEngineEvent("children.onTextureReady"),
+      onRequestPosition: makeEngineEvent("children.requestPosition"),
+    },
+  },
+  viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
+  createViewEventArguments$1 = (e) =>
+    Object.entries(e).map(([e, t]) => {
+      const n = "GFValueProxy";
+      switch (typeof t) {
+        case "number":
+          return { __Type: n, name: e, number: t };
+        case "boolean":
+          return { __Type: n, name: e, bool: t };
+        default:
+          return { __Type: n, name: e, string: t.toString() };
+      }
+    }),
+  sendViewEvent = (e, t) => {
+    const n = "GFViewEventProxy";
+    if (void 0 !== t) {
+      const { args: r, ...a } = t;
+      return void 0 !== r
+        ? viewEnv.handleViewEvent({
+            __Type: n,
+            type: e,
+            ...a,
+            arguments: createViewEventArguments$1(r),
+          })
+        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
+    }
+    return viewEnv.handleViewEvent({ __Type: n, type: e });
+  },
+  sendEvent = {
+    close(e) {
+      sendViewEvent("popover" === e ? viewEventTypes.closePopover : viewEventTypes.close);
+    },
+    minimize() {
+      sendViewEvent(viewEventTypes.minimize);
+    },
+    move(e) {
+      sendViewEvent(viewEventTypes.move, { isMouseEvent: !0, on: e });
+    },
+  },
+  view_exports = __exportAll({
+    addModelObserver: () => addModelObserver,
+    addPreloadTexture: () => addPreloadTexture,
+    arabic2roman: () => arabic2roman,
+    children: () => children_exports,
+    displayStatus: () => displayStatus,
+    displayStatusIs: () => displayStatusIs,
+    enableFullScreenModeSupported: () => enableFullScreenModeSupported,
+    events: () => events,
+    extraSize: () => extraSize,
+    forceTriggerMouseMove: () => forceTriggerMouseMove,
+    freezeTextureBeforeResize: () => freezeTextureBeforeResize,
+    getBrowserTexturePath: () => getBrowserTexturePath,
+    getDisplayStatus: () => getDisplayStatus,
+    getExternalPaddingsRem: () => getExternalPaddingsRem,
+    getFontNames: () => getFontNames,
+    getScale: () => getScale,
+    getSize: () => getSize,
+    getViewGlobalPosition: () => getViewGlobalPosition,
+    initExternalPaddings: () => initExternalPaddings,
+    isEventHandled: () => isEventHandled,
+    isFocused: () => isFocused,
+    pxToRem: () => pxToRem,
+    remToPx: () => remToPx,
+    resize: () => resize,
+    sendEvent: () => sendEvent,
+    setAnimateWindow: () => setAnimateWindow,
+    setEventHandled: () => setEventHandled,
+    setInputPaddingsRem: () => setInputPaddingsRem,
+    setSidePaddingsRem: () => setSidePaddingsRem,
+    whenTutorialReady: () => whenTutorialReady,
+  }),
+  ALL_SIDES = 15;
+function addPreloadTexture(e) {
+  viewEnv.addPreloadTexture(e);
+}
+function setInputPaddingsRem(e) {
+  viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
+}
+function getBrowserTexturePath(e, t, n, r = 1) {
+  return viewEnv.getWebBrowserTexturePath(e, t, n, r);
+}
+function addModelObserver(e, t, n) {
+  return viewEnv.addDataChangedCallback(e, t, n);
+}
+function setSidePaddingsRem(e) {
+  viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
+}
+function getSize(e = "px") {
+  return "rem" === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
+}
+function resize(e, t, n = "px") {
+  return "rem" === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
+}
+function getViewGlobalPosition(e = "rem") {
+  const t = viewEnv.getViewGlobalPositionRem();
+  return "rem" === e ? t : { x: remToPx(t.x), y: remToPx(t.y) };
+}
+function freezeTextureBeforeResize() {
+  viewEnv.freezeTextureBeforeResize();
+}
+function getScale() {
+  return viewEnv.getScale();
+}
+function pxToRem(e) {
+  return viewEnv.pxToRem(e);
+}
+function remToPx(e) {
+  return viewEnv.remToPx(e);
+}
+function setAnimateWindow(e, t) {
+  viewEnv.setAnimateWindow(e, t);
+}
+function isFocused() {
+  return viewEnv.isFocused();
+}
+function setEventHandled() {
+  return viewEnv.setEventHandled();
+}
+function isEventHandled() {
+  return viewEnv.isEventHandled();
+}
+function forceTriggerMouseMove() {
+  viewEnv.forceTriggerMouseMove();
+}
+function getDisplayStatus() {
+  return viewEnv.getShowingStatus();
+}
+var getFontNames = (() => {
+    let e = [];
+    return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+  })(),
+  arabic2roman = arabic2roman$1;
+function getExternalPaddingsRem() {
+  return viewEnv.getExternalPaddingsRem();
+}
+var displayStatusIs = Object.keys(displayStatus).reduce(
+    (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === displayStatus[t]), e),
+    {},
+  ),
+  extraSize = {
+    set: (e, t) => {
+      viewEnv.setExtraSizeRem(e, t);
+    },
+    get: (e, t) => {
+      viewEnv.getExtraSizeRem(e, t);
+    },
+  },
+  whenTutorialReady = Promise.all([
+    new Promise((e) => {
+      window.isDomBuilt ? e() : events.onDomBuilt(e);
+    }),
+    engine.whenReady,
+  ]);
+function enableFullScreenModeSupported() {
+  viewEnv.setFullscreenModeSupported(!0);
+}
+function initExternalPaddings(e) {
+  function t() {
+    const { top: t, right: n, bottom: r, left: a } = viewEnv.getExternalPaddingsRem();
+    (e.style.setProperty("--external-padding-top", `${t}rem`),
+      e.style.setProperty("--external-padding-right", `${n}rem`),
+      e.style.setProperty("--external-padding-bottom", `${r}rem`),
+      e.style.setProperty("--external-padding-left", `${a}rem`));
+  }
+  (t(), engine.on("self.onPaddingsUpdated", () => t()));
+}
+var env = { view: view_exports, client: client_exports, sound: sound_default, intl: intl$2 },
+  DataTracker = class e {
+    _callbacks;
+    _updateHandler;
+    _views;
+    static __instance;
+    constructor() {
+      ((this._callbacks = {}), (this._views = {}), (this._updateHandler = void 0));
+    }
+    static get instance() {
+      return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
+    }
+    clear() {
+      (void 0 !== this._updateHandler &&
+        (this._updateHandler.clear(), (this._updateHandler = void 0)),
+        (this._callbacks = {}));
+    }
+    clearViewCallbacks = (e) => {
+      this._views[e] &&
+        (this._views[e].forEach((e) => {
+          delete this._callbacks[e];
+        }),
+        delete this._views[e]);
+    };
+    addCallback(e, t, n = 0, r = !0) {
+      void 0 === this._updateHandler &&
+        (this._updateHandler = engine.on("viewEnv.onDataChanged", this._emmitDataChanged, this));
+      const a = env.view.addModelObserver(e, n, r);
+      return (
+        a > 0
+          ? ((this._callbacks[a] = t),
+            n > 0 && (this._views[n] ? this._views[n].push(a) : (this._views[n] = [a])))
+          : console.error("Can't add callback for model:", e),
+        a
+      );
+    }
+    removeCallback(e, t = 0) {
+      let n = !1;
+      return (
+        void 0 !== e &&
+          void 0 !== this._callbacks[e] &&
+          ((n = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
+        n || console.error("Can't remove callback by id:", e),
+        n
+      );
+    }
+    _emmitDataChanged(e, t, n) {
+      n.forEach((n) => {
+        const r = this._callbacks[n];
+        void 0 !== r && r(e, t);
+      });
+    }
+  };
+function dumpViewModel(e) {
+  const t = {};
+  if ("object" != typeof e) return e;
+  for (const n in e)
+    if (Object.prototype.hasOwnProperty.call(e, n)) {
+      const r = Object.prototype.toString.call(e[n]);
+      if (r.startsWith("[object CoherentArrayProxy]")) {
+        const r = e[n];
+        t[n] = [];
+        for (let e = 0; e < r.length; e++) t[n].push({ value: dumpViewModel(r[e].value) });
+      } else
+        r.startsWith("[object class BW::WULF::ViewModel")
+          ? (t[n] = dumpViewModel(e[n]))
+          : (t[n] = e[n]);
+    }
+  return t;
+}
+var SystemLocale = {
+    getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
+    getRealFormat: (e, t, n = 2) => systemLocale.getRealFormat(e, t, n),
+    getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
+    getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
+    toUpperCase: (e) => systemLocale.toUpperCase(e),
+    toLowerCase: (e) => systemLocale.toUpperCase(e),
+  },
+  UserLocale = {
+    getNumberFormat: (e) => userLocale.getNumberFormat(e),
+    getTimeFormat: (e, t, n) => userLocale.getTimeFormat(e, t, void 0 === n || n),
+    getTimeString: (e, t, n) => userLocale.getTimeString(e, t, void 0 === n || n),
+  },
+  RegionalDateTime = {
+    getRegionalDateTime: (e, t, n = !0) => regionalDateTime.getRegionalDateTime(e, t, n),
+    getFormattedDateTime: (e, t, n = !0) => regionalDateTime.getFormattedDateTime(e, t, n),
+  },
+  ViewEventType = (function (e) {
+    return (
+      (e[(e.UNDEFINED = 0)] = "UNDEFINED"),
+      (e[(e.TOOLTIP = 1)] = "TOOLTIP"),
+      (e[(e.POP_OVER = 2)] = "POP_OVER"),
+      (e[(e.CONTEXT_MENU = 4)] = "CONTEXT_MENU"),
+      (e[(e.DROP_DOWN = 8)] = "DROP_DOWN"),
+      (e[(e.MOVE = 16)] = "MOVE"),
+      (e[(e.CLOSE = 32)] = "CLOSE"),
+      (e[(e.MINIMIZE = 64)] = "MINIMIZE"),
+      e
+    );
+  })({}),
+  NumberFormatType = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+  RealFormatType = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+  TimeFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+  DateFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 }),
+  KEY_CODES = (function (e) {
+    return (
+      (e[(e.NONE = -1)] = "NONE"),
+      (e[(e.ALT = 165)] = "ALT"),
+      (e[(e.ENTER = 13)] = "ENTER"),
+      (e[(e.ESCAPE = 27)] = "ESCAPE"),
+      (e[(e.SPACE = 32)] = "SPACE"),
+      (e[(e.END = 35)] = "END"),
+      (e[(e.HOME = 36)] = "HOME"),
+      (e[(e.ARROW_LEFT = 37)] = "ARROW_LEFT"),
+      (e[(e.ARROW_UP = 38)] = "ARROW_UP"),
+      (e[(e.ARROW_RIGHT = 39)] = "ARROW_RIGHT"),
+      (e[(e.ARROW_DOWN = 40)] = "ARROW_DOWN"),
+      (e[(e.NUM_PLUS = 107)] = "NUM_PLUS"),
+      (e[(e.NUM_MINUS = 109)] = "NUM_MINUS"),
+      (e[(e.PLUS = 187)] = "PLUS"),
+      (e[(e.MINUS = 189)] = "MINUS"),
+      (e[(e.PAGE_UP = 33)] = "PAGE_UP"),
+      (e[(e.PAGE_DOWN = 34)] = "PAGE_DOWN"),
+      (e[(e.BACKSPACE = 8)] = "BACKSPACE"),
+      (e[(e.DELETE = 46)] = "DELETE"),
+      (e[(e.TAB = 9)] = "TAB"),
+      (e[(e.KEY_N = 78)] = "KEY_N"),
+      (e[(e.KEY_1 = 49)] = "KEY_1"),
+      (e[(e.KEY_2 = 50)] = "KEY_2"),
+      (e[(e.KEY_3 = 51)] = "KEY_3"),
+      (e[(e.KEY_4 = 52)] = "KEY_4"),
+      (e[(e.KEY_5 = 53)] = "KEY_5"),
+      (e[(e.KEY_6 = 54)] = "KEY_6"),
+      (e[(e.KEY_7 = 55)] = "KEY_7"),
+      (e[(e.KEY_8 = 56)] = "KEY_8"),
+      (e[(e.KEY_9 = 57)] = "KEY_9"),
+      e
+    );
+  })({}),
+  makeGlobalBoundingBox = (e) => ({
+    __Type: "GFBoundingBox",
+    x: e.x,
+    y: e.y,
+    width: e.width,
+    height: e.height,
+  }),
+  onBindingsReady = async () =>
+    !(!engine._BindingsReady || !engine._ContentLoaded) ||
+    new Promise((e) => {
+      engine.on("Ready", e);
+    }),
+  onLayoutReady = () =>
+    new Promise((e) => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          e();
+        });
+      });
+    }),
+  createViewEventArguments = (e) =>
+    Object.entries(e).map(([e, t]) => {
+      const n = { __Type: "GFValueProxy", name: e };
+      switch (typeof t) {
+        case "number":
+          n.number = t;
+          break;
+        case "boolean":
+          n.bool = t;
+          break;
+        default:
+          n.string = t.toString();
+      }
+      return n;
+    }),
+  handleViewEvent$1 = (e, t) => {
+    const n = "GFViewEventProxy";
+    if (void 0 !== t) {
+      const { args: r, ...a } = t;
+      void 0 !== r
+        ? viewEnv.handleViewEvent({
+            __Type: n,
+            type: e,
+            ...a,
+            arguments: createViewEventArguments(r),
+          })
+        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
+    } else viewEnv.handleViewEvent({ __Type: n, type: e });
+  },
+  sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
+  sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
+  sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
+  sendShowContextMenuEvent = (e, t, n = 0) => {
+    handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
+      isMouseEvent: !0,
+      contentID: e,
+      on: !0,
+      decoratorID: n,
+      args: t,
+    });
+  },
+  sendShowPopOverEvent = (e, t, n, r, a = R.invalid("resId"), o) => {
+    const i = env.view.getViewGlobalPosition(),
+      { x: s, y: l, width: u, height: c } = n.getBoundingClientRect(),
+      d = {
+        x: env.view.pxToRem(s) + i.x,
+        y: env.view.pxToRem(l) + i.y,
+        width: env.view.pxToRem(u),
+        height: env.view.pxToRem(c),
+      };
+    handleViewEvent$1(ViewEventType.POP_OVER, {
+      isMouseEvent: !0,
+      contentID: e,
+      decoratorID: r || R.invalid("resId"),
+      targetID: a,
+      direction: t,
+      bbox: makeGlobalBoundingBox(d),
+      on: !0,
+      args: o,
+    });
+  },
+  isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
+  isContextMenuShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.CONTEXT_MENU),
+  isPopOverShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.POP_OVER),
+  callOnEsc = (e, t) => {
+    e.keyCode === KEY_CODES.ESCAPE && t();
+  },
+  closeOnEsc = (e) => {
+    callOnEsc(e, sendCloseEvent);
+  },
+  addEscapeListener = (e) => {
+    const t = (t) => callOnEsc(t, e);
+    return (window.addEventListener("keydown", t), () => window.removeEventListener("keydown", t));
+  },
+  ViewModel$1 = class {
+    dataTracker;
+    modelPath;
+    callbacks;
+    data;
+    constructor(e, t = []) {
+      ((this.dataTracker = new DataTracker()),
+        (this.modelPath = e),
+        (this.callbacks = new Set()),
+        onBindingsReady().then(() => {
+          (this._addCallback(e),
+            t.forEach((t) => {
+              this._addCallback(e + "." + t);
+            }),
+            this._notifyObservers());
+        }));
+    }
+    subscribe(e) {
+      (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
+    }
+    unsubscribe(e) {
+      this.callbacks.delete(e);
+    }
+    destroy() {
+      (this.dataTracker.clear(), this.callbacks.clear());
+    }
+    _addCallback(e) {
+      this.dataTracker.addCallback(e, this._notifyObservers);
+    }
+    _notifyObservers = () => {
+      ((this.data = eval(this.modelPath)),
+        this.callbacks.forEach((e) => {
+          e(this.data);
+        }));
+    };
+  },
+  ClickOutsideManager = ClickOutsideManager$1.instance,
+  ViewEnvHelper = {
+    DataTracker: DataTracker,
+    ViewModel: ViewModel$1,
+    ViewEventType: ViewEventType,
+    NumberFormatType: NumberFormatType,
+    RealFormatType: RealFormatType,
+    TimeFormatType: TimeFormatType,
+    DateFormatType: DateFormatType,
+    makeGlobalBoundingBox: makeGlobalBoundingBox,
+    sendMoveEvent: sendMoveEvent,
+    sendCloseEvent: sendCloseEvent,
+    sendClosePopOverEvent: sendClosePopOverEvent,
+    sendShowContextMenuEvent: sendShowContextMenuEvent,
+    sendShowPopOverEvent: sendShowPopOverEvent,
+    addEscapeListener: addEscapeListener,
+    closeOnEsc: closeOnEsc,
+    handleViewEvent: handleViewEvent$1,
+    onBindingsReady: onBindingsReady,
+    onLayoutReady: onLayoutReady,
+    isTooltipShown: isTooltipShown,
+    isContextMenuShown: isContextMenuShown,
+    isPopOverShown: isPopOverShown,
+    dumpViewModel: dumpViewModel,
+    ClickOutsideManager: ClickOutsideManager,
+    SystemLocale: SystemLocale,
+    UserLocale: UserLocale,
+  };
+window.ViewEnvHelper = ViewEnvHelper;
+var SHOW_DELAY_MIN = 100,
+  SHOW_DELAY_DEFAULT = 400;
+function getViewEventArguments(e) {
+  return Object.entries(e || {}).map(([e, t]) => {
+    const n = { __Type: "GFValueProxy", name: e };
+    switch (typeof t) {
+      case "number":
+        n.number = t;
+        break;
+      case "boolean":
+        n.bool = t;
+        break;
+      case "undefined":
+        break;
+      default:
+        n.string = t.toString();
+    }
+    return n;
+  });
+}
+var handleViewEvent = (e, t, n = {}, r = 0) => {
+    viewEnv.handleViewEvent({
+      __Type: "GFViewEventProxy",
+      type: ViewEventType.TOOLTIP,
+      contentID: e,
+      decoratorID: t,
+      targetID: r,
+      ...n,
+    });
+  },
+  Tooltip$1 = ({
+    children: e,
+    contentId: t,
+    args: n,
+    onMouseEnter: r,
+    onMouseLeave: a,
+    onMouseDown: o,
+    onClick: i,
+    ignoreShowDelay: s = !1,
+    ignoreMouseClick: l = !1,
+    decoratorId: u = 0,
+    isEnabled: c = !0,
+    targetId: d = 0,
+    onShow: p,
+    onHide: f,
+    ..._
+  }) => {
+    const m = (0, import_react.useRef)({
+        timeoutId: 0,
+        isVisible: !1,
+        prevTarget: null,
+        hideTimerId: null,
+      }),
+      h = (0, import_react.useMemo)(() => d || getFromCallStack().resId, [d]),
+      g = (0, import_react.useCallback)(() => {
+        (m.current.isVisible && m.current.timeoutId) ||
+          (handleViewEvent(
+            t,
+            u,
+            { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(n) },
+            h,
+          ),
+          p && p(),
+          (m.current.isVisible = !0));
+      }, [t, u, n, h, p]),
+      b = (0, import_react.useCallback)(() => {
+        if (m.current.isVisible || m.current.timeoutId) {
+          const e = m.current.timeoutId;
+          (e > 0 && (clearTimeout(e), (m.current.timeoutId = 0)),
+            handleViewEvent(t, u, { on: !1 }, h),
+            m.current.isVisible && f && f(),
+            (m.current.isVisible = !1));
+        }
+      }, [t, u, h, f]),
+      v = (0, import_react.useCallback)((e) => {
+        m.current.isVisible &&
+          ((m.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+          (m.current.hideTimerId = window.setTimeout(() => {
+            const t = document.elementFromPoint(e.clientX, e.clientY);
+            t && !t.isSameNode(m.current.prevTarget) && b();
+          }, 200)));
+      }, []);
+    ((0, import_react.useEffect)(() => {
+      const e = m.current.hideTimerId;
+      return (
+        document.addEventListener("wheel", v, { capture: !0 }),
+        () => {
+          (document.removeEventListener("wheel", v, { capture: !0 }), e && window.clearTimeout(e));
+        }
+      );
+    }, []),
+      (0, import_react.useEffect)(() => {
+        !1 === c && b();
+      }, [c, b]),
+      (0, import_react.useEffect)(
+        () => (
+          window.addEventListener("mouseleave", b),
+          () => {
+            (window.removeEventListener("mouseleave", b), b());
+          }
+        ),
+        [b],
+      ));
+    return c
+      ? (0, import_react.cloneElement)(e, {
+          onMouseEnter:
+            (($ = e.props.onMouseEnter),
+            (e) => {
+              (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
+                (clearTimeout(m.current.timeoutId),
+                (m.current.timeoutId = window.setTimeout(
+                  g,
+                  s ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT,
+                )),
+                r && r(e),
+                $ && $(e));
+            }),
+          onMouseLeave: ((e) => (t) => {
+            (b(), a?.(t), e?.(t));
+          })(e.props.onMouseLeave),
+          onClick: ((e) => (t) => {
+            (!1 === l && b(), i?.(t), e?.(t));
+          })(e.props.onClick),
+          onMouseDown: ((e) => (t) => {
+            (!1 === l && b(), o?.(t), e?.(t));
+          })(e.props.onMouseDown),
+          ..._,
+        })
+      : e;
+    var $;
+  },
+  UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
   getTooltipContentId = (e) =>
     e
       ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent("resId")
@@ -37236,7 +35932,7 @@ var UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
       for (const t in e) void 0 === e[t] && delete e[t];
       return e;
     }, [a, t, n, r, o]);
-    return (0, import_jsx_runtime.jsx)(Tooltip$2, {
+    return (0, import_jsx_runtime.jsx)(Tooltip$1, {
       contentId: getTooltipContentId(o?.hasHtmlContent),
       decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
       args: s,
@@ -37247,7 +35943,7 @@ var UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
   background$7 = "Checkbox_background_ae1fc797",
   border$6 = "Checkbox_border_e1946121",
   overlay$3 = "Checkbox_overlay_de55e0a5",
-  base$54 = "Checkbox_e00b9a0",
+  base$56 = "Checkbox_e00b9a0",
   base__enabled = "Checkbox_base__enabled_5bfdfae9",
   label$4 = "Checkbox_label_58a00a56",
   base__small$14 = "Checkbox_base__small_70ef629e",
@@ -37255,24 +35951,24 @@ var UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
   base__checked = "Checkbox_base__checked_70ef629e",
   checkIcon = "Checkbox_checkIcon_968885f3",
   check = "Checkbox_check_8341731a",
-  fadeIn$59 = "Checkbox_fadeIn_70ef629e",
-  fadeInThreeQuarters$59 = "Checkbox_fadeInThreeQuarters_70ef629e",
-  fadeInHalf$59 = "Checkbox_fadeInHalf_70ef629e",
-  fadeOut$59 = "Checkbox_fadeOut_70ef629e",
-  fadeInWithScale$59 = "Checkbox_fadeInWithScale_70ef629e",
-  slideUp$59 = "Checkbox_slideUp_70ef629e",
-  scale$59 = "Checkbox_scale_70ef629e",
-  raysAppearance$59 = "Checkbox_raysAppearance_70ef629e",
-  rotate$59 = "Checkbox_rotate_70ef629e",
-  glowAppearance$59 = "Checkbox_glowAppearance_70ef629e",
-  highlightAppearance$59 = "Checkbox_highlightAppearance_70ef629e",
-  blink$59 = "Checkbox_blink_70ef629e",
-  slideUpIn$59 = "Checkbox_slideUpIn_70ef629e",
+  fadeIn$62 = "Checkbox_fadeIn_70ef629e",
+  fadeInThreeQuarters$62 = "Checkbox_fadeInThreeQuarters_70ef629e",
+  fadeInHalf$62 = "Checkbox_fadeInHalf_70ef629e",
+  fadeOut$62 = "Checkbox_fadeOut_70ef629e",
+  fadeInWithScale$62 = "Checkbox_fadeInWithScale_70ef629e",
+  slideUp$62 = "Checkbox_slideUp_70ef629e",
+  scale$62 = "Checkbox_scale_70ef629e",
+  raysAppearance$62 = "Checkbox_raysAppearance_70ef629e",
+  rotate$62 = "Checkbox_rotate_70ef629e",
+  glowAppearance$62 = "Checkbox_glowAppearance_70ef629e",
+  highlightAppearance$62 = "Checkbox_highlightAppearance_70ef629e",
+  blink$62 = "Checkbox_blink_70ef629e",
+  slideUpIn$62 = "Checkbox_slideUpIn_70ef629e",
   checkbox_module_default = {
     background: background$7,
     border: border$6,
     overlay: overlay$3,
-    base: base$54,
+    base: base$56,
     base__enabled: base__enabled,
     label: label$4,
     base__small: base__small$14,
@@ -37280,20 +35976,20 @@ var UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
     base__checked: base__checked,
     checkIcon: checkIcon,
     check: check,
-    fadeIn: fadeIn$59,
-    fadeInThreeQuarters: fadeInThreeQuarters$59,
-    fadeInHalf: fadeInHalf$59,
-    fadeOut: fadeOut$59,
-    fadeInWithScale: fadeInWithScale$59,
-    slideUp: slideUp$59,
-    scale: scale$59,
-    raysAppearance: raysAppearance$59,
-    rotate: rotate$59,
+    fadeIn: fadeIn$62,
+    fadeInThreeQuarters: fadeInThreeQuarters$62,
+    fadeInHalf: fadeInHalf$62,
+    fadeOut: fadeOut$62,
+    fadeInWithScale: fadeInWithScale$62,
+    slideUp: slideUp$62,
+    scale: scale$62,
+    raysAppearance: raysAppearance$62,
+    rotate: rotate$62,
     "reverse-rotate": "Checkbox_reverse-rotate_70ef629e",
-    glowAppearance: glowAppearance$59,
-    highlightAppearance: highlightAppearance$59,
-    blink: blink$59,
-    slideUpIn: slideUpIn$59,
+    glowAppearance: glowAppearance$62,
+    highlightAppearance: highlightAppearance$62,
+    blink: blink$62,
+    slideUpIn: slideUpIn$62,
   },
   Check = (0, import_react.forwardRef)(function ({ classNames: e, children: t, ...n }, r) {
     return (0, import_jsx_runtime.jsxs)("div", {
@@ -37405,37 +36101,37 @@ var Checkbox = (0, import_react.forwardRef)(function (
   base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
   base__x190x152 = "VehicleImage_base__x190x152_41379c70",
   base__x380x304 = "VehicleImage_base__x380x304_274f87fe",
-  fadeIn$58 = "VehicleImage_fadeIn_854c1012",
-  fadeInThreeQuarters$58 = "VehicleImage_fadeInThreeQuarters_854c1012",
-  fadeInHalf$58 = "VehicleImage_fadeInHalf_854c1012",
-  fadeOut$58 = "VehicleImage_fadeOut_854c1012",
-  fadeInWithScale$58 = "VehicleImage_fadeInWithScale_854c1012",
-  slideUp$58 = "VehicleImage_slideUp_854c1012",
-  scale$58 = "VehicleImage_scale_854c1012",
-  raysAppearance$58 = "VehicleImage_raysAppearance_854c1012",
-  rotate$58 = "VehicleImage_rotate_854c1012",
-  glowAppearance$58 = "VehicleImage_glowAppearance_854c1012",
-  highlightAppearance$58 = "VehicleImage_highlightAppearance_854c1012",
-  blink$58 = "VehicleImage_blink_854c1012",
-  slideUpIn$58 = "VehicleImage_slideUpIn_854c1012",
+  fadeIn$61 = "VehicleImage_fadeIn_854c1012",
+  fadeInThreeQuarters$61 = "VehicleImage_fadeInThreeQuarters_854c1012",
+  fadeInHalf$61 = "VehicleImage_fadeInHalf_854c1012",
+  fadeOut$61 = "VehicleImage_fadeOut_854c1012",
+  fadeInWithScale$61 = "VehicleImage_fadeInWithScale_854c1012",
+  slideUp$61 = "VehicleImage_slideUp_854c1012",
+  scale$61 = "VehicleImage_scale_854c1012",
+  raysAppearance$61 = "VehicleImage_raysAppearance_854c1012",
+  rotate$61 = "VehicleImage_rotate_854c1012",
+  glowAppearance$61 = "VehicleImage_glowAppearance_854c1012",
+  highlightAppearance$61 = "VehicleImage_highlightAppearance_854c1012",
+  blink$61 = "VehicleImage_blink_854c1012",
+  slideUpIn$61 = "VehicleImage_slideUpIn_854c1012",
   vehicle_image_module_default = {
     base__x120x96: base__x120x96,
     base__x190x152: base__x190x152,
     base__x380x304: base__x380x304,
-    fadeIn: fadeIn$58,
-    fadeInThreeQuarters: fadeInThreeQuarters$58,
-    fadeInHalf: fadeInHalf$58,
-    fadeOut: fadeOut$58,
-    fadeInWithScale: fadeInWithScale$58,
-    slideUp: slideUp$58,
-    scale: scale$58,
-    raysAppearance: raysAppearance$58,
-    rotate: rotate$58,
+    fadeIn: fadeIn$61,
+    fadeInThreeQuarters: fadeInThreeQuarters$61,
+    fadeInHalf: fadeInHalf$61,
+    fadeOut: fadeOut$61,
+    fadeInWithScale: fadeInWithScale$61,
+    slideUp: slideUp$61,
+    scale: scale$61,
+    raysAppearance: raysAppearance$61,
+    rotate: rotate$61,
     "reverse-rotate": "VehicleImage_reverse-rotate_854c1012",
-    glowAppearance: glowAppearance$58,
-    highlightAppearance: highlightAppearance$58,
-    blink: blink$58,
-    slideUpIn: slideUpIn$58,
+    glowAppearance: glowAppearance$61,
+    highlightAppearance: highlightAppearance$61,
+    blink: blink$61,
+    slideUpIn: slideUpIn$61,
   },
   sizes$12 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
   Base$23 = defineStyledComponent("VehicleImage", {
@@ -37501,76 +36197,76 @@ function useCalculateLeftTime(e) {
         : hours(0);
 }
 ((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$12));
-var base$53 = "IconCounter_33c660e9",
-  fadeIn$57 = "IconCounter_fadeIn_500e1c49",
-  fadeInThreeQuarters$57 = "IconCounter_fadeInThreeQuarters_500e1c49",
-  fadeInHalf$57 = "IconCounter_fadeInHalf_500e1c49",
-  fadeOut$57 = "IconCounter_fadeOut_500e1c49",
-  fadeInWithScale$57 = "IconCounter_fadeInWithScale_500e1c49",
-  slideUp$57 = "IconCounter_slideUp_500e1c49",
-  scale$57 = "IconCounter_scale_500e1c49",
-  raysAppearance$57 = "IconCounter_raysAppearance_500e1c49",
-  rotate$57 = "IconCounter_rotate_500e1c49",
-  glowAppearance$57 = "IconCounter_glowAppearance_500e1c49",
-  highlightAppearance$57 = "IconCounter_highlightAppearance_500e1c49",
-  blink$57 = "IconCounter_blink_500e1c49",
-  slideUpIn$57 = "IconCounter_slideUpIn_500e1c49",
+var base$55 = "IconCounter_33c660e9",
+  fadeIn$60 = "IconCounter_fadeIn_500e1c49",
+  fadeInThreeQuarters$60 = "IconCounter_fadeInThreeQuarters_500e1c49",
+  fadeInHalf$60 = "IconCounter_fadeInHalf_500e1c49",
+  fadeOut$60 = "IconCounter_fadeOut_500e1c49",
+  fadeInWithScale$60 = "IconCounter_fadeInWithScale_500e1c49",
+  slideUp$60 = "IconCounter_slideUp_500e1c49",
+  scale$60 = "IconCounter_scale_500e1c49",
+  raysAppearance$60 = "IconCounter_raysAppearance_500e1c49",
+  rotate$60 = "IconCounter_rotate_500e1c49",
+  glowAppearance$60 = "IconCounter_glowAppearance_500e1c49",
+  highlightAppearance$60 = "IconCounter_highlightAppearance_500e1c49",
+  blink$60 = "IconCounter_blink_500e1c49",
+  slideUpIn$60 = "IconCounter_slideUpIn_500e1c49",
   icon_counter_module_default = {
-    base: base$53,
-    fadeIn: fadeIn$57,
-    fadeInThreeQuarters: fadeInThreeQuarters$57,
-    fadeInHalf: fadeInHalf$57,
-    fadeOut: fadeOut$57,
-    fadeInWithScale: fadeInWithScale$57,
-    slideUp: slideUp$57,
-    scale: scale$57,
-    raysAppearance: raysAppearance$57,
-    rotate: rotate$57,
+    base: base$55,
+    fadeIn: fadeIn$60,
+    fadeInThreeQuarters: fadeInThreeQuarters$60,
+    fadeInHalf: fadeInHalf$60,
+    fadeOut: fadeOut$60,
+    fadeInWithScale: fadeInWithScale$60,
+    slideUp: slideUp$60,
+    scale: scale$60,
+    raysAppearance: raysAppearance$60,
+    rotate: rotate$60,
     "reverse-rotate": "IconCounter_reverse-rotate_500e1c49",
-    glowAppearance: glowAppearance$57,
-    highlightAppearance: highlightAppearance$57,
-    blink: blink$57,
-    slideUpIn: slideUpIn$57,
+    glowAppearance: glowAppearance$60,
+    highlightAppearance: highlightAppearance$60,
+    blink: blink$60,
+    slideUpIn: slideUpIn$60,
   };
 function IconCounter({ className: e }) {
   return (0, import_jsx_runtime.jsx)("div", {
     className: clsx(icon_counter_module_default.base, e),
   });
 }
-var base$52 = "ShortCounter_d2d7b370",
+var base$54 = "ShortCounter_d2d7b370",
   text$2 = "ShortCounter_text_ecf2e742",
   count$1 = "ShortCounter_count_d7a74fd8",
-  fadeIn$56 = "ShortCounter_fadeIn_d400679e",
-  fadeInThreeQuarters$56 = "ShortCounter_fadeInThreeQuarters_d400679e",
-  fadeInHalf$56 = "ShortCounter_fadeInHalf_d400679e",
-  fadeOut$56 = "ShortCounter_fadeOut_d400679e",
-  fadeInWithScale$56 = "ShortCounter_fadeInWithScale_d400679e",
-  slideUp$56 = "ShortCounter_slideUp_d400679e",
-  scale$56 = "ShortCounter_scale_d400679e",
-  raysAppearance$56 = "ShortCounter_raysAppearance_d400679e",
-  rotate$56 = "ShortCounter_rotate_d400679e",
-  glowAppearance$56 = "ShortCounter_glowAppearance_d400679e",
-  highlightAppearance$56 = "ShortCounter_highlightAppearance_d400679e",
-  blink$56 = "ShortCounter_blink_d400679e",
-  slideUpIn$56 = "ShortCounter_slideUpIn_d400679e",
+  fadeIn$59 = "ShortCounter_fadeIn_d400679e",
+  fadeInThreeQuarters$59 = "ShortCounter_fadeInThreeQuarters_d400679e",
+  fadeInHalf$59 = "ShortCounter_fadeInHalf_d400679e",
+  fadeOut$59 = "ShortCounter_fadeOut_d400679e",
+  fadeInWithScale$59 = "ShortCounter_fadeInWithScale_d400679e",
+  slideUp$59 = "ShortCounter_slideUp_d400679e",
+  scale$59 = "ShortCounter_scale_d400679e",
+  raysAppearance$59 = "ShortCounter_raysAppearance_d400679e",
+  rotate$59 = "ShortCounter_rotate_d400679e",
+  glowAppearance$59 = "ShortCounter_glowAppearance_d400679e",
+  highlightAppearance$59 = "ShortCounter_highlightAppearance_d400679e",
+  blink$59 = "ShortCounter_blink_d400679e",
+  slideUpIn$59 = "ShortCounter_slideUpIn_d400679e",
   short_counter_module_default = {
-    base: base$52,
+    base: base$54,
     text: text$2,
     count: count$1,
-    fadeIn: fadeIn$56,
-    fadeInThreeQuarters: fadeInThreeQuarters$56,
-    fadeInHalf: fadeInHalf$56,
-    fadeOut: fadeOut$56,
-    fadeInWithScale: fadeInWithScale$56,
-    slideUp: slideUp$56,
-    scale: scale$56,
-    raysAppearance: raysAppearance$56,
-    rotate: rotate$56,
+    fadeIn: fadeIn$59,
+    fadeInThreeQuarters: fadeInThreeQuarters$59,
+    fadeInHalf: fadeInHalf$59,
+    fadeOut: fadeOut$59,
+    fadeInWithScale: fadeInWithScale$59,
+    slideUp: slideUp$59,
+    scale: scale$59,
+    raysAppearance: raysAppearance$59,
+    rotate: rotate$59,
     "reverse-rotate": "ShortCounter_reverse-rotate_d400679e",
-    glowAppearance: glowAppearance$56,
-    highlightAppearance: highlightAppearance$56,
-    blink: blink$56,
-    slideUpIn: slideUpIn$56,
+    glowAppearance: glowAppearance$59,
+    highlightAppearance: highlightAppearance$59,
+    blink: blink$59,
+    slideUpIn: slideUpIn$59,
   },
   ShortCounter = (0, import_react.forwardRef)(function (
     { time: e, wins: t, battles: n, classNames: r, ...a },
@@ -37921,40 +36617,40 @@ function useKeyButtonContext() {
 }
 var background$6 = "KeyButton_background_8a852f95",
   border$5 = "KeyButton_border_b1c50f01",
-  base$51 = "KeyButton_8fd343f8",
+  base$53 = "KeyButton_8fd343f8",
   content$7 = "KeyButton_content_3ab1d990",
-  fadeIn$55 = "KeyButton_fadeIn_910d5882",
-  fadeInThreeQuarters$55 = "KeyButton_fadeInThreeQuarters_910d5882",
-  fadeInHalf$55 = "KeyButton_fadeInHalf_910d5882",
-  fadeOut$55 = "KeyButton_fadeOut_910d5882",
-  fadeInWithScale$55 = "KeyButton_fadeInWithScale_910d5882",
-  slideUp$55 = "KeyButton_slideUp_910d5882",
-  scale$55 = "KeyButton_scale_910d5882",
-  raysAppearance$55 = "KeyButton_raysAppearance_910d5882",
-  rotate$55 = "KeyButton_rotate_910d5882",
-  glowAppearance$55 = "KeyButton_glowAppearance_910d5882",
-  highlightAppearance$55 = "KeyButton_highlightAppearance_910d5882",
-  blink$55 = "KeyButton_blink_910d5882",
-  slideUpIn$55 = "KeyButton_slideUpIn_910d5882",
+  fadeIn$58 = "KeyButton_fadeIn_910d5882",
+  fadeInThreeQuarters$58 = "KeyButton_fadeInThreeQuarters_910d5882",
+  fadeInHalf$58 = "KeyButton_fadeInHalf_910d5882",
+  fadeOut$58 = "KeyButton_fadeOut_910d5882",
+  fadeInWithScale$58 = "KeyButton_fadeInWithScale_910d5882",
+  slideUp$58 = "KeyButton_slideUp_910d5882",
+  scale$58 = "KeyButton_scale_910d5882",
+  raysAppearance$58 = "KeyButton_raysAppearance_910d5882",
+  rotate$58 = "KeyButton_rotate_910d5882",
+  glowAppearance$58 = "KeyButton_glowAppearance_910d5882",
+  highlightAppearance$58 = "KeyButton_highlightAppearance_910d5882",
+  blink$58 = "KeyButton_blink_910d5882",
+  slideUpIn$58 = "KeyButton_slideUpIn_910d5882",
   key_button_module_default = {
     background: background$6,
     border: border$5,
-    base: base$51,
+    base: base$53,
     content: content$7,
-    fadeIn: fadeIn$55,
-    fadeInThreeQuarters: fadeInThreeQuarters$55,
-    fadeInHalf: fadeInHalf$55,
-    fadeOut: fadeOut$55,
-    fadeInWithScale: fadeInWithScale$55,
-    slideUp: slideUp$55,
-    scale: scale$55,
-    raysAppearance: raysAppearance$55,
-    rotate: rotate$55,
+    fadeIn: fadeIn$58,
+    fadeInThreeQuarters: fadeInThreeQuarters$58,
+    fadeInHalf: fadeInHalf$58,
+    fadeOut: fadeOut$58,
+    fadeInWithScale: fadeInWithScale$58,
+    slideUp: slideUp$58,
+    scale: scale$58,
+    raysAppearance: raysAppearance$58,
+    rotate: rotate$58,
     "reverse-rotate": "KeyButton_reverse-rotate_910d5882",
-    glowAppearance: glowAppearance$55,
-    highlightAppearance: highlightAppearance$55,
-    blink: blink$55,
-    slideUpIn: slideUpIn$55,
+    glowAppearance: glowAppearance$58,
+    highlightAppearance: highlightAppearance$58,
+    blink: blink$58,
+    slideUpIn: slideUpIn$58,
   },
   StyledBase = defineStyledComponent("KeyButton", key_button_module_default.base);
 function Base$22({ children: e, onClick: t, onMouseEnter: n, ...r }) {
@@ -38036,40 +36732,40 @@ var KeyButton = function ({
   });
 };
 KeyButton.Code = Code;
-var base$50 = "Background_39e8f2ed",
+var base$52 = "Background_39e8f2ed",
   pattern$4 = "Background_pattern_8cad1521",
   noise = "Background_noise_e3254bb3",
-  fadeIn$54 = "Background_fadeIn_26effab7",
-  fadeInThreeQuarters$54 = "Background_fadeInThreeQuarters_26effab7",
-  fadeInHalf$54 = "Background_fadeInHalf_26effab7",
-  fadeOut$54 = "Background_fadeOut_26effab7",
-  fadeInWithScale$54 = "Background_fadeInWithScale_26effab7",
-  slideUp$54 = "Background_slideUp_26effab7",
-  scale$54 = "Background_scale_26effab7",
-  raysAppearance$54 = "Background_raysAppearance_26effab7",
-  rotate$54 = "Background_rotate_26effab7",
-  glowAppearance$54 = "Background_glowAppearance_26effab7",
-  highlightAppearance$54 = "Background_highlightAppearance_26effab7",
-  blink$54 = "Background_blink_26effab7",
-  slideUpIn$54 = "Background_slideUpIn_26effab7",
+  fadeIn$57 = "Background_fadeIn_26effab7",
+  fadeInThreeQuarters$57 = "Background_fadeInThreeQuarters_26effab7",
+  fadeInHalf$57 = "Background_fadeInHalf_26effab7",
+  fadeOut$57 = "Background_fadeOut_26effab7",
+  fadeInWithScale$57 = "Background_fadeInWithScale_26effab7",
+  slideUp$57 = "Background_slideUp_26effab7",
+  scale$57 = "Background_scale_26effab7",
+  raysAppearance$57 = "Background_raysAppearance_26effab7",
+  rotate$57 = "Background_rotate_26effab7",
+  glowAppearance$57 = "Background_glowAppearance_26effab7",
+  highlightAppearance$57 = "Background_highlightAppearance_26effab7",
+  blink$57 = "Background_blink_26effab7",
+  slideUpIn$57 = "Background_slideUpIn_26effab7",
   background_module_default = {
-    base: base$50,
+    base: base$52,
     pattern: pattern$4,
     noise: noise,
-    fadeIn: fadeIn$54,
-    fadeInThreeQuarters: fadeInThreeQuarters$54,
-    fadeInHalf: fadeInHalf$54,
-    fadeOut: fadeOut$54,
-    fadeInWithScale: fadeInWithScale$54,
-    slideUp: slideUp$54,
-    scale: scale$54,
-    raysAppearance: raysAppearance$54,
-    rotate: rotate$54,
+    fadeIn: fadeIn$57,
+    fadeInThreeQuarters: fadeInThreeQuarters$57,
+    fadeInHalf: fadeInHalf$57,
+    fadeOut: fadeOut$57,
+    fadeInWithScale: fadeInWithScale$57,
+    slideUp: slideUp$57,
+    scale: scale$57,
+    raysAppearance: raysAppearance$57,
+    rotate: rotate$57,
     "reverse-rotate": "Background_reverse-rotate_26effab7",
-    glowAppearance: glowAppearance$54,
-    highlightAppearance: highlightAppearance$54,
-    blink: blink$54,
-    slideUpIn: slideUpIn$54,
+    glowAppearance: glowAppearance$57,
+    highlightAppearance: highlightAppearance$57,
+    blink: blink$57,
+    slideUpIn: slideUpIn$57,
   };
 function Background({ className: e, classNames: t }) {
   return (0, import_jsx_runtime.jsxs)("div", {
@@ -38084,38 +36780,38 @@ function Background({ className: e, classNames: t }) {
     ],
   });
 }
-var base$49 = "ScrollVelocityGuardContent_6b5de46d",
+var base$51 = "ScrollVelocityGuardContent_6b5de46d",
   base__disableInteractivity = "ScrollVelocityGuardContent_base__disableInteractivity_e6c30513",
-  fadeIn$53 = "ScrollVelocityGuardContent_fadeIn_e3cc5a39",
-  fadeInThreeQuarters$53 = "ScrollVelocityGuardContent_fadeInThreeQuarters_e3cc5a39",
-  fadeInHalf$53 = "ScrollVelocityGuardContent_fadeInHalf_e3cc5a39",
-  fadeOut$53 = "ScrollVelocityGuardContent_fadeOut_e3cc5a39",
-  fadeInWithScale$53 = "ScrollVelocityGuardContent_fadeInWithScale_e3cc5a39",
-  slideUp$53 = "ScrollVelocityGuardContent_slideUp_e3cc5a39",
-  scale$53 = "ScrollVelocityGuardContent_scale_e3cc5a39",
-  raysAppearance$53 = "ScrollVelocityGuardContent_raysAppearance_e3cc5a39",
-  rotate$53 = "ScrollVelocityGuardContent_rotate_e3cc5a39",
-  glowAppearance$53 = "ScrollVelocityGuardContent_glowAppearance_e3cc5a39",
-  highlightAppearance$53 = "ScrollVelocityGuardContent_highlightAppearance_e3cc5a39",
-  blink$53 = "ScrollVelocityGuardContent_blink_e3cc5a39",
-  slideUpIn$53 = "ScrollVelocityGuardContent_slideUpIn_e3cc5a39",
+  fadeIn$56 = "ScrollVelocityGuardContent_fadeIn_e3cc5a39",
+  fadeInThreeQuarters$56 = "ScrollVelocityGuardContent_fadeInThreeQuarters_e3cc5a39",
+  fadeInHalf$56 = "ScrollVelocityGuardContent_fadeInHalf_e3cc5a39",
+  fadeOut$56 = "ScrollVelocityGuardContent_fadeOut_e3cc5a39",
+  fadeInWithScale$56 = "ScrollVelocityGuardContent_fadeInWithScale_e3cc5a39",
+  slideUp$56 = "ScrollVelocityGuardContent_slideUp_e3cc5a39",
+  scale$56 = "ScrollVelocityGuardContent_scale_e3cc5a39",
+  raysAppearance$56 = "ScrollVelocityGuardContent_raysAppearance_e3cc5a39",
+  rotate$56 = "ScrollVelocityGuardContent_rotate_e3cc5a39",
+  glowAppearance$56 = "ScrollVelocityGuardContent_glowAppearance_e3cc5a39",
+  highlightAppearance$56 = "ScrollVelocityGuardContent_highlightAppearance_e3cc5a39",
+  blink$56 = "ScrollVelocityGuardContent_blink_e3cc5a39",
+  slideUpIn$56 = "ScrollVelocityGuardContent_slideUpIn_e3cc5a39",
   scroll_velocity_guard_content_module_default = {
-    base: base$49,
+    base: base$51,
     base__disableInteractivity: base__disableInteractivity,
-    fadeIn: fadeIn$53,
-    fadeInThreeQuarters: fadeInThreeQuarters$53,
-    fadeInHalf: fadeInHalf$53,
-    fadeOut: fadeOut$53,
-    fadeInWithScale: fadeInWithScale$53,
-    slideUp: slideUp$53,
-    scale: scale$53,
-    raysAppearance: raysAppearance$53,
-    rotate: rotate$53,
+    fadeIn: fadeIn$56,
+    fadeInThreeQuarters: fadeInThreeQuarters$56,
+    fadeInHalf: fadeInHalf$56,
+    fadeOut: fadeOut$56,
+    fadeInWithScale: fadeInWithScale$56,
+    slideUp: slideUp$56,
+    scale: scale$56,
+    raysAppearance: raysAppearance$56,
+    rotate: rotate$56,
     "reverse-rotate": "ScrollVelocityGuardContent_reverse-rotate_e3cc5a39",
-    glowAppearance: glowAppearance$53,
-    highlightAppearance: highlightAppearance$53,
-    blink: blink$53,
-    slideUpIn: slideUpIn$53,
+    glowAppearance: glowAppearance$56,
+    highlightAppearance: highlightAppearance$56,
+    blink: blink$56,
+    slideUpIn: slideUpIn$56,
   },
   DEFAULT_VELOCITY_LIMITATION = 1;
 function ScrollVelocityGuardContent({
@@ -38323,7 +37019,7 @@ var Sound = {
       e
     );
   })({}),
-  base$48 = "Cbutton_24fc9a0c",
+  base$50 = "Cbutton_24fc9a0c",
   base__main = "Cbutton_base__main_2f199578",
   base__primary = "Cbutton_base__primary_9da8a692",
   base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
@@ -38344,21 +37040,21 @@ var Sound = {
   stateDisabled = "Cbutton_stateDisabled_7b91392f",
   base__highlightActive = "Cbutton_base__highlightActive_180a9717",
   content$6 = "Cbutton_content_faaa9067",
-  fadeIn$52 = "Cbutton_fadeIn_180a9717",
-  fadeInThreeQuarters$52 = "Cbutton_fadeInThreeQuarters_180a9717",
-  fadeInHalf$52 = "Cbutton_fadeInHalf_180a9717",
-  fadeOut$52 = "Cbutton_fadeOut_180a9717",
-  fadeInWithScale$52 = "Cbutton_fadeInWithScale_180a9717",
-  slideUp$52 = "Cbutton_slideUp_180a9717",
-  scale$52 = "Cbutton_scale_180a9717",
-  raysAppearance$52 = "Cbutton_raysAppearance_180a9717",
-  rotate$52 = "Cbutton_rotate_180a9717",
-  glowAppearance$52 = "Cbutton_glowAppearance_180a9717",
-  highlightAppearance$52 = "Cbutton_highlightAppearance_180a9717",
-  blink$52 = "Cbutton_blink_180a9717",
-  slideUpIn$52 = "Cbutton_slideUpIn_180a9717",
+  fadeIn$55 = "Cbutton_fadeIn_180a9717",
+  fadeInThreeQuarters$55 = "Cbutton_fadeInThreeQuarters_180a9717",
+  fadeInHalf$55 = "Cbutton_fadeInHalf_180a9717",
+  fadeOut$55 = "Cbutton_fadeOut_180a9717",
+  fadeInWithScale$55 = "Cbutton_fadeInWithScale_180a9717",
+  slideUp$55 = "Cbutton_slideUp_180a9717",
+  scale$55 = "Cbutton_scale_180a9717",
+  raysAppearance$55 = "Cbutton_raysAppearance_180a9717",
+  rotate$55 = "Cbutton_rotate_180a9717",
+  glowAppearance$55 = "Cbutton_glowAppearance_180a9717",
+  highlightAppearance$55 = "Cbutton_highlightAppearance_180a9717",
+  blink$55 = "Cbutton_blink_180a9717",
+  slideUpIn$55 = "Cbutton_slideUpIn_180a9717",
   CButton_module_default = {
-    base: base$48,
+    base: base$50,
     base__main: base__main,
     base__primary: base__primary,
     base__primaryGreen: base__primaryGreen,
@@ -38379,20 +37075,20 @@ var Sound = {
     stateDisabled: stateDisabled,
     base__highlightActive: base__highlightActive,
     content: content$6,
-    fadeIn: fadeIn$52,
-    fadeInThreeQuarters: fadeInThreeQuarters$52,
-    fadeInHalf: fadeInHalf$52,
-    fadeOut: fadeOut$52,
-    fadeInWithScale: fadeInWithScale$52,
-    slideUp: slideUp$52,
-    scale: scale$52,
-    raysAppearance: raysAppearance$52,
-    rotate: rotate$52,
+    fadeIn: fadeIn$55,
+    fadeInThreeQuarters: fadeInThreeQuarters$55,
+    fadeInHalf: fadeInHalf$55,
+    fadeOut: fadeOut$55,
+    fadeInWithScale: fadeInWithScale$55,
+    slideUp: slideUp$55,
+    scale: scale$55,
+    raysAppearance: raysAppearance$55,
+    rotate: rotate$55,
     "reverse-rotate": "Cbutton_reverse-rotate_180a9717",
-    glowAppearance: glowAppearance$52,
-    highlightAppearance: highlightAppearance$52,
-    blink: blink$52,
-    slideUpIn: slideUpIn$52,
+    glowAppearance: glowAppearance$55,
+    highlightAppearance: highlightAppearance$55,
+    blink: blink$55,
+    slideUpIn: slideUpIn$55,
   },
   Button = ({
     children: e,
@@ -38497,42 +37193,42 @@ var Sound = {
     );
   },
   CButton = Button,
-  base$47 = "Error_741eaf3c",
+  base$49 = "Error_741eaf3c",
   alertIcon = "Error_alertIcon_e771a05c",
   errorCaption = "Error_errorCaption_89c19a4f",
   button$1 = "Error_button_2d8a41b6",
-  fadeIn$51 = "Error_fadeIn_a3398d5e",
-  fadeInThreeQuarters$51 = "Error_fadeInThreeQuarters_a3398d5e",
-  fadeInHalf$51 = "Error_fadeInHalf_a3398d5e",
-  fadeOut$51 = "Error_fadeOut_a3398d5e",
-  fadeInWithScale$51 = "Error_fadeInWithScale_a3398d5e",
-  slideUp$51 = "Error_slideUp_a3398d5e",
-  scale$51 = "Error_scale_a3398d5e",
-  raysAppearance$51 = "Error_raysAppearance_a3398d5e",
-  rotate$51 = "Error_rotate_a3398d5e",
-  glowAppearance$51 = "Error_glowAppearance_a3398d5e",
-  highlightAppearance$51 = "Error_highlightAppearance_a3398d5e",
-  blink$51 = "Error_blink_a3398d5e",
-  slideUpIn$51 = "Error_slideUpIn_a3398d5e",
+  fadeIn$54 = "Error_fadeIn_a3398d5e",
+  fadeInThreeQuarters$54 = "Error_fadeInThreeQuarters_a3398d5e",
+  fadeInHalf$54 = "Error_fadeInHalf_a3398d5e",
+  fadeOut$54 = "Error_fadeOut_a3398d5e",
+  fadeInWithScale$54 = "Error_fadeInWithScale_a3398d5e",
+  slideUp$54 = "Error_slideUp_a3398d5e",
+  scale$54 = "Error_scale_a3398d5e",
+  raysAppearance$54 = "Error_raysAppearance_a3398d5e",
+  rotate$54 = "Error_rotate_a3398d5e",
+  glowAppearance$54 = "Error_glowAppearance_a3398d5e",
+  highlightAppearance$54 = "Error_highlightAppearance_a3398d5e",
+  blink$54 = "Error_blink_a3398d5e",
+  slideUpIn$54 = "Error_slideUpIn_a3398d5e",
   Error_module_default = {
-    base: base$47,
+    base: base$49,
     alertIcon: alertIcon,
     errorCaption: errorCaption,
     button: button$1,
-    fadeIn: fadeIn$51,
-    fadeInThreeQuarters: fadeInThreeQuarters$51,
-    fadeInHalf: fadeInHalf$51,
-    fadeOut: fadeOut$51,
-    fadeInWithScale: fadeInWithScale$51,
-    slideUp: slideUp$51,
-    scale: scale$51,
-    raysAppearance: raysAppearance$51,
-    rotate: rotate$51,
+    fadeIn: fadeIn$54,
+    fadeInThreeQuarters: fadeInThreeQuarters$54,
+    fadeInHalf: fadeInHalf$54,
+    fadeOut: fadeOut$54,
+    fadeInWithScale: fadeInWithScale$54,
+    slideUp: slideUp$54,
+    scale: scale$54,
+    raysAppearance: raysAppearance$54,
+    rotate: rotate$54,
     "reverse-rotate": "Error_reverse-rotate_a3398d5e",
-    glowAppearance: glowAppearance$51,
-    highlightAppearance: highlightAppearance$51,
-    blink: blink$51,
-    slideUpIn: slideUpIn$51,
+    glowAppearance: glowAppearance$54,
+    highlightAppearance: highlightAppearance$54,
+    blink: blink$54,
+    slideUpIn: slideUpIn$54,
   },
   Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: n }) =>
     (0, import_jsx_runtime.jsxs)("div", {
@@ -38551,44 +37247,44 @@ var Sound = {
         }),
       ],
     }),
-  base$46 = "Spinner_9ec19f90",
+  base$48 = "Spinner_9ec19f90",
   caption$1 = "Spinner_caption_a44b585",
   gear = "Spinner_gear_13ca7433",
   spin = "Spinner_spin_88c33ad6",
   logo = "Spinner_logo_22e624b",
-  fadeIn$50 = "Spinner_fadeIn_88c33ad6",
-  fadeInThreeQuarters$50 = "Spinner_fadeInThreeQuarters_88c33ad6",
-  fadeInHalf$50 = "Spinner_fadeInHalf_88c33ad6",
-  fadeOut$50 = "Spinner_fadeOut_88c33ad6",
-  fadeInWithScale$50 = "Spinner_fadeInWithScale_88c33ad6",
-  slideUp$50 = "Spinner_slideUp_88c33ad6",
-  scale$50 = "Spinner_scale_88c33ad6",
-  raysAppearance$50 = "Spinner_raysAppearance_88c33ad6",
-  rotate$50 = "Spinner_rotate_88c33ad6",
-  glowAppearance$50 = "Spinner_glowAppearance_88c33ad6",
-  highlightAppearance$50 = "Spinner_highlightAppearance_88c33ad6",
-  blink$50 = "Spinner_blink_88c33ad6",
-  slideUpIn$50 = "Spinner_slideUpIn_88c33ad6",
+  fadeIn$53 = "Spinner_fadeIn_88c33ad6",
+  fadeInThreeQuarters$53 = "Spinner_fadeInThreeQuarters_88c33ad6",
+  fadeInHalf$53 = "Spinner_fadeInHalf_88c33ad6",
+  fadeOut$53 = "Spinner_fadeOut_88c33ad6",
+  fadeInWithScale$53 = "Spinner_fadeInWithScale_88c33ad6",
+  slideUp$53 = "Spinner_slideUp_88c33ad6",
+  scale$53 = "Spinner_scale_88c33ad6",
+  raysAppearance$53 = "Spinner_raysAppearance_88c33ad6",
+  rotate$53 = "Spinner_rotate_88c33ad6",
+  glowAppearance$53 = "Spinner_glowAppearance_88c33ad6",
+  highlightAppearance$53 = "Spinner_highlightAppearance_88c33ad6",
+  blink$53 = "Spinner_blink_88c33ad6",
+  slideUpIn$53 = "Spinner_slideUpIn_88c33ad6",
   Spinner_module_default = {
-    base: base$46,
+    base: base$48,
     caption: caption$1,
     gear: gear,
     spin: spin,
     logo: logo,
-    fadeIn: fadeIn$50,
-    fadeInThreeQuarters: fadeInThreeQuarters$50,
-    fadeInHalf: fadeInHalf$50,
-    fadeOut: fadeOut$50,
-    fadeInWithScale: fadeInWithScale$50,
-    slideUp: slideUp$50,
-    scale: scale$50,
-    raysAppearance: raysAppearance$50,
-    rotate: rotate$50,
+    fadeIn: fadeIn$53,
+    fadeInThreeQuarters: fadeInThreeQuarters$53,
+    fadeInHalf: fadeInHalf$53,
+    fadeOut: fadeOut$53,
+    fadeInWithScale: fadeInWithScale$53,
+    slideUp: slideUp$53,
+    scale: scale$53,
+    raysAppearance: raysAppearance$53,
+    rotate: rotate$53,
     "reverse-rotate": "Spinner_reverse-rotate_88c33ad6",
-    glowAppearance: glowAppearance$50,
-    highlightAppearance: highlightAppearance$50,
-    blink: blink$50,
-    slideUpIn: slideUpIn$50,
+    glowAppearance: glowAppearance$53,
+    highlightAppearance: highlightAppearance$53,
+    blink: blink$53,
+    slideUpIn: slideUpIn$53,
   },
   Spinner = ({ message: e, className: t, classNames: n }) =>
     (0, import_jsx_runtime.jsxs)("div", {
@@ -38607,38 +37303,38 @@ var Sound = {
         }),
       ],
     }),
-  base$45 = "Waiting_f97f6e4b",
+  base$47 = "Waiting_f97f6e4b",
   blackOverlay = "Waiting_blackOverlay_e659a6de",
-  fadeIn$49 = "Waiting_fadeIn_3972b51e",
-  fadeInThreeQuarters$49 = "Waiting_fadeInThreeQuarters_3972b51e",
-  fadeInHalf$49 = "Waiting_fadeInHalf_3972b51e",
-  fadeOut$49 = "Waiting_fadeOut_3972b51e",
-  fadeInWithScale$49 = "Waiting_fadeInWithScale_3972b51e",
-  slideUp$49 = "Waiting_slideUp_3972b51e",
-  scale$49 = "Waiting_scale_3972b51e",
-  raysAppearance$49 = "Waiting_raysAppearance_3972b51e",
-  rotate$49 = "Waiting_rotate_3972b51e",
-  glowAppearance$49 = "Waiting_glowAppearance_3972b51e",
-  highlightAppearance$49 = "Waiting_highlightAppearance_3972b51e",
-  blink$49 = "Waiting_blink_3972b51e",
-  slideUpIn$49 = "Waiting_slideUpIn_3972b51e",
+  fadeIn$52 = "Waiting_fadeIn_3972b51e",
+  fadeInThreeQuarters$52 = "Waiting_fadeInThreeQuarters_3972b51e",
+  fadeInHalf$52 = "Waiting_fadeInHalf_3972b51e",
+  fadeOut$52 = "Waiting_fadeOut_3972b51e",
+  fadeInWithScale$52 = "Waiting_fadeInWithScale_3972b51e",
+  slideUp$52 = "Waiting_slideUp_3972b51e",
+  scale$52 = "Waiting_scale_3972b51e",
+  raysAppearance$52 = "Waiting_raysAppearance_3972b51e",
+  rotate$52 = "Waiting_rotate_3972b51e",
+  glowAppearance$52 = "Waiting_glowAppearance_3972b51e",
+  highlightAppearance$52 = "Waiting_highlightAppearance_3972b51e",
+  blink$52 = "Waiting_blink_3972b51e",
+  slideUpIn$52 = "Waiting_slideUpIn_3972b51e",
   Waiting_module_default = {
-    base: base$45,
+    base: base$47,
     blackOverlay: blackOverlay,
-    fadeIn: fadeIn$49,
-    fadeInThreeQuarters: fadeInThreeQuarters$49,
-    fadeInHalf: fadeInHalf$49,
-    fadeOut: fadeOut$49,
-    fadeInWithScale: fadeInWithScale$49,
-    slideUp: slideUp$49,
-    scale: scale$49,
-    raysAppearance: raysAppearance$49,
-    rotate: rotate$49,
+    fadeIn: fadeIn$52,
+    fadeInThreeQuarters: fadeInThreeQuarters$52,
+    fadeInHalf: fadeInHalf$52,
+    fadeOut: fadeOut$52,
+    fadeInWithScale: fadeInWithScale$52,
+    slideUp: slideUp$52,
+    scale: scale$52,
+    raysAppearance: raysAppearance$52,
+    rotate: rotate$52,
     "reverse-rotate": "Waiting_reverse-rotate_3972b51e",
-    glowAppearance: glowAppearance$49,
-    highlightAppearance: highlightAppearance$49,
-    blink: blink$49,
-    slideUpIn: slideUpIn$49,
+    glowAppearance: glowAppearance$52,
+    highlightAppearance: highlightAppearance$52,
+    blink: blink$52,
+    slideUpIn: slideUpIn$52,
   },
   Waiting = ({
     errorBtnClickHandler: e,
@@ -38684,7 +37380,7 @@ var background$5 = "Switcher_background_a88161d0",
   selectedOverlay$1 = "Switcher_selectedOverlay_959b7a8f",
   selectedItemBackground = "Switcher_selectedItemBackground_f3f7ed7e",
   selectedItemBorder = "Switcher_selectedItemBorder_7a1a3dd5",
-  base$44 = "Switcher_825add0a",
+  base$46 = "Switcher_825add0a",
   base__disabled$5 = "Switcher_base__disabled_863a5f47",
   content$5 = "Switcher_content_c83e02e5",
   content__fontAligned = "Switcher_content__fontAligned_9342bb29",
@@ -38693,19 +37389,19 @@ var background$5 = "Switcher_background_a88161d0",
   selectedItem = "Switcher_selectedItem_c6995287",
   selectedItem__moved = "Switcher_selectedItem__moved_5f74b720",
   selectedItemContent = "Switcher_selectedItemContent_34994102",
-  fadeIn$48 = "Switcher_fadeIn_9ba1e4f",
-  fadeInThreeQuarters$48 = "Switcher_fadeInThreeQuarters_9ba1e4f",
-  fadeInHalf$48 = "Switcher_fadeInHalf_9ba1e4f",
-  fadeOut$48 = "Switcher_fadeOut_9ba1e4f",
-  fadeInWithScale$48 = "Switcher_fadeInWithScale_9ba1e4f",
-  slideUp$48 = "Switcher_slideUp_9ba1e4f",
-  scale$48 = "Switcher_scale_9ba1e4f",
-  raysAppearance$48 = "Switcher_raysAppearance_9ba1e4f",
-  rotate$48 = "Switcher_rotate_9ba1e4f",
-  glowAppearance$48 = "Switcher_glowAppearance_9ba1e4f",
-  highlightAppearance$48 = "Switcher_highlightAppearance_9ba1e4f",
-  blink$48 = "Switcher_blink_9ba1e4f",
-  slideUpIn$48 = "Switcher_slideUpIn_9ba1e4f",
+  fadeIn$51 = "Switcher_fadeIn_9ba1e4f",
+  fadeInThreeQuarters$51 = "Switcher_fadeInThreeQuarters_9ba1e4f",
+  fadeInHalf$51 = "Switcher_fadeInHalf_9ba1e4f",
+  fadeOut$51 = "Switcher_fadeOut_9ba1e4f",
+  fadeInWithScale$51 = "Switcher_fadeInWithScale_9ba1e4f",
+  slideUp$51 = "Switcher_slideUp_9ba1e4f",
+  scale$51 = "Switcher_scale_9ba1e4f",
+  raysAppearance$51 = "Switcher_raysAppearance_9ba1e4f",
+  rotate$51 = "Switcher_rotate_9ba1e4f",
+  glowAppearance$51 = "Switcher_glowAppearance_9ba1e4f",
+  highlightAppearance$51 = "Switcher_highlightAppearance_9ba1e4f",
+  blink$51 = "Switcher_blink_9ba1e4f",
+  slideUpIn$51 = "Switcher_slideUpIn_9ba1e4f",
   switcher_module_default = {
     background: background$5,
     border: border$4,
@@ -38713,7 +37409,7 @@ var background$5 = "Switcher_background_a88161d0",
     selectedOverlay: selectedOverlay$1,
     selectedItemBackground: selectedItemBackground,
     selectedItemBorder: selectedItemBorder,
-    base: base$44,
+    base: base$46,
     base__disabled: base__disabled$5,
     "base__size-small": "Switcher_base__size-small_df4dee40",
     "base__size-medium": "Switcher_base__size-medium_d287fe48",
@@ -38726,20 +37422,20 @@ var background$5 = "Switcher_background_a88161d0",
     selectedItem: selectedItem,
     selectedItem__moved: selectedItem__moved,
     selectedItemContent: selectedItemContent,
-    fadeIn: fadeIn$48,
-    fadeInThreeQuarters: fadeInThreeQuarters$48,
-    fadeInHalf: fadeInHalf$48,
-    fadeOut: fadeOut$48,
-    fadeInWithScale: fadeInWithScale$48,
-    slideUp: slideUp$48,
-    scale: scale$48,
-    raysAppearance: raysAppearance$48,
-    rotate: rotate$48,
+    fadeIn: fadeIn$51,
+    fadeInThreeQuarters: fadeInThreeQuarters$51,
+    fadeInHalf: fadeInHalf$51,
+    fadeOut: fadeOut$51,
+    fadeInWithScale: fadeInWithScale$51,
+    slideUp: slideUp$51,
+    scale: scale$51,
+    raysAppearance: raysAppearance$51,
+    rotate: rotate$51,
     "reverse-rotate": "Switcher_reverse-rotate_9ba1e4f",
-    glowAppearance: glowAppearance$48,
-    highlightAppearance: highlightAppearance$48,
-    blink: blink$48,
-    slideUpIn: slideUpIn$48,
+    glowAppearance: glowAppearance$51,
+    highlightAppearance: highlightAppearance$51,
+    blink: blink$51,
+    slideUpIn: slideUpIn$51,
   };
 function SelectedItem({ children: e, classNames: t }) {
   const { checked: n } = useSwitcherContext();
@@ -38964,19 +37660,19 @@ var selectedOverlay = "Slot_selectedOverlay_5b63484a",
   slot__extraLarge = "Slot_slot__extraLarge_d8070c25",
   content__disabled = "Slot_content__disabled_1d609e12",
   emptyContent = "Slot_emptyContent_ba97d4d8",
-  fadeIn$47 = "Slot_fadeIn_71f19f5c",
-  fadeInThreeQuarters$47 = "Slot_fadeInThreeQuarters_71f19f5c",
-  fadeInHalf$47 = "Slot_fadeInHalf_71f19f5c",
-  fadeOut$47 = "Slot_fadeOut_71f19f5c",
-  fadeInWithScale$47 = "Slot_fadeInWithScale_71f19f5c",
-  slideUp$47 = "Slot_slideUp_71f19f5c",
-  scale$47 = "Slot_scale_71f19f5c",
-  raysAppearance$47 = "Slot_raysAppearance_71f19f5c",
-  rotate$47 = "Slot_rotate_71f19f5c",
-  glowAppearance$47 = "Slot_glowAppearance_71f19f5c",
-  highlightAppearance$47 = "Slot_highlightAppearance_71f19f5c",
-  blink$47 = "Slot_blink_71f19f5c",
-  slideUpIn$47 = "Slot_slideUpIn_71f19f5c",
+  fadeIn$50 = "Slot_fadeIn_71f19f5c",
+  fadeInThreeQuarters$50 = "Slot_fadeInThreeQuarters_71f19f5c",
+  fadeInHalf$50 = "Slot_fadeInHalf_71f19f5c",
+  fadeOut$50 = "Slot_fadeOut_71f19f5c",
+  fadeInWithScale$50 = "Slot_fadeInWithScale_71f19f5c",
+  slideUp$50 = "Slot_slideUp_71f19f5c",
+  scale$50 = "Slot_scale_71f19f5c",
+  raysAppearance$50 = "Slot_raysAppearance_71f19f5c",
+  rotate$50 = "Slot_rotate_71f19f5c",
+  glowAppearance$50 = "Slot_glowAppearance_71f19f5c",
+  highlightAppearance$50 = "Slot_highlightAppearance_71f19f5c",
+  blink$50 = "Slot_blink_71f19f5c",
+  slideUpIn$50 = "Slot_slideUpIn_71f19f5c",
   slot_module_default = {
     selectedOverlay: selectedOverlay,
     disabledOverlay: disabledOverlay,
@@ -38989,20 +37685,20 @@ var selectedOverlay = "Slot_selectedOverlay_5b63484a",
     slot__extraLarge: slot__extraLarge,
     content__disabled: content__disabled,
     emptyContent: emptyContent,
-    fadeIn: fadeIn$47,
-    fadeInThreeQuarters: fadeInThreeQuarters$47,
-    fadeInHalf: fadeInHalf$47,
-    fadeOut: fadeOut$47,
-    fadeInWithScale: fadeInWithScale$47,
-    slideUp: slideUp$47,
-    scale: scale$47,
-    raysAppearance: raysAppearance$47,
-    rotate: rotate$47,
+    fadeIn: fadeIn$50,
+    fadeInThreeQuarters: fadeInThreeQuarters$50,
+    fadeInHalf: fadeInHalf$50,
+    fadeOut: fadeOut$50,
+    fadeInWithScale: fadeInWithScale$50,
+    slideUp: slideUp$50,
+    scale: scale$50,
+    raysAppearance: raysAppearance$50,
+    rotate: rotate$50,
     "reverse-rotate": "Slot_reverse-rotate_71f19f5c",
-    glowAppearance: glowAppearance$47,
-    highlightAppearance: highlightAppearance$47,
-    blink: blink$47,
-    slideUpIn: slideUpIn$47,
+    glowAppearance: glowAppearance$50,
+    highlightAppearance: highlightAppearance$50,
+    blink: blink$50,
+    slideUpIn: slideUpIn$50,
   },
   sizes$9 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
   Content$1 = defineStyledComponent("SlotContent"),
@@ -39257,38 +37953,38 @@ function isSerializableReactNode(e) {
 ((DragAndDrop.DragArea = DragArea),
   (DragAndDrop.DropArea = DropArea),
   (DragAndDrop.VirtualItem = VirtualItem));
-var base$43 = "MultilineOverflow_ec9f8e47",
+var base$45 = "MultilineOverflow_ec9f8e47",
   content$3 = "MultilineOverflow_content_b539970d",
-  fadeIn$46 = "MultilineOverflow_fadeIn_f602d646",
-  fadeInThreeQuarters$46 = "MultilineOverflow_fadeInThreeQuarters_f602d646",
-  fadeInHalf$46 = "MultilineOverflow_fadeInHalf_f602d646",
-  fadeOut$46 = "MultilineOverflow_fadeOut_f602d646",
-  fadeInWithScale$46 = "MultilineOverflow_fadeInWithScale_f602d646",
-  slideUp$46 = "MultilineOverflow_slideUp_f602d646",
-  scale$46 = "MultilineOverflow_scale_f602d646",
-  raysAppearance$46 = "MultilineOverflow_raysAppearance_f602d646",
-  rotate$46 = "MultilineOverflow_rotate_f602d646",
-  glowAppearance$46 = "MultilineOverflow_glowAppearance_f602d646",
-  highlightAppearance$46 = "MultilineOverflow_highlightAppearance_f602d646",
-  blink$46 = "MultilineOverflow_blink_f602d646",
-  slideUpIn$46 = "MultilineOverflow_slideUpIn_f602d646",
+  fadeIn$49 = "MultilineOverflow_fadeIn_f602d646",
+  fadeInThreeQuarters$49 = "MultilineOverflow_fadeInThreeQuarters_f602d646",
+  fadeInHalf$49 = "MultilineOverflow_fadeInHalf_f602d646",
+  fadeOut$49 = "MultilineOverflow_fadeOut_f602d646",
+  fadeInWithScale$49 = "MultilineOverflow_fadeInWithScale_f602d646",
+  slideUp$49 = "MultilineOverflow_slideUp_f602d646",
+  scale$49 = "MultilineOverflow_scale_f602d646",
+  raysAppearance$49 = "MultilineOverflow_raysAppearance_f602d646",
+  rotate$49 = "MultilineOverflow_rotate_f602d646",
+  glowAppearance$49 = "MultilineOverflow_glowAppearance_f602d646",
+  highlightAppearance$49 = "MultilineOverflow_highlightAppearance_f602d646",
+  blink$49 = "MultilineOverflow_blink_f602d646",
+  slideUpIn$49 = "MultilineOverflow_slideUpIn_f602d646",
   multiline_overflow_module_default = {
-    base: base$43,
+    base: base$45,
     content: content$3,
-    fadeIn: fadeIn$46,
-    fadeInThreeQuarters: fadeInThreeQuarters$46,
-    fadeInHalf: fadeInHalf$46,
-    fadeOut: fadeOut$46,
-    fadeInWithScale: fadeInWithScale$46,
-    slideUp: slideUp$46,
-    scale: scale$46,
-    raysAppearance: raysAppearance$46,
-    rotate: rotate$46,
+    fadeIn: fadeIn$49,
+    fadeInThreeQuarters: fadeInThreeQuarters$49,
+    fadeInHalf: fadeInHalf$49,
+    fadeOut: fadeOut$49,
+    fadeInWithScale: fadeInWithScale$49,
+    slideUp: slideUp$49,
+    scale: scale$49,
+    raysAppearance: raysAppearance$49,
+    rotate: rotate$49,
     "reverse-rotate": "MultilineOverflow_reverse-rotate_f602d646",
-    glowAppearance: glowAppearance$46,
-    highlightAppearance: highlightAppearance$46,
-    blink: blink$46,
-    slideUpIn: slideUpIn$46,
+    glowAppearance: glowAppearance$49,
+    highlightAppearance: highlightAppearance$49,
+    blink: blink$49,
+    slideUpIn: slideUpIn$49,
   };
 function isSerializableParams(e) {
   return !e || Object.values(e).every(isSerializableReactNode);
@@ -39418,7 +38114,7 @@ var MultilineOverflow$1 = (0, import_react.forwardRef)(function (
     className: clsx(multiline_overflow_module_default.base, d, p?.base),
     style: { ...f, ..._ },
     children: [
-      (0, import_jsx_runtime.jsx)(FormatText, {
+      (0, import_jsx_runtime.jsx)(FormatText$1, {
         text: e,
         brackets: t,
         params: n,
@@ -39441,7 +38137,7 @@ function FormatTextSplited({ className: e, ...t }) {
     className: e,
     children: t.text
       .split("\n")
-      .map((e) => (0, import_jsx_runtime.jsx)(FormatText, { ...t, text: e }, e)),
+      .map((e) => (0, import_jsx_runtime.jsx)(FormatText$1, { ...t, text: e }, e)),
   });
 }
 function ExtendedText(e) {
@@ -39493,19 +38189,19 @@ var formats = {
   detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
   detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
   detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
-  fadeIn$45 = "FormattedValue_fadeIn_30bfaeef",
-  fadeInThreeQuarters$45 = "FormattedValue_fadeInThreeQuarters_30bfaeef",
-  fadeInHalf$45 = "FormattedValue_fadeInHalf_30bfaeef",
-  fadeOut$45 = "FormattedValue_fadeOut_30bfaeef",
-  fadeInWithScale$45 = "FormattedValue_fadeInWithScale_30bfaeef",
-  slideUp$45 = "FormattedValue_slideUp_30bfaeef",
-  scale$45 = "FormattedValue_scale_30bfaeef",
-  raysAppearance$45 = "FormattedValue_raysAppearance_30bfaeef",
-  rotate$45 = "FormattedValue_rotate_30bfaeef",
-  glowAppearance$45 = "FormattedValue_glowAppearance_30bfaeef",
-  highlightAppearance$45 = "FormattedValue_highlightAppearance_30bfaeef",
-  blink$45 = "FormattedValue_blink_30bfaeef",
-  slideUpIn$45 = "FormattedValue_slideUpIn_30bfaeef",
+  fadeIn$48 = "FormattedValue_fadeIn_30bfaeef",
+  fadeInThreeQuarters$48 = "FormattedValue_fadeInThreeQuarters_30bfaeef",
+  fadeInHalf$48 = "FormattedValue_fadeInHalf_30bfaeef",
+  fadeOut$48 = "FormattedValue_fadeOut_30bfaeef",
+  fadeInWithScale$48 = "FormattedValue_fadeInWithScale_30bfaeef",
+  slideUp$48 = "FormattedValue_slideUp_30bfaeef",
+  scale$48 = "FormattedValue_scale_30bfaeef",
+  raysAppearance$48 = "FormattedValue_raysAppearance_30bfaeef",
+  rotate$48 = "FormattedValue_rotate_30bfaeef",
+  glowAppearance$48 = "FormattedValue_glowAppearance_30bfaeef",
+  highlightAppearance$48 = "FormattedValue_highlightAppearance_30bfaeef",
+  blink$48 = "FormattedValue_blink_30bfaeef",
+  slideUpIn$48 = "FormattedValue_slideUpIn_30bfaeef",
   formatted_value_module_default = {
     item__x16x16: item__x16x16,
     item__x24x24: item__x24x24,
@@ -39523,20 +38219,20 @@ var formats = {
     detailedSeparator__x32x32: detailedSeparator__x32x32,
     detailedSeparator__x48x48: detailedSeparator__x48x48,
     detailedSeparator__x80x80: detailedSeparator__x80x80,
-    fadeIn: fadeIn$45,
-    fadeInThreeQuarters: fadeInThreeQuarters$45,
-    fadeInHalf: fadeInHalf$45,
-    fadeOut: fadeOut$45,
-    fadeInWithScale: fadeInWithScale$45,
-    slideUp: slideUp$45,
-    scale: scale$45,
-    raysAppearance: raysAppearance$45,
-    rotate: rotate$45,
+    fadeIn: fadeIn$48,
+    fadeInThreeQuarters: fadeInThreeQuarters$48,
+    fadeInHalf: fadeInHalf$48,
+    fadeOut: fadeOut$48,
+    fadeInWithScale: fadeInWithScale$48,
+    slideUp: slideUp$48,
+    scale: scale$48,
+    raysAppearance: raysAppearance$48,
+    rotate: rotate$48,
     "reverse-rotate": "FormattedValue_reverse-rotate_30bfaeef",
-    glowAppearance: glowAppearance$45,
-    highlightAppearance: highlightAppearance$45,
-    blink: blink$45,
-    slideUpIn: slideUpIn$45,
+    glowAppearance: glowAppearance$48,
+    highlightAppearance: highlightAppearance$48,
+    blink: blink$48,
+    slideUpIn: slideUpIn$48,
   };
 function FormattedValue({ size: e, preFormatted: t }) {
   const n = [];
@@ -39644,8 +38340,8 @@ function compactFormatter(e, t) {
   return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
 }
 var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
-  base$42 = "Timer_dac0a0aa",
-  icon$5 = "Timer_icon_a61415df",
+  base$44 = "Timer_dac0a0aa",
+  icon$6 = "Timer_icon_a61415df",
   icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
   icon__accent = "Timer_icon__accent_2cf70c3b",
   icon__cooldown = "Timer_icon__cooldown_4a26d3f",
@@ -39661,22 +38357,22 @@ var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
   label__x80x80 = "Timer_label__x80x80_10a84ee6",
   label__accent = "Timer_label__accent_ac7d4f7b",
   label__cooldown = "Timer_label__cooldown_c2349ab9",
-  fadeIn$44 = "Timer_fadeIn_6ee5dd6c",
-  fadeInThreeQuarters$44 = "Timer_fadeInThreeQuarters_6ee5dd6c",
-  fadeInHalf$44 = "Timer_fadeInHalf_6ee5dd6c",
-  fadeOut$44 = "Timer_fadeOut_6ee5dd6c",
-  fadeInWithScale$44 = "Timer_fadeInWithScale_6ee5dd6c",
-  slideUp$44 = "Timer_slideUp_6ee5dd6c",
-  scale$44 = "Timer_scale_6ee5dd6c",
-  raysAppearance$44 = "Timer_raysAppearance_6ee5dd6c",
-  rotate$44 = "Timer_rotate_6ee5dd6c",
-  glowAppearance$44 = "Timer_glowAppearance_6ee5dd6c",
-  highlightAppearance$44 = "Timer_highlightAppearance_6ee5dd6c",
-  blink$44 = "Timer_blink_6ee5dd6c",
-  slideUpIn$44 = "Timer_slideUpIn_6ee5dd6c",
+  fadeIn$47 = "Timer_fadeIn_6ee5dd6c",
+  fadeInThreeQuarters$47 = "Timer_fadeInThreeQuarters_6ee5dd6c",
+  fadeInHalf$47 = "Timer_fadeInHalf_6ee5dd6c",
+  fadeOut$47 = "Timer_fadeOut_6ee5dd6c",
+  fadeInWithScale$47 = "Timer_fadeInWithScale_6ee5dd6c",
+  slideUp$47 = "Timer_slideUp_6ee5dd6c",
+  scale$47 = "Timer_scale_6ee5dd6c",
+  raysAppearance$47 = "Timer_raysAppearance_6ee5dd6c",
+  rotate$47 = "Timer_rotate_6ee5dd6c",
+  glowAppearance$47 = "Timer_glowAppearance_6ee5dd6c",
+  highlightAppearance$47 = "Timer_highlightAppearance_6ee5dd6c",
+  blink$47 = "Timer_blink_6ee5dd6c",
+  slideUpIn$47 = "Timer_slideUpIn_6ee5dd6c",
   timer_module_default = {
-    base: base$42,
-    icon: icon$5,
+    base: base$44,
+    icon: icon$6,
     icon__x16x16: icon__x16x16,
     icon__accent: icon__accent,
     icon__cooldown: icon__cooldown,
@@ -39692,20 +38388,20 @@ var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
     label__x80x80: label__x80x80,
     label__accent: label__accent,
     label__cooldown: label__cooldown,
-    fadeIn: fadeIn$44,
-    fadeInThreeQuarters: fadeInThreeQuarters$44,
-    fadeInHalf: fadeInHalf$44,
-    fadeOut: fadeOut$44,
-    fadeInWithScale: fadeInWithScale$44,
-    slideUp: slideUp$44,
-    scale: scale$44,
-    raysAppearance: raysAppearance$44,
-    rotate: rotate$44,
+    fadeIn: fadeIn$47,
+    fadeInThreeQuarters: fadeInThreeQuarters$47,
+    fadeInHalf: fadeInHalf$47,
+    fadeOut: fadeOut$47,
+    fadeInWithScale: fadeInWithScale$47,
+    slideUp: slideUp$47,
+    scale: scale$47,
+    raysAppearance: raysAppearance$47,
+    rotate: rotate$47,
     "reverse-rotate": "Timer_reverse-rotate_6ee5dd6c",
-    glowAppearance: glowAppearance$44,
-    highlightAppearance: highlightAppearance$44,
-    blink: blink$44,
-    slideUpIn: slideUpIn$44,
+    glowAppearance: glowAppearance$47,
+    highlightAppearance: highlightAppearance$47,
+    blink: blink$47,
+    slideUpIn: slideUpIn$47,
   };
 function Timer({
   start: e,
@@ -39770,19 +38466,19 @@ var fill = "Filled_fill_32930ca9",
   filled__small = "Filled_filled__small_94d1350d",
   pattern$3 = "Filled_pattern_6ec8608d",
   filled__medium = "Filled_filled__medium_94d1350d",
-  fadeIn$43 = "Filled_fadeIn_94d1350d",
-  fadeInThreeQuarters$43 = "Filled_fadeInThreeQuarters_94d1350d",
-  fadeInHalf$43 = "Filled_fadeInHalf_94d1350d",
-  fadeOut$43 = "Filled_fadeOut_94d1350d",
-  fadeInWithScale$43 = "Filled_fadeInWithScale_94d1350d",
-  slideUp$43 = "Filled_slideUp_94d1350d",
-  scale$43 = "Filled_scale_94d1350d",
-  raysAppearance$43 = "Filled_raysAppearance_94d1350d",
-  rotate$43 = "Filled_rotate_94d1350d",
-  glowAppearance$43 = "Filled_glowAppearance_94d1350d",
-  highlightAppearance$43 = "Filled_highlightAppearance_94d1350d",
-  blink$43 = "Filled_blink_94d1350d",
-  slideUpIn$43 = "Filled_slideUpIn_94d1350d",
+  fadeIn$46 = "Filled_fadeIn_94d1350d",
+  fadeInThreeQuarters$46 = "Filled_fadeInThreeQuarters_94d1350d",
+  fadeInHalf$46 = "Filled_fadeInHalf_94d1350d",
+  fadeOut$46 = "Filled_fadeOut_94d1350d",
+  fadeInWithScale$46 = "Filled_fadeInWithScale_94d1350d",
+  slideUp$46 = "Filled_slideUp_94d1350d",
+  scale$46 = "Filled_scale_94d1350d",
+  raysAppearance$46 = "Filled_raysAppearance_94d1350d",
+  rotate$46 = "Filled_rotate_94d1350d",
+  glowAppearance$46 = "Filled_glowAppearance_94d1350d",
+  highlightAppearance$46 = "Filled_highlightAppearance_94d1350d",
+  blink$46 = "Filled_blink_94d1350d",
+  slideUpIn$46 = "Filled_slideUpIn_94d1350d",
   filled_module_default = {
     fill: fill,
     filled: filled$1,
@@ -39790,20 +38486,20 @@ var fill = "Filled_fill_32930ca9",
     filled__small: filled__small,
     pattern: pattern$3,
     filled__medium: filled__medium,
-    fadeIn: fadeIn$43,
-    fadeInThreeQuarters: fadeInThreeQuarters$43,
-    fadeInHalf: fadeInHalf$43,
-    fadeOut: fadeOut$43,
-    fadeInWithScale: fadeInWithScale$43,
-    slideUp: slideUp$43,
-    scale: scale$43,
-    raysAppearance: raysAppearance$43,
-    rotate: rotate$43,
+    fadeIn: fadeIn$46,
+    fadeInThreeQuarters: fadeInThreeQuarters$46,
+    fadeInHalf: fadeInHalf$46,
+    fadeOut: fadeOut$46,
+    fadeInWithScale: fadeInWithScale$46,
+    slideUp: slideUp$46,
+    scale: scale$46,
+    raysAppearance: raysAppearance$46,
+    rotate: rotate$46,
     "reverse-rotate": "Filled_reverse-rotate_94d1350d",
-    glowAppearance: glowAppearance$43,
-    highlightAppearance: highlightAppearance$43,
-    blink: blink$43,
-    slideUpIn: slideUpIn$43,
+    glowAppearance: glowAppearance$46,
+    highlightAppearance: highlightAppearance$46,
+    blink: blink$46,
+    slideUpIn: slideUpIn$46,
   };
 function HeadlessFilled({
   className: e,
@@ -39885,49 +38581,49 @@ function ProgressBarProvider$1(e) {
   return (0, import_jsx_runtime.jsx)(Context$2.Provider, { value: d, children: e.children });
 }
 var background$4 = "ProgressBar_background_b40cdfdf",
-  base$41 = "ProgressBar_27c2305c",
+  base$43 = "ProgressBar_27c2305c",
   base__small$12 = "ProgressBar_base__small_61ccd4be",
   base__medium$7 = "ProgressBar_base__medium_478d985a",
   base__full$1 = "ProgressBar_base__full_be7f12da",
   base_full = "ProgressBar_base_full_13ab2776",
   base_small = "ProgressBar_base_small_13ab2776",
   backgroundPattern$3 = "ProgressBar_backgroundPattern_7e932276",
-  fadeIn$42 = "ProgressBar_fadeIn_13ab2776",
-  fadeInThreeQuarters$42 = "ProgressBar_fadeInThreeQuarters_13ab2776",
-  fadeInHalf$42 = "ProgressBar_fadeInHalf_13ab2776",
-  fadeOut$42 = "ProgressBar_fadeOut_13ab2776",
-  fadeInWithScale$42 = "ProgressBar_fadeInWithScale_13ab2776",
-  slideUp$42 = "ProgressBar_slideUp_13ab2776",
-  scale$42 = "ProgressBar_scale_13ab2776",
-  raysAppearance$42 = "ProgressBar_raysAppearance_13ab2776",
-  rotate$42 = "ProgressBar_rotate_13ab2776",
-  glowAppearance$42 = "ProgressBar_glowAppearance_13ab2776",
-  highlightAppearance$42 = "ProgressBar_highlightAppearance_13ab2776",
-  blink$42 = "ProgressBar_blink_13ab2776",
-  slideUpIn$42 = "ProgressBar_slideUpIn_13ab2776",
+  fadeIn$45 = "ProgressBar_fadeIn_13ab2776",
+  fadeInThreeQuarters$45 = "ProgressBar_fadeInThreeQuarters_13ab2776",
+  fadeInHalf$45 = "ProgressBar_fadeInHalf_13ab2776",
+  fadeOut$45 = "ProgressBar_fadeOut_13ab2776",
+  fadeInWithScale$45 = "ProgressBar_fadeInWithScale_13ab2776",
+  slideUp$45 = "ProgressBar_slideUp_13ab2776",
+  scale$45 = "ProgressBar_scale_13ab2776",
+  raysAppearance$45 = "ProgressBar_raysAppearance_13ab2776",
+  rotate$45 = "ProgressBar_rotate_13ab2776",
+  glowAppearance$45 = "ProgressBar_glowAppearance_13ab2776",
+  highlightAppearance$45 = "ProgressBar_highlightAppearance_13ab2776",
+  blink$45 = "ProgressBar_blink_13ab2776",
+  slideUpIn$45 = "ProgressBar_slideUpIn_13ab2776",
   progress_bar_module_default$1 = {
     background: background$4,
-    base: base$41,
+    base: base$43,
     base__small: base__small$12,
     base__medium: base__medium$7,
     base__full: base__full$1,
     base_full: base_full,
     base_small: base_small,
     backgroundPattern: backgroundPattern$3,
-    fadeIn: fadeIn$42,
-    fadeInThreeQuarters: fadeInThreeQuarters$42,
-    fadeInHalf: fadeInHalf$42,
-    fadeOut: fadeOut$42,
-    fadeInWithScale: fadeInWithScale$42,
-    slideUp: slideUp$42,
-    scale: scale$42,
-    raysAppearance: raysAppearance$42,
-    rotate: rotate$42,
+    fadeIn: fadeIn$45,
+    fadeInThreeQuarters: fadeInThreeQuarters$45,
+    fadeInHalf: fadeInHalf$45,
+    fadeOut: fadeOut$45,
+    fadeInWithScale: fadeInWithScale$45,
+    slideUp: slideUp$45,
+    scale: scale$45,
+    raysAppearance: raysAppearance$45,
+    rotate: rotate$45,
     "reverse-rotate": "ProgressBar_reverse-rotate_13ab2776",
-    glowAppearance: glowAppearance$42,
-    highlightAppearance: highlightAppearance$42,
-    blink: blink$42,
-    slideUpIn: slideUpIn$42,
+    glowAppearance: glowAppearance$45,
+    highlightAppearance: highlightAppearance$45,
+    blink: blink$45,
+    slideUpIn: slideUpIn$45,
   },
   Base$18 = defineStyledComponent("ProgressBar", progress_bar_module_default$1.base, {
     variants: {
@@ -40315,7 +39011,7 @@ var RewardType$1 = (function (e) {
         return e;
     }
   },
-  formatPrintf = (e, t) =>
+  formatPrintf$1 = (e, t) =>
     e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
       const n = 0 === e.indexOf("%") ? 2 : 1;
       return String(t[e.slice(n, -n)]);
@@ -40333,10 +39029,10 @@ var RewardType$1 = (function (e) {
   base__s600x450$1 = "Reward_base__s600x450_e27f3852",
   base__s300x300 = "Reward_base__s300x300_b3d79936",
   base__s450x450 = "Reward_base__s450x450_8b0abaf7",
-  base$40 = "Reward_d65e1e12",
+  base$42 = "Reward_d65e1e12",
   base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
   tooltipWrapper$1 = "Reward_tooltipWrapper_75b925a5",
-  icon$4 = "Reward_icon_e152f13b",
+  icon$5 = "Reward_icon_e152f13b",
   overlay$1 = "Reward_overlay_8cbe65c9",
   highlight$2 = "Reward_highlight_f1cd08e0",
   image__s24x24 = "Reward_image__s24x24_954b5cee",
@@ -40362,19 +39058,19 @@ var RewardType$1 = (function (e) {
   info__premiumTank$1 = "Reward_info__premiumTank_7862152",
   title$2 = "Reward_title_fbcf4b5",
   timer$1 = "Reward_timer_22ba7b8b",
-  fadeIn$41 = "Reward_fadeIn_21f091ec",
-  fadeInThreeQuarters$41 = "Reward_fadeInThreeQuarters_21f091ec",
-  fadeInHalf$41 = "Reward_fadeInHalf_21f091ec",
-  fadeOut$41 = "Reward_fadeOut_21f091ec",
-  fadeInWithScale$41 = "Reward_fadeInWithScale_21f091ec",
-  slideUp$41 = "Reward_slideUp_21f091ec",
-  scale$41 = "Reward_scale_21f091ec",
-  raysAppearance$41 = "Reward_raysAppearance_21f091ec",
-  rotate$41 = "Reward_rotate_21f091ec",
-  glowAppearance$41 = "Reward_glowAppearance_21f091ec",
-  highlightAppearance$41 = "Reward_highlightAppearance_21f091ec",
-  blink$41 = "Reward_blink_21f091ec",
-  slideUpIn$41 = "Reward_slideUpIn_21f091ec",
+  fadeIn$44 = "Reward_fadeIn_21f091ec",
+  fadeInThreeQuarters$44 = "Reward_fadeInThreeQuarters_21f091ec",
+  fadeInHalf$44 = "Reward_fadeInHalf_21f091ec",
+  fadeOut$44 = "Reward_fadeOut_21f091ec",
+  fadeInWithScale$44 = "Reward_fadeInWithScale_21f091ec",
+  slideUp$44 = "Reward_slideUp_21f091ec",
+  scale$44 = "Reward_scale_21f091ec",
+  raysAppearance$44 = "Reward_raysAppearance_21f091ec",
+  rotate$44 = "Reward_rotate_21f091ec",
+  glowAppearance$44 = "Reward_glowAppearance_21f091ec",
+  highlightAppearance$44 = "Reward_highlightAppearance_21f091ec",
+  blink$44 = "Reward_blink_21f091ec",
+  slideUpIn$44 = "Reward_slideUpIn_21f091ec",
   reward_module_default = {
     base__s24x24: base__s24x24,
     base__s48x48: base__s48x48$1,
@@ -40389,10 +39085,10 @@ var RewardType$1 = (function (e) {
     base__s600x450: base__s600x450$1,
     base__s300x300: base__s300x300,
     base__s450x450: base__s450x450,
-    base: base$40,
+    base: base$42,
     base__dynamicBox: base__dynamicBox,
     tooltipWrapper: tooltipWrapper$1,
-    icon: icon$4,
+    icon: icon$5,
     overlay: overlay$1,
     highlight: highlight$2,
     image__s24x24: image__s24x24,
@@ -40418,20 +39114,20 @@ var RewardType$1 = (function (e) {
     info__premiumTank: info__premiumTank$1,
     title: title$2,
     timer: timer$1,
-    fadeIn: fadeIn$41,
-    fadeInThreeQuarters: fadeInThreeQuarters$41,
-    fadeInHalf: fadeInHalf$41,
-    fadeOut: fadeOut$41,
-    fadeInWithScale: fadeInWithScale$41,
-    slideUp: slideUp$41,
-    scale: scale$41,
-    raysAppearance: raysAppearance$41,
-    rotate: rotate$41,
+    fadeIn: fadeIn$44,
+    fadeInThreeQuarters: fadeInThreeQuarters$44,
+    fadeInHalf: fadeInHalf$44,
+    fadeOut: fadeOut$44,
+    fadeInWithScale: fadeInWithScale$44,
+    slideUp: slideUp$44,
+    scale: scale$44,
+    raysAppearance: raysAppearance$44,
+    rotate: rotate$44,
     "reverse-rotate": "Reward_reverse-rotate_21f091ec",
-    glowAppearance: glowAppearance$41,
-    highlightAppearance: highlightAppearance$41,
-    blink: blink$41,
-    slideUpIn: slideUpIn$41,
+    glowAppearance: glowAppearance$44,
+    highlightAppearance: highlightAppearance$44,
+    blink: blink$44,
+    slideUpIn: slideUpIn$44,
   },
   images = resources.resolve("images"),
   SIZE_MAP = new Map([
@@ -40539,44 +39235,44 @@ var RewardType$1 = (function (e) {
       ],
     });
   },
-  base$39 = "RewardsList_b956755b",
+  base$41 = "RewardsList_b956755b",
   base__vertical$1 = "RewardsList_base__vertical_59db3c9f",
   reward$1 = "RewardsList_reward_fc200613",
   reward__vertical$1 = "RewardsList_reward__vertical_5f09c6e0",
   boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
-  fadeIn$40 = "RewardsList_fadeIn_bed41ebf",
-  fadeInThreeQuarters$40 = "RewardsList_fadeInThreeQuarters_bed41ebf",
-  fadeInHalf$40 = "RewardsList_fadeInHalf_bed41ebf",
-  fadeOut$40 = "RewardsList_fadeOut_bed41ebf",
-  fadeInWithScale$40 = "RewardsList_fadeInWithScale_bed41ebf",
-  slideUp$40 = "RewardsList_slideUp_bed41ebf",
-  scale$40 = "RewardsList_scale_bed41ebf",
-  raysAppearance$40 = "RewardsList_raysAppearance_bed41ebf",
-  rotate$40 = "RewardsList_rotate_bed41ebf",
-  glowAppearance$40 = "RewardsList_glowAppearance_bed41ebf",
-  highlightAppearance$40 = "RewardsList_highlightAppearance_bed41ebf",
-  blink$40 = "RewardsList_blink_bed41ebf",
-  slideUpIn$40 = "RewardsList_slideUpIn_bed41ebf",
+  fadeIn$43 = "RewardsList_fadeIn_bed41ebf",
+  fadeInThreeQuarters$43 = "RewardsList_fadeInThreeQuarters_bed41ebf",
+  fadeInHalf$43 = "RewardsList_fadeInHalf_bed41ebf",
+  fadeOut$43 = "RewardsList_fadeOut_bed41ebf",
+  fadeInWithScale$43 = "RewardsList_fadeInWithScale_bed41ebf",
+  slideUp$43 = "RewardsList_slideUp_bed41ebf",
+  scale$43 = "RewardsList_scale_bed41ebf",
+  raysAppearance$43 = "RewardsList_raysAppearance_bed41ebf",
+  rotate$43 = "RewardsList_rotate_bed41ebf",
+  glowAppearance$43 = "RewardsList_glowAppearance_bed41ebf",
+  highlightAppearance$43 = "RewardsList_highlightAppearance_bed41ebf",
+  blink$43 = "RewardsList_blink_bed41ebf",
+  slideUpIn$43 = "RewardsList_slideUpIn_bed41ebf",
   rewards_list_module_default = {
-    base: base$39,
+    base: base$41,
     base__vertical: base__vertical$1,
     reward: reward$1,
     reward__vertical: reward__vertical$1,
     boxRewardClassName: boxRewardClassName,
-    fadeIn: fadeIn$40,
-    fadeInThreeQuarters: fadeInThreeQuarters$40,
-    fadeInHalf: fadeInHalf$40,
-    fadeOut: fadeOut$40,
-    fadeInWithScale: fadeInWithScale$40,
-    slideUp: slideUp$40,
-    scale: scale$40,
-    raysAppearance: raysAppearance$40,
-    rotate: rotate$40,
+    fadeIn: fadeIn$43,
+    fadeInThreeQuarters: fadeInThreeQuarters$43,
+    fadeInHalf: fadeInHalf$43,
+    fadeOut: fadeOut$43,
+    fadeInWithScale: fadeInWithScale$43,
+    slideUp: slideUp$43,
+    scale: scale$43,
+    raysAppearance: raysAppearance$43,
+    rotate: rotate$43,
     "reverse-rotate": "RewardsList_reverse-rotate_bed41ebf",
-    glowAppearance: glowAppearance$40,
-    highlightAppearance: highlightAppearance$40,
-    blink: blink$40,
-    slideUpIn: slideUpIn$40,
+    glowAppearance: glowAppearance$43,
+    highlightAppearance: highlightAppearance$43,
+    blink: blink$43,
+    slideUpIn: slideUpIn$43,
   },
   sizeToDefault = {
     [ImageSize$1.S24x24]: ImageSize$1.Small,
@@ -40678,38 +39374,38 @@ var RewardType$1 = (function (e) {
             ),
     });
   }),
-  base$38 = "Tooltip_6d997cee",
+  base$40 = "Tooltip_6d997cee",
   decorator = "Tooltip_decorator_b3486d4e",
-  fadeIn$39 = "Tooltip_fadeIn_648bdb8d",
-  fadeInThreeQuarters$39 = "Tooltip_fadeInThreeQuarters_648bdb8d",
-  fadeInHalf$39 = "Tooltip_fadeInHalf_648bdb8d",
-  fadeOut$39 = "Tooltip_fadeOut_648bdb8d",
-  fadeInWithScale$39 = "Tooltip_fadeInWithScale_648bdb8d",
-  slideUp$39 = "Tooltip_slideUp_648bdb8d",
-  scale$39 = "Tooltip_scale_648bdb8d",
-  raysAppearance$39 = "Tooltip_raysAppearance_648bdb8d",
-  rotate$39 = "Tooltip_rotate_648bdb8d",
-  glowAppearance$39 = "Tooltip_glowAppearance_648bdb8d",
-  highlightAppearance$39 = "Tooltip_highlightAppearance_648bdb8d",
-  blink$39 = "Tooltip_blink_648bdb8d",
-  slideUpIn$39 = "Tooltip_slideUpIn_648bdb8d",
+  fadeIn$42 = "Tooltip_fadeIn_648bdb8d",
+  fadeInThreeQuarters$42 = "Tooltip_fadeInThreeQuarters_648bdb8d",
+  fadeInHalf$42 = "Tooltip_fadeInHalf_648bdb8d",
+  fadeOut$42 = "Tooltip_fadeOut_648bdb8d",
+  fadeInWithScale$42 = "Tooltip_fadeInWithScale_648bdb8d",
+  slideUp$42 = "Tooltip_slideUp_648bdb8d",
+  scale$42 = "Tooltip_scale_648bdb8d",
+  raysAppearance$42 = "Tooltip_raysAppearance_648bdb8d",
+  rotate$42 = "Tooltip_rotate_648bdb8d",
+  glowAppearance$42 = "Tooltip_glowAppearance_648bdb8d",
+  highlightAppearance$42 = "Tooltip_highlightAppearance_648bdb8d",
+  blink$42 = "Tooltip_blink_648bdb8d",
+  slideUpIn$42 = "Tooltip_slideUpIn_648bdb8d",
   tooltip_module_default = {
-    base: base$38,
+    base: base$40,
     decorator: decorator,
-    fadeIn: fadeIn$39,
-    fadeInThreeQuarters: fadeInThreeQuarters$39,
-    fadeInHalf: fadeInHalf$39,
-    fadeOut: fadeOut$39,
-    fadeInWithScale: fadeInWithScale$39,
-    slideUp: slideUp$39,
-    scale: scale$39,
-    raysAppearance: raysAppearance$39,
-    rotate: rotate$39,
+    fadeIn: fadeIn$42,
+    fadeInThreeQuarters: fadeInThreeQuarters$42,
+    fadeInHalf: fadeInHalf$42,
+    fadeOut: fadeOut$42,
+    fadeInWithScale: fadeInWithScale$42,
+    slideUp: slideUp$42,
+    scale: scale$42,
+    raysAppearance: raysAppearance$42,
+    rotate: rotate$42,
     "reverse-rotate": "Tooltip_reverse-rotate_648bdb8d",
-    glowAppearance: glowAppearance$39,
-    highlightAppearance: highlightAppearance$39,
-    blink: blink$39,
-    slideUpIn: slideUpIn$39,
+    glowAppearance: glowAppearance$42,
+    highlightAppearance: highlightAppearance$42,
+    blink: blink$42,
+    slideUpIn: slideUpIn$42,
   },
   Base$17 = defineStyledComponent("Base", tooltip_module_default.base),
   Decorator = defineStyledComponent("Decorator", tooltip_module_default.decorator),
@@ -40753,44 +39449,44 @@ var Size = (function (e) {
   AnimationType = (function (e) {
     return ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e);
   })({}),
-  base$37 = "Progressbar_a6e35bd7",
+  base$39 = "Progressbar_a6e35bd7",
   base__small$10 = "Progressbar_base__small_7338ff19",
   background$3 = "Progressbar_background_27d9dd7c",
   background__small = "Progressbar_background__small_7338ff19",
   lineWrapper = "Progressbar_lineWrapper_fc5022a6",
-  fadeIn$38 = "Progressbar_fadeIn_27f917f7",
-  fadeInThreeQuarters$38 = "Progressbar_fadeInThreeQuarters_27f917f7",
-  fadeInHalf$38 = "Progressbar_fadeInHalf_27f917f7",
-  fadeOut$38 = "Progressbar_fadeOut_27f917f7",
-  fadeInWithScale$38 = "Progressbar_fadeInWithScale_27f917f7",
-  slideUp$38 = "Progressbar_slideUp_27f917f7",
-  scale$38 = "Progressbar_scale_27f917f7",
-  raysAppearance$38 = "Progressbar_raysAppearance_27f917f7",
-  rotate$38 = "Progressbar_rotate_27f917f7",
-  glowAppearance$38 = "Progressbar_glowAppearance_27f917f7",
-  highlightAppearance$38 = "Progressbar_highlightAppearance_27f917f7",
-  blink$38 = "Progressbar_blink_27f917f7",
-  slideUpIn$38 = "Progressbar_slideUpIn_27f917f7",
+  fadeIn$41 = "Progressbar_fadeIn_27f917f7",
+  fadeInThreeQuarters$41 = "Progressbar_fadeInThreeQuarters_27f917f7",
+  fadeInHalf$41 = "Progressbar_fadeInHalf_27f917f7",
+  fadeOut$41 = "Progressbar_fadeOut_27f917f7",
+  fadeInWithScale$41 = "Progressbar_fadeInWithScale_27f917f7",
+  slideUp$41 = "Progressbar_slideUp_27f917f7",
+  scale$41 = "Progressbar_scale_27f917f7",
+  raysAppearance$41 = "Progressbar_raysAppearance_27f917f7",
+  rotate$41 = "Progressbar_rotate_27f917f7",
+  glowAppearance$41 = "Progressbar_glowAppearance_27f917f7",
+  highlightAppearance$41 = "Progressbar_highlightAppearance_27f917f7",
+  blink$41 = "Progressbar_blink_27f917f7",
+  slideUpIn$41 = "Progressbar_slideUpIn_27f917f7",
   ProgressBar_module_default = {
-    base: base$37,
+    base: base$39,
     base__small: base__small$10,
     background: background$3,
     background__small: background__small,
     lineWrapper: lineWrapper,
-    fadeIn: fadeIn$38,
-    fadeInThreeQuarters: fadeInThreeQuarters$38,
-    fadeInHalf: fadeInHalf$38,
-    fadeOut: fadeOut$38,
-    fadeInWithScale: fadeInWithScale$38,
-    slideUp: slideUp$38,
-    scale: scale$38,
-    raysAppearance: raysAppearance$38,
-    rotate: rotate$38,
+    fadeIn: fadeIn$41,
+    fadeInThreeQuarters: fadeInThreeQuarters$41,
+    fadeInHalf: fadeInHalf$41,
+    fadeOut: fadeOut$41,
+    fadeInWithScale: fadeInWithScale$41,
+    slideUp: slideUp$41,
+    scale: scale$41,
+    raysAppearance: raysAppearance$41,
+    rotate: rotate$41,
     "reverse-rotate": "Progressbar_reverse-rotate_27f917f7",
-    glowAppearance: glowAppearance$38,
-    highlightAppearance: highlightAppearance$38,
-    blink: blink$38,
-    slideUpIn: slideUpIn$38,
+    glowAppearance: glowAppearance$41,
+    highlightAppearance: highlightAppearance$41,
+    blink: blink$41,
+    slideUpIn: slideUpIn$41,
   },
   ProgressBarBackground = ({ size: e = Size.Default }) =>
     (0, import_jsx_runtime.jsx)("div", {
@@ -40799,38 +39495,38 @@ var Size = (function (e) {
         ProgressBar_module_default[`background__${e}`],
       ),
     }),
-  base$36 = "Progressbarblink_c6146c1c",
+  base$38 = "Progressbarblink_c6146c1c",
   base__small$9 = "Progressbarblink_base__small_9a4d3786",
-  fadeIn$37 = "Progressbarblink_fadeIn_6fa3e54",
-  fadeInThreeQuarters$37 = "Progressbarblink_fadeInThreeQuarters_6fa3e54",
-  fadeInHalf$37 = "Progressbarblink_fadeInHalf_6fa3e54",
-  fadeOut$37 = "Progressbarblink_fadeOut_6fa3e54",
-  fadeInWithScale$37 = "Progressbarblink_fadeInWithScale_6fa3e54",
-  slideUp$37 = "Progressbarblink_slideUp_6fa3e54",
-  scale$37 = "Progressbarblink_scale_6fa3e54",
-  raysAppearance$37 = "Progressbarblink_raysAppearance_6fa3e54",
-  rotate$37 = "Progressbarblink_rotate_6fa3e54",
-  glowAppearance$37 = "Progressbarblink_glowAppearance_6fa3e54",
-  highlightAppearance$37 = "Progressbarblink_highlightAppearance_6fa3e54",
-  blink$37 = "Progressbarblink_blink_6fa3e54",
-  slideUpIn$37 = "Progressbarblink_slideUpIn_6fa3e54",
+  fadeIn$40 = "Progressbarblink_fadeIn_6fa3e54",
+  fadeInThreeQuarters$40 = "Progressbarblink_fadeInThreeQuarters_6fa3e54",
+  fadeInHalf$40 = "Progressbarblink_fadeInHalf_6fa3e54",
+  fadeOut$40 = "Progressbarblink_fadeOut_6fa3e54",
+  fadeInWithScale$40 = "Progressbarblink_fadeInWithScale_6fa3e54",
+  slideUp$40 = "Progressbarblink_slideUp_6fa3e54",
+  scale$40 = "Progressbarblink_scale_6fa3e54",
+  raysAppearance$40 = "Progressbarblink_raysAppearance_6fa3e54",
+  rotate$40 = "Progressbarblink_rotate_6fa3e54",
+  glowAppearance$40 = "Progressbarblink_glowAppearance_6fa3e54",
+  highlightAppearance$40 = "Progressbarblink_highlightAppearance_6fa3e54",
+  blink$40 = "Progressbarblink_blink_6fa3e54",
+  slideUpIn$40 = "Progressbarblink_slideUpIn_6fa3e54",
   ProgressBarBlink_module_default = {
-    base: base$36,
+    base: base$38,
     base__small: base__small$9,
-    fadeIn: fadeIn$37,
-    fadeInThreeQuarters: fadeInThreeQuarters$37,
-    fadeInHalf: fadeInHalf$37,
-    fadeOut: fadeOut$37,
-    fadeInWithScale: fadeInWithScale$37,
-    slideUp: slideUp$37,
-    scale: scale$37,
-    raysAppearance: raysAppearance$37,
-    rotate: rotate$37,
+    fadeIn: fadeIn$40,
+    fadeInThreeQuarters: fadeInThreeQuarters$40,
+    fadeInHalf: fadeInHalf$40,
+    fadeOut: fadeOut$40,
+    fadeInWithScale: fadeInWithScale$40,
+    slideUp: slideUp$40,
+    scale: scale$40,
+    raysAppearance: raysAppearance$40,
+    rotate: rotate$40,
     "reverse-rotate": "Progressbarblink_reverse-rotate_6fa3e54",
-    glowAppearance: glowAppearance$37,
-    highlightAppearance: highlightAppearance$37,
-    blink: blink$37,
-    slideUpIn: slideUpIn$37,
+    glowAppearance: glowAppearance$40,
+    highlightAppearance: highlightAppearance$40,
+    blink: blink$40,
+    slideUpIn: slideUpIn$40,
   },
   ProgressBarBlink = ({ size: e }) =>
     (0, import_jsx_runtime.jsx)("div", {
@@ -40839,7 +39535,7 @@ var Size = (function (e) {
         ProgressBarBlink_module_default[`base__${e}`],
       ),
     }),
-  base$35 = "Progresslineimpose_24e17c02",
+  base$37 = "Progresslineimpose_24e17c02",
   base__disabled$4 = "Progresslineimpose_base__disabled_bcd461f4",
   base__finished = "Progresslineimpose_base__finished_803677d6",
   base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
@@ -40848,21 +39544,21 @@ var Size = (function (e) {
   gradient = "Progresslineimpose_gradient_513e2b1d",
   glow$2 = "Progresslineimpose_glow_76f8072f",
   glow__left = "Progresslineimpose_glow__left_c2e964b3",
-  fadeIn$36 = "Progresslineimpose_fadeIn_577e82cf",
-  fadeInThreeQuarters$36 = "Progresslineimpose_fadeInThreeQuarters_577e82cf",
-  fadeInHalf$36 = "Progresslineimpose_fadeInHalf_577e82cf",
-  fadeOut$36 = "Progresslineimpose_fadeOut_577e82cf",
-  fadeInWithScale$36 = "Progresslineimpose_fadeInWithScale_577e82cf",
-  slideUp$36 = "Progresslineimpose_slideUp_577e82cf",
-  scale$36 = "Progresslineimpose_scale_577e82cf",
-  raysAppearance$36 = "Progresslineimpose_raysAppearance_577e82cf",
-  rotate$36 = "Progresslineimpose_rotate_577e82cf",
-  glowAppearance$36 = "Progresslineimpose_glowAppearance_577e82cf",
-  highlightAppearance$36 = "Progresslineimpose_highlightAppearance_577e82cf",
-  blink$36 = "Progresslineimpose_blink_577e82cf",
-  slideUpIn$36 = "Progresslineimpose_slideUpIn_577e82cf",
+  fadeIn$39 = "Progresslineimpose_fadeIn_577e82cf",
+  fadeInThreeQuarters$39 = "Progresslineimpose_fadeInThreeQuarters_577e82cf",
+  fadeInHalf$39 = "Progresslineimpose_fadeInHalf_577e82cf",
+  fadeOut$39 = "Progresslineimpose_fadeOut_577e82cf",
+  fadeInWithScale$39 = "Progresslineimpose_fadeInWithScale_577e82cf",
+  slideUp$39 = "Progresslineimpose_slideUp_577e82cf",
+  scale$39 = "Progresslineimpose_scale_577e82cf",
+  raysAppearance$39 = "Progresslineimpose_raysAppearance_577e82cf",
+  rotate$39 = "Progresslineimpose_rotate_577e82cf",
+  glowAppearance$39 = "Progresslineimpose_glowAppearance_577e82cf",
+  highlightAppearance$39 = "Progresslineimpose_highlightAppearance_577e82cf",
+  blink$39 = "Progresslineimpose_blink_577e82cf",
+  slideUpIn$39 = "Progresslineimpose_slideUpIn_577e82cf",
   ProgressLineImpose_module_default = {
-    base: base$35,
+    base: base$37,
     base__disabled: base__disabled$4,
     base__finished: base__finished,
     base__withoutBounce: base__withoutBounce$1,
@@ -40871,20 +39567,20 @@ var Size = (function (e) {
     gradient: gradient,
     glow: glow$2,
     glow__left: glow__left,
-    fadeIn: fadeIn$36,
-    fadeInThreeQuarters: fadeInThreeQuarters$36,
-    fadeInHalf: fadeInHalf$36,
-    fadeOut: fadeOut$36,
-    fadeInWithScale: fadeInWithScale$36,
-    slideUp: slideUp$36,
-    scale: scale$36,
-    raysAppearance: raysAppearance$36,
-    rotate: rotate$36,
+    fadeIn: fadeIn$39,
+    fadeInThreeQuarters: fadeInThreeQuarters$39,
+    fadeInHalf: fadeInHalf$39,
+    fadeOut: fadeOut$39,
+    fadeInWithScale: fadeInWithScale$39,
+    slideUp: slideUp$39,
+    scale: scale$39,
+    raysAppearance: raysAppearance$39,
+    rotate: rotate$39,
     "reverse-rotate": "Progresslineimpose_reverse-rotate_577e82cf",
-    glowAppearance: glowAppearance$36,
-    highlightAppearance: highlightAppearance$36,
-    blink: blink$36,
-    slideUpIn: slideUpIn$36,
+    glowAppearance: glowAppearance$39,
+    highlightAppearance: highlightAppearance$39,
+    blink: blink$39,
+    slideUpIn: slideUpIn$39,
   },
   ProgressLineImposeComponent = ({
     size: e,
@@ -40918,46 +39614,55 @@ var Size = (function (e) {
     });
   },
   ProgressLineImpose = (0, import_react.memo)(ProgressLineImposeComponent),
+  createTimeoutInEffect = (e, t) => {
+    let n;
+    const r = setTimeout(() => {
+      n = e();
+    }, t);
+    return () => {
+      ("function" == typeof n && n(), clearTimeout(r));
+    };
+  },
   GrowAnimationState = (function (e) {
     return ((e.Idle = "Idle"), (e.Grow = "Grow"), (e.Shrink = "Shrink"), (e.End = "End"), e);
   })({}),
   SimpleAnimationState = (function (e) {
     return ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e);
   })({}),
-  base$34 = "Progressbardeltagrow_c42a7a2c",
+  base$36 = "Progressbardeltagrow_c42a7a2c",
   base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
   glow$1 = "Progressbardeltagrow_glow_e08fafeb",
-  fadeIn$35 = "Progressbardeltagrow_fadeIn_981f0dfd",
-  fadeInThreeQuarters$35 = "Progressbardeltagrow_fadeInThreeQuarters_981f0dfd",
-  fadeInHalf$35 = "Progressbardeltagrow_fadeInHalf_981f0dfd",
-  fadeOut$35 = "Progressbardeltagrow_fadeOut_981f0dfd",
-  fadeInWithScale$35 = "Progressbardeltagrow_fadeInWithScale_981f0dfd",
-  slideUp$35 = "Progressbardeltagrow_slideUp_981f0dfd",
-  scale$35 = "Progressbardeltagrow_scale_981f0dfd",
-  raysAppearance$35 = "Progressbardeltagrow_raysAppearance_981f0dfd",
-  rotate$35 = "Progressbardeltagrow_rotate_981f0dfd",
-  glowAppearance$35 = "Progressbardeltagrow_glowAppearance_981f0dfd",
-  highlightAppearance$35 = "Progressbardeltagrow_highlightAppearance_981f0dfd",
-  blink$35 = "Progressbardeltagrow_blink_981f0dfd",
-  slideUpIn$35 = "Progressbardeltagrow_slideUpIn_981f0dfd",
+  fadeIn$38 = "Progressbardeltagrow_fadeIn_981f0dfd",
+  fadeInThreeQuarters$38 = "Progressbardeltagrow_fadeInThreeQuarters_981f0dfd",
+  fadeInHalf$38 = "Progressbardeltagrow_fadeInHalf_981f0dfd",
+  fadeOut$38 = "Progressbardeltagrow_fadeOut_981f0dfd",
+  fadeInWithScale$38 = "Progressbardeltagrow_fadeInWithScale_981f0dfd",
+  slideUp$38 = "Progressbardeltagrow_slideUp_981f0dfd",
+  scale$38 = "Progressbardeltagrow_scale_981f0dfd",
+  raysAppearance$38 = "Progressbardeltagrow_raysAppearance_981f0dfd",
+  rotate$38 = "Progressbardeltagrow_rotate_981f0dfd",
+  glowAppearance$38 = "Progressbardeltagrow_glowAppearance_981f0dfd",
+  highlightAppearance$38 = "Progressbardeltagrow_highlightAppearance_981f0dfd",
+  blink$38 = "Progressbardeltagrow_blink_981f0dfd",
+  slideUpIn$38 = "Progressbardeltagrow_slideUpIn_981f0dfd",
   ProgressBarDeltaGrow_module_default = {
-    base: base$34,
+    base: base$36,
     base__withoutBounce: base__withoutBounce,
     glow: glow$1,
-    fadeIn: fadeIn$35,
-    fadeInThreeQuarters: fadeInThreeQuarters$35,
-    fadeInHalf: fadeInHalf$35,
-    fadeOut: fadeOut$35,
-    fadeInWithScale: fadeInWithScale$35,
-    slideUp: slideUp$35,
-    scale: scale$35,
-    raysAppearance: raysAppearance$35,
-    rotate: rotate$35,
+    fadeIn: fadeIn$38,
+    fadeInThreeQuarters: fadeInThreeQuarters$38,
+    fadeInHalf: fadeInHalf$38,
+    fadeOut: fadeOut$38,
+    fadeInWithScale: fadeInWithScale$38,
+    slideUp: slideUp$38,
+    scale: scale$38,
+    raysAppearance: raysAppearance$38,
+    rotate: rotate$38,
     "reverse-rotate": "Progressbardeltagrow_reverse-rotate_981f0dfd",
-    glowAppearance: glowAppearance$35,
-    highlightAppearance: highlightAppearance$35,
-    blink: blink$35,
-    slideUpIn: slideUpIn$35,
+    glowAppearance: glowAppearance$38,
+    highlightAppearance: highlightAppearance$38,
+    blink: blink$38,
+    slideUpIn: slideUpIn$38,
   },
   getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
   getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
@@ -41089,38 +39794,38 @@ var Size = (function (e) {
     });
   },
   ProgressBarGrowLine = (0, import_react.memo)(ProgressBarGrowLineComponent),
-  base$33 = "Progressbardeltasimple_4b8901e3",
+  base$35 = "Progressbardeltasimple_4b8901e3",
   delta$1 = "Progressbardeltasimple_delta_9a540ec7",
-  fadeIn$34 = "Progressbardeltasimple_fadeIn_b0cd652c",
-  fadeInThreeQuarters$34 = "Progressbardeltasimple_fadeInThreeQuarters_b0cd652c",
-  fadeInHalf$34 = "Progressbardeltasimple_fadeInHalf_b0cd652c",
-  fadeOut$34 = "Progressbardeltasimple_fadeOut_b0cd652c",
-  fadeInWithScale$34 = "Progressbardeltasimple_fadeInWithScale_b0cd652c",
-  slideUp$34 = "Progressbardeltasimple_slideUp_b0cd652c",
-  scale$34 = "Progressbardeltasimple_scale_b0cd652c",
-  raysAppearance$34 = "Progressbardeltasimple_raysAppearance_b0cd652c",
-  rotate$34 = "Progressbardeltasimple_rotate_b0cd652c",
-  glowAppearance$34 = "Progressbardeltasimple_glowAppearance_b0cd652c",
-  highlightAppearance$34 = "Progressbardeltasimple_highlightAppearance_b0cd652c",
-  blink$34 = "Progressbardeltasimple_blink_b0cd652c",
-  slideUpIn$34 = "Progressbardeltasimple_slideUpIn_b0cd652c",
+  fadeIn$37 = "Progressbardeltasimple_fadeIn_b0cd652c",
+  fadeInThreeQuarters$37 = "Progressbardeltasimple_fadeInThreeQuarters_b0cd652c",
+  fadeInHalf$37 = "Progressbardeltasimple_fadeInHalf_b0cd652c",
+  fadeOut$37 = "Progressbardeltasimple_fadeOut_b0cd652c",
+  fadeInWithScale$37 = "Progressbardeltasimple_fadeInWithScale_b0cd652c",
+  slideUp$37 = "Progressbardeltasimple_slideUp_b0cd652c",
+  scale$37 = "Progressbardeltasimple_scale_b0cd652c",
+  raysAppearance$37 = "Progressbardeltasimple_raysAppearance_b0cd652c",
+  rotate$37 = "Progressbardeltasimple_rotate_b0cd652c",
+  glowAppearance$37 = "Progressbardeltasimple_glowAppearance_b0cd652c",
+  highlightAppearance$37 = "Progressbardeltasimple_highlightAppearance_b0cd652c",
+  blink$37 = "Progressbardeltasimple_blink_b0cd652c",
+  slideUpIn$37 = "Progressbardeltasimple_slideUpIn_b0cd652c",
   ProgressBarDeltaSimple_module_default = {
-    base: base$33,
+    base: base$35,
     delta: delta$1,
-    fadeIn: fadeIn$34,
-    fadeInThreeQuarters: fadeInThreeQuarters$34,
-    fadeInHalf: fadeInHalf$34,
-    fadeOut: fadeOut$34,
-    fadeInWithScale: fadeInWithScale$34,
-    slideUp: slideUp$34,
-    scale: scale$34,
-    raysAppearance: raysAppearance$34,
-    rotate: rotate$34,
+    fadeIn: fadeIn$37,
+    fadeInThreeQuarters: fadeInThreeQuarters$37,
+    fadeInHalf: fadeInHalf$37,
+    fadeOut: fadeOut$37,
+    fadeInWithScale: fadeInWithScale$37,
+    slideUp: slideUp$37,
+    scale: scale$37,
+    raysAppearance: raysAppearance$37,
+    rotate: rotate$37,
     "reverse-rotate": "Progressbardeltasimple_reverse-rotate_b0cd652c",
-    glowAppearance: glowAppearance$34,
-    highlightAppearance: highlightAppearance$34,
-    blink: blink$34,
-    slideUpIn: slideUpIn$34,
+    glowAppearance: glowAppearance$37,
+    highlightAppearance: highlightAppearance$37,
+    blink: blink$37,
+    slideUpIn: slideUpIn$37,
   },
   ProgressBarDeltaSimpleComponent = ({
     transitionDuration: e,
@@ -41485,6 +40190,1103 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
       r = SystemLocale.getNumberFormat(e, n);
     return void 0 !== e && void 0 !== r ? r : null;
   },
+  unicodeBlocks = [
+    0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984,
+    2048, 2112, 2144, 2208, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 3328, 3456, 3584, 3712,
+    3840, 4096, 4256, 4352, 4608, 4992, 5024, 5120, 5760, 5792, 5888, 5920, 5952, 5984, 6016, 6144,
+    6320, 6400, 6480, 6528, 6624, 6656, 6688, 6832, 6912, 7040, 7104, 7168, 7248, 7296, 7312, 7360,
+    7376, 7424, 7552, 7616, 7680, 7936, 8192, 8304, 8352, 8400, 8448, 8528, 8592, 8704, 8960, 9216,
+    9280, 9312, 9472, 9600, 9632, 9728, 9984, 10176, 10224, 10240, 10496, 10624, 10752, 11008,
+    11264, 11360, 11392, 11520, 11568, 11648, 11744, 11776, 11904, 12032, 12272, 12288, 12352,
+    12448, 12544, 12592, 12688, 12704, 12736, 12784, 12800, 13056, 13312, 19904, 19968, 40960,
+    42128, 42192, 42240, 42560, 42656, 42752, 42784, 43008, 43056, 43072, 43136, 43232, 43264,
+    43312, 43360, 43392, 43488, 43520, 43616, 43648, 43744, 43776, 43824, 43888, 43968, 44032,
+    55216, 55296, 56192, 56320, 57344, 63744, 64256, 64336, 65024, 65040, 65056, 65072, 65104,
+    65136, 65280, 65520, 65536, 65664, 65792, 65856, 65936, 66e3, 66176, 66208, 66272, 66304, 66352,
+    66384, 66432, 66464, 66560, 66640, 66688, 66736, 66816, 66864, 67072, 67584, 67648, 67680,
+    67712, 67808, 67840, 67872, 67968, 68e3, 68096, 68192, 68224, 68288, 68352, 68416, 68448, 68480,
+    68608, 68736, 68864, 69216, 69248, 69376, 69424, 69552, 69600, 69632, 69760, 69840, 69888,
+    69968, 70016, 70112, 70144, 70272, 70320, 70400, 70656, 70784, 71040, 71168, 71264, 71296,
+    71424, 71680, 71840, 71936, 72096, 72192, 72272, 72384, 72704, 72816, 72960, 73056, 73440,
+    73648, 73664, 73728, 74752, 74880, 77824, 78896, 82944, 92160, 92736, 92880, 92928, 93760,
+    93952, 94176, 94208, 100352, 101120, 101632, 110592, 110848, 110896, 110960, 113664, 113824,
+    118784, 119040, 119296, 119520, 119552, 119648, 119808, 120832, 122880, 123136, 123584, 124928,
+    125184, 126064, 126208, 126464, 126976, 127024, 127136, 127232, 127488, 127744, 128512, 128592,
+    128640, 128768, 128896, 129024, 129280, 129536, 129648, 129792, 131072, 173824, 177984, 178208,
+    183984, 194560, 196608, 917504, 917760, 983040, 1048576,
+  ],
+  model = {
+    "BB2:108120": 1817,
+    "BP2:OO": 790,
+    "UB3:107": 714,
+    "UP3:B": -1495,
+    "TQ2:O108108108": -194,
+    "TB3:108108108": 562,
+    "UB4:108": -2271,
+    "UB3:108": 169,
+    "BQ1:O108108": -263,
+    "BB1:108107": 307,
+    "UB4:107": -1743,
+    "TB4:108108108": 306,
+    "UB3:109": -456,
+    "TB3:108109109": 1577,
+    "UP1:U": 251,
+    "UW3:に": 1629,
+    "BB2:109109": -2151,
+    "UW3:は": 2029,
+    "UW3:が": 2055,
+    "UB3:120": -213,
+    "UW4:こ": 1449,
+    "BQ3:O108107": 187,
+    "UB5:107": -851,
+    "UW4:お": 3275,
+    "UW3:と": 1059,
+    "BQ2:O120120": -379,
+    "BB3:108120": -298,
+    "UW3:の": 1199,
+    "UW4:て": -1379,
+    "UW3:し": -827,
+    "TB1:120120120": -242,
+    "BB3:108108": 849,
+    "TB2:108108107": -145,
+    "BQ1:B120120": 365,
+    "UW3:を": 2925,
+    "BB3:120108": 255,
+    "UW4:「": 3298,
+    "BB2:162162": -1613,
+    "UW4:あ": 1188,
+    "UW4:、": -3540,
+    "UW4:。": -1602,
+    "UW3:、": 2324,
+    "TB1:108120108": -243,
+    "UW3:も": 1399,
+    "UW4:の": -960,
+    "BQ1:O120120": -120,
+    "UW5:っ": 772,
+    "UW3:っ": -1870,
+    "TB2:108108108": -114,
+    "UB2:108": 97,
+    "TB1:108108108": -91,
+    "TB3:108120108": -250,
+    "UW5:で": -1030,
+    "UQ2:O120": -110,
+    "UB5:108": -66,
+    "UW4:い": 380,
+    "UB4:162": -257,
+    "UQ3:B108": -1112,
+    "UW4:そ": 1036,
+    "BB2:107999": 3411,
+    "UW5:う": 211,
+    "BQ2:B108120": -221,
+    "UW4:で": -924,
+    "UW4:る": -1805,
+    "TQ2:B108108108": -269,
+    "UW5:な": -645,
+    "BW3:もの": 2676,
+    "BB2:120120": -420,
+    "TQ2:B120108120": -336,
+    "BB3:107999": -1305,
+    "UW3:る": 756,
+    "UW4:っ": -1536,
+    "UP2:U": 113,
+    "UB6:107": -76,
+    "BB2:162999": 2668,
+    "UB1:162": -208,
+    "UW6:う": -420,
+    "BQ2:O107108": -896,
+    "UW5:き": 664,
+    "UW4:に": -1407,
+    "UW5:し": -357,
+    "UP1:B": -101,
+    "BB1:108108": -77,
+    "UQ3:B120": 626,
+    "BW2:とい": 691,
+    "UW5:に": -569,
+    "BB2:120999": 2291,
+    "UW4:は": -608,
+    "TQ1:O108108108": -281,
+    "UB1:108": 192,
+    "UQ1:O108": -86,
+    "UW5:が": -626,
+    "UW4:ら": -1582,
+    "TQ2:O120108108": -128,
+    "UQ3:O162": 222,
+    "UW3:れ": -759,
+    "TB3:120120120": -151,
+    "BB3:162999": -1821,
+    "BW3:とこ": 1286,
+    "UW5:は": -560,
+    "UW5:ん": 676,
+    "UW4:れ": -1489,
+    "BB1:162162": -251,
+    "UW3:う": 464,
+    "UW5:す": -771,
+    "UW3:く": 821,
+    "UW4:・": -2383,
+    "UW4:が": -678,
+    "UW6:に": 92,
+    "TQ1:O108120108": -410,
+    "UP2:O": -53,
+    "UW5:く": 411,
+    "UW2:の": 218,
+    "UW3:ま": -959,
+    "UW3:，": 1843,
+    "UW3:ら": 324,
+    "UP3:O": 121,
+    "TB4:120108108": 90,
+    "UB4:120": -421,
+    "BB2:108108": -92,
+    "UW3:で": 756,
+    "UW3:た": 484,
+    "BW3:とい": -1444,
+    "UW3:り": -223,
+    "UW4:ほ": 1294,
+    "TB1:120120108": 125,
+    "UW6:。": -99,
+    "BW3:いう": 861,
+    "UW3:き": -536,
+    "BW3:いい": 767,
+    "UW4:や": 650,
+    "UW6:た": -284,
+    "UW4:だ": -569,
+    "BW1:から": 816,
+    "TB2:109109109": -543,
+    "UW5:も": -405,
+    "UW3:今": 1340,
+    "UW5:あ": -618,
+    "UW3:］": 825,
+    "UW2:一": 760,
+    "BW1:いう": 298,
+    "UW5:を": -622,
+    "UW5:・": -668,
+    "TB1:120108120": -97,
+    "UW5:め": 308,
+    "UW4:，": -2523,
+    "BW2:であ": -1719,
+    "BW3:ちょ": 1343,
+    "UW1:と": 119,
+    "UB2:120": 38,
+    "TB3:108120120": 322,
+    "UW4:ど": 522,
+    "BQ3:O162162": -248,
+    "UW1:そ": 204,
+    "BW3:して": 220,
+    "BW2:てい": -522,
+    "UW4:つ": 682,
+    "BB1:162120": 397,
+    "UW2:と": -94,
+    "UW2:で": -227,
+    "UW5:と": -476,
+    "UW4:ん": -649,
+    "UW4:り": -690,
+    "BB2:109999": 1320,
+    "UW3:だ": -257,
+    "UW4:出": -72,
+    "UW4:を": -1092,
+    "UW2:っ": 55,
+    "BW2:ない": -1335,
+    "BW3:とき": 1220,
+    "TQ3:O162162162": -324,
+    "UB4:072": -103,
+    "BB2:108999": 1504,
+    "UW3:ち": -780,
+    "UW4:ご": 1047,
+    "UW5:つ": 584,
+    "UW3:間": 905,
+    "TB3:108162162": 317,
+    "UW5:れ": 265,
+    "UW4:！": -1144,
+    "UW5:来": -31,
+    "UW6:っ": 222,
+    "BB2:108072": -977,
+    "TB4:108108120": 84,
+    "UW3:ん": -302,
+    "UW2:て": -213,
+    "BW3:よう": -892,
+    "UW4:わ": 430,
+    "TB2:108120108": -413,
+    "UW3:人": 945,
+    "BW3:ため": 1073,
+    "BW3:出来": -1035,
+    "UW2:ん": 223,
+    "UW6:の": -137,
+    "BQ4:O108108": -136,
+    "UW3:て": 445,
+    "UB4:109": -440,
+    "UW5:の": -519,
+    "BW1:とが": -1211,
+    "UW1:な": -300,
+    "TB1:120108108": -188,
+    "UW4:す": 366,
+    "TW2:気に入": -1623,
+    "TW3:ている": -761,
+    "TQ3:O107120120": 60,
+    "BW1:では": -648,
+    "UW2:る": -273,
+    "UW3:か": 439,
+    "UW4:１": 304,
+    "UW1:に": -146,
+    "UW6:り": 273,
+    "BW2:てお": -1727,
+    "TQ2:O108120108": -160,
+    "UW5:こ": 104,
+    "TQ2:O109109109": -279,
+    "BQ4:U120120": -303,
+    "UW1:で": -124,
+    "BB2:107162": -766,
+    "UW3:い": 166,
+    "BW2:とし": 540,
+    "UW2:ま": 340,
+    "BB2:108162": 338,
+    "UW4:け": -819,
+    "TB4:109109109": 423,
+    "TB4:162162162": 297,
+    "UB5:162": -311,
+    "UW1:い": -104,
+    "UW2:毎": 867,
+    "UW2:そ": -298,
+    "TQ1:B108120120": -172,
+    "BW1:ない": 238,
+    "UW4:前": -559,
+    "UW4:］": -1127,
+    "TW4:くらい": 835,
+    "UW3:ば": 464,
+    "TW1:という": 264,
+    "UW4:ー": -655,
+    "UW3:中": 764,
+    "UW4:…": -669,
+    "UW4:ひ": 1182,
+    "UW3:・": 567,
+    "UW3:「": -514,
+    "BW2:です": -1109,
+    "BW3:なっ": -546,
+    "BQ2:O108108": -40,
+    "UW6:を": 84,
+    "UB6:109": -136,
+    "UW5:だ": -217,
+    "BW3:から": -702,
+    "UW3:日": 398,
+    "BW3:その": 1208,
+    "BB2:120162": 170,
+    "UW3:け": -354,
+    "BW3:こと": 522,
+    "TW3:と言っ": -1204,
+    "UB5:120": 60,
+    "UW5:え": 181,
+    "TB1:108107108": -673,
+    "BW3:かけ": 1145,
+    "UW5:イ": 666,
+    "UB4:087": -877,
+    "UW3:後": 1076,
+    "BW1:とも": -672,
+    "UW6:て": -186,
+    "BB2:087999": 836,
+    "UQ3:O108": -21,
+    "BQ2:O108120": 129,
+    "BB3:120999": -299,
+    "UW4:２": 433,
+    "UB3:072": 236,
+    "UW2:よ": 156,
+    "UW5:ー": 41,
+    "UW5:べ": 609,
+    "UW5:て": 119,
+    "UW1:て": 51,
+    "UW4:『": 979,
+    "TW4:ところ": 607,
+    "UW2:結": 700,
+    "UW4:（": 483,
+    "TQ4:O120120120": 208,
+    "TW2:ではな": -505,
+    "TQ4:O108107120": 204,
+    "UW6:０": 392,
+    "UW5:そ": -283,
+    "TQ2:O108107108": -212,
+    "BW1:こと": -434,
+    "UW1:の": -65,
+    "TQ1:O108108120": 87,
+    "BW1:かも": -928,
+    "UW4:よ": 310,
+    "BQ1:O107120": 180,
+    "UW5:い": 51,
+    "BW2:には": -422,
+    "TW4:ことが": -409,
+    "UW3:み": -339,
+    "TB4:162162999": -491,
+    "UW3:こ": -194,
+    "TB4:108120108": -129,
+    "UW3:さ": -328,
+    "UW6:ん": 142,
+    "UW3:お": -424,
+    "BW3:すぐ": 660,
+    "TQ3:B108108120": 158,
+    "BW3:この": 830,
+    "TB3:109108108": 130,
+    "UW1:あ": 111,
+    "BW1:んな": 174,
+    "TB4:108109108": 595,
+    "UW2:も": -199,
+    "BW3:わか": 536,
+    "UW4:思": 445,
+    "BB1:109120": -359,
+    "UW4:電": -301,
+    "UW1:お": -51,
+    "TB4:120108120": 61,
+    "TQ4:O120108120": -102,
+    "UW4:笑": -506,
+    "UW3:な": 215,
+    "UW4:間": -430,
+    "BW3:でき": 393,
+    "UW4:ま": 136,
+    "TW4:かなり": 680,
+    "TQ1:B108120108": 75,
+    "BQ2:B108108": -30,
+    "BW3:ない": 95,
+    "UW3:べ": -452,
+    "TB3:109120108": 169,
+    "BW2:と同": -602,
+    "BW1:てい": -357,
+    "UW6:、": 31,
+    "UW2:最": 406,
+    "UW3:や": 285,
+    "TW3:、ある": -784,
+    "UW4:か": -93,
+    "BW3:そし": -568,
+    "UW5:年": 428,
+    "BW1:れて": -342,
+    "UW3:昔": 637,
+    "UW2:し": 33,
+    "UW3:…": 298,
+    "UW6:と": -69,
+    "UW5:々": 556,
+    "BW1:より": 526,
+    "UW1:、": 17,
+    "BW3:した": 228,
+    "BW1:った": 105,
+    "UW2:さ": 238,
+    "TW3:という": 248,
+    "UW2:少": 449,
+    "UW4:も": -174,
+    "TQ2:B120120108": -76,
+    "UW2:き": 89,
+    "UW1:や": -201,
+    "TW3:である": -318,
+    "BW1:い、": -518,
+    "UW4:ろ": -287,
+    "UW2:全": 435,
+    "BW2:くな": -404,
+    "BW2:はな": -154,
+    "BW1:かし": 627,
+    "UW6:あ": -90,
+    "UW6:カ": 303,
+    "UW4:使": 204,
+    "UW5:ち": 161,
+    "UW1:っ": 74,
+    "UW3:ど": 134,
+    "TB3:109120120": -148,
+    "UW3:よ": -145,
+    "BW2:でき": -373,
+    "UW3:電": -286,
+    "BW2:いも": 373,
+    "BW1:しか": 228,
+    "BW1:たら": 328,
+    "BW3:かっ": -386,
+    "BQ4:O120109": -112,
+    "UW4:込": -315,
+    "UW2:お": -184,
+    "UW3:ー": 99,
+    "UW2:う": -44,
+    "BW3:どう": 258,
+    "UW4:な": 54,
+    "UW5:ご": 135,
+    "BW2:でし": -337,
+    "UW3:光": -182,
+    "UW4:み": 95,
+    "UW2:ー": -30,
+    "UW6:だ": -56,
+    "TB3:120162162": 69,
+    "UW2:た": -83,
+    "TQ1:O120120120": -14,
+    "UW1:す": 71,
+    "TW3:てしま": -305,
+    "UW3:。": 140,
+    "UW3:分": 178,
+    "BW1:とか": 206,
+    "TQ1:U120120108": 43,
+    "UW4:３": 82,
+    "UW2:人": 27,
+    "UW5:料": 317,
+    "BW1:んで": -191,
+    "UW4:？": -274,
+    "UW5:た": -80,
+    "TQ3:O120108108": -53,
+    "UQ2:O108": 14,
+    "UW5:せ": -122,
+    "BW1:しい": 135,
+    "UW4:物": -245,
+    "UW2:思": -15,
+    "UW5:ず": 179,
+    "UW6:思": -109,
+    "BW1:その": -159,
+    "BW1:思い": -244,
+    "UW4:．": -311,
+    "UW6:や": 68,
+    "BQ4:B120108": -105,
+    "BW2:のよ": -162,
+    "UW6:わ": 80,
+    "BW1:るの": -148,
+    "BW3:よく": 134,
+    "UW2:や": -67,
+    "UW2:関": 174,
+    "UQ1:U109": 39,
+    "TW4:ない。": 39,
+    "UW4:く": -106,
+    "UW6:さ": 40,
+    "TW4:ことに": -160,
+    "UW4:合": -148,
+    "TB4:162120108": 14,
+    "BW3:とて": 173,
+    "UW6:れ": -14,
+    "TB4:108109109": -67,
+    "BB3:120162": -27,
+    "BW3:すご": 173,
+    "UW1:「": -53,
+    "BW1:この": -91,
+    "UW6:は": -26,
+    "UW3:わ": -106,
+    "UW4:５": 117,
+    "TW4:こと。": 118,
+    "UW3:真": 185,
+    "UW2:く": -39,
+    "BW1:うに": -90,
+    "UW6:め": 118,
+    "UW4:通": -132,
+    "UW1:も": 13,
+    "TW3:ること": -38,
+    "BW2:たい": -155,
+    "BW1:少し": 106,
+    "TB4:120120108": 14,
+    "UW3:変": 91,
+    "UW2:が": 26,
+    "UW5:よ": -26,
+    "UW3:度": 90,
+    "TB3:108108120": 26,
+    "UW5:さ": -26,
+    "BW3:そう": -112,
+    "TW1:ことも": -13,
+    "UW5:け": -39,
+    "TQ3:O108162120": 52,
+    "BW1:の間": 103,
+    "BB2:072999": 78,
+    "UW6:え": -39,
+    "UW3:ご": -77,
+    "BW2:りし": 52,
+    "BW2:帯電": -52,
+    "TW3:らない": -76,
+    "TB2:108108162": 26,
+    "UW1:社": 51,
+    "UW4:と": -26,
+    "BW3:さん": -50,
+    "UW6:し": 13,
+    "UW6:く": 13,
+    "TQ3:O120120107": -25,
+    "TW4:ことも": -39,
+    "BW3:かか": 52,
+    "UW5:る": 13,
+    "UQ2:O109": -13,
+    "BW2:にも": -25,
+    "UW6:る": -13,
+    "BW2:、と": -13,
+    "UW3:ゃ": 13,
+    "BW1:とは": -13,
+    "UW1:く": 13,
+    "UW4:私": 12,
+  },
+  parseFromString = (e) => new DOMParser().parseFromString(e, "text/html"),
+  assert = console.assert,
+  ZWSP = "​",
+  NodeType = { ELEMENT_NODE: 1, TEXT_NODE: 3 },
+  DomAction = { Inline: 0, Block: 1, Skip: 2, Break: 3 },
+  domActions = {
+    AREA: DomAction.Skip,
+    BASE: DomAction.Skip,
+    BASEFONT: DomAction.Skip,
+    DATALIST: DomAction.Skip,
+    HEAD: DomAction.Skip,
+    LINK: DomAction.Skip,
+    META: DomAction.Skip,
+    NOEMBED: DomAction.Skip,
+    NOFRAMES: DomAction.Skip,
+    PARAM: DomAction.Skip,
+    RP: DomAction.Skip,
+    SCRIPT: DomAction.Skip,
+    STYLE: DomAction.Skip,
+    TEMPLATE: DomAction.Skip,
+    TITLE: DomAction.Skip,
+    NOSCRIPT: DomAction.Skip,
+    HR: DomAction.Break,
+    LISTING: DomAction.Skip,
+    PLAINTEXT: DomAction.Skip,
+    PRE: DomAction.Skip,
+    XMP: DomAction.Skip,
+    BR: DomAction.Break,
+    RT: DomAction.Skip,
+    INPUT: DomAction.Skip,
+    SELECT: DomAction.Skip,
+    BUTTON: DomAction.Skip,
+    TEXTAREA: DomAction.Skip,
+    ABBR: DomAction.Skip,
+    CODE: DomAction.Skip,
+    IFRAME: DomAction.Skip,
+    TIME: DomAction.Skip,
+    VAR: DomAction.Skip,
+  },
+  defaultBlockElements = new Set([
+    "HTML",
+    "BODY",
+    "ADDRESS",
+    "BLOCKQUOTE",
+    "CENTER",
+    "DIALOG",
+    "DIV",
+    "FIGURE",
+    "FIGCAPTION",
+    "FOOTER",
+    "FORM",
+    "HEADER",
+    "LEGEND",
+    "LISTING",
+    "MAIN",
+    "P",
+    "ARTICLE",
+    "ASIDE",
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "HGROUP",
+    "NAV",
+    "SECTION",
+    "DIR",
+    "DD",
+    "DL",
+    "DT",
+    "MENU",
+    "OL",
+    "UL",
+    "LI",
+    "TABLE",
+    "CAPTION",
+    "COL",
+    "TR",
+    "TD",
+    "TH",
+    "FIELDSET",
+    "DETAILS",
+    "SUMMARY",
+    "MARQUEE",
+  ]);
+function actionForElement(e) {
+  const t = e.nodeName,
+    n = domActions[t];
+  if (void 0 !== n) return n;
+  if ("function" == typeof getComputedStyle) {
+    const t = getComputedStyle(e);
+    switch (t.whiteSpace) {
+      case "nowrap":
+      case "pre":
+        return DomAction.Skip;
+    }
+    const n = t.display;
+    if (n) return "inline" === n ? DomAction.Inline : DomAction.Block;
+  }
+  return defaultBlockElements.has(t) ? DomAction.Block : DomAction.Inline;
+}
+var Paragraph = class {
+    constructor(e) {
+      ((this.textNodes = []), (this.element = e));
+    }
+    hasText() {
+      return this.textNodes.length > 0;
+    }
+  },
+  HTMLProcessor = class {
+    constructor(e, t) {
+      ((this.separator = ZWSP),
+        (this.threshold = DEFAULT_THRES),
+        (this.parser_ = e),
+        void 0 !== t &&
+          (void 0 !== t.className && (this.className = t.className),
+          void 0 !== t.separator && (this.separator = t.separator),
+          void 0 !== t.threshold && (this.threshold = t.threshold)));
+    }
+    applyToElement(e) {
+      for (const t of this.getBlocks(e)) (assert(t.hasText()), this.applyToParagraph(t));
+    }
+    *getBlocks(e, t) {
+      if (
+        (assert(e.nodeType === NodeType.ELEMENT_NODE),
+        this.className && e.classList.contains(this.className))
+      )
+        return;
+      const n = actionForElement(e);
+      if (n === DomAction.Skip) return;
+      if (n === DomAction.Break)
+        return (t && t.hasText() && (yield t, (t.textNodes = [])), void assert(!e.firstChild));
+      assert(n === DomAction.Block || n === DomAction.Inline);
+      const r = !t || n === DomAction.Block,
+        a = r ? new Paragraph(e) : t;
+      assert(a);
+      for (const o of e.childNodes)
+        switch (o.nodeType) {
+          case NodeType.ELEMENT_NODE:
+            for (const e of this.getBlocks(o, a)) yield e;
+            break;
+          case NodeType.TEXT_NODE:
+            a.textNodes.push(o);
+        }
+      r && a.hasText() && (yield a);
+    }
+    applyToParagraph(e) {
+      const t = e.textNodes;
+      assert(t.length > 0);
+      const n = t.map((e) => e.nodeValue).join("");
+      if (/^\s*$/.test(n)) return;
+      const r = this.parser_.parse(n, this.threshold);
+      if (
+        (assert(r.length > 0),
+        assert(r.reduce((e, t) => e + t.length, 0) === n.length),
+        r.length <= 1)
+      )
+        return;
+      const a = [];
+      let o = 0;
+      for (const i of r) (assert(i.length > 0), (o += i.length), a.push(o));
+      (assert(a[0] > 0),
+        assert(a[a.length - 1] === n.length),
+        ++a[a.length - 1],
+        assert(a.length > 1),
+        this.splitTextNodes(t, a),
+        this.applyBlockStyle(e.element));
+    }
+    splitTextNodes(e, t) {
+      assert(t.length > 0);
+      const n = e.reduce((e, t) => e + (t.nodeValue ? t.nodeValue.length : 0), 0);
+      assert(t[t.length - 1] > n);
+      let r = 0,
+        a = t[0];
+      assert(a > 0);
+      let o = 0;
+      for (const i of e) {
+        const e = i.nodeValue;
+        if (!e) continue;
+        const n = o + e.length;
+        if (a >= n) {
+          o = n;
+          continue;
+        }
+        const s = [];
+        let l = 0;
+        for (; a < n;) {
+          const n = a - o;
+          (assert(n >= l), s.push(e.substring(l, n)), (l = n), ++r, assert(t[r] > a), (a = t[r]));
+        }
+        (assert(s.length > 0),
+          l < e.length && s.push(e.substring(l)),
+          this.splitTextNode(i, s),
+          (o = n));
+      }
+      (assert(o === n), assert(r < t.length), assert(t[r] >= n));
+    }
+    splitTextNode(e, t) {
+      (assert(t.length > 1), assert(e.nodeValue === t.join("")));
+      const n = this.separator;
+      if ("string" == typeof n) return void (e.nodeValue = t.join(n));
+      const r = e.ownerDocument;
+      let a = [];
+      for (const o of t) (o && a.push(r.createTextNode(o)), a.push(null));
+      (a.pop(), (a = a.map((e) => e || n.cloneNode(!0))), e.replaceWith(...a));
+    }
+    applyBlockStyle(e) {
+      if (this.className) return void e.classList.add(this.className);
+      const t = e.style;
+      ((t.wordBreak = "keep-all"), (t.overflowWrap = "break-word"));
+    }
+    static defineClassAs(e, t) {
+      const n = e.createElement("style");
+      ((n.textContent = `.${t} { word-break: keep-all; overflow-wrap: break-word; }`),
+        e.head.appendChild(n));
+    }
+  },
+  bisectRight = (e, t) => {
+    const n = Math.floor(e.length / 2);
+    return t === e[n]
+      ? n + 1
+      : t < e[n]
+        ? 1 === e.length
+          ? 0
+          : bisectRight(e.slice(0, n), t)
+        : 1 === e.length
+          ? 1
+          : n + bisectRight(e.slice(n), t);
+  },
+  DEFAULT_THRES = 1e3,
+  NODETYPE = { ELEMENT: 1, TEXT: 3 },
+  Parser = class e {
+    constructor(e) {
+      this.model = e;
+    }
+    static getUnicodeBlockFeature(e) {
+      if (!e || "▔" === e) return "▔";
+      const t = e.codePointAt(0);
+      return void 0 === t ? "▔" : `${bisectRight(unicodeBlocks, t)}`.padStart(3, "0");
+    }
+    static getFeature(t, n, r, a, o, i, s, l, u) {
+      const c = e.getUnicodeBlockFeature(t),
+        d = e.getUnicodeBlockFeature(n),
+        p = e.getUnicodeBlockFeature(r),
+        f = e.getUnicodeBlockFeature(a),
+        _ = e.getUnicodeBlockFeature(o),
+        m = e.getUnicodeBlockFeature(i),
+        h = {
+          UP1: s,
+          UP2: l,
+          UP3: u,
+          BP1: s + l,
+          BP2: l + u,
+          UW1: t,
+          UW2: n,
+          UW3: r,
+          UW4: a,
+          UW5: o,
+          UW6: i,
+          BW1: n + r,
+          BW2: r + a,
+          BW3: a + o,
+          TW1: t + n + r,
+          TW2: n + r + a,
+          TW3: r + a + o,
+          TW4: a + o + i,
+          UB1: c,
+          UB2: d,
+          UB3: p,
+          UB4: f,
+          UB5: _,
+          UB6: m,
+          BB1: d + p,
+          BB2: p + f,
+          BB3: f + _,
+          TB1: c + d + p,
+          TB2: d + p + f,
+          TB3: p + f + _,
+          TB4: f + _ + m,
+          UQ1: s + c,
+          UQ2: l + d,
+          UQ3: u + p,
+          BQ1: l + d + p,
+          BQ2: l + p + f,
+          BQ3: u + d + p,
+          BQ4: u + p + f,
+          TQ1: l + c + d + p,
+          TQ2: l + d + p + f,
+          TQ3: u + c + d + p,
+          TQ4: u + d + p + f,
+        };
+      return Object.entries(h)
+        .filter((e) => !e[1].includes("▔"))
+        .map(([e, t]) => `${e}:${t}`);
+    }
+    static hasChildTextNode(e) {
+      for (const t of e.childNodes) if (t.nodeType === NODETYPE.TEXT) return !0;
+      return !1;
+    }
+    parse(t, n = DEFAULT_THRES) {
+      if ("" === t) return [];
+      let r = "U",
+        a = "U",
+        o = "U";
+      const i = [t[0]];
+      for (let s = 1; s < t.length; s++) {
+        const l = e
+            .getFeature(
+              t[s - 3] || "▔",
+              t[s - 2] || "▔",
+              t[s - 1],
+              t[s],
+              t[s + 1] || "▔",
+              t[s + 2] || "▔",
+              r,
+              a,
+              o,
+            )
+            .map((e) => this.model.get(e) || 0)
+            .reduce((e, t) => e + t),
+          u = l > 0 ? "B" : "O";
+        (l > n && i.push(""), (i[i.length - 1] += t[s]), (r = a), (a = o), (o = u));
+      }
+      return i;
+    }
+    applyElement(e, t = DEFAULT_THRES) {
+      new HTMLProcessor(this, {
+        separator: e.ownerDocument.createElement("wbr"),
+        threshold: t,
+      }).applyToElement(e);
+    }
+    translateHTMLString(t, n = DEFAULT_THRES) {
+      if ("" === t) return t;
+      const r = parseFromString(t);
+      if (e.hasChildTextNode(r.body)) {
+        const e = r.createElement("span");
+        (e.append(...r.body.childNodes), r.body.append(e));
+      }
+      return (this.applyElement(r.body.childNodes[0], n), r.body.innerHTML);
+    }
+  },
+  loadDefaultJapaneseParser = () => new Parser(new Map(Object.entries(model))),
+  Alignment = (function (e) {
+    return ((e[(e.left = 0)] = "left"), (e[(e.right = 1)] = "right"), e);
+  })({});
+function format(e, t) {
+  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
+}
+function formatPrintf(e, t) {
+  return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
+    const n = 0 === e.indexOf("%") ? 2 : 1;
+    return String(t[e.slice(n, -n)]);
+  });
+}
+var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
+  addSeparatorToRight = (e, t, n) => {
+    if (n % 2) {
+      const n = e.pop();
+      return [...e, n + t];
+    }
+    return [...e, t];
+  },
+  addSeparatorToLeft = (e, t, n) => {
+    if (0 === n) return [t];
+    if (n % 2) return [...e, " " === t ? " " : t];
+    {
+      const n = e.pop();
+      return [...e, n + t];
+    }
+  },
+  splitAndFormat = (e, t, n = 0) =>
+    e.split(t).reduce(0 === n ? addSeparatorToRight : addSeparatorToLeft, []),
+  splitEuropean = (e, t = 0) => {
+    let n = [];
+    const r =
+      /(?<=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])(\x2D)(?=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])/gu;
+    return (
+      splitAndFormat(convertNbsp(e), /( )/, t).forEach(
+        (e) => (n = n.concat(splitAndFormat(e, r, 0))),
+      ),
+      n
+    );
+  },
+  splitChinese = (() => {
+    const e = new RegExp(
+      [
+        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+      ]
+        .map((e) => e.source)
+        .join("|"),
+      "gum",
+    );
+    return (t) =>
+      t
+        .replace(/&nbsp;/g, " ")
+        .replace(/ /g, " ")
+        .match(e);
+  })(),
+  CHINESE_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw"],
+  splitWords = (e, t = 0) => {
+    const n = R.strings.settings.LANGUAGE_CODE().toLowerCase();
+    return CHINESE_LANGUAGE_CODES.includes(n)
+      ? splitChinese(e)
+      : "ja" === n
+        ? loadDefaultJapaneseParser()
+            .parse(e)
+            .map((e) => convertNbsp(e))
+        : splitEuropean(e, t);
+  },
+  formatString = (e, t, n) =>
+    e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (n && e in n ? n[e] : splitWords(e, t))),
+  base$34 = "Formattext_bb80854d",
+  fadeIn$36 = "Formattext_fadeIn_5d59be47",
+  fadeInThreeQuarters$36 = "Formattext_fadeInThreeQuarters_5d59be47",
+  fadeInHalf$36 = "Formattext_fadeInHalf_5d59be47",
+  fadeOut$36 = "Formattext_fadeOut_5d59be47",
+  fadeInWithScale$36 = "Formattext_fadeInWithScale_5d59be47",
+  slideUp$36 = "Formattext_slideUp_5d59be47",
+  scale$36 = "Formattext_scale_5d59be47",
+  raysAppearance$36 = "Formattext_raysAppearance_5d59be47",
+  rotate$36 = "Formattext_rotate_5d59be47",
+  glowAppearance$36 = "Formattext_glowAppearance_5d59be47",
+  highlightAppearance$36 = "Formattext_highlightAppearance_5d59be47",
+  blink$36 = "Formattext_blink_5d59be47",
+  slideUpIn$36 = "Formattext_slideUpIn_5d59be47",
+  FormatText_module_default = {
+    base: base$34,
+    fadeIn: fadeIn$36,
+    fadeInThreeQuarters: fadeInThreeQuarters$36,
+    fadeInHalf: fadeInHalf$36,
+    fadeOut: fadeOut$36,
+    fadeInWithScale: fadeInWithScale$36,
+    slideUp: slideUp$36,
+    scale: scale$36,
+    raysAppearance: raysAppearance$36,
+    rotate: rotate$36,
+    "reverse-rotate": "Formattext_reverse-rotate_5d59be47",
+    glowAppearance: glowAppearance$36,
+    highlightAppearance: highlightAppearance$36,
+    blink: blink$36,
+    slideUpIn: slideUpIn$36,
+  },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: n,
+    alignment: r = Alignment.left,
+    formatWithBrackets: a,
+  }) =>
+    null === t
+      ? (console.error("FormatText was supplied with 'null'"), null)
+      : (0, import_jsx_runtime.jsx)(import_react.Fragment, {
+          children: (a && e ? format(t, e) : t)
+            .split("\n")
+            .map((t, a) =>
+              (0, import_jsx_runtime.jsx)(
+                "div",
+                {
+                  className: (0, import_classnames.default)(FormatText_module_default.base, n),
+                  children: formatString(t, r, e).map((e, t) =>
+                    (0, import_jsx_runtime.jsx)(
+                      import_react.Fragment,
+                      { children: e },
+                      `${t}-${e}`,
+                    ),
+                  ),
+                },
+                `${t}-${a}`,
+              ),
+            ),
+        }),
+  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
+  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
+  white = "Formattextwithcolortags_white_e509d98",
+  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
+  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
+  par = "Formattextwithcolortags_par_485c5228",
+  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
+  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
+  red = "Formattextwithcolortags_red_9f8bd43",
+  redDark = "Formattextwithcolortags_redDark_5f4161da",
+  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
+  orange = "Formattextwithcolortags_orange_11869493",
+  cream = "Formattextwithcolortags_cream_12fdbea3",
+  brown = "Formattextwithcolortags_brown_e49e35ef",
+  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
+  green = "Formattextwithcolortags_green_55b7d967",
+  greenDark = "Formattextwithcolortags_greenDark_2b347344",
+  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
+  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
+  cred = "Formattextwithcolortags_cred_b30a4efa",
+  gold = "Formattextwithcolortags_gold_616e4d7",
+  bond = "Formattextwithcolortags_bond_b29091",
+  prom = "Formattextwithcolortags_prom_85aada4f",
+  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
+  fadeIn$35 = "Formattextwithcolortags_fadeIn_7219dca0",
+  fadeInThreeQuarters$35 = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
+  fadeInHalf$35 = "Formattextwithcolortags_fadeInHalf_7219dca0",
+  fadeOut$35 = "Formattextwithcolortags_fadeOut_7219dca0",
+  fadeInWithScale$35 = "Formattextwithcolortags_fadeInWithScale_7219dca0",
+  slideUp$35 = "Formattextwithcolortags_slideUp_7219dca0",
+  scale$35 = "Formattextwithcolortags_scale_7219dca0",
+  raysAppearance$35 = "Formattextwithcolortags_raysAppearance_7219dca0",
+  rotate$35 = "Formattextwithcolortags_rotate_7219dca0",
+  glowAppearance$35 = "Formattextwithcolortags_glowAppearance_7219dca0",
+  highlightAppearance$35 = "Formattextwithcolortags_highlightAppearance_7219dca0",
+  blink$35 = "Formattextwithcolortags_blink_7219dca0",
+  slideUpIn$35 = "Formattextwithcolortags_slideUpIn_7219dca0",
+  FormatTextWithColorTags_module_default = {
+    blackReal: blackReal,
+    whiteReal: whiteReal,
+    white: white,
+    whiteOrange: whiteOrange,
+    whiteSpanish: whiteSpanish,
+    par: par,
+    parSecondary: parSecondary,
+    parTertiary: parTertiary,
+    red: red,
+    redDark: redDark,
+    yellow: yellow,
+    orange: orange,
+    cream: cream,
+    brown: brown,
+    greenBright: greenBright,
+    green: green,
+    greenDark: greenDark,
+    blueBooster: blueBooster,
+    blueTeamkiller: blueTeamkiller,
+    cred: cred,
+    gold: gold,
+    bond: bond,
+    prom: prom,
+    parNoWidth: parNoWidth,
+    fadeIn: fadeIn$35,
+    fadeInThreeQuarters: fadeInThreeQuarters$35,
+    fadeInHalf: fadeInHalf$35,
+    fadeOut: fadeOut$35,
+    fadeInWithScale: fadeInWithScale$35,
+    slideUp: slideUp$35,
+    scale: scale$35,
+    raysAppearance: raysAppearance$35,
+    rotate: rotate$35,
+    "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
+    glowAppearance: glowAppearance$35,
+    highlightAppearance: highlightAppearance$35,
+    blink: blink$35,
+    slideUpIn: slideUpIn$35,
+  },
+  TAGGED_PHRASE_REGEXP =
+    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+  COLOR_REGEXP = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+  WORDS_REGEXP = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
+  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: n }) => {
+    const r = (0, import_react.useCallback)((e) => ({ color: `#${e}` }), []),
+      a = (0, import_react.useMemo)(() => t || {}, [t]);
+    let o = TAGGED_PHRASE_REGEXP.exec(e),
+      i = e,
+      s = 0;
+    for (; o;) {
+      const n = o[0],
+        l = COLOR_REGEXP.exec(n),
+        u = WORDS_REGEXP.exec(n),
+        c = o[1];
+      if (l && u) {
+        const e = l[0],
+          o = e + s++ + e;
+        ((i = i.replace(n, `%(${o})`)),
+          (a[o] = FormatTextWithColorTags_module_default[e]
+            ? (0, import_jsx_runtime.jsx)("span", {
+                className: FormatTextWithColorTags_module_default[e],
+                children: (0, import_jsx_runtime.jsx)(FormatText, { text: c, binding: t }),
+              })
+            : (0, import_jsx_runtime.jsx)("span", {
+                style: r(e),
+                children: (0, import_jsx_runtime.jsx)(FormatText, { text: c, binding: t }),
+              })));
+      }
+      o = TAGGED_PHRASE_REGEXP.exec(e);
+    }
+    return (0, import_jsx_runtime.jsx)(FormatText, { text: i, classMix: n, binding: a });
+  },
+  FormatTextWithColorTags = (0, import_react.memo)(FormatTextWithColorTagsComponent),
   createLayoutReadyInEffect = (e) => {
     let t,
       n = null;
@@ -41499,36 +41301,36 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
       }
     );
   },
-  base$32 = "Textoverflow_3e47b075",
-  fadeIn$33 = "Textoverflow_fadeIn_97eb19e2",
-  fadeInThreeQuarters$33 = "Textoverflow_fadeInThreeQuarters_97eb19e2",
-  fadeInHalf$33 = "Textoverflow_fadeInHalf_97eb19e2",
-  fadeOut$33 = "Textoverflow_fadeOut_97eb19e2",
-  fadeInWithScale$33 = "Textoverflow_fadeInWithScale_97eb19e2",
-  slideUp$33 = "Textoverflow_slideUp_97eb19e2",
-  scale$33 = "Textoverflow_scale_97eb19e2",
-  raysAppearance$33 = "Textoverflow_raysAppearance_97eb19e2",
-  rotate$33 = "Textoverflow_rotate_97eb19e2",
-  glowAppearance$33 = "Textoverflow_glowAppearance_97eb19e2",
-  highlightAppearance$33 = "Textoverflow_highlightAppearance_97eb19e2",
-  blink$33 = "Textoverflow_blink_97eb19e2",
-  slideUpIn$33 = "Textoverflow_slideUpIn_97eb19e2",
+  base$33 = "Textoverflow_3e47b075",
+  fadeIn$34 = "Textoverflow_fadeIn_97eb19e2",
+  fadeInThreeQuarters$34 = "Textoverflow_fadeInThreeQuarters_97eb19e2",
+  fadeInHalf$34 = "Textoverflow_fadeInHalf_97eb19e2",
+  fadeOut$34 = "Textoverflow_fadeOut_97eb19e2",
+  fadeInWithScale$34 = "Textoverflow_fadeInWithScale_97eb19e2",
+  slideUp$34 = "Textoverflow_slideUp_97eb19e2",
+  scale$34 = "Textoverflow_scale_97eb19e2",
+  raysAppearance$34 = "Textoverflow_raysAppearance_97eb19e2",
+  rotate$34 = "Textoverflow_rotate_97eb19e2",
+  glowAppearance$34 = "Textoverflow_glowAppearance_97eb19e2",
+  highlightAppearance$34 = "Textoverflow_highlightAppearance_97eb19e2",
+  blink$34 = "Textoverflow_blink_97eb19e2",
+  slideUpIn$34 = "Textoverflow_slideUpIn_97eb19e2",
   TextOverflow_module_default = {
-    base: base$32,
-    fadeIn: fadeIn$33,
-    fadeInThreeQuarters: fadeInThreeQuarters$33,
-    fadeInHalf: fadeInHalf$33,
-    fadeOut: fadeOut$33,
-    fadeInWithScale: fadeInWithScale$33,
-    slideUp: slideUp$33,
-    scale: scale$33,
-    raysAppearance: raysAppearance$33,
-    rotate: rotate$33,
+    base: base$33,
+    fadeIn: fadeIn$34,
+    fadeInThreeQuarters: fadeInThreeQuarters$34,
+    fadeInHalf: fadeInHalf$34,
+    fadeOut: fadeOut$34,
+    fadeInWithScale: fadeInWithScale$34,
+    slideUp: slideUp$34,
+    scale: scale$34,
+    raysAppearance: raysAppearance$34,
+    rotate: rotate$34,
     "reverse-rotate": "Textoverflow_reverse-rotate_97eb19e2",
-    glowAppearance: glowAppearance$33,
-    highlightAppearance: highlightAppearance$33,
-    blink: blink$33,
-    slideUpIn: slideUpIn$33,
+    glowAppearance: glowAppearance$34,
+    highlightAppearance: highlightAppearance$34,
+    blink: blink$34,
+    slideUpIn: slideUpIn$34,
   },
   TextOverflow = ({ content: e, classMix: t, className: n, ...r }) => {
     const a = (0, import_react.useRef)(null),
@@ -41552,40 +41354,40 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
       })
     );
   },
-  base$31 = "SceneWrapper_52fcfc1e",
+  base$32 = "SceneWrapper_52fcfc1e",
   base__down$1 = "SceneWrapper_base__down_4ece5089",
   base__moveSpaceDisabled$1 = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
-  fadeIn$32 = "SceneWrapper_fadeIn_af92b2b4",
-  fadeInThreeQuarters$32 = "SceneWrapper_fadeInThreeQuarters_af92b2b4",
-  fadeInHalf$32 = "SceneWrapper_fadeInHalf_af92b2b4",
-  fadeOut$32 = "SceneWrapper_fadeOut_af92b2b4",
-  fadeInWithScale$32 = "SceneWrapper_fadeInWithScale_af92b2b4",
-  slideUp$32 = "SceneWrapper_slideUp_af92b2b4",
-  scale$32 = "SceneWrapper_scale_af92b2b4",
-  raysAppearance$32 = "SceneWrapper_raysAppearance_af92b2b4",
-  rotate$32 = "SceneWrapper_rotate_af92b2b4",
-  glowAppearance$32 = "SceneWrapper_glowAppearance_af92b2b4",
-  highlightAppearance$32 = "SceneWrapper_highlightAppearance_af92b2b4",
-  blink$32 = "SceneWrapper_blink_af92b2b4",
-  slideUpIn$32 = "SceneWrapper_slideUpIn_af92b2b4",
+  fadeIn$33 = "SceneWrapper_fadeIn_af92b2b4",
+  fadeInThreeQuarters$33 = "SceneWrapper_fadeInThreeQuarters_af92b2b4",
+  fadeInHalf$33 = "SceneWrapper_fadeInHalf_af92b2b4",
+  fadeOut$33 = "SceneWrapper_fadeOut_af92b2b4",
+  fadeInWithScale$33 = "SceneWrapper_fadeInWithScale_af92b2b4",
+  slideUp$33 = "SceneWrapper_slideUp_af92b2b4",
+  scale$33 = "SceneWrapper_scale_af92b2b4",
+  raysAppearance$33 = "SceneWrapper_raysAppearance_af92b2b4",
+  rotate$33 = "SceneWrapper_rotate_af92b2b4",
+  glowAppearance$33 = "SceneWrapper_glowAppearance_af92b2b4",
+  highlightAppearance$33 = "SceneWrapper_highlightAppearance_af92b2b4",
+  blink$33 = "SceneWrapper_blink_af92b2b4",
+  slideUpIn$33 = "SceneWrapper_slideUpIn_af92b2b4",
   scene_wrapper_module_default = {
-    base: base$31,
+    base: base$32,
     base__down: base__down$1,
     base__moveSpaceDisabled: base__moveSpaceDisabled$1,
-    fadeIn: fadeIn$32,
-    fadeInThreeQuarters: fadeInThreeQuarters$32,
-    fadeInHalf: fadeInHalf$32,
-    fadeOut: fadeOut$32,
-    fadeInWithScale: fadeInWithScale$32,
-    slideUp: slideUp$32,
-    scale: scale$32,
-    raysAppearance: raysAppearance$32,
-    rotate: rotate$32,
+    fadeIn: fadeIn$33,
+    fadeInThreeQuarters: fadeInThreeQuarters$33,
+    fadeInHalf: fadeInHalf$33,
+    fadeOut: fadeOut$33,
+    fadeInWithScale: fadeInWithScale$33,
+    slideUp: slideUp$33,
+    scale: scale$33,
+    raysAppearance: raysAppearance$33,
+    rotate: rotate$33,
     "reverse-rotate": "SceneWrapper_reverse-rotate_af92b2b4",
-    glowAppearance: glowAppearance$32,
-    highlightAppearance: highlightAppearance$32,
-    blink: blink$32,
-    slideUpIn: slideUpIn$32,
+    glowAppearance: glowAppearance$33,
+    highlightAppearance: highlightAppearance$33,
+    blink: blink$33,
+    slideUpIn: slideUpIn$33,
   },
   MOUSE_BUTTONS_LEFT$1 = 1,
   DELTA_Z = 600;
@@ -41663,7 +41465,188 @@ function SceneWrapper$1({
     })
   );
 }
-var TabsContext = (0, import_react.createContext)(null);
+var CountdownIcon = (function (e) {
+    return (
+      (e.Timer = "timer"),
+      (e.Countdown = "countdown"),
+      (e.Cooldown = "cooldown"),
+      (e.None = "none"),
+      e
+    );
+  })({}),
+  CountdownStyle = (function (e) {
+    return (
+      (e.Description = "description"),
+      (e.Short = "short"),
+      (e.Long = "long"),
+      (e.Extended = "extended"),
+      e
+    );
+  })({}),
+  DAYS_IN_WEEK = 7,
+  HOURS_IN_DAY = 24,
+  MS_IN_SECOND = 1e3,
+  ONE_MINUTE = 60,
+  ONE_HOUR = 3600,
+  ONE_DAY = 24 * ONE_HOUR,
+  ONE_WEEK = 7 * ONE_DAY,
+  NOW_IN_SECONDS = Date.now() / 1e3,
+  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
+  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
+function getTimeUnits(e = 0) {
+  let t = e;
+  const n = Math.trunc(t / ONE_DAY);
+  t -= n * ONE_DAY;
+  const r = Math.trunc(t / ONE_HOUR);
+  t -= r * ONE_HOUR;
+  const a = Math.trunc(t / 60);
+  return ((t -= 60 * a), { days: n, hours: r, minutes: a, seconds: t });
+}
+var getRoundedTimeUnitDescription = (e, t = !0) =>
+    e.days > 7 && t
+      ? format(R.strings.common.duration.days(), { days: e.days })
+      : e.days >= 1
+        ? 0 === e.hours
+          ? format(R.strings.common.duration.days(), { days: e.days })
+          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
+        : e.hours >= 1
+          ? 0 === e.minutes
+            ? format(R.strings.common.duration.hours(), { hours: e.hours })
+            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
+          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
+  defaultOnFinish = () => {},
+  useCountdown$1 = (e = 0, t, n = 0, r = defaultOnFinish) => {
+    const [a, o] = (0, import_react.useState)(e);
+    return (
+      (0, import_react.useEffect)(() => {
+        if (e > 0) {
+          o(e);
+          const a = Date.now(),
+            i = setInterval(
+              () => {
+                const t = e - Math.floor((Date.now() - a) / MS_IN_SECOND);
+                null !== n && t <= n ? (o(n), r && r(), clearInterval(i)) : o(t);
+              },
+              (t || (e > 120 ? 60 : 1)) * MS_IN_SECOND,
+            );
+          return () => {
+            clearInterval(i);
+          };
+        }
+      }, [e, t, n, r]),
+      a
+    );
+  },
+  tracker$1 = DataTracker.instance,
+  tracker = DataTracker.instance,
+  useCountdown = useCountdown$1,
+  useScaleState = () => {
+    const [e, t] = (0, import_react.useState)(env.view.getScale());
+    return (
+      (0, import_react.useEffect)(() => {
+        const e = () => {
+          t(env.view.getScale());
+        };
+        return (
+          window.addEventListener("resize", e),
+          () => {
+            window.removeEventListener("resize", e);
+          }
+        );
+      }, []),
+      e
+    );
+  },
+  base$31 = "Countdown_99fa8328",
+  icon$4 = "Countdown_icon_b50ebafb",
+  description = "Countdown_description_91ad95d2",
+  fadeIn$32 = "Countdown_fadeIn_52ed3dde",
+  fadeInThreeQuarters$32 = "Countdown_fadeInThreeQuarters_52ed3dde",
+  fadeInHalf$32 = "Countdown_fadeInHalf_52ed3dde",
+  fadeOut$32 = "Countdown_fadeOut_52ed3dde",
+  fadeInWithScale$32 = "Countdown_fadeInWithScale_52ed3dde",
+  slideUp$32 = "Countdown_slideUp_52ed3dde",
+  scale$32 = "Countdown_scale_52ed3dde",
+  raysAppearance$32 = "Countdown_raysAppearance_52ed3dde",
+  rotate$32 = "Countdown_rotate_52ed3dde",
+  glowAppearance$32 = "Countdown_glowAppearance_52ed3dde",
+  highlightAppearance$32 = "Countdown_highlightAppearance_52ed3dde",
+  blink$32 = "Countdown_blink_52ed3dde",
+  slideUpIn$32 = "Countdown_slideUpIn_52ed3dde",
+  Countdown_module_default = {
+    base: base$31,
+    icon: icon$4,
+    description: description,
+    fadeIn: fadeIn$32,
+    fadeInThreeQuarters: fadeInThreeQuarters$32,
+    fadeInHalf: fadeInHalf$32,
+    fadeOut: fadeOut$32,
+    fadeInWithScale: fadeInWithScale$32,
+    slideUp: slideUp$32,
+    scale: scale$32,
+    raysAppearance: raysAppearance$32,
+    rotate: rotate$32,
+    "reverse-rotate": "Countdown_reverse-rotate_52ed3dde",
+    glowAppearance: glowAppearance$32,
+    highlightAppearance: highlightAppearance$32,
+    blink: blink$32,
+    slideUpIn: slideUpIn$32,
+  },
+  formatUnit = (e) => e.toString().padStart(2, "0"),
+  formatTimeUnits = (e, t) => {
+    switch (t) {
+      case CountdownStyle.Description:
+        return getRoundedTimeUnitDescription(e);
+      case CountdownStyle.Short:
+        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Long:
+        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Extended:
+        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+    }
+  },
+  IMAGES = R.images.gui.maps.icons.components.countdown,
+  getIcon = (e, t) => {
+    const n = 2 === t ? IMAGES.big : IMAGES;
+    switch (e) {
+      case CountdownIcon.Timer:
+        return n.clock();
+      case CountdownIcon.Countdown:
+        return n.hourglass();
+      case CountdownIcon.Cooldown:
+        return n.lock();
+    }
+  },
+  Countdown = ({
+    duration: e,
+    icon: t = CountdownIcon.Timer,
+    style: n = CountdownStyle.Description,
+    onTimeReached: r,
+    refreshRate: a,
+    className: o = "",
+    classNames: i = {},
+  }) => {
+    const s = useCountdown(e, a ?? (n !== CountdownStyle.Description ? 1 : void 0)),
+      l = useScaleState();
+    r && r[s] && r[s]();
+    const u = formatTimeUnits(getTimeUnits(s), n);
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(Countdown_module_default.base, o),
+      children: [
+        t !== CountdownIcon.None &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: (0, import_classnames.default)(Countdown_module_default.icon, i.icon),
+            style: { backgroundImage: `url('${getIcon(t, l)}')` },
+          }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(Countdown_module_default.description, i.text),
+          children: u,
+        }),
+      ],
+    });
+  },
+  Countdown_default = (0, import_react.memo)(Countdown),
+  TabsContext = (0, import_react.createContext)(null);
 function useTabsContext() {
   const e = (0, import_react.useContext)(TabsContext);
   return (assert$1(null !== e, "You can use tabs hooks only with Tabs component"), e);
@@ -42614,7 +42597,24 @@ var hover = "Slider_hover_9553506b",
   (Slider.Controls = Controls),
   (Slider.Indicators = Indicators$1),
   (Slider.CurrentValue = CurrentValue));
-var base$21 = "Frame_8333acf3",
+var DateTime = ({
+    datetime: e,
+    format: t = DateTimeFormatsEnum.ShortDate,
+    isConvertedToLocal: n = !0,
+  }) =>
+    Object.values(DateTimeFormatsEnum).includes(t)
+      ? getRegionalDateTime(e, t, n)
+      : getFormattedDateTime(e, t, n),
+  DateTime_default = (0, import_react.memo)(DateTime),
+  BackportTooltip = ({ children: e, ...t }) =>
+    (0, import_jsx_runtime.jsx)(Tooltip$1, {
+      contentId:
+        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
+      ignoreShowDelay: !0,
+      ...t,
+      children: e,
+    }),
+  base$21 = "Frame_8333acf3",
   base__small$4 = "Frame_base__small_4e740586",
   base__medium$3 = "Frame_base__medium_61f5e331",
   border$1 = "Frame_border_1889217e",
@@ -43091,7 +43091,7 @@ var base$21 = "Frame_8333acf3",
   UsernameAnonymizerComponent = ({ tooltipHeaderName: e }) =>
     (0, import_jsx_runtime.jsx)(SimpleTooltip, {
       header: (0, import_react.useMemo)(
-        () => formatPrintf$1(R.strings.tooltips.anonymizer.teamStats.header(), { name: e }),
+        () => formatPrintf(R.strings.tooltips.anonymizer.teamStats.header(), { name: e }),
         [e],
       ),
       body: R.strings.tooltips.anonymizer.teamStats.body(),
@@ -43633,8 +43633,8 @@ var getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(t)
       return (0, import_jsx_runtime.jsx)(SimpleTooltip, { ...t, children: r });
     const { contentId: a } = t;
     return a
-      ? (0, import_jsx_runtime.jsx)(Tooltip$2, { ...t, contentId: a, children: r })
-      : (0, import_jsx_runtime.jsx)(BackportTooltip$1, { ...t, children: r });
+      ? (0, import_jsx_runtime.jsx)(Tooltip$1, { ...t, contentId: a, children: r })
+      : (0, import_jsx_runtime.jsx)(BackportTooltip, { ...t, children: r });
   },
   RewardType = (function (e) {
     return (
@@ -44270,7 +44270,7 @@ var getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(t)
               size: t,
               value:
                 s ||
-                formatPrintf$1(R.strings.tooltips.quests.awards.additional.bottom(), {
+                formatPrintf(R.strings.tooltips.quests.awards.additional.bottom(), {
                   count: e.length - (r || 0),
                 }),
               tooltipArgs: i,
@@ -54938,409 +54938,409 @@ var CanvasSequence = (0, import_react.memo)(function ({
     });
   };
 export {
-  Size as $,
+  FormatText as $,
   add as $a,
   useTransition$3 as $i,
-  Slot$1 as $n,
+  dragDirections as $n,
   play$1 as $o,
   number as $r,
-  discountTypes as $t,
+  env as $t,
   getRewardTooltipConfig as A,
   useUpscale as Aa,
   useBackdropTooltip as Ai,
-  Sprite as An,
+  VehicleRole as An,
   slice as Ao,
-  BackportTooltip$1 as Ar,
-  perkStates as At,
-  sizes$6 as B,
+  getRoleByKey as Ar,
+  Switcher$1 as At,
+  DateTime_default as B,
   readKey as Ba,
   useSkipFrame$1 as Bi,
-  useHorizontalDrag as Bn,
+  matchPath as Bn,
   addEventListener$1 as Bo,
-  sizes$19 as Br,
-  Checkbox as Bt,
+  sameTanksRemap as Br,
+  ScrollVelocityGuardContent as Bt,
   Bubble as C,
   configure as Ca,
   useSpecialContextMenu as Ci,
-  Input as Cn,
+  useTransition$1 as Cn,
   lastElement as Co,
-  sameTanksRemap as Cr,
+  renderResolvedString as Cr,
   require_react_dom as Cs,
-  Waiting as Ct,
+  isEmptyObject as Ct,
   Rewards as D,
   runInAction as Da,
   createMultipleTargetOverrides as Di,
-  Switch$1 as Dn,
+  useLazyModel as Dn,
   mapNonNullable as Do,
-  CountdownIcon as Dr,
+  vehicleState as Dr,
   resources as Ds,
-  ButtonType as Dt,
+  overlayTypes as Dt,
   IconButton as E,
   observable$1 as Ea,
   useSoundsOptional as Ei,
-  Route as En,
+  createOptionalDLProvider as En,
   mapFilter as Eo,
-  Countdown_default as Er,
+  FormatText$1 as Er,
   DateTimeFormatsEnum as Es,
-  ButtonSize as Et,
+  LoadoutItem as Et,
   Video as F,
   MediaHeight as Fa,
   useWulfTooltip as Fi,
-  Bar as Fn,
+  Input as Fn,
   isNonNullable as Fo,
-  KEY_CODES as Fr,
-  __vitePreload as Ft,
-  SceneWrapper$1 as G,
+  fromModel$1 as Fr,
+  ButtonType as Ft,
+  themes as G,
   MAX_i32 as Ga,
   useMouseCoordinatesSprings as Gi,
-  useScrollBounding as Gn,
+  MaskArea as Gn,
   getKeyNameFromScanCode as Go,
   boolean as Gr,
-  CardSingle as Gt,
-  sizes$7 as H,
+  RentalCounter as Gt,
+  sizes$6 as H,
   comparer$1 as Ha,
   useResize$1 as Hi,
-  useScrollByDragElements as Hn,
+  Sprite as Hn,
   identity as Ho,
-  UIProvider as Hr,
-  SimpleTooltip as Ht,
+  nationById as Hr,
+  KeyButton as Ht,
   BackportContextMenu as I,
   MediaSize as Ia,
   isEqual$1 as Ii,
-  useApi as In,
+  useInput as In,
   iter as Io,
-  env as Ir,
-  List as It,
-  ProgressBar$1 as J,
+  getVehicleImageKey as Ir,
+  fromAccountModel as It,
+  CountdownIcon as J,
   LOWER_ALPHABET as Ja,
   useChain as Ji,
-  defaultSettings as Jn,
+  useApi as Jn,
   pxToRem$1 as Jo,
   integer as Jr,
-  useCardsWrapperContext as Jt,
-  TextOverflow as K,
+  Checkbox as Jt,
+  useTabsContext as K,
   calcPercent as Ka,
   animated$1 as Ki,
-  useApi$1 as Kn,
+  DefaultScroll as Kn,
   addPreloadTexture$1 as Ko,
   custom as Kr,
-  CardsWrapper as Kt,
+  VehicleImage as Kt,
   PlayerNickname as L,
   MediaWidth as La,
   usePreloadImagesState as Li,
-  VerticalScrollProvider as Ln,
+  placeholderVisibility as Ln,
   keyCodes as Lo,
-  formatPrintf$1 as Lr,
-  RentalCounter as Lt,
+  isRentVehicle as Lr,
+  fromModel as Lt,
   ImageSize as M,
   MediaWrapperElement as Ma,
   useSimpleTooltip as Mi,
-  Area as Mn,
+  Toggle as Mn,
   sort as Mo,
-  FormatText$1 as Mr,
-  ScrollVelocityGuardContent as Mt,
+  lightTankRoles as Mr,
+  Spinner as Mt,
   DynamicTooltipWrapper as N,
   useMedia as Na,
   useSpecialTooltip as Ni,
-  MaskArea as Nn,
+  toggleSizes as Nn,
   toArray$2 as No,
-  require_classnames as Nr,
-  Background as Nt,
+  mediumTankRoles as Nr,
+  CButton as Nt,
   Reward as O,
   useAdaptiveWidth as Oa,
   createSoundPlay as Oi,
-  matchPath as On,
+  VehicleType as On,
   push as Oo,
-  CountdownStyle as Or,
-  fromAccountModel as Ot,
+  WITHOUT_ROLE as Or,
+  sizes$10 as Ot,
   MultilineOverflowWithTooltip as P,
   require_jsx_runtime as Pa,
   useTooltip as Pi,
-  DefaultScroll as Pn,
+  toggleThemes as Pn,
   unsafeGet as Po,
-  DateTime_default as Pr,
-  KeyButton as Pt,
-  AnimationType as Q,
+  roles$1 as Pr,
+  ButtonSize as Pt,
+  FormatTextWithColorTags as Q,
   toRoman as Qa,
   useSprings$1 as Qi,
-  TruncatedText as Qn,
+  useHorizontalDrag as Qn,
   sendEvent$3 as Qo,
   minValue as Qr,
-  currencyTypes as Qt,
+  KEY_CODES as Qt,
   VerticalTabs as R,
   breakpoints as Ra,
   useTimeout as Ri,
-  useVerticalScroll as Rn,
+  Route as Rn,
   promiseWithResolvers as Ro,
-  Button$1 as Rr,
-  VehicleImage as Rt,
+  isTypeValidValue as Rr,
+  perkStates as Rt,
   loadPlugin as S,
   comparer as Sa,
   useBackportContextMenu as Si,
-  toggleThemes as Sn,
+  useSpring as Sn,
   includes as So,
-  normilizeVehicleType as Sr,
+  UIProvider as Sr,
   clsx as Ss,
-  Switcher$1 as St,
+  MultilineOverflow$1 as St,
   SceneWrapper as T,
   makeObservable as Ta,
   useSounds as Ti,
-  placeholderVisibility as Tn,
+  LazyModel as Tn,
   mapExists as To,
-  nationById as Tr,
+  FormatString as Tr,
   intl$4 as Ts,
-  CButton as Tt,
-  themes as U,
+  Slot as Tt,
+  Tabs as U,
   throttle_default$1 as Ua,
   useResizeLayoutReady as Ui,
-  Area$1 as Un,
+  Base$31 as Un,
   noop$5 as Uo,
   createParser as Ur,
-  Discount as Ut,
-  Tabs as V,
+  __vitePreload as Ut,
+  Slider as V,
   mouseButtons as Va,
   useScaleState$1 as Vi,
-  dragDirections as Vn,
+  useHoverState as Vn,
   constFalse as Vo,
-  themes$1 as Vr,
-  sizes$13 as Vt,
-  useTabsContext as W,
+  types$5 as Vr,
+  Background as Vt,
+  sizes$7 as W,
   isNumber as Wa,
   useRepeatCallback as Wi,
-  Bar$1 as Wn,
+  Area as Wn,
   clamp$3 as Wo,
   array as Wr,
-  statusTypes as Wt,
-  BlueNoise as X,
+  List as Wt,
+  SceneWrapper$1 as X,
   createString as Xa,
   useSpringRef as Xi,
-  useHorizontalScroll as Xn,
+  useVerticalScroll as Xn,
   setContentReady as Xo,
   literal as Xr,
-  WithDiscount as Xt,
-  defaultAnimationSettings as Y,
+  SimpleTooltip as Xt,
+  CountdownStyle as Y,
   NUMBERS_ALPHABET as Ya,
   useSpring$1 as Yi,
-  HorizontalScrollProvider as Yn,
+  VerticalScrollProvider as Yn,
   remToPx$1 as Yo,
   lazy$1 as Yr,
-  useCardContext as Yt,
-  GrowAnimationState as Z,
+  sizes$13 as Yt,
+  TextOverflow as Z,
   arabicToRoman as Za,
   useSpringValue as Zi,
-  asMemoized as Zn,
+  Base$32 as Zn,
   get$2 as Zo,
   minLength as Zr,
-  Currency as Zt,
+  Tooltip$1 as Zt,
   measureTypes as _,
   useEvent as _a,
   initializeModelWithContext as _i,
-  sizes$16 as _n,
+  SimpleTooltip$1 as _n,
   findIndex$2 as _o,
-  roles$1 as _r,
+  Popover as _r,
   greaterThanOrEqual as _s,
-  Slot as _t,
+  formatValue as _t,
   createGridImgSourceGetter as a,
   useHandleKeyup as aa,
   string as ai,
-  SimpleTooltip$1 as an,
+  useCardsWrapperContext as an,
   createLayoutReadyInEffect$1 as ao,
-  observer as ar,
+  Direction as ar,
   getRegionalDateTime$1 as as,
-  getRewardValueType$1 as at,
+  GrowAnimationState as at,
   isReactComponent$1 as b,
   action as ba,
   useAdjustScreenWidth as bi,
-  Toggle as bn,
+  directions$1 as bn,
   get$1 as bo,
-  isRentVehicle as br,
+  Img as br,
   subtract as bs,
-  sizes$10 as bt,
+  sizes$8 as bt,
   PlayerInfo as c,
   useIsFirstRender as ca,
   defineStyledComponent as ci,
-  directions$1 as cn,
+  Currency as cn,
   makeActions as co,
-  FormatString as cr,
+  useHorizontalScroll as cr,
   MS_IN_SECOND$1 as cs,
-  Timer as ct,
+  Tooltip as ct,
   useTableContext as d,
   useInterval as da,
   useRouter as di,
-  useTransition$1 as dn,
+  imageSizes$2 as dn,
   observable$2 as do,
-  WITHOUT_ROLE as dr,
+  Slot$1 as dr,
   ONE_WEEK$1 as ds,
-  formats as dt,
+  formatPrintf$1 as dt,
   useLoop as ea,
   object as ei,
-  imageSizes$2 as en,
+  Discount as en,
   remove$1 as eo,
-  Slottable as er,
+  useScrollByDragElements as er,
   getSize$2 as es,
-  Tooltip as et,
+  formatPrintf as et,
   columnBehaviours as f,
   useEmitter as fa,
   runView as fi,
-  Accordion as fn,
+  sizes$15 as fn,
   runInAction$1 as fo,
-  atSpgRoles as fr,
+  Slottable as fr,
   getRealFormat as fs,
-  sizes$8 as ft,
+  getRewardImage$1 as ft,
   getFilteredRowModel as g,
   useRefResizeObserver as ga,
   computedFn$1 as gi,
-  VehicleType as gn,
+  BackportTooltip$1 as gn,
   find as go,
-  mediumTankRoles as gr,
+  themes$1 as gr,
   fromMs as gs,
-  DragAndDrop as gt,
+  Timer as gt,
   createColumnHelper as h,
   throttle_default as ha,
   computeds as hi,
-  useLazyModel as hn,
+  BackdropTooltip as hn,
   filterMap as ho,
-  lightTankRoles as hr,
+  sizes$19 as hr,
   days as hs,
-  isEmptyObject as ht,
+  ProgressBar$2 as ht,
   addChunkIndexToEndPath as i,
   useHandleKeydown as ia,
   safeParse as ii,
-  BackportTooltip as in,
+  Card as in,
   createTimeoutInEffect$1 as io,
-  Img as ir,
+  useApi$1 as ir,
   onRescale as is,
-  getRewardImage$1 as it,
+  BlueNoise as it,
   getRewardValueType as j,
   MediaWrapper as ja,
   useParamTooltip as ji,
-  Base$31 as jn,
+  VehicleLevel as jn,
   some as jo,
-  Tooltip$2 as jr,
-  roles as jt,
+  heavyTankRoles as jr,
+  Waiting as jt,
   getRewardImage as k,
   useAdaptive as ka,
   createTargetOverrides as ki,
-  useHoverState as kn,
+  sizes$16 as kn,
   reduce as ko,
-  FormatTextWithColorTags as kr,
-  fromModel as kt,
+  atSpgRoles as kr,
+  useDragAndDrop as kt,
   Table as l,
   useMount$1 as la,
   Video$1 as li,
-  animated as ln,
+  currencyTypes as ln,
   action$1 as lo,
-  FormatText as lr,
+  asMemoized as lr,
   ONE_DAY$1 as ls,
-  formatValue as lt,
+  Rewards$1 as lt,
   flexRender as m,
   debounce_default as ma,
   assignRefs as mi,
-  createOptionalDLProvider as mn,
+  require_classnames as mn,
   filter as mo,
-  heavyTankRoles as mr,
+  HeadlessButton as mr,
   compare as ms,
-  MultilineOverflow$1 as mt,
+  ImageSize$1 as mt,
   Counter as n,
   useCallbackOnEsc as na,
   parse$2 as ni,
-  types$3 as nn,
+  CardSingle as nn,
   mapRange as no,
-  usePopover as nr,
+  Bar$1 as nr,
   writeClipboard as ns,
-  Reward$1 as nt,
+  ProgressBar$1 as nt,
   isValidBreakpoint as o,
   useIsUnmounted as oa,
   transform as oi,
-  Tooltip$1 as on,
+  useCardContext as on,
   createMockControls as oo,
-  renderResolvedString as or,
+  defaultSettings as or,
   capitalize as os,
-  ImageSize$1 as ot,
+  AnimationType as ot,
   tableParts as p,
   useDebounce as pa,
   JSXBuilder as pi,
-  LazyModel as pn,
+  types$3 as pn,
   every as po,
-  getRoleByKey as pr,
+  Button$1 as pr,
   format$2 as ps,
-  ExtendedText as pt,
-  FormatNumber as q,
+  getRewardValueType$1 as pt,
+  Countdown_default as q,
   roundTo as qa,
   config$1 as qi,
-  Direction as qn,
+  Bar as qn,
   forceTriggerMouseMove$1 as qo,
   enum_ as qr,
-  Card as qt,
+  ErrorHandler as qt,
   CanvasSequence as r,
   useKeydownListener as ra,
   pipe as ri,
-  BackdropTooltip as rn,
+  CardsWrapper as rn,
   assert$1 as ro,
-  Image$1 as rr,
+  useScrollBounding as rr,
   mouse$1 as rs,
-  formatPrintf as rt,
+  defaultAnimationSettings as rt,
   ProgressBar as s,
   useInsideEvent as sa,
   union as si,
-  VehicleInfo as sn,
+  WithDiscount as sn,
   chunks as so,
-  renderString as sr,
+  HorizontalScrollProvider as sr,
   normalizeResource as ss,
-  ProgressBar$2 as st,
+  Size as st,
   TextButton as t,
   useLayoutReady as ta,
   optional as ti,
-  sizes$15 as tn,
+  statusTypes as tn,
   delay as to,
-  Popover as tr,
+  Area$1 as tr,
   graphicsQuality$1 as ts,
-  Rewards$1 as tt,
+  FormatNumber as tt,
   TableProvider as u,
   useUnmount$1 as ua,
   ModelRouterProvider as ui,
-  useSpring as un,
+  discountTypes as un,
   autorun$1 as uo,
-  vehicleState as ur,
+  TruncatedText as ur,
   ONE_HOUR$1 as us,
-  FormattedValue as ut,
+  Reward$1 as ut,
   useMeasure as v,
   usePrevious as va,
   createSimpleGetter as vi,
-  VehicleRole as vn,
+  Tooltip$2 as vn,
   findIndexLast as vo,
-  fromModel$1 as vr,
+  usePopover as vr,
   now$1 as vs,
-  LoadoutItem as vt,
+  FormattedValue as vt,
   sizes$5 as w,
   getDependencyTree as wa,
   SoundsProvider as wi,
-  useInput as wn,
+  Accordion as wn,
   map as wo,
-  types$5 as wr,
+  renderString as wr,
   require_react as ws,
-  Spinner as wt,
+  DragAndDrop as wt,
   injectGFPlugins as x,
   autorun as xa,
   useClickOutside as xi,
-  toggleSizes as xn,
+  animated as xn,
   groupMapBy as xo,
-  isTypeValidValue as xr,
+  observer as xr,
   easings$2 as xs,
-  useDragAndDrop as xt,
+  ExtendedText as xt,
   GradientText as y,
   Reaction as ya,
   useExternalPaddings as yi,
-  VehicleLevel as yn,
+  VehicleInfo as yn,
   forEach as yo,
-  getVehicleImageKey as yr,
+  Image$1 as yr,
   seconds as ys,
-  overlayTypes as yt,
-  Slider as z,
+  formats as yt,
+  BackportTooltip as z,
   breakpointsByType as za,
   useThrottle as zi,
-  Base$32 as zn,
+  Switch$1 as zn,
   DisposeBuilder as zo,
-  HeadlessButton as zr,
-  ErrorHandler as zt,
+  normilizeVehicleType as zr,
+  roles as zt,
 };
