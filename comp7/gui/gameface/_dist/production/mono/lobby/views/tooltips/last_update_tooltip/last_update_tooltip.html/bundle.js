@@ -1,5 +1,5 @@
-import { V as s, j as t, W as e } from "../../../../chunks/vendor.js";
-import { i as o, n as a, F as i, dh as r, di as d, r as c } from "../../../../chunks/lib.js";
+import { V as s, j as t, a3 as e } from "../../../../chunks/vendor.js";
+import { i as o, n as a, cw as i, de as r, df as d, r as c } from "../../../../chunks/lib.js";
 import { T as l } from "../../../../chunks/tooltip_decorator.js";
 import { t as n } from "../../../../chunks/tooltips.module.js";
 /* empty css                        */ const [m, j] = o()(
@@ -7,7 +7,7 @@ import { t as n } from "../../../../chunks/tooltips.module.js";
     a,
   ),
   p = "App_formattedText_5a12c957",
-  h = s(() => {
+  x = s(() => {
     const { model: s } = j(),
       { leaderboardUpdateTimestamp: o, description: a } = s.root.get();
     return t.jsxs("div", {
@@ -28,4 +28,4 @@ import { t as n } from "../../../../chunks/tooltips.module.js";
       ],
     });
   });
-c(t.jsx(m, { children: t.jsx(l, { children: t.jsx(h, {}) }) }));
+c(t.jsx(m, { children: t.jsx(l, { children: t.jsx(x, {}) }) }));

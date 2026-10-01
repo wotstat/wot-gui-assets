@@ -13086,10 +13086,10 @@ const jS = N(function ({ className: e }) {
     const { model: t } = _k();
     return t.isPaused.get() ? null : b.jsx(AI, { id: qI, className: e });
   }),
-  IS = "IntroOverlay_glow_5fc31c94",
+  IS = "IntroOverlay_glow_48b8ad88",
   kS = "IntroOverlay_hoverHelper_9cec2539",
   SS = "IntroOverlay_8d89d328",
-  ES = "IntroOverlay_base__extraChapter_d35cc3d4",
+  ES = "IntroOverlay_base__extraChapter_2f0d6d76",
   PS = "IntroOverlay_base__holiday_2f0d6d76",
   MS = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
   AS = "IntroOverlay_borderNoise_3087bf34",

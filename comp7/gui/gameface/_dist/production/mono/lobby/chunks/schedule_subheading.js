@@ -1,14 +1,14 @@
-import { j as s, W as e, V as a } from "./vendor.js";
+import { j as s, a3 as e, V as a } from "./vendor.js";
 import {
   ei as t,
-  F as o,
+  cw as o,
   ej as n,
   ek as i,
   el as m,
-  di as r,
-  dh as d,
-  dt as c,
-  cF as l,
+  df as r,
+  de as c,
+  dr as d,
+  cz as l,
 } from "./lib.js";
 import { a as x } from "./get_season_name.js";
 import { u as p } from "./use_server_time_polling.js";
@@ -24,22 +24,22 @@ const j = (s) => {
     };
   },
   h = (e, a, t = r.ShortDate) => ({
-    startDate: s.jsx(d, { datetime: e, format: t }),
-    endDate: s.jsx(d, { datetime: a, format: t }),
+    startDate: s.jsx(c, { datetime: e, format: t }),
+    endDate: s.jsx(c, { datetime: a, format: t }),
   }),
   f = (e, a, r) => {
-    const d = a - r,
-      c = ((s, e) => j(s - e))(a, r);
-    return d >= t
+    const c = a - r,
+      d = ((s, e) => j(s - e))(a, r);
+    return c >= t
       ? s.jsx(o, { text: `${R.strings.comp7_ext.season.range()}`, binding: h(e, a) })
-      : d >= n
-        ? s.jsx(o, { text: R.strings.comp7_ext.season.daysLeft(), binding: c })
-        : d >= i
-          ? s.jsx(o, { text: R.strings.comp7_ext.season.hoursLeft(), binding: c })
-          : d >= m
-            ? s.jsx(o, { text: R.strings.comp7_ext.season.minutesLeft(), binding: c })
-            : d >= 1
-              ? s.jsx(o, { text: R.strings.comp7_ext.season.secondsLeft(), binding: c })
+      : c >= n
+        ? s.jsx(o, { text: R.strings.comp7_ext.season.daysLeft(), binding: d })
+        : c >= i
+          ? s.jsx(o, { text: R.strings.comp7_ext.season.hoursLeft(), binding: d })
+          : c >= m
+            ? s.jsx(o, { text: R.strings.comp7_ext.season.minutesLeft(), binding: d })
+            : c >= 1
+              ? s.jsx(o, { text: R.strings.comp7_ext.season.secondsLeft(), binding: d })
               : void 0;
   },
   _ = "ActiveSeasonState_7be3b725",
@@ -54,7 +54,7 @@ const j = (s) => {
     hasSeasonName: m = !0,
     classNames: r,
   }) =>
-    s.jsx(c, {
+    s.jsx(d, {
       args: { tooltipId: i },
       isEnabled: Boolean(i),
       children: s.jsxs("div", {
@@ -71,27 +71,27 @@ const j = (s) => {
     const { model: n, controls: i } = g(),
       m = n.season.startTimestamp.get(),
       r = n.season.endTimestamp.get(),
-      d = n.season.serverTimestamp.get(),
-      c = n.season.name.get();
+      c = n.season.serverTimestamp.get(),
+      d = n.season.name.get();
     return (
-      p(d, r, i.pollServerTime),
+      p(c, r, i.pollServerTime),
       s.jsx("div", {
         className: e(N, a),
         children:
-          d < r
+          c < r
             ? s.jsx("div", {
                 className: t?.activeSeasonState,
                 children: s.jsx(v, {
                   startTimestamp: m,
                   endTimestamp: r,
-                  currentTimestamp: d,
-                  seasonName: c,
+                  currentTimestamp: c,
+                  seasonName: d,
                   tooltipId: n.root.get().tooltipId,
                   hasSeasonName: o,
                   classNames: t?.scheduleClassNames,
                 }),
               })
-            : s.jsx(l, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: x(c) } }),
+            : s.jsx(l, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: x(d) } }),
       })
     );
   });

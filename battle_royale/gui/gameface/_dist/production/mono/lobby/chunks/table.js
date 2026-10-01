@@ -1,5 +1,5 @@
 import { j as e, f as a } from "./vendor.js";
-import { m as s, bL as l, p as t } from "./lib.js";
+import { m as s, bJ as l, p as t } from "./lib.js";
 const n = {
     base: "Column_ff23958e",
     battleType: "Column_battleType_66a6d7ec",

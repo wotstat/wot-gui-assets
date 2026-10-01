@@ -1,11 +1,11 @@
-import { W as e, r as a, j as s, a3 as t } from "../../../../chunks/vendor.js";
+import { W as e, r as a, j as s, a0 as t } from "../../../../chunks/vendor.js";
 import {
   i as o,
   n,
   c6 as r,
   a9 as i,
   dc as l,
-  cR as c,
+  cM as c,
   c0 as d,
   c5 as p,
   dd as m,
@@ -82,7 +82,7 @@ const [j, v] = o()(
       s.jsx("div", { className: g, children: S(e, o, n, i) })
     );
   }),
-  A = {
+  M = {
     [b]: {
       isDisabled: !1,
       shouldShowPoints: !0,
@@ -99,14 +99,14 @@ const [j, v] = o()(
       specificDescriptionKey: "fl_tooltips.bannerTooltip.descriptionEnded",
     },
   },
-  C = "HeaderDecorator_wrapper_47003ef5";
-function F({ children: e, isDisabled: a = !1 }) {
+  A = "HeaderDecorator_wrapper_47003ef5";
+function C({ children: e, isDisabled: a = !1 }) {
   const t = a
     ? R.images.frontline.gui.maps.icons.hangarEventBanners.tooltips.header_disabled()
     : R.images.frontline.gui.maps.icons.hangarEventBanners.tooltips.header_enabled();
-  return s.jsx("div", { className: C, style: { backgroundImage: `url(${t})` }, children: e });
+  return s.jsx("div", { className: A, style: { backgroundImage: `url(${t})` }, children: e });
 }
-const M = "ProgressPoints_a5cbe757",
+const F = "ProgressPoints_a5cbe757",
   H = "ProgressPoints_progressionValuesWrapper_e7ef156c",
   z = "ProgressPoints_currentProgress_25705c74",
   K = "ProgressPoints_progressIcon_9b37bf52",
@@ -118,7 +118,7 @@ const M = "ProgressPoints_a5cbe757",
     return 0 === a && 0 === t
       ? null
       : s.jsxs("div", {
-          className: M,
+          className: F,
           children: [
             s.jsxs("div", {
               className: H,
@@ -159,14 +159,14 @@ const M = "ProgressPoints_a5cbe757",
         shouldShowTierData: p,
         specificDescriptionKey: _,
         dateInfoType: x,
-      } = A[a.get()],
+      } = M[a.get()],
       h = a.get() !== f,
       T = _ || "fl_tooltips.bannerTooltip.description";
     return s.jsx(m, {
       children: s.jsxs("div", {
         className: q,
         children: [
-          s.jsx(F, {
+          s.jsx(C, {
             isDisabled: l,
             children: s.jsx(i, {
               path: "fl_tooltips.bannerTooltip." + (p ? "headerWithTier" : "header"),
