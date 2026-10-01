@@ -1,63 +1,63 @@
 import {
   i as e,
   j as s,
-  W as a,
+  a3 as a,
   V as r,
   u as t,
   r as n,
-  t as c,
+  q as c,
   f as i,
   a6 as o,
 } from "../../../../chunks/vendor.js";
 import {
   i as l,
-  d9 as d,
-  aT as u,
-  dB as m,
-  h as _,
-  cG as h,
-  dz as p,
-  p as x,
-  dC as b,
+  d6 as d,
+  aK as u,
+  dz as m,
+  aR as _,
+  cA as h,
+  dx as p,
+  aw as x,
+  dA as b,
   c as v,
-  H as f,
-  dK as y,
-  e0 as g,
-  bB as C,
+  q as f,
+  dI as y,
+  e2 as g,
+  bu as C,
   em as j,
-  ah as N,
-  aP as P,
-  _ as w,
-  aN as I,
-  aj as A,
-  aO as H,
-  Y as S,
-  b8 as E,
-  F as k,
-  B as V,
-  cF as W,
-  cD as T,
-  ba as M,
-  dN as z,
+  a4 as N,
+  aG as P,
+  G as w,
+  aE as I,
+  a6 as A,
+  aF as S,
+  E,
+  b0 as H,
+  cw as k,
+  af as V,
+  cz as W,
+  cx as T,
+  b3 as M,
+  dL as z,
   n as D,
-  dj as O,
+  dg as O,
   r as B,
-  U,
+  cF as L,
 } from "../../../../chunks/lib.js";
-import { p as L, C as $ } from "../../../../chunks/close_button.js";
-import { a as F, Q as G } from "../../../../chunks/quoted_locale.js";
-import { g as q } from "../../../../chunks/get_comp7_reward.js";
+import { p as U, C as $ } from "../../../../chunks/close_button.js";
+import { a as F, Q as q } from "../../../../chunks/quoted_locale.js";
+import { g as G } from "../../../../chunks/get_comp7_reward.js";
 import { g as K } from "../../../../chunks/get_button_size.js";
 import { V as Q, a as X } from "../../../../chunks/vehicle_name.js";
-/* empty css                        */ var Y = ((e) => (
+/* empty css                        */ var J = ((e) => (
   (e[(e.Confirmation = 0)] = "Confirmation"),
   (e[(e.FlyBy = 1)] = "FlyBy"),
   (e[(e.Congratulation = 2)] = "Congratulation"),
   (e[(e.Error = 3)] = "Error"),
   e
-))(Y || {});
-const J = [F.Vehicle, F.Style3d],
-  Z = [Y.Confirmation, Y.Congratulation],
+))(J || {});
+const Y = [F.Vehicle, F.Style3d],
+  Z = [J.Confirmation, J.Congratulation],
   [ee, se] = l()(
     ({ observableModel: s }) => {
       const a = { root: s.object(), product: s.array("product") },
@@ -70,10 +70,10 @@ const J = [F.Vehicle, F.Style3d],
           { equals: d },
         ),
         t = e(() => r().price.discountValue > 0),
-        n = e(() => J.includes(r().type) && Z.includes(a.root.get().pageState)),
-        c = e(() => r().type === F.Reward && a.root.get().pageState !== Y.Error),
+        n = e(() => Y.includes(r().type) && Z.includes(a.root.get().pageState)),
+        c = e(() => r().type === F.Reward && a.root.get().pageState !== J.Error),
         i = e(() =>
-          r().type === F.Reward && a.root.get().pageState === Y.Congratulation ? 1300 : 300,
+          r().type === F.Reward && a.root.get().pageState === J.Congratulation ? 1300 : 300,
         );
       return {
         ...a,
@@ -129,17 +129,17 @@ const J = [F.Vehicle, F.Style3d],
     const { mediaSize: l } = _(),
       d = l >= h.Medium ? p.S600x450 : p.S400x300,
       u = t(ue),
-      m = i === Y.Congratulation;
+      m = i === J.Congratulation;
     return (
       n.useEffect(() => {
-        i === Y.Congratulation && x.sound(R.sounds.comp_7_shop_purchase_module());
+        i === J.Congratulation && x.sound(R.sounds.comp_7_shop_purchase_module());
       }, [i, o.type]),
       s.jsxs(c.div, {
         style: u,
         className: a(ce, e),
         children: [
           s.jsx(ne, { className: a(ie, m && oe) }),
-          s.jsx(b, { className: a(le, m && de), ...q({ reward: o.reward, size: d }) }),
+          s.jsx(b, { className: a(le, m && de), ...G({ reward: o.reward, size: d }) }),
         ],
       })
     );
@@ -247,7 +247,7 @@ function Ae({ classNames: e, type: a }) {
     ],
   });
 }
-const He = {
+const Se = {
     base: "Currency_92022680",
     hintWrapper: "Currency_hintWrapper_530465b9",
     base__interactive: "Currency_base__interactive_52396ddd",
@@ -265,8 +265,8 @@ const He = {
     onlyHintText: "Currency_onlyHintText_61ecd7b0",
     onlyDiscount: "Currency_onlyDiscount_61ecd7b0",
   },
-  Se = 1e6,
-  Ee = 1e5;
+  Ee = 1e6,
+  He = 1e5;
 function ke({ wgMoneyAvailable: e, value: a, type: r, classNames: t }) {
   const c = n.useRef(null),
     o = f.resolve("intl"),
@@ -274,37 +274,37 @@ function ke({ wgMoneyAvailable: e, value: a, type: r, classNames: t }) {
     d = C(
       {
         displayValue: () =>
-          a >= Se ? { abbreviated: !0, value: j(a, Ee) / Se } : { abbreviated: !1, value: a },
+          a >= Ee ? { abbreviated: !0, value: j(a, He) / Ee } : { abbreviated: !1, value: a },
       },
       {
         medium: {
           displayValue: () =>
-            a >= 1e7 ? { abbreviated: !0, value: j(a, Ee) / Se } : { abbreviated: !1, value: a },
+            a >= 1e7 ? { abbreviated: !0, value: j(a, He) / Ee } : { abbreviated: !1, value: a },
         },
         large: {
           displayValue: () =>
-            a >= 1e8 ? { abbreviated: !0, value: j(a, Ee) / Se } : { value: a, abbreviated: !1 },
+            a >= 1e8 ? { abbreviated: !0, value: j(a, He) / Ee } : { value: a, abbreviated: !1 },
         },
       },
     );
   if (!1 === e)
     return s.jsxs("div", {
-      className: i(He.value, He.value__unavailable, t?.value),
+      className: i(Se.value, Se.value__unavailable, t?.value),
       children: [
-        s.jsx("div", { className: He.dash, children: l.readOrEmpty("common.common.semi_dash") }),
-        s.jsx("div", { className: He.dash, children: l.readOrEmpty("common.common.semi_dash") }),
+        s.jsx("div", { className: Se.dash, children: l.readOrEmpty("common.common.semi_dash") }),
+        s.jsx("div", { className: Se.dash, children: l.readOrEmpty("common.common.semi_dash") }),
       ],
     });
   const u = d.displayValue();
   return s.jsx("div", {
     ref: c,
-    className: i(He.value, t?.base),
+    className: i(Se.value, t?.base),
     children: u.abbreviated
       ? s.jsx(N, {
           path: "menu.hangar_header.million",
           params: { value: u.value },
           brackets: { start: "%(", end: ")s" },
-          className: i(He.formattedValue, t?.formattedValue),
+          className: i(Se.formattedValue, t?.formattedValue),
         })
       : o.formatNumber(r === P.gold ? "gold" : "integral", u.value),
   });
@@ -315,12 +315,12 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
       l = "AVAILABLE" === e.status,
       d = (function (e, s, a, r) {
         const t = f.resolve("strings"),
-          c = S({
+          c = E({
             header: t.readOrEmpty(`tooltips.header.buttons.${e}.header`),
             body: t.readOrEmpty(`tooltips.header.buttons.${e}.body`),
           }),
           i = n.useMemo(() => ({ disabled: "string" != typeof a || "" === a }), [a]),
-          o = E(
+          o = H(
             a,
             n.useMemo(() => [r], [r]),
             i,
@@ -332,9 +332,9 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
     return s.jsxs("div", {
       ...d,
       className: i(
-        He.base,
-        l ? He.base__interactive : He.base__nonInteractive,
-        e.discount > 0 && He.base__discount,
+        Se.base,
+        l ? Se.base__interactive : Se.base__nonInteractive,
+        e.discount > 0 && Se.base__discount,
         r,
       ),
       onMouseEnter: function (e) {
@@ -346,10 +346,10 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
       },
       children: [
         s.jsx("div", {
-          className: i(He.currencyWrapper, t?.currencyWrapper),
-          children: s.jsx(H, {
+          className: i(Se.currencyWrapper, t?.currencyWrapper),
+          children: s.jsx(S, {
             reverse: !0,
-            classNames: { ...t?.currency, icon: i(He.currencyIcon, t?.currency?.icon) },
+            classNames: { ...t?.currency, icon: i(Se.currencyIcon, t?.currency?.icon) },
             type: a,
             size: m,
             "data-test-id": a,
@@ -363,16 +363,16 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
         }),
         l &&
           s.jsx("div", {
-            className: i(He.hintWrapper, t?.hintWrapper),
+            className: i(Se.hintWrapper, t?.hintWrapper),
             children: s.jsx(Ae, {
               type: a,
               classNames: {
                 ...t?.hint,
-                discountWithHintText: i(He.discountWithHintText, t?.hint?.discountWithHintText),
-                onlyDiscount: i(He.onlyDiscount, t?.hint?.onlyDiscount),
-                onlyHintText: i(He.onlyHintText, t?.hint?.onlyHintText),
-                base: i(He.hint, t?.hint?.base),
-                textGradient: { text: He.text, textOverlay: i(He.text, He.text__overlay) },
+                discountWithHintText: i(Se.discountWithHintText, t?.hint?.discountWithHintText),
+                onlyDiscount: i(Se.onlyDiscount, t?.hint?.onlyDiscount),
+                onlyHintText: i(Se.onlyHintText, t?.hint?.onlyHintText),
+                base: i(Se.hint, t?.hint?.base),
+                textGradient: { text: Se.text, textOverlay: i(Se.text, Se.text__overlay) },
               },
             }),
           }),
@@ -401,17 +401,17 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
   ),
   Oe = "CurrentBalance_c7674c4d",
   Be = f.resolve("aliases"),
-  Ue = r(({ className: e }) => {
+  Le = r(({ className: e }) => {
     const r = n.useMemo(
       () => ({ rootId: Be.read((e) => e.lobby_header.default.Wallet("resId")) }),
       [],
     );
     return s.jsx("div", { className: a(Oe, e), children: s.jsx(De, { options: r }) });
   }),
-  Le = "Content_subtitle_6f1a94",
+  Ue = "Content_subtitle_6f1a94",
   $e = "Content_wrapper_a688e273",
   Fe = (e) => (e >= h.Large ? X.x64 : X.x48),
-  Ge = r(() => {
+  qe = r(() => {
     const { model: e } = se(),
       a = e.computes.product(),
       { mediaSize: r } = _();
@@ -426,29 +426,29 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
           role: a.vehicleInfo.roleKey,
           tooltipArgs: { tooltipId: "shopVehicle", vehicleCD: a.vehicleInfo.vehicleCD },
           size: Fe(r),
-          className: Le,
+          className: Ue,
         });
       case F.Style3d:
         return s.jsx(k, {
           text: R.strings.comp7_ext.purchase.success.style3d(),
-          binding: { name: s.jsx(G, { name: a.name }), vehicleName: a.vehicleInfo.name },
-          classMix: Le,
+          binding: { name: s.jsx(q, { name: a.name }), vehicleName: a.vehicleInfo.name },
+          classMix: Ue,
         });
       case F.Reward:
         return s.jsx("div", {
           className: $e,
-          children: s.jsx("div", { className: Le, children: a.reward.label }),
+          children: s.jsx("div", { className: Ue, children: a.reward.label }),
         });
       default:
         return (console.error(`Unreachable product type ${a.type}`), null);
     }
   }),
-  qe = "Congratulation_d16d6f64",
+  Ge = "Congratulation_d16d6f64",
   Ke = "Congratulation_heading_94951bd9",
   Qe = "Congratulation_footer_f519b4d4",
   Xe = "Congratulation_timer_85938cbe",
-  Ye = "Congratulation_description_e5fb3e08",
-  Je = "Congratulation_balance_7e36c12f",
+  Je = "Congratulation_description_e5fb3e08",
+  Ye = "Congratulation_balance_7e36c12f",
   Ze = "Congratulation_separator_8e19ddae",
   es = "Congratulation_buttonWrapper_5adec04e",
   ss = "Congratulation_button_e12951cf",
@@ -456,21 +456,21 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
     const { controls: e } = se(),
       { mediaSize: r } = _();
     return s.jsxs("div", {
-      className: qe,
+      className: Ge,
       children: [
-        s.jsx(Ue, { className: Je }),
+        s.jsx(Le, { className: Ye }),
         s.jsx("div", {
-          className: a(L.heading, Ke),
+          className: a(U.heading, Ke),
           children: R.strings.comp7_ext.purchase.success.heading(),
         }),
-        s.jsx(Ge, {}),
+        s.jsx(qe, {}),
         s.jsxs("div", {
           className: Qe,
           children: [
             s.jsx(k, {
               text: R.strings.comp7_ext.purchase.success.receiving(),
               binding: { icon: s.jsx("div", { className: Xe }) },
-              classMix: Ye,
+              classMix: Je,
             }),
             s.jsx("div", { className: Ze }),
             s.jsx("div", {
@@ -561,7 +561,7 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
           children: [
             s.jsx(k, {
               text: R.strings.comp7_ext.purchase.title.style3d(),
-              binding: { name: s.jsx(G, { name: r.name }) },
+              binding: { name: s.jsx(q, { name: r.name }) },
               classMix: us,
             }),
             s.jsx(k, {
@@ -633,7 +633,7 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
     return s.jsxs("div", {
       className: a(bs.base, c.type === F.Reward && bs.base__reward),
       children: [
-        s.jsx(Ue, { className: bs.balance }),
+        s.jsx(Le, { className: bs.balance }),
         s.jsxs("div", {
           className: bs.content,
           children: [
@@ -661,10 +661,10 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
                       s.jsx("div", { className: bs.discountLine }),
                     ],
                   }),
-                s.jsx(H, {
+                s.jsx(S, {
                   type: c.price.name,
                   enough: c.price.isEnough,
-                  size: H.sizes.small,
+                  size: S.sizes.small,
                   reverse: !0,
                   classNames: { base: bs.currency },
                   children: i ? c.price.discountValue : c.price.value,
@@ -719,10 +719,10 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
   js = "App_close_3178228e",
   Ns = "App_waiting_a67312c1",
   Ps = {
-    [Y.Confirmation]: vs,
-    [Y.FlyBy]: () => s.jsx("div", {}),
-    [Y.Congratulation]: as,
-    [Y.Error]: ds,
+    [J.Confirmation]: vs,
+    [J.FlyBy]: () => s.jsx("div", {}),
+    [J.Congratulation]: as,
+    [J.Error]: ds,
   },
   ws = r(() => {
     const { model: e, controls: a } = se(),
@@ -757,4 +757,4 @@ const Ve = r(function ({ currency: e, type: a, className: r, classNames: t }) {
       ],
     });
   });
-B(s.jsx(U, { children: s.jsx(ee, { children: s.jsx(ws, {}) }) }));
+B(s.jsx(L, { children: s.jsx(ee, { children: s.jsx(ws, {}) }) }));

@@ -1,5 +1,5 @@
 import { s as e, j as s } from "../../../../chunks/vendor.js";
-import { a as o, av as l, Y as i, E as t } from "../../../../chunks/lib.js";
+import { a as o, as as l, Y as i, E as t } from "../../../../chunks/lib.js";
 import { d as c } from "../../../../chunks/TooltipDecorator2.js";
 /* empty css                                 */ const [a, r] = o()(
     ({ observableModel: e }) => ({ root: e.object() }),

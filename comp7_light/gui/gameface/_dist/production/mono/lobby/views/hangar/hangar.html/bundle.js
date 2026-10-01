@@ -14418,10 +14418,10 @@ const OM = y(function ({ className: e }) {
     const { model: t } = kP();
     return t.isPaused.get() ? null : _.jsx(WE, { id: aP, className: e });
   }),
-  VM = "IntroOverlay_glow_5fc31c94",
+  VM = "IntroOverlay_glow_48b8ad88",
   RM = "IntroOverlay_hoverHelper_9cec2539",
   zM = "IntroOverlay_8d89d328",
-  HM = "IntroOverlay_base__extraChapter_d35cc3d4",
+  HM = "IntroOverlay_base__extraChapter_2f0d6d76",
   UM = "IntroOverlay_base__holiday_2f0d6d76",
   qM = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
   WM = "IntroOverlay_borderNoise_3087bf34",

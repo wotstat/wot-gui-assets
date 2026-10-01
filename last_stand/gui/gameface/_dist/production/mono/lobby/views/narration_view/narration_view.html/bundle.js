@@ -2,12 +2,12 @@ import { D as e, j as a, f as r, r as s } from "../../../chunks/vendor.js";
 import {
   i as t,
   d as n,
-  as as i,
+  at as i,
   e as o,
   d6 as l,
-  aM as d,
-  aJ as c,
-  aN as _,
+  aN as d,
+  aK as c,
+  aO as _,
   d7 as u,
   d8 as x,
   ba as m,
@@ -36,16 +36,16 @@ const [y, C] = t()(
   P = "NarrationText_voicerToggle_7996a30f",
   W = "NarrationText_voicerImage_ddd59b26",
   w = "NarrationText_textWrapper_7851e39a",
-  $ = "NarrationText_title_c6323ea8",
-  z = "NarrationText_shadow_c558de93",
-  B = "NarrationText_scrollTextWrapper_2966ec7f",
-  O = "NarrationText_scrollContentWrapper_5d272dcd",
+  O = "NarrationText_title_c6323ea8",
+  $ = "NarrationText_shadow_c558de93",
+  z = "NarrationText_scrollTextWrapper_2966ec7f",
+  B = "NarrationText_scrollContentWrapper_5d272dcd",
   I = "NarrationText_text_7fbf87ef",
   V = "NarrationText_highlightText_c7174a16",
   L = "NarrationText_highlightText__secondary_e31000ce",
-  M = "NarrationText_titleParagraph_117b3e67",
-  D = "NarrationText_paragraph_a1fd10d6",
-  J = "NarrationText_nowrap_e19b022d",
+  D = "NarrationText_titleParagraph_117b3e67",
+  M = "NarrationText_paragraph_a1fd10d6",
+  K = "NarrationText_nowrap_e19b022d",
   U =
     /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u3000-\u303F\uFF00-\uFFEF\]]/u,
   X = { split: H };
@@ -64,11 +64,11 @@ function H(e) {
             r.push(H(n));
             continue;
           }
-          const o = K(i.slice(1));
+          const o = J(i.slice(1));
           (r.push(
             a.jsxs(
               s.Fragment,
-              { children: [a.jsxs("span", { className: J, children: [H(n), i[0]] }), o] },
+              { children: [a.jsxs("span", { className: K, children: [H(n), i[0]] }), o] },
               G(),
             ),
           ),
@@ -77,10 +77,10 @@ function H(e) {
         return r;
       })(e)
     : "string" == typeof e
-      ? a.jsx(s.Fragment, { children: K(e) }, G())
+      ? a.jsx(s.Fragment, { children: J(e) }, G())
       : e;
 }
-function K(e) {
+function J(e) {
   const r = n.resolve("langCode");
   return u(x(e, r), r, (e, r) => e && a.jsx("span", { children: e }, `${e}${r}`));
 }
@@ -108,25 +108,25 @@ const Q = e(function ({ index: e, isFirst: s, isAnimationPlaying: t }) {
               text: u.readOrEmpty(
                 `R.strings.last_stand_lobby.narration.narrationTitle.ls_artefact_${e}`,
               ),
-              className: $,
+              className: O,
             }),
             a.jsxs("div", {
-              className: B,
+              className: z,
               children: [
-                a.jsx("div", { className: z }),
+                a.jsx("div", { className: $ }),
                 a.jsxs(
                   d,
                   {
                     children: [
                       a.jsx(c, {
-                        className: O,
+                        className: B,
                         children: a.jsx("div", {
                           className: I,
                           children: a.jsx(o, {
                             split: !0,
                             params: {
-                              pargraphStart: a.jsx("div", { className: D }),
-                              titleParagraph: a.jsx("div", { className: M }),
+                              pargraphStart: a.jsx("div", { className: M }),
+                              titleParagraph: a.jsx("div", { className: D }),
                               highlightText: V,
                               highlightSecondaryText: r(V, L),
                             },
