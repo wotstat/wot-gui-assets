@@ -1,5 +1,5 @@
-import { j as e, W as s, V as l } from "../../../chunks/vendor.js";
-import { i as c, cK as o, j as i, F as t, r as a } from "../../../chunks/lib.js";
+import { j as e, a3 as s, V as l } from "../../../chunks/vendor.js";
+import { i as c, cE as o, dP as i, cw as t, r as a } from "../../../chunks/lib.js";
 import { S as n } from "../../../chunks/schedule_model.js";
 import { S as r } from "../../../chunks/schedule_subheading.js";
 import { g as d } from "../../../chunks/get_roman_levels.js";
@@ -54,8 +54,8 @@ const [m, h] = c()(
   N = "App_header_9ff1dc47",
   k = "App_content_8553dcb6",
   V = "App_iconContainer_27ee149e",
-  A = "App_icon_2fe1e624",
-  w = "App_title_3d1094ed",
+  w = "App_icon_2fe1e624",
+  A = "App_title_3d1094ed",
   T = "App_divider_9e3d1876",
   $ = "App_text_51f38cc1",
   G = { context: "model.scheduleInfo" },
@@ -71,8 +71,8 @@ const [m, h] = c()(
         e.jsxs("div", {
           className: k,
           children: [
-            e.jsx("div", { className: V, children: e.jsx("div", { className: A }) }),
-            e.jsx(t, { text: `${R.strings.comp7_ext.noVehicles.title()}`, classMix: w }),
+            e.jsx("div", { className: V, children: e.jsx("div", { className: w }) }),
+            e.jsx(t, { text: `${R.strings.comp7_ext.noVehicles.title()}`, classMix: A }),
             e.jsx(t, {
               text: `${R.strings.comp7_ext.noVehicles.text.$dyn(c)}`,
               binding: { levels: o },

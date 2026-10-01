@@ -65,17 +65,17 @@ import {
   l as ReactDOM,
   m as cva,
   p as parse$1,
-  n as loadDefaultJapaneseParser,
-  q as cx,
-  s as ReactDOM$1,
-  t as animated,
-  v as runInAction,
-  w as autorun,
-  x as object,
-  y as union,
-  z as literal,
-  A as string,
-  B as reactDomExports,
+  n as ReactDOM$1,
+  q as animated,
+  s as runInAction,
+  t as autorun,
+  v as object,
+  w as union,
+  x as literal,
+  y as string,
+  z as cx,
+  A as reactDomExports,
+  B as loadDefaultJapaneseParser,
   C as useSpring$1,
   D as awilix,
   E as mobxReactLite,
@@ -1151,7 +1151,7 @@ function defer(e) {
                     var a = {
                         status: e,
                         statusText: n.statusText,
-                        headers: p(n),
+                        headers: _(n),
                         url:
                           "responseURL" in n
                             ? n.responseURL
@@ -1264,7 +1264,7 @@ function defer(e) {
             }),
         t &&
           (this.formData = function () {
-            return this.text().then(_);
+            return this.text().then(p);
           }),
         (this.json = function () {
           return this.text().then(function (e) {
@@ -1289,7 +1289,7 @@ function defer(e) {
         throw new TypeError("Body not allowed for GET or HEAD requests");
       this._initBody(t.body);
     }
-    function _(e) {
+    function p(e) {
       var t = new FormData();
       return (
         e
@@ -1306,7 +1306,7 @@ function defer(e) {
         t
       );
     }
-    function p(e) {
+    function _(e) {
       var t = new o();
       return (
         e
@@ -2206,17 +2206,17 @@ function calculateMedia(e, t, s) {
     l = a.height.names,
     c = u[u.length - 1] ?? breakpoints.extraSmall,
     d = l[l.length - 1] ?? breakpoints.extraSmall,
-    _ = { width: breakpointsByType[c].width, height: breakpointsByType[d].height };
+    p = { width: breakpointsByType[c].width, height: breakpointsByType[d].height };
   return {
     mediaClass: generateMediaClasses(r, a),
     breakpoint: i,
     screenWidthRem: e,
     screenHeightRem: t,
     breaks: n.names,
-    sides: _,
+    sides: p,
     mediaSize: i.width,
-    mediaWidth: _.width,
-    mediaHeight: _.height,
+    mediaWidth: p.width,
+    mediaHeight: p.height,
     upscale: s > 1,
   };
 }
@@ -3423,15 +3423,15 @@ const initializeModelWithContext =
         const { mode: o, options: i, children: u, mocks: l } = n,
           c = useMockContext(),
           d = o ?? c.mode,
-          _ = l ?? c.mocks,
-          p = reactExports.useRef([]),
+          p = l ?? c.mocks,
+          _ = reactExports.useRef([]),
           m = a?.useRequires?.(),
           f = useEvent((r, o, i) => {
             const u = "real" !== r && i ? createMockInstance(i.getter, o) : create(o, { name: e }),
               l = (e) => ("mocks" === r ? i?.getter(e, o) : u.readByPath(e)),
-              c = (e) => p.current.push(e),
+              c = (e) => _.current.push(e),
               d = "initial" in n && { initial: a?.initial?.(n.initial) },
-              _ = t({
+              p = t({
                 ...d,
                 mode: r,
                 readByPath: l,
@@ -3440,10 +3440,10 @@ const initializeModelWithContext =
                 observableModel: createObservableModel(u, r, l),
                 cleanup: c,
               }),
-              f = { ...d, mode: r, model: _, externalModel: u, cleanup: c, requires: m },
+              f = { ...d, mode: r, model: p, externalModel: u, cleanup: c, requires: m },
               g = "mocks" === r && i?.controls ? i.controls(f) : {};
             return {
-              model: _,
+              model: p,
               controls: { ...s?.(f), ...g },
               externalModel: u,
               mode: r,
@@ -3455,14 +3455,14 @@ const initializeModelWithContext =
         reactExports.useEffect(() => {
           h(d);
         }, [d]);
-        const [E, x] = reactExports.useState(() => f(b, i, _));
+        const [E, x] = reactExports.useState(() => f(b, i, p));
         return (
           reactExports.useEffect(() => {
-            g.current ? x(f(b, i, _)) : (g.current = !0);
-          }, [f, _, b, i?.context, i?.initializer, i?.getRoot, i?.rootId]),
+            g.current ? x(f(b, i, p)) : (g.current = !0);
+          }, [f, p, b, i?.context, i?.initializer, i?.getRoot, i?.rootId]),
           reactExports.useEffect(
             () => () => {
-              (E.externalModel.dispose(), p.current.forEach((e) => e()));
+              (E.externalModel.dispose(), _.current.forEach((e) => e()));
             },
             [E],
           ),
@@ -3655,12 +3655,12 @@ function ModelRouterProvider({
     }, [u, t]),
     d = reactExports.useSyncExternalStore(l, c);
   reactExports.useEffect(() => u.dispose, [u]);
-  const _ = reactExports.useMemo(() => {
+  const p = reactExports.useMemo(() => {
     const e = [...o.current, d];
     return ((o.current = e), { ...d, history: e, paramsStruct: safeJsonParse(d.params) });
   }, [d]);
-  define_process_env_default.PUBLIC_ROUTER_DEBUG && console.log("🗺️ Route updated:", _);
-  const p = reactExports.useMemo(() => {
+  define_process_env_default.PUBLIC_ROUTER_DEBUG && console.log("🗺️ Route updated:", p);
+  const _ = reactExports.useMemo(() => {
       const e = u.createCallback(
           (e, t) => (
             define_process_env_default.PUBLIC_ROUTER_DEBUG && console.log("➡️ Going to", e, t),
@@ -3679,7 +3679,7 @@ function ModelRouterProvider({
           : t,
       };
     }, [u]),
-    m = reactExports.useMemo(() => ({ ..._, ...p }), [p, _]);
+    m = reactExports.useMemo(() => ({ ...p, ..._ }), [_, p]);
   return jsxRuntimeExports.jsx(RouterContext.Provider, { value: m, children: e });
 }
 const DEFAULT_NAME_KEYFRAME$1 = "Point",
@@ -3806,9 +3806,9 @@ const VideoForwarded$1 = reactExports.forwardRef(function (
               d.current && (d.current.currentTime = clamp$1(0, d.current.duration, e));
             },
             l = () => d.current?.play(),
-            _ = () => d.current?.pause(),
-            p = () => {
-              (_(), u(0));
+            p = () => d.current?.pause(),
+            _ = () => {
+              (p(), u(0));
             },
             m = () =>
               d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : [],
@@ -3816,7 +3816,7 @@ const VideoForwarded$1 = reactExports.forwardRef(function (
               (u(e), l());
             },
             g = (e) => {
-              (u(e), _());
+              (u(e), p());
             },
             b = () => {
               ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
@@ -3834,8 +3834,8 @@ const VideoForwarded$1 = reactExports.forwardRef(function (
               on: h,
               off: E,
               play: l,
-              pause: _,
-              stop: p,
+              pause: p,
+              stop: _,
               cleanup: b,
               getCurrentTime: r,
               getDuration: i,
@@ -3907,6 +3907,425 @@ function cleanProps(e, t) {
 function createParser(e) {
   return (t) => parse$1(e, JSON.parse(t));
 }
+const UNKNOWN_NATION = "none",
+  list = [
+    "ussr",
+    "germany",
+    "usa",
+    "china",
+    "france",
+    "uk",
+    "japan",
+    "czech",
+    "sweden",
+    "poland",
+    "italy",
+  ],
+  nationById = (e) => list[e] ?? UNKNOWN_NATION,
+  LIGHT_TANK = "lightTank",
+  MEDIUM_TANK = "mediumTank",
+  HEAVY_TANK = "heavyTank",
+  SPG = "SPG",
+  AT_SPG = "AT-SPG",
+  types$4 = {
+    lightTank: LIGHT_TANK,
+    mediumTank: MEDIUM_TANK,
+    heavyTank: HEAVY_TANK,
+    SPG: SPG,
+    "AT-SPG": AT_SPG,
+  },
+  MIN_TIER = 1,
+  MAX_TIER = 11,
+  typeValues = Object.values(types$4),
+  normilizeVehicleType = (e) => e.replace("-", "_"),
+  isTypeValidValue = (e) => typeValues.includes(e),
+  isTierValid = (e) => e >= MIN_TIER && e <= MAX_TIER;
+function getVehicleImageKey(e) {
+  const t = e.indexOf(":");
+  return normalizeResource(t < 0 ? e.toLowerCase() : e.substring(t + 1).toLowerCase());
+}
+function fromModel$1(e) {
+  const t = e.tier;
+  assert(isTierValid(t), `Such tier ${t} is not supported`);
+  const s = e.type;
+  return (
+    assert(isTypeValidValue(s), `Such vehicle type ${s} is not supported`),
+    {
+      tier: t,
+      type: s,
+      normilizedType: normalizeResource(e.type),
+      name: e.name,
+      techName: e.techName,
+      premium: e.isPremium,
+      vehicleCD: e.vehicleCD,
+      nation: e.nation,
+    }
+  );
+}
+function isRentVehicle(e) {
+  return e.rent.isRented;
+}
+const RUDY_PL = 51345,
+  RUDY_USSR = 59393,
+  RUDIES = [RUDY_USSR, RUDY_PL],
+  sameTanksRemap = { [RUDY_PL]: RUDIES, [RUDY_USSR]: RUDIES },
+  WITHOUT_ROLE = "without_role",
+  roles$1 = {
+    assault: "assault",
+    sniper: "sniper",
+    support: "support",
+    universal: "universal",
+    break: "break",
+    scout: "scout",
+    spg: "spg",
+  },
+  mapRoleByKey = [
+    WITHOUT_ROLE,
+    roles$1.spg,
+    roles$1.assault,
+    roles$1.break,
+    roles$1.universal,
+    roles$1.support,
+    roles$1.assault,
+    roles$1.support,
+    roles$1.universal,
+    roles$1.sniper,
+    roles$1.assault,
+    roles$1.universal,
+    roles$1.sniper,
+    roles$1.support,
+    roles$1.universal,
+    WITHOUT_ROLE,
+    roles$1.scout,
+    roles$1.support,
+  ],
+  getRoleByKey = (e) => mapRoleByKey[e] ?? WITHOUT_ROLE,
+  atSpgRoles = [roles$1.assault, roles$1.universal, roles$1.sniper, roles$1.support],
+  heavyTankRoles = [roles$1.assault, roles$1.break, roles$1.universal, roles$1.support],
+  mediumTankRoles = [roles$1.assault, roles$1.support, roles$1.universal, roles$1.sniper],
+  lightTankRoles = [roles$1.universal, roles$1.scout, roles$1.support],
+  vehicleState = { UNSUITABLE_TO_QUEUE: "unsuitableToQueue" },
+  NodeTypes = { Text: 1, Tag: 2, Var: 3 };
+function parseArguments(e) {
+  const t = [];
+  let s = "",
+    a = !1,
+    r = !1,
+    n = "";
+  for (let o = 0; o < e.length; o++) {
+    const i = e[o];
+    ("'" !== i && '"' !== i) || r || a
+      ? i === n && r
+        ? ((r = !1), (s += i))
+        : "(" !== i || r
+          ? ")" === i && a && !r
+            ? ((a = !1), (s += i))
+            : " " !== i || a || r
+              ? (s += i)
+              : s && (t.push(s), (s = ""))
+          : ((a = !0), (s += i))
+      : ((r = !0), (n = i), (s += i));
+  }
+  return (s && t.push(s), t);
+}
+function parse(e, t) {
+  const s = [],
+    a = [];
+  let r = "",
+    n = !1,
+    o = "",
+    i = 0;
+  for (let u = 0; u < e.length; u++) {
+    const l = e[u];
+    if (l === t.start[0] && e.slice(u, u + t.start.length) === t.start) {
+      if (r) {
+        if (a.length > 0) {
+          a[a.length - 1].node.children.push({ type: NodeTypes.Text, value: r });
+        } else s.push({ type: NodeTypes.Text, value: r });
+        r = "";
+      }
+      ((n = !0), (u += t.start.length - 1));
+    } else if (l === t.end[0] && e.slice(u, u + t.end.length) === t.end) {
+      ((n = !1), (u += t.end.length - 1));
+      const e = o.trim();
+      if (e.startsWith("@")) {
+        const t = e.slice(1).trim(),
+          r = { type: NodeTypes.Tag, attrs: t.split("|"), instanceId: ++i, children: [] };
+        if (a.length > 0) {
+          a[a.length - 1].node.children.push(r);
+        } else s.push(r);
+        a.push({ node: r, startIndex: s.length });
+      } else if ("/" === e) a.length > 0 && a.pop();
+      else {
+        const t = { type: NodeTypes.Var, instanceId: ++i, name: e };
+        if (a.length > 0) {
+          a[a.length - 1].node.children.push(t);
+        } else s.push(t);
+      }
+      o = "";
+    } else n ? (o += l) : (r += l);
+  }
+  if (r)
+    if (a.length) {
+      a[a.length - 1].node.children.push({ type: NodeTypes.Text, value: r });
+    } else s.push({ type: NodeTypes.Text, value: r });
+  return s;
+}
+const COLORS =
+    "blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom",
+  base$1e = "FormatText_db904f12",
+  base__fullSize = "FormatText_base__fullSize_a514958e",
+  nowrap = "FormatText_nowrap_ff69eca3",
+  styles$1q = { COLORS: COLORS, base: base$1e, base__fullSize: base__fullSize, nowrap: nowrap },
+  legacyColors = new Set(styles$1q.COLORS?.split(", ") ?? []);
+let keyId = 0;
+function takeKey() {
+  return ++keyId;
+}
+const startsWithPunctuationRe =
+  /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u0E00-\u0E7F\u3000-\u303F\uFF00-\uFFEF\]]/u;
+function splitString(e) {
+  const t = resources.resolve("langCode");
+  return addSpaceAndMap(
+    splitLocale(e, t),
+    t,
+    (e, t) => e && jsxRuntimeExports.jsx("span", { children: e }, `${e}${t}`),
+  );
+}
+function splitArray(e) {
+  const t = [];
+  for (let s = 0; s < e.length; s++) {
+    const a = e[s],
+      r = e[s + 1];
+    if ("string" != typeof r || !startsWithPunctuationRe.test(r)) {
+      t.push(split(a));
+      continue;
+    }
+    const n = splitString(r.slice(1));
+    (t.push(
+      jsxRuntimeExports.jsxs(
+        reactExports.Fragment,
+        {
+          children: [
+            jsxRuntimeExports.jsxs("span", {
+              className: styles$1q.nowrap,
+              children: [split(a), r[0]],
+            }),
+            n,
+          ],
+        },
+        takeKey(),
+      ),
+    ),
+      (s += 1));
+  }
+  return t;
+}
+function split(e) {
+  return Array.isArray(e)
+    ? splitArray(e)
+    : "string" == typeof e
+      ? jsxRuntimeExports.jsx(reactExports.Fragment, { children: splitString(e) }, takeKey())
+      : e;
+}
+function style(e, ...t) {
+  return jsxRuntimeExports.jsx(
+    "span",
+    {
+      style: t.reduce((s, a) => {
+        if (Array.isArray(a)) {
+          const [e, t] = a;
+          return ((s[e] = t), s);
+        }
+        return (console.warn(`Invalid argument ${a} in ${e}: ${t}`), s);
+      }, {}),
+      children: e,
+    },
+    takeKey(),
+  );
+}
+function className(e, ...t) {
+  return jsxRuntimeExports.jsx(
+    "span",
+    { className: t.filter((e) => "string" == typeof e && e.length > 0).join(" "), children: e },
+    takeKey(),
+  );
+}
+const color = (e, t) => ["color", t],
+  fontSize = (e, t) => ["fontSize", t],
+  fontWeight = (e, t) => ["fontWeight", t],
+  textDecoration = (e, t) => ["textDecoration", t],
+  bold = (e) => ["fontWeight", "bold"];
+function colorLegacy(e, t) {
+  const s = takeKey();
+  return legacyColors.has(String(t))
+    ? jsxRuntimeExports.jsx("span", { className: `FormatText_colorLegacy__${t}`, children: e }, s)
+    : jsxRuntimeExports.jsx("span", { style: { color: `#${t}` }, children: e }, s);
+}
+const defaultFormatters = {
+  class: className,
+  colorLegacy: colorLegacy,
+  bold: bold,
+  split: split,
+  style: style,
+  color: color,
+  fontSize: fontSize,
+  fontWeight: fontWeight,
+  textDecoration: textDecoration,
+};
+function applyFunction(e, t, s, a) {
+  const r = s.map((t) => {
+      if ("string" != typeof t) return t;
+      const s = t.trim();
+      if (s.startsWith("(") && s.endsWith(")")) {
+        const [t, ...r] = s.slice(1, -1).split(" ");
+        return t ? applyFunction(e, t, r, a) : e;
+      }
+      return s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
+    }),
+    n = a[t];
+  return n ? n(e, ...r) : (console.error(`Function ${t} is not registered`), e);
+}
+function applyFunctions(e, t, s) {
+  return e.reduce((e, t) => {
+    const [a, ...r] = parseArguments(t.trim());
+    return a ? applyFunction(e, a, r, s) : e;
+  }, t);
+}
+function isEnd(e) {
+  return !((e >= "a" && e <= "z") || (e >= "A" && e <= "Z") || (e >= "0" && e <= "9") || "_" === e);
+}
+function resolveAttrParams(e, t) {
+  for (let s = 0; s < e.length; s++) {
+    if ("$" === e[s]) {
+      let a = s + 1;
+      for (; a < e.length && !isEnd(e[a]);) a++;
+      const r = e.slice(s + 1, a),
+        n = t[r];
+      if (n) return resolveAttrParams(e.replace(`$${r}`, String(n)), t);
+    }
+  }
+  return e;
+}
+function resolveAttrsParams(e, t) {
+  const s = [];
+  for (let a = 0; a < e.length; a++) s[a] = resolveAttrParams(e[a], t);
+  return s;
+}
+const primitives = ["number", "string", "undefined"];
+function render(e, t, s = {}, a = !0) {
+  a && (keyId = 0);
+  const r = [];
+  function n(e) {
+    if (primitives.includes(typeof e)) {
+      const t = r.at(-1);
+      if ("string" == typeof t) return void (r[r.length - 1] = t + e);
+    }
+    r.push(e);
+  }
+  for (const o of e)
+    if (o.type === NodeTypes.Text) n(o.value);
+    else if (o.type === NodeTypes.Var)
+      null === s[o.name] || primitives.includes(typeof s[o.name])
+        ? n(s[o.name] ?? `{{${o.name}}}`)
+        : r.push(
+            jsxRuntimeExports.jsx(
+              reactExports.Fragment,
+              { children: s[o.name] },
+              `var-${o.name}-${o.instanceId}`,
+            ),
+          );
+    else if (o.type === NodeTypes.Tag) {
+      const e = render(o.children, t, s, !1),
+        a = applyFunctions(resolveAttrsParams(o.attrs, s), e, t);
+      r.push(a);
+    }
+  return r;
+}
+function upgradeColorTag(e) {
+  return e
+    .replace(
+      /%\(([a-zA-Z0-9]+)_(Open|Start)\)s(.+?)%\(\1_(Close|End)\)s/,
+      "{{@ colorLegacy '$1'}}$3{{/}}",
+    )
+    .replace(
+      /\{([a-zA-Z0-9]+)_(Open|Start)\}(.+?)\{\1_(Close|End)\}/gi,
+      "{{@ colorLegacy '$1'}}$3{{/}}",
+    );
+}
+function upgradeVariables(e) {
+  return e
+    .replace(/%\((\w+|\d)\)(?:s|d)?/gi, "{{$1}}")
+    .replace(new RegExp("(?<!\\{)\\{(\\w+|\\d)\\}", "g"), "{{$1}}");
+}
+function upgradeSymbols(e) {
+  return e.replaceAll("&nbsp;", " ").replaceAll("&zwnbsp;", "\ufeff");
+}
+function upgradeLegacy(e) {
+  return pipe(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
+}
+const defaultBrackets = { start: "{{", end: "}}" },
+  FormatText$1 = reactExports.memo(function (e) {
+    const {
+        brackets: t = defaultBrackets,
+        text: s,
+        params: a,
+        upgradeLegacy: r,
+        fullSize: n,
+        inline: o,
+        formatters: i,
+        split: u,
+        ...l
+      } = e,
+      c = reactExports.useMemo(
+        () => (e.upgradeLegacy ? upgradeLegacy(e.text) : e.text),
+        [e.text, e.upgradeLegacy],
+      ),
+      d = reactExports.useMemo(
+        () => (e.formatters ? { ...defaultFormatters, ...e.formatters } : defaultFormatters),
+        [e.formatters],
+      ),
+      p = reactExports.useMemo(() => parse(u ? `{{@ split}}${c}{{/}}` : c, t), [t, c, u]),
+      _ = reactExports.useMemo(() => render(p, d, e.params), [p, d, e.params]),
+      m = clsx(styles$1q.base, n && styles$1q.base__fullSize, l.className);
+    return e.inline
+      ? (console.warn(
+          "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
+          "Use 'split' prop instead.",
+        ),
+        jsxRuntimeExports.jsx("p", {
+          ...l,
+          className: m,
+          ref: (e) => {
+            e?.setAttribute("cohinline", "true");
+          },
+          children: _,
+        }))
+      : jsxRuntimeExports.jsx("span", { ...l, className: m, children: _ });
+  });
+function FormatString({ path: e, ...t }) {
+  return jsxRuntimeExports.jsx(FormatText$1, {
+    text: resources.resolve("strings").readOrEmpty(e),
+    ...t,
+  });
+}
+function FormatPluralString({ path: e, count: t, ...s }) {
+  return jsxRuntimeExports.jsx(FormatText$1, {
+    text: resources.resolve("strings").pluralOrEmpty(e, t),
+    ...s,
+  });
+}
+const formatters = Object.fromEntries(
+  Object.entries(defaultFormatters).map(([e]) => [e, (e) => e]),
+);
+function renderString(e, t = {}) {
+  const s = parse(e, defaultBrackets);
+  return String(render(s, formatters, t));
+}
+function renderResolvedString(e, t = {}) {
+  const s = resources.resolve("strings").readOrEmpty(e);
+  return 0 === s.length ? s : renderString(s, t);
+}
 function ColorsProvider(e) {
   return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e.children });
 }
@@ -3920,13 +4339,551 @@ function UIProvider(e) {
     }),
   });
 }
+const undef = () => {};
+function withResolvePath(e) {
+  const t = e;
+  return reactExports.forwardRef(function (e, s) {
+    const a = useAdaptive(e, e.adaptive),
+      { path: r, ...n } = a,
+      o = a.images ?? resources.resolve("images"),
+      i = { ...n, ref: s };
+    {
+      const e = r ? o.readOr(r, undef, "warn") : void 0;
+      return e
+        ? jsxRuntimeExports.jsx(t, { ...i, src: e })
+        : jsxRuntimeExports.jsx(t, { ...i, unknown: !0 });
+    }
+  });
+}
+const defaultUnknownStyle = {
+  background:
+    "linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)",
+  backgroundSize: "20rem 20rem",
+  backgroundPosition: "0 0, 0 10rem, 10rem -10rem, -10rem 0rem",
+  backgroundColor: "#000",
+};
+reactExports.forwardRef(function (e, t) {
+  if (!e.src) {
+    const {
+      repeat: s,
+      fit: a,
+      position: r,
+      width: n,
+      src: o,
+      height: i,
+      unselectable: u,
+      unknownStyle: l = defaultUnknownStyle,
+      ...c
+    } = e;
+    return jsxRuntimeExports.jsx("div", {
+      ...c,
+      ref: t,
+      style: { width: e.width, height: e.height, ...l, ...e.style },
+    });
+  }
+  const {
+    repeat: s,
+    fit: a,
+    position: r,
+    width: n,
+    height: o,
+    unknownStyle: i,
+    unselectable: u,
+    ...l
+  } = e;
+  return jsxRuntimeExports.jsx("div", {
+    ...l,
+    ref: t,
+    style: {
+      backgroundImage: `url(${e.src})`,
+      backgroundRepeat: s ?? "no-repeat",
+      backgroundSize: a ?? "contain",
+      backgroundPosition: r ?? "center center",
+      width: "number" == typeof n ? `${n}rem` : n,
+      height: "number" == typeof o ? `${o}rem` : o,
+      ...l.style,
+    },
+  });
+});
+const Image$1 = withResolvePath(
+    reactExports.forwardRef(function (e, t) {
+      if (e.unknown) {
+        const {
+          repeat: s,
+          fit: a,
+          position: r,
+          width: n,
+          src: o,
+          height: i,
+          unselectable: u,
+          unknown: l,
+          unknownStyle: c = defaultUnknownStyle,
+          ...d
+        } = e;
+        return jsxRuntimeExports.jsx("div", {
+          ...d,
+          ref: t,
+          style: { width: e.width, height: e.height, ...c, ...e.style },
+        });
+      }
+      const {
+        repeat: s,
+        fit: a,
+        position: r,
+        width: n,
+        height: o,
+        unknownStyle: i,
+        unknown: u,
+        unselectable: l,
+        ...c
+      } = e;
+      return jsxRuntimeExports.jsx("div", {
+        ...c,
+        ref: t,
+        style: {
+          backgroundImage: `url(${e.src})`,
+          backgroundRepeat: s ?? "no-repeat",
+          backgroundSize: a ?? "contain",
+          backgroundPosition: r ?? "center center",
+          width: "number" == typeof n ? `${n}rem` : n,
+          height: "number" == typeof o ? `${o}rem` : o,
+          ...c.style,
+        },
+      });
+    }),
+  ),
+  Img = withResolvePath(
+    reactExports.forwardRef(function (e, t) {
+      const {
+        width: s,
+        height: a,
+        src: r,
+        unselectable: n,
+        unknown: o,
+        unknownStyle: i = defaultUnknownStyle,
+        ...u
+      } = e;
+      return e.unknown
+        ? jsxRuntimeExports.jsx("div", { ...u, style: { width: e.width, height: e.height, ...i } })
+        : jsxRuntimeExports.jsx("img", { ...u, ref: t, src: r, width: s, height: a });
+    }),
+  ),
+  contextInstance$1 = reactExports.createContext(null),
+  positions$1 = { left: "left", right: "right", top: "top", bottom: "bottom" };
+Object.values(positions$1);
+const verticalPositions = ["top", "bottom"],
+  oppositePositions = { top: "bottom", bottom: "top", left: "right", right: "left" };
+function isVerticalPosition(e) {
+  return verticalPositions.includes(e);
+}
+function usePopoverOptional() {
+  return reactExports.useContext(contextInstance$1);
+}
+function usePopover() {
+  const e = reactExports.useContext(contextInstance$1);
+  if (!e) throw new Error("usePopover must be used within a Popover");
+  return e;
+}
+const initialState$1 = { opened: !1 };
+function usePopoverInstance(e) {
+  const [t, s] = reactExports.useState(initialState$1),
+    a = reactExports.useMemo(() => {
+      const t = observable.box(),
+        a = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
+        r = { bounding: observable.box(), position: observable.box() };
+      function n(e) {
+        s((t) => {
+          const s = e(t);
+          return (
+            t.opened === s.opened ||
+              (s.opened ? a.onBeforeOpen.forEach((e) => e()) : a.onBeforeClose.forEach((e) => e())),
+            s
+          );
+        });
+      }
+      return {
+        id: e,
+        open: () => n((e) => ({ ...e, opened: !0 })),
+        close: () => n((e) => ({ ...e, opened: !1 })),
+        toggle: () => n((e) => ({ ...e, opened: !e.opened })),
+        subscribe: {
+          onBeforeOpen: (e) => (a.onBeforeOpen.add(e), () => a.onBeforeOpen.delete(e)),
+          onBeforeClose: (e) => (a.onBeforeClose.add(e), () => a.onBeforeClose.delete(e)),
+        },
+        portal: {
+          bounding: r.bounding,
+          setBounding: takeAction(r.bounding),
+          position: r.position,
+          setPosition: takeAction(r.position),
+        },
+        trigger: { bounding: t, setBounding: takeAction(t) },
+      };
+    }, [e]);
+  return reactExports.useMemo(() => ({ ...a, ...t }), [a, t]);
+}
+const border$a = "Popover_border_d0a76717",
+  title$3 = "Popover_title_e4a0437a",
+  subtitle = "Popover_subtitle_1c7535c8",
+  header$2 = "Popover_header_de23fc15",
+  body$1 = "Popover_body_22163d58",
+  divider = "Popover_divider_46fe6f15",
+  decoration$1 = "Popover_decoration_134219d5",
+  close = "Popover_close_ad4a9c7b",
+  styles$1p = {
+    border: border$a,
+    title: title$3,
+    subtitle: subtitle,
+    header: header$2,
+    body: body$1,
+    divider: divider,
+    decoration: decoration$1,
+    close: close,
+  },
+  Close = reactExports.forwardRef(({ className: e, children: t, ...s }, a) => {
+    const r = usePopoverOptional(),
+      n = useSounds(),
+      o = useUpscale("ui_kit.close_button.icon_small", "ui_kit.close_button.icon_medium");
+    return (
+      reactExports.useEffect(
+        () =>
+          onResize$1(function () {
+            r?.close();
+          }),
+        [r],
+      ),
+      jsxRuntimeExports.jsx("div", {
+        ...s,
+        onClick: function (e) {
+          (s.onClick?.(e),
+            n.play("close", { target: "react-popover:close", original: e }),
+            r?.close());
+        },
+        onMouseEnter: function (e) {
+          (s.onMouseEnter?.(e),
+            n.play("mouse-enter", { target: "react-popover:close", original: e }));
+        },
+        ref: a,
+        className: clsx(styles$1p.close, e),
+        children: t ?? jsxRuntimeExports.jsx(Image$1, { path: o, width: 24, height: 24 }),
+      })
+    );
+  }),
+  OPEN_ANIMATION_DURATION = 250,
+  animationTransitions = {
+    top: "translate(0rem, 50rem) scale(0.9)",
+    bottom: "translate(0rem, -50rem) scale(0.9)",
+    left: "translate(50rem, 0rem) scale(0.9)",
+    right: "translate(-50rem, 0rem) scale(0.9)",
+  },
+  defaultPaddingsRem = { top: 0, bottom: 0, left: 0, right: 0 };
+function Portal({
+  children: e,
+  target: t,
+  pivot: s = 0,
+  position: a = "top",
+  paddingsRem: r = {},
+  lazy: n = !1,
+  closeByEscape: o = !0,
+  onBeforePositionChange: i = noop$1,
+  freeSpaceRem: u = 8,
+  ...l
+}) {
+  const c = usePopover(),
+    d = React.useRef(null),
+    [p, _] = reactExports.useState(),
+    m = reactExports.useMemo(
+      () => ({
+        top: remToPx$1(r.top || defaultPaddingsRem.top),
+        bottom: remToPx$1(r.bottom || defaultPaddingsRem.bottom),
+        left: remToPx$1(r.left || defaultPaddingsRem.left),
+        right: remToPx$1(r.right || defaultPaddingsRem.right),
+      }),
+      [r.bottom, r.top, r.left, r.right],
+    ),
+    f = remToPx$1(u),
+    g = reactExports.useMemo(
+      () => (t ? (document.querySelector(t) ?? document.body) : document.body),
+      [t],
+    );
+  reactExports.useEffect(() => {
+    const e = d.current;
+    if (!e) return;
+    const t = document.querySelector(`[data-popover-trigger-id="${c.id}"]`),
+      r = e.querySelector(`[data-popover-display-id="${c.id}"]`);
+    if (!t || !r) return;
+    const n = watchResizes([t, e, document.body], ([t, r, n]) => {
+      if (!c.opened) return void _(void 0);
+      if (!1 === i(c, { callerBounding: t, containerBounding: r, bodyBounding: n })) return;
+      const o = getUpdatedPosition(a, m, t, r, n);
+      (_(o),
+        updatePosition(s, f, o, m, t, r, n, e),
+        runInAction(() => {
+          (c.trigger.setBounding(t), c.portal.setBounding(r), c.portal.setPosition(o));
+        }));
+    });
+    return (n.start(), n.stop);
+  }, [c, i, m, s, f, c.id, c.portal, c.trigger, a, c.opened]);
+  const b = reactExports.useCallback(() => {
+    const e = d.current;
+    e &&
+      document.activeElement &&
+      document.activeElement instanceof HTMLElement &&
+      e.contains(document.activeElement) &&
+      document.activeElement.blur();
+  }, []);
+  (reactExports.useEffect(() => c.subscribe.onBeforeClose(b), [c.subscribe, b]),
+    useHandleKeydown(o && c.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
+      c.close();
+    }),
+    reactExports.useEffect(() => {
+      if (!c.opened) return;
+      const e = d.current;
+      if (!e) return;
+      const t = e;
+      function s(e) {
+        const s = e.target;
+        if (!(s instanceof HTMLElement)) return !1;
+        const a = `[data-popover-trigger-id="${c.id}"]`,
+          r = `[data-popover-outside-click-whitelist-id="${c.id}"]`;
+        return !(
+          t === s ||
+          t.contains(s) ||
+          s.matches(a) ||
+          s.matches(r) ||
+          s.closest(a) ||
+          s.closest(r)
+        );
+      }
+      return new DisposeBuilder()
+        .add(
+          addEventListener(document, "click", (e) => {
+            s(e) && c.close();
+          }),
+        )
+        .add(
+          mouse$1.down(([e, t]) => {
+            if ("outside" === t) return c.close();
+            const a = e.button;
+            (a !== mouseButtons.right && a !== mouseButtons.wheel) || (s(e) && c.close());
+          }),
+        ).dispose;
+    }, [c]));
+  const [h, E] = useSpring(() => ({
+    from: { opacity: 0, transform: animationTransitions[a] },
+    config: { easing: easings.easeInOutCubic, duration: OPEN_ANIMATION_DURATION },
+  }));
+  return (
+    reactExports.useEffect(() => {
+      if (!p) return;
+      const e = { opacity: 0, transform: animationTransitions[p] };
+      E.start({
+        from: c.opened ? e : void 0,
+        to: c.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
+      });
+    }, [E, p, c.opened]),
+    !c.opened && n
+      ? null
+      : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
+          children: ReactDOM$1.createPortal(
+            jsxRuntimeExports.jsx(animated.div, {
+              ...l,
+              ref: d,
+              style: {
+                position: "absolute",
+                top: "0",
+                left: "0",
+                pointerEvents: h.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: h.opacity.to((e) => (0 !== e || c.opened ? "block" : "none")),
+                ...l.style,
+              },
+              children: jsxRuntimeExports.jsx(animated.div, { style: h, children: e }),
+            }),
+            g,
+          ),
+        })
+  );
+}
+function getUpdatedPosition(e, t, s, a, r) {
+  return ("top" === e && s.top - a.height - t.top < 0) ||
+    ("bottom" === e && s.bottom + a.height + t.bottom > r.height) ||
+    ("left" === e && s.left - a.width - t.left < 0) ||
+    ("right" === e && s.right + a.width + t.right > r.width)
+    ? oppositePositions[e]
+    : e;
+}
+function applyTransform(e, t, s, a, r) {
+  ((e = clamp$1(s.left, r.width - a.offsetWidth - s.right, e)),
+    (t = clamp$1(s.top, r.height - a.offsetHeight - s.bottom, t)),
+    (a.style.transform = `translate(${e}px, ${t}px)`));
+}
+function updatePosition(e, t, s, a, r, n, o, i) {
+  if ("top" === s) {
+    const s = (n.width - r.width) * e;
+    applyTransform(r.left - s, r.top - n.height - t, a, i, o);
+  } else if ("bottom" === s) {
+    const s = (n.width - r.width) * e;
+    applyTransform(r.left - s, r.bottom + t, a, i, o);
+  } else if ("left" === s) {
+    const s = r.left - n.width - t,
+      u = (n.height - r.height) * e;
+    applyTransform(s, r.top - u, a, i, o);
+  } else if ("right" === s) {
+    const s = r.right + t,
+      u = (n.height - r.height) * e;
+    applyTransform(s, r.top - u, a, i, o);
+  }
+}
+const base$1d = "PopoverTip_163a336f",
+  arrow$2 = "PopoverTip_arrow_44c7d6a5",
+  glow$3 = "PopoverTip_glow_da3f9be9",
+  fadeIn$B = "PopoverTip_fadeIn_a48d88bb",
+  fadeInThreeQuarters$B = "PopoverTip_fadeInThreeQuarters_a48d88bb",
+  fadeInHalf$B = "PopoverTip_fadeInHalf_a48d88bb",
+  fadeOut$B = "PopoverTip_fadeOut_a48d88bb",
+  fadeInWithScale$B = "PopoverTip_fadeInWithScale_a48d88bb",
+  slideUp$B = "PopoverTip_slideUp_a48d88bb",
+  scale$B = "PopoverTip_scale_a48d88bb",
+  raysAppearance$B = "PopoverTip_raysAppearance_a48d88bb",
+  rotate$B = "PopoverTip_rotate_a48d88bb",
+  glowAppearance$B = "PopoverTip_glowAppearance_a48d88bb",
+  highlightAppearance$B = "PopoverTip_highlightAppearance_a48d88bb",
+  blink$B = "PopoverTip_blink_a48d88bb",
+  slideUpIn$B = "PopoverTip_slideUpIn_a48d88bb",
+  styles$1o = {
+    base: base$1d,
+    "base__flip-left": "PopoverTip_base__flip-left_3cc0dadc",
+    "base__flip-right": "PopoverTip_base__flip-right_6a5605b6",
+    "base__flip-top": "PopoverTip_base__flip-top_6bcc69e1",
+    "base__flip-bottom": "PopoverTip_base__flip-bottom_416a1dc4",
+    arrow: arrow$2,
+    "arrow__position-top": "PopoverTip_arrow__position-top_a95d47a6",
+    "arrow__position-bottom": "PopoverTip_arrow__position-bottom_9d75ac12",
+    "arrow__position-left": "PopoverTip_arrow__position-left_ca4ced33",
+    "arrow__position-right": "PopoverTip_arrow__position-right_9dc94f7a",
+    glow: glow$3,
+    fadeIn: fadeIn$B,
+    fadeInThreeQuarters: fadeInThreeQuarters$B,
+    fadeInHalf: fadeInHalf$B,
+    fadeOut: fadeOut$B,
+    fadeInWithScale: fadeInWithScale$B,
+    slideUp: slideUp$B,
+    scale: scale$B,
+    raysAppearance: raysAppearance$B,
+    rotate: rotate$B,
+    "reverse-rotate": "PopoverTip_reverse-rotate_a48d88bb",
+    glowAppearance: glowAppearance$B,
+    highlightAppearance: highlightAppearance$B,
+    blink: blink$B,
+    slideUpIn: slideUpIn$B,
+  },
+  verticals = [positions$1.top, positions$1.bottom],
+  horizontals = [positions$1.left, positions$1.right],
+  rotations = { top: 180, bottom: 0, left: 90, right: -90 },
+  Tip = reactExports.forwardRef(({ ...e }, t) => {
+    const s = reactExports.useRef(null),
+      a = usePopoverOptional(),
+      [r, n] = reactExports.useState(e.size),
+      [o, i] = reactExports.useState(
+        e.position || (a && oppositePositions[a.portal.position.get()]) || "bottom",
+      ),
+      [u, l] = reactExports.useState(e.offset),
+      c = useEvent((t, s, a) => {
+        let r = o;
+        if ((e.position || ((r = oppositePositions[a]), i(r)), !e.size)) {
+          const e = isVerticalPosition(r)
+            ? `${Math.min(t.width, s.width)}px`
+            : `${Math.min(t.height, s.height)}px`;
+          n(e);
+        }
+        if (!e.offset) {
+          const e = isVerticalPosition(r)
+            ? `${Math.max(0, t.left - s.left)}px`
+            : `${Math.max(0, t.top - s.top)}px`;
+          l(e);
+        }
+      });
+    return (
+      reactExports.useEffect(() => {
+        if (s.current && a)
+          return autorun(() => {
+            const e = a.trigger.bounding.get(),
+              t = a.portal.bounding.get(),
+              s = a.portal.position.get();
+            e && s && t && c(e, t, s);
+          });
+      }, [a, c]),
+      jsxRuntimeExports.jsxs("div", {
+        ...e,
+        ref: assignRefs([t, s]),
+        style: {
+          width: (verticals.includes(o) && r) || "1rem",
+          height: (horizontals.includes(o) && r) || "1rem",
+          top: (horizontals.includes(o) && u) || "auto",
+          bottom: "bottom" === o ? "0" : "auto",
+          left: (verticals.includes(o) && u) || "auto",
+          right: "right" === o ? "0" : "auto",
+          ...e.style,
+        },
+        className: clsx(styles$1o.base, e.flipped && styles$1o[`base__flipped-${o}`], e.className),
+        children: [
+          jsxRuntimeExports.jsx("div", {
+            className: clsx(styles$1o.arrow, styles$1o[`arrow__position-${o}`]),
+            style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
+          }),
+          !1 === e.noGlow &&
+            jsxRuntimeExports.jsx("div", {
+              className: styles$1o.glow,
+              style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
+            }),
+        ],
+      })
+    );
+  });
+function Trigger({ children: e }) {
+  const t = usePopover();
+  return e({ onClick: t.toggle, "data-popover-trigger-id": t.id }, t);
+}
+Tip.positions = positions$1;
+const Title = defineStyledComponent("Title", styles$1p.title),
+  Subtitle = defineStyledComponent("Subtitle", styles$1p.subtitle),
+  Header$1 = defineStyledComponent("Header", styles$1p.header),
+  Divider = defineStyledComponent("Divider", styles$1p.divider),
+  Body$1 = defineStyledComponent("Body", styles$1p.body),
+  Decoration$1 = defineStyledComponent("Decoration", styles$1p.decoration),
+  Display = reactExports.forwardRef((e, t) => {
+    const s = usePopoverOptional();
+    return jsxRuntimeExports.jsxs(Decoration$1, {
+      ...e,
+      ref: t,
+      "data-popover-display-id": s?.id,
+      children: [jsxRuntimeExports.jsx("div", { className: styles$1p.border }), e.children],
+    });
+  });
+function Popover(e) {
+  const t = reactExports.useId();
+  return jsxRuntimeExports.jsx(contextInstance$1.Provider, {
+    value: usePopoverInstance(e.id ?? t),
+    children: e.children,
+  });
+}
+((Popover.Close = Close),
+  (Popover.Title = Title),
+  (Popover.Subtitle = Subtitle),
+  (Popover.Header = Header$1),
+  (Popover.Divider = Divider),
+  (Popover.Body = Body$1),
+  (Popover.Tip = Tip),
+  (Popover.Display = Display),
+  (Popover.use = usePopover),
+  (Popover.Portal = Portal),
+  (Popover.Trigger = Trigger));
 const themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" },
   sizes$j = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
-  base$1e = "HeadlessButton_df8536fc",
-  styles$1q = { base: base$1e },
+  base$1c = "HeadlessButton_df8536fc",
+  styles$1n = { base: base$1c },
   HeadlessButtonBase = defineStyledComponent("Button", {
     element: "button",
-    className: styles$1q.base,
+    className: styles$1n.base,
   }),
   HeadlessButton = reactExports.forwardRef(function (
     {
@@ -3954,31 +4911,31 @@ const themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" 
     });
   }),
   background$a = "Button_background_98ebcfb8",
-  border$a = "Button_border_7e6390d7",
+  border$9 = "Button_border_7e6390d7",
   overlay$5 = "Button_overlay_174632c8",
-  base$1d = "Button_70871946",
+  base$1b = "Button_70871946",
   base__enabled$1 = "Button_base__enabled_96634d40",
   base__disabled$9 = "Button_base__disabled_b713e04a",
   content$d = "Button_content_298de63f",
   content__fontAligned$1 = "Button_content__fontAligned_66115778",
-  fadeIn$B = "Button_fadeIn_6bcdc8c",
-  fadeInThreeQuarters$B = "Button_fadeInThreeQuarters_6bcdc8c",
-  fadeInHalf$B = "Button_fadeInHalf_6bcdc8c",
-  fadeOut$B = "Button_fadeOut_6bcdc8c",
-  fadeInWithScale$B = "Button_fadeInWithScale_6bcdc8c",
-  slideUp$B = "Button_slideUp_6bcdc8c",
-  scale$B = "Button_scale_6bcdc8c",
-  raysAppearance$B = "Button_raysAppearance_6bcdc8c",
-  rotate$B = "Button_rotate_6bcdc8c",
-  glowAppearance$B = "Button_glowAppearance_6bcdc8c",
-  highlightAppearance$B = "Button_highlightAppearance_6bcdc8c",
-  blink$B = "Button_blink_6bcdc8c",
-  slideUpIn$B = "Button_slideUpIn_6bcdc8c",
-  styles$1p = {
+  fadeIn$A = "Button_fadeIn_6bcdc8c",
+  fadeInThreeQuarters$A = "Button_fadeInThreeQuarters_6bcdc8c",
+  fadeInHalf$A = "Button_fadeInHalf_6bcdc8c",
+  fadeOut$A = "Button_fadeOut_6bcdc8c",
+  fadeInWithScale$A = "Button_fadeInWithScale_6bcdc8c",
+  slideUp$A = "Button_slideUp_6bcdc8c",
+  scale$A = "Button_scale_6bcdc8c",
+  raysAppearance$A = "Button_raysAppearance_6bcdc8c",
+  rotate$A = "Button_rotate_6bcdc8c",
+  glowAppearance$A = "Button_glowAppearance_6bcdc8c",
+  highlightAppearance$A = "Button_highlightAppearance_6bcdc8c",
+  blink$A = "Button_blink_6bcdc8c",
+  slideUpIn$A = "Button_slideUpIn_6bcdc8c",
+  styles$1m = {
     background: background$a,
-    border: border$a,
+    border: border$9,
     overlay: overlay$5,
-    base: base$1d,
+    base: base$1b,
     base__enabled: base__enabled$1,
     base__disabled: base__disabled$9,
     "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
@@ -3989,20 +4946,20 @@ const themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" 
     "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
     content: content$d,
     content__fontAligned: content__fontAligned$1,
-    fadeIn: fadeIn$B,
-    fadeInThreeQuarters: fadeInThreeQuarters$B,
-    fadeInHalf: fadeInHalf$B,
-    fadeOut: fadeOut$B,
-    fadeInWithScale: fadeInWithScale$B,
-    slideUp: slideUp$B,
-    scale: scale$B,
-    raysAppearance: raysAppearance$B,
-    rotate: rotate$B,
+    fadeIn: fadeIn$A,
+    fadeInThreeQuarters: fadeInThreeQuarters$A,
+    fadeInHalf: fadeInHalf$A,
+    fadeOut: fadeOut$A,
+    fadeInWithScale: fadeInWithScale$A,
+    slideUp: slideUp$A,
+    scale: scale$A,
+    raysAppearance: raysAppearance$A,
+    rotate: rotate$A,
     "reverse-rotate": "Button_reverse-rotate_6bcdc8c",
-    glowAppearance: glowAppearance$B,
-    highlightAppearance: highlightAppearance$B,
-    blink: blink$B,
-    slideUpIn: slideUpIn$B,
+    glowAppearance: glowAppearance$A,
+    highlightAppearance: highlightAppearance$A,
+    blink: blink$A,
+    slideUpIn: slideUpIn$A,
   },
   Button$1 = reactExports.forwardRef(function (
     {
@@ -4024,10 +4981,10 @@ const themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" 
       silent: r,
       disabled: a,
       className: clsx(
-        styles$1p.base,
-        styles$1p[`base__size-${t}`],
-        styles$1p[`base__theme-${s}`],
-        a ? styles$1p.base__disabled : styles$1p.base__enabled,
+        styles$1m.base,
+        styles$1m[`base__size-${t}`],
+        styles$1m[`base__theme-${s}`],
+        a ? styles$1m.base__disabled : styles$1m.base__enabled,
         i,
         o?.base,
       ),
@@ -4035,87 +4992,3521 @@ const themes$1 = { primary: "primary", secondary: "secondary", custom: "custom" 
         a || u.onClick?.(e);
       },
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1p.background, o?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1p.border, o?.border) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1p.overlay, o?.overlay) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1m.background, o?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1m.border, o?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1m.overlay, o?.overlay) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$1p.content, n && styles$1p.content__fontAligned, o?.content),
+          className: clsx(styles$1m.content, n && styles$1m.content__fontAligned, o?.content),
           children: e,
         }),
       ],
     });
   });
 ((Button$1.themes = themes$1), (Button$1.sizes = sizes$j));
-var Alignment = ((e) => ((e[(e.left = 0)] = "left"), (e[(e.right = 1)] = "right"), e))(
-  Alignment || {},
-);
-function format(e, t) {
-  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
+const Slot$1 = React.forwardRef((e, t) => {
+  const { children: s, ...a } = e,
+    r = React.Children.toArray(s),
+    n = r.find(isSlottable);
+  if (n) {
+    const e = n.props.children,
+      s = r.map((t) =>
+        t === n
+          ? React.Children.count(e) > 1
+            ? React.Children.only(null)
+            : React.isValidElement(e)
+              ? e.props.children
+              : null
+          : t,
+      );
+    return jsxRuntimeExports.jsx(SlotClone, {
+      ...a,
+      ref: t,
+      children: React.isValidElement(e) ? React.cloneElement(e, void 0, s) : null,
+    });
+  }
+  return jsxRuntimeExports.jsx(SlotClone, { ...a, ref: t, children: s });
+});
+Slot$1.displayName = "Slot";
+const SlotClone = React.forwardRef((e, t) => {
+  const { children: s, ...a } = e;
+  if (React.isValidElement(s)) {
+    const e = getElementRef(s),
+      r = mergeProps(a, s.props);
+    return (
+      s.type !== React.Fragment && (r.ref = t ? assignRefs([t, e]) : e),
+      React.cloneElement(s, r)
+    );
+  }
+  return (console.warn("Invalid children", s), null);
+});
+SlotClone.displayName = "SlotClone";
+const Slottable = ({ children: e }) =>
+  jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e });
+function isSlottable(e) {
+  return React.isValidElement(e) && e.type === Slottable;
 }
-function formatPrintf$1(e, t) {
-  return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-    const s = 0 === e.indexOf("%") ? 2 : 1;
-    return String(t[e.slice(s, -s)]);
+function mergeProps(e, t) {
+  const s = { ...e, ...t };
+  for (const a in t) {
+    const r = e[a],
+      n = t[a];
+    a.startsWith("on")
+      ? r && n
+        ? (s[a] = (...e) => {
+            (n(...e), r(...e));
+          })
+        : r && (s[a] = r)
+      : "style" === a
+        ? (s[a] = { ...r, ...n })
+        : "className" === a && (s[a] = [r, n].filter(Boolean).join(" "));
+  }
+  return s;
+}
+function getElementRef(e) {
+  return e.props.ref || e.ref;
+}
+const base$1a = "TruncateText_dcb41d92",
+  styles$1l = { base: base$1a },
+  TruncatedText = reactExports.forwardRef(function (
+    { text: e, tooltipParams: t, className: s, ...a },
+    r,
+  ) {
+    const n = useSimpleTooltip({ header: t?.header, body: t?.body || e }),
+      o = reactExports.useRef(null),
+      [i, u] = reactExports.useState(!1),
+      l = reactExports.useCallback(() => {
+        o.current &&
+          u(o.current.scrollWidth - Math.ceil(o.current.getBoundingClientRect().width) > 0);
+      }, []);
+    return (
+      reactExports.useEffect(() => {
+        i || n.onMouseLeave();
+      }, [i, n]),
+      useLayoutReady(l, [l]),
+      useResizeLayoutReady(l, [l]),
+      useRefResizeObserver(o, l),
+      jsxRuntimeExports.jsx("div", {
+        ...a,
+        ref: assignRefs([r, o]),
+        className: clsx(styles$1l.base, s),
+        ...(i ? n : {}),
+        children: e,
+      })
+    );
+  });
+function asMemoized(e) {
+  return e;
+}
+const Context$5 = reactExports.createContext(void 0);
+function useHorizontalScroll() {
+  const e = reactExports.useContext(Context$5);
+  if (!e)
+    throw new Error("useHorizontalScroll must be used within a Scroll.Horizontal.Base component");
+  return e;
+}
+function HorizontalScrollProvider({ api: e, children: t }) {
+  const s = reactExports.useMemo(() => ({ api: e }), [e]);
+  return jsxRuntimeExports.jsx(Context$5.Provider, { value: s, children: t });
+}
+var Direction = ((e) => ((e[(e.Next = -1)] = "Next"), (e[(e.Prev = 1)] = "Prev"), e))(
+  Direction || {},
+);
+const defaultSettings = {
+    step: { type: "proportional", factor: 4, clampedArrowStepTimeout: 100 },
+    animationConfig: { tension: 170, friction: 26 },
+  },
+  createApiHook = ({
+    getContainerSize: e,
+    getBounds: t,
+    setScrollPosition: s,
+    getDirection: a,
+    getWrapperSize: r,
+    triggerMouseMoveOnUpdate: n = !1,
+  }) => {
+    const o = (e, s) => {
+      const [a, r] = t(e);
+      return clamp$1(a, r, s);
+    };
+    return (i = {}) => {
+      const { settings: u = defaultSettings } = i,
+        [l, c] = reactExports.useState(!1),
+        d = reactExports.useRef(null),
+        p = reactExports.useRef(null),
+        _ = reactExports.useRef({ wrapper: 0, container: 0 }),
+        m = useEmitter(),
+        f = useThrottle(
+          () => {
+            forceTriggerMouseMove$1();
+          },
+          [],
+          150,
+        ),
+        [g, b] = useSpring(() => ({
+          scrollPosition: 0,
+          onChange: (e) => {
+            const t = d.current;
+            t && (s(t, e), m.trigger("change", e));
+          },
+          onRest: (e) => m.trigger("rest", e),
+          onStart: (e) => m.trigger("start", e),
+          onPause: (e) => m.trigger("pause", e),
+        })),
+        h = reactExports.useCallback(
+          (e, t, s) => {
+            const a = g.scrollPosition.get(),
+              r = (g.scrollPosition.goal ?? 0) - a;
+            return o(e, t * s + r + a);
+          },
+          [g.scrollPosition],
+        ),
+        E = reactExports.useCallback(
+          function (e, { immediate: t = !1, reset: s = !0 } = {}) {
+            const a = d.current;
+            if (!a) return;
+            const r = o(a, e);
+            g.scrollPosition.goal !== r &&
+              b.start({
+                scrollPosition: r,
+                immediate: t,
+                reset: s,
+                config: u.animationConfig,
+                from: { scrollPosition: o(a, g.scrollPosition.get()) },
+                onChange: () => {
+                  n && f();
+                },
+              });
+          },
+          [g.scrollPosition, b, u.animationConfig, f],
+        ),
+        x = reactExports.useCallback(
+          function (e) {
+            const t = d.current,
+              s = p.current;
+            if (!t || !s) return;
+            const a = ((e, t) => {
+                switch (t.type) {
+                  case "proportional":
+                    return r(e) / t.factor;
+                  case "fixed":
+                    return t.value;
+                }
+              })(s, u.step),
+              n = h(t, e, a);
+            E(n);
+          },
+          [E, h, u.step],
+        ),
+        $ = reactExports.useCallback(
+          function (e) {
+            l ||
+              (0 !== e.deltaY && x(a(e)),
+              d.current && m.trigger("mouseWheel", e, g.scrollPosition, t(d.current)));
+          },
+          [g.scrollPosition, x, m, l],
+        ),
+        y = reactExports.useCallback(
+          function () {
+            const e = d.current;
+            e && (E(o(e, g.scrollPosition.goal), { immediate: !0 }), m.trigger("resizeHandled"));
+          },
+          [E, g.scrollPosition.goal, m],
+        );
+      useRefResizeObserver(p, (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLElement)) return;
+        const s = r(t);
+        _.current.wrapper !== s && y();
+      });
+      const A = useEvent(function () {
+          const t = d.current;
+          if (!t) return;
+          const s = e(t),
+            a = p.current ? r(p.current) : 0;
+          if (_.current.container !== s || _.current.wrapper !== a) {
+            const e = o(t, g.scrollPosition.goal);
+            (e !== g.scrollPosition.goal && E(e, { immediate: !0 }),
+              (_.current.container = s),
+              (_.current.wrapper = a),
+              m.trigger("recalculateContent"));
+          }
+        }),
+        v = useSkipFrame$1();
+      reactExports.useEffect(() => addEventListener(window, "resize", () => v.run(y)), [y, v]);
+      return reactExports.useMemo(
+        () => ({
+          getWrapperSize: () => (p.current ? r(p.current) : void 0),
+          getContainerSize: () => (d.current ? e(d.current) : void 0),
+          getBounds: () =>
+            d.current
+              ? t(d.current)
+              : (console.warn("getBounds: contentRef.current is null"), [0, 0]),
+          stepTimeout: u.step.clampedArrowStepTimeout,
+          settings: u,
+          clampPosition: o,
+          handleMouseWheel: $,
+          applyScroll: E,
+          applyStepTo: x,
+          contentRef: d,
+          wrapperRef: p,
+          scrollPosition: b,
+          animationScroll: g,
+          recalculateContent: A,
+          disabled: l,
+          setDisabled: c,
+          events: { on: m.on, off: m.off },
+        }),
+        [u, $, E, x, b, g, A, l, c, m.on, m.off],
+      );
+    };
+  },
+  DEFAULT_HORIZONTAL_API_CONFIG = {
+    getBounds: (e) => [0, Math.max(0, e.offsetWidth - (e.parentElement?.offsetWidth ?? 0))],
+    getContainerSize: (e) => e.offsetWidth,
+    getWrapperSize: (e) => e.offsetWidth,
+    setScrollPosition: (e, t) => {
+      e.style.transform = `translateX(-${0 | (t.value.scrollPosition ?? 0)}px)`;
+    },
+    getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
+    triggerMouseMoveOnUpdate: !0,
+  },
+  useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
+  IGNORE_DEFAULT = [2, 2];
+function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
+  const [a, r] = reactExports.useState(!0),
+    [n, o] = reactExports.useState(!0);
+  return (
+    reactExports.useEffect(() => {
+      function a() {
+        if (!e.contentRef.current) return;
+        const a = e.animationScroll.scrollPosition.get(),
+          [n, i] = e.getBounds(),
+          u = a >= i - s;
+        (r(a <= n + t), o(u));
+      }
+      return new DisposeBuilder()
+        .add(createLayoutReadyInEffect$1(a))
+        .add(e.events.on("resizeHandled", a))
+        .add(e.events.on("recalculateContent", a))
+        .add(e.events.on("change", a)).dispose;
+    }, [e, t, s]),
+    [a, n]
+  );
+}
+const scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
+  CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT = 100,
+  MOUSE_BUTTON_LEFT = 0,
+  background$9 = "Thumb_background_7f3dd6ac",
+  border$8 = "Thumb_border_5749138b",
+  innerBorder = "Thumb_innerBorder_42bafd18",
+  icon$e = "Thumb_icon_dca8bf26",
+  base$19 = "Thumb_6ff3e706",
+  base__vertical$2 = "Thumb_base__vertical_55a67c91",
+  base__horizontal = "Thumb_base__horizontal_27ca7ace",
+  base__active$3 = "Thumb_base__active_830942bb",
+  fadeIn$z = "Thumb_fadeIn_830942bb",
+  fadeInThreeQuarters$z = "Thumb_fadeInThreeQuarters_830942bb",
+  fadeInHalf$z = "Thumb_fadeInHalf_830942bb",
+  fadeOut$z = "Thumb_fadeOut_830942bb",
+  fadeInWithScale$z = "Thumb_fadeInWithScale_830942bb",
+  slideUp$z = "Thumb_slideUp_830942bb",
+  scale$z = "Thumb_scale_830942bb",
+  raysAppearance$z = "Thumb_raysAppearance_830942bb",
+  rotate$z = "Thumb_rotate_830942bb",
+  glowAppearance$z = "Thumb_glowAppearance_830942bb",
+  highlightAppearance$z = "Thumb_highlightAppearance_830942bb",
+  blink$z = "Thumb_blink_830942bb",
+  slideUpIn$z = "Thumb_slideUpIn_830942bb",
+  styles$1k = {
+    background: background$9,
+    border: border$8,
+    innerBorder: innerBorder,
+    icon: icon$e,
+    base: base$19,
+    base__vertical: base__vertical$2,
+    base__horizontal: base__horizontal,
+    base__active: base__active$3,
+    fadeIn: fadeIn$z,
+    fadeInThreeQuarters: fadeInThreeQuarters$z,
+    fadeInHalf: fadeInHalf$z,
+    fadeOut: fadeOut$z,
+    fadeInWithScale: fadeInWithScale$z,
+    slideUp: slideUp$z,
+    scale: scale$z,
+    raysAppearance: raysAppearance$z,
+    rotate: rotate$z,
+    "reverse-rotate": "Thumb_reverse-rotate_830942bb",
+    glowAppearance: glowAppearance$z,
+    highlightAppearance: highlightAppearance$z,
+    blink: blink$z,
+    slideUpIn: slideUpIn$z,
+  },
+  BOUNCING_OFFSET = 2,
+  MIN_THUMB_SIZE = 13,
+  FORWARD_DISABLED = "forwardDisabled",
+  BACKWARD_DISABLED = "backwardDisabled";
+function updateDisabledStates(e, t) {
+  if (!e.trackRef.current || !e.thumbRef.current) return;
+  const s = e.trackRef.current.parentNode;
+  if (s instanceof HTMLElement) {
+    if (0 === t)
+      return (s.classList.add(BACKWARD_DISABLED), void s.classList.remove(FORWARD_DISABLED));
+    if (e.isBoundThumb(t))
+      return (s.classList.remove(BACKWARD_DISABLED), void s.classList.add(FORWARD_DISABLED));
+    (s.classList.remove(BACKWARD_DISABLED), s.classList.remove(FORWARD_DISABLED));
+  }
+}
+function Thumb$1(e) {
+  const t = reactExports.useRef(null),
+    [s, a] = reactExports.useState(!1),
+    r = useEvent(function () {
+      const s = t.current,
+        a = e.trackRef.current,
+        r = e.api.getWrapperSize(),
+        n = e.api.getContainerSize();
+      if (!(r && n && s && a)) return;
+      const o = Math.min(1, r / n),
+        i = "horizontal" === e.direction ? "width" : "height";
+      return ((s.style[i] = `${e.calculateSize(a, o)}px`), (s.style.display = "flex"), o);
+    }),
+    [n, o] = useSpring(() => ({
+      from: { ...e.styles.closed, "--bouncingCorrection": "0px" },
+      easings: easings.easeInCubic,
+      config: { duration: 200 },
+    }));
+  reactExports.useEffect(() => {
+    s || e.dragging
+      ? o.start({
+          to: e.styles.opened,
+          onRest() {
+            t.current?.classList.add(styles$1k.base__active);
+          },
+        })
+      : o.start({
+          to: e.styles.closed,
+          delay: 500,
+          onRest() {
+            t.current?.classList.remove(styles$1k.base__active);
+          },
+        });
+  }, [s, e.dragging, e.styles.closed, e.styles.opened, o]);
+  const i = useEvent(function () {
+      const s = e.trackRef.current,
+        a = t.current,
+        r = e.railBeforeRef.current,
+        n = e.railAfterRef.current,
+        i = e.api.getWrapperSize(),
+        u = e.api.getContainerSize();
+      if (!(i && s && a && r && n && u)) return;
+      const l = e.api.animationScroll.scrollPosition.get(),
+        c = Math.min(1, i / u),
+        d = u !== i ? clamp$1(0, 1, l / (u - i)) : 0,
+        p = e.calculateSize(s, c),
+        _ = (("horizontal" === e.direction ? s.offsetWidth : s.offsetHeight) - p) * d || 0,
+        m = Math.round((2 * d - 1) * BOUNCING_OFFSET);
+      (a.style.setProperty("--thumbOffset", `${_}px`),
+        e.onUpdate?.({ thumbSize: p, thumbOffset: _, newBouncingCorrection: m }));
+      const f = 0 === _ || e.isBoundThumb(_) ? 0 : m;
+      return (
+        o.start({
+          to: { "--bouncingCorrection": `${f}px` },
+          ...(0 === f ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
+        }),
+        _
+      );
+    }),
+    u = useSkipFrame$1(),
+    l = useEvent(function () {
+      r();
+      const t = i();
+      "number" == typeof t && updateDisabledStates(e, t);
+    });
+  reactExports.useEffect(() => u.run(l));
+  const { api: c } = e;
+  return (
+    reactExports.useEffect(() => {
+      function e() {
+        u.run(l);
+      }
+      return (
+        c.events.on("recalculateContent", e),
+        c.events.on("rest", l),
+        c.events.on("change", l),
+        c.events.on("resizeHandled", e),
+        () => {
+          (c.events.off("recalculateContent", e),
+            c.events.off("rest", l),
+            c.events.off("change", l),
+            c.events.off("resizeHandled", e));
+        }
+      );
+    }, [c, u, l]),
+    jsxRuntimeExports.jsxs(animated.div, {
+      ref: assignRefs([t, e.thumbRef]),
+      className: clsx(styles$1k.base, styles$1k[`base__${e.direction}`], e.className),
+      style: n,
+      onMouseEnter: () => a(!0),
+      onMouseLeave: () => a(!1),
+      children: [
+        jsxRuntimeExports.jsx("div", { className: styles$1k.background }),
+        jsxRuntimeExports.jsx("div", { className: styles$1k.border }),
+        jsxRuntimeExports.jsx("div", { className: styles$1k.innerBorder }),
+        jsxRuntimeExports.jsx("div", { className: styles$1k.icon }),
+      ],
+    })
+  );
+}
+const initBarDraggingState = { pending: !1, offset: 0 };
+function useBarDragging(e, t, s, a, r) {
+  const [n, o] = reactExports.useState(initBarDraggingState),
+    i = useEvent(t),
+    u = reactExports.useCallback(
+      (t) => {
+        (o(t),
+          e.current && i({ type: t.pending ? "dragStart" : "dragEnd", dragElement: e.current }));
+      },
+      [i, e],
+    );
+  return (
+    reactExports.useEffect(() => {
+      if (!n.pending) return;
+      const t = mouse$1.move(function ([t]) {
+          const o = s.contentRef.current;
+          if (!o) return;
+          const u = a.current,
+            l = e.current;
+          if (!o || !u || !l) return;
+          const c = r(t, n, { parent: u, thumb: l }),
+            d = c * (s.getContainerSize() ?? 0);
+          (s.scrollPosition.start({
+            scrollPosition: s.clampPosition(o, d),
+            reset: !0,
+            immediate: !0,
+            from: { scrollPosition: s.animationScroll.scrollPosition.get() },
+          }),
+            i({ type: "dragging", dragElement: l, elementOffset: c, contentOffset: d }));
+        }),
+        o = mouse$1.up(() => {
+          u(initBarDraggingState);
+        });
+      return () => {
+        (t(), o());
+      };
+    }, [s, n.offset, n.pending, i, u, e, a, n, r]),
+    u
+  );
+}
+const DISABLE_CLASS = "disable",
+  ACTIVE_CLASS = "scroll-active";
+function useUpdateStatesBar({ api: e, baseRef: t }) {
+  const s = useSkipFrame$1(),
+    a = useEvent(function () {
+      const s = e.getWrapperSize(),
+        a = e.getContainerSize();
+      if (null === t.current || void 0 === a || void 0 === s) return;
+      1 === Math.min(1, s / a || 1)
+        ? t.current.classList.remove(ACTIVE_CLASS)
+        : t.current.classList.add(ACTIVE_CLASS);
+    });
+  (reactExports.useEffect(() => s.run(a)),
+    reactExports.useEffect(() => {
+      function t() {
+        s.run(a);
+      }
+      return (
+        e.events.on("recalculateContent", t),
+        e.events.on("resizeHandled", t),
+        () => {
+          (e.events.off("recalculateContent", t), e.events.off("resizeHandled", t));
+        }
+      );
+    }, [e, s, a]));
+}
+function getElementCoordinates(e, t) {
+  const s = e.getBoundingClientRect(),
+    a = t === scrollOrientations.horizontal ? s.x : s.y;
+  return { start: a, end: t === scrollOrientations.horizontal ? a + s.width : a + s.height };
+}
+function getCoordinate(e, t, s, a, r, n) {
+  return {
+    occurredEvent: n === scrollOrientations.horizontal ? e.screenX : e.screenY,
+    bar: getElementCoordinates(t, n),
+    thumb: getElementCoordinates(s, n),
+    backButton: getElementCoordinates(a, n),
+    forwardButton: getElementCoordinates(r, n),
+  };
+}
+function useBarHandlers(e, t, s, a, r, n, o) {
+  const i = useSounds(),
+    u = r.stepTimeout || CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT,
+    [l, c] = useRepeatCallback((e) => r.applyStepTo(e), u, [r]);
+  reactExports.useEffect(
+    () => (
+      document.addEventListener("mouseup", c, !0),
+      () => document.removeEventListener("mouseup", c, !0)
+    ),
+    [c],
+  );
+  const d = reactExports.useCallback(
+      (e) => {
+        e.target.classList.contains(DISABLE_CLASS) ||
+          (i.play("click", { target: "Scroll:Back", original: e }), l(Direction.Next));
+      },
+      [l, i],
+    ),
+    p = reactExports.useCallback(
+      (e) => {
+        e.target.classList.contains(DISABLE_CLASS) ||
+          (i.play("click", { target: "Scroll:Forward", original: e }), l(Direction.Prev));
+      },
+      [l, i],
+    ),
+    _ = reactExports.useCallback(
+      (u) => {
+        const l = e.current,
+          c = t.current,
+          _ = s.current,
+          m = a.current;
+        if (!(l && c && _ && m && u.button === MOUSE_BUTTON_LEFT)) return;
+        const f = getCoordinate(u, l, c, _, m, o),
+          g = f.thumb.start <= f.occurredEvent && f.occurredEvent <= f.thumb.end,
+          b =
+            (f.backButton.start <= f.occurredEvent && f.occurredEvent <= f.backButton.end) ||
+            (f.forwardButton.start <= f.occurredEvent && f.occurredEvent <= f.forwardButton.end);
+        if (g) n({ pending: !0, offset: f.occurredEvent - f.thumb.start });
+        else if (b) {
+          ((f.occurredEvent > f.thumb.start ? Direction.Prev : Direction.Next) === Direction.Next
+            ? d
+            : p)(u);
+        } else {
+          const e = f.occurredEvent - f.bar.start,
+            t = f.thumb.end - f.thumb.start,
+            s = f.bar.end - f.bar.start,
+            a = r.getContainerSize();
+          if ("number" != typeof a || Number.isNaN(a))
+            return console.error("Incorrect container size");
+          const n = ((e - t / 2) / s) * a;
+          r.applyScroll(n);
+        }
+        i.play("click", { target: "Scroll:" + (g ? "thumb" : b ? "button" : ""), original: u });
+      },
+      [e, t, s, a, i, o, n, d, p, r],
+    ),
+    m = reactExports.useCallback(
+      (e) => {
+        e.target.classList.contains(DISABLE_CLASS) ||
+          i.play("mouse-enter", { target: "Scroll:Bar", original: e });
+      },
+      [i],
+    );
+  return reactExports.useMemo(
+    () => ({
+      handleMouseBackDown: d,
+      handleMouseEnter: m,
+      handleMouseDownTrack: _,
+      handleMouseForwardDown: p,
+      handleMouseForwardUp: c,
+      handleMouseBackUp: c,
+    }),
+    [d, m, _, p, c],
+  );
+}
+const rail$1 = "HorizontalBar_rail_37858d8f",
+  base$18 = "HorizontalBar_4df27ac3",
+  track$1 = "HorizontalBar_track_649dc296",
+  rail__left = "HorizontalBar_rail__left_1a906b4e",
+  rail__right = "HorizontalBar_rail__right_cd24364e",
+  button__right = "HorizontalBar_button__right_e8f0aa2d",
+  button__left = "HorizontalBar_button__left_da330e13",
+  button$3 = "HorizontalBar_button_cbabd91",
+  styles$1j = {
+    rail: rail$1,
+    base: base$18,
+    track: track$1,
+    rail__left: rail__left,
+    rail__right: rail__right,
+    button__right: button__right,
+    button__left: button__left,
+    button: button$3,
+  },
+  THUMB_TO_RAIL_OFFSET$1 = 5,
+  THUMB_STYLES$1 = {
+    closed: { height: "3rem", top: "4rem" },
+    opened: { height: "11rem", top: "0rem" },
+  },
+  calculateThumbSize$1 = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetWidth * t),
+  Bar$1 = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
+    const s = reactExports.useRef(null),
+      a = reactExports.useRef(null),
+      r = reactExports.useRef(null),
+      n = reactExports.useRef(null),
+      o = reactExports.useRef(null),
+      i = reactExports.useRef(null),
+      u = reactExports.useRef(null),
+      [l, c] = reactExports.useState(!1),
+      { api: d } = useHorizontalScroll();
+    useUpdateStatesBar({ baseRef: s, api: d });
+    const p = useEvent(
+        (e, t, { parent: s }) =>
+          (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
+      ),
+      _ = useEvent((e) => e - (n.current.offsetWidth - o.current.offsetWidth) >= -0.5),
+      m = reactExports.useCallback(
+        (e) => ("dragStart" === e.type ? c(!0) : "dragEnd" === e.type && c(!1), t(e)),
+        [t],
+      ),
+      f = useBarDragging(o, m, d, n, p),
+      g = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
+        const a = n.current,
+          r = i.current,
+          o = u.current;
+        if (!a || !r || !o) return;
+        const l = remToPx$1(THUMB_TO_RAIL_OFFSET$1);
+        ((r.style.width = `${t - l + s}px`),
+          (o.style.width = a.offsetWidth - e - t - l - s + "px"));
+      }),
+      { handleMouseEnter: b, handleMouseDownTrack: h } = useBarHandlers(
+        s,
+        o,
+        r,
+        a,
+        d,
+        f,
+        scrollOrientations.horizontal,
+      );
+    return jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$1j.base, e.base),
+      ref: s,
+      onWheel: d.handleMouseWheel,
+      onMouseDown: h,
+      onMouseEnter: b,
+      children: [
+        jsxRuntimeExports.jsx("div", {
+          ref: a,
+          className: clsx(styles$1j.button, styles$1j.button__left, e.leftButton),
+        }),
+        jsxRuntimeExports.jsxs("div", {
+          ref: n,
+          className: clsx(styles$1j.track, e.track),
+          children: [
+            jsxRuntimeExports.jsx("div", {
+              ref: i,
+              className: clsx(styles$1j.rail, styles$1j.rail__left, e.leftRail),
+            }),
+            jsxRuntimeExports.jsx(Thumb$1, {
+              dragging: l,
+              api: d,
+              calculateOffset: p,
+              calculateSize: calculateThumbSize$1,
+              direction: "horizontal",
+              isBoundThumb: _,
+              railAfterRef: i,
+              railBeforeRef: u,
+              styles: THUMB_STYLES$1,
+              onUpdate: g,
+              thumbRef: o,
+              trackRef: n,
+            }),
+            jsxRuntimeExports.jsx("div", {
+              ref: u,
+              className: clsx(styles$1j.rail, styles$1j.rail__right, e.rightRail),
+            }),
+          ],
+        }),
+        jsxRuntimeExports.jsx("div", {
+          ref: r,
+          className: clsx(styles$1j.button, styles$1j.button__right, e.rightButton),
+        }),
+      ],
+    });
+  }),
+  base$17 = "HorizontalScroll_5b201d2b",
+  wrapper$2 = "HorizontalScroll_wrapper_2fb60496",
+  defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
+  styles$1i = { base: base$17, wrapper: wrapper$2, defaultScrollArea: defaultScrollArea },
+  DefaultScroll$1 = ({
+    children: e,
+    className: t,
+    barClassNames: s,
+    areaClassName: a,
+    classNames: r,
+    scrollClassName: n,
+    onDrag: o,
+  }) => {
+    const { api: i } = useHorizontalScroll(),
+      u = reactExports.useMemo(() => {
+        const e = s || {};
+        return { ...e, base: clsx(styles$1i.base, e.base) };
+      }, [s]);
+    return jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$1i.defaultScroll, t),
+      onWheel: i.handleMouseWheel,
+      children: [
+        jsxRuntimeExports.jsx("div", {
+          className: clsx(styles$1i.defaultScrollArea, a),
+          children: jsxRuntimeExports.jsx(Area$1, { className: n, classNames: r, children: e }),
+        }),
+        jsxRuntimeExports.jsx(Bar$1, { onDrag: o, classNames: u }),
+      ],
+    });
+  };
+function Area$1({ className: e, classNames: t, children: s }) {
+  const { api: a } = useHorizontalScroll();
+  return jsxRuntimeExports.jsx("div", {
+    className: clsx(styles$1i.base, e),
+    children: jsxRuntimeExports.jsx("div", {
+      className: clsx(styles$1i.wrapper, t?.wrapper),
+      onWheel: a.handleMouseWheel,
+      ref: a.wrapperRef,
+      children: jsxRuntimeExports.jsx("div", {
+        className: clsx(styles$1i.content, t?.content),
+        ref: a.contentRef,
+        children: s,
+      }),
+    }),
   });
 }
-const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
-  addSeparatorToRight = (e, t, s) => {
-    if (s % 2) {
-      const s = e.pop();
-      return [...e, s + t];
-    }
-    return [...e, t];
+((Area$1.Bar = Bar$1), (Area$1.Default = DefaultScroll$1));
+const dragDirections = { horizontal: "horizontal", vertical: "vertical" };
+function getEventCoordinate(e, t) {
+  switch (t) {
+    case dragDirections.horizontal:
+      return e.clientX;
+    case dragDirections.vertical:
+      return e.clientY;
+    default:
+      assert(!1, `Such drag direction ${t} is not supported`);
+  }
+}
+function getScreenCoordinate(e, t) {
+  switch (t) {
+    case dragDirections.horizontal:
+      return e.screenX;
+    case dragDirections.vertical:
+      return e.screenY;
+    default:
+      assert(!1, `Such drag direction ${t} is not supported`);
+  }
+}
+const INITIAL_DRAGGING_STATE = { type: "idle" };
+function useScrollByDragElements(e, t, s, a) {
+  const {
+      contentRef: r,
+      wrapperRef: n,
+      scrollPosition: o,
+      clampPosition: i,
+      animationScroll: u,
+      events: l,
+      disabled: c,
+    } = e,
+    [d, p] = reactExports.useState(INITIAL_DRAGGING_STATE),
+    [_, m] = reactExports.useState(0),
+    { gapBeforeStart: f } = a ?? {},
+    g = useSkipFrame$1(),
+    b = useEvent(() => {
+      g.run(() => {
+        const t = e.contentRef.current,
+          s = e.getWrapperSize(),
+          a = e.getContainerSize();
+        t &&
+          s &&
+          a &&
+          !c &&
+          (t.style.cursor = a <= s ? "auto" : "dragging" === d.type ? "move" : "grab");
+      });
+    });
+  return (
+    reactExports.useEffect(() => {
+      b();
+    }, [d.type, b]),
+    useResize$1(() => {
+      b();
+    }, [b]),
+    reactExports.useEffect(() => {
+      if ("pending" !== d.type) return;
+      const e = r.current,
+        s = n.current;
+      if (null === e || null === s) return;
+      const a = mouse$1.move(([e]) => {
+          const s = getScreenCoordinate(e, t);
+          (void 0 === f || Math.abs(_ - s) > f) &&
+            p({
+              type: "dragging",
+              positionFrom: s,
+              previousScrollPosition: u.scrollPosition.get(),
+            });
+        }),
+        o = mouse$1.up(() => p({ type: "scrollComplete" }));
+      return () => {
+        (a(), o());
+      };
+    }, [u.scrollPosition, r, _, t, d, f, n]),
+    reactExports.useEffect(() => {
+      if ("dragging" !== d.type) return;
+      const e = mouse$1.move(([e, a]) => {
+        const l = r.current,
+          c = n.current;
+        if ("outside" === a) return void p({ type: "scrollComplete" });
+        const _ = getEventCoordinate(e, t);
+        if (null === l || null === c || ("inside" === a && _ < 0)) return;
+        const m = c.offsetLeft,
+          f = "inside" === a ? _ : _ - m,
+          g = d.positionFrom - f,
+          b = d.previousScrollPosition + g;
+        o.start({
+          scrollPosition: i(l, b),
+          from: { scrollPosition: u.scrollPosition.get() },
+          ...(s && { config: s }),
+        });
+      });
+      const a = mouse$1.up(function () {
+        p({ type: "scrollComplete" });
+      });
+      return () => {
+        (e(), a());
+      };
+    }, [u.scrollPosition, i, r, d, o, n, s, t]),
+    reactExports.useEffect(() => {
+      if ("scrollComplete" !== d.type) return;
+      const e = () => {
+        p(INITIAL_DRAGGING_STATE);
+      };
+      return (e(), l.on("rest", e), () => l.off("rest", e));
+    }, [u.scrollPosition, d.type, l]),
+    reactExports.useEffect(() => {
+      if (c) return;
+      const e = r.current;
+      if (!e) return;
+      const s = (e) => {
+        if (e.button !== mouseButtons.left) return;
+        const s = getScreenCoordinate(e, t);
+        (m(s),
+          p(
+            void 0 === f || f <= 0
+              ? {
+                  type: "dragging",
+                  positionFrom: s,
+                  previousScrollPosition: u.scrollPosition.get(),
+                }
+              : { type: "pending" },
+          ));
+      };
+      return (e.addEventListener("mousedown", s), () => e.removeEventListener("mousedown", s));
+    }, [u.scrollPosition, r, c, t, f]),
+    d
+  );
+}
+function useHorizontalDrag(e, t) {
+  return useScrollByDragElements(e, scrollOrientations.horizontal, t);
+}
+function Base$v({ settings: e, children: t }) {
+  const s = useApi$1({ settings: e }),
+    a = reactExports.useMemo(() => ({ api: s }), [s]);
+  return jsxRuntimeExports.jsx(Context$5.Provider, { value: a, children: t });
+}
+const Context$4 = reactExports.createContext(void 0);
+function useVerticalScroll() {
+  const e = reactExports.useContext(Context$4);
+  if (!e) throw new Error("useVerticalScroll must be used within a Scroll.Vertical.Base component");
+  return e;
+}
+function VerticalScrollProvider({ api: e, children: t }) {
+  const s = reactExports.useMemo(() => ({ api: e }), [e]);
+  return jsxRuntimeExports.jsx(Context$4.Provider, { value: s, children: t });
+}
+const DEFAULT_VERTICAL_API_CONFIG = {
+    getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
+    getContainerSize: (e) => e.scrollHeight,
+    getWrapperSize: (e) => e.offsetHeight,
+    setScrollPosition: (e, t) => {
+      e.scrollTop = Math.trunc(t.value.scrollPosition ?? 0);
+    },
+    getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
   },
-  addSeparatorToLeft = (e, t, s) => {
-    if (0 === s) return [t];
-    if (s % 2) return [...e, " " === t ? " " : t];
-    {
-      const s = e.pop();
-      return [...e, s + t];
-    }
+  useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
+  rail = "VerticalBar_rail_3d663c9",
+  base$16 = "VerticalBar_7187fa00",
+  track = "VerticalBar_track_ff482708",
+  rail__top = "VerticalBar_rail__top_ee531f43",
+  rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
+  button__bottom = "VerticalBar_button__bottom_6880f123",
+  button__top = "VerticalBar_button__top_b8383775",
+  button$2 = "VerticalBar_button_7b0e4aca",
+  styles$1h = {
+    rail: rail,
+    base: base$16,
+    track: track,
+    rail__top: rail__top,
+    rail__bottom: rail__bottom,
+    button__bottom: button__bottom,
+    button__top: button__top,
+    button: button$2,
   },
-  splitAndFormat = (e, t, s = 0) =>
-    e.split(t).reduce(0 === s ? addSeparatorToRight : addSeparatorToLeft, []),
-  splitEuropean = (e, t = 0) => {
-    let s = [];
-    const a = new RegExp(
-        "(?<=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])(\\x2D)(?=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])",
-        "gu",
+  THUMB_TO_RAIL_OFFSET = 5,
+  THUMB_STYLES = {
+    closed: { width: "3rem", left: "3rem" },
+    opened: { width: "9rem", left: "0rem" },
+  },
+  calculateThumbSize = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetHeight * t),
+  Bar = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
+    const s = reactExports.useRef(null),
+      a = reactExports.useRef(null),
+      r = reactExports.useRef(null),
+      n = reactExports.useRef(null),
+      o = reactExports.useRef(null),
+      i = reactExports.useRef(null),
+      u = reactExports.useRef(null),
+      [l, c] = reactExports.useState(!1),
+      { api: d } = useVerticalScroll();
+    useUpdateStatesBar({ baseRef: s, api: d });
+    const p = useEvent((e) => e - (n.current.offsetHeight - o.current.offsetHeight) >= -0.5),
+      _ = useEvent(
+        (e, t, { parent: s }) =>
+          (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
       ),
-      r = convertNbsp(e);
-    return (splitAndFormat(r, /( )/, t).forEach((e) => (s = s.concat(splitAndFormat(e, a, 0)))), s);
+      m = reactExports.useCallback(
+        (e) => ("dragStart" === e.type ? c(!0) : "dragEnd" === e.type && c(!1), t(e)),
+        [t],
+      ),
+      f = useBarDragging(o, m, d, n, _),
+      g = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
+        const a = n.current,
+          r = i.current,
+          o = u.current;
+        if (!a || !r || !o) return;
+        const l = remToPx$1(THUMB_TO_RAIL_OFFSET);
+        ((r.style.height = `${t - l + s}px`),
+          (o.style.height = a.offsetHeight - e - t - l - s + "px"));
+      }),
+      { handleMouseEnter: b, handleMouseDownTrack: h } = useBarHandlers(
+        s,
+        o,
+        a,
+        r,
+        d,
+        f,
+        scrollOrientations.vertical,
+      );
+    return jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$1h.base, e.base),
+      ref: s,
+      onWheel: d.handleMouseWheel,
+      onMouseDown: h,
+      onMouseEnter: b,
+      children: [
+        jsxRuntimeExports.jsx("div", {
+          ref: a,
+          className: clsx(styles$1h.button, styles$1h.button__top, e.topButton),
+        }),
+        jsxRuntimeExports.jsxs("div", {
+          ref: n,
+          className: clsx(styles$1h.track, e.track),
+          children: [
+            jsxRuntimeExports.jsx("div", {
+              ref: i,
+              className: clsx(styles$1h.rail, styles$1h.rail__top, e.topRail),
+            }),
+            jsxRuntimeExports.jsx(Thumb$1, {
+              dragging: l,
+              api: d,
+              calculateOffset: _,
+              calculateSize: calculateThumbSize,
+              direction: "vertical",
+              isBoundThumb: p,
+              railAfterRef: i,
+              railBeforeRef: u,
+              styles: THUMB_STYLES,
+              onUpdate: g,
+              thumbRef: o,
+              trackRef: n,
+            }),
+            jsxRuntimeExports.jsx("div", {
+              ref: u,
+              className: clsx(styles$1h.rail, styles$1h.rail__bottom, e.bottomRail),
+            }),
+          ],
+        }),
+        jsxRuntimeExports.jsx("div", {
+          ref: r,
+          className: clsx(styles$1h.button, styles$1h.button__bottom, e.bottomButton),
+        }),
+      ],
+    });
+  }),
+  maskDirections = { top: "top", bottom: "bottom", both: "both", none: "none" },
+  getMaskDirection = (e, t) =>
+    e || t
+      ? e
+        ? t
+          ? maskDirections.none
+          : maskDirections.bottom
+        : maskDirections.top
+      : maskDirections.both,
+  content$c = "VerticalScroll_content_f30246e6",
+  content__top = "VerticalScroll_content__top_b27098a4",
+  content__bottom = "VerticalScroll_content__bottom_d6604290",
+  content__both = "VerticalScroll_content__both_8d905712",
+  defaultScroll = "VerticalScroll_defaultScroll_c69fa70e",
+  bar = "VerticalScroll_bar_c5afe570",
+  area = "VerticalScroll_area_a3c0086a",
+  fadeIn$y = "VerticalScroll_fadeIn_29606297",
+  fadeInThreeQuarters$y = "VerticalScroll_fadeInThreeQuarters_29606297",
+  fadeInHalf$y = "VerticalScroll_fadeInHalf_29606297",
+  fadeOut$y = "VerticalScroll_fadeOut_29606297",
+  fadeInWithScale$y = "VerticalScroll_fadeInWithScale_29606297",
+  slideUp$y = "VerticalScroll_slideUp_29606297",
+  scale$y = "VerticalScroll_scale_29606297",
+  raysAppearance$y = "VerticalScroll_raysAppearance_29606297",
+  rotate$y = "VerticalScroll_rotate_29606297",
+  glowAppearance$y = "VerticalScroll_glowAppearance_29606297",
+  highlightAppearance$y = "VerticalScroll_highlightAppearance_29606297",
+  blink$y = "VerticalScroll_blink_29606297",
+  slideUpIn$y = "VerticalScroll_slideUpIn_29606297",
+  styles$1g = {
+    content: content$c,
+    content__top: content__top,
+    content__bottom: content__bottom,
+    content__both: content__both,
+    defaultScroll: defaultScroll,
+    bar: bar,
+    area: area,
+    fadeIn: fadeIn$y,
+    fadeInThreeQuarters: fadeInThreeQuarters$y,
+    fadeInHalf: fadeInHalf$y,
+    fadeOut: fadeOut$y,
+    fadeInWithScale: fadeInWithScale$y,
+    slideUp: slideUp$y,
+    scale: scale$y,
+    raysAppearance: raysAppearance$y,
+    rotate: rotate$y,
+    "reverse-rotate": "VerticalScroll_reverse-rotate_29606297",
+    glowAppearance: glowAppearance$y,
+    highlightAppearance: highlightAppearance$y,
+    blink: blink$y,
+    slideUpIn: slideUpIn$y,
   },
-  splitChinese = (() => {
-    const e = new RegExp(
-      [
-        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-      ]
-        .map((e) => e.source)
-        .join("|"),
-      "gum",
+  DefaultScroll = ({
+    children: e,
+    className: t,
+    barClassNames: s,
+    areaClassName: a,
+    scrollClassName: r,
+    scrollClassNames: n,
+    onDrag: o,
+  }) => {
+    const { api: i } = useVerticalScroll(),
+      u = reactExports.useMemo(() => {
+        const e = s || {};
+        return { ...e, base: clsx(styles$1g.base, e.base) };
+      }, [s]);
+    return jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$1g.defaultScroll, t),
+      onWheel: i.handleMouseWheel,
+      children: [
+        jsxRuntimeExports.jsx("div", {
+          className: clsx(styles$1g.area, a),
+          children: jsxRuntimeExports.jsx(Area, { className: r, classNames: n, children: e }),
+        }),
+        jsxRuntimeExports.jsx(Bar, { onDrag: o, classNames: u }),
+      ],
+    });
+  },
+  Area = ({ className: e, classNames: t, children: s, ...a }) => {
+    const { api: r } = useVerticalScroll();
+    return (
+      reactExports.useEffect(() =>
+        createLayoutReadyInEffect$1(() => createLayoutReadyInEffect$1(r.recalculateContent)),
+      ),
+      jsxRuntimeExports.jsx("div", {
+        className: clsx(styles$1g.base, t?.wrapper, e),
+        ref: r.wrapperRef,
+        onWheel: r.handleMouseWheel,
+        children: jsxRuntimeExports.jsx("div", {
+          ...a,
+          className: clsx(styles$1g.content, t?.content),
+          ref: r.contentRef,
+          children: s,
+        }),
+      })
     );
-    return (t) =>
-      t
-        .replace(/&nbsp;/g, " ")
-        .replace(/ /g, " ")
-        .match(e);
-  })(),
-  CHINESE_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw"],
-  splitWords = (e, t = 0) => {
-    const s = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-    if (CHINESE_LANGUAGE_CODES.includes(s)) return splitChinese(e);
-    if ("ja" === s) {
-      return loadDefaultJapaneseParser()
-        .parse(e)
-        .map((e) => convertNbsp(e));
+  };
+function MaskArea({ classNames: e, ...t }) {
+  const { api: s } = useVerticalScroll(),
+    [a, r] = useScrollBounding(s);
+  return jsxRuntimeExports.jsx(Area, {
+    ...t,
+    classNames: {
+      ...e,
+      content: clsx(styles$1g[`content__${getMaskDirection(a, r)}`], e?.content),
+    },
+  });
+}
+function Base$u({ children: e }) {
+  const t = useApi(),
+    s = reactExports.useMemo(() => ({ api: t }), [t]);
+  return jsxRuntimeExports.jsx(Context$4.Provider, { value: s, children: e });
+}
+function Sprite(e) {
+  const t = e.sprite.frames[e.icon]?.frame;
+  return t
+    ? jsxRuntimeExports.jsx(Image$1, {
+        ...e,
+        path: e.path,
+        fit: `${e.sprite.meta.size.w}rem ${e.sprite.meta.size.h}rem`,
+        position: `${-t.x}rem ${-t.y}rem`,
+        width: t.w,
+        height: t.h,
+        className: e.className,
+      })
+    : (console.error(`Error in Sprite: Frame for icon "${e.icon}" not found in path "${e.path}"`),
+      null);
+}
+function useHoverState(e) {
+  const [t, s] = reactExports.useState(!1);
+  return [t ? `${e}_hover` : e, s];
+}
+Area.Default = DefaultScroll;
+class ErrorBoundary extends reactExports.Component {
+  state = { failure: !1, error: null };
+  static getDerivedStateFromError(e) {
+    return { failure: !0, error: e };
+  }
+  render() {
+    return this.state.failure
+      ? jsxRuntimeExports.jsxs("div", {
+          children: [
+            jsxRuntimeExports.jsx("h1", { children: "Something went wrong." }),
+            this.state.error &&
+              jsxRuntimeExports.jsx("pre", { children: this.state.error.toString() }),
+          ],
+        })
+      : this.props.children;
+  }
+}
+const splitPath = (e) => e.split("/").filter(Boolean);
+function matchPath(e, t) {
+  const { paths: s, exact: a = !1 } = t,
+    r = splitPath(e);
+  for (const n of s) {
+    const t = splitPath(n);
+    if (a && r.length !== t.length) continue;
+    const s = {};
+    let o = !0;
+    for (let e = 0; e < t.length; e++) {
+      const a = t[e],
+        n = r[e];
+      if (!n) {
+        o = !1;
+        break;
+      }
+      if (a.startsWith(":")) {
+        s[a.slice(1)] = n;
+      } else if (a !== n) {
+        o = !1;
+        break;
+      }
     }
-    return splitEuropean(e, t);
+    if (o) {
+      const o = `/${r.slice(0, t.length).join("/")}`,
+        i = e === o;
+      if (a && !i) continue;
+      return { params: s, exact: i, path: n, url: o };
+    }
+  }
+  return null;
+}
+const SwitchContext = reactExports.createContext(void 0);
+function useSwitch() {
+  const e = reactExports.useContext(SwitchContext);
+  if (!e) throw new Error("useSwitch must be used within a SwitchProvider");
+  return e;
+}
+function Switch({ children: e, route: t, fallback: s = null }) {
+  const { location: a } = useRouter();
+  let r;
+  return (
+    reactExports.Children.forEach(e, (e) => {
+      if (!reactExports.isValidElement(e))
+        return void console.error("Switch children must be valid elements");
+      if ("object" != typeof e.props || null === e.props)
+        return console.error("Child props is not an object or null", e);
+      const s = e.props,
+        n = t ? `${t}${s.path}` : s.path;
+      if (void 0 !== r) return;
+      const o = matchPath(a, { paths: [n], exact: s.exact });
+      o && (r = { child: e, match: o });
+    }),
+    r
+      ? jsxRuntimeExports.jsx(SwitchContext.Provider, {
+          value: { match: r.match },
+          children: r.child,
+        })
+      : s
+  );
+}
+function Route({ component: e, exact: t }) {
+  const { match: s } = useSwitch();
+  return jsxRuntimeExports.jsx(ErrorBoundary, {
+    children: jsxRuntimeExports.jsx(e, {
+      path: s.path,
+      location: s.url,
+      params: s.params,
+      exact: t ?? !1,
+    }),
+  });
+}
+const states = { default: "default", alert: "alert", error: "error", done: "done" },
+  messageTypes = { alert: "alert", error: "error" },
+  types$3 = {
+    text: "text",
+    password: "password",
+    number: "number",
+    htmlNumber: "htmlNumber",
+    email: "email",
+    integer: "integer",
   },
-  formatString = (e, t, s) =>
-    e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (s && e in s ? s[e] : splitWords(e, t)));
+  sizes$i = { medium: "medium", large: "large" },
+  icons = { search: "search" },
+  defaultConfig = { type: types$3.text, size: sizes$i.medium, state: states.default, disabled: !1 },
+  placeholderVisibility = { focusedOrValue: "focusedOrValue", value: "value" },
+  contextInstance = reactExports.createContext(null);
+function useInput() {
+  const e = reactExports.useContext(contextInstance);
+  if (!e) throw new Error("useInput must be used within an Input");
+  return e;
+}
+function useInputInstance({ value: e, size: t, type: s, state: a, disabled: r }) {
+  const n = reactExports.useRef(null),
+    [o, i] = reactExports.useState(!1),
+    u = useEvent((e) => {
+      if (!n.current) return;
+      const t = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
+      if (t) {
+        t.call(n.current, e);
+        const s = new Event("input", { bubbles: !0 });
+        n.current.dispatchEvent(s);
+      }
+    }),
+    l = r ?? defaultConfig.disabled,
+    c = usePrevious(l);
+  return (
+    reactExports.useLayoutEffect(() => {
+      !c && l && n.current?.blur();
+    }, [l, c]),
+    reactExports.useLayoutEffect(() => {
+      o ? (n.current?.blur(), setTimeout(() => n.current?.focus())) : n.current?.blur();
+    }, [o]),
+    reactExports.useMemo(
+      () => ({
+        value: e,
+        size: t ?? defaultConfig.size,
+        type: s ?? defaultConfig.type,
+        state: a ?? defaultConfig.state,
+        disabled: l,
+        focused: o,
+        setFocused: i,
+        inputRef: n,
+        setValue: u,
+        clear: () => u(""),
+        focus: () => i(!0),
+      }),
+      [l, o, u, t, a, s, e],
+    )
+  );
+}
+const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
+  icon$d = "Input_icon_ed3c6a4a",
+  clearButton = "Input_clearButton_d26b0bd5",
+  decoration = "Input_decoration_b561de7a",
+  decoration__focused = "Input_decoration__focused_494bd5d6",
+  decoration__alertState = "Input_decoration__alertState_a3c7d971",
+  decoration__errorState = "Input_decoration__errorState_a889ba00",
+  decoration__doneState = "Input_decoration__doneState_273150be",
+  decoration__disabled = "Input_decoration__disabled_74e25c08",
+  fieldWrapper = "Input_fieldWrapper_a4454e66",
+  field__mediumSize = "Input_field__mediumSize_7a1efba0",
+  placeholder__mediumSize = "Input_placeholder__mediumSize_2b8cbadc",
+  field__largeSize = "Input_field__largeSize_2b4f0b27",
+  placeholder__largeSize = "Input_placeholder__largeSize_6dbe7ba2",
+  field = "Input_field_7f2a0d1d",
+  field__focused = "Input_field__focused_5a0a7a6c",
+  field__disabled = "Input_field__disabled_15b2ae5c",
+  placeholder = "Input_placeholder_6ec6c232",
+  placeholder__disabled = "Input_placeholder__disabled_58b85003",
+  message = "Input_message_d4aa42ca",
+  message__visible = "Input_message__visible_a76c109c",
+  message__alertType = "Input_message__alertType_34d13f9f",
+  message__errorType = "Input_message__errorType_c0d7caba",
+  message__mediumSize = "Input_message__mediumSize_a2972578",
+  message__largeSize = "Input_message__largeSize_a5a35f73",
+  icon__focused = "Input_icon__focused_a76c109c",
+  icon__mediumSize = "Input_icon__mediumSize_f7d15078",
+  icon__largeSize = "Input_icon__largeSize_b80deb39",
+  icon__searchIcon = "Input_icon__searchIcon_494bd5d6",
+  icon__upscale = "Input_icon__upscale_494bd5d6",
+  clearButton__mediumSize = "Input_clearButton__mediumSize_d43f0915",
+  clearButton__largeSize = "Input_clearButton__largeSize_240e111e",
+  clearButton__visible = "Input_clearButton__visible_8d3756eb",
+  clearButton__upscale = "Input_clearButton__upscale_494bd5d6",
+  fadeIn$x = "Input_fadeIn_494bd5d6",
+  fadeInThreeQuarters$x = "Input_fadeInThreeQuarters_494bd5d6",
+  fadeInHalf$x = "Input_fadeInHalf_494bd5d6",
+  fadeOut$x = "Input_fadeOut_494bd5d6",
+  fadeInWithScale$x = "Input_fadeInWithScale_494bd5d6",
+  slideUp$x = "Input_slideUp_494bd5d6",
+  scale$x = "Input_scale_494bd5d6",
+  raysAppearance$x = "Input_raysAppearance_494bd5d6",
+  rotate$x = "Input_rotate_494bd5d6",
+  glowAppearance$x = "Input_glowAppearance_494bd5d6",
+  highlightAppearance$x = "Input_highlightAppearance_494bd5d6",
+  blink$x = "Input_blink_494bd5d6",
+  slideUpIn$x = "Input_slideUpIn_494bd5d6",
+  styles$1f = {
+    disabledOverlay: disabledOverlay$2,
+    icon: icon$d,
+    clearButton: clearButton,
+    decoration: decoration,
+    decoration__focused: decoration__focused,
+    decoration__alertState: decoration__alertState,
+    decoration__errorState: decoration__errorState,
+    decoration__doneState: decoration__doneState,
+    decoration__disabled: decoration__disabled,
+    fieldWrapper: fieldWrapper,
+    field__mediumSize: field__mediumSize,
+    placeholder__mediumSize: placeholder__mediumSize,
+    field__largeSize: field__largeSize,
+    placeholder__largeSize: placeholder__largeSize,
+    field: field,
+    field__focused: field__focused,
+    field__disabled: field__disabled,
+    placeholder: placeholder,
+    placeholder__disabled: placeholder__disabled,
+    message: message,
+    message__visible: message__visible,
+    message__alertType: message__alertType,
+    message__errorType: message__errorType,
+    message__mediumSize: message__mediumSize,
+    message__largeSize: message__largeSize,
+    icon__focused: icon__focused,
+    icon__mediumSize: icon__mediumSize,
+    icon__largeSize: icon__largeSize,
+    icon__searchIcon: icon__searchIcon,
+    icon__upscale: icon__upscale,
+    clearButton__mediumSize: clearButton__mediumSize,
+    clearButton__largeSize: clearButton__largeSize,
+    clearButton__visible: clearButton__visible,
+    clearButton__upscale: clearButton__upscale,
+    fadeIn: fadeIn$x,
+    fadeInThreeQuarters: fadeInThreeQuarters$x,
+    fadeInHalf: fadeInHalf$x,
+    fadeOut: fadeOut$x,
+    fadeInWithScale: fadeInWithScale$x,
+    slideUp: slideUp$x,
+    scale: scale$x,
+    raysAppearance: raysAppearance$x,
+    rotate: rotate$x,
+    "reverse-rotate": "Input_reverse-rotate_494bd5d6",
+    glowAppearance: glowAppearance$x,
+    highlightAppearance: highlightAppearance$x,
+    blink: blink$x,
+    slideUpIn: slideUpIn$x,
+  },
+  soundPlayEventTarget$1 = "Input:ClearButton",
+  ClearButton = reactExports.forwardRef(function ({ className: e, children: t, ...s }, a) {
+    const r = useSounds(),
+      { value: n, clear: o, size: i, disabled: u, focus: l } = useInput(),
+      c = useUpscale(void 0, styles$1f.clearButton__upscale);
+    return jsxRuntimeExports.jsx("button", {
+      ...s,
+      type: "button",
+      ref: a,
+      className: clsx(
+        styles$1f.clearButton,
+        n && !u && styles$1f.clearButton__visible,
+        styles$1f[`clearButton__${i}Size`],
+        c,
+        e,
+      ),
+      onMouseEnter: function (e) {
+        (r.play("mouse-enter", { target: soundPlayEventTarget$1, original: e }),
+          s.onMouseEnter?.(e));
+      },
+      onClick: function (e) {
+        (r.play("close", { target: soundPlayEventTarget$1, original: e }),
+          e.stopPropagation(),
+          n && o(),
+          l(),
+          s.onClick?.(e));
+      },
+      children: t,
+    });
+  }),
+  soundPlayEventTarget = "Input:Decoration",
+  Decoration = reactExports.forwardRef(function ({ className: e, children: t, ...s }, a) {
+    const r = useSounds(),
+      { state: n, disabled: o, focused: i, focus: u } = useInput();
+    return jsxRuntimeExports.jsxs("div", {
+      ...s,
+      ref: a,
+      className: clsx(
+        styles$1f.decoration,
+        styles$1f[`decoration__${n}State`],
+        o && styles$1f.decoration__disabled,
+        i && styles$1f.decoration__focused,
+        e,
+      ),
+      onMouseEnter: function (e) {
+        (r.play("mouse-enter", { target: soundPlayEventTarget, original: e }), s.onMouseEnter?.(e));
+      },
+      onClick: function (e) {
+        (r.play("click", { target: soundPlayEventTarget, original: e }), u(), s.onClick?.(e));
+      },
+      children: [jsxRuntimeExports.jsx("div", { className: styles$1f.disabledOverlay }), t],
+    });
+  }),
+  allowSeparators = new Set([",", "."]);
+function findFirstSeparatorIndex(e) {
+  for (let t = 0; t < e.length; t++) {
+    const s = e[t];
+    if (allowSeparators.has(s)) return t;
+  }
+}
+function cleanInputNumber(e) {
+  const t = e.replace(/[^0-9,.]/g, "");
+  if ("0" === t) return t;
+  const s = t.replace(/^0+(?!\b)/, "").replace(/(,|\.){2,}/g, "$1"),
+    a = findFirstSeparatorIndex(s);
+  if (void 0 === a) return s;
+  {
+    const e = s.slice(0, a),
+      t = s.slice(a + 1),
+      r = e.replace(/[,.]/g, ""),
+      n = t.replace(/[,.]/g, "");
+    return `${0 === r.length ? "0" : r}.${n}`;
+  }
+}
+function cleanInputInteger(e) {
+  return e.replace(/[^0-9]/g, "").replace(/^0+(?!\b)/, "");
+}
+const Placeholder = reactExports.forwardRef(function (
+    { visibility: e = placeholderVisibility.focusedOrValue, className: t, children: s, ...a },
+    r,
+  ) {
+    const { focused: n, value: o, size: i, disabled: u } = useInput();
+    if (!{ focusedOrValue: n || o, value: o }[e])
+      return jsxRuntimeExports.jsx("div", {
+        ...a,
+        ref: r,
+        className: clsx(
+          styles$1f.placeholder,
+          u && styles$1f.placeholder__disabled,
+          styles$1f[`placeholder__${i}Size`],
+          t,
+        ),
+        children: s,
+      });
+  }),
+  typeToHtmlType = {
+    text: "text",
+    password: "password",
+    number: "text",
+    email: "email",
+    htmlNumber: "number",
+    integer: "text",
+  },
+  Field = reactExports.forwardRef(function (
+    {
+      className: e,
+      classNames: t,
+      wrapperRef: s,
+      placeholderRef: a,
+      placeholderVisibility: r,
+      children: n,
+      ...o
+    },
+    i,
+  ) {
+    const {
+      type: u,
+      value: l,
+      disabled: c,
+      size: d,
+      inputRef: p,
+      focused: _,
+      setFocused: m,
+    } = useInput();
+    return jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$1f.fieldWrapper, t?.wrapper),
+      ref: s,
+      children: [
+        jsxRuntimeExports.jsx("input", {
+          ...o,
+          "data-name": "Input",
+          ref: assignRefs([i, p]),
+          value: l,
+          disabled: c,
+          type: typeToHtmlType[u] ?? u,
+          className: clsx(
+            styles$1f.field,
+            styles$1f[`field__${d}Size`],
+            _ && styles$1f.field__focused,
+            c && styles$1f.field__disabled,
+            e,
+          ),
+          onChange: function (e) {
+            if (c) return (e.preventDefault(), void p.current?.blur());
+            const { value: t } = e.target;
+            (u === types$3.number
+              ? (e.target.value = cleanInputNumber(t))
+              : u === types$3.integer && (e.target.value = cleanInputInteger(t)),
+              o.onChange?.(e));
+          },
+          onFocus: function (e) {
+            (m(!0), o.onFocus?.(e));
+          },
+          onBlur: function (e) {
+            (m(!1), o.onBlur?.(e));
+          },
+          onDoubleClick: function (e) {
+            (p.current?.select(), o.onDoubleClick?.(e));
+          },
+        }),
+        "string" == typeof n || "number" == typeof n
+          ? jsxRuntimeExports.jsx(Placeholder, {
+              className: t?.placeholder,
+              ref: a,
+              visibility: r,
+              children: n,
+            })
+          : n,
+      ],
+    });
+  }),
+  iconsSet = new Set(Object.values(icons)),
+  Icon = reactExports.forwardRef(function ({ className: e, icon: t, children: s, ...a }, r) {
+    const { size: n, focused: o } = useInput(),
+      i = useUpscale(void 0, styles$1f.icon__upscale);
+    return jsxRuntimeExports.jsx("div", {
+      ...a,
+      ref: r,
+      className: clsx(
+        styles$1f.icon,
+        styles$1f[`icon__${n}Size`],
+        o && styles$1f.icon__focused,
+        t && iconsSet.has(t) && styles$1f[`icon__${t}Icon`],
+        i,
+        e,
+      ),
+      style: t && !iconsSet.has(t) ? { "--background-image": `url(${t})` } : void 0,
+      children: s,
+    });
+  }),
+  Message = reactExports.forwardRef(function (
+    { className: e, type: t = messageTypes.alert, visible: s = !0, children: a, ...r },
+    n,
+  ) {
+    const { size: o } = useInput();
+    return jsxRuntimeExports.jsx("div", {
+      ...r,
+      ref: n,
+      className: clsx(
+        styles$1f.message,
+        s && styles$1f.message__visible,
+        styles$1f[`message__${t}Type`],
+        styles$1f[`message__${o}Size`],
+        e,
+      ),
+      children: a,
+    });
+  });
+function Provider({ children: e, ...t }) {
+  return jsxRuntimeExports.jsx(contextInstance.Provider, {
+    value: useInputInstance(t),
+    children: e,
+  });
+}
+const Input = reactExports.forwardRef(function (
+  { value: e, state: t, disabled: s, type: a, size: r, ...n },
+  o,
+) {
+  return jsxRuntimeExports.jsx(Provider, {
+    value: e,
+    type: a,
+    size: r,
+    state: t,
+    disabled: s,
+    children: jsxRuntimeExports.jsx(Decoration, {
+      children: jsxRuntimeExports.jsx(Field, { ...n, ref: o }),
+    }),
+  });
+});
+((Input.types = types$3),
+  (Input.messageTypes = messageTypes),
+  (Input.sizes = sizes$i),
+  (Input.states = states),
+  (Input.icons = icons),
+  (Input.Provider = Provider),
+  (Input.Decoration = Decoration),
+  (Input.Field = Field),
+  (Input.Placeholder = Placeholder),
+  (Input.Message = Message),
+  (Input.Icon = Icon),
+  (Input.ClearButton = ClearButton));
+const toggleThemes = { primary: "primary", custom: "custom" },
+  toggleSizes = { extraSmall: "extraSmall", small: "small", medium: "medium" },
+  base$15 = "Toggle_cdf77db0",
+  base__fullSizeContent = "Toggle_base__fullSizeContent_1b52d9ec",
+  base__activated = "Toggle_base__activated_d584e080",
+  base__disabled$8 = "Toggle_base__disabled_b564a69b",
+  background$8 = "Toggle_background_78cd67c0",
+  border$7 = "Toggle_border_3d0d0d39",
+  bulb = "Toggle_bulb_fe6d0fba",
+  overlay$4 = "Toggle_overlay_e2999686",
+  content$b = "Toggle_content_17eff4d2",
+  styles$1e = {
+    base: base$15,
+    "base__size-small": "Toggle_base__size-small_b76142a1",
+    "base__size-medium": "Toggle_base__size-medium_a0d408f5",
+    base__fullSizeContent: base__fullSizeContent,
+    "base__theme-primary": "Toggle_base__theme-primary_3e3de333",
+    base__activated: base__activated,
+    base__disabled: base__disabled$8,
+    background: background$8,
+    border: border$7,
+    bulb: bulb,
+    overlay: overlay$4,
+    content: content$b,
+  },
+  Base$t = defineStyledComponent("Toggle", styles$1e.base, {
+    variants: {
+      theme: {
+        [toggleThemes.primary]: styles$1e["base__theme-primary"],
+        [toggleThemes.custom]: void 0,
+      },
+      size: {
+        [toggleSizes.extraSmall]: styles$1e["base__size-extraSmall"],
+        [toggleSizes.small]: styles$1e["base__size-small"],
+        [toggleSizes.medium]: styles$1e["base__size-medium"],
+      },
+      activated: { true: styles$1e.base__activated },
+      disabled: { true: styles$1e.base__disabled },
+    },
+    defaultVariants: { theme: toggleThemes.primary, size: toggleSizes.extraSmall },
+  }),
+  ToggleBase = reactExports.forwardRef(function (e, t) {
+    const s = useSounds();
+    return jsxRuntimeExports.jsx(Base$t, {
+      ...e,
+      ref: t,
+      onMouseEnter: function (t) {
+        (s.play("mouse-enter", { target: Base$t.displayName, original: t }), e.onMouseEnter?.(t));
+      },
+      onClick: function (t) {
+        (s.play("click", { target: Base$t.displayName, original: t }), e.onClick?.(t));
+      },
+      children: e.children,
+    });
+  }),
+  Toggle = reactExports.forwardRef(function (
+    {
+      children: e,
+      size: t = toggleSizes.extraSmall,
+      theme: s = toggleThemes.primary,
+      fullSizeContent: a,
+      classNames: r,
+      className: n,
+      ...o
+    },
+    i,
+  ) {
+    return jsxRuntimeExports.jsxs(ToggleBase, {
+      ...o,
+      ref: i,
+      size: t,
+      theme: s,
+      className: clsx(n, a && styles$1e.base__fullSizeContent, r?.base),
+      children: [
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1e.border, r?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1e.background, r?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1e.bulb, r?.bulb) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$1e.overlay, r?.overlay) }),
+        jsxRuntimeExports.jsx("div", {
+          className: clsx(styles$1e.content, r?.content),
+          children: e,
+        }),
+      ],
+    });
+  });
+((Toggle.themes = toggleThemes), (Toggle.sizes = toggleSizes));
+const base$14 = "VehicleLevel_3c938122",
+  styles$1d = { base: base$14 },
+  numberTypes = { arabic: "arabic", roman: "roman" };
+function getLevelType(e, t) {
+  return e || (t ? numberTypes.arabic : numberTypes.roman);
+}
+const VehicleLevel = reactExports.forwardRef(function ({ value: e, numberType: t, ...s }, a) {
+  const r = getLevelType(t, useRomanForbidden()) === numberTypes.roman ? arabicToRoman(e) : e;
+  return jsxRuntimeExports.jsx("div", {
+    ...s,
+    "data-name": "VehicleLevel",
+    className: clsx(styles$1d.base, s.className),
+    ref: a,
+    children: r,
+  });
+});
+VehicleLevel.numberTypes = numberTypes;
+const SvgAssaultX16X16 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 16,
+        height: 16,
+        viewBox: "0 0 16 16",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M14.1504 5.80273L11.6055 13.9912H3.36914L0.824219 5.80273L7.4873 0.741211L14.1504 5.80273ZM7.41113 3.90625L3.72656 6.70508L3.24707 6.62598L3.67969 6.85547L5.08789 11.3848L4.86719 11.8369L5.20898 11.4785H9.76562L10.1074 11.8369L9.88672 11.3857L11.2949 6.85449L11.7275 6.62598L11.248 6.70508L7.5625 3.90625L7.4873 3.40527L7.41113 3.90625Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgAssaultX24X24 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M20.1621 8.9707L16.8516 19.0029H6.13574L2.82422 8.9707L11.4932 2.77051L20.1621 8.9707ZM11.3945 6.64551L6.59961 10.0762L5.97656 9.97852L6.53906 10.2598L8.37012 15.8086L8.08398 16.3623L8.53027 15.9219H14.4561L14.9023 16.3623L14.6152 15.8086L16.4463 10.2598L17.0098 9.97852L16.3857 10.0762L11.5908 6.64551L11.4932 6.0332L11.3945 6.64551Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgAssaultX32X32 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 32,
+        height: 32,
+        viewBox: "0 0 32 32",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M14.9795 5.18837C15.3285 4.93721 15.7995 4.93721 16.1485 5.18837L25.708 12.0692C26.0618 12.3239 26.2101 12.7781 26.0742 13.1923L22.4268 24.3143C22.292 24.7248 21.9086 25.0018 21.4766 25.0018H9.6514C9.21947 25.0017 8.83595 24.7247 8.7012 24.3143L5.05374 13.1923C4.9179 12.7781 5.06622 12.3239 5.41995 12.0692L14.9795 5.18837ZM15.4424 9.5995L9.50198 13.8749L8.73147 13.7538L9.42776 14.1044L11.6963 21.0214L11.3408 21.7118L11.8936 21.163H19.2354L19.7881 21.7118L19.4317 21.0214L21.7002 14.1044L22.3985 13.7538L21.626 13.8749L15.6856 9.5995L15.5645 8.83485L15.4424 9.5995Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgAssaultX48X48 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 48,
+        height: 48,
+        viewBox: "0 0 48 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M22.9113 8.4273C23.2618 8.17266 23.7366 8.17268 24.0871 8.4273L38.6037 18.9742C38.9542 19.2288 39.1008 19.6803 38.967 20.0923L33.4221 37.1578C33.2882 37.5696 32.9049 37.849 32.4719 37.8492H14.5275C14.0943 37.8492 13.7102 37.5698 13.5763 37.1578L8.03143 20.0923C7.89756 19.6803 8.04425 19.2288 8.39471 18.9742L22.9113 8.4273ZM23.3215 15.1294L14.6418 21.4351L13.5129 21.2554L14.5314 21.773L17.8469 31.9771L17.3273 32.9957L18.1349 32.1861H28.8635L29.6711 32.9957L29.1506 31.9771L32.466 21.773L33.4855 21.2554L32.3556 21.4351L23.676 15.1294L23.4992 14.0005L23.3215 15.1294Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgBreakX16X16 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 16,
+        height: 16,
+        viewBox: "0 0 16 16",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M7.5 2L14.5 9H11L7.5 5.5L4 9H0.5L7.5 2Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M11 11L7.5 7.5L4 11V14.5L7.5 11L11 14.5V11Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgBreakX24X24 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M11.5 4L20.5 13H16L11.5 8.5L7 13H2.5L11.5 4Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M16 16.5L11.5 12L7 16.5V21L11.5 16.5L16 21V16.5Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgBreakX32X32 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 32,
+        height: 32,
+        viewBox: "0 0 32 32",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M15.5 5.5L27 17H21.2071C21.0745 17 20.9473 16.9473 20.8536 16.8536L15.5 11.5L10.1464 16.8536C10.0527 16.9473 9.9255 17 9.79289 17H4L15.5 5.5Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M21 21.2071C21 21.0745 20.9473 20.9473 20.8536 20.8536L15.5 15.5L10.1464 20.8536C10.0527 20.9473 10 21.0745 10 21.2071V27L15.5 21.5L21 27V21.2071Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgBreakX48X48 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 48,
+        height: 48,
+        viewBox: "0 0 48 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M23.5 8.5L40 25H32.4142C32.149 25 31.8946 24.8946 31.7071 24.7071L23.5 16.5L15.2929 24.7071C15.1054 24.8946 14.851 25 14.5858 25H7L23.5 8.5Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M31 29.4167C31 29.15 30.8935 28.8944 30.7041 28.7066L23.5 21.5625L16.2959 28.7066C16.1065 28.8944 16 29.15 16 29.4167V37L23.5 29.5L31 37V29.4167Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgScoutX16X16 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 16,
+        height: 16,
+        viewBox: "0 0 16 16",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M8 7C9.65685 7 11 8.34315 11 10C11 11.6569 9.65685 13 8 13C6.34315 13 5 11.6569 5 10C5 8.34315 6.34315 7 8 7ZM8 3C12.7006 3 16 7 16 7L14.5 9C14.5 9 12.0087 5.53809 8 5.53809C3.99128 5.53809 1.5 9 1.5 9L0 7C0 7 3.29939 3 8 3Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgScoutX24X24 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M12 11C14.2091 11 16 12.7909 16 15C16 17.2091 14.2091 19 12 19C9.79086 19 8 17.2091 8 15C8 12.7909 9.79086 11 12 11ZM12 6C17.8753 6 21.9993 10.9992 22 11L20 13C19.9986 12.9981 17.0097 8.96191 12 8.96191C6.98995 8.96191 4.00101 12.9986 4 13L2 11C2.00133 10.9984 6.12518 6 12 6Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgScoutX32X32 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 32,
+        height: 32,
+        viewBox: "0 0 32 32",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M16 15C18.7614 15 21 17.2386 21 20C21 22.7614 18.7614 25 16 25C13.2386 25 11 22.7614 11 20C11 17.2386 13.2386 15 16 15ZM16 8C23.6385 8 29 15 29 15L26.5 17.5C26.5 17.5 22.5142 12 16 12C9.48583 12 5.5 17.5 5.5 17.5L3 15C3 15 8.36151 8 16 8Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgScoutX48X48 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 48,
+        height: 48,
+        viewBox: "0 0 48 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M24 22C27.866 22 31 25.134 31 29C31 32.866 27.866 36 24 36C20.134 36 17 32.866 17 29C17 25.134 20.134 22 24 22ZM24 13C34.5764 13 42 22 42 22L38.5947 26C38.5947 26 33.0196 18.5 24 18.5C14.9804 18.5 9.40527 26 9.40527 26L6 22C6 22 13.4236 13 24 13Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSniperX16X16 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 16,
+        height: 16,
+        viewBox: "0 0 16 16",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M6.09375 2V5.6875L7.5 7.09375L8.90625 5.6875V2H6.09375Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M6.09375 15V11.3125L7.5 9.90625L8.90625 11.3125V15H6.09375Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M4.6875 9.90625H1V7.09375H4.6875L6.09375 8.5L4.6875 9.90625Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M14 9.90625H10.3125L8.90625 8.5L10.3125 7.09375H14V9.90625Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSniperX24X24 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", { d: "M10 4V9L11.5 10.5L13 9V4H10Z", fill: "#FFB34D" }),
+      reactExports.createElement("path", {
+        d: "M10 21V16L11.5 14.5L13 16V21H10Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", { d: "M8 14H3V11H8L9.5 12.5L8 14Z", fill: "#FFB34D" }),
+      reactExports.createElement("path", {
+        d: "M20 14H15L13.5 12.5L15 11H20V14Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSniperX32X32 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 32,
+        height: 32,
+        viewBox: "0 0 32 32",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M15.5003 13.5L13 11V4.5C13 4.22386 13.2239 4 13.5 4H17.5C17.7761 4 18 4.22386 18 4.5V11L15.5003 13.5Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M15.5 19.5L13 22V28.5C13 28.7761 13.2239 29 13.5 29H17.5C17.7761 29 18 28.7761 18 28.5V22L15.5 19.5Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M21 14L18.5 16.5L21 19H27.5C27.7761 19 28 18.7761 28 18.5V14.5C28 14.2239 27.7761 14 27.5 14H21Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M12.5 16.5L10 14H3.50005C3.22391 14 3.00005 14.2239 3.00005 14.5V18.5C3.00005 18.7761 3.22391 19 3.50005 19H10L12.5 16.5Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSniperX48X48 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 48,
+        height: 48,
+        viewBox: "0 0 48 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M23.5 21L20 17.5V9.5C20 9.22386 20.2239 9 20.5 9H26.5C26.7761 9 27 9.22386 27 9.5V17.5L23.5 21Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M23.5 27.6912L20 31.5V39.5C20 39.7761 20.2239 40 20.5 40H26.5C26.7761 40 27 39.7761 27 39.5V31.5L23.5 27.6912Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M30.5 21L27 24.5L30.5 28H38.5C38.7761 28 39 27.7761 39 27.5V21.5C39 21.2239 38.7761 21 38.5 21H30.5Z",
+        fill: "#FFB34D",
+      }),
+      reactExports.createElement("path", {
+        d: "M20 24.5L16.5 21H8.5C8.22386 21 8 21.2239 8 21.5V27.5C8 27.7761 8.22386 28 8.5 28H16.5L20 24.5Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSupportX16X16 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 16,
+        height: 16,
+        viewBox: "0 0 16 16",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M5.5 8L6 7H11.7998C13.1395 7 15 9.5 15 9.5C15 9.5 13.03 12 11.7998 12H6L5.5 11L5 12H4V7H5L5.5 8ZM2.5 4L3 3H8.7998C9.75432 3 10.9718 4.27022 11.5938 5H6L5.5 6L5 5H2V8H1V3H2L2.5 4Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSupportX24X24 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M10.2109 11.167L10.9473 10H17.5791C19.2244 10.0002 22 13.5156 22 13.5156C21.9833 13.5356 19.0856 16.9998 17.5791 17H10.9473L10.2109 15.9502L9.47363 17H8V10H9.47363L10.2109 11.167ZM6.2002 7.16699L6.93359 6H13.5332C14.7108 6 16.4689 7.8196 17.3643 8.84082C16.7384 8.35629 16.102 8.00007 15.5791 8H10.4209L9.68457 9.16699L8.94727 8H6V12.2363L5.4668 13H4V6H5.4668L6.2002 7.16699Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSupportX32X32 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 32,
+        height: 32,
+        viewBox: "0 0 32 32",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M11.2324 13C11.3996 13 11.5557 13.0836 11.6484 13.2227L12.084 13.876C12.2819 14.1728 12.7181 14.1728 12.916 13.876L13.3516 13.2227C13.4443 13.0836 13.6004 13 13.7676 13H23C25.2329 13 29 18.0225 29 18.0225C28.9703 18.0599 25.0425 23 23 23H13.7676C13.6004 23 13.4443 22.9164 13.3516 22.7773L12.916 22.124C12.7181 21.8272 12.2819 21.8272 12.084 22.124L11.6484 22.7773C11.5557 22.9164 11.3996 23 11.2324 23H10.5C10.2239 23 10 22.7761 10 22.5V13.5C10 13.2239 10.2239 13 10.5 13H11.2324ZM7.23242 8C7.39959 8 7.55571 8.08356 7.64844 8.22266L8.08398 8.87598C8.2819 9.17282 8.7181 9.17282 8.91602 8.87598L9.35156 8.22266C9.44429 8.08356 9.60041 8 9.76758 8H19C20.2622 8 22.0147 9.60475 23.2998 11H13.7676C13.6004 11 13.4443 11.0836 13.3516 11.2227L12.916 11.876C12.7181 12.1728 12.2819 12.1728 12.084 11.876L11.6484 11.2227C11.5557 11.0836 11.3996 11 11.2324 11H8.5C8.22386 11 8 11.2239 8 11.5V17.25L7.64844 17.7773C7.55571 17.9164 7.39959 18 7.23242 18H6.5C6.22386 18 6 17.7761 6 17.5V8.5C6 8.22386 6.22386 8 6.5 8H7.23242Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgSupportX48X48 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 48,
+        height: 48,
+        viewBox: "0 0 48 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M32.4476 33H20.5C20.1852 33 19.8889 32.8518 19.7 32.6L19.3 32.0667C18.9 31.5333 18.1 31.5333 17.7 32.0667L17.3 32.6C17.1111 32.8518 16.8148 33 16.5 33H16C15.4477 33 15 32.5523 15 32V21C15 20.4477 15.4477 20 16 20H16.5C16.8148 20 17.1111 20.1482 17.3 20.4L17.7007 20.9343C18.1005 21.4673 18.9 21.4677 19.3002 20.935L19.7 20.4029C19.8889 20.1515 20.185 20.0036 20.4995 20.0036H32.4476C35.797 20.0036 41 26.5 41 26.5C41 26.5 35.5231 33 32.4476 33ZM19.3 17.9333C18.9 18.4667 18.1 18.4667 17.7 17.9333L17.3 17.4C17.1111 17.1482 16.8148 17 16.5 17H13C12.4477 17 12 17.4477 12 18V23.6667C12 23.883 11.9298 24.0936 11.8 24.2667L10.7965 25.6047C10.6096 25.8539 10.3173 26.0017 10.0059 26.0047L9.00945 26.0141C8.4535 26.0193 8 25.5701 8 25.0141V14C8 13.4477 8.44772 13 9 13H9.95334C10.294 13 10.6112 13.1734 10.7951 13.4602L11.1582 14.0264C11.5517 14.6399 12.4483 14.6399 12.8418 14.0264L13.2049 13.4602C13.3888 13.1734 13.706 13 14.0467 13H25.0638C26.8964 13 29.3189 15.119 31.1094 17.0382L20.5021 17.0017C20.1862 17.0006 19.8883 17.1489 19.6987 17.4017L19.3 17.9333Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgUniversalX16X16 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 16,
+        height: 16,
+        viewBox: "0 0 16 16",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M12.667 4.23145C13.4999 5.26163 14 6.57205 14 8C14 11.3137 11.3137 14 8 14C6.94694 14 5.95792 13.7275 5.09766 13.251L6.95605 11.0381C7.2835 11.1506 7.63439 11.2129 8 11.2129C9.77449 11.2129 11.2129 9.77449 11.2129 8C11.2129 7.43539 11.0663 6.9054 10.8105 6.44434L12.667 4.23145ZM8 2C9.05259 2 10.0414 2.27194 10.9014 2.74805L9.04395 4.96191C8.7165 4.84942 8.36561 4.78711 8 4.78711C6.22551 4.78711 4.78711 6.22551 4.78711 8C4.78711 8.56461 4.9337 9.0946 5.18945 9.55566L3.33203 11.7686C2.49936 10.7384 2 9.42773 2 8C2 4.68629 4.68629 2 8 2Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgUniversalX24X24 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M18.2227 6.97559C19.3331 8.34914 20 10.0962 20 12C20 16.4183 16.4183 20 12 20C10.5962 20 9.27769 19.637 8.13086 19.002L10.4912 16.1895C10.9624 16.3592 11.4703 16.4521 12 16.4521C14.4588 16.4521 16.4521 14.4588 16.4521 12C16.4521 11.1947 16.2373 10.4399 15.8633 9.78809L18.2227 6.97559ZM12 4C13.4036 4 14.7224 4.36214 15.8691 4.99707L13.5078 7.81055C13.0369 7.64102 12.5294 7.54785 12 7.54785C9.54116 7.54785 7.54785 9.54116 7.54785 12C7.54785 12.8053 7.76274 13.5601 8.13672 14.2119L5.77637 17.0244C4.66615 15.6509 4 13.9036 4 12C4 7.58172 7.58172 4 12 4Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgUniversalX32X32 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 32,
+        height: 32,
+        viewBox: "0 0 32 32",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M23.7793 9.71777C25.1676 11.4348 26 13.6199 26 16C26 21.5228 21.5228 26 16 26C14.2452 26 12.5967 25.5468 11.1631 24.7529L13.8408 21.5615C14.5106 21.8217 15.2383 21.9658 16 21.9658C19.2951 21.9658 21.9658 19.2951 21.9658 16C21.9658 14.8676 21.6504 13.8091 21.1025 12.9072L23.7793 9.71777ZM16 6C17.7543 6 19.4026 6.4526 20.8359 7.24609L18.1582 10.4375C17.4888 10.1776 16.7613 10.0342 16 10.0342C12.7049 10.0342 10.0342 12.7049 10.0342 16C10.0342 17.1319 10.3491 18.1901 10.8965 19.0918L8.21973 22.2812C6.83192 20.5644 6 18.3796 6 16C6 10.4772 10.4772 6 16 6Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  SvgUniversalX48X48 = (e) =>
+    reactExports.createElement(
+      "svg",
+      {
+        width: 48,
+        height: 48,
+        viewBox: "0 0 48 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        ...e,
+      },
+      reactExports.createElement("path", {
+        d: "M34.1123 15.834C35.9171 18.0661 37 20.906 37 24C37 31.1797 31.1797 37 24 37C21.7188 37 19.5756 36.411 17.7119 35.3789L21.7363 30.583C22.4462 30.8271 23.2073 30.9619 24 30.9619C27.8447 30.9619 30.9619 27.8447 30.9619 24C30.9619 22.7763 30.6443 21.6271 30.0898 20.6279L34.1123 15.834ZM24 11C26.2808 11 28.4237 11.5884 30.2871 12.6201L26.2627 17.416C25.5532 17.1722 24.7923 17.0381 24 17.0381C20.1553 17.0381 17.0381 20.1553 17.0381 24C17.0381 25.2232 17.3551 26.3722 17.9092 27.3711L13.8867 32.165C12.0825 29.9331 11 27.0935 11 24C11 16.8203 16.8203 11 24 11Z",
+        fill: "#FFB34D",
+      }),
+    ),
+  ROLE_TO_COMPONENT = {
+    [`${roles$1.assault}_x16x16`]: SvgAssaultX16X16,
+    [`${roles$1.break}_x16x16`]: SvgBreakX16X16,
+    [`${roles$1.sniper}_x16x16`]: SvgSniperX16X16,
+    [`${roles$1.support}_x16x16`]: SvgSupportX16X16,
+    [`${roles$1.universal}_x16x16`]: SvgUniversalX16X16,
+    [`${roles$1.scout}_x16x16`]: SvgScoutX16X16,
+    [`${roles$1.assault}_x24x24`]: SvgAssaultX24X24,
+    [`${roles$1.break}_x24x24`]: SvgBreakX24X24,
+    [`${roles$1.sniper}_x24x24`]: SvgSniperX24X24,
+    [`${roles$1.support}_x24x24`]: SvgSupportX24X24,
+    [`${roles$1.universal}_x24x24`]: SvgUniversalX24X24,
+    [`${roles$1.scout}_x24x24`]: SvgScoutX24X24,
+    [`${roles$1.assault}_x32x32`]: SvgAssaultX32X32,
+    [`${roles$1.break}_x32x32`]: SvgBreakX32X32,
+    [`${roles$1.sniper}_x32x32`]: SvgSniperX32X32,
+    [`${roles$1.support}_x32x32`]: SvgSupportX32X32,
+    [`${roles$1.universal}_x32x32`]: SvgUniversalX32X32,
+    [`${roles$1.scout}_x32x32`]: SvgScoutX32X32,
+    [`${roles$1.assault}_x48x48`]: SvgAssaultX48X48,
+    [`${roles$1.break}_x48x48`]: SvgBreakX48X48,
+    [`${roles$1.sniper}_x48x48`]: SvgSniperX48X48,
+    [`${roles$1.support}_x48x48`]: SvgSupportX48X48,
+    [`${roles$1.universal}_x48x48`]: SvgUniversalX48X48,
+    [`${roles$1.scout}_x48x48`]: SvgScoutX48X48,
+  },
+  base$13 = "VehicleRole_e70537d3",
+  base__x16x16 = "VehicleRole_base__x16x16_f444f190",
+  base__x24x24$1 = "VehicleRole_base__x24x24_cc02d077",
+  base__x32x32 = "VehicleRole_base__x32x32_2180a099",
+  base__x48x48$1 = "VehicleRole_base__x48x48_2a01e86c",
+  icon$c = "VehicleRole_icon_7f7f6256",
+  fadeIn$w = "VehicleRole_fadeIn_741b56a9",
+  fadeInThreeQuarters$w = "VehicleRole_fadeInThreeQuarters_741b56a9",
+  fadeInHalf$w = "VehicleRole_fadeInHalf_741b56a9",
+  fadeOut$w = "VehicleRole_fadeOut_741b56a9",
+  fadeInWithScale$w = "VehicleRole_fadeInWithScale_741b56a9",
+  slideUp$w = "VehicleRole_slideUp_741b56a9",
+  scale$w = "VehicleRole_scale_741b56a9",
+  raysAppearance$w = "VehicleRole_raysAppearance_741b56a9",
+  rotate$w = "VehicleRole_rotate_741b56a9",
+  glowAppearance$w = "VehicleRole_glowAppearance_741b56a9",
+  highlightAppearance$w = "VehicleRole_highlightAppearance_741b56a9",
+  blink$w = "VehicleRole_blink_741b56a9",
+  slideUpIn$w = "VehicleRole_slideUpIn_741b56a9",
+  styles$1c = {
+    base: base$13,
+    base__x16x16: base__x16x16,
+    base__x24x24: base__x24x24$1,
+    base__x32x32: base__x32x32,
+    base__x48x48: base__x48x48$1,
+    icon: icon$c,
+    fadeIn: fadeIn$w,
+    fadeInThreeQuarters: fadeInThreeQuarters$w,
+    fadeInHalf: fadeInHalf$w,
+    fadeOut: fadeOut$w,
+    fadeInWithScale: fadeInWithScale$w,
+    slideUp: slideUp$w,
+    scale: scale$w,
+    raysAppearance: raysAppearance$w,
+    rotate: rotate$w,
+    "reverse-rotate": "VehicleRole_reverse-rotate_741b56a9",
+    glowAppearance: glowAppearance$w,
+    highlightAppearance: highlightAppearance$w,
+    blink: blink$w,
+    slideUpIn: slideUpIn$w,
+  },
+  sizes$h = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
+  VehicleRole = reactExports.forwardRef(function (
+    { roleKey: e, size: t = sizes$h.x24x24, classNames: s, ...a },
+    r,
+  ) {
+    const n = ROLE_TO_COMPONENT[`${e}_${t}`];
+    if (n)
+      return jsxRuntimeExports.jsx("div", {
+        ...a,
+        ref: r,
+        className: clsx(styles$1c.base, styles$1c[`base__${t}`], s?.base),
+        children: jsxRuntimeExports.jsx(n, { className: clsx(styles$1c.icon, s?.icon) }),
+      });
+    console.error(`Unknown vehicle role type ${e} with size ${t}`);
+  });
+VehicleRole.sizes = sizes$h;
+const sizes$g = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+  upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
+  mapTypes = {
+    [types$4.lightTank]: "light_tank",
+    [types$4.mediumTank]: "medium_tank",
+    [types$4.heavyTank]: "heavy_tank",
+    [types$4.SPG]: "spg",
+    [types$4["AT-SPG"]]: "tank_destroyer",
+  },
+  base$12 = "VehicleType_30b4aab0",
+  base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
+  base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
+  base__x64x64 = "VehicleType_base__x64x64_bb9b890",
+  base__x96x96 = "VehicleType_base__x96x96_919f9f92",
+  base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
+  base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
+  base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
+  base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
+  icon$b = "VehicleType_icon_b15d2628",
+  fadeIn$v = "VehicleType_fadeIn_4e0d61e4",
+  fadeInThreeQuarters$v = "VehicleType_fadeInThreeQuarters_4e0d61e4",
+  fadeInHalf$v = "VehicleType_fadeInHalf_4e0d61e4",
+  fadeOut$v = "VehicleType_fadeOut_4e0d61e4",
+  fadeInWithScale$v = "VehicleType_fadeInWithScale_4e0d61e4",
+  slideUp$v = "VehicleType_slideUp_4e0d61e4",
+  scale$v = "VehicleType_scale_4e0d61e4",
+  raysAppearance$v = "VehicleType_raysAppearance_4e0d61e4",
+  rotate$v = "VehicleType_rotate_4e0d61e4",
+  glowAppearance$v = "VehicleType_glowAppearance_4e0d61e4",
+  highlightAppearance$v = "VehicleType_highlightAppearance_4e0d61e4",
+  blink$v = "VehicleType_blink_4e0d61e4",
+  slideUpIn$v = "VehicleType_slideUpIn_4e0d61e4",
+  styles$1b = {
+    base: base$12,
+    base__x24x24: base__x24x24,
+    base__x48x48: base__x48x48,
+    base__x64x64: base__x64x64,
+    base__x96x96: base__x96x96,
+    base__premium__x24x24: base__premium__x24x24,
+    base__premium__x48x48: base__premium__x48x48,
+    base__premium__x64x64: base__premium__x64x64,
+    base__premium__x96x96: base__premium__x96x96,
+    icon: icon$b,
+    fadeIn: fadeIn$v,
+    fadeInThreeQuarters: fadeInThreeQuarters$v,
+    fadeInHalf: fadeInHalf$v,
+    fadeOut: fadeOut$v,
+    fadeInWithScale: fadeInWithScale$v,
+    slideUp: slideUp$v,
+    scale: scale$v,
+    raysAppearance: raysAppearance$v,
+    rotate: rotate$v,
+    "reverse-rotate": "VehicleType_reverse-rotate_4e0d61e4",
+    glowAppearance: glowAppearance$v,
+    highlightAppearance: highlightAppearance$v,
+    blink: blink$v,
+    slideUpIn: slideUpIn$v,
+  },
+  VehicleType = reactExports.forwardRef(function (
+    { type: e, size: t = sizes$g.x48x48, premium: s = !1, fit: a = "contain", ...r },
+    n,
+  ) {
+    const o = useUpscale(sizes$g[t], upscaledSizes[t]);
+    return jsxRuntimeExports.jsx(Image$1, {
+      ...r,
+      ref: n,
+      fit: a,
+      className: clsx(
+        styles$1b.base,
+        s ? styles$1b[`base__premium__${t}`] : styles$1b[`base__${t}`],
+        r.className,
+      ),
+      path: `ui_kit.vehicle_type.${o}.${s ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${o}`,
+    });
+  });
+function NotLoaded() {
+  return null;
+}
+function LazyModel(e) {
+  if (useLazyModel(e.id)) return e.children;
+  return (e.fallback || NotLoaded)();
+}
+function useLazyModel(e) {
+  const [t, s] = reactExports.useState(!1);
+  return (
+    reactExports.useEffect(() => {
+      if ("number" == typeof e)
+        return (
+          s(ids().includes(e)),
+          subscribe(e, (e) => {
+            s("added" === e.type);
+          })
+        );
+    }, [e]),
+    t
+  );
+}
+function createOptionalDLProvider(e, t) {
+  return function (s) {
+    return useLazyModel(t.rootId) ? jsxRuntimeExports.jsx(e, { ...s, options: t }) : s.children;
+  };
+}
+((VehicleType.types = types$4), (VehicleType.sizes = sizes$g));
+const base$11 = "AnimatedDetails_c70d3863",
+  styles$1a = { base: base$11 },
+  AnimatedDetails = reactExports.forwardRef(function (
+    { opened: e, children: t, className: s, animationSettings: a = {}, ...r },
+    n,
+  ) {
+    const o = React.useRef(null),
+      i = React.useRef(null),
+      [u, l] = useSpring(() => ({ height: 0, opacity: 0 })),
+      c = useEvent((e, t) => {
+        l.start({
+          height: t ? e : 0,
+          opacity: t ? 1 : 0,
+          config: {
+            duration: 350,
+            easing: t ? easings.reverseEaseInOutCirc : easings.easeInOutCirc,
+          },
+          ...a,
+        });
+      });
+    return (
+      React.useEffect(() => {
+        const t = i.current;
+        if (!t) return;
+        let s = noop$1;
+        if (e) {
+          const e = new ResizeObserver(() => c(t.offsetHeight, !0));
+          (e.observe(t), (s = e.disconnect.bind(e)));
+        }
+        const a = createLayoutReadyInEffect$1(() => {
+          c(t.offsetHeight, e);
+        });
+        return () => {
+          (a(), s());
+        };
+      }, [c, e]),
+      jsxRuntimeExports.jsx(animated.div, {
+        ...r,
+        ref: assignRefs([n, o]),
+        className: clsx(styles$1a.base, s),
+        style: { ...r.style, ...u },
+        children: jsxRuntimeExports.jsx("div", { ref: i, children: t }),
+      })
+    );
+  }),
+  Context$3 = reactExports.createContext(void 0);
+function useAccordion() {
+  const e = reactExports.useContext(Context$3);
+  if (!e) throw new Error("useAccordion should have Accordion provider");
+  return e;
+}
+const arrow$1 = "Arrow_f1570a91",
+  arrow__opened = "Arrow_arrow__opened_134476cd",
+  styles$19 = { arrow: arrow$1, arrow__opened: arrow__opened },
+  images$1 = resources.resolve("images"),
+  Arrow = reactExports.forwardRef(function (e, t) {
+    const { opened: s } = useAccordion();
+    return jsxRuntimeExports.jsx("div", {
+      ...e,
+      ref: t,
+      style: {
+        backgroundImage: `url(${images$1.readOrEmpty("library.arrow_accordion")})`,
+        ...e.style,
+      },
+      className: clsx(styles$19.arrow, s && styles$19.arrow__opened, e.className),
+    });
+  }),
+  content$a = "Details_content_a5a56462",
+  content__opened = "Details_content__opened_cc21f43f",
+  styles$18 = { content: content$a, content__opened: content__opened },
+  Details = reactExports.forwardRef(function (e, t) {
+    const { opened: s } = useAccordion();
+    return jsxRuntimeExports.jsx("div", {
+      ...e,
+      ref: t,
+      className: clsx(styles$18.content, s && styles$18.content__opened, e.className),
+    });
+  }),
+  headerWrapper = "Summary_headerWrapper_d7c7115",
+  background$7 = "Summary_background_48ba2ab7",
+  background__scrollable = "Summary_background__scrollable_a41402ee",
+  header$1 = "Summary_header_789c868e",
+  styles$17 = {
+    headerWrapper: headerWrapper,
+    background: background$7,
+    background__scrollable: background__scrollable,
+    header: header$1,
+  },
+  Summary = reactExports.forwardRef(function (
+    { children: e, scrollable: t, background: s, ...a },
+    r,
+  ) {
+    return jsxRuntimeExports.jsxs("div", {
+      ...a,
+      ref: r,
+      className: clsx(styles$17.headerWrapper, a.className),
+      children: [
+        jsxRuntimeExports.jsx("div", {
+          className: clsx(styles$17.background, t && styles$17.background__scrollable, s),
+        }),
+        jsxRuntimeExports.jsx("div", { className: styles$17.header, children: e }),
+      ],
+    });
+  }),
+  base$10 = "Accordion_2b56632",
+  styles$16 = { base: base$10 },
+  Accordion = reactExports.forwardRef(function ({ opened: e, ...t }, s) {
+    return jsxRuntimeExports.jsx(Context$3.Provider, {
+      value: { opened: e },
+      children: jsxRuntimeExports.jsx("div", {
+        ...t,
+        "data-name": "Accordion",
+        ref: s,
+        className: clsx(styles$16.base, t.className),
+      }),
+    });
+  });
+((Accordion.Summary = Summary),
+  (Accordion.Details = Details),
+  (Accordion.AnimatedDetails = AnimatedDetails),
+  (Accordion.Arrow = Arrow));
+const MIN_LEVEL = 1,
+  TYPE_PRESTIGE = "prestige",
+  directions$1 = { left: "left", right: "right" },
+  lengths = { short: "short", medium: "medium", long: "long" },
+  iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
+  icon$a = (e, t, s) => (t === TYPE_PRESTIGE ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${s}`),
+  base$$ = "VehiclePrestigeLevel_a750cce",
+  icon$9 = "VehiclePrestigeLevel_icon_ef024cc3",
+  base__left$1 = "VehiclePrestigeLevel_base__left_4426b46c",
+  level = "VehiclePrestigeLevel_level_10f410ba",
+  level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
+  base__right$1 = "VehiclePrestigeLevel_base__right_4426b46c",
+  level__medium = "VehiclePrestigeLevel_level__medium_90aed80f",
+  level__long = "VehiclePrestigeLevel_level__long_26625167",
+  base__iron = "VehiclePrestigeLevel_base__iron_4426b46c",
+  base__bronze = "VehiclePrestigeLevel_base__bronze_4426b46c",
+  base__silver = "VehiclePrestigeLevel_base__silver_4426b46c",
+  base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
+  base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
+  fadeIn$u = "VehiclePrestigeLevel_fadeIn_4426b46c",
+  fadeInThreeQuarters$u = "VehiclePrestigeLevel_fadeInThreeQuarters_4426b46c",
+  fadeInHalf$u = "VehiclePrestigeLevel_fadeInHalf_4426b46c",
+  fadeOut$u = "VehiclePrestigeLevel_fadeOut_4426b46c",
+  fadeInWithScale$u = "VehiclePrestigeLevel_fadeInWithScale_4426b46c",
+  slideUp$u = "VehiclePrestigeLevel_slideUp_4426b46c",
+  scale$u = "VehiclePrestigeLevel_scale_4426b46c",
+  raysAppearance$u = "VehiclePrestigeLevel_raysAppearance_4426b46c",
+  rotate$u = "VehiclePrestigeLevel_rotate_4426b46c",
+  glowAppearance$u = "VehiclePrestigeLevel_glowAppearance_4426b46c",
+  highlightAppearance$u = "VehiclePrestigeLevel_highlightAppearance_4426b46c",
+  blink$u = "VehiclePrestigeLevel_blink_4426b46c",
+  slideUpIn$u = "VehiclePrestigeLevel_slideUpIn_4426b46c",
+  styles$15 = {
+    base: base$$,
+    icon: icon$9,
+    base__left: base__left$1,
+    level: level,
+    level__short: level__short,
+    base__right: base__right$1,
+    level__medium: level__medium,
+    level__long: level__long,
+    base__iron: base__iron,
+    base__bronze: base__bronze,
+    base__silver: base__silver,
+    base__gold: base__gold$1,
+    base__enamel: base__enamel,
+    fadeIn: fadeIn$u,
+    fadeInThreeQuarters: fadeInThreeQuarters$u,
+    fadeInHalf: fadeInHalf$u,
+    fadeOut: fadeOut$u,
+    fadeInWithScale: fadeInWithScale$u,
+    slideUp: slideUp$u,
+    scale: scale$u,
+    raysAppearance: raysAppearance$u,
+    rotate: rotate$u,
+    "reverse-rotate": "VehiclePrestigeLevel_reverse-rotate_4426b46c",
+    glowAppearance: glowAppearance$u,
+    highlightAppearance: highlightAppearance$u,
+    blink: blink$u,
+    slideUpIn: slideUpIn$u,
+  };
+function PrestigeLevel({ level: e, grade: t, type: s, direction: a, classNames: r, ...n }) {
+  return e < MIN_LEVEL || "undefined" === s
+    ? null
+    : jsxRuntimeExports.jsxs("div", {
+        ...n,
+        className: clsx(
+          styles$15.base,
+          styles$15[`base__${s}`],
+          styles$15[`base__${a}`],
+          n.className,
+          r?.base,
+        ),
+        children: [
+          jsxRuntimeExports.jsx(Image$1, {
+            path: `prestige.tab.${icon$a(e, s, t)}`,
+            className: clsx(styles$15.icon, r?.icon),
+          }),
+          s !== TYPE_PRESTIGE &&
+            jsxRuntimeExports.jsx("div", {
+              className: clsx(styles$15.level, styles$15[`level__${iconLength(e)}`], r?.level),
+              children: e,
+            }),
+        ],
+      });
+}
+PrestigeLevel.direction = directions$1;
+const base$_ = "VehicleInfo_1732f1f0",
+  name$1 = "VehicleInfo_name_3989ca04",
+  name__premium = "VehicleInfo_name__premium_258b3b93",
+  styles$14 = { base: base$_, name: name$1, name__premium: name__premium },
+  VehicleName = defineStyledComponent("VehicleName", styles$14.name, {
+    variants: { premium: { true: styles$14.name__premium } },
+  }),
+  VehicleInfo = reactExports.forwardRef(function (e, t) {
+    return jsxRuntimeExports.jsx("div", {
+      ...e,
+      ref: t,
+      className: clsx(styles$14.base, e.className),
+    });
+  });
+function useParamTooltipApadter(e) {
+  return useParamTooltip(e.type, e.args, e.params);
+}
+function useWulfTooltipAdapter(e) {
+  return useWulfTooltip(e.tooltipId, e.args, e.params);
+}
+function useSpecialTooltipAdapter(e) {
+  return useSpecialTooltip(e.tooltipId, e.args, e.params);
+}
+function createTooltipComponent(e, t) {
+  function s({ asChild: t, params: s, disabled: a, ...r }) {
+    const n = t ? Slot$1 : "div",
+      o = e(a ? { ...s, disabled: a } : s);
+    return jsxRuntimeExports.jsx(n, { ...r, ...o });
+  }
+  return ((s.displayName = t), s);
+}
+((VehicleInfo.Prestige = PrestigeLevel),
+  (VehicleInfo.Level = VehicleLevel),
+  (VehicleInfo.Type = VehicleType),
+  (VehicleInfo.Name = VehicleName),
+  (VehicleInfo.Role = VehicleRole));
+const Tooltip$2 = createTooltipComponent(useTooltip, "Tooltip"),
+  SimpleTooltip$1 = createTooltipComponent(useSimpleTooltip, "SimpleTooltip");
+(createTooltipComponent(useParamTooltipApadter, "ParamsTooltip"),
+  createTooltipComponent(useWulfTooltipAdapter, "WulfTooltip"),
+  createTooltipComponent(useSpecialTooltipAdapter, "SpecialTooltip"));
+const BackportTooltip$1 = createTooltipComponent(useBackdropTooltip, "BackportTooltip"),
+  BackdropTooltip = BackportTooltip$1,
+  types$2 = {
+    tankXP: "tankXP",
+    freeXP: "freeXP",
+    credits: "credits",
+    gold: "gold",
+    crystal: "crystal",
+    equipCoin: "equipCoin",
+    stpCoin: "stpcoin",
+    brCoin: "brcoin",
+    eliteXp: "eliteXp",
+    depot: "depot",
+    vehicle: "vehicle",
+    crew: "crew",
+    custom: "custom",
+    xp: "xp",
+    brProgressionToken: "brProgressionToken",
+    battlePassPoints: "battlePassPoints",
+  },
+  currencyTypes = Object.values(types$2),
+  discountTypes = { currency: "currency", experience: "experience" },
+  sizes$f = {
+    extraSmall: "extraSmall",
+    small: "small",
+    medium: "medium",
+    large: "large",
+    extraLarge: "extraLarge",
+    xxl: "xxl",
+  },
+  imageSizes$1 = {
+    [sizes$f.extraSmall]: 16,
+    [sizes$f.small]: 24,
+    [sizes$f.medium]: 32,
+    [sizes$f.large]: 48,
+    [sizes$f.extraLarge]: 80,
+    [sizes$f.xxl]: 96,
+  },
+  upscaledImageSizes = {
+    [sizes$f.extraSmall]: 32,
+    [sizes$f.small]: 48,
+    [sizes$f.medium]: 32,
+    [sizes$f.large]: 96,
+    [sizes$f.extraLarge]: 80,
+    [sizes$f.xxl]: 96,
+  },
+  discountSizesConfig = {
+    [sizes$f.extraSmall]: { width: "60rem", height: "36rem" },
+    [sizes$f.small]: { width: "80rem", height: "48rem" },
+    [sizes$f.medium]: { width: "80rem", height: "48rem" },
+    [sizes$f.large]: { width: "106rem", height: "64rem" },
+    [sizes$f.extraLarge]: { width: "140rem", height: "84rem" },
+    [sizes$f.xxl]: { width: "140rem", height: "84rem" },
+  },
+  base$Z = "Currency_72d4be39",
+  base__reverse = "Currency_base__reverse_f12e61b0",
+  base__notEnough = "Currency_base__notEnough_9a7842f",
+  base__credits = "Currency_base__credits_7b9ae721",
+  base__gold = "Currency_base__gold_d6e3cbc",
+  base__freeXP = "Currency_base__freeXP_d29d5a57",
+  base__crystal = "Currency_base__crystal_f830cb47",
+  base__tankXP = "Currency_base__tankXP_1707c68b",
+  fadeIn$t = "Currency_fadeIn_271064ec",
+  fadeInThreeQuarters$t = "Currency_fadeInThreeQuarters_271064ec",
+  fadeInHalf$t = "Currency_fadeInHalf_271064ec",
+  fadeOut$t = "Currency_fadeOut_271064ec",
+  fadeInWithScale$t = "Currency_fadeInWithScale_271064ec",
+  slideUp$t = "Currency_slideUp_271064ec",
+  scale$t = "Currency_scale_271064ec",
+  raysAppearance$t = "Currency_raysAppearance_271064ec",
+  rotate$t = "Currency_rotate_271064ec",
+  glowAppearance$t = "Currency_glowAppearance_271064ec",
+  highlightAppearance$t = "Currency_highlightAppearance_271064ec",
+  blink$t = "Currency_blink_271064ec",
+  slideUpIn$t = "Currency_slideUpIn_271064ec",
+  styles$13 = {
+    base: base$Z,
+    base__reverse: base__reverse,
+    base__notEnough: base__notEnough,
+    base__credits: base__credits,
+    base__gold: base__gold,
+    base__freeXP: base__freeXP,
+    base__crystal: base__crystal,
+    base__tankXP: base__tankXP,
+    fadeIn: fadeIn$t,
+    fadeInThreeQuarters: fadeInThreeQuarters$t,
+    fadeInHalf: fadeInHalf$t,
+    fadeOut: fadeOut$t,
+    fadeInWithScale: fadeInWithScale$t,
+    slideUp: slideUp$t,
+    scale: scale$t,
+    raysAppearance: raysAppearance$t,
+    rotate: rotate$t,
+    "reverse-rotate": "Currency_reverse-rotate_271064ec",
+    glowAppearance: glowAppearance$t,
+    highlightAppearance: highlightAppearance$t,
+    blink: blink$t,
+    slideUpIn: slideUpIn$t,
+  },
+  intl$2 = resources.resolve("intl"),
+  Base$s = defineStyledComponent("Currency", styles$13.base, {
+    variants: { reverse: { true: styles$13.base__reverse } },
+  });
+function formatCurrencyValue(e, t) {
+  const s = t === types$2.gold ? "gold" : "integral";
+  return Array.isArray(e)
+    ? e.map((e) => ("number" == typeof e ? intl$2.formatNumber(s, e) : e))
+    : "number" == typeof e
+      ? intl$2.formatNumber(s, e)
+      : e;
+}
+function Currency({
+  children: e,
+  type: t,
+  className: s,
+  classNames: a,
+  imagePath: r,
+  size: n = sizes$f.small,
+  enough: o = !0,
+  ...i
+}) {
+  const u = imageSizes$1[n],
+    l = `${t}_${u}x${u}`,
+    c = upscaledImageSizes[n],
+    d = `${t}_${c}x${c}`,
+    p = r || currencyTypes.includes(t),
+    _ = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
+  return jsxRuntimeExports.jsxs(Base$s, {
+    ...i,
+    className: clsx(a?.base, o ? styles$13[`base__${t}`] : styles$13.base__notEnough, s),
+    children: [
+      p &&
+        jsxRuntimeExports.jsx(Image$1, { width: u, height: u, path: r ?? _, className: a?.icon }),
+      formatCurrencyValue(e, t),
+    ],
+  });
+}
+((Currency.sizes = sizes$f), (Currency.types = types$2));
+const base$Y = "WithDiscount_b8b3aa7f",
+  discount = "WithDiscount_discount_f7ce1b97",
+  icon$8 = "WithDiscount_icon_a6c57ca8",
+  icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
+  icon__small$2 = "WithDiscount_icon__small_60ee455a",
+  icon__medium$1 = "WithDiscount_icon__medium_2877fd99",
+  icon__large = "WithDiscount_icon__large_6c06eeb7",
+  icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
+  icon__xxl = "WithDiscount_icon__xxl_4080bb18",
+  fadeIn$s = "WithDiscount_fadeIn_60ee455a",
+  fadeInThreeQuarters$s = "WithDiscount_fadeInThreeQuarters_60ee455a",
+  fadeInHalf$s = "WithDiscount_fadeInHalf_60ee455a",
+  fadeOut$s = "WithDiscount_fadeOut_60ee455a",
+  fadeInWithScale$s = "WithDiscount_fadeInWithScale_60ee455a",
+  slideUp$s = "WithDiscount_slideUp_60ee455a",
+  scale$s = "WithDiscount_scale_60ee455a",
+  raysAppearance$s = "WithDiscount_raysAppearance_60ee455a",
+  rotate$s = "WithDiscount_rotate_60ee455a",
+  glowAppearance$s = "WithDiscount_glowAppearance_60ee455a",
+  highlightAppearance$s = "WithDiscount_highlightAppearance_60ee455a",
+  blink$s = "WithDiscount_blink_60ee455a",
+  slideUpIn$s = "WithDiscount_slideUpIn_60ee455a",
+  styles$12 = {
+    base: base$Y,
+    discount: discount,
+    icon: icon$8,
+    icon__extraSmall: icon__extraSmall,
+    icon__small: icon__small$2,
+    icon__medium: icon__medium$1,
+    icon__large: icon__large,
+    icon__extraLarge: icon__extraLarge,
+    icon__xxl: icon__xxl,
+    fadeIn: fadeIn$s,
+    fadeInThreeQuarters: fadeInThreeQuarters$s,
+    fadeInHalf: fadeInHalf$s,
+    fadeOut: fadeOut$s,
+    fadeInWithScale: fadeInWithScale$s,
+    slideUp: slideUp$s,
+    scale: scale$s,
+    raysAppearance: raysAppearance$s,
+    rotate: rotate$s,
+    "reverse-rotate": "WithDiscount_reverse-rotate_60ee455a",
+    glowAppearance: glowAppearance$s,
+    highlightAppearance: highlightAppearance$s,
+    blink: blink$s,
+    slideUpIn: slideUpIn$s,
+  };
+function WithDiscount({
+  children: e,
+  imagePath: t,
+  size: s = sizes$f.small,
+  customImageSize: a,
+  type: r,
+  enabled: n = !1,
+  className: o,
+  classNames: i,
+}) {
+  const u = a ?? discountSizesConfig[s];
+  return jsxRuntimeExports.jsxs("div", {
+    className: clsx(styles$12.base, i?.base, o),
+    children: [
+      e,
+      n &&
+        jsxRuntimeExports.jsx("div", {
+          className: clsx(
+            styles$12.discount,
+            i?.discount,
+            r === discountTypes.experience && styles$12.discount__experience,
+          ),
+          children: jsxRuntimeExports.jsx(Image$1, {
+            width: u.width,
+            height: u.height,
+            path:
+              t ?? `library.currency.discount_${r}_${s === sizes$f.xxl ? sizes$f.extraLarge : s}`,
+            className: clsx(styles$12.icon, i?.icon, styles$12[`icon__${s}`]),
+          }),
+        }),
+    ],
+  });
+}
+const CardContext = reactExports.createContext(void 0);
+function useCardContext() {
+  const e = reactExports.useContext(CardContext);
+  if (!e) throw new Error("Card context must be used only within its provider");
+  return e;
+}
+function CardContextProvider({
+  selected: e,
+  hover: t,
+  disabled: s,
+  multiple: a,
+  status: r,
+  children: n,
+}) {
+  const o = reactExports.useMemo(
+    () => ({ selected: e, hover: t, disabled: s, multiple: a, status: r }),
+    [s, t, a, e, r],
+  );
+  return jsxRuntimeExports.jsx(CardContext.Provider, { value: o, children: n });
+}
+const CardsWrapperContext = reactExports.createContext(null);
+function useCardsWrapperContext() {
+  const e = reactExports.useContext(CardsWrapperContext);
+  if (!e) throw new Error("CardsWrapper context must be used only within its provider");
+  return e;
+}
+function useCardsWrapperContextOptional() {
+  return reactExports.useContext(CardsWrapperContext);
+}
+const CardsWrapperContextProvider = CardsWrapperContext.Provider,
+  base$X = "Content_8eaaf71a",
+  content$9 = "Content_ab8563af",
+  disabledOverlay$1 = "Content_disabledOverlay_af87c441",
+  base__multiple = "Content_base__multiple_da09528a",
+  base__disabled$7 = "Content_base__disabled_da09528a",
+  base__hover$1 = "Content_base__hover_da09528a",
+  base__selectedHover$1 = "Content_base__selectedHover_da09528a",
+  base__selected$1 = "Content_base__selected_da09528a",
+  multipleCorner = "Content_multipleCorner_151c26ee",
+  styles$11 = {
+    base: base$X,
+    content: content$9,
+    disabledOverlay: disabledOverlay$1,
+    base__multiple: base__multiple,
+    base__disabled: base__disabled$7,
+    base__hover: base__hover$1,
+    base__selectedHover: base__selectedHover$1,
+    base__selected: base__selected$1,
+    multipleCorner: multipleCorner,
+  },
+  MULTIPLE_CORNER_SIZE = 20,
+  Base$r = defineStyledComponent("Content", styles$11.base, {
+    variants: {
+      multiple: { true: styles$11.base__multiple },
+      selected: { true: styles$11.base__selected },
+      hover: { true: styles$11.base__hover },
+      disabled: { true: styles$11.base__disabled },
+    },
+    compoundVariants: [{ hover: !0, selected: !0, className: styles$11.base__selectedHover }],
+  }),
+  MainContainer = ({ children: e, classNames: t }) => {
+    const s = React.useRef(null),
+      a = useCardContext();
+    return (
+      React.useEffect(() => {
+        if (a.multiple)
+          return createLayoutReadyInEffect$1(() => {
+            if (s.current) {
+              const e = s.current.getBoundingClientRect(),
+                t = Math.round((MULTIPLE_CORNER_SIZE / e.width) * 100),
+                a = Math.round((MULTIPLE_CORNER_SIZE / e.height) * 100);
+              (s.current.style.setProperty("--corner-width", `${t}%`),
+                s.current.style.setProperty("--corner-height", `${a}%`));
+            }
+          });
+      }),
+      jsxRuntimeExports.jsxs(Base$r, {
+        multiple: a.multiple,
+        selected: a.selected,
+        hover: a.hover,
+        disabled: a.disabled,
+        children: [
+          a.multiple && jsxRuntimeExports.jsx("div", { className: styles$11.multipleCorner }),
+          jsxRuntimeExports.jsxs("div", {
+            ref: s,
+            className: clsx(styles$11.content, t?.mainContainerContent),
+            children: [
+              a.disabled && jsxRuntimeExports.jsx("div", { className: styles$11.disabledOverlay }),
+              e,
+            ],
+          }),
+        ],
+      })
+    );
+  },
+  base$W = "Status_68bd9bc6",
+  icon$7 = "Status_icon_cef4536",
+  base__done$1 = "Status_base__done_35b9a31c",
+  base__doneSmall = "Status_base__doneSmall_35b9a31c",
+  base__alert = "Status_base__alert_35b9a31c",
+  base__alertSmall = "Status_base__alertSmall_35b9a31c",
+  line$1 = "Status_line_8f933ea7",
+  shadow = "Status_shadow_fc30bf98",
+  base__lockedSmall = "Status_base__lockedSmall_35b9a31c",
+  glowInner = "Status_glowInner_f8eb475a",
+  blur = "Status_blur_5675b854",
+  glowBig = "Status_glowBig_5954041c",
+  fadeIn$r = "Status_fadeIn_35b9a31c",
+  fadeInThreeQuarters$r = "Status_fadeInThreeQuarters_35b9a31c",
+  fadeInHalf$r = "Status_fadeInHalf_35b9a31c",
+  fadeOut$r = "Status_fadeOut_35b9a31c",
+  fadeInWithScale$r = "Status_fadeInWithScale_35b9a31c",
+  slideUp$r = "Status_slideUp_35b9a31c",
+  scale$r = "Status_scale_35b9a31c",
+  raysAppearance$r = "Status_raysAppearance_35b9a31c",
+  rotate$r = "Status_rotate_35b9a31c",
+  glowAppearance$r = "Status_glowAppearance_35b9a31c",
+  highlightAppearance$r = "Status_highlightAppearance_35b9a31c",
+  blink$r = "Status_blink_35b9a31c",
+  slideUpIn$r = "Status_slideUpIn_35b9a31c",
+  styles$10 = {
+    base: base$W,
+    icon: icon$7,
+    base__done: base__done$1,
+    base__doneSmall: base__doneSmall,
+    base__alert: base__alert,
+    base__alertSmall: base__alertSmall,
+    line: line$1,
+    shadow: shadow,
+    base__lockedSmall: base__lockedSmall,
+    glowInner: glowInner,
+    blur: blur,
+    glowBig: glowBig,
+    fadeIn: fadeIn$r,
+    fadeInThreeQuarters: fadeInThreeQuarters$r,
+    fadeInHalf: fadeInHalf$r,
+    fadeOut: fadeOut$r,
+    fadeInWithScale: fadeInWithScale$r,
+    slideUp: slideUp$r,
+    scale: scale$r,
+    raysAppearance: raysAppearance$r,
+    rotate: rotate$r,
+    "reverse-rotate": "Status_reverse-rotate_35b9a31c",
+    glowAppearance: glowAppearance$r,
+    highlightAppearance: highlightAppearance$r,
+    blink: blink$r,
+    slideUpIn: slideUpIn$r,
+  },
+  strings$1 = resources.resolve("strings");
+defineStyledComponent("Status", styles$10.base, {
+  variants: {
+    status: {
+      done: styles$10.base__done,
+      alert: styles$10.base__alert,
+      locked: styles$10.base__locked,
+    },
+  },
+});
+const SMALL_SIZE_BREAKPOINT = 100,
+  tooltipEnabled = ({ header: e, body: t }) => Boolean(e && t),
+  Status = ({ reason: e, classNames: t }) => {
+    const s = reactExports.useRef(null),
+      [a, r] = React.useState(!1),
+      n = `base__${useCardContext().status}${a ? "Small" : ""}`,
+      o = React.useCallback(() => {
+        const e = s.current?.getBoundingClientRect();
+        e && r(e.width <= SMALL_SIZE_BREAKPOINT);
+      }, [s]);
+    useRefResizeObserver(s, o);
+    const i = e
+        ? {
+            header: strings$1.readOrEmpty(`tooltips.moduleFits.${e}.header`),
+            body: strings$1.readOrEmpty(`tooltips.moduleFits.${e}.text`),
+          }
+        : {},
+      u = useSimpleTooltip(i);
+    return jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$10.base, styles$10[n], t?.wrapper),
+      ref: s,
+      children: [
+        jsxRuntimeExports.jsx("div", { className: styles$10.glowBig }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.line }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.shadow }),
+        jsxRuntimeExports.jsx("div", { className: styles$10.glowInner }),
+        jsxRuntimeExports.jsx("svg", {
+          width: "42",
+          height: "42",
+          viewBox: "0 0 42 42",
+          className: styles$10.blur,
+          children: jsxRuntimeExports.jsx("g", {
+            children: jsxRuntimeExports.jsx("circle", { cx: "21", cy: "21", r: "3" }),
+          }),
+        }),
+        jsxRuntimeExports.jsx("div", {
+          ...(tooltipEnabled(i) && u),
+          className: clsx(styles$10.icon, t?.icon),
+        }),
+      ],
+    });
+  },
+  base$V = "Card_f0963ece",
+  base__wrapped = "Card_base__wrapped_c6eb8737",
+  base__disableMouse = "Card_base__disableMouse_5cd80216",
+  base__hover = "Card_base__hover_f4c22d1c",
+  base__selected = "Card_base__selected_f4c22d1c",
+  card$1 = "Card_f7ddaa4a",
+  content$8 = "Card_content_b6f6a22a",
+  base__active$2 = "Card_base__active_f4c22d1c",
+  base__activeHover = "Card_base__activeHover_f4c22d1c",
+  base__selectedHover = "Card_base__selectedHover_f4c22d1c",
+  centerBorder = "Card_centerBorder_8a0f28ae",
+  cardStyles = {
+    base: base$V,
+    base__wrapped: base__wrapped,
+    base__disableMouse: base__disableMouse,
+    base__hover: base__hover,
+    base__selected: base__selected,
+    card: card$1,
+    content: content$8,
+    base__active: base__active$2,
+    base__activeHover: base__activeHover,
+    base__selectedHover: base__selectedHover,
+    centerBorder: centerBorder,
+  },
+  Base$q = defineStyledComponent("Card", cardStyles.base, {
+    variants: {
+      active: { true: cardStyles.base__active },
+      selected: { true: cardStyles.base__selected },
+      hover: { true: cardStyles.base__hover },
+      disableMouse: { true: cardStyles.base__disableMouse },
+    },
+    compoundVariants: [
+      { hover: !0, active: !0, className: cardStyles.base__activeHover },
+      { hover: !0, selected: !0, className: cardStyles.base__selectedHover },
+    ],
+  }),
+  Card = reactExports.forwardRef(function (
+    {
+      children: e,
+      active: t,
+      status: s,
+      statusReason: a,
+      disableMouse: r,
+      onMouseOver: n,
+      onMouseOut: o,
+      soundTarget: i,
+      disabled: u = !1,
+      className: l,
+      classNames: c,
+      ...d
+    },
+    p,
+  ) {
+    const [_, m] = reactExports.useState(!1),
+      f = useSounds(),
+      g = useCardsWrapperContextOptional(),
+      b = r || u;
+    return jsxRuntimeExports.jsx(Base$q, {
+      ...d,
+      ref: p,
+      hover: _,
+      disableMouse: r,
+      active: t,
+      className: clsx(cardStyles.card, l, g?.enabled && cardStyles.base__wrapped),
+      children: jsxRuntimeExports.jsxs(CardContextProvider, {
+        disabled: u,
+        selected: d.selected ?? !1,
+        multiple: d.multiple ?? !1,
+        hover: _,
+        status: s,
+        children: [
+          jsxRuntimeExports.jsx("div", {
+            className: clsx(cardStyles.content, c?.content),
+            onClick: function (e) {
+              b || f.play("click", { target: i || "react-ui:card", original: e });
+            },
+            onMouseEnter: function (e) {
+              b || f.play("mouse-enter", { target: i || "react-ui:card", original: e });
+            },
+            onMouseOver: function (e) {
+              b || (m(!0), n?.(e));
+            },
+            onMouseOut: function (e) {
+              b || (m(!1), o?.(e));
+            },
+            children: jsxRuntimeExports.jsx(MainContainer, { classNames: c, children: e }),
+          }),
+          jsxRuntimeExports.jsx("div", { className: cardStyles.centerBorder }),
+          s && jsxRuntimeExports.jsx(Status, { reason: a, classNames: c?.status }),
+        ],
+      }),
+    });
+  }),
+  LINE_THICKNESS = 1,
+  OFFSET = 1,
+  PADDING = 3,
+  borderTypes = { none: "none", contour: "contour" },
+  Point = (e, t) => ({ x: e, y: t });
+function getRectangleEdges(e) {
+  let { x: t, y: s, width: a, height: r } = e;
+  const n = Point(t, s),
+    o = Point(t + a, s),
+    i = Point(t + a, s + r),
+    u = Point(t, s + r);
+  return [
+    [n, o],
+    [o, i],
+    [i, u],
+    [u, n],
+  ];
+}
+function getEdgeKey(e) {
+  const [t, s] = e;
+  return t.x < s.x || (t.x === s.x && t.y < s.y)
+    ? `${s.x},${s.y}-${t.x},${t.y}`
+    : `${t.x},${t.y}-${s.x},${s.y}`;
+}
+function buildOuterEdgesAndCenter(e) {
+  const t = e.flatMap(getRectangleEdges),
+    s = new Map();
+  return (
+    t.forEach((e) => {
+      const t = getEdgeKey(e);
+      s.has(t) ? s.delete(t) : s.set(t, e);
+    }),
+    Array.from(s.values())
+  );
+}
+function buildContourPath(e) {
+  if (0 === e.length) return [];
+  const t = e[0],
+    s = { x: t[0].x - PADDING, y: t[0].y - PADDING },
+    a = [s];
+  let r = t[1],
+    n = s,
+    o = s,
+    i = -PADDING,
+    u = -PADDING;
+  for (e.splice(0, 1); e.length > 0;) {
+    const t = e.findIndex((e) => e[0].x === r.x && e[0].y === r.y);
+    if (-1 === t) break;
+    const s = e[t],
+      l = r;
+    (r.x <= o.x ? (u = PADDING) : (u === PADDING && (n.y -= 2 * PADDING), (u = -PADDING)),
+      r.y >= o.y ? (i = PADDING) : (i === PADDING && (n.x -= 2 * PADDING), (i = -PADDING)),
+      (r = { x: r.x + i, y: r.y + u }),
+      a.push(r),
+      (o = l),
+      (n = r),
+      (r = s[1]),
+      e.splice(t, 1));
+  }
+  return (u === PADDING && i === PADDING && (n = { ...n, x: n.x - 2 * PADDING }), a.push(s), a);
+}
+function buildContour(e, t) {
+  return buildContourPath(buildOuterEdgesAndCenter(e));
+}
+const HORIZONTAL = "H",
+  VERTICAL = "V";
+class LinesOptimizer {
+  constructor(e) {
+    this.containerRect = e;
+  }
+  lines = new Map();
+  addLine(e, t, s, a, r) {
+    const n = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${r}`;
+    this.lines.has(n) || this.lines.set(n, []);
+    const o = {
+      x: e - this.containerRect.x,
+      y: t - this.containerRect.y,
+      width: s,
+      height: a,
+      className: r,
+    };
+    this.lines.get(n)?.push(o);
+  }
+  run() {
+    const e = [];
+    return (
+      this.lines.forEach((t, s) => {
+        const a = s.at(0) === HORIZONTAL,
+          r = t.sort((e, t) => (a ? e.x - t.x : e.y - t.y));
+        let n = null;
+        (r.forEach((t) => {
+          if (n)
+            if (a) {
+              const s = n.x + n.width,
+                a = t.x + t.width;
+              t.x >= n.x && t.x <= s
+                ? (n = { ...n, width: Math.max(a, s) - n.x })
+                : (e.push(n), (n = t));
+            } else {
+              const s = n.y + n.height,
+                a = t.y + t.height;
+              t.y >= n.y && t.y <= s
+                ? (n = { ...n, height: Math.max(a, s) - n.y })
+                : (e.push(n), (n = t));
+            }
+          else n = t;
+        }),
+          n && e.push(n));
+      }),
+      e
+    );
+  }
+}
+const lineInner = "LinesBuilder_lineInner_a52dc157",
+  lineOuter = "LinesBuilder_lineOuter_c57514b2",
+  styles$$ = { lineInner: lineInner, lineOuter: lineOuter };
+function buildLines(e, t, s) {
+  const a = [],
+    r = new LinesOptimizer(t);
+  for (let n = 0; n < e.length; n++) {
+    const t = e[n],
+      o = t.getBoundingClientRect();
+    if (0 === o.width || 0 === o.height)
+      return void console.debug(
+        `Card rect has zero size by one side: ${o.width}x${o.height} (${t.getAttribute("data-test-id")}) `,
+      );
+    (s !== borderTypes.none && a.push({ x: o.x, y: o.y, width: o.width, height: o.height }),
+      r.addLine(o.x, o.y, o.width, LINE_THICKNESS, styles$$.lineInner),
+      r.addLine(o.x, o.y + o.height, o.width, LINE_THICKNESS, styles$$.lineInner),
+      r.addLine(o.x, o.y, LINE_THICKNESS, o.height, styles$$.lineInner),
+      r.addLine(o.x + o.width, o.y, LINE_THICKNESS, o.height + OFFSET, styles$$.lineInner));
+  }
+  if (s !== borderTypes.none) {
+    const e = buildContour(a);
+    let t = null;
+    e.forEach((e) => {
+      if (t) {
+        const s = t.y === e.y,
+          a = t,
+          n = e;
+        r.addLine(
+          Math.min(a.x, n.x),
+          Math.min(a.y, n.y),
+          s ? Math.abs(n.x - a.x) : LINE_THICKNESS,
+          s ? LINE_THICKNESS : Math.abs(n.y - a.y) + OFFSET,
+          styles$$.lineOuter,
+        );
+      }
+      t = e;
+    });
+  }
+  return r.run();
+}
+const Lines = reactExports.memo(
+    ({ containerRef: e, generation: t, border: s, cardSelector: a }) => {
+      const [r, n] = reactExports.useState([]),
+        o = useEvent(() => {
+          const t = e.current;
+          if (!t) return;
+          const r = t.getBoundingClientRect(),
+            o = buildLines(t.querySelectorAll(`.${a || cardStyles.card}`), r, s);
+          n(o ?? []);
+        });
+      return (
+        reactExports.useEffect(o, [o, t]),
+        jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
+          children: r.map((e, t) =>
+            jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: e.className,
+                style: { left: e.x, top: e.y, width: e.width, height: e.height },
+              },
+              t,
+            ),
+          ),
+        })
+      );
+    },
+  ),
+  base$U = "CardsWrapper_3b6cc4f6",
+  card = "CardsWrapper_card_c7fc9ee7",
+  centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
+  outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
+  styles$_ = {
+    base: base$U,
+    card: card,
+    centerBorderCommon: centerBorderCommon,
+    outerBorderCommon: outerBorderCommon,
+  },
+  Base$p = defineStyledComponent("CardsWrapper", styles$_.base),
+  CardsWrapper = reactExports.forwardRef(function (
+    {
+      children: e,
+      className: t,
+      threshold: s,
+      border: a = borderTypes.contour,
+      enabled: r = !0,
+      cardSelector: n,
+      ...o
+    },
+    i,
+  ) {
+    const u = reactExports.useRef([]),
+      l = reactExports.useRef(null),
+      [c, d] = reactExports.useState("");
+    reactExports.useImperativeHandle(i, () => l.current);
+    const p = reactExports.useCallback(
+      (e) => {
+        const t = l.current;
+        if (!t) return;
+        const s = t.querySelectorAll(`.${n || cardStyles.card}`);
+        if (s.length > 0) {
+          const a = t.getBoundingClientRect(),
+            r = s.length;
+          r !== u.current.length && (u.current = Array.from(s));
+          const n = `${Math.round(a.width)}x${Math.round(a.height)}-${r}|${e}`;
+          d(n);
+        } else d("");
+      },
+      [n],
+    );
+    (reactExports.useEffect(() => {
+      p(s);
+    }),
+      useRefResizeObserver(
+        l,
+        reactExports.useCallback(() => p(), [p]),
+      ));
+    const _ = reactExports.useMemo(() => ({ recalculate: p, enabled: r }), [p, r]);
+    return jsxRuntimeExports.jsx(Base$p, {
+      ...o,
+      ref: l,
+      children: jsxRuntimeExports.jsxs("div", {
+        className: t,
+        children: [
+          jsxRuntimeExports.jsx(CardsWrapperContextProvider, { value: _, children: e }),
+          jsxRuntimeExports.jsx(Lines, {
+            cardsRef: u,
+            containerRef: l,
+            border: a,
+            generation: c,
+            cardSelector: n,
+          }),
+        ],
+      }),
+    });
+  }),
+  CardSingle = reactExports.forwardRef(({ className: e, classNames: t, ...s }, a) =>
+    jsxRuntimeExports.jsxs("div", {
+      className: clsx(styles$_.base, t?.wrapper),
+      children: [
+        jsxRuntimeExports.jsx("div", { className: styles$_.centerBorderCommon }),
+        jsxRuntimeExports.jsx("div", { className: styles$_.outerBorderCommon }),
+        jsxRuntimeExports.jsx(Card, {
+          className: clsx(styles$_.card, e, t?.card),
+          classNames: t,
+          ...s,
+          ref: a,
+        }),
+      ],
+    }),
+  ),
+  statusTypes = { done: "done", alert: "alert" },
+  base$T = "Discount_bbbebfd",
+  percent = "Discount_percent_b7ab402",
+  fadeIn$q = "Discount_fadeIn_4a3faf4f",
+  fadeInThreeQuarters$q = "Discount_fadeInThreeQuarters_4a3faf4f",
+  fadeInHalf$q = "Discount_fadeInHalf_4a3faf4f",
+  fadeOut$q = "Discount_fadeOut_4a3faf4f",
+  fadeInWithScale$q = "Discount_fadeInWithScale_4a3faf4f",
+  slideUp$q = "Discount_slideUp_4a3faf4f",
+  scale$q = "Discount_scale_4a3faf4f",
+  raysAppearance$q = "Discount_raysAppearance_4a3faf4f",
+  rotate$q = "Discount_rotate_4a3faf4f",
+  glowAppearance$q = "Discount_glowAppearance_4a3faf4f",
+  highlightAppearance$q = "Discount_highlightAppearance_4a3faf4f",
+  blink$q = "Discount_blink_4a3faf4f",
+  slideUpIn$q = "Discount_slideUpIn_4a3faf4f",
+  styles$Z = {
+    base: base$T,
+    "base__color-red": "Discount_base__color-red_ce40ab53",
+    "base__color-blue": "Discount_base__color-blue_29162735",
+    "base__size-medium": "Discount_base__size-medium_50e2ae9a",
+    "base__size-large": "Discount_base__size-large_b6f874e0",
+    percent: percent,
+    "percent__size-medium": "Discount_percent__size-medium_cc14676",
+    "percent__color-red": "Discount_percent__color-red_4a3faf4f",
+    "percent__color-blue": "Discount_percent__color-blue_4a3faf4f",
+    "percent__size-large": "Discount_percent__size-large_8384c978",
+    fadeIn: fadeIn$q,
+    fadeInThreeQuarters: fadeInThreeQuarters$q,
+    fadeInHalf: fadeInHalf$q,
+    fadeOut: fadeOut$q,
+    fadeInWithScale: fadeInWithScale$q,
+    slideUp: slideUp$q,
+    scale: scale$q,
+    raysAppearance: raysAppearance$q,
+    rotate: rotate$q,
+    "reverse-rotate": "Discount_reverse-rotate_4a3faf4f",
+    glowAppearance: glowAppearance$q,
+    highlightAppearance: highlightAppearance$q,
+    blink: blink$q,
+    slideUpIn: slideUpIn$q,
+  },
+  colors = { blue: "blue", red: "red" },
+  sizes$e = { medium: "medium", large: "large" },
+  StyledDiscount = defineStyledComponent("Discount", styles$Z.base, {
+    variants: {
+      color: {
+        [colors.blue]: styles$Z["base__color-blue"],
+        [colors.red]: styles$Z["base__color-red"],
+      },
+      size: {
+        [sizes$e.medium]: styles$Z["base__size-medium"],
+        [sizes$e.large]: styles$Z["base__size-large"],
+      },
+    },
+  }),
+  Discount = React.forwardRef(function (
+    { color: e = colors.red, className: t, classNames: s, size: a = sizes$e.large, ...r },
+    n,
+  ) {
+    return jsxRuntimeExports.jsxs(StyledDiscount, {
+      ...r,
+      ref: n,
+      color: e,
+      size: a,
+      className: clsx(t, s?.discount),
+      children: [
+        r.children,
+        jsxRuntimeExports.jsx("div", {
+          className: clsx(
+            styles$Z.percent,
+            styles$Z[`percent__color-${e}`],
+            styles$Z[`percent__size-${a}`],
+            s?.percent,
+          ),
+        }),
+      ],
+    });
+  });
+((Discount.colors = colors), (Discount.sizes = sizes$e));
+const getFromCallStack = (e = 1) => {
+  const t = new Error().stack;
+  let s,
+    a = R.invalid("resId"),
+    r = "";
+  return (
+    t &&
+      ((r = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
+      (s = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
+      window.__feature &&
+        window.__feature !== s &&
+        window.subViews[s] &&
+        (a = window.subViews[s].id)),
+    { callerUrl: r, caller: s, stack: t, resId: a }
+  );
+};
 let ClickOutsideManager$1 = class e {
   entries = [];
   _listenMouse = !1;
@@ -4774,89 +9165,7 @@ const ClickOutsideManager = ClickOutsideManager$1.instance,
     UserLocale: UserLocale,
   };
 window.ViewEnvHelper = ViewEnvHelper;
-const DAYS_IN_WEEK = 7,
-  HOURS_IN_DAY = 24,
-  MS_IN_SECOND = 1e3,
-  ONE_MINUTE = 60,
-  ONE_HOUR = 60 * ONE_MINUTE,
-  ONE_DAY = HOURS_IN_DAY * ONE_HOUR,
-  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
-  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
-function getTimeUnits(e = 0) {
-  let t = e;
-  const s = Math.trunc(t / ONE_DAY);
-  t -= s * ONE_DAY;
-  const a = Math.trunc(t / ONE_HOUR);
-  t -= a * ONE_HOUR;
-  const r = Math.trunc(t / ONE_MINUTE);
-  return ((t -= r * ONE_MINUTE), { days: s, hours: a, minutes: r, seconds: t });
-}
-const getRoundedTimeUnitDescription = (e, t = !0) =>
-    e.days > DAYS_IN_WEEK && t
-      ? format(R.strings.common.duration.days(), { days: e.days })
-      : e.days >= 1
-        ? 0 === e.hours
-          ? format(R.strings.common.duration.days(), { days: e.days })
-          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
-        : e.hours >= 1
-          ? 0 === e.minutes
-            ? format(R.strings.common.duration.hours(), { hours: e.hours })
-            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
-          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
-  DateTime = ({
-    datetime: e,
-    format: t = DateTimeFormatsEnum.ShortDate,
-    isConvertedToLocal: s = !0,
-  }) =>
-    Object.values(DateTimeFormatsEnum).includes(t)
-      ? getRegionalDateTime(e, t, s)
-      : getFormattedDateTime(e, t, s),
-  DateTime$1 = reactExports.memo(DateTime),
-  base$1c = "Formattext_bb80854d",
-  styles$1o = { base: base$1c },
-  FormatText$1 = ({
-    binding: e,
-    text: t = "",
-    classMix: s,
-    alignment: a = Alignment.left,
-    formatWithBrackets: r,
-  }) => {
-    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
-    const n = r && e ? format(t, e) : t;
-    return jsxRuntimeExports.jsx(reactExports.Fragment, {
-      children: n
-        .split("\n")
-        .map((t, r) =>
-          jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: cx(styles$1o.base, s),
-              children: formatString(t, a, e).map((e, t) =>
-                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
-              ),
-            },
-            `${t}-${r}`,
-          ),
-        ),
-    });
-  },
-  getFromCallStack = (e = 1) => {
-    const t = new Error().stack;
-    let s,
-      a = R.invalid("resId"),
-      r = "";
-    return (
-      t &&
-        ((r = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
-        (s = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
-        window.__feature &&
-          window.__feature !== s &&
-          window.subViews[s] &&
-          (a = window.subViews[s].id)),
-      { callerUrl: r, caller: s, stack: t, resId: a }
-    );
-  },
-  SHOW_DELAY_MIN = 100,
+const SHOW_DELAY_MIN = 100,
   SHOW_DELAY_DEFAULT = 400;
 function getViewEventArguments(e) {
   return Object.entries(e || {}).map(([e, t]) => {
@@ -4886,7 +9195,7 @@ const handleViewEvent = (e, t, s = {}, a = 0) => {
       ...s,
     });
   },
-  Tooltip$2 = ({
+  Tooltip$1 = ({
     children: e,
     contentId: t,
     args: s,
@@ -4899,8 +9208,8 @@ const handleViewEvent = (e, t, s = {}, a = 0) => {
     decoratorId: l = 0,
     isEnabled: c = !0,
     targetId: d = 0,
-    onShow: _,
-    onHide: p,
+    onShow: p,
+    onHide: _,
     ...m
   }) => {
     const f = reactExports.useRef({
@@ -4918,18 +9227,18 @@ const handleViewEvent = (e, t, s = {}, a = 0) => {
             { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(s) },
             g,
           ),
-          _ && _(),
+          p && p(),
           (f.current.isVisible = !0));
-      }, [t, l, s, g, _]),
+      }, [t, l, s, g, p]),
       h = reactExports.useCallback(() => {
         if (f.current.isVisible || f.current.timeoutId) {
           const e = f.current.timeoutId;
           (e > 0 && (clearTimeout(e), (f.current.timeoutId = 0)),
             handleViewEvent(t, l, { on: !1 }, g),
-            f.current.isVisible && p && p(),
+            f.current.isVisible && _ && _(),
             (f.current.isVisible = !1));
         }
-      }, [t, l, g, p]),
+      }, [t, l, g, _]),
       E = reactExports.useCallback((e) => {
         f.current.isVisible &&
           ((f.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
@@ -4987,4692 +9296,7 @@ const handleViewEvent = (e, t, s = {}, a = 0) => {
       : e;
     var x;
   },
-  BackportTooltip$1 = ({ children: e, ...t }) =>
-    jsxRuntimeExports.jsx(Tooltip$2, {
-      contentId:
-        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
-      ignoreShowDelay: !0,
-      ...t,
-      children: e,
-    }),
-  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
-  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
-  white = "Formattextwithcolortags_white_e509d98",
-  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
-  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
-  par = "Formattextwithcolortags_par_485c5228",
-  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
-  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
-  red = "Formattextwithcolortags_red_9f8bd43",
-  redDark = "Formattextwithcolortags_redDark_5f4161da",
-  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
-  orange = "Formattextwithcolortags_orange_11869493",
-  cream = "Formattextwithcolortags_cream_12fdbea3",
-  brown = "Formattextwithcolortags_brown_e49e35ef",
-  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
-  green = "Formattextwithcolortags_green_55b7d967",
-  greenDark = "Formattextwithcolortags_greenDark_2b347344",
-  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
-  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
-  cred = "Formattextwithcolortags_cred_b30a4efa",
-  gold = "Formattextwithcolortags_gold_616e4d7",
-  bond = "Formattextwithcolortags_bond_b29091",
-  prom = "Formattextwithcolortags_prom_85aada4f",
-  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
-  fadeIn$A = "Formattextwithcolortags_fadeIn_7219dca0",
-  fadeInThreeQuarters$A = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
-  fadeInHalf$A = "Formattextwithcolortags_fadeInHalf_7219dca0",
-  fadeOut$A = "Formattextwithcolortags_fadeOut_7219dca0",
-  fadeInWithScale$A = "Formattextwithcolortags_fadeInWithScale_7219dca0",
-  slideUp$A = "Formattextwithcolortags_slideUp_7219dca0",
-  scale$A = "Formattextwithcolortags_scale_7219dca0",
-  raysAppearance$A = "Formattextwithcolortags_raysAppearance_7219dca0",
-  rotate$A = "Formattextwithcolortags_rotate_7219dca0",
-  glowAppearance$A = "Formattextwithcolortags_glowAppearance_7219dca0",
-  highlightAppearance$A = "Formattextwithcolortags_highlightAppearance_7219dca0",
-  blink$A = "Formattextwithcolortags_blink_7219dca0",
-  slideUpIn$A = "Formattextwithcolortags_slideUpIn_7219dca0",
-  styles$1n = {
-    blackReal: blackReal,
-    whiteReal: whiteReal,
-    white: white,
-    whiteOrange: whiteOrange,
-    whiteSpanish: whiteSpanish,
-    par: par,
-    parSecondary: parSecondary,
-    parTertiary: parTertiary,
-    red: red,
-    redDark: redDark,
-    yellow: yellow,
-    orange: orange,
-    cream: cream,
-    brown: brown,
-    greenBright: greenBright,
-    green: green,
-    greenDark: greenDark,
-    blueBooster: blueBooster,
-    blueTeamkiller: blueTeamkiller,
-    cred: cred,
-    gold: gold,
-    bond: bond,
-    prom: prom,
-    parNoWidth: parNoWidth,
-    fadeIn: fadeIn$A,
-    fadeInThreeQuarters: fadeInThreeQuarters$A,
-    fadeInHalf: fadeInHalf$A,
-    fadeOut: fadeOut$A,
-    fadeInWithScale: fadeInWithScale$A,
-    slideUp: slideUp$A,
-    scale: scale$A,
-    raysAppearance: raysAppearance$A,
-    rotate: rotate$A,
-    "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
-    glowAppearance: glowAppearance$A,
-    highlightAppearance: highlightAppearance$A,
-    blink: blink$A,
-    slideUpIn: slideUpIn$A,
-  },
-  TAGGED_PHRASE_REGEXP =
-    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-  COLOR_REGEXP = new RegExp("(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))"),
-  WORDS_REGEXP = new RegExp("(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))"),
-  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
-    const a = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
-      r = reactExports.useMemo(() => t || {}, [t]);
-    let n = TAGGED_PHRASE_REGEXP.exec(e),
-      o = e,
-      i = 0;
-    for (; n;) {
-      const s = n[0],
-        u = COLOR_REGEXP.exec(s),
-        l = WORDS_REGEXP.exec(s),
-        c = n[1];
-      if (u && l) {
-        const e = u[0],
-          n = e + i++ + e;
-        ((o = o.replace(s, `%(${n})`)),
-          (r[n] = styles$1n[e]
-            ? jsxRuntimeExports.jsx("span", {
-                className: styles$1n[e],
-                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
-              })
-            : jsxRuntimeExports.jsx("span", {
-                style: a(e),
-                children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
-              })));
-      }
-      n = TAGGED_PHRASE_REGEXP.exec(e);
-    }
-    return jsxRuntimeExports.jsx(FormatText$1, { text: o, classMix: s, binding: r });
-  },
-  FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent),
-  defaultOnFinish = () => {},
-  useCountdown$1 = (e = 0, t, s = 0, a = defaultOnFinish) => {
-    const [r, n] = reactExports.useState(e);
-    return (
-      reactExports.useEffect(() => {
-        if (e > 0) {
-          n(e);
-          const r = Date.now(),
-            o = setInterval(
-              () => {
-                const t = e - Math.floor((Date.now() - r) / MS_IN_SECOND);
-                null !== s && t <= s ? (n(s), a && a(), clearInterval(o)) : n(t);
-              },
-              (t || (e > 2 * ONE_MINUTE ? ONE_MINUTE : 1)) * MS_IN_SECOND,
-            );
-          return () => {
-            clearInterval(o);
-          };
-        }
-      }, [e, t, s, a]),
-      r
-    );
-  },
-  createTimeoutInEffect = (e, t) => {
-    let s;
-    const a = setTimeout(() => {
-      s = e();
-    }, t);
-    return () => {
-      ("function" == typeof s && s(), clearTimeout(a));
-    };
-  };
-(DataTracker.instance, DataTracker.instance);
-const useCountdown = useCountdown$1,
-  useScaleState = () => {
-    const [e, t] = reactExports.useState(env.view.getScale());
-    return (
-      reactExports.useEffect(() => {
-        const e = () => {
-          t(env.view.getScale());
-        };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
-      }, []),
-      e
-    );
-  };
-var CountdownIcon = ((e) => (
-    (e.Timer = "timer"),
-    (e.Countdown = "countdown"),
-    (e.Cooldown = "cooldown"),
-    (e.None = "none"),
-    e
-  ))(CountdownIcon || {}),
-  CountdownStyle = ((e) => (
-    (e.Description = "description"),
-    (e.Short = "short"),
-    (e.Long = "long"),
-    (e.Extended = "extended"),
-    e
-  ))(CountdownStyle || {});
-const base$1b = "Countdown_99fa8328",
-  icon$e = "Countdown_icon_b50ebafb",
-  description = "Countdown_description_91ad95d2",
-  styles$1m = { base: base$1b, icon: icon$e, description: description },
-  formatUnit = (e) => e.toString().padStart(2, "0"),
-  formatTimeUnits = (e, t) => {
-    switch (t) {
-      case CountdownStyle.Description:
-        return getRoundedTimeUnitDescription(e);
-      case CountdownStyle.Short:
-        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Long:
-        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Extended:
-        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-    }
-  },
-  IMAGES = R.images.gui.maps.icons.components.countdown,
-  getIcon = (e, t) => {
-    const s = 2 === t ? IMAGES.big : IMAGES;
-    switch (e) {
-      case CountdownIcon.Timer:
-        return s.clock();
-      case CountdownIcon.Countdown:
-        return s.hourglass();
-      case CountdownIcon.Cooldown:
-        return s.lock();
-    }
-  },
-  Countdown = ({
-    duration: e,
-    icon: t = CountdownIcon.Timer,
-    style: s = CountdownStyle.Description,
-    onTimeReached: a,
-    refreshRate: r,
-    className: n = "",
-    classNames: o = {},
-  }) => {
-    const i = r ?? (s !== CountdownStyle.Description ? 1 : void 0),
-      u = useCountdown(e, i),
-      l = useScaleState();
-    a && a[u] && a[u]();
-    const c = formatTimeUnits(getTimeUnits(u), s);
-    return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$1m.base, n),
-      children: [
-        t !== CountdownIcon.None &&
-          jsxRuntimeExports.jsx("div", {
-            className: cx(styles$1m.icon, o.icon),
-            style: { backgroundImage: `url('${getIcon(t, l)}')` },
-          }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$1m.description, o.text), children: c }),
-      ],
-    });
-  },
-  Countdown$1 = reactExports.memo(Countdown),
-  UNKNOWN_NATION = "none",
-  list = [
-    "ussr",
-    "germany",
-    "usa",
-    "china",
-    "france",
-    "uk",
-    "japan",
-    "czech",
-    "sweden",
-    "poland",
-    "italy",
-  ],
-  nationById = (e) => list[e] ?? UNKNOWN_NATION,
-  LIGHT_TANK = "lightTank",
-  MEDIUM_TANK = "mediumTank",
-  HEAVY_TANK = "heavyTank",
-  SPG = "SPG",
-  AT_SPG = "AT-SPG",
-  types$4 = {
-    lightTank: LIGHT_TANK,
-    mediumTank: MEDIUM_TANK,
-    heavyTank: HEAVY_TANK,
-    SPG: SPG,
-    "AT-SPG": AT_SPG,
-  },
-  MIN_TIER = 1,
-  MAX_TIER = 11,
-  typeValues = Object.values(types$4),
-  normilizeVehicleType = (e) => e.replace("-", "_"),
-  isTypeValidValue = (e) => typeValues.includes(e),
-  isTierValid = (e) => e >= MIN_TIER && e <= MAX_TIER;
-function getVehicleImageKey(e) {
-  const t = e.indexOf(":");
-  return normalizeResource(t < 0 ? e.toLowerCase() : e.substring(t + 1).toLowerCase());
-}
-function fromModel$1(e) {
-  const t = e.tier;
-  assert(isTierValid(t), `Such tier ${t} is not supported`);
-  const s = e.type;
-  return (
-    assert(isTypeValidValue(s), `Such vehicle type ${s} is not supported`),
-    {
-      tier: t,
-      type: s,
-      normilizedType: normalizeResource(e.type),
-      name: e.name,
-      techName: e.techName,
-      premium: e.isPremium,
-      vehicleCD: e.vehicleCD,
-      nation: e.nation,
-    }
-  );
-}
-function isRentVehicle(e) {
-  return e.rent.isRented;
-}
-const RUDY_PL = 51345,
-  RUDY_USSR = 59393,
-  RUDIES = [RUDY_USSR, RUDY_PL],
-  sameTanksRemap = { [RUDY_PL]: RUDIES, [RUDY_USSR]: RUDIES },
-  WITHOUT_ROLE = "without_role",
-  roles$1 = {
-    assault: "assault",
-    sniper: "sniper",
-    support: "support",
-    universal: "universal",
-    break: "break",
-    scout: "scout",
-    spg: "spg",
-  },
-  mapRoleByKey = [
-    WITHOUT_ROLE,
-    roles$1.spg,
-    roles$1.assault,
-    roles$1.break,
-    roles$1.universal,
-    roles$1.support,
-    roles$1.assault,
-    roles$1.support,
-    roles$1.universal,
-    roles$1.sniper,
-    roles$1.assault,
-    roles$1.universal,
-    roles$1.sniper,
-    roles$1.support,
-    roles$1.universal,
-    WITHOUT_ROLE,
-    roles$1.scout,
-    roles$1.support,
-  ],
-  getRoleByKey = (e) => mapRoleByKey[e] ?? WITHOUT_ROLE,
-  atSpgRoles = [roles$1.assault, roles$1.universal, roles$1.sniper, roles$1.support],
-  heavyTankRoles = [roles$1.assault, roles$1.break, roles$1.universal, roles$1.support],
-  mediumTankRoles = [roles$1.assault, roles$1.support, roles$1.universal, roles$1.sniper],
-  lightTankRoles = [roles$1.universal, roles$1.scout, roles$1.support],
-  vehicleState = { UNSUITABLE_TO_QUEUE: "unsuitableToQueue" },
-  NodeTypes = { Text: 1, Tag: 2, Var: 3 };
-function parseArguments(e) {
-  const t = [];
-  let s = "",
-    a = !1,
-    r = !1,
-    n = "";
-  for (let o = 0; o < e.length; o++) {
-    const i = e[o];
-    ("'" !== i && '"' !== i) || r || a
-      ? i === n && r
-        ? ((r = !1), (s += i))
-        : "(" !== i || r
-          ? ")" === i && a && !r
-            ? ((a = !1), (s += i))
-            : " " !== i || a || r
-              ? (s += i)
-              : s && (t.push(s), (s = ""))
-          : ((a = !0), (s += i))
-      : ((r = !0), (n = i), (s += i));
-  }
-  return (s && t.push(s), t);
-}
-function parse(e, t) {
-  const s = [],
-    a = [];
-  let r = "",
-    n = !1,
-    o = "",
-    i = 0;
-  for (let u = 0; u < e.length; u++) {
-    const l = e[u];
-    if (l === t.start[0] && e.slice(u, u + t.start.length) === t.start) {
-      if (r) {
-        if (a.length > 0) {
-          a[a.length - 1].node.children.push({ type: NodeTypes.Text, value: r });
-        } else s.push({ type: NodeTypes.Text, value: r });
-        r = "";
-      }
-      ((n = !0), (u += t.start.length - 1));
-    } else if (l === t.end[0] && e.slice(u, u + t.end.length) === t.end) {
-      ((n = !1), (u += t.end.length - 1));
-      const e = o.trim();
-      if (e.startsWith("@")) {
-        const t = e.slice(1).trim(),
-          r = { type: NodeTypes.Tag, attrs: t.split("|"), instanceId: ++i, children: [] };
-        if (a.length > 0) {
-          a[a.length - 1].node.children.push(r);
-        } else s.push(r);
-        a.push({ node: r, startIndex: s.length });
-      } else if ("/" === e) a.length > 0 && a.pop();
-      else {
-        const t = { type: NodeTypes.Var, instanceId: ++i, name: e };
-        if (a.length > 0) {
-          a[a.length - 1].node.children.push(t);
-        } else s.push(t);
-      }
-      o = "";
-    } else n ? (o += l) : (r += l);
-  }
-  if (r)
-    if (a.length) {
-      a[a.length - 1].node.children.push({ type: NodeTypes.Text, value: r });
-    } else s.push({ type: NodeTypes.Text, value: r });
-  return s;
-}
-const COLORS =
-    "blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom",
-  base$1a = "FormatText_db904f12",
-  base__fullSize = "FormatText_base__fullSize_a514958e",
-  nowrap = "FormatText_nowrap_ff69eca3",
-  styles$1l = { COLORS: COLORS, base: base$1a, base__fullSize: base__fullSize, nowrap: nowrap },
-  legacyColors = new Set(styles$1l.COLORS?.split(", ") ?? []);
-let keyId = 0;
-function takeKey() {
-  return ++keyId;
-}
-const startsWithPunctuationRe =
-  /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u0E00-\u0E7F\u3000-\u303F\uFF00-\uFFEF\]]/u;
-function splitString(e) {
-  const t = resources.resolve("langCode");
-  return addSpaceAndMap(
-    splitLocale(e, t),
-    t,
-    (e, t) => e && jsxRuntimeExports.jsx("span", { children: e }, `${e}${t}`),
-  );
-}
-function splitArray(e) {
-  const t = [];
-  for (let s = 0; s < e.length; s++) {
-    const a = e[s],
-      r = e[s + 1];
-    if ("string" != typeof r || !startsWithPunctuationRe.test(r)) {
-      t.push(split(a));
-      continue;
-    }
-    const n = splitString(r.slice(1));
-    (t.push(
-      jsxRuntimeExports.jsxs(
-        reactExports.Fragment,
-        {
-          children: [
-            jsxRuntimeExports.jsxs("span", {
-              className: styles$1l.nowrap,
-              children: [split(a), r[0]],
-            }),
-            n,
-          ],
-        },
-        takeKey(),
-      ),
-    ),
-      (s += 1));
-  }
-  return t;
-}
-function split(e) {
-  return Array.isArray(e)
-    ? splitArray(e)
-    : "string" == typeof e
-      ? jsxRuntimeExports.jsx(reactExports.Fragment, { children: splitString(e) }, takeKey())
-      : e;
-}
-function style(e, ...t) {
-  return jsxRuntimeExports.jsx(
-    "span",
-    {
-      style: t.reduce((s, a) => {
-        if (Array.isArray(a)) {
-          const [e, t] = a;
-          return ((s[e] = t), s);
-        }
-        return (console.warn(`Invalid argument ${a} in ${e}: ${t}`), s);
-      }, {}),
-      children: e,
-    },
-    takeKey(),
-  );
-}
-function className(e, ...t) {
-  return jsxRuntimeExports.jsx(
-    "span",
-    { className: t.filter((e) => "string" == typeof e && e.length > 0).join(" "), children: e },
-    takeKey(),
-  );
-}
-const color = (e, t) => ["color", t],
-  fontSize = (e, t) => ["fontSize", t],
-  fontWeight = (e, t) => ["fontWeight", t],
-  textDecoration = (e, t) => ["textDecoration", t],
-  bold = (e) => ["fontWeight", "bold"];
-function colorLegacy(e, t) {
-  const s = takeKey();
-  return legacyColors.has(String(t))
-    ? jsxRuntimeExports.jsx("span", { className: `FormatText_colorLegacy__${t}`, children: e }, s)
-    : jsxRuntimeExports.jsx("span", { style: { color: `#${t}` }, children: e }, s);
-}
-const defaultFormatters = {
-  class: className,
-  colorLegacy: colorLegacy,
-  bold: bold,
-  split: split,
-  style: style,
-  color: color,
-  fontSize: fontSize,
-  fontWeight: fontWeight,
-  textDecoration: textDecoration,
-};
-function applyFunction(e, t, s, a) {
-  const r = s.map((t) => {
-      if ("string" != typeof t) return t;
-      const s = t.trim();
-      if (s.startsWith("(") && s.endsWith(")")) {
-        const [t, ...r] = s.slice(1, -1).split(" ");
-        return t ? applyFunction(e, t, r, a) : e;
-      }
-      return s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
-    }),
-    n = a[t];
-  return n ? n(e, ...r) : (console.error(`Function ${t} is not registered`), e);
-}
-function applyFunctions(e, t, s) {
-  return e.reduce((e, t) => {
-    const [a, ...r] = parseArguments(t.trim());
-    return a ? applyFunction(e, a, r, s) : e;
-  }, t);
-}
-function isEnd(e) {
-  return !((e >= "a" && e <= "z") || (e >= "A" && e <= "Z") || (e >= "0" && e <= "9") || "_" === e);
-}
-function resolveAttrParams(e, t) {
-  for (let s = 0; s < e.length; s++) {
-    if ("$" === e[s]) {
-      let a = s + 1;
-      for (; a < e.length && !isEnd(e[a]);) a++;
-      const r = e.slice(s + 1, a),
-        n = t[r];
-      if (n) return resolveAttrParams(e.replace(`$${r}`, String(n)), t);
-    }
-  }
-  return e;
-}
-function resolveAttrsParams(e, t) {
-  const s = [];
-  for (let a = 0; a < e.length; a++) s[a] = resolveAttrParams(e[a], t);
-  return s;
-}
-const primitives = ["number", "string", "undefined"];
-function render(e, t, s = {}, a = !0) {
-  a && (keyId = 0);
-  const r = [];
-  function n(e) {
-    if (primitives.includes(typeof e)) {
-      const t = r.at(-1);
-      if ("string" == typeof t) return void (r[r.length - 1] = t + e);
-    }
-    r.push(e);
-  }
-  for (const o of e)
-    if (o.type === NodeTypes.Text) n(o.value);
-    else if (o.type === NodeTypes.Var)
-      null === s[o.name] || primitives.includes(typeof s[o.name])
-        ? n(s[o.name] ?? `{{${o.name}}}`)
-        : r.push(
-            jsxRuntimeExports.jsx(
-              reactExports.Fragment,
-              { children: s[o.name] },
-              `var-${o.name}-${o.instanceId}`,
-            ),
-          );
-    else if (o.type === NodeTypes.Tag) {
-      const e = render(o.children, t, s, !1),
-        a = applyFunctions(resolveAttrsParams(o.attrs, s), e, t);
-      r.push(a);
-    }
-  return r;
-}
-function upgradeColorTag(e) {
-  return e
-    .replace(
-      /%\(([a-zA-Z0-9]+)_(Open|Start)\)s(.+?)%\(\1_(Close|End)\)s/,
-      "{{@ colorLegacy '$1'}}$3{{/}}",
-    )
-    .replace(
-      /\{([a-zA-Z0-9]+)_(Open|Start)\}(.+?)\{\1_(Close|End)\}/gi,
-      "{{@ colorLegacy '$1'}}$3{{/}}",
-    );
-}
-function upgradeVariables(e) {
-  return e
-    .replace(/%\((\w+|\d)\)(?:s|d)?/gi, "{{$1}}")
-    .replace(new RegExp("(?<!\\{)\\{(\\w+|\\d)\\}", "g"), "{{$1}}");
-}
-function upgradeSymbols(e) {
-  return e.replaceAll("&nbsp;", " ").replaceAll("&zwnbsp;", "\ufeff");
-}
-function upgradeLegacy(e) {
-  return pipe(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
-}
-const defaultBrackets = { start: "{{", end: "}}" },
-  FormatText = reactExports.memo(function (e) {
-    const {
-        brackets: t = defaultBrackets,
-        text: s,
-        params: a,
-        upgradeLegacy: r,
-        fullSize: n,
-        inline: o,
-        formatters: i,
-        split: u,
-        ...l
-      } = e,
-      c = reactExports.useMemo(
-        () => (e.upgradeLegacy ? upgradeLegacy(e.text) : e.text),
-        [e.text, e.upgradeLegacy],
-      ),
-      d = reactExports.useMemo(
-        () => (e.formatters ? { ...defaultFormatters, ...e.formatters } : defaultFormatters),
-        [e.formatters],
-      ),
-      _ = reactExports.useMemo(() => parse(u ? `{{@ split}}${c}{{/}}` : c, t), [t, c, u]),
-      p = reactExports.useMemo(() => render(_, d, e.params), [_, d, e.params]),
-      m = clsx(styles$1l.base, n && styles$1l.base__fullSize, l.className);
-    return e.inline
-      ? (console.warn(
-          "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
-          "Use 'split' prop instead.",
-        ),
-        jsxRuntimeExports.jsx("p", {
-          ...l,
-          className: m,
-          ref: (e) => {
-            e?.setAttribute("cohinline", "true");
-          },
-          children: p,
-        }))
-      : jsxRuntimeExports.jsx("span", { ...l, className: m, children: p });
-  });
-function FormatString({ path: e, ...t }) {
-  return jsxRuntimeExports.jsx(FormatText, {
-    text: resources.resolve("strings").readOrEmpty(e),
-    ...t,
-  });
-}
-function FormatPluralString({ path: e, count: t, ...s }) {
-  return jsxRuntimeExports.jsx(FormatText, {
-    text: resources.resolve("strings").pluralOrEmpty(e, t),
-    ...s,
-  });
-}
-const formatters = Object.fromEntries(
-  Object.entries(defaultFormatters).map(([e]) => [e, (e) => e]),
-);
-function renderString(e, t = {}) {
-  const s = parse(e, defaultBrackets);
-  return String(render(s, formatters, t));
-}
-function renderResolvedString(e, t = {}) {
-  const s = resources.resolve("strings").readOrEmpty(e);
-  return 0 === s.length ? s : renderString(s, t);
-}
-const undef = () => {};
-function withResolvePath(e) {
-  const t = e;
-  return reactExports.forwardRef(function (e, s) {
-    const a = useAdaptive(e, e.adaptive),
-      { path: r, ...n } = a,
-      o = a.images ?? resources.resolve("images"),
-      i = { ...n, ref: s };
-    {
-      const e = r ? o.readOr(r, undef, "warn") : void 0;
-      return e
-        ? jsxRuntimeExports.jsx(t, { ...i, src: e })
-        : jsxRuntimeExports.jsx(t, { ...i, unknown: !0 });
-    }
-  });
-}
-const defaultUnknownStyle = {
-  background:
-    "linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)",
-  backgroundSize: "20rem 20rem",
-  backgroundPosition: "0 0, 0 10rem, 10rem -10rem, -10rem 0rem",
-  backgroundColor: "#000",
-};
-reactExports.forwardRef(function (e, t) {
-  if (!e.src) {
-    const {
-      repeat: s,
-      fit: a,
-      position: r,
-      width: n,
-      src: o,
-      height: i,
-      unselectable: u,
-      unknownStyle: l = defaultUnknownStyle,
-      ...c
-    } = e;
-    return jsxRuntimeExports.jsx("div", {
-      ...c,
-      ref: t,
-      style: { width: e.width, height: e.height, ...l, ...e.style },
-    });
-  }
-  const {
-    repeat: s,
-    fit: a,
-    position: r,
-    width: n,
-    height: o,
-    unknownStyle: i,
-    unselectable: u,
-    ...l
-  } = e;
-  return jsxRuntimeExports.jsx("div", {
-    ...l,
-    ref: t,
-    style: {
-      backgroundImage: `url(${e.src})`,
-      backgroundRepeat: s ?? "no-repeat",
-      backgroundSize: a ?? "contain",
-      backgroundPosition: r ?? "center center",
-      width: "number" == typeof n ? `${n}rem` : n,
-      height: "number" == typeof o ? `${o}rem` : o,
-      ...l.style,
-    },
-  });
-});
-const Image$1 = withResolvePath(
-    reactExports.forwardRef(function (e, t) {
-      if (e.unknown) {
-        const {
-          repeat: s,
-          fit: a,
-          position: r,
-          width: n,
-          src: o,
-          height: i,
-          unselectable: u,
-          unknown: l,
-          unknownStyle: c = defaultUnknownStyle,
-          ...d
-        } = e;
-        return jsxRuntimeExports.jsx("div", {
-          ...d,
-          ref: t,
-          style: { width: e.width, height: e.height, ...c, ...e.style },
-        });
-      }
-      const {
-        repeat: s,
-        fit: a,
-        position: r,
-        width: n,
-        height: o,
-        unknownStyle: i,
-        unknown: u,
-        unselectable: l,
-        ...c
-      } = e;
-      return jsxRuntimeExports.jsx("div", {
-        ...c,
-        ref: t,
-        style: {
-          backgroundImage: `url(${e.src})`,
-          backgroundRepeat: s ?? "no-repeat",
-          backgroundSize: a ?? "contain",
-          backgroundPosition: r ?? "center center",
-          width: "number" == typeof n ? `${n}rem` : n,
-          height: "number" == typeof o ? `${o}rem` : o,
-          ...c.style,
-        },
-      });
-    }),
-  ),
-  Img = withResolvePath(
-    reactExports.forwardRef(function (e, t) {
-      const {
-        width: s,
-        height: a,
-        src: r,
-        unselectable: n,
-        unknown: o,
-        unknownStyle: i = defaultUnknownStyle,
-        ...u
-      } = e;
-      return e.unknown
-        ? jsxRuntimeExports.jsx("div", { ...u, style: { width: e.width, height: e.height, ...i } })
-        : jsxRuntimeExports.jsx("img", { ...u, ref: t, src: r, width: s, height: a });
-    }),
-  ),
-  contextInstance$1 = reactExports.createContext(null),
-  positions$1 = { left: "left", right: "right", top: "top", bottom: "bottom" };
-Object.values(positions$1);
-const verticalPositions = ["top", "bottom"],
-  oppositePositions = { top: "bottom", bottom: "top", left: "right", right: "left" };
-function isVerticalPosition(e) {
-  return verticalPositions.includes(e);
-}
-function usePopoverOptional() {
-  return reactExports.useContext(contextInstance$1);
-}
-function usePopover() {
-  const e = reactExports.useContext(contextInstance$1);
-  if (!e) throw new Error("usePopover must be used within a Popover");
-  return e;
-}
-const initialState$1 = { opened: !1 };
-function usePopoverInstance(e) {
-  const [t, s] = reactExports.useState(initialState$1),
-    a = reactExports.useMemo(() => {
-      const t = observable.box(),
-        a = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
-        r = { bounding: observable.box(), position: observable.box() };
-      function n(e) {
-        s((t) => {
-          const s = e(t);
-          return (
-            t.opened === s.opened ||
-              (s.opened ? a.onBeforeOpen.forEach((e) => e()) : a.onBeforeClose.forEach((e) => e())),
-            s
-          );
-        });
-      }
-      return {
-        id: e,
-        open: () => n((e) => ({ ...e, opened: !0 })),
-        close: () => n((e) => ({ ...e, opened: !1 })),
-        toggle: () => n((e) => ({ ...e, opened: !e.opened })),
-        subscribe: {
-          onBeforeOpen: (e) => (a.onBeforeOpen.add(e), () => a.onBeforeOpen.delete(e)),
-          onBeforeClose: (e) => (a.onBeforeClose.add(e), () => a.onBeforeClose.delete(e)),
-        },
-        portal: {
-          bounding: r.bounding,
-          setBounding: takeAction(r.bounding),
-          position: r.position,
-          setPosition: takeAction(r.position),
-        },
-        trigger: { bounding: t, setBounding: takeAction(t) },
-      };
-    }, [e]);
-  return reactExports.useMemo(() => ({ ...a, ...t }), [a, t]);
-}
-const border$9 = "Popover_border_d0a76717",
-  title$3 = "Popover_title_e4a0437a",
-  subtitle = "Popover_subtitle_1c7535c8",
-  header$2 = "Popover_header_de23fc15",
-  body$1 = "Popover_body_22163d58",
-  divider = "Popover_divider_46fe6f15",
-  decoration$1 = "Popover_decoration_134219d5",
-  close = "Popover_close_ad4a9c7b",
-  styles$1k = {
-    border: border$9,
-    title: title$3,
-    subtitle: subtitle,
-    header: header$2,
-    body: body$1,
-    divider: divider,
-    decoration: decoration$1,
-    close: close,
-  },
-  Close = reactExports.forwardRef(({ className: e, children: t, ...s }, a) => {
-    const r = usePopoverOptional(),
-      n = useSounds(),
-      o = useUpscale("ui_kit.close_button.icon_small", "ui_kit.close_button.icon_medium");
-    return (
-      reactExports.useEffect(
-        () =>
-          onResize$1(function () {
-            r?.close();
-          }),
-        [r],
-      ),
-      jsxRuntimeExports.jsx("div", {
-        ...s,
-        onClick: function (e) {
-          (s.onClick?.(e),
-            n.play("close", { target: "react-popover:close", original: e }),
-            r?.close());
-        },
-        onMouseEnter: function (e) {
-          (s.onMouseEnter?.(e),
-            n.play("mouse-enter", { target: "react-popover:close", original: e }));
-        },
-        ref: a,
-        className: clsx(styles$1k.close, e),
-        children: t ?? jsxRuntimeExports.jsx(Image$1, { path: o, width: 24, height: 24 }),
-      })
-    );
-  }),
-  OPEN_ANIMATION_DURATION = 250,
-  animationTransitions = {
-    top: "translate(0rem, 50rem) scale(0.9)",
-    bottom: "translate(0rem, -50rem) scale(0.9)",
-    left: "translate(50rem, 0rem) scale(0.9)",
-    right: "translate(-50rem, 0rem) scale(0.9)",
-  },
-  defaultPaddingsRem = { top: 0, bottom: 0, left: 0, right: 0 };
-function Portal({
-  children: e,
-  target: t,
-  pivot: s = 0,
-  position: a = "top",
-  paddingsRem: r = {},
-  lazy: n = !1,
-  closeByEscape: o = !0,
-  onBeforePositionChange: i = noop$1,
-  freeSpaceRem: u = 8,
-  ...l
-}) {
-  const c = usePopover(),
-    d = React.useRef(null),
-    [_, p] = reactExports.useState(),
-    m = reactExports.useMemo(
-      () => ({
-        top: remToPx$1(r.top || defaultPaddingsRem.top),
-        bottom: remToPx$1(r.bottom || defaultPaddingsRem.bottom),
-        left: remToPx$1(r.left || defaultPaddingsRem.left),
-        right: remToPx$1(r.right || defaultPaddingsRem.right),
-      }),
-      [r.bottom, r.top, r.left, r.right],
-    ),
-    f = remToPx$1(u),
-    g = reactExports.useMemo(
-      () => (t ? (document.querySelector(t) ?? document.body) : document.body),
-      [t],
-    );
-  reactExports.useEffect(() => {
-    const e = d.current;
-    if (!e) return;
-    const t = document.querySelector(`[data-popover-trigger-id="${c.id}"]`),
-      r = e.querySelector(`[data-popover-display-id="${c.id}"]`);
-    if (!t || !r) return;
-    const n = watchResizes([t, e, document.body], ([t, r, n]) => {
-      if (!c.opened) return void p(void 0);
-      if (!1 === i(c, { callerBounding: t, containerBounding: r, bodyBounding: n })) return;
-      const o = getUpdatedPosition(a, m, t, r, n);
-      (p(o),
-        updatePosition(s, f, o, m, t, r, n, e),
-        runInAction(() => {
-          (c.trigger.setBounding(t), c.portal.setBounding(r), c.portal.setPosition(o));
-        }));
-    });
-    return (n.start(), n.stop);
-  }, [c, i, m, s, f, c.id, c.portal, c.trigger, a, c.opened]);
-  const b = reactExports.useCallback(() => {
-    const e = d.current;
-    e &&
-      document.activeElement &&
-      document.activeElement instanceof HTMLElement &&
-      e.contains(document.activeElement) &&
-      document.activeElement.blur();
-  }, []);
-  (reactExports.useEffect(() => c.subscribe.onBeforeClose(b), [c.subscribe, b]),
-    useHandleKeydown(o && c.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
-      c.close();
-    }),
-    reactExports.useEffect(() => {
-      if (!c.opened) return;
-      const e = d.current;
-      if (!e) return;
-      const t = e;
-      function s(e) {
-        const s = e.target;
-        if (!(s instanceof HTMLElement)) return !1;
-        const a = `[data-popover-trigger-id="${c.id}"]`,
-          r = `[data-popover-outside-click-whitelist-id="${c.id}"]`;
-        return !(
-          t === s ||
-          t.contains(s) ||
-          s.matches(a) ||
-          s.matches(r) ||
-          s.closest(a) ||
-          s.closest(r)
-        );
-      }
-      return new DisposeBuilder()
-        .add(
-          addEventListener(document, "click", (e) => {
-            s(e) && c.close();
-          }),
-        )
-        .add(
-          mouse$1.down(([e, t]) => {
-            if ("outside" === t) return c.close();
-            const a = e.button;
-            (a !== mouseButtons.right && a !== mouseButtons.wheel) || (s(e) && c.close());
-          }),
-        ).dispose;
-    }, [c]));
-  const [h, E] = useSpring(() => ({
-    from: { opacity: 0, transform: animationTransitions[a] },
-    config: { easing: easings.easeInOutCubic, duration: OPEN_ANIMATION_DURATION },
-  }));
-  return (
-    reactExports.useEffect(() => {
-      if (!_) return;
-      const e = { opacity: 0, transform: animationTransitions[_] };
-      E.start({
-        from: c.opened ? e : void 0,
-        to: c.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
-      });
-    }, [E, _, c.opened]),
-    !c.opened && n
-      ? null
-      : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
-          children: ReactDOM$1.createPortal(
-            jsxRuntimeExports.jsx(animated.div, {
-              ...l,
-              ref: d,
-              style: {
-                position: "absolute",
-                top: "0",
-                left: "0",
-                pointerEvents: h.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: h.opacity.to((e) => (0 !== e || c.opened ? "block" : "none")),
-                ...l.style,
-              },
-              children: jsxRuntimeExports.jsx(animated.div, { style: h, children: e }),
-            }),
-            g,
-          ),
-        })
-  );
-}
-function getUpdatedPosition(e, t, s, a, r) {
-  return ("top" === e && s.top - a.height - t.top < 0) ||
-    ("bottom" === e && s.bottom + a.height + t.bottom > r.height) ||
-    ("left" === e && s.left - a.width - t.left < 0) ||
-    ("right" === e && s.right + a.width + t.right > r.width)
-    ? oppositePositions[e]
-    : e;
-}
-function applyTransform(e, t, s, a, r) {
-  ((e = clamp$1(s.left, r.width - a.offsetWidth - s.right, e)),
-    (t = clamp$1(s.top, r.height - a.offsetHeight - s.bottom, t)),
-    (a.style.transform = `translate(${e}px, ${t}px)`));
-}
-function updatePosition(e, t, s, a, r, n, o, i) {
-  if ("top" === s) {
-    const s = (n.width - r.width) * e;
-    applyTransform(r.left - s, r.top - n.height - t, a, i, o);
-  } else if ("bottom" === s) {
-    const s = (n.width - r.width) * e;
-    applyTransform(r.left - s, r.bottom + t, a, i, o);
-  } else if ("left" === s) {
-    const s = r.left - n.width - t,
-      u = (n.height - r.height) * e;
-    applyTransform(s, r.top - u, a, i, o);
-  } else if ("right" === s) {
-    const s = r.right + t,
-      u = (n.height - r.height) * e;
-    applyTransform(s, r.top - u, a, i, o);
-  }
-}
-const base$19 = "PopoverTip_163a336f",
-  arrow$2 = "PopoverTip_arrow_44c7d6a5",
-  glow$3 = "PopoverTip_glow_da3f9be9",
-  fadeIn$z = "PopoverTip_fadeIn_a48d88bb",
-  fadeInThreeQuarters$z = "PopoverTip_fadeInThreeQuarters_a48d88bb",
-  fadeInHalf$z = "PopoverTip_fadeInHalf_a48d88bb",
-  fadeOut$z = "PopoverTip_fadeOut_a48d88bb",
-  fadeInWithScale$z = "PopoverTip_fadeInWithScale_a48d88bb",
-  slideUp$z = "PopoverTip_slideUp_a48d88bb",
-  scale$z = "PopoverTip_scale_a48d88bb",
-  raysAppearance$z = "PopoverTip_raysAppearance_a48d88bb",
-  rotate$z = "PopoverTip_rotate_a48d88bb",
-  glowAppearance$z = "PopoverTip_glowAppearance_a48d88bb",
-  highlightAppearance$z = "PopoverTip_highlightAppearance_a48d88bb",
-  blink$z = "PopoverTip_blink_a48d88bb",
-  slideUpIn$z = "PopoverTip_slideUpIn_a48d88bb",
-  styles$1j = {
-    base: base$19,
-    "base__flip-left": "PopoverTip_base__flip-left_3cc0dadc",
-    "base__flip-right": "PopoverTip_base__flip-right_6a5605b6",
-    "base__flip-top": "PopoverTip_base__flip-top_6bcc69e1",
-    "base__flip-bottom": "PopoverTip_base__flip-bottom_416a1dc4",
-    arrow: arrow$2,
-    "arrow__position-top": "PopoverTip_arrow__position-top_a95d47a6",
-    "arrow__position-bottom": "PopoverTip_arrow__position-bottom_9d75ac12",
-    "arrow__position-left": "PopoverTip_arrow__position-left_ca4ced33",
-    "arrow__position-right": "PopoverTip_arrow__position-right_9dc94f7a",
-    glow: glow$3,
-    fadeIn: fadeIn$z,
-    fadeInThreeQuarters: fadeInThreeQuarters$z,
-    fadeInHalf: fadeInHalf$z,
-    fadeOut: fadeOut$z,
-    fadeInWithScale: fadeInWithScale$z,
-    slideUp: slideUp$z,
-    scale: scale$z,
-    raysAppearance: raysAppearance$z,
-    rotate: rotate$z,
-    "reverse-rotate": "PopoverTip_reverse-rotate_a48d88bb",
-    glowAppearance: glowAppearance$z,
-    highlightAppearance: highlightAppearance$z,
-    blink: blink$z,
-    slideUpIn: slideUpIn$z,
-  },
-  verticals = [positions$1.top, positions$1.bottom],
-  horizontals = [positions$1.left, positions$1.right],
-  rotations = { top: 180, bottom: 0, left: 90, right: -90 },
-  Tip = reactExports.forwardRef(({ ...e }, t) => {
-    const s = reactExports.useRef(null),
-      a = usePopoverOptional(),
-      [r, n] = reactExports.useState(e.size),
-      [o, i] = reactExports.useState(
-        e.position || (a && oppositePositions[a.portal.position.get()]) || "bottom",
-      ),
-      [u, l] = reactExports.useState(e.offset),
-      c = useEvent((t, s, a) => {
-        let r = o;
-        if ((e.position || ((r = oppositePositions[a]), i(r)), !e.size)) {
-          const e = isVerticalPosition(r)
-            ? `${Math.min(t.width, s.width)}px`
-            : `${Math.min(t.height, s.height)}px`;
-          n(e);
-        }
-        if (!e.offset) {
-          const e = isVerticalPosition(r)
-            ? `${Math.max(0, t.left - s.left)}px`
-            : `${Math.max(0, t.top - s.top)}px`;
-          l(e);
-        }
-      });
-    return (
-      reactExports.useEffect(() => {
-        if (s.current && a)
-          return autorun(() => {
-            const e = a.trigger.bounding.get(),
-              t = a.portal.bounding.get(),
-              s = a.portal.position.get();
-            e && s && t && c(e, t, s);
-          });
-      }, [a, c]),
-      jsxRuntimeExports.jsxs("div", {
-        ...e,
-        ref: assignRefs([t, s]),
-        style: {
-          width: (verticals.includes(o) && r) || "1rem",
-          height: (horizontals.includes(o) && r) || "1rem",
-          top: (horizontals.includes(o) && u) || "auto",
-          bottom: "bottom" === o ? "0" : "auto",
-          left: (verticals.includes(o) && u) || "auto",
-          right: "right" === o ? "0" : "auto",
-          ...e.style,
-        },
-        className: clsx(styles$1j.base, e.flipped && styles$1j[`base__flipped-${o}`], e.className),
-        children: [
-          jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$1j.arrow, styles$1j[`arrow__position-${o}`]),
-            style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
-          }),
-          !1 === e.noGlow &&
-            jsxRuntimeExports.jsx("div", {
-              className: styles$1j.glow,
-              style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
-            }),
-        ],
-      })
-    );
-  });
-function Trigger({ children: e }) {
-  const t = usePopover();
-  return e({ onClick: t.toggle, "data-popover-trigger-id": t.id }, t);
-}
-Tip.positions = positions$1;
-const Title = defineStyledComponent("Title", styles$1k.title),
-  Subtitle = defineStyledComponent("Subtitle", styles$1k.subtitle),
-  Header$1 = defineStyledComponent("Header", styles$1k.header),
-  Divider = defineStyledComponent("Divider", styles$1k.divider),
-  Body$1 = defineStyledComponent("Body", styles$1k.body),
-  Decoration$1 = defineStyledComponent("Decoration", styles$1k.decoration),
-  Display = reactExports.forwardRef((e, t) => {
-    const s = usePopoverOptional();
-    return jsxRuntimeExports.jsxs(Decoration$1, {
-      ...e,
-      ref: t,
-      "data-popover-display-id": s?.id,
-      children: [jsxRuntimeExports.jsx("div", { className: styles$1k.border }), e.children],
-    });
-  });
-function Popover(e) {
-  const t = reactExports.useId();
-  return jsxRuntimeExports.jsx(contextInstance$1.Provider, {
-    value: usePopoverInstance(e.id ?? t),
-    children: e.children,
-  });
-}
-((Popover.Close = Close),
-  (Popover.Title = Title),
-  (Popover.Subtitle = Subtitle),
-  (Popover.Header = Header$1),
-  (Popover.Divider = Divider),
-  (Popover.Body = Body$1),
-  (Popover.Tip = Tip),
-  (Popover.Display = Display),
-  (Popover.use = usePopover),
-  (Popover.Portal = Portal),
-  (Popover.Trigger = Trigger));
-const Slot$1 = React.forwardRef((e, t) => {
-  const { children: s, ...a } = e,
-    r = React.Children.toArray(s),
-    n = r.find(isSlottable);
-  if (n) {
-    const e = n.props.children,
-      s = r.map((t) =>
-        t === n
-          ? React.Children.count(e) > 1
-            ? React.Children.only(null)
-            : React.isValidElement(e)
-              ? e.props.children
-              : null
-          : t,
-      );
-    return jsxRuntimeExports.jsx(SlotClone, {
-      ...a,
-      ref: t,
-      children: React.isValidElement(e) ? React.cloneElement(e, void 0, s) : null,
-    });
-  }
-  return jsxRuntimeExports.jsx(SlotClone, { ...a, ref: t, children: s });
-});
-Slot$1.displayName = "Slot";
-const SlotClone = React.forwardRef((e, t) => {
-  const { children: s, ...a } = e;
-  if (React.isValidElement(s)) {
-    const e = getElementRef(s),
-      r = mergeProps(a, s.props);
-    return (
-      s.type !== React.Fragment && (r.ref = t ? assignRefs([t, e]) : e),
-      React.cloneElement(s, r)
-    );
-  }
-  return (console.warn("Invalid children", s), null);
-});
-SlotClone.displayName = "SlotClone";
-const Slottable = ({ children: e }) =>
-  jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e });
-function isSlottable(e) {
-  return React.isValidElement(e) && e.type === Slottable;
-}
-function mergeProps(e, t) {
-  const s = { ...e, ...t };
-  for (const a in t) {
-    const r = e[a],
-      n = t[a];
-    a.startsWith("on")
-      ? r && n
-        ? (s[a] = (...e) => {
-            (n(...e), r(...e));
-          })
-        : r && (s[a] = r)
-      : "style" === a
-        ? (s[a] = { ...r, ...n })
-        : "className" === a && (s[a] = [r, n].filter(Boolean).join(" "));
-  }
-  return s;
-}
-function getElementRef(e) {
-  return e.props.ref || e.ref;
-}
-const base$18 = "TruncateText_dcb41d92",
-  styles$1i = { base: base$18 },
-  TruncatedText = reactExports.forwardRef(function (
-    { text: e, tooltipParams: t, className: s, ...a },
-    r,
-  ) {
-    const n = useSimpleTooltip({ header: t?.header, body: t?.body || e }),
-      o = reactExports.useRef(null),
-      [i, u] = reactExports.useState(!1),
-      l = reactExports.useCallback(() => {
-        o.current &&
-          u(o.current.scrollWidth - Math.ceil(o.current.getBoundingClientRect().width) > 0);
-      }, []);
-    return (
-      reactExports.useEffect(() => {
-        i || n.onMouseLeave();
-      }, [i, n]),
-      useLayoutReady(l, [l]),
-      useResizeLayoutReady(l, [l]),
-      useRefResizeObserver(o, l),
-      jsxRuntimeExports.jsx("div", {
-        ...a,
-        ref: assignRefs([r, o]),
-        className: clsx(styles$1i.base, s),
-        ...(i ? n : {}),
-        children: e,
-      })
-    );
-  });
-function asMemoized(e) {
-  return e;
-}
-const Context$5 = reactExports.createContext(void 0);
-function useHorizontalScroll() {
-  const e = reactExports.useContext(Context$5);
-  if (!e)
-    throw new Error("useHorizontalScroll must be used within a Scroll.Horizontal.Base component");
-  return e;
-}
-function HorizontalScrollProvider({ api: e, children: t }) {
-  const s = reactExports.useMemo(() => ({ api: e }), [e]);
-  return jsxRuntimeExports.jsx(Context$5.Provider, { value: s, children: t });
-}
-var Direction = ((e) => ((e[(e.Next = -1)] = "Next"), (e[(e.Prev = 1)] = "Prev"), e))(
-  Direction || {},
-);
-const defaultSettings = {
-    step: { type: "proportional", factor: 4, clampedArrowStepTimeout: 100 },
-    animationConfig: { tension: 170, friction: 26 },
-  },
-  createApiHook = ({
-    getContainerSize: e,
-    getBounds: t,
-    setScrollPosition: s,
-    getDirection: a,
-    getWrapperSize: r,
-    triggerMouseMoveOnUpdate: n = !1,
-  }) => {
-    const o = (e, s) => {
-      const [a, r] = t(e);
-      return clamp$1(a, r, s);
-    };
-    return (i = {}) => {
-      const { settings: u = defaultSettings } = i,
-        [l, c] = reactExports.useState(!1),
-        d = reactExports.useRef(null),
-        _ = reactExports.useRef(null),
-        p = reactExports.useRef({ wrapper: 0, container: 0 }),
-        m = useEmitter(),
-        f = useThrottle(
-          () => {
-            forceTriggerMouseMove$1();
-          },
-          [],
-          150,
-        ),
-        [g, b] = useSpring(() => ({
-          scrollPosition: 0,
-          onChange: (e) => {
-            const t = d.current;
-            t && (s(t, e), m.trigger("change", e));
-          },
-          onRest: (e) => m.trigger("rest", e),
-          onStart: (e) => m.trigger("start", e),
-          onPause: (e) => m.trigger("pause", e),
-        })),
-        h = reactExports.useCallback(
-          (e, t, s) => {
-            const a = g.scrollPosition.get(),
-              r = (g.scrollPosition.goal ?? 0) - a;
-            return o(e, t * s + r + a);
-          },
-          [g.scrollPosition],
-        ),
-        E = reactExports.useCallback(
-          function (e, { immediate: t = !1, reset: s = !0 } = {}) {
-            const a = d.current;
-            if (!a) return;
-            const r = o(a, e);
-            g.scrollPosition.goal !== r &&
-              b.start({
-                scrollPosition: r,
-                immediate: t,
-                reset: s,
-                config: u.animationConfig,
-                from: { scrollPosition: o(a, g.scrollPosition.get()) },
-                onChange: () => {
-                  n && f();
-                },
-              });
-          },
-          [g.scrollPosition, b, u.animationConfig, f],
-        ),
-        x = reactExports.useCallback(
-          function (e) {
-            const t = d.current,
-              s = _.current;
-            if (!t || !s) return;
-            const a = ((e, t) => {
-                switch (t.type) {
-                  case "proportional":
-                    return r(e) / t.factor;
-                  case "fixed":
-                    return t.value;
-                }
-              })(s, u.step),
-              n = h(t, e, a);
-            E(n);
-          },
-          [E, h, u.step],
-        ),
-        $ = reactExports.useCallback(
-          function (e) {
-            l ||
-              (0 !== e.deltaY && x(a(e)),
-              d.current && m.trigger("mouseWheel", e, g.scrollPosition, t(d.current)));
-          },
-          [g.scrollPosition, x, m, l],
-        ),
-        y = reactExports.useCallback(
-          function () {
-            const e = d.current;
-            e && (E(o(e, g.scrollPosition.goal), { immediate: !0 }), m.trigger("resizeHandled"));
-          },
-          [E, g.scrollPosition.goal, m],
-        );
-      useRefResizeObserver(_, (e) => {
-        const t = e.target;
-        if (!(t instanceof HTMLElement)) return;
-        const s = r(t);
-        p.current.wrapper !== s && y();
-      });
-      const A = useEvent(function () {
-          const t = d.current;
-          if (!t) return;
-          const s = e(t),
-            a = _.current ? r(_.current) : 0;
-          if (p.current.container !== s || p.current.wrapper !== a) {
-            const e = o(t, g.scrollPosition.goal);
-            (e !== g.scrollPosition.goal && E(e, { immediate: !0 }),
-              (p.current.container = s),
-              (p.current.wrapper = a),
-              m.trigger("recalculateContent"));
-          }
-        }),
-        v = useSkipFrame$1();
-      reactExports.useEffect(() => addEventListener(window, "resize", () => v.run(y)), [y, v]);
-      return reactExports.useMemo(
-        () => ({
-          getWrapperSize: () => (_.current ? r(_.current) : void 0),
-          getContainerSize: () => (d.current ? e(d.current) : void 0),
-          getBounds: () =>
-            d.current
-              ? t(d.current)
-              : (console.warn("getBounds: contentRef.current is null"), [0, 0]),
-          stepTimeout: u.step.clampedArrowStepTimeout,
-          settings: u,
-          clampPosition: o,
-          handleMouseWheel: $,
-          applyScroll: E,
-          applyStepTo: x,
-          contentRef: d,
-          wrapperRef: _,
-          scrollPosition: b,
-          animationScroll: g,
-          recalculateContent: A,
-          disabled: l,
-          setDisabled: c,
-          events: { on: m.on, off: m.off },
-        }),
-        [u, $, E, x, b, g, A, l, c, m.on, m.off],
-      );
-    };
-  },
-  DEFAULT_HORIZONTAL_API_CONFIG = {
-    getBounds: (e) => [0, Math.max(0, e.offsetWidth - (e.parentElement?.offsetWidth ?? 0))],
-    getContainerSize: (e) => e.offsetWidth,
-    getWrapperSize: (e) => e.offsetWidth,
-    setScrollPosition: (e, t) => {
-      e.style.transform = `translateX(-${0 | (t.value.scrollPosition ?? 0)}px)`;
-    },
-    getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
-    triggerMouseMoveOnUpdate: !0,
-  },
-  useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
-  IGNORE_DEFAULT = [2, 2];
-function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
-  const [a, r] = reactExports.useState(!0),
-    [n, o] = reactExports.useState(!0);
-  return (
-    reactExports.useEffect(() => {
-      function a() {
-        if (!e.contentRef.current) return;
-        const a = e.animationScroll.scrollPosition.get(),
-          [n, i] = e.getBounds(),
-          u = a >= i - s;
-        (r(a <= n + t), o(u));
-      }
-      return new DisposeBuilder()
-        .add(createLayoutReadyInEffect$1(a))
-        .add(e.events.on("resizeHandled", a))
-        .add(e.events.on("recalculateContent", a))
-        .add(e.events.on("change", a)).dispose;
-    }, [e, t, s]),
-    [a, n]
-  );
-}
-const scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
-  CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT = 100,
-  MOUSE_BUTTON_LEFT = 0,
-  background$9 = "Thumb_background_7f3dd6ac",
-  border$8 = "Thumb_border_5749138b",
-  innerBorder = "Thumb_innerBorder_42bafd18",
-  icon$d = "Thumb_icon_dca8bf26",
-  base$17 = "Thumb_6ff3e706",
-  base__vertical$2 = "Thumb_base__vertical_55a67c91",
-  base__horizontal = "Thumb_base__horizontal_27ca7ace",
-  base__active$3 = "Thumb_base__active_830942bb",
-  fadeIn$y = "Thumb_fadeIn_830942bb",
-  fadeInThreeQuarters$y = "Thumb_fadeInThreeQuarters_830942bb",
-  fadeInHalf$y = "Thumb_fadeInHalf_830942bb",
-  fadeOut$y = "Thumb_fadeOut_830942bb",
-  fadeInWithScale$y = "Thumb_fadeInWithScale_830942bb",
-  slideUp$y = "Thumb_slideUp_830942bb",
-  scale$y = "Thumb_scale_830942bb",
-  raysAppearance$y = "Thumb_raysAppearance_830942bb",
-  rotate$y = "Thumb_rotate_830942bb",
-  glowAppearance$y = "Thumb_glowAppearance_830942bb",
-  highlightAppearance$y = "Thumb_highlightAppearance_830942bb",
-  blink$y = "Thumb_blink_830942bb",
-  slideUpIn$y = "Thumb_slideUpIn_830942bb",
-  styles$1h = {
-    background: background$9,
-    border: border$8,
-    innerBorder: innerBorder,
-    icon: icon$d,
-    base: base$17,
-    base__vertical: base__vertical$2,
-    base__horizontal: base__horizontal,
-    base__active: base__active$3,
-    fadeIn: fadeIn$y,
-    fadeInThreeQuarters: fadeInThreeQuarters$y,
-    fadeInHalf: fadeInHalf$y,
-    fadeOut: fadeOut$y,
-    fadeInWithScale: fadeInWithScale$y,
-    slideUp: slideUp$y,
-    scale: scale$y,
-    raysAppearance: raysAppearance$y,
-    rotate: rotate$y,
-    "reverse-rotate": "Thumb_reverse-rotate_830942bb",
-    glowAppearance: glowAppearance$y,
-    highlightAppearance: highlightAppearance$y,
-    blink: blink$y,
-    slideUpIn: slideUpIn$y,
-  },
-  BOUNCING_OFFSET = 2,
-  MIN_THUMB_SIZE = 13,
-  FORWARD_DISABLED = "forwardDisabled",
-  BACKWARD_DISABLED = "backwardDisabled";
-function updateDisabledStates(e, t) {
-  if (!e.trackRef.current || !e.thumbRef.current) return;
-  const s = e.trackRef.current.parentNode;
-  if (s instanceof HTMLElement) {
-    if (0 === t)
-      return (s.classList.add(BACKWARD_DISABLED), void s.classList.remove(FORWARD_DISABLED));
-    if (e.isBoundThumb(t))
-      return (s.classList.remove(BACKWARD_DISABLED), void s.classList.add(FORWARD_DISABLED));
-    (s.classList.remove(BACKWARD_DISABLED), s.classList.remove(FORWARD_DISABLED));
-  }
-}
-function Thumb$1(e) {
-  const t = reactExports.useRef(null),
-    [s, a] = reactExports.useState(!1),
-    r = useEvent(function () {
-      const s = t.current,
-        a = e.trackRef.current,
-        r = e.api.getWrapperSize(),
-        n = e.api.getContainerSize();
-      if (!(r && n && s && a)) return;
-      const o = Math.min(1, r / n),
-        i = "horizontal" === e.direction ? "width" : "height";
-      return ((s.style[i] = `${e.calculateSize(a, o)}px`), (s.style.display = "flex"), o);
-    }),
-    [n, o] = useSpring(() => ({
-      from: { ...e.styles.closed, "--bouncingCorrection": "0px" },
-      easings: easings.easeInCubic,
-      config: { duration: 200 },
-    }));
-  reactExports.useEffect(() => {
-    s || e.dragging
-      ? o.start({
-          to: e.styles.opened,
-          onRest() {
-            t.current?.classList.add(styles$1h.base__active);
-          },
-        })
-      : o.start({
-          to: e.styles.closed,
-          delay: 500,
-          onRest() {
-            t.current?.classList.remove(styles$1h.base__active);
-          },
-        });
-  }, [s, e.dragging, e.styles.closed, e.styles.opened, o]);
-  const i = useEvent(function () {
-      const s = e.trackRef.current,
-        a = t.current,
-        r = e.railBeforeRef.current,
-        n = e.railAfterRef.current,
-        i = e.api.getWrapperSize(),
-        u = e.api.getContainerSize();
-      if (!(i && s && a && r && n && u)) return;
-      const l = e.api.animationScroll.scrollPosition.get(),
-        c = Math.min(1, i / u),
-        d = u !== i ? clamp$1(0, 1, l / (u - i)) : 0,
-        _ = e.calculateSize(s, c),
-        p = (("horizontal" === e.direction ? s.offsetWidth : s.offsetHeight) - _) * d || 0,
-        m = Math.round((2 * d - 1) * BOUNCING_OFFSET);
-      (a.style.setProperty("--thumbOffset", `${p}px`),
-        e.onUpdate?.({ thumbSize: _, thumbOffset: p, newBouncingCorrection: m }));
-      const f = 0 === p || e.isBoundThumb(p) ? 0 : m;
-      return (
-        o.start({
-          to: { "--bouncingCorrection": `${f}px` },
-          ...(0 === f ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
-        }),
-        p
-      );
-    }),
-    u = useSkipFrame$1(),
-    l = useEvent(function () {
-      r();
-      const t = i();
-      "number" == typeof t && updateDisabledStates(e, t);
-    });
-  reactExports.useEffect(() => u.run(l));
-  const { api: c } = e;
-  return (
-    reactExports.useEffect(() => {
-      function e() {
-        u.run(l);
-      }
-      return (
-        c.events.on("recalculateContent", e),
-        c.events.on("rest", l),
-        c.events.on("change", l),
-        c.events.on("resizeHandled", e),
-        () => {
-          (c.events.off("recalculateContent", e),
-            c.events.off("rest", l),
-            c.events.off("change", l),
-            c.events.off("resizeHandled", e));
-        }
-      );
-    }, [c, u, l]),
-    jsxRuntimeExports.jsxs(animated.div, {
-      ref: assignRefs([t, e.thumbRef]),
-      className: clsx(styles$1h.base, styles$1h[`base__${e.direction}`], e.className),
-      style: n,
-      onMouseEnter: () => a(!0),
-      onMouseLeave: () => a(!1),
-      children: [
-        jsxRuntimeExports.jsx("div", { className: styles$1h.background }),
-        jsxRuntimeExports.jsx("div", { className: styles$1h.border }),
-        jsxRuntimeExports.jsx("div", { className: styles$1h.innerBorder }),
-        jsxRuntimeExports.jsx("div", { className: styles$1h.icon }),
-      ],
-    })
-  );
-}
-const initBarDraggingState = { pending: !1, offset: 0 };
-function useBarDragging(e, t, s, a, r) {
-  const [n, o] = reactExports.useState(initBarDraggingState),
-    i = useEvent(t),
-    u = reactExports.useCallback(
-      (t) => {
-        (o(t),
-          e.current && i({ type: t.pending ? "dragStart" : "dragEnd", dragElement: e.current }));
-      },
-      [i, e],
-    );
-  return (
-    reactExports.useEffect(() => {
-      if (!n.pending) return;
-      const t = mouse$1.move(function ([t]) {
-          const o = s.contentRef.current;
-          if (!o) return;
-          const u = a.current,
-            l = e.current;
-          if (!o || !u || !l) return;
-          const c = r(t, n, { parent: u, thumb: l }),
-            d = c * (s.getContainerSize() ?? 0);
-          (s.scrollPosition.start({
-            scrollPosition: s.clampPosition(o, d),
-            reset: !0,
-            immediate: !0,
-            from: { scrollPosition: s.animationScroll.scrollPosition.get() },
-          }),
-            i({ type: "dragging", dragElement: l, elementOffset: c, contentOffset: d }));
-        }),
-        o = mouse$1.up(() => {
-          u(initBarDraggingState);
-        });
-      return () => {
-        (t(), o());
-      };
-    }, [s, n.offset, n.pending, i, u, e, a, n, r]),
-    u
-  );
-}
-const DISABLE_CLASS = "disable",
-  ACTIVE_CLASS = "scroll-active";
-function useUpdateStatesBar({ api: e, baseRef: t }) {
-  const s = useSkipFrame$1(),
-    a = useEvent(function () {
-      const s = e.getWrapperSize(),
-        a = e.getContainerSize();
-      if (null === t.current || void 0 === a || void 0 === s) return;
-      1 === Math.min(1, s / a || 1)
-        ? t.current.classList.remove(ACTIVE_CLASS)
-        : t.current.classList.add(ACTIVE_CLASS);
-    });
-  (reactExports.useEffect(() => s.run(a)),
-    reactExports.useEffect(() => {
-      function t() {
-        s.run(a);
-      }
-      return (
-        e.events.on("recalculateContent", t),
-        e.events.on("resizeHandled", t),
-        () => {
-          (e.events.off("recalculateContent", t), e.events.off("resizeHandled", t));
-        }
-      );
-    }, [e, s, a]));
-}
-function getElementCoordinates(e, t) {
-  const s = e.getBoundingClientRect(),
-    a = t === scrollOrientations.horizontal ? s.x : s.y;
-  return { start: a, end: t === scrollOrientations.horizontal ? a + s.width : a + s.height };
-}
-function getCoordinate(e, t, s, a, r, n) {
-  return {
-    occurredEvent: n === scrollOrientations.horizontal ? e.screenX : e.screenY,
-    bar: getElementCoordinates(t, n),
-    thumb: getElementCoordinates(s, n),
-    backButton: getElementCoordinates(a, n),
-    forwardButton: getElementCoordinates(r, n),
-  };
-}
-function useBarHandlers(e, t, s, a, r, n, o) {
-  const i = useSounds(),
-    u = r.stepTimeout || CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT,
-    [l, c] = useRepeatCallback((e) => r.applyStepTo(e), u, [r]);
-  reactExports.useEffect(
-    () => (
-      document.addEventListener("mouseup", c, !0),
-      () => document.removeEventListener("mouseup", c, !0)
-    ),
-    [c],
-  );
-  const d = reactExports.useCallback(
-      (e) => {
-        e.target.classList.contains(DISABLE_CLASS) ||
-          (i.play("click", { target: "Scroll:Back", original: e }), l(Direction.Next));
-      },
-      [l, i],
-    ),
-    _ = reactExports.useCallback(
-      (e) => {
-        e.target.classList.contains(DISABLE_CLASS) ||
-          (i.play("click", { target: "Scroll:Forward", original: e }), l(Direction.Prev));
-      },
-      [l, i],
-    ),
-    p = reactExports.useCallback(
-      (u) => {
-        const l = e.current,
-          c = t.current,
-          p = s.current,
-          m = a.current;
-        if (!(l && c && p && m && u.button === MOUSE_BUTTON_LEFT)) return;
-        const f = getCoordinate(u, l, c, p, m, o),
-          g = f.thumb.start <= f.occurredEvent && f.occurredEvent <= f.thumb.end,
-          b =
-            (f.backButton.start <= f.occurredEvent && f.occurredEvent <= f.backButton.end) ||
-            (f.forwardButton.start <= f.occurredEvent && f.occurredEvent <= f.forwardButton.end);
-        if (g) n({ pending: !0, offset: f.occurredEvent - f.thumb.start });
-        else if (b) {
-          ((f.occurredEvent > f.thumb.start ? Direction.Prev : Direction.Next) === Direction.Next
-            ? d
-            : _)(u);
-        } else {
-          const e = f.occurredEvent - f.bar.start,
-            t = f.thumb.end - f.thumb.start,
-            s = f.bar.end - f.bar.start,
-            a = r.getContainerSize();
-          if ("number" != typeof a || Number.isNaN(a))
-            return console.error("Incorrect container size");
-          const n = ((e - t / 2) / s) * a;
-          r.applyScroll(n);
-        }
-        i.play("click", { target: "Scroll:" + (g ? "thumb" : b ? "button" : ""), original: u });
-      },
-      [e, t, s, a, i, o, n, d, _, r],
-    ),
-    m = reactExports.useCallback(
-      (e) => {
-        e.target.classList.contains(DISABLE_CLASS) ||
-          i.play("mouse-enter", { target: "Scroll:Bar", original: e });
-      },
-      [i],
-    );
-  return reactExports.useMemo(
-    () => ({
-      handleMouseBackDown: d,
-      handleMouseEnter: m,
-      handleMouseDownTrack: p,
-      handleMouseForwardDown: _,
-      handleMouseForwardUp: c,
-      handleMouseBackUp: c,
-    }),
-    [d, m, p, _, c],
-  );
-}
-const rail$1 = "HorizontalBar_rail_37858d8f",
-  base$16 = "HorizontalBar_4df27ac3",
-  track$1 = "HorizontalBar_track_649dc296",
-  rail__left = "HorizontalBar_rail__left_1a906b4e",
-  rail__right = "HorizontalBar_rail__right_cd24364e",
-  button__right = "HorizontalBar_button__right_e8f0aa2d",
-  button__left = "HorizontalBar_button__left_da330e13",
-  button$3 = "HorizontalBar_button_cbabd91",
-  styles$1g = {
-    rail: rail$1,
-    base: base$16,
-    track: track$1,
-    rail__left: rail__left,
-    rail__right: rail__right,
-    button__right: button__right,
-    button__left: button__left,
-    button: button$3,
-  },
-  THUMB_TO_RAIL_OFFSET$1 = 5,
-  THUMB_STYLES$1 = {
-    closed: { height: "3rem", top: "4rem" },
-    opened: { height: "11rem", top: "0rem" },
-  },
-  calculateThumbSize$1 = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetWidth * t),
-  Bar$1 = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
-    const s = reactExports.useRef(null),
-      a = reactExports.useRef(null),
-      r = reactExports.useRef(null),
-      n = reactExports.useRef(null),
-      o = reactExports.useRef(null),
-      i = reactExports.useRef(null),
-      u = reactExports.useRef(null),
-      [l, c] = reactExports.useState(!1),
-      { api: d } = useHorizontalScroll();
-    useUpdateStatesBar({ baseRef: s, api: d });
-    const _ = useEvent(
-        (e, t, { parent: s }) =>
-          (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
-      ),
-      p = useEvent((e) => e - (n.current.offsetWidth - o.current.offsetWidth) >= -0.5),
-      m = reactExports.useCallback(
-        (e) => ("dragStart" === e.type ? c(!0) : "dragEnd" === e.type && c(!1), t(e)),
-        [t],
-      ),
-      f = useBarDragging(o, m, d, n, _),
-      g = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
-        const a = n.current,
-          r = i.current,
-          o = u.current;
-        if (!a || !r || !o) return;
-        const l = remToPx$1(THUMB_TO_RAIL_OFFSET$1);
-        ((r.style.width = `${t - l + s}px`),
-          (o.style.width = a.offsetWidth - e - t - l - s + "px"));
-      }),
-      { handleMouseEnter: b, handleMouseDownTrack: h } = useBarHandlers(
-        s,
-        o,
-        r,
-        a,
-        d,
-        f,
-        scrollOrientations.horizontal,
-      );
-    return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$1g.base, e.base),
-      ref: s,
-      onWheel: d.handleMouseWheel,
-      onMouseDown: h,
-      onMouseEnter: b,
-      children: [
-        jsxRuntimeExports.jsx("div", {
-          ref: a,
-          className: clsx(styles$1g.button, styles$1g.button__left, e.leftButton),
-        }),
-        jsxRuntimeExports.jsxs("div", {
-          ref: n,
-          className: clsx(styles$1g.track, e.track),
-          children: [
-            jsxRuntimeExports.jsx("div", {
-              ref: i,
-              className: clsx(styles$1g.rail, styles$1g.rail__left, e.leftRail),
-            }),
-            jsxRuntimeExports.jsx(Thumb$1, {
-              dragging: l,
-              api: d,
-              calculateOffset: _,
-              calculateSize: calculateThumbSize$1,
-              direction: "horizontal",
-              isBoundThumb: p,
-              railAfterRef: i,
-              railBeforeRef: u,
-              styles: THUMB_STYLES$1,
-              onUpdate: g,
-              thumbRef: o,
-              trackRef: n,
-            }),
-            jsxRuntimeExports.jsx("div", {
-              ref: u,
-              className: clsx(styles$1g.rail, styles$1g.rail__right, e.rightRail),
-            }),
-          ],
-        }),
-        jsxRuntimeExports.jsx("div", {
-          ref: r,
-          className: clsx(styles$1g.button, styles$1g.button__right, e.rightButton),
-        }),
-      ],
-    });
-  }),
-  base$15 = "HorizontalScroll_5b201d2b",
-  wrapper$2 = "HorizontalScroll_wrapper_2fb60496",
-  defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
-  styles$1f = { base: base$15, wrapper: wrapper$2, defaultScrollArea: defaultScrollArea },
-  DefaultScroll$1 = ({
-    children: e,
-    className: t,
-    barClassNames: s,
-    areaClassName: a,
-    classNames: r,
-    scrollClassName: n,
-    onDrag: o,
-  }) => {
-    const { api: i } = useHorizontalScroll(),
-      u = reactExports.useMemo(() => {
-        const e = s || {};
-        return { ...e, base: clsx(styles$1f.base, e.base) };
-      }, [s]);
-    return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$1f.defaultScroll, t),
-      onWheel: i.handleMouseWheel,
-      children: [
-        jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$1f.defaultScrollArea, a),
-          children: jsxRuntimeExports.jsx(Area$1, { className: n, classNames: r, children: e }),
-        }),
-        jsxRuntimeExports.jsx(Bar$1, { onDrag: o, classNames: u }),
-      ],
-    });
-  };
-function Area$1({ className: e, classNames: t, children: s }) {
-  const { api: a } = useHorizontalScroll();
-  return jsxRuntimeExports.jsx("div", {
-    className: clsx(styles$1f.base, e),
-    children: jsxRuntimeExports.jsx("div", {
-      className: clsx(styles$1f.wrapper, t?.wrapper),
-      onWheel: a.handleMouseWheel,
-      ref: a.wrapperRef,
-      children: jsxRuntimeExports.jsx("div", {
-        className: clsx(styles$1f.content, t?.content),
-        ref: a.contentRef,
-        children: s,
-      }),
-    }),
-  });
-}
-((Area$1.Bar = Bar$1), (Area$1.Default = DefaultScroll$1));
-const dragDirections = { horizontal: "horizontal", vertical: "vertical" };
-function getEventCoordinate(e, t) {
-  switch (t) {
-    case dragDirections.horizontal:
-      return e.clientX;
-    case dragDirections.vertical:
-      return e.clientY;
-    default:
-      assert(!1, `Such drag direction ${t} is not supported`);
-  }
-}
-function getScreenCoordinate(e, t) {
-  switch (t) {
-    case dragDirections.horizontal:
-      return e.screenX;
-    case dragDirections.vertical:
-      return e.screenY;
-    default:
-      assert(!1, `Such drag direction ${t} is not supported`);
-  }
-}
-const INITIAL_DRAGGING_STATE = { type: "idle" };
-function useScrollByDragElements(e, t, s, a) {
-  const {
-      contentRef: r,
-      wrapperRef: n,
-      scrollPosition: o,
-      clampPosition: i,
-      animationScroll: u,
-      events: l,
-      disabled: c,
-    } = e,
-    [d, _] = reactExports.useState(INITIAL_DRAGGING_STATE),
-    [p, m] = reactExports.useState(0),
-    { gapBeforeStart: f } = a ?? {},
-    g = useSkipFrame$1(),
-    b = useEvent(() => {
-      g.run(() => {
-        const t = e.contentRef.current,
-          s = e.getWrapperSize(),
-          a = e.getContainerSize();
-        t &&
-          s &&
-          a &&
-          !c &&
-          (t.style.cursor = a <= s ? "auto" : "dragging" === d.type ? "move" : "grab");
-      });
-    });
-  return (
-    reactExports.useEffect(() => {
-      b();
-    }, [d.type, b]),
-    useResize$1(() => {
-      b();
-    }, [b]),
-    reactExports.useEffect(() => {
-      if ("pending" !== d.type) return;
-      const e = r.current,
-        s = n.current;
-      if (null === e || null === s) return;
-      const a = mouse$1.move(([e]) => {
-          const s = getScreenCoordinate(e, t);
-          (void 0 === f || Math.abs(p - s) > f) &&
-            _({
-              type: "dragging",
-              positionFrom: s,
-              previousScrollPosition: u.scrollPosition.get(),
-            });
-        }),
-        o = mouse$1.up(() => _({ type: "scrollComplete" }));
-      return () => {
-        (a(), o());
-      };
-    }, [u.scrollPosition, r, p, t, d, f, n]),
-    reactExports.useEffect(() => {
-      if ("dragging" !== d.type) return;
-      const e = mouse$1.move(([e, a]) => {
-        const l = r.current,
-          c = n.current;
-        if ("outside" === a) return void _({ type: "scrollComplete" });
-        const p = getEventCoordinate(e, t);
-        if (null === l || null === c || ("inside" === a && p < 0)) return;
-        const m = c.offsetLeft,
-          f = "inside" === a ? p : p - m,
-          g = d.positionFrom - f,
-          b = d.previousScrollPosition + g;
-        o.start({
-          scrollPosition: i(l, b),
-          from: { scrollPosition: u.scrollPosition.get() },
-          ...(s && { config: s }),
-        });
-      });
-      const a = mouse$1.up(function () {
-        _({ type: "scrollComplete" });
-      });
-      return () => {
-        (e(), a());
-      };
-    }, [u.scrollPosition, i, r, d, o, n, s, t]),
-    reactExports.useEffect(() => {
-      if ("scrollComplete" !== d.type) return;
-      const e = () => {
-        _(INITIAL_DRAGGING_STATE);
-      };
-      return (e(), l.on("rest", e), () => l.off("rest", e));
-    }, [u.scrollPosition, d.type, l]),
-    reactExports.useEffect(() => {
-      if (c) return;
-      const e = r.current;
-      if (!e) return;
-      const s = (e) => {
-        if (e.button !== mouseButtons.left) return;
-        const s = getScreenCoordinate(e, t);
-        (m(s),
-          _(
-            void 0 === f || f <= 0
-              ? {
-                  type: "dragging",
-                  positionFrom: s,
-                  previousScrollPosition: u.scrollPosition.get(),
-                }
-              : { type: "pending" },
-          ));
-      };
-      return (e.addEventListener("mousedown", s), () => e.removeEventListener("mousedown", s));
-    }, [u.scrollPosition, r, c, t, f]),
-    d
-  );
-}
-function useHorizontalDrag(e, t) {
-  return useScrollByDragElements(e, scrollOrientations.horizontal, t);
-}
-function Base$v({ settings: e, children: t }) {
-  const s = useApi$1({ settings: e }),
-    a = reactExports.useMemo(() => ({ api: s }), [s]);
-  return jsxRuntimeExports.jsx(Context$5.Provider, { value: a, children: t });
-}
-const Context$4 = reactExports.createContext(void 0);
-function useVerticalScroll() {
-  const e = reactExports.useContext(Context$4);
-  if (!e) throw new Error("useVerticalScroll must be used within a Scroll.Vertical.Base component");
-  return e;
-}
-function VerticalScrollProvider({ api: e, children: t }) {
-  const s = reactExports.useMemo(() => ({ api: e }), [e]);
-  return jsxRuntimeExports.jsx(Context$4.Provider, { value: s, children: t });
-}
-const DEFAULT_VERTICAL_API_CONFIG = {
-    getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
-    getContainerSize: (e) => e.scrollHeight,
-    getWrapperSize: (e) => e.offsetHeight,
-    setScrollPosition: (e, t) => {
-      e.scrollTop = Math.trunc(t.value.scrollPosition ?? 0);
-    },
-    getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
-  },
-  useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
-  rail = "VerticalBar_rail_3d663c9",
-  base$14 = "VerticalBar_7187fa00",
-  track = "VerticalBar_track_ff482708",
-  rail__top = "VerticalBar_rail__top_ee531f43",
-  rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
-  button__bottom = "VerticalBar_button__bottom_6880f123",
-  button__top = "VerticalBar_button__top_b8383775",
-  button$2 = "VerticalBar_button_7b0e4aca",
-  styles$1e = {
-    rail: rail,
-    base: base$14,
-    track: track,
-    rail__top: rail__top,
-    rail__bottom: rail__bottom,
-    button__bottom: button__bottom,
-    button__top: button__top,
-    button: button$2,
-  },
-  THUMB_TO_RAIL_OFFSET = 5,
-  THUMB_STYLES = {
-    closed: { width: "3rem", left: "3rem" },
-    opened: { width: "9rem", left: "0rem" },
-  },
-  calculateThumbSize = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetHeight * t),
-  Bar = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
-    const s = reactExports.useRef(null),
-      a = reactExports.useRef(null),
-      r = reactExports.useRef(null),
-      n = reactExports.useRef(null),
-      o = reactExports.useRef(null),
-      i = reactExports.useRef(null),
-      u = reactExports.useRef(null),
-      [l, c] = reactExports.useState(!1),
-      { api: d } = useVerticalScroll();
-    useUpdateStatesBar({ baseRef: s, api: d });
-    const _ = useEvent((e) => e - (n.current.offsetHeight - o.current.offsetHeight) >= -0.5),
-      p = useEvent(
-        (e, t, { parent: s }) =>
-          (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
-      ),
-      m = reactExports.useCallback(
-        (e) => ("dragStart" === e.type ? c(!0) : "dragEnd" === e.type && c(!1), t(e)),
-        [t],
-      ),
-      f = useBarDragging(o, m, d, n, p),
-      g = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
-        const a = n.current,
-          r = i.current,
-          o = u.current;
-        if (!a || !r || !o) return;
-        const l = remToPx$1(THUMB_TO_RAIL_OFFSET);
-        ((r.style.height = `${t - l + s}px`),
-          (o.style.height = a.offsetHeight - e - t - l - s + "px"));
-      }),
-      { handleMouseEnter: b, handleMouseDownTrack: h } = useBarHandlers(
-        s,
-        o,
-        a,
-        r,
-        d,
-        f,
-        scrollOrientations.vertical,
-      );
-    return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$1e.base, e.base),
-      ref: s,
-      onWheel: d.handleMouseWheel,
-      onMouseDown: h,
-      onMouseEnter: b,
-      children: [
-        jsxRuntimeExports.jsx("div", {
-          ref: a,
-          className: clsx(styles$1e.button, styles$1e.button__top, e.topButton),
-        }),
-        jsxRuntimeExports.jsxs("div", {
-          ref: n,
-          className: clsx(styles$1e.track, e.track),
-          children: [
-            jsxRuntimeExports.jsx("div", {
-              ref: i,
-              className: clsx(styles$1e.rail, styles$1e.rail__top, e.topRail),
-            }),
-            jsxRuntimeExports.jsx(Thumb$1, {
-              dragging: l,
-              api: d,
-              calculateOffset: p,
-              calculateSize: calculateThumbSize,
-              direction: "vertical",
-              isBoundThumb: _,
-              railAfterRef: i,
-              railBeforeRef: u,
-              styles: THUMB_STYLES,
-              onUpdate: g,
-              thumbRef: o,
-              trackRef: n,
-            }),
-            jsxRuntimeExports.jsx("div", {
-              ref: u,
-              className: clsx(styles$1e.rail, styles$1e.rail__bottom, e.bottomRail),
-            }),
-          ],
-        }),
-        jsxRuntimeExports.jsx("div", {
-          ref: r,
-          className: clsx(styles$1e.button, styles$1e.button__bottom, e.bottomButton),
-        }),
-      ],
-    });
-  }),
-  maskDirections = { top: "top", bottom: "bottom", both: "both", none: "none" },
-  getMaskDirection = (e, t) =>
-    e || t
-      ? e
-        ? t
-          ? maskDirections.none
-          : maskDirections.bottom
-        : maskDirections.top
-      : maskDirections.both,
-  content$c = "VerticalScroll_content_f30246e6",
-  content__top = "VerticalScroll_content__top_b27098a4",
-  content__bottom = "VerticalScroll_content__bottom_d6604290",
-  content__both = "VerticalScroll_content__both_8d905712",
-  defaultScroll = "VerticalScroll_defaultScroll_c69fa70e",
-  bar = "VerticalScroll_bar_c5afe570",
-  area = "VerticalScroll_area_a3c0086a",
-  fadeIn$x = "VerticalScroll_fadeIn_29606297",
-  fadeInThreeQuarters$x = "VerticalScroll_fadeInThreeQuarters_29606297",
-  fadeInHalf$x = "VerticalScroll_fadeInHalf_29606297",
-  fadeOut$x = "VerticalScroll_fadeOut_29606297",
-  fadeInWithScale$x = "VerticalScroll_fadeInWithScale_29606297",
-  slideUp$x = "VerticalScroll_slideUp_29606297",
-  scale$x = "VerticalScroll_scale_29606297",
-  raysAppearance$x = "VerticalScroll_raysAppearance_29606297",
-  rotate$x = "VerticalScroll_rotate_29606297",
-  glowAppearance$x = "VerticalScroll_glowAppearance_29606297",
-  highlightAppearance$x = "VerticalScroll_highlightAppearance_29606297",
-  blink$x = "VerticalScroll_blink_29606297",
-  slideUpIn$x = "VerticalScroll_slideUpIn_29606297",
-  styles$1d = {
-    content: content$c,
-    content__top: content__top,
-    content__bottom: content__bottom,
-    content__both: content__both,
-    defaultScroll: defaultScroll,
-    bar: bar,
-    area: area,
-    fadeIn: fadeIn$x,
-    fadeInThreeQuarters: fadeInThreeQuarters$x,
-    fadeInHalf: fadeInHalf$x,
-    fadeOut: fadeOut$x,
-    fadeInWithScale: fadeInWithScale$x,
-    slideUp: slideUp$x,
-    scale: scale$x,
-    raysAppearance: raysAppearance$x,
-    rotate: rotate$x,
-    "reverse-rotate": "VerticalScroll_reverse-rotate_29606297",
-    glowAppearance: glowAppearance$x,
-    highlightAppearance: highlightAppearance$x,
-    blink: blink$x,
-    slideUpIn: slideUpIn$x,
-  },
-  DefaultScroll = ({
-    children: e,
-    className: t,
-    barClassNames: s,
-    areaClassName: a,
-    scrollClassName: r,
-    scrollClassNames: n,
-    onDrag: o,
-  }) => {
-    const { api: i } = useVerticalScroll(),
-      u = reactExports.useMemo(() => {
-        const e = s || {};
-        return { ...e, base: clsx(styles$1d.base, e.base) };
-      }, [s]);
-    return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$1d.defaultScroll, t),
-      onWheel: i.handleMouseWheel,
-      children: [
-        jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$1d.area, a),
-          children: jsxRuntimeExports.jsx(Area, { className: r, classNames: n, children: e }),
-        }),
-        jsxRuntimeExports.jsx(Bar, { onDrag: o, classNames: u }),
-      ],
-    });
-  },
-  Area = ({ className: e, classNames: t, children: s, ...a }) => {
-    const { api: r } = useVerticalScroll();
-    return (
-      reactExports.useEffect(() =>
-        createLayoutReadyInEffect$1(() => createLayoutReadyInEffect$1(r.recalculateContent)),
-      ),
-      jsxRuntimeExports.jsx("div", {
-        className: clsx(styles$1d.base, t?.wrapper, e),
-        ref: r.wrapperRef,
-        onWheel: r.handleMouseWheel,
-        children: jsxRuntimeExports.jsx("div", {
-          ...a,
-          className: clsx(styles$1d.content, t?.content),
-          ref: r.contentRef,
-          children: s,
-        }),
-      })
-    );
-  };
-function MaskArea({ classNames: e, ...t }) {
-  const { api: s } = useVerticalScroll(),
-    [a, r] = useScrollBounding(s);
-  return jsxRuntimeExports.jsx(Area, {
-    ...t,
-    classNames: {
-      ...e,
-      content: clsx(styles$1d[`content__${getMaskDirection(a, r)}`], e?.content),
-    },
-  });
-}
-function Base$u({ children: e }) {
-  const t = useApi(),
-    s = reactExports.useMemo(() => ({ api: t }), [t]);
-  return jsxRuntimeExports.jsx(Context$4.Provider, { value: s, children: e });
-}
-function Sprite(e) {
-  const t = e.sprite.frames[e.icon]?.frame;
-  return t
-    ? jsxRuntimeExports.jsx(Image$1, {
-        ...e,
-        path: e.path,
-        fit: `${e.sprite.meta.size.w}rem ${e.sprite.meta.size.h}rem`,
-        position: `${-t.x}rem ${-t.y}rem`,
-        width: t.w,
-        height: t.h,
-        className: e.className,
-      })
-    : (console.error(`Error in Sprite: Frame for icon "${e.icon}" not found in path "${e.path}"`),
-      null);
-}
-function useHoverState(e) {
-  const [t, s] = reactExports.useState(!1);
-  return [t ? `${e}_hover` : e, s];
-}
-Area.Default = DefaultScroll;
-class ErrorBoundary extends reactExports.Component {
-  state = { failure: !1, error: null };
-  static getDerivedStateFromError(e) {
-    return { failure: !0, error: e };
-  }
-  render() {
-    return this.state.failure
-      ? jsxRuntimeExports.jsxs("div", {
-          children: [
-            jsxRuntimeExports.jsx("h1", { children: "Something went wrong." }),
-            this.state.error &&
-              jsxRuntimeExports.jsx("pre", { children: this.state.error.toString() }),
-          ],
-        })
-      : this.props.children;
-  }
-}
-const splitPath = (e) => e.split("/").filter(Boolean);
-function matchPath(e, t) {
-  const { paths: s, exact: a = !1 } = t,
-    r = splitPath(e);
-  for (const n of s) {
-    const t = splitPath(n);
-    if (a && r.length !== t.length) continue;
-    const s = {};
-    let o = !0;
-    for (let e = 0; e < t.length; e++) {
-      const a = t[e],
-        n = r[e];
-      if (!n) {
-        o = !1;
-        break;
-      }
-      if (a.startsWith(":")) {
-        s[a.slice(1)] = n;
-      } else if (a !== n) {
-        o = !1;
-        break;
-      }
-    }
-    if (o) {
-      const o = `/${r.slice(0, t.length).join("/")}`,
-        i = e === o;
-      if (a && !i) continue;
-      return { params: s, exact: i, path: n, url: o };
-    }
-  }
-  return null;
-}
-const SwitchContext = reactExports.createContext(void 0);
-function useSwitch() {
-  const e = reactExports.useContext(SwitchContext);
-  if (!e) throw new Error("useSwitch must be used within a SwitchProvider");
-  return e;
-}
-function Switch({ children: e, route: t, fallback: s = null }) {
-  const { location: a } = useRouter();
-  let r;
-  return (
-    reactExports.Children.forEach(e, (e) => {
-      if (!reactExports.isValidElement(e))
-        return void console.error("Switch children must be valid elements");
-      if ("object" != typeof e.props || null === e.props)
-        return console.error("Child props is not an object or null", e);
-      const s = e.props,
-        n = t ? `${t}${s.path}` : s.path;
-      if (void 0 !== r) return;
-      const o = matchPath(a, { paths: [n], exact: s.exact });
-      o && (r = { child: e, match: o });
-    }),
-    r
-      ? jsxRuntimeExports.jsx(SwitchContext.Provider, {
-          value: { match: r.match },
-          children: r.child,
-        })
-      : s
-  );
-}
-function Route({ component: e, exact: t }) {
-  const { match: s } = useSwitch();
-  return jsxRuntimeExports.jsx(ErrorBoundary, {
-    children: jsxRuntimeExports.jsx(e, {
-      path: s.path,
-      location: s.url,
-      params: s.params,
-      exact: t ?? !1,
-    }),
-  });
-}
-const states = { default: "default", alert: "alert", error: "error", done: "done" },
-  messageTypes = { alert: "alert", error: "error" },
-  types$3 = {
-    text: "text",
-    password: "password",
-    number: "number",
-    htmlNumber: "htmlNumber",
-    email: "email",
-    integer: "integer",
-  },
-  sizes$i = { medium: "medium", large: "large" },
-  icons = { search: "search" },
-  defaultConfig = { type: types$3.text, size: sizes$i.medium, state: states.default, disabled: !1 },
-  placeholderVisibility = { focusedOrValue: "focusedOrValue", value: "value" },
-  contextInstance = reactExports.createContext(null);
-function useInput() {
-  const e = reactExports.useContext(contextInstance);
-  if (!e) throw new Error("useInput must be used within an Input");
-  return e;
-}
-function useInputInstance({ value: e, size: t, type: s, state: a, disabled: r }) {
-  const n = reactExports.useRef(null),
-    [o, i] = reactExports.useState(!1),
-    u = useEvent((e) => {
-      if (!n.current) return;
-      const t = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
-      if (t) {
-        t.call(n.current, e);
-        const s = new Event("input", { bubbles: !0 });
-        n.current.dispatchEvent(s);
-      }
-    }),
-    l = r ?? defaultConfig.disabled,
-    c = usePrevious(l);
-  return (
-    reactExports.useLayoutEffect(() => {
-      !c && l && n.current?.blur();
-    }, [l, c]),
-    reactExports.useLayoutEffect(() => {
-      o ? (n.current?.blur(), setTimeout(() => n.current?.focus())) : n.current?.blur();
-    }, [o]),
-    reactExports.useMemo(
-      () => ({
-        value: e,
-        size: t ?? defaultConfig.size,
-        type: s ?? defaultConfig.type,
-        state: a ?? defaultConfig.state,
-        disabled: l,
-        focused: o,
-        setFocused: i,
-        inputRef: n,
-        setValue: u,
-        clear: () => u(""),
-        focus: () => i(!0),
-      }),
-      [l, o, u, t, a, s, e],
-    )
-  );
-}
-const disabledOverlay$2 = "Input_disabledOverlay_3e980046",
-  icon$c = "Input_icon_ed3c6a4a",
-  clearButton = "Input_clearButton_d26b0bd5",
-  decoration = "Input_decoration_b561de7a",
-  decoration__focused = "Input_decoration__focused_494bd5d6",
-  decoration__alertState = "Input_decoration__alertState_a3c7d971",
-  decoration__errorState = "Input_decoration__errorState_a889ba00",
-  decoration__doneState = "Input_decoration__doneState_273150be",
-  decoration__disabled = "Input_decoration__disabled_74e25c08",
-  fieldWrapper = "Input_fieldWrapper_a4454e66",
-  field__mediumSize = "Input_field__mediumSize_7a1efba0",
-  placeholder__mediumSize = "Input_placeholder__mediumSize_2b8cbadc",
-  field__largeSize = "Input_field__largeSize_2b4f0b27",
-  placeholder__largeSize = "Input_placeholder__largeSize_6dbe7ba2",
-  field = "Input_field_7f2a0d1d",
-  field__focused = "Input_field__focused_5a0a7a6c",
-  field__disabled = "Input_field__disabled_15b2ae5c",
-  placeholder = "Input_placeholder_6ec6c232",
-  placeholder__disabled = "Input_placeholder__disabled_58b85003",
-  message = "Input_message_d4aa42ca",
-  message__visible = "Input_message__visible_a76c109c",
-  message__alertType = "Input_message__alertType_34d13f9f",
-  message__errorType = "Input_message__errorType_c0d7caba",
-  message__mediumSize = "Input_message__mediumSize_a2972578",
-  message__largeSize = "Input_message__largeSize_a5a35f73",
-  icon__focused = "Input_icon__focused_a76c109c",
-  icon__mediumSize = "Input_icon__mediumSize_f7d15078",
-  icon__largeSize = "Input_icon__largeSize_b80deb39",
-  icon__searchIcon = "Input_icon__searchIcon_494bd5d6",
-  icon__upscale = "Input_icon__upscale_494bd5d6",
-  clearButton__mediumSize = "Input_clearButton__mediumSize_d43f0915",
-  clearButton__largeSize = "Input_clearButton__largeSize_240e111e",
-  clearButton__visible = "Input_clearButton__visible_8d3756eb",
-  clearButton__upscale = "Input_clearButton__upscale_494bd5d6",
-  fadeIn$w = "Input_fadeIn_494bd5d6",
-  fadeInThreeQuarters$w = "Input_fadeInThreeQuarters_494bd5d6",
-  fadeInHalf$w = "Input_fadeInHalf_494bd5d6",
-  fadeOut$w = "Input_fadeOut_494bd5d6",
-  fadeInWithScale$w = "Input_fadeInWithScale_494bd5d6",
-  slideUp$w = "Input_slideUp_494bd5d6",
-  scale$w = "Input_scale_494bd5d6",
-  raysAppearance$w = "Input_raysAppearance_494bd5d6",
-  rotate$w = "Input_rotate_494bd5d6",
-  glowAppearance$w = "Input_glowAppearance_494bd5d6",
-  highlightAppearance$w = "Input_highlightAppearance_494bd5d6",
-  blink$w = "Input_blink_494bd5d6",
-  slideUpIn$w = "Input_slideUpIn_494bd5d6",
-  styles$1c = {
-    disabledOverlay: disabledOverlay$2,
-    icon: icon$c,
-    clearButton: clearButton,
-    decoration: decoration,
-    decoration__focused: decoration__focused,
-    decoration__alertState: decoration__alertState,
-    decoration__errorState: decoration__errorState,
-    decoration__doneState: decoration__doneState,
-    decoration__disabled: decoration__disabled,
-    fieldWrapper: fieldWrapper,
-    field__mediumSize: field__mediumSize,
-    placeholder__mediumSize: placeholder__mediumSize,
-    field__largeSize: field__largeSize,
-    placeholder__largeSize: placeholder__largeSize,
-    field: field,
-    field__focused: field__focused,
-    field__disabled: field__disabled,
-    placeholder: placeholder,
-    placeholder__disabled: placeholder__disabled,
-    message: message,
-    message__visible: message__visible,
-    message__alertType: message__alertType,
-    message__errorType: message__errorType,
-    message__mediumSize: message__mediumSize,
-    message__largeSize: message__largeSize,
-    icon__focused: icon__focused,
-    icon__mediumSize: icon__mediumSize,
-    icon__largeSize: icon__largeSize,
-    icon__searchIcon: icon__searchIcon,
-    icon__upscale: icon__upscale,
-    clearButton__mediumSize: clearButton__mediumSize,
-    clearButton__largeSize: clearButton__largeSize,
-    clearButton__visible: clearButton__visible,
-    clearButton__upscale: clearButton__upscale,
-    fadeIn: fadeIn$w,
-    fadeInThreeQuarters: fadeInThreeQuarters$w,
-    fadeInHalf: fadeInHalf$w,
-    fadeOut: fadeOut$w,
-    fadeInWithScale: fadeInWithScale$w,
-    slideUp: slideUp$w,
-    scale: scale$w,
-    raysAppearance: raysAppearance$w,
-    rotate: rotate$w,
-    "reverse-rotate": "Input_reverse-rotate_494bd5d6",
-    glowAppearance: glowAppearance$w,
-    highlightAppearance: highlightAppearance$w,
-    blink: blink$w,
-    slideUpIn: slideUpIn$w,
-  },
-  soundPlayEventTarget$1 = "Input:ClearButton",
-  ClearButton = reactExports.forwardRef(function ({ className: e, children: t, ...s }, a) {
-    const r = useSounds(),
-      { value: n, clear: o, size: i, disabled: u, focus: l } = useInput(),
-      c = useUpscale(void 0, styles$1c.clearButton__upscale);
-    return jsxRuntimeExports.jsx("button", {
-      ...s,
-      type: "button",
-      ref: a,
-      className: clsx(
-        styles$1c.clearButton,
-        n && !u && styles$1c.clearButton__visible,
-        styles$1c[`clearButton__${i}Size`],
-        c,
-        e,
-      ),
-      onMouseEnter: function (e) {
-        (r.play("mouse-enter", { target: soundPlayEventTarget$1, original: e }),
-          s.onMouseEnter?.(e));
-      },
-      onClick: function (e) {
-        (r.play("close", { target: soundPlayEventTarget$1, original: e }),
-          e.stopPropagation(),
-          n && o(),
-          l(),
-          s.onClick?.(e));
-      },
-      children: t,
-    });
-  }),
-  soundPlayEventTarget = "Input:Decoration",
-  Decoration = reactExports.forwardRef(function ({ className: e, children: t, ...s }, a) {
-    const r = useSounds(),
-      { state: n, disabled: o, focused: i, focus: u } = useInput();
-    return jsxRuntimeExports.jsxs("div", {
-      ...s,
-      ref: a,
-      className: clsx(
-        styles$1c.decoration,
-        styles$1c[`decoration__${n}State`],
-        o && styles$1c.decoration__disabled,
-        i && styles$1c.decoration__focused,
-        e,
-      ),
-      onMouseEnter: function (e) {
-        (r.play("mouse-enter", { target: soundPlayEventTarget, original: e }), s.onMouseEnter?.(e));
-      },
-      onClick: function (e) {
-        (r.play("click", { target: soundPlayEventTarget, original: e }), u(), s.onClick?.(e));
-      },
-      children: [jsxRuntimeExports.jsx("div", { className: styles$1c.disabledOverlay }), t],
-    });
-  }),
-  allowSeparators = new Set([",", "."]);
-function findFirstSeparatorIndex(e) {
-  for (let t = 0; t < e.length; t++) {
-    const s = e[t];
-    if (allowSeparators.has(s)) return t;
-  }
-}
-function cleanInputNumber(e) {
-  const t = e.replace(/[^0-9,.]/g, "");
-  if ("0" === t) return t;
-  const s = t.replace(/^0+(?!\b)/, "").replace(/(,|\.){2,}/g, "$1"),
-    a = findFirstSeparatorIndex(s);
-  if (void 0 === a) return s;
-  {
-    const e = s.slice(0, a),
-      t = s.slice(a + 1),
-      r = e.replace(/[,.]/g, ""),
-      n = t.replace(/[,.]/g, "");
-    return `${0 === r.length ? "0" : r}.${n}`;
-  }
-}
-function cleanInputInteger(e) {
-  return e.replace(/[^0-9]/g, "").replace(/^0+(?!\b)/, "");
-}
-const Placeholder = reactExports.forwardRef(function (
-    { visibility: e = placeholderVisibility.focusedOrValue, className: t, children: s, ...a },
-    r,
-  ) {
-    const { focused: n, value: o, size: i, disabled: u } = useInput();
-    if (!{ focusedOrValue: n || o, value: o }[e])
-      return jsxRuntimeExports.jsx("div", {
-        ...a,
-        ref: r,
-        className: clsx(
-          styles$1c.placeholder,
-          u && styles$1c.placeholder__disabled,
-          styles$1c[`placeholder__${i}Size`],
-          t,
-        ),
-        children: s,
-      });
-  }),
-  typeToHtmlType = {
-    text: "text",
-    password: "password",
-    number: "text",
-    email: "email",
-    htmlNumber: "number",
-    integer: "text",
-  },
-  Field = reactExports.forwardRef(function (
-    {
-      className: e,
-      classNames: t,
-      wrapperRef: s,
-      placeholderRef: a,
-      placeholderVisibility: r,
-      children: n,
-      ...o
-    },
-    i,
-  ) {
-    const {
-      type: u,
-      value: l,
-      disabled: c,
-      size: d,
-      inputRef: _,
-      focused: p,
-      setFocused: m,
-    } = useInput();
-    return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$1c.fieldWrapper, t?.wrapper),
-      ref: s,
-      children: [
-        jsxRuntimeExports.jsx("input", {
-          ...o,
-          "data-name": "Input",
-          ref: assignRefs([i, _]),
-          value: l,
-          disabled: c,
-          type: typeToHtmlType[u] ?? u,
-          className: clsx(
-            styles$1c.field,
-            styles$1c[`field__${d}Size`],
-            p && styles$1c.field__focused,
-            c && styles$1c.field__disabled,
-            e,
-          ),
-          onChange: function (e) {
-            if (c) return (e.preventDefault(), void _.current?.blur());
-            const { value: t } = e.target;
-            (u === types$3.number
-              ? (e.target.value = cleanInputNumber(t))
-              : u === types$3.integer && (e.target.value = cleanInputInteger(t)),
-              o.onChange?.(e));
-          },
-          onFocus: function (e) {
-            (m(!0), o.onFocus?.(e));
-          },
-          onBlur: function (e) {
-            (m(!1), o.onBlur?.(e));
-          },
-          onDoubleClick: function (e) {
-            (_.current?.select(), o.onDoubleClick?.(e));
-          },
-        }),
-        "string" == typeof n || "number" == typeof n
-          ? jsxRuntimeExports.jsx(Placeholder, {
-              className: t?.placeholder,
-              ref: a,
-              visibility: r,
-              children: n,
-            })
-          : n,
-      ],
-    });
-  }),
-  iconsSet = new Set(Object.values(icons)),
-  Icon = reactExports.forwardRef(function ({ className: e, icon: t, children: s, ...a }, r) {
-    const { size: n, focused: o } = useInput(),
-      i = useUpscale(void 0, styles$1c.icon__upscale);
-    return jsxRuntimeExports.jsx("div", {
-      ...a,
-      ref: r,
-      className: clsx(
-        styles$1c.icon,
-        styles$1c[`icon__${n}Size`],
-        o && styles$1c.icon__focused,
-        t && iconsSet.has(t) && styles$1c[`icon__${t}Icon`],
-        i,
-        e,
-      ),
-      style: t && !iconsSet.has(t) ? { "--background-image": `url(${t})` } : void 0,
-      children: s,
-    });
-  }),
-  Message = reactExports.forwardRef(function (
-    { className: e, type: t = messageTypes.alert, visible: s = !0, children: a, ...r },
-    n,
-  ) {
-    const { size: o } = useInput();
-    return jsxRuntimeExports.jsx("div", {
-      ...r,
-      ref: n,
-      className: clsx(
-        styles$1c.message,
-        s && styles$1c.message__visible,
-        styles$1c[`message__${t}Type`],
-        styles$1c[`message__${o}Size`],
-        e,
-      ),
-      children: a,
-    });
-  });
-function Provider({ children: e, ...t }) {
-  return jsxRuntimeExports.jsx(contextInstance.Provider, {
-    value: useInputInstance(t),
-    children: e,
-  });
-}
-const Input = reactExports.forwardRef(function (
-  { value: e, state: t, disabled: s, type: a, size: r, ...n },
-  o,
-) {
-  return jsxRuntimeExports.jsx(Provider, {
-    value: e,
-    type: a,
-    size: r,
-    state: t,
-    disabled: s,
-    children: jsxRuntimeExports.jsx(Decoration, {
-      children: jsxRuntimeExports.jsx(Field, { ...n, ref: o }),
-    }),
-  });
-});
-((Input.types = types$3),
-  (Input.messageTypes = messageTypes),
-  (Input.sizes = sizes$i),
-  (Input.states = states),
-  (Input.icons = icons),
-  (Input.Provider = Provider),
-  (Input.Decoration = Decoration),
-  (Input.Field = Field),
-  (Input.Placeholder = Placeholder),
-  (Input.Message = Message),
-  (Input.Icon = Icon),
-  (Input.ClearButton = ClearButton));
-const toggleThemes = { primary: "primary", custom: "custom" },
-  toggleSizes = { extraSmall: "extraSmall", small: "small", medium: "medium" },
-  base$13 = "Toggle_cdf77db0",
-  base__fullSizeContent = "Toggle_base__fullSizeContent_1b52d9ec",
-  base__activated = "Toggle_base__activated_d584e080",
-  base__disabled$8 = "Toggle_base__disabled_b564a69b",
-  background$8 = "Toggle_background_78cd67c0",
-  border$7 = "Toggle_border_3d0d0d39",
-  bulb = "Toggle_bulb_fe6d0fba",
-  overlay$4 = "Toggle_overlay_e2999686",
-  content$b = "Toggle_content_17eff4d2",
-  styles$1b = {
-    base: base$13,
-    "base__size-small": "Toggle_base__size-small_b76142a1",
-    "base__size-medium": "Toggle_base__size-medium_a0d408f5",
-    base__fullSizeContent: base__fullSizeContent,
-    "base__theme-primary": "Toggle_base__theme-primary_3e3de333",
-    base__activated: base__activated,
-    base__disabled: base__disabled$8,
-    background: background$8,
-    border: border$7,
-    bulb: bulb,
-    overlay: overlay$4,
-    content: content$b,
-  },
-  Base$t = defineStyledComponent("Toggle", styles$1b.base, {
-    variants: {
-      theme: {
-        [toggleThemes.primary]: styles$1b["base__theme-primary"],
-        [toggleThemes.custom]: void 0,
-      },
-      size: {
-        [toggleSizes.extraSmall]: styles$1b["base__size-extraSmall"],
-        [toggleSizes.small]: styles$1b["base__size-small"],
-        [toggleSizes.medium]: styles$1b["base__size-medium"],
-      },
-      activated: { true: styles$1b.base__activated },
-      disabled: { true: styles$1b.base__disabled },
-    },
-    defaultVariants: { theme: toggleThemes.primary, size: toggleSizes.extraSmall },
-  }),
-  ToggleBase = reactExports.forwardRef(function (e, t) {
-    const s = useSounds();
-    return jsxRuntimeExports.jsx(Base$t, {
-      ...e,
-      ref: t,
-      onMouseEnter: function (t) {
-        (s.play("mouse-enter", { target: Base$t.displayName, original: t }), e.onMouseEnter?.(t));
-      },
-      onClick: function (t) {
-        (s.play("click", { target: Base$t.displayName, original: t }), e.onClick?.(t));
-      },
-      children: e.children,
-    });
-  }),
-  Toggle = reactExports.forwardRef(function (
-    {
-      children: e,
-      size: t = toggleSizes.extraSmall,
-      theme: s = toggleThemes.primary,
-      fullSizeContent: a,
-      classNames: r,
-      className: n,
-      ...o
-    },
-    i,
-  ) {
-    return jsxRuntimeExports.jsxs(ToggleBase, {
-      ...o,
-      ref: i,
-      size: t,
-      theme: s,
-      className: clsx(n, a && styles$1b.base__fullSizeContent, r?.base),
-      children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1b.border, r?.border) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1b.background, r?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1b.bulb, r?.bulb) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$1b.overlay, r?.overlay) }),
-        jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$1b.content, r?.content),
-          children: e,
-        }),
-      ],
-    });
-  });
-((Toggle.themes = toggleThemes), (Toggle.sizes = toggleSizes));
-const base$12 = "VehicleLevel_3c938122",
-  styles$1a = { base: base$12 },
-  numberTypes = { arabic: "arabic", roman: "roman" };
-function getLevelType(e, t) {
-  return e || (t ? numberTypes.arabic : numberTypes.roman);
-}
-const VehicleLevel = reactExports.forwardRef(function ({ value: e, numberType: t, ...s }, a) {
-  const r = getLevelType(t, useRomanForbidden()) === numberTypes.roman ? arabicToRoman(e) : e;
-  return jsxRuntimeExports.jsx("div", {
-    ...s,
-    "data-name": "VehicleLevel",
-    className: clsx(styles$1a.base, s.className),
-    ref: a,
-    children: r,
-  });
-});
-VehicleLevel.numberTypes = numberTypes;
-const SvgAssaultX16X16 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 16,
-        height: 16,
-        viewBox: "0 0 16 16",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M14.1504 5.80273L11.6055 13.9912H3.36914L0.824219 5.80273L7.4873 0.741211L14.1504 5.80273ZM7.41113 3.90625L3.72656 6.70508L3.24707 6.62598L3.67969 6.85547L5.08789 11.3848L4.86719 11.8369L5.20898 11.4785H9.76562L10.1074 11.8369L9.88672 11.3857L11.2949 6.85449L11.7275 6.62598L11.248 6.70508L7.5625 3.90625L7.4873 3.40527L7.41113 3.90625Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgAssaultX24X24 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 24,
-        height: 24,
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M20.1621 8.9707L16.8516 19.0029H6.13574L2.82422 8.9707L11.4932 2.77051L20.1621 8.9707ZM11.3945 6.64551L6.59961 10.0762L5.97656 9.97852L6.53906 10.2598L8.37012 15.8086L8.08398 16.3623L8.53027 15.9219H14.4561L14.9023 16.3623L14.6152 15.8086L16.4463 10.2598L17.0098 9.97852L16.3857 10.0762L11.5908 6.64551L11.4932 6.0332L11.3945 6.64551Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgAssaultX32X32 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 32,
-        height: 32,
-        viewBox: "0 0 32 32",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        fillRule: "evenodd",
-        clipRule: "evenodd",
-        d: "M14.9795 5.18837C15.3285 4.93721 15.7995 4.93721 16.1485 5.18837L25.708 12.0692C26.0618 12.3239 26.2101 12.7781 26.0742 13.1923L22.4268 24.3143C22.292 24.7248 21.9086 25.0018 21.4766 25.0018H9.6514C9.21947 25.0017 8.83595 24.7247 8.7012 24.3143L5.05374 13.1923C4.9179 12.7781 5.06622 12.3239 5.41995 12.0692L14.9795 5.18837ZM15.4424 9.5995L9.50198 13.8749L8.73147 13.7538L9.42776 14.1044L11.6963 21.0214L11.3408 21.7118L11.8936 21.163H19.2354L19.7881 21.7118L19.4317 21.0214L21.7002 14.1044L22.3985 13.7538L21.626 13.8749L15.6856 9.5995L15.5645 8.83485L15.4424 9.5995Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgAssaultX48X48 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 48,
-        height: 48,
-        viewBox: "0 0 48 48",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        fillRule: "evenodd",
-        clipRule: "evenodd",
-        d: "M22.9113 8.4273C23.2618 8.17266 23.7366 8.17268 24.0871 8.4273L38.6037 18.9742C38.9542 19.2288 39.1008 19.6803 38.967 20.0923L33.4221 37.1578C33.2882 37.5696 32.9049 37.849 32.4719 37.8492H14.5275C14.0943 37.8492 13.7102 37.5698 13.5763 37.1578L8.03143 20.0923C7.89756 19.6803 8.04425 19.2288 8.39471 18.9742L22.9113 8.4273ZM23.3215 15.1294L14.6418 21.4351L13.5129 21.2554L14.5314 21.773L17.8469 31.9771L17.3273 32.9957L18.1349 32.1861H28.8635L29.6711 32.9957L29.1506 31.9771L32.466 21.773L33.4855 21.2554L32.3556 21.4351L23.676 15.1294L23.4992 14.0005L23.3215 15.1294Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgBreakX16X16 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 16,
-        height: 16,
-        viewBox: "0 0 16 16",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M7.5 2L14.5 9H11L7.5 5.5L4 9H0.5L7.5 2Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M11 11L7.5 7.5L4 11V14.5L7.5 11L11 14.5V11Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgBreakX24X24 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 24,
-        height: 24,
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M11.5 4L20.5 13H16L11.5 8.5L7 13H2.5L11.5 4Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M16 16.5L11.5 12L7 16.5V21L11.5 16.5L16 21V16.5Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgBreakX32X32 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 32,
-        height: 32,
-        viewBox: "0 0 32 32",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M15.5 5.5L27 17H21.2071C21.0745 17 20.9473 16.9473 20.8536 16.8536L15.5 11.5L10.1464 16.8536C10.0527 16.9473 9.9255 17 9.79289 17H4L15.5 5.5Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M21 21.2071C21 21.0745 20.9473 20.9473 20.8536 20.8536L15.5 15.5L10.1464 20.8536C10.0527 20.9473 10 21.0745 10 21.2071V27L15.5 21.5L21 27V21.2071Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgBreakX48X48 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 48,
-        height: 48,
-        viewBox: "0 0 48 48",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M23.5 8.5L40 25H32.4142C32.149 25 31.8946 24.8946 31.7071 24.7071L23.5 16.5L15.2929 24.7071C15.1054 24.8946 14.851 25 14.5858 25H7L23.5 8.5Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M31 29.4167C31 29.15 30.8935 28.8944 30.7041 28.7066L23.5 21.5625L16.2959 28.7066C16.1065 28.8944 16 29.15 16 29.4167V37L23.5 29.5L31 37V29.4167Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgScoutX16X16 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 16,
-        height: 16,
-        viewBox: "0 0 16 16",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M8 7C9.65685 7 11 8.34315 11 10C11 11.6569 9.65685 13 8 13C6.34315 13 5 11.6569 5 10C5 8.34315 6.34315 7 8 7ZM8 3C12.7006 3 16 7 16 7L14.5 9C14.5 9 12.0087 5.53809 8 5.53809C3.99128 5.53809 1.5 9 1.5 9L0 7C0 7 3.29939 3 8 3Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgScoutX24X24 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 24,
-        height: 24,
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M12 11C14.2091 11 16 12.7909 16 15C16 17.2091 14.2091 19 12 19C9.79086 19 8 17.2091 8 15C8 12.7909 9.79086 11 12 11ZM12 6C17.8753 6 21.9993 10.9992 22 11L20 13C19.9986 12.9981 17.0097 8.96191 12 8.96191C6.98995 8.96191 4.00101 12.9986 4 13L2 11C2.00133 10.9984 6.12518 6 12 6Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgScoutX32X32 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 32,
-        height: 32,
-        viewBox: "0 0 32 32",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M16 15C18.7614 15 21 17.2386 21 20C21 22.7614 18.7614 25 16 25C13.2386 25 11 22.7614 11 20C11 17.2386 13.2386 15 16 15ZM16 8C23.6385 8 29 15 29 15L26.5 17.5C26.5 17.5 22.5142 12 16 12C9.48583 12 5.5 17.5 5.5 17.5L3 15C3 15 8.36151 8 16 8Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgScoutX48X48 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 48,
-        height: 48,
-        viewBox: "0 0 48 48",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M24 22C27.866 22 31 25.134 31 29C31 32.866 27.866 36 24 36C20.134 36 17 32.866 17 29C17 25.134 20.134 22 24 22ZM24 13C34.5764 13 42 22 42 22L38.5947 26C38.5947 26 33.0196 18.5 24 18.5C14.9804 18.5 9.40527 26 9.40527 26L6 22C6 22 13.4236 13 24 13Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSniperX16X16 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 16,
-        height: 16,
-        viewBox: "0 0 16 16",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M6.09375 2V5.6875L7.5 7.09375L8.90625 5.6875V2H6.09375Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M6.09375 15V11.3125L7.5 9.90625L8.90625 11.3125V15H6.09375Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M4.6875 9.90625H1V7.09375H4.6875L6.09375 8.5L4.6875 9.90625Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M14 9.90625H10.3125L8.90625 8.5L10.3125 7.09375H14V9.90625Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSniperX24X24 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 24,
-        height: 24,
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", { d: "M10 4V9L11.5 10.5L13 9V4H10Z", fill: "#FFB34D" }),
-      reactExports.createElement("path", {
-        d: "M10 21V16L11.5 14.5L13 16V21H10Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", { d: "M8 14H3V11H8L9.5 12.5L8 14Z", fill: "#FFB34D" }),
-      reactExports.createElement("path", {
-        d: "M20 14H15L13.5 12.5L15 11H20V14Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSniperX32X32 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 32,
-        height: 32,
-        viewBox: "0 0 32 32",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M15.5003 13.5L13 11V4.5C13 4.22386 13.2239 4 13.5 4H17.5C17.7761 4 18 4.22386 18 4.5V11L15.5003 13.5Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M15.5 19.5L13 22V28.5C13 28.7761 13.2239 29 13.5 29H17.5C17.7761 29 18 28.7761 18 28.5V22L15.5 19.5Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M21 14L18.5 16.5L21 19H27.5C27.7761 19 28 18.7761 28 18.5V14.5C28 14.2239 27.7761 14 27.5 14H21Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M12.5 16.5L10 14H3.50005C3.22391 14 3.00005 14.2239 3.00005 14.5V18.5C3.00005 18.7761 3.22391 19 3.50005 19H10L12.5 16.5Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSniperX48X48 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 48,
-        height: 48,
-        viewBox: "0 0 48 48",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M23.5 21L20 17.5V9.5C20 9.22386 20.2239 9 20.5 9H26.5C26.7761 9 27 9.22386 27 9.5V17.5L23.5 21Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M23.5 27.6912L20 31.5V39.5C20 39.7761 20.2239 40 20.5 40H26.5C26.7761 40 27 39.7761 27 39.5V31.5L23.5 27.6912Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M30.5 21L27 24.5L30.5 28H38.5C38.7761 28 39 27.7761 39 27.5V21.5C39 21.2239 38.7761 21 38.5 21H30.5Z",
-        fill: "#FFB34D",
-      }),
-      reactExports.createElement("path", {
-        d: "M20 24.5L16.5 21H8.5C8.22386 21 8 21.2239 8 21.5V27.5C8 27.7761 8.22386 28 8.5 28H16.5L20 24.5Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSupportX16X16 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 16,
-        height: 16,
-        viewBox: "0 0 16 16",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M5.5 8L6 7H11.7998C13.1395 7 15 9.5 15 9.5C15 9.5 13.03 12 11.7998 12H6L5.5 11L5 12H4V7H5L5.5 8ZM2.5 4L3 3H8.7998C9.75432 3 10.9718 4.27022 11.5938 5H6L5.5 6L5 5H2V8H1V3H2L2.5 4Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSupportX24X24 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 24,
-        height: 24,
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M10.2109 11.167L10.9473 10H17.5791C19.2244 10.0002 22 13.5156 22 13.5156C21.9833 13.5356 19.0856 16.9998 17.5791 17H10.9473L10.2109 15.9502L9.47363 17H8V10H9.47363L10.2109 11.167ZM6.2002 7.16699L6.93359 6H13.5332C14.7108 6 16.4689 7.8196 17.3643 8.84082C16.7384 8.35629 16.102 8.00007 15.5791 8H10.4209L9.68457 9.16699L8.94727 8H6V12.2363L5.4668 13H4V6H5.4668L6.2002 7.16699Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSupportX32X32 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 32,
-        height: 32,
-        viewBox: "0 0 32 32",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M11.2324 13C11.3996 13 11.5557 13.0836 11.6484 13.2227L12.084 13.876C12.2819 14.1728 12.7181 14.1728 12.916 13.876L13.3516 13.2227C13.4443 13.0836 13.6004 13 13.7676 13H23C25.2329 13 29 18.0225 29 18.0225C28.9703 18.0599 25.0425 23 23 23H13.7676C13.6004 23 13.4443 22.9164 13.3516 22.7773L12.916 22.124C12.7181 21.8272 12.2819 21.8272 12.084 22.124L11.6484 22.7773C11.5557 22.9164 11.3996 23 11.2324 23H10.5C10.2239 23 10 22.7761 10 22.5V13.5C10 13.2239 10.2239 13 10.5 13H11.2324ZM7.23242 8C7.39959 8 7.55571 8.08356 7.64844 8.22266L8.08398 8.87598C8.2819 9.17282 8.7181 9.17282 8.91602 8.87598L9.35156 8.22266C9.44429 8.08356 9.60041 8 9.76758 8H19C20.2622 8 22.0147 9.60475 23.2998 11H13.7676C13.6004 11 13.4443 11.0836 13.3516 11.2227L12.916 11.876C12.7181 12.1728 12.2819 12.1728 12.084 11.876L11.6484 11.2227C11.5557 11.0836 11.3996 11 11.2324 11H8.5C8.22386 11 8 11.2239 8 11.5V17.25L7.64844 17.7773C7.55571 17.9164 7.39959 18 7.23242 18H6.5C6.22386 18 6 17.7761 6 17.5V8.5C6 8.22386 6.22386 8 6.5 8H7.23242Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgSupportX48X48 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 48,
-        height: 48,
-        viewBox: "0 0 48 48",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        fillRule: "evenodd",
-        clipRule: "evenodd",
-        d: "M32.4476 33H20.5C20.1852 33 19.8889 32.8518 19.7 32.6L19.3 32.0667C18.9 31.5333 18.1 31.5333 17.7 32.0667L17.3 32.6C17.1111 32.8518 16.8148 33 16.5 33H16C15.4477 33 15 32.5523 15 32V21C15 20.4477 15.4477 20 16 20H16.5C16.8148 20 17.1111 20.1482 17.3 20.4L17.7007 20.9343C18.1005 21.4673 18.9 21.4677 19.3002 20.935L19.7 20.4029C19.8889 20.1515 20.185 20.0036 20.4995 20.0036H32.4476C35.797 20.0036 41 26.5 41 26.5C41 26.5 35.5231 33 32.4476 33ZM19.3 17.9333C18.9 18.4667 18.1 18.4667 17.7 17.9333L17.3 17.4C17.1111 17.1482 16.8148 17 16.5 17H13C12.4477 17 12 17.4477 12 18V23.6667C12 23.883 11.9298 24.0936 11.8 24.2667L10.7965 25.6047C10.6096 25.8539 10.3173 26.0017 10.0059 26.0047L9.00945 26.0141C8.4535 26.0193 8 25.5701 8 25.0141V14C8 13.4477 8.44772 13 9 13H9.95334C10.294 13 10.6112 13.1734 10.7951 13.4602L11.1582 14.0264C11.5517 14.6399 12.4483 14.6399 12.8418 14.0264L13.2049 13.4602C13.3888 13.1734 13.706 13 14.0467 13H25.0638C26.8964 13 29.3189 15.119 31.1094 17.0382L20.5021 17.0017C20.1862 17.0006 19.8883 17.1489 19.6987 17.4017L19.3 17.9333Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgUniversalX16X16 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 16,
-        height: 16,
-        viewBox: "0 0 16 16",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M12.667 4.23145C13.4999 5.26163 14 6.57205 14 8C14 11.3137 11.3137 14 8 14C6.94694 14 5.95792 13.7275 5.09766 13.251L6.95605 11.0381C7.2835 11.1506 7.63439 11.2129 8 11.2129C9.77449 11.2129 11.2129 9.77449 11.2129 8C11.2129 7.43539 11.0663 6.9054 10.8105 6.44434L12.667 4.23145ZM8 2C9.05259 2 10.0414 2.27194 10.9014 2.74805L9.04395 4.96191C8.7165 4.84942 8.36561 4.78711 8 4.78711C6.22551 4.78711 4.78711 6.22551 4.78711 8C4.78711 8.56461 4.9337 9.0946 5.18945 9.55566L3.33203 11.7686C2.49936 10.7384 2 9.42773 2 8C2 4.68629 4.68629 2 8 2Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgUniversalX24X24 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 24,
-        height: 24,
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M18.2227 6.97559C19.3331 8.34914 20 10.0962 20 12C20 16.4183 16.4183 20 12 20C10.5962 20 9.27769 19.637 8.13086 19.002L10.4912 16.1895C10.9624 16.3592 11.4703 16.4521 12 16.4521C14.4588 16.4521 16.4521 14.4588 16.4521 12C16.4521 11.1947 16.2373 10.4399 15.8633 9.78809L18.2227 6.97559ZM12 4C13.4036 4 14.7224 4.36214 15.8691 4.99707L13.5078 7.81055C13.0369 7.64102 12.5294 7.54785 12 7.54785C9.54116 7.54785 7.54785 9.54116 7.54785 12C7.54785 12.8053 7.76274 13.5601 8.13672 14.2119L5.77637 17.0244C4.66615 15.6509 4 13.9036 4 12C4 7.58172 7.58172 4 12 4Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgUniversalX32X32 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 32,
-        height: 32,
-        viewBox: "0 0 32 32",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M23.7793 9.71777C25.1676 11.4348 26 13.6199 26 16C26 21.5228 21.5228 26 16 26C14.2452 26 12.5967 25.5468 11.1631 24.7529L13.8408 21.5615C14.5106 21.8217 15.2383 21.9658 16 21.9658C19.2951 21.9658 21.9658 19.2951 21.9658 16C21.9658 14.8676 21.6504 13.8091 21.1025 12.9072L23.7793 9.71777ZM16 6C17.7543 6 19.4026 6.4526 20.8359 7.24609L18.1582 10.4375C17.4888 10.1776 16.7613 10.0342 16 10.0342C12.7049 10.0342 10.0342 12.7049 10.0342 16C10.0342 17.1319 10.3491 18.1901 10.8965 19.0918L8.21973 22.2812C6.83192 20.5644 6 18.3796 6 16C6 10.4772 10.4772 6 16 6Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  SvgUniversalX48X48 = (e) =>
-    reactExports.createElement(
-      "svg",
-      {
-        width: 48,
-        height: 48,
-        viewBox: "0 0 48 48",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        ...e,
-      },
-      reactExports.createElement("path", {
-        d: "M34.1123 15.834C35.9171 18.0661 37 20.906 37 24C37 31.1797 31.1797 37 24 37C21.7188 37 19.5756 36.411 17.7119 35.3789L21.7363 30.583C22.4462 30.8271 23.2073 30.9619 24 30.9619C27.8447 30.9619 30.9619 27.8447 30.9619 24C30.9619 22.7763 30.6443 21.6271 30.0898 20.6279L34.1123 15.834ZM24 11C26.2808 11 28.4237 11.5884 30.2871 12.6201L26.2627 17.416C25.5532 17.1722 24.7923 17.0381 24 17.0381C20.1553 17.0381 17.0381 20.1553 17.0381 24C17.0381 25.2232 17.3551 26.3722 17.9092 27.3711L13.8867 32.165C12.0825 29.9331 11 27.0935 11 24C11 16.8203 16.8203 11 24 11Z",
-        fill: "#FFB34D",
-      }),
-    ),
-  ROLE_TO_COMPONENT = {
-    [`${roles$1.assault}_x16x16`]: SvgAssaultX16X16,
-    [`${roles$1.break}_x16x16`]: SvgBreakX16X16,
-    [`${roles$1.sniper}_x16x16`]: SvgSniperX16X16,
-    [`${roles$1.support}_x16x16`]: SvgSupportX16X16,
-    [`${roles$1.universal}_x16x16`]: SvgUniversalX16X16,
-    [`${roles$1.scout}_x16x16`]: SvgScoutX16X16,
-    [`${roles$1.assault}_x24x24`]: SvgAssaultX24X24,
-    [`${roles$1.break}_x24x24`]: SvgBreakX24X24,
-    [`${roles$1.sniper}_x24x24`]: SvgSniperX24X24,
-    [`${roles$1.support}_x24x24`]: SvgSupportX24X24,
-    [`${roles$1.universal}_x24x24`]: SvgUniversalX24X24,
-    [`${roles$1.scout}_x24x24`]: SvgScoutX24X24,
-    [`${roles$1.assault}_x32x32`]: SvgAssaultX32X32,
-    [`${roles$1.break}_x32x32`]: SvgBreakX32X32,
-    [`${roles$1.sniper}_x32x32`]: SvgSniperX32X32,
-    [`${roles$1.support}_x32x32`]: SvgSupportX32X32,
-    [`${roles$1.universal}_x32x32`]: SvgUniversalX32X32,
-    [`${roles$1.scout}_x32x32`]: SvgScoutX32X32,
-    [`${roles$1.assault}_x48x48`]: SvgAssaultX48X48,
-    [`${roles$1.break}_x48x48`]: SvgBreakX48X48,
-    [`${roles$1.sniper}_x48x48`]: SvgSniperX48X48,
-    [`${roles$1.support}_x48x48`]: SvgSupportX48X48,
-    [`${roles$1.universal}_x48x48`]: SvgUniversalX48X48,
-    [`${roles$1.scout}_x48x48`]: SvgScoutX48X48,
-  },
-  base$11 = "VehicleRole_e70537d3",
-  base__x16x16 = "VehicleRole_base__x16x16_f444f190",
-  base__x24x24$1 = "VehicleRole_base__x24x24_cc02d077",
-  base__x32x32 = "VehicleRole_base__x32x32_2180a099",
-  base__x48x48$1 = "VehicleRole_base__x48x48_2a01e86c",
-  icon$b = "VehicleRole_icon_7f7f6256",
-  fadeIn$v = "VehicleRole_fadeIn_741b56a9",
-  fadeInThreeQuarters$v = "VehicleRole_fadeInThreeQuarters_741b56a9",
-  fadeInHalf$v = "VehicleRole_fadeInHalf_741b56a9",
-  fadeOut$v = "VehicleRole_fadeOut_741b56a9",
-  fadeInWithScale$v = "VehicleRole_fadeInWithScale_741b56a9",
-  slideUp$v = "VehicleRole_slideUp_741b56a9",
-  scale$v = "VehicleRole_scale_741b56a9",
-  raysAppearance$v = "VehicleRole_raysAppearance_741b56a9",
-  rotate$v = "VehicleRole_rotate_741b56a9",
-  glowAppearance$v = "VehicleRole_glowAppearance_741b56a9",
-  highlightAppearance$v = "VehicleRole_highlightAppearance_741b56a9",
-  blink$v = "VehicleRole_blink_741b56a9",
-  slideUpIn$v = "VehicleRole_slideUpIn_741b56a9",
-  styles$19 = {
-    base: base$11,
-    base__x16x16: base__x16x16,
-    base__x24x24: base__x24x24$1,
-    base__x32x32: base__x32x32,
-    base__x48x48: base__x48x48$1,
-    icon: icon$b,
-    fadeIn: fadeIn$v,
-    fadeInThreeQuarters: fadeInThreeQuarters$v,
-    fadeInHalf: fadeInHalf$v,
-    fadeOut: fadeOut$v,
-    fadeInWithScale: fadeInWithScale$v,
-    slideUp: slideUp$v,
-    scale: scale$v,
-    raysAppearance: raysAppearance$v,
-    rotate: rotate$v,
-    "reverse-rotate": "VehicleRole_reverse-rotate_741b56a9",
-    glowAppearance: glowAppearance$v,
-    highlightAppearance: highlightAppearance$v,
-    blink: blink$v,
-    slideUpIn: slideUpIn$v,
-  },
-  sizes$h = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
-  VehicleRole = reactExports.forwardRef(function (
-    { roleKey: e, size: t = sizes$h.x24x24, classNames: s, ...a },
-    r,
-  ) {
-    const n = ROLE_TO_COMPONENT[`${e}_${t}`];
-    if (n)
-      return jsxRuntimeExports.jsx("div", {
-        ...a,
-        ref: r,
-        className: clsx(styles$19.base, styles$19[`base__${t}`], s?.base),
-        children: jsxRuntimeExports.jsx(n, { className: clsx(styles$19.icon, s?.icon) }),
-      });
-    console.error(`Unknown vehicle role type ${e} with size ${t}`);
-  });
-VehicleRole.sizes = sizes$h;
-const sizes$g = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
-  upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
-  mapTypes = {
-    [types$4.lightTank]: "light_tank",
-    [types$4.mediumTank]: "medium_tank",
-    [types$4.heavyTank]: "heavy_tank",
-    [types$4.SPG]: "spg",
-    [types$4["AT-SPG"]]: "tank_destroyer",
-  },
-  base$10 = "VehicleType_30b4aab0",
-  base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
-  base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
-  base__x64x64 = "VehicleType_base__x64x64_bb9b890",
-  base__x96x96 = "VehicleType_base__x96x96_919f9f92",
-  base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
-  base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
-  base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
-  base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
-  icon$a = "VehicleType_icon_b15d2628",
-  fadeIn$u = "VehicleType_fadeIn_4e0d61e4",
-  fadeInThreeQuarters$u = "VehicleType_fadeInThreeQuarters_4e0d61e4",
-  fadeInHalf$u = "VehicleType_fadeInHalf_4e0d61e4",
-  fadeOut$u = "VehicleType_fadeOut_4e0d61e4",
-  fadeInWithScale$u = "VehicleType_fadeInWithScale_4e0d61e4",
-  slideUp$u = "VehicleType_slideUp_4e0d61e4",
-  scale$u = "VehicleType_scale_4e0d61e4",
-  raysAppearance$u = "VehicleType_raysAppearance_4e0d61e4",
-  rotate$u = "VehicleType_rotate_4e0d61e4",
-  glowAppearance$u = "VehicleType_glowAppearance_4e0d61e4",
-  highlightAppearance$u = "VehicleType_highlightAppearance_4e0d61e4",
-  blink$u = "VehicleType_blink_4e0d61e4",
-  slideUpIn$u = "VehicleType_slideUpIn_4e0d61e4",
-  styles$18 = {
-    base: base$10,
-    base__x24x24: base__x24x24,
-    base__x48x48: base__x48x48,
-    base__x64x64: base__x64x64,
-    base__x96x96: base__x96x96,
-    base__premium__x24x24: base__premium__x24x24,
-    base__premium__x48x48: base__premium__x48x48,
-    base__premium__x64x64: base__premium__x64x64,
-    base__premium__x96x96: base__premium__x96x96,
-    icon: icon$a,
-    fadeIn: fadeIn$u,
-    fadeInThreeQuarters: fadeInThreeQuarters$u,
-    fadeInHalf: fadeInHalf$u,
-    fadeOut: fadeOut$u,
-    fadeInWithScale: fadeInWithScale$u,
-    slideUp: slideUp$u,
-    scale: scale$u,
-    raysAppearance: raysAppearance$u,
-    rotate: rotate$u,
-    "reverse-rotate": "VehicleType_reverse-rotate_4e0d61e4",
-    glowAppearance: glowAppearance$u,
-    highlightAppearance: highlightAppearance$u,
-    blink: blink$u,
-    slideUpIn: slideUpIn$u,
-  },
-  VehicleType = reactExports.forwardRef(function (
-    { type: e, size: t = sizes$g.x48x48, premium: s = !1, fit: a = "contain", ...r },
-    n,
-  ) {
-    const o = useUpscale(sizes$g[t], upscaledSizes[t]);
-    return jsxRuntimeExports.jsx(Image$1, {
-      ...r,
-      ref: n,
-      fit: a,
-      className: clsx(
-        styles$18.base,
-        s ? styles$18[`base__premium__${t}`] : styles$18[`base__${t}`],
-        r.className,
-      ),
-      path: `ui_kit.vehicle_type.${o}.${s ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${o}`,
-    });
-  });
-function NotLoaded() {
-  return null;
-}
-function LazyModel(e) {
-  if (useLazyModel(e.id)) return e.children;
-  return (e.fallback || NotLoaded)();
-}
-function useLazyModel(e) {
-  const [t, s] = reactExports.useState(!1);
-  return (
-    reactExports.useEffect(() => {
-      if ("number" == typeof e)
-        return (
-          s(ids().includes(e)),
-          subscribe(e, (e) => {
-            s("added" === e.type);
-          })
-        );
-    }, [e]),
-    t
-  );
-}
-function createOptionalDLProvider(e, t) {
-  return function (s) {
-    return useLazyModel(t.rootId) ? jsxRuntimeExports.jsx(e, { ...s, options: t }) : s.children;
-  };
-}
-((VehicleType.types = types$4), (VehicleType.sizes = sizes$g));
-const base$$ = "AnimatedDetails_c70d3863",
-  styles$17 = { base: base$$ },
-  AnimatedDetails = reactExports.forwardRef(function (
-    { opened: e, children: t, className: s, animationSettings: a = {}, ...r },
-    n,
-  ) {
-    const o = React.useRef(null),
-      i = React.useRef(null),
-      [u, l] = useSpring(() => ({ height: 0, opacity: 0 })),
-      c = useEvent((e, t) => {
-        l.start({
-          height: t ? e : 0,
-          opacity: t ? 1 : 0,
-          config: {
-            duration: 350,
-            easing: t ? easings.reverseEaseInOutCirc : easings.easeInOutCirc,
-          },
-          ...a,
-        });
-      });
-    return (
-      React.useEffect(() => {
-        const t = i.current;
-        if (!t) return;
-        let s = noop$1;
-        if (e) {
-          const e = new ResizeObserver(() => c(t.offsetHeight, !0));
-          (e.observe(t), (s = e.disconnect.bind(e)));
-        }
-        const a = createLayoutReadyInEffect$1(() => {
-          c(t.offsetHeight, e);
-        });
-        return () => {
-          (a(), s());
-        };
-      }, [c, e]),
-      jsxRuntimeExports.jsx(animated.div, {
-        ...r,
-        ref: assignRefs([n, o]),
-        className: clsx(styles$17.base, s),
-        style: { ...r.style, ...u },
-        children: jsxRuntimeExports.jsx("div", { ref: i, children: t }),
-      })
-    );
-  }),
-  Context$3 = reactExports.createContext(void 0);
-function useAccordion() {
-  const e = reactExports.useContext(Context$3);
-  if (!e) throw new Error("useAccordion should have Accordion provider");
-  return e;
-}
-const arrow$1 = "Arrow_f1570a91",
-  arrow__opened = "Arrow_arrow__opened_134476cd",
-  styles$16 = { arrow: arrow$1, arrow__opened: arrow__opened },
-  images$1 = resources.resolve("images"),
-  Arrow = reactExports.forwardRef(function (e, t) {
-    const { opened: s } = useAccordion();
-    return jsxRuntimeExports.jsx("div", {
-      ...e,
-      ref: t,
-      style: {
-        backgroundImage: `url(${images$1.readOrEmpty("library.arrow_accordion")})`,
-        ...e.style,
-      },
-      className: clsx(styles$16.arrow, s && styles$16.arrow__opened, e.className),
-    });
-  }),
-  content$a = "Details_content_a5a56462",
-  content__opened = "Details_content__opened_cc21f43f",
-  styles$15 = { content: content$a, content__opened: content__opened },
-  Details = reactExports.forwardRef(function (e, t) {
-    const { opened: s } = useAccordion();
-    return jsxRuntimeExports.jsx("div", {
-      ...e,
-      ref: t,
-      className: clsx(styles$15.content, s && styles$15.content__opened, e.className),
-    });
-  }),
-  headerWrapper = "Summary_headerWrapper_d7c7115",
-  background$7 = "Summary_background_48ba2ab7",
-  background__scrollable = "Summary_background__scrollable_a41402ee",
-  header$1 = "Summary_header_789c868e",
-  styles$14 = {
-    headerWrapper: headerWrapper,
-    background: background$7,
-    background__scrollable: background__scrollable,
-    header: header$1,
-  },
-  Summary = reactExports.forwardRef(function (
-    { children: e, scrollable: t, background: s, ...a },
-    r,
-  ) {
-    return jsxRuntimeExports.jsxs("div", {
-      ...a,
-      ref: r,
-      className: clsx(styles$14.headerWrapper, a.className),
-      children: [
-        jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$14.background, t && styles$14.background__scrollable, s),
-        }),
-        jsxRuntimeExports.jsx("div", { className: styles$14.header, children: e }),
-      ],
-    });
-  }),
-  base$_ = "Accordion_2b56632",
-  styles$13 = { base: base$_ },
-  Accordion = reactExports.forwardRef(function ({ opened: e, ...t }, s) {
-    return jsxRuntimeExports.jsx(Context$3.Provider, {
-      value: { opened: e },
-      children: jsxRuntimeExports.jsx("div", {
-        ...t,
-        "data-name": "Accordion",
-        ref: s,
-        className: clsx(styles$13.base, t.className),
-      }),
-    });
-  });
-((Accordion.Summary = Summary),
-  (Accordion.Details = Details),
-  (Accordion.AnimatedDetails = AnimatedDetails),
-  (Accordion.Arrow = Arrow));
-const MIN_LEVEL = 1,
-  TYPE_PRESTIGE = "prestige",
-  directions$1 = { left: "left", right: "right" },
-  lengths = { short: "short", medium: "medium", long: "long" },
-  iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
-  icon$9 = (e, t, s) => (t === TYPE_PRESTIGE ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${s}`),
-  base$Z = "VehiclePrestigeLevel_a750cce",
-  icon$8 = "VehiclePrestigeLevel_icon_ef024cc3",
-  base__left$1 = "VehiclePrestigeLevel_base__left_4426b46c",
-  level = "VehiclePrestigeLevel_level_10f410ba",
-  level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
-  base__right$1 = "VehiclePrestigeLevel_base__right_4426b46c",
-  level__medium = "VehiclePrestigeLevel_level__medium_90aed80f",
-  level__long = "VehiclePrestigeLevel_level__long_26625167",
-  base__iron = "VehiclePrestigeLevel_base__iron_4426b46c",
-  base__bronze = "VehiclePrestigeLevel_base__bronze_4426b46c",
-  base__silver = "VehiclePrestigeLevel_base__silver_4426b46c",
-  base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
-  base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
-  fadeIn$t = "VehiclePrestigeLevel_fadeIn_4426b46c",
-  fadeInThreeQuarters$t = "VehiclePrestigeLevel_fadeInThreeQuarters_4426b46c",
-  fadeInHalf$t = "VehiclePrestigeLevel_fadeInHalf_4426b46c",
-  fadeOut$t = "VehiclePrestigeLevel_fadeOut_4426b46c",
-  fadeInWithScale$t = "VehiclePrestigeLevel_fadeInWithScale_4426b46c",
-  slideUp$t = "VehiclePrestigeLevel_slideUp_4426b46c",
-  scale$t = "VehiclePrestigeLevel_scale_4426b46c",
-  raysAppearance$t = "VehiclePrestigeLevel_raysAppearance_4426b46c",
-  rotate$t = "VehiclePrestigeLevel_rotate_4426b46c",
-  glowAppearance$t = "VehiclePrestigeLevel_glowAppearance_4426b46c",
-  highlightAppearance$t = "VehiclePrestigeLevel_highlightAppearance_4426b46c",
-  blink$t = "VehiclePrestigeLevel_blink_4426b46c",
-  slideUpIn$t = "VehiclePrestigeLevel_slideUpIn_4426b46c",
-  styles$12 = {
-    base: base$Z,
-    icon: icon$8,
-    base__left: base__left$1,
-    level: level,
-    level__short: level__short,
-    base__right: base__right$1,
-    level__medium: level__medium,
-    level__long: level__long,
-    base__iron: base__iron,
-    base__bronze: base__bronze,
-    base__silver: base__silver,
-    base__gold: base__gold$1,
-    base__enamel: base__enamel,
-    fadeIn: fadeIn$t,
-    fadeInThreeQuarters: fadeInThreeQuarters$t,
-    fadeInHalf: fadeInHalf$t,
-    fadeOut: fadeOut$t,
-    fadeInWithScale: fadeInWithScale$t,
-    slideUp: slideUp$t,
-    scale: scale$t,
-    raysAppearance: raysAppearance$t,
-    rotate: rotate$t,
-    "reverse-rotate": "VehiclePrestigeLevel_reverse-rotate_4426b46c",
-    glowAppearance: glowAppearance$t,
-    highlightAppearance: highlightAppearance$t,
-    blink: blink$t,
-    slideUpIn: slideUpIn$t,
-  };
-function PrestigeLevel({ level: e, grade: t, type: s, direction: a, classNames: r, ...n }) {
-  return e < MIN_LEVEL || "undefined" === s
-    ? null
-    : jsxRuntimeExports.jsxs("div", {
-        ...n,
-        className: clsx(
-          styles$12.base,
-          styles$12[`base__${s}`],
-          styles$12[`base__${a}`],
-          n.className,
-          r?.base,
-        ),
-        children: [
-          jsxRuntimeExports.jsx(Image$1, {
-            path: `prestige.tab.${icon$9(e, s, t)}`,
-            className: clsx(styles$12.icon, r?.icon),
-          }),
-          s !== TYPE_PRESTIGE &&
-            jsxRuntimeExports.jsx("div", {
-              className: clsx(styles$12.level, styles$12[`level__${iconLength(e)}`], r?.level),
-              children: e,
-            }),
-        ],
-      });
-}
-PrestigeLevel.direction = directions$1;
-const base$Y = "VehicleInfo_1732f1f0",
-  name$1 = "VehicleInfo_name_3989ca04",
-  name__premium = "VehicleInfo_name__premium_258b3b93",
-  styles$11 = { base: base$Y, name: name$1, name__premium: name__premium },
-  VehicleName = defineStyledComponent("VehicleName", styles$11.name, {
-    variants: { premium: { true: styles$11.name__premium } },
-  }),
-  VehicleInfo = reactExports.forwardRef(function (e, t) {
-    return jsxRuntimeExports.jsx("div", {
-      ...e,
-      ref: t,
-      className: clsx(styles$11.base, e.className),
-    });
-  });
-function useParamTooltipApadter(e) {
-  return useParamTooltip(e.type, e.args, e.params);
-}
-function useWulfTooltipAdapter(e) {
-  return useWulfTooltip(e.tooltipId, e.args, e.params);
-}
-function useSpecialTooltipAdapter(e) {
-  return useSpecialTooltip(e.tooltipId, e.args, e.params);
-}
-function createTooltipComponent(e, t) {
-  function s({ asChild: t, params: s, disabled: a, ...r }) {
-    const n = t ? Slot$1 : "div",
-      o = e(a ? { ...s, disabled: a } : s);
-    return jsxRuntimeExports.jsx(n, { ...r, ...o });
-  }
-  return ((s.displayName = t), s);
-}
-((VehicleInfo.Prestige = PrestigeLevel),
-  (VehicleInfo.Level = VehicleLevel),
-  (VehicleInfo.Type = VehicleType),
-  (VehicleInfo.Name = VehicleName),
-  (VehicleInfo.Role = VehicleRole));
-const Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
-  SimpleTooltip$1 = createTooltipComponent(useSimpleTooltip, "SimpleTooltip");
-(createTooltipComponent(useParamTooltipApadter, "ParamsTooltip"),
-  createTooltipComponent(useWulfTooltipAdapter, "WulfTooltip"),
-  createTooltipComponent(useSpecialTooltipAdapter, "SpecialTooltip"));
-const BackportTooltip = createTooltipComponent(useBackdropTooltip, "BackportTooltip"),
-  BackdropTooltip = BackportTooltip,
-  types$2 = {
-    tankXP: "tankXP",
-    freeXP: "freeXP",
-    credits: "credits",
-    gold: "gold",
-    crystal: "crystal",
-    equipCoin: "equipCoin",
-    stpCoin: "stpcoin",
-    brCoin: "brcoin",
-    eliteXp: "eliteXp",
-    depot: "depot",
-    vehicle: "vehicle",
-    crew: "crew",
-    custom: "custom",
-    xp: "xp",
-    brProgressionToken: "brProgressionToken",
-    battlePassPoints: "battlePassPoints",
-  },
-  currencyTypes = Object.values(types$2),
-  discountTypes = { currency: "currency", experience: "experience" },
-  sizes$f = {
-    extraSmall: "extraSmall",
-    small: "small",
-    medium: "medium",
-    large: "large",
-    extraLarge: "extraLarge",
-    xxl: "xxl",
-  },
-  imageSizes$1 = {
-    [sizes$f.extraSmall]: 16,
-    [sizes$f.small]: 24,
-    [sizes$f.medium]: 32,
-    [sizes$f.large]: 48,
-    [sizes$f.extraLarge]: 80,
-    [sizes$f.xxl]: 96,
-  },
-  upscaledImageSizes = {
-    [sizes$f.extraSmall]: 32,
-    [sizes$f.small]: 48,
-    [sizes$f.medium]: 32,
-    [sizes$f.large]: 96,
-    [sizes$f.extraLarge]: 80,
-    [sizes$f.xxl]: 96,
-  },
-  discountSizesConfig = {
-    [sizes$f.extraSmall]: { width: "60rem", height: "36rem" },
-    [sizes$f.small]: { width: "80rem", height: "48rem" },
-    [sizes$f.medium]: { width: "80rem", height: "48rem" },
-    [sizes$f.large]: { width: "106rem", height: "64rem" },
-    [sizes$f.extraLarge]: { width: "140rem", height: "84rem" },
-    [sizes$f.xxl]: { width: "140rem", height: "84rem" },
-  },
-  base$X = "Currency_72d4be39",
-  base__reverse = "Currency_base__reverse_f12e61b0",
-  base__notEnough = "Currency_base__notEnough_9a7842f",
-  base__credits = "Currency_base__credits_7b9ae721",
-  base__gold = "Currency_base__gold_d6e3cbc",
-  base__freeXP = "Currency_base__freeXP_d29d5a57",
-  base__crystal = "Currency_base__crystal_f830cb47",
-  base__tankXP = "Currency_base__tankXP_1707c68b",
-  fadeIn$s = "Currency_fadeIn_271064ec",
-  fadeInThreeQuarters$s = "Currency_fadeInThreeQuarters_271064ec",
-  fadeInHalf$s = "Currency_fadeInHalf_271064ec",
-  fadeOut$s = "Currency_fadeOut_271064ec",
-  fadeInWithScale$s = "Currency_fadeInWithScale_271064ec",
-  slideUp$s = "Currency_slideUp_271064ec",
-  scale$s = "Currency_scale_271064ec",
-  raysAppearance$s = "Currency_raysAppearance_271064ec",
-  rotate$s = "Currency_rotate_271064ec",
-  glowAppearance$s = "Currency_glowAppearance_271064ec",
-  highlightAppearance$s = "Currency_highlightAppearance_271064ec",
-  blink$s = "Currency_blink_271064ec",
-  slideUpIn$s = "Currency_slideUpIn_271064ec",
-  styles$10 = {
-    base: base$X,
-    base__reverse: base__reverse,
-    base__notEnough: base__notEnough,
-    base__credits: base__credits,
-    base__gold: base__gold,
-    base__freeXP: base__freeXP,
-    base__crystal: base__crystal,
-    base__tankXP: base__tankXP,
-    fadeIn: fadeIn$s,
-    fadeInThreeQuarters: fadeInThreeQuarters$s,
-    fadeInHalf: fadeInHalf$s,
-    fadeOut: fadeOut$s,
-    fadeInWithScale: fadeInWithScale$s,
-    slideUp: slideUp$s,
-    scale: scale$s,
-    raysAppearance: raysAppearance$s,
-    rotate: rotate$s,
-    "reverse-rotate": "Currency_reverse-rotate_271064ec",
-    glowAppearance: glowAppearance$s,
-    highlightAppearance: highlightAppearance$s,
-    blink: blink$s,
-    slideUpIn: slideUpIn$s,
-  },
-  intl$2 = resources.resolve("intl"),
-  Base$s = defineStyledComponent("Currency", styles$10.base, {
-    variants: { reverse: { true: styles$10.base__reverse } },
-  });
-function formatCurrencyValue(e, t) {
-  const s = t === types$2.gold ? "gold" : "integral";
-  return Array.isArray(e)
-    ? e.map((e) => ("number" == typeof e ? intl$2.formatNumber(s, e) : e))
-    : "number" == typeof e
-      ? intl$2.formatNumber(s, e)
-      : e;
-}
-function Currency({
-  children: e,
-  type: t,
-  className: s,
-  classNames: a,
-  imagePath: r,
-  size: n = sizes$f.small,
-  enough: o = !0,
-  ...i
-}) {
-  const u = imageSizes$1[n],
-    l = `${t}_${u}x${u}`,
-    c = upscaledImageSizes[n],
-    d = `${t}_${c}x${c}`,
-    _ = r || currencyTypes.includes(t),
-    p = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
-  return jsxRuntimeExports.jsxs(Base$s, {
-    ...i,
-    className: clsx(a?.base, o ? styles$10[`base__${t}`] : styles$10.base__notEnough, s),
-    children: [
-      _ &&
-        jsxRuntimeExports.jsx(Image$1, { width: u, height: u, path: r ?? p, className: a?.icon }),
-      formatCurrencyValue(e, t),
-    ],
-  });
-}
-((Currency.sizes = sizes$f), (Currency.types = types$2));
-const base$W = "WithDiscount_b8b3aa7f",
-  discount = "WithDiscount_discount_f7ce1b97",
-  icon$7 = "WithDiscount_icon_a6c57ca8",
-  icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
-  icon__small$2 = "WithDiscount_icon__small_60ee455a",
-  icon__medium$1 = "WithDiscount_icon__medium_2877fd99",
-  icon__large = "WithDiscount_icon__large_6c06eeb7",
-  icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
-  icon__xxl = "WithDiscount_icon__xxl_4080bb18",
-  fadeIn$r = "WithDiscount_fadeIn_60ee455a",
-  fadeInThreeQuarters$r = "WithDiscount_fadeInThreeQuarters_60ee455a",
-  fadeInHalf$r = "WithDiscount_fadeInHalf_60ee455a",
-  fadeOut$r = "WithDiscount_fadeOut_60ee455a",
-  fadeInWithScale$r = "WithDiscount_fadeInWithScale_60ee455a",
-  slideUp$r = "WithDiscount_slideUp_60ee455a",
-  scale$r = "WithDiscount_scale_60ee455a",
-  raysAppearance$r = "WithDiscount_raysAppearance_60ee455a",
-  rotate$r = "WithDiscount_rotate_60ee455a",
-  glowAppearance$r = "WithDiscount_glowAppearance_60ee455a",
-  highlightAppearance$r = "WithDiscount_highlightAppearance_60ee455a",
-  blink$r = "WithDiscount_blink_60ee455a",
-  slideUpIn$r = "WithDiscount_slideUpIn_60ee455a",
-  styles$$ = {
-    base: base$W,
-    discount: discount,
-    icon: icon$7,
-    icon__extraSmall: icon__extraSmall,
-    icon__small: icon__small$2,
-    icon__medium: icon__medium$1,
-    icon__large: icon__large,
-    icon__extraLarge: icon__extraLarge,
-    icon__xxl: icon__xxl,
-    fadeIn: fadeIn$r,
-    fadeInThreeQuarters: fadeInThreeQuarters$r,
-    fadeInHalf: fadeInHalf$r,
-    fadeOut: fadeOut$r,
-    fadeInWithScale: fadeInWithScale$r,
-    slideUp: slideUp$r,
-    scale: scale$r,
-    raysAppearance: raysAppearance$r,
-    rotate: rotate$r,
-    "reverse-rotate": "WithDiscount_reverse-rotate_60ee455a",
-    glowAppearance: glowAppearance$r,
-    highlightAppearance: highlightAppearance$r,
-    blink: blink$r,
-    slideUpIn: slideUpIn$r,
-  };
-function WithDiscount({
-  children: e,
-  imagePath: t,
-  size: s = sizes$f.small,
-  customImageSize: a,
-  type: r,
-  enabled: n = !1,
-  className: o,
-  classNames: i,
-}) {
-  const u = a ?? discountSizesConfig[s];
-  return jsxRuntimeExports.jsxs("div", {
-    className: clsx(styles$$.base, i?.base, o),
-    children: [
-      e,
-      n &&
-        jsxRuntimeExports.jsx("div", {
-          className: clsx(
-            styles$$.discount,
-            i?.discount,
-            r === discountTypes.experience && styles$$.discount__experience,
-          ),
-          children: jsxRuntimeExports.jsx(Image$1, {
-            width: u.width,
-            height: u.height,
-            path:
-              t ?? `library.currency.discount_${r}_${s === sizes$f.xxl ? sizes$f.extraLarge : s}`,
-            className: clsx(styles$$.icon, i?.icon, styles$$[`icon__${s}`]),
-          }),
-        }),
-    ],
-  });
-}
-const CardContext = reactExports.createContext(void 0);
-function useCardContext() {
-  const e = reactExports.useContext(CardContext);
-  if (!e) throw new Error("Card context must be used only within its provider");
-  return e;
-}
-function CardContextProvider({
-  selected: e,
-  hover: t,
-  disabled: s,
-  multiple: a,
-  status: r,
-  children: n,
-}) {
-  const o = reactExports.useMemo(
-    () => ({ selected: e, hover: t, disabled: s, multiple: a, status: r }),
-    [s, t, a, e, r],
-  );
-  return jsxRuntimeExports.jsx(CardContext.Provider, { value: o, children: n });
-}
-const CardsWrapperContext = reactExports.createContext(null);
-function useCardsWrapperContext() {
-  const e = reactExports.useContext(CardsWrapperContext);
-  if (!e) throw new Error("CardsWrapper context must be used only within its provider");
-  return e;
-}
-function useCardsWrapperContextOptional() {
-  return reactExports.useContext(CardsWrapperContext);
-}
-const CardsWrapperContextProvider = CardsWrapperContext.Provider,
-  base$V = "Content_8eaaf71a",
-  content$9 = "Content_ab8563af",
-  disabledOverlay$1 = "Content_disabledOverlay_af87c441",
-  base__multiple = "Content_base__multiple_da09528a",
-  base__disabled$7 = "Content_base__disabled_da09528a",
-  base__hover$1 = "Content_base__hover_da09528a",
-  base__selectedHover$1 = "Content_base__selectedHover_da09528a",
-  base__selected$1 = "Content_base__selected_da09528a",
-  multipleCorner = "Content_multipleCorner_151c26ee",
-  styles$_ = {
-    base: base$V,
-    content: content$9,
-    disabledOverlay: disabledOverlay$1,
-    base__multiple: base__multiple,
-    base__disabled: base__disabled$7,
-    base__hover: base__hover$1,
-    base__selectedHover: base__selectedHover$1,
-    base__selected: base__selected$1,
-    multipleCorner: multipleCorner,
-  },
-  MULTIPLE_CORNER_SIZE = 20,
-  Base$r = defineStyledComponent("Content", styles$_.base, {
-    variants: {
-      multiple: { true: styles$_.base__multiple },
-      selected: { true: styles$_.base__selected },
-      hover: { true: styles$_.base__hover },
-      disabled: { true: styles$_.base__disabled },
-    },
-    compoundVariants: [{ hover: !0, selected: !0, className: styles$_.base__selectedHover }],
-  }),
-  MainContainer = ({ children: e, classNames: t }) => {
-    const s = React.useRef(null),
-      a = useCardContext();
-    return (
-      React.useEffect(() => {
-        if (a.multiple)
-          return createLayoutReadyInEffect$1(() => {
-            if (s.current) {
-              const e = s.current.getBoundingClientRect(),
-                t = Math.round((MULTIPLE_CORNER_SIZE / e.width) * 100),
-                a = Math.round((MULTIPLE_CORNER_SIZE / e.height) * 100);
-              (s.current.style.setProperty("--corner-width", `${t}%`),
-                s.current.style.setProperty("--corner-height", `${a}%`));
-            }
-          });
-      }),
-      jsxRuntimeExports.jsxs(Base$r, {
-        multiple: a.multiple,
-        selected: a.selected,
-        hover: a.hover,
-        disabled: a.disabled,
-        children: [
-          a.multiple && jsxRuntimeExports.jsx("div", { className: styles$_.multipleCorner }),
-          jsxRuntimeExports.jsxs("div", {
-            ref: s,
-            className: clsx(styles$_.content, t?.mainContainerContent),
-            children: [
-              a.disabled && jsxRuntimeExports.jsx("div", { className: styles$_.disabledOverlay }),
-              e,
-            ],
-          }),
-        ],
-      })
-    );
-  },
-  base$U = "Status_68bd9bc6",
-  icon$6 = "Status_icon_cef4536",
-  base__done$1 = "Status_base__done_35b9a31c",
-  base__doneSmall = "Status_base__doneSmall_35b9a31c",
-  base__alert = "Status_base__alert_35b9a31c",
-  base__alertSmall = "Status_base__alertSmall_35b9a31c",
-  line$1 = "Status_line_8f933ea7",
-  shadow = "Status_shadow_fc30bf98",
-  base__lockedSmall = "Status_base__lockedSmall_35b9a31c",
-  glowInner = "Status_glowInner_f8eb475a",
-  blur = "Status_blur_5675b854",
-  glowBig = "Status_glowBig_5954041c",
-  fadeIn$q = "Status_fadeIn_35b9a31c",
-  fadeInThreeQuarters$q = "Status_fadeInThreeQuarters_35b9a31c",
-  fadeInHalf$q = "Status_fadeInHalf_35b9a31c",
-  fadeOut$q = "Status_fadeOut_35b9a31c",
-  fadeInWithScale$q = "Status_fadeInWithScale_35b9a31c",
-  slideUp$q = "Status_slideUp_35b9a31c",
-  scale$q = "Status_scale_35b9a31c",
-  raysAppearance$q = "Status_raysAppearance_35b9a31c",
-  rotate$q = "Status_rotate_35b9a31c",
-  glowAppearance$q = "Status_glowAppearance_35b9a31c",
-  highlightAppearance$q = "Status_highlightAppearance_35b9a31c",
-  blink$q = "Status_blink_35b9a31c",
-  slideUpIn$q = "Status_slideUpIn_35b9a31c",
-  styles$Z = {
-    base: base$U,
-    icon: icon$6,
-    base__done: base__done$1,
-    base__doneSmall: base__doneSmall,
-    base__alert: base__alert,
-    base__alertSmall: base__alertSmall,
-    line: line$1,
-    shadow: shadow,
-    base__lockedSmall: base__lockedSmall,
-    glowInner: glowInner,
-    blur: blur,
-    glowBig: glowBig,
-    fadeIn: fadeIn$q,
-    fadeInThreeQuarters: fadeInThreeQuarters$q,
-    fadeInHalf: fadeInHalf$q,
-    fadeOut: fadeOut$q,
-    fadeInWithScale: fadeInWithScale$q,
-    slideUp: slideUp$q,
-    scale: scale$q,
-    raysAppearance: raysAppearance$q,
-    rotate: rotate$q,
-    "reverse-rotate": "Status_reverse-rotate_35b9a31c",
-    glowAppearance: glowAppearance$q,
-    highlightAppearance: highlightAppearance$q,
-    blink: blink$q,
-    slideUpIn: slideUpIn$q,
-  },
-  strings$1 = resources.resolve("strings");
-defineStyledComponent("Status", styles$Z.base, {
-  variants: {
-    status: {
-      done: styles$Z.base__done,
-      alert: styles$Z.base__alert,
-      locked: styles$Z.base__locked,
-    },
-  },
-});
-const SMALL_SIZE_BREAKPOINT = 100,
-  tooltipEnabled = ({ header: e, body: t }) => Boolean(e && t),
-  Status = ({ reason: e, classNames: t }) => {
-    const s = reactExports.useRef(null),
-      [a, r] = React.useState(!1),
-      n = `base__${useCardContext().status}${a ? "Small" : ""}`,
-      o = React.useCallback(() => {
-        const e = s.current?.getBoundingClientRect();
-        e && r(e.width <= SMALL_SIZE_BREAKPOINT);
-      }, [s]);
-    useRefResizeObserver(s, o);
-    const i = e
-        ? {
-            header: strings$1.readOrEmpty(`tooltips.moduleFits.${e}.header`),
-            body: strings$1.readOrEmpty(`tooltips.moduleFits.${e}.text`),
-          }
-        : {},
-      u = useSimpleTooltip(i);
-    return jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$Z.base, styles$Z[n], t?.wrapper),
-      ref: s,
-      children: [
-        jsxRuntimeExports.jsx("div", { className: styles$Z.glowBig }),
-        jsxRuntimeExports.jsx("div", { className: styles$Z.line }),
-        jsxRuntimeExports.jsx("div", { className: styles$Z.shadow }),
-        jsxRuntimeExports.jsx("div", { className: styles$Z.glowInner }),
-        jsxRuntimeExports.jsx("svg", {
-          width: "42",
-          height: "42",
-          viewBox: "0 0 42 42",
-          className: styles$Z.blur,
-          children: jsxRuntimeExports.jsx("g", {
-            children: jsxRuntimeExports.jsx("circle", { cx: "21", cy: "21", r: "3" }),
-          }),
-        }),
-        jsxRuntimeExports.jsx("div", {
-          ...(tooltipEnabled(i) && u),
-          className: clsx(styles$Z.icon, t?.icon),
-        }),
-      ],
-    });
-  },
-  base$T = "Card_f0963ece",
-  base__wrapped = "Card_base__wrapped_c6eb8737",
-  base__disableMouse = "Card_base__disableMouse_5cd80216",
-  base__hover = "Card_base__hover_f4c22d1c",
-  base__selected = "Card_base__selected_f4c22d1c",
-  card$1 = "Card_f7ddaa4a",
-  content$8 = "Card_content_b6f6a22a",
-  base__active$2 = "Card_base__active_f4c22d1c",
-  base__activeHover = "Card_base__activeHover_f4c22d1c",
-  base__selectedHover = "Card_base__selectedHover_f4c22d1c",
-  centerBorder = "Card_centerBorder_8a0f28ae",
-  cardStyles = {
-    base: base$T,
-    base__wrapped: base__wrapped,
-    base__disableMouse: base__disableMouse,
-    base__hover: base__hover,
-    base__selected: base__selected,
-    card: card$1,
-    content: content$8,
-    base__active: base__active$2,
-    base__activeHover: base__activeHover,
-    base__selectedHover: base__selectedHover,
-    centerBorder: centerBorder,
-  },
-  Base$q = defineStyledComponent("Card", cardStyles.base, {
-    variants: {
-      active: { true: cardStyles.base__active },
-      selected: { true: cardStyles.base__selected },
-      hover: { true: cardStyles.base__hover },
-      disableMouse: { true: cardStyles.base__disableMouse },
-    },
-    compoundVariants: [
-      { hover: !0, active: !0, className: cardStyles.base__activeHover },
-      { hover: !0, selected: !0, className: cardStyles.base__selectedHover },
-    ],
-  }),
-  Card = reactExports.forwardRef(function (
-    {
-      children: e,
-      active: t,
-      status: s,
-      statusReason: a,
-      disableMouse: r,
-      onMouseOver: n,
-      onMouseOut: o,
-      soundTarget: i,
-      disabled: u = !1,
-      className: l,
-      classNames: c,
-      ...d
-    },
-    _,
-  ) {
-    const [p, m] = reactExports.useState(!1),
-      f = useSounds(),
-      g = useCardsWrapperContextOptional(),
-      b = r || u;
-    return jsxRuntimeExports.jsx(Base$q, {
-      ...d,
-      ref: _,
-      hover: p,
-      disableMouse: r,
-      active: t,
-      className: clsx(cardStyles.card, l, g?.enabled && cardStyles.base__wrapped),
-      children: jsxRuntimeExports.jsxs(CardContextProvider, {
-        disabled: u,
-        selected: d.selected ?? !1,
-        multiple: d.multiple ?? !1,
-        hover: p,
-        status: s,
-        children: [
-          jsxRuntimeExports.jsx("div", {
-            className: clsx(cardStyles.content, c?.content),
-            onClick: function (e) {
-              b || f.play("click", { target: i || "react-ui:card", original: e });
-            },
-            onMouseEnter: function (e) {
-              b || f.play("mouse-enter", { target: i || "react-ui:card", original: e });
-            },
-            onMouseOver: function (e) {
-              b || (m(!0), n?.(e));
-            },
-            onMouseOut: function (e) {
-              b || (m(!1), o?.(e));
-            },
-            children: jsxRuntimeExports.jsx(MainContainer, { classNames: c, children: e }),
-          }),
-          jsxRuntimeExports.jsx("div", { className: cardStyles.centerBorder }),
-          s && jsxRuntimeExports.jsx(Status, { reason: a, classNames: c?.status }),
-        ],
-      }),
-    });
-  }),
-  LINE_THICKNESS = 1,
-  OFFSET = 1,
-  PADDING = 3,
-  borderTypes = { none: "none", contour: "contour" },
-  Point = (e, t) => ({ x: e, y: t });
-function getRectangleEdges(e) {
-  let { x: t, y: s, width: a, height: r } = e;
-  const n = Point(t, s),
-    o = Point(t + a, s),
-    i = Point(t + a, s + r),
-    u = Point(t, s + r);
-  return [
-    [n, o],
-    [o, i],
-    [i, u],
-    [u, n],
-  ];
-}
-function getEdgeKey(e) {
-  const [t, s] = e;
-  return t.x < s.x || (t.x === s.x && t.y < s.y)
-    ? `${s.x},${s.y}-${t.x},${t.y}`
-    : `${t.x},${t.y}-${s.x},${s.y}`;
-}
-function buildOuterEdgesAndCenter(e) {
-  const t = e.flatMap(getRectangleEdges),
-    s = new Map();
-  return (
-    t.forEach((e) => {
-      const t = getEdgeKey(e);
-      s.has(t) ? s.delete(t) : s.set(t, e);
-    }),
-    Array.from(s.values())
-  );
-}
-function buildContourPath(e) {
-  if (0 === e.length) return [];
-  const t = e[0],
-    s = { x: t[0].x - PADDING, y: t[0].y - PADDING },
-    a = [s];
-  let r = t[1],
-    n = s,
-    o = s,
-    i = -PADDING,
-    u = -PADDING;
-  for (e.splice(0, 1); e.length > 0;) {
-    const t = e.findIndex((e) => e[0].x === r.x && e[0].y === r.y);
-    if (-1 === t) break;
-    const s = e[t],
-      l = r;
-    (r.x <= o.x ? (u = PADDING) : (u === PADDING && (n.y -= 2 * PADDING), (u = -PADDING)),
-      r.y >= o.y ? (i = PADDING) : (i === PADDING && (n.x -= 2 * PADDING), (i = -PADDING)),
-      (r = { x: r.x + i, y: r.y + u }),
-      a.push(r),
-      (o = l),
-      (n = r),
-      (r = s[1]),
-      e.splice(t, 1));
-  }
-  return (u === PADDING && i === PADDING && (n = { ...n, x: n.x - 2 * PADDING }), a.push(s), a);
-}
-function buildContour(e, t) {
-  return buildContourPath(buildOuterEdgesAndCenter(e));
-}
-const HORIZONTAL = "H",
-  VERTICAL = "V";
-class LinesOptimizer {
-  constructor(e) {
-    this.containerRect = e;
-  }
-  lines = new Map();
-  addLine(e, t, s, a, r) {
-    const n = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${r}`;
-    this.lines.has(n) || this.lines.set(n, []);
-    const o = {
-      x: e - this.containerRect.x,
-      y: t - this.containerRect.y,
-      width: s,
-      height: a,
-      className: r,
-    };
-    this.lines.get(n)?.push(o);
-  }
-  run() {
-    const e = [];
-    return (
-      this.lines.forEach((t, s) => {
-        const a = s.at(0) === HORIZONTAL,
-          r = t.sort((e, t) => (a ? e.x - t.x : e.y - t.y));
-        let n = null;
-        (r.forEach((t) => {
-          if (n)
-            if (a) {
-              const s = n.x + n.width,
-                a = t.x + t.width;
-              t.x >= n.x && t.x <= s
-                ? (n = { ...n, width: Math.max(a, s) - n.x })
-                : (e.push(n), (n = t));
-            } else {
-              const s = n.y + n.height,
-                a = t.y + t.height;
-              t.y >= n.y && t.y <= s
-                ? (n = { ...n, height: Math.max(a, s) - n.y })
-                : (e.push(n), (n = t));
-            }
-          else n = t;
-        }),
-          n && e.push(n));
-      }),
-      e
-    );
-  }
-}
-const lineInner = "LinesBuilder_lineInner_a52dc157",
-  lineOuter = "LinesBuilder_lineOuter_c57514b2",
-  styles$Y = { lineInner: lineInner, lineOuter: lineOuter };
-function buildLines(e, t, s) {
-  const a = [],
-    r = new LinesOptimizer(t);
-  for (let n = 0; n < e.length; n++) {
-    const t = e[n],
-      o = t.getBoundingClientRect();
-    if (0 === o.width || 0 === o.height)
-      return void console.debug(
-        `Card rect has zero size by one side: ${o.width}x${o.height} (${t.getAttribute("data-test-id")}) `,
-      );
-    (s !== borderTypes.none && a.push({ x: o.x, y: o.y, width: o.width, height: o.height }),
-      r.addLine(o.x, o.y, o.width, LINE_THICKNESS, styles$Y.lineInner),
-      r.addLine(o.x, o.y + o.height, o.width, LINE_THICKNESS, styles$Y.lineInner),
-      r.addLine(o.x, o.y, LINE_THICKNESS, o.height, styles$Y.lineInner),
-      r.addLine(o.x + o.width, o.y, LINE_THICKNESS, o.height + OFFSET, styles$Y.lineInner));
-  }
-  if (s !== borderTypes.none) {
-    const e = buildContour(a);
-    let t = null;
-    e.forEach((e) => {
-      if (t) {
-        const s = t.y === e.y,
-          a = t,
-          n = e;
-        r.addLine(
-          Math.min(a.x, n.x),
-          Math.min(a.y, n.y),
-          s ? Math.abs(n.x - a.x) : LINE_THICKNESS,
-          s ? LINE_THICKNESS : Math.abs(n.y - a.y) + OFFSET,
-          styles$Y.lineOuter,
-        );
-      }
-      t = e;
-    });
-  }
-  return r.run();
-}
-const Lines = reactExports.memo(
-    ({ containerRef: e, generation: t, border: s, cardSelector: a }) => {
-      const [r, n] = reactExports.useState([]),
-        o = useEvent(() => {
-          const t = e.current;
-          if (!t) return;
-          const r = t.getBoundingClientRect(),
-            o = buildLines(t.querySelectorAll(`.${a || cardStyles.card}`), r, s);
-          n(o ?? []);
-        });
-      return (
-        reactExports.useEffect(o, [o, t]),
-        jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
-          children: r.map((e, t) =>
-            jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: e.className,
-                style: { left: e.x, top: e.y, width: e.width, height: e.height },
-              },
-              t,
-            ),
-          ),
-        })
-      );
-    },
-  ),
-  base$S = "CardsWrapper_3b6cc4f6",
-  card = "CardsWrapper_card_c7fc9ee7",
-  centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
-  outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
-  styles$X = {
-    base: base$S,
-    card: card,
-    centerBorderCommon: centerBorderCommon,
-    outerBorderCommon: outerBorderCommon,
-  },
-  Base$p = defineStyledComponent("CardsWrapper", styles$X.base),
-  CardsWrapper = reactExports.forwardRef(function (
-    {
-      children: e,
-      className: t,
-      threshold: s,
-      border: a = borderTypes.contour,
-      enabled: r = !0,
-      cardSelector: n,
-      ...o
-    },
-    i,
-  ) {
-    const u = reactExports.useRef([]),
-      l = reactExports.useRef(null),
-      [c, d] = reactExports.useState("");
-    reactExports.useImperativeHandle(i, () => l.current);
-    const _ = reactExports.useCallback(
-      (e) => {
-        const t = l.current;
-        if (!t) return;
-        const s = t.querySelectorAll(`.${n || cardStyles.card}`);
-        if (s.length > 0) {
-          const a = t.getBoundingClientRect(),
-            r = s.length;
-          r !== u.current.length && (u.current = Array.from(s));
-          const n = `${Math.round(a.width)}x${Math.round(a.height)}-${r}|${e}`;
-          d(n);
-        } else d("");
-      },
-      [n],
-    );
-    (reactExports.useEffect(() => {
-      _(s);
-    }),
-      useRefResizeObserver(
-        l,
-        reactExports.useCallback(() => _(), [_]),
-      ));
-    const p = reactExports.useMemo(() => ({ recalculate: _, enabled: r }), [_, r]);
-    return jsxRuntimeExports.jsx(Base$p, {
-      ...o,
-      ref: l,
-      children: jsxRuntimeExports.jsxs("div", {
-        className: t,
-        children: [
-          jsxRuntimeExports.jsx(CardsWrapperContextProvider, { value: p, children: e }),
-          jsxRuntimeExports.jsx(Lines, {
-            cardsRef: u,
-            containerRef: l,
-            border: a,
-            generation: c,
-            cardSelector: n,
-          }),
-        ],
-      }),
-    });
-  }),
-  CardSingle = reactExports.forwardRef(({ className: e, classNames: t, ...s }, a) =>
-    jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$X.base, t?.wrapper),
-      children: [
-        jsxRuntimeExports.jsx("div", { className: styles$X.centerBorderCommon }),
-        jsxRuntimeExports.jsx("div", { className: styles$X.outerBorderCommon }),
-        jsxRuntimeExports.jsx(Card, {
-          className: clsx(styles$X.card, e, t?.card),
-          classNames: t,
-          ...s,
-          ref: a,
-        }),
-      ],
-    }),
-  ),
-  statusTypes = { done: "done", alert: "alert" },
-  base$R = "Discount_bbbebfd",
-  percent = "Discount_percent_b7ab402",
-  fadeIn$p = "Discount_fadeIn_4a3faf4f",
-  fadeInThreeQuarters$p = "Discount_fadeInThreeQuarters_4a3faf4f",
-  fadeInHalf$p = "Discount_fadeInHalf_4a3faf4f",
-  fadeOut$p = "Discount_fadeOut_4a3faf4f",
-  fadeInWithScale$p = "Discount_fadeInWithScale_4a3faf4f",
-  slideUp$p = "Discount_slideUp_4a3faf4f",
-  scale$p = "Discount_scale_4a3faf4f",
-  raysAppearance$p = "Discount_raysAppearance_4a3faf4f",
-  rotate$p = "Discount_rotate_4a3faf4f",
-  glowAppearance$p = "Discount_glowAppearance_4a3faf4f",
-  highlightAppearance$p = "Discount_highlightAppearance_4a3faf4f",
-  blink$p = "Discount_blink_4a3faf4f",
-  slideUpIn$p = "Discount_slideUpIn_4a3faf4f",
-  styles$W = {
-    base: base$R,
-    "base__color-red": "Discount_base__color-red_ce40ab53",
-    "base__color-blue": "Discount_base__color-blue_29162735",
-    "base__size-medium": "Discount_base__size-medium_50e2ae9a",
-    "base__size-large": "Discount_base__size-large_b6f874e0",
-    percent: percent,
-    "percent__size-medium": "Discount_percent__size-medium_cc14676",
-    "percent__color-red": "Discount_percent__color-red_4a3faf4f",
-    "percent__color-blue": "Discount_percent__color-blue_4a3faf4f",
-    "percent__size-large": "Discount_percent__size-large_8384c978",
-    fadeIn: fadeIn$p,
-    fadeInThreeQuarters: fadeInThreeQuarters$p,
-    fadeInHalf: fadeInHalf$p,
-    fadeOut: fadeOut$p,
-    fadeInWithScale: fadeInWithScale$p,
-    slideUp: slideUp$p,
-    scale: scale$p,
-    raysAppearance: raysAppearance$p,
-    rotate: rotate$p,
-    "reverse-rotate": "Discount_reverse-rotate_4a3faf4f",
-    glowAppearance: glowAppearance$p,
-    highlightAppearance: highlightAppearance$p,
-    blink: blink$p,
-    slideUpIn: slideUpIn$p,
-  },
-  colors = { blue: "blue", red: "red" },
-  sizes$e = { medium: "medium", large: "large" },
-  StyledDiscount = defineStyledComponent("Discount", styles$W.base, {
-    variants: {
-      color: {
-        [colors.blue]: styles$W["base__color-blue"],
-        [colors.red]: styles$W["base__color-red"],
-      },
-      size: {
-        [sizes$e.medium]: styles$W["base__size-medium"],
-        [sizes$e.large]: styles$W["base__size-large"],
-      },
-    },
-  }),
-  Discount = React.forwardRef(function (
-    { color: e = colors.red, className: t, classNames: s, size: a = sizes$e.large, ...r },
-    n,
-  ) {
-    return jsxRuntimeExports.jsxs(StyledDiscount, {
-      ...r,
-      ref: n,
-      color: e,
-      size: a,
-      className: clsx(t, s?.discount),
-      children: [
-        r.children,
-        jsxRuntimeExports.jsx("div", {
-          className: clsx(
-            styles$W.percent,
-            styles$W[`percent__color-${e}`],
-            styles$W[`percent__size-${a}`],
-            s?.percent,
-          ),
-        }),
-      ],
-    });
-  });
-((Discount.colors = colors), (Discount.sizes = sizes$e));
-const UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
+  UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
   getTooltipContentId = (e) =>
     e
       ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent("resId")
@@ -9683,7 +9307,7 @@ const UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
       for (const t in e) void 0 === e[t] && delete e[t];
       return e;
     }, [r, t, s, a, n]);
-    return jsxRuntimeExports.jsx(Tooltip$2, {
+    return jsxRuntimeExports.jsx(Tooltip$1, {
       contentId: getTooltipContentId(n?.hasHtmlContent),
       decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
       args: i,
@@ -9694,7 +9318,7 @@ const UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
   background$6 = "Checkbox_background_ae1fc797",
   border$6 = "Checkbox_border_e1946121",
   overlay$3 = "Checkbox_overlay_de55e0a5",
-  base$Q = "Checkbox_e00b9a0",
+  base$S = "Checkbox_e00b9a0",
   base__enabled = "Checkbox_base__enabled_5bfdfae9",
   label$3 = "Checkbox_label_58a00a56",
   base__small$e = "Checkbox_base__small_70ef629e",
@@ -9702,11 +9326,11 @@ const UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
   base__checked = "Checkbox_base__checked_70ef629e",
   checkIcon = "Checkbox_checkIcon_968885f3",
   check = "Checkbox_check_8341731a",
-  styles$V = {
+  styles$Y = {
     background: background$6,
     border: border$6,
     overlay: overlay$3,
-    base: base$Q,
+    base: base$S,
     base__enabled: base__enabled,
     label: label$3,
     base__small: base__small$e,
@@ -9719,21 +9343,21 @@ const UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
     return jsxRuntimeExports.jsxs("div", {
       ...s,
       ref: a,
-      className: clsx(styles$V.check, s.className, e?.base),
+      className: clsx(styles$Y.check, s.className, e?.base),
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$V.background, e?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$V.border, e?.border) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$V.overlay, e?.overlay) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$Y.background, e?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$Y.border, e?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$Y.overlay, e?.overlay) }),
         t,
       ],
     });
   }),
   sizes$d = { medium: "medium", small: "small" },
-  Base$o = defineStyledComponent("Checkbox", styles$V.base, {
+  Base$o = defineStyledComponent("Checkbox", styles$Y.base, {
     variants: {
-      size: { [sizes$d.small]: styles$V.base__small, [sizes$d.medium]: styles$V.base__medium },
-      checked: { true: styles$V.base__checked },
-      state: { enabled: styles$V.base__enabled },
+      size: { [sizes$d.small]: styles$Y.base__small, [sizes$d.medium]: styles$Y.base__medium },
+      checked: { true: styles$Y.base__checked },
+      state: { enabled: styles$Y.base__enabled },
     },
   }),
   HeadlessCheckbox = reactExports.forwardRef(function (
@@ -9766,7 +9390,7 @@ const UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
     });
   });
 function Label({ className: e, children: t }) {
-  return jsxRuntimeExports.jsx("div", { className: clsx(styles$V.label, e), children: t });
+  return jsxRuntimeExports.jsx("div", { className: clsx(styles$Y.label, e), children: t });
 }
 const Checkbox = reactExports.forwardRef(function (
   { checked: e, classNames: t, children: s, checkPath: a = "ui_kit.checkbox.icon_check", ...r },
@@ -9781,7 +9405,7 @@ const Checkbox = reactExports.forwardRef(function (
         className: t?.check,
         children: jsxRuntimeExports.jsx(Image$1, {
           path: a,
-          className: clsx(styles$V.checkIcon, t?.checkIcon),
+          className: clsx(styles$Y.checkIcon, t?.checkIcon),
         }),
       }),
       s && jsxRuntimeExports.jsx(Label, { className: t?.label, children: s }),
@@ -9812,7 +9436,7 @@ class ErrorHandler extends reactExports.Component {
 const base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
   base__x190x152 = "VehicleImage_base__x190x152_41379c70",
   base__x380x304 = "VehicleImage_base__x380x304_274f87fe",
-  styles$U = {
+  styles$X = {
     base__x120x96: base__x120x96,
     base__x190x152: base__x190x152,
     base__x380x304: base__x380x304,
@@ -9820,13 +9444,13 @@ const base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
   sizes$c = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
   Base$n = defineStyledComponent("VehicleImage", {
     element: Image$1,
-    className: styles$U.base,
+    className: styles$X.base,
     cva: {
       variants: {
         size: {
-          [sizes$c.x120x96]: styles$U.base__x120x96,
-          [sizes$c.x190x152]: styles$U.base__x190x152,
-          [sizes$c.x380x304]: styles$U.base__x380x304,
+          [sizes$c.x120x96]: styles$X.base__x120x96,
+          [sizes$c.x190x152]: styles$X.base__x190x152,
+          [sizes$c.x380x304]: styles$X.base__x380x304,
         },
       },
     },
@@ -9876,15 +9500,15 @@ function useCalculateLeftTime(e) {
         : hours(0);
 }
 ((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$c));
-const base$P = "IconCounter_33c660e9",
-  styles$T = { base: base$P };
+const base$R = "IconCounter_33c660e9",
+  styles$W = { base: base$R };
 function IconCounter({ className: e }) {
-  return jsxRuntimeExports.jsx("div", { className: clsx(styles$T.base, e) });
+  return jsxRuntimeExports.jsx("div", { className: clsx(styles$W.base, e) });
 }
-const base$O = "ShortCounter_d2d7b370",
+const base$Q = "ShortCounter_d2d7b370",
   text$1 = "ShortCounter_text_ecf2e742",
   count = "ShortCounter_count_d7a74fd8",
-  styles$S = { base: base$O, text: text$1, count: count },
+  styles$V = { base: base$Q, text: text$1, count: count },
   ShortCounter = reactExports.forwardRef(function (
     { time: e, wins: t, battles: s, classNames: a, ...r },
     n,
@@ -9906,16 +9530,16 @@ const base$O = "ShortCounter_d2d7b370",
       return jsxRuntimeExports.jsxs("div", {
         ...r,
         ref: n,
-        className: clsx(styles$S.base, a?.base),
+        className: clsx(styles$V.base, a?.base),
         children: [
           jsxRuntimeExports.jsx(IconCounter, { className: a?.icon }),
           jsxRuntimeExports.jsx(FormatPluralString, {
-            className: clsx(styles$S.text, a?.text),
+            className: clsx(styles$V.text, a?.text),
             path: u.path,
             count: u.count,
             params: {
               count: jsxRuntimeExports.jsxs("span", {
-                className: styles$S.count,
+                className: styles$V.count,
                 children: [o.formatNumber("integral", u.count), " "],
               }),
             },
@@ -9958,7 +9582,7 @@ function useVisibleRange(e, t, s, a, r) {
     [u, l] = useOptionalTransition(s),
     c = usePrevious(u),
     d = useThrottleCall(t, !0),
-    _ = useEvent(() => {
+    p = useEvent(() => {
       l(() => {
         const [e, t] = i.current;
         o((s) => {
@@ -9967,29 +9591,29 @@ function useVisibleRange(e, t, s, a, r) {
         });
       });
     }),
-    p = useEvent(() => {
+    _ = useEvent(() => {
       d.call(() => {
         const e = a();
-        (i.current[0] === e[0] && i.current[1] === e[1]) || ((i.current = e), u || _());
+        (i.current[0] === e[0] && i.current[1] === e[1]) || ((i.current = e), u || p());
       });
     });
   return (
     reactExports.useEffect(() => {
-      c && !u && ((i.current[0] === n[0] && i.current[1] === n[1]) || _());
-    }, [u, c, _, n]),
+      c && !u && ((i.current[0] === n[0] && i.current[1] === n[1]) || p());
+    }, [u, c, p, n]),
     reactExports.useLayoutEffect(
       () => (
-        e.events.on("change", p),
-        e.events.on("recalculateContent", p),
-        e.events.on("resizeHandled", p),
-        p(),
+        e.events.on("change", _),
+        e.events.on("recalculateContent", _),
+        e.events.on("resizeHandled", _),
+        _(),
         () => {
-          (e.events.off("change", p),
-            e.events.off("recalculateContent", p),
-            e.events.off("resizeHandled", p));
+          (e.events.off("change", _),
+            e.events.off("recalculateContent", _),
+            e.events.off("resizeHandled", _));
         }
       ),
-      [e.events, p, r],
+      [e.events, _, r],
     ),
     n
   );
@@ -10009,17 +9633,17 @@ function HorizontalList({
   const l = useVisibleRange(s, t, i, () => calculateRangeItems(s, e, a), e),
     c = r?.Element ?? reactExports.Fragment,
     d = r?.Content ?? DefaultWrapper,
-    [_, p] = l,
-    m = Math.min(e, p),
-    f = clamp$1(0, m, _);
+    [p, _] = l,
+    m = Math.min(e, _),
+    f = clamp$1(0, m, p);
   return u(
     {
       className: n,
       children: jsxRuntimeExports.jsxs(d, {
         children: [
-          jsxRuntimeExports.jsx("div", { style: { width: _ * a } }),
+          jsxRuntimeExports.jsx("div", { style: { width: p * a } }),
           mapRange(f, Math.max(m, f), (e) => jsxRuntimeExports.jsx(c, { children: o(e) }, e)),
-          jsxRuntimeExports.jsx("div", { style: { width: Math.max(0, e - p) * a } }),
+          jsxRuntimeExports.jsx("div", { style: { width: Math.max(0, e - _) * a } }),
         ],
       }),
     },
@@ -10042,20 +9666,20 @@ function VerticalList({
   const c = Math.ceil(s / r),
     d = useVisibleRange(e, o, i, () => calculateRangeRows(e, c, a));
   reactExports.useEffect(e.recalculateContent, [e, d]);
-  const [_, p] = d,
+  const [p, _] = d,
     m = n?.Element ?? reactExports.Fragment,
     f = n?.Content ?? DefaultWrapper,
-    g = Math.min(s, p * r),
-    b = clamp$1(0, g, _ * r);
+    g = Math.min(s, _ * r),
+    b = clamp$1(0, g, p * r);
   return l(
     {
       className: t,
       children: jsxRuntimeExports.jsxs(f, {
         children: [
-          jsxRuntimeExports.jsx("div", { style: { width: "100%", height: _ * a } }),
+          jsxRuntimeExports.jsx("div", { style: { width: "100%", height: p * a } }),
           mapRange(b, Math.max(b, g), (e) => jsxRuntimeExports.jsx(m, { children: u(e) }, e)),
           jsxRuntimeExports.jsx("div", {
-            style: { width: "100%", height: Math.max(0, c - p) * a },
+            style: { width: "100%", height: Math.max(0, c - _) * a },
           }),
         ],
       }),
@@ -10237,10 +9861,10 @@ function useKeyButtonContext() {
 }
 const background$5 = "KeyButton_background_8a852f95",
   border$5 = "KeyButton_border_b1c50f01",
-  base$N = "KeyButton_8fd343f8",
+  base$P = "KeyButton_8fd343f8",
   content$7 = "KeyButton_content_3ab1d990",
-  styles$R = { background: background$5, border: border$5, base: base$N, content: content$7 },
-  StyledBase = defineStyledComponent("KeyButton", styles$R.base);
+  styles$U = { background: background$5, border: border$5, base: base$P, content: content$7 },
+  StyledBase = defineStyledComponent("KeyButton", styles$U.base);
 function Base$m({ children: e, onClick: t, onMouseEnter: s, ...a }) {
   const r = useSounds(),
     { soundTarget: n, silent: o } = useKeyButtonContext();
@@ -10303,12 +9927,12 @@ const KeyButton = function ({
     soundTarget: r,
     children: jsxRuntimeExports.jsxs(Base$m, {
       ...u,
-      className: clsx(styles$R.base, o, n?.base),
+      className: clsx(styles$U.base, o, n?.base),
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$R.background, n?.background) }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$R.border, n?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$U.background, n?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$U.border, n?.border) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$R.content, n?.content),
+          className: clsx(styles$U.content, n?.content),
           children: i,
         }),
       ],
@@ -10316,22 +9940,22 @@ const KeyButton = function ({
   });
 };
 KeyButton.Code = Code;
-const base$M = "Background_39e8f2ed",
+const base$O = "Background_39e8f2ed",
   pattern$4 = "Background_pattern_8cad1521",
   noise = "Background_noise_e3254bb3",
-  styles$Q = { base: base$M, pattern: pattern$4, noise: noise };
+  styles$T = { base: base$O, pattern: pattern$4, noise: noise };
 function Background({ className: e, classNames: t }) {
   return jsxRuntimeExports.jsxs("div", {
-    className: clsx(e, styles$Q.base),
+    className: clsx(e, styles$T.base),
     children: [
-      jsxRuntimeExports.jsx("div", { className: clsx(t?.pattern, styles$Q.pattern) }),
-      jsxRuntimeExports.jsx("div", { className: clsx(t?.noise, styles$Q.noise) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(t?.pattern, styles$T.pattern) }),
+      jsxRuntimeExports.jsx("div", { className: clsx(t?.noise, styles$T.noise) }),
     ],
   });
 }
-const base$L = "ScrollVelocityGuardContent_6b5de46d",
+const base$N = "ScrollVelocityGuardContent_6b5de46d",
   base__disableInteractivity = "ScrollVelocityGuardContent_base__disableInteractivity_e6c30513",
-  styles$P = { base: base$L, base__disableInteractivity: base__disableInteractivity },
+  styles$S = { base: base$N, base__disableInteractivity: base__disableInteractivity },
   DEFAULT_VELOCITY_LIMITATION = 1;
 function ScrollVelocityGuardContent({
   api: e,
@@ -10348,7 +9972,7 @@ function ScrollVelocityGuardContent({
     ),
     jsxRuntimeExports.jsx(DefaultWrapper, {
       ...a,
-      className: clsx(styles$P.base, r && styles$P.base__disableInteractivity, t),
+      className: clsx(styles$S.base, r && styles$S.base__disableInteractivity, t),
     })
   );
 }
@@ -10474,7 +10098,7 @@ var ButtonType = ((e) => (
     (e.large = "large"),
     e
   ))(ButtonSize || {});
-const base$K = "Cbutton_24fc9a0c",
+const base$M = "Cbutton_24fc9a0c",
   base__main = "Cbutton_base__main_2f199578",
   base__primary = "Cbutton_base__primary_9da8a692",
   base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
@@ -10495,21 +10119,21 @@ const base$K = "Cbutton_24fc9a0c",
   stateDisabled = "Cbutton_stateDisabled_7b91392f",
   base__highlightActive = "Cbutton_base__highlightActive_180a9717",
   content$6 = "Cbutton_content_faaa9067",
-  fadeIn$o = "Cbutton_fadeIn_180a9717",
-  fadeInThreeQuarters$o = "Cbutton_fadeInThreeQuarters_180a9717",
-  fadeInHalf$o = "Cbutton_fadeInHalf_180a9717",
-  fadeOut$o = "Cbutton_fadeOut_180a9717",
-  fadeInWithScale$o = "Cbutton_fadeInWithScale_180a9717",
-  slideUp$o = "Cbutton_slideUp_180a9717",
-  scale$o = "Cbutton_scale_180a9717",
-  raysAppearance$o = "Cbutton_raysAppearance_180a9717",
-  rotate$o = "Cbutton_rotate_180a9717",
-  glowAppearance$o = "Cbutton_glowAppearance_180a9717",
-  highlightAppearance$o = "Cbutton_highlightAppearance_180a9717",
-  blink$o = "Cbutton_blink_180a9717",
-  slideUpIn$o = "Cbutton_slideUpIn_180a9717",
-  styles$O = {
-    base: base$K,
+  fadeIn$p = "Cbutton_fadeIn_180a9717",
+  fadeInThreeQuarters$p = "Cbutton_fadeInThreeQuarters_180a9717",
+  fadeInHalf$p = "Cbutton_fadeInHalf_180a9717",
+  fadeOut$p = "Cbutton_fadeOut_180a9717",
+  fadeInWithScale$p = "Cbutton_fadeInWithScale_180a9717",
+  slideUp$p = "Cbutton_slideUp_180a9717",
+  scale$p = "Cbutton_scale_180a9717",
+  raysAppearance$p = "Cbutton_raysAppearance_180a9717",
+  rotate$p = "Cbutton_rotate_180a9717",
+  glowAppearance$p = "Cbutton_glowAppearance_180a9717",
+  highlightAppearance$p = "Cbutton_highlightAppearance_180a9717",
+  blink$p = "Cbutton_blink_180a9717",
+  slideUpIn$p = "Cbutton_slideUpIn_180a9717",
+  styles$R = {
+    base: base$M,
     base__main: base__main,
     base__primary: base__primary,
     base__primaryGreen: base__primaryGreen,
@@ -10530,20 +10154,20 @@ const base$K = "Cbutton_24fc9a0c",
     stateDisabled: stateDisabled,
     base__highlightActive: base__highlightActive,
     content: content$6,
-    fadeIn: fadeIn$o,
-    fadeInThreeQuarters: fadeInThreeQuarters$o,
-    fadeInHalf: fadeInHalf$o,
-    fadeOut: fadeOut$o,
-    fadeInWithScale: fadeInWithScale$o,
-    slideUp: slideUp$o,
-    scale: scale$o,
-    raysAppearance: raysAppearance$o,
-    rotate: rotate$o,
+    fadeIn: fadeIn$p,
+    fadeInThreeQuarters: fadeInThreeQuarters$p,
+    fadeInHalf: fadeInHalf$p,
+    fadeOut: fadeOut$p,
+    fadeInWithScale: fadeInWithScale$p,
+    slideUp: slideUp$p,
+    scale: scale$p,
+    raysAppearance: raysAppearance$p,
+    rotate: rotate$p,
     "reverse-rotate": "Cbutton_reverse-rotate_180a9717",
-    glowAppearance: glowAppearance$o,
-    highlightAppearance: highlightAppearance$o,
-    blink: blink$o,
-    slideUpIn: slideUpIn$o,
+    glowAppearance: glowAppearance$p,
+    highlightAppearance: highlightAppearance$p,
+    blink: blink$p,
+    slideUpIn: slideUpIn$p,
   },
   Button = ({
     children: e,
@@ -10558,8 +10182,8 @@ const base$K = "Cbutton_24fc9a0c",
     onClick: l,
     isFocused: c = !1,
     type: d = ButtonType.primary,
-    soundHover: _ = "highlight",
-    soundClick: p = "play",
+    soundHover: p = "highlight",
+    soundClick: _ = "play",
   }) => {
     const m = reactExports.useRef(null),
       [f, g] = reactExports.useState(c),
@@ -10582,16 +10206,16 @@ const base$K = "Cbutton_24fc9a0c",
       jsxRuntimeExports.jsxs("div", {
         ref: m,
         className: cx(
-          styles$O.base,
-          styles$O[`base__${d}`],
-          s && styles$O.base__disabled,
-          t && styles$O[`base__${t}`],
-          f && styles$O.base__focus,
-          b && styles$O.base__highlightActive,
+          styles$R.base,
+          styles$R[`base__${d}`],
+          s && styles$R.base__disabled,
+          t && styles$R[`base__${t}`],
+          f && styles$R.base__focus,
+          b && styles$R.base__highlightActive,
           a,
         ),
         onMouseEnter: function (e) {
-          s || (null !== _ && playSound(_), r && r(e));
+          s || (null !== p && playSound(p), r && r(e));
         },
         onMouseMove: function (e) {
           n && n(e);
@@ -10602,7 +10226,7 @@ const base$K = "Cbutton_24fc9a0c",
         onMouseDown: function (e) {
           if (s) return;
           const t = e.button === MOUSE_BUTTON_CODES.LEFT;
-          (null !== p && t && playSound(p),
+          (null !== _ && t && playSound(_),
             o && o(e),
             c && (s || (m.current && (m.current.focus(), g(!0)))),
             t && h(!0));
@@ -10617,20 +10241,20 @@ const base$K = "Cbutton_24fc9a0c",
           d !== ButtonType.ghost &&
             jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
               children: [
-                jsxRuntimeExports.jsx("div", { className: styles$O.back }),
-                jsxRuntimeExports.jsx("span", { className: styles$O.texture }),
+                jsxRuntimeExports.jsx("div", { className: styles$R.back }),
+                jsxRuntimeExports.jsx("span", { className: styles$R.texture }),
               ],
             }),
           jsxRuntimeExports.jsxs("span", {
-            className: cx(styles$O.state, styles$O.state__default),
+            className: cx(styles$R.state, styles$R.state__default),
             children: [
-              jsxRuntimeExports.jsx("span", { className: styles$O.stateDisabled }),
-              jsxRuntimeExports.jsx("span", { className: styles$O.stateHighlightHover }),
-              jsxRuntimeExports.jsx("span", { className: styles$O.stateHighlightActive }),
+              jsxRuntimeExports.jsx("span", { className: styles$R.stateDisabled }),
+              jsxRuntimeExports.jsx("span", { className: styles$R.stateHighlightHover }),
+              jsxRuntimeExports.jsx("span", { className: styles$R.stateHighlightActive }),
             ],
           }),
           jsxRuntimeExports.jsx("span", {
-            className: styles$O.content,
+            className: styles$R.content,
             lang: R.strings.settings.LANGUAGE_CODE(),
             children: e,
           }),
@@ -10639,46 +10263,46 @@ const base$K = "Cbutton_24fc9a0c",
     );
   },
   CButton = Button,
-  base$J = "Error_741eaf3c",
+  base$L = "Error_741eaf3c",
   alertIcon = "Error_alertIcon_e771a05c",
   errorCaption = "Error_errorCaption_89c19a4f",
   button$1 = "Error_button_2d8a41b6",
-  styles$N = { base: base$J, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
+  styles$Q = { base: base$L, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
   Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: s }) =>
     jsxRuntimeExports.jsxs("div", {
-      className: styles$N.base,
+      className: styles$Q.base,
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$N.alertIcon }),
-        jsxRuntimeExports.jsx("div", { className: styles$N.errorCaption, children: s }),
+        jsxRuntimeExports.jsx("div", { className: styles$Q.alertIcon }),
+        jsxRuntimeExports.jsx("div", { className: styles$Q.errorCaption, children: s }),
         jsxRuntimeExports.jsx(CButton, {
           size: ButtonSize.medium,
-          mixClass: styles$N.button,
+          mixClass: styles$Q.button,
           onClick: e,
           children: t,
         }),
       ],
     }),
-  base$I = "Spinner_9ec19f90",
+  base$K = "Spinner_9ec19f90",
   caption$1 = "Spinner_caption_a44b585",
   gear = "Spinner_gear_13ca7433",
   logo = "Spinner_logo_22e624b",
-  styles$M = { base: base$I, caption: caption$1, gear: gear, logo: logo },
+  styles$P = { base: base$K, caption: caption$1, gear: gear, logo: logo },
   Spinner = ({ message: e, className: t, classNames: s }) =>
     jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$M.base, t),
+      className: cx(styles$P.base, t),
       children: [
         e &&
           jsxRuntimeExports.jsx("div", {
-            className: cx(styles$M.caption, s?.caption),
+            className: cx(styles$P.caption, s?.caption),
             children: e,
           }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$M.gear, s?.gear) }),
-        jsxRuntimeExports.jsx("div", { className: cx(styles$M.logo, s?.logo) }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$P.gear, s?.gear) }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$P.logo, s?.logo) }),
       ],
     }),
-  base$H = "Waiting_f97f6e4b",
+  base$J = "Waiting_f97f6e4b",
   blackOverlay = "Waiting_blackOverlay_e659a6de",
-  styles$L = { base: base$H, blackOverlay: blackOverlay },
+  styles$O = { base: base$J, blackOverlay: blackOverlay },
   Waiting = ({
     errorBtnClickHandler: e,
     message: t = "",
@@ -10694,9 +10318,9 @@ const base$K = "Cbutton_24fc9a0c",
         e && n && (e.style.opacity = n);
       }, [o, n]),
       jsxRuntimeExports.jsxs("div", {
-        className: styles$L.base,
+        className: styles$O.base,
         children: [
-          jsxRuntimeExports.jsx("div", { className: styles$L.blackOverlay, ref: o }),
+          jsxRuntimeExports.jsx("div", { className: styles$O.blackOverlay, ref: o }),
           s
             ? jsxRuntimeExports.jsx(Error$1, {
                 errorBtnLabel: r,
@@ -10720,7 +10344,7 @@ const background$4 = "Switcher_background_a88161d0",
   selectedOverlay$1 = "Switcher_selectedOverlay_959b7a8f",
   selectedItemBackground = "Switcher_selectedItemBackground_f3f7ed7e",
   selectedItemBorder = "Switcher_selectedItemBorder_7a1a3dd5",
-  base$G = "Switcher_825add0a",
+  base$I = "Switcher_825add0a",
   base__disabled$5 = "Switcher_base__disabled_863a5f47",
   content$5 = "Switcher_content_c83e02e5",
   content__fontAligned = "Switcher_content__fontAligned_9342bb29",
@@ -10729,14 +10353,14 @@ const background$4 = "Switcher_background_a88161d0",
   selectedItem = "Switcher_selectedItem_c6995287",
   selectedItem__moved = "Switcher_selectedItem__moved_5f74b720",
   selectedItemContent = "Switcher_selectedItemContent_34994102",
-  styles$K = {
+  styles$N = {
     background: background$4,
     border: border$4,
     overlay: overlay$2,
     selectedOverlay: selectedOverlay$1,
     selectedItemBackground: selectedItemBackground,
     selectedItemBorder: selectedItemBorder,
-    base: base$G,
+    base: base$I,
     base__disabled: base__disabled$5,
     "base__size-small": "Switcher_base__size-small_df4dee40",
     "base__size-medium": "Switcher_base__size-medium_d287fe48",
@@ -10753,16 +10377,16 @@ const background$4 = "Switcher_background_a88161d0",
 function SelectedItem({ children: e, classNames: t }) {
   const { checked: s } = useSwitcherContext();
   return jsxRuntimeExports.jsx("div", {
-    className: clsx(styles$K.selectedOverlay, s && styles$K.selectedOverlay__moved, t?.base),
+    className: clsx(styles$N.selectedOverlay, s && styles$N.selectedOverlay__moved, t?.base),
     children: jsxRuntimeExports.jsxs("div", {
-      className: clsx(styles$K.selectedItem, s && styles$K.selectedItem__moved, t?.item),
+      className: clsx(styles$N.selectedItem, s && styles$N.selectedItem__moved, t?.item),
       children: [
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$K.selectedItemBackground, t?.background),
+          className: clsx(styles$N.selectedItemBackground, t?.background),
         }),
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$K.selectedItemBorder, t?.border) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$N.selectedItemBorder, t?.border) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$K.selectedItemContent, t?.content),
+          className: clsx(styles$N.selectedItemContent, t?.content),
           children: e,
         }),
       ],
@@ -10771,21 +10395,21 @@ function SelectedItem({ children: e, classNames: t }) {
 }
 const sizes$b = { small: "small", medium: "medium" },
   types$1 = { vertical: "vertical", horizontal: "horizontal" },
-  Base$l = defineStyledComponent("Button", styles$K.base, {
+  Base$l = defineStyledComponent("Button", styles$N.base, {
     variants: {
       type: {
-        [types$1.horizontal]: styles$K["base__type-horizontal"],
-        [types$1.vertical]: styles$K["base__type-vertical"],
+        [types$1.horizontal]: styles$N["base__type-horizontal"],
+        [types$1.vertical]: styles$N["base__type-vertical"],
       },
       size: {
-        [sizes$b.small]: styles$K["base__size-small"],
-        [sizes$b.medium]: styles$K["base__size-medium"],
+        [sizes$b.small]: styles$N["base__size-small"],
+        [sizes$b.medium]: styles$N["base__size-medium"],
       },
-      state: { disabled: styles$K.base__disabled },
+      state: { disabled: styles$N.base__disabled },
     },
     defaultVariants: { type: types$1.vertical, size: sizes$b.small },
   }),
-  Item = defineStyledComponent("ButtonItem", styles$K.item),
+  Item = defineStyledComponent("ButtonItem", styles$N.item),
   Switcher$1 = reactExports.forwardRef(function (
     {
       type: e = types$1.vertical,
@@ -10801,16 +10425,16 @@ const sizes$b = { small: "small", medium: "medium" },
       children: c,
       ...d
     },
-    _,
+    p,
   ) {
-    const [p, m, f] = c,
+    const [_, m, f] = c,
       g = useSounds();
     const b = reactExports.useMemo(() => ({ checked: t }), [t]);
     return jsxRuntimeExports.jsx(SwitcherContext.Provider, {
       value: b,
       children: jsxRuntimeExports.jsxs(Base$l, {
         ...d,
-        ref: _,
+        ref: p,
         type: e,
         size: n,
         state: o ? "disabled" : void 0,
@@ -10822,12 +10446,12 @@ const sizes$b = { small: "small", medium: "medium" },
           (g.play("click", { target: Base$l.displayName, original: e }), a(!t), r?.(e));
         },
         children: [
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$K.background, u?.background) }),
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$K.border, u?.border) }),
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$K.overlay, u?.overlay) }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$N.background, u?.background) }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$N.border, u?.border) }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$N.overlay, u?.overlay) }),
           jsxRuntimeExports.jsxs("div", {
-            className: clsx(styles$K.content, i && styles$K.content__fontAligned, u?.content),
-            children: [p, m, f],
+            className: clsx(styles$N.content, i && styles$N.content__fontAligned, u?.content),
+            children: [_, m, f],
           }),
         ],
       }),
@@ -10910,12 +10534,12 @@ const LoadoutItem = reactExports.forwardRef(function (
   },
   d,
 ) {
-  const _ =
+  const p =
       t ||
       (a === sizes$a.s24x24
         ? `vehParams.tooltips.bonuses.${e}`
         : `quests.bonuses.${getItemSizeFolderName(a)}.${e}`),
-    p = (() => {
+    _ = (() => {
       if (s) return s;
       if (r === overlayTypes.custom)
         return void console.error("custom overlay passed without image source path");
@@ -10931,14 +10555,14 @@ const LoadoutItem = reactExports.forwardRef(function (
   return jsxRuntimeExports.jsx(Base$k, {
     ...c,
     ref: d,
-    path: _,
+    path: p,
     width: u ?? m.width,
     height: l ?? m.height,
     className: clsx(i, o?.item),
     children:
       r !== overlayTypes.none &&
-      p &&
-      jsxRuntimeExports.jsx(Image$1, { path: p, width: "100%", height: "100%" }),
+      _ &&
+      jsxRuntimeExports.jsx(Image$1, { path: _, width: "100%", height: "100%" }),
   });
 });
 ((LoadoutItem.sizes = sizes$a), (LoadoutItem.overlayTypes = overlayTypes));
@@ -10953,7 +10577,7 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
   slot__extraLarge = "Slot_slot__extraLarge_d8070c25",
   content__disabled = "Slot_content__disabled_1d609e12",
   emptyContent = "Slot_emptyContent_ba97d4d8",
-  styles$J = {
+  styles$M = {
     selectedOverlay: selectedOverlay,
     disabledOverlay: disabledOverlay,
     content: content$4,
@@ -10968,20 +10592,20 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
   },
   sizes$9 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
   Content$1 = defineStyledComponent("SlotContent"),
-  Base$j = defineStyledComponent("Slot", styles$J.slot, {
+  Base$j = defineStyledComponent("Slot", styles$M.slot, {
     variants: {
       size: {
-        [sizes$9.small]: styles$J.slot__small,
-        [sizes$9.medium]: styles$J.slot__medium,
-        [sizes$9.large]: styles$J.slot__large,
-        [sizes$9.extraLarge]: styles$J.slot__extraLarge,
+        [sizes$9.small]: styles$M.slot__small,
+        [sizes$9.medium]: styles$M.slot__medium,
+        [sizes$9.large]: styles$M.slot__large,
+        [sizes$9.extraLarge]: styles$M.slot__extraLarge,
       },
-      hovered: { true: styles$J.slot__hovered },
-      selected: { true: styles$J.slot__selected },
-      disabled: { true: styles$J.slot__disabled },
+      hovered: { true: styles$M.slot__hovered },
+      selected: { true: styles$M.slot__selected },
+      disabled: { true: styles$M.slot__disabled },
     },
   }),
-  EmptySlot = defineStyledComponent("EmptySlot", styles$J.emptyContent),
+  EmptySlot = defineStyledComponent("EmptySlot", styles$M.emptyContent),
   Slot = reactExports.forwardRef(function (
     {
       children: e,
@@ -11007,14 +10631,14 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
       children: [
         r &&
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$J.selectedOverlay, n?.selectedOverlay),
+            className: clsx(styles$M.selectedOverlay, n?.selectedOverlay),
           }),
         s &&
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$J.disabledOverlay, n?.disabledOverlay),
+            className: clsx(styles$M.disabledOverlay, n?.disabledOverlay),
           }),
         jsxRuntimeExports.jsx(Content$1, {
-          className: clsx(styles$J.content, s && styles$J.content__disabled, n?.content),
+          className: clsx(styles$M.content, s && styles$M.content__disabled, n?.content),
           "data-drop-item": i,
           children: e || jsxRuntimeExports.jsx(EmptySlot, { className: n?.emptyContent }),
         }),
@@ -11174,15 +10798,15 @@ function DragAndDrop({
         if (t instanceof HTMLElement && null !== l && null !== c) {
           const d = document.createElement("div");
           (d.setAttribute("data-drop-item", l), d.setAttribute("data-drop-area", c));
-          const _ = find(u.dropAreas, (e) => e.getAttribute("data-drop-area") === c),
-            p = t.getBoundingClientRect();
+          const p = find(u.dropAreas, (e) => e.getAttribute("data-drop-area") === c),
+            _ = t.getBoundingClientRect();
           (s(e.nativeEvent),
             runInAction(() => {
               (a(),
                 (u.realItem = t),
                 (u.virtualItem = d),
-                (u.overArea = _ ?? null),
-                (u.offsetPoint = { x: e.clientX - p.left, y: e.clientY - p.top }),
+                (u.overArea = p ?? null),
+                (u.offsetPoint = { x: e.clientX - _.left, y: e.clientY - _.top }),
                 (u.startPoint = { x: e.clientX, y: e.clientY }));
             }),
             o.trigger("onStart", e, u, t));
@@ -11216,9 +10840,9 @@ function isSerializableReactNode(e) {
 ((DragAndDrop.DragArea = DragArea),
   (DragAndDrop.DropArea = DropArea),
   (DragAndDrop.VirtualItem = VirtualItem));
-const base$F = "MultilineOverflow_ec9f8e47",
+const base$H = "MultilineOverflow_ec9f8e47",
   content$3 = "MultilineOverflow_content_b539970d",
-  styles$I = { base: base$F, content: content$3 };
+  styles$L = { base: base$H, content: content$3 };
 function isSerializableParams(e) {
   return !e || Object.values(e).every(isSerializableReactNode);
 }
@@ -11243,8 +10867,8 @@ const MultilineOverflow$1 = reactExports.forwardRef(function (
     tooltipDisabled: l = !1,
     tooltip: c,
     className: d,
-    classNames: _,
-    style: p,
+    classNames: p,
+    style: _,
     styleBase: m,
     styleText: f,
     ...g
@@ -11265,7 +10889,7 @@ const MultilineOverflow$1 = reactExports.forwardRef(function (
       const e = t.children[0];
       if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
       (a.remove(),
-        (a.className = clsx(styles$I.content, t.children[0].className)),
+        (a.className = clsx(styles$L.content, t.children[0].className)),
         (a.innerHTML = ""),
         e instanceof HTMLElement && (a.style.cssText = e.style.cssText));
       const r = e.childNodes.length - 1;
@@ -11344,17 +10968,17 @@ const MultilineOverflow$1 = reactExports.forwardRef(function (
       (i?.(e), l || v.onMouseLeave());
     },
     ref: assignRefs([b, h]),
-    className: clsx(styles$I.base, d, _?.base),
-    style: { ...p, ...m },
+    className: clsx(styles$L.base, d, p?.base),
+    style: { ..._, ...m },
     children: [
-      jsxRuntimeExports.jsx(FormatText, {
+      jsxRuntimeExports.jsx(FormatText$1, {
         text: e,
         brackets: t,
         params: s,
         upgradeLegacy: r,
         split: n,
         formatters: a,
-        className: _?.text,
+        className: p?.text,
         style: { ...f, visibility: x ? "hidden" : void 0 },
       }),
       jsxRuntimeExports.jsx("div", {
@@ -11370,7 +10994,7 @@ function FormatTextSplited({ className: e, ...t }) {
     className: e,
     children: t.text
       .split("\n")
-      .map((e) => jsxRuntimeExports.jsx(FormatText, { ...t, text: e }, e)),
+      .map((e) => jsxRuntimeExports.jsx(FormatText$1, { ...t, text: e }, e)),
   });
 }
 function ExtendedText(e) {
@@ -11418,20 +11042,20 @@ const formats = {
   detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
   detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
   detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
-  fadeIn$n = "FormattedValue_fadeIn_30bfaeef",
-  fadeInThreeQuarters$n = "FormattedValue_fadeInThreeQuarters_30bfaeef",
-  fadeInHalf$n = "FormattedValue_fadeInHalf_30bfaeef",
-  fadeOut$n = "FormattedValue_fadeOut_30bfaeef",
-  fadeInWithScale$n = "FormattedValue_fadeInWithScale_30bfaeef",
-  slideUp$n = "FormattedValue_slideUp_30bfaeef",
-  scale$n = "FormattedValue_scale_30bfaeef",
-  raysAppearance$n = "FormattedValue_raysAppearance_30bfaeef",
-  rotate$n = "FormattedValue_rotate_30bfaeef",
-  glowAppearance$n = "FormattedValue_glowAppearance_30bfaeef",
-  highlightAppearance$n = "FormattedValue_highlightAppearance_30bfaeef",
-  blink$n = "FormattedValue_blink_30bfaeef",
-  slideUpIn$n = "FormattedValue_slideUpIn_30bfaeef",
-  styles$H = {
+  fadeIn$o = "FormattedValue_fadeIn_30bfaeef",
+  fadeInThreeQuarters$o = "FormattedValue_fadeInThreeQuarters_30bfaeef",
+  fadeInHalf$o = "FormattedValue_fadeInHalf_30bfaeef",
+  fadeOut$o = "FormattedValue_fadeOut_30bfaeef",
+  fadeInWithScale$o = "FormattedValue_fadeInWithScale_30bfaeef",
+  slideUp$o = "FormattedValue_slideUp_30bfaeef",
+  scale$o = "FormattedValue_scale_30bfaeef",
+  raysAppearance$o = "FormattedValue_raysAppearance_30bfaeef",
+  rotate$o = "FormattedValue_rotate_30bfaeef",
+  glowAppearance$o = "FormattedValue_glowAppearance_30bfaeef",
+  highlightAppearance$o = "FormattedValue_highlightAppearance_30bfaeef",
+  blink$o = "FormattedValue_blink_30bfaeef",
+  slideUpIn$o = "FormattedValue_slideUpIn_30bfaeef",
+  styles$K = {
     item__x16x16: item__x16x16,
     item__x24x24: item__x24x24,
     item__x32x32: item__x32x32,
@@ -11448,20 +11072,20 @@ const formats = {
     detailedSeparator__x32x32: detailedSeparator__x32x32,
     detailedSeparator__x48x48: detailedSeparator__x48x48,
     detailedSeparator__x80x80: detailedSeparator__x80x80,
-    fadeIn: fadeIn$n,
-    fadeInThreeQuarters: fadeInThreeQuarters$n,
-    fadeInHalf: fadeInHalf$n,
-    fadeOut: fadeOut$n,
-    fadeInWithScale: fadeInWithScale$n,
-    slideUp: slideUp$n,
-    scale: scale$n,
-    raysAppearance: raysAppearance$n,
-    rotate: rotate$n,
+    fadeIn: fadeIn$o,
+    fadeInThreeQuarters: fadeInThreeQuarters$o,
+    fadeInHalf: fadeInHalf$o,
+    fadeOut: fadeOut$o,
+    fadeInWithScale: fadeInWithScale$o,
+    slideUp: slideUp$o,
+    scale: scale$o,
+    raysAppearance: raysAppearance$o,
+    rotate: rotate$o,
     "reverse-rotate": "FormattedValue_reverse-rotate_30bfaeef",
-    glowAppearance: glowAppearance$n,
-    highlightAppearance: highlightAppearance$n,
-    blink: blink$n,
-    slideUpIn: slideUpIn$n,
+    glowAppearance: glowAppearance$o,
+    highlightAppearance: highlightAppearance$o,
+    blink: blink$o,
+    slideUpIn: slideUpIn$o,
   };
 function FormattedValue({ size: e, preFormatted: t }) {
   const s = [];
@@ -11471,7 +11095,7 @@ function FormattedValue({ size: e, preFormatted: t }) {
       s.push(
         jsxRuntimeExports.jsx(
           "span",
-          { className: cx(styles$H.detailedSeparator, styles$H[`detailedSeparator__${e}`]) },
+          { className: cx(styles$K.detailedSeparator, styles$K[`detailedSeparator__${e}`]) },
           "separator",
         ),
       ),
@@ -11479,13 +11103,13 @@ function FormattedValue({ size: e, preFormatted: t }) {
         jsxRuntimeExports.jsx(
           "span",
           {
-            className: cx(styles$H.item, styles$H[`item__${e}`]),
+            className: cx(styles$K.item, styles$K[`item__${e}`]),
             children: t.items[a]
               ?.split(" ")
               .map((t, s) =>
                 jsxRuntimeExports.jsx(
                   "span",
-                  { className: cx(styles$H.part, styles$H[`part__${e}`]), children: t },
+                  { className: cx(styles$K.part, styles$K[`part__${e}`]), children: t },
                   `part_${s}`,
                 ),
               ),
@@ -11555,8 +11179,8 @@ function compactFormatter(e, t) {
   return ((r.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), r);
 }
 const formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
-  base$E = "Timer_dac0a0aa",
-  icon$5 = "Timer_icon_a61415df",
+  base$G = "Timer_dac0a0aa",
+  icon$6 = "Timer_icon_a61415df",
   icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
   icon__accent = "Timer_icon__accent_2cf70c3b",
   icon__cooldown = "Timer_icon__cooldown_4a26d3f",
@@ -11572,22 +11196,22 @@ const formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
   label__x80x80 = "Timer_label__x80x80_10a84ee6",
   label__accent = "Timer_label__accent_ac7d4f7b",
   label__cooldown = "Timer_label__cooldown_c2349ab9",
-  fadeIn$m = "Timer_fadeIn_6ee5dd6c",
-  fadeInThreeQuarters$m = "Timer_fadeInThreeQuarters_6ee5dd6c",
-  fadeInHalf$m = "Timer_fadeInHalf_6ee5dd6c",
-  fadeOut$m = "Timer_fadeOut_6ee5dd6c",
-  fadeInWithScale$m = "Timer_fadeInWithScale_6ee5dd6c",
-  slideUp$m = "Timer_slideUp_6ee5dd6c",
-  scale$m = "Timer_scale_6ee5dd6c",
-  raysAppearance$m = "Timer_raysAppearance_6ee5dd6c",
-  rotate$m = "Timer_rotate_6ee5dd6c",
-  glowAppearance$m = "Timer_glowAppearance_6ee5dd6c",
-  highlightAppearance$m = "Timer_highlightAppearance_6ee5dd6c",
-  blink$m = "Timer_blink_6ee5dd6c",
-  slideUpIn$m = "Timer_slideUpIn_6ee5dd6c",
-  styles$G = {
-    base: base$E,
-    icon: icon$5,
+  fadeIn$n = "Timer_fadeIn_6ee5dd6c",
+  fadeInThreeQuarters$n = "Timer_fadeInThreeQuarters_6ee5dd6c",
+  fadeInHalf$n = "Timer_fadeInHalf_6ee5dd6c",
+  fadeOut$n = "Timer_fadeOut_6ee5dd6c",
+  fadeInWithScale$n = "Timer_fadeInWithScale_6ee5dd6c",
+  slideUp$n = "Timer_slideUp_6ee5dd6c",
+  scale$n = "Timer_scale_6ee5dd6c",
+  raysAppearance$n = "Timer_raysAppearance_6ee5dd6c",
+  rotate$n = "Timer_rotate_6ee5dd6c",
+  glowAppearance$n = "Timer_glowAppearance_6ee5dd6c",
+  highlightAppearance$n = "Timer_highlightAppearance_6ee5dd6c",
+  blink$n = "Timer_blink_6ee5dd6c",
+  slideUpIn$n = "Timer_slideUpIn_6ee5dd6c",
+  styles$J = {
+    base: base$G,
+    icon: icon$6,
     icon__x16x16: icon__x16x16,
     icon__accent: icon__accent,
     icon__cooldown: icon__cooldown,
@@ -11603,20 +11227,20 @@ const formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
     label__x80x80: label__x80x80,
     label__accent: label__accent,
     label__cooldown: label__cooldown,
-    fadeIn: fadeIn$m,
-    fadeInThreeQuarters: fadeInThreeQuarters$m,
-    fadeInHalf: fadeInHalf$m,
-    fadeOut: fadeOut$m,
-    fadeInWithScale: fadeInWithScale$m,
-    slideUp: slideUp$m,
-    scale: scale$m,
-    raysAppearance: raysAppearance$m,
-    rotate: rotate$m,
+    fadeIn: fadeIn$n,
+    fadeInThreeQuarters: fadeInThreeQuarters$n,
+    fadeInHalf: fadeInHalf$n,
+    fadeOut: fadeOut$n,
+    fadeInWithScale: fadeInWithScale$n,
+    slideUp: slideUp$n,
+    scale: scale$n,
+    raysAppearance: raysAppearance$n,
+    rotate: rotate$n,
     "reverse-rotate": "Timer_reverse-rotate_6ee5dd6c",
-    glowAppearance: glowAppearance$m,
-    highlightAppearance: highlightAppearance$m,
-    blink: blink$m,
-    slideUpIn: slideUpIn$m,
+    glowAppearance: glowAppearance$n,
+    highlightAppearance: highlightAppearance$n,
+    blink: blink$n,
+    slideUpIn: slideUpIn$n,
   };
 function Timer({
   start: e,
@@ -11642,14 +11266,14 @@ function Timer({
     ),
   );
   return jsxRuntimeExports.jsxs("div", {
-    className: cx(styles$G.base, i),
+    className: cx(styles$J.base, i),
     children: [
       jsxRuntimeExports.jsx("div", {
-        className: cx(styles$G.icon, styles$G[`icon__${a}`], styles$G[`icon__${r}`], u?.icon),
+        className: cx(styles$J.icon, styles$J[`icon__${a}`], styles$J[`icon__${r}`], u?.icon),
       }),
       n !== formats.superCompact &&
         jsxRuntimeExports.jsx("div", {
-          className: cx(styles$G.label, styles$G[`label__${a}`], styles$G[`label__${r}`], u?.label),
+          className: cx(styles$J.label, styles$J[`label__${a}`], styles$J[`label__${r}`], u?.label),
           children: jsxRuntimeExports.jsx(FormattedValue, {
             size: a,
             preFormatted: formatValue(l, n),
@@ -11671,56 +11295,56 @@ const fill = "Filled_fill_32930ca9",
   filled__small = "Filled_filled__small_94d1350d",
   pattern$3 = "Filled_pattern_6ec8608d",
   filled__medium = "Filled_filled__medium_94d1350d",
-  fadeIn$l = "Filled_fadeIn_94d1350d",
-  fadeInThreeQuarters$l = "Filled_fadeInThreeQuarters_94d1350d",
-  fadeInHalf$l = "Filled_fadeInHalf_94d1350d",
-  fadeOut$l = "Filled_fadeOut_94d1350d",
-  fadeInWithScale$l = "Filled_fadeInWithScale_94d1350d",
-  slideUp$l = "Filled_slideUp_94d1350d",
-  scale$l = "Filled_scale_94d1350d",
-  raysAppearance$l = "Filled_raysAppearance_94d1350d",
-  rotate$l = "Filled_rotate_94d1350d",
-  glowAppearance$l = "Filled_glowAppearance_94d1350d",
-  highlightAppearance$l = "Filled_highlightAppearance_94d1350d",
-  blink$l = "Filled_blink_94d1350d",
-  slideUpIn$l = "Filled_slideUpIn_94d1350d",
-  styles$F = {
+  fadeIn$m = "Filled_fadeIn_94d1350d",
+  fadeInThreeQuarters$m = "Filled_fadeInThreeQuarters_94d1350d",
+  fadeInHalf$m = "Filled_fadeInHalf_94d1350d",
+  fadeOut$m = "Filled_fadeOut_94d1350d",
+  fadeInWithScale$m = "Filled_fadeInWithScale_94d1350d",
+  slideUp$m = "Filled_slideUp_94d1350d",
+  scale$m = "Filled_scale_94d1350d",
+  raysAppearance$m = "Filled_raysAppearance_94d1350d",
+  rotate$m = "Filled_rotate_94d1350d",
+  glowAppearance$m = "Filled_glowAppearance_94d1350d",
+  highlightAppearance$m = "Filled_highlightAppearance_94d1350d",
+  blink$m = "Filled_blink_94d1350d",
+  slideUpIn$m = "Filled_slideUpIn_94d1350d",
+  styles$I = {
     fill: fill,
     filled: filled$1,
     wrapper: wrapper$1,
     filled__small: filled__small,
     pattern: pattern$3,
     filled__medium: filled__medium,
-    fadeIn: fadeIn$l,
-    fadeInThreeQuarters: fadeInThreeQuarters$l,
-    fadeInHalf: fadeInHalf$l,
-    fadeOut: fadeOut$l,
-    fadeInWithScale: fadeInWithScale$l,
-    slideUp: slideUp$l,
-    scale: scale$l,
-    raysAppearance: raysAppearance$l,
-    rotate: rotate$l,
+    fadeIn: fadeIn$m,
+    fadeInThreeQuarters: fadeInThreeQuarters$m,
+    fadeInHalf: fadeInHalf$m,
+    fadeOut: fadeOut$m,
+    fadeInWithScale: fadeInWithScale$m,
+    slideUp: slideUp$m,
+    scale: scale$m,
+    raysAppearance: raysAppearance$m,
+    rotate: rotate$m,
     "reverse-rotate": "Filled_reverse-rotate_94d1350d",
-    glowAppearance: glowAppearance$l,
-    highlightAppearance: highlightAppearance$l,
-    blink: blink$l,
-    slideUpIn: slideUpIn$l,
+    glowAppearance: glowAppearance$m,
+    highlightAppearance: highlightAppearance$m,
+    blink: blink$m,
+    slideUpIn: slideUpIn$m,
   },
   Filled$1 = reactExports.forwardRef(function ({ className: e, classNames: t, ...s }, a) {
     const r = useProgressBar$1();
     return jsxRuntimeExports.jsx("div", {
       ...s,
       ref: a,
-      className: clsx(styles$F.filled, styles$F[`filled__${r.size}`], e),
+      className: clsx(styles$I.filled, styles$I[`filled__${r.size}`], e),
       children: jsxRuntimeExports.jsxs("div", {
-        className: clsx(styles$F.wrapper, t?.wrapper),
+        className: clsx(styles$I.wrapper, t?.wrapper),
         children: [
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$F.fill, t?.fill),
+            className: clsx(styles$I.fill, t?.fill),
             style: { width: 100 * r.percentage + "%" },
           }),
           jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$F.pattern, t?.pattern),
+            className: clsx(styles$I.pattern, t?.pattern),
             style: { width: 100 * r.percentage + "%" },
           }),
         ],
@@ -11767,25 +11391,25 @@ function ProgressBarProvider$1(e) {
   return jsxRuntimeExports.jsx(Context$2.Provider, { value: d, children: e.children });
 }
 const background$3 = "ProgressBar_background_b40cdfdf",
-  base$D = "ProgressBar_27c2305c",
+  base$F = "ProgressBar_27c2305c",
   base__small$c = "ProgressBar_base__small_61ccd4be",
   base__medium$7 = "ProgressBar_base__medium_478d985a",
   base__full$1 = "ProgressBar_base__full_be7f12da",
   backgroundPattern$3 = "ProgressBar_backgroundPattern_7e932276",
-  styles$E = {
+  styles$H = {
     background: background$3,
-    base: base$D,
+    base: base$F,
     base__small: base__small$c,
     base__medium: base__medium$7,
     base__full: base__full$1,
     backgroundPattern: backgroundPattern$3,
   },
-  Base$i = defineStyledComponent("ProgressBar", styles$E.base, {
+  Base$i = defineStyledComponent("ProgressBar", styles$H.base, {
     variants: {
       size: {
-        small: styles$E.base__small,
-        medium: styles$E.base__medium,
-        full: styles$E.base__full,
+        small: styles$H.base__small,
+        medium: styles$H.base__medium,
+        full: styles$H.base__full,
       },
     },
   });
@@ -11804,9 +11428,9 @@ function ProgressBar$2({
       size: e,
       className: t,
       children: [
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$E.background, s?.background) }),
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$H.background, s?.background) }),
         jsxRuntimeExports.jsx("div", {
-          className: clsx(styles$E.backgroundPattern, s?.backgroundPattern),
+          className: clsx(styles$H.backgroundPattern, s?.backgroundPattern),
         }),
         jsxRuntimeExports.jsx(Filled$1, { className: a, classNames: r }),
         n.children,
@@ -12150,7 +11774,7 @@ const multiValueTypes$1 = [
         return e;
     }
   },
-  formatPrintf = (e, t) =>
+  formatPrintf$1 = (e, t) =>
     e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
       const s = 0 === e.indexOf("%") ? 2 : 1;
       return String(t[e.slice(s, -s)]);
@@ -12166,10 +11790,10 @@ const multiValueTypes$1 = [
   base__s296x222$1 = "Reward_base__s296x222_52f0615b",
   base__s400x300$1 = "Reward_base__s400x300_a8627e1b",
   base__s600x450$1 = "Reward_base__s600x450_e27f3852",
-  base$C = "Reward_d65e1e12",
+  base$E = "Reward_d65e1e12",
   base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
   tooltipWrapper$1 = "Reward_tooltipWrapper_75b925a5",
-  icon$4 = "Reward_icon_e152f13b",
+  icon$5 = "Reward_icon_e152f13b",
   overlay$1 = "Reward_overlay_8cbe65c9",
   highlight$2 = "Reward_highlight_f1cd08e0",
   image__s24x24 = "Reward_image__s24x24_954b5cee",
@@ -12193,20 +11817,20 @@ const multiValueTypes$1 = [
   info__premiumTank$1 = "Reward_info__premiumTank_7862152",
   title$2 = "Reward_title_fbcf4b5",
   timer$1 = "Reward_timer_22ba7b8b",
-  fadeIn$k = "Reward_fadeIn_21f091ec",
-  fadeInThreeQuarters$k = "Reward_fadeInThreeQuarters_21f091ec",
-  fadeInHalf$k = "Reward_fadeInHalf_21f091ec",
-  fadeOut$k = "Reward_fadeOut_21f091ec",
-  fadeInWithScale$k = "Reward_fadeInWithScale_21f091ec",
-  slideUp$k = "Reward_slideUp_21f091ec",
-  scale$k = "Reward_scale_21f091ec",
-  raysAppearance$k = "Reward_raysAppearance_21f091ec",
-  rotate$k = "Reward_rotate_21f091ec",
-  glowAppearance$k = "Reward_glowAppearance_21f091ec",
-  highlightAppearance$k = "Reward_highlightAppearance_21f091ec",
-  blink$k = "Reward_blink_21f091ec",
-  slideUpIn$k = "Reward_slideUpIn_21f091ec",
-  styles$D = {
+  fadeIn$l = "Reward_fadeIn_21f091ec",
+  fadeInThreeQuarters$l = "Reward_fadeInThreeQuarters_21f091ec",
+  fadeInHalf$l = "Reward_fadeInHalf_21f091ec",
+  fadeOut$l = "Reward_fadeOut_21f091ec",
+  fadeInWithScale$l = "Reward_fadeInWithScale_21f091ec",
+  slideUp$l = "Reward_slideUp_21f091ec",
+  scale$l = "Reward_scale_21f091ec",
+  raysAppearance$l = "Reward_raysAppearance_21f091ec",
+  rotate$l = "Reward_rotate_21f091ec",
+  glowAppearance$l = "Reward_glowAppearance_21f091ec",
+  highlightAppearance$l = "Reward_highlightAppearance_21f091ec",
+  blink$l = "Reward_blink_21f091ec",
+  slideUpIn$l = "Reward_slideUpIn_21f091ec",
+  styles$G = {
     base__s24x24: base__s24x24,
     base__s48x48: base__s48x48$1,
     base__small: base__small$b,
@@ -12218,10 +11842,10 @@ const multiValueTypes$1 = [
     base__s296x222: base__s296x222$1,
     base__s400x300: base__s400x300$1,
     base__s600x450: base__s600x450$1,
-    base: base$C,
+    base: base$E,
     base__dynamicBox: base__dynamicBox,
     tooltipWrapper: tooltipWrapper$1,
-    icon: icon$4,
+    icon: icon$5,
     overlay: overlay$1,
     highlight: highlight$2,
     image__s24x24: image__s24x24,
@@ -12245,20 +11869,20 @@ const multiValueTypes$1 = [
     info__premiumTank: info__premiumTank$1,
     title: title$2,
     timer: timer$1,
-    fadeIn: fadeIn$k,
-    fadeInThreeQuarters: fadeInThreeQuarters$k,
-    fadeInHalf: fadeInHalf$k,
-    fadeOut: fadeOut$k,
-    fadeInWithScale: fadeInWithScale$k,
-    slideUp: slideUp$k,
-    scale: scale$k,
-    raysAppearance: raysAppearance$k,
-    rotate: rotate$k,
+    fadeIn: fadeIn$l,
+    fadeInThreeQuarters: fadeInThreeQuarters$l,
+    fadeInHalf: fadeInHalf$l,
+    fadeOut: fadeOut$l,
+    fadeInWithScale: fadeInWithScale$l,
+    slideUp: slideUp$l,
+    scale: scale$l,
+    raysAppearance: raysAppearance$l,
+    rotate: rotate$l,
     "reverse-rotate": "Reward_reverse-rotate_21f091ec",
-    glowAppearance: glowAppearance$k,
-    highlightAppearance: highlightAppearance$k,
-    blink: blink$k,
-    slideUpIn: slideUpIn$k,
+    glowAppearance: glowAppearance$l,
+    highlightAppearance: highlightAppearance$l,
+    blink: blink$l,
+    slideUpIn: slideUpIn$l,
   },
   images = resources.resolve("images"),
   SIZE_MAP = new Map([
@@ -12278,22 +11902,22 @@ const multiValueTypes$1 = [
     style: l,
     className: c,
     classNames: d,
-    tooltipArgs: _,
-    periodicIconTooltipArgs: p,
+    tooltipArgs: p,
+    periodicIconTooltipArgs: _,
   }) => {
     const m = SIZE_MAP.has(r) ? SIZE_MAP.get(r) : r,
       f = getBottomHighlight$1(r, n),
       g = getOverlay$1(n),
       b = getFormattedValue$1(o, i),
       h = useTooltip({
-        contentId: _?.contentId ?? 0,
-        args: _?.args,
-        resId: _?.resId,
-        decoratorId: _?.decoratorId,
+        contentId: p?.contentId ?? 0,
+        args: p?.args,
+        resId: p?.resId,
+        decoratorId: p?.decoratorId,
       }),
-      E = useSimpleTooltip({ header: p?.header, body: p?.body });
+      E = useSimpleTooltip({ header: _?.header, body: _?.body });
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$D.base, styles$D[`base__${r}`], !a && styles$D.base__dynamicBox, c),
+      className: cx(styles$G.base, styles$G[`base__${r}`], !a && styles$G.base__dynamicBox, c),
       style: l,
       ...h,
       children: [
@@ -12301,26 +11925,26 @@ const multiValueTypes$1 = [
           children: [
             jsxRuntimeExports.jsxs("div", {
               className: cx(
-                styles$D.image,
-                a ? styles$D.image__fixedBox : styles$D[`image__${r}`],
+                styles$G.image,
+                a ? styles$G.image__fixedBox : styles$G[`image__${r}`],
                 d?.image,
               ),
               children: [
                 f &&
                   jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$D.highlight, d?.highlight),
+                    className: cx(styles$G.highlight, d?.highlight),
                     style: {
                       backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${m}.${f}_highlight`)})`,
                     },
                   }),
                 t &&
                   jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$D.icon, d?.rewardIcon),
+                    className: cx(styles$G.icon, d?.rewardIcon),
                     style: { backgroundImage: `url(${t})` },
                   }),
                 g &&
                   jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$D.overlay, d?.overlay),
+                    className: cx(styles$G.overlay, d?.overlay),
                     style: {
                       backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${m}.${g}_overlay`)})`,
                     },
@@ -12330,27 +11954,27 @@ const multiValueTypes$1 = [
             b &&
               jsxRuntimeExports.jsx("div", {
                 className: cx(
-                  styles$D.info,
-                  styles$D[`info__${e}`],
-                  i === ValueTypes$1.MULTI && styles$D.info__multi,
+                  styles$G.info,
+                  styles$G[`info__${e}`],
+                  i === ValueTypes$1.MULTI && styles$G.info__multi,
                   d?.info,
                 ),
                 children: b,
               }),
-            u && jsxRuntimeExports.jsx("div", { className: styles$D.title, children: u }),
+            u && jsxRuntimeExports.jsx("div", { className: styles$G.title, children: u }),
           ],
         }),
-        s && jsxRuntimeExports.jsx("div", { className: cx(styles$D.timer, d?.periodicIcon), ...E }),
+        s && jsxRuntimeExports.jsx("div", { className: cx(styles$G.timer, d?.periodicIcon), ...E }),
       ],
     });
   },
-  base$B = "RewardsList_b956755b",
+  base$D = "RewardsList_b956755b",
   base__vertical$1 = "RewardsList_base__vertical_59db3c9f",
   reward$1 = "RewardsList_reward_fc200613",
   reward__vertical$1 = "RewardsList_reward__vertical_5f09c6e0",
   boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
-  styles$C = {
-    base: base$B,
+  styles$F = {
+    base: base$D,
     base__vertical: base__vertical$1,
     reward: reward$1,
     reward__vertical: reward__vertical$1,
@@ -12374,10 +11998,10 @@ const multiValueTypes$1 = [
     boxRewardClassNames: c,
   }) {
     const d = resources.resolve("strings"),
-      _ = resources.resolve("images"),
-      p =
+      p = resources.resolve("images"),
+      _ =
         "number" == typeof r && r < e.length
-          ? `${_.readOrEmpty(`quests.bonuses.${sizeToDefault[s] ?? s}.default`)}`
+          ? `${p.readOrEmpty(`quests.bonuses.${sizeToDefault[s] ?? s}.default`)}`
           : void 0,
       m =
         u ||
@@ -12385,9 +12009,9 @@ const multiValueTypes$1 = [
           count: e.length - (r || 0),
         });
     return jsxRuntimeExports.jsx("div", {
-      className: cx(styles$C.base, a && styles$C.base__vertical, n),
+      className: cx(styles$F.base, a && styles$F.base__vertical, n),
       children:
-        void 0 !== p
+        void 0 !== _
           ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
               children: [
                 e
@@ -12396,7 +12020,7 @@ const multiValueTypes$1 = [
                     jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: cx(styles$C.reward, a && styles$C.reward__vertical, o),
+                        className: cx(styles$F.reward, a && styles$F.reward__vertical, o),
                         children: jsxRuntimeExports.jsx(Reward$1, {
                           size: s,
                           isFixedBoxSize: t,
@@ -12407,15 +12031,15 @@ const multiValueTypes$1 = [
                     ),
                   ),
                 jsxRuntimeExports.jsx("div", {
-                  className: cx(styles$C.reward, a && styles$C.reward__vertical, o),
+                  className: cx(styles$F.reward, a && styles$F.reward__vertical, o),
                   children: jsxRuntimeExports.jsx(Reward$1, {
                     name: "more",
                     isFixedBoxSize: t,
-                    image: p,
+                    image: _,
                     size: s,
                     value: m,
                     tooltipArgs: i,
-                    className: cx(styles$C.boxRewardClassName, l),
+                    className: cx(styles$F.boxRewardClassName, l),
                     classNames: c,
                   }),
                 }),
@@ -12425,7 +12049,7 @@ const multiValueTypes$1 = [
               jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: cx(styles$C.reward, a && styles$C.reward__vertical, o),
+                  className: cx(styles$F.reward, a && styles$F.reward__vertical, o),
                   children: jsxRuntimeExports.jsx(Reward$1, { size: s, isFixedBoxSize: t, ...e }),
                 },
                 r,
@@ -12433,11 +12057,11 @@ const multiValueTypes$1 = [
             ),
     });
   }),
-  base$A = "Tooltip_6d997cee",
+  base$C = "Tooltip_6d997cee",
   decorator = "Tooltip_decorator_b3486d4e",
-  styles$B = { base: base$A, decorator: decorator },
-  Base$h = defineStyledComponent("Base", styles$B.base),
-  Decorator = defineStyledComponent("Decorator", styles$B.decorator),
+  styles$E = { base: base$C, decorator: decorator },
+  Base$h = defineStyledComponent("Base", styles$E.base),
+  Decorator = defineStyledComponent("Decorator", styles$E.decorator),
   Tooltip = reactExports.forwardRef(function ({ children: e, ...t }, s) {
     const a = reactExports.useRef(null);
     return (
@@ -12469,30 +12093,67 @@ var Size = ((e) => ((e.Small = "small"), (e.Medium = "medium"), (e.Default = "me
   AnimationType = ((e) => ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e))(
     AnimationType || {},
   );
-const base$z = "Progressbar_a6e35bd7",
+const base$B = "Progressbar_a6e35bd7",
   base__small$a = "Progressbar_base__small_7338ff19",
   background$2 = "Progressbar_background_27d9dd7c",
   background__small = "Progressbar_background__small_7338ff19",
   lineWrapper = "Progressbar_lineWrapper_fc5022a6",
-  fadeIn$j = "Progressbar_fadeIn_27f917f7",
-  fadeInThreeQuarters$j = "Progressbar_fadeInThreeQuarters_27f917f7",
-  fadeInHalf$j = "Progressbar_fadeInHalf_27f917f7",
-  fadeOut$j = "Progressbar_fadeOut_27f917f7",
-  fadeInWithScale$j = "Progressbar_fadeInWithScale_27f917f7",
-  slideUp$j = "Progressbar_slideUp_27f917f7",
-  scale$j = "Progressbar_scale_27f917f7",
-  raysAppearance$j = "Progressbar_raysAppearance_27f917f7",
-  rotate$j = "Progressbar_rotate_27f917f7",
-  glowAppearance$j = "Progressbar_glowAppearance_27f917f7",
-  highlightAppearance$j = "Progressbar_highlightAppearance_27f917f7",
-  blink$j = "Progressbar_blink_27f917f7",
-  slideUpIn$j = "Progressbar_slideUpIn_27f917f7",
-  styles$A = {
-    base: base$z,
+  fadeIn$k = "Progressbar_fadeIn_27f917f7",
+  fadeInThreeQuarters$k = "Progressbar_fadeInThreeQuarters_27f917f7",
+  fadeInHalf$k = "Progressbar_fadeInHalf_27f917f7",
+  fadeOut$k = "Progressbar_fadeOut_27f917f7",
+  fadeInWithScale$k = "Progressbar_fadeInWithScale_27f917f7",
+  slideUp$k = "Progressbar_slideUp_27f917f7",
+  scale$k = "Progressbar_scale_27f917f7",
+  raysAppearance$k = "Progressbar_raysAppearance_27f917f7",
+  rotate$k = "Progressbar_rotate_27f917f7",
+  glowAppearance$k = "Progressbar_glowAppearance_27f917f7",
+  highlightAppearance$k = "Progressbar_highlightAppearance_27f917f7",
+  blink$k = "Progressbar_blink_27f917f7",
+  slideUpIn$k = "Progressbar_slideUpIn_27f917f7",
+  styles$D = {
+    base: base$B,
     base__small: base__small$a,
     background: background$2,
     background__small: background__small,
     lineWrapper: lineWrapper,
+    fadeIn: fadeIn$k,
+    fadeInThreeQuarters: fadeInThreeQuarters$k,
+    fadeInHalf: fadeInHalf$k,
+    fadeOut: fadeOut$k,
+    fadeInWithScale: fadeInWithScale$k,
+    slideUp: slideUp$k,
+    scale: scale$k,
+    raysAppearance: raysAppearance$k,
+    rotate: rotate$k,
+    "reverse-rotate": "Progressbar_reverse-rotate_27f917f7",
+    glowAppearance: glowAppearance$k,
+    highlightAppearance: highlightAppearance$k,
+    blink: blink$k,
+    slideUpIn: slideUpIn$k,
+  },
+  ProgressBarBackground = ({ size: e = Size.Default }) => {
+    const t = cx(styles$D.background, styles$D[`background__${e}`]);
+    return jsxRuntimeExports.jsx("div", { className: t });
+  },
+  base$A = "Progressbarblink_c6146c1c",
+  base__small$9 = "Progressbarblink_base__small_9a4d3786",
+  fadeIn$j = "Progressbarblink_fadeIn_6fa3e54",
+  fadeInThreeQuarters$j = "Progressbarblink_fadeInThreeQuarters_6fa3e54",
+  fadeInHalf$j = "Progressbarblink_fadeInHalf_6fa3e54",
+  fadeOut$j = "Progressbarblink_fadeOut_6fa3e54",
+  fadeInWithScale$j = "Progressbarblink_fadeInWithScale_6fa3e54",
+  slideUp$j = "Progressbarblink_slideUp_6fa3e54",
+  scale$j = "Progressbarblink_scale_6fa3e54",
+  raysAppearance$j = "Progressbarblink_raysAppearance_6fa3e54",
+  rotate$j = "Progressbarblink_rotate_6fa3e54",
+  glowAppearance$j = "Progressbarblink_glowAppearance_6fa3e54",
+  highlightAppearance$j = "Progressbarblink_highlightAppearance_6fa3e54",
+  blink$j = "Progressbarblink_blink_6fa3e54",
+  slideUpIn$j = "Progressbarblink_slideUpIn_6fa3e54",
+  styles$C = {
+    base: base$A,
+    base__small: base__small$9,
     fadeIn: fadeIn$j,
     fadeInThreeQuarters: fadeInThreeQuarters$j,
     fadeInHalf: fadeInHalf$j,
@@ -12502,34 +12163,48 @@ const base$z = "Progressbar_a6e35bd7",
     scale: scale$j,
     raysAppearance: raysAppearance$j,
     rotate: rotate$j,
-    "reverse-rotate": "Progressbar_reverse-rotate_27f917f7",
+    "reverse-rotate": "Progressbarblink_reverse-rotate_6fa3e54",
     glowAppearance: glowAppearance$j,
     highlightAppearance: highlightAppearance$j,
     blink: blink$j,
     slideUpIn: slideUpIn$j,
   },
-  ProgressBarBackground = ({ size: e = Size.Default }) => {
-    const t = cx(styles$A.background, styles$A[`background__${e}`]);
+  ProgressBarBlink = ({ size: e }) => {
+    const t = cx(styles$C.base, styles$C[`base__${e}`]);
     return jsxRuntimeExports.jsx("div", { className: t });
   },
-  base$y = "Progressbarblink_c6146c1c",
-  base__small$9 = "Progressbarblink_base__small_9a4d3786",
-  fadeIn$i = "Progressbarblink_fadeIn_6fa3e54",
-  fadeInThreeQuarters$i = "Progressbarblink_fadeInThreeQuarters_6fa3e54",
-  fadeInHalf$i = "Progressbarblink_fadeInHalf_6fa3e54",
-  fadeOut$i = "Progressbarblink_fadeOut_6fa3e54",
-  fadeInWithScale$i = "Progressbarblink_fadeInWithScale_6fa3e54",
-  slideUp$i = "Progressbarblink_slideUp_6fa3e54",
-  scale$i = "Progressbarblink_scale_6fa3e54",
-  raysAppearance$i = "Progressbarblink_raysAppearance_6fa3e54",
-  rotate$i = "Progressbarblink_rotate_6fa3e54",
-  glowAppearance$i = "Progressbarblink_glowAppearance_6fa3e54",
-  highlightAppearance$i = "Progressbarblink_highlightAppearance_6fa3e54",
-  blink$i = "Progressbarblink_blink_6fa3e54",
-  slideUpIn$i = "Progressbarblink_slideUpIn_6fa3e54",
-  styles$z = {
-    base: base$y,
-    base__small: base__small$9,
+  base$z = "Progresslineimpose_24e17c02",
+  base__disabled$4 = "Progresslineimpose_base__disabled_bcd461f4",
+  base__finished = "Progresslineimpose_base__finished_803677d6",
+  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
+  pattern$2 = "Progresslineimpose_pattern_491cb9c0",
+  base__small$8 = "Progresslineimpose_base__small_577e82cf",
+  gradient = "Progresslineimpose_gradient_513e2b1d",
+  glow$2 = "Progresslineimpose_glow_76f8072f",
+  glow__left = "Progresslineimpose_glow__left_c2e964b3",
+  fadeIn$i = "Progresslineimpose_fadeIn_577e82cf",
+  fadeInThreeQuarters$i = "Progresslineimpose_fadeInThreeQuarters_577e82cf",
+  fadeInHalf$i = "Progresslineimpose_fadeInHalf_577e82cf",
+  fadeOut$i = "Progresslineimpose_fadeOut_577e82cf",
+  fadeInWithScale$i = "Progresslineimpose_fadeInWithScale_577e82cf",
+  slideUp$i = "Progresslineimpose_slideUp_577e82cf",
+  scale$i = "Progresslineimpose_scale_577e82cf",
+  raysAppearance$i = "Progresslineimpose_raysAppearance_577e82cf",
+  rotate$i = "Progresslineimpose_rotate_577e82cf",
+  glowAppearance$i = "Progresslineimpose_glowAppearance_577e82cf",
+  highlightAppearance$i = "Progresslineimpose_highlightAppearance_577e82cf",
+  blink$i = "Progresslineimpose_blink_577e82cf",
+  slideUpIn$i = "Progresslineimpose_slideUpIn_577e82cf",
+  styles$B = {
+    base: base$z,
+    base__disabled: base__disabled$4,
+    base__finished: base__finished,
+    base__withoutBounce: base__withoutBounce$1,
+    pattern: pattern$2,
+    base__small: base__small$8,
+    gradient: gradient,
+    glow: glow$2,
+    glow__left: glow__left,
     fadeIn: fadeIn$i,
     fadeInThreeQuarters: fadeInThreeQuarters$i,
     fadeInHalf: fadeInHalf$i,
@@ -12539,62 +12214,11 @@ const base$z = "Progressbar_a6e35bd7",
     scale: scale$i,
     raysAppearance: raysAppearance$i,
     rotate: rotate$i,
-    "reverse-rotate": "Progressbarblink_reverse-rotate_6fa3e54",
+    "reverse-rotate": "Progresslineimpose_reverse-rotate_577e82cf",
     glowAppearance: glowAppearance$i,
     highlightAppearance: highlightAppearance$i,
     blink: blink$i,
     slideUpIn: slideUpIn$i,
-  },
-  ProgressBarBlink = ({ size: e }) => {
-    const t = cx(styles$z.base, styles$z[`base__${e}`]);
-    return jsxRuntimeExports.jsx("div", { className: t });
-  },
-  base$x = "Progresslineimpose_24e17c02",
-  base__disabled$4 = "Progresslineimpose_base__disabled_bcd461f4",
-  base__finished = "Progresslineimpose_base__finished_803677d6",
-  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
-  pattern$2 = "Progresslineimpose_pattern_491cb9c0",
-  base__small$8 = "Progresslineimpose_base__small_577e82cf",
-  gradient = "Progresslineimpose_gradient_513e2b1d",
-  glow$2 = "Progresslineimpose_glow_76f8072f",
-  glow__left = "Progresslineimpose_glow__left_c2e964b3",
-  fadeIn$h = "Progresslineimpose_fadeIn_577e82cf",
-  fadeInThreeQuarters$h = "Progresslineimpose_fadeInThreeQuarters_577e82cf",
-  fadeInHalf$h = "Progresslineimpose_fadeInHalf_577e82cf",
-  fadeOut$h = "Progresslineimpose_fadeOut_577e82cf",
-  fadeInWithScale$h = "Progresslineimpose_fadeInWithScale_577e82cf",
-  slideUp$h = "Progresslineimpose_slideUp_577e82cf",
-  scale$h = "Progresslineimpose_scale_577e82cf",
-  raysAppearance$h = "Progresslineimpose_raysAppearance_577e82cf",
-  rotate$h = "Progresslineimpose_rotate_577e82cf",
-  glowAppearance$h = "Progresslineimpose_glowAppearance_577e82cf",
-  highlightAppearance$h = "Progresslineimpose_highlightAppearance_577e82cf",
-  blink$h = "Progresslineimpose_blink_577e82cf",
-  slideUpIn$h = "Progresslineimpose_slideUpIn_577e82cf",
-  styles$y = {
-    base: base$x,
-    base__disabled: base__disabled$4,
-    base__finished: base__finished,
-    base__withoutBounce: base__withoutBounce$1,
-    pattern: pattern$2,
-    base__small: base__small$8,
-    gradient: gradient,
-    glow: glow$2,
-    glow__left: glow__left,
-    fadeIn: fadeIn$h,
-    fadeInThreeQuarters: fadeInThreeQuarters$h,
-    fadeInHalf: fadeInHalf$h,
-    fadeOut: fadeOut$h,
-    fadeInWithScale: fadeInWithScale$h,
-    slideUp: slideUp$h,
-    scale: scale$h,
-    raysAppearance: raysAppearance$h,
-    rotate: rotate$h,
-    "reverse-rotate": "Progresslineimpose_reverse-rotate_577e82cf",
-    glowAppearance: glowAppearance$h,
-    highlightAppearance: highlightAppearance$h,
-    blink: blink$h,
-    slideUpIn: slideUpIn$h,
   },
   ProgressLineImposeComponent = ({
     size: e,
@@ -12605,11 +12229,11 @@ const base$z = "Progressbar_a6e35bd7",
     withoutBounce: n,
   }) => {
     const o = cx(
-        styles$y.base,
-        styles$y[`base__${e}`],
-        s && styles$y.base__disabled,
-        r && styles$y.base__finished,
-        n && styles$y.base__withoutBounce,
+        styles$B.base,
+        styles$B[`base__${e}`],
+        s && styles$B.base__disabled,
+        r && styles$B.base__finished,
+        n && styles$B.base__withoutBounce,
       ),
       i = !s && !r;
     return jsxRuntimeExports.jsxs("div", {
@@ -12617,13 +12241,22 @@ const base$z = "Progressbar_a6e35bd7",
       style: a,
       ref: t,
       children: [
-        jsxRuntimeExports.jsx("div", { className: styles$y.pattern }),
-        jsxRuntimeExports.jsx("div", { className: styles$y.gradient }),
+        jsxRuntimeExports.jsx("div", { className: styles$B.pattern }),
+        jsxRuntimeExports.jsx("div", { className: styles$B.gradient }),
         i && jsxRuntimeExports.jsx(ProgressBarBlink, { size: e }),
       ],
     });
   },
-  ProgressLineImpose = reactExports.memo(ProgressLineImposeComponent);
+  ProgressLineImpose = reactExports.memo(ProgressLineImposeComponent),
+  createTimeoutInEffect = (e, t) => {
+    let s;
+    const a = setTimeout(() => {
+      s = e();
+    }, t);
+    return () => {
+      ("function" == typeof s && s(), clearTimeout(a));
+    };
+  };
 var GrowAnimationState = ((e) => (
     (e.Idle = "Idle"),
     (e.Grow = "Grow"),
@@ -12634,10 +12267,10 @@ var GrowAnimationState = ((e) => (
   SimpleAnimationState = ((e) => ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e))(
     SimpleAnimationState || {},
   );
-const base$w = "Progressbardeltagrow_c42a7a2c",
+const base$y = "Progressbardeltagrow_c42a7a2c",
   base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
   glow$1 = "Progressbardeltagrow_glow_e08fafeb",
-  styles$x = { base: base$w, base__withoutBounce: base__withoutBounce, glow: glow$1 },
+  styles$A = { base: base$y, base__withoutBounce: base__withoutBounce, glow: glow$1 },
   getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
   getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
   getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
@@ -12654,8 +12287,8 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
   }) => {
     const l = n < a,
       [c, d] = reactExports.useState(GrowAnimationState.Idle),
-      _ = c === GrowAnimationState.End,
-      p = c === GrowAnimationState.Idle,
+      p = c === GrowAnimationState.End,
+      _ = c === GrowAnimationState.Idle,
       m = c === GrowAnimationState.Grow,
       f = c === GrowAnimationState.Shrink,
       g = reactExports.useCallback(
@@ -12673,14 +12306,14 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
       );
     reactExports.useEffect(() => {
       if (!s)
-        return p
+        return _
           ? b(GrowAnimationState.Grow, t)
           : m
             ? b(GrowAnimationState.Shrink, e)
             : f
               ? b(GrowAnimationState.End, e)
-              : void (_ && o && o());
-    }, [b, s, _, m, p, f, o, t, e]);
+              : void (p && o && o());
+    }, [b, s, p, m, _, f, o, t, e]);
     const h = reactExports.useMemo(
         () => ({ width: "100%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
         [l, e],
@@ -12701,14 +12334,14 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
         }),
         [a, l, n, e],
       );
-    if (_) return null;
-    const y = cx(styles$x.base, u, l && 0 === n && styles$x.base__withoutBounce);
+    if (p) return null;
+    const y = cx(styles$A.base, u, l && 0 === n && styles$A.base__withoutBounce);
     return jsxRuntimeExports.jsx("div", {
-      style: p ? x : $,
+      style: _ ? x : $,
       className: y,
       children: jsxRuntimeExports.jsx("div", {
         style: f ? E : h,
-        className: styles$x.glow,
+        className: styles$A.glow,
         children: jsxRuntimeExports.jsx(ProgressBarBlink, { size: r }),
       }),
     });
@@ -12727,13 +12360,13 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
   }) => {
     const l = e < s,
       [c, d] = reactExports.useState(!1),
-      _ = reactExports.useCallback(
+      p = reactExports.useCallback(
         (e) => {
           (e === GrowAnimationState.Shrink && d(!0), u && u(e));
         },
         [u],
       ),
-      p = reactExports.useMemo(() => ({ width: `${s}%`, transitionProperty: "none" }), [s]),
+      _ = reactExports.useMemo(() => ({ width: `${s}%`, transitionProperty: "none" }), [s]),
       m = reactExports.useMemo(
         () => ({ width: `${e}%`, transitionDuration: `${o.line.duration}ms` }),
         [o.line.duration, e],
@@ -12746,13 +12379,13 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
           disabled: r,
           isComplete: n,
           withoutBounce: l && 0 === e,
-          baseStyles: c ? m : p,
+          baseStyles: c ? m : _,
         }),
         s >= 0 &&
           jsxRuntimeExports.jsx(ProgressBarDeltaGrow, {
             transitionDuration: o.delta.duration,
             transitionDelay: o.delta.delay,
-            onChangeAnimationState: _,
+            onChangeAnimationState: p,
             freezed: o.freezed,
             onEndAnimation: i,
             from: s,
@@ -12764,9 +12397,9 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
     });
   },
   ProgressBarGrowLine = reactExports.memo(ProgressBarGrowLineComponent),
-  base$v = "Progressbardeltasimple_4b8901e3",
+  base$x = "Progressbardeltasimple_4b8901e3",
   delta$1 = "Progressbardeltasimple_delta_9a540ec7",
-  styles$w = { base: base$v, delta: delta$1 },
+  styles$z = { base: base$x, delta: delta$1 },
   ProgressBarDeltaSimpleComponent = ({
     transitionDuration: e,
     transitionDelay: t,
@@ -12780,8 +12413,8 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
     const u = n < a,
       [l, c] = reactExports.useState(SimpleAnimationState.Idle),
       d = l === SimpleAnimationState.In,
-      _ = l === SimpleAnimationState.End,
-      p = l === SimpleAnimationState.Idle,
+      p = l === SimpleAnimationState.End,
+      _ = l === SimpleAnimationState.Idle,
       m = reactExports.useCallback(
         (e) => {
           (c(e), i && i(e));
@@ -12789,12 +12422,12 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
         [i],
       );
     (reactExports.useEffect(() => {
-      if (p && !s) {
+      if (_ && !s) {
         return createTimeoutInEffect(() => {
           m(SimpleAnimationState.In);
         }, t);
       }
-    }, [m, s, p, t]),
+    }, [m, s, _, t]),
       reactExports.useEffect(() => {
         if (d) {
           return createTimeoutInEffect(() => {
@@ -12824,14 +12457,14 @@ const base$w = "Progressbardeltagrow_c42a7a2c",
         () => ({ width: `${Math.abs(a - n)}%`, left: `${u ? n : a}%` }),
         [a, u, n],
       );
-    return _
+    return p
       ? null
       : jsxRuntimeExports.jsx("div", {
-          className: styles$w.base,
+          className: styles$z.base,
           style: b,
           children: jsxRuntimeExports.jsx("div", {
-            style: p ? f : g,
-            className: styles$w.delta,
+            style: _ ? f : g,
+            className: styles$z.delta,
             children: jsxRuntimeExports.jsx(ProgressBarBlink, { size: r }),
           }),
         });
@@ -13088,12 +12721,12 @@ const defaultTheme = Orange,
     lineRef: l,
     onChangeAnimationState: c,
     onEndAnimation: d,
-    onComplete: _,
-    className: p,
+    onComplete: p,
+    className: _,
   }) => {
     const m = useCalculatePercents(o, e, i);
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$A.base, p, styles$A[`base__${s}`]),
+      className: cx(styles$D.base, _, styles$D[`base__${s}`]),
       style: createSkin(t),
       children: [
         !n && jsxRuntimeExports.jsx(ProgressBarBackground, { size: s }),
@@ -13107,7 +12740,7 @@ const defaultTheme = Orange,
           animationSettings: a,
           onEndAnimation: d,
           onChangeAnimationState: c,
-          onComplete: _,
+          onComplete: p,
         }),
       ],
     });
@@ -13117,10 +12750,219 @@ function getNumberFormatType(e) {
   return "gold" === e ? NumberFormatType.GOLD : NumberFormatType.INTEGRAL;
 }
 const FormatNumber = ({ value: e, format: t = "integral" }) => {
-    const s = getNumberFormatType(t),
-      a = SystemLocale.getNumberFormat(e, s);
-    return void 0 !== e && void 0 !== a ? a : null;
+  const s = getNumberFormatType(t),
+    a = SystemLocale.getNumberFormat(e, s);
+  return void 0 !== e && void 0 !== a ? a : null;
+};
+var Alignment = ((e) => ((e[(e.left = 0)] = "left"), (e[(e.right = 1)] = "right"), e))(
+  Alignment || {},
+);
+function format(e, t) {
+  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
+}
+function formatPrintf(e, t) {
+  return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
+    const s = 0 === e.indexOf("%") ? 2 : 1;
+    return String(t[e.slice(s, -s)]);
+  });
+}
+const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
+  addSeparatorToRight = (e, t, s) => {
+    if (s % 2) {
+      const s = e.pop();
+      return [...e, s + t];
+    }
+    return [...e, t];
   },
+  addSeparatorToLeft = (e, t, s) => {
+    if (0 === s) return [t];
+    if (s % 2) return [...e, " " === t ? " " : t];
+    {
+      const s = e.pop();
+      return [...e, s + t];
+    }
+  },
+  splitAndFormat = (e, t, s = 0) =>
+    e.split(t).reduce(0 === s ? addSeparatorToRight : addSeparatorToLeft, []),
+  splitEuropean = (e, t = 0) => {
+    let s = [];
+    const a = new RegExp(
+        "(?<=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])(\\x2D)(?=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])",
+        "gu",
+      ),
+      r = convertNbsp(e);
+    return (splitAndFormat(r, /( )/, t).forEach((e) => (s = s.concat(splitAndFormat(e, a, 0)))), s);
+  },
+  splitChinese = (() => {
+    const e = new RegExp(
+      [
+        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+      ]
+        .map((e) => e.source)
+        .join("|"),
+      "gum",
+    );
+    return (t) =>
+      t
+        .replace(/&nbsp;/g, " ")
+        .replace(/ /g, " ")
+        .match(e);
+  })(),
+  CHINESE_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw"],
+  splitWords = (e, t = 0) => {
+    const s = R.strings.settings.LANGUAGE_CODE().toLowerCase();
+    if (CHINESE_LANGUAGE_CODES.includes(s)) return splitChinese(e);
+    if ("ja" === s) {
+      return loadDefaultJapaneseParser()
+        .parse(e)
+        .map((e) => convertNbsp(e));
+    }
+    return splitEuropean(e, t);
+  },
+  formatString = (e, t, s) =>
+    e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (s && e in s ? s[e] : splitWords(e, t))),
+  base$w = "Formattext_bb80854d",
+  styles$y = { base: base$w },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: s,
+    alignment: a = Alignment.left,
+    formatWithBrackets: r,
+  }) => {
+    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
+    const n = r && e ? format(t, e) : t;
+    return jsxRuntimeExports.jsx(reactExports.Fragment, {
+      children: n
+        .split("\n")
+        .map((t, r) =>
+          jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: cx(styles$y.base, s),
+              children: formatString(t, a, e).map((e, t) =>
+                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
+              ),
+            },
+            `${t}-${r}`,
+          ),
+        ),
+    });
+  },
+  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
+  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
+  white = "Formattextwithcolortags_white_e509d98",
+  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
+  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
+  par = "Formattextwithcolortags_par_485c5228",
+  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
+  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
+  red = "Formattextwithcolortags_red_9f8bd43",
+  redDark = "Formattextwithcolortags_redDark_5f4161da",
+  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
+  orange = "Formattextwithcolortags_orange_11869493",
+  cream = "Formattextwithcolortags_cream_12fdbea3",
+  brown = "Formattextwithcolortags_brown_e49e35ef",
+  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
+  green = "Formattextwithcolortags_green_55b7d967",
+  greenDark = "Formattextwithcolortags_greenDark_2b347344",
+  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
+  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
+  cred = "Formattextwithcolortags_cred_b30a4efa",
+  gold = "Formattextwithcolortags_gold_616e4d7",
+  bond = "Formattextwithcolortags_bond_b29091",
+  prom = "Formattextwithcolortags_prom_85aada4f",
+  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
+  fadeIn$h = "Formattextwithcolortags_fadeIn_7219dca0",
+  fadeInThreeQuarters$h = "Formattextwithcolortags_fadeInThreeQuarters_7219dca0",
+  fadeInHalf$h = "Formattextwithcolortags_fadeInHalf_7219dca0",
+  fadeOut$h = "Formattextwithcolortags_fadeOut_7219dca0",
+  fadeInWithScale$h = "Formattextwithcolortags_fadeInWithScale_7219dca0",
+  slideUp$h = "Formattextwithcolortags_slideUp_7219dca0",
+  scale$h = "Formattextwithcolortags_scale_7219dca0",
+  raysAppearance$h = "Formattextwithcolortags_raysAppearance_7219dca0",
+  rotate$h = "Formattextwithcolortags_rotate_7219dca0",
+  glowAppearance$h = "Formattextwithcolortags_glowAppearance_7219dca0",
+  highlightAppearance$h = "Formattextwithcolortags_highlightAppearance_7219dca0",
+  blink$h = "Formattextwithcolortags_blink_7219dca0",
+  slideUpIn$h = "Formattextwithcolortags_slideUpIn_7219dca0",
+  styles$x = {
+    blackReal: blackReal,
+    whiteReal: whiteReal,
+    white: white,
+    whiteOrange: whiteOrange,
+    whiteSpanish: whiteSpanish,
+    par: par,
+    parSecondary: parSecondary,
+    parTertiary: parTertiary,
+    red: red,
+    redDark: redDark,
+    yellow: yellow,
+    orange: orange,
+    cream: cream,
+    brown: brown,
+    greenBright: greenBright,
+    green: green,
+    greenDark: greenDark,
+    blueBooster: blueBooster,
+    blueTeamkiller: blueTeamkiller,
+    cred: cred,
+    gold: gold,
+    bond: bond,
+    prom: prom,
+    parNoWidth: parNoWidth,
+    fadeIn: fadeIn$h,
+    fadeInThreeQuarters: fadeInThreeQuarters$h,
+    fadeInHalf: fadeInHalf$h,
+    fadeOut: fadeOut$h,
+    fadeInWithScale: fadeInWithScale$h,
+    slideUp: slideUp$h,
+    scale: scale$h,
+    raysAppearance: raysAppearance$h,
+    rotate: rotate$h,
+    "reverse-rotate": "Formattextwithcolortags_reverse-rotate_7219dca0",
+    glowAppearance: glowAppearance$h,
+    highlightAppearance: highlightAppearance$h,
+    blink: blink$h,
+    slideUpIn: slideUpIn$h,
+  },
+  TAGGED_PHRASE_REGEXP =
+    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+  COLOR_REGEXP = new RegExp("(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))"),
+  WORDS_REGEXP = new RegExp("(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))"),
+  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
+    const a = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
+      r = reactExports.useMemo(() => t || {}, [t]);
+    let n = TAGGED_PHRASE_REGEXP.exec(e),
+      o = e,
+      i = 0;
+    for (; n;) {
+      const s = n[0],
+        u = COLOR_REGEXP.exec(s),
+        l = WORDS_REGEXP.exec(s),
+        c = n[1];
+      if (u && l) {
+        const e = u[0],
+          n = e + i++ + e;
+        ((o = o.replace(s, `%(${n})`)),
+          (r[n] = styles$x[e]
+            ? jsxRuntimeExports.jsx("span", {
+                className: styles$x[e],
+                children: jsxRuntimeExports.jsx(FormatText, { text: c, binding: t }),
+              })
+            : jsxRuntimeExports.jsx("span", {
+                style: a(e),
+                children: jsxRuntimeExports.jsx(FormatText, { text: c, binding: t }),
+              })));
+      }
+      n = TAGGED_PHRASE_REGEXP.exec(e);
+    }
+    return jsxRuntimeExports.jsx(FormatText, { text: o, classMix: s, binding: r });
+  },
+  FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent),
   createLayoutReadyInEffect = (e) => {
     let t,
       s = null;
@@ -13135,8 +12977,8 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
       }
     );
   },
-  base$u = "Textoverflow_3e47b075",
-  styles$v = { base: base$u },
+  base$v = "Textoverflow_3e47b075",
+  styles$w = { base: base$v },
   TextOverflow = ({ content: e, classMix: t, className: s, ...a }) => {
     const r = reactExports.useRef(null),
       [n, o] = reactExports.useState(!0);
@@ -13153,17 +12995,17 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
         children: jsxRuntimeExports.jsx("div", {
           ...a,
           ref: r,
-          className: cx(styles$v.base, s, t),
+          className: cx(styles$w.base, s, t),
           children: e,
         }),
       })
     );
   },
-  base$t = "SceneWrapper_52fcfc1e",
+  base$u = "SceneWrapper_52fcfc1e",
   base__down$1 = "SceneWrapper_base__down_4ece5089",
   base__moveSpaceDisabled$1 = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
-  styles$u = {
-    base: base$t,
+  styles$v = {
+    base: base$u,
     base__down: base__down$1,
     base__moveSpaceDisabled: base__moveSpaceDisabled$1,
   },
@@ -13180,8 +13022,8 @@ function SceneWrapper$1({
 }) {
   const [i, u] = reactExports.useState(!1),
     [l, c] = reactExports.useState(!1),
-    [d, _] = reactExports.useState({ x: 0, y: 0 }),
-    p = reactExports.useRef(null);
+    [d, p] = reactExports.useState({ x: 0, y: 0 }),
+    _ = reactExports.useRef(null);
   (reactExports.useEffect(() => {
     function e() {
       (u(!1), c(!1));
@@ -13196,8 +13038,8 @@ function SceneWrapper$1({
     ));
   const m = useEvent((e) => a?.(e));
   function f(e) {
-    if (!p.current) return;
-    const { left: t, right: s, top: a, bottom: r } = p.current.getBoundingClientRect();
+    if (!_.current) return;
+    const { left: t, right: s, top: a, bottom: r } = _.current.getBoundingClientRect();
     return !(e.clientX < t || e.clientY < a || e.clientX > s || e.clientY > r);
   }
   function g(e) {
@@ -13209,22 +13051,22 @@ function SceneWrapper$1({
     }, [i, m, l]),
     jsxRuntimeExports.jsx("div", {
       ...o,
-      ref: p,
+      ref: _,
       className: clsx(
-        styles$u.base,
-        i && styles$u.base__down,
-        !r && styles$u.base__moveSpaceDisabled,
+        styles$v.base,
+        i && styles$v.base__down,
+        !r && styles$v.base__moveSpaceDisabled,
         n,
       ),
       onMouseDown: function (e) {
-        (e.preventDefault(), g(e) && (u(!0), c(!0), _({ x: e.clientX, y: e.clientY })));
+        (e.preventDefault(), g(e) && (u(!0), c(!0), p({ x: e.clientX, y: e.clientY })));
       },
       onMouseMove: function (e) {
         if ((e.preventDefault(), i && l)) {
           if (!f(e)) return;
           const s = e.clientX !== d.x ? e.clientX - d.x : 0,
             a = e.clientY !== d.y ? e.clientY - d.y : 0;
-          (_({ x: e.clientX, y: e.clientY }), t({ dx: s, dy: a, dz: 0 }));
+          (p({ x: e.clientX, y: e.clientY }), t({ dx: s, dy: a, dz: 0 }));
         }
       },
       onMouseUp: function () {
@@ -13236,7 +13078,7 @@ function SceneWrapper$1({
         t({ dx: 0, dy: 0, dz: s ? -DELTA_Z : DELTA_Z });
       },
       onMouseOver: function (e) {
-        (s({ isOver3dScene: !0 }), g(e) && (u(!0), _({ x: e.clientX, y: e.clientY })));
+        (s({ isOver3dScene: !0 }), g(e) && (u(!0), p({ x: e.clientX, y: e.clientY })));
       },
       onMouseOut: function () {
         (s({ isOver3dScene: !1 }), u(!1));
@@ -13245,7 +13087,148 @@ function SceneWrapper$1({
     })
   );
 }
-const TabsContext = reactExports.createContext(null);
+var CountdownIcon = ((e) => (
+    (e.Timer = "timer"),
+    (e.Countdown = "countdown"),
+    (e.Cooldown = "cooldown"),
+    (e.None = "none"),
+    e
+  ))(CountdownIcon || {}),
+  CountdownStyle = ((e) => (
+    (e.Description = "description"),
+    (e.Short = "short"),
+    (e.Long = "long"),
+    (e.Extended = "extended"),
+    e
+  ))(CountdownStyle || {});
+const DAYS_IN_WEEK = 7,
+  HOURS_IN_DAY = 24,
+  MS_IN_SECOND = 1e3,
+  ONE_MINUTE = 60,
+  ONE_HOUR = 60 * ONE_MINUTE,
+  ONE_DAY = HOURS_IN_DAY * ONE_HOUR,
+  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
+  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
+function getTimeUnits(e = 0) {
+  let t = e;
+  const s = Math.trunc(t / ONE_DAY);
+  t -= s * ONE_DAY;
+  const a = Math.trunc(t / ONE_HOUR);
+  t -= a * ONE_HOUR;
+  const r = Math.trunc(t / ONE_MINUTE);
+  return ((t -= r * ONE_MINUTE), { days: s, hours: a, minutes: r, seconds: t });
+}
+const getRoundedTimeUnitDescription = (e, t = !0) =>
+    e.days > DAYS_IN_WEEK && t
+      ? format(R.strings.common.duration.days(), { days: e.days })
+      : e.days >= 1
+        ? 0 === e.hours
+          ? format(R.strings.common.duration.days(), { days: e.days })
+          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
+        : e.hours >= 1
+          ? 0 === e.minutes
+            ? format(R.strings.common.duration.hours(), { hours: e.hours })
+            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
+          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
+  defaultOnFinish = () => {},
+  useCountdown$1 = (e = 0, t, s = 0, a = defaultOnFinish) => {
+    const [r, n] = reactExports.useState(e);
+    return (
+      reactExports.useEffect(() => {
+        if (e > 0) {
+          n(e);
+          const r = Date.now(),
+            o = setInterval(
+              () => {
+                const t = e - Math.floor((Date.now() - r) / MS_IN_SECOND);
+                null !== s && t <= s ? (n(s), a && a(), clearInterval(o)) : n(t);
+              },
+              (t || (e > 2 * ONE_MINUTE ? ONE_MINUTE : 1)) * MS_IN_SECOND,
+            );
+          return () => {
+            clearInterval(o);
+          };
+        }
+      }, [e, t, s, a]),
+      r
+    );
+  };
+(DataTracker.instance, DataTracker.instance);
+const useCountdown = useCountdown$1,
+  useScaleState = () => {
+    const [e, t] = reactExports.useState(env.view.getScale());
+    return (
+      reactExports.useEffect(() => {
+        const e = () => {
+          t(env.view.getScale());
+        };
+        return (
+          window.addEventListener("resize", e),
+          () => {
+            window.removeEventListener("resize", e);
+          }
+        );
+      }, []),
+      e
+    );
+  },
+  base$t = "Countdown_99fa8328",
+  icon$4 = "Countdown_icon_b50ebafb",
+  description = "Countdown_description_91ad95d2",
+  styles$u = { base: base$t, icon: icon$4, description: description },
+  formatUnit = (e) => e.toString().padStart(2, "0"),
+  formatTimeUnits = (e, t) => {
+    switch (t) {
+      case CountdownStyle.Description:
+        return getRoundedTimeUnitDescription(e);
+      case CountdownStyle.Short:
+        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Long:
+        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Extended:
+        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+    }
+  },
+  IMAGES = R.images.gui.maps.icons.components.countdown,
+  getIcon = (e, t) => {
+    const s = 2 === t ? IMAGES.big : IMAGES;
+    switch (e) {
+      case CountdownIcon.Timer:
+        return s.clock();
+      case CountdownIcon.Countdown:
+        return s.hourglass();
+      case CountdownIcon.Cooldown:
+        return s.lock();
+    }
+  },
+  Countdown = ({
+    duration: e,
+    icon: t = CountdownIcon.Timer,
+    style: s = CountdownStyle.Description,
+    onTimeReached: a,
+    refreshRate: r,
+    className: n = "",
+    classNames: o = {},
+  }) => {
+    const i = r ?? (s !== CountdownStyle.Description ? 1 : void 0),
+      u = useCountdown(e, i),
+      l = useScaleState();
+    a && a[u] && a[u]();
+    const c = formatTimeUnits(getTimeUnits(u), s);
+    return jsxRuntimeExports.jsxs("div", {
+      className: cx(styles$u.base, n),
+      children: [
+        t !== CountdownIcon.None &&
+          jsxRuntimeExports.jsx("div", {
+            className: cx(styles$u.icon, o.icon),
+            style: { backgroundImage: `url('${getIcon(t, l)}')` },
+          }),
+        jsxRuntimeExports.jsx("div", { className: cx(styles$u.description, o.text), children: c }),
+      ],
+    });
+  },
+  Countdown$1 = reactExports.memo(Countdown),
+  TabsContext = reactExports.createContext(null);
 function useTabsContext() {
   const e = reactExports.useContext(TabsContext);
   return (assert(null !== e, "You can use tabs hooks only with Tabs component"), e);
@@ -13426,8 +13409,8 @@ function SliderProvider({
   onValueChange: o,
 }) {
   const { value: i, percentage: u, maxValue: l, setValue: c } = useProgressBar$1(),
-    [d, _] = reactExports.useState(!1),
-    p = useSounds(),
+    [d, p] = reactExports.useState(!1),
+    _ = useSounds(),
     m = useEvent(function (t) {
       if (a.current && t >= 0) {
         const s = a.current.getBoundingClientRect(),
@@ -13439,15 +13422,15 @@ function SliderProvider({
     }),
     f = useEvent((e, t, s, a = BASE_COMPONENT_NAME, r = !1) => {
       t > e
-        ? p.play(r ? "increaseAmount" : "increaseAmountRoll", { target: a, original: s })
-        : t < e && p.play(r ? "decreaseAmount" : "decreaseAmountRoll", { target: a, original: s });
+        ? _.play(r ? "increaseAmount" : "increaseAmountRoll", { target: a, original: s })
+        : t < e && _.play(r ? "decreaseAmount" : "decreaseAmountRoll", { target: a, original: s });
     }),
     g = useEvent((e) => {
       const s = clamp$1(0, t, e);
       return (c(s), o?.(s), s);
     }),
     b = useEvent(function () {
-      _(!0);
+      p(!0);
     }),
     h = useEvent((e) => {
       if (e.buttons === MOUSE_BUTTONS_LEFT) {
@@ -13468,7 +13451,7 @@ function SliderProvider({
         }
       );
     function e() {
-      _(!1);
+      p(!1);
     }
   }, [d, h]);
   const E = useEvent(function (t) {
@@ -13757,15 +13740,15 @@ const base$q = "Controls_9c96becc",
       disabled: l,
       filledClassNames: c,
       onValueChange: d,
-      ..._
+      ...p
     },
-    p,
+    _,
   ) {
     const m = reactExports.useRef(null),
       f = useSounds();
     return jsxRuntimeExports.jsxs(Base$c, {
       className: clsx(l && styles$n.base__disabled, o),
-      ref: assignRefs([p, m]),
+      ref: assignRefs([_, m]),
       size: t,
       onMouseEnter: function (e) {
         f.play("mouse-enter", { target: Base$c.displayName, original: e });
@@ -13786,7 +13769,7 @@ const base$q = "Controls_9c96becc",
             pattern: clsx(styles$n.filledPattern, !l && styles$n.filledPattern__active, c?.pattern),
             ...c,
           },
-          ..._,
+          ...p,
           children: jsxRuntimeExports.jsx(SliderProvider, {
             disabled: l,
             limit: a,
@@ -13938,9 +13921,9 @@ const base$l = "Frame_8333acf3",
       onClick: l,
       onMouseEnter: c,
       onMouseLeave: d,
-      WrapperElement: _,
+      WrapperElement: p,
     },
-    p,
+    _,
   ) {
     const m = (e, s) => {
         !t && r[s] && playSound(r[s]);
@@ -13963,7 +13946,7 @@ const base$l = "Frame_8333acf3",
         onMouseLeave: ((e) => () => {
           (m(0, "mouseLeave"), d?.(e));
         })(e),
-        ref: t ? p : null,
+        ref: t ? _ : null,
         children: [
           jsxRuntimeExports.jsx("div", { className: cx(styles$l.highlight, a?.highlight) }),
           "function" == typeof o && i
@@ -13986,7 +13969,7 @@ const base$l = "Frame_8333acf3",
         ],
       });
     var g;
-    return _ ? jsxRuntimeExports.jsx(_, { id: e, children: f }, e) : f;
+    return p ? jsxRuntimeExports.jsx(p, { id: e, children: f }, e) : f;
   }),
   base$j = "Verticaltabs_9761053a",
   title$1 = "Verticaltabs_title_3a5e360",
@@ -14041,8 +14024,8 @@ const base$l = "Frame_8333acf3",
     WrapperElement: c,
   }) {
     const d = reactExports.useRef(null),
-      _ = reactExports.useRef(null),
       p = reactExports.useRef(null),
+      _ = reactExports.useRef(null),
       m = reactExports.useRef(null),
       [, f] = useSpring$1(() => ({
         marginLeft: 0,
@@ -14061,7 +14044,7 @@ const base$l = "Frame_8333acf3",
       [, b] = useSpring$1(() => ({
         position: 0,
         onChange: (e) => {
-          const t = _.current;
+          const t = p.current;
           t && (t.style.transform = `translateY(${e.value.position / env.view.getScale()}rem)`);
         },
         onStart: () => {
@@ -14074,8 +14057,8 @@ const base$l = "Frame_8333acf3",
         },
       })),
       h = reactExports.useCallback((e) => {
-        if (null !== p.current && null !== m.current) {
-          e(p.current.getBoundingClientRect().top - m.current.getBoundingClientRect().top);
+        if (null !== _.current && null !== m.current) {
+          e(_.current.getBoundingClientRect().top - m.current.getBoundingClientRect().top);
         }
       }, []);
     return (
@@ -14097,15 +14080,15 @@ const base$l = "Frame_8333acf3",
         className: cx(styles$k.base, a),
         ref: m,
         children: [
-          t.map(({ id: t, items: a, title: d, groupClassNames: _ }) =>
+          t.map(({ id: t, items: a, title: d, groupClassNames: p }) =>
             jsxRuntimeExports.jsxs(
               "div",
               {
-                className: cx(styles$k.group, styles$k[`group__${n}`], _?.group),
+                className: cx(styles$k.group, styles$k[`group__${n}`], p?.group),
                 children: [
                   d &&
                     jsxRuntimeExports.jsx("div", {
-                      className: cx(styles$k.title, _?.title),
+                      className: cx(styles$k.title, p?.title),
                       children: d,
                     }),
                   a.map(({ id: t, icon: a, notification: d }) =>
@@ -14115,7 +14098,7 @@ const base$l = "Frame_8333acf3",
                         id: t,
                         icon: a,
                         notification: d,
-                        ref: p,
+                        ref: _,
                         sounds: s,
                         isActive: e === t,
                         size: n,
@@ -14137,7 +14120,7 @@ const base$l = "Frame_8333acf3",
           ),
           jsxRuntimeExports.jsx(Frame, {
             arrowRef: d,
-            ref: _,
+            ref: p,
             size: n,
             className: r?.frame,
             classNames: r,
@@ -14252,7 +14235,7 @@ const base$i = "Badge_b4595e01",
   },
   UsernameAnonymizerComponent = ({ tooltipHeaderName: e }) => {
     const t = reactExports.useMemo(
-        () => formatPrintf$1(R.strings.tooltips.anonymizer.teamStats.header(), { name: e }),
+        () => formatPrintf(R.strings.tooltips.anonymizer.teamStats.header(), { name: e }),
         [e],
       ),
       s = R.strings.tooltips.anonymizer.teamStats.body();
@@ -14279,10 +14262,10 @@ const base$i = "Badge_b4595e01",
     userNameClassName: c = "",
     clanTagClassName: d = "",
   }) => {
-    const _ = R.images.gui.maps.icons.library.badges.strips.$dyn(suffixBadgeStripeFolders[l]),
-      p = reactExports.useMemo(
-        () => ({ backgroundImage: `url(${_.$dyn(`strip_${r.badgeID}`)})` }),
-        [r, _],
+    const p = R.images.gui.maps.icons.library.badges.strips.$dyn(suffixBadgeStripeFolders[l]),
+      _ = reactExports.useMemo(
+        () => ({ backgroundImage: `url(${p.$dyn(`strip_${r.badgeID}`)})` }),
+        [r, p],
       ),
       m = R.images.gui.maps.icons.library.badges.$dyn(siffixBadgeFolders[l]),
       f = reactExports.useMemo(
@@ -14317,7 +14300,7 @@ const base$i = "Badge_b4595e01",
             {
               className: styles$i.suffixBadgeWrapper,
               children: [
-                jsxRuntimeExports.jsx("div", { className: styles$i.suffixBadgeStripe, style: p }),
+                jsxRuntimeExports.jsx("div", { className: styles$i.suffixBadgeStripe, style: _ }),
                 jsxRuntimeExports.jsx("div", { className: styles$i.suffixBadge, style: f }),
               ],
             },
@@ -14374,6 +14357,23 @@ const base$i = "Badge_b4595e01",
     jsxRuntimeExports.jsx(ContextMenu, {
       ...t,
       contentID: R.views.common.BackportContextMenu("resId"),
+      children: e,
+    }),
+  DateTime = ({
+    datetime: e,
+    format: t = DateTimeFormatsEnum.ShortDate,
+    isConvertedToLocal: s = !0,
+  }) =>
+    Object.values(DateTimeFormatsEnum).includes(t)
+      ? getRegionalDateTime(e, t, s)
+      : getFormattedDateTime(e, t, s),
+  DateTime$1 = reactExports.memo(DateTime),
+  BackportTooltip = ({ children: e, ...t }) =>
+    jsxRuntimeExports.jsx(Tooltip$1, {
+      contentId:
+        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
+      ignoreShowDelay: !0,
+      ...t,
       children: e,
     });
 function noop() {}
@@ -14507,9 +14507,9 @@ const VideoForwarded = reactExports.forwardRef(function (
               d.current && (d.current.currentTime = clamp(0, d.current.duration, e));
             },
             l = () => d.current?.play(),
-            _ = () => d.current?.pause(),
-            p = () => {
-              (_(), u(0));
+            p = () => d.current?.pause(),
+            _ = () => {
+              (p(), u(0));
             },
             m = () =>
               d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : [],
@@ -14517,7 +14517,7 @@ const VideoForwarded = reactExports.forwardRef(function (
               (u(e), l());
             },
             g = (e) => {
-              (u(e), _());
+              (u(e), p());
             },
             b = () => {
               ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
@@ -14535,8 +14535,8 @@ const VideoForwarded = reactExports.forwardRef(function (
               on: h,
               off: E,
               play: l,
-              pause: _,
-              stop: p,
+              pause: p,
+              stop: _,
               cleanup: b,
               getCurrentTime: r,
               getDuration: i,
@@ -14653,7 +14653,7 @@ const getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(
     const u = reactExports.useRef(null),
       l = reactExports.useRef(null),
       [c, d] = reactExports.useState(!1),
-      [_, p] = reactExports.useState([]),
+      [p, _] = reactExports.useState([]),
       [m, f] = reactExports.useState(0),
       g = useSkipFrame(),
       b = reactExports.useMemo(() => document.createElement("canvas"), []),
@@ -14683,7 +14683,7 @@ const getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(
             });
             return (e.push(o.slice(0, i)), e);
           }, []);
-        p(a);
+        _(a);
       }, [b, E, t, e, n]),
       $ = reactExports.useCallback(() => {
         g.run(() => {
@@ -14709,7 +14709,7 @@ const getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(
           }),
           jsxRuntimeExports.jsx("div", {
             className: styles$h.truncatedContent,
-            children: _.map((e, t) =>
+            children: p.map((e, t) =>
               jsxRuntimeExports.jsx(
                 "div",
                 { className: cx(styles$h.line, a?.line), children: e.join(" ") },
@@ -14740,8 +14740,8 @@ const getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(
     if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip, { ...t, children: a });
     const { contentId: r } = t;
     return r
-      ? jsxRuntimeExports.jsx(Tooltip$2, { ...t, contentId: r, children: a })
-      : jsxRuntimeExports.jsx(BackportTooltip$1, { ...t, children: a });
+      ? jsxRuntimeExports.jsx(Tooltip$1, { ...t, contentId: r, children: a })
+      : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: a });
   };
 var RewardType = ((e) => (
     (e.Items = "items"),
@@ -15189,9 +15189,9 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
     className: l,
     classNames: c,
     tooltipArgs: d,
-    periodicIconTooltipArgs: _,
+    periodicIconTooltipArgs: p,
   }) => {
-    const p = getBottomHighlight(a, r),
+    const _ = getBottomHighlight(a, r),
       m = getOverlay(r),
       f = getFormattedValue(n, o);
     return jsxRuntimeExports.jsxs("div", {
@@ -15211,11 +15211,11 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
               jsxRuntimeExports.jsxs("div", {
                 className: cx(styles$g.image, c?.image),
                 children: [
-                  p &&
+                  _ &&
                     jsxRuntimeExports.jsx("div", {
                       className: cx(styles$g.highlight, c?.highlight),
                       style: {
-                        backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${a}.${p}_highlight)`,
+                        backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${a}.${_}_highlight)`,
                       },
                     }),
                   t &&
@@ -15252,7 +15252,7 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
         }),
         s &&
           jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
-            tooltipArgs: _,
+            tooltipArgs: p,
             children: jsxRuntimeExports.jsx("div", {
               className: cx(styles$g.timer, c?.periodicIcon),
             }),
@@ -15293,12 +15293,12 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
   }) => {
     const c = a && a < e.length,
       d = cx(styles$f.reward, s && styles$f.reward__vertical, n),
-      _ = c ? a : e.length;
+      p = c ? a : e.length;
     return jsxRuntimeExports.jsxs("div", {
       className: cx(styles$f.base, s && styles$f.base__vertical, r),
       children: [
         e
-          .slice(0, _)
+          .slice(0, p)
           .map((e, s) =>
             jsxRuntimeExports.jsx(
               "div",
@@ -15318,7 +15318,7 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
               size: t,
               value:
                 i ||
-                formatPrintf$1(R.strings.tooltips.quests.awards.additional.bottom(), {
+                formatPrintf(R.strings.tooltips.quests.awards.additional.bottom(), {
                   count: e.length - (a || 0),
                 }),
               tooltipArgs: o,
@@ -15402,8 +15402,8 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
     onClick: l,
     onMouseEnter: c,
     onMouseLeave: d,
-    onMouseDown: _,
-    onMouseUp: p,
+    onMouseDown: p,
+    onMouseUp: _,
     onFocus: m,
     onBlur: f,
     ...g
@@ -15417,10 +15417,10 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
         l?.(e);
       }),
       C = makeOptionalCaller(A, (e) => {
-        (h(!0), _?.(e), i && playSound(i));
+        (h(!0), p?.(e), i && playSound(i));
       }),
       S = makeOptionalCaller(A, (e) => {
-        (h(!1), p?.(e));
+        (h(!1), _?.(e));
       }),
       w = makeOptionalCaller(y, (e) => {
         (x(!0), c?.(e), o && playSound(o));
@@ -15498,7 +15498,7 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
         },
         [l],
       ),
-      _ = reactExports.useCallback(
+      p = reactExports.useCallback(
         (e) => {
           (e.preventDefault(),
             e.button === LEFT_MOUSE_BUTTON &&
@@ -15508,7 +15508,7 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
         },
         [d, r, a],
       ),
-      p = reactExports.useCallback(
+      _ = reactExports.useCallback(
         (e) => {
           if ((e.preventDefault(), n)) {
             if (!d(e)) return;
@@ -15543,8 +15543,8 @@ const NORMALIZE_OVERLAYS_LIST = ["attachment"],
         n && styles$d.base__down,
         !r && styles$d.base__moveSpaceDisabled,
       ),
-      onMouseDown: _,
-      onMouseMove: p,
+      onMouseDown: p,
+      onMouseMove: _,
       onMouseUp: f,
       onWheel: m,
       onMouseOver: g,
@@ -15633,6 +15633,107 @@ const base$a = "Bubble_df22310d",
       variants: { hidden: { true: styles$b.base__hidden } },
     }),
     Value: Value,
+  },
+  DEFAULT_FRAME_TIME = 33,
+  DEFAULTS = { FRAME_TIME: DEFAULT_FRAME_TIME, INITIAL_FRAME_INDEX: 0, LOOP: !0, STATE: "play" };
+function createGridImgSourceGetter(e) {
+  const { chunk: t } = e,
+    s = t.rows * t.columns;
+  return (a) => {
+    const r = a % s,
+      n = (r % t.columns) * e.width,
+      o = Math.trunc(r / t.columns) * e.height;
+    return { path: e.getChunkPath(Math.trunc(a / s)), x: n, y: o };
+  };
+}
+function addChunkIndexToEndPath(e) {
+  return (t) => `${e}${t}`;
+}
+const CanvasSequence = reactExports.memo(function ({
+    width: e,
+    height: t,
+    getImageSource: s,
+    frameCount: a,
+    onAnimate: r,
+    frameTime: n = DEFAULTS.FRAME_TIME,
+    initialFrameIndex: o = DEFAULTS.INITIAL_FRAME_INDEX,
+    lastFrameIndex: i = a - 1,
+    loop: u = DEFAULTS.LOOP,
+    state: l = DEFAULTS.STATE,
+    onAnimationDone: c,
+    onAnimationComplete: d,
+    poster: p,
+    ..._
+  }) {
+    const m = reactExports.useRef(null),
+      [f, g] = reactExports.useState(!0);
+    return (
+      reactExports.useEffect(
+        () => createLayoutReadyInEffect(() => createLayoutReadyInEffect(() => g(!1))),
+        [],
+      ),
+      reactExports.useEffect(() => {
+        const e = m.current;
+        if (!e) return;
+        const t = e.getContext("2d"),
+          a = (s) => {
+            (t.clearRect(0, 0, e.width, e.height), t.drawImage(s.img, -s.x, -s.y));
+          };
+        switch (l) {
+          case "play":
+            return (function () {
+              const e = generateImages(o, i, s),
+                t = createFrameCounter(o, i),
+                l = window.setInterval(() => {
+                  const s = t(),
+                    n = e.get(s);
+                  n
+                    ? (r?.(s, n), a(n), s === i && (d?.(), u || (c?.(), window.clearInterval(l))))
+                    : console.error("frameImage was not provided in frameImages Map");
+                }, n);
+              return () => window.clearInterval(l);
+            })();
+          case "stop":
+            return (function () {
+              const e = 0 === o && p ? { path: p, x: 0, y: 0 } : s(o),
+                t = new Image();
+              t.src = e.path;
+              const r = () => a(createFrameImage(e, t));
+              return (t.addEventListener("load", r), () => t.removeEventListener("load", r));
+            })();
+          default:
+            return console.error("[CanvasSequence] Unreachable state!");
+        }
+      }, [n, s, o, i, u, r, d, c, p, l, f]),
+      jsxRuntimeExports.jsx("canvas", { ..._, width: e, height: t, ref: m })
+    );
+  }),
+  createFrameCounter = (e, t) => {
+    let s = e;
+    return () => {
+      const a = s;
+      return ((s += 1), s > t && (s = e), a);
+    };
+  },
+  createFrameImage = (e, t) => ({ ...e, img: t }),
+  generateImages = (e, t, s) => {
+    const a = new Map(),
+      r = {};
+    for (let n = e; n <= t; n++) {
+      const e = s(n),
+        t = r[e.path];
+      if (t) a.set(n, createFrameImage(e, t));
+      else {
+        const t = new Image();
+        ((r[e.path] = t),
+          (t.src = e.path),
+          (t.onerror = () => {
+            console.error(`[CanvasSequence] Error loading image(${n})`, e.path, `(${e.x},${e.y})`);
+          }),
+          a.set(n, createFrameImage(e, t)));
+      }
+    }
+    return a;
   };
 function makeId(e) {
   return Symbol.for(e.split("mono/")[1] || "unknown");
@@ -15789,7 +15890,7 @@ function TableProvider({
         getAt: computeds.primitive((t) => e[t]),
       };
     }),
-    _ = reactExports.useCallback(
+    p = reactExports.useCallback(
       function () {
         0 !== l.current.size &&
           (runInAction$1(() => {
@@ -15800,11 +15901,11 @@ function TableProvider({
       },
       [d],
     ),
-    p = reactExports.useCallback(
+    _ = reactExports.useCallback(
       function (e, t) {
-        (l.current.set(e, t), null === c.current && (c.current = requestAnimationFrame(_)));
+        (l.current.set(e, t), null === c.current && (c.current = requestAnimationFrame(p)));
       },
-      [_],
+      [p],
     ),
     m = reactExports.useCallback(
       (e, s, a, r) => {
@@ -15834,9 +15935,9 @@ function TableProvider({
               }
             else console.warn(`Row is not found by index ${t}`);
           }
-          for (let t = 0; t < a; t += 1) p(t, s[t]);
+          for (let t = 0; t < a; t += 1) _(t, s[t]);
         }),
-      [t.length, d, p],
+      [t.length, d, _],
     ));
   const f = useReactTable({
       data: s,
@@ -15854,9 +15955,9 @@ function TableProvider({
         cellRefs: u,
         columnSizes: d,
         handleCellRefsSet: m,
-        scheduleColumnSizeUpdate: p,
+        scheduleColumnSizeUpdate: _,
       }),
-      [f, u, d, m, p],
+      [f, u, d, m, _],
     );
   return jsxRuntimeExports.jsx(TableContext.Provider, { value: g, children: e });
 }
@@ -16547,8 +16648,8 @@ const delta = "Delta_eb295acb",
     ) {
       const l = reactExports.useRef(null),
         c = useProgressBar(),
-        [d, _] = useSpring(() => ({ width: 0 })),
-        [p, m] = useSpring(() => ({ width: 0 })),
+        [d, p] = useSpring(() => ({ width: 0 })),
+        [_, m] = useSpring(() => ({ width: 0 })),
         [f, g] = useSpring(() => ({ left: 0, width: 0 })),
         [b, ...h] = n,
         [E, x] = reactExports.useState(h),
@@ -16560,7 +16661,7 @@ const delta = "Delta_eb295acb",
           if (0 === A) return;
           const [e, ...t] = n;
           (y(e ?? "done"), x(t));
-        }, [_, m, n, A]));
+        }, [p, m, n, A]));
       const C = useEvent(o ?? noop$1);
       reactExports.useEffect(() => C($), [$, C]);
       const S = useEvent(() => {
@@ -16571,7 +16672,7 @@ const delta = "Delta_eb295acb",
         reactExports.useEffect(() => {
           const e = l.current;
           if (!e || 0 === A)
-            return (m.set({ width: 0 }), _.set({ width: 0 }), y("done"), void x([]));
+            return (m.set({ width: 0 }), p.set({ width: 0 }), y("done"), void x([]));
           const a = 100 * Math.max(0, c.percentage - Math.max(0, A)),
             r = 100 * Math.abs(A);
           return (
@@ -16579,7 +16680,7 @@ const delta = "Delta_eb295acb",
             "growing" === $
               ? (g.set({ left: a, width: r }),
                 m.set({ width: 100 }),
-                void _.start({
+                void p.start({
                   from: { width: 0 },
                   to: { width: 100 },
                   config: t ?? ANIMATION_CONFIG,
@@ -16588,7 +16689,7 @@ const delta = "Delta_eb295acb",
                 }))
               : "shrinking" === $
                 ? (g.set({ left: a, width: r }),
-                  _.set({ width: 100 }),
+                  p.set({ width: 100 }),
                   void m.start({
                     from: { width: 100 },
                     to: { width: 0 },
@@ -16598,7 +16699,7 @@ const delta = "Delta_eb295acb",
                   }))
                 : void 0
           );
-        }, [g, c.percentage, A, t, _, S, m, v, s, $]),
+        }, [g, c.percentage, A, t, p, S, m, v, s, $]),
         jsxRuntimeExports.jsxs(animated.div, {
           ...i,
           ref: assignRefs([u, l]),
@@ -16607,7 +16708,7 @@ const delta = "Delta_eb295acb",
           children: [
             jsxRuntimeExports.jsxs(animated.div, {
               ...i,
-              style: { width: p.width.to((e) => `${e}%`) },
+              style: { width: _.width.to((e) => `${e}%`) },
               className: clsx(a?.outside, styles$6.outside, A > 0 && styles$6.outside__increase),
               children: [
                 jsxRuntimeExports.jsx(animated.div, {
@@ -16796,11 +16897,11 @@ const delta = "Delta_eb295acb",
           !n.activeComponents.has("delta") &&
           o();
       }, [n.activeComponents, n.animationType, n.progressCompleted, o]));
-    const [_, p] = useSpring(() => ({ width: d }));
+    const [p, _] = useSpring(() => ({ width: d }));
     return (
       reactExports.useEffect(() => {
         i.run(() =>
-          p.start({
+          _.start({
             ...getBaseAnimationConfig({
               baseValue: d,
               newValue: l,
@@ -16812,13 +16913,13 @@ const delta = "Delta_eb295acb",
             onStart: () => o(),
           }),
         );
-      }, [a, p, d, n.animationType, u, l, o, i]),
+      }, [a, _, d, n.animationType, u, l, o, i]),
       jsxRuntimeExports.jsxs("div", {
         className: clsx(styles$5.base, s),
         children: [
           jsxRuntimeExports.jsx(animated.div, {
             className: t?.fill,
-            style: { width: _.width.to((e) => `${e}%`) },
+            style: { width: p.width.to((e) => `${e}%`) },
           }),
           r.children ??
             jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
@@ -16839,7 +16940,7 @@ const delta = "Delta_eb295acb",
               !u.has("previewDelta") && !n.progressCompleted && styles$5.edge__visible,
               n.status && styles$5[`edge__${n.status}`],
             ),
-            style: { left: _.width.to((e) => `${e}%`) },
+            style: { left: p.width.to((e) => `${e}%`) },
           }),
         ],
       })
@@ -16995,11 +17096,11 @@ function ProgressBarProvider(e) {
   reactExports.useEffect(() => {
     d(a);
   }, [d, a]);
-  const _ = reactExports.useMemo(() => {
+  const p = reactExports.useMemo(() => {
     if (void 0 !== n && void 0 !== o) return { value: n, maxValue: o, percentage: n / o };
   }, [n, o]);
   assert(a > 0, "ProgressBar: maxValue must be greater than 0");
-  const p = reactExports.useMemo(() => {
+  const _ = reactExports.useMemo(() => {
       const s = t / a === 1 && e.status !== statuses.doneInactive;
       return e.animationType === animations.growFreeze ? s && e.maxValueAchieved : s;
     }, [a, e.animationType, e.maxValueAchieved, e.status, t]),
@@ -17012,9 +17113,9 @@ function ProgressBarProvider(e) {
         animationType: e.animationType ?? animations.simple,
         size: e.size,
         status: e.status,
-        previous: _,
+        previous: p,
         activeComponents: i.current,
-        progressCompleted: p,
+        progressCompleted: _,
         hasComponent: l,
         soundTarget: e.soundTarget,
         silent: e.silent ?? !1,
@@ -17031,8 +17132,8 @@ function ProgressBarProvider(e) {
         e.soundTarget,
         e.silent,
         e.maxValueAchieved,
-        _,
         p,
+        _,
         l,
       ],
     );
@@ -17126,108 +17227,7 @@ function isValidBreakpoint(e) {
   (ProgressBar.sizes = sizes),
   (ProgressBar.statuses = statuses),
   (ProgressBar.animations = animations));
-const DEFAULT_FRAME_TIME = 33,
-  DEFAULTS = { FRAME_TIME: DEFAULT_FRAME_TIME, INITIAL_FRAME_INDEX: 0, LOOP: !0, STATE: "play" };
-function createGridImgSourceGetter(e) {
-  const { chunk: t } = e,
-    s = t.rows * t.columns;
-  return (a) => {
-    const r = a % s,
-      n = (r % t.columns) * e.width,
-      o = Math.trunc(r / t.columns) * e.height;
-    return { path: e.getChunkPath(Math.trunc(a / s)), x: n, y: o };
-  };
-}
-function addChunkIndexToEndPath(e) {
-  return (t) => `${e}${t}`;
-}
-const CanvasSequence = reactExports.memo(function ({
-    width: e,
-    height: t,
-    getImageSource: s,
-    frameCount: a,
-    onAnimate: r,
-    frameTime: n = DEFAULTS.FRAME_TIME,
-    initialFrameIndex: o = DEFAULTS.INITIAL_FRAME_INDEX,
-    lastFrameIndex: i = a - 1,
-    loop: u = DEFAULTS.LOOP,
-    state: l = DEFAULTS.STATE,
-    onAnimationDone: c,
-    onAnimationComplete: d,
-    poster: _,
-    ...p
-  }) {
-    const m = reactExports.useRef(null),
-      [f, g] = reactExports.useState(!0);
-    return (
-      reactExports.useEffect(
-        () => createLayoutReadyInEffect(() => createLayoutReadyInEffect(() => g(!1))),
-        [],
-      ),
-      reactExports.useEffect(() => {
-        const e = m.current;
-        if (!e) return;
-        const t = e.getContext("2d"),
-          a = (s) => {
-            (t.clearRect(0, 0, e.width, e.height), t.drawImage(s.img, -s.x, -s.y));
-          };
-        switch (l) {
-          case "play":
-            return (function () {
-              const e = generateImages(o, i, s),
-                t = createFrameCounter(o, i),
-                l = window.setInterval(() => {
-                  const s = t(),
-                    n = e.get(s);
-                  n
-                    ? (r?.(s, n), a(n), s === i && (d?.(), u || (c?.(), window.clearInterval(l))))
-                    : console.error("frameImage was not provided in frameImages Map");
-                }, n);
-              return () => window.clearInterval(l);
-            })();
-          case "stop":
-            return (function () {
-              const e = 0 === o && _ ? { path: _, x: 0, y: 0 } : s(o),
-                t = new Image();
-              t.src = e.path;
-              const r = () => a(createFrameImage(e, t));
-              return (t.addEventListener("load", r), () => t.removeEventListener("load", r));
-            })();
-          default:
-            return console.error("[CanvasSequence] Unreachable state!");
-        }
-      }, [n, s, o, i, u, r, d, c, _, l, f]),
-      jsxRuntimeExports.jsx("canvas", { ...p, width: e, height: t, ref: m })
-    );
-  }),
-  createFrameCounter = (e, t) => {
-    let s = e;
-    return () => {
-      const a = s;
-      return ((s += 1), s > t && (s = e), a);
-    };
-  },
-  createFrameImage = (e, t) => ({ ...e, img: t }),
-  generateImages = (e, t, s) => {
-    const a = new Map(),
-      r = {};
-    for (let n = e; n <= t; n++) {
-      const e = s(n),
-        t = r[e.path];
-      if (t) a.set(n, createFrameImage(e, t));
-      else {
-        const t = new Image();
-        ((r[e.path] = t),
-          (t.src = e.path),
-          (t.onerror = () => {
-            console.error(`[CanvasSequence] Error loading image(${n})`, e.path, `(${e.x},${e.y})`);
-          }),
-          a.set(n, createFrameImage(e, t)));
-      }
-    }
-    return a;
-  },
-  base$1 = "Counter_dc10b86a",
+const base$1 = "Counter_dc10b86a",
   show = "Counter_show_f40ddf91",
   base__big = "Counter_base__big_6bd2877c",
   base__small = "Counter_base__small_631cb8e0",
@@ -17397,9 +17397,9 @@ const CanvasSequence = reactExports.memo(function ({
     type: l = "back",
     soundHover: c = "highlight",
     soundClick: d = "play",
-    ..._
+    ...p
   }) => {
-    const p = reactExports.useCallback(
+    const _ = reactExports.useCallback(
         (e) => {
           (r?.(e), env.sound.play.sound(c));
         },
@@ -17425,12 +17425,12 @@ const CanvasSequence = reactExports.memo(function ({
       );
     return jsxRuntimeExports.jsxs("div", {
       className: cx(styles.base, styles[`base__${l}`], styles[`base__${u}`], a?.base),
-      onMouseEnter: p,
+      onMouseEnter: _,
       onMouseLeave: m,
       onMouseDown: f,
       onMouseUp: g,
       onClick: t,
-      ..._,
+      ...p,
       children: [
         "info" !== l && jsxRuntimeExports.jsx("div", { className: styles.shine }),
         jsxRuntimeExports.jsx("div", {
@@ -17446,304 +17446,304 @@ const CanvasSequence = reactExports.memo(function ({
     });
   };
 export {
-  writeClipboard as $,
-  vehicleState as A,
-  Button$1 as B,
-  Countdown$1 as C,
-  getRoleByKey as D,
-  comparer as E,
-  FormatText$1 as F,
-  getVehicleImageKey as G,
-  resources as H,
-  renderResolvedString as I,
+  Bar as $,
+  sort as A,
+  isNumber as B,
+  makeActions as C,
+  mapNonNullable as D,
+  useSimpleTooltip as E,
+  useTimeout as F,
+  useSounds as G,
+  writeClipboard as H,
+  usePopover as I,
   JSXBuilder as J,
-  createString as K,
-  assert as L,
+  HeadlessButton as K,
+  LOWER_ALPHABET as L,
   ModelRouterProvider as M,
-  LOWER_ALPHABET as N,
-  NUMBERS_ALPHABET as O,
-  sameTanksRemap as P,
-  iter as Q,
-  sort as R,
-  isNumber as S,
-  makeActions as T,
-  UIProvider as U,
+  NUMBERS_ALPHABET as N,
+  asMemoized as O,
+  useHoverState as P,
+  Slot$1 as Q,
+  useVerticalScroll as R,
+  Sprite as S,
+  TruncatedText as T,
+  useScrollBounding as U,
   Video$1 as V,
-  mapNonNullable as W,
-  Sprite as X,
-  useSimpleTooltip as Y,
-  useTimeout as Z,
-  useSounds as _,
-  CountdownIcon as a,
-  addEventListener as a$,
-  usePopover as a0,
-  HeadlessButton as a1,
-  TruncatedText as a2,
-  asMemoized as a3,
-  useHoverState as a4,
-  Slot$1 as a5,
-  useVerticalScroll as a6,
-  useScrollBounding as a7,
-  Area as a8,
-  Popover as a9,
-  Accordion as aA,
-  reduce as aB,
-  useTooltip as aC,
-  VehicleInfo as aD,
-  isTypeValidValue as aE,
-  useLazyModel as aF,
-  useEvent as aG,
-  some as aH,
-  useAdaptive as aI,
-  sizes$j as aJ,
-  SimpleTooltip$1 as aK,
-  themes$1 as aL,
-  FormatText as aM,
-  sizes$f as aN,
-  Currency as aO,
-  types$2 as aP,
-  BackportTooltip as aQ,
-  WithDiscount as aR,
-  filterMap as aS,
-  get as aT,
-  breakpointsByType as aU,
-  easings as aV,
-  CardSingle as aW,
-  Discount as aX,
-  normalizeResource as aY,
-  sizes$g as aZ,
-  useSkipFrame$1 as a_,
-  MediaWrapperElement as aa,
-  Base$u as ab,
-  Bar as ac,
-  Slottable as ad,
-  Toggle as ae,
-  toggleSizes as af,
-  toggleThemes as ag,
-  FormatString as ah,
-  DefaultScroll as ai,
-  useUpscale as aj,
-  Image$1 as ak,
-  VehicleType as al,
-  VehicleRole as am,
-  VehicleLevel as an,
-  Input as ao,
-  placeholderVisibility as ap,
-  sendEvent$1 as aq,
-  useInput as ar,
-  map as as,
-  createParser as at,
-  useBackdropTooltip as au,
-  every as av,
-  findIndexLast as aw,
-  findIndex as ax,
-  usePrevious as ay,
-  useUnmount$1 as az,
-  useMount$1 as b,
-  LoadoutItem as b$,
-  unsafeGet as b0,
-  useEmitter as b1,
-  mouse$1 as b2,
-  clamp$1 as b3,
-  mapExists as b4,
-  filter as b5,
-  find as b6,
-  BackdropTooltip as b7,
-  useSpecialTooltip as b8,
-  LazyModel as b9,
-  KeyButton as bA,
-  useAdaptiveWidth as bB,
-  ScrollVelocityGuardContent as bC,
-  groupMapBy as bD,
-  toArray as bE,
-  fromModel as bF,
-  roles as bG,
-  perkStates as bH,
-  Tooltip$1 as bI,
-  normilizeVehicleType as bJ,
-  createOptionalDLProvider as bK,
-  matchPath as bL,
-  useHandleKeyup as bM,
-  Base$v as bN,
-  Waiting as bO,
-  useThrottle as bP,
-  Switcher$1 as bQ,
-  overlayTypes as bR,
-  sizes$a as bS,
-  breakpoints as bT,
-  useDragAndDrop as bU,
-  useScaleState$1 as bV,
-  DragAndDrop as bW,
-  useResize$1 as bX,
-  mouseButtons as bY,
-  isNonNullable as bZ,
-  Slot as b_,
-  SimpleTooltip as ba,
-  Checkbox as bb,
-  sizes$d as bc,
-  MaskArea as bd,
-  WITHOUT_ROLE as be,
-  useIsFirstRender as bf,
-  OPEN_ANIMATION_DURATION as bg,
-  useExternalPaddings as bh,
-  isEqual as bi,
-  discountTypes as bj,
-  VehicleImage as bk,
-  RentalCounter as bl,
-  intl$3 as bm,
-  directions$1 as bn,
-  useSpecialContextMenu as bo,
-  DisposeBuilder as bp,
-  remToPx$1 as bq,
-  useScrollByDragElements as br,
-  Area$1 as bs,
-  dragDirections as bt,
-  List as bu,
-  useHandleKeydown as bv,
-  useHorizontalScroll as bw,
-  throttle as bx,
-  ErrorHandler as by,
-  __vitePreload as bz,
+  createLayoutReadyInEffect$1 as W,
+  Area as X,
+  Popover as Y,
+  MediaWrapperElement as Z,
+  Base$u as _,
+  roles$1 as a,
+  BackdropTooltip as a$,
+  Slottable as a0,
+  Toggle as a1,
+  toggleSizes as a2,
+  toggleThemes as a3,
+  FormatString as a4,
+  DefaultScroll as a5,
+  useUpscale as a6,
+  Image$1 as a7,
+  VehicleType as a8,
+  VehicleRole as a9,
+  sizes$j as aA,
+  SimpleTooltip$1 as aB,
+  themes$1 as aC,
+  FormatText$1 as aD,
+  sizes$f as aE,
+  Currency as aF,
+  types$2 as aG,
+  BackportTooltip$1 as aH,
+  WithDiscount as aI,
+  filterMap as aJ,
+  get as aK,
+  breakpointsByType as aL,
+  easings as aM,
+  CardSingle as aN,
+  Discount as aO,
+  normalizeResource as aP,
+  sizes$g as aQ,
+  useMedia as aR,
+  useSkipFrame$1 as aS,
+  addEventListener as aT,
+  unsafeGet as aU,
+  useEmitter as aV,
+  mouse$1 as aW,
+  clamp$1 as aX,
+  mapExists as aY,
+  filter as aZ,
+  find as a_,
+  VehicleLevel as aa,
+  Input as ab,
+  placeholderVisibility as ac,
+  sendEvent$1 as ad,
+  useInput as ae,
+  Button$1 as af,
+  keyCodes as ag,
+  map as ah,
+  createParser as ai,
+  useBackdropTooltip as aj,
+  every as ak,
+  findIndexLast as al,
+  findIndex as am,
+  usePrevious as an,
+  useUnmount$1 as ao,
+  Accordion as ap,
+  reduce as aq,
+  useTooltip as ar,
+  VehicleInfo as as,
+  isTypeValidValue as at,
+  useLazyModel as au,
+  useKeydownListener as av,
+  play$1 as aw,
+  useEvent as ax,
+  some as ay,
+  useAdaptive as az,
+  identity as b,
+  SoundsProvider as b$,
+  useSpecialTooltip as b0,
+  useMount$1 as b1,
+  LazyModel as b2,
+  SimpleTooltip as b3,
+  Checkbox as b4,
+  sizes$d as b5,
+  MaskArea as b6,
+  WITHOUT_ROLE as b7,
+  useIsFirstRender as b8,
+  OPEN_ANIMATION_DURATION as b9,
+  perkStates as bA,
+  Tooltip$2 as bB,
+  normilizeVehicleType as bC,
+  createOptionalDLProvider as bD,
+  matchPath as bE,
+  useHandleKeyup as bF,
+  Base$v as bG,
+  Waiting as bH,
+  useThrottle as bI,
+  Switcher$1 as bJ,
+  overlayTypes as bK,
+  sizes$a as bL,
+  breakpoints as bM,
+  useDragAndDrop as bN,
+  useScaleState$1 as bO,
+  DragAndDrop as bP,
+  useResize$1 as bQ,
+  mouseButtons as bR,
+  isNonNullable as bS,
+  Slot as bT,
+  LoadoutItem as bU,
+  get$1 as bV,
+  debounce as bW,
+  useDebounce as bX,
+  useInsideEvent as bY,
+  useParamTooltip as bZ,
+  createSoundPlay as b_,
+  useExternalPaddings as ba,
+  isEqual as bb,
+  discountTypes as bc,
+  VehicleImage as bd,
+  RentalCounter as be,
+  intl$3 as bf,
+  directions$1 as bg,
+  useSpecialContextMenu as bh,
+  DisposeBuilder as bi,
+  remToPx$1 as bj,
+  useScrollByDragElements as bk,
+  Area$1 as bl,
+  dragDirections as bm,
+  List as bn,
+  useHandleKeydown as bo,
+  useHorizontalScroll as bp,
+  throttle as bq,
+  ErrorHandler as br,
+  __vitePreload as bs,
+  KeyButton as bt,
+  useAdaptiveWidth as bu,
+  ScrollVelocityGuardContent as bv,
+  groupMapBy as bw,
+  toArray as bx,
+  fromModel as by,
+  roles as bz,
   computeds as c,
-  themes as c$,
-  get$1 as c0,
-  debounce as c1,
-  useDebounce as c2,
-  useInsideEvent as c3,
-  useParamTooltip as c4,
-  createSoundPlay as c5,
-  SoundsProvider as c6,
-  readKey as c7,
-  getKeyNameFromScanCode as c8,
-  renderString as c9,
-  forEach as cA,
-  chunks as cB,
-  defaultAnimationSettings as cC,
-  FormatNumber as cD,
-  Size as cE,
-  FormatTextWithColorTags as cF,
-  MediaSize as cG,
-  TextOverflow as cH,
-  FormattedValue as cI,
-  formatValue as cJ,
-  formatPrintf$1 as cK,
-  MediaWrapper as cL,
-  SceneWrapper$1 as cM,
-  useWulfTooltip as cN,
-  imageSizes$1 as cO,
-  currencyTypes as cP,
-  sizes$6 as cQ,
-  Slider as cR,
-  forceTriggerMouseMove$1 as cS,
-  MultilineOverflow$1 as cT,
-  getRealFormat as cU,
-  useCardContext as cV,
-  Card as cW,
-  statusTypes as cX,
-  useCardsWrapperContext as cY,
-  CardsWrapper as cZ,
-  Tabs as c_,
-  format$2 as ca,
-  subtract as cb,
-  seconds as cc,
-  now as cd,
-  useClickOutside as ce,
-  pxToRem$1 as cf,
-  onRescale as cg,
-  isEmptyObject as ch,
-  useSoundsOptional as ci,
-  assignRefs as cj,
-  Timer as ck,
-  ExtendedText as cl,
-  calcPercent as cm,
-  delay as cn,
-  ProgressBar$2 as co,
-  MS_IN_SECOND$1 as cp,
-  MAX_i32 as cq,
-  mapFilter as cr,
-  ImageSize$1 as cs,
-  capitalize as ct,
-  sizes$8 as cu,
-  formats as cv,
-  Reward$1 as cw,
-  formatPrintf as cx,
-  getRewardValueType$1 as cy,
-  getRewardImage$1 as cz,
+  Background as c$,
+  readKey as c0,
+  getKeyNameFromScanCode as c1,
+  renderString as c2,
+  format$2 as c3,
+  subtract as c4,
+  seconds as c5,
+  now as c6,
+  useClickOutside as c7,
+  pxToRem$1 as c8,
+  onRescale as c9,
+  MediaSize as cA,
+  TextOverflow as cB,
+  FormattedValue as cC,
+  formatValue as cD,
+  formatPrintf as cE,
+  UIProvider as cF,
+  MediaWrapper as cG,
+  SceneWrapper$1 as cH,
+  useWulfTooltip as cI,
+  Countdown$1 as cJ,
+  CountdownIcon as cK,
+  imageSizes$1 as cL,
+  currencyTypes as cM,
+  sizes$6 as cN,
+  Slider as cO,
+  forceTriggerMouseMove$1 as cP,
+  MultilineOverflow$1 as cQ,
+  getRealFormat as cR,
+  useCardContext as cS,
+  Card as cT,
+  statusTypes as cU,
+  useCardsWrapperContext as cV,
+  CardsWrapper as cW,
+  Tabs as cX,
+  themes as cY,
+  sizes$7 as cZ,
+  setContentReady as c_,
+  isEmptyObject as ca,
+  useSoundsOptional as cb,
+  assignRefs as cc,
+  Timer as cd,
+  ExtendedText as ce,
+  calcPercent as cf,
+  delay as cg,
+  ProgressBar$2 as ch,
+  MS_IN_SECOND$1 as ci,
+  MAX_i32 as cj,
+  mapFilter as ck,
+  ImageSize$1 as cl,
+  capitalize as cm,
+  sizes$8 as cn,
+  formats as co,
+  Reward$1 as cp,
+  formatPrintf$1 as cq,
+  getRewardValueType$1 as cr,
+  getRewardImage$1 as cs,
+  forEach as ct,
+  chunks as cu,
+  defaultAnimationSettings as cv,
+  FormatText as cw,
+  FormatNumber as cx,
+  Size as cy,
+  FormatTextWithColorTags as cz,
   defineStyledComponent as d,
-  Img as d$,
-  sizes$7 as d0,
-  setContentReady as d1,
-  Background as d2,
-  Switch as d3,
-  Route as d4,
-  createMultipleTargetOverrides as d5,
-  setSkipFramesAllowed as d6,
-  graphicsQuality as d7,
-  MediaHeight as d8,
-  constFalse as d9,
-  Rewards as dA,
-  Video as dB,
-  Reward as dC,
-  IconButton as dD,
-  toRoman as dE,
-  MediaWidth as dF,
-  useIsUnmounted as dG,
-  useRepeatCallback as dH,
-  Direction as dI,
-  throttle$1 as dJ,
-  Bubble as dK,
-  sizes$5 as dL,
-  getRewardTooltipConfig as dM,
-  SceneWrapper as dN,
-  CButton as dO,
-  ButtonSize as dP,
-  ButtonType as dQ,
-  useInterval as dR,
-  add as dS,
-  useTabsContext as dT,
-  useRefResizeObserver as dU,
-  isReactComponent as dV,
-  fromModel$1 as dW,
-  fromAccountModel as dX,
-  includes as dY,
-  loadPlugin as dZ,
-  useLayoutReady as d_,
-  VerticalTabs as da,
-  BackportContextMenu as db,
-  PlayerNickname as dc,
-  defaultSettings as dd,
-  useApi as de,
-  VerticalScrollProvider as df,
-  Tooltip$2 as dg,
-  DateTime$1 as dh,
-  DateTimeFormatsEnum as di,
-  Spinner as dj,
-  useMouseCoordinatesSprings as dk,
-  usePreloadImagesState as dl,
-  useApi$1 as dm,
-  HorizontalScrollProvider as dn,
-  Bar$1 as dp,
-  useResizeLayoutReady as dq,
-  AnimationType as dr,
-  GrowAnimationState as ds,
-  BackportTooltip$1 as dt,
-  MultilineOverflowWithTooltip as du,
-  DynamicTooltipWrapper as dv,
-  slice as dw,
-  useHorizontalDrag as dx,
-  getSize$1 as dy,
-  ImageSize as dz,
-  createLayoutReadyInEffect$1 as e,
-  GradientText as e0,
-  useMeasure as e1,
-  measureTypes as e2,
-  remove as e3,
-  columnBehaviours as e4,
-  PlayerInfo as e5,
-  useBackportContextMenu as e6,
-  Table as e7,
-  tableParts as e8,
-  useTableContext as e9,
+  loadPlugin as d$,
+  Switch as d0,
+  Route as d1,
+  createMultipleTargetOverrides as d2,
+  setSkipFramesAllowed as d3,
+  graphicsQuality as d4,
+  MediaHeight as d5,
+  constFalse as d6,
+  VerticalTabs as d7,
+  BackportContextMenu as d8,
+  PlayerNickname as d9,
+  Reward as dA,
+  IconButton as dB,
+  toRoman as dC,
+  MediaWidth as dD,
+  useIsUnmounted as dE,
+  useRepeatCallback as dF,
+  Direction as dG,
+  throttle$1 as dH,
+  Bubble as dI,
+  sizes$5 as dJ,
+  getRewardTooltipConfig as dK,
+  SceneWrapper as dL,
+  CButton as dM,
+  ButtonSize as dN,
+  ButtonType as dO,
+  useCallbackOnEsc as dP,
+  addPreloadTexture$1 as dQ,
+  useLoop as dR,
+  getRewardValueType as dS,
+  useInterval as dT,
+  add as dU,
+  useTabsContext as dV,
+  useRefResizeObserver as dW,
+  isReactComponent as dX,
+  fromModel$1 as dY,
+  fromAccountModel as dZ,
+  includes as d_,
+  defaultSettings as da,
+  useApi as db,
+  VerticalScrollProvider as dc,
+  Tooltip$1 as dd,
+  DateTime$1 as de,
+  DateTimeFormatsEnum as df,
+  Spinner as dg,
+  useMouseCoordinatesSprings as dh,
+  usePreloadImagesState as di,
+  useApi$1 as dj,
+  HorizontalScrollProvider as dk,
+  Bar$1 as dl,
+  createTimeoutInEffect$1 as dm,
+  useResizeLayoutReady as dn,
+  AnimationType as dp,
+  GrowAnimationState as dq,
+  BackportTooltip as dr,
+  MultilineOverflowWithTooltip as ds,
+  DynamicTooltipWrapper as dt,
+  slice as du,
+  useHorizontalDrag as dv,
+  getSize$1 as dw,
+  ImageSize as dx,
+  Rewards as dy,
+  Video as dz,
+  atSpgRoles as e,
+  useLayoutReady as e0,
+  Img as e1,
+  GradientText as e2,
+  useMeasure as e3,
+  measureTypes as e4,
+  remove as e5,
+  columnBehaviours as e6,
+  PlayerInfo as e7,
+  useBackportContextMenu as e8,
+  Table as e9,
   push as eA,
   createMockControls as eB,
   createSimpleGetter as eC,
@@ -17754,14 +17754,14 @@ export {
   Counter as eH,
   TextButton as eI,
   fromMs as eJ,
-  TableProvider as ea,
-  ProgressBar as eb,
-  isValidBreakpoint as ec,
-  useAdjustScreenWidth as ed,
-  createTargetOverrides as ee,
-  injectGFPlugins as ef,
-  useLoop as eg,
-  getRewardValueType as eh,
+  tableParts as ea,
+  useTableContext as eb,
+  TableProvider as ec,
+  ProgressBar as ed,
+  isValidBreakpoint as ee,
+  useAdjustScreenWidth as ef,
+  createTargetOverrides as eg,
+  injectGFPlugins as eh,
   ONE_WEEK as ei,
   ONE_DAY$1 as ej,
   ONE_HOUR$1 as ek,
@@ -17780,25 +17780,25 @@ export {
   KEY_CODES as ex,
   env as ey,
   lastElement as ez,
-  createTimeoutInEffect$1 as f,
-  useKeydownListener as g,
-  useMedia as h,
+  mediumTankRoles as f,
+  isRentVehicle as g,
+  heavyTankRoles as h,
   initializeModelWithContext as i,
-  useCallbackOnEsc as j,
-  keyCodes as k,
-  addPreloadTexture$1 as l,
+  nationById as j,
+  getRoleByKey as k,
+  lightTankRoles as l,
   mapRange as m,
   noop$1 as n,
-  roles$1 as o,
-  play$1 as p,
-  identity as q,
+  comparer as o,
+  getVehicleImageKey as p,
+  resources as q,
   runView as r,
-  atSpgRoles as s,
+  renderResolvedString as s,
   types$4 as t,
   useRouter as u,
-  lightTankRoles as v,
-  mediumTankRoles as w,
-  heavyTankRoles as x,
-  isRentVehicle as y,
-  nationById as z,
+  vehicleState as v,
+  createString as w,
+  assert as x,
+  sameTanksRemap as y,
+  iter as z,
 };

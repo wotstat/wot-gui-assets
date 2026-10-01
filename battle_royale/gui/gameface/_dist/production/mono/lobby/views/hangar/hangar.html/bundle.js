@@ -3098,10 +3098,10 @@ const Pi = o(function ({ className: e }) {
     const { model: t } = ho();
     return t.isPaused.get() ? null : n.jsx(Rr, { id: zr, className: e });
   }),
-  Si = "IntroOverlay_glow_5fc31c94",
+  Si = "IntroOverlay_glow_48b8ad88",
   ki = "IntroOverlay_hoverHelper_9cec2539",
   Mi = "IntroOverlay_8d89d328",
-  Ei = "IntroOverlay_base__extraChapter_d35cc3d4",
+  Ei = "IntroOverlay_base__extraChapter_2f0d6d76",
   Ai = "IntroOverlay_base__holiday_2f0d6d76",
   Ri = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
   Bi = "IntroOverlay_borderNoise_3087bf34",

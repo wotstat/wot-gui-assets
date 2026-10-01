@@ -1,16 +1,16 @@
-import { j as e, a3 as s, W as a } from "../../../chunks/vendor.js";
+import { j as e, a0 as s, W as a } from "../../../chunks/vendor.js";
 import {
-  cL as i,
-  cH as l,
+  cD as i,
+  cE as l,
   c6 as n,
   a9 as r,
   E as t,
   i as o,
-  cM as c,
+  cF as c,
   o as _,
   c1 as g,
-  cJ as d,
-  cK as p,
+  cG as d,
+  cH as p,
   H as f,
   a7 as m,
   F as u,
@@ -81,8 +81,8 @@ const k = "Typography_title_9e921a81",
   }),
   D = "BattlePass_contentWrapper_e710928c",
   F = "BattlePass_description_6c9afd9a",
-  M = "BattlePass_battlePassImg_62743d72",
-  H = "BattlePass_pointsWrapper_267a3b69",
+  H = "BattlePass_battlePassImg_62743d72",
+  M = "BattlePass_pointsWrapper_267a3b69",
   V = "BattlePass_pointsTextWrapper_dcdf9a80",
   A = "BattlePass_pointsText_f3f8914e",
   E = "BattlePass_pointsTitle_ce8f8dec",
@@ -90,13 +90,13 @@ const k = "Typography_title_9e921a81",
   O = "BattlePass_table_63223d56",
   U = "BattlePass_tableCell_814f7c5d",
   q = "BattlePass_tableColumn_b9a1f867",
-  J = "BattlePass_tableCellText_c7b1c07e",
-  K = [5, 20, 30],
-  Z = [
+  Z = "BattlePass_tableCellText_c7b1c07e",
+  z = [5, 20, 30],
+  J = [
     { header: "fl_info_page.about.scoresTable.winHeader", cells: [25, 10, null] },
     { header: "fl_info_page.about.scoresTable.loseHeader", cells: [10, 5, null] },
   ];
-function z() {
+function K() {
   return e.jsx(I, {
     withDivider: !1,
     children: e.jsxs("div", {
@@ -105,9 +105,9 @@ function z() {
         e.jsx(P, { path: "fl_info_page.about.header" }),
         e.jsx(w, { className: F, path: "fl_info_page.about.text" }),
         e.jsxs("div", {
-          className: H,
+          className: M,
           children: [
-            e.jsx("div", { className: M }),
+            e.jsx("div", { className: H }),
             e.jsxs("div", {
               className: V,
               children: [
@@ -122,7 +122,7 @@ function z() {
                       className: q,
                       children: [
                         e.jsx("div", { className: U }),
-                        K.map((s, a) =>
+                        z.map((s, a) =>
                           e.jsx(
                             w,
                             {
@@ -135,7 +135,7 @@ function z() {
                         ),
                       ],
                     }),
-                    Z.map(({ header: s, cells: a }, i) =>
+                    J.map(({ header: s, cells: a }, i) =>
                       e.jsxs(
                         "div",
                         {
@@ -150,11 +150,11 @@ function z() {
                                   children: s
                                     ? e.jsxs(e.Fragment, {
                                         children: [
-                                          e.jsx("div", { className: J, children: s }),
+                                          e.jsx("div", { className: Z, children: s }),
                                           e.jsx("div", { className: Y }),
                                         ],
                                       })
-                                    : e.jsx("div", { className: J, children: "-" }),
+                                    : e.jsx("div", { className: Z, children: "-" }),
                                 },
                                 a,
                               ),
@@ -548,8 +548,8 @@ const [ge, de] = o()(
   }),
   De = "Progression_contentWrapper_3a0356f1",
   Fe = "Progression_description_bac962f1",
-  Me = "Progression_captionBadge_f16caccb",
-  He = "Progression_captionImg_fe01cac8",
+  He = "Progression_captionBadge_f16caccb",
+  Me = "Progression_captionImg_fe01cac8",
   Ve = "Progression_caption_32ed00dc",
   Ae = "Progression_bottomCaptionBlock_571a7797",
   Ee = "Progression_captionDescription_adfae39a",
@@ -557,10 +557,10 @@ const [ge, de] = o()(
   Oe = "Progression_captionText_e8531968",
   Ue = "Progression_tableWrapper_e617c990",
   qe = "Progression_rankImg_97dedc33",
-  Je = "Progression_tableCell_5186b08b",
-  Ke = "Progression_tableColumn_bfdf0695",
-  Ze = "Progression_tableValue_46886aa8",
-  ze = _.resolve("intl"),
+  Ze = "Progression_tableCell_5186b08b",
+  ze = "Progression_tableColumn_bfdf0695",
+  Je = "Progression_tableValue_46886aa8",
+  Ke = _.resolve("intl"),
   Qe = [
     null,
     "fl_info_page.progression.ranksTable.frontExperienceCell",
@@ -581,7 +581,7 @@ const [ge, de] = o()(
               e.jsxs("div", {
                 className: Ve,
                 children: [
-                  e.jsx("div", { className: He }),
+                  e.jsx("div", { className: Me }),
                   e.jsxs("div", {
                     className: Ee,
                     children: [
@@ -606,11 +606,11 @@ const [ge, de] = o()(
             className: Ue,
             children: [
               e.jsx("div", {
-                className: Ke,
+                className: ze,
                 children: t(Qe, (s, a) =>
                   e.jsx(
                     "div",
-                    { className: Je, children: s && e.jsx(w, { path: s }) },
+                    { className: Ze, children: s && e.jsx(w, { path: s }) },
                     `label-${a}`,
                   ),
                 ),
@@ -619,10 +619,10 @@ const [ge, de] = o()(
                 e.jsxs(
                   "div",
                   {
-                    className: Ke,
+                    className: ze,
                     children: [
                       e.jsxs("div", {
-                        className: Je,
+                        className: Ze,
                         children: [
                           e.jsx("div", {
                             className: qe,
@@ -637,13 +637,13 @@ const [ge, de] = o()(
                         e.jsx(
                           "div",
                           {
-                            className: s(Je, Ze),
+                            className: s(Ze, Je),
                             children:
                               0 === i
                                 ? a
                                   ? e.jsx(r, {
                                       path: "fl_info_page.plusValue",
-                                      params: { value: ze.formatNumber("gold", a) },
+                                      params: { value: Ke.formatNumber("gold", a) },
                                     })
                                   : a
                                 : e.jsx(r, {
@@ -667,7 +667,7 @@ const [ge, de] = o()(
           e.jsxs("div", {
             className: s(Ve, Ae),
             children: [
-              e.jsx("div", { className: Me }),
+              e.jsx("div", { className: He }),
               e.jsxs("div", {
                 className: Ee,
                 children: [
@@ -966,8 +966,8 @@ const Bs = "WinningStrategy_contentWrapper_17f30bd5",
   Gs = "WinningStrategy_textWrapper_46ce83ae",
   Ds = "WinningStrategy_text_ad73a0d6",
   Fs = "WinningStrategy_firstText_d2f2fc5f",
-  Ms = "WinningStrategy_img_97a22f1c",
-  Hs = [
+  Hs = "WinningStrategy_img_97a22f1c",
+  Ms = [
     "fl_info_page.winStrategy.firstLine",
     "fl_info_page.winStrategy.secondLine",
     "fl_info_page.winStrategy.thirdLine",
@@ -982,10 +982,10 @@ function Vs() {
           children: [
             e.jsx(P, { path: "fl_info_page.winStrategy.header" }),
             e.jsx(w, { className: Fs, path: "fl_info_page.winStrategy.mapZones" }),
-            Hs.map((s, a) => e.jsx(w, { className: Ds, path: s, split: !0 }, a)),
+            Ms.map((s, a) => e.jsx(w, { className: Ds, path: s, split: !0 }, a)),
           ],
         }),
-        e.jsx("div", { className: Ms }),
+        e.jsx("div", { className: Hs }),
       ],
     }),
   });
@@ -996,9 +996,9 @@ const As = "InfoView_1674491c",
   Os = "InfoView_scrollWrapper_28fa2dbb",
   Us = "InfoView_title_ced11487",
   qs = "InfoView_subtitle_d7af0e7d",
-  Js = "InfoView_scrollContent_9a303e94",
-  Ks = "InfoView_scrollContentWrapper_24a3123",
-  Zs = a(function () {
+  Zs = "InfoView_scrollContent_9a303e94",
+  zs = "InfoView_scrollContentWrapper_24a3123",
+  Js = a(function () {
     const { controls: s, model: a } = de(),
       i = a.isBattlePassAvailable.get(),
       { dateFormat: l, params: t } = ((e, s) => {
@@ -1039,9 +1039,9 @@ const As = "InfoView_1674491c",
                 children: e.jsxs(f, {
                   children: [
                     e.jsx(m, {
-                      className: Ks,
+                      className: zs,
                       children: e.jsxs("div", {
-                        className: Js,
+                        className: Zs,
                         children: [
                           e.jsx(be, {}),
                           e.jsx(_s, {}),
@@ -1051,7 +1051,7 @@ const As = "InfoView_1674491c",
                           e.jsx(Xe, {}),
                           e.jsx(Vs, {}),
                           e.jsx(G, { withDivider: i }),
-                          i && e.jsx(z, {}),
+                          i && e.jsx(K, {}),
                         ],
                       }),
                     }),
@@ -1066,5 +1066,5 @@ const As = "InfoView_1674491c",
     );
   });
 window.requestAnimationFrame(() => {
-  x(e.jsx(v, { children: e.jsx(ge, { children: e.jsx(Zs, {}) }) }));
+  x(e.jsx(v, { children: e.jsx(ge, { children: e.jsx(Js, {}) }) }));
 });

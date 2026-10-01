@@ -10,7 +10,7 @@ import {
 } from "../../../chunks/vendor.js";
 import {
   i as l,
-  ab as c,
+  ac as c,
   cn as d,
   bx as m,
   co as _,
@@ -26,13 +26,13 @@ import {
   d as v,
   u as A,
   B as C,
-  aV as N,
-  ao as w,
-  ax as I,
+  Z as N,
+  ap as w,
+  ay as I,
   b6 as P,
   g as z,
   X as T,
-  aI as k,
+  aJ as k,
   c_ as D,
   d1 as Q,
   cy as S,
@@ -44,9 +44,9 @@ import {
 import { t as V, a as E, b as F } from "../../../chunks/sounds.js";
 import { S as L } from "../../../chunks/spring_wrapper.js";
 import { Q as W } from "../../../chunks/sound.js";
-import { g as K, a as O, c as U, d as X, b as q, e as G } from "../../../chunks/utils.js";
-import { S as J } from "../../../chunks/story_point.js";
-const [Y, Z] = l("BundleCardProvider")(
+import { g as K, a as O, c as J, d as U, b as X, e as Z } from "../../../chunks/utils.js";
+import { S as q } from "../../../chunks/story_point.js";
+const [G, Y] = l("BundleCardProvider")(
     ({ observableModel: e }) => ({ ...e.primitives(["id", "descriptionKey"]) }),
     ({ externalModel: e }) => ({ click: e.createCallback((e) => ({ id: e }), "onClick") }),
   ),
@@ -138,11 +138,11 @@ const le = "ArtefactItem_selected_a9ecccae",
   he = "ArtefactItem_reward__completed_b917ecc",
   ye = "ArtefactItem_reward__booster_ca49785a";
 function je(e, s = !1) {
-  return e.name === X
+  return e.name === U
     ? s
       ? `R.images.last_stand.gui.maps.icons.boosters.c_68x68.${e.icon}`
       : `R.images.last_stand.gui.maps.icons.boosters.c_68x68.disabled.${e.icon}`
-    : q(e, g.Small);
+    : X(e, g.Small);
 }
 function ve({
   id: e,
@@ -189,8 +189,8 @@ function ve({
                 b,
                 {
                   name: t.name,
-                  value: U(t),
-                  className: a(fe, m && he, t.name === X && ye),
+                  value: J(t),
+                  className: a(fe, m && he, t.name === U && ye),
                   classNames: { rewardIcon: xe },
                   special: t.overlayType,
                   size: g.Small,
@@ -224,7 +224,7 @@ const Ae = r(function () {
     const { model: e } = te(),
       a = e.computes.inprogressArtefact(),
       t = a?.cost,
-      i = f({ size: J.sizes.s16x16 }, { medium: { size: J.sizes.s24x24 } }),
+      i = f({ size: q.sizes.s16x16 }, { medium: { size: q.sizes.s24x24 } }),
       o = h({ contentId: R.views.last_stand.mono.lobby.tooltips.points_tooltip("resId") });
     return s.jsx(s.Fragment, {
       children: e.computes.progressionCompleted()
@@ -237,9 +237,9 @@ const Ae = r(function () {
             alignContent: j.FlexEnd,
             binding: {
               artefactIndex: a?.index,
-              currentProgress: s.jsx("div", { className: Ne, children: G(e.points.get(), t) }),
+              currentProgress: s.jsx("div", { className: Ne, children: Z(e.points.get(), t) }),
               maxProgress: t,
-              icon: s.jsx("div", { ...o, className: we, children: s.jsx(J, { size: i.size }) }),
+              icon: s.jsx("div", { ...o, className: we, children: s.jsx(q, { size: i.size }) }),
             },
           }),
     });
@@ -306,7 +306,7 @@ const Ae = r(function () {
   Ee = "BundleCard_button_f32dc703",
   Fe = v.resolve("strings"),
   Le = r(function ({ className: e }) {
-    const { model: a, controls: t } = Z(),
+    const { model: a, controls: t } = Y(),
       {
         breakpoint: { weight: i },
       } = A(),
@@ -340,17 +340,17 @@ const Ae = r(function () {
 function We(e) {
   const a = R.aliases.last_stand.shared.BundleCard("resId"),
     t = i.useMemo(() => ({ rootId: a }), [a]);
-  return s.jsx(w, { id: a, children: s.jsx(Y, { options: t, children: s.jsx(Le, { ...e }) }) });
+  return s.jsx(w, { id: a, children: s.jsx(G, { options: t, children: s.jsx(Le, { ...e }) }) });
 }
 const Ke = "DailyQuestsCard_8452735",
   Oe = "DailyQuestsCard_content_9dfeafcb",
-  Ue = "DailyQuestsCard_timer_88092dd5",
-  Xe = "DailyQuestsCard_icon_e3692c40",
-  qe = "DailyQuestsCard_description_716ab6d8",
-  Ge = "DailyQuestsCard_base__completed_2dd05187",
-  Je = "DailyQuestsCard_progress_a181f69d",
-  Ye = "DailyQuestsCard_currentProgress_a63d05d7",
-  Ze = "DailyQuestsCard_progressValue_59475865",
+  Je = "DailyQuestsCard_timer_88092dd5",
+  Ue = "DailyQuestsCard_icon_e3692c40",
+  Xe = "DailyQuestsCard_description_716ab6d8",
+  Ze = "DailyQuestsCard_base__completed_2dd05187",
+  qe = "DailyQuestsCard_progress_a181f69d",
+  Ge = "DailyQuestsCard_currentProgress_a63d05d7",
+  Ye = "DailyQuestsCard_progressValue_59475865",
   es = "DailyQuestsCard_rewards_a8cdf255",
   ss = "DailyQuestsCard_reward_461f11ab",
   as = r(function ({ className: e, callToAction: t }) {
@@ -377,7 +377,7 @@ const Ke = "DailyQuestsCard_8452735",
     return _
       ? null
       : s.jsx("div", {
-          className: a(Ke, m && Ge, e),
+          className: a(Ke, m && Ze, e),
           children: s.jsxs("div", {
             className: Oe,
             children: [
@@ -386,7 +386,7 @@ const Ke = "DailyQuestsCard_8452735",
                 (!u || (u && !m)) &&
                 s.jsx("div", {
                   ...f,
-                  className: Ue,
+                  className: Je,
                   children: s.jsx(P, {
                     size: v ? P.size.x24x24 : P.size.x32x32,
                     start: l,
@@ -394,7 +394,7 @@ const Ke = "DailyQuestsCard_8452735",
                   }),
                 }),
               s.jsx("div", {
-                className: Xe,
+                className: Ue,
                 style: {
                   backgroundImage: `url(${m ? "R.images.gui.maps.icons.userMissions.hub.basic.done_icon_m" : `'R.images.gui.maps.icons.userMissions.missionIcons.c_80.${n}_silver'`})`,
                 },
@@ -402,7 +402,7 @@ const Ke = "DailyQuestsCard_8452735",
               s.jsx(
                 y,
                 {
-                  classMix: qe,
+                  classMix: Xe,
                   text: r,
                   justifyContent: v ? j.FlexStart : j.Center,
                   isTruncationAvailable: !0,
@@ -411,13 +411,13 @@ const Ke = "DailyQuestsCard_8452735",
               ),
               h &&
                 s.jsxs("div", {
-                  className: Je,
+                  className: qe,
                   children: [
                     s.jsx(y, {
-                      classMix: Ze,
+                      classMix: Ye,
                       text: R.strings.last_stand_lobby.common.progress(),
                       binding: {
-                        value: s.jsx("div", { className: Ye, children: z(c, 1) }),
+                        value: s.jsx("div", { className: Ge, children: z(c, 1) }),
                         maxValue: z(d, 1),
                       },
                     }),
@@ -437,11 +437,11 @@ const Ke = "DailyQuestsCard_8452735",
                     b,
                     {
                       name: e.name,
-                      value: U(e),
+                      value: J(e),
                       className: ss,
                       special: e.overlayType,
                       size: C,
-                      image: q(e, C),
+                      image: X(e, C),
                       valueType: O(e.name),
                       tooltipArgs: K(e, R.aliases.last_stand.shared.Quests("resId")),
                     },
@@ -465,7 +465,7 @@ const os = "Header_e83ca27a",
   ns = "Header_divider_1ed29076",
   ls = r(function ({ className: e, canceledAnim: a, playQuestAnimation: t }) {
     const { model: i } = se(),
-      { model: o } = Z(),
+      { model: o } = Y(),
       r = [
         { component: s.jsx(is, { callToAction: t }), visible: !i.root.get().isHidden },
         { component: s.jsx(We, {}), visible: Boolean(o.id.get()) },
@@ -553,7 +553,7 @@ M(
   new S()
     .addWithProps($, { soundsOverrides: hs })
     .add(ae)
-    .addWithProps(Y, { options: { rootId: R.aliases.last_stand.shared.BundleCard("resId") } })
+    .addWithProps(G, { options: { rootId: R.aliases.last_stand.shared.BundleCard("resId") } })
     .addWithProps(ee, { options: { rootId: R.aliases.last_stand.shared.Quests("resId") } })
     .render(s.jsx(fs, {})),
 )

@@ -1,11 +1,11 @@
-import { W as e, j as s, a3 as a } from "../../../../chunks/vendor.js";
+import { W as e, j as s, a0 as a } from "../../../../chunks/vendor.js";
 import {
   i,
   o as l,
   an as c,
-  cD as o,
+  d2 as o,
   aw as n,
-  cJ as t,
+  cG as t,
   B as r,
   cg as d,
   C as m,
@@ -17,7 +17,7 @@ import {
   aJ as u,
   c1 as g,
   db as x,
-  cK as y,
+  cH as y,
   cB as j,
   c9 as N,
 } from "../../../../chunks/lib.js";
@@ -105,7 +105,7 @@ const [v, C] = i()(
   w = "Content_base__singleAbility_9ff38f7a",
   W = "Content_names_24f05b3a",
   q = l.resolve("strings"),
-  D = e(function () {
+  G = e(function () {
     const { model: e, controls: i } = C();
     return s.jsxs("div", {
       className: a(O, !e.isMultipleAbilities.get() && w),
@@ -125,27 +125,27 @@ const [v, C] = i()(
       ],
     });
   }),
-  J = "FooterMoney_1ea76c0a",
-  z = "FooterMoney_label_8b351dd7",
-  G = "FooterMoney_priceWrapper_570d739a",
-  K = "FooterMoney_price_5c2438b2",
+  z = "FooterMoney_1ea76c0a",
+  D = "FooterMoney_label_8b351dd7",
+  H = "FooterMoney_priceWrapper_570d739a",
+  J = "FooterMoney_price_5c2438b2",
   P = "FooterMoney_price__notEnough_1126d1b4",
-  H = "FooterMoney_iconWrapper_f7f8aac7",
+  K = "FooterMoney_iconWrapper_f7f8aac7",
   L = "FooterMoney_icon_e7df9413",
   Q = "FooterMoney_iconGlow_fa0721d4",
   U = ({ price: e, isEnoughMoney: i }) =>
     s.jsx("div", {
-      className: J,
+      className: z,
       children: s.jsx(p, {
-        className: z,
+        className: D,
         path: "fl_dialogs.confirm.price",
         params: {
           price: s.jsxs("div", {
-            className: G,
+            className: H,
             children: [
-              s.jsx("div", { className: a(K, !i && P), children: e }),
+              s.jsx("div", { className: a(J, !i && P), children: e }),
               s.jsxs("div", {
-                className: H,
+                className: K,
                 children: [s.jsx("div", { className: Q }), s.jsx("div", { className: L })],
               }),
             ],
@@ -248,7 +248,7 @@ function ge() {
         children: [
           s.jsx(ie, { className: be }),
           s.jsx(de, { className: he }),
-          s.jsx(D, {}),
+          s.jsx(G, {}),
           s.jsx("div", { className: ue }),
           s.jsx(Z, { className: fe }),
           s.jsx(M, {}),

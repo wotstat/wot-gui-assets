@@ -3,27 +3,27 @@ import {
   i as a,
   V as s,
   j as i,
-  W as t,
+  a3 as t,
   u as n,
-  t as r,
+  q as r,
   R as c,
 } from "../../../chunks/vendor.js";
 import {
-  aB as o,
-  T as d,
+  aq as o,
+  C as d,
   i as _,
-  d9 as l,
-  aT as m,
-  cF as p,
-  dc as h,
-  h as f,
-  dg as b,
-  cG as g,
+  d6 as l,
+  aK as m,
+  cz as p,
+  d9 as h,
+  aR as f,
+  dd as b,
+  cA as g,
   m as u,
-  cD as x,
-  B as S,
+  cx as x,
+  af as S,
   r as v,
-  U as y,
+  cF as y,
 } from "../../../chunks/lib.js";
 import { C as j } from "../../../chunks/close_button.js";
 import { g as N } from "../../../chunks/get_button_size.js";
@@ -139,7 +139,7 @@ const $ = [
     },
   ),
   M = () => Q().model.animation,
-  F = {
+  z = {
     base: "Header_abbd0f2b",
     season: "Header_season_a2462352",
     title: "Header_title_d739332c",
@@ -167,7 +167,7 @@ const $ = [
     blink: "Header_blink_65f475ba",
     slideUpIn: "Header_slideUpIn_65f475ba",
   },
-  z = ["first", "second", "third"],
+  F = ["first", "second", "third"],
   E = s(({ className: e }) => {
     const { model: a } = Q(),
       s = M(),
@@ -180,11 +180,11 @@ const $ = [
       } = a.root.get(),
       _ = a.computes.hasPositionIcon();
     return i.jsxs("div", {
-      className: t(F.base, e, s.computes.getAnimationStepStyles(F)),
+      className: t(z.base, e, s.computes.getAnimationStepStyles(z)),
       style: { "--clanTagColor": c },
       children: [
         i.jsx("div", {
-          className: F.season,
+          className: z.season,
           children: i.jsx(p, {
             text: R.strings.comp7_ext.seasonStatistics.description.season(),
             binding: {
@@ -193,23 +193,23 @@ const $ = [
           }),
         }),
         i.jsx("div", {
-          className: F.title,
+          className: z.title,
           children: i.jsx(p, {
             text: R.strings.comp7_ext.seasonStatistics.title(),
             binding: {
-              name: i.jsx(h, { userName: o, clanAbbrev: d, clanTagClassName: t(c && F.clanTag) }),
+              name: i.jsx(h, { userName: o, clanAbbrev: d, clanTagClassName: t(c && z.clanTag) }),
             },
           }),
         }),
         i.jsx("div", {
-          className: F.position,
+          className: z.position,
           children:
             -1 !== r &&
             i.jsx(p, {
               text: R.strings.comp7_ext.seasonStatistics.description.leaderboardPosition(),
               binding: {
                 position: i.jsx("div", {
-                  className: t(F.order, _ && F.order__icon, _ && F[`order__${z[r]}`]),
+                  className: t(z.order, _ && z.order__icon, _ && z[`order__${F[r]}`]),
                   children: !_ && r + 1,
                 }),
               },
@@ -218,7 +218,7 @@ const $ = [
       ],
     });
   }),
-  B = {
+  q = {
     base__notAchieved: "Point_base__notAchieved_a641ca05",
     fadeIn: "Point_fadeIn_d8b7e333",
     fadeInThreeQuarters: "Point_fadeInThreeQuarters_d8b7e333",
@@ -235,8 +235,8 @@ const $ = [
     blink: "Point_blink_d8b7e333",
     slideUpIn: "Point_slideUpIn_d8b7e333",
   },
-  q = (e) => (e >= g.Medium ? U.x48 : U.x32),
-  G = s(({ pointIndex: e, className: a }) => {
+  B = (e) => (e >= g.Medium ? U.x48 : U.x32),
+  K = s(({ pointIndex: e, className: a }) => {
     const { model: s } = Q(),
       { season: t, achievedSeasonPoints: n } = s.root.get(),
       { mediaSize: r } = f(),
@@ -247,11 +247,11 @@ const $ = [
       ignoreShowDelay: !0,
       children: i.jsx("div", {
         className: a,
-        children: i.jsx(C, { state: c, season: t, className: B[`base__${c}`], size: q(r) }),
+        children: i.jsx(C, { state: c, season: t, className: q[`base__${c}`], size: B(r) }),
       }),
     });
   }),
-  J = {
+  G = {
     base: "Rating_74881404",
     shine: "Rating_shine_b6446be3",
     base__showRank: "Rating_base__showRank_bece95f1",
@@ -285,7 +285,7 @@ const $ = [
     blink: "Rating_blink_bece95f1",
     slideUpIn: "Rating_slideUpIn_bece95f1",
   },
-  K = s(({ className: e }) => {
+  J = s(({ className: e }) => {
     const { model: a } = Q(),
       { mediaSize: s } = f(),
       n = M(),
@@ -300,35 +300,35 @@ const $ = [
       m = ((e) =>
         e >= g.ExtraLarge ? I.x600 : e >= g.Large ? I.x320 : e >= g.Medium ? I.x260 : I.x200)(s);
     return i.jsxs("div", {
-      className: t(J.base, e, n.computes.getAnimationStepStyles(J)),
+      className: t(G.base, e, n.computes.getAnimationStepStyles(G)),
       children: [
-        i.jsx("div", { className: J.shine }),
-        i.jsx("div", { className: J.title, children: T(r) }),
-        i.jsx("div", { className: t(J.subTitle, !A(r) && J.subTitle__hide), children: P(c) }),
+        i.jsx("div", { className: G.shine }),
+        i.jsx("div", { className: G.title, children: T(r) }),
+        i.jsx("div", { className: t(G.subTitle, !A(r) && G.subTitle__hide), children: P(c) }),
         i.jsxs("div", {
-          className: J.rankEmblemContainer,
+          className: G.rankEmblemContainer,
           children: [
-            i.jsx(H, { className: J.glowContainer, classNames: { glow: J.glow } }),
-            i.jsx(w, { seasonName: d, rank: r, division: c, size: m, className: J.rank }),
+            i.jsx(H, { className: G.glowContainer, classNames: { glow: G.glow } }),
+            i.jsx(w, { seasonName: d, rank: r, division: c, size: m, className: G.rank }),
           ],
         }),
         i.jsxs("div", {
-          className: J.content,
+          className: G.content,
           children: [
-            i.jsx("div", { className: J.score, children: o }),
+            i.jsx("div", { className: G.score, children: o }),
             i.jsx("div", {
-              className: J.scoreDescription,
+              className: G.scoreDescription,
               children: R.strings.comp7_ext.seasonStatistics.description.finalScore(),
             }),
-            i.jsx(V, { className: J.laceDivider }),
+            i.jsx(V, { className: G.laceDivider }),
             i.jsx("div", {
-              className: J.seasonPoints,
-              children: u(l, (e) => i.jsx(G, { pointIndex: e, className: J.point }, e)),
+              className: G.seasonPoints,
+              children: u(l, (e) => i.jsx(K, { pointIndex: e, className: G.point }, e)),
             }),
             i.jsx(p, {
               text: R.strings.comp7_ext.seasonStatistics.description.seasonPoint(_),
               binding: { points: _ },
-              classMix: J.pointDescription,
+              classMix: G.pointDescription,
             }),
           ],
         }),
@@ -637,7 +637,7 @@ const re = "LineDivider_2b197ae0",
         i.jsxs("div", {
           className: Ce.content,
           children: [
-            i.jsx(K, { className: Ce.rating }),
+            i.jsx(J, { className: Ce.rating }),
             i.jsxs("div", {
               className: Ce.statistics,
               children: [i.jsx(Se, { className: Ce.summary }), i.jsx(Te, {})],

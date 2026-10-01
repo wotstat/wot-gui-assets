@@ -1,13 +1,13 @@
 import { j as s } from "../../../../chunks/vendor.js";
-import { r as i, U as t } from "../../../../chunks/lib.js";
+import { r as i, cF as t } from "../../../../chunks/lib.js";
 import { T as o } from "../../../../chunks/tooltip_decorator.js";
 /* empty css                        */ const e = "App_c6f34e00",
   p = "App_header_775ebd33",
   l = "App_icon_a918e6b4",
   n = "App_divider_8b5ac59e",
   r = "App_bulletLine_aa4edbb",
-  _ = "App_bullet_581f55cf",
-  c = () =>
+  c = "App_bullet_581f55cf",
+  _ = () =>
     s.jsxs("div", {
       className: e,
       children: [
@@ -34,7 +34,7 @@ import { T as o } from "../../../../chunks/tooltip_decorator.js";
                 className: r,
                 children: [
                   s.jsx("div", {
-                    className: _,
+                    className: c,
                     children: R.strings.comp7_ext.pbs.tooltip.prestige_points_info_tooltip.bullet(),
                   }),
                   s.jsx("div", { children: i }),
@@ -48,4 +48,4 @@ import { T as o } from "../../../../chunks/tooltip_decorator.js";
         }),
       ],
     });
-i(s.jsx(t, { children: s.jsx(o, { children: s.jsx(c, {}) }) }));
+i(s.jsx(t, { children: s.jsx(o, { children: s.jsx(_, {}) }) }));
