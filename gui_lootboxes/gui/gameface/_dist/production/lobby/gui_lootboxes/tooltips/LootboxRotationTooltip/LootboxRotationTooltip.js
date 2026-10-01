@@ -344,13 +344,13 @@
             (0, a.useEffect)(() => {
               N(F);
             }, [F]));
-          const W = (0, a.useCallback)(
+          const G = (0, a.useCallback)(
               (u) => {
                 p && p(u);
               },
               [p],
             ),
-            G = (0, a.useCallback)(
+            W = (0, a.useCallback)(
               (u) => {
                 (y(!0), S && S(u), D && (0, o.G)(D), F && U());
               },
@@ -402,10 +402,10 @@
               {
                 ref: I,
                 className: Y,
-                onClick: W,
+                onClick: G,
                 onMouseEnter: j,
                 onMouseLeave: V,
-                onMouseDown: G,
+                onMouseDown: W,
                 onMouseUp: X,
                 onFocus: $,
                 onBlur: q,
@@ -547,6 +547,7 @@
               (u.SelectableBonus = "selectableBonus"),
               (u.StyleProgressToken = "styleProgressToken"),
               (u.TmanToken = "tmanToken"),
+              (u.PortalEventDiscount25 = "portalEventDiscountToken"),
               (u.NaturalCover = "naturalCover"),
               (u.BpCoin = "bpcoin"),
               (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -579,13 +580,7 @@
               (u.GoldenTicket = "goldenticket"),
               (u.LbStyleProgress = "lbStyleProgress"),
               (u.RewardsSlots = "rewardsSlots"),
-              (u.WtStamp = "stamp"),
-              (u.WtHunter = "wt_hunter"),
-              (u.WtBoss = "wt_boss"),
-              (u.WtHunterCollection = "hunter_collection"),
-              (u.WtTicket = "wtevent_ticket"),
-              (u.WtMainPrizeDiscount = "main_prize_discount"),
-              (u.WtTicket25 = "wtevent_ticket25"));
+              (u.RazlomCoin = "razlom_coin"));
           })(r || (r = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -733,11 +728,6 @@
             a.E4.PremiumPlusUniversal,
             a.E4.GoldenTicket,
             a.E4.RewardsSlots,
-            a.E4.WtStamp,
-            a.E4.WtTicket,
-            a.E4.WtMainPrizeDiscount,
-            a.E4.WtHunter,
-            a.E4.WtHunterCollection,
           ],
           s = [a.E4.Gold, a.E4.Credits, a.E4.Crystal, a.E4.FreeXp],
           l = [a.E4.BattlePassPoints],
@@ -913,6 +903,8 @@
               case a.E4.StyleProgress:
               case a.E4.LbStyleProgress:
                 return g(o, e, a.ye.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${e}.${i}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
             }
@@ -3262,7 +3254,7 @@
                 : i().createElement(u, e),
             );
           },
-          W = {
+          G = {
             mt__XS: "Box_mt__XS_0c",
             mt__SM: "Box_mt__SM_eb",
             mt__SMp: "Box_mt__SMp_cf",
@@ -3292,7 +3284,7 @@
             ml__LG: "Box_ml__LG_39",
             ml__XL: "Box_ml__XL_4a",
           },
-          G = [
+          W = [
             "className",
             "width",
             "height",
@@ -3336,13 +3328,13 @@
         }
         Object.keys(O());
         const j = {
-            XL: { mt: W.mt__XL, mr: W.mr__XL, mb: W.mb__XL, ml: W.ml__XL },
-            LG: { mt: W.mt__LG, mr: W.mr__LG, mb: W.mb__LG, ml: W.ml__LG },
-            MDp: { mt: W.mt__MDp, mr: W.mr__MDp, mb: W.mb__MDp, ml: W.ml__MDp },
-            MD: { mt: W.mt__MD, mr: W.mr__MD, mb: W.mb__MD, ml: W.ml__MD },
-            SMp: { mt: W.mt__SMp, mr: W.mr__SMp, mb: W.mb__SMp, ml: W.ml__SMp },
-            SM: { mt: W.mt__SM, mr: W.mr__SM, mb: W.mb__SM, ml: W.ml__SM },
-            XS: { mt: W.mt__XS, mr: W.mr__XS, mb: W.mb__XS, ml: W.ml__XS },
+            XL: { mt: G.mt__XL, mr: G.mr__XL, mb: G.mb__XL, ml: G.ml__XL },
+            LG: { mt: G.mt__LG, mr: G.mr__LG, mb: G.mb__LG, ml: G.ml__LG },
+            MDp: { mt: G.mt__MDp, mr: G.mr__MDp, mb: G.mb__MDp, ml: G.ml__MDp },
+            MD: { mt: G.mt__MD, mr: G.mr__MD, mb: G.mb__MD, ml: G.ml__MD },
+            SMp: { mt: G.mt__SMp, mr: G.mr__SMp, mb: G.mb__SMp, ml: G.ml__SMp },
+            SM: { mt: G.mt__SM, mr: G.mr__SM, mb: G.mb__SM, ml: G.ml__SM },
+            XS: { mt: G.mt__XS, mr: G.mr__XS, mb: G.mb__XS, ml: G.ml__XS },
           },
           V = (Object.keys(j), ["mt", "mr", "mb", "ml"]),
           $ = { mt: "marginTop", mr: "marginRight", mb: "marginBottom", ml: "marginLeft" },
@@ -3400,7 +3392,7 @@
                   o = Object.keys(u);
                 for (r = 0; r < o.length; r++) ((t = o[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
-              })(u, G);
+              })(u, W);
             const H = (0, a.useMemo)(() => {
                 const u = { mt: l, mr: E, mb: F, ml: m },
                   e = ((u) =>
@@ -3430,7 +3422,7 @@
               }, [t, r, l, E, F, m, N, M, R, C, L, w, f]),
               q = H.computedStyle,
               Y = H.computedClassNames;
-            return i().createElement("div", X({ className: n()(W.base, ...Y, e), style: q }, U), I);
+            return i().createElement("div", X({ className: n()(G.base, ...Y, e), style: q }, U), I);
           }),
           Y = ({ binding: u, text: e = "", classMix: t, alignment: r = w.v2.left }) =>
             null === e

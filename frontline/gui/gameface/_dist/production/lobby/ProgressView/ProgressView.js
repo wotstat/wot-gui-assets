@@ -431,6 +431,7 @@
               (e.SelectableBonus = "selectableBonus"),
               (e.StyleProgressToken = "styleProgressToken"),
               (e.TmanToken = "tmanToken"),
+              (e.PortalEventDiscount25 = "portalEventDiscountToken"),
               (e.NaturalCover = "naturalCover"),
               (e.BpCoin = "bpcoin"),
               (e.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -463,13 +464,7 @@
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
               (e.RewardsSlots = "rewardsSlots"),
-              (e.WtStamp = "stamp"),
-              (e.WtHunter = "wt_hunter"),
-              (e.WtBoss = "wt_boss"),
-              (e.WtHunterCollection = "hunter_collection"),
-              (e.WtTicket = "wtevent_ticket"),
-              (e.WtMainPrizeDiscount = "main_prize_discount"),
-              (e.WtTicket25 = "wtevent_ticket25"));
+              (e.RazlomCoin = "razlom_coin"));
           })(n || (n = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -625,11 +620,6 @@
             i.E4.PremiumPlusUniversal,
             i.E4.GoldenTicket,
             i.E4.RewardsSlots,
-            i.E4.WtStamp,
-            i.E4.WtTicket,
-            i.E4.WtMainPrizeDiscount,
-            i.E4.WtHunter,
-            i.E4.WtHunterCollection,
           ],
           l = [i.E4.Gold, i.E4.Credits, i.E4.Crystal, i.E4.FreeXp],
           c = [i.E4.BattlePassPoints],
@@ -805,6 +795,8 @@
               case i.E4.StyleProgress:
               case i.E4.LbStyleProgress:
                 return p(a, u, i.ye.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${u}.${s}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
             }
@@ -1165,12 +1157,12 @@
                     Object.assign(
                       {
                         onMouseEnter:
-                          ((x = u.props.onMouseEnter),
+                          ((R = u.props.onMouseEnter),
                           (e) => {
                             (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
                               ((w.current.timeoutId = window.setTimeout(T, _ ? 100 : 400)),
                               l && l(e),
-                              x && x(e));
+                              R && R(e));
                           }),
                         onMouseLeave: ((e) => (u) => {
                           (y(), null == c || c(u), null == e || e(u));
@@ -1187,7 +1179,7 @@
                   )
                 : u
             );
-            var x;
+            var R;
           };
       },
       7515: (e, u, t) => {
@@ -2897,19 +2889,19 @@
               const v = (0, n.useMemo)(() => Object.assign({ width: "100%" }, T(e), w(d)), [d, e]),
                 y = (0, n.useMemo)(() => Object.assign({ width: "0%" }, T(e), w(d)), [d, e]),
                 k = (0, n.useMemo)(() => Object.assign({ width: "0%" }, S(d, a), T(e)), [a, d, e]),
-                x = (0, n.useMemo)(
+                R = (0, n.useMemo)(
                   () => Object.assign({ width: `${Math.abs(o - a)}%` }, S(d, a), T(e)),
                   [a, d, o, e],
                 );
               if (F) return null;
-              const R = s()(
+              const x = s()(
                 "ProgressBarDeltaGrow_base_7e",
                 E,
                 d && 0 === o && "ProgressBarDeltaGrow_base__withoutBounce_b5",
               );
               return r().createElement(
                 "div",
-                { style: B ? k : x, className: R },
+                { style: B ? k : R, className: x },
                 r().createElement(
                   "div",
                   { style: h ? y : v, className: "ProgressBarDeltaGrow_glow_68" },
@@ -3114,8 +3106,8 @@
             "--progress-delta-color": e.delta.color,
             "--progress-delta-shadow": e.delta.shadow,
           });
-        var W = t(7515);
-        const G = (e, u, t) => ("number" == typeof t ? ((0, W.u)(0, u, t) / u) * 100 : e),
+        var G = t(7515);
+        const W = (e, u, t) => ("number" == typeof t ? ((0, G.u)(0, u, t) / u) * 100 : e),
           $ = {
             bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_grey",
             line: {
@@ -3161,8 +3153,8 @@
             }) => {
               const D = ((e, u, t) =>
                 (0, n.useMemo)(() => {
-                  const n = ((0, W.u)(0, u, e) / u) * 100;
-                  return { value: n, deltaFrom: G(n, u, t) };
+                  const n = ((0, G.u)(0, u, e) / u) * 100;
+                  return { value: n, deltaFrom: W(n, u, t) };
                 }, [t, u, e]))(c, e, E);
               return r().createElement(
                 "div",
@@ -3596,14 +3588,14 @@
               n
             );
           },
-          xe = (e, u, t, n) => {
+          Re = (e, u, t, n) => {
             let r = u.exec(e),
               a = 0;
             for (; r;)
               (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
             a !== e.length && t(e.slice(a));
           },
-          Re = (e) => {
+          xe = (e) => {
             const u = /[\s\u002d]/g;
             let t = u.exec(e);
             if (!t) return [e];
@@ -3615,11 +3607,11 @@
           Pe = (e, u = "") => {
             const t = [];
             return (
-              xe(
+              Re(
                 e,
                 /(\n+|[\xa0\ufeff]+)/g,
                 (e) => {
-                  t.push({ blockType: Ce.Word, colorTag: u, childList: Re(e) });
+                  t.push({ blockType: Ce.Word, colorTag: u, childList: xe(e) });
                 },
                 (e) => {
                   const n = e[0],
@@ -3648,7 +3640,7 @@
           Oe = (e, u, t = "") => {
             const n = [];
             return (
-              xe(
+              Re(
                 e,
                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                 (e) => {
@@ -3694,7 +3686,7 @@
               ((e, u) => {
                 const t = [];
                 return (
-                  xe(
+                  Re(
                     e,
                     /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})/g,
                     (e) => {
@@ -3785,7 +3777,7 @@
             }
             return [i, o];
           },
-          We = r().memo(
+          Ge = r().memo(
             ({
               text: e,
               classMix: u,
@@ -3898,7 +3890,7 @@
               );
             },
           ),
-          Ge = (0, n.memo)(({ duration: e }) => {
+          We = (0, n.memo)(({ duration: e }) => {
             const u =
               e >= 0
                 ? (t = (0, Be.f8)(e)).days > 0
@@ -3916,7 +3908,7 @@
         const je = (0, n.memo)(({ isDateFormat: e, pendingDate: u, countdownSeconds: t }) =>
             e
               ? r().createElement(r().Fragment, null, (0, Be.e1)(u, $e.U.FULL_DATE, !0))
-              : r().createElement(Ge, { duration: t }),
+              : r().createElement(We, { duration: t }),
           ),
           ze = R.strings.fl_progress.subTitle,
           Ye = {
@@ -3946,7 +3938,7 @@
             return r().createElement(
               "div",
               { className: "SubTitle_base_48" },
-              r().createElement(We, a),
+              r().createElement(Ge, a),
             );
           }),
           qe = R.strings.fl_progress.title;

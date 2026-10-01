@@ -58,13 +58,13 @@
             getDisplayStatus: () => H,
             getScale: () => P,
             getSize: () => S,
-            getViewGlobalPosition: () => x,
+            getViewGlobalPosition: () => T,
             isClientAccessible: () => k,
             isEventHandled: () => I,
             isFocused: () => O,
             pxToRem: () => y,
             remToPx: () => L,
-            resize: () => T,
+            resize: () => x,
             sendEvent: () => h,
             setAnimateWindow: () => M,
             setEventHandled: () => N,
@@ -240,10 +240,10 @@
         function S(u = "px") {
           return "rem" === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
         }
-        function T(u, e, t = "px") {
+        function x(u, e, t = "px") {
           return "rem" === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
         }
-        function x(u = "rem") {
+        function T(u = "rem") {
           const e = viewEnv.getViewGlobalPositionRem();
           return "rem" === u ? e : { x: L(e.x), y: L(e.y) };
         }
@@ -1040,14 +1040,14 @@
             S.apply(this, arguments)
           );
         }
-        const T = {
+        const x = {
             [b.ExtraSmall]: "",
             [b.Small]: h().SMALL_WIDTH,
             [b.Medium]: `${h().SMALL_WIDTH} ${h().MEDIUM_WIDTH}`,
             [b.Large]: `${h().SMALL_WIDTH} ${h().MEDIUM_WIDTH} ${h().LARGE_WIDTH}`,
             [b.ExtraLarge]: `${h().SMALL_WIDTH} ${h().MEDIUM_WIDTH} ${h().LARGE_WIDTH} ${h().EXTRA_LARGE_WIDTH}`,
           },
-          x = {
+          T = {
             [v.ExtraSmall]: "",
             [v.Small]: h().SMALL_HEIGHT,
             [v.Medium]: `${h().SMALL_HEIGHT} ${h().MEDIUM_HEIGHT}`,
@@ -1077,7 +1077,7 @@
               s = a.mediaWidth,
               i = a.mediaHeight,
               o = a.mediaSize;
-            return n().createElement("div", S({ className: m()(t, T[s], x[i], P[o]) }, r), e);
+            return n().createElement("div", S({ className: m()(t, x[s], T[i], P[o]) }, r), e);
           },
           L = ["children"],
           M = (u) => {
@@ -1162,13 +1162,13 @@
             S = (0, r.useCallback)(() => {
               s || (B.current && (B.current.focus(), g(!0)));
             }, [s]),
-            T = (0, r.useCallback)(
+            x = (0, r.useCallback)(
               (u) => {
                 C && null !== B.current && !B.current.contains(u.target) && g(!1);
               },
               [C],
             ),
-            x = (0, r.useCallback)(
+            T = (0, r.useCallback)(
               (u) => {
                 s || (_ && _(u));
               },
@@ -1220,12 +1220,12 @@
           return (
             (0, r.useEffect)(
               () => (
-                document.addEventListener("mousedown", T),
+                document.addEventListener("mousedown", x),
                 () => {
-                  document.removeEventListener("mousedown", T);
+                  document.removeEventListener("mousedown", x);
                 }
               ),
-              [T],
+              [x],
             ),
             (0, r.useEffect)(() => {
               g(t);
@@ -1240,7 +1240,7 @@
                 onMouseUp: L,
                 onMouseDown: M,
                 onMouseLeave: O,
-                onClick: x,
+                onClick: T,
               },
               a !== U.ghost &&
                 n().createElement(
@@ -1994,6 +1994,7 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
+            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -2026,13 +2027,7 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.WtStamp = "stamp"),
-            (u.WtHunter = "wt_hunter"),
-            (u.WtBoss = "wt_boss"),
-            (u.WtHunterCollection = "hunter_collection"),
-            (u.WtTicket = "wtevent_ticket"),
-            (u.WtMainPrizeDiscount = "main_prize_discount"),
-            (u.WtTicket25 = "wtevent_ticket25"));
+            (u.RazlomCoin = "razlom_coin"));
         })(Cu || (Cu = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -2141,7 +2136,7 @@
           }
         }
         Su.defaultProps = { format: "integral" };
-        const Tu = [
+        const xu = [
             Cu.Items,
             Cu.Equipment,
             Cu.Xp,
@@ -2181,13 +2176,8 @@
             Cu.PremiumPlusUniversal,
             Cu.GoldenTicket,
             Cu.RewardsSlots,
-            Cu.WtStamp,
-            Cu.WtTicket,
-            Cu.WtMainPrizeDiscount,
-            Cu.WtHunter,
-            Cu.WtHunterCollection,
           ],
-          xu = [Cu.Gold, Cu.Credits, Cu.Crystal, Cu.FreeXp],
+          Tu = [Cu.Gold, Cu.Credits, Cu.Crystal, Cu.FreeXp],
           Ru = [Cu.BattlePassPoints],
           Pu = [Cu.PremiumPlus, Cu.Premium];
         let yu;
@@ -2351,6 +2341,8 @@
               case Cu.StyleProgress:
               case Cu.LbStyleProgress:
                 return Nu(a, e, fu.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${e}.${s}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
             }
@@ -2574,9 +2566,9 @@
                       size: r,
                       valueType:
                         ((t = e.name),
-                        Tu.includes(t)
+                        xu.includes(t)
                           ? hu.MULTI
-                          : xu.includes(t)
+                          : Tu.includes(t)
                             ? hu.CURRENCY
                             : Ru.includes(t)
                               ? hu.NUMBER

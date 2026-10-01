@@ -846,6 +846,7 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
+            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -878,13 +879,7 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.WtStamp = "stamp"),
-            (u.WtHunter = "wt_hunter"),
-            (u.WtBoss = "wt_boss"),
-            (u.WtHunterCollection = "hunter_collection"),
-            (u.WtTicket = "wtevent_ticket"),
-            (u.WtMainPrizeDiscount = "main_prize_discount"),
-            (u.WtTicket25 = "wtevent_ticket25"));
+            (u.RazlomCoin = "razlom_coin"));
         })(s || (s = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1333,11 +1328,6 @@
             s.PremiumPlusUniversal,
             s.GoldenTicket,
             s.RewardsSlots,
-            s.WtStamp,
-            s.WtTicket,
-            s.WtMainPrizeDiscount,
-            s.WtHunter,
-            s.WtHunterCollection,
           ],
           L = [s.Gold, s.Credits, s.Crystal, s.FreeXp],
           N = [s.BattlePassPoints],
@@ -1503,6 +1493,8 @@
               case s.StyleProgress:
               case s.LbStyleProgress:
                 return W(a, e, _.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${e}.${i}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
             }
@@ -1681,8 +1673,8 @@
               ? u
               : null
             : u;
-        var z = t(3138);
-        const V = {
+        var V = t(3138);
+        const z = {
           extraLarge: { weight: 4, width: 2560, height: 1440 },
           large: { weight: 3, width: 1920, height: 1080 },
           medium: { weight: 2, width: 1600, height: 900 },
@@ -1755,10 +1747,10 @@
             (u.smallHeight = "smallHeight"),
             (u.extraSmallHeight = "extraSmallHeight"));
         })(K || (K = {}));
-        const Z = z.O.client.getSize("rem"),
+        const Z = V.O.client.getSize("rem"),
           J = Z.width,
           uu = Z.height,
-          eu = Object.assign({ width: J, height: uu }, Q(J, uu, V)),
+          eu = Object.assign({ width: J, height: uu }, Q(J, uu, z)),
           tu = (0, r.createContext)(eu),
           ru = ["children"],
           nu = (u) => {
@@ -1842,9 +1834,9 @@
             a = t[0],
             i = t[1],
             s = (0, r.useCallback)((u, e) => {
-              const t = z.O.view.pxToRem(u),
-                r = z.O.view.pxToRem(e);
-              i(Object.assign({ width: t, height: r }, Q(t, r, V)));
+              const t = V.O.view.pxToRem(u),
+                r = V.O.view.pxToRem(e);
+              i(Object.assign({ width: t, height: r }, Q(t, r, z)));
             }, []);
           (((u) => {
             const e = (0, r.useRef)(!1);
@@ -1857,25 +1849,25 @@
           return n().createElement(tu.Provider, { value: o }, u);
         }),
           (function (u) {
-            ((u[(u.ExtraSmall = V.extraSmall.width)] = "ExtraSmall"),
-              (u[(u.Small = V.small.width)] = "Small"),
-              (u[(u.Medium = V.medium.width)] = "Medium"),
-              (u[(u.Large = V.large.width)] = "Large"),
-              (u[(u.ExtraLarge = V.extraLarge.width)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = z.extraSmall.width)] = "ExtraSmall"),
+              (u[(u.Small = z.small.width)] = "Small"),
+              (u[(u.Medium = z.medium.width)] = "Medium"),
+              (u[(u.Large = z.large.width)] = "Large"),
+              (u[(u.ExtraLarge = z.extraLarge.width)] = "ExtraLarge"));
           })(au || (au = {})),
           (function (u) {
-            ((u[(u.ExtraSmall = V.extraSmall.width)] = "ExtraSmall"),
-              (u[(u.Small = V.small.width)] = "Small"),
-              (u[(u.Medium = V.medium.width)] = "Medium"),
-              (u[(u.Large = V.large.width)] = "Large"),
-              (u[(u.ExtraLarge = V.extraLarge.width)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = z.extraSmall.width)] = "ExtraSmall"),
+              (u[(u.Small = z.small.width)] = "Small"),
+              (u[(u.Medium = z.medium.width)] = "Medium"),
+              (u[(u.Large = z.large.width)] = "Large"),
+              (u[(u.ExtraLarge = z.extraLarge.width)] = "ExtraLarge"));
           })(iu || (iu = {})),
           (function (u) {
-            ((u[(u.ExtraSmall = V.extraSmall.height)] = "ExtraSmall"),
-              (u[(u.Small = V.small.height)] = "Small"),
-              (u[(u.Medium = V.medium.height)] = "Medium"),
-              (u[(u.Large = V.large.height)] = "Large"),
-              (u[(u.ExtraLarge = V.extraLarge.height)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = z.extraSmall.height)] = "ExtraSmall"),
+              (u[(u.Small = z.small.height)] = "Small"),
+              (u[(u.Medium = z.medium.height)] = "Medium"),
+              (u[(u.Large = z.large.height)] = "Large"),
+              (u[(u.ExtraLarge = z.extraLarge.height)] = "ExtraLarge"));
           })(su || (su = {})));
         const ou = ["xl", "lg", "md", "sm", "xs"],
           Eu = (u) => u.includes("_") && ((u) => ou.includes(u))(u.split("_").at(-1)),
@@ -2470,7 +2462,7 @@
                         return {
                           subscribe: (t, a) => {
                             const s = "string" == typeof a ? `${r}.${a}` : r,
-                              o = z.O.view.addModelObserver(s, e, !0);
+                              o = V.O.view.addModelObserver(s, e, !0);
                             return (n.set(o, t), u && t(i(a)), o);
                           },
                           readByPath: i,
@@ -2663,8 +2655,8 @@
             ];
           })(0, function () {}),
           $u = qu[0],
-          zu = qu[1],
-          Vu = {
+          Vu = qu[1],
+          zu = {
             base: "App_base_c0",
             slotWrapper: "App_slotWrapper_04",
             title: "App_title_c3",
@@ -2707,17 +2699,17 @@
         })(Ku || (Ku = {}));
         const Zu = R.strings.cosmicEvent.cosmicLootboxTooltipExtended,
           Ju = (0, Uu.observer)(() => {
-            const u = zu().model,
+            const u = Vu().model,
               e = u.computes.getLootboxSlots(),
               t = u.root.get().lootboxName;
             return n().createElement(
               "div",
-              { className: Vu.base },
+              { className: zu.base },
               n().createElement(Iu, {
                 text: R.strings.lootboxes.userName.$dyn(t),
-                className: Vu.title,
+                className: zu.title,
               }),
-              n().createElement(Iu, { text: Zu.slotTitle(), className: Vu.slotTitle }),
+              n().createElement(Iu, { text: Zu.slotTitle(), className: zu.slotTitle }),
               e.map(
                 (
                   { description: u, bonuses: t, probability: r, vehicleNames: a, slotType: i },
@@ -2752,45 +2744,45 @@
                     D = 0 !== s;
                   return n().createElement(
                     "div",
-                    { className: Vu.slotWrapper, key: s },
-                    D && n().createElement("div", { className: Vu.separator }),
+                    { className: zu.slotWrapper, key: s },
+                    D && n().createElement("div", { className: zu.separator }),
                     n().createElement(
                       "div",
-                      { key: s, className: Vu.row },
+                      { key: s, className: zu.row },
                       n().createElement(
                         "div",
-                        { className: Vu.probabilityTitleWrapper },
-                        n().createElement(Iu, { text: u, className: Vu.probabilityTitle }),
+                        { className: zu.probabilityTitleWrapper },
+                        n().createElement(Iu, { text: u, className: zu.probabilityTitle }),
                         n().createElement(Iu, {
                           text: Zu.percentage(),
                           format: { binding: { percent: r } },
-                          className: Vu.probabilityValue,
+                          className: zu.probabilityValue,
                         }),
                       ),
                       Boolean(a.length) &&
                         n().createElement(
                           "div",
-                          { className: Vu.specialSlotWrapper },
-                          n().createElement("div", { className: Vu.vehicleImg }),
-                          n().createElement("div", { className: Vu.glow }),
-                          n().createElement(Iu, { text: a.join(", "), className: Vu.vehicleNames }),
+                          { className: zu.specialSlotWrapper },
+                          n().createElement("div", { className: zu.vehicleImg }),
+                          n().createElement("div", { className: zu.glow }),
+                          n().createElement(Iu, { text: a.join(", "), className: zu.vehicleNames }),
                         ),
                       n().createElement(
                         "div",
-                        { className: B()(Vu.rewardsWrapper, c && Vu.lastElementWrapper) },
+                        { className: B()(zu.rewardsWrapper, c && zu.lastElementWrapper) },
                         A.map((u, e) => {
                           const t = e === A.length - 1;
                           return n().createElement(
                             "div",
-                            { className: Vu.rewardItemWrapper, key: e },
-                            t && !c && n().createElement("div", { className: Vu.rewardGlow }),
-                            n().createElement(j, Qu({ size: E.Small, className: Vu.reward }, u)),
+                            { className: zu.rewardItemWrapper, key: e },
+                            t && !c && n().createElement("div", { className: zu.rewardGlow }),
+                            n().createElement(j, Qu({ size: E.Small, className: zu.reward }, u)),
                           );
                         }),
                         i === Ku.LootBox &&
                           n().createElement(Iu, {
                             text: Zu.rewardExtraText(),
-                            className: Vu.rewardsExtraText,
+                            className: zu.rewardsExtraText,
                           }),
                       ),
                     ),
@@ -2871,9 +2863,9 @@
                 if (!u) return;
                 const e = u.scrollWidth,
                   t = u.scrollHeight;
-                z.O.view.resize(e, t);
+                V.O.view.resize(e, t);
                 const r = window.getComputedStyle(u);
-                z.O.view.setSidePaddingsRem({
+                V.O.view.setSidePaddingsRem({
                   left: parseInt(r.getPropertyValue("padding-left"), 10),
                   top: parseInt(r.getPropertyValue("padding-top"), 10),
                   right: parseInt(r.getPropertyValue("padding-right"), 10),

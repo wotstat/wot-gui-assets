@@ -110,8 +110,8 @@
               G = e.flex,
               U = void 0 === G ? (H || W ? `${H ? 1 : 0} ${W ? 1 : 0} auto` : void 0) : G,
               X = e.style,
-              z = e.children,
-              V = (function (e, u) {
+              V = e.children,
+              z = (function (e, u) {
                 if (null == e) return {};
                 var t,
                   n,
@@ -151,8 +151,8 @@
               q = $.computedClassNames;
             return l().createElement(
               "div",
-              m({ className: r()(c.Z.base, ...q, u), style: j }, V),
-              z,
+              m({ className: r()(c.Z.base, ...q, u), style: j }, z),
+              V,
             );
           });
       },
@@ -1959,7 +1959,7 @@
             Area: () => uu,
             Bar: () => Je,
             Default: () => eu,
-            useVerticalScrollApi: () => ze,
+            useVerticalScrollApi: () => Ve,
           }));
         var o = t(6179),
           a = t.n(o),
@@ -2602,7 +2602,7 @@
         const X = (e) => {
           console.error(e.type + ": useKeydownListener hook :: Callback is not defined");
         };
-        function z(e = G.n.NONE, u = X, t = !1) {
+        function V(e = G.n.NONE, u = X, t = !1) {
           (0, o.useEffect)(() => {
             if (e !== G.n.NONE)
               return (
@@ -2619,7 +2619,7 @@
             }
           }, [u, e, t]);
         }
-        var V = t(3282),
+        var z = t(3282),
           $ = t(280);
         const j = {
             blackReal: "FormatTextWithColorTags_blackReal_3c",
@@ -2749,6 +2749,7 @@
               (e.SelectableBonus = "selectableBonus"),
               (e.StyleProgressToken = "styleProgressToken"),
               (e.TmanToken = "tmanToken"),
+              (e.PortalEventDiscount25 = "portalEventDiscountToken"),
               (e.NaturalCover = "naturalCover"),
               (e.BpCoin = "bpcoin"),
               (e.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -2781,13 +2782,7 @@
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
               (e.RewardsSlots = "rewardsSlots"),
-              (e.WtStamp = "stamp"),
-              (e.WtHunter = "wt_hunter"),
-              (e.WtBoss = "wt_boss"),
-              (e.WtHunterCollection = "hunter_collection"),
-              (e.WtTicket = "wtevent_ticket"),
-              (e.WtMainPrizeDiscount = "main_prize_discount"),
-              (e.WtTicket25 = "wtevent_ticket25"));
+              (e.RazlomCoin = "razlom_coin"));
           })(ae || (ae = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -2918,11 +2913,6 @@
           ae.PremiumPlusUniversal,
           ae.GoldenTicket,
           ae.RewardsSlots,
-          ae.WtStamp,
-          ae.WtTicket,
-          ae.WtMainPrizeDiscount,
-          ae.WtHunter,
-          ae.WtHunterCollection,
           ae.Gold,
           ae.Credits,
           ae.Crystal,
@@ -3546,7 +3536,7 @@
               ),
             )
           )));
-        const ze = Le({
+        const Ve = Le({
             getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
             getContainerSize: (e) => e.scrollHeight,
             getWrapperSize: (e) => e.offsetHeight,
@@ -3555,7 +3545,7 @@
             },
             getDirection: (e) => (e.deltaY > 1 ? Te.Next : Te.Prev),
           }),
-          Ve = "VerticalBar_base__nonActive_42",
+          ze = "VerticalBar_base__nonActive_42",
           $e = "disable",
           je = () => {},
           qe = { pending: !1, offset: 0 },
@@ -3597,7 +3587,7 @@
                     (u.style.height = `${Ke(t, a)}px`),
                     u.classList.add("VerticalBar_thumb_32"),
                     r.current &&
-                      (1 === a ? r.current.classList.add(Ve) : r.current.classList.remove(Ve)),
+                      (1 === a ? r.current.classList.add(ze) : r.current.classList.remove(ze)),
                     a
                   );
                 }),
@@ -4156,6 +4146,8 @@
                   case ae.StyleProgress:
                   case ae.LbStyleProgress:
                     return he(o, u, _e.ProgressionStyle);
+                  case "portal":
+                    return `R.images.gui.maps.icons.rewards.${u}.${a}`;
                   default:
                     return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                 }
@@ -4601,7 +4593,7 @@
         !(function (e) {
           ((e.Current = "current"), (e.All = "all"));
         })(Nu || (Nu = {}));
-        const Ou = (0, V.observer)(() => {
+        const Ou = (0, z.observer)(() => {
           const e = v(),
             u = e.model,
             t = e.controls,
@@ -4671,7 +4663,7 @@
               callback: u = () => m.O.view.sendEvent.close(),
               preventPropagation: t = !0,
             } = {}) {
-              z(e, u, t);
+              V(e, u, t);
             })({ callback: L, preventPropagation: !1 }),
             ((e, u) => {
               (0, o.useEffect)(() => {
@@ -4843,7 +4835,7 @@
             [Eu.fd.ExtraLarge]:
               `${Wu().SMALL_WIDTH} ${Wu().MEDIUM_WIDTH} ${Wu().LARGE_WIDTH} ${Wu().EXTRA_LARGE_WIDTH}`,
           },
-          zu = {
+          Vu = {
             [Eu.Aq.ExtraSmall]: "",
             [Eu.Aq.Small]: Wu().SMALL_HEIGHT,
             [Eu.Aq.Medium]: `${Wu().SMALL_HEIGHT} ${Wu().MEDIUM_HEIGHT}`,
@@ -4851,7 +4843,7 @@
             [Eu.Aq.ExtraLarge]:
               `${Wu().SMALL_HEIGHT} ${Wu().MEDIUM_HEIGHT} ${Wu().LARGE_HEIGHT} ${Wu().EXTRA_LARGE_HEIGHT}`,
           },
-          Vu = {
+          zu = {
             [Eu.cJ.ExtraSmall]: "",
             [Eu.cJ.Small]: Wu().SMALL,
             [Eu.cJ.Medium]: `${Wu().SMALL} ${Wu().MEDIUM}`,
@@ -4874,7 +4866,7 @@
               o = r.mediaWidth,
               i = r.mediaHeight,
               s = r.mediaSize;
-            return a().createElement("div", Uu({ className: S()(t, Xu[o], zu[i], Vu[s]) }, n), u);
+            return a().createElement("div", Uu({ className: S()(t, Xu[o], Vu[i], zu[s]) }, n), u);
           },
           ju = ["children"],
           qu = (e) => {
