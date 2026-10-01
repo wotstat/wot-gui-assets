@@ -4935,16 +4935,17 @@ function Portal({
   paddingsRem: r = {},
   lazy: o = !1,
   closeByEscape: a = !0,
-  onBeforePositionChange: i = noop,
-  freeSpaceRem: l = 8,
-  animationTransitions: c,
-  ...u
+  closeOnAnchorMove: i = !1,
+  onBeforePositionChange: l = noop,
+  freeSpaceRem: c = 8,
+  animationTransitions: u,
+  ...d
 }) {
-  const d = usePopover(),
-    p = React.useRef(null),
-    m = React.useRef(void 0),
-    [_, f] = reactExports.useState(),
-    h = reactExports.useMemo(
+  const p = usePopover(),
+    m = React.useRef(null),
+    _ = React.useRef(void 0),
+    [f, h] = reactExports.useState(),
+    g = reactExports.useMemo(
       () => ({
         top: remToPx$1(r.top || defaultPaddingsRem.top),
         bottom: remToPx$1(r.bottom || defaultPaddingsRem.bottom),
@@ -4953,55 +4954,57 @@ function Portal({
       }),
       [r.bottom, r.top, r.left, r.right],
     ),
-    g = remToPx$1(l),
-    x = reactExports.useMemo(() => ({ ...animationTransitionsDefault, ...c }), [c]),
-    b = reactExports.useMemo(
+    x = remToPx$1(c),
+    b = reactExports.useMemo(() => ({ ...animationTransitionsDefault, ...u }), [u]),
+    y = reactExports.useMemo(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
     );
   reactExports.useEffect(() => {
-    m.current = void 0;
-    const e = p.current;
+    _.current = void 0;
+    const e = m.current;
     if (!e) return;
-    const t = document.querySelector(`[data-popover-trigger-id="${d.id}"]`),
-      r = e.querySelector(`[data-popover-display-id="${d.id}"]`);
+    const t = document.querySelector(`[data-popover-trigger-id="${p.id}"]`),
+      r = e.querySelector(`[data-popover-display-id="${p.id}"]`);
     if (!t || !r) return;
     const o = watchResizes([t, e, document.body], ([t, r, o]) => {
-      if (!d.opened) return void f(void 0);
-      if (!1 === i(d, { callerBounding: t, containerBounding: r, bodyBounding: o })) return;
-      if (m.current && !isEqual(m.current, t)) return void d.close();
-      m.current = t;
-      const a = getUpdatedPosition(n, h, t, r, o);
-      (f(a),
-        updatePosition(s, g, a, h, t, r, o, e),
+      if (!p.opened) return void h(void 0);
+      if (!1 === l(p, { callerBounding: t, containerBounding: r, bodyBounding: o })) return;
+      if (i) {
+        if (_.current && !isEqual(_.current, t)) return void p.close();
+        _.current = t;
+      }
+      const a = getUpdatedPosition(n, g, t, r, o);
+      (h(a),
+        updatePosition(s, x, a, g, t, r, o, e),
         runInAction(() => {
-          (d.trigger.setBounding(t), d.portal.setBounding(r), d.portal.setPosition(a));
+          (p.trigger.setBounding(t), p.portal.setBounding(r), p.portal.setPosition(a));
         }));
     });
     return (o.start(), o.stop);
-  }, [d, i, h, s, g, d.id, d.portal, d.trigger, n, d.opened]);
-  const y = reactExports.useCallback(() => {
-    const e = p.current;
+  }, [p, l, i, g, s, x, p.id, p.portal, p.trigger, n, p.opened]);
+  const E = reactExports.useCallback(() => {
+    const e = m.current;
     e &&
       document.activeElement &&
       document.activeElement instanceof HTMLElement &&
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  (reactExports.useEffect(() => d.subscribe.onBeforeClose(y), [d.subscribe, y]),
-    useHandleKeydown(a && d.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
-      d.close();
+  (reactExports.useEffect(() => p.subscribe.onBeforeClose(E), [p.subscribe, E]),
+    useHandleKeydown(a && p.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
+      p.close();
     }),
     reactExports.useEffect(() => {
-      if (!d.opened) return;
-      const e = p.current;
+      if (!p.opened) return;
+      const e = m.current;
       if (!e) return;
       const t = e;
       function s(e) {
         const s = e.target;
         if (!(s instanceof HTMLElement)) return !1;
-        const n = `[data-popover-trigger-id="${d.id}"]`,
-          r = `[data-popover-outside-click-whitelist-id="${d.id}"]`;
+        const n = `[data-popover-trigger-id="${p.id}"]`,
+          r = `[data-popover-outside-click-whitelist-id="${p.id}"]`;
         return !(
           t === s ||
           t.contains(s) ||
@@ -5014,50 +5017,50 @@ function Portal({
       return new DisposeBuilder()
         .add(
           addEventListener(document, "click", (e) => {
-            s(e) && d.close();
+            s(e) && p.close();
           }),
         )
         .add(
           mouse.down(([e, t]) => {
-            if ("outside" === t) return d.close();
+            if ("outside" === t) return p.close();
             const n = e.button;
-            (n !== mouseButtons.right && n !== mouseButtons.wheel) || (s(e) && d.close());
+            (n !== mouseButtons.right && n !== mouseButtons.wheel) || (s(e) && p.close());
           }),
         ).dispose;
-    }, [d]));
-  const [E, v] = useSpring(() => ({
-      from: { opacity: 0, transform: x[n] },
+    }, [p]));
+  const [v, w] = useSpring(() => ({
+      from: { opacity: 0, transform: b[n] },
       config: { easing: easings.easeInOutCubic, duration: OPEN_ANIMATION_DURATION },
     })),
-    w = React.useRef(x);
+    S = React.useRef(b);
   return (
-    (w.current = x),
+    (S.current = b),
     reactExports.useEffect(() => {
-      if (!_) return;
-      const e = { opacity: 0, transform: w.current[_] };
-      v.start({
-        from: d.opened ? e : void 0,
-        to: d.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
+      if (!f) return;
+      const e = { opacity: 0, transform: S.current[f] };
+      w.start({
+        from: p.opened ? e : void 0,
+        to: p.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [v, _, d.opened]),
-    !d.opened && o
+    }, [w, f, p.opened]),
+    !p.opened && o
       ? null
       : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
           children: ReactDOM$1.createPortal(
             jsxRuntimeExports.jsx(animated.div, {
-              ...u,
-              ref: p,
+              ...d,
+              ref: m,
               style: {
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: E.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: E.opacity.to((e) => (0 !== e || d.opened ? "block" : "none")),
-                ...u.style,
+                pointerEvents: v.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: v.opacity.to((e) => (0 !== e || p.opened ? "block" : "none")),
+                ...d.style,
               },
-              children: jsxRuntimeExports.jsx(animated.div, { style: E, children: e }),
+              children: jsxRuntimeExports.jsx(animated.div, { style: v, children: e }),
             }),
-            b,
+            y,
           ),
         })
   );
@@ -7216,133 +7219,132 @@ const selectedOverlay = "Slot_selectedOverlay_5b63484a",
   });
 ((Slot.sizes = sizes), (Slot.Empty = EmptySlot));
 export {
-  MaskArea as $,
-  mapNonNullable as A,
-  sizes$9 as B,
-  discountTypes as C,
-  Currency as D,
-  defineStyledComponent as E,
-  FormatString as F,
-  get as G,
-  usePrevious as H,
-  Image as I,
-  useTooltip as J,
-  VehicleInfo as K,
+  isTypeValidValue as $,
+  resources as A,
+  createString as B,
+  renderResolvedString as C,
+  DictMock as D,
+  assert as E,
+  sameTanksRemap as F,
+  iter as G,
+  sort as H,
+  isNumber as I,
+  makeActions as J,
+  mapNonNullable as K,
   LOWER_ALPHABET as L,
-  intl$1 as M,
+  sizes$9 as M,
   NUMBERS_ALPHABET as N,
-  isTypeValidValue as O,
-  directions$1 as P,
-  useUpscale as Q,
-  RentalCounter as R,
-  useSounds as S,
-  TruncatedText as T,
-  useSpecialContextMenu as U,
+  discountTypes as O,
+  Currency as P,
+  FormatString as Q,
+  defineStyledComponent as R,
+  get as S,
+  usePrevious as T,
+  Image as U,
   VehicleImage as V,
   WithDiscount as W,
-  SimpleTooltip as X,
-  Button as Y,
-  Checkbox as Z,
-  sizes$4 as _,
-  atSpgRoles as a,
-  JSXBuilder as a$,
-  map as a0,
-  Bar as a1,
-  WITHOUT_ROLE as a2,
-  Popover as a3,
-  Base$7 as a4,
-  usePopover as a5,
-  useIsFirstRender as a6,
-  useTimeout as a7,
-  useSkipFrame as a8,
-  useEvent as a9,
-  sendEvent$1 as aA,
-  useInput as aB,
-  Sprite as aC,
-  writeClipboard as aD,
-  useRouter as aE,
-  HeadlessButton as aF,
-  asMemoized as aG,
-  useHoverState as aH,
-  Slot$1 as aI,
-  useVerticalScroll as aJ,
-  Area as aK,
-  MediaWrapperElement as aL,
-  Slottable as aM,
-  keyCodes as aN,
-  mapExists as aO,
-  breakpoints as aP,
-  sizes$2 as aQ,
-  overlayTypes as aR,
-  Switcher as aS,
-  Slot as aT,
-  LoadoutItem as aU,
-  useSpecialTooltip as aV,
-  useHorizontalScroll as aW,
-  useHandleKeydown as aX,
-  keyStringCodes as aY,
-  createSoundPlay as aZ,
-  runView as a_,
-  OPEN_ANIMATION_DURATION as aa,
-  useUnmount as ab,
-  useExternalPaddings as ac,
-  isEqual as ad,
-  useScrollBounding as ae,
-  useScrollByDragElements as af,
-  createLayoutReadyInEffect as ag,
-  Area$1 as ah,
-  dragDirections as ai,
-  List as aj,
-  remToPx$1 as ak,
-  DisposeBuilder as al,
-  constFalse as am,
-  useCountdown as an,
-  useAdaptive as ao,
-  ErrorHandler as ap,
-  useSimpleTooltip as aq,
-  Toggle as ar,
-  toggleSizes as as,
-  toggleThemes as at,
-  DefaultScroll as au,
-  VehicleType as av,
-  VehicleRole as aw,
-  VehicleLevel as ax,
-  Input as ay,
-  placeholderVisibility as az,
-  mediumTankRoles as b,
-  UIProvider as b0,
-  SoundsProvider as b1,
-  Base$8 as b2,
-  clamp as b3,
-  getSize$1 as b4,
-  getScale$2 as b5,
-  useResize as b6,
-  onRescale as b7,
-  useScaleState as b8,
-  DictMock as b9,
-  createSimpleGetter as ba,
-  isRentVehicle as c,
-  initializeModelWithContext as d,
-  computeds as e,
-  comparer as f,
-  getRoleByKey as g,
-  heavyTankRoles as h,
-  identity as i,
-  getVehicleImageKey as j,
-  noop as k,
+  RentalCounter as X,
+  useTooltip as Y,
+  VehicleInfo as Z,
+  intl$1 as _,
+  comparer as a,
+  Slot as a$,
+  directions$1 as a0,
+  TruncatedText as a1,
+  useUpscale as a2,
+  useSounds as a3,
+  useSpecialContextMenu as a4,
+  SimpleTooltip as a5,
+  Button as a6,
+  Checkbox as a7,
+  sizes$4 as a8,
+  MaskArea as a9,
+  toggleSizes as aA,
+  toggleThemes as aB,
+  DefaultScroll as aC,
+  VehicleType as aD,
+  VehicleRole as aE,
+  VehicleLevel as aF,
+  Input as aG,
+  placeholderVisibility as aH,
+  sendEvent$1 as aI,
+  useInput as aJ,
+  Sprite as aK,
+  writeClipboard as aL,
+  useRouter as aM,
+  HeadlessButton as aN,
+  asMemoized as aO,
+  useHoverState as aP,
+  Slot$1 as aQ,
+  useVerticalScroll as aR,
+  Area as aS,
+  MediaWrapperElement as aT,
+  Slottable as aU,
+  keyCodes as aV,
+  mapExists as aW,
+  breakpoints as aX,
+  sizes$2 as aY,
+  overlayTypes as aZ,
+  Switcher as a_,
+  map as aa,
+  Bar as ab,
+  WITHOUT_ROLE as ac,
+  Popover as ad,
+  Base$7 as ae,
+  usePopover as af,
+  useIsFirstRender as ag,
+  useTimeout as ah,
+  useSkipFrame as ai,
+  useEvent as aj,
+  OPEN_ANIMATION_DURATION as ak,
+  useUnmount as al,
+  useExternalPaddings as am,
+  useScrollBounding as an,
+  useScrollByDragElements as ao,
+  createLayoutReadyInEffect as ap,
+  Area$1 as aq,
+  dragDirections as ar,
+  List as as,
+  remToPx$1 as at,
+  DisposeBuilder as au,
+  useCountdown as av,
+  useAdaptive as aw,
+  ErrorHandler as ax,
+  useSimpleTooltip as ay,
+  Toggle as az,
+  clamp as b,
+  LoadoutItem as b0,
+  useSpecialTooltip as b1,
+  useHorizontalScroll as b2,
+  useHandleKeydown as b3,
+  keyStringCodes as b4,
+  createSoundPlay as b5,
+  JSXBuilder as b6,
+  UIProvider as b7,
+  SoundsProvider as b8,
+  Base$8 as b9,
+  constFalse as c,
+  getScale$2 as d,
+  useScaleState as e,
+  createSimpleGetter as f,
+  getSize$1 as g,
+  roles as h,
+  initializeModelWithContext as i,
+  identity as j,
+  atSpgRoles as k,
   lightTankRoles as l,
   mapRange as m,
-  nationById as n,
-  resources as o,
-  createString as p,
-  renderResolvedString as q,
-  roles as r,
-  assert as s,
+  noop as n,
+  onRescale as o,
+  mediumTankRoles as p,
+  heavyTankRoles as q,
+  runView as r,
+  isRentVehicle as s,
   types$3 as t,
-  sameTanksRemap as u,
-  vehicleState as v,
-  iter as w,
-  sort as x,
-  isNumber as y,
-  makeActions as z,
+  useResize as u,
+  nationById as v,
+  vehicleState as w,
+  getRoleByKey as x,
+  computeds as y,
+  getVehicleImageKey as z,
 };

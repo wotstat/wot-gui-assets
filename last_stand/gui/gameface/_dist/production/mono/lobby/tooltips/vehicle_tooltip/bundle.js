@@ -2,33 +2,33 @@ import {
   $ as e,
   $t as s,
   Cn as t,
-  Eo as a,
-  La as r,
-  Qt as i,
-  Sn as l,
-  Ta as n,
-  Xn as c,
-  _n as o,
-  _o as m,
-  c as d,
-  cr as u,
+  Ia as a,
+  Qt as r,
+  Sn as i,
+  To as l,
+  Xn as n,
+  _n as c,
+  bo as o,
+  c as m,
+  cr as d,
+  di as u,
   do as p,
   dr as h,
   et as _,
-  fi as x,
-  fo as v,
-  ga as g,
-  gi as j,
-  i as f,
+  go as x,
+  ha as v,
+  hi as g,
+  i as j,
+  lo as f,
   lr as y,
-  mo as N,
-  n as b,
+  n as N,
+  no as b,
   pn as T,
-  pr as C,
-  q as S,
-  r as R,
-  rn as E,
-  ro as w,
+  po as C,
+  pr as S,
+  q as R,
+  r as E,
+  rn as w,
   sn as O,
   sr as k,
   t as P,
@@ -36,14 +36,14 @@ import {
   tr as $,
   tt as I,
   uo as G,
-  xn as A,
-  xo as M,
-  ya as D,
+  va as A,
+  wa as M,
+  xn as D,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as V, o as H } from "../../chunks/vendor.js";
 import { o as z, r as B, t as W, u as X } from "../../chunks/tankman_role.js";
-var [F, Q] = C("VehicleTooltipModelProvider")(({ observableModel: e }) => {
+var [F, Q] = S("VehicleTooltipModelProvider")(({ observableModel: e }) => {
     const s = {
         ...e.primitives(["status", "stateLevel", "bpEntityValid"]),
         statistics: e.object("statistics"),
@@ -64,26 +64,26 @@ var [F, Q] = C("VehicleTooltipModelProvider")(({ observableModel: e }) => {
       r = h.primitive(() => s.numberOfCrystalEarned.get()[0] ?? 0),
       i = h.primitive(() => s.numberOfCrystalEarned.get()[1] ?? 0),
       l = h.primitive(() => -1 !== s.earnings.get().bonusMultiplier),
-      c = h.primitive(
+      n = h.primitive(
         () =>
           s.earnings.get().bpActive &&
           s.earnings.get().maxBpScore > 0 &&
           s.status.get() !== z.unsuitableToQueue,
       ),
-      o = h.primitive(() => n(s.mechanics.get(), (e) => e.priority >= 1));
+      c = h.primitive(() => M(s.mechanics.get(), (e) => e.priority >= 1));
     return {
       ...s,
       computes: {
         elite: t,
         serviceRecords: a,
-        battlePoints: c,
+        battlePoints: n,
         currentNumberOfCrystal: r,
         maxNumberOfCrystal: i,
         hasBonusMultiplier: l,
-        hasSpecialMechanics: o,
+        hasSpecialMechanics: c,
       },
     };
-  }, r),
+  }, a),
   q = "INACTIVE",
   K = "ACTIVE",
   U = "CANCELLED",
@@ -120,24 +120,24 @@ var te = {
 var me = "Row_a52ddf2a",
   de = "Row_title_6c4bc0c8",
   ue = "Row_title__colon_6c475686",
-  pe = j(),
+  pe = g(),
   he = $("Row", me);
-function _e({ className: e, title: s, params: t, children: r }) {
-  const i = a.resolve("strings");
+function _e({ className: e, title: s, params: t, children: a }) {
+  const r = l.resolve("strings");
   return (0, pe.jsxs)(he, {
     className: e,
     children: [
       void 0 !== s &&
         (0, pe.jsxs)(pe.Fragment, {
           children: [
-            (0, pe.jsx)(c, { className: de, path: `tooltips.vehicle.${s}`, params: t }),
+            (0, pe.jsx)(n, { className: de, path: `tooltips.vehicle.${s}`, params: t }),
             (0, pe.jsx)("div", {
-              className: m(de, ue),
-              children: i.readOrEmpty("common.common.colon"),
+              className: x(de, ue),
+              children: r.readOrEmpty("common.common.colon"),
             }),
           ],
         }),
-      r,
+      a,
     ],
   });
 }
@@ -148,22 +148,22 @@ var xe = "Crew_2339425e",
   fe = V(function ({ className: e }) {
     const { model: s } = Q(),
       t = s.slots.get(),
-      r = a.resolve("strings");
+      a = l.resolve("strings");
     return (0, pe.jsx)(_e, {
       title: ie,
       params: { count: t.length },
-      className: m(xe, e),
-      children: D(t, (e) =>
+      className: x(xe, e),
+      children: A(t, (e) =>
         (0, pe.jsxs)(
           "div",
           {
             className: ve,
             children: [
-              (0, pe.jsx)(W, { role: g(e.roles, 0), className: ge }),
+              (0, pe.jsx)(W, { role: v(e.roles, 0), className: ge }),
               e.roles.length > 1 &&
                 (0, pe.jsx)("div", {
                   className: je,
-                  children: r.readOrEmpty("crew_perks.sign.plus"),
+                  children: a.readOrEmpty("crew_perks.sign.plus"),
                 }),
             ],
           },
@@ -176,20 +176,20 @@ var xe = "Crew_2339425e",
   Ne = "Rent_rentValue_f91a4efd",
   be = "Rent_text_94f0c0d7";
 function Te({ rentPeriodLeft: e, rentType: s }) {
-  const r = a.resolve("strings"),
-    i = x("ui_kit.rental_counter.rent_x24x24", "ui_kit.rental_counter.rent_x48x48");
+  const a = l.resolve("strings"),
+    r = u("ui_kit.rental_counter.rent_x24x24", "ui_kit.rental_counter.rent_x48x48");
   return (0, pe.jsxs)(_e, {
     children: [
       (0, pe.jsxs)("div", {
         className: ye,
         children: [
-          (0, pe.jsx)("div", { className: Ne, children: M.formatNumber("integral", Math.ceil(e)) }),
-          (0, pe.jsx)(t, { path: i, width: 24, height: 24 }),
+          (0, pe.jsx)("div", { className: Ne, children: o.formatNumber("integral", Math.ceil(e)) }),
+          (0, pe.jsx)(t, { path: r, width: 24, height: 24 }),
         ],
       }),
       (0, pe.jsx)("div", {
         className: be,
-        children: r.readOrEmpty(`tooltips.vehicle.rentLeft.${s}`),
+        children: a.readOrEmpty(`tooltips.vehicle.rentLeft.${s}`),
       }),
     ],
   });
@@ -198,8 +198,8 @@ var Ce = V(function () {
     const { model: e } = Q(),
       { rentLeftTime: s, rentLeftBattles: t, rentLeftWins: a } = e.statistics.get(),
       r = (function (e) {
-        const s = N(e);
-        return v(s, p(1)) ? G(s, ce) : G(s, oe);
+        const s = C(e);
+        return p(s, G(1)) ? f(s, ce) : f(s, oe);
       })(s);
     return s > 0
       ? (0, pe.jsx)(Te, { rentPeriodLeft: r.value, rentType: r.unit })
@@ -214,22 +214,22 @@ var Ce = V(function () {
   Ee = "Role_property_8f6d69d9",
   we = V(function ({ className: s }) {
     const { model: t } = Q(),
-      { type: r, role: i } = t.statistics.get(),
-      l = a.resolve("strings");
+      { type: a, role: r } = t.statistics.get(),
+      i = l.resolve("strings");
     return (0, pe.jsxs)(_e, {
-      className: m(Se, s),
+      className: x(Se, s),
       title: re,
       children: [
-        (0, pe.jsx)(e, { classNames: { icon: Re }, roleKey: E(i), size: _.x16x16 }),
-        se(r) &&
+        (0, pe.jsx)(e, { classNames: { icon: Re }, roleKey: w(r), size: _.x16x16 }),
+        se(a) &&
           (0, pe.jsx)("div", {
             className: Ee,
-            children: l.readOrEmpty(`menu.roleExp.roleGroupName.role_${te[r]}_${E(i)}`),
+            children: i.readOrEmpty(`menu.roleExp.roleGroupName.role_${te[a]}_${w(r)}`),
           }),
       ],
     });
   }),
-  Oe = a.resolve("strings"),
+  Oe = l.resolve("strings"),
   ke = V(function ({ className: e }) {
     return (0, pe.jsx)(_e, {
       className: e,
@@ -241,10 +241,10 @@ var Ce = V(function () {
     tradeInIcon: "TradeIn_tradeInIcon_2cde5b72",
     text: "TradeIn_text_1e5d2ead",
   },
-  Le = a.resolve("strings"),
+  Le = l.resolve("strings"),
   $e = V(function ({ className: e }) {
     return (0, pe.jsxs)(_e, {
-      className: m(Pe.base, e),
+      className: x(Pe.base, e),
       children: [
         (0, pe.jsx)("div", {
           className: Pe.leftColumn,
@@ -261,36 +261,36 @@ var Ce = V(function () {
   Ge = "WotPlus_wotPlus__timer_fb00f649",
   Ae = V(function ({ className: e }) {
     const { model: s } = Q(),
-      { wotPlusExpiryTime: t, wotPlusState: r } = s.earnings.get(),
-      i = a.resolve("strings");
+      { wotPlusExpiryTime: t, wotPlusState: a } = s.earnings.get(),
+      r = l.resolve("strings");
     return (0, pe.jsxs)(pe.Fragment, {
       children: [
         (0, pe.jsx)(_e, {
           className: e,
           children: (0, pe.jsx)("div", {
             className: Ie,
-            children: i.readOrEmpty("tooltips.vehicle.wotPlusRenting.title"),
+            children: r.readOrEmpty("tooltips.vehicle.wotPlusRenting.title"),
           }),
         }),
-        r !== K &&
+        a !== K &&
           (0, pe.jsx)(_e, {
             className: e,
             children: (() => {
-              switch (r) {
+              switch (a) {
                 case U:
-                  return (0, pe.jsx)(c, {
+                  return (0, pe.jsx)(n, {
                     upgradeLegacy: !0,
-                    className: m(Ie, Ge),
+                    className: x(Ie, Ge),
                     path: "tooltips.vehicle.wotPlusRenting.remainingTime",
-                    params: { time: (0, pe.jsx)(f, { datetime: t, format: "ShortDateTime" }) },
+                    params: { time: (0, pe.jsx)(j, { datetime: t, format: "ShortDateTime" }) },
                   });
                 case q:
                   return (0, pe.jsx)("div", {
-                    className: m(Ie, Ge),
-                    children: i.readOrEmpty("tooltips.vehicle.wotPlusRenting.inactive"),
+                    className: x(Ie, Ge),
+                    children: r.readOrEmpty("tooltips.vehicle.wotPlusRenting.inactive"),
                   });
                 default:
-                  return (console.error(`Unknown wotPlus state: ${r}`), null);
+                  return (console.error(`Unknown wotPlus state: ${a}`), null);
               }
             })(),
           }),
@@ -306,8 +306,8 @@ var Ce = V(function () {
   We = V(function ({ className: e }) {
     const { model: s } = Q(),
       { wotPlus: t, telecomRent: a, tradeIn: r } = s.earnings.get(),
-      { name: i, role: l, type: n, elite: o, level: m } = s.statistics.get(),
-      d = E(l);
+      { name: i, role: l, type: c, elite: o, level: m } = s.statistics.get(),
+      d = w(l);
     return (0, pe.jsxs)(Be, {
       className: e,
       children: [
@@ -315,9 +315,9 @@ var Ce = V(function () {
         (0, pe.jsx)(_e, {
           className: De,
           title: ae,
-          children: (0, pe.jsx)(c, {
+          children: (0, pe.jsx)(n, {
             className: He,
-            path: `tooltips.tankCaruselTooltip.vehicleType.tier.${o ? "elite" : "normal"}.${w(n)}`,
+            path: `tooltips.tankCaruselTooltip.vehicleType.tier.${o ? "elite" : "normal"}.${b(c)}`,
             params: { tier: (0, pe.jsx)(I, { value: m, className: Ve }) },
           }),
         }),
@@ -341,25 +341,25 @@ var Ce = V(function () {
   Ye = "EliteSystem_xp_4e0b1db9",
   es = "EliteSystem_progressBarBorder_45636892",
   ss = V(function ({ className: e }) {
-    const s = a.resolve("strings"),
+    const s = l.resolve("strings"),
       { model: t } = Q(),
       {
-        prestigeLevel: r,
-        prestigeGrade: i,
+        prestigeLevel: a,
+        prestigeGrade: r,
         prestigeType: n,
-        prestigeXp: c,
+        prestigeXp: m,
         prestigeXpNextLevel: d,
       } = t.serviceRecords.get(),
-      u = n === b.prestige;
+      u = n === N.prestige;
     return (0, pe.jsxs)(_e, {
-      className: m(Fe, e),
+      className: x(Fe, e),
       children: [
         (0, pe.jsx)("div", {
           className: Xe,
-          children: (0, pe.jsx)(P, { level: r, grade: i, type: n, size: R.xs }),
+          children: (0, pe.jsx)(P, { level: a, grade: r, type: n, size: E.xs }),
         }),
         (0, pe.jsxs)("div", {
-          className: m(Qe, u && qe),
+          className: x(Qe, u && qe),
           children: [
             (0, pe.jsxs)("div", {
               className: Ke,
@@ -371,28 +371,28 @@ var Ce = V(function () {
                   ),
                 }),
                 !u &&
-                  (0, pe.jsxs)(o, {
+                  (0, pe.jsxs)(c, {
                     reverse: !0,
-                    size: A.small,
-                    type: l.tankXP,
+                    size: D.small,
+                    type: i.tankXP,
                     classNames: { base: Ue, icon: Ze },
                     children: [
-                      (0, pe.jsx)("div", { children: M.formatNumber("integral", d) }),
+                      (0, pe.jsx)("div", { children: o.formatNumber("integral", d) }),
                       (0, pe.jsx)("div", {
                         className: Je,
                         children: s.readOrEmpty("common.common.slash"),
                       }),
                       (0, pe.jsx)("div", {
                         className: Ye,
-                        children: M.formatNumber("integral", c),
+                        children: o.formatNumber("integral", m),
                       }),
                     ],
                   }),
               ],
             }),
             !u &&
-              (0, pe.jsx)(S, {
-                value: c,
+              (0, pe.jsx)(R, {
+                value: m,
                 size: "small",
                 maxValue: d,
                 classNames: { background: es },
@@ -410,24 +410,24 @@ var Ce = V(function () {
   },
   as = V(function () {
     const { model: e } = Q(),
-      { marksOnGunPercentage: s, marksOnGun: r } = e.serviceRecords.get(),
-      i = a.resolve("strings");
+      { marksOnGunPercentage: s, marksOnGun: a } = e.serviceRecords.get(),
+      r = l.resolve("strings");
     return (0, pe.jsxs)(_e, {
       children: [
         (0, pe.jsxs)("div", {
           className: ts.leftColumn,
           children: [
-            (0, pe.jsx)(c, {
+            (0, pe.jsx)(n, {
               upgradeLegacy: !0,
               path: "common.percentValue",
-              params: { value: M.formatReal("woZeroDigits", Number(s)) },
+              params: { value: o.formatReal("woZeroDigits", Number(s)) },
             }),
-            (0, pe.jsx)(t, { path: `library.marksOnGun.mark_${r}`, width: 24, height: 24 }),
+            (0, pe.jsx)(t, { path: `library.marksOnGun.mark_${a}`, width: 24, height: 24 }),
           ],
         }),
         (0, pe.jsx)("div", {
           className: ts.text,
-          children: i.pluralOrEmpty("achievements.marksOnGun.count", r),
+          children: r.pluralOrEmpty("achievements.marksOnGun.count", a),
         }),
       ],
     });
@@ -435,7 +435,7 @@ var Ce = V(function () {
   rs = V(function () {
     const { model: e } = Q(),
       { marksOfMastery: s } = e.serviceRecords.get(),
-      a = x(
+      a = u(
         `tooltip.proficiency.class_icons_${Y[s]}`,
         `tooltip.proficiency.class_icons_${Y[s]}_upscale`,
       );
@@ -445,19 +445,19 @@ var Ce = V(function () {
           className: ts.leftColumn,
           children: (0, pe.jsx)(t, { path: a, width: 24, height: 24 }),
         }),
-        (0, pe.jsx)(c, { className: ts.text, path: `achievements.markOfMastery${Y[s]}` }),
+        (0, pe.jsx)(n, { className: ts.text, path: `achievements.markOfMastery${Y[s]}` }),
       ],
     });
   });
 function is({ rate: e }) {
-  const s = a.resolve("strings");
+  const s = l.resolve("strings");
   return (0, pe.jsxs)(_e, {
     children: [
-      (0, pe.jsx)(c, {
+      (0, pe.jsx)(n, {
         upgradeLegacy: !0,
         className: ts.leftColumn,
         path: "common.percentValue",
-        params: { value: M.formatNumber("integral", Math.round(e)) },
+        params: { value: o.formatNumber("integral", Math.round(e)) },
       }),
       (0, pe.jsx)("div", { className: ts.text, children: s.readOrEmpty("achievements.winRate") }),
     ],
@@ -470,13 +470,13 @@ var ls,
     const { model: s } = Q(),
       {
         prestigeType: t,
-        marksOfMastery: r,
-        winsCount: i,
-        battlesCount: l,
+        marksOfMastery: a,
+        winsCount: r,
+        battlesCount: i,
         marksOnGun: n,
       } = s.serviceRecords.get(),
-      c = a.resolve("strings"),
-      o = l > 0 ? (i / l) * 100 : 0;
+      c = l.resolve("strings"),
+      o = i > 0 ? (r / i) * 100 : 0;
     return (0, pe.jsxs)(cs, {
       className: e,
       children: [
@@ -485,9 +485,9 @@ var ls,
           children: c.readOrEmpty("tooltips.tankCaruselTooltip.serviceRecords.header"),
         }),
         s.computes.elite() && "undefined" !== t && (0, pe.jsx)(ss, { className: ts.eliteSystem }),
-        r > 0 && (0, pe.jsx)(rs, {}),
+        a > 0 && (0, pe.jsx)(rs, {}),
         n > 0 && (0, pe.jsx)(as, {}),
-        l > 0 && (0, pe.jsx)(is, { rate: o }),
+        i > 0 && (0, pe.jsx)(is, { rate: o }),
       ],
     });
   }),
@@ -502,14 +502,14 @@ var ls,
   ds = $("SpecialAbility", ms.base),
   us = V(function ({ className: e }) {
     const { model: s } = Q(),
-      r = s.mechanics.get(),
-      i = a.resolve("strings"),
-      l = (e) => (e === B.GOLD ? "special" : "common");
+      a = s.mechanics.get(),
+      r = l.resolve("strings"),
+      i = (e) => (e === B.GOLD ? "special" : "common");
     return (0, pe.jsxs)(ds, {
       className: e,
       children: [
         (0, pe.jsx)("div", { className: ms.gradient }),
-        D(r, (e, s) => {
+        A(a, (e, s) => {
           if (!(e.priority < 1))
             return (0, pe.jsxs)(
               _e,
@@ -532,15 +532,15 @@ var ls,
                     children: [
                       (0, pe.jsx)("div", {
                         className: ms.title,
-                        children: i.readOrEmpty(
-                          `vehicle_hub.abilities.${l(e.rank)}.name.${e.name}`,
+                        children: r.readOrEmpty(
+                          `vehicle_hub.abilities.${i(e.rank)}.name.${e.name}`,
                         ),
                       }),
                       (0, pe.jsx)("div", {
                         className: ms.text,
-                        children: (0, pe.jsx)(c, {
+                        children: (0, pe.jsx)(n, {
                           split: !0,
-                          path: `vehicle_hub.abilities.${l(e.rank)}.shortDescription.${e.name}`,
+                          path: `vehicle_hub.abilities.${i(e.rank)}.shortDescription.${e.name}`,
                         }),
                       }),
                     ],
@@ -563,26 +563,26 @@ var ls,
   fs = "Tooltip_status_29b423b3",
   ys = H(function ({ className: e }) {
     const { model: a } = Q(),
-      { type: r } = a.statistics.get();
-    return (0, pe.jsx)(d, {
+      { type: i } = a.statistics.get();
+    return (0, pe.jsx)(m, {
       className: e,
-      children: (0, pe.jsxs)(d.Decorator, {
+      children: (0, pe.jsxs)(m.Decorator, {
         className: ps,
         children: [
-          se(r) &&
-            (0, pe.jsx)(i, {
-              type: r,
+          se(i) &&
+            (0, pe.jsx)(r, {
+              type: i,
               premium: a.computes.elite(),
               size: s.x64x64,
-              className: m(xs, a.computes.elite() && vs),
+              className: x(xs, a.computes.elite() && vs),
             }),
           (0, pe.jsxs)("div", {
-            className: m(hs, a.computes.elite() && _s),
+            className: x(hs, a.computes.elite() && _s),
             children: [
-              (0, pe.jsx)(We, { className: m(gs, js) }),
+              (0, pe.jsx)(We, { className: x(gs, js) }),
               a.computes.hasSpecialMechanics() && (0, pe.jsx)(us, { className: gs }),
               a.computes.serviceRecords() && (0, pe.jsx)(os, { className: gs }),
-              (0, pe.jsx)(c, {
+              (0, pe.jsx)(n, {
                 upgradeLegacy: !0,
                 style: { color: ee(a.stateLevel.get()) },
                 className: fs,
@@ -601,8 +601,8 @@ var ls,
       }),
     });
   }),
-  Ns = a.resolve("aliases");
-u(
+  Ns = l.resolve("aliases");
+d(
   new y()
     .add(F)
     .add(k)

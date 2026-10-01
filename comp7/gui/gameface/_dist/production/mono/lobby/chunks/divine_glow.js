@@ -1,24 +1,24 @@
 import { r as s } from "./rolldown-runtime.js";
-import { F as a, Pa as l, ts as o, ws as e } from "./lib.js";
+import { Cs as a, F as e, Na as l, es as o } from "./lib.js";
 import { i } from "./vendor.js";
-e();
+a();
 var r = s(i()),
   d = "DivineGlow_2b9c4670",
   m = "DivineGlow_glow_fddce7f8",
   t = "DivineGlow_glow__bg_a3df35d7",
   f = s(l()),
   c = (s) => !!o.isHigh() && s,
-  n = ({ className: s, classNames: l, playerRef: o, animated: e = !0 }) =>
+  n = ({ className: s, classNames: a, playerRef: l, animated: o = !0 }) =>
     (0, f.jsx)("div", {
       className: (0, r.default)(d, s),
-      children: c(e)
-        ? (0, f.jsx)(a, {
-            className: (0, r.default)(m, l?.glow),
+      children: c(o)
+        ? (0, f.jsx)(e, {
+            className: (0, r.default)(m, a?.glow),
             src: String(R.videos.comp7.divine_glow()),
             autoplay: !0,
             loop: !0,
-            ref: o,
+            ref: l,
           })
-        : (0, f.jsx)("div", { className: (0, r.default)(m, t, l?.glow) }),
+        : (0, f.jsx)("div", { className: (0, r.default)(m, t, a?.glow) }),
     });
 export { n as t };

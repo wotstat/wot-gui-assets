@@ -1,15 +1,15 @@
 import {
-  Bt as e,
-  C as t,
-  G as a,
-  Gt as s,
-  K as i,
-  Nn as n,
-  S as r,
-  U as o,
-  W as c,
-  Wt as l,
-  b as p,
+  B as e,
+  Bt as t,
+  Gt as a,
+  J as s,
+  Nn as i,
+  R as n,
+  V as r,
+  Wt as o,
+  X as c,
+  Y as l,
+  Z as p,
   gt as m,
   jr as d,
   qr as _,
@@ -23,9 +23,9 @@ import { t as f } from "../../chunks/enums.js";
 var j = (function (e) {
     return ((e.Low = "low"), (e.Medium = "medium"), (e.High = "high"), e);
   })({}),
-  [h, v] = s()(({ observableModel: e }) => {
+  [h, v] = a()(({ observableModel: e }) => {
     const t = { root: e.object(), eventInfo: e.object("eventInfo") },
-      a = l(
+      a = o(
         () =>
           t.eventInfo.get().subMode === f.StPatrick
             ? {
@@ -61,25 +61,25 @@ var j = (function (e) {
     separator: "App_separator_bad28223",
     timerStatus: "App_timerStatus_a52e51dd",
   },
-  A = n();
+  A = i();
 function k(e, t = {}) {
-  return a(i(`{{@ split}}${e}{{/}}`, o), c, t);
+  return c(p(`{{@ split}}${e}{{/}}`, s), l, t);
 }
 var N = g(function () {
-  const { model: e } = v(),
-    { performanceRisk: a, time: s, modeState: i } = e.root.get(),
-    n = "inactive" === i ? t.cooldown : t.accent,
-    { backgroundImage: o, description: c, subTitle: l } = e.computes.settings();
+  const { model: t } = v(),
+    { performanceRisk: a, time: s, modeState: i } = t.root.get(),
+    o = "inactive" === i ? r.cooldown : r.accent,
+    { backgroundImage: c, description: l, subTitle: p } = t.computes.settings();
   return (0, A.jsxs)("div", {
     className: _(y.base, y[`base__${a}`], y[`base__${i}`]),
     children: [
-      (0, A.jsx)("div", { className: y.img, style: { backgroundImage: `url(${o})` } }),
+      (0, A.jsx)("div", { className: y.img, style: { backgroundImage: `url(${c})` } }),
       (0, A.jsx)("div", {
         className: y.header,
         children: R.strings.battle_royale_extention.tooltip.banner.title(),
       }),
-      l && (0, A.jsx)("div", { className: y.subTitle, children: l }),
-      (0, A.jsx)("div", { className: y.description, children: (0, A.jsx)(m, { text: c }) }),
+      p && (0, A.jsx)("div", { className: y.subTitle, children: p }),
+      (0, A.jsx)("div", { className: y.description, children: (0, A.jsx)(m, { text: l }) }),
       (0, A.jsxs)("div", {
         className: y.modeContainer,
         children: [
@@ -109,14 +109,14 @@ var N = g(function () {
         }),
       (0, A.jsx)("div", { className: y.separator }),
       (0, A.jsx)(m, {
-        text: `${R.strings.battle_royale_extention.tooltip.banner.timer.text.$dyn(n)}`,
-        binding: { timer: (0, A.jsx)(p, { size: r.x24x24, type: n, start: s }) },
+        text: `${R.strings.battle_royale_extention.tooltip.banner.timer.text.$dyn(o)}`,
+        binding: { timer: (0, A.jsx)(n, { size: e.x24x24, type: o, start: s }) },
         classMix: y.timerStatus,
       }),
     ],
   });
 });
-e(
+t(
   (0, A.jsx)(u, {
     children: (0, A.jsx)(h, {
       children: (0, A.jsx)(b, {

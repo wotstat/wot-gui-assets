@@ -1,5 +1,5 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Pa as r, et as s, ws as a } from "./lib.js";
+import { Cs as r, Lr as s, Na as a } from "./lib.js";
 var o = (function (e) {
     return (
       (e[(e.Base = 0)] = "Base"),
@@ -9,7 +9,7 @@ var o = (function (e) {
       e
     );
   })({}),
-  t = (function (e) {
+  n = (function (e) {
     return (
       (e.Locked = "locked"),
       (e.ReadyToRestore = "readyToRestore"),
@@ -19,10 +19,10 @@ var o = (function (e) {
       e
     );
   })({}),
-  n = (a(), e(r())),
+  t = (r(), e(a())),
   c = ({ name: e, className: r }) =>
-    (0, n.jsx)("span", {
+    (0, t.jsx)("span", {
       className: r,
       children: s(R.strings.comp7_ext.quotesWrapper(), { name: e }),
     });
-export { t as n, o as r, c as t };
+export { n, o as r, c as t };

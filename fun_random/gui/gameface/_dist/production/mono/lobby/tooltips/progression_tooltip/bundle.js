@@ -4,29 +4,29 @@ import {
   Nn as t,
   On as a,
   Tn as n,
-  Xa as i,
-  _a as o,
-  _r as r,
-  aa as d,
-  fr as c,
-  gr as l,
-  i as u,
+  Ya as i,
+  _r as o,
+  fr as r,
+  ga as d,
+  gr as c,
+  i as l,
+  ia as u,
   ir as _,
   n as m,
-  na as g,
-  nr as p,
-  o as f,
-  or as x,
-  r as b,
-  ya as T,
-  yi as j,
+  nr as g,
+  o as p,
+  or as f,
+  r as x,
+  ta as b,
+  va as T,
+  vi as j,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { l as N, u as v } from "../../chunks/vendor.js";
+import { l as v, u as N } from "../../chunks/vendor.js";
 import { a as I } from "../../chunks/readResource.js";
 import { t as E } from "../../chunks/fun_random_progression_state.js";
 i();
-var [h, w] = r()(({ observableModel: e }) => {
+var [h, w] = o()(({ observableModel: e }) => {
     const s = {
         progressionState: e.object("state"),
         currentStage: e.object("currentStage"),
@@ -36,35 +36,35 @@ var [h, w] = r()(({ observableModel: e }) => {
         assetsPointer: e.object("assetsPointer"),
         isMultipleSubModes: e.object("isMultipleSubModes"),
       },
-      t = l(
+      t = c(
         (e) =>
-          d(s.rewards.get(), (s) => ({
+          u(s.rewards.get(), (s) => ({
             name: s.name,
-            image: p(s, e),
+            image: g(s, e),
             value: s.value,
             special: s.overlayType,
             valueType: _(s.name),
           })),
-        { equals: o },
+        { equals: d },
       ),
-      a = l(
+      a = c(
         (e) => {
-          const t = g(s.quests.get(), e);
+          const t = b(s.quests.get(), e);
           if (!t) throw new Error(`Unexpected quest index: ${e}`);
           return { ...t };
         },
-        { equals: o },
+        { equals: d },
       );
     return { ...s, computes: { getRewards: t, quest: a } };
   }, T),
-  C = e(N(), 1),
+  C = e(v(), 1),
   M = "Quest_bb7f8da9",
   S = "Quest_questIcons_bd5d5b3e",
   A = "Quest_questIcon_59d83c2b",
   P = "Quest_title_31edee2d",
-  y = "Quest_progress_64eb1432",
-  F = "Quest_progressValue_8ad74795",
-  q = j(),
+  F = "Quest_progress_64eb1432",
+  q = "Quest_progressValue_8ad74795",
+  y = j(),
   L = R.strings.fun_random,
   k = R.images.gui.maps.icons.quests.battleCondition.c_128_decor,
   V = R.images.gui.maps.icons.quests.battleCondition.c_128,
@@ -72,28 +72,28 @@ var [h, w] = r()(({ observableModel: e }) => {
     const s = `icon_battle_condition_${e}_128x128`;
     return { backgroundImage: `url(${k.$dyn(s) ?? V.$dyn(s)})` };
   },
-  B = v(() => {
+  B = N(() => {
     const { model: e } = w(),
       { currentPoints: t, maximumPoints: i } = e.currentStage.get(),
       { text: o } = e.condition.get(),
       r = L.progression.$dyn(t > 0 ? "stepsCurrent" : "stepsNoProgress"),
       d = 1 === e.quests.get().length ? e.computes.quest(0).questCondition : "win";
-    return (0, q.jsxs)("div", {
+    return (0, y.jsxs)("div", {
       className: M,
       children: [
-        (0, q.jsx)("div", {
+        (0, y.jsx)("div", {
           className: S,
-          children: (0, q.jsx)("div", { className: A, style: $(d) }),
+          children: (0, y.jsx)("div", { className: A, style: $(d) }),
         }),
-        (0, q.jsx)("div", { className: P, children: o }),
-        (0, q.jsxs)("div", {
-          className: y,
+        (0, y.jsx)("div", { className: P, children: o }),
+        (0, y.jsxs)("div", {
+          className: F,
           children: [
-            (0, q.jsx)("div", {
-              className: F,
-              children: (0, q.jsx)(n, { text: r, binding: { done: t, total: i } }),
+            (0, y.jsx)("div", {
+              className: q,
+              children: (0, y.jsx)(n, { text: r, binding: { done: t, total: i } }),
             }),
-            (0, q.jsx)(s, { size: a.Small, value: t, maxValue: i }),
+            (0, y.jsx)(s, { size: a.Small, value: t, maxValue: i }),
           ],
         }),
       ],
@@ -104,32 +104,32 @@ var [h, w] = r()(({ observableModel: e }) => {
   O = "Rewards_rewardBase_fc0065c2",
   z = "Rewards_reward_445a79f1",
   U = "Rewards_reward__small_74754faa",
-  X = R.strings.fun_random.metaProgressionTooltip.reward.header,
-  G = v(() => {
+  Y = R.strings.fun_random.metaProgressionTooltip.reward.header,
+  G = N(() => {
     const { model: e } = w(),
       { status: s } = e.progressionState.get(),
       { requiredPoints: a } = e.currentStage.get(),
       n = e.rewards.get().length,
       i = n > 5 ? 4 : 5,
       o = Math.min(n, 5) >= 3,
-      r = e.computes.getRewards(o ? x.Small : x.Big),
-      c = s === E.ACTIVE_INFINITE_RESETTABLE || s === E.ACTIVE_INFINITE_FINAL,
-      l = d(r, (e) => ({
+      r = e.computes.getRewards(o ? f.Small : f.Big),
+      d = s === E.ACTIVE_INFINITE_RESETTABLE || s === E.ACTIVE_INFINITE_FINAL,
+      c = u(r, (e) => ({
         ...e,
         image: e.image,
         className: (0, C.default)(e.className, (0, C.default)(z, o && U)),
       }));
-    return (0, q.jsxs)("div", {
+    return (0, y.jsxs)("div", {
       className: D,
       children: [
-        (0, q.jsx)("div", {
+        (0, y.jsx)("div", {
           className: Q,
-          children: (0, q.jsx)(t, {
-            text: c ? X.infinite() : X.common(),
+          children: (0, y.jsx)(t, {
+            text: d ? Y.infinite() : Y.common(),
             binding: { stagePoints: a },
           }),
         }),
-        (0, q.jsx)(u, { rewardItemClassMix: O, size: x.Small, data: l, count: i }),
+        (0, y.jsx)(l, { rewardItemClassMix: O, size: f.Small, data: c, count: i }),
       ],
     });
   }),
@@ -142,7 +142,7 @@ var [h, w] = r()(({ observableModel: e }) => {
     description: "Timer_description_c3de44f",
     separator: "Timer_separator_5f443465",
   },
-  J = v(({ fullMode: e }) => {
+  J = N(({ fullMode: e }) => {
     const { model: s } = w(),
       { statusTimer: a, status: n } = s.progressionState.get();
     if (0 === a) return null;
@@ -151,20 +151,20 @@ var [h, w] = r()(({ observableModel: e }) => {
         n === E.COMPLETED_RESETTABLE
           ? R.strings.fun_random.metaProgressionTooltip.timer.untilRelaunch()
           : R.strings.fun_random.metaProgressionTooltip.timer.untilFinish();
-    return (0, q.jsxs)("div", {
+    return (0, y.jsxs)("div", {
       className: (0, C.default)(H.base, e && H.base__fullMode),
       children: [
-        (0, q.jsx)("div", { className: H.background }),
-        i && (0, q.jsx)("div", { className: (0, C.default)(H.separator, H.separator__top) }),
-        (0, q.jsx)("div", {
+        (0, y.jsx)("div", { className: H.background }),
+        i && (0, y.jsx)("div", { className: (0, C.default)(H.separator, H.separator__top) }),
+        (0, y.jsx)("div", {
           className: H.content,
-          children: (0, q.jsx)(t, {
+          children: (0, y.jsx)(t, {
             text: o,
             classMix: H.description,
             binding: {
-              time: (0, q.jsx)("div", {
+              time: (0, y.jsx)("div", {
                 className: H.countdown,
-                children: (0, q.jsx)(m, { duration: a, style: b.Description }),
+                children: (0, y.jsx)(m, { duration: a, style: x.Description }),
               }),
             },
           }),
@@ -182,62 +182,62 @@ var [h, w] = r()(({ observableModel: e }) => {
     notificationIcon: "ActiveModeContent_notificationIcon_821a9fa",
     infiniteIcon: "ActiveModeContent_infiniteIcon_6e6d7165",
   },
-  W = v(() => {
+  W = N(() => {
     const { model: e } = w(),
       s = e.isMultipleSubModes.get(),
       { currentStage: t, maximumStage: a, status: i } = e.progressionState.get(),
       { dynamicTexts: o } = I("metaProgressionTooltip", { assetsPointer: e.assetsPointer.get() }),
       r = [E.ACTIVE_INFINITE_RESETTABLE, E.ACTIVE_INFINITE_FINAL].includes(i);
-    return (0, q.jsxs)("div", {
+    return (0, y.jsxs)("div", {
       className: (0, C.default)(K.base, K[`base__${i}`]),
       children: [
-        (0, q.jsxs)("div", {
+        (0, y.jsxs)("div", {
           className: K.title,
           children: [
-            (0, q.jsx)(n, { text: o.header.active(), binding: { done: t, total: r ? "" : a } }),
-            r && (0, q.jsx)("div", { className: K.infiniteIcon }),
+            (0, y.jsx)(n, { text: o.header.active(), binding: { done: t, total: r ? "" : a } }),
+            r && (0, y.jsx)("div", { className: K.infiniteIcon }),
           ],
         }),
-        (0, q.jsx)(B, {}),
-        (0, q.jsx)(G, {}),
+        (0, y.jsx)(B, {}),
+        (0, y.jsx)(G, {}),
         s &&
           o.reward?.tip &&
-          (0, q.jsxs)("div", {
+          (0, y.jsxs)("div", {
             className: K.info,
             children: [
-              (0, q.jsx)("div", { className: K.notificationIcon }),
-              (0, q.jsx)("div", {
+              (0, y.jsx)("div", { className: K.notificationIcon }),
+              (0, y.jsx)("div", {
                 className: K.infoDescription,
                 children: o.reward.tip && o.reward.tip(),
               }),
             ],
           }),
-        (0, q.jsx)(J, { fullMode: !0 }),
+        (0, y.jsx)(J, { fullMode: !0 }),
       ],
     });
   }),
-  Y = {
+  X = {
     base: "CompletedModeContent_6f4f7052",
     noRewardSubTitle: "CompletedModeContent_noRewardSubTitle_9917a1cf",
     noRewardTitle: "CompletedModeContent_noRewardTitle_ae00a2e9",
     base__completedFinal: "CompletedModeContent_base__completedFinal_f3a6d63f",
   },
-  Z = v(() => {
+  Z = N(() => {
     const { model: e } = w(),
       { status: s } = e.progressionState.get(),
       { staticTexts: t, dynamicTexts: a } = I("metaProgressionTooltip", {
         assetsPointer: e.assetsPointer.get(),
       });
-    return (0, q.jsxs)("div", {
-      className: (0, C.default)(Y.base, Y[`base__${s}`]),
+    return (0, y.jsxs)("div", {
+      className: (0, C.default)(X.base, X[`base__${s}`]),
       children: [
-        (0, q.jsx)("div", { className: Y.noRewardSubTitle, children: a.subheader() }),
-        (0, q.jsx)("div", { className: Y.noRewardTitle, children: t.header.$dyn(s) }),
-        (0, q.jsx)(J, {}),
+        (0, y.jsx)("div", { className: X.noRewardSubTitle, children: a.subheader() }),
+        (0, y.jsx)("div", { className: X.noRewardTitle, children: t.header.$dyn(s) }),
+        (0, y.jsx)(J, {}),
       ],
     });
   }),
-  ee = v(() => {
+  ee = N(() => {
     const { model: e } = w(),
       { status: s } = e.progressionState.get();
     switch (s) {
@@ -245,12 +245,12 @@ var [h, w] = r()(({ observableModel: e }) => {
       case E.ACTIVE_RESETTABLE:
       case E.ACTIVE_INFINITE_RESETTABLE:
       case E.ACTIVE_INFINITE_FINAL:
-        return (0, q.jsx)(W, {});
+        return (0, y.jsx)(W, {});
       case E.COMPLETED_FINAL:
       case E.COMPLETED_RESETTABLE:
-        return (0, q.jsx)(Z, {});
+        return (0, y.jsx)(Z, {});
       default:
         return (console.error("Unexpected state:", s), null);
     }
   });
-c((0, q.jsx)(h, { children: (0, q.jsx)(f, { children: (0, q.jsx)(ee, {}) }) }));
+r((0, y.jsx)(h, { children: (0, y.jsx)(p, { children: (0, y.jsx)(ee, {}) }) }));

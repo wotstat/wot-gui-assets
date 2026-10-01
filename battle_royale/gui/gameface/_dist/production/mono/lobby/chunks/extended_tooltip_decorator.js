@@ -1,4 +1,4 @@
-import { B as e, H as s, Nn as a, V as t, b as r, qr as i, t as d } from "./lib.js";
+import { H as e, K as s, Nn as a, R as t, q as r, qr as i, t as d } from "./lib.js";
 var o = "Divider_7a72bfaf",
   c = "Divider_b60e7313",
   l = a(),
@@ -22,8 +22,8 @@ function h({
       children: (0, l.jsxs)("div", {
         className: n,
         children: [
-          a && (0, l.jsx)(s, { text: a, className: m }),
-          h ? (0, l.jsx)(e, { text: i, classMix: j }) : (0, l.jsx)(s, { text: i, className: j }),
+          a && (0, l.jsx)(r, { text: a, className: m }),
+          h ? (0, l.jsx)(e, { text: i, classMix: j }) : (0, l.jsx)(r, { text: i, className: j }),
           v,
           c > 0 &&
             o &&
@@ -31,7 +31,7 @@ function h({
               className: p,
               children: [
                 (0, l.jsx)(x, { className: _ }),
-                (0, l.jsx)(t, { path: o, params: { timeLeft: (0, l.jsx)(r, { start: c }) } }),
+                (0, l.jsx)(s, { path: o, params: { timeLeft: (0, l.jsx)(t, { start: c }) } }),
               ],
             }),
         ],

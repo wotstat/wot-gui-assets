@@ -1,11 +1,11 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
-import { $ as t, Pa as a, _i as s, fi as n, gt as i, ws as o } from "../../chunks/lib.js";
+import { Cs as t, Mr as a, Na as s, _i as n, ct as i, fi as o } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as p, i as r } from "../../chunks/vendor.js";
 import { s as l } from "../../chunks/enums.js";
 import { t as _ } from "../../chunks/tooltip_decorator.js";
 import { t as c } from "../../chunks/tooltips.module.js";
-o();
+t();
 var d = e(r(), 1),
   m = (function (e) {
     return (
@@ -16,7 +16,7 @@ var d = e(r(), 1),
       e
     );
   })({}),
-  [h, f] = s()(({ observableModel: e }) => ({ root: e.object() })),
+  [h, f] = n()(({ observableModel: e }) => ({ root: e.object() })),
   v = {
     base: "App_db75b9f1",
     topContentBg: "App_topContentBg_83729a80",
@@ -44,21 +44,21 @@ var d = e(r(), 1),
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  A = e(a(), 1),
+  A = e(s(), 1),
   u = [m.Live, m.BetweenShowmatches],
-  g = p(() => {
+  x = p(() => {
     const { model: e } = f(),
       {
-        state: a,
+        state: t,
         timeLeftUntilLiveMatch: s,
         timeLeftUntilNextShowMatchDay: n,
         tournamentName: o,
       } = e.root.get();
     return (0, A.jsxs)("div", {
-      className: (0, d.default)(v.base, v[`base__${o}${a === m.Live ? "Live" : ""}`]),
+      className: (0, d.default)(v.base, v[`base__${o}${t === m.Live ? "Live" : ""}`]),
       children: [
         (0, A.jsx)("div", { className: v.topContentBg }),
-        a === m.Live && o === l.WCI && (0, A.jsx)("div", { className: v.live }),
+        t === m.Live && o === l.WCI && (0, A.jsx)("div", { className: v.live }),
         (0, A.jsx)("div", {
           className: v.topContent,
           children: (0, A.jsx)("div", {
@@ -69,24 +69,24 @@ var d = e(r(), 1),
         (0, A.jsxs)("div", {
           className: v.bottomContent,
           children: [
-            (0, A.jsx)(t, {
+            (0, A.jsx)(a, {
               text: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.description.$dyn(o)}`,
               classMix: v.paragraph,
             }),
-            u.includes(a) &&
+            u.includes(t) &&
               (0, A.jsxs)(A.Fragment, {
                 children: [
                   (0, A.jsx)("div", { className: (0, d.default)(c.divider, v.divider) }),
                   (0, A.jsx)("div", {
                     className: v.timerContainer,
-                    children: (0, A.jsx)(t, {
+                    children: (0, A.jsx)(a, {
                       text:
-                        a === m.Live
+                        t === m.Live
                           ? R.strings.comp7_ext.tournamentsEntryPointTooltip.live()
                           : R.strings.comp7_ext.tournamentsEntryPointTooltip.showmatch(),
                       binding: {
                         timer: (0, A.jsx)(i, {
-                          start: a === m.Live ? s : n,
+                          start: t === m.Live ? s : n,
                           format: i.format.default,
                           type: i.type.accent,
                           size: i.size.x24x24,
@@ -101,4 +101,4 @@ var d = e(r(), 1),
       ],
     });
   });
-n((0, A.jsx)(h, { children: (0, A.jsx)(_, { children: (0, A.jsx)(g, {}) }) }));
+o((0, A.jsx)(h, { children: (0, A.jsx)(_, { children: (0, A.jsx)(x, {}) }) }));

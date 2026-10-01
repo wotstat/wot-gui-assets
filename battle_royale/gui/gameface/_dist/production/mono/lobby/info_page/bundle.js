@@ -3,23 +3,23 @@ import {
   Bt as t,
   Ft as i,
   Gt as a,
-  H as s,
-  Lr as l,
-  Nn as r,
-  P as o,
-  Qr as n,
-  Ut as c,
-  Vt as g,
-  Wt as p,
-  Yr as m,
-  at as _,
-  gt as b,
-  kr as d,
-  n as f,
-  ot as h,
-  pn as u,
-  qr as y,
-  rn as x,
+  Lr as s,
+  Nn as l,
+  Qr as r,
+  Ut as o,
+  Vt as n,
+  Wt as c,
+  Yr as g,
+  gt as p,
+  it as m,
+  kr as _,
+  n as b,
+  pn as d,
+  q as f,
+  qr as h,
+  r as u,
+  rn as y,
+  rt as x,
   vr as v,
   yr as k,
   zt as j,
@@ -36,12 +36,12 @@ var [T, w] = a()(
           bp: e.array("modesBP"),
           eventInfo: e.object("eventInfo"),
         },
-        i = c.shallow((e) => {
+        i = o.shallow((e) => {
           const i = v(t.sh.types.get(), e);
           if (!i) throw Error("battleType is undefined");
           return i;
         }),
-        a = c.shallow(
+        a = o.shallow(
           () => {
             const e = v(
               k(t.bp.get(), (e) => e),
@@ -50,13 +50,13 @@ var [T, w] = a()(
             if (!e) throw Error("Tables of BP are undefined");
             return e;
           },
-          { equals: d },
+          { equals: _ },
         ),
-        s = p(() => {
+        s = c(() => {
           const { subMode: e } = t.eventInfo.get();
           return e === P.StPatrick ? R.strings.battle_royale_infopage.stPatrickSubTitle() : "";
         }),
-        l = p(() => {
+        l = c(() => {
           const { subMode: e } = t.eventInfo.get();
           return e === P.StPatrick;
         });
@@ -323,12 +323,12 @@ var [T, w] = a()(
     footer: R.strings.battle_royale_infopage.marauders.footer(),
     imagePath: R.images.battle_royale.gui.maps.infopage.marauders(),
   },
-  E = {
+  q = {
     default: R.strings.battle_royale_infopage.footer(),
     stPatrick: R.strings.battle_royale_infopage.stPatrickFooter(),
   },
-  Y = e(m(), 1),
-  $ = {
+  E = e(g(), 1),
+  Y = {
     base: "Article_4c8e50ad",
     title: "Article_title_659722c4",
     subtitle: "Article_subtitle_49e05acb",
@@ -341,49 +341,49 @@ var [T, w] = a()(
     accent_color: "Article_accent_color_a3a8f0eb",
     divider: "Article_divider_c3c15108",
   },
-  q = r(),
+  $ = l(),
   O = ({ description: e, className: t, classNames: i, mapsStyle: a }) =>
-    (0, q.jsxs)("div", {
-      className: y($.base, i?.alignCenter, t),
+    (0, $.jsxs)("div", {
+      className: h(Y.base, i?.alignCenter, t),
       children: [
-        (0, q.jsxs)("div", {
-          className: y($.head, i?.head),
+        (0, $.jsxs)("div", {
+          className: h(Y.head, i?.head),
           children: [
-            (0, q.jsx)("div", { className: y($.title, i?.title), children: e.title }),
+            (0, $.jsx)("div", { className: h(Y.title, i?.title), children: e.title }),
             e.subtitles.map(({ subtitle: e }, t) =>
-              (0, q.jsx)(
+              (0, $.jsx)(
                 "div",
                 {
-                  className: $.subtitle,
-                  children: (0, q.jsx)(s, { text: e, split: !0, className: i?.alignCenter }),
+                  className: Y.subtitle,
+                  children: (0, $.jsx)(f, { text: e, split: !0, className: i?.alignCenter }),
                 },
                 t,
               ),
             ),
-            e.accent && (0, q.jsx)("div", { className: $.accent, children: e.accent }),
+            e.accent && (0, $.jsx)("div", { className: Y.accent, children: e.accent }),
           ],
         }),
         e.images &&
-          (0, q.jsx)("div", {
-            className: y($.images, a && $.images__mapStyle),
+          (0, $.jsx)("div", {
+            className: h(Y.images, a && Y.images__mapStyle),
             children: e.images.map(({ imagePath: e, title: t, subtitle: a }, s) =>
-              (0, q.jsxs)(
-                Y.Fragment,
+              (0, $.jsxs)(
+                E.Fragment,
                 {
                   children: [
-                    (0, q.jsxs)(
+                    (0, $.jsxs)(
                       "div",
                       {
-                        className: $.imageContainer,
+                        className: Y.imageContainer,
                         children: [
-                          (0, q.jsx)("img", { className: y($.image, i?.image), src: e, alt: t }),
-                          (0, q.jsx)("div", { className: y($.text, i?.text), children: t }),
-                          a && (0, q.jsx)("div", { className: $.subtitle, children: a }),
+                          (0, $.jsx)("img", { className: h(Y.image, i?.image), src: e, alt: t }),
+                          (0, $.jsx)("div", { className: h(Y.text, i?.text), children: t }),
+                          a && (0, $.jsx)("div", { className: Y.subtitle, children: a }),
                         ],
                       },
                       s,
                     ),
-                    1 !== s && (0, q.jsx)("div", { className: $.divider }),
+                    1 !== s && (0, $.jsx)("div", { className: Y.divider }),
                   ],
                 },
                 s,
@@ -402,25 +402,25 @@ var [T, w] = a()(
   ae = "Details_description_27a0d131",
   se = "Details_devider_eb6cc254",
   le = "Details_textBlock_51423ea5",
-  re = ({ description: e, reverse: t, smallImage: i, classNames: a, className: l, binding: r }) =>
-    (0, q.jsxs)("div", {
-      className: y(Q, t && U, i && X, l),
+  re = ({ description: e, reverse: t, smallImage: i, classNames: a, className: s, binding: l }) =>
+    (0, $.jsxs)("div", {
+      className: h(Q, t && U, i && X, s),
       children: [
-        (0, q.jsxs)("div", {
-          className: y(ae, a?.description),
+        (0, $.jsxs)("div", {
+          className: h(ae, a?.description),
           children: [
-            e.title && (0, q.jsx)("div", { className: y(J, a?.titleStyling), children: e.title }),
+            e.title && (0, $.jsx)("div", { className: h(J, a?.titleStyling), children: e.title }),
             e.textBlock.map(({ subtitle: e, text: t }, i) =>
-              (0, q.jsxs)(
+              (0, $.jsxs)(
                 "div",
                 {
                   className: le,
                   children: [
-                    e && (0, q.jsx)("div", { className: ee, children: e }),
+                    e && (0, $.jsx)("div", { className: ee, children: e }),
                     t &&
-                      (0, q.jsx)("div", {
+                      (0, $.jsx)("div", {
                         className: te,
-                        children: (0, q.jsx)(s, { params: r, split: !0, text: t }),
+                        children: (0, $.jsx)(f, { params: l, split: !0, text: t }),
                       }),
                   ],
                 },
@@ -428,13 +428,13 @@ var [T, w] = a()(
               ),
             ),
             e.list?.map((e, t) =>
-              (0, q.jsx)("div", { className: te, children: (0, q.jsx)(s, { text: e }) }, t),
+              (0, $.jsx)("div", { className: te, children: (0, $.jsx)(f, { text: e }) }, t),
             ),
-            e.footer && (0, q.jsx)("div", { className: te, children: e.footer }),
+            e.footer && (0, $.jsx)("div", { className: te, children: e.footer }),
           ],
         }),
-        (0, q.jsx)("div", { className: se }),
-        (0, q.jsx)("img", { className: y(!i && ie, a?.image), src: e.imagePath, alt: e.title }),
+        (0, $.jsx)("div", { className: se }),
+        (0, $.jsx)("img", { className: h(!i && ie, a?.image), src: e.imagePath, alt: e.title }),
       ],
     }),
   oe = "InfoBlock_bc3a412a",
@@ -462,27 +462,27 @@ var [T, w] = a()(
     },
   ],
   de = () =>
-    (0, q.jsxs)("div", {
+    (0, $.jsxs)("div", {
       className: oe,
       children: [
-        (0, q.jsx)("div", {
+        (0, $.jsx)("div", {
           className: ne,
           children: be.map(({ img: e, title: t, subtitle: i }, a) =>
-            (0, q.jsxs)(
+            (0, $.jsxs)(
               "div",
               {
                 className: ce,
                 children: [
-                  (0, q.jsx)("div", { className: ge, style: { backgroundImage: `url(${e})` } }),
-                  (0, q.jsx)("div", { className: pe, children: t }),
-                  (0, q.jsx)("div", { className: me, children: i }),
+                  (0, $.jsx)("div", { className: ge, style: { backgroundImage: `url(${e})` } }),
+                  (0, $.jsx)("div", { className: pe, children: t }),
+                  (0, $.jsx)("div", { className: me, children: i }),
                 ],
               },
               a,
             ),
           ),
         }),
-        (0, q.jsx)("div", { className: _e }),
+        (0, $.jsx)("div", { className: _e }),
       ],
     }),
   fe = "Header_2427389a",
@@ -496,40 +496,40 @@ var [T, w] = a()(
   je = N(() => {
     const { controls: e, model: t } = w(),
       { openVideo: i } = e,
-      { startDate: a, endDate: s } = t.root.get(),
-      r = t.computes.headerSubtitle(),
-      c = t.computes.hasHeaderInfoBlock();
-    return (0, q.jsxs)("div", {
+      { startDate: a, endDate: l } = t.root.get(),
+      o = t.computes.headerSubtitle(),
+      n = t.computes.hasHeaderInfoBlock();
+    return (0, $.jsxs)("div", {
       className: fe,
       children: [
-        (0, q.jsxs)("div", {
+        (0, $.jsxs)("div", {
           className: he,
           children: [
-            (0, q.jsx)("div", {
+            (0, $.jsx)("div", {
               className: ue,
               children: R.strings.battle_royale_infopage.title(),
             }),
-            r && (0, q.jsx)("div", { className: ye, children: r }),
-            (0, q.jsx)("div", {
+            o && (0, $.jsx)("div", { className: ye, children: o }),
+            (0, $.jsx)("div", {
               className: xe,
-              children: (0, q.jsx)(b, {
+              children: (0, $.jsx)(p, {
                 text: R.strings.battle_royale_infopage.eventTime(),
                 binding: {
-                  startDate: (0, q.jsx)(o, { datetime: a, format: n.ShortDate }),
-                  endDate: (0, q.jsx)(o, { datetime: s, format: n.ShortDate }),
+                  startDate: (0, $.jsx)(u, { datetime: a, format: r.ShortDate }),
+                  endDate: (0, $.jsx)(u, { datetime: l, format: r.ShortDate }),
                 },
               }),
             }),
           ],
         }),
-        c && (0, q.jsx)(de, {}),
-        (0, q.jsxs)("div", {
+        n && (0, $.jsx)(de, {}),
+        (0, $.jsxs)("div", {
           onClick: () => {
-            (l.click(), i());
+            (s.click(), i());
           },
-          onMouseEnter: () => l.highlight(),
+          onMouseEnter: () => s.highlight(),
           className: ve,
-          children: [(0, q.jsx)("div", { className: ke }), (0, q.jsx)("div", { className: Re })],
+          children: [(0, $.jsx)("div", { className: ke }), (0, $.jsx)("div", { className: Re })],
         }),
       ],
     });
@@ -543,24 +543,24 @@ var [T, w] = a()(
   Se = "Mosaic_image_1d2ab1f",
   Ae = "Mosaic_itemSubtitle_14f4e1cf",
   Ce = ({ title: e, parameters: t }) =>
-    (0, q.jsxs)("div", {
+    (0, $.jsxs)("div", {
       className: Ne,
       children: [
-        (0, q.jsx)("div", { className: Pe, children: e }),
-        (0, q.jsx)("div", {
+        (0, $.jsx)("div", { className: Pe, children: e }),
+        (0, $.jsx)("div", {
           className: Te,
           children: t.map(({ imagePath: e, title: t, subtitle: i }, a) =>
-            (0, q.jsxs)(
+            (0, $.jsxs)(
               "div",
               {
                 className: we,
                 children: [
-                  (0, q.jsx)("img", { className: Se, src: e, alt: t }),
-                  (0, q.jsxs)("div", {
+                  (0, $.jsx)("img", { className: Se, src: e, alt: t }),
+                  (0, $.jsxs)("div", {
                     className: De,
                     children: [
-                      (0, q.jsx)("div", { className: Be, children: t }),
-                      (0, q.jsx)("div", { className: Ae, children: i }),
+                      (0, $.jsx)("div", { className: Be, children: t }),
+                      (0, $.jsx)("div", { className: Ae, children: i }),
                     ],
                   }),
                 ],
@@ -590,19 +590,19 @@ var [T, w] = a()(
       t = e.computes.tableRowsBP(),
       i = v(t, 1),
       a = t.length > 1 ? i && k(i.cell, (e) => e) : null;
-    return (0, q.jsx)("div", {
+    return (0, $.jsx)("div", {
       className: Ie.base,
       children: k(t, (e, t) =>
-        (0, q.jsx)(
+        (0, $.jsx)(
           "div",
           {
             className: Ie.row,
             children: k(e.cell, ({ text: e, points: i }, s) => {
               const l = a && a[s].text;
-              return (0, q.jsxs)(
+              return (0, $.jsxs)(
                 "div",
                 {
-                  className: y(
+                  className: h(
                     Ie.cell,
                     l && Ie.cell__text,
                     0 === t && Ie.cell__inFirstRow,
@@ -612,17 +612,17 @@ var [T, w] = a()(
                     (() => {
                       switch (((e, t, i) => (!e && !t && i > 0 ? ze : e ? Ve : He))(i, e, t)) {
                         case Ve:
-                          return (0, q.jsx)("div", { className: Ie.points, children: i });
+                          return (0, $.jsx)("div", { className: Ie.points, children: i });
                         case He:
-                          return (0, q.jsx)("div", { className: Ie.text, children: e });
+                          return (0, $.jsx)("div", { className: Ie.text, children: e });
                         default:
-                          return (0, q.jsx)("div", {
+                          return (0, $.jsx)("div", {
                             className: Ie.dash,
                             children: R.strings.common.common.dash(),
                           });
                       }
                     })(),
-                    (0, q.jsx)("div", { className: y(l && Ie.border) }),
+                    (0, $.jsx)("div", { className: h(l && Ie.border) }),
                   ],
                 },
                 s,
@@ -643,26 +643,26 @@ var [T, w] = a()(
     reward: "Column_reward_bb1636fd",
   },
   Fe = ({ type: e, rewards: t }) =>
-    (0, q.jsxs)("div", {
+    (0, $.jsxs)("div", {
       className: Ge.base,
       children: [
-        (0, q.jsx)("div", { className: Ge.battleType, children: e }),
+        (0, $.jsx)("div", { className: Ge.battleType, children: e }),
         k(t, ({ place: e, points: t }, i) =>
-          (0, q.jsxs)(
+          (0, $.jsxs)(
             "div",
             {
               className: Ge.cell,
               children: [
-                (0, q.jsx)("div", { className: Ge.place, children: e }),
+                (0, $.jsx)("div", { className: Ge.place, children: e }),
                 t
-                  ? (0, q.jsxs)("div", {
+                  ? (0, $.jsxs)("div", {
                       className: Ge.pointContainer,
                       children: [
-                        (0, q.jsx)("div", { className: Ge.point, children: t }),
-                        (0, q.jsx)("div", { className: Ge.reward }),
+                        (0, $.jsx)("div", { className: Ge.point, children: t }),
+                        (0, $.jsx)("div", { className: Ge.reward }),
                       ],
                     })
-                  : (0, q.jsx)("div", {
+                  : (0, $.jsx)("div", {
                       className: Ge.dash,
                       children: R.strings.common.common.dash(),
                     }),
@@ -676,10 +676,10 @@ var [T, w] = a()(
   We = "TableSh_ef0a0d78",
   Ke = N(() => {
     const { model: e } = w();
-    return (0, q.jsx)("div", {
+    return (0, $.jsx)("div", {
       className: We,
       children: k(e.sh.modes.get(), (t, i) =>
-        (0, q.jsx)(Fe, { rewards: t, type: e.computes.battleTypeSH(i) }, i),
+        (0, $.jsx)(Fe, { rewards: t, type: e.computes.battleTypeSH(i) }, i),
       ),
     });
   }),
@@ -694,36 +694,36 @@ var [T, w] = a()(
     image: "TowerBlock_image_53afacf6",
   },
   Ze = ({ parameters: e }) =>
-    (0, q.jsxs)("div", {
+    (0, $.jsxs)("div", {
       className: Le.base,
       children: [
-        (0, q.jsxs)("div", {
+        (0, $.jsxs)("div", {
           className: Le.head,
           children: [
-            (0, q.jsx)("div", {
+            (0, $.jsx)("div", {
               className: Le.title,
               children: R.strings.battle_royale_infopage.towerBlock.title(),
             }),
-            (0, q.jsx)("div", {
+            (0, $.jsx)("div", {
               className: Le.subTitle,
               children: R.strings.battle_royale_infopage.towerBlock.subtitle(),
             }),
           ],
         }),
-        (0, q.jsx)("div", {
+        (0, $.jsx)("div", {
           className: Le.loots,
           children: e.map(({ imagePath: e, title: t, subtitle: i }, a) =>
-            (0, q.jsxs)(
+            (0, $.jsxs)(
               "div",
               {
                 className: Le.lootsContainer,
                 children: [
-                  (0, q.jsx)("img", { className: Le.image, src: e, alt: t }),
-                  (0, q.jsxs)("div", {
+                  (0, $.jsx)("img", { className: Le.image, src: e, alt: t }),
+                  (0, $.jsxs)("div", {
                     className: Le.description,
                     children: [
-                      (0, q.jsx)("div", { className: Le.descriptionTitle, children: t }),
-                      (0, q.jsx)("div", { className: Le.descriptionSubtitle, children: i }),
+                      (0, $.jsx)("div", { className: Le.descriptionTitle, children: t }),
+                      (0, $.jsx)("div", { className: Le.descriptionSubtitle, children: i }),
                     ],
                   }),
                 ],
@@ -734,10 +734,10 @@ var [T, w] = a()(
         }),
       ],
     }),
-  Ee = R.strings.battle_royale_vehicles,
-  Ye = "light",
-  $e = "medium",
-  qe = "heavy",
+  qe = R.strings.battle_royale_vehicles,
+  Ee = "light",
+  Ye = "medium",
+  $e = "heavy",
   Oe = "ussr",
   Qe = "germany",
   Ue = "usa",
@@ -750,59 +750,59 @@ var [T, w] = a()(
   st = [
     {
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.repairKit",
-      title: Ee.abilities.repairKit(),
-      description: Ee.abilities.repairKitDescription(),
+      title: qe.abilities.repairKit(),
+      description: qe.abilities.repairKitDescription(),
     },
     {
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryKit",
-      title: Ee.abilities.recoveryKit(),
-      description: Ee.abilities.recoveryKitDescription(),
+      title: qe.abilities.recoveryKit(),
+      description: qe.abilities.recoveryKitDescription(),
     },
   ],
   lt = {
     [Oe]: {
-      name: Ee.tanks.ussr.title(),
-      description: Ee.tanks.ussr.description(),
+      name: qe.tanks.ussr.title(),
+      description: qe.tanks.ussr.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.ussr",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.ussr",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.minefield",
-          title: Ee.abilities.minefield(),
-          description: Ee.abilities.minefieldDescription(),
+          title: qe.abilities.minefield(),
+          description: qe.abilities.minefieldDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryZone",
-          title: Ee.abilities.recoveryZone(),
-          description: Ee.abilities.recoveryZoneDescription(),
+          title: qe.abilities.recoveryZone(),
+          description: qe.abilities.recoveryZoneDescription(),
         },
       ],
-      vehicleType: qe,
+      vehicleType: $e,
     },
     [Qe]: {
-      name: Ee.tanks.germany.title(),
-      description: Ee.tanks.germany.description(),
+      name: qe.tanks.germany.title(),
+      description: qe.tanks.germany.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.germany",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.germany",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.nitro",
-          title: Ee.abilities.nitro(),
-          description: Ee.abilities.nitroDescription(),
+          title: qe.abilities.nitro(),
+          description: qe.abilities.nitroDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryDot",
-          title: Ee.abilities.recoveryDot(),
-          description: Ee.abilities.recoveryDotDescription(),
+          title: qe.abilities.recoveryDot(),
+          description: qe.abilities.recoveryDotDescription(),
         },
       ],
-      vehicleType: qe,
+      vehicleType: $e,
     },
     [Ue]: {
-      name: Ee.tanks.usa.title(),
-      description: Ee.tanks.usa.description(),
+      name: qe.tanks.usa.title(),
+      description: qe.tanks.usa.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.usa",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.usa",
       abilities: [
@@ -810,118 +810,118 @@ var [T, w] = a()(
         {
           imagePath:
             "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.extremeConcentration",
-          title: Ee.abilities.extremeConcentration(),
-          description: Ee.abilities.extremeConcentrationDescription(),
+          title: qe.abilities.extremeConcentration(),
+          description: qe.abilities.extremeConcentrationDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.trap",
-          title: Ee.abilities.trap(),
-          description: Ee.abilities.trapDescription(),
+          title: qe.abilities.trap(),
+          description: qe.abilities.trapDescription(),
         },
       ],
-      vehicleType: $e,
+      vehicleType: Ye,
     },
     [Xe]: {
-      name: Ee.tanks.britain.title(),
-      description: Ee.tanks.britain.description(),
+      name: qe.tanks.britain.title(),
+      description: qe.tanks.britain.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.britain",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.britain",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.rustCloud",
-          title: Ee.abilities.rustCloud(),
-          description: Ee.abilities.rustCloudDescription(),
+          title: qe.abilities.rustCloud(),
+          description: qe.abilities.rustCloudDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.berserk",
-          title: Ee.abilities.berserk(),
-          description: Ee.abilities.berserkDescription(),
+          title: qe.abilities.berserk(),
+          description: qe.abilities.berserkDescription(),
         },
       ],
-      vehicleType: $e,
+      vehicleType: Ye,
     },
     [Je]: {
-      name: Ee.tanks.france.title(),
-      description: Ee.tanks.france.description(),
+      name: qe.tanks.france.title(),
+      description: qe.tanks.france.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.france",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.france",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.airstrike",
-          title: Ee.abilities.airstrike(),
-          description: Ee.abilities.airstrikeDescription(),
+          title: qe.abilities.airstrike(),
+          description: qe.abilities.airstrikeDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.brander",
-          title: Ee.abilities.brander(),
-          description: Ee.abilities.branderDescription(),
+          title: qe.abilities.brander(),
+          description: qe.abilities.branderDescription(),
         },
       ],
-      vehicleType: Ye,
+      vehicleType: Ee,
       hasCN360Image: !0,
     },
     [et]: {
-      name: Ee.tanks.china.title(),
-      description: Ee.tanks.china.description(),
+      name: qe.tanks.china.title(),
+      description: qe.tanks.china.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.china",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.china",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.corrodingShot",
-          title: Ee.abilities.corrodingShot(),
-          description: Ee.abilities.corrodingShotDescription(),
+          title: qe.abilities.corrodingShot(),
+          description: qe.abilities.corrodingShotDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.clingBrander",
-          title: Ee.abilities.clingBrander(),
-          description: Ee.abilities.clingBranderDescription(),
+          title: qe.abilities.clingBrander(),
+          description: qe.abilities.clingBranderDescription(),
         },
       ],
-      vehicleType: Ye,
+      vehicleType: Ee,
     },
     [tt]: {
-      name: Ee.tanks.poland.title(),
-      description: Ee.tanks.poland.description(),
+      name: qe.tanks.poland.title(),
+      description: qe.tanks.poland.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.poland",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.poland",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.thunderStrike",
-          title: Ee.abilities.thunderStrike(),
-          description: Ee.abilities.thunderStrikeDescription(),
+          title: qe.abilities.thunderStrike(),
+          description: qe.abilities.thunderStrikeDescription(),
         },
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.shotPassion",
-          title: Ee.abilities.shotPassion(),
-          description: Ee.abilities.shotPassionDescription(),
+          title: qe.abilities.shotPassion(),
+          description: qe.abilities.shotPassionDescription(),
         },
       ],
-      vehicleType: $e,
+      vehicleType: Ye,
     },
     [it]: {
-      name: Ee.tanks.sweden.title(),
-      description: Ee.tanks.sweden.description(),
+      name: qe.tanks.sweden.title(),
+      description: qe.tanks.sweden.description(),
       tabImagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.slots.sweden",
       imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.sweden",
       abilities: [
         ...st,
         {
           imagePath: "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.fireCircle",
-          title: Ee.abilities.fireCircle(),
-          description: Ee.abilities.fireCircleDescription(),
+          title: qe.abilities.fireCircle(),
+          description: qe.abilities.fireCircleDescription(),
         },
         {
           imagePath:
             "R.images.battle_royale.gui.maps.infopage.vehicles.abilities.adaptationHealthRestore",
-          title: Ee.abilities.adaptationHealthRestore(),
-          description: Ee.abilities.adaptationHealthRestoreDescription(),
+          title: qe.abilities.adaptationHealthRestore(),
+          description: qe.abilities.adaptationHealthRestoreDescription(),
         },
       ],
-      vehicleType: qe,
+      vehicleType: $e,
     },
   },
   rt = {
@@ -950,60 +950,60 @@ var [T, w] = a()(
   ot = [];
 for (const [, R] of Object.entries(lt)) ot.push(R.imagePath);
 var nt = () => {
-    const [e, t] = (0, Y.useState)(0);
+    const [e, t] = (0, E.useState)(0);
     return (
-      "success" === x(ot) &&
-      (0, q.jsxs)("div", {
+      "success" === y(ot) &&
+      (0, $.jsxs)("div", {
         className: rt.base,
         children: [
-          (0, q.jsx)("div", {
+          (0, $.jsx)("div", {
             className: rt.header,
             children: at.map((i, a) =>
-              (0, q.jsxs)(
+              (0, $.jsxs)(
                 "div",
                 {
-                  className: y(rt.tab, e === a && rt.tab__active),
-                  onClick: () => (t(a), void l.click()),
+                  className: h(rt.tab, e === a && rt.tab__active),
+                  onClick: () => (t(a), void s.click()),
                   children: [
-                    (0, q.jsx)("img", {
+                    (0, $.jsx)("img", {
                       className: rt.tabImage,
                       src: lt[i].tabImagePath,
                       alt: lt[i].name,
                     }),
-                    (0, q.jsx)("div", { className: rt.tabTitle, children: lt[i].name }),
-                    (0, q.jsx)("div", { className: y(rt.tabGlow, rt.tabGlow__upper) }),
-                    (0, q.jsx)("div", { className: y(rt.tabGlow, rt.tabGlow__bottom) }),
+                    (0, $.jsx)("div", { className: rt.tabTitle, children: lt[i].name }),
+                    (0, $.jsx)("div", { className: h(rt.tabGlow, rt.tabGlow__upper) }),
+                    (0, $.jsx)("div", { className: h(rt.tabGlow, rt.tabGlow__bottom) }),
                   ],
                 },
                 a,
               ),
             ),
           }),
-          (0, q.jsxs)("div", {
+          (0, $.jsxs)("div", {
             className: rt.body,
             children: [
-              (0, q.jsxs)("div", {
+              (0, $.jsxs)("div", {
                 className: rt.description,
                 children: [
-                  (0, q.jsx)("img", {
+                  (0, $.jsx)("img", {
                     className: rt.image,
                     src: lt[at[e]].imagePath,
                     alt: lt[at[e]].name,
                   }),
-                  (0, q.jsxs)("div", {
+                  (0, $.jsxs)("div", {
                     className: rt.text,
                     children: [
-                      (0, q.jsxs)("div", {
+                      (0, $.jsxs)("div", {
                         className: rt.title,
                         children: [
-                          (0, q.jsx)("img", {
+                          (0, $.jsx)("img", {
                             className: rt.type,
                             src: `R.images.battle_royale.gui.maps.infopage.vehicles.vehicleTypes.${lt[at[e]].vehicleType}`,
                           }),
-                          (0, q.jsx)("div", { className: rt.titleText, children: lt[at[e]].name }),
+                          (0, $.jsx)("div", { className: rt.titleText, children: lt[at[e]].name }),
                         ],
                       }),
-                      (0, q.jsx)("div", {
+                      (0, $.jsx)("div", {
                         className: rt.subtitle,
                         children: lt[at[e]].description,
                       }),
@@ -1011,26 +1011,26 @@ var nt = () => {
                   }),
                 ],
               }),
-              (0, q.jsx)("div", {
+              (0, $.jsx)("div", {
                 className: rt.container,
                 children: lt[at[e]].abilities.map((e) =>
-                  (0, q.jsxs)(
+                  (0, $.jsxs)(
                     "div",
                     {
                       className: rt.abilitiesItem,
                       children: [
-                        (0, q.jsx)("img", {
+                        (0, $.jsx)("img", {
                           className: rt.abilitiesImage,
                           src: e.imagePath,
                           alt: e.title,
                         }),
-                        (0, q.jsxs)("div", {
+                        (0, $.jsxs)("div", {
                           className: rt.abilitiesText,
                           children: [
-                            (0, q.jsx)("div", { className: rt.abilitiesTitle, children: e.title }),
-                            (0, q.jsx)("div", {
+                            (0, $.jsx)("div", { className: rt.abilitiesTitle, children: e.title }),
+                            (0, $.jsx)("div", {
                               className: rt.abilitiesSubtitle,
-                              children: (0, q.jsx)(f, { text: e.description }),
+                              children: (0, $.jsx)(b, { text: e.description }),
                             }),
                           ],
                         }),
@@ -1093,38 +1093,38 @@ var nt = () => {
     const { model: e, controls: t } = w(),
       a = e.eventInfo.get().subMode;
     return (
-      u(t.closeWindow),
-      (0, q.jsxs)("div", {
-        className: y(ct.base, ct[`base__${a}`]),
+      d(t.closeWindow),
+      (0, $.jsxs)("div", {
+        className: h(ct.base, ct[`base__${a}`]),
         children: [
-          (0, q.jsx)(i, { className: ct.closeButton, onClose: t.closeWindow }),
-          (0, q.jsx)(_, {
-            children: (0, q.jsx)(h, {
+          (0, $.jsx)(i, { className: ct.closeButton, onClose: t.closeWindow }),
+          (0, $.jsx)(x, {
+            children: (0, $.jsx)(m, {
               className: ct.scroll,
               barClassNames: gt,
-              children: (0, q.jsx)("div", {
+              children: (0, $.jsx)("div", {
                 className: ct.containerWrapper,
-                children: (0, q.jsxs)("div", {
+                children: (0, $.jsxs)("div", {
                   className: ct.container,
                   children: [
-                    (0, q.jsx)(je, {}),
-                    (0, q.jsx)(Ce, {
+                    (0, $.jsx)(je, {}),
+                    (0, $.jsx)(Ce, {
                       title: R.strings.battle_royale_infopage.mosaic.title(),
                       parameters: D[a],
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(O, {
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(O, {
                       description: B,
                       classNames: { alignCenter: ct.alignCenter, image: ct.map },
                       mapsStyle: !0,
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(O, {
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(O, {
                       description: S,
-                      classNames: { alignCenter: y(ct.alignCenter, ct.generalDescription) },
+                      classNames: { alignCenter: h(ct.alignCenter, ct.generalDescription) },
                     }),
-                    (0, q.jsx)(nt, {}),
-                    (0, q.jsx)(re, {
+                    (0, $.jsx)(nt, {}),
+                    (0, $.jsx)(re, {
                       description: W,
                       binding: {
                         soloRespawnPeriod: e.soloRespawnPeriod.get(),
@@ -1134,36 +1134,36 @@ var nt = () => {
                       className: ct.respawnContainer,
                       classNames: { titleStyling: ct.respawnTitle, image: ct.respawn },
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(Ze, { parameters: A[a] }),
-                    (0, q.jsx)(re, {
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(Ze, { parameters: A[a] }),
+                    (0, $.jsx)(re, {
                       description: Z,
                       className: ct.maraudersContainer,
                       classNames: { titleStyling: ct.maraudersTitle, image: ct.marauder },
                       reverse: !0,
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(O, {
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(O, {
                       description: C,
                       classNames: { image: ct.zone, text: ct.zoneText },
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(re, {
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(re, {
                       description: I,
                       classNames: { image: ct.sector, description: ct.visionCoreDescription },
                       reverse: !0,
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(re, { description: V, classNames: { image: ct.radar } }),
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(re, { description: V, classNames: { image: ct.radar } }),
                     e.sh.modes.get().length > 0 &&
-                      (0, q.jsxs)(q.Fragment, {
+                      (0, $.jsxs)($.Fragment, {
                         children: [
-                          (0, q.jsx)("div", { className: ct.divider }),
-                          (0, q.jsx)(re, {
+                          (0, $.jsx)("div", { className: ct.divider }),
+                          (0, $.jsx)(re, {
                             description: H[a],
                             classNames: { image: ct.progression },
                           }),
-                          (0, q.jsx)(re, {
+                          (0, $.jsx)(re, {
                             description: z[a],
                             smallImage: !0,
                             className: ct.battleTask,
@@ -1174,7 +1174,7 @@ var nt = () => {
                             },
                             reverse: !0,
                           }),
-                          (0, q.jsx)(O, {
+                          (0, $.jsx)(O, {
                             description: L[a],
                             classNames: {
                               alignCenter: ct.indentBPTable,
@@ -1182,23 +1182,23 @@ var nt = () => {
                               head: ct.bpDetailsHead,
                             },
                           }),
-                          (0, q.jsx)(Ke, {}),
+                          (0, $.jsx)(Ke, {}),
                         ],
                       }),
-                    (0, q.jsx)("div", { className: ct.divider }),
-                    (0, q.jsx)(re, {
+                    (0, $.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)(re, {
                       description: M[a],
                       classNames: { image: ct.shop, description: ct.shopDescription },
                     }),
-                    (0, q.jsx)("div", { className: ct.divider }),
+                    (0, $.jsx)("div", { className: ct.divider }),
                     e.bp.get().length > 0 &&
-                      (0, q.jsxs)(q.Fragment, {
+                      (0, $.jsxs)($.Fragment, {
                         children: [
-                          (0, q.jsx)(O, {
+                          (0, $.jsx)(O, {
                             description: G,
                             classNames: { alignCenter: ct.articleBPSettings },
                           }),
-                          (0, q.jsx)(re, {
+                          (0, $.jsx)(re, {
                             description: F,
                             classNames: {
                               titleStyling: ct.bpTitleStyling,
@@ -1207,7 +1207,7 @@ var nt = () => {
                             smallImage: !0,
                             reverse: !0,
                           }),
-                          (0, q.jsx)(O, {
+                          (0, $.jsx)(O, {
                             description: K,
                             className: ct.bpDetails,
                             classNames: {
@@ -1216,13 +1216,13 @@ var nt = () => {
                               title: ct.bpDistributionTitle,
                             },
                           }),
-                          (0, q.jsx)(Me, {}),
-                          (0, q.jsx)("div", { className: ct.divider }),
+                          (0, $.jsx)(Me, {}),
+                          (0, $.jsx)("div", { className: ct.divider }),
                         ],
                       }),
-                    (0, q.jsx)("div", {
+                    (0, $.jsx)("div", {
                       className: ct.footer,
-                      children: (0, q.jsx)(s, { text: E[a] }),
+                      children: (0, $.jsx)(f, { text: q[a] }),
                     }),
                   ],
                 }),
@@ -1234,9 +1234,9 @@ var nt = () => {
     );
   });
 t(
-  new g()
+  new n()
     .add(j)
     .add(T)
-    .render((0, q.jsx)(pt, {})),
+    .render((0, $.jsx)(pt, {})),
   { fullScreen: !0 },
 );

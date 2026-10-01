@@ -1,5 +1,5 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Eo as s, Er as l, Ni as t, Or as r, gi as i, kr as a, qa as o, yo as d } from "./lib.js";
+import { Er as s, Ka as l, Mi as t, Or as r, To as i, hi as a, kr as o, vo as d } from "./lib.js";
 import { s as c } from "./vendor.js";
 import { i as _, n as f, r as n, t as b } from "./sound.js";
 import { t as m } from "./story_point.js";
@@ -28,14 +28,14 @@ var p = e(c()),
     label: "DifficultyItem_label_e0bd4ef3",
     lock: "DifficultyItem_lock_63b24d89",
   },
-  y = i(),
-  I = { 1: _, 2: b, 3: n },
-  v = s.resolve("strings");
+  y = a(),
+  v = { 1: _, 2: b, 3: n },
+  I = i.resolve("strings");
 function D({
   level: e,
-  state: s,
-  isDisabled: i,
-  isLocked: a,
+  state: i,
+  isDisabled: a,
+  isLocked: o,
   onClick: d,
   className: c,
   missionCount: _,
@@ -46,34 +46,34 @@ function D({
   const j = r({
       resId: R.aliases.last_stand.shared.Difficulty("resId"),
       contentId: R.views.last_stand.mono.lobby.tooltips.difficulty_tooltip("resId"),
-      args: { level: e, state: s, isLocked: a },
-      disabled: i,
+      args: { level: e, state: i, isLocked: o },
+      disabled: a,
     }),
-    h = l({
+    h = s({
       body: D
         ? R.strings.last_stand_lobby.difficult.searching.body()
         : R.strings.last_stand_lobby.difficult.disabled.body(),
       header: R.strings.last_stand_lobby.difficult.disabled.header(),
-      disabled: !i,
+      disabled: !a,
     }),
-    x = i ? h : j,
-    H = s === u.DEFAULT && !a && !i;
+    x = a ? h : j,
+    H = i === u.DEFAULT && !o && !a;
   return (0, y.jsx)("div", {
     className: (0, p.default)(
       g.base,
-      g[`base__${s}`],
-      a && g.base__locked,
+      g[`base__${i}`],
+      o && g.base__locked,
       H && g.base__hoverable,
       c,
     ),
     ...x,
     onMouseEnter: (e) => {
-      (x.onMouseEnter(e), s !== u.DEFAULT || i || a || o.sound(f));
+      (x.onMouseEnter(e), i !== u.DEFAULT || a || o || l.sound(f));
     },
     onClick: () => {
-      if ((x.onClick(), s !== u.DEFAULT || i || a)) return;
-      const l = I[e];
-      (void 0 !== l && o.sound(l), d(e));
+      if ((x.onClick(), i !== u.DEFAULT || a || o)) return;
+      const s = v[e];
+      (void 0 !== s && l.sound(s), d(e));
     },
     children: (0, y.jsxs)("div", {
       className: g.content,
@@ -87,16 +87,16 @@ function D({
         }),
         (0, y.jsx)("div", { className: g.border }),
         (0, y.jsx)("div", { className: (0, p.default)(g.bgHelper, g.bgHelper__selected) }),
-        s === u.DEFAULT &&
-          !i &&
+        i === u.DEFAULT &&
           !a &&
+          !o &&
           (0, y.jsxs)(y.Fragment, {
             children: [
               (0, y.jsx)("div", { className: (0, p.default)(g.bgHelper, g.bgHelper__default) }),
               (0, y.jsx)("div", { className: (0, p.default)(g.bgHelper, g.bgHelper__hover) }),
             ],
           }),
-        a &&
+        o &&
           (0, y.jsxs)(y.Fragment, {
             children: [
               (0, y.jsx)("div", { className: (0, p.default)(g.bgHelper, g.bgHelper__default) }),
@@ -123,16 +123,16 @@ function D({
         }),
         (0, y.jsx)("div", {
           className: g.label,
-          children: v.readOrEmpty(`R.strings.last_stand_lobby.difficult.uppercase.level_${e}`),
+          children: I.readOrEmpty(`R.strings.last_stand_lobby.difficult.uppercase.level_${e}`),
         }),
-        a && (0, y.jsx)("div", { className: g.lock }),
+        o && (0, y.jsx)("div", { className: g.lock }),
       ],
     }),
   });
 }
 var j = e(d(), 1),
   h = (e) =>
-    a(
+    o(
       "vehicleRoles",
       (0, j.useMemo)(() => [e], [e]),
     );

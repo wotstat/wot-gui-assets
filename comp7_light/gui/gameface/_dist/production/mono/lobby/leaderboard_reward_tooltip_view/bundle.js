@@ -1,12 +1,12 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Cr as s,
-  Kr as a,
-  T as d,
-  Vo as t,
+  Bo as s,
+  Cr as a,
+  Kr as d,
+  T as t,
   Zr as i,
-  co as l,
-  sa as r,
+  oa as l,
+  so as r,
   w as p,
   wr as c,
 } from "../chunks/lib.js";
@@ -21,7 +21,7 @@ var _ = e(n(), 1),
       e
     );
   })({}),
-  [f, b] = (t(), i()(({ observableModel: e }) => ({ root: e.object() }), l)),
+  [f, b] = (s(), i()(({ observableModel: e }) => ({ root: e.object() }), r)),
   x = R.strings.comp7_light.leaderboardRewardTooltip,
   h = [
     { victoryPoints: 5, defeatPoints: 3, place: x.top.c_0() },
@@ -40,7 +40,7 @@ var _ = e(n(), 1),
   P = "Table_reward_34902bd5",
   y = "Table_point_e3b5c2ca",
   k = "Table_separator_b233bbf2",
-  E = e(r(), 1),
+  E = e(l(), 1),
   C = R.strings.comp7_light.leaderboardRewardTooltip,
   M = () =>
     (0, E.jsxs)("div", {
@@ -90,7 +90,7 @@ var _ = e(n(), 1),
         }),
       ],
     }),
-  S = {
+  B = {
     base: "App_d9e35c0f",
     base__simplified: "App_base__simplified_cf69e336",
     text: "App_text_7c659778",
@@ -116,55 +116,55 @@ var _ = e(n(), 1),
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  U = R.strings.comp7_light.leaderboardRewardTooltip,
-  B = o(() => {
+  S = R.strings.comp7_light.leaderboardRewardTooltip,
+  U = o(() => {
     const { model: e } = b(),
-      { state: a, seasonEndTimestamp: t } = e.root.get(),
-      i = a === m.Simplified;
-    return (0, E.jsx)(s, {
-      children: (0, E.jsx)(s.Decorator, {
+      { state: s, seasonEndTimestamp: d } = e.root.get(),
+      i = s === m.Simplified;
+    return (0, E.jsx)(a, {
+      children: (0, E.jsx)(a.Decorator, {
         children: (0, E.jsxs)("div", {
-          className: (0, _.default)(S.base, S[`base__${a}`]),
+          className: (0, _.default)(B.base, B[`base__${s}`]),
           children: [
             !i &&
               (0, E.jsx)(E.Fragment, {
                 children: (0, E.jsxs)("div", {
-                  className: S.header,
+                  className: B.header,
                   children: [
-                    U.modeName(),
+                    S.modeName(),
                     (0, E.jsx)(c, {
-                      text: U.eventEnds(),
-                      classMix: S.eventEnds,
+                      text: S.eventEnds(),
+                      classMix: B.eventEnds,
                       binding: {
                         countdown: (0, E.jsx)(p, {
-                          duration: t,
-                          icon: d.None,
-                          classNames: { text: S.eventEnds },
+                          duration: d,
+                          icon: t.None,
+                          classNames: { text: B.eventEnds },
                         }),
                       },
                     }),
-                    a === m.Completed &&
+                    s === m.Completed &&
                       (0, E.jsxs)(E.Fragment, {
                         children: [
-                          (0, E.jsx)("div", { className: S.topBorderGradient }),
-                          (0, E.jsx)("div", { className: S.completedIcon }),
+                          (0, E.jsx)("div", { className: B.topBorderGradient }),
+                          (0, E.jsx)("div", { className: B.completedIcon }),
                         ],
                       }),
                   ],
                 }),
               }),
             (0, E.jsxs)("div", {
-              className: S.description,
+              className: B.description,
               children: [
-                a === m.Completed &&
-                  (0, E.jsx)("div", { className: S.completed, children: U.heading.completed() }),
-                (0, E.jsx)(c, { text: `${U.description.$dyn(a)}`, classMix: S.text }),
+                s === m.Completed &&
+                  (0, E.jsx)("div", { className: B.completed, children: S.heading.completed() }),
+                (0, E.jsx)(c, { text: `${S.description.$dyn(s)}`, classMix: B.text }),
               ],
             }),
-            a !== m.Completed && (0, E.jsx)(M, {}),
+            s !== m.Completed && (0, E.jsx)(M, {}),
           ],
         }),
       }),
     });
   });
-a((0, E.jsx)(f, { children: (0, E.jsx)(B, {}) }));
+d((0, E.jsx)(f, { children: (0, E.jsx)(U, {}) }));

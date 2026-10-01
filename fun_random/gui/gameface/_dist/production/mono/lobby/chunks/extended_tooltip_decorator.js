@@ -1,9 +1,9 @@
-import { Ja as e, Un as s, Wn as a, a as i, g as r, h as t, yi as o } from "./lib.js";
+import { Un as e, Wn as s, a, g as i, h as r, qa as t, vi as o } from "./lib.js";
 var d = "Divider_7a72bfaf",
   c = "Divider_5e35d515",
   n = o(),
-  l = ({ className: s }) =>
-    (0, n.jsx)("div", { className: e(d, s), children: (0, n.jsx)("div", { className: c }) }),
+  l = ({ className: e }) =>
+    (0, n.jsx)("div", { className: t(d, e), children: (0, n.jsx)("div", { className: c }) }),
   m = "ExtendedTooltipDecorator_312a767e",
   x = "ExtendedTooltipDecorator_header_37374fa6",
   _ = "ExtendedTooltipDecorator_base__invertedColors_d4c2e366",
@@ -20,23 +20,23 @@ function v({
   className: f,
   children: T,
 }) {
-  return (0, n.jsx)(i, {
-    children: (0, n.jsx)(i.Decorator, {
+  return (0, n.jsx)(a, {
+    children: (0, n.jsx)(a.Decorator, {
       children: (0, n.jsxs)("div", {
-        className: e(m, v && _, f),
+        className: t(m, v && _, f),
         children: [
           o &&
             ("string" == typeof o
-              ? (0, n.jsx)(a, { text: String(o), className: x })
+              ? (0, n.jsx)(s, { text: String(o), className: x })
               : (0, n.jsx)("div", { className: x, children: o })),
-          (0, n.jsx)(t, { text: d, binding: c, classMix: p }),
+          (0, n.jsx)(r, { text: d, binding: c, classMix: p }),
           T,
           D > 0 &&
             (0, n.jsxs)("div", {
               className: j,
               children: [
                 (0, n.jsx)(l, { className: h }),
-                (0, n.jsx)(s, { path: N, params: { timeLeft: (0, n.jsx)(r, { start: D }) } }),
+                (0, n.jsx)(e, { path: N, params: { timeLeft: (0, n.jsx)(i, { start: D }) } }),
               ],
             }),
         ],

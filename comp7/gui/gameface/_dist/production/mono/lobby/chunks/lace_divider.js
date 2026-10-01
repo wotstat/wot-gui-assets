@@ -1,7 +1,7 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Pa as a, ws as i } from "./lib.js";
+import { Cs as a, Na as i } from "./lib.js";
 import { i as d } from "./vendor.js";
-i();
+a();
 var r = e(d()),
   l = {
     base: "LaceDivider_56ee691d",
@@ -24,7 +24,7 @@ var r = e(d()),
     blink: "LaceDivider_blink_ef77db23",
     slideUpIn: "LaceDivider_slideUpIn_ef77db23",
   },
-  c = e(a()),
+  c = e(i()),
   _ = ({ children: e, className: a, classNames: i }) =>
     (0, c.jsxs)("div", {
       className: (0, r.default)(l.base, a),

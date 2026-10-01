@@ -1,12 +1,12 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { $ as e, Pa as t, Q as a, Uo as o, _i as p, fi as n, ws as i } from "../../chunks/lib.js";
+import { Cs as e, Ho as t, Mr as a, Na as o, _i as p, fi as n, kr as i } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as _, i as r } from "../../chunks/vendor.js";
 /* empty css                  */ import { t as c } from "../../chunks/tooltip_decorator.js";
 import { t as d } from "../../chunks/tooltips.module.js";
-i();
+e();
 var l = s(r(), 1),
-  [x, h] = p()(({ observableModel: s }) => ({ root: s.object() }), o),
+  [x, h] = p()(({ observableModel: s }) => ({ root: s.object() }), t),
   A = {
     base: "App_eaae4c68",
     header: "App_header_cfd235ff",
@@ -33,43 +33,43 @@ var l = s(r(), 1),
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  f = s(t(), 1),
+  f = s(o(), 1),
   u = _(() => {
     const { model: s } = h(),
-      { ignoreState: t, state: o, seasonPointExchangeRate: p } = s.root.get();
+      { ignoreState: e, state: t, seasonPointExchangeRate: o } = s.root.get();
     return (0, f.jsxs)("div", {
       className: (0, l.default)(d.base, A.base),
       children: [
         (0, f.jsxs)("div", {
           className: A.header,
           children: [
-            (0, f.jsx)(e, {
+            (0, f.jsx)(a, {
               text: R.strings.comp7_ext.seasonPointTooltip.header(),
               classMix: A.heading,
             }),
-            !t &&
-              (0, f.jsx)(e, {
-                text: `${R.strings.comp7_ext.seasonPointTooltip.status.$dyn(o)}`,
-                classMix: (0, l.default)(A.status, A[`status__${o}`]),
+            !e &&
+              (0, f.jsx)(a, {
+                text: `${R.strings.comp7_ext.seasonPointTooltip.status.$dyn(t)}`,
+                classMix: (0, l.default)(A.status, A[`status__${t}`]),
               }),
           ],
         }),
         (0, f.jsxs)("div", {
           className: A.body,
           children: [
-            (0, f.jsx)(e, {
+            (0, f.jsx)(a, {
               text: R.strings.comp7_ext.seasonPointTooltip.text.season(),
               classMix: A.text,
             }),
-            (0, f.jsx)(e, {
+            (0, f.jsx)(a, {
               text: R.strings.comp7_ext.seasonPointTooltip.text.year(),
               classMix: A.text,
             }),
-            (0, f.jsx)(a, {
+            (0, f.jsx)(i, {
               text: R.strings.comp7_ext.seasonPointTooltip.text.compensate(),
               binding: {
                 bondsIcon: (0, f.jsx)("div", { className: A.bondsIcon }),
-                seasonPointExchangeRate: p,
+                seasonPointExchangeRate: o,
               },
               classMix: (0, l.default)(A.text),
             }),

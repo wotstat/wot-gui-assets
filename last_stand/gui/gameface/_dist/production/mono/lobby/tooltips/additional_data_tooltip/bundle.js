@@ -1,4 +1,4 @@
-import { c as a, cr as s, gi as i } from "../../chunks/lib.js";
+import { c as a, cr as s, hi as i } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 var t = "AdditionalDataTooltipApp_aa694135",
   d = "AdditionalDataTooltipApp_header_103f53ff",

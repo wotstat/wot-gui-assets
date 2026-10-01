@@ -1,51 +1,51 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  $a as s,
-  $i as a,
-  Aa as t,
-  B as r,
-  Ci as o,
-  Da as n,
-  Dr as i,
-  Ea as d,
-  Fa as l,
-  Gr as _,
-  Ha as c,
-  Io as p,
-  Kr as f,
-  L as m,
-  Li as u,
-  Mi as g,
-  Pr as h,
-  R as b,
-  Ti as v,
-  Tr as k,
-  Vo as T,
-  Wa as C,
-  Xr as x,
-  Zr as I,
-  _n as B,
-  _o as j,
-  _r as w,
-  a as P,
-  bn as L,
-  br as A,
-  ca as N,
-  co as y,
-  fn as S,
-  gn as V,
-  i as W,
-  jr as U,
-  lo as Q,
-  no as E,
-  oa as H,
-  oo as O,
-  pn as F,
-  r as z,
-  sa as $,
-  vr as M,
+  B as s,
+  Bo as a,
+  C as t,
+  Dr as r,
+  Ea as o,
+  Fo as n,
+  Gr as i,
+  Ii as d,
+  Kr as l,
+  L as _,
+  Pa as c,
+  Pr as p,
+  Qa as f,
+  Qi as m,
+  R as u,
+  S as g,
+  Si as h,
+  Ta as b,
+  Tr as v,
+  Ua as k,
+  Va as T,
+  Xr as C,
+  Zr as x,
+  _n as I,
+  _r as B,
+  aa as j,
+  ao as w,
+  br as P,
+  co as L,
+  go as A,
+  ji as N,
+  jr as S,
+  ka as y,
+  mn as V,
+  oa as Q,
+  pn as U,
+  sa as W,
+  so as E,
+  to as H,
+  vi as O,
+  vn as F,
+  vr as z,
+  wi as $,
   wr as G,
-  yi as D,
+  x as M,
+  xn as D,
   yr as q,
   z as K,
   zr as X,
@@ -56,42 +56,42 @@ import { t as Y } from "../chunks/useParseRewards.js";
 import { n as ee, r as se } from "../chunks/consts.js";
 import { t as ae } from "../chunks/schedule_model.js";
 import { t as te } from "../chunks/schedule_subheading.js";
-var re = e(T(), 1),
+var re = e(a(), 1),
   oe = (e, s) =>
     Object.keys(e).length === Object.keys(s).length &&
     Object.keys(e).every((a) => Object.prototype.hasOwnProperty.call(s, a) && e[a] === s[a]),
   ne = e(J(), 1),
   ie = { 0: "firstCondition", 1: "secondCondition" },
-  de = (e, a) => {
-    const t = [];
+  de = (e, s) => {
+    const a = [];
     if ("or" === e.conditionType || "and" === e.conditionType)
       e.items.forEach((e) => {
-        const r = s(e);
-        r && t.push(...de(r, a));
+        const t = f(e);
+        t && a.push(...de(t, s));
       });
     else {
-      const { descrData: s } = e;
+      const { descrData: t } = e;
       let { titleData: r, current: o, total: n, earned: i, iconKey: d } = e;
-      const l = c(a, 0);
+      const l = T(s, 0);
       (l &&
-        ((r = s || l.descrData), (d = d || l.iconKey), ({ current: o, total: n, earned: i } = l)),
-        0 === n && (r = s),
-        t.push({ condition: r, lastValue: i, currentValue: o, maxValue: n, icon: d }));
+        ((r = t || l.descrData), (d = d || l.iconKey), ({ current: o, total: n, earned: i } = l)),
+        0 === n && (r = t),
+        a.push({ condition: r, lastValue: i, currentValue: o, maxValue: n, icon: d }));
     }
-    return t;
+    return a;
   },
   le = (e, s, a) => {
     const t = {};
-    let r = {};
+    let o = {};
     return (
-      de(e, s).forEach(({ condition: e, lastValue: s, currentValue: a, maxValue: o }, n) => {
-        ((t[ie[n]] = ((e, s) =>
-          i(e, k.left)
+      de(e, s).forEach(({ condition: e, lastValue: s, currentValue: a, maxValue: n }, i) => {
+        ((t[ie[i]] = ((e, s) =>
+          r(e, v.left)
             .flat()
-            .map((e, a) => (0 === a && s > 0 && (e = e.toLowerCase()), e)))(e, n)),
-          (r = { lastValue: s, currentValue: a, maxValue: o }));
+            .map((e, a) => (0 === a && s > 0 && (e = e.toLowerCase()), e)))(e, i)),
+          (o = { lastValue: s, currentValue: a, maxValue: n }));
       }),
-      { taskConditions: [{ conditions: t, progression: { status: a, ...r } }] }
+      { taskConditions: [{ conditions: t, progression: { status: a, ...o } }] }
     );
   },
   _e = (e) => ("secondCondition" in e ? "multiConditions" : "oneCondition"),
@@ -122,16 +122,16 @@ var re = e(T(), 1),
     hide: "Progression_hide_61efd8f5",
     show: "Progression_show_61efd8f5",
   },
-  pe = e($(), 1),
+  pe = e(Q(), 1),
   fe = ({
     currentValue: e,
-    maxValue: s,
-    lastValue: a,
-    statusAnimation: t,
+    maxValue: a,
+    lastValue: t,
+    statusAnimation: r,
     updateStatusAnimation: o,
   }) =>
     (0, pe.jsx)("div", {
-      className: (0, ne.default)(ce.base, ce[`base__${t}`]),
+      className: (0, ne.default)(ce.base, ce[`base__${r}`]),
       children: (0, pe.jsxs)("div", {
         className: ce.progression,
         children: [
@@ -149,16 +149,16 @@ var re = e(T(), 1),
                 className: ce.separator,
                 children: R.strings.common.common.slash(),
               }),
-              (0, pe.jsx)("span", { children: s }),
+              (0, pe.jsx)("span", { children: a }),
             ],
           }),
           (0, pe.jsx)("div", {
             className: ce.progressBar,
             children: (0, pe.jsx)(se, {
-              size: r.Small,
+              size: s.Small,
               value: e,
-              deltaFrom: e - a,
-              maxValue: s,
+              deltaFrom: e - t,
+              maxValue: a,
               onComplete: o,
             }),
           }),
@@ -299,13 +299,13 @@ var re = e(T(), 1),
     completedWasVisited: "completedWasVisited",
     allCompletedTasksVisited: "allCompletedTasksVisited",
   },
-  Te = Z(function ({ taskConditions: e, awardsBattle: s, taskBattleIcon: a, index: t }) {
-    const [r, o] = (0, re.useState)(ke.inProgress),
-      { parsedRewards: n } = Y(s, X.Small),
-      { mediaSize: i } = H(),
-      d = i >= N.Large ? 2 : 1;
+  Te = Z(function ({ taskConditions: e, awardsBattle: s, taskBattleIcon: a, index: r }) {
+    const [o, n] = (0, re.useState)(ke.inProgress),
+      { parsedRewards: i } = Y(s, X.Small),
+      { mediaSize: d } = j(),
+      l = d >= W.Large ? 2 : 1;
     return (0, pe.jsxs)("div", {
-      className: (0, ne.default)(ve.base, ve[`base__${r}`]),
+      className: (0, ne.default)(ve.base, ve[`base__${o}`]),
       children: [
         (0, pe.jsx)("div", { className: ve.centerBorderCommon }),
         (0, pe.jsx)("div", { className: ve.outerBorderCommon }),
@@ -314,19 +314,19 @@ var re = e(T(), 1),
         (0, pe.jsx)("div", { className: ve.topBorderGradient }),
         (0, pe.jsx)("div", {
           className: ve.taskType,
-          children: (0, pe.jsx)(be, { taskBattleIcon: a, statusAnimation: r }),
+          children: (0, pe.jsx)(be, { taskBattleIcon: a, statusAnimation: o }),
         }),
         (0, pe.jsx)("div", {
           className: ve.conditions,
-          children: C(e, ({ conditions: e, progression: s }) =>
+          children: k(e, ({ conditions: e, progression: s }) =>
             (0, pe.jsx)(
               ge,
               {
-                conditionIndex: t,
+                conditionIndex: r,
                 progression: s,
                 conditions: e,
-                setStatusAnimation: o,
-                statusAnimation: r,
+                setStatusAnimation: n,
+                statusAnimation: o,
               },
               s.currentValue,
             ),
@@ -345,14 +345,14 @@ var re = e(T(), 1),
             }),
             (0, pe.jsx)("div", {
               className: ve.awardsList,
-              children: (0, pe.jsx)(P, {
-                data: n,
+              children: (0, pe.jsx)(t, {
+                data: i,
                 rewardItemClassMix: ve.award,
-                count: d,
+                count: l,
                 size: X.Small,
                 boxRewardTooltip: {
                   contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"),
-                  args: { fromIndex: d, index: t },
+                  args: { fromIndex: l, index: r },
                 },
               }),
             }),
@@ -380,7 +380,7 @@ var re = e(T(), 1),
       e
     );
   })({}),
-  [xe, Ie] = I()(
+  [xe, Ie] = x()(
     ({ observableModel: e }) => {
       const s = {
           battleQuests: e.array("battleQuests.tasksBattle"),
@@ -389,96 +389,96 @@ var re = e(T(), 1),
           missionsCompletedVisited: e.array("battleQuests.missionsCompletedVisited"),
           progressLevels: e.array("progressLevels"),
           ...e.primitives(["state", "curProgressPoints", "prevProgressPoints", "pointsForLevel"]),
-          progressAnimationState: a.box(0),
+          progressAnimationState: m.box(0),
         },
-        t = x(() => Math.floor(s.curProgressPoints.get() / s.pointsForLevel.get())),
-        r = x(() => Math.floor(s.prevProgressPoints.get() / s.pointsForLevel.get())),
-        o = x(
+        a = C(() => Math.floor(s.curProgressPoints.get() / s.pointsForLevel.get())),
+        t = C(() => Math.floor(s.prevProgressPoints.get() / s.pointsForLevel.get())),
+        r = C(
           (e) => ({
-            wasProgressionVisited: r() === t(),
-            isRecentlyCompletedLevel: r() <= e && e <= t(),
-            isPrevLevel: e <= r(),
+            wasProgressionVisited: t() === a(),
+            isRecentlyCompletedLevel: t() <= e && e <= a(),
+            isPrevLevel: e <= t(),
           }),
           { equals: oe },
         ),
-        n = x((e) =>
-          Q(0, s.pointsForLevel.get(), s.curProgressPoints.get() - e * s.pointsForLevel.get()),
+        o = C((e) =>
+          L(0, s.pointsForLevel.get(), s.curProgressPoints.get() - e * s.pointsForLevel.get()),
         ),
-        i = x(
+        n = C(
           () =>
-            C(s.battleQuests.get(), (e) => ({
+            k(s.battleQuests.get(), (e) => ({
               ...le(e.postBattleCondition, e.bonusCondition.items, e.status),
-              awardsBattle: C(e.bonuses, (e) => e),
+              awardsBattle: k(e.bonuses, (e) => e),
               taskBattleIcon: e.icon,
             })),
-          { equals: O },
+          { equals: w },
         ),
-        d = x(() => {
+        i = C(() => {
           let e = 0;
           return (
-            i().forEach((s) => {
+            n().forEach((s) => {
               "done" === s.taskConditions[0]?.progression.status && ++e;
             }),
             e
           );
         }),
-        _ = x(
+        d = C(
           () => {
-            const e = t(),
-              a = s.progressLevels.get();
-            return C(s.progressLevels.get(), ({ rewards: s }, t) => ({
-              level: t + 1,
-              isCompleted: t < e,
-              isActive: t === e,
-              isLast: t === a.length - 1,
+            const e = a(),
+              t = s.progressLevels.get();
+            return k(s.progressLevels.get(), ({ rewards: s }, a) => ({
+              level: a + 1,
+              isCompleted: a < e,
+              isActive: a === e,
+              isLast: a === t.length - 1,
               rewards: s,
             }));
           },
-          { equals: O },
+          { equals: w },
         ),
-        p = x(
+        l = C(
           () =>
             s.scheduleInfo.endTimestamp.get() - s.scheduleInfo.serverTimestamp.get() <
             s.currentTimerDate.currentTimerDate.get(),
         ),
-        f = x(() => {
-          const e = i();
+        _ = C(() => {
+          const e = n();
           for (let s = 0; s < e.length; s++)
-            if ("done" !== e[s]?.taskConditions[0]?.progression.status || p()) return ke.inProgress;
-          return l(s.missionsCompletedVisited.get(), (e) => e)
+            if ("done" !== e[s]?.taskConditions[0]?.progression.status || l()) return ke.inProgress;
+          return c(s.missionsCompletedVisited.get(), (e) => e)
             ? ke.allCompletedTasksVisited
             : ke.completed;
         }),
-        m = x((e) => {
-          const a = c(i(), e)?.taskConditions[0]?.progression.status,
-            t = c(s.missionsCompletedVisited.get(), e);
+        p = C((e) => {
+          const a = T(n(), e)?.taskConditions[0]?.progression.status,
+            t = T(s.missionsCompletedVisited.get(), e);
           return "done" !== a ? ke.inProgress : t ? ke.completedWasVisited : ke.completed;
         }),
-        u = x(() => {
+        f = C(() => {
           const e = s.pointsForLevel.get() * s.progressLevels.get().length;
           return s.curProgressPoints.get() >= e;
         }),
-        g = x(() => u() && s.curProgressPoints.get() === s.prevProgressPoints.get());
+        u = C(() => f() && s.curProgressPoints.get() === s.prevProgressPoints.get());
       return {
         ...s,
         ...s.currentTimerDate,
         computes: {
-          levels: _,
-          battleQuests: i,
-          currentLevel: t,
-          levelStatus: o,
-          currentPointsForLevel: n,
-          battleTasksStatus: f,
-          isProgressionCompleted: u,
-          wasProgressionCompletedBeforeStart: g,
-          missionCompletedVisitedStatus: m,
-          numberCompletedQuests: d,
-          isEventEndsBeforeNewQuests: p,
+          levels: d,
+          battleQuests: n,
+          currentLevel: a,
+          levelStatus: r,
+          currentPointsForLevel: o,
+          battleTasksStatus: _,
+          isProgressionCompleted: f,
+          wasProgressionCompletedBeforeStart: u,
+          missionCompletedVisitedStatus: p,
+          numberCompletedQuests: i,
+          isEventEndsBeforeNewQuests: l,
         },
       };
     },
     ({ externalModel: e, model: s }) => ({
-      ...t({
+      ...y({
         finishScrolling: () => s.progressAnimationState.set(1),
         finishProgressionChange: () => s.progressAnimationState.set(2),
         finishHighlightCard: () => s.progressAnimationState.set(3),
@@ -518,20 +518,20 @@ var re = e(T(), 1),
     blink: "Timer_blink_6ee5dd6c",
     slideUpIn: "Timer_slideUpIn_6ee5dd6c",
   },
-  Le = Z(function ({ size: e = A.x24x24 }) {
+  Le = Z(function ({ size: e = P.x24x24 }) {
     const { model: s } = Ie(),
       a = s.scheduleInfo.endTimestamp.get(),
       t = s.scheduleInfo.serverTimestamp.get(),
       r = s.computes.isEventEndsBeforeNewQuests(),
       o = s.currentTimerDate.get(),
-      n = r ? a - t : o;
+      i = r ? a - t : o;
     return (0, pe.jsxs)("div", {
       className: Pe.base,
       children: [
         (0, pe.jsx)("div", { className: (0, ne.default)(Pe.icon, Pe[`icon__${e}`]) }),
         (0, pe.jsx)("div", {
           className: (0, ne.default)(Pe.label, Pe[`label__${e}`]),
-          children: (0, pe.jsx)(M, { size: e, preFormatted: w(p(n), q.default) }),
+          children: (0, pe.jsx)(z, { size: e, preFormatted: B(n(i), q.default) }),
         }),
       ],
     });
@@ -561,8 +561,8 @@ var re = e(T(), 1),
     hide: "InformBlock_hide_88766607",
   },
   Ne = R.strings.comp7_light.progressionView.battleQuests.timer,
-  ye = function ({ battleTasksStatus: e }) {
-    const { mediaSize: s } = H();
+  Se = function ({ battleTasksStatus: e }) {
+    const { mediaSize: s } = j();
     return (0, pe.jsx)("div", {
       className: (0, ne.default)(Ae.base, Ae[`base__${e}`]),
       children: (0, pe.jsx)(we, {
@@ -574,7 +574,7 @@ var re = e(T(), 1),
               className: Ae.timerBlock,
               children: [
                 Ne.completed.text(),
-                (0, pe.jsx)(Le, { size: s >= N.Large ? A.x48x48 : A.x32x32 }),
+                (0, pe.jsx)(Le, { size: s >= W.Large ? P.x48x48 : P.x32x32 }),
               ],
             }),
           ],
@@ -582,7 +582,7 @@ var re = e(T(), 1),
       }),
     });
   },
-  Se = {
+  ye = {
     base: "TaskBattleList_620a2e52",
     base__completed: "TaskBattleList_base__completed_78276b8d",
     questsContainer: "TaskBattleList_questsContainer_dff64b58",
@@ -610,23 +610,23 @@ var re = e(T(), 1),
     show: "TaskBattleList_show_78276b8d",
   },
   Ve = R.strings.comp7_light.progressionView.battleQuests.timer,
-  We = Z(function () {
+  Qe = Z(function () {
     const { model: e } = Ie(),
       s = e.computes.battleQuests(),
       a = e.computes.battleTasksStatus(),
       t = e.computes.isEventEndsBeforeNewQuests();
     return (0, pe.jsxs)("div", {
-      className: (0, ne.default)(Se.base, Se[`base__${a}`]),
+      className: (0, ne.default)(ye.base, ye[`base__${a}`]),
       children: [
         (0, pe.jsxs)("div", {
-          className: (0, ne.default)(Se.questsContainer),
+          className: (0, ne.default)(ye.questsContainer),
           children: [
             (0, pe.jsx)(we, {
               children: (0, pe.jsxs)("div", {
-                className: Se.timerBlock,
+                className: ye.timerBlock,
                 children: [
                   (0, pe.jsx)("div", {
-                    className: Se.text,
+                    className: ye.text,
                     children: t ? Ve.eventEnds() : Ve.inProgress.text(),
                   }),
                   (0, pe.jsx)(Le, {}),
@@ -634,18 +634,18 @@ var re = e(T(), 1),
               }),
             }),
             (0, pe.jsx)("div", {
-              className: Se.taskList,
-              children: C(s, (e, s) => (0, pe.jsx)(Te, { ...e, index: s }, s)),
+              className: ye.taskList,
+              children: k(s, (e, s) => (0, pe.jsx)(Te, { ...e, index: s }, s)),
             }),
           ],
         }),
-        (0, pe.jsx)(ye, { battleTasksStatus: a }),
+        (0, pe.jsx)(Se, { battleTasksStatus: a }),
       ],
     });
   }),
   Re = "BattleQuests_42d8b049",
   Ue = "BattleQuests_subTitle_c2942cfe",
-  Qe = "BattleQuests_textWrapper_e8bacd26",
+  We = "BattleQuests_textWrapper_e8bacd26",
   Ee = "BattleQuests_info_1cd10120",
   He = "BattleQuests_icon_4f5433ba",
   Oe = R.strings.comp7_light.progressionView,
@@ -656,12 +656,12 @@ var re = e(T(), 1),
       className: Re,
       children: [
         (0, pe.jsx)("div", {
-          className: Qe,
+          className: We,
           children: (0, pe.jsx)(G, {
             text: s ? Oe.subTitle.completed() : Oe.subTitle.inProgress(),
             classMix: Ue,
             binding: {
-              infotip: (0, pe.jsx)(h, {
+              infotip: (0, pe.jsx)(p, {
                 contentId: R.views.comp7_light.mono.lobby.leaderboard_reward_tooltip_view("resId"),
                 children: (0, pe.jsx)("div", {
                   className: Ee,
@@ -671,24 +671,24 @@ var re = e(T(), 1),
             },
           }),
         }),
-        (0, pe.jsx)(We, {}),
+        (0, pe.jsx)(Qe, {}),
       ],
     });
   }),
   ze = "LevelLabel_2aeb988e",
   $e = "LevelLabel_activeGlow_cb07395c",
-  Me = "LevelLabel_activeGlow__completed_14902b18",
-  Ge = "LevelLabel_level_8a756009",
+  Ge = "LevelLabel_activeGlow__completed_14902b18",
+  Me = "LevelLabel_level_8a756009",
   De = "LevelLabel_level__completed_14902b18",
   qe = "LevelLabel_level__active_92cab71e",
   Ke = "LevelLabel_levelCurrent_68e59432",
   Xe = "LevelLabel_levelCurrent__completed_14902b18",
   Ze = ({ level: e, isActive: s, isCompleted: a }) => {
-    const t = (0, ne.default)(Ge, a && De, s && qe);
+    const t = (0, ne.default)(Me, a && De, s && qe);
     return (0, pe.jsxs)("div", {
       className: ze,
       children: [
-        (0, pe.jsx)("div", { className: (0, ne.default)($e, s && Me) }),
+        (0, pe.jsx)("div", { className: (0, ne.default)($e, s && Ge) }),
         (0, pe.jsx)("div", { className: (0, ne.default)(Ke, s && Xe), children: e }),
         (0, pe.jsx)("div", { className: t, children: e }),
       ],
@@ -726,7 +726,7 @@ var re = e(T(), 1),
   ss = "inProgress",
   as = (e, s, a) => (e ? es : s ? ss : a),
   ts = Z(function ({ level: e, isActive: s, isCompleted: a, isLast: t }) {
-    const [r, o] = (0, re.useState)(),
+    const [r, n] = (0, re.useState)(),
       { model: i } = Ie(),
       d = (0, re.useRef)(null),
       {
@@ -735,15 +735,15 @@ var re = e(T(), 1),
         isPrevLevel: c,
       } = i.computes.levelStatus(e);
     (0, re.useEffect)(() => {
-      a && !l && _ && o(Ye);
+      a && !l && _ && n(Ye);
     }, [a, l, _]);
     const p = (0, re.useCallback)(() => {
-      j.sound("pr_progress_tick");
+      A.sound("pr_progress_tick");
     }, []);
     return (
       (0, re.useEffect)(() => {
         const e = d.current;
-        return n(() => {
+        return o(() => {
           if (e)
             return (
               e.addEventListener("transitionstart", p),
@@ -784,7 +784,7 @@ var re = e(T(), 1),
       return (0, pe.jsx)("div", {
         className: rs,
         ref: s,
-        children: C(a.computes.levels(), (e) => (0, pe.jsx)(ts, { ...e }, e.level)),
+        children: k(a.computes.levels(), (e) => (0, pe.jsx)(ts, { ...e }, e.level)),
       });
     }),
   ),
@@ -796,7 +796,7 @@ var re = e(T(), 1),
     const { parsedRewards: t, imageSize: r } = Y(a);
     return (0, pe.jsx)("div", {
       className: (0, ne.default)(ns, r === X.Small && t.length > 2 && ds, e && !s && is),
-      children: C(t, (e) => (0, pe.jsx)(U, { className: ls, ...e }, e.name)),
+      children: k(t, (e) => (0, pe.jsx)(S, { className: ls, ...e }, e.name)),
     });
   }),
   cs = "RewardCard_3d33baf7",
@@ -849,7 +849,7 @@ var re = e(T(), 1),
     const { model: e } = Ie();
     return (0, pe.jsx)("div", {
       className: xs,
-      children: C(
+      children: k(
         e.computes.levels(),
         ({ level: s, isCompleted: a, isActive: t, isLast: r, rewards: o }, n) =>
           (0, pe.jsx)(
@@ -899,32 +899,32 @@ var re = e(T(), 1),
     blink: "Container_blink_a197fc5",
     slideUpIn: "Container_slideUpIn_a197fc5",
   },
-  ws = Z(function ({ api: e, theme: s = b }) {
+  ws = Z(function ({ api: e, theme: s = u }) {
     const { model: a, controls: t } = Ie(),
       r = a.progressAnimationState.get(),
       { computes: o } = a,
       n = a.prevProgressPoints.get(),
       i = a.curProgressPoints.get(),
-      l = a.pointsForLevel.get(),
-      _ = (0, re.useRef)(W());
+      d = a.pointsForLevel.get(),
+      l = (0, re.useRef)(g());
     e.current.moveProgressBars = (0, re.useCallback)((e) => {
-      _.current.update(e);
+      l.current.update(e);
     }, []);
-    const [{ previousEarnedPoints: c, maxPoints: p, progressionSize: f }, u] = (0, re.useState)({
-      maxPoints: o.levels().length * l,
+    const [{ previousEarnedPoints: c, maxPoints: p, progressionSize: f }, m] = (0, re.useState)({
+      maxPoints: o.levels().length * d,
       previousEarnedPoints: n,
       progressionSize: n,
     });
     (0, re.useEffect)(() => {
-      (u((e) => {
+      (m((e) => {
         const s = 0 === e.progressionSize ? n : e.progressionSize;
-        return { maxPoints: o.levels().length * l, previousEarnedPoints: s, progressionSize: i };
+        return { maxPoints: o.levels().length * d, previousEarnedPoints: s, progressionSize: i };
       }),
-        n !== i && j.sound("pr_progress_bar"));
-    }, [n, l, i, o]);
-    const g = (0, re.useMemo)(
+        n !== i && A.sound("pr_progress_bar"));
+    }, [n, d, i, o]);
+    const h = (0, re.useMemo)(
       () => ({
-        ...m,
+        ..._,
         withStack: !0,
         type: K.Growing,
         delta: { duration: 400, delay: 300 },
@@ -935,7 +935,7 @@ var re = e(T(), 1),
     return (
       (0, re.useEffect)(() => {
         if (r === Ce.ProgressChange)
-          return d(() => {
+          return b(() => {
             t.finishProgressionChange();
           }, 700);
       }, [t, r]),
@@ -945,12 +945,12 @@ var re = e(T(), 1),
           (0, pe.jsx)("div", { className: js.bg }),
           (0, pe.jsx)("div", {
             className: Bs(js, r, "progressWrapper"),
-            children: (0, pe.jsx)(z, {
-              animationSettings: g,
+            children: (0, pe.jsx)(M, {
+              animationSettings: h,
               deltaFrom: c,
               value: f,
               maxValue: p,
-              api: _,
+              api: l,
               theme: s,
               className: js.progressBar,
             }),
@@ -963,20 +963,20 @@ var re = e(T(), 1),
   Ls = "Content_base__centered_da09528a",
   As = "Content_progress_f562db1d",
   Ns = { wrapper: "Content_wrapper_2c0cab76" },
-  ys = { base: "Content_horizontalBar_e925daa8" },
-  Ss = Z(function () {
+  Ss = { base: "Content_horizontalBar_e925daa8" },
+  ys = Z(function () {
     const { model: e } = Ie(),
-      { api: s } = L(),
+      { api: s } = D(),
       [a, t] = (0, re.useState)(!1),
       r = e.progressAnimationState.get(),
-      o = e.curProgressPoints.get(),
+      n = e.curProgressPoints.get(),
       { computes: i } = e,
-      d = (0, re.useRef)({ moveProgressBars: y }),
-      l = (0, re.useRef)(null),
+      l = (0, re.useRef)({ moveProgressBars: E }),
       _ = (0, re.useRef)(null),
-      c = D(),
-      p = F(s, s.settings.animationConfig),
-      f = (0, re.useCallback)(() => {
+      c = (0, re.useRef)(null),
+      p = O(),
+      f = V(s, s.settings.animationConfig),
+      m = (0, re.useCallback)(() => {
         const e = s.contentRef.current,
           a = i.levels().length;
         if (e && a > 0) {
@@ -985,50 +985,50 @@ var re = e(T(), 1),
             n = r / a,
             d = i.currentLevel() * n,
             l = (o - e.offsetLeft - n) / 2;
-          (s.applyScroll(Q(0, r - o, d - l)), t(o > r));
+          (s.applyScroll(L(0, r - o, d - l)), t(o > r));
         }
       }, [i, s]);
     return (
-      u(() => c.run(f)),
+      d(() => p.run(m)),
       (0, re.useEffect)(
         () =>
-          n(() => {
-            "idle" === p.type &&
+          o(() => {
+            "idle" === f.type &&
               s.animationScroll.scrollPosition.idle &&
               s.applyScroll(s.animationScroll.scrollPosition.get());
           }),
-        [s, p],
+        [s, f],
       ),
       (0, re.useEffect)(() => {
         const e = s.getContainerSize();
         r === Ce.ProgressAlreadyFinished && e && s.applyScroll(e, { immediate: !0 });
       }, [r, s]),
       (0, re.useEffect)(() => {
-        f();
-      }, [o, f]),
+        m();
+      }, [n, m]),
       (0, re.useEffect)(() => {
-        const e = () => c.run(f);
+        const e = () => p.run(m);
         return (
           s.events.on("recalculateContent", e),
           s.events.on("resizeHandled", e),
           () => {
-            (c.clear(), s.events.off("recalculateContent", e), s.events.off("resizeHandled", e));
+            (p.clear(), s.events.off("recalculateContent", e), s.events.off("resizeHandled", e));
           }
         );
-      }, [s, f, c]),
+      }, [s, m, p]),
       (0, pe.jsxs)("div", {
         className: (0, ne.default)(Ps, a && Ls),
-        ref: l,
+        ref: _,
         children: [
-          (0, pe.jsxs)(V, {
+          (0, pe.jsxs)(I, {
             classNames: Ns,
             children: [
-              (0, pe.jsx)(os, { ref: _ }),
-              (0, pe.jsx)("div", { className: As, children: (0, pe.jsx)(ws, { api: d }) }),
+              (0, pe.jsx)(os, { ref: c }),
+              (0, pe.jsx)("div", { className: As, children: (0, pe.jsx)(ws, { api: l }) }),
               (0, pe.jsx)(Is, {}),
             ],
           }),
-          (0, pe.jsx)(B, { classNames: ys }),
+          (0, pe.jsx)(F, { classNames: Ss }),
         ],
       })
     );
@@ -1056,50 +1056,50 @@ var re = e(T(), 1),
     blink: "Progression_blink_61efd8f5",
     slideUpIn: "Progression_slideUpIn_61efd8f5",
   },
-  Ws = Z(function ({ className: e }) {
+  Qs = Z(function ({ className: e }) {
     const { model: s, controls: a } = Ie(),
       t = s.progressAnimationState.get(),
       [r, o] = (0, re.useState)(!1),
       [n, i] = (0, re.useState)(!0),
-      l = s.computes.isProgressionCompleted(),
-      _ = s.computes.wasProgressionCompletedBeforeStart(),
-      { api: c } = L();
+      d = s.computes.isProgressionCompleted(),
+      l = s.computes.wasProgressionCompletedBeforeStart(),
+      { api: _ } = D();
     return (
       (0, re.useEffect)(() => {
         const e = (e) => {
           const s = e.value.scrollPosition;
           if (void 0 !== s) {
-            const e = c.contentRef.current.offsetLeft,
-              a = c.getWrapperSize() || 0,
-              t = c.getContainerSize() || 0;
+            const e = _.contentRef.current.offsetLeft,
+              a = _.getWrapperSize() || 0,
+              t = _.getContainerSize() || 0;
             (o(s > e), i(s + a < t - e));
           }
         };
         return (
-          c.events.on("change", e),
+          _.events.on("change", e),
           () => {
-            c.events.off("change", e);
+            _.events.off("change", e);
           }
         );
-      }, [c]),
+      }, [_]),
       (0, re.useEffect)(
         () =>
-          _
+          l
             ? a.completeProgression(!0)
-            : t === Ce.ChangeCompleted && l
-              ? d(() => {
+            : t === Ce.ChangeCompleted && d
+              ? b(() => {
                   a.completeProgression(!1);
                 }, 1600)
-              : t !== Ce.Scrolling || _
+              : t !== Ce.Scrolling || l
                 ? t === Ce.HighlightCard
-                  ? d(() => {
+                  ? b(() => {
                       a.finishHighlightCard();
                     }, 500)
                   : void 0
-                : d(() => {
+                : b(() => {
                     a.finishScrolling();
                   }, 1200),
-        [t, _, l, a],
+        [t, l, d, a],
       ),
       (0, pe.jsxs)("div", {
         className: (0, ne.default)(Bs(Vs, t, "base"), e),
@@ -1110,32 +1110,32 @@ var re = e(T(), 1),
           (0, pe.jsx)("div", {
             className: (0, ne.default)(Vs.shadow, Vs.shadow__right, n && Vs.shadow__visible),
           }),
-          (0, pe.jsx)(Ss, {}),
+          (0, pe.jsx)(ys, {}),
         ],
       })
     );
   }),
   Rs = "App_1e8bf7cf",
   Us = "App_bgContainer_bb0bfe54",
-  Qs = "App_bg_844df5e9",
+  Ws = "App_bg_844df5e9",
   Es = "App_shade_9bfebdfa",
   Hs = "App_bottomShadow_5ac9bad8",
   Os = "App_content_70e4a93b",
   Fs = "App_schedule_e2d8d9fb",
   zs = "App_calendarIcon_f2f7cb5f",
   $s = "App_progression_23dc5ff6",
-  Ms = Z(function () {
+  Gs = Z(function () {
     const { controls: e } = Ie(),
-      s = v(ee);
+      s = $(ee);
     return (
-      g(E.ESCAPE, e.onClose),
+      N(H.ESCAPE, e.onClose),
       (0, pe.jsxs)("div", {
         className: Rs,
         children: [
           (0, pe.jsxs)("div", {
             className: Us,
             children: [
-              (0, pe.jsx)("div", { className: Qs }),
+              (0, pe.jsx)("div", { className: Ws }),
               (0, pe.jsx)("div", { className: Es }),
               (0, pe.jsx)("div", { className: Hs }),
             ],
@@ -1145,25 +1145,25 @@ var re = e(T(), 1),
             className: Fs,
             classNames: { scheduleClassNames: { calendarIcon: zs } },
           }),
-          (0, pe.jsxs)(o.div, {
+          (0, pe.jsxs)(h.div, {
             className: Os,
             style: s,
             children: [
               (0, pe.jsx)(Fe, {}),
-              (0, pe.jsx)(S, { children: (0, pe.jsx)(Ws, { className: $s }) }),
+              (0, pe.jsx)(U, { children: (0, pe.jsx)(Qs, { className: $s }) }),
             ],
           }),
         ],
       })
     );
   });
-f(
-  (0, pe.jsx)(_, {
+l(
+  (0, pe.jsx)(i, {
     children: (0, pe.jsx)(xe, {
       options: { context: "model.progressionModel" },
       children: (0, pe.jsx)(ae, {
         options: { context: "model.progressionModel.scheduleInfo" },
-        children: (0, pe.jsx)(Ms, {}),
+        children: (0, pe.jsx)(Gs, {}),
       }),
     }),
   }),

@@ -1,5 +1,5 @@
 import { r as _ } from "./rolldown-runtime.js";
-import { ia as i, ur as o, yi as a } from "./lib.js";
+import { ra as i, ur as o, vi as a } from "./lib.js";
 import { l as e } from "./vendor.js";
 var l = _(e(), 1),
   r = (function (_) {

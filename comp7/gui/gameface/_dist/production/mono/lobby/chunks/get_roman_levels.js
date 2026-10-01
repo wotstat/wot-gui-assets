@@ -1,3 +1,3 @@
-import { Za as a, wo as o } from "./lib.js";
-var r = (r, s) => o(r, (o) => a(o)).join(s);
+import { Co as a, Xa as o } from "./lib.js";
+var r = (r, s) => a(r, (a) => o(a)).join(s);
 export { r as t };

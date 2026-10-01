@@ -1,13 +1,13 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
-  Jn as s,
-  La as a,
+  Ia as s,
+  Jn as a,
   Vn as i,
   Y as t,
   Zn as n,
   c as o,
   cr as r,
-  gi as l,
+  hi as l,
   pr as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
@@ -16,7 +16,7 @@ var d = e(c(), 1),
   _ = (function (e) {
     return ((e.LowRisk = "lowRisk"), (e.MediumRisk = "mediumRisk"), (e.HighRisk = "highRisk"), e);
   })({}),
-  [m, b] = p()(({ observableModel: e }) => ({ root: e.object() }), a),
+  [m, b] = p()(({ observableModel: e }) => ({ root: e.object() }), s),
   x = {
     base: "BannerTooltipApp_31617020",
     img: "BannerTooltipApp_img_7d0169ba",
@@ -37,14 +37,14 @@ var d = e(c(), 1),
   j = R.strings.last_stand_tooltips.bannerTooltip,
   T = () => {
     const { model: e } = b(),
-      { performanceRisk: a, endDate: o, date: r } = e.root.get();
+      { performanceRisk: s, endDate: o, date: r } = e.root.get();
     return (0, h.jsxs)("div", {
-      className: (0, d.default)(x.base, x[`base__${a}`]),
+      className: (0, d.default)(x.base, x[`base__${s}`]),
       children: [
         (0, h.jsx)("div", { className: x.img }),
         (0, h.jsx)("div", { className: x.header, children: j.header() }),
         (0, h.jsx)(n, { className: x.description, split: !0, text: j.description() }),
-        (0, h.jsx)(s, {
+        (0, h.jsx)(a, {
           classMix: x.callToAction,
           text: R.strings.last_stand_tooltips.bannerTooltip.callToAction(),
           alignContent: i.Center,
@@ -55,17 +55,17 @@ var d = e(c(), 1),
             }),
           },
         }),
-        a !== _.LowRisk &&
+        s !== _.LowRisk &&
           (0, h.jsxs)("div", {
             className: x.performance,
             children: [
               (0, h.jsx)("div", { className: x.icon }),
-              (0, h.jsx)("div", { className: x.title, children: j.performanceRisk.title.$dyn(a) }),
-              (0, h.jsx)("div", { className: x.text, children: j.performanceRisk.text.$dyn(a) }),
+              (0, h.jsx)("div", { className: x.title, children: j.performanceRisk.title.$dyn(s) }),
+              (0, h.jsx)("div", { className: x.text, children: j.performanceRisk.text.$dyn(s) }),
             ],
           }),
         (0, h.jsx)("div", { className: x.dots }),
-        (0, h.jsx)(s, {
+        (0, h.jsx)(a, {
           text: R.strings.last_stand_tooltips.bannerTooltip.available(),
           classMix: x.timerStatus,
           alignContent: i.Center,

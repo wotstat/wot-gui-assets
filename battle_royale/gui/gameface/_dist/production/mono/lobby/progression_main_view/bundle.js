@@ -1,59 +1,59 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  $ as s,
-  B as t,
-  Bt as a,
-  Dt as r,
-  Er as o,
-  F as n,
-  Gt as i,
-  I as l,
-  In as d,
-  J as c,
-  Kn as _,
-  Kt as m,
-  L as p,
-  Lr as u,
-  Mn as b,
-  Mr as g,
-  Nn as v,
-  Nt as h,
-  On as f,
-  Ot as x,
-  P as C,
-  Pt as w,
-  Q as j,
-  Qr as B,
-  R as N,
-  Tr as T,
-  Tt as k,
-  Un as S,
-  Wn as L,
-  Wt as P,
-  Yr as y,
-  Zr as A,
-  _n as I,
-  _t as Q,
-  an as V,
-  bt as W,
-  ct as E,
-  dt as F,
-  et as $,
-  ft as D,
-  gt as M,
-  jr as z,
-  mn as G,
-  mt as H,
-  nt as q,
-  q as K,
-  qr as O,
-  st as J,
-  tt as U,
-  vr as X,
-  wr as Y,
-  yr as Z,
-  yt as ee,
-  z as se,
+  Bt as s,
+  Dt as t,
+  Er as a,
+  Gt as r,
+  H as o,
+  In as n,
+  Kn as i,
+  Kt as l,
+  Lr as d,
+  Mn as c,
+  Mr as _,
+  Nn as m,
+  Nt as p,
+  On as u,
+  Ot as b,
+  Pt as g,
+  Qr as v,
+  Tr as h,
+  Tt as f,
+  Un as x,
+  Wn as C,
+  Wt as w,
+  Yr as j,
+  Zr as N,
+  _ as B,
+  _n as T,
+  _t as k,
+  a as S,
+  an as L,
+  at as P,
+  bt as y,
+  c as A,
+  ft as I,
+  g as Q,
+  gt as V,
+  h as W,
+  i as E,
+  jr as F,
+  l as $,
+  lt as D,
+  m as M,
+  mn as z,
+  o as G,
+  ot as H,
+  p as q,
+  qr as K,
+  r as O,
+  s as U,
+  u as X,
+  ut as Y,
+  vr as Z,
+  wr as J,
+  yr as ee,
+  yt as se,
   zt as te,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
@@ -116,13 +116,13 @@ var ne = {
     const t = [];
     if ("or" === e.conditionType || "and" === e.conditionType)
       e.items.forEach((e) => {
-        const a = T(e);
+        const a = h(e);
         a && t.push(...me(a, s));
       });
     else {
       const { descrData: a } = e;
       let { titleData: r, current: o, total: n, earned: i, iconKey: l } = e;
-      const d = X(s, 0);
+      const d = Z(s, 0);
       (d &&
         ((r = a || d.descrData), (l = l || d.iconKey), ({ current: o, total: n, earned: i } = d)),
         0 === n && (r = a),
@@ -138,7 +138,7 @@ var ne = {
       me(e, s).forEach(
         ({ condition: e, lastValue: s, currentValue: t, maxValue: n, icon: i }, l) => {
           ((a[_e[l]] = ((e, s) =>
-            W(e, Q.left)
+            y(e, k.left)
               .flat()
               .map((e, t) => (0 === t && s > 0 && (e = e.toLowerCase()), e)))(e, l)),
             (o = i),
@@ -159,7 +159,7 @@ var ne = {
       e
     );
   })({}),
-  [be, ge] = i()(
+  [be, ge] = r()(
     ({ observableModel: e }) => {
       const s = {
           ...e.primitives(["currentTimerDate", "showPrimeTime", "showEventEnded"], "battleQuests"),
@@ -177,41 +177,41 @@ var ne = {
             "serverTimestamp",
             "calendarTooltipId",
           ]),
-          progressAnimationState: f.box(0),
+          progressAnimationState: u.box(0),
         },
-        t = P(() => Math.floor(s.curProgressPoints.get() / s.pointsForLevel.get())),
-        a = P(() => Math.floor(s.prevProgressPoints.get() / s.pointsForLevel.get())),
-        r = P(
+        t = w(() => Math.floor(s.curProgressPoints.get() / s.pointsForLevel.get())),
+        a = w(() => Math.floor(s.prevProgressPoints.get() / s.pointsForLevel.get())),
+        r = w(
           (e) => ({
             wasProgressionVisited: a() === t(),
             isRecentlyCompletedLevel: a() <= e && e <= t(),
             isPrevLevel: e <= a(),
           }),
-          { equals: d.shallow },
+          { equals: n.shallow },
         ),
-        o = P((e) =>
-          g(0, s.pointsForLevel.get(), s.curProgressPoints.get() - e * s.pointsForLevel.get()),
+        o = w((e) =>
+          _(0, s.pointsForLevel.get(), s.curProgressPoints.get() - e * s.pointsForLevel.get()),
         ),
-        n = P(() =>
-          Z(s.battleQuests.get(), (e) => ({
+        i = w(() =>
+          ee(s.battleQuests.get(), (e) => ({
             ...pe(e.postBattleCondition, e.bonusCondition.items, e.status),
             awardsBattle: e.bonuses,
           })),
         ),
-        i = P(() => 4 >= n().length),
-        l = P(() => {
+        l = w(() => 4 >= i().length),
+        d = w(() => {
           let e = 0;
           return (
-            n().forEach((s) => {
+            i().forEach((s) => {
               "done" === s.taskConditions[0].progression.status && ++e;
             }),
             e
           );
         }),
-        c = P(() => {
+        c = w(() => {
           const e = t(),
             a = s.progressLevels.get();
-          return Z(s.progressLevels.get(), ({ rewards: s }, t) => ({
+          return ee(s.progressLevels.get(), ({ rewards: s }, t) => ({
             level: t + 1,
             isCompleted: t < e,
             isActive: t === e,
@@ -219,17 +219,17 @@ var ne = {
             rewards: s,
           }));
         }),
-        _ = P((e) => {
-          const t = Y(n(), e).taskConditions[0].progression.status,
+        m = w((e) => {
+          const t = J(i(), e).taskConditions[0].progression.status,
             a = s.missionsCompletedVisited.get()[e].value;
           return "done" !== t ? le : a ? ce : de;
         }),
-        m = P(() => {
+        p = w(() => {
           const e = s.pointsForLevel.get() * s.progressLevels.get().length;
           return s.curProgressPoints.get() >= e;
         }),
-        p = P(() => m() && s.curProgressPoints.get() === s.prevProgressPoints.get()),
-        u = P(() => {
+        b = w(() => p() && s.curProgressPoints.get() === s.prevProgressPoints.get()),
+        g = w(() => {
           const e = s.currentTimerDate.get(),
             t = s.showPrimeTime.get();
           return {
@@ -240,8 +240,8 @@ var ne = {
             showPrimeTime: t,
           };
         }),
-        b = P(() => (p() ? 5 : s.progressAnimationState.get())),
-        v = P(() => {
+        v = w(() => (b() ? 5 : s.progressAnimationState.get())),
+        h = w(() => {
           const { subMode: e } = s.eventInfo.get();
           if (e === re.StPatrick) return ie;
         });
@@ -249,23 +249,23 @@ var ne = {
         ...s,
         computes: {
           levels: c,
-          battleQuests: n,
+          battleQuests: i,
           currentLevel: t,
           levelStatus: r,
           currentPointsForLevel: o,
-          isProgressionCompleted: m,
-          wasProgressionCompletedBeforeStart: p,
-          missionCompletedVisitedStatus: _,
-          areDefaultNumberQuests: i,
-          numberCompletedQuests: l,
-          timerContent: u,
-          animationState: b,
-          progressBarTheme: v,
+          isProgressionCompleted: p,
+          wasProgressionCompletedBeforeStart: b,
+          missionCompletedVisitedStatus: m,
+          areDefaultNumberQuests: l,
+          numberCompletedQuests: d,
+          timerContent: g,
+          animationState: v,
+          progressBarTheme: h,
         },
       };
     },
     ({ externalModel: e, model: s }) => ({
-      ..._({
+      ...i({
         finishScrolling: () => s.progressAnimationState.set(1),
         finishProgressionChange: () => s.progressAnimationState.set(2),
         finishHighlightCard: () => s.progressAnimationState.set(3),
@@ -275,7 +275,7 @@ var ne = {
       pollServerTime: e.createCallbackNoArgs("pollServerTime"),
     }),
   ),
-  ve = e(y()),
+  ve = e(j()),
   he = {
     base: "ArrowButton_6b3aeda7",
     base__disabled: "ArrowButton_base__disabled_66128a31",
@@ -291,7 +291,7 @@ var ne = {
     layer__active: "ArrowButton_layer__active_a807ac2e",
     layer__disabled: "ArrowButton_layer__disabled_2af2a5f5",
   },
-  fe = v(),
+  fe = m(),
   xe = ["default", "hover", "active", "disabled"];
 function Ce({
   size: e = "large",
@@ -303,11 +303,11 @@ function Ce({
   onMouseEnter: n,
   ...i
 }) {
-  const l = O(he.layer, o?.layer);
+  const l = K(he.layer, o?.layer);
   return (0, fe.jsx)("div", {
-    className: O(he.base, he[`base__${s}`], he[`base__${e}`], t && he.base__disabled, r),
+    className: K(he.base, he[`base__${s}`], he[`base__${e}`], t && he.base__disabled, r),
     onMouseEnter: (e) => {
-      (n?.(e), u.sound(a));
+      (n?.(e), d.sound(a));
     },
     ...i,
     children: (0, fe.jsx)("div", {
@@ -316,7 +316,7 @@ function Ce({
         (0, fe.jsx)(
           "div",
           {
-            className: O(l, he[`layer__${s}`]),
+            className: K(l, he[`layer__${s}`]),
             style: {
               backgroundImage: `url(R.images.battle_royale.gui.maps.icons.arrows.${s}_${e})`,
             },
@@ -340,29 +340,29 @@ var we = {
     button__forward: "ScrollArea_button__forward_b6ed7d19",
   },
   je = "active",
-  Be = "locked",
-  Ne = "hidden",
-  Te = (e, s) => (s ? Ne : e ? je : Be),
+  Ne = "locked",
+  Be = "hidden",
+  Te = (e, s) => (s ? Be : e ? je : Ne),
   ke = ({ children: e, areDefaultNumberQuests: s, className: t }) => {
     const [a, r] = (0, ve.useState)(0),
       [o, n] = (0, ve.useState)(0),
       i = (0, ve.useRef)(null),
       l = (0, ve.useRef)(null),
-      { screenWidthRem: d } = b(),
-      c = ((e, s, t) => !(!s || !t) && e === s.offsetWidth - t.offsetWidth)(
+      { screenWidthRem: _ } = c(),
+      m = ((e, s, t) => !(!s || !t) && e === s.offsetWidth - t.offsetWidth)(
         a,
         i.current,
         l.current,
       ),
-      _ = Te(a, s),
-      m = Te(!c, s),
-      p = (e) => {
-        e || u.sound("highlight");
+      p = Te(a, s),
+      u = Te(!m, s),
+      b = (e) => {
+        e || d.sound("highlight");
       };
     return (
       (0, ve.useEffect)(
         () =>
-          L(() => {
+          C(() => {
             const e = i.current,
               s = l.current;
             if (e && s && e.offsetWidth > s.offsetWidth) {
@@ -370,39 +370,39 @@ var we = {
               (n(t.getBoundingClientRect().left - s.getBoundingClientRect().left), r(0));
             } else (n(0), r(0));
           }),
-        [d, s],
+        [_, s],
       ),
       (0, fe.jsxs)("div", {
-        className: O(we.base, t),
+        className: K(we.base, t),
         children: [
           (0, fe.jsx)("div", {
             className: we.block,
             ref: l,
             children: (0, fe.jsx)("div", {
               ref: i,
-              className: O(we.content, !s && we.content__scroll),
+              className: K(we.content, !s && we.content__scroll),
               style: { transform: `translateX(-${a}px)` },
               children: e,
             }),
           }),
           (0, fe.jsx)(Ce, {
             size: "small",
-            onMouseEnter: () => p(!a),
+            onMouseEnter: () => b(!a),
             direction: "left",
-            disabled: _ === Be,
-            className: O(we.button, we[`button__${_}`], we.button__back),
+            disabled: p === Ne,
+            className: K(we.button, we[`button__${p}`], we.button__back),
             onClick: () => {
-              a && (u.sound("play"), r((e) => e - o));
+              a && (d.sound("play"), r((e) => e - o));
             },
           }),
           (0, fe.jsx)(Ce, {
             size: "small",
-            onMouseEnter: () => p(c),
+            onMouseEnter: () => b(m),
             direction: "right",
-            disabled: m === Be,
-            className: O(we.button, we[`button__${m}`], we.button__forward),
+            disabled: u === Ne,
+            className: K(we.button, we[`button__${u}`], we.button__forward),
             onClick: () => {
-              c || (u.sound("play"), r((e) => e + o));
+              m || (d.sound("play"), r((e) => e + o));
             },
           }),
         ],
@@ -410,7 +410,7 @@ var we = {
     );
   };
 function Se(e) {
-  return (0, fe.jsx)(j, { theme: $, ...e });
+  return (0, fe.jsx)(q, { theme: W, ...e });
 }
 var Le = {
     base: "TaskProgression_398777cb",
@@ -433,7 +433,7 @@ var Le = {
       const { model: o } = ge(),
         n = o.computes.progressBarTheme();
       return (0, fe.jsx)("div", {
-        className: O(Le.base, Le[`base__${a}`]),
+        className: K(Le.base, Le[`base__${a}`]),
         children: (0, fe.jsxs)("div", {
           className: Le.progression,
           children: [
@@ -441,20 +441,20 @@ var Le = {
               className: Le.progressionNumerical,
               children: [
                 (0, fe.jsx)("span", {
-                  className: O(Le.currentValue, Boolean(e) && Le.currentValue__inProgress),
-                  children: A.formatNumber("integral", e),
+                  className: K(Le.currentValue, Boolean(e) && Le.currentValue__inProgress),
+                  children: N.formatNumber("integral", e),
                 }),
                 (0, fe.jsx)("span", {
                   className: Le.separator,
                   children: R.strings.common.common.slash(),
                 }),
-                (0, fe.jsx)("span", { children: A.formatNumber("integral", s) }),
+                (0, fe.jsx)("span", { children: N.formatNumber("integral", s) }),
               ],
             }),
             (0, fe.jsx)("div", {
               className: Le.progressBar,
               children: (0, fe.jsx)(Se, {
-                size: q.Small,
+                size: B.Small,
                 value: e,
                 deltaFrom: e - t,
                 maxValue: s,
@@ -472,22 +472,22 @@ var Le = {
     ({
       conditions: e,
       setStatusAnimation: s,
-      statusAnimation: a,
-      progression: r,
-      conditionIndex: o,
+      statusAnimation: t,
+      progression: a,
+      conditionIndex: r,
     }) => {
       const { model: n } = ge(),
         i = n.computes.missionCompletedVisitedStatus,
         l = (0, ve.useCallback)(() => {
-          s(i(o));
-        }, [o, i, s]),
-        d = { ...r, statusAnimation: a, updateStatusAnimation: l },
-        { maxValue: c, status: _ } = r,
+          s(i(r));
+        }, [r, i, s]),
+        d = { ...a, statusAnimation: t, updateStatusAnimation: l },
+        { maxValue: c, status: _ } = a,
         m = 0 === c;
       (0, ve.useEffect)(() => {
         "done" === _ ? m && l() : s(le);
       }, [m, s, _, l]);
-      const p = ee(
+      const p = se(
         `${R.strings.battle_royale_extention.progressionView.battleQuests.$dyn(((e) => ("secondCondition" in e ? "multiConditions" : "oneCondition"))(e))}`,
         {
           firstCondition: e.firstCondition?.join(""),
@@ -495,14 +495,14 @@ var Le = {
         },
       );
       return (0, fe.jsxs)("div", {
-        className: O(ye.base, ye[`base__${a}`]),
+        className: K(ye.base, ye[`base__${t}`]),
         children: [
-          (0, fe.jsx)(t, {
+          (0, fe.jsx)(o, {
             text: p,
             classMix: ye.text,
             isTooltipEnable: !0,
             isTruncationAvailable: !0,
-            justifyContent: K.Center,
+            justifyContent: $.Center,
           }),
           Boolean(c) && (0, fe.jsx)(Pe, { ...d }),
         ],
@@ -519,7 +519,7 @@ var Le = {
   },
   Ie = ({ taskBattleIcon: e, statusAnimation: s, className: t }) =>
     (0, fe.jsxs)("div", {
-      className: O(Re.base, t, Re[`base__${s}`]),
+      className: K(Re.base, t, Re[`base__${s}`]),
       children: [
         (0, fe.jsx)("div", {
           className: Re.typeIcon,
@@ -555,12 +555,12 @@ var Le = {
   },
   Ve = ae(({ taskConditions: e, awardsBattle: s, taskBattleIcon: t, index: a, className: r }) => {
     const [o, n] = (0, ve.useState)(le);
-    b();
-    const { parsedRewards: i } = oe(s, h.Small),
+    c();
+    const { parsedRewards: i } = oe(s, p.Small),
       l = i.length > (d = 3) ? d - 1 : void 0;
     var d;
     return (0, fe.jsxs)("div", {
-      className: O(Qe.base, Qe[`base__${o}`], r),
+      className: K(Qe.base, Qe[`base__${o}`], r),
       children: [
         (0, fe.jsx)("div", { className: Qe.centerBorderCommon }),
         (0, fe.jsx)("div", { className: Qe.outerBorderCommon }),
@@ -570,7 +570,7 @@ var Le = {
         (0, fe.jsx)(Ie, { taskBattleIcon: t, statusAnimation: o, className: Qe.taskType }),
         (0, fe.jsx)("div", {
           className: Qe.conditions,
-          children: Z(e, ({ conditions: e, progression: s }) =>
+          children: ee(e, ({ conditions: e, progression: s }) =>
             (0, fe.jsx)(
               Ae,
               {
@@ -588,7 +588,7 @@ var Le = {
           className: Qe.awards,
           children: [
             (0, fe.jsxs)("div", {
-              className: O(Qe.separator, Qe.separator__left),
+              className: K(Qe.separator, Qe.separator__left),
               children: [
                 (0, fe.jsx)("div", { className: Qe.centerBorderBottom }),
                 (0, fe.jsx)("div", { className: Qe.outerBorderBottom }),
@@ -597,11 +597,11 @@ var Le = {
             }),
             (0, fe.jsx)("div", {
               className: Qe.awardsList,
-              children: (0, fe.jsx)(c, {
+              children: (0, fe.jsx)(X, {
                 data: i,
                 rewardItemClassMix: Qe.award,
                 count: l,
-                size: h.Small,
+                size: p.Small,
                 boxRewardTooltip: {
                   contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"),
                   args: { fromIndex: l, index: a },
@@ -609,7 +609,7 @@ var Le = {
               }),
             }),
             (0, fe.jsxs)("div", {
-              className: O(Qe.separator, Qe.separator__right),
+              className: K(Qe.separator, Qe.separator__right),
               children: [
                 (0, fe.jsx)("div", { className: Qe.centerBorderBottom }),
                 (0, fe.jsx)("div", { className: Qe.outerBorderBottom }),
@@ -648,10 +648,10 @@ var Le = {
   })({}),
   Fe = ({ children: e, statusAnimation: s, type: t }) =>
     (0, fe.jsxs)("div", {
-      className: O(We.base, We[`base__${t}`], We[`base__${s}`]),
+      className: K(We.base, We[`base__${t}`], We[`base__${s}`]),
       children: [
         (0, fe.jsx)("div", {
-          className: O(We.separator, We.separator__left),
+          className: K(We.separator, We.separator__left),
           children: (0, fe.jsx)("div", {
             className: We.ellipse,
             children: (0, fe.jsx)("div", {
@@ -662,7 +662,7 @@ var Le = {
         }),
         e,
         (0, fe.jsx)("div", {
-          className: O(We.separator, We.separator__right),
+          className: K(We.separator, We.separator__right),
           children: (0, fe.jsx)("div", {
             className: We.ellipse,
             children: (0, fe.jsx)("div", {
@@ -696,10 +696,10 @@ var Le = {
               className: $e.countdown,
               children: [
                 (0, fe.jsx)("div", { className: $e.countDownIcon }),
-                (0, fe.jsx)(p, {
+                (0, fe.jsx)(G, {
                   duration: t,
-                  icon: N.None,
-                  style: se.Description,
+                  icon: U.None,
+                  style: A.Description,
                   classNames: { text: $e.countDownText },
                   className: $e.countdown,
                 }),
@@ -717,11 +717,11 @@ var Le = {
   qe = "TimerWithQuestsTotal_countDownIcon_df370d94",
   Ke = "TimerWithQuestsTotal_description_efb0c4aa",
   Oe = "TimerWithQuestsTotal_separatorBlock_c9d75110",
-  Je = "TimerWithQuestsTotal_separator_720e8cff",
-  Ue = "TimerWithQuestsTotal_ellipse_9709d7b3",
-  Xe = "TimerWithQuestsTotal_ellipse__left_6d2c8221",
-  Ye = "TimerWithQuestsTotal_ellipse__right_15a6723b",
-  Ze = "TimerWithQuestsTotal_totalBlock_5d8a8e9f",
+  Ue = "TimerWithQuestsTotal_separator_720e8cff",
+  Xe = "TimerWithQuestsTotal_ellipse_9709d7b3",
+  Ye = "TimerWithQuestsTotal_ellipse__left_6d2c8221",
+  Ze = "TimerWithQuestsTotal_ellipse__right_15a6723b",
+  Je = "TimerWithQuestsTotal_totalBlock_5d8a8e9f",
   es = "TimerWithQuestsTotal_currentCount_c06c9104",
   ss = "TimerWithQuestsTotal_slash_1b2e3159",
   ts = "TimerWithQuestsTotal_total_a7c180b3",
@@ -739,10 +739,10 @@ var Le = {
             children: [
               (0, fe.jsx)("div", { className: He, children: t }),
               (0, fe.jsx)("div", { className: qe }),
-              (0, fe.jsx)(p, {
-                icon: N.None,
+              (0, fe.jsx)(G, {
+                icon: U.None,
                 duration: a,
-                style: se.Description,
+                style: A.Description,
                 classNames: { text: Ke },
               }),
             ],
@@ -750,9 +750,9 @@ var Le = {
           (0, fe.jsxs)("div", {
             className: Oe,
             children: [
-              (0, fe.jsx)("div", { className: O(Ue, Xe) }),
-              (0, fe.jsx)("div", { className: Je }),
-              (0, fe.jsx)("div", { className: O(Ue, Ye) }),
+              (0, fe.jsx)("div", { className: K(Xe, Ye) }),
+              (0, fe.jsx)("div", { className: Ue }),
+              (0, fe.jsx)("div", { className: K(Xe, Ze) }),
             ],
           }),
           (0, fe.jsxs)("div", {
@@ -764,7 +764,7 @@ var Le = {
                   R.strings.battle_royale_extention.progressionView.battleQuests.questsTotal.text(),
               }),
               (0, fe.jsxs)("div", {
-                className: Ze,
+                className: Je,
                 children: [
                   (0, fe.jsx)("span", {
                     className: es,
@@ -790,7 +790,7 @@ var Le = {
       t = s.computes.battleQuests(),
       a = s.computes.areDefaultNumberQuests();
     return (0, fe.jsxs)("div", {
-      className: O(os, e, s.showEventEnded.get() && ls),
+      className: K(os, e, s.showEventEnded.get() && ls),
       children: [
         s.currentTimerDate.get() > 0 &&
           !s.showEventEnded.get() &&
@@ -799,8 +799,8 @@ var Le = {
           }),
         (0, fe.jsx)(ke, {
           areDefaultNumberQuests: a,
-          className: O(ns, a && is),
-          children: Z(t, (e, s) => (0, fe.jsx)(Ve, { ...e, index: s, className: ds }, s)),
+          className: K(ns, a && is),
+          children: ee(t, (e, s) => (0, fe.jsx)(Ve, { ...e, index: s, className: ds }, s)),
         }),
       ],
     });
@@ -816,12 +816,12 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
         return e ? "endEvent" : s >= ue.ProgressFinished ? "completed" : "inProgress";
       })(s.showEventEnded.get(), t);
     return (0, fe.jsx)("div", {
-      className: O(_s, e),
-      children: (0, fe.jsx)(M, {
+      className: K(_s, e),
+      children: (0, fe.jsx)(V, {
         text: `${R.strings.battle_royale_extention.progressionView.subTitle.$dyn(a)}`,
         classMix: ms,
         binding: {
-          infotip: (0, fe.jsx)(x, {
+          infotip: (0, fe.jsx)(b, {
             contentId: us,
             children: (0, fe.jsx)("div", { className: ps }),
           }),
@@ -830,7 +830,7 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
     });
   }),
   gs = (e, s, t) =>
-    O(
+    K(
       e[t],
       s === ue.ProgressAlreadyFinished
         ? e[`${t}__fast`]
@@ -847,9 +847,9 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
     progressBar: "Container_progressBar_ebe2af86",
   },
   hs = {
-    ...s,
+    ...M,
     withStack: !0,
-    type: U.Growing,
+    type: Q.Growing,
     delta: { duration: 400, delay: 300 },
     line: { duration: 400, delay: 300 },
   },
@@ -858,29 +858,29 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
       a = s.computes.animationState(),
       r = s.computes.levels().length,
       o = s.computes.progressBarTheme(),
-      i = s.prevProgressPoints.get(),
-      d = s.curProgressPoints.get(),
-      c = s.pointsForLevel.get(),
-      _ = (0, ve.useRef)(l());
+      n = s.prevProgressPoints.get(),
+      i = s.curProgressPoints.get(),
+      l = s.pointsForLevel.get(),
+      c = (0, ve.useRef)(S());
     e.current.moveProgressBars = (0, ve.useCallback)((e) => {
-      _.current.update(e);
+      c.current.update(e);
     }, []);
-    const [{ previousEarnedPoints: m, maxPoints: p, progressionSize: b }, g] = (0, ve.useState)({
-      maxPoints: r * c,
-      previousEarnedPoints: i,
-      progressionSize: i,
+    const [{ previousEarnedPoints: _, maxPoints: m, progressionSize: p }, u] = (0, ve.useState)({
+      maxPoints: r * l,
+      previousEarnedPoints: n,
+      progressionSize: n,
     });
     return (
       (0, ve.useEffect)(() => {
-        (g((e) => {
-          const s = 0 === e.progressionSize ? i : e.progressionSize;
-          return { maxPoints: r * c, previousEarnedPoints: s, progressionSize: d };
+        (u((e) => {
+          const s = 0 === e.progressionSize ? n : e.progressionSize;
+          return { maxPoints: r * l, previousEarnedPoints: s, progressionSize: i };
         }),
-          i !== d && u.sound("pr_progress_bar"));
-      }, [i, c, d, r]),
+          n !== i && d.sound("pr_progress_bar"));
+      }, [n, l, i, r]),
       (0, ve.useEffect)(() => {
         if (a === ue.ProgressChange)
-          return S(() => {
+          return x(() => {
             t.finishProgressionChange();
           }, 700);
       }, [t, a]),
@@ -890,12 +890,12 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
           (0, fe.jsx)("div", { className: vs.bg }),
           (0, fe.jsx)("div", {
             className: gs(vs, a, "progressWrapper"),
-            children: (0, fe.jsx)(n, {
+            children: (0, fe.jsx)(E, {
               animationSettings: hs,
-              deltaFrom: m,
-              value: b,
-              maxValue: p,
-              api: _,
+              deltaFrom: _,
+              value: p,
+              maxValue: m,
+              api: c,
               theme: o,
               className: vs.progressBar,
             }),
@@ -922,15 +922,15 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
     const { model: a } = ge(),
       { subMode: r } = a.eventInfo.get();
     return (0, fe.jsxs)("div", {
-      className: O(xs.base, xs[`base__${r}`]),
+      className: K(xs.base, xs[`base__${r}`]),
       children: [
-        (0, fe.jsx)("div", { className: O(xs.activeGlow, s && xs.activeGlow__completed) }),
+        (0, fe.jsx)("div", { className: K(xs.activeGlow, s && xs.activeGlow__completed) }),
         (0, fe.jsx)("div", {
-          className: O(xs.levelCurrent, s && xs.levelCurrent__completed),
+          className: K(xs.levelCurrent, s && xs.levelCurrent__completed),
           children: e,
         }),
         (0, fe.jsx)("div", {
-          className: O(xs.level, t && xs.level__completed, s && xs.level__active),
+          className: K(xs.level, t && xs.level__completed, s && xs.level__active),
           children: e,
         }),
       ],
@@ -950,46 +950,46 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
     border__right: "LevelCard_border__right_fa864de6",
   },
   js = "prevLevel",
-  Bs = "completed",
-  Ns = "inProgress",
-  Ts = (e, s, t) => (e ? Bs : s ? Ns : t),
+  Ns = "completed",
+  Bs = "inProgress",
+  Ts = (e, s, t) => (e ? Ns : s ? Bs : t),
   ks = ae(({ level: e, isActive: s, isCompleted: t, isLast: a }) => {
     const [r, o] = (0, ve.useState)(),
       { model: n } = ge(),
       i = (0, ve.useRef)(null),
       {
         wasProgressionVisited: l,
-        isRecentlyCompletedLevel: d,
-        isPrevLevel: c,
+        isRecentlyCompletedLevel: c,
+        isPrevLevel: _,
       } = n.computes.levelStatus(e);
     (0, ve.useEffect)(() => {
-      t && !l && d && o(js);
-    }, [t, l, d]);
-    const _ = (0, ve.useCallback)(() => {
-      u.sound("pr_progress_tick");
+      t && !l && c && o(js);
+    }, [t, l, c]);
+    const m = (0, ve.useCallback)(() => {
+      d.sound("pr_progress_tick");
     }, []);
     return (
       (0, ve.useEffect)(() => {
         const e = i.current;
-        return L(() => {
+        return C(() => {
           if (e)
             return (
-              e.addEventListener("transitionstart", _),
+              e.addEventListener("transitionstart", m),
               () => {
-                e.removeEventListener("transitionstart", _);
+                e.removeEventListener("transitionstart", m);
               }
             );
         });
-      }, [i, _]),
+      }, [i, m]),
       (0, fe.jsxs)("div", {
         className: ws.base,
         children: [
           (0, fe.jsx)("div", {
-            className: O(ws.bgCompleted, (s || t) && ws.bgCompleted__completed),
+            className: K(ws.bgCompleted, (s || t) && ws.bgCompleted__completed),
             ref: i,
           }),
           (0, fe.jsxs)("div", {
-            className: O(ws.completedIconContainer, ws[`completedIconContainer__${Ts(c, !t, r)}`]),
+            className: K(ws.completedIconContainer, ws[`completedIconContainer__${Ts(_, !t, r)}`]),
             children: [
               (0, fe.jsx)("div", { className: ws.completedIconGlow }),
               (0, fe.jsx)("div", { className: ws.completedIcon }),
@@ -997,7 +997,7 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
           }),
           (0, fe.jsx)(Cs, { level: e, isCompleted: t, isActive: s }),
           (0, fe.jsx)("div", { className: ws.border }),
-          a && (0, fe.jsx)("div", { className: O(ws.border, ws.border__right) }),
+          a && (0, fe.jsx)("div", { className: K(ws.border, ws.border__right) }),
         ],
       })
     );
@@ -1009,7 +1009,7 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
       return (0, fe.jsx)("div", {
         className: Ss,
         ref: s,
-        children: Z(t.computes.levels(), (e) => (0, fe.jsx)(ks, { ...e }, e.level)),
+        children: ee(t.computes.levels(), (e) => (0, fe.jsx)(ks, { ...e }, e.level)),
       });
     }),
   ),
@@ -1019,15 +1019,15 @@ var us = R.views.battle_royale.mono.lobby.tooltips.leaderboard_reward_tooltip_vi
   Rs = "Rewards_reward_1f8103c2",
   Is = "Rewards_info_2ee481cc";
 function Qs(e) {
-  if (e === w.BrCoin || e === w.EquipCoin) return { info: Is };
+  if (e === g.BrCoin || e === g.EquipCoin) return { info: Is };
 }
 var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
     const { parsedRewards: a, imageSize: r } = oe(t),
-      o = r === h.Small && a.length > 2;
+      o = r === p.Small && a.length > 2;
     return (0, fe.jsx)("div", {
-      className: O(Ps, o && As, e && !s && ys),
-      children: Z(a, (e, s) =>
-        (0, ve.createElement)(k, {
+      className: K(Ps, o && As, e && !s && ys),
+      children: ee(a, (e, s) =>
+        (0, ve.createElement)(f, {
           ...e,
           key: `${e.name}_${s}`,
           className: Rs,
@@ -1066,14 +1066,14 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
       const { model: i } = ge(),
         { subMode: l } = i.eventInfo.get();
       return (0, fe.jsxs)("div", {
-        className: O(Ws.base, Ws[`base__${l}`]),
+        className: K(Ws.base, Ws[`base__${l}`]),
         children: [
           (0, fe.jsx)("div", {
-            className: O(Ws.activeBlock, r && Ws.activeBlock__completed),
+            className: K(Ws.activeBlock, r && Ws.activeBlock__completed),
             children: (0, fe.jsxs)("div", {
               className: Ws.pointsContainer,
               children: [
-                (0, fe.jsx)(M, {
+                (0, fe.jsx)(V, {
                   classMix: Ws.points,
                   text: R.strings.battle_royale_extention.progressionView.card.points(),
                   binding: {
@@ -1088,10 +1088,10 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
           (0, fe.jsx)(Vs, { rewards: n, isActive: r, isCompleted: a }),
           (0, fe.jsx)("div", { className: Ws.border }),
           (0, fe.jsx)("div", { className: Ws.pointsBorder, children: e }),
-          o && (0, fe.jsx)("div", { className: O(Ws.border, Ws.border__right) }),
+          o && (0, fe.jsx)("div", { className: K(Ws.border, Ws.border__right) }),
           o &&
             (0, fe.jsx)("div", {
-              className: O(Ws.pointsBorder, Ws.pointsBorder__right),
+              className: K(Ws.pointsBorder, Ws.pointsBorder__right),
               children: e + s,
             }),
         ],
@@ -1103,7 +1103,7 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
     const { model: e } = ge();
     return (0, fe.jsx)("div", {
       className: Fs,
-      children: Z(
+      children: ee(
         e.computes.levels(),
         ({ level: s, isCompleted: t, isActive: a, isLast: r, rewards: o }, n) =>
           (0, fe.jsx)(
@@ -1128,17 +1128,17 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
   Gs = { base: "Content_horizontalBar_e925daa8" },
   Hs = ae(function () {
     const { model: e } = ge(),
-      { api: s } = H(),
+      { api: s } = I(),
       [t, a] = (0, ve.useState)(!1),
       r = e.computes.animationState(),
       o = e.curProgressPoints.get(),
       { computes: n } = e,
-      i = (0, ve.useRef)({ moveProgressBars: z }),
+      i = (0, ve.useRef)({ moveProgressBars: F }),
       l = (0, ve.useRef)(null),
       d = (0, ve.useRef)(null),
-      c = V(),
-      _ = E(s, s.settings.animationConfig),
-      m = (0, ve.useCallback)(() => {
+      c = L(),
+      m = H(s, s.settings.animationConfig),
+      p = (0, ve.useCallback)(() => {
         const e = s.contentRef.current,
           t = n.levels().length;
         if (e && t > 0) {
@@ -1147,29 +1147,29 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
             i = r / t,
             l = n.currentLevel() * i,
             d = (o - e.offsetLeft - i) / 2;
-          (s.applyScroll(g(0, r - o, l - d)), a(o > r));
+          (s.applyScroll(_(0, r - o, l - d)), a(o > r));
         }
       }, [n, s]);
     return (
-      I(() => c.run(m)),
+      T(() => c.run(p)),
       (0, ve.useEffect)(
         () =>
-          L(() => {
-            "idle" === _.type &&
+          C(() => {
+            "idle" === m.type &&
               s.animationScroll.scrollPosition.idle &&
               s.applyScroll(s.animationScroll.scrollPosition.get());
           }),
-        [s, _],
+        [s, m],
       ),
       (0, ve.useEffect)(() => {
         const e = s.getContainerSize();
         r === ue.ProgressAlreadyFinished && e && s.applyScroll(e, { immediate: !0 });
       }, [r, s]),
       (0, ve.useEffect)(() => {
-        m();
-      }, [o, m]),
+        p();
+      }, [o, p]),
       (0, ve.useEffect)(() => {
-        const e = () => c.run(m);
+        const e = () => c.run(p);
         return (
           s.events.on("recalculateContent", e),
           s.events.on("resizeHandled", e),
@@ -1177,12 +1177,12 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
             (c.clear(), s.events.off("recalculateContent", e), s.events.off("resizeHandled", e));
           }
         );
-      }, [s, m, c]),
+      }, [s, p, c]),
       (0, fe.jsxs)("div", {
-        className: O(Ds, t && Ms),
+        className: K(Ds, t && Ms),
         ref: l,
         children: [
-          (0, fe.jsxs)(F, {
+          (0, fe.jsxs)(D, {
             classNames: zs,
             children: [
               (0, fe.jsx)(Ls, { ref: d }),
@@ -1190,7 +1190,7 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
               (0, fe.jsx)($s, {}),
             ],
           }),
-          (0, fe.jsx)(D, { classNames: Gs }),
+          (0, fe.jsx)(Y, { classNames: Gs }),
         ],
       })
     );
@@ -1211,7 +1211,7 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
       o = ve.useRef(null),
       n = s.computes.isProgressionCompleted(),
       i = s.computes.wasProgressionCompletedBeforeStart(),
-      { api: l } = H();
+      { api: l } = I();
     return (
       (0, ve.useEffect)(() => {
         const e = () => {
@@ -1241,62 +1241,62 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
       (0, ve.useEffect)(
         () =>
           a === ue.ChangeCompleted && n
-            ? S(() => {
+            ? x(() => {
                 t.completeProgression();
               }, 1600)
             : a !== ue.Scrolling || i
               ? a === ue.HighlightCard
-                ? S(() => {
+                ? x(() => {
                     t.finishHighlightCard();
                   }, 500)
                 : void 0
-              : S(() => {
+              : x(() => {
                   t.finishScrolling();
                 }, 1200),
         [a, i, n, t],
       ),
       (0, fe.jsxs)("div", {
-        className: O(gs(qs, a, "base"), e),
+        className: K(gs(qs, a, "base"), e),
         children: [
-          (0, fe.jsx)("div", { className: O(qs.shadow, qs.shadow__left), ref: r }),
-          (0, fe.jsx)("div", { className: O(qs.shadow, qs.shadow__right), ref: o }),
+          (0, fe.jsx)("div", { className: K(qs.shadow, qs.shadow__left), ref: r }),
+          (0, fe.jsx)("div", { className: K(qs.shadow, qs.shadow__right), ref: o }),
           (0, fe.jsx)(Hs, {}),
         ],
       })
     );
   }),
   Os = "ScheduleSubheading_35580d17",
-  Js = "ScheduleSubheading_calendarIcon_ec4b9215",
-  Us = "ScheduleSubheading_calendarText_5779804",
-  Xs = ae(() => {
+  Us = "ScheduleSubheading_calendarIcon_ec4b9215",
+  Xs = "ScheduleSubheading_calendarText_5779804",
+  Ys = ae(() => {
     const { model: e, controls: s } = ge(),
-      t = e.startTimestamp.get(),
-      a = e.endTimestamp.get(),
+      a = e.startTimestamp.get(),
+      r = e.endTimestamp.get(),
       o = e.serverTimestamp.get(),
       n = e.calendarTooltipId.get(),
       i = (0, ve.useMemo)(() => ({ tooltipId: n }), [n]);
     return (
-      m(o, a, s.pollServerTime),
-      (0, fe.jsx)(r, {
+      l(o, r, s.pollServerTime),
+      (0, fe.jsx)(t, {
         args: i,
         children: (0, fe.jsxs)("div", {
           className: Os,
           children: [
-            (0, fe.jsx)("div", { className: Js }),
-            (0, fe.jsx)(M, {
+            (0, fe.jsx)("div", { className: Us }),
+            (0, fe.jsx)(V, {
               text: R.strings.battle_royale_extention.progressionView.seasonRange(),
               binding: {
-                startDate: (0, fe.jsx)(C, { datetime: t, format: B.ShortDate }),
-                endDate: (0, fe.jsx)(C, { datetime: a, format: B.ShortDate }),
+                startDate: (0, fe.jsx)(O, { datetime: a, format: v.ShortDate }),
+                endDate: (0, fe.jsx)(O, { datetime: r, format: v.ShortDate }),
               },
-              classMix: Us,
+              classMix: Xs,
             }),
           ],
         }),
       })
     );
   }),
-  Ys = {
+  Zs = {
     base: "App_59e8526b",
     windowIn: "App_windowIn_0",
     bgContainer: "App_bgContainer_c158fc6a",
@@ -1309,34 +1309,34 @@ var Vs = ae(({ isCompleted: e, isActive: s, rewards: t }) => {
     taskBattleList: "App_taskBattleList_601f4264",
     progression: "App_progression_2ca6911b",
   },
-  Zs = ae(() => {
+  Js = ae(() => {
     const { model: e, controls: s } = ge(),
       { subMode: t } = e.eventInfo.get();
     return (
-      G(o.ESCAPE, s.onClose),
+      z(a.ESCAPE, s.onClose),
       (0, fe.jsxs)("div", {
-        className: O(Ys.base, Ys[`base__${t}`]),
+        className: K(Zs.base, Zs[`base__${t}`]),
         children: [
           (0, fe.jsxs)("div", {
-            className: Ys.bgContainer,
+            className: Zs.bgContainer,
             children: [
-              (0, fe.jsx)("div", { className: Ys.bg }),
-              (0, fe.jsx)("div", { className: Ys.noise }),
+              (0, fe.jsx)("div", { className: Zs.bg }),
+              (0, fe.jsx)("div", { className: Zs.noise }),
             ],
           }),
-          (0, fe.jsx)("div", { className: Ys.schedule, children: (0, fe.jsx)(Xs, {}) }),
-          (0, fe.jsx)(bs, { className: Ys.header }),
-          (0, fe.jsx)(cs, { className: Ys.taskBattleList }),
-          (0, fe.jsx)(J, { children: (0, fe.jsx)(Ks, { className: Ys.progression }) }),
+          (0, fe.jsx)("div", { className: Zs.schedule, children: (0, fe.jsx)(Ys, {}) }),
+          (0, fe.jsx)(bs, { className: Zs.header }),
+          (0, fe.jsx)(cs, { className: Zs.taskBattleList }),
+          (0, fe.jsx)(P, { children: (0, fe.jsx)(Ks, { className: Zs.progression }) }),
         ],
       })
     );
   });
-a(
+s(
   (0, fe.jsx)(te, {
     children: (0, fe.jsx)(be, {
       options: { context: "model.progressionModel" },
-      children: (0, fe.jsx)(Zs, {}),
+      children: (0, fe.jsx)(Js, {}),
     }),
   }),
   { fullScreen: !0 },

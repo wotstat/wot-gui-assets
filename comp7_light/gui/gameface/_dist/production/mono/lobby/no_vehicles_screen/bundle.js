@@ -1,12 +1,12 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
-import { Er as s, Kr as l, Vo as i, Zr as o, ji as a, sa as c, wr as t } from "../chunks/lib.js";
+import { Ai as s, Bo as l, Er as o, Kr as i, Zr as a, oa as c, wr as t } from "../chunks/lib.js";
 import "../chunks/globals.js";
 import { a as r, o as n } from "../chunks/vendor.js";
 import { t as d } from "../chunks/get_roman_levels.js";
 import { t as m } from "../chunks/schedule_model.js";
 import { t as h } from "../chunks/schedule_subheading.js";
-i();
-var [_, p] = o()(
+l();
+var [_, p] = a()(
     ({ observableModel: e }) => ({ root: e.object(), vehicleLevels: e.array("vehicleLevels") }),
     ({ externalModel: e }) => ({ close: e.createCallbackNoArgs("onClose") }),
   ),
@@ -19,13 +19,13 @@ var [_, p] = o()(
   f = "HowToGetVehicles_image_616e4275",
   N = e(c(), 1),
   k = ["tasks", "premium", "reserves"],
-  w = ({ levelsStr: e, className: l }) =>
+  w = ({ levelsStr: e, className: s }) =>
     (0, N.jsxs)("div", {
-      className: (0, v.default)(j, l),
+      className: (0, v.default)(j, s),
       children: [
         (0, N.jsx)("div", {
           className: x,
-          children: s(R.strings.comp7_light.noVehicles.howTo.title(), { levels: e }),
+          children: o(R.strings.comp7_light.noVehicles.howTo.title(), { levels: e }),
         }),
         (0, N.jsx)("div", {
           className: g,
@@ -53,8 +53,8 @@ var [_, p] = o()(
         }),
       ],
     }),
-  V = "App_b0b6a04b",
-  A = "App_header_9ff1dc47",
+  A = "App_b0b6a04b",
+  V = "App_header_9ff1dc47",
   T = "App_content_a6634164",
   $ = "App_iconContainer_27ee149e",
   G = "App_icon_6ec08bc",
@@ -64,15 +64,15 @@ var [_, p] = o()(
   M = R.strings.comp7_light.noVehicles,
   C = { context: "model.scheduleInfo" },
   L = r(() => {
-    const { model: e, controls: s } = p(),
-      { errorReason: l } = e.root.get();
-    a(s.close);
+    const { model: e, controls: l } = p(),
+      { errorReason: o } = e.root.get();
+    s(l.close);
     const i = d(e.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
     return (0, N.jsxs)("div", {
-      className: V,
+      className: A,
       children: [
         (0, N.jsx)("div", {
-          className: A,
+          className: V,
           children: (0, N.jsx)(m, { options: C, children: (0, N.jsx)(h, { hasSeasonName: !1 }) }),
         }),
         (0, N.jsxs)("div", {
@@ -80,7 +80,7 @@ var [_, p] = o()(
           children: [
             (0, N.jsx)("div", { className: $, children: (0, N.jsx)("div", { className: G }) }),
             (0, N.jsx)(t, { text: `${M.title()}`, classMix: H }),
-            (0, N.jsx)(t, { text: `${M.text.$dyn(l)}`, binding: { levels: i }, classMix: S }),
+            (0, N.jsx)(t, { text: `${M.text.$dyn(o)}`, binding: { levels: i }, classMix: S }),
             (0, N.jsx)("div", { className: y }),
             (0, N.jsx)(w, { levelsStr: i }),
           ],
@@ -88,4 +88,4 @@ var [_, p] = o()(
       ],
     });
   });
-l((0, N.jsx)(_, { children: (0, N.jsx)(L, {}) }), { fullScreen: !0 });
+i((0, N.jsx)(_, { children: (0, N.jsx)(L, {}) }), { fullScreen: !0 });

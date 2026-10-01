@@ -1,5 +1,5 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Si as _, U as a, br as c, fo as s, yo as o } from "./lib.js";
+import { U as _, br as a, do as c, vo as s, xi as o } from "./lib.js";
 import { i as d } from "./vendor.js";
 var i = {
     bg0: [0],
@@ -9,8 +9,8 @@ var i = {
     bg4: [15, 16, 17, 18, 19],
     bg5: [20],
   },
-  l = { progression_rewards_appearing: c("bp_unlock_big") },
-  g = e(s()),
+  l = { progression_rewards_appearing: a("bp_unlock_big") },
+  g = e(c()),
   n = e(d()),
   b = {
     "media-wrapper": "LevelBadge_media-wrapper_9ce59da6",
@@ -31,7 +31,7 @@ var i = {
     icon__bg5: "LevelBadge_icon__bg5_9ce59da6",
     video: "LevelBadge_video_74ea48c7",
   },
-  r = _(),
+  r = o(),
   v = {
     x110: "c_110x110",
     x130: "c_130x130",
@@ -40,9 +40,9 @@ var i = {
     x320: "c_320x320",
   },
   x = new Map([[v.x110, v.x130]]),
-  t = o.resolve("videos");
-function m({ level: e, size: _, showAnimation: c }) {
-  const s = x.has(_) ? x.get(_) : _,
+  t = s.resolve("videos");
+function m({ level: e, size: a, showAnimation: c }) {
+  const s = x.has(a) ? x.get(a) : a,
     o = ((e) => Object.keys(i).find((_) => i[_].includes(e)) || "bg0")(e),
     d = (0, g.useMemo)(
       () => ({
@@ -51,7 +51,7 @@ function m({ level: e, size: _, showAnimation: c }) {
       [s, o],
     );
   return (0, r.jsxs)("div", {
-    className: (0, n.default)(b.base, b[`base__${_}`]),
+    className: (0, n.default)(b.base, b[`base__${a}`]),
     children: [
       (0, r.jsx)("div", {
         className: (0, n.default)(b.icon, b[`icon__${o}`]),
@@ -59,7 +59,7 @@ function m({ level: e, size: _, showAnimation: c }) {
         children: e > 0 && (0, r.jsx)("div", { className: b.level, children: e }),
       }),
       c &&
-        (0, r.jsx)(a, {
+        (0, r.jsx)(_, {
           className: b.video,
           src: t.readOrEmpty("flProgressionScreen.badge_reflection"),
           loop: !0,

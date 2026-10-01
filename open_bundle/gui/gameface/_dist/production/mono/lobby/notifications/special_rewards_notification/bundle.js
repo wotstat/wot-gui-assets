@@ -26,11 +26,11 @@ import { t as N } from "../../chunks/vendor.js";
 import { t as v } from "../../chunks/background.js";
 import {
   a as y,
-  c as T,
-  d as B,
-  i as A,
-  l as k,
-  n as P,
+  c as A,
+  d as T,
+  i as B,
+  l as P,
+  n as k,
   r as S,
   u as E,
 } from "../../chunks/reward.js";
@@ -65,9 +65,9 @@ function z({ reward: e, className: s = "" }) {
   return (0, D.jsx)("div", {
     className: r(M, s),
     children:
-      a === k.vehicles
+      a === P.vehicles
         ? (0, D.jsx)(S, { reward: e, style: { nameHeight: "18rem" } })
-        : (0, D.jsx)(t, { split: !0, className: U, text: A(n) }),
+        : (0, D.jsx)(t, { split: !0, className: U, text: B(n) }),
   });
 }
 var O = {
@@ -89,24 +89,24 @@ var O = {
   G = [h.EQUIPMENT_TROPHY_BASIC, h.EQUIPMENT_TROPHY_UPGRADED],
   V = N(function ({ reward: e, type: s = Q, className: a = "" }) {
     const { count: n, name: t, icon: i, overlayType: o } = e,
-      c = s === Q ? T.Big : T.S180x135,
+      c = s === Q ? A.Big : A.S180x135,
       l = y.includes(t),
       d = G.includes(t),
       m = s !== Q || l,
       u = n > 1,
-      b = _(T.S180x135, o);
+      b = _(A.S180x135, o);
     return (0, D.jsxs)("div", {
       className: r(O.base, O[`base__${s}`], O[`base__${i}`], d && O.base__trophy, a),
       children: [
         b &&
           (0, D.jsx)(v, {
-            image: Y.readOrEmpty(`quests.bonuses.${T.S180x135}.${b}_highlight`, "silent"),
+            image: Y.readOrEmpty(`quests.bonuses.${A.S180x135}.${b}_highlight`, "silent"),
             className: O.highlight,
           }),
-        (0, D.jsx)(v, { image: B(e, c), className: O.image }),
+        (0, D.jsx)(v, { image: T(e, c), className: O.image }),
         o &&
           (0, D.jsx)(v, {
-            image: E({ size: T.S180x135, name: t, special: o }),
+            image: E({ size: A.S180x135, name: t, special: o }),
             className: O.overlay,
           }),
         u && (0, D.jsx)(H, { count: n, className: O.count }),
@@ -146,9 +146,9 @@ var X = "Preview_d1fe5e07",
       _ = c(
         ((e) => {
           switch (e) {
-            case k.vehicles:
+            case P.vehicles:
               return "notifications.specialReward.showVehicle";
-            case k.attachmentsSet:
+            case P.attachmentsSet:
               return "notifications.specialReward.showAttachments";
             default:
               return "notifications.specialReward.showStyle";
@@ -170,33 +170,38 @@ var X = "Preview_d1fe5e07",
     });
   }),
   se = "App_background_bb0bfe54",
-  ae = "App_eda219f2",
+  ae = "App_df467a8e",
   ne = "App_base__popup_58df188b",
-  te = "App_close_17e179e2",
-  ie = "App_content_c85f25d3",
-  oe = "App_main_23219c42",
-  re = N(function () {
+  te = "App_base__noAdditionalRewards_8fcbc1bc",
+  ie = "App_base__noPreview_54b26398",
+  oe = "App_close_17e179e2",
+  re = "App_content_c85f25d3",
+  ce = "App_main_23219c42",
+  le = N(function () {
     const { model: e } = $(),
       { isPopUp: s } = e.root.get(),
       n = e.bundleType.get(),
       { getExtImage: t } = j(n),
       i = e.computes.mainBonus(),
-      o = e.computes.additionalBonuses();
+      o = e.computes.additionalBonuses(),
+      l = Boolean(i),
+      d = o.length > 0,
+      _ = l && k(i);
     return (0, D.jsxs)(p, {
-      className: r(ae, s && ne),
+      className: r(ae, s && ne, !d && te, !_ && ie),
       children: [
         (0, D.jsx)(v, { image: t("specialRewardsNotification.background"), className: se }),
-        s && (0, D.jsx)(a, { size: x.small, onClose: c, className: te }),
+        s && (0, D.jsx)(a, { size: x.small, onClose: c, className: oe }),
         (0, D.jsxs)("div", {
-          className: ie,
+          className: re,
           children: [
             (0, D.jsx)(W, { bundleType: n }),
-            Boolean(i) && (0, D.jsx)(V, { reward: i, type: q, className: oe }),
-            o.length > 0 && (0, D.jsx)(K, {}),
-            Boolean(i) && P(i) && (0, D.jsx)(ee, {}),
+            l && (0, D.jsx)(V, { reward: i, type: q, className: ce }),
+            d && (0, D.jsx)(K, {}),
+            _ && (0, D.jsx)(ee, {}),
           ],
         }),
       ],
     });
   });
-s((0, D.jsx)(C, { children: (0, D.jsx)(f, { children: (0, D.jsx)(re, {}) }) })).then(c);
+s((0, D.jsx)(C, { children: (0, D.jsx)(f, { children: (0, D.jsx)(le, {}) }) })).then(c);

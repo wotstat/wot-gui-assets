@@ -6,11 +6,11 @@ import {
   Q as l,
   ct as i,
   et as n,
-  g as d,
-  h as _,
-  j as r,
-  m as c,
-  ot as o,
+  f as d,
+  j as _,
+  m as r,
+  ot as c,
+  p as o,
   pt as g,
   rt as p,
 } from "../chunks/lib.js";
@@ -28,7 +28,7 @@ var m = e(b()),
       e
     );
   })({}),
-  u = {
+  f = {
     base: "Text_7bd74646",
     base__whiteSpanish: "Text_base__whiteSpanish_356a3dde",
     base__red: "Text_base__red_6151012b",
@@ -44,29 +44,29 @@ var m = e(b()),
     layer3: "Text_layer3_23d49a99",
     layer4: "Text_layer4_3cc0a58",
   },
-  f = l(),
+  u = l(),
   v = ({ type: e, shadow: a = !1, grunge: t = !1, className: s, classNames: l, ...i }) =>
-    (0, f.jsx)("div", {
-      className: (0, m.default)(u.base, u[`base__${e}`], s),
+    (0, u.jsx)("div", {
+      className: (0, m.default)(f.base, f[`base__${e}`], s),
       style: { alignContent: i.alignContent, justifyContent: i.justifyContent },
-      children: (0, f.jsxs)("div", {
-        className: (0, m.default)(u.layers, a && u.layer0__shadow),
+      children: (0, u.jsxs)("div", {
+        className: (0, m.default)(f.layers, a && f.layer0__shadow),
         children: [
-          (0, f.jsx)(d, { classMix: (0, m.default)(u.layer0, l?.extendedText), ...i }),
+          (0, u.jsx)(r, { classMix: (0, m.default)(f.layer0, l?.extendedText), ...i }),
           (e === h.Heading || e === h.MetaHeading) &&
-            (0, f.jsxs)(f.Fragment, {
+            (0, u.jsxs)(u.Fragment, {
               children: [
-                (0, f.jsx)(d, { classMix: (0, m.default)(u.layer1, l?.extendedText), ...i }),
-                (0, f.jsx)(d, { classMix: (0, m.default)(u.layer2, l?.extendedText), ...i }),
+                (0, u.jsx)(r, { classMix: (0, m.default)(f.layer1, l?.extendedText), ...i }),
+                (0, u.jsx)(r, { classMix: (0, m.default)(f.layer2, l?.extendedText), ...i }),
               ],
             }),
-          (0, f.jsx)(d, { classMix: (0, m.default)(u.layer3, l?.extendedText), ...i }),
-          t && (0, f.jsx)(d, { classMix: (0, m.default)(u.layer4, l?.extendedText), ...i }),
+          (0, u.jsx)(r, { classMix: (0, m.default)(f.layer3, l?.extendedText), ...i }),
+          t && (0, u.jsx)(r, { classMix: (0, m.default)(f.layer4, l?.extendedText), ...i }),
         ],
       }),
     }),
   j = e(g(), 1),
-  [y, B] = s()(({ observableModel: e }) => ({ primitives: e.primitives(["currentProgress"]) }), o),
+  [y, B] = s()(({ observableModel: e }) => ({ primitives: e.primitives(["currentProgress"]) }), c),
   N = {
     bgImageBase: "R.images.halloween.gui.maps.icons.battle.eventLoading.pattern_base",
     line: { bgColorBase: "#8f0808", bgColorDisabled: "#C0C0C0", bgColorFinished: "#8f0808" },
@@ -93,22 +93,22 @@ var m = e(b()),
     return ((e.Left = "left"), (e.Right = "right"), e);
   })({});
 function A({ type: e, className: a, onClick: t }) {
-  return (0, f.jsxs)("div", {
+  return (0, u.jsxs)("div", {
     className: (0, m.default)(w.base, w[`base__${e}`], a),
     onClick: t,
     onMouseEnter: i.highlight,
-    children: [(0, f.jsx)("div", { className: w.bg }), (0, f.jsx)("div", { className: w.hover })],
+    children: [(0, u.jsx)("div", { className: w.bg }), (0, u.jsx)("div", { className: w.hover })],
   });
 }
 var C = "NavButton_2cc704c3",
   T = "NavButton_navImg_f3d3ed78",
   k = "NavButton_navImg__active_c91d9031";
 function I({ index: e, activeIndex: a, className: t, onClick: s }) {
-  return (0, f.jsx)("div", {
+  return (0, u.jsx)("div", {
     className: (0, m.default)(C, t),
     onClick: () => s(e),
     onMouseEnter: i.highlight,
-    children: (0, f.jsx)("div", { className: (0, m.default)(T, e === a && k) }),
+    children: (0, u.jsx)("div", { className: (0, m.default)(T, e === a && k) }),
   });
 }
 var M = "BattleLoadingApp_b9007f71",
@@ -134,21 +134,21 @@ var M = "BattleLoadingApp_b9007f71",
   Z = x(() => {
     const { model: e } = B(),
       s = e.primitives.currentProgress.get(),
-      [l, d] = (0, j.useState)(n(0, 3)),
+      [l, _] = (0, j.useState)(n(0, 3)),
       r = (0, j.useCallback)(() => {
-        (d((l - 1 + 4) % 4), i.click());
+        (_((l - 1 + 4) % 4), i.click());
       }, [l]),
-      o = (0, j.useCallback)(
+      c = (0, j.useCallback)(
         (e = !0) => {
-          (d((l + 1) % 4), e && i.click());
+          (_((l + 1) % 4), e && i.click());
         },
         [l],
       ),
       g = (0, j.useCallback)((e) => {
-        (d(e), i.click());
+        (_(e), i.click());
       }, []),
       x = () => {
-        (i.click(), d((l + 1) % 4));
+        (i.click(), _((l + 1) % 4));
       };
     return (
       t(p.ENTER, x),
@@ -156,49 +156,49 @@ var M = "BattleLoadingApp_b9007f71",
       t(p.TAB, x),
       t(p.ARROW_RIGHT, x),
       t(p.ARROW_LEFT, () => {
-        (i.click(), d(l <= 0 ? 3 : (l - 1) % 4));
+        (i.click(), _(l <= 0 ? 3 : (l - 1) % 4));
       }),
       (0, j.useEffect)(() => {
         const e = setInterval(() => {
-          o(!1);
+          c(!1);
         }, 7e3);
         return () => clearInterval(e);
-      }, [l, o]),
-      (0, f.jsxs)("div", {
+      }, [l, c]),
+      (0, u.jsxs)("div", {
         className: M,
         children: [
-          (0, f.jsx)("div", {
+          (0, u.jsx)("div", {
             className: $,
             style: {
               backgroundImage: `url('R.images.halloween.gui.maps.icons.battle.eventLoading.tips.tipBg_${l}')`,
             },
           }),
-          (0, f.jsx)("div", { className: H }),
-          (0, f.jsx)("div", { className: S }),
-          (0, f.jsx)("div", {
+          (0, u.jsx)("div", { className: H }),
+          (0, u.jsx)("div", { className: S }),
+          (0, u.jsx)("div", {
             className: E,
             children: Y.map((e, t) =>
-              (0, f.jsxs)(
+              (0, u.jsxs)(
                 "div",
                 {
                   className: (0, m.default)(F, t === l && W),
                   children: [
-                    (0, f.jsxs)("div", {
+                    (0, u.jsxs)("div", {
                       className: P,
                       children: [
-                        (0, f.jsx)(v, {
+                        (0, u.jsx)(v, {
                           type: h.MetaHeading,
                           text: X.$dyn(`title_${t}`),
                           className: O,
                           shadow: !0,
                         }),
-                        (0, f.jsx)(a, {
+                        (0, u.jsx)(a, {
                           path: `R.strings.halloween_battle.loading.title_${t}`,
                           className: D,
                         }),
                       ],
                     }),
-                    (0, f.jsx)(a, {
+                    (0, u.jsx)(a, {
                       path: `R.strings.halloween_battle.loading.description_${t}`,
                       className: z,
                     }),
@@ -208,28 +208,28 @@ var M = "BattleLoadingApp_b9007f71",
               ),
             ),
           }),
-          (0, f.jsxs)("div", {
+          (0, u.jsxs)("div", {
             className: V,
             children: [
-              (0, f.jsx)(A, { type: L.Left, className: (0, m.default)(q, J), onClick: r }),
-              (0, f.jsx)(A, { type: L.Right, className: (0, m.default)(q, K), onClick: o }),
+              (0, u.jsx)(A, { type: L.Left, className: (0, m.default)(q, J), onClick: r }),
+              (0, u.jsx)(A, { type: L.Right, className: (0, m.default)(q, K), onClick: c }),
             ],
           }),
-          (0, f.jsx)("div", {
+          (0, u.jsx)("div", {
             className: U,
             children: Y.map((e, a) =>
-              (0, f.jsx)(I, { onClick: g, index: a, activeIndex: l }, `tip_${a}`),
+              (0, u.jsx)(I, { onClick: g, index: a, activeIndex: l }, `tip_${a}`),
             ),
           }),
-          (0, f.jsxs)("div", {
+          (0, u.jsxs)("div", {
             className: G,
             children: [
-              (0, f.jsx)("div", { className: Q }),
-              (0, f.jsx)(c, { value: s, maxValue: 100, size: _.Small, theme: N }),
+              (0, u.jsx)("div", { className: Q }),
+              (0, u.jsx)(d, { value: s, maxValue: 100, size: o.Small, theme: N }),
             ],
           }),
         ],
       })
     );
   });
-r((0, f.jsx)(y, { children: (0, f.jsx)(Z, {}) }));
+_((0, u.jsx)(y, { children: (0, u.jsx)(Z, {}) }));

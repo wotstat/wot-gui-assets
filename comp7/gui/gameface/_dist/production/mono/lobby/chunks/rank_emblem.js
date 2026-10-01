@@ -1,5 +1,5 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Pa as a } from "./lib.js";
+import { Na as a } from "./lib.js";
 import { i as n } from "./vendor.js";
 import { r } from "./enums.js";
 import { n as m } from "./get_division_name.js";

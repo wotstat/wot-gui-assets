@@ -1,7 +1,7 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Pa as a, ws as n } from "./lib.js";
+import { Cs as a, Na as n } from "./lib.js";
 import { i as s } from "./vendor.js";
-n();
+a();
 var o = e(s()),
   _ = {
     base__x16: "SeasonPoint_base__x16_9df6c1df",
@@ -24,7 +24,7 @@ var o = e(s()),
     blink: "SeasonPoint_blink_684111c2",
     slideUpIn: "SeasonPoint_slideUpIn_684111c2",
   },
-  i = e(a()),
+  i = e(n()),
   t = (function (e) {
     return ((e.x16 = "x16"), (e.x24 = "x24"), (e.x32 = "x32"), (e.x48 = "x48"), e);
   })({}),

@@ -3,41 +3,41 @@ import {
   $i as n,
   Gi as r,
   Ji as o,
-  Ki as i,
-  Qi as s,
+  Qi as i,
+  Ui as s,
   Wi as a,
   Xi as u,
   Yi as l,
   Zi as c,
   aa as d,
   ca as h,
-  ci as f,
-  da as p,
-  di as m,
-  do as g,
-  ea as y,
-  fa as b,
-  fi as v,
-  fo as w,
-  ia as _,
-  la as P,
-  na as O,
-  oa as j,
-  pi as x,
-  ra as S,
-  sa as k,
-  ta as A,
-  ua as I,
+  da as f,
+  di as p,
+  do as m,
+  ea as g,
+  fi as y,
+  ia as b,
+  la as v,
+  na as w,
+  oa as _,
+  qi as P,
+  ra as O,
+  sa as j,
+  si as x,
+  ta as S,
+  ua as k,
+  ui as A,
+  uo as I,
 } from "./lib.js";
-var V = e(w());
+var V = e(m());
 if (!V.useState) throw new Error("mobx-react-lite requires React with Hooks support");
-if (!x) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
-var M = e(g());
+if (!y) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
+var M = e(I());
 function E(e) {
   e();
 }
 function C(e) {
-  return v(e);
+  return p(e);
 }
 var R,
   F,
@@ -117,7 +117,7 @@ var R,
     (null === (t = e.reaction) || void 0 === t || t.dispose(), (e.reaction = null));
   }),
   z = t((e) => {
-    var t = w();
+    var t = m();
     var n =
         "function" == typeof Object.is
           ? Object.is
@@ -178,7 +178,7 @@ var R,
     t.exports = z();
   })();
 function N(e) {
-  e.reaction = new f("observer".concat(e.name), function () {
+  e.reaction = new x("observer".concat(e.name), function () {
     var t;
     ((e.stateVersion = Symbol()), null === (t = e.onStoreChange) || void 0 === t || t.call(e));
   });
@@ -286,7 +286,7 @@ function K(e, t) {
 var G,
   W,
   Z = { $$typeof: !0, render: !0, compare: !0, type: !0, displayName: !0 };
-((W = M.unstable_batchedUpdates) || (W = E), m({ reactionScheduler: W }));
+((W = M.unstable_batchedUpdates) || (W = E), A({ reactionScheduler: W }));
 G = T.finalizeAllImmediately;
 var X = he(),
   Y = (e) => ue(e, X),
@@ -3067,16 +3067,16 @@ function uo(e, t) {
   var n = e;
   return (
     e.then(
-      i("observableFromPromise-resolve", function (e) {
+      r("observableFromPromise-resolve", function (e) {
         ((n.value = e), (n.state = io));
       }),
-      i("observableFromPromise-reject", function (e) {
+      r("observableFromPromise-reject", function (e) {
         ((n.value = e), (n.state = so));
       }),
     ),
     (n.isPromiseBasedObservable = !0),
     (n.case = ao),
-    l(
+    o(
       n,
       {
         value: !t || ("fulfilled" !== t.state && "pending" !== t.state) ? void 0 : t.value,
@@ -3089,11 +3089,11 @@ function uo(e, t) {
   );
 }
 !(function (e) {
-  ((e.reject = i("fromPromise.reject", function (t) {
+  ((e.reject = r("fromPromise.reject", function (t) {
     var n = e(Promise.reject(t));
     return ((n.state = so), (n.value = t), n);
   })),
-    (e.resolve = i("fromPromise.resolve", function (t) {
+    (e.resolve = r("fromPromise.resolve", function (t) {
       void 0 === t && (t = void 0);
       var n = e(Promise.resolve(t));
       return ((n.state = io), (n.value = t), n);
@@ -3127,8 +3127,8 @@ var lo,
             writable: !0,
             value: void 0,
           }),
-          j(this),
-          p(function () {
+          d(this),
+          k(function () {
             ((n.current = t), (n.subscription = e.subscribe(n)));
           }));
       }
@@ -3164,10 +3164,10 @@ var lo,
             ((this.current = e), this.dispose());
           },
         }),
-        co([k.ref], e.prototype, "current", void 0),
-        co([i.bound], e.prototype, "next", null),
-        co([i.bound], e.prototype, "complete", null),
-        co([i.bound], e.prototype, "error", null));
+        co([_.ref], e.prototype, "current", void 0),
+        co([r.bound], e.prototype, "next", null),
+        co([r.bound], e.prototype, "complete", null),
+        co([r.bound], e.prototype, "error", null));
     })(),
     function () {
       return (
@@ -3208,13 +3208,13 @@ var lo,
             enumerable: !0,
             configurable: !0,
             writable: !0,
-            value: k.map({}),
+            value: _.map({}),
           }),
           Object.defineProperty(this, "localComputedValues", {
             enumerable: !0,
             configurable: !0,
             writable: !0,
-            value: k.map({}),
+            value: _.map({}),
           }),
           Object.defineProperty(this, "isPropertyDirty", {
             enumerable: !0,
@@ -3224,44 +3224,44 @@ var lo,
               return t.localValues.has(e);
             },
           }),
-          j(this),
-          to(_(e), "createViewModel expects an observable object"));
-        var n = ro(this);
-        ro(e).forEach(function (r) {
-          var s;
-          if (!n.includes(r) && r !== a && "__mobxDidRunLazyInitializers" !== r) {
+          d(this),
+          to(O(e), "createViewModel expects an observable object"));
+        var o = ro(this);
+        ro(e).forEach(function (i) {
+          var a;
+          if (!o.includes(i) && i !== s && "__mobxDidRunLazyInitializers" !== i) {
             if (
               (to(
-                -1 === po.indexOf(r),
-                "The propertyname " + r + " is reserved and cannot be used with viewModels",
+                -1 === po.indexOf(i),
+                "The propertyname " + i + " is reserved and cannot be used with viewModels",
               ),
-              y(e, r))
+              n(e, i))
             ) {
-              var l = u(e, r),
-                c = l.derivation.bind(t),
-                d = null === (s = l.setter_) || void 0 === s ? void 0 : s.bind(t);
-              t.localComputedValues.set(r, o(c, { set: d }));
+              var u = l(e, i),
+                c = u.derivation.bind(t),
+                d = null === (a = u.setter_) || void 0 === a ? void 0 : a.bind(t);
+              t.localComputedValues.set(i, P(c, { set: d }));
             }
-            var h = Object.getOwnPropertyDescriptor(e, r),
+            var h = Object.getOwnPropertyDescriptor(e, i),
               f = h ? { enumerable: h.enumerable } : {};
             Object.defineProperty(
               t,
-              r,
+              i,
               ho(ho({}, f), {
                 configurable: !0,
                 get: function () {
-                  return y(e, r)
-                    ? t.localComputedValues.get(r).get()
-                    : t.isPropertyDirty(r)
-                      ? t.localValues.get(r)
-                      : t.model[r];
+                  return n(e, i)
+                    ? t.localComputedValues.get(i).get()
+                    : t.isPropertyDirty(i)
+                      ? t.localValues.get(i)
+                      : t.model[i];
                 },
-                set: i(function (n) {
-                  y(e, r)
-                    ? t.localComputedValues.get(r).set(n)
-                    : n !== t.model[r]
-                      ? t.localValues.set(r, n)
-                      : t.localValues.delete(r);
+                set: r(function (r) {
+                  n(e, i)
+                    ? t.localComputedValues.get(i).set(r)
+                    : r !== t.model[i]
+                      ? t.localValues.set(i, r)
+                      : t.localValues.delete(i);
                 }),
               }),
             );
@@ -3288,10 +3288,10 @@ var lo,
           writable: !0,
           value: function () {
             var e = this;
-            (d(this.localValues).forEach(function (t) {
-              var r = e.localValues.get(t),
-                o = e.model[t];
-              O(o) ? o.replace(r) : S(o) ? (o.clear(), o.merge(r)) : n(r) || (e.model[t] = r);
+            (b(this.localValues).forEach(function (t) {
+              var n = e.localValues.get(t),
+                r = e.model[t];
+              S(r) ? r.replace(n) : w(r) ? (r.clear(), r.merge(n)) : i(n) || (e.model[t] = n);
             }),
               this.localValues.clear());
           },
@@ -3312,11 +3312,11 @@ var lo,
             this.localValues.delete(e);
           },
         }),
-        fo([o], e.prototype, "isDirty", null),
-        fo([o], e.prototype, "changedValues", null),
-        fo([i.bound], e.prototype, "submit", null),
-        fo([i.bound], e.prototype, "reset", null),
-        fo([i.bound], e.prototype, "resetProperty", null));
+        fo([P], e.prototype, "isDirty", null),
+        fo([P], e.prototype, "changedValues", null),
+        fo([r.bound], e.prototype, "submit", null),
+        fo([r.bound], e.prototype, "reset", null),
+        fo([r.bound], e.prototype, "resetProperty", null));
     })(),
     (lo = function (e, t) {
       return (
@@ -3389,9 +3389,9 @@ var lo,
           (l._base = t));
         for (var c = 0; c < t.length; c++) l._addItem(t[c]);
         return (
-          (l._disposeBaseObserver = h(l._base, function (e) {
+          (l._disposeBaseObserver = j(l._base, function (e) {
             if ("splice" === e.type)
-              b(function () {
+              f(function () {
                 for (var t = 0, n = e.removed; t < n.length; t++) {
                   var r = n[t];
                   l._removeItem(r);
@@ -3403,7 +3403,7 @@ var lo,
               });
             else {
               if ("update" !== e.type) throw new Error("illegal state");
-              b(function () {
+              f(function () {
                 (l._removeItem(e.oldValue), l._addItem(e.newValue));
               });
             }
@@ -3456,7 +3456,7 @@ var lo,
             var n = e.prototype.get.call(this, t);
             return (
               void 0 === n &&
-                ((n = k([], { name: "GroupArray[" + this._keyToName(t) + "]", deep: !1 })),
+                ((n = _([], { name: "GroupArray[" + this._keyToName(t) + "]", deep: !1 })),
                 e.prototype.set.call(this, t, n)),
               n
             );
@@ -3486,7 +3486,7 @@ var lo,
               o = {
                 groupByValue: n,
                 groupArrIndex: r.length,
-                reaction: I(
+                reaction: v(
                   function () {
                     return t._groupBy(e);
                   },
@@ -3518,7 +3518,7 @@ var lo,
               delete e[this._ogmInfoKey]);
           },
         }));
-    })(r),
+    })(a),
     (function () {
       function e(e, t, n, r) {
         (Object.defineProperty(this, "base", {
@@ -3707,37 +3707,37 @@ var lo,
     return r;
   };
 function wo(e, t) {
-  if ((void 0 === t && (t = !1), s(e))) throw new Error("computedFn shouldn't be used on actions");
+  if ((void 0 === t && (t = !1), c(e))) throw new Error("computedFn shouldn't be used on actions");
   var n = !1,
     r = 0,
-    i = "boolean" == typeof t ? { keepAlive: t } : t,
-    a = new yo();
+    o = "boolean" == typeof t ? { keepAlive: t } : t,
+    i = new yo();
   return function () {
-    for (var t, s = this, u = [], l = 0; l < arguments.length; l++) u[l] = arguments[l];
-    var d,
-      h = a.entry(u);
-    if (h.exists()) return h.get().get();
-    if (!i.keepAlive && !A()) {
+    for (var t, s = this, a = [], l = 0; l < arguments.length; l++) a[l] = arguments[l];
+    var c,
+      d = i.entry(a);
+    if (d.exists()) return d.get().get();
+    if (!o.keepAlive && !g()) {
       !n &&
-        (null !== (t = i.requiresReaction) && void 0 !== t ? t : c().computedRequiresReaction) &&
+        (null !== (t = o.requiresReaction) && void 0 !== t ? t : u().computedRequiresReaction) &&
         (console.warn(
           "Invoking a computedFn from outside a reactive context won't be memoized and is cleaned up immediately, unless keepAlive is set.",
         ),
         (n = !0));
-      var f = e.apply(this, u);
-      return (i.onCleanup && i.onCleanup.apply(i, vo([f], u)), f);
+      var f = e.apply(this, a);
+      return (o.onCleanup && o.onCleanup.apply(o, vo([f], a)), f);
     }
-    var p = o(
+    var p = P(
       function () {
-        return (d = e.apply(s, u));
+        return (c = e.apply(s, a));
       },
-      bo(bo({}, i), { name: "computedFn(" + (i.name || e.name) + "#" + ++r + ")" }),
+      bo(bo({}, o), { name: "computedFn(" + (o.name || e.name) + "#" + ++r + ")" }),
     );
     return (
-      h.set(p),
-      i.keepAlive ||
-        P(p, function () {
-          (a.entry(u).delete(), i.onCleanup && i.onCleanup.apply(i, vo([d], u)), (d = void 0));
+      d.set(p),
+      o.keepAlive ||
+        h(p, function () {
+          (i.entry(a).delete(), o.onCleanup && o.onCleanup.apply(o, vo([c], a)), (c = void 0));
         }),
       p.get()
     );

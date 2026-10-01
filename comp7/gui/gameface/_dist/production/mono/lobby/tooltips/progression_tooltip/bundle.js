@@ -1,33 +1,33 @@
 import { r as a } from "../../chunks/rolldown-runtime.js";
 import {
   $ as e,
-  Pa as i,
-  Q as n,
-  Uo as t,
-  Vo as s,
-  _i as o,
-  bo as c,
+  Bo as i,
+  Cs as n,
+  Ho as t,
+  Mr as s,
+  Na as o,
+  _i as c,
   fi as r,
   gi as l,
-  no as d,
-  st as _,
-  tt as m,
-  ws as p,
+  kr as d,
+  q as _,
+  to as m,
+  yo as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as f, i as u } from "../../chunks/vendor.js";
-/* empty css                  */ import { t as x } from "../../chunks/progress_bar.js";
-import { i as g, o as v, t as k } from "../../chunks/rank_emblem.js";
-import { n as h } from "../../chunks/get_division_name.js";
-import { n as j, r as b } from "../../chunks/get_rank_name.js";
-import { t as I } from "../../chunks/qualification_emblem.js";
-import { t as y } from "../../chunks/get_season_name.js";
+/* empty css                  */ import { t as x } from "../../chunks/get_season_name.js";
+import { t as g } from "../../chunks/progress_bar.js";
+import { i as v, o as k, t as h } from "../../chunks/rank_emblem.js";
+import { n as j } from "../../chunks/get_division_name.js";
+import { n as b, r as I } from "../../chunks/get_rank_name.js";
+import { t as y } from "../../chunks/qualification_emblem.js";
 import { t as N } from "../../chunks/qualification_battle_item.js";
 import { t as C } from "../../chunks/tooltip_decorator.js";
 import { t as A } from "../../chunks/tooltips.module.js";
-p();
+n();
 var B = a(u(), 1),
-  [q, T] = o()(({ observableModel: a }) => {
+  [q, T] = c()(({ observableModel: a }) => {
     const e = {
         root: a.object(),
         divisionInfo: a.object("divisionInfo"),
@@ -37,15 +37,15 @@ var B = a(u(), 1),
         ),
         qualificationBattles: a.array("qualificationModel.battles"),
       },
-      i = l(
+      n = l(
         (a) => {
-          const i = c(e.qualificationBattles.get(), a);
+          const i = p(e.qualificationBattles.get(), a);
           if (!i) throw new Error(`qualification battle with index ${a} was not found`);
           return { ...i };
         },
-        { equals: s },
+        { equals: i },
       );
-    return { ...e, computes: { qualificationBattle: i } };
+    return { ...e, computes: { qualificationBattle: n } };
   }, t),
   w = {
     base: "RankInactivityBlock_ae45f303",
@@ -73,21 +73,21 @@ var B = a(u(), 1),
     blink: "RankInactivityBlock_blink_4aecaefd",
     slideUpIn: "RankInactivityBlock_slideUpIn_4aecaefd",
   },
-  S = a(i(), 1),
+  S = a(o(), 1),
   Q = f(({ className: a }) => {
     const { model: e } = T(),
-      { rankInactivityCount: i, rankInactivityPointsCount: t, hasRankInactivity: s } = e.root.get();
+      { rankInactivityCount: i, rankInactivityPointsCount: n, hasRankInactivity: t } = e.root.get();
     return (0, S.jsxs)("div", {
-      className: (0, B.default)(w.base, s && w.base__active, a),
+      className: (0, B.default)(w.base, t && w.base__active, a),
       children: [
-        (0, S.jsx)(n, {
+        (0, S.jsx)(d, {
           text: R.strings.comp7_ext.progressionTooltip.rankInactivity.header.active(),
           binding: { icon: (0, S.jsx)("div", { className: w.inactivityIcon }) },
           classMix: w.inactivityText,
         }),
-        (0, S.jsx)(n, {
-          text: R.strings.comp7_ext.progressionTooltip.rankInactivity.description.active(t),
-          binding: { count: t },
+        (0, S.jsx)(d, {
+          text: R.strings.comp7_ext.progressionTooltip.rankInactivity.description.active(n),
+          binding: { count: n },
           classMix: w.description,
         }),
         0 === i
@@ -101,7 +101,7 @@ var B = a(u(), 1),
                 ],
               }),
             })
-          : (0, S.jsx)(n, {
+          : (0, S.jsx)(d, {
               text: R.strings.comp7_ext.progressionTooltip.rankInactivity.daysLeft(),
               binding: {
                 rankInactivityCount: (0, S.jsx)("div", { className: w.daysLeftValue, children: i }),
@@ -112,26 +112,26 @@ var B = a(u(), 1),
     });
   }),
   M = "EliteRankContent_34a2bc68",
-  U = "EliteRankContent_score_c1d75b8d",
-  G = "EliteRankContent_scoreLabel_8db99086",
+  G = "EliteRankContent_score_c1d75b8d",
+  H = "EliteRankContent_scoreLabel_8db99086",
   L = "EliteRankContent_formatTextString_42aa1ae3",
-  V = ({ rank: a, currentScore: e, fromScore: i, topPercentage: t }) =>
+  U = ({ rank: a, currentScore: e, fromScore: i, topPercentage: n }) =>
     (0, S.jsxs)("div", {
       className: M,
       children: [
-        (0, S.jsx)("div", { className: U, children: (0, S.jsx)(m, { value: e }) }),
+        (0, S.jsx)("div", { className: G, children: (0, S.jsx)(_, { value: e }) }),
         (0, S.jsx)("div", {
-          className: G,
+          className: H,
           children: R.strings.comp7_ext.progressionTooltip.ratingScore(),
         }),
-        (0, S.jsx)(n, {
-          text: b(R.strings.comp7_ext.progressionTooltip.info, a),
-          binding: { fromScore: (0, S.jsx)(m, { value: i }), topPercentage: t },
+        (0, S.jsx)(d, {
+          text: I(R.strings.comp7_ext.progressionTooltip.info, a),
+          binding: { fromScore: (0, S.jsx)(_, { value: i }), topPercentage: n },
           classMix: L,
         }),
       ],
     }),
-  H = "GeneralRankContent_236f43e",
+  V = "GeneralRankContent_236f43e",
   D = "GeneralRankContent_formatTextString_df026d57",
   E = "GeneralRankContent_division_1cc026b1",
   P = "GeneralRankContent_currentScore_9c8e174f",
@@ -139,33 +139,33 @@ var B = a(u(), 1),
   z = "GeneralRankContent_progressValue_bb513d2f",
   O = "GeneralRankContent_progressValue__left_7205b5ce",
   F = "GeneralRankContent_progressValue__right_86d8e17",
-  $ = ({ currentScore: a, name: i, from: t, to: s }) =>
+  $ = ({ currentScore: a, name: i, from: n, to: t }) =>
     (0, S.jsxs)("div", {
-      className: H,
+      className: V,
       children: [
-        (0, S.jsx)(e, {
+        (0, S.jsx)(s, {
           text: R.strings.comp7_ext.progressionTooltip.division(),
-          binding: { divisionName: h(i) },
+          binding: { divisionName: j(i) },
           classMix: (0, B.default)(D, E),
         }),
-        (0, S.jsx)("div", { className: P, children: (0, S.jsx)(m, { value: a }) }),
+        (0, S.jsx)("div", { className: P, children: (0, S.jsx)(_, { value: a }) }),
         (0, S.jsxs)("div", {
           className: W,
           children: [
             (0, S.jsx)("div", {
               className: (0, B.default)(z, O),
-              children: (0, S.jsx)(m, { value: t }),
+              children: (0, S.jsx)(_, { value: n }),
             }),
-            (0, S.jsx)(x, { size: _.Small, value: a - t, maxValue: s - t }),
+            (0, S.jsx)(g, { size: e.Small, value: a - n, maxValue: t - n }),
             (0, S.jsx)("div", {
               className: (0, B.default)(z, F),
-              children: (0, S.jsx)(m, { value: s }),
+              children: (0, S.jsx)(_, { value: t }),
             }),
           ],
         }),
-        (0, S.jsx)(n, {
+        (0, S.jsx)(d, {
           text: R.strings.comp7_ext.progressionTooltip.divisionDescription(),
-          binding: { fromScore: (0, S.jsx)(m, { value: t }), toScore: (0, S.jsx)(m, { value: s }) },
+          binding: { fromScore: (0, S.jsx)(_, { value: n }), toScore: (0, S.jsx)(_, { value: t }) },
           classMix: D,
         }),
       ],
@@ -190,10 +190,10 @@ var B = a(u(), 1),
   sa = "QualificationContent_battle_c53717b7",
   oa = "QualificationContent_condition_c09fb775",
   ca = f(({ classNames: a }) => {
-    const { model: i } = T(),
-      t = i.qualification.battlesCount.get(),
-      s = i.qualification.maxBattlesCount.get(),
-      o = i.qualification.isRatingCalculation.get();
+    const { model: e } = T(),
+      i = e.qualification.battlesCount.get(),
+      n = e.qualification.maxBattlesCount.get(),
+      t = e.qualification.isRatingCalculation.get();
     return (0, S.jsxs)("div", {
       className: K,
       children: [
@@ -203,30 +203,30 @@ var B = a(u(), 1),
         }),
         (0, S.jsx)("div", {
           className: a?.emblemContainer,
-          children: (0, S.jsx)(I, {
-            size: g.x150,
-            seasonName: i.root.get().seasonName,
+          children: (0, S.jsx)(y, {
+            size: v.x150,
+            seasonName: e.root.get().seasonName,
             className: X,
           }),
         }),
-        o
-          ? (0, S.jsx)(e, {
+        t
+          ? (0, S.jsx)(s, {
               text: R.strings.comp7_ext.qualification.ratingCalculationDescription(),
               binding: { timerIcon: (0, S.jsx)("div", { className: na }) },
               classMix: ia,
             })
           : (0, S.jsxs)(S.Fragment, {
               children: [
-                (0, S.jsx)(e, {
+                (0, S.jsx)(s, {
                   text: R.strings.comp7_ext.qualification.counter(),
                   binding: {
-                    battlesCount: (0, S.jsx)("div", { className: Z, children: t }),
+                    battlesCount: (0, S.jsx)("div", { className: Z, children: i }),
                     divider: (0, S.jsx)("div", { className: aa, children: "/" }),
-                    maxBattlesCount: s,
+                    maxBattlesCount: n,
                   },
                   classMix: Y,
                 }),
-                (0, S.jsx)(n, {
+                (0, S.jsx)(d, {
                   text: R.strings.comp7_ext.qualification.counterWithDescription(),
                   classMix: ea,
                 }),
@@ -234,16 +234,16 @@ var B = a(u(), 1),
             }),
         (0, S.jsx)("div", {
           className: ta,
-          children: d(i.qualificationBattles.get().length, (a) =>
+          children: m(e.qualificationBattles.get().length, (a) =>
             (0, S.jsx)(J, { index: a, className: sa }, a),
           ),
         }),
-        !o &&
+        !t &&
           (0, S.jsx)("div", {
             className: a?.content,
-            children: (0, S.jsx)(e, {
-              text: R.strings.comp7_ext.progressionTooltip.qualification.condition(s),
-              binding: { maxBattlesCount: s },
+            children: (0, S.jsx)(s, {
+              text: R.strings.comp7_ext.progressionTooltip.qualification.condition(n),
+              binding: { maxBattlesCount: n },
               classMix: oa,
             }),
           }),
@@ -287,23 +287,23 @@ var B = a(u(), 1),
         rankInactivityCount: o,
       } = a.root.get(),
       { name: c, from: r, to: l } = a.divisionInfo.get(),
-      d = v(e);
+      d = k(e);
     return (0, S.jsxs)("div", {
       className: ra.base,
       children: [
         (0, S.jsx)("div", { className: ra.heading, children: R.strings.comp7_ext.featureName() }),
-        (0, S.jsx)("div", { className: ra.season, children: y(t) }),
+        (0, S.jsx)("div", { className: ra.season, children: x(t) }),
         a.qualification.isActive.get()
           ? (0, S.jsx)(ca, { classNames: la })
           : (0, S.jsxs)(S.Fragment, {
               children: [
-                (0, S.jsx)("div", { className: ra.rankName, children: j(e) }),
+                (0, S.jsx)("div", { className: ra.rankName, children: b(e) }),
                 (0, S.jsx)("div", {
                   className: ra.emblemContainer,
-                  children: (0, S.jsx)(k, {
+                  children: (0, S.jsx)(h, {
                     seasonName: t,
                     rank: e,
-                    size: g.x150,
+                    size: v.x150,
                     division: c,
                     className: ra.emblem,
                   }),
@@ -312,7 +312,7 @@ var B = a(u(), 1),
                   className: (0, B.default)(ra.content, d && ra.content__generalRank),
                   children: d
                     ? (0, S.jsx)($, { currentScore: i, name: c, from: r, to: l })
-                    : (0, S.jsx)(V, { rank: e, fromScore: r, currentScore: i, topPercentage: n }),
+                    : (0, S.jsx)(U, { rank: e, fromScore: r, currentScore: i, topPercentage: n }),
                 }),
                 s &&
                   (0, S.jsxs)(S.Fragment, {

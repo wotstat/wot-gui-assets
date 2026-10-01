@@ -1,13 +1,13 @@
 import {
   l as e,
-  dr as s,
+  df as s,
   m as i,
   ap as a,
-  dF as _,
-  dG as l,
-  dA as c,
+  dE as _,
+  dF as l,
+  dC as c,
   ak as t,
-  dE as o,
+  dD as o,
 } from "../../chunks/lib.js";
 import { h as n, j as r, a5 as d, N as m } from "../../chunks/vendor.js";
 const b = 2,
@@ -89,9 +89,9 @@ const j = {
   k = "ListItem_dotted_dc00eddb",
   X = "ListItem_dotted__inline_c714df3",
   L = "ListItem_count_16457bf9",
-  A = "ListItem_profit_c0826df5",
-  E = "ListItem_text_8419d244",
-  T = ({ label: e, firstValue: s, secondValue: i, useSecondValues: a, totalValue: _ }) =>
+  E = "ListItem_profit_c0826df5",
+  T = "ListItem_text_8419d244",
+  A = ({ label: e, firstValue: s, secondValue: i, useSecondValues: a, totalValue: _ }) =>
     r.jsxs("div", {
       className: d(N, _ && I),
       children: [
@@ -101,7 +101,7 @@ const j = {
             r.jsx("div", {
               className: y,
               children: r.jsx("div", {
-                className: E,
+                className: T,
                 children: r.jsx(c, {
                   text: `${e}%(line)`,
                   binding: { line: r.jsx("div", { className: d(k, X) }) },
@@ -118,7 +118,7 @@ const j = {
                 children: [
                   r.jsx("div", { className: k }),
                   r.jsx("div", {
-                    className: A,
+                    className: E,
                     children: r.jsx(h, {
                       type: s.currencyType,
                       value: s.value,
@@ -139,7 +139,7 @@ const j = {
                 children: [
                   r.jsx("div", { className: k }),
                   r.jsx("div", {
-                    className: A,
+                    className: E,
                     children: r.jsx(h, {
                       type: i.currencyType,
                       value: i.value,
@@ -152,16 +152,16 @@ const j = {
           }),
       ],
     }),
-  F = {
+  C = {
     base: "Content_bd627888",
     title: "Content_title_9e9cd55a",
     block: "Content_block_604708c6",
     block__additional: "Content_block__additional_315b276a",
   },
-  V = m(() => {
+  F = m(() => {
     const { model: e } = g();
     return r.jsx("div", {
-      className: F.base,
+      className: C.base,
       children: i(
         e.computes.getResultsList(),
         (e, s) =>
@@ -169,14 +169,14 @@ const j = {
           r.jsxs(
             "div",
             {
-              className: d(F.block, e.isAdditional && F.block__additional),
+              className: d(C.block, e.isAdditional && C.block__additional),
               children: [
-                e.title && !e.isTotal && r.jsx("div", { className: F.title, children: e.title }),
+                e.title && !e.isTotal && r.jsx("div", { className: C.title, children: e.title }),
                 r.jsx("div", {
-                  className: F.list,
+                  className: C.list,
                   children: i(e.records, (s, i) =>
                     r.jsx(
-                      T,
+                      A,
                       { ...s, useSecondValues: e.useSecondValues, totalValue: e.isTotal },
                       i,
                     ),
@@ -189,14 +189,14 @@ const j = {
       ),
     });
   }),
-  C = "Footer_1b733abe",
+  V = "Footer_1b733abe",
   S = "Footer_icon_cb4ec2ad",
   $ = "Footer_description_398ba227",
   D = m(() => {
     const { model: e } = g(),
       { premiumAdvertising: s } = e.root.get();
     return r.jsxs("div", {
-      className: C,
+      className: V,
       children: [r.jsx("div", { className: S }), r.jsx("div", { className: $, children: s })],
     });
   }),
@@ -227,7 +227,7 @@ const j = {
       className: U.base,
       children: [
         r.jsx("div", { className: U.header, children: r.jsx(O, {}) }),
-        r.jsx("div", { className: U.header, children: r.jsx(V, {}) }),
+        r.jsx("div", { className: U.header, children: r.jsx(F, {}) }),
         s && r.jsx("div", { className: U.footer, children: r.jsx(D, {}) }),
       ],
     });

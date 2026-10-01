@@ -1,4 +1,4 @@
-import { Wn as s, _r as e, fr as o, ya as t, yi as r } from "../../chunks/lib.js";
+import { Wn as s, _r as e, fr as o, va as t, vi as r } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { u as i } from "../../chunks/vendor.js";
 import { a, i as n, t as m } from "../../chunks/readResource.js";

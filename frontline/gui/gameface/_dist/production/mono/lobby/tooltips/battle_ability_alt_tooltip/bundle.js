@@ -1,9 +1,9 @@
 import { r as t } from "../../chunks/rolldown-runtime.js";
-import { Ia as s, Si as e, a as i, fo as a, or as l, ur as o, wn as r } from "../../chunks/lib.js";
+import { Fa as s, a as e, do as i, or as a, ur as l, wn as o, xi as r } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { s as d } from "../../chunks/vendor.js";
-a();
-var [n, c] = o()(
+i();
+var [n, c] = l()(
     ({ observableModel: t }) => ({ ...t.primitives(["name", "videoName", "description"]) }),
     s,
   ),
@@ -12,15 +12,15 @@ var [n, c] = o()(
   b = "BattleAbilityAltTooltip_description_276f2bbd",
   j = "BattleAbilityAltTooltip_videoWrapper_3a3622f1",
   v = "BattleAbilityAltTooltip_video_db3faea6",
-  x = e(),
+  x = r(),
   A = d(function () {
     const { model: t } = c();
-    return (0, x.jsx)(i, {
-      children: (0, x.jsx)(i.Decorator, {
+    return (0, x.jsx)(e, {
+      children: (0, x.jsx)(e.Decorator, {
         children: (0, x.jsxs)("div", {
           className: m,
           children: [
-            (0, x.jsx)(r, { text: t.name.get(), className: p }),
+            (0, x.jsx)(o, { text: t.name.get(), className: p }),
             (0, x.jsx)("div", {
               className: j,
               children: (0, x.jsx)("video", {
@@ -30,10 +30,10 @@ var [n, c] = o()(
                 autoPlay: !0,
               }),
             }),
-            (0, x.jsx)(r, { text: t.description.get(), className: b }),
+            (0, x.jsx)(o, { text: t.description.get(), className: b }),
           ],
         }),
       }),
     });
   });
-l((0, x.jsx)(n, { children: (0, x.jsx)(A, {}) }));
+a((0, x.jsx)(n, { children: (0, x.jsx)(A, {}) }));

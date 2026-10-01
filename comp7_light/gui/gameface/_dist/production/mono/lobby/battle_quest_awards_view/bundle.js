@@ -1,112 +1,112 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Ar as s,
-  Br as a,
-  Ci as r,
-  Gr as t,
-  Kr as i,
-  Or as n,
-  Ti as o,
-  Vo as l,
-  Wa as d,
-  Zr as c,
-  _o as b,
-  ca as _,
-  co as u,
-  ji as m,
-  jr as p,
-  kr as h,
-  oa as f,
-  sa as g,
-  wi as w,
-  wr as A,
-  yo as j,
+  Ai as s,
+  Ar as a,
+  Bo as r,
+  Br as t,
+  Ci as i,
+  Gr as n,
+  Kr as o,
+  Or as l,
+  Si as d,
+  Ua as c,
+  Zr as b,
+  aa as _,
+  go as u,
+  jr as m,
+  kr as p,
+  oa as h,
+  sa as f,
+  so as g,
+  vo as w,
+  wi as A,
+  wr as j,
   zr as v,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
 import { a as x, o as L } from "../chunks/vendor.js";
 import { t as N } from "../chunks/useParseRewards.js";
-var k = e(l()),
+var k = e(r()),
   C = e(L()),
-  y = "CloseButton_49a682e7",
-  I = "CloseButton_icon_b31f68a5",
-  S = "CloseButton_iconHover_b5894825",
-  B = "Page_close_401a9518",
-  M = e(g()),
+  S = "CloseButton_49a682e7",
+  B = "CloseButton_icon_b31f68a5",
+  I = "CloseButton_iconHover_b5894825",
+  y = "Page_close_401a9518",
+  M = e(h()),
   H = ({
     onClick: e,
-    className: s,
-    classNames: a,
-    onMouseEnter: r,
-    onMouseLeave: t,
-    onMouseDown: i,
-    onMouseUp: n,
-    soundHover: o = "highlight",
-    soundClick: l = "play",
+    className: a,
+    classNames: r,
+    onMouseEnter: t,
+    onMouseLeave: i,
+    onMouseDown: n,
+    onMouseUp: o,
+    soundHover: l = "highlight",
+    soundClick: d = "play",
   }) => {
-    m(e);
+    s(e);
     return (0, M.jsxs)("div", {
-      className: (0, C.default)(y, B, s),
+      className: (0, C.default)(S, y, a),
       onMouseEnter: (e) => {
-        (r?.(e), b.sound(o));
+        (t?.(e), u.sound(l));
       },
       onMouseLeave: (e) => {
-        t?.(e);
+        i?.(e);
       },
       onMouseDown: (e) => {
-        (i?.(e), b.sound(l));
+        (n?.(e), u.sound(d));
       },
       onMouseUp: (e) => {
-        n?.(e);
+        o?.(e);
       },
       onClick: e,
       children: [
-        (0, M.jsx)("div", { className: (0, C.default)(I, a?.icon) }),
-        (0, M.jsx)("div", { className: (0, C.default)(S, a?.iconHover) }),
+        (0, M.jsx)("div", { className: (0, C.default)(B, r?.icon) }),
+        (0, M.jsx)("div", { className: (0, C.default)(I, r?.iconHover) }),
       ],
     });
   },
-  [P, z] = c()(
+  [P, U] = b()(
     ({ observableModel: e }) => ({ root: e.object(), rewards: e.array("rewards") }),
     ({ externalModel: e }) => ({
       approve: e.createCallbackNoArgs("onApprove"),
       close: e.createCallbackNoArgs("onClose"),
     }),
   ),
-  T = (function (e) {
+  z = (function (e) {
     return ((e.InProgress = "inProgress"), (e.Completed = "completed"), e);
   })({}),
-  U = "AnimatedBackground_f47e334b",
+  T = "AnimatedBackground_f47e334b",
   Q = "AnimatedBackground_rays_e7a4dbbe",
-  W = "AnimatedBackground_sunShineCanvas_21aff824",
-  D = "AnimatedBackground_staticHighlight_80e8711f",
-  E = {
+  D = "AnimatedBackground_sunShineCanvas_21aff824",
+  E = "AnimatedBackground_staticHighlight_80e8711f",
+  O = {
     width: 400,
     height: 400,
     frameCount: 50,
     chunk: { count: 2, rows: 5, columns: 5 },
-    getChunkPath: h("R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_"),
+    getChunkPath: p("R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_"),
   },
-  O = s(E),
+  W = a(O),
   $ = ({ className: e }) =>
     (0, M.jsx)("div", {
-      className: (0, C.default)(U, e),
-      children: j.isHigh()
+      className: (0, C.default)(T, e),
+      children: w.isHigh()
         ? (0, M.jsxs)(M.Fragment, {
             children: [
-              (0, M.jsx)(n, {
-                onAnimationDone: u,
-                width: E.width,
-                height: E.height,
-                frameCount: E.frameCount,
-                getImageSource: O,
+              (0, M.jsx)(l, {
+                onAnimationDone: g,
+                width: O.width,
+                height: O.height,
+                frameCount: O.frameCount,
+                getImageSource: W,
                 frameTime: 50,
-                className: W,
+                className: D,
               }),
               (0, M.jsx)("div", { className: Q }),
             ],
           })
-        : (0, M.jsx)("div", { className: D }),
+        : (0, M.jsx)("div", { className: E }),
     }),
   q = {
     base: "AwardsList_fd6f2000",
@@ -133,25 +133,25 @@ var k = e(l()),
     slideUpIn: "AwardsList_slideUpIn_bcb7b6e7",
   },
   F = x(function () {
-    const { mediaSize: e } = f(),
-      { model: s } = z(),
+    const { mediaSize: e } = _(),
+      { model: s } = U(),
       { parsedRewards: a } = N(
         s.rewards.get(),
-        ((e) => (e >= _.Large ? v.S400x300 : e >= _.Small ? v.S296x222 : v.S232x174))(e),
+        ((e) => (e >= f.Large ? v.S400x300 : e >= f.Small ? v.S296x222 : v.S232x174))(e),
       ),
       { battleStatus: r } = s.root.get();
     return (0, M.jsxs)("div", {
       className: (0, C.default)(q.base, q[`base__${r}`]),
       children: [
-        r === T.Completed && (0, M.jsx)($, { className: q.animatedBg }),
+        r === z.Completed && (0, M.jsx)($, { className: q.animatedBg }),
         (0, M.jsx)("div", { className: q.ribbon }),
-        d(a, (e, s) =>
+        c(a, (e, s) =>
           (0, M.jsxs)(
             "div",
             {
               className: q.reward,
               children: [
-                (0, M.jsx)(p, { ...e, classNames: { info: q.value } }),
+                (0, M.jsx)(m, { ...e, classNames: { info: q.value } }),
                 (0, M.jsx)("span", { className: q.label, children: e.userName }),
               ],
             },
@@ -163,16 +163,16 @@ var k = e(l()),
   }),
   G = "Header_bbfb94eb",
   K = "Header_subTitle_ab861848",
-  V = "Header_title_818ec59a",
-  Z = R.strings.comp7_light.battleQuestAwards,
-  J = x(function () {
-    const { model: e } = z(),
+  Z = "Header_title_818ec59a",
+  J = R.strings.comp7_light.battleQuestAwards,
+  V = x(function () {
+    const { model: e } = U(),
       { battleStatus: s, level: a } = e.root.get();
     return (0, M.jsxs)("div", {
       className: G,
       children: [
-        (0, M.jsx)("span", { className: K, children: Z.subTitle() }),
-        (0, M.jsx)(A, { text: `${Z.title.$dyn(s)}`, classMix: V, binding: { level: a } }),
+        (0, M.jsx)("span", { className: K, children: J.subTitle() }),
+        (0, M.jsx)(j, { text: `${J.title.$dyn(s)}`, classMix: Z, binding: { level: a } }),
       ],
     });
   }),
@@ -182,33 +182,33 @@ var k = e(l()),
   se = "App_button_5120fb02",
   ae = "App_rewardList_6063ee6e",
   re = x(function () {
-    const { controls: e } = z(),
-      { mediaSize: s } = f(),
-      t = s >= _.Large ? a.sizes.large : a.sizes.small,
-      i = o({
+    const { controls: e } = U(),
+      { mediaSize: a } = _(),
+      r = a >= f.Large ? t.sizes.large : t.sizes.small,
+      n = A({
         from: { opacity: 0 },
         to: { opacity: 1 },
         leave: { opacity: 0 },
-        config: w.molasses,
+        config: i.molasses,
       });
     return (
       (0, k.useEffect)(() => {
-        b.sound("pr_reward_screen");
+        u.sound("pr_reward_screen");
       }, []),
-      m(e.close),
+      s(e.close),
       (0, M.jsx)("div", {
         className: X,
-        children: (0, M.jsxs)(r.div, {
+        children: (0, M.jsxs)(d.div, {
           className: Y,
-          style: { ...i },
+          style: { ...n },
           children: [
-            (0, M.jsx)(J, {}),
+            (0, M.jsx)(V, {}),
             (0, M.jsx)("div", { className: ae, children: (0, M.jsx)(F, {}) }),
             (0, M.jsx)("div", {
               className: ee,
-              children: (0, M.jsx)(a, {
-                theme: a.themes.primary,
-                size: t,
+              children: (0, M.jsx)(t, {
+                theme: t.themes.primary,
+                size: r,
                 onClick: e.approve,
                 className: se,
                 children: R.strings.comp7_light.battleQuestAwards.button(),
@@ -220,4 +220,4 @@ var k = e(l()),
       })
     );
   });
-i((0, M.jsx)(t, { children: (0, M.jsx)(P, { children: (0, M.jsx)(re, {}) }) }));
+o((0, M.jsx)(n, { children: (0, M.jsx)(P, { children: (0, M.jsx)(re, {}) }) }));

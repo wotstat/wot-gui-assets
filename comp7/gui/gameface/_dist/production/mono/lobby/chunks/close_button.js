@@ -1,7 +1,7 @@
 import { r as e } from "./rolldown-runtime.js";
-import { $o as a, Pa as o, na as s, ws as n } from "./lib.js";
+import { Cs as a, Na as o, Qo as s, ta as n } from "./lib.js";
 import { i as f } from "./vendor.js";
-n();
+a();
 var r = e(f()),
   c = "CloseButton_49a682e7",
   l = "CloseButton_icon_b31f68a5",
@@ -27,8 +27,8 @@ var r = e(f()),
   i = e(o()),
   d = ({
     onClick: e,
-    className: o,
-    classNames: n,
+    className: a,
+    classNames: o,
     onMouseEnter: f,
     onMouseLeave: d,
     onMouseDown: g,
@@ -36,25 +36,25 @@ var r = e(f()),
     soundHover: p = "highlight",
     soundClick: b = "play",
   }) => {
-    s(e);
+    n(e);
     return (0, i.jsxs)("div", {
-      className: (0, r.default)(c, t.close, o),
+      className: (0, r.default)(c, t.close, a),
       onMouseEnter: (e) => {
-        (f?.(e), a.sound(p));
+        (f?.(e), s.sound(p));
       },
       onMouseLeave: (e) => {
         d?.(e);
       },
       onMouseDown: (e) => {
-        (g?.(e), a.sound(b));
+        (g?.(e), s.sound(b));
       },
       onMouseUp: (e) => {
         u?.(e);
       },
       onClick: e,
       children: [
-        (0, i.jsx)("div", { className: (0, r.default)(l, n?.icon) }),
-        (0, i.jsx)("div", { className: (0, r.default)(_, n?.iconHover) }),
+        (0, i.jsx)("div", { className: (0, r.default)(l, o?.icon) }),
+        (0, i.jsx)("div", { className: (0, r.default)(_, o?.iconHover) }),
       ],
     });
   };

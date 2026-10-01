@@ -1,30 +1,30 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   $n as s,
-  Eo as a,
-  Hr as t,
-  La as i,
-  Pr as l,
-  Qn as n,
-  Wr as o,
-  _o as c,
+  Aa as a,
+  Ia as t,
+  Nr as i,
+  Qn as l,
+  To as n,
+  Ur as o,
+  Vr as c,
   cr as r,
-  gi as d,
-  ja as m,
+  go as d,
+  hi as m,
   pr as _,
   sr as u,
-  ya as g,
-  yo as b,
+  va as g,
+  vo as b,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { s as p } from "../../chunks/vendor.js";
 var h = "Warning_167127e0",
-  f = "Warning_icon_621a0c49",
-  v = d();
+  v = "Warning_icon_621a0c49",
+  f = m();
 function j({ text: e, className: s }) {
-  return (0, v.jsxs)("div", {
-    className: c(h, s),
-    children: [(0, v.jsx)("div", { className: f }), e],
+  return (0, f.jsxs)("div", {
+    className: d(h, s),
+    children: [(0, f.jsx)("div", { className: v }), e],
   });
 }
 var x = e(p()),
@@ -36,30 +36,30 @@ var x = e(p()),
       e
     );
   })({}),
-  C = e(b()),
-  N = "DefaultDialogTemplate_3fa31653",
+  N = e(b()),
+  C = "DefaultDialogTemplate_3fa31653",
   T = "DefaultDialogTemplate_center_78864940",
   y = "DefaultDialogTemplate_center__shown_c0f84ab4",
   k = "DefaultDialogTemplate_center__withIcon_d744956",
   I = "DefaultDialogTemplate_center__responsive_9e9ec8c",
-  P = "DefaultDialogTemplate_icon_15887080",
-  w = "DefaultDialogTemplate_icon__responsive_423c786d",
-  A = "DefaultDialogTemplate_title_a5d352bb",
+  w = "DefaultDialogTemplate_icon_15887080",
+  A = "DefaultDialogTemplate_icon__responsive_423c786d",
+  P = "DefaultDialogTemplate_title_a5d352bb",
   $ = "DefaultDialogTemplate_title__responsive_d09648f7",
   M = "DefaultDialogTemplate_content_c80e6fa7",
   z = "DefaultDialogTemplate_footer_66628873",
   B = "DefaultDialogTemplate_buttons_b6999ab3",
   E = "DefaultDialogTemplate_divider_6278342f",
-  H = "DefaultDialogTemplate_divider__noContent_3daa5f0b",
-  L = "DefaultDialogTemplate_divider__noFooter_daf80d45",
-  F = "DefaultDialogTemplate_closeButton_82cf1050";
+  F = "DefaultDialogTemplate_divider__noContent_3daa5f0b",
+  H = "DefaultDialogTemplate_divider__noFooter_daf80d45",
+  L = "DefaultDialogTemplate_closeButton_82cf1050";
 function S({
   isShown: e = !0,
   onClose: s,
   icon: a,
   title: t,
   content: i,
-  buttons: l,
+  buttons: n,
   footer: o,
   displayFlags: c = [],
   classNames: r,
@@ -67,78 +67,78 @@ function S({
 }) {
   const { responsiveHeader: m, disableResponsiveContentPosition: _ } = ((e, s) =>
       Object.keys(s).reduce((s, a) => ((s[a] = e.includes(a)), s), {}))(c, D),
-    u = (0, C.useCallback)(() => {
+    u = (0, N.useCallback)(() => {
       s && s();
     }, [s]);
-  return (0, v.jsxs)("div", {
-    className: (0, x.default)(N, d),
+  return (0, f.jsxs)("div", {
+    className: (0, x.default)(C, d),
     children: [
-      (0, v.jsx)(n, { onClose: u, className: F }),
-      (0, v.jsxs)("div", {
+      (0, f.jsx)(l, { onClose: u, className: L }),
+      (0, f.jsxs)("div", {
         className: (0, x.default)(T, a && k, e && y, !_ && I, r?.center),
         children: [
-          a && (0, v.jsx)("div", { className: (0, x.default)(P, m && w, r?.icon), children: a }),
-          t && (0, v.jsx)("div", { className: (0, x.default)(A, m && $, r?.title), children: t }),
-          i && (0, v.jsx)("div", { className: M, children: i }),
-          (0, v.jsx)("div", { className: (0, x.default)(E, !i && H, !o && L, r?.divider) }),
-          o && (0, v.jsx)("div", { className: z, children: o }),
-          l && (0, v.jsx)("div", { className: B, children: l }),
+          a && (0, f.jsx)("div", { className: (0, x.default)(w, m && A, r?.icon), children: a }),
+          t && (0, f.jsx)("div", { className: (0, x.default)(P, m && $, r?.title), children: t }),
+          i && (0, f.jsx)("div", { className: M, children: i }),
+          (0, f.jsx)("div", { className: (0, x.default)(E, !i && F, !o && H, r?.divider) }),
+          o && (0, f.jsx)("div", { className: z, children: o }),
+          n && (0, f.jsx)("div", { className: B, children: n }),
         ],
       }),
     ],
   });
 }
-var W = "Icon_e30b139a",
-  O = "Icon_mainIcon_c9ef5a0d",
+var O = "Icon_e30b139a",
+  W = "Icon_mainIcon_c9ef5a0d",
   Q = "Icon_iconContainer_779374c7",
-  q = "Icon_container_4087e78b",
-  G = "Icon_6ce4463",
-  J = "bottomAlignment",
-  K = "centredAndThroughContent",
-  U = "moveContentBelow";
-function V({ iconPositionLogic: e = U, backgrounds: s = [], overlays: a = [], icons: t }) {
-  const [i, n] = (0, C.useState)(0),
-    o = (0, C.useCallback)((e) => {
+  U = "Icon_container_4087e78b",
+  V = "Icon_6ce4463",
+  q = "bottomAlignment",
+  G = "centredAndThroughContent",
+  J = "moveContentBelow";
+function K({ iconPositionLogic: e = J, backgrounds: s = [], overlays: a = [], icons: t }) {
+  const [l, n] = (0, N.useState)(0),
+    o = (0, N.useCallback)((e) => {
       n(((e) => Math.max(e, 135))(e.currentTarget.height));
     }, []),
-    c = l(),
-    r = (0, C.useMemo)(() => ({ transform: `scale(${c})` }), [c]);
-  return (0, v.jsx)("div", {
-    className: W,
+    c = i(),
+    r = (0, N.useMemo)(() => ({ transform: `scale(${c})` }), [c]);
+  return (0, f.jsx)("div", {
+    className: O,
     style: (() => {
-      if (0 === i) return { height: 0 };
+      if (0 === l) return { height: 0 };
       switch (e) {
-        case J:
-          return { height: `${i}rem`, marginTop: `-${Math.round((i - 135) / 2)}rem` };
-        case K:
-          return { height: `${i}rem`, marginBottom: `-${Math.round((i - 135) / 2)}rem` };
+        case q:
+          return { height: `${l}rem`, marginTop: `-${Math.round((l - 135) / 2)}rem` };
+        case G:
+          return { height: `${l}rem`, marginBottom: `-${Math.round((l - 135) / 2)}rem` };
         default:
-          return { height: `${i}rem` };
+          return { height: `${l}rem` };
       }
     })(),
-    children: (0, v.jsxs)("div", {
-      className: q,
+    children: (0, f.jsxs)("div", {
+      className: U,
       children: [
         g(s, (e) =>
           e
-            ? (0, v.jsx)(
+            ? (0, f.jsx)(
                 "div",
-                { className: G, children: (0, v.jsx)("img", { alt: "bg icon", src: e, style: r }) },
+                { className: V, children: (0, f.jsx)("img", { alt: "bg icon", src: e, style: r }) },
                 e,
               )
             : null,
         ),
-        (0, v.jsx)("div", {
-          className: O,
+        (0, f.jsx)("div", {
+          className: W,
           children: g(
             t,
             (e) =>
               e &&
-              (0, v.jsx)(
+              (0, f.jsx)(
                 "div",
                 {
                   className: Q,
-                  children: (0, v.jsx)("img", { alt: "", src: e, style: r, onLoad: o }),
+                  children: (0, f.jsx)("img", { alt: "", src: e, style: r, onLoad: o }),
                 },
                 e,
               ),
@@ -146,11 +146,11 @@ function V({ iconPositionLogic: e = U, backgrounds: s = [], overlays: a = [], ic
         }),
         g(a, (e) =>
           e
-            ? (0, v.jsx)(
+            ? (0, f.jsx)(
                 "div",
                 {
-                  className: G,
-                  children: (0, v.jsx)("img", { alt: "overlay icon", src: e, style: r }),
+                  className: V,
+                  children: (0, f.jsx)("img", { alt: "overlay icon", src: e, style: r }),
                 },
                 e,
               )
@@ -160,39 +160,39 @@ function V({ iconPositionLogic: e = U, backgrounds: s = [], overlays: a = [], ic
     }),
   });
 }
-var [X, Y] = _("AbilitiesIncompleteConfirmProvider")(i, ({ externalModel: e }) => ({
+var [X, Y] = _("AbilitiesIncompleteConfirmProvider")(t, ({ externalModel: e }) => ({
     submit: e.createCallbackNoArgs("onSubmitClick"),
     cancel: e.createCallbackNoArgs("onCancelClick"),
     close: e.createCallbackNoArgs("onCloseClick"),
   })),
   Z = "App_buttons_cb654453",
   ee = "App_button_fb12011c",
-  se = a.resolve("strings");
+  se = n.resolve("strings");
 function ae() {
   const { controls: e } = Y();
   return (
-    o(m.ENTER, e.submit, !0),
-    t(e.close),
-    (0, v.jsx)(S, {
+    o(a.ENTER, e.submit, !0),
+    c(e.close),
+    (0, f.jsx)(S, {
       onClose: e.close,
       title: se.readOrEmpty("R.strings.last_stand_lobby.abilitiesIncomplete.title"),
       displayFlags: ["disableResponsiveContentPosition"],
-      icon: (0, v.jsx)(V, {
+      icon: (0, f.jsx)(K, {
         iconPositionLogic: "moveContentBelow",
         icons: ["R.images.last_stand.gui.maps.icons.dialogs.abilities_incomplete.content"],
       }),
-      content: (0, v.jsx)(j, { text: R.strings.last_stand_lobby.abilitiesIncomplete.warning() }),
-      buttons: (0, v.jsxs)("div", {
+      content: (0, f.jsx)(j, { text: R.strings.last_stand_lobby.abilitiesIncomplete.warning() }),
+      buttons: (0, f.jsxs)("div", {
         className: Z,
         children: [
-          (0, v.jsx)(s, {
+          (0, f.jsx)(s, {
             className: ee,
             theme: s.themes.primary,
             size: s.sizes.medium,
             onClick: e.submit,
             children: se.read("R.strings.last_stand_lobby.abilitiesIncomplete.submit"),
           }),
-          (0, v.jsx)(s, {
+          (0, f.jsx)(s, {
             className: ee,
             theme: s.themes.secondary,
             size: s.sizes.medium,
@@ -204,4 +204,4 @@ function ae() {
     })
   );
 }
-r((0, v.jsx)(u, { children: (0, v.jsx)(X, { children: (0, v.jsx)(ae, {}) }) }));
+r((0, f.jsx)(u, { children: (0, f.jsx)(X, { children: (0, f.jsx)(ae, {}) }) }));

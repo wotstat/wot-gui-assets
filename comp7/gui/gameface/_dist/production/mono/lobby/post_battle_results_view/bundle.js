@@ -1,140 +1,140 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  $ as a,
-  $a as t,
-  $i as s,
-  $o as r,
-  $r as n,
-  Ai as i,
-  Bi as l,
-  Bo as o,
-  C as c,
-  Ct as d,
-  Ds as m,
-  Ea as u,
-  Er as _,
-  Es as f,
-  Fr as p,
-  Gn as b,
-  Gr as h,
-  Ha as v,
-  Ht as g,
-  Ia as y,
-  It as x,
-  Ji as N,
-  Jo as j,
-  K as I,
-  Ki as w,
-  Kr as A,
-  Kt as C,
-  Lo as B,
-  Mi as S,
-  Mo as P,
-  Na as k,
-  Ni as T,
-  Oa as E,
-  On as D,
-  Pa as H,
-  Pi as O,
-  Q as V,
-  Qi as z,
+  $a as a,
+  $o as t,
+  $r as s,
+  Ai as r,
+  C as n,
+  Co as i,
+  Cs as l,
+  Da as o,
+  Es as c,
+  Fa as d,
+  Fn as m,
+  Gi as u,
+  Gr as _,
+  H as f,
+  Hi as p,
+  Ho as b,
+  Hr as h,
+  Io as v,
+  Ji as g,
+  Jo as y,
+  Kr as x,
+  La as N,
+  Li as j,
+  Ma as I,
+  Mi as w,
+  Mn as A,
+  Mr as C,
+  Na as B,
+  Ni as S,
+  Nn as P,
+  Oa as k,
+  Oo as T,
+  Ot as E,
+  Pi as H,
+  Pt as D,
+  Qa as O,
+  Qi as V,
+  Qn as z,
   Qo as W,
   Ra as M,
   Ri as G,
-  S as $,
-  Si as U,
-  So as L,
-  Sr as X,
-  Ss as F,
-  St as K,
+  Rn as $,
+  Rr as L,
+  Rt as U,
+  S as X,
+  Si as F,
+  Ta as K,
   Ti as q,
-  Tr as Q,
-  Ts as Y,
-  U as Z,
-  Ui as J,
-  Un as ee,
-  Uo as ae,
-  Vr as te,
-  W as se,
-  Wa as re,
-  Wn as ne,
-  Wr as ie,
-  Xi as le,
-  Xn as oe,
-  Xr as ce,
-  Yi as de,
-  Yo as me,
-  Yr as ue,
-  _ as _e,
-  _i as fe,
-  ai as pe,
-  ao as be,
-  ar as he,
-  b as ve,
-  ba as ge,
-  bi as ye,
-  bo as xe,
-  br as Ne,
-  c as je,
-  ci as Ie,
-  cn as we,
-  d as Ae,
-  da as Ce,
-  di as Be,
-  ei as Se,
-  eo as Pe,
-  es as Re,
-  f as ke,
-  fi as Te,
-  fn as Ee,
-  g as De,
-  ga as He,
-  go as Oe,
-  h as Ve,
-  hi as ze,
-  ho as We,
-  ia as Me,
-  ii as Ge,
-  ji as $e,
-  jn as Ue,
-  ka as Le,
-  ki as Xe,
-  ko as Fe,
-  l as Ke,
-  la as qe,
-  lr as Qe,
-  m as Ye,
-  no as Ze,
-  o as Je,
-  p as ea,
-  pi as aa,
-  pn as ta,
-  pr as sa,
-  qn as ra,
-  qr as na,
-  qt as ia,
-  ro as la,
-  rs as oa,
-  s as ca,
-  si as da,
-  ss as ma,
-  ta as ua,
-  ti as _a,
-  u as fa,
-  ui as pa,
-  ur as ba,
-  v as ha,
-  va,
-  w as ga,
-  wo as ya,
-  ws as xa,
-  x as Na,
-  xr as ja,
-  xs as Ia,
-  y as wa,
-  yr as Aa,
-  za as Ca,
-  zi as Ba,
+  Ts as Q,
+  Ua as Y,
+  V as Z,
+  Va as J,
+  W as ee,
+  Wr as ae,
+  Xr as te,
+  Yi as se,
+  Yr as re,
+  Zi as ne,
+  Zn as ie,
+  Zo as le,
+  Zt as oe,
+  _ as ce,
+  _a as de,
+  _i as me,
+  ai as ue,
+  ar as _e,
+  b as fe,
+  bi as pe,
+  bs as be,
+  c as he,
+  ca as ve,
+  ci as ge,
+  cr as ye,
+  d as xe,
+  di as Ne,
+  ea as je,
+  ei as Ie,
+  f as we,
+  fi as Ae,
+  g as Ce,
+  gn as Be,
+  h as Se,
+  ha as Pe,
+  hi as Re,
+  ho as ke,
+  ht as Te,
+  ii as Ee,
+  io as He,
+  ir as De,
+  ji as Oe,
+  jn as Ve,
+  jo as ze,
+  ki as We,
+  kr as Me,
+  l as Ge,
+  lr as $e,
+  m as Le,
+  mo as Ue,
+  mt as Xe,
+  nn as Fe,
+  no as Ke,
+  ns as qe,
+  o as Qe,
+  os as Ye,
+  p as Ze,
+  pi as Je,
+  qi as ea,
+  qn as aa,
+  qo as ta,
+  qr as sa,
+  ra,
+  rr as na,
+  s as ia,
+  si as la,
+  ti as oa,
+  tn as ca,
+  to as da,
+  u as ma,
+  ua,
+  ui as _a,
+  v as fa,
+  vr as pa,
+  w as ba,
+  wr as ha,
+  ws as va,
+  x as ga,
+  xo as ya,
+  xs as xa,
+  y as Na,
+  ya as ja,
+  yn as Ia,
+  yo as wa,
+  zi as Aa,
+  zo as Ca,
+  zt as Ba,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import {
@@ -144,8 +144,8 @@ import {
   d as ka,
   f as Ta,
   g as Ea,
-  h as Da,
-  i as Ha,
+  h as Ha,
+  i as Da,
   l as Oa,
   m as Va,
   n as za,
@@ -153,8 +153,8 @@ import {
   p as Ma,
   r as Ga,
   s as $a,
-  t as Ua,
-  u as La,
+  t as La,
+  u as Ua,
   v as Xa,
 } from "../chunks/common.js";
 import { a as Fa, i as Ka, r as qa } from "../chunks/vendor.js";
@@ -165,7 +165,7 @@ import { t as tt } from "../chunks/get_division_name.js";
 import { n as st, r as rt } from "../chunks/get_rank_name.js";
 import { t as nt } from "../chunks/qualification_emblem.js";
 import { n as it, t as lt } from "../chunks/get_division_points_step.js";
-var ot = e(xa()),
+var ot = e(l()),
   ct = "BattleInfo_6333ab61",
   dt = "BattleInfo_group_161b6f97",
   mt = "BattleInfo_textString_835b074b",
@@ -175,42 +175,42 @@ var ot = e(xa()),
   pt = "BattleInfo_commendations_731c9f38",
   bt = "BattleInfo_commendations_counter_aef426",
   ht = "BattleInfo_commendations_icon_55a703a8",
-  vt = e(H()),
+  vt = e(B()),
   gt = [1, 19],
   yt = [1, 10],
   xt = ({ className: e, finishReasonKey: a, status: t, modeName: s, arenaType: r, ...n }) => {
     const i = `battle_results.finish.reason.c_${a}${yt.includes(a) ? t : ""}`,
       l = gt.includes(r) ? `arenas.type.${s}.name` : `menu.loading.battleTypes.c_${r}`;
-    return (0, vt.jsx)(Q, {
+    return (0, vt.jsx)(ye, {
       ...n,
       upgradeLegacy: !0,
       path: "battle_results.common.arena.fullName",
-      params: { 0: (0, vt.jsx)(Q, { path: l }), 1: (0, vt.jsx)(Q, { path: i }) },
-      className: F(dt, e),
+      params: { 0: (0, vt.jsx)(ye, { path: l }), 1: (0, vt.jsx)(ye, { path: i }) },
+      className: xa(dt, e),
     });
   };
-var Nt = m.resolve("strings");
+var Nt = c.resolve("strings");
 var jt = (0, ot.forwardRef)(function (e, a) {
   return (0, vt.jsx)("div", {
     ...e,
     "data-name": "BattleInfo",
     ref: a,
-    className: F(ct, e.className),
+    className: xa(ct, e.className),
   });
 });
 ((jt.Arena = function ({ arenaName: e, className: a, ...t }) {
-  return (0, vt.jsx)(Q, {
-    className: F(dt, a),
+  return (0, vt.jsx)(ye, {
+    className: xa(dt, a),
     path: "battle_results.common.arena.nameAndMode",
     params: { 0: e, 1: (0, vt.jsx)(xt, { ...t }) },
   });
 }),
   (jt.StartTime = ({ startTime: e, className: a, ...t }) =>
-    (0, vt.jsx)(Q, {
+    (0, vt.jsx)(ye, {
       ...t,
-      className: F(dt, a),
+      className: xa(dt, a),
       path: "battle_results.common.startTime",
-      params: { 0: Y.formatDateTime(f.ShortDate, e), 1: Y.formatDateTime(f.ShortTime, e) },
+      params: { 0: va.formatDateTime(Q.ShortDate, e), 1: va.formatDateTime(Q.ShortTime, e) },
     })),
   (jt.Player = function ({
     className: e,
@@ -220,28 +220,28 @@ var jt = (0, ot.forwardRef)(function (e, a) {
     userName: r,
     clan: n,
     teamKiller: i,
-    vehicleTypeSize: l = D.sizes.x24x24,
+    vehicleTypeSize: l = Be.sizes.x24x24,
     classNames: o,
     ...c
   }) {
-    return (0, vt.jsx)(Q, {
+    return (0, vt.jsx)(ye, {
       ...c,
       upgradeLegacy: !0,
-      className: F(dt, i && ut, e),
+      className: xa(dt, i && ut, e),
       path: "battle_results.common.arena.fullName",
       params: {
         0: n
-          ? (0, vt.jsx)(Q, {
+          ? (0, vt.jsx)(ye, {
               className: _t,
               path: "battle_results.common.player.nameWithClan",
               params: { name: r, clan: n },
             })
           : (0, vt.jsx)("span", { className: _t, children: r }),
         1: (0, vt.jsxs)("div", {
-          className: F(ft, o?.vehicleName),
+          className: xa(ft, o?.vehicleName),
           children: [
-            (0, vt.jsx)(Ue, { value: a, className: F(mt, o?.vehicleLevel) }),
-            (0, vt.jsx)(D, { className: o?.vehicleType, type: t, size: l }),
+            (0, vt.jsx)(Ia, { value: a, className: xa(mt, o?.vehicleLevel) }),
+            (0, vt.jsx)(Be, { className: o?.vehicleType, type: t, size: l }),
             s,
           ],
         }),
@@ -267,13 +267,13 @@ var jt = (0, ot.forwardRef)(function (e, a) {
       })(n)
     ) {
       const a = t.anonymizer ? t.fakeUsername : t.username;
-      return (0, vt.jsx)(Q, {
+      return (0, vt.jsx)(ye, {
         ...r,
-        className: F(dt, t.teamKiller && ut, e),
+        className: xa(dt, t.teamKiller && ut, e),
         path: `battle_results.common.vehicleState.${n}_with_killername`,
         params: {
           killername: t.clanAbbreviation
-            ? (0, vt.jsx)(Q, {
+            ? (0, vt.jsx)(ye, {
                 className: _t,
                 path: "battle_results.common.player.nameWithClan",
                 params: { name: a, clan: t.clanAbbreviation },
@@ -282,27 +282,27 @@ var jt = (0, ot.forwardRef)(function (e, a) {
         },
       });
     }
-    return (0, vt.jsx)(Q, {
+    return (0, vt.jsx)(ye, {
       ...r,
-      className: F(dt, e),
+      className: xa(dt, e),
       path: `battle_results.common.vehicleState.${n}`,
     });
   }),
   (jt.CommendationScore = function ({ commendationsReceived: e }) {
     const a = e > 0,
-      t = m.resolve("strings"),
+      t = c.resolve("strings"),
       s =
         1 === e
           ? "battle_results.comms.likes.pbs.tooltip.bodySingle"
           : "battle_results.comms.likes.pbs.tooltip.body",
-      r = S({
+      r = w({
         header: t.readOrEmpty("battle_results.comms.likes.pbs.tooltip.header"),
         body: t.readOrEmpty(s).replace("{{var}}", e.toString()),
       });
     return a
       ? (0, vt.jsxs)("div", {
           ...r,
-          className: F(dt, pt),
+          className: xa(dt, pt),
           children: [
             (0, vt.jsx)("div", { className: bt, children: e }),
             (0, vt.jsx)("div", { className: ht }),
@@ -312,16 +312,16 @@ var jt = (0, ot.forwardRef)(function (e, a) {
   }));
 var It = "AnimatedValue_d9f4b2f0",
   wt = "AnimatedValue_animatedValue_4c490d83",
-  At = Ia.cubicBezier(0.33, 0, 0.25, 1);
+  At = be.cubicBezier(0.33, 0, 0.25, 1);
 function Ct(e) {
   return {
     enterElements: document.querySelectorAll(`.js-animated-value-${e}-enter`),
     leftElements: document.querySelectorAll(`.js-animated-value-${e}-leave`),
   };
 }
-function Bt({ value: e, transition: a, children: t, className: r, classNames: n }) {
-  const i = (0, ot.useMemo)(Sa, []),
-    l = s(e, {
+function Bt({ value: e, transition: a, children: t, className: s, classNames: r }) {
+  const n = (0, ot.useMemo)(Sa, []),
+    i = V(e, {
       ...a,
       initial: { opacity: 1, y: "0rem", ...a?.initial },
       from: { opacity: 0, y: "-5rem", ...a?.from },
@@ -331,7 +331,7 @@ function Bt({ value: e, transition: a, children: t, className: r, classNames: n 
         delay: 330,
         config: { easing: At, duration: 330 },
         onStart: () => {
-          const { enterElements: e, leftElements: a } = Ct(i);
+          const { enterElements: e, leftElements: a } = Ct(n);
           (e.forEach((e) => {
             e instanceof HTMLElement && ((e.style.width = "auto"), (e.style.position = "relative"));
           }),
@@ -349,7 +349,7 @@ function Bt({ value: e, transition: a, children: t, className: r, classNames: n 
         config: { easing: At, duration: 330 },
         onStart: () => {
           let e = 0;
-          const { enterElements: a, leftElements: t } = Ct(i);
+          const { enterElements: a, leftElements: t } = Ct(n);
           (t.forEach((a) => {
             a instanceof HTMLElement &&
               ((e = Math.max(e, a.offsetWidth)), (a.style.position = "relative"));
@@ -363,12 +363,16 @@ function Bt({ value: e, transition: a, children: t, className: r, classNames: n 
       }),
     });
   return (0, vt.jsx)("div", {
-    className: F(It, r),
-    children: l((a, s) => {
-      const r = 0 === a.opacity.get() && !1 === a.opacity.isAnimating;
-      return (0, vt.jsx)(w.div, {
-        className: F(wt, `js-animated-value-${i}-${e === s ? "enter" : "leave"}`, n?.animatedValue),
-        style: { ...a, position: r ? "absolute" : "relative" },
+    className: xa(It, s),
+    children: i((a, s) => {
+      const i = 0 === a.opacity.get() && !1 === a.opacity.isAnimating;
+      return (0, vt.jsx)(u.div, {
+        className: xa(
+          wt,
+          `js-animated-value-${n}-${e === s ? "enter" : "leave"}`,
+          r?.animatedValue,
+        ),
+        style: { ...a, position: i ? "absolute" : "relative" },
         children: t(s),
       });
     }),
@@ -407,26 +411,26 @@ var Tt = {
     blink: "Bubble_blink_fdf0621f",
     slideUpIn: "Bubble_slideUpIn_fdf0621f",
   },
-  Et = Ia.cubicBezier(0.75, 0, 0.67, 1),
-  Dt = Ia.cubicBezier(0.33, 0, 0.25, 1);
-function Ht(e, a) {
+  Et = be.cubicBezier(0.75, 0, 0.67, 1),
+  Ht = be.cubicBezier(0.33, 0, 0.25, 1);
+function Dt(e, a) {
   return "number" == typeof e
     ? (function (e, a) {
         return e > a
-          ? (0, vt.jsx)(Q, {
+          ? (0, vt.jsx)(ye, {
               path: "common.valuePlus",
-              params: { value: Y.formatNumber("integral", a) },
+              params: { value: va.formatNumber("integral", a) },
             })
-          : Y.formatNumber("integral", e);
+          : va.formatNumber("integral", e);
       })(e, a)
     : e;
 }
 var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: s, ...r }) {
-    const { state: n, items: i } = kt(),
-      l = q(),
-      o = n.value === St.progress || (n.value === St.waiting && !1 === n.read),
-      d = E({ value: ga.small }, { medium: { value: ga.medium } }),
-      m = (0, ot.useMemo)(
+    const { state: i, items: l } = kt(),
+      c = q(),
+      d = i.value === St.progress || (i.value === St.waiting && !1 === i.read),
+      m = o({ value: ba.small }, { medium: { value: ba.medium } }),
+      u = (0, ot.useMemo)(
         () => ({
           ...r?.rootTransition,
           initial: { opacity: 0, y: "-5rem", ...r?.rootTransition?.initial },
@@ -437,15 +441,15 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
             delay: 0,
             config: { easing: Et, duration: 330 },
             onRest: () => {
-              o && l.play("notificationBubbleAppeared", { target: s || "mission-progress:bubble" });
+              d && c.play("notificationBubbleAppeared", { target: s || "mission-progress:bubble" });
             },
             ...r.rootTransition?.enter,
           },
-          leave: { opacity: 0, y: "0", delay: 0, config: { duration: 330, easings: Dt } },
+          leave: { opacity: 0, y: "0", delay: 0, config: { duration: 330, easings: Ht } },
         }),
-        [s, r.rootTransition, l, o],
+        [s, r.rootTransition, c, d],
       ),
-      u = (0, ot.useMemo)(
+      _ = (0, ot.useMemo)(
         () => ({
           ...r?.countTransition,
           initial: { opacity: 1, y: "0", ...r?.countTransition?.initial },
@@ -453,10 +457,10 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
           enter: {
             opacity: 1,
             y: "0",
-            config: { easing: Dt, duration: 170 },
+            config: { easing: Ht, duration: 170 },
             delay: 170,
             onRest: () => {
-              l.play("notificationBubbleAppeared", { target: s || "mission-progress:bubble" });
+              c.play("notificationBubbleAppeared", { target: s || "mission-progress:bubble" });
             },
             ...r?.countTransition?.enter,
           },
@@ -464,32 +468,32 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
             opacity: 0,
             y: "5rem",
             delay: 0,
-            config: { easing: Dt, duration: 170 },
+            config: { easing: Ht, duration: 170 },
             ...r?.countTransition?.leave,
           },
         }),
-        [r.countTransition, l, s],
+        [r.countTransition, c, s],
       );
     return (0, vt.jsx)(Bt, {
-      value: o,
-      transition: m,
+      value: d,
+      transition: u,
       className: a,
       children: (a) =>
         a &&
-        (0, vt.jsx)(c.Root, {
+        (0, vt.jsx)(n.Root, {
           children: (0, vt.jsx)("div", {
-            className: F(
+            className: xa(
               Tt.valueContainer,
-              Tt[`valueContainer__${e ?? d.value}`],
+              Tt[`valueContainer__${e ?? m.value}`],
               t?.valueContainer,
             ),
             children: (0, vt.jsx)(Bt, {
-              value: n.bubbleCounter >= i.length ? i.length : n.bubbleCounter,
-              transition: u,
+              value: i.bubbleCounter >= l.length ? l.length : i.bubbleCounter,
+              transition: _,
               children: (a) =>
                 (0, vt.jsx)("div", {
-                  className: F(Tt.value, Tt[`value__${e ?? d.value}`], t?.value),
-                  children: Ht(a, 99),
+                  className: xa(Tt.value, Tt[`value__${e ?? m.value}`], t?.value),
+                  children: Dt(a, 99),
                 }),
             }),
           }),
@@ -499,15 +503,15 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
   Vt = "Items_9477a756",
   zt = "Items_animatedValue_c7d2e119",
   Wt = "Items_plug_a7a8cadf",
-  Mt = Ia.cubicBezier(0.75, 0, 0.67, 1),
-  Gt = Ia.cubicBezier(0.1, 0, 0.9, 1),
-  $t = Ia.cubicBezier(0.33, 0, 0.25, 1),
-  Ut = Ie("NotificationItem", Vt),
-  Lt = (0, ot.memo)(function ({ transition: e, ...a }) {
-    const { items: t, state: r } = kt(),
-      n = s(r.currentNotification, {
+  Mt = be.cubicBezier(0.75, 0, 0.67, 1),
+  Gt = be.cubicBezier(0.1, 0, 0.9, 1),
+  $t = be.cubicBezier(0.33, 0, 0.25, 1),
+  Lt = ge("NotificationItem", Vt),
+  Ut = (0, ot.memo)(function ({ transition: e, ...a }) {
+    const { items: t, state: s } = kt(),
+      r = V(s.currentNotification, {
         ...e,
-        key: r.currentNotification,
+        key: s.currentNotification,
         initial: { opacity: 0, y: "-5rem", x: "-50%", ...e?.initial },
         from: { opacity: 0, y: "-5rem", x: "-50%", ...e?.from },
         enter: [
@@ -515,73 +519,73 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
           { y: "2rem", x: "-50%", opacity: 1, config: { duration: 800, easing: Gt } },
         ],
         leave: {
-          y: r.value === St.idle ? "0" : "5rem",
+          y: s.value === St.idle ? "0" : "5rem",
           x: "-50%",
           opacity: 0,
           config: {
-            duration: r.value === St.idle ? 330 : 170,
-            easing: r.value === St.idle ? $t : Mt,
+            duration: s.value === St.idle ? 330 : 170,
+            easing: s.value === St.idle ? $t : Mt,
           },
         },
       });
-    return (0, vt.jsxs)(Ut, {
+    return (0, vt.jsxs)(Lt, {
       ...a,
       children: [
         (0, vt.jsx)("div", {
           className: Wt,
-          children: r.currentNotification || t[t.length - 1]?.item,
+          children: s.currentNotification || t[t.length - 1]?.item,
         }),
-        n((e, a) => (0, vt.jsx)(w.div, { className: zt, style: e, children: a })),
+        r((e, a) => (0, vt.jsx)(u.div, { className: zt, style: e, children: a })),
       ],
     });
   }),
   Xt = {
     states: St,
     Bubble: Ot,
-    Items: Lt,
+    Items: Ut,
     Provider: function ({ items: e, children: a }) {
-      const [s, r] = (0, ot.useState)(() => ({
+      const [t, s] = (0, ot.useState)(() => ({
           read: !1,
           value: St.idle,
           bubbleCounter: 1,
           currentNotification: void 0,
           shownNotifications: new Set(),
         })),
-        n = (0, ot.useMemo)(
-          () => e.some(({ id: e }) => !1 === s.shownNotifications.has(e)),
-          [e, s.shownNotifications],
+        r = (0, ot.useMemo)(
+          () => e.some(({ id: e }) => !1 === t.shownNotifications.has(e)),
+          [e, t.shownNotifications],
         );
-      Ce(
+      ua(
         () => {
-          r((a) => {
-            const s = e.find(({ id: e }) => !1 === a.shownNotifications.has(e));
+          s((a) => {
+            const t = e.find(({ id: e }) => !1 === a.shownNotifications.has(e));
             return {
               ...a,
               read: !1,
-              currentNotification: s?.item,
+              currentNotification: t?.item,
               shownNotifications:
-                void 0 !== s ? t(a.shownNotifications, s.id) : a.shownNotifications,
-              bubbleCounter: void 0 !== s ? a.bubbleCounter + 1 : a.bubbleCounter,
+                void 0 !== t ? O(a.shownNotifications, t.id) : a.shownNotifications,
+              bubbleCounter: void 0 !== t ? a.bubbleCounter + 1 : a.bubbleCounter,
             };
           });
         },
-        s.value === St.progress && void 0 !== s.currentNotification ? 1130 : void 0,
+        t.value === St.progress && void 0 !== t.currentNotification ? 1130 : void 0,
       );
-      const i = (0, ot.useMemo)(
+      const n = (0, ot.useMemo)(
         () => ({
           start() {
-            r((a) => {
+            s((a) => {
               if (a.value === St.progress || 0 === e.length) return a;
-              const s = e.find(({ id: e }) => !1 === a.shownNotifications.has(e));
+              const t = e.find(({ id: e }) => !1 === a.shownNotifications.has(e));
               return {
                 ...a,
                 read: !1,
-                currentNotification: s?.item,
+                currentNotification: t?.item,
                 shownNotifications:
-                  void 0 !== s ? t(a.shownNotifications, s.id) : a.shownNotifications,
+                  void 0 !== t ? O(a.shownNotifications, t.id) : a.shownNotifications,
                 value: St.progress,
                 bubbleCounter: Rt({
-                  notification: s,
+                  notification: t,
                   read: a.read,
                   shownNotificationSize: a.shownNotifications.size,
                   bubbleCounter: a.bubbleCounter,
@@ -590,7 +594,7 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
             });
           },
           read() {
-            r((a) => ({
+            s((a) => ({
               ...a,
               value: St.idle,
               read: !0,
@@ -599,7 +603,7 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
             }));
           },
           wait() {
-            r((e) =>
+            s((e) =>
               e.value === St.waiting ? e : { ...e, value: St.waiting, currentNotification: void 0 },
             );
           },
@@ -607,16 +611,16 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
         [e],
       );
       ((0, ot.useEffect)(() => {
-        s.value === St.waiting && n && i.start();
-      }, [i, s.value, n]),
+        t.value === St.waiting && r && n.start();
+      }, [n, t.value, r]),
         (0, ot.useEffect)(() => {
-          void 0 === s.currentNotification && s.value === St.progress && !1 === n && i.wait();
-        }, [s.currentNotification, s.value, i, n]));
-      const l = (0, ot.useMemo)(
-        () => ({ state: s, items: e, controls: i, hasUnreadNotifications: n }),
-        [e, s, i, n],
+          void 0 === t.currentNotification && t.value === St.progress && !1 === r && n.wait();
+        }, [t.currentNotification, t.value, n, r]));
+      const i = (0, ot.useMemo)(
+        () => ({ state: t, items: e, controls: n, hasUnreadNotifications: r }),
+        [e, t, n, r],
       );
-      return (0, vt.jsx)(Pt.Provider, { value: l, children: a });
+      return (0, vt.jsx)(Pt.Provider, { value: i, children: a });
     },
   },
   Ft = {
@@ -632,7 +636,7 @@ var Ot = (0, ot.memo)(function ({ size: e, className: a, classNames: t, target: 
     sixth: "sixth",
     immediate: "immediate",
   },
-  Kt = Ia.cubicBezier(0.33, 0, 0.25, 1),
+  Kt = be.cubicBezier(0.33, 0, 0.25, 1),
   qt = (0, ot.createContext)(null);
 function Qt() {
   const e = (0, ot.useContext)(qt);
@@ -643,169 +647,169 @@ function Qt() {
   return e;
 }
 function Yt({ children: e, hasProgressAnimation: a }) {
-  const [s, r] = (0, ot.useState)(Ft.initial),
-    [n, i] = (0, ot.useState)(new Set()),
-    [l, o] = (0, ot.useState)(!1),
-    [c, d] = (0, ot.useState)(!1),
-    m = G(),
-    u = q(),
-    { active: _ } = I(),
-    f = le(),
-    p = le(),
-    b = le(),
-    h = le(),
-    v = le(),
-    g = le(),
-    y = le(),
-    x = le(),
-    N = le(),
-    j = (0, ot.useCallback)(
+  const [t, s] = (0, ot.useState)(Ft.initial),
+    [r, n] = (0, ot.useState)(new Set()),
+    [i, l] = (0, ot.useState)(!1),
+    [o, c] = (0, ot.useState)(!1),
+    d = j(),
+    m = q(),
+    { active: u } = ee(),
+    _ = se(),
+    f = se(),
+    p = se(),
+    b = se(),
+    h = se(),
+    v = se(),
+    g = se(),
+    y = se(),
+    x = se(),
+    N = (0, ot.useCallback)(
       function (e) {
-        r(e);
+        s(e);
       },
-      [r],
+      [s],
     );
   ((0, ot.useEffect)(() => {
-    s === Ft.immediate && i(new Set(Object.values(Ft)));
-  }, [s]),
+    t === Ft.immediate && n(new Set(Object.values(Ft)));
+  }, [t]),
     (0, ot.useEffect)(() => {
-      switch (s) {
+      switch (t) {
         case Ft.immediate:
           return (
-            f.start({ y: "0", opacity: 1, immediate: !0 }),
-            p.start({ opacity: 1, y: "0", immediate: !0 }),
-            b.start({ maskSize: "100% 100%", immediate: !0 }),
+            _.start({ y: "0", opacity: 1, immediate: !0 }),
+            f.start({ opacity: 1, y: "0", immediate: !0 }),
+            p.start({ maskSize: "100% 100%", immediate: !0 }),
+            b.start({ opacity: 1, y: "0", immediate: !0 }),
             h.start({ opacity: 1, y: "0", immediate: !0 }),
-            v.start({ opacity: 1, y: "0", immediate: !0 }),
-            g.start({ opacity: 1, immediate: !0 }),
-            x.start({ maskSize: "100% 100%", immediate: !0 }),
-            N.start({ opacity: 1, immediate: !0 }),
-            void y.start({ opacity: 1, immediate: !0 })
+            v.start({ opacity: 1, immediate: !0 }),
+            y.start({ maskSize: "100% 100%", immediate: !0 }),
+            x.start({ opacity: 1, immediate: !0 }),
+            void g.start({ opacity: 1, immediate: !0 })
           );
         case Ft.initial:
           return (
-            u.play("showBattleResult", { target: "animation-context" }),
-            void r(_ === Xa.overview ? Ft.navigation : Ft.immediate)
+            m.play("showBattleResult", { target: "animation-context" }),
+            void s(u === Xa.overview ? Ft.navigation : Ft.immediate)
           );
         case Ft.navigation:
-          return void f.start({
+          return void _.start({
             y: "0",
             opacity: 1,
             config: { duration: 400, easing: Kt },
             onRest: () => {
-              (r(Ft.battleStatus), i((e) => t(e, Ft.navigation)));
+              (s(Ft.battleStatus), n((e) => O(e, Ft.navigation)));
             },
           });
         case Ft.battleStatus:
-          return void p.start({
+          return void f.start({
             opacity: 1,
             y: "0",
             config: { duration: 800, easing: Kt },
             onRest: () => {
-              (r(a ? Ft.progressBarDelta : Ft.first), i((e) => t(e, Ft.battleStatus)));
+              (s(a ? Ft.progressBarDelta : Ft.first), n((e) => O(e, Ft.battleStatus)));
             },
           });
         case Ft.progressBarDelta:
-          return void m.run(() => {
-            (r(Ft.first), i((e) => t(e, Ft.progressBarDelta)));
+          return void d.run(() => {
+            (s(Ft.first), n((e) => O(e, Ft.progressBarDelta)));
           }, 1300);
         case Ft.first:
-          return (r(Ft.second), void i((e) => t(e, Ft.first)));
+          return (s(Ft.second), void n((e) => O(e, Ft.first)));
         case Ft.second:
           return (
-            b.start({
+            p.start({
               maskSize: "100% 100%",
               config: { duration: 400, easing: Kt },
               onRest: () => {
-                i((e) => t(e, Ft.second));
+                n((e) => O(e, Ft.second));
               },
             }),
-            void m.run(() => {
-              (r(Ft.third), m.clear());
+            void d.run(() => {
+              (s(Ft.third), d.clear());
             }, 280)
           );
         case Ft.third:
           return (
+            b.start({ opacity: 1, y: "0", config: { duration: 400, easing: Kt } }),
             h.start({ opacity: 1, y: "0", config: { duration: 400, easing: Kt } }),
-            v.start({ opacity: 1, y: "0", config: { duration: 400, easing: Kt } }),
-            g.start({
+            v.start({
               opacity: 1,
               config: { duration: 400, easing: Kt },
               onRest: () => {
-                i((e) => t(e, Ft.third));
+                n((e) => O(e, Ft.third));
               },
             }),
-            void m.run(() => {
-              (r(Ft.fourth), m.clear());
+            void d.run(() => {
+              (s(Ft.fourth), d.clear());
             }, 280)
           );
         case Ft.fourth:
           return (
-            x.start({
+            y.start({
               maskSize: "100% 100%",
               config: { duration: 400, easing: Kt },
               onRest: () => {
-                i((e) => t(e, Ft.fourth));
+                n((e) => O(e, Ft.fourth));
               },
             }),
-            void m.run(() => {
-              (r(Ft.fifth), m.clear());
+            void d.run(() => {
+              (s(Ft.fifth), d.clear());
             }, 120)
           );
         case Ft.fifth:
-          (N.start({ opacity: 1, config: { duration: 400, easing: Kt } }),
-            y.start({
+          (x.start({ opacity: 1, config: { duration: 400, easing: Kt } }),
+            g.start({
               opacity: 1,
               config: { duration: 400, easing: Kt },
               onRest: () => {
-                i((e) => t(e, Ft.fifth));
+                n((e) => O(e, Ft.fifth));
               },
             }));
           break;
         default:
           return;
       }
-    }, [_, s, u, m, y, j, n, a]));
-  const w = (0, ot.useMemo)(
+    }, [u, t, m, d, g, N, r, a]));
+  const I = (0, ot.useMemo)(
     () => ({
       hasProgressAnimation: a,
-      step: s,
-      handleStep: j,
-      completedSteps: n,
-      allMedalsAnimated: l,
-      bonusRef: v,
-      hintKeyRef: g,
-      dividerRef: b,
-      battleInfoRef: y,
-      navigationRef: f,
-      battleStatusRef: p,
-      overlayDividerRef: x,
-      earnedCurrenciesRef: h,
-      personalEfficiencyRef: N,
-      setAllMedalsAnimated: o,
-      setAllCurrenciesAniamted: d,
-      readyForNotifications: l && c && n.has(Ft.fifth),
+      step: t,
+      handleStep: N,
+      completedSteps: r,
+      allMedalsAnimated: i,
+      bonusRef: h,
+      hintKeyRef: v,
+      dividerRef: p,
+      battleInfoRef: g,
+      navigationRef: _,
+      battleStatusRef: f,
+      overlayDividerRef: y,
+      earnedCurrenciesRef: b,
+      personalEfficiencyRef: x,
+      setAllMedalsAnimated: l,
+      setAllCurrenciesAniamted: c,
+      readyForNotifications: i && o && r.has(Ft.fifth),
     }),
-    [a, s, j, l, c, n],
+    [a, t, N, i, o, r],
   );
-  return (0, vt.jsx)(qt.Provider, { value: w, children: e });
+  return (0, vt.jsx)(qt.Provider, { value: I, children: e });
 }
 var Zt = "BattleInfo_group_161b6f97",
   Jt = [1, 19],
   es = ({ className: e, finishReasonKey: a, status: t, modeName: s, arenaType: r, ...n }) => {
     const i = `battle_results.finish.reason.c_${a}${t}`,
       l = Jt.includes(r) ? `arenas.type.${s}.name` : `menu.loading.battleTypes.c_${r}`;
-    return (0, vt.jsx)(Q, {
+    return (0, vt.jsx)(ye, {
       ...n,
       upgradeLegacy: !0,
       path: "battle_results.common.arena.fullName",
-      params: { 0: (0, vt.jsx)(Q, { path: l }), 1: (0, vt.jsx)(Q, { path: i }) },
-      className: F(Zt, e),
+      params: { 0: (0, vt.jsx)(ye, { path: l }), 1: (0, vt.jsx)(ye, { path: i }) },
+      className: xa(Zt, e),
     });
   };
 function as({ arenaName: e, className: a, ...t }) {
-  return (0, vt.jsx)(Q, {
-    className: F(Zt, a),
+  return (0, vt.jsx)(ye, {
+    className: xa(Zt, a),
     path: "battle_results.common.arena.nameAndMode",
     params: { 0: e, 1: (0, vt.jsx)(es, { ...t }) },
   });
@@ -813,8 +817,8 @@ function as({ arenaName: e, className: a, ...t }) {
 var ts = "Divider_80a19f4b";
 function ss({ classNames: e }) {
   return (0, vt.jsx)("div", {
-    className: F(ts, e?.base),
-    children: (0, vt.jsx)(Aa, {
+    className: xa(ts, e?.base),
+    children: (0, vt.jsx)(na, {
       className: e?.image,
       width: "100%",
       height: "100%",
@@ -827,24 +831,24 @@ var rs = "Header_content_b9e0be90",
   ns = "Header_title_91e5448a",
   is = "Header_divider_eb019c6",
   ls = "Header_dividerImage_19f6e11",
-  os = Ie("Header", "Header_70aa1da5"),
+  os = ge("Header", "Header_70aa1da5"),
   cs = (0, ot.forwardRef)(({ title: e, children: a, classNames: t, ...s }, r) => {
-    const n = m.resolve("strings");
+    const n = c.resolve("strings");
     return (0, vt.jsxs)(os, {
       ...s,
       ref: r,
       children: [
         (0, vt.jsxs)("div", {
-          className: F(rs, t?.content),
+          className: xa(rs, t?.content),
           children: [
             (0, vt.jsx)("div", {
-              className: F(ns, t?.title),
-              children: Y.toUpperCase(n.readOrEmpty(e)),
+              className: xa(ns, t?.title),
+              children: va.toUpperCase(n.readOrEmpty(e)),
             }),
             a,
           ],
         }),
-        (0, vt.jsx)(ss, { classNames: { base: F(is, t?.divider), image: ls } }),
+        (0, vt.jsx)(ss, { classNames: { base: xa(is, t?.divider), image: ls } }),
       ],
     });
   }),
@@ -884,21 +888,21 @@ var rs = "Header_content_b9e0be90",
   fs = "IncomeStatement_scrollWrapper_ce2dde41",
   ps = "IncomeStatement_scrollContent_31153602",
   bs = "IncomeStatement_scrollContent__initialized_ce1144d0",
-  hs = Ie("CreditsIncomeStatement"),
+  hs = ge("CreditsIncomeStatement"),
   vs = ({ children: e }) => {
-    const a = ms(oe().api);
-    return (0, vt.jsx)(ne, { classNames: { wrapper: fs, content: F(ps, a && bs) }, children: e });
+    const a = ms($().api);
+    return (0, vt.jsx)(A, { classNames: { wrapper: fs, content: xa(ps, a && bs) }, children: e });
   },
   gs = (0, ot.forwardRef)(({ children: e, className: a, scrollable: t, ...s }, r) =>
     (0, vt.jsx)(hs, {
-      className: F(us, a),
+      className: xa(us, a),
       ...s,
       ref: r,
       children: t
-        ? (0, vt.jsxs)(ee, {
+        ? (0, vt.jsxs)(Ve, {
             children: [
               (0, vt.jsx)(vs, { children: e }),
-              (0, vt.jsx)(ra, { classNames: { base: _s } }),
+              (0, vt.jsx)(m, { classNames: { base: _s } }),
             ],
           })
         : e,
@@ -919,8 +923,8 @@ var rs = "Header_content_b9e0be90",
   ks = "additionalBonusXP",
   Ts = "boostersXP",
   Es = "tacticalTrainingXP",
-  Ds = "holidayOpsXP",
-  Hs = "eventXP",
+  Hs = "holidayOpsXP",
+  Ds = "eventXP",
   Os = "referralBonusXP",
   Vs = "premiumVehicleXP",
   zs = "squadBonusXP",
@@ -928,8 +932,8 @@ var rs = "Header_content_b9e0be90",
   Ms = "wotPlusBonusXP",
   Gs = "wotPlusProBoostXP",
   $s = "totalXP",
-  Us = "originalFreeXP",
-  Ls = "achievementFreeXP",
+  Ls = "originalFreeXP",
+  Us = "achievementFreeXP",
   Xs = "igrBonusFreeXP",
   Fs = "firstWinFreeXP",
   Ks = "additionalBonusFreeXP",
@@ -972,17 +976,17 @@ var rs = "Header_content_b9e0be90",
   Rr = new Set([Qs]),
   kr = new Set([sr, rr, nr, ir, or, dr, lr, mr, ur, _r, Cr, Sr, Br, fr, pr, Ar, hr, vr, gr]),
   Tr = {
-    [Bs]: Ls,
+    [Bs]: Us,
     [ks]: Ks,
     [Br]: Br,
     [Ar]: Ar,
     [Ts]: qs,
     [Cr]: Cr,
-    [Ds]: Ys,
-    [Hs]: Zs,
+    [Hs]: Ys,
+    [Ds]: Zs,
     [Rs]: Fs,
     [Ps]: Xs,
-    [Cs]: Us,
+    [Cs]: Ls,
     [Vs]: Js,
     [Sr]: Sr,
     [$s]: tr,
@@ -990,12 +994,12 @@ var rs = "Header_content_b9e0be90",
     [Gs]: ar,
   },
   Er = { [cr]: Nr, [yr]: Ir, [br]: jr, [xr]: wr },
-  Dr = [js, Is, ws, As],
-  Hr = [
+  Hr = [js, Is, ws, As],
+  Dr = [
     Cs,
-    Us,
-    Bs,
     Ls,
+    Bs,
+    Us,
     Ss,
     Ps,
     Xs,
@@ -1007,9 +1011,9 @@ var rs = "Header_content_b9e0be90",
     qs,
     Es,
     Qs,
-    Ds,
-    Ys,
     Hs,
+    Ys,
+    Ds,
     Zs,
     Os,
     Vs,
@@ -1056,14 +1060,14 @@ var rs = "Header_content_b9e0be90",
     br,
     jr,
   ],
-  Vr = new Set([As, Cs, Us, $s, tr, sr, yr, Ir, hr, vr, gr, xr, wr, br, jr]),
+  Vr = new Set([As, Cs, Ls, $s, tr, sr, yr, Ir, hr, vr, gr, xr, wr, br, jr]),
   zr = new Set([xr, wr, Ir, yr]),
   Wr = "multiplier",
   Mr = "firstWinMultiplier",
   Gr = "fractionalMultiplier",
   $r = "percent",
-  Ur = "plus",
-  Lr = {
+  Lr = "plus",
+  Ur = {
     [Ps]: Wr,
     [Xs]: Wr,
     [Rs]: Mr,
@@ -1074,8 +1078,8 @@ var rs = "Header_content_b9e0be90",
     [Cr]: $r,
     [Sr]: $r,
     [Br]: $r,
-    [br]: Ur,
-    [jr]: Ur,
+    [br]: Lr,
+    [jr]: Lr,
   };
 function Xr(e) {
   const a = Number(e.trim());
@@ -1096,7 +1100,7 @@ function qr(e) {
 function Qr(e) {
   return "True" === e?.recordsItemsDetails?.isEnabled;
 }
-var Yr = { [Cs]: Kr, [Us]: Kr, [$s]: Kr, [tr]: Kr, [Ar]: qr, [Ms]: Qr, [er]: Qr },
+var Yr = { [Cs]: Kr, [Ls]: Kr, [$s]: Kr, [tr]: Kr, [Ar]: qr, [Ms]: Qr, [er]: Qr },
   Zr = {
     [sr]: Kr,
     [yr]: Kr,
@@ -1133,10 +1137,10 @@ function nn(e, a) {
   return t ? t(e) : an[e];
 }
 function ln(e, a) {
-  return Dr.indexOf(e.paramName) - Dr.indexOf(a.paramName);
+  return Hr.indexOf(e.paramName) - Hr.indexOf(a.paramName);
 }
 function on(e, a) {
-  return Hr.indexOf(e.paramName) - Hr.indexOf(a.paramName);
+  return Dr.indexOf(e.paramName) - Dr.indexOf(a.paramName);
 }
 function cn(e, a) {
   return Or.indexOf(e.paramName) - Or.indexOf(a.paramName);
@@ -1147,11 +1151,7 @@ function dn(e) {
     currencyType: e.currencyType,
     baseValue: e.baseValue,
     premiumValue: e.premiumValue,
-    recordsItemsDetails: Fe(
-      e.detailedItemRecords,
-      (e, a) => ((e[a.itemName] = a.itemValue), e),
-      {},
-    ),
+    recordsItemsDetails: T(e.detailedItemRecords, (e, a) => ((e[a.itemName] = a.itemValue), e), {}),
   };
 }
 function mn(e, a) {
@@ -1161,29 +1161,29 @@ function mn(e, a) {
   return [t, s];
 }
 function un(e, a) {
-  const t = ya(e.earned, dn),
-    s = ya(e.expenses, dn),
-    r = ya(e.total, dn),
+  const t = i(e.earned, dn),
+    s = i(e.expenses, dn),
+    r = i(e.total, dn),
     n = [yr, Ir],
-    i = [br, jr],
-    [l, o] = mn(r, (e) => n.includes(e.paramName)),
-    [c, d] = mn([...t, ...l], (e) => i.includes(e.paramName));
+    l = [br, jr],
+    [o, c] = mn(r, (e) => n.includes(e.paramName)),
+    [d, m] = mn([...t, ...o], (e) => l.includes(e.paramName));
   return {
-    records: [...d, ...s].sort(a),
-    total: ((m = [...o, ...c]),
-    m.filter((e) => {
+    records: [...m, ...s].sort(a),
+    total: ((u = [...c, ...d]),
+    u.filter((e) => {
       const a = Boolean(e.premiumValue || e.baseValue),
         t = Vr.has(e.paramName);
       return a || t;
     })).sort(a),
   };
-  var m;
+  var u;
 }
-var _n = (e) => e in Lr;
+var _n = (e) => e in Ur;
 function fn({ xp: e, freeXp: a }) {
   const t = e?.paramName || a?.paramName;
-  la("string" == typeof t, "xp or freeXp paramName is not provided");
-  const s = _n(t) ? Lr[t] : void 0,
+  Ke("string" == typeof t, "xp or freeXp paramName is not provided");
+  const s = _n(t) ? Ur[t] : void 0,
     r =
       void 0 !== e?.recordsItemsDetails && Object.keys(e.recordsItemsDetails).length > 0
         ? e.recordsItemsDetails
@@ -1198,8 +1198,8 @@ function fn({ xp: e, freeXp: a }) {
 }
 function pn({ credits: e, gold: a }) {
   const t = e?.paramName || a?.paramName;
-  la("string" == typeof t, "credits or gold paramName is not provided");
-  const s = _n(t) ? Lr[t] : void 0,
+  Ke("string" == typeof t, "credits or gold paramName is not provided");
+  const s = _n(t) ? Ur[t] : void 0,
     r =
       void 0 !== e?.recordsItemsDetails && Object.keys(e.recordsItemsDetails).length > 0
         ? e?.recordsItemsDetails
@@ -1215,25 +1215,25 @@ function pn({ credits: e, gold: a }) {
 function bn(e, a) {
   const t = e.paramName;
   return (
-    la(((e) => e in Tr)(t), `No analogue for ${t} in free xp parameter names`),
+    Ke(((e) => e in Tr)(t), `No analogue for ${t} in free xp parameter names`),
     a.find((e) => Tr[t] === e.paramName)
   );
 }
 function hn(e, a) {
   const t = e.paramName;
   return (
-    la(((e) => e in Er)(t), `No analogue for ${t} in gold parameter names`),
+    Ke(((e) => e in Er)(t), `No analogue for ${t} in gold parameter names`),
     a.find((e) => Er[t] === e.paramName)
   );
 }
 function vn(e, a) {
   return ((t = (function (e, a) {
-    const t = We(
+    const t = Ue(
         a,
         (e) => Rr.has(e.paramName),
         (e) => fn({ freeXp: e }),
       ),
-      s = ya(e, (e) => (Pr.has(e.paramName) ? fn({ xp: e }) : fn({ xp: e, freeXp: bn(e, a) })));
+      s = i(e, (e) => (Pr.has(e.paramName) ? fn({ xp: e }) : fn({ xp: e, freeXp: bn(e, a) })));
     return [...t, ...s];
   })(e, a)),
   t.filter((e) => {
@@ -1246,7 +1246,7 @@ function vn(e, a) {
 }
 function gn(e, a) {
   return ((t = (function (e, a) {
-    return ya(e, (e) =>
+    return i(e, (e) =>
       kr.has(e.paramName) ? pn({ credits: e }) : pn({ credits: e, gold: hn(e, a) }),
     );
   })(e, a)),
@@ -1284,7 +1284,7 @@ function Nn({ credits: e, gold: a }) {
   );
 }
 var jn = (e) => e.wotPlusType !== Ea.None,
-  [In, wn] = fe()(({ observableModel: e }) => {
+  [In, wn] = me()(({ observableModel: e }) => {
     const a = {
         ...e.primitives(["hasAnyPremium", "wotPlusType", "hasPenalties"], "additionalBonus"),
         hasWotPlus: e.transform(jn, "additionalBonus"),
@@ -1314,7 +1314,7 @@ var jn = (e) => e.wotPlusType !== Ea.None,
           total: e.arrayClone("financialReport.crystals.total"),
         },
       },
-      t = ze.model(() =>
+      t = Re.model(() =>
         xn({
           xp: { earned: a.xp.earned.get(), expenses: a.xp.expenses.get(), total: a.xp.total.get() },
           freeXp: {
@@ -1324,7 +1324,7 @@ var jn = (e) => e.wotPlusType !== Ea.None,
           },
         }),
       ),
-      s = ze.model(() =>
+      s = Re.model(() =>
         Nn({
           credits: {
             earned: a.credits.earned.get(),
@@ -1338,7 +1338,7 @@ var jn = (e) => e.wotPlusType !== Ea.None,
           },
         }),
       ),
-      r = ze.model(() =>
+      r = Re.model(() =>
         (function ({ earned: e, expenses: a, total: t }) {
           const s = un({ earned: e, expenses: a, total: t });
           return { records: yn(s.records), total: yn(s.total) };
@@ -1349,30 +1349,30 @@ var jn = (e) => e.wotPlusType !== Ea.None,
         }),
       );
     return { ...a, computes: { experience: t, credits: s, crystals: r } };
-  }, ae),
+  }, b),
   An = "ListItem_received_ffdc3010",
   Cn = "ListItem_separator_71797768",
   Bn = "ListItem_label_4ab3c391",
   Sn = "ListItem_label__withIcon_c2381aa",
   Pn = "ListItem_labelIcon_acb0da4",
-  Rn = Ie("ListItem", "ListItem_bcdaabbd"),
+  Rn = ge("ListItem", "ListItem_bcdaabbd"),
   kn = (0, ot.forwardRef)(
     ({ labelKey: e, children: a, classNames: t, params: s, labelIconPath: r, ...n }, i) => {
-      const l = m.resolve("images");
+      const l = c.resolve("images");
       return (0, vt.jsxs)(Rn, {
         ...n,
         ref: i,
         "data-test-id": `${e}`,
         children: [
           (0, vt.jsxs)("div", {
-            className: F(Bn, void 0 !== r && Sn, t?.label),
+            className: xa(Bn, void 0 !== r && Sn, t?.label),
             children: [
               void 0 !== r &&
                 (0, vt.jsx)("div", {
                   style: { backgroundImage: `url(${l.readOrEmpty(r)})` },
-                  className: F(Pn, t?.icon),
+                  className: xa(Pn, t?.icon),
                 }),
-              (0, vt.jsx)(Q, { upgradeLegacy: !0, path: e, params: s }),
+              (0, vt.jsx)(ye, { upgradeLegacy: !0, path: e, params: s }),
             ],
           }),
           (0, vt.jsxs)("div", {
@@ -1385,28 +1385,28 @@ var jn = (e) => e.wotPlusType !== Ea.None,
   ),
   Tn = "Record_420804f3",
   En = "Record_value_4d088deb",
-  Dn = "Record_value__decreasing_8cff45fa",
-  Hn = ({ formatter: e, value: a, modifier: t, currency: s, classNames: r, iconPath: n }) => {
+  Hn = "Record_value__decreasing_8cff45fa",
+  Dn = ({ formatter: e, value: a, modifier: t, currency: s, classNames: r, iconPath: n }) => {
     if (void 0 === a) return null;
     const i = t === Gr || a < 0;
     return (0, vt.jsxs)("div", {
-      className: F(Tn, r?.base),
+      className: xa(Tn, r?.base),
       children: [
         (0, vt.jsxs)("div", {
-          className: F(En, i && Dn, r?.value),
+          className: xa(En, i && Hn, r?.value),
           "data-test-id": `${s}`,
           children: [
             qa(t)
-              .with(Mr, () => (0, vt.jsx)(Q, { path: "common.multiplierSmall" }))
-              .with(Wr, () => (0, vt.jsx)(Q, { path: "common.multiplierSmall" }))
-              .with(Gr, () => (0, vt.jsx)(Q, { path: "common.multiplierSmall" }))
-              .with(Ur, () => (0, vt.jsx)(Q, { path: "common.plus" }))
+              .with(Mr, () => (0, vt.jsx)(ye, { path: "common.multiplierSmall" }))
+              .with(Wr, () => (0, vt.jsx)(ye, { path: "common.multiplierSmall" }))
+              .with(Gr, () => (0, vt.jsx)(ye, { path: "common.multiplierSmall" }))
+              .with(Lr, () => (0, vt.jsx)(ye, { path: "common.plus" }))
               .otherwise(() => null),
             e(a, s),
-            t === $r && (0, vt.jsx)(Q, { path: "common.common.percent" }),
+            t === $r && (0, vt.jsx)(ye, { path: "common.common.percent" }),
           ],
         }),
-        n && (0, vt.jsx)(Aa, { width: 24, height: 24, path: n }),
+        n && (0, vt.jsx)(na, { width: 24, height: 24, path: n }),
       ],
     });
   },
@@ -1417,8 +1417,8 @@ var jn = (e) => e.wotPlusType !== Ea.None,
   Mn = "RecordGroup_record__first_9121e1b7",
   Gn = "RecordGroup_separator_9f211d97",
   $n = "RecordGroup_separatorBackground_8a447834",
-  Un = "RecordGroup_value_1f34e2e2",
-  Ln = "RecordGroup_value__total_126d88a1",
+  Ln = "RecordGroup_value_1f34e2e2",
+  Un = "RecordGroup_value__total_126d88a1",
   Xn = "RecordGroup_value__freeXP_931265db";
 function Fn(e, a) {
   return "additionalBonusXP" !== e || (void 0 !== a && a > 0);
@@ -1450,41 +1450,44 @@ var qn = ({
     function o(a) {
       switch (e) {
         case Ps:
-          return Y.formatReal("woZeroDigits", a);
+          return va.formatReal("woZeroDigits", a);
         case Ar:
-          return Y.formatReal("fractional", a);
+          return va.formatReal("fractional", a);
         default:
-          return Y.formatNumber("integral", a);
+          return va.formatNumber("integral", a);
       }
     }
     return (0, vt.jsxs)("div", {
-      className: F(On, r && Vn),
+      className: xa(On, r && Vn),
       children: [
         (0, vt.jsx)("div", {
-          className: F(
+          className: xa(
             zn,
             Mn,
             Kn({ wotPlusActive: l, paramName: e, value: a, hasPenalties: n }) && Wn,
           ),
-          children: (0, vt.jsx)(Hn, {
+          children: (0, vt.jsx)(Dn, {
             value: a,
             currency: "xp",
             modifier: Fn(e, a) ? s : void 0,
             formatter: o,
-            classNames: { value: F(Un, i && Ln) },
+            classNames: { value: xa(Ln, i && Un) },
             iconPath: nn("xp", e),
           }),
         }),
         void 0 !== t &&
           (0, vt.jsx)("div", { className: Gn, children: (0, vt.jsx)("div", { className: $n }) }),
         (0, vt.jsx)("div", {
-          className: F(zn, Kn({ wotPlusActive: l, paramName: e, value: t, hasPenalties: n }) && Wn),
-          children: (0, vt.jsx)(Hn, {
+          className: xa(
+            zn,
+            Kn({ wotPlusActive: l, paramName: e, value: t, hasPenalties: n }) && Wn,
+          ),
+          children: (0, vt.jsx)(Dn, {
             value: t,
             currency: ys,
             modifier: Fn(e, t) ? s : void 0,
             formatter: o,
-            classNames: { value: F(Un, Xn, i && Ln) },
+            classNames: { value: xa(Ln, Xn, i && Un) },
             iconPath: nn(ys, e),
           }),
         }),
@@ -1497,9 +1500,9 @@ var qn = ({
   Jn = "Item_label__gold_49ec59ab",
   ei = {
     [Cs]: "title.base",
-    [Us]: "title.base",
+    [Ls]: "title.base",
     [Bs]: "noPenalty",
-    [Ls]: "noPenalty",
+    [Us]: "noPenalty",
     [Ss]: "friendlyFirePenalty",
     [Ps]: "igrBonus.simpleLabel",
     [Xs]: "igrBonus.simpleLabel",
@@ -1511,9 +1514,9 @@ var qn = ({
     [qs]: "boosters",
     [Es]: "tacticalTraining",
     [Qs]: "militaryManeuvers",
-    [Ds]: "holidayOps",
+    [Hs]: "holidayOps",
     [Ys]: "holidayOps",
-    [Hs]: "event",
+    [Ds]: "event",
     [Zs]: "event",
     [Os]: "referralBonus.fullLabel",
     [Vs]: "premiumVehicleXP",
@@ -1544,9 +1547,9 @@ var qn = ({
   ni = () =>
     (0, vt.jsx)("span", {
       className: Zn,
-      children: (0, vt.jsx)(Q, { path: "battle_results.details.calculations.maximum" }),
+      children: (0, vt.jsx)(ye, { path: "battle_results.details.calculations.maximum" }),
     }),
-  ii = ja(
+  ii = _e(
     ({
       record: { paramName: e, premium: a, standard: t, modifier: s, recordsItemsDetails: r },
       total: n,
@@ -1567,7 +1570,7 @@ var qn = ({
         labelIconPath: p,
         labelKey: `battle_results.details.calculations.${_}`,
         params: { ...(f && { bonusFactor: Xr(f) }), ...(u && { maximum: (0, vt.jsx)(ni, {}) }) },
-        classNames: { label: F(Yn, ri.has(e) && Jn) },
+        classNames: { label: xa(Yn, ri.has(e) && Jn) },
         children: (0, vt.jsxs)("div", {
           className: Qn,
           children: [
@@ -1597,24 +1600,24 @@ var qn = ({
   li = "IncomeStatement_560dd244",
   oi = "IncomeStatement_base__scroll_fb9f1475",
   ci = "IncomeStatement_item_48b34a63",
-  di = ja(
+  di = _e(
     (0, ot.forwardRef)(({ className: e, scrollable: a, ...t }, s) => {
       const { model: r } = wn(),
         n = r.computes.experience();
       return (0, vt.jsx)(gs, {
         ...t,
         ref: s,
-        className: F(li, a && oi, e),
+        className: xa(li, a && oi, e),
         scrollable: a,
-        children: ya(n.records, (e) => (0, vt.jsx)(ii, { record: e, className: ci }, e.paramName)),
+        children: i(n.records, (e) => (0, vt.jsx)(ii, { record: e, className: ci }, e.paramName)),
       });
     }),
   ),
   mi = "Total_item_a8580361",
   ui = "Total_divider_1de1ca28",
   _i = "Total_dividerImage_ab06168d",
-  fi = Ie("ExperienceTotal", "Total_19236d49"),
-  pi = ja(
+  fi = ge("ExperienceTotal", "Total_19236d49"),
+  pi = _e(
     (0, ot.forwardRef)((e, a) => {
       const { model: t } = wn(),
         s = t.computes.experience();
@@ -1630,9 +1633,9 @@ var qn = ({
   ),
   bi = "Experience_a014c8c",
   hi = "Experience_base__scroll_f75d07c6",
-  vi = Ie("Experience"),
+  vi = ge("Experience"),
   gi = (0, ot.forwardRef)(({ scrollable: e, className: a, ...t }, s) =>
-    (0, vt.jsx)(vi, { ...t, ref: s, className: F(bi, e && hi, a) }),
+    (0, vt.jsx)(vi, { ...t, ref: s, className: xa(bi, e && hi, a) }),
   );
 ((gi.Header = ds), (gi.Item = ii), (gi.Total = pi), (gi.IncomeStatement = di));
 var yi = "Header_cbd845ec",
@@ -1641,34 +1644,34 @@ var yi = "Header_cbd845ec",
   ji = "Header_title__active_e5dd0f77",
   Ii = "Header_title__premium_2c23921f",
   wi = "Header_icon_3b4dc587",
-  Ai = ja(
+  Ai = _e(
     (0, ot.forwardRef)(({ className: e, ...a }, t) => {
       const { model: s } = wn(),
         r = s.hasAnyPremium.get();
       return (0, vt.jsx)(cs, {
         ...a,
         ref: t,
-        className: F(yi, e),
+        className: xa(yi, e),
         title: "battle_results.details.credits",
         children: (0, vt.jsxs)("div", {
           className: xi,
           children: [
             (0, vt.jsx)("div", {
-              className: F(Ni, !r && ji),
-              children: (0, vt.jsx)(Q, { path: "battle_results.common.details.noPremTitle" }),
+              className: xa(Ni, !r && ji),
+              children: (0, vt.jsx)(ye, { path: "battle_results.common.details.noPremTitle" }),
             }),
             (0, vt.jsxs)("div", {
-              className: F(Ni, r && ji, Ii),
+              className: xa(Ni, r && ji, Ii),
               children: [
                 (0, vt.jsx)("div", {
                   className: wi,
-                  children: (0, vt.jsx)(Aa, {
+                  children: (0, vt.jsx)(na, {
                     width: 32,
                     height: 32,
                     path: "post_battle.wot_premium_32x32",
                   }),
                 }),
-                (0, vt.jsx)(Q, { path: "battle_results.getPremiumPopover.prem" }),
+                (0, vt.jsx)(ye, { path: "battle_results.getPremiumPopover.prem" }),
               ],
             }),
           ],
@@ -1684,8 +1687,8 @@ var yi = "Header_cbd845ec",
   ki = "RecordGroup_separator_9f211d97",
   Ti = "RecordGroup_separatorBackground_8a447834",
   Ei = "RecordGroup_value_9253748c",
-  Di = "RecordGroup_value__total_126d88a1",
-  Hi = "RecordGroup_value__gold_d7bd74ba";
+  Hi = "RecordGroup_value__total_126d88a1",
+  Di = "RecordGroup_value__gold_d7bd74ba";
 function Oi({ paramName: e, wotPlusActive: a, value: t }) {
   switch (e) {
     case Ar:
@@ -1707,32 +1710,32 @@ var Vi = ({
   }) => {
     function l(e, a) {
       return "aogasFactor" === n
-        ? Y.formatReal("fractional", e)
-        : Y.formatNumber("gold" === a ? "gold" : "integral", e);
+        ? va.formatReal("fractional", e)
+        : va.formatNumber("gold" === a ? "gold" : "integral", e);
     }
     return (0, vt.jsxs)("div", {
-      className: F(Ci, s && Bi),
+      className: xa(Ci, s && Bi),
       children: [
         (0, vt.jsx)("div", {
-          className: F(Si, Ri, Oi({ paramName: n, wotPlusActive: i, value: e }) && Pi),
-          children: (0, vt.jsx)(Hn, {
+          className: xa(Si, Ri, Oi({ paramName: n, wotPlusActive: i, value: e }) && Pi),
+          children: (0, vt.jsx)(Dn, {
             formatter: l,
             value: e,
             currency: xs,
             modifier: t,
-            classNames: { value: F(Ei, r && Di) },
+            classNames: { value: xa(Ei, r && Hi) },
             iconPath: nn(xs, n),
           }),
         }),
         void 0 !== a &&
           (0, vt.jsx)("div", { className: ki, children: (0, vt.jsx)("div", { className: Ti }) }),
         (0, vt.jsx)("div", {
-          className: F(Si, 0 === a && Pi),
-          children: (0, vt.jsx)(Hn, {
+          className: xa(Si, 0 === a && Pi),
+          children: (0, vt.jsx)(Dn, {
             value: a,
             currency: Ns,
             modifier: t,
-            classNames: { value: F(Ei, Hi, r && Di) },
+            classNames: { value: xa(Ei, Di, r && Hi) },
             formatter: l,
             iconPath: nn(Ns, n),
           }),
@@ -1773,10 +1776,10 @@ var Vi = ({
     [lr]: "petCredits.fullLabel",
   },
   $i = { [ur]: "subscription.wot_plus_pro_32x32", [_r]: "subscription.wot_plus_pro_32x32" },
-  Ui = { [ur]: "subscription.wot_plus_32x32" },
-  Li = { [Ea.None]: void 0, [Ea.Core]: Ui, [Ea.Pro]: $i },
+  Li = { [ur]: "subscription.wot_plus_32x32" },
+  Ui = { [Ea.None]: void 0, [Ea.Core]: Li, [Ea.Pro]: $i },
   Xi = [ur, _r],
-  Fi = ja(({ record: e, total: a, ...t }) => {
+  Fi = _e(({ record: e, total: a, ...t }) => {
     const { model: s } = wn(),
       r = s.hasAnyPremium.get(),
       n = s.hasWotPlus.get(),
@@ -1786,12 +1789,12 @@ var Vi = ({
       u = d?.bonusFactor,
       _ = Gi[i],
       f = en[xr](e, n),
-      p = Li[s.wotPlusType.get()]?.[i];
+      p = Ui[s.wotPlusType.get()]?.[i];
     return (0, vt.jsx)(kn, {
       ...t,
       labelIconPath: p,
       labelKey: `battle_results.details.calculations.${_}`,
-      classNames: { label: F(Wi, Xi.includes(i) && Mi) },
+      classNames: { label: xa(Wi, Xi.includes(i) && Mi) },
       params: { ...(m && { bonusFactor: Xr(m) }), ...(u && { bonusFactor: Fr(u) }) },
       children: (0, vt.jsxs)("div", {
         className: zi,
@@ -1821,24 +1824,24 @@ var Vi = ({
   Ki = "IncomeStatement_560dd244",
   qi = "IncomeStatement_base__scroll_fb9f1475",
   Qi = "IncomeStatement_item_48b34a63",
-  Yi = ja(
+  Yi = _e(
     (0, ot.forwardRef)(({ className: e, scrollable: a, ...t }, s) => {
       const { model: r } = wn(),
         n = r.computes.credits();
       return (0, vt.jsx)(gs, {
         ...t,
         ref: s,
-        className: F(Ki, a && qi, e),
+        className: xa(Ki, a && qi, e),
         scrollable: a,
-        children: ya(n.records, (e) => (0, vt.jsx)(Fi, { record: e, className: Qi }, e.paramName)),
+        children: i(n.records, (e) => (0, vt.jsx)(Fi, { record: e, className: Qi }, e.paramName)),
       });
     }),
   ),
   Zi = "Total_item_de53c8b0",
   Ji = "Total_divider_1de1ca28",
   el = "Total_dividerImage_ab06168d",
-  al = Ie("CreditsTotal", "Total_19236d49"),
-  tl = ja(
+  al = ge("CreditsTotal", "Total_19236d49"),
+  tl = _e(
     (0, ot.forwardRef)((e, a) => {
       const { model: t } = wn(),
         s = t.computes.credits();
@@ -1854,9 +1857,9 @@ var Vi = ({
   ),
   sl = "Credits_68f91d81",
   rl = "Credits_base__scroll_759f08f3",
-  nl = Ie("Credits"),
+  nl = ge("Credits"),
   il = (0, ot.forwardRef)(({ scrollable: e, className: a, ...t }, s) =>
-    (0, vt.jsx)(nl, { ...t, ref: s, className: F(sl, e && rl, a) }),
+    (0, vt.jsx)(nl, { ...t, ref: s, className: xa(sl, e && rl, a) }),
   );
 ((il.Header = Ai), (il.Item = Fi), (il.Total = tl), (il.IncomeStatement = Yi));
 var ll = "Item_currencyValue_81f5b9fb",
@@ -1876,21 +1879,21 @@ var ll = "Item_currencyValue_81f5b9fb",
           ...t,
           labelKey: ml[s],
           classNames: { label: dl, ...t.classNames },
-          children: (0, vt.jsx)(we, {
+          children: (0, vt.jsx)(oe, {
             reverse: !0,
             type: "crystal",
-            size: Ee.small,
+            size: ca.small,
             children: (0, vt.jsx)("div", {
-              className: F(ll, r < 0 && cl, a && ol),
-              children: Y.formatNumber("integral", r),
+              className: xa(ll, r < 0 && cl, a && ol),
+              children: va.formatNumber("integral", r),
             }),
           }),
         })
       : (console.error(`Parameter name "${s} is not valid for bonds`), null);
   },
   _l = "IncomeStatement_item_48b34a63",
-  fl = Ie("BondsIncomeStatement"),
-  pl = ja(
+  fl = ge("BondsIncomeStatement"),
+  pl = _e(
     (0, ot.forwardRef)((e, a) => {
       const { model: t } = wn(),
         s = t.computes.crystals();
@@ -1905,8 +1908,8 @@ var ll = "Item_currencyValue_81f5b9fb",
   hl = "Total_item__extinguished_4be8343f",
   vl = "Total_divider_1de1ca28",
   gl = "Total_dividerImage_ab06168d",
-  yl = Ie("BondsTotal", "Total_120fb0c4"),
-  xl = ja(
+  yl = ge("BondsTotal", "Total_120fb0c4"),
+  xl = _e(
     (0, ot.forwardRef)((e, a) => {
       const { model: t } = wn(),
         s = t.computes.crystals();
@@ -1918,7 +1921,11 @@ var ll = "Item_currencyValue_81f5b9fb",
           s.total.map((e) =>
             (0, vt.jsx)(
               ul,
-              { total: !0, record: e, className: F(bl, (!e.baseValue || 0 === e.baseValue) && hl) },
+              {
+                total: !0,
+                record: e,
+                className: xa(bl, (!e.baseValue || 0 === e.baseValue) && hl),
+              },
               e.paramName,
             ),
           ),
@@ -1929,7 +1936,7 @@ var ll = "Item_currencyValue_81f5b9fb",
   Nl = (0, ot.forwardRef)((e, a) =>
     (0, vt.jsx)(cs, { ...e, title: "battle_results.details.crystal", ref: a }),
   ),
-  jl = Ie("Bonds");
+  jl = ge("Bonds");
 ((jl.Header = Nl), (jl.Item = ul), (jl.Total = xl), (jl.IncomeStatement = pl));
 var Il = "FinancialReport_content_99bf970f",
   wl = "FinancialReport_leftContent_75c21204",
@@ -1939,18 +1946,18 @@ var Il = "FinancialReport_content_99bf970f",
   Sl = "FinancialReport_credits_7712b0c",
   Pl = "FinancialReport_header_d56ebc61",
   Rl = "FinancialReport_total_bdf3e42b",
-  kl = Ie("FinancialReport", "FinancialReport_c3cc562a"),
+  kl = ge("FinancialReport", "FinancialReport_c3cc562a"),
   Tl = ({ className: e }) => {
     const [a, t] = (0, ot.useState)({ credits: !1, experience: !1 }),
       s = (0, ot.useRef)(null),
       r = (0, ot.useRef)(null),
       n = (0, ot.useRef)(null),
-      i = Le(
+      i = k(
         { margin: 18 },
         { medium: { margin: 19 }, large: { margin: 16 }, extraLarge: { margin: 30 } },
       );
     return (
-      He(
+      Pe(
         s,
         (0, ot.useCallback)(() => {
           if (!s.current || !r.current || !n.current) return;
@@ -2020,73 +2027,73 @@ var Il = "FinancialReport_content_99bf970f",
   El = (function (e) {
     return ((e.Done = "done"), (e.Locked = "notAvailable"), (e.Active = ""), e);
   })({}),
-  Dl = Se({
-    index: n(),
-    name: pe(),
-    value: pe(),
-    isCompensation: h(),
-    tooltipId: pe(),
-    tooltipContentId: pe(),
-    label: pe(),
-    probability: n(),
-    item: _a(pe()),
-    icon: _a(pe()),
-    iconBig: _a(pe()),
-    iconSmall: _a(pe()),
+  Hl = Ie({
+    index: s(),
+    name: ue(),
+    value: ue(),
+    isCompensation: _(),
+    tooltipId: ue(),
+    tooltipContentId: ue(),
+    label: ue(),
+    probability: s(),
+    item: oa(ue()),
+    icon: oa(ue()),
+    iconBig: oa(ue()),
+    iconSmall: oa(ue()),
   }),
-  Hl = Se({ conditionType: pe() }),
-  Ol = Se({
-    ...Hl.entries,
-    titleData: pe(),
-    descrData: pe(),
-    iconKey: pe(),
-    current: n(),
-    total: n(),
-    earned: n(),
-    progressType: pe(),
-    sortKey: pe(),
+  Dl = Ie({ conditionType: ue() }),
+  Ol = Ie({
+    ...Dl.entries,
+    titleData: ue(),
+    descrData: ue(),
+    iconKey: ue(),
+    current: s(),
+    total: s(),
+    earned: s(),
+    progressType: ue(),
+    sortKey: ue(),
   }),
-  Vl = Se({ ...Hl.entries, items: ie(da([Ol, ue(() => Vl)])) }),
-  zl = Se({
-    id: pe(),
-    groupId: pe(),
-    type: n(),
-    title: pe(),
-    description: pe(),
-    decoration: n(),
-    status: na(El),
+  Vl = Ie({ ...Dl.entries, items: ae(la([Ol, re(() => Vl)])) }),
+  zl = Ie({
+    id: ue(),
+    groupId: ue(),
+    type: s(),
+    title: ue(),
+    description: ue(),
+    decoration: s(),
+    status: sa(El),
   }),
   Wl =
-    (Se({
+    (Ie({
       ...zl.entries,
-      bonuses: ie(Dl),
+      bonuses: ae(Hl),
       preBattleCondition: Vl,
       bonusCondition: Vl,
       postBattleCondition: Vl,
     }),
-    Se({
-      animated: _a(h()),
-      completed: _a(h()),
-      component: A((e) => ve(e)),
-      categoryOrder: n(),
-      notifications: _a(ie(Se({ id: pe(), item: A((e) => (0, ot.isValidElement)(e)) }))),
+    Ie({
+      animated: oa(_()),
+      completed: oa(_()),
+      component: x((e) => fe(e)),
+      categoryOrder: s(),
+      notifications: oa(ae(Ie({ id: ue(), item: x((e) => (0, ot.isValidElement)(e)) }))),
     })),
-  Ml = da([Se({ status: ce("loaded"), result: Wl }), Se({ status: ce("loading") })]),
-  Gl = m.resolve("strings"),
+  Ml = la([Ie({ status: te("loaded"), result: Wl }), Ie({ status: te("loading") })]),
+  Gl = c.resolve("strings"),
   $l = ["huntsman", "medalGore", "medalStark"],
-  Ul = "markOfMastery",
-  Ll = "marksOnGun",
+  Ll = "markOfMastery",
+  Ul = "marksOnGun",
   Xl = "epic",
   Fl = "specialAchievements",
   Kl = "right",
   ql = "left",
   Ql = "other",
-  Yl = [Ul, Ll, Xl, Fl, Kl, ql, Ql];
+  Yl = [Ll, Ul, Xl, Fl, Kl, ql, Ql];
 function Zl(e) {
-  return e.groupID === Ul
-    ? Ul
-    : e.groupID === Ll
-      ? Ll
+  return e.groupID === Ll
+    ? Ll
+    : e.groupID === Ul
+      ? Ul
       : e.epic
         ? Xl
         : $l.includes(e.name)
@@ -2099,7 +2106,7 @@ function Zl(e) {
                 Ql);
 }
 function Jl(e) {
-  return P(e, (e, a) => {
+  return ze(e, (e, a) => {
     const t = Zl(e),
       s = Zl(a),
       r = Yl.indexOf(t),
@@ -2240,7 +2247,7 @@ function yo(e) {
   };
 }
 function xo(e) {
-  return { labelKey: e.labelKey, paramValueType: e.paramValueType, value: ya(e.value, (e) => e) };
+  return { labelKey: e.labelKey, paramValueType: e.paramValueType, value: i(e.value, (e) => e) };
 }
 function No(e) {
   return {
@@ -2248,14 +2255,14 @@ function No(e) {
       label: e.label,
       labelKey: e.labelKey,
       paramValueType: e.paramValueType,
-      value: ya(e.value, (e) => e),
+      value: i(e.value, (e) => e),
     }),
-    details: ya(e.details, (e) => xo(e)),
+    details: i(e.details, (e) => xo(e)),
   };
 }
 function jo(e) {
-  const a = Oe(e.detailedStatistics, (e) => e.labelKey === fo.TeamHitsDamage)?.value,
-    t = void 0 !== a ? xe(a, 0) : 0,
+  const a = ke(e.detailedStatistics, (e) => e.labelKey === fo.TeamHitsDamage)?.value,
+    t = void 0 !== a ? wa(a, 0) : 0,
     s = e.efficiencyValues.kills - (t ?? 0);
   return {
     personal: e.isPersonal,
@@ -2263,13 +2270,13 @@ function jo(e) {
     rank: e.rank,
     division: e.division,
     squadIndex: e.squadIndex,
-    achievements: ya(e.achievements, yo),
-    account: x(e.userNames),
+    achievements: i(e.achievements, yo),
+    account: E(e.userNames),
     userStatus: bo(e.userStatus),
-    killer: x(e.userStatus.killer),
+    killer: E(e.userStatus.killer),
     vehicle: Pa(e.vehicle.vehicleCD, e.vehicle.techName)
       ? void 0
-      : { ...p(e.vehicle), longName: e.vehicle.longName },
+      : { ...pa(e.vehicle), longName: e.vehicle.longName },
     efficiencyValues: {
       substractedAlliesKills: s,
       ...((r = e.efficiencyValues),
@@ -2280,7 +2287,7 @@ function jo(e) {
         prestigePoints: r.prestigePoints,
       }),
     },
-    detailedStatistics: ya(e.detailedStatistics, No),
+    detailedStatistics: i(e.detailedStatistics, No),
     databaseId: e.databaseID,
   };
   var r;
@@ -2306,7 +2313,7 @@ function Ro(e, a, t) {
 function ko({ anonymizer: e, personal: a, platoonType: t }) {
   return !(a || !e) && (t === Po || null === t);
 }
-var [To, Eo] = fe()(
+var [To, Eo] = me()(
     (e) => {
       const { observableModel: a, cleanup: t } = e,
         s = {
@@ -2328,26 +2335,26 @@ var [To, Eo] = fe()(
         r = {
           battleInfo: a.transform(po, "battleInfo"),
           additionalBonus: a.transform(go, "additionalBonus"),
-          allPlayersDictionary: u.box({}),
+          allPlayersDictionary: K.box({}),
           personalEfficiency: {
-            opened: u.box(!1),
-            achievements: a.transform((e) => Jl(ya(e, yo)), "achievements"),
+            opened: K.box(!1),
+            achievements: a.transform((e) => Jl(i(e, yo)), "achievements"),
             statistics: {
-              details: u.box([]),
-              capturePoints: u.box(0),
-              droppedCapturePoints: u.box(0),
+              details: K.box([]),
+              capturePoints: K.box(0),
+              droppedCapturePoints: K.box(0),
             },
           },
           teamsStatistic: {
-            allies: u.box([]),
-            enemies: u.box([]),
-            sorting: u.box({ column: mo.Vehicle, sortDirection: uo.Desc }),
-            selectedRow: u.box(),
+            allies: K.box([]),
+            enemies: K.box([]),
+            sorting: K.box({ column: mo.Vehicle, sortDirection: uo.Desc }),
+            selectedRow: K.box(),
           },
-          user: { names: u.box(), status: u.box() },
+          user: { names: K.box(), status: K.box() },
           playerSatisfaction: a.object("playerSatisfaction"),
           pathToPlugins: a.dict("pathToPlugins"),
-          notificationList: u.box([]),
+          notificationList: K.box([]),
           bansModel: a.object("bansModel"),
           bannedByAlliesVehicle: a.object("bansModel.bannedByAlliesVehicle"),
           bannedByEnemiesVehicle: a.object("bansModel.bannedByEnemiesVehicle"),
@@ -2363,16 +2370,16 @@ var [To, Eo] = fe()(
           ]),
           currentProgressionItemIndex: a.primitives(["currentItemIndex"]).currentItemIndex,
         };
-      (Ha(t)(() => {
+      (Da(t)(() => {
         const e = {};
         (r.teamsStatistic.allies.set(
-          ya(s.teamsStatistic.allies.get(), (a) => {
+          i(s.teamsStatistic.allies.get(), (a) => {
             const t = jo(a);
             return ((e[t.account.username] = t), t);
           }),
         ),
           r.teamsStatistic.enemies.set(
-            ya(s.teamsStatistic.enemies.get(), (a) => {
+            i(s.teamsStatistic.enemies.get(), (a) => {
               const t = jo(a);
               return ((e[t.account.username] = t), t);
             }),
@@ -2380,7 +2387,7 @@ var [To, Eo] = fe()(
         const a = r.allPlayersDictionary.get();
         r.allPlayersDictionary.set({ ...a, ...e });
       }),
-        Ha(t)(() => {
+        Da(t)(() => {
           return r.teamsStatistic.sorting.set(
             ((e = s.teamsStatistic.sortingColumn.get()),
             (a = s.teamsStatistic.sortingOrder.get()),
@@ -2388,7 +2395,7 @@ var [To, Eo] = fe()(
           );
           var e, a;
         }),
-        Ha(t)(() => {
+        Da(t)(() => {
           (r.personalEfficiency.statistics.capturePoints.set(
             s.personalEffiency.capturePoints.get(),
           ),
@@ -2396,12 +2403,12 @@ var [To, Eo] = fe()(
               s.personalEffiency.droppedCapturePoints.get(),
             ));
         }));
-      const n = ze.structural(() =>
+      const n = Re.structural(() =>
           (function ({ anyPremium: e, credits: a, crystals: t, gold: s, xp: r }) {
-            const n = Oe(a, (e) => e.paramName === yr),
-              i = Oe(s, (e) => e.paramName === wr),
-              l = Oe(r, (e) => e.paramName === $s),
-              o = Oe(t, (e) => e.paramName === As),
+            const n = ke(a, (e) => e.paramName === yr),
+              i = ke(s, (e) => e.paramName === wr),
+              l = ke(r, (e) => e.paramName === $s),
+              o = ke(t, (e) => e.paramName === As),
               c = [];
             return (
               n && c.push(vo(n, e)),
@@ -2418,31 +2425,31 @@ var [To, Eo] = fe()(
             xp: s.xp.total.get(),
           }),
         ),
-        i = ze.structural(() => r.pathToPlugins.values().map((e) => ({ url: e.get() }))),
-        l = ze.shallow(() => {
-          const e = Oe(r.teamsStatistic.allies.get(), (e) => e.personal);
+        l = Re.structural(() => r.pathToPlugins.values().map((e) => ({ url: e.get() }))),
+        o = Re.shallow(() => {
+          const e = ke(r.teamsStatistic.allies.get(), (e) => e.personal);
           return (
-            la(void 0 !== e, "Personal info is not found"),
-            la(Wa(e), "There is no vehicle data in the personal info"),
+            Ke(void 0 !== e, "Personal info is not found"),
+            Ke(Wa(e), "There is no vehicle data in the personal info"),
             e
           );
         }),
-        o = ze.shallow(() => {
+        c = Re.shallow(() => {
           const e = r.teamsStatistic.selectedRow.get();
           if (void 0 === e) return;
           const a = (e.team === wo ? r.teamsStatistic.allies : r.teamsStatistic.enemies).get();
-          return Oe(a, (a) => a.account.username === e.username);
+          return ke(a, (a) => a.account.username === e.username);
         }),
-        c = ze.shallow(() => {
+        d = Re.shallow(() => {
           const e = r.allPlayersDictionary.get();
           return {
             assault: r.personalEfficiency.statistics.capturePoints.get(),
             defend: r.personalEfficiency.statistics.droppedCapturePoints.get(),
-            rows: Fe(
+            rows: T(
               s.personalEffiency.details.get(),
               (a, t) => {
                 const s = (function (e) {
-                  return Fe(
+                  return T(
                     e.personalEfficiencyItems,
                     (e, a) => {
                       switch (a.paramType) {
@@ -2484,13 +2491,13 @@ var [To, Eo] = fe()(
                 })(t);
                 if (
                   (function (e) {
-                    return v.structural(e, Io);
+                    return J.structural(e, Io);
                   })(s)
                 )
                   return a;
                 const r = e[t.userName];
                 return (
-                  la(void 0 !== r, `Such enemy ${t.userName} is not found`),
+                  Ke(void 0 !== r, `Such enemy ${t.userName} is not found`),
                   a.push({
                     ...s,
                     account: r.account,
@@ -2507,14 +2514,14 @@ var [To, Eo] = fe()(
             ),
           };
         }),
-        d = ze.shallow(() => {
-          const e = Oe(s.xp.total.get(), (e) => "totalXP" === e.paramName);
-          la(void 0 !== e, "totalXP record is not found in the financial report");
-          const a = Oe(s.credits.total.get(), (e) => "totalCredits" === e.paramName),
-            t = Oe(s.credits.total.get(), (e) => "intermediateTotalCredits" === e.paramName);
+        m = Re.shallow(() => {
+          const e = ke(s.xp.total.get(), (e) => "totalXP" === e.paramName);
+          Ke(void 0 !== e, "totalXP record is not found in the financial report");
+          const a = ke(s.credits.total.get(), (e) => "totalCredits" === e.paramName),
+            t = ke(s.credits.total.get(), (e) => "intermediateTotalCredits" === e.paramName);
           return (
-            la(void 0 !== a, "totalCredits record is not found in the financial report"),
-            la(
+            Ke(void 0 !== a, "totalCredits record is not found in the financial report"),
+            Ke(
               void 0 !== t,
               "intermediateTotalCredits record is not found in the financial report",
             ),
@@ -2528,31 +2535,31 @@ var [To, Eo] = fe()(
             }
           );
         }),
-        m = ze.model((e) => {
-          const a = xe(r.progressionItems.get(), e);
+        u = Re.model((e) => {
+          const a = wa(r.progressionItems.get(), e);
           if (!a) throw new Error(`item with index ${e} was not found`);
-          return ya(a.divisions, (e) => ({ ...e }));
+          return i(a.divisions, (e) => ({ ...e }));
         }),
-        _ = ze.shallow((e) => {
-          const a = xe(r.progressionItems.get(), e);
+        _ = Re.shallow((e) => {
+          const a = wa(r.progressionItems.get(), e);
           if (!a) throw new Error(`item with index ${e} was not found`);
-          return { ...a, division: Oe(m(e), (e) => e.state === it.Current)?.name };
+          return { ...a, division: ke(u(e), (e) => e.state === it.Current)?.name };
         }),
-        f = ze.primitive(() => {
+        f = Re.primitive(() => {
           const { status: e, leave: a } = r.battleInfo.get();
           return "win" === e && !a;
         }),
-        p = () => !L(r.unRankedBattleTypes.get(), r.battleInfo.get().arenaType);
+        p = () => !ya(r.unRankedBattleTypes.get(), r.battleInfo.get().arenaType);
       return {
         ...r,
         computes: {
           earnedCurrencies: n,
-          personalInfo: l,
-          efficiencyDetails: o,
-          personalEffiency: c,
-          premiumAndStandartEarnings: d,
-          pathToPlugins: i,
-          divisions: m,
+          personalInfo: o,
+          efficiencyDetails: c,
+          personalEffiency: d,
+          premiumAndStandartEarnings: m,
+          pathToPlugins: l,
+          divisions: u,
           progressionItem: _,
           isWin: f,
           isRankedBattle: p,
@@ -2581,10 +2588,10 @@ var [To, Eo] = fe()(
             : { localStorage: JSON.stringify([...t, e]) };
         }, "additionalBonus.onLocalStorageUpdated"),
         teamEfficiency: {
-          sort: ge((e) => {
+          sort: ja((e) => {
             (a.teamsStatistic.sorting.set(e), t(e));
           }),
-          selectRow: ge((e) => {
+          selectRow: ja((e) => {
             const t = a.teamsStatistic.selectedRow.get();
             t?.team !== e?.team || t?.username !== e?.username
               ? a.teamsStatistic.selectedRow.set(e)
@@ -2595,34 +2602,34 @@ var [To, Eo] = fe()(
           (e) => ({ state: e }),
           "playerSatisfaction.onSatisfactionRatingSelected",
         ),
-        setNotifications: ge((e) => {
+        setNotifications: ja((e) => {
           a.notificationList.set(e);
         }),
-        pushNotifications: ge((e) => {
+        pushNotifications: ja((e) => {
           0 !== e.length && a.notificationList.set([...a.notificationList.get(), ...e]);
         }),
       };
     },
   ),
-  Do = "NoProgress_e30a0572",
-  Ho = "NoProgress_header_fd4fa20b",
+  Ho = "NoProgress_e30a0572",
+  Do = "NoProgress_header_fd4fa20b",
   Oo = "NoProgress_description_965e21c0",
   Vo = Fa(function () {
-    const e = m.resolve("strings"),
+    const e = c.resolve("strings"),
       { controls: a } = Eo();
     return (0, vt.jsxs)("div", {
-      className: Do,
+      className: Ho,
       children: [
         (0, vt.jsx)("div", {
-          className: Ho,
+          className: Do,
           children: e.readOrEmpty("battle_results.common.missions.noProgress.header"),
         }),
         (0, vt.jsx)("div", {
           className: Oo,
           children: e.readOrEmpty("battle_results.common.missions.noProgress.description"),
         }),
-        (0, vt.jsx)(sa, {
-          theme: sa.themes.secondary,
+        (0, vt.jsx)(L, {
+          theme: L.themes.secondary,
           onClick: a.openMissions,
           children: e.readOrEmpty("battle_results.common.missions.noProgress.button"),
         }),
@@ -2632,13 +2639,13 @@ var [To, Eo] = fe()(
 var zo = "MissionsProgress_ca7ca547",
   Wo = "MissionsProgress_content_b1e9d53b",
   Mo = "MissionsProgress_verticalBar_a9f04f7f",
-  Go = Ia.cubicBezier(0.23, 0, 0.57, 1),
-  $o = Ie("MissionsProgress", zo);
-function Uo(e) {
+  Go = be.cubicBezier(0.23, 0, 0.57, 1),
+  $o = ge("MissionsProgress", zo);
+function Lo(e) {
   return e.reduce((e, a) => (a.result.notifications && e.push(...a.result.notifications), e), []);
 }
-function Lo(e) {
-  return We(
+function Uo(e) {
+  return Ue(
     e,
     (e) => Boolean(e.result.animated),
     (e, a) => a,
@@ -2646,11 +2653,11 @@ function Lo(e) {
 }
 var Xo = Fa(function ({ className: e }) {
     const { model: a, controls: t } = Eo(),
-      { active: s } = I(),
+      { active: s } = ee(),
       [r, n] = (0, ot.useState)(!1),
-      [i, l] = (0, ot.useState)(!1),
-      [o, c] = (0, ot.useState)(-1),
-      m = (function (e) {
+      [l, o] = (0, ot.useState)(!1),
+      [c, d] = (0, ot.useState)(-1),
+      _ = (function (e) {
         const [a, t] = (0, ot.useState)({}),
           s = (0, ot.useRef)({}),
           r = (0, ot.useRef)({});
@@ -2663,13 +2670,13 @@ var Xo = Fa(function ({ className: e }) {
             return (
               (async function () {
                 const l = await Promise.allSettled(
-                  We(
+                  Ue(
                     e,
                     (e) => !(e.url in a || e.url in r.current),
                     async (e) => {
                       ((r.current[e.url] = !0),
                         t((a) => ({ ...a, [e.url]: { status: "loading" } })));
-                      const a = await $(e.url);
+                      const a = await X(e.url);
                       return n.includes(e.url)
                         ? (i(a, e.url), { type: "rejected" })
                         : ((s.current[e.url] = a),
@@ -2707,12 +2714,12 @@ var Xo = Fa(function ({ className: e }) {
           a
         );
       })(a.computes.pathToPlugins()),
-      u = (0, ot.useMemo)(() => {
+      f = (0, ot.useMemo)(() => {
         return (
-          (e = m),
+          (e = _),
           Object.entries(e)
             .map(([e, a]) => {
-              const t = Ge(Ml, a);
+              const t = Ee(Ml, a);
               return t.success
                 ? t.output
                 : (console.error(`Failure to load plugin: ${e}`, t.issues), { status: "failure" });
@@ -2726,45 +2733,45 @@ var Xo = Fa(function ({ className: e }) {
             })
         );
         var e;
-      }, [m]),
-      { notifications: _, animatablePluginIndexes: f } = (0, ot.useMemo)(
-        () => ({ notifications: Uo(u), animatablePluginIndexes: Lo(u) }),
-        [u],
+      }, [_]),
+      { notifications: p, animatablePluginIndexes: b } = (0, ot.useMemo)(
+        () => ({ notifications: Lo(f), animatablePluginIndexes: Uo(f) }),
+        [f],
       );
-    Ce(() => c((e) => e + 1), o > -1 && o < f.length ? 600 : void 0);
-    const [p, h] = de(() => ({
+    ua(() => d((e) => e + 1), c > -1 && c < b.length ? 600 : void 0);
+    const [h, v] = g(() => ({
       from: { opacity: 0 },
       config: { duration: 660, easing: Go },
-      onRest: () => c(0),
+      onRest: () => d(0),
     }));
     return (
       (0, ot.useEffect)(() => {
         s === Xa.progression &&
-          (h.start({ to: { opacity: 1 } }), f.length > 0 && !1 === i && l(!0));
-      }, [i, s, h, u, f]),
+          (v.start({ to: { opacity: 1 } }), b.length > 0 && !1 === l && o(!0));
+      }, [l, s, v, f, b]),
       (0, ot.useEffect)(() => {
-        _.length > 0 && t.setNotifications(_);
-      }, [t, _]),
+        p.length > 0 && t.setNotifications(p);
+      }, [t, p]),
       (0, ot.useEffect)(() => {
-        i && s !== Xa.progression && n(!0);
-      }, [i, s]),
+        l && s !== Xa.progression && n(!0);
+      }, [l, s]),
       (0, vt.jsx)($o, {
         className: e,
-        children: (0, vt.jsx)(w.div, {
-          style: p,
+        children: (0, vt.jsx)(u.div, {
+          style: h,
           className: Wo,
-          children: d(m)
+          children: Te(_)
             ? (0, vt.jsx)(Vo, {})
-            : (0, vt.jsxs)(ee, {
+            : (0, vt.jsxs)(Ve, {
                 children: [
-                  (0, vt.jsx)(b, {
-                    children: ya(Object.entries(u), ([e, a], s) => {
+                  (0, vt.jsx)(P, {
+                    children: i(Object.entries(f), ([e, a], s) => {
                       const n = a.result.component;
                       return (0, vt.jsx)(
-                        ia,
+                        Ba,
                         {
                           children: (0, vt.jsx)(n, {
-                            animation: s <= (f[o] ?? -1),
+                            animation: s <= (b[c] ?? -1),
                             immediateAnimation: r,
                             pushNotifications: t.pushNotifications,
                           }),
@@ -2773,7 +2780,7 @@ var Xo = Fa(function ({ className: e }) {
                       );
                     }),
                   }),
-                  (0, vt.jsx)(ra, { classNames: { base: Mo } }),
+                  (0, vt.jsx)(m, { classNames: { base: Mo } }),
                 ],
               }),
         }),
@@ -2791,7 +2798,7 @@ var qo = { x: 50, y: -30, scale: 1.2, opacity: 0 };
 function Qo({ children: e, achievements: a, springsProps: t, vehicleNation: s }) {
   const [r, n] = (0, ot.useState)(new Set()),
     [i, l] = (0, ot.useState)(void 0),
-    [o, c] = z(a.length, () => ({ from: { ...qo, ...t?.from }, ...t }), [a.length, t]),
+    [o, c] = ne(a.length, () => ({ from: { ...qo, ...t?.from }, ...t }), [a.length, t]),
     d = (0, ot.useMemo)(
       () => ({
         api: c,
@@ -2829,10 +2836,10 @@ var Yo = {
     slideUpIn: "Achievements_slideUpIn_639a4a48",
   },
   Zo = (0, ot.forwardRef)(function (
-    { achievement: e, index: a, width: t, height: s, classNames: r },
-    n,
+    { achievement: e, index: a, width: t, height: s, classNames: n },
+    i,
   ) {
-    const l = i({
+    const l = r({
         args: (0, ot.useMemo)(
           () => ({ tooltipId: e.tooltipId, tooltipArgs: e.tooltipArgs }),
           [e.tooltipId, e.tooltipArgs],
@@ -2842,8 +2849,8 @@ var Yo = {
       { hoverIndex: c, setHoverIndex: d, vehicleNation: m } = Ko();
     return (0, vt.jsx)("div", {
       ...l,
-      ref: n,
-      className: F(Yo.achievement, Yo[`achievement__${so(a, c)}`], r?.achievement),
+      ref: i,
+      className: xa(Yo.achievement, Yo[`achievement__${so(a, c)}`], n?.achievement),
       onMouseEnter: function (e) {
         (o.play("mouse-enter", { original: e, target: "achievements:achievement" }),
           l.onMouseEnter(e),
@@ -2853,24 +2860,24 @@ var Yo = {
         (l.onMouseLeave(), d(void 0));
       },
       children: (0, vt.jsx)(
-        Aa,
+        na,
         {
           width: t,
           height: s,
           path: no({ groupID: e.groupID, iconName: e.iconName, vehicleNation: m }),
-          className: F(Yo.achievementIcon, r?.icon),
+          className: xa(Yo.achievementIcon, n?.icon),
         },
         e.iconName,
       ),
     });
   }),
-  Jo = Ie("Rewards", Yo.base),
+  Jo = ge("Rewards", Yo.base),
   ec =
     ((0, ot.memo)(function ({ width: e, height: a, classNames: t, className: s }) {
       const { achievements: r } = Ko();
       return (0, vt.jsx)(Jo, {
         className: s,
-        children: ya(r, (s, r) =>
+        children: i(r, (s, r) =>
           (0, vt.jsx)(Zo, { width: e, height: a, index: r, achievement: s, classNames: t }, s.name),
         ),
       });
@@ -2910,33 +2917,36 @@ var Yo = {
     group: s,
     medalWidth: r,
     medalHeight: n,
-    maxContainerWidth: i,
-    hasSiblingGroups: l,
-    updateGroupIndent: o,
+    maxContainerWidth: l,
+    hasSiblingGroups: o,
+    updateGroupIndent: c,
   }) {
-    const c = (0, ot.useRef)(null),
-      { springs: d, achievements: m, completedAnimationIndexes: u, hoverIndex: _ } = Ko();
+    const d = (0, ot.useRef)(null),
+      { springs: m, achievements: _, completedAnimationIndexes: f, hoverIndex: p } = Ko();
     return (
-      ua(() => {
-        if (null === c.current) return;
-        const a = c.current.offsetWidth + Math.floor((t / e.length) * 2),
-          r = me(i);
-        o(s, a < r ? Math.floor((r - a) / 2) : 0);
-      }, [e.length, r, i, o]),
+      je(() => {
+        if (null === d.current) return;
+        const a = d.current.offsetWidth + Math.floor((t / e.length) * 2),
+          r = y(l);
+        c(s, a < r ? Math.floor((r - a) / 2) : 0);
+      }, [e.length, r, l, c]),
       (0, vt.jsx)("div", {
         style: { paddingLeft: t, paddingRight: t },
-        className: F(ec[`${s}Group`], l && ec[`${s}Group__indent`]),
-        children: ya(e, (t, s) => {
-          const i = m.length - a - s - 1;
+        className: xa(ec[`${s}Group`], o && ec[`${s}Group__indent`]),
+        children: i(e, (t, s) => {
+          const i = _.length - a - s - 1;
           return (0, vt.jsx)(
-            w.div,
+            u.div,
             {
-              ref: 0 === s ? c : void 0,
+              ref: 0 === s ? d : void 0,
               className: ec.animatedAchievement,
-              style: { ...d[i], zIndex: a + s === _ ? e.length + 1 : e.length - s },
+              style: { ...m[i], zIndex: a + s === p ? e.length + 1 : e.length - s },
               children: (0, vt.jsx)(Zo, {
                 classNames: {
-                  achievement: F(ec.achievement, !1 === u.has(i) && ec.achievement__notInteractive),
+                  achievement: xa(
+                    ec.achievement,
+                    !1 === f.has(i) && ec.achievement__notInteractive,
+                  ),
                 },
                 achievement: t,
                 width: r,
@@ -2960,36 +2970,36 @@ var sc = (0, ot.memo)(function ({
     medalHeight: s,
     hasSiblingGroups: r,
   }) {
-    const { springs: n, achievements: i, completedAnimationIndexes: l, hoverIndex: o } = Ko();
+    const { springs: n, achievements: l, completedAnimationIndexes: o, hoverIndex: c } = Ko();
     return (0, vt.jsx)("div", {
-      className: F(
+      className: xa(
         ec.marksGroup,
         tc({ hasSiblingGroups: r, marksOnGun: e.some((e) => "marksOnGun" === e.name) }),
       ),
-      children: ya(e, (r, c) => {
-        const d = i.length - a - c - 1;
+      children: i(e, (r, i) => {
+        const d = l.length - a - i - 1;
         return (0, vt.jsx)(
-          w.div,
+          u.div,
           {
             className: ec.animatedAchievement,
-            style: { ...n[d], zIndex: a + c === o ? e.length + 1 : e.length - c },
+            style: { ...n[d], zIndex: a + i === c ? e.length + 1 : e.length - i },
             children: (0, vt.jsx)(Zo, {
               classNames: {
-                achievement: F(ec.achievement, !1 === l.has(d) && ec.achievement__notInteractive),
+                achievement: xa(ec.achievement, !1 === o.has(d) && ec.achievement__notInteractive),
               },
               achievement: r,
               width: t,
               height: s,
-              index: a + c,
+              index: a + i,
             }),
           },
-          c,
+          i,
         );
       }),
     });
   }),
   rc = (0, ot.memo)(function ({ className: e }) {
-    const a = Le(
+    const a = k(
         {
           epicAndHeroic: { width: "120rem", height: "120rem", maxContainerWidth: 120 },
           others: { width: "100rem", height: "100rem", maxContainerWidth: 80 },
@@ -3009,12 +3019,12 @@ var sc = (0, ot.memo)(function ({
       s = (0, ot.useMemo)(
         () =>
           (function (e) {
-            return Fe(
+            return T(
               e,
               (e, a) => {
                 switch (Zl(a)) {
-                  case Ul:
                   case Ll:
+                  case Ul:
                     e.marks.push(a);
                     break;
                   case Xl:
@@ -3049,7 +3059,7 @@ var sc = (0, ot.memo)(function ({
     return 0 === t.length
       ? null
       : (0, vt.jsxs)("div", {
-          className: F(
+          className: xa(
             ec.base,
             void 0 !== r.epicAndHeroic && void 0 !== r.others && ec.base__visible,
             e,
@@ -3059,7 +3069,7 @@ var sc = (0, ot.memo)(function ({
               (0, vt.jsx)(sc, {
                 medalWidth: a.epicAndHeroic.width,
                 medalHeight: a.epicAndHeroic.height,
-                achievements: Qe(s.marks),
+                achievements: ie(s.marks),
                 startIndex: 0,
                 hasSiblingGroups: s.epicAndHeroic.length + s.others.length > 0,
               }),
@@ -3069,7 +3079,7 @@ var sc = (0, ot.memo)(function ({
                 medalWidth: a.epicAndHeroic.width,
                 medalHeight: a.epicAndHeroic.height,
                 maxContainerWidth: a.epicAndHeroic.maxContainerWidth,
-                achievements: Qe(s.epicAndHeroic),
+                achievements: ie(s.epicAndHeroic),
                 startIndex: s.marks.length,
                 updateGroupIndent: i,
                 indent: r.epicAndHeroic,
@@ -3081,7 +3091,7 @@ var sc = (0, ot.memo)(function ({
                 medalWidth: a.others.width,
                 medalHeight: a.others.height,
                 maxContainerWidth: a.others.maxContainerWidth,
-                achievements: Qe(s.others),
+                achievements: ie(s.others),
                 startIndex: s.marks.length + s.epicAndHeroic.length,
                 updateGroupIndent: i,
                 indent: r.others,
@@ -3107,7 +3117,7 @@ function lc({
 }) {
   const l = (0, ot.useMemo)(
     () => (
-      la(Oa(a), `Bonus state ${a} is not supported`),
+      Ke(Oa(a), `Bonus state ${a} is not supported`),
       {
         ...i,
         bonusState: a,
@@ -3141,17 +3151,17 @@ var oc = {
 };
 function cc({ size: e, type: a, classNames: t, withoutPlus: s = !1, value: r }) {
   const n = "gold" === a ? "gold" : "integral";
-  return (0, vt.jsx)(we, {
+  return (0, vt.jsx)(oe, {
     reverse: !0,
     size: e,
     type: a,
-    className: F(oc.currency, t?.currency),
+    className: xa(oc.currency, t?.currency),
     children: s
-      ? (0, vt.jsx)("div", { className: F(oc.value, t?.value), children: Y.formatNumber(n, r) })
-      : (0, vt.jsx)(Q, {
-          className: F(oc.value, t?.value),
+      ? (0, vt.jsx)("div", { className: xa(oc.value, t?.value), children: va.formatNumber(n, r) })
+      : (0, vt.jsx)(ye, {
+          className: xa(oc.value, t?.value),
           path: "common.plusValueWithSpace",
-          params: { value: Y.formatNumber(n, r) },
+          params: { value: va.formatNumber(n, r) },
         }),
   });
 }
@@ -3169,9 +3179,9 @@ function pc() {
     creditsThreshold: r,
     handleAdvertisement: n,
   } = ic();
-  qe(() => {
+  ve(() => {
     void 0 !== a &&
-      (!1 !== La(a, e)
+      (!1 !== Ua(a, e)
         ? void 0 !== n
           ? n(e)
           : console.error(
@@ -3181,17 +3191,17 @@ function pc() {
             `The state in the component should be on of the followings ${a.join(", ")}`,
           ));
   });
-  const i = m.resolve("strings");
+  const i = c.resolve("strings");
   switch (e) {
     case Ma.creditsAdvertising:
-      return (0, vt.jsx)(Q, {
+      return (0, vt.jsx)(ye, {
         className: dc,
         path: "battle_results.common.details.premiumAdvertising.credits",
         params: {
           bonusCredits: (0, vt.jsx)(cc, {
             withoutPlus: !0,
             type: "credits",
-            size: Ee.small,
+            size: ca.small,
             value: r,
             classNames: { currency: _c, value: fc },
           }),
@@ -3199,24 +3209,24 @@ function pc() {
         },
       });
     case Ma.premiumAdvertising:
-      return (0, vt.jsx)(K, {
-        className: F(dc, uc),
+      return (0, vt.jsx)(Xe, {
+        className: xa(dc, uc),
         text: i.readOrEmpty("battle_results.common.details.premiumPlus.premium"),
       });
     case Ma.squadAdvertising:
-      return (0, vt.jsx)(K, {
-        className: F(dc, mc),
+      return (0, vt.jsx)(Xe, {
+        className: xa(dc, mc),
         text: i.readOrEmpty("battle_results.common.details.premiumPlus.squad"),
       });
     case Ma.bonusAdvertising:
-      return (0, vt.jsx)(K, {
-        className: F(dc, uc),
+      return (0, vt.jsx)(Xe, {
+        className: xa(dc, uc),
         text: i.readOrEmpty("battle_results.common.details.premiumAdvertising.bonus"),
         params: { multiplier: t },
       });
     case Ma.questsAdvertising:
-      return (0, vt.jsx)(K, {
-        className: F(dc, mc),
+      return (0, vt.jsx)(Xe, {
+        className: xa(dc, mc),
         text: i.readOrEmpty("battle_results.common.details.premiumPlus.quests"),
       });
     default:
@@ -3226,10 +3236,10 @@ function pc() {
 var bc = "LeftBonusAttempts_a541b0b8",
   hc = "LeftBonusAttempts_count_24f93d48";
 function vc({ count: e }) {
-  return (0, vt.jsx)(Q, {
+  return (0, vt.jsx)(ye, {
     upgradeLegacy: !0,
     params: {
-      count: (0, vt.jsx)("span", { className: hc, children: Y.formatNumber("integral", e) }),
+      count: (0, vt.jsx)("span", { className: hc, children: va.formatNumber("integral", e) }),
     },
     path: "battle_results.common.premiumBonus.bonusLeft",
     className: bc,
@@ -3259,7 +3269,7 @@ function yc({ text: e, displayType: a = "single", withAttemts: t = !0 }) {
   return (0, vt.jsxs)("div", {
     className: gc.base,
     children: [
-      (0, vt.jsx)(K, { text: e, className: F(gc.text, gc[`text__${a}`]) }),
+      (0, vt.jsx)(Xe, { text: e, className: xa(gc.text, gc[`text__${a}`]) }),
       t && (0, vt.jsx)(vc, { count: s }),
     ],
   });
@@ -3273,13 +3283,13 @@ var xc = "PremiumEarnings_d4b9118e",
   Cc = "PremiumEarnings_currency_3f1396eb",
   Bc = "PremiumEarnings_value_cbe7ec27";
 function Sc() {
-  const e = m.resolve("strings"),
+  const e = c.resolve("strings"),
     { premiumAndStandartEarnings: a } = ic();
   return (0, vt.jsxs)("div", {
     className: xc,
     children: [
       (0, vt.jsxs)("div", {
-        className: F(Nc, jc),
+        className: xa(Nc, jc),
         children: [
           (0, vt.jsx)("div", {
             className: Ic,
@@ -3290,14 +3300,14 @@ function Sc() {
             children: [
               (0, vt.jsx)(cc, {
                 withoutPlus: !0,
-                size: Ee.small,
+                size: ca.small,
                 type: "credits",
                 classNames: { currency: Cc, value: Bc },
                 value: a.baseCredits,
               }),
               (0, vt.jsx)(cc, {
                 withoutPlus: !0,
-                size: Ee.small,
+                size: ca.small,
                 type: "tankXP",
                 classNames: { currency: Cc, value: Bc },
                 value: a.baseVehicleXP,
@@ -3310,7 +3320,7 @@ function Sc() {
         className: Nc,
         children: [
           (0, vt.jsx)("div", {
-            className: F(Ic, wc),
+            className: xa(Ic, wc),
             children: e.readOrEmpty("battle_results.common.details.premTitle"),
           }),
           (0, vt.jsxs)("div", {
@@ -3318,14 +3328,14 @@ function Sc() {
             children: [
               (0, vt.jsx)(cc, {
                 withoutPlus: !0,
-                size: Ee.small,
+                size: ca.small,
                 type: "credits",
                 classNames: { currency: Cc, value: Bc },
                 value: a.premiumCredits,
               }),
               (0, vt.jsx)(cc, {
                 withoutPlus: !0,
-                size: Ee.small,
+                size: ca.small,
                 type: "tankXP",
                 classNames: { currency: Cc, value: Bc },
                 value: a.premiumVehicleXP,
@@ -3339,9 +3349,9 @@ function Sc() {
 }
 var Pc = "PremiumInfoCurrencies_value_5b83491e",
   Rc = "PremiumInfoCurrencies_currency_6908b9d9",
-  kc = Ie("PremiumInfoCurrencies", "PremiumInfoCurrencies_8b21f7ee");
+  kc = ge("PremiumInfoCurrencies", "PremiumInfoCurrencies_8b21f7ee");
 function Tc() {
-  const e = Le({ size: Ee.small }, { medium: { size: Ee.large } }),
+  const e = k({ size: ca.small }, { medium: { size: ca.large } }),
     { premiumAndStandartEarnings: a } = ic();
   return (0, vt.jsxs)(kc, {
     children: [
@@ -3360,10 +3370,10 @@ function Tc() {
     ],
   });
 }
-var Ec = Ie("Content"),
-  Dc = (0, ot.forwardRef)(function (e, a) {
+var Ec = ge("Content"),
+  Hc = (0, ot.forwardRef)(function (e, a) {
     const { state: t } = ic(),
-      s = m.resolve("strings");
+      s = c.resolve("strings");
     return (0, vt.jsx)(Ec, {
       ...e,
       ref: a,
@@ -3419,14 +3429,14 @@ var Ec = Ie("Content"),
       })(),
     });
   }),
-  Hc = "AppliedBonusInfo_910a06bc",
+  Dc = "AppliedBonusInfo_910a06bc",
   Oc = "AppliedBonusInfo_icon_208dd0cc";
 function Vc() {
   return (0, vt.jsxs)("div", {
-    className: Hc,
+    className: Dc,
     children: [
       (0, vt.jsx)("div", { className: Oc }),
-      (0, vt.jsx)(Q, { path: "battle_results.common.premiumBonus.appliedBonus" }),
+      (0, vt.jsx)(ye, { path: "battle_results.common.premiumBonus.appliedBonus" }),
     ],
   });
 }
@@ -3434,19 +3444,19 @@ var zc = "ApplyButton_fa337b96",
   Wc = "ApplyButton_button_a471284",
   Mc = "ApplyButton_value_c22167ea";
 function Gc() {
-  const e = m.resolve("strings"),
+  const e = c.resolve("strings"),
     { bonusXpDiff: a, applyBonus: t } = ic(),
-    s = Le(
-      { iconSize: Ee.small, buttonSize: sa.sizes.small },
-      { large: { iconSize: Ee.large }, extraLarge: { buttonSize: sa.sizes.medium } },
+    s = k(
+      { iconSize: ca.small, buttonSize: L.sizes.small },
+      { large: { iconSize: ca.large }, extraLarge: { buttonSize: L.sizes.medium } },
     );
   return (0, vt.jsxs)("div", {
     className: zc,
     children: [
       (0, vt.jsx)(cc, { type: "tankXP", size: s.iconSize, value: a, classNames: { value: Mc } }),
-      (0, vt.jsx)(sa, {
+      (0, vt.jsx)(L, {
         size: s.buttonSize,
-        theme: sa.themes.primary,
+        theme: L.themes.primary,
         className: Wc,
         onClick: t,
         soundTarget: "managable-bonus:apply-button",
@@ -3456,8 +3466,8 @@ function Gc() {
   });
 }
 var $c = "PlusEarnings_505f274c",
-  Uc = "PlusEarnings_label_79ad021c",
-  Lc = "PlusEarnings_link_649208b3",
+  Lc = "PlusEarnings_label_79ad021c",
+  Uc = "PlusEarnings_link_649208b3",
   Xc = "PlusEarnings_currency_fddc9198",
   Fc = "PlusEarnings_value_fe187db9",
   Kc = "withWotPlus",
@@ -3467,8 +3477,8 @@ var Qc = {
   [qc]: "battle_results.common.plusBonus.wotPremium",
 };
 function Yc({ onClick: e }) {
-  const a = m.resolve("strings"),
-    t = k().breakpoint,
+  const a = c.resolve("strings"),
+    t = I().breakpoint,
     { wotPlusType: s, wotPremium: r, bonusXpDiff: n } = ic(),
     i = s === Ea.Core || s === Ea.Pro,
     l = (function (e, a) {
@@ -3479,15 +3489,15 @@ function Yc({ onClick: e }) {
       className: $c,
       children: [
         (0, vt.jsxs)("div", {
-          className: Uc,
+          className: Lc,
           children: [
             a.readOrEmpty("battle_results.common.plusBonus.bonusLeftAdditionalText"),
-            (0, vt.jsx)("span", { className: Lc, onClick: e, children: a.readOrEmpty(Qc[l]) }),
+            (0, vt.jsx)("span", { className: Uc, onClick: e, children: a.readOrEmpty(Qc[l]) }),
           ],
         }),
         (0, vt.jsx)(cc, {
           type: "tankXP",
-          size: t.weight >= Ca.medium.weight ? Ee.large : Ee.small,
+          size: t.weight >= M.medium.weight ? ca.large : ca.small,
           value: n,
           classNames: { currency: Xc, value: Fc },
         }),
@@ -3503,8 +3513,8 @@ var Zc = "PlusYouRock_a108dad8",
   ad = "PlusYouRock_currency_73dcb93a",
   td = "PlusYouRock_value_daab6eb6";
 function sd() {
-  const e = m.resolve("strings"),
-    a = k().breakpoint,
+  const e = c.resolve("strings"),
+    a = I().breakpoint,
     { dailyAppliedAdditionalXP: t } = ic();
   return (0, vt.jsxs)("div", {
     className: Zc,
@@ -3522,7 +3532,7 @@ function sd() {
       }),
       (0, vt.jsx)(cc, {
         type: "tankXP",
-        size: a.weight >= Ca.medium.weight ? Ee.large : Ee.small,
+        size: a.weight >= M.medium.weight ? ca.large : ca.small,
         value: t,
         classNames: { currency: ad, value: td },
       }),
@@ -3549,21 +3559,21 @@ var rd = {
   slideUpIn: "PremiumInfoButton_slideUpIn_30b191d",
 };
 function nd({ onClick: e, withLabel: a = !1 }) {
-  const t = m.resolve("strings"),
-    { breakpoint: s } = k(),
-    r = s.weight > Ca.large.weight ? sa.sizes.medium : sa.sizes.small;
+  const t = c.resolve("strings"),
+    { breakpoint: s } = I(),
+    r = s.weight > M.large.weight ? L.sizes.medium : L.sizes.small;
   return (0, vt.jsxs)("div", {
-    className: F(rd.base, a && rd.base__withLabel),
+    className: xa(rd.base, a && rd.base__withLabel),
     children: [
       a &&
         (0, vt.jsx)("div", {
           className: rd.buttonHint,
           children: t.readOrEmpty("battle_results.common.premiumBonus.earnMore"),
         }),
-      (0, vt.jsx)(sa, {
+      (0, vt.jsx)(L, {
         className: rd.button,
-        size: a ? sa.sizes.small : r,
-        theme: sa.themes.primary,
+        size: a ? L.sizes.small : r,
+        theme: L.themes.primary,
         onClick: e,
         soundTarget: "managable-bonus:premium-info-button",
         children: t.readOrEmpty("battle_results.common.details.getPremBtn"),
@@ -3576,26 +3586,26 @@ var id = "Restriction_8b730e49",
   od = "Restriction_icon_ef5c0819",
   cd = "Restriction_formattedText_b2d2b647";
 function dd({ path: e, tooltipParams: a }) {
-  const t = S(a);
+  const t = w(a);
   return (0, vt.jsx)("div", {
     className: id,
-    children: (0, vt.jsx)(Q, {
+    children: (0, vt.jsx)(ye, {
       path: e,
       className: cd,
       params: {
         info: (0, vt.jsx)("span", {
           ...t,
           className: ld,
-          children: (0, vt.jsx)(Ne, { path: "post_battle.info", className: od }),
+          children: (0, vt.jsx)(De, { path: "post_battle.info", className: od }),
         }),
       },
     }),
   });
 }
-var md = Ie("Footer"),
+var md = ge("Footer"),
   ud = (0, ot.forwardRef)(function (e, a) {
     const { state: t, showBonusDetails: s } = ic(),
-      r = m.resolve("strings");
+      r = c.resolve("strings");
     return (0, vt.jsx)(md, {
       ...e,
       ref: a,
@@ -3698,33 +3708,33 @@ var md = Ie("Footer"),
     blink: "Header_blink_65f475ba",
     slideUpIn: "Header_slideUpIn_65f475ba",
   },
-  fd = Ie("Header"),
+  fd = ge("Header"),
   pd = (0, ot.forwardRef)(function ({ className: e, classNames: a, ...t }, s) {
     const { state: r, bonusMultiplier: n } = ic(),
-      i = m
+      i = c
         .resolve("strings")
         .readOrEmpty("battle_results.common.premiumBonus.bonusMultiplier")
         .replace("{{value}}", n.toString());
     return (0, vt.jsx)(fd, {
       ref: s,
-      className: F(_d[`base__${r}`], e),
+      className: xa(_d[`base__${r}`], e),
       ...t,
       children: (0, vt.jsx)("div", {
-        className: F(_d.icon, a?.icon),
-        children: (0, vt.jsx)(wa, {
+        className: xa(_d.icon, a?.icon),
+        children: (0, vt.jsx)(Na, {
           classNames: {
             base: _d.bonusMultiplier,
             text: _d.text,
-            textOverlay: F(_d.text, _d.text__textOverlay),
+            textOverlay: xa(_d.text, _d.text__textOverlay),
           },
           children: i,
         }),
       }),
     });
   }),
-  bd = Ie("ManagableBonus", "ManagableBonus_55c8d52d"),
+  bd = ge("ManagableBonus", "ManagableBonus_55c8d52d"),
   hd = (0, ot.memo)(bd);
-((hd.Header = pd), (hd.Content = Dc), (hd.Footer = ud));
+((hd.Header = pd), (hd.Content = Hc), (hd.Footer = ud));
 var vd = {
   bonus__disabled: "Bonus_bonus__disabled_d9abacdd",
   content: "Bonus_content_58a93521",
@@ -3767,7 +3777,7 @@ function gd({ className: e }) {
   const { state: a } = ic(),
     { completedSteps: t } = Qt();
   return (0, vt.jsxs)(hd, {
-    className: F(vd.bonus, vd[`bonus__${a}`], !1 === t.has(Ft.third) && vd.bonus__disabled, e),
+    className: xa(vd.bonus, vd[`bonus__${a}`], !1 === t.has(Ft.third) && vd.bonus__disabled, e),
     children: [
       (0, vt.jsx)(hd.Header, {}),
       (0, vt.jsx)(hd.Content, { className: vd.content }),
@@ -3779,10 +3789,10 @@ var yd = "AnimatedNumber_958fc84e",
   xd = "AnimatedNumber_slotMachineDigit_a9587a5a",
   Nd = "AnimatedNumber_plugChar_c66678",
   jd = "AnimatedNumber_digitsList_2065427d",
-  Id = Ia.cubicBezier(0.33, 0, 0.25, 1);
+  Id = be.cubicBezier(0.33, 0, 0.25, 1);
 function wd({ immediate: e, symbol: a, step: t, delay: s, first: r, handleFirstRest: n }) {
   const [i, l] = (0, ot.useState)(!1),
-    [o, c] = de(() => ({ from: { y: 0, opacity: 0 } })),
+    [o, c] = g(() => ({ from: { y: 0, opacity: 0 } })),
     d = /^\d$/.test(a);
   const m = d ? parseInt(a) : 1;
   return (
@@ -3807,10 +3817,10 @@ function wd({ immediate: e, symbol: a, step: t, delay: s, first: r, handleFirstR
       className: xd,
       children: [
         (0, vt.jsx)("div", { className: Nd, children: a }),
-        (0, vt.jsx)(w.div, {
+        (0, vt.jsx)(u.div, {
           style: o,
           className: jd,
-          children: Ze(0, m + 1, (e) =>
+          children: da(0, m + 1, (e) =>
             d
               ? (0, vt.jsx)("div", { children: e }, e)
               : (0, vt.jsx)("div", { style: { height: t }, children: e > 0 ? a : null }, e),
@@ -3828,12 +3838,12 @@ var Ad = (0, ot.memo)(function ({
     handleAnimationFinished: r,
     type: n,
   }) {
-    const [i, l] = ha(),
+    const [i, l] = fa(),
       o = (0, ot.useMemo)(() => a.split(""), [a]),
       c = (0, ot.useCallback)(() => r(n), [r, n]);
     return (0, vt.jsx)("div", {
       ref: i,
-      className: F(yd, s),
+      className: xa(yd, s),
       children: o.map((s, r) =>
         (0, vt.jsx)(
           wd,
@@ -3843,7 +3853,7 @@ var Ad = (0, ot.memo)(function ({
             immediate: e,
             delay: 200 * (o.length - r),
             symbol: s,
-            step: l.type === _e.measured && t ? l.size.height : 0,
+            step: l.type === ce.measured && t ? l.size.height : 0,
           },
           `${a}-${r}`,
         ),
@@ -3867,67 +3877,64 @@ function Td({
 }) {
   return ((e) => kd.includes(e))(a)
     ? 0 !== t || r
-      ? (0, vt.jsx)(we, {
+      ? (0, vt.jsx)(oe, {
           reverse: !0,
           type: Rd[a],
           size: s,
           className: Cd,
-          classNames: { icon: F(Bd, (n || e) && Sd) },
+          classNames: { icon: xa(Bd, (n || e) && Sd) },
           children: (0, vt.jsx)(Ad, {
             className: Pd,
             immediate: e,
             readyToAnimate: n,
             type: a,
             handleAnimationFinished: i,
-            value: Y.formatNumber(a === ta.gold ? "gold" : "integral", t),
+            value: va.formatNumber(a === Fe.gold ? "gold" : "integral", t),
           }),
         })
       : null
     : (console.error(`There is no such currency in the template literal: ${a}`), null);
 }
-var Ed = Ie("Currencies", "Currencies_5b11a533"),
-  Dd = Fa(function ({ className: e }) {
-    const [a, s] = (0, ot.useState)(!1),
+var Ed = ge("Currencies", "Currencies_5b11a533"),
+  Hd = Fa(function ({ className: e }) {
+    const [t, s] = (0, ot.useState)(!1),
       [r, n] = (0, ot.useState)(new Set()),
-      [i, l] = (0, ot.useState)(!1),
-      { model: o } = Eo(),
-      c = o.computes.earnedCurrencies(),
-      d = o.additionalBonus.get(),
-      m = va(c),
-      u = q(),
-      { step: _, setAllCurrenciesAniamted: f } = Qt(),
-      p = Le(
-        { value: Ee.medium },
-        { medium: { value: Ee.large }, large: { value: Ee.extraLarge } },
-      );
+      [l, o] = (0, ot.useState)(!1),
+      { model: c } = Eo(),
+      d = c.computes.earnedCurrencies(),
+      m = c.additionalBonus.get(),
+      u = de(d),
+      _ = q(),
+      { step: f, setAllCurrenciesAniamted: p } = Qt(),
+      b = k({ value: ca.medium }, { medium: { value: ca.large }, large: { value: ca.extraLarge } });
     ((0, ot.useEffect)(() => {
-      void 0 !== m && m !== c && u.play("startRolling", { target: "overview:currencies" });
-    }, [c, m, u, _]),
+      void 0 !== u && u !== d && _.play("startRolling", { target: "overview:currencies" });
+    }, [d, u, _, f]),
       (0, ot.useEffect)(() => {
-        (_ !== Ft.third && _ !== Ft.immediate) ||
-          (_ === Ft.third && u.play("startRolling", { target: "overview:currencies" }), s(!0));
-      }, [_, u]),
+        (f !== Ft.third && f !== Ft.immediate) ||
+          (f === Ft.third && _.play("startRolling", { target: "overview:currencies" }), s(!0));
+      }, [f, _]),
       (0, ot.useEffect)(() => {
-        r.size === c.filter(({ value: e, visibleIfZero: a }) => e > 0 || a).length &&
-          (_ !== Ft.immediate && u.play("stopRolling", { target: "overview:currencies" }),
-          f(!0),
-          d.bonusState === Va.PremiumBonus &&
-            d.restriction === Da.NoRestriction &&
-            (n((e) => Pe(e, "xp")), l(!0)));
-      }, [_, r, c, u, d.bonusState, d.restriction, f]));
-    const b = (0, ot.useCallback)(function (e) {
-      n((a) => t(a, e));
+        r.size === d.filter(({ value: e, visibleIfZero: a }) => e > 0 || a).length &&
+          (f !== Ft.immediate && _.play("stopRolling", { target: "overview:currencies" }),
+          p(!0),
+          m.bonusState === Va.PremiumBonus &&
+            m.restriction === Ha.NoRestriction &&
+            (n((e) => a(e, "xp")), o(!0)));
+      }, [f, r, d, _, m.bonusState, m.restriction, p]));
+    const h = (0, ot.useCallback)(function (e) {
+      n((a) => O(a, e));
     }, []);
     return (0, vt.jsx)(Ed, {
       className: e,
-      children: ya(c, (e) =>
+      children: i(d, (e) =>
         (0, vt.jsx)(
           Td,
           {
-            readyToAnimate: a,
-            size: p.value,
-            handleAnimationFinished: b,
-            immediate: _ === Ft.immediate && !1 === i,
+            readyToAnimate: t,
+            size: b.value,
+            handleAnimationFinished: h,
+            immediate: f === Ft.immediate && !1 === l,
             ...e,
           },
           e.type,
@@ -3935,7 +3942,7 @@ var Ed = Ie("Currencies", "Currencies_5b11a533"),
       ),
     });
   }),
-  Hd = "Overview_flare_5277bd9e",
+  Dd = "Overview_flare_5277bd9e",
   Od = "Overview_vignette_ff9b1e99",
   Vd = "Overview_6f9734b8",
   zd = "Overview_info_88809345",
@@ -3943,8 +3950,8 @@ var Ed = Ie("Currencies", "Currencies_5b11a533"),
   Md = "Overview_dividerWrapper_a8c790eb",
   Gd = "Overview_base__simplified_8249f573",
   $d = "Overview_statusText_be513c69",
-  Ud = "Overview_divider_652a671e",
-  Ld = "Overview_dividerImage_2a8a0c0e",
+  Ld = "Overview_divider_652a671e",
+  Ud = "Overview_dividerImage_2a8a0c0e",
   Xd = "Overview_rewards_77ba059e",
   Fd = "Overview_rewards__long_2a861c93",
   Kd = "Overview_currencies_5c3cba28",
@@ -3953,27 +3960,27 @@ var Ed = Ie("Currencies", "Currencies_5b11a533"),
   Yd = "Overview_bonus_30af9d4",
   Zd = Fa(function () {
     const { model: e } = Eo(),
-      { active: a } = I(),
-      [{ x: t }, s] = de(() => ({ x: 0 })),
-      r = e.computes.isWin()
+      { active: a } = ee(),
+      [{ x: s }, r] = g(() => ({ x: 0 })),
+      n = e.computes.isWin()
         ? R.images.comp7.gui.maps.icons.backgrounds.no_epic_victory_flare()
         : R.images.comp7.gui.maps.icons.backgrounds.no_epic_draw_defeat_flare(),
-      n = (0, ot.useRef)(null);
+      i = (0, ot.useRef)(null);
     return (
       (0, ot.useEffect)(() => {
         if (a === Xa.overview)
-          return oa.move(function ([e]) {
-            const a = Re().width,
-              t = 2 * (e.clientX / a - 0.5);
-            s.start({ x: 3 * t });
+          return qe.move(function ([e]) {
+            const a = t().width,
+              s = 2 * (e.clientX / a - 0.5);
+            r.start({ x: 3 * s });
           });
       }),
-      (0, vt.jsx)(w.div, {
-        ref: n,
-        className: Hd,
+      (0, vt.jsx)(u.div, {
+        ref: i,
+        className: Dd,
         style: {
-          backgroundImage: `url(${r})`,
-          backgroundPosition: t.to((e) => `${50 + e}% center`),
+          backgroundImage: `url(${n})`,
+          backgroundPosition: s.to((e) => `${50 + e}% center`),
         },
       })
     );
@@ -3989,11 +3996,11 @@ function em() {
 }
 function am({ children: e, visible: a, changeVisible: t, closedPosition: s, animationProps: r }) {
   const [n, i] = (0, ot.useState)(a ?? !1),
-    [l, o] = de(() => ({
+    [l, o] = g(() => ({
       from: { ...r, y: n ? "0" : s, backgroundColor: n ? "rgba(18, 19, 22, 0.8)" : "transparent" },
     })),
-    [c, d] = de(() => ({ from: { opacity: n ? 1 : 0 } })),
-    [m, u] = de(() => ({ from: { x: "-50%", y: "0", rotate: 180, opacity: 1 } }));
+    [c, d] = g(() => ({ from: { opacity: n ? 1 : 0 } })),
+    [m, u] = g(() => ({ from: { x: "-50%", y: "0", rotate: 180, opacity: 1 } }));
   ((0, ot.useLayoutEffect)(() => {
     void 0 !== a && i(a);
   }, [a]),
@@ -4023,7 +4030,7 @@ var tm = "HintKey_keyButton_e4149405",
   nm = "HintKey_content_63ecef8",
   im = "HintKey_triangle_fb0bc682",
   lm = "HintKey_triangleNoise_6e72dfca",
-  om = Ie("PersoanlEfficiencyHintKey", "HintKey_2efc42a0");
+  om = ge("PersoanlEfficiencyHintKey", "HintKey_2efc42a0");
 var cm = {
     base: "OverlayDivider_fcc0c30",
     divider: "OverlayDivider_divider_1acaec30",
@@ -4049,18 +4056,18 @@ var cm = {
     const { opened: s } = em();
     return (0, vt.jsxs)("div", {
       ref: t,
-      className: F(cm.base, !s && cm.base__closed, a?.base, e),
+      className: xa(cm.base, !s && cm.base__closed, a?.base, e),
       children: [
         (0, vt.jsx)(ss, {
           classNames: {
-            base: F(cm.divider, cm.divider__left, a?.divider?.base),
-            image: F(cm.dividerImageElement, a?.divider?.image),
+            base: xa(cm.divider, cm.divider__left, a?.divider?.base),
+            image: xa(cm.dividerImageElement, a?.divider?.image),
           },
         }),
         (0, vt.jsx)(ss, {
           classNames: {
-            base: F(cm.divider, cm.divider__right, a?.divider?.base, a?.rightDivider?.base),
-            image: F(cm.dividerImageElement, a?.divider?.image, a?.rightDivider?.image),
+            base: xa(cm.divider, cm.divider__right, a?.divider?.base, a?.rightDivider?.base),
+            image: xa(cm.dividerImageElement, a?.divider?.image, a?.rightDivider?.image),
           },
         }),
       ],
@@ -4082,10 +4089,10 @@ var cm = {
           () => document.removeEventListener("click", e)
         );
       }, [t, i, s]),
-      (0, vt.jsxs)(w.div, {
+      (0, vt.jsxs)(u.div, {
         ref: a,
         "data-name": "ExpandableOverlay",
-        className: F(mm, t && um),
+        className: xa(mm, t && um),
         style: r,
         onClick: function (e) {
           (e.stopPropagation(),
@@ -4094,7 +4101,7 @@ var cm = {
               i.play("openOverlay", { original: e, target: "expandable-overlay" }),
               s(!0)));
         },
-        children: [(0, vt.jsx)(w.div, { className: _m, style: n }), e],
+        children: [(0, vt.jsx)(u.div, { className: _m, style: n }), e],
       })
     );
   });
@@ -4102,12 +4109,12 @@ var cm = {
   disabled: e,
   throttleDelay: a = 600,
   classNames: t,
-  keyCode: s = B.SPACE,
+  keyCode: s = v.SPACE,
   triangleNoisePath: r = "post_battle.noise",
 }) {
   const { handleOpen: n, arrowStyles: i } = em(),
     l = q(),
-    o = Ba(
+    o = G(
       (a) => {
         e ||
           (l.play("click", { original: a, target: "expandable-overlay:hint-key" }),
@@ -4140,22 +4147,22 @@ var cm = {
           ));
       },
       children: [
-        (0, vt.jsx)(g, {
+        (0, vt.jsx)(D, {
           keyCode: s,
           classNames: {
-            base: F(tm, t?.keyButton),
-            background: F(sm, t?.keyButton?.background),
-            content: F(nm, t?.keyButton?.content),
-            border: F(rm, t?.keyButton?.border),
+            base: xa(tm, t?.keyButton),
+            background: xa(sm, t?.keyButton?.background),
+            content: xa(nm, t?.keyButton?.content),
+            border: xa(rm, t?.keyButton?.border),
           },
           soundTarget: "expandable-overlay:hint-key",
           onActive: o,
-          children: (0, vt.jsx)(g.Code, {}),
+          children: (0, vt.jsx)(D.Code, {}),
         }),
-        (0, vt.jsx)(w.div, {
-          className: F(im, t?.triangle),
+        (0, vt.jsx)(u.div, {
+          className: xa(im, t?.triangle),
           style: i,
-          children: (0, vt.jsx)(Aa, { fit: "cover", path: r, className: F(lm, t?.triangleNoise) }),
+          children: (0, vt.jsx)(na, { fit: "cover", path: r, className: xa(lm, t?.triangleNoise) }),
         }),
       ],
     }),
@@ -4173,18 +4180,18 @@ var pm = "PrestigePointsCell_image_f905fab0",
   jm = "HeaderCell_text_35220206";
 function Im({ value: e, className: a }) {
   return (0, vt.jsx)("div", {
-    ...$e(
+    ...Oe(
       "type",
       (0, ot.useMemo)(
         () => ({ resId: R.views.comp7.mono.lobby.tooltips.prestige_points_info_tooltip("resId") }),
         [],
       ),
     ),
-    className: F(bm, hm, a),
+    className: xa(bm, hm, a),
     children: (0, vt.jsxs)("div", {
       className: gm,
       children: [
-        (0, vt.jsx)("div", { className: xm, children: Y.formatNumber("integral", e) }),
+        (0, vt.jsx)("div", { className: xm, children: va.formatNumber("integral", e) }),
         (0, vt.jsx)("div", { className: ym, children: (0, vt.jsx)("div", { className: pm }) }),
       ],
     }),
@@ -4208,19 +4215,19 @@ var wm = "account",
     [km]: "library.eyebrow",
     [Tm]: "library.gear_with_gap",
   };
-var Dm = { behaviour: ke.contentResponsive, minSize: "0rem", maxSize: "1000rem" },
-  Hm = {
+var Hm = { behaviour: we.contentResponsive, minSize: "0rem", maxSize: "1000rem" },
+  Dm = {
     [wm]: {
-      [M.extraSmall]: { behaviour: ke.static, size: "200rem" },
-      [M.medium]: { behaviour: ke.static, size: "200rem" },
-      [M.large]: { behaviour: ke.static, size: "200rem" },
-      [M.extraLarge]: { behaviour: ke.static, size: "229rem" },
+      [N.extraSmall]: { behaviour: we.static, size: "200rem" },
+      [N.medium]: { behaviour: we.static, size: "200rem" },
+      [N.large]: { behaviour: we.static, size: "200rem" },
+      [N.extraLarge]: { behaviour: we.static, size: "229rem" },
     },
     [Am]: {
-      [M.extraSmall]: { behaviour: ke.static, size: "182rem" },
-      [M.medium]: { behaviour: ke.static, size: "186rem" },
-      [M.large]: { behaviour: ke.static, size: "216rem" },
-      [M.extraLarge]: { behaviour: ke.static, size: "239rem" },
+      [N.extraSmall]: { behaviour: we.static, size: "182rem" },
+      [N.medium]: { behaviour: we.static, size: "186rem" },
+      [N.large]: { behaviour: we.static, size: "216rem" },
+      [N.extraLarge]: { behaviour: we.static, size: "239rem" },
     },
   },
   Om = {
@@ -4244,33 +4251,33 @@ var Dm = { behaviour: ke.contentResponsive, minSize: "0rem", maxSize: "1000rem" 
     slideUpIn: "BaseCapture_slideUpIn_8bdb9b9c",
   };
 function Vm({ assault: e, defend: a, classNames: t, className: s }) {
-  const r = m.resolve("strings"),
-    n = m.resolve("views"),
-    i = O({
+  const r = c.resolve("strings"),
+    n = c.resolve("views"),
+    i = H({
       contentId: n.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
       args: { paramType: "capturePoints" },
     }),
-    l = O({
+    l = H({
       contentId: n.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
       args: { paramType: "droppedCapturePoints" },
     });
   return (0, vt.jsxs)("div", {
-    className: F(Om.base, s),
+    className: xa(Om.base, s),
     children: [
       (0, vt.jsx)("div", {
-        className: F(Om.label, t?.label),
+        className: xa(Om.label, t?.label),
         children: r.readOrEmpty("battle_results.common.battleEfficiency.baseCapture"),
       }),
       (0, vt.jsxs)("div", {
         ...i,
         className: Om.wrapper,
         children: [
-          (0, vt.jsx)("div", { className: F(Om.value, t?.value), children: e }),
-          (0, vt.jsx)(Aa, {
+          (0, vt.jsx)("div", { className: xa(Om.value, t?.value), children: e }),
+          (0, vt.jsx)(na, {
             path: "post_battle.assault",
             width: "32rem",
             height: "32rem",
-            className: F(Om.icon, t?.icon),
+            className: xa(Om.icon, t?.icon),
           }),
         ],
       }),
@@ -4278,12 +4285,12 @@ function Vm({ assault: e, defend: a, classNames: t, className: s }) {
         ...l,
         className: Om.wrapper,
         children: [
-          (0, vt.jsx)("div", { className: F(Om.value, t?.value), children: a }),
-          (0, vt.jsx)(Aa, {
+          (0, vt.jsx)("div", { className: xa(Om.value, t?.value), children: a }),
+          (0, vt.jsx)(na, {
             path: "post_battle.defend",
             width: "32rem",
             height: "32rem",
-            className: F(Om.icon, t?.icon),
+            className: xa(Om.icon, t?.icon),
           }),
         ],
       }),
@@ -4306,8 +4313,8 @@ function Mm({ iconsConfig: e, children: a }) {
 var Gm = "IconCell_99b0caec",
   $m = (0, ot.memo)(function ({ value: e, name: a, userName: t, className: s }) {
     const { iconsConfig: r } = Wm(),
-      n = O({
-        contentId: m
+      n = H({
+        contentId: c
           .resolve("views")
           .read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
         args: (0, ot.useMemo)(() => ({ userName: t, paramType: a }), [a, t]),
@@ -4316,14 +4323,14 @@ var Gm = "IconCell_99b0caec",
     const i = r[a] ?? "";
     return (0, vt.jsx)("div", {
       ...n,
-      className: F(Gm, s),
-      children: (0, vt.jsx)(Aa, { width: "32rem", height: "32rem", path: i }),
+      className: xa(Gm, s),
+      children: (0, vt.jsx)(na, { width: "32rem", height: "32rem", path: i }),
     });
   }),
-  Um = "NumberCell_c62bf499",
-  Lm = (0, ot.memo)(function ({ value: e, userName: a, name: t, className: s }) {
-    const r = O({
-      contentId: m
+  Lm = "NumberCell_c62bf499",
+  Um = (0, ot.memo)(function ({ value: e, userName: a, name: t, className: s }) {
+    const r = H({
+      contentId: c
         .resolve("views")
         .read((e) =>
           t === Tm
@@ -4334,7 +4341,11 @@ var Gm = "IconCell_99b0caec",
     });
     return 0 === e
       ? null
-      : (0, vt.jsx)("div", { ...r, className: F(Um, s), children: Y.formatNumber("integral", e) });
+      : (0, vt.jsx)("div", {
+          ...r,
+          className: xa(Lm, s),
+          children: va.formatNumber("integral", e),
+        });
   }),
   Xm = {
     base: "NumberWithCounterCell_f729c44",
@@ -4358,7 +4369,7 @@ var Gm = "IconCell_99b0caec",
     slideUpIn: "NumberWithCounterCell_slideUpIn_f75bc9d5",
   };
 function Fm({ count: e }) {
-  const a = S({ body: e.toString() }),
+  const a = w({ body: e.toString() }),
     t = (function (e, a) {
       return e < a ? e : Math.floor(e / 1e3);
     })(e, 1e3);
@@ -4370,17 +4381,17 @@ function Fm({ count: e }) {
         : (0, vt.jsx)("div", {
             ...a,
             className: Xm.roundedCount,
-            children: (0, vt.jsx)(Q, {
+            children: (0, vt.jsx)(ye, {
               path: "common.numberAbbrev",
-              params: { value: Y.formatNumber("integral", Math.min(t, 99)) },
+              params: { value: va.formatNumber("integral", Math.min(t, 99)) },
             }),
           }),
   });
 }
 var Km = (0, ot.memo)(function ({ value: e, count: a, name: t, userName: s, className: r }) {
     const { iconsConfig: n } = Wm(),
-      i = O({
-        contentId: m
+      i = H({
+        contentId: c
           .resolve("views")
           .read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
         args: (0, ot.useMemo)(() => ({ userName: s, paramType: t }), [t, s]),
@@ -4389,13 +4400,13 @@ var Km = (0, ot.memo)(function ({ value: e, count: a, name: t, userName: s, clas
     const l = n[t] ?? "";
     return (0, vt.jsxs)("div", {
       ...i,
-      className: F(Xm.base, r),
+      className: xa(Xm.base, r),
       children: [
-        e > 0 && Y.formatNumber("integral", e),
+        e > 0 && va.formatNumber("integral", e),
         (0, vt.jsxs)("div", {
-          className: F(Xm.counter, 0 === a && Xm.counter__hidden),
+          className: xa(Xm.counter, 0 === a && Xm.counter__hidden),
           children: [
-            (0, vt.jsx)(Aa, { className: Xm.icon, width: "32rem", height: "32rem", path: l }),
+            (0, vt.jsx)(na, { className: Xm.icon, width: "32rem", height: "32rem", path: l }),
             a >= 2 && (0, vt.jsx)(Fm, { count: a }),
           ],
         }),
@@ -4415,23 +4426,23 @@ function au({ vehicle: e }) {
     children: [
       (0, vt.jsx)("div", {
         className: Qm,
-        children: (0, vt.jsx)(C, { size: C.size.x120x96, name: a ? "tank_empty" : e.techName }),
+        children: (0, vt.jsx)(U, { size: U.size.x120x96, name: a ? "tank_empty" : e.techName }),
       }),
       !1 === a &&
         (0, vt.jsxs)(vt.Fragment, {
           children: [
-            (0, vt.jsx)(Ue, { value: e.tier, className: Zm }),
+            (0, vt.jsx)(Ia, { value: e.tier, className: Zm }),
             (0, vt.jsx)("div", {
               className: Ym,
-              children: (0, vt.jsx)(D, { size: "x24x24", type: e.type }),
+              children: (0, vt.jsx)(Be, { size: "x24x24", type: e.type }),
             }),
           ],
         }),
       (0, vt.jsx)("div", {
-        className: F(Jm, a && eu),
+        className: xa(Jm, a && eu),
         children: a
-          ? (0, vt.jsx)(Q, { path: "ingame_gui.players_panel.unknown_vehicle" })
-          : (0, vt.jsx)(ba, { text: e.name }),
+          ? (0, vt.jsx)(ye, { path: "ingame_gui.players_panel.unknown_vehicle" })
+          : (0, vt.jsx)(z, { text: e.name }),
       }),
     ],
   });
@@ -4454,51 +4465,51 @@ var tu = Fa(function ({ isQualification: e, rank: a, division: t, className: s }
   ou = "AccountInfoCell_anonymizerIcon_f71ac22",
   cu = "AccountInfoCell_badge_711d01c5";
 function du({ account: e, isRankedBattle: a, rank: t, division: s, isQualification: r }) {
-  return (0, vt.jsxs)(je, {
+  return (0, vt.jsxs)(he, {
     className: ru,
     children: [
       a
-        ? (0, vt.jsx)(tu, { rank: t, division: s, isQualification: r, className: F(su, lu) })
+        ? (0, vt.jsx)(tu, { rank: t, division: s, isQualification: r, className: xa(su, lu) })
         : null,
       "" !== e.badge &&
         (0, vt.jsx)("div", {
-          className: F(cu, lu),
-          children: (0, vt.jsx)(je.Badge, {
-            size: je.Badge.sizes.x24x24,
+          className: xa(cu, lu),
+          children: (0, vt.jsx)(he.Badge, {
+            size: he.Badge.sizes.x24x24,
             badgeId: e.badge,
             className: lu,
           }),
         }),
-      (0, vt.jsx)(je.Name, {
-        className: F(nu, lu),
-        children: (0, vt.jsx)(ba, { text: e.anonymizer ? e.fakeUsername : e.username }),
+      (0, vt.jsx)(he.Name, {
+        className: xa(nu, lu),
+        children: (0, vt.jsx)(z, { text: e.anonymizer ? e.fakeUsername : e.username }),
       }),
       "" !== e.clanAbbreviation &&
         !e.anonymizer &&
-        (0, vt.jsx)(je.ClanTag, {
-          className: F(iu, lu),
-          children: (0, vt.jsx)(Q, {
+        (0, vt.jsx)(he.ClanTag, {
+          className: xa(iu, lu),
+          children: (0, vt.jsx)(ye, {
             path: "common.clanTag",
             params: { abbrev: e.clanAbbreviation },
             brackets: { start: "{", end: "}" },
           }),
         }),
-      0 !== e.igrType && (0, vt.jsx)(je.IgrIcon, { size: je.IgrIcon.sizes.x34x16, className: lu }),
+      0 !== e.igrType && (0, vt.jsx)(he.IgrIcon, { size: he.IgrIcon.sizes.x34x16, className: lu }),
       "" !== e.suffixBadge &&
-        (0, vt.jsx)(je.Stripe, {
-          size: je.Stripe.sizes.default,
+        (0, vt.jsx)(he.Stripe, {
+          size: he.Stripe.sizes.default,
           badgeId: e.suffixBadge,
           className: lu,
         }),
       e.anonymizer &&
-        (0, vt.jsx)(je.AnonymizerIcon, { size: je.AnonymizerIcon.sizes.x24x24, className: ou }),
+        (0, vt.jsx)(he.AnonymizerIcon, { size: he.AnonymizerIcon.sizes.x24x24, className: ou }),
     ],
   });
 }
 function mu({ info: e, name: a, className: t }) {
   const { iconsConfig: s } = Wm(),
-    r = O({
-      contentId: m
+    r = H({
+      contentId: c
         .resolve("views")
         .read((e) =>
           a === Tm
@@ -4507,33 +4518,33 @@ function mu({ info: e, name: a, className: t }) {
         ),
       args: { paramType: a },
     }),
-    n = Fe(
+    n = T(
       e.table.getRowModel().rows,
       (e, t) => {
         const s = t.getValue(a),
-          r = re(s) ? s : s.value;
+          r = Y(s) ? s : s.value;
         return e + (a === km && r > 0 ? 1 : r);
       },
       0,
     ),
     i = s[a] ?? "";
   return (0, vt.jsx)("div", {
-    className: F(bm, t),
+    className: xa(bm, t),
     children: (0, vt.jsxs)("div", {
       ...r,
       className: gm,
       children: [
-        (0, vt.jsx)("div", { className: xm, children: Y.formatNumber("integral", n) }),
+        (0, vt.jsx)("div", { className: xm, children: va.formatNumber("integral", n) }),
         (0, vt.jsx)("div", {
           className: ym,
-          children: (0, vt.jsx)(Aa, { width: "100%", height: "100%", path: i }),
+          children: (0, vt.jsx)(na, { width: "100%", height: "100%", path: i }),
         }),
       ],
     }),
   });
 }
 function uu({ name: e, info: a, className: t }) {
-  const s = m.resolve("strings");
+  const s = c.resolve("strings");
   switch (e) {
     case Cm:
     case Bm:
@@ -4560,50 +4571,50 @@ var _u = "Index_align_5032d1bf",
   pu = "Index_align__left_7938cc",
   bu = "Index_offsetCell_c4e68915",
   hu = "Index_offsetCell__number_2c760167",
-  vu = Ve();
+  vu = Se();
 function gu() {
   return [
     vu.accessor("killed", {
       id: Cm,
-      header: (e) => (0, vt.jsx)(uu, { info: e, name: Cm, className: F(hm, vm) }),
+      header: (e) => (0, vt.jsx)(uu, { info: e, name: Cm, className: xa(hm, vm) }),
       enableSorting: !1,
-      meta: { column: Dm, className: F(_u, fu) },
+      meta: { column: Hm, className: xa(_u, fu) },
     }),
     vu.accessor("damageDealt", {
       id: Bm,
       header: (e) => (0, vt.jsx)(uu, { info: e, name: Bm, className: hm }),
       enableSorting: !1,
-      meta: { className: F(_u, fu), column: Dm },
+      meta: { className: xa(_u, fu), column: Hm },
     }),
     vu.accessor("damageBlockedByArmor", {
       id: Sm,
       header: (e) => (0, vt.jsx)(uu, { info: e, name: Sm, className: hm }),
       enableSorting: !1,
-      meta: { className: F(_u, fu), column: Dm },
+      meta: { className: xa(_u, fu), column: Hm },
     }),
     vu.accessor("damageAssisted", {
       id: Pm,
       header: (e) => (0, vt.jsx)(uu, { info: e, name: Pm, className: hm }),
       enableSorting: !1,
-      meta: { className: F(_u, fu), column: Dm },
+      meta: { className: xa(_u, fu), column: Hm },
     }),
     vu.accessor("damageAssistedStun", {
       id: Rm,
       header: (e) => (0, vt.jsx)(uu, { info: e, name: Rm, className: hm }),
       enableSorting: !1,
-      meta: { className: F(_u, fu), column: Dm },
+      meta: { className: xa(_u, fu), column: Hm },
     }),
     vu.accessor("spotted", {
       id: km,
       header: (e) => (0, vt.jsx)(uu, { info: e, name: km, className: hm }),
       enableSorting: !1,
-      meta: { className: F(_u, fu), column: Dm },
+      meta: { className: xa(_u, fu), column: Hm },
     }),
     vu.accessor("criticalDamage", {
       id: Tm,
       header: (e) => (0, vt.jsx)(uu, { info: e, name: Tm, className: hm }),
       enableSorting: !1,
-      meta: { className: F(_u, fu), column: Dm },
+      meta: { className: xa(_u, fu), column: Hm },
     }),
   ];
 }
@@ -4611,28 +4622,28 @@ var yu = "BodyRow_b47fe37f",
   xu = "BodyRow_rowDivider_eb49c679",
   Nu = "BodyRow_rowDividerImage_d852c3da";
 function ju({ classNames: e, row: a, rowIndex: t }) {
-  const s = U({
+  const s = F({
     args: (0, ot.useMemo)(
       () => ({ vehicleCD: a.original.vehicle?.vehicleCD, databaseID: a.original.databaseId }),
       [a.original.databaseId, a.original.vehicle?.vehicleCD],
     ),
   });
   return (0, ot.createElement)(
-    Ke.Row,
-    { ...(void 0 !== a.original.databaseId && s), key: a.id, className: F(yu, e?.row) },
-    ya(a.getVisibleCells(), (a, s) =>
+    Ge.Row,
+    { ...(void 0 !== a.original.databaseId && s), key: a.id, className: xa(yu, e?.row) },
+    i(a.getVisibleCells(), (a, s) =>
       (0, vt.jsx)(
-        Ke.Cell,
+        Ge.Cell,
         {
           className: e?.cell,
-          cell: { ...a, rowIndex: t, index: s, tablePart: ea.body },
-          children: Ye(a.column.columnDef.cell, a.getContext()),
+          cell: { ...a, rowIndex: t, index: s, tablePart: Ze.body },
+          children: Le(a.column.columnDef.cell, a.getContext()),
         },
         a.id,
       ),
     ),
     (0, vt.jsx)(ss, {
-      classNames: { base: F(xu, e?.divider?.base), image: F(Nu, e?.divider?.image) },
+      classNames: { base: xa(xu, e?.divider?.base), image: xa(Nu, e?.divider?.image) },
     }),
   );
 }
@@ -4659,16 +4670,16 @@ var Iu = {
     slideUpIn: "TableBody_slideUpIn_8ec5ac18",
   },
   wu = (0, ot.memo)(function ({ classNames: e, children: a }) {
-    const { table: t } = Ae(),
-      s = l(),
-      { api: r } = oe();
-    (Me(B.ARROW_UP, () => {
-      r.applyStepTo(he.Next);
+    const { table: t } = xe(),
+      s = Aa(),
+      { api: r } = $();
+    (ra(v.ARROW_UP, () => {
+      r.applyStepTo(aa.Next);
     }),
-      Me(B.ARROW_DOWN, () => {
-        r.applyStepTo(he.Prev);
+      ra(v.ARROW_DOWN, () => {
+        r.applyStepTo(aa.Prev);
       }));
-    const [n, i] = de(() => ({ from: { maskSize: "100% 100%" } }));
+    const [n, l] = g(() => ({ from: { maskSize: "100% 100%" } }));
     return (
       (0, ot.useEffect)(() => {
         function e() {
@@ -4676,7 +4687,7 @@ var Iu = {
             !(function () {
               const [, e] = r.getBounds(),
                 a = (r.animationScroll.scrollPosition.get() / e) * 7;
-              i.start({ to: { maskSize: `100% ${e > 0 ? 100 + a : 107}%` } });
+              l.start({ to: { maskSize: `100% ${e > 0 ? 100 + a : 107}%` } });
             })();
           });
         }
@@ -4693,28 +4704,28 @@ var Iu = {
               r.events.off("resizeHandled", e));
           }
         );
-      }, [r, s, i]),
-      (0, vt.jsxs)(Ke.Body, {
-        className: F(Iu.base, e?.base),
+      }, [r, s, l]),
+      (0, vt.jsxs)(Ge.Body, {
+        className: xa(Iu.base, e?.base),
         children: [
-          (0, vt.jsxs)(w.div, {
+          (0, vt.jsxs)(u.div, {
             className: Iu.mask,
             style: n,
             children: [
               (0, vt.jsx)(ss, {
                 classNames: {
-                  base: F(Iu.rowDivider, e?.divider?.base),
-                  image: F(Iu.rowDividerImage, e?.divider?.image),
+                  base: xa(Iu.rowDivider, e?.divider?.base),
+                  image: xa(Iu.rowDividerImage, e?.divider?.image),
                 },
               }),
-              (0, vt.jsxs)(ne, {
+              (0, vt.jsxs)(A, {
                 classNames: {
                   ...e?.scroll?.area,
                   wrapper: Iu.scrollWrapper,
-                  content: F(Iu.scrollAreaContent, e?.scroll?.area?.content),
+                  content: xa(Iu.scrollAreaContent, e?.scroll?.area?.content),
                 },
                 children: [
-                  ya(t.getRowModel().rows, (a, t) =>
+                  i(t.getRowModel().rows, (a, t) =>
                     (0, vt.jsx)(
                       ju,
                       {
@@ -4730,8 +4741,8 @@ var Iu = {
               }),
             ],
           }),
-          (0, vt.jsx)(ra, {
-            classNames: { ...e?.scroll?.bar, base: F(Iu.scrollBar, e?.scroll?.bar?.base) },
+          (0, vt.jsx)(m, {
+            classNames: { ...e?.scroll?.bar, base: xa(Iu.scrollBar, e?.scroll?.bar?.base) },
           }),
         ],
       })
@@ -4740,22 +4751,22 @@ var Iu = {
   Au = "TableFooter_40e98711",
   Cu = "TableFooter_row_41aedfc2",
   Bu = (0, ot.memo)(function ({ classNames: e }) {
-    const { table: a } = Ae();
-    return (0, vt.jsx)(Ke.Footer, {
-      className: F(Au, e?.base),
-      children: ya(a.getFooterGroups(), (a, t) =>
+    const { table: a } = xe();
+    return (0, vt.jsx)(Ge.Footer, {
+      className: xa(Au, e?.base),
+      children: i(a.getFooterGroups(), (a, t) =>
         (0, vt.jsx)(
-          Ke.Row,
+          Ge.Row,
           {
-            className: F(Cu, e?.row),
-            children: ya(a.headers, (a, s) =>
+            className: xa(Cu, e?.row),
+            children: i(a.headers, (a, s) =>
               (0, vt.jsx)(
-                Ke.Cell,
+                Ge.Cell,
                 {
                   onClick: a.column.getToggleSortingHandler(),
                   className: e?.cell,
-                  cell: { ...a, rowIndex: t, index: s, tablePart: ea.footer },
-                  children: !a.isPlaceholder && Ye(a.column.columnDef.footer, a.getContext()),
+                  cell: { ...a, rowIndex: t, index: s, tablePart: Ze.footer },
+                  children: !a.isPlaceholder && Le(a.column.columnDef.footer, a.getContext()),
                 },
                 a.id,
               ),
@@ -4768,22 +4779,22 @@ var Iu = {
   }),
   Su = "TableHeader_row_a81d3e65",
   Pu = (0, ot.memo)(function ({ classNames: e }) {
-    const { table: a } = Ae();
-    return (0, vt.jsx)(Ke.Header, {
+    const { table: a } = xe();
+    return (0, vt.jsx)(Ge.Header, {
       className: e?.base,
-      children: ya(a.getHeaderGroups(), (a, t) =>
+      children: i(a.getHeaderGroups(), (a, t) =>
         (0, vt.jsx)(
-          Ke.Row,
+          Ge.Row,
           {
-            className: F(Su, e?.row),
-            children: ya(a.headers, (a, s) =>
+            className: xa(Su, e?.row),
+            children: i(a.headers, (a, s) =>
               (0, vt.jsx)(
-                Ke.Cell,
+                Ge.Cell,
                 {
                   onClick: a.column.getToggleSortingHandler(),
                   className: e?.cell,
-                  cell: { ...a, rowIndex: t, index: s, tablePart: ea.header },
-                  children: !a.isPlaceholder && Ye(a.column.columnDef.header, a.getContext()),
+                  cell: { ...a, rowIndex: t, index: s, tablePart: Ze.header },
+                  children: !a.isPlaceholder && Le(a.column.columnDef.header, a.getContext()),
                 },
                 a.id,
               ),
@@ -4803,19 +4814,19 @@ var Iu = {
     config: n,
     iconsConfig: i,
   }) {
-    const l = k(),
+    const l = I(),
       o = (0, ot.useMemo)(() => ({ columnOrder: s, columnVisibility: r }), [s, r]);
     return (0, vt.jsx)(Mm, {
       iconsConfig: i,
-      children: (0, vt.jsx)(fa, {
+      children: (0, vt.jsx)(ma, {
         columns: n,
         data: e.rows,
         enableMultiRowSelection: !1,
         getRowId: (e) => e.account.username,
         initialState: o,
         children: (0, vt.jsx)(
-          Ke,
-          { className: a, children: (0, vt.jsx)(ee, { children: t }) },
+          Ge,
+          { className: a, children: (0, vt.jsx)(Ve, { children: t }) },
           l.breakpoint.name,
         ),
       }),
@@ -4831,19 +4842,19 @@ var ku = function ({
   config: n,
   iconsConfig: i,
 }) {
-  const l = k(),
+  const l = I(),
     o = (0, ot.useMemo)(() => ({ columnOrder: s, columnVisibility: r }), [s, r]);
   return (0, vt.jsx)(Mm, {
     iconsConfig: i,
-    children: (0, vt.jsx)(fa, {
+    children: (0, vt.jsx)(ma, {
       columns: n,
       data: e.rows,
       enableMultiRowSelection: !1,
       getRowId: (e) => e.account.username,
       initialState: o,
       children: (0, vt.jsx)(
-        Ke,
-        { className: a, children: (0, vt.jsx)(ee, { children: t }) },
+        Ge,
+        { className: a, children: (0, vt.jsx)(Ve, { children: t }) },
         l.breakpoint.name,
       ),
     }),
@@ -4852,8 +4863,8 @@ var ku = function ({
 ((ku.Header = Pu), (ku.Body = wu), (ku.Footer = Bu));
 var Tu = "PersonalEfficiency_table_1104dbe8",
   Eu = "PersonalEfficiency_table__closed_589e70ab",
-  Du = "PersonalEfficiency_hintKey_f91859a5",
-  Hu = "PersonalEfficiency_messagesPanel_d1b1fa0b",
+  Hu = "PersonalEfficiency_hintKey_f91859a5",
+  Du = "PersonalEfficiency_messagesPanel_d1b1fa0b",
   Ou = "PersonalEfficiency_message_d772bbd7",
   Vu = "PersonalEfficiency_expandableOverlayWrapper_a5a56a5d",
   zu = "PersonalEfficiency_expandableOverlayWrapper__hidden_97a3493d",
@@ -4861,8 +4872,8 @@ var Tu = "PersonalEfficiency_table_1104dbe8",
   Mu = "PersonalEfficiency_scrollableArea_c747d607",
   Gu = "PersonalEfficiency_scrollableArea__nonInteractive_589e70ab",
   $u = "PersonalEfficiency_totalEfficiency_eb2592a8",
-  Uu = "PersonalEfficiency_totalEfficiency__notInteractive_4b33f28d",
-  Lu = "PersonalEfficiency_totalEfficiencyTable_f51015d2",
+  Lu = "PersonalEfficiency_totalEfficiency__notInteractive_4b33f28d",
+  Uu = "PersonalEfficiency_totalEfficiencyTable_f51015d2",
   Xu = "PersonalEfficiency_tableWrapper_cd2e7488",
   Fu = "PersonalEfficiency_overlayDivider_52284c35",
   Ku = "PersonalEfficiency_overlayDivider__closed_6b67c790",
@@ -4872,21 +4883,21 @@ var Tu = "PersonalEfficiency_table_1104dbe8",
   Zu = { row: "PersonalEfficiency_headerRow_6acaa215" };
 function Ju() {
   const { opened: e } = em(),
-    { api: a } = oe();
+    { api: a } = $();
   return (
     (0, ot.useLayoutEffect)(() => {
       e && a.applyScroll(0, { immediate: !0 });
     }, [e, a]),
     (0, vt.jsxs)(vt.Fragment, {
       children: [
-        (0, vt.jsx)("div", { className: F(Mu, !e && Gu), onWheel: a.handleMouseWheel }),
+        (0, vt.jsx)("div", { className: xa(Mu, !e && Gu), onWheel: a.handleMouseWheel }),
         (0, vt.jsx)(ku.Header, { classNames: Zu }),
         (0, vt.jsx)(ku.Body, { children: (0, vt.jsx)(ku.Footer, {}) }),
       ],
     })
   );
 }
-var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
+var e_ = be.cubicBezier(0.33, 0, 0.25, 1),
   a_ = "first",
   t_ = "second",
   s_ = "closedArrowInLoop",
@@ -4896,13 +4907,13 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       s = t.computes.isRankedBattle(),
       r = t.computes.personalEffiency(),
       { closedPosition: n, overlayApi: i, shadowApi: l, arrowStylesApi: o } = em(),
-      { breakpoint: c } = k(),
+      { breakpoint: c } = I(),
       [d, m] = (0, ot.useState)(s_),
-      [u, _] = de(() => ({ opacity: 0 })),
-      f = (0, ot.useMemo)(
+      [_, f] = g(() => ({ opacity: 0 })),
+      p = (0, ot.useMemo)(
         () =>
           (function ({ breakpointName: e, assault: a, defend: t, isRankedBattle: s }) {
-            const r = "small" === e ? M.extraSmall : e;
+            const r = "small" === e ? N.extraSmall : e;
             return [
               vu.accessor("account", {
                 id: wm,
@@ -4911,14 +4922,14 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                 enableSorting: !1,
                 cell: (e) =>
                   (0, vt.jsx)(du, { ...e.row.original, account: e.getValue(), isRankedBattle: s }),
-                meta: { className: F(_u, pu), column: Hm[wm][r] },
+                meta: { className: xa(_u, pu), column: Dm[wm][r] },
               }),
               vu.accessor("vehicle", {
                 id: Am,
                 header: void 0,
                 enableSorting: !1,
                 cell: (e) => (0, vt.jsx)(au, { vehicle: e.getValue() }),
-                meta: { column: Hm[Am][r] },
+                meta: { column: Dm[Am][r] },
               }),
               vu.accessor("killed", {
                 id: Cm,
@@ -4931,7 +4942,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: bu,
                   }),
-                meta: { column: Dm, className: F(_u, fu) },
+                meta: { column: Hm, className: xa(_u, fu) },
               }),
               vu.accessor("damageDealt", {
                 id: Bm,
@@ -4944,7 +4955,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: bu,
                   }),
-                meta: { className: F(_u, fu), column: Dm },
+                meta: { className: xa(_u, fu), column: Hm },
               }),
               vu.accessor("damageBlockedByArmor", {
                 id: Sm,
@@ -4957,20 +4968,20 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: bu,
                   }),
-                meta: { className: F(_u, fu), column: Dm },
+                meta: { className: xa(_u, fu), column: Hm },
               }),
               vu.accessor("damageAssisted", {
                 id: Pm,
                 header: (e) => (0, vt.jsx)(uu, { name: Pm, info: e }),
                 enableSorting: !1,
                 cell: (e) =>
-                  (0, vt.jsx)(Lm, {
+                  (0, vt.jsx)(Um, {
                     value: e.getValue(),
                     name: Pm,
                     userName: e.row.original.account.username,
                     className: hu,
                   }),
-                meta: { className: F(_u, fu), column: Dm },
+                meta: { className: xa(_u, fu), column: Hm },
               }),
               vu.accessor("damageAssistedStun", {
                 id: Rm,
@@ -4983,7 +4994,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: bu,
                   }),
-                meta: { className: F(_u, fu), column: Dm },
+                meta: { className: xa(_u, fu), column: Hm },
               }),
               vu.accessor("spotted", {
                 id: km,
@@ -4996,20 +5007,20 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: bu,
                   }),
-                meta: { className: F(_u, fu), column: Dm },
+                meta: { className: xa(_u, fu), column: Hm },
               }),
               vu.accessor("criticalDamage", {
                 id: Tm,
                 header: (e) => (0, vt.jsx)(uu, { name: Tm, info: e }),
                 enableSorting: !1,
                 cell: (e) =>
-                  (0, vt.jsx)(Lm, {
+                  (0, vt.jsx)(Um, {
                     value: e.getValue(),
                     name: Tm,
                     userName: e.row.original.account.username,
                     className: hu,
                   }),
-                meta: { className: F(_u, fu), column: Dm },
+                meta: { className: xa(_u, fu), column: Hm },
               }),
             ];
           })({ breakpointName: c.name, assault: r.assault, defend: r.defend, isRankedBattle: s }),
@@ -5056,7 +5067,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                 delay: e ? 0 : 150,
                 config: { easing: e_, duration: 200 },
               }),
-              _.start({
+              f.start({
                 to: { opacity: e ? 1 : 0 },
                 delay: e ? 150 : 0,
                 config: { easing: e_, duration: 100 },
@@ -5070,13 +5081,13 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
               m(e ? r_ : a_));
             break;
           case r_: {
-            const e = c.weight > Ca.large.weight ? "53rem" : "40rem";
+            const e = c.weight > M.large.weight ? "53rem" : "40rem";
             o.start({
               from: { x: "-50%", y: e, rotate: 0, opacity: 1 },
               to: [
                 {
                   x: "-50%",
-                  y: c.weight > Ca.large.weight ? "58rem" : "45rem",
+                  y: c.weight > M.large.weight ? "58rem" : "45rem",
                   rotate: 0,
                   opacity: 0,
                   config: { duration: 1e3 },
@@ -5090,17 +5101,17 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
             break;
           }
         }
-      }, [d, e, n, c.weight, o, i, l, _, a]),
+      }, [d, e, n, c.weight, o, i, l, f, a]),
       (0, ot.useLayoutEffect)(() => {
         !1 === e && d === s_ && i.start({ to: { y: n }, immediate: !0 });
       }, [n, e, d, i]),
-      (0, vt.jsx)(w.div, {
+      (0, vt.jsx)(u.div, {
         className: Xu,
-        style: u,
+        style: _,
         children: (0, vt.jsx)(ku, {
-          config: f,
+          config: p,
           data: r,
-          className: F(Tu, !e && Eu),
+          className: xa(Tu, !e && Eu),
           children: (0, vt.jsx)(Ju, {}),
         }),
       })
@@ -5111,38 +5122,38 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       a = e.computes.personalEffiency(),
       t = e.computes.personalInfo().efficiencyValues.prestigePoints,
       s = e.battleInfo.get().finishReasonClarification,
-      r = m.resolve("strings"),
+      r = c.resolve("strings"),
       n = q(),
-      { hintKeyRef: i, overlayDividerRef: l, personalEfficiencyRef: o, completedSteps: c } = Qt(),
-      d = !1 === c.has(Ft.fifth),
-      [u] = de(() => ({ from: { opacity: 0 }, ref: i })),
-      [_] = de(() => ({ from: { maskSize: "0% 100%" }, ref: l })),
-      [f] = de(() => ({ from: { opacity: 0 }, ref: o })),
-      p = Le(
+      { hintKeyRef: i, overlayDividerRef: l, personalEfficiencyRef: o, completedSteps: d } = Qt(),
+      m = !1 === d.has(Ft.fifth),
+      [_] = g(() => ({ from: { opacity: 0 }, ref: i })),
+      [f] = g(() => ({ from: { maskSize: "0% 100%" }, ref: l })),
+      [p] = g(() => ({ from: { opacity: 0 }, ref: o })),
+      b = k(
         { value: 159 },
         { medium: { value: 187 }, large: { value: 199 }, extraLarge: { value: 267 } },
       ),
-      { active: b } = I(),
-      h = (0, ot.useRef)(null),
-      [v, g] = (0, ot.useState)(0),
-      [y, x] = (0, ot.useState)(!1),
-      [N, A] = de(() => ({ opacity: y ? 0 : 1 }));
+      { active: h } = ee(),
+      v = (0, ot.useRef)(null),
+      [y, x] = (0, ot.useState)(0),
+      [N, j] = (0, ot.useState)(!1),
+      [I, w] = g(() => ({ opacity: N ? 0 : 1 }));
     ((0, ot.useEffect)(() => {
-      b !== Xa.overview && x(!1);
-    }, [b]),
-      He(
-        h,
+      h !== Xa.overview && j(!1);
+    }, [h]),
+      Pe(
+        v,
         (0, ot.useCallback)(() => {
-          const e = h.current?.getBoundingClientRect().height || 0;
-          e > 0 && g(Math.round(e));
-        }, [g]),
+          const e = v.current?.getBoundingClientRect().height || 0;
+          e > 0 && x(Math.round(e));
+        }, [x]),
       ));
-    const C = (0, ot.useMemo)(() => (v > 0 ? j(v) - p.value + "rem" : "150%"), [v, p]),
-      B = (0, ot.useMemo)(gu, []);
+    const A = (0, ot.useMemo)(() => (y > 0 ? ta(y) - b.value + "rem" : "150%"), [y, b]),
+      C = (0, ot.useMemo)(gu, []);
     if (0 === a.assault && 0 === a.defend && 0 === a.rows.length)
-      return (0, vt.jsxs)(w.div, {
-        style: f,
-        className: Hu,
+      return (0, vt.jsxs)(u.div, {
+        style: p,
+        className: Du,
         children: [
           "" !== s &&
             (0, vt.jsx)("div", {
@@ -5158,40 +5169,40 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
     return (0, vt.jsxs)(vt.Fragment, {
       children: [
         (0, vt.jsx)(am, {
-          closedPosition: C,
-          visible: y,
-          changeVisible: x,
+          closedPosition: A,
+          visible: N,
+          changeVisible: j,
           children: (0, vt.jsx)("div", {
-            className: F(Vu, 0 === v && zu, d && Wu),
+            className: xa(Vu, 0 === y && zu, m && Wu),
             children: (0, vt.jsxs)(fm, {
-              ref: h,
+              ref: v,
               children: [
-                (0, vt.jsx)(w.div, {
-                  className: F(Fu, !1 === y && Ku),
-                  style: _,
+                (0, vt.jsx)(u.div, {
+                  className: xa(Fu, !1 === N && Ku),
+                  style: f,
                   children: (0, vt.jsx)(fm.OverlayDivider, {}),
                 }),
-                (0, vt.jsx)(n_, { visible: y, totalEfficiencyStylesApi: A }),
-                (0, vt.jsx)(w.div, {
-                  className: Du,
-                  style: u,
-                  children: (0, vt.jsx)(fm.HintKey, { disabled: b !== Xa.overview }),
+                (0, vt.jsx)(n_, { visible: N, totalEfficiencyStylesApi: w }),
+                (0, vt.jsx)(u.div, {
+                  className: Hu,
+                  style: _,
+                  children: (0, vt.jsx)(fm.HintKey, { disabled: h !== Xa.overview }),
                 }),
               ],
             }),
           }),
         }),
-        (0, vt.jsx)(w.div, {
-          style: N,
-          className: F($u, (y || d) && Uu),
+        (0, vt.jsx)(u.div, {
+          style: I,
+          className: xa($u, (N || m) && Lu),
           onClick: function (e) {
             (e.stopPropagation(),
-              x(!0),
+              j(!0),
               n.play("click", { original: e, target: "overview:total-personal-efficiency" }),
               n.play("openOverlay", { original: e, target: "overview:total-personal-efficiency" }));
           },
-          children: (0, vt.jsxs)(w.div, {
-            style: f,
+          children: (0, vt.jsxs)(u.div, {
+            style: p,
             children: [
               "" !== s &&
                 (0, vt.jsx)("div", {
@@ -5203,9 +5214,9 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                   }),
                 }),
               (0, vt.jsxs)(Ru, {
-                config: B,
+                config: C,
                 data: a,
-                className: Lu,
+                className: Uu,
                 children: [
                   (0, vt.jsx)(Ru.Header, {}),
                   (0, vt.jsx)("div", { className: Qu }),
@@ -5228,7 +5239,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
   f_ = ({ value: e, className: a }) =>
     (0, vt.jsx)("div", {
       className: (0, l_.default)(o_, e < 0 && __, a),
-      children: (0, vt.jsx)(wa, {
+      children: (0, vt.jsx)(Na, {
         classNames: { text: m_, textOverlay: u_ },
         children: (0, vt.jsxs)("span", {
           className: d_,
@@ -5247,7 +5258,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
   y_ = (e, a) => {
     let t = st(e);
     return a
-      ? (0, vt.jsx)(_, {
+      ? (0, vt.jsx)($e, {
           text: R.strings.comp7_ext.pbs.overview.highRank.promoted(),
           params: { rank: t },
         })
@@ -5259,7 +5270,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       r = a.ratingDelta.get(),
       n = a.currentScore.get();
     return (0, vt.jsxs)("div", {
-      className: F(p_, e),
+      className: xa(p_, e),
       children: [
         (0, vt.jsxs)("div", {
           className: b_,
@@ -5267,7 +5278,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
             (0, vt.jsx)(f_, { value: r }),
             (0, vt.jsx)("div", {
               className: h_,
-              children: (0, vt.jsx)(_, {
+              children: (0, vt.jsx)($e, {
                 text: R.strings.comp7_ext.pbs.overview.highRank.rating(),
                 params: { score: n },
               }),
@@ -5277,7 +5288,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
         (0, vt.jsxs)("div", {
           children: [
             (0, vt.jsx)("div", { className: v_, children: y_(t, n - r < s) }),
-            (0, vt.jsx)(V, {
+            (0, vt.jsx)(Me, {
               classMix: g_,
               text: rt(R.strings.comp7_ext.pbs.rankDescription, t),
               binding: { topPercentage: a.topPercentage.get() },
@@ -5298,9 +5309,9 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
   P_ = "ProgressBar_barDeltaInside_88f119d7",
   R_ = "ProgressBar_barDelta__negative_f0761b90",
   k_ = "ProgressBar_backgroundPattern_7f22cc1e",
-  T_ = { duration: 600, easing: Ia.easeInOutCubic },
-  E_ = { duration: 0, easing: Ia.easeInOutCubic },
-  D_ = Fa(function ({ className: e }) {
+  T_ = { duration: 600, easing: be.easeInOutCubic },
+  E_ = { duration: 0, easing: be.easeInOutCubic },
+  H_ = Fa(function ({ className: e }) {
     const { model: a } = Eo(),
       {
         rank: t,
@@ -5315,16 +5326,16 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       d = lt(r, n, i.length),
       m = Math.floor((o - r) / d),
       u = o - r - d * m,
-      f = { value: Math.max(Math.min(u - c, d), 0), maxValue: d },
-      [p, b] = (0, ot.useState)(f.value),
-      [h, v] = (0, ot.useState)(!1),
-      g = (0, ot.useRef)(T_),
-      y = (0, ot.useRef)(null),
-      { step: x } = Qt();
+      _ = { value: Math.max(Math.min(u - c, d), 0), maxValue: d },
+      [f, p] = (0, ot.useState)(_.value),
+      [b, h] = (0, ot.useState)(!1),
+      v = (0, ot.useRef)(T_),
+      g = (0, ot.useRef)(null),
+      { step: y } = Qt();
     (0, ot.useEffect)(() => {
-      (x === Ft.progressBarDelta && (v(!0), b(u)), x === Ft.immediate && ((g.current = E_), b(u)));
-    }, [x, u]);
-    const N = (() => {
+      (y === Ft.progressBarDelta && (h(!0), p(u)), y === Ft.immediate && ((v.current = E_), p(u)));
+    }, [y, u]);
+    const x = (() => {
       switch (!0) {
         case u - c >= d:
           return R.strings.comp7_ext.pbs.overview.lowRank.demoted();
@@ -5335,7 +5346,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       }
     })();
     return (0, vt.jsxs)("div", {
-      className: F(N_, e),
+      className: xa(N_, e),
       children: [
         (0, vt.jsxs)("div", {
           className: A_,
@@ -5343,43 +5354,43 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
             (0, vt.jsxs)("div", {
               className: j_,
               children: [
-                (0, vt.jsx)("div", { className: F(w_, I_), children: o }),
+                (0, vt.jsx)("div", { className: xa(w_, I_), children: o }),
                 (0, vt.jsx)("div", { className: I_, children: "/" }),
                 (0, vt.jsx)("div", { children: r + d * (m + 1) }),
               ],
             }),
-            (0, vt.jsxs)(ca, {
+            (0, vt.jsxs)(ia, {
               size: "large",
-              value: p,
-              maxValue: f.maxValue,
-              animationType: ca.animations.grow,
+              value: f,
+              maxValue: _.maxValue,
+              animationType: ia.animations.grow,
               status: "doneInactive",
               classNames: { backgroundPattern: k_ },
               backgroundPattern: "R.images.comp7.gui.maps.icons.progressbar.bg_pattern_base_large",
               children: [
-                (0, vt.jsx)(ca.Fill, {
+                (0, vt.jsx)(ia.Fill, {
                   filledPattern:
                     "R.images.comp7.gui.maps.icons.progressbar.bg_pattern_base_filled_large",
-                  animationConfig: g.current,
+                  animationConfig: v.current,
                 }),
-                h &&
-                  (0, vt.jsx)(ca.Delta, {
-                    from: f.value,
+                b &&
+                  (0, vt.jsx)(ia.Delta, {
+                    from: _.value,
                     steps: ["growing", "shrinking"],
-                    className: F(S_, c < 0 && R_),
+                    className: xa(S_, c < 0 && R_),
                     classNames: { inside: P_ },
-                    growAnimationConfig: g.current,
-                    shrinkAnimationConfig: g.current,
+                    growAnimationConfig: v.current,
+                    shrinkAnimationConfig: v.current,
                     onState: (e) => {
-                      ("shrinking" === y.current && "done" === e && v(!1), (y.current = e));
+                      ("shrinking" === g.current && "done" === e && h(!1), (g.current = e));
                     },
                   }),
               ],
             }),
             (0, vt.jsx)("div", {
               className: C_,
-              children: (0, vt.jsx)(_, {
-                text: N,
+              children: (0, vt.jsx)($e, {
+                text: x,
                 params: { rank: st(t), division: s ? tt(s) : "" },
               }),
             }),
@@ -5389,7 +5400,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       ],
     });
   }),
-  H_ = "Qualification_a93cb391",
+  D_ = "Qualification_a93cb391",
   O_ = "Qualification_counter_380a5a6b",
   V_ = "Qualification_counterGap_c395103b",
   z_ = "Qualification_currentValue_aa36ad05",
@@ -5397,12 +5408,12 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
   M_ = "Qualification_description_e38880c8",
   G_ = ({ className: e, maxBattlesCount: a, battlesCount: t }) =>
     (0, vt.jsxs)("div", {
-      className: F(H_, e),
+      className: xa(D_, e),
       children: [
         (0, vt.jsxs)("div", {
           className: O_,
           children: [
-            (0, vt.jsx)("div", { className: F(z_, V_), children: t }),
+            (0, vt.jsx)("div", { className: xa(z_, V_), children: t }),
             (0, vt.jsx)("div", { className: V_, children: "/" }),
             (0, vt.jsx)("div", { children: a }),
           ],
@@ -5424,14 +5435,14 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
   $_ = (function (e) {
     return ((e.None = "none"), (e.Leave = "leave"), e);
   })({}),
-  U_ = "Warning_2f1589e3",
-  L_ = "Warning_warningIcon_61844ca1",
+  L_ = "Warning_2f1589e3",
+  U_ = "Warning_warningIcon_61844ca1",
   X_ = ({ warningType: e, qualificationActive: a, className: t }) =>
     e === $_.Leave
       ? (0, vt.jsxs)("div", {
-          className: F(U_, t),
+          className: xa(L_, t),
           children: [
-            (0, vt.jsx)("div", { className: L_ }),
+            (0, vt.jsx)("div", { className: U_ }),
             (0, vt.jsx)("div", {
               children: a
                 ? R.strings.comp7_ext.pbs.overview.warning.leave.qualification()
@@ -5470,20 +5481,20 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
       { isActive: r, battlesCount: n, maxBattlesCount: i } = e.qualificationModel.get(),
       { rank: l, division: o } = e.computes.progressionItem(e.currentProgressionItemIndex.get()),
       c = a.season.name.get(),
-      d = e.warningType.get(),
-      { mediaSize: m } = k(),
-      u = ((e) => (e >= y.Large ? Ja.x420 : e >= y.Medium ? Ja.x260 : Ja.x200))(m);
+      m = e.warningType.get(),
+      { mediaSize: u } = I(),
+      _ = ((e) => (e >= d.Large ? Ja.x420 : e >= d.Medium ? Ja.x260 : Ja.x200))(u);
     return (0, vt.jsxs)("div", {
       className: F_,
       children: [
         r
-          ? (0, vt.jsx)(nt, { size: u, seasonName: c, className: F(Y_, Z_) })
+          ? (0, vt.jsx)(nt, { size: _, seasonName: c, className: xa(Y_, Z_) })
           : (0, vt.jsx)(at, {
               rank: l,
-              size: u,
+              size: _,
               seasonName: c,
               division: o,
-              className: F(Y_, [Za.First, Za.Second].includes(l) && Z_),
+              className: xa(Y_, [Za.First, Za.Second].includes(l) && Z_),
             }),
         (0, vt.jsxs)("div", {
           children: [
@@ -5498,121 +5509,121 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
                 case r:
                   return (0, vt.jsx)(G_, { className: J_, battlesCount: n, maxBattlesCount: i });
                 case et(l):
-                  return (0, vt.jsx)(D_, { className: ef });
+                  return (0, vt.jsx)(H_, { className: ef });
                 default:
                   return (0, vt.jsx)(x_, { className: af });
               }
             })(),
-            (0, vt.jsx)(X_, { warningType: d, qualificationActive: r, className: tf }),
+            (0, vt.jsx)(X_, { warningType: m, qualificationActive: r, className: tf }),
           ],
         }),
       ],
     });
   }),
-  nf = Ie("Overview", Vd),
+  nf = ge("Overview", Vd),
   lf = Fa(function ({ className: e }) {
     const a = q(),
-      { model: s, controls: r } = Eo(),
-      n = s.additionalBonus.get(),
-      i = s.battleInfo.get(),
-      l = s.personalEfficiency.achievements.get(),
-      o = s.computes.isRankedBattle(),
+      { model: t, controls: s } = Eo(),
+      r = t.additionalBonus.get(),
+      n = t.battleInfo.get(),
+      i = t.personalEfficiency.achievements.get(),
+      l = t.computes.isRankedBattle(),
       {
-        step: c,
-        battleStatusRef: d,
-        dividerRef: m,
-        earnedCurrenciesRef: u,
+        step: o,
+        battleStatusRef: c,
+        dividerRef: d,
+        earnedCurrenciesRef: m,
         bonusRef: _,
         setAllMedalsAnimated: f,
       } = Qt(),
-      [p] = de(() => ({ from: { opacity: 0, y: "-10rem" }, ref: d })),
-      [b] = de(() => ({ from: { maskSize: "0% 100%" }, ref: m })),
-      [h] = de(() => ({ from: { opacity: 0, y: "-10rem" }, ref: u })),
-      [v] = de(() => ({ from: { opacity: 0, y: "10rem" }, ref: _ })),
-      { api: g, setCompletedAnimationIndexes: y } = Ko(),
-      x = s.computes.premiumAndStandartEarnings(),
-      N = (0, ot.useMemo)(() => (void 0 !== i && Ga.includes(i?.modeName) ? za : Ra), [i]);
+      [p] = g(() => ({ from: { opacity: 0, y: "-10rem" }, ref: c })),
+      [b] = g(() => ({ from: { maskSize: "0% 100%" }, ref: d })),
+      [h] = g(() => ({ from: { opacity: 0, y: "-10rem" }, ref: m })),
+      [v] = g(() => ({ from: { opacity: 0, y: "10rem" }, ref: _ })),
+      { api: y, setCompletedAnimationIndexes: x } = Ko(),
+      N = t.computes.premiumAndStandartEarnings(),
+      j = (0, ot.useMemo)(() => (void 0 !== n && Ga.includes(n?.modeName) ? za : Ra), [n]);
     return (
       (0, ot.useEffect)(() => {
-        0 === l.length && f(!0);
-      }, [l.length, f]),
+        0 === i.length && f(!0);
+      }, [i.length, f]),
       (0, ot.useEffect)(() => {
-        if (c === Ft.immediate)
+        if (o === Ft.immediate)
           return (
-            g.start(() => ({ x: 0, y: 0, scale: 1, opacity: 1, immediate: !0 })),
+            y.start(() => ({ x: 0, y: 0, scale: 1, opacity: 1, immediate: !0 })),
             f(!0),
-            void y(new Set(Ze(l.length, (e) => e)))
+            void x(new Set(da(i.length, (e) => e)))
           );
-        if (c === Ft.first) {
-          const e = 500 * Math.log(l.length),
-            s = 150 * Math.log(l.length);
-          (g.start((r) => {
-            const n = e - 500 * Math.log(l.length - r),
-              i = s - 150 * Math.log(l.length - r);
+        if (o === Ft.first) {
+          const e = 500 * Math.log(i.length),
+            t = 150 * Math.log(i.length);
+          (y.start((s) => {
+            const r = e - 500 * Math.log(i.length - s),
+              n = t - 150 * Math.log(i.length - s);
             return {
               x: 0,
               y: 0,
               scale: 1,
-              delay: 200 * r + n,
-              config: { duration: 400 + i, easing: Ia.cubicBezier(1, 0, 0.95, 1) },
+              delay: 200 * s + r,
+              config: { duration: 400 + n, easing: be.cubicBezier(1, 0, 0.95, 1) },
               onRest() {
                 (a.play("achievementAppeared", { target: "overview" }),
-                  r === l.length - 1 && f(!0),
-                  y((e) => t(e, r)));
+                  s === i.length - 1 && f(!0),
+                  x((e) => O(e, s)));
               },
             };
           }),
-            g.start((a) => ({
+            y.start((a) => ({
               opacity: 1,
-              delay: 150 + 200 * a + (e - 500 * Math.log(l.length - a)),
+              delay: 150 + 200 * a + (e - 500 * Math.log(i.length - a)),
               config: {
-                duration: 250 + (s - 150 * Math.log(l.length - a)),
-                easing: Ia.cubicBezier(0.33, 0, 0.25, 1),
+                duration: 250 + (t - 150 * Math.log(i.length - a)),
+                easing: be.cubicBezier(0.33, 0, 0.25, 1),
               },
             })));
         }
-      }, [c, g, y, a, l.length, f]),
+      }, [o, y, x, a, i.length, f]),
       (0, vt.jsxs)(nf, {
-        className: F(!o && Gd, e),
+        className: xa(!l && Gd, e),
         children: [
           (0, vt.jsx)("div", { className: Od }),
           (0, vt.jsx)(Zd, {}),
           (0, vt.jsxs)("div", {
             className: zd,
             children: [
-              (0, vt.jsx)(w.div, {
+              (0, vt.jsx)(u.div, {
                 style: p,
                 className: Wd,
-                children: o
+                children: l
                   ? (0, vt.jsx)(rf, {})
                   : (0, vt.jsx)("div", { className: $d, children: (0, vt.jsx)(sf, {}) }),
               }),
               (0, vt.jsxs)("div", {
-                className: F(
+                className: xa(
                   Xd,
-                  l.length &&
-                    s.computes.earnedCurrencies().filter(({ value: e }) => e).length >= 4 &&
+                  i.length &&
+                    t.computes.earnedCurrencies().filter(({ value: e }) => e).length >= 4 &&
                     Fd,
                 ),
                 children: [
-                  (0, vt.jsx)(w.div, { style: h, children: (0, vt.jsx)(Dd, { className: Kd }) }),
-                  l.length > 0 && (0, vt.jsx)("div", { className: Qd }),
+                  (0, vt.jsx)(u.div, { style: h, children: (0, vt.jsx)(Hd, { className: Kd }) }),
+                  i.length > 0 && (0, vt.jsx)("div", { className: Qd }),
                   (0, vt.jsx)(rc, { className: qd }),
                 ],
               }),
-              (0, vt.jsx)(w.div, {
+              (0, vt.jsx)(u.div, {
                 style: b,
                 className: Md,
-                children: (0, vt.jsx)(ss, { classNames: { base: Ud, image: Ld } }),
+                children: (0, vt.jsx)(ss, { classNames: { base: Ld, image: Ud } }),
               }),
               (0, vt.jsx)(lc, {
-                ...n,
-                premiumAndStandartEarnings: x,
-                applyBonus: r.applyBonus,
-                handleAdvertisement: (e) => r.useAdvertisement(e),
-                supportedAdvertisements: N,
-                showBonusDetails: r.showBonusDetails,
-                children: (0, vt.jsx)(w.div, {
+                ...r,
+                premiumAndStandartEarnings: N,
+                applyBonus: s.applyBonus,
+                handleAdvertisement: (e) => s.useAdvertisement(e),
+                supportedAdvertisements: j,
+                showBonusDetails: s.showBonusDetails,
+                children: (0, vt.jsx)(u.div, {
                   style: v,
                   children: (0, vt.jsx)(gd, { className: Yd }),
                 }),
@@ -5635,7 +5646,7 @@ var e_ = Ia.cubicBezier(0.33, 0, 0.25, 1),
     });
   });
 function cf(e) {
-  const a = ma(e.toLowerCase());
+  const a = Ye(e.toLowerCase());
   return `url(${R.images.gui.maps.icons.vehicle.x380x304.$dyn(a)})`;
 }
 var df = "BanResultSection_9868ea69",
@@ -5651,63 +5662,63 @@ function gf({
   votesCount: e = 0,
   teamType: a,
   bannedVehicle: t,
-  randomlySelected: r,
-  onShowVehicleAnimation: n,
-  onShowIconAnimation: i,
-  classNames: l,
-  hasAnimation: o = !0,
+  randomlySelected: s,
+  onShowVehicleAnimation: r,
+  onShowIconAnimation: n,
+  classNames: i,
+  hasAnimation: l = !0,
 }) {
-  const c = S({ body: R.strings.comp7_ext.banWidget.tooltip() }),
-    d = le(),
-    m = le(),
-    u = s(t.techName, {
-      ref: d,
+  const o = w({ body: R.strings.comp7_ext.banWidget.tooltip() }),
+    c = se(),
+    d = se(),
+    m = V(t.techName, {
+      ref: c,
       from: {
-        opacity: o ? 0 : 1,
-        transform: o ? "translate(-50%, -50%) scale(2)" : "translate(-50%, -50%) scale(1)",
+        opacity: l ? 0 : 1,
+        transform: l ? "translate(-50%, -50%) scale(2)" : "translate(-50%, -50%) scale(1)",
       },
       enter: { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
-      delay: o ? 800 : 0,
-      immediate: !o,
+      delay: l ? 800 : 0,
+      immediate: !l,
       config: { duration: 500 },
       onStart: () => {
-        o && n();
+        l && r();
       },
     }),
-    _ = de({
-      ref: m,
-      from: { opacity: o ? 0 : 0.9, zIndex: 2 },
+    _ = g({
+      ref: d,
+      from: { opacity: l ? 0 : 0.9, zIndex: 2 },
       to: { opacity: 0.9 },
-      delay: o ? 1300 : 0,
-      immediate: !o,
+      delay: l ? 1300 : 0,
+      immediate: !l,
       config: { duration: 500 },
       onStart: () => {
-        o && i();
+        l && n();
       },
     });
   return (
-    N([d, m], o ? [0, 0.5] : [0, 0]),
+    ea([c, d], l ? [0, 0.5] : [0, 0]),
     (0, vt.jsxs)("div", {
-      className: (0, l_.default)(df, l?.base),
+      className: (0, l_.default)(df, i?.base),
       children: [
-        r && (0, vt.jsx)("div", { className: vf, ...c }),
+        s && (0, vt.jsx)("div", { className: vf, ...o }),
         e >= 0 &&
-          (0, vt.jsx)("div", { className: (0, l_.default)(mf, uf, l?.votesCount), children: e }),
+          (0, vt.jsx)("div", { className: (0, l_.default)(mf, uf, i?.votesCount), children: e }),
         (0, vt.jsx)("div", {
-          className: (0, l_.default)(mf, _f, l?.teamType),
+          className: (0, l_.default)(mf, _f, i?.teamType),
           children: `${R.strings.comp7_ext.banWidget.$dyn(a)}`,
         }),
         (0, vt.jsx)("div", {
-          className: (0, l_.default)(mf, ff, l?.name),
+          className: (0, l_.default)(mf, ff, i?.name),
           children: t.name ? t.name : R.strings.comp7_ext.banView.noBan(),
         }),
         (0, vt.jsxs)("div", {
           className: (0, l_.default)(mf, pf),
           children: [
-            (0, vt.jsx)(w.div, { className: bf, style: _ }),
-            u((e, a) =>
+            (0, vt.jsx)(u.div, { className: bf, style: _ }),
+            m((e, a) =>
               a
-                ? (0, vt.jsx)(w.div, { className: hf, style: { backgroundImage: cf(a), ...e } })
+                ? (0, vt.jsx)(u.div, { className: hf, style: { backgroundImage: cf(a), ...e } })
                 : void 0,
             ),
           ],
@@ -5729,72 +5740,72 @@ var yf = "allies",
     enemyVotes: a,
     isAlliesRandomlySelected: t,
     isEnemyRandomlySelected: s,
-    bannedByAlliesVehicle: n,
-    bannedByEnemiesVehicle: i,
-    hasAnimation: l = !0,
-    className: o,
-    classNames: c,
+    bannedByAlliesVehicle: r,
+    bannedByEnemiesVehicle: n,
+    hasAnimation: i = !0,
+    className: l,
+    classNames: o,
   }) => {
-    const d = (0, ot.useRef)(!1),
-      m = (0, ot.useRef)(!1),
-      u = de({
-        from: { transform: l ? "translateX(100%)" : "translateX(0%)" },
+    const c = (0, ot.useRef)(!1),
+      d = (0, ot.useRef)(!1),
+      m = g({
+        from: { transform: i ? "translateX(100%)" : "translateX(0%)" },
         to: { transform: "translateX(0%)" },
-        immediate: !l,
+        immediate: !i,
         config: { duration: 500 },
       }),
-      _ = de({
-        from: { transform: l ? "translateX(-100%)" : "translateX(0%)" },
+      _ = g({
+        from: { transform: i ? "translateX(-100%)" : "translateX(0%)" },
         to: { transform: "translateX(0%)" },
-        immediate: !l,
+        immediate: !i,
         config: { duration: 500 },
       }),
-      f = de({
-        from: { opacity: l ? 0 : 0.3 },
+      f = g({
+        from: { opacity: i ? 0 : 0.3 },
         to: { opacity: 0.3 },
-        immediate: !l,
+        immediate: !i,
         config: { duration: 500 },
       }),
       p = (0, ot.useCallback)(() => {
-        d.current || ((d.current = !0), r.sound("comp_7_bans_pict_animation"));
+        c.current || ((c.current = !0), W.sound("comp_7_bans_pict_animation"));
       }, []),
       b = (0, ot.useCallback)(() => {
-        m.current || ((m.current = !0), r.sound("comp_7_bans_crossed_label"));
+        d.current || ((d.current = !0), W.sound("comp_7_bans_crossed_label"));
       }, []);
     return (
-      qe(() => {
-        l && r.sound("comp_7_bans_text_animation");
+      ve(() => {
+        i && W.sound("comp_7_bans_text_animation");
       }),
       (0, vt.jsxs)("div", {
-        className: (0, l_.default)(Nf, o),
+        className: (0, l_.default)(Nf, l),
         children: [
-          (0, vt.jsx)(w.div, {
+          (0, vt.jsx)(u.div, {
             style: _,
             className: (0, l_.default)(jf, If),
             children: (0, vt.jsx)(gf, {
               votesCount: e,
               teamType: yf,
-              bannedVehicle: n,
+              bannedVehicle: r,
               randomlySelected: t,
               onShowIconAnimation: b,
               onShowVehicleAnimation: p,
-              classNames: c?.section,
-              hasAnimation: l,
+              classNames: o?.section,
+              hasAnimation: i,
             }),
           }),
-          (0, vt.jsx)(w.div, { className: Af, style: f }),
-          (0, vt.jsx)(w.div, {
-            style: u,
+          (0, vt.jsx)(u.div, { className: Af, style: f }),
+          (0, vt.jsx)(u.div, {
+            style: m,
             className: (0, l_.default)(jf, wf),
             children: (0, vt.jsx)(gf, {
               votesCount: a,
               teamType: xf,
-              bannedVehicle: i,
+              bannedVehicle: n,
               randomlySelected: s,
               onShowIconAnimation: b,
               onShowVehicleAnimation: p,
-              classNames: { ...c?.section, base: (0, l_.default)(Cf, c?.section?.base) },
-              hasAnimation: l,
+              classNames: { ...o?.section, base: (0, l_.default)(Cf, o?.section?.base) },
+              hasAnimation: i,
             }),
           }),
         ],
@@ -5812,20 +5823,20 @@ var yf = "allies",
     },
   },
   kf = Fa(({ className: e }) => {
-    const { model: t } = Eo(),
-      s = t.bannedByAlliesVehicle.get(),
-      r = t.bannedByEnemiesVehicle.get();
+    const { model: a } = Eo(),
+      t = a.bannedByAlliesVehicle.get(),
+      s = a.bannedByEnemiesVehicle.get();
     return (0, vt.jsxs)("div", {
       className: Sf,
       children: [
-        (0, vt.jsx)(a, { text: `${R.strings.comp7_ext.pbs.bans.title()}`, classMix: Pf }),
+        (0, vt.jsx)(C, { text: `${R.strings.comp7_ext.pbs.bans.title()}`, classMix: Pf }),
         (0, vt.jsx)(Bf, {
           className: e,
           classNames: Rf,
-          bannedByAlliesVehicle: { name: s.name, techName: s.techName },
-          bannedByEnemiesVehicle: { name: r.name, techName: r.techName },
+          bannedByAlliesVehicle: { name: t.name, techName: t.techName },
+          bannedByEnemiesVehicle: { name: s.name, techName: s.techName },
           hasAnimation: !1,
-          ...t.bansModel.get(),
+          ...a.bansModel.get(),
         }),
       ],
     });
@@ -5851,9 +5862,9 @@ var yf = "allies",
     return (0, vt.jsx)("div", {
       ...t,
       ref: s,
-      className: F(Tf.divider, e?.base, a),
-      children: (0, vt.jsx)(Aa, {
-        className: F(Tf.dividerImage, e?.image),
+      className: xa(Tf.divider, e?.base, a),
+      children: (0, vt.jsx)(na, {
+        className: xa(Tf.dividerImage, e?.image),
         width: "100%",
         height: "100%",
         path: "post_battle.row_divider",
@@ -5861,7 +5872,7 @@ var yf = "allies",
       }),
     });
   });
-var Df = {
+var Hf = {
   header: "Header_ecb415bd",
   vehicle: "Header_vehicle_e1c620c0",
   vehicleImageWrapper: "Header_vehicleImageWrapper_f07116f5",
@@ -5901,7 +5912,7 @@ var Df = {
   blink: "Header_blink_65f475ba",
   slideUpIn: "Header_slideUpIn_65f475ba",
 };
-function Hf(e, a) {
+function Df(e, a) {
   return void 0 === a ? "default" : a === e ? "hover" : "extinct";
 }
 var Of = (0, ot.forwardRef)(function (
@@ -5909,18 +5920,18 @@ var Of = (0, ot.forwardRef)(function (
     i,
   ) {
     const l = q(),
-      o = T(
+      o = S(
         e.tooltipId,
         (0, ot.useMemo)(() => JSON.parse(e.tooltipArgs), [e.tooltipArgs]),
       ),
-      c = Le(
+      c = k(
         { width: "48rem", height: "48rem", path: `achievement.c_48x48.${e.iconName}` },
         { medium: { width: "67rem", height: "71rem", path: `achievement.${e.iconName}` } },
       );
     return (0, vt.jsx)("div", {
       ...n,
       ...o,
-      className: F(Df.achievement, Df[`achievement__${Hf(t, s)}`]),
+      className: xa(Hf.achievement, Hf[`achievement__${Df(t, s)}`]),
       style: { zIndex: t === s ? a + 1 : a - t },
       onMouseEnter: function (e) {
         (o.onMouseEnter(e),
@@ -5933,7 +5944,7 @@ var Of = (0, ot.forwardRef)(function (
       onMouseLeave: () => {
         (o.onMouseLeave(), r(void 0));
       },
-      children: (0, vt.jsx)(Aa, { ref: i, className: Df.achievementIcon, ...c }, e.iconName),
+      children: (0, vt.jsx)(na, { ref: i, className: Hf.achievementIcon, ...c }, e.iconName),
     });
   }),
   Vf = Fa(function () {
@@ -5948,7 +5959,7 @@ var Of = (0, ot.forwardRef)(function (
         ? (0, vt.jsx)(nt, {
             size: Ja.x48,
             seasonName: s,
-            className: Df.accountInfoGap,
+            className: Hf.accountInfoGap,
             isSimplified: !0,
           })
         : (0, vt.jsx)(at, {
@@ -5956,7 +5967,7 @@ var Of = (0, ot.forwardRef)(function (
             rank: n,
             division: i,
             seasonName: s,
-            className: Df.accountInfoGap,
+            className: Hf.accountInfoGap,
             isSimplified: !0,
           }),
     });
@@ -5977,139 +5988,139 @@ var Wf = Fa(function ({
     vehicle: s,
     achievements: r,
     squadIndex: n,
-    personal: i,
-    userStatus: l,
-    killer: o,
+    personal: l,
+    userStatus: o,
+    killer: d,
   }) {
-    const c = m.resolve("strings"),
-      [d, u] = (0, ot.useState)(void 0),
-      { model: _ } = Eo(),
-      f = _.computes.personalInfo(),
-      p = Le(
+    const m = c.resolve("strings"),
+      [u, _] = (0, ot.useState)(void 0),
+      { model: f } = Eo(),
+      p = f.computes.personalInfo(),
+      b = k(
         { width: "230rem", height: "184rem" },
         { medium: { width: "290rem", height: "232rem" } },
       ),
-      b = ko({ personal: i, platoonType: Ro(e, f.squadIndex, n), anonymizer: t.anonymizer }),
-      h = S({
-        header: c
+      h = ko({ personal: l, platoonType: Ro(e, p.squadIndex, n), anonymizer: t.anonymizer }),
+      v = w({
+        header: m
           .readOrEmpty("tooltips.anonymizer.teamStats.header")
-          .replace("%(name)s", b ? t.username : t.fakeUsername),
-        body: c.readOrEmpty("tooltips.anonymizer.teamStats.body"),
+          .replace("%(name)s", h ? t.username : t.fakeUsername),
+        body: m.readOrEmpty("tooltips.anonymizer.teamStats.body"),
       }),
-      v = -1 === (g = l.deathReason) ? "alive" : `dead${g}`;
-    var g;
-    const y = b ? o.fakeUsername : o.username,
-      x = void 0 === s;
+      g = -1 === (y = o.deathReason) ? "alive" : `dead${y}`;
+    var y;
+    const x = h ? d.fakeUsername : d.username,
+      N = void 0 === s;
     return (0, vt.jsxs)("div", {
-      className: Df.header,
+      className: Hf.header,
       children: [
         (0, vt.jsx)("div", {
-          className: Df.vehicleImageWrapper,
-          children: (0, vt.jsx)(C, {
-            name: x ? "tank_empty" : s.techName,
-            width: p.width,
-            height: p.height,
+          className: Hf.vehicleImageWrapper,
+          children: (0, vt.jsx)(U, {
+            name: N ? "tank_empty" : s.techName,
+            width: b.width,
+            height: b.height,
           }),
         }),
         (0, vt.jsxs)("div", {
-          className: Df.info,
+          className: Hf.info,
           children: [
-            (0, vt.jsxs)(je, {
-              className: F(Df.accountInfo, !a && Df.accountInfo__simplified),
+            (0, vt.jsxs)(he, {
+              className: xa(Hf.accountInfo, !a && Hf.accountInfo__simplified),
               children: [
                 a ? (0, vt.jsx)(Vf, {}) : null,
                 "" !== t.badge &&
-                  (0, vt.jsx)(je.Badge, {
-                    className: Df.accountInfoGap,
-                    size: je.Badge.sizes.x48x48,
+                  (0, vt.jsx)(he.Badge, {
+                    className: Hf.accountInfoGap,
+                    size: he.Badge.sizes.x48x48,
                     badgeId: t.badge,
                   }),
-                (0, vt.jsx)(je.Name, {
-                  className: F(
-                    Df.accountName,
-                    Df.accountInfoGap,
-                    t.teamKiller && Df.accountName__teamKiller,
+                (0, vt.jsx)(he.Name, {
+                  className: xa(
+                    Hf.accountName,
+                    Hf.accountInfoGap,
+                    t.teamKiller && Hf.accountName__teamKiller,
                   ),
-                  children: (0, vt.jsx)(ba, { text: b ? t.fakeUsername : t.username }),
+                  children: (0, vt.jsx)(z, { text: h ? t.fakeUsername : t.username }),
                 }),
                 "" !== t.clanAbbreviation &&
-                  !b &&
-                  (0, vt.jsx)(je.ClanTag, {
-                    className: F(
-                      Df.clanAbbreviation,
-                      t.teamKiller && Df.clanAbbreviation__teamKiller,
+                  !h &&
+                  (0, vt.jsx)(he.ClanTag, {
+                    className: xa(
+                      Hf.clanAbbreviation,
+                      t.teamKiller && Hf.clanAbbreviation__teamKiller,
                     ),
-                    children: (0, vt.jsx)(Q, {
+                    children: (0, vt.jsx)(ye, {
                       path: "common.clanTag",
                       params: { abbrev: t.clanAbbreviation },
                       brackets: { start: "{", end: "}" },
                     }),
                   }),
                 0 !== t.igrType &&
-                  (0, vt.jsx)(je.IgrIcon, {
-                    size: je.IgrIcon.sizes.x64x28,
-                    className: Df.accountInfoGap,
+                  (0, vt.jsx)(he.IgrIcon, {
+                    size: he.IgrIcon.sizes.x64x28,
+                    className: Hf.accountInfoGap,
                   }),
                 "" !== t.suffixBadge &&
-                  (0, vt.jsx)(je.Stripe, {
-                    size: je.Stripe.sizes.regular,
+                  (0, vt.jsx)(he.Stripe, {
+                    size: he.Stripe.sizes.regular,
                     badgeId: t.suffixBadge,
-                    className: Df.accountInfoGap,
+                    className: Hf.accountInfoGap,
                   }),
                 t.anonymizer &&
-                  (0, vt.jsx)(je.AnonymizerIcon, {
-                    ...h,
-                    size: je.AnonymizerIcon.sizes.x32x32,
-                    className: Df.anonymizerIcon,
+                  (0, vt.jsx)(he.AnonymizerIcon, {
+                    ...v,
+                    size: he.AnonymizerIcon.sizes.x32x32,
+                    className: Hf.anonymizerIcon,
                   }),
               ],
             }),
             (0, vt.jsx)("div", {
-              className: F(Df.vehicle, t.teamKiller && Df.vehicle__teamKiller),
-              children: x
-                ? (0, vt.jsx)(Q, { path: "ingame_gui.players_panel.unknown_vehicle" })
+              className: xa(Hf.vehicle, t.teamKiller && Hf.vehicle__teamKiller),
+              children: N
+                ? (0, vt.jsx)(ye, { path: "ingame_gui.players_panel.unknown_vehicle" })
                 : (0, vt.jsxs)(vt.Fragment, {
                     children: [
-                      (0, vt.jsx)(Ue, {
+                      (0, vt.jsx)(Ia, {
                         value: s.tier,
-                        className: F(Df.vehicleLevel, Df.vehicleGap),
+                        className: xa(Hf.vehicleLevel, Hf.vehicleGap),
                       }),
-                      (0, vt.jsx)(D, {
+                      (0, vt.jsx)(Be, {
                         type: s.type,
                         size: "x24x24",
-                        className: F(Df.vehicleType, Df.vehicleGap),
+                        className: xa(Hf.vehicleType, Hf.vehicleGap),
                       }),
-                      (0, vt.jsx)("div", { className: Df.vehicleName, children: s.longName }),
+                      (0, vt.jsx)("div", { className: Hf.vehicleName, children: s.longName }),
                     ],
                   }),
             }),
             (0, vt.jsx)("div", {
-              className: Df.vehicleState,
-              children: (0, vt.jsx)(Q, {
+              className: Hf.vehicleState,
+              children: (0, vt.jsx)(ye, {
                 path: zf({
-                  vehicleStatusKey: v,
-                  anonymized: b,
-                  personal: i,
-                  clanAbbrev: o.clanAbbreviation,
-                  abbondonBattle: l.abandonBattle,
+                  vehicleStatusKey: g,
+                  anonymized: h,
+                  personal: l,
+                  clanAbbrev: d.clanAbbreviation,
+                  abbondonBattle: o.abandonBattle,
                 }),
                 params: {
-                  killername: y,
-                  clanTag: o.clanAbbreviation,
-                  killerClass: F(Df.killerAccount, o.teamKiller && Df.killerAccount__teamKiller),
+                  killername: x,
+                  clanTag: d.clanAbbreviation,
+                  killerClass: xa(Hf.killerAccount, d.teamKiller && Hf.killerAccount__teamKiller),
                 },
               }),
             }),
             0 !== r.length &&
               (0, vt.jsx)("div", {
-                className: Df.achievements,
-                children: ya(Jl(r), (e, a) =>
+                className: Hf.achievements,
+                children: i(Jl(r), (e, a) =>
                   (0, vt.jsx)(
                     Of,
                     {
                       index: a,
-                      hoverIndex: d,
-                      setHoverIndex: u,
+                      hoverIndex: u,
+                      setHoverIndex: _,
                       achievement: e,
                       achievementsLength: r.length,
                     },
@@ -6122,25 +6133,25 @@ var Wf = Fa(function ({
       ],
     });
   }),
-  Mf = Ie("StatisticsLabel"),
-  Gf = m.resolve("strings"),
+  Mf = ge("StatisticsLabel"),
+  Gf = c.resolve("strings"),
   $f = (0, ot.forwardRef)(function ({ labelKey: e, ...a }, t) {
     return (0, vt.jsx)(Mf, { ...a, ref: t, children: Gf.readOrEmpty(e) });
   }),
-  Uf = "Value_798a6cdd",
-  Lf = "Value_separator_798a6cdd",
-  Xf = m.resolve("strings");
+  Lf = "Value_798a6cdd",
+  Uf = "Value_separator_798a6cdd",
+  Xf = c.resolve("strings");
 function Ff(e, a) {
   switch (e) {
     case _o.Integer:
-      return Y.formatNumber("integral", a);
+      return va.formatNumber("integral", a);
     case _o.Float:
-      return Y.formatReal("fractional", a);
+      return va.formatReal("fractional", a);
     default:
       return a;
   }
 }
-var Kf = Ie("StatisticsValue", Uf),
+var Kf = ge("StatisticsValue", Lf),
   qf = (0, ot.forwardRef)(function (
     {
       labelKey: e,
@@ -6149,26 +6160,26 @@ var Kf = Ie("StatisticsValue", Uf),
       valueSeparatorKey: s = "common.common.slash",
       className: r,
       classNames: n,
-      ...i
+      ...l
     },
-    l,
+    o,
   ) {
     return (0, vt.jsx)(Kf, {
-      ...i,
-      ref: l,
-      className: F(n?.base, r),
-      children: ya(a, (r, i) =>
+      ...l,
+      ref: o,
+      className: xa(n?.base, r),
+      children: i(a, (r, i) =>
         (0, vt.jsxs)(
           ot.Fragment,
           {
             children: [
               (0, vt.jsx)("div", {
-                className: F(0 === r && n?.zeroValue, r < 0 && n?.negativeValue),
+                className: xa(0 === r && n?.zeroValue, r < 0 && n?.negativeValue),
                 children: Ff(t, r),
               }),
               i < a.length - 1 &&
                 (0, vt.jsxs)("div", {
-                  className: F(Lf, n?.separator),
+                  className: xa(Uf, n?.separator),
                   children: [" ", Xf.readOrEmpty(s), " "],
                 }),
             ],
@@ -6182,19 +6193,19 @@ var Kf = Ie("StatisticsValue", Uf),
   Yf = "Index_scrollAreaContent__initialized_b2629fde",
   Zf = "Index_item_6b7cdfb0",
   Jf = "Index_separator_add04e19",
-  ep = Ie("Statistics", "Index_statistics_638478ff"),
-  ap = Ie("StatisticsItem", Zf),
-  tp = Ie("StatisticsItemSeparator", Jf);
+  ep = ge("Statistics", "Index_statistics_638478ff"),
+  ap = ge("StatisticsItem", Zf),
+  tp = ge("StatisticsItemSeparator", Jf);
 function sp({ children: e, scrollbarProps: a, scrollAreaProps: t }) {
-  const s = ms(oe().api);
+  const s = ms($().api);
   return (0, vt.jsxs)(vt.Fragment, {
     children: [
-      (0, vt.jsx)(ne, {
+      (0, vt.jsx)(A, {
         ...t,
-        classNames: { ...t?.classNames, content: F(Qf, s && Yf, t?.classNames?.content) },
+        classNames: { ...t?.classNames, content: xa(Qf, s && Yf, t?.classNames?.content) },
         children: e,
       }),
-      (0, vt.jsx)(ra, { ...a }),
+      (0, vt.jsx)(m, { ...a }),
     ],
   });
 }
@@ -6202,7 +6213,7 @@ var rp = (0, ot.forwardRef)(function ({ scrollbarProps: e, scrollAreaProps: a, .
   return (0, vt.jsx)(ep, {
     ...t,
     ref: s,
-    children: (0, vt.jsx)(ee, {
+    children: (0, vt.jsx)(Ve, {
       children: (0, vt.jsx)(sp, { ...t, scrollbarProps: e, scrollAreaProps: a }),
     }),
   });
@@ -6227,13 +6238,13 @@ function bp({ squareSize: e = 1, spacing: a = 2, backgroundColor: t = "#d9d9d9" 
       const e = s.current;
       if (null !== e) {
         const a = e.getBoundingClientRect().width,
-          t = j(a);
+          t = ta(a);
         n(Math.floor(t / i));
       }
     }, [i]);
   return (
-    J(l, [s.current, i, l]),
-    (0, ot.useEffect)(() => be(l), [l]),
+    p(l, [s.current, i, l]),
+    (0, ot.useEffect)(() => He(l), [l]),
     (0, vt.jsx)("div", {
       ref: s,
       className: fp,
@@ -6254,7 +6265,7 @@ function hp({ list: e }) {
   return (0, vt.jsx)(rp, {
     scrollbarProps: { classNames: { base: np } },
     scrollAreaProps: { classNames: { content: ip } },
-    children: ya(e, (e) =>
+    children: i(e, (e) =>
       (0, vt.jsxs)(
         ot.Fragment,
         {
@@ -6276,11 +6287,11 @@ function hp({ list: e }) {
               ],
             }),
             void 0 !== e.details &&
-              ya(e.details, (e) =>
+              i(e.details, (e) =>
                 (0, vt.jsxs)(
                   rp.Item,
                   {
-                    className: F(op, _p),
+                    className: xa(op, _p),
                     children: [
                       (0, vt.jsx)(rp.Label, {
                         className: cp,
@@ -6312,7 +6323,7 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
   Np = "EfficiencyDetails_dividerImage_5b9d06d2",
   jp = "EfficiencyDetails_closeIcon_8d81da90",
   Ip = "EfficiencyDetails_statistics_30a81815",
-  wp = Ie("EfficiencyDetails", "EfficiencyDetails_efficiencyDetails_1f97f967", {
+  wp = ge("EfficiencyDetails", "EfficiencyDetails_efficiencyDetails_1f97f967", {
     variants: { team: { [wo]: gp, [Ao]: yp } },
   }),
   Ap = Fa(function ({ team: e, className: a }) {
@@ -6321,14 +6332,14 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
       n = t.computes.efficiencyDetails(),
       i = t.computes.isRankedBattle(),
       l = q(),
-      c = (0, ot.useRef)(null);
+      o = (0, ot.useRef)(null);
     return (
       (0, ot.useEffect)(() => {
-        const e = oa.down(([, e]) => {
+        const e = qe.down(([, e]) => {
             "outside" === e && s.teamEfficiency.selectRow(void 0);
           }),
-          a = o(window, "click", (e) => {
-            c.current && !c.current.contains(e.target) && s.teamEfficiency.selectRow(void 0);
+          a = Ca(window, "click", (e) => {
+            o.current && !o.current.contains(e.target) && s.teamEfficiency.selectRow(void 0);
           });
         return () => {
           (a(), e());
@@ -6338,8 +6349,8 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
         ? null
         : (0, vt.jsxs)(wp, {
             team: e,
-            className: F(a, r && vp),
-            ref: c,
+            className: xa(a, r && vp),
+            ref: o,
             onClick: (e) => {
               e.stopPropagation();
             },
@@ -6360,7 +6371,7 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
                 children: (0, vt.jsx)(hp, { list: n.detailedStatistics }),
               }),
               (0, vt.jsx)(Ef, { classNames: { base: xp, image: Np } }),
-              (0, vt.jsx)(Aa, {
+              (0, vt.jsx)(na, {
                 className: jp,
                 width: "24rem",
                 height: "24rem",
@@ -6388,13 +6399,13 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
   kp = "damageDealt",
   Tp = "kills",
   Ep = "earnedXp",
-  Dp = "prestigePoints",
-  Hp = "RankCell_container_d7a759f",
+  Hp = "prestigePoints",
+  Dp = "RankCell_container_d7a759f",
   Op = Fa(function ({ isQualification: e, rank: a, division: t }) {
     const { model: s } = Qa(),
       r = s.season.name.get();
     return (0, vt.jsx)("div", {
-      className: Hp,
+      className: Dp,
       children: e
         ? (0, vt.jsx)(nt, { size: Ja.x22, seasonName: r })
         : (0, vt.jsx)(at, { size: Ja.x22, rank: a, division: t, seasonName: r }),
@@ -6406,8 +6417,8 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
   Mp = "AccountInfoCell_badge_b101914f",
   Gp = "AccountInfoCell_anonymizerIcon_a1d51ca4",
   $p = "AccountInfoCell_igrIcon_158694e7",
-  Up = "AccountInfoCell_stripe_fefba7b2",
-  Lp = Fa(function ({ account: e, team: a, squadIndex: t, className: s, classNames: r, ...n }) {
+  Lp = "AccountInfoCell_stripe_fefba7b2",
+  Up = Fa(function ({ account: e, team: a, squadIndex: t, className: s, classNames: r, ...n }) {
     const { model: i } = Eo(),
       l = i.computes.personalInfo(),
       o = ko({
@@ -6415,43 +6426,43 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
         platoonType: Ro(a, l.squadIndex, t),
         anonymizer: e.anonymizer,
       });
-    return (0, vt.jsxs)(je, {
+    return (0, vt.jsxs)(he, {
       ...n,
-      className: F(Vp, s),
+      className: xa(Vp, s),
       children: [
         "" !== e.badge &&
-          (0, vt.jsx)(je.Badge, {
-            size: je.Badge.sizes.x24x24,
+          (0, vt.jsx)(he.Badge, {
+            size: he.Badge.sizes.x24x24,
             badgeId: e.badge,
-            className: F(Mp, r?.badge),
+            className: xa(Mp, r?.badge),
           }),
-        (0, vt.jsx)(je.Name, {
-          className: F(zp, r?.username),
-          children: (0, vt.jsx)(ba, { text: o ? e.fakeUsername : e.username }),
+        (0, vt.jsx)(he.Name, {
+          className: xa(zp, r?.username),
+          children: (0, vt.jsx)(z, { text: o ? e.fakeUsername : e.username }),
         }),
         "" !== e.clanAbbreviation &&
           !o &&
-          (0, vt.jsx)(je.ClanTag, {
-            className: F(Wp, r?.clanAbbreviation),
-            children: (0, vt.jsx)(Q, {
+          (0, vt.jsx)(he.ClanTag, {
+            className: xa(Wp, r?.clanAbbreviation),
+            children: (0, vt.jsx)(ye, {
               path: "common.clanTag",
               params: { abbrev: e.clanAbbreviation },
               brackets: { start: "{", end: "}" },
             }),
           }),
         0 !== e.igrType &&
-          (0, vt.jsx)(je.IgrIcon, { size: je.IgrIcon.sizes.x34x16, className: F($p, r?.igrIcon) }),
+          (0, vt.jsx)(he.IgrIcon, { size: he.IgrIcon.sizes.x34x16, className: xa($p, r?.igrIcon) }),
         "" !== e.suffixBadge &&
-          (0, vt.jsx)(je.Stripe, {
-            size: je.Stripe.sizes.default,
+          (0, vt.jsx)(he.Stripe, {
+            size: he.Stripe.sizes.default,
             badgeId: e.suffixBadge,
-            className: Up,
+            className: Lp,
             classNames: r?.suffixBadge,
           }),
         e.anonymizer &&
-          (0, vt.jsx)(je.AnonymizerIcon, {
-            size: je.AnonymizerIcon.sizes.x24x24,
-            className: F(Gp, r?.anonymizerIcon),
+          (0, vt.jsx)(he.AnonymizerIcon, {
+            size: he.AnonymizerIcon.sizes.x24x24,
+            className: xa(Gp, r?.anonymizerIcon),
           }),
       ],
     });
@@ -6459,8 +6470,8 @@ var vp = "EfficiencyDetails_efficiencyDetails__reduced_908fdbe9",
   Xp = "AchievementsCell_achievementCell_e9bf973c",
   Fp = "AchievementsCell_achievementsAmount_349c209a";
 function Kp({ achievements: e }) {
-  const a = m.resolve("strings"),
-    t = S({ body: ya(Jl(e), (e) => a.readOrEmpty(`achievements.${e.name}`)).join("\n") }),
+  const a = c.resolve("strings"),
+    t = w({ body: i(Jl(e), (e) => a.readOrEmpty(`achievements.${e.name}`)).join("\n") }),
     s = e.length;
   return 0 === s
     ? null
@@ -6468,35 +6479,35 @@ function Kp({ achievements: e }) {
         ...t,
         className: Xp,
         children: [
-          (0, vt.jsx)(Aa, { path: "library.medal", width: "32rem", height: "32rem" }),
-          (0, vt.jsx)("div", { className: Fp, children: Y.formatNumber("integral", s) }),
+          (0, vt.jsx)(na, { path: "library.medal", width: "32rem", height: "32rem" }),
+          (0, vt.jsx)("div", { className: Fp, children: va.formatNumber("integral", s) }),
         ],
       });
 }
-var qp = { behaviour: ke.static, size: "32rem" },
-  Qp = { behaviour: ke.static, size: "32rem" },
-  Yp = { behaviour: ke.static, size: "138rem" },
-  Zp = { behaviour: ke.static, size: "212rem" },
-  Jp = { behaviour: ke.static, size: "240rem" },
-  eb = { behaviour: ke.static, size: "106rem" },
-  ab = { behaviour: ke.static, size: "180rem" },
-  tb = { behaviour: ke.static, size: "208rem" },
-  sb = { behaviour: ke.static, size: "180rem" },
-  rb = { behaviour: ke.static, size: "236rem" },
-  nb = { behaviour: ke.static, size: "292rem" },
-  ib = { behaviour: ke.static, size: "56rem" },
-  lb = { behaviour: ke.static, size: "60rem" },
-  ob = { behaviour: ke.static, size: "80rem" },
-  cb = { behaviour: ke.static, size: "40rem" },
-  db = { behaviour: ke.static, size: "60rem" },
-  mb = { behaviour: ke.static, size: "60rem" },
-  ub = { behaviour: ke.static, size: "56rem" },
-  _b = { behaviour: ke.static, size: "60rem" },
-  fb = { behaviour: ke.static, size: "80rem" },
-  pb = { behaviour: ke.static, size: "40rem" },
-  bb = { behaviour: ke.static, size: "56rem" },
-  hb = { behaviour: ke.static, size: "60rem" },
-  vb = { behaviour: ke.static, size: "80rem" };
+var qp = { behaviour: we.static, size: "32rem" },
+  Qp = { behaviour: we.static, size: "32rem" },
+  Yp = { behaviour: we.static, size: "138rem" },
+  Zp = { behaviour: we.static, size: "212rem" },
+  Jp = { behaviour: we.static, size: "240rem" },
+  eb = { behaviour: we.static, size: "106rem" },
+  ab = { behaviour: we.static, size: "180rem" },
+  tb = { behaviour: we.static, size: "208rem" },
+  sb = { behaviour: we.static, size: "180rem" },
+  rb = { behaviour: we.static, size: "236rem" },
+  nb = { behaviour: we.static, size: "292rem" },
+  ib = { behaviour: we.static, size: "56rem" },
+  lb = { behaviour: we.static, size: "60rem" },
+  ob = { behaviour: we.static, size: "80rem" },
+  cb = { behaviour: we.static, size: "40rem" },
+  db = { behaviour: we.static, size: "60rem" },
+  mb = { behaviour: we.static, size: "60rem" },
+  ub = { behaviour: we.static, size: "56rem" },
+  _b = { behaviour: we.static, size: "60rem" },
+  fb = { behaviour: we.static, size: "80rem" },
+  pb = { behaviour: we.static, size: "40rem" },
+  bb = { behaviour: we.static, size: "56rem" },
+  hb = { behaviour: we.static, size: "60rem" },
+  vb = { behaviour: we.static, size: "80rem" };
 var gb = {
     headerCell__asc: "HeaderCell_headerCell__asc_204e6a44",
     headerCell__desc: "HeaderCell_headerCell__desc_dc5a7202",
@@ -6526,7 +6537,7 @@ var gb = {
     [Tp]: "library.crossed_tank",
     [Ep]: "library.star",
     [Rp]: "library.medal",
-    [Dp]: "library.prestige_points",
+    [Hp]: "library.prestige_points",
   },
   xb = {
     [Cp]: "squadHeader",
@@ -6537,36 +6548,36 @@ var gb = {
     [Tp]: "fragHeader",
     [Ep]: "xpHeader",
     [Rp]: "medalHeader",
-    [Dp]: "prestigePoints",
+    [Hp]: "prestigePoints",
   },
   Nb = (0, ot.forwardRef)(function ({ name: e, team: a, column: t, className: s, ...r }, n) {
     const i = t.getIsSorted(),
-      l = m.resolve("strings"),
-      o = S({
+      l = c.resolve("strings"),
+      o = w({
         header: l.readOrEmpty(`battle_results.team.${xb[e]}.header`),
         body: l.readOrEmpty(`battle_results.team.${xb[e]}.body`),
       }),
-      c = e === Sp;
+      d = e === Sp;
     return (0, vt.jsx)("div", {
       ...r,
       ...o,
       ref: n,
-      className: F(
+      className: xa(
         gb.headerCell,
-        c ? gb.headerCell__text : gb.headerCell__icon,
+        d ? gb.headerCell__text : gb.headerCell__icon,
         i && gb[`headerCell__${i}`],
         s,
       ),
-      children: c
+      children: d
         ? l.readOrEmpty(`battle_results.team.stats.${a}`)
-        : (0, vt.jsx)(Aa, { width: "32rem", height: "32rem", path: yb[e] }),
+        : (0, vt.jsx)(na, { width: "32rem", height: "32rem", path: yb[e] }),
     });
   }),
   jb = "NumberValueCell_numberValueCell_8840a07";
 function Ib({ value: e, className: a, showZero: t = !0 }) {
   return !1 === t && 0 === e
     ? null
-    : (0, vt.jsx)("div", { className: F(jb, a), children: Y.formatNumber("integral", e) });
+    : (0, vt.jsx)("div", { className: xa(jb, a), children: va.formatNumber("integral", e) });
 }
 var wb = {
     platoon: "PlatoonCell_platoon_5fe0374b",
@@ -6601,10 +6612,10 @@ var wb = {
     return (0, vt.jsxs)("div", {
       className: wb.platoon,
       children: [
-        (0, vt.jsx)(Aa, { path: r(a), width: "32rem", height: "32rem" }),
+        (0, vt.jsx)(na, { path: r(a), width: "32rem", height: "32rem" }),
         s !== Bo &&
           (0, vt.jsx)("div", {
-            className: F(wb.platoonText, wb[`platoonText__${s}`]),
+            className: xa(wb.platoonText, wb[`platoonText__${s}`]),
             children: e,
           }),
       ],
@@ -6619,12 +6630,12 @@ var wb = {
 function Eb({ vehicle: e, classNames: a, className: t }) {
   const s = void 0 === e;
   return (0, vt.jsxs)("div", {
-    className: F(Bb, t),
+    className: xa(Bb, t),
     children: [
       (0, vt.jsx)("div", {
-        className: F(Sb, a?.imageWrapper),
-        children: (0, vt.jsx)(C, {
-          size: C.size.x120x96,
+        className: xa(Sb, a?.imageWrapper),
+        children: (0, vt.jsx)(U, {
+          size: U.size.x120x96,
           name: s ? "tank_empty" : e.techName,
           className: a?.image,
         }),
@@ -6632,23 +6643,23 @@ function Eb({ vehicle: e, classNames: a, className: t }) {
       !1 === s &&
         (0, vt.jsxs)(vt.Fragment, {
           children: [
-            (0, vt.jsx)(Ue, { value: e.tier, className: F(Rb, a?.level) }),
+            (0, vt.jsx)(Ia, { value: e.tier, className: xa(Rb, a?.level) }),
             (0, vt.jsx)("div", {
-              className: F(Pb, a?.typeWrapper),
-              children: (0, vt.jsx)(D, { size: "x24x24", type: e.type, className: a?.type }),
+              className: xa(Pb, a?.typeWrapper),
+              children: (0, vt.jsx)(Be, { size: "x24x24", type: e.type, className: a?.type }),
             }),
           ],
         }),
       (0, vt.jsx)("div", {
-        className: F(kb, s && Tb, a?.name),
+        className: xa(kb, s && Tb, a?.name),
         children: s
-          ? (0, vt.jsx)(Q, { path: "ingame_gui.players_panel.unknown_vehicle" })
-          : (0, vt.jsx)(ba, { text: e.name }),
+          ? (0, vt.jsx)(ye, { path: "ingame_gui.players_panel.unknown_vehicle" })
+          : (0, vt.jsx)(z, { text: e.name }),
       }),
     ],
   });
 }
-var Db = {
+var Hb = {
     efficiencyTable__allies: "EfficiencyTable_efficiencyTable__allies_b2f99733",
     efficiencyTable__enemies: "EfficiencyTable_efficiencyTable__enemies_1ba35ae7",
     header: "EfficiencyTable_header_da354842",
@@ -6676,7 +6687,7 @@ var Db = {
     blink: "EfficiencyTable_blink_e622a43e",
     slideUpIn: "EfficiencyTable_slideUpIn_e622a43e",
   },
-  Hb = {
+  Db = {
     tableBodyRow: "TableBodyRow_tableBodyRow_be19874",
     tableBodyRow__selected: "TableBodyRow_tableBodyRow__selected_9cd5fe77",
     hoverOverlay: "TableBodyRow_hoverOverlay_dab11111",
@@ -6714,7 +6725,7 @@ var Db = {
     blink: "TableBodyRow_blink_5ecfc9f2",
     slideUpIn: "TableBodyRow_slideUpIn_5ecfc9f2",
   },
-  Ob = Ve();
+  Ob = Se();
 function Vb(e, a, t) {
   const s = e.getValue("account"),
     r = e.getValue("squadIndex");
@@ -6749,28 +6760,28 @@ function Wb(e, a) {
   return e.getValue("damageDealt").damageDealt - a.getValue("damageDealt").damageDealt;
 }
 var Mb = {
-  [te.heavyTank]: 5,
-  [te.mediumTank]: 4,
-  [te["AT-SPG"]]: 3,
-  [te.lightTank]: 2,
-  [te.SPG]: 1,
+  [ha.heavyTank]: 5,
+  [ha.mediumTank]: 4,
+  [ha["AT-SPG"]]: 3,
+  [ha.lightTank]: 2,
+  [ha.SPG]: 1,
 };
 function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) {
   const r = (t, s) => zb(t, s, a, e),
-    n = "small" === t ? M.extraSmall : t,
+    n = "small" === t ? N.extraSmall : t,
     i = (function (e) {
       return {
-        [Cp]: { [M.extraSmall]: qp, [M.medium]: qp, [M.large]: qp, [M.extraLarge]: qp },
-        [Bp]: { [M.extraSmall]: Qp, [M.medium]: Qp, [M.large]: Qp, [M.extraLarge]: Qp },
+        [Cp]: { [N.extraSmall]: qp, [N.medium]: qp, [N.large]: qp, [N.extraLarge]: qp },
+        [Bp]: { [N.extraSmall]: Qp, [N.medium]: Qp, [N.large]: Qp, [N.extraLarge]: Qp },
         [Sp]: e
-          ? { [M.extraSmall]: eb, [M.medium]: ab, [M.large]: ab, [M.extraLarge]: tb }
-          : { [M.extraSmall]: Yp, [M.medium]: Zp, [M.large]: Zp, [M.extraLarge]: Jp },
-        [Pp]: { [M.extraSmall]: sb, [M.medium]: rb, [M.large]: rb, [M.extraLarge]: nb },
-        [kp]: { [M.extraSmall]: ib, [M.medium]: lb, [M.large]: lb, [M.extraLarge]: ob },
-        [Tp]: { [M.extraSmall]: cb, [M.medium]: db, [M.large]: db, [M.extraLarge]: mb },
-        [Ep]: { [M.extraSmall]: ub, [M.medium]: _b, [M.large]: _b, [M.extraLarge]: fb },
-        [Rp]: { [M.extraSmall]: pb, [M.medium]: pb, [M.large]: pb, [M.extraLarge]: pb },
-        [Dp]: { [M.extraSmall]: bb, [M.medium]: hb, [M.large]: hb, [M.extraLarge]: vb },
+          ? { [N.extraSmall]: eb, [N.medium]: ab, [N.large]: ab, [N.extraLarge]: tb }
+          : { [N.extraSmall]: Yp, [N.medium]: Zp, [N.large]: Zp, [N.extraLarge]: Jp },
+        [Pp]: { [N.extraSmall]: sb, [N.medium]: rb, [N.large]: rb, [N.extraLarge]: nb },
+        [kp]: { [N.extraSmall]: ib, [N.medium]: lb, [N.large]: lb, [N.extraLarge]: ob },
+        [Tp]: { [N.extraSmall]: cb, [N.medium]: db, [N.large]: db, [N.extraLarge]: mb },
+        [Ep]: { [N.extraSmall]: ub, [N.medium]: _b, [N.large]: _b, [N.extraLarge]: fb },
+        [Rp]: { [N.extraSmall]: pb, [N.medium]: pb, [N.large]: pb, [N.extraLarge]: pb },
+        [Hp]: { [N.extraSmall]: bb, [N.medium]: hb, [N.large]: hb, [N.extraLarge]: vb },
       };
     })(s);
   return [
@@ -6806,14 +6817,14 @@ function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) 
       sortDescFirst: !1,
       sortingFn: r,
       cell: (a) =>
-        (0, vt.jsx)(Lp, {
+        (0, vt.jsx)(Up, {
           account: a.cell.getValue(),
           team: e,
           squadIndex: a.row.original.squadIndex,
-          className: Hb.accountInfo,
-          classNames: { username: Hb.accountName, clanAbbreviation: Hb.clanAbbreviation },
+          className: Db.accountInfo,
+          classNames: { username: Db.accountName, clanAbbreviation: Db.clanAbbreviation },
         }),
-      meta: { column: i[Sp][n], className: Db.alignLeft },
+      meta: { column: i[Sp][n], className: Hb.alignLeft },
     }),
     Ob.accessor("vehicle", {
       id: Pp,
@@ -6833,10 +6844,10 @@ function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) 
         (0, vt.jsx)(Eb, {
           vehicle: e.cell.getValue(),
           classNames: {
-            name: Hb.vehicleText,
-            level: Hb.vehicleText,
-            type: Hb.vehicleType,
-            image: Hb.vehicleImage,
+            name: Db.vehicleText,
+            level: Db.vehicleText,
+            type: Db.vehicleType,
+            image: Db.vehicleImage,
           },
         }),
       meta: { column: i[Pp][n] },
@@ -6848,9 +6859,9 @@ function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) 
       cell: (e) =>
         (0, vt.jsx)(Ib, {
           value: e.getValue().damageDealt,
-          className: F(Hb.numberValue, Hb.numberValue__alignRight),
+          className: xa(Db.numberValue, Db.numberValue__alignRight),
         }),
-      meta: { column: i[kp][n], className: Db.alignRight },
+      meta: { column: i[kp][n], className: Hb.alignRight },
     }),
     Ob.accessor("efficiencyValues", {
       id: Tp,
@@ -6865,7 +6876,7 @@ function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) 
         (0, vt.jsx)(Ib, {
           showZero: !1,
           value: e.getValue().substractedAlliesKills,
-          className: Hb.numberValue,
+          className: Db.numberValue,
         }),
       meta: { column: i[Tp][n] },
     }),
@@ -6883,22 +6894,22 @@ function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) 
           return (t?.vehicleCD ?? 0) - (s?.vehicleCD ?? 0);
         })(e, a) ||
         r(e, a),
-      cell: (e) => (0, vt.jsx)(Ib, { value: e.getValue().earnedXp, className: Hb.numberValue }),
-      meta: { column: i[Ep][n], className: Db.alignRight },
+      cell: (e) => (0, vt.jsx)(Ib, { value: e.getValue().earnedXp, className: Db.numberValue }),
+      meta: { column: i[Ep][n], className: Hb.alignRight },
     }),
     Ob.accessor("achievements", {
       id: Rp,
-      header: (e) => (0, vt.jsx)(Nb, { name: Rp, column: e.column, className: Db.achievementCell }),
+      header: (e) => (0, vt.jsx)(Nb, { name: Rp, column: e.column, className: Hb.achievementCell }),
       sortingFn: (e, a) =>
         (function (e, a) {
           return e.getValue("achievements").length - a.getValue("achievements").length;
         })(e, a) || r(e, a),
       cell: (e) => (0, vt.jsx)(Kp, { achievements: e.getValue() }),
-      meta: { column: i[Rp][n], className: Db.alignLeft },
+      meta: { column: i[Rp][n], className: Hb.alignLeft },
     }),
     Ob.accessor("efficiencyValues", {
-      id: Dp,
-      header: (e) => (0, vt.jsx)(Nb, { name: Dp, column: e.column }),
+      id: Hp,
+      header: (e) => (0, vt.jsx)(Nb, { name: Hp, column: e.column }),
       sortingFn: (e, a) =>
         (function (e, a) {
           return (
@@ -6907,30 +6918,30 @@ function Gb({ team: e, personalInfo: a, breakpointName: t, isRankedBattle: s }) 
           );
         })(e, a) || r(e, a),
       cell: (e) =>
-        (0, vt.jsx)(Ib, { value: e.getValue().prestigePoints, className: Hb.numberValue }),
-      meta: { column: i[Dp][n], className: Db.alignRight },
+        (0, vt.jsx)(Ib, { value: e.getValue().prestigePoints, className: Db.numberValue }),
+      meta: { column: i[Hp][n], className: Hb.alignRight },
     }),
   ];
 }
 var $b = "Header_row_e61ae0d9",
-  Ub = "Header_rowDivider_f54d9df6",
-  Lb = "Header_rowDividerImage_19f6e11",
+  Lb = "Header_rowDivider_f54d9df6",
+  Ub = "Header_rowDividerImage_19f6e11",
   Xb = "Header_cell_70aa1da5";
 function Fb({ className: e }) {
-  const { table: a } = Ae(),
+  const { table: a } = xe(),
     t = q();
-  return (0, vt.jsxs)(Ke.Header, {
+  return (0, vt.jsxs)(Ge.Header, {
     className: e,
     children: [
-      (0, vt.jsx)(Ef, { classNames: { base: Ub, image: Lb } }),
-      ya(a.getHeaderGroups(), (e, a) =>
+      (0, vt.jsx)(Ef, { classNames: { base: Lb, image: Ub } }),
+      i(a.getHeaderGroups(), (e, a) =>
         (0, vt.jsx)(
-          Ke.Row,
+          Ge.Row,
           {
             className: $b,
-            children: ya(e.headers, (e, s) => {
+            children: i(e.headers, (e, s) => {
               return (0, vt.jsx)(
-                Ke.Cell,
+                Ge.Cell,
                 {
                   onClick:
                     ((r = e.column.getToggleSortingHandler()),
@@ -6946,9 +6957,9 @@ function Fb({ className: e }) {
                       target: "team-efficiency:efficiency-table:header:cell",
                       original: e,
                     }),
-                  cell: { ...e, rowIndex: a, index: s, tablePart: ea.header },
+                  cell: { ...e, rowIndex: a, index: s, tablePart: Ze.header },
                   className: Xb,
-                  children: !e.isPlaceholder && Ye(e.column.columnDef.header, e.getContext()),
+                  children: !e.isPlaceholder && Le(e.column.columnDef.header, e.getContext()),
                 },
                 e.id,
               );
@@ -6970,10 +6981,10 @@ var Kb = "SelectedRowTail_selectedRowTail_8abda9c8",
   eh = "SelectedRowTail_rowDividerImage_d11f29d5";
 function ah({ className: e, short: a }) {
   return (0, vt.jsxs)("div", {
-    className: F(Kb, !a && qb, e),
+    className: xa(Kb, !a && qb, e),
     children: [
       (0, vt.jsx)(Ef, { classNames: { base: Zb, image: eh } }),
-      (0, vt.jsx)(Ef, { classNames: { base: F(Zb, Jb), image: eh } }),
+      (0, vt.jsx)(Ef, { classNames: { base: xa(Zb, Jb), image: eh } }),
       (0, vt.jsx)("div", { className: Qb }),
       (0, vt.jsx)("div", { className: Yb }),
     ],
@@ -6984,98 +6995,98 @@ var th = "personal",
   rh = "none",
   nh = Fa(function ({ row: e, team: a, rowIndex: t, scrollbarVisible: s }) {
     const { model: r, controls: n } = Eo(),
-      i = q(),
-      l = Ba(
+      l = q(),
+      o = G(
         (t) => {
           (t.stopPropagation(),
-            i.play("click", { original: t, target: "team-efficiency:efficiency-table:body:row" }),
+            l.play("click", { original: t, target: "team-efficiency:efficiency-table:body:row" }),
             n.teamEfficiency.selectRow({ team: a, username: e.original.account.username }));
         },
-        [n.teamEfficiency, e.original.account.username, i, a],
+        [n.teamEfficiency, e.original.account.username, l, a],
         400,
       ),
-      o = r.teamsStatistic.selectedRow.get(),
-      c = r.computes.personalInfo(),
-      d =
-        c.account.username === e.original.account.username
+      c = r.teamsStatistic.selectedRow.get(),
+      d = r.computes.personalInfo(),
+      m =
+        d.account.username === e.original.account.username
           ? th
-          : Ro(a, c.squadIndex, e.original.squadIndex) === So
+          : Ro(a, d.squadIndex, e.original.squadIndex) === So
             ? sh
             : rh,
-      m = e.original.account.teamKiller,
-      u = e.original.account.killed,
-      _ = o?.team === a && o.username === e.original.account.username,
-      f = U({
+      u = e.original.account.teamKiller,
+      _ = e.original.account.killed,
+      f = c?.team === a && c.username === e.original.account.username,
+      p = F({
         args: (0, ot.useMemo)(
           () => ({ vehicleCD: e.original.vehicle?.vehicleCD, databaseID: e.original.databaseId }),
           [e.original],
         ),
       });
-    return (0, vt.jsxs)(Ke.Row, {
-      ...(d !== th && f),
+    return (0, vt.jsxs)(Ge.Row, {
+      ...(m !== th && p),
       onMouseEnter: (e) =>
-        i.play("mouse-enter", { target: "team-efficiency:efficiency-table:body:row", original: e }),
-      className: F(
-        Hb.tableBodyRow,
-        _ && Hb.tableBodyRow__selected,
-        d !== rh && Hb[`tableBodyRow__${d}`],
-        m && Hb.tableBodyRow__teamKiller,
-        u && Hb.tableBodyRow__killed,
+        l.play("mouse-enter", { target: "team-efficiency:efficiency-table:body:row", original: e }),
+      className: xa(
+        Db.tableBodyRow,
+        f && Db.tableBodyRow__selected,
+        m !== rh && Db[`tableBodyRow__${m}`],
+        u && Db.tableBodyRow__teamKiller,
+        _ && Db.tableBodyRow__killed,
       ),
-      onClick: l,
+      onClick: o,
       children: [
         (0, vt.jsxs)("div", {
-          className: Hb.selectedOverlay,
+          className: Db.selectedOverlay,
           children: [
             (0, vt.jsx)(Ef, {
-              classNames: { base: Hb.selectedOverlayDivider, image: Hb.selectedOverlayImage },
+              classNames: { base: Db.selectedOverlayDivider, image: Db.selectedOverlayImage },
             }),
             (0, vt.jsx)(Ef, {
               classNames: {
-                base: F(Hb.selectedOverlayDivider, Hb.selectedOverlayDivider__bottom),
-                image: Hb.selectedOverlayImage,
+                base: xa(Db.selectedOverlayDivider, Db.selectedOverlayDivider__bottom),
+                image: Db.selectedOverlayImage,
               },
             }),
             (0, vt.jsx)(ah, {
               short: s && a === wo,
-              className: F(Hb.selectedRowTail, Hb[`selectedRowTail__${a}`]),
+              className: xa(Db.selectedRowTail, Db[`selectedRowTail__${a}`]),
             }),
           ],
         }),
         (0, vt.jsx)(Ef, {
           classNames: {
-            base: F(Hb.rowDivider, _ && Hb.rowDivider__selected),
-            image: Hb.rowDividerImage,
+            base: xa(Db.rowDivider, f && Db.rowDivider__selected),
+            image: Db.rowDividerImage,
           },
         }),
-        ya(e.getVisibleCells(), (e, a) =>
+        i(e.getVisibleCells(), (e, a) =>
           (0, vt.jsx)(
-            Ke.Cell,
+            Ge.Cell,
             {
-              cell: { ...e, rowIndex: t, index: a, tablePart: ea.body },
-              children: Ye(e.column.columnDef.cell, e.getContext()),
+              cell: { ...e, rowIndex: t, index: a, tablePart: Ze.body },
+              children: Le(e.column.columnDef.cell, e.getContext()),
             },
             e.id,
           ),
         ),
-        (0, vt.jsx)("div", { className: Hb.hoverOverlay }),
+        (0, vt.jsx)("div", { className: Db.hoverOverlay }),
       ],
     });
   });
 function ih({ team: e }) {
-  const { table: a } = Ae(),
-    { api: t } = oe(),
-    s = l(),
+  const { table: a } = xe(),
+    { api: t } = $(),
+    s = Aa(),
     r = (0, ot.useRef)(null),
-    [n, i] = (0, ot.useState)(!1),
-    [o, c] = de(() => ({ from: { maskSize: "100% 100%" } }));
+    [n, l] = (0, ot.useState)(!1),
+    [o, c] = g(() => ({ from: { maskSize: "100% 100%" } }));
   return (
     (0, ot.useEffect)(() => {
       function e() {
         s.run(() => {
           (!(function () {
             const [, e] = t.getBounds();
-            i(e > 0);
+            l(e > 0);
           })(),
             (function () {
               const [, e] = t.getBounds(),
@@ -7098,30 +7109,30 @@ function ih({ team: e }) {
         }
       );
     }, [t, s, c]),
-    (0, vt.jsxs)(Ke.Body, {
-      className: Db.tableBody,
+    (0, vt.jsxs)(Ge.Body, {
+      className: Hb.tableBody,
       children: [
-        (0, vt.jsx)(w.div, {
-          className: Db.mask,
+        (0, vt.jsx)(u.div, {
+          className: Hb.mask,
           style: o,
-          children: (0, vt.jsx)(ne, {
-            classNames: { wrapper: Db.scrollWrapper, content: Db.scrollAreaContent },
+          children: (0, vt.jsx)(A, {
+            classNames: { wrapper: Hb.scrollWrapper, content: Hb.scrollAreaContent },
             children: (0, vt.jsx)("div", {
               ref: r,
-              className: Db.rowsWrapper,
-              children: ya(a.getRowModel().rows, (a, t) =>
+              className: Hb.rowsWrapper,
+              children: i(a.getRowModel().rows, (a, t) =>
                 (0, vt.jsx)(nh, { row: a, rowIndex: t, team: e, scrollbarVisible: n }, a.id),
               ),
             }),
           }),
         }),
-        (0, vt.jsx)(ra, { classNames: { base: Db.scrollBar } }),
+        (0, vt.jsx)(m, { classNames: { base: Hb.scrollBar } }),
       ],
     })
   );
 }
-var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
-    variants: { team: { [wo]: Db.efficiencyTable__allies, [Ao]: Db.efficiencyTable__enemies } },
+var lh = ge("TeamEfficiencyTable", Hb.efficiencyTable, {
+    variants: { team: { [wo]: Hb.efficiencyTable__allies, [Ao]: Hb.efficiencyTable__enemies } },
   }),
   oh = {
     [mo.Squad]: Cp,
@@ -7132,7 +7143,7 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
     [mo.Xp]: Ep,
     [mo.Vehicle]: Pp,
     [mo.Medal]: Rp,
-    [mo.PrestigePoints]: Dp,
+    [mo.PrestigePoints]: Hp,
   },
   ch = Fa(({ team: e, data: a, className: t }) => {
     const { model: s, controls: r } = Eo(),
@@ -7143,7 +7154,7 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
         () => [{ id: oh[l.column], desc: l.sortDirection === uo.Desc }],
         [l.column, l.sortDirection],
       ),
-      c = k().breakpoint.name,
+      c = I().breakpoint.name,
       d = (0, ot.useCallback)(
         (e) => {
           const a = (e instanceof Function ? e(o) : e)[0] ?? { id: Pp, desc: !0 };
@@ -7159,8 +7170,8 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
         [e, c, n, i],
       );
     return (
-      la(Je(c), `Such breakpoint ${c} is not supported`),
-      (0, vt.jsx)(fa, {
+      Ke(Qe(c), `Such breakpoint ${c} is not supported`),
+      (0, vt.jsx)(ma, {
         columns: m,
         data: a,
         enableMultiRowSelection: !1,
@@ -7168,7 +7179,7 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
         sorting: o,
         onSortingChange: d,
         getRowId: (e) => e.account.username,
-        getFilteredRowModel: De(),
+        getFilteredRowModel: Ce(),
         globalFilterFn: (e) => 65281 !== e.original.vehicle?.vehicleCD,
         enableSorting: !0,
         initialState: { globalFilter: !0 },
@@ -7176,12 +7187,12 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
           team: e,
           className: t,
           children: (0, vt.jsxs)(
-            Ke,
+            Ge,
             {
-              className: Db.table,
+              className: Hb.table,
               children: [
-                (0, vt.jsx)(Fb, { className: Db.header }),
-                (0, vt.jsx)(ee, { children: (0, vt.jsx)(ih, { team: e }) }),
+                (0, vt.jsx)(Fb, { className: Hb.header }),
+                (0, vt.jsx)(Ve, { children: (0, vt.jsx)(ih, { team: e }) }),
               ],
             },
             c,
@@ -7213,37 +7224,37 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
     blink: "TeamEfficiency_blink_f795cecf",
     slideUpIn: "TeamEfficiency_slideUpIn_f795cecf",
   },
-  mh = Ie("TeamEfficiency", dh.base),
+  mh = ge("TeamEfficiency", dh.base),
   uh = Fa(function ({ className: e }) {
     const { model: a } = Eo(),
-      { active: t } = I(),
+      { active: t } = ee(),
       s = a.bansModel.get().isEnabled,
       r = a.teamsStatistic.allies.get(),
       n = a.teamsStatistic.enemies.get(),
       i = a.teamsStatistic.selectedRow.get();
     return (0, vt.jsxs)(mh, {
-      className: F(dh[`base__${i?.team}`], e),
+      className: xa(dh[`base__${i?.team}`], e),
       children: [
         (0, vt.jsxs)("div", {
           className: dh.wrapper,
           children: [
             (0, vt.jsx)(Ap, {
               team: Ao,
-              className: F(dh.details, i?.team === Ao && dh.details__visible),
+              className: xa(dh.details, i?.team === Ao && dh.details__visible),
             }),
             (0, vt.jsx)(ch, {
               data: r,
               team: wo,
-              className: F(dh.table, i?.team === Ao && dh.table__hidden),
+              className: xa(dh.table, i?.team === Ao && dh.table__hidden),
             }),
             (0, vt.jsx)(Ap, {
               team: wo,
-              className: F(dh.details, i?.team === wo && dh.details__visible),
+              className: xa(dh.details, i?.team === wo && dh.details__visible),
             }),
             (0, vt.jsx)(ch, {
               data: n,
               team: Ao,
-              className: F(dh.table, i?.team === wo && dh.table__hidden),
+              className: xa(dh.table, i?.team === wo && dh.table__hidden),
             }),
           ],
         }),
@@ -7289,24 +7300,24 @@ var lh = Ie("TeamEfficiencyTable", Db.efficiencyTable, {
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  fh = Ie("PostBattle", _h.base),
-  ph = Ie("PostBattleNavigation", _h.navigation);
+  fh = ge("PostBattle", _h.base),
+  ph = ge("PostBattleNavigation", _h.navigation);
 function bh() {
-  const { active: e } = I();
+  const { active: e } = ee();
   return (0, vt.jsxs)("div", {
-    className: F(_h.content, _h[`content__${e}`]),
+    className: xa(_h.content, _h[`content__${e}`]),
     children: [
-      (0, vt.jsx)(of, { className: F(_h.tab, _h.tab__overview) }),
-      (0, vt.jsx)(uh, { className: F(_h.tab, _h.tab__teamScore) }),
-      (0, vt.jsx)(Xo, { className: F(_h.tab, _h.tab__missionProgress) }),
-      (0, vt.jsx)(Tl, { className: F(_h.tab, _h.tab__financialReport) }),
+      (0, vt.jsx)(of, { className: xa(_h.tab, _h.tab__overview) }),
+      (0, vt.jsx)(uh, { className: xa(_h.tab, _h.tab__teamScore) }),
+      (0, vt.jsx)(Xo, { className: xa(_h.tab, _h.tab__missionProgress) }),
+      (0, vt.jsx)(Tl, { className: xa(_h.tab, _h.tab__financialReport) }),
     ],
   });
 }
 var hh = Fa(function () {
-    const e = m.resolve("strings"),
+    const e = c.resolve("strings"),
       a = q(),
-      t = ye(),
+      t = pe(),
       {
         battleInfoRef: s,
         navigationRef: r,
@@ -7315,17 +7326,17 @@ var hh = Fa(function () {
         readyForNotifications: l,
       } = Qt(),
       o = kt(),
-      [c] = de(() => ({ from: { opacity: 0, y: "-10rem" }, ref: r })),
-      [d] = de(() => ({ from: { opacity: 0 }, ref: s })),
-      { model: u, controls: _ } = Eo(),
-      f = u.computes.personalInfo(),
-      p = u.battleInfo.get(),
-      { active: b } = I();
+      [d] = g(() => ({ from: { opacity: 0, y: "-10rem" }, ref: r })),
+      [m] = g(() => ({ from: { opacity: 0 }, ref: s })),
+      { model: _, controls: f } = Eo(),
+      p = _.computes.personalInfo(),
+      b = _.battleInfo.get(),
+      { active: h } = ee();
     return (
-      Me(B.ESCAPE, _.close),
-      qe(() => {
+      ra(v.ESCAPE, f.close),
+      ve(() => {
         function e(e) {
-          e.altKey || e.shiftKey || e.ctrlKey || W.tooltip.hideAll();
+          e.altKey || e.shiftKey || e.ctrlKey || le.tooltip.hideAll();
         }
         return (
           document.addEventListener("keydown", e),
@@ -7335,23 +7346,23 @@ var hh = Fa(function () {
         );
       }),
       (0, ot.useEffect)(() => {
-        b !== Xa.progression && l && !1 === o.state.read
+        h !== Xa.progression && l && !1 === o.state.read
           ? o.controls.start()
-          : b !== Xa.progression
-            ? o.state.read && b !== Xa.progression && o.controls.wait()
+          : h !== Xa.progression
+            ? o.state.read && h !== Xa.progression && o.controls.wait()
             : o.controls.read();
-      }, [o.state.read, o.controls, b, l]),
+      }, [o.state.read, o.controls, h, l]),
       (0, ot.useEffect)(() => {
         i === Ft.fourth && a.play("exitResult", { target: "post-battle" });
       }, [i, a]),
       (0, vt.jsxs)(fh, {
-        className: F(_h.base, _h[`base__${b}`]),
+        className: xa(_h.base, _h[`base__${h}`]),
         style: { width: `${t}rem` },
         children: [
-          b !== Xa.overview && (0, vt.jsx)("div", { className: _h.vignette }),
+          h !== Xa.overview && (0, vt.jsx)("div", { className: _h.vignette }),
           (0, vt.jsx)(bh, {}),
-          (0, vt.jsx)(w.div, {
-            style: c,
+          (0, vt.jsx)(u.div, {
+            style: d,
             children: (0, vt.jsx)(ph, {
               className: !1 === n.has(Ft.navigation) && _h.navigation__disabled,
               children: (0, vt.jsxs)(Z.Switcher, {
@@ -7360,20 +7371,20 @@ var hh = Fa(function () {
                 children: [
                   (0, vt.jsx)(Z.Tab, {
                     tabId: Xa.overview,
-                    children: Y.toUpperCase(
+                    children: va.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.battleResults"),
                     ),
                   }),
                   (0, vt.jsx)(Z.Tab, {
                     tabId: Xa.teamsStatistics,
-                    children: Y.toUpperCase(
+                    children: va.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.teamEfficiency"),
                     ),
                   }),
                   (0, vt.jsxs)(Z.Tab, {
                     tabId: Xa.progression,
                     children: [
-                      Y.toUpperCase(
+                      va.toUpperCase(
                         e.readOrEmpty("battle_results.battleResult.navigation.missionsProgress"),
                       ),
                       (0, vt.jsx)(Xt.Bubble, { className: _h.notificationBubble }),
@@ -7382,7 +7393,7 @@ var hh = Fa(function () {
                   }),
                   (0, vt.jsx)(Z.Tab, {
                     tabId: Xa.financialReport,
-                    children: Y.toUpperCase(
+                    children: va.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.financialReport"),
                     ),
                   }),
@@ -7390,36 +7401,36 @@ var hh = Fa(function () {
               }),
             }),
           }),
-          p &&
-            (0, vt.jsx)(w.div, {
+          b &&
+            (0, vt.jsx)(u.div, {
               className: _h.info,
-              style: d,
+              style: m,
               children: (0, vt.jsxs)(jt, {
                 children: [
                   (0, vt.jsx)(as, {
-                    arenaName: p.arenaName,
-                    arenaType: p.arenaType,
-                    finishReasonKey: p.finishReasonKey,
-                    status: p.status,
-                    modeName: p.modeName,
+                    arenaName: b.arenaName,
+                    arenaType: b.arenaType,
+                    finishReasonKey: b.finishReasonKey,
+                    status: b.status,
+                    modeName: b.modeName,
                   }),
-                  (0, vt.jsx)(jt.StartTime, { startTime: p.startTime }),
+                  (0, vt.jsx)(jt.StartTime, { startTime: b.startTime }),
                   (0, vt.jsx)(jt.Player, {
-                    vehicleName: f.vehicle.name,
-                    vehicleLevel: f.vehicle.tier,
-                    vehicleType: f.vehicle.type,
-                    userName: f.account.username,
-                    clan: f.account.clanAbbreviation,
-                    teamKiller: f.account.teamKiller,
+                    vehicleName: p.vehicle.name,
+                    vehicleLevel: p.vehicle.tier,
+                    vehicleType: p.vehicle.type,
+                    userName: p.account.username,
+                    clan: p.account.clanAbbreviation,
+                    teamKiller: p.account.teamKiller,
                   }),
                   (0, vt.jsx)(jt.PlayerStatus, {
                     className: _h.group,
-                    killer: f.killer,
-                    deathReasonKey: f.userStatus.deathReason,
-                    abandonBattle: f.userStatus.abandonBattle,
+                    killer: p.killer,
+                    deathReasonKey: p.userStatus.deathReason,
+                    abandonBattle: p.userStatus.abandonBattle,
                   }),
                   (0, vt.jsx)(jt.CommendationScore, {
-                    commendationsReceived: p.commendationsReceived,
+                    commendationsReceived: b.commendationsReceived,
                   }),
                 ],
               }),
@@ -7429,17 +7440,17 @@ var hh = Fa(function () {
     );
   }),
   vh = Fa(function () {
-    const e = Be(),
+    const e = Ne(),
       { model: a } = Eo(),
       t = a.computes.hasProgressAnimation(),
-      { size: s } = Le(
-        { size: se.small },
-        { large: { size: se.medium }, extraLarge: { size: se.large } },
+      { size: s } = k(
+        { size: f.small },
+        { large: { size: f.medium }, extraLarge: { size: f.large } },
       );
     return (0, vt.jsx)(Z, {
       theme: "primary",
       size: s,
-      active: Ua(e.location),
+      active: La(e.location),
       onActiveChange: (a) => {
         a in $a ? e.push($a[a]) : console.error(`Invalid tab ID: ${a}`);
       },
@@ -7452,7 +7463,7 @@ var hh = Fa(function () {
       }),
     });
   }),
-  gh = Xe({
+  gh = We({
     click: {
       "expandable-overlay": "yes",
       "expandable-overlay:hint-key": "yes",
@@ -7481,9 +7492,9 @@ var hh = Fa(function () {
     exitResult: { "post-battle": "ue_06_result_exit" },
     notificationBubbleAppeared: { "mission-progress:bubble": "gui_pbs_notification_bubble" },
   }),
-  yh = new aa()
+  yh = new Je()
     .add(To)
-    .addWithProps(X, { soundsOverrides: gh })
-    .addWithProps(pa, { context: "model.router" })
+    .addWithProps(h, { soundsOverrides: gh })
+    .addWithProps(_a, { context: "model.router" })
     .addWithProps(Ya, { options: { context: "model.scheduleInfo" } });
-(Na(), Te(yh.render((0, vt.jsx)(vh, {})), { fullScreen: !0 }));
+(ga(), Ae(yh.render((0, vt.jsx)(vh, {})), { fullScreen: !0 }));

@@ -2,25 +2,25 @@ import { r as e } from "./rolldown-runtime.js";
 import {
   Ar as a,
   Fa as r,
-  Ia as t,
-  Ir as s,
-  J as o,
-  Rr as i,
-  Ya as l,
-  _o as n,
-  fr as c,
-  gi as d,
+  Fr as t,
+  J as s,
+  Ja as o,
+  Lr as i,
+  Pa as l,
+  fr as n,
+  go as c,
+  hi as d,
   jt as m,
-  ni as u,
-  pr as p,
-  ya as g,
-  yo as h,
+  pr as u,
+  ti as p,
+  va as g,
+  vo as h,
 } from "./lib.js";
 import { o as x, s as f } from "./vendor.js";
 var S = e(h()),
   y = (e, a) => {
     const r = e.width / e.height,
-      { width: t, height: s } = u();
+      { width: t, height: s } = p();
     return (0, S.useMemo)(
       () => (t >= s * r ? t / e.width : s >= t / r ? s / e.height : a),
       [e.height, e.width, a, s, r, t],
@@ -30,24 +30,24 @@ var S = e(h()),
   j = "VideoBackground_videoBackground_1a24cf5e",
   b = "VideoBackground_video_102f3645",
   N = d(),
-  _ = { width: 1920, height: 1080 };
-function k({ className: e, src: a, paused: r, rotated: t = !1, onPlay: s }) {
-  const i = y(_, 1),
+  v = { width: 1920, height: 1080 };
+function _({ className: e, src: a, paused: r, rotated: t = !1, onPlay: i }) {
+  const l = y(v, 1),
     n = (0, S.useRef)(null),
     c = () => {
-      s && s();
+      i && i();
     };
   return (
     (0, S.useEffect)(() => {
       const e = n.current;
       if (e) return r ? e.pause() : e.play();
     }, [r, n]),
-    l.isLow()
+    o.isLow()
       ? null
       : (0, N.jsx)("div", {
           className: (0, $.default)(j, e),
-          style: { transform: `scale(${i}) ${t ? "rotate(180deg)" : ""}` },
-          children: (0, N.jsx)(o, {
+          style: { transform: `scale(${l}) ${t ? "rotate(180deg)" : ""}` },
+          children: (0, N.jsx)(s, {
             ref: n,
             onPlay: c,
             onTimeUpdate: c,
@@ -59,18 +59,18 @@ function k({ className: e, src: a, paused: r, rotated: t = !1, onPlay: s }) {
         })
   );
 }
-var [v, P] = p()(
+var [k, P] = u()(
     ({ observableModel: e }) => {
       const a = { root: e.object(), parallax: e.array("parallax") },
-        s = c(
+        t = n(
           () =>
             a.root.get().isParallaxEnabled
-              ? g(JSON.parse(a.parallax.get().parallaxStructure), t)
+              ? g(JSON.parse(a.parallax.get().parallaxStructure), r)
               : void 0,
-          { equals: r },
+          { equals: l },
         ),
-        o = c(() => JSON.parse(a.parallax.get().atlas), { equals: r });
-      return { ...a, computes: { parallaxStructureObj: s, atlasObj: o } };
+        s = n(() => JSON.parse(a.parallax.get().atlas), { equals: l });
+      return { ...a, computes: { parallaxStructureObj: t, atlasObj: s } };
     },
     ({ externalModel: e }) => ({
       onSlide: e.createCallback((e) => ({ slideIndex: e }), "onSlide"),
@@ -80,7 +80,7 @@ var [v, P] = p()(
   z = "AssetItem_7cff1111",
   w = "AssetItem_sprite_c476eaa9",
   C = "AssetItem_imgLoader_6b833910",
-  I = (e, a, r, t) => {
+  L = (e, a, r, t) => {
     const s = a[e.spriteName].sourceName,
       o = a[e.spriteName].rotated,
       i = a[e.spriteName].frameX,
@@ -117,24 +117,24 @@ var [v, P] = p()(
       source: { backgroundSource: `${t}${s}${r}` },
     };
   },
-  L = x(function ({ loadChecker: e, item: a }) {
+  A = x(function ({ loadChecker: e, item: a }) {
     const { model: r } = P(),
       { chunkFileExt: t, chunksAssetsPath: s } = r.parallax.get();
     return (0, N.jsxs)("div", {
       className: z,
       style: { width: `${a.width}`, height: `${a.height}`, transform: `${a.transform}` },
       children: [
-        (0, N.jsx)("div", { className: w, style: I(a, r.computes.atlasObj(), t, s).style }),
+        (0, N.jsx)("div", { className: w, style: L(a, r.computes.atlasObj(), t, s).style }),
         (0, N.jsx)("img", {
           className: C,
           alt: a.keyName,
-          src: I(a, r.computes.atlasObj(), t, s).source.backgroundSource,
+          src: L(a, r.computes.atlasObj(), t, s).source.backgroundSource,
           onLoad: e,
         }),
       ],
     });
   }),
-  A = "Assets_c481c379",
+  I = "Assets_c481c379",
   T = x(function ({ dioramaLoaded: e }) {
     const { model: a } = P(),
       r = a.computes.parallaxStructureObj(),
@@ -144,15 +144,15 @@ var [v, P] = p()(
         (s.current++, s.current >= t && (e && e(), (s.current = 0)));
       }, [e, t]);
     return (0, N.jsx)("div", {
-      className: A,
+      className: I,
       children:
         r &&
         r.map((e, a) =>
-          (0, N.jsx)(L, { item: e, loadChecker: o }, `${e.slideId}_${e.keyName}_${a}`),
+          (0, N.jsx)(A, { item: e, loadChecker: o }, `${e.slideId}_${e.keyName}_${a}`),
         ),
     });
   }),
-  Y = x(function ({ children: e }) {
+  H = x(function ({ children: e }) {
     const { model: a } = P(),
       {
         perspective: r,
@@ -176,18 +176,18 @@ var [v, P] = p()(
       children: e,
     });
   }),
-  H = "ParallaxContent_b21e1eda",
-  X = "ParallaxContent_asset_b21e1eda",
+  X = "ParallaxContent_b21e1eda",
+  Y = "ParallaxContent_asset_b21e1eda",
   B = x(function ({ refParent: e, dioramaLoaded: r }) {
-    const { model: t } = P(),
-      { xTilt: o, xTiltRange: i, yTilt: l, yTiltRange: n, xSlide: c, ySlide: d } = t.parallax.get(),
+    const { model: s } = P(),
+      { xTilt: o, xTiltRange: i, yTilt: l, yTiltRange: n, xSlide: c, ySlide: d } = s.parallax.get(),
       [m] = a({ xTilt: o, xTiltRange: i, yTilt: l, yTiltRange: n }, e);
-    return (0, N.jsx)(Y, {
-      children: (0, N.jsx)(s.div, {
+    return (0, N.jsx)(H, {
+      children: (0, N.jsx)(t.div, {
         style: { x: m.x.to((e) => e * c), y: m.y.to((e) => e * d), rotateX: m.xR, rotateY: m.yR },
-        className: H,
+        className: X,
         children: (0, N.jsx)("div", {
-          className: X,
+          className: Y,
           children: (0, N.jsx)(T, { dioramaLoaded: r }),
         }),
       }),
@@ -197,16 +197,16 @@ var [v, P] = p()(
   E = "StaticBackground_preloader_ebcf28a3";
 function M({ className: e, backgroundPath: a, onLoaded: r }) {
   return (0, N.jsx)("div", {
-    className: n(W, e),
+    className: c(W, e),
     style: { backgroundImage: `url(${a})` },
     children: r && (0, N.jsx)("img", { className: E, onLoad: r, onError: r, src: a, alt: a }),
   });
 }
 var J = "ParallaxApp_a1dd5662",
-  q = "ParallaxApp_blackScreen_29b0a65d",
-  F = "ParallaxApp_contentScale_a9de6486",
+  F = "ParallaxApp_blackScreen_29b0a65d",
+  q = "ParallaxApp_contentScale_a9de6486",
   V = "ParallaxApp_content_f4307e0d",
-  U = x(function ({ refParent: e, backgroundPath: a, slideIndex: r, onLoadCompleted: t }) {
+  U = x(function ({ refParent: e, backgroundPath: a, slideIndex: r, onLoadCompleted: s }) {
     const { model: o, controls: l } = P(),
       n = y(O, 1),
       [c, d] = i(() => ({ from: { opacity: 1 } })),
@@ -215,9 +215,9 @@ var J = "ParallaxApp_a1dd5662",
           from: { opacity: 1 },
           to: { opacity: 0 },
           config: { duration: 100 },
-          onStart: t,
+          onStart: s,
         });
-      }, [d, t]);
+      }, [d, s]);
     return (
       (0, S.useEffect)(() => {
         (l.onSlide(r),
@@ -227,20 +227,20 @@ var J = "ParallaxApp_a1dd5662",
             to: { opacity: 0 },
             delay: 1e3,
             config: { duration: 100 },
-            onRest: t,
+            onRest: s,
           }));
-      }, [d, l, t, r]),
+      }, [d, l, s, r]),
       (0, N.jsxs)("div", {
         className: J,
         children: [
           (0, N.jsx)("div", {
-            className: F,
+            className: q,
             style: { transform: `translate(-50%, -50%) scale(${n})` },
             children: o.root.get().isParallaxEnabled
               ? (0, N.jsx)(B, { dioramaLoaded: m, refParent: e })
               : (0, N.jsx)(M, { className: V, backgroundPath: a, onLoaded: m }),
           }),
-          (0, N.jsx)(s.div, { className: q, style: c }),
+          (0, N.jsx)(t.div, { className: F, style: c }),
         ],
       })
     );
@@ -249,10 +249,10 @@ var J = "ParallaxApp_a1dd5662",
     const a = R.aliases.last_stand.shared.Parallax("resId");
     return (0, N.jsx)(m, {
       id: a,
-      children: (0, N.jsx)(v, {
+      children: (0, N.jsx)(k, {
         options: (0, S.useMemo)(() => ({ rootId: a }), [a]),
         children: (0, N.jsx)(U, { ...e }),
       }),
     });
   });
-export { k as n, D as t };
+export { _ as n, D as t };

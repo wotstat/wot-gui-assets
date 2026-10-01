@@ -1,22 +1,22 @@
 import {
   En as s,
-  Jn as t,
-  La as a,
+  Ia as t,
+  Jn as a,
   Mn as e,
   Vn as l,
   Y as i,
   c as o,
   cr as r,
-  gi as n,
+  hi as n,
   pr as d,
-  ya as p,
+  va as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { o as c } from "../../chunks/vendor.js";
 import { a as m, c as _, s as u } from "../../chunks/utils.js";
 var [y, j] = d()(
     ({ observableModel: s }) => ({ root: s.object(), rewards: s.array("rewards") }),
-    a,
+    t,
   ),
   g = "DailyQuestsTooltipApp_b5a82c23",
   x = "DailyQuestsTooltipApp_name_3f7f3230",
@@ -36,9 +36,9 @@ function N(s, t, a) {
       : a;
 }
 var w = c(function () {
-  const { model: a } = j(),
-    { description: r, resetTime: n, completed: d, allDailyCompleted: c } = a.root.get(),
-    y = a.rewards.get();
+  const { model: t } = j(),
+    { description: r, resetTime: n, completed: d, allDailyCompleted: c } = t.root.get(),
+    y = t.rewards.get();
   return (0, A.jsx)(o, {
     "data-name": "BoosterTooltip",
     children: (0, A.jsxs)(o.Decorator, {
@@ -87,7 +87,7 @@ var w = c(function () {
                 ],
               }),
             (0, A.jsx)("div", { className: f }),
-            (0, A.jsx)(t, {
+            (0, A.jsx)(a, {
               text: c
                 ? R.strings.last_stand_tooltips.dailyQuests.statusEventEnd()
                 : R.strings.last_stand_tooltips.dailyQuests.status(),

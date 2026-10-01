@@ -1,5 +1,5 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Ir as a, Rr as t, gi as s, go as n, yo as r } from "./lib.js";
+import { Fr as a, Lr as t, hi as s, ho as n, vo as r } from "./lib.js";
 var i = e(r()),
   o = s(),
   u = { x: 0, y: 0, opacity: 0, transform: "scale(1) rotate(0deg)" },
@@ -34,27 +34,27 @@ function f({
   isDisabled: f = !1,
   duration: m = 250,
   delay: d = 0,
-  transformOrigin: g = "50% 50%",
-  easingType: p = "easeInOut",
+  transformOrigin: p = "50% 50%",
+  easingType: g = "easeInOut",
   onRest: E,
   onStart: I,
   trigger: y,
-  className: x,
-  isReverse: b = !1,
+  className: h,
+  isReverse: x = !1,
 }) {
-  const h = l[p],
-    [k, v] = t(() => s),
-    B = O && !f ? n : { ...k, transformOrigin: g };
+  const b = l[g],
+    [v, k] = t(() => s),
+    B = O && !f ? n : { ...v, transformOrigin: p };
   return (
     (0, i.useEffect)(() => {
-      v.start({
+      k.start({
         from: s,
         to: n,
         delay: d,
         immediate: O,
-        config: r ? { ...r } : { duration: m, easing: h },
+        config: r ? { ...r } : { duration: m, easing: b },
         cancel: O || f,
-        reverse: b,
+        reverse: x,
         onRest: (e) => {
           !0 === e.finished && E && E();
         },
@@ -62,8 +62,8 @@ function f({
           I && I();
         },
       });
-    }, [v, d, m, h, s, O, E, n, y, f, b, I, r]),
-    (0, o.jsx)(a.div, { className: x, style: B, children: e })
+    }, [k, d, m, b, s, O, E, n, y, f, x, I, r]),
+    (0, o.jsx)(a.div, { className: h, style: B, children: e })
   );
 }
 export { f as n, O as t };

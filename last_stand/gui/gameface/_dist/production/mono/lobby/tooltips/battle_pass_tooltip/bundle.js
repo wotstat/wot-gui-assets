@@ -1,28 +1,28 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   En as e,
-  Eo as a,
-  G as r,
-  La as t,
-  Mn as n,
-  On as o,
-  Pn as l,
-  ao as i,
-  c,
-  cr as d,
-  gi as _,
+  G as a,
+  Ia as r,
+  Mn as t,
+  On as n,
+  Pn as o,
+  To as l,
+  c as i,
+  cr as c,
+  hi as d,
+  io as _,
   ir as m,
   jn as x,
   kn as u,
   pr as g,
   s as j,
   sr as p,
-  ya as b,
-  yo as N,
+  va as b,
+  vo as v,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { o as v, s as w } from "../../chunks/vendor.js";
-import { n as h, r as f } from "../../chunks/date-time-utils.js";
+import { o as N, s as h } from "../../chunks/vendor.js";
+import { n as w, r as f } from "../../chunks/date-time-utils.js";
 var P = (function (s) {
     return (
       (s.COMMON = "common"),
@@ -32,24 +32,24 @@ var P = (function (s) {
       s
     );
   })({}),
-  k = s(N(), 1),
-  [E, y] = g()(
+  k = s(v(), 1),
+  [E, S] = g()(
     ({ observableModel: s }) => ({
       root: s.object(),
       rewardsCommon: s.array("rewardsCommon"),
       rewardsElite: s.array("rewardsElite"),
     }),
-    t,
+    r,
   ),
-  S = s(w(), 1),
+  y = s(h(), 1),
   C = "IconTextBlock_4710821f",
   B = "IconTextBlock_icon_753334c6",
   T = "IconTextBlock_text_e1bd5a75",
-  I = _(),
+  I = d(),
   O = (0, k.memo)(function ({ icon: s, text: e, className: a }) {
     const r = (0, k.useMemo)(() => ({ backgroundImage: `url(${s})` }), [s]);
     return (0, I.jsxs)("div", {
-      className: (0, S.default)(C, a),
+      className: (0, y.default)(C, a),
       children: [
         (0, I.jsx)("div", { className: B, style: r }),
         (0, I.jsx)(j, { classMix: T, text: e }),
@@ -58,12 +58,12 @@ var P = (function (s) {
   }),
   L = "ClaimInfo_63bb6cbd",
   G = "ClaimInfo_unlock_1bd5fae",
-  U = a.resolve("strings"),
-  D = v(function ({ className: s = "" }) {
-    const { model: e } = y(),
+  U = l.resolve("strings"),
+  D = N(function ({ className: s = "" }) {
+    const { model: e } = S(),
       { notChosenRewardCount: a } = e.root.get();
     return (0, I.jsx)("div", {
-      className: (0, S.default)(L, s),
+      className: (0, y.default)(L, s),
       children: (0, I.jsx)(O, {
         icon: R.images.gui.maps.icons.battlePass.tooltips.bow_small(),
         text: U.readOrEmpty(
@@ -87,11 +87,11 @@ function H() {
 }
 var $ = "Rewards_69001186";
 function Y({ className: s = "", children: e = null }) {
-  return (0, I.jsx)("div", { className: (0, S.default)($, s), children: e });
+  return (0, I.jsx)("div", { className: (0, y.default)($, s), children: e });
 }
 var F = "Separator_a3ff07";
 function z({ className: s = "" }) {
-  return (0, I.jsx)("div", { className: (0, S.default)(F, s) });
+  return (0, I.jsx)("div", { className: (0, y.default)(F, s) });
 }
 var V = "EndSoon_f7bd83d6",
   X = "EndSoon_content_a59b8e14",
@@ -102,13 +102,13 @@ var V = "EndSoon_f7bd83d6",
   Q = "EndSoon_timerValue_f7b6b905",
   Z = "EndSoon_hurryUp_442e4698",
   ss = R.strings.battle_pass.tooltips.inProgress,
-  es = v(function ({ className: s }) {
-    const { model: e } = y(),
+  es = N(function ({ className: s }) {
+    const { model: e } = S(),
       { timeTillEnd: a } = e.root.get();
     return (0, I.jsx)("div", {
       className: V,
       children: (0, I.jsxs)("div", {
-        className: (0, S.default)(s, X),
+        className: (0, y.default)(s, X),
         children: [
           (0, I.jsxs)("div", {
             className: q,
@@ -126,8 +126,8 @@ var V = "EndSoon_f7bd83d6",
   }),
   as = "Level_92373847",
   rs = "Level_label_b141d366",
-  ts = v(function () {
-    const { model: s } = y(),
+  ts = N(function () {
+    const { model: s } = S(),
       { level: e } = s.root.get();
     return (0, I.jsxs)(I.Fragment, {
       children: [
@@ -145,7 +145,7 @@ var V = "EndSoon_f7bd83d6",
   is = "Points_pointsIcon_615fd6e8";
 function cs({ currentPoints: s, maxPoints: e, className: a = "" }) {
   return (0, I.jsxs)("div", {
-    className: (0, S.default)(ns, a),
+    className: (0, y.default)(ns, a),
     children: [
       (0, I.jsx)("div", { className: os, children: s }),
       "/",
@@ -157,20 +157,20 @@ function cs({ currentPoints: s, maxPoints: e, className: a = "" }) {
 var ds = "Progression_af1cb3b",
   _s = "Progression_progressionBar_871f5c5",
   ms = "Progression_points_fa2aa3d9",
-  xs = v(function ({ className: s = "" }) {
-    const { model: e } = y(),
-      { currentPoints: a, maxPoints: t } = e.root.get();
+  xs = N(function ({ className: s = "" }) {
+    const { model: e } = S(),
+      { currentPoints: r, maxPoints: t } = e.root.get();
     return (0, I.jsxs)("div", {
-      className: (0, S.default)(ds, s),
+      className: (0, y.default)(ds, s),
       children: [
-        (0, I.jsx)(r, {
-          value: a,
+        (0, I.jsx)(a, {
+          value: r,
           maxValue: t,
-          size: r.sizes.large,
+          size: a.sizes.large,
           className: _s,
-          children: (0, I.jsx)(r.Fill, {}),
+          children: (0, I.jsx)(a.Fill, {}),
         }),
-        (0, I.jsx)(cs, { maxPoints: t, currentPoints: a, className: ms }),
+        (0, I.jsx)(cs, { maxPoints: t, currentPoints: r, className: ms }),
       ],
     });
   }),
@@ -178,10 +178,10 @@ var ds = "Progression_af1cb3b",
   gs = "ExpireTime_light_ff99b79d",
   js = "ExpireTime_icon_8036e60f",
   ps = "ExpireTime_value_9bb07917",
-  bs = v(function () {
-    const { model: s } = y(),
+  bs = N(function () {
+    const { model: s } = S(),
       { expireTime: e } = s.root.get(),
-      a = h(f(e), !1);
+      a = w(f(e), !1);
     return (0, I.jsxs)("div", {
       className: us,
       children: [
@@ -191,12 +191,12 @@ var ds = "Progression_af1cb3b",
       ],
     });
   }),
-  Ns = "Header_71860ac",
-  vs = "Header_chapter_92802c23",
-  ws = "Header_name_b8e323e7",
-  hs = a.resolve("strings"),
-  fs = v(function () {
-    const { model: s } = y(),
+  vs = "Header_71860ac",
+  Ns = "Header_chapter_92802c23",
+  hs = "Header_name_b8e323e7",
+  ws = l.resolve("strings"),
+  fs = N(function () {
+    const { model: s } = S(),
       { chapter: e, expireTime: a } = s.root.get(),
       r = (() => {
         switch (s.root.get().chapterType) {
@@ -208,16 +208,16 @@ var ds = "Progression_af1cb3b",
         }
       })();
     return (0, I.jsxs)("div", {
-      className: Ns,
+      className: vs,
       children: [
         (0, I.jsxs)("div", {
-          className: vs,
+          className: Ns,
           children: [
             (0, I.jsx)("div", {
-              className: ws,
+              className: hs,
               children: (0, I.jsx)(m, {
                 text: R.strings.battle_pass.tooltips.inProgress.chapter(),
-                binding: { name: hs.readOrEmpty(`R.strings.battle_pass.chapter.fullName.c_${e}`) },
+                binding: { name: ws.readOrEmpty(`R.strings.battle_pass.chapter.fullName.c_${e}`) },
               }),
             }),
             r && (0, I.jsx)(bs, {}),
@@ -243,16 +243,16 @@ var ds = "Progression_af1cb3b",
     overlay: "RewardsBlock_overlay_adaa44ea",
   },
   Rs = [
-    l.PROGRESSION_STYLE_UPGRADED_1,
-    l.PROGRESSION_STYLE_UPGRADED_2,
-    l.PROGRESSION_STYLE_UPGRADED_3,
-    l.PROGRESSION_STYLE_UPGRADED_4,
+    o.PROGRESSION_STYLE_UPGRADED_1,
+    o.PROGRESSION_STYLE_UPGRADED_2,
+    o.PROGRESSION_STYLE_UPGRADED_3,
+    o.PROGRESSION_STYLE_UPGRADED_4,
   ];
 function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
-  const t = r.length > 1 && r.length % 2 == 1,
+  const o = r.length > 1 && r.length % 2 == 1,
     l = 1 === r.length,
     i = 2 === r.length,
-    c = l ? n.S180x135 : n.Small,
+    c = l ? t.S180x135 : t.Small,
     d = r.every(({ value: s }) => {
       const e = Number(s.value);
       return !isNaN(e) && e > 1;
@@ -265,7 +265,7 @@ function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
         children: [a && (0, I.jsx)("div", { className: Ps.lockIcon }), s],
       }),
       (0, I.jsx)("div", {
-        className: (0, S.default)(Ps.rewardsList, a && Ps.rewardsList__locked),
+        className: (0, y.default)(Ps.rewardsList, a && Ps.rewardsList__locked),
         children: r.map((s, a) => {
           const r = ((s, e) => ({
               name: s.item || s.name,
@@ -274,21 +274,21 @@ function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
               value: s.value,
               valueType: x(s.name),
             }))(s.value, c),
-            n = null !== o(r.special),
+            t = null !== n(r.special),
             _ = r.special && Rs.includes(r.special);
           return (0, k.createElement)(e, {
             ...r,
             size: c,
             key: `${r.name}_${a}`,
-            className: (0, S.default)(
+            className: (0, y.default)(
               !i && Ps.reward,
               a > 0 && Ps.reward__next,
               _ && Ps.reward__styleUpgrade,
-              d && !t && Ps.reward__wide,
-              t && a % 2 == 1 && Ps.reward__shiftUp,
+              d && !o && Ps.reward__wide,
+              o && a % 2 == 1 && Ps.reward__shiftUp,
               l && Ps.reward__single,
             ),
-            classNames: { overlay: (0, S.default)(!n && l && Ps.overlay) },
+            classNames: { overlay: (0, y.default)(!t && l && Ps.overlay) },
           });
         }),
       }),
@@ -296,14 +296,14 @@ function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
   });
 }
 var Es = "InProgressContent_a8ca87b2",
-  ys = "InProgressContent_content_524dcedb",
-  Ss = "InProgressContent_rewards_63eaef96",
+  Ss = "InProgressContent_content_524dcedb",
+  ys = "InProgressContent_rewards_63eaef96",
   Cs = "InProgressContent_unlockBattlePass_21685866",
   Bs = "InProgressContent_claim_3d8980c7",
   Ts = "InProgressContent_separatorWrapper_4624de44",
   Is = R.strings.battle_pass.tooltips,
-  Os = v(function () {
-    const { model: s } = y(),
+  Os = N(function () {
+    const { model: s } = S(),
       { timeTillEnd: e, isBattlePassPurchased: a, notChosenRewardCount: r } = s.root.get(),
       t = s.rewardsCommon.get(),
       n = s.rewardsElite.get(),
@@ -313,11 +313,11 @@ var Es = "InProgressContent_a8ca87b2",
       className: Es,
       children: [
         (0, I.jsxs)("div", {
-          className: ys,
+          className: Ss,
           children: [
             (0, I.jsx)(fs, {}),
             (0, I.jsxs)(Y, {
-              className: Ss,
+              className: ys,
               children: [
                 (0, I.jsx)(ks, { label: Is.inProgress.baseReward(), rewards: t }),
                 (0, I.jsx)(ks, { label: Is.inProgress.improvedReward(), rewards: n, isLocked: !a }),
@@ -345,7 +345,7 @@ var Es = "InProgressContent_a8ca87b2",
   Gs = "Header_name_61a6b766";
 function Us({ className: s = "" }) {
   return (0, I.jsxs)("div", {
-    className: (0, S.default)(Ls, s),
+    className: (0, y.default)(Ls, s),
     children: [
       (0, I.jsx)("div", {
         className: Gs,
@@ -370,9 +370,9 @@ var Ds = {
     valueType: x(s.name),
   });
 function As({ rewards: { items: s }, className: a = "" }) {
-  const r = s.length < 3 ? n.S180x135 : n.Big;
+  const r = s.length < 3 ? t.S180x135 : t.Big;
   return (0, I.jsxs)("div", {
-    className: (0, S.default)(Ds.base, a),
+    className: (0, y.default)(Ds.base, a),
     children: [
       (0, I.jsx)("div", { className: Ds.ribbon }),
       (0, I.jsx)("div", {
@@ -392,8 +392,8 @@ var Hs = "PostProgressionContent_61673cb3",
   Vs = "PostProgressionContent_separatorFirst_83f78bef",
   Xs = "PostProgressionContent_separatorSecond_17c63b4",
   Ws = "PostProgressionContent_unlockBattlePass_c45d32a9",
-  qs = v(function () {
-    const { model: s } = y(),
+  qs = N(function () {
+    const { model: s } = S(),
       { isBattlePassPurchased: e, notChosenRewardCount: a } = s.root.get(),
       r = s.rewardsCommon.get(),
       t = 0 !== a;
@@ -407,7 +407,7 @@ var Hs = "PostProgressionContent_61673cb3",
         (0, I.jsxs)("div", {
           className: Ys,
           children: [
-            t && (0, I.jsx)(D, { className: (0, S.default)(e && zs) }),
+            t && (0, I.jsx)(D, { className: (0, y.default)(e && zs) }),
             t && !e && (0, I.jsx)(z, { className: Xs }),
             !e &&
               (0, I.jsx)("div", {
@@ -422,16 +422,16 @@ var Hs = "PostProgressionContent_61673cb3",
       ],
     });
   }),
-  Js = v(function () {
-    const { model: s } = y(),
+  Js = N(function () {
+    const { model: s } = S(),
       { chapterType: e } = s.root.get();
     return e === P.POST_PROGRESSION ? (0, I.jsx)(qs, {}) : (0, I.jsx)(Os, {});
   });
-d(
+c(
   (0, I.jsx)(E, {
     children: (0, I.jsx)(p, {
-      children: (0, I.jsx)(c, {
-        children: (0, I.jsx)(c.Decorator, { children: (0, I.jsx)(Js, {}) }),
+      children: (0, I.jsx)(i, {
+        children: (0, I.jsx)(i.Decorator, { children: (0, I.jsx)(Js, {}) }),
       }),
     }),
   }),

@@ -22827,35 +22827,8 @@ var VideoForwarded = (0, import_react.forwardRef)(function (
       })
     );
   }),
-  Video = (0, import_react.memo)(VideoForwarded);
-function FormatTextSplited({ className: e, ...t }) {
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: e,
-    children: t.text
-      .split("\n")
-      .map((e) => (0, import_jsx_runtime.jsx)(FormatText$1, { ...t, text: e }, e)),
-  });
-}
-function ExtendedText(e) {
-  return (
-    void 0 !== e.onSizeChanged &&
-      console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
-    void 0 !== e.targetId &&
-      console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'),
-    (0, import_jsx_runtime.jsx)(
-      e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited,
-      {
-        split: e.split ?? !0,
-        text: e.text,
-        params: e.binding,
-        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
-        upgradeLegacy: !0,
-        className: clsx(e.className, e.classMix),
-      },
-    )
-  );
-}
-var require_classnames = __commonJSMin((e, t) => {
+  Video = (0, import_react.memo)(VideoForwarded),
+  require_classnames = __commonJSMin((e, t) => {
     !(function () {
       var e = {}.hasOwnProperty;
       function n() {
@@ -22891,1656 +22864,50 @@ var require_classnames = __commonJSMin((e, t) => {
     })();
   }),
   import_classnames = __toESM(require_classnames()),
-  createLayoutReadyInEffect = (e) => {
-    let t,
-      n = null;
-    return (
-      (n = requestAnimationFrame(() => {
-        n = requestAnimationFrame(() => {
-          ((n = null), (t = e()));
-        });
-      })),
-      () => {
-        ("function" == typeof t && t(), null !== n && cancelAnimationFrame(n));
-      }
-    );
-  },
-  getFromCallStack = (e = 1) => {
-    const t = new Error().stack;
-    let n,
-      r = R.invalid("resId"),
-      a = "";
-    return (
-      t &&
-        ((a = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
-        (n = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
-        window.__feature &&
-          window.__feature !== n &&
-          window.subViews[n] &&
-          (r = window.subViews[n].id)),
-      { callerUrl: a, caller: n, stack: t, resId: r }
-    );
-  },
-  ClickOutsideManager$1 = class e {
-    entries = [];
-    _listenMouse = !1;
-    static __instance;
-    static get instance() {
-      return (e.__instance || (e.__instance = new e()), e.__instance);
-    }
-    register(e, t) {
-      (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
-    }
-    unregister(e, t) {
-      const n = e,
-        r = t;
-      ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== n || t !== r)),
-        this.removeMouseListener());
-    }
-    addMouseListener() {
-      this._listenMouse ||
-        (document.addEventListener("mousedown", this.onMouseDown), (this._listenMouse = !0));
-    }
-    removeMouseListener() {
-      this._listenMouse &&
-        0 === this.entries.length &&
-        (document.removeEventListener("mousedown", this.onMouseDown), (this._listenMouse = !1));
-    }
-    onMouseDown = (e) => {
-      this.entries.forEach(({ container: t, callback: n }) => {
-        let r = e.target;
-        do {
-          if (r === t) return;
-          r = r.parentNode;
-        } while (r);
-        n();
-      });
-    };
-  };
-function makeEngineEvent(e) {
-  return (t) => (
-    engine.on(e, t),
-    () => {
-      engine.off(e, t);
-    }
-  );
-}
-function setTrackMouseOutside(e) {
-  viewEnv.setTrackMouseOnStage(e);
-}
-var events_exports = __exportAll({
-    mouse: () => mouse,
-    off: () => off,
-    on: () => on,
-    onMinimize: () => onMinimize,
-    onResize: () => onResize,
-    onScaleUpdated: () => onScaleUpdated,
-  }),
-  onResize = makeEngineEvent("clientResized"),
-  onScaleUpdated = makeEngineEvent("self.onScaleUpdated"),
-  onMinimize = makeEngineEvent("clientMinimized"),
-  on = (e, t) => engine.on(e, t),
-  off = (e, t) => engine.off(e, t),
-  internalMouse = {
-    down: makeEngineEvent("mousedown"),
-    up: makeEngineEvent("mouseup"),
-    move: makeEngineEvent("mousemove"),
-  };
-function initMouseEvents() {
-  const e = { listeners: 0, enabled: !0, initialized: !1 };
-  function t() {
-    e.enabled && setTrackMouseOutside(!1);
-  }
-  function n() {
-    e.enabled && setTrackMouseOutside(!0);
-  }
-  function r() {
-    e.enabled
-      ? e.listeners < 1
-        ? ((e.initialized = !1),
-          document.body.removeEventListener("mouseenter", t),
-          document.body.removeEventListener("mouseleave", n))
-        : e.initialized ||
-          ((e.initialized = !0),
-          document.body.addEventListener("mouseenter", t),
-          document.body.addEventListener("mouseleave", n))
-      : setTrackMouseOutside(!1);
-  }
-  return {
-    ...["down", "up", "move"].reduce(
-      (t, n) => (
-        (t[n] = (function (t) {
-          return (n) => {
-            e.listeners += 1;
-            let a = !0;
-            const o = `mouse${t}`,
-              i = internalMouse[t]((e) => n([e, "outside"]));
-            function u(e) {
-              n([e, "inside"]);
-            }
-            return (
-              window.addEventListener(o, u),
-              r(),
-              () => {
-                a && (i(), window.removeEventListener(o, u), (e.listeners -= 1), r(), (a = !1));
-              }
-            );
-          };
-        })(n)),
-        t
-      ),
-      {},
-    ),
-    disable() {
-      ((e.enabled = !1), r());
-    },
-    enable() {
-      ((e.enabled = !0), r());
-    },
-    enableOutside() {
-      e.enabled && setTrackMouseOutside(!0);
-    },
-    disableOutside() {
-      e.enabled && setTrackMouseOutside(!1);
-    },
-  };
-}
-var mouse = initMouseEvents();
-function playSound(e) {
-  engine.call("PlaySound", e).catch((t) => {
-    console.error(`playSound('${e}'): `, t);
-  });
-}
-function setRTPC(e, t) {
-  engine.call("SetRTPCGlobal", e, t).catch((n) => {
-    console.error(`setRTPC('${e}', '${t}'): `, n);
-  });
-}
-var client_exports = __exportAll({
-  events: () => events_exports,
-  getMouseGlobalPosition: () => getMouseGlobalPosition,
-  getSize: () => getSize$1,
-  graphicsQuality: () => graphicsQuality,
-  playSound: () => playSound,
-  setRTPC: () => setRTPC,
-});
-function getSize$1(e = "px") {
-  return "rem" === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
-}
-function getMouseGlobalPosition(e = "px") {
-  return "rem" === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
-}
-var graphicsQuality = {
-    isLow: () => 1 === viewEnv.getGraphicsQuality(),
-    isHigh: () => 0 === viewEnv.getGraphicsQuality(),
-    get: () => viewEnv.getGraphicsQuality(),
-  },
-  intl = {
-    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
-    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
-  },
-  sounds = { highlight: "highlight", click: "play", yes1: "yes1" },
-  plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound(sounds[t])), e), {}),
-  play = { ...plays, sound: playSound },
-  sound_default = { play: play, setRTPC: setRTPC },
-  ROMAN = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"],
-  ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-function arabic2roman$1(e) {
-  let t = "";
-  for (let n = ARABIC.length - 1; n >= 0; n--)
-    for (; e >= ARABIC[n];) ((t += ROMAN[n]), (e -= ARABIC[n]));
-  return t;
-}
-var ROMAN_FORBIDDEN_LANGUAGE_CODES = ["ko", "no"],
-  IS_ROMAN_FORBIDDEN = ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE()),
-  children_exports = __exportAll({ getBgUrl: () => getBgUrl, getTextureUrl: () => getTextureUrl });
-function getTextureUrl(e, t, n = 1) {
-  return viewEnv.getChildTexturePath(e, t.width, t.height, n);
-}
-function getBgUrl(e, t, n) {
-  return `url(${getTextureUrl(e, t, n)})`;
-}
-var displayStatus = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-  events = {
-    onTextureFrozen: makeEngineEvent("self.onTextureFrozen"),
-    onTextureReady: makeEngineEvent("self.onTextureReady"),
-    onDomBuilt: makeEngineEvent("self.onDomBuilt"),
-    onLoaded: makeEngineEvent("self.onLoaded"),
-    onDisplayChanged: makeEngineEvent("self.onShowingStatusChanged"),
-    onFocusUpdated: makeEngineEvent("self.onFocusChanged"),
-    children: {
-      onAdded: makeEngineEvent("children.onAdded"),
-      onLoaded: makeEngineEvent("children.onLoaded"),
-      onRemoved: makeEngineEvent("children.onRemoved"),
-      onAttached: makeEngineEvent("children.onAttached"),
-      onTextureReady: makeEngineEvent("children.onTextureReady"),
-      onRequestPosition: makeEngineEvent("children.requestPosition"),
-    },
-  },
-  viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
-  createViewEventArguments$1 = (e) =>
-    Object.entries(e).map(([e, t]) => {
-      const n = "GFValueProxy";
-      switch (typeof t) {
-        case "number":
-          return { __Type: n, name: e, number: t };
-        case "boolean":
-          return { __Type: n, name: e, bool: t };
-        default:
-          return { __Type: n, name: e, string: t.toString() };
-      }
-    }),
-  sendViewEvent = (e, t) => {
-    const n = "GFViewEventProxy";
-    if (void 0 !== t) {
-      const { args: r, ...a } = t;
-      return void 0 !== r
-        ? viewEnv.handleViewEvent({
-            __Type: n,
-            type: e,
-            ...a,
-            arguments: createViewEventArguments$1(r),
-          })
-        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
-    }
-    return viewEnv.handleViewEvent({ __Type: n, type: e });
-  },
-  sendEvent = {
-    close(e) {
-      sendViewEvent("popover" === e ? viewEventTypes.closePopover : viewEventTypes.close);
-    },
-    minimize() {
-      sendViewEvent(viewEventTypes.minimize);
-    },
-    move(e) {
-      sendViewEvent(viewEventTypes.move, { isMouseEvent: !0, on: e });
-    },
-  },
-  view_exports = __exportAll({
-    addModelObserver: () => addModelObserver,
-    addPreloadTexture: () => addPreloadTexture,
-    arabic2roman: () => arabic2roman,
-    children: () => children_exports,
-    displayStatus: () => displayStatus,
-    displayStatusIs: () => displayStatusIs,
-    enableFullScreenModeSupported: () => enableFullScreenModeSupported,
-    events: () => events,
-    extraSize: () => extraSize,
-    forceTriggerMouseMove: () => forceTriggerMouseMove,
-    freezeTextureBeforeResize: () => freezeTextureBeforeResize,
-    getBrowserTexturePath: () => getBrowserTexturePath,
-    getDisplayStatus: () => getDisplayStatus,
-    getExternalPaddingsRem: () => getExternalPaddingsRem,
-    getFontNames: () => getFontNames,
-    getScale: () => getScale,
-    getSize: () => getSize,
-    getViewGlobalPosition: () => getViewGlobalPosition,
-    initExternalPaddings: () => initExternalPaddings,
-    isEventHandled: () => isEventHandled,
-    isFocused: () => isFocused,
-    pxToRem: () => pxToRem,
-    remToPx: () => remToPx,
-    resize: () => resize,
-    sendEvent: () => sendEvent,
-    setAnimateWindow: () => setAnimateWindow,
-    setEventHandled: () => setEventHandled,
-    setInputPaddingsRem: () => setInputPaddingsRem,
-    setSidePaddingsRem: () => setSidePaddingsRem,
-    whenTutorialReady: () => whenTutorialReady,
-  }),
-  ALL_SIDES = 15;
-function addPreloadTexture(e) {
-  viewEnv.addPreloadTexture(e);
-}
-function setInputPaddingsRem(e) {
-  viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
-}
-function getBrowserTexturePath(e, t, n, r = 1) {
-  return viewEnv.getWebBrowserTexturePath(e, t, n, r);
-}
-function addModelObserver(e, t, n) {
-  return viewEnv.addDataChangedCallback(e, t, n);
-}
-function setSidePaddingsRem(e) {
-  viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
-}
-function getSize(e = "px") {
-  return "rem" === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
-}
-function resize(e, t, n = "px") {
-  return "rem" === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
-}
-function getViewGlobalPosition(e = "rem") {
-  const t = viewEnv.getViewGlobalPositionRem();
-  return "rem" === e ? t : { x: remToPx(t.x), y: remToPx(t.y) };
-}
-function freezeTextureBeforeResize() {
-  viewEnv.freezeTextureBeforeResize();
-}
-function getScale() {
-  return viewEnv.getScale();
-}
-function pxToRem(e) {
-  return viewEnv.pxToRem(e);
-}
-function remToPx(e) {
-  return viewEnv.remToPx(e);
-}
-function setAnimateWindow(e, t) {
-  viewEnv.setAnimateWindow(e, t);
-}
-function isFocused() {
-  return viewEnv.isFocused();
-}
-function setEventHandled() {
-  return viewEnv.setEventHandled();
-}
-function isEventHandled() {
-  return viewEnv.isEventHandled();
-}
-function forceTriggerMouseMove() {
-  viewEnv.forceTriggerMouseMove();
-}
-function getDisplayStatus() {
-  return viewEnv.getShowingStatus();
-}
-var getFontNames = (() => {
-    let e = [];
-    return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
-  })(),
-  arabic2roman = arabic2roman$1;
-function getExternalPaddingsRem() {
-  return viewEnv.getExternalPaddingsRem();
-}
-var displayStatusIs = Object.keys(displayStatus).reduce(
-    (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === displayStatus[t]), e),
-    {},
-  ),
-  extraSize = {
-    set: (e, t) => {
-      viewEnv.setExtraSizeRem(e, t);
-    },
-    get: (e, t) => {
-      viewEnv.getExtraSizeRem(e, t);
-    },
-  },
-  whenTutorialReady = Promise.all([
-    new Promise((e) => {
-      window.isDomBuilt ? e() : events.onDomBuilt(e);
-    }),
-    engine.whenReady,
-  ]);
-function enableFullScreenModeSupported() {
-  viewEnv.setFullscreenModeSupported(!0);
-}
-function initExternalPaddings(e) {
-  function t() {
-    const { top: t, right: n, bottom: r, left: a } = viewEnv.getExternalPaddingsRem();
-    (e.style.setProperty("--external-padding-top", `${t}rem`),
-      e.style.setProperty("--external-padding-right", `${n}rem`),
-      e.style.setProperty("--external-padding-bottom", `${r}rem`),
-      e.style.setProperty("--external-padding-left", `${a}rem`));
-  }
-  (t(), engine.on("self.onPaddingsUpdated", () => t()));
-}
-var env = { view: view_exports, client: client_exports, sound: sound_default, intl: intl },
-  DataTracker = class e {
-    _callbacks;
-    _updateHandler;
-    _views;
-    static __instance;
-    constructor() {
-      ((this._callbacks = {}), (this._views = {}), (this._updateHandler = void 0));
-    }
-    static get instance() {
-      return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
-    }
-    clear() {
-      (void 0 !== this._updateHandler &&
-        (this._updateHandler.clear(), (this._updateHandler = void 0)),
-        (this._callbacks = {}));
-    }
-    clearViewCallbacks = (e) => {
-      this._views[e] &&
-        (this._views[e].forEach((e) => {
-          delete this._callbacks[e];
-        }),
-        delete this._views[e]);
-    };
-    addCallback(e, t, n = 0, r = !0) {
-      void 0 === this._updateHandler &&
-        (this._updateHandler = engine.on("viewEnv.onDataChanged", this._emmitDataChanged, this));
-      const a = env.view.addModelObserver(e, n, r);
-      return (
-        a > 0
-          ? ((this._callbacks[a] = t),
-            n > 0 && (this._views[n] ? this._views[n].push(a) : (this._views[n] = [a])))
-          : console.error("Can't add callback for model:", e),
-        a
-      );
-    }
-    removeCallback(e, t = 0) {
-      let n = !1;
-      return (
-        void 0 !== e &&
-          void 0 !== this._callbacks[e] &&
-          ((n = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
-        n || console.error("Can't remove callback by id:", e),
-        n
-      );
-    }
-    _emmitDataChanged(e, t, n) {
-      n.forEach((n) => {
-        const r = this._callbacks[n];
-        void 0 !== r && r(e, t);
-      });
-    }
-  };
-function dumpViewModel(e) {
-  const t = {};
-  if ("object" != typeof e) return e;
-  for (const n in e)
-    if (Object.prototype.hasOwnProperty.call(e, n)) {
-      const r = Object.prototype.toString.call(e[n]);
-      if (r.startsWith("[object CoherentArrayProxy]")) {
-        const r = e[n];
-        t[n] = [];
-        for (let e = 0; e < r.length; e++) t[n].push({ value: dumpViewModel(r[e].value) });
-      } else
-        r.startsWith("[object class BW::WULF::ViewModel")
-          ? (t[n] = dumpViewModel(e[n]))
-          : (t[n] = e[n]);
-    }
-  return t;
-}
-var SystemLocale = {
-    getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-    getRealFormat: (e, t, n = 2) => systemLocale.getRealFormat(e, t, n),
-    getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
-    getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
-    toUpperCase: (e) => systemLocale.toUpperCase(e),
-    toLowerCase: (e) => systemLocale.toUpperCase(e),
-  },
-  UserLocale = {
-    getNumberFormat: (e) => userLocale.getNumberFormat(e),
-    getTimeFormat: (e, t, n) => userLocale.getTimeFormat(e, t, void 0 === n || n),
-    getTimeString: (e, t, n) => userLocale.getTimeString(e, t, void 0 === n || n),
-  },
-  ViewEventType = (function (e) {
-    return (
-      (e[(e.UNDEFINED = 0)] = "UNDEFINED"),
-      (e[(e.TOOLTIP = 1)] = "TOOLTIP"),
-      (e[(e.POP_OVER = 2)] = "POP_OVER"),
-      (e[(e.CONTEXT_MENU = 4)] = "CONTEXT_MENU"),
-      (e[(e.DROP_DOWN = 8)] = "DROP_DOWN"),
-      (e[(e.MOVE = 16)] = "MOVE"),
-      (e[(e.CLOSE = 32)] = "CLOSE"),
-      (e[(e.MINIMIZE = 64)] = "MINIMIZE"),
-      e
-    );
-  })({}),
-  NumberFormatType = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-  RealFormatType = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-  TimeFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-  DateFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 }),
-  KEY_CODES = (function (e) {
-    return (
-      (e[(e.NONE = -1)] = "NONE"),
-      (e[(e.ALT = 165)] = "ALT"),
-      (e[(e.ENTER = 13)] = "ENTER"),
-      (e[(e.ESCAPE = 27)] = "ESCAPE"),
-      (e[(e.SPACE = 32)] = "SPACE"),
-      (e[(e.END = 35)] = "END"),
-      (e[(e.HOME = 36)] = "HOME"),
-      (e[(e.ARROW_LEFT = 37)] = "ARROW_LEFT"),
-      (e[(e.ARROW_UP = 38)] = "ARROW_UP"),
-      (e[(e.ARROW_RIGHT = 39)] = "ARROW_RIGHT"),
-      (e[(e.ARROW_DOWN = 40)] = "ARROW_DOWN"),
-      (e[(e.NUM_PLUS = 107)] = "NUM_PLUS"),
-      (e[(e.NUM_MINUS = 109)] = "NUM_MINUS"),
-      (e[(e.PLUS = 187)] = "PLUS"),
-      (e[(e.MINUS = 189)] = "MINUS"),
-      (e[(e.PAGE_UP = 33)] = "PAGE_UP"),
-      (e[(e.PAGE_DOWN = 34)] = "PAGE_DOWN"),
-      (e[(e.BACKSPACE = 8)] = "BACKSPACE"),
-      (e[(e.DELETE = 46)] = "DELETE"),
-      (e[(e.TAB = 9)] = "TAB"),
-      (e[(e.KEY_N = 78)] = "KEY_N"),
-      (e[(e.KEY_1 = 49)] = "KEY_1"),
-      (e[(e.KEY_2 = 50)] = "KEY_2"),
-      (e[(e.KEY_3 = 51)] = "KEY_3"),
-      (e[(e.KEY_4 = 52)] = "KEY_4"),
-      (e[(e.KEY_5 = 53)] = "KEY_5"),
-      (e[(e.KEY_6 = 54)] = "KEY_6"),
-      (e[(e.KEY_7 = 55)] = "KEY_7"),
-      (e[(e.KEY_8 = 56)] = "KEY_8"),
-      (e[(e.KEY_9 = 57)] = "KEY_9"),
-      e
-    );
-  })({}),
-  makeGlobalBoundingBox = (e) => ({
-    __Type: "GFBoundingBox",
-    x: e.x,
-    y: e.y,
-    width: e.width,
-    height: e.height,
-  }),
-  onBindingsReady = async () =>
-    !(!engine._BindingsReady || !engine._ContentLoaded) ||
-    new Promise((e) => {
-      engine.on("Ready", e);
-    }),
-  onLayoutReady = () =>
-    new Promise((e) => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          e();
-        });
-      });
-    }),
-  createViewEventArguments = (e) =>
-    Object.entries(e).map(([e, t]) => {
-      const n = { __Type: "GFValueProxy", name: e };
-      switch (typeof t) {
-        case "number":
-          n.number = t;
-          break;
-        case "boolean":
-          n.bool = t;
-          break;
-        default:
-          n.string = t.toString();
-      }
-      return n;
-    }),
-  handleViewEvent$1 = (e, t) => {
-    const n = "GFViewEventProxy";
-    if (void 0 !== t) {
-      const { args: r, ...a } = t;
-      void 0 !== r
-        ? viewEnv.handleViewEvent({
-            __Type: n,
-            type: e,
-            ...a,
-            arguments: createViewEventArguments(r),
-          })
-        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
-    } else viewEnv.handleViewEvent({ __Type: n, type: e });
-  },
-  sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
-  sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
-  sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
-  sendShowContextMenuEvent = (e, t, n = 0) => {
-    handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
-      isMouseEvent: !0,
-      contentID: e,
-      on: !0,
-      decoratorID: n,
-      args: t,
-    });
-  },
-  sendShowPopOverEvent = (e, t, n, r, a = R.invalid("resId"), o) => {
-    const i = env.view.getViewGlobalPosition(),
-      { x: u, y: s, width: l, height: c } = n.getBoundingClientRect(),
-      d = {
-        x: env.view.pxToRem(u) + i.x,
-        y: env.view.pxToRem(s) + i.y,
-        width: env.view.pxToRem(l),
-        height: env.view.pxToRem(c),
-      };
-    handleViewEvent$1(ViewEventType.POP_OVER, {
-      isMouseEvent: !0,
-      contentID: e,
-      decoratorID: r || R.invalid("resId"),
-      targetID: a,
-      direction: t,
-      bbox: makeGlobalBoundingBox(d),
-      on: !0,
-      args: o,
-    });
-  },
-  isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
-  isContextMenuShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.CONTEXT_MENU),
-  isPopOverShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.POP_OVER),
-  callOnEsc = (e, t) => {
-    e.keyCode === KEY_CODES.ESCAPE && t();
-  },
-  closeOnEsc = (e) => {
-    callOnEsc(e, sendCloseEvent);
-  },
-  addEscapeListener = (e) => {
-    const t = (t) => callOnEsc(t, e);
-    return (window.addEventListener("keydown", t), () => window.removeEventListener("keydown", t));
-  },
-  ViewModel = class {
-    dataTracker;
-    modelPath;
-    callbacks;
-    data;
-    constructor(e, t = []) {
-      ((this.dataTracker = new DataTracker()),
-        (this.modelPath = e),
-        (this.callbacks = new Set()),
-        onBindingsReady().then(() => {
-          (this._addCallback(e),
-            t.forEach((t) => {
-              this._addCallback(e + "." + t);
-            }),
-            this._notifyObservers());
-        }));
-    }
-    subscribe(e) {
-      (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
-    }
-    unsubscribe(e) {
-      this.callbacks.delete(e);
-    }
-    destroy() {
-      (this.dataTracker.clear(), this.callbacks.clear());
-    }
-    _addCallback(e) {
-      this.dataTracker.addCallback(e, this._notifyObservers);
-    }
-    _notifyObservers = () => {
-      ((this.data = eval(this.modelPath)),
-        this.callbacks.forEach((e) => {
-          e(this.data);
-        }));
-    };
-  },
-  ClickOutsideManager = ClickOutsideManager$1.instance,
-  ViewEnvHelper = {
-    DataTracker: DataTracker,
-    ViewModel: ViewModel,
-    ViewEventType: ViewEventType,
-    NumberFormatType: NumberFormatType,
-    RealFormatType: RealFormatType,
-    TimeFormatType: TimeFormatType,
-    DateFormatType: DateFormatType,
-    makeGlobalBoundingBox: makeGlobalBoundingBox,
-    sendMoveEvent: sendMoveEvent,
-    sendCloseEvent: sendCloseEvent,
-    sendClosePopOverEvent: sendClosePopOverEvent,
-    sendShowContextMenuEvent: sendShowContextMenuEvent,
-    sendShowPopOverEvent: sendShowPopOverEvent,
-    addEscapeListener: addEscapeListener,
-    closeOnEsc: closeOnEsc,
-    handleViewEvent: handleViewEvent$1,
-    onBindingsReady: onBindingsReady,
-    onLayoutReady: onLayoutReady,
-    isTooltipShown: isTooltipShown,
-    isContextMenuShown: isContextMenuShown,
-    isPopOverShown: isPopOverShown,
-    dumpViewModel: dumpViewModel,
-    ClickOutsideManager: ClickOutsideManager,
-    SystemLocale: SystemLocale,
-    UserLocale: UserLocale,
-  };
-window.ViewEnvHelper = ViewEnvHelper;
-var SHOW_DELAY_MIN = 100,
-  SHOW_DELAY_DEFAULT = 400;
-function getViewEventArguments(e) {
-  return Object.entries(e || {}).map(([e, t]) => {
-    const n = { __Type: "GFValueProxy", name: e };
-    switch (typeof t) {
-      case "number":
-        n.number = t;
-        break;
-      case "boolean":
-        n.bool = t;
-        break;
-      case "undefined":
-        break;
-      default:
-        n.string = t.toString();
-    }
-    return n;
-  });
-}
-var handleViewEvent = (e, t, n = {}, r = 0) => {
-    viewEnv.handleViewEvent({
-      __Type: "GFViewEventProxy",
-      type: ViewEventType.TOOLTIP,
-      contentID: e,
-      decoratorID: t,
-      targetID: r,
-      ...n,
-    });
-  },
-  Tooltip = ({
-    children: e,
-    contentId: t,
-    args: n,
-    onMouseEnter: r,
-    onMouseLeave: a,
-    onMouseDown: o,
-    onClick: i,
-    ignoreShowDelay: u = !1,
-    ignoreMouseClick: s = !1,
-    decoratorId: l = 0,
-    isEnabled: c = !0,
-    targetId: d = 0,
-    onShow: f,
-    onHide: p,
-    ...m
-  }) => {
-    const h = (0, import_react.useRef)({
-        timeoutId: 0,
-        isVisible: !1,
-        prevTarget: null,
-        hideTimerId: null,
-      }),
-      g = (0, import_react.useMemo)(() => d || getFromCallStack().resId, [d]),
-      b = (0, import_react.useCallback)(() => {
-        (h.current.isVisible && h.current.timeoutId) ||
-          (handleViewEvent(
-            t,
-            l,
-            { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(n) },
-            g,
-          ),
-          f && f(),
-          (h.current.isVisible = !0));
-      }, [t, l, n, g, f]),
-      v = (0, import_react.useCallback)(() => {
-        if (h.current.isVisible || h.current.timeoutId) {
-          const e = h.current.timeoutId;
-          (e > 0 && (clearTimeout(e), (h.current.timeoutId = 0)),
-            handleViewEvent(t, l, { on: !1 }, g),
-            h.current.isVisible && p && p(),
-            (h.current.isVisible = !1));
-        }
-      }, [t, l, g, p]),
-      _ = (0, import_react.useCallback)((e) => {
-        h.current.isVisible &&
-          ((h.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-          (h.current.hideTimerId = window.setTimeout(() => {
-            const t = document.elementFromPoint(e.clientX, e.clientY);
-            t && !t.isSameNode(h.current.prevTarget) && v();
-          }, 200)));
-      }, []);
-    ((0, import_react.useEffect)(() => {
-      const e = h.current.hideTimerId;
-      return (
-        document.addEventListener("wheel", _, { capture: !0 }),
-        () => {
-          (document.removeEventListener("wheel", _, { capture: !0 }), e && window.clearTimeout(e));
-        }
-      );
-    }, []),
-      (0, import_react.useEffect)(() => {
-        !1 === c && v();
-      }, [c, v]),
-      (0, import_react.useEffect)(
-        () => (
-          window.addEventListener("mouseleave", v),
-          () => {
-            (window.removeEventListener("mouseleave", v), v());
-          }
-        ),
-        [v],
-      ));
-    return c
-      ? (0, import_react.cloneElement)(e, {
-          onMouseEnter:
-            ((y = e.props.onMouseEnter),
-            (e) => {
-              (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                (clearTimeout(h.current.timeoutId),
-                (h.current.timeoutId = window.setTimeout(
-                  b,
-                  u ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT,
-                )),
-                r && r(e),
-                y && y(e));
-            }),
-          onMouseLeave: ((e) => (t) => {
-            (v(), a?.(t), e?.(t));
-          })(e.props.onMouseLeave),
-          onClick: ((e) => (t) => {
-            (!1 === s && v(), i?.(t), e?.(t));
-          })(e.props.onClick),
-          onMouseDown: ((e) => (t) => {
-            (!1 === s && v(), o?.(t), e?.(t));
-          })(e.props.onMouseDown),
-          ...m,
-        })
-      : e;
-    var y;
-  },
-  UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
-  getTooltipContentId = (e) =>
-    e
-      ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent("resId")
-      : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent("resId"),
-  SimpleTooltip = ({ children: e, body: t, header: n, note: r, alert: a, args: o, ...i }) => {
-    const u = (0, import_react.useMemo)(() => {
-      const e = { ...o, body: t, header: n, note: r, alert: a };
-      for (const t in e) void 0 === e[t] && delete e[t];
-      return e;
-    }, [a, t, n, r, o]);
-    return (0, import_jsx_runtime.jsx)(Tooltip, {
-      contentId: getTooltipContentId(o?.hasHtmlContent),
-      decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
-      args: u,
-      ...i,
-      children: e,
-    });
-  },
-  base$13 = "Textoverflow_3e47b075",
-  TextOverflow_module_default = { base: base$13 },
-  TextOverflow = ({ content: e, classMix: t, className: n, ...r }) => {
-    const a = (0, import_react.useRef)(null),
-      [o, i] = (0, import_react.useState)(!0);
-    return (
-      (0, import_react.useEffect)(() =>
-        createLayoutReadyInEffect(() => {
-          const e = a.current;
-          e && e.offsetWidth >= e.scrollWidth && i(!1);
-        }),
-      ),
-      (0, import_jsx_runtime.jsx)(SimpleTooltip, {
-        isEnabled: o,
-        body: e,
-        children: (0, import_jsx_runtime.jsx)("div", {
-          ...r,
-          ref: a,
-          className: (0, import_classnames.default)(TextOverflow_module_default.base, n, t),
-          children: e,
-        }),
-      })
-    );
-  },
-  Size = (function (e) {
-    return ((e.Small = "small"), (e.Medium = "medium"), (e.Default = "medium"), e);
-  })({}),
-  AnimationType = (function (e) {
-    return ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e);
-  })({}),
-  base$12 = "Progressbar_a6e35bd7",
-  base__small$3 = "Progressbar_base__small_7338ff19",
-  background$1 = "Progressbar_background_27d9dd7c",
-  background__small = "Progressbar_background__small_7338ff19",
-  lineWrapper = "Progressbar_lineWrapper_fc5022a6",
-  ProgressBar_module_default = {
-    base: base$12,
+  base$13 = "CloseButton_7488a1b8",
+  base__medium = "CloseButton_base__medium_97d04067",
+  base__small$3 = "CloseButton_base__small_c1b29bae",
+  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
+  base__x96x96$1 = "CloseButton_base__x96x96_8157b84d",
+  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
+  close_button_module_default = {
+    base: base$13,
+    base__medium: base__medium,
     base__small: base__small$3,
-    background: background$1,
-    background__small: background__small,
-    lineWrapper: lineWrapper,
+    base__extraSmall: base__extraSmall,
+    base__x96x96: base__x96x96$1,
+    base__x32x32: base__x32x32,
   },
-  ProgressBarBackground = ({ size: e = Size.Default }) =>
-    (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        ProgressBar_module_default.background,
-        ProgressBar_module_default[`background__${e}`],
-      ),
-    }),
-  base$11 = "Progressbarblink_c6146c1c",
-  base__small$2 = "Progressbarblink_base__small_9a4d3786",
-  ProgressBarBlink_module_default = { base: base$11, base__small: base__small$2 },
-  ProgressBarBlink = ({ size: e }) =>
-    (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        ProgressBarBlink_module_default.base,
-        ProgressBarBlink_module_default[`base__${e}`],
-      ),
-    }),
-  base$10 = "Progresslineimpose_24e17c02",
-  base__disabled$1 = "Progresslineimpose_base__disabled_bcd461f4",
-  base__finished = "Progresslineimpose_base__finished_803677d6",
-  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
-  pattern = "Progresslineimpose_pattern_491cb9c0",
-  base__small$1 = "Progresslineimpose_base__small_577e82cf",
-  gradient = "Progresslineimpose_gradient_513e2b1d",
-  glow$1 = "Progresslineimpose_glow_76f8072f",
-  glow__left = "Progresslineimpose_glow__left_c2e964b3",
-  ProgressLineImpose_module_default = {
-    base: base$10,
-    base__disabled: base__disabled$1,
-    base__finished: base__finished,
-    base__withoutBounce: base__withoutBounce$1,
-    pattern: pattern,
-    base__small: base__small$1,
-    gradient: gradient,
-    glow: glow$1,
-    glow__left: glow__left,
-  },
-  ProgressLineImposeComponent = ({
-    size: e,
-    lineRef: t,
-    disabled: n,
-    baseStyles: r,
-    isComplete: a,
-    withoutBounce: o,
-  }) => {
-    const i = (0, import_classnames.default)(
-        ProgressLineImpose_module_default.base,
-        ProgressLineImpose_module_default[`base__${e}`],
-        n && ProgressLineImpose_module_default.base__disabled,
-        a && ProgressLineImpose_module_default.base__finished,
-        o && ProgressLineImpose_module_default.base__withoutBounce,
-      ),
-      u = !n && !a;
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: i,
-      style: r,
-      ref: t,
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: ProgressLineImpose_module_default.pattern,
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: ProgressLineImpose_module_default.gradient,
-        }),
-        u && (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: e }),
-      ],
-    });
-  },
-  ProgressLineImpose = (0, import_react.memo)(ProgressLineImposeComponent),
-  createTimeoutInEffect = (e, t) => {
-    let n;
-    const r = setTimeout(() => {
-      n = e();
-    }, t);
-    return () => {
-      ("function" == typeof n && n(), clearTimeout(r));
-    };
-  },
-  GrowAnimationState = (function (e) {
-    return ((e.Idle = "Idle"), (e.Grow = "Grow"), (e.Shrink = "Shrink"), (e.End = "End"), e);
-  })({}),
-  SimpleAnimationState = (function (e) {
-    return ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e);
-  })({}),
-  base$9 = "Progressbardeltagrow_c42a7a2c",
-  base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
-  glow = "Progressbardeltagrow_glow_e08fafeb",
-  ProgressBarDeltaGrow_module_default = {
-    base: base$9,
-    base__withoutBounce: base__withoutBounce,
-    glow: glow,
-  },
-  getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
-  getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
-  getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
-  ProgressBarDeltaGrowComponent = ({
-    transitionDuration: e,
-    transitionDelay: t,
-    freezed: n,
-    from: r,
-    size: a,
-    to: o,
-    onEndAnimation: i,
-    onChangeAnimationState: u,
-    className: s,
-  }) => {
-    const l = o < r,
-      [c, d] = (0, import_react.useState)(GrowAnimationState.Idle),
-      f = c === GrowAnimationState.End,
-      p = c === GrowAnimationState.Idle,
-      m = c === GrowAnimationState.Grow,
-      h = c === GrowAnimationState.Shrink,
-      g = (0, import_react.useCallback)(
-        (e) => {
-          (d(e), u && u(e));
-        },
-        [u],
-      ),
-      b = (0, import_react.useCallback)(
-        (e, t) =>
-          createTimeoutInEffect(() => {
-            g(e);
-          }, t),
-        [g],
-      );
-    (0, import_react.useEffect)(() => {
-      if (!n)
-        return p
-          ? b(GrowAnimationState.Grow, t)
-          : m
-            ? b(GrowAnimationState.Shrink, e)
-            : h
-              ? b(GrowAnimationState.End, e)
-              : void (f && i && i());
-    }, [b, n, f, m, p, h, i, t, e]);
-    const v = (0, import_react.useMemo)(
-        () => ({ width: "100%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
-        [l, e],
-      ),
-      _ = (0, import_react.useMemo)(
-        () => ({ width: "0%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
-        [l, e],
-      ),
-      y = (0, import_react.useMemo)(
-        () => ({ width: "0%", ...getBaseSideWithReverse(l, r), ...getAnimationStyles(e) }),
-        [r, l, e],
-      ),
-      E = (0, import_react.useMemo)(
-        () => ({
-          width: `${Math.abs(o - r)}%`,
-          ...getBaseSideWithReverse(l, r),
-          ...getAnimationStyles(e),
-        }),
-        [r, l, o, e],
-      );
-    if (f) return null;
-    const A = (0, import_classnames.default)(
-      ProgressBarDeltaGrow_module_default.base,
-      s,
-      l && 0 === o && ProgressBarDeltaGrow_module_default.base__withoutBounce,
-    );
-    return (0, import_jsx_runtime.jsx)("div", {
-      style: p ? y : E,
-      className: A,
-      children: (0, import_jsx_runtime.jsx)("div", {
-        style: h ? _ : v,
-        className: ProgressBarDeltaGrow_module_default.glow,
-        children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
-      }),
-    });
-  },
-  ProgressBarDeltaGrow = (0, import_react.memo)(ProgressBarDeltaGrowComponent),
-  ProgressBarGrowLineComponent = ({
-    to: e,
-    size: t,
-    from: n,
-    lineRef: r,
-    disabled: a,
-    isComplete: o,
-    animationSettings: i,
-    onEndAnimation: u,
-    onChangeAnimationState: s,
-  }) => {
-    const l = e < n,
-      [c, d] = (0, import_react.useState)(!1),
-      f = (0, import_react.useCallback)(
-        (e) => {
-          (e === GrowAnimationState.Shrink && d(!0), s && s(e));
-        },
-        [s],
-      ),
-      p = (0, import_react.useMemo)(() => ({ width: `${n}%`, transitionProperty: "none" }), [n]),
-      m = (0, import_react.useMemo)(
-        () => ({ width: `${e}%`, transitionDuration: `${i.line.duration}ms` }),
-        [i.line.duration, e],
-      );
-    return (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-      children: [
-        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
-          size: t,
-          lineRef: r,
-          disabled: a,
-          isComplete: o,
-          withoutBounce: l && 0 === e,
-          baseStyles: c ? m : p,
-        }),
-        n >= 0 &&
-          (0, import_jsx_runtime.jsx)(ProgressBarDeltaGrow, {
-            transitionDuration: i.delta.duration,
-            transitionDelay: i.delta.delay,
-            onChangeAnimationState: f,
-            freezed: i.freezed,
-            onEndAnimation: u,
-            from: n,
-            size: t,
-            to: e,
-            className: i.delta.className,
-          }),
-      ],
-    });
-  },
-  ProgressBarGrowLine = (0, import_react.memo)(ProgressBarGrowLineComponent),
-  base$8 = "Progressbardeltasimple_4b8901e3",
-  delta = "Progressbardeltasimple_delta_9a540ec7",
-  ProgressBarDeltaSimple_module_default = { base: base$8, delta: delta },
-  ProgressBarDeltaSimpleComponent = ({
-    transitionDuration: e,
-    transitionDelay: t,
-    freezed: n,
-    from: r,
-    size: a,
-    to: o,
-    onEndAnimation: i,
-    onChangeAnimationState: u,
-  }) => {
-    const s = o < r,
-      [l, c] = (0, import_react.useState)(SimpleAnimationState.Idle),
-      d = l === SimpleAnimationState.In,
-      f = l === SimpleAnimationState.End,
-      p = l === SimpleAnimationState.Idle,
-      m = (0, import_react.useCallback)(
-        (e) => {
-          (c(e), u && u(e));
-        },
-        [u],
-      );
-    ((0, import_react.useEffect)(() => {
-      if (p && !n)
-        return createTimeoutInEffect(() => {
-          m(SimpleAnimationState.In);
-        }, t);
-    }, [m, n, p, t]),
-      (0, import_react.useEffect)(() => {
-        if (d)
-          return createTimeoutInEffect(() => {
-            (i && i(), m(SimpleAnimationState.End));
-          }, e + t);
-      }, [m, d, i, t, e]));
-    const h = (0, import_react.useMemo)(
-        () => ({
-          width: "100%",
-          transitionDuration: `${e}ms`,
-          transitionDelay: `${t}ms`,
-          [s ? "left" : "right"]: "0",
-        }),
-        [s, t, e],
-      ),
-      g = (0, import_react.useMemo)(
-        () => ({
-          width: "0%",
-          transitionDuration: `${e}ms`,
-          transitionDelay: `${t}ms`,
-          [s ? "left" : "right"]: "0",
-        }),
-        [s, t, e],
-      ),
-      b = (0, import_react.useMemo)(
-        () => ({ width: `${Math.abs(r - o)}%`, left: `${s ? o : r}%` }),
-        [r, s, o],
-      );
-    return f
-      ? null
-      : (0, import_jsx_runtime.jsx)("div", {
-          className: ProgressBarDeltaSimple_module_default.base,
-          style: b,
-          children: (0, import_jsx_runtime.jsx)("div", {
-            style: p ? h : g,
-            className: ProgressBarDeltaSimple_module_default.delta,
-            children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
-          }),
-        });
-  },
-  ProgressBarDeltaSimple = (0, import_react.memo)(ProgressBarDeltaSimpleComponent),
-  ProgressBarSimpleLineComponent = ({
-    to: e,
-    size: t,
-    from: n,
-    lineRef: r,
-    disabled: a,
-    isComplete: o,
-    animationSettings: i,
-    onChangeAnimationState: u,
-    onEndAnimation: s,
-  }) =>
-    (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-      children: [
-        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
-          size: t,
-          lineRef: r,
-          disabled: a,
-          isComplete: o,
-          baseStyles: (0, import_react.useMemo)(
-            () => ({
-              width: `${e}%`,
-              transitionDuration: `${i.line.duration}ms`,
-              transitionDelay: `${i.line.delay}ms`,
-            }),
-            [i.line.delay, i.line.duration, e],
-          ),
-        }),
-        n >= 0 &&
-          (0, import_jsx_runtime.jsx)(ProgressBarDeltaSimple, {
-            transitionDuration: i.delta.duration,
-            transitionDelay: i.delta.delay,
-            freezed: i.freezed,
-            from: n,
-            size: t,
-            to: e,
-            onChangeAnimationState: u,
-            onEndAnimation: s,
-          }),
-      ],
-    }),
-  ProgressBarSimpleLine = (0, import_react.memo)(ProgressBarSimpleLineComponent),
-  WithAnimationLineComponent = ({ onComplete: e, onEndAnimation: t, ...n }) => {
-    const [r, a] = (0, import_react.useState)(!1),
-      o = (0, import_react.useCallback)(() => {
-        const o = 100 === n.to;
-        (o !== r && a(o), o && e && e(), t && t());
-      }, [r, e, t, n.to]);
-    switch (n.animationSettings.type) {
-      case AnimationType.Simple:
-        return (0, import_jsx_runtime.jsx)(ProgressBarSimpleLine, {
-          ...n,
-          onEndAnimation: o,
-          isComplete: r,
-        });
-      case AnimationType.Growing:
-        return (0, import_jsx_runtime.jsx)(ProgressBarGrowLine, {
-          ...n,
-          onEndAnimation: o,
-          isComplete: r,
-        });
-      default:
-        return null;
-    }
-  },
-  WithAnimationLine = (0, import_react.memo)(WithAnimationLineComponent),
-  WithStackAnimationLineComponent = ({ onEndAnimation: e, ...t }) => {
-    const n = (0, import_react.useRef)({}),
-      r = (0, import_react.useCallback)(() => {
-        ((n.current.from = void 0), e && e());
-      }, [e]),
-      a = "number" == typeof n.current.from ? n.current.from : t.from;
-    return (
-      (n.current.from = a),
-      (0, import_react.createElement)(WithAnimationLine, {
-        ...t,
-        onEndAnimation: r,
-        key: `${a}-${t.to}-${t?.additionalKey}`,
-        from: a,
-      })
-    );
-  },
-  WithStackAnimationLine = (0, import_react.memo)(WithStackAnimationLineComponent),
-  WithoutAnimationLine = ({ size: e, value: t, lineRef: n, disabled: r, onComplete: a }) => {
-    const o = (0, import_react.useMemo)(
-        () => ({ width: `${t}%`, transitionProperty: "none" }),
-        [t],
-      ),
-      i = 100 === t;
-    return (
-      (0, import_react.useEffect)(() => {
-        i && a && a();
-      }, [i, a]),
-      (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
-        size: e,
-        disabled: r,
-        baseStyles: o,
-        isComplete: i,
-        lineRef: n,
-      })
-    );
-  },
-  ProgressBarLineComponent = ({
-    size: e,
-    value: t,
-    lineRef: n,
-    disabled: r,
-    deltaFrom: a,
-    additionalKey: o,
-    animationSettings: i,
-    onEndAnimation: u,
-    onChangeAnimationState: s,
-    onComplete: l,
-  }) => {
-    if (a === t)
-      return (0, import_jsx_runtime.jsx)(
-        WithoutAnimationLine,
-        { size: e, value: t, lineRef: n, disabled: r, onComplete: l },
-        `${a}-${t}-${o}`,
-      );
-    const c = {
-      from: a,
-      to: t,
-      size: e,
-      additionalKey: o,
-      lineRef: n,
-      disabled: r,
-      animationSettings: i,
-      onComplete: l,
-      onEndAnimation: u,
-      onChangeAnimationState: s,
-    };
-    return i.withStack
-      ? (0, import_jsx_runtime.jsx)(WithStackAnimationLine, { ...c })
-      : (0, import_jsx_runtime.jsx)(WithAnimationLine, { ...c }, `${a}-${t}-${o}`);
-  },
-  ProgressBarLine = (0, import_react.memo)(ProgressBarLineComponent),
-  createSkin = (e) => ({
-    "--progress-base": `url(${e.bgImageBase})`,
-    "--progress-bg-height": e.bg?.height ?? "12rem",
-    "--progress-bg-height-small": e.bg?.heightSmall ?? "2rem",
-    "--progress-line-base": e.line.bgColorBase,
-    "--progress-line-disabled": e.line.bgColorDisabled,
-    "--progress-line-finished": e.line.bgColorFinished,
-    "--progress-line-filter": e.line.filter ?? "none",
-    "--progress-pattern-base": `url(${e.pattern.bgImageBase})`,
-    "--progress-pattern-disabled": `url(${e.pattern.bgImageDisabled})`,
-    "--progress-pattern-finished": `url(${e.pattern.bgImageFinished})`,
-    "--progress-pattern-size": e.pattern.size ?? "3rem 10rem",
-    "--progress-pattern-border-size": e.pattern.borderSize ?? "1rem",
-    "--progress-pattern-gradient":
-      e.pattern.gradient ?? "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75))",
-    "--progress-pattern-gradient-finished":
-      e.pattern.gradientFinished ??
-      "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5))",
-    "--progress-pattern-gradient-mixBlendMode": e.pattern.mixBlendMode ?? "overlay",
-    "--progress-glow": `url('${e.glow}')`,
-    "--progress-glow-width": e.glowSettings?.width ?? "60rem",
-    "--progress-glow-height": e.glowSettings?.height ?? "100rem",
-    "--progress-glow-small-width": e.glowSettings?.smallWidth ?? "44rem",
-    "--progress-glow-small-height": e.glowSettings?.smallHeight ?? "43rem",
-    "--progress-glow-mixBlendMode": e.glowSettings?.mixBlendMode ?? "lighten",
-    "--progress-glow-small": `url('${e.glowSmall}')`,
-    "--progress-delta-color": e.delta.color,
-    "--progress-delta-shadow": e.delta.shadow,
-  }),
-  Orange = {
-    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_grey",
-    line: { bgColorBase: "#f50", bgColorDisabled: "transparent", bgColorFinished: "#59a011" },
-    pattern: {
-      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_orange",
-      bgImageDisabled: "R.images.gui.maps.icons.components.progress_bar.pattern_disabled",
-      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.pattern_green",
+  sizes$2 = { medium: "medium", small: "small", extraSmall: "extraSmall" },
+  upscaleImageSizes = {
+    [sizes$2.medium]: "x96x96",
+    [sizes$2.small]: sizes$2.medium,
+    [sizes$2.extraSmall]: "x32x32",
+  };
+function CloseButton({
+  size: e = sizes$2.medium,
+  hoverSound: t = sounds$1.highlight,
+  clickSound: n = sounds$1.click,
+  className: r,
+  onHover: a,
+  onClose: o,
+}) {
+  const i = useUpscale(
+    close_button_module_default[`base__${e}`],
+    close_button_module_default[`base__${upscaleImageSizes[e]}`],
+  );
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
+    onMouseEnter: () => {
+      (play$1.sound(t), a?.());
     },
-    glow: "R.images.gui.maps.icons.components.progress_bar.glow",
-    glowSmall: "R.images.gui.maps.icons.components.progress_bar.glow_small",
-    delta: {
-      color: "#ffc",
-      shadow:
-        "0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066",
+    onClick: () => {
+      (play$1.sound(n), o());
     },
-  },
-  BlueNoise = {
-    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_bg_base",
-    bg: { height: "22rem", heightSmall: "4rem" },
-    glowSettings: {
-      width: "34rem",
-      height: "54rem",
-      mixBlendMode: "normal",
-      smallWidth: "34rem",
-      smallHeight: "36rem",
-    },
-    line: {
-      bgColorBase: "rgba(191, 232, 255, 0.6)",
-      bgColorDisabled: "transparent",
-      bgColorFinished: "rgba(191, 232, 255, 0.6)",
-      filter:
-        "drop-shadow(0 0 4px rgba(255, 255, 255, 0.08)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.16)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.24))",
-    },
-    pattern: {
-      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
-      bgImageDisabled:
-        "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_disabled",
-      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
-      size: "4rem 22rem",
-      borderSize: "0",
-      gradient: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
-      gradientFinished: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
-      mixBlendMode: "normal",
-    },
-    glow: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow",
-    glowSmall: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow_small",
-    delta: {
-      color: "#fff",
-      shadow:
-        " 0 0 4px 1px rgba(120, 180, 255, 0.4), 0 0 9px 1px rgba(100, 160, 255, 0.4), 0 0 12px 2px rgba(80, 140, 255, 0.4), 0 0 12px 4px rgba(60, 120, 255, 0.4)",
-    },
-  },
-  GreenNoise = {
-    ...BlueNoise,
-    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_bg_base",
-    line: { ...BlueNoise.line, bgColorBase: "#83C6A5", bgColorFinished: "rgba(10, 230, 72, 0.6)" },
-    pattern: {
-      ...BlueNoise.pattern,
-      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
-      bgImageDisabled:
-        "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_disabled",
-      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
-    },
-  },
-  clamp = (e, t, n) => (n < e ? e : n > t ? t : n),
-  prepareDeltaFrom = (e, t, n) => ("number" == typeof n ? (clamp(0, t, n) / t) * 100 : e);
-function useCalculatePercents(e, t, n) {
-  return (0, import_react.useMemo)(() => {
-    const r = (clamp(0, t, e) / t) * 100;
-    return { value: r, deltaFrom: prepareDeltaFrom(r, t, n) };
-  }, [n, t, e]);
-}
-var defaultTheme = Orange,
-  defaultAnimationSettings = {
-    freezed: !1,
-    withStack: !1,
-    type: AnimationType.Growing,
-    delta: { duration: 500, delay: 0 },
-    line: { duration: 500, delay: 0 },
-  },
-  ProgressBarComponent = ({
-    maxValue: e = 100,
-    theme: t = defaultTheme,
-    size: n = Size.Default,
-    animationSettings: r = defaultAnimationSettings,
-    disabled: a = !1,
-    withoutBackground: o = !1,
-    value: i,
-    deltaFrom: u,
-    additionalKey: s,
-    lineRef: l,
-    onChangeAnimationState: c,
-    onEndAnimation: d,
-    onComplete: f,
-    className: p,
-  }) => {
-    const m = useCalculatePercents(i, e, u);
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        ProgressBar_module_default.base,
-        p,
-        ProgressBar_module_default[`base__${n}`],
-      ),
-      style: createSkin(t),
-      children: [
-        !o && (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: n }),
-        (0, import_jsx_runtime.jsx)(ProgressBarLine, {
-          size: n,
-          lineRef: l,
-          disabled: a,
-          value: m.value,
-          deltaFrom: m.deltaFrom,
-          additionalKey: s,
-          animationSettings: r,
-          onEndAnimation: d,
-          onChangeAnimationState: c,
-          onComplete: f,
-        }),
-      ],
-    });
-  },
-  ProgressBar = (0, import_react.memo)(ProgressBarComponent),
-  LogLevel = (function (e) {
-    return (
-      (e[(e.NonSet = 0)] = "NonSet"),
-      (e[(e.Debug = 10)] = "Debug"),
-      (e[(e.Info = 20)] = "Info"),
-      (e[(e.Warning = 30)] = "Warning"),
-      e
-    );
-  })({}),
-  CommonLogAction = (function (e) {
-    return (
-      (e.Click = "click"),
-      (e.KeyDown = "keydown"),
-      (e.Displayed = "displayed"),
-      (e.Viewed = "viewed"),
-      e
-    );
-  })({}),
-  PROPERTIES_LIMIT = 200,
-  METRICS_GROUP = "metrics",
-  convertMetricsParams = ({ partnerID: e, item: t, parentScreen: n, itemState: r, info: a }) => ({
-    item: t,
-    partnerID: e || null,
-    parent_screen: n || null,
-    item_state: r || null,
-    additional_info: a || null,
-  }),
-  _useLog = (e, t) => {
-    const n = (0, import_react.useCallback)(
-      (n, r = LogLevel.Info, a) => {
-        (a || (a = {}),
-          Object.keys(a).length >= PROPERTIES_LIMIT ||
-            window.uiLoggerModel.log({
-              feature: e,
-              group: t,
-              action: n,
-              logLevel: r,
-              params: JSON.stringify(a),
-            }));
-      },
-      [e, t],
-    );
-    return (e, t, r) => n(e, t, r);
-  },
-  useMetricsLog = (e) => {
-    const t = _useLog(e, METRICS_GROUP),
-      n = (0, import_react.useCallback)(
-        (e) => {
-          t(e.action, e.logLevel, convertMetricsParams(e));
-        },
-        [t],
-      );
-    return (e) => n(e);
-  },
-  LIGHT_TANK = "lightTank",
-  MEDIUM_TANK = "mediumTank",
-  HEAVY_TANK = "heavyTank",
-  AT_SPG = "AT-SPG",
-  themes = { primary: "primary", secondary: "secondary", custom: "custom" },
-  sizes$2 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
-  base$7 = "HeadlessButton_df8536fc",
-  headless_button_module_default = { base: base$7 },
-  HeadlessButtonBase = defineStyledComponent("Button", {
-    element: "button",
-    className: headless_button_module_default.base,
-  }),
-  HeadlessButton = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      onClick: t,
-      onMouseEnter: n,
-      soundTarget: r,
-      disabled: a = !1,
-      silent: o = !1,
-      ...i
-    },
-    u,
-  ) {
-    const s = useSounds();
-    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
-      ...i,
-      ref: u,
-      onMouseEnter: function (e) {
-        (a || o || s.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
-      },
-      onClick: function (e) {
-        a || (o || s.play("click", { target: r || "Button", original: e }), t?.(e));
-      },
-      children: e,
-    });
-  }),
-  background = "Button_background_98ebcfb8",
-  border = "Button_border_7e6390d7",
-  overlay = "Button_overlay_174632c8",
-  base$6 = "Button_70871946",
-  base__enabled = "Button_base__enabled_96634d40",
-  base__disabled = "Button_base__disabled_b713e04a",
-  content = "Button_content_298de63f",
-  content__fontAligned = "Button_content__fontAligned_66115778",
-  button_module_default = {
-    background: background,
-    border: border,
-    overlay: overlay,
-    base: base$6,
-    base__enabled: base__enabled,
-    base__disabled: base__disabled,
-    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
-    "base__size-small": "Button_base__size-small_fc7095a4",
-    "base__size-medium": "Button_base__size-medium_814d61f0",
-    "base__size-large": "Button_base__size-large_83da852e",
-    "base__theme-primary": "Button_base__theme-primary_8ba55469",
-    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
-    content: content,
-    content__fontAligned: content__fontAligned,
-  },
-  Button = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      size: t = sizes$2.large,
-      theme: n = themes.primary,
-      disabled: r = !1,
-      silent: a = !1,
-      autoAlignContent: o = !0,
-      classNames: i,
-      className: u,
-      ...s
-    },
-    l,
-  ) {
-    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
-      ...s,
-      ref: l,
-      silent: a,
-      disabled: r,
-      className: clsx(
-        button_module_default.base,
-        button_module_default[`base__size-${t}`],
-        button_module_default[`base__theme-${n}`],
-        r ? button_module_default.base__disabled : button_module_default.base__enabled,
-        u,
-        i?.base,
-      ),
-      onClick: function (e) {
-        r || s.onClick?.(e);
-      },
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.background, i?.background),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.border, i?.border),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.overlay, i?.overlay),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(
-            button_module_default.content,
-            o && button_module_default.content__fontAligned,
-            i?.content,
-          ),
-          children: e,
-        }),
-      ],
-    });
   });
-((Button.themes = themes), (Button.sizes = sizes$2));
-var IconSize = (function (e) {
-    return ((e.default = "default"), (e.x48 = "x48"), (e.x80 = "x80"), (e.x220 = "x220"), e);
-  })({}),
-  base$5 = "Badge_b4595e01",
-  base__default$1 = "Badge_base__default_6aaca100",
-  base__x48$1 = "Badge_base__x48_2b129eae",
-  Badge_module_default = { base: base$5, base__default: base__default$1, base__x48: base__x48$1 },
-  badgeFolders = {
-    [IconSize.default]: "c_24x24",
-    [IconSize.x48]: "c_48x48",
-    [IconSize.x80]: "c_80x80",
-    [IconSize.x220]: "c_220x220",
-  },
-  Badge = ({ badgeID: e, size: t = IconSize.default, className: n }) => {
-    const r = R.images.gui.maps.icons.library.badges.$dyn(badgeFolders[t]);
-    return (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        Badge_module_default.base,
-        Badge_module_default[`base__${t}`],
-        n,
-      ),
-      style: { backgroundImage: `url(${r.$dyn(`badge_${e}`)})` },
-    });
-  },
-  unicodeBlocks = [
+}
+CloseButton.size = sizes$2;
+var unicodeBlocks = [
     0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984,
     2048, 2112, 2144, 2208, 2304, 2432, 2560, 2688, 2816, 2944, 3072, 3200, 3328, 3456, 3584, 3712,
     3840, 4096, 4256, 4352, 4608, 4992, 5024, 5120, 5760, 5792, 5888, 5920, 5952, 5984, 6016, 6144,
@@ -25466,7 +23833,1714 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   },
   formatString = (e, t, n) =>
     e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (n && e in n ? n[e] : splitWords(e, t))),
-  base$4 = "Playernickname_23cd38ea",
+  base$12 = "Formattext_bb80854d",
+  FormatText_module_default = { base: base$12 },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: n,
+    alignment: r = Alignment.left,
+    formatWithBrackets: a,
+  }) =>
+    null === t
+      ? (console.error("FormatText was supplied with 'null'"), null)
+      : (0, import_jsx_runtime.jsx)(import_react.Fragment, {
+          children: (a && e ? format(t, e) : t)
+            .split("\n")
+            .map((t, a) =>
+              (0, import_jsx_runtime.jsx)(
+                "div",
+                {
+                  className: (0, import_classnames.default)(FormatText_module_default.base, n),
+                  children: formatString(t, r, e).map((e, t) =>
+                    (0, import_jsx_runtime.jsx)(
+                      import_react.Fragment,
+                      { children: e },
+                      `${t}-${e}`,
+                    ),
+                  ),
+                },
+                `${t}-${a}`,
+              ),
+            ),
+        });
+function FormatTextSplited({ className: e, ...t }) {
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: e,
+    children: t.text
+      .split("\n")
+      .map((e) => (0, import_jsx_runtime.jsx)(FormatText$1, { ...t, text: e }, e)),
+  });
+}
+function ExtendedText(e) {
+  return (
+    void 0 !== e.onSizeChanged &&
+      console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
+    void 0 !== e.targetId &&
+      console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'),
+    (0, import_jsx_runtime.jsx)(
+      e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited,
+      {
+        split: e.split ?? !0,
+        text: e.text,
+        params: e.binding,
+        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
+        upgradeLegacy: !0,
+        className: clsx(e.className, e.classMix),
+      },
+    )
+  );
+}
+var createLayoutReadyInEffect = (e) => {
+    let t,
+      n = null;
+    return (
+      (n = requestAnimationFrame(() => {
+        n = requestAnimationFrame(() => {
+          ((n = null), (t = e()));
+        });
+      })),
+      () => {
+        ("function" == typeof t && t(), null !== n && cancelAnimationFrame(n));
+      }
+    );
+  },
+  getFromCallStack = (e = 1) => {
+    const t = new Error().stack;
+    let n,
+      r = R.invalid("resId"),
+      a = "";
+    return (
+      t &&
+        ((a = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
+        (n = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
+        window.__feature &&
+          window.__feature !== n &&
+          window.subViews[n] &&
+          (r = window.subViews[n].id)),
+      { callerUrl: a, caller: n, stack: t, resId: r }
+    );
+  },
+  ClickOutsideManager$1 = class e {
+    entries = [];
+    _listenMouse = !1;
+    static __instance;
+    static get instance() {
+      return (e.__instance || (e.__instance = new e()), e.__instance);
+    }
+    register(e, t) {
+      (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
+    }
+    unregister(e, t) {
+      const n = e,
+        r = t;
+      ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== n || t !== r)),
+        this.removeMouseListener());
+    }
+    addMouseListener() {
+      this._listenMouse ||
+        (document.addEventListener("mousedown", this.onMouseDown), (this._listenMouse = !0));
+    }
+    removeMouseListener() {
+      this._listenMouse &&
+        0 === this.entries.length &&
+        (document.removeEventListener("mousedown", this.onMouseDown), (this._listenMouse = !1));
+    }
+    onMouseDown = (e) => {
+      this.entries.forEach(({ container: t, callback: n }) => {
+        let r = e.target;
+        do {
+          if (r === t) return;
+          r = r.parentNode;
+        } while (r);
+        n();
+      });
+    };
+  };
+function makeEngineEvent(e) {
+  return (t) => (
+    engine.on(e, t),
+    () => {
+      engine.off(e, t);
+    }
+  );
+}
+function setTrackMouseOutside(e) {
+  viewEnv.setTrackMouseOnStage(e);
+}
+var events_exports = __exportAll({
+    mouse: () => mouse,
+    off: () => off,
+    on: () => on,
+    onMinimize: () => onMinimize,
+    onResize: () => onResize,
+    onScaleUpdated: () => onScaleUpdated,
+  }),
+  onResize = makeEngineEvent("clientResized"),
+  onScaleUpdated = makeEngineEvent("self.onScaleUpdated"),
+  onMinimize = makeEngineEvent("clientMinimized"),
+  on = (e, t) => engine.on(e, t),
+  off = (e, t) => engine.off(e, t),
+  internalMouse = {
+    down: makeEngineEvent("mousedown"),
+    up: makeEngineEvent("mouseup"),
+    move: makeEngineEvent("mousemove"),
+  };
+function initMouseEvents() {
+  const e = { listeners: 0, enabled: !0, initialized: !1 };
+  function t() {
+    e.enabled && setTrackMouseOutside(!1);
+  }
+  function n() {
+    e.enabled && setTrackMouseOutside(!0);
+  }
+  function r() {
+    e.enabled
+      ? e.listeners < 1
+        ? ((e.initialized = !1),
+          document.body.removeEventListener("mouseenter", t),
+          document.body.removeEventListener("mouseleave", n))
+        : e.initialized ||
+          ((e.initialized = !0),
+          document.body.addEventListener("mouseenter", t),
+          document.body.addEventListener("mouseleave", n))
+      : setTrackMouseOutside(!1);
+  }
+  return {
+    ...["down", "up", "move"].reduce(
+      (t, n) => (
+        (t[n] = (function (t) {
+          return (n) => {
+            e.listeners += 1;
+            let a = !0;
+            const o = `mouse${t}`,
+              i = internalMouse[t]((e) => n([e, "outside"]));
+            function u(e) {
+              n([e, "inside"]);
+            }
+            return (
+              window.addEventListener(o, u),
+              r(),
+              () => {
+                a && (i(), window.removeEventListener(o, u), (e.listeners -= 1), r(), (a = !1));
+              }
+            );
+          };
+        })(n)),
+        t
+      ),
+      {},
+    ),
+    disable() {
+      ((e.enabled = !1), r());
+    },
+    enable() {
+      ((e.enabled = !0), r());
+    },
+    enableOutside() {
+      e.enabled && setTrackMouseOutside(!0);
+    },
+    disableOutside() {
+      e.enabled && setTrackMouseOutside(!1);
+    },
+  };
+}
+var mouse = initMouseEvents();
+function playSound(e) {
+  engine.call("PlaySound", e).catch((t) => {
+    console.error(`playSound('${e}'): `, t);
+  });
+}
+function setRTPC(e, t) {
+  engine.call("SetRTPCGlobal", e, t).catch((n) => {
+    console.error(`setRTPC('${e}', '${t}'): `, n);
+  });
+}
+var client_exports = __exportAll({
+  events: () => events_exports,
+  getMouseGlobalPosition: () => getMouseGlobalPosition,
+  getSize: () => getSize$1,
+  graphicsQuality: () => graphicsQuality,
+  playSound: () => playSound,
+  setRTPC: () => setRTPC,
+});
+function getSize$1(e = "px") {
+  return "rem" === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
+}
+function getMouseGlobalPosition(e = "px") {
+  return "rem" === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
+}
+var graphicsQuality = {
+    isLow: () => 1 === viewEnv.getGraphicsQuality(),
+    isHigh: () => 0 === viewEnv.getGraphicsQuality(),
+    get: () => viewEnv.getGraphicsQuality(),
+  },
+  intl = {
+    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+  },
+  sounds = { highlight: "highlight", click: "play", yes1: "yes1" },
+  plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound(sounds[t])), e), {}),
+  play = { ...plays, sound: playSound },
+  sound_default = { play: play, setRTPC: setRTPC },
+  ROMAN = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"],
+  ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+function arabic2roman$1(e) {
+  let t = "";
+  for (let n = ARABIC.length - 1; n >= 0; n--)
+    for (; e >= ARABIC[n];) ((t += ROMAN[n]), (e -= ARABIC[n]));
+  return t;
+}
+var ROMAN_FORBIDDEN_LANGUAGE_CODES = ["ko", "no"],
+  IS_ROMAN_FORBIDDEN = ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE()),
+  children_exports = __exportAll({ getBgUrl: () => getBgUrl, getTextureUrl: () => getTextureUrl });
+function getTextureUrl(e, t, n = 1) {
+  return viewEnv.getChildTexturePath(e, t.width, t.height, n);
+}
+function getBgUrl(e, t, n) {
+  return `url(${getTextureUrl(e, t, n)})`;
+}
+var displayStatus = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+  events = {
+    onTextureFrozen: makeEngineEvent("self.onTextureFrozen"),
+    onTextureReady: makeEngineEvent("self.onTextureReady"),
+    onDomBuilt: makeEngineEvent("self.onDomBuilt"),
+    onLoaded: makeEngineEvent("self.onLoaded"),
+    onDisplayChanged: makeEngineEvent("self.onShowingStatusChanged"),
+    onFocusUpdated: makeEngineEvent("self.onFocusChanged"),
+    children: {
+      onAdded: makeEngineEvent("children.onAdded"),
+      onLoaded: makeEngineEvent("children.onLoaded"),
+      onRemoved: makeEngineEvent("children.onRemoved"),
+      onAttached: makeEngineEvent("children.onAttached"),
+      onTextureReady: makeEngineEvent("children.onTextureReady"),
+      onRequestPosition: makeEngineEvent("children.requestPosition"),
+    },
+  },
+  viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
+  createViewEventArguments$1 = (e) =>
+    Object.entries(e).map(([e, t]) => {
+      const n = "GFValueProxy";
+      switch (typeof t) {
+        case "number":
+          return { __Type: n, name: e, number: t };
+        case "boolean":
+          return { __Type: n, name: e, bool: t };
+        default:
+          return { __Type: n, name: e, string: t.toString() };
+      }
+    }),
+  sendViewEvent = (e, t) => {
+    const n = "GFViewEventProxy";
+    if (void 0 !== t) {
+      const { args: r, ...a } = t;
+      return void 0 !== r
+        ? viewEnv.handleViewEvent({
+            __Type: n,
+            type: e,
+            ...a,
+            arguments: createViewEventArguments$1(r),
+          })
+        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
+    }
+    return viewEnv.handleViewEvent({ __Type: n, type: e });
+  },
+  sendEvent = {
+    close(e) {
+      sendViewEvent("popover" === e ? viewEventTypes.closePopover : viewEventTypes.close);
+    },
+    minimize() {
+      sendViewEvent(viewEventTypes.minimize);
+    },
+    move(e) {
+      sendViewEvent(viewEventTypes.move, { isMouseEvent: !0, on: e });
+    },
+  },
+  view_exports = __exportAll({
+    addModelObserver: () => addModelObserver,
+    addPreloadTexture: () => addPreloadTexture,
+    arabic2roman: () => arabic2roman,
+    children: () => children_exports,
+    displayStatus: () => displayStatus,
+    displayStatusIs: () => displayStatusIs,
+    enableFullScreenModeSupported: () => enableFullScreenModeSupported,
+    events: () => events,
+    extraSize: () => extraSize,
+    forceTriggerMouseMove: () => forceTriggerMouseMove,
+    freezeTextureBeforeResize: () => freezeTextureBeforeResize,
+    getBrowserTexturePath: () => getBrowserTexturePath,
+    getDisplayStatus: () => getDisplayStatus,
+    getExternalPaddingsRem: () => getExternalPaddingsRem,
+    getFontNames: () => getFontNames,
+    getScale: () => getScale,
+    getSize: () => getSize,
+    getViewGlobalPosition: () => getViewGlobalPosition,
+    initExternalPaddings: () => initExternalPaddings,
+    isEventHandled: () => isEventHandled,
+    isFocused: () => isFocused,
+    pxToRem: () => pxToRem,
+    remToPx: () => remToPx,
+    resize: () => resize,
+    sendEvent: () => sendEvent,
+    setAnimateWindow: () => setAnimateWindow,
+    setEventHandled: () => setEventHandled,
+    setInputPaddingsRem: () => setInputPaddingsRem,
+    setSidePaddingsRem: () => setSidePaddingsRem,
+    whenTutorialReady: () => whenTutorialReady,
+  }),
+  ALL_SIDES = 15;
+function addPreloadTexture(e) {
+  viewEnv.addPreloadTexture(e);
+}
+function setInputPaddingsRem(e) {
+  viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
+}
+function getBrowserTexturePath(e, t, n, r = 1) {
+  return viewEnv.getWebBrowserTexturePath(e, t, n, r);
+}
+function addModelObserver(e, t, n) {
+  return viewEnv.addDataChangedCallback(e, t, n);
+}
+function setSidePaddingsRem(e) {
+  viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
+}
+function getSize(e = "px") {
+  return "rem" === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
+}
+function resize(e, t, n = "px") {
+  return "rem" === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
+}
+function getViewGlobalPosition(e = "rem") {
+  const t = viewEnv.getViewGlobalPositionRem();
+  return "rem" === e ? t : { x: remToPx(t.x), y: remToPx(t.y) };
+}
+function freezeTextureBeforeResize() {
+  viewEnv.freezeTextureBeforeResize();
+}
+function getScale() {
+  return viewEnv.getScale();
+}
+function pxToRem(e) {
+  return viewEnv.pxToRem(e);
+}
+function remToPx(e) {
+  return viewEnv.remToPx(e);
+}
+function setAnimateWindow(e, t) {
+  viewEnv.setAnimateWindow(e, t);
+}
+function isFocused() {
+  return viewEnv.isFocused();
+}
+function setEventHandled() {
+  return viewEnv.setEventHandled();
+}
+function isEventHandled() {
+  return viewEnv.isEventHandled();
+}
+function forceTriggerMouseMove() {
+  viewEnv.forceTriggerMouseMove();
+}
+function getDisplayStatus() {
+  return viewEnv.getShowingStatus();
+}
+var getFontNames = (() => {
+    let e = [];
+    return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+  })(),
+  arabic2roman = arabic2roman$1;
+function getExternalPaddingsRem() {
+  return viewEnv.getExternalPaddingsRem();
+}
+var displayStatusIs = Object.keys(displayStatus).reduce(
+    (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === displayStatus[t]), e),
+    {},
+  ),
+  extraSize = {
+    set: (e, t) => {
+      viewEnv.setExtraSizeRem(e, t);
+    },
+    get: (e, t) => {
+      viewEnv.getExtraSizeRem(e, t);
+    },
+  },
+  whenTutorialReady = Promise.all([
+    new Promise((e) => {
+      window.isDomBuilt ? e() : events.onDomBuilt(e);
+    }),
+    engine.whenReady,
+  ]);
+function enableFullScreenModeSupported() {
+  viewEnv.setFullscreenModeSupported(!0);
+}
+function initExternalPaddings(e) {
+  function t() {
+    const { top: t, right: n, bottom: r, left: a } = viewEnv.getExternalPaddingsRem();
+    (e.style.setProperty("--external-padding-top", `${t}rem`),
+      e.style.setProperty("--external-padding-right", `${n}rem`),
+      e.style.setProperty("--external-padding-bottom", `${r}rem`),
+      e.style.setProperty("--external-padding-left", `${a}rem`));
+  }
+  (t(), engine.on("self.onPaddingsUpdated", () => t()));
+}
+var env = { view: view_exports, client: client_exports, sound: sound_default, intl: intl },
+  DataTracker = class e {
+    _callbacks;
+    _updateHandler;
+    _views;
+    static __instance;
+    constructor() {
+      ((this._callbacks = {}), (this._views = {}), (this._updateHandler = void 0));
+    }
+    static get instance() {
+      return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
+    }
+    clear() {
+      (void 0 !== this._updateHandler &&
+        (this._updateHandler.clear(), (this._updateHandler = void 0)),
+        (this._callbacks = {}));
+    }
+    clearViewCallbacks = (e) => {
+      this._views[e] &&
+        (this._views[e].forEach((e) => {
+          delete this._callbacks[e];
+        }),
+        delete this._views[e]);
+    };
+    addCallback(e, t, n = 0, r = !0) {
+      void 0 === this._updateHandler &&
+        (this._updateHandler = engine.on("viewEnv.onDataChanged", this._emmitDataChanged, this));
+      const a = env.view.addModelObserver(e, n, r);
+      return (
+        a > 0
+          ? ((this._callbacks[a] = t),
+            n > 0 && (this._views[n] ? this._views[n].push(a) : (this._views[n] = [a])))
+          : console.error("Can't add callback for model:", e),
+        a
+      );
+    }
+    removeCallback(e, t = 0) {
+      let n = !1;
+      return (
+        void 0 !== e &&
+          void 0 !== this._callbacks[e] &&
+          ((n = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
+        n || console.error("Can't remove callback by id:", e),
+        n
+      );
+    }
+    _emmitDataChanged(e, t, n) {
+      n.forEach((n) => {
+        const r = this._callbacks[n];
+        void 0 !== r && r(e, t);
+      });
+    }
+  };
+function dumpViewModel(e) {
+  const t = {};
+  if ("object" != typeof e) return e;
+  for (const n in e)
+    if (Object.prototype.hasOwnProperty.call(e, n)) {
+      const r = Object.prototype.toString.call(e[n]);
+      if (r.startsWith("[object CoherentArrayProxy]")) {
+        const r = e[n];
+        t[n] = [];
+        for (let e = 0; e < r.length; e++) t[n].push({ value: dumpViewModel(r[e].value) });
+      } else
+        r.startsWith("[object class BW::WULF::ViewModel")
+          ? (t[n] = dumpViewModel(e[n]))
+          : (t[n] = e[n]);
+    }
+  return t;
+}
+var SystemLocale = {
+    getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
+    getRealFormat: (e, t, n = 2) => systemLocale.getRealFormat(e, t, n),
+    getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
+    getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
+    toUpperCase: (e) => systemLocale.toUpperCase(e),
+    toLowerCase: (e) => systemLocale.toUpperCase(e),
+  },
+  UserLocale = {
+    getNumberFormat: (e) => userLocale.getNumberFormat(e),
+    getTimeFormat: (e, t, n) => userLocale.getTimeFormat(e, t, void 0 === n || n),
+    getTimeString: (e, t, n) => userLocale.getTimeString(e, t, void 0 === n || n),
+  },
+  ViewEventType = (function (e) {
+    return (
+      (e[(e.UNDEFINED = 0)] = "UNDEFINED"),
+      (e[(e.TOOLTIP = 1)] = "TOOLTIP"),
+      (e[(e.POP_OVER = 2)] = "POP_OVER"),
+      (e[(e.CONTEXT_MENU = 4)] = "CONTEXT_MENU"),
+      (e[(e.DROP_DOWN = 8)] = "DROP_DOWN"),
+      (e[(e.MOVE = 16)] = "MOVE"),
+      (e[(e.CLOSE = 32)] = "CLOSE"),
+      (e[(e.MINIMIZE = 64)] = "MINIMIZE"),
+      e
+    );
+  })({}),
+  NumberFormatType = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+  RealFormatType = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+  TimeFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+  DateFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 }),
+  KEY_CODES = (function (e) {
+    return (
+      (e[(e.NONE = -1)] = "NONE"),
+      (e[(e.ALT = 165)] = "ALT"),
+      (e[(e.ENTER = 13)] = "ENTER"),
+      (e[(e.ESCAPE = 27)] = "ESCAPE"),
+      (e[(e.SPACE = 32)] = "SPACE"),
+      (e[(e.END = 35)] = "END"),
+      (e[(e.HOME = 36)] = "HOME"),
+      (e[(e.ARROW_LEFT = 37)] = "ARROW_LEFT"),
+      (e[(e.ARROW_UP = 38)] = "ARROW_UP"),
+      (e[(e.ARROW_RIGHT = 39)] = "ARROW_RIGHT"),
+      (e[(e.ARROW_DOWN = 40)] = "ARROW_DOWN"),
+      (e[(e.NUM_PLUS = 107)] = "NUM_PLUS"),
+      (e[(e.NUM_MINUS = 109)] = "NUM_MINUS"),
+      (e[(e.PLUS = 187)] = "PLUS"),
+      (e[(e.MINUS = 189)] = "MINUS"),
+      (e[(e.PAGE_UP = 33)] = "PAGE_UP"),
+      (e[(e.PAGE_DOWN = 34)] = "PAGE_DOWN"),
+      (e[(e.BACKSPACE = 8)] = "BACKSPACE"),
+      (e[(e.DELETE = 46)] = "DELETE"),
+      (e[(e.TAB = 9)] = "TAB"),
+      (e[(e.KEY_N = 78)] = "KEY_N"),
+      (e[(e.KEY_1 = 49)] = "KEY_1"),
+      (e[(e.KEY_2 = 50)] = "KEY_2"),
+      (e[(e.KEY_3 = 51)] = "KEY_3"),
+      (e[(e.KEY_4 = 52)] = "KEY_4"),
+      (e[(e.KEY_5 = 53)] = "KEY_5"),
+      (e[(e.KEY_6 = 54)] = "KEY_6"),
+      (e[(e.KEY_7 = 55)] = "KEY_7"),
+      (e[(e.KEY_8 = 56)] = "KEY_8"),
+      (e[(e.KEY_9 = 57)] = "KEY_9"),
+      e
+    );
+  })({}),
+  makeGlobalBoundingBox = (e) => ({
+    __Type: "GFBoundingBox",
+    x: e.x,
+    y: e.y,
+    width: e.width,
+    height: e.height,
+  }),
+  onBindingsReady = async () =>
+    !(!engine._BindingsReady || !engine._ContentLoaded) ||
+    new Promise((e) => {
+      engine.on("Ready", e);
+    }),
+  onLayoutReady = () =>
+    new Promise((e) => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          e();
+        });
+      });
+    }),
+  createViewEventArguments = (e) =>
+    Object.entries(e).map(([e, t]) => {
+      const n = { __Type: "GFValueProxy", name: e };
+      switch (typeof t) {
+        case "number":
+          n.number = t;
+          break;
+        case "boolean":
+          n.bool = t;
+          break;
+        default:
+          n.string = t.toString();
+      }
+      return n;
+    }),
+  handleViewEvent$1 = (e, t) => {
+    const n = "GFViewEventProxy";
+    if (void 0 !== t) {
+      const { args: r, ...a } = t;
+      void 0 !== r
+        ? viewEnv.handleViewEvent({
+            __Type: n,
+            type: e,
+            ...a,
+            arguments: createViewEventArguments(r),
+          })
+        : viewEnv.handleViewEvent({ __Type: n, type: e, ...a });
+    } else viewEnv.handleViewEvent({ __Type: n, type: e });
+  },
+  sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
+  sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
+  sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
+  sendShowContextMenuEvent = (e, t, n = 0) => {
+    handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
+      isMouseEvent: !0,
+      contentID: e,
+      on: !0,
+      decoratorID: n,
+      args: t,
+    });
+  },
+  sendShowPopOverEvent = (e, t, n, r, a = R.invalid("resId"), o) => {
+    const i = env.view.getViewGlobalPosition(),
+      { x: u, y: s, width: l, height: c } = n.getBoundingClientRect(),
+      d = {
+        x: env.view.pxToRem(u) + i.x,
+        y: env.view.pxToRem(s) + i.y,
+        width: env.view.pxToRem(l),
+        height: env.view.pxToRem(c),
+      };
+    handleViewEvent$1(ViewEventType.POP_OVER, {
+      isMouseEvent: !0,
+      contentID: e,
+      decoratorID: r || R.invalid("resId"),
+      targetID: a,
+      direction: t,
+      bbox: makeGlobalBoundingBox(d),
+      on: !0,
+      args: o,
+    });
+  },
+  isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
+  isContextMenuShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.CONTEXT_MENU),
+  isPopOverShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.POP_OVER),
+  callOnEsc = (e, t) => {
+    e.keyCode === KEY_CODES.ESCAPE && t();
+  },
+  closeOnEsc = (e) => {
+    callOnEsc(e, sendCloseEvent);
+  },
+  addEscapeListener = (e) => {
+    const t = (t) => callOnEsc(t, e);
+    return (window.addEventListener("keydown", t), () => window.removeEventListener("keydown", t));
+  },
+  ViewModel = class {
+    dataTracker;
+    modelPath;
+    callbacks;
+    data;
+    constructor(e, t = []) {
+      ((this.dataTracker = new DataTracker()),
+        (this.modelPath = e),
+        (this.callbacks = new Set()),
+        onBindingsReady().then(() => {
+          (this._addCallback(e),
+            t.forEach((t) => {
+              this._addCallback(e + "." + t);
+            }),
+            this._notifyObservers());
+        }));
+    }
+    subscribe(e) {
+      (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
+    }
+    unsubscribe(e) {
+      this.callbacks.delete(e);
+    }
+    destroy() {
+      (this.dataTracker.clear(), this.callbacks.clear());
+    }
+    _addCallback(e) {
+      this.dataTracker.addCallback(e, this._notifyObservers);
+    }
+    _notifyObservers = () => {
+      ((this.data = eval(this.modelPath)),
+        this.callbacks.forEach((e) => {
+          e(this.data);
+        }));
+    };
+  },
+  ClickOutsideManager = ClickOutsideManager$1.instance,
+  ViewEnvHelper = {
+    DataTracker: DataTracker,
+    ViewModel: ViewModel,
+    ViewEventType: ViewEventType,
+    NumberFormatType: NumberFormatType,
+    RealFormatType: RealFormatType,
+    TimeFormatType: TimeFormatType,
+    DateFormatType: DateFormatType,
+    makeGlobalBoundingBox: makeGlobalBoundingBox,
+    sendMoveEvent: sendMoveEvent,
+    sendCloseEvent: sendCloseEvent,
+    sendClosePopOverEvent: sendClosePopOverEvent,
+    sendShowContextMenuEvent: sendShowContextMenuEvent,
+    sendShowPopOverEvent: sendShowPopOverEvent,
+    addEscapeListener: addEscapeListener,
+    closeOnEsc: closeOnEsc,
+    handleViewEvent: handleViewEvent$1,
+    onBindingsReady: onBindingsReady,
+    onLayoutReady: onLayoutReady,
+    isTooltipShown: isTooltipShown,
+    isContextMenuShown: isContextMenuShown,
+    isPopOverShown: isPopOverShown,
+    dumpViewModel: dumpViewModel,
+    ClickOutsideManager: ClickOutsideManager,
+    SystemLocale: SystemLocale,
+    UserLocale: UserLocale,
+  };
+window.ViewEnvHelper = ViewEnvHelper;
+var SHOW_DELAY_MIN = 100,
+  SHOW_DELAY_DEFAULT = 400;
+function getViewEventArguments(e) {
+  return Object.entries(e || {}).map(([e, t]) => {
+    const n = { __Type: "GFValueProxy", name: e };
+    switch (typeof t) {
+      case "number":
+        n.number = t;
+        break;
+      case "boolean":
+        n.bool = t;
+        break;
+      case "undefined":
+        break;
+      default:
+        n.string = t.toString();
+    }
+    return n;
+  });
+}
+var handleViewEvent = (e, t, n = {}, r = 0) => {
+    viewEnv.handleViewEvent({
+      __Type: "GFViewEventProxy",
+      type: ViewEventType.TOOLTIP,
+      contentID: e,
+      decoratorID: t,
+      targetID: r,
+      ...n,
+    });
+  },
+  Tooltip = ({
+    children: e,
+    contentId: t,
+    args: n,
+    onMouseEnter: r,
+    onMouseLeave: a,
+    onMouseDown: o,
+    onClick: i,
+    ignoreShowDelay: u = !1,
+    ignoreMouseClick: s = !1,
+    decoratorId: l = 0,
+    isEnabled: c = !0,
+    targetId: d = 0,
+    onShow: f,
+    onHide: p,
+    ...m
+  }) => {
+    const h = (0, import_react.useRef)({
+        timeoutId: 0,
+        isVisible: !1,
+        prevTarget: null,
+        hideTimerId: null,
+      }),
+      g = (0, import_react.useMemo)(() => d || getFromCallStack().resId, [d]),
+      b = (0, import_react.useCallback)(() => {
+        (h.current.isVisible && h.current.timeoutId) ||
+          (handleViewEvent(
+            t,
+            l,
+            { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(n) },
+            g,
+          ),
+          f && f(),
+          (h.current.isVisible = !0));
+      }, [t, l, n, g, f]),
+      v = (0, import_react.useCallback)(() => {
+        if (h.current.isVisible || h.current.timeoutId) {
+          const e = h.current.timeoutId;
+          (e > 0 && (clearTimeout(e), (h.current.timeoutId = 0)),
+            handleViewEvent(t, l, { on: !1 }, g),
+            h.current.isVisible && p && p(),
+            (h.current.isVisible = !1));
+        }
+      }, [t, l, g, p]),
+      _ = (0, import_react.useCallback)((e) => {
+        h.current.isVisible &&
+          ((h.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+          (h.current.hideTimerId = window.setTimeout(() => {
+            const t = document.elementFromPoint(e.clientX, e.clientY);
+            t && !t.isSameNode(h.current.prevTarget) && v();
+          }, 200)));
+      }, []);
+    ((0, import_react.useEffect)(() => {
+      const e = h.current.hideTimerId;
+      return (
+        document.addEventListener("wheel", _, { capture: !0 }),
+        () => {
+          (document.removeEventListener("wheel", _, { capture: !0 }), e && window.clearTimeout(e));
+        }
+      );
+    }, []),
+      (0, import_react.useEffect)(() => {
+        !1 === c && v();
+      }, [c, v]),
+      (0, import_react.useEffect)(
+        () => (
+          window.addEventListener("mouseleave", v),
+          () => {
+            (window.removeEventListener("mouseleave", v), v());
+          }
+        ),
+        [v],
+      ));
+    return c
+      ? (0, import_react.cloneElement)(e, {
+          onMouseEnter:
+            ((y = e.props.onMouseEnter),
+            (e) => {
+              (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
+                (clearTimeout(h.current.timeoutId),
+                (h.current.timeoutId = window.setTimeout(
+                  b,
+                  u ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT,
+                )),
+                r && r(e),
+                y && y(e));
+            }),
+          onMouseLeave: ((e) => (t) => {
+            (v(), a?.(t), e?.(t));
+          })(e.props.onMouseLeave),
+          onClick: ((e) => (t) => {
+            (!1 === s && v(), i?.(t), e?.(t));
+          })(e.props.onClick),
+          onMouseDown: ((e) => (t) => {
+            (!1 === s && v(), o?.(t), e?.(t));
+          })(e.props.onMouseDown),
+          ...m,
+        })
+      : e;
+    var y;
+  },
+  UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
+  getTooltipContentId = (e) =>
+    e
+      ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent("resId")
+      : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent("resId"),
+  SimpleTooltip = ({ children: e, body: t, header: n, note: r, alert: a, args: o, ...i }) => {
+    const u = (0, import_react.useMemo)(() => {
+      const e = { ...o, body: t, header: n, note: r, alert: a };
+      for (const t in e) void 0 === e[t] && delete e[t];
+      return e;
+    }, [a, t, n, r, o]);
+    return (0, import_jsx_runtime.jsx)(Tooltip, {
+      contentId: getTooltipContentId(o?.hasHtmlContent),
+      decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
+      args: u,
+      ...i,
+      children: e,
+    });
+  },
+  base$11 = "Textoverflow_3e47b075",
+  TextOverflow_module_default = { base: base$11 },
+  TextOverflow = ({ content: e, classMix: t, className: n, ...r }) => {
+    const a = (0, import_react.useRef)(null),
+      [o, i] = (0, import_react.useState)(!0);
+    return (
+      (0, import_react.useEffect)(() =>
+        createLayoutReadyInEffect(() => {
+          const e = a.current;
+          e && e.offsetWidth >= e.scrollWidth && i(!1);
+        }),
+      ),
+      (0, import_jsx_runtime.jsx)(SimpleTooltip, {
+        isEnabled: o,
+        body: e,
+        children: (0, import_jsx_runtime.jsx)("div", {
+          ...r,
+          ref: a,
+          className: (0, import_classnames.default)(TextOverflow_module_default.base, n, t),
+          children: e,
+        }),
+      })
+    );
+  },
+  Size = (function (e) {
+    return ((e.Small = "small"), (e.Medium = "medium"), (e.Default = "medium"), e);
+  })({}),
+  AnimationType = (function (e) {
+    return ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e);
+  })({}),
+  base$10 = "Progressbar_a6e35bd7",
+  base__small$2 = "Progressbar_base__small_7338ff19",
+  background$1 = "Progressbar_background_27d9dd7c",
+  background__small = "Progressbar_background__small_7338ff19",
+  lineWrapper = "Progressbar_lineWrapper_fc5022a6",
+  ProgressBar_module_default = {
+    base: base$10,
+    base__small: base__small$2,
+    background: background$1,
+    background__small: background__small,
+    lineWrapper: lineWrapper,
+  },
+  ProgressBarBackground = ({ size: e = Size.Default }) =>
+    (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        ProgressBar_module_default.background,
+        ProgressBar_module_default[`background__${e}`],
+      ),
+    }),
+  base$9 = "Progressbarblink_c6146c1c",
+  base__small$1 = "Progressbarblink_base__small_9a4d3786",
+  ProgressBarBlink_module_default = { base: base$9, base__small: base__small$1 },
+  ProgressBarBlink = ({ size: e }) =>
+    (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        ProgressBarBlink_module_default.base,
+        ProgressBarBlink_module_default[`base__${e}`],
+      ),
+    }),
+  base$8 = "Progresslineimpose_24e17c02",
+  base__disabled$1 = "Progresslineimpose_base__disabled_bcd461f4",
+  base__finished = "Progresslineimpose_base__finished_803677d6",
+  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
+  pattern = "Progresslineimpose_pattern_491cb9c0",
+  base__small = "Progresslineimpose_base__small_577e82cf",
+  gradient = "Progresslineimpose_gradient_513e2b1d",
+  glow$1 = "Progresslineimpose_glow_76f8072f",
+  glow__left = "Progresslineimpose_glow__left_c2e964b3",
+  ProgressLineImpose_module_default = {
+    base: base$8,
+    base__disabled: base__disabled$1,
+    base__finished: base__finished,
+    base__withoutBounce: base__withoutBounce$1,
+    pattern: pattern,
+    base__small: base__small,
+    gradient: gradient,
+    glow: glow$1,
+    glow__left: glow__left,
+  },
+  ProgressLineImposeComponent = ({
+    size: e,
+    lineRef: t,
+    disabled: n,
+    baseStyles: r,
+    isComplete: a,
+    withoutBounce: o,
+  }) => {
+    const i = (0, import_classnames.default)(
+        ProgressLineImpose_module_default.base,
+        ProgressLineImpose_module_default[`base__${e}`],
+        n && ProgressLineImpose_module_default.base__disabled,
+        a && ProgressLineImpose_module_default.base__finished,
+        o && ProgressLineImpose_module_default.base__withoutBounce,
+      ),
+      u = !n && !a;
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: i,
+      style: r,
+      ref: t,
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: ProgressLineImpose_module_default.pattern,
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: ProgressLineImpose_module_default.gradient,
+        }),
+        u && (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: e }),
+      ],
+    });
+  },
+  ProgressLineImpose = (0, import_react.memo)(ProgressLineImposeComponent),
+  createTimeoutInEffect = (e, t) => {
+    let n;
+    const r = setTimeout(() => {
+      n = e();
+    }, t);
+    return () => {
+      ("function" == typeof n && n(), clearTimeout(r));
+    };
+  },
+  GrowAnimationState = (function (e) {
+    return ((e.Idle = "Idle"), (e.Grow = "Grow"), (e.Shrink = "Shrink"), (e.End = "End"), e);
+  })({}),
+  SimpleAnimationState = (function (e) {
+    return ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e);
+  })({}),
+  base$7 = "Progressbardeltagrow_c42a7a2c",
+  base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
+  glow = "Progressbardeltagrow_glow_e08fafeb",
+  ProgressBarDeltaGrow_module_default = {
+    base: base$7,
+    base__withoutBounce: base__withoutBounce,
+    glow: glow,
+  },
+  getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
+  getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
+  getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
+  ProgressBarDeltaGrowComponent = ({
+    transitionDuration: e,
+    transitionDelay: t,
+    freezed: n,
+    from: r,
+    size: a,
+    to: o,
+    onEndAnimation: i,
+    onChangeAnimationState: u,
+    className: s,
+  }) => {
+    const l = o < r,
+      [c, d] = (0, import_react.useState)(GrowAnimationState.Idle),
+      f = c === GrowAnimationState.End,
+      p = c === GrowAnimationState.Idle,
+      m = c === GrowAnimationState.Grow,
+      h = c === GrowAnimationState.Shrink,
+      g = (0, import_react.useCallback)(
+        (e) => {
+          (d(e), u && u(e));
+        },
+        [u],
+      ),
+      b = (0, import_react.useCallback)(
+        (e, t) =>
+          createTimeoutInEffect(() => {
+            g(e);
+          }, t),
+        [g],
+      );
+    (0, import_react.useEffect)(() => {
+      if (!n)
+        return p
+          ? b(GrowAnimationState.Grow, t)
+          : m
+            ? b(GrowAnimationState.Shrink, e)
+            : h
+              ? b(GrowAnimationState.End, e)
+              : void (f && i && i());
+    }, [b, n, f, m, p, h, i, t, e]);
+    const v = (0, import_react.useMemo)(
+        () => ({ width: "100%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
+        [l, e],
+      ),
+      _ = (0, import_react.useMemo)(
+        () => ({ width: "0%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
+        [l, e],
+      ),
+      y = (0, import_react.useMemo)(
+        () => ({ width: "0%", ...getBaseSideWithReverse(l, r), ...getAnimationStyles(e) }),
+        [r, l, e],
+      ),
+      E = (0, import_react.useMemo)(
+        () => ({
+          width: `${Math.abs(o - r)}%`,
+          ...getBaseSideWithReverse(l, r),
+          ...getAnimationStyles(e),
+        }),
+        [r, l, o, e],
+      );
+    if (f) return null;
+    const A = (0, import_classnames.default)(
+      ProgressBarDeltaGrow_module_default.base,
+      s,
+      l && 0 === o && ProgressBarDeltaGrow_module_default.base__withoutBounce,
+    );
+    return (0, import_jsx_runtime.jsx)("div", {
+      style: p ? y : E,
+      className: A,
+      children: (0, import_jsx_runtime.jsx)("div", {
+        style: h ? _ : v,
+        className: ProgressBarDeltaGrow_module_default.glow,
+        children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
+      }),
+    });
+  },
+  ProgressBarDeltaGrow = (0, import_react.memo)(ProgressBarDeltaGrowComponent),
+  ProgressBarGrowLineComponent = ({
+    to: e,
+    size: t,
+    from: n,
+    lineRef: r,
+    disabled: a,
+    isComplete: o,
+    animationSettings: i,
+    onEndAnimation: u,
+    onChangeAnimationState: s,
+  }) => {
+    const l = e < n,
+      [c, d] = (0, import_react.useState)(!1),
+      f = (0, import_react.useCallback)(
+        (e) => {
+          (e === GrowAnimationState.Shrink && d(!0), s && s(e));
+        },
+        [s],
+      ),
+      p = (0, import_react.useMemo)(() => ({ width: `${n}%`, transitionProperty: "none" }), [n]),
+      m = (0, import_react.useMemo)(
+        () => ({ width: `${e}%`, transitionDuration: `${i.line.duration}ms` }),
+        [i.line.duration, e],
+      );
+    return (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+      children: [
+        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
+          size: t,
+          lineRef: r,
+          disabled: a,
+          isComplete: o,
+          withoutBounce: l && 0 === e,
+          baseStyles: c ? m : p,
+        }),
+        n >= 0 &&
+          (0, import_jsx_runtime.jsx)(ProgressBarDeltaGrow, {
+            transitionDuration: i.delta.duration,
+            transitionDelay: i.delta.delay,
+            onChangeAnimationState: f,
+            freezed: i.freezed,
+            onEndAnimation: u,
+            from: n,
+            size: t,
+            to: e,
+            className: i.delta.className,
+          }),
+      ],
+    });
+  },
+  ProgressBarGrowLine = (0, import_react.memo)(ProgressBarGrowLineComponent),
+  base$6 = "Progressbardeltasimple_4b8901e3",
+  delta = "Progressbardeltasimple_delta_9a540ec7",
+  ProgressBarDeltaSimple_module_default = { base: base$6, delta: delta },
+  ProgressBarDeltaSimpleComponent = ({
+    transitionDuration: e,
+    transitionDelay: t,
+    freezed: n,
+    from: r,
+    size: a,
+    to: o,
+    onEndAnimation: i,
+    onChangeAnimationState: u,
+  }) => {
+    const s = o < r,
+      [l, c] = (0, import_react.useState)(SimpleAnimationState.Idle),
+      d = l === SimpleAnimationState.In,
+      f = l === SimpleAnimationState.End,
+      p = l === SimpleAnimationState.Idle,
+      m = (0, import_react.useCallback)(
+        (e) => {
+          (c(e), u && u(e));
+        },
+        [u],
+      );
+    ((0, import_react.useEffect)(() => {
+      if (p && !n)
+        return createTimeoutInEffect(() => {
+          m(SimpleAnimationState.In);
+        }, t);
+    }, [m, n, p, t]),
+      (0, import_react.useEffect)(() => {
+        if (d)
+          return createTimeoutInEffect(() => {
+            (i && i(), m(SimpleAnimationState.End));
+          }, e + t);
+      }, [m, d, i, t, e]));
+    const h = (0, import_react.useMemo)(
+        () => ({
+          width: "100%",
+          transitionDuration: `${e}ms`,
+          transitionDelay: `${t}ms`,
+          [s ? "left" : "right"]: "0",
+        }),
+        [s, t, e],
+      ),
+      g = (0, import_react.useMemo)(
+        () => ({
+          width: "0%",
+          transitionDuration: `${e}ms`,
+          transitionDelay: `${t}ms`,
+          [s ? "left" : "right"]: "0",
+        }),
+        [s, t, e],
+      ),
+      b = (0, import_react.useMemo)(
+        () => ({ width: `${Math.abs(r - o)}%`, left: `${s ? o : r}%` }),
+        [r, s, o],
+      );
+    return f
+      ? null
+      : (0, import_jsx_runtime.jsx)("div", {
+          className: ProgressBarDeltaSimple_module_default.base,
+          style: b,
+          children: (0, import_jsx_runtime.jsx)("div", {
+            style: p ? h : g,
+            className: ProgressBarDeltaSimple_module_default.delta,
+            children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
+          }),
+        });
+  },
+  ProgressBarDeltaSimple = (0, import_react.memo)(ProgressBarDeltaSimpleComponent),
+  ProgressBarSimpleLineComponent = ({
+    to: e,
+    size: t,
+    from: n,
+    lineRef: r,
+    disabled: a,
+    isComplete: o,
+    animationSettings: i,
+    onChangeAnimationState: u,
+    onEndAnimation: s,
+  }) =>
+    (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+      children: [
+        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
+          size: t,
+          lineRef: r,
+          disabled: a,
+          isComplete: o,
+          baseStyles: (0, import_react.useMemo)(
+            () => ({
+              width: `${e}%`,
+              transitionDuration: `${i.line.duration}ms`,
+              transitionDelay: `${i.line.delay}ms`,
+            }),
+            [i.line.delay, i.line.duration, e],
+          ),
+        }),
+        n >= 0 &&
+          (0, import_jsx_runtime.jsx)(ProgressBarDeltaSimple, {
+            transitionDuration: i.delta.duration,
+            transitionDelay: i.delta.delay,
+            freezed: i.freezed,
+            from: n,
+            size: t,
+            to: e,
+            onChangeAnimationState: u,
+            onEndAnimation: s,
+          }),
+      ],
+    }),
+  ProgressBarSimpleLine = (0, import_react.memo)(ProgressBarSimpleLineComponent),
+  WithAnimationLineComponent = ({ onComplete: e, onEndAnimation: t, ...n }) => {
+    const [r, a] = (0, import_react.useState)(!1),
+      o = (0, import_react.useCallback)(() => {
+        const o = 100 === n.to;
+        (o !== r && a(o), o && e && e(), t && t());
+      }, [r, e, t, n.to]);
+    switch (n.animationSettings.type) {
+      case AnimationType.Simple:
+        return (0, import_jsx_runtime.jsx)(ProgressBarSimpleLine, {
+          ...n,
+          onEndAnimation: o,
+          isComplete: r,
+        });
+      case AnimationType.Growing:
+        return (0, import_jsx_runtime.jsx)(ProgressBarGrowLine, {
+          ...n,
+          onEndAnimation: o,
+          isComplete: r,
+        });
+      default:
+        return null;
+    }
+  },
+  WithAnimationLine = (0, import_react.memo)(WithAnimationLineComponent),
+  WithStackAnimationLineComponent = ({ onEndAnimation: e, ...t }) => {
+    const n = (0, import_react.useRef)({}),
+      r = (0, import_react.useCallback)(() => {
+        ((n.current.from = void 0), e && e());
+      }, [e]),
+      a = "number" == typeof n.current.from ? n.current.from : t.from;
+    return (
+      (n.current.from = a),
+      (0, import_react.createElement)(WithAnimationLine, {
+        ...t,
+        onEndAnimation: r,
+        key: `${a}-${t.to}-${t?.additionalKey}`,
+        from: a,
+      })
+    );
+  },
+  WithStackAnimationLine = (0, import_react.memo)(WithStackAnimationLineComponent),
+  WithoutAnimationLine = ({ size: e, value: t, lineRef: n, disabled: r, onComplete: a }) => {
+    const o = (0, import_react.useMemo)(
+        () => ({ width: `${t}%`, transitionProperty: "none" }),
+        [t],
+      ),
+      i = 100 === t;
+    return (
+      (0, import_react.useEffect)(() => {
+        i && a && a();
+      }, [i, a]),
+      (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
+        size: e,
+        disabled: r,
+        baseStyles: o,
+        isComplete: i,
+        lineRef: n,
+      })
+    );
+  },
+  ProgressBarLineComponent = ({
+    size: e,
+    value: t,
+    lineRef: n,
+    disabled: r,
+    deltaFrom: a,
+    additionalKey: o,
+    animationSettings: i,
+    onEndAnimation: u,
+    onChangeAnimationState: s,
+    onComplete: l,
+  }) => {
+    if (a === t)
+      return (0, import_jsx_runtime.jsx)(
+        WithoutAnimationLine,
+        { size: e, value: t, lineRef: n, disabled: r, onComplete: l },
+        `${a}-${t}-${o}`,
+      );
+    const c = {
+      from: a,
+      to: t,
+      size: e,
+      additionalKey: o,
+      lineRef: n,
+      disabled: r,
+      animationSettings: i,
+      onComplete: l,
+      onEndAnimation: u,
+      onChangeAnimationState: s,
+    };
+    return i.withStack
+      ? (0, import_jsx_runtime.jsx)(WithStackAnimationLine, { ...c })
+      : (0, import_jsx_runtime.jsx)(WithAnimationLine, { ...c }, `${a}-${t}-${o}`);
+  },
+  ProgressBarLine = (0, import_react.memo)(ProgressBarLineComponent),
+  createSkin = (e) => ({
+    "--progress-base": `url(${e.bgImageBase})`,
+    "--progress-bg-height": e.bg?.height ?? "12rem",
+    "--progress-bg-height-small": e.bg?.heightSmall ?? "2rem",
+    "--progress-line-base": e.line.bgColorBase,
+    "--progress-line-disabled": e.line.bgColorDisabled,
+    "--progress-line-finished": e.line.bgColorFinished,
+    "--progress-line-filter": e.line.filter ?? "none",
+    "--progress-pattern-base": `url(${e.pattern.bgImageBase})`,
+    "--progress-pattern-disabled": `url(${e.pattern.bgImageDisabled})`,
+    "--progress-pattern-finished": `url(${e.pattern.bgImageFinished})`,
+    "--progress-pattern-size": e.pattern.size ?? "3rem 10rem",
+    "--progress-pattern-border-size": e.pattern.borderSize ?? "1rem",
+    "--progress-pattern-gradient":
+      e.pattern.gradient ?? "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75))",
+    "--progress-pattern-gradient-finished":
+      e.pattern.gradientFinished ??
+      "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5))",
+    "--progress-pattern-gradient-mixBlendMode": e.pattern.mixBlendMode ?? "overlay",
+    "--progress-glow": `url('${e.glow}')`,
+    "--progress-glow-width": e.glowSettings?.width ?? "60rem",
+    "--progress-glow-height": e.glowSettings?.height ?? "100rem",
+    "--progress-glow-small-width": e.glowSettings?.smallWidth ?? "44rem",
+    "--progress-glow-small-height": e.glowSettings?.smallHeight ?? "43rem",
+    "--progress-glow-mixBlendMode": e.glowSettings?.mixBlendMode ?? "lighten",
+    "--progress-glow-small": `url('${e.glowSmall}')`,
+    "--progress-delta-color": e.delta.color,
+    "--progress-delta-shadow": e.delta.shadow,
+  }),
+  Orange = {
+    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_grey",
+    line: { bgColorBase: "#f50", bgColorDisabled: "transparent", bgColorFinished: "#59a011" },
+    pattern: {
+      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_orange",
+      bgImageDisabled: "R.images.gui.maps.icons.components.progress_bar.pattern_disabled",
+      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.pattern_green",
+    },
+    glow: "R.images.gui.maps.icons.components.progress_bar.glow",
+    glowSmall: "R.images.gui.maps.icons.components.progress_bar.glow_small",
+    delta: {
+      color: "#ffc",
+      shadow:
+        "0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066",
+    },
+  },
+  BlueNoise = {
+    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_bg_base",
+    bg: { height: "22rem", heightSmall: "4rem" },
+    glowSettings: {
+      width: "34rem",
+      height: "54rem",
+      mixBlendMode: "normal",
+      smallWidth: "34rem",
+      smallHeight: "36rem",
+    },
+    line: {
+      bgColorBase: "rgba(191, 232, 255, 0.6)",
+      bgColorDisabled: "transparent",
+      bgColorFinished: "rgba(191, 232, 255, 0.6)",
+      filter:
+        "drop-shadow(0 0 4px rgba(255, 255, 255, 0.08)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.16)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.24))",
+    },
+    pattern: {
+      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
+      bgImageDisabled:
+        "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_disabled",
+      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
+      size: "4rem 22rem",
+      borderSize: "0",
+      gradient: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
+      gradientFinished: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
+      mixBlendMode: "normal",
+    },
+    glow: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow",
+    glowSmall: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow_small",
+    delta: {
+      color: "#fff",
+      shadow:
+        " 0 0 4px 1px rgba(120, 180, 255, 0.4), 0 0 9px 1px rgba(100, 160, 255, 0.4), 0 0 12px 2px rgba(80, 140, 255, 0.4), 0 0 12px 4px rgba(60, 120, 255, 0.4)",
+    },
+  },
+  GreenNoise = {
+    ...BlueNoise,
+    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_bg_base",
+    line: { ...BlueNoise.line, bgColorBase: "#83C6A5", bgColorFinished: "rgba(10, 230, 72, 0.6)" },
+    pattern: {
+      ...BlueNoise.pattern,
+      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
+      bgImageDisabled:
+        "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_disabled",
+      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
+    },
+  },
+  clamp = (e, t, n) => (n < e ? e : n > t ? t : n),
+  prepareDeltaFrom = (e, t, n) => ("number" == typeof n ? (clamp(0, t, n) / t) * 100 : e);
+function useCalculatePercents(e, t, n) {
+  return (0, import_react.useMemo)(() => {
+    const r = (clamp(0, t, e) / t) * 100;
+    return { value: r, deltaFrom: prepareDeltaFrom(r, t, n) };
+  }, [n, t, e]);
+}
+var defaultTheme = Orange,
+  defaultAnimationSettings = {
+    freezed: !1,
+    withStack: !1,
+    type: AnimationType.Growing,
+    delta: { duration: 500, delay: 0 },
+    line: { duration: 500, delay: 0 },
+  },
+  ProgressBarComponent = ({
+    maxValue: e = 100,
+    theme: t = defaultTheme,
+    size: n = Size.Default,
+    animationSettings: r = defaultAnimationSettings,
+    disabled: a = !1,
+    withoutBackground: o = !1,
+    value: i,
+    deltaFrom: u,
+    additionalKey: s,
+    lineRef: l,
+    onChangeAnimationState: c,
+    onEndAnimation: d,
+    onComplete: f,
+    className: p,
+  }) => {
+    const m = useCalculatePercents(i, e, u);
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        ProgressBar_module_default.base,
+        p,
+        ProgressBar_module_default[`base__${n}`],
+      ),
+      style: createSkin(t),
+      children: [
+        !o && (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: n }),
+        (0, import_jsx_runtime.jsx)(ProgressBarLine, {
+          size: n,
+          lineRef: l,
+          disabled: a,
+          value: m.value,
+          deltaFrom: m.deltaFrom,
+          additionalKey: s,
+          animationSettings: r,
+          onEndAnimation: d,
+          onChangeAnimationState: c,
+          onComplete: f,
+        }),
+      ],
+    });
+  },
+  ProgressBar = (0, import_react.memo)(ProgressBarComponent),
+  LogLevel = (function (e) {
+    return (
+      (e[(e.NonSet = 0)] = "NonSet"),
+      (e[(e.Debug = 10)] = "Debug"),
+      (e[(e.Info = 20)] = "Info"),
+      (e[(e.Warning = 30)] = "Warning"),
+      e
+    );
+  })({}),
+  CommonLogAction = (function (e) {
+    return (
+      (e.Click = "click"),
+      (e.KeyDown = "keydown"),
+      (e.Displayed = "displayed"),
+      (e.Viewed = "viewed"),
+      e
+    );
+  })({}),
+  PROPERTIES_LIMIT = 200,
+  METRICS_GROUP = "metrics",
+  convertMetricsParams = ({ partnerID: e, item: t, parentScreen: n, itemState: r, info: a }) => ({
+    item: t,
+    partnerID: e || null,
+    parent_screen: n || null,
+    item_state: r || null,
+    additional_info: a || null,
+  }),
+  _useLog = (e, t) => {
+    const n = (0, import_react.useCallback)(
+      (n, r = LogLevel.Info, a) => {
+        (a || (a = {}),
+          Object.keys(a).length >= PROPERTIES_LIMIT ||
+            window.uiLoggerModel.log({
+              feature: e,
+              group: t,
+              action: n,
+              logLevel: r,
+              params: JSON.stringify(a),
+            }));
+      },
+      [e, t],
+    );
+    return (e, t, r) => n(e, t, r);
+  },
+  useMetricsLog = (e) => {
+    const t = _useLog(e, METRICS_GROUP),
+      n = (0, import_react.useCallback)(
+        (e) => {
+          t(e.action, e.logLevel, convertMetricsParams(e));
+        },
+        [t],
+      );
+    return (e) => n(e);
+  },
+  LIGHT_TANK = "lightTank",
+  MEDIUM_TANK = "mediumTank",
+  HEAVY_TANK = "heavyTank",
+  AT_SPG = "AT-SPG",
+  themes = { primary: "primary", secondary: "secondary", custom: "custom" },
+  sizes$1 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
+  base$5 = "HeadlessButton_df8536fc",
+  headless_button_module_default = { base: base$5 },
+  HeadlessButtonBase = defineStyledComponent("Button", {
+    element: "button",
+    className: headless_button_module_default.base,
+  }),
+  HeadlessButton = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      onClick: t,
+      onMouseEnter: n,
+      soundTarget: r,
+      disabled: a = !1,
+      silent: o = !1,
+      ...i
+    },
+    u,
+  ) {
+    const s = useSounds();
+    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
+      ...i,
+      ref: u,
+      onMouseEnter: function (e) {
+        (a || o || s.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
+      },
+      onClick: function (e) {
+        a || (o || s.play("click", { target: r || "Button", original: e }), t?.(e));
+      },
+      children: e,
+    });
+  }),
+  background = "Button_background_98ebcfb8",
+  border = "Button_border_7e6390d7",
+  overlay = "Button_overlay_174632c8",
+  base$4 = "Button_70871946",
+  base__enabled = "Button_base__enabled_96634d40",
+  base__disabled = "Button_base__disabled_b713e04a",
+  content = "Button_content_298de63f",
+  content__fontAligned = "Button_content__fontAligned_66115778",
+  button_module_default = {
+    background: background,
+    border: border,
+    overlay: overlay,
+    base: base$4,
+    base__enabled: base__enabled,
+    base__disabled: base__disabled,
+    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
+    "base__size-small": "Button_base__size-small_fc7095a4",
+    "base__size-medium": "Button_base__size-medium_814d61f0",
+    "base__size-large": "Button_base__size-large_83da852e",
+    "base__theme-primary": "Button_base__theme-primary_8ba55469",
+    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
+    content: content,
+    content__fontAligned: content__fontAligned,
+  },
+  Button = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      size: t = sizes$1.large,
+      theme: n = themes.primary,
+      disabled: r = !1,
+      silent: a = !1,
+      autoAlignContent: o = !0,
+      classNames: i,
+      className: u,
+      ...s
+    },
+    l,
+  ) {
+    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
+      ...s,
+      ref: l,
+      silent: a,
+      disabled: r,
+      className: clsx(
+        button_module_default.base,
+        button_module_default[`base__size-${t}`],
+        button_module_default[`base__theme-${n}`],
+        r ? button_module_default.base__disabled : button_module_default.base__enabled,
+        u,
+        i?.base,
+      ),
+      onClick: function (e) {
+        r || s.onClick?.(e);
+      },
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.background, i?.background),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.border, i?.border),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.overlay, i?.overlay),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(
+            button_module_default.content,
+            o && button_module_default.content__fontAligned,
+            i?.content,
+          ),
+          children: e,
+        }),
+      ],
+    });
+  });
+((Button.themes = themes), (Button.sizes = sizes$1));
+var IconSize = (function (e) {
+    return ((e.default = "default"), (e.x48 = "x48"), (e.x80 = "x80"), (e.x220 = "x220"), e);
+  })({}),
+  base$3 = "Badge_b4595e01",
+  base__default$1 = "Badge_base__default_6aaca100",
+  base__x48$1 = "Badge_base__x48_2b129eae",
+  Badge_module_default = { base: base$3, base__default: base__default$1, base__x48: base__x48$1 },
+  badgeFolders = {
+    [IconSize.default]: "c_24x24",
+    [IconSize.x48]: "c_48x48",
+    [IconSize.x80]: "c_80x80",
+    [IconSize.x220]: "c_220x220",
+  },
+  Badge = ({ badgeID: e, size: t = IconSize.default, className: n }) => {
+    const r = R.images.gui.maps.icons.library.badges.$dyn(badgeFolders[t]);
+    return (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        Badge_module_default.base,
+        Badge_module_default[`base__${t}`],
+        n,
+      ),
+      style: { backgroundImage: `url(${r.$dyn(`badge_${e}`)})` },
+    });
+  },
+  base$2 = "Playernickname_23cd38ea",
   userName = "Playernickname_userName_fcb876e7",
   igrIcon = "Playernickname_igrIcon_c8baaf95",
   base__default = "Playernickname_base__default_4dc1c796",
@@ -25477,7 +25551,7 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   suffixBadge = "Playernickname_suffixBadge_1bf5fe7f",
   anonymizedIcon = "Playernickname_anonymizedIcon_5d7db845",
   PlayerNickname_module_default = {
-    base: base$4,
+    base: base$2,
     userName: userName,
     igrIcon: igrIcon,
     base__default: base__default,
@@ -25656,7 +25730,7 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
     WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED: "wot_plus_exclusive_vehicle_disabled",
   },
   stateValues = Object.values(vehicleState),
-  sizes$1 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+  sizes = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
   upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
   mapTypes = {
     [types.lightTank]: "light_tank",
@@ -25665,22 +25739,22 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
     [types.SPG]: "spg",
     [types["AT-SPG"]]: "tank_destroyer",
   },
-  base$3 = "VehicleType_30b4aab0",
+  base$1 = "VehicleType_30b4aab0",
   base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
   base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
   base__x64x64 = "VehicleType_base__x64x64_bb9b890",
-  base__x96x96$1 = "VehicleType_base__x96x96_919f9f92",
+  base__x96x96 = "VehicleType_base__x96x96_919f9f92",
   base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
   base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
   base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
   base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
   icon = "VehicleType_icon_b15d2628",
   vehicle_type_module_default = {
-    base: base$3,
+    base: base$1,
     base__x24x24: base__x24x24,
     base__x48x48: base__x48x48,
     base__x64x64: base__x64x64,
-    base__x96x96: base__x96x96$1,
+    base__x96x96: base__x96x96,
     base__premium__x24x24: base__premium__x24x24,
     base__premium__x48x48: base__premium__x48x48,
     base__premium__x64x64: base__premium__x64x64,
@@ -25688,10 +25762,10 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
     icon: icon,
   },
   VehicleType = (0, import_react.forwardRef)(function (
-    { type: e, size: t = sizes$1.x48x48, premium: n = !1, fit: r = "contain", ...a },
+    { type: e, size: t = sizes.x48x48, premium: n = !1, fit: r = "contain", ...a },
     o,
   ) {
-    const i = useUpscale(sizes$1[t], upscaledSizes[t]);
+    const i = useUpscale(sizes[t], upscaledSizes[t]);
     return (0, import_jsx_runtime.jsx)(Image$1, {
       ...a,
       ref: o,
@@ -25706,9 +25780,9 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
       path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
     });
   });
-((VehicleType.types = types), (VehicleType.sizes = sizes$1));
-var base$2 = "TruncateText_dcb41d92",
-  truncate_text_module_default = { base: base$2 },
+((VehicleType.types = types), (VehicleType.sizes = sizes));
+var base = "TruncateText_dcb41d92",
+  truncate_text_module_default = { base: base },
   TruncatedText = (0, import_react.forwardRef)(function (
     { text: e, tooltipParams: t, className: n, ...r },
     a,
@@ -25735,81 +25809,7 @@ var base$2 = "TruncateText_dcb41d92",
         children: e,
       })
     );
-  }),
-  base$1 = "CloseButton_7488a1b8",
-  base__medium = "CloseButton_base__medium_97d04067",
-  base__small = "CloseButton_base__small_c1b29bae",
-  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
-  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
-  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
-  close_button_module_default = {
-    base: base$1,
-    base__medium: base__medium,
-    base__small: base__small,
-    base__extraSmall: base__extraSmall,
-    base__x96x96: base__x96x96,
-    base__x32x32: base__x32x32,
-  },
-  sizes = { medium: "medium", small: "small", extraSmall: "extraSmall" },
-  upscaleImageSizes = {
-    [sizes.medium]: "x96x96",
-    [sizes.small]: sizes.medium,
-    [sizes.extraSmall]: "x32x32",
-  };
-function CloseButton({
-  size: e = sizes.medium,
-  hoverSound: t = sounds$1.highlight,
-  clickSound: n = sounds$1.click,
-  className: r,
-  onHover: a,
-  onClose: o,
-}) {
-  const i = useUpscale(
-    close_button_module_default[`base__${e}`],
-    close_button_module_default[`base__${upscaleImageSizes[e]}`],
-  );
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
-    onMouseEnter: () => {
-      (play$1.sound(t), a?.());
-    },
-    onClick: () => {
-      (play$1.sound(n), o());
-    },
   });
-}
-CloseButton.size = sizes;
-var base = "Formattext_bb80854d",
-  FormatText_module_default = { base: base },
-  FormatText = ({
-    binding: e,
-    text: t = "",
-    classMix: n,
-    alignment: r = Alignment.left,
-    formatWithBrackets: a,
-  }) =>
-    null === t
-      ? (console.error("FormatText was supplied with 'null'"), null)
-      : (0, import_jsx_runtime.jsx)(import_react.Fragment, {
-          children: (a && e ? format(t, e) : t)
-            .split("\n")
-            .map((t, a) =>
-              (0, import_jsx_runtime.jsx)(
-                "div",
-                {
-                  className: (0, import_classnames.default)(FormatText_module_default.base, n),
-                  children: formatString(t, r, e).map((e, t) =>
-                    (0, import_jsx_runtime.jsx)(
-                      import_react.Fragment,
-                      { children: e },
-                      `${t}-${e}`,
-                    ),
-                  ),
-                },
-                `${t}-${a}`,
-              ),
-            ),
-        });
 export {
   breakpointsByType as $,
   UIProvider as A,
@@ -25839,39 +25839,39 @@ export {
   useUpscale as Y,
   useMedia as Z,
   Video as _,
-  isTypeValidValue as a,
+  Button as a,
   identity as at,
   sizes$3 as b,
-  AT_SPG as c,
+  LIGHT_TANK as c,
   play$1 as ct,
-  MEDIUM_TANK as d,
+  CommonLogAction as d,
   clsx as dt,
   int as et,
-  useMetricsLog as f,
+  ProgressBar as f,
   require_react_dom as ft,
-  ExtendedText as g,
-  Size as h,
-  VehicleType as i,
+  CloseButton as g,
+  FormatText as h,
+  PlayerNickname as i,
   constFalse as it,
   runView as j,
   useScrollBounding as k,
-  HEAVY_TANK as l,
+  MEDIUM_TANK as l,
   convertNbsp$1 as lt,
-  ProgressBar as m,
-  CloseButton as n,
+  ExtendedText as m,
+  VehicleType as n,
   map as nt,
-  PlayerNickname as o,
+  AT_SPG as o,
   noop$2 as ot,
-  CommonLogAction as p,
+  Size as p,
   require_react as pt,
   makeObservable as q,
-  TruncatedText as r,
+  isTypeValidValue as r,
   keyStringCodes as rt,
-  Button as s,
+  HEAVY_TANK as s,
   sendEvent$2 as st,
-  FormatText as t,
+  TruncatedText as t,
   find as tt,
-  LIGHT_TANK as u,
+  useMetricsLog as u,
   getNumberFormat as ut,
   Tooltip$1 as v,
   Image$1 as w,

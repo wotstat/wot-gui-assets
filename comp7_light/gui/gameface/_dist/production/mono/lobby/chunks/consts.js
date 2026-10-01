@@ -1,9 +1,9 @@
 import { r as o } from "./rolldown-runtime.js";
-import { I as a, R as r, Vo as t, sa as i } from "./lib.js";
-t();
+import { Bo as a, I as r, R as t, oa as i } from "./lib.js";
+a();
 var s = o(i());
 function n(o) {
-  return (0, s.jsx)(a, { theme: r, ...o });
+  return (0, s.jsx)(r, { theme: t, ...o });
 }
 var m = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { duration: 300 } },
   c = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 100, config: { duration: 300 } };

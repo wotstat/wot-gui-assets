@@ -36,8 +36,8 @@ import {
   H as reactDomExports,
   I as cx,
   J as Controller,
-  K as easings$1,
-  L as loadDefaultJapaneseParser,
+  K as loadDefaultJapaneseParser,
+  L as easings$1,
 } from "./vendor.js";
 const resources = createContainer();
 function concatWithPath(e, t) {
@@ -5367,16 +5367,17 @@ function Portal({
   paddingsRem: n = {},
   lazy: a = !1,
   closeByEscape: o = !0,
-  onBeforePositionChange: i = noop,
-  freeSpaceRem: u = 8,
-  animationTransitions: l,
-  ...c
+  closeOnAnchorMove: i = !1,
+  onBeforePositionChange: u = noop,
+  freeSpaceRem: l = 8,
+  animationTransitions: c,
+  ...d
 }) {
-  const d = usePopover(),
-    _ = React.useRef(null),
-    m = React.useRef(void 0),
-    [p, E] = reactExports.useState(),
-    x = reactExports.useMemo(
+  const _ = usePopover(),
+    m = React.useRef(null),
+    p = React.useRef(void 0),
+    [E, x] = reactExports.useState(),
+    f = reactExports.useMemo(
       () => ({
         top: remToPx$1(n.top || defaultPaddingsRem.top),
         bottom: remToPx$1(n.bottom || defaultPaddingsRem.bottom),
@@ -5385,55 +5386,57 @@ function Portal({
       }),
       [n.bottom, n.top, n.left, n.right],
     ),
-    f = remToPx$1(u),
-    b = reactExports.useMemo(() => ({ ...animationTransitionsDefault, ...l }), [l]),
-    g = reactExports.useMemo(
+    b = remToPx$1(l),
+    g = reactExports.useMemo(() => ({ ...animationTransitionsDefault, ...c }), [c]),
+    h = reactExports.useMemo(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
     );
   reactExports.useEffect(() => {
-    m.current = void 0;
-    const e = _.current;
+    p.current = void 0;
+    const e = m.current;
     if (!e) return;
-    const t = document.querySelector(`[data-popover-trigger-id="${d.id}"]`),
-      n = e.querySelector(`[data-popover-display-id="${d.id}"]`);
+    const t = document.querySelector(`[data-popover-trigger-id="${_.id}"]`),
+      n = e.querySelector(`[data-popover-display-id="${_.id}"]`);
     if (!t || !n) return;
     const a = watchResizes([t, e, document.body], ([t, n, a]) => {
-      if (!d.opened) return void E(void 0);
-      if (!1 === i(d, { callerBounding: t, containerBounding: n, bodyBounding: a })) return;
-      if (m.current && !isEqual(m.current, t)) return void d.close();
-      m.current = t;
-      const o = getUpdatedPosition(r, x, t, n, a);
-      (E(o),
-        updatePosition(s, f, o, x, t, n, a, e),
+      if (!_.opened) return void x(void 0);
+      if (!1 === u(_, { callerBounding: t, containerBounding: n, bodyBounding: a })) return;
+      if (i) {
+        if (p.current && !isEqual(p.current, t)) return void _.close();
+        p.current = t;
+      }
+      const o = getUpdatedPosition(r, f, t, n, a);
+      (x(o),
+        updatePosition(s, b, o, f, t, n, a, e),
         runInAction$1(() => {
-          (d.trigger.setBounding(t), d.portal.setBounding(n), d.portal.setPosition(o));
+          (_.trigger.setBounding(t), _.portal.setBounding(n), _.portal.setPosition(o));
         }));
     });
     return (a.start(), a.stop);
-  }, [d, i, x, s, f, d.id, d.portal, d.trigger, r, d.opened]);
-  const h = reactExports.useCallback(() => {
-    const e = _.current;
+  }, [_, u, i, f, s, b, _.id, _.portal, _.trigger, r, _.opened]);
+  const y = reactExports.useCallback(() => {
+    const e = m.current;
     e &&
       document.activeElement &&
       document.activeElement instanceof HTMLElement &&
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  (reactExports.useEffect(() => d.subscribe.onBeforeClose(h), [d.subscribe, h]),
-    useHandleKeydown(o && d.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
-      d.close();
+  (reactExports.useEffect(() => _.subscribe.onBeforeClose(y), [_.subscribe, y]),
+    useHandleKeydown(o && _.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
+      _.close();
     }),
     reactExports.useEffect(() => {
-      if (!d.opened) return;
-      const e = _.current;
+      if (!_.opened) return;
+      const e = m.current;
       if (!e) return;
       const t = e;
       function s(e) {
         const s = e.target;
         if (!(s instanceof HTMLElement)) return !1;
-        const r = `[data-popover-trigger-id="${d.id}"]`,
-          n = `[data-popover-outside-click-whitelist-id="${d.id}"]`;
+        const r = `[data-popover-trigger-id="${_.id}"]`,
+          n = `[data-popover-outside-click-whitelist-id="${_.id}"]`;
         return !(
           t === s ||
           t.contains(s) ||
@@ -5446,50 +5449,50 @@ function Portal({
       return new DisposeBuilder()
         .add(
           addEventListener(document, "click", (e) => {
-            s(e) && d.close();
+            s(e) && _.close();
           }),
         )
         .add(
           mouse$1.down(([e, t]) => {
-            if ("outside" === t) return d.close();
+            if ("outside" === t) return _.close();
             const r = e.button;
-            (r !== mouseButtons.right && r !== mouseButtons.wheel) || (s(e) && d.close());
+            (r !== mouseButtons.right && r !== mouseButtons.wheel) || (s(e) && _.close());
           }),
         ).dispose;
-    }, [d]));
-  const [y, v] = useSpring(() => ({
-      from: { opacity: 0, transform: b[r] },
+    }, [_]));
+  const [v, A] = useSpring(() => ({
+      from: { opacity: 0, transform: g[r] },
       config: { easing: easings.easeInOutCubic, duration: OPEN_ANIMATION_DURATION },
     })),
-    A = React.useRef(b);
+    $ = React.useRef(g);
   return (
-    (A.current = b),
+    ($.current = g),
     reactExports.useEffect(() => {
-      if (!p) return;
-      const e = { opacity: 0, transform: A.current[p] };
-      v.start({
-        from: d.opened ? e : void 0,
-        to: d.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
+      if (!E) return;
+      const e = { opacity: 0, transform: $.current[E] };
+      A.start({
+        from: _.opened ? e : void 0,
+        to: _.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [v, p, d.opened]),
-    !d.opened && a
+    }, [A, E, _.opened]),
+    !_.opened && a
       ? null
       : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
           children: ReactDOM$1.createPortal(
             jsxRuntimeExports.jsx(animated.div, {
-              ...c,
-              ref: _,
+              ...d,
+              ref: m,
               style: {
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: y.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: y.opacity.to((e) => (0 !== e || d.opened ? "block" : "none")),
-                ...c.style,
+                pointerEvents: v.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: v.opacity.to((e) => (0 !== e || _.opened ? "block" : "none")),
+                ...d.style,
               },
-              children: jsxRuntimeExports.jsx(animated.div, { style: y, children: e }),
+              children: jsxRuntimeExports.jsx(animated.div, { style: v, children: e }),
             }),
-            g,
+            h,
           ),
         })
   );
@@ -12249,23 +12252,6 @@ const hover = "Slider_hover_9553506b",
       ],
     });
   };
-function getBaseAnimationConfig({
-  baseValue: e,
-  newValue: t,
-  animationType: s = animations.simple,
-  deltaVisible: r = !1,
-  preViewDeltaVisible: n = !1,
-  animationConfig: a,
-}) {
-  return {
-    from: { width: e },
-    to: { width: t },
-    config: a ?? {
-      duration: (s === animations.simple && r) || (!r && n) ? 0 : DURATION,
-      easing: easings$1.easeInOutCubic,
-    },
-  };
-}
 ((Slider.sizes = sizes$2),
   (Slider.LimitationArea = LimitationArea),
   (Slider.InteractiveArea = InteractiveArea),
@@ -12273,651 +12259,6 @@ function getBaseAnimationConfig({
   (Slider.Controls = Controls),
   (Slider.Indicators = Indicators$1),
   (Slider.CurrentValue = CurrentValue));
-const DURATION = 600,
-  ANIMATION_CONFIG = { duration: DURATION, easing: easings$1.easeInOutCubic },
-  animations = { simple: "simple", grow: "grow", growFreeze: "growFreeze" },
-  sizes$1 = { medium: "medium", large: "large" },
-  statuses = { disabled: "disabled", doneInactive: "doneInactive", doneStatic: "doneStatic" },
-  Context = reactExports.createContext(void 0);
-function useProgressBar() {
-  const e = reactExports.useContext(Context);
-  if (!e) throw new Error("ProgressBar must be used within a ProgressBar");
-  return e;
-}
-function useRegisterComponent(e) {
-  const { activeComponents: t } = useProgressBar();
-  reactExports.useEffect(
-    () => (
-      t.add(e),
-      () => {
-        t.delete(e);
-      }
-    ),
-    [t, e],
-  );
-}
-const base$b = "BackgroundPattern_8df99ec8",
-  backgroundPattern = "BackgroundPattern_backgroundPattern_d9136c40",
-  backgroundPattern__medium = "BackgroundPattern_backgroundPattern__medium_84d64a88",
-  backgroundPattern__large = "BackgroundPattern_backgroundPattern__large_3e5537fc",
-  styles$c = {
-    base: base$b,
-    backgroundPattern: backgroundPattern,
-    backgroundPattern__medium: backgroundPattern__medium,
-    backgroundPattern__large: backgroundPattern__large,
-  };
-function getIconPath(e, t) {
-  return t === statuses.disabled
-    ? `ui.progressbar.bg_pattern_base_disabled_${e}`
-    : `ui.progressbar.bg_pattern_base_${e}`;
-}
-const BackgroundPattern = reactExports.memo(function ({ className: e, backgroundPattern: t }) {
-  const s = useProgressBar();
-  return (
-    useRegisterComponent("backgroundPattern"),
-    jsxRuntimeExports.jsx("div", {
-      className: styles$c.base,
-      children: jsxRuntimeExports.jsx(Image, {
-        className: clsx(
-          e,
-          styles$c.backgroundPattern,
-          0 === s.percentage
-            ? styles$c.backgroundPattern__noProgress
-            : styles$c[`backgroundPattern__${s.size}`],
-        ),
-        repeat: "repeat",
-        position: "left top",
-        path: t ?? getIconPath(s.size, s.status),
-      }),
-    })
-  );
-});
-function useDeltaSound(e, t) {
-  const s = useProgressBar(),
-    r = useSounds();
-  return useEvent((n) => {
-    if (n)
-      switch (s.animationType) {
-        case "simple":
-          s.progressCompleted
-            ? r.play("increaseDeltaMax", { target: t })
-            : r.play("progressSimple", { target: t });
-          break;
-        case "grow":
-          !(function (n) {
-            if ("growing" === n) return r.play("progressSimple", { target: t });
-            if ("shrinking" === n) {
-              if (s.progressCompleted) return r.play("increaseDeltaMax", { target: t });
-              if (e > 0) return r.play("increaseDelta", { target: t });
-              if (e < 0) r.play("decreaseDelta", { target: t });
-            }
-          })(n);
-          break;
-        case "growFreeze":
-          !(function (s) {
-            e > 0 && "shrinking" === s
-              ? r.play("increaseDeltaMax", { target: t })
-              : r.play("progressSimple", { target: t });
-          })(n);
-          break;
-        default:
-          r.play("progressSimple", { target: t });
-      }
-  });
-}
-const PROGRESS_BAR_TARGET = "progress-bar";
-function useProgressBarSounds(e = 0) {
-  const t = useProgressBar(),
-    s = t.soundTarget ?? PROGRESS_BAR_TARGET,
-    r = useSounds(),
-    n = useDeltaSound(e, s),
-    a = useEvent(() => {
-      t.status !== statuses.doneInactive && t.progressCompleted
-        ? r.play("increaseDeltaMax", { target: s })
-        : r.play("progressSimple", { target: s });
-    });
-  return useEvent(({ step: e } = {}) => {
-    if (!t.silent)
-      return t.activeComponents.has("delta") ? n(e) : t.activeComponents.has("fill") ? a() : void 0;
-  });
-}
-const delta = "Delta_eb295acb",
-  delta__increase = "Delta_delta__increase_e6e76b0b",
-  outside = "Delta_outside_b28c01e5",
-  outside__increase = "Delta_outside__increase_91391b24",
-  inside = "Delta_inside_b1b3a5c5",
-  inside__increase = "Delta_inside__increase_fcd871c4",
-  styles$b = {
-    delta: delta,
-    delta__increase: delta__increase,
-    outside: outside,
-    outside__increase: outside__increase,
-    inside: inside,
-    inside__increase: inside__increase,
-  },
-  Delta = reactExports.memo(function ({
-    from: e,
-    growAnimationConfig: t,
-    shrinkAnimationConfig: s,
-    classNames: r,
-    className: n,
-    steps: a,
-    onState: o,
-    ref: i,
-    ...u
-  }) {
-    const l = reactExports.useRef(null),
-      c = useProgressBar(),
-      [d, _] = useSpring(() => ({ width: 0 })),
-      [m, p] = useSpring(() => ({ width: 0 })),
-      [E, x] = useSpring(() => ({ left: 0, width: 0 })),
-      [f, ...b] = a,
-      [g, h] = reactExports.useState(b),
-      [y, v] = reactExports.useState(f ?? "done"),
-      A = (c.value - e) / c.maxValue,
-      $ = useProgressBarSounds(A);
-    (useRegisterComponent("delta"),
-      reactExports.useEffect(() => {
-        if (0 === A) return;
-        const [e, ...t] = a;
-        (v(e ?? "done"), h(t));
-      }, [_, p, a, A]));
-    const C = useEvent(o ?? noop);
-    reactExports.useEffect(() => C(y), [y, C]);
-    const S = useEvent(() => {
-      const [e, ...t] = g;
-      void 0 !== e ? (v(e), h(t)) : v("done");
-    });
-    return (
-      reactExports.useEffect(() => {
-        const e = l.current;
-        if (!e || 0 === A) return (p.set({ width: 0 }), _.set({ width: 0 }), v("done"), void h([]));
-        const r = 100 * Math.max(0, c.percentage - Math.max(0, A)),
-          n = 100 * Math.abs(A);
-        return (
-          e.classList.toggle(styles$b.delta__increase, A > 0),
-          "growing" === y
-            ? (x.set({ left: r, width: n }),
-              p.set({ width: 100 }),
-              void _.start({
-                from: { width: 0 },
-                to: { width: 100 },
-                config: t ?? ANIMATION_CONFIG,
-                onRest: S,
-                onStart: () => $({ step: y }),
-              }))
-            : "shrinking" === y
-              ? (x.set({ left: r, width: n }),
-                _.set({ width: 100 }),
-                void p.start({
-                  from: { width: 100 },
-                  to: { width: 0 },
-                  config: s ?? ANIMATION_CONFIG,
-                  onRest: S,
-                  onStart: () => $({ step: y }),
-                }))
-              : void 0
-        );
-      }, [x, c.percentage, A, t, _, S, p, $, s, y]),
-      jsxRuntimeExports.jsxs(animated.div, {
-        ...u,
-        ref: assignRefs([i ?? null, l]),
-        className: clsx(n, styles$b.delta),
-        style: { left: E.left.to((e) => `${e}%`), width: E.width.to((e) => `${e}%`) },
-        children: [
-          jsxRuntimeExports.jsxs(animated.div, {
-            ...u,
-            style: { width: m.width.to((e) => `${e}%`) },
-            className: clsx(r?.outside, styles$b.outside, A > 0 && styles$b.outside__increase),
-            children: [
-              jsxRuntimeExports.jsx(animated.div, {
-                style: { width: d.width.to((e) => `${e}%`) },
-                className: clsx(r?.inside, styles$b.inside, A > 0 && styles$b.inside__increase),
-              }),
-              u.children,
-            ],
-          }),
-          u.children,
-        ],
-      })
-    );
-  }),
-  base$a = "Fill_d056f825",
-  filled = "Fill_filled_c16bdce3",
-  done = "Fill_done_4d97d579",
-  complete = "Fill_complete_2cd6c62b",
-  filled__hidden = "Fill_filled__hidden_4e5b5ebf",
-  filled__disabled = "Fill_filled__disabled_6436ea6a",
-  done__hidden = "Fill_done__hidden_4a8ded52",
-  done__visible = "Fill_done__visible_91e1c2da",
-  fadeInOut = "Fill_fadeInOut_43ad874e",
-  done__doneStatic = "Fill_done__doneStatic_6c7a7d30",
-  complete__visible = "Fill_complete__visible_3f743fe8",
-  edge = "Fill_edge_f22fc9a7",
-  edge__visible = "Fill_edge__visible_3f743fe8",
-  edge__disabled = "Fill_edge__disabled_8e78bf83",
-  edge__noProgress = "Fill_edge__noProgress_387f6e75",
-  styles$a = {
-    base: base$a,
-    filled: filled,
-    done: done,
-    complete: complete,
-    filled__hidden: filled__hidden,
-    filled__disabled: filled__disabled,
-    done__hidden: done__hidden,
-    done__visible: done__visible,
-    fadeInOut: fadeInOut,
-    done__doneStatic: done__doneStatic,
-    complete__visible: complete__visible,
-    edge: edge,
-    edge__visible: edge__visible,
-    edge__disabled: edge__disabled,
-    edge__noProgress: edge__noProgress,
-  },
-  AnimatedImage$1 = animated(Image),
-  Done = reactExports.memo(function ({ animationConfig: e, classNames: t }) {
-    const s = useProgressBar(),
-      { activeComponents: r } = useProgressBar(),
-      n = 100 * s.percentage,
-      a = 100 * (s.previous?.percentage ?? 0),
-      o = void 0 === s.previous ? n : a,
-      i = s.status === statuses.doneStatic,
-      u = useSkipFrame(),
-      [l, c] = useSpring(() => ({ width: o }));
-    return (
-      reactExports.useEffect(() => {
-        u.run(() =>
-          c.start(
-            getBaseAnimationConfig({
-              baseValue: o,
-              newValue: n,
-              animationType: s.animationType,
-              deltaVisible: r.has("delta"),
-              preViewDeltaVisible: r.has("previewDelta"),
-              animationConfig: e,
-            }),
-          ),
-        );
-      }, [n, c, o, s.animationType, e, r, u]),
-      jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-        children: [
-          jsxRuntimeExports.jsx(AnimatedImage$1, {
-            path: `ui.progressbar.bg_pattern_base_done_${s.size}`,
-            className: clsx(
-              t?.done,
-              styles$a.done,
-              !s.progressCompleted && styles$a.done__hidden,
-              s.progressCompleted && (i ? styles$a.done__doneStatic : styles$a.done__visible),
-            ),
-            repeat: "repeat",
-            position: "left top",
-            style: { width: l.width.to((e) => `${e}%`) },
-          }),
-          !i &&
-            jsxRuntimeExports.jsx(AnimatedImage$1, {
-              path: `ui.progressbar.bg_pattern_base_done_complete_${s.size}`,
-              className: clsx(
-                t?.doneComplete,
-                styles$a.complete,
-                s.progressCompleted && styles$a.complete__visible,
-              ),
-              repeat: "repeat",
-              position: "left top",
-              style: { width: l.width.to((e) => `${e}%`) },
-            }),
-        ],
-      })
-    );
-  }),
-  AnimatedImage = animated(Image),
-  Filled = reactExports.memo(function ({ filledPattern: e, animationConfig: t, className: s }) {
-    const r = useProgressBar(),
-      { activeComponents: n } = useProgressBar(),
-      a = useSkipFrame(),
-      o = 100 * r.percentage,
-      i = 100 * (r.previous?.percentage ?? 0),
-      u = void 0 === r.previous ? o : i,
-      [l, c] = useSpring(() => ({ width: u }));
-    return (
-      reactExports.useEffect(() => {
-        a.run(() =>
-          c.start(
-            getBaseAnimationConfig({
-              baseValue: u,
-              newValue: o,
-              animationType: r.animationType,
-              deltaVisible: n.has("delta"),
-              preViewDeltaVisible: n.has("previewDelta"),
-              animationConfig: t,
-            }),
-          ),
-        );
-      }, [c, u, r.animationType, n, o, t, a]),
-      jsxRuntimeExports.jsx(AnimatedImage, {
-        path: e || `ui.progressbar.bg_pattern_base_filled_${r.size}`,
-        className: clsx(
-          s,
-          styles$a.filled,
-          r.status && styles$a[`filled__${r.status}`],
-          r.progressCompleted && styles$a.filled__hidden,
-        ),
-        repeat: "repeat",
-        position: "left top",
-        style: { width: l.width.to((e) => `${e}%`) },
-      })
-    );
-  }),
-  Fill = reactExports.memo(function ({
-    filledPattern: e,
-    classNames: t,
-    className: s,
-    animationConfig: r,
-    ...n
-  }) {
-    const a = useProgressBar(),
-      o = useProgressBarSounds(),
-      i = useSkipFrame(),
-      { activeComponents: u } = useProgressBar(),
-      l = 100 * a.percentage,
-      c = 100 * (a.previous?.percentage ?? 0),
-      d = void 0 === a.previous ? l : c;
-    (useRegisterComponent("fill"),
-      reactExports.useEffect(() => {
-        "growFreeze" === a.animationType &&
-          a.progressCompleted &&
-          !a.activeComponents.has("delta") &&
-          o();
-      }, [a.activeComponents, a.animationType, a.progressCompleted, o]));
-    const [_, m] = useSpring(() => ({ width: d }));
-    return (
-      reactExports.useEffect(() => {
-        i.run(() =>
-          m.start({
-            ...getBaseAnimationConfig({
-              baseValue: d,
-              newValue: l,
-              animationType: a.animationType,
-              deltaVisible: u.has("delta"),
-              preViewDeltaVisible: u.has("previewDelta"),
-              animationConfig: r,
-            }),
-            onStart: () => o(),
-          }),
-        );
-      }, [r, m, d, a.animationType, u, l, o, i]),
-      jsxRuntimeExports.jsxs("div", {
-        className: clsx(styles$a.base, s),
-        children: [
-          jsxRuntimeExports.jsx(animated.div, {
-            className: t?.fill,
-            style: { width: _.width.to((e) => `${e}%`) },
-          }),
-          n.children ??
-            jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-              children: [
-                jsxRuntimeExports.jsx(Filled, {
-                  filledPattern: e,
-                  className: t?.filledPattern,
-                  animationConfig: r,
-                }),
-                jsxRuntimeExports.jsx(Done, { classNames: t, animationConfig: r }),
-              ],
-            }),
-          jsxRuntimeExports.jsx(animated.div, {
-            className: clsx(
-              t?.edge,
-              styles$a.edge,
-              0 === a.percentage && styles$a.edge__noProgress,
-              !u.has("previewDelta") && !a.progressCompleted && styles$a.edge__visible,
-              a.status && styles$a[`edge__${a.status}`],
-            ),
-            style: { left: _.width.to((e) => `${e}%`) },
-          }),
-        ],
-      })
-    );
-  });
-((Fill.Filled = Filled), (Fill.Done = Done));
-const positions = { above: "above", below: "below" },
-  base$9 = "Indicators_f2e99d31",
-  step = "Indicators_step_a78300f3",
-  step__above = "Indicators_step__above_a95c746e",
-  indicator = "Indicators_indicator_8484a8c7",
-  label = "Indicators_label_f8c7ff1e",
-  styles$9 = {
-    base: base$9,
-    step: step,
-    step__above: step__above,
-    indicator: indicator,
-    label: label,
-  };
-function Step({ position: e, value: t, children: s, className: r, classNames: n }) {
-  const a = useProgressBar();
-  return jsxRuntimeExports.jsxs("div", {
-    className: clsx(styles$9.step, styles$9[`step__${e}`], r),
-    style: { left: (t / a.maxValue) * 100 + "%" },
-    children: [
-      e === positions.below &&
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$9.indicator, n?.indicator) }),
-      void 0 !== s &&
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$9.label, n?.label), children: s }),
-      e === positions.above &&
-        jsxRuntimeExports.jsx("div", { className: clsx(styles$9.indicator, n?.indicator) }),
-    ],
-  });
-}
-const Indicators = defineStyledComponent("Indicators", styles$9.base),
-  NumberIndicators = function (e) {
-    const t = useProgressBar();
-    return (
-      useRegisterComponent("stepIndicators"),
-      jsxRuntimeExports.jsx(Indicators, {
-        children: mapRange(e.count, (s) => {
-          const r = (s / (e.count - 1)) * 100,
-            n = t.value >= r && 0 !== t.value;
-          return jsxRuntimeExports.jsx(
-            Step,
-            {
-              position: e.position,
-              value: r,
-              className: clsx(e.classNames?.step, n && e.classNames?.completed),
-              classNames: e.classNames?.stepClassNames,
-              children: e.children ? e.children(s, r, n) : void 0,
-            },
-            s,
-          );
-        }),
-      })
-    );
-  };
-((NumberIndicators.Step = Step), (NumberIndicators.positions = positions));
-const base$8 = "PreviewDelta_86b01c3e",
-  negative = "PreviewDelta_negative_1c375892",
-  positive = "PreviewDelta_positive_be83fc48",
-  negative__visible = "PreviewDelta_negative__visible_19dda1c5",
-  positive__visible = "PreviewDelta_positive__visible_19dda1c5",
-  styles$8 = {
-    base: base$8,
-    negative: negative,
-    positive: positive,
-    negative__visible: negative__visible,
-    positive__visible: positive__visible,
-  };
-function PreviewDelta({ value: e, classNames: t, ref: s, ...r }) {
-  const n = useProgressBar();
-  useRegisterComponent("previewDelta");
-  const a = e - n.value,
-    o = a < 0 ? "negative" : a > 0 ? "positive" : "neutral";
-  if ("neutral" === o) return null;
-  const i = Math.abs(a) / n.maxValue,
-    u = a < 0 ? i : 0,
-    l = 100 * (n.percentage - u),
-    c = 100 * i;
-  return jsxRuntimeExports.jsxs("div", {
-    ...r,
-    "data-name": "PreviewDelta",
-    ref: s,
-    className: clsx(styles$8.base, r.className),
-    children: [
-      jsxRuntimeExports.jsx("div", {
-        style: { left: `${l}%`, width: `${c}%`, ...r.style },
-        className: clsx(
-          t?.negative,
-          styles$8.negative,
-          "negative" === o && styles$8.negative__visible,
-        ),
-      }),
-      jsxRuntimeExports.jsx("div", {
-        style: { left: `${l}%`, width: `${c}%`, ...r.style },
-        className: clsx(
-          t?.positive,
-          styles$8.positive,
-          "positive" === o && styles$8.positive__visible,
-        ),
-      }),
-    ],
-  });
-}
-function ProgressBarProvider(e) {
-  const [t, s] = reactExports.useState(Math.min(e.value, e.maxValue)),
-    [r, n] = reactExports.useState(e.maxValue),
-    a = usePrevious(t),
-    o = usePrevious(r),
-    i = reactExports.useRef(new Set()),
-    u = useEvent((t) => s(Math.min(t, e.maxValue))),
-    l = useEvent((e) => i.current.has(e));
-  (reactExports.useLayoutEffect(() => {
-    u(e.value);
-  }, [e.value, u]),
-    reactExports.useLayoutEffect(() => {
-      n(e.maxValue);
-    }, [e.maxValue]));
-  const c = useEvent((t) => e.onValueChange?.(t));
-  reactExports.useEffect(() => {
-    c(t);
-  }, [c, t]);
-  const d = useEvent((t) => e.onMaxValueChange?.(t));
-  reactExports.useEffect(() => {
-    d(r);
-  }, [d, r]);
-  const _ = reactExports.useMemo(() => {
-    if (void 0 !== a && void 0 !== o) return { value: a, maxValue: o, percentage: a / o };
-  }, [a, o]);
-  assert(r > 0, "ProgressBar: maxValue must be greater than 0");
-  const m = reactExports.useMemo(() => {
-      const s = t / r === 1 && e.status !== statuses.doneInactive;
-      return e.animationType === animations.growFreeze ? s && e.maxValueAchieved : s;
-    }, [r, e.animationType, e.maxValueAchieved, e.status, t]),
-    p = reactExports.useMemo(
-      () => ({
-        value: t,
-        maxValue: r,
-        setValue: u,
-        setMaxValue: n,
-        animationType: e.animationType ?? animations.simple,
-        size: e.size,
-        status: e.status,
-        previous: _,
-        activeComponents: i.current,
-        progressCompleted: m,
-        hasComponent: l,
-        soundTarget: e.soundTarget,
-        silent: e.silent ?? !1,
-        freezeUnlocked: e.maxValueAchieved ?? !1,
-        percentage: t / r,
-      }),
-      [
-        t,
-        r,
-        u,
-        e.animationType,
-        e.size,
-        e.status,
-        e.soundTarget,
-        e.silent,
-        e.maxValueAchieved,
-        _,
-        m,
-        l,
-      ],
-    );
-  return jsxRuntimeExports.jsx(Context.Provider, { value: p, children: e.children });
-}
-const background = "ProgressBar_background_b4143753",
-  base$7 = "ProgressBar_27c2305c",
-  base__medium$1 = "ProgressBar_base__medium_97d40af9",
-  base__large = "ProgressBar_base__large_56a06125",
-  base__disabled = "ProgressBar_base__disabled_c8466b10",
-  base__done = "ProgressBar_base__done_dcd0e31a",
-  border = "ProgressBar_border_cc9e47f4",
-  styles$7 = {
-    background: background,
-    base: base$7,
-    base__medium: base__medium$1,
-    base__large: base__large,
-    base__disabled: base__disabled,
-    base__done: base__done,
-    border: border,
-  },
-  Base$1 = defineStyledComponent("ProgressBar", styles$7.base, {
-    variants: { size: { medium: styles$7.base__medium, large: styles$7.base__large } },
-  }),
-  ProgressBar = function ({
-    size: e = sizes$1.medium,
-    backgroundPattern: t,
-    status: s,
-    className: r,
-    classNames: n,
-    ...a
-  }) {
-    return jsxRuntimeExports.jsx(ProgressBarProvider, {
-      size: e,
-      status: s,
-      ...a,
-      children: jsxRuntimeExports.jsxs(Base$1, {
-        size: e,
-        className: clsx(
-          r,
-          a.value === a.maxValue && s !== statuses.doneInactive && styles$7.base__done,
-        ),
-        children: [
-          jsxRuntimeExports.jsx("div", {
-            className: clsx(styles$7.border, styles$7[`border__${e}`], n?.border),
-          }),
-          jsxRuntimeExports.jsx("div", { className: clsx(styles$7.background, n?.background) }),
-          jsxRuntimeExports.jsx(BackgroundPattern, {
-            backgroundPattern: t,
-            className: n?.backgroundPattern,
-          }),
-          a.children,
-        ],
-      }),
-    });
-  };
-((ProgressBar.Fill = Fill),
-  (ProgressBar.Delta = Delta),
-  (ProgressBar.PreviewDelta = PreviewDelta),
-  (ProgressBar.NumberIndicators = NumberIndicators),
-  (ProgressBar.sizes = sizes$1),
-  (ProgressBar.statuses = statuses),
-  (ProgressBar.animations = animations));
-const BackportTooltip = ({ children: e, ...t }) =>
-    jsxRuntimeExports.jsx(Tooltip$2, {
-      contentId:
-        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
-      ignoreShowDelay: !0,
-      ...t,
-      children: e,
-    }),
-  DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: s }) => {
-    if (!t) return e;
-    const r = jsxRuntimeExports.jsx("div", { className: s, children: e });
-    if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip$1, { ...t, children: r });
-    const { contentId: n } = t;
-    return n
-      ? jsxRuntimeExports.jsx(Tooltip$2, { ...t, contentId: n, children: r })
-      : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: r });
-  };
 var RewardType = ((e) => (
     (e.Items = "items"),
     (e.Equipment = "equipment"),
@@ -13319,7 +12660,24 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
         return e;
     }
   },
-  base$6 = "Reward_c5dc614c",
+  BackportTooltip = ({ children: e, ...t }) =>
+    jsxRuntimeExports.jsx(Tooltip$2, {
+      contentId:
+        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
+      ignoreShowDelay: !0,
+      ...t,
+      children: e,
+    }),
+  DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: s }) => {
+    if (!t) return e;
+    const r = jsxRuntimeExports.jsx("div", { className: s, children: e });
+    if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip$1, { ...t, children: r });
+    const { contentId: n } = t;
+    return n
+      ? jsxRuntimeExports.jsx(Tooltip$2, { ...t, contentId: n, children: r })
+      : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: r });
+  },
+  base$b = "Reward_c5dc614c",
   base__s48x48 = "Reward_base__s48x48_ab59d545",
   base__small$1 = "Reward_base__small_69779e9c",
   base__s80x80 = "Reward_base__s80x80_ab59d545",
@@ -13345,8 +12703,8 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
   info__premiumTank = "Reward_info__premiumTank_67c21f6d",
   title = "Reward_title_50579ad9",
   timer = "Reward_timer_98cb5bca",
-  styles$6 = {
-    base: base$6,
+  styles$c = {
+    base: base$b,
     base__s48x48: base__s48x48,
     base__small: base__small$1,
     base__s80x80: base__s80x80,
@@ -13393,36 +12751,36 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
       E = getFormattedValue(a, o);
     return jsxRuntimeExports.jsxs("div", {
       className: cx(
-        styles$6.base,
-        styles$6[`base__${r}`],
-        NORMALIZE_OVERLAYS_LIST.includes(e) && styles$6.base__normalize,
+        styles$c.base,
+        styles$c[`base__${r}`],
+        NORMALIZE_OVERLAYS_LIST.includes(e) && styles$c.base__normalize,
         l,
       ),
       style: u,
       children: [
         jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
           tooltipArgs: d,
-          className: styles$6.tooltipWrapper,
+          className: styles$c.tooltipWrapper,
           children: jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
             children: [
               jsxRuntimeExports.jsxs("div", {
-                className: cx(styles$6.image, c?.image),
+                className: cx(styles$c.image, c?.image),
                 children: [
                   m &&
                     jsxRuntimeExports.jsx("div", {
-                      className: cx(styles$6.highlight, c?.highlight),
+                      className: cx(styles$c.highlight, c?.highlight),
                       style: {
                         backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${m}_highlight)`,
                       },
                     }),
                   t &&
                     jsxRuntimeExports.jsx("div", {
-                      className: cx(styles$6.icon, c?.rewardIcon),
+                      className: cx(styles$c.icon, c?.rewardIcon),
                       style: { backgroundImage: `url(${t})` },
                     }),
                   p &&
                     jsxRuntimeExports.jsx("div", {
-                      className: cx(styles$6.overlay, c?.overlay),
+                      className: cx(styles$c.overlay, c?.overlay),
                       style: {
                         backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${p}_overlay)`,
                       },
@@ -13432,16 +12790,16 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
               E &&
                 jsxRuntimeExports.jsx("div", {
                   className: cx(
-                    styles$6.info,
-                    styles$6[`info__${e}`],
-                    o === ValueTypes.MULTI && styles$6.info__multi,
+                    styles$c.info,
+                    styles$c[`info__${e}`],
+                    o === ValueTypes.MULTI && styles$c.info__multi,
                     c?.info,
                   ),
                   children: E,
                 }),
               i &&
                 jsxRuntimeExports.jsx("div", {
-                  className: cx(styles$6.title, c?.title),
+                  className: cx(styles$c.title, c?.title),
                   children: i,
                 }),
             ],
@@ -13451,7 +12809,7 @@ const FormatNumber = ({ value: e, format: t = "integral" }) => {
           jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
             tooltipArgs: _,
             children: jsxRuntimeExports.jsx("div", {
-              className: cx(styles$6.timer, c?.periodicIcon),
+              className: cx(styles$c.timer, c?.periodicIcon),
             }),
           }),
       ],
@@ -13525,7 +12883,7 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   },
   formatString = (e, t, s) =>
     e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (s && e in s ? s[e] : splitWords(e, t))),
-  base$5 = "Textbutton_b1283086",
+  base$a = "Textbutton_b1283086",
   base__right = "Textbutton_base__right_78d4c03f",
   icon = "Textbutton_icon_9ba4c60",
   icon__back = "Textbutton_icon__back_599b35e4",
@@ -13541,8 +12899,8 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   goto = "Textbutton_goto_d2c81cbd",
   base__left = "Textbutton_base__left_599b35e4",
   shine = "Textbutton_shine_527e4656",
-  styles$5 = {
-    base: base$5,
+  styles$b = {
+    base: base$a,
     base__right: base__right,
     icon: icon,
     icon__back: icon__back,
@@ -13599,7 +12957,7 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
         [i],
       );
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$5.base, styles$5[`base__${l}`], styles$5[`base__${u}`], r?.base),
+      className: cx(styles$b.base, styles$b[`base__${l}`], styles$b[`base__${u}`], r?.base),
       onMouseEnter: m,
       onMouseLeave: p,
       onMouseDown: E,
@@ -13607,55 +12965,672 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
       onClick: t,
       ..._,
       children: [
-        "info" !== l && jsxRuntimeExports.jsx("div", { className: styles$5.shine }),
+        "info" !== l && jsxRuntimeExports.jsx("div", { className: styles$b.shine }),
         jsxRuntimeExports.jsx("div", {
-          className: cx(styles$5.icon, styles$5[`icon__${l}`], styles$5[`icon__${u}`], r?.icon),
-          children: jsxRuntimeExports.jsx("div", { className: cx(styles$5.glow, r?.glow) }),
+          className: cx(styles$b.icon, styles$b[`icon__${l}`], styles$b[`icon__${u}`], r?.icon),
+          children: jsxRuntimeExports.jsx("div", { className: cx(styles$b.glow, r?.glow) }),
         }),
         jsxRuntimeExports.jsx("div", {
-          className: cx(styles$5.caption, styles$5[`caption__${l}`], r?.caption),
+          className: cx(styles$b.caption, styles$b[`caption__${l}`], r?.caption),
           children: e,
         }),
-        s && jsxRuntimeExports.jsx("div", { className: cx(styles$5.goto, r?.goto), children: s }),
+        s && jsxRuntimeExports.jsx("div", { className: cx(styles$b.goto, r?.goto), children: s }),
       ],
     });
-  },
-  base$4 = "Formattext_bb80854d",
-  styles$4 = { base: base$4 },
-  FormatText = ({
-    binding: e,
-    text: t = "",
-    classMix: s,
-    alignment: r = Alignment.left,
-    formatWithBrackets: n,
-  }) => {
-    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
-    const a = n && e ? format(t, e) : t;
-    return jsxRuntimeExports.jsx(reactExports.Fragment, {
-      children: a
-        .split("\n")
-        .map((t, n) =>
-          jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: cx(styles$4.base, s),
-              children: formatString(t, r, e).map((e, t) =>
-                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
-              ),
-            },
-            `${t}-${n}`,
-          ),
+  };
+function getBaseAnimationConfig({
+  baseValue: e,
+  newValue: t,
+  animationType: s = animations.simple,
+  deltaVisible: r = !1,
+  preViewDeltaVisible: n = !1,
+  animationConfig: a,
+}) {
+  return {
+    from: { width: e },
+    to: { width: t },
+    config: a ?? {
+      duration: (s === animations.simple && r) || (!r && n) ? 0 : DURATION,
+      easing: easings$1.easeInOutCubic,
+    },
+  };
+}
+const DURATION = 600,
+  ANIMATION_CONFIG = { duration: DURATION, easing: easings$1.easeInOutCubic },
+  animations = { simple: "simple", grow: "grow", growFreeze: "growFreeze" },
+  sizes$1 = { medium: "medium", large: "large" },
+  statuses = { disabled: "disabled", doneInactive: "doneInactive", doneStatic: "doneStatic" },
+  Context = reactExports.createContext(void 0);
+function useProgressBar() {
+  const e = reactExports.useContext(Context);
+  if (!e) throw new Error("ProgressBar must be used within a ProgressBar");
+  return e;
+}
+function useRegisterComponent(e) {
+  const { activeComponents: t } = useProgressBar();
+  reactExports.useEffect(
+    () => (
+      t.add(e),
+      () => {
+        t.delete(e);
+      }
+    ),
+    [t, e],
+  );
+}
+const base$9 = "BackgroundPattern_8df99ec8",
+  backgroundPattern = "BackgroundPattern_backgroundPattern_d9136c40",
+  backgroundPattern__medium = "BackgroundPattern_backgroundPattern__medium_84d64a88",
+  backgroundPattern__large = "BackgroundPattern_backgroundPattern__large_3e5537fc",
+  styles$a = {
+    base: base$9,
+    backgroundPattern: backgroundPattern,
+    backgroundPattern__medium: backgroundPattern__medium,
+    backgroundPattern__large: backgroundPattern__large,
+  };
+function getIconPath(e, t) {
+  return t === statuses.disabled
+    ? `ui.progressbar.bg_pattern_base_disabled_${e}`
+    : `ui.progressbar.bg_pattern_base_${e}`;
+}
+const BackgroundPattern = reactExports.memo(function ({ className: e, backgroundPattern: t }) {
+  const s = useProgressBar();
+  return (
+    useRegisterComponent("backgroundPattern"),
+    jsxRuntimeExports.jsx("div", {
+      className: styles$a.base,
+      children: jsxRuntimeExports.jsx(Image, {
+        className: clsx(
+          e,
+          styles$a.backgroundPattern,
+          0 === s.percentage
+            ? styles$a.backgroundPattern__noProgress
+            : styles$a[`backgroundPattern__${s.size}`],
         ),
+        repeat: "repeat",
+        position: "left top",
+        path: t ?? getIconPath(s.size, s.status),
+      }),
+    })
+  );
+});
+function useDeltaSound(e, t) {
+  const s = useProgressBar(),
+    r = useSounds();
+  return useEvent((n) => {
+    if (n)
+      switch (s.animationType) {
+        case "simple":
+          s.progressCompleted
+            ? r.play("increaseDeltaMax", { target: t })
+            : r.play("progressSimple", { target: t });
+          break;
+        case "grow":
+          !(function (n) {
+            if ("growing" === n) return r.play("progressSimple", { target: t });
+            if ("shrinking" === n) {
+              if (s.progressCompleted) return r.play("increaseDeltaMax", { target: t });
+              if (e > 0) return r.play("increaseDelta", { target: t });
+              if (e < 0) r.play("decreaseDelta", { target: t });
+            }
+          })(n);
+          break;
+        case "growFreeze":
+          !(function (s) {
+            e > 0 && "shrinking" === s
+              ? r.play("increaseDeltaMax", { target: t })
+              : r.play("progressSimple", { target: t });
+          })(n);
+          break;
+        default:
+          r.play("progressSimple", { target: t });
+      }
+  });
+}
+const PROGRESS_BAR_TARGET = "progress-bar";
+function useProgressBarSounds(e = 0) {
+  const t = useProgressBar(),
+    s = t.soundTarget ?? PROGRESS_BAR_TARGET,
+    r = useSounds(),
+    n = useDeltaSound(e, s),
+    a = useEvent(() => {
+      t.status !== statuses.doneInactive && t.progressCompleted
+        ? r.play("increaseDeltaMax", { target: s })
+        : r.play("progressSimple", { target: s });
     });
+  return useEvent(({ step: e } = {}) => {
+    if (!t.silent)
+      return t.activeComponents.has("delta") ? n(e) : t.activeComponents.has("fill") ? a() : void 0;
+  });
+}
+const delta = "Delta_eb295acb",
+  delta__increase = "Delta_delta__increase_e6e76b0b",
+  outside = "Delta_outside_b28c01e5",
+  outside__increase = "Delta_outside__increase_91391b24",
+  inside = "Delta_inside_b1b3a5c5",
+  inside__increase = "Delta_inside__increase_fcd871c4",
+  styles$9 = {
+    delta: delta,
+    delta__increase: delta__increase,
+    outside: outside,
+    outside__increase: outside__increase,
+    inside: inside,
+    inside__increase: inside__increase,
   },
-  base$3 = "CloseButton_7488a1b8",
+  Delta = reactExports.memo(function ({
+    from: e,
+    growAnimationConfig: t,
+    shrinkAnimationConfig: s,
+    classNames: r,
+    className: n,
+    steps: a,
+    onState: o,
+    ref: i,
+    ...u
+  }) {
+    const l = reactExports.useRef(null),
+      c = useProgressBar(),
+      [d, _] = useSpring(() => ({ width: 0 })),
+      [m, p] = useSpring(() => ({ width: 0 })),
+      [E, x] = useSpring(() => ({ left: 0, width: 0 })),
+      [f, ...b] = a,
+      [g, h] = reactExports.useState(b),
+      [y, v] = reactExports.useState(f ?? "done"),
+      A = (c.value - e) / c.maxValue,
+      $ = useProgressBarSounds(A);
+    (useRegisterComponent("delta"),
+      reactExports.useEffect(() => {
+        if (0 === A) return;
+        const [e, ...t] = a;
+        (v(e ?? "done"), h(t));
+      }, [_, p, a, A]));
+    const C = useEvent(o ?? noop);
+    reactExports.useEffect(() => C(y), [y, C]);
+    const S = useEvent(() => {
+      const [e, ...t] = g;
+      void 0 !== e ? (v(e), h(t)) : v("done");
+    });
+    return (
+      reactExports.useEffect(() => {
+        const e = l.current;
+        if (!e || 0 === A) return (p.set({ width: 0 }), _.set({ width: 0 }), v("done"), void h([]));
+        const r = 100 * Math.max(0, c.percentage - Math.max(0, A)),
+          n = 100 * Math.abs(A);
+        return (
+          e.classList.toggle(styles$9.delta__increase, A > 0),
+          "growing" === y
+            ? (x.set({ left: r, width: n }),
+              p.set({ width: 100 }),
+              void _.start({
+                from: { width: 0 },
+                to: { width: 100 },
+                config: t ?? ANIMATION_CONFIG,
+                onRest: S,
+                onStart: () => $({ step: y }),
+              }))
+            : "shrinking" === y
+              ? (x.set({ left: r, width: n }),
+                _.set({ width: 100 }),
+                void p.start({
+                  from: { width: 100 },
+                  to: { width: 0 },
+                  config: s ?? ANIMATION_CONFIG,
+                  onRest: S,
+                  onStart: () => $({ step: y }),
+                }))
+              : void 0
+        );
+      }, [x, c.percentage, A, t, _, S, p, $, s, y]),
+      jsxRuntimeExports.jsxs(animated.div, {
+        ...u,
+        ref: assignRefs([i ?? null, l]),
+        className: clsx(n, styles$9.delta),
+        style: { left: E.left.to((e) => `${e}%`), width: E.width.to((e) => `${e}%`) },
+        children: [
+          jsxRuntimeExports.jsxs(animated.div, {
+            ...u,
+            style: { width: m.width.to((e) => `${e}%`) },
+            className: clsx(r?.outside, styles$9.outside, A > 0 && styles$9.outside__increase),
+            children: [
+              jsxRuntimeExports.jsx(animated.div, {
+                style: { width: d.width.to((e) => `${e}%`) },
+                className: clsx(r?.inside, styles$9.inside, A > 0 && styles$9.inside__increase),
+              }),
+              u.children,
+            ],
+          }),
+          u.children,
+        ],
+      })
+    );
+  }),
+  base$8 = "Fill_d056f825",
+  filled = "Fill_filled_c16bdce3",
+  done = "Fill_done_4d97d579",
+  complete = "Fill_complete_2cd6c62b",
+  filled__hidden = "Fill_filled__hidden_4e5b5ebf",
+  filled__disabled = "Fill_filled__disabled_6436ea6a",
+  done__hidden = "Fill_done__hidden_4a8ded52",
+  done__visible = "Fill_done__visible_91e1c2da",
+  fadeInOut = "Fill_fadeInOut_43ad874e",
+  done__doneStatic = "Fill_done__doneStatic_6c7a7d30",
+  complete__visible = "Fill_complete__visible_3f743fe8",
+  edge = "Fill_edge_f22fc9a7",
+  edge__visible = "Fill_edge__visible_3f743fe8",
+  edge__disabled = "Fill_edge__disabled_8e78bf83",
+  edge__noProgress = "Fill_edge__noProgress_387f6e75",
+  styles$8 = {
+    base: base$8,
+    filled: filled,
+    done: done,
+    complete: complete,
+    filled__hidden: filled__hidden,
+    filled__disabled: filled__disabled,
+    done__hidden: done__hidden,
+    done__visible: done__visible,
+    fadeInOut: fadeInOut,
+    done__doneStatic: done__doneStatic,
+    complete__visible: complete__visible,
+    edge: edge,
+    edge__visible: edge__visible,
+    edge__disabled: edge__disabled,
+    edge__noProgress: edge__noProgress,
+  },
+  AnimatedImage$1 = animated(Image),
+  Done = reactExports.memo(function ({ animationConfig: e, classNames: t }) {
+    const s = useProgressBar(),
+      { activeComponents: r } = useProgressBar(),
+      n = 100 * s.percentage,
+      a = 100 * (s.previous?.percentage ?? 0),
+      o = void 0 === s.previous ? n : a,
+      i = s.status === statuses.doneStatic,
+      u = useSkipFrame(),
+      [l, c] = useSpring(() => ({ width: o }));
+    return (
+      reactExports.useEffect(() => {
+        u.run(() =>
+          c.start(
+            getBaseAnimationConfig({
+              baseValue: o,
+              newValue: n,
+              animationType: s.animationType,
+              deltaVisible: r.has("delta"),
+              preViewDeltaVisible: r.has("previewDelta"),
+              animationConfig: e,
+            }),
+          ),
+        );
+      }, [n, c, o, s.animationType, e, r, u]),
+      jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+        children: [
+          jsxRuntimeExports.jsx(AnimatedImage$1, {
+            path: `ui.progressbar.bg_pattern_base_done_${s.size}`,
+            className: clsx(
+              t?.done,
+              styles$8.done,
+              !s.progressCompleted && styles$8.done__hidden,
+              s.progressCompleted && (i ? styles$8.done__doneStatic : styles$8.done__visible),
+            ),
+            repeat: "repeat",
+            position: "left top",
+            style: { width: l.width.to((e) => `${e}%`) },
+          }),
+          !i &&
+            jsxRuntimeExports.jsx(AnimatedImage$1, {
+              path: `ui.progressbar.bg_pattern_base_done_complete_${s.size}`,
+              className: clsx(
+                t?.doneComplete,
+                styles$8.complete,
+                s.progressCompleted && styles$8.complete__visible,
+              ),
+              repeat: "repeat",
+              position: "left top",
+              style: { width: l.width.to((e) => `${e}%`) },
+            }),
+        ],
+      })
+    );
+  }),
+  AnimatedImage = animated(Image),
+  Filled = reactExports.memo(function ({ filledPattern: e, animationConfig: t, className: s }) {
+    const r = useProgressBar(),
+      { activeComponents: n } = useProgressBar(),
+      a = useSkipFrame(),
+      o = 100 * r.percentage,
+      i = 100 * (r.previous?.percentage ?? 0),
+      u = void 0 === r.previous ? o : i,
+      [l, c] = useSpring(() => ({ width: u }));
+    return (
+      reactExports.useEffect(() => {
+        a.run(() =>
+          c.start(
+            getBaseAnimationConfig({
+              baseValue: u,
+              newValue: o,
+              animationType: r.animationType,
+              deltaVisible: n.has("delta"),
+              preViewDeltaVisible: n.has("previewDelta"),
+              animationConfig: t,
+            }),
+          ),
+        );
+      }, [c, u, r.animationType, n, o, t, a]),
+      jsxRuntimeExports.jsx(AnimatedImage, {
+        path: e || `ui.progressbar.bg_pattern_base_filled_${r.size}`,
+        className: clsx(
+          s,
+          styles$8.filled,
+          r.status && styles$8[`filled__${r.status}`],
+          r.progressCompleted && styles$8.filled__hidden,
+        ),
+        repeat: "repeat",
+        position: "left top",
+        style: { width: l.width.to((e) => `${e}%`) },
+      })
+    );
+  }),
+  Fill = reactExports.memo(function ({
+    filledPattern: e,
+    classNames: t,
+    className: s,
+    animationConfig: r,
+    ...n
+  }) {
+    const a = useProgressBar(),
+      o = useProgressBarSounds(),
+      i = useSkipFrame(),
+      { activeComponents: u } = useProgressBar(),
+      l = 100 * a.percentage,
+      c = 100 * (a.previous?.percentage ?? 0),
+      d = void 0 === a.previous ? l : c;
+    (useRegisterComponent("fill"),
+      reactExports.useEffect(() => {
+        "growFreeze" === a.animationType &&
+          a.progressCompleted &&
+          !a.activeComponents.has("delta") &&
+          o();
+      }, [a.activeComponents, a.animationType, a.progressCompleted, o]));
+    const [_, m] = useSpring(() => ({ width: d }));
+    return (
+      reactExports.useEffect(() => {
+        i.run(() =>
+          m.start({
+            ...getBaseAnimationConfig({
+              baseValue: d,
+              newValue: l,
+              animationType: a.animationType,
+              deltaVisible: u.has("delta"),
+              preViewDeltaVisible: u.has("previewDelta"),
+              animationConfig: r,
+            }),
+            onStart: () => o(),
+          }),
+        );
+      }, [r, m, d, a.animationType, u, l, o, i]),
+      jsxRuntimeExports.jsxs("div", {
+        className: clsx(styles$8.base, s),
+        children: [
+          jsxRuntimeExports.jsx(animated.div, {
+            className: t?.fill,
+            style: { width: _.width.to((e) => `${e}%`) },
+          }),
+          n.children ??
+            jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+              children: [
+                jsxRuntimeExports.jsx(Filled, {
+                  filledPattern: e,
+                  className: t?.filledPattern,
+                  animationConfig: r,
+                }),
+                jsxRuntimeExports.jsx(Done, { classNames: t, animationConfig: r }),
+              ],
+            }),
+          jsxRuntimeExports.jsx(animated.div, {
+            className: clsx(
+              t?.edge,
+              styles$8.edge,
+              0 === a.percentage && styles$8.edge__noProgress,
+              !u.has("previewDelta") && !a.progressCompleted && styles$8.edge__visible,
+              a.status && styles$8[`edge__${a.status}`],
+            ),
+            style: { left: _.width.to((e) => `${e}%`) },
+          }),
+        ],
+      })
+    );
+  });
+((Fill.Filled = Filled), (Fill.Done = Done));
+const positions = { above: "above", below: "below" },
+  base$7 = "Indicators_f2e99d31",
+  step = "Indicators_step_a78300f3",
+  step__above = "Indicators_step__above_a95c746e",
+  indicator = "Indicators_indicator_8484a8c7",
+  label = "Indicators_label_f8c7ff1e",
+  styles$7 = {
+    base: base$7,
+    step: step,
+    step__above: step__above,
+    indicator: indicator,
+    label: label,
+  };
+function Step({ position: e, value: t, children: s, className: r, classNames: n }) {
+  const a = useProgressBar();
+  return jsxRuntimeExports.jsxs("div", {
+    className: clsx(styles$7.step, styles$7[`step__${e}`], r),
+    style: { left: (t / a.maxValue) * 100 + "%" },
+    children: [
+      e === positions.below &&
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$7.indicator, n?.indicator) }),
+      void 0 !== s &&
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$7.label, n?.label), children: s }),
+      e === positions.above &&
+        jsxRuntimeExports.jsx("div", { className: clsx(styles$7.indicator, n?.indicator) }),
+    ],
+  });
+}
+const Indicators = defineStyledComponent("Indicators", styles$7.base),
+  NumberIndicators = function (e) {
+    const t = useProgressBar();
+    return (
+      useRegisterComponent("stepIndicators"),
+      jsxRuntimeExports.jsx(Indicators, {
+        children: mapRange(e.count, (s) => {
+          const r = (s / (e.count - 1)) * 100,
+            n = t.value >= r && 0 !== t.value;
+          return jsxRuntimeExports.jsx(
+            Step,
+            {
+              position: e.position,
+              value: r,
+              className: clsx(e.classNames?.step, n && e.classNames?.completed),
+              classNames: e.classNames?.stepClassNames,
+              children: e.children ? e.children(s, r, n) : void 0,
+            },
+            s,
+          );
+        }),
+      })
+    );
+  };
+((NumberIndicators.Step = Step), (NumberIndicators.positions = positions));
+const base$6 = "PreviewDelta_86b01c3e",
+  negative = "PreviewDelta_negative_1c375892",
+  positive = "PreviewDelta_positive_be83fc48",
+  negative__visible = "PreviewDelta_negative__visible_19dda1c5",
+  positive__visible = "PreviewDelta_positive__visible_19dda1c5",
+  styles$6 = {
+    base: base$6,
+    negative: negative,
+    positive: positive,
+    negative__visible: negative__visible,
+    positive__visible: positive__visible,
+  };
+function PreviewDelta({ value: e, classNames: t, ref: s, ...r }) {
+  const n = useProgressBar();
+  useRegisterComponent("previewDelta");
+  const a = e - n.value,
+    o = a < 0 ? "negative" : a > 0 ? "positive" : "neutral";
+  if ("neutral" === o) return null;
+  const i = Math.abs(a) / n.maxValue,
+    u = a < 0 ? i : 0,
+    l = 100 * (n.percentage - u),
+    c = 100 * i;
+  return jsxRuntimeExports.jsxs("div", {
+    ...r,
+    "data-name": "PreviewDelta",
+    ref: s,
+    className: clsx(styles$6.base, r.className),
+    children: [
+      jsxRuntimeExports.jsx("div", {
+        style: { left: `${l}%`, width: `${c}%`, ...r.style },
+        className: clsx(
+          t?.negative,
+          styles$6.negative,
+          "negative" === o && styles$6.negative__visible,
+        ),
+      }),
+      jsxRuntimeExports.jsx("div", {
+        style: { left: `${l}%`, width: `${c}%`, ...r.style },
+        className: clsx(
+          t?.positive,
+          styles$6.positive,
+          "positive" === o && styles$6.positive__visible,
+        ),
+      }),
+    ],
+  });
+}
+function ProgressBarProvider(e) {
+  const [t, s] = reactExports.useState(Math.min(e.value, e.maxValue)),
+    [r, n] = reactExports.useState(e.maxValue),
+    a = usePrevious(t),
+    o = usePrevious(r),
+    i = reactExports.useRef(new Set()),
+    u = useEvent((t) => s(Math.min(t, e.maxValue))),
+    l = useEvent((e) => i.current.has(e));
+  (reactExports.useLayoutEffect(() => {
+    u(e.value);
+  }, [e.value, u]),
+    reactExports.useLayoutEffect(() => {
+      n(e.maxValue);
+    }, [e.maxValue]));
+  const c = useEvent((t) => e.onValueChange?.(t));
+  reactExports.useEffect(() => {
+    c(t);
+  }, [c, t]);
+  const d = useEvent((t) => e.onMaxValueChange?.(t));
+  reactExports.useEffect(() => {
+    d(r);
+  }, [d, r]);
+  const _ = reactExports.useMemo(() => {
+    if (void 0 !== a && void 0 !== o) return { value: a, maxValue: o, percentage: a / o };
+  }, [a, o]);
+  assert(r > 0, "ProgressBar: maxValue must be greater than 0");
+  const m = reactExports.useMemo(() => {
+      const s = t / r === 1 && e.status !== statuses.doneInactive;
+      return e.animationType === animations.growFreeze ? s && e.maxValueAchieved : s;
+    }, [r, e.animationType, e.maxValueAchieved, e.status, t]),
+    p = reactExports.useMemo(
+      () => ({
+        value: t,
+        maxValue: r,
+        setValue: u,
+        setMaxValue: n,
+        animationType: e.animationType ?? animations.simple,
+        size: e.size,
+        status: e.status,
+        previous: _,
+        activeComponents: i.current,
+        progressCompleted: m,
+        hasComponent: l,
+        soundTarget: e.soundTarget,
+        silent: e.silent ?? !1,
+        freezeUnlocked: e.maxValueAchieved ?? !1,
+        percentage: t / r,
+      }),
+      [
+        t,
+        r,
+        u,
+        e.animationType,
+        e.size,
+        e.status,
+        e.soundTarget,
+        e.silent,
+        e.maxValueAchieved,
+        _,
+        m,
+        l,
+      ],
+    );
+  return jsxRuntimeExports.jsx(Context.Provider, { value: p, children: e.children });
+}
+const background = "ProgressBar_background_b4143753",
+  base$5 = "ProgressBar_27c2305c",
+  base__medium$1 = "ProgressBar_base__medium_97d40af9",
+  base__large = "ProgressBar_base__large_56a06125",
+  base__disabled = "ProgressBar_base__disabled_c8466b10",
+  base__done = "ProgressBar_base__done_dcd0e31a",
+  border = "ProgressBar_border_cc9e47f4",
+  styles$5 = {
+    background: background,
+    base: base$5,
+    base__medium: base__medium$1,
+    base__large: base__large,
+    base__disabled: base__disabled,
+    base__done: base__done,
+    border: border,
+  },
+  Base$1 = defineStyledComponent("ProgressBar", styles$5.base, {
+    variants: { size: { medium: styles$5.base__medium, large: styles$5.base__large } },
+  }),
+  ProgressBar = function ({
+    size: e = sizes$1.medium,
+    backgroundPattern: t,
+    status: s,
+    className: r,
+    classNames: n,
+    ...a
+  }) {
+    return jsxRuntimeExports.jsx(ProgressBarProvider, {
+      size: e,
+      status: s,
+      ...a,
+      children: jsxRuntimeExports.jsxs(Base$1, {
+        size: e,
+        className: clsx(
+          r,
+          a.value === a.maxValue && s !== statuses.doneInactive && styles$5.base__done,
+        ),
+        children: [
+          jsxRuntimeExports.jsx("div", {
+            className: clsx(styles$5.border, styles$5[`border__${e}`], n?.border),
+          }),
+          jsxRuntimeExports.jsx("div", { className: clsx(styles$5.background, n?.background) }),
+          jsxRuntimeExports.jsx(BackgroundPattern, {
+            backgroundPattern: t,
+            className: n?.backgroundPattern,
+          }),
+          a.children,
+        ],
+      }),
+    });
+  };
+((ProgressBar.Fill = Fill),
+  (ProgressBar.Delta = Delta),
+  (ProgressBar.PreviewDelta = PreviewDelta),
+  (ProgressBar.NumberIndicators = NumberIndicators),
+  (ProgressBar.sizes = sizes$1),
+  (ProgressBar.statuses = statuses),
+  (ProgressBar.animations = animations));
+const base$4 = "CloseButton_7488a1b8",
   base__medium = "CloseButton_base__medium_97d04067",
   base__small = "CloseButton_base__small_c1b29bae",
   base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
   base__x96x96 = "CloseButton_base__x96x96_8157b84d",
   base__x32x32 = "CloseButton_base__x32x32_6466ea31",
-  styles$3 = {
-    base: base$3,
+  styles$4 = {
+    base: base$4,
     base__medium: base__medium,
     base__small: base__small,
     base__extraSmall: base__extraSmall,
@@ -13676,9 +13651,9 @@ function CloseButton({
   onHover: n,
   onClose: a,
 }) {
-  const o = useUpscale(styles$3[`base__${e}`], styles$3[`base__${upscaleImageSizes[e]}`]);
+  const o = useUpscale(styles$4[`base__${e}`], styles$4[`base__${upscaleImageSizes[e]}`]);
   return jsxRuntimeExports.jsx("div", {
-    className: cx(styles$3.base, o, r),
+    className: cx(styles$4.base, o, r),
     onMouseEnter: () => {
       (play$1.sound(t), n?.());
     },
@@ -13688,7 +13663,35 @@ function CloseButton({
   });
 }
 CloseButton.size = sizes;
-const useMount = (e) => {
+const base$3 = "Formattext_bb80854d",
+  styles$3 = { base: base$3 },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: s,
+    alignment: r = Alignment.left,
+    formatWithBrackets: n,
+  }) => {
+    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
+    const a = n && e ? format(t, e) : t;
+    return jsxRuntimeExports.jsx(reactExports.Fragment, {
+      children: a
+        .split("\n")
+        .map((t, n) =>
+          jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: cx(styles$3.base, s),
+              children: formatString(t, r, e).map((e, t) =>
+                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
+              ),
+            },
+            `${t}-${n}`,
+          ),
+        ),
+    });
+  },
+  useMount = (e) => {
     reactExports.useEffect(e, []);
   },
   base$2 = "Tooltipdecorator_ea72f443",
@@ -13879,7 +13882,7 @@ export {
   VehicleLevel as Z,
   VehicleType as _,
   useSounds as a,
-  findIndexLast as a$,
+  findIndex as a$,
   PlayerInfo as a0,
   TruncatedText as a1,
   pxToRem$1 as a2,
@@ -13913,10 +13916,10 @@ export {
   useEvent as aU,
   OPEN_ANIMATION_DURATION as aV,
   useExternalPaddings as aW,
-  isEqual as aX,
-  createParser as aY,
-  useBackdropTooltip as aZ,
-  every as a_,
+  createParser as aX,
+  useBackdropTooltip as aY,
+  every as aZ,
+  findIndexLast as a_,
   useTabsContext as aa,
   useHandleKeydown as ab,
   keyCodes as ac,
@@ -13944,182 +13947,181 @@ export {
   nationById as ay,
   vehicleState as az,
   add as b,
-  Slottable as b$,
-  findIndex as b0,
-  Accordion as b1,
-  asMemoized as b2,
-  useLazyModel as b3,
-  useKeydownListener as b4,
-  play$1 as b5,
-  some as b6,
-  sizes$b as b7,
-  SimpleTooltip as b8,
-  themes as b9,
-  useScrollByDragElements as bA,
-  Area$1 as bB,
-  dragDirections as bC,
-  List as bD,
-  useHorizontalScroll as bE,
-  throttle as bF,
-  ErrorHandler as bG,
-  Sprite as bH,
-  insertBefore as bI,
-  UnknownVehicleImage as bJ,
-  forceTriggerMouseMove$1 as bK,
-  useDragAndDrop as bL,
-  parseValid as bM,
-  Toggle as bN,
-  toggleSizes as bO,
-  toggleThemes as bP,
-  VehicleRole as bQ,
-  Input as bR,
-  placeholderVisibility as bS,
-  useInput as bT,
-  mouseButtons as bU,
-  DragAndDrop as bV,
-  useDebounce as bW,
-  KeyButton as bX,
-  writeClipboard as bY,
-  useHoverState as bZ,
-  Slot$1 as b_,
-  FormatText$1 as ba,
-  types$3 as bb,
-  BackportTooltip$1 as bc,
-  WithDiscount as bd,
-  filterMap as be,
-  breakpointsByType as bf,
-  CardSingle as bg,
-  Discount as bh,
-  normalizeResource as bi,
-  sizes$c as bj,
-  unsafeGet as bk,
-  useEmitter as bl,
-  clamp as bm,
-  mapExists as bn,
-  filter as bo,
-  useUpscale as bp,
-  BackdropTooltip as bq,
-  useSpecialTooltip as br,
-  DefaultScroll as bs,
-  LazyModel as bt,
-  discountTypes as bu,
-  RentalCounter as bv,
-  directions$1 as bw,
-  useSpecialContextMenu as bx,
-  DisposeBuilder as by,
-  remToPx$1 as bz,
+  useAdaptiveWidth as b$,
+  Accordion as b0,
+  asMemoized as b1,
+  useLazyModel as b2,
+  useKeydownListener as b3,
+  play$1 as b4,
+  some as b5,
+  sizes$b as b6,
+  SimpleTooltip as b7,
+  themes as b8,
+  FormatText$1 as b9,
+  Area$1 as bA,
+  dragDirections as bB,
+  List as bC,
+  useHorizontalScroll as bD,
+  throttle as bE,
+  ErrorHandler as bF,
+  Sprite as bG,
+  insertBefore as bH,
+  UnknownVehicleImage as bI,
+  forceTriggerMouseMove$1 as bJ,
+  useDragAndDrop as bK,
+  parseValid as bL,
+  Toggle as bM,
+  toggleSizes as bN,
+  toggleThemes as bO,
+  VehicleRole as bP,
+  Input as bQ,
+  placeholderVisibility as bR,
+  useInput as bS,
+  mouseButtons as bT,
+  DragAndDrop as bU,
+  useDebounce as bV,
+  KeyButton as bW,
+  writeClipboard as bX,
+  useHoverState as bY,
+  Slot$1 as bZ,
+  Slottable as b_,
+  types$3 as ba,
+  BackportTooltip$1 as bb,
+  WithDiscount as bc,
+  filterMap as bd,
+  breakpointsByType as be,
+  CardSingle as bf,
+  Discount as bg,
+  normalizeResource as bh,
+  sizes$c as bi,
+  unsafeGet as bj,
+  useEmitter as bk,
+  clamp as bl,
+  mapExists as bm,
+  filter as bn,
+  useUpscale as bo,
+  BackdropTooltip as bp,
+  useSpecialTooltip as bq,
+  DefaultScroll as br,
+  LazyModel as bs,
+  discountTypes as bt,
+  RentalCounter as bu,
+  directions$1 as bv,
+  useSpecialContextMenu as bw,
+  DisposeBuilder as bx,
+  remToPx$1 as by,
+  useScrollByDragElements as bz,
   assert as c,
-  getRealFormat as c$,
-  useAdaptiveWidth as c0,
-  ScrollVelocityGuardContent as c1,
-  groupMapBy as c2,
-  toArray as c3,
-  fromModel$1 as c4,
-  roles$1 as c5,
-  perkStates as c6,
-  Tooltip$1 as c7,
-  normilizeVehicleType as c8,
-  createOptionalDLProvider as c9,
-  useWulfTooltip as cA,
-  onRescale as cB,
-  promiseWithResolvers as cC,
-  isEmptyObject as cD,
-  useSoundsOptional as cE,
-  Delta$1 as cF,
-  forEach as cG,
-  chunks as cH,
-  delay as cI,
-  calcPercent as cJ,
-  mapFilter as cK,
-  ImageSize$1 as cL,
-  capitalize as cM,
-  ExtendedText as cN,
-  Timer as cO,
-  sizes$3 as cP,
-  formats as cQ,
-  Reward$1 as cR,
-  getRewardValueType$1 as cS,
-  getRewardImage$1 as cT,
-  formatPrintf$1 as cU,
-  MediaWrapper as cV,
-  imageSizes$1 as cW,
-  currencyTypes as cX,
-  sizes$2 as cY,
-  Slider as cZ,
-  MultilineOverflow as c_,
-  matchPath as ca,
-  useHandleKeyup as cb,
-  Base$g as cc,
-  Waiting as cd,
-  Switcher as ce,
-  overlayTypes as cf,
-  sizes$5 as cg,
-  useScaleState as ch,
-  useResize as ci,
-  isNonNullable as cj,
-  Slot as ck,
-  LoadoutItem as cl,
-  get$1 as cm,
-  JSXBuilder as cn,
-  debounce as co,
-  useInsideEvent as cp,
-  createSoundPlay as cq,
-  SoundsProvider as cr,
-  getItemSizeFolderName as cs,
-  getKeyNameFromScanCode as ct,
-  renderString as cu,
-  subtract as cv,
-  now as cw,
-  useClickOutside as cx,
-  assignRefs as cy,
-  SceneWrapper as cz,
+  useCardContext as c$,
+  ScrollVelocityGuardContent as c0,
+  groupMapBy as c1,
+  toArray as c2,
+  fromModel$1 as c3,
+  roles$1 as c4,
+  perkStates as c5,
+  Tooltip$1 as c6,
+  normilizeVehicleType as c7,
+  createOptionalDLProvider as c8,
+  matchPath as c9,
+  onRescale as cA,
+  promiseWithResolvers as cB,
+  isEmptyObject as cC,
+  useSoundsOptional as cD,
+  Delta$1 as cE,
+  forEach as cF,
+  chunks as cG,
+  delay as cH,
+  calcPercent as cI,
+  mapFilter as cJ,
+  ImageSize$1 as cK,
+  capitalize as cL,
+  ExtendedText as cM,
+  Timer as cN,
+  sizes$3 as cO,
+  formats as cP,
+  Reward$1 as cQ,
+  getRewardValueType$1 as cR,
+  getRewardImage$1 as cS,
+  formatPrintf$1 as cT,
+  MediaWrapper as cU,
+  imageSizes$1 as cV,
+  currencyTypes as cW,
+  sizes$2 as cX,
+  Slider as cY,
+  MultilineOverflow as cZ,
+  getRealFormat as c_,
+  useHandleKeyup as ca,
+  Base$g as cb,
+  Waiting as cc,
+  Switcher as cd,
+  overlayTypes as ce,
+  sizes$5 as cf,
+  useScaleState as cg,
+  useResize as ch,
+  isNonNullable as ci,
+  Slot as cj,
+  LoadoutItem as ck,
+  get$1 as cl,
+  JSXBuilder as cm,
+  debounce as cn,
+  useInsideEvent as co,
+  createSoundPlay as cp,
+  SoundsProvider as cq,
+  getItemSizeFolderName as cr,
+  getKeyNameFromScanCode as cs,
+  renderString as ct,
+  subtract as cu,
+  now as cv,
+  useClickOutside as cw,
+  assignRefs as cx,
+  SceneWrapper as cy,
+  useWulfTooltip as cz,
   comparer as d,
-  useCardContext as d0,
-  readKey as d1,
-  Card as d2,
-  statusTypes as d3,
-  useCardsWrapperContext as d4,
-  CardsWrapper as d5,
-  themes$1 as d6,
-  setContentReady as d7,
-  Background as d8,
-  Switch as d9,
-  FormatText as dA,
-  CloseButton as dB,
-  RewardType as dC,
-  BonusNames as dD,
-  TooltipDecorator as dE,
-  includes as dF,
-  FormatNumber as dG,
-  ValueTypes as dH,
-  Tooltip as dI,
-  Rewards as dJ,
-  ProgressBar$1 as dK,
-  Route as da,
-  RouterContext as db,
-  ONE_DAY as dc,
-  ProgressBar as dd,
-  ImageSize as de,
-  Reward as df,
-  MaskArea$1 as dg,
-  Bar$1 as dh,
-  getRegionalDateTime as di,
-  keyStringCodes as dj,
-  ONE_HOUR as dk,
-  createSimpleGetter as dl,
-  getRewardTooltipConfig as dm,
-  getRewardValueType as dn,
-  Specials as dp,
-  getRewardImage as dq,
-  constFalse as dr,
-  MediaHeight as ds,
-  MediaWidth as dt,
-  useCallbackOnEsc as du,
-  CButton as dv,
-  MediaSize as dw,
-  ButtonSize as dx,
-  formatPrintf as dy,
-  TextButton as dz,
+  readKey as d0,
+  Card as d1,
+  statusTypes as d2,
+  useCardsWrapperContext as d3,
+  CardsWrapper as d4,
+  themes$1 as d5,
+  setContentReady as d6,
+  Background as d7,
+  Switch as d8,
+  Route as d9,
+  RewardType as dA,
+  BonusNames as dB,
+  FormatText as dC,
+  TooltipDecorator as dD,
+  includes as dE,
+  FormatNumber as dF,
+  ValueTypes as dG,
+  Tooltip as dH,
+  Rewards as dI,
+  ProgressBar$1 as dJ,
+  RouterContext as da,
+  getRewardTooltipConfig as db,
+  getRewardValueType as dc,
+  Specials as dd,
+  getRewardImage as de,
+  constFalse as df,
+  ImageSize as dg,
+  Reward as dh,
+  MediaHeight as di,
+  MediaWidth as dj,
+  useCallbackOnEsc as dk,
+  CButton as dl,
+  MediaSize as dm,
+  ButtonSize as dn,
+  formatPrintf as dp,
+  TextButton as dq,
+  ONE_DAY as dr,
+  ProgressBar as ds,
+  MaskArea$1 as dt,
+  Bar$1 as du,
+  getRegionalDateTime as dv,
+  keyStringCodes as dw,
+  ONE_HOUR as dx,
+  createSimpleGetter as dy,
+  CloseButton as dz,
   easings as e,
   format$2 as f,
   find as g,

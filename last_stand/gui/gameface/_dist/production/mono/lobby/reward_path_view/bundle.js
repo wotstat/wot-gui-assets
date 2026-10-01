@@ -1,82 +1,82 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as s,
-  Ca as a,
+  Ba as a,
   En as t,
-  Eo as i,
-  Er as r,
-  G as o,
-  Hr as n,
-  Ii as l,
-  Ir as c,
-  Jn as d,
-  La as m,
+  Er as i,
+  Fi as r,
+  Fr as o,
+  G as n,
+  Ia as l,
+  Jn as c,
+  Ka as d,
+  Lr as m,
   Mn as _,
   Or as u,
-  Rr as p,
-  Va as b,
-  Vn as g,
-  Wa as f,
-  Y as x,
-  _o as h,
-  cr as y,
-  da as j,
-  di as v,
-  fr as A,
-  gi as C,
-  hi as N,
-  jt as w,
-  lr as I,
-  oo as z,
-  pa as P,
-  pr as T,
-  qa as k,
+  Ra as p,
+  Sa as b,
+  To as g,
+  Ua as f,
+  Vn as x,
+  Vr as h,
+  Y as y,
+  _i as j,
+  ao as v,
+  cr as A,
+  fa as C,
+  fr as N,
+  go as w,
+  hi as I,
+  jt as P,
+  lr as T,
+  mi as z,
+  pr as k,
   sr as D,
-  vi as Q,
-  xr as $,
-  ya as S,
-  yo as M,
-  za as H,
+  ua as Q,
+  ui as S,
+  va as $,
+  vo as M,
+  xr as B,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { o as B, s as V } from "../chunks/vendor.js";
-import { n as E } from "../chunks/spring_wrapper.js";
-import { m as F } from "../chunks/sound.js";
-import { a as L, c as W, l as O, o as K, s as q, t as G } from "../chunks/utils.js";
-import { t as J } from "../chunks/story_point.js";
-import { n as Y, r as U, t as X } from "../chunks/sounds.js";
-var [Z, ee] = T("BundleCardProvider")(
+import { o as H, s as V } from "../chunks/vendor.js";
+import { n as F } from "../chunks/spring_wrapper.js";
+import { m as E } from "../chunks/sound.js";
+import { a as L, c as K, l as O, o as W, s as G, t as J } from "../chunks/utils.js";
+import { t as U } from "../chunks/story_point.js";
+import { n as Y, r as q, t as X } from "../chunks/sounds.js";
+var [Z, ee] = k("BundleCardProvider")(
     ({ observableModel: e }) => ({ ...e.primitives(["id", "descriptionKey"]) }),
     ({ externalModel: e }) => ({ click: e.createCallback((e) => ({ id: e }), "onClick") }),
   ),
-  [se, ae] = T()(
+  [se, ae] = k()(
     ({ observableModel: e }) => ({ root: e.object(), bonuses: e.array("bonuses") }),
-    m,
+    l,
   ),
   te = e(M(), 1),
-  [ie, re] = T()(
+  [ie, re] = k()(
     ({ observableModel: e }) => {
       const s = {
           ...e.primitives(["points", "currentArtefactID", "openFromQuestCard"]),
           artefacts: e.array("artefacts"),
         },
-        t = A(() => P(s.artefacts.get(), (e) => e.id === s.currentArtefactID.get())),
-        i = A(() => a(s.artefacts.get(), (e, s) => (e = Math.max(e, s.cost)), 0)),
-        r = A(() => i() * s.artefacts.get().length),
-        o = A(() => {
-          const e = j(s.artefacts.get(), (e) => e.isCompleted).length,
-            a = t(),
-            r = a ? s.points.get() / a.cost : 0;
-          return i() * e + i() * r;
+        a = N(() => C(s.artefacts.get(), (e) => e.id === s.currentArtefactID.get())),
+        t = N(() => b(s.artefacts.get(), (e, s) => (e = Math.max(e, s.cost)), 0)),
+        i = N(() => t() * s.artefacts.get().length),
+        r = N(() => {
+          const e = Q(s.artefacts.get(), (e) => e.isCompleted).length,
+            i = a(),
+            r = i ? s.points.get() / i.cost : 0;
+          return t() * e + t() * r;
         }),
-        n = A(() => 0 === j(s.artefacts.get(), (e) => !e.isCompleted).length);
+        o = N(() => 0 === Q(s.artefacts.get(), (e) => !e.isCompleted).length);
       return {
         ...s,
         computes: {
-          inprogressArtefact: t,
-          maxProgress: r,
-          currentProgress: o,
-          progressionCompleted: n,
+          inprogressArtefact: a,
+          maxProgress: i,
+          currentProgress: r,
+          progressionCompleted: o,
         },
       };
     },
@@ -102,7 +102,7 @@ var [Z, ee] = T("BundleCardProvider")(
     glowSlideVertical: "CallToActionAnimation_glowSlideVertical_7cb89466",
     raysSlideVertical: "CallToActionAnimation_raysSlideVertical_7cb89466",
   },
-  le = C(),
+  le = I(),
   ce = (function (e) {
     return ((e.horizontal = "horizontal"), (e.vertical = "vertical"), e);
   })({});
@@ -152,53 +152,53 @@ function Ne({
   rewards: a,
   className: i,
   inprogress: r,
-  canceledAnim: o,
-  completed: n,
-  callToAction: l,
+  canceledAnim: n,
+  completed: l,
+  callToAction: c,
 }) {
-  const [d, m] = p(() => ({ y: 20, opacity: 0 }));
+  const [u, p] = m(() => ({ y: 20, opacity: 0 }));
   return (
     (0, te.useEffect)(() => {
-      m.start({
+      p.start({
         to: { y: 0, opacity: 1 },
-        delay: o ? 0 : 80 * s + 100,
+        delay: n ? 0 : 80 * s + 100,
         config: { tension: 80, friction: 10 },
-        immediate: o,
+        immediate: n,
         onStart: () => {
-          k.sound(F);
+          d.sound(E);
         },
       });
-    }, [m, o, s]),
-    (0, le.jsxs)(c.div, {
-      className: (0, oe.default)(_e, r && fe, n && ue, i),
-      style: d,
+    }, [p, n, s]),
+    (0, le.jsxs)(o.div, {
+      className: (0, oe.default)(_e, r && fe, l && ue, i),
+      style: u,
       children: [
-        l && (0, le.jsx)(de, { direction: ce.vertical, duration: 900, delay: 3e3 }),
+        c && (0, le.jsx)(de, { direction: ce.vertical, duration: 900, delay: 3e3 }),
         (0, le.jsxs)("div", {
           className: pe,
           children: [
             r && (0, le.jsx)("div", { className: be, style: { animationDuration: "1500ms" } }),
             (0, le.jsx)("div", { className: ge, children: s }),
-            n && (0, le.jsx)("div", { className: xe }),
+            l && (0, le.jsx)("div", { className: xe }),
           ],
         }),
         (0, le.jsxs)("div", {
           className: he,
           children: [
             r && (0, le.jsx)("div", { className: me, style: { animationDuration: "1500ms" } }),
-            S(a, (s, a) =>
+            $(a, (s, a) =>
               (0, le.jsx)(
                 t,
                 {
                   name: s.name,
-                  value: W(s),
-                  className: (0, oe.default)(je, n && ve, "boosterToken" === s.name && Ae),
+                  value: K(s),
+                  className: (0, oe.default)(je, l && ve, "boosterToken" === s.name && Ae),
                   classNames: { rewardIcon: ye },
                   special: s.overlayType,
                   size: _.Small,
-                  image: Ce(s, n),
-                  valueType: q(s.name),
-                  tooltipArgs: K(s),
+                  image: Ce(s, l),
+                  valueType: G(s.name),
+                  tooltipArgs: W(s),
                 },
                 `${s.name}${e}${a}`,
               ),
@@ -209,24 +209,24 @@ function Ne({
     })
   );
 }
-var we = B(function () {
+var we = H(function () {
     const { model: e } = re();
-    return (0, le.jsx)(o, {
-      size: o.sizes.large,
+    return (0, le.jsx)(n, {
+      size: n.sizes.large,
       value: e.computes.currentProgress(),
       maxValue: e.computes.maxProgress(),
-      status: o.statuses.doneInactive,
-      children: (0, le.jsx)(o.Fill, {}),
+      status: n.statuses.doneInactive,
+      children: (0, le.jsx)(n.Fill, {}),
     });
   }),
   Ie = "ProgressionHeader_completedLabel_9abba8c5",
-  ze = "ProgressionHeader_currentProgress_90745a20",
-  Pe = "ProgressionHeader_spIcon_9d24495b",
-  Re = B(function () {
+  Pe = "ProgressionHeader_currentProgress_90745a20",
+  Te = "ProgressionHeader_spIcon_9d24495b",
+  ze = H(function () {
     const { model: e } = re(),
       s = e.computes.inprogressArtefact(),
       a = s?.cost,
-      t = v({ size: J.sizes.s16x16 }, { medium: { size: J.sizes.s24x24 } }),
+      t = S({ size: U.sizes.s16x16 }, { medium: { size: U.sizes.s24x24 } }),
       i = u({ contentId: R.views.last_stand.mono.lobby.tooltips.points_tooltip("resId") });
     return (0, le.jsx)(le.Fragment, {
       children: e.computes.progressionCompleted()
@@ -234,64 +234,64 @@ var we = B(function () {
             className: Ie,
             children: R.strings.last_stand_lobby.rewardPath.completed(),
           })
-        : (0, le.jsx)(d, {
+        : (0, le.jsx)(c, {
             text: R.strings.last_stand_lobby.rewardPath.progress(),
-            alignContent: g.FlexEnd,
+            alignContent: x.FlexEnd,
             binding: {
               artefactIndex: s?.index,
               currentProgress: (0, le.jsx)("div", {
-                className: ze,
+                className: Pe,
                 children: O(e.points.get(), a),
               }),
               maxProgress: a,
               icon: (0, le.jsx)("div", {
                 ...i,
-                className: Pe,
-                children: (0, le.jsx)(J, { size: t.size }),
+                className: Te,
+                children: (0, le.jsx)(U, { size: t.size }),
               }),
             },
           }),
     });
   }),
-  Te = "Artefacts_9c0f750b",
+  Re = "Artefacts_9c0f750b",
   ke = "Artefacts_title_e09aab86",
   De = "Artefacts_list_f836ebac",
   Qe = "Artefacts_item_405af956",
-  $e = "Artefacts_divider_423e6820",
-  Se = "Artefacts_divider__cancel_a2faf44e",
+  Se = "Artefacts_divider_423e6820",
+  $e = "Artefacts_divider__cancel_a2faf44e",
   Me = "Artefacts_progressBar_d08a92a4",
-  He = { from: { width: "0%", opacity: 0 }, to: { width: "100%", opacity: 1 } },
-  Be = {
+  Be = { from: { width: "0%", opacity: 0 }, to: { width: "100%", opacity: 1 } },
+  He = {
     from: { y: 5, x: 0, opacity: 0 },
     to: { y: 0, x: 0, opacity: 0.8 },
     config: { tension: 240, friction: 7 },
   },
-  Ve = B(function ({ canceledAnim: e, className: s }) {
+  Ve = H(function ({ canceledAnim: e, className: s }) {
     const {
       model: { currentArtefactID: a, artefacts: t, openFromQuestCard: i },
     } = re();
     return (0, le.jsxs)("div", {
-      className: (0, oe.default)(Te, s),
+      className: (0, oe.default)(Re, s),
       children: [
-        (0, le.jsx)(E, {
+        (0, le.jsx)(F, {
           className: ke,
-          ...Be,
+          ...He,
           delay: 100,
           isCanceled: e,
-          children: (0, le.jsx)(Re, {}),
+          children: (0, le.jsx)(ze, {}),
         }),
         (0, le.jsxs)("div", {
           className: De,
           children: [
-            (0, le.jsx)(E, {
+            (0, le.jsx)(F, {
               className: Me,
-              ...He,
+              ...Be,
               delay: 900,
               duration: 500,
               isCanceled: e,
               children: (0, le.jsx)(we, {}),
             }),
-            S(t.get(), (s, r) =>
+            $(t.get(), (s, r) =>
               (0, le.jsxs)(
                 "div",
                 {
@@ -305,7 +305,7 @@ var we = B(function () {
                       callToAction: s.id === a.get() && !i.get(),
                     }),
                     r < t.get().length - 1 &&
-                      (0, le.jsx)("div", { className: (0, oe.default)($e, e && Se) }),
+                      (0, le.jsx)("div", { className: (0, oe.default)(Se, e && $e) }),
                   ],
                 },
                 s.id,
@@ -316,34 +316,34 @@ var we = B(function () {
       ],
     });
   }),
-  Ee = "BundleCard_4232f0d2",
-  Fe = "BundleCard_bg_2bc5119",
+  Fe = "BundleCard_4232f0d2",
+  Ee = "BundleCard_bg_2bc5119",
   Le = "BundleCard_name_5f5aae72",
-  We = "BundleCard_button_f32dc703",
-  Oe = i.resolve("strings"),
-  Ke = B(function ({ className: e }) {
+  Ke = "BundleCard_button_f32dc703",
+  Oe = g.resolve("strings"),
+  We = H(function ({ className: e }) {
     const { model: a, controls: t } = ee(),
       {
         breakpoint: { weight: i },
-      } = N(),
-      r = v({ size: s.sizes.extraSmall }, { large: { size: s.sizes.medium } });
+      } = z(),
+      r = S({ size: s.sizes.extraSmall }, { large: { size: s.sizes.medium } });
     return a.id.get()
       ? (0, le.jsxs)("div", {
-          className: h(Ee, e),
+          className: w(Fe, e),
           children: [
-            (0, le.jsx)("div", { className: Fe }),
-            i > Q.medium.weight &&
-              (0, le.jsx)(d, {
+            (0, le.jsx)("div", { className: Ee }),
+            i > j.medium.weight &&
+              (0, le.jsx)(c, {
                 text: Oe.readOrEmpty(
                   `R.strings.last_stand_lobby.bundle.name.${a.descriptionKey.get()}`,
                 ),
                 isTruncationAvailable: !0,
                 isTooltipEnable: !0,
-                justifyContent: g.Center,
+                justifyContent: x.Center,
                 classMix: Le,
               }),
             (0, le.jsx)(s, {
-              className: We,
+              className: Ke,
               theme: s.themes.secondary,
               size: r.size,
               onClick: () => t.click(a.id.get()),
@@ -353,20 +353,20 @@ var we = B(function () {
         })
       : null;
   });
-function qe(e) {
+function Ge(e) {
   const s = R.aliases.last_stand.shared.BundleCard("resId");
-  return (0, le.jsx)(w, {
+  return (0, le.jsx)(P, {
     id: s,
     children: (0, le.jsx)(Z, {
       options: (0, te.useMemo)(() => ({ rootId: s }), [s]),
-      children: (0, le.jsx)(Ke, { ...e }),
+      children: (0, le.jsx)(We, { ...e }),
     }),
   });
 }
-var Ge = "DailyQuestsCard_8452735",
-  Je = "DailyQuestsCard_content_9dfeafcb",
+var Je = "DailyQuestsCard_8452735",
+  Ue = "DailyQuestsCard_content_9dfeafcb",
   Ye = "DailyQuestsCard_timer_88092dd5",
-  Ue = "DailyQuestsCard_icon_e3692c40",
+  qe = "DailyQuestsCard_icon_e3692c40",
   Xe = "DailyQuestsCard_description_716ab6d8",
   Ze = "DailyQuestsCard_base__completed_2dd05187",
   es = "DailyQuestsCard_progress_a181f69d",
@@ -374,97 +374,97 @@ var Ge = "DailyQuestsCard_8452735",
   as = "DailyQuestsCard_progressValue_59475865",
   ts = "DailyQuestsCard_rewards_a8cdf255",
   is = "DailyQuestsCard_reward_461f11ab",
-  rs = B(function ({ className: e, callToAction: s }) {
+  rs = H(function ({ className: e, callToAction: s }) {
     const { model: a } = ae(),
-      { breakpoint: i } = N(),
+      { breakpoint: r } = z(),
       {
-        name: n,
+        name: o,
         conditionName: l,
-        resetTime: c,
+        resetTime: d,
         currentProgress: m,
         maximumProgress: u,
         isCompleted: p,
         isHidden: b,
-        allDailyCompleted: f,
+        allDailyCompleted: g,
       } = a.root.get(),
-      h = r({
+      f = i({
         body: p
           ? R.strings.last_stand_tooltips.daily.timer.bodyCompleted()
           : R.strings.last_stand_tooltips.daily.timer.body(),
       }),
-      y = u > 0,
-      j = i.weight <= Q.medium.weight,
-      v = j ? _.S24x24 : _.Small;
+      h = u > 0,
+      A = r.weight <= j.medium.weight,
+      C = A ? _.S24x24 : _.Small;
     return b
       ? null
       : (0, le.jsx)("div", {
-          className: (0, oe.default)(Ge, p && Ze, e),
+          className: (0, oe.default)(Je, p && Ze, e),
           children: (0, le.jsxs)("div", {
-            className: Je,
+            className: Ue,
             children: [
               s && (0, le.jsx)(de, {}),
-              c > 0 &&
-                (!f || (f && !p)) &&
+              d > 0 &&
+                (!g || (g && !p)) &&
                 (0, le.jsx)("div", {
-                  ...h,
+                  ...f,
                   className: Ye,
-                  children: (0, le.jsx)(x, {
-                    size: j ? x.size.x24x24 : x.size.x32x32,
-                    start: c,
-                    format: x.format.default,
+                  children: (0, le.jsx)(y, {
+                    size: A ? y.size.x24x24 : y.size.x32x32,
+                    start: d,
+                    format: y.format.default,
                   }),
                 }),
               (0, le.jsx)("div", {
-                className: Ue,
+                className: qe,
                 style: {
                   backgroundImage: `url(${p ? "R.images.gui.maps.icons.userMissions.hub.basic.done_icon_m" : `'R.images.gui.maps.icons.userMissions.missionIcons.c_80.${l}_silver'`})`,
                 },
               }),
               (0, le.jsx)(
-                d,
+                c,
                 {
                   classMix: Xe,
-                  text: n,
-                  justifyContent: j ? g.FlexStart : g.Center,
+                  text: o,
+                  justifyContent: A ? x.FlexStart : x.Center,
                   isTruncationAvailable: !0,
                 },
-                `description${i.name}`,
+                `description${r.name}`,
               ),
-              y &&
+              h &&
                 (0, le.jsxs)("div", {
                   className: es,
                   children: [
-                    (0, le.jsx)(d, {
+                    (0, le.jsx)(c, {
                       classMix: as,
                       text: R.strings.last_stand_lobby.common.progress(),
                       binding: {
-                        value: (0, le.jsx)("div", { className: ss, children: z(m, 1) }),
-                        maxValue: z(u, 1),
+                        value: (0, le.jsx)("div", { className: ss, children: v(m, 1) }),
+                        maxValue: v(u, 1),
                       },
                     }),
-                    (0, le.jsx)(o, {
-                      size: o.sizes.medium,
+                    (0, le.jsx)(n, {
+                      size: n.sizes.medium,
                       value: m,
                       maxValue: u + 1,
-                      status: o.statuses.doneInactive,
-                      children: (0, le.jsx)(o.Fill, {}),
+                      status: n.statuses.doneInactive,
+                      children: (0, le.jsx)(n.Fill, {}),
                     }),
                   ],
                 }),
               (0, le.jsx)("div", {
                 className: ts,
-                children: S(a.bonuses.get(), (e, s) =>
+                children: $(a.bonuses.get(), (e, s) =>
                   (0, le.jsx)(
                     t,
                     {
                       name: e.name,
-                      value: W(e),
+                      value: K(e),
                       className: is,
                       special: e.overlayType,
-                      size: v,
-                      image: L(e, v),
-                      valueType: q(e.name),
-                      tooltipArgs: K(e, R.aliases.last_stand.shared.Quests("resId")),
+                      size: C,
+                      image: L(e, C),
+                      valueType: G(e.name),
+                      tooltipArgs: W(e, R.aliases.last_stand.shared.Quests("resId")),
                     },
                     `${e.name}${s}`,
                   ),
@@ -476,7 +476,7 @@ var Ge = "DailyQuestsCard_8452735",
   }),
   os = { rootId: R.aliases.last_stand.shared.Quests("resId") };
 function ns(e) {
-  return (0, le.jsx)(w, {
+  return (0, le.jsx)(P, {
     id: os.rootId,
     children: (0, le.jsx)(se, { options: os, children: (0, le.jsx)(rs, { ...e }) }),
   });
@@ -484,23 +484,23 @@ function ns(e) {
 var ls = "Header_e83ca27a",
   cs = "Header_card_ecb415bd",
   ds = "Header_divider_1ed29076",
-  ms = B(function ({ className: e, canceledAnim: s, playQuestAnimation: a }) {
+  ms = H(function ({ className: e, canceledAnim: s, playQuestAnimation: a }) {
     const { model: t } = ae(),
       { model: i } = ee(),
       r = [
         { component: (0, le.jsx)(ns, { callToAction: a }), visible: !t.root.get().isHidden },
-        { component: (0, le.jsx)(qe, {}), visible: Boolean(i.id.get()) },
+        { component: (0, le.jsx)(Ge, {}), visible: Boolean(i.id.get()) },
       ],
-      o = j(r, (e) => e.visible);
+      o = Q(r, (e) => e.visible);
     return (0, le.jsx)("div", {
-      className: h(ls, e),
-      children: S(o, (e, a) =>
+      className: w(ls, e),
+      children: $(o, (e, a) =>
         (0, le.jsxs)(
           "div",
           {
             className: cs,
             children: [
-              (0, le.jsx)(E, {
+              (0, le.jsx)(F, {
                 from: { y: 15, opacity: 0 },
                 to: { y: 0, opacity: 1 },
                 config: { tension: 180, friction: 12 },
@@ -509,7 +509,7 @@ var ls = "Header_e83ca27a",
                 children: e.component,
               }),
               a !== o.length - 1 &&
-                (0, le.jsx)(E, {
+                (0, le.jsx)(F, {
                   from: { y: 15, opacity: 0 },
                   to: { y: 0, opacity: 1 },
                   config: { tension: 180, friction: 12 },
@@ -533,17 +533,17 @@ var ls = "Header_e83ca27a",
   xs = "RewardPathApp_title_9b71379b",
   hs = "RewardPathApp_icon_36f650db",
   ys = "RewardPathApp_header_aca0c837",
-  js = B(function () {
+  js = H(function () {
     const { model: e, controls: s } = re(),
-      { breakpoint: a } = N();
-    (n(s.close),
+      { breakpoint: a } = z();
+    (h(s.close),
       (0, te.useEffect)(() => {
-        l(() => {
+        r(() => {
           (s.viewLoaded(), f(!0));
         });
       }, [s]));
     const [t, i] = (0, te.useState)(!1),
-      r = u({ contentId: R.views.last_stand.mono.lobby.tooltips.additional_data_tooltip("resId") });
+      o = u({ contentId: R.views.last_stand.mono.lobby.tooltips.additional_data_tooltip("resId") });
     return (0, le.jsxs)("div", {
       className: us,
       onClick: () => i(!0),
@@ -557,11 +557,11 @@ var ls = "Header_e83ca27a",
                 className: fs,
                 children: R.strings.last_stand_lobby.rewardPath.completedTitle(),
               })
-            : (0, le.jsx)(d, {
+            : (0, le.jsx)(c, {
                 text: R.strings.last_stand_lobby.rewardPath.boostTitle(),
                 binding: {
                   icon:
-                    a.weight >= Q.medium.weight ? (0, le.jsx)("div", { ...r, className: hs }) : "",
+                    a.weight >= j.medium.weight ? (0, le.jsx)("div", { ...o, className: hs }) : "",
                 },
               }),
         }),
@@ -573,15 +573,15 @@ var ls = "Header_e83ca27a",
       ],
     });
   }),
-  vs = $([Y, U, X]);
-y(
-  new I()
+  vs = B([Y, q, X]);
+A(
+  new T()
     .addWithProps(D, { soundsOverrides: vs })
     .add(ie)
     .addWithProps(Z, { options: { rootId: R.aliases.last_stand.shared.BundleCard("resId") } })
     .addWithProps(se, { options: { rootId: R.aliases.last_stand.shared.Quests("resId") } })
     .render((0, le.jsx)(js, {})),
 )
-  .then(() => b(document.getElementById("root")))
-  .then(() => H())
+  .then(() => a(document.getElementById("root")))
+  .then(() => p())
   .then(() => f(!1));

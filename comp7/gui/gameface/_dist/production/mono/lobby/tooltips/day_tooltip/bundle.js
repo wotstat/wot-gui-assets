@@ -1,13 +1,13 @@
 import { r as a } from "../../chunks/rolldown-runtime.js";
 import {
-  $ as e,
-  Pa as n,
-  Sr as i,
-  Uo as t,
-  _i as s,
-  fi as r,
-  tt as _,
-  ws as o,
+  Cs as e,
+  Ho as n,
+  Hr as i,
+  Mr as t,
+  Na as s,
+  _i as r,
+  fi as _,
+  q as o,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as d, i as p } from "../../chunks/vendor.js";
@@ -16,9 +16,9 @@ import { t as f } from "../../chunks/get_rank_name.js";
 import { t as h } from "../../chunks/qualification_emblem.js";
 import { t as x } from "../../chunks/tooltip_decorator.js";
 import { t as g } from "../../chunks/tooltips.module.js";
-o();
+e();
 var m = a(p(), 1),
-  [u, y] = s()(({ observableModel: a }) => ({ root: a.object() }), t),
+  [u, y] = r()(({ observableModel: a }) => ({ root: a.object() }), n),
   k = {
     base: "App_b147e243",
     rankContent: "App_rankContent_59a9c25",
@@ -56,7 +56,7 @@ var m = a(p(), 1),
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  A = a(n(), 1),
+  A = a(s(), 1),
   b = d(() => {
     const { model: a } = y(),
       { seasonName: e } = a.root.get();
@@ -85,12 +85,12 @@ var m = a(p(), 1),
     rank: d(() => {
       const { model: a } = y(),
         {
-          seasonName: n,
-          diff: i,
-          rank: t,
+          seasonName: e,
+          diff: n,
+          rank: i,
           division: s,
           ratingPoints: r,
-          rankInactivityPenalty: o,
+          rankInactivityPenalty: _,
         } = a.root.get();
       return (0, A.jsxs)("div", {
         className: k.rankContent,
@@ -98,29 +98,29 @@ var m = a(p(), 1),
           (0, A.jsxs)("div", {
             className: k.rankContainer,
             children: [
-              (0, A.jsx)(c, { rank: t, size: l.x22, seasonName: n, division: s }),
+              (0, A.jsx)(c, { rank: i, size: l.x22, seasonName: e, division: s }),
               (0, A.jsx)("div", {
-                className: (0, m.default)(k.heading, k[`heading__rank_${f[t]}`]),
-                children: (0, A.jsx)(_, { value: r }),
+                className: (0, m.default)(k.heading, k[`heading__rank_${f[i]}`]),
+                children: (0, A.jsx)(o, { value: r }),
               }),
             ],
           }),
-          0 === o
-            ? (0, A.jsx)(e, {
+          0 === _
+            ? (0, A.jsx)(t, {
                 text: `${R.strings.comp7_ext.dayTooltip.ratingDiff()}`,
-                binding: { diff: j(i) },
+                binding: { diff: j(n) },
                 classMix: k.ratingDiffText,
               })
             : (0, A.jsxs)("div", {
                 className: k.penaltyContainer,
                 children: [
                   (0, A.jsx)("div", { className: k.penaltyIcon }),
-                  (0, A.jsx)(e, {
+                  (0, A.jsx)(t, {
                     text: `${R.strings.comp7_ext.dayTooltip.rankInactivity()}`,
                     binding: {
-                      penalty: (0, A.jsx)(e, {
-                        text: `${R.strings.comp7_ext.dayTooltip.rankInactivityPenalty(Math.abs(o))}`,
-                        binding: { pointsCount: o },
+                      penalty: (0, A.jsx)(t, {
+                        text: `${R.strings.comp7_ext.dayTooltip.rankInactivityPenalty(Math.abs(_))}`,
+                        binding: { pointsCount: _ },
                         classMix: k.penaltyText,
                       }),
                     },
@@ -151,28 +151,28 @@ function I({ index: a, currentDayIndex: e, hasBattles: n }) {
 }
 var T = d(function () {
   const { model: a } = y(),
-    { index: n, isQualification: i, rank: t, currentDayIndex: s, hasBattles: r } = a.root.get(),
+    { index: e, isQualification: n, rank: i, currentDayIndex: s, hasBattles: r } = a.root.get(),
     _ =
       v[
         (function ({ isQualification: a, index: e, currentDayIndex: n, rank: i }) {
           return a ? "qualification" : e <= n && i > 0 ? "rank" : "empty";
-        })({ isQualification: i, index: n, currentDayIndex: s, rank: t })
+        })({ isQualification: n, index: e, currentDayIndex: s, rank: i })
       ];
   return _
     ? (0, A.jsxs)("div", {
         className: (0, m.default)(g.base, k.base),
         children: [
           (0, A.jsx)(_, {}),
-          (0, A.jsx)(e, {
-            text: I({ index: n, currentDayIndex: s, hasBattles: r }),
-            binding: { index: n + 1 },
+          (0, A.jsx)(t, {
+            text: I({ index: e, currentDayIndex: s, hasBattles: r }),
+            binding: { index: e + 1 },
             classMix: k.day,
           }),
         ],
       })
     : (console.error("Unreachable code: day_tooltip.tsx"), null);
 });
-r(
+_(
   (0, A.jsx)(u, {
     children: (0, A.jsx)(i, { children: (0, A.jsx)(x, { children: (0, A.jsx)(T, {}) }) }),
   }),

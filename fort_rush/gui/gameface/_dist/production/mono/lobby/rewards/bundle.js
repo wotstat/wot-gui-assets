@@ -1,25 +1,25 @@
 import {
   E as e,
-  dv as a,
-  dw as s,
-  dx as d,
+  dl as a,
+  dm as s,
+  dn as d,
   l as r,
-  dr as i,
+  df as i,
   h as n,
-  de as _,
-  df as t,
+  dg as _,
+  dh as t,
   u as l,
-  b5 as c,
+  b4 as c,
   q as o,
-  du as w,
-  dy as m,
-  dz as b,
+  dk as w,
+  dp as m,
+  dq as b,
   ak as f,
   an as x,
 } from "../chunks/lib.js";
-import { j as u, a5 as p, h, N as j, r as g, ac as N } from "../chunks/vendor.js";
-import { a as v, b as y } from "../chunks/readResource.js";
-import { f as M, g as A, M as I, a as C, R as k, b as z } from "../chunks/helpers.js";
+import { j as u, a5 as p, h, N as j, r as g, aa as N } from "../chunks/vendor.js";
+import { a as v, b as M } from "../chunks/readResource.js";
+import { f as y, g as A, M as I, a as k, R as C, b as z } from "../chunks/helpers.js";
 const $ = "Footer_f09fca09",
   S = "Footer_buttonContainer_cc670971",
   E = (e) => (e >= s.Medium ? d.medium : d.small),
@@ -38,16 +38,16 @@ const $ = "Footer_f09fca09",
     });
   },
   U = "Header_edfdfa4a",
-  O = "Header_title_bef229bc",
-  V = "Header_status_faf7f728",
-  W = "Header_subtitle_1008328a",
-  q = ({ title: e, status: a, subtitle: s }) =>
+  q = "Header_title_bef229bc",
+  O = "Header_status_faf7f728",
+  V = "Header_subtitle_1008328a",
+  W = ({ title: e, status: a, subtitle: s }) =>
     u.jsxs("div", {
       className: U,
       children: [
-        u.jsx("div", { className: O, children: e }),
-        u.jsx("div", { className: V, children: a }),
-        s && u.jsx("div", { className: W, children: s }),
+        u.jsx("div", { className: q, children: e }),
+        u.jsx("div", { className: O, children: a }),
+        s && u.jsx("div", { className: V, children: s }),
       ],
     }),
   [B, P] = r()(
@@ -82,7 +82,7 @@ const $ = "Footer_f09fca09",
       n = r ? i.computes.mainReward(a) : i.computes.additionalReward(a),
       { mediaSize: l } = e(),
       c = l >= s.Medium ? _.Big : _.Small,
-      o = M(n, c);
+      o = y(n, c);
     return u.jsx(t, { ...o, size: c, className: d });
   }),
   G = "AdditionalRewards_8af994f7",
@@ -159,13 +159,13 @@ const $ = "Footer_f09fca09",
       i = d.computes.mainReward(a),
       { name: n, isCompensation: _ } = i,
       [l, o] = g.useState(!0),
-      w = M(i, e, !l, r, !1),
+      w = y(i, e, !l, r, !1),
       { label: m, valueType: b } = w;
     return u.jsx(N, {
       appear: !0,
       in: !0,
       nodeRef: s,
-      timeout: C(a, k),
+      timeout: k(a, C),
       onEntered: () => {
         (c.sound("gui_random_reward_appear"), o(!1));
       },
@@ -249,7 +249,7 @@ const $ = "Footer_f09fca09",
         title: m(Re.rewardsView.subheader(), { subModeName: n.capsUserName() }),
         subtitle: n.rewardsView.header(),
       },
-      t = y(s).library.prime_times_bg();
+      t = M(s).library.prime_times_bg();
     return u.jsxs("div", {
       className: ie,
       style: { backgroundImage: `url('${t}')` },
@@ -272,7 +272,7 @@ const $ = "Footer_f09fca09",
               children: [
                 u.jsx("div", {
                   className: ce,
-                  children: u.jsx(q, { title: _.title, status: _.subtitle }),
+                  children: u.jsx(W, { title: _.title, status: _.subtitle }),
                 }),
                 u.jsxs("div", {
                   className: p(oe),

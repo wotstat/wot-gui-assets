@@ -1,25 +1,25 @@
 import { r as t, t as e } from "./rolldown-runtime.js";
 import {
-  Gi as n,
-  Ki as r,
-  Vi as i,
-  Wi as o,
-  Xa as a,
+  Bi as n,
+  Gi as r,
+  Ja as i,
+  Ui as o,
+  Wi as a,
   Ya as s,
   ci as c,
-  ii as u,
-  li as l,
-  ui as f,
+  li as u,
+  ri as l,
+  si as f,
 } from "./lib.js";
-var h = t(a());
+var h = t(s());
 if (!h.useState) throw new Error("mobx-react-lite requires React with Hooks support");
-if (!f) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
-var d = t(s());
+if (!u) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
+var d = t(i());
 function p(t) {
   t();
 }
 function v(t) {
-  return l(t);
+  return c(t);
 }
 var y,
   m,
@@ -99,7 +99,7 @@ var y,
     (null === (e = t.reaction) || void 0 === e || e.dispose(), (t.reaction = null));
   }),
   x = e((t) => {
-    var e = a();
+    var e = s();
     var n =
         "function" == typeof Object.is
           ? Object.is
@@ -109,7 +109,7 @@ var y,
       r = e.useState,
       i = e.useEffect,
       o = e.useLayoutEffect,
-      s = e.useDebugValue;
+      a = e.useDebugValue;
     function c(t) {
       var e = t.getSnapshot;
       t = t.value;
@@ -129,9 +129,9 @@ var y,
           }
         : function (t, e) {
             var n = e(),
-              a = r({ inst: { value: n, getSnapshot: e } }),
-              u = a[0].inst,
-              l = a[1];
+              s = r({ inst: { value: n, getSnapshot: e } }),
+              u = s[0].inst,
+              l = s[1];
             return (
               o(
                 function () {
@@ -150,7 +150,7 @@ var y,
                 },
                 [t],
               ),
-              s(n),
+              a(n),
               n
             );
           };
@@ -160,7 +160,7 @@ var y,
     e.exports = x();
   })();
 function S(t) {
-  t.reaction = new u("observer".concat(t.name), function () {
+  t.reaction = new l("observer".concat(t.name), function () {
     var e;
     ((t.stateVersion = Symbol()), null === (e = t.onStoreChange) || void 0 === e || e.call(t));
   });
@@ -268,7 +268,7 @@ function j(t, e) {
 var C,
   P,
   k = { $$typeof: !0, render: !0, compare: !0, type: !0, displayName: !0 };
-((P = d.unstable_batchedUpdates) || (P = p), c({ reactionScheduler: P }));
+((P = d.unstable_batchedUpdates) || (P = p), f({ reactionScheduler: P }));
 C = b.finalizeAllImmediately;
 var R = e((t, e) => {
   !(function () {
@@ -311,7 +311,7 @@ function V(t) {
   t();
 }
 function D(t) {
-  return n(t);
+  return a(t);
 }
 var A,
   L,
@@ -391,7 +391,7 @@ var A,
     (null === (e = t.reaction) || void 0 === e || e.dispose(), (t.reaction = null));
   }),
   $ = e((t) => {
-    var e = a();
+    var e = s();
     var n =
         "function" == typeof Object.is
           ? Object.is
@@ -401,7 +401,7 @@ var A,
       r = e.useState,
       i = e.useEffect,
       o = e.useLayoutEffect,
-      s = e.useDebugValue;
+      a = e.useDebugValue;
     function c(t) {
       var e = t.getSnapshot;
       t = t.value;
@@ -421,9 +421,9 @@ var A,
           }
         : function (t, e) {
             var n = e(),
-              a = r({ inst: { value: n, getSnapshot: e } }),
-              u = a[0].inst,
-              l = a[1];
+              s = r({ inst: { value: n, getSnapshot: e } }),
+              u = s[0].inst,
+              l = s[1];
             return (
               o(
                 function () {
@@ -442,7 +442,7 @@ var A,
                 },
                 [t],
               ),
-              s(n),
+              a(n),
               n
             );
           };
@@ -452,7 +452,7 @@ var A,
     e.exports = $();
   })();
 function F(t) {
-  t.reaction = new i("observer".concat(t.name), function () {
+  t.reaction = new n("observer".concat(t.name), function () {
     var e;
     ((t.stateVersion = Symbol()), null === (e = t.onStoreChange) || void 0 === e || e.call(t));
   });
@@ -504,8 +504,8 @@ function U(t, e) {
     throw o;
   return i;
 }
-var q = "function" == typeof Symbol && Symbol.for,
-  B =
+var B = "function" == typeof Symbol && Symbol.for,
+  J =
     null !==
       (L =
         null === (A = Object.getOwnPropertyDescriptor(function () {}, "name")) || void 0 === A
@@ -513,13 +513,13 @@ var q = "function" == typeof Symbol && Symbol.for,
           : A.configurable) &&
     void 0 !== L &&
     L,
-  J = q
+  q = B
     ? Symbol.for("react.forward_ref")
     : "function" == typeof h.forwardRef &&
       (0, h.forwardRef)(function (t) {
         return null;
       }).$$typeof,
-  X = q
+  X = B
     ? Symbol.for("react.memo")
     : "function" == typeof h.memo &&
       (0, h.memo)(function (t) {
@@ -534,7 +534,7 @@ function H(t, e) {
   var r = null !== (n = null == e ? void 0 : e.forwardRef) && void 0 !== n && n,
     i = t,
     o = t.displayName || t.name;
-  if (J && t.$$typeof === J && ((r = !0), "function" != typeof (i = t.render)))
+  if (q && t.$$typeof === q && ((r = !0), "function" != typeof (i = t.render)))
     throw new Error("[mobx-react-lite] `render` property of ForwardRef was not a function");
   var a,
     s,
@@ -545,7 +545,7 @@ function H(t, e) {
     };
   return (
     (c.displayName = t.displayName),
-    B && Object.defineProperty(c, "name", { value: t.name, writable: !0, configurable: !0 }),
+    J && Object.defineProperty(c, "name", { value: t.name, writable: !0, configurable: !0 }),
     t.contextTypes && (c.contextTypes = t.contextTypes),
     r && (c = (0, h.forwardRef)(c)),
     (c = (0, h.memo)(c)),
@@ -933,15 +933,15 @@ var Lt = Nt.Start,
   zt = Nt.Cancel,
   Ft = Nt.NullEvent,
   Ut = Nt.Assign,
-  qt = (Nt.After, Nt.DoneState, Nt.Log),
-  Bt = Nt.Init,
-  Jt = Nt.Invoke,
+  Bt = (Nt.After, Nt.DoneState, Nt.Log),
+  Jt = Nt.Init,
+  qt = Nt.Invoke,
   Xt = (Nt.ErrorExecution, Nt.ErrorPlatform),
   Ht = Nt.ErrorCustom,
   Gt = Nt.Update,
   Wt = Nt.Choose,
   Yt = Nt.Pure,
-  Kt = kt({ type: Bt });
+  Kt = kt({ type: Jt });
 function Qt(t, e) {
   return (e && e[t]) || void 0;
 }
@@ -1054,7 +1054,7 @@ function ce(t, e, n, r, i, o) {
                 return Y(Y({}, t), { to: c, _event: a, event: a.data, delay: i });
               })(n, u, r, t.options.delays);
               return a;
-            case qt:
+            case Bt:
               return (function (t, e, n) {
                 return Y(Y({}, t), {
                   value: Ot(t.expr) ? t.expr : t.expr(e, n.data, { _event: n }),
@@ -1509,12 +1509,12 @@ function _e(t) {
   return t;
 }
 function Ne(t) {
-  return Y(Y({ type: Jt }, t), {
+  return Y(Y({ type: qt }, t), {
     toJSON: function () {
       return (
         t.onDone,
         t.onError,
-        Y(Y({}, K(t, ["onDone", "onError"])), { type: Jt, src: _e(t.src) })
+        Y(Y({}, K(t, ["onDone", "onError"])), { type: qt, src: _e(t.src) })
       );
     },
   });
@@ -2204,7 +2204,7 @@ var Te = "",
               var e;
               return (
                 t.type === Lt &&
-                (null === (e = t.activity) || void 0 === e ? void 0 : e.type) === Jt
+                (null === (e = t.activity) || void 0 === e ? void 0 : e.type) === qt
               );
             })
             .reduce(
@@ -2764,7 +2764,7 @@ function Ue(t) {
     e && e.register(t);
   }
 }
-function qe(t, e) {
+function Be(t, e) {
   void 0 === e && (e = {});
   var n,
     r = t.initialState,
@@ -2818,13 +2818,13 @@ function qe(t, e) {
     c = { parent: e.parent, self: s, id: e.id || "anonymous", observers: i };
   return ((r = t.start ? t.start(c) : r), s);
 }
-var Be,
-  Je = { sync: !1, autoForward: !1 };
+var Je,
+  qe = { sync: !1, autoForward: !1 };
 !(function (t) {
   ((t[(t.NotStarted = 0)] = "NotStarted"),
     (t[(t.Running = 1)] = "Running"),
     (t[(t.Stopped = 2)] = "Stopped"));
-})(Be || (Be = {}));
+})(Je || (Je = {}));
 var Xe,
   He = (function () {
     function t(e, n) {
@@ -2840,15 +2840,15 @@ var Xe,
         (this.eventListeners = new Set()),
         (this.sendListeners = new Set()),
         (this.initialized = !1),
-        (this.status = Be.NotStarted),
+        (this.status = Je.NotStarted),
         (this.children = new Map()),
         (this.forwardTo = new Set()),
         (this.init = this.start),
         (this.send = function (t, e) {
           if (St(t)) return (r.batch(t), r.state);
           var n = kt(Pt(t, e));
-          if (r.status === Be.Stopped) return r.state;
-          if (r.status !== Be.Running && !r.options.deferEvents)
+          if (r.status === Je.Stopped) return r.state;
+          if (r.status !== Je.Running && !r.options.deferEvents)
             throw new Error(
               'Event "'
                 .concat(n.name, '" was sent to uninitialized service "')
@@ -3029,7 +3029,7 @@ var Xe,
       (t.prototype.onTransition = function (t) {
         return (
           this.listeners.add(t),
-          this.status === Be.Running && t(this.state, this.state.event),
+          this.status === Je.Running && t(this.state, this.state.event),
           this
         );
       }),
@@ -3041,7 +3041,7 @@ var Xe,
         return (
           "function" == typeof t ? (r = t) : ((r = t.next.bind(t)), (o = t.complete.bind(t))),
           this.listeners.add(r),
-          this.status === Be.Running && r(this.state),
+          this.status === Je.Running && r(this.state),
           o && this.onDone(o),
           {
             unsubscribe: function () {
@@ -3078,8 +3078,8 @@ var Xe,
       }),
       (t.prototype.start = function (t) {
         var e = this;
-        if (this.status === Be.Running) return this;
-        (Me(this.sessionId, this), (this.initialized = !0), (this.status = Be.Running));
+        if (this.status === Je.Running) return this;
+        (Me(this.sessionId, this), (this.initialized = !0), (this.status = Je.Running));
         var n =
           void 0 === t
             ? this.initialState
@@ -3202,15 +3202,15 @@ var Xe,
         return (
           this.scheduler.clear(),
           (this.initialized = !1),
-          (this.status = Be.Stopped),
+          (this.status = Je.Stopped),
           ze(this.sessionId),
           this
         );
       }),
       (t.prototype.batch = function (t) {
         var e = this;
-        if (this.status === Be.NotStarted && this.options.deferEvents) 0;
-        else if (this.status !== Be.Running)
+        if (this.status === Je.NotStarted && this.options.deferEvents) 0;
+        else if (this.status !== Je.Running)
           throw new Error(
             ""
               .concat(t.length, ' event(s) were sent to uninitialized service "')
@@ -3372,7 +3372,7 @@ var Xe,
           case It:
             this.stopChild(t.activity.id);
             break;
-          case qt:
+          case Bt:
             var m = t.label,
               g = t.value;
             m ? this.logger(m, g) : this.logger(g);
@@ -3427,7 +3427,7 @@ var Xe,
         var r = this;
         void 0 === n && (n = {});
         var i = new t(e, Y(Y({}, this.options), { parent: this, id: n.id || e.id })),
-          o = Y(Y({}, Je), n);
+          o = Y(Y({}, qe), n);
         o.sync &&
           i.onTransition(function (t) {
             r.send(Gt, { state: t, id: i.id });
@@ -3445,7 +3445,7 @@ var Xe,
         );
       }),
       (t.prototype.spawnBehavior = function (t, e) {
-        var n = qe(t, { id: e, parent: this });
+        var n = Be(t, { id: e, parent: this });
         return (this.children.set(e, n), n);
       }),
       (t.prototype.spawnPromise = function (t, e) {
@@ -3647,7 +3647,7 @@ var Xe,
         return this;
       }),
       (t.prototype.getSnapshot = function () {
-        return this.status === Be.NotStarted ? this.initialState : this._state;
+        return this.status === Je.NotStarted ? this.initialState : this._state;
       }),
       (t.defaultOptions = (function (t) {
         return {

@@ -1,71 +1,71 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  $a as s,
-  $i as a,
-  $n as t,
-  An as r,
-  Bi as l,
-  Cn as i,
-  Dn as n,
-  En as o,
-  Fa as c,
-  Fn as d,
-  Gn as u,
-  Gr as m,
-  Ii as _,
-  In as b,
-  Ja as g,
-  Jn as p,
-  Kn as h,
-  La as f,
-  Ln as v,
-  Ni as x,
-  Nn as N,
-  On as j,
-  Pn as y,
-  Qa as S,
-  Qi as T,
-  Qn as w,
-  Rn as I,
-  Sn as P,
-  Tn as C,
-  Wn as A,
-  Wr as E,
-  Xa as D,
-  Xn as F,
-  Yr as k,
+  $n as s,
+  An as a,
+  Ca as t,
+  Cn as r,
+  Dn as l,
+  En as i,
+  Fi as n,
+  Fn as o,
+  Gn as c,
+  Ia as d,
+  In as u,
+  Jn as m,
+  Jr as _,
+  Kn as b,
+  Ln as g,
+  Mi as p,
+  Nn as h,
+  Oa as f,
+  On as v,
+  Pa as x,
+  Pn as N,
+  Qa as j,
+  Qi as y,
+  Qn as S,
+  Rn as T,
+  Sn as w,
+  Tn as I,
+  Ur as P,
+  Wn as C,
+  Wr as A,
+  Xn as E,
+  Ya as D,
+  Za as F,
+  Zi as k,
   Zn as $,
   _a as q,
-  _r as V,
-  aa as G,
-  ca as M,
-  di as O,
-  dr as U,
-  er as L,
-  fr as z,
+  _i as V,
+  _r as M,
+  ai as G,
+  bi as O,
+  ca as U,
+  dr as L,
+  er as z,
+  fr as K,
+  ga as W,
   gr as B,
-  ia as K,
-  ir as W,
-  ka as H,
-  kn as X,
-  la as Q,
-  ma as Z,
-  mi as J,
-  na as Y,
-  nr as ee,
-  oi as se,
-  or as ae,
-  pr as te,
-  qn as re,
+  ia as H,
+  ir as X,
+  kn as Z,
+  nr as Q,
+  or as J,
+  pa as Y,
+  pi as ee,
+  pr as se,
+  qa as ae,
+  qn as te,
+  ra as re,
   rr as le,
-  tr as ie,
-  va as ne,
-  vi as oe,
-  wa as ce,
-  wn as de,
-  xi as ue,
+  sa as ie,
+  ta as ne,
+  tr as oe,
+  ui as ce,
+  vi as de,
+  wn as ue,
   xn as me,
-  yi as _e,
+  zi as _e,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { l as be, u as ge } from "../chunks/vendor.js";
@@ -79,10 +79,10 @@ var je = "squad",
   Ie = (function (e) {
     return ((e[(e.Integer = 0)] = "Integer"), (e[(e.Float = 1)] = "Float"), e);
   })({}),
-  Re = (function (e) {
+  Pe = (function (e) {
     return ((e.Asc = "ascending"), (e.Desc = "descending"), e);
   })({}),
-  Pe = (function (e) {
+  Re = (function (e) {
     return ((e[(e.DESCENDING = -1)] = "DESCENDING"), (e[(e.ASCENDING = 1)] = "ASCENDING"), e);
   })({}),
   Ce = (e) => (s) => (a, t) => e.call(null, a, t) * s,
@@ -117,8 +117,8 @@ function Fe(e, s, a) {
       })(t)
     : a;
 }
-var ke = { [Re.Asc]: Pe.ASCENDING, [Re.Desc]: Pe.DESCENDING },
-  $e = { [t]: 4, [ie]: 3, [w]: 2, [L]: 1, SPG: 0 };
+var ke = { [Pe.Asc]: Re.ASCENDING, [Pe.Desc]: Re.DESCENDING },
+  $e = { [s]: 4, [oe]: 3, [S]: 2, [z]: 1, SPG: 0 };
 function qe({ userNames: e }, { userNames: s }) {
   return Ee(e.userName, s.userName);
 }
@@ -129,16 +129,16 @@ function Ve(e) {
     return void 0 === t || void 0 === r ? 0 : t - r;
   };
 }
-function Ge(e) {
+function Me(e) {
   const s = De(e);
   return ({ vehicle: e }, { vehicle: a }) => s(e, a);
 }
-var Me =
+var Ge =
     (e, ...s) =>
     (a, t) => {
       for (let r = 0; r < s.length; r++) {
         const l = e[r] ?? 0,
-          i = (0 !== l ? l : Pe.ASCENDING) * s[r].call(null, a, t);
+          i = (0 !== l ? l : Re.ASCENDING) * s[r].call(null, a, t);
         if (0 !== i) return i;
       }
       return 0;
@@ -157,9 +157,9 @@ var Me =
       ),
     ),
     [we]: Ce(
-      Me(
-        [0, 0, Pe.DESCENDING, Pe.DESCENDING],
-        Ge("tier"),
+      Ge(
+        [0, 0, Re.DESCENDING, Re.DESCENDING],
+        Me("tier"),
         function (e, s) {
           return (function (e, s) {
             const a = $e[e],
@@ -173,7 +173,7 @@ var Me =
                   : -1;
           })(e.vehicle.type, s.vehicle.type);
         },
-        Ge("name"),
+        Me("name"),
         qe,
       ),
     ),
@@ -182,15 +182,15 @@ var Me =
 function Ue(e, s, a, t = Oe, r = ye) {
   const l = ke[a],
     i = t[s] ?? t[r];
-  return i ? G(e, ne).sort(i(l)) : (console.error(`Unexpected sortType: ${s}`), e);
+  return i ? H(e, q).sort(i(l)) : (console.error(`Unexpected sortType: ${s}`), e);
 }
 var Le = e(D(), 1),
   ze = "allies",
-  Be = "enemies",
-  Ke = "empty",
-  We = (0, Le.createContext)(null),
+  Ke = "enemies",
+  We = "empty",
+  Be = (0, Le.createContext)(null),
   He = () => {
-    const e = (0, Le.useContext)(We);
+    const e = (0, Le.useContext)(Be);
     if (!e)
       throw Error(
         "TeamTable Context not found. Make sure your component is wrapped in TeamTableConfigContext.Provider.",
@@ -198,9 +198,9 @@ var Le = e(D(), 1),
     return e;
   },
   Xe = (0, Le.createContext)(null),
-  Qe = "1",
-  Ze = "2",
-  [Je, Ye] = V()(
+  Ze = "1",
+  Qe = "2",
+  [Je, Ye] = M()(
     ({ observableModel: e }) => {
       const s = {
           root: e.object(),
@@ -225,14 +225,14 @@ var Le = e(D(), 1),
             },
             "teamStats",
           ),
-          selectedTeam: O.box(Ke),
-          selectedPlayerId: O.box(-1),
-          currentTabId: O.box(Qe),
-          animationStatus: O.box(!0),
+          selectedTeam: ce.box(We),
+          selectedPlayerId: ce.box(-1),
+          currentTabId: ce.box(Ze),
+          animationStatus: ce.box(!0),
         },
         a = B(() => {
-          const e = Q(s.allies.get(), (e) => void 0 !== e.squadIndex && e.squadIndex > 0),
-            a = Q(s.enemies.get(), (e) => void 0 !== e.squadIndex && e.squadIndex > 0);
+          const e = U(s.allies.get(), (e) => void 0 !== e.squadIndex && e.squadIndex > 0),
+            a = U(s.enemies.get(), (e) => void 0 !== e.squadIndex && e.squadIndex > 0);
           return e || a;
         }),
         t = B(() => {
@@ -240,7 +240,7 @@ var Le = e(D(), 1),
           return "squad" !== e || a() ? e : "xp";
         }),
         r = B(() => {
-          const e = T(s.allies.get(), (e) => e.isPersonal);
+          const e = k(s.allies.get(), (e) => e.isPersonal);
           return e ? e.squadIndex : -1;
         }),
         l = B((e, a) => Ue(s.enemies.get(), t(), s.sortDirection.get(), e, a)),
@@ -249,27 +249,27 @@ var Le = e(D(), 1),
           const e = s.selectedTeam.get() === ze,
             a = s.selectedPlayerId.get(),
             t = e ? s.allies.get() : s.enemies.get();
-          return T(t, (e) => e.playerIndex === a);
+          return k(t, (e) => e.playerIndex === a);
         }),
         o = B(() => {
           const e = s.singleTeamMode.get() ? s.enemies.get() : s.allies.get();
-          return T(e, (e) => e.isPersonal);
+          return k(e, (e) => e.isPersonal);
         }),
         c = B((e) => {
           const s = n();
-          return !!s && M(s.detailedStatistics, (e, s) => e + 1 + s.details.length, 0) > e;
+          return !!s && ie(s.detailedStatistics, (e, s) => e + 1 + s.details.length, 0) > e;
         }),
         d = B(
           () =>
-            G(s.progressRewards.get(), (e) => ({
+            H(s.progressRewards.get(), (e) => ({
               name: e.name,
-              image: ee(e),
+              image: Q(e),
               value: e.value,
               special: e.overlayType,
-              valueType: W(e.name),
+              valueType: X(e.name),
               tooltipArgs: le({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)),
             })),
-          { equals: q },
+          { equals: W },
         ),
         u = B((e) => {
           const {
@@ -280,8 +280,8 @@ var Le = e(D(), 1),
           let l = t;
           if (!1 === r) {
             const a = s.stageRequiredCounters.get(),
-              t = Y(a, e - 1),
-              r = Y(a, e - 2) ?? 0;
+              t = ne(a, e - 1),
+              r = ne(a, e - 2) ?? 0;
             void 0 === t || t < 0
               ? console.warn(
                   `Progression stage's required points have a value ${t} for stage number ${e}`,
@@ -324,8 +324,8 @@ var Le = e(D(), 1),
         sortType: a,
         sortDirection: t,
         selectedTeam: r,
-        selectedPlayerId: i,
-        animationStatus: n,
+        selectedPlayerId: l,
+        animationStatus: i,
       },
     }) => ({
       closeWindow: e.createCallbackNoArgs("onClose"),
@@ -338,9 +338,9 @@ var Le = e(D(), 1),
         (e, s) => ({ column: e, sortDirection: s }),
         "teamStats.onStatsSorted",
       ),
-      ...l({
+      ..._e({
         updateTeamTableSelectedPlayer: (e, s) => {
-          (r.set(e), i.set(s));
+          (r.set(e), l.set(s));
         },
         updateTeamTableSorting: (e, s) => {
           (a.set(e), t.set(s));
@@ -349,7 +349,7 @@ var Le = e(D(), 1),
           s.set(e);
         },
         setAnimationEnabled: (e) => {
-          n.set(e);
+          i.set(e);
         },
       }),
     }),
@@ -363,7 +363,7 @@ var Le = e(D(), 1),
     configurableCells: [144, 180],
     playerCellOffset: 16,
   },
-  rs = [ue.Large, ue.ExtraLarge],
+  rs = [O.Large, O.ExtraLarge],
   ls = R.images.gui.maps.icons.vehicle,
   is = (e) => e.toString().padStart(2, "0");
 function ns(e) {
@@ -390,25 +390,25 @@ function ds(e, s, a = "") {
 }
 function us(e, s = "{minutes}:{seconds}.{milliseconds}", a = 0, t = "-") {
   if (e <= a) return t;
-  let r = 10 * Math.round((e * f) / 10);
-  const l = Math.trunc(r / (60 * f));
-  r -= l * (60 * f);
-  const i = Math.trunc(r / f);
-  r -= i * f;
+  let r = 10 * Math.round((e * d) / 10);
+  const l = Math.trunc(r / (60 * d));
+  r -= l * (60 * d);
+  const i = Math.trunc(r / d);
+  r -= i * d;
   const n = Math.round(r / 10);
-  return c(s, { minutes: is(l), seconds: is(i), milliseconds: is(n) });
+  return x(s, { minutes: is(l), seconds: is(i), milliseconds: is(n) });
 }
 var ms = (0, Le.createContext)(void 0);
 function _s() {
   const e = (0, Le.useContext)(ms);
-  return (_(void 0 !== e, "useRace must be used under raceContext.Provider"), e);
+  return (n(void 0 !== e, "useRace must be used under raceContext.Provider"), e);
 }
 var bs = "Background_6fcc2e9b",
   gs = "Background_base__team_33e27723",
   ps = "Background_overlay_3abad625",
   hs = "Background_shine_faa4c143",
-  fs = _e(),
-  vs = s.resolve("images"),
+  fs = de(),
+  vs = j.resolve("images"),
   xs = ge(function () {
     const { model: e } = Ye(),
       { position: s, topPlace: a } = _s(),
@@ -417,12 +417,12 @@ var bs = "Background_6fcc2e9b",
       i = `${ve(t, !0)}.battle_results.personal`,
       n = cs(t, r);
     return (0, fs.jsxs)("div", {
-      className: g(bs, l === Ze && gs),
+      className: ae(bs, l === Qe && gs),
       style: { backgroundImage: `url('${n}')` },
       children: [
-        l === Ze && (0, fs.jsx)("div", { className: ps }),
+        l === Qe && (0, fs.jsx)("div", { className: ps }),
         a &&
-          l === Qe &&
+          l === Ze &&
           (0, fs.jsx)("div", {
             className: hs,
             style: { backgroundImage: `url('${vs.readOrEmpty(`${i}.bigShine${s}`)}')` },
@@ -431,14 +431,14 @@ var bs = "Background_6fcc2e9b",
     });
   }),
   Ns = e(be(), 1),
-  js = s.resolve("strings"),
+  js = j.resolve("strings"),
   ys = ge(function ({ ...e }) {
-    const { size: s } = J({ size: I.sizes.medium }, { large: { size: I.sizes.large } });
-    return (0, fs.jsx)(I, {
-      theme: I.themes.primary,
+    const { size: s } = ee({ size: T.sizes.medium }, { large: { size: T.sizes.large } });
+    return (0, fs.jsx)(T, {
+      theme: T.themes.primary,
       size: s,
       ...e,
-      children: (0, fs.jsx)(A, {
+      children: (0, fs.jsx)(C, {
         text: js.readOrEmpty("R.strings.fun_battle_results.continueBtn"),
       }),
     });
@@ -447,14 +447,14 @@ var bs = "Background_6fcc2e9b",
   Ts = "Footer_content_d9781467",
   ws = "Footer_date_d0687d01",
   Is = "Footer_left_4308958a",
-  Rs = "Footer_right_4e012daf",
-  Ps = "Footer_top_38bf7305",
+  Ps = "Footer_right_4e012daf",
+  Rs = "Footer_top_38bf7305",
   Cs = "Footer_bottom_53b70510",
   As = "Footer_dot_b5c004a2",
   Es = "Footer_player_9943fab5",
   Ds = "Footer_button_43641369",
   Fs = "Footer_base__teams_4308958a",
-  ks = s.resolve("strings");
+  ks = j.resolve("strings");
 function $s(e, s) {
   return e
     ? ks.readOrEmpty("R.strings.fun_battle_results.resultRace.footerSubtitle.inTop")
@@ -467,9 +467,9 @@ var qs = ge(function () {
       r = e.currentTabId.get(),
       l = e.computes.currentPlayer();
     return (
-      E(s.closeWindow),
+      P(s.closeWindow),
       (0, fs.jsxs)("div", {
-        className: (0, Ns.default)(Ss, r === Ze && Fs),
+        className: (0, Ns.default)(Ss, r === Qe && Fs),
         children: [
           (0, fs.jsxs)("div", {
             className: Ts,
@@ -478,7 +478,7 @@ var qs = ge(function () {
                 className: Is,
                 children: [
                   (0, fs.jsxs)("div", {
-                    className: Ps,
+                    className: Rs,
                     children: [
                       t.modeName,
                       (0, fs.jsx)("div", { className: As }),
@@ -489,16 +489,16 @@ var qs = ge(function () {
                   }),
                   (0, fs.jsx)("div", {
                     className: Cs,
-                    children: (0, fs.jsx)(A, {
+                    children: (0, fs.jsx)(C, {
                       text: ks.readOrEmpty(
                         "R.strings.fun_battle_results.resultRace.footerSubtitle.battleEnded",
                       ),
                       params: {
                         time: (0, fs.jsx)("div", {
                           className: ws,
-                          children: (0, fs.jsx)(F, {
+                          children: (0, fs.jsx)(E, {
                             datetime: t.battleStartTime + t.battleDuration,
-                            format: S.ShortDateTime,
+                            format: F.ShortDateTime,
                           }),
                         }),
                       },
@@ -507,9 +507,9 @@ var qs = ge(function () {
                 ],
               }),
               (0, fs.jsxs)("div", {
-                className: Rs,
+                className: Ps,
                 children: [
-                  t.finishReason && (0, fs.jsx)("div", { className: Ps, children: t.finishReason }),
+                  t.finishReason && (0, fs.jsx)("div", { className: Rs, children: t.finishReason }),
                   (0, fs.jsxs)("div", {
                     className: Cs,
                     children: [
@@ -517,7 +517,7 @@ var qs = ge(function () {
                       (0, fs.jsx)("div", { className: As }),
                       (0, fs.jsx)("div", {
                         className: Es,
-                        children: (0, fs.jsx)(u, {
+                        children: (0, fs.jsx)(c, {
                           ...l?.userNames,
                           isKilled: !1,
                           isTeamKiller: !1,
@@ -537,8 +537,8 @@ var qs = ge(function () {
       })
     );
   }),
-  Vs = s.resolve("strings"),
-  Gs = ge(() => {
+  Vs = j.resolve("strings"),
+  Ms = ge(() => {
     const { model: e } = Ye(),
       { subModeAssetsPointer: s } = e.battleInfo.get(),
       a = he({
@@ -548,25 +548,25 @@ var qs = ge(function () {
         path: "navigation",
       }),
       t = [
-        { id: Qe, label: Vs.readOrEmpty(`${a}.battleResults`) },
-        { id: Ze, label: Vs.readOrEmpty(`${a}.teamEfficiency`) },
+        { id: Ze, label: Vs.readOrEmpty(`${a}.battleResults`) },
+        { id: Qe, label: Vs.readOrEmpty(`${a}.teamEfficiency`) },
       ];
-    return (0, fs.jsx)(d.Switcher, {
+    return (0, fs.jsx)(o.Switcher, {
       children: t.map(({ id: e, label: s }) =>
-        (0, fs.jsx)(d.Tab, { tabId: e, children: (0, fs.jsx)(y, { text: s }) }, e),
+        (0, fs.jsx)(o.Tab, { tabId: e, children: (0, fs.jsx)(N, { text: s }) }, e),
       ),
     });
   }),
-  Ms = "LifeStatus_ac2cf2c3",
+  Gs = "LifeStatus_ac2cf2c3",
   Os = "LifeStatus_killer_cac4dca7",
-  Us = s.resolve("strings"),
+  Us = j.resolve("strings"),
   Ls = "R.strings.battle_results.common.vehicleState",
   zs = ({ player: e }) => {
     const { isLeftBattle: s, deathReason: a, killer: t } = e.userStatus,
       { userName: r, isKilled: l } = e.userNames,
       i = Us.readOrEmpty(`${Ls}.${s && e.isPersonal ? "prematureLeave" : "alive"}`);
     return (0, fs.jsx)("div", {
-      className: Ms,
+      className: Gs,
       children:
         !s && l
           ? (0, fs.jsxs)("div", {
@@ -576,8 +576,8 @@ var qs = ge(function () {
                 t.userName !== r &&
                   (0, fs.jsxs)(Le.Fragment, {
                     children: [
-                      (0, fs.jsx)(N, { text: R.strings.common.common.nbsp() }),
-                      (0, fs.jsx)(u, { ...t }),
+                      (0, fs.jsx)(h, { text: R.strings.common.common.nbsp() }),
+                      (0, fs.jsx)(c, { ...t }),
                     ],
                   }),
               ],
@@ -585,13 +585,13 @@ var qs = ge(function () {
           : (0, fs.jsx)("div", { className: Os, children: i }),
     });
   },
-  Bs = "PlayerVehicleInfo_6f34f0a1",
-  Ks = "PlayerVehicleInfo_level_a033807d",
-  Ws = "PlayerVehicleInfo_level__left_5e2bb270",
+  Ks = "PlayerVehicleInfo_6f34f0a1",
+  Ws = "PlayerVehicleInfo_level_a033807d",
+  Bs = "PlayerVehicleInfo_level__left_5e2bb270",
   Hs = "PlayerVehicleInfo_type_23375252",
   Xs = "PlayerVehicleInfo_vehicleName_55830539",
-  Qs = "PlayerVehicleInfo_igr_3f08d9b9",
-  Zs = (function (e) {
+  Zs = "PlayerVehicleInfo_igr_3f08d9b9",
+  Qs = (function (e) {
     return ((e[(e.LEFT = 0)] = "LEFT"), (e[(e.RIGHT = 1)] = "RIGHT"), e);
   })({}),
   Js = (e, s) => {
@@ -614,16 +614,16 @@ var qs = ge(function () {
       alignment: o = 1,
     }) => {
       const { isTeamKiller: c } = t,
-        d = h({ isTeamKiller: c, isKilled: i, isPersonal: r, isSameSquad: l }),
-        u = x(e);
+        d = b({ isTeamKiller: c, isKilled: i, isPersonal: r, isSameSquad: l }),
+        u = p(e);
       return (0, fs.jsxs)("div", {
-        className: Bs,
+        className: Ks,
         style: { color: d },
         children: [
-          (0, fs.jsx)("div", { className: (0, Ns.default)(Ks, 0 === o && Ws), children: u }),
+          (0, fs.jsx)("div", { className: (0, Ns.default)(Ws, 0 === o && Bs), children: u }),
           (0, fs.jsx)("div", { className: Hs, style: Js(s, d) }),
           (0, fs.jsx)("div", { className: Xs, children: a }),
-          n && (0, fs.jsx)("div", { className: Qs }),
+          n && (0, fs.jsx)("div", { className: Zs }),
         ],
       });
     },
@@ -644,7 +644,7 @@ var qs = ge(function () {
     icon: "StatisticsInfoRow_icon_b6fdce56",
   },
   aa = ({ label: e, value: s, paramValueType: a, isSubgroup: t = !1 }) => {
-    const r = G(s, (e) =>
+    const r = H(s, (e) =>
       ((e, s) => {
         switch (e) {
           case ea.Integer:
@@ -674,7 +674,7 @@ var qs = ge(function () {
       children: [
         (0, fs.jsx)(aa, { isSubgroup: !1, ...e }),
         e.details.length > 0 &&
-          G(e.details, (e, s) => (0, fs.jsx)(aa, { isSubgroup: !0, ...e }, s)),
+          H(e.details, (e, s) => (0, fs.jsx)(aa, { isSubgroup: !0, ...e }, s)),
       ],
     }),
   la = "StatisticsInfoRows_4ea1e421",
@@ -683,19 +683,19 @@ var qs = ge(function () {
       s = e.computes.selectedPlayer();
     return (0, fs.jsx)("div", {
       className: la,
-      children: G(s.detailedStatistics, (e, s) => (0, fs.jsx)(ra, { item: e }, s)),
+      children: H(s.detailedStatistics, (e, s) => (0, fs.jsx)(ra, { item: e }, s)),
     });
   }),
   na = "StatisticsInfo_eb64394d",
   oa = "StatisticsInfo_content_85855757",
   ca = ge(() => {
     const { model: e } = Ye(),
-      s = r(),
-      a = e.computes.hasDetailedInfoScroll(23);
+      s = a(),
+      t = e.computes.hasDetailedInfoScroll(23);
     return (0, fs.jsx)("div", {
       className: na,
-      children: a
-        ? (0, fs.jsx)(X.Vertical.Area.Default, {
+      children: t
+        ? (0, fs.jsx)(Z.Vertical.Area.Default, {
             className: oa,
             api: s,
             children: (0, fs.jsx)(ia, {}),
@@ -717,44 +717,44 @@ var qs = ge(function () {
       t = e.computes.selectedPlayer(),
       { userNames: r, squadIndex: l, isPersonal: i, vehicle: n } = t,
       { isKilled: o } = r,
-      { tier: c, type: d, name: _, techName: b, tags: g } = n,
-      p = a === l && a > 0,
-      h = g.indexOf("premiumIGR") > -1,
-      f = () => {
-        (H.sound("play"), s.updateTeamTableSelectedPlayer(Ke, -1));
+      { tier: d, type: u, name: m, techName: _, tags: b } = n,
+      g = a === l && a > 0,
+      p = b.indexOf("premiumIGR") > -1,
+      h = () => {
+        (f.sound("play"), s.updateTeamTableSelectedPlayer(We, -1));
       };
     return (
-      m(Z.ESCAPE, f),
+      A(Y.ESCAPE, h),
       (0, fs.jsxs)("div", {
         className: da,
         children: [
           (0, fs.jsxs)("div", {
             className: ua,
             children: [
-              (0, fs.jsx)("div", { className: ba, style: ns(b) }),
+              (0, fs.jsx)("div", { className: ba, style: ns(_) }),
               (0, fs.jsxs)("div", {
                 className: ma,
                 children: [
                   (0, fs.jsx)("div", {
                     className: _a,
-                    children: (0, fs.jsx)(u, {
+                    children: (0, fs.jsx)(c, {
                       ...t.userNames,
                       isTeamKiller: !1,
                       isAnonymizerShown: !0,
                       isKilled: o,
-                      isSameSquad: p,
+                      isSameSquad: g,
                     }),
                   }),
                   (0, fs.jsxs)("div", {
                     className: ga,
                     children: [
                       (0, fs.jsx)(Ys, {
-                        vehicleLevel: c,
-                        vehicleType: d,
-                        vehicleShortName: _,
+                        vehicleLevel: d,
+                        vehicleType: u,
+                        vehicleShortName: m,
                         userNames: r,
-                        alignment: Zs.LEFT,
-                        isIGR: h,
+                        alignment: Qs.LEFT,
+                        isIGR: p,
                         isPersonal: i,
                         killed: o,
                       }),
@@ -763,7 +763,7 @@ var qs = ge(function () {
                   }),
                 ],
               }),
-              (0, fs.jsx)("div", { className: pa, onClick: f }),
+              (0, fs.jsx)("div", { className: pa, onClick: h }),
             ],
           }),
           (0, fs.jsx)("div", { className: ha, children: (0, fs.jsx)(ca, {}) }),
@@ -808,7 +808,7 @@ var qs = ge(function () {
       className: va.body,
       children: (0, fs.jsx)("div", {
         className: (0, Ns.default)(va.bodyWrapper, s && va.bodyWrapper__shortened),
-        children: G(o, (s, a) =>
+        children: H(o, (s, a) =>
           (0, fs.jsx)(
             n,
             { player: s, selected: r && t === s.playerIndex, alias: e, first: 0 === a },
@@ -820,14 +820,14 @@ var qs = ge(function () {
   }),
   Na = ge(({ alias: e }) => {
     const { model: s } = Ye(),
-      a = (e === ze ? s.allies.get().length : s.enemies.get().length) > 15,
-      t = r();
+      t = (e === ze ? s.allies.get().length : s.enemies.get().length) > 15,
+      r = a();
     return (0, fs.jsx)("div", {
       className: va.body,
-      children: a
-        ? (0, fs.jsx)(X.Vertical.Area.Default, {
+      children: t
+        ? (0, fs.jsx)(Z.Vertical.Area.Default, {
             className: va.content,
-            api: t,
+            api: r,
             children: (0, fs.jsx)(xa, { alias: e }),
           })
         : (0, fs.jsx)(xa, { alias: e, shortened: !0 }),
@@ -860,7 +860,7 @@ var Sa = {
       ],
     }),
   ),
-  Ra = ({
+  Pa = ({
     className: e,
     children: s,
     onSort: a,
@@ -873,8 +873,8 @@ var Sa = {
     columnWidthSmall: c = 0,
     columnWidthLarge: d = 0,
   }) => {
-    const { mediaSize: u } = oe();
-    return (0, fs.jsx)(re, {
+    const { mediaSize: u } = V();
+    return (0, fs.jsx)(te, {
       ...r,
       children: (0, fs.jsxs)("div", {
         className: (0, Ns.default)(
@@ -886,9 +886,9 @@ var Sa = {
         ),
         style: { width: `${rs.includes(u) ? d : c}rem` },
         onClick: () => {
-          o || (H.sound("play"), a(t));
+          o || (f.sound("play"), a(t));
         },
-        onMouseEnter: () => H.sound("highlight"),
+        onMouseEnter: () => f.sound("highlight"),
         children: [
           s,
           i &&
@@ -900,41 +900,41 @@ var Sa = {
       }),
     });
   },
-  Pa = R.strings.battle_results.team,
+  Ra = R.strings.battle_results.team,
   Ca = R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header;
 function Aa(e, s) {
   const a = `${e}Header`,
-    t = s?.team?.$dyn(a) ?? Pa.$dyn(a);
+    t = s?.team?.$dyn(a) ?? Ra.$dyn(a);
   return { header: t?.$dyn("header"), body: t?.$dyn("body") };
 }
 var Ea = ge(({ isAllies: e = !0, onSort: s }) => {
-    const { model: t } = Ye(),
-      { subModeAssetsPointer: r } = t.battleInfo.get(),
-      l = t.detailsColumns.get(),
-      i = t.sortDirection.get(),
-      n = t.computes.activeSortingType(),
-      o = t.singleTeamMode.get(),
-      c = t.computes.hasSquads(),
-      d = i === Re.Asc,
-      { dynamicTexts: u } = pe(null, {
+    const { model: a } = Ye(),
+      { subModeAssetsPointer: t } = a.battleInfo.get(),
+      r = a.detailsColumns.get(),
+      l = a.sortDirection.get(),
+      i = a.computes.activeSortingType(),
+      n = a.singleTeamMode.get(),
+      o = a.computes.hasSquads(),
+      c = l === Pe.Asc,
+      { dynamicTexts: d } = pe(null, {
         poFileName: "fun_battle_results",
-        assetsPointer: r,
+        assetsPointer: t,
         isSubMode: !0,
       }),
-      m = fe(r, !0)?.battle_results?.team_table?.header,
-      { columnsOrder: _, headerIconMapping: b, tableCellsConfig: g } = He();
+      u = fe(t, !0)?.battle_results?.team_table?.header,
+      { columnsOrder: m, headerIconMapping: _, tableCellsConfig: b } = He();
     return (0, fs.jsx)("div", {
       className: va.head,
       children: (0, fs.jsx)("div", {
         className: va.headRow,
-        children: _.map((t, r, i) => {
-          const _ = as.findIndex((e) => e === t),
-            p = a(l, (e) => e === t);
-          if (-1 === _ && (-1 === p || void 0 === p)) return;
-          const h = t === ye,
-            f = o ? u.team.singleTeam() : Pa.stats.$dyn(e ? "ownTeam" : "enemyTeam"),
-            v = 0 === l.length ? 3 : l.length,
-            x = h
+        children: m.map((a, t, l) => {
+          const m = as.findIndex((e) => e === a),
+            g = y(r, (e) => e === a);
+          if (-1 === m && (-1 === g || void 0 === g)) return;
+          const p = a === ye,
+            h = n ? d.team.singleTeam() : Ra.stats.$dyn(e ? "ownTeam" : "enemyTeam"),
+            f = 0 === r.length ? 3 : r.length,
+            v = p
               ? va.headCell__name
               : (function (e) {
                   switch (e) {
@@ -945,34 +945,34 @@ var Ea = ge(({ isAllies: e = !0, onSort: s }) => {
                     default:
                       return va.headCell__icon;
                   }
-                })(t),
-            N = ds(m, Ca, !h && b[t]),
-            j = ja(t, g, v);
+                })(a),
+            x = ds(u, Ca, !p && _[a]),
+            N = ja(a, b, f);
           return (0, fs.jsxs)(
-            Ra,
+            Pa,
             {
-              className: x,
-              active: n === t,
-              reversed: d,
-              last: r === i.length - 1,
-              sortType: t,
+              className: v,
+              active: i === a,
+              reversed: c,
+              last: t === l.length - 1,
+              sortType: a,
               onSort: s,
-              tooltip: Aa(t, u),
-              sortDisabled: "squad" === t && !c,
-              columnWidthSmall: j[0],
-              columnWidthLarge: j[1],
+              tooltip: Aa(a, d),
+              sortDisabled: "squad" === a && !o,
+              columnWidthSmall: N[0],
+              columnWidthLarge: N[1],
               children: [
-                h
-                  ? (0, fs.jsx)("span", { className: va.playerName, children: f })
+                p
+                  ? (0, fs.jsx)("span", { className: va.playerName, children: h })
                   : (0, fs.jsx)("div", {
                       className: va.headIcon,
-                      style: { backgroundImage: `url('${N}')` },
+                      style: { backgroundImage: `url('${x}')` },
                     }),
                 (0, fs.jsx)("div", { className: va.headHover }),
-                r < i.length - 1 && (0, fs.jsx)("div", { className: va.headDivider }),
+                t < l.length - 1 && (0, fs.jsx)("div", { className: va.headDivider }),
               ],
             },
-            t,
+            a,
           );
         }),
       }),
@@ -982,7 +982,7 @@ var Ea = ge(({ isAllies: e = !0, onSort: s }) => {
     const { model: a } = Ye(),
       t = a.selectedTeam.get();
     return (0, fs.jsx)("div", {
-      className: t !== Ke && s !== t ? va.hidden : "",
+      className: t !== We && s !== t ? va.hidden : "",
       children: (0, fs.jsxs)("div", {
         className: va.base,
         children: [
@@ -997,21 +997,21 @@ var Ea = ge(({ isAllies: e = !0, onSort: s }) => {
   $a = "TeamTab_teams__single_3318c8af",
   qa = "TeamTab_detailsWrapper_11a9f895",
   Va = "TeamTab_detailsWrapper__extra_fc556740",
-  Ga = ge(() => {
+  Ma = ge(() => {
     const { model: e, controls: s } = Ye(),
       a = e.sortDirection.get(),
       t = e.computes.activeSortingType(),
       r = e.singleTeamMode.get(),
       l = e.selectedTeam.get(),
-      i = l !== Ke,
+      i = l !== We,
       n = l === ze && e.allies.get().length <= 15,
       { tableCellsConfig: o } = He(),
       c = (0, Le.useCallback)(
         (e) => {
           if (e === t) {
-            const e = a === Re.Desc ? Re.Asc : Re.Desc;
+            const e = a === Pe.Desc ? Pe.Asc : Pe.Desc;
             (s.saveStatsSorting(t, e), s.updateTeamTableSorting(t, e));
-          } else (s.saveStatsSorting(e, Re.Desc), s.updateTeamTableSorting(e, Re.Desc));
+          } else (s.saveStatsSorting(e, Pe.Desc), s.updateTeamTableSorting(e, Pe.Desc));
         },
         [a, t, s],
       );
@@ -1024,18 +1024,18 @@ var Ea = ge(({ isAllies: e = !0, onSort: s }) => {
       children: (0, fs.jsxs)("div", {
         className: (0, Ns.default)(ka, r && $a),
         children: [
-          (0, fs.jsx)(Da, { alias: r ? Be : ze, onSort: c }),
+          (0, fs.jsx)(Da, { alias: r ? Ke : ze, onSort: c }),
           i &&
             (0, fs.jsx)("div", {
               className: (0, Ns.default)(qa, n && Va),
               children: (0, fs.jsx)(fa, {}),
             }),
-          !r && (0, fs.jsx)(Da, { alias: Be, onSort: c }),
+          !r && (0, fs.jsx)(Da, { alias: Ke, onSort: c }),
         ],
       }),
     });
   }),
-  Ma = "finishTime",
+  Ga = "finishTime",
   Oa = "finishPosition";
 function Ua(e) {
   return ({ efficiencyValues: s }, { efficiencyValues: a }) => {
@@ -1046,46 +1046,46 @@ function Ua(e) {
       : (0 === t ? Number.MAX_SAFE_INTEGER : t) - (0 === r ? Number.MAX_SAFE_INTEGER : r);
   };
 }
-var La = [je, Oa, ye, Ma, Te, we],
-  za = { ...es, [Oa]: "finishPosition", [Ma]: "finishTime" },
-  Ba = {
-    ...Oe,
-    [Oa]: Ce(Me([0, Pe.DESCENDING, 0], Ua("finishPosition"), Ve("checkpoints"), qe)),
-    [Ma]: Ce(Me([0, Pe.DESCENDING, 0], Ua("finishTime"), Ve("checkpoints"), qe)),
-  },
+var La = [je, Oa, ye, Ga, Te, we],
+  za = { ...es, [Oa]: "finishPosition", [Ga]: "finishTime" },
   Ka = {
+    ...Oe,
+    [Oa]: Ce(Ge([0, Re.DESCENDING, 0], Ua("finishPosition"), Ve("checkpoints"), qe)),
+    [Ga]: Ce(Ge([0, Re.DESCENDING, 0], Ua("finishTime"), Ve("checkpoints"), qe)),
+  },
+  Wa = {
     freezed: !1,
     withStack: !1,
-    type: n.Growing,
+    type: l.Growing,
     delta: { duration: 2e3, delay: 100 },
     line: { duration: 2e3, delay: 100 },
   },
-  Wa = "Rewards_a1e37c96",
+  Ba = "Rewards_a1e37c96",
   Ha = "Rewards_reward_36fbe6b0",
   Xa = "Rewards_checkmark_4cbfb56a",
-  Qa = "Rewards_item_405577a5",
-  Za = "Rewards_image_74754faa",
+  Za = "Rewards_item_405577a5",
+  Qa = "Rewards_image_74754faa",
   Ja = ({
     data: e,
-    size: s = ae.Big,
+    size: s = J.Big,
     count: a,
     classMix: t,
     rewardItemClassMix: r,
     boxRewardTooltip: l,
-    boxRewardValue: i,
+    boxRewardValue: n,
   }) => {
-    const n = (0, Le.useMemo)(
+    const o = (0, Le.useMemo)(
         () => (a && a < e.length ? `R.images.gui.maps.icons.quests.bonuses.${s}.default` : ""),
         [a, e.length, s],
       ),
       c =
-        i ||
+        n ||
         $(R.strings.tooltips.quests.awards.additional.bottom(), { count: e.length - (a || 0) }),
-      d = (0, Ns.default)(Wa, t),
+      d = (0, Ns.default)(Ba, t),
       u = (0, Ns.default)(Ha, r);
     return (0, fs.jsx)("div", {
       className: d,
-      children: n
+      children: o
         ? (0, fs.jsxs)(fs.Fragment, {
             children: [
               e
@@ -1096,7 +1096,7 @@ var La = [je, Oa, ye, Ma, Te, we],
                     {
                       className: u,
                       children: [
-                        (0, fs.jsx)(o, { size: s, ...e }),
+                        (0, fs.jsx)(i, { size: s, ...e }),
                         (0, fs.jsx)("div", { className: Xa }),
                       ],
                     },
@@ -1106,14 +1106,14 @@ var La = [je, Oa, ye, Ma, Te, we],
               (0, fs.jsxs)("div", {
                 className: u,
                 children: [
-                  (0, fs.jsx)(o, {
+                  (0, fs.jsx)(i, {
                     name: "more",
-                    image: n,
+                    image: o,
                     size: s,
                     value: c,
                     tooltipArgs: l,
-                    className: Qa,
-                    classNames: { image: Za },
+                    className: Za,
+                    classNames: { image: Qa },
                   }),
                   (0, fs.jsx)("div", { className: Xa }),
                 ],
@@ -1126,7 +1126,7 @@ var La = [je, Oa, ye, Ma, Te, we],
               {
                 className: u,
                 children: [
-                  (0, fs.jsx)(o, { size: s, ...e }),
+                  (0, fs.jsx)(i, { size: s, ...e }),
                   (0, fs.jsx)("div", { className: Xa }),
                 ],
               },
@@ -1150,27 +1150,27 @@ var La = [je, Oa, ye, Ma, Te, we],
     reward: "Progress_reward_d9b36722",
     infiniteIcon: "Progress_infiniteIcon_6280120a",
   },
-  et = s.resolve("strings"),
+  et = j.resolve("strings"),
   st = ge(function () {
     const { model: e, controls: s } = Ye(),
       a = e.progress.get(),
       t = a.currentStage !== a.previousStage,
-      r = t
+      l = t
         ? e.computes.progressionValuesWithStageMaximum(a.previousStage).previous
         : e.computes.progressionValues().current,
-      l = k(),
+      i = _(),
       n = e.animationStatus.get(),
-      [o, c] = (0, Le.useState)(n ? r : e.computes.progressionValues().withoutAnimation),
+      [o, c] = (0, Le.useState)(n ? l : e.computes.progressionValues().withoutAnimation),
       [d, u] = (0, Le.useState)(t ? a.previousStage : a.currentStage);
     return (
       (0, Le.useEffect)(() => {
-        if ((n && H.sound("ev_fep_pb_start"), !l))
-          return se(() => {
+        if ((n && f.sound("ev_fep_pb_start"), !i))
+          return G(() => {
             d < a.currentStage
               ? c(e.computes.progressionValuesWithStageMaximum(d).fromZeroToEnd)
               : c(e.computes.progressionValues().current);
           });
-      }, [a.currentStage, e.computes, d, n, l]),
+      }, [a.currentStage, e.computes, d, n, i]),
       (0, fs.jsxs)("div", {
         className: Ya.base,
         children: [
@@ -1179,7 +1179,7 @@ var La = [je, Oa, ye, Ma, Te, we],
             children: [
               (0, fs.jsx)("div", {
                 className: Ya.title,
-                children: (0, fs.jsx)(C, {
+                children: (0, fs.jsx)(I, {
                   text: et.readOrEmpty(
                     "R.strings.fun_battle_results.progress." +
                       (a.isInUnlimitedProgression ? "unlimitedProgression.title" : "title"),
@@ -1198,16 +1198,16 @@ var La = [je, Oa, ye, Ma, Te, we],
           }),
           (0, fs.jsx)("div", {
             className: Ya.bar,
-            children: (0, fs.jsx)(i, {
-              animationSettings: Ka,
-              size: j.Default,
+            children: (0, fs.jsx)(r, {
+              animationSettings: Wa,
+              size: v.Default,
               deltaFrom: o.deltaFrom,
               value: o.value,
               maxValue: o.maxValue,
               additionalKey: d,
               onChangeAnimationState: function (e) {
-                e === de.End &&
-                  (H.sound("ev_fep_pb_stop"),
+                e === ue.End &&
+                  (f.sound("ev_fep_pb_stop"),
                   d < a.currentStage ? u(d + 1) : s.setAnimationEnabled(!1));
               },
             }),
@@ -1221,7 +1221,7 @@ var La = [je, Oa, ye, Ma, Te, we],
                   (0, fs.jsx)("div", { className: Ya.currentCount, children: o.value }),
                   (0, fs.jsx)("div", {
                     className: Ya.slash,
-                    children: (0, fs.jsx)(N, { text: R.strings.common.common.slash() }),
+                    children: (0, fs.jsx)(h, { text: R.strings.common.common.slash() }),
                   }),
                   (0, fs.jsx)("div", { className: Ya.total, children: o.maxValue }),
                 ],
@@ -1229,7 +1229,7 @@ var La = [je, Oa, ye, Ma, Te, we],
               (0, fs.jsx)(Ja, {
                 classMix: Ya.rewards,
                 data: e.computes.rewards(),
-                size: ae.Small,
+                size: J.Small,
                 count: e.computes.rewards().length > 4 ? 3 : void 0,
                 boxRewardTooltip: {
                   contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"),
@@ -1282,7 +1282,7 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
         isSubMode: !0,
       }),
       i = fe(t, !0).battle_results?.stat_list?.big;
-    return (0, fs.jsx)(p, {
+    return (0, fs.jsx)(m, {
       contentId: R.views.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
       args: { paramType: e },
       children: (0, fs.jsxs)("div", {
@@ -1292,7 +1292,7 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
           (0, fs.jsx)("div", { className: lt, children: ct(0, s, a, r) }),
           (0, fs.jsx)("div", {
             className: it,
-            children: (0, fs.jsx)(N, { classMix: nt, text: ds(l, r, e) }),
+            children: (0, fs.jsx)(h, { classMix: nt, text: ds(l, r, e) }),
           }),
         ],
       }),
@@ -1306,7 +1306,7 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
       { subModeAssetsPointer: a } = e.battleInfo.get();
     return (0, fs.jsx)("div", {
       className: ut,
-      children: G(s, (e, s) =>
+      children: H(s, (e, s) =>
         (0, fs.jsx)(
           "div",
           { className: mt, children: (0, fs.jsx)(dt, { ...e, assetsPointer: a }) },
@@ -1329,8 +1329,8 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
     gradientOverlay: "TopPlace_gradientOverlay_64b14dc3",
     shine: "TopPlace_shine_6adf8427",
   },
-  gt = s.resolve("images"),
-  pt = s.resolve("strings"),
+  gt = j.resolve("images"),
+  pt = j.resolve("strings"),
   ht = ge(function () {
     const { model: e } = Ye(),
       { assetsPointer: s } = e.battleInfo.get(),
@@ -1374,8 +1374,8 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
   jt = "PersonalTab_statistics_e08ea9ac",
   yt = "PersonalTab_progress_644ac635",
   St = "PersonalTab_title_62f5526c",
-  Tt = s.resolve("strings"),
-  wt = s.resolve("images"),
+  Tt = j.resolve("strings"),
+  wt = j.resolve("images"),
   It = ge(function () {
     const { model: e } = Ye(),
       { topPlace: s } = _s(),
@@ -1392,7 +1392,7 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
             ? (0, fs.jsx)("div", { className: xt, children: (0, fs.jsx)(ht, {}) })
             : (0, fs.jsx)("div", {
                 className: Nt,
-                children: (0, fs.jsx)(A, {
+                children: (0, fs.jsx)(C, {
                   text: Tt.readOrEmpty(
                     `R.strings.fun_battle_results.resultRace.battleStatus.${a.winStatus}`,
                   ),
@@ -1406,10 +1406,10 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
       }),
     });
   }),
-  Rt = "TableRendererSquad_13d7a80b",
-  Pt = "TableRendererSquad_base__highlighted_28f558d3",
+  Pt = "TableRendererSquad_13d7a80b",
+  Rt = "TableRendererSquad_base__highlighted_28f558d3",
   Ct = ({ squadIndex: e, currentSquadIndex: s }) =>
-    (0, fs.jsx)("div", { className: (0, Ns.default)(Rt, s === e && Pt), children: e }),
+    (0, fs.jsx)("div", { className: (0, Ns.default)(Pt, s === e && Rt), children: e }),
   At = "TableRendererVehicleInfo_7ccead71",
   Et = "TableRendererVehicleInfo_vehicleImage_1b8490ec",
   Dt = "TableRendererVehicleInfo_vehicleImage__isKilled_d9be918a",
@@ -1449,8 +1449,8 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
         className: (0, Ns.default)(kt.activeGlow, kt[`activeGlow__${e}`]),
       }),
     }),
-  Gt = ({ userNames: e, isPersonal: s, isKilled: a, isSameSquad: t, cellsConfig: r }) => {
-    const { mediaSize: l } = oe(),
+  Mt = ({ userNames: e, isPersonal: s, isKilled: a, isSameSquad: t, cellsConfig: r }) => {
+    const { mediaSize: l } = V(),
       i = ja(ye, r),
       n = rs.includes(l) ? i[1] : i[0];
     return (0, fs.jsx)("div", {
@@ -1458,7 +1458,7 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
       style: { width: `${n}rem` },
       children: (0, fs.jsx)("div", {
         style: { width: n - r.playerCellOffset + "rem", marginLeft: `${r.playerCellOffset}rem` },
-        children: (0, fs.jsx)(u, {
+        children: (0, fs.jsx)(c, {
           ...e,
           isAnonymizerShown: s,
           isPersonal: s,
@@ -1468,16 +1468,16 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
       }),
     });
   },
-  Mt = ({ baseStyles: e, columnName: s, value: a, columnsCount: t, cellsConfig: r }) => {
-    const { mediaSize: l } = oe();
+  Gt = ({ baseStyles: e, columnName: s, value: a, columnsCount: t, cellsConfig: r }) => {
+    const { mediaSize: l } = V();
     return (0, fs.jsx)("div", {
       className: e,
       style: ya(s, r, l, t),
       children: (0, fs.jsx)("div", { className: va.value, children: a }),
     });
   },
-  Ot = s.resolve("strings"),
-  Ut = s.resolve("sounds"),
+  Ot = j.resolve("strings"),
+  Ut = j.resolve("sounds"),
   Lt = ge(function ({ player: e, selected: s, alias: a, first: t = !1 }) {
     const { model: r, controls: l } = Ye(),
       i = r.selectedPlayerId.get(),
@@ -1487,28 +1487,28 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
       { vehicleCD: d } = e.vehicle,
       { isKilled: u, isTeamKiller: m } = e.userNames,
       _ = c <= 0,
-      b = n === e.squadIndex && n > 0,
+      g = n === e.squadIndex && n > 0,
       p = r.singleTeamMode.get(),
-      { mediaSize: f } = oe(),
-      { tableCellsConfig: v } = He(),
-      x = 0 === o.length ? 3 : o.length;
-    const N = h({ isTeamKiller: m, isKilled: _, isPersonal: e.isPersonal, isSameSquad: b });
-    return (0, fs.jsx)(P, {
+      { mediaSize: h } = V(),
+      { tableCellsConfig: f } = He(),
+      v = 0 === o.length ? 3 : o.length;
+    const x = b({ isTeamKiller: m, isKilled: _, isPersonal: e.isPersonal, isSameSquad: g });
+    return (0, fs.jsx)(w, {
       args: { databaseID: e.databaseID, vehicleCD: d },
       children: (0, fs.jsxs)("div", {
-        className: g(
+        className: ae(
           va.bodyRow,
           s && va.bodyRow__isActive,
           p && va.bodyRow__nonSelectable,
           t && va.bodyRow__isFirst,
           u && va.bodyRow__isKilled,
         ),
-        style: { color: N },
+        style: { color: x },
         onClick: function () {
           if (p) return;
           Ut.play("yes1");
           const s = i === e.playerIndex;
-          l.updateTeamTableSelectedPlayer(s ? Ke : a, s ? -1 : e.playerIndex);
+          l.updateTeamTableSelectedPlayer(s ? We : a, s ? -1 : e.playerIndex);
         },
         onMouseEnter: function () {
           p || Ut.play("highlight");
@@ -1516,15 +1516,15 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
         children: [
           La.map((s, a) => {
             const t = as.includes(s),
-              r = K(o, s);
+              r = re(o, s);
             if (t || r)
               switch (s) {
                 case je:
                   return (0, fs.jsx)(
                     "div",
                     {
-                      className: g(va.cell, va.cell__icon),
-                      style: ya(je, v, f),
+                      className: ae(va.cell, va.cell__icon),
+                      style: ya(je, f, h),
                       children:
                         e.squadIndex > 0 &&
                         (0, fs.jsx)(Ct, { squadIndex: e.squadIndex, currentSquadIndex: n }),
@@ -1535,62 +1535,62 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
                   return (0, fs.jsx)(
                     "div",
                     {
-                      className: g(va.cell, va.cell__vehicle),
-                      style: ya(we, v, f),
-                      children: (0, fs.jsx)(Ft, { ...e, isSameSquad: b, killed: _ }),
+                      className: ae(va.cell, va.cell__vehicle),
+                      style: ya(we, f, h),
+                      children: (0, fs.jsx)(Ft, { ...e, isSameSquad: g, killed: _ }),
                     },
                     a,
                   );
                 case ye:
                   return (0, fs.jsx)(
-                    Gt,
+                    Mt,
                     {
                       userNames: e.userNames,
                       isPersonal: e.isPersonal,
                       isKilled: _,
-                      isSameSquad: b,
-                      cellsConfig: v,
+                      isSameSquad: g,
+                      cellsConfig: f,
                     },
                     a,
                   );
-                case Ma:
+                case Ga:
                   return (0, fs.jsx)(
-                    Mt,
+                    Gt,
                     {
                       columnName: s,
-                      baseStyles: g(va.cell, va.cell__icon),
+                      baseStyles: ae(va.cell, va.cell__icon),
                       value: us(
                         Fe(e.efficiencyValues, "finishTime") ?? 0,
                         Ot.readOrEmpty("R.strings.fun_battle_results.team.format.finishTime"),
                         0,
                         Ot.readOrEmpty("R.strings.fun_battle_results.team.empty.finishTime"),
                       ),
-                      columnsCount: x,
-                      cellsConfig: v,
+                      columnsCount: v,
+                      cellsConfig: f,
                     },
                     a,
                   );
                 case Oa:
                   return (0, fs.jsx)(
-                    Mt,
+                    Gt,
                     {
                       columnName: s,
-                      baseStyles: g(va.cell, va.cell__icon),
+                      baseStyles: ae(va.cell, va.cell__icon),
                       value: c > 0 ? c : "",
-                      columnsCount: x,
-                      cellsConfig: v,
+                      columnsCount: v,
+                      cellsConfig: f,
                     },
                     a,
                   );
                 default:
                   return (0, fs.jsx)(
-                    Mt,
+                    Gt,
                     {
                       columnName: s,
-                      baseStyles: g(va.cell, va.cell__icon),
+                      baseStyles: ae(va.cell, va.cell__icon),
                       value: Fe(e.efficiencyValues, s, ""),
-                      columnsCount: x,
-                      cellsConfig: v,
+                      columnsCount: v,
+                      cellsConfig: f,
                     },
                     a,
                   );
@@ -1598,52 +1598,52 @@ var dt = ({ paramType: e, value: s, valueType: a, assetsPointer: t }) => {
           }),
           (0, fs.jsx)("div", {
             className: va.glow,
-            children: (0, fs.jsx)(Vt, { position: a === Be ? qt : $t, isActive: s }),
+            children: (0, fs.jsx)(Vt, { position: a === Ke ? qt : $t, isActive: s }),
           }),
         ],
       }),
     });
   }),
   zt = {
-    comparatorsMap: Ba,
-    defaultColumn: Ma,
+    comparatorsMap: Ka,
+    defaultColumn: Ga,
     columnsOrder: La,
     headerIconMapping: za,
     TableRowComponent: Lt,
     tableCellsConfig: ts,
   };
-function Bt() {
-  return (0, fs.jsx)(d.Content, {
+function Kt() {
+  return (0, fs.jsx)(o.Content, {
     children: (e) => {
       switch (e) {
-        case Qe:
-          return (0, fs.jsx)(It, {});
         case Ze:
-          return (0, fs.jsx)(We.Provider, { value: zt, children: (0, fs.jsx)(Ga, {}) });
+          return (0, fs.jsx)(It, {});
+        case Qe:
+          return (0, fs.jsx)(Be.Provider, { value: zt, children: (0, fs.jsx)(Ma, {}) });
         default:
           return (console.error("Unreachable branch in tabs"), null);
       }
     },
   });
 }
-var Kt = ge(function () {
+var Wt = ge(function () {
     const { model: e, controls: s } = Ye(),
       a = e.currentTabId.get(),
-      t = J({ size: b.small }, { large: { size: b.medium }, extraLarge: { size: b.large } });
-    return (0, fs.jsxs)(d, {
+      t = ee({ size: u.small }, { large: { size: u.medium }, extraLarge: { size: u.large } });
+    return (0, fs.jsxs)(o, {
       active: a,
-      theme: v.primary,
+      theme: g.primary,
       size: t.size,
       onActiveChange: (e) => {
-        (s.updateCurrentTabId(e), s.updateNextBonusTime(e === Qe));
+        (s.updateCurrentTabId(e), s.updateNextBonusTime(e === Ze));
       },
-      children: [(0, fs.jsx)(Gs, {}), (0, fs.jsx)(Bt, {})],
+      children: [(0, fs.jsx)(Ms, {}), (0, fs.jsx)(Kt, {})],
     });
   }),
-  Wt = "Race_73cde25e",
+  Bt = "Race_73cde25e",
   Ht = "Race_wrapper_ced7b360",
   Xt = "Race_footer_5621ab7e",
-  Qt = ge(function () {
+  Zt = ge(function () {
     const { model: e, controls: s } = Ye(),
       { closeWindow: a } = s,
       t = e.battleInfo.get(),
@@ -1652,17 +1652,17 @@ var Kt = ge(function () {
       i = "finished" === t.winStatus && l <= 3,
       n = (0, Le.useMemo)(() => ({ position: l, topPlace: i }), [l, i]);
     return (
-      E(a),
+      P(a),
       (0, fs.jsx)(ms.Provider, {
         value: n,
         children: (0, fs.jsxs)("div", {
-          className: Wt,
+          className: Bt,
           children: [
             (0, fs.jsx)(xs, {}),
             (0, fs.jsxs)("div", {
               className: Ht,
               children: [
-                (0, fs.jsx)(Kt, {}),
+                (0, fs.jsx)(Wt, {}),
                 (0, fs.jsx)("div", { className: Xt, children: (0, fs.jsx)(qs, {}) }),
               ],
             }),
@@ -1671,7 +1671,7 @@ var Kt = ge(function () {
       })
     );
   }),
-  Zt = "Footer_f51bab46",
+  Qt = "Footer_f51bab46",
   Jt = "Footer_content_d9781467",
   Yt = "Footer_battleStatus_c26aefc7",
   er = "Footer_date_2b3cc51d",
@@ -1684,13 +1684,13 @@ var Kt = ge(function () {
   nr = "Footer_dot_6bee0c4e",
   or = "Footer_button_43641369",
   cr = "Footer_base__teams_4308958a",
-  dr = s.resolve("strings"),
-  ur = s.resolve("intl"),
+  dr = j.resolve("strings"),
+  ur = j.resolve("intl"),
   mr = "R.strings.battle_results.common.vehicleState",
   _r = ge(function () {
     const { model: e, controls: s } = Ye(),
       { closeWindow: a } = s,
-      t = e.currentTabId.get() === Ze,
+      t = e.currentTabId.get() === Qe,
       {
         subModeAssetsPointer: r,
         arenaName: l,
@@ -1698,15 +1698,15 @@ var Kt = ge(function () {
         battleDuration: n,
         finishReason: o,
       } = e.battleInfo.get(),
-      { deathReason: c, isLeftBattle: d } = e.userStatus.get(),
+      { deathReason: d, isLeftBattle: u } = e.userStatus.get(),
       m = e.user.get(),
       _ = e.killer.get(),
       b = e.computes.currentPlayer(),
-      g = !d && m.isKilled;
+      g = !u && m.isKilled;
     return (
-      E(a),
+      P(a),
       (0, fs.jsxs)("div", {
-        className: (0, Ns.default)(Zt, t && cr),
+        className: (0, Ns.default)(Qt, t && cr),
         children: [
           (0, fs.jsxs)("div", {
             className: Jt,
@@ -1735,7 +1735,7 @@ var Kt = ge(function () {
                       }),
                       (0, fs.jsx)("div", {
                         className: er,
-                        children: (0, fs.jsx)(F, { datetime: i + n, format: S.ShortDateTime }),
+                        children: (0, fs.jsx)(E, { datetime: i + n, format: F.ShortDateTime }),
                       }),
                     ],
                   }),
@@ -1752,25 +1752,25 @@ var Kt = ge(function () {
                         ? (0, fs.jsxs)("div", {
                             className: ir,
                             children: [
-                              dr.readOrEmpty(`${mr}.dead${c}`),
+                              dr.readOrEmpty(`${mr}.dead${d}`),
                               _.userName !== m.userName &&
                                 (0, fs.jsxs)(fs.Fragment, {
                                   children: [
-                                    (0, fs.jsx)(A, {
+                                    (0, fs.jsx)(C, {
                                       text: R.strings.common.common.nbsp(),
                                       upgradeLegacy: !0,
                                     }),
-                                    (0, fs.jsx)(u, { ..._ }),
+                                    (0, fs.jsx)(c, { ..._ }),
                                   ],
                                 }),
                             ],
                           })
                         : (0, fs.jsx)("div", {
                             className: ir,
-                            children: dr.readOrEmpty(`${mr}.${d ? "prematureLeave" : "alive"}`),
+                            children: dr.readOrEmpty(`${mr}.${u ? "prematureLeave" : "alive"}`),
                           }),
                       (0, fs.jsx)("div", { className: nr }),
-                      (0, fs.jsx)("div", { className: lr, children: (0, fs.jsx)(u, { ...m }) }),
+                      (0, fs.jsx)("div", { className: lr, children: (0, fs.jsx)(c, { ...m }) }),
                     ],
                   }),
                 ],
@@ -1784,8 +1784,8 @@ var Kt = ge(function () {
   }),
   br = "Reward_75ac811a",
   gr = ({ type: e, value: s }) => {
-    const a = oe();
-    return (0, fs.jsx)(p, {
+    const a = V();
+    return (0, fs.jsx)(m, {
       contentId: R.views.fun_random.mono.lobby.tooltips.battle_results_economic_tooltip("resId"),
       args: { currencyType: e },
       children: (0, fs.jsx)("div", {
@@ -1793,7 +1793,7 @@ var Kt = ge(function () {
         children: (0, fs.jsx)(Ne, {
           type: e,
           value: s,
-          size: [ue.Large, ue.ExtraLarge].includes(a.mediaSize) ? xe.large : xe.big,
+          size: [O.Large, O.ExtraLarge].includes(a.mediaSize) ? xe.large : xe.big,
         }),
       }),
     });
@@ -1804,7 +1804,7 @@ var Kt = ge(function () {
       s = e.rewards.get();
     return (0, fs.jsx)("div", {
       className: pr.base,
-      children: G(s, (e, s) =>
+      children: H(s, (e, s) =>
         (0, fs.jsx)("div", { className: pr.item, children: (0, fs.jsx)(gr, { ...e }) }, s),
       ),
     });
@@ -1833,8 +1833,8 @@ var Kt = ge(function () {
   Tr = "Upgrade_defaultState_4bc6295c",
   wr = "Upgrade_state_df1359d",
   Ir = "Upgrade_state__timer_d790c44d",
-  Rr = "Upgrade_icon_72093064",
-  Pr = "Upgrade_icon__attention_8300ebb1",
+  Pr = "Upgrade_icon_72093064",
+  Rr = "Upgrade_icon__attention_8300ebb1",
   Cr = "Upgrade_icon__timer_c71ba0d1",
   Ar = "Upgrade_icon__information_77b3acf5",
   Er = "Upgrade_xpIcon_f7fac657",
@@ -1844,13 +1844,13 @@ var Kt = ge(function () {
   $r = "Upgrade_timerText_2448f58e",
   qr = "Upgrade_timer_14e1c1e7",
   Vr = "Upgrade_error_d3f6c96d",
-  Gr = "Upgrade_accepter_19aae422",
-  Mr = "Upgrade_devider_69f53309",
+  Mr = "Upgrade_accepter_19aae422",
+  Gr = "Upgrade_devider_69f53309",
   Or = "Upgrade_points_df43930d",
   Ur = "Upgrade_highlight_76562a3b",
   Lr = "Upgrade_flash_2383c62e",
   zr = "Upgrade_multiplier_9c357f74",
-  Br = (function (e) {
+  Kr = (function (e) {
     return (
       (e[(e.IsNotVictory = fr.IsNotVictory)] = "IsNotVictory"),
       (e[(e.DeprecatedResults = fr.DeprecatedResults)] = "DeprecatedResults"),
@@ -1863,11 +1863,11 @@ var Kt = ge(function () {
       e
     );
   })({}),
-  Kr = R.strings.fun_battle_results.ribbon,
-  Wr = [fr.IsApplied, fr.NotApplyingError, fr.IsNotVictory],
-  Hr = s.resolve("intl"),
+  Wr = R.strings.fun_battle_results.ribbon,
+  Br = [fr.IsApplied, fr.NotApplyingError, fr.IsNotVictory],
+  Hr = j.resolve("intl"),
   Xr = [fr.IsApplied, fr.NoRestriction],
-  Qr = ge(() => {
+  Zr = ge(() => {
     const { model: e, controls: s } = Ye(),
       {
         nextBonusTime: a,
@@ -1877,7 +1877,7 @@ var Kt = ge(function () {
         leftBonusCount: i,
         isUndefinedLeftBonusCount: n,
       } = e.premiumPlus.get(),
-      o = !Wr.includes(r),
+      o = !Br.includes(r),
       c = Xr.includes(r),
       d = r === fr.IsNotVictory,
       u = r === fr.NoRestriction && (i > 0 || n),
@@ -1904,11 +1904,11 @@ var Kt = ge(function () {
           ? (0, fs.jsxs)("div", {
               className: kr,
               children: [
-                (0, fs.jsx)("div", { className: $r, children: Kr.timeLeft() }),
+                (0, fs.jsx)("div", { className: $r, children: Wr.timeLeft() }),
                 (0, fs.jsxs)("div", {
                   className: (0, Ns.default)(wr, Ir),
                   children: [
-                    (0, fs.jsx)("div", { className: (0, Ns.default)(Rr, Cr) }),
+                    (0, fs.jsx)("div", { className: (0, Ns.default)(Pr, Cr) }),
                     (0, fs.jsx)(me, {
                       startingSeconds: a,
                       refreshRate: 1,
@@ -1927,15 +1927,15 @@ var Kt = ge(function () {
                     return (0, fs.jsxs)("div", {
                       className: Vr,
                       children: [
-                        (0, fs.jsx)("div", { className: (0, Ns.default)(Rr, Pr) }),
-                        (0, fs.jsx)("span", { children: Kr.errorState() }),
+                        (0, fs.jsx)("div", { className: (0, Ns.default)(Pr, Rr) }),
+                        (0, fs.jsx)("span", { children: Wr.errorState() }),
                       ],
                     });
                   case fr.IsApplied:
                     return (0, fs.jsxs)(Le.Fragment, {
                       children: [
-                        (0, fs.jsx)("div", { className: Gr }),
-                        (0, fs.jsx)("div", { className: Fr, children: Kr.applied() }),
+                        (0, fs.jsx)("div", { className: Mr }),
+                        (0, fs.jsx)("div", { className: Fr, children: Wr.applied() }),
                       ],
                     });
                   case fr.NoRestriction:
@@ -1944,8 +1944,8 @@ var Kt = ge(function () {
                       onClick: m,
                       children: (0, fs.jsx)("div", {
                         className: (0, Ns.default)(yr, Sr),
-                        children: (0, fs.jsx)(N, {
-                          text: Kr.expBonus(),
+                        children: (0, fs.jsx)(h, {
+                          text: Wr.expBonus(),
                           classMix: Tr,
                           binding: {
                             count: Hr.formatNumber("integral", t),
@@ -1962,9 +1962,9 @@ var Kt = ge(function () {
                     return (0, fs.jsxs)("div", {
                       className: Vr,
                       children: [
-                        (0, fs.jsx)("div", { className: (0, Ns.default)(Rr, Ar) }),
+                        (0, fs.jsx)("div", { className: (0, Ns.default)(Pr, Ar) }),
                         (0, fs.jsx)("span", {
-                          children: R.strings.fun_battle_results.premiumBonus.$dyn(Br[r]),
+                          children: R.strings.fun_battle_results.premiumBonus.$dyn(Kr[r]),
                         }),
                       ],
                     });
@@ -1975,11 +1975,11 @@ var Kt = ge(function () {
           c &&
           (0, fs.jsxs)(Le.Fragment, {
             children: [
-              !u && (0, fs.jsx)("div", { className: Mr }),
+              !u && (0, fs.jsx)("div", { className: Gr }),
               (0, fs.jsx)("div", {
                 className: Dr,
-                children: (0, fs.jsx)(N, {
-                  text: Kr.usesLeft(),
+                children: (0, fs.jsx)(h, {
+                  text: Wr.usesLeft(),
                   binding: {
                     count: (0, fs.jsx)("div", {
                       className: Or,
@@ -1993,7 +1993,7 @@ var Kt = ge(function () {
       ],
     });
   }),
-  Zr = {
+  Qr = {
     base: "Ribbon_a8d129f2",
     base__upgradable: "Ribbon_base__upgradable_89eadbbd",
     ribbon: "Ribbon_b7270139",
@@ -2017,18 +2017,18 @@ var Kt = ge(function () {
       { hasPremium: a, isXpBonusEnabled: t } = e.premiumPlus.get(),
       r = "win" === s;
     return (0, fs.jsxs)("div", {
-      className: (0, Ns.default)(Zr.base, t && Zr.base__upgradable),
+      className: (0, Ns.default)(Qr.base, t && Qr.base__upgradable),
       children: [
         (0, fs.jsx)("div", {
           className: (0, Ns.default)(
-            Zr.ribbon,
-            r && (a ? Zr.ribbon__prem : Zr.ribbon__win),
-            !r && (a ? Zr.ribbon__lose_prem : Zr.ribbon__lose),
+            Qr.ribbon,
+            r && (a ? Qr.ribbon__prem : Qr.ribbon__win),
+            !r && (a ? Qr.ribbon__lose_prem : Qr.ribbon__lose),
           ),
         }),
         (0, fs.jsx)(hr, {}),
-        (0, fs.jsx)("div", { className: Zr.shadow }),
-        t && (0, fs.jsx)("div", { className: Zr.upgrade, children: (0, fs.jsx)(Qr, {}) }),
+        (0, fs.jsx)("div", { className: Qr.shadow }),
+        t && (0, fs.jsx)("div", { className: Qr.upgrade, children: (0, fs.jsx)(Zr, {}) }),
       ],
     });
   }),
@@ -2041,7 +2041,7 @@ var Kt = ge(function () {
     progress: "PersonalTab_progress_644ac635",
     title: "PersonalTab_title_cd6db133",
   },
-  el = s.resolve("strings"),
+  el = j.resolve("strings"),
   sl = ge(() => {
     const { model: e } = Ye(),
       { winStatus: s } = e.battleInfo.get(),
@@ -2069,45 +2069,45 @@ var Kt = ge(function () {
       }),
     });
   }),
-  al = ge(({ player: e, selected: s, alias: t, first: r = !1 }) => {
-    const { model: l, controls: i } = Ye(),
-      n = l.selectedPlayerId.get(),
-      o = l.computes.personalSquadIndex(),
-      c = l.detailsColumns.get(),
-      { userNames: d, squadIndex: u, playerIndex: m, isPersonal: _, databaseID: b, vehicle: g } = e,
+  al = ge(({ player: e, selected: s, alias: a, first: t = !1 }) => {
+    const { model: r, controls: l } = Ye(),
+      i = r.selectedPlayerId.get(),
+      n = r.computes.personalSquadIndex(),
+      o = r.detailsColumns.get(),
+      { userNames: c, squadIndex: d, playerIndex: u, isPersonal: m, databaseID: _, vehicle: g } = e,
       { vehicleCD: p } = g,
-      { isKilled: f, isTeamKiller: v } = d,
-      x = o === u && o > 0,
-      N = l.singleTeamMode.get(),
-      { mediaSize: j } = oe();
-    const y = (0, Ns.default)(
+      { isKilled: h, isTeamKiller: v } = c,
+      x = n === d && n > 0,
+      N = r.singleTeamMode.get(),
+      { mediaSize: j } = V();
+    const S = (0, Ns.default)(
         va.bodyRow,
         s && va.bodyRow__isActive,
         N && va.bodyRow__nonSelectable,
-        r && va.bodyRow__isFirst,
-        f && va.bodyRow__isKilled,
+        t && va.bodyRow__isFirst,
+        h && va.bodyRow__isKilled,
       ),
-      S = h({ isTeamKiller: v, isKilled: f, isPersonal: _, isSameSquad: x }),
-      T = 0 === c.length ? 3 : c.length;
-    return (0, fs.jsx)(P, {
-      args: { databaseID: b, vehicleCD: p },
+      T = b({ isTeamKiller: v, isKilled: h, isPersonal: m, isSameSquad: x }),
+      I = 0 === o.length ? 3 : o.length;
+    return (0, fs.jsx)(w, {
+      args: { databaseID: _, vehicleCD: p },
       children: (0, fs.jsxs)("div", {
-        className: y,
-        style: { color: S },
+        className: S,
+        style: { color: T },
         onClick: function () {
           if (N) return;
-          H.sound("yes1");
-          const e = n === m;
-          i.updateTeamTableSelectedPlayer(e ? Ke : t, e ? -1 : m);
+          f.sound("yes1");
+          const e = i === u;
+          l.updateTeamTableSelectedPlayer(e ? We : a, e ? -1 : u);
         },
         onMouseEnter: function () {
-          N || H.sound("highlight");
+          N || f.sound("highlight");
         },
         children: [
-          ss.map((s, t) => {
-            const r = as.findIndex((e) => e === s),
-              l = a(c, (e) => e === s);
-            if (-1 !== r || (-1 !== l && void 0 !== l))
+          ss.map((s, a) => {
+            const t = as.findIndex((e) => e === s),
+              r = y(o, (e) => e === s);
+            if (-1 !== t || (-1 !== r && void 0 !== r))
               switch (s) {
                 case je:
                   return (0, fs.jsx)(
@@ -2117,15 +2117,15 @@ var Kt = ge(function () {
                       style: ya(je, ts, j),
                       children:
                         e.squadIndex > 0 &&
-                        (0, fs.jsx)(Ct, { squadIndex: e.squadIndex, currentSquadIndex: o }),
+                        (0, fs.jsx)(Ct, { squadIndex: e.squadIndex, currentSquadIndex: n }),
                     },
-                    t,
+                    a,
                   );
                 case ye:
                   return (0, fs.jsx)(
-                    Gt,
-                    { userNames: d, isPersonal: _, isKilled: f, isSameSquad: x, cellsConfig: ts },
-                    t,
+                    Mt,
+                    { userNames: c, isPersonal: m, isKilled: h, isSameSquad: x, cellsConfig: ts },
+                    a,
                   );
                 case we:
                   return (0, fs.jsx)(
@@ -2133,27 +2133,27 @@ var Kt = ge(function () {
                     {
                       className: (0, Ns.default)(va.cell, va.cell__vehicle),
                       style: ya(we, ts, j),
-                      children: (0, fs.jsx)(Ft, { ...e, isSameSquad: x, killed: f }),
+                      children: (0, fs.jsx)(Ft, { ...e, isSameSquad: x, killed: h }),
                     },
-                    t,
+                    a,
                   );
                 default:
                   return (0, fs.jsx)(
-                    Mt,
+                    Gt,
                     {
                       columnName: s,
                       baseStyles: (0, Ns.default)(va.cell, va.cell__icon),
                       value: Fe(e.efficiencyValues, s, ""),
-                      columnsCount: T,
+                      columnsCount: I,
                       cellsConfig: ts,
                     },
-                    t,
+                    a,
                   );
               }
           }),
           (0, fs.jsx)("div", {
             className: va.glow,
-            children: (0, fs.jsx)(Vt, { position: t === Be ? qt : $t, isActive: s }),
+            children: (0, fs.jsx)(Vt, { position: a === Ke ? qt : $t, isActive: s }),
           }),
         ],
       }),
@@ -2169,31 +2169,31 @@ var Kt = ge(function () {
     tableCellsConfig: ts,
   },
   ll = () =>
-    (0, fs.jsx)(d.Content, {
+    (0, fs.jsx)(o.Content, {
       children: (e) => {
         switch (e) {
-          case Qe:
-            return (0, fs.jsx)(Xe.Provider, { value: tl, children: (0, fs.jsx)(sl, {}) });
           case Ze:
-            return (0, fs.jsx)(We.Provider, { value: rl, children: (0, fs.jsx)(Ga, {}) });
+            return (0, fs.jsx)(Xe.Provider, { value: tl, children: (0, fs.jsx)(sl, {}) });
+          case Qe:
+            return (0, fs.jsx)(Be.Provider, { value: rl, children: (0, fs.jsx)(Ma, {}) });
           default:
             return (console.error("Unreachable branch in tabs"), null);
         }
       },
     });
-s.resolve("strings");
+j.resolve("strings");
 var il = ge(() => {
     const { model: e, controls: s } = Ye(),
       a = e.currentTabId.get(),
-      t = J({ size: b.small }, { large: { size: b.medium }, extraLarge: { size: b.large } });
-    return (0, fs.jsxs)(d, {
+      t = ee({ size: u.small }, { large: { size: u.medium }, extraLarge: { size: u.large } });
+    return (0, fs.jsxs)(o, {
       active: a,
-      theme: v.primary,
+      theme: g.primary,
       size: t.size,
       onActiveChange: (e) => {
-        (s.updateCurrentTabId(e), s.updateNextBonusTime(e === Qe));
+        (s.updateCurrentTabId(e), s.updateNextBonusTime(e === Ze));
       },
-      children: [(0, fs.jsx)(Gs, {}), (0, fs.jsx)(ll, {})],
+      children: [(0, fs.jsx)(Ms, {}), (0, fs.jsx)(ll, {})],
     });
   }),
   nl = {
@@ -2212,25 +2212,25 @@ var il = ge(() => {
     navigation: "Standard_navigation_e6a025b6",
     navigationItem: "Standard_navigationItem_4e353400",
   };
-s.resolve("images");
+j.resolve("images");
 var ol = ge(function () {
     const { model: e, controls: s } = Ye(),
       { assetsPointer: a, subModeAssetsPointer: t, winStatus: r } = e.battleInfo.get(),
       l = e.currentTabId.get(),
       i = cs(a, t);
     return (
-      E(s.closeWindow),
+      P(s.closeWindow),
       (0, fs.jsxs)("div", {
         className: nl.base,
         children: [
           (0, fs.jsx)("div", {
-            className: (0, Ns.default)(nl.background, l === Ze && nl.background__team),
+            className: (0, Ns.default)(nl.background, l === Qe && nl.background__team),
             style: { backgroundImage: `url('${i}')` },
           }),
           (0, fs.jsx)("div", {
-            className: (0, Ns.default)(nl.bgDarken, l !== Ze && nl.bgDarken__personal),
+            className: (0, Ns.default)(nl.bgDarken, l !== Qe && nl.bgDarken__personal),
           }),
-          l === Ze &&
+          l === Qe &&
             (0, fs.jsx)("div", { className: (0, Ns.default)(nl.bgGlow, nl[`bgGlow__${r}`]) }),
           (0, fs.jsxs)("div", {
             className: nl.wrapper,
@@ -2251,13 +2251,13 @@ var ol = ge(function () {
       default:
         return (0, fs.jsx)(ol, {});
       case "race":
-        return (0, fs.jsx)(Qt, {});
+        return (0, fs.jsx)(Zt, {});
     }
   });
-z(
-  new te()
-    .add(U)
+K(
+  new se()
+    .add(L)
     .add(Je)
     .render((0, fs.jsx)(cl, {})),
   { fullScreen: !0 },
-).then(() => ce(document.getElementById("root")));
+).then(() => t(document.getElementById("root")));

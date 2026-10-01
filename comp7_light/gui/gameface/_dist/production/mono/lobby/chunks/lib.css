@@ -13864,6 +13864,309 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   line-height: 1.3;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+@keyframes Rewards_fadeIn_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Rewards_fadeInThreeQuarters_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Rewards_fadeInHalf_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Rewards_fadeOut_f0ade464 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Rewards_fadeInWithScale_f0ade464 {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Rewards_slideUp_f0ade464 {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Rewards_scale_f0ade464 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Rewards_raysAppearance_f0ade464 {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Rewards_rotate_f0ade464 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Rewards_reverse-rotate_f0ade464 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Rewards_glowAppearance_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Rewards_highlightAppearance_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Rewards_blink_f0ade464 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Rewards_slideUpIn_f0ade464 {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Rewards_36f5662a {
+  display: flex;
+}
+.Rewards_base__vertical_32f04b98 {
+  flex-direction: column;
+}
+
+.Rewards_reward_9abc0f4a {
+  margin: 0 10rem;
+}
+.Rewards_reward__vertical_dd4a02c5 {
+  margin: 15rem 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+@keyframes Optimizedprogressbar_fadeIn_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Optimizedprogressbar_fadeInThreeQuarters_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Optimizedprogressbar_fadeInHalf_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Optimizedprogressbar_fadeOut_69c01aad {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Optimizedprogressbar_fadeInWithScale_69c01aad {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Optimizedprogressbar_slideUp_69c01aad {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Optimizedprogressbar_scale_69c01aad {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Optimizedprogressbar_raysAppearance_69c01aad {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Optimizedprogressbar_rotate_69c01aad {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Optimizedprogressbar_reverse-rotate_69c01aad {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Optimizedprogressbar_glowAppearance_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Optimizedprogressbar_highlightAppearance_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Optimizedprogressbar_blink_69c01aad {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Optimizedprogressbar_slideUpIn_69c01aad {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.Optimizedprogressbar_e894d6c {
+  width: 100%;
+  padding: 30rem 0;
+  overflow: hidden;
+}
+
+.Optimizedprogressbar_wrapper_70ce38b3 {
+  position: relative;
+}
+
+.Optimizedprogressbar_line_5190e4c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.Optimizedprogressbar_backgroundWrapper_405830ed {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Optimizedprogressbar_background_74cf6541 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 8001px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Value_880359b5::after {
   position: absolute;
   top: 0;
@@ -14656,309 +14959,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .PlayerInfo_stripeBadge_605bfd0a {
   z-index: -1;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-@keyframes Rewards_fadeIn_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Rewards_fadeInThreeQuarters_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Rewards_fadeInHalf_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Rewards_fadeOut_f0ade464 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Rewards_fadeInWithScale_f0ade464 {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Rewards_slideUp_f0ade464 {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Rewards_scale_f0ade464 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Rewards_raysAppearance_f0ade464 {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Rewards_rotate_f0ade464 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Rewards_reverse-rotate_f0ade464 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Rewards_glowAppearance_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Rewards_highlightAppearance_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Rewards_blink_f0ade464 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Rewards_slideUpIn_f0ade464 {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.Rewards_36f5662a {
-  display: flex;
-}
-.Rewards_base__vertical_32f04b98 {
-  flex-direction: column;
-}
-
-.Rewards_reward_9abc0f4a {
-  margin: 0 10rem;
-}
-.Rewards_reward__vertical_dd4a02c5 {
-  margin: 15rem 0;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-@keyframes Optimizedprogressbar_fadeIn_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Optimizedprogressbar_fadeInThreeQuarters_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Optimizedprogressbar_fadeInHalf_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Optimizedprogressbar_fadeOut_69c01aad {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Optimizedprogressbar_fadeInWithScale_69c01aad {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Optimizedprogressbar_slideUp_69c01aad {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Optimizedprogressbar_scale_69c01aad {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Optimizedprogressbar_raysAppearance_69c01aad {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Optimizedprogressbar_rotate_69c01aad {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Optimizedprogressbar_reverse-rotate_69c01aad {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Optimizedprogressbar_glowAppearance_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Optimizedprogressbar_highlightAppearance_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Optimizedprogressbar_blink_69c01aad {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Optimizedprogressbar_slideUpIn_69c01aad {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.Optimizedprogressbar_e894d6c {
-  width: 100%;
-  padding: 30rem 0;
-  overflow: hidden;
-}
-
-.Optimizedprogressbar_wrapper_70ce38b3 {
-  position: relative;
-}
-
-.Optimizedprogressbar_line_5190e4c3 {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.Optimizedprogressbar_backgroundWrapper_405830ed {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.Optimizedprogressbar_background_74cf6541 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 8001px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */

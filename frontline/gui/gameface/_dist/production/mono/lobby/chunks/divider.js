@@ -1,7 +1,7 @@
-import { Si as s, uo as a } from "./lib.js";
+import { lo as s, xi as a } from "./lib.js";
 var e = "Divider_35efe770",
   i = "Divider_db17be24",
-  r = s(),
-  d = ({ className: s }) =>
-    (0, r.jsx)("div", { className: a(e, s), children: (0, r.jsx)("div", { className: i }) });
+  r = a(),
+  d = ({ className: a }) =>
+    (0, r.jsx)("div", { className: s(e, a), children: (0, r.jsx)("div", { className: i }) });
 export { d as t };

@@ -1,16 +1,16 @@
 import {
   e,
   y as s,
-  de as a,
+  dg as a,
   m as i,
-  df as r,
+  dh as r,
   l as o,
-  du as t,
+  dk as t,
   aM as n,
-  dB as c,
-  b9 as d,
+  dz as c,
+  b8 as d,
   ak as l,
-  cV as m,
+  cU as m,
   an as u,
   al as p,
 } from "../chunks/lib.js";
@@ -58,7 +58,7 @@ const S = {
   title: "RewardList_title_57bb4672",
   info: "RewardList_info_550abe1e",
 };
-function A({ rewards: o }) {
+function k({ rewards: o }) {
   const t = s(
       { size: a.S296x222 },
       {
@@ -100,7 +100,7 @@ function A({ rewards: o }) {
     }),
   });
 }
-const [k, D] = o()(
+const [A, D] = o()(
     ({ observableModel: e }) => ({ rewards: e.array("rewards") }),
     ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs("onClose") }),
   ),
@@ -109,8 +109,8 @@ const [k, D] = o()(
   L = "App_base_title_875d9f77",
   O = "App_base_content_b2b8ba1c",
   Q = "App_base_decorations_30e052c2",
-  B = "App_base_button_7b36300d",
-  M = "App_base_buttonContent_5e179c67";
+  M = "App_base_button_7b36300d",
+  B = "App_base_buttonContent_5e179c67";
 function I() {
   const { model: a, controls: i } = D();
   t(i.closeWindow);
@@ -145,7 +145,7 @@ function I() {
         className: O,
         children: [
           b.jsx("div", { className: Q, children: b.jsx(C, {}) }),
-          b.jsx(A, { rewards: r }),
+          b.jsx(k, { rewards: r }),
         ],
       }),
       b.jsx(y.div, {
@@ -154,13 +154,13 @@ function I() {
           theme: d.primary,
           size: m,
           onClick: i.closeWindow,
-          classNames: { base: B, content: M },
+          classNames: { base: M, content: B },
           children: R.strings.fort_rush.rewardScreen.button(),
         }),
       }),
     ],
   });
 }
-l(b.jsx(k, { children: b.jsx(m, { children: b.jsx(u, { children: b.jsx(I, {}) }) }) }), {
+l(b.jsx(A, { children: b.jsx(m, { children: b.jsx(u, { children: b.jsx(I, {}) }) }) }), {
   fullScreen: !0,
 }).then(() => p(document.getElementById("root")));

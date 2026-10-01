@@ -17,17 +17,17 @@ import {
   d as b,
   f,
   ft as g,
-  g as x,
-  h as v,
-  ht as h,
-  it as C,
-  k as N,
-  l as j,
-  m as S,
-  o as w,
-  ot as I,
-  p as E,
-  pt as y,
+  ht as x,
+  i as v,
+  it as h,
+  k as C,
+  l as N,
+  m as j,
+  o as S,
+  ot as w,
+  p as I,
+  pt as E,
+  r as y,
   s as T,
   tt as A,
   u as k,
@@ -79,7 +79,7 @@ var X = e(g(), 1),
     return t;
   };
 function te(e) {
-  return y.formatNumber("gold", e);
+  return E.formatNumber("gold", e);
 }
 var ae = d(),
   re = (0, X.createContext)({}),
@@ -153,7 +153,7 @@ function ce({ className: e, enabled: s, direction: t, onChange: a, onClick: r })
     onMouseUp: n,
     onMouseLeave: n,
     onMouseEnter: () => {
-      s && I.sound("highlight");
+      s && w.sound("highlight");
     },
     children: (0, ae.jsx)("span", { className: ne.arrow }),
   });
@@ -186,58 +186,58 @@ function he({
   onInputMouseDown: l,
   onInputMouseUp: d,
 }) {
-  const { focused: _, setFocused: p, inputRef: b, disabled: f, value: g, focus: x } = j(),
-    v = u(e),
-    h = (0, X.useRef)(g),
+  const { focused: _, setFocused: m, inputRef: p, disabled: b, value: f, focus: g } = T(),
+    x = u(e),
+    v = (0, X.useRef)(f),
     R = (0, X.useRef)(!1);
   ((0, X.useEffect)(() => {
-    h.current = g;
-  }, [g]),
+    v.current = f;
+  }, [f]),
     (0, X.useEffect)(() => {
-      const e = b.current;
+      const e = p.current;
       if (!e) return;
-      const s = te(ve(g)).length,
+      const s = te(ve(f)).length,
         t = e?.selectionStart ?? 0,
         a = e?.selectionEnd ?? 0;
       0 !== t || a !== s ? e.setSelectionRange(t === a ? s : t, s) : e.setSelectionRange(s, s);
-    }, [b, g]),
+    }, [p, f]),
     (0, X.useEffect)(() => {
       const e = (e) => {
-        const s = b.current;
+        const s = p.current;
         if (!s || !_) return;
         const t = e.target;
-        t === s || s.contains(t) || (p(!1), (R.current = !1));
+        t === s || s.contains(t) || (m(!1), (R.current = !1));
       };
       return (
         document.addEventListener("mousedown", e),
         () => document.removeEventListener("mousedown", e)
       );
-    }, [_, b, p]),
+    }, [_, p, m]),
     (0, X.useEffect)(() => {
-      const e = b.current;
-      R.current && e && document.activeElement !== e && x();
-    }, [b, x]));
-  const N = (0, X.useCallback)(() => {
-      f || (p(!1), (R.current = !1));
-    }, [p, f]),
-    S = (0, X.useCallback)(() => {
-      f || (p(!0), (R.current = !0));
-    }, [p, f]),
-    w = () => {
-      const e = C(a, r, xe(ve(h.current) + s, s));
-      (t(e), i(te(e)), I.sound(F));
+      const e = p.current;
+      R.current && e && document.activeElement !== e && g();
+    }, [p, g]));
+  const C = (0, X.useCallback)(() => {
+      b || (m(!1), (R.current = !1));
+    }, [m, b]),
+    N = (0, X.useCallback)(() => {
+      b || (m(!0), (R.current = !0));
+    }, [m, b]),
+    j = () => {
+      const e = h(a, r, xe(ve(v.current) + s, s));
+      (t(e), i(te(e)), w.sound(F));
     },
-    E = () => {
-      const e = C(a, r, xe(ve(h.current) - s, s));
-      (t(e), i(te(e)), I.sound(O));
+    I = () => {
+      const e = h(a, r, xe(ve(v.current) - s, s));
+      (t(e), i(te(e)), w.sound(O));
     },
-    y = (e, s) => {
-      (b.current && b.current.setSelectionRange(e, s),
+    E = (e, s) => {
+      (p.current && p.current.setSelectionRange(e, s),
         setTimeout(() => {
-          b.current && b.current.setSelectionRange(e, s);
+          p.current && p.current.setSelectionRange(e, s);
         }));
     },
-    T = (e) => {
+    y = (e) => {
       const { selectionStart: s, selectionEnd: t, value: a } = e.target;
       if (null === s || null === t || s !== t) return;
       const r = e.code === A.BACKSPACE,
@@ -249,23 +249,23 @@ function he({
       const u = n.test(a[i] ?? "");
       if (o && u) for (; n.test(a[l] ?? "") && l < c;) l++;
       if (r && u) for (; n.test(a[l] ?? "") && l > 0;) l--;
-      if (l !== i || (r && u)) return (e.preventDefault(), (l = l < 0 ? 0 : l), void y(l, l));
+      if (l !== i || (r && u)) return (e.preventDefault(), (l = l < 0 ? 0 : l), void E(l, l));
       ((r && 1 === s && 1 === c) || o) && (e.preventDefault(), V(e.code));
     },
     k = n(),
     V = (e = "") => {
       const o = e === A.BACKSPACE,
         n = e === A.DELETE,
-        c = b.current?.selectionStart || 0,
-        l = b.current?.selectionEnd || 0;
-      let u = b.current?.value || "";
+        c = p.current?.selectionStart || 0,
+        l = p.current?.selectionEnd || 0;
+      let u = p.current?.value || "";
       const d = Math.max(c, l);
       (n && (u = u.substring(0, d) + u.substring(d + 1, u.length)),
         o && 1 === c && 1 === u.length && (u = "0"));
       const m = Number(u.trim().replace(/\D/g, "")),
-        p = Number.isSafeInteger(m) ? m : Number.MAX_SAFE_INTEGER,
-        f = te(p);
-      h.current = f;
+        b = Number.isSafeInteger(m) ? m : Number.MAX_SAFE_INTEGER,
+        f = te(b);
+      v.current = f;
       let g = 0;
       for (let s = 0; s < d; s++) {
         const e = u[s] || "",
@@ -276,30 +276,30 @@ function he({
         }
       }
       ("" === u && (g = 1),
-        b.current && b.current.setSelectionRange(0, 0),
-        y(g, g),
+        p.current && p.current.setSelectionRange(0, 0),
+        E(g, g),
         i(f),
         k.run(() => {
-          const e = C(a, r, xe(p, s)),
-            o = e - (v ?? 0);
-          (o > 0 ? I.sound(F) : o < 0 && I.sound(O), _ && (t(e), i(te(e))), k.clear());
+          const e = h(a, r, xe(b, s)),
+            o = e - (x ?? 0);
+          (o > 0 ? w.sound(F) : o < 0 && w.sound(O), _ && (t(e), i(te(e))), k.clear());
         }, 800));
     };
-  return (0, ae.jsxs)(m.Decoration, {
-    className: P(ie, _ && le, f && de, e > 0 && ue),
+  return (0, ae.jsxs)(S.Decoration, {
+    className: P(ie, _ && le, b && de, e > 0 && ue),
     children: [
-      (0, ae.jsx)(m.Field, {
+      (0, ae.jsx)(S.Field, {
         className: P(_e, _ && pe, e > 0 && me),
         onChange: () => {
-          f || V();
+          b || V();
         },
         onWheel: (e) => {
-          !f &&
+          !b &&
             _ &&
             (e.preventDefault(),
             e.stopPropagation(),
-            e.deltaY < 0 && c && E(),
-            e.deltaY > 0 && o && w());
+            e.deltaY < 0 && c && I(),
+            e.deltaY > 0 && o && j());
         },
         onKeyDown: (e) => {
           if (_)
@@ -307,12 +307,12 @@ function he({
               case A.ARROW_UP:
               case A.NUMPAD_ADD:
               case "Equals":
-                (e.preventDefault(), o && w());
+                (e.preventDefault(), o && j());
                 break;
               case A.ARROW_DOWN:
               case A.MINUS:
               case A.NUMPAD_SUBTRACT:
-                (e.preventDefault(), c && E());
+                (e.preventDefault(), c && I());
                 break;
               case A.PAGE_DOWN:
               case A.HOME:
@@ -324,27 +324,27 @@ function he({
                 break;
               case A.BACKSPACE:
               case A.DELETE:
-                T(e);
+                y(e);
             }
         },
         onMouseUp: d,
         onMouseDown: l,
-        onFocus: S,
-        onBlur: N,
+        onFocus: N,
+        onBlur: C,
       }),
       (0, ae.jsx)(ce, {
         className: P(be, fe),
         direction: "up",
         enabled: o,
-        onChange: w,
-        onClick: S,
+        onChange: j,
+        onClick: N,
       }),
       (0, ae.jsx)(ce, {
         className: P(be, ge),
         direction: "down",
         enabled: c,
-        onChange: E,
-        onClick: S,
+        onChange: I,
+        onClick: N,
       }),
     ],
   });
@@ -374,9 +374,9 @@ var Re = "ResourceStepper_7487cb5a",
     }, [t]);
     return (0, ae.jsx)("div", {
       className: P(Re, a),
-      children: (0, ae.jsx)(m.Provider, {
+      children: (0, ae.jsx)(S.Provider, {
         value: l,
-        type: m.types.text,
+        type: S.types.text,
         disabled: o,
         children: (0, ae.jsx)(he, {
           step: s,
@@ -406,7 +406,7 @@ var Re = "ResourceStepper_7487cb5a",
     icon__currency: "Rate_icon__currency_e39c71be",
   },
   je = function ({ type: e, rate: s }) {
-    const t = h.resolve("intl");
+    const t = x.resolve("intl");
     return (0, ae.jsx)(D, {
       className: P(Ne.text, Ne[`text__${e}`]),
       text: R.strings.resource_well.resourcesLoadingView.resourceRate.text(),
@@ -435,10 +435,10 @@ var Re = "ResourceStepper_7487cb5a",
   Ie = "Storage_value_f68f8626",
   Ee = "Storage_value__zero_c2260cb9";
 function ye({ itemsInStorage: e, valueFirst: s }) {
-  return (0, ae.jsx)(_, {
-    type: T.depot,
+  return (0, ae.jsx)(y, {
+    type: _.depot,
     reverse: s,
-    size: w.extraSmall,
+    size: v.extraSmall,
     enough: e > 0,
     classNames: { base: P(Ie, 0 === e && Ee), icon: P(Se, s && we) },
     children: e,
@@ -470,18 +470,18 @@ var Te = {
   ke = ({ value: e, currentValue: s, progressionState: t }) => {
     const { type: a, inventoryCount: r, rate: n, limit: c, tooltipId: i, balance: u } = e,
       { setResources: d, progression: _, delta: m } = (0, X.useContext)(re),
-      b = h.resolve("intl"),
-      f = s + u >= c,
-      g = _ + m >= 100,
-      v = t === Q.NoVehicles,
+      b = x.resolve("intl"),
+      g = s + u >= c,
+      v = _ + m >= 100,
+      h = t === Q.NoVehicles,
       C = c / n < 100,
       N = Math.min(Math.round((100 - _ - m + s / n) * n), r - (r % n)),
-      j = (0 === r && 0 === s) || u === c || (0 === s && g) || v,
-      w = g ? s : Math.min(c - u, N),
+      S = (0 === r && 0 === s) || u === c || (0 === s && v) || h,
+      w = v ? s : Math.min(c - u, N),
       I = (0, X.useRef)(!1);
     (0, X.useEffect)(() => {
-      v && d({ [a]: { value: 0, rate: n } });
-    }, [v, n, d, a]);
+      h && d({ [a]: { value: 0, rate: n } });
+    }, [h, n, d, a]);
     const E = ((e) => {
         const s = e && R.strings.blueprints.nations.$dyn(e),
           t = R.strings.quests.bonusName.$dyn(e);
@@ -496,16 +496,16 @@ var Te = {
             console.error("title for reward is not provided");
         }
       })(a),
-      y = v || 0 === r || j;
-    return (0, ae.jsx)(x, {
+      y = h || 0 === r || S;
+    return (0, ae.jsx)(j, {
       className: Te.card,
       classNames: { status: { wrapper: Te.statusWrapper } },
-      status: S.done,
+      status: f.done,
       selected: Boolean(s),
       disableMouse: y,
       disabled: y,
       onClick: () => {
-        if (v) return;
+        if (h) return;
         if (I.current) return void (I.current = !1);
         const e = (({ value: e, rate: s }, t) => {
           const a = e - (e % s);
@@ -515,7 +515,7 @@ var Te = {
       },
       soundTarget: "resource-card",
       children: (0, ae.jsxs)("div", {
-        className: P(Te.base, v || (0 === r && Te.base__disabled), !v && Te.base__hasVehicle),
+        className: P(Te.base, h || (0 === r && Te.base__disabled), !h && Te.base__hasVehicle),
         children: [
           (0, ae.jsx)("div", {
             className: Te.storage,
@@ -528,7 +528,7 @@ var Te = {
               ),
             args: { tooltipId: i },
             children: (0, ae.jsx)(l, {
-              className: P(Te.image, j && Te.image__disabled),
+              className: P(Te.image, S && Te.image__disabled),
               path: `R.images.resource_well.gui.maps.icons.resourcesLoading.resources.${a}`,
               width: 180,
               height: 135,
@@ -544,7 +544,7 @@ var Te = {
             limit: w,
             rate: n,
             type: a,
-            disabled: j,
+            disabled: S,
             onInputMouseDown: () => {
               I.current = !0;
             },
@@ -554,7 +554,7 @@ var Te = {
               });
             },
           }),
-          g &&
+          v &&
             (0, ae.jsx)(K, {
               header: Ae.tooltips.resourcesLoadingView.resourcesLoaded.header(),
               body: Ae.tooltips.resourcesLoadingView.resourcesLoaded.body(),
@@ -568,12 +568,12 @@ var Te = {
               }),
             }),
           C &&
-            !g &&
             !v &&
+            !h &&
             (0, ae.jsx)(o, {
               contentId: R.views.resource_well.mono.lobby.tooltips.max_progress_tooltip("resId"),
               args: { currentValue: s + u, maxValue: c, type: a },
-              children: f
+              children: g
                 ? (0, ae.jsx)(D, {
                     className: P(Te.limitText, Te.limitText__max),
                     text: Ae.resourcesLoadingView.resourceRate.maxReachedText(),
@@ -626,7 +626,7 @@ var We = z(function ({ activeTabIndex: e }) {
     { model: a } = Z(),
     r = a.resourcesTabs.get(),
     { progressionState: o } = a.root.get(),
-    { api: n } = E(),
+    { api: n } = b(),
     i = r[e],
     [l, d] = (0, X.useState)(Ve),
     [_, m] = (0, X.useState)(He);
@@ -660,21 +660,21 @@ var We = z(function ({ activeTabIndex: e }) {
     );
   }, [n, e, l]);
   const p = u(e),
-    g = t(() => {
+    f = t(() => {
       p && e !== p && l[e] && n.applyScroll(l[e].position, { immediate: !0 });
     });
   return (
     (0, X.useEffect)(() => {
-      g();
-    }, [g, e]),
+      f();
+    }, [f, e]),
     (0, ae.jsxs)("div", {
       className: P(Pe.base, Pe[`base__${_}`]),
       children: [
-        (0, ae.jsx)(b, {
+        (0, ae.jsx)(N, {
           classNames: { wrapper: Pe.scrollWrapper, content: Pe.scrollContent },
           children: (() => {
             if (i && 0 !== i.value.resources.length)
-              return (0, ae.jsx)(v, {
+              return (0, ae.jsx)(I, {
                 className: Pe.cardsWrapper,
                 children: c(i.value.resources, (t, a) =>
                   (0, ae.jsx)(
@@ -693,13 +693,13 @@ var We = z(function ({ activeTabIndex: e }) {
               });
           })(),
         }),
-        (0, ae.jsx)(f, { classNames: { base: Pe.scrollBarPosition } }),
+        (0, ae.jsx)(k, { classNames: { base: Pe.scrollBarPosition } }),
       ],
     })
   );
 });
 function Ue(e) {
-  return (0, ae.jsx)(k, { children: (0, ae.jsx)(We, { ...e }) });
+  return (0, ae.jsx)(m, { children: (0, ae.jsx)(We, { ...e }) });
 }
 var Be = {
     base: "ResourcesHeaderItem_571dd076",
@@ -729,10 +729,10 @@ var Be = {
         n[e] && n[e] > 0 && t !== a && o && Be.base__animated,
       ),
       onClick: () => {
-        (I.sound($), r(a));
+        (w.sound($), r(a));
       },
       onMouseEnter: () => {
-        I.sound(M);
+        w.sound(M);
       },
       children: [
         (0, ae.jsx)("div", { className: Be.glow }),
@@ -884,13 +884,13 @@ var Be = {
       (0, X.useEffect)(() => {
         const e = a === Q.NoProgress;
         ((Boolean(t) && e) || m > 0) &&
-          (t !== d && I.sound("resources_well_progress_done_start"), _(!0));
+          (t !== d && w.sound("resources_well_progress_done_start"), _(!0));
       }, [d, t, _, a, m]),
       (0, X.useEffect)(() => {
-        t + m === 100 && 100 !== t && I.sound(H);
+        t + m === 100 && 100 !== t && w.sound(H);
       }, [t, m]));
     const g = (0, X.useCallback)(() => {
-      (l(t), m || (t !== d && I.sound("resources_well_progress_done_stop")), b({}), f({}), p(!1));
+      (l(t), m || (t !== d && w.sound("resources_well_progress_done_stop")), b({}), f({}), p(!1));
     }, [l, t, m, b, f, p, d]);
     return (0, ae.jsxs)("div", {
       className: P(ss, o && ts),
@@ -926,7 +926,7 @@ var Be = {
     });
   });
 s(
-  (0, ae.jsx)(N, {
+  (0, ae.jsx)(C, {
     soundsOverrides: r(W),
     children: (0, ae.jsx)(J, { children: (0, ae.jsx)(oe, { children: (0, ae.jsx)(us, {}) }) }),
   }),

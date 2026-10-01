@@ -1,6 +1,6 @@
-import { A as e, M as r, j as o, k as n, wo as s } from "./lib.js";
-var i = [r.Big, r.Small],
-  a = [r.S232x174, r.S296x222, r.S400x300, r.S600x450],
+import { A as e, Co as r, M as o, j as n, k as s } from "./lib.js";
+var i = [o.Big, o.Small],
+  a = [o.S232x174, o.S296x222, o.S400x300, o.S600x450],
   t = R.images.comp7.gui.maps.icons.rewards,
   d = (e, r) => "styleProgress" === e.name && i.includes(r),
   l = (e, r) =>
@@ -29,22 +29,22 @@ var i = [r.Big, r.Small],
       if (n) return `${n}`;
       console.info(`asset with styleID: ${e.styleID}, size:${r} was not found, using common icon`);
     }
-    return n(e, r);
+    return s(e, r);
   },
-  c = ({ reward: e, size: n, rank: s, index: i }) => {
-    const a = ((e, o) => {
+  c = ({ reward: e, size: r, rank: s, index: i }) => {
+    const a = ((e, r) => {
       if ("dogTagComponents" === e.name) {
-        if (o === r.Big) return r.S80x80;
-        if (o === r.Small) return r.S48x48;
+        if (r === o.Big) return o.S80x80;
+        if (r === o.Small) return o.S48x48;
       }
-      return o;
-    })(e, n);
+      return r;
+    })(e, r);
     return {
       ...e,
       size: a,
       image: u(e, a),
       value: m(e),
-      valueType: o(e.name),
+      valueType: n(e.name),
       special: l(e, a),
       tooltipArgs: p({ reward: e, rank: s, index: i }),
       periodicIconTooltipArgs: {
@@ -53,6 +53,6 @@ var i = [r.Big, r.Small],
       },
     };
   },
-  g = ({ rewards: e, size: r, rank: o, index: n }) =>
-    s(e, (e) => c({ reward: e, size: r, rank: o, index: n }));
+  g = ({ rewards: e, size: o, rank: n, index: s }) =>
+    r(e, (e) => c({ reward: e, size: o, rank: n, index: s }));
 export { g as n, c as t };

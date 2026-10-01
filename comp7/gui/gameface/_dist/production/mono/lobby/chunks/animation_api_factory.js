@@ -1,48 +1,48 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Bi as r, Ri as t, fa as n, la as s, ws as a } from "./lib.js";
-var o = e(a()),
+import { Cs as r, Li as t, ca as n, da as s, zi as a } from "./lib.js";
+var o = e(r()),
   u = (e) => () => {
-    const { steps: a, autoStart: u = !0 } = e,
-      l = (0, o.useRef)(null),
-      i = (0, o.useRef)("idle"),
-      d = n(),
+    const { steps: r, autoStart: u = !0 } = e,
+      i = (0, o.useRef)(null),
+      l = (0, o.useRef)("idle"),
+      d = s(),
       c = t(),
-      f = r(),
+      f = a(),
       p = (0, o.useMemo)(() => {
-        const e = a[Symbol.iterator](),
-          r = () => {
-            const t = e.next();
-            if (t.done) return ((i.current = "end"), void d.trigger("end"));
+        const e = r[Symbol.iterator](),
+          t = () => {
+            const r = e.next();
+            if (r.done) return ((l.current = "end"), void d.trigger("end"));
             (c.run(() => {
-              if (l.current) {
+              if (i.current) {
                 if (
-                  (l.current.classList.add(t.value.name),
-                  d.trigger("change", t.value),
-                  t.value.stopNextSteps)
+                  (i.current.classList.add(r.value.name),
+                  d.trigger("change", r.value),
+                  r.value.stopNextSteps)
                 )
-                  return ((i.current = "paused"), void d.trigger("pause"));
-                r();
+                  return ((l.current = "paused"), void d.trigger("pause"));
+                t();
               } else
-                console.error(`${t.value.name} step don't know on what rootRef it should be set`);
-            }, t.value.delay),
-              (i.current = "running"));
+                console.error(`${r.value.name} step don't know on what rootRef it should be set`);
+            }, r.value.delay),
+              (l.current = "running"));
           };
         return {
-          rootRef: l,
-          stateRef: i,
-          steps: a,
+          rootRef: i,
+          stateRef: l,
+          steps: r,
           delayUntilStep: (e) => {
-            let r = 0;
-            for (let t = 0; t < a.length; t++) if (((r += a[t].delay), a[t] === e)) return r;
+            let t = 0;
+            for (let n = 0; n < r.length; n++) if (((t += r[n].delay), r[n] === e)) return t;
             throw new Error(`delayUntilStep didn't find step: ${e.name}`);
           },
           events: { on: d.on, off: d.off },
           start: () => {
-            (r(), d.trigger("start"));
+            (t(), d.trigger("start"));
           },
           resume: () => {
-            "paused" === i.current
-              ? (r(), d.trigger("resume"))
+            "paused" === l.current
+              ? (t(), d.trigger("resume"))
               : console.warn(
                   "api.resume() should be called only after paused animation, ignore resume() call",
                 );
@@ -50,19 +50,19 @@ var o = e(a()),
           skipAll: () => {
             (c.clear(),
               f.run(() => {
-                (a.forEach((e) => {
-                  l.current
-                    ? l.current.classList.add(e.name)
+                (r.forEach((e) => {
+                  i.current
+                    ? i.current.classList.add(e.name)
                     : console.error(`${e} tried to be set, but rootRef was not received in api`);
                 }),
-                  (i.current = "end"),
+                  (l.current = "end"),
                   d.trigger("end"));
               }));
           },
         };
-      }, [c, d, f, a]);
+      }, [c, d, f, r]);
     return (
-      s(() => {
+      n(() => {
         u && p.start();
       }),
       p

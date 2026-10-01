@@ -1,13 +1,13 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
-import { $ as s, Pa as a, Sr as o, Uo as t, _i as i, fi as n, ws as r } from "../../chunks/lib.js";
+import { Cs as s, Ho as a, Hr as o, Mr as t, Na as i, _i as n, fi as r } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as c, i as _ } from "../../chunks/vendor.js";
 /* empty css                  */ import { o as l } from "../../chunks/enums.js";
 import { t as d } from "../../chunks/formatted_statistic_value.js";
 import { n as p } from "../../chunks/get_statistic_value.js";
 import { t as w } from "../../chunks/tooltip_decorator.js";
-r();
-var [m, u] = i()(({ observableModel: e }) => ({ root: e.object() }), t),
+s();
+var [m, u] = n()(({ observableModel: e }) => ({ root: e.object() }), a),
   f = e(_(), 1),
   h = {
     base: "Row_94492f2a",
@@ -31,21 +31,21 @@ var [m, u] = i()(({ observableModel: e }) => ({ root: e.object() }), t),
     blink: "Row_blink_0",
     slideUpIn: "Row_slideUpIn_0",
   },
-  x = e(a(), 1),
+  x = e(i(), 1),
   j = {
     victory: R.strings.comp7_ext.winsIndicatorTooltip.wins(),
     defeat: R.strings.comp7_ext.winsIndicatorTooltip.defeats(),
     draw: R.strings.comp7_ext.winsIndicatorTooltip.draws(),
   };
-function v({ type: e, value: a, className: o }) {
+function v({ type: e, value: s, className: a }) {
   return (0, x.jsxs)("div", {
-    className: (0, f.default)(h.base, o),
+    className: (0, f.default)(h.base, a),
     children: [
       (0, x.jsx)("div", { className: (0, f.default)(h.icon, h[`icon__${e}`]) }),
-      (0, x.jsx)(s, {
+      (0, x.jsx)(t, {
         text: j[e],
         binding: {
-          count: (0, x.jsx)("div", { className: h.value, children: (0, x.jsx)(d, { value: a }) }),
+          count: (0, x.jsx)("div", { className: h.value, children: (0, x.jsx)(d, { value: s }) }),
         },
       }),
     ],
@@ -59,31 +59,31 @@ var g = "App_85ba0ddd",
   k = "App_listItem_72a48a31",
   N = c(function () {
     const { model: e } = u(),
-      { statisticsMode: a, winRate: o, winsCount: t, lossCount: i, drawCount: n } = e.root.get();
+      { statisticsMode: s, winRate: a, winsCount: o, lossCount: i, drawCount: n } = e.root.get();
     return (0, x.jsxs)("div", {
       className: g,
       children: [
-        (0, x.jsx)(s, {
+        (0, x.jsx)(t, {
           text:
-            a === l.Season
+            s === l.Season
               ? R.strings.comp7_ext.winsIndicatorTooltip.season.heading()
               : R.strings.comp7_ext.winsIndicatorTooltip.day.heading(),
           binding: {
             winRate: (0, x.jsx)("div", {
               className: I,
-              children: p({ value: o, isPercentage: !0 }),
+              children: p({ value: a, isPercentage: !0 }),
             }),
           },
           classMix: b,
         }),
-        (0, x.jsx)(s, {
+        (0, x.jsx)(t, {
           text: R.strings.comp7_ext.winsIndicatorTooltip.winRate.description(),
           classMix: y,
         }),
         (0, x.jsxs)("div", {
           className: A,
           children: [
-            (0, x.jsx)(v, { type: "victory", value: t, className: k }),
+            (0, x.jsx)(v, { type: "victory", value: o, className: k }),
             (0, x.jsx)(v, { type: "defeat", value: i, className: k }),
             (0, x.jsx)(v, { type: "draw", value: n, className: k }),
           ],
@@ -91,7 +91,7 @@ var g = "App_85ba0ddd",
       ],
     });
   });
-n(
+r(
   (0, x.jsx)(m, {
     children: (0, x.jsx)(o, { children: (0, x.jsx)(w, { children: (0, x.jsx)(N, {}) }) }),
   }),

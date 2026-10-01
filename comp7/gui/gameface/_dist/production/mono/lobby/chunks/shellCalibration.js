@@ -1,7 +1,7 @@
 import { r as l } from "./rolldown-runtime.js";
-import { Pa as i, ws as s } from "./lib.js";
-s();
-var t = l(i()),
+import { Cs as i, Na as s } from "./lib.js";
+i();
+var t = l(s()),
   L = (l) =>
     (0, t.jsxs)("svg", {
       width: 32,

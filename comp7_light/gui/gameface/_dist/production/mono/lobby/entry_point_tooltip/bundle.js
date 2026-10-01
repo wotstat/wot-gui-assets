@@ -1,12 +1,12 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Cr as t,
-  Kr as a,
-  Sr as s,
-  Vo as r,
+  Bo as t,
+  Cr as a,
+  Kr as s,
+  Sr as r,
   Zr as o,
   gr as n,
-  sa as i,
+  oa as i,
   wr as p,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
@@ -36,7 +36,7 @@ var m = e(l(), 1),
     }),
     ({ externalModel: e }) => ({ pollServerTime: e.createCallbackNoArgs("season.pollServerTime") }),
   ),
-  v = (r(), e(i(), 1)),
+  v = (t(), e(i(), 1)),
   A = d(() => {
     const { model: e, controls: t } = h(),
       { timeLeftUntilPrimeTime: a } = e.root.get(),
@@ -128,13 +128,13 @@ var m = e(l(), 1),
         (0, v.jsxs)("div", {
           className: f.bottomContent,
           children: [
-            (0, v.jsx)(s, {
+            (0, v.jsx)(r, {
               text: R.strings.comp7_light.entryPointTooltip.description(),
               params: { levels: a },
               className: f.paragraph,
               upgradeLegacy: !0,
             }),
-            (0, v.jsx)(s, {
+            (0, v.jsx)(r, {
               text: R.strings.comp7_light.entryPointTooltip.modeDescription(),
               params: {
                 mode: (0, v.jsx)("div", {
@@ -152,9 +152,9 @@ var m = e(l(), 1),
       ],
     });
   });
-a(
+s(
   (0, v.jsx)(b, {
-    children: (0, v.jsx)(t, {
+    children: (0, v.jsx)(a, {
       children: (0, v.jsx)("div", {
         className: f.decorator,
         children: (0, v.jsx)("div", { className: f.decoratorInner, children: (0, v.jsx)(j, {}) }),

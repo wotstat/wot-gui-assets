@@ -1,44 +1,44 @@
 import {
   Bt as a,
-  Gt as s,
-  Nn as e,
-  Ut as r,
-  _ as n,
-  d as t,
-  h as i,
-  jr as m,
+  F as s,
+  Gt as e,
+  N as r,
+  Nn as n,
+  Ut as t,
+  jr as i,
+  k as m,
   ni as o,
   t as c,
   zt as d,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { i as p } from "../../chunks/vendor.js";
-var [l, _] = s()((a) => {
+var [l, j] = e()((a) => {
   const s = a.observableModel.primitives(["params", "type"]);
   return {
     type: s.type,
     computes: {
-      params: r.primitive(function (a) {
+      params: t.primitive(function (a) {
         return a(s.params.get());
       }),
     },
   };
-}, m);
-var j,
+}, i);
+var _,
   f = "App_11090d07",
-  h = "App_headerContainer_c897879f",
-  v = "App_icon_961e61e2",
-  u = "App_specialtyName_1072bf2a",
-  N = "App_commanderName_d9ad769f",
+  v = "App_headerContainer_c897879f",
+  N = "App_icon_961e61e2",
+  h = "App_specialtyName_1072bf2a",
+  u = "App_commanderName_d9ad769f",
   x = "App_separator_f627df4c",
   y = "App_description_1072bf2a",
-  b = e(),
+  b = n(),
   A = o.resolve("strings"),
-  k = i({ commanderNation: n() }),
+  k = r({ commanderNation: s() }),
   g =
-    ((j = t(k)),
+    ((_ = m(k)),
     function () {
-      return _().model.computes.params(j);
+      return j().model.computes.params(_);
     }),
   E = p(function () {
     const { commanderNation: a } = g();
@@ -48,17 +48,17 @@ var j,
           className: f,
           children: [
             (0, b.jsxs)("div", {
-              className: h,
+              className: v,
               children: [
-                (0, b.jsx)("div", { className: v }),
+                (0, b.jsx)("div", { className: N }),
                 (0, b.jsx)("div", {
-                  className: u,
+                  className: h,
                   children: A.readOrEmpty("battle_royale.commanderInfo.commonRank"),
                 }),
               ],
             }),
             (0, b.jsx)("div", {
-              className: N,
+              className: u,
               children: A.readOrEmpty(`battle_royale.commanderInfo.fullName.${a}`),
             }),
             (0, b.jsx)("div", { className: x }),

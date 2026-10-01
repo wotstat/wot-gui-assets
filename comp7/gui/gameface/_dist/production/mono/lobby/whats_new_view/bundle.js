@@ -1,79 +1,79 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Er as a,
+  Bo as a,
   F as s,
-  Ia as n,
-  Ki as t,
-  Kn as i,
-  Li as _,
-  Mt as r,
-  Na as c,
-  Pa as d,
-  Sr as o,
-  Ss as l,
-  Un as p,
-  Vo as m,
-  Yi as h,
-  _i as g,
-  bo as f,
-  fi as x,
-  gi as b,
-  na as u,
-  no as w,
-  pr as N,
-  ts as v,
-  yr as j,
+  Fa as n,
+  Gi as t,
+  Hr as i,
+  Ii as r,
+  Ji as _,
+  Ma as c,
+  Na as d,
+  Pn as o,
+  Rr as l,
+  _i as p,
+  es as m,
+  fi as h,
+  gi as g,
+  jn as f,
+  lr as x,
+  rr as u,
+  ta as b,
+  to as w,
+  wt as N,
+  xs as v,
+  yo as j,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { a as M, i as I } from "../chunks/vendor.js";
-/* empty css               */ import { n as V, t as C } from "../chunks/schedule_model.js";
-import { i as T } from "../chunks/enums.js";
-import { n as y } from "../chunks/consts.js";
-import { t as k } from "../chunks/get_button_size.js";
-import { t as A } from "../chunks/schedule_subheading.js";
+/* empty css               */ import { n as C, t as V } from "../chunks/schedule_model.js";
+import { t as T } from "../chunks/get_button_size.js";
+import { t as y } from "../chunks/schedule_subheading.js";
+import { i as k } from "../chunks/enums.js";
+import { n as A } from "../chunks/consts.js";
 import { n as U, t as S } from "../chunks/vehicle_name.js";
 import { t as B } from "../chunks/close_button.js";
-var [$, W] = g()(
+var [$, W] = p()(
     ({ observableModel: e }) => {
-      const a = { rentalVehicles: e.array("rentalVehicles") },
-        s = b(
+      const s = { rentalVehicles: e.array("rentalVehicles") },
+        n = g(
           (e) => {
-            const s = f(a.rentalVehicles.get(), e);
-            if (!s) throw new Error(`rentalVehicle with index ${e} is not found`);
-            return { ...s };
+            const a = j(s.rentalVehicles.get(), e);
+            if (!a) throw new Error(`rentalVehicle with index ${e} is not found`);
+            return { ...a };
           },
-          { equals: m },
+          { equals: a },
         );
-      return { ...a, computes: { rentalVehicle: s } };
+      return { ...s, computes: { rentalVehicle: n } };
     },
     ({ externalModel: e }) => ({
       close: e.createCallbackNoArgs("onClose"),
       openVideo: e.createCallbackNoArgs("onVideoOpen"),
     }),
   ),
-  z = e(I(), 1),
-  H = e(d(), 1),
+  H = e(I(), 1),
+  z = e(d(), 1),
   O = ({ className: e, onClose: a }) => (
-    u(a),
-    (0, H.jsx)("div", { className: (0, z.default)(e), children: (0, H.jsx)(r, {}) })
+    b(a),
+    (0, z.jsx)("div", { className: (0, H.default)(e), children: (0, z.jsx)(N, {}) })
   ),
-  L = "BackgroundVideo_3146bd30",
-  P = "BackgroundVideo_video_be61ad9f",
-  Q = "BackgroundVideo_video__bg_277575c1",
-  D = (e) => !!v.isHigh() && e,
+  P = "BackgroundVideo_3146bd30",
+  Q = "BackgroundVideo_video_be61ad9f",
+  L = "BackgroundVideo_video__bg_277575c1",
+  D = (e) => !!m.isHigh() && e,
   G = ({ className: e, classNames: a, animated: n = !0 }) =>
-    (0, H.jsx)("div", {
-      className: (0, z.default)(L, e),
+    (0, z.jsx)("div", {
+      className: (0, H.default)(P, e),
       children: D(n)
-        ? (0, H.jsx)(s, {
-            className: (0, z.default)(P, a?.video),
+        ? (0, z.jsx)(s, {
+            className: (0, H.default)(Q, a?.video),
             src: String(R.videos.comp7.yearly_styles()),
             autoplay: !0,
             loop: !0,
           })
-        : (0, H.jsx)("div", { className: (0, z.default)(P, Q, a?.video) }),
+        : (0, z.jsx)("div", { className: (0, H.default)(Q, L, a?.video) }),
     }),
-  K = {
+  F = {
     base: "Tag_ebca89ec",
     base__new: "Tag_base__new_bca663c2",
     base__changed: "Tag_base__changed_9320deb9",
@@ -97,30 +97,30 @@ var [$, W] = g()(
     blink: "Tag_blink_0",
     slideUpIn: "Tag_slideUpIn_0",
   },
-  E = ({ type: e, className: a }) =>
-    (0, H.jsx)("div", {
-      className: (0, z.default)(K.base, K[`base__${e}`], a),
+  q = ({ type: e, className: a }) =>
+    (0, z.jsx)("div", {
+      className: (0, H.default)(F.base, F[`base__${e}`], a),
       children: `${R.strings.comp7_ext.whatsNewView.tag.$dyn(e)}`,
     }),
-  q = "WatchVideo_content_ae20f033",
-  F = "WatchVideo_videoButton_6b01e609",
-  Y = "WatchVideo_text_6df0b12";
-function J(e) {
-  return e >= n.Large ? N.sizes.large : N.sizes.medium;
+  E = "WatchVideo_content_ae20f033",
+  J = "WatchVideo_videoButton_6b01e609",
+  K = "WatchVideo_text_6df0b12";
+function X(e) {
+  return e >= n.Large ? l.sizes.large : l.sizes.medium;
 }
-var X = M(function () {
+var Y = M(function () {
     const { controls: e } = W(),
       { mediaSize: a } = c();
-    return (0, H.jsx)(N, {
-      theme: N.themes.secondary,
-      size: J(a),
+    return (0, z.jsx)(l, {
+      theme: l.themes.secondary,
+      size: X(a),
       onClick: e.openVideo,
-      children: (0, H.jsxs)("div", {
-        className: q,
+      children: (0, z.jsxs)("div", {
+        className: E,
         children: [
-          (0, H.jsx)("div", { className: F }),
-          (0, H.jsx)("div", {
-            className: Y,
+          (0, z.jsx)("div", { className: J }),
+          (0, z.jsx)("div", {
+            className: K,
             children: R.strings.comp7_ext.whatsNewView.watchVideo(),
           }),
         ],
@@ -134,55 +134,55 @@ var X = M(function () {
   ne = "Banner_date_1c1a4743",
   te = "Banner_introDescription_1e9ef322",
   ie = "Banner_headingContainer_cb4c7c84",
-  _e = "Banner_introContainer_fbde58b8",
-  re = "Banner_tag_b884e5f0",
+  re = "Banner_introContainer_fbde58b8",
+  _e = "Banner_tag_b884e5f0",
   ce = "Typography_h1_da89a0d0",
   de = "Typography_h2_13f4d2f5",
   oe = "Typography_h3_13f4d2f5",
   le = "Typography_paragraphText_5f2b094e",
   pe = M(function () {
-    const { model: e } = V(),
-      s = e.season.name.get();
-    return (0, H.jsxs)("div", {
+    const { model: e } = C(),
+      a = e.season.name.get();
+    return (0, z.jsxs)("div", {
       className: Z,
       children: [
-        (0, H.jsx)("div", {
-          className: l(oe, ee),
+        (0, z.jsx)("div", {
+          className: v(oe, ee),
           children: R.strings.comp7_ext.whatsNewView.banner.title.small(),
         }),
-        (0, H.jsx)("div", {
+        (0, z.jsx)("div", {
           className: ce,
           children: R.strings.comp7_ext.whatsNewView.banner.title.large(),
         }),
-        (0, H.jsx)(A, { hasSeasonName: !1, className: ne }),
-        s === T.Third &&
-          (0, H.jsxs)("div", {
+        (0, z.jsx)(y, { hasSeasonName: !1, className: ne }),
+        a === k.Third &&
+          (0, z.jsxs)("div", {
             className: ie,
             children: [
-              (0, H.jsx)("div", {
-                className: l(oe, ee),
+              (0, z.jsx)("div", {
+                className: v(oe, ee),
                 children: R.strings.comp7_ext.whatsNewView.banner.heading(),
               }),
-              (0, H.jsx)("div", {
+              (0, z.jsx)("div", {
                 className: le,
                 children: R.strings.comp7_ext.whatsNewView.banner.description(),
               }),
             ],
           }),
-        (0, H.jsx)(X, {}),
-        (0, H.jsx)("div", {
-          className: _e,
-          children: (0, H.jsxs)("div", {
+        (0, z.jsx)(Y, {}),
+        (0, z.jsx)("div", {
+          className: re,
+          children: (0, z.jsxs)("div", {
             className: te,
             children: [
-              (0, H.jsx)(a, {
+              (0, z.jsx)(x, {
                 text: R.strings.comp7_ext.whatsNewView.nightMaps.heading(),
-                params: { tag: (0, H.jsx)(E, { type: "new", className: re }) },
+                params: { tag: (0, z.jsx)(q, { type: "new", className: _e }) },
                 className: ae,
               }),
-              (0, H.jsx)(a, {
+              (0, z.jsx)(x, {
                 text: R.strings.comp7_ext.whatsNewView.nightMaps.description(),
-                className: l(le, se),
+                className: v(le, se),
               }),
             ],
           }),
@@ -227,26 +227,26 @@ var X = M(function () {
   };
 function ge({ name: e, tag: a, stamp: s }) {
   const n = R.strings.arenas.$dyn(`c_${e}`);
-  return (0, H.jsxs)("div", {
+  return (0, z.jsxs)("div", {
     className: he.base,
     children: [
-      (0, H.jsx)(j, {
+      (0, z.jsx)(u, {
         path: `R.images.comp7.gui.maps.icons.whatsNewView.arenas.c_${e}`,
         className: he.background,
       }),
-      (0, H.jsx)("div", { className: he.gradient }),
+      (0, z.jsx)("div", { className: he.gradient }),
       s &&
-        (0, H.jsx)("div", {
-          className: l(he.stamp, he[`stamp__${s}`]),
+        (0, z.jsx)("div", {
+          className: v(he.stamp, he[`stamp__${s}`]),
           children: `${R.strings.comp7_ext.whatsNewView.stamp.$dyn(s)}`,
         }),
-      (0, H.jsxs)("div", {
+      (0, z.jsxs)("div", {
         className: he.content,
         children: [
-          a && (0, H.jsx)(E, { type: a, className: he.tag }),
-          (0, H.jsx)("div", {
+          a && (0, z.jsx)(q, { type: a, className: he.tag }),
+          (0, z.jsx)("div", {
             className: he.nameContainer,
-            children: (0, H.jsx)("div", { className: he.name, children: `${n.$dyn("name")}` }),
+            children: (0, z.jsx)("div", { className: he.name, children: `${n.$dyn("name")}` }),
           }),
         ],
       }),
@@ -255,8 +255,8 @@ function ge({ name: e, tag: a, stamp: s }) {
 }
 var fe = "Grid_header_9a3828c4",
   xe = "Grid_row_fad44a4a",
-  be = "Grid_cell_95a78ad9",
-  ue = {
+  ue = "Grid_cell_95a78ad9",
+  be = {
     header: "MapChanges_header_31ada2d",
     legend: "MapChanges_legend_92b285b6",
     fadeIn: "MapChanges_fadeIn_194c07e7",
@@ -275,25 +275,25 @@ var fe = "Grid_header_9a3828c4",
     slideUpIn: "MapChanges_slideUpIn_194c07e7",
   };
 function we() {
-  return (0, H.jsxs)("div", {
-    className: ue.base,
+  return (0, z.jsxs)("div", {
+    className: be.base,
     children: [
-      (0, H.jsxs)("div", {
-        className: l(fe, ue.header),
+      (0, z.jsxs)("div", {
+        className: v(fe, be.header),
         children: [
-          (0, H.jsx)("div", {
+          (0, z.jsx)("div", {
             className: de,
             children: R.strings.comp7_ext.whatsNewView.mapChanges.heading(),
           }),
-          (0, H.jsx)(E, { type: "seasonUpdate" }),
+          (0, z.jsx)(q, { type: "seasonUpdate" }),
         ],
       }),
-      (0, H.jsx)("div", {
+      (0, z.jsx)("div", {
         className: xe,
         children: me.map(({ name: e, tag: a, stamp: s }) =>
-          (0, H.jsx)(
+          (0, z.jsx)(
             "div",
-            { className: be, children: (0, H.jsx)(ge, { name: e, tag: a, stamp: s }) },
+            { className: ue, children: (0, z.jsx)(ge, { name: e, tag: a, stamp: s }) },
             e,
           ),
         ),
@@ -311,24 +311,24 @@ var Ne = "Vehicle_b4f7ade7",
       {
         name: t,
         tier: i,
-        type: _,
-        isPremium: r,
+        type: r,
+        isPremium: _,
         vehicleCD: d,
         roleKey: o,
       } = a.computes.rentalVehicle(e),
       l = `url(${R.images.comp7.gui.maps.icons.whatsNewView.rental_vehicles.$num(d)})`;
-    return (0, H.jsxs)("div", {
+    return (0, z.jsxs)("div", {
       className: Ne,
       style: { backgroundImage: l },
       children: [
-        (0, H.jsx)("div", { className: ve }),
-        (0, H.jsx)("div", {
+        (0, z.jsx)("div", { className: ve }),
+        (0, z.jsx)("div", {
           className: je,
-          children: (0, H.jsx)(S, {
+          children: (0, z.jsx)(S, {
             name: t,
             tier: i,
-            type: _,
-            isPremium: r,
+            type: r,
+            isPremium: _,
             tooltipArgs: { vehicleCD: d, tooltipId: "shopVehicle" },
             vehicleCD: d,
             role: o,
@@ -339,25 +339,25 @@ var Ne = "Vehicle_b4f7ade7",
       ],
     });
   }),
-  Ve = "RentalVehicles_header_4faf333a",
-  Ce = M(function () {
+  Ce = "RentalVehicles_header_4faf333a",
+  Ve = M(function () {
     const { model: e } = W();
-    return (0, H.jsxs)("div", {
+    return (0, z.jsxs)("div", {
       children: [
-        (0, H.jsxs)("div", {
-          className: l(fe, Ve),
+        (0, z.jsxs)("div", {
+          className: v(fe, Ce),
           children: [
-            (0, H.jsx)("div", {
+            (0, z.jsx)("div", {
               className: de,
               children: R.strings.comp7_ext.whatsNewView.rentalVehicles.heading(),
             }),
-            (0, H.jsx)(E, { type: "seasonUpdate" }),
+            (0, z.jsx)(q, { type: "seasonUpdate" }),
           ],
         }),
-        (0, H.jsx)("div", {
+        (0, z.jsx)("div", {
           className: xe,
           children: w(e.rentalVehicles.get().length, (e) =>
-            (0, H.jsx)("div", { className: be, children: (0, H.jsx)(Ie, { index: e }) }, e),
+            (0, z.jsx)("div", { className: ue, children: (0, z.jsx)(Ie, { index: e }) }, e),
           ),
         }),
       ],
@@ -369,21 +369,21 @@ var Ne = "Vehicle_b4f7ade7",
   Re = "SeasonalUpdate_title_250e2e65",
   Ae = "SeasonalUpdate_description_77846fe8",
   Ue = "SeasonalUpdate_tag_fe951f3d";
-function Se({ title: e, description: s, classNames: n, tagType: t = "seasonUpdate" }) {
-  return (0, H.jsxs)("div", {
-    className: l(Te, n?.base),
+function Se({ title: e, description: a, classNames: s, tagType: n = "seasonUpdate" }) {
+  return (0, z.jsxs)("div", {
+    className: v(Te, s?.base),
     children: [
-      (0, H.jsx)("div", { className: l(ye, n?.image) }),
-      (0, H.jsxs)("div", {
-        className: l(ke, n?.container),
+      (0, z.jsx)("div", { className: v(ye, s?.image) }),
+      (0, z.jsxs)("div", {
+        className: v(ke, s?.container),
         children: [
-          (0, H.jsx)(a, {
+          (0, z.jsx)(x, {
             text: e,
-            params: { tag: (0, H.jsx)(E, { type: t, className: Ue }) },
-            className: l(de, Re, n?.title),
+            params: { tag: (0, z.jsx)(q, { type: n, className: Ue }) },
+            className: v(de, Re, s?.title),
           }),
-          (0, H.jsx)(a, { text: s, className: l(le, Ae, n?.description) }),
-          (0, H.jsx)("div", { className: l(Ae, n?.description) }),
+          (0, z.jsx)(x, { text: a, className: v(le, Ae, s?.description) }),
+          (0, z.jsx)("div", { className: v(Ae, s?.description) }),
         ],
       }),
     ],
@@ -430,19 +430,19 @@ var Be = {
   },
   $e = { base: Be.scrollBar },
   We = [
-    { value: (0, H.jsx)(pe, {}) },
-    { value: (0, H.jsx)(we, {}) },
+    { value: (0, z.jsx)(pe, {}) },
+    { value: (0, z.jsx)(we, {}) },
     {
-      value: (0, H.jsx)(Se, {
+      value: (0, z.jsx)(Se, {
         title: R.strings.comp7_ext.whatsNewView.newLTRoles.heading(),
         description: R.strings.comp7_ext.whatsNewView.newLTRoles.description(),
         classNames: { image: Be.newLTRolesImage },
         tagType: "new",
       }),
     },
-    { value: (0, H.jsx)(Ce, {}) },
+    { value: (0, z.jsx)(Ve, {}) },
     {
-      value: (0, H.jsx)(Se, {
+      value: (0, z.jsx)(Se, {
         title: R.strings.comp7_ext.whatsNewView.seasonalBalanceChanges.heading(),
         description: R.strings.comp7_ext.whatsNewView.seasonalBalanceChanges.description(),
         classNames: { image: Be.balanceChangesImage },
@@ -450,7 +450,7 @@ var Be = {
       }),
     },
     {
-      value: (0, H.jsx)(Se, {
+      value: (0, z.jsx)(Se, {
         title: R.strings.comp7_ext.whatsNewView.drawConditions.heading(),
         description: R.strings.comp7_ext.whatsNewView.drawConditions.description(),
         classNames: { image: Be.drawConditionsImage },
@@ -458,7 +458,7 @@ var Be = {
       }),
     },
     {
-      value: (0, H.jsx)(Se, {
+      value: (0, z.jsx)(Se, {
         title: R.strings.comp7_ext.whatsNewView.noSuperPlatoons.heading(),
         description: R.strings.comp7_ext.whatsNewView.noSuperPlatoons.description(),
         classNames: { image: Be.noSuperPlatoonsImage },
@@ -466,31 +466,31 @@ var Be = {
       }),
     },
   ],
-  ze = M(function () {
+  He = M(function () {
     const { controls: e } = W(),
-      { model: a } = V(),
+      { model: a } = C(),
       { mediaSize: s } = c(),
       n = a.season.name.get();
-    return (0, H.jsx)(p, {
-      children: (0, H.jsxs)(i, {
+    return (0, z.jsx)(f, {
+      children: (0, z.jsxs)(o, {
         className: Be.base,
         barClassNames: $e,
         scrollClassName: Be.areaBaseWrapper,
         children: [
-          n === T.Third && (0, H.jsx)(G, { className: Be.videoContainer }),
-          (0, H.jsxs)("div", {
-            className: l(Be.content, Be[`content__${n}`]),
+          n === k.Third && (0, z.jsx)(G, { className: Be.videoContainer }),
+          (0, z.jsxs)("div", {
+            className: v(Be.content, Be[`content__${n}`]),
             children: [
               We.map((e, a) =>
-                (0, H.jsx)(
+                (0, z.jsx)(
                   "div",
-                  { className: l(Be.container, Be[`container__${a + 1}`]), children: e.value },
+                  { className: v(Be.container, Be[`container__${a + 1}`]), children: e.value },
                   a,
                 ),
               ),
-              (0, H.jsx)(N, {
-                theme: N.themes.primary,
-                size: k(s),
+              (0, z.jsx)(l, {
+                theme: l.themes.primary,
+                size: T(s),
                 className: Be.button,
                 onClick: e.close,
                 children: R.strings.comp7_ext.whatsNewView.button.ok(),
@@ -501,38 +501,38 @@ var Be = {
       }),
     });
   }),
-  He = "App_f9ac9f39",
+  ze = "App_f9ac9f39",
   Oe = "App_container_9abce13f",
-  Le = "App_waiting_93ca532a",
-  Pe = M(() => {
+  Pe = "App_waiting_93ca532a",
+  Qe = M(() => {
     const { controls: e } = W(),
-      { model: a } = V(),
+      { model: a } = C(),
       s = a.season.name.get(),
-      n = h(y),
-      i = _(
+      n = _(A),
+      i = r(
         ((e) => [
           R.images.comp7.gui.maps.icons.whatsNewView.backdrop(),
           String(R.images.comp7.gui.maps.icons.whatsNewView.$dyn(`bg_${e}`)),
         ])(s),
       );
-    return (0, H.jsx)("div", {
-      className: He,
+    return (0, z.jsx)("div", {
+      className: ze,
       children:
         "success" === i
-          ? (0, H.jsxs)(t.div, {
+          ? (0, z.jsxs)(t.div, {
               className: Oe,
               style: n,
-              children: [(0, H.jsx)(ze, {}), (0, H.jsx)(B, { onClick: e.close })],
+              children: [(0, z.jsx)(He, {}), (0, z.jsx)(B, { onClick: e.close })],
             })
-          : (0, H.jsx)(O, { onClose: e.close, className: Le }),
+          : (0, z.jsx)(O, { onClose: e.close, className: Pe }),
     });
   });
-x(
-  (0, H.jsx)(o, {
-    children: (0, H.jsx)($, {
-      children: (0, H.jsx)(C, {
+h(
+  (0, z.jsx)(i, {
+    children: (0, z.jsx)($, {
+      children: (0, z.jsx)(V, {
         options: { context: "model.scheduleInfo" },
-        children: (0, H.jsx)(Pe, {}),
+        children: (0, z.jsx)(Qe, {}),
       }),
     }),
   }),

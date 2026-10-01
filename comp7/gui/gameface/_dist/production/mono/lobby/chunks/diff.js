@@ -1,12 +1,12 @@
 import { r as a } from "./rolldown-runtime.js";
-import { Pa as e, ws as s } from "./lib.js";
+import { Cs as e, Na as s } from "./lib.js";
 import { i } from "./vendor.js";
-s();
+e();
 var r = a(i()),
   f = "Diff_8f04feea",
   l = "Diff_base__negative_ebb1426",
   t = "Diff_base__positive_36979f4d",
-  d = a(e());
+  d = a(s());
 function o({ value: a, className: e }) {
   return a < 0
     ? (0, d.jsx)("div", { className: (0, r.default)(f, l, e), children: `${a}` })

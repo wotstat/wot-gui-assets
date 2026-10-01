@@ -1,13 +1,13 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
-  $ as s,
-  Pa as a,
-  Sr as i,
-  Uo as n,
-  _i as t,
-  fi as r,
-  tt as o,
-  ws as p,
+  Cs as s,
+  Ho as a,
+  Hr as i,
+  Mr as n,
+  Na as t,
+  _i as r,
+  fi as o,
+  q as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as c, i as d } from "../../chunks/vendor.js";
@@ -15,9 +15,9 @@ import { a as c, i as d } from "../../chunks/vendor.js";
 import { i as l, t as x } from "../../chunks/rank_emblem.js";
 import { t as g } from "../../chunks/diff.js";
 import { t as h } from "../../chunks/tooltip_decorator.js";
-p();
+s();
 var f = e(d(), 1),
-  [m, A] = t()(({ observableModel: e }) => ({ root: e.object() }), n),
+  [m, A] = r()(({ observableModel: e }) => ({ root: e.object() }), a),
   j = {
     base: "App_1452e781",
     base__day: "App_base__day_d1e1e777",
@@ -48,36 +48,36 @@ var f = e(d(), 1),
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  u = e(a(), 1),
+  u = e(t(), 1),
   b = { [_.Day]: "day", [_.Season]: "season" },
   k = c(function () {
     const { model: e } = A(),
       {
-        statisticsMode: a,
-        seasonName: i,
-        rank: n,
+        statisticsMode: s,
+        seasonName: a,
+        rank: i,
         division: t,
         ratingPoints: r,
-        diff: p,
+        diff: o,
         maxAchievedRatingPoints: c,
         dayOfMaxRatingIndex: d,
       } = e.root.get();
     return (0, u.jsxs)("div", {
-      className: (0, f.default)(j.base, j[`base__${b[a]}`]),
+      className: (0, f.default)(j.base, j[`base__${b[s]}`]),
       children: [
         (0, u.jsxs)("div", {
           className: (0, f.default)(j.section, j.section__centered, j.section__rank),
           children: [
-            (0, u.jsx)(x, { rank: n, division: t, seasonName: i, size: l.x150 }),
+            (0, u.jsx)(x, { rank: i, division: t, seasonName: a, size: l.x150 }),
             (0, u.jsx)("div", {
               className: j.indicatorValue,
-              children: (0, u.jsx)(o, { value: a === _.Season ? c : r }),
+              children: (0, u.jsx)(p, { value: s === _.Season ? c : r }),
             }),
-            a === _.Season
-              ? (0, u.jsx)(s, {
+            s === _.Season
+              ? (0, u.jsx)(n, {
                   text: R.strings.comp7_ext.rankIndicatorTooltip.season.ratingDescription(),
                   binding: {
-                    dayOfRecord: (0, u.jsx)(s, {
+                    dayOfRecord: (0, u.jsx)(n, {
                       text: R.strings.comp7_ext.rankIndicatorTooltip.season.dayOfRecord(),
                       binding: { day: d + 1 },
                       classMix: j.dayText,
@@ -85,24 +85,24 @@ var f = e(d(), 1),
                   },
                   classMix: (0, f.default)(j.description, j.description__centered),
                 })
-              : (0, u.jsx)(s, {
+              : (0, u.jsx)(n, {
                   text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingDescription(),
                   classMix: j.ratingDescription,
                 }),
           ],
         }),
-        a === _.Day &&
+        s === _.Day &&
           (0, u.jsxs)(u.Fragment, {
             children: [
               (0, u.jsxs)("div", {
                 className: j.bgSection,
                 children: [
-                  (0, u.jsx)(s, {
+                  (0, u.jsx)(n, {
                     text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingDiff(),
-                    binding: { diff: (0, u.jsx)(g, { value: p }) },
+                    binding: { diff: (0, u.jsx)(g, { value: o }) },
                     classMix: j.heading,
                   }),
-                  (0, u.jsx)(s, {
+                  (0, u.jsx)(n, {
                     text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingDiffDescription(),
                     classMix: j.description,
                   }),
@@ -111,17 +111,17 @@ var f = e(d(), 1),
               (0, u.jsxs)("div", {
                 className: j.section,
                 children: [
-                  (0, u.jsx)(s, {
+                  (0, u.jsx)(n, {
                     text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingRecord(),
                     binding: {
                       maxAchievedRatingPoints: (0, u.jsx)("div", {
                         className: j.highlightedValue,
-                        children: (0, u.jsx)(o, { value: c }),
+                        children: (0, u.jsx)(p, { value: c }),
                       }),
                     },
                     classMix: j.heading,
                   }),
-                  (0, u.jsx)(s, {
+                  (0, u.jsx)(n, {
                     text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingRecordDescription(),
                     classMix: j.description,
                   }),
@@ -132,7 +132,7 @@ var f = e(d(), 1),
       ],
     });
   });
-r(
+o(
   (0, u.jsx)(m, {
     children: (0, u.jsx)(i, { children: (0, u.jsx)(h, { children: (0, u.jsx)(k, {}) }) }),
   }),

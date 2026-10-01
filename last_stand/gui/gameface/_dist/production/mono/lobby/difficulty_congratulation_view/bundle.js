@@ -1,32 +1,32 @@
 import { r as s } from "../chunks/rolldown-runtime.js";
 import {
   $n as e,
-  En as a,
-  Eo as i,
-  Hr as t,
-  Jn as r,
+  Aa as a,
+  En as i,
+  Jn as t,
+  Ka as r,
   Mn as o,
   Qn as n,
-  Vn as l,
-  Wr as c,
-  cr as d,
-  di as u,
-  gi as f,
-  ja as m,
+  To as l,
+  Ur as c,
+  Vn as d,
+  Vr as u,
+  cr as f,
+  hi as m,
   pr as p,
-  qa as y,
-  sr as _,
-  ya as g,
-  yo as C,
+  sr as y,
+  ui as _,
+  va as g,
+  vo as C,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { o as j } from "../chunks/vendor.js";
-import { n as h, t as x } from "../chunks/spring_wrapper.js";
+import { o as h } from "../chunks/vendor.js";
+import { n as j, t as x } from "../chunks/spring_wrapper.js";
 import { s as b } from "../chunks/sound.js";
-import { a as z, c as A, o as E, s as D } from "../chunks/utils.js";
-import { t as w } from "../chunks/story_point.js";
-var N = s(C(), 1),
-  [T, v] = p()(
+import { a as A, c as z, o as E, s as v } from "../chunks/utils.js";
+import { t as D } from "../chunks/story_point.js";
+var T = s(C(), 1),
+  [w, N] = p()(
     ({ observableModel: s }) => ({ root: s.object(), rewards: s.array("rewards") }),
     ({ externalModel: s }) => ({ close: s.createCallbackNoArgs("onClose") }),
   ),
@@ -67,28 +67,28 @@ var N = s(C(), 1),
   L = "DifficultyCongratulationApp_center_833227ce",
   M = "DifficultyCongratulationApp_modifierIcon_1e80aaa9",
   $ = "DifficultyCongratulationApp_title_345bbaf0",
-  H = "DifficultyCongratulationApp_header_c567657c",
-  P = "DifficultyCongratulationApp_descriptionContainer_b424b140",
-  U = "DifficultyCongratulationApp_button_a922cf0d",
-  q = "DifficultyCongratulationApp_rewards_fd607614",
+  P = "DifficultyCongratulationApp_header_c567657c",
+  U = "DifficultyCongratulationApp_descriptionContainer_b424b140",
+  H = "DifficultyCongratulationApp_button_a922cf0d",
+  V = "DifficultyCongratulationApp_rewards_fd607614",
   J = "DifficultyCongratulationApp_rewardLabel_f328651f",
-  Q = "DifficultyCongratulationApp_rewardList_cb286ad5",
-  V = "DifficultyCongratulationApp_reward_ccc9cf18",
-  F = "DifficultyCongratulationApp_closeBtn_ec8e894",
-  G = f(),
-  K = 600 + W[I.REWARDS].delay,
+  K = "DifficultyCongratulationApp_rewardList_cb286ad5",
+  Q = "DifficultyCongratulationApp_reward_ccc9cf18",
+  q = "DifficultyCongratulationApp_closeBtn_ec8e894",
+  F = m(),
+  G = 600 + W[I.REWARDS].delay,
   X = { from: { opacity: 0, y: -5 } };
 function Y() {
-  y.sound(b);
+  r.sound(b);
 }
-var Z = i.resolve("strings"),
-  ss = j(function () {
-    const { model: s, controls: i } = v(),
-      { level: d, modifier: f } = s.root.get(),
-      p = s.rewards.get();
-    (t(i.close), c(m.ENTER, i.close), c(m.SPACE, i.close));
-    const [y, _] = (0, N.useState)(!1),
-      C = u(
+var Z = l.resolve("strings"),
+  ss = h(function () {
+    const { model: s, controls: r } = N(),
+      { level: l, modifier: f } = s.root.get(),
+      m = s.rewards.get();
+    (u(r.close), c(a.ENTER, r.close), c(a.SPACE, r.close));
+    const [p, y] = (0, T.useState)(!1),
+      C = _(
         { size: e.sizes.extraSmall },
         {
           medium: { size: e.sizes.small },
@@ -96,90 +96,90 @@ var Z = i.resolve("strings"),
           extraLarge: { size: e.sizes.large },
         },
       ),
-      j = u({ size: w.sizes.s186x186 }, { large: { size: w.sizes.s256x256 } }),
-      b = u({ size: o.Big }, { medium: { size: o.S180x135 } });
-    return (0, G.jsxs)("div", {
+      h = _({ size: D.sizes.s186x186 }, { large: { size: D.sizes.s256x256 } }),
+      b = _({ size: o.Big }, { medium: { size: o.S180x135 } });
+    return (0, F.jsxs)("div", {
       className: B,
       onClick: () => {
-        _(!0);
+        y(!0);
       },
       children: [
-        (0, G.jsx)(n, { className: F, onClose: i.close }),
-        (0, G.jsxs)("div", {
+        (0, F.jsx)(n, { className: q, onClose: r.close }),
+        (0, F.jsxs)("div", {
           className: L,
           children: [
-            (0, G.jsx)(h, {
+            (0, F.jsx)(j, {
               ...W[I.ICON],
-              isCanceled: y,
-              children: (0, G.jsx)(w, {
+              isCanceled: p,
+              children: (0, F.jsx)(D, {
                 classNames: { base: M },
-                size: j.size,
+                size: h.size,
                 modifier: f,
                 withTimesSymbol: !0,
               }),
             }),
-            (0, G.jsx)(h, {
+            (0, F.jsx)(j, {
               ...W[I.TITLE],
               className: $,
-              isCanceled: y,
+              isCanceled: p,
               children: R.strings.last_stand_lobby.difficultyWindow.title(),
             }),
-            (0, G.jsx)(h, {
+            (0, F.jsx)(j, {
               ...W[I.HEADER],
-              isCanceled: y,
-              children: (0, G.jsx)(r, {
-                classMix: H,
-                justifyContent: l.Center,
+              isCanceled: p,
+              children: (0, F.jsx)(t, {
+                classMix: P,
+                justifyContent: d.Center,
                 text: Z.readOrEmpty(
-                  `R.strings.last_stand_lobby.difficultyWindow.header.level_${d}`,
+                  `R.strings.last_stand_lobby.difficultyWindow.header.level_${l}`,
                 ),
               }),
             }),
-            (0, G.jsx)(h, {
+            (0, F.jsx)(j, {
               ...W[I.DESCRIPTION],
-              isCanceled: y,
-              children: (0, G.jsx)(r, {
-                classMix: P,
-                justifyContent: l.Center,
+              isCanceled: p,
+              children: (0, F.jsx)(t, {
+                classMix: U,
+                justifyContent: d.Center,
                 isTruncationAvailable: !0,
                 isTooltipEnable: !0,
                 binding: { modifier: f },
                 text: Z.readOrEmpty(
-                  `R.strings.last_stand_lobby.difficultyWindow.description.level_${d}`,
+                  `R.strings.last_stand_lobby.difficultyWindow.description.level_${l}`,
                 ),
               }),
             }),
-            p.length > 0 &&
-              (0, G.jsxs)(h, {
+            m.length > 0 &&
+              (0, F.jsxs)(j, {
                 ...W[I.REWARDS],
-                isCanceled: y,
-                className: q,
+                isCanceled: p,
+                className: V,
                 children: [
-                  (0, G.jsx)("div", {
+                  (0, F.jsx)("div", {
                     className: J,
                     children: R.strings.last_stand_lobby.difficultyWindow.rewards(),
                   }),
-                  (0, G.jsx)("div", {
-                    className: Q,
-                    children: g(p, (s, e) =>
-                      (0, G.jsx)(
+                  (0, F.jsx)("div", {
+                    className: K,
+                    children: g(m, (s, e) =>
+                      (0, F.jsx)(
                         "div",
                         {
-                          className: V,
-                          children: (0, G.jsx)(h, {
+                          className: Q,
+                          children: (0, F.jsx)(j, {
                             ...X,
                             duration: 800,
-                            delay: K + 120 * e,
+                            delay: G + 120 * e,
                             easingType: x.EaseOutBack,
-                            isCanceled: y,
+                            isCanceled: p,
                             onStart: Y,
-                            children: (0, G.jsx)(a, {
+                            children: (0, F.jsx)(i, {
                               name: s.name,
-                              value: A(s),
+                              value: z(s),
                               size: b.size,
                               special: s.overlayType,
-                              image: z(s, b.size),
-                              valueType: D(s.name),
+                              image: A(s, b.size),
+                              valueType: v(s.name),
                               tooltipArgs: E(s),
                             }),
                           }),
@@ -192,18 +192,18 @@ var Z = i.resolve("strings"),
               }),
           ],
         }),
-        (0, G.jsx)(h, {
+        (0, F.jsx)(j, {
           ...W[I.BUTTON],
-          className: U,
-          isCanceled: y,
-          children: (0, G.jsx)(e, {
+          className: H,
+          isCanceled: p,
+          children: (0, F.jsx)(e, {
             theme: e.themes.primary,
             size: C.size,
-            onClick: i.close,
+            onClick: r.close,
             children: R.strings.last_stand_lobby.common.yes(),
           }),
         }),
       ],
     });
   });
-d((0, G.jsx)(_, { children: (0, G.jsx)(T, { children: (0, G.jsx)(ss, {}) }) }));
+f((0, F.jsx)(y, { children: (0, F.jsx)(w, { children: (0, F.jsx)(ss, {}) }) }));

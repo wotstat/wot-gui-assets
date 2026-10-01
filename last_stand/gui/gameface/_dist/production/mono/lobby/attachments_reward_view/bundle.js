@@ -1,26 +1,26 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as a,
-  Ka as s,
-  Qn as r,
-  Ur as t,
-  _i as n,
-  co as i,
-  cr as o,
-  di as c,
-  gi as l,
-  hi as d,
-  ir as m,
-  pr as p,
-  rr as _,
-  sr as b,
-  yo as u,
+  Ga as s,
+  Hr as r,
+  Qn as t,
+  cr as n,
+  gi as i,
+  hi as o,
+  ir as c,
+  mi as l,
+  pr as d,
+  rr as m,
+  so as p,
+  sr as _,
+  ui as b,
+  vo as u,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { o as x, s as g } from "../chunks/vendor.js";
 var f = e(u(), 1),
   h = e(g(), 1),
-  [A, S] = p()(
+  [A, S] = d()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({
       goToExterior: e.createCallbackNoArgs("goToExterior"),
@@ -45,22 +45,22 @@ var f = e(u(), 1),
     buttons: "RewardScreenApp_buttons_b3468902",
     button: "RewardScreenApp_button_57140b49",
   },
-  w = l(),
+  w = o(),
   y = R.strings.vehicle_customization.customization,
   v = {
-    [n.extraSmall]: "s400x300",
-    [n.small]: "s400x300",
-    [n.medium]: "s400x300",
-    [n.large]: "s600x450",
-    [n.extraLarge]: "s900x675",
+    [i.extraSmall]: "s400x300",
+    [i.small]: "s400x300",
+    [i.medium]: "s400x300",
+    [i.large]: "s600x450",
+    [i.extraLarge]: "s900x675",
   },
   k = x(function () {
     const { model: e } = S(),
-      { name: n, title: o, rarity: l } = e.root.get(),
-      { breakpoint: p } = d(),
-      [b, u] = (0, f.useState)(!0);
-    t();
-    const x = c(
+      { name: n, title: i, rarity: o } = e.root.get(),
+      { breakpoint: d } = l(),
+      [_, u] = (0, f.useState)(!0);
+    r();
+    const x = b(
       { size: a.sizes.extraSmall },
       {
         medium: { size: a.sizes.small },
@@ -71,7 +71,7 @@ var f = e(u(), 1),
     return (0, w.jsxs)("div", {
       className: j.base,
       children: [
-        (0, w.jsx)(r, { className: j.closeButton, onClose: () => s.close() }),
+        (0, w.jsx)(t, { className: j.closeButton, onClose: () => s.close() }),
         (0, w.jsxs)("div", {
           className: j.content,
           children: [
@@ -81,31 +81,31 @@ var f = e(u(), 1),
                 (0, w.jsx)("div", {
                   className: j.icon,
                   style: {
-                    backgroundImage: `url('R.images.gui.maps.vehicles.attachments.${v[p.name]}.${n}')`,
+                    backgroundImage: `url('R.images.gui.maps.vehicles.attachments.${v[d.name]}.${n}')`,
                   },
                 }),
-                b &&
-                  (0, w.jsx)(_, {
+                _ &&
+                  (0, w.jsx)(m, {
                     className: j.animation,
-                    src: R.videos.rarity.$dyn(`intro_${l}`),
+                    src: R.videos.rarity.$dyn(`intro_${o}`),
                     autoplay: !0,
                     onEnded: () => u(!1),
                   }),
-                (0, w.jsx)(_, {
-                  className: (0, h.default)(j.animation, b && j.animation__hidden),
-                  src: R.videos.rarity.$dyn(`cycle_${l}`),
-                  autoplay: !b,
+                (0, w.jsx)(m, {
+                  className: (0, h.default)(j.animation, _ && j.animation__hidden),
+                  src: R.videos.rarity.$dyn(`cycle_${o}`),
+                  autoplay: !_,
                   loop: !0,
                 }),
               ],
             }),
             (0, w.jsxs)("div", {
-              className: (0, h.default)(j.footer, j[`footer__${l}`]),
+              className: (0, h.default)(j.footer, j[`footer__${o}`]),
               children: [
-                (0, w.jsx)("div", { className: j.title, children: i(o) }),
-                (0, w.jsx)(m, {
+                (0, w.jsx)("div", { className: j.title, children: p(i) }),
+                (0, w.jsx)(c, {
                   text: y.RarityRewardScreen.subtitle(),
-                  binding: { rarity: i(String(y.rarity.$dyn(l))) },
+                  binding: { rarity: p(String(y.rarity.$dyn(o))) },
                   classMix: j.subTitle,
                 }),
                 (0, w.jsx)("div", {
@@ -126,4 +126,4 @@ var f = e(u(), 1),
       ],
     });
   });
-o((0, w.jsx)(b, { children: (0, w.jsx)(A, { children: (0, w.jsx)(k, {}) }) }));
+n((0, w.jsx)(_, { children: (0, w.jsx)(A, { children: (0, w.jsx)(k, {}) }) }));

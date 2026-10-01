@@ -2,22 +2,22 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as s,
   $t as a,
-  Hr as t,
-  La as l,
+  Ba as t,
+  Ia as l,
   Or as i,
-  V as r,
-  Va as c,
-  cr as n,
-  di as o,
+  Ra as r,
+  V as c,
+  Vr as n,
+  cr as o,
   f as m,
-  gi as u,
+  hi as u,
   pr as d,
   rn as p,
   sr as v,
   tt as b,
-  un as x,
-  yo as h,
-  za as _,
+  ui as x,
+  un as h,
+  vo as _,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { o as j } from "../chunks/vendor.js";
@@ -30,7 +30,7 @@ var A = u(),
     iconSize: t = a.x48x48,
     vehicleId: l,
     vehicleType: i,
-    isPremium: c,
+    isPremium: r,
     isElite: n,
     vehicleName: o,
     vehicleLvl: m,
@@ -38,25 +38,25 @@ var A = u(),
     emblem: d,
   }) {
     const v = N(l);
-    return (0, A.jsxs)(r, {
+    return (0, A.jsxs)(c, {
       className: e,
       children: [
         Boolean(d.level) &&
-          (0, A.jsx)(r.Prestige, {
+          (0, A.jsx)(c.Prestige, {
             level: d.level,
             grade: d.grade,
             type: d.type,
-            direction: r.Prestige.direction.left,
+            direction: c.Prestige.direction.left,
           }),
-        (0, A.jsx)(r.Level, { className: s?.level, value: m, numberType: b.numberTypes.roman }),
-        x(i) && (0, A.jsx)(r.Type, { className: s?.type, type: i, premium: c || n, size: t }),
-        (0, A.jsx)(r.Name, { className: s?.name, children: o }),
+        (0, A.jsx)(c.Level, { className: s?.level, value: m, numberType: b.numberTypes.roman }),
+        h(i) && (0, A.jsx)(c.Type, { className: s?.type, type: i, premium: r || n, size: t }),
+        (0, A.jsx)(c.Name, { className: s?.name, children: o }),
         u &&
-          (0, A.jsx)(r.Role, {
+          (0, A.jsx)(c.Role, {
             ...v,
             classNames: { base: s?.role },
             roleKey: p(u),
-            size: r.Role.sizes.x16x16,
+            size: c.Role.sizes.x16x16,
           }),
       ],
     });
@@ -74,7 +74,7 @@ var A = u(),
       openMenu: e.createCallbackNoArgs("onEscape"),
     }),
   ),
-  k = e(h(), 1);
+  k = e(_(), 1);
 function z({ className: e, timerStartTime: s }) {
   const a = s ?? Date.now(),
     [t, l] = (0, k.useState)(Math.max(0, Math.floor((Date.now() - a) / g)));
@@ -91,69 +91,69 @@ var M = "PrebattleQueueApp_sceneWrapper_de517c82",
   B = "PrebattleQueueApp_vignette_7c7f8ce2",
   E = "PrebattleQueueApp_container_26435402",
   T = "PrebattleQueueApp_dad90a27",
-  w = "PrebattleQueueApp_topShadow_6589c225",
-  D = "PrebattleQueueApp_difficulty_caaef6b0",
-  I = "PrebattleQueueApp_timer_744d2724",
-  L = "PrebattleQueueApp_vehicle_aa053dfb",
-  C = "PrebattleQueueApp_vehicleInfo_16038df5",
+  I = "PrebattleQueueApp_topShadow_6589c225",
+  w = "PrebattleQueueApp_difficulty_caaef6b0",
+  D = "PrebattleQueueApp_timer_744d2724",
+  C = "PrebattleQueueApp_vehicle_aa053dfb",
+  L = "PrebattleQueueApp_vehicleInfo_16038df5",
   O = "PrebattleQueueApp_vehicleName_dee87a9c",
   V = "PrebattleQueueApp_vehicleLevel_dee87a9c",
   $ = "PrebattleQueueApp_vehicleType_1c7b81b3",
   K = "PrebattleQueueApp_vehicleRole_24a367fe",
-  H = "PrebattleQueueApp_leaveBtn_701eb3a6",
-  W = "PrebattleQueueApp_tip_34008381",
-  q = j(function () {
-    const { model: e, controls: r } = Q();
-    t(r.openMenu);
-    const c = o({ value: s.sizes.small }, { medium: { value: s.sizes.large } }),
-      n = o({ size: a.x24x24 }, { medium: { size: a.x48x48 }, extraLarge: { size: a.x64x64 } }),
-      u = e.selectedDifficulty.get(),
-      d = e.selectedVehicle.get(),
-      p = i({
+  W = "PrebattleQueueApp_leaveBtn_701eb3a6",
+  q = "PrebattleQueueApp_tip_34008381",
+  F = j(function () {
+    const { model: e, controls: t } = Q();
+    n(t.openMenu);
+    const r = x({ value: s.sizes.small }, { medium: { value: s.sizes.large } }),
+      c = x({ size: a.x24x24 }, { medium: { size: a.x48x48 }, extraLarge: { size: a.x64x64 } }),
+      o = e.selectedDifficulty.get(),
+      u = e.selectedVehicle.get(),
+      d = i({
         contentId: R.views.last_stand.mono.lobby.tooltips.difficulty_tooltip("resId"),
-        args: { level: u.level, state: u.state, isLocked: u.isLocked },
+        args: { level: o.level, state: o.state, isLocked: o.isLocked },
         disabled: !1,
       });
     return (0, A.jsxs)("div", {
       className: T,
       children: [
         (0, A.jsx)("div", { className: B }),
-        (0, A.jsx)("div", { className: w }),
+        (0, A.jsx)("div", { className: I }),
         (0, A.jsx)("div", {
           className: M,
-          children: (0, A.jsx)(m, { moveSpace: r.moveSpace, onMouseOver3dScene: l }),
+          children: (0, A.jsx)(m, { moveSpace: t.moveSpace, onMouseOver3dScene: l }),
         }),
         (0, A.jsxs)("div", {
           className: E,
           children: [
             (0, A.jsx)("div", {
-              ...p,
+              ...d,
               onMouseEnter: (e) => {
-                (e.stopPropagation(), p.onMouseEnter(e));
+                (e.stopPropagation(), d.onMouseEnter(e));
               },
-              children: (0, A.jsx)(f, { className: D, ...u, isDisabled: !1, onClick: l }),
+              children: (0, A.jsx)(f, { className: w, ...o, isDisabled: !1, onClick: l }),
             }),
-            (0, A.jsx)(z, { className: I, timerStartTime: e.timerStartTime.get() }),
+            (0, A.jsx)(z, { className: D, timerStartTime: e.timerStartTime.get() }),
             (0, A.jsx)("div", {
-              className: L,
+              className: C,
               children: (0, A.jsx)(P, {
-                className: C,
+                className: L,
                 classNames: { name: O, level: V, type: $, role: K },
-                iconSize: n.size,
-                ...d,
+                iconSize: c.size,
+                ...u,
               }),
             }),
             (0, A.jsx)("div", {
-              className: W,
+              className: q,
               children: R.strings.last_stand_lobby.preBattle.tip(),
             }),
             e.isExitButtonAvailable.get() &&
               (0, A.jsx)("div", {
-                className: H,
+                className: W,
                 children: (0, A.jsx)(s, {
                   theme: s.themes.secondary,
-                  size: c.value,
-                  onClick: r.exitBattle,
+                  size: r.value,
+                  onClick: t.exitBattle,
                   children: R.strings.last_stand_lobby.preBattle.leave(),
                 }),
               }),
@@ -162,6 +162,6 @@ var M = "PrebattleQueueApp_sceneWrapper_de517c82",
       ],
     });
   });
-n((0, A.jsx)(S, { children: (0, A.jsx)(v, { children: (0, A.jsx)(q, {}) }) }))
-  .then(() => c(document.getElementById("root")))
-  .then(() => _());
+o((0, A.jsx)(S, { children: (0, A.jsx)(v, { children: (0, A.jsx)(F, {}) }) }))
+  .then(() => t(document.getElementById("root")))
+  .then(() => r());

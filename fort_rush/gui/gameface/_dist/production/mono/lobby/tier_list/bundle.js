@@ -1,23 +1,23 @@
 import {
   l as e,
   m as s,
-  dm as a,
-  dn as l,
-  dq as o,
-  de as r,
-  df as d,
-  dA as t,
-  dy as i,
-  du as c,
+  db as a,
+  dc as l,
+  de as o,
+  dg as r,
+  dh as d,
+  dC as t,
+  dp as i,
+  dk as c,
   O as n,
-  bs as b,
+  br as b,
   ak as m,
-  cV as x,
+  cU as x,
   an as _,
   al as p,
 } from "../chunks/lib.js";
-import { N as j, j as w, a5 as h, r as v } from "../chunks/vendor.js";
-import { b as u, a as g } from "../chunks/readResource.js";
+import { N as j, j as h, a5 as w, r as v } from "../chunks/vendor.js";
+import { b as g, a as u } from "../chunks/readResource.js";
 const [N, y] = e()(
     ({ observableModel: e }) => ({ root: e.object(), lootBoxes: e.array("lootBoxes") }),
     ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs("onClose") }),
@@ -34,7 +34,7 @@ const [N, y] = e()(
     label: "RewardRow_label_dfe16d1a",
     percent: "RewardRow_percent_86c62b10",
   },
-  A = j(({ rewards: e, iconKey: c, label: n, showRewardsNames: b }) => {
+  k = j(({ rewards: e, iconKey: c, label: n, showRewardsNames: b }) => {
     const { model: m } = y(),
       { assetsPointer: x } = m.root.get(),
       _ = m.lootBoxes.get().length > 2 ? r.Big : r.S232x174,
@@ -49,32 +49,32 @@ const [N, y] = e()(
           label: e.label,
           probability: e.probability,
         })))(e, _),
-      j = u(x).progression.bonuses.big;
-    return w.jsxs("div", {
-      className: h(f.base, f[`base__${_}`]),
+      j = g(x).progression.bonuses.big;
+    return h.jsxs("div", {
+      className: w(f.base, f[`base__${_}`]),
       children: [
-        w.jsxs("div", {
+        h.jsxs("div", {
           className: f.box,
           children: [
-            w.jsx("div", { className: f.boxIcon, style: { backgroundImage: `url(${j.$dyn(c)})` } }),
-            w.jsx("div", { className: f.boxLabel, children: n }),
+            h.jsx("div", { className: f.boxIcon, style: { backgroundImage: `url(${j.$dyn(c)})` } }),
+            h.jsx("div", { className: f.boxLabel, children: n }),
           ],
         }),
-        w.jsx("div", { className: f.divider }),
-        w.jsx("div", {
+        h.jsx("div", { className: f.divider }),
+        h.jsx("div", {
           className: f.items,
           children:
             p.length > 0 &&
             s(p, (e, s) =>
-              w.jsxs(
+              h.jsxs(
                 "div",
                 {
                   className: f.item,
                   children: [
-                    w.jsx(d, { ...e, size: _ }),
-                    b && e.label && w.jsx(t, { classMix: f.label, text: e.label }),
+                    h.jsx(d, { ...e, size: _ }),
+                    b && e.label && h.jsx(t, { classMix: f.label, text: e.label }),
                     Boolean(e.probability) &&
-                      w.jsx("div", {
+                      h.jsx("div", {
                         className: f.percent,
                         children: i(R.strings.common.percentValue(), { value: e.probability }),
                       }),
@@ -87,18 +87,18 @@ const [N, y] = e()(
       ],
     });
   }),
-  k = "RewardList_3134028b",
+  A = "RewardList_3134028b",
   I = j(() => {
     const { model: e } = y(),
       a = e.lootBoxes.get();
-    return w.jsx("div", {
-      className: k,
-      children: a.length > 0 && s(a, (e, s) => v.createElement(A, { ...e, key: s })),
+    return h.jsx("div", {
+      className: A,
+      children: a.length > 0 && s(a, (e, s) => v.createElement(k, { ...e, key: s })),
     });
   }),
   B = "App_41da450e",
-  L = "App_background_8bf668c",
-  C = "App_content_c51a1e8f",
+  C = "App_background_8bf668c",
+  L = "App_content_c51a1e8f",
   $ = "App_header_6b270f84",
   M = "App_title_ed37f891",
   P = "App_description_8e9e0dbe",
@@ -108,33 +108,33 @@ const [N, y] = e()(
       { assetsPointer: a } = e.root.get(),
       { closeWindow: l } = s;
     c(l);
-    const { dynamicTexts: o } = g("tierList", { assetsPointer: a });
-    return w.jsxs("div", {
+    const { dynamicTexts: o } = u("tierList", { assetsPointer: a });
+    return h.jsxs("div", {
       className: B,
       children: [
-        w.jsx("div", {
-          className: L,
-          style: { backgroundImage: `url('${u(a).library.tier_list_bg()}')` },
+        h.jsx("div", {
+          className: C,
+          style: { backgroundImage: `url('${g(a).library.tier_list_bg()}')` },
         }),
-        w.jsx(n, {
-          children: w.jsxs(b, {
-            scrollClassNames: { content: C },
+        h.jsx(n, {
+          children: h.jsxs(b, {
+            scrollClassNames: { content: L },
             className: T,
             children: [
-              w.jsxs("div", {
+              h.jsxs("div", {
                 className: $,
                 children: [
-                  w.jsx("div", { className: M, children: o.title() }),
-                  w.jsx("div", { className: P, children: o.description() }),
+                  h.jsx("div", { className: M, children: o.title() }),
+                  h.jsx("div", { className: P, children: o.description() }),
                 ],
               }),
-              w.jsx(I, {}),
+              h.jsx(I, {}),
             ],
           }),
         }),
       ],
     });
   });
-m(w.jsx(N, { children: w.jsx(x, { children: w.jsx(_, { children: w.jsx(E, {}) }) }) }), {
+m(h.jsx(N, { children: h.jsx(x, { children: h.jsx(_, { children: h.jsx(E, {}) }) }) }), {
   fullScreen: !0,
 }).then(() => p(document.getElementById("root")));

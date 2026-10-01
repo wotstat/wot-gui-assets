@@ -27889,185 +27889,51 @@ var convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
                 `${t}-${a}`,
               ),
             ),
-        }),
-  TabsContext = (0, import_react.createContext)(null);
-function useTabsContext() {
-  const e = (0, import_react.useContext)(TabsContext);
-  return (assert$1(null !== e, "You can use tabs hooks only with Tabs component"), e);
+        });
+function NotLoaded() {
+  return null;
 }
-function Content({ children: e, keyOverride: t }) {
-  const n = useTabsContext();
-  return (0, import_jsx_runtime.jsx)(
-    import_react.Fragment,
-    { children: e(n.active) },
-    t ?? n.active,
-  );
+function LazyModel(e) {
+  return useLazyModel(e.id) ? e.children : (e.fallback || NotLoaded)();
 }
-var themes = { primary: "primary", custom: "custom" },
-  sizes$5 = { large: "large", medium: "medium", small: "small" },
-  background$5 = "HorizontalTabs_background_5e3af03e",
-  mainBorderImage = "HorizontalTabs_mainBorderImage_ee367896",
-  base$28 = "HorizontalTabs_69e3c6f3",
-  outerBorder = "HorizontalTabs_outerBorder_3255d0c5",
-  mainBorder = "HorizontalTabs_mainBorder_61e34c2c",
-  content$3 = "HorizontalTabs_content_1ae3c4bd",
-  horizontal_tabs_module_default = {
-    background: background$5,
-    mainBorderImage: mainBorderImage,
-    base: base$28,
-    "base__size-small": "HorizontalTabs_base__size-small_75fae891",
-    "base__size-medium": "HorizontalTabs_base__size-medium_afc0934f",
-    "base__size-large": "HorizontalTabs_base__size-large_12c75e24",
-    outerBorder: outerBorder,
-    "base__theme-primary": "HorizontalTabs_base__theme-primary_5e3af03e",
-    mainBorder: mainBorder,
-    content: content$3,
-  },
-  Base$7 = defineStyledComponent("Tabs", horizontal_tabs_module_default.base, {
-    variants: {
-      size: {
-        [sizes$5.large]: horizontal_tabs_module_default["base__size-large"],
-        [sizes$5.medium]: horizontal_tabs_module_default["base__size-medium"],
-        [sizes$5.small]: horizontal_tabs_module_default["base__size-small"],
-      },
-      theme: {
-        [themes.primary]: horizontal_tabs_module_default["base__theme-primary"],
-        [themes.custom]: void 0,
-      },
-    },
-  }),
-  Switcher = (0, import_react.forwardRef)(function ({ children: e, classNames: t, ...n }, r) {
-    const a = useTabsContext();
-    return (0, import_jsx_runtime.jsx)(Base$7, {
-      ...n,
-      ref: r,
-      className: clsx(n.className, t?.base),
-      size: a.size,
-      theme: a.theme,
-      children: (0, import_jsx_runtime.jsx)("div", {
-        className: clsx(horizontal_tabs_module_default.outerBorder, t?.outerBorder),
-        children: (0, import_jsx_runtime.jsxs)("div", {
-          className: clsx(horizontal_tabs_module_default.mainBorder, t?.mainBorder),
-          children: [
-            (0, import_jsx_runtime.jsx)("div", {
-              className: clsx(horizontal_tabs_module_default.mainBorderImage, t?.mainBorderImage),
-            }),
-            (0, import_jsx_runtime.jsx)("div", {
-              className: clsx(horizontal_tabs_module_default.content, t?.content),
-              children: e,
-            }),
-          ],
-        }),
-      }),
-    });
-  }),
-  border$1 = "Tab_border_d4435cf2",
-  background$4 = "Tab_background_763456",
-  backgroundPattern$1 = "Tab_backgroundPattern_32ac7949",
-  innerBorderImage = "Tab_innerBorderImage_77cde9e",
-  base$27 = "Tab_806d6908",
-  base__active$1 = "Tab_base__active_a872a63f",
-  content$2 = "Tab_content_4eefcae7",
-  base__inactive = "Tab_base__inactive_0",
-  tab_module_default = {
-    border: border$1,
-    background: background$4,
-    backgroundPattern: backgroundPattern$1,
-    innerBorderImage: innerBorderImage,
-    base: base$27,
-    "base__theme-primary": "Tab_base__theme-primary_209414fd",
-    base__active: base__active$1,
-    content: content$2,
-    "base__size-small": "Tab_base__size-small_0",
-    "base__size-medium": "Tab_base__size-medium_0",
-    "base__size-large": "Tab_base__size-large_0",
-    base__inactive: base__inactive,
-  },
-  Base$6 = defineStyledComponent("Tab", tab_module_default.base, {
-    variants: {
-      size: {
-        [sizes$5.large]: tab_module_default["base__size-large"],
-        [sizes$5.medium]: tab_module_default["base__size-medium"],
-        [sizes$5.small]: tab_module_default["base__size-small"],
-      },
-      theme: {
-        [themes.primary]: tab_module_default["base__theme-primary"],
-        [themes.custom]: void 0,
-      },
-      state: {
-        active: tab_module_default.base__active,
-        inactive: tab_module_default.base__inactive,
-      },
-    },
-    defaultVariants: { size: sizes$5.medium, theme: themes.primary },
-  }),
-  HeadlessTab = (0, import_react.forwardRef)(function (
-    { theme: e, size: t, tabId: n, active: r, children: a, onClick: o, onMouseEnter: i, ...s },
-    u,
-  ) {
-    const l = useSounds();
-    return (0, import_jsx_runtime.jsx)(Base$6, {
-      ...s,
-      ref: u,
-      theme: e,
-      size: t,
-      state: r === n ? "active" : "inactive",
-      onMouseEnter: function (e) {
-        (r !== n && l.play("mouse-enter", { target: Base$6.displayName, original: e }), i?.(e));
-      },
-      onClick: function (e) {
-        (r !== n && l.play("click", { target: Base$6.displayName, original: e }), o?.(e));
-      },
-      children: a,
-    });
-  });
-function Tab({ tabId: e, classNames: t, className: n, children: r, ...a }) {
-  const o = useTabsContext();
-  return (0, import_jsx_runtime.jsxs)(HeadlessTab, {
-    "data-test-id": `${e}Tab`,
-    ...a,
-    tabId: e,
-    theme: o.theme,
-    size: o.size,
-    active: o.active,
-    className: clsx(t?.base, n),
-    onClick: (t) => {
-      (a.onClick?.(t), o.change(e));
-    },
-    children: [
-      (0, import_jsx_runtime.jsx)("div", {
-        className: clsx(tab_module_default.background, t?.background),
-      }),
-      (0, import_jsx_runtime.jsx)("div", {
-        className: clsx(tab_module_default.backgroundPattern, t?.backgroundPattern),
-      }),
-      (0, import_jsx_runtime.jsx)("div", { className: clsx(tab_module_default.border, t?.border) }),
-      (0, import_jsx_runtime.jsx)("div", {
-        className: clsx(tab_module_default.innerBorderImage, t?.borderImage),
-      }),
-      (0, import_jsx_runtime.jsx)("div", {
-        className: clsx(tab_module_default.content, t?.content),
-        children: r,
-      }),
-    ],
-  });
-}
-function Tabs({ active: e, theme: t, size: n, children: r, onActiveChange: a }) {
-  const [o, i] = (0, import_react.useState)(e),
-    s = (0, import_react.useRef)(e),
-    u = (0, import_react.useMemo)(() => ({ active: o, theme: t, size: n, change: i }), [o, n, t]);
+function useLazyModel(e) {
+  const [t, n] = (0, import_react.useState)(!1);
   return (
-    (0, import_react.useLayoutEffect)(() => {
-      i(e);
-    }, [e]),
     (0, import_react.useEffect)(() => {
-      s.current !== o && ((s.current = o), a?.(o));
-    }, [o, a]),
-    (0, import_jsx_runtime.jsx)(TabsContext.Provider, { value: u, children: r })
+      if ("number" == typeof e)
+        return (
+          n(ids().includes(e)),
+          subscribe$1(e, (e) => {
+            n("added" === e.type);
+          })
+        );
+    }, [e]),
+    t
   );
 }
-((Tabs.Switcher = Switcher), (Tabs.Tab = Tab), (Tabs.Content = Content));
-var Context$2 = (0, import_react.createContext)(void 0);
+var ErrorHandler = class extends import_react.Component {
+    state = { failure: !1, error: null };
+    static getDerivedStateFromError(e) {
+      return (console.error(e), { failure: !0, error: e });
+    }
+    failure() {
+      return (0, import_jsx_runtime.jsxs)("div", {
+        children: [
+          (0, import_jsx_runtime.jsx)("h1", { children: "Something went wrong." }),
+          this.state.error &&
+            (0, import_jsx_runtime.jsx)("pre", { children: this.state.error.toString() }),
+        ],
+      });
+    }
+    render() {
+      return this.state.failure
+        ? this.props.failure
+          ? this.props.failure(this.state.error)
+          : this.failure()
+        : this.props.children;
+    }
+  },
+  Context$2 = (0, import_react.createContext)(void 0);
 function useHorizontalScroll() {
   const e = (0, import_react.useContext)(Context$2);
   if (!e)
@@ -28269,23 +28135,23 @@ function useScrollBounding(e, [t, n] = IGNORE_DEFAULT) {
   );
 }
 var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
-  background$3 = "Thumb_background_b893084a",
-  border = "Thumb_border_5749138b",
+  background$5 = "Thumb_background_b893084a",
+  border$1 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
   icon$6 = "Thumb_icon_dca8bf26",
-  base$26 = "Thumb_6ff3e706",
+  base$28 = "Thumb_6ff3e706",
   base__vertical$2 = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
-  base__active = "Thumb_base__active_830942bb",
+  base__active$1 = "Thumb_base__active_830942bb",
   thumb_module_default = {
-    background: background$3,
-    border: border,
+    background: background$5,
+    border: border$1,
     innerBorder: innerBorder,
     icon: icon$6,
-    base: base$26,
+    base: base$28,
     base__vertical: base__vertical$2,
     base__horizontal: base__horizontal,
-    base__active: base__active,
+    base__active: base__active$1,
   },
   BOUNCING_OFFSET = 2,
   FORWARD_DISABLED = "forwardDisabled",
@@ -28562,7 +28428,7 @@ function useBarHandlers(e, t, n, r, a, o, i) {
   );
 }
 var rail$1 = "HorizontalBar_rail_37858d8f",
-  base$25 = "HorizontalBar_4df27ac3",
+  base$27 = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
@@ -28571,7 +28437,7 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
   button$1 = "HorizontalBar_button_cbabd91",
   horizontal_bar_module_default = {
     rail: rail$1,
-    base: base$25,
+    base: base$27,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
@@ -28691,14 +28557,14 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
       ],
     });
   }),
-  base$24 = "HorizontalScroll_5b201d2b",
+  base$26 = "HorizontalScroll_5b201d2b",
   wrapper$2 = "HorizontalScroll_wrapper_2fb60496",
   wrapper__left = "HorizontalScroll_wrapper__left_adacfff",
   wrapper__right = "HorizontalScroll_wrapper__right_a6825027",
   wrapper__both = "HorizontalScroll_wrapper__both_7917ea88",
   defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
   horizontal_scroll_module_default = {
-    base: base$24,
+    base: base$26,
     wrapper: wrapper$2,
     wrapper__left: wrapper__left,
     wrapper__right: wrapper__right,
@@ -28884,7 +28750,7 @@ function useScrollByDragElements(e, t, n, r) {
 function useHorizontalDrag(e, t) {
   return useScrollByDragElements(e, scrollOrientations.horizontal, t);
 }
-function Base$5({ settings: e, children: t }) {
+function Base$7({ settings: e, children: t }) {
   const n = useApi$1({ settings: e }),
     r = (0, import_react.useMemo)(() => ({ api: n }), [n]);
   return (0, import_jsx_runtime.jsx)(Context$2.Provider, { value: r, children: t });
@@ -28906,7 +28772,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$23 = "VerticalBar_7187fa00",
+  base$25 = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
@@ -28915,7 +28781,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   button = "VerticalBar_button_7b0e4aca",
   vertical_bar_module_default = {
     rail: rail,
-    base: base$23,
+    base: base$25,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
@@ -29035,7 +28901,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
       ],
     });
   }),
-  content$1 = "VerticalScroll_content_f30246e6",
+  content$3 = "VerticalScroll_content_f30246e6",
   content__top = "VerticalScroll_content__top_b27098a4",
   content__bottom = "VerticalScroll_content__bottom_d6604290",
   content__both = "VerticalScroll_content__both_8d905712",
@@ -29043,7 +28909,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   bar = "VerticalScroll_bar_c5afe570",
   area = "VerticalScroll_area_a3c0086a",
   vertical_scroll_module_default = {
-    content: content$1,
+    content: content$3,
     content__top: content__top,
     content__bottom: content__bottom,
     content__both: content__both,
@@ -29096,723 +28962,27 @@ var DEFAULT_VERTICAL_API_CONFIG = {
       })
     );
   };
-function Base$4({ settings: e, children: t }) {
+function Base$6({ settings: e, children: t }) {
   const n = useApi({ settings: e }),
     r = (0, import_react.useMemo)(() => ({ api: n }), [n]);
   return (0, import_jsx_runtime.jsx)(Context$1.Provider, { value: r, children: t });
 }
 Area.Default = DefaultScroll;
-var MOUSE_BUTTON_CODES = (function (e) {
-  return (
-    (e[(e.LEFT = 0)] = "LEFT"),
-    (e[(e.WHEEL = 1)] = "WHEEL"),
-    (e[(e.RIGHT = 2)] = "RIGHT"),
-    (e[(e.FOURTH = 3)] = "FOURTH"),
-    (e[(e.FIFTH = 4)] = "FIFTH"),
-    e
-  );
-})({});
-function playSound(e) {
-  engine.call("PlaySound", e).catch((t) => {
-    console.error("[lib/sounds.js] playSound(", e, "): ", t);
-  });
-}
-var Sound = {
-    playHighlight() {
-      playSound("highlight");
-    },
-    playClick() {
-      playSound("play");
-    },
-    playYes() {
-      playSound("yes1");
-    },
-  },
-  isRightClick = (e) => e.button === MOUSE_BUTTON_CODES.RIGHT,
-  ContextMenu = ({
-    children: e,
-    contentID: t,
-    decoratorID: n = 0,
-    targetId: r = 0,
-    args: a,
-    isEnabled: o = !0,
-    onMouseDown: i,
-  }) => {
-    const s = (0, import_react.useCallback)(() => {
-        (handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
-          contentID: t,
-          decoratorID: n,
-          targetID: r,
-          isMouseEvent: !0,
-          on: !0,
-          args: a,
-        }),
-          Sound.playYes());
-      }, [a, t, n, r]),
-      u = (0, import_react.useCallback)(() => {
-        handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
-          contentID: t,
-          decoratorID: n,
-          targetID: r,
-          isMouseEvent: !1,
-          on: !1,
-        });
-      }, [t, n, r]),
-      l = (0, import_react.useCallback)(
-        (e) => {
-          (i && i(e), isRightClick(e) && s());
-        },
-        [i, s],
-      );
-    return (
-      (0, import_react.useEffect)(() => {
-        !1 === o && u();
-      }, [o, u]),
-      o ? (0, import_react.cloneElement)(e, { onMouseDown: l }) : e
-    );
-  },
-  BackportContextMenu = ({ children: e, ...t }) =>
-    (0, import_jsx_runtime.jsx)(ContextMenu, {
-      ...t,
-      contentID: R.views.common.BackportContextMenu("resId"),
-      children: e,
-    }),
-  createLayoutReadyInEffect = (e) => {
-    let t,
-      n = null;
-    return (
-      (n = requestAnimationFrame(() => {
-        n = requestAnimationFrame(() => {
-          ((n = null), (t = e()));
-        });
-      })),
-      () => {
-        ("function" == typeof t && t(), null !== n && cancelAnimationFrame(n));
-      }
-    );
-  },
-  base$22 = "Textoverflow_3e47b075",
-  TextOverflow_module_default = { base: base$22 },
-  TextOverflow = ({ content: e, classMix: t, className: n, ...r }) => {
-    const a = (0, import_react.useRef)(null),
-      [o, i] = (0, import_react.useState)(!0);
-    return (
-      (0, import_react.useEffect)(() =>
-        createLayoutReadyInEffect(() => {
-          const e = a.current;
-          e && e.offsetWidth >= e.scrollWidth && i(!1);
-        }),
-      ),
-      (0, import_jsx_runtime.jsx)(SimpleTooltip, {
-        isEnabled: o,
-        body: e,
-        children: (0, import_jsx_runtime.jsx)("div", {
-          ...r,
-          ref: a,
-          className: (0, import_classnames.default)(TextOverflow_module_default.base, n, t),
-          children: e,
-        }),
-      })
-    );
-  },
-  Size = (function (e) {
-    return ((e.Small = "small"), (e.Medium = "medium"), (e.Default = "medium"), e);
-  })({}),
-  AnimationType = (function (e) {
-    return ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e);
-  })({}),
-  base$21 = "Progressbar_a6e35bd7",
-  base__small$4 = "Progressbar_base__small_7338ff19",
-  background$2 = "Progressbar_background_27d9dd7c",
-  background__small = "Progressbar_background__small_7338ff19",
-  lineWrapper = "Progressbar_lineWrapper_fc5022a6",
-  ProgressBar_module_default = {
-    base: base$21,
-    base__small: base__small$4,
-    background: background$2,
-    background__small: background__small,
-    lineWrapper: lineWrapper,
-  },
-  ProgressBarBackground = ({ size: e = Size.Default }) =>
-    (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        ProgressBar_module_default.background,
-        ProgressBar_module_default[`background__${e}`],
-      ),
-    }),
-  base$20 = "Progressbarblink_c6146c1c",
-  base__small$3 = "Progressbarblink_base__small_9a4d3786",
-  ProgressBarBlink_module_default = { base: base$20, base__small: base__small$3 },
-  ProgressBarBlink = ({ size: e }) =>
-    (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        ProgressBarBlink_module_default.base,
-        ProgressBarBlink_module_default[`base__${e}`],
-      ),
-    }),
-  base$19 = "Progresslineimpose_24e17c02",
-  base__disabled = "Progresslineimpose_base__disabled_bcd461f4",
-  base__finished = "Progresslineimpose_base__finished_803677d6",
-  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
-  pattern$1 = "Progresslineimpose_pattern_491cb9c0",
-  base__small$2 = "Progresslineimpose_base__small_577e82cf",
-  gradient = "Progresslineimpose_gradient_513e2b1d",
-  glow$2 = "Progresslineimpose_glow_76f8072f",
-  glow__left = "Progresslineimpose_glow__left_c2e964b3",
-  ProgressLineImpose_module_default = {
-    base: base$19,
-    base__disabled: base__disabled,
-    base__finished: base__finished,
-    base__withoutBounce: base__withoutBounce$1,
-    pattern: pattern$1,
-    base__small: base__small$2,
-    gradient: gradient,
-    glow: glow$2,
-    glow__left: glow__left,
-  },
-  ProgressLineImposeComponent = ({
-    size: e,
-    lineRef: t,
-    disabled: n,
-    baseStyles: r,
-    isComplete: a,
-    withoutBounce: o,
-  }) => {
-    const i = (0, import_classnames.default)(
-        ProgressLineImpose_module_default.base,
-        ProgressLineImpose_module_default[`base__${e}`],
-        n && ProgressLineImpose_module_default.base__disabled,
-        a && ProgressLineImpose_module_default.base__finished,
-        o && ProgressLineImpose_module_default.base__withoutBounce,
-      ),
-      s = !n && !a;
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: i,
-      style: r,
-      ref: t,
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: ProgressLineImpose_module_default.pattern,
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: ProgressLineImpose_module_default.gradient,
-        }),
-        s && (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: e }),
-      ],
-    });
-  },
-  ProgressLineImpose = (0, import_react.memo)(ProgressLineImposeComponent),
-  createTimeoutInEffect = (e, t) => {
-    let n;
-    const r = setTimeout(() => {
-      n = e();
-    }, t);
-    return () => {
-      ("function" == typeof n && n(), clearTimeout(r));
-    };
-  },
-  GrowAnimationState = (function (e) {
-    return ((e.Idle = "Idle"), (e.Grow = "Grow"), (e.Shrink = "Shrink"), (e.End = "End"), e);
-  })({}),
-  SimpleAnimationState = (function (e) {
-    return ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e);
-  })({}),
-  base$18 = "Progressbardeltagrow_c42a7a2c",
-  base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
-  glow$1 = "Progressbardeltagrow_glow_e08fafeb",
-  ProgressBarDeltaGrow_module_default = {
-    base: base$18,
-    base__withoutBounce: base__withoutBounce,
-    glow: glow$1,
-  },
-  getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
-  getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
-  getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
-  ProgressBarDeltaGrowComponent = ({
-    transitionDuration: e,
-    transitionDelay: t,
-    freezed: n,
-    from: r,
-    size: a,
-    to: o,
-    onEndAnimation: i,
-    onChangeAnimationState: s,
-    className: u,
-  }) => {
-    const l = o < r,
-      [c, d] = (0, import_react.useState)(GrowAnimationState.Idle),
-      f = c === GrowAnimationState.End,
-      p = c === GrowAnimationState.Idle,
-      m = c === GrowAnimationState.Grow,
-      _ = c === GrowAnimationState.Shrink,
-      h = (0, import_react.useCallback)(
-        (e) => {
-          (d(e), s && s(e));
-        },
-        [s],
-      ),
-      g = (0, import_react.useCallback)(
-        (e, t) =>
-          createTimeoutInEffect(() => {
-            h(e);
-          }, t),
-        [h],
-      );
-    (0, import_react.useEffect)(() => {
-      if (!n)
-        return p
-          ? g(GrowAnimationState.Grow, t)
-          : m
-            ? g(GrowAnimationState.Shrink, e)
-            : _
-              ? g(GrowAnimationState.End, e)
-              : void (f && i && i());
-    }, [g, n, f, m, p, _, i, t, e]);
-    const b = (0, import_react.useMemo)(
-        () => ({ width: "100%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
-        [l, e],
-      ),
-      v = (0, import_react.useMemo)(
-        () => ({ width: "0%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
-        [l, e],
-      ),
-      y = (0, import_react.useMemo)(
-        () => ({ width: "0%", ...getBaseSideWithReverse(l, r), ...getAnimationStyles(e) }),
-        [r, l, e],
-      ),
-      E = (0, import_react.useMemo)(
-        () => ({
-          width: `${Math.abs(o - r)}%`,
-          ...getBaseSideWithReverse(l, r),
-          ...getAnimationStyles(e),
-        }),
-        [r, l, o, e],
-      );
-    if (f) return null;
-    const A = (0, import_classnames.default)(
-      ProgressBarDeltaGrow_module_default.base,
-      u,
-      l && 0 === o && ProgressBarDeltaGrow_module_default.base__withoutBounce,
-    );
-    return (0, import_jsx_runtime.jsx)("div", {
-      style: p ? y : E,
-      className: A,
-      children: (0, import_jsx_runtime.jsx)("div", {
-        style: _ ? v : b,
-        className: ProgressBarDeltaGrow_module_default.glow,
-        children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
-      }),
-    });
-  },
-  ProgressBarDeltaGrow = (0, import_react.memo)(ProgressBarDeltaGrowComponent),
-  ProgressBarGrowLineComponent = ({
-    to: e,
-    size: t,
-    from: n,
-    lineRef: r,
-    disabled: a,
-    isComplete: o,
-    animationSettings: i,
-    onEndAnimation: s,
-    onChangeAnimationState: u,
-  }) => {
-    const l = e < n,
-      [c, d] = (0, import_react.useState)(!1),
-      f = (0, import_react.useCallback)(
-        (e) => {
-          (e === GrowAnimationState.Shrink && d(!0), u && u(e));
-        },
-        [u],
-      ),
-      p = (0, import_react.useMemo)(() => ({ width: `${n}%`, transitionProperty: "none" }), [n]),
-      m = (0, import_react.useMemo)(
-        () => ({ width: `${e}%`, transitionDuration: `${i.line.duration}ms` }),
-        [i.line.duration, e],
-      );
-    return (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-      children: [
-        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
-          size: t,
-          lineRef: r,
-          disabled: a,
-          isComplete: o,
-          withoutBounce: l && 0 === e,
-          baseStyles: c ? m : p,
-        }),
-        n >= 0 &&
-          (0, import_jsx_runtime.jsx)(ProgressBarDeltaGrow, {
-            transitionDuration: i.delta.duration,
-            transitionDelay: i.delta.delay,
-            onChangeAnimationState: f,
-            freezed: i.freezed,
-            onEndAnimation: s,
-            from: n,
-            size: t,
-            to: e,
-            className: i.delta.className,
-          }),
-      ],
-    });
-  },
-  ProgressBarGrowLine = (0, import_react.memo)(ProgressBarGrowLineComponent),
-  base$17 = "Progressbardeltasimple_4b8901e3",
-  delta$1 = "Progressbardeltasimple_delta_9a540ec7",
-  ProgressBarDeltaSimple_module_default = { base: base$17, delta: delta$1 },
-  ProgressBarDeltaSimpleComponent = ({
-    transitionDuration: e,
-    transitionDelay: t,
-    freezed: n,
-    from: r,
-    size: a,
-    to: o,
-    onEndAnimation: i,
-    onChangeAnimationState: s,
-  }) => {
-    const u = o < r,
-      [l, c] = (0, import_react.useState)(SimpleAnimationState.Idle),
-      d = l === SimpleAnimationState.In,
-      f = l === SimpleAnimationState.End,
-      p = l === SimpleAnimationState.Idle,
-      m = (0, import_react.useCallback)(
-        (e) => {
-          (c(e), s && s(e));
-        },
-        [s],
-      );
-    ((0, import_react.useEffect)(() => {
-      if (p && !n)
-        return createTimeoutInEffect(() => {
-          m(SimpleAnimationState.In);
-        }, t);
-    }, [m, n, p, t]),
-      (0, import_react.useEffect)(() => {
-        if (d)
-          return createTimeoutInEffect(() => {
-            (i && i(), m(SimpleAnimationState.End));
-          }, e + t);
-      }, [m, d, i, t, e]));
-    const _ = (0, import_react.useMemo)(
-        () => ({
-          width: "100%",
-          transitionDuration: `${e}ms`,
-          transitionDelay: `${t}ms`,
-          [u ? "left" : "right"]: "0",
-        }),
-        [u, t, e],
-      ),
-      h = (0, import_react.useMemo)(
-        () => ({
-          width: "0%",
-          transitionDuration: `${e}ms`,
-          transitionDelay: `${t}ms`,
-          [u ? "left" : "right"]: "0",
-        }),
-        [u, t, e],
-      ),
-      g = (0, import_react.useMemo)(
-        () => ({ width: `${Math.abs(r - o)}%`, left: `${u ? o : r}%` }),
-        [r, u, o],
-      );
-    return f
-      ? null
-      : (0, import_jsx_runtime.jsx)("div", {
-          className: ProgressBarDeltaSimple_module_default.base,
-          style: g,
-          children: (0, import_jsx_runtime.jsx)("div", {
-            style: p ? _ : h,
-            className: ProgressBarDeltaSimple_module_default.delta,
-            children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
-          }),
-        });
-  },
-  ProgressBarDeltaSimple = (0, import_react.memo)(ProgressBarDeltaSimpleComponent),
-  ProgressBarSimpleLineComponent = ({
-    to: e,
-    size: t,
-    from: n,
-    lineRef: r,
-    disabled: a,
-    isComplete: o,
-    animationSettings: i,
-    onChangeAnimationState: s,
-    onEndAnimation: u,
-  }) =>
-    (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-      children: [
-        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
-          size: t,
-          lineRef: r,
-          disabled: a,
-          isComplete: o,
-          baseStyles: (0, import_react.useMemo)(
-            () => ({
-              width: `${e}%`,
-              transitionDuration: `${i.line.duration}ms`,
-              transitionDelay: `${i.line.delay}ms`,
-            }),
-            [i.line.delay, i.line.duration, e],
-          ),
-        }),
-        n >= 0 &&
-          (0, import_jsx_runtime.jsx)(ProgressBarDeltaSimple, {
-            transitionDuration: i.delta.duration,
-            transitionDelay: i.delta.delay,
-            freezed: i.freezed,
-            from: n,
-            size: t,
-            to: e,
-            onChangeAnimationState: s,
-            onEndAnimation: u,
-          }),
-      ],
-    }),
-  ProgressBarSimpleLine = (0, import_react.memo)(ProgressBarSimpleLineComponent),
-  WithAnimationLineComponent = ({ onComplete: e, onEndAnimation: t, ...n }) => {
-    const [r, a] = (0, import_react.useState)(!1),
-      o = (0, import_react.useCallback)(() => {
-        const o = 100 === n.to;
-        (o !== r && a(o), o && e && e(), t && t());
-      }, [r, e, t, n.to]);
-    switch (n.animationSettings.type) {
-      case AnimationType.Simple:
-        return (0, import_jsx_runtime.jsx)(ProgressBarSimpleLine, {
-          ...n,
-          onEndAnimation: o,
-          isComplete: r,
-        });
-      case AnimationType.Growing:
-        return (0, import_jsx_runtime.jsx)(ProgressBarGrowLine, {
-          ...n,
-          onEndAnimation: o,
-          isComplete: r,
-        });
-      default:
-        return null;
-    }
-  },
-  WithAnimationLine = (0, import_react.memo)(WithAnimationLineComponent),
-  WithStackAnimationLineComponent = ({ onEndAnimation: e, ...t }) => {
-    const n = (0, import_react.useRef)({}),
-      r = (0, import_react.useCallback)(() => {
-        ((n.current.from = void 0), e && e());
-      }, [e]),
-      a = "number" == typeof n.current.from ? n.current.from : t.from;
-    return (
-      (n.current.from = a),
-      (0, import_react.createElement)(WithAnimationLine, {
-        ...t,
-        onEndAnimation: r,
-        key: `${a}-${t.to}-${t?.additionalKey}`,
-        from: a,
-      })
-    );
-  },
-  WithStackAnimationLine = (0, import_react.memo)(WithStackAnimationLineComponent),
-  WithoutAnimationLine = ({ size: e, value: t, lineRef: n, disabled: r, onComplete: a }) => {
-    const o = (0, import_react.useMemo)(
-        () => ({ width: `${t}%`, transitionProperty: "none" }),
-        [t],
-      ),
-      i = 100 === t;
-    return (
-      (0, import_react.useEffect)(() => {
-        i && a && a();
-      }, [i, a]),
-      (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
-        size: e,
-        disabled: r,
-        baseStyles: o,
-        isComplete: i,
-        lineRef: n,
-      })
-    );
-  },
-  ProgressBarLineComponent = ({
-    size: e,
-    value: t,
-    lineRef: n,
-    disabled: r,
-    deltaFrom: a,
-    additionalKey: o,
-    animationSettings: i,
-    onEndAnimation: s,
-    onChangeAnimationState: u,
-    onComplete: l,
-  }) => {
-    if (a === t)
-      return (0, import_jsx_runtime.jsx)(
-        WithoutAnimationLine,
-        { size: e, value: t, lineRef: n, disabled: r, onComplete: l },
-        `${a}-${t}-${o}`,
-      );
-    const c = {
-      from: a,
-      to: t,
-      size: e,
-      additionalKey: o,
-      lineRef: n,
-      disabled: r,
-      animationSettings: i,
-      onComplete: l,
-      onEndAnimation: s,
-      onChangeAnimationState: u,
-    };
-    return i.withStack
-      ? (0, import_jsx_runtime.jsx)(WithStackAnimationLine, { ...c })
-      : (0, import_jsx_runtime.jsx)(WithAnimationLine, { ...c }, `${a}-${t}-${o}`);
-  },
-  ProgressBarLine = (0, import_react.memo)(ProgressBarLineComponent),
-  createSkin = (e) => ({
-    "--progress-base": `url(${e.bgImageBase})`,
-    "--progress-bg-height": e.bg?.height ?? "12rem",
-    "--progress-bg-height-small": e.bg?.heightSmall ?? "2rem",
-    "--progress-line-base": e.line.bgColorBase,
-    "--progress-line-disabled": e.line.bgColorDisabled,
-    "--progress-line-finished": e.line.bgColorFinished,
-    "--progress-line-filter": e.line.filter ?? "none",
-    "--progress-pattern-base": `url(${e.pattern.bgImageBase})`,
-    "--progress-pattern-disabled": `url(${e.pattern.bgImageDisabled})`,
-    "--progress-pattern-finished": `url(${e.pattern.bgImageFinished})`,
-    "--progress-pattern-size": e.pattern.size ?? "3rem 10rem",
-    "--progress-pattern-border-size": e.pattern.borderSize ?? "1rem",
-    "--progress-pattern-gradient":
-      e.pattern.gradient ?? "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75))",
-    "--progress-pattern-gradient-finished":
-      e.pattern.gradientFinished ??
-      "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5))",
-    "--progress-pattern-gradient-mixBlendMode": e.pattern.mixBlendMode ?? "overlay",
-    "--progress-glow": `url('${e.glow}')`,
-    "--progress-glow-width": e.glowSettings?.width ?? "60rem",
-    "--progress-glow-height": e.glowSettings?.height ?? "100rem",
-    "--progress-glow-small-width": e.glowSettings?.smallWidth ?? "44rem",
-    "--progress-glow-small-height": e.glowSettings?.smallHeight ?? "43rem",
-    "--progress-glow-mixBlendMode": e.glowSettings?.mixBlendMode ?? "lighten",
-    "--progress-glow-small": `url('${e.glowSmall}')`,
-    "--progress-delta-color": e.delta.color,
-    "--progress-delta-shadow": e.delta.shadow,
-  }),
-  Orange = {
-    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_grey",
-    line: { bgColorBase: "#f50", bgColorDisabled: "transparent", bgColorFinished: "#59a011" },
-    pattern: {
-      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_orange",
-      bgImageDisabled: "R.images.gui.maps.icons.components.progress_bar.pattern_disabled",
-      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.pattern_green",
-    },
-    glow: "R.images.gui.maps.icons.components.progress_bar.glow",
-    glowSmall: "R.images.gui.maps.icons.components.progress_bar.glow_small",
-    delta: {
-      color: "#ffc",
-      shadow:
-        "0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066",
-    },
-  },
-  BlueNoise = {
-    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_bg_base",
-    bg: { height: "22rem", heightSmall: "4rem" },
-    glowSettings: {
-      width: "34rem",
-      height: "54rem",
-      mixBlendMode: "normal",
-      smallWidth: "34rem",
-      smallHeight: "36rem",
-    },
-    line: {
-      bgColorBase: "rgba(191, 232, 255, 0.6)",
-      bgColorDisabled: "transparent",
-      bgColorFinished: "rgba(191, 232, 255, 0.6)",
-      filter:
-        "drop-shadow(0 0 4px rgba(255, 255, 255, 0.08)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.16)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.24))",
-    },
-    pattern: {
-      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
-      bgImageDisabled:
-        "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_disabled",
-      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
-      size: "4rem 22rem",
-      borderSize: "0",
-      gradient: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
-      gradientFinished: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
-      mixBlendMode: "normal",
-    },
-    glow: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow",
-    glowSmall: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow_small",
-    delta: {
-      color: "#fff",
-      shadow:
-        " 0 0 4px 1px rgba(120, 180, 255, 0.4), 0 0 9px 1px rgba(100, 160, 255, 0.4), 0 0 12px 2px rgba(80, 140, 255, 0.4), 0 0 12px 4px rgba(60, 120, 255, 0.4)",
-    },
-  },
-  GreenNoise = {
-    ...BlueNoise,
-    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_bg_base",
-    line: { ...BlueNoise.line, bgColorBase: "#83C6A5", bgColorFinished: "rgba(10, 230, 72, 0.6)" },
-    pattern: {
-      ...BlueNoise.pattern,
-      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
-      bgImageDisabled:
-        "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_disabled",
-      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
-    },
-  },
-  clamp = (e, t, n) => (n < e ? e : n > t ? t : n),
-  prepareDeltaFrom = (e, t, n) => ("number" == typeof n ? (clamp(0, t, n) / t) * 100 : e);
-function useCalculatePercents(e, t, n) {
-  return (0, import_react.useMemo)(() => {
-    const r = (clamp(0, t, e) / t) * 100;
-    return { value: r, deltaFrom: prepareDeltaFrom(r, t, n) };
-  }, [n, t, e]);
-}
-var defaultTheme = Orange,
-  defaultAnimationSettings = {
-    freezed: !1,
-    withStack: !1,
-    type: AnimationType.Growing,
-    delta: { duration: 500, delay: 0 },
-    line: { duration: 500, delay: 0 },
-  },
-  ProgressBarComponent = ({
-    maxValue: e = 100,
-    theme: t = defaultTheme,
-    size: n = Size.Default,
-    animationSettings: r = defaultAnimationSettings,
-    disabled: a = !1,
-    withoutBackground: o = !1,
-    value: i,
-    deltaFrom: s,
-    additionalKey: u,
-    lineRef: l,
-    onChangeAnimationState: c,
-    onEndAnimation: d,
-    onComplete: f,
-    className: p,
-  }) => {
-    const m = useCalculatePercents(i, e, s);
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        ProgressBar_module_default.base,
-        p,
-        ProgressBar_module_default[`base__${n}`],
-      ),
-      style: createSkin(t),
-      children: [
-        !o && (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: n }),
-        (0, import_jsx_runtime.jsx)(ProgressBarLine, {
-          size: n,
-          lineRef: l,
-          disabled: a,
-          value: m.value,
-          deltaFrom: m.deltaFrom,
-          additionalKey: u,
-          animationSettings: r,
-          onEndAnimation: d,
-          onChangeAnimationState: c,
-          onComplete: f,
-        }),
-      ],
-    });
-  },
-  ProgressBar$1 = (0, import_react.memo)(ProgressBarComponent),
+var UNKNOWN_NATION = "none",
+  list = [
+    "ussr",
+    "germany",
+    "usa",
+    "china",
+    "france",
+    "uk",
+    "japan",
+    "czech",
+    "sweden",
+    "poland",
+    "italy",
+  ],
+  nationById = (e) => list[e] ?? "none",
   undef = () => {};
 function withResolvePath(e) {
   const t = e;
@@ -29945,209 +29115,319 @@ var defaultUnknownStyle = {
         : (0, import_jsx_runtime.jsx)("img", { ...u, ref: t, src: a, width: n, height: r });
     }),
   ),
+  LIGHT_TANK = "lightTank",
+  MEDIUM_TANK = "mediumTank",
+  HEAVY_TANK = "heavyTank",
+  AT_SPG = "AT-SPG",
   types$2 = {
-    tankXP: "tankXP",
-    freeXP: "freeXP",
-    credits: "credits",
-    gold: "gold",
-    crystal: "crystal",
-    equipCoin: "equipCoin",
-    stpCoin: "stpcoin",
-    brCoin: "brcoin",
-    eliteXp: "eliteXp",
-    depot: "depot",
-    vehicle: "vehicle",
-    crew: "crew",
-    custom: "custom",
-    xp: "xp",
-    brProgressionToken: "brProgressionToken",
-    battlePassPoints: "battlePassPoints",
+    lightTank: LIGHT_TANK,
+    mediumTank: MEDIUM_TANK,
+    heavyTank: HEAVY_TANK,
+    SPG: "SPG",
+    "AT-SPG": AT_SPG,
   },
-  currencyTypes = Object.values(types$2),
-  sizes$4 = {
-    extraSmall: "extraSmall",
-    small: "small",
-    medium: "medium",
-    large: "large",
-    extraLarge: "extraLarge",
-    xxl: "xxl",
+  typeValues = Object.values(types$2),
+  isTypeValidValue = (e) => typeValues.includes(e);
+function getVehicleImageKey(e) {
+  const t = e.indexOf(":");
+  return normalizeResource(t < 0 ? e.toLowerCase() : e.substring(t + 1).toLowerCase());
+}
+var WITHOUT_ROLE = "without_role",
+  roles = {
+    assault: "assault",
+    sniper: "sniper",
+    support: "support",
+    universal: "universal",
+    break: "break",
+    scout: "scout",
+    spg: "spg",
   },
-  imageSizes = {
-    [sizes$4.extraSmall]: 16,
-    [sizes$4.small]: 24,
-    [sizes$4.medium]: 32,
-    [sizes$4.large]: 48,
-    [sizes$4.extraLarge]: 80,
-    [sizes$4.xxl]: 96,
+  mapRoleByKey = [
+    WITHOUT_ROLE,
+    roles.spg,
+    roles.assault,
+    roles.break,
+    roles.universal,
+    roles.support,
+    roles.assault,
+    roles.support,
+    roles.universal,
+    roles.sniper,
+    roles.assault,
+    roles.universal,
+    roles.sniper,
+    roles.support,
+    roles.universal,
+    WITHOUT_ROLE,
+    roles.scout,
+    roles.support,
+  ],
+  atSpgRoles = [roles.assault, roles.universal, roles.sniper, roles.support],
+  heavyTankRoles = [roles.assault, roles.break, roles.universal, roles.support],
+  mediumTankRoles = [roles.assault, roles.support, roles.universal, roles.sniper],
+  lightTankRoles = [roles.universal, roles.scout, roles.support],
+  vehicleState = {
+    DAMAGED: "damaged",
+    EXPLODED: "exploded",
+    DESTROYED: "destroyed",
+    UNDAMAGED: "undamaged",
+    BATTLE: "battle",
+    IN_PREBATTLE: "inPrebattle",
+    LOCKED: "locked",
+    CREW_NOT_FULL: "crewNotFull",
+    AMMO_NOT_FULL: "ammoNotFull",
+    AMMO_NOT_FULL_EVENTS: "ammoNotFullEvents",
+    SERVER_RESTRICTION: "serverRestriction",
+    RENTAL_IS_OVER: "rentalIsOver",
+    IGR_RENTAL_IS_OVER: "igrRentalIsOver",
+    IN_PREMIUM_IGR_ONLY: "inPremiumIgrOnly",
+    GROUP_IS_NOT_READY: "group_is_not_ready",
+    NOT_PRESENT: "notpresent",
+    UNAVAILABLE: "unavailable",
+    UNSUITABLE_TO_QUEUE: "unsuitableToQueue",
+    UNSUITABLE_TO_UNIT: "unsuitableToUnit",
+    WILL_BE_UNLOCKED_IN_BATTLE: "willBeUnlockedInBattle",
+    DEAL_IS_OVER: "dealIsOver",
+    ROTATION_GROUP_UNLOCKED: "rotationGroupUnlocked",
+    ROTATION_GROUP_LOCKED: "rotationGroupLocked",
+    RENTABLE: "rentable",
+    RENTABLE_AGAIN: "rentableAgain",
+    DISABLED: "disabled",
+    SUBSCRIPTION_SUSPENDED: "subscription_suspended",
+    WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED: "wot_plus_exclusive_vehicle_disabled",
   },
-  upscaledImageSizes = {
-    [sizes$4.extraSmall]: 32,
-    [sizes$4.small]: 48,
-    [sizes$4.medium]: 32,
-    [sizes$4.large]: 96,
-    [sizes$4.extraLarge]: 80,
-    [sizes$4.xxl]: 96,
+  stateValues = Object.values(vehicleState),
+  base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
+  base__x190x152 = "VehicleImage_base__x190x152_41379c70",
+  base__x380x304 = "VehicleImage_base__x380x304_274f87fe",
+  vehicle_image_module_default = {
+    base__x120x96: base__x120x96,
+    base__x190x152: base__x190x152,
+    base__x380x304: base__x380x304,
   },
-  discountSizesConfig = {
-    [sizes$4.extraSmall]: { width: "60rem", height: "36rem" },
-    [sizes$4.small]: { width: "80rem", height: "48rem" },
-    [sizes$4.medium]: { width: "80rem", height: "48rem" },
-    [sizes$4.large]: { width: "106rem", height: "64rem" },
-    [sizes$4.extraLarge]: { width: "140rem", height: "84rem" },
-    [sizes$4.xxl]: { width: "140rem", height: "84rem" },
-  },
-  base$16 = "Currency_72d4be39",
-  base__reverse = "Currency_base__reverse_f12e61b0",
-  base__notEnough = "Currency_base__notEnough_9a7842f",
-  base__credits = "Currency_base__credits_7b9ae721",
-  base__gold$1 = "Currency_base__gold_d6e3cbc",
-  base__freeXP = "Currency_base__freeXP_d29d5a57",
-  base__crystal = "Currency_base__crystal_f830cb47",
-  base__tankXP = "Currency_base__tankXP_1707c68b",
-  currency_module_default = {
-    base: base$16,
-    base__reverse: base__reverse,
-    base__notEnough: base__notEnough,
-    base__credits: base__credits,
+  sizes$5 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
+  Base$5 = defineStyledComponent("VehicleImage", {
+    element: Image$1,
+    className: vehicle_image_module_default.base,
+    cva: {
+      variants: {
+        size: {
+          [sizes$5.x120x96]: vehicle_image_module_default.base__x120x96,
+          [sizes$5.x190x152]: vehicle_image_module_default.base__x190x152,
+          [sizes$5.x380x304]: vehicle_image_module_default.base__x380x304,
+        },
+      },
+    },
+  });
+function UnknownVehicleImage({ size: e = sizes$5.x380x304, ...t }) {
+  return (0, import_jsx_runtime.jsx)(Base$5, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
+}
+var VehicleImage = (0, import_react.forwardRef)(function (
+  { size: e = sizes$5.x380x304, name: t, width: n, height: r, className: a, ...o },
+  i,
+) {
+  const s = resources.resolve("images"),
+    u = `vehicle.${e}.${getVehicleImageKey(t)}`;
+  return s.has(u)
+    ? (0, import_jsx_runtime.jsx)(Base$5, {
+        ...o,
+        ref: i,
+        size: e,
+        className: a,
+        path: u,
+        width: n,
+        height: r,
+      })
+    : (console.warn(`Fail to retrieve icon maps/icons/vehicle/${e}/${getVehicleImageKey(t)}`),
+      (0, import_jsx_runtime.jsx)(UnknownVehicleImage, {
+        size: e,
+        className: a,
+        width: n,
+        height: r,
+      }));
+});
+((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$5));
+var base$24 = "VehicleLevel_3c938122",
+  vehicle_level_module_default = { base: base$24 },
+  numberTypes = { arabic: "arabic", roman: "roman" };
+function getLevelType(e, t) {
+  return e || (t ? numberTypes.arabic : numberTypes.roman);
+}
+var VehicleLevel = (0, import_react.forwardRef)(function ({ value: e, numberType: t, ...n }, r) {
+  const a = getLevelType(t, useRomanForbidden()) === numberTypes.roman ? arabicToRoman(e) : e;
+  return (0, import_jsx_runtime.jsx)("div", {
+    ...n,
+    "data-name": "VehicleLevel",
+    className: clsx(vehicle_level_module_default.base, n.className),
+    ref: r,
+    children: a,
+  });
+});
+VehicleLevel.numberTypes = numberTypes;
+var TYPE_PRESTIGE = "prestige",
+  directions$1 = { left: "left", right: "right" },
+  lengths = { short: "short", medium: "medium", long: "long" },
+  iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
+  icon$5 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
+  base$23 = "VehiclePrestigeLevel_a750cce",
+  icon$4 = "VehiclePrestigeLevel_icon_ef024cc3",
+  base__left = "VehiclePrestigeLevel_base__left_4426b46c",
+  level = "VehiclePrestigeLevel_level_10f410ba",
+  level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
+  base__right = "VehiclePrestigeLevel_base__right_4426b46c",
+  level__medium = "VehiclePrestigeLevel_level__medium_90aed80f",
+  level__long = "VehiclePrestigeLevel_level__long_26625167",
+  base__iron = "VehiclePrestigeLevel_base__iron_4426b46c",
+  base__bronze = "VehiclePrestigeLevel_base__bronze_4426b46c",
+  base__silver = "VehiclePrestigeLevel_base__silver_4426b46c",
+  base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
+  base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
+  vehicle_prestige_level_module_default = {
+    base: base$23,
+    icon: icon$4,
+    base__left: base__left,
+    level: level,
+    level__short: level__short,
+    base__right: base__right,
+    level__medium: level__medium,
+    level__long: level__long,
+    base__iron: base__iron,
+    base__bronze: base__bronze,
+    base__silver: base__silver,
     base__gold: base__gold$1,
-    base__freeXP: base__freeXP,
-    base__crystal: base__crystal,
-    base__tankXP: base__tankXP,
-  },
-  intl = resources.resolve("intl"),
-  Base$3 = defineStyledComponent("Currency", currency_module_default.base, {
-    variants: { reverse: { true: currency_module_default.base__reverse } },
-  });
-function formatCurrencyValue(e, t) {
-  const n = t === types$2.gold ? "gold" : "integral";
-  return Array.isArray(e)
-    ? e.map((e) => ("number" == typeof e ? intl.formatNumber(n, e) : e))
-    : "number" == typeof e
-      ? intl.formatNumber(n, e)
-      : e;
-}
-function Currency({
-  children: e,
-  type: t,
-  className: n,
-  classNames: r,
-  imagePath: a,
-  size: o = sizes$4.small,
-  enough: i = !0,
-  ...s
-}) {
-  const u = imageSizes[o],
-    l = `${t}_${u}x${u}`,
-    c = upscaledImageSizes[o],
-    d = `${t}_${c}x${c}`,
-    f = a || currencyTypes.includes(t),
-    p = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
-  return (0, import_jsx_runtime.jsxs)(Base$3, {
-    ...s,
-    className: clsx(
-      r?.base,
-      i ? currency_module_default[`base__${t}`] : currency_module_default.base__notEnough,
-      n,
-    ),
-    children: [
-      f &&
-        (0, import_jsx_runtime.jsx)(Image$1, {
-          width: u,
-          height: u,
-          path: a ?? p,
-          className: r?.icon,
-        }),
-      formatCurrencyValue(e, t),
-    ],
-  });
-}
-((Currency.sizes = sizes$4), (Currency.types = types$2));
-var RewardComponent = ({ reward: e, size: t }) => {
-    const n = e.RewardWrapper || null;
-    return n
-      ? (0, import_jsx_runtime.jsx)(n, {
-          ...e.rewardWrapperProps,
-          children: (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e }),
-        })
-      : (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e });
-  },
-  base$15 = "Rewards_36f5662a",
-  base__vertical$1 = "Rewards_base__vertical_32f04b98",
-  reward$1 = "Rewards_reward_9abc0f4a",
-  reward__vertical$1 = "Rewards_reward__vertical_dd4a02c5",
-  Rewards_module_default = {
-    base: base$15,
-    base__vertical: base__vertical$1,
-    reward: reward$1,
-    reward__vertical: reward__vertical$1,
-  },
-  Rewards$1 = ({
-    data: e,
-    size: t = ImageSize$1.Big,
-    isVertical: n = !1,
-    count: r,
-    classMix: a,
-    rewardItemClassMix: o,
-    boxRewardTooltip: i,
-    boxRewardValue: s,
-    boxRewardClassName: u,
-    boxRewardClassNames: l,
-  }) => {
-    const c = r && r < e.length,
-      d = (0, import_classnames.default)(
-        Rewards_module_default.reward,
-        n && Rewards_module_default.reward__vertical,
-        o,
-      ),
-      f = c ? r : e.length;
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        Rewards_module_default.base,
-        n && Rewards_module_default.base__vertical,
-        a,
-      ),
-      children: [
-        e
-          .slice(0, f)
-          .map((e, n) =>
-            (0, import_jsx_runtime.jsx)(
-              "div",
-              {
-                className: d,
-                children: (0, import_jsx_runtime.jsx)(RewardComponent, { reward: e, size: t }),
-              },
-              n,
-            ),
-          ),
-        c &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: d,
-            children: (0, import_jsx_runtime.jsx)(Reward$1, {
-              name: "more",
-              image: `R.images.gui.maps.icons.quests.bonuses.${t}.default`,
-              size: t,
-              value:
-                s ||
-                formatPrintf$1(R.strings.tooltips.quests.awards.additional.bottom(), {
-                  count: e.length - (r || 0),
-                }),
-              tooltipArgs: i,
-              className: u,
-              classNames: l,
-            }),
+    base__enamel: base__enamel,
+  };
+function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: a, ...o }) {
+  return e < 1 || "undefined" === n
+    ? null
+    : (0, import_jsx_runtime.jsxs)("div", {
+        ...o,
+        className: clsx(
+          vehicle_prestige_level_module_default.base,
+          vehicle_prestige_level_module_default[`base__${n}`],
+          vehicle_prestige_level_module_default[`base__${r}`],
+          o.className,
+          a?.base,
+        ),
+        children: [
+          (0, import_jsx_runtime.jsx)(Image$1, {
+            path: `prestige.tab.${icon$5(e, n, t)}`,
+            className: clsx(vehicle_prestige_level_module_default.icon, a?.icon),
           }),
-      ],
-    });
+          "prestige" !== n &&
+            (0, import_jsx_runtime.jsx)("div", {
+              className: clsx(
+                vehicle_prestige_level_module_default.level,
+                vehicle_prestige_level_module_default[`level__${iconLength(e)}`],
+                a?.level,
+              ),
+              children: e,
+            }),
+        ],
+      });
+}
+PrestigeLevel.direction = directions$1;
+var base$22 = "VehicleRole_e70537d3",
+  icon__x16x16$1 = "VehicleRole_icon__x16x16_f444f190",
+  icon__x24x24$1 = "VehicleRole_icon__x24x24_cc02d077",
+  icon__x32x32$1 = "VehicleRole_icon__x32x32_2180a099",
+  icon__x48x48$1 = "VehicleRole_icon__x48x48_2a01e86c",
+  vehicle_role_module_default = {
+    base: base$22,
+    icon__x16x16: icon__x16x16$1,
+    icon__x24x24: icon__x24x24$1,
+    icon__x32x32: icon__x32x32$1,
+    icon__x48x48: icon__x48x48$1,
   },
-  Alignment = (function (e) {
-    return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
-  })({}),
-  THAI_LANGUAGE_CODE = "th",
-  SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"],
-  IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(
-    R.strings.settings.LANGUAGE_CODE().toLowerCase(),
-  ),
-  NodeTypes = { Text: 1, Tag: 2, Var: 3 };
+  sizes$4 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
+  images$1 = resources.resolve("images"),
+  VehicleRole = (0, import_react.forwardRef)(function (
+    { roleKey: e, size: t = sizes$4.x24x24, classNames: n, ...r },
+    a,
+  ) {
+    const o = useUpscale(t, sizes$4.x32x32);
+    return (0, import_jsx_runtime.jsx)("div", {
+      ...r,
+      ref: a,
+      className: clsx(vehicle_role_module_default.base, n?.base),
+      children: (0, import_jsx_runtime.jsx)("img", {
+        className: clsx(vehicle_role_module_default[`icon__${t}`], n?.icon),
+        src: images$1.readOrEmpty(`vehicleRoles.${o}.${e}`),
+      }),
+    });
+  });
+VehicleRole.sizes = sizes$4;
+var sizes$3 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+  upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
+  mapTypes = {
+    [types$2.lightTank]: "light_tank",
+    [types$2.mediumTank]: "medium_tank",
+    [types$2.heavyTank]: "heavy_tank",
+    [types$2.SPG]: "spg",
+    [types$2["AT-SPG"]]: "tank_destroyer",
+  },
+  base$21 = "VehicleType_30b4aab0",
+  base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
+  base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
+  base__x64x64 = "VehicleType_base__x64x64_bb9b890",
+  base__x96x96 = "VehicleType_base__x96x96_919f9f92",
+  base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
+  base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
+  base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
+  base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
+  icon$3 = "VehicleType_icon_b15d2628",
+  vehicle_type_module_default = {
+    base: base$21,
+    base__x24x24: base__x24x24,
+    base__x48x48: base__x48x48,
+    base__x64x64: base__x64x64,
+    base__x96x96: base__x96x96,
+    base__premium__x24x24: base__premium__x24x24,
+    base__premium__x48x48: base__premium__x48x48,
+    base__premium__x64x64: base__premium__x64x64,
+    base__premium__x96x96: base__premium__x96x96,
+    icon: icon$3,
+  },
+  VehicleType = (0, import_react.forwardRef)(function (
+    { type: e, size: t = sizes$3.x48x48, premium: n = !1, fit: r = "contain", ...a },
+    o,
+  ) {
+    const i = useUpscale(sizes$3[t], upscaledSizes[t]);
+    return (0, import_jsx_runtime.jsx)(Image$1, {
+      ...a,
+      ref: o,
+      fit: r,
+      className: clsx(
+        vehicle_type_module_default.base,
+        n
+          ? vehicle_type_module_default[`base__premium__${t}`]
+          : vehicle_type_module_default[`base__${t}`],
+        a.className,
+      ),
+      path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
+    });
+  });
+((VehicleType.types = types$2), (VehicleType.sizes = sizes$3));
+var base$20 = "VehicleInfo_1732f1f0",
+  name = "VehicleInfo_name_3989ca04",
+  name__premium = "VehicleInfo_name__premium_258b3b93",
+  vehicle_info_module_default = { base: base$20, name: name, name__premium: name__premium },
+  VehicleName = defineStyledComponent("VehicleName", vehicle_info_module_default.name, {
+    variants: { premium: { true: vehicle_info_module_default.name__premium } },
+  }),
+  VehicleInfo = (0, import_react.forwardRef)(function (e, t) {
+    return (0, import_jsx_runtime.jsx)("div", {
+      ...e,
+      ref: t,
+      className: clsx(vehicle_info_module_default.base, e.className),
+    });
+  });
+((VehicleInfo.Prestige = PrestigeLevel),
+  (VehicleInfo.Level = VehicleLevel),
+  (VehicleInfo.Type = VehicleType),
+  (VehicleInfo.Name = VehicleName),
+  (VehicleInfo.Role = VehicleRole));
+var NodeTypes = { Text: 1, Tag: 2, Var: 3 };
 function parseArguments(e) {
   const t = [];
   let n = "",
@@ -30213,12 +29493,12 @@ function parse$1(e, t) {
 }
 var COLORS =
     "blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom",
-  base$14 = "FormatText_db904f12",
+  base$19 = "FormatText_db904f12",
   base__fullSize = "FormatText_base__fullSize_a514958e",
   nowrap = "FormatText_nowrap_ff69eca3",
   format_text_module_default = {
     COLORS: COLORS,
-    base: base$14,
+    base: base$19,
     base__fullSize: base__fullSize,
     nowrap: nowrap,
   },
@@ -30459,15 +29739,245 @@ function FormatString({ path: e, ...t }) {
     ...t,
   });
 }
+var directions = { horizontal: "horizontal", vertical: "vertical" },
+  PERCENT_OF_VISIBLE_ELEMENTS = 1.5,
+  SAFETY_FACTOR = 0.25;
+function calculateRangeRows(e, t, n) {
+  if (0 === t) return [0, 0];
+  const r = e.animationScroll.scrollPosition.get(),
+    a = e.getWrapperSize();
+  if ("number" != typeof a || 0 === a) return [0, 0];
+  const o = Math.ceil((a / n) * PERCENT_OF_VISIBLE_ELEMENTS),
+    i = Math.max(0, Math.ceil(r / n) - Math.floor(o * SAFETY_FACTOR));
+  return [i, Math.min(t, i + o)];
+}
+function DefaultWrapper(e) {
+  return (0, import_jsx_runtime.jsx)("div", { ...e });
+}
+function calculateRangeItems(e, t, n) {
+  if (0 === t) return [0, 0];
+  const r = e.animationScroll.scrollPosition.get(),
+    a = e.getWrapperSize();
+  if ("number" != typeof a || 0 === a || Number.isNaN(r)) return [0, 0];
+  const o = Math.ceil((a / n) * PERCENT_OF_VISIBLE_ELEMENTS),
+    i = clamp$2(0, t, Math.ceil(r / n) - Math.floor(o * SAFETY_FACTOR));
+  return [i, Math.min(t, i + o)];
+}
+var initVisibleRange = [0, 0];
+function useVisibleRange(e, t, n, r, a) {
+  const [o, i] = (0, import_react.useState)(initVisibleRange),
+    s = (0, import_react.useRef)(initVisibleRange),
+    [u, l] = useOptionalTransition(n),
+    c = usePrevious(u),
+    d = useThrottleCall(t, !0),
+    f = useEvent(() => {
+      l(() => {
+        const [e, t] = s.current;
+        i((n) => {
+          const [r, a] = n;
+          return e === r && t === a ? n : [e, t];
+        });
+      });
+    }),
+    p = useEvent(() => {
+      d.call(() => {
+        const e = r();
+        (s.current[0] === e[0] && s.current[1] === e[1]) || ((s.current = e), u || f());
+      });
+    });
+  return (
+    (0, import_react.useEffect)(() => {
+      c && !u && ((s.current[0] === o[0] && s.current[1] === o[1]) || f());
+    }, [u, c, f, o]),
+    (0, import_react.useLayoutEffect)(
+      () => (
+        e.events.on("change", p),
+        e.events.on("recalculateContent", p),
+        e.events.on("resizeHandled", p),
+        p(),
+        () => {
+          (e.events.off("change", p),
+            e.events.off("recalculateContent", p),
+            e.events.off("resizeHandled", p));
+        }
+      ),
+      [e.events, p, a],
+    ),
+    o
+  );
+}
+var renderScrollDefault$1 = (e) => (0, import_jsx_runtime.jsx)(DefaultScroll$1, { ...e });
+function HorizontalList({
+  totalElements: e,
+  throttle: t = 0,
+  api: n,
+  elementWidth: r,
+  wrappers: a,
+  className: o,
+  renderElement: i,
+  asyncRenderEnabled: s = !1,
+  renderScroll: u = renderScrollDefault$1,
+}) {
+  const l = useVisibleRange(n, t, s, () => calculateRangeItems(n, e, r), e),
+    c = a?.Element ?? import_react.Fragment,
+    d = a?.Content ?? DefaultWrapper,
+    [f, p] = l,
+    m = Math.min(e, p),
+    _ = clamp$2(0, m, f);
+  return u(
+    {
+      className: o,
+      children: (0, import_jsx_runtime.jsxs)(d, {
+        children: [
+          (0, import_jsx_runtime.jsx)("div", { style: { width: f * r } }),
+          mapRange(_, Math.max(m, _), (e) => (0, import_jsx_runtime.jsx)(c, { children: i(e) }, e)),
+          (0, import_jsx_runtime.jsx)("div", { style: { width: Math.max(0, e - p) * r } }),
+        ],
+      }),
+    },
+    l,
+  );
+}
+var renderScrollDefault = (e) => (0, import_jsx_runtime.jsx)(DefaultScroll, { ...e });
+function VerticalList({
+  api: e,
+  className: t,
+  totalElements: n,
+  elementHeight: r,
+  itemsPerRow: a = 1,
+  wrappers: o,
+  throttle: i = 0,
+  asyncRenderEnabled: s = !1,
+  renderElement: u,
+  renderScroll: l = renderScrollDefault,
+}) {
+  const c = Math.ceil(n / a),
+    d = useVisibleRange(e, i, s, () => calculateRangeRows(e, c, r));
+  (0, import_react.useEffect)(e.recalculateContent, [e, d]);
+  const [f, p] = d,
+    m = o?.Element ?? import_react.Fragment,
+    _ = o?.Content ?? DefaultWrapper,
+    h = Math.min(n, p * a),
+    g = clamp$2(0, h, f * a);
+  return l(
+    {
+      className: t,
+      children: (0, import_jsx_runtime.jsxs)(_, {
+        children: [
+          (0, import_jsx_runtime.jsx)("div", { style: { width: "100%", height: f * r } }),
+          mapRange(g, Math.max(g, h), (e) => (0, import_jsx_runtime.jsx)(m, { children: u(e) }, e)),
+          (0, import_jsx_runtime.jsx)("div", {
+            style: { width: "100%", height: Math.max(0, c - p) * r },
+          }),
+        ],
+      }),
+    },
+    d,
+  );
+}
+function List(e) {
+  return e.direction === directions.horizontal
+    ? (0, import_jsx_runtime.jsx)(HorizontalList, { ...e })
+    : (0, import_jsx_runtime.jsx)(VerticalList, { ...e });
+}
+List.displayName = "VirtualList";
+var base$18 = "SceneWrapper_52fcfc1e",
+  base__down = "SceneWrapper_base__down_4ece5089",
+  base__moveSpaceDisabled = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
+  scene_wrapper_module_default = {
+    base: base$18,
+    base__down: base__down,
+    base__moveSpaceDisabled: base__moveSpaceDisabled,
+  },
+  MOUSE_BUTTONS_LEFT = 1,
+  DELTA_Z = 600;
+function SceneWrapper({
+  children: e,
+  moveSpace: t,
+  onMouseOver3dScene: n,
+  onDragStateChange: r,
+  moveSpaceEnabled: a = !0,
+  className: o,
+  ...i
+}) {
+  const [s, u] = (0, import_react.useState)(!1),
+    [l, c] = (0, import_react.useState)(!1),
+    [d, f] = (0, import_react.useState)({ x: 0, y: 0 }),
+    p = (0, import_react.useRef)(null);
+  ((0, import_react.useEffect)(() => {
+    function e() {
+      (u(!1), c(!1));
+    }
+    return (window.addEventListener("mouseup", e), () => window.removeEventListener("mouseup", e));
+  }, []),
+    (0, import_react.useEffect)(
+      () => () => {
+        n({ isOver3dScene: !1 });
+      },
+      [n],
+    ));
+  const m = useEvent((e) => r?.(e));
+  function _(e) {
+    if (!p.current) return;
+    const { left: t, right: n, top: r, bottom: a } = p.current.getBoundingClientRect();
+    return !(e.clientX < t || e.clientY < r || e.clientX > n || e.clientY > a);
+  }
+  function h(e) {
+    return 1 === e.buttons && _(e) && a;
+  }
+  return (
+    (0, import_react.useEffect)(() => {
+      m(s && l);
+    }, [s, m, l]),
+    (0, import_jsx_runtime.jsx)("div", {
+      ...i,
+      ref: p,
+      className: clsx(
+        scene_wrapper_module_default.base,
+        s && scene_wrapper_module_default.base__down,
+        !a && scene_wrapper_module_default.base__moveSpaceDisabled,
+        o,
+      ),
+      onMouseDown: function (e) {
+        (e.preventDefault(), h(e) && (u(!0), c(!0), f({ x: e.clientX, y: e.clientY })));
+      },
+      onMouseMove: function (e) {
+        if ((e.preventDefault(), s && l)) {
+          if (!_(e)) return;
+          const n = e.clientX !== d.x ? e.clientX - d.x : 0,
+            r = e.clientY !== d.y ? e.clientY - d.y : 0;
+          (f({ x: e.clientX, y: e.clientY }), t({ dx: n, dy: r, dz: 0 }));
+        }
+      },
+      onMouseUp: function () {
+        u(!1);
+      },
+      onWheel: function (e) {
+        (e.preventDefault(), a && _(e) && t({ dx: 0, dy: 0, dz: e.deltaY < 0 ? -600 : DELTA_Z }));
+      },
+      onMouseOver: function (e) {
+        (n({ isOver3dScene: !0 }), h(e) && (u(!0), f({ x: e.clientX, y: e.clientY })));
+      },
+      onMouseOut: function () {
+        (n({ isOver3dScene: !1 }), u(!1));
+      },
+      children: e,
+    })
+  );
+}
+function isEmptyObject(e) {
+  for (const t in e) return !1;
+  return !0;
+}
 function isSerializableReactNode(e) {
   return (
     !(null != e && !["string", "number", "boolean"].includes(typeof e)) ||
     (!(0, import_react.isValidElement)(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
   );
 }
-var base$13 = "MultilineOverflow_ec9f8e47",
-  content = "MultilineOverflow_content_b539970d",
-  multiline_overflow_module_default = { base: base$13, content: content };
+var base$17 = "MultilineOverflow_ec9f8e47",
+  content$2 = "MultilineOverflow_content_b539970d",
+  multiline_overflow_module_default = { base: base$17, content: content$2 };
 function isSerializableParams(e) {
   return !e || Object.values(e).every(isSerializableReactNode);
 }
@@ -30641,857 +30151,20 @@ function ExtendedText(e) {
     )
   );
 }
-var DAYS_IN_WEEK = 7,
-  HOURS_IN_DAY = 24,
-  MS_IN_SECOND = 1e3,
-  ONE_MINUTE = 60,
-  ONE_HOUR = 3600,
-  ONE_DAY = 24 * ONE_HOUR,
-  ONE_WEEK = 7 * ONE_DAY,
-  NOW_IN_SECONDS = Date.now() / 1e3,
-  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
-  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
-function getTimeUnits(e = 0) {
-  let t = e;
-  const n = Math.trunc(t / ONE_DAY);
-  t -= n * ONE_DAY;
-  const r = Math.trunc(t / ONE_HOUR);
-  t -= r * ONE_HOUR;
-  const a = Math.trunc(t / 60);
-  return ((t -= 60 * a), { days: n, hours: r, minutes: a, seconds: t });
-}
-var getRoundedTimeUnitDescription = (e, t = !0) =>
-    e.days > 7 && t
-      ? format(R.strings.common.duration.days(), { days: e.days })
-      : e.days >= 1
-        ? 0 === e.hours
-          ? format(R.strings.common.duration.days(), { days: e.days })
-          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
-        : e.hours >= 1
-          ? 0 === e.minutes
-            ? format(R.strings.common.duration.hours(), { hours: e.hours })
-            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
-          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
-  defaultOnFinish = () => {},
-  useCountdown$1 = (e = 0, t, n = 0, r = defaultOnFinish) => {
-    const [a, o] = (0, import_react.useState)(e);
-    return (
-      (0, import_react.useEffect)(() => {
-        if (e > 0) {
-          o(e);
-          const a = Date.now(),
-            i = setInterval(
-              () => {
-                const t = e - Math.floor((Date.now() - a) / MS_IN_SECOND);
-                null !== n && t <= n ? (o(n), r && r(), clearInterval(i)) : o(t);
-              },
-              (t || (e > 120 ? 60 : 1)) * MS_IN_SECOND,
-            );
-          return () => {
-            clearInterval(i);
-          };
-        }
-      }, [e, t, n, r]),
-      a
-    );
-  },
-  tracker$1 = DataTracker.instance,
-  tracker = DataTracker.instance,
-  useCountdown = useCountdown$1,
-  useScaleState = () => {
-    const [e, t] = (0, import_react.useState)(env.view.getScale());
-    return (
-      (0, import_react.useEffect)(() => {
-        const e = () => {
-          t(env.view.getScale());
-        };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
-      }, []),
-      e
-    );
-  },
-  CountdownIcon = (function (e) {
-    return (
-      (e.Timer = "timer"),
-      (e.Countdown = "countdown"),
-      (e.Cooldown = "cooldown"),
-      (e.None = "none"),
-      e
-    );
-  })({}),
-  CountdownStyle = (function (e) {
-    return (
-      (e.Description = "description"),
-      (e.Short = "short"),
-      (e.Long = "long"),
-      (e.Extended = "extended"),
-      e
-    );
-  })({}),
-  base$12 = "Countdown_99fa8328",
-  icon$5 = "Countdown_icon_b50ebafb",
-  description = "Countdown_description_91ad95d2",
-  Countdown_module_default = { base: base$12, icon: icon$5, description: description },
-  formatUnit = (e) => e.toString().padStart(2, "0"),
-  formatTimeUnits = (e, t) => {
-    switch (t) {
-      case CountdownStyle.Description:
-        return getRoundedTimeUnitDescription(e);
-      case CountdownStyle.Short:
-        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Long:
-        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-      case CountdownStyle.Extended:
-        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
-    }
-  },
-  IMAGES = R.images.gui.maps.icons.components.countdown,
-  getIcon = (e, t) => {
-    const n = 2 === t ? IMAGES.big : IMAGES;
-    switch (e) {
-      case CountdownIcon.Timer:
-        return n.clock();
-      case CountdownIcon.Countdown:
-        return n.hourglass();
-      case CountdownIcon.Cooldown:
-        return n.lock();
-    }
-  },
-  Countdown = ({
-    duration: e,
-    icon: t = CountdownIcon.Timer,
-    style: n = CountdownStyle.Description,
-    onTimeReached: r,
-    refreshRate: a,
-    className: o = "",
-    classNames: i = {},
-  }) => {
-    const s = useCountdown(e, a ?? (n !== CountdownStyle.Description ? 1 : void 0)),
-      u = useScaleState();
-    r && r[s] && r[s]();
-    const l = formatTimeUnits(getTimeUnits(s), n);
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(Countdown_module_default.base, o),
-      children: [
-        t !== CountdownIcon.None &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: (0, import_classnames.default)(Countdown_module_default.icon, i.icon),
-            style: { backgroundImage: `url('${getIcon(t, u)}')` },
-          }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(Countdown_module_default.description, i.text),
-          children: l,
-        }),
-      ],
-    });
-  },
-  Countdown_default = (0, import_react.memo)(Countdown),
-  base$11 = "Optimizedprogressbar_e894d6c",
-  wrapper$1 = "Optimizedprogressbar_wrapper_70ce38b3",
-  line = "Optimizedprogressbar_line_5190e4c3",
-  backgroundWrapper = "Optimizedprogressbar_backgroundWrapper_405830ed",
-  background$1 = "Optimizedprogressbar_background_74cf6541",
-  OptimizedProgressBar_module_default = {
-    base: base$11,
-    wrapper: wrapper$1,
-    line: line,
-    backgroundWrapper: backgroundWrapper,
-    background: background$1,
-  },
-  MAX_WIDTH = 8e3,
-  getInitialApi = () => ({ update: () => {} }),
-  getLeftOffset = (e, t) => ("number" == typeof t ? t : e.offsetLeft),
-  moveLine = ({ horizontalScrollPosition: e, leftOffset: t }, n, { container: r, line: a }) => {
-    const o = clamp(
-      0,
-      Math.max(0, Math.floor(r.offsetWidth * n) - MAX_WIDTH),
-      (e - getLeftOffset(r, t)) | 0,
-    );
-    a.style.transform = `translateX(${o}px)`;
-  },
-  moveBackground = ({ horizontalScrollPosition: e, leftOffset: t }, n, r) => {
-    const a = (e - getLeftOffset(n, t)) | 0,
-      o = clamp(0, n.offsetWidth, a);
-    r.style.transform = `translateX(${o}px)`;
-  },
-  OptimizedProgressBar = ({
-    api: e,
-    value: t,
-    maxValue: n = 100,
-    theme: r = defaultTheme,
-    className: a,
-    ...o
-  }) => {
-    const i = (0, import_react.useRef)(null),
-      s = (0, import_react.useRef)(null),
-      u = (0, import_react.useRef)(null),
-      l = clamp(0, t, n) / n,
-      c = (0, import_react.useCallback)(
-        (e) => {
-          (u.current && i.current && moveBackground(e, i.current, u.current),
-            s.current && i.current && moveLine(e, l, { line: s.current, container: i.current }));
-        },
-        [l],
-      ),
-      d = (0, import_react.useMemo)(() => createSkin(r), [r]);
-    return (
-      (e.current.update = c),
-      (0, import_jsx_runtime.jsx)("div", {
-        className: (0, import_classnames.default)(OptimizedProgressBar_module_default.base, a),
-        ref: i,
-        children: (0, import_jsx_runtime.jsxs)("div", {
-          className: OptimizedProgressBar_module_default.wrapper,
-          children: [
-            (0, import_jsx_runtime.jsx)("div", {
-              className: OptimizedProgressBar_module_default.backgroundWrapper,
-              children: (0, import_jsx_runtime.jsx)("div", {
-                style: d,
-                className: OptimizedProgressBar_module_default.background,
-                ref: u,
-                children: (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: o.size }),
-              }),
-            }),
-            (0, import_jsx_runtime.jsx)(ProgressBar$1, {
-              ...o,
-              lineRef: s,
-              value: t,
-              theme: r,
-              maxValue: n,
-              withoutBackground: !0,
-            }),
-          ],
-        }),
-      })
-    );
-  },
-  DateTime = ({
-    datetime: e,
-    format: t = DateTimeFormatsEnum.ShortDate,
-    isConvertedToLocal: n = !0,
-  }) =>
-    Object.values(DateTimeFormatsEnum).includes(t)
-      ? getRegionalDateTime(e, t, n)
-      : getFormattedDateTime(e, t, n),
-  DateTime_default = (0, import_react.memo)(DateTime);
-function NotLoaded() {
-  return null;
-}
-function LazyModel(e) {
-  return useLazyModel(e.id) ? e.children : (e.fallback || NotLoaded)();
-}
-function useLazyModel(e) {
-  const [t, n] = (0, import_react.useState)(!1);
-  return (
-    (0, import_react.useEffect)(() => {
-      if ("number" == typeof e)
-        return (
-          n(ids().includes(e)),
-          subscribe$1(e, (e) => {
-            n("added" === e.type);
-          })
-        );
-    }, [e]),
-    t
-  );
-}
-var ErrorHandler = class extends import_react.Component {
-    state = { failure: !1, error: null };
-    static getDerivedStateFromError(e) {
-      return (console.error(e), { failure: !0, error: e });
-    }
-    failure() {
-      return (0, import_jsx_runtime.jsxs)("div", {
-        children: [
-          (0, import_jsx_runtime.jsx)("h1", { children: "Something went wrong." }),
-          this.state.error &&
-            (0, import_jsx_runtime.jsx)("pre", { children: this.state.error.toString() }),
-        ],
-      });
-    }
-    render() {
-      return this.state.failure
-        ? this.props.failure
-          ? this.props.failure(this.state.error)
-          : this.failure()
-        : this.props.children;
-    }
-  },
-  UNKNOWN_NATION = "none",
-  list = [
-    "ussr",
-    "germany",
-    "usa",
-    "china",
-    "france",
-    "uk",
-    "japan",
-    "czech",
-    "sweden",
-    "poland",
-    "italy",
-  ],
-  nationById = (e) => list[e] ?? "none",
-  LIGHT_TANK = "lightTank",
-  MEDIUM_TANK = "mediumTank",
-  HEAVY_TANK = "heavyTank",
-  AT_SPG = "AT-SPG",
-  types$1 = {
-    lightTank: LIGHT_TANK,
-    mediumTank: MEDIUM_TANK,
-    heavyTank: HEAVY_TANK,
-    SPG: "SPG",
-    "AT-SPG": AT_SPG,
-  },
-  typeValues = Object.values(types$1),
-  isTypeValidValue = (e) => typeValues.includes(e);
-function getVehicleImageKey(e) {
-  const t = e.indexOf(":");
-  return normalizeResource(t < 0 ? e.toLowerCase() : e.substring(t + 1).toLowerCase());
-}
-var WITHOUT_ROLE = "without_role",
-  roles = {
-    assault: "assault",
-    sniper: "sniper",
-    support: "support",
-    universal: "universal",
-    break: "break",
-    scout: "scout",
-    spg: "spg",
-  },
-  mapRoleByKey = [
-    WITHOUT_ROLE,
-    roles.spg,
-    roles.assault,
-    roles.break,
-    roles.universal,
-    roles.support,
-    roles.assault,
-    roles.support,
-    roles.universal,
-    roles.sniper,
-    roles.assault,
-    roles.universal,
-    roles.sniper,
-    roles.support,
-    roles.universal,
-    WITHOUT_ROLE,
-    roles.scout,
-    roles.support,
-  ],
-  atSpgRoles = [roles.assault, roles.universal, roles.sniper, roles.support],
-  heavyTankRoles = [roles.assault, roles.break, roles.universal, roles.support],
-  mediumTankRoles = [roles.assault, roles.support, roles.universal, roles.sniper],
-  lightTankRoles = [roles.universal, roles.scout, roles.support],
-  vehicleState = {
-    DAMAGED: "damaged",
-    EXPLODED: "exploded",
-    DESTROYED: "destroyed",
-    UNDAMAGED: "undamaged",
-    BATTLE: "battle",
-    IN_PREBATTLE: "inPrebattle",
-    LOCKED: "locked",
-    CREW_NOT_FULL: "crewNotFull",
-    AMMO_NOT_FULL: "ammoNotFull",
-    AMMO_NOT_FULL_EVENTS: "ammoNotFullEvents",
-    SERVER_RESTRICTION: "serverRestriction",
-    RENTAL_IS_OVER: "rentalIsOver",
-    IGR_RENTAL_IS_OVER: "igrRentalIsOver",
-    IN_PREMIUM_IGR_ONLY: "inPremiumIgrOnly",
-    GROUP_IS_NOT_READY: "group_is_not_ready",
-    NOT_PRESENT: "notpresent",
-    UNAVAILABLE: "unavailable",
-    UNSUITABLE_TO_QUEUE: "unsuitableToQueue",
-    UNSUITABLE_TO_UNIT: "unsuitableToUnit",
-    WILL_BE_UNLOCKED_IN_BATTLE: "willBeUnlockedInBattle",
-    DEAL_IS_OVER: "dealIsOver",
-    ROTATION_GROUP_UNLOCKED: "rotationGroupUnlocked",
-    ROTATION_GROUP_LOCKED: "rotationGroupLocked",
-    RENTABLE: "rentable",
-    RENTABLE_AGAIN: "rentableAgain",
-    DISABLED: "disabled",
-    SUBSCRIPTION_SUSPENDED: "subscription_suspended",
-    WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED: "wot_plus_exclusive_vehicle_disabled",
-  },
-  stateValues = Object.values(vehicleState),
-  base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
-  base__x190x152 = "VehicleImage_base__x190x152_41379c70",
-  base__x380x304 = "VehicleImage_base__x380x304_274f87fe",
-  vehicle_image_module_default = {
-    base__x120x96: base__x120x96,
-    base__x190x152: base__x190x152,
-    base__x380x304: base__x380x304,
-  },
-  sizes$3 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
-  Base$2 = defineStyledComponent("VehicleImage", {
-    element: Image$1,
-    className: vehicle_image_module_default.base,
-    cva: {
-      variants: {
-        size: {
-          [sizes$3.x120x96]: vehicle_image_module_default.base__x120x96,
-          [sizes$3.x190x152]: vehicle_image_module_default.base__x190x152,
-          [sizes$3.x380x304]: vehicle_image_module_default.base__x380x304,
-        },
-      },
-    },
-  });
-function UnknownVehicleImage({ size: e = sizes$3.x380x304, ...t }) {
-  return (0, import_jsx_runtime.jsx)(Base$2, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
-}
-var VehicleImage = (0, import_react.forwardRef)(function (
-  { size: e = sizes$3.x380x304, name: t, width: n, height: r, className: a, ...o },
-  i,
-) {
-  const s = resources.resolve("images"),
-    u = `vehicle.${e}.${getVehicleImageKey(t)}`;
-  return s.has(u)
-    ? (0, import_jsx_runtime.jsx)(Base$2, {
-        ...o,
-        ref: i,
-        size: e,
-        className: a,
-        path: u,
-        width: n,
-        height: r,
-      })
-    : (console.warn(`Fail to retrieve icon maps/icons/vehicle/${e}/${getVehicleImageKey(t)}`),
-      (0, import_jsx_runtime.jsx)(UnknownVehicleImage, {
-        size: e,
-        className: a,
-        width: n,
-        height: r,
-      }));
-});
-((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$3));
-var base$10 = "VehicleLevel_3c938122",
-  vehicle_level_module_default = { base: base$10 },
-  numberTypes = { arabic: "arabic", roman: "roman" };
-function getLevelType(e, t) {
-  return e || (t ? numberTypes.arabic : numberTypes.roman);
-}
-var VehicleLevel = (0, import_react.forwardRef)(function ({ value: e, numberType: t, ...n }, r) {
-  const a = getLevelType(t, useRomanForbidden()) === numberTypes.roman ? arabicToRoman(e) : e;
-  return (0, import_jsx_runtime.jsx)("div", {
-    ...n,
-    "data-name": "VehicleLevel",
-    className: clsx(vehicle_level_module_default.base, n.className),
-    ref: r,
-    children: a,
-  });
-});
-VehicleLevel.numberTypes = numberTypes;
-var TYPE_PRESTIGE = "prestige",
-  directions$1 = { left: "left", right: "right" },
-  lengths = { short: "short", medium: "medium", long: "long" },
-  iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
-  icon$4 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
-  base$9 = "VehiclePrestigeLevel_a750cce",
-  icon$3 = "VehiclePrestigeLevel_icon_ef024cc3",
-  base__left = "VehiclePrestigeLevel_base__left_4426b46c",
-  level = "VehiclePrestigeLevel_level_10f410ba",
-  level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
-  base__right = "VehiclePrestigeLevel_base__right_4426b46c",
-  level__medium = "VehiclePrestigeLevel_level__medium_90aed80f",
-  level__long = "VehiclePrestigeLevel_level__long_26625167",
-  base__iron = "VehiclePrestigeLevel_base__iron_4426b46c",
-  base__bronze = "VehiclePrestigeLevel_base__bronze_4426b46c",
-  base__silver = "VehiclePrestigeLevel_base__silver_4426b46c",
-  base__gold = "VehiclePrestigeLevel_base__gold_4426b46c",
-  base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
-  vehicle_prestige_level_module_default = {
-    base: base$9,
-    icon: icon$3,
-    base__left: base__left,
-    level: level,
-    level__short: level__short,
-    base__right: base__right,
-    level__medium: level__medium,
-    level__long: level__long,
-    base__iron: base__iron,
-    base__bronze: base__bronze,
-    base__silver: base__silver,
-    base__gold: base__gold,
-    base__enamel: base__enamel,
-  };
-function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: a, ...o }) {
-  return e < 1 || "undefined" === n
-    ? null
-    : (0, import_jsx_runtime.jsxs)("div", {
-        ...o,
-        className: clsx(
-          vehicle_prestige_level_module_default.base,
-          vehicle_prestige_level_module_default[`base__${n}`],
-          vehicle_prestige_level_module_default[`base__${r}`],
-          o.className,
-          a?.base,
-        ),
-        children: [
-          (0, import_jsx_runtime.jsx)(Image$1, {
-            path: `prestige.tab.${icon$4(e, n, t)}`,
-            className: clsx(vehicle_prestige_level_module_default.icon, a?.icon),
-          }),
-          "prestige" !== n &&
-            (0, import_jsx_runtime.jsx)("div", {
-              className: clsx(
-                vehicle_prestige_level_module_default.level,
-                vehicle_prestige_level_module_default[`level__${iconLength(e)}`],
-                a?.level,
-              ),
-              children: e,
-            }),
-        ],
-      });
-}
-PrestigeLevel.direction = directions$1;
-var base$8 = "VehicleRole_e70537d3",
-  icon__x16x16$1 = "VehicleRole_icon__x16x16_f444f190",
-  icon__x24x24$1 = "VehicleRole_icon__x24x24_cc02d077",
-  icon__x32x32$1 = "VehicleRole_icon__x32x32_2180a099",
-  icon__x48x48$1 = "VehicleRole_icon__x48x48_2a01e86c",
-  vehicle_role_module_default = {
-    base: base$8,
-    icon__x16x16: icon__x16x16$1,
-    icon__x24x24: icon__x24x24$1,
-    icon__x32x32: icon__x32x32$1,
-    icon__x48x48: icon__x48x48$1,
-  },
-  sizes$2 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
-  images$1 = resources.resolve("images"),
-  VehicleRole = (0, import_react.forwardRef)(function (
-    { roleKey: e, size: t = sizes$2.x24x24, classNames: n, ...r },
-    a,
-  ) {
-    const o = useUpscale(t, sizes$2.x32x32);
-    return (0, import_jsx_runtime.jsx)("div", {
-      ...r,
-      ref: a,
-      className: clsx(vehicle_role_module_default.base, n?.base),
-      children: (0, import_jsx_runtime.jsx)("img", {
-        className: clsx(vehicle_role_module_default[`icon__${t}`], n?.icon),
-        src: images$1.readOrEmpty(`vehicleRoles.${o}.${e}`),
-      }),
-    });
-  });
-VehicleRole.sizes = sizes$2;
-var sizes$1 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
-  upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
-  mapTypes = {
-    [types$1.lightTank]: "light_tank",
-    [types$1.mediumTank]: "medium_tank",
-    [types$1.heavyTank]: "heavy_tank",
-    [types$1.SPG]: "spg",
-    [types$1["AT-SPG"]]: "tank_destroyer",
-  },
-  base$7 = "VehicleType_30b4aab0",
-  base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
-  base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
-  base__x64x64 = "VehicleType_base__x64x64_bb9b890",
-  base__x96x96 = "VehicleType_base__x96x96_919f9f92",
-  base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
-  base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
-  base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
-  base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
-  icon$2 = "VehicleType_icon_b15d2628",
-  vehicle_type_module_default = {
-    base: base$7,
-    base__x24x24: base__x24x24,
-    base__x48x48: base__x48x48,
-    base__x64x64: base__x64x64,
-    base__x96x96: base__x96x96,
-    base__premium__x24x24: base__premium__x24x24,
-    base__premium__x48x48: base__premium__x48x48,
-    base__premium__x64x64: base__premium__x64x64,
-    base__premium__x96x96: base__premium__x96x96,
-    icon: icon$2,
-  },
-  VehicleType = (0, import_react.forwardRef)(function (
-    { type: e, size: t = sizes$1.x48x48, premium: n = !1, fit: r = "contain", ...a },
-    o,
-  ) {
-    const i = useUpscale(sizes$1[t], upscaledSizes[t]);
-    return (0, import_jsx_runtime.jsx)(Image$1, {
-      ...a,
-      ref: o,
-      fit: r,
-      className: clsx(
-        vehicle_type_module_default.base,
-        n
-          ? vehicle_type_module_default[`base__premium__${t}`]
-          : vehicle_type_module_default[`base__${t}`],
-        a.className,
-      ),
-      path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
-    });
-  });
-((VehicleType.types = types$1), (VehicleType.sizes = sizes$1));
-var base$6 = "VehicleInfo_1732f1f0",
-  name = "VehicleInfo_name_3989ca04",
-  name__premium = "VehicleInfo_name__premium_258b3b93",
-  vehicle_info_module_default = { base: base$6, name: name, name__premium: name__premium },
-  VehicleName = defineStyledComponent("VehicleName", vehicle_info_module_default.name, {
-    variants: { premium: { true: vehicle_info_module_default.name__premium } },
-  }),
-  VehicleInfo = (0, import_react.forwardRef)(function (e, t) {
-    return (0, import_jsx_runtime.jsx)("div", {
-      ...e,
-      ref: t,
-      className: clsx(vehicle_info_module_default.base, e.className),
-    });
-  });
-((VehicleInfo.Prestige = PrestigeLevel),
-  (VehicleInfo.Level = VehicleLevel),
-  (VehicleInfo.Type = VehicleType),
-  (VehicleInfo.Name = VehicleName),
-  (VehicleInfo.Role = VehicleRole));
-var directions = { horizontal: "horizontal", vertical: "vertical" },
-  PERCENT_OF_VISIBLE_ELEMENTS = 1.5,
-  SAFETY_FACTOR = 0.25;
-function calculateRangeRows(e, t, n) {
-  if (0 === t) return [0, 0];
-  const r = e.animationScroll.scrollPosition.get(),
-    a = e.getWrapperSize();
-  if ("number" != typeof a || 0 === a) return [0, 0];
-  const o = Math.ceil((a / n) * PERCENT_OF_VISIBLE_ELEMENTS),
-    i = Math.max(0, Math.ceil(r / n) - Math.floor(o * SAFETY_FACTOR));
-  return [i, Math.min(t, i + o)];
-}
-function DefaultWrapper(e) {
-  return (0, import_jsx_runtime.jsx)("div", { ...e });
-}
-function calculateRangeItems(e, t, n) {
-  if (0 === t) return [0, 0];
-  const r = e.animationScroll.scrollPosition.get(),
-    a = e.getWrapperSize();
-  if ("number" != typeof a || 0 === a || Number.isNaN(r)) return [0, 0];
-  const o = Math.ceil((a / n) * PERCENT_OF_VISIBLE_ELEMENTS),
-    i = clamp$2(0, t, Math.ceil(r / n) - Math.floor(o * SAFETY_FACTOR));
-  return [i, Math.min(t, i + o)];
-}
-var initVisibleRange = [0, 0];
-function useVisibleRange(e, t, n, r, a) {
-  const [o, i] = (0, import_react.useState)(initVisibleRange),
-    s = (0, import_react.useRef)(initVisibleRange),
-    [u, l] = useOptionalTransition(n),
-    c = usePrevious(u),
-    d = useThrottleCall(t, !0),
-    f = useEvent(() => {
-      l(() => {
-        const [e, t] = s.current;
-        i((n) => {
-          const [r, a] = n;
-          return e === r && t === a ? n : [e, t];
-        });
-      });
-    }),
-    p = useEvent(() => {
-      d.call(() => {
-        const e = r();
-        (s.current[0] === e[0] && s.current[1] === e[1]) || ((s.current = e), u || f());
-      });
-    });
-  return (
-    (0, import_react.useEffect)(() => {
-      c && !u && ((s.current[0] === o[0] && s.current[1] === o[1]) || f());
-    }, [u, c, f, o]),
-    (0, import_react.useLayoutEffect)(
-      () => (
-        e.events.on("change", p),
-        e.events.on("recalculateContent", p),
-        e.events.on("resizeHandled", p),
-        p(),
-        () => {
-          (e.events.off("change", p),
-            e.events.off("recalculateContent", p),
-            e.events.off("resizeHandled", p));
-        }
-      ),
-      [e.events, p, a],
-    ),
-    o
-  );
-}
-var renderScrollDefault$1 = (e) => (0, import_jsx_runtime.jsx)(DefaultScroll$1, { ...e });
-function HorizontalList({
-  totalElements: e,
-  throttle: t = 0,
-  api: n,
-  elementWidth: r,
-  wrappers: a,
-  className: o,
-  renderElement: i,
-  asyncRenderEnabled: s = !1,
-  renderScroll: u = renderScrollDefault$1,
-}) {
-  const l = useVisibleRange(n, t, s, () => calculateRangeItems(n, e, r), e),
-    c = a?.Element ?? import_react.Fragment,
-    d = a?.Content ?? DefaultWrapper,
-    [f, p] = l,
-    m = Math.min(e, p),
-    _ = clamp$2(0, m, f);
-  return u(
-    {
-      className: o,
-      children: (0, import_jsx_runtime.jsxs)(d, {
-        children: [
-          (0, import_jsx_runtime.jsx)("div", { style: { width: f * r } }),
-          mapRange(_, Math.max(m, _), (e) => (0, import_jsx_runtime.jsx)(c, { children: i(e) }, e)),
-          (0, import_jsx_runtime.jsx)("div", { style: { width: Math.max(0, e - p) * r } }),
-        ],
-      }),
-    },
-    l,
-  );
-}
-var renderScrollDefault = (e) => (0, import_jsx_runtime.jsx)(DefaultScroll, { ...e });
-function VerticalList({
-  api: e,
-  className: t,
-  totalElements: n,
-  elementHeight: r,
-  itemsPerRow: a = 1,
-  wrappers: o,
-  throttle: i = 0,
-  asyncRenderEnabled: s = !1,
-  renderElement: u,
-  renderScroll: l = renderScrollDefault,
-}) {
-  const c = Math.ceil(n / a),
-    d = useVisibleRange(e, i, s, () => calculateRangeRows(e, c, r));
-  (0, import_react.useEffect)(e.recalculateContent, [e, d]);
-  const [f, p] = d,
-    m = o?.Element ?? import_react.Fragment,
-    _ = o?.Content ?? DefaultWrapper,
-    h = Math.min(n, p * a),
-    g = clamp$2(0, h, f * a);
-  return l(
-    {
-      className: t,
-      children: (0, import_jsx_runtime.jsxs)(_, {
-        children: [
-          (0, import_jsx_runtime.jsx)("div", { style: { width: "100%", height: f * r } }),
-          mapRange(g, Math.max(g, h), (e) => (0, import_jsx_runtime.jsx)(m, { children: u(e) }, e)),
-          (0, import_jsx_runtime.jsx)("div", {
-            style: { width: "100%", height: Math.max(0, c - p) * r },
-          }),
-        ],
-      }),
-    },
-    d,
-  );
-}
-function List(e) {
-  return e.direction === directions.horizontal
-    ? (0, import_jsx_runtime.jsx)(HorizontalList, { ...e })
-    : (0, import_jsx_runtime.jsx)(VerticalList, { ...e });
-}
-List.displayName = "VirtualList";
-var base$5 = "SceneWrapper_52fcfc1e",
-  base__down = "SceneWrapper_base__down_4ece5089",
-  base__moveSpaceDisabled = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
-  scene_wrapper_module_default = {
-    base: base$5,
-    base__down: base__down,
-    base__moveSpaceDisabled: base__moveSpaceDisabled,
-  },
-  MOUSE_BUTTONS_LEFT = 1,
-  DELTA_Z = 600;
-function SceneWrapper({
-  children: e,
-  moveSpace: t,
-  onMouseOver3dScene: n,
-  onDragStateChange: r,
-  moveSpaceEnabled: a = !0,
-  className: o,
-  ...i
-}) {
-  const [s, u] = (0, import_react.useState)(!1),
-    [l, c] = (0, import_react.useState)(!1),
-    [d, f] = (0, import_react.useState)({ x: 0, y: 0 }),
-    p = (0, import_react.useRef)(null);
-  ((0, import_react.useEffect)(() => {
-    function e() {
-      (u(!1), c(!1));
-    }
-    return (window.addEventListener("mouseup", e), () => window.removeEventListener("mouseup", e));
-  }, []),
-    (0, import_react.useEffect)(
-      () => () => {
-        n({ isOver3dScene: !1 });
-      },
-      [n],
-    ));
-  const m = useEvent((e) => r?.(e));
-  function _(e) {
-    if (!p.current) return;
-    const { left: t, right: n, top: r, bottom: a } = p.current.getBoundingClientRect();
-    return !(e.clientX < t || e.clientY < r || e.clientX > n || e.clientY > a);
-  }
-  function h(e) {
-    return 1 === e.buttons && _(e) && a;
-  }
-  return (
-    (0, import_react.useEffect)(() => {
-      m(s && l);
-    }, [s, m, l]),
-    (0, import_jsx_runtime.jsx)("div", {
-      ...i,
-      ref: p,
-      className: clsx(
-        scene_wrapper_module_default.base,
-        s && scene_wrapper_module_default.base__down,
-        !a && scene_wrapper_module_default.base__moveSpaceDisabled,
-        o,
-      ),
-      onMouseDown: function (e) {
-        (e.preventDefault(), h(e) && (u(!0), c(!0), f({ x: e.clientX, y: e.clientY })));
-      },
-      onMouseMove: function (e) {
-        if ((e.preventDefault(), s && l)) {
-          if (!_(e)) return;
-          const n = e.clientX !== d.x ? e.clientX - d.x : 0,
-            r = e.clientY !== d.y ? e.clientY - d.y : 0;
-          (f({ x: e.clientX, y: e.clientY }), t({ dx: n, dy: r, dz: 0 }));
-        }
-      },
-      onMouseUp: function () {
-        u(!1);
-      },
-      onWheel: function (e) {
-        (e.preventDefault(), a && _(e) && t({ dx: 0, dy: 0, dz: e.deltaY < 0 ? -600 : DELTA_Z }));
-      },
-      onMouseOver: function (e) {
-        (n({ isOver3dScene: !0 }), h(e) && (u(!0), f({ x: e.clientX, y: e.clientY })));
-      },
-      onMouseOut: function () {
-        (n({ isOver3dScene: !1 }), u(!1));
-      },
-      children: e,
-    })
-  );
-}
-function isEmptyObject(e) {
-  for (const t in e) return !1;
-  return !0;
-}
 var formats = {
     superCompact: "superCompact",
     compact: "compact",
     default: "default",
     detailed: "detailed",
   },
-  sizes = {
+  sizes$2 = {
     x16x16: "x16x16",
     x24x24: "x24x24",
     x32x32: "x32x32",
     x48x48: "x48x48",
     x80x80: "x80x80",
   },
-  types = { accent: "accent", cooldown: "cooldown" },
+  types$1 = { accent: "accent", cooldown: "cooldown" },
   item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
   item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
   item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
@@ -31632,8 +30305,8 @@ function compactFormatter(e, t) {
   return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
 }
 var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
-  base$4 = "Timer_dac0a0aa",
-  icon$1 = "Timer_icon_a61415df",
+  base$16 = "Timer_dac0a0aa",
+  icon$2 = "Timer_icon_a61415df",
   icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
   icon__accent = "Timer_icon__accent_2cf70c3b",
   icon__cooldown = "Timer_icon__cooldown_4a26d3f",
@@ -31650,8 +30323,8 @@ var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
   label__accent = "Timer_label__accent_ac7d4f7b",
   label__cooldown = "Timer_label__cooldown_c2349ab9",
   timer_module_default = {
-    base: base$4,
-    icon: icon$1,
+    base: base$16,
+    icon: icon$2,
     icon__x16x16: icon__x16x16,
     icon__accent: icon__accent,
     icon__cooldown: icon__cooldown,
@@ -31672,8 +30345,8 @@ function Timer({
   start: e,
   limit: t = 0,
   tick: n = 1,
-  size: r = sizes.x24x24,
-  type: a = types.accent,
+  size: r = sizes$2.x24x24,
+  type: a = types$1.accent,
   format: o = formats.default,
   autostart: i = !0,
   className: s,
@@ -31718,7 +30391,7 @@ function Timer({
     ],
   });
 }
-((Timer.format = formats), (Timer.size = sizes), (Timer.type = types));
+((Timer.format = formats), (Timer.size = sizes$2), (Timer.type = types$1));
 var DEFAULT_NAME_KEYFRAME = "Point",
   THRESHOLD = 0.02;
 function createLoop(e) {
@@ -31916,16 +30589,16 @@ function useProgressBar() {
 }
 var fill = "Filled_fill_32930ca9",
   filled = "Filled_228d842a",
-  wrapper = "Filled_wrapper_11d7cc85",
+  wrapper$1 = "Filled_wrapper_11d7cc85",
   filled__small = "Filled_filled__small_94d1350d",
-  pattern = "Filled_pattern_6ec8608d",
+  pattern$1 = "Filled_pattern_6ec8608d",
   filled__medium = "Filled_filled__medium_94d1350d",
   filled_module_default = {
     fill: fill,
     filled: filled,
-    wrapper: wrapper,
+    wrapper: wrapper$1,
     filled__small: filled__small,
-    pattern: pattern,
+    pattern: pattern$1,
     filled__medium: filled__medium,
   };
 function HeadlessFilled({
@@ -32007,25 +30680,25 @@ function ProgressBarProvider(e) {
   );
   return (0, import_jsx_runtime.jsx)(Context.Provider, { value: d, children: e.children });
 }
-var background = "ProgressBar_background_b40cdfdf",
-  base$3 = "ProgressBar_27c2305c",
-  base__small$1 = "ProgressBar_base__small_61ccd4be",
+var background$4 = "ProgressBar_background_b40cdfdf",
+  base$15 = "ProgressBar_27c2305c",
+  base__small$4 = "ProgressBar_base__small_61ccd4be",
   base__medium = "ProgressBar_base__medium_478d985a",
   base__full = "ProgressBar_base__full_be7f12da",
   base_full = "ProgressBar_base_full_13ab2776",
   base_small = "ProgressBar_base_small_13ab2776",
-  backgroundPattern = "ProgressBar_backgroundPattern_7e932276",
+  backgroundPattern$1 = "ProgressBar_backgroundPattern_7e932276",
   progress_bar_module_default = {
-    background: background,
-    base: base$3,
-    base__small: base__small$1,
+    background: background$4,
+    base: base$15,
+    base__small: base__small$4,
     base__medium: base__medium,
     base__full: base__full,
     base_full: base_full,
     base_small: base_small,
-    backgroundPattern: backgroundPattern,
+    backgroundPattern: backgroundPattern$1,
   },
-  Base$1 = defineStyledComponent("ProgressBar", progress_bar_module_default.base, {
+  Base$4 = defineStyledComponent("ProgressBar", progress_bar_module_default.base, {
     variants: {
       size: {
         small: progress_bar_module_default.base__small,
@@ -32038,7 +30711,7 @@ var background = "ProgressBar_background_b40cdfdf",
   store$3,
   store$2,
   store$1;
-function ProgressBar({
+function ProgressBar$1({
   size: e = "medium",
   className: t,
   classNames: n,
@@ -32049,7 +30722,7 @@ function ProgressBar({
   return (0, import_jsx_runtime.jsx)(ProgressBarProvider, {
     size: e,
     ...o,
-    children: (0, import_jsx_runtime.jsxs)(Base$1, {
+    children: (0, import_jsx_runtime.jsxs)(Base$4, {
       size: e,
       className: t,
       children: [
@@ -32652,7 +31325,7 @@ var RewardType = (function (e) {
     }),
   base__s24x24 = "Reward_base__s24x24_954b5cee",
   base__s48x48 = "Reward_base__s48x48_21f091ec",
-  base__small = "Reward_base__small_3eddf28d",
+  base__small$3 = "Reward_base__small_3eddf28d",
   base__s80x80 = "Reward_base__s80x80_21f091ec",
   base__big = "Reward_base__big_e23f2c77",
   base__s128x100 = "Reward_base__s128x100_1e08e04b",
@@ -32663,10 +31336,10 @@ var RewardType = (function (e) {
   base__s600x450 = "Reward_base__s600x450_e27f3852",
   base__s300x300 = "Reward_base__s300x300_b3d79936",
   base__s450x450 = "Reward_base__s450x450_8b0abaf7",
-  base$2 = "Reward_d65e1e12",
+  base$14 = "Reward_d65e1e12",
   base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
   tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
-  icon = "Reward_icon_e152f13b",
+  icon$1 = "Reward_icon_e152f13b",
   overlay = "Reward_overlay_8cbe65c9",
   highlight = "Reward_highlight_f1cd08e0",
   image__s24x24 = "Reward_image__s24x24_954b5cee",
@@ -32695,7 +31368,7 @@ var RewardType = (function (e) {
   reward_module_default = {
     base__s24x24: base__s24x24,
     base__s48x48: base__s48x48,
-    base__small: base__small,
+    base__small: base__small$3,
     base__s80x80: base__s80x80,
     base__big: base__big,
     base__s128x100: base__s128x100,
@@ -32706,10 +31379,10 @@ var RewardType = (function (e) {
     base__s600x450: base__s600x450,
     base__s300x300: base__s300x300,
     base__s450x450: base__s450x450,
-    base: base$2,
+    base: base$14,
     base__dynamicBox: base__dynamicBox,
     tooltipWrapper: tooltipWrapper,
-    icon: icon,
+    icon: icon$1,
     overlay: overlay,
     highlight: highlight,
     image__s24x24: image__s24x24,
@@ -32847,20 +31520,20 @@ function renderString(e, t = {}) {
   const n = parse$1(e, defaultBrackets);
   return String(render(n, formatters, t));
 }
-var base$1 = "RewardsList_b956755b",
-  base__vertical = "RewardsList_base__vertical_59db3c9f",
-  reward = "RewardsList_reward_fc200613",
-  reward__vertical = "RewardsList_reward__vertical_5f09c6e0",
+var base$13 = "RewardsList_b956755b",
+  base__vertical$1 = "RewardsList_base__vertical_59db3c9f",
+  reward$1 = "RewardsList_reward_fc200613",
+  reward__vertical$1 = "RewardsList_reward__vertical_5f09c6e0",
   boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
   rewards_list_module_default = {
-    base: base$1,
-    base__vertical: base__vertical,
-    reward: reward,
-    reward__vertical: reward__vertical,
+    base: base$13,
+    base__vertical: base__vertical$1,
+    reward: reward$1,
+    reward__vertical: reward__vertical$1,
     boxRewardClassName: boxRewardClassName,
   },
   sizeToDefault = { [ImageSize.S24x24]: ImageSize.Small, [ImageSize.S48x48]: ImageSize.Small },
-  Rewards = (0, import_react.memo)(function ({
+  Rewards$1 = (0, import_react.memo)(function ({
     data: e,
     isFixedBoxSize: t,
     size: n = ImageSize.Big,
@@ -32956,10 +31629,10 @@ var base$1 = "RewardsList_b956755b",
             ),
     });
   }),
-  delta = "Delta_5c8185db",
+  delta$1 = "Delta_5c8185db",
   delta__increase = "Delta_delta__increase_e6e76b0b",
-  glow = "Delta_glow_8e83fd7a",
-  delta_module_default = { delta: delta, delta__increase: delta__increase, glow: glow },
+  glow$2 = "Delta_glow_8e83fd7a",
+  delta_module_default = { delta: delta$1, delta__increase: delta__increase, glow: glow$2 },
   Delta = (0, import_react.memo)(function ({
     initValue: e,
     initMaxValue: t,
@@ -33024,6 +31697,1333 @@ var base$1 = "RewardsList_b956755b",
       })
     );
   }),
+  TabsContext = (0, import_react.createContext)(null);
+function useTabsContext() {
+  const e = (0, import_react.useContext)(TabsContext);
+  return (assert$1(null !== e, "You can use tabs hooks only with Tabs component"), e);
+}
+function Content({ children: e, keyOverride: t }) {
+  const n = useTabsContext();
+  return (0, import_jsx_runtime.jsx)(
+    import_react.Fragment,
+    { children: e(n.active) },
+    t ?? n.active,
+  );
+}
+var themes = { primary: "primary", custom: "custom" },
+  sizes$1 = { large: "large", medium: "medium", small: "small" },
+  background$3 = "HorizontalTabs_background_5e3af03e",
+  mainBorderImage = "HorizontalTabs_mainBorderImage_ee367896",
+  base$12 = "HorizontalTabs_69e3c6f3",
+  outerBorder = "HorizontalTabs_outerBorder_3255d0c5",
+  mainBorder = "HorizontalTabs_mainBorder_61e34c2c",
+  content$1 = "HorizontalTabs_content_1ae3c4bd",
+  horizontal_tabs_module_default = {
+    background: background$3,
+    mainBorderImage: mainBorderImage,
+    base: base$12,
+    "base__size-small": "HorizontalTabs_base__size-small_75fae891",
+    "base__size-medium": "HorizontalTabs_base__size-medium_afc0934f",
+    "base__size-large": "HorizontalTabs_base__size-large_12c75e24",
+    outerBorder: outerBorder,
+    "base__theme-primary": "HorizontalTabs_base__theme-primary_5e3af03e",
+    mainBorder: mainBorder,
+    content: content$1,
+  },
+  Base$3 = defineStyledComponent("Tabs", horizontal_tabs_module_default.base, {
+    variants: {
+      size: {
+        [sizes$1.large]: horizontal_tabs_module_default["base__size-large"],
+        [sizes$1.medium]: horizontal_tabs_module_default["base__size-medium"],
+        [sizes$1.small]: horizontal_tabs_module_default["base__size-small"],
+      },
+      theme: {
+        [themes.primary]: horizontal_tabs_module_default["base__theme-primary"],
+        [themes.custom]: void 0,
+      },
+    },
+  }),
+  Switcher = (0, import_react.forwardRef)(function ({ children: e, classNames: t, ...n }, r) {
+    const a = useTabsContext();
+    return (0, import_jsx_runtime.jsx)(Base$3, {
+      ...n,
+      ref: r,
+      className: clsx(n.className, t?.base),
+      size: a.size,
+      theme: a.theme,
+      children: (0, import_jsx_runtime.jsx)("div", {
+        className: clsx(horizontal_tabs_module_default.outerBorder, t?.outerBorder),
+        children: (0, import_jsx_runtime.jsxs)("div", {
+          className: clsx(horizontal_tabs_module_default.mainBorder, t?.mainBorder),
+          children: [
+            (0, import_jsx_runtime.jsx)("div", {
+              className: clsx(horizontal_tabs_module_default.mainBorderImage, t?.mainBorderImage),
+            }),
+            (0, import_jsx_runtime.jsx)("div", {
+              className: clsx(horizontal_tabs_module_default.content, t?.content),
+              children: e,
+            }),
+          ],
+        }),
+      }),
+    });
+  }),
+  border = "Tab_border_d4435cf2",
+  background$2 = "Tab_background_763456",
+  backgroundPattern = "Tab_backgroundPattern_32ac7949",
+  innerBorderImage = "Tab_innerBorderImage_77cde9e",
+  base$11 = "Tab_806d6908",
+  base__active = "Tab_base__active_a872a63f",
+  content = "Tab_content_4eefcae7",
+  base__inactive = "Tab_base__inactive_0",
+  tab_module_default = {
+    border: border,
+    background: background$2,
+    backgroundPattern: backgroundPattern,
+    innerBorderImage: innerBorderImage,
+    base: base$11,
+    "base__theme-primary": "Tab_base__theme-primary_209414fd",
+    base__active: base__active,
+    content: content,
+    "base__size-small": "Tab_base__size-small_0",
+    "base__size-medium": "Tab_base__size-medium_0",
+    "base__size-large": "Tab_base__size-large_0",
+    base__inactive: base__inactive,
+  },
+  Base$2 = defineStyledComponent("Tab", tab_module_default.base, {
+    variants: {
+      size: {
+        [sizes$1.large]: tab_module_default["base__size-large"],
+        [sizes$1.medium]: tab_module_default["base__size-medium"],
+        [sizes$1.small]: tab_module_default["base__size-small"],
+      },
+      theme: {
+        [themes.primary]: tab_module_default["base__theme-primary"],
+        [themes.custom]: void 0,
+      },
+      state: {
+        active: tab_module_default.base__active,
+        inactive: tab_module_default.base__inactive,
+      },
+    },
+    defaultVariants: { size: sizes$1.medium, theme: themes.primary },
+  }),
+  HeadlessTab = (0, import_react.forwardRef)(function (
+    { theme: e, size: t, tabId: n, active: r, children: a, onClick: o, onMouseEnter: i, ...s },
+    u,
+  ) {
+    const l = useSounds();
+    return (0, import_jsx_runtime.jsx)(Base$2, {
+      ...s,
+      ref: u,
+      theme: e,
+      size: t,
+      state: r === n ? "active" : "inactive",
+      onMouseEnter: function (e) {
+        (r !== n && l.play("mouse-enter", { target: Base$2.displayName, original: e }), i?.(e));
+      },
+      onClick: function (e) {
+        (r !== n && l.play("click", { target: Base$2.displayName, original: e }), o?.(e));
+      },
+      children: a,
+    });
+  });
+function Tab({ tabId: e, classNames: t, className: n, children: r, ...a }) {
+  const o = useTabsContext();
+  return (0, import_jsx_runtime.jsxs)(HeadlessTab, {
+    "data-test-id": `${e}Tab`,
+    ...a,
+    tabId: e,
+    theme: o.theme,
+    size: o.size,
+    active: o.active,
+    className: clsx(t?.base, n),
+    onClick: (t) => {
+      (a.onClick?.(t), o.change(e));
+    },
+    children: [
+      (0, import_jsx_runtime.jsx)("div", {
+        className: clsx(tab_module_default.background, t?.background),
+      }),
+      (0, import_jsx_runtime.jsx)("div", {
+        className: clsx(tab_module_default.backgroundPattern, t?.backgroundPattern),
+      }),
+      (0, import_jsx_runtime.jsx)("div", { className: clsx(tab_module_default.border, t?.border) }),
+      (0, import_jsx_runtime.jsx)("div", {
+        className: clsx(tab_module_default.innerBorderImage, t?.borderImage),
+      }),
+      (0, import_jsx_runtime.jsx)("div", {
+        className: clsx(tab_module_default.content, t?.content),
+        children: r,
+      }),
+    ],
+  });
+}
+function Tabs({ active: e, theme: t, size: n, children: r, onActiveChange: a }) {
+  const [o, i] = (0, import_react.useState)(e),
+    s = (0, import_react.useRef)(e),
+    u = (0, import_react.useMemo)(() => ({ active: o, theme: t, size: n, change: i }), [o, n, t]);
+  return (
+    (0, import_react.useLayoutEffect)(() => {
+      i(e);
+    }, [e]),
+    (0, import_react.useEffect)(() => {
+      s.current !== o && ((s.current = o), a?.(o));
+    }, [o, a]),
+    (0, import_jsx_runtime.jsx)(TabsContext.Provider, { value: u, children: r })
+  );
+}
+((Tabs.Switcher = Switcher), (Tabs.Tab = Tab), (Tabs.Content = Content));
+var MOUSE_BUTTON_CODES = (function (e) {
+  return (
+    (e[(e.LEFT = 0)] = "LEFT"),
+    (e[(e.WHEEL = 1)] = "WHEEL"),
+    (e[(e.RIGHT = 2)] = "RIGHT"),
+    (e[(e.FOURTH = 3)] = "FOURTH"),
+    (e[(e.FIFTH = 4)] = "FIFTH"),
+    e
+  );
+})({});
+function playSound(e) {
+  engine.call("PlaySound", e).catch((t) => {
+    console.error("[lib/sounds.js] playSound(", e, "): ", t);
+  });
+}
+var Sound = {
+    playHighlight() {
+      playSound("highlight");
+    },
+    playClick() {
+      playSound("play");
+    },
+    playYes() {
+      playSound("yes1");
+    },
+  },
+  isRightClick = (e) => e.button === MOUSE_BUTTON_CODES.RIGHT,
+  ContextMenu = ({
+    children: e,
+    contentID: t,
+    decoratorID: n = 0,
+    targetId: r = 0,
+    args: a,
+    isEnabled: o = !0,
+    onMouseDown: i,
+  }) => {
+    const s = (0, import_react.useCallback)(() => {
+        (handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
+          contentID: t,
+          decoratorID: n,
+          targetID: r,
+          isMouseEvent: !0,
+          on: !0,
+          args: a,
+        }),
+          Sound.playYes());
+      }, [a, t, n, r]),
+      u = (0, import_react.useCallback)(() => {
+        handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
+          contentID: t,
+          decoratorID: n,
+          targetID: r,
+          isMouseEvent: !1,
+          on: !1,
+        });
+      }, [t, n, r]),
+      l = (0, import_react.useCallback)(
+        (e) => {
+          (i && i(e), isRightClick(e) && s());
+        },
+        [i, s],
+      );
+    return (
+      (0, import_react.useEffect)(() => {
+        !1 === o && u();
+      }, [o, u]),
+      o ? (0, import_react.cloneElement)(e, { onMouseDown: l }) : e
+    );
+  },
+  BackportContextMenu = ({ children: e, ...t }) =>
+    (0, import_jsx_runtime.jsx)(ContextMenu, {
+      ...t,
+      contentID: R.views.common.BackportContextMenu("resId"),
+      children: e,
+    }),
+  createLayoutReadyInEffect = (e) => {
+    let t,
+      n = null;
+    return (
+      (n = requestAnimationFrame(() => {
+        n = requestAnimationFrame(() => {
+          ((n = null), (t = e()));
+        });
+      })),
+      () => {
+        ("function" == typeof t && t(), null !== n && cancelAnimationFrame(n));
+      }
+    );
+  },
+  base$10 = "Textoverflow_3e47b075",
+  TextOverflow_module_default = { base: base$10 },
+  TextOverflow = ({ content: e, classMix: t, className: n, ...r }) => {
+    const a = (0, import_react.useRef)(null),
+      [o, i] = (0, import_react.useState)(!0);
+    return (
+      (0, import_react.useEffect)(() =>
+        createLayoutReadyInEffect(() => {
+          const e = a.current;
+          e && e.offsetWidth >= e.scrollWidth && i(!1);
+        }),
+      ),
+      (0, import_jsx_runtime.jsx)(SimpleTooltip, {
+        isEnabled: o,
+        body: e,
+        children: (0, import_jsx_runtime.jsx)("div", {
+          ...r,
+          ref: a,
+          className: (0, import_classnames.default)(TextOverflow_module_default.base, n, t),
+          children: e,
+        }),
+      })
+    );
+  },
+  Size = (function (e) {
+    return ((e.Small = "small"), (e.Medium = "medium"), (e.Default = "medium"), e);
+  })({}),
+  AnimationType = (function (e) {
+    return ((e[(e.Simple = 0)] = "Simple"), (e[(e.Growing = 1)] = "Growing"), e);
+  })({}),
+  base$9 = "Progressbar_a6e35bd7",
+  base__small$2 = "Progressbar_base__small_7338ff19",
+  background$1 = "Progressbar_background_27d9dd7c",
+  background__small = "Progressbar_background__small_7338ff19",
+  lineWrapper = "Progressbar_lineWrapper_fc5022a6",
+  ProgressBar_module_default = {
+    base: base$9,
+    base__small: base__small$2,
+    background: background$1,
+    background__small: background__small,
+    lineWrapper: lineWrapper,
+  },
+  ProgressBarBackground = ({ size: e = Size.Default }) =>
+    (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        ProgressBar_module_default.background,
+        ProgressBar_module_default[`background__${e}`],
+      ),
+    }),
+  base$8 = "Progressbarblink_c6146c1c",
+  base__small$1 = "Progressbarblink_base__small_9a4d3786",
+  ProgressBarBlink_module_default = { base: base$8, base__small: base__small$1 },
+  ProgressBarBlink = ({ size: e }) =>
+    (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        ProgressBarBlink_module_default.base,
+        ProgressBarBlink_module_default[`base__${e}`],
+      ),
+    }),
+  base$7 = "Progresslineimpose_24e17c02",
+  base__disabled = "Progresslineimpose_base__disabled_bcd461f4",
+  base__finished = "Progresslineimpose_base__finished_803677d6",
+  base__withoutBounce$1 = "Progresslineimpose_base__withoutBounce_df0aed59",
+  pattern = "Progresslineimpose_pattern_491cb9c0",
+  base__small = "Progresslineimpose_base__small_577e82cf",
+  gradient = "Progresslineimpose_gradient_513e2b1d",
+  glow$1 = "Progresslineimpose_glow_76f8072f",
+  glow__left = "Progresslineimpose_glow__left_c2e964b3",
+  ProgressLineImpose_module_default = {
+    base: base$7,
+    base__disabled: base__disabled,
+    base__finished: base__finished,
+    base__withoutBounce: base__withoutBounce$1,
+    pattern: pattern,
+    base__small: base__small,
+    gradient: gradient,
+    glow: glow$1,
+    glow__left: glow__left,
+  },
+  ProgressLineImposeComponent = ({
+    size: e,
+    lineRef: t,
+    disabled: n,
+    baseStyles: r,
+    isComplete: a,
+    withoutBounce: o,
+  }) => {
+    const i = (0, import_classnames.default)(
+        ProgressLineImpose_module_default.base,
+        ProgressLineImpose_module_default[`base__${e}`],
+        n && ProgressLineImpose_module_default.base__disabled,
+        a && ProgressLineImpose_module_default.base__finished,
+        o && ProgressLineImpose_module_default.base__withoutBounce,
+      ),
+      s = !n && !a;
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: i,
+      style: r,
+      ref: t,
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: ProgressLineImpose_module_default.pattern,
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: ProgressLineImpose_module_default.gradient,
+        }),
+        s && (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: e }),
+      ],
+    });
+  },
+  ProgressLineImpose = (0, import_react.memo)(ProgressLineImposeComponent),
+  createTimeoutInEffect = (e, t) => {
+    let n;
+    const r = setTimeout(() => {
+      n = e();
+    }, t);
+    return () => {
+      ("function" == typeof n && n(), clearTimeout(r));
+    };
+  },
+  GrowAnimationState = (function (e) {
+    return ((e.Idle = "Idle"), (e.Grow = "Grow"), (e.Shrink = "Shrink"), (e.End = "End"), e);
+  })({}),
+  SimpleAnimationState = (function (e) {
+    return ((e.Idle = "Idle"), (e.In = "In"), (e.End = "End"), e);
+  })({}),
+  base$6 = "Progressbardeltagrow_c42a7a2c",
+  base__withoutBounce = "Progressbardeltagrow_base__withoutBounce_8900411d",
+  glow = "Progressbardeltagrow_glow_e08fafeb",
+  ProgressBarDeltaGrow_module_default = {
+    base: base$6,
+    base__withoutBounce: base__withoutBounce,
+    glow: glow,
+  },
+  getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
+  getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + "%" } : { left: `${t}%` }),
+  getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
+  ProgressBarDeltaGrowComponent = ({
+    transitionDuration: e,
+    transitionDelay: t,
+    freezed: n,
+    from: r,
+    size: a,
+    to: o,
+    onEndAnimation: i,
+    onChangeAnimationState: s,
+    className: u,
+  }) => {
+    const l = o < r,
+      [c, d] = (0, import_react.useState)(GrowAnimationState.Idle),
+      f = c === GrowAnimationState.End,
+      p = c === GrowAnimationState.Idle,
+      m = c === GrowAnimationState.Grow,
+      _ = c === GrowAnimationState.Shrink,
+      h = (0, import_react.useCallback)(
+        (e) => {
+          (d(e), s && s(e));
+        },
+        [s],
+      ),
+      g = (0, import_react.useCallback)(
+        (e, t) =>
+          createTimeoutInEffect(() => {
+            h(e);
+          }, t),
+        [h],
+      );
+    (0, import_react.useEffect)(() => {
+      if (!n)
+        return p
+          ? g(GrowAnimationState.Grow, t)
+          : m
+            ? g(GrowAnimationState.Shrink, e)
+            : _
+              ? g(GrowAnimationState.End, e)
+              : void (f && i && i());
+    }, [g, n, f, m, p, _, i, t, e]);
+    const b = (0, import_react.useMemo)(
+        () => ({ width: "100%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
+        [l, e],
+      ),
+      v = (0, import_react.useMemo)(
+        () => ({ width: "0%", ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
+        [l, e],
+      ),
+      y = (0, import_react.useMemo)(
+        () => ({ width: "0%", ...getBaseSideWithReverse(l, r), ...getAnimationStyles(e) }),
+        [r, l, e],
+      ),
+      E = (0, import_react.useMemo)(
+        () => ({
+          width: `${Math.abs(o - r)}%`,
+          ...getBaseSideWithReverse(l, r),
+          ...getAnimationStyles(e),
+        }),
+        [r, l, o, e],
+      );
+    if (f) return null;
+    const A = (0, import_classnames.default)(
+      ProgressBarDeltaGrow_module_default.base,
+      u,
+      l && 0 === o && ProgressBarDeltaGrow_module_default.base__withoutBounce,
+    );
+    return (0, import_jsx_runtime.jsx)("div", {
+      style: p ? y : E,
+      className: A,
+      children: (0, import_jsx_runtime.jsx)("div", {
+        style: _ ? v : b,
+        className: ProgressBarDeltaGrow_module_default.glow,
+        children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
+      }),
+    });
+  },
+  ProgressBarDeltaGrow = (0, import_react.memo)(ProgressBarDeltaGrowComponent),
+  ProgressBarGrowLineComponent = ({
+    to: e,
+    size: t,
+    from: n,
+    lineRef: r,
+    disabled: a,
+    isComplete: o,
+    animationSettings: i,
+    onEndAnimation: s,
+    onChangeAnimationState: u,
+  }) => {
+    const l = e < n,
+      [c, d] = (0, import_react.useState)(!1),
+      f = (0, import_react.useCallback)(
+        (e) => {
+          (e === GrowAnimationState.Shrink && d(!0), u && u(e));
+        },
+        [u],
+      ),
+      p = (0, import_react.useMemo)(() => ({ width: `${n}%`, transitionProperty: "none" }), [n]),
+      m = (0, import_react.useMemo)(
+        () => ({ width: `${e}%`, transitionDuration: `${i.line.duration}ms` }),
+        [i.line.duration, e],
+      );
+    return (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+      children: [
+        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
+          size: t,
+          lineRef: r,
+          disabled: a,
+          isComplete: o,
+          withoutBounce: l && 0 === e,
+          baseStyles: c ? m : p,
+        }),
+        n >= 0 &&
+          (0, import_jsx_runtime.jsx)(ProgressBarDeltaGrow, {
+            transitionDuration: i.delta.duration,
+            transitionDelay: i.delta.delay,
+            onChangeAnimationState: f,
+            freezed: i.freezed,
+            onEndAnimation: s,
+            from: n,
+            size: t,
+            to: e,
+            className: i.delta.className,
+          }),
+      ],
+    });
+  },
+  ProgressBarGrowLine = (0, import_react.memo)(ProgressBarGrowLineComponent),
+  base$5 = "Progressbardeltasimple_4b8901e3",
+  delta = "Progressbardeltasimple_delta_9a540ec7",
+  ProgressBarDeltaSimple_module_default = { base: base$5, delta: delta },
+  ProgressBarDeltaSimpleComponent = ({
+    transitionDuration: e,
+    transitionDelay: t,
+    freezed: n,
+    from: r,
+    size: a,
+    to: o,
+    onEndAnimation: i,
+    onChangeAnimationState: s,
+  }) => {
+    const u = o < r,
+      [l, c] = (0, import_react.useState)(SimpleAnimationState.Idle),
+      d = l === SimpleAnimationState.In,
+      f = l === SimpleAnimationState.End,
+      p = l === SimpleAnimationState.Idle,
+      m = (0, import_react.useCallback)(
+        (e) => {
+          (c(e), s && s(e));
+        },
+        [s],
+      );
+    ((0, import_react.useEffect)(() => {
+      if (p && !n)
+        return createTimeoutInEffect(() => {
+          m(SimpleAnimationState.In);
+        }, t);
+    }, [m, n, p, t]),
+      (0, import_react.useEffect)(() => {
+        if (d)
+          return createTimeoutInEffect(() => {
+            (i && i(), m(SimpleAnimationState.End));
+          }, e + t);
+      }, [m, d, i, t, e]));
+    const _ = (0, import_react.useMemo)(
+        () => ({
+          width: "100%",
+          transitionDuration: `${e}ms`,
+          transitionDelay: `${t}ms`,
+          [u ? "left" : "right"]: "0",
+        }),
+        [u, t, e],
+      ),
+      h = (0, import_react.useMemo)(
+        () => ({
+          width: "0%",
+          transitionDuration: `${e}ms`,
+          transitionDelay: `${t}ms`,
+          [u ? "left" : "right"]: "0",
+        }),
+        [u, t, e],
+      ),
+      g = (0, import_react.useMemo)(
+        () => ({ width: `${Math.abs(r - o)}%`, left: `${u ? o : r}%` }),
+        [r, u, o],
+      );
+    return f
+      ? null
+      : (0, import_jsx_runtime.jsx)("div", {
+          className: ProgressBarDeltaSimple_module_default.base,
+          style: g,
+          children: (0, import_jsx_runtime.jsx)("div", {
+            style: p ? _ : h,
+            className: ProgressBarDeltaSimple_module_default.delta,
+            children: (0, import_jsx_runtime.jsx)(ProgressBarBlink, { size: a }),
+          }),
+        });
+  },
+  ProgressBarDeltaSimple = (0, import_react.memo)(ProgressBarDeltaSimpleComponent),
+  ProgressBarSimpleLineComponent = ({
+    to: e,
+    size: t,
+    from: n,
+    lineRef: r,
+    disabled: a,
+    isComplete: o,
+    animationSettings: i,
+    onChangeAnimationState: s,
+    onEndAnimation: u,
+  }) =>
+    (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+      children: [
+        (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
+          size: t,
+          lineRef: r,
+          disabled: a,
+          isComplete: o,
+          baseStyles: (0, import_react.useMemo)(
+            () => ({
+              width: `${e}%`,
+              transitionDuration: `${i.line.duration}ms`,
+              transitionDelay: `${i.line.delay}ms`,
+            }),
+            [i.line.delay, i.line.duration, e],
+          ),
+        }),
+        n >= 0 &&
+          (0, import_jsx_runtime.jsx)(ProgressBarDeltaSimple, {
+            transitionDuration: i.delta.duration,
+            transitionDelay: i.delta.delay,
+            freezed: i.freezed,
+            from: n,
+            size: t,
+            to: e,
+            onChangeAnimationState: s,
+            onEndAnimation: u,
+          }),
+      ],
+    }),
+  ProgressBarSimpleLine = (0, import_react.memo)(ProgressBarSimpleLineComponent),
+  WithAnimationLineComponent = ({ onComplete: e, onEndAnimation: t, ...n }) => {
+    const [r, a] = (0, import_react.useState)(!1),
+      o = (0, import_react.useCallback)(() => {
+        const o = 100 === n.to;
+        (o !== r && a(o), o && e && e(), t && t());
+      }, [r, e, t, n.to]);
+    switch (n.animationSettings.type) {
+      case AnimationType.Simple:
+        return (0, import_jsx_runtime.jsx)(ProgressBarSimpleLine, {
+          ...n,
+          onEndAnimation: o,
+          isComplete: r,
+        });
+      case AnimationType.Growing:
+        return (0, import_jsx_runtime.jsx)(ProgressBarGrowLine, {
+          ...n,
+          onEndAnimation: o,
+          isComplete: r,
+        });
+      default:
+        return null;
+    }
+  },
+  WithAnimationLine = (0, import_react.memo)(WithAnimationLineComponent),
+  WithStackAnimationLineComponent = ({ onEndAnimation: e, ...t }) => {
+    const n = (0, import_react.useRef)({}),
+      r = (0, import_react.useCallback)(() => {
+        ((n.current.from = void 0), e && e());
+      }, [e]),
+      a = "number" == typeof n.current.from ? n.current.from : t.from;
+    return (
+      (n.current.from = a),
+      (0, import_react.createElement)(WithAnimationLine, {
+        ...t,
+        onEndAnimation: r,
+        key: `${a}-${t.to}-${t?.additionalKey}`,
+        from: a,
+      })
+    );
+  },
+  WithStackAnimationLine = (0, import_react.memo)(WithStackAnimationLineComponent),
+  WithoutAnimationLine = ({ size: e, value: t, lineRef: n, disabled: r, onComplete: a }) => {
+    const o = (0, import_react.useMemo)(
+        () => ({ width: `${t}%`, transitionProperty: "none" }),
+        [t],
+      ),
+      i = 100 === t;
+    return (
+      (0, import_react.useEffect)(() => {
+        i && a && a();
+      }, [i, a]),
+      (0, import_jsx_runtime.jsx)(ProgressLineImpose, {
+        size: e,
+        disabled: r,
+        baseStyles: o,
+        isComplete: i,
+        lineRef: n,
+      })
+    );
+  },
+  ProgressBarLineComponent = ({
+    size: e,
+    value: t,
+    lineRef: n,
+    disabled: r,
+    deltaFrom: a,
+    additionalKey: o,
+    animationSettings: i,
+    onEndAnimation: s,
+    onChangeAnimationState: u,
+    onComplete: l,
+  }) => {
+    if (a === t)
+      return (0, import_jsx_runtime.jsx)(
+        WithoutAnimationLine,
+        { size: e, value: t, lineRef: n, disabled: r, onComplete: l },
+        `${a}-${t}-${o}`,
+      );
+    const c = {
+      from: a,
+      to: t,
+      size: e,
+      additionalKey: o,
+      lineRef: n,
+      disabled: r,
+      animationSettings: i,
+      onComplete: l,
+      onEndAnimation: s,
+      onChangeAnimationState: u,
+    };
+    return i.withStack
+      ? (0, import_jsx_runtime.jsx)(WithStackAnimationLine, { ...c })
+      : (0, import_jsx_runtime.jsx)(WithAnimationLine, { ...c }, `${a}-${t}-${o}`);
+  },
+  ProgressBarLine = (0, import_react.memo)(ProgressBarLineComponent),
+  createSkin = (e) => ({
+    "--progress-base": `url(${e.bgImageBase})`,
+    "--progress-bg-height": e.bg?.height ?? "12rem",
+    "--progress-bg-height-small": e.bg?.heightSmall ?? "2rem",
+    "--progress-line-base": e.line.bgColorBase,
+    "--progress-line-disabled": e.line.bgColorDisabled,
+    "--progress-line-finished": e.line.bgColorFinished,
+    "--progress-line-filter": e.line.filter ?? "none",
+    "--progress-pattern-base": `url(${e.pattern.bgImageBase})`,
+    "--progress-pattern-disabled": `url(${e.pattern.bgImageDisabled})`,
+    "--progress-pattern-finished": `url(${e.pattern.bgImageFinished})`,
+    "--progress-pattern-size": e.pattern.size ?? "3rem 10rem",
+    "--progress-pattern-border-size": e.pattern.borderSize ?? "1rem",
+    "--progress-pattern-gradient":
+      e.pattern.gradient ?? "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75))",
+    "--progress-pattern-gradient-finished":
+      e.pattern.gradientFinished ??
+      "linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5))",
+    "--progress-pattern-gradient-mixBlendMode": e.pattern.mixBlendMode ?? "overlay",
+    "--progress-glow": `url('${e.glow}')`,
+    "--progress-glow-width": e.glowSettings?.width ?? "60rem",
+    "--progress-glow-height": e.glowSettings?.height ?? "100rem",
+    "--progress-glow-small-width": e.glowSettings?.smallWidth ?? "44rem",
+    "--progress-glow-small-height": e.glowSettings?.smallHeight ?? "43rem",
+    "--progress-glow-mixBlendMode": e.glowSettings?.mixBlendMode ?? "lighten",
+    "--progress-glow-small": `url('${e.glowSmall}')`,
+    "--progress-delta-color": e.delta.color,
+    "--progress-delta-shadow": e.delta.shadow,
+  }),
+  Orange = {
+    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_grey",
+    line: { bgColorBase: "#f50", bgColorDisabled: "transparent", bgColorFinished: "#59a011" },
+    pattern: {
+      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.pattern_orange",
+      bgImageDisabled: "R.images.gui.maps.icons.components.progress_bar.pattern_disabled",
+      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.pattern_green",
+    },
+    glow: "R.images.gui.maps.icons.components.progress_bar.glow",
+    glowSmall: "R.images.gui.maps.icons.components.progress_bar.glow_small",
+    delta: {
+      color: "#ffc",
+      shadow:
+        "0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066",
+    },
+  },
+  BlueNoise = {
+    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_bg_base",
+    bg: { height: "22rem", heightSmall: "4rem" },
+    glowSettings: {
+      width: "34rem",
+      height: "54rem",
+      mixBlendMode: "normal",
+      smallWidth: "34rem",
+      smallHeight: "36rem",
+    },
+    line: {
+      bgColorBase: "rgba(191, 232, 255, 0.6)",
+      bgColorDisabled: "transparent",
+      bgColorFinished: "rgba(191, 232, 255, 0.6)",
+      filter:
+        "drop-shadow(0 0 4px rgba(255, 255, 255, 0.08)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.16)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.24))",
+    },
+    pattern: {
+      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
+      bgImageDisabled:
+        "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_disabled",
+      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base",
+      size: "4rem 22rem",
+      borderSize: "0",
+      gradient: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
+      gradientFinished: "url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)",
+      mixBlendMode: "normal",
+    },
+    glow: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow",
+    glowSmall: "R.images.gui.maps.icons.components.progress_bar.blue_noise_glow_small",
+    delta: {
+      color: "#fff",
+      shadow:
+        " 0 0 4px 1px rgba(120, 180, 255, 0.4), 0 0 9px 1px rgba(100, 160, 255, 0.4), 0 0 12px 2px rgba(80, 140, 255, 0.4), 0 0 12px 4px rgba(60, 120, 255, 0.4)",
+    },
+  },
+  GreenNoise = {
+    ...BlueNoise,
+    bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_bg_base",
+    line: { ...BlueNoise.line, bgColorBase: "#83C6A5", bgColorFinished: "rgba(10, 230, 72, 0.6)" },
+    pattern: {
+      ...BlueNoise.pattern,
+      bgImageBase: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
+      bgImageDisabled:
+        "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_disabled",
+      bgImageFinished: "R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base",
+    },
+  },
+  clamp = (e, t, n) => (n < e ? e : n > t ? t : n),
+  prepareDeltaFrom = (e, t, n) => ("number" == typeof n ? (clamp(0, t, n) / t) * 100 : e);
+function useCalculatePercents(e, t, n) {
+  return (0, import_react.useMemo)(() => {
+    const r = (clamp(0, t, e) / t) * 100;
+    return { value: r, deltaFrom: prepareDeltaFrom(r, t, n) };
+  }, [n, t, e]);
+}
+var defaultTheme = Orange,
+  defaultAnimationSettings = {
+    freezed: !1,
+    withStack: !1,
+    type: AnimationType.Growing,
+    delta: { duration: 500, delay: 0 },
+    line: { duration: 500, delay: 0 },
+  },
+  ProgressBarComponent = ({
+    maxValue: e = 100,
+    theme: t = defaultTheme,
+    size: n = Size.Default,
+    animationSettings: r = defaultAnimationSettings,
+    disabled: a = !1,
+    withoutBackground: o = !1,
+    value: i,
+    deltaFrom: s,
+    additionalKey: u,
+    lineRef: l,
+    onChangeAnimationState: c,
+    onEndAnimation: d,
+    onComplete: f,
+    className: p,
+  }) => {
+    const m = useCalculatePercents(i, e, s);
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        ProgressBar_module_default.base,
+        p,
+        ProgressBar_module_default[`base__${n}`],
+      ),
+      style: createSkin(t),
+      children: [
+        !o && (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: n }),
+        (0, import_jsx_runtime.jsx)(ProgressBarLine, {
+          size: n,
+          lineRef: l,
+          disabled: a,
+          value: m.value,
+          deltaFrom: m.deltaFrom,
+          additionalKey: u,
+          animationSettings: r,
+          onEndAnimation: d,
+          onChangeAnimationState: c,
+          onComplete: f,
+        }),
+      ],
+    });
+  },
+  ProgressBar = (0, import_react.memo)(ProgressBarComponent),
+  types = {
+    tankXP: "tankXP",
+    freeXP: "freeXP",
+    credits: "credits",
+    gold: "gold",
+    crystal: "crystal",
+    equipCoin: "equipCoin",
+    stpCoin: "stpcoin",
+    brCoin: "brcoin",
+    eliteXp: "eliteXp",
+    depot: "depot",
+    vehicle: "vehicle",
+    crew: "crew",
+    custom: "custom",
+    xp: "xp",
+    brProgressionToken: "brProgressionToken",
+    battlePassPoints: "battlePassPoints",
+  },
+  currencyTypes = Object.values(types),
+  sizes = {
+    extraSmall: "extraSmall",
+    small: "small",
+    medium: "medium",
+    large: "large",
+    extraLarge: "extraLarge",
+    xxl: "xxl",
+  },
+  imageSizes = {
+    [sizes.extraSmall]: 16,
+    [sizes.small]: 24,
+    [sizes.medium]: 32,
+    [sizes.large]: 48,
+    [sizes.extraLarge]: 80,
+    [sizes.xxl]: 96,
+  },
+  upscaledImageSizes = {
+    [sizes.extraSmall]: 32,
+    [sizes.small]: 48,
+    [sizes.medium]: 32,
+    [sizes.large]: 96,
+    [sizes.extraLarge]: 80,
+    [sizes.xxl]: 96,
+  },
+  discountSizesConfig = {
+    [sizes.extraSmall]: { width: "60rem", height: "36rem" },
+    [sizes.small]: { width: "80rem", height: "48rem" },
+    [sizes.medium]: { width: "80rem", height: "48rem" },
+    [sizes.large]: { width: "106rem", height: "64rem" },
+    [sizes.extraLarge]: { width: "140rem", height: "84rem" },
+    [sizes.xxl]: { width: "140rem", height: "84rem" },
+  },
+  base$4 = "Currency_72d4be39",
+  base__reverse = "Currency_base__reverse_f12e61b0",
+  base__notEnough = "Currency_base__notEnough_9a7842f",
+  base__credits = "Currency_base__credits_7b9ae721",
+  base__gold = "Currency_base__gold_d6e3cbc",
+  base__freeXP = "Currency_base__freeXP_d29d5a57",
+  base__crystal = "Currency_base__crystal_f830cb47",
+  base__tankXP = "Currency_base__tankXP_1707c68b",
+  currency_module_default = {
+    base: base$4,
+    base__reverse: base__reverse,
+    base__notEnough: base__notEnough,
+    base__credits: base__credits,
+    base__gold: base__gold,
+    base__freeXP: base__freeXP,
+    base__crystal: base__crystal,
+    base__tankXP: base__tankXP,
+  },
+  intl = resources.resolve("intl"),
+  Base$1 = defineStyledComponent("Currency", currency_module_default.base, {
+    variants: { reverse: { true: currency_module_default.base__reverse } },
+  });
+function formatCurrencyValue(e, t) {
+  const n = t === types.gold ? "gold" : "integral";
+  return Array.isArray(e)
+    ? e.map((e) => ("number" == typeof e ? intl.formatNumber(n, e) : e))
+    : "number" == typeof e
+      ? intl.formatNumber(n, e)
+      : e;
+}
+function Currency({
+  children: e,
+  type: t,
+  className: n,
+  classNames: r,
+  imagePath: a,
+  size: o = sizes.small,
+  enough: i = !0,
+  ...s
+}) {
+  const u = imageSizes[o],
+    l = `${t}_${u}x${u}`,
+    c = upscaledImageSizes[o],
+    d = `${t}_${c}x${c}`,
+    f = a || currencyTypes.includes(t),
+    p = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
+  return (0, import_jsx_runtime.jsxs)(Base$1, {
+    ...s,
+    className: clsx(
+      r?.base,
+      i ? currency_module_default[`base__${t}`] : currency_module_default.base__notEnough,
+      n,
+    ),
+    children: [
+      f &&
+        (0, import_jsx_runtime.jsx)(Image$1, {
+          width: u,
+          height: u,
+          path: a ?? p,
+          className: r?.icon,
+        }),
+      formatCurrencyValue(e, t),
+    ],
+  });
+}
+((Currency.sizes = sizes), (Currency.types = types));
+var RewardComponent = ({ reward: e, size: t }) => {
+    const n = e.RewardWrapper || null;
+    return n
+      ? (0, import_jsx_runtime.jsx)(n, {
+          ...e.rewardWrapperProps,
+          children: (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e }),
+        })
+      : (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e });
+  },
+  base$3 = "Rewards_36f5662a",
+  base__vertical = "Rewards_base__vertical_32f04b98",
+  reward = "Rewards_reward_9abc0f4a",
+  reward__vertical = "Rewards_reward__vertical_dd4a02c5",
+  Rewards_module_default = {
+    base: base$3,
+    base__vertical: base__vertical,
+    reward: reward,
+    reward__vertical: reward__vertical,
+  },
+  Rewards = ({
+    data: e,
+    size: t = ImageSize$1.Big,
+    isVertical: n = !1,
+    count: r,
+    classMix: a,
+    rewardItemClassMix: o,
+    boxRewardTooltip: i,
+    boxRewardValue: s,
+    boxRewardClassName: u,
+    boxRewardClassNames: l,
+  }) => {
+    const c = r && r < e.length,
+      d = (0, import_classnames.default)(
+        Rewards_module_default.reward,
+        n && Rewards_module_default.reward__vertical,
+        o,
+      ),
+      f = c ? r : e.length;
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        Rewards_module_default.base,
+        n && Rewards_module_default.base__vertical,
+        a,
+      ),
+      children: [
+        e
+          .slice(0, f)
+          .map((e, n) =>
+            (0, import_jsx_runtime.jsx)(
+              "div",
+              {
+                className: d,
+                children: (0, import_jsx_runtime.jsx)(RewardComponent, { reward: e, size: t }),
+              },
+              n,
+            ),
+          ),
+        c &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: d,
+            children: (0, import_jsx_runtime.jsx)(Reward$1, {
+              name: "more",
+              image: `R.images.gui.maps.icons.quests.bonuses.${t}.default`,
+              size: t,
+              value:
+                s ||
+                formatPrintf$1(R.strings.tooltips.quests.awards.additional.bottom(), {
+                  count: e.length - (r || 0),
+                }),
+              tooltipArgs: i,
+              className: u,
+              classNames: l,
+            }),
+          }),
+      ],
+    });
+  },
+  Alignment = (function (e) {
+    return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
+  })({}),
+  THAI_LANGUAGE_CODE = "th",
+  SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"],
+  IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(
+    R.strings.settings.LANGUAGE_CODE().toLowerCase(),
+  ),
+  DAYS_IN_WEEK = 7,
+  HOURS_IN_DAY = 24,
+  MS_IN_SECOND = 1e3,
+  ONE_MINUTE = 60,
+  ONE_HOUR = 3600,
+  ONE_DAY = 24 * ONE_HOUR,
+  ONE_WEEK = 7 * ONE_DAY,
+  NOW_IN_SECONDS = Date.now() / 1e3,
+  getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
+  getFormattedDateTime = RegionalDateTime.getFormattedDateTime;
+function getTimeUnits(e = 0) {
+  let t = e;
+  const n = Math.trunc(t / ONE_DAY);
+  t -= n * ONE_DAY;
+  const r = Math.trunc(t / ONE_HOUR);
+  t -= r * ONE_HOUR;
+  const a = Math.trunc(t / 60);
+  return ((t -= 60 * a), { days: n, hours: r, minutes: a, seconds: t });
+}
+var getRoundedTimeUnitDescription = (e, t = !0) =>
+    e.days > 7 && t
+      ? format(R.strings.common.duration.days(), { days: e.days })
+      : e.days >= 1
+        ? 0 === e.hours
+          ? format(R.strings.common.duration.days(), { days: e.days })
+          : `${format(R.strings.common.duration.days(), { days: e.days })} ${format(R.strings.common.duration.hours(), { hours: e.hours })}`
+        : e.hours >= 1
+          ? 0 === e.minutes
+            ? format(R.strings.common.duration.hours(), { hours: e.hours })
+            : `${format(R.strings.common.duration.hours(), { hours: e.hours })} ${format(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
+          : format(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }),
+  defaultOnFinish = () => {},
+  useCountdown$1 = (e = 0, t, n = 0, r = defaultOnFinish) => {
+    const [a, o] = (0, import_react.useState)(e);
+    return (
+      (0, import_react.useEffect)(() => {
+        if (e > 0) {
+          o(e);
+          const a = Date.now(),
+            i = setInterval(
+              () => {
+                const t = e - Math.floor((Date.now() - a) / MS_IN_SECOND);
+                null !== n && t <= n ? (o(n), r && r(), clearInterval(i)) : o(t);
+              },
+              (t || (e > 120 ? 60 : 1)) * MS_IN_SECOND,
+            );
+          return () => {
+            clearInterval(i);
+          };
+        }
+      }, [e, t, n, r]),
+      a
+    );
+  },
+  tracker$1 = DataTracker.instance,
+  tracker = DataTracker.instance,
+  useCountdown = useCountdown$1,
+  useScaleState = () => {
+    const [e, t] = (0, import_react.useState)(env.view.getScale());
+    return (
+      (0, import_react.useEffect)(() => {
+        const e = () => {
+          t(env.view.getScale());
+        };
+        return (
+          window.addEventListener("resize", e),
+          () => {
+            window.removeEventListener("resize", e);
+          }
+        );
+      }, []),
+      e
+    );
+  },
+  CountdownIcon = (function (e) {
+    return (
+      (e.Timer = "timer"),
+      (e.Countdown = "countdown"),
+      (e.Cooldown = "cooldown"),
+      (e.None = "none"),
+      e
+    );
+  })({}),
+  CountdownStyle = (function (e) {
+    return (
+      (e.Description = "description"),
+      (e.Short = "short"),
+      (e.Long = "long"),
+      (e.Extended = "extended"),
+      e
+    );
+  })({}),
+  base$2 = "Countdown_99fa8328",
+  icon = "Countdown_icon_b50ebafb",
+  description = "Countdown_description_91ad95d2",
+  Countdown_module_default = { base: base$2, icon: icon, description: description },
+  formatUnit = (e) => e.toString().padStart(2, "0"),
+  formatTimeUnits = (e, t) => {
+    switch (t) {
+      case CountdownStyle.Description:
+        return getRoundedTimeUnitDescription(e);
+      case CountdownStyle.Short:
+        return `${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Long:
+        return `${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+      case CountdownStyle.Extended:
+        return `${format(R.strings.common.duration.days(), { days: e.days })} | ${formatUnit(e.hours)}:${formatUnit(e.minutes)}:${formatUnit(e.seconds)}`;
+    }
+  },
+  IMAGES = R.images.gui.maps.icons.components.countdown,
+  getIcon = (e, t) => {
+    const n = 2 === t ? IMAGES.big : IMAGES;
+    switch (e) {
+      case CountdownIcon.Timer:
+        return n.clock();
+      case CountdownIcon.Countdown:
+        return n.hourglass();
+      case CountdownIcon.Cooldown:
+        return n.lock();
+    }
+  },
+  Countdown = ({
+    duration: e,
+    icon: t = CountdownIcon.Timer,
+    style: n = CountdownStyle.Description,
+    onTimeReached: r,
+    refreshRate: a,
+    className: o = "",
+    classNames: i = {},
+  }) => {
+    const s = useCountdown(e, a ?? (n !== CountdownStyle.Description ? 1 : void 0)),
+      u = useScaleState();
+    r && r[s] && r[s]();
+    const l = formatTimeUnits(getTimeUnits(s), n);
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(Countdown_module_default.base, o),
+      children: [
+        t !== CountdownIcon.None &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: (0, import_classnames.default)(Countdown_module_default.icon, i.icon),
+            style: { backgroundImage: `url('${getIcon(t, u)}')` },
+          }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(Countdown_module_default.description, i.text),
+          children: l,
+        }),
+      ],
+    });
+  },
+  Countdown_default = (0, import_react.memo)(Countdown),
+  base$1 = "Optimizedprogressbar_e894d6c",
+  wrapper = "Optimizedprogressbar_wrapper_70ce38b3",
+  line = "Optimizedprogressbar_line_5190e4c3",
+  backgroundWrapper = "Optimizedprogressbar_backgroundWrapper_405830ed",
+  background = "Optimizedprogressbar_background_74cf6541",
+  OptimizedProgressBar_module_default = {
+    base: base$1,
+    wrapper: wrapper,
+    line: line,
+    backgroundWrapper: backgroundWrapper,
+    background: background,
+  },
+  MAX_WIDTH = 8e3,
+  getInitialApi = () => ({ update: () => {} }),
+  getLeftOffset = (e, t) => ("number" == typeof t ? t : e.offsetLeft),
+  moveLine = ({ horizontalScrollPosition: e, leftOffset: t }, n, { container: r, line: a }) => {
+    const o = clamp(
+      0,
+      Math.max(0, Math.floor(r.offsetWidth * n) - MAX_WIDTH),
+      (e - getLeftOffset(r, t)) | 0,
+    );
+    a.style.transform = `translateX(${o}px)`;
+  },
+  moveBackground = ({ horizontalScrollPosition: e, leftOffset: t }, n, r) => {
+    const a = (e - getLeftOffset(n, t)) | 0,
+      o = clamp(0, n.offsetWidth, a);
+    r.style.transform = `translateX(${o}px)`;
+  },
+  OptimizedProgressBar = ({
+    api: e,
+    value: t,
+    maxValue: n = 100,
+    theme: r = defaultTheme,
+    className: a,
+    ...o
+  }) => {
+    const i = (0, import_react.useRef)(null),
+      s = (0, import_react.useRef)(null),
+      u = (0, import_react.useRef)(null),
+      l = clamp(0, t, n) / n,
+      c = (0, import_react.useCallback)(
+        (e) => {
+          (u.current && i.current && moveBackground(e, i.current, u.current),
+            s.current && i.current && moveLine(e, l, { line: s.current, container: i.current }));
+        },
+        [l],
+      ),
+      d = (0, import_react.useMemo)(() => createSkin(r), [r]);
+    return (
+      (e.current.update = c),
+      (0, import_jsx_runtime.jsx)("div", {
+        className: (0, import_classnames.default)(OptimizedProgressBar_module_default.base, a),
+        ref: i,
+        children: (0, import_jsx_runtime.jsxs)("div", {
+          className: OptimizedProgressBar_module_default.wrapper,
+          children: [
+            (0, import_jsx_runtime.jsx)("div", {
+              className: OptimizedProgressBar_module_default.backgroundWrapper,
+              children: (0, import_jsx_runtime.jsx)("div", {
+                style: d,
+                className: OptimizedProgressBar_module_default.background,
+                ref: u,
+                children: (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: o.size }),
+              }),
+            }),
+            (0, import_jsx_runtime.jsx)(ProgressBar, {
+              ...o,
+              lineRef: s,
+              value: t,
+              theme: r,
+              maxValue: n,
+              withoutBackground: !0,
+            }),
+          ],
+        }),
+      })
+    );
+  },
+  DateTime = ({
+    datetime: e,
+    format: t = DateTimeFormatsEnum.ShortDate,
+    isConvertedToLocal: n = !0,
+  }) =>
+    Object.values(DateTimeFormatsEnum).includes(t)
+      ? getRegionalDateTime(e, t, n)
+      : getFormattedDateTime(e, t, n),
+  DateTime_default = (0, import_react.memo)(DateTime),
   blackReal = "Formattextwithcolortags_blackReal_55a1402e",
   whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
   white = "Formattextwithcolortags_white_e509d98",
@@ -33148,221 +33148,221 @@ var base$1 = "RewardsList_b956755b",
   });
 Tooltip.Decorator = Decorator;
 export {
-  defaultAnimationSettings as $,
+  VehicleImage as $,
   getAdministration$1 as $n,
   ImagesRClassProvider as $r,
   useParamTooltip as $t,
-  nationById as A,
+  array as A,
   useAdaptive as An,
   identity as Ar,
   getRewardTooltipConfig$1 as At,
-  ExtendedText as B,
+  sizes$2 as B,
   delay as Bn,
   getRegionalDateTime$1 as Br,
   runView as Bt,
-  types as C,
+  Reward as C,
   autorun as Cn,
   toArray$1 as Cr,
   addChunkIndexToEndPath as Ct,
-  VehicleInfo as D,
+  getRewardValueType as D,
   makeObservable as Dn,
   promiseWithResolvers as Dr,
   BackportTooltip as Dt,
-  List as E,
+  getRewardTooltipConfig as E,
   getDependencyTree as En,
   keyCodes as Er,
   SimpleTooltip as Et,
-  OptimizedProgressBar as F,
+  string as F,
   breakpointsByType as Fn,
   setContentReady as Fr,
   CloseButton as Ft,
-  render as G,
+  List as G,
   chunks as Gn,
   ONE_DAY$1 as Gr,
   initializeModelWithContext as Gt,
-  FormatText as H,
+  ExtendedText as H,
   assert$1 as Hn,
   format$1 as Hr,
   assignRefs as Ht,
-  getInitialApi as I,
+  ProgressBar$1 as I,
   comparer$1 as In,
   sendEvent$2 as Ir,
   require_classnames as It,
-  Rewards$1 as J,
+  defaultBrackets as J,
   ObservableMap$1 as Jn,
   require_react_dom as Jr,
   useSounds as Jt,
-  parse$1 as K,
+  FormatString as K,
   makeActions as Kn,
   ONE_HOUR$1 as Kr,
   useServerTimePolling as Kt,
-  Countdown_default as L,
+  Video as L,
   MAX_i32 as Ln,
   play$1 as Lr,
   Button as Lt,
-  LazyModel as M,
+  number as M,
   useMedia as Mn,
   clamp$2 as Mr,
   FormatNumber as Mt,
-  useLazyModel as N,
+  object as N,
   require_jsx_runtime as Nn,
   pxToRem$1 as Nr,
   ImageSize$1 as Nt,
-  VehicleImage as O,
+  ImageSize as O,
   observable as On,
   DisposeBuilder as Or,
   Tooltip$1 as Ot,
-  DateTime_default as P,
+  parse as P,
   MediaSize as Pn,
   remToPx$1 as Pr,
   RewardType$1 as Pt,
-  ProgressBar$1 as Q,
+  VehicleInfo as Q,
   extendObservable$1 as Qn,
   DateTimeFormatsEnum as Qr,
   useBackdropTooltip as Qt,
-  CountdownIcon as R,
+  Timer as R,
   calcPercent as Rn,
   graphicsQuality$1 as Rr,
   defineStyledComponent as Rt,
-  sizes as S,
+  Rewards$1 as S,
   Reaction as Sn,
   some as Sr,
   CanvasSequence as St,
-  SceneWrapper as T,
+  getRewardImage as T,
   configure as Tn,
   unwrapItem as Tr,
   Reward$1 as Tt,
-  defaultBrackets as U,
+  isEmptyObject as U,
   createTimeoutInEffect$1 as Un,
   normalizeResource as Ur,
   computeds as Ut,
-  FormatString as V,
+  types$1 as V,
   mapRange as Vn,
   capitalize as Vr,
   JSXBuilder as Vt,
-  defaultFormatters as W,
+  SceneWrapper as W,
   createLayoutReadyInEffect$1 as Wn,
   MS_IN_SECOND$1 as Wr,
   computedFn as Wt,
-  types$2 as X,
+  render as X,
   autorun$1 as Xn,
   SoundsRClassProvider as Xr,
   createSoundPlay as Xt,
-  Currency as Y,
+  defaultFormatters as Y,
   action$1 as Yn,
   require_react as Yr,
   useSoundsOptional as Yt,
-  Image$1 as Z,
+  parse$1 as Z,
   computed$1 as Zn,
   intl$2 as Zr,
   createTargetOverrides as Zt,
-  string as _,
+  Size as _,
   useMount as _n,
   forEach as _r,
   Alignment$1 as _t,
-  Reward as a,
+  getInitialApi as a,
   useSkipFrame as an,
   isObservableArray$1 as ar,
-  Base$4 as at,
-  Timer as b,
+  Base$7 as at,
+  Tabs as b,
   useEvent as bn,
   mapFilter as br,
   formatString as bt,
-  getRewardTooltipConfig as c,
+  CountdownStyle as c,
   useSpring as cn,
   keys$1 as cr,
-  useHorizontalDrag as ct,
-  createParser as d,
+  useScrollByDragElements as ct,
+  Currency as d,
   useTransition$1 as dn,
   observe$1 as dr,
-  Area$1 as dt,
+  useScrollBounding as dt,
   logBySeverity as ei,
   useSimpleTooltip as en,
   getGlobalState$1 as er,
-  GreenNoise as et,
-  array as f,
+  isTypeValidValue as et,
+  types as f,
   useLoop as fn,
   onBecomeUnobserved$1 as fr,
-  Bar$1 as ft,
-  parse as g,
+  useHorizontalScroll as ft,
+  AnimationType as g,
   useIsFirstRender as gn,
   filterMap as gr,
   FormatText$1 as gt,
-  object as h,
+  GreenNoise as h,
   useHandleKeydown as hn,
   transaction$1 as hr,
-  Tabs as ht,
-  Rewards as i,
+  useLazyModel as ht,
+  OptimizedProgressBar as i,
   useTimeout as in,
   isComputingDerivation$1 as ir,
-  BackportContextMenu as it,
-  ErrorHandler as j,
+  DefaultScroll as it,
+  enum_ as j,
   useUpscale as jn,
   noop$3 as jr,
   getRewardValueType$1 as jt,
-  isTypeValidValue as k,
+  createParser as k,
   runInAction as kn,
   constFalse as kr,
   getRewardImage$1 as kt,
-  getRewardValueType as l,
+  Alignment as l,
   useSpringValue as ln,
   makeObservable$1 as lr,
-  dragDirections as lt,
-  number as m,
+  Area$1 as lt,
+  defaultAnimationSettings as m,
   useKeydownListener as mn,
   runInAction$1 as mr,
-  useHorizontalScroll as mt,
+  LazyModel as mt,
   FormatTextWithColorTags as n,
   resources as ni,
   useTooltip as nn,
   isComputed$1 as nr,
-  Size as nt,
-  formatPrintf as o,
+  nationById as nt,
+  Countdown_default as o,
   animated as on,
   isObservableMap$1 as or,
-  DefaultScroll as ot,
-  enum_ as p,
+  useHorizontalDrag as ot,
+  ProgressBar as p,
   useCallbackOnEsc as pn,
   reaction$1 as pr,
-  useScrollBounding as pt,
-  Alignment as q,
+  ErrorHandler as pt,
+  FormatText as q,
   $mobx$1 as qn,
   clsx as qr,
   useSpecialContextMenu as qt,
-  Delta as r,
+  DateTime_default as r,
   usePreloadImagesState as rn,
   isComputedProp$1 as rr,
-  TextOverflow as rt,
-  getRewardImage as s,
+  Base$6 as rt,
+  CountdownIcon as s,
   config as sn,
   isObservableObject$1 as sr,
-  Base$5 as st,
+  dragDirections as st,
   Tooltip as t,
   concatWithPath as ti,
   useSpecialTooltip as tn,
   isAction$1 as tr,
-  AnimationType as tt,
-  ImageSize as u,
+  Image$1 as tt,
+  Rewards as u,
   useSprings as un,
   observable$1 as ur,
-  useScrollByDragElements as ut,
-  ProgressBar as v,
+  Bar$1 as ut,
+  TextOverflow as v,
   useUnmount as vn,
   get as vr,
   format as vt,
-  isEmptyObject as w,
+  formatPrintf as w,
   comparer as wn,
   unsafeGet as wr,
   createGridImgSourceGetter as wt,
-  formats as x,
+  Delta as x,
   usePrevious as xn,
   reduce as xr,
   snakeToCamel as xt,
-  Video as y,
+  BackportContextMenu as y,
   useEmitter as yn,
   map as yr,
   formatPrintf$1 as yt,
-  CountdownStyle as z,
+  formats as z,
   arabicToRoman as zn,
   onRescale as zr,
   UIProvider as zt,

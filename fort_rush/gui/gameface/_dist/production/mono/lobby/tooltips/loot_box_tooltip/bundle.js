@@ -1,26 +1,26 @@
 import {
   l as e,
-  dr as a,
+  df as a,
   h as r,
-  dm as s,
-  dn as o,
-  dq as d,
+  db as s,
+  dc as o,
+  de as d,
   ap as t,
-  dH as l,
-  df as n,
-  de as i,
-  dA as c,
-  dy as p,
+  dG as l,
+  dh as i,
+  dg as n,
+  dC as c,
+  dp as p,
   q as _,
   ak as m,
-  dE as x,
+  dD as x,
 } from "../../chunks/lib.js";
-import { h, N as u, j as w, a5 as b } from "../../chunks/vendor.js";
+import { h, N as u, j as b, a5 as w } from "../../chunks/vendor.js";
 import { b as j } from "../../chunks/readResource.js";
 const [f, v] = e()(({ observableModel: e }) => {
     const t = { root: e.object(), rewards: e.array("rewards") },
       l = h(() => t.rewards.get().length),
-      n = h(
+      i = h(
         (e) => {
           const a = r(t.rewards.get(), e);
           if (!a) throw Error(`No reward found with index: ${e}`);
@@ -34,9 +34,9 @@ const [f, v] = e()(({ observableModel: e }) => {
         },
         { equals: a },
       );
-    return { ...t, computes: { length: l, reward: n } };
+    return { ...t, computes: { length: l, reward: i } };
   }, t),
-  N = {
+  g = {
     base: "LootBoxReward_f540ffff",
     item: "LootBoxReward_item_d6bd5e44",
     item__separator: "LootBoxReward_item__separator_c33af3ef",
@@ -46,33 +46,33 @@ const [f, v] = e()(({ observableModel: e }) => {
     percent: "LootBoxReward_percent_7dd115ee",
     separator: "LootBoxReward_separator_6fa555ac",
   },
-  g = u(({ index: e }) => {
+  N = u(({ index: e }) => {
     const { model: a } = v(),
       r = a.computes.length(),
       s = a.computes.reward(e),
       { probability: o, label: d, valueType: t } = s,
       _ = r > 5 ? e > 1 : e > 0,
       m = t === l.CURRENCY;
-    return w.jsxs("div", {
-      className: N.base,
+    return b.jsxs("div", {
+      className: g.base,
       children: [
-        _ && w.jsx("div", { className: N.separator }),
-        w.jsxs("div", {
-          className: b(N.item, _ && N.item__separator),
+        _ && b.jsx("div", { className: g.separator }),
+        b.jsxs("div", {
+          className: w(g.item, _ && g.item__separator),
           children: [
-            w.jsx("div", {
-              className: N.rewardWrapper,
-              children: w.jsx(n, {
+            b.jsx("div", {
+              className: g.rewardWrapper,
+              children: b.jsx(i, {
                 ...s,
-                className: b(N.reward, m && N.reward__withCurrency),
-                size: i.Small,
+                className: w(g.reward, m && g.reward__withCurrency),
+                size: n.Small,
               }),
             }),
-            w.jsx("div", { className: N.label, children: d }),
+            b.jsx("div", { className: g.label, children: d }),
             Boolean(o) &&
-              w.jsx("div", {
-                className: N.percent,
-                children: w.jsx(c, {
+              b.jsx("div", {
+                className: g.percent,
+                children: b.jsx(c, {
                   text: R.strings.fun_random.lootboxTooltip.chance(),
                   binding: { percent: p(R.strings.common.percentValue(), { value: o }) },
                 }),
@@ -83,8 +83,8 @@ const [f, v] = e()(({ observableModel: e }) => {
     });
   }),
   y = "App_4a184ace",
-  A = "App_base__double_e27f4c21",
-  B = "App_header_7b99070f",
+  B = "App_base__double_e27f4c21",
+  A = "App_header_7b99070f",
   L = "App_icon_1f44f417",
   C = "App_title_711c3638",
   k = "App_description_975d9f61",
@@ -95,22 +95,22 @@ const [f, v] = e()(({ observableModel: e }) => {
       o = e.computes.length(),
       d = o > 5,
       t = j(s).progression.bonuses.small;
-    return w.jsxs("div", {
-      className: b(y, d && A),
+    return b.jsxs("div", {
+      className: w(y, d && B),
       children: [
-        w.jsxs("div", {
-          className: B,
+        b.jsxs("div", {
+          className: A,
           children: [
-            w.jsx("div", { className: L, style: { backgroundImage: `url(${t.$dyn(a)})` } }),
-            w.jsx("div", { className: C, children: r }),
-            w.jsx("div", {
+            b.jsx("div", { className: L, style: { backgroundImage: `url(${t.$dyn(a)})` } }),
+            b.jsx("div", { className: C, children: r }),
+            b.jsx("div", {
               className: k,
               children: R.strings.fun_random.lootboxTooltip.description(),
             }),
           ],
         }),
-        w.jsx("div", { className: T, children: o > 0 && _(o, (e) => w.jsx(g, { index: e }, e)) }),
+        b.jsx("div", { className: T, children: o > 0 && _(o, (e) => b.jsx(N, { index: e }, e)) }),
       ],
     });
   });
-m(w.jsx(f, { children: w.jsx(x, { children: w.jsx(I, {}) }) }));
+m(b.jsx(f, { children: b.jsx(x, { children: b.jsx(I, {}) }) }));

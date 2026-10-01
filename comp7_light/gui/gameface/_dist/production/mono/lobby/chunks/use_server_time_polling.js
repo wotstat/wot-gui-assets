@@ -1,4 +1,4 @@
-import { zi as i } from "./lib.js";
+import { Ri as i } from "./lib.js";
 function o(o, t, r) {
   i(
     () => {

@@ -1,22 +1,22 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as a,
-  Hr as s,
+  Aa as s,
   Jn as t,
-  Qn as o,
-  Vn as i,
-  Wr as n,
-  cr as r,
-  di as l,
-  gi as c,
-  hi as d,
-  ja as m,
-  pr as g,
-  qa as _,
+  Ka as o,
+  Qn as i,
+  Ur as n,
+  Vn as r,
+  Vr as l,
+  _i as c,
+  cr as d,
+  hi as m,
+  mi as g,
+  pr as _,
   sr as p,
-  vi as b,
-  ya as y,
-  yo as u,
+  ui as b,
+  va as u,
+  vo as y,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as h } from "../chunks/spring_wrapper.js";
@@ -46,16 +46,16 @@ var I = { y: 0, opacity: 1 },
     title3: { from: { y: -15, opacity: 0 }, to: I, delay: 800, duration: j },
     button: { from: { y: -10, opacity: 0 }, to: I, delay: 1200, duration: j },
   },
-  C = e(u()),
+  C = e(y()),
   B = "InfoImage_dcfad64c",
-  N = c();
+  N = m();
 function A({ image: e, imageBig: a }) {
-  const { breakpoint: s } = d();
+  const { breakpoint: s } = g();
   return (0, N.jsx)("div", {
     className: B,
     style: ((e, a) => {
       let t = e;
-      return (s.weight > b.medium.weight && (t = a), { backgroundImage: `url('${t}')` });
+      return (s.weight > c.medium.weight && (t = a), { backgroundImage: `url('${t}')` });
     })(e, a),
   });
 }
@@ -66,10 +66,10 @@ var v = "InfoBlock_f854eb14",
   z = C.memo(function ({ items: e, canceledAnim: a = !1 }) {
     return (0, N.jsx)("div", {
       className: v,
-      children: y(e, (e, s) =>
+      children: u(e, (e, s) =>
         (0, C.createElement)(
           h,
-          { isCanceled: a, ...k[`block${s + 1}`], onStart: () => _.sound(f), key: `block_${s}` },
+          { isCanceled: a, ...k[`block${s + 1}`], onStart: () => o.sound(f), key: `block_${s}` },
           (0, N.jsxs)("div", {
             className: M,
             children: [
@@ -82,8 +82,8 @@ var v = "InfoBlock_f854eb14",
                   (0, N.jsx)(t, {
                     classMix: E,
                     text: e.text,
-                    alignContent: i.Center,
-                    justifyContent: i.Center,
+                    alignContent: r.Center,
+                    justifyContent: r.Center,
                     binding: e.binding,
                   }),
                 ],
@@ -94,18 +94,18 @@ var v = "InfoBlock_f854eb14",
       ),
     });
   }),
-  [w, L] = g()(
+  [w, L] = _()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs("onClose") }),
   ),
   O = "MetaIntroApp_background_ed2a9e7",
   $ = "MetaIntroApp_f24aa649",
-  S = "MetaIntroApp_container_1d43a669",
-  H = "MetaIntroApp_content_7027a85a",
-  K = "MetaIntroApp_header_b706abdc",
+  K = "MetaIntroApp_container_1d43a669",
+  S = "MetaIntroApp_content_7027a85a",
+  U = "MetaIntroApp_header_b706abdc",
   D = "MetaIntroApp_bottomContainer_341b7343",
-  U = "MetaIntroApp_topContainer_9352c5d0",
-  q = "MetaIntroApp_btn_4fa2f453",
+  H = "MetaIntroApp_topContainer_9352c5d0",
+  V = "MetaIntroApp_btn_4fa2f453",
   J = "MetaIntroApp_closeBtn_f6844130",
   P = [
     {
@@ -129,9 +129,9 @@ var v = "InfoBlock_f854eb14",
   ],
   Q = () => {
     const { controls: e } = L(),
-      [t, i] = (0, C.useState)(!1);
-    (s(e.onClose), n(m.ENTER, e.onClose), n(m.SPACE, e.onClose));
-    const r = l(
+      [t, o] = (0, C.useState)(!1);
+    (l(e.onClose), n(s.ENTER, e.onClose), n(s.SPACE, e.onClose));
+    const r = b(
       { size: a.sizes.extraSmall },
       {
         medium: { size: a.sizes.small },
@@ -141,23 +141,23 @@ var v = "InfoBlock_f854eb14",
     );
     return (0, N.jsxs)("div", {
       className: $,
-      onClick: () => i(!0),
+      onClick: () => o(!0),
       children: [
-        (0, N.jsx)(o, { className: J, onClose: e.onClose }),
+        (0, N.jsx)(i, { className: J, onClose: e.onClose }),
         (0, N.jsx)("div", { className: O }),
         (0, N.jsx)(h, {
-          className: U,
+          className: H,
           isCanceled: t,
           ...k[x.HEADER],
           children: (0, N.jsx)("div", {
-            className: K,
+            className: U,
             children: R.strings.last_stand_lobby.metaIntro.title(),
           }),
         }),
         (0, N.jsx)("div", {
-          className: S,
+          className: K,
           children: (0, N.jsx)("div", {
-            className: H,
+            className: S,
             children: (0, N.jsx)(z, { canceledAnim: t, items: P }),
           }),
         }),
@@ -166,7 +166,7 @@ var v = "InfoBlock_f854eb14",
           className: D,
           ...k[x.BUTTON],
           children: (0, N.jsx)("div", {
-            className: q,
+            className: V,
             children: (0, N.jsx)(a, {
               theme: a.themes.primary,
               size: r.size,
@@ -178,4 +178,4 @@ var v = "InfoBlock_f854eb14",
       ],
     });
   };
-r((0, N.jsx)(p, { children: (0, N.jsx)(w, { children: (0, N.jsx)(Q, {}) }) }));
+d((0, N.jsx)(p, { children: (0, N.jsx)(w, { children: (0, N.jsx)(Q, {}) }) }));

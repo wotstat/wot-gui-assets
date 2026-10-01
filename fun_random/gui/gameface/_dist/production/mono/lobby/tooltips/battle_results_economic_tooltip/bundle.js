@@ -1,29 +1,29 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   Nn as e,
-  _a as a,
-  _r as i,
-  aa as t,
-  fr as d,
-  gr as l,
+  _r as a,
+  fr as i,
+  ga as t,
+  gr as d,
+  ia as l,
   o as r,
-  ya as c,
-  yi as n,
+  va as c,
+  vi as n,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { l as o, u as m } from "../../chunks/vendor.js";
 import { n as _, t as u } from "../../chunks/profit.js";
 var j = 2,
   x = 3,
-  [v, h] = i()(({ observableModel: s, readByPath: e }) => {
-    const i = {
+  [v, h] = a()(({ observableModel: s, readByPath: e }) => {
+    const a = {
         root: s.object(),
         results: [e("earned"), e("expenses"), e("total"), e("additional")],
       },
-      d = l(() => t(i.results, (s, e) => ({ ...s, isTotal: e === j, isAdditional: e === x })), {
-        equals: a,
+      i = d(() => l(a.results, (s, e) => ({ ...s, isTotal: e === j, isAdditional: e === x })), {
+        equals: t,
       });
-    return { ...i, computes: { getResultsList: d } };
+    return { ...a, computes: { getResultsList: i } };
   }, c),
   b = s(o(), 1),
   N = "ListItem_9ed21754",
@@ -107,7 +107,7 @@ var j = 2,
     const { model: s } = h();
     return (0, A.jsx)("div", {
       className: F.base,
-      children: t(
+      children: l(
         s.computes.getResultsList(),
         (s, e) =>
           s.records.length > 0 &&
@@ -121,7 +121,7 @@ var j = 2,
                   (0, A.jsx)("div", { className: F.title, children: s.title }),
                 (0, A.jsx)("div", {
                   className: F.list,
-                  children: t(s.records, (e, a) =>
+                  children: l(s.records, (e, a) =>
                     (0, A.jsx)(
                       T,
                       { ...e, useSecondValues: s.useSecondValues, totalValue: s.isTotal },
@@ -182,4 +182,4 @@ var j = 2,
       ],
     });
   });
-d((0, A.jsx)(v, { children: (0, A.jsx)(r, { children: (0, A.jsx)(D, {}) }) }));
+i((0, A.jsx)(v, { children: (0, A.jsx)(r, { children: (0, A.jsx)(D, {}) }) }));

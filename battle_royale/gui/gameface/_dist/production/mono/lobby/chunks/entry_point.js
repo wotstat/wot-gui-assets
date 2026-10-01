@@ -3,35 +3,35 @@ import {
   $r as t,
   Fn as s,
   Gt as n,
-  H as o,
+  L as o,
   Lr as r,
   Mn as a,
   Nn as i,
-  Xr as c,
-  Yr as l,
-  b as d,
+  R as c,
+  Xr as l,
+  Yr as d,
   ei as u,
   ni as m,
   nn as p,
-  qr as g,
-  ti as f,
-  ur as x,
-  xt as b,
-  y as h,
+  q as g,
+  qr as f,
+  ti as x,
+  ur as b,
+  xt as h,
 } from "./lib.js";
 import { i as y, n as v, t as _ } from "./vendor.js";
-var N = e(l()),
+var N = e(d()),
   w = (function (e) {
     return ((e.Common = "common"), (e.Rare = "rare"), (e.Epic = "epic"), e);
   })({});
-var E = class extends c {
+var E = class extends l {
     root;
     prefix;
     constructor(e, t) {
       (super(), (this.root = e), (this.prefix = t));
     }
     readOr(e, t, s = "silent") {
-      const n = f(this.prefix, e),
+      const n = x(this.prefix, e),
         o = (function (e, t) {
           const s = t.split(".");
           if (window.R && window.R.sounds) {
@@ -148,7 +148,7 @@ var j = m.resolve(I),
     return s(e, t);
   };
 function G(e, t) {
-  const s = B[b(e)],
+  const s = B[h(e)],
     n = s?.COMMON ? L(A.COMMON, s.COMMON) : A.COMMON;
   if (!t) return n;
   const o = s ? L(A[t], s[t]) : A[t],
@@ -211,7 +211,7 @@ var V = (e, t) => {
     const { eventResource: o, defaultResource: r } = n;
     return o || r;
   },
-  H = (e, t) =>
+  z = (e, t) =>
     Object.keys(e).reduce((s, n) => {
       const o = e[n];
       return o
@@ -223,7 +223,7 @@ var V = (e, t) => {
           s)
         : s;
     }, {}),
-  z = {
+  H = {
     images: {
       iconEmpty: "entry_point.lootboxEmpty",
       iconGold: "entry_point.lootboxGold",
@@ -243,7 +243,7 @@ var V = (e, t) => {
   [W, F] = n()(
     ({ observableModel: e }) => {
       const t = e.object().get().eventName,
-        s = { root: e.object(), style: x.box(G(t, T.EntryPoint)), resources: x.box(H(z, t)) },
+        s = { root: e.object(), style: b.box(G(t, T.EntryPoint)), resources: b.box(z(H, t)) },
         n = v(() => {
           const { boxesCount: e } = s.root.get();
           return e ? "boxes" : "empty";
@@ -265,29 +265,29 @@ var V = (e, t) => {
   ee = i(),
   te = y(function ({ hover: e = !1, className: t }) {
     const { model: s } = F(),
-      { images: n, videos: o } = s.resources.get(),
-      r = s.style.get(),
-      a = ((e, t) => {
+      { images: n, videos: r } = s.resources.get(),
+      a = s.style.get(),
+      i = ((e, t) => {
         const s = q(e, t);
         return { src: s, type: s.split(":")[0] };
-      })(n.shine, o.glow);
+      })(n.shine, r.glow);
     return (0, ee.jsx)("div", {
-      className: g(Z, e && J, t),
+      className: f(Z, e && J, t),
       style: {
-        "--opacity-initial": r.shine.opacity.initial,
-        "--opacity-hover": r.shine.opacity.hover,
+        "--opacity-initial": a.shine.opacity.initial,
+        "--opacity-hover": a.shine.opacity.hover,
       },
       children:
-        a.type === X
-          ? (0, ee.jsx)(h, { loop: !0, autoplay: !0, className: K, src: a.src })
-          : (0, ee.jsx)("div", { className: Q, style: { backgroundImage: `url(${a.src})` } }),
+        i.type === X
+          ? (0, ee.jsx)(o, { loop: !0, autoplay: !0, className: K, src: i.src })
+          : (0, ee.jsx)("div", { className: Q, style: { backgroundImage: `url(${i.src})` } }),
     });
   }),
   se = "Icon_4b931f4c";
 function ne({ image: e, brightness: t, disabled: s, className: n, ...o }) {
   return (0, ee.jsx)("div", {
     ...o,
-    className: g(se, n),
+    className: f(se, n),
     style: {
       backgroundImage: `url(${e})`,
       filter: s ? "brightness(.8) saturate(.5)" : `brightness(${t})`,
@@ -297,8 +297,8 @@ function ne({ image: e, brightness: t, disabled: s, className: n, ...o }) {
 var oe = "Counter_e7ec423c";
 function re({ count: e, text: t, maxText: s, className: n }) {
   return (0, ee.jsx)("div", {
-    className: g(oe, n),
-    children: e < 1e3 ? (0, ee.jsx)(o, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
+    className: f(oe, n),
+    children: e < 1e3 ? (0, ee.jsx)(g, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
   });
 }
 var ae = {
@@ -314,26 +314,26 @@ var ae = {
       { breakpoint: n } = a(),
       { texts: o } = t.resources.get(),
       { boxesCount: r, eventExpireTime: i } = t.root.get(),
-      c = t.computes.getState(),
-      l = n.weight > s.small.weight ? d.size.x32x32 : d.size.x24x24,
+      l = t.computes.getState(),
+      d = n.weight > s.small.weight ? c.size.x32x32 : c.size.x24x24,
       u = 259200 >= i,
-      m = u || c === Y.Empty;
+      m = u || l === Y.Empty;
     return (0, ee.jsxs)("div", {
-      className: g(ae.base, e),
+      className: f(ae.base, e),
       children: [
         m &&
           (0, ee.jsx)("div", {
-            className: g(ae.additional, c !== Y.Boxes && ae.additional__center),
+            className: f(ae.additional, l !== Y.Boxes && ae.additional__center),
             children: u
-              ? (0, ee.jsx)(d, {
+              ? (0, ee.jsx)(c, {
                   className: ae.timer,
                   classNames: { label: ae.timerLabel },
                   start: i,
-                  size: l,
+                  size: d,
                 })
               : (0, ee.jsx)("div", { className: ae.text, children: o.boxes }),
           }),
-        c === Y.Boxes &&
+        l === Y.Boxes &&
           (0, ee.jsx)(re, {
             className: ae.counter,
             maxText: o.maxBoxesCount,
@@ -362,12 +362,12 @@ var fe = y(function () {
     { model: i, controls: c } = F(),
     { isEnabled: l } = i.root.get(),
     d = i.computes.getState(),
-    { images: u, videos: f, sounds: x } = i.resources.get(),
+    { images: u, videos: g, sounds: x } = i.resources.get(),
     b = i.style.get(),
     h = o ? 1 + b.icon[`${d}IconBrightness`] : 1,
     y = d === Y.Empty ? u.iconEmpty : u.iconGold;
   return (0, ee.jsx)("div", {
-    className: g(ce, !l && de),
+    className: f(ce, !l && de),
     children: (0, ee.jsx)("div", {
       className: le,
       ...n,

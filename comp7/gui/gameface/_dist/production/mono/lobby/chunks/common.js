@@ -1,4 +1,4 @@
-import { Da as e, Ur as i, Wr as t, Xr as s, ro as r, si as n, xa as o } from "./lib.js";
+import { Ea as e, Ur as i, Wr as t, Xr as s, ba as r, no as n, si as o } from "./lib.js";
 var u = {
   overview: "overview",
   teamsStatistics: "teamScore",
@@ -80,7 +80,7 @@ var f = {
     bonus: f.bonusAdvertising,
     quests: f.questsAdvertising,
   },
-  A = i(t(n(Object.values(g).map((e) => s(e))))),
+  A = i(t(o(Object.values(g).map((e) => s(e))))),
   E = [g.credits, g.premium, g.squad, g.bonus, g.quests];
 function I(e, i) {
   return e.includes(i);
@@ -102,7 +102,7 @@ var N = {
       define: ({ supportedAdvertisements: e, usedAdvertisements: i }) => {
         const t = e.filter((e) => !1 === i.includes(e))[0] ?? e[0];
         return (
-          r(
+          n(
             void 0 !== t,
             "advertisingState is not recognized. Check please supportedAdvertisements state. It is not possible to have empty supportedAdvertisements array in case if the widget in the premiumAdvertising state",
           ),
@@ -120,7 +120,7 @@ var N = {
   };
 function w(i) {
   return function (t) {
-    return i(o(() => e(t)));
+    return i(r(() => e(t)));
   };
 }
 var B = [g.premium, g.squad, g.credits],
@@ -138,9 +138,9 @@ var h = Object.values(u),
     [u.progression]: "/comp7/postBattleResults/comp7/missionProgress",
     [u.financialReport]: "/comp7/postBattleResults/comp7/financialReport",
   };
-function q(e) {
+function b(e) {
   const i = h.find((i) => V[i] === e);
-  return (r(void 0 !== i, `The post battle screen is not found by path ${e}`), i);
+  return (n(void 0 !== i, `The post battle screen is not found by path ${e}`), i);
 }
 export {
   a as _,
@@ -158,7 +158,7 @@ export {
   f as p,
   P as r,
   V as s,
-  q as t,
+  b as t,
   I as u,
   u as v,
 };

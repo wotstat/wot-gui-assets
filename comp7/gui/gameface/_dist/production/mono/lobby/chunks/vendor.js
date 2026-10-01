@@ -1,14 +1,14 @@
 import { r as e, t } from "./rolldown-runtime.js";
-import { Ca as n, Cs as r, Ta as i, wa as o, ws as a, ya as s } from "./lib.js";
-var u = e(a());
+import { Ca as n, Cs as r, Sa as i, Ss as o, va as a, wa as s } from "./lib.js";
+var u = e(r());
 if (!u.useState) throw new Error("mobx-react-lite requires React with Hooks support");
-if (!i) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
-var c = e(r());
+if (!s) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
+var c = e(o());
 function l(e) {
   e();
 }
 function h(e) {
-  return o(e);
+  return n(e);
 }
 var f,
   d,
@@ -88,16 +88,16 @@ var f,
     (null === (t = e.reaction) || void 0 === t || t.dispose(), (e.reaction = null));
   }),
   p = t((e) => {
-    var t = a();
+    var t = r();
     var n =
         "function" == typeof Object.is
           ? Object.is
           : function (e, t) {
               return (e === t && (0 !== e || 1 / e == 1 / t)) || (e != e && t != t);
             },
-      r = t.useState,
-      i = t.useEffect,
-      o = t.useLayoutEffect,
+      i = t.useState,
+      o = t.useEffect,
+      a = t.useLayoutEffect,
       s = t.useDebugValue;
     function u(e) {
       var t = e.getSnapshot;
@@ -118,17 +118,17 @@ var f,
           }
         : function (e, t) {
             var n = t(),
-              a = r({ inst: { value: n, getSnapshot: t } }),
-              c = a[0].inst,
-              l = a[1];
+              r = i({ inst: { value: n, getSnapshot: t } }),
+              c = r[0].inst,
+              l = r[1];
             return (
-              o(
+              a(
                 function () {
                   ((c.value = n), (c.getSnapshot = t), u(c) && l({ inst: c }));
                 },
                 [e, n, t],
               ),
-              i(
+              o(
                 function () {
                   return (
                     u(c) && l({ inst: c }),
@@ -149,7 +149,7 @@ var f,
     t.exports = p();
   })();
 function g(e) {
-  e.reaction = new s("observer".concat(e.name), function () {
+  e.reaction = new a("observer".concat(e.name), function () {
     var t;
     ((e.stateVersion = Symbol()), null === (t = e.onStoreChange) || void 0 === t || t.call(e));
   });
@@ -257,7 +257,7 @@ function x(e, t) {
 var A,
   E = { $$typeof: !0, render: !0, compare: !0, type: !0, displayName: !0 };
 !(function (e) {
-  (e || (e = l), n({ reactionScheduler: e }));
+  (e || (e = l), i({ reactionScheduler: e }));
 })(c.unstable_batchedUpdates);
 A = _.finalizeAllImmediately;
 var j = t((e, t) => {

@@ -15,20 +15,20 @@ import {
   b as m,
   et as h,
   ft as v,
-  i as A,
-  j as E,
-  k as f,
-  mt as x,
-  pt as b,
-  r as I,
+  g as A,
+  h as E,
+  j as f,
+  k as x,
+  mt as b,
+  pt as I,
   st as w,
   ut as g,
   y as N,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { r as L } from "../chunks/vendor.js";
-/* empty css               */ import { n as S, r as j, t as C } from "../chunks/footer.js";
-import { t as p } from "../chunks/enums.js";
+/* empty css               */ import { t as S } from "../chunks/enums.js";
+import { n as j, r as C, t as p } from "../chunks/footer.js";
 var T = e(v(), 1),
   D = (function (e) {
     return (
@@ -44,11 +44,11 @@ var T = e(v(), 1),
   [V, y] = r()(
     ({ observableModel: e }) => {
       const s = { root: e.object(), rewards: e.arrayClone("rewards") },
-        t = E.model(() => {
+        t = f.model(() => {
           const e = s.root.get().eventMode;
-          return e === p.TWO_PARALLEL_PRODUCTS
+          return e === S.TWO_PARALLEL_PRODUCTS
             ? _(s.rewards.get(), ({ rewardId: e }) => e === s.root.get().currentRewardId)
-            : e === p.SEQUENTIAL_PRODUCT || e === p.ONE_SERIAL_PRODUCT
+            : e === S.SEQUENTIAL_PRODUCT || e === S.ONE_SERIAL_PRODUCT
               ? _(s.rewards.get(), ({ state: e }) => e === D.ACTIVE)
               : void 0;
         });
@@ -76,7 +76,7 @@ var T = e(v(), 1),
       h =
         !o(m, (e) => e.state === D.SOLD_OUT) &&
         o(m, (e) => [D.ALREADY_IN_GARAGE, D.ALREADY_RECEIVED, D.SOLD_OUT].includes(e.state));
-    return n === p.TWO_PARALLEL_PRODUCTS && r !== j.Forbidden && h
+    return n === S.TWO_PARALLEL_PRODUCTS && r !== C.Forbidden && h
       ? (0, k.jsx)(c, {
           className: O,
           onClick: s.showHangar,
@@ -84,7 +84,7 @@ var T = e(v(), 1),
           theme: "primary",
           children: R.strings.resource_well.mainView.affirmative.button(),
         })
-      : (0, k.jsx)(C, {
+      : (0, k.jsx)(p, {
           variant: "main",
           progressionState: r,
           vehicleInfo: i?.vehicleInfo,
@@ -119,7 +119,7 @@ var T = e(v(), 1),
             children: [
               (0, k.jsx)("div", { className: P.text, children: G.mainView.timer.lastUntil() }),
               (0, k.jsx)("span", { className: P.text, children: " " }),
-              (0, k.jsx)("div", { className: P.time, children: Y(e, x.DayMonthFullTime) }),
+              (0, k.jsx)("div", { className: P.time, children: Y(e, b.DayMonthFullTime) }),
             ],
           }),
     });
@@ -189,25 +189,25 @@ var T = e(v(), 1),
           ? (0, k.jsx)(B, { endDate: n, isEventEndingSoon: l, timeLeft: i })
           : (0, k.jsx)("div", { className: g(z, !u().subTitle && $), children: u().subTitle }),
         (0, k.jsx)("div", { className: W, children: u().title }),
-        a === p.SEQUENTIAL_PRODUCT &&
+        a === S.SEQUENTIAL_PRODUCT &&
           (0, k.jsx)(N, {
             className: F,
             text: Q.eventInfo.description.sequentialEventMode(),
             params: {
-              styleTanksCount: b.formatNumber("integral", d.withStyleCount),
-              withoutStyleTanksCount: b.formatNumber("integral", d.withoutStyleCount),
+              styleTanksCount: I.formatNumber("integral", d.withStyleCount),
+              withoutStyleTanksCount: I.formatNumber("integral", d.withoutStyleCount),
               br: H,
             },
             upgradeLegacy: !0,
           }),
-        a === p.TWO_PARALLEL_PRODUCTS &&
-          r !== j.Forbidden &&
+        a === S.TWO_PARALLEL_PRODUCTS &&
+          r !== C.Forbidden &&
           h(c, (e) => e.state === D.ACTIVE && Boolean(e.vehiclesLeftCount)) &&
           (0, k.jsx)("div", {
             className: F,
             children: Q.eventInfo.description.inParallelEventMode(),
           }),
-        a === p.ONE_SERIAL_PRODUCT &&
+        a === S.ONE_SERIAL_PRODUCT &&
           (0, k.jsx)("div", {
             className: F,
             children: Q.eventInfo.description.oneSerialEventMode(),
@@ -238,13 +238,13 @@ var T = e(v(), 1),
     (0, k.jsx)("div", {
       className: se,
       children: e
-        ? (0, k.jsx)(S, {
+        ? (0, k.jsx)(j, {
             body: R.strings.resource_well.tooltips.counter.warning.text(),
             children: (0, k.jsxs)("div", {
               className: g(te, s && ae),
               children: [
                 (0, k.jsx)("div", { className: ee }),
-                (0, k.jsx)("div", { className: ne, children: b.formatNumber("integral", e) }),
+                (0, k.jsx)("div", { className: ne, children: I.formatNumber("integral", e) }),
               ],
             }),
           })
@@ -273,14 +273,14 @@ var T = e(v(), 1),
       { selectReward: h } = n,
       v = a({ buttonSize: "small" }, { large: { buttonSize: "medium" } }),
       A =
-        i === p.TWO_PARALLEL_PRODUCTS &&
+        i === S.TWO_PARALLEL_PRODUCTS &&
         u === D.ACTIVE &&
         o !== d &&
-        l !== j.Forbidden &&
+        l !== C.Forbidden &&
         Boolean(_),
-      E = ([p.ONE_SERIAL_PRODUCT, p.SEQUENTIAL_PRODUCT].includes(i) && m) || _ <= 1e4,
+      E = ([S.ONE_SERIAL_PRODUCT, S.SEQUENTIAL_PRODUCT].includes(i) && m) || _ <= 1e4,
       f =
-        i === p.TWO_PARALLEL_PRODUCTS
+        i === S.TWO_PARALLEL_PRODUCTS
           ? ue.eventInfo.inParallelEventMode.tanksLeftText()
           : m
             ? ue.eventInfo.top.tanksLeftText()
@@ -295,7 +295,7 @@ var T = e(v(), 1),
           ],
         }),
         A &&
-          (0, k.jsx)(S, {
+          (0, k.jsx)(j, {
             body: ue.tooltips.mainView.selectVehicle.button(),
             children: (0, k.jsx)(c, {
               onClick: () => h(d),
@@ -316,14 +316,14 @@ var T = e(v(), 1),
       children: (0, k.jsx)(N, {
         className: he,
         text: R.strings.resource_well.eventInfo.withoutStyle.blocked.textInfo(),
-        params: { regularRewardVehiclesCount: b.formatNumber("integral", e) },
+        params: { regularRewardVehiclesCount: I.formatNumber("integral", e) },
         upgradeLegacy: !0,
       }),
     }),
   Ee = "ErrorState_icon_f0d58ac7",
   fe = "ErrorState_c264cc6b",
   Re = ({ className: e }) =>
-    (0, k.jsx)(S, {
+    (0, k.jsx)(j, {
       body: R.strings.resource_well.tooltips.counter.error.text(),
       children: (0, k.jsx)("div", {
         className: g(fe, e),
@@ -347,7 +347,7 @@ var T = e(v(), 1),
           case r === D.NOT_AVAILABLE:
             return (0, k.jsx)(Ae, { className: we, vehiclesLeftCount: a });
           default: {
-            const a = [p.SEQUENTIAL_PRODUCT, p.ONE_SERIAL_PRODUCT].includes(s);
+            const a = [S.SEQUENTIAL_PRODUCT, S.ONE_SERIAL_PRODUCT].includes(s);
             return (0, k.jsx)(me, { className: g(xe, a && be), reward: e, disabled: t });
           }
         }
@@ -428,7 +428,7 @@ var T = e(v(), 1),
             (0, k.jsx)(m.Name, { className: Ye, children: e.vehicleName }),
           ],
         }),
-        [p.SEQUENTIAL_PRODUCT, p.ONE_SERIAL_PRODUCT].includes(i) &&
+        [S.SEQUENTIAL_PRODUCT, S.ONE_SERIAL_PRODUCT].includes(i) &&
           (0, k.jsx)("div", {
             className: Me,
             children: t
@@ -480,7 +480,7 @@ var T = e(v(), 1),
           d = (Boolean(n) && l === D.ACTIVE && !r) || (D.ACTIVE && r === i) || c,
           _ = !c && 0 === n,
           u =
-            t === p.TWO_PARALLEL_PRODUCTS &&
+            t === S.TWO_PARALLEL_PRODUCTS &&
             Boolean(r) &&
             r !== i &&
             ![D.ALREADY_IN_GARAGE, D.ALREADY_RECEIVED].includes(l),
@@ -504,7 +504,7 @@ var T = e(v(), 1),
                 className: g(Fe[`index--${a}`], Fe.vehicleInfoWrapper),
                 children: [
                   !c &&
-                    (0, k.jsx)(I, {
+                    (0, k.jsx)(E, {
                       className: Fe.preview,
                       type: "preview",
                       onClick: () => s.preview(e.rewardId),
@@ -558,6 +558,6 @@ var T = e(v(), 1),
       })
     );
   });
-t((0, k.jsx)(f, { children: (0, k.jsx)(V, { children: (0, k.jsx)(ss, {}) }) }), {
+t((0, k.jsx)(x, { children: (0, k.jsx)(V, { children: (0, k.jsx)(ss, {}) }) }), {
   fullScreen: !0,
 }).then(() => u(!1));

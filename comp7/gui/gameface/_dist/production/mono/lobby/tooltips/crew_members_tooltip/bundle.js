@@ -1,10 +1,10 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Pa as e, fi as i, ws as r } from "../../chunks/lib.js";
+import { Cs as e, Na as i, fi as r } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { i as a } from "../../chunks/vendor.js";
 /* empty css                  */ import { t as c } from "../../chunks/tooltip_decorator.js";
 import { t as o } from "../../chunks/tooltips.module.js";
-r();
+e();
 var l = s(a(), 1),
   t = "App_4fcbfa35",
   d = "App_crewIcon_f83bbe77",
@@ -14,7 +14,7 @@ var l = s(a(), 1),
   _ = "App_zeroPerk_fecfd061",
   j = "App_slots_cb654453",
   x = "App_slotImage_9f9978b0",
-  b = s(e(), 1),
+  b = s(i(), 1),
   h = () =>
     (0, b.jsxs)("div", {
       className: (0, l.default)(o.base, t),
@@ -50,4 +50,4 @@ var l = s(a(), 1),
         }),
       ],
     });
-i((0, b.jsx)(c, { children: (0, b.jsx)(h, {}) }));
+r((0, b.jsx)(c, { children: (0, b.jsx)(h, {}) }));

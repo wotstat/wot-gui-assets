@@ -1,33 +1,33 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as a,
-  Cr as r,
-  Eo as s,
+  Ai as r,
+  Cr as s,
   Et as t,
-  Hr as n,
-  Jr as i,
-  Qn as o,
+  Qn as n,
+  To as i,
+  Vr as o,
   Zn as l,
-  _o as c,
-  bi as d,
-  cr as _,
-  dt as u,
-  gi as x,
-  hn as m,
-  ji as N,
-  mt as b,
-  pr as f,
-  sr as p,
-  ut as h,
-  xi as g,
-  yo as j,
+  bi as c,
+  cr as d,
+  dt as _,
+  go as u,
+  hi as m,
+  hn as x,
+  mt as N,
+  pr as b,
+  qr as f,
+  sr as h,
+  ut as p,
+  vo as g,
+  yi as j,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { o as v } from "../chunks/vendor.js";
 import { c as T } from "../chunks/sound.js";
 import { n as S, t as y } from "../chunks/parallax_app.js";
-var C = e(j(), 1),
-  [E, k] = f()(
+var C = e(g(), 1),
+  [E, k] = b()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({
       onClose: e.createCallbackNoArgs("onClose"),
@@ -45,17 +45,17 @@ var C = e(j(), 1),
   O = "NarrationText_title_c6323ea8",
   B = "NarrationText_shadow_c558de93",
   I = "NarrationText_scrollTextWrapper_2966ec7f",
-  L = "NarrationText_scrollContentWrapper_5d272dcd",
-  V = "NarrationText_text_7fbf87ef",
+  V = "NarrationText_scrollContentWrapper_5d272dcd",
+  L = "NarrationText_text_7fbf87ef",
   M = "NarrationText_highlightText_c7174a16",
-  D = "NarrationText_highlightText__secondary_e31000ce",
-  H = "NarrationText_titleParagraph_117b3e67",
-  J = "NarrationText_paragraph_a1fd10d6",
-  Q = "NarrationText_nowrap_e19b022d",
-  Z = x(),
-  q =
+  q = "NarrationText_highlightText__secondary_e31000ce",
+  D = "NarrationText_titleParagraph_117b3e67",
+  Q = "NarrationText_paragraph_a1fd10d6",
+  Z = "NarrationText_nowrap_e19b022d",
+  G = m(),
+  H =
     /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u3000-\u303F\uFF00-\uFFEF\]]/u,
-  G = { split: X },
+  J = { split: X },
   K = 0;
 function U() {
   return "ls-" + ++K;
@@ -67,15 +67,15 @@ function X(e) {
         for (let r = 0; r < e.length; r++) {
           const s = e[r],
             t = e[r + 1];
-          if ("string" != typeof t || !q.test(t)) {
+          if ("string" != typeof t || !H.test(t)) {
             a.push(X(s));
             continue;
           }
           const n = Y(t.slice(1));
           (a.push(
-            (0, Z.jsxs)(
+            (0, G.jsxs)(
               C.Fragment,
-              { children: [(0, Z.jsxs)("span", { className: Q, children: [X(s), t[0]] }), n] },
+              { children: [(0, G.jsxs)("span", { className: Z, children: [X(s), t[0]] }), n] },
               U(),
             ),
           ),
@@ -84,67 +84,67 @@ function X(e) {
         return a;
       })(e)
     : "string" == typeof e
-      ? (0, Z.jsx)(C.Fragment, { children: Y(e) }, U())
+      ? (0, G.jsx)(C.Fragment, { children: Y(e) }, U())
       : e;
 }
 function Y(e) {
-  const a = s.resolve("langCode");
-  return d(g(e, a), a, (e, a) => e && (0, Z.jsx)("span", { children: e }, `${e}${a}`));
+  const a = i.resolve("langCode");
+  return j(c(e, a), a, (e, a) => e && (0, G.jsx)("span", { children: e }, `${e}${a}`));
 }
-var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: r }) {
-    const n = s.resolve("strings"),
-      { model: i, controls: o } = k();
-    return (0, Z.jsxs)("div", {
-      className: c(F, r && W, a && w),
+var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
+    const n = i.resolve("strings"),
+      { model: o, controls: c } = k();
+    return (0, G.jsxs)("div", {
+      className: u(F, s && W, a && w),
       children: [
-        (0, Z.jsxs)(t, {
+        (0, G.jsxs)(t, {
           className: P,
           size: t.sizes.small,
-          activated: Boolean(i.root.get().isVoiceoverActive),
-          onClick: o.onVoiceoverToggle,
+          activated: Boolean(o.root.get().isVoiceoverActive),
+          onClick: c.onVoiceoverToggle,
           children: [
-            (0, Z.jsx)("div", { className: $ }),
+            (0, G.jsx)("div", { className: $ }),
             n.readOrEmpty("R.strings.last_stand_lobby.narration.actions.voiceover"),
           ],
         }),
-        (0, Z.jsxs)("div", {
+        (0, G.jsxs)("div", {
           className: z,
           children: [
-            (0, Z.jsx)(l, {
-              params: { number: N(e) },
+            (0, G.jsx)(l, {
+              params: { number: r(e) },
               text: n.readOrEmpty(
                 `R.strings.last_stand_lobby.narration.narrationTitle.ls_artefact_${e}`,
               ),
               className: O,
             }),
-            (0, Z.jsxs)("div", {
+            (0, G.jsxs)("div", {
               className: I,
               children: [
-                (0, Z.jsx)("div", { className: B }),
-                (0, Z.jsxs)(
-                  h,
+                (0, G.jsx)("div", { className: B }),
+                (0, G.jsxs)(
+                  p,
                   {
                     children: [
-                      (0, Z.jsx)(u, {
-                        className: L,
-                        children: (0, Z.jsx)("div", {
-                          className: V,
-                          children: (0, Z.jsx)(l, {
+                      (0, G.jsx)(_, {
+                        className: V,
+                        children: (0, G.jsx)("div", {
+                          className: L,
+                          children: (0, G.jsx)(l, {
                             split: !0,
                             params: {
-                              pargraphStart: (0, Z.jsx)("div", { className: J }),
-                              titleParagraph: (0, Z.jsx)("div", { className: H }),
+                              pargraphStart: (0, G.jsx)("div", { className: Q }),
+                              titleParagraph: (0, G.jsx)("div", { className: D }),
                               highlightText: M,
-                              highlightSecondaryText: c(M, D),
+                              highlightSecondaryText: u(M, q),
                             },
                             text: n.readOrEmpty(
                               `R.strings.last_stand_lobby.narration.narrationText.ls_narration_${e}`,
                             ),
-                            formatters: G,
+                            formatters: J,
                           }),
                         }),
                       }),
-                      (0, Z.jsx)(b, {}),
+                      (0, G.jsx)(N, {}),
                     ],
                   },
                   `slide${e}`,
@@ -169,20 +169,20 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: r }) {
     onLoadCompleted: t,
     isFirst: n,
   }) {
-    return (0, Z.jsxs)("div", {
+    return (0, G.jsxs)("div", {
       className: re,
       children: [
-        (0, Z.jsx)("div", {
-          className: c(se, r && n && te, s && ne),
-          children: (0, Z.jsx)(y, {
+        (0, G.jsx)("div", {
+          className: u(se, r && n && te, s && ne),
+          children: (0, G.jsx)(y, {
             refParent: e,
             slideIndex: a,
             backgroundPath: `R.images.last_stand.gui.maps.icons.backgrounds.bg_${a}`,
             onLoadCompleted: t,
           }),
         }),
-        (0, Z.jsx)("div", { className: ae }),
-        (0, Z.jsx)(ee, { index: a, isAnimationPlaying: s, isFirst: r && n }),
+        (0, G.jsx)("div", { className: ae }),
+        (0, G.jsx)(ee, { index: a, isAnimationPlaying: s, isFirst: r && n }),
       ],
     });
   },
@@ -192,50 +192,50 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: r }) {
   de = "NarrationSlider_blackScreen__show_a64fda4f",
   _e = "NarrationSlider_blackScreen__hide_b6adbcdb",
   ue = "NarrationSlider_slideButton_3ef51db8",
-  xe = "NarrationSlider_buttonWrapper_d86e1fae",
-  me = "NarrationSlider_buttonWrapper__right_a0c8af8f",
+  me = "NarrationSlider_buttonWrapper_d86e1fae",
+  xe = "NarrationSlider_buttonWrapper__right_a0c8af8f",
   Ne = "NarrationSlider_buttonWrapper__left_a75c32d",
   be = "NarrationSlider_buttonNumLabel_e82adf30",
   fe = "NarrationSlider_slideWrapper_853cc82f",
-  pe = "NarrationSlider_slideWrapper__blur_b61bfecc",
-  he = "NarrationSlider_slideWrapper__unblur_fe6e2e1a",
+  he = "NarrationSlider_slideWrapper__blur_b61bfecc",
+  pe = "NarrationSlider_slideWrapper__unblur_fe6e2e1a",
   ge = "NarrationSlider_video__hide_b6adbcdb",
   je = "NarrationSlider_video__show_a64fda4f",
   ve = "NarrationSlider_prevArrow_f0d71b7f",
   Te = "NarrationSlider_nextArrow_ab02e93d",
   Se = v(function ({ baseRef: e }) {
-    const r = s.resolve("strings"),
+    const s = i.resolve("strings"),
       { model: t, controls: n } = k(),
       { slideNumber: o, isNextDisabled: l } = t.root.get(),
-      [d, _] = (0, C.useState)(o),
-      [u, x] = (0, C.useState)(!0),
-      [b, f] = (0, C.useState)(!1),
-      p = i(),
-      h = o + 1,
+      [c, d] = (0, C.useState)(o),
+      [_, m] = (0, C.useState)(!0),
+      [N, b] = (0, C.useState)(!1),
+      h = f(),
+      p = o + 1,
       g = o - 1,
-      j = h <= 4,
+      j = p <= 4,
       v = (0, C.useRef)(null),
       T = (0, C.useRef)(null),
       y = (0, C.useCallback)(
         (e, a) => {
-          (x(!0),
-            b ||
-              (f(!0),
+          (m(!0),
+            N ||
+              (b(!0),
               null !== v.current && clearTimeout(v.current),
               (v.current = setTimeout(() => {
-                (_(e), !a && n.onSlide(e));
+                (d(e), !a && n.onSlide(e));
               }, 200))));
         },
-        [n, b],
+        [n, N],
       );
     (0, C.useEffect)(() => {
-      o !== d && y(o, !0);
-    }, [o, d, y]);
+      o !== c && y(o, !0);
+    }, [o, c, y]);
     const E = (0, C.useCallback)(() => {
-      (x(!1),
+      (m(!1),
         null !== T.current && clearTimeout(T.current),
         (T.current = setTimeout(() => {
-          f(!1);
+          b(!1);
         }, 200)));
     }, []);
     return (
@@ -246,64 +246,64 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: r }) {
         },
         [],
       ),
-      (0, Z.jsxs)("div", {
+      (0, G.jsxs)("div", {
         className: ce,
         children: [
-          (0, Z.jsxs)("div", {
-            className: c(fe, u ? pe : he),
+          (0, G.jsxs)("div", {
+            className: u(fe, _ ? he : pe),
             children: [
-              (0, Z.jsx)(ie, {
+              (0, G.jsx)(ie, {
                 baseRef: e,
-                selectedIndex: d,
+                selectedIndex: c,
                 onLoadCompleted: E,
-                isFirst: p,
-                isAnimationStart: u,
-                isAnimationPlaying: b,
+                isFirst: h,
+                isAnimationStart: _,
+                isAnimationPlaying: N,
               }),
-              (0, Z.jsx)("div", { className: c(oe, u ? de : _e) }),
-              (0, Z.jsx)(S, {
+              (0, G.jsx)("div", { className: u(oe, _ ? de : _e) }),
+              (0, G.jsx)(S, {
                 src: R.videos.last_stand.slide_overlay(),
-                className: c(le, b ? je : ge),
-                paused: !b,
-                rotated: u,
+                className: u(le, N ? je : ge),
+                paused: !N,
+                rotated: _,
               }),
             ],
           }),
           Boolean(g) &&
-            (0, Z.jsxs)("div", {
-              className: c(xe, Ne),
+            (0, G.jsxs)("div", {
+              className: u(me, Ne),
               children: [
-                (0, Z.jsx)("div", { className: be, children: N(g) }),
-                (0, Z.jsx)(a, {
-                  disabled: b,
+                (0, G.jsx)("div", { className: be, children: r(g) }),
+                (0, G.jsx)(a, {
+                  disabled: N,
                   onClick: () => y(g),
                   className: ue,
                   theme: a.themes.secondary,
                   size: a.sizes.small,
                   soundTarget: "ls_slider:navigation_button",
-                  children: (0, Z.jsx)("div", { className: ve }),
+                  children: (0, G.jsx)("div", { className: ve }),
                 }),
               ],
             }),
           j &&
-            (0, Z.jsxs)("div", {
-              className: c(xe, me),
+            (0, G.jsxs)("div", {
+              className: u(me, xe),
               children: [
-                (0, Z.jsx)("div", { className: be, children: N(h) }),
-                (0, Z.jsx)(m, {
+                (0, G.jsx)("div", { className: be, children: r(p) }),
+                (0, G.jsx)(x, {
                   isEnabled: l,
-                  header: r.readOrEmpty("R.strings.last_stand_lobby.narration.tooltips.nextStory"),
-                  body: r.readOrEmpty(
+                  header: s.readOrEmpty("R.strings.last_stand_lobby.narration.tooltips.nextStory"),
+                  body: s.readOrEmpty(
                     `R.strings.last_stand_lobby.narration.tooltips.disabledNextEpisode_${o}`,
                   ),
-                  children: (0, Z.jsx)(a, {
-                    disabled: b || l,
-                    onClick: () => y(h),
+                  children: (0, G.jsx)(a, {
+                    disabled: N || l,
+                    onClick: () => y(p),
                     className: ue,
                     theme: a.themes.secondary,
                     size: a.sizes.small,
                     soundTarget: "ls_slider:navigation_button",
-                    children: (0, Z.jsx)("div", { className: Te }),
+                    children: (0, G.jsx)("div", { className: Te }),
                   }),
                 }),
               ],
@@ -319,20 +319,20 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: r }) {
     const { controls: e } = k(),
       a = (0, C.useRef)(null);
     return (
-      n(e.onClose),
-      (0, Z.jsxs)("div", {
+      o(e.onClose),
+      (0, G.jsxs)("div", {
         className: ye,
         children: [
-          (0, Z.jsx)("div", { className: Ce, ref: a }),
-          (0, Z.jsx)(Se, { baseRef: a }),
-          (0, Z.jsx)(o, { className: Ee, onClose: e.onClose }),
+          (0, G.jsx)("div", { className: Ce, ref: a }),
+          (0, G.jsx)(Se, { baseRef: a }),
+          (0, G.jsx)(n, { className: Ee, onClose: e.onClose }),
         ],
       })
     );
   });
-_(
-  (0, Z.jsx)(p, {
-    soundsOverrides: r({ click: { [A]: T } }),
-    children: (0, Z.jsx)(E, { children: (0, Z.jsx)(ke, {}) }),
+d(
+  (0, G.jsx)(h, {
+    soundsOverrides: s({ click: { [A]: T } }),
+    children: (0, G.jsx)(E, { children: (0, G.jsx)(ke, {}) }),
   }),
 );

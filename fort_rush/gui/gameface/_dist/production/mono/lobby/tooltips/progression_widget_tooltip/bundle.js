@@ -1,17 +1,17 @@
 import {
   m as e,
-  dn as s,
-  dq as a,
+  dc as s,
+  de as a,
   l as r,
-  dr as t,
+  df as t,
   ap as i,
   t as l,
-  de as o,
-  cF as d,
-  dJ as p,
-  cO as c,
+  dg as o,
+  cE as d,
+  dI as p,
+  cN as c,
   ak as n,
-  dE as m,
+  dD as m,
 } from "../../chunks/lib.js";
 import { h as _, N as u, j as g, f as h } from "../../chunks/vendor.js";
 import { P as j } from "../../chunks/index2.js";
@@ -34,8 +34,8 @@ const [f, v] = r()(({ observableModel: r }) => {
       );
     return { ...i, computes: { getRewards: l } };
   }, i),
-  A = "App_d982e3f3",
-  N = "App_topSection_5d964fcb",
+  N = "App_d982e3f3",
+  A = "App_topSection_5d964fcb",
   w = "App_header_59a9c25",
   y = "App_title_f2f6309a",
   k = "App_titleSubtitle_ae35650e",
@@ -46,16 +46,16 @@ const [f, v] = r()(({ observableModel: r }) => {
   M = "App_stageNumber_b71e6369",
   L = "App_doneIcon_1e93395",
   T = "App_lockIcon_864bf73b",
-  R = "App_stageMessage_47b5fd1a",
-  V = "App_subtitle_cf3ede98",
-  q = "App_progressRow_b42a5a16",
-  z = "App_completedLabel_849a18a2",
-  C = "App_rewardsBand_291fdeed",
-  D = "App_rewardsHeader_b665803c",
-  F = "App_timer_9c848660",
-  H = "App_timerLabel_4b254dc2",
-  I = l.resolve("strings"),
-  B = u(() => {
+  D = "App_stageMessage_47b5fd1a",
+  I = "App_subtitle_cf3ede98",
+  R = "App_progressRow_b42a5a16",
+  V = "App_completedLabel_849a18a2",
+  z = "App_rewardsBand_291fdeed",
+  C = "App_rewardsHeader_b665803c",
+  H = "App_timer_9c848660",
+  q = "App_timerLabel_4b254dc2",
+  B = l.resolve("strings"),
+  F = u(() => {
     const { model: e } = v(),
       {
         isAvailable: s,
@@ -75,25 +75,25 @@ const [f, v] = r()(({ observableModel: r }) => {
         : g.jsx("div", { className: T }),
       f = s
         ? a
-          ? I.readOrEmpty("fort_rush.progression.widget.tooltip.allStagesCompleted")
+          ? B.readOrEmpty("fort_rush.progression.widget.tooltip.allStagesCompleted")
           : null
-        : I.readOrEmpty("fort_rush.progression.widget.tooltip.unavailable");
+        : B.readOrEmpty("fort_rush.progression.widget.tooltip.unavailable");
     return g.jsxs("div", {
-      className: A,
+      className: N,
       children: [
         g.jsxs("div", {
-          className: N,
+          className: A,
           children: [
             g.jsxs("div", {
               className: w,
               children: [
                 g.jsx("div", {
                   className: y,
-                  children: I.readOrEmpty("fort_rush.progression.widget.tooltip.title"),
+                  children: B.readOrEmpty("fort_rush.progression.widget.tooltip.title"),
                 }),
                 g.jsx("div", {
                   className: k,
-                  children: I.readOrEmpty("fort_rush.progression.widget.tooltip.titleSubtitle"),
+                  children: B.readOrEmpty("fort_rush.progression.widget.tooltip.titleSubtitle"),
                 }),
               ],
             }),
@@ -101,20 +101,20 @@ const [f, v] = r()(({ observableModel: r }) => {
               className: E,
               children: [g.jsx(b, { className: h(O, P) }), u, g.jsx(b, { className: h(O, S) })],
             }),
-            f && g.jsx("div", { className: R, children: f }),
+            f && g.jsx("div", { className: D, children: f }),
             m &&
               g.jsxs(g.Fragment, {
                 children: [
                   g.jsx("div", {
-                    className: V,
-                    children: I.readOrEmpty("fort_rush.progression.widget.tooltip.subtitle"),
+                    className: I,
+                    children: B.readOrEmpty("fort_rush.progression.widget.tooltip.subtitle"),
                   }),
                   g.jsxs("div", {
-                    className: q,
+                    className: R,
                     children: [
                       g.jsx("div", {
-                        className: z,
-                        children: I.readOrEmpty(
+                        className: V,
+                        children: B.readOrEmpty(
                           "fort_rush.progression.widget.tooltip.completedLabel",
                         ),
                       }),
@@ -135,11 +135,11 @@ const [f, v] = r()(({ observableModel: r }) => {
         }),
         m &&
           g.jsxs("div", {
-            className: C,
+            className: z,
             children: [
               g.jsx("div", {
-                className: D,
-                children: I.readOrEmpty("fort_rush.progression.widget.tooltip.rewardsHeader"),
+                className: C,
+                children: B.readOrEmpty("fort_rush.progression.widget.tooltip.rewardsHeader"),
               }),
               g.jsx(p, { data: n, size: o.Small }),
             ],
@@ -147,11 +147,11 @@ const [f, v] = r()(({ observableModel: r }) => {
         m &&
           l > 0 &&
           g.jsxs("div", {
-            className: F,
+            className: H,
             children: [
               g.jsx("span", {
-                className: H,
-                children: I.readOrEmpty("fort_rush.progression.widget.tooltip.timerLabel"),
+                className: q,
+                children: B.readOrEmpty("fort_rush.progression.widget.tooltip.timerLabel"),
               }),
               g.jsx(c, { start: _, format: c.format.default, type: c.type.accent }),
             ],
@@ -159,4 +159,4 @@ const [f, v] = r()(({ observableModel: r }) => {
       ],
     });
   });
-n(g.jsx(f, { children: g.jsx(m, { children: g.jsx(B, {}) }) }));
+n(g.jsx(f, { children: g.jsx(m, { children: g.jsx(F, {}) }) }));

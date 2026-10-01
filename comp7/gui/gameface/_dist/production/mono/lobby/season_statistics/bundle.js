@@ -1,46 +1,41 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Ea as a,
-  Ia as s,
-  Ki as i,
-  L as t,
-  Na as n,
-  Pa as r,
-  Q as c,
-  Sr as o,
-  Vo as l,
-  Yi as d,
-  Zt as _,
-  _i as m,
-  bo as p,
-  co as h,
-  fi as f,
-  gi as b,
-  ko as u,
-  no as g,
-  pr as x,
-  tt as S,
-  ws as v,
+  Bo as a,
+  Cs as s,
+  Fa as i,
+  Gi as t,
+  Hr as n,
+  Ji as r,
+  L as c,
+  Ma as o,
+  Na as l,
+  Oo as d,
+  Rr as _,
+  Ta as m,
+  _i as p,
+  fi as h,
+  gi as f,
+  jr as b,
+  kr as u,
+  q as g,
+  so as x,
+  to as S,
+  yo as v,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { a as y, i as j } from "../chunks/vendor.js";
-/* empty css               */ import {
-  a as N,
-  i as w,
-  o as A,
-  t as I,
-} from "../chunks/rank_emblem.js";
-import { t as k } from "../chunks/get_division_name.js";
-import { n as H } from "../chunks/get_rank_name.js";
-import { t as V } from "../chunks/get_button_size.js";
+/* empty css               */ import { t as N } from "../chunks/get_button_size.js";
+import { a as w, i as A, o as I, t as k } from "../chunks/rank_emblem.js";
+import { t as H } from "../chunks/get_division_name.js";
+import { n as V } from "../chunks/get_rank_name.js";
 import { t as P } from "../chunks/divine_glow.js";
 import { n as T } from "../chunks/get_statistic_value.js";
 import { n as C, t as U } from "../chunks/season_point.js";
 import { t as D } from "../chunks/lace_divider.js";
 import { t as W } from "../chunks/close_button.js";
-var $ = e(v(), 1),
+var $ = e(s(), 1),
   O = e(j(), 1),
-  Q = (function (e) {
+  L = (function (e) {
     return (
       (e.Idle = "idle"),
       (e.ShowPosition = "showPosition"),
@@ -55,7 +50,7 @@ var $ = e(v(), 1),
       e
     );
   })({}),
-  L = [
+  Q = [
     { step: "idle", delay: 300 },
     { step: "showPosition", delay: 300 },
     { step: "showRank", delay: 300 },
@@ -68,7 +63,7 @@ var $ = e(v(), 1),
     { step: "end", delay: 0 },
   ],
   M = (e) =>
-    u(
+    d(
       e,
       (a, s, i) => {
         const t = e[i + 1] ?? s;
@@ -76,17 +71,17 @@ var $ = e(v(), 1),
       },
       {},
     ),
-  [z, F] = m()(
+  [F, z] = p()(
     ({ observableModel: e }) => {
       const s = { root: e.object() },
         i = e.array("summaryStatistics"),
         t = e.array("vehicleStatistics"),
-        n = ((e = L) => ({ animationState: a.box(), config: M(e) }))(),
+        n = ((e = Q) => ({ animationState: m.box(), config: M(e) }))(),
         r = ((e) => ({
-          isStepActive: b((a) => e.config[e.animationState.get()].order >= e.config[a].order),
-          stepDelay: b((a) => e.config[a].delay),
-          getAnimationStepStyles: b((a, s = "base") =>
-            u(
+          isStepActive: f((a) => e.config[e.animationState.get()].order >= e.config[a].order),
+          stepDelay: f((a) => e.config[a].delay),
+          getAnimationStepStyles: f((a, s = "base") =>
+            d(
               Object.entries(e.config),
               (i, [t, n]) => {
                 const r = a[`${s}__${t}`];
@@ -96,27 +91,27 @@ var $ = e(v(), 1),
             ),
           ),
         }))(n),
-        c = b(() => s.root.get().leaderboardPosition < 3),
-        o = b(() => i.get().length),
-        d = b(
+        c = f(() => s.root.get().leaderboardPosition < 3),
+        o = f(() => i.get().length),
+        l = f(
           (e) => {
-            const a = p(i.get(), e);
+            const a = v(i.get(), e);
             if (!a) throw new Error(`summaryStatistic with index ${e} was not found`);
             return a;
           },
-          { equals: l },
+          { equals: a },
         ),
-        _ = b((e) => p(t.get(), e), { equals: l }),
-        m = b((e) => (0 === o() ? 0 : e / o()));
+        _ = f((e) => v(t.get(), e), { equals: a }),
+        p = f((e) => (0 === o() ? 0 : e / o()));
       return {
         ...s,
         animation: { model: n, computes: r },
         computes: {
           hasPositionIcon: c,
           summaryStatisticsLength: o,
-          summaryStatistic: d,
+          summaryStatistic: l,
           vehicleStatistic: _,
-          summaryItemDelay: m,
+          summaryItemDelay: p,
         },
       };
     },
@@ -124,7 +119,7 @@ var $ = e(v(), 1),
       const i = ((e, a) => {
         let s = 0;
         a(() => window.clearTimeout(s));
-        const { setAnimationState: i } = h({
+        const { setAnimationState: i } = x({
             setAnimationState: (a) => {
               e.animationState.set(a);
             },
@@ -136,7 +131,7 @@ var $ = e(v(), 1),
               t(n.nextStep);
             }, n.delay);
           };
-        return h({
+        return x({
           start: () => {
             t("idle");
           },
@@ -145,7 +140,7 @@ var $ = e(v(), 1),
       return (i.start(), { animation: i, close: e.createCallbackNoArgs("onClose") });
     },
   ),
-  E = () => F().model.animation,
+  E = () => z().model.animation,
   q = {
     base: "Header_abbd0f2b",
     season: "Header_season_a2462352",
@@ -174,26 +169,26 @@ var $ = e(v(), 1),
     blink: "Header_blink_65f475ba",
     slideUpIn: "Header_slideUpIn_65f475ba",
   },
-  B = e(r(), 1),
-  K = ["first", "second", "third"],
-  Y = y(({ className: e }) => {
-    const { model: a } = F(),
+  B = e(l(), 1),
+  G = ["first", "second", "third"],
+  J = y(({ className: e }) => {
+    const { model: a } = z(),
       s = E(),
       {
         season: i,
-        leaderboardPosition: n,
-        clanTagColor: r,
-        userName: o,
-        clanTag: l,
+        leaderboardPosition: t,
+        clanTagColor: n,
+        userName: r,
+        clanTag: o,
       } = a.root.get(),
-      d = a.computes.hasPositionIcon();
+      l = a.computes.hasPositionIcon();
     return (0, B.jsxs)("div", {
       className: (0, O.default)(q.base, e, s.computes.getAnimationStepStyles(q)),
-      style: { "--clanTagColor": r },
+      style: { "--clanTagColor": n },
       children: [
         (0, B.jsx)("div", {
           className: q.season,
-          children: (0, B.jsx)(c, {
+          children: (0, B.jsx)(u, {
             text: R.strings.comp7_ext.seasonStatistics.description.season(),
             binding: {
               seasonNameUpper: `${R.strings.comp7_ext.seasonStatistics.seasonNameUpper.$dyn(i)}`,
@@ -202,13 +197,13 @@ var $ = e(v(), 1),
         }),
         (0, B.jsx)("div", {
           className: q.title,
-          children: (0, B.jsx)(c, {
+          children: (0, B.jsx)(u, {
             text: R.strings.comp7_ext.seasonStatistics.title(),
             binding: {
-              name: (0, B.jsx)(t, {
-                userName: o,
-                clanAbbrev: l,
-                clanTagClassName: (0, O.default)(r && q.clanTag),
+              name: (0, B.jsx)(c, {
+                userName: r,
+                clanAbbrev: o,
+                clanTagClassName: (0, O.default)(n && q.clanTag),
               }),
             },
           }),
@@ -216,13 +211,13 @@ var $ = e(v(), 1),
         (0, B.jsx)("div", {
           className: q.position,
           children:
-            -1 !== n &&
-            (0, B.jsx)(c, {
+            -1 !== t &&
+            (0, B.jsx)(u, {
               text: R.strings.comp7_ext.seasonStatistics.description.leaderboardPosition(),
               binding: {
                 position: (0, B.jsx)("div", {
-                  className: (0, O.default)(q.order, d && q.order__icon, d && q[`order__${K[n]}`]),
-                  children: !d && n + 1,
+                  className: (0, O.default)(q.order, l && q.order__icon, l && q[`order__${G[t]}`]),
+                  children: !l && t + 1,
                 }),
               },
             }),
@@ -230,7 +225,7 @@ var $ = e(v(), 1),
       ],
     });
   }),
-  Z = {
+  K = {
     base__notAchieved: "Point_base__notAchieved_a641ca05",
     fadeIn: "Point_fadeIn_d8b7e333",
     fadeInThreeQuarters: "Point_fadeInThreeQuarters_d8b7e333",
@@ -247,23 +242,23 @@ var $ = e(v(), 1),
     blink: "Point_blink_d8b7e333",
     slideUpIn: "Point_slideUpIn_d8b7e333",
   },
-  G = (e) => (e >= s.Medium ? C.x48 : C.x32),
-  J = y(({ pointIndex: e, className: a }) => {
-    const { model: s } = F(),
+  X = (e) => (e >= i.Medium ? C.x48 : C.x32),
+  Y = y(({ pointIndex: e, className: a }) => {
+    const { model: s } = z(),
       { season: i, achievedSeasonPoints: t } = s.root.get(),
-      { mediaSize: r } = n(),
-      c = e + 1 <= t ? "achieved" : "notAchieved";
-    return (0, B.jsx)(_, {
+      { mediaSize: n } = o(),
+      r = e + 1 <= t ? "achieved" : "notAchieved";
+    return (0, B.jsx)(b, {
       contentId: R.views.comp7.mono.lobby.tooltips.season_point_tooltip("resId"),
-      args: { state: c },
+      args: { state: r },
       ignoreShowDelay: !0,
       children: (0, B.jsx)("div", {
         className: a,
-        children: (0, B.jsx)(U, { state: c, season: i, className: Z[`base__${c}`], size: G(r) }),
+        children: (0, B.jsx)(U, { state: r, season: i, className: K[`base__${r}`], size: X(n) }),
       }),
     });
   }),
-  X = {
+  Z = {
     base: "Rating_74881404",
     shine: "Rating_shine_b6446be3",
     base__showRank: "Rating_base__showRank_bece95f1",
@@ -298,52 +293,52 @@ var $ = e(v(), 1),
     slideUpIn: "Rating_slideUpIn_bece95f1",
   },
   ee = y(({ className: e }) => {
-    const { model: a } = F(),
-      { mediaSize: i } = n(),
+    const { model: a } = z(),
+      { mediaSize: s } = o(),
       t = E(),
       {
-        rank: r,
-        division: o,
-        score: l,
-        season: d,
-        achievedSeasonPoints: _,
-        seasonPointsLimit: m,
+        rank: n,
+        division: r,
+        score: c,
+        season: l,
+        achievedSeasonPoints: d,
+        seasonPointsLimit: _,
       } = a.root.get(),
-      p = ((e) =>
-        e >= s.ExtraLarge ? w.x600 : e >= s.Large ? w.x320 : e >= s.Medium ? w.x260 : w.x200)(i);
+      m = ((e) =>
+        e >= i.ExtraLarge ? A.x600 : e >= i.Large ? A.x320 : e >= i.Medium ? A.x260 : A.x200)(s);
     return (0, B.jsxs)("div", {
-      className: (0, O.default)(X.base, e, t.computes.getAnimationStepStyles(X)),
+      className: (0, O.default)(Z.base, e, t.computes.getAnimationStepStyles(Z)),
       children: [
-        (0, B.jsx)("div", { className: X.shine }),
-        (0, B.jsx)("div", { className: X.title, children: H(r) }),
+        (0, B.jsx)("div", { className: Z.shine }),
+        (0, B.jsx)("div", { className: Z.title, children: V(n) }),
         (0, B.jsx)("div", {
-          className: (0, O.default)(X.subTitle, !A(r) && X.subTitle__hide),
-          children: k(o),
+          className: (0, O.default)(Z.subTitle, !I(n) && Z.subTitle__hide),
+          children: H(r),
         }),
         (0, B.jsxs)("div", {
-          className: X.rankEmblemContainer,
+          className: Z.rankEmblemContainer,
           children: [
-            (0, B.jsx)(P, { className: X.glowContainer, classNames: { glow: X.glow } }),
-            (0, B.jsx)(I, { seasonName: d, rank: r, division: o, size: p, className: X.rank }),
+            (0, B.jsx)(P, { className: Z.glowContainer, classNames: { glow: Z.glow } }),
+            (0, B.jsx)(k, { seasonName: l, rank: n, division: r, size: m, className: Z.rank }),
           ],
         }),
         (0, B.jsxs)("div", {
-          className: X.content,
+          className: Z.content,
           children: [
-            (0, B.jsx)("div", { className: X.score, children: l }),
+            (0, B.jsx)("div", { className: Z.score, children: c }),
             (0, B.jsx)("div", {
-              className: X.scoreDescription,
+              className: Z.scoreDescription,
               children: R.strings.comp7_ext.seasonStatistics.description.finalScore(),
             }),
-            (0, B.jsx)(D, { className: X.laceDivider }),
+            (0, B.jsx)(D, { className: Z.laceDivider }),
             (0, B.jsx)("div", {
-              className: X.seasonPoints,
-              children: g(m, (e) => (0, B.jsx)(J, { pointIndex: e, className: X.point }, e)),
+              className: Z.seasonPoints,
+              children: S(_, (e) => (0, B.jsx)(Y, { pointIndex: e, className: Z.point }, e)),
             }),
-            (0, B.jsx)(c, {
-              text: R.strings.comp7_ext.seasonStatistics.description.seasonPoint(_),
-              binding: { points: _ },
-              classMix: X.pointDescription,
+            (0, B.jsx)(u, {
+              text: R.strings.comp7_ext.seasonStatistics.description.seasonPoint(d),
+              binding: { points: d },
+              classMix: Z.pointDescription,
             }),
           ],
         }),
@@ -408,28 +403,28 @@ var $ = e(v(), 1),
     }
   },
   ye = y(({ index: e, className: a }) => {
-    const { model: s } = F(),
-      t = E(),
-      { type: n, main: r, additional: o } = s.computes.summaryStatistic(e),
+    const { model: s } = z(),
+      i = E(),
+      { type: n, main: c, additional: o } = s.computes.summaryStatistic(e),
       l = R.strings.comp7_ext.seasonStatistics.section.statistics.$dyn(n),
-      _ = d({
+      d = r({
         from: { opacity: 0 },
         to: { opacity: 1 },
-        delay: s.computes.summaryItemDelay(t.computes.stepDelay(Q.ShowSummary)) * e,
-        pause: !t.computes.isStepActive(Q.ShowSummary),
+        delay: s.computes.summaryItemDelay(i.computes.stepDelay(L.ShowSummary)) * e,
+        pause: !i.computes.isStepActive(L.ShowSummary),
       });
-    return (0, B.jsxs)(i.div, {
+    return (0, B.jsxs)(t.div, {
       className: (0, O.default)(fe, a),
-      style: _,
+      style: d,
       children: [
         (0, B.jsx)("div", {
           className: be,
           style: { backgroundImage: `url(${R.images.comp7.gui.maps.icons.statistics.$dyn(n)})` },
         }),
-        (0, B.jsx)("div", { className: ue, children: (0, B.jsx)(S, { value: r }) }),
-        (0, B.jsx)(c, { text: l.$dyn("main"), classMix: ge }),
+        (0, B.jsx)("div", { className: ue, children: (0, B.jsx)(g, { value: c }) }),
+        (0, B.jsx)(u, { text: l.$dyn("main"), classMix: ge }),
         (0, B.jsx)(he, { className: xe }),
-        (0, B.jsx)(c, {
+        (0, B.jsx)(u, {
           text: String(l.$dyn("additional")),
           classMix: Se,
           binding: { additional: ve(n, o) },
@@ -462,7 +457,7 @@ var $ = e(v(), 1),
     slideUpIn: "Summary_slideUpIn_e35a9ef7",
   },
   Ne = y(({ className: e }) => {
-    const { model: a } = F(),
+    const { model: a } = z(),
       s = E();
     return (0, B.jsxs)("div", {
       className: (0, O.default)(je.base, e, s.computes.getAnimationStepStyles(je)),
@@ -474,7 +469,7 @@ var $ = e(v(), 1),
         (0, B.jsxs)("div", {
           className: je.cards,
           children: [
-            g(a.computes.summaryStatisticsLength(), (e) =>
+            S(a.computes.summaryStatisticsLength(), (e) =>
               (0, B.jsxs)(
                 $.Fragment,
                 {
@@ -502,28 +497,28 @@ var $ = e(v(), 1),
   Pe = "VehicleCard_value_60e6abc7",
   Te = "VehicleCard_icon_22839420",
   Ce = y(({ index: e }) => {
-    const { model: a } = F(),
-      { mediaSize: t } = n(),
-      r = E(),
+    const { model: a } = z(),
+      { mediaSize: s } = o(),
+      n = E(),
       c = a.computes.vehicleStatistic(e),
-      o = c
+      l = c
         ? ((e) =>
-            e >= s.Large
+            e >= i.Large
               ? R.images.gui.maps.shop.vehicles.c_360x270
-              : R.images.gui.maps.shop.vehicles.c_180x135)(t).$dyn(c.vehicleInfo.techName)
+              : R.images.gui.maps.shop.vehicles.c_180x135)(s).$dyn(c.vehicleInfo.techName)
         : ((e) =>
-            e >= s.Large
+            e >= i.Large
               ? R.images.comp7.gui.maps.icons.statistics.no_vehicle_360x270()
-              : R.images.comp7.gui.maps.icons.statistics.no_vehicle_180x135())(t),
-      l = d({
+              : R.images.comp7.gui.maps.icons.statistics.no_vehicle_180x135())(s),
+      d = r({
         from: { opacity: 0 },
         to: { opacity: 1 },
-        delay: (r.computes.stepDelay(Q.ShowVehicles) / 3) * e,
-        pause: !r.computes.isStepActive(Q.ShowVehicles),
+        delay: (n.computes.stepDelay(L.ShowVehicles) / 3) * e,
+        pause: !n.computes.isStepActive(L.ShowVehicles),
       });
-    return (0, B.jsxs)(i.div, {
+    return (0, B.jsxs)(t.div, {
       className: we,
-      style: l,
+      style: d,
       children: [
         (0, B.jsx)("div", { className: Ae, children: e + 1 }),
         (0, B.jsxs)("div", {
@@ -572,7 +567,7 @@ var $ = e(v(), 1),
             }),
           ],
         }),
-        (0, B.jsx)("div", { className: Te, style: { backgroundImage: `url(${o})` } }),
+        (0, B.jsx)("div", { className: Te, style: { backgroundImage: `url(${l})` } }),
       ],
     });
   }),
@@ -609,7 +604,7 @@ var $ = e(v(), 1),
         }),
         (0, B.jsx)("div", {
           className: Ue.cards,
-          children: g(3, (e) => (0, B.jsx)(Ce, { index: e }, e)),
+          children: S(3, (e) => (0, B.jsx)(Ce, { index: e }, e)),
         }),
         (0, B.jsx)("div", { className: Ue.vehiclePlace }),
       ],
@@ -643,18 +638,18 @@ var $ = e(v(), 1),
     slideUpIn: "App_slideUpIn_0",
   },
   $e = y(() => {
-    const { controls: e, model: a } = F(),
-      { mediaSize: s } = n(),
+    const { controls: e, model: a } = z(),
+      { mediaSize: s } = o(),
       i = E(),
-      { rank: t, season: r } = a.root.get();
+      { rank: t, season: n } = a.root.get();
     return (0, B.jsxs)("div", {
       className: (0, O.default)(
         We.base,
-        We[`base__${r}Season`],
+        We[`base__${n}Season`],
         i.computes.getAnimationStepStyles(We),
       ),
       children: [
-        (0, B.jsx)(Y, { className: We.header }),
+        (0, B.jsx)(J, { className: We.header }),
         (0, B.jsxs)("div", {
           className: We.content,
           children: [
@@ -667,16 +662,16 @@ var $ = e(v(), 1),
         }),
         (0, B.jsx)("div", {
           className: We.buttonWrapper,
-          children: (0, B.jsx)(x, {
-            theme: x.themes.primary,
-            size: V(s),
+          children: (0, B.jsx)(_, {
+            theme: _.themes.primary,
+            size: N(s),
             onClick: e.close,
             className: We.button,
-            children: String(R.strings.comp7_ext.seasonStatistics.button.$dyn(N(t))),
+            children: String(R.strings.comp7_ext.seasonStatistics.button.$dyn(w(t))),
           }),
         }),
         (0, B.jsx)(W, { className: We.close, onClick: e.close }),
       ],
     });
   });
-f((0, B.jsx)(o, { children: (0, B.jsx)(z, { children: (0, B.jsx)($e, {}) }) }));
+h((0, B.jsx)(n, { children: (0, B.jsx)(F, { children: (0, B.jsx)($e, {}) }) }));

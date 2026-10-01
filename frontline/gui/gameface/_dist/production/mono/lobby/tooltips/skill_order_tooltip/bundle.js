@@ -1,16 +1,16 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as e,
-  Si as r,
-  a,
-  fo as i,
-  ir as c,
-  nr as o,
-  or as t,
-  rr as l,
-  tr as n,
-  vn as d,
-  yo as p,
+  a as r,
+  do as a,
+  ir as i,
+  nr as c,
+  or as o,
+  rr as t,
+  tr as l,
+  vn as n,
+  vo as d,
+  xi as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { t as _ } from "../../chunks/divider.js";
@@ -22,11 +22,11 @@ var m = (function (s) {
       s
     );
   })({}),
-  x = s(i(), 1),
+  x = s(a(), 1),
   h = "CategoryIcon_ab8abcc7",
   j = "CategoryIcon_categoryIcon_1f02424f",
   u = "CategoryIcon_arrow_a1c14258",
-  v = r();
+  v = p();
 function g({ category: s, showArrow: e }) {
   return (0, v.jsxs)("div", {
     className: h,
@@ -42,26 +42,26 @@ function g({ category: s, showArrow: e }) {
   });
 }
 var k = "Item_39579287",
-  f = "Item_vehicleIconWrapper_9cbf60dd",
-  y = "Item_vehicleIcon_95c02596",
-  T = "Item_categories_4b12882e",
+  T = "Item_vehicleIconWrapper_9cbf60dd",
+  f = "Item_vehicleIcon_95c02596",
+  y = "Item_categories_4b12882e",
   b = {
-    [l]: "light_tank_x48x48",
-    [c]: "medium_tank_x48x48",
-    [o]: "heavy_tank_x48x48",
+    [t]: "light_tank_x48x48",
+    [i]: "medium_tank_x48x48",
+    [c]: "heavy_tank_x48x48",
     SPG: "spg_x48x48",
-    [n]: "tank_destroyer_x48x48",
+    [l]: "tank_destroyer_x48x48",
   };
 function N({ vehicleType: s, categories: e }) {
   return (0, v.jsxs)("div", {
     className: k,
     children: [
       (0, v.jsx)("div", {
-        className: f,
-        children: (0, v.jsx)(d, { className: y, path: `ui_kit.vehicle_type.x48x48.${b[s]}` }),
+        className: T,
+        children: (0, v.jsx)(n, { className: f, path: `ui_kit.vehicle_type.x48x48.${b[s]}` }),
       }),
       (0, v.jsx)("div", {
-        className: T,
+        className: y,
         children: e.map((s, r) =>
           (0, v.jsx)(
             x.Fragment,
@@ -80,17 +80,17 @@ var O = "SkillOrderTooltip_f3653ea",
   F = "SkillOrderTooltip_container_49c73b81",
   C = "SkillOrderTooltip_items_b8016673",
   $ = "SkillOrderTooltip_infoText_52a8e30b",
-  A = p.resolve("strings"),
+  A = d.resolve("strings"),
   E = [
-    [l, [m.Reconnaissance, m.Tactics, m.Firesupport]],
-    [c, [m.Tactics, m.Firesupport, m.Reconnaissance]],
-    [o, [m.Firesupport, m.Tactics, m.Reconnaissance]],
+    [t, [m.Reconnaissance, m.Tactics, m.Firesupport]],
+    [i, [m.Tactics, m.Firesupport, m.Reconnaissance]],
+    [c, [m.Firesupport, m.Tactics, m.Reconnaissance]],
     ["SPG", [m.Firesupport, m.Reconnaissance, m.Tactics]],
-    [n, [m.Reconnaissance, m.Firesupport, m.Tactics]],
+    [l, [m.Reconnaissance, m.Firesupport, m.Tactics]],
   ];
 function G() {
-  return (0, v.jsx)(a, {
-    children: (0, v.jsx)(a.Decorator, {
+  return (0, v.jsx)(r, {
+    children: (0, v.jsx)(r.Decorator, {
       children: (0, v.jsxs)("div", {
         className: O,
         children: [
@@ -124,4 +124,4 @@ function G() {
     }),
   });
 }
-t((0, v.jsx)(G, {}));
+o((0, v.jsx)(G, {}));

@@ -1,8 +1,8 @@
 import { r as e } from "./rolldown-runtime.js";
-import { An as a, Pa as l, Qa as s, Zt as i, ss as _, ws as c, z as n } from "./lib.js";
-import { i as r } from "./vendor.js";
-c();
-var o = e(r()),
+import { Ar as a, Cs as l, Na as s, Za as i, jr as _, os as c, vn as r } from "./lib.js";
+import { i as n } from "./vendor.js";
+l();
+var o = e(n()),
   t = {
     base: "VehicleRole_b05c9386",
     icon: "VehicleRole_icon_a3da323b",
@@ -25,23 +25,23 @@ var o = e(r()),
     blink: "VehicleRole_blink_741b56a9",
     slideUpIn: "VehicleRole_slideUpIn_741b56a9",
   },
-  h = e(l()),
+  h = e(s()),
   b = (function (e) {
     return ((e.x16 = "16x16"), (e.x24 = "24x24"), (e.x32 = "32x32"), (e.x48 = "32x32"), e);
   })({});
-function d({ role: e, size: l = "24x24", roleIconFolderPath: s, className: i, classNames: c }) {
-  const n = (function (e) {
+function d({ role: e, size: a = "24x24", roleIconFolderPath: l, className: s, classNames: i }) {
+  const _ = (function (e) {
     const a = e.split("_");
     return a[a.length - 1] || "";
-  })(_(e));
+  })(c(e));
   return (0, h.jsx)("div", {
-    className: (0, o.default)(t.base, t[`base__${l}`], i),
-    children: s
+    className: (0, o.default)(t.base, t[`base__${a}`], s),
+    children: l
       ? (0, h.jsx)("div", {
-          className: (0, o.default)(t.icon, c?.icon),
-          style: { backgroundImage: `url(${s?.$dyn(n)})` },
+          className: (0, o.default)(t.icon, i?.icon),
+          style: { backgroundImage: `url(${l?.$dyn(_)})` },
         })
-      : (0, h.jsx)(a, { roleKey: n, size: `x${l}`, classNames: { base: c?.base } }),
+      : (0, h.jsx)(r, { roleKey: _, size: `x${a}`, classNames: { base: i?.base } }),
   });
 }
 var m = {
@@ -76,60 +76,60 @@ var m = {
   })({}),
   p = { "24x24": b.x16, "48x48": b.x24, "64x64": b.x32, "96x96": b.x32 },
   f = (e) => R.images.comp7.gui.maps.icons.vehicleTypes.$dyn(`c_${e}`);
-function V({
+function N({
   name: e,
-  tier: a,
-  type: l,
-  role: c,
-  vehicleCD: r,
+  tier: l,
+  type: s,
+  role: r,
+  vehicleCD: n,
   size: t = "24x24",
   typeIconFolderPath: b = f(t),
   isPremium: x = !1,
-  className: V,
-  classNames: N,
+  className: N,
+  classNames: V,
   tooltipArgs: u,
   roleClassName: v,
   roleClassNames: I,
 }) {
-  const g = _(l),
+  const g = c(s),
     y = x ? `${g}_elite` : g,
     j = `url(${b?.$dyn(y)})`;
   return (0, h.jsxs)("div", {
-    className: (0, o.default)(m.base, m[`base__${t}`], x && m.base__elite, V),
+    className: (0, o.default)(m.base, m[`base__${t}`], x && m.base__elite, N),
     children: [
-      (0, h.jsx)(n, {
+      (0, h.jsx)(a, {
         args: u,
         isEnabled: void 0 !== u,
         children: (0, h.jsxs)("div", {
-          className: (0, o.default)(m.nameContainer, N?.nameContainer),
+          className: (0, o.default)(m.nameContainer, V?.nameContainer),
           children: [
-            (0, h.jsx)("div", { className: N?.level, children: s(a) }),
+            (0, h.jsx)("div", { className: V?.level, children: i(l) }),
             (0, h.jsx)("div", {
-              className: (0, o.default)(m.vehicleTypeContainer, N?.vehicleTypeContainer),
+              className: (0, o.default)(m.vehicleTypeContainer, V?.vehicleTypeContainer),
               children: (0, h.jsx)("div", {
-                className: (0, o.default)(m.vehicleType, N?.type),
+                className: (0, o.default)(m.vehicleType, V?.type),
                 style: { backgroundImage: j },
               }),
             }),
             (0, h.jsx)("div", {
-              className: (0, o.default)(m.shortName, N?.shortName),
+              className: (0, o.default)(m.shortName, V?.shortName),
               children: e,
             }),
           ],
         }),
       }),
-      c &&
-        (0, h.jsx)(i, {
+      r &&
+        (0, h.jsx)(_, {
           contentId: R.views.lobby.ranked.tooltips.RankedBattlesRolesTooltipView("resId"),
-          args: { vehicleCD: r },
+          args: { vehicleCD: n },
           ignoreShowDelay: !0,
-          isEnabled: void 0 !== r,
+          isEnabled: void 0 !== n,
           children: (0, h.jsx)("div", {
             className: (0, o.default)(m.roleContainer, I?.roleContainer),
-            children: (0, h.jsx)(d, { role: c, size: p[t], className: v, classNames: I }),
+            children: (0, h.jsx)(d, { role: r, size: p[t], className: v, classNames: I }),
           }),
         }),
     ],
   });
 }
-export { x as n, V as t };
+export { x as n, N as t };

@@ -1,25 +1,25 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as a,
-  H as s,
-  Ia as t,
-  Qa as o,
-  Si as n,
-  W as r,
-  Ya as i,
-  fo as l,
-  ho as c,
-  o as d,
-  or as p,
-  ur as m,
+  Fa as s,
+  H as t,
+  Ja as o,
+  W as n,
+  Za as r,
+  do as i,
+  mo as l,
+  o as c,
+  or as d,
+  ur as p,
+  xi as m,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { i as _, s as f } from "../../chunks/vendor.js";
 import { a as h, i as x, n as u, r as T, t as b } from "../../chunks/event_banner_state.js";
 import { t as j } from "../../chunks/divider.js";
-var v = e(l(), 1),
+var v = e(i(), 1),
   g = e(_(), 1),
-  [D, N] = m()(
+  [D, N] = p()(
     ({ observableModel: e }) => ({
       ...e.primitives([
         "state",
@@ -33,7 +33,7 @@ var v = e(l(), 1),
         "vehiclesLevel",
       ]),
     }),
-    t,
+    s,
   ),
   w = "DateInfo_timerWrapper_8a5d0eea",
   I = "DateInfo_text_200a86de",
@@ -43,19 +43,19 @@ var v = e(l(), 1),
   L = "DateInfo_curfewText_f40d11bf",
   k = "DateInfo_cooldownIconWrapper_dc30f0ca",
   W = "DateInfo_cooldownIcon_98fd90f",
-  S = n(),
+  S = m(),
   C = "dateRange",
   E = "cooldown",
-  H = "accent",
-  M = (e, s, t, o) => {
-    const n = i;
+  F = "accent",
+  H = (e, s, t, r) => {
+    const i = o;
     return {
       [E]: (0, S.jsx)(a, {
         className: (0, g.default)(L, I),
         path: "fl_tooltips.bannerTooltip.curfewTime",
-        params: { timer: (0, S.jsx)(r, { size: "x24x24", type: "cooldown", start: o }) },
+        params: { timer: (0, S.jsx)(n, { size: "x24x24", type: "cooldown", start: r }) },
       }),
-      [H]: (0, S.jsx)(r, { size: "x24x24", type: "accent", start: o }),
+      [F]: (0, S.jsx)(n, { size: "x24x24", type: "accent", start: r }),
       [C]: (0, S.jsxs)("div", {
         className: y,
         children: [
@@ -68,38 +68,38 @@ var v = e(l(), 1),
                 className: k,
                 children: (0, S.jsx)("div", { className: W }),
               }),
-              startDate: n(s, c.DayMonthFull),
-              endDate: n(t, c.DayMonthFull),
+              startDate: i(s, l.DayMonthFull),
+              endDate: i(t, l.DayMonthFull),
             },
           }),
         ],
       }),
     }[e];
   },
-  A = f(function ({ type: e }) {
+  M = f(function ({ type: e }) {
     const { model: a } = N(),
       s = a.eventStartDate.get(),
       t = a.eventEndDate.get(),
-      [n, r] = (0, v.useState)(t - Math.floor(new Date().getTime() / o));
+      [o, n] = (0, v.useState)(t - Math.floor(new Date().getTime() / r));
     return (
       (0, v.useEffect)(() => {
         const e = window.setTimeout(() => {
-          r(t - Math.floor(new Date().getTime() / o));
-        }, o);
+          n(t - Math.floor(new Date().getTime() / r));
+        }, r);
         return () => window.clearTimeout(e);
       }, [t]),
-      (0, S.jsx)("div", { className: w, children: M(e, s, t, n) })
+      (0, S.jsx)("div", { className: w, children: H(e, s, t, o) })
     );
   }),
-  F = {
+  A = {
     [h]: {
       isDisabled: !1,
       shouldShowPoints: !0,
       shouldShowTierData: !0,
-      dateInfoType: H,
+      dateInfoType: F,
       specificDescriptionKey: "fl_tooltips.bannerTooltip.descriptionActive",
     },
-    [x]: { isDisabled: !1, dateInfoType: H },
+    [x]: { isDisabled: !1, dateInfoType: F },
     [b]: { isDisabled: !0, dateInfoType: C },
     [T]: { isDisabled: !0, dateInfoType: E },
     [u]: {
@@ -116,39 +116,39 @@ function K({ children: e, isDisabled: a = !1 }) {
   return (0, S.jsx)("div", { className: z, style: { backgroundImage: `url(${s})` }, children: e });
 }
 var V = "ProgressPoints_a5cbe757",
-  Q = "ProgressPoints_progressionValuesWrapper_e7ef156c",
-  Y = "ProgressPoints_currentProgress_25705c74",
+  J = "ProgressPoints_progressionValuesWrapper_e7ef156c",
+  Z = "ProgressPoints_currentProgress_25705c74",
   $ = "ProgressPoints_progressIcon_9b37bf52",
   q = "ProgressPoints_description_281855c9",
   G = f(function () {
     const { model: e } = N(),
-      t = e.maxPoints.get(),
+      s = e.maxPoints.get(),
       o = e.curPoints.get();
-    return 0 === t && 0 === o
+    return 0 === s && 0 === o
       ? null
       : (0, S.jsxs)("div", {
           className: V,
           children: [
             (0, S.jsxs)("div", {
-              className: Q,
+              className: J,
               children: [
                 (0, S.jsx)(a, {
                   className: q,
                   path: "fl_tooltips.bannerTooltip.progress",
-                  params: { value: (0, S.jsx)("div", { className: Y, children: o }), maxValue: t },
+                  params: { value: (0, S.jsx)("div", { className: Z, children: o }), maxValue: s },
                 }),
                 (0, S.jsx)("div", { className: $ }),
               ],
             }),
-            (0, S.jsx)(s, { size: "small", value: o, maxValue: t }),
+            (0, S.jsx)(t, { size: "small", value: o, maxValue: s }),
           ],
         });
   }),
-  J = "BannerTooltip_67cf8ae2",
-  O = "BannerTooltip_contentWrapper_69bfdee9",
+  O = "BannerTooltip_67cf8ae2",
+  Q = "BannerTooltip_contentWrapper_69bfdee9",
   U = "BannerTooltip_title_eb5c95ad",
   X = "BannerTooltip_maxTier_baec7baf",
-  Z = "BannerTooltip_rewardText_9b198a9a",
+  Y = "BannerTooltip_rewardText_9b198a9a",
   ee = "BannerTooltip_warningText_3870055d",
   ae = "BannerTooltip_descriptionText_714dbfec",
   se = "BannerTooltip_performanceIcon_4b05a3c8",
@@ -164,16 +164,16 @@ var V = "ProgressPoints_a5cbe757",
       {
         isDisabled: i,
         shouldShowPoints: l,
-        shouldHideCallToAction: c,
+        shouldHideCallToAction: d,
         shouldShowTierData: p,
         specificDescriptionKey: m,
         dateInfoType: _,
-      } = F[s.get()],
+      } = A[s.get()],
       f = s.get() !== u,
       h = m || "fl_tooltips.bannerTooltip.description";
-    return (0, S.jsx)(d, {
+    return (0, S.jsx)(c, {
       children: (0, S.jsxs)("div", {
-        className: J,
+        className: O,
         children: [
           (0, S.jsx)(K, {
             isDisabled: i,
@@ -184,11 +184,11 @@ var V = "ProgressPoints_a5cbe757",
             }),
           }),
           (0, S.jsxs)("div", {
-            className: O,
+            className: Q,
             children: [
               l && (0, S.jsx)(G, {}),
               (0, S.jsx)(a, { path: h, params: { vehicleTier: r.get() }, className: ae }),
-              !c &&
+              !d &&
                 (0, S.jsx)(a, {
                   className: le,
                   path: "fl_tooltips.bannerTooltip.mode",
@@ -234,16 +234,16 @@ var V = "ProgressPoints_a5cbe757",
                       path: "fl_tooltips.bannerTooltip.rewardInfo",
                       params: { value: t.get() },
                       split: !0,
-                      className: Z,
+                      className: Y,
                     }),
                   ],
                 }),
               ],
             }),
           _ &&
-            (0, S.jsxs)(S.Fragment, { children: [(0, S.jsx)(j, {}), (0, S.jsx)(A, { type: _ })] }),
+            (0, S.jsxs)(S.Fragment, { children: [(0, S.jsx)(j, {}), (0, S.jsx)(M, { type: _ })] }),
         ],
       }),
     });
   });
-p((0, S.jsx)(D, { children: (0, S.jsx)(ce, {}) }));
+d((0, S.jsx)(D, { children: (0, S.jsx)(ce, {}) }));

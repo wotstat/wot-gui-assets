@@ -1,12 +1,12 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
-import { Wn as s, _r as t, fr as o, vi as a, ya as r, yi as l } from "../../chunks/lib.js";
+import { Wn as s, _i as t, _r as o, fr as a, va as r, vi as l } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { l as n, u as i } from "../../chunks/vendor.js";
 import { a as p, i as m, t as u } from "../../chunks/readResource.js";
 import { t as c } from "../../chunks/fun_random_quest_card_model.js";
 import { t as d } from "../../chunks/constants.js";
 import { n as g, t as _ } from "../../chunks/extended_tooltip_decorator.js";
-var [v, h] = t("FunRandomProgressionQuestTooltipViewModel")(
+var [v, h] = o("FunRandomProgressionQuestTooltipViewModel")(
     ({ observableModel: e }) => ({ quest: e.object("quest"), tooltip: e.object("tooltip") }),
     r,
   ),
@@ -18,15 +18,15 @@ var [v, h] = t("FunRandomProgressionQuestTooltipViewModel")(
     base__completed: "Point_base__completed_d8b7e333",
   },
   b = l(),
-  f = ({ reason: e, text: t, valueTemplate: o, value: r, completed: l = !1 }) => {
-    const { upscale: n } = a();
+  f = ({ reason: e, text: o, valueTemplate: a, value: r, completed: l = !1 }) => {
+    const { upscale: n } = t();
     return (0, b.jsx)(s, {
-      text: t,
+      text: o,
       className: (0, x.default)(j.base, l && j.base__completed, n && j.base__upscaled),
       params: {
         reason: (0, b.jsx)("span", { className: j.reason, children: e }),
-        value: o
-          ? (0, b.jsx)(s, { text: o, className: j.score, params: { value: r }, upgradeLegacy: !0 })
+        value: a
+          ? (0, b.jsx)(s, { text: a, className: j.score, params: { value: r }, upgradeLegacy: !0 })
           : (0, b.jsx)("span", { className: j.score, children: r }),
       },
     });
@@ -144,4 +144,4 @@ var [v, h] = t("FunRandomProgressionQuestTooltipViewModel")(
       ],
     });
   });
-o((0, b.jsx)(v, { children: (0, b.jsx)(y, {}) }));
+a((0, b.jsx)(v, { children: (0, b.jsx)(y, {}) }));

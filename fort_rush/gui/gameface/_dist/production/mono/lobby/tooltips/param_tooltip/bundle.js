@@ -1,11 +1,11 @@
 import {
   t as e,
-  dI as s,
-  ba as t,
+  dH as s,
+  b9 as t,
   l as r,
   n as a,
-  ap as n,
-  cn as o,
+  ap as o,
+  cm as n,
   ak as c,
 } from "../../chunks/lib.js";
 import { N as d, j as i } from "../../chunks/vendor.js";
@@ -57,18 +57,18 @@ const l = "Index_608c79e6",
         }),
       },
     };
-  }, n),
+  }, o),
   v = Object.fromEntries(
     Object.entries(Object.assign({ "./fort_rush_score/index.tsx": h })).map(([e, s]) => [
       e.match(/\/([^/]+)\/index\.tsx/)[1],
       { Component: s.default },
     ]),
   );
-const I = d(function () {
+const O = d(function () {
   const { model: e } = g(),
     t = e.type.get(),
     r = v[t]?.Component;
   if (r) return i.jsx(s, { children: i.jsx(r, {}) });
   console.error(`Unknown tooltip type: ${t}`);
 });
-c(new o().add(y).render(i.jsx(I, {})));
+c(new n().add(y).render(i.jsx(O, {})));

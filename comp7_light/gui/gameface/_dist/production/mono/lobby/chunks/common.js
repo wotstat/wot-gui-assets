@@ -1,4 +1,4 @@
-import { Ta as t, Yi as e, ea as o } from "./lib.js";
+import { $i as t, Ji as o, wa as e } from "./lib.js";
 var s = {
   overview: "overview",
   teamsStatistics: "teamScore",
@@ -9,15 +9,15 @@ Object.values(s);
 function i() {
   return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 9);
 }
-function a(t) {
+function n(e) {
   return function (s) {
-    return t(e(() => o(s)));
+    return e(o(() => t(s)));
   };
 }
-function n(t, e) {
-  return 0 === t && "" === e;
+function r(t, o) {
+  return 0 === t && "" === o;
 }
-function r(t) {
+function a(t) {
   return t.personal && void 0 !== t.vehicle;
 }
 var c = Object.values(s),
@@ -27,8 +27,8 @@ var c = Object.values(s),
     [s.progression]: "/comp7Light/postBattleResults/comp7Light/missionProgress",
     [s.financialReport]: "/comp7Light/postBattleResults/comp7Light/financialReport",
   };
-function l(e) {
-  const o = c.find((t) => p[t] === e);
-  return (t(void 0 !== o, `The post battle screen is not found by path ${e}`), o);
+function l(t) {
+  const o = c.find((o) => p[o] === t);
+  return (e(void 0 !== o, `The post battle screen is not found by path ${t}`), o);
 }
-export { p as a, r as i, a as n, i as o, n as r, s, l as t };
+export { p as a, a as i, n, i as o, r, s, l as t };

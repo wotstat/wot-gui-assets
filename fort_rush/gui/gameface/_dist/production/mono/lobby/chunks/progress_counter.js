@@ -1,5 +1,5 @@
 import { j as r, f as s } from "./vendor.js";
-import { t as e, ba as t } from "./lib.js";
+import { t as e, b9 as t } from "./lib.js";
 const a = "ProgressCounter_counter_1835fe7e",
   o = "ProgressCounter_current_2fc9248d",
   n = e.resolve("strings");

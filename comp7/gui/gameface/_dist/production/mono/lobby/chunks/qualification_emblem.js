@@ -1,5 +1,5 @@
 import { r as a } from "./rolldown-runtime.js";
-import { Pa as s } from "./lib.js";
+import { Na as s } from "./lib.js";
 import { i } from "./vendor.js";
 import { n as m, r } from "./rank_emblem.js";
 var e = a(i()),

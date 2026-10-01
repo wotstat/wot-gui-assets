@@ -15,8 +15,8 @@ import {
   h as _,
   m as f,
   j as b,
-  k as v,
-  l as g,
+  k as g,
+  l as v,
   n as h,
   o as p,
   p as y,
@@ -69,8 +69,8 @@ import {
   ad as _e,
   ae as fe,
   af as be,
-  ag as ve,
-  ah as ge,
+  ag as ge,
+  ah as ve,
   ai as he,
   aj as pe,
   ak as ye,
@@ -292,7 +292,7 @@ function ua(e) {
   return {
     isGeneralInfo: e.isGeneralInfo,
     detailedStatistics: f(e.detailedStatistics, ma),
-    vehicle: e.vehicle.longName ? { ...v(e.vehicle), longName: e.vehicle.longName } : null,
+    vehicle: e.vehicle.longName ? { ...g(e.vehicle), longName: e.vehicle.longName } : null,
   };
 }
 function _a(e) {
@@ -325,16 +325,16 @@ const fa = {
   damageBlockedByArmor: { value: 0, count: 0 },
 };
 const ba = "allies",
-  va = "enemies",
-  ga = "personal",
+  ga = "enemies",
+  va = "personal",
   ha = "alien";
 function pa(e, a, s) {
-  return 0 === s ? null : a === s && e === ba ? ga : ha;
+  return 0 === s ? null : a === s && e === ba ? va : ha;
 }
 function ya({ anonymizer: e, personal: a, platoonType: s }) {
   return !(a || !e) && (s === ha || null === s);
 }
-const [xa, Na] = g()(
+const [xa, Na] = v()(
   (e) => {
     const { observableModel: a, cleanup: s } = e,
       t = {
@@ -746,14 +746,14 @@ const rs = "TableHeader_row_a81d3e65",
     [_s]: "library.eyebrow",
     [fs]: "library.gear_with_gap",
   },
-  vs = Se.createContext(null);
-function gs({ iconsConfig: e, children: a }) {
+  gs = Se.createContext(null);
+function vs({ iconsConfig: e, children: a }) {
   const s = Se.useMemo(() => ({ iconsConfig: { ...bs, ...(e || {}) } }), [e]);
-  return Ie.jsx(vs.Provider, { value: s, children: a });
+  return Ie.jsx(gs.Provider, { value: s, children: a });
 }
 const hs = function ({ data: e, config: a, className: s }) {
     const t = k();
-    return Ie.jsx(gs, {
+    return Ie.jsx(vs, {
       children: Ie.jsx(P, {
         data: e,
         columns: a,
@@ -790,7 +790,7 @@ const ys = "HeaderCell_cellWithValue_78949e6d",
   Is = "HeaderCell_text_35220206";
 function Cs({ info: e, name: a, className: s }) {
   const { iconsConfig: t } = (function () {
-      const e = Se.useContext(vs);
+      const e = Se.useContext(gs);
       if (null === e)
         throw new Error(
           "You can use the personal efficiency hooks only with the PersonalEfficiency widget component",
@@ -1191,8 +1191,8 @@ const Ls = "PersonalEfficiency_messagesPanel_d1b1fa0b",
   _t = "Header_vehicleImageWrapper_f07116f5",
   ft = "Header_info_63ade36e",
   bt = "Header_accountInfo_e1497c3e",
-  vt = "Header_accountInfoGap_50a55407",
-  gt = "Header_accountName_6a8dc850",
+  gt = "Header_accountInfoGap_50a55407",
+  vt = "Header_accountName_6a8dc850",
   ht = "Header_clanAbbreviation_24ad710",
   pt = "Header_anonymizerIcon_b6806a1a",
   yt = Ae(function ({ team: e, account: a, vehicles: s, squadIndex: t, personal: l }) {
@@ -1230,12 +1230,12 @@ const Ls = "PersonalEfficiency_messagesPanel_d1b1fa0b",
               children: [
                 "" !== a.badge &&
                   Ie.jsx(ee.Badge, {
-                    className: vt,
+                    className: gt,
                     size: ee.Badge.sizes.x48x48,
                     badgeId: a.badge,
                   }),
                 Ie.jsx(ee.Name, {
-                  className: Te(gt, vt),
+                  className: Te(vt, gt),
                   children: Ie.jsx(ae, { text: _ ? a.fakeUsername : a.username }),
                 }),
                 "" !== a.clanAbbreviation &&
@@ -1249,12 +1249,12 @@ const Ls = "PersonalEfficiency_messagesPanel_d1b1fa0b",
                     }),
                   }),
                 0 !== a.igrType &&
-                  Ie.jsx(ee.IgrIcon, { size: ee.IgrIcon.sizes.x64x28, className: vt }),
+                  Ie.jsx(ee.IgrIcon, { size: ee.IgrIcon.sizes.x64x28, className: gt }),
                 "" !== a.suffixBadge &&
                   Ie.jsx(ee.Stripe, {
                     size: ee.Stripe.sizes.regular,
                     badgeId: a.suffixBadge,
-                    className: vt,
+                    className: gt,
                   }),
                 a.anonymizer &&
                   Ie.jsx(ee.AnonymizerIcon, {
@@ -1501,7 +1501,7 @@ const Jt = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   sl = "EfficiencyDetails_closeIcon_8d81da90",
   tl = "EfficiencyDetails_statistics_30a81815",
   ll = S("EfficiencyDetails", "EfficiencyDetails_efficiencyDetails_db8069eb", {
-    variants: { team: { [ba]: Jt, [va]: Qt } },
+    variants: { team: { [ba]: Jt, [ga]: Qt } },
   }),
   rl = Ae(function ({ team: e, className: s }) {
     const { model: t, controls: l } = Na(),
@@ -1583,8 +1583,8 @@ const Jt = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   _l = "AccountInfoCell_accountName_758104df",
   fl = "AccountInfoCell_clanAbbreviation_99f1cc86",
   bl = "AccountInfoCell_badge_b101914f",
-  vl = "AccountInfoCell_anonymizerIcon_a1d51ca4",
-  gl = "AccountInfoCell_igrIcon_158694e7",
+  gl = "AccountInfoCell_anonymizerIcon_a1d51ca4",
+  vl = "AccountInfoCell_igrIcon_158694e7",
   hl = "AccountInfoCell_stripe_fefba7b2",
   pl = Ae(function ({ account: e, team: a, platoon: s, className: t, classNames: l, ...i }) {
     const { model: n } = Na(),
@@ -1619,7 +1619,7 @@ const Jt = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
             }),
           }),
         0 !== e.igrType &&
-          Ie.jsx(ee.IgrIcon, { size: ee.IgrIcon.sizes.x34x16, className: Te(gl, l?.igrIcon) }),
+          Ie.jsx(ee.IgrIcon, { size: ee.IgrIcon.sizes.x34x16, className: Te(vl, l?.igrIcon) }),
         "" !== e.suffixBadge &&
           Ie.jsx(ee.Stripe, {
             size: ee.Stripe.sizes.default,
@@ -1630,7 +1630,7 @@ const Jt = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
         e.anonymizer &&
           Ie.jsx(ee.AnonymizerIcon, {
             size: ee.AnonymizerIcon.sizes.x24x24,
-            className: Te(vl, l?.anonymizerIcon),
+            className: Te(gl, l?.anonymizerIcon),
           }),
       ],
     });
@@ -1734,7 +1734,7 @@ const Kl = {
     platoonText__personal: "PlatoonCell_platoonText__personal_d021db4c",
     platoonText__alien: "PlatoonCell_platoonText__alien_9767e814",
   },
-  Fl = { [ha]: "library.platoon_indicator_gray", [ga]: "library.platoon_indicator_orange" },
+  Fl = { [ha]: "library.platoon_indicator_gray", [va]: "library.platoon_indicator_orange" },
   Gl = Ae(function ({ platoon: e, team: a }) {
     const { model: s } = Na(),
       t = s.computes.personalInfo(),
@@ -1925,15 +1925,15 @@ const ur = "SelectedRowTail_selectedRowTail_8abda9c8",
   _r = "SelectedRowTail_selectedRowTail__hasWidth_6cb87e09",
   fr = "SelectedRowTail_selectedRowVerticalLine_64ed87",
   br = "SelectedRowTail_selectedRowTriangle_6f2b6bb3",
-  vr = "SelectedRowTail_rowDivider_8fbc881",
-  gr = "SelectedRowTail_rowDivider__bottom_4111cb99",
+  gr = "SelectedRowTail_rowDivider_8fbc881",
+  vr = "SelectedRowTail_rowDivider__bottom_4111cb99",
   hr = "SelectedRowTail_rowDividerImage_d11f29d5";
 function pr({ className: e, short: a }) {
   return Ie.jsxs("div", {
     className: Te(ur, !a && _r, e),
     children: [
-      Ie.jsx(Ys, { classNames: { base: vr, image: hr } }),
-      Ie.jsx(Ys, { classNames: { base: Te(vr, gr), image: hr } }),
+      Ie.jsx(Ys, { classNames: { base: gr, image: hr } }),
+      Ie.jsx(Ys, { classNames: { base: Te(gr, vr), image: hr } }),
       Ie.jsx("div", { className: fr }),
       Ie.jsx("div", { className: br }),
     ],
@@ -1959,11 +1959,13 @@ const yr = "personal",
       m = (() => {
         if (void 0 === d) return Nr;
         if (d.account.username === e.original.account.username) return yr;
-        return pa(s, d.squadIndex, e.original.squadIndex) === ga ? xr : Nr;
+        return pa(s, d.squadIndex, e.original.squadIndex) === va ? xr : Nr;
       })(),
       u = e.original.account.teamKiller,
       _ = o?.team === s && o.username === e.original.account.username,
-      b = ne({ args: { databaseID: e.original.databaseId } });
+      b = ne({
+        args: Se.useMemo(() => ({ databaseID: e.original.databaseId }), [e.original.databaseId]),
+      });
     return Ie.jsxs(E.Row, {
       ...(m !== yr && b),
       onMouseEnter: (e) =>
@@ -2064,7 +2066,7 @@ function wr({ team: e }) {
     })
   );
 }
-const Sr = S("TeamEfficiencyTable", Zl, { variants: { team: { [ba]: ql, [va]: Ml } } }),
+const Sr = S("TeamEfficiencyTable", Zl, { variants: { team: { [ba]: ql, [ga]: Ml } } }),
   Rr = {
     [la.Squad]: il,
     [la.Player]: nl,
@@ -2143,10 +2145,10 @@ const Sr = S("TeamEfficiencyTable", Zl, { variants: { team: { [ba]: ql, [va]: Ml
       children: Ie.jsxs("div", {
         className: Cr,
         children: [
-          Ie.jsx(rl, { team: va, className: Te(Er, l?.team === va && Br) }),
-          Ie.jsx(Ir, { data: s, team: ba, className: Te(Dr, l?.team === va && Tr) }),
+          Ie.jsx(rl, { team: ga, className: Te(Er, l?.team === ga && Br) }),
+          Ie.jsx(Ir, { data: s, team: ba, className: Te(Dr, l?.team === ga && Tr) }),
           Ie.jsx(rl, { team: ba, className: Te(Er, l?.team === ba && Br) }),
-          Ie.jsx(Ir, { data: t, team: va, className: Te(Dr, l?.team === ba && Tr) }),
+          Ie.jsx(Ir, { data: t, team: ga, className: Te(Dr, l?.team === ba && Tr) }),
         ],
       }),
     });
@@ -2209,16 +2211,16 @@ const Hr = Ae(function () {
         style: i,
         children: Ie.jsx(Or, {
           className: !r.has(Ke) && Ar.navigation__disabled,
-          children: Ie.jsxs(ve.Switcher, {
+          children: Ie.jsxs(ge.Switcher, {
             className: Ar.switcher,
             children: [
-              Ie.jsx(ve.Tab, {
+              Ie.jsx(ge.Tab, {
                 tabId: Ye.overview,
                 children: n.toUpperCase(
                   e.readOrEmpty("battle_results.battleResult.navigation.battleResults"),
                 ),
               }),
-              Ie.jsx(ve.Tab, {
+              Ie.jsx(ge.Tab, {
                 tabId: Ye.teamScore,
                 children: n.toUpperCase(
                   e.readOrEmpty("battle_results.battleResult.navigation.teamEfficiency"),
@@ -2246,12 +2248,12 @@ const Hr = Ae(function () {
   });
 });
 function Lr() {
-  const e = ge(),
+  const e = ve(),
     { size: a } = I(
       { size: he.small },
       { large: { size: he.medium }, extraLarge: { size: he.large } },
     );
-  return Ie.jsx(ve, {
+  return Ie.jsx(ge, {
     theme: "primary",
     size: a,
     active: Qe(e.location),

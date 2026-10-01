@@ -1,12 +1,12 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { $ as e, Pa as i, Uo as t, _i as o, fi as l, ws as a } from "../../chunks/lib.js";
+import { Cs as e, Ho as i, Mr as t, Na as o, _i as l, fi as a } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { a as c, i as d } from "../../chunks/vendor.js";
-/* empty css                  */ import { t as r } from "../../chunks/tooltip_decorator.js";
+import { a as c, i as r } from "../../chunks/vendor.js";
+/* empty css                  */ import { t as d } from "../../chunks/tooltip_decorator.js";
 import { t as p } from "../../chunks/tooltips.module.js";
-a();
-var n = s(d(), 1),
-  [m, _] = o()(({ observableModel: s }) => ({ root: s.object() }), t),
+e();
+var n = s(r(), 1),
+  [m, _] = l()(({ observableModel: s }) => ({ root: s.object() }), i),
   h = "App_5750b50d",
   j = "App_image_44f419b9",
   x = "App_section_33f04f1b",
@@ -16,27 +16,27 @@ var n = s(d(), 1),
   f = "App_divider__top_6b53b19b",
   g = "App_title_83b851ff",
   A = "App_text_281c93b4",
-  y = "App_subtitle_915d9cd5",
-  N = "App_howToReceive_5cbf6889",
+  N = "App_subtitle_915d9cd5",
+  y = "App_howToReceive_5cbf6889",
   k = "App_paragraph_5142910c",
-  T = s(i(), 1),
+  T = s(o(), 1),
   $ = c(() => {
     const { model: s } = _(),
-      { styleId: i, vehicles: t } = s.root.get();
+      { styleId: e, vehicles: i } = s.root.get();
     return (0, T.jsxs)("div", {
       className: h,
       children: [
         (0, T.jsx)("div", {
           className: x,
-          children: (0, T.jsx)(e, {
-            text: String(R.strings.comp7_ext.style3dTooltip.$num(i)),
+          children: (0, T.jsx)(t, {
+            text: String(R.strings.comp7_ext.style3dTooltip.$num(e)),
             classMix: g,
           }),
         }),
         (0, T.jsx)("div", {
           className: j,
           style: {
-            backgroundImage: `url(${R.images.comp7.gui.maps.icons.rewards.$dyn(`style3d_${i}`)})`,
+            backgroundImage: `url(${R.images.comp7.gui.maps.icons.rewards.$dyn(`style3d_${e}`)})`,
           },
         }),
         (0, T.jsxs)("div", {
@@ -47,12 +47,12 @@ var n = s(d(), 1),
               children: R.strings.comp7_ext.style3dTooltip.description(),
             }),
             (0, T.jsx)("div", {
-              className: (0, n.default)(y, N),
+              className: (0, n.default)(N, y),
               children: R.strings.comp7_ext.style3dTooltip.howToReceive(),
             }),
             (0, T.jsx)("div", {
               className: k,
-              children: `${R.strings.comp7_ext.style3dTooltip.secondaryDescription.$num(i)}`,
+              children: `${R.strings.comp7_ext.style3dTooltip.secondaryDescription.$num(e)}`,
             }),
           ],
         }),
@@ -61,13 +61,13 @@ var n = s(d(), 1),
           children: [
             (0, T.jsx)("div", { className: (0, n.default)(p.divider, v, f) }),
             (0, T.jsx)("div", {
-              className: y,
+              className: N,
               children: R.strings.comp7_ext.style3dTooltip.suitableVehicles(),
             }),
-            (0, T.jsx)("div", { className: A, children: t }),
+            (0, T.jsx)("div", { className: A, children: i }),
           ],
         }),
       ],
     });
   });
-l((0, T.jsx)(m, { children: (0, T.jsx)(r, { children: (0, T.jsx)($, {}) }) }));
+a((0, T.jsx)(m, { children: (0, T.jsx)(d, { children: (0, T.jsx)($, {}) }) }));

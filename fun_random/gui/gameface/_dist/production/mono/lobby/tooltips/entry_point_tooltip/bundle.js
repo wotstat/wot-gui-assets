@@ -1,14 +1,14 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Bt as t,
-  Na as s,
-  Qa as a,
-  Wn as i,
+  Ma as s,
+  Wn as a,
+  Za as i,
   _r as n,
   fr as r,
   g as o,
   o as c,
-  yi as p,
+  vi as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { l as m, u as d } from "../../chunks/vendor.js";
@@ -43,8 +43,8 @@ var f = e(m(), 1),
     inactiveDescription: "App_inactiveDescription_a9335078",
   },
   j = p(),
-  u = R.strings.fun_random.entryPoint.tooltip.state,
-  v = d(() => {
+  v = R.strings.fun_random.entryPoint.tooltip.state,
+  u = d(() => {
     const e = s,
       { model: n } = x(),
       { modeState: r, startTime: c, leftTime: p, endTime: m } = n.root.get();
@@ -52,7 +52,7 @@ var f = e(m(), 1),
       case "finished":
         return (0, j.jsxs)(j.Fragment, {
           children: [
-            (0, j.jsx)("div", { children: u.finished.title() }),
+            (0, j.jsx)("div", { children: v.finished.title() }),
             (0, j.jsxs)("div", {
               className: b.inactiveTimer,
               children: [
@@ -64,15 +64,15 @@ var f = e(m(), 1),
                 }),
                 (0, j.jsx)("div", {
                   className: b.inactiveDescription,
-                  children: u.finished.description(),
+                  children: v.finished.description(),
                 }),
               ],
             }),
           ],
         });
       case "inactive":
-        return (0, j.jsx)(i, {
-          text: u.ceasefire(),
+        return (0, j.jsx)(a, {
+          text: v.ceasefire(),
           params: {
             timer: (0, j.jsx)(o, {
               start: p,
@@ -85,7 +85,7 @@ var f = e(m(), 1),
       case "announce":
         return (0, j.jsxs)(j.Fragment, {
           children: [
-            (0, j.jsx)("div", { children: u.announce() }),
+            (0, j.jsx)("div", { children: v.announce() }),
             (0, j.jsxs)("div", {
               className: b.inactiveTimer,
               children: [
@@ -95,18 +95,18 @@ var f = e(m(), 1),
                   width: 16,
                   height: 16,
                 }),
-                (0, j.jsx)(i, {
+                (0, j.jsx)(a, {
                   className: b.inactiveDescription,
                   text: R.strings.user_missions.common.daterange.divider(),
-                  params: { startDate: e(c, a.DayMonthFull), endDate: e(m, a.DayMonthFull) },
+                  params: { startDate: e(c, i.DayMonthFull), endDate: e(m, i.DayMonthFull) },
                 }),
               ],
             }),
           ],
         });
       default:
-        return (0, j.jsx)(i, {
-          text: u.progress(),
+        return (0, j.jsx)(a, {
+          text: v.progress(),
           params: {
             timer: (0, j.jsx)(o, {
               start: p,
@@ -120,11 +120,11 @@ var f = e(m(), 1),
   }),
   g = d(() => {
     const { model: e } = x(),
-      { assetsPointer: s, modeState: a } = e.root.get(),
+      { assetsPointer: s, modeState: i } = e.root.get(),
       n = e.performance.get(),
       { dynamicTexts: r } = l(null, { assetsPointer: s });
     return (0, j.jsxs)("div", {
-      className: (0, f.default)(b.base, b[`base__${a}`], b[`base__${n.performanceRisk}`]),
+      className: (0, f.default)(b.base, b[`base__${i}`], b[`base__${n.performanceRisk}`]),
       children: [
         (0, j.jsx)("img", {
           className: b.topContentBg,
@@ -138,8 +138,8 @@ var f = e(m(), 1),
         (0, j.jsxs)("div", {
           className: b.bottomContent,
           children: [
-            (0, j.jsx)(i, { text: r.entryPoint.tooltip.description(), className: b.paragraph }),
-            (0, j.jsx)(i, {
+            (0, j.jsx)(a, { text: r.entryPoint.tooltip.description(), className: b.paragraph }),
+            (0, j.jsx)(a, {
               text: R.strings.fun_random.entryPoint.tooltip.modeDescription(),
               params: {
                 mode: (0, j.jsx)("div", {
@@ -172,7 +172,7 @@ var f = e(m(), 1),
                 ],
               }),
             (0, j.jsx)("div", { className: b.divider }),
-            (0, j.jsx)("div", { className: b.timerContainer, children: (0, j.jsx)(v, {}) }),
+            (0, j.jsx)("div", { className: b.timerContainer, children: (0, j.jsx)(u, {}) }),
           ],
         }),
       ],

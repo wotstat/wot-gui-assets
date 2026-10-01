@@ -1,17 +1,17 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
-import { Cr as i, Gr as o, Kr as e, Vo as t, sa as r } from "../../chunks/lib.js";
+import { Bo as i, Cr as o, Gr as e, Kr as t, oa as r } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { o as l } from "../../chunks/vendor.js";
-t();
+i();
 var n = s(l()),
   p = "TooltipDecorator_decorator_81525906",
   a = "TooltipDecorator_decoratorInner_ed88e863",
   c = s(r());
-function d({ children: s, classNames: o }) {
-  return (0, c.jsx)(i, {
+function d({ children: s, classNames: i }) {
+  return (0, c.jsx)(o, {
     children: (0, c.jsx)("div", {
-      className: (0, n.default)(p, o?.decoratorInner),
-      children: (0, c.jsx)("div", { className: (0, n.default)(a, o?.decoratorInner), children: s }),
+      className: (0, n.default)(p, i?.decoratorInner),
+      children: (0, c.jsx)("div", { className: (0, n.default)(a, i?.decoratorInner), children: s }),
     }),
   });
 }
@@ -63,4 +63,4 @@ var _ = "App_c6f34e00",
         }),
       ],
     });
-e((0, c.jsx)(o, { children: (0, c.jsx)(d, { children: (0, c.jsx)(v, {}) }) }));
+t((0, c.jsx)(e, { children: (0, c.jsx)(d, { children: (0, c.jsx)(v, {}) }) }));

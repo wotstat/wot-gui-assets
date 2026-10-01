@@ -1,7 +1,7 @@
 import { r as a } from "./rolldown-runtime.js";
-import { Pa as e, ws as t } from "./lib.js";
+import { Cs as e, Na as t } from "./lib.js";
 import { i } from "./vendor.js";
-t();
+e();
 var l = a(i()),
   n = {
     base: "QualificationBattleItem_4eb37328",
@@ -25,7 +25,7 @@ var l = a(i()),
     highlightAppearance: "QualificationBattleItem_highlightAppearance_563a6b44",
     slideUpIn: "QualificationBattleItem_slideUpIn_563a6b44",
   },
-  _ = a(e()),
+  _ = a(t()),
   s = { notPlayed: "notFinished", inProgress: "notFinished", victory: "victory", defeat: "defeat" };
 function o(a, e) {
   return "x30" === e

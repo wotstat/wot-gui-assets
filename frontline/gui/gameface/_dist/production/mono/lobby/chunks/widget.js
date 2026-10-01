@@ -2,25 +2,25 @@ import { r as e } from "./rolldown-runtime.js";
 import {
   G as s,
   Hi as t,
-  Si as a,
-  Ui as o,
+  Oi as a,
+  Vi as o,
   _r as n,
   ao as r,
-  dr as i,
-  fo as c,
+  do as i,
+  dr as c,
   i as l,
   io as d,
-  ki as m,
+  lo as m,
   n as p,
   no as _,
   oo as u,
   r as g,
   ro as h,
-  so as f,
   t as x,
-  uo as b,
-  ur as T,
-  yo as v,
+  to as b,
+  ur as f,
+  vo as v,
+  xi as T,
 } from "./lib.js";
 import { s as N } from "./vendor.js";
 var w = (function (e) {
@@ -28,16 +28,16 @@ var w = (function (e) {
 })({});
 (w.News, w.News, w.ShopPromo, Math.floor(Date.now() / 1e3));
 var y = {
-    getter: i({
+    getter: c({
       type: w.News,
       description:
         "Watch very interesting video, with very long, very very interesting and meaningful description!",
       isVideo: !0,
       image: "https://pie-webbrg-cdn-stg.wgcdn.co/dcont/fb/image/whats_new_475x230_2.png",
     }),
-    controls: () => o(t("onClick", "onClose")),
+    controls: () => t(o("onClick", "onClose")),
   },
-  [j, C] = T("TeaserModel")(
+  [j, C] = f("TeaserModel")(
     ({ observableModel: e }) =>
       e.primitives([
         "type",
@@ -53,7 +53,7 @@ var y = {
       onClose: e.createCallbackNoArgs("onClose"),
     }),
   ),
-  k = e(c(), 1),
+  k = e(i(), 1),
   W = {
     "media-wrapper": "Teaser_media-wrapper_3d4fdb7e",
     root: "Teaser_root_3d4fdb7e",
@@ -74,97 +74,97 @@ var y = {
     extendedText: "Teaser_extendedText_286b5b73",
     countdown: "Teaser_countdown_40e45fc1",
   },
-  M = a(),
+  M = T(),
   B = "Teaser:Base",
   E = N(function ({ className: e, classNames: t }) {
-    const { model: a, controls: o } = C(),
-      i = a.type.get() || w.News,
-      c = a.postCounter.get(),
-      T = a.text.get(),
-      N = a.description.get(),
-      y = a.finishTime.get(),
-      j = a.isVideo.get(),
-      E = a.image.get(),
+    const { model: o, controls: i } = C(),
+      c = o.type.get() || w.News,
+      f = o.postCounter.get(),
+      T = o.text.get(),
+      N = o.description.get(),
+      y = o.finishTime.get(),
+      j = o.isVideo.get(),
+      E = o.image.get(),
       P = n(),
       S = v.resolve("strings");
-    const $ = (0, k.useCallback)(
+    const V = (0, k.useCallback)(
         (e) => {
-          (e.stopPropagation(), o.onClose());
+          (e.stopPropagation(), i.onClose());
         },
-        [o],
+        [i],
       ),
-      [A, L] = (0, k.useState)(null);
+      [$, A] = (0, k.useState)(null);
     (0, k.useLayoutEffect)(() => {
       let e;
-      const s = _(f(y || 0), u());
-      if (!y || s <= 0) return void L(null);
-      const t = Math.floor(d.seconds(s)),
-        a = r(f(y), h(1)) ? g.Extended : g.Long;
-      if ((L({ duration: t, style: a }), a === g.Extended)) {
-        const s = _(f(t + 1), h(1));
-        e = setTimeout(() => L((e) => ({ ...e, style: g.Long })), Math.min(s, m));
+      const s = b(u(y || 0), r());
+      if (!y || s <= 0) return void A(null);
+      const t = Math.floor(h.seconds(s)),
+        o = d(u(y), _(1)) ? g.Extended : g.Long;
+      if ((A({ duration: t, style: o }), o === g.Extended)) {
+        const s = b(u(t + 1), _(1));
+        e = setTimeout(() => A((e) => ({ ...e, style: g.Long })), Math.min(s, a));
       }
       return () => {
         e && (clearTimeout(e), (e = void 0));
       };
     }, [y]);
-    const [V, I] = (0, k.useState)(null),
-      [z, D] = (0, k.useState)(!1);
+    const [L, I] = (0, k.useState)(null),
+      [O, z] = (0, k.useState)(!1);
     return (
       (0, k.useEffect)(() => {
         const e = new Image();
         return (
           (e.src = E),
           (e.onload = () => {
-            (I({ path: E, height: e.height, width: e.width }), D(!0));
+            (I({ path: E, height: e.height, width: e.width }), z(!0));
           }),
           (e.onerror = () => {
-            D(!0);
+            z(!0);
           }),
           () => {
             ((e.src = ""), I(null));
           }
         );
       }, [E]),
-      z
+      O
         ? (0, M.jsxs)("div", {
-            className: b(W.base, W[`base__${i}Type`], j && W.base__video, e),
+            className: m(W.base, W[`base__${c}Type`], j && W.base__video, e),
             onClick: function (e) {
-              (P.play("click", { target: B, original: e }), o.onClick());
+              (P.play("click", { target: B, original: e }), i.onClick());
             },
             onMouseEnter: function (e) {
               P.play("mouse-enter", { target: B, original: e });
             },
             children: [
               (0, M.jsx)("div", {
-                className: b(W.contentWrapper, t?.contentWrapper),
+                className: m(W.contentWrapper, t?.contentWrapper),
                 children: (0, M.jsx)("div", {
-                  className: b(W.imageWrapper, t?.imageWrapper),
+                  className: m(W.imageWrapper, t?.imageWrapper),
                   children:
-                    V &&
+                    L &&
                     (0, M.jsx)("div", {
-                      className: b(W.image, t?.image),
+                      className: m(W.image, t?.image),
                       style: {
-                        backgroundImage: `url(${V.path})`,
-                        height: `${V.height}rem`,
-                        width: `${V.width}rem`,
+                        backgroundImage: `url(${L.path})`,
+                        height: `${L.height}rem`,
+                        width: `${L.width}rem`,
                       },
                     }),
                 }),
               }),
-              (0, M.jsx)("div", { className: b(W.vignette, t?.vignette) }),
+              (0, M.jsx)("div", { className: m(W.vignette, t?.vignette) }),
               (0, M.jsxs)("div", {
-                className: b(W.contentWrapper, t?.contentWrapper),
+                className: m(W.contentWrapper, t?.contentWrapper),
                 children: [
                   (0, M.jsxs)("div", {
-                    className: b(W.title, t?.title),
+                    className: m(W.title, t?.title),
                     children: [
                       S.readOrEmpty("menu.promo.teaser.title"),
-                      Boolean(c) &&
-                        c > 0 &&
+                      Boolean(f) &&
+                        f > 0 &&
                         (0, M.jsx)(l, {
-                          className: b(W.counter, t?.counter),
-                          value: c,
+                          className: m(W.counter, t?.counter),
+                          value: f,
                           size: "small",
                         }),
                     ],
@@ -172,25 +172,25 @@ var y = {
                   (0, M.jsx)(x, {
                     type: "close",
                     side: "right",
-                    classNames: { base: b(W.closeButton, t?.closeButton) },
-                    onClick: $,
+                    classNames: { base: m(W.closeButton, t?.closeButton) },
+                    onClick: V,
                     caption: "",
                   }),
-                  T && (0, M.jsx)("div", { className: b(W.text, t?.text), children: T }),
-                  (N || A) &&
+                  T && (0, M.jsx)("div", { className: m(W.text, t?.text), children: T }),
+                  (N || $) &&
                     (0, M.jsxs)("div", {
                       className: W.bottomContent,
                       children: [
                         N &&
                           (0, M.jsx)("div", {
-                            className: b(W.description, t?.description),
+                            className: m(W.description, t?.description),
                             children: (0, M.jsx)(s, {
                               classMix: W.extendedText,
                               text: N,
                               isTruncationAvailable: !0,
                             }),
                           }),
-                        A && (0, M.jsx)(p, { className: b(W.countdown, t?.countdown), ...A }),
+                        $ && (0, M.jsx)(p, { className: m(W.countdown, t?.countdown), ...$ }),
                       ],
                     }),
                 ],

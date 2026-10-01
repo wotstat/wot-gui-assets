@@ -29643,268 +29643,7 @@ function Timer({
   });
 }
 ((Timer.format = formats), (Timer.size = sizes$17), (Timer.type = types$5));
-var RouterContext = (0, import_react.createContext)(void 0);
-function useRouter() {
-  const e = (0, import_react.useContext)(RouterContext);
-  if (!e) throw new Error("useRouter must be used within a RouterProvider");
-  return e;
-}
-function removeLastSlash(e) {
-  return e.endsWith("/") ? e.slice(0, -1) : e;
-}
-function safeJsonParse(e) {
-  try {
-    return JSON.parse(e);
-  } catch (t) {
-    return {};
-  }
-}
-function ModelRouterProvider({
-  children: e,
-  prefix: t = "",
-  context: n,
-  getRoot: r,
-  initializer: a,
-  rootId: o,
-}) {
-  const i = (0, import_react.useRef)([]),
-    s = (0, import_react.useRef)(null),
-    l = (0, import_react.useMemo)(
-      () => create({ context: n, getRoot: r, initializer: a, rootId: o }),
-      [n, r, a, o],
-    ),
-    u = (0, import_react.useSyncExternalStore)(
-      (0, import_react.useCallback)(
-        (e) => {
-          const t = l.subscribe(e);
-          return () => l.unsubscribe(t);
-        },
-        [l],
-      ),
-      (0, import_react.useCallback)(() => {
-        const e = l.readByPath(),
-          n = { location: removeLastSlash(t + e.route), params: e.params };
-        return s.current && comparer$1.shallow(s.current, n) ? s.current : ((s.current = n), n);
-      }, [l, t]),
-    );
-  (0, import_react.useEffect)(() => l.dispose, [l]);
-  const c = (0, import_react.useMemo)(() => {
-    const e = [...i.current, u];
-    return ((i.current = e), { ...u, history: e, paramsStruct: safeJsonParse(u.params) });
-  }, [u]);
-  ({}).PUBLIC_ROUTER_DEBUG && console.log("🗺️ Route updated:", c);
-  const d = (0, import_react.useMemo)(() => {
-      const e = l.createCallback(
-          (e, t) => (
-            {}.PUBLIC_ROUTER_DEBUG && console.log("➡️ Going to", e, t),
-            { route: e, ...(Boolean(t) && { params: JSON.stringify(t) }) }
-          ),
-          "navigateTo",
-        ),
-        t = l.createCallbackNoArgs("navigateBack");
-      return {
-        push: e,
-        replace: e,
-        goBack: {}.PUBLIC_ROUTER_DEBUG
-          ? () => {
-              (console.log("🗺️ Route back"), t());
-            }
-          : t,
-      };
-    }, [l]),
-    p = (0, import_react.useMemo)(() => ({ ...c, ...d }), [d, c]);
-  return (0, import_jsx_runtime.jsx)(RouterContext.Provider, { value: p, children: e });
-}
-var DEFAULT_NAME_KEYFRAME = "Point",
-  THRESHOLD = 0.02;
-function createLoop(e) {
-  let t = 0;
-  return [
-    function n() {
-      (e(), (t = requestAnimationFrame(n)));
-    },
-    function () {
-      cancelAnimationFrame(t);
-    },
-  ];
-}
-var VideoForwarded = (0, import_react.forwardRef)(function (
-    {
-      src: e,
-      className: t,
-      autoplay: n = !1,
-      style: r,
-      loop: a = !1,
-      isPrebufferKeyframes: o,
-      keyframesNameConfig: i,
-      onClick: s,
-      ...l
-    },
-    u,
-  ) {
-    const c = u,
-      d = (0, import_react.useRef)(null);
-    return (
-      useMount(() => {
-        let e = !1;
-        return events$2.onDisplayChanged((t, n) => {
-          const r = d.current;
-          r &&
-            (n === displayStatus$1.hidden
-              ? ((e = r.paused), r.pause())
-              : e || n !== displayStatus$1.shown || r.play());
-        });
-      }),
-      useMount(() => {
-        let e = !1;
-        return onMinimize$1((t) => {
-          const n = d.current;
-          n && (t ? ((e = n.paused), n.pause()) : e || n.play());
-        });
-      }),
-      (0, import_react.useEffect)(
-        () =>
-          createLayoutReadyInEffect(() => {
-            const e = d.current;
-            if (!c || !e || !o) return void (e?.cohFastSeek && (e.cohFastSeek = !1));
-            const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
-            t.length > 0
-              ? ((e.cohFastSeek = !0),
-                t.map((t) => {
-                  e?.cohPrebufferKeyframe && e.cohPrebufferKeyframe(t);
-                }))
-              : console.warn("Can't prebuffered keyframes, keyframes was not found");
-          }),
-        [o, c],
-      ),
-      (0, import_react.useEffect)(() => {
-        if (c && d.current) {
-          const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop$3 },
-            t = () => {
-              let t = 0;
-              const [n, r] = createLoop(() => {
-                if (d.current) {
-                  const { currentTime: n, duration: r } = d.current;
-                  if (
-                    (t !== n &&
-                      (e.changeTimeHandlers.forEach((e) => e({ currentTime: n, duration: r })),
-                      (t = n)),
-                    d.current.paused || !c || !o)
-                  )
-                    return;
-                  const a = d.current.cohGetKeyframeTimestamps
-                    ? d.current.cohGetKeyframeTimestamps()
-                    : [];
-                  a.forEach((t, r) => {
-                    void 0 !== a[r] &&
-                      n > a[r] - THRESHOLD &&
-                      n < a[r] &&
-                      e.changeKeyframeHandlers.forEach((e) => {
-                        const n = Object.keys(i ?? {})[r];
-                        return e({ time: t, name: `${i ? n : `${DEFAULT_NAME_KEYFRAME}_${r}`}` });
-                      });
-                  });
-                }
-              });
-              return (n(), r);
-            };
-          e.changeTimeLoop = t();
-          const n = (t) => (
-              e.changeTimeHandlers.push(t),
-              () => {
-                const { changeTimeHandlers: n } = e,
-                  r = n.indexOf(t);
-                r < 0
-                  ? console.warn(
-                      "Can't unsubscribe changeTimeHandler, this reference was not found",
-                    )
-                  : n.splice(r, 1);
-              }
-            ),
-            r = (t) => (
-              e.changeKeyframeHandlers.push(t),
-              () => {
-                const { changeKeyframeHandlers: n } = e,
-                  r = n.indexOf(t);
-                r < 0
-                  ? console.warn(
-                      "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
-                    )
-                  : n.splice(r, 1);
-              }
-            ),
-            a = () => d.current?.currentTime,
-            s = () => d.current?.duration,
-            l = (e) => {
-              d.current && (d.current.currentTime = clamp$2(0, d.current.duration, e));
-            },
-            u = () => d.current?.play(),
-            p = () => d.current?.pause(),
-            f = () => {
-              (p(), l(0));
-            },
-            _ = () =>
-              d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : [],
-            m = (e) => {
-              (l(e), u());
-            },
-            h = (e) => {
-              (l(e), p());
-            },
-            g = () => {
-              ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
-            },
-            b = (e, t) => (
-              d.current?.addEventListener(e, t),
-              () => d.current?.removeEventListener(e, t)
-            ),
-            v = (e, t) => (
-              d.current?.removeEventListener(e, t),
-              () => d.current?.removeEventListener(e, t)
-            );
-          return (
-            (c.current = {
-              on: b,
-              off: v,
-              play: u,
-              pause: p,
-              stop: f,
-              cleanup: g,
-              getCurrentTime: a,
-              getDuration: s,
-              getCachedKeyframes: _,
-              goToAndPlay: m,
-              goToAndStop: h,
-              setCurrentTime: l,
-              domRef: d.current,
-              onChangeTime: n,
-              onKeyframes: r,
-            }),
-            () => {
-              (g(), (c.current = null));
-            }
-          );
-        }
-      }, [i, c, o]),
-      (0, import_react.useEffect)(() => {
-        d.current && n && d.current.play();
-      }, [n, a]),
-      useUnmount(() => {
-        d.current?.pause();
-      }),
-      (0, import_jsx_runtime.jsx)("video", {
-        src: e,
-        className: t,
-        style: r,
-        loop: a,
-        ref: d,
-        onClick: s,
-        ...l,
-      })
-    );
-  }),
-  Video = (0, import_react.memo)(VideoForwarded),
-  UNKNOWN_NATION = "none",
+var UNKNOWN_NATION = "none",
   list = [
     "ussr",
     "germany",
@@ -30500,6 +30239,78 @@ function renderString(e, t = {}) {
 function renderResolvedString(e, t = {}) {
   const n = resources.resolve("strings").readOrEmpty(e);
   return 0 === n.length ? n : renderString(n, t);
+}
+var RouterContext = (0, import_react.createContext)(void 0);
+function useRouter() {
+  const e = (0, import_react.useContext)(RouterContext);
+  if (!e) throw new Error("useRouter must be used within a RouterProvider");
+  return e;
+}
+function removeLastSlash(e) {
+  return e.endsWith("/") ? e.slice(0, -1) : e;
+}
+function safeJsonParse(e) {
+  try {
+    return JSON.parse(e);
+  } catch (t) {
+    return {};
+  }
+}
+function ModelRouterProvider({
+  children: e,
+  prefix: t = "",
+  context: n,
+  getRoot: r,
+  initializer: a,
+  rootId: o,
+}) {
+  const i = (0, import_react.useRef)([]),
+    s = (0, import_react.useRef)(null),
+    l = (0, import_react.useMemo)(
+      () => create({ context: n, getRoot: r, initializer: a, rootId: o }),
+      [n, r, a, o],
+    ),
+    u = (0, import_react.useSyncExternalStore)(
+      (0, import_react.useCallback)(
+        (e) => {
+          const t = l.subscribe(e);
+          return () => l.unsubscribe(t);
+        },
+        [l],
+      ),
+      (0, import_react.useCallback)(() => {
+        const e = l.readByPath(),
+          n = { location: removeLastSlash(t + e.route), params: e.params };
+        return s.current && comparer$1.shallow(s.current, n) ? s.current : ((s.current = n), n);
+      }, [l, t]),
+    );
+  (0, import_react.useEffect)(() => l.dispose, [l]);
+  const c = (0, import_react.useMemo)(() => {
+    const e = [...i.current, u];
+    return ((i.current = e), { ...u, history: e, paramsStruct: safeJsonParse(u.params) });
+  }, [u]);
+  ({}).PUBLIC_ROUTER_DEBUG && console.log("🗺️ Route updated:", c);
+  const d = (0, import_react.useMemo)(() => {
+      const e = l.createCallback(
+          (e, t) => (
+            {}.PUBLIC_ROUTER_DEBUG && console.log("➡️ Going to", e, t),
+            { route: e, ...(Boolean(t) && { params: JSON.stringify(t) }) }
+          ),
+          "navigateTo",
+        ),
+        t = l.createCallbackNoArgs("navigateBack");
+      return {
+        push: e,
+        replace: e,
+        goBack: {}.PUBLIC_ROUTER_DEBUG
+          ? () => {
+              (console.log("🗺️ Route back"), t());
+            }
+          : t,
+      };
+    }, [l]),
+    p = (0, import_react.useMemo)(() => ({ ...c, ...d }), [d, c]);
+  return (0, import_jsx_runtime.jsx)(RouterContext.Provider, { value: p, children: e });
 }
 if (!import_react.useState) throw new Error("mobx-react-lite requires React with Hooks support");
 if (!makeObservable$1)
@@ -31116,16 +30927,17 @@ function Portal$1({
   paddingsRem: a = {},
   lazy: o = !1,
   closeByEscape: i = !0,
-  onBeforePositionChange: s = noop$3,
-  freeSpaceRem: l = 8,
-  animationTransitions: u,
-  ...c
+  closeOnAnchorMove: s = !1,
+  onBeforePositionChange: l = noop$3,
+  freeSpaceRem: u = 8,
+  animationTransitions: c,
+  ...d
 }) {
-  const d = usePopover(),
-    p = import_react.useRef(null),
-    f = import_react.useRef(void 0),
-    [_, m] = (0, import_react.useState)(),
-    h = (0, import_react.useMemo)(
+  const p = usePopover(),
+    f = import_react.useRef(null),
+    _ = import_react.useRef(void 0),
+    [m, h] = (0, import_react.useState)(),
+    g = (0, import_react.useMemo)(
       () => ({
         top: remToPx$1(a.top || defaultPaddingsRem.top),
         bottom: remToPx$1(a.bottom || defaultPaddingsRem.bottom),
@@ -31134,55 +30946,57 @@ function Portal$1({
       }),
       [a.bottom, a.top, a.left, a.right],
     ),
-    g = remToPx$1(l),
-    b = (0, import_react.useMemo)(() => ({ ...animationTransitionsDefault, ...u }), [u]),
-    v = (0, import_react.useMemo)(
+    b = remToPx$1(u),
+    v = (0, import_react.useMemo)(() => ({ ...animationTransitionsDefault, ...c }), [c]),
+    y = (0, import_react.useMemo)(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
     );
   (0, import_react.useEffect)(() => {
-    f.current = void 0;
-    const e = p.current;
+    _.current = void 0;
+    const e = f.current;
     if (!e) return;
-    const t = document.querySelector(`[data-popover-trigger-id="${d.id}"]`),
-      a = e.querySelector(`[data-popover-display-id="${d.id}"]`);
+    const t = document.querySelector(`[data-popover-trigger-id="${p.id}"]`),
+      a = e.querySelector(`[data-popover-display-id="${p.id}"]`);
     if (!t || !a) return;
     const o = watchResizes([t, e, document.body], ([t, a, o]) => {
-      if (!d.opened) return void m(void 0);
-      if (!1 === s(d, { callerBounding: t, containerBounding: a, bodyBounding: o })) return;
-      if (f.current && !isEqual(f.current, t)) return void d.close();
-      f.current = t;
-      const i = getUpdatedPosition(r, h, t, a, o);
-      (m(i),
-        updatePosition(n, g, i, h, t, a, o, e),
+      if (!p.opened) return void h(void 0);
+      if (!1 === l(p, { callerBounding: t, containerBounding: a, bodyBounding: o })) return;
+      if (s) {
+        if (_.current && !isEqual(_.current, t)) return void p.close();
+        _.current = t;
+      }
+      const i = getUpdatedPosition(r, g, t, a, o);
+      (h(i),
+        updatePosition(n, b, i, g, t, a, o, e),
         runInAction(() => {
-          (d.trigger.setBounding(t), d.portal.setBounding(a), d.portal.setPosition(i));
+          (p.trigger.setBounding(t), p.portal.setBounding(a), p.portal.setPosition(i));
         }));
     });
     return (o.start(), o.stop);
-  }, [d, s, h, n, g, d.id, d.portal, d.trigger, r, d.opened]);
-  const y = (0, import_react.useCallback)(() => {
-    const e = p.current;
+  }, [p, l, s, g, n, b, p.id, p.portal, p.trigger, r, p.opened]);
+  const $ = (0, import_react.useCallback)(() => {
+    const e = f.current;
     e &&
       document.activeElement &&
       document.activeElement instanceof HTMLElement &&
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  ((0, import_react.useEffect)(() => d.subscribe.onBeforeClose(y), [d.subscribe, y]),
-    useHandleKeydown(i && d.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
-      d.close();
+  ((0, import_react.useEffect)(() => p.subscribe.onBeforeClose($), [p.subscribe, $]),
+    useHandleKeydown(i && p.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
+      p.close();
     }),
     (0, import_react.useEffect)(() => {
-      if (!d.opened) return;
-      const e = p.current;
+      if (!p.opened) return;
+      const e = f.current;
       if (!e) return;
       const t = e;
       function n(e) {
         const n = e.target;
         if (!(n instanceof HTMLElement)) return !1;
-        const r = `[data-popover-trigger-id="${d.id}"]`,
-          a = `[data-popover-outside-click-whitelist-id="${d.id}"]`;
+        const r = `[data-popover-trigger-id="${p.id}"]`,
+          a = `[data-popover-outside-click-whitelist-id="${p.id}"]`;
         return !(
           t === n ||
           t.contains(n) ||
@@ -31195,50 +31009,50 @@ function Portal$1({
       return new DisposeBuilder()
         .add(
           addEventListener$1(document, "click", (e) => {
-            n(e) && d.close();
+            n(e) && p.close();
           }),
         )
         .add(
           mouse$1.down(([e, t]) => {
-            if ("outside" === t) return d.close();
+            if ("outside" === t) return p.close();
             const r = e.button;
-            (r !== mouseButtons.right && r !== mouseButtons.wheel) || (n(e) && d.close());
+            (r !== mouseButtons.right && r !== mouseButtons.wheel) || (n(e) && p.close());
           }),
         ).dispose;
-    }, [d]));
-  const [$, S] = useSpring(() => ({
-      from: { opacity: 0, transform: b[r] },
+    }, [p]));
+  const [S, A] = useSpring(() => ({
+      from: { opacity: 0, transform: v[r] },
       config: { easing: easings$1.easeInOutCubic, duration: 250 },
     })),
-    A = import_react.useRef(b);
+    E = import_react.useRef(v);
   return (
-    (A.current = b),
+    (E.current = v),
     (0, import_react.useEffect)(() => {
-      if (!_) return;
-      const e = { opacity: 0, transform: A.current[_] };
-      S.start({
-        from: d.opened ? e : void 0,
-        to: d.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
+      if (!m) return;
+      const e = { opacity: 0, transform: E.current[m] };
+      A.start({
+        from: p.opened ? e : void 0,
+        to: p.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [S, _, d.opened]),
-    !d.opened && o
+    }, [A, m, p.opened]),
+    !p.opened && o
       ? null
       : (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
           children: import_react_dom.createPortal(
             (0, import_jsx_runtime.jsx)(animated.div, {
-              ...c,
-              ref: p,
+              ...d,
+              ref: f,
               style: {
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: $.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: $.opacity.to((e) => (0 !== e || d.opened ? "block" : "none")),
-                ...c.style,
+                pointerEvents: S.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: S.opacity.to((e) => (0 !== e || p.opened ? "block" : "none")),
+                ...d.style,
               },
-              children: (0, import_jsx_runtime.jsx)(animated.div, { style: $, children: e }),
+              children: (0, import_jsx_runtime.jsx)(animated.div, { style: S, children: e }),
             }),
-            v,
+            y,
           ),
         })
   );
@@ -37259,7 +37073,196 @@ function ExtendedText(e) {
     )
   );
 }
-var Context$1 = (0, import_react.createContext)(void 0);
+var DEFAULT_NAME_KEYFRAME = "Point",
+  THRESHOLD = 0.02;
+function createLoop(e) {
+  let t = 0;
+  return [
+    function n() {
+      (e(), (t = requestAnimationFrame(n)));
+    },
+    function () {
+      cancelAnimationFrame(t);
+    },
+  ];
+}
+var VideoForwarded = (0, import_react.forwardRef)(function (
+    {
+      src: e,
+      className: t,
+      autoplay: n = !1,
+      style: r,
+      loop: a = !1,
+      isPrebufferKeyframes: o,
+      keyframesNameConfig: i,
+      onClick: s,
+      ...l
+    },
+    u,
+  ) {
+    const c = u,
+      d = (0, import_react.useRef)(null);
+    return (
+      useMount(() => {
+        let e = !1;
+        return events$2.onDisplayChanged((t, n) => {
+          const r = d.current;
+          r &&
+            (n === displayStatus$1.hidden
+              ? ((e = r.paused), r.pause())
+              : e || n !== displayStatus$1.shown || r.play());
+        });
+      }),
+      useMount(() => {
+        let e = !1;
+        return onMinimize$1((t) => {
+          const n = d.current;
+          n && (t ? ((e = n.paused), n.pause()) : e || n.play());
+        });
+      }),
+      (0, import_react.useEffect)(
+        () =>
+          createLayoutReadyInEffect(() => {
+            const e = d.current;
+            if (!c || !e || !o) return void (e?.cohFastSeek && (e.cohFastSeek = !1));
+            const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
+            t.length > 0
+              ? ((e.cohFastSeek = !0),
+                t.map((t) => {
+                  e?.cohPrebufferKeyframe && e.cohPrebufferKeyframe(t);
+                }))
+              : console.warn("Can't prebuffered keyframes, keyframes was not found");
+          }),
+        [o, c],
+      ),
+      (0, import_react.useEffect)(() => {
+        if (c && d.current) {
+          const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop$3 },
+            t = () => {
+              let t = 0;
+              const [n, r] = createLoop(() => {
+                if (d.current) {
+                  const { currentTime: n, duration: r } = d.current;
+                  if (
+                    (t !== n &&
+                      (e.changeTimeHandlers.forEach((e) => e({ currentTime: n, duration: r })),
+                      (t = n)),
+                    d.current.paused || !c || !o)
+                  )
+                    return;
+                  const a = d.current.cohGetKeyframeTimestamps
+                    ? d.current.cohGetKeyframeTimestamps()
+                    : [];
+                  a.forEach((t, r) => {
+                    void 0 !== a[r] &&
+                      n > a[r] - THRESHOLD &&
+                      n < a[r] &&
+                      e.changeKeyframeHandlers.forEach((e) => {
+                        const n = Object.keys(i ?? {})[r];
+                        return e({ time: t, name: `${i ? n : `${DEFAULT_NAME_KEYFRAME}_${r}`}` });
+                      });
+                  });
+                }
+              });
+              return (n(), r);
+            };
+          e.changeTimeLoop = t();
+          const n = (t) => (
+              e.changeTimeHandlers.push(t),
+              () => {
+                const { changeTimeHandlers: n } = e,
+                  r = n.indexOf(t);
+                r < 0
+                  ? console.warn(
+                      "Can't unsubscribe changeTimeHandler, this reference was not found",
+                    )
+                  : n.splice(r, 1);
+              }
+            ),
+            r = (t) => (
+              e.changeKeyframeHandlers.push(t),
+              () => {
+                const { changeKeyframeHandlers: n } = e,
+                  r = n.indexOf(t);
+                r < 0
+                  ? console.warn(
+                      "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
+                    )
+                  : n.splice(r, 1);
+              }
+            ),
+            a = () => d.current?.currentTime,
+            s = () => d.current?.duration,
+            l = (e) => {
+              d.current && (d.current.currentTime = clamp$2(0, d.current.duration, e));
+            },
+            u = () => d.current?.play(),
+            p = () => d.current?.pause(),
+            f = () => {
+              (p(), l(0));
+            },
+            _ = () =>
+              d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : [],
+            m = (e) => {
+              (l(e), u());
+            },
+            h = (e) => {
+              (l(e), p());
+            },
+            g = () => {
+              ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
+            },
+            b = (e, t) => (
+              d.current?.addEventListener(e, t),
+              () => d.current?.removeEventListener(e, t)
+            ),
+            v = (e, t) => (
+              d.current?.removeEventListener(e, t),
+              () => d.current?.removeEventListener(e, t)
+            );
+          return (
+            (c.current = {
+              on: b,
+              off: v,
+              play: u,
+              pause: p,
+              stop: f,
+              cleanup: g,
+              getCurrentTime: a,
+              getDuration: s,
+              getCachedKeyframes: _,
+              goToAndPlay: m,
+              goToAndStop: h,
+              setCurrentTime: l,
+              domRef: d.current,
+              onChangeTime: n,
+              onKeyframes: r,
+            }),
+            () => {
+              (g(), (c.current = null));
+            }
+          );
+        }
+      }, [i, c, o]),
+      (0, import_react.useEffect)(() => {
+        d.current && n && d.current.play();
+      }, [n, a]),
+      useUnmount(() => {
+        d.current?.pause();
+      }),
+      (0, import_jsx_runtime.jsx)("video", {
+        src: e,
+        className: t,
+        style: r,
+        loop: a,
+        ref: d,
+        onClick: s,
+        ...l,
+      })
+    );
+  }),
+  Video = (0, import_react.memo)(VideoForwarded),
+  Context$1 = (0, import_react.createContext)(void 0);
 function useProgressBar() {
   const e = (0, import_react.useContext)(Context$1);
   if (!e) throw new Error("useProgressBar must be used within a ProgressBar");
@@ -40264,6 +40267,215 @@ var getRoundedTimeUnitDescription = (e, t = !0) =>
     });
   },
   Countdown_default = (0, import_react.memo)(Countdown),
+  RewardComponent = ({ reward: e, size: t }) => {
+    const n = e.RewardWrapper || null;
+    return n
+      ? (0, import_jsx_runtime.jsx)(n, {
+          ...e.rewardWrapperProps,
+          children: (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e }),
+        })
+      : (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e });
+  },
+  base$8 = "Rewards_36f5662a",
+  base__vertical = "Rewards_base__vertical_32f04b98",
+  reward = "Rewards_reward_9abc0f4a",
+  reward__vertical = "Rewards_reward__vertical_dd4a02c5",
+  fadeIn$8 = "Rewards_fadeIn_f0ade464",
+  fadeInThreeQuarters$8 = "Rewards_fadeInThreeQuarters_f0ade464",
+  fadeInHalf$8 = "Rewards_fadeInHalf_f0ade464",
+  fadeOut$8 = "Rewards_fadeOut_f0ade464",
+  fadeInWithScale$8 = "Rewards_fadeInWithScale_f0ade464",
+  slideUp$8 = "Rewards_slideUp_f0ade464",
+  scale$8 = "Rewards_scale_f0ade464",
+  raysAppearance$8 = "Rewards_raysAppearance_f0ade464",
+  rotate$8 = "Rewards_rotate_f0ade464",
+  glowAppearance$8 = "Rewards_glowAppearance_f0ade464",
+  highlightAppearance$8 = "Rewards_highlightAppearance_f0ade464",
+  blink$8 = "Rewards_blink_f0ade464",
+  slideUpIn$8 = "Rewards_slideUpIn_f0ade464",
+  Rewards_module_default = {
+    base: base$8,
+    base__vertical: base__vertical,
+    reward: reward,
+    reward__vertical: reward__vertical,
+    fadeIn: fadeIn$8,
+    fadeInThreeQuarters: fadeInThreeQuarters$8,
+    fadeInHalf: fadeInHalf$8,
+    fadeOut: fadeOut$8,
+    fadeInWithScale: fadeInWithScale$8,
+    slideUp: slideUp$8,
+    scale: scale$8,
+    raysAppearance: raysAppearance$8,
+    rotate: rotate$8,
+    "reverse-rotate": "Rewards_reverse-rotate_f0ade464",
+    glowAppearance: glowAppearance$8,
+    highlightAppearance: highlightAppearance$8,
+    blink: blink$8,
+    slideUpIn: slideUpIn$8,
+  },
+  Rewards = ({
+    data: e,
+    size: t = ImageSize$1.Big,
+    isVertical: n = !1,
+    count: r,
+    classMix: a,
+    rewardItemClassMix: o,
+    boxRewardTooltip: i,
+    boxRewardValue: s,
+    boxRewardClassName: l,
+    boxRewardClassNames: u,
+  }) => {
+    const c = r && r < e.length,
+      d = (0, import_classnames.default)(
+        Rewards_module_default.reward,
+        n && Rewards_module_default.reward__vertical,
+        o,
+      ),
+      p = c ? r : e.length;
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        Rewards_module_default.base,
+        n && Rewards_module_default.base__vertical,
+        a,
+      ),
+      children: [
+        e
+          .slice(0, p)
+          .map((e, n) =>
+            (0, import_jsx_runtime.jsx)(
+              "div",
+              {
+                className: d,
+                children: (0, import_jsx_runtime.jsx)(RewardComponent, { reward: e, size: t }),
+              },
+              n,
+            ),
+          ),
+        c &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: d,
+            children: (0, import_jsx_runtime.jsx)(Reward$1, {
+              name: "more",
+              image: `R.images.gui.maps.icons.quests.bonuses.${t}.default`,
+              size: t,
+              value:
+                s ||
+                formatPrintf$1(R.strings.tooltips.quests.awards.additional.bottom(), {
+                  count: e.length - (r || 0),
+                }),
+              tooltipArgs: i,
+              className: l,
+              classNames: u,
+            }),
+          }),
+      ],
+    });
+  },
+  base$7 = "Optimizedprogressbar_e894d6c",
+  wrapper = "Optimizedprogressbar_wrapper_70ce38b3",
+  line = "Optimizedprogressbar_line_5190e4c3",
+  backgroundWrapper = "Optimizedprogressbar_backgroundWrapper_405830ed",
+  background = "Optimizedprogressbar_background_74cf6541",
+  fadeIn$7 = "Optimizedprogressbar_fadeIn_69c01aad",
+  fadeInThreeQuarters$7 = "Optimizedprogressbar_fadeInThreeQuarters_69c01aad",
+  fadeInHalf$7 = "Optimizedprogressbar_fadeInHalf_69c01aad",
+  fadeOut$7 = "Optimizedprogressbar_fadeOut_69c01aad",
+  fadeInWithScale$7 = "Optimizedprogressbar_fadeInWithScale_69c01aad",
+  slideUp$7 = "Optimizedprogressbar_slideUp_69c01aad",
+  scale$7 = "Optimizedprogressbar_scale_69c01aad",
+  raysAppearance$7 = "Optimizedprogressbar_raysAppearance_69c01aad",
+  rotate$7 = "Optimizedprogressbar_rotate_69c01aad",
+  glowAppearance$7 = "Optimizedprogressbar_glowAppearance_69c01aad",
+  highlightAppearance$7 = "Optimizedprogressbar_highlightAppearance_69c01aad",
+  blink$7 = "Optimizedprogressbar_blink_69c01aad",
+  slideUpIn$7 = "Optimizedprogressbar_slideUpIn_69c01aad",
+  OptimizedProgressBar_module_default = {
+    base: base$7,
+    wrapper: wrapper,
+    line: line,
+    backgroundWrapper: backgroundWrapper,
+    background: background,
+    fadeIn: fadeIn$7,
+    fadeInThreeQuarters: fadeInThreeQuarters$7,
+    fadeInHalf: fadeInHalf$7,
+    fadeOut: fadeOut$7,
+    fadeInWithScale: fadeInWithScale$7,
+    slideUp: slideUp$7,
+    scale: scale$7,
+    raysAppearance: raysAppearance$7,
+    rotate: rotate$7,
+    "reverse-rotate": "Optimizedprogressbar_reverse-rotate_69c01aad",
+    glowAppearance: glowAppearance$7,
+    highlightAppearance: highlightAppearance$7,
+    blink: blink$7,
+    slideUpIn: slideUpIn$7,
+  },
+  MAX_WIDTH = 8e3,
+  getInitialApi = () => ({ update: () => {} }),
+  getLeftOffset = (e, t) => ("number" == typeof t ? t : e.offsetLeft),
+  moveLine = ({ horizontalScrollPosition: e, leftOffset: t }, n, { container: r, line: a }) => {
+    const o = clamp(
+      0,
+      Math.max(0, Math.floor(r.offsetWidth * n) - MAX_WIDTH),
+      (e - getLeftOffset(r, t)) | 0,
+    );
+    a.style.transform = `translateX(${o}px)`;
+  },
+  moveBackground = ({ horizontalScrollPosition: e, leftOffset: t }, n, r) => {
+    const a = (e - getLeftOffset(n, t)) | 0,
+      o = clamp(0, n.offsetWidth, a);
+    r.style.transform = `translateX(${o}px)`;
+  },
+  OptimizedProgressBar = ({
+    api: e,
+    value: t,
+    maxValue: n = 100,
+    theme: r = defaultTheme,
+    className: a,
+    ...o
+  }) => {
+    const i = (0, import_react.useRef)(null),
+      s = (0, import_react.useRef)(null),
+      l = (0, import_react.useRef)(null),
+      u = clamp(0, t, n) / n,
+      c = (0, import_react.useCallback)(
+        (e) => {
+          (l.current && i.current && moveBackground(e, i.current, l.current),
+            s.current && i.current && moveLine(e, u, { line: s.current, container: i.current }));
+        },
+        [u],
+      ),
+      d = (0, import_react.useMemo)(() => createSkin(r), [r]);
+    return (
+      (e.current.update = c),
+      (0, import_jsx_runtime.jsx)("div", {
+        className: (0, import_classnames.default)(OptimizedProgressBar_module_default.base, a),
+        ref: i,
+        children: (0, import_jsx_runtime.jsxs)("div", {
+          className: OptimizedProgressBar_module_default.wrapper,
+          children: [
+            (0, import_jsx_runtime.jsx)("div", {
+              className: OptimizedProgressBar_module_default.backgroundWrapper,
+              children: (0, import_jsx_runtime.jsx)("div", {
+                style: d,
+                className: OptimizedProgressBar_module_default.background,
+                ref: l,
+                children: (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: o.size }),
+              }),
+            }),
+            (0, import_jsx_runtime.jsx)(ProgressBar, {
+              ...o,
+              lineRef: s,
+              value: t,
+              theme: r,
+              maxValue: n,
+              withoutBackground: !0,
+            }),
+          ],
+        }),
+      })
+    );
+  },
   awilix_browser_exports = __exportAll({
     AwilixError: () => AwilixError,
     AwilixRegistrationError: () => AwilixRegistrationError,
@@ -45821,48 +46033,48 @@ function Icon({ className: e, size: t = sizes$4.small, type: n, imagePath: r }) 
     className: e,
   });
 }
-var base$8 = "Value_880359b5",
+var base$6 = "Value_880359b5",
   base__small$1 = "Value_base__small_533886b2",
   base__text = "Value_base__text_3c091067",
   base__medium = "Value_base__medium_c1f8595d",
   value$1 = "Value_29975a5b",
   value__small = "Value_value__small_f3df7ae5",
   value__medium = "Value_value__medium_62a482c",
-  fadeIn$8 = "Value_fadeIn_75b9f355",
-  fadeInThreeQuarters$8 = "Value_fadeInThreeQuarters_75b9f355",
-  fadeInHalf$8 = "Value_fadeInHalf_75b9f355",
-  fadeOut$8 = "Value_fadeOut_75b9f355",
-  fadeInWithScale$8 = "Value_fadeInWithScale_75b9f355",
-  slideUp$8 = "Value_slideUp_75b9f355",
-  scale$8 = "Value_scale_75b9f355",
-  raysAppearance$8 = "Value_raysAppearance_75b9f355",
-  rotate$8 = "Value_rotate_75b9f355",
-  glowAppearance$8 = "Value_glowAppearance_75b9f355",
-  highlightAppearance$8 = "Value_highlightAppearance_75b9f355",
-  blink$8 = "Value_blink_75b9f355",
-  slideUpIn$8 = "Value_slideUpIn_75b9f355",
+  fadeIn$6 = "Value_fadeIn_75b9f355",
+  fadeInThreeQuarters$6 = "Value_fadeInThreeQuarters_75b9f355",
+  fadeInHalf$6 = "Value_fadeInHalf_75b9f355",
+  fadeOut$6 = "Value_fadeOut_75b9f355",
+  fadeInWithScale$6 = "Value_fadeInWithScale_75b9f355",
+  slideUp$6 = "Value_slideUp_75b9f355",
+  scale$6 = "Value_scale_75b9f355",
+  raysAppearance$6 = "Value_raysAppearance_75b9f355",
+  rotate$6 = "Value_rotate_75b9f355",
+  glowAppearance$6 = "Value_glowAppearance_75b9f355",
+  highlightAppearance$6 = "Value_highlightAppearance_75b9f355",
+  blink$6 = "Value_blink_75b9f355",
+  slideUpIn$6 = "Value_slideUpIn_75b9f355",
   value_module_default = {
-    base: base$8,
+    base: base$6,
     base__small: base__small$1,
     base__text: base__text,
     base__medium: base__medium,
     value: value$1,
     value__small: value__small,
     value__medium: value__medium,
-    fadeIn: fadeIn$8,
-    fadeInThreeQuarters: fadeInThreeQuarters$8,
-    fadeInHalf: fadeInHalf$8,
-    fadeOut: fadeOut$8,
-    fadeInWithScale: fadeInWithScale$8,
-    slideUp: slideUp$8,
-    scale: scale$8,
-    raysAppearance: raysAppearance$8,
-    rotate: rotate$8,
+    fadeIn: fadeIn$6,
+    fadeInThreeQuarters: fadeInThreeQuarters$6,
+    fadeInHalf: fadeInHalf$6,
+    fadeOut: fadeOut$6,
+    fadeInWithScale: fadeInWithScale$6,
+    slideUp: slideUp$6,
+    scale: scale$6,
+    raysAppearance: raysAppearance$6,
+    rotate: rotate$6,
     "reverse-rotate": "Value_reverse-rotate_75b9f355",
-    glowAppearance: glowAppearance$8,
-    highlightAppearance: highlightAppearance$8,
-    blink: blink$8,
-    slideUpIn: slideUpIn$8,
+    glowAppearance: glowAppearance$6,
+    highlightAppearance: highlightAppearance$6,
+    blink: blink$6,
+    slideUpIn: slideUpIn$6,
   },
   intl = resources.resolve("intl"),
   DEFAULT_MAX_VALUE = 99;
@@ -45893,38 +46105,38 @@ function Value({
     }),
   });
 }
-var base$7 = "Bubble_df22310d",
+var base$5 = "Bubble_df22310d",
   base__hidden$1 = "Bubble_base__hidden_1700314d",
-  fadeIn$7 = "Bubble_fadeIn_fdf0621f",
-  fadeInThreeQuarters$7 = "Bubble_fadeInThreeQuarters_fdf0621f",
-  fadeInHalf$7 = "Bubble_fadeInHalf_fdf0621f",
-  fadeOut$7 = "Bubble_fadeOut_fdf0621f",
-  fadeInWithScale$7 = "Bubble_fadeInWithScale_fdf0621f",
-  slideUp$7 = "Bubble_slideUp_fdf0621f",
-  scale$7 = "Bubble_scale_fdf0621f",
-  raysAppearance$7 = "Bubble_raysAppearance_fdf0621f",
-  rotate$7 = "Bubble_rotate_fdf0621f",
-  glowAppearance$7 = "Bubble_glowAppearance_fdf0621f",
-  highlightAppearance$7 = "Bubble_highlightAppearance_fdf0621f",
-  blink$7 = "Bubble_blink_fdf0621f",
-  slideUpIn$7 = "Bubble_slideUpIn_fdf0621f",
+  fadeIn$5 = "Bubble_fadeIn_fdf0621f",
+  fadeInThreeQuarters$5 = "Bubble_fadeInThreeQuarters_fdf0621f",
+  fadeInHalf$5 = "Bubble_fadeInHalf_fdf0621f",
+  fadeOut$5 = "Bubble_fadeOut_fdf0621f",
+  fadeInWithScale$5 = "Bubble_fadeInWithScale_fdf0621f",
+  slideUp$5 = "Bubble_slideUp_fdf0621f",
+  scale$5 = "Bubble_scale_fdf0621f",
+  raysAppearance$5 = "Bubble_raysAppearance_fdf0621f",
+  rotate$5 = "Bubble_rotate_fdf0621f",
+  glowAppearance$5 = "Bubble_glowAppearance_fdf0621f",
+  highlightAppearance$5 = "Bubble_highlightAppearance_fdf0621f",
+  blink$5 = "Bubble_blink_fdf0621f",
+  slideUpIn$5 = "Bubble_slideUpIn_fdf0621f",
   bubble_module_default = {
-    base: base$7,
+    base: base$5,
     base__hidden: base__hidden$1,
-    fadeIn: fadeIn$7,
-    fadeInThreeQuarters: fadeInThreeQuarters$7,
-    fadeInHalf: fadeInHalf$7,
-    fadeOut: fadeOut$7,
-    fadeInWithScale: fadeInWithScale$7,
-    slideUp: slideUp$7,
-    scale: scale$7,
-    raysAppearance: raysAppearance$7,
-    rotate: rotate$7,
+    fadeIn: fadeIn$5,
+    fadeInThreeQuarters: fadeInThreeQuarters$5,
+    fadeInHalf: fadeInHalf$5,
+    fadeOut: fadeOut$5,
+    fadeInWithScale: fadeInWithScale$5,
+    slideUp: slideUp$5,
+    scale: scale$5,
+    raysAppearance: raysAppearance$5,
+    rotate: rotate$5,
     "reverse-rotate": "Bubble_reverse-rotate_fdf0621f",
-    glowAppearance: glowAppearance$7,
-    highlightAppearance: highlightAppearance$7,
-    blink: blink$7,
-    slideUpIn: slideUpIn$7,
+    glowAppearance: glowAppearance$5,
+    highlightAppearance: highlightAppearance$5,
+    blink: blink$5,
+    slideUpIn: slideUpIn$5,
   },
   Bubble = {
     Root: defineStyledComponent("Bubble", bubble_module_default.base, {
@@ -45940,37 +46152,37 @@ function isReactComponent$1(e) {
   return ("function" == typeof e && !e.prototype?.isReactComponent) || isReactElementType(e);
 }
 var textOverlay = "GradientText_textOverlay_2d67fbb8",
-  base$6 = "GradientText_5009d812",
-  fadeIn$6 = "GradientText_fadeIn_f58bf640",
-  fadeInThreeQuarters$6 = "GradientText_fadeInThreeQuarters_f58bf640",
-  fadeInHalf$6 = "GradientText_fadeInHalf_f58bf640",
-  fadeOut$6 = "GradientText_fadeOut_f58bf640",
-  fadeInWithScale$6 = "GradientText_fadeInWithScale_f58bf640",
-  slideUp$6 = "GradientText_slideUp_f58bf640",
-  scale$6 = "GradientText_scale_f58bf640",
-  raysAppearance$6 = "GradientText_raysAppearance_f58bf640",
-  rotate$6 = "GradientText_rotate_f58bf640",
-  glowAppearance$6 = "GradientText_glowAppearance_f58bf640",
-  highlightAppearance$6 = "GradientText_highlightAppearance_f58bf640",
-  blink$6 = "GradientText_blink_f58bf640",
-  slideUpIn$6 = "GradientText_slideUpIn_f58bf640",
+  base$4 = "GradientText_5009d812",
+  fadeIn$4 = "GradientText_fadeIn_f58bf640",
+  fadeInThreeQuarters$4 = "GradientText_fadeInThreeQuarters_f58bf640",
+  fadeInHalf$4 = "GradientText_fadeInHalf_f58bf640",
+  fadeOut$4 = "GradientText_fadeOut_f58bf640",
+  fadeInWithScale$4 = "GradientText_fadeInWithScale_f58bf640",
+  slideUp$4 = "GradientText_slideUp_f58bf640",
+  scale$4 = "GradientText_scale_f58bf640",
+  raysAppearance$4 = "GradientText_raysAppearance_f58bf640",
+  rotate$4 = "GradientText_rotate_f58bf640",
+  glowAppearance$4 = "GradientText_glowAppearance_f58bf640",
+  highlightAppearance$4 = "GradientText_highlightAppearance_f58bf640",
+  blink$4 = "GradientText_blink_f58bf640",
+  slideUpIn$4 = "GradientText_slideUpIn_f58bf640",
   gradient_text_module_default = {
     textOverlay: textOverlay,
-    base: base$6,
-    fadeIn: fadeIn$6,
-    fadeInThreeQuarters: fadeInThreeQuarters$6,
-    fadeInHalf: fadeInHalf$6,
-    fadeOut: fadeOut$6,
-    fadeInWithScale: fadeInWithScale$6,
-    slideUp: slideUp$6,
-    scale: scale$6,
-    raysAppearance: raysAppearance$6,
-    rotate: rotate$6,
+    base: base$4,
+    fadeIn: fadeIn$4,
+    fadeInThreeQuarters: fadeInThreeQuarters$4,
+    fadeInHalf: fadeInHalf$4,
+    fadeOut: fadeOut$4,
+    fadeInWithScale: fadeInWithScale$4,
+    slideUp: slideUp$4,
+    scale: scale$4,
+    raysAppearance: raysAppearance$4,
+    rotate: rotate$4,
     "reverse-rotate": "GradientText_reverse-rotate_f58bf640",
-    glowAppearance: glowAppearance$6,
-    highlightAppearance: highlightAppearance$6,
-    blink: blink$6,
-    slideUpIn: slideUpIn$6,
+    glowAppearance: glowAppearance$4,
+    highlightAppearance: highlightAppearance$4,
+    blink: blink$4,
+    slideUpIn: slideUpIn$4,
   },
   GradientText = (0, import_react.forwardRef)(function ({ classNames: e, children: t }, n) {
     return (0, import_jsx_runtime.jsxs)("div", {
@@ -48937,7 +49149,7 @@ function TableProvider({
     );
   return (0, import_jsx_runtime.jsx)(TableContext.Provider, { value: h, children: e });
 }
-var base$5 = "Table_85be883a",
+var base$3 = "Table_85be883a",
   row = "Table_row_881b7550",
   header = "Table_header_ef69bf65",
   footer = "Table_footer_ef69bf65",
@@ -48945,21 +49157,21 @@ var base$5 = "Table_85be883a",
   cell = "Table_cell_7df9641e",
   sortable = "Table_sortable_f63b3b4f",
   contentResponsiveCellWrapper = "Table_contentResponsiveCellWrapper_ddee221c",
-  fadeIn$5 = "Table_fadeIn_ef69bf65",
-  fadeInThreeQuarters$5 = "Table_fadeInThreeQuarters_ef69bf65",
-  fadeInHalf$5 = "Table_fadeInHalf_ef69bf65",
-  fadeOut$5 = "Table_fadeOut_ef69bf65",
-  fadeInWithScale$5 = "Table_fadeInWithScale_ef69bf65",
-  slideUp$5 = "Table_slideUp_ef69bf65",
-  scale$5 = "Table_scale_ef69bf65",
-  raysAppearance$5 = "Table_raysAppearance_ef69bf65",
-  rotate$5 = "Table_rotate_ef69bf65",
-  glowAppearance$5 = "Table_glowAppearance_ef69bf65",
-  highlightAppearance$5 = "Table_highlightAppearance_ef69bf65",
-  blink$5 = "Table_blink_ef69bf65",
-  slideUpIn$5 = "Table_slideUpIn_ef69bf65",
+  fadeIn$3 = "Table_fadeIn_ef69bf65",
+  fadeInThreeQuarters$3 = "Table_fadeInThreeQuarters_ef69bf65",
+  fadeInHalf$3 = "Table_fadeInHalf_ef69bf65",
+  fadeOut$3 = "Table_fadeOut_ef69bf65",
+  fadeInWithScale$3 = "Table_fadeInWithScale_ef69bf65",
+  slideUp$3 = "Table_slideUp_ef69bf65",
+  scale$3 = "Table_scale_ef69bf65",
+  raysAppearance$3 = "Table_raysAppearance_ef69bf65",
+  rotate$3 = "Table_rotate_ef69bf65",
+  glowAppearance$3 = "Table_glowAppearance_ef69bf65",
+  highlightAppearance$3 = "Table_highlightAppearance_ef69bf65",
+  blink$3 = "Table_blink_ef69bf65",
+  slideUpIn$3 = "Table_slideUpIn_ef69bf65",
   table_module_default = {
-    base: base$5,
+    base: base$3,
     row: row,
     header: header,
     footer: footer,
@@ -48967,20 +49179,20 @@ var base$5 = "Table_85be883a",
     cell: cell,
     sortable: sortable,
     contentResponsiveCellWrapper: contentResponsiveCellWrapper,
-    fadeIn: fadeIn$5,
-    fadeInThreeQuarters: fadeInThreeQuarters$5,
-    fadeInHalf: fadeInHalf$5,
-    fadeOut: fadeOut$5,
-    fadeInWithScale: fadeInWithScale$5,
-    slideUp: slideUp$5,
-    scale: scale$5,
-    raysAppearance: raysAppearance$5,
-    rotate: rotate$5,
+    fadeIn: fadeIn$3,
+    fadeInThreeQuarters: fadeInThreeQuarters$3,
+    fadeInHalf: fadeInHalf$3,
+    fadeOut: fadeOut$3,
+    fadeInWithScale: fadeInWithScale$3,
+    slideUp: slideUp$3,
+    scale: scale$3,
+    raysAppearance: raysAppearance$3,
+    rotate: rotate$3,
     "reverse-rotate": "Table_reverse-rotate_ef69bf65",
-    glowAppearance: glowAppearance$5,
-    highlightAppearance: highlightAppearance$5,
-    blink: blink$5,
-    slideUpIn: slideUpIn$5,
+    glowAppearance: glowAppearance$3,
+    highlightAppearance: highlightAppearance$3,
+    blink: blink$3,
+    slideUpIn: slideUpIn$3,
   },
   Base$10 = defineStyledComponent("ContentResponsiveTableCell", table_module_default.cell),
   ContentResponsiveCell = observer(function (e) {
@@ -49211,7 +49423,7 @@ var sizes$3 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
     });
   });
 AnonymizerIcon.sizes = sizes$3;
-var base$4 = "PlayerInfo_89eea88b",
+var base$2 = "PlayerInfo_89eea88b",
   badge = "PlayerInfo_badge_9f134a01",
   name = "PlayerInfo_name_120449f9",
   name__medium = "PlayerInfo_name__medium_4066d463",
@@ -49223,21 +49435,21 @@ var base$4 = "PlayerInfo_89eea88b",
   stripe__medium = "PlayerInfo_stripe__medium_cc0a2a19",
   stripe__big = "PlayerInfo_stripe__big_ccbc3007",
   stripeBadge = "PlayerInfo_stripeBadge_605bfd0a",
-  fadeIn$4 = "PlayerInfo_fadeIn_56d02918",
-  fadeInThreeQuarters$4 = "PlayerInfo_fadeInThreeQuarters_56d02918",
-  fadeInHalf$4 = "PlayerInfo_fadeInHalf_56d02918",
-  fadeOut$4 = "PlayerInfo_fadeOut_56d02918",
-  fadeInWithScale$4 = "PlayerInfo_fadeInWithScale_56d02918",
-  slideUp$4 = "PlayerInfo_slideUp_56d02918",
-  scale$4 = "PlayerInfo_scale_56d02918",
-  raysAppearance$4 = "PlayerInfo_raysAppearance_56d02918",
-  rotate$4 = "PlayerInfo_rotate_56d02918",
-  glowAppearance$4 = "PlayerInfo_glowAppearance_56d02918",
-  highlightAppearance$4 = "PlayerInfo_highlightAppearance_56d02918",
-  blink$4 = "PlayerInfo_blink_56d02918",
-  slideUpIn$4 = "PlayerInfo_slideUpIn_56d02918",
+  fadeIn$2 = "PlayerInfo_fadeIn_56d02918",
+  fadeInThreeQuarters$2 = "PlayerInfo_fadeInThreeQuarters_56d02918",
+  fadeInHalf$2 = "PlayerInfo_fadeInHalf_56d02918",
+  fadeOut$2 = "PlayerInfo_fadeOut_56d02918",
+  fadeInWithScale$2 = "PlayerInfo_fadeInWithScale_56d02918",
+  slideUp$2 = "PlayerInfo_slideUp_56d02918",
+  scale$2 = "PlayerInfo_scale_56d02918",
+  raysAppearance$2 = "PlayerInfo_raysAppearance_56d02918",
+  rotate$2 = "PlayerInfo_rotate_56d02918",
+  glowAppearance$2 = "PlayerInfo_glowAppearance_56d02918",
+  highlightAppearance$2 = "PlayerInfo_highlightAppearance_56d02918",
+  blink$2 = "PlayerInfo_blink_56d02918",
+  slideUpIn$2 = "PlayerInfo_slideUpIn_56d02918",
   player_info_module_default = {
-    base: base$4,
+    base: base$2,
     badge: badge,
     name: name,
     name__medium: name__medium,
@@ -49249,20 +49461,20 @@ var base$4 = "PlayerInfo_89eea88b",
     stripe__medium: stripe__medium,
     stripe__big: stripe__big,
     stripeBadge: stripeBadge,
-    fadeIn: fadeIn$4,
-    fadeInThreeQuarters: fadeInThreeQuarters$4,
-    fadeInHalf: fadeInHalf$4,
-    fadeOut: fadeOut$4,
-    fadeInWithScale: fadeInWithScale$4,
-    slideUp: slideUp$4,
-    scale: scale$4,
-    raysAppearance: raysAppearance$4,
-    rotate: rotate$4,
+    fadeIn: fadeIn$2,
+    fadeInThreeQuarters: fadeInThreeQuarters$2,
+    fadeInHalf: fadeInHalf$2,
+    fadeOut: fadeOut$2,
+    fadeInWithScale: fadeInWithScale$2,
+    slideUp: slideUp$2,
+    scale: scale$2,
+    raysAppearance: raysAppearance$2,
+    rotate: rotate$2,
     "reverse-rotate": "PlayerInfo_reverse-rotate_56d02918",
-    glowAppearance: glowAppearance$4,
-    highlightAppearance: highlightAppearance$4,
-    blink: blink$4,
-    slideUpIn: slideUpIn$4,
+    glowAppearance: glowAppearance$2,
+    highlightAppearance: highlightAppearance$2,
+    blink: blink$2,
+    slideUpIn: slideUpIn$2,
   },
   sizes$2 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
   sizesConfig$4 = {
@@ -49482,216 +49694,7 @@ function isValidBreakpoint(e) {
   (PlayerInfo.AnonymizerIcon = AnonymizerIcon),
   (PlayerInfo.Stripe = Stripe),
   (PlayerInfo.Wrapper = Wrapper));
-var RewardComponent = ({ reward: e, size: t }) => {
-    const n = e.RewardWrapper || null;
-    return n
-      ? (0, import_jsx_runtime.jsx)(n, {
-          ...e.rewardWrapperProps,
-          children: (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e }),
-        })
-      : (0, import_jsx_runtime.jsx)(Reward$1, { size: t, ...e });
-  },
-  base$3 = "Rewards_36f5662a",
-  base__vertical = "Rewards_base__vertical_32f04b98",
-  reward = "Rewards_reward_9abc0f4a",
-  reward__vertical = "Rewards_reward__vertical_dd4a02c5",
-  fadeIn$3 = "Rewards_fadeIn_f0ade464",
-  fadeInThreeQuarters$3 = "Rewards_fadeInThreeQuarters_f0ade464",
-  fadeInHalf$3 = "Rewards_fadeInHalf_f0ade464",
-  fadeOut$3 = "Rewards_fadeOut_f0ade464",
-  fadeInWithScale$3 = "Rewards_fadeInWithScale_f0ade464",
-  slideUp$3 = "Rewards_slideUp_f0ade464",
-  scale$3 = "Rewards_scale_f0ade464",
-  raysAppearance$3 = "Rewards_raysAppearance_f0ade464",
-  rotate$3 = "Rewards_rotate_f0ade464",
-  glowAppearance$3 = "Rewards_glowAppearance_f0ade464",
-  highlightAppearance$3 = "Rewards_highlightAppearance_f0ade464",
-  blink$3 = "Rewards_blink_f0ade464",
-  slideUpIn$3 = "Rewards_slideUpIn_f0ade464",
-  Rewards_module_default = {
-    base: base$3,
-    base__vertical: base__vertical,
-    reward: reward,
-    reward__vertical: reward__vertical,
-    fadeIn: fadeIn$3,
-    fadeInThreeQuarters: fadeInThreeQuarters$3,
-    fadeInHalf: fadeInHalf$3,
-    fadeOut: fadeOut$3,
-    fadeInWithScale: fadeInWithScale$3,
-    slideUp: slideUp$3,
-    scale: scale$3,
-    raysAppearance: raysAppearance$3,
-    rotate: rotate$3,
-    "reverse-rotate": "Rewards_reverse-rotate_f0ade464",
-    glowAppearance: glowAppearance$3,
-    highlightAppearance: highlightAppearance$3,
-    blink: blink$3,
-    slideUpIn: slideUpIn$3,
-  },
-  Rewards = ({
-    data: e,
-    size: t = ImageSize$1.Big,
-    isVertical: n = !1,
-    count: r,
-    classMix: a,
-    rewardItemClassMix: o,
-    boxRewardTooltip: i,
-    boxRewardValue: s,
-    boxRewardClassName: l,
-    boxRewardClassNames: u,
-  }) => {
-    const c = r && r < e.length,
-      d = (0, import_classnames.default)(
-        Rewards_module_default.reward,
-        n && Rewards_module_default.reward__vertical,
-        o,
-      ),
-      p = c ? r : e.length;
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        Rewards_module_default.base,
-        n && Rewards_module_default.base__vertical,
-        a,
-      ),
-      children: [
-        e
-          .slice(0, p)
-          .map((e, n) =>
-            (0, import_jsx_runtime.jsx)(
-              "div",
-              {
-                className: d,
-                children: (0, import_jsx_runtime.jsx)(RewardComponent, { reward: e, size: t }),
-              },
-              n,
-            ),
-          ),
-        c &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: d,
-            children: (0, import_jsx_runtime.jsx)(Reward$1, {
-              name: "more",
-              image: `R.images.gui.maps.icons.quests.bonuses.${t}.default`,
-              size: t,
-              value:
-                s ||
-                formatPrintf$1(R.strings.tooltips.quests.awards.additional.bottom(), {
-                  count: e.length - (r || 0),
-                }),
-              tooltipArgs: i,
-              className: l,
-              classNames: u,
-            }),
-          }),
-      ],
-    });
-  },
-  base$2 = "Optimizedprogressbar_e894d6c",
-  wrapper = "Optimizedprogressbar_wrapper_70ce38b3",
-  line = "Optimizedprogressbar_line_5190e4c3",
-  backgroundWrapper = "Optimizedprogressbar_backgroundWrapper_405830ed",
-  background = "Optimizedprogressbar_background_74cf6541",
-  fadeIn$2 = "Optimizedprogressbar_fadeIn_69c01aad",
-  fadeInThreeQuarters$2 = "Optimizedprogressbar_fadeInThreeQuarters_69c01aad",
-  fadeInHalf$2 = "Optimizedprogressbar_fadeInHalf_69c01aad",
-  fadeOut$2 = "Optimizedprogressbar_fadeOut_69c01aad",
-  fadeInWithScale$2 = "Optimizedprogressbar_fadeInWithScale_69c01aad",
-  slideUp$2 = "Optimizedprogressbar_slideUp_69c01aad",
-  scale$2 = "Optimizedprogressbar_scale_69c01aad",
-  raysAppearance$2 = "Optimizedprogressbar_raysAppearance_69c01aad",
-  rotate$2 = "Optimizedprogressbar_rotate_69c01aad",
-  glowAppearance$2 = "Optimizedprogressbar_glowAppearance_69c01aad",
-  highlightAppearance$2 = "Optimizedprogressbar_highlightAppearance_69c01aad",
-  blink$2 = "Optimizedprogressbar_blink_69c01aad",
-  slideUpIn$2 = "Optimizedprogressbar_slideUpIn_69c01aad",
-  OptimizedProgressBar_module_default = {
-    base: base$2,
-    wrapper: wrapper,
-    line: line,
-    backgroundWrapper: backgroundWrapper,
-    background: background,
-    fadeIn: fadeIn$2,
-    fadeInThreeQuarters: fadeInThreeQuarters$2,
-    fadeInHalf: fadeInHalf$2,
-    fadeOut: fadeOut$2,
-    fadeInWithScale: fadeInWithScale$2,
-    slideUp: slideUp$2,
-    scale: scale$2,
-    raysAppearance: raysAppearance$2,
-    rotate: rotate$2,
-    "reverse-rotate": "Optimizedprogressbar_reverse-rotate_69c01aad",
-    glowAppearance: glowAppearance$2,
-    highlightAppearance: highlightAppearance$2,
-    blink: blink$2,
-    slideUpIn: slideUpIn$2,
-  },
-  MAX_WIDTH = 8e3,
-  getInitialApi = () => ({ update: () => {} }),
-  getLeftOffset = (e, t) => ("number" == typeof t ? t : e.offsetLeft),
-  moveLine = ({ horizontalScrollPosition: e, leftOffset: t }, n, { container: r, line: a }) => {
-    const o = clamp(
-      0,
-      Math.max(0, Math.floor(r.offsetWidth * n) - MAX_WIDTH),
-      (e - getLeftOffset(r, t)) | 0,
-    );
-    a.style.transform = `translateX(${o}px)`;
-  },
-  moveBackground = ({ horizontalScrollPosition: e, leftOffset: t }, n, r) => {
-    const a = (e - getLeftOffset(n, t)) | 0,
-      o = clamp(0, n.offsetWidth, a);
-    r.style.transform = `translateX(${o}px)`;
-  },
-  OptimizedProgressBar = ({
-    api: e,
-    value: t,
-    maxValue: n = 100,
-    theme: r = defaultTheme,
-    className: a,
-    ...o
-  }) => {
-    const i = (0, import_react.useRef)(null),
-      s = (0, import_react.useRef)(null),
-      l = (0, import_react.useRef)(null),
-      u = clamp(0, t, n) / n,
-      c = (0, import_react.useCallback)(
-        (e) => {
-          (l.current && i.current && moveBackground(e, i.current, l.current),
-            s.current && i.current && moveLine(e, u, { line: s.current, container: i.current }));
-        },
-        [u],
-      ),
-      d = (0, import_react.useMemo)(() => createSkin(r), [r]);
-    return (
-      (e.current.update = c),
-      (0, import_jsx_runtime.jsx)("div", {
-        className: (0, import_classnames.default)(OptimizedProgressBar_module_default.base, a),
-        ref: i,
-        children: (0, import_jsx_runtime.jsxs)("div", {
-          className: OptimizedProgressBar_module_default.wrapper,
-          children: [
-            (0, import_jsx_runtime.jsx)("div", {
-              className: OptimizedProgressBar_module_default.backgroundWrapper,
-              children: (0, import_jsx_runtime.jsx)("div", {
-                style: d,
-                className: OptimizedProgressBar_module_default.background,
-                ref: l,
-                children: (0, import_jsx_runtime.jsx)(ProgressBarBackground, { size: o.size }),
-              }),
-            }),
-            (0, import_jsx_runtime.jsx)(ProgressBar, {
-              ...o,
-              lineRef: s,
-              value: t,
-              theme: r,
-              maxValue: n,
-              withoutBackground: !0,
-            }),
-          ],
-        }),
-      })
-    );
-  },
-  base$1 = "Counter_dc10b86a",
+var base$1 = "Counter_dc10b86a",
   show = "Counter_show_f40ddf91",
   base__big = "Counter_base__big_6bd2877c",
   base__small = "Counter_base__small_631cb8e0",
@@ -49937,372 +49940,371 @@ var RewardComponent = ({ reward: e, size: t }) => {
     });
   };
 export {
-  Loader as $,
-  unwrapItem as $a,
-  observable$1 as $i,
-  atSpgRoles as $n,
+  isEmptyObject as $,
+  isNonNullable as $a,
+  runInAction as $i,
+  union as $n,
   useExternalPaddings as $r,
-  useInput as $t,
+  Input as $t,
   sizes$5 as A,
-  makeActions as Aa,
-  useLayoutReady as Ai,
-  renderResolvedString as An,
-  format$2 as Ao,
+  action$1 as Aa,
+  useCallbackOnEsc as Ai,
+  observer as An,
+  compare as Ao,
   createGridImgSourceGetter as Ar,
-  currencyTypes as At,
+  Currency as At,
   Size as B,
-  findIndexLast as Ba,
-  useEmitter as Bi,
-  minLength as Bn,
-  require_react_dom as Bo,
+  forEach as Ba,
+  useDebounce as Bi,
+  integer as Bn,
+  require_react as Bo,
   Button$1 as Br,
-  directions$1 as Bt,
-  loadPlugin as C,
-  delay as Ca,
-  animated as Ci,
-  Slot$1 as Cn,
-  capitalize as Co,
+  VehicleInfo as Bt,
+  Rewards as C,
+  mapRange as Ca,
+  config as Ci,
+  TruncatedText as Cn,
+  normalizeResource as Co,
   Tooltip$1 as Cr,
-  CardSingle as Ct,
+  statusTypes as Ct,
   FormatTextWithColorTags as D,
-  createLayoutReadyInEffect as Da,
-  useSpringValue as Di,
-  Image$1 as Dn,
-  ONE_HOUR$1 as Do,
+  createMockControls as Da,
+  useSprings as Di,
+  usePopover as Dn,
+  ONE_WEEK$1 as Do,
   formatString as Dr,
-  useCardContext as Dt,
+  useCardsWrapperContext as Dt,
   CountdownStyle as E,
-  createTimeoutInEffect$1 as Ea,
-  useSpringRef as Ei,
-  usePopover as En,
-  ONE_DAY$1 as Eo,
+  createLayoutReadyInEffect as Ea,
+  useSpringValue as Ei,
+  Popover as En,
+  ONE_HOUR$1 as Eo,
   formatPrintf$1 as Er,
-  useCardsWrapperContext as Et,
+  Card as Et,
   SceneWrapper as F,
-  every as Fa,
-  useInsideEvent as Fi,
-  custom as Fn,
-  now$1 as Fo,
+  filter as Fa,
+  useIsFirstRender as Fi,
+  createParser as Fn,
+  seconds as Fo,
   require_classnames as Fr,
-  BackdropTooltip as Ft,
+  types$2 as Ft,
   getRewardTooltipConfig as G,
-  mapExists as Ga,
-  useEvent as Gi,
-  parse$1 as Gn,
+  mapFilter as Ga,
+  usePrevious as Gi,
+  number as Gn,
   UIProvider as Gr,
-  VehicleType as Gt,
+  useLazyModel as Gt,
   Reward as H,
-  get$1 as Ha,
-  debounce_default as Hi,
-  number as Hn,
-  intl$4 as Ho,
+  groupMapBy as Ha,
+  throttle_default as Hi,
+  literal as Hn,
+  DateTimeFormatsEnum as Ho,
   defineStyledComponent as Hr,
-  LazyModel as Ht,
+  Accordion as Ht,
   ProgressBar as I,
-  filter as Ia,
-  useIsFirstRender as Ii,
-  enum_ as In,
-  seconds as Io,
+  filterMap as Ia,
+  useMount as Ii,
+  array as In,
+  subtract as Io,
   getRewardImage$1 as Ir,
-  BackportTooltip as It,
+  BackdropTooltip as It,
   Specials as J,
-  reduce as Ja,
-  action as Ji,
-  string as Jn,
+  some as Ja,
+  autorun as Ji,
+  parse$1 as Jn,
   assignRefs as Jr,
-  VehicleLevel as Jt,
+  VehicleRole as Jt,
   getRewardValueType as K,
-  mapFilter as Ka,
-  usePrevious as Ki,
-  pipe as Kn,
+  mapNonNullable as Ka,
+  Reaction as Ki,
+  object as Kn,
   runView as Kr,
-  sizes$14 as Kt,
+  VehicleType as Kt,
   defaultAnimationSettings as L,
-  filterMap as La,
-  useMount as Li,
-  integer as Ln,
-  subtract as Lo,
+  find as La,
+  useUnmount as Li,
+  boolean as Ln,
+  easings$1 as Lo,
   getRewardTooltipConfig$1 as Lr,
-  SimpleTooltip as Lt,
+  BackportTooltip as Lt,
   sizes$6 as M,
-  autorun$1 as Ma,
-  useKeydownListener as Mi,
-  createParser as Mn,
-  days as Mo,
+  observable$2 as Ma,
+  useHandleKeydown as Mi,
+  useRouter as Mn,
+  fromMs as Mo,
   SimpleTooltip$1 as Mr,
-  imageSizes$2 as Mt,
+  discountTypes as Mt,
   themes as N,
-  observable$2 as Na,
-  useHandleKeydown as Ni,
-  array as Nn,
-  fromMs as No,
+  runInAction$1 as Na,
+  useHandleKeyup as Ni,
+  renderResolvedString as Nn,
+  greaterThanOrEqual as No,
   BackportTooltip$1 as Nr,
-  sizes$13 as Nt,
+  imageSizes$2 as Nt,
   DateTime_default as O,
-  createMockControls as Oa,
-  useSprings as Oi,
-  Img as On,
-  ONE_WEEK$1 as Oo,
+  chunks as Oa,
+  useTransition$2 as Oi,
+  Image$1 as On,
+  getRealFormat as Oo,
   CanvasSequence as Or,
-  WithDiscount as Ot,
+  useCardContext as Ot,
   useTabsContext as P,
-  runInAction$1 as Pa,
-  useHandleKeyup as Pi,
-  boolean as Pn,
-  greaterThanOrEqual as Po,
+  every as Pa,
+  useInsideEvent as Pi,
+  renderString as Pn,
+  now$1 as Po,
   Tooltip$2 as Pr,
-  types$2 as Pt,
-  isEmptyObject as Q,
-  unsafeGet as Qa,
-  makeObservable as Qi,
-  WITHOUT_ROLE as Qn,
+  sizes$13 as Pt,
+  MultilineOverflow as Q,
+  unwrapItem as Qa,
+  observable$1 as Qi,
+  transform as Qn,
   createSimpleGetter as Qr,
-  Input as Qt,
+  toggleThemes as Qt,
   BlueNoise as R,
-  find as Ra,
-  useUnmount as Ri,
-  lazy$1 as Rn,
-  easings$1 as Ro,
+  findIndex$1 as Ra,
+  useInterval as Ri,
+  custom as Rn,
+  clsx as Ro,
   getRewardValueType$1 as Rr,
-  Tooltip as Rt,
-  injectGFPlugins as S,
-  remove$1 as Sa,
-  useResizeLayoutReady as Si,
-  TruncatedText as Sn,
-  onRescale as So,
+  SimpleTooltip as Rt,
+  getInitialApi as S,
+  delay as Sa,
+  animated as Si,
+  asMemoized as Sn,
+  capitalize as So,
   FormatText as Sr,
-  statusTypes as St,
+  Discount as St,
   CountdownIcon as T,
-  assert$1 as Ta,
-  useSpring as Ti,
-  Popover as Tn,
-  MS_IN_SECOND$1 as To,
+  createTimeoutInEffect$1 as Ta,
+  useSpringRef as Ti,
+  Slottable as Tn,
+  ONE_DAY$1 as To,
   Alignment as Tr,
-  Card as Tt,
+  CardsWrapper as Tt,
   formatPrintf as U,
-  groupMapBy as Ua,
-  throttle_default as Ui,
-  object as Un,
-  DateTimeFormatsEnum as Uo,
+  map as Ua,
+  useRefResizeObserver as Ui,
+  minLength as Un,
+  resources as Uo,
   sizes$18 as Ur,
-  createOptionalDLProvider as Ut,
+  LazyModel as Ut,
   Rewards$1 as V,
-  forEach as Va,
-  useDebounce as Vi,
-  minValue as Vn,
-  require_react as Vo,
+  get$1 as Va,
+  debounce_default as Vi,
+  lazy$1 as Vn,
+  intl$4 as Vo,
   HeadlessButton as Vr,
-  Accordion as Vt,
+  directions$1 as Vt,
   getRewardImage as W,
-  map as Wa,
-  useRefResizeObserver as Wi,
-  optional as Wn,
-  resources as Wo,
+  mapExists as Wa,
+  useEvent as Wi,
+  minValue as Wn,
   themes$1 as Wr,
-  useLazyModel as Wt,
-  ExtendedText as X,
-  sort as Xa,
-  configure as Xi,
-  union as Xn,
+  createOptionalDLProvider as Wt,
+  Video as X,
+  toArray$1 as Xa,
+  getDependencyTree as Xi,
+  safeParse as Xn,
   computedFn$1 as Xr,
-  toggleSizes as Xt,
+  Toggle as Xt,
   ProgressBar$1 as Y,
-  some as Ya,
-  autorun as Yi,
-  transform as Yn,
+  sort as Ya,
+  configure as Yi,
+  pipe as Yn,
   computeds as Yr,
-  Toggle as Yt,
-  MultilineOverflow as Z,
-  toArray$1 as Za,
-  getDependencyTree as Zi,
-  vehicleState as Zn,
+  VehicleLevel as Yt,
+  ExtendedText as Z,
+  unsafeGet as Za,
+  makeObservable as Zi,
+  string as Zn,
   initializeModelWithContext as Zr,
-  toggleThemes as Zt,
-  useMeasure as _,
-  LOWER_ALPHABET as _a,
-  useTimeout as _i,
-  Bar$1 as _n,
-  play$1 as _o,
+  toggleSizes as Zt,
+  Bubble as _,
+  NUMBERS_ALPHABET as _a,
+  useThrottle as _i,
+  Area$1 as _n,
+  getSize$2 as _o,
   formatValue as _r,
-  VehicleImage as _t,
-  Rewards as a,
-  MediaWrapperElement as aa,
+  RentalCounter as _t,
+  Table as a,
+  useMedia as aa,
   useSounds as ai,
-  Sprite as an,
-  addEventListener$1 as ao,
-  fromModel$1 as ar,
-  useDragAndDrop as at,
-  Bubble as b,
-  arabicToRoman as ba,
-  useScaleState$1 as bi,
-  useHorizontalScroll as bn,
-  writeClipboard as bo,
+  useHoverState as an,
+  constFalse as ao,
+  lightTankRoles as ar,
+  sizes$8 as at,
+  loadPlugin as b,
+  add as ba,
+  useResize as bi,
+  Direction as bn,
+  mouse$1 as bo,
   sizes$17 as br,
-  sizes$11 as bt,
-  Table as c,
-  MediaSize as ca,
+  Checkbox as bt,
+  columnBehaviours as c,
+  breakpoints as ca,
   createSoundPlay as ci,
-  MaskArea as cn,
-  noop$3 as co,
-  isTypeValidValue as cr,
-  fromModel as ct,
-  columnBehaviours as d,
-  readKey as da,
+  Area as cn,
+  clamp$2 as co,
+  fromModel$1 as cr,
+  fromAccountModel as ct,
+  createColumnHelper as d,
+  mouseButtons as da,
   useParamTooltip as di,
-  useVerticalScroll as dn,
-  addPreloadTexture$1 as do,
-  types$4 as dr,
-  ScrollVelocityGuardContent as dt,
-  runInAction as ea,
+  Bar as dn,
+  forceTriggerMouseMove$1 as do,
+  isTypeValidValue as dr,
+  roles as dt,
+  useAdaptiveWidth as ea,
   useAdjustScreenWidth as ei,
-  placeholderVisibility as en,
-  isNonNullable as eo,
-  getRoleByKey as er,
-  DragAndDrop as et,
-  tableParts as f,
-  mouseButtons as fa,
+  useInput as en,
+  iter as eo,
+  vehicleState as er,
+  Loader as et,
+  getFilteredRowModel as f,
+  comparer$1 as fa,
   useSimpleTooltip as fi,
-  Base$30 as fn,
-  forceTriggerMouseMove$1 as fo,
-  nationById as fr,
-  Background as ft,
-  measureTypes as g,
-  calcPercent as ga,
-  isEqual as gi,
-  Area$1 as gn,
-  sendEvent$2 as go,
+  useVerticalScroll as fn,
+  pxToRem$1 as fo,
+  normilizeVehicleType as fr,
+  ScrollVelocityGuardContent as ft,
+  isReactComponent$1 as g,
+  LOWER_ALPHABET as ga,
+  useTimeout as gi,
+  useScrollByDragElements as gn,
+  play$1 as go,
   Timer as gr,
-  RentalCounter as gt,
-  getFilteredRowModel as h,
-  MAX_i32 as ha,
+  List as gt,
+  GradientText as h,
+  calcPercent as ha,
   useWulfTooltip as hi,
-  useScrollByDragElements as hn,
-  get$2 as ho,
-  useRouter as hr,
-  List as ht,
-  getInitialApi as i,
-  MediaWrapper as ia,
+  dragDirections as hn,
+  sendEvent$2 as ho,
+  nationById as hr,
+  __vitePreload as ht,
+  PlayerInfo as i,
+  MediaWrapperElement as ia,
   SoundsProvider as ii,
-  useHoverState as in,
-  DisposeBuilder as io,
-  roles$1 as ir,
-  sizes$8 as it,
+  matchPath as in,
+  addEventListener$1 as io,
+  heavyTankRoles as ir,
+  overlayTypes as it,
   Tabs as j,
-  action$1 as ja,
-  useCallbackOnEsc as ji,
-  renderString as jn,
-  compare as jo,
+  autorun$1 as ja,
+  useKeydownListener as ji,
+  ModelRouterProvider as jn,
+  days as jo,
   Reward$1 as jr,
-  discountTypes as jt,
+  currencyTypes as jt,
   Slider as k,
-  chunks as ka,
-  useTransition$2 as ki,
-  observer as kn,
-  getRealFormat as ko,
+  makeActions as ka,
+  useLayoutReady as ki,
+  Img as kn,
+  format$2 as ko,
   addChunkIndexToEndPath as kr,
-  Currency as kt,
-  TableProvider as l,
-  breakpoints as la,
+  WithDiscount as kt,
+  tableParts as l,
+  breakpointsByType as la,
   createTargetOverrides as li,
-  DefaultScroll as ln,
-  clamp$2 as lo,
-  normilizeVehicleType as lr,
-  perkStates as lt,
-  createColumnHelper as m,
-  isNumber as ma,
+  MaskArea as ln,
+  getKeyNameFromScanCode as lo,
+  getVehicleImageKey as lr,
+  fromModel as lt,
+  useMeasure as m,
+  MAX_i32 as ma,
   useTooltip as mi,
-  dragDirections as mn,
-  remToPx$1 as mo,
-  ModelRouterProvider as mr,
-  __vitePreload as mt,
+  useHorizontalDrag as mn,
+  get$2 as mo,
+  types$4 as mr,
+  KeyButton as mt,
   Counter as n,
-  useAdaptive as na,
+  useUpscale as na,
   useBackportContextMenu as ni,
-  Switch$1 as nn,
-  keyCodes as no,
-  lightTankRoles as nr,
-  LoadoutItem as nt,
-  isValidBreakpoint as o,
-  useMedia as oa,
+  Route as nn,
+  promiseWithResolvers as no,
+  atSpgRoles as nr,
+  Slot as nt,
+  TableProvider as o,
+  require_jsx_runtime as oa,
   useSoundsOptional as oi,
-  Base$29 as on,
-  constFalse as oo,
-  getVehicleImageKey as or,
-  Switcher$1 as ot,
-  flexRender as p,
-  comparer$1 as pa,
+  Sprite as on,
+  identity as oo,
+  mediumTankRoles as or,
+  useDragAndDrop as ot,
+  measureTypes as p,
+  isNumber as pa,
   useSpecialTooltip as pi,
-  useHorizontalDrag as pn,
-  pxToRem$1 as po,
-  Video as pr,
-  KeyButton as pt,
+  Base$30 as pn,
+  remToPx$1 as po,
+  sameTanksRemap as pr,
+  Background as pt,
   ImageSize as q,
-  mapNonNullable as qa,
-  Reaction as qi,
-  safeParse as qn,
+  reduce as qa,
+  action as qi,
+  optional as qn,
   JSXBuilder as qr,
-  VehicleRole as qt,
-  OptimizedProgressBar as r,
-  useUpscale as ra,
+  sizes$14 as qt,
+  isValidBreakpoint as r,
+  MediaWrapper as ra,
   useSpecialContextMenu as ri,
-  matchPath as rn,
-  promiseWithResolvers as ro,
-  mediumTankRoles as rr,
-  overlayTypes as rt,
-  PlayerInfo as s,
-  require_jsx_runtime as sa,
+  Switch$1 as rn,
+  DisposeBuilder as ro,
+  getRoleByKey as rr,
+  LoadoutItem as rt,
+  useTableContext as s,
+  MediaSize as sa,
   createMultipleTargetOverrides as si,
-  Area as sn,
-  identity as so,
-  isRentVehicle as sr,
-  fromAccountModel as st,
+  Base$29 as sn,
+  noop$3 as so,
+  roles$1 as sr,
+  Switcher$1 as st,
   TextButton as t,
-  useAdaptiveWidth as ta,
+  useAdaptive as ta,
   useClickOutside as ti,
-  Route as tn,
-  iter as to,
-  heavyTankRoles as tr,
-  Slot as tt,
-  useTableContext as u,
-  breakpointsByType as ua,
+  placeholderVisibility as tn,
+  keyCodes as to,
+  WITHOUT_ROLE as tr,
+  DragAndDrop as tt,
+  flexRender as u,
+  readKey as ua,
   useBackdropTooltip as ui,
-  Bar as un,
-  getKeyNameFromScanCode as uo,
-  sameTanksRemap as ur,
-  roles as ut,
-  GradientText as v,
-  NUMBERS_ALPHABET as va,
-  useThrottle as vi,
-  useScrollBounding as vn,
-  getSize$2 as vo,
+  DefaultScroll as un,
+  addPreloadTexture$1 as uo,
+  isRentVehicle as ur,
+  perkStates as ut,
+  sizes$4 as v,
+  createString as va,
+  useSkipFrame as vi,
+  Bar$1 as vn,
+  graphicsQuality$1 as vo,
   FormattedValue as vr,
-  ErrorHandler as vt,
+  VehicleImage as vt,
   Countdown_default as w,
-  mapRange as wa,
-  config as wi,
-  Slottable as wn,
-  normalizeResource as wo,
+  assert$1 as wa,
+  useSpring as wi,
+  Slot$1 as wn,
+  MS_IN_SECOND$1 as wo,
   FormatText$1 as wr,
-  CardsWrapper as wt,
-  sizes$4 as x,
-  add as xa,
-  useResize as xi,
-  asMemoized as xn,
-  mouse$1 as xo,
+  CardSingle as wt,
+  OptimizedProgressBar as x,
+  remove$1 as xa,
+  useResizeLayoutReady as xi,
+  useHorizontalScroll as xn,
+  onRescale as xo,
   FormatString as xr,
-  Discount as xt,
-  isReactComponent$1 as y,
-  createString as ya,
-  useSkipFrame as yi,
-  Direction as yn,
-  graphicsQuality$1 as yo,
+  sizes$11 as xt,
+  injectGFPlugins as y,
+  arabicToRoman as ya,
+  useScaleState$1 as yi,
+  useScrollBounding as yn,
+  writeClipboard as yo,
   formats as yr,
-  Checkbox as yt,
+  ErrorHandler as yt,
   AnimationType as z,
-  findIndex$1 as za,
-  useInterval as zi,
-  literal as zn,
-  clsx as zo,
+  findIndexLast as za,
+  useEmitter as zi,
+  enum_ as zn,
+  require_react_dom as zo,
   ImageSize$1 as zr,
-  VehicleInfo as zt,
+  Tooltip as zt,
 };

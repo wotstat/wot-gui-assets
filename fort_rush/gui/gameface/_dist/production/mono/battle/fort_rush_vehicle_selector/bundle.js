@@ -1,157 +1,156 @@
 import {
   m as e,
   t,
-  r as s,
-  i as a,
-  a as l,
+  h as s,
+  j as a,
+  k as l,
   l as i,
-  b as r,
-  h as n,
-  c as o,
-  n as c,
-  v as d,
-  g as u,
-  d as m,
-  e as p,
-  f as h,
-  j as _,
-  k as f,
-  o as g,
-  p as v,
-  q as x,
-  s as y,
+  p as r,
+  q as n,
+  s as o,
+  v as c,
+  w as d,
+  x as u,
+  i as m,
+  y as p,
+  a as h,
+  z as _,
+  n as f,
+  A as v,
+  B as g,
+  C as x,
+  E as y,
   L as b,
   N as C,
-  u as N,
-  w as j,
-  x as w,
-  y as S,
-  z as I,
-  A as E,
+  F as N,
+  G as j,
+  H as w,
+  I as S,
+  J as I,
+  K as E,
   W as k,
-  B as P,
-  C as L,
-  D as B,
-  F as V,
-  E as M,
-  G as T,
-  H as D,
+  M as P,
+  O as L,
+  P as V,
+  Q as B,
+  R as M,
+  S as D,
+  T,
   V as z,
-  I as F,
-  R as A,
-  J as O,
-  K as H,
-  M as $,
-  O as Z,
-  P as q,
-  T as U,
-  Q as G,
-  S as W,
-  U as J,
-  X as K,
-  Y as X,
-  Z as Q,
-  _ as Y,
-  $ as ee,
-  a0 as te,
-  a1 as se,
-  a2 as ae,
-  a3 as le,
-  a4 as ie,
-  a5 as re,
-  a6 as ne,
-  a7 as oe,
-  a8 as ce,
-  a9 as de,
-  aa as ue,
-  ab as me,
-  ac as pe,
-  ad as he,
-  ae as _e,
-  af as fe,
-  ag as ge,
-  ah as ve,
-  ai as xe,
-  aj as ye,
-  ak as be,
-  al as Ce,
-  am as Ne,
-  an as je,
-  ao as we,
-  ap as Se,
-  aq as Ie,
-  ar as Ee,
-  as as ke,
-  at as Pe,
-  au as Le,
-  av as Be,
-  aw as Ve,
-  ax as Me,
-  ay as Te,
-  az as De,
-  aA as Re,
-  aB as ze,
-  aC as Fe,
-  aD as Ae,
-  aE as Oe,
-  aF as He,
-  aG as $e,
-  aH as Ze,
-  aI as qe,
-  aJ as Ue,
-  aK as Ge,
-  aL as We,
-  aM as Je,
-  aN as Ke,
-  aO as Xe,
-  aP as Qe,
-  aQ as Ye,
-  aR as et,
-  aS as tt,
-  aT as st,
-  aU as at,
-  aV as lt,
-  aW as it,
-  aX as rt,
-  aY as nt,
-  aZ as ot,
-  a_ as ct,
-  a$ as dt,
-  b0 as ut,
-  b1 as mt,
-  b2 as pt,
+  U as F,
+  X as A,
+  Y as O,
+  Z as H,
+  _ as $,
+  $ as Z,
+  a0 as q,
+  a1 as U,
+  a2 as G,
+  a3 as W,
+  a4 as J,
+  a5 as K,
+  a6 as X,
+  a7 as Q,
+  a8 as Y,
+  a9 as ee,
+  aa as te,
+  ab as se,
+  ac as ae,
+  ad as le,
+  ae as ie,
+  af as re,
+  ag as ne,
+  ah as oe,
+  ai as ce,
+  aj as de,
+  ak as ue,
+  al as me,
+  am as pe,
+  an as he,
+  ao as _e,
+  ap as fe,
+  aq as ve,
+  ar as ge,
+  as as xe,
+  at as ye,
+  au as be,
+  c as Ce,
+  av as Ne,
+  aw as je,
+  ax as we,
+  ay as Se,
+  az as Ie,
+  aA as Ee,
+  aB as ke,
+  aC as Pe,
+  aD as Le,
+  aE as Ve,
+  aF as Be,
+  aG as Me,
+  aH as De,
+  aI as Te,
+  aJ as Re,
+  aK as ze,
+  aL as Fe,
+  aM as Ae,
+  aN as Oe,
+  aO as He,
+  aP as $e,
+  aQ as Ze,
+  aR as qe,
+  aS as Ue,
+  aT as Ge,
+  aU as We,
+  aV as Je,
+  aW as Ke,
+  aX as Xe,
+  aY as Qe,
+  aZ as Ye,
+  a_ as et,
+  a$ as tt,
+  b0 as st,
+  b1 as at,
+  b2 as lt,
+  b3 as it,
+  b4 as rt,
+  b5 as nt,
+  r as ot,
+  b6 as ct,
+  b7 as dt,
+  b8 as ut,
+  b9 as mt,
 } from "../chunks/lib.js";
 import {
-  t as ht,
-  v as _t,
-  e as ft,
-  w as gt,
-  x as vt,
-  y as xt,
-  z as yt,
-  A as bt,
-  B as Ct,
-  C as Nt,
-  D as jt,
-  E as wt,
-  r as St,
-  F as It,
-  j as Et,
-  f as kt,
-  G as Pt,
-  R as Lt,
-  o as Bt,
+  w as pt,
+  x as ht,
+  e as _t,
+  y as ft,
+  z as vt,
+  A as gt,
+  B as xt,
+  C as yt,
+  D as bt,
+  E as Ct,
+  F as Nt,
+  G as jt,
+  r as wt,
+  H as St,
+  j as It,
+  f as Et,
+  I as kt,
+  R as Pt,
+  o as Lt,
   h as Vt,
-  q as Mt,
-  H as Tt,
-  I as Dt,
-  m as Rt,
+  q as Bt,
+  t as Mt,
+  v as Dt,
+  m as Tt,
 } from "../chunks/vendor.js";
-const zt = "role",
-  Ft = "type",
-  At = "tier",
-  Ot = "nations",
-  Ht = {
+const Rt = "role",
+  zt = "type",
+  Ft = "tier",
+  At = "nations",
+  Ot = {
     lightTank: "menu.carousel_tank_filter.lightTank",
     mediumTank: "menu.carousel_tank_filter.mediumTank",
     heavyTank: "menu.carousel_tank_filter.heavyTank",
@@ -186,7 +185,7 @@ const zt = "role",
     clanRented: "tank_carousel_filter.tooltip.clanRented.header",
     isCommonProgression: "tank_carousel_filter.tooltip.isCommonProgression.header",
   },
-  $t = {
+  Ht = {
     type: "vehicleTypes",
     role: "role",
     tier: "tier",
@@ -202,9 +201,9 @@ const zt = "role",
     clanRented: "clanRented",
     isCommonProgression: "isCommonProgression",
   },
-  Zt = "isCommonProgression",
-  qt = [s.assault, s.universal, s.break, s.sniper, s.scout, s.support],
-  Ut = [
+  $t = "isCommonProgression",
+  Zt = [s.assault, s.universal, s.break, s.sniper, s.scout, s.support],
+  qt = [
     "bonus",
     "favorite",
     "premium",
@@ -214,18 +213,18 @@ const zt = "role",
     "own3DStyle",
     "rented",
   ],
-  Gt = [t.lightTank, t.mediumTank, t.heavyTank, t["AT-SPG"], t.SPG],
-  Wt = e(1, 12, a),
-  Jt = "vehicle_types",
-  Kt = "nations",
-  Xt = "levels",
-  Qt = "specials",
-  Yt = "battle_pass",
-  es = { heavy_tank: n, medium_tank: r, light_tank: i, at_spg: l };
-function ts(e, t) {
-  return e === Zt && t.status !== d.UNSUITABLE_TO_QUEUE && t.bpProgress < t.maxBpScore;
+  Ut = [t.lightTank, t.mediumTank, t.heavyTank, t["AT-SPG"], t.SPG],
+  Gt = e(1, 12, a),
+  Wt = "vehicle_types",
+  Jt = "nations",
+  Kt = "levels",
+  Xt = "specials",
+  Qt = "battle_pass",
+  Yt = { heavy_tank: n, medium_tank: r, light_tank: i, at_spg: l };
+function es(e, t) {
+  return e === $t && t.status !== d.UNSUITABLE_TO_QUEUE && t.bpProgress < t.maxBpScore;
 }
-function ss(e, t, s, a) {
+function ts(e, t, s, a) {
   switch (t) {
     case "elite":
       return e.includes("premium") || (a && a.elite && !s.premium);
@@ -250,35 +249,35 @@ function ss(e, t, s, a) {
       return !1;
   }
 }
-const as = {
-  [Xt]: (e, t) => !e.levels || e.levels.includes(`level_${t.level}`),
-  [Kt]: (e, t) => !e.nations || e.nations.includes(c(t.nationId)),
-  [Jt]: (e, t) => !e.vehicle_types || e.vehicle_types.includes(t.type),
+const ss = {
+  [Kt]: (e, t) => !e.levels || e.levels.includes(`level_${t.level}`),
+  [Jt]: (e, t) => !e.nations || e.nations.includes(c(t.nationId)),
+  [Wt]: (e, t) => !e.vehicle_types || e.vehicle_types.includes(t.type),
 };
-function ls(e, t, s) {
+function as(e, t, s) {
   let a = !1;
   const l = e.specials ?? [];
   for (const i of l)
     if ("rented" !== i) {
-      if (!ss(l, i, t, s)) return !1;
+      if (!ts(l, i, t, s)) return !1;
     } else a = !0;
   if (!a && o(t) && !s?.fromWotPlus) return !1;
   if (s && e.battle_pass && e.battle_pass.length > 0)
-    for (const i of e.battle_pass) if (!ts(i, s)) return !1;
-  for (const i of Object.keys(e)) if (i in as && !as[i](e, t)) return !1;
+    for (const i of e.battle_pass) if (!es(i, s)) return !1;
+  for (const i of Object.keys(e)) if (i in ss && !ss[i](e, t)) return !1;
   return ((e, t) => {
     const s = u(t.role);
     let a = !1;
-    for (const l of Object.keys(es))
+    for (const l of Object.keys(Yt))
       if (l in e && ((a = !0), e[l].some((e) => e.includes(s)))) return !0;
     return !a;
   })(e, t);
 }
-function is(e, { shortName: t, fullName: s }) {
+function ls(e, { shortName: t, fullName: s }) {
   const a = e.toLowerCase();
   return !(a.length > 0 && !t.toLowerCase().includes(a) && !s.toLowerCase().includes(a));
 }
-function rs(e, t, s) {
+function is(e, t, s) {
   const a = e[t] ?? [],
     l = { ...e };
   return (
@@ -287,13 +286,13 @@ function rs(e, t, s) {
     l
   );
 }
-function ns(e, t) {
+function rs(e, t) {
   return "regular" === t.type
-    ? rs(e, t.field, t.value)
-    : Object.keys(es).reduce((e, s) => {
-        const a = es[s].find((e) => e.includes(t.role));
+    ? is(e, t.field, t.value)
+    : Object.keys(Yt).reduce((e, s) => {
+        const a = Yt[s].find((e) => e.includes(t.role));
         return a
-          ? rs(
+          ? is(
               e,
               s,
               ((i = a),
@@ -303,7 +302,7 @@ function ns(e, t) {
         var l, i;
       }, e);
 }
-function os(e, t, s, a) {
+function ns(e, t, s, a) {
   if (s.favorite !== a.favorite) return s.favorite ? -1 : 1;
   const l = e[c(s.nationId)] ?? 0,
     i = e[c(a.nationId)] ?? 0;
@@ -320,7 +319,7 @@ function os(e, t, s, a) {
           : -1
         : s.shortName.localeCompare(a.shortName);
 }
-const [cs, ds] = m("FilterVehiclesProvider")(
+const [os, cs] = m("FilterVehiclesProvider")(
     ({ observableModel: e, readByPath: t }) => {
       function s(e) {
         try {
@@ -334,8 +333,8 @@ const [cs, ds] = m("FilterVehiclesProvider")(
         r = p.structural(() => s(i.defaultFilters.get())),
         n = {
           ...e.primitives(["carouselRowCount"]),
-          filters: ht.box(l, { deep: !1 }),
-          searchName: ht.box(a?.[0] ?? ""),
+          filters: pt.box(l, { deep: !1 }),
+          searchName: pt.box(a?.[0] ?? ""),
           nations: e.arrayClone("nationsOrder"),
         };
       return {
@@ -354,7 +353,7 @@ const [cs, ds] = m("FilterVehiclesProvider")(
       const a = s.createCallback((e) => e, "onSaveFilter");
       return (
         e(
-          _t(() => {
+          ht(() => {
             var e, s;
             ((e = t.filters.get()),
               (s = t.searchName.get()),
@@ -362,26 +361,26 @@ const [cs, ds] = m("FilterVehiclesProvider")(
           }),
         ),
         {
-          reset: ft(() => {
+          reset: _t(() => {
             (t.filters.set(t.computes.default()), t.searchName.set(""));
           }),
-          search: ft((e) => {
+          search: _t((e) => {
             t.searchName.set(e);
           }),
-          change: ft((e) => {
-            t.filters.set(ns(t.filters.get(), e));
+          change: _t((e) => {
+            t.filters.set(rs(t.filters.get(), e));
           }),
           carouselTypeChange: s.createCallback((e) => ({ rowCount: e }), "onCarouselTypeChange"),
         }
       );
     },
   ),
-  [us, ms] = m("VehicleStatisticsProvider")(({ observableModel: e }) => {
+  [ds, us] = m("VehicleStatisticsProvider")(({ observableModel: e }) => {
     const t = e.dict("statistics"),
       s = p.structural((e) => t.get(e));
     return { ids: p.primitive(() => t.keys), get: s };
   }),
-  [ps, hs] = m("VehiclesProvider")(
+  [ms, ps] = m("VehiclesProvider")(
     ({ observableModel: e }) => {
       const t = { vehicles: e.dictRef("vehicles") };
       return {
@@ -415,13 +414,13 @@ const [cs, ds] = m("FilterVehiclesProvider")(
       };
     },
     f,
-    { useRequires: () => ({ statistics: ms() }) },
+    { useRequires: () => ({ statistics: us() }) },
   ),
-  _s = [t.lightTank, t.mediumTank, t.heavyTank, t["AT-SPG"], t.SPG].reduce(
+  hs = [t.lightTank, t.mediumTank, t.heavyTank, t["AT-SPG"], t.SPG].reduce(
     (e, t, s) => ((e[t] = s), e),
     {},
   ),
-  [fs, gs] = m("MyVehiclesProvider")(
+  [_s, fs] = m("MyVehiclesProvider")(
     (e) => {
       const t = e.requires.statistic.model.ids,
         s = p.structural((s) => {
@@ -438,16 +437,16 @@ const [cs, ds] = m("FilterVehiclesProvider")(
       return { get: s, getAll: a, amount: p.primitive(() => a().length), ids: t };
     },
     f,
-    { useRequires: () => ({ vehicles: hs(), statistic: ms() }) },
+    { useRequires: () => ({ vehicles: ps(), statistic: us() }) },
   ),
-  vs = g.resolve("strings");
-const xs = v(b + C),
-  ys = () => `${Date.now().toString(16)}_${xs(3)}`;
-function bs(e, t, s = 1) {
+  vs = v.resolve("strings");
+const gs = g(b + C),
+  xs = () => `${Date.now().toString(16)}_${gs(3)}`;
+function ys(e, t, s = 1) {
   const a = x(t, { count: s });
-  return e.has(a) ? bs(e, t, s + 1) : a;
+  return e.has(a) ? ys(e, t, s + 1) : a;
 }
-function Cs(e = "", t = []) {
+function bs(e = "", t = []) {
   return {
     title: "" !== e ? e : vs.readOrEmpty("playlists.defaultName"),
     createdAt: Date.now(),
@@ -455,24 +454,24 @@ function Cs(e = "", t = []) {
     list: t,
   };
 }
-const Ns = (e) => ({ type: "ok", value: e }),
-  js = (e, t) => ({ type: "error", error: { tag: e, msg: t } });
-function ws(e) {
+const Cs = (e) => ({ type: "ok", value: e }),
+  Ns = (e, t) => ({ type: "error", error: { tag: e, msg: t } });
+function js(e) {
   if ("ok" === e.type) return e.value;
 }
-const Ss = "delete",
-  Is = "import",
-  Es = gt({
-    title: yt(),
-    createdAt: vt(Nt(), Ct(), bt(0)),
-    modifiedAt: vt(Nt(), Ct(), bt(0)),
-    list: xt(vt(Nt(), Ct())),
+const ws = "delete",
+  Ss = "import",
+  Is = ft({
+    title: xt(),
+    createdAt: vt(Ct(), bt(), yt(0)),
+    modifiedAt: vt(Ct(), bt(), yt(0)),
+    list: gt(vt(Ct(), bt())),
   }),
-  ks = vt(
-    yt(),
-    jt((e) => (e.length > 0 ? e : void 0)),
+  Es = vt(
+    xt(),
+    Nt((e) => (e.length > 0 ? e : void 0)),
   ),
-  [Ps, Ls, { Context: Bs }] = m("PlaylistsProvider")(
+  [ks, Ps, { Context: Ls }] = m("PlaylistsProvider")(
     ({ requires: e, observableModel: t }) => {
       const s = t.dict("storage"),
         a = t.primitives(["selectedID", "enabled", "dirtyEdit"]),
@@ -481,29 +480,30 @@ const Ss = "delete",
           vehicles: e.vehicles.model,
           myVehicles: e.myVehicles.model,
           enabled: a.enabled,
+          selectedID: a.selectedID,
           nationsOrder: e.filters.model.nations,
-          filters: ht.box(l(), { deep: !1 }),
-          searchName: ht.box("", { deep: !1 }),
-          edit: { initial: ht.box(void 0, { deep: !1 }), dirty: a.dirtyEdit },
+          filters: pt.box(l(), { deep: !1 }),
+          searchName: pt.box("", { deep: !1 }),
+          edit: { initial: pt.box(void 0, { deep: !1 }), dirty: a.dirtyEdit },
         },
         r = p.shallow(() => s.keys),
-        n = p.primitive(() => wt(ks, a.selectedID.get())),
+        n = p.primitive(() => jt(Es, i.selectedID.get())),
         o = p.structural((e) => {
           try {
             const t = s.get(e);
-            if (!t) return Ns(void 0);
-            const a = wt(Es, JSON.parse(t)),
+            if (!t) return Cs(void 0);
+            const a = jt(Is, JSON.parse(t)),
               l = new Set();
             for (const e of a.list)
               if (N[e]) {
                 const t = N[e].find((e) => Boolean(i.myVehicles.get(e.toString())));
                 l.add(t ?? e);
               } else l.add(e);
-            return Ns({ ...a, list: [...l.values()] });
+            return Cs({ ...a, list: [...l.values()] });
           } catch (t) {
             return (
               console.error(`Error getting playlist with ${e} id`, t),
-              js("PARSE_ERROR", String(t))
+              Ns("PARSE_ERROR", String(t))
             );
           }
         }),
@@ -538,9 +538,9 @@ const Ss = "delete",
         }),
         f = p.shallow(() => {
           const t = e.filters.model.computes.nationToIndex();
-          return w(e.myVehicles.model.getAll(), (e, s) => os(t, _s, e, s));
+          return w(e.myVehicles.model.getAll(), (e, s) => ns(t, hs, e, s));
         }),
-        g = p.primitive((e) => {
+        v = p.primitive((e) => {
           const t = u(e),
             s = x();
           if (void 0 === t || 0 === t.list.length) return;
@@ -550,7 +550,7 @@ const Ss = "delete",
             if (S(e) && a.has(e)) return l;
           }
         }),
-        v = p.primitive(
+        g = p.primitive(
           () => !1 === h.structural(l(), i.filters.get()) || i.searchName.get().length > 0,
         ),
         x = p.shallow(() => {
@@ -558,9 +558,9 @@ const Ss = "delete",
             s = f(),
             a = i.searchName.get();
           return s.filter((s) => {
-            if (!is(a, s)) return !1;
+            if (!ls(a, s)) return !1;
             const l = e.statistic.model.get(s.id);
-            return ls(t, s, l);
+            return as(t, s, l);
           });
         }),
         y = p.primitive((t) => Boolean(e.statistic.model.get(t)?.elite)),
@@ -581,64 +581,67 @@ const Ss = "delete",
         filtered: x,
         filteredAmount: C,
         defaultFilters: l,
-        hasFilters: v,
+        hasFilters: g,
         vehicleImage: b,
         currentVehicles: I,
         ids: r,
         sortedIds: m,
         isElite: y,
-        firstAddedVehicleIndexByPlaylistId: g,
+        firstAddedVehicleIndexByPlaylistId: v,
       };
     },
     ({ model: e, externalModel: t }) => {
       const s = t.createCallback(
-        (e) => ({ id: e.id, data: JSON.stringify(e.initial), skipRedirect: e.skipRedirect }),
-        "onCreate",
-      );
+          (e) => ({ id: e.id, data: JSON.stringify(e.initial), skipRedirect: e.skipRedirect }),
+          "onCreate",
+        ),
+        a = t.createCallback((e) => ({ id: e }), "onSelect");
       return {
         filters: I({
           update: (t) => {
-            e.filters.set(ns(e.filters.get(), t));
+            e.filters.set(rs(e.filters.get(), t));
           },
           reset: () => {
             (e.filters.set(e.defaultFilters()), e.searchName.set(""));
           },
           search: (t) => e.searchName.set(t),
           change: (t) => {
-            e.filters.set(ns(e.filters.get(), t));
+            e.filters.set(rs(e.filters.get(), t));
           },
         }),
-        create: ft((t) => {
-          const { id: a = ys(), vehicleIds: l = [], skipRedirect: i = !1 } = t ?? {};
-          s({ id: a, initial: Cs(bs(e.titles(), "playlists.defaultName"), l), skipRedirect: i });
+        create: _t((t) => {
+          const { id: a = xs(), vehicleIds: l = [], skipRedirect: i = !1 } = t ?? {};
+          s({ id: a, initial: bs(ys(e.titles(), "playlists.defaultName"), l), skipRedirect: i });
         }),
         edit: {
           sendModify: t.createCallback((e, t) => ({ id: e, data: JSON.stringify(t) }), "onModify"),
           setDirty: t.createCallback((e) => ({ value: e }), "onSetDirtyEdit"),
         },
-        select: t.createCallback((e = "") => ({ id: e }), "onSelect"),
+        select: _t((t = "") => {
+          (e.selectedID.set(t), a(t));
+        }),
         save: t.createCallback((e) => ({ id: e }), "onSave"),
         exit: t.createCallback((e) => ({ id: e }), "onDiscard"),
         goToAboutVehicle: t.createCallback((e) => ({ intCD: e }), "onGoToAboutVehicle"),
         openImport: t.createCallback(
-          ft(() => ({
-            type: Is,
+          _t(() => ({
+            type: Ss,
             params: JSON.stringify({ titles: Array.from(e.titles().values()) }),
           })),
           "openImportConfirm",
         ),
         openDeleteConfirm: t.createCallback(
-          (e, t) => ({ id: e, type: Ss, params: JSON.stringify({ title: t }) }),
+          (e, t) => ({ id: e, type: ws, params: JSON.stringify({ title: t }) }),
           "openDeleteConfirm",
         ),
       };
     },
-    { useRequires: () => ({ vehicles: hs(), myVehicles: gs(), filters: ds(), statistic: ms() }) },
+    { useRequires: () => ({ vehicles: ps(), myVehicles: fs(), filters: cs(), statistic: us() }) },
   ),
-  Vs = () => St.useContext(Bs),
-  Ms = "pending",
-  Ts = "readyToSelect",
-  [Ds, Rs] = m("VehiclesInventoryProvider")(
+  Vs = () => wt.useContext(Ls),
+  Bs = "pending",
+  Ms = "readyToSelect",
+  [Ds, Ts] = m("VehiclesInventoryProvider")(
     (e) => {
       const t = e.observableModel.primitives([
           "freeSlotsCount",
@@ -653,7 +656,7 @@ const Ss = "delete",
           "bpStatus",
           "telecomRentStatus",
         ]),
-        s = ht.box([], { deep: !1 }),
+        s = pt.box([], { deep: !1 }),
         a = { intCD: t.currentVehicleIntCD, inventoryId: t.currentVehicleInventoryId },
         l = p.shallow(() => {
           const t = a.intCD.get();
@@ -681,11 +684,11 @@ const Ss = "delete",
         m = p.primitive(() => {
           const t = [...c.getAll()],
             s = e.requires.filters.model.computes.nationToIndex();
-          return (t.sort((e, t) => os(s, _s, e, t)), t);
+          return (t.sort((e, t) => ns(s, hs, e, t)), t);
         });
       return (
         e.cleanup(
-          _t(() => {
+          ht(() => {
             const t = e.requires.filters.model.filters.get(),
               a = e.requires.filters.model.searchName.get(),
               l = e.requires.playlists?.model.current(),
@@ -693,10 +696,10 @@ const Ss = "delete",
               r = (l ? o(l.list) : m()).filter(
                 (s) =>
                   !1 !== i.has(s.id) &&
-                  !!ls(t, s, e.requires.statistic.model.get(s.id)) &&
-                  is(a, s),
+                  !!as(t, s, e.requires.statistic.model.get(s.id)) &&
+                  ls(a, s),
               );
-            It(() => s.set(r));
+            St(() => s.set(r));
           }),
         ),
         {
@@ -742,36 +745,36 @@ const Ss = "delete",
     }),
     {
       useRequires: () => ({
-        myVehicles: gs(),
-        vehicles: hs(),
-        statistic: ms(),
-        filters: ds(),
+        myVehicles: fs(),
+        vehicles: ps(),
+        statistic: us(),
+        filters: cs(),
         playlists: Vs(),
       }),
     },
   ),
-  zs = "Content_7ccb81a0",
-  Fs = "Content_disabledOverlay_a8908196",
-  As = "Content_base__disabled_da09528a",
-  Os = "Content_base__selected_da09528a",
-  Hs = "Content_base__empty_da09528a";
-function $s({ children: e, selected: t, disabled: s, empty: a }) {
-  return Et.jsxs("div", {
+  Rs = "Content_7ccb81a0",
+  zs = "Content_disabledOverlay_a8908196",
+  Fs = "Content_base__disabled_da09528a",
+  As = "Content_base__selected_da09528a",
+  Os = "Content_base__empty_da09528a";
+function Hs({ children: e, selected: t, disabled: s, empty: a }) {
+  return It.jsxs("div", {
     "data-name": "Content",
-    className: kt(zs, a && Hs, t && Os, s && As),
-    children: [e, s && Et.jsx("div", { className: Fs })],
+    className: Et(Rs, a && Os, t && As, s && Fs),
+    children: [e, s && It.jsx("div", { className: zs })],
   });
 }
-const Zs = "Slot_977dd8f1",
-  qs = "Slot_base__wrapper_ae3081b5",
-  Us = "Slot_base__disabled_334cc10f",
-  Gs = "Slot_base__empty_d386066c",
-  Ws = "Slot_content_1a27c8cf",
-  Js = "Slot_base__active_71f19f5c",
-  Ks = "Slot_base__selected_71f19f5c",
-  Xs = "Slot_selected_6e9f21df",
-  Qs = "Slot_selected__border_e2a17304",
-  Ys = St.memo(function ({
+const $s = "Slot_977dd8f1",
+  Zs = "Slot_base__wrapper_ae3081b5",
+  qs = "Slot_base__disabled_334cc10f",
+  Us = "Slot_base__empty_d386066c",
+  Gs = "Slot_content_1a27c8cf",
+  Ws = "Slot_base__active_71f19f5c",
+  Js = "Slot_base__selected_71f19f5c",
+  Ks = "Slot_selected_6e9f21df",
+  Xs = "Slot_selected__border_e2a17304",
+  Qs = wt.memo(function ({
     children: e,
     selected: t = !1,
     disabled: s = !1,
@@ -780,74 +783,74 @@ const Zs = "Slot_977dd8f1",
     ...i
   }) {
     const r = s || void 0 === i.onClick;
-    return Et.jsx("div", {
+    return It.jsx("div", {
       ...i,
       "data-name": "Slot",
-      className: kt(Zs, a && Js, t && Ks, s && Us, r && Gs, qs, l),
-      children: Et.jsxs("div", {
-        className: Ws,
+      className: Et($s, a && Ws, t && Js, s && qs, r && Us, Zs, l),
+      children: It.jsxs("div", {
+        className: Gs,
         children: [
-          Et.jsx($s, { selected: t, disabled: s, empty: r, children: e }),
-          t && Et.jsx("div", { className: kt(Xs, Qs) }),
-          Et.jsx("div", { className: Xs }),
+          It.jsx(Hs, { selected: t, disabled: s, empty: r, children: e }),
+          t && It.jsx("div", { className: Et(Ks, Xs) }),
+          It.jsx("div", { className: Ks }),
         ],
       }),
     });
   }),
-  ea = "buySlot",
-  ta = "buyTank",
-  sa = "restoreTank",
-  aa = "rentTank",
-  la = "ActionCards_text_cdbc926",
-  ia = "ActionCards_content_a46de8cf",
-  ra = "ActionCards_content__buySlot_a70e9708",
-  na = "ActionCards_contentIcon_166df330",
-  oa = "ActionCards_currency_ac7c654f",
-  ca = "ActionCards_discount_967a7825",
-  da = {
-    [Ms]: "menu.tankCarousel.wotPlusSelectionPending",
-    [Ts]: "menu.tankCarousel.wotPlusSelectionAvailable",
+  Ys = "buySlot",
+  ea = "buyTank",
+  ta = "restoreTank",
+  sa = "rentTank",
+  aa = "ActionCards_text_cdbc926",
+  la = "ActionCards_content_a46de8cf",
+  ia = "ActionCards_content__buySlot_a70e9708",
+  ra = "ActionCards_contentIcon_166df330",
+  na = "ActionCards_currency_ac7c654f",
+  oa = "ActionCards_discount_967a7825",
+  ca = {
+    [Bs]: "menu.tankCarousel.wotPlusSelectionPending",
+    [Ms]: "menu.tankCarousel.wotPlusSelectionAvailable",
   };
-Pt(function ({ type: e }) {
-  const t = Rs(),
+kt(function ({ type: e }) {
+  const t = Ts(),
     s = t.model.slots.price.currency.get(),
     a = t.model.slots.price.value.get(),
     l = t.model.slots.free.get(),
     i = t.model.slots.recover.get(),
     r = t.model.slots.discount.get(),
     n = t.model.telecomRentStatus.get();
-  if (e === ea)
-    return Et.jsx("div", {
-      className: oa,
-      children: Et.jsx(k, {
+  if (e === Ys)
+    return It.jsx("div", {
+      className: na,
+      children: It.jsx(k, {
         type: L.currency,
         size: P.extraSmall,
         enabled: r,
-        classNames: { icon: ca },
-        children: Et.jsx(B, {
+        classNames: { icon: oa },
+        children: It.jsx(V, {
           type: s,
           size: P.extraSmall,
           reverse: !0,
-          classNames: { base: kt(ia, ra), icon: na },
+          classNames: { base: Et(la, ia), icon: ra },
           children: a,
         }),
       }),
     });
-  if (e === aa) {
-    const e = da[n];
-    return e ? Et.jsx(V, { className: la, upgradeLegacy: !0, path: e }) : null;
+  if (e === sa) {
+    const e = ca[n];
+    return e ? It.jsx(B, { className: aa, upgradeLegacy: !0, path: e }) : null;
   }
-  return Et.jsxs("div", {
-    className: ia,
+  return It.jsxs("div", {
+    className: la,
     children: [
-      e === ta &&
-        Et.jsx(V, {
+      e === ea &&
+        It.jsx(B, {
           upgradeLegacy: !0,
           path: "menu.tankCarousel.vehicleStates.buyTankEmptyCount",
           params: { count: l },
         }),
-      e === sa &&
-        Et.jsx(V, {
+      e === ta &&
+        It.jsx(B, {
           upgradeLegacy: !0,
           path: "menu.tankCarousel.vehicleStates.restoreTankCount",
           params: { count: i },
@@ -855,53 +858,53 @@ Pt(function ({ type: e }) {
     ],
   });
 });
-const ua = "undamaged",
-  ma = "54033",
-  pa = "50705",
-  ha = "56833",
-  _a = "51201",
-  fa = { [ma]: "alpha", [pa]: "alpha", [_a]: "super", [ha]: "super" },
-  ga = "ammoNotFull",
+const da = "undamaged",
+  ua = "54033",
+  ma = "50705",
+  pa = "56833",
+  ha = "51201",
+  _a = { [ua]: "alpha", [ma]: "alpha", [ha]: "super", [pa]: "super" },
+  fa = "ammoNotFull",
   va = "crewNotFull",
-  xa = "exploded",
-  ya = "destroyed",
-  ba = "damaged",
-  Ca = "rentable",
-  Na = "rentableAgain",
-  ja = "rentalIsOver",
-  wa = "tooHeavy",
-  Sa = "unsuitableToQueue",
-  Ia = "unsuitableToUnit",
-  Ea = "inPrebattle",
-  ka = "battle",
-  Pa = "wot_plus_exclusive_vehicle_disabled",
-  La = {
-    [ga]: "ammo",
+  ga = "exploded",
+  xa = "destroyed",
+  ya = "damaged",
+  ba = "rentable",
+  Ca = "rentableAgain",
+  Na = "rentalIsOver",
+  ja = "tooHeavy",
+  wa = "unsuitableToQueue",
+  Sa = "unsuitableToUnit",
+  Ia = "inPrebattle",
+  Ea = "battle",
+  ka = "wot_plus_exclusive_vehicle_disabled",
+  Pa = {
+    [fa]: "ammo",
     [va]: "crew",
+    [ga]: "repair",
     [xa]: "repair",
     [ya]: "repair",
-    [ba]: "repair",
+    [ba]: "rental",
     [Ca]: "rental",
     [Na]: "rental",
-    [ja]: "rental",
+    [ja]: "notSuitable",
     [wa]: "notSuitable",
     [Sa]: "notSuitable",
-    [Ia]: "notSuitable",
-    [Ea]: "inPlatoon",
-    [ka]: "inBattle",
-    [Pa]: "notSuitable",
+    [Ia]: "inPlatoon",
+    [Ea]: "inBattle",
+    [ka]: "notSuitable",
   };
-function Ba(e, t, s) {
-  return !(!e || "disabled" === t || !s) && s.status !== Sa && s.maxBpScore > 0;
+function La(e, t, s) {
+  return !(!e || "disabled" === t || !s) && s.status !== wa && s.maxBpScore > 0;
 }
 function Va(e) {
   return e > 2;
 }
-const [Ma, Ta, Da] = m()(({ observableModel: e }) => ({
+const [Ba, Ma, Da] = m()(({ observableModel: e }) => ({
     ...e.primitives(["isCrystalEarnEnabled", "isDailyMultipliedXpEnabled", "isInfiniteAmmo"]),
   })),
-  Ra = () => St.useContext(Da.Context),
-  za = {
+  Ta = () => wt.useContext(Da.Context),
+  Ra = {
     base: "ProBoost_7490b440",
     arrow: "ProBoost_arrow_346b5e61",
     glow: "ProBoost_glow_280ac9aa",
@@ -915,72 +918,72 @@ const [Ma, Ta, Da] = m()(({ observableModel: e }) => ({
     triangle__3: "ProBoost_triangle__3_e738f7f2",
     base__deactivating: "ProBoost_base__deactivating_7b71aa2e",
   },
-  Fa = {
-    inactive: za.base__inactive,
-    activating: za.base__activating,
-    active: za.base__active,
-    deactivating: za.base__deactivating,
+  za = {
+    inactive: Ra.base__inactive,
+    activating: Ra.base__activating,
+    active: Ra.base__active,
+    deactivating: Ra.base__deactivating,
   };
-function Aa({ className: e, doubleRow: t, state: s = "inactive", isCornerHidden: a = !1 }) {
+function Fa({ className: e, doubleRow: t, state: s = "inactive", isCornerHidden: a = !1 }) {
   return "inactive" === s
     ? null
-    : Et.jsxs("div", {
-        className: kt(za.base, s && Fa[s], t && za.base__double, e),
+    : It.jsxs("div", {
+        className: Et(Ra.base, s && za[s], t && Ra.base__double, e),
         children: [
-          Et.jsx("div", { className: za.glow }),
-          !a && Et.jsx("div", { className: za.corner }),
-          Et.jsx("div", { className: za.arrow }),
-          [za.triangle__1, za.triangle__2, za.triangle__3].map((e) =>
-            Et.jsx("div", { className: kt(za.triangle, e) }, e),
+          It.jsx("div", { className: Ra.glow }),
+          !a && It.jsx("div", { className: Ra.corner }),
+          It.jsx("div", { className: Ra.arrow }),
+          [Ra.triangle__1, Ra.triangle__2, Ra.triangle__3].map((e) =>
+            It.jsx("div", { className: Et(Ra.triangle, e) }, e),
           ),
         ],
       });
 }
-const Oa = "Background_1089bc1c",
-  Ha = "Background_wotPlus_3cf6035a",
-  $a = "Background_crystal_6112fa42",
-  Za = "Background_bpBonus_cf76872",
-  qa = "Background_multiplier_284cda6c",
-  Ua = "Background_flag_beb58b8",
-  Ga = "Background_base__double_26effab7",
-  Wa = "Background_flag__active_de322c1b",
-  Ja = "Background_vehicle_23ef6e2b",
-  Ka = "Background_vehicle__dimmed_7f14a6c7",
-  Xa = "Background_crystal__limit_61072361",
-  Qa = M("Favorite", "Background_favorite_d98f92cc", {
+const Aa = "Background_1089bc1c",
+  Oa = "Background_wotPlus_3cf6035a",
+  Ha = "Background_crystal_6112fa42",
+  $a = "Background_bpBonus_cf76872",
+  Za = "Background_multiplier_284cda6c",
+  qa = "Background_flag_beb58b8",
+  Ua = "Background_base__double_26effab7",
+  Ga = "Background_flag__active_de322c1b",
+  Wa = "Background_vehicle_23ef6e2b",
+  Ja = "Background_vehicle__dimmed_7f14a6c7",
+  Ka = "Background_crystal__limit_61072361",
+  Xa = M("Favorite", "Background_favorite_d98f92cc", {
     variants: { active: { true: "Background_favorite__active_7f14a6c7" } },
   });
-function Ya({ nationId: e, selected: t, active: s, className: a }) {
-  return Et.jsx(F, {
-    className: kt(Ua, t || (s && Wa), a),
+function Qa({ nationId: e, selected: t, active: s, className: a }) {
+  return It.jsx(F, {
+    className: Et(qa, t || (s && Ga), a),
     path: `hangar.carousel.cards.flags.x400x300.${c(e)}`,
     position: "top left",
   });
 }
-const el = Pt(function ({ vehicle: e, statistic: t, validBP: s, doubleRow: a, classNames: l }) {
-  const i = Ra()?.model,
+const Ya = kt(function ({ vehicle: e, statistic: t, validBP: s, doubleRow: a, classNames: l }) {
+  const i = Ta()?.model,
     r = i?.isCrystalEarnEnabled.get() ?? !0,
-    n = (T(t?.numberOfCrystalEarned ?? [], 1) ?? 0) <= (T(t?.numberOfCrystalEarned ?? [], 0) ?? 0),
+    n = (D(t?.numberOfCrystalEarned ?? [], 1) ?? 0) <= (D(t?.numberOfCrystalEarned ?? [], 0) ?? 0),
     o = t?.proBoostActive,
     c = t?.fromWotPlus,
     d = r && e.crystalEarning && !c,
-    u = D(o),
+    u = T(o),
     m = (i?.isDailyMultipliedXpEnabled.get() ?? !0) && Va(Number(t?.bonusMultiplier)),
-    p = St.useMemo(
+    p = wt.useMemo(
       () => (o ? (!1 === u ? "activating" : "active") : u ? "deactivating" : "inactive"),
       [o, u],
     );
-  return Et.jsxs(Et.Fragment, {
+  return It.jsxs(It.Fragment, {
     children: [
-      c && Et.jsx("div", { className: kt(Ha, l?.wotPlus) }),
-      Et.jsx(Aa, { state: p, className: l?.proBoostIcon, doubleRow: a, isCornerHidden: d }),
-      d && Et.jsx("div", { className: kt($a, n && Xa, l?.crystal) }),
-      t?.bpSpecial && s && Et.jsx("div", { className: kt(Za, l?.bpBonus) }),
-      m && Et.jsx("div", { className: qa }),
+      c && It.jsx("div", { className: Et(Oa, l?.wotPlus) }),
+      It.jsx(Fa, { state: p, className: l?.proBoostIcon, doubleRow: a, isCornerHidden: d }),
+      d && It.jsx("div", { className: Et(Ha, n && Ka, l?.crystal) }),
+      t?.bpSpecial && s && It.jsx("div", { className: Et($a, l?.bpBonus) }),
+      m && It.jsx("div", { className: Za }),
     ],
   });
 });
-function tl({
+function el({
   vehicle: e,
   validBP: t,
   dimmed: s,
@@ -990,29 +993,29 @@ function tl({
   doubleRow: r,
   ...n
 }) {
-  return Et.jsxs("div", {
+  return It.jsxs("div", {
     ...n,
-    className: kt(Oa, r && Ga, n.className),
+    className: Et(Aa, r && Ua, n.className),
     children: [
-      Et.jsx(Ya, { nationId: e.nationId, active: a, selected: i }),
-      Et.jsx(z, { className: kt(Ja, ((l?.status && l.status !== ua) || s) && Ka), name: e.name }),
-      Et.jsx(el, { vehicle: e, statistic: l, validBP: t, doubleRow: r }),
-      Et.jsx(Qa, { active: e.favorite }),
+      It.jsx(Qa, { nationId: e.nationId, active: a, selected: i }),
+      It.jsx(z, { className: Et(Wa, ((l?.status && l.status !== da) || s) && Ja), name: e.name }),
+      It.jsx(Ya, { vehicle: e, statistic: l, validBP: t, doubleRow: r }),
+      It.jsx(Xa, { active: e.favorite }),
     ],
   });
 }
-const sl = "Bonuses_8169b4b3",
-  al = "Bonuses_bonus_91f120c3",
-  ll = "Bonuses_bonus__active_2364401e",
-  il = "Bonuses_bonusIcon_b65fb47f",
-  rl = "Bonuses_bonusValue_322db074",
-  nl = "Bonuses_bonusValue__highlighted_4bcc07c6",
-  ol = "Bonuses_rent_ea11a7e4",
-  cl = "Bonuses_base__double_ca1cd57b",
-  dl = "Bonuses_icon_3991db74",
-  ul = "Bonuses_text_a556857c",
-  ml = g.resolve("strings");
-function pl({
+const tl = "Bonuses_8169b4b3",
+  sl = "Bonuses_bonus_91f120c3",
+  al = "Bonuses_bonus__active_2364401e",
+  ll = "Bonuses_bonusIcon_b65fb47f",
+  il = "Bonuses_bonusValue_322db074",
+  rl = "Bonuses_bonusValue__highlighted_4bcc07c6",
+  nl = "Bonuses_rent_ea11a7e4",
+  ol = "Bonuses_base__double_ca1cd57b",
+  cl = "Bonuses_icon_3991db74",
+  dl = "Bonuses_text_a556857c",
+  ul = v.resolve("strings");
+function ml({
   bonusMultiplier: e,
   vehicleId: t,
   restBonusEnabled: s,
@@ -1026,41 +1029,41 @@ function pl({
       args: { intCD: t },
       disabled: !s,
     });
-  return Et.jsxs("div", {
-    className: kt(al, -1 !== e && ll, a),
+  return It.jsxs("div", {
+    className: Et(sl, -1 !== e && al, a),
     ...r,
     children: [
-      Et.jsx("div", { className: kt(il, l?.icon) }),
-      Et.jsx("div", {
-        className: kt(rl, l?.value, i && nl),
-        children: `${ml.readOrEmpty("common.multiplierSmall")}${e}`,
+      It.jsx("div", { className: Et(ll, l?.icon) }),
+      It.jsx("div", {
+        className: Et(il, l?.value, i && rl),
+        children: `${ul.readOrEmpty("common.multiplierSmall")}${e}`,
       }),
     ],
   });
 }
-const hl = Pt(function ({ vehicle: e, statistic: t, doubleRow: s, ...a }) {
-    const l = Ra()?.model.isDailyMultipliedXpEnabled.get() ?? !0;
-    return Et.jsxs("div", {
+const pl = kt(function ({ vehicle: e, statistic: t, doubleRow: s, ...a }) {
+    const l = Ta()?.model.isDailyMultipliedXpEnabled.get() ?? !0;
+    return It.jsxs("div", {
       ...a,
-      className: kt(sl, s && cl, a.className),
+      className: Et(tl, s && ol, a.className),
       children: [
         l &&
           t &&
-          Et.jsx(pl, {
+          It.jsx(ml, {
             bonusMultiplier: t.bonusMultiplier,
             vehicleId: e.vehicleId,
             restBonusEnabled: t.restBonusEnabled,
           }),
-        Et.jsx(A.ShortCounter, {
+        It.jsx(A.ShortCounter, {
           time: e.rent.leftTime,
           wins: e.rent.leftWins,
           battles: e.rent.leftBattles,
-          classNames: { base: ol, icon: dl, text: ul },
+          classNames: { base: nl, icon: cl, text: dl },
         }),
       ],
     });
   }),
-  _l = {
+  hl = {
     base: "Information_dd628d50",
     info: "Information_info_b2948982",
     details: "Information_details_e5340a0c",
@@ -1089,15 +1092,15 @@ const hl = Pt(function ({ vehicle: e, statistic: t, doubleRow: s, ...a }) {
     identifierIcon__super: "Information_identifierIcon__super_34b8f5c2",
     identifierIcon__changeNation: "Information_identifierIcon__changeNation_dfee83c8",
   },
-  fl = M("VehicleName", {
-    element: (e) => Et.jsx(H.Name, { ...e }),
-    className: _l.text,
-    cva: { variants: { premium: { true: _l.text__premium } } },
+  _l = M("VehicleName", {
+    element: (e) => It.jsx(H.Name, { ...e }),
+    className: hl.text,
+    cva: { variants: { premium: { true: hl.text__premium } } },
   });
-function gl({ statistic: e, vehicle: t, className: s, status: a }) {
-  const l = g.resolve("views"),
-    i = g.resolve("aliases"),
-    r = g.resolve("strings"),
+function fl({ statistic: e, vehicle: t, className: s, status: a }) {
+  const l = v.resolve("views"),
+    i = v.resolve("aliases"),
+    r = v.resolve("strings"),
     n = O({
       resId: i.read((e) => e.hangar.shared.VehiclesStatistics("resId")),
       contentId: l.read((e) =>
@@ -1107,11 +1110,11 @@ function gl({ statistic: e, vehicle: t, className: s, status: a }) {
       ),
       args: { intCD: t?.vehicleId },
     });
-  return Et.jsxs("div", {
-    className: kt(
-      _l.battlePass,
-      e.maxBpScore > 0 && _l.battlePass__active,
-      e.bpSpecial && _l.battlePass__bonus,
+  return It.jsxs("div", {
+    className: Et(
+      hl.battlePass,
+      e.maxBpScore > 0 && hl.battlePass__active,
+      e.bpSpecial && hl.battlePass__bonus,
       s,
     ),
     onMouseEnter: function (e) {
@@ -1121,43 +1124,43 @@ function gl({ statistic: e, vehicle: t, className: s, status: a }) {
       n?.onMouseLeave();
     },
     children: [
-      Et.jsxs("div", {
-        className: _l.bpPoints,
+      It.jsxs("div", {
+        className: hl.bpPoints,
         children: [
-          Et.jsx("div", {
-            className: _l.points,
+          It.jsx("div", {
+            className: hl.points,
             children: $.formatNumber("integral", e.bpProgress),
           }),
-          Et.jsx("div", {
-            className: kt(_l.points, _l.points__slash),
+          It.jsx("div", {
+            className: Et(hl.points, hl.points__slash),
             children: r.readOrEmpty("common.common.slash"),
           }),
-          Et.jsx("div", {
-            className: _l.points,
+          It.jsx("div", {
+            className: hl.points,
             children: $.formatNumber("integral", e.maxBpScore),
           }),
-          Et.jsx("div", { className: _l.bpShadow }),
+          It.jsx("div", { className: hl.bpShadow }),
         ],
       }),
-      Et.jsx("div", { className: _l.bpIcon }),
+      It.jsx("div", { className: hl.bpIcon }),
     ],
   });
 }
 function vl({ statistic: e, elite: t, vehicle: s, selected: a, classNames: l, className: i }) {
-  return Et.jsxs("div", {
-    className: kt(_l.details, i),
+  return It.jsxs("div", {
+    className: Et(hl.details, i),
     children: [
       e &&
-        Et.jsx(H.Prestige, {
+        It.jsx(H.Prestige, {
           level: e.prestigeLevel,
           grade: e.prestigeGrade,
           type: e.prestigeType,
           direction: q.left,
-          className: kt(_l.prestige, a && _l.prestige__active, l?.prestige),
+          className: Et(hl.prestige, a && hl.prestige__active, l?.prestige),
         }),
-      Et.jsx(H.Level, { className: kt(_l.text, _l.text__level, l?.level), value: s.level }),
+      It.jsx(H.Level, { className: Et(hl.text, hl.text__level, l?.level), value: s.level }),
       Z(s.type) &&
-        Et.jsx(H.Type, {
+        It.jsx(H.Type, {
           type: s.type,
           premium: t || e?.elite,
           size: H.Type.sizes.x24x24,
@@ -1166,56 +1169,56 @@ function vl({ statistic: e, elite: t, vehicle: s, selected: a, classNames: l, cl
     ],
   });
 }
-function xl({ vehicle: e, className: t, classNames: s }) {
-  const a = fa[e.id],
+function gl({ vehicle: e, className: t, classNames: s }) {
+  const a = _a[e.id],
     l = e.nationChangeAvailable,
     i = e.rent.leftTime > 0 || e.rent.leftWins > 0 || e.rent.leftBattles > 0;
-  return Et.jsxs("div", {
-    className: kt(
-      _l.identifier,
-      _l[`identifier__${a}`],
-      l && _l.identifier__changeNation,
-      i && _l.identifier__rent,
+  return It.jsxs("div", {
+    className: Et(
+      hl.identifier,
+      hl[`identifier__${a}`],
+      l && hl.identifier__changeNation,
+      i && hl.identifier__rent,
       t,
     ),
     children: [
-      Et.jsx(fl, {
+      It.jsx(_l, {
         className: s?.name,
         premium: e.premium,
-        children: Et.jsx(U, { className: _l.truncatedText, text: e.shortName }),
+        children: It.jsx(U, { className: hl.truncatedText, text: e.shortName }),
       }),
       (a || l) &&
-        Et.jsx("div", {
-          className: kt(
-            _l.identifierIcon,
-            _l[`identifierIcon__${a}`],
-            l && _l.identifierIcon__changeNation,
+        It.jsx("div", {
+          className: Et(
+            hl.identifierIcon,
+            hl[`identifierIcon__${a}`],
+            l && hl.identifierIcon__changeNation,
             s?.icon,
           ),
         }),
     ],
   });
 }
-const yl = Pt(function ({ vehicle: e, statistic: t, selected: s, doubleRow: a, ...l }) {
-    const i = Rs(),
+const xl = kt(function ({ vehicle: e, statistic: t, selected: s, doubleRow: a, ...l }) {
+    const i = Ts(),
       r = i.model.bpState.active.get(),
       n = i.model.bpState.status.get();
-    return Et.jsxs("div", {
+    return It.jsxs("div", {
       ...l,
-      className: kt(_l.base, a && _l.base__double, l.className),
+      className: Et(hl.base, a && hl.base__double, l.className),
       children: [
-        t && Ba(r, n, t) && Et.jsx(gl, { vehicle: e, statistic: t, status: n }),
-        Et.jsxs(H, {
-          className: _l.info,
+        t && La(r, n, t) && It.jsx(fl, { vehicle: e, statistic: t, status: n }),
+        It.jsxs(H, {
+          className: hl.info,
           children: [
-            Et.jsx(vl, { vehicle: e, statistic: t, selected: s }),
-            Et.jsx(xl, { vehicle: e }),
+            It.jsx(vl, { vehicle: e, statistic: t, selected: s }),
+            It.jsx(gl, { vehicle: e }),
           ],
         }),
       ],
     });
   }),
-  bl = {
+  yl = {
     base: "Overlay_ef16c91",
     alert: "Overlay_alert_db4a0e15",
     alertIcon: "Overlay_alertIcon_3d7c077a",
@@ -1223,54 +1226,54 @@ const yl = Pt(function ({ vehicle: e, statistic: t, selected: s, doubleRow: a, .
     alertText: "Overlay_alertText_ca764641",
     alertText__light: "Overlay_alertText__light_bece984e",
   };
-function Cl({ status: e, classNames: t, className: s }) {
-  const a = g.resolve("images"),
-    l = G(`hangar.carousel.cards.alerts.${La[e]}`, `hangar.carousel.cards.alerts.${La[e]}_upscale`),
+function bl({ status: e, classNames: t, className: s }) {
+  const a = v.resolve("images"),
+    l = G(`hangar.carousel.cards.alerts.${Pa[e]}`, `hangar.carousel.cards.alerts.${Pa[e]}_upscale`),
     i = G(
       "hangar.carousel.cards.alerts.notSuitable",
       "hangar.carousel.cards.alerts.notSuitable_upscale",
     ),
-    r = e === ka || e === Ea;
-  return Et.jsxs("div", {
-    className: kt(bl.alert, s),
+    r = e === Ea || e === Ia;
+  return It.jsxs("div", {
+    className: Et(yl.alert, s),
     children: [
-      Et.jsx(F, { className: kt(bl.alertIcon, t?.icon), path: a.has(l) ? l : i }),
-      Et.jsx(V, {
+      It.jsx(F, { className: Et(yl.alertIcon, t?.icon), path: a.has(l) ? l : i }),
+      It.jsx(B, {
         upgradeLegacy: !0,
-        className: kt(bl.alertText, r && bl.alertText__light, t?.text),
+        className: Et(yl.alertText, r && yl.alertText__light, t?.text),
         path: `menu.tankCarousel.vehicleStates.${e}`,
-        params: { icon: Et.jsx(F, { path: "library.premium_small", width: 34, height: 16 }) },
+        params: { icon: It.jsx(F, { path: "library.premium_small", width: 34, height: 16 }) },
       }),
     ],
   });
 }
-function Nl({ statistic: e, doubleRow: t, ...s }) {
-  return e.status === ua
+function Cl({ statistic: e, doubleRow: t, ...s }) {
+  return e.status === da
     ? null
-    : Et.jsx("div", {
+    : It.jsx("div", {
         ...s,
-        className: kt(bl.base, t && bl.base__double, s.className),
-        children: Et.jsx(Cl, { status: e.status }),
+        className: Et(yl.base, t && yl.base__double, s.className),
+        children: It.jsx(bl, { status: e.status }),
       });
 }
-M("Disable", bl.disable);
-const jl = "Card_e79008fd",
-  wl = "Card_base__double_f8b7f334",
-  Sl = "Card_content_a6141b08",
-  Il = "Card_border_e9cb9a85",
-  El = g.resolve("views"),
-  kl = g.resolve("aliases");
-function Pl(e) {
-  const [t, s] = St.useState(!0),
-    [, a] = St.useTransition();
+M("Disable", yl.disable);
+const Nl = "Card_e79008fd",
+  jl = "Card_base__double_f8b7f334",
+  wl = "Card_content_a6141b08",
+  Sl = "Card_border_e9cb9a85",
+  Il = v.resolve("views"),
+  El = v.resolve("aliases");
+function kl(e) {
+  const [t, s] = wt.useState(!0),
+    [, a] = wt.useTransition();
   return (
-    St.useEffect(() => {
+    wt.useEffect(() => {
       t && a(() => s(!1));
     }, [t]),
-    t ? null : Et.jsx(tl, { ...e })
+    t ? null : It.jsx(el, { ...e })
   );
 }
-function Ll({
+function Pl({
   vehicle: e,
   statistic: t,
   selected: s,
@@ -1278,54 +1281,54 @@ function Ll({
   concurrent: l,
   disableContextMenu: i,
 }) {
-  const [r, n] = St.useState(l),
-    [, o] = St.useTransition(),
+  const [r, n] = wt.useState(l),
+    [, o] = wt.useTransition(),
     c = J(
       "vehicle",
-      St.useMemo(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
+      wt.useMemo(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
     ),
     d = O({
-      resId: kl.read((e) => e.hangar.shared.VehiclesInventory("resId")),
-      contentId: El.read((e) => e.mono.hangar.vehicle_tooltip("resId")),
-      args: Lt.useMemo(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
+      resId: El.read((e) => e.hangar.shared.VehiclesInventory("resId")),
+      contentId: Il.read((e) => e.mono.hangar.vehicle_tooltip("resId")),
+      args: Pt.useMemo(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
     });
   return (
-    St.useEffect(() => {
+    wt.useEffect(() => {
       r && o(() => n(!1));
     }, [r]),
     r
       ? null
-      : Et.jsxs("div", {
+      : It.jsxs("div", {
           ...d,
           ...(!i && c),
-          className: kt(jl, a && wl),
+          className: Et(Nl, a && jl),
           children: [
-            Et.jsxs("div", {
-              className: Sl,
+            It.jsxs("div", {
+              className: wl,
               children: [
-                Et.jsx(yl, { vehicle: e, selected: s, statistic: t, doubleRow: a }),
-                Et.jsx(hl, { vehicle: e, statistic: t, doubleRow: a }),
+                It.jsx(xl, { vehicle: e, selected: s, statistic: t, doubleRow: a }),
+                It.jsx(pl, { vehicle: e, statistic: t, doubleRow: a }),
               ],
             }),
-            Et.jsx(Nl, { statistic: t, doubleRow: a }),
+            It.jsx(Cl, { statistic: t, doubleRow: a }),
           ],
         })
   );
 }
-Pt(function ({ vehicleId: e, selected: t = !1, doubleRow: s, children: a, concurrent: l, ...i }) {
-  const r = Rs(),
-    n = hs().model.get(e),
-    o = ms().model.get(e),
+kt(function ({ vehicleId: e, selected: t = !1, doubleRow: s, children: a, concurrent: l, ...i }) {
+  const r = Ts(),
+    n = ps().model.get(e),
+    o = us().model.get(e),
     c = W(),
     d = r.model.current.inventoryId.get(),
     u = r.model.prebattleModeActive(),
     m = r.model.bpState.active.get(),
     p = r.model.bpState.status.get();
-  if (!n || !o) return Et.jsx(Ys, { ...i });
-  const h = l ? Pl : tl;
-  return Et.jsxs(Ys, {
+  if (!n || !o) return It.jsx(Qs, { ...i });
+  const h = l ? kl : el;
+  return It.jsxs(Qs, {
     ...i,
-    className: kt("vehicle-card", i.className),
+    className: Et("vehicle-card", i.className),
     selected: t,
     "data-test-id": `vehicleCard-${e}`,
     onMouseEnter: function (e) {
@@ -1342,15 +1345,15 @@ Pt(function ({ vehicleId: e, selected: t = !1, doubleRow: s, children: a, concur
         i.onClick?.(e));
     },
     children: [
-      Et.jsx(h, {
+      It.jsx(h, {
         vehicle: n,
-        validBP: Ba(m, p, o),
+        validBP: La(m, p, o),
         dimmed: u,
         statistic: o,
         selected: t,
         doubleRow: s,
       }),
-      Et.jsx(Ll, {
+      It.jsx(Pl, {
         concurrent: l,
         statistic: o,
         vehicle: n,
@@ -1361,13 +1364,13 @@ Pt(function ({ vehicleId: e, selected: t = !1, doubleRow: s, children: a, concur
     ],
   });
 });
-const Bl = -1,
-  [Vl, Ml, { Context: Tl }] = m("ManageableVehiclePlaylistsModel")(
+const Ll = -1,
+  [Vl, Bl, { Context: Ml }] = m("ManageableVehiclePlaylistsModel")(
     (e) => {
       const t = {
           ...e.observableModel.primitives({ intCD: "vehicleId" }),
-          displayedVehicleId: ht.box(Bl),
-          changesInPlaylistSelection: ht.set(new Set()),
+          displayedVehicleId: pt.box(Ll),
+          changesInPlaylistSelection: pt.set(new Set()),
         },
         s = p.shallow(() =>
           e.requires.playlists.model.sortedIds().reduce((t, s) => {
@@ -1384,8 +1387,8 @@ const Bl = -1,
         l = p.primitive(() => 0 === a().length);
       return (
         e.cleanup(
-          _t(() => {
-            (t.displayedVehicleId.get(), s(), It(() => t.changesInPlaylistSelection.clear()));
+          ht(() => {
+            (t.displayedVehicleId.get(), s(), St(() => t.changesInPlaylistSelection.clear()));
           }),
         ),
         {
@@ -1399,7 +1402,7 @@ const Bl = -1,
                 l = e.requires.vehicleStatistics.model.get(s);
               if (void 0 !== a && void 0 !== l) return { ...a, elite: l.elite };
             }),
-            empty: p.primitive(() => t.vehicleId.get() === Bl),
+            empty: p.primitive(() => t.vehicleId.get() === Ll),
             sortedPlaylists: s,
             hasChanges: p.primitive(() => t.changesInPlaylistSelection.size > 0),
             enabled: p.primitive(() => e.requires.playlists.model.enabled.get()),
@@ -1408,7 +1411,7 @@ const Bl = -1,
       );
     },
     (e) => ({
-      setDisplayedVehicleId: ft((t) => {
+      setDisplayedVehicleId: _t((t) => {
         e.model.displayedVehicleId.set(t);
       }),
       reset: e.externalModel.createCallbackNoArgs("onReset"),
@@ -1416,16 +1419,16 @@ const Bl = -1,
       goToCreatePlaylist: (t) => {
         e.requires.playlists.controls.create({ vehicleIds: t });
       },
-      togglePlaylist: ft((t) => {
+      togglePlaylist: _t((t) => {
         e.model.changesInPlaylistSelection.has(t)
           ? e.model.changesInPlaylistSelection.delete(t)
           : e.model.changesInPlaylistSelection.add(t);
       }),
-      save: ft(() => {
+      save: _t(() => {
         const t = e.model.displayedVehicleId.get(),
           s = e.requires.playlists.model.currentId();
         for (const a of e.model.changesInPlaylistSelection) {
-          const s = ws(e.requires.playlists.model.byId(a));
+          const s = js(e.requires.playlists.model.byId(a));
           if (!s) return void console.warn(`Missing playlist data for id = ${a}`);
           (e.requires.playlists.controls.edit.sendModify(a, {
             ...s,
@@ -1436,14 +1439,14 @@ const Bl = -1,
         }
         e.requires.playlists.controls.select(s);
       }),
-      cancel: ft(() => {
+      cancel: _t(() => {
         e.model.changesInPlaylistSelection.clear();
       }),
     }),
-    { useRequires: () => ({ vehicles: hs(), playlists: Ls(), vehicleStatistics: ms() }) },
+    { useRequires: () => ({ vehicles: ps(), playlists: Ps(), vehicleStatistics: us() }) },
   ),
   Dl = (e) =>
-    St.createElement(
+    wt.createElement(
       "svg",
       {
         width: 24,
@@ -1454,32 +1457,32 @@ const Bl = -1,
         xmlnsXlink: "http://www.w3.org/1999/xlink",
         ...e,
       },
-      St.createElement("path", {
+      wt.createElement("path", {
         opacity: 0.8,
         d: "M19 16H22V18H19V21H17V18H14V16H17V13H19V16Z",
         fill: "#0D0E10",
       }),
-      St.createElement("path", {
+      wt.createElement("path", {
         d: "M19 15H22V17H19V20H17V17H14V15H17V12H19V15Z",
         fill: "url(#paint0_radial_111851_505980)",
       }),
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.8 },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M12 16H5V15H12V16ZM15 13H5V12H15V13ZM19 10H5V9H19V10ZM19 7H5V6H19V7Z",
           fill: "url(#paint1_radial_111851_505980)",
         }),
       ),
-      St.createElement("path", {
+      wt.createElement("path", {
         opacity: 0.8,
         d: "M12 17H5V16H12V17ZM15 14H5V13H15V14ZM19 11H5V10H19V11ZM19 8H5V7H19V8Z",
         fill: "#0D0E10",
       }),
-      St.createElement(
+      wt.createElement(
         "defs",
         null,
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint0_radial_111851_505980",
@@ -1489,10 +1492,10 @@ const Bl = -1,
             gradientUnits: "userSpaceOnUse",
             gradientTransform: "translate(15.7778 13.6) rotate(90) scale(5.6 4.97778)",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint1_radial_111851_505980",
@@ -1502,59 +1505,59 @@ const Bl = -1,
             gradientUnits: "userSpaceOnUse",
             gradientTransform: "translate(12 14.0904) rotate(180) scale(8.90909 2.42616)",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
       ),
     ),
-  Rl = "Buttons_937965ba",
-  zl = "Buttons_right_268130b5",
-  Fl = "Buttons_button_aeef4019",
-  Al = "Buttons_button__create_61690fd8",
-  Ol = "Buttons_icon_378ba619",
-  Hl = g.resolve("strings"),
-  $l = Pt(function () {
-    const { model: e, controls: t } = Ml();
-    return Et.jsxs("div", {
-      className: kt(Rl),
+  Tl = "Buttons_937965ba",
+  Rl = "Buttons_right_268130b5",
+  zl = "Buttons_button_aeef4019",
+  Fl = "Buttons_button__create_61690fd8",
+  Al = "Buttons_icon_378ba619",
+  Ol = v.resolve("strings"),
+  Hl = kt(function () {
+    const { model: e, controls: t } = Bl();
+    return It.jsxs("div", {
+      className: Et(Tl),
       children: [
-        Et.jsx(K, {
-          body: Hl.readOrEmpty("playlists.managaeble_playlists.buttons.create.tooltipBody"),
-          children: Et.jsx(X, {
-            className: kt(Fl, Al),
+        It.jsx(K, {
+          body: Ol.readOrEmpty("playlists.managaeble_playlists.buttons.create.tooltipBody"),
+          children: It.jsx(X, {
+            className: Et(zl, Fl),
             theme: X.themes.secondary,
             size: X.sizes.extraSmall,
             autoAlignContent: !1,
             onClick: () => {
               (t.goToCreatePlaylist([e.displayedVehicleId.get()]), t.reset());
             },
-            children: Et.jsx(Dl, { className: Ol }),
+            children: It.jsx(Dl, { className: Al }),
           }),
         }),
-        Et.jsxs("div", {
-          className: zl,
+        It.jsxs("div", {
+          className: Rl,
           children: [
-            Et.jsx(X, {
-              className: Fl,
+            It.jsx(X, {
+              className: zl,
               theme: X.themes.secondary,
               size: X.sizes.extraSmall,
               onClick: () => {
                 (t.cancel(), t.reset());
               },
-              children: Et.jsx(U, {
-                text: Hl.readOrEmpty("playlists.managaeble_playlists.buttons.cancel.title"),
+              children: It.jsx(U, {
+                text: Ol.readOrEmpty("playlists.managaeble_playlists.buttons.cancel.title"),
               }),
             }),
-            Et.jsx(X, {
-              className: Fl,
+            It.jsx(X, {
+              className: zl,
               theme: X.themes.primary,
               size: X.sizes.extraSmall,
               disabled: !e.computeds.hasChanges(),
               onClick: () => {
                 (t.save(), t.reset());
               },
-              children: Et.jsx(U, {
-                text: Hl.readOrEmpty("playlists.managaeble_playlists.buttons.save.title"),
+              children: It.jsx(U, {
+                text: Ol.readOrEmpty("playlists.managaeble_playlists.buttons.save.title"),
               }),
             }),
           ],
@@ -1562,119 +1565,119 @@ const Bl = -1,
       ],
     });
   }),
-  Zl = "Item_itemBackground_f5007fc6",
-  ql = "Item_c5163bf",
-  Ul = "Item_checkbox_cfffba80",
-  Gl = "Item_item__checked_5f6fcc69",
-  Wl = "Item_check_a68580c8",
-  Jl = "Item_checkboxLabel_885d0061",
-  Kl = Pt(function ({ id: e, title: t, checked: s }) {
-    const { controls: a } = Ml();
-    return Et.jsxs("div", {
-      className: kt(ql, s && Gl),
+  $l = "Item_itemBackground_f5007fc6",
+  Zl = "Item_c5163bf",
+  ql = "Item_checkbox_cfffba80",
+  Ul = "Item_item__checked_5f6fcc69",
+  Gl = "Item_check_a68580c8",
+  Wl = "Item_checkboxLabel_885d0061",
+  Jl = kt(function ({ id: e, title: t, checked: s }) {
+    const { controls: a } = Bl();
+    return It.jsxs("div", {
+      className: Et(Zl, s && Ul),
       children: [
-        Et.jsx("div", { className: Zl }),
-        Et.jsx(Q, {
+        It.jsx("div", { className: $l }),
+        It.jsx(Q, {
           checked: s,
           onCheckedChange: () => a.togglePlaylist(e),
           size: Y.small,
-          className: Ul,
-          classNames: { label: Jl, check: Wl },
-          children: Et.jsx(U, { text: t }),
+          className: ql,
+          classNames: { label: Wl, check: Gl },
+          children: It.jsx(U, { text: t }),
         }),
       ],
     });
   }),
-  Xl = "List_152fbdf4",
-  Ql = "List_scrollWrapper_e69e8089",
-  Yl = "List_scrollContent_30662217",
-  ei = "List_scrollbar_611defd3",
-  ti = Pt(function () {
-    const { model: e } = Ml(),
+  Kl = "List_152fbdf4",
+  Xl = "List_scrollWrapper_e69e8089",
+  Ql = "List_scrollContent_30662217",
+  Yl = "List_scrollbar_611defd3",
+  ei = kt(function () {
+    const { model: e } = Bl(),
       t = e.computeds.playlistItems();
-    return Et.jsxs("div", {
-      className: Xl,
+    return It.jsxs("div", {
+      className: Kl,
       children: [
-        Et.jsx(ee, {
-          classNames: { wrapper: Ql, content: Yl },
+        It.jsx(ee, {
+          classNames: { wrapper: Xl, content: Ql },
           children: te(t, ({ id: e, title: t, selected: s }) =>
-            Et.jsx(Kl, { id: e, title: t, checked: s }, e),
+            It.jsx(Jl, { id: e, title: t, checked: s }, e),
           ),
         }),
-        Et.jsx(se, { classNames: { base: ei } }),
+        It.jsx(se, { classNames: { base: Yl } }),
       ],
     });
   }),
-  si = "Vehicle_name_f5f779f6",
-  ai = "Vehicle_level_c03ad304",
-  li = "Vehicle_type_9905a21f",
-  ii = Pt(function () {
-    const { model: e } = Ml(),
+  ti = "Vehicle_name_f5f779f6",
+  si = "Vehicle_level_c03ad304",
+  ai = "Vehicle_type_9905a21f",
+  li = kt(function () {
+    const { model: e } = Bl(),
       t = e.computeds.vehicle();
     if (void 0 === t) return null;
     const s = u(t.role);
-    return Et.jsxs(H, {
+    return It.jsxs(H, {
       children: [
-        Et.jsx(H.Level, { value: t.level, className: ai }),
+        It.jsx(H.Level, { value: t.level, className: si }),
         Z(t.type) &&
-          Et.jsx(H.Type, {
+          It.jsx(H.Type, {
             size: H.Type.sizes.x24x24,
-            className: li,
+            className: ai,
             type: t.type,
             premium: t.elite,
           }),
-        Et.jsx(U, { text: t.fullName, className: si }),
-        s !== ae && Et.jsx(H.Role, { size: H.Role.sizes.x16x16, roleKey: s }),
+        It.jsx(U, { text: t.fullName, className: ti }),
+        s !== ae && It.jsx(H.Role, { size: H.Role.sizes.x16x16, roleKey: s }),
       ],
     });
   }),
-  ri = "Styles_display_f2930fa3",
-  ni = "Styles_header_dcb2494f",
-  oi = "Styles_body_504cd01f",
-  ci = "Styles_title_ece3f15e",
-  di = g.resolve("strings");
-function ui({ className: e }) {
-  return Et.jsxs(le.Header, {
-    className: kt(ni, e),
+  ii = "Styles_display_f2930fa3",
+  ri = "Styles_header_dcb2494f",
+  ni = "Styles_body_504cd01f",
+  oi = "Styles_title_ece3f15e",
+  ci = v.resolve("strings");
+function di({ className: e }) {
+  return It.jsxs(le.Header, {
+    className: Et(ri, e),
     children: [
-      Et.jsx(le.Title, {
-        className: ci,
-        children: Et.jsx(U, {
-          text: di.readOrEmpty("playlists.managaeble_playlists.header.title"),
+      It.jsx(le.Title, {
+        className: oi,
+        children: It.jsx(U, {
+          text: ci.readOrEmpty("playlists.managaeble_playlists.header.title"),
         }),
       }),
-      Et.jsx(ii, {}),
+      It.jsx(li, {}),
     ],
   });
 }
-function mi({ className: e }) {
-  return Et.jsxs(le.Body, {
-    className: kt(oi, e),
+function ui({ className: e }) {
+  return It.jsxs(le.Body, {
+    className: Et(ni, e),
     children: [
-      Et.jsx(le.Divider, {}),
-      Et.jsx(ie, { children: Et.jsx(ti, {}) }),
-      Et.jsx(le.Divider, {}),
-      Et.jsx($l, {}),
+      It.jsx(le.Divider, {}),
+      It.jsx(ie, { children: It.jsx(ei, {}) }),
+      It.jsx(le.Divider, {}),
+      It.jsx(Hl, {}),
     ],
   });
 }
-const pi = St.memo(function ({ vehicleId: e, tipSize: t, className: s, children: a, ...l }) {
-    return Et.jsxs(le.Display, {
+const mi = wt.memo(function ({ vehicleId: e, tipSize: t, className: s, children: a, ...l }) {
+    return It.jsxs(le.Display, {
       ...l,
-      className: kt(ri, s),
-      children: [Et.jsx(le.Tip, { size: t }), Et.jsx(le.Close, {}), a],
+      className: Et(ii, s),
+      children: [It.jsx(le.Tip, { size: t }), It.jsx(le.Close, {}), a],
     });
   }),
-  hi = Pt(({ children: e }) => {
+  pi = kt(({ children: e }) => {
     const t = re(),
       s = ne(),
       a = oe(),
       l = ce(),
-      { model: i, controls: r } = Ml(),
+      { model: i, controls: r } = Bl(),
       n = i.vehicleId.get(),
       o = i.displayedVehicleId.get(),
-      [c, d] = St.useState(!1),
-      [u, m] = St.useState(!1),
+      [c, d] = wt.useState(!1),
+      [u, m] = wt.useState(!1),
       p = de(() => {
         (m(!0), t.open(), a.run(() => m(!1), ue));
       }),
@@ -1683,7 +1686,7 @@ const pi = St.memo(function ({ vehicleId: e, tipSize: t, className: s, children:
           t.close(),
           a.run(() => {
             (d(!0),
-              r.setDisplayedVehicleId(Bl),
+              r.setDisplayedVehicleId(Ll),
               l.run(() => {
                 (m(!1), d(!1));
               }));
@@ -1692,57 +1695,53 @@ const pi = St.memo(function ({ vehicleId: e, tipSize: t, className: s, children:
       _ = de(() => {
         (d(!0), r.setDisplayedVehicleId(n), l.run(() => d(!1)));
       });
-    St.useEffect(() => {
+    wt.useEffect(() => {
       s || i.computeds.empty() || t.opened || (r.reset(), h());
     }, [t.opened]);
     const f = de(() => {
       l.isRunning ||
         (t.opened || a.isRunning || n === o
-          ? t.opened || n === Bl || o === Bl
-            ? t.opened && n === Bl && o !== Bl && h()
+          ? t.opened || n === Ll || o === Ll
+            ? t.opened && n === Ll && o !== Ll && h()
             : a.isRunning || p()
           : _());
     });
     return (
-      St.useEffect(f, [f, n, o, t.opened, u, c]),
+      wt.useEffect(f, [f, n, o, t.opened, u, c]),
       me(() => {
         i.computeds.empty() || r.reset();
       }),
       e
     );
   }),
-  _i = (e) => `manageable-vehicle-playlists-model-${e}`;
-Pt(function ({ children: e, position: t, freeSpaceRem: s, tipSize: a }) {
-  const { model: l, controls: i } = Ml(),
+  hi = (e) => `manageable-vehicle-playlists-model-${e}`;
+kt(function ({ children: e, position: t, freeSpaceRem: s, tipSize: a }) {
+  const { model: l, controls: i } = Bl(),
     r = l.displayedVehicleId.get(),
     n = pe("rem"),
-    o = de((e, { callerBounding: t }) => {
-      const s = e.trigger.bounding.get();
-      if (s && !he(s, t)) return (e.close(), !1);
-    }),
-    c = l.vehicleId.get(),
-    d = l.computeds.isVehiclePlaylistsEmpty(),
-    u = D(c);
+    o = l.vehicleId.get(),
+    c = l.computeds.isVehiclePlaylistsEmpty(),
+    d = T(o);
   return (
-    St.useEffect(() => {
-      d && u === Bl && c !== Bl && (i.goToCreatePlaylist([c]), i.reset());
-    }, [u, c, d, i]),
-    d
+    wt.useEffect(() => {
+      c && d === Ll && o !== Ll && (i.goToCreatePlaylist([o]), i.reset());
+    }, [d, o, c, i]),
+    c
       ? null
-      : Et.jsx(le, {
-          id: _i(r),
-          children: Et.jsxs(hi, {
+      : It.jsx(le, {
+          id: hi(r),
+          children: It.jsxs(pi, {
             children: [
-              Et.jsx(le.Portal, {
+              It.jsx(le.Portal, {
                 paddingsRem: n,
                 position: t,
                 freeSpaceRem: s,
-                onBeforePositionChange: o,
+                closeOnAnchorMove: !0,
                 children:
-                  r !== Bl &&
-                  Et.jsxs(
-                    pi,
-                    { vehicleId: r, tipSize: a, children: [Et.jsx(ui, {}), Et.jsx(mi, {})] },
+                  r !== Ll &&
+                  It.jsxs(
+                    mi,
+                    { vehicleId: r, tipSize: a, children: [It.jsx(di, {}), It.jsx(ui, {})] },
                     r,
                   ),
               }),
@@ -1752,22 +1751,22 @@ Pt(function ({ children: e, position: t, freeSpaceRem: s, tipSize: a }) {
         })
   );
 });
-const fi = { empty: "ActiveSlots_empty_9aab1ce1" };
-function gi({ width: e, className: t }) {
-  return Et.jsx("div", {
-    className: fi.empty,
-    children: Et.jsx(Ys, {
+const _i = { empty: "ActiveSlots_empty_9aab1ce1" };
+function fi({ width: e, className: t }) {
+  return It.jsx("div", {
+    className: _i.empty,
+    children: It.jsx(Qs, {
       className: t,
       style: { width: `${e}px` },
-      children: Et.jsx("div", { className: fi.vehicleSlot }),
+      children: It.jsx("div", { className: _i.vehicleSlot }),
     }),
   });
 }
 const vi = "left",
-  xi = "right",
-  yi = "both",
-  bi = "none",
-  Ci = {
+  gi = "right",
+  xi = "both",
+  yi = "none",
+  bi = {
     button: "ArrowButton_button_7654af94",
     icon: "ArrowButton_icon_35e5294f",
     button__left: "ArrowButton_button__left_5327085d",
@@ -1777,25 +1776,25 @@ const vi = "left",
     content: "ArrowButton_content_4666fd05",
     button__right: "ArrowButton_button__right_5327085d",
   };
-function Ni({ direction: e, className: t, ...s }) {
-  return Et.jsx(X, {
+function Ci({ direction: e, className: t, ...s }) {
+  return It.jsx(X, {
     ...s,
     classNames: {
-      base: kt(Ci.button, Ci[`button__${e}`], t),
-      background: Ci.background,
-      border: Ci.border,
-      overlay: Ci.overlay,
-      content: Ci.content,
+      base: Et(bi.button, bi[`button__${e}`], t),
+      background: bi.background,
+      border: bi.border,
+      overlay: bi.overlay,
+      content: bi.content,
     },
     theme: X.themes.secondary,
     size: X.sizes.small,
     autoAlignContent: !1,
     soundTarget: "carousel:arrow_button",
-    children: Et.jsx(F, { path: "hangar.carousel.buttonArrow", className: Ci.icon }),
+    children: It.jsx(F, { path: "hangar.carousel.buttonArrow", className: bi.icon }),
   });
 }
-Ni.direction = { right: "right", left: "left" };
-const ji = {
+Ci.direction = { right: "right", left: "left" };
+const Ni = {
   navButtonWrapper: "CarouselNavButtons_navButtonWrapper_a13c2a68",
   navButton: "CarouselNavButtons_navButton_adcc2e9b",
   navButton__left: "CarouselNavButtons_navButton__left_5f6dc3a0",
@@ -1806,16 +1805,16 @@ const ji = {
   mask__left: "CarouselNavButtons_mask__left_e8bc4c90",
   mask__right: "CarouselNavButtons_mask__right_6be519f7",
 };
-function wi(e) {
+function ji(e) {
   return ({ button: t }) => {
     0 === t && e();
   };
 }
-function Si({ itemWidth: e, api: t, children: s }) {
-  const a = St.useRef(null),
-    [l, i] = St.useState(!1),
+function wi({ itemWidth: e, api: t, children: s }) {
+  const a = wt.useRef(null),
+    [l, i] = wt.useState(!1),
     { applyScroll: r, animationScroll: n, disabled: o } = t,
-    [c, d] = _e(t),
+    [c, d] = he(t),
     u = c || o,
     m = d || o;
   function p(t) {
@@ -1828,38 +1827,38 @@ function Si({ itemWidth: e, api: t, children: s }) {
   function h() {
     (null !== a.current && (clearInterval(a.current), (a.current = null)), i(!1));
   }
-  return Et.jsxs("div", {
-    className: ji.navButtonWrapper,
+  return It.jsxs("div", {
+    className: Ni.navButtonWrapper,
     children: [
-      Et.jsx(Ni, {
-        direction: Ni.direction.left,
-        onMouseDown: wi(() => p(-1)),
+      It.jsx(Ci, {
+        direction: Ci.direction.left,
+        onMouseDown: ji(() => p(-1)),
         onMouseUp: h,
         onMouseLeave: h,
-        className: kt(ji.navButton, ji.navButton__left, u && ji.navButton__hidden),
+        className: Et(Ni.navButton, Ni.navButton__left, u && Ni.navButton__hidden),
       }),
-      Et.jsx("div", {
-        className: kt(
-          ji.mask,
-          ji[`mask__${((_ = c), (f = d), _ || f ? (_ ? (f ? bi : xi) : vi) : yi)}`],
+      It.jsx("div", {
+        className: Et(
+          Ni.mask,
+          Ni[`mask__${((_ = c), (f = d), _ || f ? (_ ? (f ? yi : gi) : vi) : xi)}`],
         ),
         children: s,
       }),
-      Et.jsx(Ni, {
-        direction: Ni.direction.right,
-        onMouseDown: wi(() => p(1)),
+      It.jsx(Ci, {
+        direction: Ci.direction.right,
+        onMouseDown: ji(() => p(1)),
         onMouseUp: h,
         onMouseLeave: h,
-        className: kt(ji.navButton, ji.navButton__right, m && ji.navButton__hidden),
+        className: Et(Ni.navButton, Ni.navButton__right, m && Ni.navButton__hidden),
       }),
     ],
   });
   var _, f;
 }
-const Ii = { base: "CarouselScroll_3690a837", areaContent: "CarouselScroll_areaContent_f5dd7772" },
-  Ei = "dragging",
-  ki = "idle";
-function Pi({
+const Si = { base: "CarouselScroll_3690a837", areaContent: "CarouselScroll_areaContent_f5dd7772" },
+  Ii = "dragging",
+  Ei = "idle";
+function ki({
   api: e,
   children: t,
   className: s,
@@ -1869,41 +1868,41 @@ function Pi({
   onDraggingState: r,
 }) {
   const { animationScroll: n, applyScroll: o, setDisabled: c } = e,
-    d = fe(e, xe.horizontal, void 0, { gapBeforeStart: 5 });
+    d = _e(e, ge.horizontal, void 0, { gapBeforeStart: 5 });
   return (
-    St.useEffect(() => {
-      r?.(d.type === Ei);
+    wt.useEffect(() => {
+      r?.(d.type === Ii);
     }, [d.type, r]),
-    St.useEffect(() => {
+    wt.useEffect(() => {
       c(i);
     }, [i, c]),
-    St.useEffect(
+    wt.useEffect(
       () =>
-        ge(() => {
-          d.type === ki && n.scrollPosition.idle && o(n.scrollPosition.get());
+        fe(() => {
+          d.type === Ei && n.scrollPosition.idle && o(n.scrollPosition.get());
         }),
       [n.scrollPosition, d, o],
     ),
-    Et.jsx("div", {
-      className: kt(Ii.base, s),
-      children: Et.jsxs(ve, {
+    It.jsx("div", {
+      className: Et(Si.base, s),
+      children: It.jsxs(ve, {
         className: a?.base,
         classNames: {
-          wrapper: kt(Ii.areaWrapper, a?.wrapper),
-          content: kt(Ii.areaContent, a?.content),
+          wrapper: Et(Si.areaWrapper, a?.wrapper),
+          content: Et(Si.areaContent, a?.content),
         },
         children: [t, l],
       }),
     })
   );
 }
-const Li = "CarouselSkeleton_1ac002e3",
-  Bi = "CarouselSkeleton_content_b18f8dd7",
+const Pi = "CarouselSkeleton_1ac002e3",
+  Li = "CarouselSkeleton_content_b18f8dd7",
   Vi = "CarouselSkeleton_scroll_badf82c7";
-function Mi(e) {
-  return Et.jsx("div", { ...e, className: kt(Bi, e.className) });
+function Bi(e) {
+  return It.jsx("div", { ...e, className: Et(Li, e.className) });
 }
-function Ti({
+function Mi({
   api: e,
   widthElement: t,
   totalElements: s,
@@ -1912,21 +1911,21 @@ function Ti({
   renderElement: i,
   classNames: r,
 }) {
-  return Et.jsx("div", {
-    className: kt(Li, r?.base),
-    children: Et.jsx(Si, {
+  return It.jsx("div", {
+    className: Et(Pi, r?.base),
+    children: It.jsx(wi, {
       api: e,
       itemWidth: t,
-      children: Et.jsx(ye, {
+      children: It.jsx(xe, {
         api: e,
-        elementWidth: t - be(1),
+        elementWidth: t - ye(1),
         direction: "horizontal",
         totalElements: s,
-        wrappers: { Content: Mi },
-        className: kt(Vi, r?.scroll),
+        wrappers: { Content: Bi },
+        className: Et(Vi, r?.scroll),
         renderScroll: (t) =>
-          Et.jsx(Pi, { ...t, api: e, disabled: a, onDraggingState: l, children: t.children }),
-        renderElement: (e) => (i ? i(e) : Et.jsx(gi, { className: r?.element, width: t })),
+          It.jsx(ki, { ...t, api: e, disabled: a, onDraggingState: l, children: t.children }),
+        renderElement: (e) => (i ? i(e) : It.jsx(fi, { className: r?.element, width: t })),
       }),
     }),
   });
@@ -1939,7 +1938,7 @@ const Di = {
   [s.support]: 4,
   [s.wheeled]: 5,
 };
-const [Ri, zi] = m()(
+const [Ti, Ri] = m()(
     ({ observableModel: e, requires: t }) => {
       const s = e.primitives([
           "selectedTankId",
@@ -1951,7 +1950,7 @@ const [Ri, zi] = m()(
         ]),
         a = {
           playlists: e.arrayClone("playlists"),
-          selectedPlaylistId: Bt.box(""),
+          selectedPlaylistId: Lt.box(""),
           eligibleVehicleTiers: e.arrayClone("eligibleVehicleTiers"),
           forbiddenVehClasses: e.arrayClone("forbiddenVehClasses"),
           ...s,
@@ -1974,8 +1973,8 @@ const [Ri, zi] = m()(
                 return (
                   e &&
                     (a =
-                      "string" == typeof s.shortName && "string" == typeof s.fullName && is(e, s)),
-                  a && ls(t, s)
+                      "string" == typeof s.shortName && "string" == typeof s.fullName && ls(e, s)),
+                  a && as(t, s)
                 );
               })
               .sort((e, t) =>
@@ -1984,8 +1983,8 @@ const [Ri, zi] = m()(
                   const a = e[c(t.nationId)] ?? 0,
                     l = e[c(s.nationId)] ?? 0;
                   if (a !== l) return a - l;
-                  const i = _s[t.type] ?? 0,
-                    r = _s[s.type] ?? 0;
+                  const i = hs[t.type] ?? 0,
+                    r = hs[s.type] ?? 0;
                   if (i !== r) return i - r;
                   const n = Di[u(t.role)] ?? 99,
                     o = Di[u(s.role)] ?? 99;
@@ -1993,7 +1992,7 @@ const [Ri, zi] = m()(
                 })(s, e, t),
               );
           },
-          { equals: Ne },
+          { equals: Ce },
         ),
         d = Vt(() => t.vehicles.model.amount());
       return {
@@ -2009,90 +2008,90 @@ const [Ri, zi] = m()(
     ({ externalModel: e, model: t }) => ({
       onTankSelected: e.createCallback((e) => ({ id: e }), "onTankSelected"),
       onBattleButtonClicked: e.createCallback(() => ({}), "onBattleButtonClicked"),
-      setSelectedPlaylistId: (e) => Mt(() => t.selectedPlaylistId.set(e)),
+      setSelectedPlaylistId: (e) => Bt(() => t.selectedPlaylistId.set(e)),
     }),
-    { useRequires: () => ({ vehicles: hs(), filters: ds() }) },
+    { useRequires: () => ({ vehicles: ps(), filters: cs() }) },
   ),
-  Fi = "Announcement_2f30b082",
-  Ai = "Announcement_base__visible_5ca9be2b",
-  Oi = "Announcement_content_59e3f1a4",
-  Hi = "Announcement_countdownSlot_a962e050",
-  $i = "Announcement_countdownViewport_1e687ecb",
-  Zi = "Announcement_countdownAnimated_3490c1cb",
-  qi = "Announcement_countdownValue_d37110a2",
-  Ui = "Announcement_heading_675ec06f",
-  Gi = "Announcement_description_b77a48eb",
-  Wi = (e, t = Date.now()) => Math.max(0, Math.ceil(e - t / 1e3));
-function Ji({ initialSecondsLeft: e }) {
-  const t = je(e, 1),
+  zi = "Announcement_2f30b082",
+  Fi = "Announcement_base__visible_5ca9be2b",
+  Ai = "Announcement_content_59e3f1a4",
+  Oi = "Announcement_countdownSlot_a962e050",
+  Hi = "Announcement_countdownViewport_1e687ecb",
+  $i = "Announcement_countdownAnimated_3490c1cb",
+  Zi = "Announcement_countdownValue_d37110a2",
+  qi = "Announcement_heading_675ec06f",
+  Ui = "Announcement_description_b77a48eb",
+  Gi = (e, t = Date.now()) => Math.max(0, Math.ceil(e - t / 1e3));
+function Wi({ initialSecondsLeft: e }) {
+  const t = Ne(e, 1),
     s = Dt(t, {
       from: { opacity: 0, transform: "translate3d(0, -100%, 0)" },
       enter: { opacity: 1, transform: "translate3d(0, 0%, 0)" },
       leave: { opacity: 0, transform: "translate3d(0, 100%, 0)" },
       config: { mass: 1, tension: 280, friction: 24, clamp: !0 },
     });
-  return Et.jsx("div", {
-    className: $i,
+  return It.jsx("div", {
+    className: Hi,
     children: s((e, t) =>
       null === t
         ? null
-        : Et.jsx(Rt.div, {
+        : It.jsx(Tt.div, {
             style: e,
-            className: Zi,
-            children: Et.jsx("span", { className: qi, children: t }),
+            className: $i,
+            children: It.jsx("span", { className: Zi, children: t }),
           }),
     ),
   });
 }
-const Ki = Tt(function () {
-  const { model: e } = zi(),
+const Ji = Mt(function () {
+  const { model: e } = Ri(),
     t = e.announcementCountdownTargetTime.get();
-  return Et.jsx("div", { className: Hi, children: Et.jsx(Ji, { initialSecondsLeft: Wi(t) }, t) });
+  return It.jsx("div", { className: Oi, children: It.jsx(Wi, { initialSecondsLeft: Gi(t) }, t) });
 });
-function Xi({ className: e, ...t }) {
-  return Et.jsx("div", {
+function Ki({ className: e, ...t }) {
+  return It.jsx("div", {
     ...t,
-    className: kt(Fi, e),
-    "data-bind-class-toggle": `${Ai}:{{model.isAnnouncementVisible}}`,
-    children: Et.jsxs("div", {
-      className: Oi,
+    className: Et(zi, e),
+    "data-bind-class-toggle": `${Fi}:{{model.isAnnouncementVisible}}`,
+    children: It.jsxs("div", {
+      className: Ai,
       children: [
-        Et.jsx(Ki, {}),
-        Et.jsx("div", {
+        It.jsx(Ji, {}),
+        It.jsx("div", {
           "data-bind-if": "{{model.announcementHeading}} !== ''",
           "data-bind-value": "{{model.announcementHeading}}",
-          className: Ui,
+          className: qi,
         }),
-        Et.jsx("div", {
+        It.jsx("div", {
           "data-bind-if": "{{model.announcementDescription}} !== ''",
           "data-bind-value": "{{model.announcementDescription}}",
-          className: Gi,
+          className: Ui,
         }),
       ],
     }),
   });
 }
-const Qi = "EmptyCarousel_67520989",
-  Yi = "EmptyCarousel_title_dd98f02d",
-  er = "EmptyCarousel_description_6e4adc0b";
-function tr({ height: e, onReset: t, className: s }) {
-  const a = we(
+const Xi = "EmptyCarousel_67520989",
+  Qi = "EmptyCarousel_title_dd98f02d",
+  Yi = "EmptyCarousel_description_6e4adc0b";
+function er({ height: e, onReset: t, className: s }) {
+  const a = je(
     { size: X.sizes.extraSmall },
     { medium: { size: X.sizes.small }, extraLarge: { size: X.sizes.large } },
   );
-  return Et.jsxs("div", {
-    className: kt(Il, Qi, s),
+  return It.jsxs("div", {
+    className: Et(Sl, Xi, s),
     style: { height: e + 3 },
     children: [
-      Et.jsx("div", {
-        className: Yi,
+      It.jsx("div", {
+        className: Qi,
         children: R.strings.fort_rush.vehicleSelector.noVehiclesTitle(),
       }),
-      Et.jsx("div", {
-        className: er,
+      It.jsx("div", {
+        className: Yi,
         children: R.strings.fort_rush.vehicleSelector.noVehiclesDescription(),
       }),
-      Et.jsx(X, {
+      It.jsx(X, {
         theme: X.themes.secondary,
         size: a.size,
         onClick: t,
@@ -2101,61 +2100,61 @@ function tr({ height: e, onReset: t, className: s }) {
     ],
   });
 }
-const sr = "FortRushCard_bonuses_72a2e3fd",
-  ar = "FortRushCard_information_509588b",
-  lr = Tt(function ({ vehicleId: e, selected: t, width: s, height: a, onSelect: l, className: i }) {
-    const r = hs().model.get(e),
-      n = ms().model.get(e),
+const tr = "FortRushCard_bonuses_72a2e3fd",
+  sr = "FortRushCard_information_509588b",
+  ar = Mt(function ({ vehicleId: e, selected: t, width: s, height: a, onSelect: l, className: i }) {
+    const r = ps().model.get(e),
+      n = us().model.get(e),
       o = W(),
-      c = Lt.useCallback(() => {
+      c = Pt.useCallback(() => {
         (o.play("tank_selection"), l(e));
       }, [e, l, o]),
-      d = Lt.useCallback(() => {
+      d = Pt.useCallback(() => {
         o.play("carousel");
       }, [o]);
     return r
-      ? Et.jsx(Ys, {
+      ? It.jsx(Qs, {
           selected: t,
           onClick: c,
           onMouseEnter: d,
           style: { width: s, height: a },
-          className: kt("vehicle-card", Il, i),
-          children: Et.jsxs("div", {
-            className: jl,
+          className: Et("vehicle-card", Sl, i),
+          children: It.jsxs("div", {
+            className: Nl,
             children: [
-              Et.jsx(tl, { vehicle: r, statistic: n, selected: t }),
-              Et.jsxs("div", {
-                className: kt(_l.base, ar),
+              It.jsx(el, { vehicle: r, statistic: n, selected: t }),
+              It.jsxs("div", {
+                className: Et(hl.base, sr),
                 children: [
-                  Et.jsxs(H, {
-                    className: _l.info,
+                  It.jsxs(H, {
+                    className: hl.info,
                     children: [
-                      Et.jsx(vl, { vehicle: r, statistic: n, elite: n?.elite, selected: t }),
-                      Et.jsx(xl, { vehicle: r }),
+                      It.jsx(vl, { vehicle: r, statistic: n, elite: n?.elite, selected: t }),
+                      It.jsx(gl, { vehicle: r }),
                     ],
                   }),
-                  Et.jsx(hl, { className: sr, vehicle: r, statistic: n, doubleRow: !1 }),
+                  It.jsx(pl, { className: tr, vehicle: r, statistic: n, doubleRow: !1 }),
                 ],
               }),
             ],
           }),
         })
-      : Et.jsx(Ys, { style: { width: s, height: a }, className: i });
+      : It.jsx(Qs, { style: { width: s, height: a }, className: i });
   }),
-  ir = Tt(function (e) {
-    return Et.jsx(Se, {
-      failure: () => Et.jsx(Ys, { style: { width: e.width, height: e.height } }),
-      children: Et.jsx(lr, { ...e }),
+  lr = Mt(function (e) {
+    return It.jsx(we, {
+      failure: () => It.jsx(Qs, { style: { width: e.width, height: e.height } }),
+      children: It.jsx(ar, { ...e }),
     });
   }),
-  rr = St.createContext(void 0);
-function nr() {
-  const e = St.useContext(rr);
+  ir = wt.createContext(void 0);
+function rr() {
+  const e = wt.useContext(ir);
   if (!e)
     throw new Error("Can't call useFilters outside of FiltersContext Provider. Please wrap it.");
   return e;
 }
-const or = {
+const nr = {
     popover: "FilterPopover_popover_accae82b",
     header: "FilterPopover_header_98e6ac8",
     playlistTrigger: "FilterPopover_playlistTrigger_fd8fa4b3",
@@ -2194,33 +2193,33 @@ const or = {
     carouselIcon__active: "FilterPopover_carouselIcon__active_29db43f9",
     carouselChanger: "FilterPopover_carouselChanger_4432f804",
   },
-  cr = Pt(function (e) {
-    const t = nr(),
-      s = t.tooltipHeaderMap ?? Ht,
-      a = t.tooltipBodyMap ?? $t,
-      l = g.resolve("strings"),
+  or = kt(function (e) {
+    const t = rr(),
+      s = t.tooltipHeaderMap ?? Ot,
+      a = t.tooltipBodyMap ?? Ht,
+      l = v.resolve("strings"),
       i =
-        e.tooltip.body !== At
+        e.tooltip.body !== Ft
           ? l.readOrEmpty(`tank_carousel_filter.tooltip.${a[e.tooltip.body]}.body`)
           : "",
-      r = Ie({ header: l.readOrEmpty(`${s[e.tooltip.header]}`), body: i });
-    return Et.jsx(dr, { ...e, tooltip: e.tooltip.body !== At && r });
+      r = Se({ header: l.readOrEmpty(`${s[e.tooltip.header]}`), body: i });
+    return It.jsx(cr, { ...e, tooltip: e.tooltip.body !== Ft && r });
   }),
-  dr = Pt(function (e) {
-    const t = nr(),
+  cr = kt(function (e) {
+    const t = rr(),
       s = t.filters.get(),
-      a = St.useMemo(() => {
+      a = wt.useMemo(() => {
         if ("role" === e.event.type) {
           const t = e.event.role;
           return Object.values(s).some((e) => e.some((e) => e.includes(t)));
         }
         return s[e.event.field]?.includes(e.event.value);
       }, [e.event, s]);
-    return Et.jsx(Ee, {
+    return It.jsx(Ie, {
       ...e.tooltip,
-      theme: Pe.primary,
-      size: ke.extraSmall,
-      className: kt(or.toggle, a && or.toggle__activated, e.className),
+      theme: ke.primary,
+      size: Ee.extraSmall,
+      className: Et(nr.toggle, a && nr.toggle__activated, e.className),
       activated: a,
       onClick: () => {
         (t.change(e.event), e.tooltip && e.tooltip.onClick());
@@ -2228,16 +2227,33 @@ const or = {
       children: e.children,
     });
   });
+function dr(e) {
+  return It.jsx("div", {
+    className: Et(nr.toggleContainer, e.className),
+    children: Zt.map((e) =>
+      It.jsx(
+        or,
+        {
+          tooltip: { header: e, body: Rt },
+          event: { type: "role", role: e },
+          children: It.jsx(Ve, { roleKey: e, size: Ve.sizes.x24x24, className: nr.icon }),
+        },
+        e,
+      ),
+    ),
+  });
+}
 function ur(e) {
-  return Et.jsx("div", {
-    className: kt(or.toggleContainer, e.className),
-    children: qt.map((e) =>
-      Et.jsx(
-        cr,
+  return It.jsx("div", {
+    className: Et(nr.toggleContainer, nr.toggleContainer__type, e.className),
+    children: Ut.map((e) =>
+      It.jsx(
+        or,
         {
           tooltip: { header: e, body: zt },
-          event: { type: "role", role: e },
-          children: Et.jsx(Ve, { roleKey: e, size: Ve.sizes.x24x24, className: or.icon }),
+          event: { field: Wt, type: "regular", value: e },
+          className: nr.toggle__type,
+          children: It.jsx(Le, { type: e, size: Le.sizes.x24x24 }),
         },
         e,
       ),
@@ -2245,34 +2261,17 @@ function ur(e) {
   });
 }
 function mr(e) {
-  return Et.jsx("div", {
-    className: kt(or.toggleContainer, or.toggleContainer__type, e.className),
-    children: Gt.map((e) =>
-      Et.jsx(
-        cr,
-        {
-          tooltip: { header: e, body: Ft },
-          event: { field: Jt, type: "regular", value: e },
-          className: or.toggle__type,
-          children: Et.jsx(Be, { type: e, size: Be.sizes.x24x24 }),
-        },
-        e,
-      ),
-    ),
-  });
-}
-function pr(e) {
-  return Et.jsx("div", {
-    className: kt(or.toggleContainer, e.className),
+  return It.jsx("div", {
+    className: Et(nr.toggleContainer, e.className),
     children: e.orderedNations.map((e) =>
-      Et.jsx(
-        cr,
+      It.jsx(
+        or,
         {
-          tooltip: { header: e, body: Ot },
-          event: { field: Kt, type: "regular", value: e },
-          children: Et.jsx("div", {
-            className: or.nationWrapper,
-            children: Et.jsx(F, { className: or.nationIcon, path: `flags.c_60x40.${e}` }),
+          tooltip: { header: e, body: At },
+          event: { field: Jt, type: "regular", value: e },
+          children: It.jsx("div", {
+            className: nr.nationWrapper,
+            children: It.jsx(F, { className: nr.nationIcon, path: `flags.c_60x40.${e}` }),
           }),
         },
         e,
@@ -2280,77 +2279,77 @@ function pr(e) {
     ),
   });
 }
-function hr(e) {
-  return Et.jsx("div", {
-    className: kt(or.toggleContainer, e.className),
-    children: Wt.map((e) =>
-      Et.jsx(
-        cr,
+function pr(e) {
+  return It.jsx("div", {
+    className: Et(nr.toggleContainer, e.className),
+    children: Gt.map((e) =>
+      It.jsx(
+        or,
         {
-          tooltip: { header: "tier", body: At },
-          event: { field: Xt, type: "regular", value: `level_${e}` },
-          children: Et.jsx(Me, { className: or.vehicleLevel, value: e }),
+          tooltip: { header: "tier", body: Ft },
+          event: { field: Kt, type: "regular", value: `level_${e}` },
+          children: It.jsx(Be, { className: nr.vehicleLevel, value: e }),
         },
         e,
       ),
     ),
   });
 }
-function _r(e) {
+function hr(e) {
   const t = G(
     `hangar.filter.special.${e.imagePath}`,
     `hangar.filter.special.${e.imagePath}_upscale`,
   );
-  return Et.jsx(
-    cr,
+  return It.jsx(
+    or,
     {
       tooltip: { header: e.special, body: e.special },
-      event: { field: Qt, type: "regular", value: e.special },
-      children: Et.jsx(F, {
-        className: kt(or.specialsIcons, "favorite" === e.special && or.specialsIcons__favorite),
+      event: { field: Xt, type: "regular", value: e.special },
+      children: It.jsx(F, {
+        className: Et(nr.specialsIcons, "favorite" === e.special && nr.specialsIcons__favorite),
         path: t,
       }),
     },
     e.special,
   );
 }
-function fr() {
+function _r() {
   const e = G(
     "hangar.filter.special.isCommonProgression",
     "hangar.filter.special.isCommonProgression_upscale",
   );
-  return Et.jsx(cr, {
-    tooltip: { header: Zt, body: Zt },
-    event: { field: Yt, type: "regular", value: Zt },
-    children: Et.jsx(F, { className: or.specialsIcons, path: e }),
+  return It.jsx(or, {
+    tooltip: { header: $t, body: $t },
+    event: { field: Qt, type: "regular", value: $t },
+    children: It.jsx(F, { className: nr.specialsIcons, path: e }),
   });
 }
-const gr = Pt(function (e) {
-  const t = nr(),
-    s = t.specialIds ?? Ut,
-    a = Rs(),
+const fr = kt(function (e) {
+  const t = rr(),
+    s = t.specialIds ?? qt,
+    a = Ts(),
     l = a.model.bpState.active.get(),
     i = a.model.rentVehiclesList(),
-    r = Ra()?.model,
+    r = Ta()?.model,
     n = !r || r.isCrystalEarnEnabled.get(),
     o = !r || r.isDailyMultipliedXpEnabled.get(),
     c = s.filter(
       (e) => (0 !== i.length || "rented" !== e) && (o || "bonus" !== e) && (n || "crystals" !== e),
     );
-  return Et.jsxs("div", {
-    className: kt(or.toggleContainer, e.className),
+  return It.jsxs("div", {
+    className: Et(nr.toggleContainer, e.className),
     children: [
-      c.map((e) => Et.jsx(_r, { imagePath: t.imagesMap?.[e] ?? e, special: e }, e)),
-      l && Et.jsx(fr, {}),
+      c.map((e) => It.jsx(hr, { imagePath: t.imagesMap?.[e] ?? e, special: e }, e)),
+      l && It.jsx(_r, {}),
       e.children,
     ],
   });
 });
 function vr() {
-  const e = ze(),
-    [t, s] = St.useState(!1);
+  const e = Re(),
+    [t, s] = wt.useState(!1);
   return (
-    St.useEffect(() => {
+    wt.useEffect(() => {
       const a = e.inputRef.current;
       if (t || !a) return;
       (e.focus(), s(!0));
@@ -2367,28 +2366,28 @@ function vr() {
     null
   );
 }
-function xr({ fieldClassName: e, value: t, ...s }) {
-  const a = g.resolve("strings");
-  return Et.jsxs(Te.Provider, {
+function gr({ fieldClassName: e, value: t, ...s }) {
+  const a = v.resolve("strings");
+  return It.jsxs(Me.Provider, {
     value: t,
     children: [
-      Et.jsx(vr, {}),
-      Et.jsxs(Te.Decoration, {
-        className: kt(or.search, s.className),
+      It.jsx(vr, {}),
+      It.jsxs(Me.Decoration, {
+        className: Et(nr.search, s.className),
         children: [
-          Et.jsx(Te.Icon, { icon: Te.icons.search }),
-          Et.jsx(Te.Field, {
+          It.jsx(Me.Icon, { icon: Me.icons.search }),
+          It.jsx(Me.Field, {
             ...s,
-            className: or.inputField,
-            classNames: { placeholder: or.inputPlaceholder },
+            className: nr.inputField,
+            classNames: { placeholder: nr.inputPlaceholder },
             maxLength: 50,
             placeholderVisibility: De.value,
             children: a.readOrEmpty("tank_carousel_filter.popover.label.searchNameVehicle"),
           }),
           t.length > 0 &&
-            Et.jsx(Te.ClearButton, {
+            It.jsx(Me.ClearButton, {
               onClick: () => {
-                Re.tooltip.hideAll();
+                Te.tooltip.hideAll();
               },
             }),
         ],
@@ -2396,26 +2395,26 @@ function xr({ fieldClassName: e, value: t, ...s }) {
     ],
   });
 }
-function yr({ current: e, total: t, className: s }) {
-  const a = g.resolve("intl"),
-    l = g.resolve("strings");
-  return Et.jsxs(le.Header, {
-    className: kt(or.header, s),
+function xr({ current: e, total: t, className: s }) {
+  const a = v.resolve("intl"),
+    l = v.resolve("strings");
+  return It.jsxs(le.Header, {
+    className: Et(nr.header, s),
     children: [
-      Et.jsx(le.Title, { children: Et.jsx(V, { path: "tank_carousel_filter.popover.title" }) }),
-      Et.jsx(le.Subtitle, {
-        children: Et.jsx(V, {
+      It.jsx(le.Title, { children: It.jsx(B, { path: "tank_carousel_filter.popover.title" }) }),
+      It.jsx(le.Subtitle, {
+        children: It.jsx(B, {
           upgradeLegacy: !0,
           path: "tank_carousel_filter.popover.counter",
           params: {
-            count: Et.jsxs("span", {
+            count: It.jsxs("span", {
               children: [
-                Et.jsx("span", {
-                  className: or.currentValue,
+                It.jsx("span", {
+                  className: nr.currentValue,
                   children: a.formatNumber("integral", e),
                 }),
-                Et.jsx("span", {
-                  className: or.slash,
+                It.jsx("span", {
+                  className: nr.slash,
                   children: l.readOrEmpty("common.common.slash"),
                 }),
                 a.formatNumber("integral", t),
@@ -2427,108 +2426,108 @@ function yr({ current: e, total: t, className: s }) {
     ],
   });
 }
-const br = St.memo(function (e) {
-    return Et.jsxs(Cr, {
+const yr = wt.memo(function (e) {
+    return It.jsxs(br, {
       ...e,
-      className: e.className ?? or.scroll,
+      className: e.className ?? nr.scroll,
       children: [
-        Et.jsx(V, { className: or.category, path: "tank_carousel_filter.popover.label.specials" }),
-        Et.jsx(gr, { children: e.children }),
+        It.jsx(B, { className: nr.category, path: "tank_carousel_filter.popover.label.specials" }),
+        It.jsx(fr, { children: e.children }),
       ],
     });
   }),
-  Cr = St.memo(function (e) {
-    return Et.jsx(ie, {
-      children: Et.jsxs(Le, {
+  br = wt.memo(function (e) {
+    return It.jsx(ie, {
+      children: It.jsxs(Pe, {
         className: e.className,
         barClassNames: e.barClassNames,
         scrollClassNames: e.scrollClassNames,
         children: [
-          Et.jsx(V, {
-            className: or.category,
+          It.jsx(B, {
+            className: nr.category,
             path: "tank_carousel_filter.popover.label.vehicleTypes",
           }),
-          Et.jsx(mr, {}),
-          Et.jsx(V, {
-            className: or.category,
+          It.jsx(ur, {}),
+          It.jsx(B, {
+            className: nr.category,
             path: "tank_carousel_filter.popover.label.vehicleRole",
           }),
-          Et.jsx(ur, {}),
-          Et.jsx(V, { className: or.category, path: "tank_carousel_filter.popover.label.nations" }),
-          Et.jsx(pr, { orderedNations: e.orderedNations }),
-          Et.jsx(V, { className: or.category, path: "tank_carousel_filter.popover.label.levels" }),
-          Et.jsx(hr, {}),
+          It.jsx(dr, {}),
+          It.jsx(B, { className: nr.category, path: "tank_carousel_filter.popover.label.nations" }),
+          It.jsx(mr, { orderedNations: e.orderedNations }),
+          It.jsx(B, { className: nr.category, path: "tank_carousel_filter.popover.label.levels" }),
+          It.jsx(pr, {}),
           e.children,
         ],
       }),
     });
   }),
-  Nr = "vehicle:filter:filter-button:reset-icon",
-  jr = St.forwardRef(function ({ children: e, className: t, ...s }, a) {
-    return Et.jsx(X, {
+  Cr = "vehicle:filter:filter-button:reset-icon",
+  Nr = wt.forwardRef(function ({ children: e, className: t, ...s }, a) {
+    return It.jsx(X, {
       ...s,
       ref: a,
-      classNames: { base: kt(or.filterButton, t) },
+      classNames: { base: Et(nr.filterButton, t) },
       size: X.sizes.small,
       theme: s.theme,
       autoAlignContent: !1,
       children: e,
     });
   }),
-  wr = Pt(
-    St.forwardRef(function ({ current: e, total: t, classNames: s, onReset: a, ...l }, i) {
-      const r = nr(),
+  jr = kt(
+    wt.forwardRef(function ({ current: e, total: t, classNames: s, onReset: a, ...l }, i) {
+      const r = rr(),
         n = re(),
-        o = g.resolve("intl"),
-        c = g.resolve("strings"),
+        o = v.resolve("intl"),
+        c = v.resolve("strings"),
         d = G("hangar.filter.filter_button", "hangar.filter.filter_button_upscale"),
         u = G("ui_kit.close_button.icon_small", "ui_kit.close_button.icon_medium"),
         m = r.hasFilter(),
         p = W();
-      return Et.jsx(Ee, {
+      return It.jsx(Ie, {
         ...l,
         ref: i,
-        size: ke.extraSmall,
-        theme: Pe.primary,
+        size: Ee.extraSmall,
+        theme: ke.primary,
         activated: n.opened,
         "data-test-id": "vehiclesFilter",
         classNames: {
-          base: kt(or.filterTrigger, m && or.filterTrigger__activeFilter, s?.base),
-          bulb: or.bulb,
-          content: or.triggerContent,
+          base: Et(nr.filterTrigger, m && nr.filterTrigger__activeFilter, s?.base),
+          bulb: nr.bulb,
+          content: nr.triggerContent,
         },
         children:
           l.children ??
           (m
-            ? Et.jsxs("div", {
-                className: kt(or.activeFilterContent, s?.content),
+            ? It.jsxs("div", {
+                className: Et(nr.activeFilterContent, s?.content),
                 children: [
                   o.formatNumber("integral", e),
-                  Et.jsx("span", {
-                    className: or.slash,
+                  It.jsx("span", {
+                    className: nr.slash,
                     children: c.readOrEmpty("common.common.slash"),
                   }),
-                  Et.jsx("span", { className: or.total, children: o.formatNumber("integral", t) }),
-                  Et.jsx(F, {
+                  It.jsx("span", { className: nr.total, children: o.formatNumber("integral", t) }),
+                  It.jsx(F, {
                     path: u,
-                    className: or.resetIcon,
+                    className: nr.resetIcon,
                     onClick: (e) => {
-                      (p.play("close", { target: Nr, original: e }),
+                      (p.play("close", { target: Cr, original: e }),
                         e.stopPropagation(),
                         r.reset(),
                         a?.());
                     },
                     onMouseEnter: (e) => {
-                      p.play("mouse-enter", { target: Nr, original: e });
+                      p.play("mouse-enter", { target: Cr, original: e });
                     },
                   }),
                 ],
               })
-            : Et.jsx(F, { path: d, width: 24, height: 24 })),
+            : It.jsx(F, { path: d, width: 24, height: 24 })),
       });
     }),
   ),
-  Sr = {
+  wr = {
     frames: {
       import_hover: {
         frame: { x: 0, y: 0, w: 46, h: 49 },
@@ -2661,24 +2660,24 @@ const br = St.memo(function (e) {
     },
     meta: { size: { w: 137, h: 145 }, scale: 1 },
   };
-function Ir({ value: e, ...t }) {
-  return Et.jsx(Fe, {
+function Sr({ value: e, ...t }) {
+  return It.jsx(ze, {
     ...t,
-    sprite: Sr,
+    sprite: wr,
     path: "hangar.playlists.icons",
     icon: e,
     className: t.className,
   });
 }
-const Er = M("IconContainer", "Icon_container_83f4dd0e"),
-  kr = Pt(function (e) {
-    const t = Rs(),
-      s = Ls().model.byIdUnsafe(e.id);
+const Ir = M("IconContainer", "Icon_container_83f4dd0e"),
+  Er = kt(function (e) {
+    const t = Ts(),
+      s = Ps().model.byIdUnsafe(e.id);
     y(void 0 !== s, `Playlist with ${e.id} is not found`);
     const a = t.model.accumulateByIds(s.list).length;
     return s.list.length <= a
       ? null
-      : Et.jsx(Pr, {
+      : It.jsx(kr, {
           className: e.className,
           classNames: e.classNames,
           displayAmount: a,
@@ -2686,23 +2685,23 @@ const Er = M("IconContainer", "Icon_container_83f4dd0e"),
           realAmountInPlaylist: s.list.length,
         });
   });
-function Pr(e) {
-  const t = g.resolve("strings"),
+function kr(e) {
+  const t = v.resolve("strings"),
     s = t
       .readOrEmpty("playlists.validation.unavailable.title")
       .replace("{{display}}", e.displayAmount.toString())
       .replace("{{total}}", e.realAmountInPlaylist.toString()),
-    a = Ie({ header: s, body: t.readOrEmpty("playlists.validation.unavailable.body") }),
+    a = Se({ header: s, body: t.readOrEmpty("playlists.validation.unavailable.body") }),
     l = "lg" === e.size ? "alert_lg" : "alert",
-    i = "lg" === e.size ? Er : "div";
-  return Et.jsx(i, {
+    i = "lg" === e.size ? Ir : "div";
+  return It.jsx(i, {
     ...a,
-    className: kt(e.classNames?.container, e.className),
-    children: Et.jsx(Ir, { className: e.classNames?.icon, value: l }),
+    className: Et(e.classNames?.container, e.className),
+    children: It.jsx(Sr, { className: e.classNames?.icon, value: l }),
   });
 }
-const Lr = (e) =>
-    St.createElement(
+const Pr = (e) =>
+    wt.createElement(
       "svg",
       {
         width: 24,
@@ -2713,34 +2712,34 @@ const Lr = (e) =>
         xmlnsXlink: "http://www.w3.org/1999/xlink",
         ...e,
       },
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.8 },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M6 18.9994C6.00022 19.5515 6.44784 19.9994 7 19.9994H17C17.5522 19.9994 17.9998 19.5515 18 18.9994V14.4994H19V19.2494C18.9999 19.7134 18.8153 20.1586 18.4873 20.4867C18.1591 20.8148 17.714 20.9994 17.25 20.9994H6.75C6.28596 20.9994 5.84086 20.8148 5.5127 20.4867C5.18465 20.1586 5.00011 19.7134 5 19.2494V14.4994H6V18.9994Z",
           fill: "#0D0E10",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M11.7002 4.08047C11.878 3.94714 12.122 3.94714 12.2998 4.08047L15.7998 6.70547C15.9256 6.79988 16 6.94759 16 7.10488V7.89492C15.9998 8.2993 15.5442 8.53603 15.2129 8.3041L13.1426 6.85488L13.0059 14.5521C13.0024 14.7382 12.8959 14.9073 12.7295 14.9906L11.7109 15.4994C11.3817 15.6641 10.9931 15.4281 10.9873 15.06L10.8574 6.85488L8.78711 8.3041C8.45578 8.53602 8.00017 8.29929 8 7.89492V7.10488C8.00005 6.94759 8.07438 6.79988 8.2002 6.70547L11.7002 4.08047Z",
           fill: "#0D0E10",
         }),
       ),
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.9 },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M6 17.9993C6.00001 18.5516 6.44771 18.9993 7 18.9993H17C17.5523 18.9993 18 18.5516 18 17.9993V13.4993H19V18.2493C19 18.7134 18.8154 19.1584 18.4873 19.4866C18.1591 19.8148 17.7141 19.9993 17.25 19.9993H6.75C6.28587 19.9993 5.84087 19.8148 5.5127 19.4866C5.18456 19.1584 5 18.7134 5 18.2493V13.4993H6V17.9993Z",
           fill: "url(#paint0_radial_111851_505989)",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M11.7002 3.08033C11.8779 2.94718 12.1221 2.94718 12.2998 3.08033L15.7998 5.70533C15.9255 5.79967 15.9999 5.9476 16 6.10475V6.89479C15.9998 7.29917 15.5442 7.5359 15.2129 7.30397L13.1426 5.85475L13.0059 13.552C13.0025 13.7381 12.8958 13.9072 12.7295 13.9905L11.7109 14.4993C11.3816 14.664 10.9931 14.428 10.9873 14.0598L10.8574 5.85475L8.78711 7.30397C8.45578 7.5359 8.00016 7.29917 8 6.89479V6.10475C8.00017 5.9476 8.07448 5.79967 8.2002 5.70533L11.7002 3.08033Z",
           fill: "url(#paint1_radial_111851_505989)",
         }),
       ),
-      St.createElement(
+      wt.createElement(
         "defs",
         null,
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint0_radial_111851_505989",
@@ -2750,10 +2749,10 @@ const Lr = (e) =>
             gradientUnits: "userSpaceOnUse",
             gradientTransform: "translate(12 16.7494) rotate(180) scale(8.90909 4.12906)",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint1_radial_111851_505989",
@@ -2763,13 +2762,13 @@ const Lr = (e) =>
             gradientUnits: "userSpaceOnUse",
             gradientTransform: "translate(12 16.7494) rotate(180) scale(8.90909 4.12906)",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
       ),
     ),
-  Br = (e) =>
-    St.createElement(
+  Lr = (e) =>
+    wt.createElement(
       "svg",
       {
         width: 24,
@@ -2780,34 +2779,34 @@ const Lr = (e) =>
         xmlnsXlink: "http://www.w3.org/1999/xlink",
         ...e,
       },
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.8 },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M6 18.999C6 19.5513 6.44771 19.999 7 19.999H17C17.5523 19.999 18 19.5513 18 18.999V14.499H19V19.249C19 19.713 18.8153 20.1581 18.4873 20.4863C18.1591 20.8145 17.7141 20.999 17.25 20.999H6.75C6.28587 20.999 5.84088 20.8145 5.5127 20.4863C5.18469 20.1581 5 19.713 5 19.249V14.499H6V18.999Z",
           fill: "#0D0E10",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M17.4688 5.1074C17.5632 5.00362 17.7316 5.0247 17.7979 5.14842L17.9043 5.34569C17.9637 5.45694 17.9559 5.59208 17.8848 5.69627L12.0205 14.289C11.8912 14.4784 11.6148 14.4873 11.4736 14.3066L7.63281 9.39256C7.55247 9.28976 7.5376 9.15 7.5957 9.03319L7.70508 8.81346C7.79981 8.62301 8.04473 8.56631 8.21387 8.6953L11.5117 11.2099C11.6515 11.3165 11.8496 11.2989 11.9678 11.1689L17.4688 5.1074Z",
           fill: "#0D0E10",
         }),
       ),
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.9, filter: "url(#filter0_d_111851_505985)" },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M6 17.999C6 18.5513 6.44771 18.999 7 18.999H17C17.5523 18.999 18 18.5513 18 17.999V13.499H19V18.249C19 18.713 18.8153 19.1581 18.4873 19.4863C18.1591 19.8145 17.7141 19.999 17.25 19.999H6.75C6.28587 19.999 5.84088 19.8145 5.5127 19.4863C5.18469 19.1581 5 18.713 5 18.249V13.499H6V17.999Z",
           fill: "url(#paint0_radial_111851_505985)",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M17.4688 4.1074C17.5632 4.00362 17.7316 4.0247 17.7979 4.14842L17.9043 4.34569C17.9637 4.45694 17.9559 4.59208 17.8848 4.69627L12.0205 13.289C11.8912 13.4784 11.6148 13.4873 11.4736 13.3066L7.63281 8.39256C7.55247 8.28976 7.5376 8.15 7.5957 8.03319L7.70508 7.81346C7.79981 7.62301 8.04473 7.56631 8.21387 7.6953L11.5117 10.2099C11.6515 10.3165 11.8496 10.2989 11.9678 10.1689L17.4688 4.1074Z",
           fill: "url(#paint1_radial_111851_505985)",
         }),
       ),
-      St.createElement(
+      wt.createElement(
         "defs",
         null,
-        St.createElement(
+        wt.createElement(
           "filter",
           {
             id: "filter0_d_111851_505985",
@@ -2818,32 +2817,32 @@ const Lr = (e) =>
             filterUnits: "userSpaceOnUse",
             colorInterpolationFilters: "sRGB",
           },
-          St.createElement("feFlood", { floodOpacity: 0, result: "BackgroundImageFix" }),
-          St.createElement("feColorMatrix", {
+          wt.createElement("feFlood", { floodOpacity: 0, result: "BackgroundImageFix" }),
+          wt.createElement("feColorMatrix", {
             in: "SourceAlpha",
             type: "matrix",
             values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
             result: "hardAlpha",
           }),
-          St.createElement("feOffset", { dy: 1 }),
-          St.createElement("feComposite", { in2: "hardAlpha", operator: "out" }),
-          St.createElement("feColorMatrix", {
+          wt.createElement("feOffset", { dy: 1 }),
+          wt.createElement("feComposite", { in2: "hardAlpha", operator: "out" }),
+          wt.createElement("feColorMatrix", {
             type: "matrix",
             values: "0 0 0 0 0.0509804 0 0 0 0 0.054902 0 0 0 0 0.0627451 0 0 0 1 0",
           }),
-          St.createElement("feBlend", {
+          wt.createElement("feBlend", {
             mode: "normal",
             in2: "BackgroundImageFix",
             result: "effect1_dropShadow_111851_505985",
           }),
-          St.createElement("feBlend", {
+          wt.createElement("feBlend", {
             mode: "normal",
             in: "SourceGraphic",
             in2: "effect1_dropShadow_111851_505985",
             result: "shape",
           }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint0_radial_111851_505985",
@@ -2853,10 +2852,10 @@ const Lr = (e) =>
             gradientTransform: "matrix(-6.93695 6.47435 0.654517 0.610869 13.4895 9.08247)",
             gradientUnits: "userSpaceOnUse",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint1_radial_111851_505985",
@@ -2866,8 +2865,8 @@ const Lr = (e) =>
             gradientTransform: "matrix(-6.93695 6.47435 0.654517 0.610869 13.4895 9.08247)",
             gradientUnits: "userSpaceOnUse",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
       ),
     ),
@@ -2881,19 +2880,19 @@ const Lr = (e) =>
     base__copiedStatus: "CopyButton_base__copiedStatus_49d34ed8",
     icon__exportDone: "CopyButton_icon__exportDone_8d5db080",
   },
-  Mr = g.resolve("strings"),
-  Tr = function (e) {
-    const [t, s] = St.useState("copy"),
+  Br = v.resolve("strings"),
+  Mr = function (e) {
+    const [t, s] = wt.useState("copy"),
       a = oe(),
-      l = Ie({
-        header: Mr.readOrEmpty("playlists.share.copy_button.title"),
-        body: Mr.readOrEmpty("playlists.share.copy_button.body"),
+      l = Se({
+        header: Br.readOrEmpty("playlists.share.copy_button.title"),
+        body: Br.readOrEmpty("playlists.share.copy_button.body"),
       }),
       i = W();
-    return Et.jsxs("div", {
+    return It.jsxs("div", {
       ...l,
       "data-test-id": "copyButton",
-      className: kt(
+      className: Et(
         Vr.base,
         Vr[`base__${t}Status`],
         e.disabled ? Vr.base__disabled : Vr.base__enabled,
@@ -2903,7 +2902,7 @@ const Lr = (e) =>
         i.play("click", { target: "vehicle:playlists:copy_button", original: t });
         const r = e.onCopy();
         "string" == typeof r &&
-          Ae(r)
+          Fe(r)
             .then((e) => {
               (e ? s("copied") : console.error("Write to clipboard has been failure"),
                 a.run(() => s("copy"), 1e3));
@@ -2916,13 +2915,13 @@ const Lr = (e) =>
             i.play("mouse-enter", { target: "vehicle:playlists:copy_button", original: t }));
       },
       children: [
-        Et.jsx(Lr, { className: kt(Vr.icon, Vr.icon__export) }),
-        Et.jsx(Br, { className: kt(Vr.icon, Vr.icon__exportDone) }),
+        It.jsx(Pr, { className: Et(Vr.icon, Vr.icon__export) }),
+        It.jsx(Lr, { className: Et(Vr.icon, Vr.icon__exportDone) }),
       ],
     });
   },
   Dr = (e) =>
-    St.createElement(
+    wt.createElement(
       "svg",
       {
         width: 24,
@@ -2933,42 +2932,42 @@ const Lr = (e) =>
         xmlnsXlink: "http://www.w3.org/1999/xlink",
         ...e,
       },
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.8 },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M9.99805 8H5.00195L5 20H17V17H17.9961V19.5C17.9961 20.6045 17.1045 20.9999 16 21H6C4.89543 21 3.99609 20.6046 3.99609 19.5L3.99805 8.5C3.99805 7.39543 4.89348 7 5.99805 7H9.99805V8Z",
           fill: "#0D0E10",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M18.002 9.56445L12 15.5L9 16L9.5 13L15.4375 7.00977L18.002 9.56445Z",
           fill: "#0D0E10",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M20.9609 6.61133L18.9492 8.49902L16.4307 5.89941L18.3965 4.05762L20.9609 6.61133Z",
           fill: "#0D0E10",
         }),
       ),
-      St.createElement(
+      wt.createElement(
         "g",
         { opacity: 0.9, filter: "url(#filter0_d_111851_505977)" },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M9.99805 7H5.00195L5 19H17V16H17.9961V18.5C17.9961 19.6045 17.1045 19.9999 16 20H6C4.89543 20 3.99609 19.6046 3.99609 18.5L3.99805 7.5C3.99805 6.39543 4.89348 6 5.99805 6H9.99805V7Z",
           fill: "url(#paint0_radial_111851_505977)",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M18.002 8.56445L12 14.5L9 15L9.5 12L15.4375 6.00977L18.002 8.56445Z",
           fill: "url(#paint1_radial_111851_505977)",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M20.9609 5.61133L18.9492 7.49902L16.4307 4.89941L18.3965 3.05762L20.9609 5.61133Z",
           fill: "url(#paint2_radial_111851_505977)",
         }),
       ),
-      St.createElement(
+      wt.createElement(
         "defs",
         null,
-        St.createElement(
+        wt.createElement(
           "filter",
           {
             id: "filter0_d_111851_505977",
@@ -2979,32 +2978,32 @@ const Lr = (e) =>
             filterUnits: "userSpaceOnUse",
             colorInterpolationFilters: "sRGB",
           },
-          St.createElement("feFlood", { floodOpacity: 0, result: "BackgroundImageFix" }),
-          St.createElement("feColorMatrix", {
+          wt.createElement("feFlood", { floodOpacity: 0, result: "BackgroundImageFix" }),
+          wt.createElement("feColorMatrix", {
             in: "SourceAlpha",
             type: "matrix",
             values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
             result: "hardAlpha",
           }),
-          St.createElement("feOffset", { dy: 1 }),
-          St.createElement("feComposite", { in2: "hardAlpha", operator: "out" }),
-          St.createElement("feColorMatrix", {
+          wt.createElement("feOffset", { dy: 1 }),
+          wt.createElement("feComposite", { in2: "hardAlpha", operator: "out" }),
+          wt.createElement("feColorMatrix", {
             type: "matrix",
             values: "0 0 0 0 0.0509804 0 0 0 0 0.054902 0 0 0 0 0.0627451 0 0 0 1 0",
           }),
-          St.createElement("feBlend", {
+          wt.createElement("feBlend", {
             mode: "normal",
             in2: "BackgroundImageFix",
             result: "effect1_dropShadow_111851_505977",
           }),
-          St.createElement("feBlend", {
+          wt.createElement("feBlend", {
             mode: "normal",
             in: "SourceGraphic",
             in2: "effect1_dropShadow_111851_505977",
             result: "shape",
           }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint0_radial_111851_505977",
@@ -3014,10 +3013,10 @@ const Lr = (e) =>
             gradientTransform: "matrix(-8.40602 7.33326 0.793127 0.69191 14.2835 7.63523)",
             gradientUnits: "userSpaceOnUse",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint1_radial_111851_505977",
@@ -3027,10 +3026,10 @@ const Lr = (e) =>
             gradientTransform: "matrix(-8.40602 7.33326 0.793127 0.69191 14.2835 7.63523)",
             gradientUnits: "userSpaceOnUse",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
-        St.createElement(
+        wt.createElement(
           "radialGradient",
           {
             id: "paint2_radial_111851_505977",
@@ -3040,24 +3039,24 @@ const Lr = (e) =>
             gradientTransform: "matrix(-8.40602 7.33326 0.793127 0.69191 14.2835 7.63523)",
             gradientUnits: "userSpaceOnUse",
           },
-          St.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
-          St.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
+          wt.createElement("stop", { offset: 6.20882e-10, stopColor: "#EDE6D9" }),
+          wt.createElement("stop", { offset: 1, stopColor: "#C2C7CE" }),
         ),
       ),
     ),
-  Rr = "EditButton_e0942ef0",
-  zr = "EditButton_icon_a08c89e9",
-  Fr = g.resolve("strings");
-function Ar({ id: e, className: t }) {
+  Tr = "EditButton_e0942ef0",
+  Rr = "EditButton_icon_a08c89e9",
+  zr = v.resolve("strings");
+function Fr({ id: e, className: t }) {
   const s = W(),
-    a = Oe(),
-    l = Ie({
-      header: Fr.readOrEmpty("playlists.edit_button.title"),
-      body: Fr.readOrEmpty("playlists.edit_button.body"),
+    a = Ae(),
+    l = Se({
+      header: zr.readOrEmpty("playlists.edit_button.title"),
+      body: zr.readOrEmpty("playlists.edit_button.body"),
     });
-  return Et.jsx("div", {
+  return It.jsx("div", {
     ...l,
-    className: kt(Rr, t),
+    className: Et(Tr, t),
     "data-test-id": "editButton",
     onClick: (t) => {
       (l.onClick(),
@@ -3068,50 +3067,50 @@ function Ar({ id: e, className: t }) {
       (l.onMouseEnter(e),
         s.play("mouse-enter", { target: "vehicle:playlists:edit_button", original: e }));
     },
-    children: Et.jsx(Dr, { className: zr }),
+    children: It.jsx(Dr, { className: Rr }),
   });
 }
-const Or = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_";
-const Hr = "Item_background_5cb932c1",
-  $r = "Item_c5163bf",
-  Zr = "Item_base__selected_5f6fcc69",
-  qr = "Item_button_8b3e738d",
-  Ur = "Item_selectedIcon_eb50b3a6",
-  Gr = "Item_content_db9841ac",
-  Wr = "Item_title_3edba705",
-  Jr = "Item_actions_63add2d",
-  Kr = $e({ container: "Item_alert_31c28fa6", icon: "Item_alertIcon_f872f769" }),
-  Xr = Pt(function (e) {
+const Ar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_";
+const Or = "Item_background_5cb932c1",
+  Hr = "Item_c5163bf",
+  $r = "Item_base__selected_5f6fcc69",
+  Zr = "Item_button_8b3e738d",
+  qr = "Item_selectedIcon_eb50b3a6",
+  Ur = "Item_content_db9841ac",
+  Gr = "Item_title_3edba705",
+  Wr = "Item_actions_63add2d",
+  Jr = He({ container: "Item_alert_31c28fa6", icon: "Item_alertIcon_f872f769" }),
+  Kr = kt(function (e) {
     const { playlist: t } = e,
-      s = Ls(),
+      s = Ps(),
       a = re();
-    return Et.jsxs("div", {
-      className: kt($r, s.model.currentId() === e.id && Zr),
+    return It.jsxs("div", {
+      className: Et(Hr, s.model.currentId() === e.id && $r),
       children: [
-        Et.jsx("div", { className: Hr }),
-        Et.jsxs(He, {
-          className: qr,
+        It.jsx("div", { className: Or }),
+        It.jsxs(Oe, {
+          className: Zr,
           onClick: () => {
             (s.controls.select(e.id), a.close());
           },
           "data-test-id": `playlist-${t.title}`,
           children: [
-            Et.jsxs("span", {
-              className: Gr,
+            It.jsxs("span", {
+              className: Ur,
               children: [
-                Et.jsx(Ir, { value: "checked", className: Ur }),
-                Et.jsx(U, { text: t.title, className: Wr }),
-                Et.jsx(kr, { id: e.id, classNames: Kr }),
+                It.jsx(Sr, { value: "checked", className: qr }),
+                It.jsx(U, { text: t.title, className: Gr }),
+                It.jsx(Er, { id: e.id, classNames: Jr }),
               ],
             }),
-            Et.jsxs("span", {
-              className: Jr,
+            It.jsxs("span", {
+              className: Wr,
               onClick: (e) => e.stopPropagation(),
               children: [
-                Et.jsx(Tr, {
+                It.jsx(Mr, {
                   onCopy: function () {
                     const e = (function (e) {
-                      if (0 === e.length) return js("EMPTY_INPUT");
+                      if (0 === e.length) return Ns("EMPTY_INPUT");
                       const t = (function (e) {
                           let t = e[0] ?? 0;
                           for (let s = 0; s < e.length; s++) t = (t + e[s]) & 65535;
@@ -3140,19 +3139,19 @@ const Hr = "Item_background_5cb932c1",
                         for (i = (i << 8n) | BigInt(o), r += 8; r >= 6;) {
                           r -= 6;
                           const e = Number((i >> BigInt(r)) & 0x3fn);
-                          ((l += Or[e]), (i &= (1n << BigInt(r)) - 1n));
+                          ((l += Ar[e]), (i &= (1n << BigInt(r)) - 1n));
                         }
                       if (r > 0) {
                         const e = 63 & Number(i << BigInt(6 - r));
-                        l += Or[e];
+                        l += Ar[e];
                       }
-                      return Ns(l);
+                      return Cs(l);
                     })(t.list);
                     return "error" === e.type ? console.error(e.error) : e.value;
                   },
                   disabled: 0 === t.list.length,
                 }),
-                Et.jsx(Ar, { id: e.id }),
+                It.jsx(Fr, { id: e.id }),
               ],
             }),
           ],
@@ -3160,142 +3159,142 @@ const Hr = "Item_background_5cb932c1",
       ],
     });
   }),
-  Qr = Pt(function (e) {
-    const t = Ls().model.byId(e.id);
+  Xr = kt(function (e) {
+    const t = Ps().model.byId(e.id);
     return "ok" === t.type && void 0 !== t.value
-      ? Et.jsx(Xr, { playlist: t.value, id: e.id })
+      ? It.jsx(Kr, { playlist: t.value, id: e.id })
       : null;
   }),
-  Yr = Pt(function () {
-    const e = Ls(),
+  Qr = kt(function () {
+    const e = Ps(),
       t = re();
-    return Et.jsxs("div", {
-      className: kt($r, !e.model.currentId() && Zr),
+    return It.jsxs("div", {
+      className: Et(Hr, !e.model.currentId() && $r),
       children: [
-        Et.jsx("div", { className: Hr }),
-        Et.jsx(He, {
-          className: qr,
+        It.jsx("div", { className: Or }),
+        It.jsx(Oe, {
+          className: Zr,
           onClick: () => {
             (e.controls.select(void 0), t.close());
           },
           "data-test-id": "playlist-AllVehicles",
-          children: Et.jsxs("span", {
+          children: It.jsxs("span", {
             children: [
-              Et.jsx(Ir, { value: "checked", className: Ur }),
-              g.resolve("strings").readOrEmpty("pages.titles.allVehicles"),
+              It.jsx(Sr, { value: "checked", className: qr }),
+              v.resolve("strings").readOrEmpty("pages.titles.allVehicles"),
             ],
           }),
         }),
       ],
     });
   }),
-  en = "Content_divider_f0c848b4",
-  tn = "Content_icon_4da9c1eb",
-  sn = "Content_trigger_4b0aad5c",
-  an = "Content_triggerText_2dc694b6",
-  ln = Pt(function () {
-    const e = Ls().model.sortedIds();
-    return Et.jsxs("div", { children: [Et.jsx(Yr, {}), e.map((e) => Et.jsx(Qr, { id: e }, e))] });
+  Yr = "Content_divider_f0c848b4",
+  en = "Content_icon_4da9c1eb",
+  tn = "Content_trigger_4b0aad5c",
+  sn = "Content_triggerText_2dc694b6",
+  an = kt(function () {
+    const e = Ps().model.sortedIds();
+    return It.jsxs("div", { children: [It.jsx(Qr, {}), e.map((e) => It.jsx(Xr, { id: e }, e))] });
   }),
-  rn = M("Divider", en),
-  nn = Pt(function (e) {
-    const t = Ls(),
-      s = g.resolve("strings"),
-      [a, l] = Ze("add"),
-      i = e.asChild ? qe : He;
-    return Et.jsxs(i, {
-      className: sn,
+  ln = M("Divider", Yr),
+  rn = kt(function (e) {
+    const t = Ps(),
+      s = v.resolve("strings"),
+      [a, l] = $e("add"),
+      i = e.asChild ? Ze : Oe;
+    return It.jsxs(i, {
+      className: tn,
       "data-test-id": "createPlaylist",
       onMouseEnter: () => l(!0),
       onMouseLeave: () => l(!1),
       onClick: () => t.controls.create(),
       children: [
-        Et.jsx(Er, { className: tn, children: Et.jsx(Ir, { value: a }) }),
-        Et.jsx("span", { className: an, children: s.readOrEmpty("playlists.list.create") }),
+        It.jsx(Ir, { className: en, children: It.jsx(Sr, { value: a }) }),
+        It.jsx("span", { className: sn, children: s.readOrEmpty("playlists.list.create") }),
       ],
     });
   }),
-  on = function (e) {
-    const t = Ls(),
-      s = g.resolve("strings"),
-      [a, l] = Ze("import"),
-      i = e.asChild ? qe : He;
-    return Et.jsxs(i, {
-      className: sn,
+  nn = function (e) {
+    const t = Ps(),
+      s = v.resolve("strings"),
+      [a, l] = $e("import"),
+      i = e.asChild ? Ze : Oe;
+    return It.jsxs(i, {
+      className: tn,
       "data-test-id": "importPlaylist",
       onClick: t.controls.openImport,
       onMouseEnter: () => l(!0),
       onMouseLeave: () => l(!1),
       children: [
-        Et.jsx(Er, { className: tn, children: Et.jsx(Ir, { value: a }) }),
-        Et.jsx("span", { className: an, children: s.readOrEmpty("playlists.imports.trigger") }),
+        It.jsx(Ir, { className: en, children: It.jsx(Sr, { value: a }) }),
+        It.jsx("span", { className: sn, children: s.readOrEmpty("playlists.imports.trigger") }),
       ],
     });
   },
-  cn = "Dropdown_popover_b5203d93",
-  dn = "Dropdown_scrollContent_7363dda3",
-  un = "Dropdown_bar_2d94e05e",
-  mn = "Dropdown_area_a34c2ecf",
-  pn = "Dropdown_area__begin_af756086",
-  hn = "Dropdown_area__end_3b89247a",
-  _n = "Dropdown_list_41b8eefe",
-  fn = "Dropdown_triggers_b8372e20",
-  gn = "Dropdown_currentTitle_11ba3707",
+  on = "Dropdown_popover_b5203d93",
+  cn = "Dropdown_scrollContent_7363dda3",
+  dn = "Dropdown_bar_2d94e05e",
+  un = "Dropdown_area_a34c2ecf",
+  mn = "Dropdown_area__begin_af756086",
+  pn = "Dropdown_area__end_3b89247a",
+  hn = "Dropdown_list_41b8eefe",
+  _n = "Dropdown_triggers_b8372e20",
+  fn = "Dropdown_currentTitle_11ba3707",
   vn = "Dropdown_trigger_f754201d",
-  xn = "Dropdown_currentTitleText_13099382",
-  yn = "Dropdown_alert_8195eae1",
-  bn = "Dropdown_alertIcon_61f05dd3",
-  Cn = "Dropdown_arrow_5a21c825",
-  Nn = "Dropdown_arrow__opened_ef9f7c1d",
-  jn = g.resolve("strings"),
-  wn = [25, 25],
-  Sn = $e({ container: yn, icon: bn }),
-  In = Pt(function () {
-    const { api: e } = Ue(),
-      [t, s] = _e(e, wn),
+  gn = "Dropdown_currentTitleText_13099382",
+  xn = "Dropdown_alert_8195eae1",
+  yn = "Dropdown_alertIcon_61f05dd3",
+  bn = "Dropdown_arrow_5a21c825",
+  Cn = "Dropdown_arrow__opened_ef9f7c1d",
+  Nn = v.resolve("strings"),
+  jn = [25, 25],
+  wn = He({ container: xn, icon: yn }),
+  Sn = kt(function () {
+    const { api: e } = qe(),
+      [t, s] = he(e, jn),
       { opened: a } = re();
     return (
-      St.useEffect(() => {
-        if (a) return ge(() => ge(e.recalculateContent));
+      wt.useEffect(() => {
+        if (a) return fe(() => fe(e.recalculateContent));
       }, [a, e.recalculateContent]),
-      Et.jsx(Ge, {
-        className: kt(mn, !t && pn, !s && hn),
-        classNames: { content: dn },
-        children: Et.jsx(ln, {}),
+      It.jsx(Ue, {
+        className: Et(un, !t && mn, !s && pn),
+        classNames: { content: cn },
+        children: It.jsx(an, {}),
       })
     );
   }),
-  En = Pt(function (e) {
+  In = kt(function (e) {
     const t = Vs();
     return t && t.model.enabled.get()
-      ? Et.jsx(le.Portal, {
+      ? It.jsx(le.Portal, {
           position: "bottom",
           ...e,
-          children: Et.jsx(We, {
-            children: Et.jsxs(le.Display, {
+          children: It.jsx(Ge, {
+            children: It.jsxs(le.Display, {
               "data-name": "playlist-dropdown-content",
-              className: cn,
+              className: on,
               children: [
-                Et.jsx(le.Tip, {}),
-                Et.jsx("div", {
-                  className: _n,
-                  children: Et.jsxs(ie, {
-                    children: [Et.jsx(In, {}), Et.jsx(se, { classNames: { base: un } })],
+                It.jsx(le.Tip, {}),
+                It.jsx("div", {
+                  className: hn,
+                  children: It.jsxs(ie, {
+                    children: [It.jsx(Sn, {}), It.jsx(se, { classNames: { base: dn } })],
                   }),
                 }),
-                Et.jsx(rn, {}),
-                Et.jsxs("div", { className: fn, children: [Et.jsx(nn, {}), Et.jsx(on, {})] }),
+                It.jsx(ln, {}),
+                It.jsxs("div", { className: _n, children: [It.jsx(rn, {}), It.jsx(nn, {})] }),
               ],
             }),
           }),
         })
       : null;
   });
-function kn(e) {
+function En(e) {
   const t = re();
-  return Et.jsx(Ir, { value: "arrow_down", className: kt(Cn, t.opened && Nn, e.className) });
+  return It.jsx(Sr, { value: "arrow_down", className: Et(bn, t.opened && Cn, e.className) });
 }
-const Pn = Pt(function (e) {
+const kn = kt(function (e) {
     const t = e.limit
       ? (function (e, t, s = "...") {
           return (
@@ -3307,25 +3306,25 @@ const Pn = Pt(function (e) {
           );
         })(e.title, e.limit)[0]
       : e.title;
-    return Et.jsxs("div", {
-      className: kt(gn, e.className),
+    return It.jsxs("div", {
+      className: Et(fn, e.className),
       children: [
-        Et.jsx(U, { text: t, className: xn }),
-        e.id && Et.jsx(kr, { classNames: Sn, id: e.id, size: e.alertSize }),
+        It.jsx(U, { text: t, className: gn }),
+        e.id && It.jsx(Er, { classNames: wn, id: e.id, size: e.alertSize }),
       ],
     });
   }),
-  Ln = Pt(function (e) {
+  Pn = kt(function (e) {
     const t = Vs(),
       s = t?.model.current(),
       a = W(),
-      l = Ie({ header: s?.title, body: jn.readOrEmpty("playlists.trigger.explain") });
+      l = Se({ header: s?.title, body: Nn.readOrEmpty("playlists.trigger.explain") });
     if (!t || !1 === t.model.enabled.get()) return e.fallback;
-    const i = e.asChild ? qe : "div";
-    return Et.jsx(le.Trigger, {
+    const i = e.asChild ? Ze : "div";
+    return It.jsx(le.Trigger, {
       children: (t) =>
-        Et.jsx(Et.Fragment, {
-          children: Et.jsxs(i, {
+        It.jsx(It.Fragment, {
+          children: It.jsxs(i, {
             ...t,
             onMouseEnter: (e) => {
               (l?.onMouseEnter(e),
@@ -3342,48 +3341,48 @@ const Pn = Pt(function (e) {
             onMouseLeave: l?.onMouseLeave,
             "data-name": "playlist-dropdown-trigger",
             "data-test-id": "playlistDropdown",
-            className: kt(vn, e.className),
+            className: Et(vn, e.className),
             children: [
-              Et.jsx(Je, { children: e.children }),
+              It.jsx(We, { children: e.children }),
               s
-                ? Et.jsx(Pn, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
-                : Et.jsx(Pn, { title: jn.readOrEmpty("pages.titles.allVehicles") }),
-              Et.jsx(kn, {}),
+                ? It.jsx(kn, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
+                : It.jsx(kn, { title: Nn.readOrEmpty("pages.titles.allVehicles") }),
+              It.jsx(En, {}),
             ],
           }),
         }),
     });
   }),
-  Bn = Pt(function () {
-    const e = ds();
+  Ln = kt(function () {
+    const e = cs();
     function t(e) {
-      e.keyCode !== Ke.ESCAPE && e.stopPropagation();
+      e.keyCode !== Je.ESCAPE && e.stopPropagation();
     }
-    return Et.jsx(xr, {
+    return It.jsx(gr, {
       value: e.model.searchName.get(),
       onChange: (t) => e.controls.search(t.target.value),
       onKeyDown: t,
       onKeyUp: t,
     });
   }),
-  Vn = Pt(function () {
-    const e = Rs(),
+  Vn = kt(function () {
+    const e = Ts(),
       t = e.model.vehicles.amount(),
       s = e.model.current.amount();
-    return Et.jsx(yr, { current: s, total: t });
+    return It.jsx(xr, { current: s, total: t });
   }),
-  Mn = Pt(function ({ classNames: e }) {
-    const t = g.resolve("strings"),
-      s = Rs(),
+  Bn = kt(function ({ classNames: e }) {
+    const t = v.resolve("strings"),
+      s = Ts(),
       a = s.model.vehicles.amount(),
       l = s.model.current.amount(),
-      i = Ie({
+      i = Se({
         header: t.readOrEmpty("tank_carousel_filter.tooltip.params.header"),
         body: t.readOrEmpty("tank_carousel_filter.tooltip.params.body"),
       });
-    return Et.jsx(le.Trigger, {
+    return It.jsx(le.Trigger, {
       children: (t) =>
-        Et.jsx(wr, {
+        It.jsx(jr, {
           ...i,
           ...t,
           onClick: (e) => {
@@ -3396,45 +3395,45 @@ const Pn = Pt(function (e) {
         }),
     });
   }),
-  Tn = Pt(function ({ children: e }) {
-    const t = ds(),
+  Mn = kt(function ({ children: e }) {
+    const t = cs(),
       s = t.model.carouselRowCount.get(),
-      a = g.resolve("strings");
-    const l = Ie({
+      a = v.resolve("strings");
+    const l = Se({
         header: a.readOrEmpty("tank_carousel_filter.tooltip.toggleSwitchCarousel.header"),
         body: a.readOrEmpty("tank_carousel_filter.tooltip.toggleSwitchCarousel.body"),
       }),
-      i = Ie({
+      i = Se({
         header: a.readOrEmpty("tank_carousel_filter.tooltip.searchInput.header"),
         body: a
           .readOrEmpty("tank_carousel_filter.tooltip.searchInput.body")
           .replace("%(count)d", String(50)),
       });
-    return Et.jsxs(le.Body, {
-      className: or.body,
+    return It.jsxs(le.Body, {
+      className: nr.body,
       children: [
         e,
-        Et.jsxs("div", {
-          className: or.footer,
+        It.jsxs("div", {
+          className: nr.footer,
           children: [
-            Et.jsx(le.Divider, {}),
-            Et.jsxs("div", {
-              className: or.footerButtons,
+            It.jsx(le.Divider, {}),
+            It.jsxs("div", {
+              className: nr.footerButtons,
               children: [
-                Et.jsx(jr, {
+                It.jsx(Nr, {
                   ...l,
                   theme: X.themes.secondary,
-                  className: or.carouselChanger,
+                  className: nr.carouselChanger,
                   onClick: function () {
                     const e = 1 === s ? 2 : 1;
                     t.controls.carouselTypeChange(e);
                   },
-                  children: Et.jsx(F, {
-                    className: kt(or.carouselIcon, 2 === s && or.carouselIcon__active),
+                  children: It.jsx(F, {
+                    className: Et(nr.carouselIcon, 2 === s && nr.carouselIcon__active),
                     path: "hangar.filter.carousel_selector",
                   }),
                 }),
-                Et.jsx("div", { ...i, className: or.searchInputWrapper, children: Et.jsx(Bn, {}) }),
+                It.jsx("div", { ...i, className: nr.searchInputWrapper, children: It.jsx(Ln, {}) }),
               ],
             }),
           ],
@@ -3442,16 +3441,16 @@ const Pn = Pt(function (e) {
       ],
     });
   }),
-  Dn = Pt(function ({
+  Dn = kt(function ({
     pivot: e = 0,
     position: t = "bottom",
     classNames: s,
     customFilterProps: a,
     children: l,
   }) {
-    const i = ds(),
+    const i = cs(),
       r = Vs(),
-      n = St.useMemo(
+      n = wt.useMemo(
         () => ({
           filters: i.model.filters,
           search: i.model.searchName,
@@ -3465,19 +3464,19 @@ const Pn = Pt(function (e) {
         }),
         [i, a, r],
       );
-    return Et.jsx(rr.Provider, {
+    return It.jsx(ir.Provider, {
       value: n,
-      children: Et.jsx("div", {
+      children: It.jsx("div", {
         className: s?.base,
-        children: Et.jsxs(le, {
+        children: It.jsxs(le, {
           children: [
-            Et.jsx(Mn, { classNames: { trigger: s?.trigger, content: s?.triggerContent } }),
-            Et.jsx(le.Portal, {
+            It.jsx(Bn, { classNames: { trigger: s?.trigger, content: s?.triggerContent } }),
+            It.jsx(le.Portal, {
               lazy: !0,
               position: t,
               pivot: e,
-              children: Et.jsx(We, {
-                children: Et.jsx(le.Display, { className: or.popover, children: l }),
+              children: It.jsx(Ge, {
+                children: It.jsx(le.Display, { className: nr.popover, children: l }),
               }),
             }),
           ],
@@ -3485,112 +3484,112 @@ const Pn = Pt(function (e) {
       }),
     });
   });
-Pt(function (e) {
-  const t = ds().model.computes.nations();
-  return Et.jsxs(Dn, {
+kt(function (e) {
+  const t = cs().model.computes.nations();
+  return It.jsxs(Dn, {
     ...e,
     children: [
-      Et.jsx(le.Tip, {}),
-      Et.jsx(le.Close, {}),
-      Et.jsx(Vn, {}),
-      Et.jsx(Rn, {}),
-      Et.jsx(Tn, { children: Et.jsx(br, { orderedNations: t }) }),
+      It.jsx(le.Tip, {}),
+      It.jsx(le.Close, {}),
+      It.jsx(Vn, {}),
+      It.jsx(Tn, {}),
+      It.jsx(Mn, { children: It.jsx(yr, { orderedNations: t }) }),
     ],
   });
 });
-const Rn = Pt(function () {
+const Tn = kt(function () {
     const e = Vs(),
       { id: t } = re();
     return e && !1 !== e.model.enabled.get()
-      ? Et.jsxs(le, {
+      ? It.jsxs(le, {
           children: [
-            Et.jsx(En, {
-              className: or.playlistPortal,
+            It.jsx(In, {
+              className: nr.playlistPortal,
               "data-popover-outside-click-whitelist-id": t,
             }),
-            Et.jsx(Ln, {
+            It.jsx(Pn, {
               asChild: !0,
-              className: or.playlistTrigger,
+              className: nr.playlistTrigger,
               fallback: null,
-              children: Et.jsx(X, {
+              children: It.jsx(X, {
                 theme: "secondary",
-                classNames: { content: or.playlistTitle },
+                classNames: { content: nr.playlistTitle },
               }),
             }),
           ],
         })
       : null;
   }),
-  zn = "FortRushPlaylistTrigger_dropdown_ddfc934f",
-  Fn = "FortRushPlaylistTrigger_item_856bd19c",
-  An = "FortRushPlaylistTrigger_selectedIcon_4fe48c0d",
-  On = "FortRushPlaylistTrigger_item__selected_62eb9ad0",
-  Hn = "FortRushPlaylistTrigger_title_238d16d2",
-  $n = "FortRushPlaylistTrigger_trigger_c7858caf",
-  Zn = "FortRushPlaylistTrigger_scrollArea_f4dd4b78",
-  qn = Tt(function ({ currentTitle: e }) {
-    return Et.jsx(le.Trigger, {
+  Rn = "FortRushPlaylistTrigger_dropdown_ddfc934f",
+  zn = "FortRushPlaylistTrigger_item_856bd19c",
+  Fn = "FortRushPlaylistTrigger_selectedIcon_4fe48c0d",
+  An = "FortRushPlaylistTrigger_item__selected_62eb9ad0",
+  On = "FortRushPlaylistTrigger_title_238d16d2",
+  Hn = "FortRushPlaylistTrigger_trigger_c7858caf",
+  $n = "FortRushPlaylistTrigger_scrollArea_f4dd4b78",
+  Zn = Mt(function ({ currentTitle: e }) {
+    return It.jsx(le.Trigger, {
       children: (t) =>
-        Et.jsxs(X, {
+        It.jsxs(X, {
           ...t,
           theme: "secondary",
           size: "large",
-          classNames: { base: kt(or.playlistTrigger, $n), content: or.playlistTitle },
-          children: [Et.jsx(U, { text: e }), Et.jsx(kn, {})],
+          classNames: { base: Et(nr.playlistTrigger, Hn), content: nr.playlistTitle },
+          children: [It.jsx(U, { text: e }), It.jsx(En, {})],
         }),
     });
   }),
-  Un = Tt(function ({ label: e, selected: t, onSelect: s, hasNoVehicles: a }) {
+  qn = Mt(function ({ label: e, selected: t, onSelect: s, hasNoVehicles: a }) {
     const l = re(),
-      i = Ie({
+      i = Se({
         header: R.strings.fort_rush.vehicleSelector.noVehiclesInPlaylistTooltipHeading(),
         body: R.strings.fort_rush.vehicleSelector.noVehiclesInPlaylistTooltipBody(),
       });
-    return Et.jsxs(He, {
-      className: kt(Fn, t && On),
+    return It.jsxs(Oe, {
+      className: Et(zn, t && An),
       onClick: () => {
         (s(), l.close());
       },
       children: [
-        Et.jsx(Ir, { value: "checked", className: An }),
-        Et.jsx("span", { className: Hn, children: e }),
-        a && Et.jsx(Ir, { value: "alert", ...i }),
+        It.jsx(Sr, { value: "checked", className: Fn }),
+        It.jsx("span", { className: On, children: e }),
+        a && It.jsx(Sr, { value: "alert", ...i }),
       ],
     });
   }),
-  Gn = Tt(function () {
-    const { model: e, controls: t } = zi(),
+  Un = Mt(function () {
+    const { model: e, controls: t } = Ri(),
       s = re(),
       a = e.playlists.get(),
       l = e.selectedPlaylistId.get(),
       i = a.find((e) => e.id === l) ?? null,
       r = R.strings.fort_rush.vehicleSelector.allVehicles(),
       n = i?.name ?? r;
-    return Et.jsxs(le, {
+    return It.jsxs(le, {
       children: [
-        Et.jsx(qn, { currentTitle: n }),
-        Et.jsx(le.Portal, {
+        It.jsx(Zn, { currentTitle: n }),
+        It.jsx(le.Portal, {
           lazy: !0,
           position: "bottom",
           pivot: 0,
           "data-popover-outside-click-whitelist-id": s.id,
-          children: Et.jsx(We, {
-            children: Et.jsxs(le.Display, {
-              className: zn,
+          children: It.jsx(Ge, {
+            children: It.jsxs(le.Display, {
+              className: Rn,
               children: [
-                Et.jsx(le.Tip, {}),
-                Et.jsx(ie, {
-                  children: Et.jsxs(Le, {
-                    areaClassName: Zn,
+                It.jsx(le.Tip, {}),
+                It.jsx(ie, {
+                  children: It.jsxs(Pe, {
+                    areaClassName: $n,
                     children: [
-                      Et.jsx(Un, {
+                      It.jsx(qn, {
                         label: r,
                         selected: "" === l,
                         onSelect: () => t.setSelectedPlaylistId(""),
                       }),
                       a.map((e) =>
-                        Et.jsx(
-                          Un,
+                        It.jsx(
+                          qn,
                           {
                             label: e.name,
                             selected: l === e.id,
@@ -3610,44 +3609,44 @@ const Rn = Pt(function () {
       ],
     });
   }),
-  Wn = "FortRushFilterPopover_toggle__disabled_b79a4be0",
-  Jn = "FortRushFilterPopover_toggle__alwaysOn_39004f27",
-  Kn = "FortRushFilterPopover_fortRushIcon_c4716941",
-  Xn = "FortRushFilterPopover_lastItem_fe9c899",
-  Qn = "FortRushFilterPopover_searchInputWrapper_905fbc12",
-  Yn = ["favorite", "rented"],
-  eo = Tt(function () {
-    const e = ds();
+  Gn = "FortRushFilterPopover_toggle__disabled_b79a4be0",
+  Wn = "FortRushFilterPopover_toggle__alwaysOn_39004f27",
+  Jn = "FortRushFilterPopover_fortRushIcon_c4716941",
+  Kn = "FortRushFilterPopover_lastItem_fe9c899",
+  Xn = "FortRushFilterPopover_searchInputWrapper_905fbc12",
+  Qn = ["favorite", "rented"],
+  Yn = Mt(function () {
+    const e = cs();
     function t(e) {
-      e.keyCode !== Ke.ESCAPE && e.stopPropagation();
+      e.keyCode !== Je.ESCAPE && e.stopPropagation();
     }
-    return Et.jsx(xr, {
+    return It.jsx(gr, {
       value: e.model.searchName.get(),
       onChange: (t) => e.controls.search(t.target.value),
       onKeyDown: t,
       onKeyUp: t,
     });
   });
-function to() {
-  return Et.jsxs("div", {
-    className: kt(or.toggleContainer, Xn),
+function eo() {
+  return It.jsxs("div", {
+    className: Et(nr.toggleContainer, Kn),
     children: [
-      Yn.map((e) => Et.jsx(_r, { special: e, imagePath: e }, e)),
-      Et.jsx(dr, {
-        event: { field: Qt, type: "regular", value: "event" },
+      Qn.map((e) => It.jsx(hr, { special: e, imagePath: e }, e)),
+      It.jsx(cr, {
+        event: { field: Xt, type: "regular", value: "event" },
         tooltip: !1,
-        className: Jn,
-        children: Et.jsx(F, {
+        className: Wn,
+        children: It.jsx(F, {
           path: "R.images.fort_rush.gui.maps.icons.respawn_view.fort_rush",
-          className: Kn,
+          className: Jn,
         }),
       }),
     ],
   });
 }
-const so = Tt(function ({ vehicleCount: e, filteredVehicleCount: t }) {
-    const s = ds(),
-      { model: a, controls: l } = zi(),
+const to = Mt(function ({ vehicleCount: e, filteredVehicleCount: t }) {
+    const s = cs(),
+      { model: a, controls: l } = Ri(),
       i = s.model.computes.nations(),
       r = a.computes.forbiddenTypeSet(),
       n = a.computes.tierFilterRow(),
@@ -3655,14 +3654,14 @@ const so = Tt(function ({ vehicleCount: e, filteredVehicleCount: t }) {
       c = a.selectedPlaylistId.get(),
       d = o.find((e) => e.id === c) ?? null,
       u = d?.tipSize || void 0,
-      m = g.resolve("strings"),
-      p = Ie({
+      m = v.resolve("strings"),
+      p = Se({
         header: m.readOrEmpty("tank_carousel_filter.tooltip.searchInput.header"),
         body: m
           .readOrEmpty("tank_carousel_filter.tooltip.searchInput.body")
           .replace("%(count)d", String(50)),
       }),
-      h = St.useMemo(
+      h = wt.useMemo(
         () => ({
           filters: s.model.filters,
           search: s.model.searchName,
@@ -3670,79 +3669,79 @@ const so = Tt(function ({ vehicleCount: e, filteredVehicleCount: t }) {
           defaultFilters: s.model.computes.default,
           change: s.controls.change,
           reset: () => {
-            Mt(() => {
+            Bt(() => {
               (l.setSelectedPlaylistId(""), s.controls.reset());
             });
           },
         }),
         [s, l, c],
       );
-    return Et.jsx(rr.Provider, {
+    return It.jsx(ir.Provider, {
       value: h,
-      children: Et.jsxs(le, {
+      children: It.jsxs(le, {
         children: [
-          Et.jsx(le.Trigger, { children: (s) => Et.jsx(wr, { ...s, current: t, total: e }) }),
-          Et.jsx(le.Portal, {
+          It.jsx(le.Trigger, { children: (s) => It.jsx(jr, { ...s, current: t, total: e }) }),
+          It.jsx(le.Portal, {
             lazy: !0,
             position: "bottom",
             pivot: 0,
-            children: Et.jsx(We, {
-              children: Et.jsxs(le.Display, {
-                className: kt(or.popover, or.scroll),
+            children: It.jsx(Ge, {
+              children: It.jsxs(le.Display, {
+                className: Et(nr.popover, nr.scroll),
                 style: { height: "auto" },
                 children: [
-                  Et.jsx(le.Tip, { size: u }),
-                  Et.jsx(le.Close, {}),
-                  Et.jsx(yr, { current: t, total: e, className: or.header }),
-                  Et.jsx(Gn, {}),
-                  Et.jsxs(le.Body, {
-                    className: or.body,
+                  It.jsx(le.Tip, { size: u }),
+                  It.jsx(le.Close, {}),
+                  It.jsx(xr, { current: t, total: e, className: nr.header }),
+                  It.jsx(Un, {}),
+                  It.jsxs(le.Body, {
+                    className: nr.body,
                     children: [
-                      Et.jsx(V, {
-                        className: or.category,
+                      It.jsx(B, {
+                        className: nr.category,
                         path: "tank_carousel_filter.popover.label.vehicleTypes",
                       }),
-                      Et.jsx("div", {
-                        className: kt(or.toggleContainer, or.toggleContainer__type),
-                        children: Gt.map((e) =>
-                          Et.jsx(
-                            cr,
+                      It.jsx("div", {
+                        className: Et(nr.toggleContainer, nr.toggleContainer__type),
+                        children: Ut.map((e) =>
+                          It.jsx(
+                            or,
                             {
-                              tooltip: { header: e, body: Ft },
-                              event: { field: Jt, type: "regular", value: e },
-                              className: kt(or.toggle__type, r.has(e) && Wn),
-                              children: Et.jsx(Be, { type: e, size: Be.sizes.x24x24 }),
+                              tooltip: { header: e, body: zt },
+                              event: { field: Wt, type: "regular", value: e },
+                              className: Et(nr.toggle__type, r.has(e) && Gn),
+                              children: It.jsx(Le, { type: e, size: Le.sizes.x24x24 }),
                             },
                             e,
                           ),
                         ),
                       }),
-                      Et.jsx(V, {
-                        className: or.category,
+                      It.jsx(B, {
+                        className: nr.category,
                         path: "tank_carousel_filter.popover.label.vehicleRole",
                       }),
-                      Et.jsx(ur, {}),
-                      Et.jsx(V, {
-                        className: or.category,
+                      It.jsx(dr, {}),
+                      It.jsx(B, {
+                        className: nr.category,
                         path: "tank_carousel_filter.popover.label.nations",
                       }),
-                      Et.jsx(pr, { orderedNations: i }),
+                      It.jsx(mr, { orderedNations: i }),
                       n.length > 0 &&
-                        Et.jsxs(Et.Fragment, {
+                        It.jsxs(It.Fragment, {
                           children: [
-                            Et.jsx(V, {
-                              className: or.category,
+                            It.jsx(B, {
+                              className: nr.category,
                               path: "tank_carousel_filter.popover.label.levels",
                             }),
-                            Et.jsx("div", {
-                              className: or.toggleContainer,
+                            It.jsx("div", {
+                              className: nr.toggleContainer,
                               children: n.map((e) =>
-                                Et.jsx(
-                                  cr,
+                                It.jsx(
+                                  or,
                                   {
-                                    tooltip: { header: "tier", body: At },
-                                    event: { field: Xt, type: "regular", value: `level_${e}` },
-                                    children: Et.jsx(Me, { className: or.vehicleLevel, value: e }),
+                                    tooltip: { header: "tier", body: Ft },
+                                    event: { field: Kt, type: "regular", value: `level_${e}` },
+                                    children: It.jsx(Be, { className: nr.vehicleLevel, value: e }),
                                   },
                                   e,
                                 ),
@@ -3750,21 +3749,21 @@ const so = Tt(function ({ vehicleCount: e, filteredVehicleCount: t }) {
                             }),
                           ],
                         }),
-                      Et.jsx(V, {
-                        className: or.category,
+                      It.jsx(B, {
+                        className: nr.category,
                         path: "tank_carousel_filter.popover.label.specials",
                       }),
-                      Et.jsx(to, {}),
-                      Et.jsxs("div", {
-                        className: or.footer,
+                      It.jsx(eo, {}),
+                      It.jsxs("div", {
+                        className: nr.footer,
                         children: [
-                          Et.jsx(le.Divider, {}),
-                          Et.jsx("div", {
-                            className: or.footerButtons,
-                            children: Et.jsx("div", {
+                          It.jsx(le.Divider, {}),
+                          It.jsx("div", {
+                            className: nr.footerButtons,
+                            children: It.jsx("div", {
                               ...p,
-                              className: kt(or.searchInputWrapper, Qn),
-                              children: Et.jsx(eo, {}),
+                              className: Et(nr.searchInputWrapper, Xn),
+                              children: It.jsx(Yn, {}),
                             }),
                           }),
                         ],
@@ -3779,16 +3778,16 @@ const so = Tt(function ({ vehicleCount: e, filteredVehicleCount: t }) {
       }),
     });
   }),
-  ao = "battleBoosters",
-  lo = "battleAbilities";
-var io = ((e) => ((e.UNDEFINED = "undefined"), (e.SILVER = "silver"), (e.GOLD = "gold"), e))(
-  io || {},
+  so = "battleBoosters",
+  ao = "battleAbilities";
+var lo = ((e) => ((e.UNDEFINED = "undefined"), (e.SILVER = "silver"), (e.GOLD = "gold"), e))(
+  lo || {},
 );
-function ro(e) {
-  const t = T(e, 0);
-  if (t) return { name: t.name, special: t.rank === io.GOLD };
+function io(e) {
+  const t = D(e, 0);
+  if (t) return { name: t.name, special: t.rank === lo.GOLD };
 }
-function no(e) {
+function ro(e) {
   return {
     currentIndex: e.currentIndex,
     id: e.groupId,
@@ -3796,21 +3795,21 @@ function no(e) {
     states: te(e.setupSelector.states, (e) => e),
     switchEnabled: e.setupSelector.isSwitchEnabled,
     prebattleSwitchDisabled: e.setupSelector.isPrebattleSwitchDisabled,
-    sections: te(e.sections, oo),
+    sections: te(e.sections, no),
   };
 }
-function oo(e) {
+function no(e) {
   return {
     type: e.type,
     name: e.name,
     vehicle: e.vehicle,
     vehicleType: e.vehicleType,
     newItemsCount: e.newItemsCount,
-    slots: te(e.slots, co),
+    slots: te(e.slots, oo),
     warning: e.isWarning,
   };
 }
-function co(e) {
+function oo(e) {
   return {
     id: e.id,
     intCD: e.intCD,
@@ -3833,12 +3832,12 @@ function co(e) {
           })(e, s),
         ))[0]
       : void 0,
-    mainMechanic: e.mechanics ? ro(e.mechanics) : void 0,
+    mainMechanic: e.mechanics ? io(e.mechanics) : void 0,
   };
   var t, s;
 }
-const uo = [ao, lo],
-  [mo, po] = m("AmmunitionPanelModel")(
+const co = [so, ao],
+  [uo, mo] = m("AmmunitionPanelModel")(
     (e) => {
       const { observableModel: t } = e,
         s = {
@@ -3851,14 +3850,14 @@ const uo = [ao, lo],
           }),
           groups: t.arrayClone("groups"),
         },
-        a = p.structural(() => Xe(s.groups.get(), (e.initial && e.initial.fromGroupModel) ?? no)),
+        a = p.structural(() => Ke(s.groups.get(), (e.initial && e.initial.fromGroupModel) ?? ro)),
         l = p.primitive((e, t) => s.selectedSlot.get() === e && s.selectedSection.get() === t),
         i = p.primitive((e) => s.selectedSection.get() === e),
         r = p.primitive((e) => {
           for (const t of a()) for (const s of t.sections) if (s.name === e) return s.slots.length;
           return 0;
         }),
-        n = p.primitive((e) => !uo.includes(e) && i(e) && r(e) > 1),
+        n = p.primitive((e) => !co.includes(e) && i(e) && r(e) > 1),
         o = p.structural(() => {
           const e = s.selectedSection.get(),
             t = s.selectedSlot.get();
@@ -3903,29 +3902,29 @@ const uo = [ao, lo],
     }),
     { initial: (e) => e },
   );
-function ho(e) {
+function po(e) {
   switch (e) {
     case "battleBooster":
-      return et.directiveBooster;
+      return Ye.directiveBooster;
     case "battleBoosterReplace":
-      return et.directiveSubstitute;
+      return Ye.directiveSubstitute;
     case "builtInEquipment":
-      return et.builtInEquipment;
+      return Ye.builtInEquipment;
     case "equipmentPlus":
-      return et.improved;
+      return Ye.improved;
     case "equipmentModernized":
-      return et.experimental;
+      return Ye.experimental;
     case "equipmentTrophy":
     case "equipmentTrophyBasic":
     case "equipmentTrophyUpgraded":
-      return et.trophy;
+      return Ye.trophy;
     default:
-      return et.none;
+      return Ye.none;
   }
 }
-var _o = ((e) => ((e[(e.NORMAL = 0)] = "NORMAL"), (e[(e.WARNING = 1)] = "WARNING"), e))(_o || {});
-const fo = g.resolve("strings");
-const go = {
+var ho = ((e) => ((e[(e.NORMAL = 0)] = "NORMAL"), (e[(e.WARNING = 1)] = "WARNING"), e))(ho || {});
+const _o = v.resolve("strings");
+const fo = {
     base: "PanelSwitcher_5e94cb32",
     switcher: "PanelSwitcher_switcher_a8240ce9",
     switcher__warning: "PanelSwitcher_switcher__warning_a8240ce9",
@@ -3936,81 +3935,81 @@ const go = {
     indicator__inactive: "PanelSwitcher_indicator__inactive_399f9969",
   },
   vo = "default",
-  xo = "warning",
-  yo = "selected",
-  bo = "first",
-  Co = "second";
-function No(e, t) {
+  go = "warning",
+  xo = "selected",
+  yo = "first",
+  bo = "second";
+function Co(e, t) {
   return `loadout.switcher.${e}_item_${t}`;
 }
-function jo(e) {
+function No(e) {
   const t =
     ((s = e.groupId),
     (a = e.modifier),
-    Ie({
-      header: fo.readOrEmpty("tank_setup.tooltips.prebattleSwitchIndicator.title"),
-      body: fo.readOrEmpty(`tank_setup.tooltips.prebattleSwitchIndicator.desc.c_${s}.${a}`),
+    Se({
+      header: _o.readOrEmpty("tank_setup.tooltips.prebattleSwitchIndicator.title"),
+      body: _o.readOrEmpty(`tank_setup.tooltips.prebattleSwitchIndicator.desc.c_${s}.${a}`),
     }));
   var s, a;
-  const l = e.itemStates[0] === _o.WARNING,
-    i = e.itemStates[1] === _o.WARNING,
+  const l = e.itemStates[0] === ho.WARNING,
+    i = e.itemStates[1] === ho.WARNING,
     r = 1 === e.currentIndex;
-  return Et.jsxs("div", {
-    className: kt(go.base, e.className),
+  return It.jsxs("div", {
+    className: Et(fo.base, e.className),
     children: [
-      Et.jsxs(tt, {
-        type: tt.types.vertical,
+      It.jsxs(et, {
+        type: et.types.vertical,
         onSwitch: function (t) {
           e.onSwitch({ groupId: e.groupId, currentIndex: t ? 1 : 0 });
         },
         disabled: e.disabled,
-        size: tt.sizes.small,
+        size: et.sizes.small,
         checked: r,
         classNames: {
-          base: kt(
-            go.switcher,
+          base: Et(
+            fo.switcher,
             ((n = e.currentIndex),
             (o = e.itemStates),
-            o.some((e, t) => e === _o.WARNING && t !== n) && go.switcher__warning),
+            o.some((e, t) => e === ho.WARNING && t !== n) && fo.switcher__warning),
           ),
-          overlay: go.switcherOverlay,
+          overlay: fo.switcherOverlay,
         },
         children: [
-          Et.jsx(tt.Item, {
-            className: kt(go.item, l && go.item__warning),
-            children: Et.jsx(F, { path: No(bo, l ? xo : vo), className: go.itemIcon }),
+          It.jsx(et.Item, {
+            className: Et(fo.item, l && fo.item__warning),
+            children: It.jsx(F, { path: Co(yo, l ? go : vo), className: fo.itemIcon }),
           }),
-          Et.jsx(tt.Item, {
-            className: kt(go.item, i && go.item__warning),
-            children: Et.jsx(F, { path: No(Co, i ? xo : vo), className: go.itemIcon }),
+          It.jsx(et.Item, {
+            className: Et(fo.item, i && fo.item__warning),
+            children: It.jsx(F, { path: Co(bo, i ? go : vo), className: fo.itemIcon }),
           }),
-          Et.jsx(tt.SelectedItem, {
-            children: Et.jsx(F, { path: No(r ? Co : bo, yo), className: go.itemIcon }),
+          It.jsx(et.SelectedItem, {
+            children: It.jsx(F, { path: Co(r ? bo : yo, xo), className: fo.itemIcon }),
           }),
         ],
       }),
-      Et.jsx(F, {
+      It.jsx(F, {
         ...(e.prebattleSwitchDisabled && t),
         path: "loadout.switcher.indicator_" + (e.prebattleSwitchDisabled ? "active" : "default"),
-        className: kt(go.indicator, !e.prebattleSwitchDisabled && go.indicator__inactive),
+        className: Et(fo.indicator, !e.prebattleSwitchDisabled && fo.indicator__inactive),
       }),
     ],
   });
   var n, o;
 }
-const wo = "SpecializationType_9d3d37d7",
-  So = "SpecializationType_icon_91ea8b3b",
-  Io = "SpecializationType_icon__visible_ca41ac0a",
-  Eo = "SpecializationType_icon__active_f79ff1ce",
-  ko = "stealth",
-  Po = "survivability",
-  Lo = "firepower",
-  Bo = "mobility",
+const jo = "SpecializationType_9d3d37d7",
+  wo = "SpecializationType_icon_91ea8b3b",
+  So = "SpecializationType_icon__visible_ca41ac0a",
+  Io = "SpecializationType_icon__active_f79ff1ce",
+  Eo = "stealth",
+  ko = "survivability",
+  Po = "firepower",
+  Lo = "mobility",
   Vo = "On",
-  Mo = "Off",
-  To = {
-    [`${Bo}${Vo}`]: (e) =>
-      St.createElement(
+  Bo = "Off",
+  Mo = {
+    [`${Lo}${Vo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4020,14 +4019,14 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M26.4457 24.6023C26.4457 23.5263 25.5797 22.6608 24.5058 22.6608C23.4319 22.6608 22.5658 23.5263 22.5658 24.6023C22.5658 25.6784 23.4319 26.5439 24.5058 26.5439C24.7367 26.5439 24.9446 26.4971 25.1409 26.4269C29.5289 30.4152 30.6605 31 30.6605 31C30.6605 31 30.3603 29.4678 26.3533 25.1754C26.4111 24.9883 26.4573 24.8012 26.4573 24.5906L26.4457 24.6023ZM24.5058 25.2105C24.1594 25.2105 23.8822 24.9298 23.8822 24.5906C23.8822 24.2515 24.1594 23.9708 24.5058 23.9708C24.8522 23.9708 25.1293 24.2515 25.1293 24.5906C25.1293 24.9298 24.8522 25.2105 24.5058 25.2105ZM24.5058 17C20.3603 17 17 20.3099 17 24.3801C17 26.6374 18.0277 28.6491 19.6443 29.9942L19.8868 29.655C18.582 28.2865 17.7968 26.4035 17.8776 24.5088C18.0393 20.6725 21.5843 18.3216 25.291 18.9883C30.1986 19.8655 29.6212 24.7778 28.8707 26.7427L30.7067 28.5322C31.5266 27.3509 32 25.924 32 24.3801C32 20.2982 28.6397 17 24.4942 17H24.5058Z",
           fill: "url(#paint0_linear_64965_282433)",
         }),
-        St.createElement(
+        wt.createElement(
           "defs",
           null,
-          St.createElement(
+          wt.createElement(
             "linearGradient",
             {
               id: "paint0_linear_64965_282433",
@@ -4037,13 +4036,13 @@ const wo = "SpecializationType_9d3d37d7",
               y2: 27.1818,
               gradientUnits: "userSpaceOnUse",
             },
-            St.createElement("stop", { stopColor: "#EFE3D4" }),
-            St.createElement("stop", { offset: 1, stopColor: "#DEC8AD" }),
+            wt.createElement("stop", { stopColor: "#EFE3D4" }),
+            wt.createElement("stop", { offset: 1, stopColor: "#DEC8AD" }),
           ),
         ),
       ),
-    [`${Bo}${Mo}`]: (e) =>
-      St.createElement(
+    [`${Lo}${Bo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4053,15 +4052,15 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement("path", {
+        wt.createElement("path", {
           opacity: 0.7,
           d: "M26.4457 24.6023C26.4457 23.5263 25.5797 22.6608 24.5058 22.6608C23.4319 22.6608 22.5658 23.5263 22.5658 24.6023C22.5658 25.6784 23.4319 26.5439 24.5058 26.5439C24.7367 26.5439 24.9446 26.4971 25.1409 26.4269C29.5289 30.4152 30.6605 31 30.6605 31C30.6605 31 30.3603 29.4678 26.3533 25.1754C26.4111 24.9883 26.4573 24.8012 26.4573 24.5906L26.4457 24.6023ZM24.5058 25.2105C24.1594 25.2105 23.8822 24.9298 23.8822 24.5906C23.8822 24.2515 24.1594 23.9708 24.5058 23.9708C24.8522 23.9708 25.1293 24.2515 25.1293 24.5906C25.1293 24.9298 24.8522 25.2105 24.5058 25.2105ZM24.5058 17C20.3603 17 17 20.3099 17 24.3801C17 26.6374 18.0277 28.6491 19.6443 29.9942L19.8868 29.655C18.582 28.2865 17.7968 26.4035 17.8776 24.5088C18.0393 20.6725 21.5843 18.3216 25.291 18.9883C30.1986 19.8655 29.6212 24.7778 28.8707 26.7427L30.7067 28.5322C31.5266 27.3509 32 25.924 32 24.3801C32 20.2982 28.6397 17 24.4942 17H24.5058Z",
           fill: "#EEEDE9",
           fillOpacity: 0.9,
         }),
       ),
-    [`${Lo}${Vo}`]: (e) =>
-      St.createElement(
+    [`${Po}${Vo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4071,14 +4070,14 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M22.95 21.2233L18.6917 17L17 18.7967L21.235 22.9967L22.9617 21.2233H22.95ZM30.9883 18.7967L29.2967 17L25.0383 21.2233L26.765 22.9967L31 18.7967H30.9883ZM25.0383 26.7767L29.2967 31L30.9883 29.2033L26.7533 25.0033L25.0267 26.7767H25.0383ZM17 29.2033L18.6917 31L22.95 26.7767L21.2233 25.0033L17 29.2033Z",
           fill: "url(#paint0_linear_64965_282431)",
         }),
-        St.createElement(
+        wt.createElement(
           "defs",
           null,
-          St.createElement(
+          wt.createElement(
             "linearGradient",
             {
               id: "paint0_linear_64965_282431",
@@ -4088,13 +4087,13 @@ const wo = "SpecializationType_9d3d37d7",
               y2: 30.7083,
               gradientUnits: "userSpaceOnUse",
             },
-            St.createElement("stop", { stopColor: "#FCF6EB" }),
-            St.createElement("stop", { offset: 1, stopColor: "#E1D3C1" }),
+            wt.createElement("stop", { stopColor: "#FCF6EB" }),
+            wt.createElement("stop", { offset: 1, stopColor: "#E1D3C1" }),
           ),
         ),
       ),
-    [`${Lo}${Mo}`]: (e) =>
-      St.createElement(
+    [`${Po}${Bo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4104,18 +4103,18 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement(
+        wt.createElement(
           "g",
           { opacity: 0.7 },
-          St.createElement("path", {
+          wt.createElement("path", {
             d: "M22.95 21.2233L18.6917 17L17 18.7967L21.235 22.9967L22.9617 21.2233H22.95ZM30.9883 18.7967L29.2967 17L25.0383 21.2233L26.765 22.9967L31 18.7967H30.9883ZM25.0383 26.7767L29.2967 31L30.9883 29.2033L26.7533 25.0033L25.0267 26.7767H25.0383ZM17 29.2033L18.6917 31L22.95 26.7767L21.2233 25.0033L17 29.2033Z",
             fill: "#EEEDE9",
             fillOpacity: 0.9,
           }),
         ),
       ),
-    [`${ko}${Vo}`]: (e) =>
-      St.createElement(
+    [`${Eo}${Vo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 50,
@@ -4125,14 +4124,14 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement("path", {
+        wt.createElement("path", {
           d: "M25 18C20.0337 18 16 23.1051 16 24.006C16 24.7988 20.0337 30 25 30C29.9663 30 34 24.8589 34 23.994C34 23.1291 29.9663 18 25 18ZM25 28.6186C21.382 28.6186 17.7191 24.5826 17.7191 23.994C17.7191 23.3333 21.382 19.3694 25 19.3694C28.618 19.3694 32.2809 23.3574 32.2809 23.994C32.2809 24.6306 28.618 28.6186 25 28.6186ZM24.9888 20.2342C23.0787 20.2342 21.5281 21.9159 21.5281 23.982C21.5281 26.048 23.0787 27.7297 24.9888 27.7297C26.8989 27.7297 28.4607 26.048 28.4607 23.982C28.4607 21.9159 26.9101 20.2342 24.9888 20.2342Z",
           fill: "url(#paint0_linear_64965_282436)",
         }),
-        St.createElement(
+        wt.createElement(
           "defs",
           null,
-          St.createElement(
+          wt.createElement(
             "linearGradient",
             {
               id: "paint0_linear_64965_282436",
@@ -4142,13 +4141,13 @@ const wo = "SpecializationType_9d3d37d7",
               y2: 26.7273,
               gradientUnits: "userSpaceOnUse",
             },
-            St.createElement("stop", { stopColor: "#EFE3D4" }),
-            St.createElement("stop", { offset: 1, stopColor: "#DEC8AD" }),
+            wt.createElement("stop", { stopColor: "#EFE3D4" }),
+            wt.createElement("stop", { offset: 1, stopColor: "#DEC8AD" }),
           ),
         ),
       ),
-    [`${ko}${Mo}`]: (e) =>
-      St.createElement(
+    [`${Eo}${Bo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4158,15 +4157,15 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement("path", {
+        wt.createElement("path", {
           opacity: 0.7,
           d: "M24 18C19.0337 18 15 23.1051 15 24.006C15 24.7988 19.0337 30 24 30C28.9663 30 33 24.8589 33 23.994C33 23.1291 28.9663 18 24 18ZM24 28.6186C20.382 28.6186 16.7191 24.5826 16.7191 23.994C16.7191 23.3333 20.382 19.3694 24 19.3694C27.618 19.3694 31.2809 23.3574 31.2809 23.994C31.2809 24.6306 27.618 28.6186 24 28.6186ZM23.9888 20.2342C22.0787 20.2342 20.5281 21.9159 20.5281 23.982C20.5281 26.048 22.0787 27.7297 23.9888 27.7297C25.8989 27.7297 27.4607 26.048 27.4607 23.982C27.4607 21.9159 25.9101 20.2342 23.9888 20.2342Z",
           fill: "#EEEDE9",
           fillOpacity: 0.9,
         }),
       ),
-    [`${Po}${Vo}`]: (e) =>
-      St.createElement(
+    [`${ko}${Vo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4176,23 +4175,23 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement("path", {
+        wt.createElement("path", {
           opacity: 0.7,
           fillRule: "evenodd",
           clipRule: "evenodd",
           d: "M23.7379 24.2125V17.1528H25.2364V24.2125L31.8493 28.0304L31.1001 29.3281L24.4871 25.5101L17.8742 29.3281L17.125 28.0304L23.7379 24.2125Z",
           fill: "#B3AFAB",
         }),
-        St.createElement("path", {
+        wt.createElement("path", {
           fillRule: "evenodd",
           clipRule: "evenodd",
           d: "M19.2494 20.755L24.4922 17.7302L29.7354 20.7552L24.4925 23.7799L19.2494 20.755ZM18.4995 22.0526V28.1021L23.7427 31.1271V25.0776L18.4995 22.0526ZM25.2423 31.1267L30.4848 28.1021V22.0531L25.2423 25.0776V31.1267ZM24.4922 16L31.9844 20.3224V28.9673L24.4922 33.2897L17 28.9673V20.3224L24.4922 16Z",
           fill: "url(#paint0_linear_64965_282432)",
         }),
-        St.createElement(
+        wt.createElement(
           "defs",
           null,
-          St.createElement(
+          wt.createElement(
             "linearGradient",
             {
               id: "paint0_linear_64965_282432",
@@ -4202,13 +4201,13 @@ const wo = "SpecializationType_9d3d37d7",
               y2: 32.9295,
               gradientUnits: "userSpaceOnUse",
             },
-            St.createElement("stop", { stopColor: "#FCF6EB" }),
-            St.createElement("stop", { offset: 1, stopColor: "#E1D3C1" }),
+            wt.createElement("stop", { stopColor: "#FCF6EB" }),
+            wt.createElement("stop", { offset: 1, stopColor: "#E1D3C1" }),
           ),
         ),
       ),
-    [`${Po}${Mo}`]: (e) =>
-      St.createElement(
+    [`${ko}${Bo}`]: (e) =>
+      wt.createElement(
         "svg",
         {
           width: 48,
@@ -4218,17 +4217,17 @@ const wo = "SpecializationType_9d3d37d7",
           xmlns: "http://www.w3.org/2000/svg",
           ...e,
         },
-        St.createElement(
+        wt.createElement(
           "g",
           { opacity: 0.7 },
-          St.createElement("path", {
+          wt.createElement("path", {
             opacity: 0.7,
             fillRule: "evenodd",
             clipRule: "evenodd",
             d: "M23.7379 23.2125V16.1528H25.2364V23.2125L31.8493 27.0304L31.1001 28.3281L24.4871 24.5101L17.8742 28.3281L17.125 27.0304L23.7379 23.2125Z",
             fill: "#B3AFAB",
           }),
-          St.createElement("path", {
+          wt.createElement("path", {
             fillRule: "evenodd",
             clipRule: "evenodd",
             d: "M19.2494 19.755L24.4922 16.7302L29.7354 19.7552L24.4925 22.7799L19.2494 19.755ZM18.4995 21.0526V27.1021L23.7427 30.1271V24.0776L18.4995 21.0526ZM25.2423 30.1267L30.4848 27.1021V21.0531L25.2423 24.0776V30.1267ZM24.4922 15L31.9844 19.3224V27.9673L24.4922 32.2897L17 27.9673V19.3224L24.4922 15Z",
@@ -4239,111 +4238,111 @@ const wo = "SpecializationType_9d3d37d7",
       ),
   };
 function Do({ specialization: e, active: t, classNames: s }) {
-  const a = To[`${e}${Vo}`],
-    l = To[`${e}${Mo}`];
+  const a = Mo[`${e}${Vo}`],
+    l = Mo[`${e}${Bo}`];
   if (a && l)
-    return Et.jsxs("div", {
-      className: kt(wo, s?.base),
+    return It.jsxs("div", {
+      className: Et(jo, s?.base),
       children: [
-        Et.jsx(a, { className: kt(So, Eo, t && Io, s?.activeIcon) }),
-        Et.jsx(l, { className: kt(So, !t && Io, s?.inactiveIcon) }),
+        It.jsx(a, { className: Et(wo, Io, t && So, s?.activeIcon) }),
+        It.jsx(l, { className: Et(wo, !t && So, s?.inactiveIcon) }),
       ],
     });
   console.error(`Unknown specialization type ${e}`);
 }
-const Ro = "FortRushLoadoutPanel_95eac96d",
-  zo = "FortRushLoadoutPanel_panel_e4e21ec5",
-  Fo = "FortRushLoadoutPanel_group_4aa03c14",
-  Ao = "FortRushLoadoutPanel_section_ba933a26",
-  Oo = "FortRushLoadoutPanel_slotWrapper_829e337",
-  Ho = "FortRushLoadoutPanel_slotIcon_b0781191",
-  $o = "FortRushLoadoutPanel_ammoCount_90fe266a",
-  Zo = "FortRushLoadoutPanel_specialization_aaf03b00",
-  qo = "FortRushLoadoutPanel_specBadge_e8c59f4c",
-  Uo = "FortRushLoadoutPanel_switcher_c7260fc3",
-  Go = "FortRushLoadoutPanel_slot_cfedbbb7",
-  Wo = g.resolve("aliases").read((e) => e.hangar.shared.Loadout("resId")),
-  Jo = new Set(["shells"]),
-  Ko = new Set(["battleBoosters"]),
-  Xo = new Set(["optDevices"]);
-function Qo(e, t) {
+const To = "FortRushLoadoutPanel_95eac96d",
+  Ro = "FortRushLoadoutPanel_panel_e4e21ec5",
+  zo = "FortRushLoadoutPanel_group_4aa03c14",
+  Fo = "FortRushLoadoutPanel_section_ba933a26",
+  Ao = "FortRushLoadoutPanel_slotWrapper_829e337",
+  Oo = "FortRushLoadoutPanel_slotIcon_b0781191",
+  Ho = "FortRushLoadoutPanel_ammoCount_90fe266a",
+  $o = "FortRushLoadoutPanel_specialization_aaf03b00",
+  Zo = "FortRushLoadoutPanel_specBadge_e8c59f4c",
+  qo = "FortRushLoadoutPanel_switcher_c7260fc3",
+  Uo = "FortRushLoadoutPanel_slot_cfedbbb7",
+  Go = v.resolve("aliases").read((e) => e.hangar.shared.Loadout("resId")),
+  Wo = new Set(["shells"]),
+  Jo = new Set(["battleBoosters"]),
+  Ko = new Set(["optDevices"]);
+function Xo(e, t) {
   return e.map(({ section: e }) =>
-    Et.jsx(
-      ac,
+    It.jsx(
+      sc,
       { section: e, showSpec: t.showSpec, slotSize: t.slotSize, itemSize: t.itemSize },
       e.name,
     ),
   );
 }
-function Yo(e, t) {
+function Qo(e, t) {
   const s = [];
   for (const a of e) for (const e of a.sections) t.has(e.name) && s.push({ section: e, group: a });
   return s;
 }
-function ec({ slot: e, slotSize: t }) {
-  return Et.jsxs("div", {
-    className: Oo,
+function Yo({ slot: e, slotSize: t }) {
+  return It.jsxs("div", {
+    className: Ao,
     children: [
-      Et.jsx(st, {
+      It.jsx(tt, {
         size: t,
-        className: Go,
+        className: Uo,
         children: e.imageName
-          ? Et.jsx(F, { path: `shell.small.${e.imageName}`, className: Ho })
-          : Et.jsx(st.Empty, { className: Go }),
+          ? It.jsx(F, { path: `shell.small.${e.imageName}`, className: Oo })
+          : It.jsx(tt.Empty, { className: Uo }),
       }),
-      null != e.count && Et.jsx("span", { className: $o, children: e.count }),
+      null != e.count && It.jsx("span", { className: Ho, children: e.count }),
     ],
   });
 }
-function tc({ specialization: e }) {
-  const t = St.useMemo(() => (e ? [e.type, e.dynamic, e.clickable] : []), [e]),
-    s = lt("hangarSlotSpec", t);
+function ec({ specialization: e }) {
+  const t = wt.useMemo(() => (e ? [e.type, e.dynamic, e.clickable] : []), [e]),
+    s = at("hangarSlotSpec", t);
   return e
-    ? Et.jsx("div", {
-        className: qo,
+    ? It.jsx("div", {
+        className: Zo,
         onMouseEnter: s.onMouseEnter,
         onMouseLeave: s.onMouseLeave,
-        children: Et.jsx(Do, { specialization: e.type, active: e.active }),
+        children: It.jsx(Do, { specialization: e.type, active: e.active }),
       })
     : null;
 }
-function sc({ slot: e, showSpec: t, slotSize: s, itemSize: a }) {
-  return Et.jsxs("div", {
-    className: Oo,
+function tc({ slot: e, showSpec: t, slotSize: s, itemSize: a }) {
+  return It.jsxs("div", {
+    className: Ao,
     children: [
-      Et.jsx(st, {
+      It.jsx(tt, {
         size: s,
-        className: Go,
+        className: Uo,
         children: e.imageName
-          ? Et.jsx(at, {
+          ? It.jsx(st, {
               name: e.imageName,
               size: a,
-              overlayType: ho(e.overlayType),
+              overlayType: po(e.overlayType),
               level: e.level,
             })
-          : Et.jsx(st.Empty, { className: Go }),
+          : It.jsx(tt.Empty, { className: Uo }),
       }),
       t &&
-        Et.jsx("div", {
-          className: Zo,
-          children: Et.jsx(tc, { specialization: e.specialization }),
+        It.jsx("div", {
+          className: $o,
+          children: It.jsx(ec, { specialization: e.specialization }),
         }),
     ],
   });
 }
-function ac({ section: e, showSpec: t, slotSize: s, itemSize: a }) {
-  const l = Jo.has(e.name);
-  return Et.jsx("div", {
-    className: Ao,
+function sc({ section: e, showSpec: t, slotSize: s, itemSize: a }) {
+  const l = Wo.has(e.name);
+  return It.jsx("div", {
+    className: Fo,
     children: e.slots.map((e, i) =>
       l
-        ? Et.jsx(ec, { slot: e, slotSize: s }, i)
-        : Et.jsx(sc, { slot: e, showSpec: t, slotSize: s, itemSize: a }, i),
+        ? It.jsx(Yo, { slot: e, slotSize: s }, i)
+        : It.jsx(tc, { slot: e, showSpec: t, slotSize: s, itemSize: a }, i),
     ),
   });
 }
-const lc = Tt(function () {
-  const { model: e, controls: t } = po(),
+const ac = Mt(function () {
+  const { model: e, controls: t } = mo(),
     s = e.computes.groups(),
     a =
       "object" == typeof (l = e) &&
@@ -4351,55 +4350,55 @@ const lc = Tt(function () {
       "isDisabled" in l &&
       Boolean(l.isDisabled?.get?.());
   var l;
-  const i = we(
-      { value: Qe.small },
-      { large: { value: Qe.large }, extraLarge: { value: Qe.extraLarge } },
+  const i = je(
+      { value: Xe.small },
+      { large: { value: Xe.large }, extraLarge: { value: Xe.extraLarge } },
     ),
     r = (function (e) {
       switch (e) {
-        case Qe.extraSmall:
-        case Qe.small:
-        case Qe.medium:
-          return Qe.small;
-        case Qe.large:
-          return Qe.large;
+        case Xe.extraSmall:
+        case Xe.small:
+        case Xe.medium:
+          return Xe.small;
+        case Xe.large:
+          return Xe.large;
         default:
-          return Qe.extraLarge;
+          return Xe.extraLarge;
       }
-    })(i.value ?? Qe.small),
+    })(i.value ?? Xe.small),
     n = ((e) => {
       switch (e) {
-        case Qe.extraSmall:
-        case Qe.small:
-        case Qe.medium:
-          return Ye.s48x48;
-        case Qe.large:
-          return Ye.s64x64;
+        case Xe.extraSmall:
+        case Xe.small:
+        case Xe.medium:
+          return Qe.s48x48;
+        case Xe.large:
+          return Qe.s64x64;
         default:
-          return Ye.s80x80;
+          return Qe.s80x80;
       }
-    })(i.value ?? Qe.small),
-    o = Yo(s, Ko),
-    c = Yo(s, Xo),
+    })(i.value ?? Xe.small),
+    o = Qo(s, Jo),
+    c = Qo(s, Ko),
     d = (function (e, t) {
       const s = [];
       for (const a of e)
         for (const e of a.sections) t.has(e.name) || s.push({ section: e, group: a });
       return s;
-    })(s, new Set([...Ko, ...Xo])),
+    })(s, new Set([...Jo, ...Ko])),
     u = d.length > 0 ? d[0].group : null,
     m = c.length > 0 ? c[0].group : null;
-  return Et.jsxs("div", {
-    className: zo,
+  return It.jsxs("div", {
+    className: Ro,
     children: [
-      Et.jsx("div", { className: Fo, children: Qo(c, { showSpec: !0, slotSize: r, itemSize: n }) }),
-      Et.jsxs("div", {
-        className: Fo,
+      It.jsx("div", { className: zo, children: Xo(c, { showSpec: !0, slotSize: r, itemSize: n }) }),
+      It.jsxs("div", {
+        className: zo,
         children: [
-          Qo(o, { slotSize: r, itemSize: n }),
+          Xo(o, { slotSize: r, itemSize: n }),
           m?.switchEnabled &&
             m.totalCount > 1 &&
-            Et.jsx(jo, {
+            It.jsx(No, {
               groupId: m.id,
               modifier: "field",
               currentIndex: m.currentIndex,
@@ -4407,17 +4406,17 @@ const lc = Tt(function () {
               itemStates: m.states,
               disabled: a,
               prebattleSwitchDisabled: m.prebattleSwitchDisabled,
-              className: Uo,
+              className: qo,
             }),
         ],
       }),
-      Et.jsxs("div", {
-        className: Fo,
+      It.jsxs("div", {
+        className: zo,
         children: [
-          Qo(d, { slotSize: r, itemSize: n }),
+          Xo(d, { slotSize: r, itemSize: n }),
           u?.switchEnabled &&
             u.totalCount > 1 &&
-            Et.jsx(jo, {
+            It.jsx(No, {
               groupId: u.id,
               modifier: "field",
               currentIndex: u.currentIndex,
@@ -4425,40 +4424,40 @@ const lc = Tt(function () {
               itemStates: u.states,
               disabled: a,
               prebattleSwitchDisabled: u.prebattleSwitchDisabled,
-              className: Uo,
+              className: qo,
             }),
         ],
       }),
     ],
   });
 });
-function ic() {
-  return Et.jsx("div", {
-    className: Ro,
-    children: Et.jsx(Se, {
+function lc() {
+  return It.jsx("div", {
+    className: To,
+    children: It.jsx(we, {
       failure: () => null,
-      children: Et.jsx(mo, { options: { rootId: Wo }, initial: {}, children: Et.jsx(lc, {}) }),
+      children: It.jsx(uo, { options: { rootId: Go }, initial: {}, children: It.jsx(ac, {}) }),
     }),
   });
 }
-const rc = "FortRushVehicleSelectorApp_2b5e8411",
-  nc = "FortRushVehicleSelectorApp_announcementLayer_30ce8935",
-  oc = "FortRushVehicleSelectorApp_filterRow_34630c15",
-  cc = "FortRushVehicleSelectorApp_cardsViewport_b0cd131b",
-  dc = "FortRushVehicleSelectorApp_carouselBase_396a65eb",
-  uc = "FortRushVehicleSelectorApp_carouselBase__visible_31d25709",
-  mc = "FortRushVehicleSelectorApp_emptyCarousel_87f000e4",
-  pc = Tt(function () {
+const ic = "FortRushVehicleSelectorApp_2b5e8411",
+  rc = "FortRushVehicleSelectorApp_announcementLayer_30ce8935",
+  nc = "FortRushVehicleSelectorApp_filterRow_34630c15",
+  oc = "FortRushVehicleSelectorApp_cardsViewport_b0cd131b",
+  cc = "FortRushVehicleSelectorApp_carouselBase_396a65eb",
+  dc = "FortRushVehicleSelectorApp_carouselBase__visible_31d25709",
+  uc = "FortRushVehicleSelectorApp_emptyCarousel_87f000e4",
+  mc = Mt(function () {
     const e = {
-        default: { cardWidth: be(196), cardHeight: be(78) },
-        medium: { cardWidth: be(196), cardHeight: be(96) },
-        large: { cardWidth: be(252), cardHeight: be(156) },
-        extraLarge: { cardWidth: be(309), cardHeight: be(194) },
+        default: { cardWidth: ye(196), cardHeight: ye(78) },
+        medium: { cardWidth: ye(196), cardHeight: ye(96) },
+        large: { cardWidth: ye(252), cardHeight: ye(156) },
+        extraLarge: { cardWidth: ye(309), cardHeight: ye(194) },
       },
-      { model: t, controls: s } = zi(),
-      { api: a } = it(),
-      l = ds(),
-      i = we(e.default, { medium: e.medium, large: e.large, extraLarge: e.extraLarge }),
+      { model: t, controls: s } = Ri(),
+      { api: a } = lt(),
+      l = cs(),
+      i = je(e.default, { medium: e.medium, large: e.large, extraLarge: e.extraLarge }),
       r = l.model.filters.get(),
       n = l.model.searchName.get(),
       o = t.selectedPlaylistId.get(),
@@ -4470,16 +4469,16 @@ const rc = "FortRushVehicleSelectorApp_2b5e8411",
       h = i.cardWidth,
       _ = i.cardHeight,
       f = (function (e, t) {
-        const [s, a] = St.useState(0 === t),
+        const [s, a] = wt.useState(0 === t),
           l = ce();
         return (
-          St.useEffect(() => {
+          wt.useEffect(() => {
             if (s || 0 === t) return a(!0);
             function i() {
               (a(!0), r.dispose(), l.clear());
             }
             l.run(i);
-            const r = new Ce()
+            const r = new be()
               .add(l.clear)
               .add(e.events.on("resizeHandled", () => l.run(i)))
               .add(e.events.on("recalculateContent", () => l.run(i)));
@@ -4488,65 +4487,65 @@ const rc = "FortRushVehicleSelectorApp_2b5e8411",
           s
         );
       })(a, u.length),
-      g = Lt.useCallback(
+      v = Pt.useCallback(
         (e) => {
           s.onTankSelected(Number(e));
         },
         [s],
       ),
-      v = Lt.useCallback(() => {
-        Mt(() => {
+      g = Pt.useCallback(() => {
+        Bt(() => {
           (l.controls.reset(), s.setSelectedPlaylistId(""));
         });
       }, [l.controls, s]);
-    Lt.useEffect(() => {
+    Pt.useEffect(() => {
       a.applyScroll(0);
     }, [a, n, r, o]);
     const x = 0 === u.length;
     return (
-      rt(x ? nt.NONE : nt.ARROW_LEFT, () => {
+      it(x ? rt.NONE : rt.ARROW_LEFT, () => {
         a.applyScroll(a.animationScroll.scrollPosition.get() - h);
       }),
-      rt(x ? nt.NONE : nt.ARROW_RIGHT, () => {
+      it(x ? rt.NONE : rt.ARROW_RIGHT, () => {
         a.applyScroll(a.animationScroll.scrollPosition.get() + h);
       }),
-      Et.jsxs("div", {
-        className: rc,
+      It.jsxs("div", {
+        className: ic,
         children: [
-          Et.jsx("div", { className: nc, children: Et.jsx(Xi, {}) }),
-          Et.jsx(ic, {}),
-          Et.jsx("div", {
-            className: oc,
-            children: Et.jsx(so, { vehicleCount: p, filteredVehicleCount: u.length }),
+          It.jsx("div", { className: rc, children: It.jsx(Ki, {}) }),
+          It.jsx(lc, {}),
+          It.jsx("div", {
+            className: nc,
+            children: It.jsx(to, { vehicleCount: p, filteredVehicleCount: u.length }),
           }),
-          Et.jsx("div", {
-            className: cc,
+          It.jsx("div", {
+            className: oc,
             children:
               0 === u.length
-                ? Et.jsx(tr, { height: _, onReset: v, className: mc })
-                : Et.jsx(Se, {
+                ? It.jsx(er, { height: _, onReset: g, className: uc })
+                : It.jsx(we, {
                     failure: () => null,
-                    children: Et.jsx(Ti, {
+                    children: It.jsx(Mi, {
                       api: a,
                       widthElement: h,
                       totalElements: u.length,
                       disabled: !1,
-                      classNames: { base: kt(dc, f && uc) },
+                      classNames: { base: Et(cc, f && dc) },
                       renderElement: (e) => {
                         const t = u[e];
                         return t
-                          ? Et.jsx(
-                              ir,
+                          ? It.jsx(
+                              lr,
                               {
                                 vehicleId: t.id,
                                 selected: String(m) === t.id,
                                 width: h,
                                 height: _,
-                                onSelect: g,
+                                onSelect: v,
                               },
                               t.id,
                             )
-                          : Et.jsx(gi, { width: h });
+                          : It.jsx(fi, { width: h });
                       },
                     }),
                   }),
@@ -4555,22 +4554,22 @@ const rc = "FortRushVehicleSelectorApp_2b5e8411",
       })
     );
   }),
-  hc = { carousel: ot("carousel"), tank_selection: ot("tank_selection") },
-  _c = g.resolve("aliases");
-ct(
-  new dt()
-    .add(ut)
-    .addWithProps(us, {
-      options: { rootId: _c.read((e) => e.hangar.shared.VehiclesStatistics("resId")) },
+  pc = { carousel: nt("carousel"), tank_selection: nt("tank_selection") },
+  hc = v.resolve("aliases");
+ot(
+  new ct()
+    .add(dt)
+    .addWithProps(ds, {
+      options: { rootId: hc.read((e) => e.hangar.shared.VehiclesStatistics("resId")) },
     })
-    .addWithProps(ps, {
-      options: { rootId: _c.read((e) => e.hangar.shared.VehiclesInfo("resId")) },
+    .addWithProps(ms, {
+      options: { rootId: hc.read((e) => e.hangar.shared.VehiclesInfo("resId")) },
     })
-    .addWithProps(cs, {
-      options: { rootId: _c.read((e) => e.hangar.shared.VehicleFilters("resId")) },
+    .addWithProps(os, {
+      options: { rootId: hc.read((e) => e.hangar.shared.VehicleFilters("resId")) },
     })
-    .add(Ri)
-    .addWithProps(mt, { overrides: hc })
-    .add(pt)
-    .render(Et.jsx(pc, {})),
+    .add(Ti)
+    .addWithProps(ut, { overrides: pc })
+    .add(mt)
+    .render(It.jsx(mc, {})),
 );

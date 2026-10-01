@@ -1,21 +1,21 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as s,
-  Ia as l,
-  Ii as a,
-  Sa as t,
-  Si as o,
-  a as r,
-  fo as i,
-  or as v,
-  ur as p,
+  Fa as l,
+  Fi as a,
+  a as t,
+  do as o,
+  or as r,
+  ur as i,
+  xa as v,
+  xi as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { s as c } from "../../chunks/vendor.js";
 import { t as n } from "../../chunks/divider.js";
 import { t as m } from "../../chunks/head_decorator.js";
-var _ = e(i(), 1),
-  [d, h] = p()(
+var d = e(o(), 1),
+  [_, h] = i()(
     ({ observableModel: e }) => ({
       ...e.primitives(["hasOptionalReserves"]),
       levels: e.array("levels"),
@@ -23,39 +23,39 @@ var _ = e(i(), 1),
     l,
   ),
   j = "LevelReservesTooltip_2862b15f",
-  f = "LevelReservesTooltip_title_64be79bb",
-  x = "LevelReservesTooltip_description_91eb551b",
+  x = "LevelReservesTooltip_title_64be79bb",
+  f = "LevelReservesTooltip_description_91eb551b",
   b = "LevelReservesTooltip_levelTitle_f50b450",
   N = "LevelReservesTooltip_levelBlock_83ac4a4c",
   T = "LevelReservesTooltip_lastLevelWrapper_c74891af",
   g = "LevelReservesTooltip_content_54d90909",
   u = "LevelReservesTooltip_header_759d67f",
   L = "LevelReservesTooltip_footer_b684b19c",
-  k = o(),
+  k = p(),
   y = c(function () {
     const { model: e } = h(),
       l = e.hasOptionalReserves.get(),
       o = e.levels.get(),
-      i = l ? o.length + 1 : o.length;
-    return (0, k.jsx)(r, {
-      children: (0, k.jsx)(r.Decorator, {
+      r = l ? o.length + 1 : o.length;
+    return (0, k.jsx)(t, {
+      children: (0, k.jsx)(t.Decorator, {
         children: (0, k.jsxs)("div", {
           className: j,
           children: [
             (0, k.jsxs)(m, {
               className: u,
               children: [
-                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.title", className: f }),
-                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.desc", className: x }),
+                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.title", className: x }),
+                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.desc", className: f }),
               ],
             }),
             (0, k.jsxs)("div", {
               className: g,
               children: [
                 (0, k.jsx)(n, {}),
-                t(o, (e, l) =>
+                v(o, (e, l) =>
                   (0, k.jsxs)(
-                    _.Fragment,
+                    d.Fragment,
                     {
                       children: [
                         (0, k.jsxs)("div", {
@@ -75,7 +75,7 @@ var _ = e(i(), 1),
                                 lvl: R.strings.fl_info_page.progression.ranksTable.$dyn(e),
                               },
                               split: !0,
-                              className: x,
+                              className: f,
                             }),
                           ],
                         }),
@@ -94,13 +94,13 @@ var _ = e(i(), 1),
                         children: [
                           (0, k.jsx)(s, {
                             path: "fl_tooltips.levelReserves.levelTitle",
-                            params: { lvl: a(i) },
+                            params: { lvl: a(r) },
                             split: !0,
                             className: b,
                           }),
                           (0, k.jsx)(s, {
                             path: "fl_tooltips.levelReserves.optionalReserve",
-                            className: x,
+                            className: f,
                             split: !0,
                           }),
                         ],
@@ -111,7 +111,7 @@ var _ = e(i(), 1),
               ],
             }),
             (0, k.jsx)(s, {
-              params: { lvl: a(i) },
+              params: { lvl: a(r) },
               path: "fl_tooltips.levelReserves.info",
               className: L,
               split: !0,
@@ -121,4 +121,4 @@ var _ = e(i(), 1),
       }),
     });
   });
-v((0, k.jsx)(d, { children: (0, k.jsx)(y, {}) }));
+r((0, k.jsx)(_, { children: (0, k.jsx)(y, {}) }));

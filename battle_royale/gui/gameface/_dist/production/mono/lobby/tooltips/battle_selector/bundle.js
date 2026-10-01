@@ -1,15 +1,15 @@
 import {
   Bt as e,
   Gt as s,
-  H as t,
+  N as t,
   Nn as a,
   Ut as r,
-  d as l,
-  h as i,
-  jr as o,
-  p as c,
-  t as p,
-  zt as n,
+  j as l,
+  jr as i,
+  k as o,
+  q as c,
+  t as n,
+  zt as p,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { t as d } from "../../chunks/battle_type_selector_view_model.js";
@@ -23,11 +23,11 @@ var [b, _] = s()((e) => {
       }),
     },
   };
-}, o);
+}, i);
 var m,
   x = "App_9dfce3f0",
-  u = "App_header_7064cb34",
-  j = "App_description_f773cb9c",
+  j = "App_header_7064cb34",
+  u = "App_description_f773cb9c",
   h = "App_bonusContainer_930158dc",
   y = "App_separator_649b3a29",
   v = "App_bonusDescriptionContainer_feacc542",
@@ -38,23 +38,23 @@ var m,
   T = "App_bonusText_1072bf2a",
   S = a(),
   D =
-    ((m = l(i({ tabId: c(d) }))),
+    ((m = o(t({ tabId: l(d) }))),
     function () {
       return _().model.computes.params(m);
     });
-function $() {
+function k() {
   const { tabId: e } = D(),
     s = R.strings.battle_royale.tooltip.battleTypeSelector.bonus();
   return (0, S.jsxs)("div", {
     className: x,
     children: [
       (0, S.jsx)("div", {
-        className: u,
+        className: j,
         children: `${R.strings.battle_royale.tooltip.battleTypeSelector.header.$dyn(e)}`,
       }),
       (0, S.jsx)("div", {
-        className: j,
-        children: (0, S.jsx)(t, {
+        className: u,
+        children: (0, S.jsx)(c, {
           split: !0,
           text: `${R.strings.battle_royale.tooltip.battleTypeSelector.description.$dyn(e)}`,
         }),
@@ -75,12 +75,12 @@ function $() {
                       className: A,
                       children: R.strings.battle_royale.tooltip.battleTypeSelector.bonusTitle(),
                     }),
-                    (0, S.jsx)(t, {
+                    (0, S.jsx)(c, {
                       text: R.strings.battle_royale.tooltip.battleTypeSelector.bonusDescription.experience(),
                       params: { experience: (0, S.jsx)("span", { className: g, children: s }) },
                       className: T,
                     }),
-                    (0, S.jsx)(t, {
+                    (0, S.jsx)(c, {
                       text: R.strings.battle_royale.tooltip.battleTypeSelector.bonusDescription.credits(),
                       params: { credits: (0, S.jsx)("span", { className: g, children: s }) },
                       className: T,
@@ -95,10 +95,10 @@ function $() {
   });
 }
 e(
-  (0, S.jsx)(n, {
+  (0, S.jsx)(p, {
     children: (0, S.jsx)(b, {
-      children: (0, S.jsx)(p, {
-        children: (0, S.jsx)(p.Decorator, { children: (0, S.jsx)($, {}) }),
+      children: (0, S.jsx)(n, {
+        children: (0, S.jsx)(n.Decorator, { children: (0, S.jsx)(k, {}) }),
       }),
     }),
   }),

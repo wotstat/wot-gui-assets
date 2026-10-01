@@ -1,45 +1,45 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   En as a,
-  Fi as r,
-  Nn as s,
-  Xa as o,
+  Nn as r,
+  Pi as s,
+  Ya as o,
   Zn as t,
-  _a as d,
-  _r as l,
-  fr as n,
+  _r as d,
+  fr as l,
+  ga as n,
   gr as i,
   ir as c,
   lr as p,
-  na as _,
-  nr as m,
-  o as u,
-  or as x,
-  rr as b,
-  ya as w,
-  yi as h,
+  nr as _,
+  o as m,
+  or as u,
+  rr as x,
+  ta as b,
+  va as w,
+  vi as h,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { l as f, u as j } from "../../chunks/vendor.js";
-import { n as g } from "../../chunks/readResource.js";
+import { n as v } from "../../chunks/readResource.js";
 o();
-var v = e(f(), 1),
-  [N, y] = l()(({ observableModel: e }) => {
+var g = e(f(), 1),
+  [N, y] = d()(({ observableModel: e }) => {
     const a = { root: e.object(), rewards: e.array("rewards") },
       r = i(() => a.rewards.get().length),
       s = i(
         (e) => {
-          const r = _(a.rewards.get(), e);
+          const r = b(a.rewards.get(), e);
           if (!r) throw Error(`No reward found with index: ${e}`);
           return {
             ...r,
-            image: m(r),
+            image: _(r),
             special: r.overlayType,
             valueType: c(r.name),
-            tooltipArgs: b({ tooltipId: r.tooltipId }, Number(r.tooltipContentId)),
+            tooltipArgs: x({ tooltipId: r.tooltipId }, Number(r.tooltipContentId)),
           };
         },
-        { equals: d },
+        { equals: n },
       );
     return { ...a, computes: { length: r, reward: s } };
   }, w),
@@ -56,9 +56,9 @@ var v = e(f(), 1),
   },
   L = h(),
   A = j(({ index: e }) => {
-    const { model: r } = y(),
-      o = r.computes.length(),
-      d = r.computes.reward(e),
+    const { model: s } = y(),
+      o = s.computes.length(),
+      d = s.computes.reward(e),
       { probability: l, label: n, valueType: i } = d,
       c = o > 5 ? e > 1 : e > 0,
       _ = i === p.CURRENCY;
@@ -67,21 +67,21 @@ var v = e(f(), 1),
       children: [
         c && (0, L.jsx)("div", { className: B.separator }),
         (0, L.jsxs)("div", {
-          className: (0, v.default)(B.item, c && B.item__separator),
+          className: (0, g.default)(B.item, c && B.item__separator),
           children: [
             (0, L.jsx)("div", {
               className: B.rewardWrapper,
               children: (0, L.jsx)(a, {
                 ...d,
-                className: (0, v.default)(B.reward, _ && B.reward__withCurrency),
-                size: x.Small,
+                className: (0, g.default)(B.reward, _ && B.reward__withCurrency),
+                size: u.Small,
               }),
             }),
             (0, L.jsx)("div", { className: B.label, children: n }),
             Boolean(l) &&
               (0, L.jsx)("div", {
                 className: B.percent,
-                children: (0, L.jsx)(s, {
+                children: (0, L.jsx)(r, {
                   text: R.strings.fun_random.lootboxTooltip.chance(),
                   binding: { percent: t(R.strings.common.percentValue(), { value: l }) },
                 }),
@@ -98,20 +98,20 @@ var v = e(f(), 1),
   E = "App_title_711c3638",
   W = "App_description_975d9f61",
   $ = "App_content_a6dab835",
-  q = j(() => {
+  P = j(() => {
     const { model: e } = y(),
-      { iconKey: a, label: s, assetsPointer: o } = e.root.get(),
+      { iconKey: a, label: r, assetsPointer: o } = e.root.get(),
       t = e.computes.length(),
       d = t > 5,
-      l = g(o).progression.bonuses.small;
+      l = v(o).progression.bonuses.small;
     return (0, L.jsxs)("div", {
-      className: (0, v.default)(k, d && C),
+      className: (0, g.default)(k, d && C),
       children: [
         (0, L.jsxs)("div", {
           className: T,
           children: [
             (0, L.jsx)("div", { className: I, style: { backgroundImage: `url(${l.$dyn(a)})` } }),
-            (0, L.jsx)("div", { className: E, children: s }),
+            (0, L.jsx)("div", { className: E, children: r }),
             (0, L.jsx)("div", {
               className: W,
               children: R.strings.fun_random.lootboxTooltip.description(),
@@ -120,9 +120,9 @@ var v = e(f(), 1),
         }),
         (0, L.jsx)("div", {
           className: $,
-          children: t > 0 && r(t, (e) => (0, L.jsx)(A, { index: e }, e)),
+          children: t > 0 && s(t, (e) => (0, L.jsx)(A, { index: e }, e)),
         }),
       ],
     });
   });
-n((0, L.jsx)(N, { children: (0, L.jsx)(u, { children: (0, L.jsx)(q, {}) }) }));
+l((0, L.jsx)(N, { children: (0, L.jsx)(m, { children: (0, L.jsx)(P, {}) }) }));

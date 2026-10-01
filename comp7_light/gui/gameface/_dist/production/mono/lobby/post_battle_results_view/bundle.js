@@ -1,138 +1,138 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  $i as a,
-  Ai as t,
-  Br as s,
-  C as r,
-  Ci as n,
-  Da as i,
-  Dn as l,
-  Ei as o,
-  Fn as c,
-  Gr as d,
-  Gt as u,
-  Ha as m,
-  Hn as _,
-  Ho as p,
-  Hr as f,
-  In as b,
-  Ja as h,
-  Ji as v,
-  Jn as g,
-  Jt as y,
-  Ki as x,
-  Kr as N,
-  La as I,
-  Li as j,
-  M as w,
-  Mn as A,
-  Ni as C,
-  Nn as B,
-  Nt as P,
-  Oi as S,
-  On as T,
-  P as k,
-  Pn as E,
+  $ as a,
+  $n as t,
+  An as s,
+  At as r,
+  Bo as n,
+  Br as i,
+  Ca as l,
+  Cn as o,
+  Di as c,
+  Ea as d,
+  Fn as u,
+  Ft as m,
+  Gi as _,
+  Gn as p,
+  Gr as f,
+  Hn as b,
+  Ho as h,
+  Hr as v,
+  Ia as g,
+  Ii as y,
+  In as x,
+  Kn as N,
+  Kr as I,
+  Kt as j,
+  La as w,
+  Ln as A,
+  Lo as C,
+  M as B,
+  Mi as P,
+  Mn as S,
+  Oi as T,
+  On as k,
+  P as E,
   Pt as H,
   Q as D,
-  Ra as O,
-  Rn as V,
-  Ro as z,
-  S as W,
-  Sa as M,
-  Si as G,
-  Sn as F,
-  Ta as U,
-  Ti as L,
-  Un as $,
-  Uo as X,
-  Vo as K,
-  Wa as q,
-  Wi as Q,
-  Wn as Y,
-  Wo as Z,
-  Xa as J,
-  Xn as ee,
-  Yr as ae,
-  Z as te,
-  Zr as se,
-  _ as re,
-  _i as ne,
-  _t as ie,
+  Qi as O,
+  Ri as V,
+  Rn as z,
+  Ro as W,
+  Si as M,
+  Sn as G,
+  Ti as F,
+  Ua as U,
+  Ui as L,
+  Uo as $,
+  Va as X,
+  Vn as K,
+  Vo as q,
+  Xn as Q,
+  Ya as Y,
+  Yr as Z,
+  Yt as J,
+  Zn as ee,
+  Zr as ae,
+  _ as te,
+  _i as se,
+  _o as re,
+  a as ne,
+  aa as ie,
   ai as le,
-  ao as oe,
-  ar as ce,
-  b as de,
-  c as ue,
-  cn as me,
-  co as _e,
-  d as pe,
-  di as fe,
-  dn as be,
-  dr as he,
-  ei as ve,
-  f as ge,
-  fi as ye,
-  g as xe,
-  go as Ne,
-  h as Ie,
-  hr as je,
-  j as we,
-  ki as Ae,
-  kn as Ce,
-  kt as Be,
-  l as Pe,
-  la as Se,
-  li as Te,
-  m as Re,
-  ma as ke,
-  mi as Ee,
-  mo as He,
-  mr as De,
-  na as Oe,
-  ni as Ve,
-  no as ze,
-  o as We,
-  oa as Me,
-  on as Ge,
-  p as Fe,
-  pa as Ue,
-  pi as Le,
-  po as $e,
-  pt as Xe,
-  qn as Ke,
-  qr as qe,
-  s as Qe,
-  sa as Ye,
-  sn as Ze,
-  st as Je,
-  ta as ea,
-  u as aa,
-  ua as ta,
-  ui as sa,
-  un as ra,
-  v as na,
-  vi as ia,
-  vo as la,
-  vt as oa,
-  wa as ca,
-  x as da,
-  xa as ua,
-  xn as ma,
-  xo as _a,
-  xr as pa,
-  y as fa,
-  yi as ba,
-  yn as ha,
-  zi as va,
-  zn as ga,
-  zo as ya,
+  b as oe,
+  ba as ce,
+  bn as de,
+  bo as ue,
+  c as me,
+  ca as _e,
+  cn as pe,
+  cr as fe,
+  ct as be,
+  d as he,
+  di as ve,
+  dn as ge,
+  ea as ye,
+  ei as xe,
+  f as Ne,
+  fa as Ie,
+  fi as je,
+  fn as we,
+  fo as Ae,
+  g as Ce,
+  gi as Be,
+  h as Pe,
+  ho as Se,
+  i as Te,
+  io as Re,
+  j as ke,
+  jn as Ee,
+  ki as He,
+  kn as De,
+  l as Oe,
+  la as Ve,
+  li as ze,
+  ln as We,
+  m as Me,
+  mi as Ge,
+  mr as Fe,
+  mt as Ue,
+  ni as Le,
+  o as $e,
+  oa as Xe,
+  p as Ke,
+  pa as qe,
+  pi as Qe,
+  po as Ye,
+  qa as Ze,
+  qi as Je,
+  qn as ea,
+  qr as aa,
+  r as ta,
+  s as sa,
+  sn as ra,
+  so as na,
+  ta as ia,
+  to as la,
+  u as oa,
+  ui as ca,
+  v as da,
+  vi as ua,
+  vt as ma,
+  wa as _a,
+  wi as pa,
+  xa as fa,
+  xi as ba,
+  xr as ha,
+  y as va,
+  yt as ga,
+  zn as ya,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
 import { a as xa, t as Na } from "../chunks/vendor.js";
 import { a as Ia, i as ja, n as wa, o as Aa, r as Ca, s as Ba, t as Pa } from "../chunks/common.js";
 import { t as Sa } from "../chunks/schedule_model.js";
-var Ta = e(K()),
+var Ta = e(n()),
   Ra = "BattleInfo_6333ab61",
   ka = "BattleInfo_group_161b6f97",
   Ea = "BattleInfo_textString_835b074b",
@@ -142,42 +142,42 @@ var Ta = e(K()),
   Va = "BattleInfo_commendations_731c9f38",
   za = "BattleInfo_commendations_counter_aef426",
   Wa = "BattleInfo_commendations_icon_55a703a8",
-  Ma = e(Ye()),
+  Ma = e(Xe()),
   Ga = [1, 19],
   Fa = [1, 10],
   Ua = ({ className: e, finishReasonKey: a, status: t, modeName: s, arenaType: r, ...n }) => {
     const i = `battle_results.finish.reason.c_${a}${Fa.includes(a) ? t : ""}`,
       l = Ga.includes(r) ? `arenas.type.${s}.name` : `menu.loading.battleTypes.c_${r}`;
-    return (0, Ma.jsx)(pa, {
+    return (0, Ma.jsx)(ha, {
       ...n,
       upgradeLegacy: !0,
       path: "battle_results.common.arena.fullName",
-      params: { 0: (0, Ma.jsx)(pa, { path: l }), 1: (0, Ma.jsx)(pa, { path: i }) },
-      className: ya(ka, e),
+      params: { 0: (0, Ma.jsx)(ha, { path: l }), 1: (0, Ma.jsx)(ha, { path: i }) },
+      className: W(ka, e),
     });
   };
-var La = Z.resolve("strings");
+var La = $.resolve("strings");
 var $a = (0, Ta.forwardRef)(function (e, a) {
   return (0, Ma.jsx)("div", {
     ...e,
     "data-name": "BattleInfo",
     ref: a,
-    className: ya(Ra, e.className),
+    className: W(Ra, e.className),
   });
 });
 (($a.Arena = function ({ arenaName: e, className: a, ...t }) {
-  return (0, Ma.jsx)(pa, {
-    className: ya(ka, a),
+  return (0, Ma.jsx)(ha, {
+    className: W(ka, a),
     path: "battle_results.common.arena.nameAndMode",
     params: { 0: e, 1: (0, Ma.jsx)(Ua, { ...t }) },
   });
 }),
   ($a.StartTime = ({ startTime: e, className: a, ...t }) =>
-    (0, Ma.jsx)(pa, {
+    (0, Ma.jsx)(ha, {
       ...t,
-      className: ya(ka, a),
+      className: W(ka, a),
       path: "battle_results.common.startTime",
-      params: { 0: p.formatDateTime(X.ShortDate, e), 1: p.formatDateTime(X.ShortTime, e) },
+      params: { 0: q.formatDateTime(h.ShortDate, e), 1: q.formatDateTime(h.ShortTime, e) },
     })),
   ($a.Player = function ({
     className: e,
@@ -187,28 +187,28 @@ var $a = (0, Ta.forwardRef)(function (e, a) {
     userName: r,
     clan: n,
     teamKiller: i,
-    vehicleTypeSize: l = u.sizes.x24x24,
+    vehicleTypeSize: l = j.sizes.x24x24,
     classNames: o,
     ...c
   }) {
-    return (0, Ma.jsx)(pa, {
+    return (0, Ma.jsx)(ha, {
       ...c,
       upgradeLegacy: !0,
-      className: ya(ka, i && Ha, e),
+      className: W(ka, i && Ha, e),
       path: "battle_results.common.arena.fullName",
       params: {
         0: n
-          ? (0, Ma.jsx)(pa, {
+          ? (0, Ma.jsx)(ha, {
               className: Da,
               path: "battle_results.common.player.nameWithClan",
               params: { name: r, clan: n },
             })
           : (0, Ma.jsx)("span", { className: Da, children: r }),
         1: (0, Ma.jsxs)("div", {
-          className: ya(Oa, o?.vehicleName),
+          className: W(Oa, o?.vehicleName),
           children: [
-            (0, Ma.jsx)(y, { value: a, className: ya(Ea, o?.vehicleLevel) }),
-            (0, Ma.jsx)(u, { className: o?.vehicleType, type: t, size: l }),
+            (0, Ma.jsx)(J, { value: a, className: W(Ea, o?.vehicleLevel) }),
+            (0, Ma.jsx)(j, { className: o?.vehicleType, type: t, size: l }),
             s,
           ],
         }),
@@ -234,13 +234,13 @@ var $a = (0, Ta.forwardRef)(function (e, a) {
       })(n)
     ) {
       const a = t.anonymizer ? t.fakeUsername : t.username;
-      return (0, Ma.jsx)(pa, {
+      return (0, Ma.jsx)(ha, {
         ...r,
-        className: ya(ka, t.teamKiller && Ha, e),
+        className: W(ka, t.teamKiller && Ha, e),
         path: `battle_results.common.vehicleState.${n}_with_killername`,
         params: {
           killername: t.clanAbbreviation
-            ? (0, Ma.jsx)(pa, {
+            ? (0, Ma.jsx)(ha, {
                 className: Da,
                 path: "battle_results.common.player.nameWithClan",
                 params: { name: a, clan: t.clanAbbreviation },
@@ -249,27 +249,27 @@ var $a = (0, Ta.forwardRef)(function (e, a) {
         },
       });
     }
-    return (0, Ma.jsx)(pa, {
+    return (0, Ma.jsx)(ha, {
       ...r,
-      className: ya(ka, e),
+      className: W(ka, e),
       path: `battle_results.common.vehicleState.${n}`,
     });
   }),
   ($a.CommendationScore = function ({ commendationsReceived: e }) {
     const a = e > 0,
-      t = Z.resolve("strings"),
+      t = $.resolve("strings"),
       s =
         1 === e
           ? "battle_results.comms.likes.pbs.tooltip.bodySingle"
           : "battle_results.comms.likes.pbs.tooltip.body",
-      r = ye({
+      r = je({
         header: t.readOrEmpty("battle_results.comms.likes.pbs.tooltip.header"),
         body: t.readOrEmpty(s).replace("{{var}}", e.toString()),
       });
     return a
       ? (0, Ma.jsxs)("div", {
           ...r,
-          className: ya(ka, Va),
+          className: W(ka, Va),
           children: [
             (0, Ma.jsx)("div", { className: za, children: e }),
             (0, Ma.jsx)("div", { className: Wa }),
@@ -279,7 +279,7 @@ var $a = (0, Ta.forwardRef)(function (e, a) {
   }));
 var Xa = "AnimatedValue_d9f4b2f0",
   Ka = "AnimatedValue_animatedValue_4c490d83",
-  qa = z.cubicBezier(0.33, 0, 0.25, 1);
+  qa = C.cubicBezier(0.33, 0, 0.25, 1);
 function Qa(e) {
   return {
     enterElements: document.querySelectorAll(`.js-animated-value-${e}-enter`),
@@ -287,8 +287,8 @@ function Qa(e) {
   };
 }
 function Ya({ value: e, transition: a, children: t, className: s, classNames: r }) {
-  const i = (0, Ta.useMemo)(Aa, []),
-    l = Ae(e, {
+  const n = (0, Ta.useMemo)(Aa, []),
+    i = T(e, {
       ...a,
       initial: { opacity: 1, y: "0rem", ...a?.initial },
       from: { opacity: 0, y: "-5rem", ...a?.from },
@@ -298,7 +298,7 @@ function Ya({ value: e, transition: a, children: t, className: s, classNames: r 
         delay: 330,
         config: { easing: qa, duration: 330 },
         onStart: () => {
-          const { enterElements: e, leftElements: a } = Qa(i);
+          const { enterElements: e, leftElements: a } = Qa(n);
           (e.forEach((e) => {
             e instanceof HTMLElement && ((e.style.width = "auto"), (e.style.position = "relative"));
           }),
@@ -316,7 +316,7 @@ function Ya({ value: e, transition: a, children: t, className: s, classNames: r 
         config: { easing: qa, duration: 330 },
         onStart: () => {
           let e = 0;
-          const { enterElements: a, leftElements: t } = Qa(i);
+          const { enterElements: a, leftElements: t } = Qa(n);
           (t.forEach((a) => {
             a instanceof HTMLElement &&
               ((e = Math.max(e, a.offsetWidth)), (a.style.position = "relative"));
@@ -330,16 +330,12 @@ function Ya({ value: e, transition: a, children: t, className: s, classNames: r 
       }),
     });
   return (0, Ma.jsx)("div", {
-    className: ya(Xa, s),
-    children: l((a, s) => {
-      const l = 0 === a.opacity.get() && !1 === a.opacity.isAnimating;
-      return (0, Ma.jsx)(n.div, {
-        className: ya(
-          Ka,
-          `js-animated-value-${i}-${e === s ? "enter" : "leave"}`,
-          r?.animatedValue,
-        ),
-        style: { ...a, position: l ? "absolute" : "relative" },
+    className: W(Xa, s),
+    children: i((a, s) => {
+      const i = 0 === a.opacity.get() && !1 === a.opacity.isAnimating;
+      return (0, Ma.jsx)(M.div, {
+        className: W(Ka, `js-animated-value-${n}-${e === s ? "enter" : "leave"}`, r?.animatedValue),
+        style: { ...a, position: i ? "absolute" : "relative" },
         children: t(s),
       });
     }),
@@ -378,17 +374,17 @@ var tt = {
     blink: "Bubble_blink_fdf0621f",
     slideUpIn: "Bubble_slideUpIn_fdf0621f",
   },
-  st = z.cubicBezier(0.75, 0, 0.67, 1),
-  rt = z.cubicBezier(0.33, 0, 0.25, 1);
+  st = C.cubicBezier(0.75, 0, 0.67, 1),
+  rt = C.cubicBezier(0.33, 0, 0.25, 1);
 function nt(e, a) {
   return "number" == typeof e
     ? (function (e, a) {
         return e > a
-          ? (0, Ma.jsx)(pa, {
+          ? (0, Ma.jsx)(ha, {
               path: "common.valuePlus",
-              params: { value: p.formatNumber("integral", a) },
+              params: { value: q.formatNumber("integral", a) },
             })
-          : p.formatNumber("integral", e);
+          : q.formatNumber("integral", e);
       })(e, a)
     : e;
 }
@@ -396,7 +392,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
     const { state: n, items: i } = at(),
       l = le(),
       o = n.value === Za.progress || (n.value === Za.waiting && !1 === n.read),
-      c = ea({ value: da.small }, { medium: { value: da.medium } }),
+      c = ye({ value: da.small }, { medium: { value: da.medium } }),
       d = (0, Ta.useMemo)(
         () => ({
           ...r?.rootTransition,
@@ -447,9 +443,9 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
       className: a,
       children: (a) =>
         a &&
-        (0, Ma.jsx)(de.Root, {
+        (0, Ma.jsx)(te.Root, {
           children: (0, Ma.jsx)("div", {
-            className: ya(
+            className: W(
               tt.valueContainer,
               tt[`valueContainer__${e ?? c.value}`],
               t?.valueContainer,
@@ -459,7 +455,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
               transition: u,
               children: (a) =>
                 (0, Ma.jsx)("div", {
-                  className: ya(tt.value, tt[`value__${e ?? c.value}`], t?.value),
+                  className: W(tt.value, tt[`value__${e ?? c.value}`], t?.value),
                   children: nt(a, 99),
                 }),
             }),
@@ -470,13 +466,13 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
   lt = "Items_9477a756",
   ot = "Items_animatedValue_c7d2e119",
   ct = "Items_plug_a7a8cadf",
-  dt = z.cubicBezier(0.75, 0, 0.67, 1),
-  ut = z.cubicBezier(0.1, 0, 0.9, 1),
-  mt = z.cubicBezier(0.33, 0, 0.25, 1),
-  _t = f("NotificationItem", lt),
+  dt = C.cubicBezier(0.75, 0, 0.67, 1),
+  ut = C.cubicBezier(0.1, 0, 0.9, 1),
+  mt = C.cubicBezier(0.33, 0, 0.25, 1),
+  _t = v("NotificationItem", lt),
   pt = (0, Ta.memo)(function ({ transition: e, ...a }) {
     const { items: t, state: s } = at(),
-      r = Ae(s.currentNotification, {
+      r = T(s.currentNotification, {
         ...e,
         key: s.currentNotification,
         initial: { opacity: 0, y: "-5rem", x: "-50%", ...e?.initial },
@@ -502,7 +498,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
           className: ct,
           children: s.currentNotification || t[t.length - 1]?.item,
         }),
-        r((e, a) => (0, Ma.jsx)(n.div, { className: ot, style: e, children: a })),
+        r((e, a) => (0, Ma.jsx)(M.div, { className: ot, style: e, children: a })),
       ],
     });
   }),
@@ -522,7 +518,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
           () => e.some(({ id: e }) => !1 === t.shownNotifications.has(e)),
           [e, t.shownNotifications],
         );
-      va(
+      V(
         () => {
           s((a) => {
             const t = e.find(({ id: e }) => !1 === a.shownNotifications.has(e));
@@ -531,7 +527,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
               read: !1,
               currentNotification: t?.item,
               shownNotifications:
-                void 0 !== t ? ua(a.shownNotifications, t.id) : a.shownNotifications,
+                void 0 !== t ? ce(a.shownNotifications, t.id) : a.shownNotifications,
               bubbleCounter: void 0 !== t ? a.bubbleCounter + 1 : a.bubbleCounter,
             };
           });
@@ -549,7 +545,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
                 read: !1,
                 currentNotification: t?.item,
                 shownNotifications:
-                  void 0 !== t ? ua(a.shownNotifications, t.id) : a.shownNotifications,
+                  void 0 !== t ? ce(a.shownNotifications, t.id) : a.shownNotifications,
                 value: Za.progress,
                 bubbleCounter: et({
                   notification: t,
@@ -601,7 +597,7 @@ var it = (0, Ta.memo)(function ({ size: e, className: a, classNames: t, target: 
     fifth: "fifth",
     immediate: "immediate",
   },
-  ht = z.cubicBezier(0.33, 0, 0.25, 1),
+  ht = C.cubicBezier(0.33, 0, 0.25, 1),
   vt = (0, Ta.createContext)(null);
 function gt() {
   const e = (0, Ta.useContext)(vt);
@@ -615,20 +611,20 @@ function yt({ children: e }) {
   const [a, t] = (0, Ta.useState)(bt.initial),
     [s, r] = (0, Ta.useState)(new Set()),
     [n, i] = (0, Ta.useState)(!1),
-    [l, c] = (0, Ta.useState)(!1),
-    d = ne(),
-    u = le(),
-    { active: m } = k(),
-    _ = o(),
-    p = o(),
-    f = o(),
-    b = o(),
-    h = o(),
-    v = o(),
-    g = o(),
-    y = o(),
-    x = o(),
-    N = (0, Ta.useCallback)(
+    [l, o] = (0, Ta.useState)(!1),
+    c = Be(),
+    d = le(),
+    { active: u } = E(),
+    m = F(),
+    _ = F(),
+    p = F(),
+    f = F(),
+    b = F(),
+    h = F(),
+    v = F(),
+    g = F(),
+    y = F(),
+    x = (0, Ta.useCallback)(
       function (e) {
         t(e);
       },
@@ -641,124 +637,124 @@ function yt({ children: e }) {
       switch (a) {
         case bt.immediate:
           return (
-            _.start({ y: "0", opacity: 1, immediate: !0 }),
-            p.start({ opacity: 1, y: "0", immediate: !0 }),
-            f.start({ maskSize: "100% 100%", immediate: !0 }),
+            m.start({ y: "0", opacity: 1, immediate: !0 }),
+            _.start({ opacity: 1, y: "0", immediate: !0 }),
+            p.start({ maskSize: "100% 100%", immediate: !0 }),
+            f.start({ opacity: 1, y: "0", immediate: !0 }),
             b.start({ opacity: 1, y: "0", immediate: !0 }),
-            h.start({ opacity: 1, y: "0", immediate: !0 }),
-            v.start({ opacity: 1, immediate: !0 }),
-            y.start({ maskSize: "100% 100%", immediate: !0 }),
-            x.start({ opacity: 1, immediate: !0 }),
-            void g.start({ opacity: 1, immediate: !0 })
+            h.start({ opacity: 1, immediate: !0 }),
+            g.start({ maskSize: "100% 100%", immediate: !0 }),
+            y.start({ opacity: 1, immediate: !0 }),
+            void v.start({ opacity: 1, immediate: !0 })
           );
         case bt.initial:
           return (
-            u.play("showBattleResult", { target: "animation-context" }),
-            void t(m === Ba.overview ? bt.navigation : bt.immediate)
+            d.play("showBattleResult", { target: "animation-context" }),
+            void t(u === Ba.overview ? bt.navigation : bt.immediate)
           );
         case bt.navigation:
-          return void _.start({
+          return void m.start({
             y: "0",
             opacity: 1,
             config: { duration: 400, easing: ht },
             onRest: () => {
-              (t(bt.battleStatus), r((e) => ua(e, bt.navigation)));
+              (t(bt.battleStatus), r((e) => ce(e, bt.navigation)));
             },
           });
         case bt.battleStatus:
-          return void p.start({
+          return void _.start({
             opacity: 1,
             y: "0",
             config: { duration: 800, easing: ht },
             onRest: () => {
-              (t(bt.first), r((e) => ua(e, bt.battleStatus)));
+              (t(bt.first), r((e) => ce(e, bt.battleStatus)));
             },
           });
         case bt.first:
-          return (t(bt.second), void r((e) => ua(e, bt.first)));
+          return (t(bt.second), void r((e) => ce(e, bt.first)));
         case bt.second:
           return (
-            f.start({
+            p.start({
               maskSize: "100% 100%",
               config: { duration: 400, easing: ht },
               onRest: () => {
-                r((e) => ua(e, bt.second));
+                r((e) => ce(e, bt.second));
               },
             }),
-            void d.run(() => {
-              (t(bt.third), d.clear());
+            void c.run(() => {
+              (t(bt.third), c.clear());
             }, 280)
           );
         case bt.third:
           return (
+            f.start({ opacity: 1, y: "0", config: { duration: 400, easing: ht } }),
             b.start({ opacity: 1, y: "0", config: { duration: 400, easing: ht } }),
-            h.start({ opacity: 1, y: "0", config: { duration: 400, easing: ht } }),
-            v.start({
+            h.start({
               opacity: 1,
               config: { duration: 400, easing: ht },
               onRest: () => {
-                r((e) => ua(e, bt.third));
+                r((e) => ce(e, bt.third));
               },
             }),
-            void d.run(() => {
-              (t(bt.fourth), d.clear());
+            void c.run(() => {
+              (t(bt.fourth), c.clear());
             }, 280)
           );
         case bt.fourth:
           return (
-            y.start({
+            g.start({
               maskSize: "100% 100%",
               config: { duration: 400, easing: ht },
               onRest: () => {
-                r((e) => ua(e, bt.fourth));
+                r((e) => ce(e, bt.fourth));
               },
             }),
-            void d.run(() => {
-              (t(bt.fifth), d.clear());
+            void c.run(() => {
+              (t(bt.fifth), c.clear());
             }, 120)
           );
         case bt.fifth:
-          (x.start({ opacity: 1, config: { duration: 400, easing: ht } }),
-            g.start({
+          (y.start({ opacity: 1, config: { duration: 400, easing: ht } }),
+            v.start({
               opacity: 1,
               config: { duration: 400, easing: ht },
               onRest: () => {
-                r((e) => ua(e, bt.fifth));
+                r((e) => ce(e, bt.fifth));
               },
             }));
           break;
         default:
           return;
       }
-    }, [m, a, u, d, g, N, s]));
-  const I = (0, Ta.useMemo)(
+    }, [u, a, d, c, v, x, s]));
+  const N = (0, Ta.useMemo)(
     () => ({
       step: a,
-      handleStep: N,
+      handleStep: x,
       completedSteps: s,
       allMedalsAnimated: n,
-      bonusRef: h,
-      hintKeyRef: v,
-      dividerRef: f,
-      battleInfoRef: g,
-      navigationRef: _,
-      battleStatusRef: p,
-      overlayDividerRef: y,
-      earnedCurrenciesRef: b,
-      personalEfficiencyRef: x,
+      bonusRef: b,
+      hintKeyRef: h,
+      dividerRef: p,
+      battleInfoRef: v,
+      navigationRef: m,
+      battleStatusRef: _,
+      overlayDividerRef: g,
+      earnedCurrenciesRef: f,
+      personalEfficiencyRef: y,
       setAllMedalsAnimated: i,
-      setAllCurrenciesAniamted: c,
+      setAllCurrenciesAniamted: o,
       readyForNotifications: n && l && s.has(bt.fifth),
     }),
-    [a, N, n, l, s],
+    [a, x, n, l, s],
   );
-  return (0, Ma.jsx)(vt.Provider, { value: I, children: e });
+  return (0, Ma.jsx)(vt.Provider, { value: N, children: e });
 }
 var xt = "Divider_80a19f4b";
 function Nt({ classNames: e }) {
   return (0, Ma.jsx)("div", {
-    className: ya(xt, e?.base),
-    children: (0, Ma.jsx)(l, {
+    className: W(xt, e?.base),
+    children: (0, Ma.jsx)(k, {
       className: e?.image,
       width: "100%",
       height: "100%",
@@ -771,24 +767,24 @@ var It = "Header_content_b9e0be90",
   jt = "Header_title_91e5448a",
   wt = "Header_divider_eb019c6",
   At = "Header_dividerImage_19f6e11",
-  Ct = f("Header", "Header_70aa1da5"),
+  Ct = v("Header", "Header_70aa1da5"),
   Bt = (0, Ta.forwardRef)(({ title: e, children: a, classNames: t, ...s }, r) => {
-    const n = Z.resolve("strings");
+    const n = $.resolve("strings");
     return (0, Ma.jsxs)(Ct, {
       ...s,
       ref: r,
       children: [
         (0, Ma.jsxs)("div", {
-          className: ya(It, t?.content),
+          className: W(It, t?.content),
           children: [
             (0, Ma.jsx)("div", {
-              className: ya(jt, t?.title),
-              children: p.toUpperCase(n.readOrEmpty(e)),
+              className: W(jt, t?.title),
+              children: q.toUpperCase(n.readOrEmpty(e)),
             }),
             a,
           ],
         }),
-        (0, Ma.jsx)(Nt, { classNames: { base: ya(wt, t?.divider), image: At } }),
+        (0, Ma.jsx)(Nt, { classNames: { base: W(wt, t?.divider), image: At } }),
       ],
     });
   }),
@@ -828,21 +824,21 @@ var It = "Header_content_b9e0be90",
   kt = "IncomeStatement_scrollWrapper_ce2dde41",
   Et = "IncomeStatement_scrollContent_31153602",
   Ht = "IncomeStatement_scrollContent__initialized_ce1144d0",
-  Dt = f("CreditsIncomeStatement"),
+  Dt = v("CreditsIncomeStatement"),
   Ot = ({ children: e }) => {
-    const a = St(be().api);
-    return (0, Ma.jsx)(Ze, { classNames: { wrapper: kt, content: ya(Et, a && Ht) }, children: e });
+    const a = St(we().api);
+    return (0, Ma.jsx)(pe, { classNames: { wrapper: kt, content: W(Et, a && Ht) }, children: e });
   },
   Vt = (0, Ta.forwardRef)(({ children: e, className: a, scrollable: t, ...s }, r) =>
     (0, Ma.jsx)(Dt, {
-      className: ya(Tt, a),
+      className: W(Tt, a),
       ...s,
       ref: r,
       children: t
-        ? (0, Ma.jsxs)(Ge, {
+        ? (0, Ma.jsxs)(ra, {
             children: [
               (0, Ma.jsx)(Ot, { children: e }),
-              (0, Ma.jsx)(ra, { classNames: { base: Rt } }),
+              (0, Ma.jsx)(ge, { classNames: { base: Rt } }),
             ],
           })
         : e,
@@ -1121,7 +1117,11 @@ function Tr(e) {
     currencyType: e.currencyType,
     baseValue: e.baseValue,
     premiumValue: e.premiumValue,
-    recordsItemsDetails: h(e.detailedItemRecords, (e, a) => ((e[a.itemName] = a.itemValue), e), {}),
+    recordsItemsDetails: Ze(
+      e.detailedItemRecords,
+      (e, a) => ((e[a.itemName] = a.itemValue), e),
+      {},
+    ),
   };
 }
 function Rr(e, a) {
@@ -1131,9 +1131,9 @@ function Rr(e, a) {
   return [t, s];
 }
 function kr(e, a) {
-  const t = q(e.earned, Tr),
-    s = q(e.expenses, Tr),
-    r = q(e.total, Tr),
+  const t = U(e.earned, Tr),
+    s = U(e.expenses, Tr),
+    r = U(e.total, Tr),
     n = [Gs, $s],
     i = [Vs, Ls],
     [l, o] = Rr(r, (e) => n.includes(e.paramName)),
@@ -1152,7 +1152,7 @@ function kr(e, a) {
 var Er = (e) => e in _r;
 function Hr({ xp: e, freeXp: a }) {
   const t = e?.paramName || a?.paramName;
-  U("string" == typeof t, "xp or freeXp paramName is not provided");
+  _a("string" == typeof t, "xp or freeXp paramName is not provided");
   const s = Er(t) ? _r[t] : void 0,
     r =
       void 0 !== e?.recordsItemsDetails && Object.keys(e.recordsItemsDetails).length > 0
@@ -1168,7 +1168,7 @@ function Hr({ xp: e, freeXp: a }) {
 }
 function Dr({ credits: e, gold: a }) {
   const t = e?.paramName || a?.paramName;
-  U("string" == typeof t, "credits or gold paramName is not provided");
+  _a("string" == typeof t, "credits or gold paramName is not provided");
   const s = Er(t) ? _r[t] : void 0,
     r =
       void 0 !== e?.recordsItemsDetails && Object.keys(e.recordsItemsDetails).length > 0
@@ -1185,25 +1185,25 @@ function Dr({ credits: e, gold: a }) {
 function Or(e, a) {
   const t = e.paramName;
   return (
-    U(((e) => e in ar)(t), `No analogue for ${t} in free xp parameter names`),
+    _a(((e) => e in ar)(t), `No analogue for ${t} in free xp parameter names`),
     a.find((e) => ar[t] === e.paramName)
   );
 }
 function Vr(e, a) {
   const t = e.paramName;
   return (
-    U(((e) => e in tr)(t), `No analogue for ${t} in gold parameter names`),
+    _a(((e) => e in tr)(t), `No analogue for ${t} in gold parameter names`),
     a.find((e) => tr[t] === e.paramName)
   );
 }
 function zr(e, a) {
   return ((t = (function (e, a) {
-    const t = I(
+    const t = g(
         a,
         (e) => Js.has(e.paramName),
         (e) => Hr({ freeXp: e }),
       ),
-      s = q(e, (e) => (Zs.has(e.paramName) ? Hr({ xp: e }) : Hr({ xp: e, freeXp: Or(e, a) })));
+      s = U(e, (e) => (Zs.has(e.paramName) ? Hr({ xp: e }) : Hr({ xp: e, freeXp: Or(e, a) })));
     return [...t, ...s];
   })(e, a)),
   t.filter((e) => {
@@ -1216,7 +1216,7 @@ function zr(e, a) {
 }
 function Wr(e, a) {
   return ((t = (function (e, a) {
-    return q(e, (e) =>
+    return U(e, (e) =>
       er.has(e.paramName) ? Dr({ credits: e }) : Dr({ credits: e, gold: Vr(e, a) }),
     );
   })(e, a)),
@@ -1254,7 +1254,7 @@ function Fr({ credits: e, gold: a }) {
   );
 }
 var Ur = (e) => e.wotPlusType !== Mt.None,
-  [Lr, $r] = se()(({ observableModel: e }) => {
+  [Lr, $r] = ae()(({ observableModel: e }) => {
     const a = {
         ...e.primitives(["hasAnyPremium", "wotPlusType", "hasPenalties"], "additionalBonus"),
         hasWotPlus: e.transform(Ur, "additionalBonus"),
@@ -1284,7 +1284,7 @@ var Ur = (e) => e.wotPlusType !== Mt.None,
           total: e.arrayClone("financialReport.crystals.total"),
         },
       },
-      t = ae.model(() =>
+      t = Z.model(() =>
         Gr({
           xp: { earned: a.xp.earned.get(), expenses: a.xp.expenses.get(), total: a.xp.total.get() },
           freeXp: {
@@ -1294,7 +1294,7 @@ var Ur = (e) => e.wotPlusType !== Mt.None,
           },
         }),
       ),
-      s = ae.model(() =>
+      s = Z.model(() =>
         Fr({
           credits: {
             earned: a.credits.earned.get(),
@@ -1308,7 +1308,7 @@ var Ur = (e) => e.wotPlusType !== Mt.None,
           },
         }),
       ),
-      r = ae.model(() =>
+      r = Z.model(() =>
         (function ({ earned: e, expenses: a, total: t }) {
           const s = kr({ earned: e, expenses: a, total: t });
           return { records: Mr(s.records), total: Mr(s.total) };
@@ -1319,30 +1319,30 @@ var Ur = (e) => e.wotPlusType !== Mt.None,
         }),
       );
     return { ...a, computes: { experience: t, credits: s, crystals: r } };
-  }, _e),
+  }, na),
   Xr = "ListItem_received_ffdc3010",
   Kr = "ListItem_separator_71797768",
   qr = "ListItem_label_4ab3c391",
   Qr = "ListItem_label__withIcon_c2381aa",
   Yr = "ListItem_labelIcon_acb0da4",
-  Zr = f("ListItem", "ListItem_bcdaabbd"),
+  Zr = v("ListItem", "ListItem_bcdaabbd"),
   Jr = (0, Ta.forwardRef)(
     ({ labelKey: e, children: a, classNames: t, params: s, labelIconPath: r, ...n }, i) => {
-      const l = Z.resolve("images");
+      const l = $.resolve("images");
       return (0, Ma.jsxs)(Zr, {
         ...n,
         ref: i,
         "data-test-id": `${e}`,
         children: [
           (0, Ma.jsxs)("div", {
-            className: ya(qr, void 0 !== r && Qr, t?.label),
+            className: W(qr, void 0 !== r && Qr, t?.label),
             children: [
               void 0 !== r &&
                 (0, Ma.jsx)("div", {
                   style: { backgroundImage: `url(${l.readOrEmpty(r)})` },
-                  className: ya(Yr, t?.icon),
+                  className: W(Yr, t?.icon),
                 }),
-              (0, Ma.jsx)(pa, { upgradeLegacy: !0, path: e, params: s }),
+              (0, Ma.jsx)(ha, { upgradeLegacy: !0, path: e, params: s }),
             ],
           }),
           (0, Ma.jsxs)("div", {
@@ -1360,23 +1360,23 @@ var Ur = (e) => e.wotPlusType !== Mt.None,
     if (void 0 === a) return null;
     const i = t === dr || a < 0;
     return (0, Ma.jsxs)("div", {
-      className: ya(en, r?.base),
+      className: W(en, r?.base),
       children: [
         (0, Ma.jsxs)("div", {
-          className: ya(an, i && tn, r?.value),
+          className: W(an, i && tn, r?.value),
           "data-test-id": `${s}`,
           children: [
             Na(t)
-              .with(cr, () => (0, Ma.jsx)(pa, { path: "common.multiplierSmall" }))
-              .with(or, () => (0, Ma.jsx)(pa, { path: "common.multiplierSmall" }))
-              .with(dr, () => (0, Ma.jsx)(pa, { path: "common.multiplierSmall" }))
-              .with(mr, () => (0, Ma.jsx)(pa, { path: "common.plus" }))
+              .with(cr, () => (0, Ma.jsx)(ha, { path: "common.multiplierSmall" }))
+              .with(or, () => (0, Ma.jsx)(ha, { path: "common.multiplierSmall" }))
+              .with(dr, () => (0, Ma.jsx)(ha, { path: "common.multiplierSmall" }))
+              .with(mr, () => (0, Ma.jsx)(ha, { path: "common.plus" }))
               .otherwise(() => null),
             e(a, s),
-            t === ur && (0, Ma.jsx)(pa, { path: "common.common.percent" }),
+            t === ur && (0, Ma.jsx)(ha, { path: "common.common.percent" }),
           ],
         }),
-        n && (0, Ma.jsx)(l, { width: 24, height: 24, path: n }),
+        n && (0, Ma.jsx)(k, { width: 24, height: 24, path: n }),
       ],
     });
   },
@@ -1420,18 +1420,18 @@ var hn = ({
     function o(a) {
       switch (e) {
         case Zt:
-          return p.formatReal("woZeroDigits", a);
+          return q.formatReal("woZeroDigits", a);
         case Ks:
-          return p.formatReal("fractional", a);
+          return q.formatReal("fractional", a);
         default:
-          return p.formatNumber("integral", a);
+          return q.formatNumber("integral", a);
       }
     }
     return (0, Ma.jsxs)("div", {
-      className: ya(rn, r && nn),
+      className: W(rn, r && nn),
       children: [
         (0, Ma.jsx)("div", {
-          className: ya(
+          className: W(
             ln,
             cn,
             bn({ wotPlusActive: l, paramName: e, value: a, hasPenalties: n }) && on,
@@ -1441,23 +1441,20 @@ var hn = ({
             currency: "xp",
             modifier: fn(e, a) ? s : void 0,
             formatter: o,
-            classNames: { value: ya(mn, i && _n) },
+            classNames: { value: W(mn, i && _n) },
             iconPath: Cr("xp", e),
           }),
         }),
         void 0 !== t &&
           (0, Ma.jsx)("div", { className: dn, children: (0, Ma.jsx)("div", { className: un }) }),
         (0, Ma.jsx)("div", {
-          className: ya(
-            ln,
-            bn({ wotPlusActive: l, paramName: e, value: t, hasPenalties: n }) && on,
-          ),
+          className: W(ln, bn({ wotPlusActive: l, paramName: e, value: t, hasPenalties: n }) && on),
           children: (0, Ma.jsx)(sn, {
             value: t,
             currency: Gt,
             modifier: fn(e, t) ? s : void 0,
             formatter: o,
-            classNames: { value: ya(mn, pn, i && _n) },
+            classNames: { value: W(mn, pn, i && _n) },
             iconPath: Cr(Gt, e),
           }),
         }),
@@ -1517,9 +1514,9 @@ var hn = ({
   Cn = () =>
     (0, Ma.jsx)("span", {
       className: yn,
-      children: (0, Ma.jsx)(pa, { path: "battle_results.details.calculations.maximum" }),
+      children: (0, Ma.jsx)(ha, { path: "battle_results.details.calculations.maximum" }),
     }),
-  Bn = Ce(
+  Bn = s(
     ({
       record: { paramName: e, premium: a, standard: t, modifier: s, recordsItemsDetails: r },
       total: n,
@@ -1540,7 +1537,7 @@ var hn = ({
         labelIconPath: f,
         labelKey: `battle_results.details.calculations.${_}`,
         params: { ...(p && { bonusFactor: pr(p) }), ...(m && { maximum: (0, Ma.jsx)(Cn, {}) }) },
-        classNames: { label: ya(gn, An.has(e) && xn) },
+        classNames: { label: W(gn, An.has(e) && xn) },
         children: (0, Ma.jsxs)("div", {
           className: vn,
           children: [
@@ -1570,24 +1567,24 @@ var hn = ({
   Pn = "IncomeStatement_560dd244",
   Sn = "IncomeStatement_base__scroll_fb9f1475",
   Tn = "IncomeStatement_item_48b34a63",
-  Rn = Ce(
+  Rn = s(
     (0, Ta.forwardRef)(({ className: e, scrollable: a, ...t }, s) => {
       const { model: r } = $r(),
         n = r.computes.experience();
       return (0, Ma.jsx)(Vt, {
         ...t,
         ref: s,
-        className: ya(Pn, a && Sn, e),
+        className: W(Pn, a && Sn, e),
         scrollable: a,
-        children: q(n.records, (e) => (0, Ma.jsx)(Bn, { record: e, className: Tn }, e.paramName)),
+        children: U(n.records, (e) => (0, Ma.jsx)(Bn, { record: e, className: Tn }, e.paramName)),
       });
     }),
   ),
   kn = "Total_item_a8580361",
   En = "Total_divider_1de1ca28",
   Hn = "Total_dividerImage_ab06168d",
-  Dn = f("ExperienceTotal", "Total_19236d49"),
-  On = Ce(
+  Dn = v("ExperienceTotal", "Total_19236d49"),
+  On = s(
     (0, Ta.forwardRef)((e, a) => {
       const { model: t } = $r(),
         s = t.computes.experience();
@@ -1603,9 +1600,9 @@ var hn = ({
   ),
   Vn = "Experience_a014c8c",
   zn = "Experience_base__scroll_f75d07c6",
-  Wn = f("Experience"),
+  Wn = v("Experience"),
   Mn = (0, Ta.forwardRef)(({ scrollable: e, className: a, ...t }, s) =>
-    (0, Ma.jsx)(Wn, { ...t, ref: s, className: ya(Vn, e && zn, a) }),
+    (0, Ma.jsx)(Wn, { ...t, ref: s, className: W(Vn, e && zn, a) }),
   );
 ((Mn.Header = Pt), (Mn.Item = Bn), (Mn.Total = On), (Mn.IncomeStatement = Rn));
 var Gn = "Header_cbd845ec",
@@ -1614,34 +1611,34 @@ var Gn = "Header_cbd845ec",
   Ln = "Header_title__active_e5dd0f77",
   $n = "Header_title__premium_2c23921f",
   Xn = "Header_icon_3b4dc587",
-  Kn = Ce(
+  Kn = s(
     (0, Ta.forwardRef)(({ className: e, ...a }, t) => {
       const { model: s } = $r(),
         r = s.hasAnyPremium.get();
       return (0, Ma.jsx)(Bt, {
         ...a,
         ref: t,
-        className: ya(Gn, e),
+        className: W(Gn, e),
         title: "battle_results.details.credits",
         children: (0, Ma.jsxs)("div", {
           className: Fn,
           children: [
             (0, Ma.jsx)("div", {
-              className: ya(Un, !r && Ln),
-              children: (0, Ma.jsx)(pa, { path: "battle_results.common.details.noPremTitle" }),
+              className: W(Un, !r && Ln),
+              children: (0, Ma.jsx)(ha, { path: "battle_results.common.details.noPremTitle" }),
             }),
             (0, Ma.jsxs)("div", {
-              className: ya(Un, r && Ln, $n),
+              className: W(Un, r && Ln, $n),
               children: [
                 (0, Ma.jsx)("div", {
                   className: Xn,
-                  children: (0, Ma.jsx)(l, {
+                  children: (0, Ma.jsx)(k, {
                     width: 32,
                     height: 32,
                     path: "post_battle.wot_premium_32x32",
                   }),
                 }),
-                (0, Ma.jsx)(pa, { path: "battle_results.getPremiumPopover.prem" }),
+                (0, Ma.jsx)(ha, { path: "battle_results.getPremiumPopover.prem" }),
               ],
             }),
           ],
@@ -1680,32 +1677,32 @@ var ii = ({
   }) => {
     function l(e, a) {
       return "aogasFactor" === n
-        ? p.formatReal("fractional", e)
-        : p.formatNumber("gold" === a ? "gold" : "integral", e);
+        ? q.formatReal("fractional", e)
+        : q.formatNumber("gold" === a ? "gold" : "integral", e);
     }
     return (0, Ma.jsxs)("div", {
-      className: ya(qn, s && Qn),
+      className: W(qn, s && Qn),
       children: [
         (0, Ma.jsx)("div", {
-          className: ya(Yn, Jn, ni({ paramName: n, wotPlusActive: i, value: e }) && Zn),
+          className: W(Yn, Jn, ni({ paramName: n, wotPlusActive: i, value: e }) && Zn),
           children: (0, Ma.jsx)(sn, {
             formatter: l,
             value: e,
             currency: Ft,
             modifier: t,
-            classNames: { value: ya(ti, r && si) },
+            classNames: { value: W(ti, r && si) },
             iconPath: Cr(Ft, n),
           }),
         }),
         void 0 !== a &&
           (0, Ma.jsx)("div", { className: ei, children: (0, Ma.jsx)("div", { className: ai }) }),
         (0, Ma.jsx)("div", {
-          className: ya(Yn, 0 === a && Zn),
+          className: W(Yn, 0 === a && Zn),
           children: (0, Ma.jsx)(sn, {
             value: a,
             currency: Ut,
             modifier: t,
-            classNames: { value: ya(ti, ri, r && si) },
+            classNames: { value: W(ti, ri, r && si) },
             formatter: l,
             iconPath: Cr(Ut, n),
           }),
@@ -1749,7 +1746,7 @@ var ii = ({
   mi = { [Es]: "subscription.wot_plus_32x32" },
   _i = { [Mt.None]: void 0, [Mt.Core]: mi, [Mt.Pro]: ui },
   pi = [Es, Hs],
-  fi = Ce(({ record: e, total: a, ...t }) => {
+  fi = s(({ record: e, total: a, ...t }) => {
     const { model: s } = $r(),
       r = s.hasAnyPremium.get(),
       n = s.hasWotPlus.get(),
@@ -1764,7 +1761,7 @@ var ii = ({
       ...t,
       labelIconPath: f,
       labelKey: `battle_results.details.calculations.${_}`,
-      classNames: { label: ya(oi, pi.includes(i) && ci) },
+      classNames: { label: W(oi, pi.includes(i) && ci) },
       params: { ...(u && { bonusFactor: pr(u) }), ...(m && { bonusFactor: fr(m) }) },
       children: (0, Ma.jsxs)("div", {
         className: li,
@@ -1794,24 +1791,24 @@ var ii = ({
   bi = "IncomeStatement_560dd244",
   hi = "IncomeStatement_base__scroll_fb9f1475",
   vi = "IncomeStatement_item_48b34a63",
-  gi = Ce(
+  gi = s(
     (0, Ta.forwardRef)(({ className: e, scrollable: a, ...t }, s) => {
       const { model: r } = $r(),
         n = r.computes.credits();
       return (0, Ma.jsx)(Vt, {
         ...t,
         ref: s,
-        className: ya(bi, a && hi, e),
+        className: W(bi, a && hi, e),
         scrollable: a,
-        children: q(n.records, (e) => (0, Ma.jsx)(fi, { record: e, className: vi }, e.paramName)),
+        children: U(n.records, (e) => (0, Ma.jsx)(fi, { record: e, className: vi }, e.paramName)),
       });
     }),
   ),
   yi = "Total_item_de53c8b0",
   xi = "Total_divider_1de1ca28",
   Ni = "Total_dividerImage_ab06168d",
-  Ii = f("CreditsTotal", "Total_19236d49"),
-  ji = Ce(
+  Ii = v("CreditsTotal", "Total_19236d49"),
+  ji = s(
     (0, Ta.forwardRef)((e, a) => {
       const { model: t } = $r(),
         s = t.computes.credits();
@@ -1827,9 +1824,9 @@ var ii = ({
   ),
   wi = "Credits_68f91d81",
   Ai = "Credits_base__scroll_759f08f3",
-  Ci = f("Credits"),
+  Ci = v("Credits"),
   Bi = (0, Ta.forwardRef)(({ scrollable: e, className: a, ...t }, s) =>
-    (0, Ma.jsx)(Ci, { ...t, ref: s, className: ya(wi, e && Ai, a) }),
+    (0, Ma.jsx)(Ci, { ...t, ref: s, className: W(wi, e && Ai, a) }),
   );
 ((Bi.Header = Kn), (Bi.Item = fi), (Bi.Total = ji), (Bi.IncomeStatement = gi));
 var Pi = "Item_currencyValue_81f5b9fb",
@@ -1843,27 +1840,27 @@ var Pi = "Item_currencyValue_81f5b9fb",
     [Kt]: "battle_results.details.calculations.total",
   },
   Ei = ({ record: e, total: a, ...t }) => {
-    const { paramName: s, baseValue: r } = e;
+    const { paramName: s, baseValue: n } = e;
     return ((e) => e in ki)(s)
       ? (0, Ma.jsx)(Jr, {
           ...t,
           labelKey: ki[s],
           classNames: { label: Ri, ...t.classNames },
-          children: (0, Ma.jsx)(Be, {
+          children: (0, Ma.jsx)(r, {
             reverse: !0,
             type: "crystal",
-            size: P.small,
+            size: H.small,
             children: (0, Ma.jsx)("div", {
-              className: ya(Pi, r < 0 && Ti, a && Si),
-              children: p.formatNumber("integral", r),
+              className: W(Pi, n < 0 && Ti, a && Si),
+              children: q.formatNumber("integral", n),
             }),
           }),
         })
       : (console.error(`Parameter name "${s} is not valid for bonds`), null);
   },
   Hi = "IncomeStatement_item_48b34a63",
-  Di = f("BondsIncomeStatement"),
-  Oi = Ce(
+  Di = v("BondsIncomeStatement"),
+  Oi = s(
     (0, Ta.forwardRef)((e, a) => {
       const { model: t } = $r(),
         s = t.computes.crystals();
@@ -1878,8 +1875,8 @@ var Pi = "Item_currencyValue_81f5b9fb",
   zi = "Total_item__extinguished_4be8343f",
   Wi = "Total_divider_1de1ca28",
   Mi = "Total_dividerImage_ab06168d",
-  Gi = f("BondsTotal", "Total_120fb0c4"),
-  Fi = Ce(
+  Gi = v("BondsTotal", "Total_120fb0c4"),
+  Fi = s(
     (0, Ta.forwardRef)((e, a) => {
       const { model: t } = $r(),
         s = t.computes.crystals();
@@ -1891,11 +1888,7 @@ var Pi = "Item_currencyValue_81f5b9fb",
           s.total.map((e) =>
             (0, Ma.jsx)(
               Ei,
-              {
-                total: !0,
-                record: e,
-                className: ya(Vi, (!e.baseValue || 0 === e.baseValue) && zi),
-              },
+              { total: !0, record: e, className: W(Vi, (!e.baseValue || 0 === e.baseValue) && zi) },
               e.paramName,
             ),
           ),
@@ -1906,7 +1899,7 @@ var Pi = "Item_currencyValue_81f5b9fb",
   Ui = (0, Ta.forwardRef)((e, a) =>
     (0, Ma.jsx)(Bt, { ...e, title: "battle_results.details.crystal", ref: a }),
   ),
-  Li = f("Bonds");
+  Li = v("Bonds");
 ((Li.Header = Ui), (Li.Item = Ei), (Li.Total = Fi), (Li.IncomeStatement = Oi));
 var $i = "FinancialReport_content_99bf970f",
   Xi = "FinancialReport_leftContent_75c21204",
@@ -1916,18 +1909,18 @@ var $i = "FinancialReport_content_99bf970f",
   Yi = "FinancialReport_credits_7712b0c",
   Zi = "FinancialReport_header_d56ebc61",
   Ji = "FinancialReport_total_bdf3e42b",
-  el = f("FinancialReport", "FinancialReport_c3cc562a"),
+  el = v("FinancialReport", "FinancialReport_c3cc562a"),
   al = ({ className: e }) => {
     const [a, t] = (0, Ta.useState)({ credits: !1, experience: !1 }),
       s = (0, Ta.useRef)(null),
       r = (0, Ta.useRef)(null),
       n = (0, Ta.useRef)(null),
-      i = Oe(
+      i = ia(
         { margin: 18 },
         { medium: { margin: 19 }, large: { margin: 16 }, extraLarge: { margin: 30 } },
       );
     return (
-      Q(
+      L(
         s,
         (0, Ta.useCallback)(() => {
           if (!s.current || !r.current || !n.current) return;
@@ -1997,59 +1990,59 @@ var $i = "FinancialReport_content_99bf970f",
   tl = (function (e) {
     return ((e.Done = "done"), (e.Locked = "notAvailable"), (e.Active = ""), e);
   })({}),
-  sl = $({
-    index: _(),
-    name: g(),
-    value: g(),
-    isCompensation: E(),
-    tooltipId: g(),
-    tooltipContentId: g(),
-    label: g(),
-    probability: _(),
-    item: Y(g()),
-    icon: Y(g()),
-    iconBig: Y(g()),
-    iconSmall: Y(g()),
+  sl = N({
+    index: p(),
+    name: ee(),
+    value: ee(),
+    isCompensation: A(),
+    tooltipId: ee(),
+    tooltipContentId: ee(),
+    label: ee(),
+    probability: p(),
+    item: ea(ee()),
+    icon: ea(ee()),
+    iconBig: ea(ee()),
+    iconSmall: ea(ee()),
   }),
-  rl = $({ conditionType: g() }),
-  nl = $({
+  rl = N({ conditionType: ee() }),
+  nl = N({
     ...rl.entries,
-    titleData: g(),
-    descrData: g(),
-    iconKey: g(),
-    current: _(),
-    total: _(),
-    earned: _(),
-    progressType: g(),
-    sortKey: g(),
+    titleData: ee(),
+    descrData: ee(),
+    iconKey: ee(),
+    current: p(),
+    total: p(),
+    earned: p(),
+    progressType: ee(),
+    sortKey: ee(),
   }),
-  il = $({ ...rl.entries, items: B(ee([nl, V(() => il)])) }),
-  ll = $({
-    id: g(),
-    groupId: g(),
-    type: _(),
-    title: g(),
-    description: g(),
-    decoration: _(),
-    status: b(tl),
+  il = N({ ...rl.entries, items: x(t([nl, K(() => il)])) }),
+  ll = N({
+    id: ee(),
+    groupId: ee(),
+    type: p(),
+    title: ee(),
+    description: ee(),
+    decoration: p(),
+    status: ya(tl),
   }),
   ol =
-    ($({
+    (N({
       ...ll.entries,
-      bonuses: B(sl),
+      bonuses: x(sl),
       preBattleCondition: il,
       bonusCondition: il,
       postBattleCondition: il,
     }),
-    $({
-      animated: Y(E()),
-      completed: Y(E()),
-      component: c((e) => fa(e)),
-      categoryOrder: _(),
-      notifications: Y(B($({ id: g(), item: c((e) => (0, Ta.isValidElement)(e)) }))),
+    N({
+      animated: ea(A()),
+      completed: ea(A()),
+      component: z((e) => Ce(e)),
+      categoryOrder: p(),
+      notifications: ea(x(N({ id: ee(), item: z((e) => (0, Ta.isValidElement)(e)) }))),
     })),
-  cl = ee([$({ status: ga("loaded"), result: ol }), $({ status: ga("loading") })]),
-  dl = Z.resolve("strings"),
+  cl = t([N({ status: b("loaded"), result: ol }), N({ status: b("loading") })]),
+  dl = $.resolve("strings"),
   ul = ["huntsman", "medalGore", "medalStark"],
   ml = "markOfMastery",
   _l = "marksOnGun",
@@ -2076,7 +2069,7 @@ function yl(e) {
                 vl);
 }
 function xl(e) {
-  return J(e, (e, a) => {
+  return Y(e, (e, a) => {
     const t = yl(e),
       s = yl(a),
       r = gl.indexOf(t),
@@ -2150,7 +2143,7 @@ var Dl = "premiumInfo",
   Jl = "plusEarnings",
   eo = "plusYouRock",
   ao = { credits: Xl, premium: Kl, squad: ql, bonus: Ql, quests: Yl },
-  to = A(B(ee(Object.values(ao).map((e) => ga(e))))),
+  to = u(x(t(Object.values(ao).map((e) => b(e))))),
   so = [ao.credits, ao.premium, ao.squad, ao.bonus, ao.quests];
 var ro = {
     [zt.IsApplied]: Vl,
@@ -2169,7 +2162,7 @@ var ro = {
       define: ({ supportedAdvertisements: e, usedAdvertisements: a }) => {
         const t = e.filter((e) => !1 === a.includes(e))[0] ?? e[0];
         return (
-          U(
+          _a(
             void 0 !== t,
             "advertisingState is not recognized. Check please supportedAdvertisements state. It is not possible to have empty supportedAdvertisements array in case if the widget in the premiumAdvertising state",
           ),
@@ -2278,7 +2271,7 @@ function _o(e) {
   };
 }
 function po(e) {
-  return { labelKey: e.labelKey, paramValueType: e.paramValueType, value: q(e.value, (e) => e) };
+  return { labelKey: e.labelKey, paramValueType: e.paramValueType, value: U(e.value, (e) => e) };
 }
 function fo(e) {
   return {
@@ -2286,25 +2279,25 @@ function fo(e) {
       label: e.label,
       labelKey: e.labelKey,
       paramValueType: e.paramValueType,
-      value: q(e.value, (e) => e),
+      value: U(e.value, (e) => e),
     }),
-    details: q(e.details, (e) => po(e)),
+    details: U(e.details, (e) => po(e)),
   };
 }
 function bo(e) {
-  const a = O(e.detailedStatistics, (e) => e.labelKey === lo.TeamHitsDamage)?.value,
-    t = void 0 !== a ? m(a, 0) : 0,
+  const a = w(e.detailedStatistics, (e) => e.labelKey === lo.TeamHitsDamage)?.value,
+    t = void 0 !== a ? X(a, 0) : 0,
     s = e.efficiencyValues.kills - (t ?? 0);
   return {
     personal: e.isPersonal,
     squadIndex: e.squadIndex,
-    achievements: q(e.achievements, _o),
-    account: Je(e.userNames),
+    achievements: U(e.achievements, _o),
+    account: be(e.userNames),
     userStatus: ((n = e.userStatus), { abandonBattle: n.isLeftBattle, deathReason: n.deathReason }),
-    killer: Je(e.userStatus.killer),
+    killer: be(e.userStatus.killer),
     vehicle: Ca(e.vehicle.vehicleCD, e.vehicle.techName)
       ? void 0
-      : { ...ce(e.vehicle), longName: e.vehicle.longName },
+      : { ...fe(e.vehicle), longName: e.vehicle.longName },
     efficiencyValues: {
       substractedAlliesKills: s,
       ...((r = e.efficiencyValues),
@@ -2315,7 +2308,7 @@ function bo(e) {
         prestigePoints: r.prestigePoints,
       }),
     },
-    detailedStatistics: q(e.detailedStatistics, fo),
+    detailedStatistics: U(e.detailedStatistics, fo),
     databaseId: e.databaseID,
   };
   var r, n;
@@ -2341,88 +2334,88 @@ function jo(e, a, t) {
 function wo({ anonymizer: e, personal: a, platoonType: t }) {
   return !(a || !e) && (t === Io || null === t);
 }
-var [Ao, Co] = se()(
+var [Ao, Co] = ae()(
     (e) => {
-      const { observableModel: t, cleanup: s } = e,
-        r = {
+      const { observableModel: a, cleanup: t } = e,
+        s = {
           teamsStatistic: {
-            ...t.primitives(["sortingColumn", "sortingOrder"], "teamStats"),
-            allies: t.arrayClone("teamStats.allies"),
-            enemies: t.arrayClone("teamStats.enemies"),
+            ...a.primitives(["sortingColumn", "sortingOrder"], "teamStats"),
+            allies: a.arrayClone("teamStats.allies"),
+            enemies: a.arrayClone("teamStats.enemies"),
           },
           personalEffiency: {
-            ...t.primitives(["capturePoints", "droppedCapturePoints"], "baseCaptureInfo"),
-            details: t.arrayClone("detailedPersonalEfficiency"),
+            ...a.primitives(["capturePoints", "droppedCapturePoints"], "baseCaptureInfo"),
+            details: a.arrayClone("detailedPersonalEfficiency"),
           },
-          additionalBonus: t.object("additionalBonus"),
-          xp: { total: t.arrayClone("financialReport.xp.total") },
-          credits: { total: t.arrayClone("financialReport.credits.total") },
-          crystals: { total: t.arrayClone("financialReport.crystals.total") },
-          gold: { total: t.arrayClone("financialReport.gold.total") },
+          additionalBonus: a.object("additionalBonus"),
+          xp: { total: a.arrayClone("financialReport.xp.total") },
+          credits: { total: a.arrayClone("financialReport.credits.total") },
+          crystals: { total: a.arrayClone("financialReport.crystals.total") },
+          gold: { total: a.arrayClone("financialReport.gold.total") },
         },
-        n = {
-          battleInfo: t.transform(oo, "battleInfo"),
-          additionalBonus: t.transform(mo, "additionalBonus"),
-          allPlayersDictionary: a.box({}),
+        r = {
+          battleInfo: a.transform(oo, "battleInfo"),
+          additionalBonus: a.transform(mo, "additionalBonus"),
+          allPlayersDictionary: O.box({}),
           personalEfficiency: {
-            opened: a.box(!1),
-            achievements: t.transform((e) => xl(q(e, _o)), "achievements"),
+            opened: O.box(!1),
+            achievements: a.transform((e) => xl(U(e, _o)), "achievements"),
             statistics: {
-              details: a.box([]),
-              capturePoints: a.box(0),
-              droppedCapturePoints: a.box(0),
+              details: O.box([]),
+              capturePoints: O.box(0),
+              droppedCapturePoints: O.box(0),
             },
           },
           teamsStatistic: {
-            allies: a.box([]),
-            enemies: a.box([]),
-            sorting: a.box({ column: Rl.Vehicle, sortDirection: kl.Desc }),
-            selectedRow: a.box(),
+            allies: O.box([]),
+            enemies: O.box([]),
+            sorting: O.box({ column: Rl.Vehicle, sortDirection: kl.Desc }),
+            selectedRow: O.box(),
           },
-          user: { names: a.box(), status: a.box() },
-          pathToPlugins: t.dict("pathToPlugins"),
-          notificationList: a.box([]),
-          ...t.primitives(["warningType"]),
+          user: { names: O.box(), status: O.box() },
+          pathToPlugins: a.dict("pathToPlugins"),
+          notificationList: O.box([]),
+          ...a.primitives(["warningType"]),
         };
-      (wa(s)(() => {
+      (wa(t)(() => {
         const e = {};
-        (n.teamsStatistic.allies.set(
-          q(r.teamsStatistic.allies.get(), (a) => {
+        (r.teamsStatistic.allies.set(
+          U(s.teamsStatistic.allies.get(), (a) => {
             const t = bo(a);
             return ((e[t.account.username] = t), t);
           }),
         ),
-          n.teamsStatistic.enemies.set(
-            q(r.teamsStatistic.enemies.get(), (a) => {
+          r.teamsStatistic.enemies.set(
+            U(s.teamsStatistic.enemies.get(), (a) => {
               const t = bo(a);
               return ((e[t.account.username] = t), t);
             }),
           ));
-        const a = n.allPlayersDictionary.get();
-        n.allPlayersDictionary.set({ ...a, ...e });
+        const a = r.allPlayersDictionary.get();
+        r.allPlayersDictionary.set({ ...a, ...e });
       }),
-        wa(s)(() => {
-          return n.teamsStatistic.sorting.set(
-            ((e = r.teamsStatistic.sortingColumn.get()),
-            (a = r.teamsStatistic.sortingOrder.get()),
+        wa(t)(() => {
+          return r.teamsStatistic.sorting.set(
+            ((e = s.teamsStatistic.sortingColumn.get()),
+            (a = s.teamsStatistic.sortingOrder.get()),
             { column: e, sortDirection: a }),
           );
           var e, a;
         }),
-        wa(s)(() => {
-          (n.personalEfficiency.statistics.capturePoints.set(
-            r.personalEffiency.capturePoints.get(),
+        wa(t)(() => {
+          (r.personalEfficiency.statistics.capturePoints.set(
+            s.personalEffiency.capturePoints.get(),
           ),
-            n.personalEfficiency.statistics.droppedCapturePoints.set(
-              r.personalEffiency.droppedCapturePoints.get(),
+            r.personalEfficiency.statistics.droppedCapturePoints.set(
+              s.personalEffiency.droppedCapturePoints.get(),
             ));
         }));
-      const i = ae.structural(() =>
+      const n = Z.structural(() =>
           (function ({ anyPremium: e, credits: a, crystals: t, gold: s, xp: r }) {
-            const n = O(a, (e) => e.paramName === Gs),
-              i = O(s, (e) => e.paramName === Xs),
-              l = O(r, (e) => e.paramName === us),
-              o = O(t, (e) => e.paramName === Kt),
+            const n = w(a, (e) => e.paramName === Gs),
+              i = w(s, (e) => e.paramName === Xs),
+              l = w(r, (e) => e.paramName === us),
+              o = w(t, (e) => e.paramName === Kt),
               c = [];
             return (
               n && c.push(uo(n, e)),
@@ -2432,38 +2425,38 @@ var [Ao, Co] = se()(
               c
             );
           })({
-            anyPremium: r.additionalBonus.get().hasAnyPremium,
-            credits: r.credits.total.get(),
-            crystals: r.crystals.total.get(),
-            gold: r.gold.total.get(),
-            xp: r.xp.total.get(),
+            anyPremium: s.additionalBonus.get().hasAnyPremium,
+            credits: s.credits.total.get(),
+            crystals: s.crystals.total.get(),
+            gold: s.gold.total.get(),
+            xp: s.xp.total.get(),
           }),
         ),
-        l = ae.structural(() => n.pathToPlugins.values().map((e) => ({ url: e.get() }))),
-        o = ae.shallow(() => {
-          const e = O(n.teamsStatistic.allies.get(), (e) => e.personal);
+        i = Z.structural(() => r.pathToPlugins.values().map((e) => ({ url: e.get() }))),
+        l = Z.shallow(() => {
+          const e = w(r.teamsStatistic.allies.get(), (e) => e.personal);
           return (
-            U(void 0 !== e, "Personal info is not found"),
-            U(ja(e), "There is no vehicle data in the personal info"),
+            _a(void 0 !== e, "Personal info is not found"),
+            _a(ja(e), "There is no vehicle data in the personal info"),
             e
           );
         }),
-        c = ae.shallow(() => {
-          const e = n.teamsStatistic.selectedRow.get();
+        o = Z.shallow(() => {
+          const e = r.teamsStatistic.selectedRow.get();
           if (void 0 === e) return;
-          const a = (e.team === vo ? n.teamsStatistic.allies : n.teamsStatistic.enemies).get();
-          return O(a, (a) => a.account.username === e.username);
+          const a = (e.team === vo ? r.teamsStatistic.allies : r.teamsStatistic.enemies).get();
+          return w(a, (a) => a.account.username === e.username);
         }),
-        d = ae.shallow(() => {
-          const e = n.allPlayersDictionary.get();
+        c = Z.shallow(() => {
+          const e = r.allPlayersDictionary.get();
           return {
-            assault: n.personalEfficiency.statistics.capturePoints.get(),
-            defend: n.personalEfficiency.statistics.droppedCapturePoints.get(),
-            rows: h(
-              r.personalEffiency.details.get(),
+            assault: r.personalEfficiency.statistics.capturePoints.get(),
+            defend: r.personalEfficiency.statistics.droppedCapturePoints.get(),
+            rows: Ze(
+              s.personalEffiency.details.get(),
               (a, t) => {
                 const s = (function (e) {
-                  return h(
+                  return Ze(
                     e.personalEfficiencyItems,
                     (e, a) => {
                       switch (a.paramType) {
@@ -2505,13 +2498,13 @@ var [Ao, Co] = se()(
                 })(t);
                 if (
                   (function (e) {
-                    return Ue.structural(e, ho);
+                    return Ie.structural(e, ho);
                   })(s)
                 )
                   return a;
                 const r = e[t.userName];
                 return (
-                  U(void 0 !== r, `Such enemy ${t.userName} is not found`),
+                  _a(void 0 !== r, `Such enemy ${t.userName} is not found`),
                   a.push({
                     ...s,
                     account: r.account,
@@ -2526,14 +2519,17 @@ var [Ao, Co] = se()(
             ),
           };
         }),
-        u = ae.shallow(() => {
-          const e = O(r.xp.total.get(), (e) => "totalXP" === e.paramName);
-          U(void 0 !== e, "totalXP record is not found in the financial report");
-          const a = O(r.credits.total.get(), (e) => "totalCredits" === e.paramName),
-            t = O(r.credits.total.get(), (e) => "intermediateTotalCredits" === e.paramName);
+        d = Z.shallow(() => {
+          const e = w(s.xp.total.get(), (e) => "totalXP" === e.paramName);
+          _a(void 0 !== e, "totalXP record is not found in the financial report");
+          const a = w(s.credits.total.get(), (e) => "totalCredits" === e.paramName),
+            t = w(s.credits.total.get(), (e) => "intermediateTotalCredits" === e.paramName);
           return (
-            U(void 0 !== a, "totalCredits record is not found in the financial report"),
-            U(void 0 !== t, "intermediateTotalCredits record is not found in the financial report"),
+            _a(void 0 !== a, "totalCredits record is not found in the financial report"),
+            _a(
+              void 0 !== t,
+              "intermediateTotalCredits record is not found in the financial report",
+            ),
             {
               baseCredits: t.baseValue,
               baseVehicleXP: e.baseValue,
@@ -2544,20 +2540,20 @@ var [Ao, Co] = se()(
             }
           );
         }),
-        m = ae.primitive(() => {
-          const { status: e, leave: a } = n.battleInfo.get();
+        u = Z.primitive(() => {
+          const { status: e, leave: a } = r.battleInfo.get();
           return "win" === e && !a;
         });
       return {
-        ...n,
+        ...r,
         computes: {
-          earnedCurrencies: i,
-          personalInfo: o,
-          efficiencyDetails: c,
-          personalEffiency: d,
-          premiumAndStandartEarnings: u,
-          pathToPlugins: l,
-          isWin: m,
+          earnedCurrencies: n,
+          personalInfo: l,
+          efficiencyDetails: o,
+          personalEffiency: c,
+          premiumAndStandartEarnings: d,
+          pathToPlugins: i,
+          isWin: u,
         },
       };
     },
@@ -2578,20 +2574,20 @@ var [Ao, Co] = se()(
             : { localStorage: JSON.stringify([...t, e]) };
         }, "additionalBonus.onLocalStorageUpdated"),
         teamEfficiency: {
-          sort: v((e) => {
+          sort: Je((e) => {
             (a.teamsStatistic.sorting.set(e), t(e));
           }),
-          selectRow: v((e) => {
+          selectRow: Je((e) => {
             const t = a.teamsStatistic.selectedRow.get();
             t?.team !== e?.team || t?.username !== e?.username
               ? a.teamsStatistic.selectedRow.set(e)
               : a.teamsStatistic.selectedRow.set(void 0);
           }),
         },
-        setNotifications: v((e) => {
+        setNotifications: Je((e) => {
           a.notificationList.set(e);
         }),
-        pushNotifications: v((e) => {
+        pushNotifications: Je((e) => {
           0 !== e.length && a.notificationList.set([...a.notificationList.get(), ...e]);
         }),
       };
@@ -2601,7 +2597,7 @@ var [Ao, Co] = se()(
   Po = "NoProgress_header_fd4fa20b",
   So = "NoProgress_description_965e21c0",
   To = xa(function () {
-    const e = Z.resolve("strings"),
+    const e = $.resolve("strings"),
       { controls: a } = Co();
     return (0, Ma.jsxs)("div", {
       className: Bo,
@@ -2614,8 +2610,8 @@ var [Ao, Co] = se()(
           className: So,
           children: e.readOrEmpty("battle_results.common.missions.noProgress.description"),
         }),
-        (0, Ma.jsx)(s, {
-          theme: s.themes.secondary,
+        (0, Ma.jsx)(i, {
+          theme: i.themes.secondary,
           onClick: a.openMissions,
           children: e.readOrEmpty("battle_results.common.missions.noProgress.button"),
         }),
@@ -2625,48 +2621,48 @@ var [Ao, Co] = se()(
 var Ro = "MissionsProgress_ca7ca547",
   ko = "MissionsProgress_content_b1e9d53b",
   Eo = "MissionsProgress_verticalBar_a9f04f7f",
-  Ho = z.cubicBezier(0.23, 0, 0.57, 1),
-  Do = f("MissionsProgress", Ro);
+  Ho = C.cubicBezier(0.23, 0, 0.57, 1),
+  Do = v("MissionsProgress", Ro);
 function Oo(e) {
   return e.reduce((e, a) => (a.result.notifications && e.push(...a.result.notifications), e), []);
 }
 function Vo(e) {
-  return I(
+  return g(
     e,
     (e) => Boolean(e.result.animated),
     (e, a) => a,
   );
 }
 var zo = xa(function ({ className: e }) {
-    const { model: a, controls: t } = Co(),
-      { active: s } = k(),
-      [i, l] = (0, Ta.useState)(!1),
-      [o, c] = (0, Ta.useState)(!1),
-      [d, u] = (0, Ta.useState)(-1),
-      m = (function (e) {
+    const { model: t, controls: s } = Co(),
+      { active: r } = E(),
+      [n, i] = (0, Ta.useState)(!1),
+      [l, o] = (0, Ta.useState)(!1),
+      [c, d] = (0, Ta.useState)(-1),
+      u = (function (e) {
         const [a, t] = (0, Ta.useState)({}),
           s = (0, Ta.useRef)({}),
-          n = (0, Ta.useRef)({});
+          r = (0, Ta.useRef)({});
         return (
           (0, Ta.useEffect)(() => {
-            const i = [],
-              l = n.current,
-              o = s.current;
-            function c(e, a) {
-              (e.destroy(), delete o[a], delete l[a]);
+            const n = [],
+              i = r.current,
+              l = s.current;
+            function o(e, a) {
+              (e.destroy(), delete l[a], delete i[a]);
             }
             return (
               (async function () {
                 const s = await Promise.allSettled(
-                  I(
+                  g(
                     e,
-                    (e) => !(e.url in a || e.url in l),
+                    (e) => !(e.url in a || e.url in i),
                     async (e) => {
-                      ((l[e.url] = !0), t((a) => ({ ...a, [e.url]: { status: "loading" } })));
-                      const a = await r(e.url);
-                      return i.includes(e.url)
-                        ? (c(a, e.url), { type: "rejected" })
-                        : ((o[e.url] = a),
+                      ((i[e.url] = !0), t((a) => ({ ...a, [e.url]: { status: "loading" } })));
+                      const a = await oe(e.url);
+                      return n.includes(e.url)
+                        ? (o(a, e.url), { type: "rejected" })
+                        : ((l[e.url] = a),
                           a
                             .init(...(e.args ?? []))
                             .then((a) => ({ plugin: a, url: e.url, type: "success" })));
@@ -2684,29 +2680,29 @@ var zo = xa(function ({ className: e }) {
                   ),
                 );
                 t((e) => ({ ...e, ...s }));
-                for (const e in s) delete l[e];
+                for (const e in s) delete i[e];
               })(),
               () => {
-                Object.keys(o)
+                Object.keys(l)
                   .filter((a) => !e.some((e) => a === e.url))
                   .forEach((e) => {
-                    if (e in l) return void i.push(e);
-                    const a = o[e];
+                    if (e in i) return void n.push(e);
+                    const a = l[e];
                     if (!a) return console.error(`Can't destroy plugin with url ${e}`);
-                    c(a, e);
+                    o(a, e);
                   });
               }
             );
           }, [e]),
           a
         );
-      })(a.computes.pathToPlugins()),
-      _ = (0, Ta.useMemo)(() => {
+      })(t.computes.pathToPlugins()),
+      m = (0, Ta.useMemo)(() => {
         return (
-          (e = m),
+          (e = u),
           Object.entries(e)
             .map(([e, a]) => {
-              const t = Ke(cl, a);
+              const t = Q(cl, a);
               return t.success
                 ? t.output
                 : (console.error(`Failure to load plugin: ${e}`, t.issues), { status: "failure" });
@@ -2720,54 +2716,54 @@ var zo = xa(function ({ className: e }) {
             })
         );
         var e;
-      }, [m]),
-      { notifications: p, animatablePluginIndexes: f } = (0, Ta.useMemo)(
-        () => ({ notifications: Oo(_), animatablePluginIndexes: Vo(_) }),
-        [_],
+      }, [u]),
+      { notifications: _, animatablePluginIndexes: p } = (0, Ta.useMemo)(
+        () => ({ notifications: Oo(m), animatablePluginIndexes: Vo(m) }),
+        [m],
       );
-    va(() => u((e) => e + 1), d > -1 && d < f.length ? 600 : void 0);
-    const [b, h] = L(() => ({
+    V(() => d((e) => e + 1), c > -1 && c < p.length ? 600 : void 0);
+    const [f, b] = pa(() => ({
       from: { opacity: 0 },
       config: { duration: 660, easing: Ho },
-      onRest: () => u(0),
+      onRest: () => d(0),
     }));
     return (
       (0, Ta.useEffect)(() => {
-        s === Ba.progression &&
-          (h.start({ to: { opacity: 1 } }), f.length > 0 && !1 === o && c(!0));
-      }, [o, s, h, _, f]),
+        r === Ba.progression &&
+          (b.start({ to: { opacity: 1 } }), p.length > 0 && !1 === l && o(!0));
+      }, [l, r, b, m, p]),
       (0, Ta.useEffect)(() => {
-        p.length > 0 && t.setNotifications(p);
-      }, [t, p]),
+        _.length > 0 && s.setNotifications(_);
+      }, [s, _]),
       (0, Ta.useEffect)(() => {
-        o && s !== Ba.progression && l(!0);
-      }, [o, s]),
+        l && r !== Ba.progression && i(!0);
+      }, [l, r]),
       (0, Ma.jsx)(Do, {
         className: e,
-        children: (0, Ma.jsx)(n.div, {
-          style: b,
+        children: (0, Ma.jsx)(M.div, {
+          style: f,
           className: ko,
-          children: D(m)
+          children: a(u)
             ? (0, Ma.jsx)(To, {})
-            : (0, Ma.jsxs)(Ge, {
+            : (0, Ma.jsxs)(ra, {
                 children: [
-                  (0, Ma.jsx)(me, {
-                    children: q(Object.entries(_), ([e, a], s) => {
+                  (0, Ma.jsx)(We, {
+                    children: U(Object.entries(m), ([e, a], t) => {
                       const r = a.result.component;
                       return (0, Ma.jsx)(
-                        oa,
+                        ga,
                         {
                           children: (0, Ma.jsx)(r, {
-                            animation: s <= (f[d] ?? -1),
-                            immediateAnimation: i,
-                            pushNotifications: t.pushNotifications,
+                            animation: t <= (p[c] ?? -1),
+                            immediateAnimation: n,
+                            pushNotifications: s.pushNotifications,
                           }),
                         },
                         e,
                       );
                     }),
                   }),
-                  (0, Ma.jsx)(ra, { classNames: { base: Eo } }),
+                  (0, Ma.jsx)(ge, { classNames: { base: Eo } }),
                 ],
               }),
         }),
@@ -2785,10 +2781,10 @@ var Go = { x: 50, y: -30, scale: 1.2, opacity: 0 };
 function Fo({ children: e, achievements: a, springsProps: t, vehicleNation: s }) {
   const [r, n] = (0, Ta.useState)(new Set()),
     [i, l] = (0, Ta.useState)(void 0),
-    [o, c] = S(a.length, () => ({ from: { ...Go, ...t?.from }, ...t }), [a.length, t]),
-    d = (0, Ta.useMemo)(
+    [o, d] = c(a.length, () => ({ from: { ...Go, ...t?.from }, ...t }), [a.length, t]),
+    u = (0, Ta.useMemo)(
       () => ({
-        api: c,
+        api: d,
         springs: o,
         vehicleNation: s,
         achievements: a,
@@ -2797,9 +2793,9 @@ function Fo({ children: e, achievements: a, springsProps: t, vehicleNation: s })
         completedAnimationIndexes: r,
         setCompletedAnimationIndexes: n,
       }),
-      [c, o, s, a, i, l, r, n],
+      [d, o, s, a, i, l, r, n],
     );
-  return (0, Ma.jsx)(Wo.Provider, { value: d, children: e });
+  return (0, Ma.jsx)(Wo.Provider, { value: u, children: e });
 }
 var Uo = {
     base: "Achievements_ee9c0189",
@@ -2826,45 +2822,45 @@ var Uo = {
     { achievement: e, index: a, width: t, height: s, classNames: r },
     n,
   ) {
-    const i = sa({
+    const i = ca({
         args: (0, Ta.useMemo)(
           () => ({ tooltipId: e.tooltipId, tooltipArgs: e.tooltipArgs }),
           [e.tooltipId, e.tooltipArgs],
         ),
       }),
-      o = le(),
-      { hoverIndex: c, setHoverIndex: d, vehicleNation: u } = Mo();
+      l = le(),
+      { hoverIndex: o, setHoverIndex: c, vehicleNation: d } = Mo();
     return (0, Ma.jsx)("div", {
       ...i,
       ref: n,
-      className: ya(Uo.achievement, Uo[`achievement__${wl(a, c)}`], r?.achievement),
+      className: W(Uo.achievement, Uo[`achievement__${wl(a, o)}`], r?.achievement),
       onMouseEnter: function (e) {
-        (o.play("mouse-enter", { original: e, target: "achievements:achievement" }),
+        (l.play("mouse-enter", { original: e, target: "achievements:achievement" }),
           i.onMouseEnter(e),
-          d(a));
+          c(a));
       },
       onMouseLeave: () => {
-        (i.onMouseLeave(), d(void 0));
+        (i.onMouseLeave(), c(void 0));
       },
       children: (0, Ma.jsx)(
-        l,
+        k,
         {
           width: t,
           height: s,
-          path: Cl({ groupID: e.groupID, iconName: e.iconName, vehicleNation: u }),
-          className: ya(Uo.achievementIcon, r?.icon),
+          path: Cl({ groupID: e.groupID, iconName: e.iconName, vehicleNation: d }),
+          className: W(Uo.achievementIcon, r?.icon),
         },
         e.iconName,
       ),
     });
   }),
-  $o = f("Rewards", Uo.base),
+  $o = v("Rewards", Uo.base),
   Xo =
     ((0, Ta.memo)(function ({ width: e, height: a, classNames: t, className: s }) {
       const { achievements: r } = Mo();
       return (0, Ma.jsx)($o, {
         className: s,
-        children: q(r, (s, r) =>
+        children: U(r, (s, r) =>
           (0, Ma.jsx)(Lo, { width: e, height: a, index: r, achievement: s, classNames: t }, s.name),
         ),
       });
@@ -2900,44 +2896,41 @@ var Uo = {
   Ko = (0, Ta.memo)(function ({
     achievements: e,
     startIndex: a,
-    indent: s = 0,
-    group: r,
-    medalWidth: i,
-    medalHeight: l,
-    maxContainerWidth: o,
-    hasSiblingGroups: c,
-    updateGroupIndent: d,
+    indent: t = 0,
+    group: s,
+    medalWidth: r,
+    medalHeight: n,
+    maxContainerWidth: i,
+    hasSiblingGroups: l,
+    updateGroupIndent: o,
   }) {
-    const u = (0, Ta.useRef)(null),
-      { springs: m, achievements: _, completedAnimationIndexes: p, hoverIndex: f } = Mo();
+    const c = (0, Ta.useRef)(null),
+      { springs: d, achievements: u, completedAnimationIndexes: m, hoverIndex: _ } = Mo();
     return (
-      t(() => {
-        if (null === u.current) return;
-        const a = u.current.offsetWidth + Math.floor((s / e.length) * 2),
-          t = He(o);
-        d(r, a < t ? Math.floor((t - a) / 2) : 0);
-      }, [e.length, i, o, d]),
+      He(() => {
+        if (null === c.current) return;
+        const a = c.current.offsetWidth + Math.floor((t / e.length) * 2),
+          r = Ye(i);
+        o(s, a < r ? Math.floor((r - a) / 2) : 0);
+      }, [e.length, r, i, o]),
       (0, Ma.jsx)("div", {
-        style: { paddingLeft: s, paddingRight: s },
-        className: ya(Xo[`${r}Group`], c && Xo[`${r}Group__indent`]),
-        children: q(e, (t, s) => {
-          const r = _.length - a - s - 1;
+        style: { paddingLeft: t, paddingRight: t },
+        className: W(Xo[`${s}Group`], l && Xo[`${s}Group__indent`]),
+        children: U(e, (t, s) => {
+          const i = u.length - a - s - 1;
           return (0, Ma.jsx)(
-            n.div,
+            M.div,
             {
-              ref: 0 === s ? u : void 0,
+              ref: 0 === s ? c : void 0,
               className: Xo.animatedAchievement,
-              style: { ...m[r], zIndex: a + s === f ? e.length + 1 : e.length - s },
+              style: { ...d[i], zIndex: a + s === _ ? e.length + 1 : e.length - s },
               children: (0, Ma.jsx)(Lo, {
                 classNames: {
-                  achievement: ya(
-                    Xo.achievement,
-                    !1 === p.has(r) && Xo.achievement__notInteractive,
-                  ),
+                  achievement: W(Xo.achievement, !1 === m.has(i) && Xo.achievement__notInteractive),
                 },
                 achievement: t,
-                width: i,
-                height: l,
+                width: r,
+                height: n,
                 index: a + s,
               }),
             },
@@ -2957,36 +2950,36 @@ var Qo = (0, Ta.memo)(function ({
     medalHeight: s,
     hasSiblingGroups: r,
   }) {
-    const { springs: i, achievements: l, completedAnimationIndexes: o, hoverIndex: c } = Mo();
+    const { springs: n, achievements: i, completedAnimationIndexes: l, hoverIndex: o } = Mo();
     return (0, Ma.jsx)("div", {
-      className: ya(
+      className: W(
         Xo.marksGroup,
         qo({ hasSiblingGroups: r, marksOnGun: e.some((e) => "marksOnGun" === e.name) }),
       ),
-      children: q(e, (r, d) => {
-        const u = l.length - a - d - 1;
+      children: U(e, (r, c) => {
+        const d = i.length - a - c - 1;
         return (0, Ma.jsx)(
-          n.div,
+          M.div,
           {
             className: Xo.animatedAchievement,
-            style: { ...i[u], zIndex: a + d === c ? e.length + 1 : e.length - d },
+            style: { ...n[d], zIndex: a + c === o ? e.length + 1 : e.length - c },
             children: (0, Ma.jsx)(Lo, {
               classNames: {
-                achievement: ya(Xo.achievement, !1 === o.has(u) && Xo.achievement__notInteractive),
+                achievement: W(Xo.achievement, !1 === l.has(d) && Xo.achievement__notInteractive),
               },
               achievement: r,
               width: t,
               height: s,
-              index: a + d,
+              index: a + c,
             }),
           },
-          d,
+          c,
         );
       }),
     });
   }),
   Yo = (0, Ta.memo)(function ({ className: e }) {
-    const a = Oe(
+    const a = ia(
         {
           epicAndHeroic: { width: "120rem", height: "120rem", maxContainerWidth: 120 },
           others: { width: "100rem", height: "100rem", maxContainerWidth: 80 },
@@ -3006,7 +2999,7 @@ var Qo = (0, Ta.memo)(function ({
       s = (0, Ta.useMemo)(
         () =>
           (function (e) {
-            return h(
+            return Ze(
               e,
               (e, a) => {
                 switch (yl(a)) {
@@ -3046,7 +3039,7 @@ var Qo = (0, Ta.memo)(function ({
     return 0 === t.length
       ? null
       : (0, Ma.jsxs)("div", {
-          className: ya(
+          className: W(
             Xo.base,
             void 0 !== r.epicAndHeroic && void 0 !== r.others && Xo.base__visible,
             e,
@@ -3056,7 +3049,7 @@ var Qo = (0, Ta.memo)(function ({
               (0, Ma.jsx)(Qo, {
                 medalWidth: a.epicAndHeroic.width,
                 medalHeight: a.epicAndHeroic.height,
-                achievements: ma(s.marks),
+                achievements: G(s.marks),
                 startIndex: 0,
                 hasSiblingGroups: s.epicAndHeroic.length + s.others.length > 0,
               }),
@@ -3066,7 +3059,7 @@ var Qo = (0, Ta.memo)(function ({
                 medalWidth: a.epicAndHeroic.width,
                 medalHeight: a.epicAndHeroic.height,
                 maxContainerWidth: a.epicAndHeroic.maxContainerWidth,
-                achievements: ma(s.epicAndHeroic),
+                achievements: G(s.epicAndHeroic),
                 startIndex: s.marks.length,
                 updateGroupIndent: i,
                 indent: r.epicAndHeroic,
@@ -3078,7 +3071,7 @@ var Qo = (0, Ta.memo)(function ({
                 medalWidth: a.others.width,
                 medalHeight: a.others.height,
                 maxContainerWidth: a.others.maxContainerWidth,
-                achievements: ma(s.others),
+                achievements: G(s.others),
                 startIndex: s.marks.length + s.epicAndHeroic.length,
                 updateGroupIndent: i,
                 indent: r.others,
@@ -3104,7 +3097,7 @@ function ec({
 }) {
   const l = (0, Ta.useMemo)(
     () => (
-      U(
+      _a(
         (function (e) {
           return Hl.includes(e);
         })(a),
@@ -3141,19 +3134,19 @@ var ac = {
   blink: "Currency_blink_271064ec",
   slideUpIn: "Currency_slideUpIn_271064ec",
 };
-function tc({ size: e, type: a, classNames: t, withoutPlus: s = !1, value: r }) {
-  const n = "gold" === a ? "gold" : "integral";
-  return (0, Ma.jsx)(Be, {
+function tc({ size: e, type: a, classNames: t, withoutPlus: s = !1, value: n }) {
+  const i = "gold" === a ? "gold" : "integral";
+  return (0, Ma.jsx)(r, {
     reverse: !0,
     size: e,
     type: a,
-    className: ya(ac.currency, t?.currency),
+    className: W(ac.currency, t?.currency),
     children: s
-      ? (0, Ma.jsx)("div", { className: ya(ac.value, t?.value), children: p.formatNumber(n, r) })
-      : (0, Ma.jsx)(pa, {
-          className: ya(ac.value, t?.value),
+      ? (0, Ma.jsx)("div", { className: W(ac.value, t?.value), children: q.formatNumber(i, n) })
+      : (0, Ma.jsx)(ha, {
+          className: W(ac.value, t?.value),
           path: "common.plusValueWithSpace",
-          params: { value: p.formatNumber(n, r) },
+          params: { value: q.formatNumber(i, n) },
         }),
   });
 }
@@ -3171,7 +3164,7 @@ function oc() {
     creditsThreshold: r,
     handleAdvertisement: n,
   } = Jo();
-  j(() => {
+  y(() => {
     void 0 !== a &&
       (!1 !==
       (function (e, a) {
@@ -3186,17 +3179,17 @@ function oc() {
             `The state in the component should be on of the followings ${a.join(", ")}`,
           ));
   });
-  const i = Z.resolve("strings");
+  const i = $.resolve("strings");
   switch (e) {
     case Xl:
-      return (0, Ma.jsx)(pa, {
+      return (0, Ma.jsx)(ha, {
         className: sc,
         path: "battle_results.common.details.premiumAdvertising.credits",
         params: {
           bonusCredits: (0, Ma.jsx)(tc, {
             withoutPlus: !0,
             type: "credits",
-            size: P.small,
+            size: H.small,
             value: r,
             classNames: { currency: ic, value: lc },
           }),
@@ -3204,24 +3197,24 @@ function oc() {
         },
       });
     case Kl:
-      return (0, Ma.jsx)(te, {
-        className: ya(sc, nc),
+      return (0, Ma.jsx)(D, {
+        className: W(sc, nc),
         text: i.readOrEmpty("battle_results.common.details.premiumPlus.premium"),
       });
     case ql:
-      return (0, Ma.jsx)(te, {
-        className: ya(sc, rc),
+      return (0, Ma.jsx)(D, {
+        className: W(sc, rc),
         text: i.readOrEmpty("battle_results.common.details.premiumPlus.squad"),
       });
     case Ql:
-      return (0, Ma.jsx)(te, {
-        className: ya(sc, nc),
+      return (0, Ma.jsx)(D, {
+        className: W(sc, nc),
         text: i.readOrEmpty("battle_results.common.details.premiumAdvertising.bonus"),
         params: { multiplier: t },
       });
     case Yl:
-      return (0, Ma.jsx)(te, {
-        className: ya(sc, rc),
+      return (0, Ma.jsx)(D, {
+        className: W(sc, rc),
         text: i.readOrEmpty("battle_results.common.details.premiumPlus.quests"),
       });
     default:
@@ -3231,10 +3224,10 @@ function oc() {
 var cc = "LeftBonusAttempts_a541b0b8",
   dc = "LeftBonusAttempts_count_24f93d48";
 function uc({ count: e }) {
-  return (0, Ma.jsx)(pa, {
+  return (0, Ma.jsx)(ha, {
     upgradeLegacy: !0,
     params: {
-      count: (0, Ma.jsx)("span", { className: dc, children: p.formatNumber("integral", e) }),
+      count: (0, Ma.jsx)("span", { className: dc, children: q.formatNumber("integral", e) }),
     },
     path: "battle_results.common.premiumBonus.bonusLeft",
     className: cc,
@@ -3264,7 +3257,7 @@ function _c({ text: e, displayType: a = "single", withAttemts: t = !0 }) {
   return (0, Ma.jsxs)("div", {
     className: mc.base,
     children: [
-      (0, Ma.jsx)(te, { text: e, className: ya(mc.text, mc[`text__${a}`]) }),
+      (0, Ma.jsx)(D, { text: e, className: W(mc.text, mc[`text__${a}`]) }),
       t && (0, Ma.jsx)(uc, { count: s }),
     ],
   });
@@ -3278,13 +3271,13 @@ var pc = "PremiumEarnings_d4b9118e",
   yc = "PremiumEarnings_currency_3f1396eb",
   xc = "PremiumEarnings_value_cbe7ec27";
 function Nc() {
-  const e = Z.resolve("strings"),
+  const e = $.resolve("strings"),
     { premiumAndStandartEarnings: a } = Jo();
   return (0, Ma.jsxs)("div", {
     className: pc,
     children: [
       (0, Ma.jsxs)("div", {
-        className: ya(fc, bc),
+        className: W(fc, bc),
         children: [
           (0, Ma.jsx)("div", {
             className: hc,
@@ -3295,14 +3288,14 @@ function Nc() {
             children: [
               (0, Ma.jsx)(tc, {
                 withoutPlus: !0,
-                size: P.small,
+                size: H.small,
                 type: "credits",
                 classNames: { currency: yc, value: xc },
                 value: a.baseCredits,
               }),
               (0, Ma.jsx)(tc, {
                 withoutPlus: !0,
-                size: P.small,
+                size: H.small,
                 type: "tankXP",
                 classNames: { currency: yc, value: xc },
                 value: a.baseVehicleXP,
@@ -3315,7 +3308,7 @@ function Nc() {
         className: fc,
         children: [
           (0, Ma.jsx)("div", {
-            className: ya(hc, vc),
+            className: W(hc, vc),
             children: e.readOrEmpty("battle_results.common.details.premTitle"),
           }),
           (0, Ma.jsxs)("div", {
@@ -3323,14 +3316,14 @@ function Nc() {
             children: [
               (0, Ma.jsx)(tc, {
                 withoutPlus: !0,
-                size: P.small,
+                size: H.small,
                 type: "credits",
                 classNames: { currency: yc, value: xc },
                 value: a.premiumCredits,
               }),
               (0, Ma.jsx)(tc, {
                 withoutPlus: !0,
-                size: P.small,
+                size: H.small,
                 type: "tankXP",
                 classNames: { currency: yc, value: xc },
                 value: a.premiumVehicleXP,
@@ -3344,9 +3337,9 @@ function Nc() {
 }
 var Ic = "PremiumInfoCurrencies_value_5b83491e",
   jc = "PremiumInfoCurrencies_currency_6908b9d9",
-  wc = f("PremiumInfoCurrencies", "PremiumInfoCurrencies_8b21f7ee");
+  wc = v("PremiumInfoCurrencies", "PremiumInfoCurrencies_8b21f7ee");
 function Ac() {
-  const e = Oe({ size: P.small }, { medium: { size: P.large } }),
+  const e = ia({ size: H.small }, { medium: { size: H.large } }),
     { premiumAndStandartEarnings: a } = Jo();
   return (0, Ma.jsxs)(wc, {
     children: [
@@ -3365,10 +3358,10 @@ function Ac() {
     ],
   });
 }
-var Cc = f("Content"),
+var Cc = v("Content"),
   Bc = (0, Ta.forwardRef)(function (e, a) {
     const { state: t } = Jo(),
-      s = Z.resolve("strings");
+      s = $.resolve("strings");
     return (0, Ma.jsx)(Cc, {
       ...e,
       ref: a,
@@ -3431,7 +3424,7 @@ function Tc() {
     className: Pc,
     children: [
       (0, Ma.jsx)("div", { className: Sc }),
-      (0, Ma.jsx)(pa, { path: "battle_results.common.premiumBonus.appliedBonus" }),
+      (0, Ma.jsx)(ha, { path: "battle_results.common.premiumBonus.appliedBonus" }),
     ],
   });
 }
@@ -3439,19 +3432,19 @@ var Rc = "ApplyButton_fa337b96",
   kc = "ApplyButton_button_a471284",
   Ec = "ApplyButton_value_c22167ea";
 function Hc() {
-  const e = Z.resolve("strings"),
+  const e = $.resolve("strings"),
     { bonusXpDiff: a, applyBonus: t } = Jo(),
-    r = Oe(
-      { iconSize: P.small, buttonSize: s.sizes.small },
-      { large: { iconSize: P.large }, extraLarge: { buttonSize: s.sizes.medium } },
+    s = ia(
+      { iconSize: H.small, buttonSize: i.sizes.small },
+      { large: { iconSize: H.large }, extraLarge: { buttonSize: i.sizes.medium } },
     );
   return (0, Ma.jsxs)("div", {
     className: Rc,
     children: [
-      (0, Ma.jsx)(tc, { type: "tankXP", size: r.iconSize, value: a, classNames: { value: Ec } }),
-      (0, Ma.jsx)(s, {
-        size: r.buttonSize,
-        theme: s.themes.primary,
+      (0, Ma.jsx)(tc, { type: "tankXP", size: s.iconSize, value: a, classNames: { value: Ec } }),
+      (0, Ma.jsx)(i, {
+        size: s.buttonSize,
+        theme: i.themes.primary,
         className: kc,
         onClick: t,
         soundTarget: "managable-bonus:apply-button",
@@ -3472,8 +3465,8 @@ var Fc = {
   [Gc]: "battle_results.common.plusBonus.wotPremium",
 };
 function Uc({ onClick: e }) {
-  const a = Z.resolve("strings"),
-    t = Me().breakpoint,
+  const a = $.resolve("strings"),
+    t = ie().breakpoint,
     { wotPlusType: s, wotPremium: r, bonusXpDiff: n } = Jo(),
     i = s === Mt.Core || s === Mt.Pro,
     l = (function (e, a) {
@@ -3492,7 +3485,7 @@ function Uc({ onClick: e }) {
         }),
         (0, Ma.jsx)(tc, {
           type: "tankXP",
-          size: t.weight >= ta.medium.weight ? P.large : P.small,
+          size: t.weight >= Ve.medium.weight ? H.large : H.small,
           value: n,
           classNames: { currency: zc, value: Wc },
         }),
@@ -3508,8 +3501,8 @@ var Lc = "PlusYouRock_a108dad8",
   Kc = "PlusYouRock_currency_73dcb93a",
   qc = "PlusYouRock_value_daab6eb6";
 function Qc() {
-  const e = Z.resolve("strings"),
-    a = Me().breakpoint,
+  const e = $.resolve("strings"),
+    a = ie().breakpoint,
     { dailyAppliedAdditionalXP: t } = Jo();
   return (0, Ma.jsxs)("div", {
     className: Lc,
@@ -3527,7 +3520,7 @@ function Qc() {
       }),
       (0, Ma.jsx)(tc, {
         type: "tankXP",
-        size: a.weight >= ta.medium.weight ? P.large : P.small,
+        size: a.weight >= Ve.medium.weight ? H.large : H.small,
         value: t,
         classNames: { currency: Kc, value: qc },
       }),
@@ -3554,21 +3547,21 @@ var Yc = {
   slideUpIn: "PremiumInfoButton_slideUpIn_30b191d",
 };
 function Zc({ onClick: e, withLabel: a = !1 }) {
-  const t = Z.resolve("strings"),
-    { breakpoint: r } = Me(),
-    n = r.weight > ta.large.weight ? s.sizes.medium : s.sizes.small;
+  const t = $.resolve("strings"),
+    { breakpoint: s } = ie(),
+    r = s.weight > Ve.large.weight ? i.sizes.medium : i.sizes.small;
   return (0, Ma.jsxs)("div", {
-    className: ya(Yc.base, a && Yc.base__withLabel),
+    className: W(Yc.base, a && Yc.base__withLabel),
     children: [
       a &&
         (0, Ma.jsx)("div", {
           className: Yc.buttonHint,
           children: t.readOrEmpty("battle_results.common.premiumBonus.earnMore"),
         }),
-      (0, Ma.jsx)(s, {
+      (0, Ma.jsx)(i, {
         className: Yc.button,
-        size: a ? s.sizes.small : n,
-        theme: s.themes.primary,
+        size: a ? i.sizes.small : r,
+        theme: i.themes.primary,
         onClick: e,
         soundTarget: "managable-bonus:premium-info-button",
         children: t.readOrEmpty("battle_results.common.details.getPremBtn"),
@@ -3581,26 +3574,26 @@ var Jc = "Restriction_8b730e49",
   ad = "Restriction_icon_ef5c0819",
   td = "Restriction_formattedText_b2d2b647";
 function sd({ path: e, tooltipParams: a }) {
-  const t = ye(a);
+  const t = je(a);
   return (0, Ma.jsx)("div", {
     className: Jc,
-    children: (0, Ma.jsx)(pa, {
+    children: (0, Ma.jsx)(ha, {
       path: e,
       className: td,
       params: {
         info: (0, Ma.jsx)("span", {
           ...t,
           className: ed,
-          children: (0, Ma.jsx)(T, { path: "post_battle.info", className: ad }),
+          children: (0, Ma.jsx)(De, { path: "post_battle.info", className: ad }),
         }),
       },
     }),
   });
 }
-var rd = f("Footer"),
+var rd = v("Footer"),
   nd = (0, Ta.forwardRef)(function (e, a) {
     const { state: t, showBonusDetails: s } = Jo(),
-      r = Z.resolve("strings");
+      r = $.resolve("strings");
     return (0, Ma.jsx)(rd, {
       ...e,
       ref: a,
@@ -3703,30 +3696,30 @@ var rd = f("Footer"),
     blink: "Header_blink_65f475ba",
     slideUpIn: "Header_slideUpIn_65f475ba",
   },
-  ld = f("Header"),
+  ld = v("Header"),
   od = (0, Ta.forwardRef)(function ({ className: e, classNames: a, ...t }, s) {
     const { state: r, bonusMultiplier: n } = Jo(),
-      i = Z.resolve("strings")
+      i = $.resolve("strings")
         .readOrEmpty("battle_results.common.premiumBonus.bonusMultiplier")
         .replace("{{value}}", n.toString());
     return (0, Ma.jsx)(ld, {
       ref: s,
-      className: ya(id[`base__${r}`], e),
+      className: W(id[`base__${r}`], e),
       ...t,
       children: (0, Ma.jsx)("div", {
-        className: ya(id.icon, a?.icon),
-        children: (0, Ma.jsx)(na, {
+        className: W(id.icon, a?.icon),
+        children: (0, Ma.jsx)(Pe, {
           classNames: {
             base: id.bonusMultiplier,
             text: id.text,
-            textOverlay: ya(id.text, id.text__textOverlay),
+            textOverlay: W(id.text, id.text__textOverlay),
           },
           children: i,
         }),
       }),
     });
   }),
-  cd = f("ManagableBonus", "ManagableBonus_55c8d52d"),
+  cd = v("ManagableBonus", "ManagableBonus_55c8d52d"),
   dd = (0, Ta.memo)(cd);
 ((dd.Header = od), (dd.Content = Bc), (dd.Footer = nd));
 var ud = {
@@ -3771,7 +3764,7 @@ function md({ className: e }) {
   const { state: a } = Jo(),
     { completedSteps: t } = gt();
   return (0, Ma.jsxs)(dd, {
-    className: ya(ud.bonus, ud[`bonus__${a}`], !1 === t.has(bt.third) && ud.bonus__disabled, e),
+    className: W(ud.bonus, ud[`bonus__${a}`], !1 === t.has(bt.third) && ud.bonus__disabled, e),
     children: [
       (0, Ma.jsx)(dd.Header, {}),
       (0, Ma.jsx)(dd.Content, { className: ud.content }),
@@ -3783,38 +3776,38 @@ var _d = "AnimatedNumber_958fc84e",
   pd = "AnimatedNumber_slotMachineDigit_a9587a5a",
   fd = "AnimatedNumber_plugChar_c66678",
   bd = "AnimatedNumber_digitsList_2065427d",
-  hd = z.cubicBezier(0.33, 0, 0.25, 1);
-function vd({ immediate: e, symbol: a, step: t, delay: s, first: r, handleFirstRest: i }) {
-  const [l, o] = (0, Ta.useState)(!1),
-    [c, d] = L(() => ({ from: { y: 0, opacity: 0 } })),
+  hd = C.cubicBezier(0.33, 0, 0.25, 1);
+function vd({ immediate: e, symbol: a, step: t, delay: s, first: r, handleFirstRest: n }) {
+  const [i, o] = (0, Ta.useState)(!1),
+    [c, d] = pa(() => ({ from: { y: 0, opacity: 0 } })),
     u = /^\d$/.test(a);
   const m = u ? parseInt(a) : 1;
   return (
     (0, Ta.useEffect)(() => {
-      l && r && i();
-    }, [l, r, i]),
+      i && r && n();
+    }, [i, r, n]),
     (0, Ta.useEffect)(() => {
       t > 0 &&
         (e && o(!0),
         d.start({
-          delay: l ? 0 : s,
+          delay: i ? 0 : s,
           from: { y: e ? -m * t : t, opacity: 1 },
           to: { y: -m * t, opacity: 1 },
           config: { duration: 600, easing: hd },
-          immediate: e || l,
+          immediate: e || i,
           onRest() {
             o(!0);
           },
         }));
-    }, [t, d, l, s, m, e]),
+    }, [t, d, i, s, m, e]),
     (0, Ma.jsxs)("div", {
       className: pd,
       children: [
         (0, Ma.jsx)("div", { className: fd, children: a }),
-        (0, Ma.jsx)(n.div, {
+        (0, Ma.jsx)(M.div, {
           style: c,
           className: bd,
-          children: ca(0, m + 1, (e) =>
+          children: l(0, m + 1, (e) =>
             u
               ? (0, Ma.jsx)("div", { children: e }, e)
               : (0, Ma.jsx)("div", { style: { height: t }, children: e > 0 ? a : null }, e),
@@ -3832,12 +3825,12 @@ var gd = (0, Ta.memo)(function ({
     handleAnimationFinished: r,
     type: n,
   }) {
-    const [i, l] = re(),
+    const [i, l] = Me(),
       o = (0, Ta.useMemo)(() => a.split(""), [a]),
       c = (0, Ta.useCallback)(() => r(n), [r, n]);
     return (0, Ma.jsx)("div", {
       ref: i,
-      className: ya(_d, s),
+      className: W(_d, s),
       children: o.map((s, r) =>
         (0, Ma.jsx)(
           vd,
@@ -3847,7 +3840,7 @@ var gd = (0, Ta.memo)(function ({
             immediate: e,
             delay: 200 * (o.length - r),
             symbol: s,
-            step: l.type === xe.measured && t ? l.size.height : 0,
+            step: l.type === Ke.measured && t ? l.size.height : 0,
           },
           `${a}-${r}`,
         ),
@@ -3865,31 +3858,31 @@ function Ad({
   type: a,
   value: t,
   size: s,
-  visibleIfZero: r,
-  readyToAnimate: n,
-  handleAnimationFinished: i,
+  visibleIfZero: n,
+  readyToAnimate: i,
+  handleAnimationFinished: l,
 }) {
   return ((e) => wd.includes(e))(a)
-    ? 0 !== t || r
-      ? (0, Ma.jsx)(Be, {
+    ? 0 !== t || n
+      ? (0, Ma.jsx)(r, {
           reverse: !0,
           type: jd[a],
           size: s,
           className: yd,
-          classNames: { icon: ya(xd, (n || e) && Nd) },
+          classNames: { icon: W(xd, (i || e) && Nd) },
           children: (0, Ma.jsx)(gd, {
             className: Id,
             immediate: e,
-            readyToAnimate: n,
+            readyToAnimate: i,
             type: a,
-            handleAnimationFinished: i,
-            value: p.formatNumber(a === H.gold ? "gold" : "integral", t),
+            handleAnimationFinished: l,
+            value: q.formatNumber(a === m.gold ? "gold" : "integral", t),
           }),
         })
       : null
     : (console.error(`There is no such currency in the template literal: ${a}`), null);
 }
-var Cd = f("Currencies", "Currencies_5b11a533"),
+var Cd = v("Currencies", "Currencies_5b11a533"),
   Bd = xa(function ({ className: e }) {
     const [a, t] = (0, Ta.useState)(!1),
       [s, r] = (0, Ta.useState)(new Set()),
@@ -3897,10 +3890,10 @@ var Cd = f("Currencies", "Currencies_5b11a533"),
       { model: l } = Co(),
       o = l.computes.earnedCurrencies(),
       c = l.additionalBonus.get(),
-      d = x(o),
+      d = _(o),
       u = le(),
-      { step: m, setAllCurrenciesAniamted: _ } = gt(),
-      p = Oe({ value: P.medium }, { medium: { value: P.large }, large: { value: P.extraLarge } });
+      { step: m, setAllCurrenciesAniamted: p } = gt(),
+      f = ia({ value: H.medium }, { medium: { value: H.large }, large: { value: H.extraLarge } });
     ((0, Ta.useEffect)(() => {
       void 0 !== d && d !== o && u.play("startRolling", { target: "overview:currencies" });
     }, [o, d, u, m]),
@@ -3911,23 +3904,23 @@ var Cd = f("Currencies", "Currencies_5b11a533"),
       (0, Ta.useEffect)(() => {
         s.size === o.filter(({ value: e, visibleIfZero: a }) => e > 0 || a).length &&
           (m !== bt.immediate && u.play("stopRolling", { target: "overview:currencies" }),
-          _(!0),
+          p(!0),
           c.bonusState === Wt.PremiumBonus &&
             c.restriction === zt.NoRestriction &&
-            (r((e) => M(e, "xp")), i(!0)));
-      }, [m, s, o, u, c.bonusState, c.restriction, _]));
-    const f = (0, Ta.useCallback)(function (e) {
-      r((a) => ua(a, e));
+            (r((e) => fa(e, "xp")), i(!0)));
+      }, [m, s, o, u, c.bonusState, c.restriction, p]));
+    const b = (0, Ta.useCallback)(function (e) {
+      r((a) => ce(a, e));
     }, []);
     return (0, Ma.jsx)(Cd, {
       className: e,
-      children: q(o, (e) =>
+      children: U(o, (e) =>
         (0, Ma.jsx)(
           Ad,
           {
             readyToAnimate: a,
-            size: p.value,
-            handleAnimationFinished: f,
+            size: f.value,
+            handleAnimationFinished: b,
             immediate: m === bt.immediate && !1 === n,
             ...e,
           },
@@ -3956,23 +3949,23 @@ var Cd = f("Currencies", "Currencies_5b11a533"),
   $d = "Overview_bonus_30af9d4",
   Xd = xa(function () {
     const { model: e } = Co(),
-      { active: a } = k(),
-      [{ x: t }, s] = L(() => ({ x: 0 })),
+      { active: a } = E(),
+      [{ x: t }, s] = pa(() => ({ x: 0 })),
       r = e.computes.isWin()
         ? R.images.comp7_light.gui.maps.icons.backgrounds.no_epic_victory_flare()
         : R.images.comp7_light.gui.maps.icons.backgrounds.no_epic_draw_defeat_flare(),
-      i = (0, Ta.useRef)(null);
+      n = (0, Ta.useRef)(null);
     return (
       (0, Ta.useEffect)(() => {
         if (a === Ba.overview)
-          return _a.move(function ([e]) {
-            const a = la().width,
+          return ue.move(function ([e]) {
+            const a = re().width,
               t = 2 * (e.clientX / a - 0.5);
             s.start({ x: 3 * t });
           });
       }),
-      (0, Ma.jsx)(n.div, {
-        ref: i,
+      (0, Ma.jsx)(M.div, {
+        ref: n,
         className: Pd,
         style: {
           backgroundImage: `url(${r})`,
@@ -3992,11 +3985,11 @@ function qd() {
 }
 function Qd({ children: e, visible: a, changeVisible: t, closedPosition: s, animationProps: r }) {
   const [n, i] = (0, Ta.useState)(a ?? !1),
-    [l, o] = L(() => ({
+    [l, o] = pa(() => ({
       from: { ...r, y: n ? "0" : s, backgroundColor: n ? "rgba(18, 19, 22, 0.8)" : "transparent" },
     })),
-    [c, d] = L(() => ({ from: { opacity: n ? 1 : 0 } })),
-    [u, m] = L(() => ({ from: { x: "-50%", y: "0", rotate: 180, opacity: 1 } }));
+    [c, d] = pa(() => ({ from: { opacity: n ? 1 : 0 } })),
+    [u, m] = pa(() => ({ from: { x: "-50%", y: "0", rotate: 180, opacity: 1 } }));
   ((0, Ta.useLayoutEffect)(() => {
     void 0 !== a && i(a);
   }, [a]),
@@ -4026,7 +4019,7 @@ var Yd = "HintKey_keyButton_e4149405",
   eu = "HintKey_content_63ecef8",
   au = "HintKey_triangle_fb0bc682",
   tu = "HintKey_triangleNoise_6e72dfca",
-  su = f("PersoanlEfficiencyHintKey", "HintKey_2efc42a0");
+  su = v("PersoanlEfficiencyHintKey", "HintKey_2efc42a0");
 var ru = {
     base: "OverlayDivider_fcc0c30",
     divider: "OverlayDivider_divider_1acaec30",
@@ -4052,18 +4045,18 @@ var ru = {
     const { opened: s } = qd();
     return (0, Ma.jsxs)("div", {
       ref: t,
-      className: ya(ru.base, !s && ru.base__closed, a?.base, e),
+      className: W(ru.base, !s && ru.base__closed, a?.base, e),
       children: [
         (0, Ma.jsx)(Nt, {
           classNames: {
-            base: ya(ru.divider, ru.divider__left, a?.divider?.base),
-            image: ya(ru.dividerImageElement, a?.divider?.image),
+            base: W(ru.divider, ru.divider__left, a?.divider?.base),
+            image: W(ru.dividerImageElement, a?.divider?.image),
           },
         }),
         (0, Ma.jsx)(Nt, {
           classNames: {
-            base: ya(ru.divider, ru.divider__right, a?.divider?.base, a?.rightDivider?.base),
-            image: ya(ru.dividerImageElement, a?.divider?.image, a?.rightDivider?.image),
+            base: W(ru.divider, ru.divider__right, a?.divider?.base, a?.rightDivider?.base),
+            image: W(ru.dividerImageElement, a?.divider?.image, a?.rightDivider?.image),
           },
         }),
       ],
@@ -4073,31 +4066,31 @@ var ru = {
   lu = "ExpandableOverlay_base__opened_7d677539",
   ou = "ExpandableOverlay_shadow_644e64b8",
   cu = (0, Ta.forwardRef)(function ({ children: e }, a) {
-    const { opened: t, handleOpen: s, overlayStyles: r, shadowStyles: i } = qd(),
-      l = le();
+    const { opened: t, handleOpen: s, overlayStyles: r, shadowStyles: n } = qd(),
+      i = le();
     return (
       (0, Ta.useEffect)(() => {
         function e(e) {
-          (s(!1), t && l.play("closeOverlay", { original: e, target: "expandable-overlay" }));
+          (s(!1), t && i.play("closeOverlay", { original: e, target: "expandable-overlay" }));
         }
         return (
           document.addEventListener("click", e),
           () => document.removeEventListener("click", e)
         );
-      }, [t, l, s]),
-      (0, Ma.jsxs)(n.div, {
+      }, [t, i, s]),
+      (0, Ma.jsxs)(M.div, {
         ref: a,
         "data-name": "ExpandableOverlay",
-        className: ya(iu, t && lu),
+        className: W(iu, t && lu),
         style: r,
         onClick: function (e) {
           (e.stopPropagation(),
             !1 === t &&
-              (l.play("click", { original: e, target: "expandable-overlay" }),
-              l.play("openOverlay", { original: e, target: "expandable-overlay" }),
+              (i.play("click", { original: e, target: "expandable-overlay" }),
+              i.play("openOverlay", { original: e, target: "expandable-overlay" }),
               s(!0)));
         },
-        children: [(0, Ma.jsx)(n.div, { className: ou, style: i }), e],
+        children: [(0, Ma.jsx)(M.div, { className: ou, style: n }), e],
       })
     );
   });
@@ -4105,18 +4098,18 @@ var ru = {
   disabled: e,
   throttleDelay: a = 600,
   classNames: t,
-  keyCode: s = ze.SPACE,
+  keyCode: s = la.SPACE,
   triangleNoisePath: r = "post_battle.noise",
 }) {
-  const { handleOpen: i, arrowStyles: o } = qd(),
-    c = le(),
-    d = ia(
+  const { handleOpen: n, arrowStyles: i } = qd(),
+    l = le(),
+    o = se(
       (a) => {
         e ||
-          (c.play("click", { original: a, target: "expandable-overlay:hint-key" }),
-          i(
+          (l.play("click", { original: a, target: "expandable-overlay:hint-key" }),
+          n(
             (e) => (
-              c.play(e ? "closeOverlay" : "openOverlay", {
+              l.play(e ? "closeOverlay" : "openOverlay", {
                 original: a,
                 target: "expandable-overlay:hint-key",
               }),
@@ -4124,7 +4117,7 @@ var ru = {
             ),
           ));
       },
-      [e, i, c],
+      [e, n, l],
       a,
     );
   return (0, Ma.jsx)(Ma.Fragment, {
@@ -4132,9 +4125,9 @@ var ru = {
       className: t?.base,
       onClick: (e) => {
         (e.stopPropagation(),
-          i(
+          n(
             (a) => (
-              c.play(a ? "closeOverlay" : "openOverlay", {
+              l.play(a ? "closeOverlay" : "openOverlay", {
                 original: e,
                 target: "expandable-overlay:hint-key",
               }),
@@ -4143,22 +4136,22 @@ var ru = {
           ));
       },
       children: [
-        (0, Ma.jsx)(Xe, {
+        (0, Ma.jsx)(Ue, {
           keyCode: s,
           classNames: {
-            base: ya(Yd, t?.keyButton),
-            background: ya(Zd, t?.keyButton?.background),
-            content: ya(eu, t?.keyButton?.content),
-            border: ya(Jd, t?.keyButton?.border),
+            base: W(Yd, t?.keyButton),
+            background: W(Zd, t?.keyButton?.background),
+            content: W(eu, t?.keyButton?.content),
+            border: W(Jd, t?.keyButton?.border),
           },
           soundTarget: "expandable-overlay:hint-key",
-          onActive: d,
-          children: (0, Ma.jsx)(Xe.Code, {}),
+          onActive: o,
+          children: (0, Ma.jsx)(Ue.Code, {}),
         }),
-        (0, Ma.jsx)(n.div, {
-          className: ya(au, t?.triangle),
-          style: o,
-          children: (0, Ma.jsx)(l, { fit: "cover", path: r, className: ya(tu, t?.triangleNoise) }),
+        (0, Ma.jsx)(M.div, {
+          className: W(au, t?.triangle),
+          style: i,
+          children: (0, Ma.jsx)(k, { fit: "cover", path: r, className: W(tu, t?.triangleNoise) }),
         }),
       ],
     }),
@@ -4183,19 +4176,19 @@ var du = "account",
     [hu]: "library.eyebrow",
     [vu]: "library.gear_with_gap",
   };
-var yu = { behaviour: pe.contentResponsive, minSize: "0rem", maxSize: "1000rem" },
+var yu = { behaviour: me.contentResponsive, minSize: "0rem", maxSize: "1000rem" },
   xu = {
     [du]: {
-      [Se.extraSmall]: { behaviour: pe.static, size: "200rem" },
-      [Se.medium]: { behaviour: pe.static, size: "200rem" },
-      [Se.large]: { behaviour: pe.static, size: "200rem" },
-      [Se.extraLarge]: { behaviour: pe.static, size: "229rem" },
+      [_e.extraSmall]: { behaviour: me.static, size: "200rem" },
+      [_e.medium]: { behaviour: me.static, size: "200rem" },
+      [_e.large]: { behaviour: me.static, size: "200rem" },
+      [_e.extraLarge]: { behaviour: me.static, size: "229rem" },
     },
     [uu]: {
-      [Se.extraSmall]: { behaviour: pe.static, size: "182rem" },
-      [Se.medium]: { behaviour: pe.static, size: "186rem" },
-      [Se.large]: { behaviour: pe.static, size: "216rem" },
-      [Se.extraLarge]: { behaviour: pe.static, size: "239rem" },
+      [_e.extraSmall]: { behaviour: me.static, size: "182rem" },
+      [_e.medium]: { behaviour: me.static, size: "186rem" },
+      [_e.large]: { behaviour: me.static, size: "216rem" },
+      [_e.extraLarge]: { behaviour: me.static, size: "239rem" },
     },
   },
   Nu = {
@@ -4219,46 +4212,46 @@ var yu = { behaviour: pe.contentResponsive, minSize: "0rem", maxSize: "1000rem" 
     slideUpIn: "BaseCapture_slideUpIn_8bdb9b9c",
   };
 function Iu({ assault: e, defend: a, classNames: t, className: s }) {
-  const r = Z.resolve("strings"),
-    n = Z.resolve("views"),
-    i = Ee({
+  const r = $.resolve("strings"),
+    n = $.resolve("views"),
+    i = Ge({
       contentId: n.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
       args: { paramType: "capturePoints" },
     }),
-    o = Ee({
+    l = Ge({
       contentId: n.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
       args: { paramType: "droppedCapturePoints" },
     });
   return (0, Ma.jsxs)("div", {
-    className: ya(Nu.base, s),
+    className: W(Nu.base, s),
     children: [
       (0, Ma.jsx)("div", {
-        className: ya(Nu.label, t?.label),
+        className: W(Nu.label, t?.label),
         children: r.readOrEmpty("battle_results.common.battleEfficiency.baseCapture"),
       }),
       (0, Ma.jsxs)("div", {
         ...i,
         className: Nu.wrapper,
         children: [
-          (0, Ma.jsx)("div", { className: ya(Nu.value, t?.value), children: e }),
-          (0, Ma.jsx)(l, {
+          (0, Ma.jsx)("div", { className: W(Nu.value, t?.value), children: e }),
+          (0, Ma.jsx)(k, {
             path: "post_battle.assault",
             width: "32rem",
             height: "32rem",
-            className: ya(Nu.icon, t?.icon),
+            className: W(Nu.icon, t?.icon),
           }),
         ],
       }),
       (0, Ma.jsxs)("div", {
-        ...o,
+        ...l,
         className: Nu.wrapper,
         children: [
-          (0, Ma.jsx)("div", { className: ya(Nu.value, t?.value), children: a }),
-          (0, Ma.jsx)(l, {
+          (0, Ma.jsx)("div", { className: W(Nu.value, t?.value), children: a }),
+          (0, Ma.jsx)(k, {
             path: "post_battle.defend",
             width: "32rem",
             height: "32rem",
-            className: ya(Nu.icon, t?.icon),
+            className: W(Nu.icon, t?.icon),
           }),
         ],
       }),
@@ -4281,8 +4274,8 @@ function Au({ iconsConfig: e, children: a }) {
 var Cu = "IconCell_99b0caec",
   Bu = (0, Ta.memo)(function ({ value: e, name: a, userName: t, className: s }) {
     const { iconsConfig: r } = wu(),
-      n = Ee({
-        contentId: Z.resolve("views").read((e) =>
+      n = Ge({
+        contentId: $.resolve("views").read((e) =>
           e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
         ),
         args: (0, Ta.useMemo)(() => ({ userName: t, paramType: a }), [a, t]),
@@ -4291,14 +4284,14 @@ var Cu = "IconCell_99b0caec",
     const i = r[a] ?? "";
     return (0, Ma.jsx)("div", {
       ...n,
-      className: ya(Cu, s),
-      children: (0, Ma.jsx)(l, { width: "32rem", height: "32rem", path: i }),
+      className: W(Cu, s),
+      children: (0, Ma.jsx)(k, { width: "32rem", height: "32rem", path: i }),
     });
   }),
   Pu = "NumberCell_c62bf499",
   Su = (0, Ta.memo)(function ({ value: e, userName: a, name: t, className: s }) {
-    const r = Ee({
-      contentId: Z.resolve("views").read((e) =>
+    const r = Ge({
+      contentId: $.resolve("views").read((e) =>
         t === vu
           ? e.mono.post_battle.tooltips.critical_damage("resId")
           : e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
@@ -4307,7 +4300,7 @@ var Cu = "IconCell_99b0caec",
     });
     return 0 === e
       ? null
-      : (0, Ma.jsx)("div", { ...r, className: ya(Pu, s), children: p.formatNumber("integral", e) });
+      : (0, Ma.jsx)("div", { ...r, className: W(Pu, s), children: q.formatNumber("integral", e) });
   }),
   Tu = {
     base: "NumberWithCounterCell_f729c44",
@@ -4331,7 +4324,7 @@ var Cu = "IconCell_99b0caec",
     slideUpIn: "NumberWithCounterCell_slideUpIn_f75bc9d5",
   };
 function Ru({ count: e }) {
-  const a = ye({ body: e.toString() }),
+  const a = je({ body: e.toString() }),
     t = (function (e, a) {
       return e < a ? e : Math.floor(e / 1e3);
     })(e, 1e3);
@@ -4343,32 +4336,32 @@ function Ru({ count: e }) {
         : (0, Ma.jsx)("div", {
             ...a,
             className: Tu.roundedCount,
-            children: (0, Ma.jsx)(pa, {
+            children: (0, Ma.jsx)(ha, {
               path: "common.numberAbbrev",
-              params: { value: p.formatNumber("integral", Math.min(t, 99)) },
+              params: { value: q.formatNumber("integral", Math.min(t, 99)) },
             }),
           }),
   });
 }
 var ku = (0, Ta.memo)(function ({ value: e, count: a, name: t, userName: s, className: r }) {
     const { iconsConfig: n } = wu(),
-      i = Ee({
-        contentId: Z.resolve("views").read((e) =>
+      i = Ge({
+        contentId: $.resolve("views").read((e) =>
           e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
         ),
         args: (0, Ta.useMemo)(() => ({ userName: s, paramType: t }), [t, s]),
       });
     if (0 === e && 0 === a) return null;
-    const o = n[t] ?? "";
+    const l = n[t] ?? "";
     return (0, Ma.jsxs)("div", {
       ...i,
-      className: ya(Tu.base, r),
+      className: W(Tu.base, r),
       children: [
-        e > 0 && p.formatNumber("integral", e),
+        e > 0 && q.formatNumber("integral", e),
         (0, Ma.jsxs)("div", {
-          className: ya(Tu.counter, 0 === a && Tu.counter__hidden),
+          className: W(Tu.counter, 0 === a && Tu.counter__hidden),
           children: [
-            (0, Ma.jsx)(l, { className: Tu.icon, width: "32rem", height: "32rem", path: o }),
+            (0, Ma.jsx)(k, { className: Tu.icon, width: "32rem", height: "32rem", path: l }),
             a >= 2 && (0, Ma.jsx)(Ru, { count: a }),
           ],
         }),
@@ -4388,23 +4381,23 @@ function Wu({ vehicle: e }) {
     children: [
       (0, Ma.jsx)("div", {
         className: Hu,
-        children: (0, Ma.jsx)(ie, { size: ie.size.x120x96, name: a ? "tank_empty" : e.techName }),
+        children: (0, Ma.jsx)(ma, { size: ma.size.x120x96, name: a ? "tank_empty" : e.techName }),
       }),
       !1 === a &&
         (0, Ma.jsxs)(Ma.Fragment, {
           children: [
-            (0, Ma.jsx)(y, { value: e.tier, className: Ou }),
+            (0, Ma.jsx)(J, { value: e.tier, className: Ou }),
             (0, Ma.jsx)("div", {
               className: Du,
-              children: (0, Ma.jsx)(u, { size: "x24x24", type: e.type }),
+              children: (0, Ma.jsx)(j, { size: "x24x24", type: e.type }),
             }),
           ],
         }),
       (0, Ma.jsx)("div", {
-        className: ya(Vu, a && zu),
+        className: W(Vu, a && zu),
         children: a
-          ? (0, Ma.jsx)(pa, { path: "ingame_gui.players_panel.unknown_vehicle" })
-          : (0, Ma.jsx)(F, { text: e.name }),
+          ? (0, Ma.jsx)(ha, { path: "ingame_gui.players_panel.unknown_vehicle" })
+          : (0, Ma.jsx)(o, { text: e.name }),
       }),
     ],
   });
@@ -4416,41 +4409,41 @@ var Mu = "AccountInfoCell_accountInfo_4ab27ccb",
   Lu = "AccountInfoCell_anonymizerIcon_f71ac22",
   $u = "AccountInfoCell_badge_711d01c5";
 function Xu({ account: e }) {
-  return (0, Ma.jsxs)(Qe, {
+  return (0, Ma.jsxs)(Te, {
     className: Mu,
     children: [
       "" !== e.badge &&
         (0, Ma.jsx)("div", {
-          className: ya($u, Uu),
-          children: (0, Ma.jsx)(Qe.Badge, {
-            size: Qe.Badge.sizes.x24x24,
+          className: W($u, Uu),
+          children: (0, Ma.jsx)(Te.Badge, {
+            size: Te.Badge.sizes.x24x24,
             badgeId: e.badge,
             className: Uu,
           }),
         }),
-      (0, Ma.jsx)(Qe.Name, {
-        className: ya(Gu, Uu),
-        children: (0, Ma.jsx)(F, { text: e.anonymizer ? e.fakeUsername : e.username }),
+      (0, Ma.jsx)(Te.Name, {
+        className: W(Gu, Uu),
+        children: (0, Ma.jsx)(o, { text: e.anonymizer ? e.fakeUsername : e.username }),
       }),
       "" !== e.clanAbbreviation &&
         !e.anonymizer &&
-        (0, Ma.jsx)(Qe.ClanTag, {
-          className: ya(Fu, Uu),
-          children: (0, Ma.jsx)(pa, {
+        (0, Ma.jsx)(Te.ClanTag, {
+          className: W(Fu, Uu),
+          children: (0, Ma.jsx)(ha, {
             path: "common.clanTag",
             params: { abbrev: e.clanAbbreviation },
             brackets: { start: "{", end: "}" },
           }),
         }),
-      0 !== e.igrType && (0, Ma.jsx)(Qe.IgrIcon, { size: Qe.IgrIcon.sizes.x34x16, className: Uu }),
+      0 !== e.igrType && (0, Ma.jsx)(Te.IgrIcon, { size: Te.IgrIcon.sizes.x34x16, className: Uu }),
       "" !== e.suffixBadge &&
-        (0, Ma.jsx)(Qe.Stripe, {
-          size: Qe.Stripe.sizes.default,
+        (0, Ma.jsx)(Te.Stripe, {
+          size: Te.Stripe.sizes.default,
           badgeId: e.suffixBadge,
           className: Uu,
         }),
       e.anonymizer &&
-        (0, Ma.jsx)(Qe.AnonymizerIcon, { size: Qe.AnonymizerIcon.sizes.x24x24, className: Lu }),
+        (0, Ma.jsx)(Te.AnonymizerIcon, { size: Te.AnonymizerIcon.sizes.x24x24, className: Lu }),
     ],
   });
 }
@@ -4464,41 +4457,41 @@ var Ku = "HeaderCell_cellWithValue_78949e6d",
   am = "HeaderCell_text_35220206";
 function tm({ info: e, name: a, className: t }) {
   const { iconsConfig: s } = wu(),
-    r = Ee({
-      contentId: Z.resolve("views").read((e) =>
+    r = Ge({
+      contentId: $.resolve("views").read((e) =>
         a === vu
           ? e.mono.post_battle.tooltips.critical_damage("resId")
           : e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
       ),
       args: { paramType: a },
     }),
-    n = h(
+    n = Ze(
       e.table.getRowModel().rows,
       (e, t) => {
         const s = t.getValue(a),
-          r = ke(s) ? s : s.value;
+          r = qe(s) ? s : s.value;
         return e + (a === hu && r > 0 ? 1 : r);
       },
       0,
     ),
     i = s[a] ?? "";
   return (0, Ma.jsx)("div", {
-    className: ya(Ku, t),
+    className: W(Ku, t),
     children: (0, Ma.jsxs)("div", {
       ...r,
       className: Yu,
       children: [
-        (0, Ma.jsx)("div", { className: Ju, children: p.formatNumber("integral", n) }),
+        (0, Ma.jsx)("div", { className: Ju, children: q.formatNumber("integral", n) }),
         (0, Ma.jsx)("div", {
           className: Zu,
-          children: (0, Ma.jsx)(l, { width: "100%", height: "100%", path: i }),
+          children: (0, Ma.jsx)(k, { width: "100%", height: "100%", path: i }),
         }),
       ],
     }),
   });
 }
 function sm({ name: e, info: a, className: t }) {
-  const s = Z.resolve("strings");
+  const s = $.resolve("strings");
   switch (e) {
     case mu:
     case _u:
@@ -4525,50 +4518,50 @@ var rm = "Index_align_5032d1bf",
   im = "Index_align__left_7938cc",
   lm = "Index_offsetCell_c4e68915",
   om = "Index_offsetCell__number_2c760167",
-  cm = Re();
+  cm = he();
 function dm() {
   return [
     cm.accessor("killed", {
       id: mu,
-      header: (e) => (0, Ma.jsx)(sm, { info: e, name: mu, className: ya(qu, Qu) }),
+      header: (e) => (0, Ma.jsx)(sm, { info: e, name: mu, className: W(qu, Qu) }),
       enableSorting: !1,
-      meta: { column: yu, className: ya(rm, nm) },
+      meta: { column: yu, className: W(rm, nm) },
     }),
     cm.accessor("damageDealt", {
       id: _u,
       header: (e) => (0, Ma.jsx)(sm, { info: e, name: _u, className: qu }),
       enableSorting: !1,
-      meta: { className: ya(rm, nm), column: yu },
+      meta: { className: W(rm, nm), column: yu },
     }),
     cm.accessor("damageBlockedByArmor", {
       id: pu,
       header: (e) => (0, Ma.jsx)(sm, { info: e, name: pu, className: qu }),
       enableSorting: !1,
-      meta: { className: ya(rm, nm), column: yu },
+      meta: { className: W(rm, nm), column: yu },
     }),
     cm.accessor("damageAssisted", {
       id: fu,
       header: (e) => (0, Ma.jsx)(sm, { info: e, name: fu, className: qu }),
       enableSorting: !1,
-      meta: { className: ya(rm, nm), column: yu },
+      meta: { className: W(rm, nm), column: yu },
     }),
     cm.accessor("damageAssistedStun", {
       id: bu,
       header: (e) => (0, Ma.jsx)(sm, { info: e, name: bu, className: qu }),
       enableSorting: !1,
-      meta: { className: ya(rm, nm), column: yu },
+      meta: { className: W(rm, nm), column: yu },
     }),
     cm.accessor("spotted", {
       id: hu,
       header: (e) => (0, Ma.jsx)(sm, { info: e, name: hu, className: qu }),
       enableSorting: !1,
-      meta: { className: ya(rm, nm), column: yu },
+      meta: { className: W(rm, nm), column: yu },
     }),
     cm.accessor("criticalDamage", {
       id: vu,
       header: (e) => (0, Ma.jsx)(sm, { info: e, name: vu, className: qu }),
       enableSorting: !1,
-      meta: { className: ya(rm, nm), column: yu },
+      meta: { className: W(rm, nm), column: yu },
     }),
   ];
 }
@@ -4576,28 +4569,28 @@ var um = "BodyRow_b47fe37f",
   mm = "BodyRow_rowDivider_eb49c679",
   _m = "BodyRow_rowDividerImage_d852c3da";
 function pm({ classNames: e, row: a, rowIndex: t }) {
-  const s = Ve({
+  const s = Le({
     args: (0, Ta.useMemo)(
       () => ({ vehicleCD: a.original.vehicle?.vehicleCD, databaseID: a.original.databaseId }),
       [a.original.databaseId, a.original.vehicle?.vehicleCD],
     ),
   });
   return (0, Ta.createElement)(
-    ue.Row,
-    { ...(void 0 !== a.original.databaseId && s), key: a.id, className: ya(um, e?.row) },
-    q(a.getVisibleCells(), (a, s) =>
+    ne.Row,
+    { ...(void 0 !== a.original.databaseId && s), key: a.id, className: W(um, e?.row) },
+    U(a.getVisibleCells(), (a, s) =>
       (0, Ma.jsx)(
-        ue.Cell,
+        ne.Cell,
         {
           className: e?.cell,
-          cell: { ...a, rowIndex: t, index: s, tablePart: ge.body },
-          children: Fe(a.column.columnDef.cell, a.getContext()),
+          cell: { ...a, rowIndex: t, index: s, tablePart: Oe.body },
+          children: oa(a.column.columnDef.cell, a.getContext()),
         },
         a.id,
       ),
     ),
     (0, Ma.jsx)(Nt, {
-      classNames: { base: ya(mm, e?.divider?.base), image: ya(_m, e?.divider?.image) },
+      classNames: { base: W(mm, e?.divider?.base), image: W(_m, e?.divider?.image) },
     }),
   );
 }
@@ -4624,16 +4617,16 @@ var fm = {
     slideUpIn: "TableBody_slideUpIn_8ec5ac18",
   },
   bm = (0, Ta.memo)(function ({ classNames: e, children: a }) {
-    const { table: t } = aa(),
-      s = ba(),
-      { api: r } = be();
-    (C(ze.ARROW_UP, () => {
-      r.applyStepTo(ha.Next);
+    const { table: t } = sa(),
+      s = ua(),
+      { api: r } = we();
+    (P(la.ARROW_UP, () => {
+      r.applyStepTo(de.Next);
     }),
-      C(ze.ARROW_DOWN, () => {
-        r.applyStepTo(ha.Prev);
+      P(la.ARROW_DOWN, () => {
+        r.applyStepTo(de.Prev);
       }));
-    const [i, l] = L(() => ({ from: { maskSize: "100% 100%" } }));
+    const [n, i] = pa(() => ({ from: { maskSize: "100% 100%" } }));
     return (
       (0, Ta.useEffect)(() => {
         function e() {
@@ -4641,7 +4634,7 @@ var fm = {
             !(function () {
               const [, e] = r.getBounds(),
                 a = (r.animationScroll.scrollPosition.get() / e) * 7;
-              l.start({ to: { maskSize: `100% ${e > 0 ? 100 + a : 107}%` } });
+              i.start({ to: { maskSize: `100% ${e > 0 ? 100 + a : 107}%` } });
             })();
           });
         }
@@ -4658,28 +4651,28 @@ var fm = {
               r.events.off("resizeHandled", e));
           }
         );
-      }, [r, s, l]),
-      (0, Ma.jsxs)(ue.Body, {
-        className: ya(fm.base, e?.base),
+      }, [r, s, i]),
+      (0, Ma.jsxs)(ne.Body, {
+        className: W(fm.base, e?.base),
         children: [
-          (0, Ma.jsxs)(n.div, {
+          (0, Ma.jsxs)(M.div, {
             className: fm.mask,
-            style: i,
+            style: n,
             children: [
               (0, Ma.jsx)(Nt, {
                 classNames: {
-                  base: ya(fm.rowDivider, e?.divider?.base),
-                  image: ya(fm.rowDividerImage, e?.divider?.image),
+                  base: W(fm.rowDivider, e?.divider?.base),
+                  image: W(fm.rowDividerImage, e?.divider?.image),
                 },
               }),
-              (0, Ma.jsxs)(Ze, {
+              (0, Ma.jsxs)(pe, {
                 classNames: {
                   ...e?.scroll?.area,
                   wrapper: fm.scrollWrapper,
-                  content: ya(fm.scrollAreaContent, e?.scroll?.area?.content),
+                  content: W(fm.scrollAreaContent, e?.scroll?.area?.content),
                 },
                 children: [
-                  q(t.getRowModel().rows, (a, t) =>
+                  U(t.getRowModel().rows, (a, t) =>
                     (0, Ma.jsx)(
                       pm,
                       {
@@ -4695,8 +4688,8 @@ var fm = {
               }),
             ],
           }),
-          (0, Ma.jsx)(ra, {
-            classNames: { ...e?.scroll?.bar, base: ya(fm.scrollBar, e?.scroll?.bar?.base) },
+          (0, Ma.jsx)(ge, {
+            classNames: { ...e?.scroll?.bar, base: W(fm.scrollBar, e?.scroll?.bar?.base) },
           }),
         ],
       })
@@ -4705,22 +4698,22 @@ var fm = {
   hm = "TableFooter_40e98711",
   vm = "TableFooter_row_41aedfc2",
   gm = (0, Ta.memo)(function ({ classNames: e }) {
-    const { table: a } = aa();
-    return (0, Ma.jsx)(ue.Footer, {
-      className: ya(hm, e?.base),
-      children: q(a.getFooterGroups(), (a, t) =>
+    const { table: a } = sa();
+    return (0, Ma.jsx)(ne.Footer, {
+      className: W(hm, e?.base),
+      children: U(a.getFooterGroups(), (a, t) =>
         (0, Ma.jsx)(
-          ue.Row,
+          ne.Row,
           {
-            className: ya(vm, e?.row),
-            children: q(a.headers, (a, s) =>
+            className: W(vm, e?.row),
+            children: U(a.headers, (a, s) =>
               (0, Ma.jsx)(
-                ue.Cell,
+                ne.Cell,
                 {
                   onClick: a.column.getToggleSortingHandler(),
                   className: e?.cell,
-                  cell: { ...a, rowIndex: t, index: s, tablePart: ge.footer },
-                  children: !a.isPlaceholder && Fe(a.column.columnDef.footer, a.getContext()),
+                  cell: { ...a, rowIndex: t, index: s, tablePart: Oe.footer },
+                  children: !a.isPlaceholder && oa(a.column.columnDef.footer, a.getContext()),
                 },
                 a.id,
               ),
@@ -4733,22 +4726,22 @@ var fm = {
   }),
   ym = "TableHeader_row_a81d3e65",
   xm = (0, Ta.memo)(function ({ classNames: e }) {
-    const { table: a } = aa();
-    return (0, Ma.jsx)(ue.Header, {
+    const { table: a } = sa();
+    return (0, Ma.jsx)(ne.Header, {
       className: e?.base,
-      children: q(a.getHeaderGroups(), (a, t) =>
+      children: U(a.getHeaderGroups(), (a, t) =>
         (0, Ma.jsx)(
-          ue.Row,
+          ne.Row,
           {
-            className: ya(ym, e?.row),
-            children: q(a.headers, (a, s) =>
+            className: W(ym, e?.row),
+            children: U(a.headers, (a, s) =>
               (0, Ma.jsx)(
-                ue.Cell,
+                ne.Cell,
                 {
                   onClick: a.column.getToggleSortingHandler(),
                   className: e?.cell,
-                  cell: { ...a, rowIndex: t, index: s, tablePart: ge.header },
-                  children: !a.isPlaceholder && Fe(a.column.columnDef.header, a.getContext()),
+                  cell: { ...a, rowIndex: t, index: s, tablePart: Oe.header },
+                  children: !a.isPlaceholder && oa(a.column.columnDef.header, a.getContext()),
                 },
                 a.id,
               ),
@@ -4768,19 +4761,19 @@ var fm = {
     config: n,
     iconsConfig: i,
   }) {
-    const l = Me(),
+    const l = ie(),
       o = (0, Ta.useMemo)(() => ({ columnOrder: s, columnVisibility: r }), [s, r]);
     return (0, Ma.jsx)(Au, {
       iconsConfig: i,
-      children: (0, Ma.jsx)(Pe, {
+      children: (0, Ma.jsx)($e, {
         columns: n,
         data: e.rows,
         enableMultiRowSelection: !1,
         getRowId: (e) => e.account.username,
         initialState: o,
         children: (0, Ma.jsx)(
-          ue,
-          { className: a, children: (0, Ma.jsx)(Ge, { children: t }) },
+          ne,
+          { className: a, children: (0, Ma.jsx)(ra, { children: t }) },
           l.breakpoint.name,
         ),
       }),
@@ -4790,7 +4783,7 @@ var fm = {
 var Im = "PrestigePointsCell_image_8a64c7b9";
 function jm({ value: e, className: a }) {
   return (0, Ma.jsx)("div", {
-    ...fe(
+    ...ve(
       "type",
       (0, Ta.useMemo)(
         () => ({
@@ -4799,11 +4792,11 @@ function jm({ value: e, className: a }) {
         [],
       ),
     ),
-    className: ya(Ku, qu, a),
+    className: W(Ku, qu, a),
     children: (0, Ma.jsxs)("div", {
       className: Yu,
       children: [
-        (0, Ma.jsx)("div", { className: Ju, children: p.formatNumber("integral", e) }),
+        (0, Ma.jsx)("div", { className: Ju, children: q.formatNumber("integral", e) }),
         (0, Ma.jsx)("div", { className: Zu, children: (0, Ma.jsx)("div", { className: Im }) }),
       ],
     }),
@@ -4818,19 +4811,19 @@ var wm = function ({
   config: n,
   iconsConfig: i,
 }) {
-  const l = Me(),
+  const l = ie(),
     o = (0, Ta.useMemo)(() => ({ columnOrder: s, columnVisibility: r }), [s, r]);
   return (0, Ma.jsx)(Au, {
     iconsConfig: i,
-    children: (0, Ma.jsx)(Pe, {
+    children: (0, Ma.jsx)($e, {
       columns: n,
       data: e.rows,
       enableMultiRowSelection: !1,
       getRowId: (e) => e.account.username,
       initialState: o,
       children: (0, Ma.jsx)(
-        ue,
-        { className: a, children: (0, Ma.jsx)(Ge, { children: t }) },
+        ne,
+        { className: a, children: (0, Ma.jsx)(ra, { children: t }) },
         l.breakpoint.name,
       ),
     }),
@@ -4859,21 +4852,21 @@ var Am = "PersonalEfficiency_table_1104dbe8",
   Lm = { row: "PersonalEfficiency_headerRow_6acaa215" };
 function $m() {
   const { opened: e } = qd(),
-    { api: a } = be();
+    { api: a } = we();
   return (
     (0, Ta.useLayoutEffect)(() => {
       e && a.applyScroll(0, { immediate: !0 });
     }, [e, a]),
     (0, Ma.jsxs)(Ma.Fragment, {
       children: [
-        (0, Ma.jsx)("div", { className: ya(Em, !e && Hm), onWheel: a.handleMouseWheel }),
+        (0, Ma.jsx)("div", { className: W(Em, !e && Hm), onWheel: a.handleMouseWheel }),
         (0, Ma.jsx)(wm.Header, { classNames: Lm }),
         (0, Ma.jsx)(wm.Body, { children: (0, Ma.jsx)(wm.Footer, {}) }),
       ],
     })
   );
 }
-var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
+var Xm = C.cubicBezier(0.33, 0, 0.25, 1),
   Km = "first",
   qm = "second",
   Qm = "closedArrowInLoop",
@@ -4881,14 +4874,14 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
   Zm = xa(function ({ visible: e, totalEfficiencyStylesApi: a }) {
     const { model: t } = Co(),
       s = t.computes.personalEffiency(),
-      { closedPosition: r, overlayApi: i, shadowApi: l, arrowStylesApi: o } = qd(),
-      { breakpoint: c } = Me(),
-      [d, u] = (0, Ta.useState)(Qm),
-      [m, _] = L(() => ({ opacity: 0 })),
-      p = (0, Ta.useMemo)(
+      { closedPosition: r, overlayApi: n, shadowApi: i, arrowStylesApi: l } = qd(),
+      { breakpoint: o } = ie(),
+      [c, d] = (0, Ta.useState)(Qm),
+      [u, m] = pa(() => ({ opacity: 0 })),
+      _ = (0, Ta.useMemo)(
         () =>
           (function ({ breakpointName: e, assault: a, defend: t }) {
-            const s = "small" === e ? Se.extraSmall : e;
+            const s = "small" === e ? _e.extraSmall : e;
             return [
               cm.accessor("account", {
                 id: du,
@@ -4896,7 +4889,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                 footer: () => (0, Ma.jsx)(Iu, { assault: a, defend: t }),
                 enableSorting: !1,
                 cell: (e) => (0, Ma.jsx)(Xu, { account: e.getValue() }),
-                meta: { className: ya(rm, im), column: xu[du][s] },
+                meta: { className: W(rm, im), column: xu[du][s] },
               }),
               cm.accessor("vehicle", {
                 id: uu,
@@ -4916,7 +4909,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: lm,
                   }),
-                meta: { column: yu, className: ya(rm, nm) },
+                meta: { column: yu, className: W(rm, nm) },
               }),
               cm.accessor("damageDealt", {
                 id: _u,
@@ -4929,7 +4922,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: lm,
                   }),
-                meta: { className: ya(rm, nm), column: yu },
+                meta: { className: W(rm, nm), column: yu },
               }),
               cm.accessor("damageBlockedByArmor", {
                 id: pu,
@@ -4942,7 +4935,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: lm,
                   }),
-                meta: { className: ya(rm, nm), column: yu },
+                meta: { className: W(rm, nm), column: yu },
               }),
               cm.accessor("damageAssisted", {
                 id: fu,
@@ -4955,7 +4948,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: om,
                   }),
-                meta: { className: ya(rm, nm), column: yu },
+                meta: { className: W(rm, nm), column: yu },
               }),
               cm.accessor("damageAssistedStun", {
                 id: bu,
@@ -4968,7 +4961,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: lm,
                   }),
-                meta: { className: ya(rm, nm), column: yu },
+                meta: { className: W(rm, nm), column: yu },
               }),
               cm.accessor("spotted", {
                 id: hu,
@@ -4981,7 +4974,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: lm,
                   }),
-                meta: { className: ya(rm, nm), column: yu },
+                meta: { className: W(rm, nm), column: yu },
               }),
               cm.accessor("criticalDamage", {
                 id: vu,
@@ -4994,19 +4987,19 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                     userName: e.row.original.account.username,
                     className: om,
                   }),
-                meta: { className: ya(rm, nm), column: yu },
+                meta: { className: W(rm, nm), column: yu },
               }),
             ];
-          })({ breakpointName: c.name, assault: s.assault, defend: s.defend }),
-        [c.name, s.assault, s.defend],
+          })({ breakpointName: o.name, assault: s.assault, defend: s.defend }),
+        [o.name, s.assault, s.defend],
       );
     return (
       (0, Ta.useEffect)(() => {
-        if (e && d === Qm) return (o.stop(), void u(Km));
-        if (!e && d === Ym) return (o.stop(), void u(qm));
-        switch (d) {
+        if (e && c === Qm) return (l.stop(), void d(Km));
+        if (!e && c === Ym) return (l.stop(), void d(qm));
+        switch (c) {
           case Qm:
-            o.start({
+            l.start({
               from: { x: "-50%", y: "0", rotate: 180, opacity: 1 },
               to: [
                 { x: "-50%", y: "-5rem", rotate: 180, opacity: 0 },
@@ -5018,7 +5011,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
             });
             break;
           case Km:
-            (o.start({
+            (l.start({
               to: { opacity: 0, x: "-50%", y: e ? "40rem" : "0", rotate: e ? 0 : 180 },
               immediate: !0,
             }),
@@ -5027,41 +5020,41 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                 delay: e ? 0 : 150,
                 config: { easing: Xm, duration: 200 },
               }),
-              i.start({
+              n.start({
                 to: {
                   y: e ? "0" : r,
                   backgroundColor: e ? "rgba(22, 30, 40, 0.96)" : "transparent",
                 },
                 config: { easing: Xm, duration: 200 },
                 delay: e ? 0 : 150,
-                onRest: () => u(e ? qm : Qm),
+                onRest: () => d(e ? qm : Qm),
               }),
-              l.start({
+              i.start({
                 to: { opacity: e ? 1 : 0 },
                 delay: e ? 0 : 150,
                 config: { easing: Xm, duration: 200 },
               }),
-              _.start({
+              m.start({
                 to: { opacity: e ? 1 : 0 },
                 delay: e ? 150 : 0,
                 config: { easing: Xm, duration: 100 },
               }));
             break;
           case qm:
-            (o.start({
+            (l.start({
               to: { opacity: 0, x: "-50%", y: e ? "40rem" : "0", rotate: e ? 0 : 180 },
               immediate: !0,
             }),
-              u(e ? Ym : Km));
+              d(e ? Ym : Km));
             break;
           case Ym: {
-            const e = c.weight > ta.large.weight ? "53rem" : "40rem";
-            o.start({
+            const e = o.weight > Ve.large.weight ? "53rem" : "40rem";
+            l.start({
               from: { x: "-50%", y: e, rotate: 0, opacity: 1 },
               to: [
                 {
                   x: "-50%",
-                  y: c.weight > ta.large.weight ? "58rem" : "45rem",
+                  y: o.weight > Ve.large.weight ? "58rem" : "45rem",
                   rotate: 0,
                   opacity: 0,
                   config: { duration: 1e3 },
@@ -5075,17 +5068,17 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
             break;
           }
         }
-      }, [d, e, r, c.weight, o, i, l, _, a]),
+      }, [c, e, r, o.weight, l, n, i, m, a]),
       (0, Ta.useLayoutEffect)(() => {
-        !1 === e && d === Qm && i.start({ to: { y: r }, immediate: !0 });
-      }, [r, e, d, i]),
-      (0, Ma.jsx)(n.div, {
+        !1 === e && c === Qm && n.start({ to: { y: r }, immediate: !0 });
+      }, [r, e, c, n]),
+      (0, Ma.jsx)(M.div, {
         className: zm,
-        style: m,
+        style: u,
         children: (0, Ma.jsx)(wm, {
-          config: p,
+          config: _,
           data: s,
-          className: ya(Am, !e && Cm),
+          className: W(Am, !e && Cm),
           children: (0, Ma.jsx)($m, {}),
         }),
       })
@@ -5096,37 +5089,37 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
       a = e.computes.personalEffiency(),
       t = e.computes.personalInfo().efficiencyValues.prestigePoints,
       s = e.battleInfo.get().finishReasonClarification,
-      r = Z.resolve("strings"),
-      i = le(),
-      { hintKeyRef: l, overlayDividerRef: o, personalEfficiencyRef: c, completedSteps: d } = gt(),
-      u = !1 === d.has(bt.fifth),
-      [m] = L(() => ({ from: { opacity: 0 }, ref: l })),
-      [_] = L(() => ({ from: { maskSize: "0% 100%" }, ref: o })),
-      [p] = L(() => ({ from: { opacity: 0 }, ref: c })),
-      f = Oe(
+      r = $.resolve("strings"),
+      n = le(),
+      { hintKeyRef: i, overlayDividerRef: l, personalEfficiencyRef: o, completedSteps: c } = gt(),
+      d = !1 === c.has(bt.fifth),
+      [u] = pa(() => ({ from: { opacity: 0 }, ref: i })),
+      [m] = pa(() => ({ from: { maskSize: "0% 100%" }, ref: l })),
+      [_] = pa(() => ({ from: { opacity: 0 }, ref: o })),
+      p = ia(
         { value: 159 },
         { medium: { value: 187 }, large: { value: 199 }, extraLarge: { value: 267 } },
       ),
-      { active: b } = k(),
-      h = (0, Ta.useRef)(null),
-      [v, g] = (0, Ta.useState)(0),
-      [y, x] = (0, Ta.useState)(!1),
-      [N, I] = L(() => ({ opacity: y ? 0 : 1 }));
+      { active: f } = E(),
+      b = (0, Ta.useRef)(null),
+      [h, v] = (0, Ta.useState)(0),
+      [g, y] = (0, Ta.useState)(!1),
+      [x, N] = pa(() => ({ opacity: g ? 0 : 1 }));
     ((0, Ta.useEffect)(() => {
-      b !== Ba.overview && x(!1);
-    }, [b]),
-      Q(
-        h,
+      f !== Ba.overview && y(!1);
+    }, [f]),
+      L(
+        b,
         (0, Ta.useCallback)(() => {
-          const e = h.current?.getBoundingClientRect().height || 0;
-          e > 0 && g(Math.round(e));
-        }, [g]),
+          const e = b.current?.getBoundingClientRect().height || 0;
+          e > 0 && v(Math.round(e));
+        }, [v]),
       ));
-    const j = (0, Ta.useMemo)(() => (v > 0 ? $e(v) - f.value + "rem" : "150%"), [v, f]),
-      w = (0, Ta.useMemo)(dm, []);
+    const I = (0, Ta.useMemo)(() => (h > 0 ? Ae(h) - p.value + "rem" : "150%"), [h, p]),
+      j = (0, Ta.useMemo)(dm, []);
     if (0 === a.assault && 0 === a.defend && 0 === a.rows.length)
-      return (0, Ma.jsxs)(n.div, {
-        style: p,
+      return (0, Ma.jsxs)(M.div, {
+        style: _,
         className: Pm,
         children: [
           "" !== s &&
@@ -5143,40 +5136,40 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
     return (0, Ma.jsxs)(Ma.Fragment, {
       children: [
         (0, Ma.jsx)(Qd, {
-          closedPosition: j,
-          visible: y,
-          changeVisible: x,
+          closedPosition: I,
+          visible: g,
+          changeVisible: y,
           children: (0, Ma.jsx)("div", {
-            className: ya(Tm, 0 === v && Rm, u && km),
+            className: W(Tm, 0 === h && Rm, d && km),
             children: (0, Ma.jsxs)(cu, {
-              ref: h,
+              ref: b,
               children: [
-                (0, Ma.jsx)(n.div, {
-                  className: ya(Wm, !1 === y && Mm),
-                  style: _,
+                (0, Ma.jsx)(M.div, {
+                  className: W(Wm, !1 === g && Mm),
+                  style: m,
                   children: (0, Ma.jsx)(cu.OverlayDivider, {}),
                 }),
-                (0, Ma.jsx)(Zm, { visible: y, totalEfficiencyStylesApi: I }),
-                (0, Ma.jsx)(n.div, {
+                (0, Ma.jsx)(Zm, { visible: g, totalEfficiencyStylesApi: N }),
+                (0, Ma.jsx)(M.div, {
                   className: Bm,
-                  style: m,
-                  children: (0, Ma.jsx)(cu.HintKey, { disabled: b !== Ba.overview }),
+                  style: u,
+                  children: (0, Ma.jsx)(cu.HintKey, { disabled: f !== Ba.overview }),
                 }),
               ],
             }),
           }),
         }),
-        (0, Ma.jsx)(n.div, {
-          style: N,
-          className: ya(Dm, (y || u) && Om),
+        (0, Ma.jsx)(M.div, {
+          style: x,
+          className: W(Dm, (g || d) && Om),
           onClick: function (e) {
             (e.stopPropagation(),
-              x(!0),
-              i.play("click", { original: e, target: "overview:total-personal-efficiency" }),
-              i.play("openOverlay", { original: e, target: "overview:total-personal-efficiency" }));
+              y(!0),
+              n.play("click", { original: e, target: "overview:total-personal-efficiency" }),
+              n.play("openOverlay", { original: e, target: "overview:total-personal-efficiency" }));
           },
-          children: (0, Ma.jsxs)(n.div, {
-            style: p,
+          children: (0, Ma.jsxs)(M.div, {
+            style: _,
             children: [
               "" !== s &&
                 (0, Ma.jsx)("div", {
@@ -5188,7 +5181,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                   }),
                 }),
               (0, Ma.jsxs)(Nm, {
-                config: w,
+                config: j,
                 data: a,
                 className: Vm,
                 children: [
@@ -5216,92 +5209,92 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
       }),
     });
   }),
-  a_ = f("Overview", Td),
+  a_ = v("Overview", Td),
   t_ = xa(function ({ className: e }) {
     const a = le(),
       { model: t, controls: s } = Co(),
       r = t.additionalBonus.get(),
-      i = t.personalEfficiency.achievements.get(),
+      n = t.personalEfficiency.achievements.get(),
       {
-        step: l,
+        step: i,
         battleStatusRef: o,
         dividerRef: c,
         earnedCurrenciesRef: d,
         bonusRef: u,
         setAllMedalsAnimated: m,
       } = gt(),
-      [_] = L(() => ({ from: { opacity: 0, y: "-10rem" }, ref: o })),
-      [p] = L(() => ({ from: { maskSize: "0% 100%" }, ref: c })),
-      [f] = L(() => ({ from: { opacity: 0, y: "-10rem" }, ref: d })),
-      [b] = L(() => ({ from: { opacity: 0, y: "10rem" }, ref: u })),
+      [_] = pa(() => ({ from: { opacity: 0, y: "-10rem" }, ref: o })),
+      [p] = pa(() => ({ from: { maskSize: "0% 100%" }, ref: c })),
+      [f] = pa(() => ({ from: { opacity: 0, y: "-10rem" }, ref: d })),
+      [b] = pa(() => ({ from: { opacity: 0, y: "10rem" }, ref: u })),
       { api: h, setCompletedAnimationIndexes: v } = Mo(),
       g = t.computes.premiumAndStandartEarnings(),
-      y = i.length > 0;
+      y = n.length > 0;
     return (
       (0, Ta.useEffect)(() => {
-        0 === i.length && m(!0);
-      }, [i.length, m]),
+        0 === n.length && m(!0);
+      }, [n.length, m]),
       (0, Ta.useEffect)(() => {
-        if (l === bt.immediate)
+        if (i === bt.immediate)
           return (
             h.start(() => ({ x: 0, y: 0, scale: 1, opacity: 1, immediate: !0 })),
             m(!0),
-            void v(new Set(ca(i.length, (e) => e)))
+            void v(new Set(l(n.length, (e) => e)))
           );
-        if (l === bt.first) {
-          const e = 500 * Math.log(i.length),
-            t = 150 * Math.log(i.length);
+        if (i === bt.first) {
+          const e = 500 * Math.log(n.length),
+            t = 150 * Math.log(n.length);
           (h.start((s) => {
-            const r = e - 500 * Math.log(i.length - s),
-              n = t - 150 * Math.log(i.length - s);
+            const r = e - 500 * Math.log(n.length - s),
+              i = t - 150 * Math.log(n.length - s);
             return {
               x: 0,
               y: 0,
               scale: 1,
               delay: 200 * s + r,
-              config: { duration: 400 + n, easing: z.cubicBezier(1, 0, 0.95, 1) },
+              config: { duration: 400 + i, easing: C.cubicBezier(1, 0, 0.95, 1) },
               onRest() {
                 (a.play("achievementAppeared", { target: "overview" }),
-                  s === i.length - 1 && m(!0),
-                  v((e) => ua(e, s)));
+                  s === n.length - 1 && m(!0),
+                  v((e) => ce(e, s)));
               },
             };
           }),
             h.start((a) => ({
               opacity: 1,
-              delay: 150 + 200 * a + (e - 500 * Math.log(i.length - a)),
+              delay: 150 + 200 * a + (e - 500 * Math.log(n.length - a)),
               config: {
-                duration: 250 + (t - 150 * Math.log(i.length - a)),
-                easing: z.cubicBezier(0.33, 0, 0.25, 1),
+                duration: 250 + (t - 150 * Math.log(n.length - a)),
+                easing: C.cubicBezier(0.33, 0, 0.25, 1),
               },
             })));
         }
-      }, [l, h, v, a, i.length, m]),
+      }, [i, h, v, a, n.length, m]),
       (0, Ma.jsxs)(a_, {
-        className: ya(Od, e),
+        className: W(Od, e),
         children: [
           (0, Ma.jsx)("div", { className: Sd }),
           (0, Ma.jsx)(Xd, {}),
           (0, Ma.jsxs)("div", {
             className: Ed,
             children: [
-              (0, Ma.jsx)(n.div, {
+              (0, Ma.jsx)(M.div, {
                 style: _,
                 className: Hd,
                 children: (0, Ma.jsx)("div", { className: Vd, children: (0, Ma.jsx)(e_, {}) }),
               }),
               (0, Ma.jsxs)("div", {
-                className: ya(
+                className: W(
                   Md,
                   y && t.computes.earnedCurrencies().filter(({ value: e }) => e).length >= 4 && Gd,
                 ),
                 children: [
-                  (0, Ma.jsx)(n.div, { style: f, children: (0, Ma.jsx)(Bd, { className: Fd }) }),
+                  (0, Ma.jsx)(M.div, { style: f, children: (0, Ma.jsx)(Bd, { className: Fd }) }),
                   y && (0, Ma.jsx)("div", { className: Ld }),
                   (0, Ma.jsx)(Yo, { className: Ud }),
                 ],
               }),
-              (0, Ma.jsx)(n.div, {
+              (0, Ma.jsx)(M.div, {
                 style: p,
                 className: Dd,
                 children: (0, Ma.jsx)(Nt, { classNames: { base: zd, image: Wd } }),
@@ -5313,7 +5306,7 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
                 handleAdvertisement: (e) => s.useAdvertisement(e),
                 supportedAdvertisements: so,
                 showBonusDetails: s.showBonusDetails,
-                children: (0, Ma.jsx)(n.div, {
+                children: (0, Ma.jsx)(M.div, {
                   style: b,
                   children: (0, Ma.jsx)(md, { className: $d }),
                 }),
@@ -5340,8 +5333,8 @@ var Xm = z.cubicBezier(0.33, 0, 0.25, 1),
     return (0, Ma.jsx)("div", {
       ...t,
       ref: s,
-      className: ya(r_, e?.base, a),
-      children: (0, Ma.jsx)(l, {
+      className: W(r_, e?.base, a),
+      children: (0, Ma.jsx)(k, {
         className: e?.image,
         width: "100%",
         height: "100%",
@@ -5396,32 +5389,32 @@ var o_ = (0, Ta.forwardRef)(function (
   { achievement: e, achievementsLength: a, index: t, hoverIndex: s, setHoverIndex: r, ...n },
   i,
 ) {
-  const o = le(),
-    c = Le(
+  const l = le(),
+    o = Qe(
       e.tooltipId,
       (0, Ta.useMemo)(() => JSON.parse(e.tooltipArgs), [e.tooltipArgs]),
     ),
-    d = Oe(
+    c = ia(
       { width: "48rem", height: "48rem", path: `achievement.c_48x48.${e.iconName}` },
       { medium: { width: "67rem", height: "71rem", path: `achievement.${e.iconName}` } },
     );
   return (0, Ma.jsx)("div", {
     ...n,
-    ...c,
-    className: ya(i_.achievement, i_[`achievement__${l_(t, s)}`]),
+    ...o,
+    className: W(i_.achievement, i_[`achievement__${l_(t, s)}`]),
     style: { zIndex: t === s ? a + 1 : a - t },
     onMouseEnter: function (e) {
-      (c.onMouseEnter(e),
+      (o.onMouseEnter(e),
         r(t),
-        o.play("mouse-enter", {
+        l.play("mouse-enter", {
           original: e,
           target: "team-efficiency:efficiency-details:achievement",
         }));
     },
     onMouseLeave: () => {
-      (c.onMouseLeave(), r(void 0));
+      (o.onMouseLeave(), r(void 0));
     },
-    children: (0, Ma.jsx)(l, { ref: i, className: i_.achievementIcon, ...d }, e.iconName),
+    children: (0, Ma.jsx)(k, { ref: i, className: i_.achievementIcon, ...c }, e.iconName),
   });
 });
 function c_({ vehicleStatusKey: e, anonymized: a, personal: t, clanAbbrev: s, abbondonBattle: r }) {
@@ -5443,32 +5436,32 @@ var d_ = xa(function ({
     userStatus: i,
     killer: l,
   }) {
-    const o = Z.resolve("strings"),
-      [c, d] = (0, Ta.useState)(void 0),
+    const c = $.resolve("strings"),
+      [d, u] = (0, Ta.useState)(void 0),
       { model: m } = Co(),
       _ = m.computes.personalInfo(),
-      p = Oe(
+      p = ia(
         { width: "230rem", height: "184rem" },
         { medium: { width: "290rem", height: "232rem" } },
       ),
       f = wo({ personal: n, platoonType: jo(e, _.squadIndex, r), anonymizer: a.anonymizer }),
-      b = ye({
-        header: o
+      b = je({
+        header: c
           .readOrEmpty("tooltips.anonymizer.teamStats.header")
           .replace("%(name)s", f ? a.username : a.fakeUsername),
-        body: o.readOrEmpty("tooltips.anonymizer.teamStats.body"),
+        body: c.readOrEmpty("tooltips.anonymizer.teamStats.body"),
       }),
       h = -1 === (v = i.deathReason) ? "alive" : `dead${v}`;
     var v;
     const g = f ? l.fakeUsername : l.username,
-      x = void 0 === t;
+      y = void 0 === t;
     return (0, Ma.jsxs)("div", {
       className: i_.header,
       children: [
         (0, Ma.jsx)("div", {
           className: i_.vehicleImageWrapper,
-          children: (0, Ma.jsx)(ie, {
-            name: x ? "tank_empty" : t.techName,
+          children: (0, Ma.jsx)(ma, {
+            name: y ? "tank_empty" : t.techName,
             width: p.width,
             height: p.height,
           }),
@@ -5476,69 +5469,69 @@ var d_ = xa(function ({
         (0, Ma.jsxs)("div", {
           className: i_.info,
           children: [
-            (0, Ma.jsxs)(Qe, {
-              className: ya(i_.accountInfo, i_.accountInfo__simplified),
+            (0, Ma.jsxs)(Te, {
+              className: W(i_.accountInfo, i_.accountInfo__simplified),
               children: [
                 "" !== a.badge &&
-                  (0, Ma.jsx)(Qe.Badge, {
+                  (0, Ma.jsx)(Te.Badge, {
                     className: i_.accountInfoGap,
-                    size: Qe.Badge.sizes.x48x48,
+                    size: Te.Badge.sizes.x48x48,
                     badgeId: a.badge,
                   }),
-                (0, Ma.jsx)(Qe.Name, {
-                  className: ya(
+                (0, Ma.jsx)(Te.Name, {
+                  className: W(
                     i_.accountName,
                     i_.accountInfoGap,
                     a.teamKiller && i_.accountName__teamKiller,
                   ),
-                  children: (0, Ma.jsx)(F, { text: f ? a.fakeUsername : a.username }),
+                  children: (0, Ma.jsx)(o, { text: f ? a.fakeUsername : a.username }),
                 }),
                 "" !== a.clanAbbreviation &&
                   !f &&
-                  (0, Ma.jsx)(Qe.ClanTag, {
-                    className: ya(
+                  (0, Ma.jsx)(Te.ClanTag, {
+                    className: W(
                       i_.clanAbbreviation,
                       a.teamKiller && i_.clanAbbreviation__teamKiller,
                     ),
-                    children: (0, Ma.jsx)(pa, {
+                    children: (0, Ma.jsx)(ha, {
                       path: "common.clanTag",
                       params: { abbrev: a.clanAbbreviation },
                       brackets: { start: "{", end: "}" },
                     }),
                   }),
                 0 !== a.igrType &&
-                  (0, Ma.jsx)(Qe.IgrIcon, {
-                    size: Qe.IgrIcon.sizes.x64x28,
+                  (0, Ma.jsx)(Te.IgrIcon, {
+                    size: Te.IgrIcon.sizes.x64x28,
                     className: i_.accountInfoGap,
                   }),
                 "" !== a.suffixBadge &&
-                  (0, Ma.jsx)(Qe.Stripe, {
-                    size: Qe.Stripe.sizes.regular,
+                  (0, Ma.jsx)(Te.Stripe, {
+                    size: Te.Stripe.sizes.regular,
                     badgeId: a.suffixBadge,
                     className: i_.accountInfoGap,
                   }),
                 a.anonymizer &&
-                  (0, Ma.jsx)(Qe.AnonymizerIcon, {
+                  (0, Ma.jsx)(Te.AnonymizerIcon, {
                     ...b,
-                    size: Qe.AnonymizerIcon.sizes.x32x32,
+                    size: Te.AnonymizerIcon.sizes.x32x32,
                     className: i_.anonymizerIcon,
                   }),
               ],
             }),
             (0, Ma.jsx)("div", {
-              className: ya(i_.vehicle, a.teamKiller && i_.vehicle__teamKiller),
-              children: x
-                ? (0, Ma.jsx)(pa, { path: "ingame_gui.players_panel.unknown_vehicle" })
+              className: W(i_.vehicle, a.teamKiller && i_.vehicle__teamKiller),
+              children: y
+                ? (0, Ma.jsx)(ha, { path: "ingame_gui.players_panel.unknown_vehicle" })
                 : (0, Ma.jsxs)(Ma.Fragment, {
                     children: [
-                      (0, Ma.jsx)(y, {
+                      (0, Ma.jsx)(J, {
                         value: t.tier,
-                        className: ya(i_.vehicleLevel, i_.vehicleGap),
+                        className: W(i_.vehicleLevel, i_.vehicleGap),
                       }),
-                      (0, Ma.jsx)(u, {
+                      (0, Ma.jsx)(j, {
                         type: t.type,
                         size: "x24x24",
-                        className: ya(i_.vehicleType, i_.vehicleGap),
+                        className: W(i_.vehicleType, i_.vehicleGap),
                       }),
                       (0, Ma.jsx)("div", { className: i_.vehicleName, children: t.longName }),
                     ],
@@ -5546,7 +5539,7 @@ var d_ = xa(function ({
             }),
             (0, Ma.jsx)("div", {
               className: i_.vehicleState,
-              children: (0, Ma.jsx)(pa, {
+              children: (0, Ma.jsx)(ha, {
                 path: c_({
                   vehicleStatusKey: h,
                   anonymized: f,
@@ -5557,20 +5550,20 @@ var d_ = xa(function ({
                 params: {
                   killername: g,
                   clanTag: l.clanAbbreviation,
-                  killerClass: ya(i_.killerAccount, l.teamKiller && i_.killerAccount__teamKiller),
+                  killerClass: W(i_.killerAccount, l.teamKiller && i_.killerAccount__teamKiller),
                 },
               }),
             }),
             0 !== s.length &&
               (0, Ma.jsx)("div", {
                 className: i_.achievements,
-                children: q(xl(s), (e, a) =>
+                children: U(xl(s), (e, a) =>
                   (0, Ma.jsx)(
                     o_,
                     {
                       index: a,
-                      hoverIndex: c,
-                      setHoverIndex: d,
+                      hoverIndex: d,
+                      setHoverIndex: u,
                       achievement: e,
                       achievementsLength: s.length,
                     },
@@ -5583,25 +5576,25 @@ var d_ = xa(function ({
       ],
     });
   }),
-  u_ = f("StatisticsLabel"),
-  m_ = Z.resolve("strings"),
+  u_ = v("StatisticsLabel"),
+  m_ = $.resolve("strings"),
   __ = (0, Ta.forwardRef)(function ({ labelKey: e, ...a }, t) {
     return (0, Ma.jsx)(u_, { ...a, ref: t, children: m_.readOrEmpty(e) });
   }),
   p_ = "Value_798a6cdd",
   f_ = "Value_separator_798a6cdd",
-  b_ = Z.resolve("strings");
+  b_ = $.resolve("strings");
 function h_(e, a) {
   switch (e) {
     case io.Integer:
-      return p.formatNumber("integral", a);
+      return q.formatNumber("integral", a);
     case io.Float:
-      return p.formatReal("fractional", a);
+      return q.formatReal("fractional", a);
     default:
       return a;
   }
 }
-var v_ = f("StatisticsValue", p_),
+var v_ = v("StatisticsValue", p_),
   g_ = (0, Ta.forwardRef)(function (
     {
       labelKey: e,
@@ -5617,19 +5610,19 @@ var v_ = f("StatisticsValue", p_),
     return (0, Ma.jsx)(v_, {
       ...i,
       ref: l,
-      className: ya(n?.base, r),
-      children: q(a, (r, i) =>
+      className: W(n?.base, r),
+      children: U(a, (r, i) =>
         (0, Ma.jsxs)(
           Ta.Fragment,
           {
             children: [
               (0, Ma.jsx)("div", {
-                className: ya(0 === r && n?.zeroValue, r < 0 && n?.negativeValue),
+                className: W(0 === r && n?.zeroValue, r < 0 && n?.negativeValue),
                 children: h_(t, r),
               }),
               i < a.length - 1 &&
                 (0, Ma.jsxs)("div", {
-                  className: ya(f_, n?.separator),
+                  className: W(f_, n?.separator),
                   children: [" ", b_.readOrEmpty(s), " "],
                 }),
             ],
@@ -5643,19 +5636,19 @@ var v_ = f("StatisticsValue", p_),
   x_ = "Index_scrollAreaContent__initialized_b2629fde",
   N_ = "Index_item_6b7cdfb0",
   I_ = "Index_separator_add04e19",
-  j_ = f("Statistics", "Index_statistics_638478ff"),
-  w_ = f("StatisticsItem", N_),
-  A_ = f("StatisticsItemSeparator", I_);
+  j_ = v("Statistics", "Index_statistics_638478ff"),
+  w_ = v("StatisticsItem", N_),
+  A_ = v("StatisticsItemSeparator", I_);
 function C_({ children: e, scrollbarProps: a, scrollAreaProps: t }) {
-  const s = St(be().api);
+  const s = St(we().api);
   return (0, Ma.jsxs)(Ma.Fragment, {
     children: [
-      (0, Ma.jsx)(Ze, {
+      (0, Ma.jsx)(pe, {
         ...t,
-        classNames: { ...t?.classNames, content: ya(y_, s && x_, t?.classNames?.content) },
+        classNames: { ...t?.classNames, content: W(y_, s && x_, t?.classNames?.content) },
         children: e,
       }),
-      (0, Ma.jsx)(ra, { ...a }),
+      (0, Ma.jsx)(ge, { ...a }),
     ],
   });
 }
@@ -5663,7 +5656,7 @@ var B_ = (0, Ta.forwardRef)(function ({ scrollbarProps: e, scrollAreaProps: a, .
   return (0, Ma.jsx)(j_, {
     ...t,
     ref: s,
-    children: (0, Ma.jsx)(Ge, {
+    children: (0, Ma.jsx)(ra, {
       children: (0, Ma.jsx)(C_, { ...t, scrollbarProps: e, scrollAreaProps: a }),
     }),
   });
@@ -5683,18 +5676,18 @@ var P_ = "PlayerStatistics_scrollbar_987bbca2",
 function W_({ squareSize: e = 1, spacing: a = 2, backgroundColor: t = "#d9d9d9" }) {
   const s = (0, Ta.useRef)(null),
     [r, n] = (0, Ta.useState)(0),
-    l = e + a,
-    o = (0, Ta.useCallback)(() => {
+    i = e + a,
+    l = (0, Ta.useCallback)(() => {
       const e = s.current;
       if (null !== e) {
         const a = e.getBoundingClientRect().width,
-          t = $e(a);
-        n(Math.floor(t / l));
+          t = Ae(a);
+        n(Math.floor(t / i));
       }
-    }, [l]);
+    }, [i]);
   return (
-    G(o, [s.current, l, o]),
-    (0, Ta.useEffect)(() => i(o), [o]),
+    ba(l, [s.current, i, l]),
+    (0, Ta.useEffect)(() => d(l), [l]),
     (0, Ma.jsx)("div", {
       ref: s,
       className: V_,
@@ -5703,7 +5696,7 @@ function W_({ squareSize: e = 1, spacing: a = 2, backgroundColor: t = "#d9d9d9" 
           "div",
           {
             className: z_,
-            style: { backgroundColor: t, width: `${e}rem`, height: `${e}rem`, left: s * l + "rem" },
+            style: { backgroundColor: t, width: `${e}rem`, height: `${e}rem`, left: s * i + "rem" },
           },
           s,
         ),
@@ -5715,7 +5708,7 @@ function M_({ list: e }) {
   return (0, Ma.jsx)(B_, {
     scrollbarProps: { classNames: { base: P_ } },
     scrollAreaProps: { classNames: { content: S_ } },
-    children: q(e, (e) =>
+    children: U(e, (e) =>
       (0, Ma.jsxs)(
         Ta.Fragment,
         {
@@ -5737,11 +5730,11 @@ function M_({ list: e }) {
               ],
             }),
             void 0 !== e.details &&
-              q(e.details, (e) =>
+              U(e.details, (e) =>
                 (0, Ma.jsxs)(
                   B_.Item,
                   {
-                    className: ya(R_, O_),
+                    className: W(R_, O_),
                     children: [
                       (0, Ma.jsx)(B_.Label, {
                         className: k_,
@@ -5772,7 +5765,7 @@ var G_ = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   L_ = "EfficiencyDetails_dividerImage_5b9d06d2",
   $_ = "EfficiencyDetails_closeIcon_8d81da90",
   X_ = "EfficiencyDetails_statistics_30a81815",
-  K_ = f("EfficiencyDetails", "EfficiencyDetails_efficiencyDetails_1f97f967", {
+  K_ = v("EfficiencyDetails", "EfficiencyDetails_efficiencyDetails_1f97f967", {
     variants: { team: { [vo]: G_, [go]: F_ } },
   }),
   q_ = xa(function ({ team: e, className: a }) {
@@ -5782,10 +5775,10 @@ var G_ = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
       i = (0, Ta.useRef)(null);
     return (
       (0, Ta.useEffect)(() => {
-        const e = _a.down(([, e]) => {
+        const e = ue.down(([, e]) => {
             "outside" === e && s.teamEfficiency.selectRow(void 0);
           }),
-          a = oe(window, "click", (e) => {
+          a = Re(window, "click", (e) => {
             i.current && !i.current.contains(e.target) && s.teamEfficiency.selectRow(void 0);
           });
         return () => {
@@ -5817,7 +5810,7 @@ var G_ = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
                 children: (0, Ma.jsx)(M_, { list: r.detailedStatistics }),
               }),
               (0, Ma.jsx)(n_, { classNames: { base: U_, image: L_ } }),
-              (0, Ma.jsx)(l, {
+              (0, Ma.jsx)(k, {
                 className: $_,
                 width: "24rem",
                 height: "24rem",
@@ -5855,48 +5848,48 @@ var G_ = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   up = xa(function ({ account: e, team: a, squadIndex: t, className: s, classNames: r, ...n }) {
     const { model: i } = Co(),
       l = i.computes.personalInfo(),
-      o = wo({
+      c = wo({
         personal: l.account.username === e.username,
         platoonType: jo(a, l.squadIndex, t),
         anonymizer: e.anonymizer,
       });
-    return (0, Ma.jsxs)(Qe, {
+    return (0, Ma.jsxs)(Te, {
       ...n,
-      className: ya(rp, s),
+      className: W(rp, s),
       children: [
         "" !== e.badge &&
-          (0, Ma.jsx)(Qe.Badge, {
-            size: Qe.Badge.sizes.x24x24,
+          (0, Ma.jsx)(Te.Badge, {
+            size: Te.Badge.sizes.x24x24,
             badgeId: e.badge,
-            className: ya(lp, r?.badge),
+            className: W(lp, r?.badge),
           }),
-        (0, Ma.jsx)(Qe.Name, {
-          className: ya(np, r?.username),
-          children: (0, Ma.jsx)(F, { text: o ? e.fakeUsername : e.username }),
+        (0, Ma.jsx)(Te.Name, {
+          className: W(np, r?.username),
+          children: (0, Ma.jsx)(o, { text: c ? e.fakeUsername : e.username }),
         }),
         "" !== e.clanAbbreviation &&
-          !o &&
-          (0, Ma.jsx)(Qe.ClanTag, {
-            className: ya(ip, r?.clanAbbreviation),
-            children: (0, Ma.jsx)(pa, {
+          !c &&
+          (0, Ma.jsx)(Te.ClanTag, {
+            className: W(ip, r?.clanAbbreviation),
+            children: (0, Ma.jsx)(ha, {
               path: "common.clanTag",
               params: { abbrev: e.clanAbbreviation },
               brackets: { start: "{", end: "}" },
             }),
           }),
         0 !== e.igrType &&
-          (0, Ma.jsx)(Qe.IgrIcon, { size: Qe.IgrIcon.sizes.x34x16, className: ya(cp, r?.igrIcon) }),
+          (0, Ma.jsx)(Te.IgrIcon, { size: Te.IgrIcon.sizes.x34x16, className: W(cp, r?.igrIcon) }),
         "" !== e.suffixBadge &&
-          (0, Ma.jsx)(Qe.Stripe, {
-            size: Qe.Stripe.sizes.default,
+          (0, Ma.jsx)(Te.Stripe, {
+            size: Te.Stripe.sizes.default,
             badgeId: e.suffixBadge,
             className: dp,
             classNames: r?.suffixBadge,
           }),
         e.anonymizer &&
-          (0, Ma.jsx)(Qe.AnonymizerIcon, {
-            size: Qe.AnonymizerIcon.sizes.x24x24,
-            className: ya(op, r?.anonymizerIcon),
+          (0, Ma.jsx)(Te.AnonymizerIcon, {
+            size: Te.AnonymizerIcon.sizes.x24x24,
+            className: W(op, r?.anonymizerIcon),
           }),
       ],
     });
@@ -5904,8 +5897,8 @@ var G_ = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   mp = "AchievementsCell_achievementCell_e9bf973c",
   _p = "AchievementsCell_achievementsAmount_349c209a";
 function pp({ achievements: e }) {
-  const a = Z.resolve("strings"),
-    t = ye({ body: q(xl(e), (e) => a.readOrEmpty(`achievements.${e.name}`)).join("\n") }),
+  const a = $.resolve("strings"),
+    t = je({ body: U(xl(e), (e) => a.readOrEmpty(`achievements.${e.name}`)).join("\n") }),
     s = e.length;
   return 0 === s
     ? null
@@ -5913,31 +5906,31 @@ function pp({ achievements: e }) {
         ...t,
         className: mp,
         children: [
-          (0, Ma.jsx)(l, { path: "library.medal", width: "32rem", height: "32rem" }),
-          (0, Ma.jsx)("div", { className: _p, children: p.formatNumber("integral", s) }),
+          (0, Ma.jsx)(k, { path: "library.medal", width: "32rem", height: "32rem" }),
+          (0, Ma.jsx)("div", { className: _p, children: q.formatNumber("integral", s) }),
         ],
       });
 }
-var fp = { behaviour: pe.static, size: "32rem" },
-  bp = { behaviour: pe.static, size: "138rem" },
-  hp = { behaviour: pe.static, size: "212rem" },
-  vp = { behaviour: pe.static, size: "240rem" },
-  gp = { behaviour: pe.static, size: "180rem" },
-  yp = { behaviour: pe.static, size: "236rem" },
-  xp = { behaviour: pe.static, size: "292rem" },
-  Np = { behaviour: pe.static, size: "56rem" },
-  Ip = { behaviour: pe.static, size: "60rem" },
-  jp = { behaviour: pe.static, size: "80rem" },
-  wp = { behaviour: pe.static, size: "40rem" },
-  Ap = { behaviour: pe.static, size: "60rem" },
-  Cp = { behaviour: pe.static, size: "60rem" },
-  Bp = { behaviour: pe.static, size: "56rem" },
-  Pp = { behaviour: pe.static, size: "60rem" },
-  Sp = { behaviour: pe.static, size: "80rem" },
-  Tp = { behaviour: pe.static, size: "40rem" },
-  Rp = { behaviour: pe.static, size: "56rem" },
-  kp = { behaviour: pe.static, size: "60rem" },
-  Ep = { behaviour: pe.static, size: "80rem" };
+var fp = { behaviour: me.static, size: "32rem" },
+  bp = { behaviour: me.static, size: "138rem" },
+  hp = { behaviour: me.static, size: "212rem" },
+  vp = { behaviour: me.static, size: "240rem" },
+  gp = { behaviour: me.static, size: "180rem" },
+  yp = { behaviour: me.static, size: "236rem" },
+  xp = { behaviour: me.static, size: "292rem" },
+  Np = { behaviour: me.static, size: "56rem" },
+  Ip = { behaviour: me.static, size: "60rem" },
+  jp = { behaviour: me.static, size: "80rem" },
+  wp = { behaviour: me.static, size: "40rem" },
+  Ap = { behaviour: me.static, size: "60rem" },
+  Cp = { behaviour: me.static, size: "60rem" },
+  Bp = { behaviour: me.static, size: "56rem" },
+  Pp = { behaviour: me.static, size: "60rem" },
+  Sp = { behaviour: me.static, size: "80rem" },
+  Tp = { behaviour: me.static, size: "40rem" },
+  Rp = { behaviour: me.static, size: "56rem" },
+  kp = { behaviour: me.static, size: "60rem" },
+  Ep = { behaviour: me.static, size: "80rem" };
 var Hp = {
     headerCell__asc: "HeaderCell_headerCell__asc_204e6a44",
     headerCell__desc: "HeaderCell_headerCell__desc_dc5a7202",
@@ -5980,32 +5973,32 @@ var Hp = {
   },
   Vp = (0, Ta.forwardRef)(function ({ name: e, team: a, column: t, className: s, ...r }, n) {
     const i = t.getIsSorted(),
-      o = Z.resolve("strings"),
-      c = ye({
-        header: o.readOrEmpty(`battle_results.team.${Op[e]}.header`),
-        body: o.readOrEmpty(`battle_results.team.${Op[e]}.body`),
+      l = $.resolve("strings"),
+      o = je({
+        header: l.readOrEmpty(`battle_results.team.${Op[e]}.header`),
+        body: l.readOrEmpty(`battle_results.team.${Op[e]}.body`),
       }),
-      d = e === Y_;
+      c = e === Y_;
     return (0, Ma.jsx)("div", {
       ...r,
-      ...c,
+      ...o,
       ref: n,
-      className: ya(
+      className: W(
         Hp.headerCell,
-        d ? Hp.headerCell__text : Hp.headerCell__icon,
+        c ? Hp.headerCell__text : Hp.headerCell__icon,
         i && Hp[`headerCell__${i}`],
         s,
       ),
-      children: d
-        ? o.readOrEmpty(`battle_results.team.stats.${a}`)
-        : (0, Ma.jsx)(l, { width: "32rem", height: "32rem", path: Dp[e] }),
+      children: c
+        ? l.readOrEmpty(`battle_results.team.stats.${a}`)
+        : (0, Ma.jsx)(k, { width: "32rem", height: "32rem", path: Dp[e] }),
     });
   }),
   zp = "NumberValueCell_numberValueCell_8840a07";
 function Wp({ value: e, className: a, showZero: t = !0 }) {
   return !1 === t && 0 === e
     ? null
-    : (0, Ma.jsx)("div", { className: ya(zp, a), children: p.formatNumber("integral", e) });
+    : (0, Ma.jsx)("div", { className: W(zp, a), children: q.formatNumber("integral", e) });
 }
 var Mp = {
     platoon: "PlatoonCell_platoon_5fe0374b",
@@ -6040,10 +6033,10 @@ var Mp = {
     return (0, Ma.jsxs)("div", {
       className: Mp.platoon,
       children: [
-        (0, Ma.jsx)(l, { path: r(a), width: "32rem", height: "32rem" }),
+        (0, Ma.jsx)(k, { path: r(a), width: "32rem", height: "32rem" }),
         s !== xo &&
           (0, Ma.jsx)("div", {
-            className: ya(Mp.platoonText, Mp[`platoonText__${s}`]),
+            className: W(Mp.platoonText, Mp[`platoonText__${s}`]),
             children: e,
           }),
       ],
@@ -6058,12 +6051,12 @@ var Mp = {
 function Qp({ vehicle: e, classNames: a, className: t }) {
   const s = void 0 === e;
   return (0, Ma.jsxs)("div", {
-    className: ya(Up, t),
+    className: W(Up, t),
     children: [
       (0, Ma.jsx)("div", {
-        className: ya(Lp, a?.imageWrapper),
-        children: (0, Ma.jsx)(ie, {
-          size: ie.size.x120x96,
+        className: W(Lp, a?.imageWrapper),
+        children: (0, Ma.jsx)(ma, {
+          size: ma.size.x120x96,
           name: s ? "tank_empty" : e.techName,
           className: a?.image,
         }),
@@ -6071,18 +6064,18 @@ function Qp({ vehicle: e, classNames: a, className: t }) {
       !1 === s &&
         (0, Ma.jsxs)(Ma.Fragment, {
           children: [
-            (0, Ma.jsx)(y, { value: e.tier, className: ya(Xp, a?.level) }),
+            (0, Ma.jsx)(J, { value: e.tier, className: W(Xp, a?.level) }),
             (0, Ma.jsx)("div", {
-              className: ya($p, a?.typeWrapper),
-              children: (0, Ma.jsx)(u, { size: "x24x24", type: e.type, className: a?.type }),
+              className: W($p, a?.typeWrapper),
+              children: (0, Ma.jsx)(j, { size: "x24x24", type: e.type, className: a?.type }),
             }),
           ],
         }),
       (0, Ma.jsx)("div", {
-        className: ya(Kp, s && qp, a?.name),
+        className: W(Kp, s && qp, a?.name),
         children: s
-          ? (0, Ma.jsx)(pa, { path: "ingame_gui.players_panel.unknown_vehicle" })
-          : (0, Ma.jsx)(F, { text: e.name }),
+          ? (0, Ma.jsx)(ha, { path: "ingame_gui.players_panel.unknown_vehicle" })
+          : (0, Ma.jsx)(o, { text: e.name }),
       }),
     ],
   });
@@ -6153,7 +6146,7 @@ var Yp = {
     blink: "TableBodyRow_blink_5ecfc9f2",
     slideUpIn: "TableBodyRow_slideUpIn_5ecfc9f2",
   },
-  Jp = Re();
+  Jp = he();
 function ef(e, a, t) {
   const s = e.getValue("account"),
     r = e.getValue("squadIndex");
@@ -6169,11 +6162,11 @@ function af(e, a) {
   return e.getValue("damageDealt").damageDealt - a.getValue("damageDealt").damageDealt;
 }
 var tf = {
-  [he.heavyTank]: 5,
-  [he.mediumTank]: 4,
-  [he["AT-SPG"]]: 3,
-  [he.lightTank]: 2,
-  [he.SPG]: 1,
+  [Fe.heavyTank]: 5,
+  [Fe.mediumTank]: 4,
+  [Fe["AT-SPG"]]: 3,
+  [Fe.lightTank]: 2,
+  [Fe.SPG]: 1,
 };
 function sf({ team: e, personalInfo: a, breakpointName: t }) {
   const s = (t, s) =>
@@ -6182,16 +6175,16 @@ function sf({ team: e, personalInfo: a, breakpointName: t }) {
           n = ef(a, t, s);
         return r.localeCompare(n);
       })(t, s, a, e),
-    r = "small" === t ? Se.extraSmall : t,
+    r = "small" === t ? _e.extraSmall : t,
     n = {
-      [Q_]: { [Se.extraSmall]: fp, [Se.medium]: fp, [Se.large]: fp, [Se.extraLarge]: fp },
-      [Y_]: { [Se.extraSmall]: bp, [Se.medium]: hp, [Se.large]: hp, [Se.extraLarge]: vp },
-      [Z_]: { [Se.extraSmall]: gp, [Se.medium]: yp, [Se.large]: yp, [Se.extraLarge]: xp },
-      [ep]: { [Se.extraSmall]: Np, [Se.medium]: Ip, [Se.large]: Ip, [Se.extraLarge]: jp },
-      [ap]: { [Se.extraSmall]: wp, [Se.medium]: Ap, [Se.large]: Ap, [Se.extraLarge]: Cp },
-      [tp]: { [Se.extraSmall]: Bp, [Se.medium]: Pp, [Se.large]: Pp, [Se.extraLarge]: Sp },
-      [J_]: { [Se.extraSmall]: Tp, [Se.medium]: Tp, [Se.large]: Tp, [Se.extraLarge]: Tp },
-      [sp]: { [Se.extraSmall]: Rp, [Se.medium]: kp, [Se.large]: kp, [Se.extraLarge]: Ep },
+      [Q_]: { [_e.extraSmall]: fp, [_e.medium]: fp, [_e.large]: fp, [_e.extraLarge]: fp },
+      [Y_]: { [_e.extraSmall]: bp, [_e.medium]: hp, [_e.large]: hp, [_e.extraLarge]: vp },
+      [Z_]: { [_e.extraSmall]: gp, [_e.medium]: yp, [_e.large]: yp, [_e.extraLarge]: xp },
+      [ep]: { [_e.extraSmall]: Np, [_e.medium]: Ip, [_e.large]: Ip, [_e.extraLarge]: jp },
+      [ap]: { [_e.extraSmall]: wp, [_e.medium]: Ap, [_e.large]: Ap, [_e.extraLarge]: Cp },
+      [tp]: { [_e.extraSmall]: Bp, [_e.medium]: Pp, [_e.large]: Pp, [_e.extraLarge]: Sp },
+      [J_]: { [_e.extraSmall]: Tp, [_e.medium]: Tp, [_e.large]: Tp, [_e.extraLarge]: Tp },
+      [sp]: { [_e.extraSmall]: Rp, [_e.medium]: kp, [_e.large]: kp, [_e.extraLarge]: Ep },
     };
   return [
     Jp.accessor("squadIndex", {
@@ -6252,7 +6245,7 @@ function sf({ team: e, personalInfo: a, breakpointName: t }) {
       cell: (e) =>
         (0, Ma.jsx)(Wp, {
           value: e.getValue().damageDealt,
-          className: ya(Zp.numberValue, Zp.numberValue__alignRight),
+          className: W(Zp.numberValue, Zp.numberValue__alignRight),
         }),
       meta: { column: n[ep][r], className: Yp.alignRight },
     }),
@@ -6321,20 +6314,20 @@ var rf = "Header_row_e61ae0d9",
   lf = "Header_rowDividerImage_19f6e11",
   of = "Header_cell_70aa1da5";
 function cf({ className: e }) {
-  const { table: a } = aa(),
+  const { table: a } = sa(),
     t = le();
-  return (0, Ma.jsxs)(ue.Header, {
+  return (0, Ma.jsxs)(ne.Header, {
     className: e,
     children: [
       (0, Ma.jsx)(n_, { classNames: { base: nf, image: lf } }),
-      q(a.getHeaderGroups(), (e, a) =>
+      U(a.getHeaderGroups(), (e, a) =>
         (0, Ma.jsx)(
-          ue.Row,
+          ne.Row,
           {
             className: rf,
-            children: q(e.headers, (e, s) => {
+            children: U(e.headers, (e, s) => {
               return (0, Ma.jsx)(
-                ue.Cell,
+                ne.Cell,
                 {
                   onClick:
                     ((r = e.column.getToggleSortingHandler()),
@@ -6350,9 +6343,9 @@ function cf({ className: e }) {
                       target: "team-efficiency:efficiency-table:header:cell",
                       original: e,
                     }),
-                  cell: { ...e, rowIndex: a, index: s, tablePart: ge.header },
+                  cell: { ...e, rowIndex: a, index: s, tablePart: Oe.header },
                   className: of,
-                  children: !e.isPlaceholder && Fe(e.column.columnDef.header, e.getContext()),
+                  children: !e.isPlaceholder && oa(e.column.columnDef.header, e.getContext()),
                 },
                 e.id,
               );
@@ -6374,10 +6367,10 @@ var df = "SelectedRowTail_selectedRowTail_8abda9c8",
   bf = "SelectedRowTail_rowDividerImage_d11f29d5";
 function hf({ className: e, short: a }) {
   return (0, Ma.jsxs)("div", {
-    className: ya(df, !a && uf, e),
+    className: W(df, !a && uf, e),
     children: [
       (0, Ma.jsx)(n_, { classNames: { base: pf, image: bf } }),
-      (0, Ma.jsx)(n_, { classNames: { base: ya(pf, ff), image: bf } }),
+      (0, Ma.jsx)(n_, { classNames: { base: W(pf, ff), image: bf } }),
       (0, Ma.jsx)("div", { className: mf }),
       (0, Ma.jsx)("div", { className: _f }),
     ],
@@ -6389,7 +6382,7 @@ var vf = "personal",
   xf = xa(function ({ row: e, team: a, rowIndex: t, scrollbarVisible: s }) {
     const { model: r, controls: n } = Co(),
       i = le(),
-      l = ia(
+      l = se(
         (t) => {
           (t.stopPropagation(),
             i.play("click", { original: t, target: "team-efficiency:efficiency-table:body:row" }),
@@ -6409,14 +6402,14 @@ var vf = "personal",
       u = e.original.account.teamKiller,
       m = e.original.account.killed,
       _ = o?.team === a && o.username === e.original.account.username,
-      p = Ve({
+      p = Le({
         args: { vehicleCD: e.original.vehicle?.vehicleCD, databaseID: e.original.databaseId },
       });
-    return (0, Ma.jsxs)(ue.Row, {
+    return (0, Ma.jsxs)(ne.Row, {
       ...(d !== vf && p),
       onMouseEnter: (e) =>
         i.play("mouse-enter", { target: "team-efficiency:efficiency-table:body:row", original: e }),
-      className: ya(
+      className: W(
         Zp.tableBodyRow,
         _ && Zp.tableBodyRow__selected,
         d !== yf && Zp[`tableBodyRow__${d}`],
@@ -6433,23 +6426,23 @@ var vf = "personal",
             }),
             (0, Ma.jsx)(n_, {
               classNames: {
-                base: ya(Zp.selectedOverlayDivider, Zp.selectedOverlayDivider__bottom),
+                base: W(Zp.selectedOverlayDivider, Zp.selectedOverlayDivider__bottom),
                 image: Zp.selectedOverlayImage,
               },
             }),
             (0, Ma.jsx)(hf, {
               short: s && a === vo,
-              className: ya(Zp.selectedRowTail, Zp[`selectedRowTail__${a}`]),
+              className: W(Zp.selectedRowTail, Zp[`selectedRowTail__${a}`]),
             }),
           ],
         }),
         (0, Ma.jsx)(n_, { classNames: { base: Zp.rowDivider, image: Zp.rowDividerImage } }),
-        q(e.getVisibleCells(), (e, a) =>
+        U(e.getVisibleCells(), (e, a) =>
           (0, Ma.jsx)(
-            ue.Cell,
+            ne.Cell,
             {
-              cell: { ...e, rowIndex: t, index: a, tablePart: ge.body },
-              children: Fe(e.column.columnDef.cell, e.getContext()),
+              cell: { ...e, rowIndex: t, index: a, tablePart: Oe.body },
+              children: oa(e.column.columnDef.cell, e.getContext()),
             },
             e.id,
           ),
@@ -6459,24 +6452,24 @@ var vf = "personal",
     });
   });
 function Nf({ team: e }) {
-  const { table: a } = aa(),
-    { api: t } = be(),
-    s = ba(),
+  const { table: a } = sa(),
+    { api: t } = we(),
+    s = ua(),
     r = (0, Ta.useRef)(null),
-    [i, l] = (0, Ta.useState)(!1),
-    [o, c] = L(() => ({ from: { maskSize: "100% 100%" } }));
+    [n, i] = (0, Ta.useState)(!1),
+    [l, o] = pa(() => ({ from: { maskSize: "100% 100%" } }));
   return (
     (0, Ta.useEffect)(() => {
       function e() {
         s.run(() => {
           (!(function () {
             const [, e] = t.getBounds();
-            l(e > 0);
+            i(e > 0);
           })(),
             (function () {
               const [, e] = t.getBounds(),
                 a = (t.animationScroll.scrollPosition.get() / e) * 7;
-              c.start({ to: { maskSize: `100% ${e > 0 ? 100 + a : 107}%` } });
+              o.start({ to: { maskSize: `100% ${e > 0 ? 100 + a : 107}%` } });
             })());
         });
       }
@@ -6493,30 +6486,30 @@ function Nf({ team: e }) {
             t.events.off("resizeHandled", e));
         }
       );
-    }, [t, s, c]),
-    (0, Ma.jsxs)(ue.Body, {
+    }, [t, s, o]),
+    (0, Ma.jsxs)(ne.Body, {
       className: Yp.tableBody,
       children: [
-        (0, Ma.jsx)(n.div, {
+        (0, Ma.jsx)(M.div, {
           className: Yp.mask,
-          style: o,
-          children: (0, Ma.jsx)(Ze, {
+          style: l,
+          children: (0, Ma.jsx)(pe, {
             classNames: { content: Yp.scrollAreaContent },
             children: (0, Ma.jsx)("div", {
               ref: r,
               className: Yp.rowsWrapper,
-              children: q(a.getRowModel().rows, (a, t) =>
-                (0, Ma.jsx)(xf, { row: a, rowIndex: t, team: e, scrollbarVisible: i }, a.id),
+              children: U(a.getRowModel().rows, (a, t) =>
+                (0, Ma.jsx)(xf, { row: a, rowIndex: t, team: e, scrollbarVisible: n }, a.id),
               ),
             }),
           }),
         }),
-        (0, Ma.jsx)(ra, { classNames: { base: Yp.scrollBar } }),
+        (0, Ma.jsx)(ge, { classNames: { base: Yp.scrollBar } }),
       ],
     })
   );
 }
-var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
+var If = v("TeamEfficiencyTable", Yp.efficiencyTable, {
     variants: { team: { [vo]: Yp.efficiencyTable__allies, [go]: Yp.efficiencyTable__enemies } },
   }),
   jf = {
@@ -6537,7 +6530,7 @@ var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
         () => [{ id: jf[i.column], desc: i.sortDirection === kl.Desc }],
         [i.column, i.sortDirection],
       ),
-      o = Me().breakpoint.name,
+      o = ie().breakpoint.name,
       c = (0, Ta.useCallback)(
         (e) => {
           const a = (e instanceof Function ? e(l) : e)[0] ?? { id: Z_, desc: !0 };
@@ -6550,8 +6543,8 @@ var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
       ),
       d = (0, Ta.useMemo)(() => sf({ team: e, personalInfo: n, breakpointName: o }), [e, o, n]);
     return (
-      U(We(o), `Such breakpoint ${o} is not supported`),
-      (0, Ma.jsx)(Pe, {
+      _a(ta(o), `Such breakpoint ${o} is not supported`),
+      (0, Ma.jsx)($e, {
         columns: d,
         data: a,
         enableMultiRowSelection: !1,
@@ -6559,7 +6552,7 @@ var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
         sorting: l,
         onSortingChange: c,
         getRowId: (e) => e.account.username,
-        getFilteredRowModel: Ie(),
+        getFilteredRowModel: Ne(),
         globalFilterFn: (e) => 65281 !== e.original.vehicle?.vehicleCD,
         enableSorting: !0,
         initialState: { globalFilter: !0 },
@@ -6567,12 +6560,12 @@ var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
           team: e,
           className: t,
           children: (0, Ma.jsxs)(
-            ue,
+            ne,
             {
               className: Yp.table,
               children: [
                 (0, Ma.jsx)(cf, { className: Yp.header }),
-                (0, Ma.jsx)(Ge, { children: (0, Ma.jsx)(Nf, { team: e }) }),
+                (0, Ma.jsx)(ra, { children: (0, Ma.jsx)(Nf, { team: e }) }),
               ],
             },
             o,
@@ -6603,34 +6596,34 @@ var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
     blink: "TeamEfficiency_blink_f795cecf",
     slideUpIn: "TeamEfficiency_slideUpIn_f795cecf",
   },
-  Cf = f("TeamEfficiency", Af.base),
+  Cf = v("TeamEfficiency", Af.base),
   Bf = xa(function ({ className: e }) {
     const { model: a } = Co(),
       t = a.teamsStatistic.allies.get(),
       s = a.teamsStatistic.enemies.get(),
       r = a.teamsStatistic.selectedRow.get();
     return (0, Ma.jsx)(Cf, {
-      className: ya(Af[`base__${r?.team}`], e),
+      className: W(Af[`base__${r?.team}`], e),
       children: (0, Ma.jsxs)("div", {
         className: Af.wrapper,
         children: [
           (0, Ma.jsx)(q_, {
             team: go,
-            className: ya(Af.details, r?.team === go && Af.details__visible),
+            className: W(Af.details, r?.team === go && Af.details__visible),
           }),
           (0, Ma.jsx)(wf, {
             data: t,
             team: vo,
-            className: ya(Af.table, r?.team === go && Af.table__hidden),
+            className: W(Af.table, r?.team === go && Af.table__hidden),
           }),
           (0, Ma.jsx)(q_, {
             team: vo,
-            className: ya(Af.details, r?.team === vo && Af.details__visible),
+            className: W(Af.details, r?.team === vo && Af.details__visible),
           }),
           (0, Ma.jsx)(wf, {
             data: s,
             team: go,
-            className: ya(Af.table, r?.team === vo && Af.table__hidden),
+            className: W(Af.table, r?.team === vo && Af.table__hidden),
           }),
         ],
       }),
@@ -6671,43 +6664,43 @@ var If = f("TeamEfficiencyTable", Yp.efficiencyTable, {
     blink: "App_blink_0",
     slideUpIn: "App_slideUpIn_0",
   },
-  Sf = f("PostBattle", Pf.base),
-  Tf = f("PostBattleNavigation", Pf.navigation);
+  Sf = v("PostBattle", Pf.base),
+  Tf = v("PostBattleNavigation", Pf.navigation);
 function Rf() {
-  const { active: e } = k();
+  const { active: e } = E();
   return (0, Ma.jsxs)("div", {
-    className: ya(Pf.content, Pf[`content__${e}`]),
+    className: W(Pf.content, Pf[`content__${e}`]),
     children: [
-      (0, Ma.jsx)(s_, { className: ya(Pf.tab, Pf.tab__overview) }),
-      (0, Ma.jsx)(Bf, { className: ya(Pf.tab, Pf.tab__teamScore) }),
-      (0, Ma.jsx)(zo, { className: ya(Pf.tab, Pf.tab__missionProgress) }),
-      (0, Ma.jsx)(al, { className: ya(Pf.tab, Pf.tab__financialReport) }),
+      (0, Ma.jsx)(s_, { className: W(Pf.tab, Pf.tab__overview) }),
+      (0, Ma.jsx)(Bf, { className: W(Pf.tab, Pf.tab__teamScore) }),
+      (0, Ma.jsx)(zo, { className: W(Pf.tab, Pf.tab__missionProgress) }),
+      (0, Ma.jsx)(al, { className: W(Pf.tab, Pf.tab__financialReport) }),
     ],
   });
 }
 var kf = xa(function () {
-    const e = Z.resolve("strings"),
+    const e = $.resolve("strings"),
       a = le(),
-      t = ve(),
+      t = xe(),
       {
         battleInfoRef: s,
         navigationRef: r,
-        completedSteps: i,
-        step: l,
-        readyForNotifications: o,
+        completedSteps: n,
+        step: i,
+        readyForNotifications: l,
       } = gt(),
-      c = at(),
-      [d] = L(() => ({ from: { opacity: 0, y: "-10rem" }, ref: r })),
-      [u] = L(() => ({ from: { opacity: 0 }, ref: s })),
-      { model: m, controls: _ } = Co(),
-      f = m.computes.personalInfo(),
-      b = m.battleInfo.get(),
-      { active: h } = k();
+      o = at(),
+      [c] = pa(() => ({ from: { opacity: 0, y: "-10rem" }, ref: r })),
+      [d] = pa(() => ({ from: { opacity: 0 }, ref: s })),
+      { model: u, controls: m } = Co(),
+      _ = u.computes.personalInfo(),
+      p = u.battleInfo.get(),
+      { active: f } = E();
     return (
-      C(ze.ESCAPE, _.close),
-      j(() => {
+      P(la.ESCAPE, m.close),
+      y(() => {
         function e(e) {
-          e.altKey || e.shiftKey || e.ctrlKey || Ne.tooltip.hideAll();
+          e.altKey || e.shiftKey || e.ctrlKey || Se.tooltip.hideAll();
         }
         return (
           document.addEventListener("keydown", e),
@@ -6717,54 +6710,54 @@ var kf = xa(function () {
         );
       }),
       (0, Ta.useEffect)(() => {
-        h !== Ba.progression && o && !1 === c.state.read
-          ? c.controls.start()
-          : h !== Ba.progression
-            ? c.state.read && h !== Ba.progression && c.controls.wait()
-            : c.controls.read();
-      }, [c.state.read, c.controls, h, o]),
+        f !== Ba.progression && l && !1 === o.state.read
+          ? o.controls.start()
+          : f !== Ba.progression
+            ? o.state.read && f !== Ba.progression && o.controls.wait()
+            : o.controls.read();
+      }, [o.state.read, o.controls, f, l]),
       (0, Ta.useEffect)(() => {
-        l === bt.fourth && a.play("exitResult", { target: "post-battle" });
-      }, [l, a]),
+        i === bt.fourth && a.play("exitResult", { target: "post-battle" });
+      }, [i, a]),
       (0, Ma.jsxs)(Sf, {
-        className: ya(Pf.base, Pf[`base__${h}`]),
+        className: W(Pf.base, Pf[`base__${f}`]),
         style: { width: `${t}rem` },
         children: [
-          h !== Ba.overview && (0, Ma.jsx)("div", { className: Pf.vignette }),
+          f !== Ba.overview && (0, Ma.jsx)("div", { className: Pf.vignette }),
           (0, Ma.jsx)(Rf, {}),
-          (0, Ma.jsx)(n.div, {
-            style: d,
+          (0, Ma.jsx)(M.div, {
+            style: c,
             children: (0, Ma.jsx)(Tf, {
-              className: !1 === i.has(bt.navigation) && Pf.navigation__disabled,
-              children: (0, Ma.jsxs)(we.Switcher, {
+              className: !1 === n.has(bt.navigation) && Pf.navigation__disabled,
+              children: (0, Ma.jsxs)(ke.Switcher, {
                 className: Pf.switcher,
                 classNames: { mainBorder: Pf.mainBorderSwitcher },
                 children: [
-                  (0, Ma.jsx)(we.Tab, {
+                  (0, Ma.jsx)(ke.Tab, {
                     tabId: Ba.overview,
-                    children: p.toUpperCase(
+                    children: q.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.battleResults"),
                     ),
                   }),
-                  (0, Ma.jsx)(we.Tab, {
+                  (0, Ma.jsx)(ke.Tab, {
                     tabId: Ba.teamsStatistics,
-                    children: p.toUpperCase(
+                    children: q.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.teamEfficiency"),
                     ),
                   }),
-                  (0, Ma.jsxs)(we.Tab, {
+                  (0, Ma.jsxs)(ke.Tab, {
                     tabId: Ba.progression,
                     children: [
-                      p.toUpperCase(
+                      q.toUpperCase(
                         e.readOrEmpty("battle_results.battleResult.navigation.missionsProgress"),
                       ),
                       (0, Ma.jsx)(ft.Bubble, { className: Pf.notificationBubble }),
                       (0, Ma.jsx)(ft.Items, { className: Pf.progressionNotificationItems }),
                     ],
                   }),
-                  (0, Ma.jsx)(we.Tab, {
+                  (0, Ma.jsx)(ke.Tab, {
                     tabId: Ba.financialReport,
-                    children: p.toUpperCase(
+                    children: q.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.financialReport"),
                     ),
                   }),
@@ -6772,35 +6765,35 @@ var kf = xa(function () {
               }),
             }),
           }),
-          b &&
-            (0, Ma.jsx)(n.div, {
+          p &&
+            (0, Ma.jsx)(M.div, {
               className: Pf.info,
-              style: u,
+              style: d,
               children: (0, Ma.jsxs)($a, {
                 children: [
                   (0, Ma.jsx)($a.Arena, {
-                    arenaName: b.arenaName,
-                    arenaType: b.arenaType,
-                    finishReasonKey: b.finishReasonKey,
-                    status: b.status,
-                    modeName: b.modeName,
+                    arenaName: p.arenaName,
+                    arenaType: p.arenaType,
+                    finishReasonKey: p.finishReasonKey,
+                    status: p.status,
+                    modeName: p.modeName,
                   }),
-                  (0, Ma.jsx)($a.StartTime, { startTime: b.startTime }),
+                  (0, Ma.jsx)($a.StartTime, { startTime: p.startTime }),
                   (0, Ma.jsx)($a.Player, {
-                    vehicleName: f.vehicle.name,
-                    vehicleLevel: f.vehicle.tier,
-                    vehicleType: f.vehicle.type,
-                    userName: f.account.username,
-                    clan: f.account.clanAbbreviation,
-                    teamKiller: f.account.teamKiller,
+                    vehicleName: _.vehicle.name,
+                    vehicleLevel: _.vehicle.tier,
+                    vehicleType: _.vehicle.type,
+                    userName: _.account.username,
+                    clan: _.account.clanAbbreviation,
+                    teamKiller: _.account.teamKiller,
                   }),
                   (0, Ma.jsx)($a.PlayerStatus, {
-                    killer: f.killer,
-                    deathReasonKey: f.userStatus.deathReason,
-                    abandonBattle: f.userStatus.abandonBattle,
+                    killer: _.killer,
+                    deathReasonKey: _.userStatus.deathReason,
+                    abandonBattle: _.userStatus.abandonBattle,
                   }),
                   (0, Ma.jsx)($a.CommendationScore, {
-                    commendationsReceived: b.commendationsReceived,
+                    commendationsReceived: p.commendationsReceived,
                   }),
                 ],
               }),
@@ -6810,13 +6803,13 @@ var kf = xa(function () {
     );
   }),
   Ef = xa(function () {
-    const e = je(),
+    const e = S(),
       { model: a } = Co(),
-      { size: t } = Oe(
-        { size: w.small },
-        { large: { size: w.medium }, extraLarge: { size: w.large } },
+      { size: t } = ia(
+        { size: B.small },
+        { large: { size: B.medium }, extraLarge: { size: B.large } },
       );
-    return (0, Ma.jsx)(we, {
+    return (0, Ma.jsx)(ke, {
       theme: "primary",
       size: t,
       active: Pa(e.location),
@@ -6831,7 +6824,7 @@ var kf = xa(function () {
       }),
     });
   }),
-  Hf = Te({
+  Hf = ze({
     click: {
       "expandable-overlay": "yes",
       "expandable-overlay:hint-key": "yes",
@@ -6860,9 +6853,9 @@ var kf = xa(function () {
     exitResult: { "post-battle": "ue_06_result_exit" },
     notificationBubbleAppeared: { "mission-progress:bubble": "gui_pbs_notification_bubble" },
   }),
-  Df = new qe()
+  Df = new aa()
     .add(Ao)
-    .addWithProps(d, { soundsOverrides: Hf })
-    .addWithProps(De, { context: "model.router" })
+    .addWithProps(f, { soundsOverrides: Hf })
+    .addWithProps(Ee, { context: "model.router" })
     .addWithProps(Sa, { options: { context: "model.scheduleInfo" } });
-(W(), N(Df.render((0, Ma.jsx)(Ef, {})), { fullScreen: !0 }));
+(va(), I(Df.render((0, Ma.jsx)(Ef, {})), { fullScreen: !0 }));

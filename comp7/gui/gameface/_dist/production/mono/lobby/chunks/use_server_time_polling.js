@@ -1,4 +1,4 @@
-import { da as o } from "./lib.js";
+import { ua as o } from "./lib.js";
 function i(i, t, a, r = 950) {
   o(
     () => {

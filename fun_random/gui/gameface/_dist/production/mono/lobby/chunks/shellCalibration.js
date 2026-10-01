@@ -1,5 +1,5 @@
 import { r as i } from "./rolldown-runtime.js";
-import { Xa as l, yi as s } from "./lib.js";
+import { Ya as l, vi as s } from "./lib.js";
 l();
 var t = s(),
   L = (i) =>

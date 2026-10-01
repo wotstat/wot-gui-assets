@@ -1,12 +1,12 @@
 import {
   l as e,
-  du as s,
+  dk as s,
   y as t,
   aM as a,
-  dB as o,
-  cq as l,
+  dz as o,
+  cp as l,
   ak as c,
-  cV as r,
+  cU as r,
   an as i,
   al as n,
 } from "../chunks/lib.js";
@@ -42,7 +42,7 @@ const m = "TextBlock_textBlock_f2a08dd6",
   z = "App_base_button_1a64b8a1",
   C = "App_base_button__outro_235d3c52",
   y = "App_base_closeButton_f5179698",
-  V = [
+  E = [
     {
       title: R.strings.fort_rush.welcomeScreen.header1(),
       text: R.strings.fort_rush.welcomeScreen.description1(),
@@ -56,7 +56,7 @@ const m = "TextBlock_textBlock_f2a08dd6",
       text: R.strings.fort_rush.welcomeScreen.description3(),
     },
   ];
-function E() {
+function I() {
   const { controls: e } = k();
   s(e.closeWindow);
   const [c, r] = u.useState(!1),
@@ -100,8 +100,8 @@ function E() {
         d.jsx("div", {
           className: _(A, c && v),
           onAnimationEnd: c ? h : void 0,
-          children: V.map((e, s) =>
-            d.jsx(b, { title: e.title, text: e.text, lastItem: s === V.length - 1 }, s),
+          children: E.map((e, s) =>
+            d.jsx(b, { title: e.title, text: e.text, lastItem: s === E.length - 1 }, s),
           ),
         }),
         d.jsx(a, {
@@ -115,6 +115,6 @@ function E() {
     i,
   );
 }
-c(d.jsx(f, { children: d.jsx(r, { children: d.jsx(i, { children: d.jsx(E, {}) }) }) }), {
+c(d.jsx(f, { children: d.jsx(r, { children: d.jsx(i, { children: d.jsx(I, {}) }) }) }), {
   fullScreen: !0,
 }).then(() => n(document.getElementById("root")));

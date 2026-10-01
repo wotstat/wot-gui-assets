@@ -1,43 +1,43 @@
 import { r as s } from "../chunks/rolldown-runtime.js";
 import {
-  Hr as r,
+  Hr as o,
   Kr as a,
-  Yr as e,
-  Zr as o,
-  hr as i,
-  mr as n,
-  pr as t,
-  qr as c,
-  sa as m,
-  zo as p,
+  Mn as e,
+  Ro as r,
+  X as i,
+  Yr as n,
+  Zr as t,
+  jn as c,
+  oa as m,
+  qr as p,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
 import { a as l } from "../chunks/vendor.js";
 import { a as d, s as _ } from "../chunks/common.js";
-var [u, v] = o()(({ observableModel: s }) => {
-    const r = {
+var [u, v] = t()(({ observableModel: s }) => {
+    const o = {
         ...s.primitives(["winStatus", "isLeave"]),
         achievements: s.arrayClone("achievements"),
       },
-      a = e.primitive(() => "win" === r.winStatus.get() && !r.isLeave.get());
-    return { ...r, computes: { isWin: a } };
+      a = n.primitive(() => "win" === o.winStatus.get() && !o.isLeave.get());
+    return { ...o, computes: { isWin: a } };
   }),
   h = "App_cb654453",
   b = "App_flag_4ed23b16",
   f = "App_flag__hidden_8afb9008",
   g = s(m(), 1),
-  j = r("Flag", h);
+  j = o("Flag", h);
 var w = l(function () {
-  const s = i(),
-    { model: r } = v();
+  const s = e(),
+    { model: o } = v();
   return (0, g.jsx)(j, {
     className: h,
-    children: (0, g.jsx)(t, {
+    children: (0, g.jsx)(i, {
       loop: !0,
       autoplay: !0,
-      className: p(b, s.location !== d[_.overview] && f),
+      className: r(b, s.location !== d[_.overview] && f),
       src: String(
-        r.computes.isWin()
+        o.computes.isWin()
           ? R.videos.comp7_light.no_epic_victory_ribbon()
           : R.videos.comp7_light.no_epic_defeat_draw_ribbon(),
       ),
@@ -45,8 +45,8 @@ var w = l(function () {
   });
 });
 a(
-  new c()
-    .addWithProps(n, { context: "model.router" })
+  new p()
+    .addWithProps(c, { context: "model.router" })
     .add(u)
     .render((0, g.jsx)(w, {})),
 );

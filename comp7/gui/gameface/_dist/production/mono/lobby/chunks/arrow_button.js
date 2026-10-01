@@ -1,7 +1,7 @@
 import { r as e } from "./rolldown-runtime.js";
-import { $o as a, Pa as r, ws as _ } from "./lib.js";
+import { Cs as a, Na as r, Qo as _ } from "./lib.js";
 import { i as t } from "./vendor.js";
-_();
+a();
 var o = e(t()),
   s = {
     base: "ArrowButton_6b3aeda7",
@@ -36,8 +36,8 @@ var o = e(t()),
   d = ["default", "hover", "active", "disabled"];
 function n({
   size: e = "large",
-  direction: r = "left",
-  disabled: _ = !1,
+  direction: a = "left",
+  disabled: r = !1,
   mouseEnterSound: t = "highlight",
   className: n,
   classNames: u,
@@ -46,9 +46,9 @@ function n({
 }) {
   const A = (0, o.default)(s.layer, u?.layer);
   return (0, l.jsx)("div", {
-    className: (0, o.default)(s.base, s[`base__${r}`], s[`base__${e}`], _ && s.base__disabled, n),
+    className: (0, o.default)(s.base, s[`base__${a}`], s[`base__${e}`], r && s.base__disabled, n),
     onMouseEnter: (e) => {
-      (i?.(e), a.sound(t));
+      (i?.(e), _.sound(t));
     },
     ...b,
     children: (0, l.jsx)("div", {
