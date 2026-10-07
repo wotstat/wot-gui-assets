@@ -1,13 +1,13 @@
-import { i, V as e, j as n, W as a } from "../../../../chunks/vendor.js";
+import { i, V as a, j as e, a3 as n } from "../../../../chunks/vendor.js";
 import {
   i as t,
-  d9 as s,
-  aT as o,
+  d6 as s,
+  aK as o,
   n as c,
-  cF as r,
-  cD as l,
-  F as m,
-  cE as d,
+  cz as r,
+  cx as l,
+  cw as m,
+  cy as d,
   m as x,
   r as _,
 } from "../../../../chunks/lib.js";
@@ -21,25 +21,25 @@ import { Q as N } from "../../../../chunks/qualification_emblem.js";
 import { Q as C } from "../../../../chunks/qualification_battle_item.js";
 import { t as y } from "../../../../chunks/tooltips.module.js";
 /* empty css                        */ import "../../../../chunks/enums.js";
-const [I, q] = t()(({ observableModel: e }) => {
-    const n = {
-        root: e.object(),
-        divisionInfo: e.object("divisionInfo"),
-        qualification: e.primitives(
+const [I, q] = t()(({ observableModel: a }) => {
+    const e = {
+        root: a.object(),
+        divisionInfo: a.object("divisionInfo"),
+        qualification: a.primitives(
           ["isActive", "battlesCount", "maxBattlesCount", "isRatingCalculation"],
           "qualificationModel",
         ),
-        qualificationBattles: e.array("qualificationModel.battles"),
+        qualificationBattles: a.array("qualificationModel.battles"),
       },
-      a = i(
+      n = i(
         (i) => {
-          const e = o(n.qualificationBattles.get(), i);
-          if (!e) throw new Error(`qualification battle with index ${i} was not found`);
-          return { ...e };
+          const a = o(e.qualificationBattles.get(), i);
+          if (!a) throw new Error(`qualification battle with index ${i} was not found`);
+          return { ...a };
         },
         { equals: s },
       );
-    return { ...n, computes: { qualificationBattle: a } };
+    return { ...e, computes: { qualificationBattle: n } };
   }, c),
   T = {
     base: "RankInactivityBlock_ae45f303",
@@ -52,59 +52,59 @@ const [I, q] = t()(({ observableModel: e }) => {
     warningText: "RankInactivityBlock_warningText_155495c9",
     warningIcon: "RankInactivityBlock_warningIcon_c34e5438",
   },
-  B = e(({ className: i }) => {
-    const { model: e } = q(),
-      { rankInactivityCount: t, rankInactivityPointsCount: s, hasRankInactivity: o } = e.root.get();
-    return n.jsxs("div", {
-      className: a(T.base, o && T.base__active, i),
+  B = a(({ className: i }) => {
+    const { model: a } = q(),
+      { rankInactivityCount: t, rankInactivityPointsCount: s, hasRankInactivity: o } = a.root.get();
+    return e.jsxs("div", {
+      className: n(T.base, o && T.base__active, i),
       children: [
-        n.jsx(r, {
+        e.jsx(r, {
           text: R.strings.comp7_ext.progressionTooltip.rankInactivity.header.active(),
-          binding: { icon: n.jsx("div", { className: T.inactivityIcon }) },
+          binding: { icon: e.jsx("div", { className: T.inactivityIcon }) },
           classMix: T.inactivityText,
         }),
-        n.jsx(r, {
+        e.jsx(r, {
           text: R.strings.comp7_ext.progressionTooltip.rankInactivity.description.active(s),
           binding: { count: s },
           classMix: T.description,
         }),
         0 === t
-          ? n.jsx("div", {
+          ? e.jsx("div", {
               className: T.warning,
-              children: n.jsxs("div", {
+              children: e.jsxs("div", {
                 className: T.warningText,
                 children: [
-                  n.jsx("div", { className: T.warningIcon }),
+                  e.jsx("div", { className: T.warningIcon }),
                   R.strings.comp7_ext.progressionTooltip.rankInactivity.warning(),
                 ],
               }),
             })
-          : n.jsx(r, {
+          : e.jsx(r, {
               text: R.strings.comp7_ext.progressionTooltip.rankInactivity.daysLeft(),
               binding: {
-                rankInactivityCount: n.jsx("div", { className: T.daysLeftValue, children: t }),
+                rankInactivityCount: e.jsx("div", { className: T.daysLeftValue, children: t }),
               },
               classMix: T.daysLeft,
             }),
       ],
     });
   }),
-  S = "EliteRankContent_34a2bc68",
-  w = "EliteRankContent_score_c1d75b8d",
+  w = "EliteRankContent_34a2bc68",
+  S = "EliteRankContent_score_c1d75b8d",
   M = "EliteRankContent_scoreLabel_8db99086",
   Q = "EliteRankContent_formatTextString_42aa1ae3",
-  A = ({ rank: i, currentScore: e, fromScore: a, topPercentage: t }) =>
-    n.jsxs("div", {
-      className: S,
+  A = ({ rank: i, currentScore: a, fromScore: n, topPercentage: t }) =>
+    e.jsxs("div", {
+      className: w,
       children: [
-        n.jsx("div", { className: w, children: n.jsx(l, { value: e }) }),
-        n.jsx("div", {
+        e.jsx("div", { className: S, children: e.jsx(l, { value: a }) }),
+        e.jsx("div", {
           className: M,
           children: R.strings.comp7_ext.progressionTooltip.ratingScore(),
         }),
-        n.jsx(r, {
+        e.jsx(r, {
           text: f(R.strings.comp7_ext.progressionTooltip.info, i),
-          binding: { fromScore: n.jsx(l, { value: a }), topPercentage: t },
+          binding: { fromScore: e.jsx(l, { value: n }), topPercentage: t },
           classMix: Q,
         }),
       ],
@@ -115,101 +115,101 @@ const [I, q] = t()(({ observableModel: e }) => {
   D = "GeneralRankContent_currentScore_9c8e174f",
   E = "GeneralRankContent_progressContainer_bd118b91",
   P = "GeneralRankContent_progressValue_bb513d2f",
-  F = "GeneralRankContent_progressValue__left_7205b5ce",
-  z = "GeneralRankContent_progressValue__right_86d8e17",
-  H = ({ currentScore: i, name: e, from: t, to: s }) =>
-    n.jsxs("div", {
+  z = "GeneralRankContent_progressValue__left_7205b5ce",
+  F = "GeneralRankContent_progressValue__right_86d8e17",
+  H = ({ currentScore: i, name: a, from: t, to: s }) =>
+    e.jsxs("div", {
       className: G,
       children: [
-        n.jsx(m, {
+        e.jsx(m, {
           text: R.strings.comp7_ext.progressionTooltip.division(),
-          binding: { divisionName: h(e) },
-          classMix: a(L, V),
+          binding: { divisionName: h(a) },
+          classMix: n(L, V),
         }),
-        n.jsx("div", { className: D, children: n.jsx(l, { value: i }) }),
-        n.jsxs("div", {
+        e.jsx("div", { className: D, children: e.jsx(l, { value: i }) }),
+        e.jsxs("div", {
           className: E,
           children: [
-            n.jsx("div", { className: a(P, F), children: n.jsx(l, { value: t }) }),
-            n.jsx(b, { size: d.Small, value: i - t, maxValue: s - t }),
-            n.jsx("div", { className: a(P, z), children: n.jsx(l, { value: s }) }),
+            e.jsx("div", { className: n(P, z), children: e.jsx(l, { value: t }) }),
+            e.jsx(b, { size: d.Small, value: i - t, maxValue: s - t }),
+            e.jsx("div", { className: n(P, F), children: e.jsx(l, { value: s }) }),
           ],
         }),
-        n.jsx(r, {
+        e.jsx(r, {
           text: R.strings.comp7_ext.progressionTooltip.divisionDescription(),
-          binding: { fromScore: n.jsx(l, { value: t }), toScore: n.jsx(l, { value: s }) },
+          binding: { fromScore: e.jsx(l, { value: t }), toScore: e.jsx(l, { value: s }) },
           classMix: L,
         }),
       ],
     }),
-  W = e(({ index: i, className: e }) => {
-    const { model: a } = q(),
-      t = a.computes.qualificationBattle(i);
-    return n.jsx(C, { state: t.state, className: e, size: "x30" }, i);
+  K = a(({ index: i, className: a }) => {
+    const { model: n } = q(),
+      t = n.computes.qualificationBattle(i);
+    return e.jsx(C, { state: t.state, className: a, size: "x30" }, i);
   }),
-  $ = "QualificationContent_a93ba15f",
-  J = "QualificationContent_qualificationEmblem_3cd08a67",
-  K = "QualificationContent_counterContainer_53a980e8",
+  W = "QualificationContent_a93ba15f",
+  $ = "QualificationContent_qualificationEmblem_3cd08a67",
+  J = "QualificationContent_counterContainer_53a980e8",
   O = "QualificationContent_battlesCount_b3248231",
   U = "QualificationContent_counterDivider_bfd76d34",
   X = "QualificationContent_counterDescription_d0121394",
   Y = "QualificationContent_ratingCalculationDescription_33daecb6",
   Z = "QualificationContent_timerIcon_536d35a9",
   ii = "QualificationContent_battles_e24cc168",
-  ei = "QualificationContent_battle_c53717b7",
-  ni = "QualificationContent_condition_c09fb775",
-  ai = e(({ classNames: i }) => {
-    const { model: e } = q(),
-      a = e.qualification.battlesCount.get(),
-      t = e.qualification.maxBattlesCount.get(),
-      s = e.qualification.isRatingCalculation.get();
-    return n.jsxs("div", {
-      className: $,
+  ai = "QualificationContent_battle_c53717b7",
+  ei = "QualificationContent_condition_c09fb775",
+  ni = a(({ classNames: i }) => {
+    const { model: a } = q(),
+      n = a.qualification.battlesCount.get(),
+      t = a.qualification.maxBattlesCount.get(),
+      s = a.qualification.isRatingCalculation.get();
+    return e.jsxs("div", {
+      className: W,
       children: [
-        n.jsx("div", {
+        e.jsx("div", {
           className: i?.name,
           children: R.strings.comp7_ext.progressionTooltip.qualificationName(),
         }),
-        n.jsx("div", {
+        e.jsx("div", {
           className: i?.emblemContainer,
-          children: n.jsx(N, { size: g.x150, seasonName: e.root.get().seasonName, className: J }),
+          children: e.jsx(N, { size: g.x150, seasonName: a.root.get().seasonName, className: $ }),
         }),
         s
-          ? n.jsx(m, {
+          ? e.jsx(m, {
               text: R.strings.comp7_ext.qualification.ratingCalculationDescription(),
-              binding: { timerIcon: n.jsx("div", { className: Z }) },
+              binding: { timerIcon: e.jsx("div", { className: Z }) },
               classMix: Y,
             })
-          : n.jsxs(n.Fragment, {
+          : e.jsxs(e.Fragment, {
               children: [
-                n.jsx(m, {
+                e.jsx(m, {
                   text: R.strings.comp7_ext.qualification.counter(),
                   binding: {
-                    battlesCount: n.jsx("div", { className: O, children: a }),
-                    divider: n.jsx("div", { className: U, children: "/" }),
+                    battlesCount: e.jsx("div", { className: O, children: n }),
+                    divider: e.jsx("div", { className: U, children: "/" }),
                     maxBattlesCount: t,
                   },
-                  classMix: K,
+                  classMix: J,
                 }),
-                n.jsx(r, {
+                e.jsx(r, {
                   text: R.strings.comp7_ext.qualification.counterWithDescription(),
                   classMix: X,
                 }),
               ],
             }),
-        n.jsx("div", {
+        e.jsx("div", {
           className: ii,
-          children: x(e.qualificationBattles.get().length, (i) =>
-            n.jsx(W, { index: i, className: ei }, i),
+          children: x(a.qualificationBattles.get().length, (i) =>
+            e.jsx(K, { index: i, className: ai }, i),
           ),
         }),
         !s &&
-          n.jsx("div", {
+          e.jsx("div", {
             className: i?.content,
-            children: n.jsx(m, {
+            children: e.jsx(m, {
               text: R.strings.comp7_ext.progressionTooltip.qualification.condition(t),
               binding: { maxBattlesCount: t },
-              classMix: ni,
+              classMix: ei,
             }),
           }),
       ],
@@ -227,10 +227,10 @@ const [I, q] = t()(({ observableModel: e }) => {
     redHighlight: "App_redHighlight_71bf6853",
   },
   si = { name: ti.rankName, content: ti.content, emblemContainer: ti.emblemContainer },
-  oi = e(() => {
+  oi = a(() => {
     const { model: i } = q(),
       {
-        rank: e,
+        rank: a,
         currentScore: t,
         topPercentage: s,
         seasonName: o,
@@ -238,41 +238,41 @@ const [I, q] = t()(({ observableModel: e }) => {
         rankInactivityCount: r,
       } = i.root.get(),
       { name: l, from: m, to: d } = i.divisionInfo.get(),
-      x = v(e);
-    return n.jsxs("div", {
+      x = v(a);
+    return e.jsxs("div", {
       className: ti.base,
       children: [
-        n.jsx("div", { className: ti.heading, children: R.strings.comp7_ext.featureName() }),
-        n.jsx("div", { className: ti.season, children: k(o) }),
+        e.jsx("div", { className: ti.heading, children: R.strings.comp7_ext.featureName() }),
+        e.jsx("div", { className: ti.season, children: k(o) }),
         i.qualification.isActive.get()
-          ? n.jsx(ai, { classNames: si })
-          : n.jsxs(n.Fragment, {
+          ? e.jsx(ni, { classNames: si })
+          : e.jsxs(e.Fragment, {
               children: [
-                n.jsx("div", { className: ti.rankName, children: j(e) }),
-                n.jsx("div", {
+                e.jsx("div", { className: ti.rankName, children: j(a) }),
+                e.jsx("div", {
                   className: ti.emblemContainer,
-                  children: n.jsx(p, {
+                  children: e.jsx(p, {
                     seasonName: o,
-                    rank: e,
+                    rank: a,
                     size: g.x150,
                     division: l,
                     className: ti.emblem,
                   }),
                 }),
-                n.jsx("div", {
-                  className: a(ti.content, x && ti.content__generalRank),
+                e.jsx("div", {
+                  className: n(ti.content, x && ti.content__generalRank),
                   children: x
-                    ? n.jsx(H, { currentScore: t, name: l, from: m, to: d })
-                    : n.jsx(A, { rank: e, fromScore: m, currentScore: t, topPercentage: s }),
+                    ? e.jsx(H, { currentScore: t, name: l, from: m, to: d })
+                    : e.jsx(A, { rank: a, fromScore: m, currentScore: t, topPercentage: s }),
                 }),
                 c &&
-                  n.jsxs(n.Fragment, {
-                    children: [n.jsx("div", { className: a(y.divider, ti.divider) }), n.jsx(B, {})],
+                  e.jsxs(e.Fragment, {
+                    children: [e.jsx("div", { className: n(y.divider, ti.divider) }), e.jsx(B, {})],
                   }),
               ],
             }),
-        c && 0 === r && n.jsx("div", { className: ti.redHighlight }),
+        c && 0 === r && e.jsx("div", { className: ti.redHighlight }),
       ],
     });
   });
-_(n.jsx(I, { children: n.jsx(u, { children: n.jsx(oi, {}) }) }));
+_(e.jsx(I, { children: e.jsx(u, { children: e.jsx(oi, {}) }) }));

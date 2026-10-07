@@ -5,7 +5,7 @@ import {
   n as t,
   a9 as i,
   c8 as c,
-  cL as r,
+  cD as r,
   de as o,
   cB as n,
 } from "../../../../chunks/lib.js";
@@ -87,9 +87,9 @@ const [m, _] = s()(({ observableModel: e }) => {
   T = "Header_icon_35d94e17",
   A = "Header_categoryIcon_d7b554e4",
   I = "Header_category_8594ee8",
-  L = "Header_warningWrapper_998aa05c",
-  B = "Header_warningIcon_e020543a",
-  H = e(function () {
+  B = "Header_warningWrapper_998aa05c",
+  H = "Header_warningIcon_e020543a",
+  L = e(function () {
     const { model: e } = _(),
       s = R.images.frontline.gui.maps.icons.loadout;
     return a.jsx(p, {
@@ -98,9 +98,9 @@ const [m, _] = s()(({ observableModel: e }) => {
         children: [
           !e.isPurchased.get() &&
             a.jsxs("div", {
-              className: L,
+              className: B,
               children: [
-                a.jsx("div", { className: B }),
+                a.jsx("div", { className: H }),
                 a.jsx(i, { path: "fl_tooltips.battleAbilityTooltip.notPurchased" }),
               ],
             }),
@@ -206,7 +206,7 @@ const [m, _] = s()(({ observableModel: e }) => {
         children: a.jsxs("div", {
           className: E,
           children: [
-            a.jsx(H, {}),
+            a.jsx(L, {}),
             a.jsx(f, {}),
             a.jsx(d, {}),
             a.jsxs("div", {

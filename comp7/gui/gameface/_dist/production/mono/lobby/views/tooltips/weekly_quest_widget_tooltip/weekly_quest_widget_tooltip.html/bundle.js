@@ -1,18 +1,18 @@
-import { i as e, j as s, f as t, V as i, W as r } from "../../../../chunks/vendor.js";
+import { i as e, j as s, f as t, V as i, a3 as r } from "../../../../chunks/vendor.js";
 import {
   i as a,
-  aT as n,
-  as as c,
-  cy as o,
-  cz as d,
+  aK as n,
+  ah as c,
+  cr as o,
+  cs as d,
   es as u,
-  F as l,
-  cs as _,
-  cF as x,
+  cw as l,
+  cl as _,
+  cz as x,
   m,
-  cH as p,
-  cK as w,
-  ck as b,
+  cB as p,
+  cE as w,
+  cd as b,
   et as j,
   r as g,
 } from "../../../../chunks/lib.js";
@@ -98,14 +98,14 @@ const k = {
       ],
     });
   }),
-  y = {
+  D = {
     header: "Reward_header_fe1c875b",
     description: "Reward_description_901b8d14",
     divider: "Reward_divider_ea66945c",
     rewardsText: "Reward_rewardsText_ef59fc7c",
     reward: "Reward_e744e1e2",
   },
-  D = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
+  y = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
   A = {
     header: "Waiting_header_3d83166b",
     counterContainer: "Waiting_counterContainer_440beb40",
@@ -171,24 +171,24 @@ const k = {
     });
   }),
   S = "WeeklyQuestWidgetTooltip_20195207",
-  F = {
+  E = {
     [f.Active]: C,
     [f.Waiting]: B,
     [f.Reward]: () =>
       s.jsxs("div", {
-        className: y.base,
+        className: D.base,
         children: [
-          s.jsx(l, { text: D.completed(), classMix: y.header }),
-          s.jsx(l, { text: D.completedDescription(), classMix: y.description }),
-          s.jsx(W, { className: y.divider }),
-          s.jsx("div", { className: y.rewardsText, children: D.rewards() }),
-          s.jsx("div", { className: y.reward }),
+          s.jsx(l, { text: y.completed(), classMix: D.header }),
+          s.jsx(l, { text: y.completedDescription(), classMix: D.description }),
+          s.jsx(W, { className: D.divider }),
+          s.jsx("div", { className: D.rewardsText, children: y.rewards() }),
+          s.jsx("div", { className: D.reward }),
         ],
       }),
   },
   L = i(() => {
     const { model: e } = N(),
-      t = F[e.root.get().state];
+      t = E[e.root.get().state];
     return t
       ? s.jsx(j, {
           children: s.jsx(j.Decorator, {

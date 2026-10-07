@@ -1,5 +1,5 @@
-import { r as a, j as e, q as s } from "./vendor.js";
-import { H as t, di as i, ak as m, aM as l, eo as o } from "./lib.js";
+import { r as a, j as e, z as s } from "./vendor.js";
+import { q as t, df as i, a7 as m, aD as l, eo as o } from "./lib.js";
 const n = { small: "small", big: "big" },
   r = { full: "full", medium: "medium", small: "small" },
   d = { appear: "appear", fadeIn: "fadeIn", slideUpIn: "slideUpIn" },
@@ -8,8 +8,8 @@ const n = { small: "small", big: "big" },
   p = "DateRange_label_a9603586",
   f = "DateRange_image_6a8d9b5e",
   h = t.resolve("strings"),
-  g = { full: "full", numeric: "numeric", compact: "compact" },
-  D = { [g.full]: i.DayMonthFull, [g.numeric]: i.DayMonthNumeric };
+  D = { full: "full", numeric: "numeric", compact: "compact" },
+  g = { [D.full]: i.DayMonthFull, [D.numeric]: i.DayMonthNumeric };
 function b({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isMode: x }) {
   const v = o,
     _ = d === r.medium,
@@ -28,16 +28,16 @@ function b({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isM
         height: 17,
         adaptive: { medium: { path: "ui_kit.datetime.x24x24.cooldown", width: 24, height: 24 } },
       }),
-      w !== g.compact
+      w !== D.compact
         ? e.jsx(l, {
             className: p,
             text: h.readOrEmpty("user_missions.common.daterange.divider"),
             split: !0,
-            params: { startDate: v(t, D[w]), endDate: v(i, D[w]) },
+            params: { startDate: v(t, g[w]), endDate: v(i, g[w]) },
           })
         : null,
     ],
   });
 }
-b.format = g;
+b.format = D;
 export { b as D, d as a, c as b, r as c, n as w };

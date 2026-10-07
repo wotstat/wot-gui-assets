@@ -18,7 +18,7 @@ import {
   m as g,
   q as h,
   dc as x,
-  ao as f,
+  ap as f,
 } from "./lib.js";
 const S = (a, r) => {
     const t = a.width / a.height,

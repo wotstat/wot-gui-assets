@@ -1,21 +1,21 @@
 import { n as e, j as s, e as a, m as n } from "../../../../chunks/vendor.js";
 import {
   i as t,
-  a4 as o,
-  H as i,
+  a3 as o,
+  J as i,
   F as c,
   r,
-  X as l,
-  a5 as d,
+  _ as l,
+  a4 as d,
   m as _,
   h as m,
   w as u,
   t as b,
-  a6 as p,
-  a7 as h,
+  a5 as p,
+  a6 as h,
   C as x,
   n as f,
-  a8 as w,
+  a7 as w,
   j as g,
   U as j,
 } from "../../../../chunks/lib.js";
@@ -47,23 +47,23 @@ const [E, I] = t()(
     }),
   ),
   $ = "Count_9e5d70af";
-function H({ count: e, className: n = "" }) {
+function U({ count: e, className: n = "" }) {
   return s.jsx(c, {
     text: R.strings.open_bundle_lobby_default.notifications.specialReward.multiplier(),
     params: { count: e },
     className: a($, n),
   });
 }
-const U = "Name_b707f363",
-  D = "Name_label_f455243a";
+const D = "Name_b707f363",
+  H = "Name_label_f455243a";
 function M({ reward: e, className: n = "" }) {
   const { name: t, label: o } = e;
   return s.jsx("div", {
-    className: a(U, n),
+    className: a(D, n),
     children:
       t === v.vehicles
         ? s.jsx(T, { reward: e, style: { nameHeight: "18rem" } })
-        : s.jsx(c, { split: !0, className: D, text: B(o) }),
+        : s.jsx(c, { split: !0, className: H, text: B(o) }),
   });
 }
 const z = {
@@ -103,34 +103,34 @@ const z = {
         s.jsx(N, { image: P(e, l), className: z.image }),
         r &&
           s.jsx(N, { image: S({ size: A.S180x135, name: i, special: r }), className: z.overlay }),
-        b && s.jsx(H, { count: o, className: z.count }),
+        b && s.jsx(U, { count: o, className: z.count }),
         u && s.jsx(M, { reward: e, className: z.description }),
       ],
     });
   }),
   G = "AdditionalRewards_972e0751",
-  V = "AdditionalRewards_base__wide_7eba2b21",
-  X = n(function () {
+  J = "AdditionalRewards_base__wide_7eba2b21",
+  V = n(function () {
     const { model: e } = I(),
       n = e.computes.additionalBonuses();
     return s.jsx("div", {
-      className: a(G, n.length >= 3 && V),
+      className: a(G, n.length >= 3 && J),
       children: _(n, (e, a) => s.jsx(F, { reward: e }, `${e.name}_${a}`)),
     });
   }),
-  J = "Header_75ff486e";
-function K({ bundleType: e }) {
+  K = "Header_75ff486e";
+function L({ bundleType: e }) {
   const { getText: a } = y(e);
   return s.jsx("div", {
-    className: J,
+    className: K,
     children: s.jsx(c, {
       text: a("notifications.specialReward.title"),
       params: { eventName: a("bundle.name") },
     }),
   });
 }
-const L = "Preview_d1fe5e07",
-  W = "Preview_button_95fc3ad0",
+const W = "Preview_d1fe5e07",
+  X = "Preview_button_95fc3ad0",
   Z = n(function ({ className: e = "" }) {
     const { model: n, controls: t } = I(),
       o = n.bundleType.get(),
@@ -150,9 +150,9 @@ const L = "Preview_d1fe5e07",
         })(r.name),
       );
     return s.jsx("div", {
-      className: a(L, e),
+      className: a(W, e),
       children: s.jsx(m, {
-        className: W,
+        className: X,
         disabled: i,
         theme: b.secondary,
         size: u.small,
@@ -184,9 +184,9 @@ const L = "Preview_d1fe5e07",
         s.jsxs("div", {
           className: te,
           children: [
-            s.jsx(K, { bundleType: t }),
+            s.jsx(L, { bundleType: t }),
             Boolean(i) && s.jsx(F, { reward: i, type: O, className: oe }),
-            c.length > 0 && s.jsx(X, {}),
+            c.length > 0 && s.jsx(V, {}),
             Boolean(i) && C(i) && s.jsx(Z, {}),
           ],
         }),

@@ -11369,64 +11369,6 @@ function CloseButton({
   });
 }
 CloseButton.size = sizes$5;
-const sizes$4 = { small: "small", medium: "medium" },
-  root$5 = "Value_root_75b9f355",
-  base$a = "Value_880359b5",
-  base__small$2 = "Value_base__small_533886b2",
-  base__text = "Value_base__text_3c091067",
-  base__medium = "Value_base__medium_c1f8595d",
-  value$1 = "Value_29975a5b",
-  value__small = "Value_value__small_f3df7ae5",
-  value__medium = "Value_value__medium_62a482c",
-  styles$a = {
-    root: root$5,
-    "media-wrapper": "Value_media-wrapper_75b9f355",
-    base: base$a,
-    base__small: base__small$2,
-    base__text: base__text,
-    base__medium: base__medium,
-    value: value$1,
-    value__small: value__small,
-    value__medium: value__medium,
-  },
-  intl = resources.resolve("intl"),
-  DEFAULT_MAX_VALUE = 99;
-function formatNumber(e, t) {
-  return e > t
-    ? jsxRuntimeExports.jsx(FormatString, { path: "common.valuePlus", params: { value: t } })
-    : intl.formatNumber("integral", e);
-}
-function getValue(e, t) {
-  return "number" == typeof e ? formatNumber(e, t) : e;
-}
-function Value({
-  classNames: e,
-  size: t = sizes$4.small,
-  value: s,
-  maxValue: r = DEFAULT_MAX_VALUE,
-}) {
-  return jsxRuntimeExports.jsx("div", {
-    className: clsx(
-      styles$a.base,
-      styles$a[`base__${t}`],
-      "string" == typeof s && styles$a.base__text,
-      e?.valueContainer,
-    ),
-    children: jsxRuntimeExports.jsx("div", {
-      className: clsx(styles$a.value, styles$a[`value__${t}`], e?.value),
-      children: getValue(s, r),
-    }),
-  });
-}
-const base$9 = "Bubble_df22310d",
-  base__hidden$1 = "Bubble_base__hidden_1700314d",
-  styles$9 = { base: base$9, base__hidden: base__hidden$1 },
-  Bubble = {
-    Root: defineStyledComponent("Bubble", styles$9.base, {
-      variants: { hidden: { true: styles$9.base__hidden } },
-    }),
-    Value: Value,
-  };
 var RewardType = ((e) => (
     (e.Items = "items"),
     (e.Equipment = "equipment"),
@@ -11764,254 +11706,7 @@ const multiValueTypes = [
       const s = 0 === e.indexOf("%") ? 2 : 1;
       return String(t[e.slice(s, -s)]);
     }),
-  root$4 = "Reward_root_21f091ec",
-  base__s24x24 = "Reward_base__s24x24_954b5cee",
-  base__s48x48 = "Reward_base__s48x48_21f091ec",
-  base__small$1 = "Reward_base__small_3eddf28d",
-  base__s80x80 = "Reward_base__s80x80_21f091ec",
-  base__big$1 = "Reward_base__big_e23f2c77",
-  base__s128x100 = "Reward_base__s128x100_1e08e04b",
-  base__s180x135 = "Reward_base__s180x135_93fc57c",
-  base__s232x174 = "Reward_base__s232x174_2904ea89",
-  base__s296x222 = "Reward_base__s296x222_52f0615b",
-  base__s400x300 = "Reward_base__s400x300_a8627e1b",
-  base__s600x450 = "Reward_base__s600x450_e27f3852",
-  base$8 = "Reward_d65e1e12",
-  base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
-  tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
-  icon$2 = "Reward_icon_e152f13b",
-  overlay = "Reward_overlay_8cbe65c9",
-  highlight = "Reward_highlight_f1cd08e0",
-  image__s24x24 = "Reward_image__s24x24_954b5cee",
-  image__s48x48 = "Reward_image__s48x48_21f091ec",
-  image__small = "Reward_image__small_3eddf28d",
-  image__s80x80 = "Reward_image__s80x80_21f091ec",
-  image__big = "Reward_image__big_e23f2c77",
-  image__s128x100 = "Reward_image__s128x100_1e08e04b",
-  image__s180x135 = "Reward_image__s180x135_93fc57c",
-  image__s232x174 = "Reward_image__s232x174_2904ea89",
-  image__s296x222 = "Reward_image__s296x222_52f0615b",
-  image__s400x300 = "Reward_image__s400x300_a8627e1b",
-  image__s600x450 = "Reward_image__s600x450_e27f3852",
-  image = "Reward_image_810ec3a2",
-  image__fixedBox = "Reward_image__fixedBox_e45bdd8a",
-  info = "Reward_info_26d38c48",
-  info__multi = "Reward_info__multi_465d34bd",
-  info__credits = "Reward_info__credits_1643219",
-  info__gold = "Reward_info__gold_c751be5d",
-  info__crystal = "Reward_info__crystal_18ccfdd0",
-  info__premiumTank = "Reward_info__premiumTank_7862152",
-  title = "Reward_title_fbcf4b5",
-  timer = "Reward_timer_22ba7b8b",
-  styles$8 = {
-    root: root$4,
-    "media-wrapper": "Reward_media-wrapper_21f091ec",
-    base__s24x24: base__s24x24,
-    base__s48x48: base__s48x48,
-    base__small: base__small$1,
-    base__s80x80: base__s80x80,
-    base__big: base__big$1,
-    base__s128x100: base__s128x100,
-    base__s180x135: base__s180x135,
-    base__s232x174: base__s232x174,
-    base__s296x222: base__s296x222,
-    base__s400x300: base__s400x300,
-    base__s600x450: base__s600x450,
-    base: base$8,
-    base__dynamicBox: base__dynamicBox,
-    tooltipWrapper: tooltipWrapper,
-    icon: icon$2,
-    overlay: overlay,
-    highlight: highlight,
-    image__s24x24: image__s24x24,
-    image__s48x48: image__s48x48,
-    image__small: image__small,
-    image__s80x80: image__s80x80,
-    image__big: image__big,
-    image__s128x100: image__s128x100,
-    image__s180x135: image__s180x135,
-    image__s232x174: image__s232x174,
-    image__s296x222: image__s296x222,
-    image__s400x300: image__s400x300,
-    image__s600x450: image__s600x450,
-    image: image,
-    image__fixedBox: image__fixedBox,
-    info: info,
-    info__multi: info__multi,
-    info__credits: info__credits,
-    info__gold: info__gold,
-    info__crystal: info__crystal,
-    info__premiumTank: info__premiumTank,
-    title: title,
-    timer: timer,
-  },
-  images = resources.resolve("images"),
-  SIZE_MAP = new Map([
-    [ImageSize.S24x24, ImageSize.Small],
-    [ImageSize.S48x48, ImageSize.Small],
-  ]),
-  Reward = ({
-    name: e,
-    image: t,
-    isPeriodic: s = !1,
-    isFixedBoxSize: r = !0,
-    size: n = ImageSize.Big,
-    special: a,
-    value: o,
-    valueType: u,
-    title: i,
-    style: l,
-    className: c,
-    classNames: d,
-    tooltipArgs: m,
-    periodicIconTooltipArgs: _,
-  }) => {
-    const p = SIZE_MAP.has(n) ? SIZE_MAP.get(n) : n,
-      E = getBottomHighlight(n, a),
-      x = getOverlay(a),
-      f = getFormattedValue(o, u),
-      b = useTooltip({
-        contentId: m?.contentId ?? 0,
-        args: m?.args,
-        resId: m?.resId,
-        decoratorId: m?.decoratorId,
-      }),
-      h = useSimpleTooltip({ header: _?.header, body: _?.body });
-    return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$8.base, styles$8[`base__${n}`], !r && styles$8.base__dynamicBox, c),
-      style: l,
-      ...b,
-      children: [
-        jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-          children: [
-            jsxRuntimeExports.jsxs("div", {
-              className: cx(
-                styles$8.image,
-                r ? styles$8.image__fixedBox : styles$8[`image__${n}`],
-                d?.image,
-              ),
-              children: [
-                E &&
-                  jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$8.highlight, d?.highlight),
-                    style: {
-                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${E}_highlight`)})`,
-                    },
-                  }),
-                t &&
-                  jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$8.icon, d?.rewardIcon),
-                    style: { backgroundImage: `url(${t})` },
-                  }),
-                x &&
-                  jsxRuntimeExports.jsx("div", {
-                    className: cx(styles$8.overlay, d?.overlay),
-                    style: {
-                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${x}_overlay`)})`,
-                    },
-                  }),
-              ],
-            }),
-            f &&
-              jsxRuntimeExports.jsx("div", {
-                className: cx(
-                  styles$8.info,
-                  styles$8[`info__${e}`],
-                  u === ValueTypes.MULTI && styles$8.info__multi,
-                  d?.info,
-                ),
-                children: f,
-              }),
-            i && jsxRuntimeExports.jsx("div", { className: styles$8.title, children: i }),
-          ],
-        }),
-        s && jsxRuntimeExports.jsx("div", { className: cx(styles$8.timer, d?.periodicIcon), ...h }),
-      ],
-    });
-  },
-  base$7 = "RewardsList_b956755b",
-  base__vertical = "RewardsList_base__vertical_59db3c9f",
-  reward = "RewardsList_reward_fc200613",
-  reward__vertical = "RewardsList_reward__vertical_5f09c6e0",
-  boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
-  styles$7 = {
-    base: base$7,
-    base__vertical: base__vertical,
-    reward: reward,
-    reward__vertical: reward__vertical,
-    boxRewardClassName: boxRewardClassName,
-  },
-  sizeToDefault = { [ImageSize.S24x24]: ImageSize.Small, [ImageSize.S48x48]: ImageSize.Small };
-reactExports.memo(function ({
-  data: e,
-  isFixedBoxSize: t,
-  size: s = ImageSize.Big,
-  isVertical: r = !1,
-  count: n,
-  classMix: a,
-  rewardItemClassMix: o,
-  boxRewardTooltip: u,
-  boxRewardValue: i,
-  boxRewardClassName: l,
-  boxRewardClassNames: c,
-}) {
-  const d = resources.resolve("strings"),
-    m = resources.resolve("images"),
-    _ =
-      "number" == typeof n && n < e.length
-        ? `${m.readOrEmpty(`quests.bonuses.${sizeToDefault[s] ?? s}.default`)}`
-        : void 0,
-    p =
-      i ||
-      renderString(upgradeLegacy(d.readOrEmpty("tooltips.quests.awards.additional.bottom")), {
-        count: e.length - (n || 0),
-      });
-  return jsxRuntimeExports.jsx("div", {
-    className: cx(styles$7.base, r && styles$7.base__vertical, a),
-    children:
-      void 0 !== _
-        ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-            children: [
-              e
-                .slice(0, n)
-                .map((e, n) =>
-                  jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: cx(styles$7.reward, r && styles$7.reward__vertical, o),
-                      children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
-                    },
-                    n,
-                  ),
-                ),
-              jsxRuntimeExports.jsx("div", {
-                className: cx(styles$7.reward, r && styles$7.reward__vertical, o),
-                children: jsxRuntimeExports.jsx(Reward, {
-                  name: "more",
-                  isFixedBoxSize: t,
-                  image: _,
-                  size: s,
-                  value: p,
-                  tooltipArgs: u,
-                  className: cx(styles$7.boxRewardClassName, l),
-                  classNames: c,
-                }),
-              }),
-            ],
-          })
-        : e.map((e, n) =>
-            jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: cx(styles$7.reward, r && styles$7.reward__vertical, o),
-                children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
-              },
-              n,
-            ),
-          ),
-  });
-});
-const measureTypes = { noneRef: "none-ref", measured: "measured" },
+  measureTypes = { noneRef: "none-ref", measured: "measured" },
   initialState = { type: "measuring" };
 function useMeasure() {
   const e = reactExports.useRef(null),
@@ -12151,7 +11846,7 @@ function TableProvider({
     );
   return jsxRuntimeExports.jsx(TableContext.Provider, { value: x, children: e });
 }
-const base$6 = "Table_85be883a",
+const base$a = "Table_85be883a",
   row = "Table_row_881b7550",
   header = "Table_header_ef69bf65",
   footer = "Table_footer_ef69bf65",
@@ -12159,8 +11854,8 @@ const base$6 = "Table_85be883a",
   cell = "Table_cell_7df9641e",
   sortable = "Table_sortable_f63b3b4f",
   contentResponsiveCellWrapper = "Table_contentResponsiveCellWrapper_ddee221c",
-  styles$6 = {
-    base: base$6,
+  styles$a = {
+    base: base$a,
     row: row,
     header: header,
     footer: footer,
@@ -12169,7 +11864,7 @@ const base$6 = "Table_85be883a",
     sortable: sortable,
     contentResponsiveCellWrapper: contentResponsiveCellWrapper,
   },
-  Base$b = defineStyledComponent("ContentResponsiveTableCell", styles$6.cell),
+  Base$b = defineStyledComponent("ContentResponsiveTableCell", styles$a.cell),
   ContentResponsiveCell = observer(function (e) {
     (assert(
       e.cell.minSize.endsWith("rem"),
@@ -12217,7 +11912,7 @@ const base$6 = "Table_85be883a",
         {
           className: clsx(
             r.column.columnDef.meta?.className,
-            o && tableParts.header === r.tablePart && styles$6.sortable,
+            o && tableParts.header === r.tablePart && styles$a.sortable,
             t,
           ),
           style: {
@@ -12229,7 +11924,7 @@ const base$6 = "Table_85be883a",
           },
           ...n,
           children: jsxRuntimeExports.jsx("div", {
-            className: styles$6.contentResponsiveCellWrapper,
+            className: styles$a.contentResponsiveCellWrapper,
             ref: reactExports.useCallback(
               (e) => l(r.tablePart, e, r.rowIndex, r.index),
               [r.tablePart, r.rowIndex, r.index, l],
@@ -12241,7 +11936,7 @@ const base$6 = "Table_85be883a",
       )
     );
   }),
-  Base$a = defineStyledComponent("ScreenResponsiveTableCell", styles$6.cell);
+  Base$a = defineStyledComponent("ScreenResponsiveTableCell", styles$a.cell);
 function ScreenResponsiveCell(e) {
   (assert(
     e.cell.size.endsWith("%"),
@@ -12276,7 +11971,7 @@ function ScreenResponsiveCell(e) {
         ),
         className: clsx(
           r.column.columnDef.meta?.className,
-          u && tableParts.header === r.tablePart && styles$6.sortable,
+          u && tableParts.header === r.tablePart && styles$a.sortable,
           t,
         ),
         style: {
@@ -12293,7 +11988,7 @@ function ScreenResponsiveCell(e) {
     )
   );
 }
-const Base$9 = defineStyledComponent("StaticTableCell", styles$6.cell);
+const Base$9 = defineStyledComponent("StaticTableCell", styles$a.cell);
 function StaticCell(e) {
   assert(
     e.cell.size.endsWith("rem"),
@@ -12318,7 +12013,7 @@ function StaticCell(e) {
       ),
       className: clsx(
         r.column.columnDef.meta?.className,
-        u && tableParts.header === r.tablePart && styles$6.sortable,
+        u && tableParts.header === r.tablePart && styles$a.sortable,
         t,
       ),
       style: { ...s, width: r.size, opacity: a ? 1 : 0 },
@@ -12351,11 +12046,11 @@ function Cell(e) {
       return (console.error(`Column behaviour for ${e.cell.column.id} is not provided`), null);
   }
 }
-const Base$8 = defineStyledComponent("Table", styles$6.base),
-  Header = defineStyledComponent("TableHeader", styles$6.header),
-  Body = defineStyledComponent("TableBody", styles$6.body),
-  Footer = defineStyledComponent("TableFooter", styles$6.footer),
-  Row = defineStyledComponent("TableRow", styles$6.row),
+const Base$8 = defineStyledComponent("Table", styles$a.base),
+  Header = defineStyledComponent("TableHeader", styles$a.header),
+  Body = defineStyledComponent("TableBody", styles$a.body),
+  Footer = defineStyledComponent("TableFooter", styles$a.footer),
+  Row = defineStyledComponent("TableRow", styles$a.row),
   Table = reactExports.forwardRef(function (e, t) {
     return jsxRuntimeExports.jsx(Base$8, { ref: t, ...e, children: e.children });
   });
@@ -12365,16 +12060,16 @@ const Base$8 = defineStyledComponent("Table", styles$6.base),
   (Table.Row = Row),
   (Table.Cell = Cell),
   (Table.behaviours = columnBehaviours));
-const sizes$3 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
+const sizes$4 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
   paths$1 = {
-    [sizes$3.x24x24]: "library.gray_eye_24x24",
-    [sizes$3.x32x32]: "library.gray_eye_32x32",
-    [sizes$3.x48x48]: "library.gray_eye_48x48",
+    [sizes$4.x24x24]: "library.gray_eye_24x24",
+    [sizes$4.x32x32]: "library.gray_eye_32x32",
+    [sizes$4.x48x48]: "library.gray_eye_48x48",
   },
   sizesConfig$5 = {
-    [sizes$3.x24x24]: { width: "24rem", height: "24rem" },
-    [sizes$3.x32x32]: { width: "32rem", height: "32rem" },
-    [sizes$3.x48x48]: { width: "48rem", height: "48rem" },
+    [sizes$4.x24x24]: { width: "24rem", height: "24rem" },
+    [sizes$4.x32x32]: { width: "32rem", height: "32rem" },
+    [sizes$4.x48x48]: { width: "48rem", height: "48rem" },
   },
   Base$7 = defineStyledComponent("PlayerInfoAnonymizer", { element: Image$1 }),
   AnonymizerIcon = reactExports.forwardRef(function (
@@ -12397,9 +12092,9 @@ const sizes$3 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
       className: n,
     });
   });
-AnonymizerIcon.sizes = sizes$3;
-const root$3 = "PlayerInfo_root_56d02918",
-  base$5 = "PlayerInfo_89eea88b",
+AnonymizerIcon.sizes = sizes$4;
+const root$5 = "PlayerInfo_root_56d02918",
+  base$9 = "PlayerInfo_89eea88b",
   badge = "PlayerInfo_badge_9f134a01",
   name = "PlayerInfo_name_120449f9",
   name__medium = "PlayerInfo_name__medium_4066d463",
@@ -12411,10 +12106,10 @@ const root$3 = "PlayerInfo_root_56d02918",
   stripe__medium = "PlayerInfo_stripe__medium_cc0a2a19",
   stripe__big = "PlayerInfo_stripe__big_ccbc3007",
   stripeBadge = "PlayerInfo_stripeBadge_605bfd0a",
-  styles$5 = {
-    root: root$3,
+  styles$9 = {
+    root: root$5,
     "media-wrapper": "PlayerInfo_media-wrapper_56d02918",
-    base: base$5,
+    base: base$9,
     badge: badge,
     name: name,
     name__medium: name__medium,
@@ -12427,11 +12122,11 @@ const root$3 = "PlayerInfo_root_56d02918",
     stripe__big: stripe__big,
     stripeBadge: stripeBadge,
   },
-  sizes$2 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
+  sizes$3 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
   sizesConfig$4 = {
-    [sizes$2.x24x24]: { width: "24rem", height: "24rem" },
-    [sizes$2.x48x48]: { width: "48rem", height: "48rem" },
-    [sizes$2.x80x80]: { width: "80rem", height: "80rem" },
+    [sizes$3.x24x24]: { width: "24rem", height: "24rem" },
+    [sizes$3.x48x48]: { width: "48rem", height: "48rem" },
+    [sizes$3.x80x80]: { width: "80rem", height: "80rem" },
   },
   Base$6 = defineStyledComponent("PlayerInfoBadge", { element: Image$1 }),
   Badge = reactExports.forwardRef(function (
@@ -12452,29 +12147,29 @@ const root$3 = "PlayerInfo_root_56d02918",
       path: s,
       width: r,
       height: n,
-      className: clsx(styles$5.badge, a),
+      className: clsx(styles$9.badge, a),
     });
   });
 function ClanTag({ size: e, className: t, children: s, ...r }) {
   return jsxRuntimeExports.jsx("div", {
     ...r,
-    className: clsx(styles$5.clanTag, e && styles$5[`clanTag__${e}`], t),
+    className: clsx(styles$9.clanTag, e && styles$9[`clanTag__${e}`], t),
     children: s,
   });
 }
-Badge.sizes = sizes$2;
-const sizes$1 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10x10" },
+Badge.sizes = sizes$3;
+const sizes$2 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10x10" },
   paths = {
-    [sizes$1.x10x10]: "library.premium_igr_ico",
-    [sizes$1.x26x16]: "library.premium_igr_small",
-    [sizes$1.x34x16]: "library.premium_small",
-    [sizes$1.x64x28]: "library.premium_igr_big",
+    [sizes$2.x10x10]: "library.premium_igr_ico",
+    [sizes$2.x26x16]: "library.premium_igr_small",
+    [sizes$2.x34x16]: "library.premium_small",
+    [sizes$2.x64x28]: "library.premium_igr_big",
   },
   sizesConfig$3 = {
-    [sizes$1.x10x10]: { width: "10rem", height: "10rem" },
-    [sizes$1.x26x16]: { width: "26rem", height: "16rem" },
-    [sizes$1.x34x16]: { width: "34rem", height: "16rem" },
-    [sizes$1.x64x28]: { width: "64rem", height: "28rem" },
+    [sizes$2.x10x10]: { width: "10rem", height: "10rem" },
+    [sizes$2.x26x16]: { width: "26rem", height: "16rem" },
+    [sizes$2.x34x16]: { width: "34rem", height: "16rem" },
+    [sizes$2.x64x28]: { width: "64rem", height: "28rem" },
   },
   Base$5 = defineStyledComponent("PlayerInfoIgr", { element: Image$1 }),
   IgrIcon = reactExports.forwardRef(function (
@@ -12499,34 +12194,34 @@ const sizes$1 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10
   });
 function Name({ size: e, className: t, children: s }) {
   return jsxRuntimeExports.jsx("div", {
-    className: clsx(styles$5.name, e && styles$5[`name__${e}`], t),
+    className: clsx(styles$9.name, e && styles$9[`name__${e}`], t),
     children: s,
   });
 }
-IgrIcon.sizes = sizes$1;
-const sizes = { default: "default", regular: "regular", medium: "medium", big: "big" },
+IgrIcon.sizes = sizes$2;
+const sizes$1 = { default: "default", regular: "regular", medium: "medium", big: "big" },
   stripeFolders = {
-    [sizes.default]: "c_64x24",
-    [sizes.regular]: "c_68x28",
-    [sizes.medium]: "c_68x28",
-    [sizes.big]: "c_100x40",
+    [sizes$1.default]: "c_64x24",
+    [sizes$1.regular]: "c_68x28",
+    [sizes$1.medium]: "c_68x28",
+    [sizes$1.big]: "c_100x40",
   },
   badgeFolders = {
-    [sizes.default]: "c_24x24",
-    [sizes.regular]: "c_32x32",
-    [sizes.medium]: "c_48x48",
-    [sizes.big]: "c_80x80",
+    [sizes$1.default]: "c_24x24",
+    [sizes$1.regular]: "c_32x32",
+    [sizes$1.medium]: "c_48x48",
+    [sizes$1.big]: "c_80x80",
   },
   sizesConfig$2 = {
-    [sizes.default]: { width: "24rem", height: "24rem", marginLeft: "-15rem" },
-    [sizes.regular]: { width: "32rem", height: "32rem", marginLeft: "-19rem" },
-    [sizes.medium]: { width: "48rem", height: "48rem", marginLeft: "-32rem" },
-    [sizes.big]: { width: "80rem", height: "80rem", marginLeft: "-25rem" },
+    [sizes$1.default]: { width: "24rem", height: "24rem", marginLeft: "-15rem" },
+    [sizes$1.regular]: { width: "32rem", height: "32rem", marginLeft: "-19rem" },
+    [sizes$1.medium]: { width: "48rem", height: "48rem", marginLeft: "-32rem" },
+    [sizes$1.big]: { width: "80rem", height: "80rem", marginLeft: "-25rem" },
   },
   Base$4 = defineStyledComponent("StripeBadgeIcon", { element: Image$1 }),
   StripeBadgeIcon = reactExports.forwardRef(function (
     {
-      size: e = sizes.default,
+      size: e = sizes$1.default,
       badgeId: t,
       stripeExists: s,
       path: r = `library.badges.${badgeFolders[e]}.badge_${t}`,
@@ -12549,15 +12244,15 @@ const sizes = { default: "default", regular: "regular", medium: "medium", big: "
     });
   }),
   sizesConfig$1 = {
-    [sizes.default]: { width: "64rem", height: "24rem" },
-    [sizes.regular]: { width: "68rem", height: "24rem" },
-    [sizes.medium]: { width: "68rem", height: "28rem" },
-    [sizes.big]: { width: "100rem", height: "40rem" },
+    [sizes$1.default]: { width: "64rem", height: "24rem" },
+    [sizes$1.regular]: { width: "68rem", height: "24rem" },
+    [sizes$1.medium]: { width: "68rem", height: "28rem" },
+    [sizes$1.big]: { width: "100rem", height: "40rem" },
   },
   Base$3 = defineStyledComponent("StripeIcon", { element: Image$1 }),
   StripeIcon = reactExports.forwardRef(function (
     {
-      size: e = sizes.default,
+      size: e = sizes$1.default,
       badgeId: t,
       stripeExists: s,
       path: r = `library.badges.strips.${stripeFolders[e]}.strip_${t}`,
@@ -12575,15 +12270,15 @@ const sizes = { default: "default", regular: "regular", medium: "medium", big: "
           path: r,
           width: n,
           height: a,
-          className: clsx(styles$5.stripeBadge, o),
+          className: clsx(styles$9.stripeBadge, o),
         })
       : null;
   }),
   sizesConfig = { badge: sizesConfig$2, stripe: sizesConfig$1 },
-  Base$2 = defineStyledComponent("PlayerInfoStripe", styles$5.stripe),
+  Base$2 = defineStyledComponent("PlayerInfoStripe", styles$9.stripe),
   Stripe = reactExports.forwardRef(function (
     {
-      size: e = sizes.default,
+      size: e = sizes$1.default,
       badgeId: t,
       classNames: s,
       className: r,
@@ -12599,7 +12294,7 @@ const sizes = { default: "default", regular: "regular", medium: "medium", big: "
     return jsxRuntimeExports.jsxs(Base$2, {
       ...o,
       ref: u,
-      className: clsx(c && styles$5[`stripe__${e}`], r),
+      className: clsx(c && styles$9[`stripe__${e}`], r),
       children: [
         jsxRuntimeExports.jsx(StripeIcon, {
           size: e,
@@ -12621,9 +12316,9 @@ const sizes = { default: "default", regular: "regular", medium: "medium", big: "
       ],
     });
   });
-((Stripe.sizes = sizes), (Stripe.icons = sizesConfig));
-const Base$1 = defineStyledComponent("AccountInfo", styles$5.base),
-  Wrapper = defineStyledComponent("AccountInfoWrapper", styles$5.base),
+((Stripe.sizes = sizes$1), (Stripe.icons = sizesConfig));
+const Base$1 = defineStyledComponent("AccountInfo", styles$9.base),
+  Wrapper = defineStyledComponent("AccountInfoWrapper", styles$9.base),
   PlayerInfo = reactExports.forwardRef((e, t) => jsxRuntimeExports.jsx(Base$1, { ref: t, ...e }));
 function isValidBreakpoint(e) {
   return "string" == typeof e && e in breakpoints;
@@ -12635,6 +12330,311 @@ function isValidBreakpoint(e) {
   (PlayerInfo.AnonymizerIcon = AnonymizerIcon),
   (PlayerInfo.Stripe = Stripe),
   (PlayerInfo.Wrapper = Wrapper));
+const sizes = { small: "small", medium: "medium" },
+  root$4 = "Value_root_75b9f355",
+  base$8 = "Value_880359b5",
+  base__small$2 = "Value_base__small_533886b2",
+  base__text = "Value_base__text_3c091067",
+  base__medium = "Value_base__medium_c1f8595d",
+  value$1 = "Value_29975a5b",
+  value__small = "Value_value__small_f3df7ae5",
+  value__medium = "Value_value__medium_62a482c",
+  styles$8 = {
+    root: root$4,
+    "media-wrapper": "Value_media-wrapper_75b9f355",
+    base: base$8,
+    base__small: base__small$2,
+    base__text: base__text,
+    base__medium: base__medium,
+    value: value$1,
+    value__small: value__small,
+    value__medium: value__medium,
+  },
+  intl = resources.resolve("intl"),
+  DEFAULT_MAX_VALUE = 99;
+function formatNumber(e, t) {
+  return e > t
+    ? jsxRuntimeExports.jsx(FormatString, { path: "common.valuePlus", params: { value: t } })
+    : intl.formatNumber("integral", e);
+}
+function getValue(e, t) {
+  return "number" == typeof e ? formatNumber(e, t) : e;
+}
+function Value({
+  classNames: e,
+  size: t = sizes.small,
+  value: s,
+  maxValue: r = DEFAULT_MAX_VALUE,
+}) {
+  return jsxRuntimeExports.jsx("div", {
+    className: clsx(
+      styles$8.base,
+      styles$8[`base__${t}`],
+      "string" == typeof s && styles$8.base__text,
+      e?.valueContainer,
+    ),
+    children: jsxRuntimeExports.jsx("div", {
+      className: clsx(styles$8.value, styles$8[`value__${t}`], e?.value),
+      children: getValue(s, r),
+    }),
+  });
+}
+const base$7 = "Bubble_df22310d",
+  base__hidden$1 = "Bubble_base__hidden_1700314d",
+  styles$7 = { base: base$7, base__hidden: base__hidden$1 },
+  Bubble = {
+    Root: defineStyledComponent("Bubble", styles$7.base, {
+      variants: { hidden: { true: styles$7.base__hidden } },
+    }),
+    Value: Value,
+  },
+  root$3 = "Reward_root_21f091ec",
+  base__s24x24 = "Reward_base__s24x24_954b5cee",
+  base__s48x48 = "Reward_base__s48x48_21f091ec",
+  base__small$1 = "Reward_base__small_3eddf28d",
+  base__s80x80 = "Reward_base__s80x80_21f091ec",
+  base__big$1 = "Reward_base__big_e23f2c77",
+  base__s128x100 = "Reward_base__s128x100_1e08e04b",
+  base__s180x135 = "Reward_base__s180x135_93fc57c",
+  base__s232x174 = "Reward_base__s232x174_2904ea89",
+  base__s296x222 = "Reward_base__s296x222_52f0615b",
+  base__s400x300 = "Reward_base__s400x300_a8627e1b",
+  base__s600x450 = "Reward_base__s600x450_e27f3852",
+  base$6 = "Reward_d65e1e12",
+  base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
+  tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
+  icon$2 = "Reward_icon_e152f13b",
+  overlay = "Reward_overlay_8cbe65c9",
+  highlight = "Reward_highlight_f1cd08e0",
+  image__s24x24 = "Reward_image__s24x24_954b5cee",
+  image__s48x48 = "Reward_image__s48x48_21f091ec",
+  image__small = "Reward_image__small_3eddf28d",
+  image__s80x80 = "Reward_image__s80x80_21f091ec",
+  image__big = "Reward_image__big_e23f2c77",
+  image__s128x100 = "Reward_image__s128x100_1e08e04b",
+  image__s180x135 = "Reward_image__s180x135_93fc57c",
+  image__s232x174 = "Reward_image__s232x174_2904ea89",
+  image__s296x222 = "Reward_image__s296x222_52f0615b",
+  image__s400x300 = "Reward_image__s400x300_a8627e1b",
+  image__s600x450 = "Reward_image__s600x450_e27f3852",
+  image = "Reward_image_810ec3a2",
+  image__fixedBox = "Reward_image__fixedBox_e45bdd8a",
+  info = "Reward_info_26d38c48",
+  info__multi = "Reward_info__multi_465d34bd",
+  info__credits = "Reward_info__credits_1643219",
+  info__gold = "Reward_info__gold_c751be5d",
+  info__crystal = "Reward_info__crystal_18ccfdd0",
+  info__premiumTank = "Reward_info__premiumTank_7862152",
+  title = "Reward_title_fbcf4b5",
+  timer = "Reward_timer_22ba7b8b",
+  styles$6 = {
+    root: root$3,
+    "media-wrapper": "Reward_media-wrapper_21f091ec",
+    base__s24x24: base__s24x24,
+    base__s48x48: base__s48x48,
+    base__small: base__small$1,
+    base__s80x80: base__s80x80,
+    base__big: base__big$1,
+    base__s128x100: base__s128x100,
+    base__s180x135: base__s180x135,
+    base__s232x174: base__s232x174,
+    base__s296x222: base__s296x222,
+    base__s400x300: base__s400x300,
+    base__s600x450: base__s600x450,
+    base: base$6,
+    base__dynamicBox: base__dynamicBox,
+    tooltipWrapper: tooltipWrapper,
+    icon: icon$2,
+    overlay: overlay,
+    highlight: highlight,
+    image__s24x24: image__s24x24,
+    image__s48x48: image__s48x48,
+    image__small: image__small,
+    image__s80x80: image__s80x80,
+    image__big: image__big,
+    image__s128x100: image__s128x100,
+    image__s180x135: image__s180x135,
+    image__s232x174: image__s232x174,
+    image__s296x222: image__s296x222,
+    image__s400x300: image__s400x300,
+    image__s600x450: image__s600x450,
+    image: image,
+    image__fixedBox: image__fixedBox,
+    info: info,
+    info__multi: info__multi,
+    info__credits: info__credits,
+    info__gold: info__gold,
+    info__crystal: info__crystal,
+    info__premiumTank: info__premiumTank,
+    title: title,
+    timer: timer,
+  },
+  images = resources.resolve("images"),
+  SIZE_MAP = new Map([
+    [ImageSize.S24x24, ImageSize.Small],
+    [ImageSize.S48x48, ImageSize.Small],
+  ]),
+  Reward = ({
+    name: e,
+    image: t,
+    isPeriodic: s = !1,
+    isFixedBoxSize: r = !0,
+    size: n = ImageSize.Big,
+    special: a,
+    value: o,
+    valueType: u,
+    title: i,
+    style: l,
+    className: c,
+    classNames: d,
+    tooltipArgs: m,
+    periodicIconTooltipArgs: _,
+  }) => {
+    const p = SIZE_MAP.has(n) ? SIZE_MAP.get(n) : n,
+      E = getBottomHighlight(n, a),
+      x = getOverlay(a),
+      f = getFormattedValue(o, u),
+      b = useTooltip({
+        contentId: m?.contentId ?? 0,
+        args: m?.args,
+        resId: m?.resId,
+        decoratorId: m?.decoratorId,
+      }),
+      h = useSimpleTooltip({ header: _?.header, body: _?.body });
+    return jsxRuntimeExports.jsxs("div", {
+      className: cx(styles$6.base, styles$6[`base__${n}`], !r && styles$6.base__dynamicBox, c),
+      style: l,
+      ...b,
+      children: [
+        jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+          children: [
+            jsxRuntimeExports.jsxs("div", {
+              className: cx(
+                styles$6.image,
+                r ? styles$6.image__fixedBox : styles$6[`image__${n}`],
+                d?.image,
+              ),
+              children: [
+                E &&
+                  jsxRuntimeExports.jsx("div", {
+                    className: cx(styles$6.highlight, d?.highlight),
+                    style: {
+                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${E}_highlight`)})`,
+                    },
+                  }),
+                t &&
+                  jsxRuntimeExports.jsx("div", {
+                    className: cx(styles$6.icon, d?.rewardIcon),
+                    style: { backgroundImage: `url(${t})` },
+                  }),
+                x &&
+                  jsxRuntimeExports.jsx("div", {
+                    className: cx(styles$6.overlay, d?.overlay),
+                    style: {
+                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${x}_overlay`)})`,
+                    },
+                  }),
+              ],
+            }),
+            f &&
+              jsxRuntimeExports.jsx("div", {
+                className: cx(
+                  styles$6.info,
+                  styles$6[`info__${e}`],
+                  u === ValueTypes.MULTI && styles$6.info__multi,
+                  d?.info,
+                ),
+                children: f,
+              }),
+            i && jsxRuntimeExports.jsx("div", { className: styles$6.title, children: i }),
+          ],
+        }),
+        s && jsxRuntimeExports.jsx("div", { className: cx(styles$6.timer, d?.periodicIcon), ...h }),
+      ],
+    });
+  },
+  base$5 = "RewardsList_b956755b",
+  base__vertical = "RewardsList_base__vertical_59db3c9f",
+  reward = "RewardsList_reward_fc200613",
+  reward__vertical = "RewardsList_reward__vertical_5f09c6e0",
+  boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
+  styles$5 = {
+    base: base$5,
+    base__vertical: base__vertical,
+    reward: reward,
+    reward__vertical: reward__vertical,
+    boxRewardClassName: boxRewardClassName,
+  },
+  sizeToDefault = { [ImageSize.S24x24]: ImageSize.Small, [ImageSize.S48x48]: ImageSize.Small };
+reactExports.memo(function ({
+  data: e,
+  isFixedBoxSize: t,
+  size: s = ImageSize.Big,
+  isVertical: r = !1,
+  count: n,
+  classMix: a,
+  rewardItemClassMix: o,
+  boxRewardTooltip: u,
+  boxRewardValue: i,
+  boxRewardClassName: l,
+  boxRewardClassNames: c,
+}) {
+  const d = resources.resolve("strings"),
+    m = resources.resolve("images"),
+    _ =
+      "number" == typeof n && n < e.length
+        ? `${m.readOrEmpty(`quests.bonuses.${sizeToDefault[s] ?? s}.default`)}`
+        : void 0,
+    p =
+      i ||
+      renderString(upgradeLegacy(d.readOrEmpty("tooltips.quests.awards.additional.bottom")), {
+        count: e.length - (n || 0),
+      });
+  return jsxRuntimeExports.jsx("div", {
+    className: cx(styles$5.base, r && styles$5.base__vertical, a),
+    children:
+      void 0 !== _
+        ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+            children: [
+              e
+                .slice(0, n)
+                .map((e, n) =>
+                  jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: cx(styles$5.reward, r && styles$5.reward__vertical, o),
+                      children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
+                    },
+                    n,
+                  ),
+                ),
+              jsxRuntimeExports.jsx("div", {
+                className: cx(styles$5.reward, r && styles$5.reward__vertical, o),
+                children: jsxRuntimeExports.jsx(Reward, {
+                  name: "more",
+                  isFixedBoxSize: t,
+                  image: _,
+                  size: s,
+                  value: p,
+                  tooltipArgs: u,
+                  className: cx(styles$5.boxRewardClassName, l),
+                  classNames: c,
+                }),
+              }),
+            ],
+          })
+        : e.map((e, n) =>
+            jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: cx(styles$5.reward, r && styles$5.reward__vertical, o),
+                children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
+              },
+              n,
+            ),
+          ),
+  });
+});
 var Alignment = ((e) => (
   (e.FlexStart = "flex-start"),
   (e.Center = "center"),
@@ -13192,7 +13192,7 @@ export {
   overlayTypes as by,
   sizes$a as bz,
   mediumTankRoles as c,
-  PlayerInfo as c$,
+  createTargetOverrides as c$,
   Timer as c0,
   ExtendedText as c1,
   calcPercent as c2,
@@ -13206,30 +13206,30 @@ export {
   ModelRouterProvider as cA,
   runView as cB,
   setSkipFramesAllowed as cC,
-  useKeydownListener as cD,
-  Bubble as cE,
-  sizes$4 as cF,
-  ImageSize as cG,
-  formatPrintf as cH,
-  Reward as cI,
-  useCallbackOnEsc as cJ,
-  CloseButton as cK,
-  toRoman as cL,
-  ONE_DAY$1 as cM,
-  fromAccountModel as cN,
-  fromModel$1 as cO,
-  easings as cP,
-  add as cQ,
-  DateTimeFormatsEnum as cR,
-  useRefResizeObserver as cS,
-  useLayoutReady as cT,
-  useMeasure as cU,
-  measureTypes as cV,
-  columnBehaviours as cW,
-  useTableContext as cX,
-  Table as cY,
-  tableParts as cZ,
-  TableProvider as c_,
+  toRoman as cD,
+  formatPrintf as cE,
+  ONE_DAY$1 as cF,
+  useCallbackOnEsc as cG,
+  CloseButton as cH,
+  fromAccountModel as cI,
+  fromModel$1 as cJ,
+  easings as cK,
+  add as cL,
+  DateTimeFormatsEnum as cM,
+  useRefResizeObserver as cN,
+  useLayoutReady as cO,
+  useMeasure as cP,
+  measureTypes as cQ,
+  columnBehaviours as cR,
+  useTableContext as cS,
+  Table as cT,
+  tableParts as cU,
+  TableProvider as cV,
+  PlayerInfo as cW,
+  useResizeLayoutReady as cX,
+  useBackportContextMenu as cY,
+  isValidBreakpoint as cZ,
+  useTabsContext as c_,
   MediaWrapper as ca,
   SceneWrapper as cb,
   useWulfTooltip as cc,
@@ -13257,13 +13257,13 @@ export {
   Route as cy,
   createMultipleTargetOverrides as cz,
   isRentVehicle as d,
-  useResizeLayoutReady as d0,
-  useBackportContextMenu as d1,
-  isValidBreakpoint as d2,
-  useTabsContext as d3,
-  createTargetOverrides as d4,
-  initExternalPaddings$1 as d5,
-  enableFullScreenModeSupported$1 as d6,
+  initExternalPaddings$1 as d0,
+  enableFullScreenModeSupported$1 as d1,
+  useKeydownListener as d2,
+  Bubble as d3,
+  sizes as d4,
+  ImageSize as d5,
+  Reward as d6,
   getRewardTooltipConfig as d7,
   getRewardValueType as d8,
   getRewardImage as d9,

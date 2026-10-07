@@ -1,5 +1,5 @@
-import { j as e, W as a } from "./vendor.js";
-import { aY as l, am as s, dt as i, dE as _, dg as c } from "./lib.js";
+import { j as e, a3 as a } from "./vendor.js";
+import { aP as l, a9 as s, dr as i, dC as _, dd as c } from "./lib.js";
 const n = {
   base: "VehicleRole_b05c9386",
   icon: "VehicleRole_icon_a3da323b",
@@ -89,7 +89,7 @@ function m({
 }) {
   const y = l(r),
     u = V ? `${y}_elite` : y,
-    j = `url(${p?.$dyn(u)})`;
+    C = `url(${p?.$dyn(u)})`;
   return e.jsxs("div", {
     className: a(h.base, h[`base__${x}`], V && h.base__elite, N),
     children: [
@@ -104,7 +104,7 @@ function m({
               className: a(h.vehicleTypeContainer, f?.vehicleTypeContainer),
               children: e.jsx("div", {
                 className: a(h.vehicleType, f?.type),
-                style: { backgroundImage: j },
+                style: { backgroundImage: C },
               }),
             }),
             e.jsx("div", { className: a(h.shortName, f?.shortName), children: s }),

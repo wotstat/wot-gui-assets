@@ -4,14 +4,14 @@ import {
   cs as n,
   m as l,
   i as o,
-  ab as c,
+  ac as c,
   d as r,
   K as m,
   Y as d,
   X as _,
   B as u,
-  r as b,
-  U as g,
+  r as g,
+  U as b,
 } from "../../../../chunks/lib.js";
 const p = "Warning_167127e0",
   h = "Warning_icon_621a0c49";
@@ -52,7 +52,7 @@ function E({
   classNames: _,
   className: u,
 }) {
-  const { responsiveHeader: b, disableResponsiveContentPosition: g } = ((e, s) =>
+  const { responsiveHeader: g, disableResponsiveContentPosition: b } = ((e, s) =>
       Object.keys(s).reduce((s, a) => ((s[a] = e.includes(a)), s), {}))(d, f),
     p = a.useCallback(() => {
       n && n();
@@ -62,10 +62,10 @@ function E({
     children: [
       e.jsx(i, { onClose: p, className: z }),
       e.jsxs("div", {
-        className: t(x, l && C, s && D, !g && N, _?.center),
+        className: t(x, l && C, s && D, !b && N, _?.center),
         children: [
-          l && e.jsx("div", { className: t(T, b && y, _?.icon), children: l }),
-          o && e.jsx("div", { className: t(k, b && I, _?.title), children: o }),
+          l && e.jsx("div", { className: t(T, g && y, _?.icon), children: l }),
+          o && e.jsx("div", { className: t(k, g && I, _?.title), children: o }),
           c && e.jsx("div", { className: P, children: c }),
           e.jsx("div", { className: t($, !c && B, !m && M, _?.divider) }),
           m && e.jsx("div", { className: A, children: m }),
@@ -185,4 +185,4 @@ function V() {
     })
   );
 }
-b(e.jsx(g, { children: e.jsx(Y, { children: e.jsx(V, {}) }) }));
+g(e.jsx(b, { children: e.jsx(Y, { children: e.jsx(V, {}) }) }));

@@ -10,7 +10,7 @@ import {
   bb as g,
   e as b,
   u as x,
-  aV as h,
+  Z as h,
   b6 as f,
   j as y,
   p as v,
@@ -237,9 +237,9 @@ const [H, F] = p()(
   },
   U = "video";
 (_.Common, _.Common, _.Rare, _.Rare);
-const J = "Glow_2571a3a9",
-  K = "Glow_base__hover_bba0fce1",
-  Z = "Glow_video_2d774833",
+const Z = "Glow_2571a3a9",
+  J = "Glow_base__hover_bba0fce1",
+  K = "Glow_video_2d774833",
   q = "Glow_img_90334d0",
   Q = o(function ({ hover: e = !1, className: t }) {
     const { model: s } = F(),
@@ -251,14 +251,14 @@ const J = "Glow_2571a3a9",
         return { src: s, type: o };
       })(o.shine, r.glow);
     return n.jsx("div", {
-      className: a(J, e && K, t),
+      className: a(Z, e && J, t),
       style: {
         "--opacity-initial": i.shine.opacity.initial,
         "--opacity-hover": i.shine.opacity.hover,
       },
       children:
         c.type === U
-          ? n.jsx(g, { loop: !0, autoplay: !0, className: Z, src: c.src })
+          ? n.jsx(g, { loop: !0, autoplay: !0, className: K, src: c.src })
           : n.jsx("div", { className: q, style: { backgroundImage: `url(${c.src})` } }),
     });
   }),

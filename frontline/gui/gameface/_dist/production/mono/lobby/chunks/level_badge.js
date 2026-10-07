@@ -1,4 +1,4 @@
-import { r as e, j as _, a3 as a } from "./vendor.js";
+import { r as e, j as _, a0 as a } from "./vendor.js";
 import { bL as c, o as s, c4 as o } from "./lib.js";
 const d = {
     bg0: [0],

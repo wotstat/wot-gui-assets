@@ -1,7 +1,7 @@
 import { j as e, R as a, r as s } from "../../../chunks/vendor.js";
 import {
   u as t,
-  aV as o,
+  Z as o,
   m as i,
   p as n,
   E as r,
@@ -16,7 +16,7 @@ import {
   r as y,
   U as u,
 } from "../../../chunks/lib.js";
-import { d as h } from "../../../chunks/sound.js";
+import { c as h } from "../../../chunks/sound.js";
 import { S as f } from "../../../chunks/spring_wrapper.js";
 const I = { y: 0, opacity: 1 };
 var x = ((e) => (
@@ -120,7 +120,7 @@ const N = "InfoBlock_f854eb14",
       imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
     },
   ],
-  V = () => {
+  X = () => {
     const { controls: a } = z(),
       [t, o] = s.useState(!1);
     (d(a.onClose), m(g.ENTER, a.onClose), m(g.SPACE, a.onClose));
@@ -171,4 +171,4 @@ const N = "InfoBlock_f854eb14",
       ],
     });
   };
-y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(V, {}) }) }));
+y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(X, {}) }) }));
