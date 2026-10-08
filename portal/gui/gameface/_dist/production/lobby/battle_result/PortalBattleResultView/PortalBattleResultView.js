@@ -1658,9 +1658,11 @@
         const ce = {
           base: "App_base_a8",
           leaderBoardVignette: "App_leaderBoardVignette_97",
+          leaderBoardVignette__active: "App_leaderBoardVignette__active_1b",
           leaderBoardBg: "App_leaderBoardBg_60",
           leaderBoardBg__active: "App_leaderBoardBg__active_bb",
           vignnet: "App_vignnet_33",
+          vignnet__hidden: "App_vignnet__hidden_9e",
           glowRed: "App_glowRed_26",
           glowBlue: "App_glowBlue_a4",
           horizontalTabs: "App_horizontalTabs_8c",
@@ -4075,10 +4077,10 @@
               ),
           ),
           At = (e, u, t) => {
-            const a = t === Zt.Results ? t : Zt.Leaderboard,
+            const a = t === Qt.Results ? t : Qt.Leaderboard,
               r = `c_${u}`,
               n = (function () {
-                if (a === Zt.Results)
+                if (a === Qt.Results)
                   switch (e) {
                     case f.Medium:
                       return "c_258x258";
@@ -4119,7 +4121,7 @@
               finishResultType: a,
             }) => {
               const r = y().mediaSize,
-                o = (0, n.useMemo)(() => At(r, u, Zt.Leaderboard), [r, u]),
+                o = (0, n.useMemo)(() => At(r, u, Qt.Leaderboard), [r, u]),
                 l = (0, n.useMemo)(() => Ft(a), [a]);
               return i().createElement(
                 "div",
@@ -4706,7 +4708,7 @@
                   }));
               }, [r, s, E, A]);
               const F = y().mediaSize,
-                D = (0, n.useMemo)(() => At(F, u, Zt.Results), [F, u]),
+                D = (0, n.useMemo)(() => At(F, u, Qt.Results), [F, u]),
                 B = (0, n.useMemo)(() => Ft(a), [a]);
               return i().createElement(
                 "div",
@@ -4943,33 +4945,34 @@
             );
           }),
           qt = "TabContent_base_8c",
-          Kt = i().memo(({ currentTabId: e, shouldAnimate: u }) => {
-            switch (e) {
-              case Zt.Results:
-                return i().createElement(
-                  "div",
-                  { className: h()(qt) },
-                  i().createElement(Yt, { shouldAnimate: u }),
-                );
-              case Zt.Leaderboard:
-                return i().createElement(
-                  "div",
-                  { className: h()(qt, "TabContent_base__leaderboard_77") },
-                  i().createElement(Rt, null),
-                );
-              default:
-                return null;
-            }
+          Kt = "TabContent_base__active_20",
+          Zt = i().memo(({ currentTabId: e, shouldAnimate: u }) => {
+            const t = e === Qt.Results,
+              a = e === Qt.Leaderboard;
+            return i().createElement(
+              i().Fragment,
+              null,
+              i().createElement(
+                "div",
+                { className: h()(qt, t && Kt) },
+                i().createElement(Yt, { shouldAnimate: u }),
+              ),
+              i().createElement(
+                "div",
+                { className: h()(qt, "TabContent_base__leaderboard_77", a && Kt) },
+                i().createElement(Rt, null),
+              ),
+            );
           });
-        let Zt;
+        let Qt;
         !(function (e) {
           ((e.Results = "results"), (e.Leaderboard = "leaderboard"));
-        })(Zt || (Zt = {}));
-        const Qt = [
-            { id: Zt.Results, title: R.strings.portal_battle_result.tab.result() },
-            { id: Zt.Leaderboard, title: R.strings.portal_battle_result.tab.leaderboard() },
+        })(Qt || (Qt = {}));
+        const Jt = [
+            { id: Qt.Results, title: R.strings.portal_battle_result.tab.result() },
+            { id: Qt.Leaderboard, title: R.strings.portal_battle_result.tab.leaderboard() },
           ],
-          Jt = (0, se.observer)(() => {
+          ea = (0, se.observer)(() => {
             const e = mu(),
               u = e.model,
               t = e.controls,
@@ -5006,29 +5009,32 @@
             } = {}) {
               oe(e, u, t);
             })({ callback: g });
-            const C = (0, n.useState)(Zt.Results),
+            const C = (0, n.useState)(Qt.Results),
               p = C[0],
               b = C[1],
               f = (0, n.useCallback)((e) => {
                 (b(e), B(!1));
               }, []),
-              v = p === Zt.Leaderboard,
-              w = (0, n.useMemo)(() => ru(a, d, v, r), [d, a, v, r]);
+              v = p === Qt.Leaderboard,
+              w = (0, n.useMemo)(() => ru(a, d, !1, r), [d, a, r]),
+              x = (0, n.useMemo)(() => ru(a, d, !0, r), [d, a, r]);
             return i().createElement(
               "div",
               { className: ce.base, style: { backgroundImage: `url(${w.imageURL})` } },
               i().createElement("div", {
                 className: h()(ce.leaderBoardBg, v && ce.leaderBoardBg__active),
-                style: { backgroundImage: `url(${ru(a, d, v, r).imageURL})` },
+                style: { backgroundImage: `url(${x.imageURL})` },
               }),
               i().createElement("div", { className: ce[w.glow] }),
-              !v && i().createElement("div", { className: ce.vignnet }),
-              v && i().createElement("div", { className: h()(v && ce.leaderBoardVignette) }),
-              i().createElement(Kt, { currentTabId: p, shouldAnimate: D }),
+              i().createElement("div", { className: h()(ce.vignnet, v && ce.vignnet__hidden) }),
+              i().createElement("div", {
+                className: h()(ce.leaderBoardVignette, v && ce.leaderBoardVignette__active),
+              }),
+              i().createElement(Zt, { currentTabId: p, shouldAnimate: D }),
               i().createElement(j, {
                 classNames: { tab: ce.tab },
                 className: ce.horizontalTabs,
-                tabs: Qt,
+                tabs: Jt,
                 active: p,
                 onClick: f,
               }),
@@ -5055,7 +5061,7 @@
           });
         engine.whenReady.then(() => {
           P().render(
-            i().createElement(du, null, i().createElement(k, null, i().createElement(Jt, null))),
+            i().createElement(du, null, i().createElement(k, null, i().createElement(ea, null))),
             document.getElementById("root"),
           );
         });

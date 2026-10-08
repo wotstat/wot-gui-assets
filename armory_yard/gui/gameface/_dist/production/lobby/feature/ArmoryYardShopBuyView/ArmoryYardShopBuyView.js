@@ -4801,25 +4801,26 @@
               const v = (0, a.useState)(1),
                 b = v[0],
                 f = v[1],
-                w = (o && l < i) || !n,
-                S = i * b,
-                y = Math.floor(l / i) || 1,
-                x = -1 !== E,
-                P = x ? Math.min(y, E) : y,
-                T = o ? S : e,
-                N = (0, a.useCallback)(() => {
-                  b < P && f(b + 1);
-                }, [P, b]),
+                w = o && l < i,
+                S = w || !n,
+                y = i * b,
+                x = Math.floor(l / i) || 1,
+                P = -1 !== E,
+                T = P ? Math.min(x, E) : x,
+                N = o ? y : e,
                 M = (0, a.useCallback)(() => {
+                  b < T && f(b + 1);
+                }, [T, b]),
+                L = (0, a.useCallback)(() => {
                   b > 1 && f(b - 1);
                 }, [b]),
-                L = (0, a.useCallback)(
+                k = (0, a.useCallback)(
                   (e, u, t, a) => () => {
                     g(e, u, t, a);
                   },
                   [g],
                 ),
-                k = (0, a.useMemo)(
+                O = (0, a.useMemo)(
                   () =>
                     r().createElement(mu, {
                       text: ca.limit(),
@@ -4835,24 +4836,23 @@
                     }),
                   [E],
                 ),
-                O =
+                I =
                   c &&
                   r().createElement(
                     "div",
                     { className: "Footer_productCounter_dd" },
                     r().createElement(ea, {
                       value: b,
-                      handleTokenIncrease: N,
-                      handleTokenDecrease: M,
-                      maxValue: P,
+                      handleTokenIncrease: M,
+                      handleTokenDecrease: L,
+                      maxValue: T,
                       minValue: 1,
                     }),
-                    x &&
-                      !m &&
+                    P &&
                       r().createElement(
                         "div",
                         { className: C()(la, "Footer_limit__stepper_9d") },
-                        k,
+                        O,
                       ),
                   );
               return r().createElement(
@@ -4870,14 +4870,26 @@
                         {
                           className: C()(
                             "Footer_priceSection_fc",
-                            (!x || m) && "Footer_priceSection__unlimited_7c",
+                            (!P || m) && "Footer_priceSection__unlimited_7c",
                           ),
                         },
                         r().createElement(
                           "div",
                           { className: "Footer_finalPrice_cc" },
                           o
-                            ? O
+                            ? r().createElement(
+                                r().Fragment,
+                                null,
+                                r().createElement(mu, {
+                                  className: C()(
+                                    "Footer_finalPrice__tokens_c9",
+                                    w && "Footer_finalPrice__tokens__disabled_09",
+                                  ),
+                                  text: String(N),
+                                }),
+                                r().createElement("div", { className: "Footer_tokenIcon_fa" }),
+                                I,
+                              )
                             : r().createElement(
                                 "div",
                                 { className: "Footer_calculator_a1" },
@@ -4895,15 +4907,15 @@
                                   setGoldValue: B,
                                   setCrystalValue: h,
                                 }),
-                                x && r().createElement("div", { className: la }, k),
+                                P && r().createElement("div", { className: la }, O),
                               ),
                           r().createElement(
                             Wt,
                             {
                               type: Ht.main,
                               mixClass: "Footer_buyButton_95",
-                              disabled: w,
-                              onClick: L(o ? 0 : t, o ? 0 : u, T, b),
+                              disabled: S,
+                              onClick: k(o ? 0 : t, o ? 0 : u, N, b),
                             },
                             r().createElement(mu, {
                               text: ca.buy(),
