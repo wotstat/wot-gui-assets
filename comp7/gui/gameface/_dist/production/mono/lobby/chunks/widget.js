@@ -1,36 +1,43 @@
-import { V as e, r as s, j as a, f as t } from "./vendor.js";
+import { r as e } from "./rolldown-runtime.js";
 import {
-  C as r,
-  eB as n,
-  eC as o,
-  i,
-  G as d,
-  q as c,
-  eD as l,
-  c5 as _,
-  c6 as p,
-  eE as m,
-  eF as f,
-  eG as g,
-  cj as u,
-  eH as b,
-  eI as T,
-  ce as h,
-  cJ as x,
-  eJ as v,
+  Cs as s,
+  Es as a,
+  Na as t,
+  Ti as r,
+  Wa as n,
+  Y as o,
+  _i as i,
+  _s as d,
+  ao as l,
+  gs as c,
+  hs as _,
+  ms as p,
+  n as m,
+  ps as f,
+  q as g,
+  so as u,
+  t as h,
+  vi as b,
+  vs as T,
+  xs as x,
+  xt as v,
 } from "./lib.js";
-var N = ((e) => ((e.News = "news"), (e.ShopPromo = "shopPromo"), (e.None = "none"), e))(N || {});
-const w = {
-    getter: o({
-      type: N.News,
+import { a as N } from "./vendor.js";
+var w = (function (e) {
+  return ((e.News = "news"), (e.ShopPromo = "shopPromo"), (e.None = "none"), e);
+})({});
+(w.News, w.News, w.ShopPromo, Math.floor(Date.now() / 1e3));
+var y = {
+    getter: b({
+      type: w.News,
       description:
         "Watch very interesting video, with very long, very very interesting and meaningful description!",
       isVideo: !0,
       image: "https://pie-webbrg-cdn-stg.wgcdn.co/dcont/fb/image/whats_new_475x230_2.png",
     }),
-    controls: () => r(n("onClick", "onClose")),
+    controls: () => u(l("onClick", "onClose")),
   },
-  [y, j] = i("TeaserModel")(
+  [j, C] = i("TeaserModel")(
     ({ observableModel: e }) =>
       e.primitives([
         "type",
@@ -46,7 +53,8 @@ const w = {
       onClose: e.createCallbackNoArgs("onClose"),
     }),
   ),
-  C = {
+  k = e(s(), 1),
+  W = {
     imageWrapper: "Teaser_imageWrapper_901f1116",
     vignette: "Teaser_vignette_32737740",
     base: "Teaser_a2a96284",
@@ -78,118 +86,123 @@ const w = {
     blink: "Teaser_blink_3d4fdb7e",
     slideUpIn: "Teaser_slideUpIn_3d4fdb7e",
   },
-  k = "Teaser:Base",
-  I = e(function ({ className: e, classNames: r }) {
-    const { model: n, controls: o } = j(),
-      i = n.type.get() || N.News,
-      w = n.postCounter.get(),
-      y = n.text.get(),
-      I = n.description.get(),
-      W = n.finishTime.get(),
-      A = n.isVideo.get(),
-      B = n.image.get(),
-      E = d(),
-      M = c.resolve("strings");
-    const S = s.useCallback(
+  I = e(t(), 1),
+  A = "Teaser:Base",
+  M = N(function ({ className: e, classNames: s }) {
+    const { model: t, controls: i } = C(),
+      l = t.type.get() || w.News,
+      u = t.postCounter.get(),
+      b = t.text.get(),
+      N = t.description.get(),
+      y = t.finishTime.get(),
+      j = t.isVideo.get(),
+      M = t.image.get(),
+      E = r(),
+      S = a.resolve("strings");
+    const B = (0, k.useCallback)(
         (e) => {
-          (e.stopPropagation(), o.onClose());
+          (e.stopPropagation(), i.onClose());
         },
-        [o],
+        [i],
       ),
-      [P, U] = s.useState(null);
-    s.useLayoutEffect(() => {
+      [P, U] = (0, k.useState)(null);
+    (0, k.useLayoutEffect)(() => {
       let e;
-      const s = l(_(W || 0), p());
-      if (!W || s <= 0) return void U(null);
-      const a = Math.floor(v.seconds(s)),
-        t = m(_(W), f(1)) ? g.Extended : g.Long;
-      if ((U({ duration: a, style: t }), t === g.Extended)) {
-        const s = l(_(a + 1), f(1));
-        e = setTimeout(() => U((e) => ({ ...e, style: g.Long })), Math.min(s, u));
+      const s = f(T(y || 0), d());
+      if (!y || s <= 0) return void U(null);
+      const a = Math.floor(_.seconds(s)),
+        t = c(T(y), p(1)) ? o.Extended : o.Long;
+      if ((U({ duration: a, style: t }), t === o.Extended)) {
+        const s = f(T(a + 1), p(1));
+        e = setTimeout(() => U((e) => ({ ...e, style: o.Long })), Math.min(s, n));
       }
       return () => {
         e && (clearTimeout(e), (e = void 0));
       };
-    }, [W]);
-    const [V, $] = s.useState(null),
-      [H, L] = s.useState(!1);
+    }, [y]);
+    const [$, L] = (0, k.useState)(null),
+      [O, V] = (0, k.useState)(!1);
     return (
-      s.useEffect(() => {
+      (0, k.useEffect)(() => {
         const e = new Image();
         return (
-          (e.src = B),
+          (e.src = M),
           (e.onload = () => {
-            ($({ path: B, height: e.height, width: e.width }), L(!0));
+            (L({ path: M, height: e.height, width: e.width }), V(!0));
           }),
           (e.onerror = () => {
-            L(!0);
+            V(!0);
           }),
           () => {
-            ((e.src = ""), $(null));
+            ((e.src = ""), L(null));
           }
         );
-      }, [B]),
-      H
-        ? a.jsxs("div", {
-            className: t(C.base, C[`base__${i}Type`], A && C.base__video, e),
+      }, [M]),
+      O
+        ? (0, I.jsxs)("div", {
+            className: x(W.base, W[`base__${l}Type`], j && W.base__video, e),
             onClick: function (e) {
-              (E.play("click", { target: k, original: e }), o.onClick());
+              (E.play("click", { target: A, original: e }), i.onClick());
             },
             onMouseEnter: function (e) {
-              E.play("mouse-enter", { target: k, original: e });
+              E.play("mouse-enter", { target: A, original: e });
             },
             children: [
-              a.jsx("div", {
-                className: t(C.contentWrapper, r?.contentWrapper),
-                children: a.jsx("div", {
-                  className: t(C.imageWrapper, r?.imageWrapper),
+              (0, I.jsx)("div", {
+                className: x(W.contentWrapper, s?.contentWrapper),
+                children: (0, I.jsx)("div", {
+                  className: x(W.imageWrapper, s?.imageWrapper),
                   children:
-                    V &&
-                    a.jsx("div", {
-                      className: t(C.image, r?.image),
+                    $ &&
+                    (0, I.jsx)("div", {
+                      className: x(W.image, s?.image),
                       style: {
-                        backgroundImage: `url(${V.path})`,
-                        height: `${V.height}rem`,
-                        width: `${V.width}rem`,
+                        backgroundImage: `url(${$.path})`,
+                        height: `${$.height}rem`,
+                        width: `${$.width}rem`,
                       },
                     }),
                 }),
               }),
-              a.jsx("div", { className: t(C.vignette, r?.vignette) }),
-              a.jsxs("div", {
-                className: t(C.contentWrapper, r?.contentWrapper),
+              (0, I.jsx)("div", { className: x(W.vignette, s?.vignette) }),
+              (0, I.jsxs)("div", {
+                className: x(W.contentWrapper, s?.contentWrapper),
                 children: [
-                  a.jsxs("div", {
-                    className: t(C.title, r?.title),
+                  (0, I.jsxs)("div", {
+                    className: x(W.title, s?.title),
                     children: [
-                      M.readOrEmpty("menu.promo.teaser.title"),
-                      Boolean(w) &&
-                        w > 0 &&
-                        a.jsx(b, { className: t(C.counter, r?.counter), value: w, size: "small" }),
+                      S.readOrEmpty("menu.promo.teaser.title"),
+                      Boolean(u) &&
+                        u > 0 &&
+                        (0, I.jsx)(m, {
+                          className: x(W.counter, s?.counter),
+                          value: u,
+                          size: "small",
+                        }),
                     ],
                   }),
-                  a.jsx(T, {
+                  (0, I.jsx)(h, {
                     type: "close",
                     side: "right",
-                    classNames: { base: t(C.closeButton, r?.closeButton) },
-                    onClick: S,
+                    classNames: { base: x(W.closeButton, s?.closeButton) },
+                    onClick: B,
                     caption: "",
                   }),
-                  y && a.jsx("div", { className: t(C.text, r?.text), children: y }),
-                  (I || P) &&
-                    a.jsxs("div", {
-                      className: C.bottomContent,
+                  b && (0, I.jsx)("div", { className: x(W.text, s?.text), children: b }),
+                  (N || P) &&
+                    (0, I.jsxs)("div", {
+                      className: W.bottomContent,
                       children: [
-                        I &&
-                          a.jsx("div", {
-                            className: t(C.description, r?.description),
-                            children: a.jsx(h, {
-                              classMix: C.extendedText,
-                              text: I,
+                        N &&
+                          (0, I.jsx)("div", {
+                            className: x(W.description, s?.description),
+                            children: (0, I.jsx)(v, {
+                              classMix: W.extendedText,
+                              text: N,
                               isTruncationAvailable: !0,
                             }),
                           }),
-                        P && a.jsx(x, { className: t(C.countdown, r?.countdown), ...P }),
+                        P && (0, I.jsx)(g, { className: x(W.countdown, s?.countdown), ...P }),
                       ],
                     }),
                 ],
@@ -199,12 +212,12 @@ const w = {
         : null
     );
   });
-function W({ className: e, classNames: s, ...t }) {
-  return a.jsx(y, {
-    ...t,
+function E({ className: e, classNames: s, ...a }) {
+  return (0, I.jsx)(j, {
+    ...a,
     mode: "real",
-    mocks: w,
-    children: a.jsx(I, { className: e, classNames: s }),
+    mocks: y,
+    children: (0, I.jsx)(M, { className: e, classNames: s }),
   });
 }
-export { W as default };
+export { E as default };
