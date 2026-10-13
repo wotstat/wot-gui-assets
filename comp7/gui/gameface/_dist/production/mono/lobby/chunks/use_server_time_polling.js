@@ -1,11 +1,10 @@
-import "./vendor.js";
-import { dT as o } from "./lib.js";
-function i(i, r, s, t = 950) {
+import { ua as o } from "./lib.js";
+function i(i, t, a, r = 950) {
   o(
     () => {
-      s();
+      a();
     },
-    i < r ? t : void 0,
+    i < t ? r : void 0,
   );
 }
-export { i as u };
+export { i as t };

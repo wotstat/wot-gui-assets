@@ -1,4 +1,4 @@
-const t = {
+var t = {
     "mouse-enter": { "main-menu-widget:menu-item": "highlightx" },
     click: {
       "main-menu-widget:menu-item": "yes1",
@@ -60,6 +60,10 @@ const t = {
     },
     warn: { "loadout-panel:slot:instruction": "cons_instructions_equip_not_suitable" },
     swipe: { "loadout-panel:ammunition_panel:section": "cons_equipment_swipe" },
+    increaseAmount: { "loadout:shells_setup:screen": "cons_ammo_single_plus" },
+    decreaseAmount: { "loadout:shells_setup:screen": "cons_ammo_single_minus" },
+    increaseAmountRoll: { "loadout:shells_setup:screen": "cons_ammo_roll_plus" },
+    decreaseAmountRoll: { "loadout:shells_setup:screen": "cons_ammo_roll_minus" },
   },
   o = {
     "mouse-enter": { "vehicle-card": "carousel", "vehicle:playlists:card": "carousel" },
@@ -80,4 +84,4 @@ const t = {
     drag: { "vehicle:playlists:edit:draggable_item": "play" },
     drop: { "vehicle:playlists:edit:draggable_item": "tank_selection" },
   };
-export { t as a, o as b, e as t };
+export { e as n, t as r, o as t };

@@ -1,4 +1,4 @@
-const e = {
+var e = {
   whiteSpanish: ["{{@ style (color $primary)}}", "{{/}}", "#ecca9d"],
   parSecondary: ["{{@ style (color $tertiary)}}", "{{/}}", "#8e867d"],
   green: ["{{@ style (color $done)}}", "{{/}}", "#64ba21"],
@@ -21,4 +21,4 @@ function r(r) {
   }
   return t;
 }
-export { r as p };
+export { r as t };

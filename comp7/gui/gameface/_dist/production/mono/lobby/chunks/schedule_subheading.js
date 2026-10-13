@@ -1,19 +1,22 @@
-import { j as s, a3 as e, V as a } from "./vendor.js";
+import { r as s } from "./rolldown-runtime.js";
 import {
-  ei as t,
-  cw as o,
-  ej as n,
-  ek as i,
-  el as m,
-  df as r,
-  de as c,
-  dr as d,
-  cz as l,
+  $ as e,
+  B as a,
+  Cs as t,
+  Na as o,
+  Q as n,
+  Ts as r,
+  cs as i,
+  ls as m,
+  us as d,
+  z as l,
 } from "./lib.js";
-import { a as x } from "./get_season_name.js";
-import { u as p } from "./use_server_time_polling.js";
-import { u as g } from "./schedule_model.js";
-const j = (s) => {
+import { a as c, i as x } from "./vendor.js";
+import { n as p } from "./schedule_model.js";
+import { t as g } from "./use_server_time_polling.js";
+import { t as j } from "./get_season_name.js";
+t();
+var f = (s) => {
     const e = Math.floor(s);
     return {
       totalSecondsLeft: e,
@@ -23,76 +26,81 @@ const j = (s) => {
       totalDays: Math.floor(e / 86400),
     };
   },
-  h = (e, a, t = r.ShortDate) => ({
-    startDate: s.jsx(c, { datetime: e, format: t }),
-    endDate: s.jsx(c, { datetime: a, format: t }),
+  h = s(o()),
+  u = (s, e, t = r.ShortDate) => ({
+    startDate: (0, h.jsx)(a, { datetime: s, format: t }),
+    endDate: (0, h.jsx)(a, { datetime: e, format: t }),
   }),
-  f = (e, a, r) => {
-    const c = a - r,
-      d = ((s, e) => j(s - e))(a, r);
-    return c >= t
-      ? s.jsx(o, { text: `${R.strings.comp7_ext.season.range()}`, binding: h(e, a) })
-      : c >= n
-        ? s.jsx(o, { text: R.strings.comp7_ext.season.daysLeft(), binding: d })
-        : c >= i
-          ? s.jsx(o, { text: R.strings.comp7_ext.season.hoursLeft(), binding: d })
-          : c >= m
-            ? s.jsx(o, { text: R.strings.comp7_ext.season.minutesLeft(), binding: d })
-            : c >= 1
-              ? s.jsx(o, { text: R.strings.comp7_ext.season.secondsLeft(), binding: d })
+  _ = (s, a, t) => {
+    const o = a - t,
+      n = ((s, e) => f(s - e))(a, t);
+    return o >= 604800
+      ? (0, h.jsx)(e, { text: `${R.strings.comp7_ext.season.range()}`, binding: u(s, a) })
+      : o >= 86400
+        ? (0, h.jsx)(e, { text: R.strings.comp7_ext.season.daysLeft(), binding: n })
+        : o >= 3600
+          ? (0, h.jsx)(e, { text: R.strings.comp7_ext.season.hoursLeft(), binding: n })
+          : o >= 60
+            ? (0, h.jsx)(e, { text: R.strings.comp7_ext.season.minutesLeft(), binding: n })
+            : o >= 1
+              ? (0, h.jsx)(e, { text: R.strings.comp7_ext.season.secondsLeft(), binding: n })
               : void 0;
   },
-  _ = "ActiveSeasonState_7be3b725",
+  v = s(x()),
+  N = "ActiveSeasonState_7be3b725",
   S = "ActiveSeasonState_calendarIcon_59b8982c",
-  u = "ActiveSeasonState_divider_82fcaca5",
-  v = ({
-    startTimestamp: a,
-    endTimestamp: t,
-    currentTimestamp: o,
-    seasonName: n,
-    tooltipId: i = "",
-    hasSeasonName: m = !0,
+  b = "ActiveSeasonState_divider_82fcaca5",
+  T = ({
+    startTimestamp: s,
+    endTimestamp: e,
+    currentTimestamp: a,
+    seasonName: t,
+    tooltipId: o = "",
+    hasSeasonName: n = !0,
     classNames: r,
   }) =>
-    s.jsx(d, {
-      args: { tooltipId: i },
-      isEnabled: Boolean(i),
-      children: s.jsxs("div", {
-        className: _,
+    (0, h.jsx)(l, {
+      args: { tooltipId: o },
+      isEnabled: Boolean(o),
+      children: (0, h.jsxs)("div", {
+        className: N,
         children: [
-          s.jsx("div", { className: e(S, r?.calendarIcon) }),
-          m && s.jsxs(s.Fragment, { children: [x(n), s.jsx("div", { className: u })] }),
-          f(a, t, o),
+          (0, h.jsx)("div", { className: (0, v.default)(S, r?.calendarIcon) }),
+          n && (0, h.jsxs)(h.Fragment, { children: [j(t), (0, h.jsx)("div", { className: b })] }),
+          _(s, e, a),
         ],
       }),
     }),
-  N = "ScheduleSubheading_6a634a68",
-  b = a(({ className: a, classNames: t, hasSeasonName: o = !0 }) => {
-    const { model: n, controls: i } = g(),
-      m = n.season.startTimestamp.get(),
-      r = n.season.endTimestamp.get(),
-      c = n.season.serverTimestamp.get(),
-      d = n.season.name.get();
+  I = "ScheduleSubheading_6a634a68",
+  L = c(({ className: s, classNames: e, hasSeasonName: a = !0 }) => {
+    const { model: t, controls: o } = p(),
+      r = t.season.startTimestamp.get(),
+      i = t.season.endTimestamp.get(),
+      m = t.season.serverTimestamp.get(),
+      d = t.season.name.get();
     return (
-      p(c, r, i.pollServerTime),
-      s.jsx("div", {
-        className: e(N, a),
+      g(m, i, o.pollServerTime),
+      (0, h.jsx)("div", {
+        className: (0, v.default)(I, s),
         children:
-          c < r
-            ? s.jsx("div", {
-                className: t?.activeSeasonState,
-                children: s.jsx(v, {
-                  startTimestamp: m,
-                  endTimestamp: r,
-                  currentTimestamp: c,
+          m < i
+            ? (0, h.jsx)("div", {
+                className: e?.activeSeasonState,
+                children: (0, h.jsx)(T, {
+                  startTimestamp: r,
+                  endTimestamp: i,
+                  currentTimestamp: m,
                   seasonName: d,
-                  tooltipId: n.root.get().tooltipId,
-                  hasSeasonName: o,
-                  classNames: t?.scheduleClassNames,
+                  tooltipId: t.root.get().tooltipId,
+                  hasSeasonName: a,
+                  classNames: e?.scheduleClassNames,
                 }),
               })
-            : s.jsx(l, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: x(d) } }),
+            : (0, h.jsx)(n, {
+                text: R.strings.comp7_ext.season.over(),
+                binding: { seasonName: j(d) },
+              }),
       })
     );
   });
-export { b as S, h as g };
+export { u as n, L as t };
