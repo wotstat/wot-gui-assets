@@ -2582,7 +2582,7 @@
                   g().createElement("div", null, i),
                 ),
                 g().createElement("div", { className: eu.icon, style: d }),
-                t && g().createElement(M, { text: t, classMix: eu.name }),
+                t && g().createElement("div", { className: eu.name }, t),
               ),
             );
             var c;

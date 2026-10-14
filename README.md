@@ -1,4 +1,4 @@
-# wot-gui-assets • wot-eu • 2.4.0.2 #966
+# wot-gui-assets • wot-eu • 2.4.1.0 #974
 
 [![wot-eu status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-eu.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-eu)
 [![wot-na status](https://img.shields.io/endpoint?url=https%3A%2F%2Fwotstat.github.io%2Fgame-unpack-pipeline%2Fbadges%2Fwot-na.json)](https://github.com/wotstat/wot-gui-assets/tree/wot-na)
@@ -56,9 +56,9 @@ locales/<LANG>/<RESOURCE_ROOT>/gui/
 
 - Target: `wot-eu`
 - Ветка: `wot-eu`
-- Версия: `2.4.0.5473`
+- Версия: `2.4.1.5488`
 - Publisher: `wargaming`
-- GameSnapshot: `sha256:2e7993ee40ced976a9afb48a4ffdd2e1f0df650fa88ca0e22af7724ee169a364`
+- GameSnapshot: `sha256:3df833c936949dd84612e568af8afb8961651f861171304c17702819d12c3e5d`
 
 Машиночитаемые метаданные и контрольные идентификаторы находятся в `.publication.json`.
 
@@ -68,5 +68,7 @@ locales/<LANG>/<RESOURCE_ROOT>/gui/
 
 - `story_mode/gui/flash/videos/intro.usm` — **185,28 MiB**
 - `story_mode/gui/flash/videos/scc_intro.usm` — **151,27 MiB**
+- `halloween/gui/videos/halloween/artefacts/bg_1.webm` — **140,26 MiB**
 - `story_mode/gui/flash/videos/scc_outro.usm` — **139,57 MiB**
+- `halloween/gui/videos/halloween/artefacts/bg_2.webm` — **122,03 MiB**
 - `story_mode/gui/flash/videos/d_day.usm` — **103,84 MiB**
