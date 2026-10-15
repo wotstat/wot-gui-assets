@@ -2614,10 +2614,7 @@
                         const e = { root: u.object(), rewards: u.array("rewards") },
                           t = ((r = e.rewards.get()), re(r));
                         var r;
-                        const a = t.some((u) => u.name === d.RazlomCoin);
-                        return Object.assign({}, e, {
-                          computed: { rewardsList: t, hasPortalCurrency: a },
-                        });
+                        return Object.assign({}, e, { computed: { rewardsList: t } });
                       })({
                         mode: u,
                         readByPath: o,
@@ -2705,10 +2702,10 @@
                   F = A[1],
                   D = (0, r.useState)(() => l(u, n, o)),
                   m = D[0],
-                  B = D[1];
+                  d = D[1];
                 return (
                   (0, r.useEffect)(() => {
-                    _.current ? B(l(c, n, o)) : (_.current = !0);
+                    _.current ? d(l(c, n, o)) : (_.current = !0);
                   }, [o, c, n]),
                   (0, r.useEffect)(() => {
                     F(u);
@@ -2724,10 +2721,7 @@
               },
               () => (0, r.useContext)(t),
             ];
-          })(0, ({ externalModel: u }) => ({
-            approve: u.createCallbackNoArgs("onApprove"),
-            shopClick: u.createCallbackNoArgs("onShopClick"),
-          })),
+          })(0, ({ externalModel: u }) => ({ approve: u.createCallbackNoArgs("onApprove") })),
           ne = ae[0],
           ie = ae[1],
           se = "RewardsList_value_a9";
@@ -3090,8 +3084,7 @@
               ),
             );
           },
-          pe = "App_button_ff",
-          he = (0, F.observer)(() => {
+          pe = (0, F.observer)(() => {
             const u = (function ({
                 key: u = o.n.ESCAPE,
                 callback: e = () => s.O.view.sendEvent.close(),
@@ -3099,11 +3092,8 @@
               } = {}) {
                 return (_(u, e, t), e);
               })(),
-              e = ie(),
-              t = e.controls,
-              n = e.model,
-              i = Bu().mediaSize === Fu.ExtraLarge ? de.ExtraLarge : de.Medium,
-              E = n.computed.hasPortalCurrency;
+              e = ie().controls,
+              t = Bu().mediaSize === Fu.ExtraLarge ? de.ExtraLarge : de.Medium;
             return (
               (0, r.useEffect)(() => {
                 A("pr_reward_screen");
@@ -3137,31 +3127,23 @@
                     "div",
                     { className: "App_buttonGroup_40" },
                     a().createElement(Ce, {
-                      className: pe,
+                      className: "App_button_ff",
                       type: Be.Blue,
-                      onClick: t.approve,
+                      onClick: e.approve,
                       title: R.strings.portal_rewards.button.approve(),
-                      size: i,
+                      size: t,
                     }),
-                    E &&
-                      a().createElement(Ce, {
-                        className: pe,
-                        type: Be.Gray,
-                        onClick: t.shopClick,
-                        title: R.strings.portal_rewards.button.shop(),
-                        size: i,
-                      }),
                   ),
                 ),
               )
             );
           });
-        var be = t(926),
-          ve = t.n(be);
-        const we = ["children", "className"];
-        function Se() {
+        var he = t(926),
+          be = t.n(he);
+        const ve = ["children", "className"];
+        function we() {
           return (
-            (Se =
+            (we =
               Object.assign ||
               function (u) {
                 for (var e = 1; e < arguments.length; e++) {
@@ -3170,31 +3152,31 @@
                 }
                 return u;
               }),
-            Se.apply(this, arguments)
+            we.apply(this, arguments)
           );
         }
-        const xe = {
+        const Se = {
             [Du.ExtraSmall]: "",
-            [Du.Small]: ve().SMALL_WIDTH,
-            [Du.Medium]: `${ve().SMALL_WIDTH} ${ve().MEDIUM_WIDTH}`,
-            [Du.Large]: `${ve().SMALL_WIDTH} ${ve().MEDIUM_WIDTH} ${ve().LARGE_WIDTH}`,
-            [Du.ExtraLarge]: `${ve().SMALL_WIDTH} ${ve().MEDIUM_WIDTH} ${ve().LARGE_WIDTH} ${ve().EXTRA_LARGE_WIDTH}`,
+            [Du.Small]: be().SMALL_WIDTH,
+            [Du.Medium]: `${be().SMALL_WIDTH} ${be().MEDIUM_WIDTH}`,
+            [Du.Large]: `${be().SMALL_WIDTH} ${be().MEDIUM_WIDTH} ${be().LARGE_WIDTH}`,
+            [Du.ExtraLarge]: `${be().SMALL_WIDTH} ${be().MEDIUM_WIDTH} ${be().LARGE_WIDTH} ${be().EXTRA_LARGE_WIDTH}`,
+          },
+          xe = {
+            [mu.ExtraSmall]: "",
+            [mu.Small]: be().SMALL_HEIGHT,
+            [mu.Medium]: `${be().SMALL_HEIGHT} ${be().MEDIUM_HEIGHT}`,
+            [mu.Large]: `${be().SMALL_HEIGHT} ${be().MEDIUM_HEIGHT} ${be().LARGE_HEIGHT}`,
+            [mu.ExtraLarge]: `${be().SMALL_HEIGHT} ${be().MEDIUM_HEIGHT} ${be().LARGE_HEIGHT} ${be().EXTRA_LARGE_HEIGHT}`,
           },
           fe = {
-            [mu.ExtraSmall]: "",
-            [mu.Small]: ve().SMALL_HEIGHT,
-            [mu.Medium]: `${ve().SMALL_HEIGHT} ${ve().MEDIUM_HEIGHT}`,
-            [mu.Large]: `${ve().SMALL_HEIGHT} ${ve().MEDIUM_HEIGHT} ${ve().LARGE_HEIGHT}`,
-            [mu.ExtraLarge]: `${ve().SMALL_HEIGHT} ${ve().MEDIUM_HEIGHT} ${ve().LARGE_HEIGHT} ${ve().EXTRA_LARGE_HEIGHT}`,
-          },
-          Te = {
             [Fu.ExtraSmall]: "",
-            [Fu.Small]: ve().SMALL,
-            [Fu.Medium]: `${ve().SMALL} ${ve().MEDIUM}`,
-            [Fu.Large]: `${ve().SMALL} ${ve().MEDIUM} ${ve().LARGE}`,
-            [Fu.ExtraLarge]: `${ve().SMALL} ${ve().MEDIUM} ${ve().LARGE} ${ve().EXTRA_LARGE}`,
+            [Fu.Small]: be().SMALL,
+            [Fu.Medium]: `${be().SMALL} ${be().MEDIUM}`,
+            [Fu.Large]: `${be().SMALL} ${be().MEDIUM} ${be().LARGE}`,
+            [Fu.ExtraLarge]: `${be().SMALL} ${be().MEDIUM} ${be().LARGE} ${be().EXTRA_LARGE}`,
           },
-          Re = (u) => {
+          Te = (u) => {
             let e = u.children,
               t = u.className,
               r = (function (u, e) {
@@ -3205,15 +3187,15 @@
                   n = Object.keys(u);
                 for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                 return a;
-              })(u, we);
+              })(u, ve);
             const n = Bu(),
               i = n.mediaWidth,
               s = n.mediaHeight,
               o = n.mediaSize;
-            return a().createElement("div", Se({ className: m()(t, xe[i], fe[s], Te[o]) }, r), e);
+            return a().createElement("div", we({ className: m()(t, Se[i], xe[s], fe[o]) }, r), e);
           },
-          Le = ["children"],
-          ye = (u) => {
+          Re = ["children"],
+          Le = (u) => {
             let e = u.children,
               t = (function (u, e) {
                 if (null == u) return {};
@@ -3223,12 +3205,12 @@
                   n = Object.keys(u);
                 for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                 return a;
-              })(u, Le);
-            return a().createElement(cu, null, a().createElement(Re, t, e));
+              })(u, Re);
+            return a().createElement(cu, null, a().createElement(Te, t, e));
           };
         engine.whenReady.then(() => {
           i().render(
-            a().createElement(ne, null, a().createElement(ye, null, a().createElement(he, null))),
+            a().createElement(ne, null, a().createElement(Le, null, a().createElement(pe, null))),
             document.getElementById("root"),
           );
         });
