@@ -159,7 +159,7 @@
             displayStatus: () => s.W,
             displayStatusIs: () => T,
             events: () => r.U,
-            extraSize: () => S,
+            extraSize: () => f,
             forceTriggerMouseMove: () => h,
             freezeTextureBeforeResize: () => B,
             getBrowserTexturePath: () => c,
@@ -178,7 +178,7 @@
             setEventHandled: () => v,
             setInputPaddingsRem: () => a,
             setSidePaddingsRem: () => A,
-            whenTutorialReady: () => f,
+            whenTutorialReady: () => S,
           }));
         var n = t(3722),
           s = t(6112),
@@ -246,7 +246,7 @@
             (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === s.W[e]), u),
             {},
           ),
-          S = {
+          f = {
             set: (u, e) => {
               viewEnv.setExtraSizeRem(u, e);
             },
@@ -254,7 +254,7 @@
               viewEnv.getExtraSizeRem(u, e);
             },
           },
-          f = Promise.all([
+          S = Promise.all([
             new Promise((u) => {
               window.isDomBuilt ? u() : r.U.onDomBuilt(u);
             }),
@@ -876,7 +876,7 @@
             : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
         }
         var p = t(6517);
-        let g, v, b, h, w, T, S, f, P;
+        let g, v, b, h, w, T, f, S, P;
         var y, x, k;
         (!(function (u) {
           ((u.Items = "items"),
@@ -910,6 +910,7 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
+            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -942,13 +943,7 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.WtStamp = "stamp"),
-            (u.WtHunter = "wt_hunter"),
-            (u.WtBoss = "wt_boss"),
-            (u.WtHunterCollection = "hunter_collection"),
-            (u.WtTicket = "wtevent_ticket"),
-            (u.WtMainPrizeDiscount = "main_prize_discount"),
-            (u.WtTicket25 = "wtevent_ticket25"));
+            (u.RazlomCoin = "razlom_coin"));
         })(g || (g = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1021,7 +1016,7 @@
           (x.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
           (x.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
           ((T || (T = {})).BATTLE_BOOSTER = "battleBooster"),
-          ((y = S || (S = {})).BATTLE_BOOSTER = "battleBooster"),
+          ((y = f || (f = {})).BATTLE_BOOSTER = "battleBooster"),
           (y.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
           (y.BUILT_IN_EQUIPMENT = "builtInEquipment"),
           (y.EQUIPMENT_PLUS = "equipmentPlus"),
@@ -1036,7 +1031,7 @@
           (y.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
           (function (u) {
             ((u.Small = "400x300"), (u.Big = "600x450"));
-          })(f || (f = {})),
+          })(S || (S = {})),
           (function (u) {
             u.ProgressionStyle = "progressionStyle";
           })(P || (P = {})));
@@ -1090,11 +1085,6 @@
           g.PremiumPlusUniversal,
           g.GoldenTicket,
           g.RewardsSlots,
-          g.WtStamp,
-          g.WtTicket,
-          g.WtMainPrizeDiscount,
-          g.WtHunter,
-          g.WtHunterCollection,
           g.Gold,
           g.Credits,
           g.Crystal,
@@ -1369,6 +1359,8 @@
                       case g.StyleProgress:
                       case g.LbStyleProgress:
                         return U(r, e, P.ProgressionStyle);
+                      case "portal":
+                        return `R.images.gui.maps.icons.rewards.${e}.${o}`;
                       default:
                         return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                     }
@@ -1623,32 +1615,32 @@
               () => (0, o.useContext)(t),
             ];
           })(),
-          W = G[0],
-          V = G[1];
-        let z;
+          V = G[0],
+          z = G[1];
+        let Y;
         (!(function (u) {
           ((u.Heavy = "heavyTank"),
             (u.Medium = "mediumTank"),
             (u.Light = "lightTank"),
             (u.Spg = "SPG"),
             (u.AtSpg = "AT-SPG"));
-        })(z || (z = {})),
+        })(Y || (Y = {})),
           R.strings.gui_lootboxes.time.days(),
           R.strings.gui_lootboxes.time.hours(),
           R.strings.gui_lootboxes.time.minutes(),
           R.strings.gui_lootboxes.time.seconds());
-        const Y = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
-          X = (u) => {
+        const X = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
+          W = (u) => {
             switch (u) {
-              case z.Heavy:
+              case Y.Heavy:
                 return R.images.gui.maps.icons.vehicleTypes.big.heavyTank_elite();
-              case z.AtSpg:
+              case Y.AtSpg:
                 return R.images.gui.maps.icons.vehicleTypes.big.AT_SPG_elite();
-              case z.Spg:
+              case Y.Spg:
                 return R.images.gui.maps.icons.vehicleTypes.big.SPG_elite();
-              case z.Medium:
+              case Y.Medium:
                 return R.images.gui.maps.icons.vehicleTypes.big.mediumTank_elite();
-              case z.Light:
+              case Y.Light:
                 return R.images.gui.maps.icons.vehicleTypes.big.lightTank_elite();
               default:
                 return "";
@@ -1696,11 +1688,11 @@
                       i().createElement(
                         "div",
                         { className: H.vehicleNameLevel },
-                        ((r = u.vehicleLvl), Y[r] || ""),
+                        ((r = u.vehicleLvl), X[r] || ""),
                       ),
                       i().createElement("div", {
                         className: H.vehicleNameType,
-                        style: { backgroundImage: `url(${X(u.type)})` },
+                        style: { backgroundImage: `url(${W(u.type)})` },
                       }),
                       i().createElement("div", { className: H.vehicleNameText }, u.label),
                     ),
@@ -1769,7 +1761,7 @@
               ),
             ),
           uu = (0, D.observer)(() => {
-            const u = V().model,
+            const u = z().model,
               e = u.computes.getItemAfter(),
               t = u.computes.getItemsBefore();
             return i().createElement(
@@ -1782,7 +1774,7 @@
           });
         engine.whenReady.then(() => {
           l().render(
-            i().createElement(W, null, i().createElement(A, null, i().createElement(uu, null))),
+            i().createElement(V, null, i().createElement(A, null, i().createElement(uu, null))),
             document.getElementById("root"),
           );
         });

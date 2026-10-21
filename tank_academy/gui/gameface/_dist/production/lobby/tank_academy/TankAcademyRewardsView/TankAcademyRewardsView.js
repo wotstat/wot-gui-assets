@@ -786,7 +786,7 @@
           };
         window.ViewEnvHelper = w;
       },
-      656: (u, e, t) => {
+      337: (u, e, t) => {
         "use strict";
         var a = t(179),
           n = t.n(a),
@@ -1015,6 +1015,7 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
+            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -1047,13 +1048,7 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.WtStamp = "stamp"),
-            (u.WtHunter = "wt_hunter"),
-            (u.WtBoss = "wt_boss"),
-            (u.WtHunterCollection = "hunter_collection"),
-            (u.WtTicket = "wtevent_ticket"),
-            (u.WtMainPrizeDiscount = "main_prize_discount"),
-            (u.WtTicket25 = "wtevent_ticket25"));
+            (u.RazlomCoin = "razlom_coin"));
         })(y || (y = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1203,11 +1198,6 @@
             y.PremiumPlusUniversal,
             y.GoldenTicket,
             y.RewardsSlots,
-            y.WtStamp,
-            y.WtTicket,
-            y.WtMainPrizeDiscount,
-            y.WtHunter,
-            y.WtHunterCollection,
           ],
           j = [y.Gold, y.Credits, y.Crystal, y.FreeXp],
           q = [y.BattlePassPoints],
@@ -1421,6 +1411,8 @@
                         case y.StyleProgress:
                         case y.LbStyleProgress:
                           return J(r, e, U.ProgressionStyle);
+                        case "portal":
+                          return `R.images.gui.maps.icons.rewards.${e}.${i}`;
                         default:
                           return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                       }
@@ -3706,7 +3698,10 @@
             const u = au(),
               e = u.model,
               t = u.controls,
-              r = e.computes.getFooterShowDelay();
+              r = (0, a.useState)(!0),
+              i = r[0],
+              s = r[1],
+              E = e.computes.getFooterShowDelay();
             !(function ({
               key: u = F.n.ESCAPE,
               callback: e = () => m.O.view.sendEvent.close(),
@@ -3714,19 +3709,22 @@
             } = {}) {
               B(u, e, t);
             })({ callback: t.close });
-            const i = (0, g.useSpring)({
+            const c = (0, g.useSpring)({
               from: { opacity: 0, transform: "translateY(20rem)" },
               to: { opacity: 1, transform: "translateY(0)" },
-              delay: r + 900,
+              delay: E + 900,
               config: { duration: v, easing: w },
+              onRest: () => {
+                s(!1);
+              },
             });
             return (
               (0, a.useEffect)(() => {
-                l(R.sounds.ta_reward());
+                (l(R.sounds.ta_reward_stop()), l(R.sounds.ta_reward()));
               }, []),
               n().createElement(
                 "div",
-                { className: "App_base_c4" },
+                { className: o()("App_base_c4", { App_base__disabled_61: i }) },
                 n().createElement(
                   "div",
                   { className: "App_header_67" },
@@ -3746,7 +3744,7 @@
                 }),
                 n().createElement(
                   g.animated.div,
-                  { className: "App_footer_43", style: i },
+                  { className: "App_footer_43", style: c },
                   n().createElement(Qe, null),
                 ),
               )
@@ -3906,6 +3904,6 @@
         t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
       (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
     })());
-  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(656));
+  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(337));
   __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

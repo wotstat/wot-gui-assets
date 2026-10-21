@@ -344,6 +344,7 @@
               (e.SelectableBonus = "selectableBonus"),
               (e.StyleProgressToken = "styleProgressToken"),
               (e.TmanToken = "tmanToken"),
+              (e.PortalEventDiscount25 = "portalEventDiscountToken"),
               (e.NaturalCover = "naturalCover"),
               (e.BpCoin = "bpcoin"),
               (e.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -376,13 +377,7 @@
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
               (e.RewardsSlots = "rewardsSlots"),
-              (e.WtStamp = "stamp"),
-              (e.WtHunter = "wt_hunter"),
-              (e.WtBoss = "wt_boss"),
-              (e.WtHunterCollection = "hunter_collection"),
-              (e.WtTicket = "wtevent_ticket"),
-              (e.WtMainPrizeDiscount = "main_prize_discount"),
-              (e.WtTicket25 = "wtevent_ticket25"));
+              (e.RazlomCoin = "razlom_coin"));
           })(n || (n = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -538,11 +533,6 @@
             o.E4.PremiumPlusUniversal,
             o.E4.GoldenTicket,
             o.E4.RewardsSlots,
-            o.E4.WtStamp,
-            o.E4.WtTicket,
-            o.E4.WtMainPrizeDiscount,
-            o.E4.WtHunter,
-            o.E4.WtHunterCollection,
           ],
           c = [o.E4.Gold, o.E4.Credits, o.E4.Crystal, o.E4.FreeXp],
           u = [o.E4.BattlePassPoints],
@@ -718,6 +708,8 @@
               case o.E4.StyleProgress:
               case o.E4.LbStyleProgress:
                 return f(i, t, o.ye.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${t}.${s}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
             }
@@ -2474,7 +2466,7 @@
             N = (e, t) => {
               e && t && e(t);
             },
-            B = o()(
+            D = o()(
               d.base,
               h && d[`base__${h}`],
               g && d.base__yellow,
@@ -2483,8 +2475,8 @@
               L && d.base__click,
               m && !_ && d.base__highlight,
             ),
-            D = o()(d.glowBorder, d.glowBorder__hover),
-            I = o()(d.glowInner, d.glowInner__duplicate),
+            I = o()(d.glowBorder, d.glowBorder__hover),
+            B = o()(d.glowInner, d.glowInner__duplicate),
             A = (0, n.useMemo)(() => {
               const e = {};
               return (i && (e.width = `${i}rem`), s && (e.height = `${s}rem`), e);
@@ -2493,7 +2485,7 @@
           return a().createElement(
             "div",
             {
-              className: B,
+              className: D,
               style: A,
               onMouseEnter:
                 ((F = v),
@@ -2522,11 +2514,11 @@
                   "div",
                   { className: d.glow },
                   a().createElement("div", { className: d.glowInner }),
-                  a().createElement("div", { className: I }),
+                  a().createElement("div", { className: B }),
                 ),
                 a().createElement("div", { className: d.highlight }),
                 a().createElement("div", { className: d.glowBorder }),
-                a().createElement("div", { className: D }),
+                a().createElement("div", { className: I }),
               ),
             a().createElement(
               "div",
@@ -2722,7 +2714,7 @@
         var L = r(4959);
         const C = "SubTitle_base_8d",
           N = R.strings.fl_rewards.subtitle,
-          B = (0, n.memo)(({ level: e, rewardsCount: t, frontlineState: r }) =>
+          D = (0, n.memo)(({ level: e, rewardsCount: t, frontlineState: r }) =>
             r !== L.c.Finished
               ? a().createElement("div", { className: C }, N.active())
               : a().createElement(
@@ -2758,7 +2750,7 @@
             a().createElement(
               E.V,
               { text: R.strings.fl_rewards.title(), classMix: "RewardsViewApp_pageTitle_61" },
-              a().createElement(B, { level: l, rewardsCount: o, frontlineState: c }),
+              a().createElement(D, { level: l, rewardsCount: o, frontlineState: c }),
             ),
             a().createElement(
               "div",

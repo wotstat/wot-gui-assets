@@ -1661,6 +1661,7 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
+            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -1693,13 +1694,7 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.WtStamp = "stamp"),
-            (u.WtHunter = "wt_hunter"),
-            (u.WtBoss = "wt_boss"),
-            (u.WtHunterCollection = "hunter_collection"),
-            (u.WtTicket = "wtevent_ticket"),
-            (u.WtMainPrizeDiscount = "main_prize_discount"),
-            (u.WtTicket25 = "wtevent_ticket25"));
+            (u.RazlomCoin = "razlom_coin"));
         })(Bu || (Bu = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1849,11 +1844,6 @@
             Bu.PremiumPlusUniversal,
             Bu.GoldenTicket,
             Bu.RewardsSlots,
-            Bu.WtStamp,
-            Bu.WtTicket,
-            Bu.WtMainPrizeDiscount,
-            Bu.WtHunter,
-            Bu.WtHunterCollection,
           ],
           fu = [Bu.Gold, Bu.Credits, Bu.Crystal, Bu.FreeXp],
           Ru = [Bu.BattlePassPoints],
@@ -2019,6 +2009,8 @@
               case Bu.StyleProgress:
               case Bu.LbStyleProgress:
                 return Iu(a, e, Su.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${e}.${i}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
             }

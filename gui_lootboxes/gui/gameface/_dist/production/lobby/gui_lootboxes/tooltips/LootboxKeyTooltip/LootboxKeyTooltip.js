@@ -792,6 +792,7 @@
           (d.SelectableBonus = "selectableBonus"),
           (d.StyleProgressToken = "styleProgressToken"),
           (d.TmanToken = "tmanToken"),
+          (d.PortalEventDiscount25 = "portalEventDiscountToken"),
           (d.NaturalCover = "naturalCover"),
           (d.BpCoin = "bpcoin"),
           (d.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -824,13 +825,7 @@
           (d.GoldenTicket = "goldenticket"),
           (d.LbStyleProgress = "lbStyleProgress"),
           (d.RewardsSlots = "rewardsSlots"),
-          (d.WtStamp = "stamp"),
-          (d.WtHunter = "wt_hunter"),
-          (d.WtBoss = "wt_boss"),
-          (d.WtHunterCollection = "hunter_collection"),
-          (d.WtTicket = "wtevent_ticket"),
-          (d.WtMainPrizeDiscount = "main_prize_discount"),
-          (d.WtTicket25 = "wtevent_ticket25"),
+          (d.RazlomCoin = "razlom_coin"),
           (function (u) {
             ((u.Gold = "gold"),
               (u.Credits = "credits"),
@@ -968,11 +963,6 @@
           F.PremiumPlusUniversal,
           F.GoldenTicket,
           F.RewardsSlots,
-          F.WtStamp,
-          F.WtTicket,
-          F.WtMainPrizeDiscount,
-          F.WtHunter,
-          F.WtHunterCollection,
           F.Gold,
           F.Credits,
           F.Crystal,
@@ -1551,8 +1541,8 @@
             return n().createElement(x, { text: o, classMix: t, binding: A });
           }),
           I = R.strings.gui_lootboxes.tooltips.currencyKey,
-          W = R.strings.lootboxes,
-          G = R.images.gui_lootboxes.gui.maps.storage.currencyKey,
+          G = R.strings.lootboxes,
+          W = R.images.gui_lootboxes.gui.maps.storage.currencyKey,
           q = (0, C.observer)(() => {
             const u = g().model,
               e = u.root.get(),
@@ -1564,9 +1554,9 @@
               D = F.userName,
               a = F.iconName,
               i = u.computes.getFirstLootboxName,
-              s = G.$dyn(`${((B = a), B.replace(/-/g, "_"))}`);
+              s = W.$dyn(`${((B = a), B.replace(/-/g, "_"))}`);
             var B;
-            const C = W.userName.$dyn(i()),
+            const C = G.userName.$dyn(i()),
               l = I.descriptionPart1.$dyn(D),
               c = r ? I.title_v2.$dyn(D) : I.title_v2_noKey.$dyn(D);
             return n().createElement(

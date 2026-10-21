@@ -910,6 +910,7 @@
               (u.SelectableBonus = "selectableBonus"),
               (u.StyleProgressToken = "styleProgressToken"),
               (u.TmanToken = "tmanToken"),
+              (u.PortalEventDiscount25 = "portalEventDiscountToken"),
               (u.NaturalCover = "naturalCover"),
               (u.BpCoin = "bpcoin"),
               (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -942,13 +943,7 @@
               (u.GoldenTicket = "goldenticket"),
               (u.LbStyleProgress = "lbStyleProgress"),
               (u.RewardsSlots = "rewardsSlots"),
-              (u.WtStamp = "stamp"),
-              (u.WtHunter = "wt_hunter"),
-              (u.WtBoss = "wt_boss"),
-              (u.WtHunterCollection = "hunter_collection"),
-              (u.WtTicket = "wtevent_ticket"),
-              (u.WtMainPrizeDiscount = "main_prize_discount"),
-              (u.WtTicket25 = "wtevent_ticket25"));
+              (u.RazlomCoin = "razlom_coin"));
           })(m || (m = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1088,11 +1083,6 @@
             m.PremiumPlusUniversal,
             m.GoldenTicket,
             m.RewardsSlots,
-            m.WtStamp,
-            m.WtTicket,
-            m.WtMainPrizeDiscount,
-            m.WtHunter,
-            m.WtHunterCollection,
           ],
           y = [m.Gold, m.Credits, m.Crystal, m.FreeXp],
           P = [m.BattlePassPoints],
@@ -1258,6 +1248,8 @@
               case m.StyleProgress:
               case m.LbStyleProgress:
                 return N(s, e, f.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${e}.${o}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
             }
@@ -1284,7 +1276,7 @@
             : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
         }
         var z = t(6517);
-        const W = ((u, e) => {
+        const q = ((u, e) => {
             const t = (0, o.createContext)({});
             return [
               function ({ mode: u = "real", options: n, children: r, mocks: i }) {
@@ -1542,8 +1534,8 @@
               () => (0, o.useContext)(t),
             ];
           })(0, function () {}),
-          q = W[0],
-          j = W[1];
+          W = q[0],
+          j = q[1];
         let Y;
         function V(u, e) {
           return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
@@ -2288,7 +2280,7 @@
               ),
             );
           }),
-          Wu = [
+          qu = [
             "children",
             "contentId",
             "args",
@@ -2304,7 +2296,7 @@
             "onShow",
             "onHide",
           ];
-        function qu(u) {
+        function Wu(u) {
           return Object.entries(u || {}).map(([u, e]) => {
             const t = { __Type: "GFValueProxy", name: u };
             switch (typeof e) {
@@ -2364,7 +2356,7 @@
                   s = Object.keys(u);
                 for (n = 0; n < s.length; n++) ((t = s[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                 return r;
-              })(u, Wu);
+              })(u, qu);
             const b = (0, o.useRef)({
                 timeoutId: 0,
                 isVisible: !1,
@@ -2392,7 +2384,7 @@
               ),
               w = (0, o.useCallback)(() => {
                 (b.current.isVisible && b.current.timeoutId) ||
-                  (ju(t, D, { isMouseEvent: !0, on: !0, arguments: qu(n) }, v),
+                  (ju(t, D, { isMouseEvent: !0, on: !0, arguments: Wu(n) }, v),
                   C && C(),
                   (b.current.isVisible = !0));
               }, [t, D, n, v, C]),
@@ -3119,7 +3111,7 @@
           });
         engine.whenReady.then(() => {
           F().render(
-            a().createElement(q, null, a().createElement(c, null, a().createElement(fe, null))),
+            a().createElement(W, null, a().createElement(c, null, a().createElement(fe, null))),
             document.getElementById("root"),
           );
         });

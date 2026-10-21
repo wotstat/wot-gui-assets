@@ -204,13 +204,13 @@
             addPreloadTexture: () => i,
             children: () => r,
             displayStatus: () => n.W,
-            displayStatusIs: () => S,
+            displayStatusIs: () => x,
             events: () => a.U,
-            extraSize: () => x,
-            forceTriggerMouseMove: () => w,
+            extraSize: () => S,
+            forceTriggerMouseMove: () => b,
             freezeTextureBeforeResize: () => c,
             getBrowserTexturePath: () => o,
-            getDisplayStatus: () => b,
+            getDisplayStatus: () => w,
             getScale: () => _,
             getSize: () => D,
             getViewGlobalPosition: () => B,
@@ -283,17 +283,17 @@
         function v() {
           return viewEnv.isEventHandled();
         }
-        function w() {
+        function b() {
           viewEnv.forceTriggerMouseMove();
         }
-        function b() {
+        function w() {
           return viewEnv.getShowingStatus();
         }
-        const S = Object.keys(n.W).reduce(
+        const x = Object.keys(n.W).reduce(
             (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === n.W[e]), u),
             {},
           ),
-          x = {
+          S = {
             set: (u, e) => {
               viewEnv.setExtraSizeRem(u, e);
             },
@@ -715,8 +715,8 @@
             u.keyCode === B.n.ESCAPE && e();
           };
         var v = t(7572);
-        const w = n.instance,
-          b = {
+        const b = n.instance,
+          w = {
             DataTracker: a.Z,
             ViewModel: v.Z,
             ViewEventType: A,
@@ -801,11 +801,11 @@
                 }
               return t;
             },
-            ClickOutsideManager: w,
+            ClickOutsideManager: b,
             SystemLocale: E,
             UserLocale: i,
           };
-        window.ViewEnvHelper = b;
+        window.ViewEnvHelper = w;
       },
       5260: (u, e, t) => {
         "use strict";
@@ -1151,7 +1151,7 @@
           h = d[1];
         var p = t(9887),
           v = t.n(p);
-        const w = (u, e, t) =>
+        const b = (u, e, t) =>
             e.extraLargeHeight ||
             e.largeHeight ||
             e.mediumHeight ||
@@ -1165,15 +1165,15 @@
                 ? u
                 : null
               : u,
-          b = {
+          w = {
             extraLarge: { weight: 4, width: 2560, height: 1440 },
             large: { weight: 3, width: 1920, height: 1080 },
             medium: { weight: 2, width: 1600, height: 900 },
             small: { weight: 1, width: 1366, height: 768 },
             extraSmall: { weight: 0, width: 1024, height: 768 },
           };
-        var S;
-        function x(u, e, t) {
+        var x;
+        function S(u, e, t) {
           const r = (function (u, e) {
               switch (!0) {
                 case u >= e.extraLarge.width:
@@ -1237,12 +1237,12 @@
             (u.mediumHeight = "mediumHeight"),
             (u.smallHeight = "smallHeight"),
             (u.extraSmallHeight = "extraSmallHeight"));
-        })(S || (S = {}));
+        })(x || (x = {}));
         const f = o.O.client.getSize("rem"),
           T = f.width,
           P = f.height,
-          M = Object.assign({ width: T, height: P }, x(T, P, b)),
-          L = (0, r.createContext)(M),
+          L = Object.assign({ width: T, height: P }, S(T, P, w)),
+          M = (0, r.createContext)(L),
           O = ["children"],
           y = (u) => {
             let e = u.children,
@@ -1255,7 +1255,7 @@
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
               })(u, O);
-            const n = (0, r.useContext)(L),
+            const n = (0, r.useContext)(M),
               a = n.extraLarge,
               E = n.large,
               i = n.medium,
@@ -1279,11 +1279,11 @@
               if (t.small && A) return e;
               if (t.extraSmall && o) return e;
             } else {
-              if (t.extraLargeWidth && F) return w(e, t, g);
-              if (t.largeWidth && s) return w(e, t, g);
-              if (t.mediumWidth && D) return w(e, t, g);
-              if (t.smallWidth && l) return w(e, t, g);
-              if (t.extraSmallWidth && B) return w(e, t, g);
+              if (t.extraLargeWidth && F) return b(e, t, g);
+              if (t.largeWidth && s) return b(e, t, g);
+              if (t.mediumWidth && D) return b(e, t, g);
+              if (t.smallWidth && l) return b(e, t, g);
+              if (t.extraSmallWidth && B) return b(e, t, g);
               if (!(
                 t.extraLargeWidth ||
                 t.largeWidth ||
@@ -1320,14 +1320,14 @@
           (0, r.memo)(y));
         let N, k, H;
         ((0, r.memo)(({ children: u }) => {
-          const e = (0, r.useContext)(L),
+          const e = (0, r.useContext)(M),
             t = (0, r.useState)(e),
             a = t[0],
             E = t[1],
             i = (0, r.useCallback)((u, e) => {
               const t = o.O.view.pxToRem(u),
                 r = o.O.view.pxToRem(e);
-              E(Object.assign({ width: t, height: r }, x(t, r, b)));
+              E(Object.assign({ width: t, height: r }, S(t, r, w)));
             }, []);
           (((u) => {
             const e = (0, r.useRef)(!1);
@@ -1337,39 +1337,39 @@
           }),
             (0, r.useEffect)(() => () => engine.off("clientResized", i), [i]));
           const A = (0, r.useMemo)(() => Object.assign({}, a), [a]);
-          return n().createElement(L.Provider, { value: A }, u);
+          return n().createElement(M.Provider, { value: A }, u);
         }),
           (function (u) {
-            ((u[(u.ExtraSmall = b.extraSmall.width)] = "ExtraSmall"),
-              (u[(u.Small = b.small.width)] = "Small"),
-              (u[(u.Medium = b.medium.width)] = "Medium"),
-              (u[(u.Large = b.large.width)] = "Large"),
-              (u[(u.ExtraLarge = b.extraLarge.width)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = w.extraSmall.width)] = "ExtraSmall"),
+              (u[(u.Small = w.small.width)] = "Small"),
+              (u[(u.Medium = w.medium.width)] = "Medium"),
+              (u[(u.Large = w.large.width)] = "Large"),
+              (u[(u.ExtraLarge = w.extraLarge.width)] = "ExtraLarge"));
           })(N || (N = {})),
           (function (u) {
-            ((u[(u.ExtraSmall = b.extraSmall.width)] = "ExtraSmall"),
-              (u[(u.Small = b.small.width)] = "Small"),
-              (u[(u.Medium = b.medium.width)] = "Medium"),
-              (u[(u.Large = b.large.width)] = "Large"),
-              (u[(u.ExtraLarge = b.extraLarge.width)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = w.extraSmall.width)] = "ExtraSmall"),
+              (u[(u.Small = w.small.width)] = "Small"),
+              (u[(u.Medium = w.medium.width)] = "Medium"),
+              (u[(u.Large = w.large.width)] = "Large"),
+              (u[(u.ExtraLarge = w.extraLarge.width)] = "ExtraLarge"));
           })(k || (k = {})),
           (function (u) {
-            ((u[(u.ExtraSmall = b.extraSmall.height)] = "ExtraSmall"),
-              (u[(u.Small = b.small.height)] = "Small"),
-              (u[(u.Medium = b.medium.height)] = "Medium"),
-              (u[(u.Large = b.large.height)] = "Large"),
-              (u[(u.ExtraLarge = b.extraLarge.height)] = "ExtraLarge"));
+            ((u[(u.ExtraSmall = w.extraSmall.height)] = "ExtraSmall"),
+              (u[(u.Small = w.small.height)] = "Small"),
+              (u[(u.Medium = w.medium.height)] = "Medium"),
+              (u[(u.Large = w.large.height)] = "Large"),
+              (u[(u.ExtraLarge = w.extraLarge.height)] = "ExtraLarge"));
           })(H || (H = {})));
         const I = ["xl", "lg", "md", "sm", "xs"],
           U = (u) => u.includes("_") && ((u) => I.includes(u))(u.split("_").at(-1)),
-          W = [N.ExtraLarge, N.Large, N.Medium, N.Small, N.ExtraSmall],
-          G = (u, e) =>
+          G = [N.ExtraLarge, N.Large, N.Medium, N.Small, N.ExtraSmall],
+          W = (u, e) =>
             Object.keys(u).reduce((t, r) => {
               if (r in t) return t;
               if (U(r)) {
                 const n = r.split("_").slice(0, -1).join("_");
                 if (n in t) return t;
-                const a = W.indexOf(e),
+                const a = G.indexOf(e),
                   E = (-1 !== a ? I.slice(a) : [])
                     .map((u) => n + "_" + u)
                     .find((e) => void 0 !== u[e]),
@@ -1384,12 +1384,12 @@
                 t
               );
             }, {}),
-          X = (u, e = G) => {
+          X = (u, e = W) => {
             const t = (
-              (u, e = G) =>
+              (u, e = W) =>
               (t) => {
                 const a = (() => {
-                    const u = (0, r.useContext)(L),
+                    const u = (0, r.useContext)(M),
                       e = u.width,
                       t = u.height,
                       n = ((u) => {
@@ -1572,29 +1572,29 @@
               h = u.center,
               p = u.flexEnd,
               v = u.spaceBetween,
-              w = u.spaceAround,
-              b = u.justifyContent,
-              S =
-                void 0 === b
+              b = u.spaceAround,
+              w = u.justifyContent,
+              x =
+                void 0 === w
                   ? (g ? "flex-start" : h && "center") ||
                     (p && "flex-end") ||
                     (v && "space-between") ||
-                    (w && "space-around") ||
+                    (b && "space-around") ||
                     void 0
-                  : b,
-              x = u.alignItems,
+                  : w,
+              S = u.alignItems,
               f =
-                void 0 === x
+                void 0 === S
                   ? (g ? "flex-start" : h && "center") || (p && "flex-end") || void 0
-                  : x,
+                  : S,
               T = u.alignSelf,
               R = u.wrap,
               P = u.flexWrap,
-              M = void 0 === P ? (R ? "wrap" : void 0) : P,
-              L = u.grow,
+              L = void 0 === P ? (R ? "wrap" : void 0) : P,
+              M = u.grow,
               O = u.shrink,
               y = u.flex,
-              N = void 0 === y ? (L || O ? `${L ? 1 : 0} ${O ? 1 : 0} auto` : void 0) : y,
+              N = void 0 === y ? (M || O ? `${M ? 1 : 0} ${O ? 1 : 0} auto` : void 0) : y,
               k = u.style,
               H = u.children,
               I = (function (u, e) {
@@ -1626,16 +1626,16 @@
                     alignSelf: T,
                     display: d || f ? "flex" : void 0,
                     flexDirection: d,
-                    flexWrap: M,
-                    justifyContent: S,
+                    flexWrap: L,
+                    justifyContent: x,
                     alignItems: f,
                   }),
                   computedClassNames: e,
                 };
-              }, [t, a, o, s, l, c, k, N, T, d, M, S, f]),
-              W = U.computedStyle,
-              G = U.computedClassNames;
-            return n().createElement("div", z({ className: A()(j.base, ...G, e), style: W }, I), H);
+              }, [t, a, o, s, l, c, k, N, T, d, L, x, f]),
+              G = U.computedStyle,
+              W = U.computedClassNames;
+            return n().createElement("div", z({ className: A()(j.base, ...W, e), style: G }, I), H);
           });
         let Z;
         function Q(u, e) {
@@ -1885,8 +1885,8 @@
               void 0 !== C ? n().createElement(nu, ou({}, C, { text: e })) : e,
             );
           });
-        let mu, Cu, du, gu, hu, pu, vu, wu, bu, Su;
-        var xu, fu, Tu, Ru, Pu;
+        let mu, Cu, du, gu, hu, pu, vu, bu, wu, xu;
+        var Su, fu, Tu, Ru, Pu;
         (!(function (u) {
           ((u.IN_PROGRESS = "inProgress"), (u.COMPLETE = "complete"), (u.DISABLE = "disable"));
         })(mu || (mu = {})),
@@ -1921,6 +1921,7 @@
           (Pu.SelectableBonus = "selectableBonus"),
           (Pu.StyleProgressToken = "styleProgressToken"),
           (Pu.TmanToken = "tmanToken"),
+          (Pu.PortalEventDiscount25 = "portalEventDiscountToken"),
           (Pu.NaturalCover = "naturalCover"),
           (Pu.BpCoin = "bpcoin"),
           (Pu.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -1953,13 +1954,7 @@
           (Pu.GoldenTicket = "goldenticket"),
           (Pu.LbStyleProgress = "lbStyleProgress"),
           (Pu.RewardsSlots = "rewardsSlots"),
-          (Pu.WtStamp = "stamp"),
-          (Pu.WtHunter = "wt_hunter"),
-          (Pu.WtBoss = "wt_boss"),
-          (Pu.WtHunterCollection = "hunter_collection"),
-          (Pu.WtTicket = "wtevent_ticket"),
-          (Pu.WtMainPrizeDiscount = "main_prize_discount"),
-          (Pu.WtTicket25 = "wtevent_ticket25"),
+          (Pu.RazlomCoin = "razlom_coin"),
           (function (u) {
             ((u.Gold = "gold"),
               (u.Credits = "credits"),
@@ -2029,34 +2024,34 @@
           (fu.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
           (fu.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
           ((vu || (vu = {})).BATTLE_BOOSTER = "battleBooster"),
-          ((xu = wu || (wu = {})).BATTLE_BOOSTER = "battleBooster"),
-          (xu.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-          (xu.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-          (xu.EQUIPMENT_PLUS = "equipmentPlus"),
-          (xu.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-          (xu.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-          (xu.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-          (xu.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-          (xu.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-          (xu.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-          (xu.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-          (xu.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-          (xu.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+          ((Su = bu || (bu = {})).BATTLE_BOOSTER = "battleBooster"),
+          (Su.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+          (Su.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+          (Su.EQUIPMENT_PLUS = "equipmentPlus"),
+          (Su.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+          (Su.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+          (Su.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+          (Su.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+          (Su.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+          (Su.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+          (Su.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+          (Su.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+          (Su.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
           (function (u) {
             ((u.Small = "400x300"), (u.Big = "600x450"));
-          })(bu || (bu = {})),
-          ((Su || (Su = {})).ProgressionStyle = "progressionStyle"));
-        var Mu = t(4179);
-        class Lu extends n().PureComponent {
+          })(wu || (wu = {})),
+          ((xu || (xu = {})).ProgressionStyle = "progressionStyle"));
+        var Lu = t(4179);
+        class Mu extends n().PureComponent {
           render() {
             let u;
-            u = "gold" === this.props.format ? Mu.B3.GOLD : Mu.B3.INTEGRAL;
-            const e = Mu.Z5.getNumberFormat(this.props.value, u);
+            u = "gold" === this.props.format ? Lu.B3.GOLD : Lu.B3.INTEGRAL;
+            const e = Lu.Z5.getNumberFormat(this.props.value, u);
             return void 0 !== this.props.value && void 0 !== e ? e : null;
           }
         }
         let Ou;
-        ((Lu.defaultProps = { format: "integral" }),
+        ((Mu.defaultProps = { format: "integral" }),
           Cu.Items,
           Cu.Equipment,
           Cu.Xp,
@@ -2096,11 +2091,6 @@
           Cu.PremiumPlusUniversal,
           Cu.GoldenTicket,
           Cu.RewardsSlots,
-          Cu.WtStamp,
-          Cu.WtTicket,
-          Cu.WtMainPrizeDiscount,
-          Cu.WtHunter,
-          Cu.WtHunterCollection,
           Cu.Gold,
           Cu.Credits,
           Cu.Crystal,
@@ -2157,14 +2147,14 @@
           (Uu.YEAR = "year"),
           (Uu.DATE_YEAR = "date-year"));
         Date.now();
-        const Wu = () => {};
-        let Gu;
-        (Mu.Sw.instance,
+        const Gu = () => {};
+        let Wu;
+        (Lu.Sw.instance,
           (function (u) {
             ((u.None = "None"), (u.Shallow = "Shallow"), (u.Deep = "Deep"));
-          })(Gu || (Gu = {})),
-          Mu.Sw.instance);
-        const Xu = (u = 0, e, t = 0, n = Wu) => {
+          })(Wu || (Wu = {})),
+          Lu.Sw.instance);
+        const Xu = (u = 0, e, t = 0, n = Gu) => {
             const a = (0, r.useState)(u),
               E = a[0],
               i = a[1];

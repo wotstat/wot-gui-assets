@@ -318,9 +318,9 @@
           const y = (0, a.useState)(!1),
             R = y[0],
             T = y[1],
-            P = (0, a.useState)(!1),
-            L = P[0],
-            N = P[1],
+            L = (0, a.useState)(!1),
+            P = L[0],
+            N = L[1],
             k = (0, a.useState)(m),
             O = k[0],
             M = k[1],
@@ -392,7 +392,7 @@
               s.Z.base,
               o && s.Z.base__visibleLabel,
               R && s.Z.base__mouseDown,
-              L && s.Z.base__hovered,
+              P && s.Z.base__hovered,
               O && s.Z.base__focused,
               null == p ? void 0 : p.base,
             ),
@@ -549,6 +549,7 @@
               (e.SelectableBonus = "selectableBonus"),
               (e.StyleProgressToken = "styleProgressToken"),
               (e.TmanToken = "tmanToken"),
+              (e.PortalEventDiscount25 = "portalEventDiscountToken"),
               (e.NaturalCover = "naturalCover"),
               (e.BpCoin = "bpcoin"),
               (e.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -581,13 +582,7 @@
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
               (e.RewardsSlots = "rewardsSlots"),
-              (e.WtStamp = "stamp"),
-              (e.WtHunter = "wt_hunter"),
-              (e.WtBoss = "wt_boss"),
-              (e.WtHunterCollection = "hunter_collection"),
-              (e.WtTicket = "wtevent_ticket"),
-              (e.WtMainPrizeDiscount = "main_prize_discount"),
-              (e.WtTicket25 = "wtevent_ticket25"));
+              (e.RazlomCoin = "razlom_coin"));
           })(o || (o = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -735,11 +730,6 @@
             a.E4.PremiumPlusUniversal,
             a.E4.GoldenTicket,
             a.E4.RewardsSlots,
-            a.E4.WtStamp,
-            a.E4.WtTicket,
-            a.E4.WtMainPrizeDiscount,
-            a.E4.WtHunter,
-            a.E4.WtHunterCollection,
           ],
           s = [a.E4.Gold, a.E4.Credits, a.E4.Crystal, a.E4.FreeXp],
           l = [a.E4.BattlePassPoints],
@@ -915,6 +905,8 @@
               case a.E4.StyleProgress:
               case a.E4.LbStyleProgress:
                 return p(n, u, a.ye.ProgressionStyle);
+              case "portal":
+                return `R.images.gui.maps.icons.rewards.${u}.${i}`;
               default:
                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
             }
@@ -2677,8 +2669,8 @@
         };
         var y = t(2862),
           T = t(729);
-        function P() {}
-        function L() {
+        function L() {}
+        function P() {
           return !1;
         }
         console.log;
@@ -2945,15 +2937,15 @@
                                 });
                               });
                             },
-                            { equals: L },
+                            { equals: P },
                           ),
                           r = (0, U.computedFn)(() => I(u.lootLists.get(), (e, u) => o(u)), {
-                            equals: L,
+                            equals: P,
                           }),
                           n = (0, U.computedFn)(() => I(u.lootLists.get(), (e) => e.slice(1)), {
-                            equals: L,
+                            equals: P,
                           }),
-                          a = (0, U.computedFn)(() => H(u.lootLists.get()), { equals: L }),
+                          a = (0, U.computedFn)(() => H(u.lootLists.get()), { equals: P }),
                           i = (0, U.computedFn)(() =>
                             a().map((e, o) => {
                               const r = e[0],
@@ -2977,7 +2969,7 @@
                             return e === u.lootLists.get().length ? e - 1 : e;
                           }),
                           l = (0, U.computedFn)(() => H(u.guaranteedFrequencies.get()), {
-                            equals: L,
+                            equals: P,
                           }),
                           c = (0, U.computedFn)((e) => {
                             const u = i();
@@ -3002,7 +2994,7 @@
                         observableModel: {
                           array: (u, t) => {
                             const o = null != t ? t : i(u),
-                              r = N.observable.box(o, { equals: L });
+                              r = N.observable.box(o, { equals: P });
                             return (
                               "real" === e &&
                                 a.subscribe(
@@ -3014,7 +3006,7 @@
                           },
                           object: (u, t) => {
                             const o = null != t ? t : i(u),
-                              r = N.observable.box(o, { equals: L });
+                              r = N.observable.box(o, { equals: P });
                             return (
                               "real" === e &&
                                 a.subscribe(
@@ -4018,8 +4010,8 @@
             )
           );
         Te.Default = Re;
-        const Pe = { Vertical: r, Horizontal: o };
-        var Le = t(6373),
+        const Le = { Vertical: r, Horizontal: o };
+        var Pe = t(6373),
           Ne = t(4891);
         const ke = "vehicles";
         var Oe = t(5739);
@@ -4192,7 +4184,7 @@
                   "div",
                   { className: "RewardSlot_probability_3c" },
                   a().createElement(
-                    Le.i,
+                    Pe.i,
                     Ve(
                       {
                         header: je.tooltips.probability.header(),
@@ -4266,7 +4258,7 @@
                   "div",
                   { className: "Slots_base_f7" },
                   a().createElement(
-                    Pe.Vertical.Area.Default,
+                    Le.Vertical.Area.Default,
                     {
                       api: r,
                       scrollClassNames: { content: "Slots_verticalContent_4b" },
@@ -4456,7 +4448,7 @@
                   "div",
                   { className: "AnimatedSlots_slotsWrapper_0f" },
                   a().createElement("div", { className: tu }),
-                  a().createElement(qe, { slots: o[u], setActiveDividers: P }),
+                  a().createElement(qe, { slots: o[u], setActiveDividers: L }),
                   a().createElement("div", {
                     className: E()(tu, "AnimatedSlots_divider__bottom_3b"),
                   }),
@@ -4664,7 +4656,7 @@
                   stage: r + 1,
                 });
                 return a().createElement(
-                  Le.i,
+                  Pe.i,
                   { body: s, key: `button-${r}` },
                   a().createElement(
                     "div",

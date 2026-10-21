@@ -1255,7 +1255,7 @@
           };
         var P = t(493),
           O = t.n(P);
-        let N, H, I, G, W, U, X, j, q;
+        let N, H, I, G, U, W, X, j, q;
         function z(u) {
           engine.call("PlaySound", u);
         }
@@ -1291,6 +1291,7 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
+            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -1323,13 +1324,7 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.WtStamp = "stamp"),
-            (u.WtHunter = "wt_hunter"),
-            (u.WtBoss = "wt_boss"),
-            (u.WtHunterCollection = "hunter_collection"),
-            (u.WtTicket = "wtevent_ticket"),
-            (u.WtMainPrizeDiscount = "main_prize_discount"),
-            (u.WtTicket25 = "wtevent_ticket25"));
+            (u.RazlomCoin = "razlom_coin"));
         })(N || (N = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1404,10 +1399,10 @@
               (u.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
               (u.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
               (u.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"));
-          })(W || (W = {})),
+          })(U || (U = {})),
           (function (u) {
             u.BATTLE_BOOSTER = "battleBooster";
-          })(U || (U = {})),
+          })(W || (W = {})),
           (function (u) {
             ((u.BATTLE_BOOSTER = "battleBooster"),
               (u.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
@@ -2067,11 +2062,11 @@
                   computedClassNames: e,
                 };
               }, [t, a, s, E, c, F, N, O, y, B, M, x, S]),
-              W = G.computedStyle,
-              U = G.computedClassNames;
+              U = G.computedStyle,
+              W = G.computedClassNames;
             return n().createElement(
               "div",
-              hu({ className: C()(Cu.base, ...U, e), style: W }, I),
+              hu({ className: C()(Cu.base, ...W, e), style: U }, I),
               H,
             );
           });
@@ -2231,8 +2226,8 @@
         const Hu = Object.keys(Ru()),
           Iu = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
           Gu = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
-          Wu = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
-          Uu =
+          Uu = { mt: "XS", mr: "XS", mb: "XS", ml: "XS" },
+          Wu =
             (Object.keys({
               XL: { mt: "XL", mr: "XL", mb: "XL", ml: "XL" },
               LG: { mt: "LG", mr: "LG", mb: "LG", ml: "LG" },
@@ -2253,17 +2248,17 @@
               "heading-H22": Gu,
               "heading-H20R": Gu,
               "heading-H18": Gu,
-              "heading-H15": Wu,
-              "heading-H14": Wu,
+              "heading-H15": Uu,
+              "heading-H14": Uu,
               "paragraph-P24": Gu,
               "paragraph-P18": Gu,
               "paragraph-P16": Gu,
-              "paragraph-P14": Wu,
-              "paragraph-P12": Wu,
-              "paragraph-P10": Wu,
+              "paragraph-P14": Uu,
+              "paragraph-P12": Uu,
+              "paragraph-P10": Uu,
             }),
           Xu =
-            (Object.keys(Uu),
+            (Object.keys(Wu),
             (u) =>
               u
                 ? ((u) => Hu.includes(u))(u)
@@ -2310,10 +2305,10 @@
                 {
                   className: C()(Pu.base, t && Pu[t], p, a),
                   style: h,
-                  mt: !0 === l ? Uu[t || "paragraph-P16"].mt : l,
-                  mr: !0 === _ ? Uu[t || "paragraph-P16"].mr : _,
-                  mb: !0 === A ? Uu[t || "paragraph-P16"].mb : A,
-                  ml: !0 === D ? Uu[t || "paragraph-P16"].ml : D,
+                  mt: !0 === l ? Wu[t || "paragraph-P16"].mt : l,
+                  mr: !0 === _ ? Wu[t || "paragraph-P16"].mr : _,
+                  mb: !0 === A ? Wu[t || "paragraph-P16"].mb : A,
+                  ml: !0 === D ? Wu[t || "paragraph-P16"].ml : D,
                 },
                 B,
               ),
