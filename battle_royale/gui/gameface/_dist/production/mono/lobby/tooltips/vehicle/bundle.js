@@ -1,12 +1,12 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Bt as s,
-  Gt as a,
-  Nn as i,
-  Q as t,
-  Ut as n,
-  Yr as c,
-  et as o,
+  E as a,
+  Gt as i,
+  Nn as t,
+  O as n,
+  Ut as c,
+  Yr as o,
   gt as l,
   jr as r,
   ni as d,
@@ -17,14 +17,14 @@ import {
 import "../../chunks/globals.js";
 import { i as m } from "../../chunks/vendor.js";
 import { t as h } from "../../chunks/daily_bonus.js";
-var [v, y] = a()(({ observableModel: e }) => {
+var [v, y] = i()(({ observableModel: e }) => {
     const s = {
         vehicleInfo: e.object(),
         techParams: e.object("tech"),
         eventInfo: e.object("eventInfo"),
         dailyBonus: e.object("dailyBonus"),
       },
-      a = n.structural(() =>
+      a = c.structural(() =>
         Object.entries(s.techParams.get()).map(([e, s]) => {
           return {
             type: e,
@@ -56,7 +56,7 @@ var [v, y] = a()(({ observableModel: e }) => {
   A = "Section_paramsTypeContainer_e4739f53",
   I = "Section_icon_dc43b4b3",
   T = "Section_description_2a41345d",
-  $ = i(),
+  $ = t(),
   P = d.resolve("strings"),
   V = R.images.battle_royale.gui.maps.icons.techParams;
 function k({ type: e, className: s }) {
@@ -122,15 +122,15 @@ var C = {
     status__warning: "App_status__warning_48295791",
     section: "App_section_1f0fb308",
   },
-  M = e(c(), 1),
+  M = e(o(), 1),
   q = m(function () {
     const { model: e } = y(),
       {
         vehicleName: s,
-        vehicleNation: a,
-        vehicleType: i,
-        statusLevel: n,
-        statusText: c,
+        vehicleNation: i,
+        vehicleType: t,
+        statusLevel: c,
+        statusText: o,
       } = e.vehicleInfo.get(),
       {
         hasDailyBonus: r,
@@ -148,11 +148,11 @@ var C = {
         (0, $.jsxs)("div", {
           className: C.vehicleInfo,
           children: [
-            o(i) && (0, $.jsx)(t.Type, { type: i, size: t.Type.sizes.x64x64 }),
+            n(t) && (0, $.jsx)(a.Type, { type: t, size: a.Type.sizes.x64x64 }),
             (0, $.jsxs)("div", {
               className: C.vehicleContainer,
               children: [
-                (0, $.jsx)(t.Name, { className: C.vehicleName, children: s }),
+                (0, $.jsx)(a.Name, { className: C.vehicleName, children: s }),
                 (0, $.jsx)("div", {
                   className: C.modeDescription,
                   children: R.strings.battle_royale.tooltips.vehicle.description(),
@@ -193,11 +193,11 @@ var C = {
         (0, $.jsx)("div", { className: C.separator }),
         (0, $.jsx)("div", {
           className: C.vehicleDescription,
-          children: `${R.strings.tooltips.battle_royale.hangar.vehicle.description.$dyn(a)}`,
+          children: `${R.strings.tooltips.battle_royale.hangar.vehicle.description.$dyn(i)}`,
         }),
         (0, $.jsx)("div", { className: C.separator }),
         j.map((e, s) => (0, M.createElement)(w, { ...e, key: s, className: C.section })),
-        (0, $.jsx)("div", { className: _(C.status, C[`status__${n}`]), children: c }),
+        (0, $.jsx)("div", { className: _(C.status, C[`status__${c}`]), children: o }),
       ],
     });
   });

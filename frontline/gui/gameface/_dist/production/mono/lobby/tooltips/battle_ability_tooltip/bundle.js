@@ -1,10 +1,10 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as a,
-  Fa as s,
-  Fi as l,
+  Fi as s,
+  Ia as l,
   a as t,
-  do as i,
+  fo as i,
   lr as r,
   or as c,
   ur as o,
@@ -37,7 +37,7 @@ var [b, h] = o()(({ observableModel: e }) => {
       levelsInfo: a,
       levelsLabels: l,
     };
-  }, s),
+  }, l),
   j = "Characteristics_9735e744",
   x = "Characteristics_title_75be3f17",
   v = "Characteristics_characteristicsWrapper_11e726e7",
@@ -142,39 +142,39 @@ var [b, h] = o()(({ observableModel: e }) => {
   D = "LevelsInfo_label_d846a2d6",
   W = "LevelsInfo_headCell_2e36cfd9",
   $ = "LevelsInfo_cell_4befb142",
-  F = "LevelsInfo_row_e46e492b",
-  P = "LevelsInfo_bf577044",
+  P = "LevelsInfo_row_e46e492b",
+  F = "LevelsInfo_bf577044",
   E = "LevelsInfo_arrow_d83c589a",
   M = p(function () {
     const { model: e } = h(),
       a = e.levelsInfo.get(),
-      s = Object.entries(e.levelsLabels().labels);
+      l = Object.entries(e.levelsLabels().labels);
     return (0, g.jsxs)("div", {
-      className: P,
+      className: F,
       children: [
         (0, g.jsx)("div", {
-          className: F,
-          children: a.map((e, s) => {
-            const t = a.length - 1 !== s;
+          className: P,
+          children: a.map((e, l) => {
+            const t = a.length - 1 !== l;
             return (0, g.jsxs)(
               "div",
               {
                 className: W,
                 children: [
-                  (0, g.jsx)("div", { children: l(e.level) }),
+                  (0, g.jsx)("div", { children: s(e.level) }),
                   " ",
                   t && (0, g.jsx)("div", { className: E }),
                 ],
               },
-              s,
+              l,
             );
           }),
         }),
-        s.map(([a, s]) =>
+        l.map(([a, s]) =>
           (0, g.jsxs)(
             "div",
             {
-              className: F,
+              className: P,
               children: [
                 e
                   .levelsLabels()

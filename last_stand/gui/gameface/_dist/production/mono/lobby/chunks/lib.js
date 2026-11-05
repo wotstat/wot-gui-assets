@@ -642,6 +642,38 @@ var timeFormats = { full: DateTimeFormatsEnum.FullTime, short: DateTimeFormatsEn
 function formatTime(e, t, n = !0) {
   return window.regionalDateTime.getRegionalDateTime(t, e, n);
 }
+function getDateParts(e) {
+  const t = new Date(1e3 * e);
+  return {
+    year: t.getFullYear(),
+    month: t.getMonth() + 1,
+    hours: t.getHours(),
+    minutes: t.getMinutes(),
+    seconds: t.getSeconds(),
+  };
+}
+function isSameTime$1(e, t) {
+  return e.hours === t.hours && e.minutes === t.minutes && e.seconds === t.seconds;
+}
+function getRangeFormatPath(e, t) {
+  const n = e.year === t.year;
+  return [
+    "datetime_formats",
+    "dateRange",
+    "dateWithYear",
+    n ? "sameYear" : "differentYear",
+    n && e.month === t.month ? "sameMonth" : "differentMonth",
+    isSameTime$1(e, t) ? "sameTime" : "differentTime",
+  ].join(".");
+}
+function formatRange(e, t) {
+  const n = getRangeFormatPath(getDateParts(e), getDateParts(t)),
+    r = resources.resolve("strings");
+  return {
+    start: window.regionalDateTime.getFormattedDateTime(e, r.readOrEmpty(`${n}.start`), !0),
+    end: window.regionalDateTime.getFormattedDateTime(t, r.readOrEmpty(`${n}.end`), !0),
+  };
+}
 var intl$3 = {
     isNumberFormat: isNumberFormat,
     formatNumber: formatNumber,
@@ -653,6 +685,7 @@ var intl$3 = {
     dateTimeFormats: DateTimeFormatsEnum,
     formatTime: formatTime,
     timeFormats: timeFormatList,
+    formatRange: formatRange,
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
   },
@@ -24047,15 +24080,12 @@ var useScaleState = () => {
     const [e, t] = (0, import_react.useState)(getScale$2());
     return (
       (0, import_react.useEffect)(() => {
-        const e = () => {
-          t(getScale$2());
+        const e = () => t(getScale$2()),
+          n = onResize$1(e),
+          r = onRescale(e);
+        return () => {
+          (n(), r());
         };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
       }, []),
       e
     );
@@ -30743,7 +30773,11 @@ function Portal({
     y = (0, import_react.useMemo)(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
-    );
+    ),
+    [E, S] = useSpring(() => ({
+      from: { opacity: 0, transform: v[r] },
+      config: { easing: easings$1.easeInOutCubic, duration: 250 },
+    }));
   (0, import_react.useEffect)(() => {
     m.current = void 0;
     const e = p.current;
@@ -30755,7 +30789,7 @@ function Portal({
       if (!f.opened) return void h(void 0);
       if (!1 === u(f, { callerBounding: t, containerBounding: a, bodyBounding: o })) return;
       if (s) {
-        if (m.current && !isEqual(m.current, t)) return void f.close();
+        if (m.current && !isEqual(m.current, t)) return (S.set({ opacity: 0 }), void f.close());
         m.current = t;
       }
       const i = getUpdatedPosition(r, g, t, a, o);
@@ -30766,8 +30800,8 @@ function Portal({
         }));
     });
     return (o.start(), o.stop);
-  }, [f, u, s, g, n, b, f.id, f.portal, f.trigger, r, f.opened]);
-  const E = (0, import_react.useCallback)(() => {
+  }, [f, u, s, S, g, n, b, f.id, f.portal, f.trigger, r, f.opened]);
+  const A = (0, import_react.useCallback)(() => {
     const e = p.current;
     e &&
       document.activeElement &&
@@ -30775,7 +30809,7 @@ function Portal({
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  ((0, import_react.useEffect)(() => f.subscribe.onBeforeClose(E), [f.subscribe, E]),
+  ((0, import_react.useEffect)(() => f.subscribe.onBeforeClose(A), [f.subscribe, A]),
     useHandleKeydown(i && f.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
       f.close();
     }),
@@ -30812,21 +30846,17 @@ function Portal({
           }),
         ).dispose;
     }, [f]));
-  const [S, A] = useSpring(() => ({
-      from: { opacity: 0, transform: v[r] },
-      config: { easing: easings$1.easeInOutCubic, duration: 250 },
-    })),
-    x = import_react.useRef(v);
+  const x = import_react.useRef(v);
   return (
     (x.current = v),
     (0, import_react.useEffect)(() => {
       if (!_) return;
       const e = { opacity: 0, transform: x.current[_] };
-      A.start({
+      S.start({
         from: f.opened ? e : void 0,
         to: f.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [A, _, f.opened]),
+    }, [S, _, f.opened]),
     !f.opened && o
       ? null
       : (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
@@ -30838,11 +30868,11 @@ function Portal({
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: S.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: S.opacity.to((e) => (0 !== e || f.opened ? "block" : "none")),
+                pointerEvents: E.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: E.opacity.to((e) => (0 !== e || f.opened ? "block" : "none")),
                 ...d.style,
               },
-              children: (0, import_jsx_runtime.jsx)(animated.div, { style: S, children: e }),
+              children: (0, import_jsx_runtime.jsx)(animated.div, { style: E, children: e }),
             }),
             y,
           ),
@@ -31398,7 +31428,7 @@ function useScrollBounding(e, [t, n] = IGNORE_DEFAULT) {
   );
 }
 var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
-  background$7 = "Thumb_background_b893084a",
+  background$7 = "Thumb_background_7f3dd6ac",
   border$4 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
   icon$8 = "Thumb_icon_dca8bf26",
@@ -36352,91 +36382,7 @@ var MILLISECONDS_TO_SECONDS_MULTIPLIER = 1e3,
     );
   });
 Tooltip.Decorator = Decorator;
-var blackReal = "Formattextwithcolortags_blackReal_55a1402e",
-  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
-  white = "Formattextwithcolortags_white_e509d98",
-  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
-  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
-  par = "Formattextwithcolortags_par_485c5228",
-  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
-  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
-  red = "Formattextwithcolortags_red_9f8bd43",
-  redDark = "Formattextwithcolortags_redDark_5f4161da",
-  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
-  orange = "Formattextwithcolortags_orange_11869493",
-  cream = "Formattextwithcolortags_cream_12fdbea3",
-  brown = "Formattextwithcolortags_brown_e49e35ef",
-  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
-  green = "Formattextwithcolortags_green_55b7d967",
-  greenDark = "Formattextwithcolortags_greenDark_2b347344",
-  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
-  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
-  cred = "Formattextwithcolortags_cred_b30a4efa",
-  gold = "Formattextwithcolortags_gold_616e4d7",
-  bond = "Formattextwithcolortags_bond_b29091",
-  prom = "Formattextwithcolortags_prom_85aada4f",
-  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
-  FormatTextWithColorTags_module_default = {
-    blackReal: blackReal,
-    whiteReal: whiteReal,
-    white: white,
-    whiteOrange: whiteOrange,
-    whiteSpanish: whiteSpanish,
-    par: par,
-    parSecondary: parSecondary,
-    parTertiary: parTertiary,
-    red: red,
-    redDark: redDark,
-    yellow: yellow,
-    orange: orange,
-    cream: cream,
-    brown: brown,
-    greenBright: greenBright,
-    green: green,
-    greenDark: greenDark,
-    blueBooster: blueBooster,
-    blueTeamkiller: blueTeamkiller,
-    cred: cred,
-    gold: gold,
-    bond: bond,
-    prom: prom,
-    parNoWidth: parNoWidth,
-  },
-  TAGGED_PHRASE_REGEXP =
-    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-  COLOR_REGEXP = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
-  WORDS_REGEXP = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: n }) => {
-    const r = (0, import_react.useCallback)((e) => ({ color: `#${e}` }), []),
-      a = (0, import_react.useMemo)(() => t || {}, [t]);
-    let o = TAGGED_PHRASE_REGEXP.exec(e),
-      i = e,
-      s = 0;
-    for (; o;) {
-      const n = o[0],
-        u = COLOR_REGEXP.exec(n),
-        l = WORDS_REGEXP.exec(n),
-        c = o[1];
-      if (u && l) {
-        const e = u[0],
-          o = e + s++ + e;
-        ((i = i.replace(n, `%(${o})`)),
-          (a[o] = FormatTextWithColorTags_module_default[e]
-            ? (0, import_jsx_runtime.jsx)("span", {
-                className: FormatTextWithColorTags_module_default[e],
-                children: (0, import_jsx_runtime.jsx)(FormatText$1, { text: c, binding: t }),
-              })
-            : (0, import_jsx_runtime.jsx)("span", {
-                style: r(e),
-                children: (0, import_jsx_runtime.jsx)(FormatText$1, { text: c, binding: t }),
-              })));
-      }
-      o = TAGGED_PHRASE_REGEXP.exec(e);
-    }
-    return (0, import_jsx_runtime.jsx)(FormatText$1, { text: i, classMix: n, binding: a });
-  },
-  FormatTextWithColorTags = (0, import_react.memo)(FormatTextWithColorTagsComponent),
-  base$2 = "Tooltipdecorator_ea72f443",
+var base$2 = "Tooltipdecorator_ea72f443",
   decorator = "Tooltipdecorator_decorator_3580e101",
   TooltipDecorator_module_default = {
     base: base$2,
@@ -36661,6 +36607,90 @@ var blackReal = "Formattextwithcolortags_blackReal_55a1402e",
       ],
     });
   },
+  blackReal = "Formattextwithcolortags_blackReal_55a1402e",
+  whiteReal = "Formattextwithcolortags_whiteReal_3cbb298b",
+  white = "Formattextwithcolortags_white_e509d98",
+  whiteOrange = "Formattextwithcolortags_whiteOrange_7338e183",
+  whiteSpanish = "Formattextwithcolortags_whiteSpanish_e4b7820a",
+  par = "Formattextwithcolortags_par_485c5228",
+  parSecondary = "Formattextwithcolortags_parSecondary_19563067",
+  parTertiary = "Formattextwithcolortags_parTertiary_f9aabcb9",
+  red = "Formattextwithcolortags_red_9f8bd43",
+  redDark = "Formattextwithcolortags_redDark_5f4161da",
+  yellow = "Formattextwithcolortags_yellow_cfb15b8d",
+  orange = "Formattextwithcolortags_orange_11869493",
+  cream = "Formattextwithcolortags_cream_12fdbea3",
+  brown = "Formattextwithcolortags_brown_e49e35ef",
+  greenBright = "Formattextwithcolortags_greenBright_93ef1ba5",
+  green = "Formattextwithcolortags_green_55b7d967",
+  greenDark = "Formattextwithcolortags_greenDark_2b347344",
+  blueBooster = "Formattextwithcolortags_blueBooster_837aca9f",
+  blueTeamkiller = "Formattextwithcolortags_blueTeamkiller_94b7ca24",
+  cred = "Formattextwithcolortags_cred_b30a4efa",
+  gold = "Formattextwithcolortags_gold_616e4d7",
+  bond = "Formattextwithcolortags_bond_b29091",
+  prom = "Formattextwithcolortags_prom_85aada4f",
+  parNoWidth = "Formattextwithcolortags_parNoWidth_bb0f73ce",
+  FormatTextWithColorTags_module_default = {
+    blackReal: blackReal,
+    whiteReal: whiteReal,
+    white: white,
+    whiteOrange: whiteOrange,
+    whiteSpanish: whiteSpanish,
+    par: par,
+    parSecondary: parSecondary,
+    parTertiary: parTertiary,
+    red: red,
+    redDark: redDark,
+    yellow: yellow,
+    orange: orange,
+    cream: cream,
+    brown: brown,
+    greenBright: greenBright,
+    green: green,
+    greenDark: greenDark,
+    blueBooster: blueBooster,
+    blueTeamkiller: blueTeamkiller,
+    cred: cred,
+    gold: gold,
+    bond: bond,
+    prom: prom,
+    parNoWidth: parNoWidth,
+  },
+  TAGGED_PHRASE_REGEXP =
+    /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+  COLOR_REGEXP = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+  WORDS_REGEXP = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
+  FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: n }) => {
+    const r = (0, import_react.useCallback)((e) => ({ color: `#${e}` }), []),
+      a = (0, import_react.useMemo)(() => t || {}, [t]);
+    let o = TAGGED_PHRASE_REGEXP.exec(e),
+      i = e,
+      s = 0;
+    for (; o;) {
+      const n = o[0],
+        u = COLOR_REGEXP.exec(n),
+        l = WORDS_REGEXP.exec(n),
+        c = o[1];
+      if (u && l) {
+        const e = u[0],
+          o = e + s++ + e;
+        ((i = i.replace(n, `%(${o})`)),
+          (a[o] = FormatTextWithColorTags_module_default[e]
+            ? (0, import_jsx_runtime.jsx)("span", {
+                className: FormatTextWithColorTags_module_default[e],
+                children: (0, import_jsx_runtime.jsx)(FormatText$1, { text: c, binding: t }),
+              })
+            : (0, import_jsx_runtime.jsx)("span", {
+                style: r(e),
+                children: (0, import_jsx_runtime.jsx)(FormatText$1, { text: c, binding: t }),
+              })));
+      }
+      o = TAGGED_PHRASE_REGEXP.exec(e);
+    }
+    return (0, import_jsx_runtime.jsx)(FormatText$1, { text: i, classMix: n, binding: a });
+  },
+  FormatTextWithColorTags = (0, import_react.memo)(FormatTextWithColorTagsComponent),
   DateTime = ({
     datetime: e,
     format: t = DateTimeFormatsEnum.ShortDate,
@@ -36960,7 +36990,7 @@ export {
   require_react_dom as _o,
   useSpecialContextMenu as _r,
   dragDirections as _t,
-  Reward as a,
+  FormatTextWithColorTags as a,
   onBecomeUnobserved$1 as aa,
   configure as ai,
   lightTankRoles as an,
@@ -37055,7 +37085,7 @@ export {
   normalizeResource as no,
   themes$1 as nr,
   Input as nt,
-  TooltipDecorator as o,
+  Reward as o,
   reaction$1 as oa,
   getDependencyTree as oi,
   mediumTankRoles as on,
@@ -37082,7 +37112,7 @@ export {
   MS_IN_SECOND as ro,
   Video$1 as rr,
   useInput as rt,
-  FormatTextWithColorTags as s,
+  TooltipDecorator as s,
   runInAction$1 as sa,
   makeObservable as si,
   roles$1 as sn,

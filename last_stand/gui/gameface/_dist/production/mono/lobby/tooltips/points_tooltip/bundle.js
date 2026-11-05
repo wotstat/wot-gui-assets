@@ -6,8 +6,8 @@ import {
   Zn as o,
   cr as l,
   hi as e,
-  o as n,
-  pr as d,
+  pr as n,
+  s as d,
   xo as r,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
@@ -15,7 +15,7 @@ import { o as p, s as c } from "../../chunks/vendor.js";
 import { t as m } from "../../chunks/string-utils.js";
 import { n as _, t as j } from "../../chunks/story_point.js";
 var h = s(c(), 1),
-  [x, v] = d()(({ observableModel: s }) => ({ root: s.object() }), i),
+  [x, v] = n()(({ observableModel: s }) => ({ root: s.object() }), i),
   N = "PointsTooltipApp_84924c5f",
   b = "PointsTooltipApp_header_7f7425e6",
   g = "PointsTooltipApp_icon_908416d9",
@@ -153,4 +153,4 @@ var h = s(c(), 1),
       ],
     });
   });
-l((0, O.jsx)(x, { children: (0, O.jsx)(n, { children: (0, O.jsx)(M, {}) }) }));
+l((0, O.jsx)(x, { children: (0, O.jsx)(d, { children: (0, O.jsx)(M, {}) }) }));

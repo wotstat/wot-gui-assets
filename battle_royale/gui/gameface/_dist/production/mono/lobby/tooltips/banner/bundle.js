@@ -1,20 +1,20 @@
 import {
-  B as e,
-  Bt as t,
+  Bt as e,
+  G as t,
   Gt as a,
   J as s,
-  Nn as i,
-  R as n,
-  V as r,
+  K as i,
+  Nn as n,
+  S as r,
   Wt as o,
-  X as c,
-  Y as l,
-  Z as p,
-  gt as m,
-  jr as d,
-  qr as _,
-  t as b,
-  wn as x,
+  gt as c,
+  jr as l,
+  q as p,
+  qr as m,
+  t as d,
+  wn as _,
+  x as b,
+  y as x,
   zt as u,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
@@ -39,10 +39,10 @@ var j = (function (e) {
                 description: R.strings.battle_royale_extention.tooltip.banner.description(),
                 backgroundImage: R.images.battle_royale.gui.maps.tooltips.bannerBg(),
               },
-        { equals: x.structural },
+        { equals: _.structural },
       );
     return { ...t, computes: { settings: a } };
-  }, d),
+  }, l),
   y = {
     base: "App_97a7e598",
     img: "App_img_f167336c",
@@ -61,25 +61,25 @@ var j = (function (e) {
     separator: "App_separator_bad28223",
     timerStatus: "App_timerStatus_a52e51dd",
   },
-  A = i();
-function k(e, t = {}) {
-  return c(p(`{{@ split}}${e}{{/}}`, s), l, t);
+  A = n();
+function k(e, a = {}) {
+  return p(s(`{{@ split}}${e}{{/}}`, t), i, a);
 }
 var N = g(function () {
-  const { model: t } = v(),
-    { performanceRisk: a, time: s, modeState: i } = t.root.get(),
-    o = "inactive" === i ? r.cooldown : r.accent,
-    { backgroundImage: c, description: l, subTitle: p } = t.computes.settings();
+  const { model: e } = v(),
+    { performanceRisk: t, time: a, modeState: s } = e.root.get(),
+    i = "inactive" === s ? r.cooldown : r.accent,
+    { backgroundImage: n, description: o, subTitle: l } = e.computes.settings();
   return (0, A.jsxs)("div", {
-    className: _(y.base, y[`base__${a}`], y[`base__${i}`]),
+    className: m(y.base, y[`base__${t}`], y[`base__${s}`]),
     children: [
-      (0, A.jsx)("div", { className: y.img, style: { backgroundImage: `url(${c})` } }),
+      (0, A.jsx)("div", { className: y.img, style: { backgroundImage: `url(${n})` } }),
       (0, A.jsx)("div", {
         className: y.header,
         children: R.strings.battle_royale_extention.tooltip.banner.title(),
       }),
-      p && (0, A.jsx)("div", { className: y.subTitle, children: p }),
-      (0, A.jsx)("div", { className: y.description, children: (0, A.jsx)(m, { text: l }) }),
+      l && (0, A.jsx)("div", { className: y.subTitle, children: l }),
+      (0, A.jsx)("div", { className: y.description, children: (0, A.jsx)(c, { text: o }) }),
       (0, A.jsxs)("div", {
         className: y.modeContainer,
         children: [
@@ -90,37 +90,37 @@ var N = g(function () {
           k(R.strings.battle_royale_extention.tooltip.banner.mode.description()),
         ],
       }),
-      a !== j.Low &&
+      t !== j.Low &&
         (0, A.jsxs)("div", {
           className: y.performance,
           children: [
             (0, A.jsx)("div", { className: y.performanceIcon }),
             (0, A.jsx)("div", {
               className: y.performanceTitle,
-              children: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.title.$dyn(a)}`,
+              children: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.title.$dyn(t)}`,
             }),
             (0, A.jsx)("div", {
               className: y.performanceText,
-              children: (0, A.jsx)(m, {
-                text: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.description.$dyn(a)}`,
+              children: (0, A.jsx)(c, {
+                text: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.description.$dyn(t)}`,
               }),
             }),
           ],
         }),
       (0, A.jsx)("div", { className: y.separator }),
-      (0, A.jsx)(m, {
-        text: `${R.strings.battle_royale_extention.tooltip.banner.timer.text.$dyn(o)}`,
-        binding: { timer: (0, A.jsx)(n, { size: e.x24x24, type: o, start: s }) },
+      (0, A.jsx)(c, {
+        text: `${R.strings.battle_royale_extention.tooltip.banner.timer.text.$dyn(i)}`,
+        binding: { timer: (0, A.jsx)(x, { size: b.x24x24, type: i, start: a }) },
         classMix: y.timerStatus,
       }),
     ],
   });
 });
-t(
+e(
   (0, A.jsx)(u, {
     children: (0, A.jsx)(h, {
-      children: (0, A.jsx)(b, {
-        children: (0, A.jsx)(b.Decorator, { children: (0, A.jsx)(N, {}) }),
+      children: (0, A.jsx)(d, {
+        children: (0, A.jsx)(d.Decorator, { children: (0, A.jsx)(N, {}) }),
       }),
     }),
   }),

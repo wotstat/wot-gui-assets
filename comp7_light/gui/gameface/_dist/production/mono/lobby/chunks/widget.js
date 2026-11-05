@@ -3,24 +3,24 @@ import {
   Ao as a,
   Bo as s,
   Da as t,
-  E as r,
-  Fo as o,
+  Fo as r,
+  G as o,
   Mo as n,
   No as i,
   Po as d,
   Qr as l,
   Ro as c,
   Uo as _,
-  Z as p,
-  Zr as m,
-  ai as f,
+  Zr as p,
+  ai as m,
+  cr as f,
   jo as g,
   ka as u,
   ma as b,
   n as h,
   oa as T,
   t as x,
-  w as v,
+  ur as v,
 } from "./lib.js";
 import { a as N } from "./vendor.js";
 var w = (function (e) {
@@ -37,7 +37,7 @@ var y = {
     }),
     controls: () => u(t("onClick", "onClose")),
   },
-  [j, C] = m("TeaserModel")(
+  [j, C] = p("TeaserModel")(
     ({ observableModel: e }) =>
       e.primitives([
         "type",
@@ -90,31 +90,31 @@ var y = {
   A = "Teaser:Base",
   M = N(function ({ className: e, classNames: s }) {
     const { model: t, controls: l } = C(),
-      m = t.type.get() || w.News,
+      p = t.type.get() || w.News,
       u = t.postCounter.get(),
       T = t.text.get(),
       N = t.description.get(),
       y = t.finishTime.get(),
       j = t.isVideo.get(),
       M = t.image.get(),
-      B = f(),
-      E = _.resolve("strings");
-    const P = (0, k.useCallback)(
+      B = m(),
+      P = _.resolve("strings");
+    const S = (0, k.useCallback)(
         (e) => {
           (e.stopPropagation(), l.onClose());
         },
         [l],
       ),
-      [S, U] = (0, k.useState)(null);
+      [E, U] = (0, k.useState)(null);
     (0, k.useLayoutEffect)(() => {
       let e;
-      const s = a(o(y || 0), d());
+      const s = a(r(y || 0), d());
       if (!y || s <= 0) return void U(null);
       const t = Math.floor(n.seconds(s)),
-        l = i(o(y), g(1)) ? r.Extended : r.Long;
-      if ((U({ duration: t, style: l }), l === r.Extended)) {
-        const s = a(o(t + 1), g(1));
-        e = setTimeout(() => U((e) => ({ ...e, style: r.Long })), Math.min(s, b));
+        o = i(r(y), g(1)) ? v.Extended : v.Long;
+      if ((U({ duration: t, style: o }), o === v.Extended)) {
+        const s = a(r(t + 1), g(1));
+        e = setTimeout(() => U((e) => ({ ...e, style: v.Long })), Math.min(s, b));
       }
       return () => {
         e && (clearTimeout(e), (e = void 0));
@@ -140,7 +140,7 @@ var y = {
       }, [M]),
       O
         ? (0, I.jsxs)("div", {
-            className: c(W.base, W[`base__${m}Type`], j && W.base__video, e),
+            className: c(W.base, W[`base__${p}Type`], j && W.base__video, e),
             onClick: function (e) {
               (B.play("click", { target: A, original: e }), l.onClick());
             },
@@ -171,7 +171,7 @@ var y = {
                   (0, I.jsxs)("div", {
                     className: c(W.title, s?.title),
                     children: [
-                      E.readOrEmpty("menu.promo.teaser.title"),
+                      P.readOrEmpty("menu.promo.teaser.title"),
                       Boolean(u) &&
                         u > 0 &&
                         (0, I.jsx)(h, {
@@ -185,24 +185,24 @@ var y = {
                     type: "close",
                     side: "right",
                     classNames: { base: c(W.closeButton, s?.closeButton) },
-                    onClick: P,
+                    onClick: S,
                     caption: "",
                   }),
                   T && (0, I.jsx)("div", { className: c(W.text, s?.text), children: T }),
-                  (N || S) &&
+                  (N || E) &&
                     (0, I.jsxs)("div", {
                       className: W.bottomContent,
                       children: [
                         N &&
                           (0, I.jsx)("div", {
                             className: c(W.description, s?.description),
-                            children: (0, I.jsx)(p, {
+                            children: (0, I.jsx)(o, {
                               classMix: W.extendedText,
                               text: N,
                               isTruncationAvailable: !0,
                             }),
                           }),
-                        S && (0, I.jsx)(v, { className: c(W.countdown, s?.countdown), ...S }),
+                        E && (0, I.jsx)(f, { className: c(W.countdown, s?.countdown), ...E }),
                       ],
                     }),
                 ],

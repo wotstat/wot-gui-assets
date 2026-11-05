@@ -34,7 +34,7 @@ import {
   yo as B,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { a as M, i as Q, n as $ } from "../chunks/vendor.js";
+import { a as M, i as Q, r as $ } from "../chunks/vendor.js";
 /* empty css               */ import { t as H } from "../chunks/get_button_size.js";
 import { n as U } from "../chunks/get_season_name.js";
 import { r as V } from "../chunks/enums.js";

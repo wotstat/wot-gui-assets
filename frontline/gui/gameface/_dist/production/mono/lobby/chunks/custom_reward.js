@@ -1,9 +1,9 @@
 import { r as a } from "./rolldown-runtime.js";
-import { c as e, do as s, f as i, h as t, lo as o, m as l, p as r, xi as m } from "./lib.js";
+import { c as e, f as s, fo as i, h as t, m as o, p as l, uo as r, xi as m } from "./lib.js";
 var c = (function (a) {
     return ((a.Static = "static"), (a.Claimable = "claimable"), a);
   })({}),
-  n = (s(), "CustomReward_197314c4"),
+  n = (i(), "CustomReward_197314c4"),
   d = "CustomReward_base__disable_51f6e5f1",
   u = "CustomReward_animWrapper_f3d190a6",
   p = "CustomReward_glow_11133e2",
@@ -11,7 +11,7 @@ var c = (function (a) {
   _ = m();
 function v({
   claimState: a,
-  name: s,
+  name: i,
   icon: m,
   rewardSize: v,
   value: w,
@@ -23,7 +23,7 @@ function v({
 }) {
   const N = a === c.Claimable;
   return (0, _.jsxs)("div", {
-    className: o(n, j && d, x),
+    className: r(n, j && d, x),
     children: [
       N &&
         (0, _.jsxs)("div", {
@@ -31,12 +31,12 @@ function v({
           children: [(0, _.jsx)("div", { className: p }), (0, _.jsx)("div", { className: f })],
         }),
       (0, _.jsx)(e, {
-        name: s,
-        image: i({ name: s, icon: m }, t.Big),
+        name: i,
+        image: s({ name: i, icon: m }, t.Big),
         size: v,
         value: w.toString(),
-        valueType: l(s),
-        tooltipArgs: r({ tooltipId: b }, Number(C)),
+        valueType: o(i),
+        tooltipArgs: l({ tooltipId: b }, Number(C)),
         special: g,
       }),
     ],

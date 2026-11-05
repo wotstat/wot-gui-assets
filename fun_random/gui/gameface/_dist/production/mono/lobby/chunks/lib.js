@@ -642,6 +642,38 @@ var timeFormats = { full: DateTimeFormatsEnum.FullTime, short: DateTimeFormatsEn
 function formatTime$1(e, t, n = !0) {
   return window.regionalDateTime.getRegionalDateTime(t, e, n);
 }
+function getDateParts(e) {
+  const t = new Date(1e3 * e);
+  return {
+    year: t.getFullYear(),
+    month: t.getMonth() + 1,
+    hours: t.getHours(),
+    minutes: t.getMinutes(),
+    seconds: t.getSeconds(),
+  };
+}
+function isSameTime(e, t) {
+  return e.hours === t.hours && e.minutes === t.minutes && e.seconds === t.seconds;
+}
+function getRangeFormatPath(e, t) {
+  const n = e.year === t.year;
+  return [
+    "datetime_formats",
+    "dateRange",
+    "dateWithYear",
+    n ? "sameYear" : "differentYear",
+    n && e.month === t.month ? "sameMonth" : "differentMonth",
+    isSameTime(e, t) ? "sameTime" : "differentTime",
+  ].join(".");
+}
+function formatRange(e, t) {
+  const n = getRangeFormatPath(getDateParts(e), getDateParts(t)),
+    r = resources.resolve("strings");
+  return {
+    start: window.regionalDateTime.getFormattedDateTime(e, r.readOrEmpty(`${n}.start`), !0),
+    end: window.regionalDateTime.getFormattedDateTime(t, r.readOrEmpty(`${n}.end`), !0),
+  };
+}
 var intl$3 = {
     isNumberFormat: isNumberFormat,
     formatNumber: formatNumber,
@@ -653,6 +685,7 @@ var intl$3 = {
     dateTimeFormats: DateTimeFormatsEnum,
     formatTime: formatTime$1,
     timeFormats: timeFormatList,
+    formatRange: formatRange,
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
   },
@@ -24027,15 +24060,12 @@ var useScaleState$1 = () => {
     const [e, t] = (0, import_react.useState)(getScale$2());
     return (
       (0, import_react.useEffect)(() => {
-        const e = () => {
-          t(getScale$2());
+        const e = () => t(getScale$2()),
+          n = onResize$1(e),
+          r = onRescale(e);
+        return () => {
+          (n(), r());
         };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
       }, []),
       e
     );
@@ -34019,7 +34049,11 @@ function Portal({
     y = (0, import_react.useMemo)(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
-    );
+    ),
+    [E, $] = useSpring$1(() => ({
+      from: { opacity: 0, transform: v[r] },
+      config: { easing: easings$2.easeInOutCubic, duration: 250 },
+    }));
   (0, import_react.useEffect)(() => {
     m.current = void 0;
     const e = p.current;
@@ -34031,7 +34065,7 @@ function Portal({
       if (!f.opened) return void h(void 0);
       if (!1 === u(f, { callerBounding: t, containerBounding: a, bodyBounding: o })) return;
       if (s) {
-        if (m.current && !isEqual$1(m.current, t)) return void f.close();
+        if (m.current && !isEqual$1(m.current, t)) return ($.set({ opacity: 0 }), void f.close());
         m.current = t;
       }
       const i = getUpdatedPosition(r, g, t, a, o);
@@ -34042,8 +34076,8 @@ function Portal({
         }));
     });
     return (o.start(), o.stop);
-  }, [f, u, s, g, n, b, f.id, f.portal, f.trigger, r, f.opened]);
-  const E = (0, import_react.useCallback)(() => {
+  }, [f, u, s, $, g, n, b, f.id, f.portal, f.trigger, r, f.opened]);
+  const S = (0, import_react.useCallback)(() => {
     const e = p.current;
     e &&
       document.activeElement &&
@@ -34051,7 +34085,7 @@ function Portal({
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  ((0, import_react.useEffect)(() => f.subscribe.onBeforeClose(E), [f.subscribe, E]),
+  ((0, import_react.useEffect)(() => f.subscribe.onBeforeClose(S), [f.subscribe, S]),
     useHandleKeydown(i && f.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
       f.close();
     }),
@@ -34088,21 +34122,17 @@ function Portal({
           }),
         ).dispose;
     }, [f]));
-  const [$, S] = useSpring$1(() => ({
-      from: { opacity: 0, transform: v[r] },
-      config: { easing: easings$2.easeInOutCubic, duration: 250 },
-    })),
-    A = import_react.useRef(v);
+  const A = import_react.useRef(v);
   return (
     (A.current = v),
     (0, import_react.useEffect)(() => {
       if (!_) return;
       const e = { opacity: 0, transform: A.current[_] };
-      S.start({
+      $.start({
         from: f.opened ? e : void 0,
         to: f.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [S, _, f.opened]),
+    }, [$, _, f.opened]),
     !f.opened && o
       ? null
       : (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
@@ -34114,11 +34144,11 @@ function Portal({
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: $.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: $.opacity.to((e) => (0 !== e || f.opened ? "block" : "none")),
+                pointerEvents: E.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: E.opacity.to((e) => (0 !== e || f.opened ? "block" : "none")),
                 ...d.style,
               },
-              children: (0, import_jsx_runtime.jsx)(animated$1.div, { style: $, children: e }),
+              children: (0, import_jsx_runtime.jsx)(animated$1.div, { style: E, children: e }),
             }),
             y,
           ),
@@ -34486,7 +34516,7 @@ function useScrollBounding(e, [t, n] = IGNORE_DEFAULT) {
   );
 }
 var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
-  background$6 = "Thumb_background_b893084a",
+  background$6 = "Thumb_background_7f3dd6ac",
   border$5 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
   icon$9 = "Thumb_icon_dca8bf26",

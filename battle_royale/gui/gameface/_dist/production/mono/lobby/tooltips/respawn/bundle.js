@@ -1,15 +1,15 @@
 import {
   Bt as s,
   Gt as e,
-  M as a,
-  N as t,
-  Nn as r,
-  Ut as i,
-  jr as n,
-  k as o,
-  ni as l,
-  q as c,
-  t as d,
+  Nn as a,
+  Ut as t,
+  W as r,
+  jr as i,
+  m as n,
+  ni as o,
+  p as l,
+  t as c,
+  u as d,
   zt as p,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
@@ -20,12 +20,12 @@ var [j, u] = e()((s) => {
   return {
     type: e.type,
     computes: {
-      params: i.primitive(function (s) {
+      params: t.primitive(function (s) {
         return s(e.params.get());
       }),
     },
   };
-}, n);
+}, i);
 var _,
   v = "Content_2a67c3d5",
   h = "Content_2f46cd49",
@@ -33,18 +33,18 @@ var _,
   f = "Content_container_f73799e6",
   b = "Content_title_cc6d6a31",
   y = "Content_description_c744435f",
-  g = r(),
+  g = a(),
   w = R.strings.battle_royale.tooltips.respawn,
   C =
-    ((_ = o(t({ platoonTimeToResurrect: a(), platoonRespawnPeriod: a(), soloRespawnPeriod: a() }))),
+    ((_ = d(n({ platoonTimeToResurrect: l(), platoonRespawnPeriod: l(), soloRespawnPeriod: l() }))),
     function () {
       return u().model.computes.params(_);
     }),
-  k = l.resolve("strings"),
-  H = m(function () {
+  H = o.resolve("strings"),
+  T = m(function () {
     const { platoonTimeToResurrect: s, soloRespawnPeriod: e, platoonRespawnPeriod: a } = C(),
-      t = x(k.readOrEmpty("battle_royale.tooltips.respawn.solo.description")),
-      r = x(k.readOrEmpty("battle_royale.tooltips.respawn.platoon.description"));
+      t = x(H.readOrEmpty("battle_royale.tooltips.respawn.solo.description")),
+      i = x(H.readOrEmpty("battle_royale.tooltips.respawn.platoon.description"));
     return (0, g.jsx)("div", {
       className: v,
       children: (0, g.jsx)("div", {
@@ -62,7 +62,7 @@ var _,
                 (0, g.jsx)("div", { className: b, children: w.solo.title() }),
                 t.map(({ text: s, params: a }) =>
                   (0, g.jsx)(
-                    c,
+                    r,
                     {
                       upgradeLegacy: !0,
                       text: s,
@@ -79,9 +79,9 @@ var _,
               className: f,
               children: [
                 (0, g.jsx)("div", { className: b, children: w.platoon.title() }),
-                r.map(({ text: e, params: t }) =>
+                i.map(({ text: e, params: t }) =>
                   (0, g.jsx)(
-                    c,
+                    r,
                     {
                       upgradeLegacy: !0,
                       text: e,
@@ -99,11 +99,11 @@ var _,
       }),
     });
   }),
-  T = "Footer_82c68168",
+  k = "Footer_82c68168",
   P = "Footer_text_c859c809";
 function E() {
   return (0, g.jsx)("div", {
-    className: T,
+    className: k,
     children: (0, g.jsxs)("span", {
       className: P,
       children: [R.strings.battle_royale.tooltips.respawn.footer.text(), " "],
@@ -112,34 +112,34 @@ function E() {
 }
 var F = "Header_9a6b431",
   L = "Header_icon_937d671c",
-  M = "Header_description_7d3252af",
-  O = "Header_title_6d0764fe",
-  q = "Header_subtitle_c9393f08",
-  z = R.strings.battle_royale.tooltips.respawn;
-function A() {
+  O = "Header_description_7d3252af",
+  z = "Header_title_6d0764fe",
+  A = "Header_subtitle_c9393f08",
+  B = R.strings.battle_royale.tooltips.respawn;
+function D() {
   return (0, g.jsxs)("div", {
     className: F,
     children: [
       (0, g.jsx)("div", { className: L }),
       (0, g.jsxs)("div", {
-        className: M,
+        className: O,
         children: [
-          (0, g.jsx)("div", { className: O, children: z.title() }),
-          (0, g.jsx)("div", { className: q, children: z.subtitle() }),
+          (0, g.jsx)("div", { className: z, children: B.title() }),
+          (0, g.jsx)("div", { className: A, children: B.subtitle() }),
         ],
       }),
     ],
   });
 }
-var B = "App_2e4efbd5";
-function D() {
-  return (0, g.jsx)(d, {
-    children: (0, g.jsx)(d.Decorator, {
+var G = "App_2e4efbd5";
+function M() {
+  return (0, g.jsx)(c, {
+    children: (0, g.jsx)(c.Decorator, {
       children: (0, g.jsxs)("div", {
-        className: B,
-        children: [(0, g.jsx)(A, {}), (0, g.jsx)(H, {}), (0, g.jsx)(E, {})],
+        className: G,
+        children: [(0, g.jsx)(D, {}), (0, g.jsx)(T, {}), (0, g.jsx)(E, {})],
       }),
     }),
   });
 }
-s((0, g.jsx)(p, { children: (0, g.jsx)(j, { children: (0, g.jsx)(D, {}) }) }));
+s((0, g.jsx)(p, { children: (0, g.jsx)(j, { children: (0, g.jsx)(M, {}) }) }));

@@ -2116,6 +2116,370 @@ html[lang="th"] .FormatText_db904f12 span {
   opacity: 0.8;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+@keyframes Formattextwithcolortags_fadeIn_7219dca0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Formattextwithcolortags_fadeInThreeQuarters_7219dca0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Formattextwithcolortags_fadeInHalf_7219dca0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Formattextwithcolortags_fadeOut_7219dca0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Formattextwithcolortags_fadeInWithScale_7219dca0 {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Formattextwithcolortags_slideUp_7219dca0 {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Formattextwithcolortags_scale_7219dca0 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Formattextwithcolortags_raysAppearance_7219dca0 {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Formattextwithcolortags_rotate_7219dca0 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Formattextwithcolortags_reverse-rotate_7219dca0 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Formattextwithcolortags_glowAppearance_7219dca0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Formattextwithcolortags_highlightAppearance_7219dca0 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Formattextwithcolortags_blink_7219dca0 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Formattextwithcolortags_slideUpIn_7219dca0 {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Formattextwithcolortags_blackReal_55a1402e {
+  color: #000000;
+}
+
+.Formattextwithcolortags_whiteReal_3cbb298b {
+  color: #ffffff;
+}
+
+.Formattextwithcolortags_white_e509d98 {
+  color: #f2f2f7;
+}
+
+.Formattextwithcolortags_whiteOrange_7338e183 {
+  color: #fefeec;
+}
+
+.Formattextwithcolortags_whiteSpanish_e4b7820a {
+  color: #e9e2bf;
+}
+
+.Formattextwithcolortags_par_485c5228 {
+  color: #8c8c7e;
+}
+
+.Formattextwithcolortags_parSecondary_19563067 {
+  color: #595950;
+}
+
+.Formattextwithcolortags_parTertiary_f9aabcb9 {
+  color: #37362e;
+}
+
+.Formattextwithcolortags_red_9f8bd43 {
+  color: #ff2717;
+}
+
+.Formattextwithcolortags_redDark_5f4161da {
+  color: #b70000;
+}
+
+.Formattextwithcolortags_yellow_cfb15b8d {
+  color: #feab34;
+}
+
+.Formattextwithcolortags_orange_11869493 {
+  color: #ee7000;
+}
+
+.Formattextwithcolortags_cream_12fdbea3 {
+  color: #ffdd99;
+}
+
+.Formattextwithcolortags_brown_e49e35ef {
+  color: #cbac77;
+}
+
+.Formattextwithcolortags_greenBright_93ef1ba5 {
+  color: #80d43a;
+}
+
+.Formattextwithcolortags_green_55b7d967 {
+  color: #7ab300;
+}
+
+.Formattextwithcolortags_greenDark_2b347344 {
+  color: #497212;
+}
+
+.Formattextwithcolortags_blueBooster_837aca9f {
+  color: #ccffff;
+}
+
+.Formattextwithcolortags_blueTeamkiller_94b7ca24 {
+  color: #09e2ff;
+}
+
+.Formattextwithcolortags_cred_b30a4efa {
+  color: #ced9d9;
+}
+
+.Formattextwithcolortags_gold_616e4d7 {
+  color: #ffc363;
+}
+
+.Formattextwithcolortags_bond_b29091 {
+  color: #c9c9b6;
+}
+
+.Formattextwithcolortags_prom_85aada4f {
+  color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+.Formattextwithcolortags_parNoWidth_bb0f73ce {
+  width: 0;
+  color: #8c8c7e;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+@keyframes Countdown_fadeIn_52ed3dde {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Countdown_fadeInThreeQuarters_52ed3dde {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Countdown_fadeInHalf_52ed3dde {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Countdown_fadeOut_52ed3dde {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Countdown_fadeInWithScale_52ed3dde {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Countdown_slideUp_52ed3dde {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Countdown_scale_52ed3dde {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Countdown_raysAppearance_52ed3dde {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Countdown_rotate_52ed3dde {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Countdown_reverse-rotate_52ed3dde {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Countdown_glowAppearance_52ed3dde {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Countdown_highlightAppearance_52ed3dde {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Countdown_blink_52ed3dde {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Countdown_slideUpIn_52ed3dde {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Countdown_99fa8328 {
+  display: flex;
+  align-items: center;
+}
+
+.Countdown_icon_b50ebafb {
+  width: 32rem;
+  height: 32rem;
+  background: no-repeat center/contain;
+}
+
+.Countdown_description_91ad95d2 {
+  color: #ffdd99;
+  font-size: 14rem;
+  font-weight: 400;
+  line-height: 1.3;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Popover_border_d0a76717 {
   position: absolute;
   top: 0;
@@ -2643,7 +3007,7 @@ html[lang="th"] .FormatText_db904f12 span {
   overflow: hidden;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Thumb_background_b893084a,
+.Thumb_background_7f3dd6ac,
 .Thumb_border_5749138b {
   position: absolute;
   top: 0;
@@ -2776,21 +3140,10 @@ html[lang="th"] .FormatText_db904f12 span {
     transform: translateY(0);
   }
 }
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.Thumb_border_5749138b,
-.Thumb_background_b893084a {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .Thumb_border_5749138b,
 .Thumb_innerBorder_42bafd18,
 .Thumb_icon_dca8bf26,
-.Thumb_background_b893084a {
+.Thumb_background_7f3dd6ac {
   position: absolute;
   pointer-events: none;
 }
@@ -2812,18 +3165,18 @@ html[lang="th"] .FormatText_db904f12 span {
   transform: translateX(calc(var(--thumbOffset) + var(--bouncingCorrection)));
 }
 
-.Thumb_background_b893084a {
+.Thumb_background_7f3dd6ac {
   opacity: 0.6;
   transition: opacity 0.2s ease-in;
 }
-.Thumb_base__vertical_55a67c91 .Thumb_background_b893084a {
+.Thumb_base__vertical_55a67c91 .Thumb_background_7f3dd6ac {
   background: url(R.images.gui.maps.icons.ui_kit.scroll.vertical_texture) center/100% auto repeat-y;
 }
-.Thumb_base__horizontal_27ca7ace .Thumb_background_b893084a {
+.Thumb_base__horizontal_27ca7ace .Thumb_background_7f3dd6ac {
   background: url(R.images.gui.maps.icons.ui_kit.scroll.horizontal_texture) center/auto 100%
     repeat-x;
 }
-.Thumb_base__active_830942bb .Thumb_background_b893084a {
+.Thumb_base__active_830942bb .Thumb_background_7f3dd6ac {
   opacity: 1;
 }
 
@@ -13500,673 +13853,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   opacity: 0.6;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-@keyframes Formattextwithcolortags_fadeIn_7219dca0 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Formattextwithcolortags_fadeInThreeQuarters_7219dca0 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Formattextwithcolortags_fadeInHalf_7219dca0 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Formattextwithcolortags_fadeOut_7219dca0 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Formattextwithcolortags_fadeInWithScale_7219dca0 {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Formattextwithcolortags_slideUp_7219dca0 {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Formattextwithcolortags_scale_7219dca0 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Formattextwithcolortags_raysAppearance_7219dca0 {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Formattextwithcolortags_rotate_7219dca0 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Formattextwithcolortags_reverse-rotate_7219dca0 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Formattextwithcolortags_glowAppearance_7219dca0 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Formattextwithcolortags_highlightAppearance_7219dca0 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Formattextwithcolortags_blink_7219dca0 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Formattextwithcolortags_slideUpIn_7219dca0 {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.Formattextwithcolortags_blackReal_55a1402e {
-  color: #000000;
-}
-
-.Formattextwithcolortags_whiteReal_3cbb298b {
-  color: #ffffff;
-}
-
-.Formattextwithcolortags_white_e509d98 {
-  color: #f2f2f7;
-}
-
-.Formattextwithcolortags_whiteOrange_7338e183 {
-  color: #fefeec;
-}
-
-.Formattextwithcolortags_whiteSpanish_e4b7820a {
-  color: #e9e2bf;
-}
-
-.Formattextwithcolortags_par_485c5228 {
-  color: #8c8c7e;
-}
-
-.Formattextwithcolortags_parSecondary_19563067 {
-  color: #595950;
-}
-
-.Formattextwithcolortags_parTertiary_f9aabcb9 {
-  color: #37362e;
-}
-
-.Formattextwithcolortags_red_9f8bd43 {
-  color: #ff2717;
-}
-
-.Formattextwithcolortags_redDark_5f4161da {
-  color: #b70000;
-}
-
-.Formattextwithcolortags_yellow_cfb15b8d {
-  color: #feab34;
-}
-
-.Formattextwithcolortags_orange_11869493 {
-  color: #ee7000;
-}
-
-.Formattextwithcolortags_cream_12fdbea3 {
-  color: #ffdd99;
-}
-
-.Formattextwithcolortags_brown_e49e35ef {
-  color: #cbac77;
-}
-
-.Formattextwithcolortags_greenBright_93ef1ba5 {
-  color: #80d43a;
-}
-
-.Formattextwithcolortags_green_55b7d967 {
-  color: #7ab300;
-}
-
-.Formattextwithcolortags_greenDark_2b347344 {
-  color: #497212;
-}
-
-.Formattextwithcolortags_blueBooster_837aca9f {
-  color: #ccffff;
-}
-
-.Formattextwithcolortags_blueTeamkiller_94b7ca24 {
-  color: #09e2ff;
-}
-
-.Formattextwithcolortags_cred_b30a4efa {
-  color: #ced9d9;
-}
-
-.Formattextwithcolortags_gold_616e4d7 {
-  color: #ffc363;
-}
-
-.Formattextwithcolortags_bond_b29091 {
-  color: #c9c9b6;
-}
-
-.Formattextwithcolortags_prom_85aada4f {
-  color: #a29b70;
-}
-
-/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
-.Formattextwithcolortags_parNoWidth_bb0f73ce {
-  width: 0;
-  color: #8c8c7e;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-@keyframes Countdown_fadeIn_52ed3dde {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Countdown_fadeInThreeQuarters_52ed3dde {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Countdown_fadeInHalf_52ed3dde {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Countdown_fadeOut_52ed3dde {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Countdown_fadeInWithScale_52ed3dde {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Countdown_slideUp_52ed3dde {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Countdown_scale_52ed3dde {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Countdown_raysAppearance_52ed3dde {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Countdown_rotate_52ed3dde {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Countdown_reverse-rotate_52ed3dde {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Countdown_glowAppearance_52ed3dde {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Countdown_highlightAppearance_52ed3dde {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Countdown_blink_52ed3dde {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Countdown_slideUpIn_52ed3dde {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.Countdown_99fa8328 {
-  display: flex;
-  align-items: center;
-}
-
-.Countdown_icon_b50ebafb {
-  width: 32rem;
-  height: 32rem;
-  background: no-repeat center/contain;
-}
-
-.Countdown_description_91ad95d2 {
-  color: #ffdd99;
-  font-size: 14rem;
-  font-weight: 400;
-  line-height: 1.3;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-@keyframes Rewards_fadeIn_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Rewards_fadeInThreeQuarters_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Rewards_fadeInHalf_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Rewards_fadeOut_f0ade464 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Rewards_fadeInWithScale_f0ade464 {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Rewards_slideUp_f0ade464 {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Rewards_scale_f0ade464 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Rewards_raysAppearance_f0ade464 {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Rewards_rotate_f0ade464 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Rewards_reverse-rotate_f0ade464 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Rewards_glowAppearance_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Rewards_highlightAppearance_f0ade464 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Rewards_blink_f0ade464 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Rewards_slideUpIn_f0ade464 {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.Rewards_36f5662a {
-  display: flex;
-}
-.Rewards_base__vertical_32f04b98 {
-  flex-direction: column;
-}
-
-.Rewards_reward_9abc0f4a {
-  margin: 0 10rem;
-}
-.Rewards_reward__vertical_dd4a02c5 {
-  margin: 15rem 0;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
-@keyframes Optimizedprogressbar_fadeIn_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Optimizedprogressbar_fadeInThreeQuarters_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.75;
-  }
-}
-@keyframes Optimizedprogressbar_fadeInHalf_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes Optimizedprogressbar_fadeOut_69c01aad {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes Optimizedprogressbar_fadeInWithScale_69c01aad {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes Optimizedprogressbar_slideUp_69c01aad {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes Optimizedprogressbar_scale_69c01aad {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes Optimizedprogressbar_raysAppearance_69c01aad {
-  0% {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-}
-@keyframes Optimizedprogressbar_rotate_69c01aad {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes Optimizedprogressbar_reverse-rotate_69c01aad {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes Optimizedprogressbar_glowAppearance_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Optimizedprogressbar_highlightAppearance_69c01aad {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-@keyframes Optimizedprogressbar_blink_69c01aad {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes Optimizedprogressbar_slideUpIn_69c01aad {
-  from {
-    opacity: 0;
-    transform: translateY(50rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.Optimizedprogressbar_e894d6c {
-  width: 100%;
-  padding: 30rem 0;
-  overflow: hidden;
-}
-
-.Optimizedprogressbar_wrapper_70ce38b3 {
-  position: relative;
-}
-
-.Optimizedprogressbar_line_5190e4c3 {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.Optimizedprogressbar_backgroundWrapper_405830ed {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.Optimizedprogressbar_background_74cf6541 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 8001px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
 .Value_880359b5::after {
   position: absolute;
   top: 0;
@@ -14959,6 +14645,309 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .PlayerInfo_stripeBadge_605bfd0a {
   z-index: -1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+@keyframes Rewards_fadeIn_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Rewards_fadeInThreeQuarters_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Rewards_fadeInHalf_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Rewards_fadeOut_f0ade464 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Rewards_fadeInWithScale_f0ade464 {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Rewards_slideUp_f0ade464 {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Rewards_scale_f0ade464 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Rewards_raysAppearance_f0ade464 {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Rewards_rotate_f0ade464 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Rewards_reverse-rotate_f0ade464 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Rewards_glowAppearance_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Rewards_highlightAppearance_f0ade464 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Rewards_blink_f0ade464 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Rewards_slideUpIn_f0ade464 {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Rewards_36f5662a {
+  display: flex;
+}
+.Rewards_base__vertical_32f04b98 {
+  flex-direction: column;
+}
+
+.Rewards_reward_9abc0f4a {
+  margin: 0 10rem;
+}
+.Rewards_reward__vertical_dd4a02c5 {
+  margin: 15rem 0;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable scss/dollar-variable-pattern */
+@keyframes Optimizedprogressbar_fadeIn_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Optimizedprogressbar_fadeInThreeQuarters_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes Optimizedprogressbar_fadeInHalf_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes Optimizedprogressbar_fadeOut_69c01aad {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Optimizedprogressbar_fadeInWithScale_69c01aad {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes Optimizedprogressbar_slideUp_69c01aad {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes Optimizedprogressbar_scale_69c01aad {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes Optimizedprogressbar_raysAppearance_69c01aad {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+@keyframes Optimizedprogressbar_rotate_69c01aad {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Optimizedprogressbar_reverse-rotate_69c01aad {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes Optimizedprogressbar_glowAppearance_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Optimizedprogressbar_highlightAppearance_69c01aad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes Optimizedprogressbar_blink_69c01aad {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes Optimizedprogressbar_slideUpIn_69c01aad {
+  from {
+    opacity: 0;
+    transform: translateY(50rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.Optimizedprogressbar_e894d6c {
+  width: 100%;
+  padding: 30rem 0;
+  overflow: hidden;
+}
+
+.Optimizedprogressbar_wrapper_70ce38b3 {
+  position: relative;
+}
+
+.Optimizedprogressbar_line_5190e4c3 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.Optimizedprogressbar_backgroundWrapper_405830ed {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Optimizedprogressbar_background_74cf6541 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 8001px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */

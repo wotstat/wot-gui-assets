@@ -3,11 +3,11 @@ import {
   Bo as s,
   Cr as a,
   Kr as d,
-  T as t,
-  Zr as i,
-  oa as l,
-  so as r,
-  w as p,
+  Zr as t,
+  cr as i,
+  lr as l,
+  oa as r,
+  so as p,
   wr as c,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
@@ -21,7 +21,7 @@ var _ = e(n(), 1),
       e
     );
   })({}),
-  [f, b] = (s(), i()(({ observableModel: e }) => ({ root: e.object() }), r)),
+  [f, b] = (s(), t()(({ observableModel: e }) => ({ root: e.object() }), p)),
   x = R.strings.comp7_light.leaderboardRewardTooltip,
   h = [
     { victoryPoints: 5, defeatPoints: 3, place: x.top.c_0() },
@@ -40,7 +40,7 @@ var _ = e(n(), 1),
   P = "Table_reward_34902bd5",
   y = "Table_point_e3b5c2ca",
   k = "Table_separator_b233bbf2",
-  E = e(l(), 1),
+  E = e(r(), 1),
   C = R.strings.comp7_light.leaderboardRewardTooltip,
   M = () =>
     (0, E.jsxs)("div", {
@@ -120,13 +120,13 @@ var _ = e(n(), 1),
   U = o(() => {
     const { model: e } = b(),
       { state: s, seasonEndTimestamp: d } = e.root.get(),
-      i = s === m.Simplified;
+      t = s === m.Simplified;
     return (0, E.jsx)(a, {
       children: (0, E.jsx)(a.Decorator, {
         children: (0, E.jsxs)("div", {
           className: (0, _.default)(B.base, B[`base__${s}`]),
           children: [
-            !i &&
+            !t &&
               (0, E.jsx)(E.Fragment, {
                 children: (0, E.jsxs)("div", {
                   className: B.header,
@@ -136,9 +136,9 @@ var _ = e(n(), 1),
                       text: S.eventEnds(),
                       classMix: B.eventEnds,
                       binding: {
-                        countdown: (0, E.jsx)(p, {
+                        countdown: (0, E.jsx)(i, {
                           duration: d,
-                          icon: t.None,
+                          icon: l.None,
                           classNames: { text: B.eventEnds },
                         }),
                       },

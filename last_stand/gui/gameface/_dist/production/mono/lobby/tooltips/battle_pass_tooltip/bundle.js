@@ -7,15 +7,15 @@ import {
   On as n,
   Pn as o,
   To as l,
-  c as i,
-  cr as c,
-  hi as d,
-  io as _,
-  ir as m,
-  jn as x,
-  kn as u,
-  pr as g,
-  s as j,
+  a as i,
+  c,
+  cr as d,
+  hi as _,
+  io as m,
+  ir as x,
+  jn as u,
+  kn as g,
+  pr as j,
   sr as p,
   va as b,
   vo as v,
@@ -33,7 +33,7 @@ var P = (function (s) {
     );
   })({}),
   k = s(v(), 1),
-  [E, S] = g()(
+  [E, S] = j()(
     ({ observableModel: s }) => ({
       root: s.object(),
       rewardsCommon: s.array("rewardsCommon"),
@@ -45,14 +45,14 @@ var P = (function (s) {
   C = "IconTextBlock_4710821f",
   B = "IconTextBlock_icon_753334c6",
   T = "IconTextBlock_text_e1bd5a75",
-  I = d(),
+  I = _(),
   O = (0, k.memo)(function ({ icon: s, text: e, className: a }) {
     const r = (0, k.useMemo)(() => ({ backgroundImage: `url(${s})` }), [s]);
     return (0, I.jsxs)("div", {
       className: (0, y.default)(C, a),
       children: [
         (0, I.jsx)("div", { className: B, style: r }),
-        (0, I.jsx)(j, { classMix: T, text: e }),
+        (0, I.jsx)(i, { classMix: T, text: e }),
       ],
     });
   }),
@@ -215,7 +215,7 @@ var ds = "Progression_af1cb3b",
           children: [
             (0, I.jsx)("div", {
               className: hs,
-              children: (0, I.jsx)(m, {
+              children: (0, I.jsx)(x, {
                 text: R.strings.battle_pass.tooltips.inProgress.chapter(),
                 binding: { name: ws.readOrEmpty(`R.strings.battle_pass.chapter.fullName.c_${e}`) },
               }),
@@ -269,10 +269,10 @@ function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
         children: r.map((s, a) => {
           const r = ((s, e) => ({
               name: s.item || s.name,
-              image: u(s, e),
+              image: g(s, e),
               special: s.overlayType,
               value: s.value,
-              valueType: x(s.name),
+              valueType: u(s.name),
             }))(s.value, c),
             t = null !== n(r.special),
             _ = r.special && Rs.includes(r.special);
@@ -364,10 +364,10 @@ var Ds = {
   },
   Ms = (s, e) => ({
     name: s.item || s.name,
-    image: u(s, e),
+    image: g(s, e),
     special: s.overlayType,
     value: s.value,
-    valueType: x(s.name),
+    valueType: u(s.name),
   });
 function As({ rewards: { items: s }, className: a = "" }) {
   const r = s.length < 3 ? t.S180x135 : t.Big;
@@ -427,11 +427,11 @@ var Hs = "PostProgressionContent_61673cb3",
       { chapterType: e } = s.root.get();
     return e === P.POST_PROGRESSION ? (0, I.jsx)(qs, {}) : (0, I.jsx)(Os, {});
   });
-c(
+d(
   (0, I.jsx)(E, {
     children: (0, I.jsx)(p, {
-      children: (0, I.jsx)(i, {
-        children: (0, I.jsx)(i.Decorator, { children: (0, I.jsx)(Js, {}) }),
+      children: (0, I.jsx)(c, {
+        children: (0, I.jsx)(c.Decorator, { children: (0, I.jsx)(Js, {}) }),
       }),
     }),
   }),

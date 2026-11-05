@@ -2,9 +2,9 @@ import {
   Bt as t,
   Gt as s,
   Nn as e,
-  Wt as i,
-  jr as o,
-  n,
+  V as i,
+  Wt as o,
+  jr as n,
   qr as r,
   t as a,
   wn as l,
@@ -16,7 +16,7 @@ import { t as d } from "../../chunks/enums.js";
 import { n as _, t as x } from "../../chunks/proxy_currency.js";
 var [b, h] = s()(({ observableModel: t }) => {
     const s = { root: t.object(), eventInfo: t.object("eventInfo") },
-      e = i(
+      e = o(
         () =>
           s.eventInfo.get().subMode === d.StPatrick
             ? {
@@ -32,7 +32,7 @@ var [b, h] = s()(({ observableModel: t }) => {
         { equals: l.structural },
       );
     return { ...s, computes: { settings: e } };
-  }, o),
+  }, n),
   j = "App_9188ef79",
   m = "App_headerContainer_bd668828",
   u = "App_title_65c0c363",
@@ -46,7 +46,7 @@ var [b, h] = s()(({ observableModel: t }) => {
   I = p(function () {
     const { model: t } = h(),
       { coinType: s } = t.eventInfo.get(),
-      { title: e, subTitle: i, description: o } = t.computes.settings();
+      { title: e, subTitle: o, description: n } = t.computes.settings();
     return (0, N.jsxs)("div", {
       className: j,
       children: [
@@ -54,7 +54,7 @@ var [b, h] = s()(({ observableModel: t }) => {
           className: m,
           children: [
             (0, N.jsx)("div", { className: u, children: e }),
-            (0, N.jsx)("div", { className: r(v, A), children: (0, N.jsx)(n, { text: i }) }),
+            (0, N.jsx)("div", { className: r(v, A), children: (0, N.jsx)(i, { text: o }) }),
           ],
         }),
         (0, N.jsx)("div", { className: f }),
@@ -62,7 +62,7 @@ var [b, h] = s()(({ observableModel: t }) => {
           className: r(g, A),
           children: [
             (0, N.jsx)("div", { className: y, children: (0, N.jsx)(x, { type: s, size: _.x80 }) }),
-            (0, N.jsx)("div", { className: k, children: o }),
+            (0, N.jsx)("div", { className: k, children: n }),
           ],
         }),
       ],

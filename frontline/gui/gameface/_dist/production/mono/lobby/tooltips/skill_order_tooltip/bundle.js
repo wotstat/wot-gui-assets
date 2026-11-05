@@ -2,15 +2,15 @@ import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as e,
   a as r,
-  do as a,
+  fo as a,
   ir as i,
   nr as c,
   or as o,
   rr as t,
   tr as l,
   vn as n,
-  vo as d,
-  xi as p,
+  xi as d,
+  yo as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { t as _ } from "../../chunks/divider.js";
@@ -26,7 +26,7 @@ var m = (function (s) {
   h = "CategoryIcon_ab8abcc7",
   j = "CategoryIcon_categoryIcon_1f02424f",
   u = "CategoryIcon_arrow_a1c14258",
-  v = p();
+  v = d();
 function g({ category: s, showArrow: e }) {
   return (0, v.jsxs)("div", {
     className: h,
@@ -42,9 +42,9 @@ function g({ category: s, showArrow: e }) {
   });
 }
 var k = "Item_39579287",
-  T = "Item_vehicleIconWrapper_9cbf60dd",
-  f = "Item_vehicleIcon_95c02596",
-  y = "Item_categories_4b12882e",
+  f = "Item_vehicleIconWrapper_9cbf60dd",
+  y = "Item_vehicleIcon_95c02596",
+  T = "Item_categories_4b12882e",
   b = {
     [t]: "light_tank_x48x48",
     [i]: "medium_tank_x48x48",
@@ -57,11 +57,11 @@ function N({ vehicleType: s, categories: e }) {
     className: k,
     children: [
       (0, v.jsx)("div", {
-        className: T,
-        children: (0, v.jsx)(n, { className: f, path: `ui_kit.vehicle_type.x48x48.${b[s]}` }),
+        className: f,
+        children: (0, v.jsx)(n, { className: y, path: `ui_kit.vehicle_type.x48x48.${b[s]}` }),
       }),
       (0, v.jsx)("div", {
-        className: y,
+        className: T,
         children: e.map((s, r) =>
           (0, v.jsx)(
             x.Fragment,
@@ -80,7 +80,7 @@ var O = "SkillOrderTooltip_f3653ea",
   F = "SkillOrderTooltip_container_49c73b81",
   C = "SkillOrderTooltip_items_b8016673",
   $ = "SkillOrderTooltip_infoText_52a8e30b",
-  A = d.resolve("strings"),
+  A = p.resolve("strings"),
   E = [
     [t, [m.Reconnaissance, m.Tactics, m.Firesupport]],
     [i, [m.Tactics, m.Firesupport, m.Reconnaissance]],

@@ -8,13 +8,13 @@ import {
   Rn as r,
   To as l,
   Xn as o,
-  a as c,
-  cr as _,
-  fr as p,
-  ha as n,
-  hi as f,
-  o as m,
-  pr as u,
+  cr as c,
+  fr as _,
+  ha as p,
+  hi as n,
+  o as f,
+  pr as m,
+  s as u,
   va as h,
   vo as x,
   zn as j,
@@ -24,11 +24,11 @@ import { o as v, s as y } from "../../chunks/vendor.js";
 import { i as b, r as w } from "../../chunks/utils.js";
 import { t as g } from "../../chunks/story_point.js";
 var N = e(y(), 1),
-  [D, T] = u()(({ observableModel: e }) => {
+  [D, T] = m()(({ observableModel: e }) => {
     const s = { root: e.object(), rewardsByWave: e.array("rewardsByWave") },
-      a = p(
+      a = _(
         (e) => {
-          const a = n(s.rewardsByWave.get(), e);
+          const a = p(s.rewardsByWave.get(), e);
           if (!a) throw Error(`No rewards found for index: ${s.rewardsByWave.get()}`);
           return a;
         },
@@ -44,7 +44,7 @@ var N = e(y(), 1),
   R = "Shield_icon__completed_27443cc3",
   S = "Shield_check_c7a26a19",
   B = "Shield_index_726c9af4",
-  z = f(),
+  z = n(),
   L = k.memo(function ({ completed: e, index: s = -1, className: a }) {
     const i = s >= 0;
     return (0, z.jsx)("div", {
@@ -78,7 +78,7 @@ var N = e(y(), 1),
           (0, z.jsx)(L, { index: t, completed: i, className: I }),
           h(d, (e, s) =>
             (0, z.jsx)(
-              c,
+              f,
               {
                 name: e.name,
                 value: b(e),
@@ -205,4 +205,4 @@ var N = e(y(), 1),
       ],
     });
   });
-_((0, z.jsx)(D, { children: (0, z.jsx)(m, { children: (0, z.jsx)(J, {}) }) }));
+c((0, z.jsx)(D, { children: (0, z.jsx)(u, { children: (0, z.jsx)(J, {}) }) }));

@@ -2,50 +2,50 @@ import { r as e } from "./rolldown-runtime.js";
 import {
   $r as t,
   Fn as s,
-  Gt as n,
-  L as o,
-  Lr as r,
-  Mn as a,
-  Nn as i,
-  R as c,
-  Xr as l,
-  Yr as d,
-  ei as u,
-  ni as m,
-  nn as p,
-  q as g,
-  qr as f,
-  ti as x,
-  ur as b,
-  xt as h,
+  Gt as o,
+  Lr as n,
+  Mn as r,
+  Nn as a,
+  W as i,
+  Xr as c,
+  Yr as l,
+  ei as d,
+  ni as u,
+  nn as m,
+  qr as p,
+  ti as g,
+  ur as h,
+  v as b,
+  xt as f,
+  y as x,
 } from "./lib.js";
 import { i as y, n as v, t as _ } from "./vendor.js";
-var N = e(d()),
+var N = e(l()),
   w = (function (e) {
     return ((e.Common = "common"), (e.Rare = "rare"), (e.Epic = "epic"), e);
   })({});
-var E = class extends l {
+var E = class extends c {
     root;
     prefix;
     constructor(e, t) {
       (super(), (this.root = e), (this.prefix = t));
     }
     readOr(e, t, s = "silent") {
-      const n = x(this.prefix, e),
-        o = (function (e, t) {
+      const o = g(this.prefix, e),
+        n = (function (e, t) {
           const s = t.split(".");
           if (window.R && window.R.sounds) {
             const t = s[s.length - 1];
             if (!t) return;
-            const n = s.slice(0, -1).reduce((e, t) => {
+            const o = s.slice(0, -1).reduce((e, t) => {
               if ("object" == typeof e?.[t]) return e[t];
             }, e);
-            if (!n) return;
-            return "function" == typeof n[t] ? n[t]() : void 0;
+            if (!o) return;
+            return "function" == typeof o[t] ? o[t]() : void 0;
           }
           throw new Error("R class with images field is not defined");
-        })(this.root, n);
-      return void 0 === o ? ("silent" !== s && u(`Resource not found: ${n}`, s), t()) : o;
+        })(this.root, o);
+      return void 0 === n ? ("silent" !== s && d(`Resource not found: ${o}`, s), t()) : n;
     }
     readOrEmpty(e, t = "warn") {
       return this.readOr(e, () => "", t);
@@ -53,12 +53,12 @@ var E = class extends l {
   },
   I = "lootbox_images",
   O = "lootbox_sounds";
-(m.register(I, _(() => new t(window.R.images)).singleton()),
-  m.register(O, _(() => new E(window.R.sounds)).singleton()));
-var j = m.resolve(I),
-  $ = m.resolve("videos"),
-  C = m.resolve(O),
-  P = m.resolve("strings"),
+(u.register(I, _(() => new t(window.R.images)).singleton()),
+  u.register(O, _(() => new E(window.R.sounds)).singleton()));
+var j = u.resolve(I),
+  $ = u.resolve("videos"),
+  C = u.resolve(O),
+  P = u.resolve("strings"),
   M = (e, t) => {
     switch (e) {
       case R.images:
@@ -118,7 +118,14 @@ var j = m.resolve(I),
         },
         backgroundColor: "#111",
       },
-      COMMON: { guaranteed: { accent: 5, visibleAt: 10 } },
+      COMMON: {
+        guaranteed: {
+          accent: 5,
+          visibleAt: 10,
+          highlight: { color: "rgba(255, 228, 192, 1)", shadow: "rgba(255, 228, 192, 0.4)" },
+        },
+        hasPanelShadow: !1,
+      },
     }),
   B = {
     DEFAULT_CONFIG: A,
@@ -133,57 +140,64 @@ var j = m.resolve(I),
         shine: { opacity: { initial: 0.4, hover: 0.8 } },
       },
       HOME_VIEW: { vignette: { isEnabled: !0, opacity: 0.8 } },
-      COMMON: { guaranteed: { accent: 5, visibleAt: 0 } },
+      COMMON: {
+        guaranteed: {
+          accent: 5,
+          visibleAt: 0,
+          highlight: { color: "rgba(164, 236, 241, 1)", shadow: "rgba(164, 236, 241, 0.4)" },
+        },
+        hasPanelShadow: !0,
+      },
     },
   },
   L = (e, t) => {
     const s = (e, t) => {
-      const n = { ...e };
-      for (const o in n)
+      const o = { ...e };
+      for (const n in o)
         t &&
-          o in t &&
-          ("object" == typeof n[o] ? (n[o] = s(n[o], t[o] ?? n[o])) : (n[o] = t[o] ?? n[o]));
-      return n;
+          n in t &&
+          ("object" == typeof o[n] ? (o[n] = s(o[n], t[n] ?? o[n])) : (o[n] = t[n] ?? o[n]));
+      return o;
     };
     return s(e, t);
   };
-function G(e, t) {
-  const s = B[h(e)],
-    n = s?.COMMON ? L(A.COMMON, s.COMMON) : A.COMMON;
-  if (!t) return n;
-  const o = s ? L(A[t], s[t]) : A[t],
-    r = Object.keys(o).filter((e) => e in n);
+function S(e, t) {
+  const s = B[f(e)],
+    o = s?.COMMON ? L(A.COMMON, s.COMMON) : A.COMMON;
+  if (!t) return o;
+  const n = s ? L(A[t], s[t]) : A[t],
+    r = Object.keys(n).filter((e) => e in o);
   if (r.length > 0)
     throw new Error(
       `[getConfig] Name conflict in "${e}.${String(t)}": keys [${r.join(", ")}] exist in both componentConfig and commonConfig.`,
     );
-  return { ...o, ...n };
+  return { ...n, ...o };
 }
-var V = (e, t) => {
+var G = (e, t) => {
     let s = e;
-    const n = t.split(".");
-    for (const o of n) {
+    const o = t.split(".");
+    for (const n of o) {
       if (!s) break;
-      const e = s.$dyn(o);
+      const e = s.$dyn(n);
       (e && "object" != typeof e) || (s = e);
     }
     return s;
   },
-  S = ({ type: e, filePath: t, eventName: s }, n = !1) => {
+  V = ({ type: e, filePath: t, eventName: s }, o = !1) => {
     const {
-      parent: o,
+      parent: n,
       path: r,
       defaultPath: a,
     } = ((e, t, s) => {
-      const n = "gui.maps.icons.lootBoxSystem.customizable",
-        o = "lootbox.customizable";
+      const o = "gui.maps.icons.lootBoxSystem.customizable",
+        n = "lootbox.customizable";
       switch (e) {
         case k.Images:
         case k.DynamicImages:
-          return { parent: R.images, path: `${n}.${s}.${t}`, defaultPath: `${n}.default.${t}` };
+          return { parent: R.images, path: `${o}.${s}.${t}`, defaultPath: `${o}.default.${t}` };
         case k.Videos:
         case k.DynamicVideos:
-          return { parent: R.videos, path: `${o}.${s}.${t}`, defaultPath: `${o}.default.${t}` };
+          return { parent: R.videos, path: `${n}.${s}.${t}`, defaultPath: `${n}.default.${t}` };
         case k.Texts:
         case k.DynamicTexts:
           return {
@@ -200,26 +214,26 @@ var V = (e, t) => {
           );
       }
     })(e, t, s);
-    return o
-      ? { eventResource: n ? V(o, r) : M(o, r), defaultResource: n ? V(o, a) : M(o, a) }
+    return n
+      ? { eventResource: o ? G(n, r) : M(n, r), defaultResource: o ? G(n, a) : M(n, a) }
       : null;
   },
   D = ({ type: e, filePath: t, eventName: s }) => {
-    const n = S({ type: e, filePath: t, eventName: s });
-    if (!n || (!n.eventResource && !n.defaultResource))
+    const o = V({ type: e, filePath: t, eventName: s });
+    if (!o || (!o.eventResource && !o.defaultResource))
       return (console.info(`Unreachable code: unknown resource (${e} ${s} ${t})`), "");
-    const { eventResource: o, defaultResource: r } = n;
-    return o || r;
+    const { eventResource: n, defaultResource: r } = o;
+    return n || r;
   },
   z = (e, t) =>
-    Object.keys(e).reduce((s, n) => {
-      const o = e[n];
-      return o
-        ? ((s[n] = ((e, t, s) =>
-            Object.keys(e).reduce((n, o) => {
-              const r = e[o];
-              return (void 0 !== r && (n[o] = D({ type: t, filePath: r, eventName: s })), n);
-            }, {}))(o, n, t)),
+    Object.keys(e).reduce((s, o) => {
+      const n = e[o];
+      return n
+        ? ((s[o] = ((e, t, s) =>
+            Object.keys(e).reduce((o, n) => {
+              const r = e[n];
+              return (void 0 !== r && (o[n] = D({ type: t, filePath: r, eventName: s })), o);
+            }, {}))(n, o, t)),
           s)
         : s;
     }, {}),
@@ -237,68 +251,68 @@ var V = (e, t) => {
     },
     sounds: { entryHover: "gui_lb_icon_hover" },
   },
-  Y = (function (e) {
+  W = (function (e) {
     return ((e.Boxes = "boxes"), (e.Empty = "empty"), e);
   })({}),
-  [W, F] = n()(
+  [Y, F] = o()(
     ({ observableModel: e }) => {
       const t = e.object().get().eventName,
-        s = { root: e.object(), style: b.box(G(t, T.EntryPoint)), resources: b.box(z(H, t)) },
-        n = v(() => {
+        s = { root: e.object(), style: h.box(S(t, T.EntryPoint)), resources: h.box(z(H, t)) },
+        o = v(() => {
           const { boxesCount: e } = s.root.get();
           return e ? "boxes" : "empty";
         });
-      return { ...s, computes: { getState: n } };
+      return { ...s, computes: { getState: o } };
     },
     ({ externalModel: e }) => ({ showLanding: e.createCallbackNoArgs("onEntryClick") }),
   ),
   U = (e) => !!e && !e.includes("customizable/default"),
   q = (e, t) => {
-    return ((s = e), U((n = t)) ? n : U(s) ? s : n || s);
-    var s, n;
+    return ((s = e), U((o = t)) ? o : U(s) ? s : o || s);
+    var s, o;
   },
   X = "video",
   Z = (w.Common, w.Common, w.Rare, w.Rare, "Glow_2571a3a9"),
   J = "Glow_base__hover_bba0fce1",
   K = "Glow_video_2d774833",
   Q = "Glow_img_90334d0",
-  ee = i(),
+  ee = a(),
   te = y(function ({ hover: e = !1, className: t }) {
     const { model: s } = F(),
-      { images: n, videos: r } = s.resources.get(),
-      a = s.style.get(),
-      i = ((e, t) => {
+      { images: o, videos: n } = s.resources.get(),
+      r = s.style.get(),
+      a = ((e, t) => {
         const s = q(e, t);
         return { src: s, type: s.split(":")[0] };
-      })(n.shine, r.glow);
+      })(o.shine, n.glow);
     return (0, ee.jsx)("div", {
-      className: f(Z, e && J, t),
+      className: p(Z, e && J, t),
       style: {
-        "--opacity-initial": a.shine.opacity.initial,
-        "--opacity-hover": a.shine.opacity.hover,
+        "--opacity-initial": r.shine.opacity.initial,
+        "--opacity-hover": r.shine.opacity.hover,
       },
       children:
-        i.type === X
-          ? (0, ee.jsx)(o, { loop: !0, autoplay: !0, className: K, src: i.src })
-          : (0, ee.jsx)("div", { className: Q, style: { backgroundImage: `url(${i.src})` } }),
+        a.type === X
+          ? (0, ee.jsx)(b, { loop: !0, autoplay: !0, className: K, src: a.src })
+          : (0, ee.jsx)("div", { className: Q, style: { backgroundImage: `url(${a.src})` } }),
     });
   }),
   se = "Icon_4b931f4c";
-function ne({ image: e, brightness: t, disabled: s, className: n, ...o }) {
+function oe({ image: e, brightness: t, disabled: s, className: o, ...n }) {
   return (0, ee.jsx)("div", {
-    ...o,
-    className: f(se, n),
+    ...n,
+    className: p(se, o),
     style: {
       backgroundImage: `url(${e})`,
       filter: s ? "brightness(.8) saturate(.5)" : `brightness(${t})`,
     },
   });
 }
-var oe = "Counter_e7ec423c";
-function re({ count: e, text: t, maxText: s, className: n }) {
+var ne = "Counter_e7ec423c";
+function re({ count: e, text: t, maxText: s, className: o }) {
   return (0, ee.jsx)("div", {
-    className: f(oe, n),
-    children: e < 1e3 ? (0, ee.jsx)(g, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
+    className: p(ne, o),
+    children: e < 1e3 ? (0, ee.jsx)(i, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
   });
 }
 var ae = {
@@ -311,34 +325,34 @@ var ae = {
   },
   ie = y(function ({ className: e }) {
     const { model: t } = F(),
-      { breakpoint: n } = a(),
-      { texts: o } = t.resources.get(),
-      { boxesCount: r, eventExpireTime: i } = t.root.get(),
-      l = t.computes.getState(),
-      d = n.weight > s.small.weight ? c.size.x32x32 : c.size.x24x24,
-      u = 259200 >= i,
-      m = u || l === Y.Empty;
+      { breakpoint: o } = r(),
+      { texts: n } = t.resources.get(),
+      { boxesCount: a, eventExpireTime: i } = t.root.get(),
+      c = t.computes.getState(),
+      l = o.weight > s.small.weight ? x.size.x32x32 : x.size.x24x24,
+      d = 259200 >= i,
+      u = d || c === W.Empty;
     return (0, ee.jsxs)("div", {
-      className: f(ae.base, e),
+      className: p(ae.base, e),
       children: [
-        m &&
+        u &&
           (0, ee.jsx)("div", {
-            className: f(ae.additional, l !== Y.Boxes && ae.additional__center),
-            children: u
-              ? (0, ee.jsx)(c, {
+            className: p(ae.additional, c !== W.Boxes && ae.additional__center),
+            children: d
+              ? (0, ee.jsx)(x, {
                   className: ae.timer,
                   classNames: { label: ae.timerLabel },
                   start: i,
-                  size: d,
+                  size: l,
                 })
-              : (0, ee.jsx)("div", { className: ae.text, children: o.boxes }),
+              : (0, ee.jsx)("div", { className: ae.text, children: n.boxes }),
           }),
-        l === Y.Boxes &&
+        c === W.Boxes &&
           (0, ee.jsx)(re, {
             className: ae.counter,
-            maxText: o.maxBoxesCount,
-            count: r,
-            text: o.boxesCount,
+            maxText: n.maxBoxesCount,
+            count: a,
+            text: n.boxesCount,
           }),
       ],
     });
@@ -350,50 +364,50 @@ var ae = {
   me = "App_wrapper_4cc053c3",
   pe = "App_info_be3fbaea",
   ge = "App_icon_879c8615";
-var fe = y(function () {
-  const e = m.resolve("sounds"),
-    t = m.resolve("aliases"),
-    s = m.resolve("views"),
-    n = p({
+var he = y(function () {
+  const e = u.resolve("sounds"),
+    t = u.resolve("aliases"),
+    s = u.resolve("views"),
+    o = m({
       resId: t.read((e) => e.hangar.shared.LootboxEntryPoint("resId")),
       contentId: s.read((e) => e.mono.lootbox.tooltips.entry_point("resId")),
     }),
-    [o, a] = (0, N.useState)(!1),
+    [r, a] = (0, N.useState)(!1),
     { model: i, controls: c } = F(),
     { isEnabled: l } = i.root.get(),
     d = i.computes.getState(),
-    { images: u, videos: g, sounds: x } = i.resources.get(),
-    b = i.style.get(),
-    h = o ? 1 + b.icon[`${d}IconBrightness`] : 1,
-    y = d === Y.Empty ? u.iconEmpty : u.iconGold;
+    { images: g, videos: h, sounds: b } = i.resources.get(),
+    f = i.style.get(),
+    x = r ? 1 + f.icon[`${d}IconBrightness`] : 1,
+    y = d === W.Empty ? g.iconEmpty : g.iconGold;
   return (0, ee.jsx)("div", {
-    className: f(ce, !l && de),
+    className: p(ce, !l && de),
     children: (0, ee.jsx)("div", {
       className: le,
-      ...n,
+      ...o,
       children: (0, ee.jsxs)("div", {
         className: me,
         onClick: function () {
           (e.play("yes1"), c.showLanding());
         },
         onMouseEnter: function () {
-          (r.sound(x.entryHover), a(!0));
+          (n.sound(b.entryHover), a(!0));
         },
         onMouseLeave: () => a(!1),
         children: [
           (0, ee.jsx)(ie, { className: pe }),
-          d === Y.Boxes && l && (0, ee.jsx)(te, { className: ue, hover: o }),
-          (0, ee.jsx)(ne, { disabled: !l, image: y, brightness: h, className: ge }),
+          d === W.Boxes && l && (0, ee.jsx)(te, { className: ue, hover: r }),
+          (0, ee.jsx)(oe, { disabled: !l, image: y, brightness: x, className: ge }),
         ],
       }),
     }),
   });
 });
-function xe() {
-  const e = m.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
-  return (0, ee.jsx)(W, {
+function be() {
+  const e = u.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
+  return (0, ee.jsx)(Y, {
     options: (0, N.useMemo)(() => ({ rootId: e }), [e]),
-    children: (0, ee.jsx)(fe, {}),
+    children: (0, ee.jsx)(he, {}),
   });
 }
-export { xe as default };
+export { be as default };

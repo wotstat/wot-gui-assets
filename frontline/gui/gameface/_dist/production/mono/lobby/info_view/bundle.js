@@ -1,22 +1,22 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Cn as s,
-  Fi as a,
-  G as i,
-  Gt as l,
-  Kr as r,
-  Qa as n,
-  Za as t,
-  d as o,
-  g as c,
-  in as _,
-  or as g,
+  $a as s,
+  Cn as a,
+  Fi as i,
+  G as l,
+  Gt as r,
+  Kr as n,
+  d as t,
+  g as o,
+  in as c,
+  or as _,
   rn as d,
-  sn as p,
-  ur as f,
-  vo as m,
-  xa as u,
-  xi as x,
+  sn as g,
+  ur as p,
+  wn as f,
+  xa as m,
+  xi as u,
+  yo as x,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { i as v, s as h } from "../chunks/vendor.js";
@@ -24,7 +24,7 @@ var j = [
     {
       header: "fl_info_page.addons.cellRent.header",
       text: "fl_info_page.addons.cellRent.text_9",
-      binding: { vehiclesLevel: a(8) },
+      binding: { vehiclesLevel: i(8) },
     },
     { header: "fl_info_page.addons.cellTime.header", text: "fl_info_page.addons.cellTime.text" },
     {
@@ -36,13 +36,13 @@ var j = [
   N = "SectionDivider_dividerWrapper_476044f4",
   C = "SectionDivider_contentWrapper_9129fcfd",
   I = "SectionDivider_wrapper_8107b8d5",
-  k = x();
-function y({ children: e, withDivider: s = !0 }) {
-  return (0, k.jsxs)("div", {
+  y = u();
+function k({ children: e, withDivider: s = !0 }) {
+  return (0, y.jsxs)("div", {
     className: I,
     children: [
-      (0, k.jsx)("div", { className: C, children: e }),
-      s && (0, k.jsx)("div", { className: N, children: (0, k.jsx)("div", { className: b }) }),
+      (0, y.jsx)("div", { className: C, children: e }),
+      s && (0, y.jsx)("div", { className: N, children: (0, y.jsx)("div", { className: b }) }),
     ],
   });
 }
@@ -50,30 +50,30 @@ var T = e(v(), 1),
   P = "Typography_title_9e921a81",
   w = "Typography_description_8ce6e6a4",
   W = "Typography_subtitle_ecdc2835",
-  S = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(P, e) }),
-  $ = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(w, e) }),
-  L = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(W, e) }),
+  S = ({ className: e, ...s }) => (0, y.jsx)(a, { ...s, className: (0, T.default)(P, e) }),
+  L = ({ className: e, ...s }) => (0, y.jsx)(a, { ...s, className: (0, T.default)(w, e) }),
+  $ = ({ className: e, ...s }) => (0, y.jsx)(a, { ...s, className: (0, T.default)(W, e) }),
   B = "AdditionalInfo_contentWrapper_2b0dc85",
   G = "AdditionalInfo_descriptionWrapper_de4229ba",
   D = "AdditionalInfo_column_fc5fc9cb",
   F = "AdditionalInfo_description_9f855607",
-  M = h(function ({ withDivider: e }) {
-    return (0, k.jsx)(y, {
+  V = h(function ({ withDivider: e }) {
+    return (0, y.jsx)(k, {
       withDivider: e,
-      children: (0, k.jsxs)("div", {
+      children: (0, y.jsxs)("div", {
         className: B,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.addons.header" }),
-          (0, k.jsx)("div", {
+          (0, y.jsx)(S, { path: "fl_info_page.addons.header" }),
+          (0, y.jsx)("div", {
             className: G,
             children: j.map(({ header: e, text: s, binding: a }, i) =>
-              (0, k.jsxs)(
+              (0, y.jsxs)(
                 "div",
                 {
                   className: D,
                   children: [
-                    (0, k.jsx)(L, { path: e }),
-                    (0, k.jsx)($, { className: F, split: !0, path: s, params: a }),
+                    (0, y.jsx)($, { path: e }),
+                    (0, y.jsx)(L, { className: F, split: !0, path: s, params: a }),
                   ],
                 },
                 i,
@@ -85,88 +85,88 @@ var T = e(v(), 1),
     });
   }),
   H = "BattlePass_contentWrapper_e710928c",
-  V = "BattlePass_description_6c9afd9a",
-  A = "BattlePass_battlePassImg_62743d72",
-  E = "BattlePass_pointsWrapper_267a3b69",
-  Y = "BattlePass_pointsTextWrapper_dcdf9a80",
-  O = "BattlePass_pointsText_f3f8914e",
-  U = "BattlePass_pointsTitle_ce8f8dec",
-  Z = "BattlePass_tableBpImg_a4a80d9e",
-  q = "BattlePass_table_63223d56",
-  K = "BattlePass_tableCell_814f7c5d",
-  Q = "BattlePass_tableColumn_b9a1f867",
-  z = "BattlePass_tableCellText_c7b1c07e",
-  J = [5, 20, 30],
-  X = [
+  A = "BattlePass_description_6c9afd9a",
+  E = "BattlePass_battlePassImg_62743d72",
+  M = "BattlePass_pointsWrapper_267a3b69",
+  O = "BattlePass_pointsTextWrapper_dcdf9a80",
+  U = "BattlePass_pointsText_f3f8914e",
+  q = "BattlePass_pointsTitle_ce8f8dec",
+  K = "BattlePass_tableBpImg_a4a80d9e",
+  Z = "BattlePass_table_63223d56",
+  z = "BattlePass_tableCell_814f7c5d",
+  J = "BattlePass_tableColumn_b9a1f867",
+  Q = "BattlePass_tableCellText_c7b1c07e",
+  X = [5, 20, 30],
+  Y = [
     { header: "fl_info_page.about.scoresTable.winHeader", cells: [25, 10, null] },
     { header: "fl_info_page.about.scoresTable.loseHeader", cells: [10, 5, null] },
   ];
 function ee() {
-  return (0, k.jsx)(y, {
+  return (0, y.jsx)(k, {
     withDivider: !1,
-    children: (0, k.jsxs)("div", {
+    children: (0, y.jsxs)("div", {
       className: H,
       children: [
-        (0, k.jsx)(S, { path: "fl_info_page.about.header" }),
-        (0, k.jsx)($, { className: V, path: "fl_info_page.about.text" }),
-        (0, k.jsxs)("div", {
-          className: E,
+        (0, y.jsx)(S, { path: "fl_info_page.about.header" }),
+        (0, y.jsx)(L, { className: A, path: "fl_info_page.about.text" }),
+        (0, y.jsxs)("div", {
+          className: M,
           children: [
-            (0, k.jsx)("div", { className: A }),
-            (0, k.jsxs)("div", {
-              className: Y,
+            (0, y.jsx)("div", { className: E }),
+            (0, y.jsxs)("div", {
+              className: O,
               children: [
-                (0, k.jsx)(L, { path: "fl_info_page.about.scores.header" }),
-                (0, k.jsx)($, { className: O, split: !0, path: "fl_info_page.about.scores.text" }),
-                (0, k.jsx)(L, { className: U, path: "fl_info_page.about.position.header" }),
-                (0, k.jsx)($, {
-                  className: O,
+                (0, y.jsx)($, { path: "fl_info_page.about.scores.header" }),
+                (0, y.jsx)(L, { className: U, split: !0, path: "fl_info_page.about.scores.text" }),
+                (0, y.jsx)($, { className: q, path: "fl_info_page.about.position.header" }),
+                (0, y.jsx)(L, {
+                  className: U,
                   split: !0,
                   path: "fl_info_page.about.position.text",
                 }),
-                (0, k.jsxs)("div", {
-                  className: q,
+                (0, y.jsxs)("div", {
+                  className: Z,
                   children: [
-                    (0, k.jsxs)("div", {
-                      className: Q,
+                    (0, y.jsxs)("div", {
+                      className: J,
                       children: [
-                        (0, k.jsx)("div", { className: K }),
-                        J.map((e, s) =>
-                          (0, k.jsx)(
-                            $,
+                        (0, y.jsx)("div", { className: z }),
+                        X.map((e, s) =>
+                          (0, y.jsx)(
+                            L,
                             {
                               path: "fl_info_page.about.scoresTable.topCell",
                               params: { top: e },
-                              className: K,
+                              className: z,
                             },
                             s,
                           ),
                         ),
                       ],
                     }),
-                    X.map(({ header: e, cells: s }, a) =>
-                      (0, k.jsxs)(
+                    Y.map(({ header: e, cells: s }, a) =>
+                      (0, y.jsxs)(
                         "div",
                         {
-                          className: Q,
+                          className: J,
                           children: [
-                            (0, k.jsx)("div", {
-                              className: K,
-                              children: (0, k.jsx)($, { path: e }),
+                            (0, y.jsx)("div", {
+                              className: z,
+                              children: (0, y.jsx)(L, { path: e }),
                             }),
                             s.map((e, s) =>
-                              (0, k.jsx)(
+                              (0, y.jsx)(
                                 "div",
                                 {
-                                  className: K,
+                                  className: z,
                                   children: e
-                                    ? (0, k.jsxs)(k.Fragment, {
+                                    ? (0, y.jsxs)(y.Fragment, {
                                         children: [
-                                          (0, k.jsx)("div", { className: z, children: e }),
-                                          (0, k.jsx)("div", { className: Z }),
+                                          (0, y.jsx)("div", { className: Q, children: e }),
+                                          (0, y.jsx)("div", { className: K }),
                                         ],
                                       })
-                                    : (0, k.jsx)("div", { className: z, children: "-" }),
+                                    : (0, y.jsx)("div", { className: Q, children: "-" }),
                                 },
                                 s,
                               ),
@@ -196,8 +196,8 @@ var se = "Configuration_subtitle_9098d8a9",
   oe = "Configuration_column_3ebbf6d6",
   ce = "Configuration_configurationImgContainer_c2047a9",
   _e = "Configuration_configurationImg_d7b4181b",
-  ge = "Configuration_noteText_30ab7bcc",
-  de = [
+  de = "Configuration_noteText_30ab7bcc",
+  ge = [
     [
       { isImg: !1, value: null },
       { isImg: !1, value: "fl_info_page.reserveCategories.config.vehicles.light" },
@@ -262,40 +262,40 @@ var se = "Configuration_subtitle_9098d8a9",
     ],
   ];
 function pe() {
-  return (0, k.jsx)(y, {
-    children: (0, k.jsxs)("div", {
+  return (0, y.jsx)(k, {
+    children: (0, y.jsxs)("div", {
       className: ae,
       children: [
-        (0, k.jsx)(S, { path: "fl_info_page.reserveCategories.config.header" }),
-        (0, k.jsx)($, {
+        (0, y.jsx)(S, { path: "fl_info_page.reserveCategories.config.header" }),
+        (0, y.jsx)(L, {
           className: se,
           path: "fl_info_page.reserveCategories.config.text",
           split: !0,
         }),
-        (0, k.jsxs)("div", {
+        (0, y.jsxs)("div", {
           className: ie,
           children: [
-            (0, k.jsx)("div", {
+            (0, y.jsx)("div", {
               className: ne,
-              children: u(de, (e, s) =>
-                (0, k.jsx)(
+              children: m(ge, (e, s) =>
+                (0, y.jsx)(
                   "div",
                   {
                     className: oe,
-                    children: u(e, ({ isImg: e, value: s }, a) =>
-                      (0, k.jsx)(
+                    children: m(e, ({ isImg: e, value: s }, a) =>
+                      (0, y.jsx)(
                         "div",
                         {
                           className: te,
                           children: e
-                            ? (0, k.jsx)("div", {
+                            ? (0, y.jsx)("div", {
                                 className: re,
-                                children: (0, k.jsx)("div", {
+                                children: (0, y.jsx)("div", {
                                   className: le,
                                   style: { backgroundImage: `url(${s})` },
                                 }),
                               })
-                            : s && (0, k.jsx)($, { path: s }),
+                            : s && (0, y.jsx)(L, { path: s }),
                         },
                         `cell_${a}`,
                       ),
@@ -305,15 +305,15 @@ function pe() {
                 ),
               ),
             }),
-            (0, k.jsx)("div", { className: ce, children: (0, k.jsx)("div", { className: _e }) }),
+            (0, y.jsx)("div", { className: ce, children: (0, y.jsx)("div", { className: _e }) }),
           ],
         }),
-        (0, k.jsx)($, { className: ge, path: "fl_info_page.reserveCategories.config.footerText" }),
+        (0, y.jsx)(L, { className: de, path: "fl_info_page.reserveCategories.config.footerText" }),
       ],
     }),
   });
 }
-var [fe, me] = f()(
+var [fe, me] = p()(
     ({ observableModel: e }) => ({
       ...e.primitives([
         "isNinthLevelEnabled",
@@ -338,16 +338,16 @@ var [fe, me] = f()(
   Ce = "GeneralInfo_row_2e8d4ae8",
   Ie = h(function () {
     const { model: e } = me(),
-      s = Math.round((e.endTimestamp.get() - e.startTimestamp.get()) / n),
-      i = ((e, s = 3) => {
+      a = Math.round((e.endTimestamp.get() - e.startTimestamp.get()) / s),
+      l = ((e, s = 3) => {
         const a = [];
         for (let i = 0; i < e.length; i += s) a.push(e.slice(i, i + s));
         return a;
       })(
-        ((e, s, i, l) => {
-          const r = a(9),
-            n = a(8),
-            t = [
+        ((e, s, a, l) => {
+          const r = i(9),
+            n = i(8),
+            o = [
               {
                 image: R.images.frontline.gui.maps.icons.about.epic(),
                 header: { value: "fl_info_page.main.cellFrontline.header" },
@@ -365,19 +365,19 @@ var [fe, me] = f()(
               },
             ];
           return (
-            i &&
-              t.push({
+            a &&
+              o.push({
                 image: R.images.frontline.gui.maps.icons.about.scenarios(),
                 header: { value: "fl_info_page.main.cellScenarios.header" },
                 text: { value: "fl_info_page.main.cellScenarios.text" },
               }),
             s &&
-              t.push({
+              o.push({
                 image: R.images.frontline.gui.maps.icons.about.battlepass(),
                 header: { value: "fl_info_page.main.cellPass.header" },
                 text: { value: "fl_info_page.main.cellPass.text" },
               }),
-            t.push({
+            o.push({
               image: R.images.frontline.gui.maps.icons.about.level_8(),
               header: {
                 value: "fl_info_page.main.cellLevels.header",
@@ -390,16 +390,16 @@ var [fe, me] = f()(
                 binding: { vehiclesLevel: n },
               },
             }),
-            t.push({
+            o.push({
               image: R.images.frontline.gui.maps.icons.about.episodic(),
               header: { value: "fl_info_page.main.cellDuration.header" },
               text: {
                 value: "fl_info_page.main.cellDuration.text",
-                binding: { days: o(R.strings.fl_common.day(l), { duration: l }) },
+                binding: { days: t(R.strings.fl_common.day(l), { duration: l }) },
               },
             }),
             e &&
-              t.push({
+              o.push({
                 image: R.images.frontline.gui.maps.icons.about.level_9(),
                 header: {
                   value: "fl_info_page.main.cellLevel9.header",
@@ -407,44 +407,44 @@ var [fe, me] = f()(
                 },
                 text: { value: "fl_info_page.main.cellLevel9.text", binding: { vehiclesLevel: r } },
               }),
-            t
+            o
           );
         })(
           e.isNinthLevelEnabled.get(),
           e.isBattlePassAvailable.get(),
           e.isRandomReservesModeEnabled.get(),
-          s,
+          a,
         ),
       );
-    return (0, k.jsx)(y, {
-      children: (0, k.jsxs)("div", {
+    return (0, y.jsx)(k, {
+      children: (0, y.jsxs)("div", {
         className: ue,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.main.sectionHeader" }),
-          (0, k.jsx)("div", {
+          (0, y.jsx)(S, { path: "fl_info_page.main.sectionHeader" }),
+          (0, y.jsx)("div", {
             className: xe,
-            children: u(i, (e, s) =>
-              (0, k.jsx)(
+            children: m(l, (e, s) =>
+              (0, y.jsx)(
                 "div",
                 {
                   className: Ce,
-                  children: u(e, ({ image: e, header: s, text: a }, i) =>
-                    (0, k.jsxs)(
+                  children: m(e, ({ image: e, header: s, text: a }, i) =>
+                    (0, y.jsxs)(
                       "div",
                       {
                         className: he,
                         children: [
-                          (0, k.jsxs)("div", {
+                          (0, y.jsxs)("div", {
                             className: ve,
                             children: [
-                              (0, k.jsx)("div", {
+                              (0, y.jsx)("div", {
                                 className: Ne,
                                 style: { backgroundImage: `url(${e})` },
                               }),
-                              (0, k.jsx)(L, { path: s.value, params: s.binding, className: je }),
+                              (0, y.jsx)($, { path: s.value, params: s.binding, className: je }),
                             ],
                           }),
-                          (0, k.jsx)($, {
+                          (0, y.jsx)(L, {
                             className: be,
                             path: a.value,
                             params: a.binding,
@@ -465,20 +465,20 @@ var [fe, me] = f()(
     });
   }),
   Re = "GeneralRules_contentWrapper_d98d08a1",
-  ke = "GeneralRules_rulesWrapper_1f696fe2",
-  ye = "GeneralRules_column_b69d46fc",
+  ye = "GeneralRules_rulesWrapper_1f696fe2",
+  ke = "GeneralRules_column_b69d46fc",
   Te = "GeneralRules_ruleImage_91a4f89",
   Pe = "GeneralRules_ruleTitle_250d67d9",
   we = "GeneralRules_rulesText_82ace16f",
   We = "GeneralRules_listItem_bb969db3",
   Se = "GeneralRules_listWrapper_81cd3c0",
-  $e = "GeneralRules_listBullet_18c894c8",
-  Le = "GeneralRules_backToFightImg_a9c9a28a",
+  Le = "GeneralRules_listBullet_18c894c8",
+  $e = "GeneralRules_backToFightImg_a9c9a28a",
   Be = "GeneralRules_backToFight_c3119c8b",
   Ge = "GeneralRules_backToFightTextWrapper_fcc08592",
   De = "GeneralRules_backToFightDescription_4017e795",
-  Fe = m.resolve("strings"),
-  Me = h(function () {
+  Fe = x.resolve("strings"),
+  Ve = h(function () {
     const { model: e } = me(),
       s = [
         {
@@ -506,34 +506,34 @@ var [fe, me] = f()(
         },
       ];
     var a;
-    return (0, k.jsx)(y, {
-      children: (0, k.jsxs)("div", {
+    return (0, y.jsx)(k, {
+      children: (0, y.jsxs)("div", {
         className: Re,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.rules.sectionHeader" }),
-          (0, k.jsx)("div", {
-            className: ke,
-            children: u(s, ({ text: e, list: s, header: a, image: l }, r) =>
-              (0, k.jsxs)(
+          (0, y.jsx)(S, { path: "fl_info_page.rules.sectionHeader" }),
+          (0, y.jsx)("div", {
+            className: ye,
+            children: m(s, ({ text: e, list: s, header: a, image: i }, r) =>
+              (0, y.jsxs)(
                 "div",
                 {
-                  className: ye,
+                  className: ke,
                   children: [
-                    (0, k.jsx)("div", { className: Te, style: { backgroundImage: `url(${l})` } }),
-                    (0, k.jsx)(L, { className: Pe, path: a }),
-                    u(e, (e, s) =>
-                      (0, k.jsx)(i, { classMix: we, text: Fe.readOrEmpty(e) }, `rule-text-${s}`),
+                    (0, y.jsx)("div", { className: Te, style: { backgroundImage: `url(${i})` } }),
+                    (0, y.jsx)($, { className: Pe, path: a }),
+                    m(e, (e, s) =>
+                      (0, y.jsx)(l, { classMix: we, text: Fe.readOrEmpty(e) }, `rule-text-${s}`),
                     ),
-                    (0, k.jsx)("div", {
+                    (0, y.jsx)("div", {
                       className: Se,
-                      children: u(s ?? [], (e, s) =>
-                        (0, k.jsxs)(
+                      children: m(s ?? [], (e, s) =>
+                        (0, y.jsxs)(
                           "div",
                           {
                             className: We,
                             children: [
-                              (0, k.jsx)("div", { className: $e, children: "•" }),
-                              (0, k.jsx)($, { split: !0, path: e }, s),
+                              (0, y.jsx)("div", { className: Le, children: "•" }),
+                              (0, y.jsx)(L, { split: !0, path: e }, s),
                             ],
                           },
                           `rule-list-${s}`,
@@ -546,21 +546,21 @@ var [fe, me] = f()(
               ),
             ),
           }),
-          (0, k.jsxs)("div", {
+          (0, y.jsxs)("div", {
             className: Be,
             children: [
-              (0, k.jsxs)("div", {
+              (0, y.jsxs)("div", {
                 className: Ge,
                 children: [
-                  (0, k.jsx)(L, { path: "fl_info_page.rules.backToFight.header" }),
-                  (0, k.jsx)($, {
+                  (0, y.jsx)($, { path: "fl_info_page.rules.backToFight.header" }),
+                  (0, y.jsx)(L, {
                     className: De,
                     split: !0,
                     path: "fl_info_page.rules.backToFight.text",
                   }),
                 ],
               }),
-              (0, k.jsx)("div", { className: Le }),
+              (0, y.jsx)("div", { className: $e }),
             ],
           }),
         ],
@@ -568,20 +568,20 @@ var [fe, me] = f()(
     });
   }),
   He = "Progression_contentWrapper_3a0356f1",
-  Ve = "Progression_description_bac962f1",
-  Ae = "Progression_captionBadge_f16caccb",
-  Ee = "Progression_captionImg_fe01cac8",
-  Ye = "Progression_caption_32ed00dc",
-  Oe = "Progression_bottomCaptionBlock_571a7797",
-  Ue = "Progression_captionDescription_adfae39a",
-  Ze = "Progression_captionTextBottom_14bc6992",
-  qe = "Progression_captionText_e8531968",
-  Ke = "Progression_tableWrapper_e617c990",
-  Qe = "Progression_rankImg_97dedc33",
-  ze = "Progression_tableCell_5186b08b",
-  Je = "Progression_tableColumn_bfdf0695",
-  Xe = "Progression_tableValue_46886aa8",
-  es = m.resolve("intl"),
+  Ae = "Progression_description_bac962f1",
+  Ee = "Progression_captionBadge_f16caccb",
+  Me = "Progression_captionImg_fe01cac8",
+  Oe = "Progression_caption_32ed00dc",
+  Ue = "Progression_bottomCaptionBlock_571a7797",
+  qe = "Progression_captionDescription_adfae39a",
+  Ke = "Progression_captionTextBottom_14bc6992",
+  Ze = "Progression_captionText_e8531968",
+  ze = "Progression_tableWrapper_e617c990",
+  Je = "Progression_rankImg_97dedc33",
+  Qe = "Progression_tableCell_5186b08b",
+  Xe = "Progression_tableColumn_bfdf0695",
+  Ye = "Progression_tableValue_46886aa8",
+  es = x.resolve("intl"),
   ss = [
     null,
     "fl_info_page.progression.ranksTable.frontExperienceCell",
@@ -590,25 +590,25 @@ var [fe, me] = f()(
   ],
   as = h(function () {
     const { model: e } = me(),
-      a = e.ranksWithPoints.get();
-    return (0, k.jsx)(y, {
-      children: (0, k.jsxs)("div", {
+      s = e.ranksWithPoints.get();
+    return (0, y.jsx)(k, {
+      children: (0, y.jsxs)("div", {
         className: He,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.progression.sectionHeader" }),
-          (0, k.jsx)($, { className: Ve, path: "fl_info_page.progression.text", split: !0 }),
-          (0, k.jsxs)("div", {
+          (0, y.jsx)(S, { path: "fl_info_page.progression.sectionHeader" }),
+          (0, y.jsx)(L, { className: Ae, path: "fl_info_page.progression.text", split: !0 }),
+          (0, y.jsxs)("div", {
             children: [
-              (0, k.jsxs)("div", {
-                className: Ye,
+              (0, y.jsxs)("div", {
+                className: Oe,
                 children: [
-                  (0, k.jsx)("div", { className: Ee }),
-                  (0, k.jsxs)("div", {
-                    className: Ue,
+                  (0, y.jsx)("div", { className: Me }),
+                  (0, y.jsxs)("div", {
+                    className: qe,
                     children: [
-                      (0, k.jsx)(L, { path: "fl_info_page.progression.ranksSection.header" }),
-                      (0, k.jsx)($, {
-                        className: qe,
+                      (0, y.jsx)($, { path: "fl_info_page.progression.ranksSection.header" }),
+                      (0, y.jsx)(L, {
+                        className: Ze,
                         path: "fl_info_page.progression.ranksSection.text",
                         split: !0,
                       }),
@@ -616,58 +616,58 @@ var [fe, me] = f()(
                   }),
                 ],
               }),
-              (0, k.jsx)($, {
-                className: Ze,
+              (0, y.jsx)(L, {
+                className: Ke,
                 path: "fl_info_page.progression.ranksSection.experience",
                 split: !0,
               }),
             ],
           }),
-          (0, k.jsxs)("div", {
-            className: Ke,
+          (0, y.jsxs)("div", {
+            className: ze,
             children: [
-              (0, k.jsx)("div", {
-                className: Je,
-                children: u(ss, (e, s) =>
-                  (0, k.jsx)(
+              (0, y.jsx)("div", {
+                className: Xe,
+                children: m(ss, (e, s) =>
+                  (0, y.jsx)(
                     "div",
-                    { className: ze, children: e && (0, k.jsx)($, { path: e }) },
+                    { className: Qe, children: e && (0, y.jsx)(L, { path: e }) },
                     `label-${s}`,
                   ),
                 ),
               }),
-              u(a, ({ rankName: e, rankPoints: a }, i) =>
-                (0, k.jsxs)(
+              m(s, ({ rankName: e, rankPoints: s }, i) =>
+                (0, y.jsxs)(
                   "div",
                   {
-                    className: Je,
+                    className: Xe,
                     children: [
-                      (0, k.jsxs)("div", {
-                        className: ze,
+                      (0, y.jsxs)("div", {
+                        className: Qe,
                         children: [
-                          (0, k.jsx)("div", {
-                            className: Qe,
+                          (0, y.jsx)("div", {
+                            className: Je,
                             style: {
-                              backgroundImage: `url(${R.images.gui.maps.icons.library.epicRank.$dyn(`msg_rank_${e}`)})`,
+                              backgroundImage: `url(${R.images.gui.maps.icons.library.epicRank.$dyn(`list_rank_${e}`)})`,
                             },
                           }),
-                          (0, k.jsx)($, { path: `fl_info_page.progression.ranksTable.${e}` }),
+                          (0, y.jsx)(L, { path: `fl_info_page.progression.ranksTable.${e}` }),
                         ],
                       }),
-                      a.map((e, a) =>
-                        (0, k.jsx)(
+                      s.map((e, s) =>
+                        (0, y.jsx)(
                           "div",
                           {
-                            className: (0, T.default)(ze, Xe),
+                            className: (0, T.default)(Qe, Ye),
                             children:
-                              0 === a
+                              0 === s
                                 ? e
-                                  ? (0, k.jsx)(s, {
+                                  ? (0, y.jsx)(a, {
                                       path: "fl_info_page.plusValue",
                                       params: { value: es.formatNumber("gold", e) },
                                     })
                                   : e
-                                : (0, k.jsx)(s, {
+                                : (0, y.jsx)(a, {
                                     path:
                                       e > 0
                                         ? "fl_info_page.plusPercentValue"
@@ -675,7 +675,7 @@ var [fe, me] = f()(
                                     params: { value: e },
                                   }),
                           },
-                          `rank_cell_${a}`,
+                          `rank_cell_${s}`,
                         ),
                       ),
                     ],
@@ -685,21 +685,21 @@ var [fe, me] = f()(
               ),
             ],
           }),
-          (0, k.jsxs)("div", {
-            className: (0, T.default)(Ye, Oe),
+          (0, y.jsxs)("div", {
+            className: (0, T.default)(Oe, Ue),
             children: [
-              (0, k.jsx)("div", { className: Ae }),
-              (0, k.jsxs)("div", {
-                className: Ue,
+              (0, y.jsx)("div", { className: Ee }),
+              (0, y.jsxs)("div", {
+                className: qe,
                 children: [
-                  (0, k.jsx)(L, { path: "fl_info_page.progression.levelsSection.header" }),
-                  (0, k.jsx)($, {
-                    className: qe,
+                  (0, y.jsx)($, { path: "fl_info_page.progression.levelsSection.header" }),
+                  (0, y.jsx)(L, {
+                    className: Ze,
                     path: "fl_info_page.progression.levelsSection.experienceText",
                     split: !0,
                   }),
-                  (0, k.jsx)($, {
-                    className: Ze,
+                  (0, y.jsx)(L, {
+                    className: Ke,
                     path: e.isBattlePassAvailable.get()
                       ? "fl_info_page.progression.levelsSection.rewardsText"
                       : "fl_info_page.progression.levelsSection.rewardsTextNoBP",
@@ -721,52 +721,52 @@ var [fe, me] = f()(
   os = "ReserveCategories_categoryTypeIcon_33babf6f",
   cs = "ReserveCategories_categoryTypeImg_2ad430fa",
   _s = "ReserveCategories_categoriesLists_a35df825",
-  gs = "ReserveCategories_categoryCell_b0dcc9d9",
-  ds = "ReserveCategories_description_e511bb05",
+  ds = "ReserveCategories_categoryCell_b0dcc9d9",
+  gs = "ReserveCategories_description_e511bb05",
   ps = h(function () {
     const { model: e } = me();
-    return (0, k.jsx)(y, {
-      children: (0, k.jsxs)("div", {
+    return (0, y.jsx)(k, {
+      children: (0, y.jsxs)("div", {
         className: is,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.reserveCategories.sectionHeader" }),
-          (0, k.jsx)($, { className: ls, path: "fl_info_page.reserveCategories.text" }),
-          (0, k.jsx)("div", {
+          (0, y.jsx)(S, { path: "fl_info_page.reserveCategories.sectionHeader" }),
+          (0, y.jsx)(L, { className: ls, path: "fl_info_page.reserveCategories.text" }),
+          (0, y.jsx)("div", {
             className: _s,
-            children: u(e.skillsCategories.get(), ({ type: e, skills: s }, a) =>
-              (0, k.jsxs)(
+            children: m(e.skillsCategories.get(), ({ type: e, skills: s }, a) =>
+              (0, y.jsxs)(
                 "div",
                 {
                   className: rs,
                   children: [
-                    (0, k.jsxs)("div", {
+                    (0, y.jsxs)("div", {
                       className: ns,
                       children: [
-                        (0, k.jsx)("div", {
+                        (0, y.jsx)("div", {
                           className: ts,
-                          children: (0, k.jsx)("div", {
+                          children: (0, y.jsx)("div", {
                             className: os,
                             style: {
                               backgroundImage: `url(${R.images.frontline.gui.maps.icons.loadout.categories.c_52x52.$dyn(e)})`,
                             },
                           }),
                         }),
-                        (0, k.jsx)(L, { path: `fl_info_page.reserveCategories.types.${e}` }),
+                        (0, y.jsx)($, { path: `fl_info_page.reserveCategories.types.${e}` }),
                       ],
                     }),
                     s.map(({ icon: e, name: s }, a) =>
-                      (0, k.jsxs)(
+                      (0, y.jsxs)(
                         "div",
                         {
-                          className: gs,
+                          className: ds,
                           children: [
-                            (0, k.jsx)("div", {
+                            (0, y.jsx)("div", {
                               className: cs,
                               style: {
                                 backgroundImage: `url(${R.images.frontline.gui.maps.icons.loadout.battleAbilities.c_48x48.$dyn(e)})`,
                               },
                             }),
-                            (0, k.jsx)("div", { className: ds, children: s }),
+                            (0, y.jsx)("div", { className: gs, children: s }),
                           ],
                         },
                         `skill_${a}`,
@@ -829,55 +829,55 @@ var [fe, me] = f()(
     },
   ];
 function Rs() {
-  return (0, k.jsx)("div", {
+  return (0, y.jsx)("div", {
     className: xs,
-    children: (0, k.jsxs)("div", {
+    children: (0, y.jsxs)("div", {
       className: us,
       children: [
-        (0, k.jsxs)("div", {
+        (0, y.jsxs)("div", {
           className: ms,
           children: [
-            (0, k.jsxs)("div", {
+            (0, y.jsxs)("div", {
               className: vs,
               children: [
-                (0, k.jsx)(L, { split: !0, path: "fl_info_page.reserveCategories.levels.header" }),
-                (0, k.jsx)($, { split: !0, path: "fl_info_page.reserveCategories.levels.text" }),
+                (0, y.jsx)($, { split: !0, path: "fl_info_page.reserveCategories.levels.header" }),
+                (0, y.jsx)(L, { split: !0, path: "fl_info_page.reserveCategories.levels.text" }),
               ],
             }),
-            (0, k.jsx)("div", { className: fs }),
+            (0, y.jsx)("div", { className: fs }),
           ],
         }),
-        (0, k.jsx)("div", {
+        (0, y.jsx)("div", {
           className: js,
-          children: u(Is, ({ label: e, cells: s, icon: i }, l) =>
-            (0, k.jsxs)(
+          children: m(Is, ({ label: e, cells: s, icon: a }, l) =>
+            (0, y.jsxs)(
               "div",
               {
                 className: hs,
                 children: [
-                  (0, k.jsxs)("div", {
+                  (0, y.jsxs)("div", {
                     className: bs,
                     children: [
-                      (0, k.jsx)("div", {
+                      (0, y.jsx)("div", {
                         className: Ns,
-                        style: null !== i ? { backgroundImage: `url(${i})` } : void 0,
+                        style: null !== a ? { backgroundImage: `url(${a})` } : void 0,
                       }),
-                      e && (0, k.jsx)($, { path: e }),
+                      e && (0, y.jsx)(L, { path: e }),
                     ],
                   }),
                   s &&
                     s.map((e, s) =>
-                      (0, k.jsx)(
+                      (0, y.jsx)(
                         "div",
                         {
                           className: bs,
                           children:
                             e &&
-                            (0, k.jsx)($, {
+                            (0, y.jsx)(L, {
                               path: Number.isInteger(e)
                                 ? "fl_info_page.reserveCategories.progression.tableCell"
                                 : e,
-                              params: { level: a(e), levelNext: a(e + 1) },
+                              params: { level: i(e), levelNext: i(e + 1) },
                             }),
                         },
                         `cell_${s}`,
@@ -889,19 +889,19 @@ function Rs() {
             ),
           ),
         }),
-        (0, k.jsx)($, { className: Cs, path: "fl_info_page.reserveCategories.levelUpNote" }),
+        (0, y.jsx)(L, { className: Cs, path: "fl_info_page.reserveCategories.levelUpNote" }),
       ],
     }),
   });
 }
-var ks = "ScenariosList_scenariosItemHeaderIcon_85bf9391",
-  ys = "ScenariosList_scenariosItemHeader_7a7cf942",
+var ys = "ScenariosList_scenariosItemHeaderIcon_85bf9391",
+  ks = "ScenariosList_scenariosItemHeader_7a7cf942",
   Ts = "ScenariosList_scenariosItem_bc09f63d",
   Ps = "ScenariosList_scenariosItemList_99600cd6",
   ws = "ScenariosList_listWrapper_b93acd0f",
   Ws = "ScenariosList_listBullet_fde00cd3",
   Ss = "ScenariosList_scenarios_5831082d",
-  $s = [
+  Ls = [
     {
       icon: R.images.frontline.gui.maps.icons.battleTypes.c_48x48.standard(),
       header: "fl_info_page.reserveCategories.scenarios.standard.header",
@@ -922,35 +922,35 @@ var ks = "ScenariosList_scenariosItemHeaderIcon_85bf9391",
       text: "fl_info_page.reserveCategories.scenarios.random.text",
     },
   ];
-function Ls() {
-  return (0, k.jsx)("div", {
+function $s() {
+  return (0, y.jsx)("div", {
     className: Ss,
-    children: u($s, (e, s) =>
-      (0, k.jsxs)(
+    children: m(Ls, (e, s) =>
+      (0, y.jsxs)(
         "div",
         {
           className: Ts,
           children: [
-            (0, k.jsxs)("div", {
-              className: ys,
+            (0, y.jsxs)("div", {
+              className: ks,
               children: [
-                (0, k.jsx)("div", { className: ks, style: { backgroundImage: `url(${e.icon})` } }),
-                (0, k.jsx)(L, { split: !0, path: e.header }),
+                (0, y.jsx)("div", { className: ys, style: { backgroundImage: `url(${e.icon})` } }),
+                (0, y.jsx)($, { split: !0, path: e.header }),
               ],
             }),
-            (0, k.jsx)($, { split: !0, path: e.text }),
-            (0, k.jsx)("div", {
+            (0, y.jsx)(L, { split: !0, path: e.text }),
+            (0, y.jsx)("div", {
               className: ws,
               children:
                 e.list &&
-                u(e.list, (e, s) =>
-                  (0, k.jsxs)(
+                m(e.list, (e, s) =>
+                  (0, y.jsxs)(
                     "div",
                     {
                       className: Ps,
                       children: [
-                        (0, k.jsx)("div", { className: Ws, children: "•" }),
-                        (0, k.jsx)($, { split: !0, path: e }),
+                        (0, y.jsx)("div", { className: Ws, children: "•" }),
+                        (0, y.jsx)(L, { split: !0, path: e }),
                       ],
                     },
                     `scenarios_list_${s}`,
@@ -967,116 +967,107 @@ function Ls() {
 var Bs = "Scenarios_subtitle_245f6322",
   Gs = "Scenarios_contentWrapper_5fa3aa74";
 function Ds() {
-  return (0, k.jsx)(y, {
-    children: (0, k.jsxs)("div", {
+  return (0, y.jsx)(k, {
+    children: (0, y.jsxs)("div", {
       className: Gs,
       children: [
-        (0, k.jsx)(S, { path: "fl_info_page.reserveCategories.scenarios.sectionHeader" }),
-        (0, k.jsx)($, {
+        (0, y.jsx)(S, { path: "fl_info_page.reserveCategories.scenarios.sectionHeader" }),
+        (0, y.jsx)(L, {
           className: Bs,
           path: "fl_info_page.reserveCategories.scenarios.text",
           split: !0,
         }),
-        (0, k.jsx)(Ls, {}),
-        (0, k.jsx)(Rs, {}),
+        (0, y.jsx)($s, {}),
+        (0, y.jsx)(Rs, {}),
       ],
     }),
   });
 }
 var Fs = "WinningStrategy_contentWrapper_17f30bd5",
-  Ms = "WinningStrategy_textWrapper_46ce83ae",
+  Vs = "WinningStrategy_textWrapper_46ce83ae",
   Hs = "WinningStrategy_text_ad73a0d6",
-  Vs = "WinningStrategy_firstText_d2f2fc5f",
-  As = "WinningStrategy_img_97a22f1c",
-  Es = [
+  As = "WinningStrategy_firstText_d2f2fc5f",
+  Es = "WinningStrategy_img_97a22f1c",
+  Ms = [
     "fl_info_page.winStrategy.firstLine",
     "fl_info_page.winStrategy.secondLine",
     "fl_info_page.winStrategy.thirdLine",
   ];
-function Ys() {
-  return (0, k.jsx)(y, {
-    children: (0, k.jsxs)("div", {
+function Os() {
+  return (0, y.jsx)(k, {
+    children: (0, y.jsxs)("div", {
       className: Fs,
       children: [
-        (0, k.jsxs)("div", {
-          className: Ms,
+        (0, y.jsxs)("div", {
+          className: Vs,
           children: [
-            (0, k.jsx)(S, { path: "fl_info_page.winStrategy.header" }),
-            (0, k.jsx)($, { className: Vs, path: "fl_info_page.winStrategy.mapZones" }),
-            Es.map((e, s) => (0, k.jsx)($, { className: Hs, path: e, split: !0 }, s)),
+            (0, y.jsx)(S, { path: "fl_info_page.winStrategy.header" }),
+            (0, y.jsx)(L, { className: As, path: "fl_info_page.winStrategy.mapZones" }),
+            Ms.map((e, s) => (0, y.jsx)(L, { className: Hs, path: e, split: !0 }, s)),
           ],
         }),
-        (0, k.jsx)("div", { className: As }),
+        (0, y.jsx)("div", { className: Es }),
       ],
     }),
   });
 }
-var Os = "InfoView_1674491c",
-  Us = "InfoView_closeButton_d5207903",
-  Zs = "InfoView_wrapper_392acbfc",
-  qs = "InfoView_scrollWrapper_28fa2dbb",
-  Ks = "InfoView_title_ced11487",
-  Qs = "InfoView_subtitle_d7af0e7d",
-  zs = "InfoView_scrollContent_9a303e94",
-  Js = "InfoView_scrollContentWrapper_24a3123",
-  Xs = h(function () {
-    const { controls: e, model: a } = me(),
-      i = a.isBattlePassAvailable.get(),
-      { dateFormat: l, params: n } = ((e, s) => {
-        const a = R.strings.menu.dateTime.months,
-          i = new Date(e * t),
-          l = new Date(s * t),
-          r = {
-            from: i.getDate(),
-            to: l.getDate(),
-            startMonth: a.$num(i.getMonth() + 1),
-            endMonth: a.$num(l.getMonth() + 1),
-            startYear: i.getFullYear(),
-            endYear: l.getFullYear(),
-          };
-        return {
-          params: r,
-          dateFormat:
-            r.startYear === r.endYear
-              ? r.startMonth === r.endMonth
-                ? "sameMonth"
-                : "differentMonth"
-              : "differentYears",
-        };
-      })(a.startTimestamp.get(), a.endTimestamp.get());
+var Us = "InfoView_1674491c",
+  qs = "InfoView_closeButton_d5207903",
+  Ks = "InfoView_wrapper_392acbfc",
+  Zs = "InfoView_scrollWrapper_28fa2dbb",
+  zs = "InfoView_title_ced11487",
+  Js = "InfoView_subtitle_d7af0e7d",
+  Qs = "InfoView_accentText_df59f6b6",
+  Xs = "InfoView_scrollContent_9a303e94",
+  Ys = "InfoView_scrollContentWrapper_24a3123",
+  ea = x.resolve("intl"),
+  sa = x.resolve("strings"),
+  aa = h(function () {
+    const { controls: e, model: s } = me(),
+      i = s.isBattlePassAvailable.get(),
+      { start: l, end: r } = ea.formatRange(s.startTimestamp.get(), s.endTimestamp.get());
     return (
-      r(e.close),
-      (0, k.jsxs)("div", {
-        className: Os,
+      n(e.close),
+      (0, y.jsxs)("div", {
+        className: Us,
         children: [
-          (0, k.jsx)(c, { className: Us, onClose: e.close }),
-          (0, k.jsxs)("div", {
-            className: Zs,
+          (0, y.jsx)(o, { className: qs, onClose: e.close }),
+          (0, y.jsxs)("div", {
+            className: Ks,
             children: [
-              (0, k.jsx)(s, { className: Ks, path: "fl_info_page.page.headerUpper" }),
-              (0, k.jsx)(s, { className: Qs, params: n, path: `fl_info_page.subTitle.${l}` }),
-              (0, k.jsx)("div", {
-                className: qs,
-                children: (0, k.jsxs)(d, {
+              (0, y.jsx)(a, { className: zs, path: "fl_info_page.page.headerUpper" }),
+              (0, y.jsx)(f, {
+                text: ea.toLowerCase(sa.readOrEmpty("datetime_formats.dateRange.stringDivider")),
+                className: Js,
+                params: {
+                  start: (0, y.jsx)("div", { className: Qs, children: l }),
+                  end: (0, y.jsx)("div", { className: Qs, children: r }),
+                },
+                upgradeLegacy: !0,
+                split: !0,
+              }),
+              (0, y.jsx)("div", {
+                className: Zs,
+                children: (0, y.jsxs)(d, {
                   children: [
-                    (0, k.jsx)(_, {
-                      className: Js,
-                      children: (0, k.jsxs)("div", {
-                        className: zs,
+                    (0, y.jsx)(c, {
+                      className: Ys,
+                      children: (0, y.jsxs)("div", {
+                        className: Xs,
                         children: [
-                          (0, k.jsx)(Ie, {}),
-                          (0, k.jsx)(ps, {}),
-                          (0, k.jsx)(Ds, {}),
-                          (0, k.jsx)(pe, {}),
-                          (0, k.jsx)(Me, {}),
-                          (0, k.jsx)(as, {}),
-                          (0, k.jsx)(Ys, {}),
-                          (0, k.jsx)(M, { withDivider: i }),
-                          i && (0, k.jsx)(ee, {}),
+                          (0, y.jsx)(Ie, {}),
+                          (0, y.jsx)(ps, {}),
+                          (0, y.jsx)(Ds, {}),
+                          (0, y.jsx)(pe, {}),
+                          (0, y.jsx)(Ve, {}),
+                          (0, y.jsx)(as, {}),
+                          (0, y.jsx)(Os, {}),
+                          (0, y.jsx)(V, { withDivider: i }),
+                          i && (0, y.jsx)(ee, {}),
                         ],
                       }),
                     }),
-                    (0, k.jsx)(p, {}),
+                    (0, y.jsx)(g, {}),
                   ],
                 }),
               }),
@@ -1087,5 +1078,5 @@ var Os = "InfoView_1674491c",
     );
   });
 window.requestAnimationFrame(() => {
-  g((0, k.jsx)(l, { children: (0, k.jsx)(fe, { children: (0, k.jsx)(Xs, {}) }) }));
+  _((0, y.jsx)(r, { children: (0, y.jsx)(fe, { children: (0, y.jsx)(aa, {}) }) }));
 });

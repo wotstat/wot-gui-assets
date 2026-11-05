@@ -1,4 +1,4 @@
-import { A as e, Br as r, F as a, Gt as s, N as o, Qr as t, Ut as n } from "./lib.js";
+import { Br as e, Gt as r, Qr as a, Ut as s, d as o, g as t, m as n } from "./lib.js";
 var l = (function (e) {
     return (
       (e.None = "none"),
@@ -9,18 +9,18 @@ var l = (function (e) {
       e
     );
   })({}),
-  i = e(o({ goal: a(), periods: e(e(a())) }));
-function c(e) {
-  return e.map(([e, a]) => [r(e, t.ShortTime), r(a, t.ShortTime)]);
+  i = o(n({ goal: t(), periods: o(o(t())) }));
+function c(r) {
+  return r.map(([r, s]) => [e(r, a.ShortTime), e(s, a.ShortTime)]);
 }
-var [d, u] = s()(
+var [d, u] = r()(
   ({ observableModel: e }) => {
     const r = { ...e.primitives(["alertType"]) },
       a = e.dict("battleSchedule");
     return {
       ...r,
       computes: {
-        battleSchedule: n.shallow(() => {
+        battleSchedule: s.shallow(() => {
           const e = [];
           for (const [s, o] of a.entries())
             try {

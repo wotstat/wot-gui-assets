@@ -3,35 +3,35 @@ import {
   B as t,
   Ci as o,
   Er as s,
-  U as n,
-  W as r,
-  Wa as a,
+  Ga as n,
+  U as r,
+  W as a,
   _o as i,
   bi as c,
-  do as l,
-  fo as d,
-  go as u,
-  ho as m,
-  lo as p,
-  oa as f,
+  fo as l,
+  go as d,
+  oa as u,
+  po as m,
+  uo as p,
   ur as g,
-  vo as b,
-  wn as x,
-  xi as h,
+  vo as h,
+  wn as b,
+  xi as f,
+  yo as x,
 } from "./lib.js";
 import { n as y, s as v, t as _ } from "./vendor.js";
-var N = e(l()),
-  w = (function (e) {
+var w = e(l()),
+  N = (function (e) {
     return ((e.Common = "common"), (e.Rare = "rare"), (e.Epic = "epic"), e);
   })({});
-var I = class extends d {
+var I = class extends m {
     root;
     prefix;
     constructor(e, t) {
       (super(), (this.root = e), (this.prefix = t));
     }
     readOr(e, t, o = "silent") {
-      const s = i(this.prefix, e),
+      const s = h(this.prefix, e),
         n = (function (e, t) {
           const o = t.split(".");
           if (window.R && window.R.sounds) {
@@ -45,7 +45,7 @@ var I = class extends d {
           }
           throw new Error("R class with images field is not defined");
         })(this.root, s);
-      return void 0 === n ? ("silent" !== o && u(`Resource not found: ${s}`, o), t()) : n;
+      return void 0 === n ? ("silent" !== o && i(`Resource not found: ${s}`, o), t()) : n;
     }
     readOrEmpty(e, t = "warn") {
       return this.readOr(e, () => "", t);
@@ -53,12 +53,12 @@ var I = class extends d {
   },
   E = "lootbox_images",
   O = "lootbox_sounds";
-(b.register(E, _(() => new m(window.R.images)).singleton()),
-  b.register(O, _(() => new I(window.R.sounds)).singleton()));
-var j = b.resolve(E),
-  $ = b.resolve("videos"),
-  C = b.resolve(O),
-  P = b.resolve("strings"),
+(x.register(E, _(() => new d(window.R.images)).singleton()),
+  x.register(O, _(() => new I(window.R.sounds)).singleton()));
+var j = x.resolve(E),
+  $ = x.resolve("videos"),
+  C = x.resolve(O),
+  P = x.resolve("strings"),
   M = (e, t) => {
     switch (e) {
       case R.images:
@@ -95,8 +95,8 @@ var j = b.resolve(E),
     );
   })({}),
   B =
-    (w.Rare,
-    w.Epic,
+    (N.Rare,
+    N.Epic,
     {
       ENTRY_POINT: {
         icon: { emptyIconBrightness: 0.4, boxesIconBrightness: 0.4 },
@@ -118,7 +118,14 @@ var j = b.resolve(E),
         },
         backgroundColor: "#111",
       },
-      COMMON: { guaranteed: { accent: 5, visibleAt: 10 } },
+      COMMON: {
+        guaranteed: {
+          accent: 5,
+          visibleAt: 10,
+          highlight: { color: "rgba(255, 228, 192, 1)", shadow: "rgba(255, 228, 192, 0.4)" },
+        },
+        hasPanelShadow: !1,
+      },
     }),
   A = {
     DEFAULT_CONFIG: B,
@@ -133,10 +140,17 @@ var j = b.resolve(E),
         shine: { opacity: { initial: 0.4, hover: 0.8 } },
       },
       HOME_VIEW: { vignette: { isEnabled: !0, opacity: 0.8 } },
-      COMMON: { guaranteed: { accent: 5, visibleAt: 0 } },
+      COMMON: {
+        guaranteed: {
+          accent: 5,
+          visibleAt: 0,
+          highlight: { color: "rgba(164, 236, 241, 1)", shadow: "rgba(164, 236, 241, 0.4)" },
+        },
+        hasPanelShadow: !0,
+      },
     },
   },
-  L = (e, t) => {
+  S = (e, t) => {
     const o = (e, t) => {
       const s = { ...e };
       for (const n in s)
@@ -147,11 +161,11 @@ var j = b.resolve(E),
     };
     return o(e, t);
   };
-function V(e, o) {
+function G(e, o) {
   const s = A[t(e)],
-    n = s?.COMMON ? L(B.COMMON, s.COMMON) : B.COMMON;
+    n = s?.COMMON ? S(B.COMMON, s.COMMON) : B.COMMON;
   if (!o) return n;
-  const r = s ? L(B[o], s[o]) : B[o],
+  const r = s ? S(B[o], s[o]) : B[o],
     a = Object.keys(r).filter((e) => e in n);
   if (a.length > 0)
     throw new Error(
@@ -159,7 +173,7 @@ function V(e, o) {
     );
   return { ...r, ...n };
 }
-var G = (e, t) => {
+var L = (e, t) => {
     let o = e;
     const s = t.split(".");
     for (const n of s) {
@@ -169,7 +183,7 @@ var G = (e, t) => {
     }
     return o;
   },
-  S = ({ type: e, filePath: t, eventName: o }, s = !1) => {
+  V = ({ type: e, filePath: t, eventName: o }, s = !1) => {
     const {
       parent: n,
       path: r,
@@ -201,11 +215,11 @@ var G = (e, t) => {
       }
     })(e, t, o);
     return n
-      ? { eventResource: s ? G(n, r) : M(n, r), defaultResource: s ? G(n, a) : M(n, a) }
+      ? { eventResource: s ? L(n, r) : M(n, r), defaultResource: s ? L(n, a) : M(n, a) }
       : null;
   },
   D = ({ type: e, filePath: t, eventName: o }) => {
-    const s = S({ type: e, filePath: t, eventName: o });
+    const s = V({ type: e, filePath: t, eventName: o });
     if (!s || (!s.eventResource && !s.defaultResource))
       return (console.info(`Unreachable code: unknown resource (${e} ${o} ${t})`), "");
     const { eventResource: n, defaultResource: r } = s;
@@ -243,7 +257,7 @@ var G = (e, t) => {
   [Y, U] = g()(
     ({ observableModel: e }) => {
       const t = e.object().get().eventName,
-        o = { root: e.object(), style: f.box(V(t, T.EntryPoint)), resources: f.box(z(H, t)) },
+        o = { root: e.object(), style: u.box(G(t, T.EntryPoint)), resources: u.box(z(H, t)) },
         s = y(() => {
           const { boxesCount: e } = o.root.get();
           return e ? "boxes" : "empty";
@@ -258,19 +272,19 @@ var G = (e, t) => {
     var o, s;
   },
   q = "video",
-  J = (w.Common, w.Common, w.Rare, w.Rare, "Glow_2571a3a9"),
+  J = (N.Common, N.Common, N.Rare, N.Rare, "Glow_2571a3a9"),
   K = "Glow_base__hover_bba0fce1",
   Q = "Glow_video_2d774833",
   X = "Glow_img_90334d0",
-  ee = h(),
+  ee = f(),
   te = v(function ({ hover: e = !1, className: t }) {
     const { model: o } = U(),
-      { images: s, videos: r } = o.resources.get(),
+      { images: s, videos: n } = o.resources.get(),
       a = o.style.get(),
       i = ((e, t) => {
         const o = Z(e, t);
         return { src: o, type: o.split(":")[0] };
-      })(s.shine, r.glow);
+      })(s.shine, n.glow);
     return (0, ee.jsx)("div", {
       className: p(J, e && K, t),
       style: {
@@ -279,7 +293,7 @@ var G = (e, t) => {
       },
       children:
         i.type === q
-          ? (0, ee.jsx)(n, { loop: !0, autoplay: !0, className: Q, src: i.src })
+          ? (0, ee.jsx)(r, { loop: !0, autoplay: !0, className: Q, src: i.src })
           : (0, ee.jsx)("div", { className: X, style: { backgroundImage: `url(${i.src})` } }),
     });
   }),
@@ -298,7 +312,7 @@ var ne = "Counter_e7ec423c";
 function re({ count: e, text: t, maxText: o, className: s }) {
   return (0, ee.jsx)("div", {
     className: p(ne, s),
-    children: e < 1e3 ? (0, ee.jsx)(x, { text: t, params: { count: e }, upgradeLegacy: !0 }) : o,
+    children: e < 1e3 ? (0, ee.jsx)(b, { text: t, params: { count: e }, upgradeLegacy: !0 }) : o,
   });
 }
 var ae = {
@@ -315,9 +329,9 @@ var ae = {
     const { model: t } = U(),
       { breakpoint: s } = c(),
       { texts: n } = t.resources.get(),
-      { boxesCount: a, eventExpireTime: i } = t.root.get(),
+      { boxesCount: r, eventExpireTime: i } = t.root.get(),
       l = t.computes.getState(),
-      d = s.weight > o.small.weight ? r.size.x32x32 : r.size.x24x24,
+      d = s.weight > o.small.weight ? a.size.x32x32 : a.size.x24x24,
       u = 259200 >= i,
       m = u || l === W.Empty;
     return (0, ee.jsxs)("div", {
@@ -327,7 +341,7 @@ var ae = {
           (0, ee.jsx)("div", {
             className: p(ae.additional, l !== W.Boxes && ae.additional__center),
             children: u
-              ? (0, ee.jsx)(r, {
+              ? (0, ee.jsx)(a, {
                   className: ae.timer,
                   classNames: { label: ae.timerLabel },
                   start: i,
@@ -339,7 +353,7 @@ var ae = {
           (0, ee.jsx)(re, {
             className: ae.counter,
             maxText: n.maxBoxesCount,
-            count: a,
+            count: r,
             text: n.boxesCount,
           }),
       ],
@@ -351,51 +365,51 @@ var ae = {
   ue = "App_glow_29445b0",
   me = "App_wrapper_4cc053c3",
   pe = "App_info_be3fbaea",
-  fe = "App_icon_879c8615";
-var ge = v(function () {
-  const e = b.resolve("sounds"),
-    t = b.resolve("aliases"),
-    o = b.resolve("views"),
-    n = s({
+  ge = "App_icon_879c8615";
+var he = v(function () {
+  const e = x.resolve("sounds"),
+    t = x.resolve("aliases"),
+    o = x.resolve("views"),
+    r = s({
       resId: t.read((e) => e.hangar.shared.LootboxEntryPoint("resId")),
       contentId: o.read((e) => e.mono.lootbox.tooltips.entry_point("resId")),
     }),
-    [r, i] = (0, N.useState)(!1),
+    [a, i] = (0, w.useState)(!1),
     { model: c, controls: l } = U(),
     { isEnabled: d } = c.root.get(),
     u = c.computes.getState(),
-    { images: m, videos: f, sounds: g } = c.resources.get(),
-    x = c.style.get(),
-    h = r ? 1 + x.icon[`${u}IconBrightness`] : 1,
+    { images: m, videos: g, sounds: h } = c.resources.get(),
+    b = c.style.get(),
+    f = a ? 1 + b.icon[`${u}IconBrightness`] : 1,
     y = u === W.Empty ? m.iconEmpty : m.iconGold;
   return (0, ee.jsx)("div", {
     className: p(ce, !d && de),
     children: (0, ee.jsx)("div", {
       className: le,
-      ...n,
+      ...r,
       children: (0, ee.jsxs)("div", {
         className: me,
         onClick: function () {
           (e.play("yes1"), l.showLanding());
         },
         onMouseEnter: function () {
-          (a.sound(g.entryHover), i(!0));
+          (n.sound(h.entryHover), i(!0));
         },
         onMouseLeave: () => i(!1),
         children: [
           (0, ee.jsx)(ie, { className: pe }),
-          u === W.Boxes && d && (0, ee.jsx)(te, { className: ue, hover: r }),
-          (0, ee.jsx)(se, { disabled: !d, image: y, brightness: h, className: fe }),
+          u === W.Boxes && d && (0, ee.jsx)(te, { className: ue, hover: a }),
+          (0, ee.jsx)(se, { disabled: !d, image: y, brightness: f, className: ge }),
         ],
       }),
     }),
   });
 });
 function be() {
-  const e = b.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
+  const e = x.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
   return (0, ee.jsx)(Y, {
-    options: (0, N.useMemo)(() => ({ rootId: e }), [e]),
-    children: (0, ee.jsx)(ge, {}),
+    options: (0, w.useMemo)(() => ({ rootId: e }), [e]),
+    children: (0, ee.jsx)(he, {}),
   });
 }
 export { be as default };

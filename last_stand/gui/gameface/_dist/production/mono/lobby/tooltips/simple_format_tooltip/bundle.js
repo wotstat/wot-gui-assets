@@ -1,9 +1,9 @@
 import { r as o } from "../../chunks/rolldown-runtime.js";
-import { Ia as s, Jn as e, cr as t, hi as r, o as a, pr as l } from "../../chunks/lib.js";
+import { Ia as s, Jn as e, cr as t, hi as r, pr as a, s as l } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { o as i, s as p } from "../../chunks/vendor.js";
 var n = o(p(), 1),
-  [d, c] = l()(({ observableModel: o }) => ({ root: o.object() }), s),
+  [d, c] = a()(({ observableModel: o }) => ({ root: o.object() }), s),
   m = "SimpleFormatTooltipApp_887dc02e",
   h = "SimpleFormatTooltipApp_header_23807e55",
   x = "SimpleFormatTooltipApp_header__withBody_53e87d43",
@@ -24,4 +24,4 @@ var n = o(p(), 1),
         })
       : (console.warn("Incorrect data! Body and header is null or empty"), null);
   });
-t((0, u.jsx)(d, { children: (0, u.jsx)(a, { children: (0, u.jsx)(b, {}) }) }));
+t((0, u.jsx)(d, { children: (0, u.jsx)(l, { children: (0, u.jsx)(b, {}) }) }));
