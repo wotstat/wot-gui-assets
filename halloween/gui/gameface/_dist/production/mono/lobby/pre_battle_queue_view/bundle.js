@@ -1,25 +1,25 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  Ct as t,
-  Ii as s,
-  Kn as a,
-  Ri as i,
-  Tn as l,
-  bn as c,
-  ci as r,
-  en as n,
-  it as o,
-  mr as u,
-  nt as p,
+  Ii as t,
+  Kn as s,
+  Mt as a,
+  Ot as i,
+  Ri as l,
+  Tn as c,
+  bn as r,
+  ci as n,
+  ct as o,
+  en as u,
+  mr as p,
   oi as d,
   ri as m,
-  vr as h,
-  yn as v,
-  yt as _,
+  tt as h,
+  vr as v,
+  yn as _,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as x } from "../chunks/vendor.js";
-var [f, b] = l()(
+var [f, b] = c()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({
       moveSpace: e.createCallback((e) => e, "onMoveSpace"),
@@ -28,12 +28,12 @@ var [f, b] = l()(
       openMenu: e.createCallbackNoArgs("onEscape"),
     }),
   ),
-  j = e(i(), 1),
-  w = h(),
+  j = e(l(), 1),
+  w = v(),
   B = 1e3,
   S = 3600,
   N = 86400;
-var y = ({ className: e, timerStartTime: t }) => {
+var A = ({ className: e, timerStartTime: t }) => {
     const s = t ?? Date.now(),
       [a, i] = (0, j.useState)(Math.max(0, Math.floor((Date.now() - s) / B)));
     (0, j.useEffect)(() => {
@@ -53,78 +53,78 @@ var y = ({ className: e, timerStartTime: t }) => {
     })(a);
     return (0, w.jsx)("div", { className: e, children: `${l}:${String(c).padStart(2, "0")}` });
   },
-  A = "PreBattleQueueViewApp_787572f7",
+  y = "PreBattleQueueViewApp_787572f7",
   g = "PreBattleQueueViewApp_sceneWrapper_d9b3f989",
   z = "PreBattleQueueViewApp_vignette_bdc4e809",
-  P = "PreBattleQueueViewApp_container_91e5986",
-  Q = "PreBattleQueueViewApp_containerIcon_9cb12e3a",
-  V = "PreBattleQueueViewApp_smoke_23f81c84",
-  M = "PreBattleQueueViewApp_icon_62fd3adf",
+  M = "PreBattleQueueViewApp_container_91e5986",
+  P = "PreBattleQueueViewApp_containerIcon_9cb12e3a",
+  Q = "PreBattleQueueViewApp_smoke_23f81c84",
+  V = "PreBattleQueueViewApp_icon_62fd3adf",
   T = "PreBattleQueueViewApp_title_301179e4",
   k = "PreBattleQueueViewApp_timer_ed9f1bba",
   C = "PreBattleQueueViewApp_vehicle_9b11aaec",
   E = "PreBattleQueueViewApp_vehicleType_de0df25c",
   I = "PreBattleQueueViewApp_leaveBtn_37b42985",
-  $ = "PreBattleQueueViewApp_tip_a012fac8",
-  D = "PreBattleQueueViewApp_tip__firstTip_65f392c",
-  O = x(function () {
-    const { model: e, controls: i } = b(),
+  O = "PreBattleQueueViewApp_tip_a012fac8",
+  $ = "PreBattleQueueViewApp_tip__firstTip_65f392c",
+  D = x(function () {
+    const { model: e, controls: l } = b(),
       {
-        selectedDifficultyLevel: l,
-        isExitButtonAvailable: c,
-        vehicleType: r,
+        selectedDifficultyLevel: c,
+        isExitButtonAvailable: r,
+        vehicleType: n,
         vehicleName: d,
-        tip: h,
-        isFirstTip: v,
+        tip: v,
+        isFirstTip: _,
         timerStartTime: x,
       } = e.root.get();
-    a(i.openMenu);
-    const f = u(
-      { buttonSize: o.sizes.small, vehicleTypeSize: _.sizes.x24x24 },
+    s(l.openMenu);
+    const f = p(
+      { buttonSize: o.sizes.small, vehicleTypeSize: i.sizes.x24x24 },
       {
-        medium: { buttonSize: o.sizes.large, vehicleTypeSize: _.sizes.x48x48 },
-        extraLarge: { vehicleTypeSize: _.sizes.x64x64 },
+        medium: { buttonSize: o.sizes.large, vehicleTypeSize: i.sizes.x48x48 },
+        extraLarge: { vehicleTypeSize: i.sizes.x64x64 },
       },
     );
     return (0, w.jsxs)("div", {
-      className: A,
+      className: y,
       children: [
         (0, w.jsx)("div", { className: z }),
         (0, w.jsx)("div", {
           className: g,
-          children: (0, w.jsx)(p, { moveSpace: i.moveSpace, onMouseOver3dScene: m }),
+          children: (0, w.jsx)(h, { moveSpace: l.moveSpace, onMouseOver3dScene: m }),
         }),
         (0, w.jsxs)("div", {
-          className: P,
+          className: M,
           children: [
             (0, w.jsxs)("div", {
-              className: Q,
+              className: P,
               children: [
-                (0, w.jsx)("div", { className: V }),
-                (0, w.jsx)(n, {
-                  path: `R.images.halloween.gui.maps.icons.difficulties.c_112x112.diff_${l}`,
-                  className: M,
+                (0, w.jsx)("div", { className: Q }),
+                (0, w.jsx)(u, {
+                  path: `R.images.halloween.gui.maps.icons.difficulties.c_112x112.diff_${c}`,
+                  className: V,
                 }),
               ],
             }),
             (0, w.jsx)("div", {
               className: T,
-              children: R.strings.halloween_lobby.difficult.uppercase.$dyn(`level_${l}`),
+              children: R.strings.halloween_lobby.difficult.uppercase.$dyn(`level_${c}`),
             }),
-            (0, w.jsx)(y, { className: k, timerStartTime: x }),
-            t(r) &&
+            (0, w.jsx)(A, { className: k, timerStartTime: x }),
+            a(n) &&
               (0, w.jsxs)("div", {
                 className: C,
-                children: [(0, w.jsx)(_, { type: r, size: f.vehicleTypeSize, className: E }), d],
+                children: [(0, w.jsx)(i, { type: n, size: f.vehicleTypeSize, className: E }), d],
               }),
-            (0, w.jsx)("div", { className: s($, v && D), children: h }),
-            c &&
+            (0, w.jsx)("div", { className: t(O, _ && $), children: v }),
+            r &&
               (0, w.jsx)("div", {
                 className: I,
                 children: (0, w.jsx)(o, {
                   theme: o.themes.secondary,
                   size: f.buttonSize,
-                  onClick: i.exitBattle,
+                  onClick: l.exitBattle,
                   children: R.strings.halloween_lobby.preBattle.leave(),
                 }),
               }),
@@ -133,6 +133,6 @@ var y = ({ className: e, timerStartTime: t }) => {
       ],
     });
   });
-c((0, w.jsx)(f, { children: (0, w.jsx)(v, { children: (0, w.jsx)(O, {}) }) }))
-  .then(() => r(document.getElementById("root")))
+r((0, w.jsx)(f, { children: (0, w.jsx)(_, { children: (0, w.jsx)(D, {}) }) }))
+  .then(() => n(document.getElementById("root")))
   .then(() => d());

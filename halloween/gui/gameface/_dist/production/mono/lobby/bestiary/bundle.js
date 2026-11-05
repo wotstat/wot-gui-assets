@@ -1,12 +1,13 @@
 import { r as __toESM } from "../chunks/rolldown-runtime.js";
 import {
-  $ as borderTypes,
   $t as FormatText,
   Bn as useScaleState,
   Fr as filter,
-  G as LazyModel,
+  H as Timer,
   Ii as clsx,
+  J as List,
   Jt as sizes,
+  K as VehicleInfo,
   Kn as useCallbackOnEsc,
   Li as require_react_dom,
   Lr as find,
@@ -14,48 +15,47 @@ import {
   Mr as createLayoutReadyInEffect,
   On as useSounds,
   Pn as useSimpleTooltip,
-  Q as CardsWrapper,
+  Pt as types,
+  Q as borderTypes,
   Qr as keyCodes,
   Qt as FormatString,
   Ri as require_react,
   Rr as findIndex,
-  St as roles,
   Tn as initializeModelWithContext,
-  Tt as types,
-  U as Timer,
+  U as sizes$1,
   Vr as get,
-  W as sizes$1,
+  W as LazyModel,
   Wr as map,
-  X as directions$1,
-  Y as List,
+  Y as directions$1,
   Yn as useHandleKeydown,
+  Z as CardsWrapper,
   Zt as MultilineOverflow,
   _r as useMedia,
   an as Bar,
   bn as runView,
   ci as initExternalPaddings,
+  ct as Button,
   dn as Area,
   ei as DisposeBuilder,
   en as Image,
   gn as useScrollBounding,
   hr as useUpscale,
-  it as Button,
+  jt as roles,
   kr as mapRange,
   ln as dragDirections,
   mr as useAdaptive,
   ni as identity,
   nn as Base$1,
   nr as useEvent,
-  nt as SceneWrapper,
   oi as enableFullScreenModeSupported,
   on as useVerticalScroll,
-  q as VehicleInfo,
   qr as push,
   qt as Bubble,
   ri as noop,
   rn as Area$1,
   sn as Base,
   ti as constFalse,
+  tt as SceneWrapper,
   un as useScrollByDragElements,
   vn as useHorizontalScroll,
   vr as require_jsx_runtime,
@@ -726,19 +726,19 @@ var [ModelProvider, useModel] = initializeModelWithContext()(
           forceTriggerMouseMove: () => K,
           freezeTextureBeforeResize: () => P,
           getBrowserTexturePath: () => O,
-          getDisplayStatus: () => q,
-          getFontNames: () => Y,
+          getDisplayStatus: () => Y,
+          getFontNames: () => q,
           getScale: () => W,
           getSize: () => L,
           getViewGlobalPosition: () => M,
           isEventHandled: () => G,
-          isFocused: () => U,
+          isFocused: () => H,
           pxToRem: () => z,
           remToPx: () => V,
           resize: () => R,
           sendEvent: () => T,
           setAnimateWindow: () => $,
-          setEventHandled: () => H,
+          setEventHandled: () => U,
           setInputPaddingsRem: () => j,
           setSidePaddingsRem: () => N,
           whenTutorialReady: () => Q,
@@ -947,10 +947,10 @@ var [ModelProvider, useModel] = initializeModelWithContext()(
       function $(e, u) {
         viewEnv.setAnimateWindow(e, u);
       }
-      function U() {
+      function H() {
         return viewEnv.isFocused();
       }
-      function H() {
+      function U() {
         return viewEnv.setEventHandled();
       }
       function G() {
@@ -959,10 +959,10 @@ var [ModelProvider, useModel] = initializeModelWithContext()(
       function K() {
         viewEnv.forceTriggerMouseMove();
       }
-      function q() {
+      function Y() {
         return viewEnv.getShowingStatus();
       }
-      const Y = (() => {
+      const q = (() => {
           let e = [];
           return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
         })(),
@@ -2182,8 +2182,8 @@ var __webpack_exports__ = {};
     (function (e) {
       ((e.NBSP = " "), (e.ZWNBSP = "\ufeff"), (e.NEW_LINE = "\n"));
     })($ || ($ = {})));
-  const U = { [$.NBSP]: z.NoBreakSymbol, [$.ZWNBSP]: z.NoBreakSymbol, [$.NEW_LINE]: z.LineBreak },
-    H = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"].includes(
+  const H = { [$.NBSP]: z.NoBreakSymbol, [$.ZWNBSP]: z.NoBreakSymbol, [$.NEW_LINE]: z.LineBreak },
+    U = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"].includes(
       R.strings.settings.LANGUAGE_CODE().toLowerCase(),
     ),
     G = {
@@ -2214,8 +2214,8 @@ var __webpack_exports__ = {};
       paragraph: "ExtendedText-colors_paragraph_05",
     },
     K = "ExtendedText-renderers_word_2b",
-    q = (e) => ({ color: `#${e}` }),
-    Y = ({ elementList: u, textBlock: t, key: o }) => {
+    Y = (e) => ({ color: `#${e}` }),
+    q = ({ elementList: u, textBlock: t, key: o }) => {
       const r = /bold/i;
       let a = t.colorTag;
       const i = r.test(t.colorTag);
@@ -2238,7 +2238,7 @@ var __webpack_exports__ = {};
                   key: o,
                   "data-block-type": t.blockType,
                   className: (0, e.default)(K, i && G.bold),
-                  style: q(a),
+                  style: Y(a),
                 },
                 u,
               )
@@ -2250,8 +2250,8 @@ var __webpack_exports__ = {};
       );
     },
     Z = {
-      [z.Word]: Y,
-      [z.NoBreakSymbol]: Y,
+      [z.Word]: q,
+      [z.NoBreakSymbol]: q,
       [z.Binding]: ({ elementList: e, textBlock: u, key: t }) =>
         n.default.createElement(
           "span",
@@ -2304,7 +2304,7 @@ var __webpack_exports__ = {};
       r !== e.length && t(e.slice(r));
     },
     J = new RegExp("[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]", "gu"),
-    ee = H
+    ee = U
       ? (e) => {
           const u = [];
           return (
@@ -2364,7 +2364,7 @@ var __webpack_exports__ = {};
           },
           (e) => {
             const t = e[0],
-              o = U[t.charAt(0)];
+              o = H[t.charAt(0)];
             o === z.LineBreak
               ? n.push(
                   ...((e) => {

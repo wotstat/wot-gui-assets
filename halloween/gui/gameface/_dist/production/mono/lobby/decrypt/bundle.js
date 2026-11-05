@@ -1,27 +1,27 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   B as s,
-  Gt as a,
-  Hn as t,
-  Hr as n,
-  It as o,
+  Et as a,
+  Gt as t,
+  Hn as n,
+  Hr as o,
   Kn as r,
-  Lt as i,
-  Mn as l,
-  Mr as c,
-  On as d,
-  Pn as u,
-  Qr as _,
-  Ri as m,
-  Tn as y,
+  Mn as i,
+  Mr as l,
+  On as c,
+  Pn as d,
+  Qr as u,
+  Ri as _,
+  Tn as m,
+  Tt as y,
   V as p,
   Wr as h,
   Xn as f,
   _i as b,
   _n as g,
   bn as x,
-  en as j,
-  gt as v,
+  bt as j,
+  en as v,
   in as w,
   mi as k,
   mr as C,
@@ -31,16 +31,16 @@ import {
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as I, t as Q } from "../chunks/vendor.js";
-import { n as D, t as M } from "../chunks/spring_wrapper.js";
-import { t as E } from "../chunks/sound.js";
-import { n as B, r as T, t as z } from "../chunks/button.js";
-import { t as L } from "../chunks/close_button.js";
-import { c as V, i as W, o as $, r as O, s as P } from "../chunks/utils.js";
+import { n as D, t as E } from "../chunks/spring_wrapper.js";
+import { t as M } from "../chunks/sound.js";
+import { n as T, r as B, t as z } from "../chunks/button.js";
+import { t as V } from "../chunks/close_button.js";
+import { c as W, i as $, o as L, r as O, s as P } from "../chunks/utils.js";
 /* empty css           */ import { n as H, r as q, t as F } from "../chunks/video_background.js";
 import { t as K } from "../chunks/format_text_with_paragraphs.js";
-var G = e(m(), 1),
+var G = e(_(), 1),
   X = e(Q(), 1),
-  [J, U] = y()(
+  [J, U] = m()(
     ({ observableModel: e }) => ({
       ...e.primitives([
         "id",
@@ -71,11 +71,11 @@ var G = e(m(), 1),
     const { model: s } = U(),
       a = s.index.get(),
       t = s.types.get(),
-      o = n(t, "video"),
+      n = o(t, "video"),
       r = `bg_${e ? "final" : a}`;
     return (0, se.jsxs)(se.Fragment, {
       children: [
-        !o || b.isLow()
+        !n || b.isLow()
           ? (0, se.jsx)(
               "div",
               {
@@ -121,14 +121,14 @@ var G = e(m(), 1),
   he = "Story_keyWordViolet_dd9475ce",
   fe = G.memo(function ({ artefactId: e, className: s }) {
     const a = (0, G.useRef)(null),
-      n = (0, G.useRef)(null),
+      t = (0, G.useRef)(null),
       [o, r] = (0, G.useState)(!0),
       i = (0, G.useCallback)(() => {
-        n.current && a.current && r(a.current.offsetHeight < n.current.offsetHeight);
+        t.current && a.current && r(a.current.offsetHeight < t.current.offsetHeight);
       }, []);
     return (
-      (0, G.useEffect)(() => c(i), [i]),
-      t(i, [i, e]),
+      (0, G.useEffect)(() => l(i), [i]),
+      n(i, [i, e]),
       (0, se.jsx)("div", {
         className: (0, X.default)(ie, s),
         children: (0, se.jsx)("div", {
@@ -139,7 +139,7 @@ var G = e(m(), 1),
             barClassNames: { base: de },
             children: (0, se.jsx)("div", {
               className: ce,
-              ref: n,
+              ref: t,
               children: (0, se.jsx)(K, {
                 text: R.strings.halloween_lobby.meta.story.$dyn(e),
                 params: {
@@ -173,30 +173,30 @@ var G = e(m(), 1),
   Ie = "QuestInfo_icon_e448285d",
   Qe = "QuestInfo_description_540522c0",
   De = 1100,
-  Me = { from: { opacity: 0, y: -5 } },
-  Ee = { opacity: 0 },
-  Be = R.strings.halloween_lobby.decrypt.outroVideoTooltip,
-  Te = I(({ className: e, skipAnim: t }) => {
-    const { model: r, controls: l } = U(),
-      c = r.id.get(),
-      u = r.rewards.get(),
-      _ = C({ size: i.Small }, { large: { size: i.Big } }),
-      m = d(),
-      y = r.isOutroDisabled.get(),
+  Ee = { from: { opacity: 0, y: -5 } },
+  Me = { opacity: 0 },
+  Te = R.strings.halloween_lobby.decrypt.outroVideoTooltip,
+  Be = I(({ className: e, skipAnim: n }) => {
+    const { model: r, controls: i } = U(),
+      l = r.id.get(),
+      d = r.rewards.get(),
+      u = C({ size: a.Small }, { large: { size: a.Big } }),
+      _ = c(),
+      m = r.isOutroDisabled.get(),
       p = r.isNextArtefactAvailable.get(),
-      f = n(r.types.get(), "final") && !p,
+      f = o(r.types.get(), "final") && !p,
       b = (0, G.useCallback)(() => {
-        m.play("animation", { target: "reward" });
-      }, [m]);
+        _.play("animation", { target: "reward" });
+      }, [_]);
     return (0, se.jsxs)("div", {
       className: (0, X.default)(be, e),
       children: [
         (0, se.jsx)("div", { className: ge }),
         (0, se.jsx)(D, {
-          ...Me,
+          ...Ee,
           duration: 800,
           delay: 500,
-          isCanceled: t,
+          isCanceled: n,
           children: (0, se.jsxs)("div", {
             className: xe,
             children: [
@@ -212,10 +212,10 @@ var G = e(m(), 1),
           }),
         }),
         (0, se.jsx)(D, {
-          ...Me,
+          ...Ee,
           duration: 800,
           delay: 700,
-          isCanceled: t,
+          isCanceled: n,
           children: (0, se.jsx)("div", {
             className: ke,
             children: R.strings.halloween_lobby.decrypt.completed(),
@@ -223,26 +223,26 @@ var G = e(m(), 1),
         }),
         (0, se.jsx)("div", {
           className: Ce,
-          children: h(u, (e, s) =>
+          children: h(d, (e, s) =>
             (0, se.jsx)(
               "div",
               {
                 className: Ne,
                 children: (0, se.jsx)(D, {
-                  ...Me,
+                  ...Ee,
                   duration: 800,
                   delay: De + 120 * s,
-                  easingType: M.EaseOutBack,
-                  isCanceled: t,
+                  easingType: E.EaseOutBack,
+                  isCanceled: n,
                   onStart: b,
-                  children: (0, se.jsx)(v, {
+                  children: (0, se.jsx)(j, {
                     name: e.name,
-                    value: $(e),
-                    size: _.size,
+                    value: L(e),
+                    size: u.size,
                     special: e.overlayType,
-                    image: O(e, _.size),
-                    valueType: o(e.name),
-                    tooltipArgs: W(e),
+                    image: O(e, u.size),
+                    valueType: y(e.name),
+                    tooltipArgs: $(e),
                   }),
                 }),
               },
@@ -251,24 +251,24 @@ var G = e(m(), 1),
           ),
         }),
         (0, se.jsx)(D, {
-          ...Me,
+          ...Ee,
           duration: 800,
-          delay: De + 120 * u.length,
-          isCanceled: t,
+          delay: De + 120 * d.length,
+          isCanceled: n,
           children: (0, se.jsxs)("div", {
             className: Re,
             children: [
-              n(r.types.get(), "sound") &&
-                (0, se.jsx)(a, {
+              o(r.types.get(), "sound") &&
+                (0, se.jsx)(t, {
                   asChild: !0,
                   params: { body: R.strings.halloween_lobby.decrypt.voiceoverTooltip() },
                   children: (0, se.jsxs)(s, {
                     className: Ae,
                     size: s.sizes.small,
                     activated: !r.isMuted.get(),
-                    onClick: l.muted,
+                    onClick: i.muted,
                     children: [
-                      (0, se.jsx)(j, {
+                      (0, se.jsx)(v, {
                         path: "R.images.halloween.gui.maps.icons.hangar.sound",
                         className: Ie,
                       }),
@@ -278,17 +278,17 @@ var G = e(m(), 1),
                 }),
               f &&
                 r.isOutroVisible.get() &&
-                (0, se.jsx)(a, {
-                  params: { body: y ? Be.disabled() : Be.active() },
+                (0, se.jsx)(t, {
+                  params: { body: m ? Te.disabled() : Te.active() },
                   children: (0, se.jsxs)(s, {
                     className: Se,
                     size: s.sizes.small,
-                    disabled: y,
+                    disabled: m,
                     onClick: () => {
-                      (m.play("click", { target: "outro" }), l.outro());
+                      (_.play("click", { target: "outro" }), i.outro());
                     },
                     children: [
-                      (0, se.jsx)(j, {
+                      (0, se.jsx)(v, {
                         path: "R.images.halloween.gui.maps.icons.hangar.outro",
                         className: Ie,
                       }),
@@ -300,20 +300,20 @@ var G = e(m(), 1),
           }),
         }),
         (0, se.jsx)(D, {
-          from: Ee,
+          from: Me,
           duration: 1600,
-          delay: De + 120 * u.length * 2,
-          isCanceled: t,
-          children: (0, se.jsx)(fe, { className: Qe, artefactId: V(c) }, c),
+          delay: De + 120 * d.length * 2,
+          isCanceled: n,
+          children: (0, se.jsx)(fe, { className: Qe, artefactId: W(l) }, l),
         }),
       ],
     });
   }),
   ze = "DecryptContent_questInfo_199c938c",
-  Le = "DecryptContent_buttons_d2d2bec6",
-  Ve = "DecryptContent_button_23bca5d0",
-  We = "DecryptContent_spaceInfo_86eb7482",
-  $e = "DecryptContent_spaceText_4fb1bb98",
+  Ve = "DecryptContent_buttons_d2d2bec6",
+  We = "DecryptContent_button_23bca5d0",
+  $e = "DecryptContent_spaceInfo_86eb7482",
+  Le = "DecryptContent_spaceText_4fb1bb98",
   Oe = "DecryptContent_spaceKey_384fa724",
   Pe = "DecryptContent_spaceContent_5bd59a6c",
   He = I(function ({ skipAnim: e }) {
@@ -334,22 +334,22 @@ var G = e(m(), 1),
       );
     return (0, se.jsxs)(se.Fragment, {
       children: [
-        (0, se.jsx)(Te, { className: ze, skipAnim: e }, t),
+        (0, se.jsx)(Be, { className: ze, skipAnim: e }, t),
         (0, se.jsx)("div", {
-          className: Le,
+          className: Ve,
           children: (0, se.jsx)(
             D,
             {
               ...r[te],
-              className: Ve,
-              onStart: () => k.sound(E),
+              className: We,
+              onStart: () => k.sound(M),
               isCanceled: e,
               children: (0, se.jsx)(z, {
-                type: T.Secondary,
+                type: B.Secondary,
                 caption: o
                   ? R.strings.halloween_lobby.common.btnContinue()
                   : R.strings.halloween_lobby.common.yes(),
-                size: B.ExtraLarge,
+                size: T.ExtraLarge,
                 onClick: a.affirmation,
               }),
             },
@@ -360,18 +360,18 @@ var G = e(m(), 1),
           D,
           {
             ...r[ne],
-            className: We,
+            className: $e,
             isCanceled: e,
             children: [
               (0, se.jsx)(p, {
                 className: Oe,
-                keyCode: _.SPACE,
+                keyCode: u.SPACE,
                 silent: !0,
                 classNames: { content: Pe },
                 children: (0, se.jsx)(p.Code, {}),
               }),
               (0, se.jsx)("div", {
-                className: $e,
+                className: Le,
                 children: R.strings.halloween_lobby.decrypt.hideShow(),
               }),
             ],
@@ -390,7 +390,7 @@ var G = e(m(), 1),
     className: o,
   }) {
     const r = (0, G.useRef)(null),
-      i = u({ header: t, body: n });
+      i = d({ header: t, body: n });
     return (
       (0, G.useEffect)(() => {
         s && r.current && i.onMouseEnter(r.current);
@@ -415,18 +415,18 @@ var G = e(m(), 1),
   Ue = "DecryptApp_rightArrow_efc52898",
   Ye = I(function () {
     const { model: e, controls: s } = U(),
-      a = d(),
+      a = c(),
       t = f(),
-      [o, i] = (0, G.useState)(!1),
-      [l, c] = (0, G.useState)(!1),
-      u = e.index.get(),
+      [n, i] = (0, G.useState)(!1),
+      [l, d] = (0, G.useState)(!1),
+      _ = e.index.get(),
       m = e.isPreviousArtefactAvailable.get(),
       y = e.isNextArtefactAvailable.get(),
-      p = n(e.types.get(), "final") && !y;
+      p = o(e.types.get(), "final") && !y;
     return (
       (0, G.useEffect)(() => {
         i(!1);
-      }, [u]),
+      }, [_]),
       (0, G.useEffect)(() => {
         t ||
           ((e) => {
@@ -437,14 +437,14 @@ var G = e(m(), 1),
       (0, G.useEffect)(() => {
         const e = (e) => {
           switch (e.keyCode) {
-            case _.ENTER:
+            case u.ENTER:
               s.affirmation();
               break;
-            case _.SPACE:
-              (c((e) => !e), i(!0));
+            case u.SPACE:
+              (d((e) => !e), i(!0));
               break;
             default:
-              c(!1);
+              d(!1);
           }
         };
         return (
@@ -459,12 +459,12 @@ var G = e(m(), 1),
         className: Fe,
         onClick: () => i(!0),
         children: [
-          !l && (0, se.jsx)(L, { className: Ke, onClose: s.affirmation }),
-          u > 1 &&
+          !l && (0, se.jsx)(V, { className: Ke, onClose: s.affirmation }),
+          _ > 1 &&
             (0, se.jsx)(qe, {
               side: q.Left,
               disabled: !m,
-              onClick: () => s.onChangeQuest(u - 1),
+              onClick: () => s.onChangeQuest(_ - 1),
               tooltipHeader: R.strings.halloween_lobby.decrypt.arrowPrev.disabled.header(),
               tooltipBody: R.strings.halloween_lobby.decrypt.arrowPrev.disabled.body(),
               className: Je,
@@ -473,7 +473,7 @@ var G = e(m(), 1),
             (0, se.jsx)(qe, {
               side: q.Right,
               disabled: !y,
-              onClick: () => s.onChangeQuest(u + 1),
+              onClick: () => s.onChangeQuest(_ + 1),
               tooltipHeader: R.strings.halloween_lobby.decrypt.arrow.disabled.header(),
               tooltipBody: R.strings.halloween_lobby.decrypt.arrow.disabled.body(),
               className: Ue,
@@ -481,13 +481,13 @@ var G = e(m(), 1),
           (0, se.jsx)(ae, { isFinal: p }),
           (0, se.jsx)("div", {
             className: (0, X.default)(Ge, l && Xe),
-            children: (0, se.jsx)(He, { skipAnim: o }),
+            children: (0, se.jsx)(He, { skipAnim: n }),
           }),
         ],
       })
     );
   }),
-  Ze = l({
+  Ze = i({
     click: { outro: "ev_hw_meta_narrative_outro" },
     animation: { reward: "ev_hw_reward_screen_icon" },
     ui: {

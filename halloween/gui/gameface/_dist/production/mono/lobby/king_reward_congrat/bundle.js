@@ -1,11 +1,11 @@
 import { r as a } from "../chunks/rolldown-runtime.js";
 import {
-  Ii as s,
-  It as e,
+  Et as s,
+  Ii as e,
   Kn as r,
-  Lt as n,
-  Ri as i,
-  Tn as o,
+  Ri as n,
+  Tn as i,
+  Tt as o,
   Un as t,
   Wn as l,
   Wr as c,
@@ -13,10 +13,10 @@ import {
   _r as g,
   bn as m,
   br as p,
-  gt as _,
+  bt as _,
   mi as w,
+  ot as b,
   vr as h,
-  zt as b,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as j, t as C } from "../chunks/vendor.js";
@@ -26,10 +26,10 @@ import { i as f, r as v } from "../chunks/text.js";
 import { n as N, r as A, t as y } from "../chunks/button.js";
 import { t as K } from "../chunks/close_button.js";
 import { i as T, o as E, r as S } from "../chunks/utils.js";
-import { n as V, t as L } from "../chunks/animations.js";
-import { t as W } from "../chunks/gifted_vehicle.js";
-var B = a(i(), 1),
-  [G, M] = o()(
+import { n as V, t as W } from "../chunks/animations.js";
+import { t as B } from "../chunks/gifted_vehicle.js";
+var G = a(n(), 1),
+  [L, M] = i()(
     ({ observableModel: a }) => ({
       mainGiftVehicle: a.object("mainGiftVehicle"),
       rewards: a.array("rewards", []),
@@ -41,44 +41,44 @@ var B = a(i(), 1),
     }),
   ),
   z = a(C(), 1),
-  I = "RewardWrapper_e9cea632",
-  D = "RewardWrapper_reward_1ed12001",
-  H = h(),
+  D = "RewardWrapper_e9cea632",
+  H = "RewardWrapper_reward_1ed12001",
+  I = h(),
   O = { y: 0, opacity: 1 };
-function U({ reward: a, index: s, className: r, canceled: i = !1 }) {
-  const { breakpoint: o } = g(),
-    c = o.weight <= p.small.weight ? n.Small : n.Big,
+function U({ reward: a, index: e, className: r, canceled: n = !1 }) {
+  const { breakpoint: i } = g(),
+    c = i.weight <= p.small.weight ? s.Small : s.Big,
     [d, m] = l(() => ({ y: -10, opacity: 0 })),
-    h = i ? O : { ...d };
+    b = n ? O : { ...d };
   return (
-    (0, B.useEffect)(() => {
+    (0, G.useEffect)(() => {
       m.start({
         to: O,
-        delay: L.rewards.delay + 200 + 120 * s,
+        delay: W.rewards.delay + 200 + 120 * e,
         config: { tension: 75, friction: 8 },
-        immediate: i,
-        cancel: i,
+        immediate: n,
+        cancel: n,
         onStart: () => {
           w.sound(k);
         },
       });
-    }, [m, i, s]),
-    (0, H.jsx)(t.div, {
-      className: (0, z.default)(I, r),
-      style: h,
-      children: (0, H.jsx)(
+    }, [m, n, e]),
+    (0, I.jsx)(t.div, {
+      className: (0, z.default)(D, r),
+      style: b,
+      children: (0, I.jsx)(
         _,
         {
           name: a.name,
           value: E(a),
-          className: D,
+          className: H,
           size: c,
           special: a.overlayType,
           image: S(a, c),
-          valueType: e(a.name),
+          valueType: o(a.name),
           tooltipArgs: T(a),
         },
-        `${a.name}${s}`,
+        `${a.name}${e}`,
       ),
     })
   );
@@ -100,24 +100,24 @@ var $ = "KingRewardCongratsApp_ebb7744a",
   ia = "KingRewardCongratsApp_shadow_fd7b11b9",
   oa = "KingRewardCongratsApp_bottomContainer_b5663733",
   ta = j(() => {
-    const { model: a, controls: e } = M(),
-      [n, i] = (0, B.useState)(!1);
-    r(e.close);
-    const o = (0, B.useCallback)(() => {
+    const { model: a, controls: s } = M(),
+      [n, i] = (0, G.useState)(!1);
+    r(s.close);
+    const o = (0, G.useCallback)(() => {
       w.sound(x);
     }, []);
-    return (0, H.jsxs)("div", {
+    return (0, I.jsxs)("div", {
       className: $,
       onClick: () => i(!0),
       children: [
-        (0, H.jsx)(K, { className: q, onClose: e.close }),
-        (0, H.jsxs)("div", {
-          className: s(J, n && P),
+        (0, I.jsx)(K, { className: q, onClose: s.close }),
+        (0, I.jsxs)("div", {
+          className: e(J, n && P),
           children: [
-            (0, H.jsx)("div", { className: Y }),
+            (0, I.jsx)("div", { className: Y }),
             d.isLow()
-              ? (0, H.jsx)("div", { className: Q })
-              : (0, H.jsx)(b, {
+              ? (0, I.jsx)("div", { className: Q })
+              : (0, I.jsx)(b, {
                   src: R.videos.halloween.king_reward(),
                   className: X,
                   loop: !0,
@@ -125,67 +125,67 @@ var $ = "KingRewardCongratsApp_ebb7744a",
                 }),
           ],
         }),
-        (0, H.jsx)("div", { className: F }),
-        (0, H.jsxs)(u, {
+        (0, I.jsx)("div", { className: F }),
+        (0, I.jsxs)(u, {
           isCanceled: n,
-          ...L[V.TITLE],
+          ...W[V.TITLE],
           children: [
-            (0, H.jsx)("div", { className: ia }),
-            (0, H.jsx)("div", {
+            (0, I.jsx)("div", { className: ia }),
+            (0, I.jsx)("div", {
               className: Z,
               children: R.strings.halloween_lobby.kingRewardCongratsView.title(),
             }),
           ],
         }),
-        (0, H.jsx)(u, {
+        (0, I.jsx)(u, {
           isCanceled: n,
-          ...L[V.HEADER],
-          children: (0, H.jsx)(v, {
+          ...W[V.HEADER],
+          children: (0, I.jsx)(v, {
             text: R.strings.halloween_lobby.kingRewardCongratsView.header(),
             type: f.MetaHeading,
             className: aa,
             shadow: !0,
           }),
         }),
-        (0, H.jsx)(u, {
+        (0, I.jsx)(u, {
           isCanceled: n,
-          ...L[V.REWARDS],
+          ...W[V.REWARDS],
           className: oa,
-          children: (0, H.jsxs)("div", {
+          children: (0, I.jsxs)("div", {
             className: ea,
             children: [
-              (0, H.jsx)("div", {
+              (0, I.jsx)("div", {
                 className: ra,
                 children: R.strings.halloween_lobby.kingRewardCongratsView.rewardsTitle(),
               }),
               c(a.rewards.get(), (a, s) =>
-                (0, H.jsx)(U, { reward: a, index: s, canceled: n }, a.name),
+                (0, I.jsx)(U, { reward: a, index: s, canceled: n }, a.name),
               ),
             ],
           }),
         }),
-        (0, H.jsx)(u, {
+        (0, I.jsx)(u, {
           isCanceled: n,
-          ...L[V.NAME],
+          ...W[V.NAME],
           className: sa,
-          children: (0, H.jsx)(W, { ...a.mainGiftVehicle.get(), onClick: e.garage }),
+          children: (0, I.jsx)(B, { ...a.mainGiftVehicle.get(), onClick: s.garage }),
         }),
-        (0, H.jsx)(u, {
+        (0, I.jsx)(u, {
           isCanceled: n,
-          ...L[V.BUTTONS],
+          ...W[V.BUTTONS],
           className: oa,
           onStart: o,
-          children: (0, H.jsx)("div", {
+          children: (0, I.jsx)("div", {
             className: na,
-            children: (0, H.jsx)(y, {
+            children: (0, I.jsx)(y, {
               type: A.Secondary,
               caption: R.strings.halloween_lobby.common.yes(),
               size: N.ExtraLarge,
-              onClick: e.outro,
+              onClick: s.outro,
             }),
           }),
         }),
       ],
     });
   });
-m((0, H.jsx)(G, { children: (0, H.jsx)(ta, {}) }));
+m((0, I.jsx)(L, { children: (0, I.jsx)(ta, {}) }));

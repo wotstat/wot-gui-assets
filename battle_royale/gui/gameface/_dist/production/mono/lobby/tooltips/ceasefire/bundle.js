@@ -1,38 +1,38 @@
 import {
   Bt as e,
-  C as s,
-  Gt as a,
-  L as r,
-  Nn as t,
+  Gt as s,
+  N as a,
+  Nn as r,
+  P as t,
   Ut as i,
-  jr as l,
-  ni as c,
-  t as d,
-  w as n,
-  x as p,
+  j as l,
+  jr as c,
+  ni as d,
+  q as n,
+  t as p,
   zt as o,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { i as h } from "../../chunks/vendor.js";
 import { i as m, n as u } from "../../chunks/model.js";
-var j = s({ alertType: p(m), battleSchedule: u }),
-  [_, x] = a()((e) => {
+var j = a({ alertType: l(m), battleSchedule: u }),
+  [_, b] = s()((e) => {
     const s = e.observableModel.primitives(["params", "type"]);
     return {
       type: s.type,
       computes: {
         params: i.primitive(() => {
           try {
-            return n(j, JSON.parse(s.params.get()));
+            return t(j, JSON.parse(s.params.get()));
           } catch (e) {
             return (console.error(e), { alertType: m.None, battleSchedule: [] });
           }
         }),
       },
     };
-  }, l);
-function b() {
-  return x().model.computes.params();
+  }, c);
+function x() {
+  return b().model.computes.params();
 }
 var v = {
     base: "App_b217f952",
@@ -47,30 +47,30 @@ var v = {
     period: "App_period_b93939b2",
     goal: "App_goal_d5b93517",
   },
-  f = t(),
-  N = c.resolve("strings"),
+  N = r(),
+  f = d.resolve("strings"),
   y = R.strings.battle_royale.ceasefire,
   A = h(function () {
-    const { battleSchedule: e } = b();
-    return (0, f.jsxs)("div", {
+    const { battleSchedule: e } = x();
+    return (0, N.jsxs)("div", {
       className: v.battleSchedule,
       children: [
-        (0, f.jsx)("div", { className: v.scheduleIcon }),
-        (0, f.jsxs)("div", {
+        (0, N.jsx)("div", { className: v.scheduleIcon }),
+        (0, N.jsxs)("div", {
           className: v.scheduleContainer,
           children: [
-            (0, f.jsx)("div", { className: v.scheduleTitle, children: y.header.schedule() }),
+            (0, N.jsx)("div", { className: v.scheduleTitle, children: y.header.schedule() }),
             e.map(({ goal: e, periods: s }, a) =>
-              (0, f.jsxs)(
+              (0, N.jsxs)(
                 "div",
                 {
                   className: v.periodsContainer,
                   children: [
-                    (0, f.jsx)("div", {
+                    (0, N.jsx)("div", {
                       className: v.periodList,
                       children: s.map(([e, s], a) =>
-                        (0, f.jsx)(
-                          r,
+                        (0, N.jsx)(
+                          n,
                           {
                             text: y.template.schedule(),
                             params: { start: e, end: s },
@@ -80,7 +80,7 @@ var v = {
                         ),
                       ),
                     }),
-                    (0, f.jsx)("div", { className: v.goal, children: e }),
+                    (0, N.jsx)("div", { className: v.goal, children: e }),
                   ],
                 },
                 e + a,
@@ -92,33 +92,33 @@ var v = {
     });
   }),
   C = h(function () {
-    const { alertType: e } = b(),
+    const { alertType: e } = x(),
       s = e === m.CeasefireAllServers || e === m.CeasefireCurrentServer;
-    return (0, f.jsx)(d, {
-      children: (0, f.jsx)(d.Decorator, {
-        children: (0, f.jsxs)("div", {
+    return (0, N.jsx)(p, {
+      children: (0, N.jsx)(p.Decorator, {
+        children: (0, N.jsxs)("div", {
           className: v.base,
           children: [
-            (0, f.jsxs)("div", {
+            (0, N.jsxs)("div", {
               className: v.headerContainer,
               children: [
-                (0, f.jsx)("div", {
+                (0, N.jsx)("div", {
                   className: v.header,
-                  children: N.readOrEmpty(`battle_royale.ceasefire.header.${e}`),
+                  children: f.readOrEmpty(`battle_royale.ceasefire.header.${e}`),
                 }),
-                (0, f.jsx)("div", {
+                (0, N.jsx)("div", {
                   className: v.description,
-                  children: (0, f.jsx)(r, {
-                    text: N.readOrEmpty(`battle_royale.ceasefire.text.${e}`),
+                  children: (0, N.jsx)(n, {
+                    text: f.readOrEmpty(`battle_royale.ceasefire.text.${e}`),
                     split: !0,
                   }),
                 }),
               ],
             }),
-            s && (0, f.jsx)(A, {}),
+            s && (0, N.jsx)(A, {}),
           ],
         }),
       }),
     });
   });
-e((0, f.jsx)(o, { children: (0, f.jsx)(_, { children: (0, f.jsx)(C, {}) }) }));
+e((0, N.jsx)(o, { children: (0, N.jsx)(_, { children: (0, N.jsx)(C, {}) }) }));

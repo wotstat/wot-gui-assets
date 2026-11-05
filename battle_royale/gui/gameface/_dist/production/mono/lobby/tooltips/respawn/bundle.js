@@ -1,31 +1,31 @@
 import {
   Bt as s,
-  C as e,
-  Gt as a,
-  L as t,
+  Gt as e,
+  M as a,
+  N as t,
   Nn as r,
-  S as i,
-  Ut as n,
-  jr as o,
+  Ut as i,
+  jr as n,
+  k as o,
   ni as l,
-  t as c,
-  y as d,
+  q as c,
+  t as d,
   zt as p,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { i as m } from "../../chunks/vendor.js";
 import { t as x } from "../../chunks/common.js";
-var [j, u] = a()((s) => {
+var [j, u] = e()((s) => {
   const e = s.observableModel.primitives(["params", "type"]);
   return {
     type: e.type,
     computes: {
-      params: n.primitive(function (s) {
+      params: i.primitive(function (s) {
         return s(e.params.get());
       }),
     },
   };
-}, o);
+}, n);
 var _,
   v = "Content_2a67c3d5",
   h = "Content_2f46cd49",
@@ -36,15 +36,15 @@ var _,
   g = r(),
   w = R.strings.battle_royale.tooltips.respawn,
   C =
-    ((_ = d(e({ platoonTimeToResurrect: i(), platoonRespawnPeriod: i(), soloRespawnPeriod: i() }))),
+    ((_ = o(t({ platoonTimeToResurrect: a(), platoonRespawnPeriod: a(), soloRespawnPeriod: a() }))),
     function () {
       return u().model.computes.params(_);
     }),
-  H = l.resolve("strings"),
-  T = m(function () {
+  k = l.resolve("strings"),
+  H = m(function () {
     const { platoonTimeToResurrect: s, soloRespawnPeriod: e, platoonRespawnPeriod: a } = C(),
-      r = x(H.readOrEmpty("battle_royale.tooltips.respawn.solo.description")),
-      i = x(H.readOrEmpty("battle_royale.tooltips.respawn.platoon.description"));
+      t = x(k.readOrEmpty("battle_royale.tooltips.respawn.solo.description")),
+      r = x(k.readOrEmpty("battle_royale.tooltips.respawn.platoon.description"));
     return (0, g.jsx)("div", {
       className: v,
       children: (0, g.jsx)("div", {
@@ -60,9 +60,9 @@ var _,
               className: f,
               children: [
                 (0, g.jsx)("div", { className: b, children: w.solo.title() }),
-                r.map(({ text: s, params: a }) =>
+                t.map(({ text: s, params: a }) =>
                   (0, g.jsx)(
-                    t,
+                    c,
                     {
                       upgradeLegacy: !0,
                       text: s,
@@ -79,13 +79,13 @@ var _,
               className: f,
               children: [
                 (0, g.jsx)("div", { className: b, children: w.platoon.title() }),
-                i.map(({ text: e, params: r }) =>
+                r.map(({ text: e, params: t }) =>
                   (0, g.jsx)(
-                    t,
+                    c,
                     {
                       upgradeLegacy: !0,
                       text: e,
-                      params: { ...r, timeToResurrect: s, duration: a },
+                      params: { ...t, timeToResurrect: s, duration: a },
                       className: y,
                       split: !0,
                     },
@@ -99,47 +99,47 @@ var _,
       }),
     });
   }),
-  k = "Footer_82c68168",
+  T = "Footer_82c68168",
   P = "Footer_text_c859c809";
-function L() {
+function E() {
   return (0, g.jsx)("div", {
-    className: k,
+    className: T,
     children: (0, g.jsxs)("span", {
       className: P,
       children: [R.strings.battle_royale.tooltips.respawn.footer.text(), " "],
     }),
   });
 }
-var E = "Header_9a6b431",
-  F = "Header_icon_937d671c",
-  O = "Header_description_7d3252af",
-  z = "Header_title_6d0764fe",
-  A = "Header_subtitle_c9393f08",
-  B = R.strings.battle_royale.tooltips.respawn;
-function D() {
+var F = "Header_9a6b431",
+  L = "Header_icon_937d671c",
+  M = "Header_description_7d3252af",
+  O = "Header_title_6d0764fe",
+  q = "Header_subtitle_c9393f08",
+  z = R.strings.battle_royale.tooltips.respawn;
+function A() {
   return (0, g.jsxs)("div", {
-    className: E,
+    className: F,
     children: [
-      (0, g.jsx)("div", { className: F }),
+      (0, g.jsx)("div", { className: L }),
       (0, g.jsxs)("div", {
-        className: O,
+        className: M,
         children: [
-          (0, g.jsx)("div", { className: z, children: B.title() }),
-          (0, g.jsx)("div", { className: A, children: B.subtitle() }),
+          (0, g.jsx)("div", { className: O, children: z.title() }),
+          (0, g.jsx)("div", { className: q, children: z.subtitle() }),
         ],
       }),
     ],
   });
 }
-var G = "App_2e4efbd5";
-function M() {
-  return (0, g.jsx)(c, {
-    children: (0, g.jsx)(c.Decorator, {
+var B = "App_2e4efbd5";
+function D() {
+  return (0, g.jsx)(d, {
+    children: (0, g.jsx)(d.Decorator, {
       children: (0, g.jsxs)("div", {
-        className: G,
-        children: [(0, g.jsx)(D, {}), (0, g.jsx)(T, {}), (0, g.jsx)(L, {})],
+        className: B,
+        children: [(0, g.jsx)(A, {}), (0, g.jsx)(H, {}), (0, g.jsx)(E, {})],
       }),
     }),
   });
 }
-s((0, g.jsx)(p, { children: (0, g.jsx)(j, { children: (0, g.jsx)(M, {}) }) }));
+s((0, g.jsx)(p, { children: (0, g.jsx)(j, { children: (0, g.jsx)(D, {}) }) }));

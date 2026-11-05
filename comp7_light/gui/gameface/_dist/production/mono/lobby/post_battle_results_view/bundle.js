@@ -130,8 +130,8 @@ import {
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
 import { a as xa, t as Na } from "../chunks/vendor.js";
-import { a as Ia, i as ja, n as wa, o as Aa, r as Ca, s as Ba, t as Pa } from "../chunks/common.js";
-import { t as Sa } from "../chunks/schedule_model.js";
+import { t as Ia } from "../chunks/schedule_model.js";
+import { a as ja, i as wa, n as Aa, o as Ca, r as Ba, s as Pa, t as Sa } from "../chunks/common.js";
 var Ta = e(n()),
   Ra = "BattleInfo_6333ab61",
   ka = "BattleInfo_group_161b6f97",
@@ -287,7 +287,7 @@ function Qa(e) {
   };
 }
 function Ya({ value: e, transition: a, children: t, className: s, classNames: r }) {
-  const n = (0, Ta.useMemo)(Aa, []),
+  const n = (0, Ta.useMemo)(Ca, []),
     i = k(e, {
       ...a,
       initial: { opacity: 1, y: "0rem", ...a?.initial },
@@ -650,7 +650,7 @@ function yt({ children: e }) {
         case bt.initial:
           return (
             d.play("showBattleResult", { target: "animation-context" }),
-            void t(u === Ba.overview ? bt.navigation : bt.immediate)
+            void t(u === Pa.overview ? bt.navigation : bt.immediate)
           );
         case bt.navigation:
           return void m.start({
@@ -2295,7 +2295,7 @@ function bo(e) {
     account: he(e.userNames),
     userStatus: ((n = e.userStatus), { abandonBattle: n.isLeftBattle, deathReason: n.deathReason }),
     killer: he(e.userStatus.killer),
-    vehicle: Ca(e.vehicle.vehicleCD, e.vehicle.techName)
+    vehicle: Ba(e.vehicle.vehicleCD, e.vehicle.techName)
       ? void 0
       : { ...be(e.vehicle), longName: e.vehicle.longName },
     efficiencyValues: {
@@ -2377,7 +2377,7 @@ var [Ao, Co] = se()(
           notificationList: V.box([]),
           ...a.primitives(["warningType"]),
         };
-      (wa(t)(() => {
+      (Aa(t)(() => {
         const e = {};
         (r.teamsStatistic.allies.set(
           $(s.teamsStatistic.allies.get(), (a) => {
@@ -2394,7 +2394,7 @@ var [Ao, Co] = se()(
         const a = r.allPlayersDictionary.get();
         r.allPlayersDictionary.set({ ...a, ...e });
       }),
-        wa(t)(() => {
+        Aa(t)(() => {
           return r.teamsStatistic.sorting.set(
             ((e = s.teamsStatistic.sortingColumn.get()),
             (a = s.teamsStatistic.sortingOrder.get()),
@@ -2402,7 +2402,7 @@ var [Ao, Co] = se()(
           );
           var e, a;
         }),
-        wa(t)(() => {
+        Aa(t)(() => {
           (r.personalEfficiency.statistics.capturePoints.set(
             s.personalEffiency.capturePoints.get(),
           ),
@@ -2437,7 +2437,7 @@ var [Ao, Co] = se()(
           const e = A(r.teamsStatistic.allies.get(), (e) => e.personal);
           return (
             ma(void 0 !== e, "Personal info is not found"),
-            ma(ja(e), "There is no vehicle data in the personal info"),
+            ma(wa(e), "There is no vehicle data in the personal info"),
             e
           );
         }),
@@ -2729,14 +2729,14 @@ var zo = xa(function ({ className: e }) {
     }));
     return (
       (0, Ta.useEffect)(() => {
-        r === Ba.progression &&
+        r === Pa.progression &&
           (h.start({ to: { opacity: 1 } }), f.length > 0 && !1 === o && c(!0));
       }, [o, r, h, _, f]),
       (0, Ta.useEffect)(() => {
         p.length > 0 && s.setNotifications(p);
       }, [s, p]),
       (0, Ta.useEffect)(() => {
-        o && r !== Ba.progression && i(!0);
+        o && r !== Pa.progression && i(!0);
       }, [o, r]),
       (0, Ma.jsx)(Do, {
         className: e,
@@ -3957,7 +3957,7 @@ var Cd = g("Currencies", "Currencies_5b11a533"),
       n = (0, Ta.useRef)(null);
     return (
       (0, Ta.useEffect)(() => {
-        if (a === Ba.overview)
+        if (a === Pa.overview)
           return me.move(function ([e]) {
             const a = ie().width,
               t = 2 * (e.clientX / a - 0.5);
@@ -5106,7 +5106,7 @@ var Xm = B.cubicBezier(0.33, 0, 0.25, 1),
       [g, y] = (0, Ta.useState)(!1),
       [x, N] = _a(() => ({ opacity: g ? 0 : 1 }));
     ((0, Ta.useEffect)(() => {
-      f !== Ba.overview && y(!1);
+      f !== Pa.overview && y(!1);
     }, [f]),
       X(
         b,
@@ -5153,7 +5153,7 @@ var Xm = B.cubicBezier(0.33, 0, 0.25, 1),
                 (0, Ma.jsx)(F.div, {
                   className: Bm,
                   style: u,
-                  children: (0, Ma.jsx)(cu.HintKey, { disabled: f !== Ba.overview }),
+                  children: (0, Ma.jsx)(cu.HintKey, { disabled: f !== Pa.overview }),
                 }),
               ],
             }),
@@ -6710,10 +6710,10 @@ var kf = xa(function () {
         );
       }),
       (0, Ta.useEffect)(() => {
-        f !== Ba.progression && l && !1 === o.state.read
+        f !== Pa.progression && l && !1 === o.state.read
           ? o.controls.start()
-          : f !== Ba.progression
-            ? o.state.read && f !== Ba.progression && o.controls.wait()
+          : f !== Pa.progression
+            ? o.state.read && f !== Pa.progression && o.controls.wait()
             : o.controls.read();
       }, [o.state.read, o.controls, f, l]),
       (0, Ta.useEffect)(() => {
@@ -6723,7 +6723,7 @@ var kf = xa(function () {
         className: M(Pf.base, Pf[`base__${f}`]),
         style: { width: `${t}rem` },
         children: [
-          f !== Ba.overview && (0, Ma.jsx)("div", { className: Pf.vignette }),
+          f !== Pa.overview && (0, Ma.jsx)("div", { className: Pf.vignette }),
           (0, Ma.jsx)(Rf, {}),
           (0, Ma.jsx)(F.div, {
             style: c,
@@ -6734,19 +6734,19 @@ var kf = xa(function () {
                 classNames: { mainBorder: Pf.mainBorderSwitcher },
                 children: [
                   (0, Ma.jsx)(ke.Tab, {
-                    tabId: Ba.overview,
+                    tabId: Pa.overview,
                     children: Y.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.battleResults"),
                     ),
                   }),
                   (0, Ma.jsx)(ke.Tab, {
-                    tabId: Ba.teamsStatistics,
+                    tabId: Pa.teamsStatistics,
                     children: Y.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.teamEfficiency"),
                     ),
                   }),
                   (0, Ma.jsxs)(ke.Tab, {
-                    tabId: Ba.progression,
+                    tabId: Pa.progression,
                     children: [
                       Y.toUpperCase(
                         e.readOrEmpty("battle_results.battleResult.navigation.missionsProgress"),
@@ -6756,7 +6756,7 @@ var kf = xa(function () {
                     ],
                   }),
                   (0, Ma.jsx)(ke.Tab, {
-                    tabId: Ba.financialReport,
+                    tabId: Pa.financialReport,
                     children: Y.toUpperCase(
                       e.readOrEmpty("battle_results.battleResult.navigation.financialReport"),
                     ),
@@ -6812,9 +6812,9 @@ var kf = xa(function () {
     return (0, Ma.jsx)(ke, {
       theme: "primary",
       size: t,
-      active: Pa(e.location),
+      active: Sa(e.location),
       onActiveChange: (a) => {
-        a in Ia ? e.push(Ia[a]) : console.error(`Invalid tab ID: ${a}`);
+        a in ja ? e.push(ja[a]) : console.error(`Invalid tab ID: ${a}`);
       },
       children: (0, Ma.jsx)(yt, {
         children: (0, Ma.jsx)(ft.Provider, {
@@ -6857,5 +6857,5 @@ var kf = xa(function () {
     .add(Ao)
     .addWithProps(b, { soundsOverrides: Hf })
     .addWithProps(Ee, { context: "model.router" })
-    .addWithProps(Sa, { options: { context: "model.scheduleInfo" } });
+    .addWithProps(Ia, { options: { context: "model.scheduleInfo" } });
 (G(), j(Df.render((0, Ma.jsx)(Ef, {})), { fullScreen: !0 }));

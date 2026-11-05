@@ -1,14 +1,14 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   Cn as s,
-  Fi as a,
-  G as i,
-  Gt as l,
-  Kr as r,
-  Qa as n,
-  Za as t,
-  d as o,
-  g as c,
+  D as a,
+  Fi as i,
+  G as l,
+  Gt as r,
+  Kr as n,
+  Qa as t,
+  S as o,
+  Za as c,
   in as _,
   or as g,
   rn as d,
@@ -24,7 +24,7 @@ var j = [
     {
       header: "fl_info_page.addons.cellRent.header",
       text: "fl_info_page.addons.cellRent.text_9",
-      binding: { vehiclesLevel: a(8) },
+      binding: { vehiclesLevel: i(8) },
     },
     { header: "fl_info_page.addons.cellTime.header", text: "fl_info_page.addons.cellTime.text" },
     {
@@ -49,10 +49,10 @@ function y({ children: e, withDivider: s = !0 }) {
 var T = e(v(), 1),
   P = "Typography_title_9e921a81",
   w = "Typography_description_8ce6e6a4",
-  W = "Typography_subtitle_ecdc2835",
-  S = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(P, e) }),
+  S = "Typography_subtitle_ecdc2835",
+  W = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(P, e) }),
   $ = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(w, e) }),
-  L = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(W, e) }),
+  L = ({ className: e, ...a }) => (0, k.jsx)(s, { ...a, className: (0, T.default)(S, e) }),
   B = "AdditionalInfo_contentWrapper_2b0dc85",
   G = "AdditionalInfo_descriptionWrapper_de4229ba",
   D = "AdditionalInfo_column_fc5fc9cb",
@@ -63,7 +63,7 @@ var T = e(v(), 1),
       children: (0, k.jsxs)("div", {
         className: B,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.addons.header" }),
+          (0, k.jsx)(W, { path: "fl_info_page.addons.header" }),
           (0, k.jsx)("div", {
             className: G,
             children: j.map(({ header: e, text: s, binding: a }, i) =>
@@ -107,7 +107,7 @@ function ee() {
     children: (0, k.jsxs)("div", {
       className: H,
       children: [
-        (0, k.jsx)(S, { path: "fl_info_page.about.header" }),
+        (0, k.jsx)(W, { path: "fl_info_page.about.header" }),
         (0, k.jsx)($, { className: V, path: "fl_info_page.about.text" }),
         (0, k.jsxs)("div", {
           className: E,
@@ -266,7 +266,7 @@ function pe() {
     children: (0, k.jsxs)("div", {
       className: ae,
       children: [
-        (0, k.jsx)(S, { path: "fl_info_page.reserveCategories.config.header" }),
+        (0, k.jsx)(W, { path: "fl_info_page.reserveCategories.config.header" }),
         (0, k.jsx)($, {
           className: se,
           path: "fl_info_page.reserveCategories.config.text",
@@ -338,15 +338,15 @@ var [fe, me] = f()(
   Ce = "GeneralInfo_row_2e8d4ae8",
   Ie = h(function () {
     const { model: e } = me(),
-      s = Math.round((e.endTimestamp.get() - e.startTimestamp.get()) / n),
-      i = ((e, s = 3) => {
+      s = Math.round((e.endTimestamp.get() - e.startTimestamp.get()) / t),
+      a = ((e, s = 3) => {
         const a = [];
         for (let i = 0; i < e.length; i += s) a.push(e.slice(i, i + s));
         return a;
       })(
-        ((e, s, i, l) => {
-          const r = a(9),
-            n = a(8),
+        ((e, s, a, l) => {
+          const r = i(9),
+            n = i(8),
             t = [
               {
                 image: R.images.frontline.gui.maps.icons.about.epic(),
@@ -365,7 +365,7 @@ var [fe, me] = f()(
               },
             ];
           return (
-            i &&
+            a &&
               t.push({
                 image: R.images.frontline.gui.maps.icons.about.scenarios(),
                 header: { value: "fl_info_page.main.cellScenarios.header" },
@@ -420,10 +420,10 @@ var [fe, me] = f()(
       children: (0, k.jsxs)("div", {
         className: ue,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.main.sectionHeader" }),
+          (0, k.jsx)(W, { path: "fl_info_page.main.sectionHeader" }),
           (0, k.jsx)("div", {
             className: xe,
-            children: u(i, (e, s) =>
+            children: u(a, (e, s) =>
               (0, k.jsx)(
                 "div",
                 {
@@ -470,8 +470,8 @@ var [fe, me] = f()(
   Te = "GeneralRules_ruleImage_91a4f89",
   Pe = "GeneralRules_ruleTitle_250d67d9",
   we = "GeneralRules_rulesText_82ace16f",
-  We = "GeneralRules_listItem_bb969db3",
-  Se = "GeneralRules_listWrapper_81cd3c0",
+  Se = "GeneralRules_listItem_bb969db3",
+  We = "GeneralRules_listWrapper_81cd3c0",
   $e = "GeneralRules_listBullet_18c894c8",
   Le = "GeneralRules_backToFightImg_a9c9a28a",
   Be = "GeneralRules_backToFight_c3119c8b",
@@ -510,27 +510,27 @@ var [fe, me] = f()(
       children: (0, k.jsxs)("div", {
         className: Re,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.rules.sectionHeader" }),
+          (0, k.jsx)(W, { path: "fl_info_page.rules.sectionHeader" }),
           (0, k.jsx)("div", {
             className: ke,
-            children: u(s, ({ text: e, list: s, header: a, image: l }, r) =>
+            children: u(s, ({ text: e, list: s, header: a, image: i }, r) =>
               (0, k.jsxs)(
                 "div",
                 {
                   className: ye,
                   children: [
-                    (0, k.jsx)("div", { className: Te, style: { backgroundImage: `url(${l})` } }),
+                    (0, k.jsx)("div", { className: Te, style: { backgroundImage: `url(${i})` } }),
                     (0, k.jsx)(L, { className: Pe, path: a }),
                     u(e, (e, s) =>
-                      (0, k.jsx)(i, { classMix: we, text: Fe.readOrEmpty(e) }, `rule-text-${s}`),
+                      (0, k.jsx)(l, { classMix: we, text: Fe.readOrEmpty(e) }, `rule-text-${s}`),
                     ),
                     (0, k.jsx)("div", {
-                      className: Se,
+                      className: We,
                       children: u(s ?? [], (e, s) =>
                         (0, k.jsxs)(
                           "div",
                           {
-                            className: We,
+                            className: Se,
                             children: [
                               (0, k.jsx)("div", { className: $e, children: "•" }),
                               (0, k.jsx)($, { split: !0, path: e }, s),
@@ -595,7 +595,7 @@ var [fe, me] = f()(
       children: (0, k.jsxs)("div", {
         className: He,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.progression.sectionHeader" }),
+          (0, k.jsx)(W, { path: "fl_info_page.progression.sectionHeader" }),
           (0, k.jsx)($, { className: Ve, path: "fl_info_page.progression.text", split: !0 }),
           (0, k.jsxs)("div", {
             children: [
@@ -729,7 +729,7 @@ var [fe, me] = f()(
       children: (0, k.jsxs)("div", {
         className: is,
         children: [
-          (0, k.jsx)(S, { path: "fl_info_page.reserveCategories.sectionHeader" }),
+          (0, k.jsx)(W, { path: "fl_info_page.reserveCategories.sectionHeader" }),
           (0, k.jsx)($, { className: ls, path: "fl_info_page.reserveCategories.text" }),
           (0, k.jsx)("div", {
             className: _s,
@@ -849,7 +849,7 @@ function Rs() {
         }),
         (0, k.jsx)("div", {
           className: js,
-          children: u(Is, ({ label: e, cells: s, icon: i }, l) =>
+          children: u(Is, ({ label: e, cells: s, icon: a }, l) =>
             (0, k.jsxs)(
               "div",
               {
@@ -860,7 +860,7 @@ function Rs() {
                     children: [
                       (0, k.jsx)("div", {
                         className: Ns,
-                        style: null !== i ? { backgroundImage: `url(${i})` } : void 0,
+                        style: null !== a ? { backgroundImage: `url(${a})` } : void 0,
                       }),
                       e && (0, k.jsx)($, { path: e }),
                     ],
@@ -877,7 +877,7 @@ function Rs() {
                               path: Number.isInteger(e)
                                 ? "fl_info_page.reserveCategories.progression.tableCell"
                                 : e,
-                              params: { level: a(e), levelNext: a(e + 1) },
+                              params: { level: i(e), levelNext: i(e + 1) },
                             }),
                         },
                         `cell_${s}`,
@@ -899,8 +899,8 @@ var ks = "ScenariosList_scenariosItemHeaderIcon_85bf9391",
   Ts = "ScenariosList_scenariosItem_bc09f63d",
   Ps = "ScenariosList_scenariosItemList_99600cd6",
   ws = "ScenariosList_listWrapper_b93acd0f",
-  Ws = "ScenariosList_listBullet_fde00cd3",
-  Ss = "ScenariosList_scenarios_5831082d",
+  Ss = "ScenariosList_listBullet_fde00cd3",
+  Ws = "ScenariosList_scenarios_5831082d",
   $s = [
     {
       icon: R.images.frontline.gui.maps.icons.battleTypes.c_48x48.standard(),
@@ -924,7 +924,7 @@ var ks = "ScenariosList_scenariosItemHeaderIcon_85bf9391",
   ];
 function Ls() {
   return (0, k.jsx)("div", {
-    className: Ss,
+    className: Ws,
     children: u($s, (e, s) =>
       (0, k.jsxs)(
         "div",
@@ -949,7 +949,7 @@ function Ls() {
                     {
                       className: Ps,
                       children: [
-                        (0, k.jsx)("div", { className: Ws, children: "•" }),
+                        (0, k.jsx)("div", { className: Ss, children: "•" }),
                         (0, k.jsx)($, { split: !0, path: e }),
                       ],
                     },
@@ -971,7 +971,7 @@ function Ds() {
     children: (0, k.jsxs)("div", {
       className: Gs,
       children: [
-        (0, k.jsx)(S, { path: "fl_info_page.reserveCategories.scenarios.sectionHeader" }),
+        (0, k.jsx)(W, { path: "fl_info_page.reserveCategories.scenarios.sectionHeader" }),
         (0, k.jsx)($, {
           className: Bs,
           path: "fl_info_page.reserveCategories.scenarios.text",
@@ -1001,7 +1001,7 @@ function Ys() {
         (0, k.jsxs)("div", {
           className: Ms,
           children: [
-            (0, k.jsx)(S, { path: "fl_info_page.winStrategy.header" }),
+            (0, k.jsx)(W, { path: "fl_info_page.winStrategy.header" }),
             (0, k.jsx)($, { className: Vs, path: "fl_info_page.winStrategy.mapZones" }),
             Es.map((e, s) => (0, k.jsx)($, { className: Hs, path: e, split: !0 }, s)),
           ],
@@ -1020,12 +1020,12 @@ var Os = "InfoView_1674491c",
   zs = "InfoView_scrollContent_9a303e94",
   Js = "InfoView_scrollContentWrapper_24a3123",
   Xs = h(function () {
-    const { controls: e, model: a } = me(),
-      i = a.isBattlePassAvailable.get(),
-      { dateFormat: l, params: n } = ((e, s) => {
+    const { controls: e, model: i } = me(),
+      l = i.isBattlePassAvailable.get(),
+      { dateFormat: r, params: t } = ((e, s) => {
         const a = R.strings.menu.dateTime.months,
-          i = new Date(e * t),
-          l = new Date(s * t),
+          i = new Date(e * c),
+          l = new Date(s * c),
           r = {
             from: i.getDate(),
             to: l.getDate(),
@@ -1043,18 +1043,18 @@ var Os = "InfoView_1674491c",
                 : "differentMonth"
               : "differentYears",
         };
-      })(a.startTimestamp.get(), a.endTimestamp.get());
+      })(i.startTimestamp.get(), i.endTimestamp.get());
     return (
-      r(e.close),
+      n(e.close),
       (0, k.jsxs)("div", {
         className: Os,
         children: [
-          (0, k.jsx)(c, { className: Us, onClose: e.close }),
+          (0, k.jsx)(a, { className: Us, onClose: e.close }),
           (0, k.jsxs)("div", {
             className: Zs,
             children: [
               (0, k.jsx)(s, { className: Ks, path: "fl_info_page.page.headerUpper" }),
-              (0, k.jsx)(s, { className: Qs, params: n, path: `fl_info_page.subTitle.${l}` }),
+              (0, k.jsx)(s, { className: Qs, params: t, path: `fl_info_page.subTitle.${r}` }),
               (0, k.jsx)("div", {
                 className: qs,
                 children: (0, k.jsxs)(d, {
@@ -1071,8 +1071,8 @@ var Os = "InfoView_1674491c",
                           (0, k.jsx)(Me, {}),
                           (0, k.jsx)(as, {}),
                           (0, k.jsx)(Ys, {}),
-                          (0, k.jsx)(M, { withDivider: i }),
-                          i && (0, k.jsx)(ee, {}),
+                          (0, k.jsx)(M, { withDivider: l }),
+                          l && (0, k.jsx)(ee, {}),
                         ],
                       }),
                     }),
@@ -1087,5 +1087,5 @@ var Os = "InfoView_1674491c",
     );
   });
 window.requestAnimationFrame(() => {
-  g((0, k.jsx)(l, { children: (0, k.jsx)(fe, { children: (0, k.jsx)(Xs, {}) }) }));
+  g((0, k.jsx)(r, { children: (0, k.jsx)(fe, { children: (0, k.jsx)(Xs, {}) }) }));
 });

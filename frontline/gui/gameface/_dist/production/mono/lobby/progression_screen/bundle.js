@@ -3,17 +3,17 @@ import {
   $t as s,
   Ba as a,
   Bi as r,
-  Gt as t,
-  H as o,
-  Kr as n,
-  Ri as i,
-  U as l,
-  W as c,
-  _r as d,
-  bi as m,
-  do as _,
-  gi as u,
-  h as v,
+  E as t,
+  Gt as o,
+  H as n,
+  Kr as i,
+  Ri as l,
+  U as c,
+  W as d,
+  _r as m,
+  bi as _,
+  do as u,
+  gi as v,
   l as f,
   lo as b,
   or as g,
@@ -49,7 +49,7 @@ var [z, T] = x()(
       close: e.createCallbackNoArgs("onClose"),
     }),
   ),
-  I = e(_(), 1),
+  I = e(u(), 1),
   E = "Glow_fb7467e0",
   M = "Glow_sparksBgFx_d40a78ff",
   O = "Glow_base__appearing_a44066b8",
@@ -64,7 +64,7 @@ function J({ isAppearing: e, className: s }) {
     children: [
       (0, F.jsx)("div", { className: M }),
       (0, F.jsx)("div", { className: $ }),
-      (0, F.jsx)(l, {
+      (0, F.jsx)(c, {
         className: A,
         src: W.readOrEmpty("flProgressionScreen.sparks_orange"),
         loop: !0,
@@ -84,7 +84,7 @@ var V = "ClaimRewardButton_6a9b8fa0",
   Y = j.resolve("strings");
 function Z({ amount: e, isAppearing: a, size: r, onClick: t }) {
   const o = h({ body: Y.readOrEmpty("fl_progression_screen.claimRewardsTooltip") }),
-    n = d();
+    n = m();
   return (
     (0, I.useEffect)(() => {
       a && n.play("progression_rewards_appearing");
@@ -175,7 +175,7 @@ function ve({
                       text: _e.readOrEmpty("fl_progression_screen.eventStarts"),
                       className: re,
                       params: {
-                        left: (0, F.jsx)(c, { classNames: { icon: oe, label: te }, start: i }),
+                        left: (0, F.jsx)(d, { classNames: { icon: oe, label: te }, start: i }),
                       },
                     })
                   : (0, F.jsxs)(F.Fragment, {
@@ -202,7 +202,7 @@ var fe = "LevelBlock_4febf6d6",
     const { model: a, controls: r } = T(),
       t = a.frontlineState.get(),
       o = a.amountRewardsToClaim.get(),
-      n = u(
+      n = v(
         { buttonSize: s.sizes.small, badgeSize: P.x130 },
         { large: { buttonSize: s.sizes.medium, badgeSize: P.x190 } },
       );
@@ -238,30 +238,30 @@ var fe = "LevelBlock_4febf6d6",
   we = k(function ({ className: e }) {
     const { model: s } = T(),
       t = s.level.get(),
-      n = s.tiersSections.get(),
-      l = s.currentPoints.get(),
+      o = s.tiersSections.get(),
+      i = s.currentPoints.get(),
       c = s.neededPoints.get(),
       d = (0, I.useMemo)(() => {
-        const e = 100 / n.length;
+        const e = 100 / o.length;
         let s = 0;
         const a = [0];
         return (
-          n.map((s) => {
+          o.map((s) => {
             if (s.start === s.end) a.push(e);
             else {
               const r = s.end - s.start + 1;
-              i(r, () => a.push(e / r));
+              l(r, () => a.push(e / r));
             }
           }),
-          i(t, (e) => {
-            ((s += a[e] || 0), e === t - 1 && a.length > e + 1 && (s += ((a[e + 1] || 0) * l) / c));
+          l(t, (e) => {
+            ((s += a[e] || 0), e === t - 1 && a.length > e + 1 && (s += ((a[e + 1] || 0) * i) / c));
           }),
           s
         );
-      }, [n, t, l, c]),
-      [_, u] = (0, I.useState)(0),
+      }, [o, t, i, c]),
+      [m, u] = (0, I.useState)(0),
       v = (0, I.useRef)(null),
-      { breakpoint: f } = m();
+      { breakpoint: f } = _();
     return (
       (0, I.useEffect)(() => {
         r(() => {
@@ -275,13 +275,13 @@ var fe = "LevelBlock_4febf6d6",
           className: xe,
           ref: v,
           children: [
-            (0, F.jsx)(o, {
+            (0, F.jsx)(n, {
               value: d,
               maxValue: 100,
               classNames: { background: je },
               filledClassNames: { pattern: Ne },
             }),
-            (0, F.jsx)("div", { className: Se, style: { left: `${_}rem` } }),
+            (0, F.jsx)("div", { className: Se, style: { left: `${m}rem` } }),
             s.isMaxLevel.get() && (0, F.jsx)("div", { className: he }),
           ],
         }),
@@ -339,18 +339,18 @@ var ye = "TiersSeparators_be26eda0",
 function Ee({ amount: e, className: s }) {
   const [t, o] = (0, I.useState)(0),
     n = (0, I.useRef)(null),
-    { breakpoint: l } = m();
+    { breakpoint: i } = _();
   return (
     (0, I.useEffect)(() => {
       r(() => {
         const s = n.current;
         s && o(Math.floor(a(s.offsetWidth) / (e + 1)) - 2);
       });
-    }, [n, e, l]),
+    }, [n, e, i]),
     (0, F.jsx)("div", {
       className: b(ye, s),
       ref: n,
-      children: i(e, (e) =>
+      children: l(e, (e) =>
         (0, F.jsxs)(
           "div",
           {
@@ -383,44 +383,44 @@ function qe({
   end: s,
   rewards: a,
   currentLevel: r,
-  withSeparator: t = !1,
-  frontlineState: o,
+  withSeparator: o = !1,
+  frontlineState: n,
 }) {
-  const n = e !== s,
-    i = n ? `${e}-${s}` : e,
-    l = (0, I.useMemo)(
+  const i = e !== s,
+    l = i ? `${e}-${s}` : e,
+    c = (0, I.useMemo)(
       () => (r < e - 1 ? "locked" : r >= s ? "completed" : "inProgress"),
       [r, e, s],
     ),
-    c = "locked" === l,
-    d = o === C,
-    m = u({ rewardSize: v.Small }, { medium: { rewardSize: v.Big } });
+    d = "locked" === c,
+    m = n === C,
+    _ = v({ rewardSize: t.Small }, { medium: { rewardSize: t.Big } });
   return (0, F.jsxs)("div", {
     className: Me,
     children: [
-      !c && !d && (0, F.jsx)(Be, { className: Oe, state: l }),
+      !d && !m && (0, F.jsx)(Be, { className: Oe, state: c }),
       (0, F.jsxs)("div", {
         className: Je,
         children: [
-          "completed" === l && (0, F.jsx)("div", { className: $e }),
+          "completed" === c && (0, F.jsx)("div", { className: $e }),
           (0, F.jsxs)("div", {
-            className: b(Ge, (c || d) && Fe),
-            children: ["inProgress" === l && !d && (0, F.jsx)("div", { className: Ae }), i],
+            className: b(Ge, (d || m) && Fe),
+            children: ["inProgress" === c && !m && (0, F.jsx)("div", { className: Ae }), l],
           }),
-          n && (0, F.jsx)(Ee, { amount: s - e, className: We }),
+          i && (0, F.jsx)(Ee, { amount: s - e, className: We }),
           (0, F.jsx)("div", {
             className: Ve,
             children: S(a, (e, s) =>
               (0, F.jsx)(
                 I.Fragment,
-                { children: (0, F.jsx)(y, { ...e, rewardSize: m.rewardSize, className: He }) },
+                { children: (0, F.jsx)(y, { ...e, rewardSize: _.rewardSize, className: He }) },
                 s,
               ),
             ),
           }),
         ],
       }),
-      t && (0, F.jsx)(Re, { className: Ke }),
+      o && (0, F.jsx)(Re, { className: Ke }),
     ],
   });
 }
@@ -458,7 +458,7 @@ var De = "ProgressBlock_22f7d395",
   as = k(() => {
     const { controls: e } = T();
     return (
-      n(e.close),
+      i(e.close),
       (0, F.jsx)("div", {
         className: Ye,
         children: (0, F.jsxs)("div", {
@@ -469,6 +469,6 @@ var De = "ProgressBlock_22f7d395",
     );
   });
 g(
-  (0, F.jsx)(t, { soundsOverrides: L, children: (0, F.jsx)(z, { children: (0, F.jsx)(as, {}) }) }),
+  (0, F.jsx)(o, { soundsOverrides: L, children: (0, F.jsx)(z, { children: (0, F.jsx)(as, {}) }) }),
   { fullScreen: !0 },
 );

@@ -6,29 +6,29 @@ import {
   Ii as c,
   Kr as l,
   Ri as r,
-  Tn as d,
-  Vt as i,
-  Wr as n,
-  Xr as o,
-  _r as m,
-  bn as _,
-  br as b,
-  dr as u,
-  mi as g,
-  qr as h,
-  ur as x,
-  vr as w,
-  vt as f,
+  St as d,
+  Tn as i,
+  Vt as n,
+  Wr as o,
+  Xr as m,
+  _r as _,
+  bn as b,
+  br as u,
+  dr as g,
+  mi as h,
+  qr as x,
+  ur as w,
+  vr as f,
   wn as C,
   zr as j,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as p, t as v } from "../chunks/vendor.js";
 import { t as N } from "../chunks/crew_view_template.js";
-var [k, I] = d()(
+var [k, I] = i()(
     ({ observableModel: e }) => {
-      const s = { root: e.object(), rewards: e.array("rewards"), selectedItems: x.box([]) },
-        a = C((e) => o(s.selectedItems.get(), (s) => s === e)),
+      const s = { root: e.object(), rewards: e.array("rewards"), selectedItems: w.box([]) },
+        a = C((e) => m(s.selectedItems.get(), (s) => s === e)),
         c = C(() => s.selectedItems.get().length),
         l = C((e) => t(s.selectedItems.get(), (s) => s === e).length);
       return { ...s, computes: { isSelected: a, selectedItemsLength: c, currentItemsLength: l } };
@@ -37,12 +37,12 @@ var [k, I] = d()(
       close: s.createCallbackNoArgs("onClose"),
       claimReward: s.createCallback((e) => ({ selectedItems: e }), "onClaim"),
       addReward(s) {
-        u(() => {
-          h(e.selectedItems.get(), s);
+        g(() => {
+          x(e.selectedItems.get(), s);
         });
       },
       removeReward(s) {
-        u(() => {
+        g(() => {
           const a = e.selectedItems.get(),
             t = j(a, (e) => e === s);
           void 0 !== t && l(a, t);
@@ -58,7 +58,7 @@ var [k, I] = d()(
     base__disabled: "SelectButton_base__disabled_4a6c3694",
     base__minus: "SelectButton_base__minus_87281dba",
   },
-  M = w(),
+  M = f(),
   A = (function (e) {
     return ((e.Plus = "plus"), (e.Minus = "minus"), e);
   })({});
@@ -66,7 +66,7 @@ function B({ type: e = "plus", disabled: s = !0, onClick: a }) {
   return (0, M.jsx)("div", {
     className: (0, y.default)(L.base, L[`base__${e}`], s && L.base__disabled),
     onClick: (e) => {
-      (e.stopPropagation(), s || (g.click(), a()));
+      (e.stopPropagation(), s || (h.click(), a()));
     },
   });
 }
@@ -85,45 +85,45 @@ var $ = "Card_c1f862f8",
   W = "Card_alertText_616121fe",
   X = "Card_alert_df34bccc",
   G = "Card_glow_3cd73aff",
-  H = p(({ className: e, id: s, name: t, icon: l, maxCount: r, tooltipId: d }) => {
-    const { model: n, controls: o } = I(),
-      m = n.computes.isSelected(s),
-      _ = n.computes.selectedItemsLength() === n.root.get().maxCertificates,
-      b = n.computes.currentItemsLength(s),
-      [u, h] = (0, S.useState)(!1),
-      x = `url('R.images.gui.maps.icons.tankmen.icons.big.${l}')`;
+  H = p(({ className: e, id: s, name: t, icon: l, maxCount: r, tooltipId: i }) => {
+    const { model: o, controls: m } = I(),
+      _ = o.computes.isSelected(s),
+      b = o.computes.selectedItemsLength() === o.root.get().maxCertificates,
+      u = o.computes.currentItemsLength(s),
+      [g, x] = (0, S.useState)(!1),
+      w = `url('R.images.gui.maps.icons.tankmen.icons.big.${l}')`;
     return (0, M.jsxs)("div", {
-      className: c($, u && E, m && F, _ && !m && z, e),
+      className: c($, g && E, _ && F, b && !_ && z, e),
       onClick: () => {
-        (_ && !m) || b > 1 || (g.click(), m ? o.removeReward(s) : o.addReward(s));
+        (b && !_) || u > 1 || (h.click(), _ ? m.removeReward(s) : m.addReward(s));
       },
-      onMouseLeave: () => h(!1),
+      onMouseLeave: () => x(!1),
       onMouseEnter: () => {
-        (g.highlight(), h(!0));
+        (h.highlight(), x(!0));
       },
       children: [
-        m ? (0, M.jsx)("div", { className: P }) : (0, M.jsx)("div", { className: T }),
+        _ ? (0, M.jsx)("div", { className: P }) : (0, M.jsx)("div", { className: T }),
         (0, M.jsx)("div", { className: q }),
-        (0, M.jsx)(f, {
-          args: { tooltipId: d },
+        (0, M.jsx)(d, {
+          args: { tooltipId: i },
           children: (0, M.jsx)("div", {
             className: V,
-            style: { backgroundImage: x },
-            children: (0, M.jsx)("div", { className: D, style: { maskImage: x } }),
+            style: { backgroundImage: w },
+            children: (0, M.jsx)("div", { className: D, style: { maskImage: w } }),
           }),
         }),
         (0, M.jsx)(a, { className: J, content: t }),
         (0, M.jsxs)("div", {
           className: K,
           children: [
-            (0, M.jsx)(B, { type: A.Minus, disabled: 0 === b, onClick: () => o.removeReward(s) }),
-            b,
-            (0, M.jsx)(B, { type: A.Plus, disabled: b === r || _, onClick: () => o.addReward(s) }),
+            (0, M.jsx)(B, { type: A.Minus, disabled: 0 === u, onClick: () => m.removeReward(s) }),
+            u,
+            (0, M.jsx)(B, { type: A.Plus, disabled: u === r || b, onClick: () => m.addReward(s) }),
           ],
         }),
-        !m &&
-          _ &&
-          (0, M.jsx)(i, {
+        !_ &&
+          b &&
+          (0, M.jsx)(n, {
             header: R.strings.halloween_lobby.rewardSelection.limit(),
             body: R.strings.halloween_lobby.rewardSelection.limitTooltip(),
             children: (0, M.jsxs)("div", {
@@ -147,7 +147,7 @@ var $ = "Card_c1f862f8",
     const { model: s } = I();
     return (0, M.jsx)("div", {
       className: c(Q, e),
-      children: n(s.rewards.get(), (e, s) => (0, M.jsx)(H, { className: U, ...e }, `${e.id}${s}`)),
+      children: o(s.rewards.get(), (e, s) => (0, M.jsx)(H, { className: U, ...e }, `${e.id}${s}`)),
     });
   }),
   Z = (function (e) {
@@ -162,8 +162,8 @@ var $ = "Card_c1f862f8",
   re = "Certificates_check_420c1d78",
   de = "Certificates_check__completed_e00911b";
 function ie({ className: e, count: a, maxCount: t, gender: l }) {
-  const { breakpoint: r } = m(),
-    d = r.weight >= b.medium.weight ? "big" : "small",
+  const { breakpoint: r } = _(),
+    d = r.weight >= u.medium.weight ? "big" : "small",
     i = l === Z.MALE ? "tankman_twitch" : "tankwoman_twitch";
   return (0, M.jsxs)("div", {
     className: c(ee, e),
@@ -213,4 +213,4 @@ var ne = "RewardSelectionApp_74403dd9",
       }),
     });
   });
-_((0, M.jsx)(k, { children: (0, M.jsx)(be, {}) }));
+b((0, M.jsx)(k, { children: (0, M.jsx)(be, {}) }));

@@ -1,13 +1,13 @@
 import {
   $t as s,
   Bi as e,
-  It as a,
-  Lt as i,
-  Tn as t,
+  Et as a,
+  Tn as i,
+  Tt as t,
   Wr as l,
   a as o,
   bn as r,
-  gt as d,
+  bt as d,
   i as n,
   n as p,
   o as c,
@@ -18,12 +18,12 @@ import {
 import "../../chunks/_wg-global-styles.js";
 import { n as j } from "../../chunks/vendor.js";
 import { o as y, r as h } from "../../chunks/utils.js";
-import { t as g } from "../../chunks/divider.js";
-var [x, v] = t()(
+import { t as x } from "../../chunks/divider.js";
+var [b, g] = i()(
     ({ observableModel: s }) => ({ root: s.object(), rewards: s.array("rewards") }),
     u,
   ),
-  b = "DailyQuestsTooltipApp_69f63b7d",
+  v = "DailyQuestsTooltipApp_69f63b7d",
   T = "DailyQuestsTooltipApp_name_77a6e0f",
   D = "DailyQuestsTooltipApp_description_c280e120",
   N = "DailyQuestsTooltipApp_label_e5e17029",
@@ -32,61 +32,61 @@ var [x, v] = t()(
   Q = "DailyQuestsTooltipApp_rewards_1bd3cec3",
   w = "DailyQuestsTooltipApp_reward_19c85da",
   k = "DailyQuestsTooltipApp_timerStatus_7d303a24",
-  S = "DailyQuestsTooltipApp_clockIcon_54f4d5f6",
-  E = _(),
+  E = "DailyQuestsTooltipApp_clockIcon_54f4d5f6",
+  S = _(),
   M = j(function () {
-    const { model: t } = v(),
-      { description: r, isEpicMedal: c, resetTime: u } = t.root.get(),
-      _ = t.rewards.get();
-    return (0, E.jsxs)("div", {
-      className: b,
+    const { model: i } = g(),
+      { description: r, isEpicMedal: c, resetTime: u } = i.root.get(),
+      _ = i.rewards.get();
+    return (0, S.jsxs)("div", {
+      className: v,
       children: [
-        (0, E.jsx)("div", {
+        (0, S.jsx)("div", {
           className: T,
           children: c
             ? R.strings.halloween_lobby.medalWidget.tooltipHeader()
             : R.strings.halloween_lobby.badgeWidget.tooltipHeader(),
         }),
-        (0, E.jsx)("div", { className: D, lang: R.strings.settings.LANGUAGE_CODE(), children: r }),
-        (0, E.jsxs)("div", {
+        (0, S.jsx)("div", { className: D, lang: R.strings.settings.LANGUAGE_CODE(), children: r }),
+        (0, S.jsxs)("div", {
           className: f,
           children: [
-            (0, E.jsx)(g, { className: A }),
-            (0, E.jsx)("div", {
+            (0, S.jsx)(x, { className: A }),
+            (0, S.jsx)("div", {
               className: N,
               children: R.strings.halloween_tooltips.dailyQuests.rewards(),
             }),
-            (0, E.jsx)("div", {
+            (0, S.jsx)("div", {
               className: Q,
               children: l(_, (s, e) =>
-                (0, E.jsx)(
+                (0, S.jsx)(
                   d,
                   {
                     name: s.name,
                     value: y(s),
                     className: w,
-                    size: i.Small,
+                    size: a.Small,
                     special: s.overlayType,
-                    image: h(s, i.Small),
-                    valueType: a(s.name),
+                    image: h(s, a.Small),
+                    valueType: t(s.name),
                   },
                   `${s.name}${e}`,
                 ),
               ),
             }),
-            (0, E.jsx)(g, { className: A }),
-            (0, E.jsx)(s, {
+            (0, S.jsx)(x, { className: A }),
+            (0, S.jsx)(s, {
               text: R.strings.halloween_tooltips.dailyQuests.badgeStatus(),
               className: k,
               params: {
-                timer: (0, E.jsx)(m, {
+                timer: (0, S.jsx)(m, {
                   style: o.Description,
                   icon: n.None,
                   duration: u,
                   refreshRate: 1,
                 }),
-                date: (0, E.jsx)(p, { datetime: u, format: e.DayMonthFull }),
-                icon: (0, E.jsx)("div", { className: S }),
+                date: (0, S.jsx)(p, { datetime: u, format: e.DayMonthFull }),
+                icon: (0, S.jsx)("div", { className: E }),
               },
             }),
           ],
@@ -94,4 +94,4 @@ var [x, v] = t()(
       ],
     });
   });
-r((0, E.jsx)(x, { children: (0, E.jsx)(c, { children: (0, E.jsx)(M, {}) }) }));
+r((0, S.jsx)(b, { children: (0, S.jsx)(c, { children: (0, S.jsx)(M, {}) }) }));

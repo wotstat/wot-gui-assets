@@ -23865,6 +23865,7 @@ var require_classnames = __commonJSMin((e, t) => {
           : (window.classNames = n);
     })();
   }),
+  import_classnames = __toESM(require_classnames()),
   createLayoutReadyInEffect = (e) => {
     let t,
       n = null;
@@ -23879,7 +23880,6 @@ var require_classnames = __commonJSMin((e, t) => {
       }
     );
   },
-  import_classnames = __toESM(require_classnames()),
   getFromCallStack = (e = 1) => {
     const t = new Error().stack;
     let n,
@@ -24730,204 +24730,167 @@ var handleViewEvent = (e, t, n = {}, r = 0) => {
       })
     );
   },
-  clamp$1 = (e, t, n) => (n < e ? e : n > t ? t : n);
-function noop$1() {}
-var useMount = (e) => {
-    (0, import_react.useEffect)(e, []);
-  },
-  useUnmount = (e) => {
-    (0, import_react.useEffect)(() => e, []);
-  },
-  DEFAULT_NAME_KEYFRAME = "Point",
-  THRESHOLD = 0.02;
-function createLoop(e) {
-  let t = 0;
-  return [
-    function n() {
-      (e(), (t = requestAnimationFrame(n)));
-    },
-    function () {
-      cancelAnimationFrame(t);
-    },
-  ];
-}
-var VideoForwarded = (0, import_react.forwardRef)(function (
-    {
-      src: e,
-      className: t,
-      autoplay: n = !1,
-      style: r,
-      loop: a = !1,
-      isPrebufferKeyframes: o,
-      keyframesNameConfig: i,
-      onClick: s,
-      ...u
-    },
-    l,
+  base$35 = "TruncateText_dcb41d92",
+  truncate_text_module_default = { base: base$35 },
+  TruncatedText = (0, import_react.forwardRef)(function (
+    { text: e, tooltipParams: t, className: n, ...r },
+    a,
   ) {
-    const c = l,
-      d = (0, import_react.useRef)(null);
+    const o = useSimpleTooltip({ header: t?.header, body: t?.body || e }),
+      i = (0, import_react.useRef)(null),
+      [s, u] = (0, import_react.useState)(!1),
+      l = (0, import_react.useCallback)(() => {
+        i.current &&
+          u(i.current.scrollWidth - Math.ceil(i.current.getBoundingClientRect().width) > 0);
+      }, []);
     return (
-      useMount(() => {
-        let e = !1;
-        return env.view.events.onDisplayChanged((t, n) => {
-          const r = d.current;
-          r &&
-            (n === env.view.displayStatus.hidden
-              ? ((e = r.paused), r.pause())
-              : e || n !== env.view.displayStatus.shown || r.play());
-        });
-      }),
-      useMount(() => {
-        let e = !1;
-        return env.client.events.onMinimize((t) => {
-          const n = d.current;
-          n && (t ? ((e = n.paused), n.pause()) : e || n.play());
-        });
-      }),
-      (0, import_react.useEffect)(
-        () =>
-          createLayoutReadyInEffect(() => {
-            const e = d.current;
-            if (!c || !e || !o) return void (e?.cohFastSeek && (e.cohFastSeek = !1));
-            const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
-            t.length > 0
-              ? ((e.cohFastSeek = !0),
-                t.map((t) => {
-                  e?.cohPrebufferKeyframe && e.cohPrebufferKeyframe(t);
-                }))
-              : console.warn("Can't prebuffered keyframes, keyframes was not found");
-          }),
-        [o, c],
-      ),
       (0, import_react.useEffect)(() => {
-        if (c && d.current) {
-          const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop$1 },
-            t = () => {
-              let t = 0;
-              const [n, r] = createLoop(() => {
-                if (d.current) {
-                  const { currentTime: n, duration: r } = d.current;
-                  if (
-                    (t !== n &&
-                      (e.changeTimeHandlers.forEach((e) => e({ currentTime: n, duration: r })),
-                      (t = n)),
-                    d.current.paused || !c || !o)
-                  )
-                    return;
-                  const a = d.current.cohGetKeyframeTimestamps
-                    ? d.current.cohGetKeyframeTimestamps()
-                    : [];
-                  a.forEach((t, r) => {
-                    void 0 !== a[r] &&
-                      n > a[r] - THRESHOLD &&
-                      n < a[r] &&
-                      e.changeKeyframeHandlers.forEach((e) => {
-                        const n = Object.keys(i ?? {})[r];
-                        return e({ time: t, name: `${i ? n : `${DEFAULT_NAME_KEYFRAME}_${r}`}` });
-                      });
-                  });
-                }
-              });
-              return (n(), r);
-            };
-          e.changeTimeLoop = t();
-          const n = (t) => (
-              e.changeTimeHandlers.push(t),
-              () => {
-                const { changeTimeHandlers: n } = e,
-                  r = n.indexOf(t);
-                r < 0
-                  ? console.warn(
-                      "Can't unsubscribe changeTimeHandler, this reference was not found",
-                    )
-                  : n.splice(r, 1);
-              }
-            ),
-            r = (t) => (
-              e.changeKeyframeHandlers.push(t),
-              () => {
-                const { changeKeyframeHandlers: n } = e,
-                  r = n.indexOf(t);
-                r < 0
-                  ? console.warn(
-                      "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
-                    )
-                  : n.splice(r, 1);
-              }
-            ),
-            a = () => d.current?.currentTime,
-            s = () => d.current?.duration,
-            u = (e) => {
-              d.current && (d.current.currentTime = clamp$1(0, d.current.duration, e));
-            },
-            l = () => d.current?.play(),
-            f = () => d.current?.pause(),
-            p = () => {
-              (f(), u(0));
-            },
-            m = () =>
-              d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : [],
-            _ = (e) => {
-              (u(e), l());
-            },
-            h = (e) => {
-              (u(e), f());
-            },
-            g = () => {
-              ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
-            },
-            b = (e, t) => (
-              d.current?.addEventListener(e, t),
-              () => d.current?.removeEventListener(e, t)
-            ),
-            v = (e, t) => (
-              d.current?.removeEventListener(e, t),
-              () => d.current?.removeEventListener(e, t)
-            );
-          return (
-            (c.current = {
-              on: b,
-              off: v,
-              play: l,
-              pause: f,
-              stop: p,
-              cleanup: g,
-              getCurrentTime: a,
-              getDuration: s,
-              getCachedKeyframes: m,
-              goToAndPlay: _,
-              goToAndStop: h,
-              setCurrentTime: u,
-              domRef: d.current,
-              onChangeTime: n,
-              onKeyframes: r,
-            }),
-            () => {
-              (g(), (c.current = null));
-            }
-          );
-        }
-      }, [i, c, o]),
-      (0, import_react.useEffect)(() => {
-        d.current && n && d.current.play();
-      }, [n, a]),
-      useUnmount(() => {
-        d.current?.pause();
-      }),
-      (0, import_jsx_runtime.jsx)("video", {
-        src: e,
-        className: t,
-        style: r,
-        loop: a,
-        ref: d,
-        onClick: s,
-        ...u,
+        s || o.onMouseLeave();
+      }, [s, o]),
+      useLayoutReady(l, [l]),
+      useResizeLayoutReady(l, [l]),
+      useRefResizeObserver(i, l),
+      (0, import_jsx_runtime.jsx)("div", {
+        ...r,
+        ref: assignRefs([a, i]),
+        className: clsx(truncate_text_module_default.base, n),
+        ...(s ? o : {}),
+        children: e,
       })
     );
   }),
-  Video = (0, import_react.memo)(VideoForwarded),
-  RewardType$1 = (function (e) {
+  LIGHT_TANK = "lightTank",
+  MEDIUM_TANK = "mediumTank",
+  HEAVY_TANK = "heavyTank",
+  AT_SPG = "AT-SPG",
+  types$2 = {
+    lightTank: LIGHT_TANK,
+    mediumTank: MEDIUM_TANK,
+    heavyTank: HEAVY_TANK,
+    SPG: "SPG",
+    "AT-SPG": AT_SPG,
+  },
+  typeValues = Object.values(types$2),
+  normilizeVehicleType = (e) => e.replace("-", "_"),
+  isTypeValidValue = (e) => typeValues.includes(e),
+  WITHOUT_ROLE = "without_role",
+  roles$1 = {
+    assault: "assault",
+    sniper: "sniper",
+    support: "support",
+    universal: "universal",
+    break: "break",
+    scout: "scout",
+    spg: "spg",
+  },
+  mapRoleByKey = [
+    WITHOUT_ROLE,
+    roles$1.spg,
+    roles$1.assault,
+    roles$1.break,
+    roles$1.universal,
+    roles$1.support,
+    roles$1.assault,
+    roles$1.support,
+    roles$1.universal,
+    roles$1.sniper,
+    roles$1.assault,
+    roles$1.universal,
+    roles$1.sniper,
+    roles$1.support,
+    roles$1.universal,
+    WITHOUT_ROLE,
+    roles$1.scout,
+    roles$1.support,
+  ],
+  getRoleByKey = (e) => mapRoleByKey[e] ?? "without_role",
+  atSpgRoles = [roles$1.assault, roles$1.universal, roles$1.sniper, roles$1.support],
+  heavyTankRoles = [roles$1.assault, roles$1.break, roles$1.universal, roles$1.support],
+  mediumTankRoles = [roles$1.assault, roles$1.support, roles$1.universal, roles$1.sniper],
+  lightTankRoles = [roles$1.universal, roles$1.scout, roles$1.support],
+  vehicleState = {
+    DAMAGED: "damaged",
+    EXPLODED: "exploded",
+    DESTROYED: "destroyed",
+    UNDAMAGED: "undamaged",
+    BATTLE: "battle",
+    IN_PREBATTLE: "inPrebattle",
+    LOCKED: "locked",
+    CREW_NOT_FULL: "crewNotFull",
+    AMMO_NOT_FULL: "ammoNotFull",
+    AMMO_NOT_FULL_EVENTS: "ammoNotFullEvents",
+    SERVER_RESTRICTION: "serverRestriction",
+    RENTAL_IS_OVER: "rentalIsOver",
+    IGR_RENTAL_IS_OVER: "igrRentalIsOver",
+    IN_PREMIUM_IGR_ONLY: "inPremiumIgrOnly",
+    GROUP_IS_NOT_READY: "group_is_not_ready",
+    NOT_PRESENT: "notpresent",
+    UNAVAILABLE: "unavailable",
+    UNSUITABLE_TO_QUEUE: "unsuitableToQueue",
+    UNSUITABLE_TO_UNIT: "unsuitableToUnit",
+    WILL_BE_UNLOCKED_IN_BATTLE: "willBeUnlockedInBattle",
+    DEAL_IS_OVER: "dealIsOver",
+    ROTATION_GROUP_UNLOCKED: "rotationGroupUnlocked",
+    ROTATION_GROUP_LOCKED: "rotationGroupLocked",
+    RENTABLE: "rentable",
+    RENTABLE_AGAIN: "rentableAgain",
+    DISABLED: "disabled",
+    SUBSCRIPTION_SUSPENDED: "subscription_suspended",
+    WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED: "wot_plus_exclusive_vehicle_disabled",
+  },
+  stateValues = Object.values(vehicleState),
+  sizes$12 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+  upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
+  mapTypes = {
+    [types$2.lightTank]: "light_tank",
+    [types$2.mediumTank]: "medium_tank",
+    [types$2.heavyTank]: "heavy_tank",
+    [types$2.SPG]: "spg",
+    [types$2["AT-SPG"]]: "tank_destroyer",
+  },
+  base$34 = "VehicleType_30b4aab0",
+  base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
+  base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
+  base__x64x64 = "VehicleType_base__x64x64_bb9b890",
+  base__x96x96$1 = "VehicleType_base__x96x96_919f9f92",
+  base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
+  base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
+  base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
+  base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
+  icon$8 = "VehicleType_icon_b15d2628",
+  vehicle_type_module_default = {
+    base: base$34,
+    base__x24x24: base__x24x24,
+    base__x48x48: base__x48x48,
+    base__x64x64: base__x64x64,
+    base__x96x96: base__x96x96$1,
+    base__premium__x24x24: base__premium__x24x24,
+    base__premium__x48x48: base__premium__x48x48,
+    base__premium__x64x64: base__premium__x64x64,
+    base__premium__x96x96: base__premium__x96x96,
+    icon: icon$8,
+  },
+  VehicleType = (0, import_react.forwardRef)(function (
+    { type: e, size: t = sizes$12.x48x48, premium: n = !1, fit: r = "contain", ...a },
+    o,
+  ) {
+    const i = useUpscale(sizes$12[t], upscaledSizes[t]);
+    return (0, import_jsx_runtime.jsx)(Image$1, {
+      ...a,
+      ref: o,
+      fit: r,
+      className: clsx(
+        vehicle_type_module_default.base,
+        n
+          ? vehicle_type_module_default[`base__premium__${t}`]
+          : vehicle_type_module_default[`base__${t}`],
+        a.className,
+      ),
+      path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
+    });
+  });
+((VehicleType.types = types$2), (VehicleType.sizes = sizes$12));
+var RewardType$1 = (function (e) {
     return (
       (e.Items = "items"),
       (e.Equipment = "equipment"),
@@ -25304,6 +25267,911 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
         return e;
     }
   },
+  BackportTooltip = ({ children: e, ...t }) =>
+    (0, import_jsx_runtime.jsx)(Tooltip$1, {
+      contentId:
+        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
+      ignoreShowDelay: !0,
+      ...t,
+      children: e,
+    }),
+  DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: n }) => {
+    if (!t) return e;
+    const r = (0, import_jsx_runtime.jsx)("div", { className: n, children: e });
+    if (t.header || t.body)
+      return (0, import_jsx_runtime.jsx)(SimpleTooltip, { ...t, children: r });
+    const { contentId: a } = t;
+    return a
+      ? (0, import_jsx_runtime.jsx)(Tooltip$1, { ...t, contentId: a, children: r })
+      : (0, import_jsx_runtime.jsx)(BackportTooltip, { ...t, children: r });
+  },
+  base$33 = "Reward_c5dc614c",
+  base__s48x48$1 = "Reward_base__s48x48_ab59d545",
+  base__small$5 = "Reward_base__small_69779e9c",
+  base__s80x80$1 = "Reward_base__s80x80_ab59d545",
+  base__big$1 = "Reward_base__big_4733a488",
+  base__s128x100$1 = "Reward_base__s128x100_fb15aafa",
+  base__s180x135$1 = "Reward_base__s180x135_16cc707b",
+  base__s232x174$1 = "Reward_base__s232x174_e32aac73",
+  base__s296x222$1 = "Reward_base__s296x222_c9fbf416",
+  base__s400x300$1 = "Reward_base__s400x300_76ba5081",
+  base__s600x450$1 = "Reward_base__s600x450_aba4634a",
+  tooltipWrapper$1 = "Reward_tooltipWrapper_5c2caa5a",
+  icon$7 = "Reward_icon_ae345d69",
+  overlay$4 = "Reward_overlay_ff0a7872",
+  base__normalize = "Reward_base__normalize_ab59d545",
+  highlight$1 = "Reward_highlight_ac5e429a",
+  image$1 = "Reward_image_d9c7ed84",
+  info$1 = "Reward_info_29e76ef9",
+  info__multi$1 = "Reward_info__multi_14b911c",
+  info__credits$1 = "Reward_info__credits_a7e7bbe",
+  info__gold$1 = "Reward_info__gold_c2d9d72c",
+  info__bptaler = "Reward_info__bptaler_ab59d545",
+  info__crystal$1 = "Reward_info__crystal_ec55d024",
+  info__premiumTank$1 = "Reward_info__premiumTank_67c21f6d",
+  title$1 = "Reward_title_50579ad9",
+  timer$1 = "Reward_timer_98cb5bca",
+  Reward_module_default = {
+    base: base$33,
+    base__s48x48: base__s48x48$1,
+    base__small: base__small$5,
+    base__s80x80: base__s80x80$1,
+    base__big: base__big$1,
+    base__s128x100: base__s128x100$1,
+    base__s180x135: base__s180x135$1,
+    base__s232x174: base__s232x174$1,
+    base__s296x222: base__s296x222$1,
+    base__s400x300: base__s400x300$1,
+    base__s600x450: base__s600x450$1,
+    tooltipWrapper: tooltipWrapper$1,
+    icon: icon$7,
+    overlay: overlay$4,
+    base__normalize: base__normalize,
+    highlight: highlight$1,
+    image: image$1,
+    info: info$1,
+    info__multi: info__multi$1,
+    info__credits: info__credits$1,
+    info__gold: info__gold$1,
+    info__bptaler: info__bptaler,
+    info__crystal: info__crystal$1,
+    info__premiumTank: info__premiumTank$1,
+    title: title$1,
+    timer: timer$1,
+  },
+  Reward$1 = ({
+    name: e,
+    image: t,
+    isPeriodic: n = !1,
+    size: r = ImageSize$1.Big,
+    special: a,
+    value: o,
+    valueType: i,
+    title: s,
+    style: u,
+    className: l,
+    classNames: c,
+    tooltipArgs: d,
+    periodicIconTooltipArgs: f,
+  }) => {
+    const p = getBottomHighlight$1(r, a),
+      m = getOverlay$1(a),
+      _ = getFormattedValue$1(o, i);
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        Reward_module_default.base,
+        Reward_module_default[`base__${r}`],
+        NORMALIZE_OVERLAYS_LIST.includes(e) && Reward_module_default.base__normalize,
+        l,
+      ),
+      style: u,
+      children: [
+        (0, import_jsx_runtime.jsx)(DynamicTooltipWrapper, {
+          tooltipArgs: d,
+          className: Reward_module_default.tooltipWrapper,
+          children: (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+            children: [
+              (0, import_jsx_runtime.jsxs)("div", {
+                className: (0, import_classnames.default)(Reward_module_default.image, c?.image),
+                children: [
+                  p &&
+                    (0, import_jsx_runtime.jsx)("div", {
+                      className: (0, import_classnames.default)(
+                        Reward_module_default.highlight,
+                        c?.highlight,
+                      ),
+                      style: {
+                        backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${p}_highlight)`,
+                      },
+                    }),
+                  t &&
+                    (0, import_jsx_runtime.jsx)("div", {
+                      className: (0, import_classnames.default)(
+                        Reward_module_default.icon,
+                        c?.rewardIcon,
+                      ),
+                      style: { backgroundImage: `url(${t})` },
+                    }),
+                  m &&
+                    (0, import_jsx_runtime.jsx)("div", {
+                      className: (0, import_classnames.default)(
+                        Reward_module_default.overlay,
+                        c?.overlay,
+                      ),
+                      style: {
+                        backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${m}_overlay)`,
+                      },
+                    }),
+                ],
+              }),
+              _ &&
+                (0, import_jsx_runtime.jsx)("div", {
+                  className: (0, import_classnames.default)(
+                    Reward_module_default.info,
+                    Reward_module_default[`info__${e}`],
+                    i === ValueTypes$1.MULTI && Reward_module_default.info__multi,
+                    c?.info,
+                  ),
+                  children: _,
+                }),
+              s &&
+                (0, import_jsx_runtime.jsx)("div", {
+                  className: (0, import_classnames.default)(Reward_module_default.title, c?.title),
+                  children: s,
+                }),
+            ],
+          }),
+        }),
+        n &&
+          (0, import_jsx_runtime.jsx)(DynamicTooltipWrapper, {
+            tooltipArgs: f,
+            children: (0, import_jsx_runtime.jsx)("div", {
+              className: (0, import_classnames.default)(
+                Reward_module_default.timer,
+                c?.periodicIcon,
+              ),
+            }),
+          }),
+      ],
+    });
+  },
+  types$1 = {
+    tankXP: "tankXP",
+    freeXP: "freeXP",
+    credits: "credits",
+    gold: "gold",
+    crystal: "crystal",
+    equipCoin: "equipCoin",
+    stpCoin: "stpcoin",
+    brCoin: "brcoin",
+    eliteXp: "eliteXp",
+    depot: "depot",
+    vehicle: "vehicle",
+    crew: "crew",
+    custom: "custom",
+    xp: "xp",
+    brProgressionToken: "brProgressionToken",
+    battlePassPoints: "battlePassPoints",
+  },
+  currencyTypes = Object.values(types$1),
+  discountTypes = { currency: "currency", experience: "experience", custom: "custom" },
+  sizes$11 = {
+    extraSmall: "extraSmall",
+    small: "small",
+    medium: "medium",
+    large: "large",
+    extraLarge: "extraLarge",
+    xxl: "xxl",
+  },
+  imageSizes$1 = {
+    [sizes$11.extraSmall]: 16,
+    [sizes$11.small]: 24,
+    [sizes$11.medium]: 32,
+    [sizes$11.large]: 48,
+    [sizes$11.extraLarge]: 80,
+    [sizes$11.xxl]: 96,
+  },
+  upscaledImageSizes = {
+    [sizes$11.extraSmall]: 32,
+    [sizes$11.small]: 48,
+    [sizes$11.medium]: 32,
+    [sizes$11.large]: 96,
+    [sizes$11.extraLarge]: 80,
+    [sizes$11.xxl]: 96,
+  },
+  discountSizesConfig = {
+    [sizes$11.extraSmall]: { width: "60rem", height: "36rem" },
+    [sizes$11.small]: { width: "80rem", height: "48rem" },
+    [sizes$11.medium]: { width: "80rem", height: "48rem" },
+    [sizes$11.large]: { width: "106rem", height: "64rem" },
+    [sizes$11.extraLarge]: { width: "140rem", height: "84rem" },
+    [sizes$11.xxl]: { width: "140rem", height: "84rem" },
+  },
+  base$32 = "Currency_72d4be39",
+  base__reverse = "Currency_base__reverse_f12e61b0",
+  base__notEnough = "Currency_base__notEnough_9a7842f",
+  base__credits = "Currency_base__credits_7b9ae721",
+  base__gold$1 = "Currency_base__gold_d6e3cbc",
+  base__freeXP = "Currency_base__freeXP_d29d5a57",
+  base__crystal = "Currency_base__crystal_f830cb47",
+  base__tankXP = "Currency_base__tankXP_1707c68b",
+  currency_module_default = {
+    base: base$32,
+    base__reverse: base__reverse,
+    base__notEnough: base__notEnough,
+    base__credits: base__credits,
+    base__gold: base__gold$1,
+    base__freeXP: base__freeXP,
+    base__crystal: base__crystal,
+    base__tankXP: base__tankXP,
+  },
+  intl$1 = resources.resolve("intl"),
+  Base$18 = defineStyledComponent("Currency", currency_module_default.base, {
+    variants: { reverse: { true: currency_module_default.base__reverse } },
+  });
+function formatCurrencyValue(e, t) {
+  const n = t === types$1.gold ? "gold" : "integral";
+  return Array.isArray(e)
+    ? e.map((e) => ("number" == typeof e ? intl$1.formatNumber(n, e) : e))
+    : "number" == typeof e
+      ? intl$1.formatNumber(n, e)
+      : e;
+}
+function Currency({
+  children: e,
+  type: t,
+  className: n,
+  classNames: r,
+  imagePath: a,
+  size: o = sizes$11.small,
+  enough: i = !0,
+  ...s
+}) {
+  const u = imageSizes$1[o],
+    l = `${t}_${u}x${u}`,
+    c = upscaledImageSizes[o],
+    d = `${t}_${c}x${c}`,
+    f = a || currencyTypes.includes(t),
+    p = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
+  return (0, import_jsx_runtime.jsxs)(Base$18, {
+    ...s,
+    className: clsx(
+      r?.base,
+      i ? currency_module_default[`base__${t}`] : currency_module_default.base__notEnough,
+      n,
+    ),
+    children: [
+      f &&
+        (0, import_jsx_runtime.jsx)(Image$1, {
+          width: u,
+          height: u,
+          path: a ?? p,
+          className: r?.icon,
+        }),
+      formatCurrencyValue(e, t),
+    ],
+  });
+}
+((Currency.sizes = sizes$11), (Currency.types = types$1));
+var base$31 = "WithDiscount_b8b3aa7f",
+  discount = "WithDiscount_discount_f7ce1b97",
+  icon$6 = "WithDiscount_icon_a6c57ca8",
+  icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
+  icon__small = "WithDiscount_icon__small_60ee455a",
+  icon__medium = "WithDiscount_icon__medium_2877fd99",
+  icon__large = "WithDiscount_icon__large_6c06eeb7",
+  icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
+  icon__xxl = "WithDiscount_icon__xxl_4080bb18",
+  with_discount_module_default = {
+    base: base$31,
+    discount: discount,
+    icon: icon$6,
+    icon__extraSmall: icon__extraSmall,
+    icon__small: icon__small,
+    icon__medium: icon__medium,
+    icon__large: icon__large,
+    icon__extraLarge: icon__extraLarge,
+    icon__xxl: icon__xxl,
+  };
+function WithDiscount({
+  children: e,
+  imagePath: t,
+  size: n = sizes$11.small,
+  customImageSize: r,
+  type: a,
+  enabled: o = !1,
+  className: i,
+  classNames: s,
+}) {
+  const u = r ?? discountSizesConfig[n];
+  return (0, import_jsx_runtime.jsxs)("div", {
+    className: clsx(with_discount_module_default.base, s?.base, i),
+    children: [
+      e,
+      o &&
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(
+            with_discount_module_default.discount,
+            s?.discount,
+            a === discountTypes.experience && with_discount_module_default.discount__experience,
+          ),
+          children: (0, import_jsx_runtime.jsx)(Image$1, {
+            width: u.width,
+            height: u.height,
+            path:
+              t ?? `library.currency.discount_${a}_${n === sizes$11.xxl ? sizes$11.extraLarge : n}`,
+            className: clsx(
+              with_discount_module_default.icon,
+              s?.icon,
+              with_discount_module_default[`icon__${n}`],
+            ),
+          }),
+        }),
+    ],
+  });
+}
+var LogLevel = (function (e) {
+    return (
+      (e[(e.NonSet = 0)] = "NonSet"),
+      (e[(e.Debug = 10)] = "Debug"),
+      (e[(e.Info = 20)] = "Info"),
+      (e[(e.Warning = 30)] = "Warning"),
+      e
+    );
+  })({}),
+  CommonLogAction = (function (e) {
+    return (
+      (e.Click = "click"),
+      (e.KeyDown = "keydown"),
+      (e.Displayed = "displayed"),
+      (e.Viewed = "viewed"),
+      e
+    );
+  })({}),
+  PROPERTIES_LIMIT = 200,
+  METRICS_GROUP = "metrics",
+  convertMetricsParams = ({ partnerID: e, item: t, parentScreen: n, itemState: r, info: a }) => ({
+    item: t,
+    partnerID: e || null,
+    parent_screen: n || null,
+    item_state: r || null,
+    additional_info: a || null,
+  }),
+  _useLog = (e, t) => {
+    const n = (0, import_react.useCallback)(
+      (n, r = LogLevel.Info, a) => {
+        (a || (a = {}),
+          Object.keys(a).length >= PROPERTIES_LIMIT ||
+            window.uiLoggerModel.log({
+              feature: e,
+              group: t,
+              action: n,
+              logLevel: r,
+              params: JSON.stringify(a),
+            }));
+      },
+      [e, t],
+    );
+    return (e, t, r) => n(e, t, r);
+  },
+  useMetricsLog = (e) => {
+    const t = _useLog(e, METRICS_GROUP),
+      n = (0, import_react.useCallback)(
+        (e) => {
+          t(e.action, e.logLevel, convertMetricsParams(e));
+        },
+        [t],
+      );
+    return (e) => n(e);
+  },
+  themes = { primary: "primary", secondary: "secondary", custom: "custom" },
+  sizes$10 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
+  base$30 = "HeadlessButton_df8536fc",
+  headless_button_module_default = { base: base$30 },
+  HeadlessButtonBase = defineStyledComponent("Button", {
+    element: "button",
+    className: headless_button_module_default.base,
+  }),
+  HeadlessButton = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      onClick: t,
+      onMouseEnter: n,
+      soundTarget: r,
+      disabled: a = !1,
+      silent: o = !1,
+      ...i
+    },
+    s,
+  ) {
+    const u = useSounds();
+    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
+      ...i,
+      ref: s,
+      onMouseEnter: function (e) {
+        (a || o || u.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
+      },
+      onClick: function (e) {
+        a || (o || u.play("click", { target: r || "Button", original: e }), t?.(e));
+      },
+      children: e,
+    });
+  }),
+  background$4 = "Button_background_98ebcfb8",
+  border$3 = "Button_border_7e6390d7",
+  overlay$3 = "Button_overlay_174632c8",
+  base$29 = "Button_70871946",
+  base__enabled$1 = "Button_base__enabled_96634d40",
+  base__disabled$3 = "Button_base__disabled_b713e04a",
+  content$7 = "Button_content_298de63f",
+  content__fontAligned = "Button_content__fontAligned_66115778",
+  button_module_default = {
+    background: background$4,
+    border: border$3,
+    overlay: overlay$3,
+    base: base$29,
+    base__enabled: base__enabled$1,
+    base__disabled: base__disabled$3,
+    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
+    "base__size-small": "Button_base__size-small_fc7095a4",
+    "base__size-medium": "Button_base__size-medium_814d61f0",
+    "base__size-large": "Button_base__size-large_83da852e",
+    "base__theme-primary": "Button_base__theme-primary_8ba55469",
+    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
+    content: content$7,
+    content__fontAligned: content__fontAligned,
+  },
+  Button$1 = (0, import_react.forwardRef)(function (
+    {
+      children: e,
+      size: t = sizes$10.large,
+      theme: n = themes.primary,
+      disabled: r = !1,
+      silent: a = !1,
+      autoAlignContent: o = !0,
+      classNames: i,
+      className: s,
+      ...u
+    },
+    l,
+  ) {
+    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
+      ...u,
+      ref: l,
+      silent: a,
+      disabled: r,
+      className: clsx(
+        button_module_default.base,
+        button_module_default[`base__size-${t}`],
+        button_module_default[`base__theme-${n}`],
+        r ? button_module_default.base__disabled : button_module_default.base__enabled,
+        s,
+        i?.base,
+      ),
+      onClick: function (e) {
+        r || u.onClick?.(e);
+      },
+      children: [
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.background, i?.background),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.border, i?.border),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(button_module_default.overlay, i?.overlay),
+        }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(
+            button_module_default.content,
+            o && button_module_default.content__fontAligned,
+            i?.content,
+          ),
+          children: e,
+        }),
+      ],
+    });
+  });
+((Button$1.themes = themes), (Button$1.sizes = sizes$10));
+var IconSize = (function (e) {
+    return ((e.default = "default"), (e.x48 = "x48"), (e.x80 = "x80"), (e.x220 = "x220"), e);
+  })({}),
+  base$28 = "Badge_b4595e01",
+  base__default$1 = "Badge_base__default_6aaca100",
+  base__x48$1 = "Badge_base__x48_2b129eae",
+  Badge_module_default = { base: base$28, base__default: base__default$1, base__x48: base__x48$1 },
+  badgeFolders$1 = {
+    [IconSize.default]: "c_24x24",
+    [IconSize.x48]: "c_48x48",
+    [IconSize.x80]: "c_80x80",
+    [IconSize.x220]: "c_220x220",
+  },
+  Badge$1 = ({ badgeID: e, size: t = IconSize.default, className: n }) => {
+    const r = R.images.gui.maps.icons.library.badges.$dyn(badgeFolders$1[t]);
+    return (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        Badge_module_default.base,
+        Badge_module_default[`base__${t}`],
+        n,
+      ),
+      style: { backgroundImage: `url(${r.$dyn(`badge_${e}`)})` },
+    });
+  },
+  DomAction = { Inline: 0, Block: 1, Skip: 2, Break: 3 },
+  domActions = {
+    AREA: DomAction.Skip,
+    BASE: DomAction.Skip,
+    BASEFONT: DomAction.Skip,
+    DATALIST: DomAction.Skip,
+    HEAD: DomAction.Skip,
+    LINK: DomAction.Skip,
+    META: DomAction.Skip,
+    NOEMBED: DomAction.Skip,
+    NOFRAMES: DomAction.Skip,
+    PARAM: DomAction.Skip,
+    RP: DomAction.Skip,
+    SCRIPT: DomAction.Skip,
+    STYLE: DomAction.Skip,
+    TEMPLATE: DomAction.Skip,
+    TITLE: DomAction.Skip,
+    NOSCRIPT: DomAction.Skip,
+    HR: DomAction.Break,
+    LISTING: DomAction.Skip,
+    PLAINTEXT: DomAction.Skip,
+    PRE: DomAction.Skip,
+    XMP: DomAction.Skip,
+    BR: DomAction.Break,
+    RT: DomAction.Skip,
+    INPUT: DomAction.Skip,
+    SELECT: DomAction.Skip,
+    BUTTON: DomAction.Skip,
+    TEXTAREA: DomAction.Skip,
+    ABBR: DomAction.Skip,
+    CODE: DomAction.Skip,
+    IFRAME: DomAction.Skip,
+    TIME: DomAction.Skip,
+    VAR: DomAction.Skip,
+  };
+function format(e, t) {
+  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
+}
+function formatPrintf(e, t) {
+  return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
+    const n = 0 === e.indexOf("%") ? 2 : 1;
+    return String(t[e.slice(n, -n)]);
+  });
+}
+var splitChinese = (() => {
+    const e = new RegExp(
+      [
+        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+      ]
+        .map((e) => e.source)
+        .join("|"),
+      "gum",
+    );
+    return (t) =>
+      t
+        .replace(/&nbsp;/g, " ")
+        .replace(/ /g, " ")
+        .match(e);
+  })(),
+  base$27 = "Playernickname_23cd38ea",
+  userName = "Playernickname_userName_fcb876e7",
+  igrIcon = "Playernickname_igrIcon_c8baaf95",
+  base__default = "Playernickname_base__default_4dc1c796",
+  base__x48 = "Playernickname_base__x48_4dc1c796",
+  suffixBadgeWrapper = "Playernickname_suffixBadgeWrapper_357391ed",
+  suffixBadgeStripe = "Playernickname_suffixBadgeStripe_9151ff4c",
+  base__inverted = "Playernickname_base__inverted_4dc1c796",
+  suffixBadge = "Playernickname_suffixBadge_1bf5fe7f",
+  anonymizedIcon = "Playernickname_anonymizedIcon_5d7db845",
+  PlayerNickname_module_default = {
+    base: base$27,
+    userName: userName,
+    igrIcon: igrIcon,
+    base__default: base__default,
+    base__x48: base__x48,
+    suffixBadgeWrapper: suffixBadgeWrapper,
+    suffixBadgeStripe: suffixBadgeStripe,
+    base__inverted: base__inverted,
+    suffixBadge: suffixBadge,
+    anonymizedIcon: anonymizedIcon,
+  },
+  UsernameAnonymizerComponent = ({ tooltipHeaderName: e }) =>
+    (0, import_jsx_runtime.jsx)(SimpleTooltip, {
+      header: (0, import_react.useMemo)(
+        () => formatPrintf(R.strings.tooltips.anonymizer.teamStats.header(), { name: e }),
+        [e],
+      ),
+      body: R.strings.tooltips.anonymizer.teamStats.body(),
+      children: (0, import_jsx_runtime.jsx)("div", {
+        className: PlayerNickname_module_default.anonymizedIcon,
+      }),
+    }),
+  UsernameAnonymizer = (0, import_react.memo)(UsernameAnonymizerComponent),
+  suffixBadgeStripeFolders = { [IconSize.default]: "c_64x24", [IconSize.x48]: "c_68x28" },
+  siffixBadgeFolders = { [IconSize.default]: "c_48x48", [IconSize.x48]: "c_48x48" },
+  PlayerNickname = ({
+    userName: e,
+    clanAbbrev: t = "",
+    igrType: n = 0,
+    badge: r = { badgeID: "" },
+    suffixBadge: a = { badgeID: "" },
+    isInverted: o = !1,
+    isFakeNameVisible: i = !1,
+    isAnonymizerShown: s = !1,
+    hiddenUserName: u = "",
+    size: l = IconSize.default,
+    userNameClassName: c = "",
+    clanTagClassName: d = "",
+  }) => {
+    const f = R.images.gui.maps.icons.library.badges.strips.$dyn(suffixBadgeStripeFolders[l]),
+      p = (0, import_react.useMemo)(
+        () => ({ backgroundImage: `url(${f.$dyn(`strip_${a.badgeID}`)})` }),
+        [a, f],
+      ),
+      m = R.images.gui.maps.icons.library.badges.$dyn(siffixBadgeFolders[l]),
+      _ = (0, import_react.useMemo)(
+        () => ({ backgroundImage: `url(${m.$dyn(`badge_${a.badgeID}`)})` }),
+        [a, m],
+      ),
+      h = t ? `[${t}]` : "",
+      g = (0, import_classnames.default)(
+        PlayerNickname_module_default.base,
+        PlayerNickname_module_default[`base__${l}`],
+        o && PlayerNickname_module_default.base__inverted,
+      ),
+      b = (0, import_classnames.default)(PlayerNickname_module_default.userName, c),
+      v = (0, import_classnames.default)(PlayerNickname_module_default.clanTag, d),
+      y = e !== u,
+      E = i ? `${u}${h}` : u,
+      S = [
+        Boolean(r.badgeID) &&
+          (0, import_react.createElement)(Badge$1, { size: l, ...r, key: "badge" }),
+        [
+          (0, import_jsx_runtime.jsx)(
+            "div",
+            {
+              className: b,
+              children: (0, import_jsx_runtime.jsx)(TextOverflow, { content: e }, Date.now()),
+            },
+            "userName",
+          ),
+          !i &&
+            Boolean(h) &&
+            (0, import_jsx_runtime.jsx)("div", { className: v, children: h }, "clanTag"),
+        ],
+        0 !== n &&
+          (0, import_jsx_runtime.jsx)(
+            "div",
+            { className: PlayerNickname_module_default.igrIcon },
+            "igrType",
+          ),
+        Boolean(a.badgeID) &&
+          (0, import_jsx_runtime.jsxs)(
+            "div",
+            {
+              className: PlayerNickname_module_default.suffixBadgeWrapper,
+              children: [
+                (0, import_jsx_runtime.jsx)("div", {
+                  className: PlayerNickname_module_default.suffixBadgeStripe,
+                  style: p,
+                }),
+                (0, import_jsx_runtime.jsx)("div", {
+                  className: PlayerNickname_module_default.suffixBadge,
+                  style: _,
+                }),
+              ],
+            },
+            "suffixBadge",
+          ),
+        s &&
+          y &&
+          (0, import_jsx_runtime.jsx)(UsernameAnonymizer, { tooltipHeaderName: E }, "anonymizer"),
+      ];
+    return (0, import_jsx_runtime.jsx)("div", { className: g, children: o ? S.reverse() : S });
+  },
+  clamp$1 = (e, t, n) => (n < e ? e : n > t ? t : n);
+function noop$1() {}
+var useMount = (e) => {
+    (0, import_react.useEffect)(e, []);
+  },
+  useUnmount = (e) => {
+    (0, import_react.useEffect)(() => e, []);
+  },
+  DEFAULT_NAME_KEYFRAME = "Point",
+  THRESHOLD = 0.02;
+function createLoop(e) {
+  let t = 0;
+  return [
+    function n() {
+      (e(), (t = requestAnimationFrame(n)));
+    },
+    function () {
+      cancelAnimationFrame(t);
+    },
+  ];
+}
+var VideoForwarded = (0, import_react.forwardRef)(function (
+    {
+      src: e,
+      className: t,
+      autoplay: n = !1,
+      style: r,
+      loop: a = !1,
+      isPrebufferKeyframes: o,
+      keyframesNameConfig: i,
+      onClick: s,
+      ...u
+    },
+    l,
+  ) {
+    const c = l,
+      d = (0, import_react.useRef)(null);
+    return (
+      useMount(() => {
+        let e = !1;
+        return env.view.events.onDisplayChanged((t, n) => {
+          const r = d.current;
+          r &&
+            (n === env.view.displayStatus.hidden
+              ? ((e = r.paused), r.pause())
+              : e || n !== env.view.displayStatus.shown || r.play());
+        });
+      }),
+      useMount(() => {
+        let e = !1;
+        return env.client.events.onMinimize((t) => {
+          const n = d.current;
+          n && (t ? ((e = n.paused), n.pause()) : e || n.play());
+        });
+      }),
+      (0, import_react.useEffect)(
+        () =>
+          createLayoutReadyInEffect(() => {
+            const e = d.current;
+            if (!c || !e || !o) return void (e?.cohFastSeek && (e.cohFastSeek = !1));
+            const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
+            t.length > 0
+              ? ((e.cohFastSeek = !0),
+                t.map((t) => {
+                  e?.cohPrebufferKeyframe && e.cohPrebufferKeyframe(t);
+                }))
+              : console.warn("Can't prebuffered keyframes, keyframes was not found");
+          }),
+        [o, c],
+      ),
+      (0, import_react.useEffect)(() => {
+        if (c && d.current) {
+          const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop$1 },
+            t = () => {
+              let t = 0;
+              const [n, r] = createLoop(() => {
+                if (d.current) {
+                  const { currentTime: n, duration: r } = d.current;
+                  if (
+                    (t !== n &&
+                      (e.changeTimeHandlers.forEach((e) => e({ currentTime: n, duration: r })),
+                      (t = n)),
+                    d.current.paused || !c || !o)
+                  )
+                    return;
+                  const a = d.current.cohGetKeyframeTimestamps
+                    ? d.current.cohGetKeyframeTimestamps()
+                    : [];
+                  a.forEach((t, r) => {
+                    void 0 !== a[r] &&
+                      n > a[r] - THRESHOLD &&
+                      n < a[r] &&
+                      e.changeKeyframeHandlers.forEach((e) => {
+                        const n = Object.keys(i ?? {})[r];
+                        return e({ time: t, name: `${i ? n : `${DEFAULT_NAME_KEYFRAME}_${r}`}` });
+                      });
+                  });
+                }
+              });
+              return (n(), r);
+            };
+          e.changeTimeLoop = t();
+          const n = (t) => (
+              e.changeTimeHandlers.push(t),
+              () => {
+                const { changeTimeHandlers: n } = e,
+                  r = n.indexOf(t);
+                r < 0
+                  ? console.warn(
+                      "Can't unsubscribe changeTimeHandler, this reference was not found",
+                    )
+                  : n.splice(r, 1);
+              }
+            ),
+            r = (t) => (
+              e.changeKeyframeHandlers.push(t),
+              () => {
+                const { changeKeyframeHandlers: n } = e,
+                  r = n.indexOf(t);
+                r < 0
+                  ? console.warn(
+                      "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
+                    )
+                  : n.splice(r, 1);
+              }
+            ),
+            a = () => d.current?.currentTime,
+            s = () => d.current?.duration,
+            u = (e) => {
+              d.current && (d.current.currentTime = clamp$1(0, d.current.duration, e));
+            },
+            l = () => d.current?.play(),
+            f = () => d.current?.pause(),
+            p = () => {
+              (f(), u(0));
+            },
+            m = () =>
+              d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : [],
+            _ = (e) => {
+              (u(e), l());
+            },
+            h = (e) => {
+              (u(e), f());
+            },
+            g = () => {
+              ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
+            },
+            b = (e, t) => (
+              d.current?.addEventListener(e, t),
+              () => d.current?.removeEventListener(e, t)
+            ),
+            v = (e, t) => (
+              d.current?.removeEventListener(e, t),
+              () => d.current?.removeEventListener(e, t)
+            );
+          return (
+            (c.current = {
+              on: b,
+              off: v,
+              play: l,
+              pause: f,
+              stop: p,
+              cleanup: g,
+              getCurrentTime: a,
+              getDuration: s,
+              getCachedKeyframes: m,
+              goToAndPlay: _,
+              goToAndStop: h,
+              setCurrentTime: u,
+              domRef: d.current,
+              onChangeTime: n,
+              onKeyframes: r,
+            }),
+            () => {
+              (g(), (c.current = null));
+            }
+          );
+        }
+      }, [i, c, o]),
+      (0, import_react.useEffect)(() => {
+        d.current && n && d.current.play();
+      }, [n, a]),
+      useUnmount(() => {
+        d.current?.pause();
+      }),
+      (0, import_jsx_runtime.jsx)("video", {
+        src: e,
+        className: t,
+        style: r,
+        loop: a,
+        ref: d,
+        onClick: s,
+        ...u,
+      })
+    );
+  }),
+  Video = (0, import_react.memo)(VideoForwarded),
   RewardType = (function (e) {
     return (
       (e.Items = "items"),
@@ -25544,24 +26412,24 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
     }
   },
   base__s24x24 = "Reward_base__s24x24_954b5cee",
-  base__s48x48$1 = "Reward_base__s48x48_21f091ec",
-  base__small$5 = "Reward_base__small_3eddf28d",
-  base__s80x80$1 = "Reward_base__s80x80_21f091ec",
-  base__big$1 = "Reward_base__big_e23f2c77",
-  base__s128x100$1 = "Reward_base__s128x100_1e08e04b",
-  base__s180x135$1 = "Reward_base__s180x135_93fc57c",
-  base__s232x174$1 = "Reward_base__s232x174_2904ea89",
-  base__s296x222$1 = "Reward_base__s296x222_52f0615b",
-  base__s400x300$1 = "Reward_base__s400x300_a8627e1b",
-  base__s600x450$1 = "Reward_base__s600x450_e27f3852",
+  base__s48x48 = "Reward_base__s48x48_21f091ec",
+  base__small$4 = "Reward_base__small_3eddf28d",
+  base__s80x80 = "Reward_base__s80x80_21f091ec",
+  base__big = "Reward_base__big_e23f2c77",
+  base__s128x100 = "Reward_base__s128x100_1e08e04b",
+  base__s180x135 = "Reward_base__s180x135_93fc57c",
+  base__s232x174 = "Reward_base__s232x174_2904ea89",
+  base__s296x222 = "Reward_base__s296x222_52f0615b",
+  base__s400x300 = "Reward_base__s400x300_a8627e1b",
+  base__s600x450 = "Reward_base__s600x450_e27f3852",
   base__s300x300 = "Reward_base__s300x300_b3d79936",
   base__s450x450 = "Reward_base__s450x450_8b0abaf7",
-  base$35 = "Reward_d65e1e12",
+  base$26 = "Reward_d65e1e12",
   base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
-  tooltipWrapper$1 = "Reward_tooltipWrapper_75b925a5",
-  icon$8 = "Reward_icon_e152f13b",
-  overlay$4 = "Reward_overlay_8cbe65c9",
-  highlight$1 = "Reward_highlight_f1cd08e0",
+  tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
+  icon$5 = "Reward_icon_e152f13b",
+  overlay$2 = "Reward_overlay_8cbe65c9",
+  highlight = "Reward_highlight_f1cd08e0",
   image__s24x24 = "Reward_image__s24x24_954b5cee",
   image__s48x48 = "Reward_image__s48x48_21f091ec",
   image__small = "Reward_image__small_3eddf28d",
@@ -25575,36 +26443,36 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
   image__s600x450 = "Reward_image__s600x450_e27f3852",
   image__s300x300 = "Reward_image__s300x300_b3d79936",
   image__s450x450 = "Reward_image__s450x450_8b0abaf7",
-  image$1 = "Reward_image_810ec3a2",
+  image = "Reward_image_810ec3a2",
   image__fixedBox = "Reward_image__fixedBox_e45bdd8a",
-  info$1 = "Reward_info_26d38c48",
-  info__multi$1 = "Reward_info__multi_465d34bd",
-  info__credits$1 = "Reward_info__credits_1643219",
-  info__gold$1 = "Reward_info__gold_c751be5d",
-  info__crystal$1 = "Reward_info__crystal_18ccfdd0",
-  info__premiumTank$1 = "Reward_info__premiumTank_7862152",
-  title$1 = "Reward_title_fbcf4b5",
-  timer$1 = "Reward_timer_22ba7b8b",
+  info = "Reward_info_26d38c48",
+  info__multi = "Reward_info__multi_465d34bd",
+  info__credits = "Reward_info__credits_1643219",
+  info__gold = "Reward_info__gold_c751be5d",
+  info__crystal = "Reward_info__crystal_18ccfdd0",
+  info__premiumTank = "Reward_info__premiumTank_7862152",
+  title = "Reward_title_fbcf4b5",
+  timer = "Reward_timer_22ba7b8b",
   reward_module_default = {
     base__s24x24: base__s24x24,
-    base__s48x48: base__s48x48$1,
-    base__small: base__small$5,
-    base__s80x80: base__s80x80$1,
-    base__big: base__big$1,
-    base__s128x100: base__s128x100$1,
-    base__s180x135: base__s180x135$1,
-    base__s232x174: base__s232x174$1,
-    base__s296x222: base__s296x222$1,
-    base__s400x300: base__s400x300$1,
-    base__s600x450: base__s600x450$1,
+    base__s48x48: base__s48x48,
+    base__small: base__small$4,
+    base__s80x80: base__s80x80,
+    base__big: base__big,
+    base__s128x100: base__s128x100,
+    base__s180x135: base__s180x135,
+    base__s232x174: base__s232x174,
+    base__s296x222: base__s296x222,
+    base__s400x300: base__s400x300,
+    base__s600x450: base__s600x450,
     base__s300x300: base__s300x300,
     base__s450x450: base__s450x450,
-    base: base$35,
+    base: base$26,
     base__dynamicBox: base__dynamicBox,
-    tooltipWrapper: tooltipWrapper$1,
-    icon: icon$8,
-    overlay: overlay$4,
-    highlight: highlight$1,
+    tooltipWrapper: tooltipWrapper,
+    icon: icon$5,
+    overlay: overlay$2,
+    highlight: highlight,
     image__s24x24: image__s24x24,
     image__s48x48: image__s48x48,
     image__small: image__small,
@@ -25618,23 +26486,23 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
     image__s600x450: image__s600x450,
     image__s300x300: image__s300x300,
     image__s450x450: image__s450x450,
-    image: image$1,
+    image: image,
     image__fixedBox: image__fixedBox,
-    info: info$1,
-    info__multi: info__multi$1,
-    info__credits: info__credits$1,
-    info__gold: info__gold$1,
-    info__crystal: info__crystal$1,
-    info__premiumTank: info__premiumTank$1,
-    title: title$1,
-    timer: timer$1,
+    info: info,
+    info__multi: info__multi,
+    info__credits: info__credits,
+    info__gold: info__gold,
+    info__crystal: info__crystal,
+    info__premiumTank: info__premiumTank,
+    title: title,
+    timer: timer,
   },
   images$1 = resources.resolve("images"),
   SIZE_MAP = new Map([
     [ImageSize.S24x24, ImageSize.Small],
     [ImageSize.S48x48, ImageSize.Small],
   ]),
-  Reward$1 = ({
+  Reward = ({
     name: e,
     image: t,
     isPeriodic: n = !1,
@@ -25740,13 +26608,13 @@ function renderString(e, t = {}) {
   const n = parse(e, defaultBrackets);
   return String(render(n, formatters, t));
 }
-var base$34 = "RewardsList_b956755b",
+var base$25 = "RewardsList_b956755b",
   base__vertical = "RewardsList_base__vertical_59db3c9f",
   reward = "RewardsList_reward_fc200613",
   reward__vertical = "RewardsList_reward__vertical_5f09c6e0",
   boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
   rewards_list_module_default = {
-    base: base$34,
+    base: base$25,
     base__vertical: base__vertical,
     reward: reward,
     reward__vertical: reward__vertical,
@@ -25798,7 +26666,7 @@ var base$34 = "RewardsList_b956755b",
                           r && rewards_list_module_default.reward__vertical,
                           i,
                         ),
-                        children: (0, import_jsx_runtime.jsx)(Reward$1, {
+                        children: (0, import_jsx_runtime.jsx)(Reward, {
                           size: n,
                           isFixedBoxSize: t,
                           ...e,
@@ -25813,7 +26681,7 @@ var base$34 = "RewardsList_b956755b",
                     r && rewards_list_module_default.reward__vertical,
                     i,
                   ),
-                  children: (0, import_jsx_runtime.jsx)(Reward$1, {
+                  children: (0, import_jsx_runtime.jsx)(Reward, {
                     name: "more",
                     isFixedBoxSize: t,
                     image: p,
@@ -25838,7 +26706,7 @@ var base$34 = "RewardsList_b956755b",
                     r && rewards_list_module_default.reward__vertical,
                     i,
                   ),
-                  children: (0, import_jsx_runtime.jsx)(Reward$1, {
+                  children: (0, import_jsx_runtime.jsx)(Reward, {
                     size: n,
                     isFixedBoxSize: t,
                     ...e,
@@ -25849,874 +26717,14 @@ var base$34 = "RewardsList_b956755b",
             ),
     });
   }),
-  base$33 = "TruncateText_dcb41d92",
-  truncate_text_module_default = { base: base$33 },
-  TruncatedText = (0, import_react.forwardRef)(function (
-    { text: e, tooltipParams: t, className: n, ...r },
-    a,
-  ) {
-    const o = useSimpleTooltip({ header: t?.header, body: t?.body || e }),
-      i = (0, import_react.useRef)(null),
-      [s, u] = (0, import_react.useState)(!1),
-      l = (0, import_react.useCallback)(() => {
-        i.current &&
-          u(i.current.scrollWidth - Math.ceil(i.current.getBoundingClientRect().width) > 0);
-      }, []);
-    return (
-      (0, import_react.useEffect)(() => {
-        s || o.onMouseLeave();
-      }, [s, o]),
-      useLayoutReady(l, [l]),
-      useResizeLayoutReady(l, [l]),
-      useRefResizeObserver(i, l),
-      (0, import_jsx_runtime.jsx)("div", {
-        ...r,
-        ref: assignRefs([a, i]),
-        className: clsx(truncate_text_module_default.base, n),
-        ...(s ? o : {}),
-        children: e,
-      })
-    );
-  }),
-  LIGHT_TANK = "lightTank",
-  MEDIUM_TANK = "mediumTank",
-  HEAVY_TANK = "heavyTank",
-  AT_SPG = "AT-SPG",
-  types$2 = {
-    lightTank: LIGHT_TANK,
-    mediumTank: MEDIUM_TANK,
-    heavyTank: HEAVY_TANK,
-    SPG: "SPG",
-    "AT-SPG": AT_SPG,
-  },
-  typeValues = Object.values(types$2),
-  normilizeVehicleType = (e) => e.replace("-", "_"),
-  isTypeValidValue = (e) => typeValues.includes(e),
-  WITHOUT_ROLE = "without_role",
-  roles$1 = {
-    assault: "assault",
-    sniper: "sniper",
-    support: "support",
-    universal: "universal",
-    break: "break",
-    scout: "scout",
-    spg: "spg",
-  },
-  mapRoleByKey = [
-    WITHOUT_ROLE,
-    roles$1.spg,
-    roles$1.assault,
-    roles$1.break,
-    roles$1.universal,
-    roles$1.support,
-    roles$1.assault,
-    roles$1.support,
-    roles$1.universal,
-    roles$1.sniper,
-    roles$1.assault,
-    roles$1.universal,
-    roles$1.sniper,
-    roles$1.support,
-    roles$1.universal,
-    WITHOUT_ROLE,
-    roles$1.scout,
-    roles$1.support,
-  ],
-  getRoleByKey = (e) => mapRoleByKey[e] ?? "without_role",
-  atSpgRoles = [roles$1.assault, roles$1.universal, roles$1.sniper, roles$1.support],
-  heavyTankRoles = [roles$1.assault, roles$1.break, roles$1.universal, roles$1.support],
-  mediumTankRoles = [roles$1.assault, roles$1.support, roles$1.universal, roles$1.sniper],
-  lightTankRoles = [roles$1.universal, roles$1.scout, roles$1.support],
-  vehicleState = {
-    DAMAGED: "damaged",
-    EXPLODED: "exploded",
-    DESTROYED: "destroyed",
-    UNDAMAGED: "undamaged",
-    BATTLE: "battle",
-    IN_PREBATTLE: "inPrebattle",
-    LOCKED: "locked",
-    CREW_NOT_FULL: "crewNotFull",
-    AMMO_NOT_FULL: "ammoNotFull",
-    AMMO_NOT_FULL_EVENTS: "ammoNotFullEvents",
-    SERVER_RESTRICTION: "serverRestriction",
-    RENTAL_IS_OVER: "rentalIsOver",
-    IGR_RENTAL_IS_OVER: "igrRentalIsOver",
-    IN_PREMIUM_IGR_ONLY: "inPremiumIgrOnly",
-    GROUP_IS_NOT_READY: "group_is_not_ready",
-    NOT_PRESENT: "notpresent",
-    UNAVAILABLE: "unavailable",
-    UNSUITABLE_TO_QUEUE: "unsuitableToQueue",
-    UNSUITABLE_TO_UNIT: "unsuitableToUnit",
-    WILL_BE_UNLOCKED_IN_BATTLE: "willBeUnlockedInBattle",
-    DEAL_IS_OVER: "dealIsOver",
-    ROTATION_GROUP_UNLOCKED: "rotationGroupUnlocked",
-    ROTATION_GROUP_LOCKED: "rotationGroupLocked",
-    RENTABLE: "rentable",
-    RENTABLE_AGAIN: "rentableAgain",
-    DISABLED: "disabled",
-    SUBSCRIPTION_SUSPENDED: "subscription_suspended",
-    WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED: "wot_plus_exclusive_vehicle_disabled",
-  },
-  stateValues = Object.values(vehicleState),
-  sizes$12 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
-  upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
-  mapTypes = {
-    [types$2.lightTank]: "light_tank",
-    [types$2.mediumTank]: "medium_tank",
-    [types$2.heavyTank]: "heavy_tank",
-    [types$2.SPG]: "spg",
-    [types$2["AT-SPG"]]: "tank_destroyer",
-  },
-  base$32 = "VehicleType_30b4aab0",
-  base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
-  base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
-  base__x64x64 = "VehicleType_base__x64x64_bb9b890",
-  base__x96x96$1 = "VehicleType_base__x96x96_919f9f92",
-  base__premium__x24x24 = "VehicleType_base__premium__x24x24_92335fef",
-  base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
-  base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
-  base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
-  icon$7 = "VehicleType_icon_b15d2628",
-  vehicle_type_module_default = {
-    base: base$32,
-    base__x24x24: base__x24x24,
-    base__x48x48: base__x48x48,
-    base__x64x64: base__x64x64,
-    base__x96x96: base__x96x96$1,
-    base__premium__x24x24: base__premium__x24x24,
-    base__premium__x48x48: base__premium__x48x48,
-    base__premium__x64x64: base__premium__x64x64,
-    base__premium__x96x96: base__premium__x96x96,
-    icon: icon$7,
-  },
-  VehicleType = (0, import_react.forwardRef)(function (
-    { type: e, size: t = sizes$12.x48x48, premium: n = !1, fit: r = "contain", ...a },
-    o,
-  ) {
-    const i = useUpscale(sizes$12[t], upscaledSizes[t]);
-    return (0, import_jsx_runtime.jsx)(Image$1, {
-      ...a,
-      ref: o,
-      fit: r,
-      className: clsx(
-        vehicle_type_module_default.base,
-        n
-          ? vehicle_type_module_default[`base__premium__${t}`]
-          : vehicle_type_module_default[`base__${t}`],
-        a.className,
-      ),
-      path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
-    });
-  });
-((VehicleType.types = types$2), (VehicleType.sizes = sizes$12));
-var BackportTooltip = ({ children: e, ...t }) =>
-    (0, import_jsx_runtime.jsx)(Tooltip$1, {
-      contentId:
-        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
-      ignoreShowDelay: !0,
-      ...t,
-      children: e,
-    }),
-  DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: n }) => {
-    if (!t) return e;
-    const r = (0, import_jsx_runtime.jsx)("div", { className: n, children: e });
-    if (t.header || t.body)
-      return (0, import_jsx_runtime.jsx)(SimpleTooltip, { ...t, children: r });
-    const { contentId: a } = t;
-    return a
-      ? (0, import_jsx_runtime.jsx)(Tooltip$1, { ...t, contentId: a, children: r })
-      : (0, import_jsx_runtime.jsx)(BackportTooltip, { ...t, children: r });
-  },
-  base$31 = "Reward_c5dc614c",
-  base__s48x48 = "Reward_base__s48x48_ab59d545",
-  base__small$4 = "Reward_base__small_69779e9c",
-  base__s80x80 = "Reward_base__s80x80_ab59d545",
-  base__big = "Reward_base__big_4733a488",
-  base__s128x100 = "Reward_base__s128x100_fb15aafa",
-  base__s180x135 = "Reward_base__s180x135_16cc707b",
-  base__s232x174 = "Reward_base__s232x174_e32aac73",
-  base__s296x222 = "Reward_base__s296x222_c9fbf416",
-  base__s400x300 = "Reward_base__s400x300_76ba5081",
-  base__s600x450 = "Reward_base__s600x450_aba4634a",
-  tooltipWrapper = "Reward_tooltipWrapper_5c2caa5a",
-  icon$6 = "Reward_icon_ae345d69",
-  overlay$3 = "Reward_overlay_ff0a7872",
-  base__normalize = "Reward_base__normalize_ab59d545",
-  highlight = "Reward_highlight_ac5e429a",
-  image = "Reward_image_d9c7ed84",
-  info = "Reward_info_29e76ef9",
-  info__multi = "Reward_info__multi_14b911c",
-  info__credits = "Reward_info__credits_a7e7bbe",
-  info__gold = "Reward_info__gold_c2d9d72c",
-  info__bptaler = "Reward_info__bptaler_ab59d545",
-  info__crystal = "Reward_info__crystal_ec55d024",
-  info__premiumTank = "Reward_info__premiumTank_67c21f6d",
-  title = "Reward_title_50579ad9",
-  timer = "Reward_timer_98cb5bca",
-  Reward_module_default = {
-    base: base$31,
-    base__s48x48: base__s48x48,
-    base__small: base__small$4,
-    base__s80x80: base__s80x80,
-    base__big: base__big,
-    base__s128x100: base__s128x100,
-    base__s180x135: base__s180x135,
-    base__s232x174: base__s232x174,
-    base__s296x222: base__s296x222,
-    base__s400x300: base__s400x300,
-    base__s600x450: base__s600x450,
-    tooltipWrapper: tooltipWrapper,
-    icon: icon$6,
-    overlay: overlay$3,
-    base__normalize: base__normalize,
-    highlight: highlight,
-    image: image,
-    info: info,
-    info__multi: info__multi,
-    info__credits: info__credits,
-    info__gold: info__gold,
-    info__bptaler: info__bptaler,
-    info__crystal: info__crystal,
-    info__premiumTank: info__premiumTank,
-    title: title,
-    timer: timer,
-  },
-  Reward = ({
-    name: e,
-    image: t,
-    isPeriodic: n = !1,
-    size: r = ImageSize$1.Big,
-    special: a,
-    value: o,
-    valueType: i,
-    title: s,
-    style: u,
-    className: l,
-    classNames: c,
-    tooltipArgs: d,
-    periodicIconTooltipArgs: f,
-  }) => {
-    const p = getBottomHighlight$1(r, a),
-      m = getOverlay$1(a),
-      _ = getFormattedValue$1(o, i);
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        Reward_module_default.base,
-        Reward_module_default[`base__${r}`],
-        NORMALIZE_OVERLAYS_LIST.includes(e) && Reward_module_default.base__normalize,
-        l,
-      ),
-      style: u,
-      children: [
-        (0, import_jsx_runtime.jsx)(DynamicTooltipWrapper, {
-          tooltipArgs: d,
-          className: Reward_module_default.tooltipWrapper,
-          children: (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-            children: [
-              (0, import_jsx_runtime.jsxs)("div", {
-                className: (0, import_classnames.default)(Reward_module_default.image, c?.image),
-                children: [
-                  p &&
-                    (0, import_jsx_runtime.jsx)("div", {
-                      className: (0, import_classnames.default)(
-                        Reward_module_default.highlight,
-                        c?.highlight,
-                      ),
-                      style: {
-                        backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${p}_highlight)`,
-                      },
-                    }),
-                  t &&
-                    (0, import_jsx_runtime.jsx)("div", {
-                      className: (0, import_classnames.default)(
-                        Reward_module_default.icon,
-                        c?.rewardIcon,
-                      ),
-                      style: { backgroundImage: `url(${t})` },
-                    }),
-                  m &&
-                    (0, import_jsx_runtime.jsx)("div", {
-                      className: (0, import_classnames.default)(
-                        Reward_module_default.overlay,
-                        c?.overlay,
-                      ),
-                      style: {
-                        backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${m}_overlay)`,
-                      },
-                    }),
-                ],
-              }),
-              _ &&
-                (0, import_jsx_runtime.jsx)("div", {
-                  className: (0, import_classnames.default)(
-                    Reward_module_default.info,
-                    Reward_module_default[`info__${e}`],
-                    i === ValueTypes$1.MULTI && Reward_module_default.info__multi,
-                    c?.info,
-                  ),
-                  children: _,
-                }),
-              s &&
-                (0, import_jsx_runtime.jsx)("div", {
-                  className: (0, import_classnames.default)(Reward_module_default.title, c?.title),
-                  children: s,
-                }),
-            ],
-          }),
-        }),
-        n &&
-          (0, import_jsx_runtime.jsx)(DynamicTooltipWrapper, {
-            tooltipArgs: f,
-            children: (0, import_jsx_runtime.jsx)("div", {
-              className: (0, import_classnames.default)(
-                Reward_module_default.timer,
-                c?.periodicIcon,
-              ),
-            }),
-          }),
-      ],
-    });
-  },
-  types$1 = {
-    tankXP: "tankXP",
-    freeXP: "freeXP",
-    credits: "credits",
-    gold: "gold",
-    crystal: "crystal",
-    equipCoin: "equipCoin",
-    stpCoin: "stpcoin",
-    brCoin: "brcoin",
-    eliteXp: "eliteXp",
-    depot: "depot",
-    vehicle: "vehicle",
-    crew: "crew",
-    custom: "custom",
-    xp: "xp",
-    brProgressionToken: "brProgressionToken",
-    battlePassPoints: "battlePassPoints",
-  },
-  currencyTypes = Object.values(types$1),
-  discountTypes = { currency: "currency", experience: "experience", custom: "custom" },
-  sizes$11 = {
-    extraSmall: "extraSmall",
-    small: "small",
-    medium: "medium",
-    large: "large",
-    extraLarge: "extraLarge",
-    xxl: "xxl",
-  },
-  imageSizes$1 = {
-    [sizes$11.extraSmall]: 16,
-    [sizes$11.small]: 24,
-    [sizes$11.medium]: 32,
-    [sizes$11.large]: 48,
-    [sizes$11.extraLarge]: 80,
-    [sizes$11.xxl]: 96,
-  },
-  upscaledImageSizes = {
-    [sizes$11.extraSmall]: 32,
-    [sizes$11.small]: 48,
-    [sizes$11.medium]: 32,
-    [sizes$11.large]: 96,
-    [sizes$11.extraLarge]: 80,
-    [sizes$11.xxl]: 96,
-  },
-  discountSizesConfig = {
-    [sizes$11.extraSmall]: { width: "60rem", height: "36rem" },
-    [sizes$11.small]: { width: "80rem", height: "48rem" },
-    [sizes$11.medium]: { width: "80rem", height: "48rem" },
-    [sizes$11.large]: { width: "106rem", height: "64rem" },
-    [sizes$11.extraLarge]: { width: "140rem", height: "84rem" },
-    [sizes$11.xxl]: { width: "140rem", height: "84rem" },
-  },
-  base$30 = "Currency_72d4be39",
-  base__reverse = "Currency_base__reverse_f12e61b0",
-  base__notEnough = "Currency_base__notEnough_9a7842f",
-  base__credits = "Currency_base__credits_7b9ae721",
-  base__gold$1 = "Currency_base__gold_d6e3cbc",
-  base__freeXP = "Currency_base__freeXP_d29d5a57",
-  base__crystal = "Currency_base__crystal_f830cb47",
-  base__tankXP = "Currency_base__tankXP_1707c68b",
-  currency_module_default = {
-    base: base$30,
-    base__reverse: base__reverse,
-    base__notEnough: base__notEnough,
-    base__credits: base__credits,
-    base__gold: base__gold$1,
-    base__freeXP: base__freeXP,
-    base__crystal: base__crystal,
-    base__tankXP: base__tankXP,
-  },
-  intl$1 = resources.resolve("intl"),
-  Base$18 = defineStyledComponent("Currency", currency_module_default.base, {
-    variants: { reverse: { true: currency_module_default.base__reverse } },
-  });
-function formatCurrencyValue(e, t) {
-  const n = t === types$1.gold ? "gold" : "integral";
-  return Array.isArray(e)
-    ? e.map((e) => ("number" == typeof e ? intl$1.formatNumber(n, e) : e))
-    : "number" == typeof e
-      ? intl$1.formatNumber(n, e)
-      : e;
-}
-function Currency({
-  children: e,
-  type: t,
-  className: n,
-  classNames: r,
-  imagePath: a,
-  size: o = sizes$11.small,
-  enough: i = !0,
-  ...s
-}) {
-  const u = imageSizes$1[o],
-    l = `${t}_${u}x${u}`,
-    c = upscaledImageSizes[o],
-    d = `${t}_${c}x${c}`,
-    f = a || currencyTypes.includes(t),
-    p = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
-  return (0, import_jsx_runtime.jsxs)(Base$18, {
-    ...s,
-    className: clsx(
-      r?.base,
-      i ? currency_module_default[`base__${t}`] : currency_module_default.base__notEnough,
-      n,
-    ),
-    children: [
-      f &&
-        (0, import_jsx_runtime.jsx)(Image$1, {
-          width: u,
-          height: u,
-          path: a ?? p,
-          className: r?.icon,
-        }),
-      formatCurrencyValue(e, t),
-    ],
-  });
-}
-((Currency.sizes = sizes$11), (Currency.types = types$1));
-var base$29 = "WithDiscount_b8b3aa7f",
-  discount = "WithDiscount_discount_f7ce1b97",
-  icon$5 = "WithDiscount_icon_a6c57ca8",
-  icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
-  icon__small = "WithDiscount_icon__small_60ee455a",
-  icon__medium = "WithDiscount_icon__medium_2877fd99",
-  icon__large = "WithDiscount_icon__large_6c06eeb7",
-  icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
-  icon__xxl = "WithDiscount_icon__xxl_4080bb18",
-  with_discount_module_default = {
-    base: base$29,
-    discount: discount,
-    icon: icon$5,
-    icon__extraSmall: icon__extraSmall,
-    icon__small: icon__small,
-    icon__medium: icon__medium,
-    icon__large: icon__large,
-    icon__extraLarge: icon__extraLarge,
-    icon__xxl: icon__xxl,
-  };
-function WithDiscount({
-  children: e,
-  imagePath: t,
-  size: n = sizes$11.small,
-  customImageSize: r,
-  type: a,
-  enabled: o = !1,
-  className: i,
-  classNames: s,
-}) {
-  const u = r ?? discountSizesConfig[n];
-  return (0, import_jsx_runtime.jsxs)("div", {
-    className: clsx(with_discount_module_default.base, s?.base, i),
-    children: [
-      e,
-      o &&
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(
-            with_discount_module_default.discount,
-            s?.discount,
-            a === discountTypes.experience && with_discount_module_default.discount__experience,
-          ),
-          children: (0, import_jsx_runtime.jsx)(Image$1, {
-            width: u.width,
-            height: u.height,
-            path:
-              t ?? `library.currency.discount_${a}_${n === sizes$11.xxl ? sizes$11.extraLarge : n}`,
-            className: clsx(
-              with_discount_module_default.icon,
-              s?.icon,
-              with_discount_module_default[`icon__${n}`],
-            ),
-          }),
-        }),
-    ],
-  });
-}
-var LogLevel = (function (e) {
-    return (
-      (e[(e.NonSet = 0)] = "NonSet"),
-      (e[(e.Debug = 10)] = "Debug"),
-      (e[(e.Info = 20)] = "Info"),
-      (e[(e.Warning = 30)] = "Warning"),
-      e
-    );
+  Alignment = (function (e) {
+    return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
   })({}),
-  CommonLogAction = (function (e) {
-    return (
-      (e.Click = "click"),
-      (e.KeyDown = "keydown"),
-      (e.Displayed = "displayed"),
-      (e.Viewed = "viewed"),
-      e
-    );
-  })({}),
-  PROPERTIES_LIMIT = 200,
-  METRICS_GROUP = "metrics",
-  convertMetricsParams = ({ partnerID: e, item: t, parentScreen: n, itemState: r, info: a }) => ({
-    item: t,
-    partnerID: e || null,
-    parent_screen: n || null,
-    item_state: r || null,
-    additional_info: a || null,
-  }),
-  _useLog = (e, t) => {
-    const n = (0, import_react.useCallback)(
-      (n, r = LogLevel.Info, a) => {
-        (a || (a = {}),
-          Object.keys(a).length >= PROPERTIES_LIMIT ||
-            window.uiLoggerModel.log({
-              feature: e,
-              group: t,
-              action: n,
-              logLevel: r,
-              params: JSON.stringify(a),
-            }));
-      },
-      [e, t],
-    );
-    return (e, t, r) => n(e, t, r);
-  },
-  useMetricsLog = (e) => {
-    const t = _useLog(e, METRICS_GROUP),
-      n = (0, import_react.useCallback)(
-        (e) => {
-          t(e.action, e.logLevel, convertMetricsParams(e));
-        },
-        [t],
-      );
-    return (e) => n(e);
-  },
-  themes = { primary: "primary", secondary: "secondary", custom: "custom" },
-  sizes$10 = { extraSmall: "extraSmall", small: "small", medium: "medium", large: "large" },
-  base$28 = "HeadlessButton_df8536fc",
-  headless_button_module_default = { base: base$28 },
-  HeadlessButtonBase = defineStyledComponent("Button", {
-    element: "button",
-    className: headless_button_module_default.base,
-  }),
-  HeadlessButton = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      onClick: t,
-      onMouseEnter: n,
-      soundTarget: r,
-      disabled: a = !1,
-      silent: o = !1,
-      ...i
-    },
-    s,
-  ) {
-    const u = useSounds();
-    return (0, import_jsx_runtime.jsx)(HeadlessButtonBase, {
-      ...i,
-      ref: s,
-      onMouseEnter: function (e) {
-        (a || o || u.play("mouse-enter", { target: r || "Button", original: e }), n?.(e));
-      },
-      onClick: function (e) {
-        a || (o || u.play("click", { target: r || "Button", original: e }), t?.(e));
-      },
-      children: e,
-    });
-  }),
-  background$4 = "Button_background_98ebcfb8",
-  border$3 = "Button_border_7e6390d7",
-  overlay$2 = "Button_overlay_174632c8",
-  base$27 = "Button_70871946",
-  base__enabled$1 = "Button_base__enabled_96634d40",
-  base__disabled$3 = "Button_base__disabled_b713e04a",
-  content$7 = "Button_content_298de63f",
-  content__fontAligned = "Button_content__fontAligned_66115778",
-  button_module_default = {
-    background: background$4,
-    border: border$3,
-    overlay: overlay$2,
-    base: base$27,
-    base__enabled: base__enabled$1,
-    base__disabled: base__disabled$3,
-    "base__size-extraSmall": "Button_base__size-extraSmall_d0cdb5ed",
-    "base__size-small": "Button_base__size-small_fc7095a4",
-    "base__size-medium": "Button_base__size-medium_814d61f0",
-    "base__size-large": "Button_base__size-large_83da852e",
-    "base__theme-primary": "Button_base__theme-primary_8ba55469",
-    "base__theme-secondary": "Button_base__theme-secondary_3fa4afc",
-    content: content$7,
-    content__fontAligned: content__fontAligned,
-  },
-  Button$1 = (0, import_react.forwardRef)(function (
-    {
-      children: e,
-      size: t = sizes$10.large,
-      theme: n = themes.primary,
-      disabled: r = !1,
-      silent: a = !1,
-      autoAlignContent: o = !0,
-      classNames: i,
-      className: s,
-      ...u
-    },
-    l,
-  ) {
-    return (0, import_jsx_runtime.jsxs)(HeadlessButton, {
-      ...u,
-      ref: l,
-      silent: a,
-      disabled: r,
-      className: clsx(
-        button_module_default.base,
-        button_module_default[`base__size-${t}`],
-        button_module_default[`base__theme-${n}`],
-        r ? button_module_default.base__disabled : button_module_default.base__enabled,
-        s,
-        i?.base,
-      ),
-      onClick: function (e) {
-        r || u.onClick?.(e);
-      },
-      children: [
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.background, i?.background),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.border, i?.border),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(button_module_default.overlay, i?.overlay),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(
-            button_module_default.content,
-            o && button_module_default.content__fontAligned,
-            i?.content,
-          ),
-          children: e,
-        }),
-      ],
-    });
-  });
-((Button$1.themes = themes), (Button$1.sizes = sizes$10));
-var IconSize = (function (e) {
-    return ((e.default = "default"), (e.x48 = "x48"), (e.x80 = "x80"), (e.x220 = "x220"), e);
-  })({}),
-  base$26 = "Badge_b4595e01",
-  base__default$1 = "Badge_base__default_6aaca100",
-  base__x48$1 = "Badge_base__x48_2b129eae",
-  Badge_module_default = { base: base$26, base__default: base__default$1, base__x48: base__x48$1 },
-  badgeFolders$1 = {
-    [IconSize.default]: "c_24x24",
-    [IconSize.x48]: "c_48x48",
-    [IconSize.x80]: "c_80x80",
-    [IconSize.x220]: "c_220x220",
-  },
-  Badge$1 = ({ badgeID: e, size: t = IconSize.default, className: n }) => {
-    const r = R.images.gui.maps.icons.library.badges.$dyn(badgeFolders$1[t]);
-    return (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        Badge_module_default.base,
-        Badge_module_default[`base__${t}`],
-        n,
-      ),
-      style: { backgroundImage: `url(${r.$dyn(`badge_${e}`)})` },
-    });
-  },
-  DomAction = { Inline: 0, Block: 1, Skip: 2, Break: 3 },
-  domActions = {
-    AREA: DomAction.Skip,
-    BASE: DomAction.Skip,
-    BASEFONT: DomAction.Skip,
-    DATALIST: DomAction.Skip,
-    HEAD: DomAction.Skip,
-    LINK: DomAction.Skip,
-    META: DomAction.Skip,
-    NOEMBED: DomAction.Skip,
-    NOFRAMES: DomAction.Skip,
-    PARAM: DomAction.Skip,
-    RP: DomAction.Skip,
-    SCRIPT: DomAction.Skip,
-    STYLE: DomAction.Skip,
-    TEMPLATE: DomAction.Skip,
-    TITLE: DomAction.Skip,
-    NOSCRIPT: DomAction.Skip,
-    HR: DomAction.Break,
-    LISTING: DomAction.Skip,
-    PLAINTEXT: DomAction.Skip,
-    PRE: DomAction.Skip,
-    XMP: DomAction.Skip,
-    BR: DomAction.Break,
-    RT: DomAction.Skip,
-    INPUT: DomAction.Skip,
-    SELECT: DomAction.Skip,
-    BUTTON: DomAction.Skip,
-    TEXTAREA: DomAction.Skip,
-    ABBR: DomAction.Skip,
-    CODE: DomAction.Skip,
-    IFRAME: DomAction.Skip,
-    TIME: DomAction.Skip,
-    VAR: DomAction.Skip,
-  };
-function format(e, t) {
-  return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
-}
-function formatPrintf(e, t) {
-  return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-    const n = 0 === e.indexOf("%") ? 2 : 1;
-    return String(t[e.slice(n, -n)]);
-  });
-}
-var splitChinese = (() => {
-    const e = new RegExp(
-      [
-        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-        /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-        /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-      ]
-        .map((e) => e.source)
-        .join("|"),
-      "gum",
-    );
-    return (t) =>
-      t
-        .replace(/&nbsp;/g, " ")
-        .replace(/ /g, " ")
-        .match(e);
-  })(),
-  base$25 = "Playernickname_23cd38ea",
-  userName = "Playernickname_userName_fcb876e7",
-  igrIcon = "Playernickname_igrIcon_c8baaf95",
-  base__default = "Playernickname_base__default_4dc1c796",
-  base__x48 = "Playernickname_base__x48_4dc1c796",
-  suffixBadgeWrapper = "Playernickname_suffixBadgeWrapper_357391ed",
-  suffixBadgeStripe = "Playernickname_suffixBadgeStripe_9151ff4c",
-  base__inverted = "Playernickname_base__inverted_4dc1c796",
-  suffixBadge = "Playernickname_suffixBadge_1bf5fe7f",
-  anonymizedIcon = "Playernickname_anonymizedIcon_5d7db845",
-  PlayerNickname_module_default = {
-    base: base$25,
-    userName: userName,
-    igrIcon: igrIcon,
-    base__default: base__default,
-    base__x48: base__x48,
-    suffixBadgeWrapper: suffixBadgeWrapper,
-    suffixBadgeStripe: suffixBadgeStripe,
-    base__inverted: base__inverted,
-    suffixBadge: suffixBadge,
-    anonymizedIcon: anonymizedIcon,
-  },
-  UsernameAnonymizerComponent = ({ tooltipHeaderName: e }) =>
-    (0, import_jsx_runtime.jsx)(SimpleTooltip, {
-      header: (0, import_react.useMemo)(
-        () => formatPrintf(R.strings.tooltips.anonymizer.teamStats.header(), { name: e }),
-        [e],
-      ),
-      body: R.strings.tooltips.anonymizer.teamStats.body(),
-      children: (0, import_jsx_runtime.jsx)("div", {
-        className: PlayerNickname_module_default.anonymizedIcon,
-      }),
-    }),
-  UsernameAnonymizer = (0, import_react.memo)(UsernameAnonymizerComponent),
-  suffixBadgeStripeFolders = { [IconSize.default]: "c_64x24", [IconSize.x48]: "c_68x28" },
-  siffixBadgeFolders = { [IconSize.default]: "c_48x48", [IconSize.x48]: "c_48x48" },
-  PlayerNickname = ({
-    userName: e,
-    clanAbbrev: t = "",
-    igrType: n = 0,
-    badge: r = { badgeID: "" },
-    suffixBadge: a = { badgeID: "" },
-    isInverted: o = !1,
-    isFakeNameVisible: i = !1,
-    isAnonymizerShown: s = !1,
-    hiddenUserName: u = "",
-    size: l = IconSize.default,
-    userNameClassName: c = "",
-    clanTagClassName: d = "",
-  }) => {
-    const f = R.images.gui.maps.icons.library.badges.strips.$dyn(suffixBadgeStripeFolders[l]),
-      p = (0, import_react.useMemo)(
-        () => ({ backgroundImage: `url(${f.$dyn(`strip_${a.badgeID}`)})` }),
-        [a, f],
-      ),
-      m = R.images.gui.maps.icons.library.badges.$dyn(siffixBadgeFolders[l]),
-      _ = (0, import_react.useMemo)(
-        () => ({ backgroundImage: `url(${m.$dyn(`badge_${a.badgeID}`)})` }),
-        [a, m],
-      ),
-      h = t ? `[${t}]` : "",
-      g = (0, import_classnames.default)(
-        PlayerNickname_module_default.base,
-        PlayerNickname_module_default[`base__${l}`],
-        o && PlayerNickname_module_default.base__inverted,
-      ),
-      b = (0, import_classnames.default)(PlayerNickname_module_default.userName, c),
-      v = (0, import_classnames.default)(PlayerNickname_module_default.clanTag, d),
-      y = e !== u,
-      E = i ? `${u}${h}` : u,
-      S = [
-        Boolean(r.badgeID) &&
-          (0, import_react.createElement)(Badge$1, { size: l, ...r, key: "badge" }),
-        [
-          (0, import_jsx_runtime.jsx)(
-            "div",
-            {
-              className: b,
-              children: (0, import_jsx_runtime.jsx)(TextOverflow, { content: e }, Date.now()),
-            },
-            "userName",
-          ),
-          !i &&
-            Boolean(h) &&
-            (0, import_jsx_runtime.jsx)("div", { className: v, children: h }, "clanTag"),
-        ],
-        0 !== n &&
-          (0, import_jsx_runtime.jsx)(
-            "div",
-            { className: PlayerNickname_module_default.igrIcon },
-            "igrType",
-          ),
-        Boolean(a.badgeID) &&
-          (0, import_jsx_runtime.jsxs)(
-            "div",
-            {
-              className: PlayerNickname_module_default.suffixBadgeWrapper,
-              children: [
-                (0, import_jsx_runtime.jsx)("div", {
-                  className: PlayerNickname_module_default.suffixBadgeStripe,
-                  style: p,
-                }),
-                (0, import_jsx_runtime.jsx)("div", {
-                  className: PlayerNickname_module_default.suffixBadge,
-                  style: _,
-                }),
-              ],
-            },
-            "suffixBadge",
-          ),
-        s &&
-          y &&
-          (0, import_jsx_runtime.jsx)(UsernameAnonymizer, { tooltipHeaderName: E }, "anonymizer"),
-      ];
-    return (0, import_jsx_runtime.jsx)("div", { className: g, children: o ? S.reverse() : S });
-  },
+  THAI_LANGUAGE_CODE = "th",
+  SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"],
+  IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(
+    R.strings.settings.LANGUAGE_CODE().toLowerCase(),
+  ),
   base$24 = "SceneWrapper_52fcfc1e",
   base__down = "SceneWrapper_base__down_4ece5089",
   base__moveSpaceDisabled = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
@@ -27897,15 +27905,7 @@ function Timer({
   });
 }
 ((Timer.format = formats), (Timer.size = sizes$8), (Timer.type = types));
-var Alignment = (function (e) {
-    return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
-  })({}),
-  THAI_LANGUAGE_CODE = "th",
-  SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"],
-  IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(
-    R.strings.settings.LANGUAGE_CODE().toLowerCase(),
-  ),
-  strings = resources.resolve("strings"),
+var strings = resources.resolve("strings"),
   intl = resources.resolve("intl"),
   keyValue = (e) =>
     intl.toUpperCase(strings.readOr(`readable_key_names.KEY_${e}`, () => EMPTY_VALUE)),
@@ -33801,7 +33801,7 @@ var roles = {
     vehicleBonusDetails: array(VehicleBonusDetailSchema),
   });
 export {
-  borderTypes as $,
+  Card as $,
   useEmitter$1 as $n,
   keyStringCodes as $r,
   FormatText as $t,
@@ -33809,7 +33809,7 @@ export {
   subtract as Ai,
   createMultipleTargetOverrides as An,
   assert as Ar,
-  TruncatedText as At,
+  getRoleByKey as At,
   Toggle as B,
   DateTimeFormatsEnum as Bi,
   useScaleState$1 as Bn,
@@ -33819,27 +33819,27 @@ export {
   getNumberFormat as Ci,
   computeds as Cn,
   calcPercent as Cr,
-  isTypeValidValue as Ct,
+  getRewardImage as Ct,
   Switch as D,
   minutes as Di,
   SoundsProvider as Dn,
   map as Dr,
-  HEAVY_TANK as Dt,
+  ValueTypes$1 as Dt,
   Route as E,
   hours as Ei,
   useSpecialContextMenu as En,
   filter as Er,
-  AT_SPG as Et,
+  ImageSize$1 as Et,
   animated as F,
   easings$2 as Fi,
   useSpecialTooltip as Fn,
   filter$1 as Fr,
-  getRewardTooltipConfig as Ft,
-  LazyModel as G,
+  AT_SPG as Ft,
+  useLazyModel as G,
   useLayoutReady as Gn,
   mapExists as Gr,
   SimpleTooltip$1 as Gt,
-  Alignment as H,
+  Timer as H,
   useResizeLayoutReady as Hn,
   includes as Hr,
   Tooltip$1 as Ht,
@@ -33847,12 +33847,12 @@ export {
   clsx as Ii,
   useTooltip as In,
   filterMap as Ir,
-  getRewardValueType as It,
-  VehicleLevel as J,
+  HEAVY_TANK as It,
+  List as J,
   useKeydownListener as Jn,
   reduce as Jr,
   sizes$13 as Jt,
-  useLazyModel as K,
+  VehicleInfo as K,
   useCallbackOnEsc as Kn,
   pop as Kr,
   Tooltip$2 as Kt,
@@ -33860,28 +33860,28 @@ export {
   require_react_dom as Li,
   useWulfTooltip as Ln,
   find as Lr,
-  ImageSize$1 as Lt,
+  LIGHT_TANK as Lt,
   Scroll as M,
   toHours as Mi,
   createTargetOverrides as Mn,
   createLayoutReadyInEffect$1 as Mr,
-  ImageSize as Mt,
+  isTypeValidValue as Mt,
   useHorizontalScrollApi as N,
   toMinutes as Ni,
   useBackdropTooltip as Nn,
   chunks as Nr,
-  RewardType as Nt,
+  normilizeVehicleType as Nt,
   matchPath as O,
   now as Oi,
   useSounds as On,
   delay as Or,
-  LIGHT_TANK as Ot,
+  VehicleType as Ot,
   Direction as P,
   toSeconds as Pi,
   useSimpleTooltip as Pn,
   every as Pr,
-  getRewardImage as Pt,
-  CardsWrapper as Q,
+  types$2 as Pt,
+  borderTypes as Q,
   useUnmount$1 as Qn,
   keyCodes as Qr,
   FormatString as Qt,
@@ -33889,18 +33889,18 @@ export {
   require_react as Ri,
   useTimeout as Rn,
   findIndex$2 as Rr,
-  ValueTypes$1 as Rt,
+  MEDIUM_TANK as Rt,
   DragAndDrop as S,
   normalizeResource as Si,
   assignRefs as Sn,
   comparer$1 as Sr,
-  roles$1 as St,
+  BackportTooltip as St,
   sizes$7 as T,
   days as Ti,
   initializeModelWithContext as Tn,
   arabicToRoman as Tr,
-  types$2 as Tt,
-  Timer as U,
+  getRewardValueType as Tt,
+  sizes$8 as U,
   animated$1 as Un,
   join as Ur,
   ExtendedText as Ut,
@@ -33909,19 +33909,19 @@ export {
   useResize as Vn,
   get as Vr,
   SimpleTooltip as Vt,
-  sizes$8 as W,
+  LazyModel as W,
   useSpring$1 as Wn,
   map$1 as Wr,
   Video$1 as Wt,
-  directions$1 as X,
+  statusTypes as X,
   useIsFirstRender as Xn,
   some as Xr,
   defineStyledComponent as Xt,
-  List as Y,
+  directions$1 as Y,
   useHandleKeydown as Yn,
   slice as Yr,
   types$3 as Yt,
-  statusTypes as Z,
+  CardsWrapper as Z,
   useMount$1 as Zn,
   isNonNullable as Zr,
   MultilineOverflow as Zt,
@@ -33929,87 +33929,87 @@ export {
   graphicsQuality$1 as _i,
   defaultSettings$1 as _n,
   useMedia as _r,
-  DynamicTooltipWrapper as _t,
+  imageSizes$1 as _t,
   CountdownStyle as a,
   compose as ai,
   Bar$2 as an,
   Reaction as ar,
-  sizes$10 as at,
+  RewardType as at,
   Slot as b,
   onResize$1 as bi,
   runView as bn,
   breakpointsByType as br,
-  sizes$12 as bt,
+  Reward$1 as bt,
   NotificationWrapper as c,
   initExternalPaddings$1 as ci,
   useHorizontalDrag as cn,
   getDependencyTree as cr,
-  CommonLogAction as ct,
+  Button$1 as ct,
   ButtonSize as d,
   setContentReady as di,
   Area$3 as dn,
   runInAction as dr,
-  currencyTypes as dt,
+  useMetricsLog as dt,
   DisposeBuilder as ei,
   Image$1 as en,
   debounce_default as er,
-  Card as et,
+  useCardsWrapperContext as et,
   ButtonType as f,
   get$1 as fi,
   DefaultScroll$3 as fn,
   useAdaptiveWidth as fr,
-  discountTypes as ft,
+  CommonLogAction as ft,
   PlayerInfo as g,
   getSize$2 as gi,
   useScrollBounding as gn,
   MediaWrapper as gr,
-  Reward as gt,
+  discountTypes as gt,
   RangeType as h,
   sounds$1 as hi,
   scrollOrientations as hn,
   useUpscale as hr,
-  types$1 as ht,
+  currencyTypes as ht,
   CountdownIcon as i,
   clamp$3 as ii,
   DefaultScroll$2 as in,
   usePrevious as ir,
-  Button$1 as it,
+  ImageSize as it,
   isEmptyObject as j,
   toDays as ji,
   createSoundPlay as jn,
   createTimeoutInEffect as jr,
-  Reward$1 as jt,
+  roles$1 as jt,
   ProgressBar as k,
   seconds as ki,
   useSoundsOptional as kn,
   mapRange as kr,
-  MEDIUM_TANK as kt,
+  sizes$12 as kt,
   CloseButton as l,
   pxToRem$1 as li,
   dragDirections as ln,
   makeObservable as lr,
-  WithDiscount as lt,
+  sizes$10 as lt,
   RangeDividerType as m,
   play$1 as mi,
   Bar$3 as mn,
   useAdaptive as mr,
-  sizes$11 as mt,
+  Currency as mt,
   DateTime_default as n,
   identity as ni,
   Base$19 as nn,
   useEvent$1 as nr,
-  SceneWrapper as nt,
+  Alignment as nt,
   TooltipDecorator as o,
   enableFullScreenModeSupported$1 as oi,
   useVerticalScroll as on,
   action as or,
-  themes as ot,
+  Video as ot,
   DateRange_default as p,
   sendEvent$3 as pi,
   getMaskDirection as pn,
   UPSCALE as pr,
-  imageSizes$1 as pt,
-  VehicleInfo as q,
+  WithDiscount as pt,
+  VehicleLevel as q,
   useCloseOnEsc as qn,
   push as qr,
   Bubble as qt,
@@ -34017,45 +34017,45 @@ export {
   noop$4 as ri,
   Area$2 as rn,
   useScreenSize as rr,
-  PlayerNickname as rt,
+  Reward as rt,
   Tooltip as s,
   getScale$2 as si,
   Base$20 as sn,
   configure as sr,
-  useMetricsLog as st,
+  PlayerNickname as st,
   roles as t,
   constFalse as ti,
   Img as tn,
   useSyncSizeTexture as tr,
-  useCardsWrapperContext as tt,
+  SceneWrapper as tt,
   CButton as u,
   remToPx$1 as ui,
   useScrollByDragElements as un,
   observable as ur,
-  Currency as ut,
+  themes as ut,
   Checkbox as v,
   mouse$1 as vi,
   useHorizontalScroll as vn,
   require_jsx_runtime as vr,
-  BackportTooltip as vt,
+  sizes$11 as vt,
   overlayTypes as w,
   toUpperCase as wi,
   computedFn as wn,
   roundTo as wr,
-  normilizeVehicleType as wt,
+  getRewardTooltipConfig as wt,
   LoadoutItem as x,
   getRegionalDateTime$1 as xi,
   JSXBuilder as xn,
   mouseButtons as xr,
-  getRoleByKey as xt,
+  DynamicTooltipWrapper as xt,
   sizes$5 as y,
   onRescale as yi,
   UIProvider as yn,
   breakpoints as yr,
-  VehicleType as yt,
+  types$1 as yt,
   useRouter as z,
   intl$4 as zi,
   useSkipFrame as zn,
   findIndexLast as zr,
-  Video as zt,
+  TruncatedText as zt,
 };

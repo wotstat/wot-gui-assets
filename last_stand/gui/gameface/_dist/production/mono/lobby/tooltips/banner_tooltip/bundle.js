@@ -1,10 +1,10 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Ia as s,
-  Jn as a,
-  Vn as i,
-  Y as t,
-  Zn as n,
+  In as a,
+  Ln as i,
+  Nn as t,
+  Y as n,
   c as o,
   cr as r,
   hi as l,
@@ -43,8 +43,8 @@ var d = e(c(), 1),
       children: [
         (0, h.jsx)("div", { className: x.img }),
         (0, h.jsx)("div", { className: x.header, children: j.header() }),
-        (0, h.jsx)(n, { className: x.description, split: !0, text: j.description() }),
-        (0, h.jsx)(a, {
+        (0, h.jsx)(a, { className: x.description, split: !0, text: j.description() }),
+        (0, h.jsx)(t, {
           classMix: x.callToAction,
           text: R.strings.last_stand_tooltips.bannerTooltip.callToAction(),
           alignContent: i.Center,
@@ -65,12 +65,12 @@ var d = e(c(), 1),
             ],
           }),
         (0, h.jsx)("div", { className: x.dots }),
-        (0, h.jsx)(a, {
+        (0, h.jsx)(t, {
           text: R.strings.last_stand_tooltips.bannerTooltip.available(),
           classMix: x.timerStatus,
           alignContent: i.Center,
           justifyContent: i.Center,
-          binding: { timer: (0, h.jsx)(t, { size: "x24x24", type: "accent", start: o - r }) },
+          binding: { timer: (0, h.jsx)(n, { size: "x24x24", type: "accent", start: o - r }) },
         }),
       ],
     });

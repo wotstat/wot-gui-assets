@@ -22047,45 +22047,8 @@ var Wd = (0, ie.forwardRef)(function (
     );
   }),
   Qd = (0, ie.memo)(Wd),
-  Kd = "Tooltip_decorator_b3486d4e",
-  Xd = Zf("Base", "Tooltip_6d997cee"),
-  Yd = Zf("Decorator", Kd),
-  Zd = (0, ie.forwardRef)(function ({ children: e, ...t }, n) {
-    const r = (0, ie.useRef)(null);
-    return (
-      (0, ie.useLayoutEffect)(() => {
-        const e = Le("rem");
-        ((document.body.style.width = `${e.width}rem`),
-          (document.body.style.height = `${e.height}rem`));
-      }, []),
-      Li(r, (e) => {
-        const t = e.target;
-        if (!(t instanceof HTMLElement)) return;
-        const n = t.scrollWidth,
-          r = t.scrollHeight;
-        (it(n, r), (document.body.style.width = `${n}px`), (document.body.style.height = `${r}px`));
-        const a = window.getComputedStyle(t);
-        var o;
-        ((o = {
-          top: parseInt(a.getPropertyValue("padding-top"), 10),
-          left: parseInt(a.getPropertyValue("padding-left"), 10),
-          right: parseInt(a.getPropertyValue("padding-right"), 10),
-          bottom: parseInt(a.getPropertyValue("padding-bottom"), 10),
-        }),
-          viewEnv.setHitAreaPaddingsRem(o.top, o.right, o.bottom, o.left, 15));
-      }),
-      (0, sn.jsx)(Xd, {
-        ...t,
-        ref: function (e) {
-          ((r.current = e), "function" == typeof n ? n(e) : n && (n.current = e));
-        },
-        children: e,
-      })
-    );
-  });
-Zd.Decorator = Yd;
-var Jd = "NotificationWrapper_6fe65b7",
-  ep = ({ children: e, ref: t, className: n }) => {
+  Kd = "NotificationWrapper_6fe65b7",
+  Xd = ({ children: e, ref: t, className: n }) => {
     const r = (0, ie.useRef)(null),
       a = 288 * st(),
       o = 500 * st();
@@ -22098,11 +22061,11 @@ var Jd = "NotificationWrapper_6fe65b7",
         const e = r.current.scrollHeight;
         e > o ? (console.warn(`maximum height exceeded ${e}`), it(a, o)) : it(a, e);
       }, []),
-      (0, sn.jsx)("div", { ref: df(t ? [t, r] : [r]), className: ue(Jd, n), children: e })
+      (0, sn.jsx)("div", { ref: df(t ? [t, r] : [r]), className: ue(Kd, n), children: e })
     );
   },
-  tp = "TruncateText_dcb41d92",
-  np = (0, ie.forwardRef)(function ({ text: e, tooltipParams: t, className: n, ...r }, a) {
+  Yd = "TruncateText_dcb41d92",
+  Zd = (0, ie.forwardRef)(function ({ text: e, tooltipParams: t, className: n, ...r }, a) {
     const o = Dc({ header: t?.header, body: t?.body || e }),
       i = (0, ie.useRef)(null),
       [s, l] = (0, ie.useState)(!1),
@@ -22134,12 +22097,49 @@ var Jd = "NotificationWrapper_6fe65b7",
       (0, sn.jsx)("div", {
         ...r,
         ref: df([a, i]),
-        className: ue(tp, n),
+        className: ue(Yd, n),
         ...(s ? o : {}),
         children: e,
       })
     );
+  }),
+  Jd = "Tooltip_decorator_b3486d4e",
+  ep = Zf("Base", "Tooltip_6d997cee"),
+  tp = Zf("Decorator", Jd),
+  np = (0, ie.forwardRef)(function ({ children: e, ...t }, n) {
+    const r = (0, ie.useRef)(null);
+    return (
+      (0, ie.useLayoutEffect)(() => {
+        const e = Le("rem");
+        ((document.body.style.width = `${e.width}rem`),
+          (document.body.style.height = `${e.height}rem`));
+      }, []),
+      Li(r, (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLElement)) return;
+        const n = t.scrollWidth,
+          r = t.scrollHeight;
+        (it(n, r), (document.body.style.width = `${n}px`), (document.body.style.height = `${r}px`));
+        const a = window.getComputedStyle(t);
+        var o;
+        ((o = {
+          top: parseInt(a.getPropertyValue("padding-top"), 10),
+          left: parseInt(a.getPropertyValue("padding-left"), 10),
+          right: parseInt(a.getPropertyValue("padding-right"), 10),
+          bottom: parseInt(a.getPropertyValue("padding-bottom"), 10),
+        }),
+          viewEnv.setHitAreaPaddingsRem(o.top, o.right, o.bottom, o.left, 15));
+      }),
+      (0, sn.jsx)(ep, {
+        ...t,
+        ref: function (e) {
+          ((r.current = e), "function" == typeof n ? n(e) : n && (n.current = e));
+        },
+        children: e,
+      })
+    );
   });
+np.Decorator = tp;
 export {
   Gt as $,
   xc as A,
@@ -22194,14 +22194,14 @@ export {
   kt as lt,
   ud as m,
   ze as mt,
-  ep as n,
+  Zd as n,
   Lt as nt,
   Ud as o,
   Mt as ot,
   cd as p,
   Be as pt,
   on as q,
-  Zd as r,
+  Xd as r,
   It as rt,
   zd as s,
   Nt as st,

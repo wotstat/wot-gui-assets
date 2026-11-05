@@ -1,13 +1,13 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
-  En as a,
-  Fa as e,
-  Ia as t,
+  Fa as a,
+  Ia as e,
+  In as t,
   Mn as r,
   Pa as o,
   To as l,
-  Y as i,
-  Zn as d,
+  Un as i,
+  Y as d,
   ao as n,
   c,
   cr as p,
@@ -20,7 +20,7 @@ import "../../chunks/_wg-global-styles.js";
 import { o as u, s as x } from "../../chunks/vendor.js";
 import { a as w, c as j, o as P, s as v } from "../../chunks/utils.js";
 var [N, f] = g()(({ observableModel: s }) => {
-    const a = {
+    const e = {
         ...s.primitives([
           "currentProgress",
           "dataAmount",
@@ -30,10 +30,10 @@ var [N, f] = g()(({ observableModel: s }) => {
         ]),
         rewards: s.array("rewards"),
       },
-      t = m(() => h(a.rewards.get(), e), { equals: o }),
+      t = m(() => h(e.rewards.get(), a), { equals: o }),
       r = m(() => t()[0]?.userName);
-    return { ...a, computes: { getRewards: t, getBoosterName: r } };
-  }, t),
+    return { ...e, computes: { getRewards: t, getBoosterName: r } };
+  }, e),
   b = s(x(), 1),
   T = "Rewards_a9373b6",
   A = "Rewards_reward_3a809366",
@@ -43,12 +43,12 @@ var [N, f] = g()(({ observableModel: s }) => {
   z = _(),
   C = u(function () {
     const { model: s } = f(),
-      [e, ...t] = s.computes.getRewards();
-    return e || 0 !== t.length
+      [a, ...e] = s.computes.getRewards();
+    return a || 0 !== e.length
       ? (0, z.jsxs)("div", {
           className: T,
           children: [
-            e &&
+            a &&
               (0, z.jsxs)(z.Fragment, {
                 children: [
                   (0, z.jsx)("div", {
@@ -57,19 +57,19 @@ var [N, f] = g()(({ observableModel: s }) => {
                   }),
                   (0, z.jsx)("div", {
                     className: k,
-                    children: (0, z.jsx)(a, {
-                      name: e.name,
-                      value: j(e),
-                      special: e.overlayType,
-                      size: r.Small,
-                      image: w(e, r.Small),
-                      valueType: v(e.name),
-                      tooltipArgs: P(e),
+                    children: (0, z.jsx)(r, {
+                      name: a.name,
+                      value: j(a),
+                      special: a.overlayType,
+                      size: i.Small,
+                      image: w(a, i.Small),
+                      valueType: v(a.name),
+                      tooltipArgs: P(a),
                     }),
                   }),
                 ],
               }),
-            0 !== t.length &&
+            0 !== e.length &&
               (0, z.jsxs)(z.Fragment, {
                 children: [
                   (0, z.jsx)("div", {
@@ -78,20 +78,20 @@ var [N, f] = g()(({ observableModel: s }) => {
                   }),
                   (0, z.jsx)("div", {
                     className: k,
-                    children: t.map((s, e) =>
+                    children: e.map((s, a) =>
                       (0, z.jsx)(
-                        a,
+                        r,
                         {
                           className: A,
                           name: s.name,
                           value: j(s),
                           special: s.overlayType,
-                          size: r.Small,
-                          image: w(s, r.Small),
+                          size: i.Small,
+                          image: w(s, i.Small),
                           valueType: v(s.name),
                           tooltipArgs: P(s),
                         },
-                        `${s.name}${e}`,
+                        `${s.name}${a}`,
                       ),
                     ),
                   }),
@@ -103,38 +103,38 @@ var [N, f] = g()(({ observableModel: s }) => {
   }),
   F = "StageProgress_85b21972",
   L = "StageProgress_counter_65133461",
-  E = "StageProgress_progress_14562909",
+  I = "StageProgress_progress_14562909",
   $ = "StageProgress_progress__current_aca13a9",
   B = "StageProgress_progress__max_d886571d",
-  I = "StageProgress_pointsIcon_7d1c1785",
+  E = "StageProgress_pointsIcon_7d1c1785",
   M = function ({ collected: s, total: a }) {
     return (0, z.jsxs)("div", {
       className: F,
       children: [
-        (0, z.jsx)(d, {
+        (0, z.jsx)(t, {
           className: L,
           params: {
-            current: (0, z.jsx)("div", { className: (0, b.default)(E, $), children: n(s, 0) }),
-            max: (0, z.jsx)("div", { className: (0, b.default)(E, B), children: n(a, 0) }),
+            current: (0, z.jsx)("div", { className: (0, b.default)(I, $), children: n(s, 0) }),
+            max: (0, z.jsx)("div", { className: (0, b.default)(I, B), children: n(a, 0) }),
           },
           text: R.strings.last_stand_tooltips.rewardPath.tooltip.counter.progress(),
         }),
-        (0, z.jsx)("div", { className: I }),
+        (0, z.jsx)("div", { className: E }),
       ],
     });
   },
   q = "RewardPathTooltipApp_73bcae15",
   D = "RewardPathTooltipApp_header_9daa76e0",
   O = "RewardPathTooltipApp_phase_3d0cf579",
-  Y = "RewardPathTooltipApp_phaseNumber_a708a829",
-  Z = "RewardPathTooltipApp_stageExplanation_754573fb",
+  U = "RewardPathTooltipApp_phaseNumber_a708a829",
+  Y = "RewardPathTooltipApp_stageExplanation_754573fb",
   G = "RewardPathTooltipApp_stageFinal_638e7650",
   H = "RewardPathTooltipApp_info_b9234506",
   J = "RewardPathTooltipApp_booster_7cc9d50e",
   K = "RewardPathTooltipApp_dots_238d7372",
   Q = "RewardPathTooltipApp_timer_2ae2dc1c",
-  U = l.resolve("strings"),
-  V = u(function () {
+  V = l.resolve("strings"),
+  W = u(function () {
     const { model: s } = f(),
       a = s.isCompleted.get();
     return (0, z.jsx)(c, {
@@ -149,9 +149,9 @@ var [N, f] = g()(({ observableModel: s }) => {
           (0, z.jsxs)("div", {
             className: O,
             children: [
-              (0, z.jsx)("div", { className: Y, children: s.currentProgress.get() }),
+              (0, z.jsx)("div", { className: U, children: s.currentProgress.get() }),
               (0, z.jsx)("div", {
-                className: Z,
+                className: Y,
                 children: a
                   ? R.strings.last_stand_tooltips.rewardPath.tooltip.finalStage()
                   : R.strings.last_stand_tooltips.rewardPath.tooltip.stage(),
@@ -172,11 +172,11 @@ var [N, f] = g()(({ observableModel: s }) => {
                 (0, z.jsx)("div", {
                   children: R.strings.last_stand_tooltips.rewardPath.tooltip.description(),
                 }),
-                (0, z.jsx)(d, {
+                (0, z.jsx)(t, {
                   className: J,
                   text: R.strings.last_stand_tooltips.rewardPath.tooltip.booster(),
                   params: {
-                    boosterName: U.readOrEmpty(
+                    boosterName: V.readOrEmpty(
                       `R.strings.last_stand_lobby.booster.${s.computes.getBoosterName()}.name`,
                     ),
                   },
@@ -186,14 +186,14 @@ var [N, f] = g()(({ observableModel: s }) => {
               ],
             }),
           (0, z.jsx)("div", { className: K }),
-          (0, z.jsx)(d, {
+          (0, z.jsx)(t, {
             className: Q,
             text: R.strings.last_stand_tooltips.rewardPath.tooltip.timer(),
             params: {
-              timer: (0, z.jsx)(i, {
-                size: i.size.x24x24,
+              timer: (0, z.jsx)(d, {
+                size: d.size.x24x24,
                 start: s.timeLeft.get(),
-                format: i.format.default,
+                format: d.format.default,
               }),
             },
           }),
@@ -201,4 +201,4 @@ var [N, f] = g()(({ observableModel: s }) => {
       }),
     });
   });
-p((0, z.jsx)(N, { children: (0, z.jsx)(V, {}) }));
+p((0, z.jsx)(N, { children: (0, z.jsx)(W, {}) }));

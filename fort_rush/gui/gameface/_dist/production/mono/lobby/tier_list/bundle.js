@@ -6,8 +6,8 @@ import {
   dp as o,
   dd as r,
   de as d,
-  dC as t,
-  dx as i,
+  du as t,
+  dv as i,
   dt as c,
   O as n,
   br as b,
@@ -17,7 +17,7 @@ import {
   al as p,
 } from "../chunks/lib.js";
 import { N as j, j as w, a5 as h, r as v } from "../chunks/vendor.js";
-import { b as g, a as u } from "../chunks/readResource.js";
+import { b as u, a as g } from "../chunks/readResource.js";
 const [N, y] = e()(
     ({ observableModel: e }) => ({ root: e.object(), lootBoxes: e.array("lootBoxes") }),
     ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs("onClose") }),
@@ -49,7 +49,7 @@ const [N, y] = e()(
           label: e.label,
           probability: e.probability,
         })))(e, _),
-      j = g(x).progression.bonuses.big;
+      j = u(x).progression.bonuses.big;
     return w.jsxs("div", {
       className: h(f.base, f[`base__${_}`]),
       children: [
@@ -97,8 +97,8 @@ const [N, y] = e()(
     });
   }),
   B = "App_41da450e",
-  C = "App_background_8bf668c",
-  L = "App_content_c51a1e8f",
+  L = "App_background_8bf668c",
+  C = "App_content_c51a1e8f",
   $ = "App_header_6b270f84",
   M = "App_title_ed37f891",
   P = "App_description_8e9e0dbe",
@@ -108,17 +108,17 @@ const [N, y] = e()(
       { assetsPointer: a } = e.root.get(),
       { closeWindow: l } = s;
     c(l);
-    const { dynamicTexts: o } = u("tierList", { assetsPointer: a });
+    const { dynamicTexts: o } = g("tierList", { assetsPointer: a });
     return w.jsxs("div", {
       className: B,
       children: [
         w.jsx("div", {
-          className: C,
-          style: { backgroundImage: `url('${g(a).library.tier_list_bg()}')` },
+          className: L,
+          style: { backgroundImage: `url('${u(a).library.tier_list_bg()}')` },
         }),
         w.jsx(n, {
           children: w.jsxs(b, {
-            scrollClassNames: { content: L },
+            scrollClassNames: { content: C },
             className: T,
             children: [
               w.jsxs("div", {

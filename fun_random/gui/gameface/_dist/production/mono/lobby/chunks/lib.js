@@ -33164,6 +33164,379 @@ var defaultTheme = Orange,
       children: formatTime(Math.abs(c) < 3600 ? n : t, c, r),
     });
   },
+  formats = {
+    superCompact: "superCompact",
+    compact: "compact",
+    default: "default",
+    detailed: "detailed",
+  },
+  sizes$10 = {
+    x16x16: "x16x16",
+    x24x24: "x24x24",
+    x32x32: "x32x32",
+    x48x48: "x48x48",
+    x80x80: "x80x80",
+  },
+  types$4 = { accent: "accent", cooldown: "cooldown" },
+  item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
+  item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
+  item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
+  item__x48x48 = "FormattedValue_item__x48x48_43bf6d1b",
+  item__x80x80 = "FormattedValue_item__x80x80_c03e8347",
+  part__x16x16 = "FormattedValue_part__x16x16_2186b32f",
+  part__x24x24 = "FormattedValue_part__x24x24_2186b32f",
+  part__x32x32 = "FormattedValue_part__x32x32_f9323fe3",
+  part__x48x48 = "FormattedValue_part__x48x48_bd002d69",
+  part__x80x80 = "FormattedValue_part__x80x80_dca9ec18",
+  detailedSeparator = "FormattedValue_detailedSeparator_30bfaeef",
+  detailedSeparator__x16x16 = "FormattedValue_detailedSeparator__x16x16_2b8550e4",
+  detailedSeparator__x24x24 = "FormattedValue_detailedSeparator__x24x24_2b8550e4",
+  detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
+  detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
+  detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
+  formatted_value_module_default = {
+    item__x16x16: item__x16x16,
+    item__x24x24: item__x24x24,
+    item__x32x32: item__x32x32,
+    item__x48x48: item__x48x48,
+    item__x80x80: item__x80x80,
+    part__x16x16: part__x16x16,
+    part__x24x24: part__x24x24,
+    part__x32x32: part__x32x32,
+    part__x48x48: part__x48x48,
+    part__x80x80: part__x80x80,
+    detailedSeparator: detailedSeparator,
+    detailedSeparator__x16x16: detailedSeparator__x16x16,
+    detailedSeparator__x24x24: detailedSeparator__x24x24,
+    detailedSeparator__x32x32: detailedSeparator__x32x32,
+    detailedSeparator__x48x48: detailedSeparator__x48x48,
+    detailedSeparator__x80x80: detailedSeparator__x80x80,
+  };
+function FormattedValue({ size: e, preFormatted: t }) {
+  const n = [];
+  for (let r = 0; r < t.items.length; ++r)
+    (t.separator &&
+      r > 0 &&
+      n.push(
+        (0, import_jsx_runtime.jsx)(
+          "span",
+          {
+            className: (0, import_classnames.default)(
+              formatted_value_module_default.detailedSeparator,
+              formatted_value_module_default[`detailedSeparator__${e}`],
+            ),
+          },
+          "separator",
+        ),
+      ),
+      n.push(
+        (0, import_jsx_runtime.jsx)(
+          "span",
+          {
+            className: (0, import_classnames.default)(
+              formatted_value_module_default.item,
+              formatted_value_module_default[`item__${e}`],
+            ),
+            children: t.items[r]
+              ?.split(" ")
+              .map((t, n) =>
+                (0, import_jsx_runtime.jsx)(
+                  "span",
+                  {
+                    className: (0, import_classnames.default)(
+                      formatted_value_module_default.part,
+                      formatted_value_module_default[`part__${e}`],
+                    ),
+                    children: t,
+                  },
+                  `part_${n}`,
+                ),
+              ),
+          },
+          `item_${r}`,
+        ),
+      ));
+  return n;
+}
+var STRING_RESOURCES = resources.resolve("strings"),
+  COLON = ":",
+  DAYS_FORMAT = "D",
+  HOURS_FORMAT = "h",
+  MINUTES_FORMAT = "m",
+  DEFAULT_MIN_VALUE = 1,
+  FORMAT_PARTS = {
+    [formats.compact]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
+    [formats.default]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
+    [formats.detailed]: [DAYS_FORMAT, "hh", "mm", "ss"],
+  },
+  FORMATTER = {
+    [formats.compact]: compactFormatter,
+    [formats.default]: defaultFormatter,
+    [formats.detailed]: detailedFormatter,
+  },
+  LOCALE_FORMATTERS = {
+    [DAYS_FORMAT]: (e) =>
+      format$1(
+        STRING_RESOURCES.readOr("common.timer.days", () => DAYS_FORMAT.toLowerCase()),
+        { days: e },
+      ),
+    [HOURS_FORMAT]: (e) =>
+      format$1(
+        STRING_RESOURCES.readOr("common.timer.hours", () => HOURS_FORMAT),
+        { hours: e },
+      ),
+    [MINUTES_FORMAT]: (e) =>
+      format$1(
+        STRING_RESOURCES.readOr("common.timer.minutes", () => MINUTES_FORMAT),
+        { minutes: e },
+      ),
+  };
+function detailedFormatter(e) {
+  const [t, ...n] = e,
+    r = n.join(COLON);
+  return { separator: !0, items: Number(t) > 0 ? [LOCALE_FORMATTERS[DAYS_FORMAT]?.(t), r] : [r] };
+}
+function defaultFormatter(e, t) {
+  let n = 0;
+  const r = e.length - 1,
+    a = FORMAT_PARTS[t],
+    o = { separator: !1, items: [] };
+  for (; n < r && !(Number(e[n]) > 0); ++n);
+  return (
+    a[n] === MINUTES_FORMAT && 0 === Number(e[n])
+      ? (o.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)])
+      : (o.items = [n, n + 1].map((t) => LOCALE_FORMATTERS[a[t]]?.(e[t]))),
+    o
+  );
+}
+function compactFormatter(e, t) {
+  const n = e.length,
+    r = FORMAT_PARTS[t],
+    a = { separator: !1, items: [] };
+  for (let o = 0; o < n; ++o)
+    if (Number(e[o]) > 0) return ((a.items = [LOCALE_FORMATTERS[r[o]]?.(e[o])]), a);
+  return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
+}
+var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
+  base$46 = "Timer_dac0a0aa",
+  icon$9 = "Timer_icon_a61415df",
+  icon__x16x16$1 = "Timer_icon__x16x16_5bab55e2",
+  icon__accent = "Timer_icon__accent_2cf70c3b",
+  icon__cooldown = "Timer_icon__cooldown_4a26d3f",
+  icon__x24x24$1 = "Timer_icon__x24x24_31571381",
+  icon__x32x32$1 = "Timer_icon__x32x32_807dde34",
+  icon__x48x48$1 = "Timer_icon__x48x48_ae779a9e",
+  icon__x80x80 = "Timer_icon__x80x80_251aafea",
+  label$2 = "Timer_label_1565f308",
+  label__x16x16 = "Timer_label__x16x16_e3ff224",
+  label__x24x24 = "Timer_label__x24x24_ca748cca",
+  label__x32x32 = "Timer_label__x32x32_13cccf38",
+  label__x48x48 = "Timer_label__x48x48_e3a9b542",
+  label__x80x80 = "Timer_label__x80x80_10a84ee6",
+  label__accent = "Timer_label__accent_ac7d4f7b",
+  label__cooldown = "Timer_label__cooldown_c2349ab9",
+  timer_module_default = {
+    base: base$46,
+    icon: icon$9,
+    icon__x16x16: icon__x16x16$1,
+    icon__accent: icon__accent,
+    icon__cooldown: icon__cooldown,
+    icon__x24x24: icon__x24x24$1,
+    icon__x32x32: icon__x32x32$1,
+    icon__x48x48: icon__x48x48$1,
+    icon__x80x80: icon__x80x80,
+    label: label$2,
+    label__x16x16: label__x16x16,
+    label__x24x24: label__x24x24,
+    label__x32x32: label__x32x32,
+    label__x48x48: label__x48x48,
+    label__x80x80: label__x80x80,
+    label__accent: label__accent,
+    label__cooldown: label__cooldown,
+  };
+function Timer({
+  start: e,
+  limit: t = 0,
+  tick: n = 1,
+  size: r = sizes$10.x24x24,
+  type: a = types$4.accent,
+  format: o = formats.default,
+  autostart: i = !0,
+  className: s,
+  classNames: u,
+}) {
+  const [l] = useTicker(
+    (0, import_react.useMemo)(
+      () => ({
+        type: "countdown",
+        start: isDuration(e) ? e : seconds(e),
+        limit: isDuration(t) ? t : seconds(t),
+        tick: isDuration(n) ? n : seconds(n),
+        autostart: i,
+      }),
+      [i, t, e, n],
+    ),
+  );
+  return (0, import_jsx_runtime.jsxs)("div", {
+    className: (0, import_classnames.default)(timer_module_default.base, s),
+    children: [
+      (0, import_jsx_runtime.jsx)("div", {
+        className: (0, import_classnames.default)(
+          timer_module_default.icon,
+          timer_module_default[`icon__${r}`],
+          timer_module_default[`icon__${a}`],
+          u?.icon,
+        ),
+      }),
+      o !== formats.superCompact &&
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(
+            timer_module_default.label,
+            timer_module_default[`label__${r}`],
+            timer_module_default[`label__${a}`],
+            u?.label,
+          ),
+          children: (0, import_jsx_runtime.jsx)(FormattedValue, {
+            size: r,
+            preFormatted: formatValue(l, o),
+          }),
+        }),
+    ],
+  });
+}
+((Timer.format = formats), (Timer.size = sizes$10), (Timer.type = types$4));
+var undef = () => {};
+function withResolvePath(e) {
+  const t = e;
+  return (0, import_react.forwardRef)(function (e, n) {
+    const r = useAdaptive(e, e.adaptive),
+      { path: a, ...o } = r,
+      i = r.images ?? resources.resolve("images"),
+      s = { ...o, ref: n };
+    {
+      const e = a ? i.readOr(a, undef, "warn") : void 0;
+      return e
+        ? (0, import_jsx_runtime.jsx)(t, { ...s, src: e })
+        : (0, import_jsx_runtime.jsx)(t, { ...s, unknown: !0 });
+    }
+  });
+}
+var defaultUnknownStyle = {
+    background:
+      "linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)",
+    backgroundSize: "20rem 20rem",
+    backgroundPosition: "0 0, 0 10rem, 10rem -10rem, -10rem 0rem",
+    backgroundColor: "#000",
+  },
+  ResourceImage = (0, import_react.forwardRef)(function (e, t) {
+    if (!e.src) {
+      const {
+        repeat: n,
+        fit: r,
+        position: a,
+        width: o,
+        src: i,
+        height: s,
+        unselectable: u,
+        unknownStyle: l = defaultUnknownStyle,
+        ...c
+      } = e;
+      return (0, import_jsx_runtime.jsx)("div", {
+        ...c,
+        ref: t,
+        style: { width: e.width, height: e.height, ...l, ...e.style },
+      });
+    }
+    const {
+      repeat: n,
+      fit: r,
+      position: a,
+      width: o,
+      height: i,
+      unknownStyle: s,
+      unselectable: u,
+      ...l
+    } = e;
+    return (0, import_jsx_runtime.jsx)("div", {
+      ...l,
+      ref: t,
+      style: {
+        backgroundImage: `url(${e.src})`,
+        backgroundRepeat: n ?? "no-repeat",
+        backgroundSize: r ?? "contain",
+        backgroundPosition: a ?? "center center",
+        width: "number" == typeof o ? `${o}rem` : o,
+        height: "number" == typeof i ? `${i}rem` : i,
+        ...l.style,
+      },
+    });
+  }),
+  Image$1 = withResolvePath(
+    (0, import_react.forwardRef)(function (e, t) {
+      if (e.unknown) {
+        const {
+          repeat: n,
+          fit: r,
+          position: a,
+          width: o,
+          src: i,
+          height: s,
+          unselectable: u,
+          unknown: l,
+          unknownStyle: c = defaultUnknownStyle,
+          ...d
+        } = e;
+        return (0, import_jsx_runtime.jsx)("div", {
+          ...d,
+          ref: t,
+          style: { width: e.width, height: e.height, ...c, ...e.style },
+        });
+      }
+      const {
+        repeat: n,
+        fit: r,
+        position: a,
+        width: o,
+        height: i,
+        unknownStyle: s,
+        unknown: u,
+        unselectable: l,
+        ...c
+      } = e;
+      return (0, import_jsx_runtime.jsx)("div", {
+        ...c,
+        ref: t,
+        style: {
+          backgroundImage: `url(${e.src})`,
+          backgroundRepeat: n ?? "no-repeat",
+          backgroundSize: r ?? "contain",
+          backgroundPosition: a ?? "center center",
+          width: "number" == typeof o ? `${o}rem` : o,
+          height: "number" == typeof i ? `${i}rem` : i,
+          ...c.style,
+        },
+      });
+    }),
+  ),
+  Img = withResolvePath(
+    (0, import_react.forwardRef)(function (e, t) {
+      const {
+        width: n,
+        height: r,
+        src: a,
+        unselectable: o,
+        unknown: i,
+        unknownStyle: s = defaultUnknownStyle,
+        ...u
+      } = e;
+      return e.unknown
+        ? (0, import_jsx_runtime.jsx)("div", {
+            ...u,
+            style: { width: e.width, height: e.height, ...s },
+          })
+        : (0, import_jsx_runtime.jsx)("img", { ...u, ref: t, src: a, width: n, height: r });
+    }),
+  ),
   UNKNOWN_NATION = "none",
   list = [
     "ussr",
@@ -33179,14 +33552,14 @@ var defaultTheme = Orange,
     "italy",
   ],
   nationById = (e) => list[e] ?? "none",
-  types$4 = {
+  types$3 = {
     lightTank: LIGHT_TANK,
     mediumTank: MEDIUM_TANK,
     heavyTank: HEAVY_TANK,
     SPG: "SPG",
     "AT-SPG": AT_SPG,
   },
-  typeValues = Object.values(types$4),
+  typeValues = Object.values(types$3),
   normilizeVehicleType = (e) => e.replace("-", "_"),
   isTypeValidValue = (e) => typeValues.includes(e);
 function getVehicleImageKey(e) {
@@ -33747,139 +34120,7 @@ function ModelRouterProvider({
     f = (0, import_react.useMemo)(() => ({ ...c, ...d }), [d, c]);
   return (0, import_jsx_runtime.jsx)(RouterContext.Provider, { value: f, children: e });
 }
-var undef = () => {};
-function withResolvePath(e) {
-  const t = e;
-  return (0, import_react.forwardRef)(function (e, n) {
-    const r = useAdaptive(e, e.adaptive),
-      { path: a, ...o } = r,
-      i = r.images ?? resources.resolve("images"),
-      s = { ...o, ref: n };
-    {
-      const e = a ? i.readOr(a, undef, "warn") : void 0;
-      return e
-        ? (0, import_jsx_runtime.jsx)(t, { ...s, src: e })
-        : (0, import_jsx_runtime.jsx)(t, { ...s, unknown: !0 });
-    }
-  });
-}
-var defaultUnknownStyle = {
-    background:
-      "linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)",
-    backgroundSize: "20rem 20rem",
-    backgroundPosition: "0 0, 0 10rem, 10rem -10rem, -10rem 0rem",
-    backgroundColor: "#000",
-  },
-  ResourceImage = (0, import_react.forwardRef)(function (e, t) {
-    if (!e.src) {
-      const {
-        repeat: n,
-        fit: r,
-        position: a,
-        width: o,
-        src: i,
-        height: s,
-        unselectable: u,
-        unknownStyle: l = defaultUnknownStyle,
-        ...c
-      } = e;
-      return (0, import_jsx_runtime.jsx)("div", {
-        ...c,
-        ref: t,
-        style: { width: e.width, height: e.height, ...l, ...e.style },
-      });
-    }
-    const {
-      repeat: n,
-      fit: r,
-      position: a,
-      width: o,
-      height: i,
-      unknownStyle: s,
-      unselectable: u,
-      ...l
-    } = e;
-    return (0, import_jsx_runtime.jsx)("div", {
-      ...l,
-      ref: t,
-      style: {
-        backgroundImage: `url(${e.src})`,
-        backgroundRepeat: n ?? "no-repeat",
-        backgroundSize: r ?? "contain",
-        backgroundPosition: a ?? "center center",
-        width: "number" == typeof o ? `${o}rem` : o,
-        height: "number" == typeof i ? `${i}rem` : i,
-        ...l.style,
-      },
-    });
-  }),
-  Image$1 = withResolvePath(
-    (0, import_react.forwardRef)(function (e, t) {
-      if (e.unknown) {
-        const {
-          repeat: n,
-          fit: r,
-          position: a,
-          width: o,
-          src: i,
-          height: s,
-          unselectable: u,
-          unknown: l,
-          unknownStyle: c = defaultUnknownStyle,
-          ...d
-        } = e;
-        return (0, import_jsx_runtime.jsx)("div", {
-          ...d,
-          ref: t,
-          style: { width: e.width, height: e.height, ...c, ...e.style },
-        });
-      }
-      const {
-        repeat: n,
-        fit: r,
-        position: a,
-        width: o,
-        height: i,
-        unknownStyle: s,
-        unknown: u,
-        unselectable: l,
-        ...c
-      } = e;
-      return (0, import_jsx_runtime.jsx)("div", {
-        ...c,
-        ref: t,
-        style: {
-          backgroundImage: `url(${e.src})`,
-          backgroundRepeat: n ?? "no-repeat",
-          backgroundSize: r ?? "contain",
-          backgroundPosition: a ?? "center center",
-          width: "number" == typeof o ? `${o}rem` : o,
-          height: "number" == typeof i ? `${i}rem` : i,
-          ...c.style,
-        },
-      });
-    }),
-  ),
-  Img = withResolvePath(
-    (0, import_react.forwardRef)(function (e, t) {
-      const {
-        width: n,
-        height: r,
-        src: a,
-        unselectable: o,
-        unknown: i,
-        unknownStyle: s = defaultUnknownStyle,
-        ...u
-      } = e;
-      return e.unknown
-        ? (0, import_jsx_runtime.jsx)("div", {
-            ...u,
-            style: { width: e.width, height: e.height, ...s },
-          })
-        : (0, import_jsx_runtime.jsx)("img", { ...u, ref: t, src: a, width: n, height: r });
-    }),
-  ),
-  contextInstance$1 = (0, import_react.createContext)(null),
+var contextInstance$1 = (0, import_react.createContext)(null),
   positions$1 = { left: "left", right: "right", top: "top", bottom: "bottom" },
   positionList = Object.values(positions$1),
   verticalPositions = ["top", "bottom"],
@@ -34155,11 +34396,11 @@ function updatePosition(e, t, n, r, a, o, i, s) {
     applyTransform(n, a.top - u, r, s, i);
   }
 }
-var base$46 = "PopoverTip_163a336f",
+var base$45 = "PopoverTip_163a336f",
   arrow$1 = "PopoverTip_arrow_44c7d6a5",
   glow$2 = "PopoverTip_glow_da3f9be9",
   popover_tip_module_default = {
-    base: base$46,
+    base: base$45,
     "base__flip-left": "PopoverTip_base__flip-left_3cc0dadc",
     "base__flip-right": "PopoverTip_base__flip-right_6a5605b6",
     "base__flip-top": "PopoverTip_base__flip-top_6bcc69e1",
@@ -34489,8 +34730,8 @@ var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
   background$6 = "Thumb_background_b893084a",
   border$5 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
-  icon$9 = "Thumb_icon_dca8bf26",
-  base$45 = "Thumb_6ff3e706",
+  icon$8 = "Thumb_icon_dca8bf26",
+  base$44 = "Thumb_6ff3e706",
   base__vertical$1 = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
   base__active$1 = "Thumb_base__active_830942bb",
@@ -34498,8 +34739,8 @@ var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
     background: background$6,
     border: border$5,
     innerBorder: innerBorder,
-    icon: icon$9,
-    base: base$45,
+    icon: icon$8,
+    base: base$44,
     base__vertical: base__vertical$1,
     base__horizontal: base__horizontal,
     base__active: base__active$1,
@@ -34779,7 +35020,7 @@ function useBarHandlers(e, t, n, r, a, o, i) {
   );
 }
 var rail$1 = "HorizontalBar_rail_37858d8f",
-  base$44 = "HorizontalBar_4df27ac3",
+  base$43 = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
@@ -34788,7 +35029,7 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
   button$3 = "HorizontalBar_button_cbabd91",
   horizontal_bar_module_default = {
     rail: rail$1,
-    base: base$44,
+    base: base$43,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
@@ -34908,14 +35149,14 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
       ],
     });
   }),
-  base$43 = "HorizontalScroll_5b201d2b",
+  base$42 = "HorizontalScroll_5b201d2b",
   wrapper$2 = "HorizontalScroll_wrapper_2fb60496",
   wrapper__left = "HorizontalScroll_wrapper__left_adacfff",
   wrapper__right = "HorizontalScroll_wrapper__right_a6825027",
   wrapper__both = "HorizontalScroll_wrapper__both_7917ea88",
   defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
   horizontal_scroll_module_default = {
-    base: base$43,
+    base: base$42,
     wrapper: wrapper$2,
     wrapper__left: wrapper__left,
     wrapper__right: wrapper__right,
@@ -35120,7 +35361,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$42 = "VerticalBar_7187fa00",
+  base$41 = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
@@ -35129,7 +35370,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   button$2 = "VerticalBar_button_7b0e4aca",
   vertical_bar_module_default = {
     rail: rail,
-    base: base$42,
+    base: base$41,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
@@ -35342,9 +35583,9 @@ Area.Default = DefaultScroll;
 var background$5 = "Checkbox_background_ae1fc797",
   border$4 = "Checkbox_border_e1946121",
   overlay$2 = "Checkbox_overlay_de55e0a5",
-  base$41 = "Checkbox_e00b9a0",
+  base$40 = "Checkbox_e00b9a0",
   base__enabled = "Checkbox_base__enabled_5bfdfae9",
-  label$2 = "Checkbox_label_58a00a56",
+  label$1 = "Checkbox_label_58a00a56",
   base__small$6 = "Checkbox_base__small_70ef629e",
   base__medium$5 = "Checkbox_base__medium_70ef629e",
   base__checked = "Checkbox_base__checked_70ef629e",
@@ -35354,9 +35595,9 @@ var background$5 = "Checkbox_background_ae1fc797",
     background: background$5,
     border: border$4,
     overlay: overlay$2,
-    base: base$41,
+    base: base$40,
     base__enabled: base__enabled,
-    label: label$2,
+    label: label$1,
     base__small: base__small$6,
     base__medium: base__medium$5,
     base__checked: base__checked,
@@ -35382,12 +35623,12 @@ var background$5 = "Checkbox_background_ae1fc797",
       ],
     });
   }),
-  sizes$10 = { medium: "medium", small: "small" },
+  sizes$9 = { medium: "medium", small: "small" },
   Base$16 = defineStyledComponent("Checkbox", checkbox_module_default.base, {
     variants: {
       size: {
-        [sizes$10.small]: checkbox_module_default.base__small,
-        [sizes$10.medium]: checkbox_module_default.base__medium,
+        [sizes$9.small]: checkbox_module_default.base__small,
+        [sizes$9.medium]: checkbox_module_default.base__medium,
       },
       checked: { true: checkbox_module_default.base__checked },
       state: { enabled: checkbox_module_default.base__enabled },
@@ -35396,7 +35637,7 @@ var background$5 = "Checkbox_background_ae1fc797",
   HeadlessCheckbox = (0, import_react.forwardRef)(function (
     {
       checked: e,
-      size: t = sizes$10.medium,
+      size: t = sizes$9.medium,
       disabled: n = !1,
       children: r,
       onMouseEnter: a,
@@ -35448,8 +35689,8 @@ var Checkbox = (0, import_react.forwardRef)(function (
       ],
     });
   }),
-  base$40 = "VehicleLevel_3c938122",
-  vehicle_level_module_default = { base: base$40 },
+  base$39 = "VehicleLevel_3c938122",
+  vehicle_level_module_default = { base: base$39 },
   numberTypes = { arabic: "arabic", roman: "roman" };
 function getLevelType(e, t) {
   return e || (t ? numberTypes.arabic : numberTypes.roman);
@@ -35469,9 +35710,9 @@ var TYPE_PRESTIGE = "prestige",
   directions$1 = { left: "left", right: "right" },
   lengths = { short: "short", medium: "medium", long: "long" },
   iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
-  icon$8 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
-  base$39 = "VehiclePrestigeLevel_a750cce",
-  icon$7 = "VehiclePrestigeLevel_icon_ef024cc3",
+  icon$7 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
+  base$38 = "VehiclePrestigeLevel_a750cce",
+  icon$6 = "VehiclePrestigeLevel_icon_ef024cc3",
   base__left$1 = "VehiclePrestigeLevel_base__left_4426b46c",
   level = "VehiclePrestigeLevel_level_10f410ba",
   level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
@@ -35484,8 +35725,8 @@ var TYPE_PRESTIGE = "prestige",
   base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
   base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
   vehicle_prestige_level_module_default = {
-    base: base$39,
-    icon: icon$7,
+    base: base$38,
+    icon: icon$6,
     base__left: base__left$1,
     level: level,
     level__short: level__short,
@@ -35512,7 +35753,7 @@ function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: 
         ),
         children: [
           (0, import_jsx_runtime.jsx)(Image$1, {
-            path: `prestige.tab.${icon$8(e, n, t)}`,
+            path: `prestige.tab.${icon$7(e, n, t)}`,
             className: clsx(vehicle_prestige_level_module_default.icon, a?.icon),
           }),
           "prestige" !== n &&
@@ -35528,25 +35769,25 @@ function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: 
       });
 }
 PrestigeLevel.direction = directions$1;
-var base$38 = "VehicleRole_e70537d3",
-  icon__x16x16$1 = "VehicleRole_icon__x16x16_f444f190",
-  icon__x24x24$1 = "VehicleRole_icon__x24x24_cc02d077",
-  icon__x32x32$1 = "VehicleRole_icon__x32x32_2180a099",
-  icon__x48x48$1 = "VehicleRole_icon__x48x48_2a01e86c",
+var base$37 = "VehicleRole_e70537d3",
+  icon__x16x16 = "VehicleRole_icon__x16x16_f444f190",
+  icon__x24x24 = "VehicleRole_icon__x24x24_cc02d077",
+  icon__x32x32 = "VehicleRole_icon__x32x32_2180a099",
+  icon__x48x48 = "VehicleRole_icon__x48x48_2a01e86c",
   vehicle_role_module_default = {
-    base: base$38,
-    icon__x16x16: icon__x16x16$1,
-    icon__x24x24: icon__x24x24$1,
-    icon__x32x32: icon__x32x32$1,
-    icon__x48x48: icon__x48x48$1,
+    base: base$37,
+    icon__x16x16: icon__x16x16,
+    icon__x24x24: icon__x24x24,
+    icon__x32x32: icon__x32x32,
+    icon__x48x48: icon__x48x48,
   },
-  sizes$9 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
+  sizes$8 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
   images$1 = resources.resolve("images"),
   VehicleRole = (0, import_react.forwardRef)(function (
-    { roleKey: e, size: t = sizes$9.x24x24, classNames: n, ...r },
+    { roleKey: e, size: t = sizes$8.x24x24, classNames: n, ...r },
     a,
   ) {
-    const o = useUpscale(t, sizes$9.x32x32);
+    const o = useUpscale(t, sizes$8.x32x32);
     return (0, import_jsx_runtime.jsx)("div", {
       ...r,
       ref: a,
@@ -35557,17 +35798,17 @@ var base$38 = "VehicleRole_e70537d3",
       }),
     });
   });
-VehicleRole.sizes = sizes$9;
-var sizes$8 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+VehicleRole.sizes = sizes$8;
+var sizes$7 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
   upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
   mapTypes = {
-    [types$4.lightTank]: "light_tank",
-    [types$4.mediumTank]: "medium_tank",
-    [types$4.heavyTank]: "heavy_tank",
-    [types$4.SPG]: "spg",
-    [types$4["AT-SPG"]]: "tank_destroyer",
+    [types$3.lightTank]: "light_tank",
+    [types$3.mediumTank]: "medium_tank",
+    [types$3.heavyTank]: "heavy_tank",
+    [types$3.SPG]: "spg",
+    [types$3["AT-SPG"]]: "tank_destroyer",
   },
-  base$37 = "VehicleType_30b4aab0",
+  base$36 = "VehicleType_30b4aab0",
   base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
   base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
   base__x64x64 = "VehicleType_base__x64x64_bb9b890",
@@ -35576,9 +35817,9 @@ var sizes$8 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x
   base__premium__x48x48 = "VehicleType_base__premium__x48x48_e19c5d21",
   base__premium__x64x64 = "VehicleType_base__premium__x64x64_ba9a2a05",
   base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
-  icon$6 = "VehicleType_icon_b15d2628",
+  icon$5 = "VehicleType_icon_b15d2628",
   vehicle_type_module_default = {
-    base: base$37,
+    base: base$36,
     base__x24x24: base__x24x24,
     base__x48x48: base__x48x48,
     base__x64x64: base__x64x64,
@@ -35587,13 +35828,13 @@ var sizes$8 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x
     base__premium__x48x48: base__premium__x48x48,
     base__premium__x64x64: base__premium__x64x64,
     base__premium__x96x96: base__premium__x96x96,
-    icon: icon$6,
+    icon: icon$5,
   },
   VehicleType = (0, import_react.forwardRef)(function (
-    { type: e, size: t = sizes$8.x48x48, premium: n = !1, fit: r = "contain", ...a },
+    { type: e, size: t = sizes$7.x48x48, premium: n = !1, fit: r = "contain", ...a },
     o,
   ) {
-    const i = useUpscale(sizes$8[t], upscaledSizes[t]);
+    const i = useUpscale(sizes$7[t], upscaledSizes[t]);
     return (0, import_jsx_runtime.jsx)(Image$1, {
       ...a,
       ref: o,
@@ -35608,11 +35849,11 @@ var sizes$8 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x
       path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
     });
   });
-((VehicleType.types = types$4), (VehicleType.sizes = sizes$8));
-var base$36 = "VehicleInfo_1732f1f0",
+((VehicleType.types = types$3), (VehicleType.sizes = sizes$7));
+var base$35 = "VehicleInfo_1732f1f0",
   name = "VehicleInfo_name_3989ca04",
   name__premium = "VehicleInfo_name__premium_258b3b93",
-  vehicle_info_module_default = { base: base$36, name: name, name__premium: name__premium },
+  vehicle_info_module_default = { base: base$35, name: name, name__premium: name__premium },
   VehicleName = defineStyledComponent("VehicleName", vehicle_info_module_default.name, {
     variants: { premium: { true: vehicle_info_module_default.name__premium } },
   }),
@@ -35650,7 +35891,7 @@ var ErrorHandler = class extends import_react.Component {
         : this.props.children;
     }
   },
-  types$3 = {
+  types$2 = {
     tankXP: "tankXP",
     freeXP: "freeXP",
     credits: "credits",
@@ -35668,9 +35909,9 @@ var ErrorHandler = class extends import_react.Component {
     brProgressionToken: "brProgressionToken",
     battlePassPoints: "battlePassPoints",
   },
-  currencyTypes = Object.values(types$3),
+  currencyTypes = Object.values(types$2),
   discountTypes = { currency: "currency", experience: "experience", custom: "custom" },
-  sizes$7 = {
+  sizes$6 = {
     extraSmall: "extraSmall",
     small: "small",
     medium: "medium",
@@ -35679,30 +35920,30 @@ var ErrorHandler = class extends import_react.Component {
     xxl: "xxl",
   },
   imageSizes$1 = {
-    [sizes$7.extraSmall]: 16,
-    [sizes$7.small]: 24,
-    [sizes$7.medium]: 32,
-    [sizes$7.large]: 48,
-    [sizes$7.extraLarge]: 80,
-    [sizes$7.xxl]: 96,
+    [sizes$6.extraSmall]: 16,
+    [sizes$6.small]: 24,
+    [sizes$6.medium]: 32,
+    [sizes$6.large]: 48,
+    [sizes$6.extraLarge]: 80,
+    [sizes$6.xxl]: 96,
   },
   upscaledImageSizes = {
-    [sizes$7.extraSmall]: 32,
-    [sizes$7.small]: 48,
-    [sizes$7.medium]: 32,
-    [sizes$7.large]: 96,
-    [sizes$7.extraLarge]: 80,
-    [sizes$7.xxl]: 96,
+    [sizes$6.extraSmall]: 32,
+    [sizes$6.small]: 48,
+    [sizes$6.medium]: 32,
+    [sizes$6.large]: 96,
+    [sizes$6.extraLarge]: 80,
+    [sizes$6.xxl]: 96,
   },
   discountSizesConfig = {
-    [sizes$7.extraSmall]: { width: "60rem", height: "36rem" },
-    [sizes$7.small]: { width: "80rem", height: "48rem" },
-    [sizes$7.medium]: { width: "80rem", height: "48rem" },
-    [sizes$7.large]: { width: "106rem", height: "64rem" },
-    [sizes$7.extraLarge]: { width: "140rem", height: "84rem" },
-    [sizes$7.xxl]: { width: "140rem", height: "84rem" },
+    [sizes$6.extraSmall]: { width: "60rem", height: "36rem" },
+    [sizes$6.small]: { width: "80rem", height: "48rem" },
+    [sizes$6.medium]: { width: "80rem", height: "48rem" },
+    [sizes$6.large]: { width: "106rem", height: "64rem" },
+    [sizes$6.extraLarge]: { width: "140rem", height: "84rem" },
+    [sizes$6.xxl]: { width: "140rem", height: "84rem" },
   },
-  base$35 = "Currency_72d4be39",
+  base$34 = "Currency_72d4be39",
   base__reverse = "Currency_base__reverse_f12e61b0",
   base__notEnough = "Currency_base__notEnough_9a7842f",
   base__credits = "Currency_base__credits_7b9ae721",
@@ -35711,7 +35952,7 @@ var ErrorHandler = class extends import_react.Component {
   base__crystal = "Currency_base__crystal_f830cb47",
   base__tankXP = "Currency_base__tankXP_1707c68b",
   currency_module_default = {
-    base: base$35,
+    base: base$34,
     base__reverse: base__reverse,
     base__notEnough: base__notEnough,
     base__credits: base__credits,
@@ -35725,7 +35966,7 @@ var ErrorHandler = class extends import_react.Component {
     variants: { reverse: { true: currency_module_default.base__reverse } },
   });
 function formatCurrencyValue(e, t) {
-  const n = t === types$3.gold ? "gold" : "integral";
+  const n = t === types$2.gold ? "gold" : "integral";
   return Array.isArray(e)
     ? e.map((e) => ("number" == typeof e ? intl$1.formatNumber(n, e) : e))
     : "number" == typeof e
@@ -35738,7 +35979,7 @@ function Currency({
   className: n,
   classNames: r,
   imagePath: a,
-  size: o = sizes$7.small,
+  size: o = sizes$6.small,
   enough: i = !0,
   ...s
 }) {
@@ -35767,10 +36008,10 @@ function Currency({
     ],
   });
 }
-((Currency.sizes = sizes$7), (Currency.types = types$3));
-var base$34 = "WithDiscount_b8b3aa7f",
+((Currency.sizes = sizes$6), (Currency.types = types$2));
+var base$33 = "WithDiscount_b8b3aa7f",
   discount = "WithDiscount_discount_f7ce1b97",
-  icon$5 = "WithDiscount_icon_a6c57ca8",
+  icon$4 = "WithDiscount_icon_a6c57ca8",
   icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
   icon__small = "WithDiscount_icon__small_60ee455a",
   icon__medium = "WithDiscount_icon__medium_2877fd99",
@@ -35778,9 +36019,9 @@ var base$34 = "WithDiscount_b8b3aa7f",
   icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
   icon__xxl = "WithDiscount_icon__xxl_4080bb18",
   with_discount_module_default = {
-    base: base$34,
+    base: base$33,
     discount: discount,
-    icon: icon$5,
+    icon: icon$4,
     icon__extraSmall: icon__extraSmall,
     icon__small: icon__small,
     icon__medium: icon__medium,
@@ -35791,7 +36032,7 @@ var base$34 = "WithDiscount_b8b3aa7f",
 function WithDiscount({
   children: e,
   imagePath: t,
-  size: n = sizes$7.small,
+  size: n = sizes$6.small,
   customImageSize: r,
   type: a,
   enabled: o = !1,
@@ -35814,7 +36055,7 @@ function WithDiscount({
             width: u.width,
             height: u.height,
             path:
-              t ?? `library.currency.discount_${a}_${n === sizes$7.xxl ? sizes$7.extraLarge : n}`,
+              t ?? `library.currency.discount_${a}_${n === sizes$6.xxl ? sizes$6.extraLarge : n}`,
             className: clsx(
               with_discount_module_default.icon,
               s?.icon,
@@ -35833,25 +36074,25 @@ var base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
     base__x190x152: base__x190x152,
     base__x380x304: base__x380x304,
   },
-  sizes$6 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
+  sizes$5 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
   Base$14 = defineStyledComponent("VehicleImage", {
     element: Image$1,
     className: vehicle_image_module_default.base,
     cva: {
       variants: {
         size: {
-          [sizes$6.x120x96]: vehicle_image_module_default.base__x120x96,
-          [sizes$6.x190x152]: vehicle_image_module_default.base__x190x152,
-          [sizes$6.x380x304]: vehicle_image_module_default.base__x380x304,
+          [sizes$5.x120x96]: vehicle_image_module_default.base__x120x96,
+          [sizes$5.x190x152]: vehicle_image_module_default.base__x190x152,
+          [sizes$5.x380x304]: vehicle_image_module_default.base__x380x304,
         },
       },
     },
   });
-function UnknownVehicleImage({ size: e = sizes$6.x380x304, ...t }) {
+function UnknownVehicleImage({ size: e = sizes$5.x380x304, ...t }) {
   return (0, import_jsx_runtime.jsx)(Base$14, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
 }
 var VehicleImage = (0, import_react.forwardRef)(function (
-  { size: e = sizes$6.x380x304, name: t, width: n, height: r, className: a, ...o },
+  { size: e = sizes$5.x380x304, name: t, width: n, height: r, className: a, ...o },
   i,
 ) {
   const s = resources.resolve("images"),
@@ -35896,18 +36137,18 @@ function useCalculateLeftTime(e) {
         ? hours(1)
         : hours(0);
 }
-((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$6));
-var base$33 = "IconCounter_33c660e9",
-  icon_counter_module_default = { base: base$33 };
+((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$5));
+var base$32 = "IconCounter_33c660e9",
+  icon_counter_module_default = { base: base$32 };
 function IconCounter({ className: e }) {
   return (0, import_jsx_runtime.jsx)("div", {
     className: clsx(icon_counter_module_default.base, e),
   });
 }
-var base$32 = "ShortCounter_d2d7b370",
+var base$31 = "ShortCounter_d2d7b370",
   text = "ShortCounter_text_ecf2e742",
   count = "ShortCounter_count_d7a74fd8",
-  short_counter_module_default = { base: base$32, text: text, count: count },
+  short_counter_module_default = { base: base$31, text: text, count: count },
   ShortCounter = (0, import_react.forwardRef)(function (
     { time: e, wins: t, battles: n, classNames: r, ...a },
     o,
@@ -36223,12 +36464,12 @@ function useKeyButtonContext() {
 }
 var background$4 = "KeyButton_background_8a852f95",
   border$3 = "KeyButton_border_b1c50f01",
-  base$31 = "KeyButton_8fd343f8",
+  base$30 = "KeyButton_8fd343f8",
   content$9 = "KeyButton_content_3ab1d990",
   key_button_module_default = {
     background: background$4,
     border: border$3,
-    base: base$31,
+    base: base$30,
     content: content$9,
   },
   StyledBase = defineStyledComponent("KeyButton", key_button_module_default.base);
@@ -36402,7 +36643,7 @@ function Route({ component: e, exact: t }) {
 }
 var states = { default: "default", alert: "alert", error: "error", done: "done" },
   messageTypes = { alert: "alert", error: "error" },
-  types$2 = {
+  types$1 = {
     text: "text",
     password: "password",
     number: "number",
@@ -36410,9 +36651,9 @@ var states = { default: "default", alert: "alert", error: "error", done: "done" 
     email: "email",
     integer: "integer",
   },
-  sizes$5 = { medium: "medium", large: "large" },
+  sizes$4 = { medium: "medium", large: "large" },
   icons = { search: "search" },
-  defaultConfig = { type: types$2.text, size: sizes$5.medium, state: states.default, disabled: !1 },
+  defaultConfig = { type: types$1.text, size: sizes$4.medium, state: states.default, disabled: !1 },
   placeholderVisibility = { focusedOrValue: "focusedOrValue", value: "value" },
   contextInstance = (0, import_react.createContext)(null);
 function useInput() {
@@ -36460,7 +36701,7 @@ function useInputInstance({ value: e, size: t, type: n, state: r, disabled: a })
   );
 }
 var disabledOverlay$2 = "Input_disabledOverlay_3e980046",
-  icon$4 = "Input_icon_ed3c6a4a",
+  icon$3 = "Input_icon_ed3c6a4a",
   clearButton = "Input_clearButton_d26b0bd5",
   decoration = "Input_decoration_b561de7a",
   decoration__focused = "Input_decoration__focused_494bd5d6",
@@ -36495,7 +36736,7 @@ var disabledOverlay$2 = "Input_disabledOverlay_3e980046",
   clearButton__upscale = "Input_clearButton__upscale_494bd5d6",
   input_module_default = {
     disabledOverlay: disabledOverlay$2,
-    icon: icon$4,
+    icon: icon$3,
     clearButton: clearButton,
     decoration: decoration,
     decoration__focused: decoration__focused,
@@ -36677,9 +36918,9 @@ var Placeholder = (0, import_react.forwardRef)(function (
           onChange: function (e) {
             if (c) return (e.preventDefault(), void f.current?.blur());
             const { value: t } = e.target;
-            (u === types$2.number
+            (u === types$1.number
               ? (e.target.value = cleanInputNumber(t))
-              : u === types$2.integer && (e.target.value = cleanInputInteger(t)),
+              : u === types$1.integer && (e.target.value = cleanInputInteger(t)),
               i.onChange?.(e));
           },
           onFocus: function (e) {
@@ -36761,9 +37002,9 @@ var Input = (0, import_react.forwardRef)(function (
     }),
   });
 });
-((Input.types = types$2),
+((Input.types = types$1),
   (Input.messageTypes = messageTypes),
-  (Input.sizes = sizes$5),
+  (Input.sizes = sizes$4),
   (Input.states = states),
   (Input.icons = icons),
   (Input.Provider = Provider),
@@ -36775,7 +37016,7 @@ var Input = (0, import_react.forwardRef)(function (
   (Input.ClearButton = ClearButton));
 var toggleThemes = { primary: "primary", custom: "custom" },
   toggleSizes = { extraSmall: "extraSmall", small: "small", medium: "medium" },
-  base$30 = "Toggle_cdf77db0",
+  base$29 = "Toggle_cdf77db0",
   base__fullSizeContent = "Toggle_base__fullSizeContent_1b52d9ec",
   base__activated = "Toggle_base__activated_d584e080",
   base__disabled$5 = "Toggle_base__disabled_b564a69b",
@@ -36785,7 +37026,7 @@ var toggleThemes = { primary: "primary", custom: "custom" },
   overlay$1 = "Toggle_overlay_e2999686",
   content$8 = "Toggle_content_17eff4d2",
   toggle_module_default = {
-    base: base$30,
+    base: base$29,
     "base__size-small": "Toggle_base__size-small_b76142a1",
     "base__size-medium": "Toggle_base__size-medium_a0d408f5",
     base__fullSizeContent: base__fullSizeContent,
@@ -36951,10 +37192,10 @@ function useHoverState(e) {
   const [t, n] = (0, import_react.useState)(!1);
   return [t ? `${e}_hover` : e, n];
 }
-var base$29 = "Background_39e8f2ed",
+var base$28 = "Background_39e8f2ed",
   pattern$3 = "Background_pattern_8cad1521",
   noise = "Background_noise_e3254bb3",
-  background_module_default = { base: base$29, pattern: pattern$3, noise: noise };
+  background_module_default = { base: base$28, pattern: pattern$3, noise: noise };
 function Background({ className: e, classNames: t }) {
   return (0, import_jsx_runtime.jsxs)("div", {
     className: clsx(e, background_module_default.base),
@@ -36968,8 +37209,8 @@ function Background({ className: e, classNames: t }) {
     ],
   });
 }
-var base$28 = "AnimatedDetails_c70d3863",
-  animated_details_module_default = { base: base$28 },
+var base$27 = "AnimatedDetails_c70d3863",
+  animated_details_module_default = { base: base$27 },
   AnimatedDetails = (0, import_react.forwardRef)(function (
     { opened: e, children: t, className: n, animationSettings: r = {}, ...a },
     o,
@@ -37087,8 +37328,8 @@ var arrow = "Arrow_f1570a91",
       ],
     });
   }),
-  base$27 = "Accordion_2b56632",
-  accordion_module_default = { base: base$27 },
+  base$26 = "Accordion_2b56632",
+  accordion_module_default = { base: base$26 },
   Accordion = (0, import_react.forwardRef)(function ({ opened: e, ...t }, n) {
     return (0, import_jsx_runtime.jsx)(Context$2.Provider, {
       value: { opened: e },
@@ -37104,10 +37345,10 @@ var arrow = "Arrow_f1570a91",
   (Accordion.Details = Details),
   (Accordion.AnimatedDetails = AnimatedDetails),
   (Accordion.Arrow = Arrow));
-var base$26 = "ScrollVelocityGuardContent_6b5de46d",
+var base$25 = "ScrollVelocityGuardContent_6b5de46d",
   base__disableInteractivity = "ScrollVelocityGuardContent_base__disableInteractivity_e6c30513",
   scroll_velocity_guard_content_module_default = {
-    base: base$26,
+    base: base$25,
     base__disableInteractivity: base__disableInteractivity,
   },
   DEFAULT_VELOCITY_LIMITATION = 1;
@@ -37300,7 +37541,7 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
       e
     );
   })({}),
-  base$25 = "Cbutton_24fc9a0c",
+  base$24 = "Cbutton_24fc9a0c",
   base__main = "Cbutton_base__main_2f199578",
   base__primary = "Cbutton_base__primary_9da8a692",
   base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
@@ -37322,7 +37563,7 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
   base__highlightActive = "Cbutton_base__highlightActive_180a9717",
   content$6 = "Cbutton_content_faaa9067",
   CButton_module_default = {
-    base: base$25,
+    base: base$24,
     base__main: base__main,
     base__primary: base__primary,
     base__primaryGreen: base__primaryGreen,
@@ -37447,12 +37688,12 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
     );
   },
   CButton = Button,
-  base$24 = "Error_741eaf3c",
+  base$23 = "Error_741eaf3c",
   alertIcon = "Error_alertIcon_e771a05c",
   errorCaption = "Error_errorCaption_89c19a4f",
   button$1 = "Error_button_2d8a41b6",
   Error_module_default = {
-    base: base$24,
+    base: base$23,
     alertIcon: alertIcon,
     errorCaption: errorCaption,
     button: button$1,
@@ -37474,13 +37715,13 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
         }),
       ],
     }),
-  base$23 = "Spinner_9ec19f90",
+  base$22 = "Spinner_9ec19f90",
   caption$1 = "Spinner_caption_a44b585",
   gear = "Spinner_gear_13ca7433",
   spin = "Spinner_spin_88c33ad6",
   logo = "Spinner_logo_22e624b",
   Spinner_module_default = {
-    base: base$23,
+    base: base$22,
     caption: caption$1,
     gear: gear,
     spin: spin,
@@ -37503,9 +37744,9 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
         }),
       ],
     }),
-  base$22 = "Waiting_f97f6e4b",
+  base$21 = "Waiting_f97f6e4b",
   blackOverlay = "Waiting_blackOverlay_e659a6de",
-  Waiting_module_default = { base: base$22, blackOverlay: blackOverlay },
+  Waiting_module_default = { base: base$21, blackOverlay: blackOverlay },
   Waiting = ({
     errorBtnClickHandler: e,
     message: t = "",
@@ -37550,7 +37791,7 @@ var background$1 = "Switcher_background_a88161d0",
   selectedOverlay$1 = "Switcher_selectedOverlay_959b7a8f",
   selectedItemBackground = "Switcher_selectedItemBackground_f3f7ed7e",
   selectedItemBorder = "Switcher_selectedItemBorder_7a1a3dd5",
-  base$21 = "Switcher_825add0a",
+  base$20 = "Switcher_825add0a",
   base__disabled$3 = "Switcher_base__disabled_863a5f47",
   content$5 = "Switcher_content_c83e02e5",
   content__fontAligned = "Switcher_content__fontAligned_9342bb29",
@@ -37566,7 +37807,7 @@ var background$1 = "Switcher_background_a88161d0",
     selectedOverlay: selectedOverlay$1,
     selectedItemBackground: selectedItemBackground,
     selectedItemBorder: selectedItemBorder,
-    base: base$21,
+    base: base$20,
     base__disabled: base__disabled$3,
     "base__size-small": "Switcher_base__size-small_df4dee40",
     "base__size-medium": "Switcher_base__size-medium_d287fe48",
@@ -37609,31 +37850,31 @@ function SelectedItem({ children: e, classNames: t }) {
     }),
   });
 }
-var sizes$4 = { small: "small", medium: "medium" },
-  types$1 = { vertical: "vertical", horizontal: "horizontal" },
+var sizes$3 = { small: "small", medium: "medium" },
+  types = { vertical: "vertical", horizontal: "horizontal" },
   Base$11 = defineStyledComponent("Button", switcher_module_default.base, {
     variants: {
       type: {
-        [types$1.horizontal]: switcher_module_default["base__type-horizontal"],
-        [types$1.vertical]: switcher_module_default["base__type-vertical"],
+        [types.horizontal]: switcher_module_default["base__type-horizontal"],
+        [types.vertical]: switcher_module_default["base__type-vertical"],
       },
       size: {
-        [sizes$4.small]: switcher_module_default["base__size-small"],
-        [sizes$4.medium]: switcher_module_default["base__size-medium"],
+        [sizes$3.small]: switcher_module_default["base__size-small"],
+        [sizes$3.medium]: switcher_module_default["base__size-medium"],
       },
       state: { disabled: switcher_module_default.base__disabled },
     },
-    defaultVariants: { type: types$1.vertical, size: sizes$4.small },
+    defaultVariants: { type: types.vertical, size: sizes$3.small },
   }),
   Item = defineStyledComponent("ButtonItem", switcher_module_default.item),
   Switcher = (0, import_react.forwardRef)(function (
     {
-      type: e = types$1.vertical,
+      type: e = types.vertical,
       checked: t,
       onMouseEnter: n,
       onSwitch: r,
       onClick: a,
-      size: o = sizes$4.small,
+      size: o = sizes$3.small,
       disabled: i = !1,
       autoAlignContent: s = !1,
       classNames: u,
@@ -37685,14 +37926,14 @@ var sizes$4 = { small: "small", medium: "medium" },
   });
 ((Switcher.Item = Item),
   (Switcher.SelectedItem = SelectedItem),
-  (Switcher.types = types$1),
-  (Switcher.sizes = sizes$4));
+  (Switcher.types = types),
+  (Switcher.sizes = sizes$3));
 var context = (0, import_react.createContext)(null);
 function useDragAndDrop() {
   const e = (0, import_react.useContext)(context);
   return (assert$1(null !== e, "DragAndDropContext is null"), e);
 }
-var sizes$3 = {
+var sizes$2 = {
     s24x24: "s24x24",
     s48x48: "s48x48",
     s64x64: "s64x64",
@@ -37721,24 +37962,24 @@ var sizes$3 = {
     overlayTypes.builtInEquipment,
   ],
   imageSizes = {
-    [sizes$3.s24x24]: { width: 24, height: 24 },
-    [sizes$3.s48x48]: { width: 48, height: 48 },
-    [sizes$3.s64x64]: { width: 64, height: 64 },
-    [sizes$3.s80x80]: { width: 80, height: 80 },
-    [sizes$3.s180x135]: { width: 180, height: 135 },
-    [sizes$3.s232x174]: { width: 232, height: 174 },
-    [sizes$3.s296x222]: { width: 296, height: 222 },
-    [sizes$3.s360x270]: { width: 360, height: 270 },
-    [sizes$3.s400x300]: { width: 400, height: 300 },
-    [sizes$3.s600x450]: { width: 600, height: 450 },
+    [sizes$2.s24x24]: { width: 24, height: 24 },
+    [sizes$2.s48x48]: { width: 48, height: 48 },
+    [sizes$2.s64x64]: { width: 64, height: 64 },
+    [sizes$2.s80x80]: { width: 80, height: 80 },
+    [sizes$2.s180x135]: { width: 180, height: 135 },
+    [sizes$2.s232x174]: { width: 232, height: 174 },
+    [sizes$2.s296x222]: { width: 296, height: 222 },
+    [sizes$2.s360x270]: { width: 360, height: 270 },
+    [sizes$2.s400x300]: { width: 400, height: 300 },
+    [sizes$2.s600x450]: { width: 600, height: 450 },
   },
   Base$10 = defineStyledComponent("LoadoutItem", { element: Image$1 });
 function getItemSizeFolderName(e) {
   switch (e) {
-    case sizes$3.s80x80:
-    case sizes$3.s64x64:
+    case sizes$2.s80x80:
+    case sizes$2.s64x64:
       return "big";
-    case sizes$3.s48x48:
+    case sizes$2.s48x48:
       return "small";
     default:
       return e;
@@ -37762,7 +38003,7 @@ var LoadoutItem = (0, import_react.forwardRef)(function (
 ) {
   const f =
       t ||
-      (r === sizes$3.s24x24
+      (r === sizes$2.s24x24
         ? `vehParams.tooltips.bonuses.${e}`
         : `quests.bonuses.${getItemSizeFolderName(r)}.${e}`),
     p = (() => {
@@ -37770,7 +38011,7 @@ var LoadoutItem = (0, import_react.forwardRef)(function (
       if (a === overlayTypes.custom)
         return void console.error("custom overlay passed without image source path");
       if (a === overlayTypes.none) return;
-      const e = r === sizes$3.s64x64 ? sizes$3.s80x80 : r;
+      const e = r === sizes$2.s64x64 ? sizes$2.s80x80 : r;
       return overlayTypesWithoutLevel.includes(a)
         ? `components.loadout_item.overlays.${e}.${a}`
         : o
@@ -37791,7 +38032,7 @@ var LoadoutItem = (0, import_react.forwardRef)(function (
       (0, import_jsx_runtime.jsx)(Image$1, { path: p, width: "100%", height: "100%" }),
   });
 });
-((LoadoutItem.sizes = sizes$3), (LoadoutItem.overlayTypes = overlayTypes));
+((LoadoutItem.sizes = sizes$2), (LoadoutItem.overlayTypes = overlayTypes));
 var selectedOverlay = "Slot_selectedOverlay_5b63484a",
   disabledOverlay$1 = "Slot_disabledOverlay_4d0ab64b",
   content$4 = "Slot_content_dbf98123",
@@ -37816,15 +38057,15 @@ var selectedOverlay = "Slot_selectedOverlay_5b63484a",
     content__disabled: content__disabled,
     emptyContent: emptyContent,
   },
-  sizes$2 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
+  sizes$1 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
   Content = defineStyledComponent("SlotContent"),
   Base$9 = defineStyledComponent("Slot", slot_module_default.slot, {
     variants: {
       size: {
-        [sizes$2.small]: slot_module_default.slot__small,
-        [sizes$2.medium]: slot_module_default.slot__medium,
-        [sizes$2.large]: slot_module_default.slot__large,
-        [sizes$2.extraLarge]: slot_module_default.slot__extraLarge,
+        [sizes$1.small]: slot_module_default.slot__small,
+        [sizes$1.medium]: slot_module_default.slot__medium,
+        [sizes$1.large]: slot_module_default.slot__large,
+        [sizes$1.extraLarge]: slot_module_default.slot__extraLarge,
       },
       hovered: { true: slot_module_default.slot__hovered },
       selected: { true: slot_module_default.slot__selected },
@@ -37875,7 +38116,7 @@ var selectedOverlay = "Slot_selectedOverlay_5b63484a",
       ],
     });
   });
-((Slot.sizes = sizes$2), (Slot.Empty = EmptySlot));
+((Slot.sizes = sizes$1), (Slot.Empty = EmptySlot));
 var DragArea = (0, import_react.forwardRef)(({ children: e, ...t }, n) => {
     const r = (0, import_react.useRef)(null),
       a = useDragAndDrop();
@@ -38059,11 +38300,11 @@ function DragAndDrop({
 ((DragAndDrop.DragArea = DragArea),
   (DragAndDrop.DropArea = DropArea),
   (DragAndDrop.VirtualItem = VirtualItem));
-var base$20 = "SceneWrapper_52fcfc1e",
+var base$19 = "SceneWrapper_52fcfc1e",
   base__down = "SceneWrapper_base__down_4ece5089",
   base__moveSpaceDisabled = "SceneWrapper_base__moveSpaceDisabled_1b1cd939",
   scene_wrapper_module_default = {
-    base: base$20,
+    base: base$19,
     base__down: base__down,
     base__moveSpaceDisabled: base__moveSpaceDisabled,
   },
@@ -38153,9 +38394,9 @@ function isSerializableReactNode(e) {
     (!(0, import_react.isValidElement)(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
   );
 }
-var base$19 = "MultilineOverflow_ec9f8e47",
+var base$18 = "MultilineOverflow_ec9f8e47",
   content$3 = "MultilineOverflow_content_b539970d",
-  multiline_overflow_module_default = { base: base$19, content: content$3 };
+  multiline_overflow_module_default = { base: base$18, content: content$3 };
 function isSerializableParams(e) {
   return !e || Object.values(e).every(isSerializableReactNode);
 }
@@ -38402,7 +38643,7 @@ function ProgressBarProvider(e) {
   return (0, import_jsx_runtime.jsx)(Context$1.Provider, { value: d, children: e.children });
 }
 var background = "ProgressBar_background_b40cdfdf",
-  base$18 = "ProgressBar_27c2305c",
+  base$17 = "ProgressBar_27c2305c",
   base__small$4 = "ProgressBar_base__small_61ccd4be",
   base__medium$3 = "ProgressBar_base__medium_478d985a",
   base__full$1 = "ProgressBar_base__full_be7f12da",
@@ -38411,7 +38652,7 @@ var background = "ProgressBar_background_b40cdfdf",
   backgroundPattern$1 = "ProgressBar_backgroundPattern_7e932276",
   progress_bar_module_default = {
     background: background,
-    base: base$18,
+    base: base$17,
     base__small: base__small$4,
     base__medium: base__medium$3,
     base__full: base__full$1,
@@ -38522,247 +38763,7 @@ var delta = "Delta_5c8185db",
         ],
       })
     );
-  }),
-  formats = {
-    superCompact: "superCompact",
-    compact: "compact",
-    default: "default",
-    detailed: "detailed",
-  },
-  sizes$1 = {
-    x16x16: "x16x16",
-    x24x24: "x24x24",
-    x32x32: "x32x32",
-    x48x48: "x48x48",
-    x80x80: "x80x80",
-  },
-  types = { accent: "accent", cooldown: "cooldown" },
-  item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
-  item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
-  item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
-  item__x48x48 = "FormattedValue_item__x48x48_43bf6d1b",
-  item__x80x80 = "FormattedValue_item__x80x80_c03e8347",
-  part__x16x16 = "FormattedValue_part__x16x16_2186b32f",
-  part__x24x24 = "FormattedValue_part__x24x24_2186b32f",
-  part__x32x32 = "FormattedValue_part__x32x32_f9323fe3",
-  part__x48x48 = "FormattedValue_part__x48x48_bd002d69",
-  part__x80x80 = "FormattedValue_part__x80x80_dca9ec18",
-  detailedSeparator = "FormattedValue_detailedSeparator_30bfaeef",
-  detailedSeparator__x16x16 = "FormattedValue_detailedSeparator__x16x16_2b8550e4",
-  detailedSeparator__x24x24 = "FormattedValue_detailedSeparator__x24x24_2b8550e4",
-  detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
-  detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
-  detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
-  formatted_value_module_default = {
-    item__x16x16: item__x16x16,
-    item__x24x24: item__x24x24,
-    item__x32x32: item__x32x32,
-    item__x48x48: item__x48x48,
-    item__x80x80: item__x80x80,
-    part__x16x16: part__x16x16,
-    part__x24x24: part__x24x24,
-    part__x32x32: part__x32x32,
-    part__x48x48: part__x48x48,
-    part__x80x80: part__x80x80,
-    detailedSeparator: detailedSeparator,
-    detailedSeparator__x16x16: detailedSeparator__x16x16,
-    detailedSeparator__x24x24: detailedSeparator__x24x24,
-    detailedSeparator__x32x32: detailedSeparator__x32x32,
-    detailedSeparator__x48x48: detailedSeparator__x48x48,
-    detailedSeparator__x80x80: detailedSeparator__x80x80,
-  };
-function FormattedValue({ size: e, preFormatted: t }) {
-  const n = [];
-  for (let r = 0; r < t.items.length; ++r)
-    (t.separator &&
-      r > 0 &&
-      n.push(
-        (0, import_jsx_runtime.jsx)(
-          "span",
-          {
-            className: (0, import_classnames.default)(
-              formatted_value_module_default.detailedSeparator,
-              formatted_value_module_default[`detailedSeparator__${e}`],
-            ),
-          },
-          "separator",
-        ),
-      ),
-      n.push(
-        (0, import_jsx_runtime.jsx)(
-          "span",
-          {
-            className: (0, import_classnames.default)(
-              formatted_value_module_default.item,
-              formatted_value_module_default[`item__${e}`],
-            ),
-            children: t.items[r]
-              ?.split(" ")
-              .map((t, n) =>
-                (0, import_jsx_runtime.jsx)(
-                  "span",
-                  {
-                    className: (0, import_classnames.default)(
-                      formatted_value_module_default.part,
-                      formatted_value_module_default[`part__${e}`],
-                    ),
-                    children: t,
-                  },
-                  `part_${n}`,
-                ),
-              ),
-          },
-          `item_${r}`,
-        ),
-      ));
-  return n;
-}
-var STRING_RESOURCES = resources.resolve("strings"),
-  COLON = ":",
-  DAYS_FORMAT = "D",
-  HOURS_FORMAT = "h",
-  MINUTES_FORMAT = "m",
-  DEFAULT_MIN_VALUE = 1,
-  FORMAT_PARTS = {
-    [formats.compact]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
-    [formats.default]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
-    [formats.detailed]: [DAYS_FORMAT, "hh", "mm", "ss"],
-  },
-  FORMATTER = {
-    [formats.compact]: compactFormatter,
-    [formats.default]: defaultFormatter,
-    [formats.detailed]: detailedFormatter,
-  },
-  LOCALE_FORMATTERS = {
-    [DAYS_FORMAT]: (e) =>
-      format$1(
-        STRING_RESOURCES.readOr("common.timer.days", () => DAYS_FORMAT.toLowerCase()),
-        { days: e },
-      ),
-    [HOURS_FORMAT]: (e) =>
-      format$1(
-        STRING_RESOURCES.readOr("common.timer.hours", () => HOURS_FORMAT),
-        { hours: e },
-      ),
-    [MINUTES_FORMAT]: (e) =>
-      format$1(
-        STRING_RESOURCES.readOr("common.timer.minutes", () => MINUTES_FORMAT),
-        { minutes: e },
-      ),
-  };
-function detailedFormatter(e) {
-  const [t, ...n] = e,
-    r = n.join(COLON);
-  return { separator: !0, items: Number(t) > 0 ? [LOCALE_FORMATTERS[DAYS_FORMAT]?.(t), r] : [r] };
-}
-function defaultFormatter(e, t) {
-  let n = 0;
-  const r = e.length - 1,
-    a = FORMAT_PARTS[t],
-    o = { separator: !1, items: [] };
-  for (; n < r && !(Number(e[n]) > 0); ++n);
-  return (
-    a[n] === MINUTES_FORMAT && 0 === Number(e[n])
-      ? (o.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)])
-      : (o.items = [n, n + 1].map((t) => LOCALE_FORMATTERS[a[t]]?.(e[t]))),
-    o
-  );
-}
-function compactFormatter(e, t) {
-  const n = e.length,
-    r = FORMAT_PARTS[t],
-    a = { separator: !1, items: [] };
-  for (let o = 0; o < n; ++o)
-    if (Number(e[o]) > 0) return ((a.items = [LOCALE_FORMATTERS[r[o]]?.(e[o])]), a);
-  return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
-}
-var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
-  base$17 = "Timer_dac0a0aa",
-  icon$3 = "Timer_icon_a61415df",
-  icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
-  icon__accent = "Timer_icon__accent_2cf70c3b",
-  icon__cooldown = "Timer_icon__cooldown_4a26d3f",
-  icon__x24x24 = "Timer_icon__x24x24_31571381",
-  icon__x32x32 = "Timer_icon__x32x32_807dde34",
-  icon__x48x48 = "Timer_icon__x48x48_ae779a9e",
-  icon__x80x80 = "Timer_icon__x80x80_251aafea",
-  label$1 = "Timer_label_1565f308",
-  label__x16x16 = "Timer_label__x16x16_e3ff224",
-  label__x24x24 = "Timer_label__x24x24_ca748cca",
-  label__x32x32 = "Timer_label__x32x32_13cccf38",
-  label__x48x48 = "Timer_label__x48x48_e3a9b542",
-  label__x80x80 = "Timer_label__x80x80_10a84ee6",
-  label__accent = "Timer_label__accent_ac7d4f7b",
-  label__cooldown = "Timer_label__cooldown_c2349ab9",
-  timer_module_default = {
-    base: base$17,
-    icon: icon$3,
-    icon__x16x16: icon__x16x16,
-    icon__accent: icon__accent,
-    icon__cooldown: icon__cooldown,
-    icon__x24x24: icon__x24x24,
-    icon__x32x32: icon__x32x32,
-    icon__x48x48: icon__x48x48,
-    icon__x80x80: icon__x80x80,
-    label: label$1,
-    label__x16x16: label__x16x16,
-    label__x24x24: label__x24x24,
-    label__x32x32: label__x32x32,
-    label__x48x48: label__x48x48,
-    label__x80x80: label__x80x80,
-    label__accent: label__accent,
-    label__cooldown: label__cooldown,
-  };
-function Timer({
-  start: e,
-  limit: t = 0,
-  tick: n = 1,
-  size: r = sizes$1.x24x24,
-  type: a = types.accent,
-  format: o = formats.default,
-  autostart: i = !0,
-  className: s,
-  classNames: u,
-}) {
-  const [l] = useTicker(
-    (0, import_react.useMemo)(
-      () => ({
-        type: "countdown",
-        start: isDuration(e) ? e : seconds(e),
-        limit: isDuration(t) ? t : seconds(t),
-        tick: isDuration(n) ? n : seconds(n),
-        autostart: i,
-      }),
-      [i, t, e, n],
-    ),
-  );
-  return (0, import_jsx_runtime.jsxs)("div", {
-    className: (0, import_classnames.default)(timer_module_default.base, s),
-    children: [
-      (0, import_jsx_runtime.jsx)("div", {
-        className: (0, import_classnames.default)(
-          timer_module_default.icon,
-          timer_module_default[`icon__${r}`],
-          timer_module_default[`icon__${a}`],
-          u?.icon,
-        ),
-      }),
-      o !== formats.superCompact &&
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(
-            timer_module_default.label,
-            timer_module_default[`label__${r}`],
-            timer_module_default[`label__${a}`],
-            u?.label,
-          ),
-          children: (0, import_jsx_runtime.jsx)(FormattedValue, {
-            size: r,
-            preFormatted: formatValue(l, o),
-          }),
-        }),
-    ],
   });
-}
 function FormatTextSplited({ className: e, ...t }) {
   return (0, import_jsx_runtime.jsx)("div", {
     className: e,
@@ -38790,7 +38791,6 @@ function ExtendedText(e) {
     )
   );
 }
-((Timer.format = formats), (Timer.size = sizes$1), (Timer.type = types));
 var sizes = { small: "small", medium: "medium", full: "full" },
   positions = { above: "above", below: "below" },
   BASE_COMPONENT_NAME = "Slider";
@@ -40358,326 +40358,326 @@ var RewardComponent = ({ reward: e, size: t }) => {
     });
   };
 export {
-  useInput as $,
+  Switch as $,
   findIndexLast as $i,
   HEAVY_TANK as $n,
   debounce_default as $r,
-  object as $t,
-  useDragAndDrop as A,
+  string as $t,
+  CButton as A,
   mouse$1 as Aa,
   NUMBERS_ALPHABET as Ai,
   useVerticalScrollApi as An,
   useSimpleTooltip as Ar,
-  Bar as At,
-  roles as B,
+  dragDirections as At,
+  Background as B,
   days as Ba,
   Reaction$1 as Bi,
   defineStyledComponent as Bn,
   config$1 as Br,
-  Image$1 as Bt,
-  SceneWrapper as C,
+  renderString as Bt,
+  LoadoutItem as C,
   initExternalPaddings$1 as Ca,
   breakpointsByType as Ci,
   ProgressBar$1 as Cn,
   SoundsProvider as Cr,
-  VehicleLevel as Ct,
-  getItemSizeFolderName as D,
+  Base$17 as Ct,
+  useDragAndDrop as D,
   sendEvent$3 as Da,
   isNumber as Di,
   AnimationType as Dn,
   createTargetOverrides as Dr,
-  Area as Dt,
-  LoadoutItem as E,
+  Bar as Dt,
+  sizes$2 as E,
   get$1 as Ea,
   comparer$1 as Ei,
   Reward as En,
   createSoundPlay as Er,
-  Base$17 as Et,
-  BackportTooltip as F,
+  DefaultScroll as Et,
+  fromModel as F,
   normalizeResource as Fa,
   assert$1 as Fi,
   Tabs as Fn,
   useThrottle$1 as Fr,
-  Area$1 as Ft,
-  Sprite as G,
+  Popover as Ft,
+  Slottable as G,
   subtract as Ga,
   makeObservable$1 as Gi,
   ColorizedPlayerNickname as Gn,
   useHandleKeydown as Gr,
-  createParser as Gt,
-  Accordion as H,
+  literal as Gt,
+  Sprite as H,
   greaterThanOrEqual as Ha,
   autorun$1 as Hi,
   themes$1 as Hn,
   useTransition$1 as Hr,
-  useRouter as Ht,
-  SimpleTooltip as I,
+  array as Ht,
+  perkStates as I,
   MS_IN_SECOND$1 as Ia,
   createLayoutReadyInEffect$1 as Ii,
   sizes$11 as In,
   useSkipFrame as Ir,
-  useScrollBounding as It,
-  Slottable as J,
+  usePopover as It,
+  toggleThemes as J,
   require_react_dom as Ja,
   every as Ji,
   Tooltip$2 as Jn,
   useIsFirstRender as Jr,
-  integer as Jt,
-  asMemoized as K,
+  number as Jt,
+  Toggle as K,
   easings$2 as Ka,
   observable$1 as Ki,
   getPlayerThemesColor as Kn,
   useHandleKeyup as Kr,
-  array as Kt,
-  Tooltip$1 as L,
+  minLength as Kt,
+  roles as L,
   getRealFormat as La,
   createMockControls as Li,
   themes as Ln,
   useScaleState$1 as Lr,
-  useHorizontalScroll as Lt,
-  Waiting as M,
+  ModelRouterProvider as Lt,
+  BackportTooltip as M,
   getRegionalDateTime$1 as Ma,
   toRoman as Mi,
   useSpring as Mn,
   useTooltip as Mr,
-  Base$18 as Mt,
-  CButton as N,
+  Area$1 as Mt,
+  SimpleTooltip as N,
   capitalize as Na,
   delay as Ni,
   FormatText as Nn,
   useWulfTooltip as Nr,
-  dragDirections as Nt,
-  overlayTypes as O,
+  useScrollBounding as Nt,
+  Switcher as O,
   play$1 as Oa,
   MAX_i32 as Oi,
   Size as On,
   useBackdropTooltip as Or,
-  MaskArea as Ot,
-  ButtonSize as P,
+  useVerticalScroll as Ot,
+  Tooltip$1 as P,
   format$1 as Pa,
   mapRange as Pi,
   TruncatedText as Pn,
   useTimeout as Pr,
-  useScrollByDragElements as Pt,
-  Input as Q,
+  useHorizontalScroll as Pt,
+  Route as Q,
   resources as Qa,
   findIndex$2 as Qi,
   AT_SPG as Qn,
   useDebounce as Qr,
-  number as Qt,
-  fromModel as R,
+  pipe as Qt,
+  ScrollVelocityGuardContent as R,
   format$2 as Ra,
   chunks as Ri,
   Button$1 as Rn,
   useResize as Rr,
-  Popover as Rt,
-  isEmptyObject as S,
+  useRouter as Rt,
+  Slot as S,
   forceTriggerMouseMove$1 as Sa,
   breakpoints as Si,
   BackportContextMenu as Sn,
   useSpecialContextMenu as Sr,
-  directions$1 as St,
-  Slot as T,
+  sizes$9 as St,
+  overlayTypes as T,
   remToPx$1 as Ta,
   mouseButtons as Ti,
   FormatTextWithColorTags as Tn,
   useSoundsOptional as Tr,
-  sizes$10 as Tt,
-  Background as U,
+  MaskArea as Tt,
+  asMemoized as U,
   now as Ua,
   configure$1 as Ui,
   FormatString as Un,
   useCallbackOnEsc as Ur,
-  renderResolvedString as Ut,
-  ScrollVelocityGuardContent as V,
+  boolean as Ut,
+  useHoverState as V,
   fromMs as Va,
   action$1 as Vi,
   sizes$12 as Vn,
   useSpring$1 as Vr,
-  ModelRouterProvider as Vt,
-  useHoverState as W,
+  createParser as Vt,
+  Slot$1 as W,
   seconds as Wa,
   getDependencyTree$1 as Wi,
   FormatText$1 as Wn,
   useKeydownListener as Wr,
-  renderString as Wt,
-  toggleSizes as X,
+  integer as Wt,
+  useInput as X,
   intl$3 as Xa,
   filterMap as Xi,
   DateTime_default as Xn,
   useUnmount as Xr,
-  minLength as Xt,
-  Toggle as Y,
+  optional as Xt,
+  Input as Y,
   require_react as Ya,
   filter as Yi,
   require_classnames as Yn,
   useMount$1 as Yr,
-  literal as Yt,
-  toggleThemes as Z,
+  object as Yt,
+  placeholderVisibility as Z,
   DateTimeFormatsEnum as Za,
   find as Zi,
   formatPrintf as Zn,
   useEmitter$1 as Zr,
-  minValue as Zt,
-  formats as _,
+  parse as Zt,
+  ProgressBar as _,
   identity as _a,
   useMedia as _i,
-  normilizeVehicleType as _n,
+  Image$1 as _n,
   initializeModelWithContext as _r,
-  types$3 as _t,
+  VehicleType as _t,
   Tooltip as a,
   mapExists as aa,
   autorun as ai,
-  union as an,
+  getRoleByKey as an,
   BonusNames as ar,
-  LazyModel as at,
-  ProgressBar as b,
+  List as at,
+  SceneWrapper as b,
   getKeyNameFromScanCode as ba,
   MediaSize as bi,
-  nationById as bn,
+  sizes$10 as bn,
   useExternalPaddings as br,
-  VehicleType as bt,
+  VehicleLevel as bt,
   statusTypes as c,
   some as ca,
   getDependencyTree as ci,
-  atSpgRoles as cn,
+  mediumTankRoles as cn,
   Specials as cr,
-  List as ct,
+  WithDiscount as ct,
   useCardsWrapperContext as d,
   isNonNullable as da,
   reaction as di,
-  lightTankRoles as dn,
+  isRentVehicle as dn,
   UIProvider as dr,
-  WithDiscount as dt,
+  discountTypes as dt,
   forEach as ea,
   throttle_default$1 as ei,
-  optional as en,
+  transform as en,
   LIGHT_TANK as er,
-  placeholderVisibility as et,
+  matchPath as et,
   useCardContext as f,
   iter as fa,
   useAdaptiveWidth as fi,
-  mediumTankRoles as fn,
+  isTypeValidValue as fn,
   runView as fr,
-  Currency as ft,
-  Timer as g,
+  imageSizes$1 as ft,
+  Delta as g,
   constFalse as ga,
   MediaWrapperElement as gi,
-  isTypeValidValue as gn,
+  nationById as gn,
   computedFn as gr,
-  sizes$7 as gt,
+  VehicleInfo as gt,
   ExtendedText as h,
   DisposeBuilder as ha,
   MediaWrapper as hi,
-  isRentVehicle as hn,
+  types$3 as hn,
   computeds as hr,
-  imageSizes$1 as ht,
+  ErrorHandler as ht,
   Rewards as i,
   map as ia,
   action as ii,
-  transform as in,
+  atSpgRoles as in,
   getRewardValueType as ir,
-  KeyButton as it,
-  Switcher as j,
+  useLazyModel as it,
+  ButtonSize as j,
   onRescale as ja,
   createString as ji,
   animated as jn,
   useSpecialTooltip as jr,
-  useVerticalScroll as jt,
-  sizes$3 as k,
+  useScrollByDragElements as jt,
+  Waiting as k,
   writeClipboard as ka,
   LOWER_ALPHABET as ki,
   Scroll as kn,
   useParamTooltip as kr,
-  DefaultScroll as kt,
+  Base$18 as kt,
   CardsWrapper as l,
   sort as la,
   makeObservable as li,
-  getRoleByKey as ln,
+  roles$1 as ln,
   ValueTypes as lr,
-  RentalCounter as lt,
+  Currency as lt,
   sizes as m,
   promiseWithResolvers as ma,
   useUpscale as mi,
-  getVehicleImageKey as mn,
+  sameTanksRemap as mn,
   assignRefs as mr,
-  discountTypes as mt,
+  types$2 as mt,
   Countdown_default as n,
   groupMapBy as na,
   usePrevious as ni,
-  pipe as nn,
+  vehicleState as nn,
   getRewardImage as nr,
-  Switch as nt,
+  LazyModel as nt,
   TooltipDecorator as o,
   mapNonNullable as oa,
   computed as oi,
-  vehicleState as on,
+  heavyTankRoles as on,
   ImageSize as or,
-  createOptionalDLProvider as ot,
+  RentalCounter as ot,
   Slider as p,
   keyCodes as pa,
   useAdaptive as pi,
-  roles$1 as pn,
+  normilizeVehicleType as pn,
   JSXBuilder as pr,
-  currencyTypes as pt,
-  Slot$1 as q,
+  sizes$6 as pt,
+  toggleSizes as q,
   clsx as qa,
   runInAction$1 as qi,
   SimpleTooltip$1 as qn,
   useInsideEvent as qr,
-  boolean as qt,
+  minValue as qt,
   CountdownStyle as r,
   includes as ra,
   Reaction as ri,
-  string as rn,
+  WITHOUT_ROLE as rn,
   getRewardTooltipConfig as rr,
-  matchPath as rt,
+  createOptionalDLProvider as rt,
   TextButton as s,
   reduce as sa,
   configure as si,
-  WITHOUT_ROLE as sn,
+  lightTankRoles as sn,
   RewardType as sr,
-  useLazyModel as st,
+  VehicleImage as st,
   Counter as t,
   get as ta,
   useEvent$1 as ti,
-  parse as tn,
+  union as tn,
   MEDIUM_TANK as tr,
-  Route as tt,
+  KeyButton as tt,
   Card as u,
   toArray$2 as ua,
   observable as ui,
-  heavyTankRoles as un,
+  getVehicleImageKey as un,
   FormatNumber as ur,
-  VehicleImage as ut,
-  sizes$1 as v,
+  currencyTypes as ut,
+  MultilineOverflow as v,
   noop$4 as va,
   require_jsx_runtime as vi,
-  sameTanksRemap as vn,
+  Timer as vn,
   createSimpleGetter as vr,
-  ErrorHandler as vt,
-  DragAndDrop as w,
+  VehicleRole as vt,
+  getItemSizeFolderName as w,
   pxToRem$1 as wa,
   readKey as wi,
   SimpleAnimationState as wn,
   useSounds as wr,
-  Checkbox as wt,
-  MultilineOverflow as x,
+  Area as wt,
+  DragAndDrop as x,
   enableFullScreenModeSupported$1 as xa,
   MediaWidth as xi,
   Timer$1 as xn,
   useClickOutside as xr,
-  VehicleRole as xt,
-  Delta as y,
+  Checkbox as xt,
+  isEmptyObject as y,
   clamp$3 as ya,
   MediaHeight as yi,
-  types$4 as yn,
+  formats as yn,
   useTransitionGroupRefs as yr,
-  VehicleInfo as yt,
-  perkStates as z,
+  directions$1 as yt,
+  Accordion as z,
   compare as za,
   makeActions as zi,
   HeadlessButton as zn,
   animated$1 as zr,
-  usePopover as zt,
+  renderResolvedString as zt,
 };
