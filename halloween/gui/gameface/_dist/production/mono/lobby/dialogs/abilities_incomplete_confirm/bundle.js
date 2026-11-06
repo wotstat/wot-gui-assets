@@ -5,7 +5,7 @@ import {
   Tn as l,
   Vi as n,
   bn as t,
-  it as o,
+  ct as o,
   ri as a,
   vr as c,
   yn as r,

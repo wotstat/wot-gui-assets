@@ -1,5 +1,5 @@
 import { b as e } from "./readResource.js";
-import { dA as s, dB as a, dl as i, dm as r, dp as l, dv as m, dd as o } from "./lib.js";
+import { dB as s, dC as a, dl as i, dm as r, dp as l, dy as m, dd as o } from "./lib.js";
 const u = 4,
   n = [
     s.Gold,
@@ -30,18 +30,18 @@ const u = 4,
       : `R.images.gui.maps.icons.quests.bonuses.${r}.premium_plus_1`;
   },
   c = (e, l, m = !0, o = "", u = !0) => {
-    const { name: c, value: P, label: v } = e,
-      b = c === s.PremiumPlus && !d.includes(Number(P)),
+    const { name: c, value: P, label: b } = e,
+      v = c === s.PremiumPlus && !d.includes(Number(P)),
       C = t.includes(c),
       g = n.includes(c),
-      x = b ? a.PremiumUniversal : c,
+      x = v ? a.PremiumUniversal : c,
       S = u || !g,
       f = !C && "1" !== P;
-    let _;
+    let y;
     return (
-      C || (_ = S ? v : f ? P : void 0),
+      C || (y = S ? b : f ? P : void 0),
       {
-        name: b ? a.PremiumUniversal : c || e.item,
+        name: v ? a.PremiumUniversal : c || e.item,
         image: p(o, e, l),
         value: f && S ? P : void 0,
         special: e.overlayType,
@@ -49,7 +49,7 @@ const u = 4,
         tooltipArgs: m
           ? i({ tooltipId: e.tooltipId }, Number(e.tooltipContentId))
           : { isEnabled: !1 },
-        label: _,
+        label: y,
         isCompensation: e.isCompensation,
       }
     );
@@ -68,7 +68,7 @@ const u = 4,
           : e <= 3
             ? o.S296x222
             : o.S232x174,
-  v = 1300,
-  b = (e, s = 0) => ({ appear: s + 400 + 200 * e, enter: 600 }),
+  b = 1300,
+  v = (e, s = 0) => ({ appear: s + 400 + 200 * e, enter: 600 }),
   C = (e) => 1300 + 400 * e;
-export { u as M, v as R, b as a, P as b, c as f, C as g };
+export { u as M, b as R, v as a, P as b, c as f, C as g };

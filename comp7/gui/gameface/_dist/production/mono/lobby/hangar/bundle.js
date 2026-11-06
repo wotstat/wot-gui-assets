@@ -14674,10 +14674,10 @@ var $A = _n(function ({ className: e }) {
     const { model: t } = AE();
     return t.isPaused.get() ? null : (0, zr.jsx)(GP, { id: oE, className: e });
   }),
-  WA = "IntroOverlay_glow_5fc31c94",
+  WA = "IntroOverlay_glow_ef690a2a",
   UA = "IntroOverlay_hoverHelper_9cec2539",
   qA = "IntroOverlay_8d89d328",
-  FA = "IntroOverlay_base__extraChapter_d35cc3d4",
+  FA = "IntroOverlay_base__extraChapter_7749fdaf",
   QA = "IntroOverlay_base__holiday_2f0d6d76",
   ZA = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
   GA = "IntroOverlay_borderNoise_3087bf34",

@@ -1,9 +1,9 @@
 import {
-  En as s,
-  Ia as t,
-  Jn as a,
-  Mn as e,
-  Vn as l,
+  Ia as s,
+  Ln as t,
+  Mn as a,
+  Nn as e,
+  Un as l,
   Y as i,
   c as o,
   cr as r,
@@ -16,7 +16,7 @@ import { o as c } from "../../chunks/vendor.js";
 import { a as m, c as _, s as u } from "../../chunks/utils.js";
 var [y, j] = d()(
     ({ observableModel: s }) => ({ root: s.object(), rewards: s.array("rewards") }),
-    t,
+    s,
   ),
   g = "DailyQuestsTooltipApp_b5a82c23",
   x = "DailyQuestsTooltipApp_name_3f7f3230",
@@ -36,9 +36,9 @@ function N(s, t, a) {
       : a;
 }
 var w = c(function () {
-  const { model: t } = j(),
-    { description: r, resetTime: n, completed: d, allDailyCompleted: c } = t.root.get(),
-    y = t.rewards.get();
+  const { model: s } = j(),
+    { description: r, resetTime: n, completed: d, allDailyCompleted: c } = s.root.get(),
+    y = s.rewards.get();
   return (0, A.jsx)(o, {
     "data-name": "BoosterTooltip",
     children: (0, A.jsxs)(o.Decorator, {
@@ -68,32 +68,32 @@ var w = c(function () {
                   }),
                   (0, A.jsx)("div", {
                     className: h,
-                    children: p(y, (t, a) =>
+                    children: p(y, (s, t) =>
                       (0, A.jsx)(
-                        s,
+                        a,
                         {
-                          name: t.name,
-                          value: _(t),
+                          name: s.name,
+                          value: _(s),
                           className: D,
-                          size: e.Small,
-                          special: t.overlayType,
-                          image: m(t, e.Small),
-                          valueType: u(t.name),
+                          size: l.Small,
+                          special: s.overlayType,
+                          image: m(s, l.Small),
+                          valueType: u(s.name),
                         },
-                        `${t.name}${a}`,
+                        `${s.name}${t}`,
                       ),
                     ),
                   }),
                 ],
               }),
             (0, A.jsx)("div", { className: f }),
-            (0, A.jsx)(a, {
+            (0, A.jsx)(e, {
               text: c
                 ? R.strings.last_stand_tooltips.dailyQuests.statusEventEnd()
                 : R.strings.last_stand_tooltips.dailyQuests.status(),
               classMix: T,
-              alignContent: l.Center,
-              justifyContent: l.Center,
+              alignContent: t.Center,
+              justifyContent: t.Center,
               binding: {
                 timer: (0, A.jsx)(i, { size: i.size.x24x24, start: n, format: i.format.default }),
               },

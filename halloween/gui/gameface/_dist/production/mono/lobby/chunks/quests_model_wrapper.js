@@ -5,50 +5,50 @@ import {
   Ar as s,
   Ci as a,
   Cr as i,
-  Fi as o,
-  G as n,
+  Et as o,
+  Fi as n,
   Ii as d,
   In as u,
   Ir as l,
-  It as c,
-  Lt as g,
-  On as m,
-  Or as _,
-  Qn as p,
-  Ri as f,
-  Rn as h,
-  Sn as v,
-  Sr as C,
-  Tn as w,
-  Un as y,
-  Vi as b,
+  On as c,
+  Or as g,
+  Qn as m,
+  Ri as _,
+  Rn as p,
+  Sn as f,
+  Sr as h,
+  Tn as v,
+  Tt as C,
+  Un as w,
+  Vi as y,
+  W as b,
   Wn as x,
-  Zn as I,
-  Zt as k,
+  Zn as k,
+  Zt as I,
   _r as j,
   en as P,
   hi as N,
   j as A,
   jn as M,
-  jt as B,
-  k as S,
-  kn as q,
-  li as L,
-  mi as z,
-  mr as G,
-  nr as H,
-  ri as Q,
+  k as B,
+  kn as S,
+  li as q,
+  mi as L,
+  mr as z,
+  nr as G,
+  ri as H,
+  rt as Q,
   ui as V,
   vr as E,
-  yi as K,
-  yr as T,
+  yi as T,
+  yr as K,
 } from "./lib.js";
-import { n as $ } from "./vendor.js";
-import { b as W, v as D, y as O } from "./sound.js";
-import { n as F, o as U, r as Z } from "./utils.js";
-import { t as X } from "./number_animation.js";
+import { n as W } from "./vendor.js";
+import { b as $, v as D, y as O } from "./sound.js";
+import { t as F } from "./number_animation.js";
+import { n as U, o as Z, r as X } from "./utils.js";
 import { n as Y, t as J } from "./key_icon.js";
-var ee = e(f(), 1),
+var ee = e(_(), 1),
   te = E(),
   re = {
     umg_widget_quest_progress: "umg_widget_quest_progress",
@@ -127,18 +127,18 @@ function _e({ children: e }) {
     s = (0, ee.useRef)({}),
     a = (0, ee.useRef)({}),
     i = (0, ee.useRef)({}),
-    o = q(),
-    n = H(({ id: e, animName: t, elementId: r = e }) => ue(s, e, t, r)),
-    d = H((e, t, r = e) => {
+    o = S(),
+    n = G(({ id: e, animName: t, elementId: r = e }) => ue(s, e, t, r)),
+    d = G((e, t, r = e) => {
       ne(s, e, t, r);
     }),
-    u = H(
+    u = G(
       ({ id: e, animName: t, config: r, elementId: a = e }) => (
         oe(s, r, e, t, a),
         () => d(e, t, a)
       ),
     ),
-    l = H(
+    l = G(
       ({
         id: e,
         animName: t,
@@ -155,13 +155,13 @@ function _e({ children: e }) {
           me({ sound: o, soundCfg: n }));
       },
     ),
-    c = H(({ id: e, animName: t, elementId: s = e, providerCfg: i = {} }) => {
+    c = G(({ id: e, animName: t, elementId: s = e, providerCfg: i = {} }) => {
       const o = r.on(ie(e, t, s), () => {
         (ne(a, e, t, s), ce({ storage: a, id: e, emitter: r, providerCfg: i }), o());
       });
       oe(a, !0, e, t, s);
     }),
-    g = H(({ complexId: e, id: t, animName: s, elementId: a = t, providerCfg: o }) => {
+    g = G(({ complexId: e, id: t, animName: s, elementId: a = t, providerCfg: o }) => {
       const n = r.on(ie(t, s, a), function () {
           (!(function ({
             storage: e,
@@ -191,7 +191,7 @@ function _e({ children: e }) {
         d = de(i, e, t, s);
       d ? d.add(a) : oe(i, new Set().add(a), e, t, s);
     }),
-    m = H(({ groupId: e, groupCfg: t, providerCfg: i, soundCfg: n }) => {
+    m = G(({ groupId: e, groupCfg: t, providerCfg: i, soundCfg: n }) => {
       (ne(a, e),
         i?.skip ||
           i?.skipTrigger ||
@@ -204,7 +204,7 @@ function _e({ children: e }) {
         me({ sound: o, soundCfg: n }),
         i?.skip && !i?.skipTrigger && ge({ id: e, emitter: r, providerCfg: i }));
     }),
-    _ = H(({ complexId: e, complexCfg: t, providerCfg: a, soundCfg: n }) => {
+    _ = G(({ complexId: e, complexCfg: t, providerCfg: a, soundCfg: n }) => {
       if ((ne(i, e), !a?.skip && !a?.skipTrigger))
         for (let [r, i] of Object.entries(t))
           le(r, i, s, (t, s) => {
@@ -243,8 +243,8 @@ var he = { small: "small", medium: "medium", big: "big" },
   ye = { appear: "appear", fadeIn: "fadeIn", slideUpIn: "slideUpIn" },
   be = { battlePass: "battlePass", events: "events", missions: "missions" },
   xe = { from: { y: 0, x: 0, opacity: 0, height: 0, width: 0 } },
-  Ie = { duration: 400, easing: Re };
-function ke(e) {
+  ke = { duration: 400, easing: Re };
+function Ie(e) {
   const t = new Map();
   for (let r = 0; r <= e.length; r++) {
     const s = e[r];
@@ -260,29 +260,29 @@ function je(e, t, r, s = !0) {
     i = r.getCardRow(e),
     o = r.getMaxCardRow(t),
     n = r.getVisibleRowsAmount(),
-    d = s ? Ie.duration : 0,
+    d = s ? ke.duration : 0,
     u = t.includes(e);
   return {
     from: u ? { ...a, opacity: 0 } : {},
     to: a,
     delay: u ? d + Math.max(100 * (n - o), 0) : Math.max(100 * (n - o - i), 0),
-    config: Ie,
+    config: ke,
   };
 }
 function Pe(e) {
-  return { to: { x: V(L(e) + 100), opacity: 0 }, config: { duration: 500, easing: o.easeInCubic } };
+  return { to: { x: V(q(e) + 100), opacity: 0 }, config: { duration: 500, easing: n.easeInCubic } };
 }
 function Ne(e, t, r) {
   const s = e.dataset.id,
     a = t.getCard(s),
     i = t.getCardHeight(s);
   if (!a || !i) return "";
-  const o = L(a.getPropValue("opacity")),
-    n = L(a.getPropValue("height"));
+  const o = q(a.getPropValue("opacity")),
+    n = q(a.getPropValue("height"));
   if (n < i || 0 === o) return "";
-  const d = L(a.getPropValue("width")),
-    u = L(a.getPropValue("y")),
-    l = L(a.getPropValue("x")),
+  const d = q(a.getPropValue("width")),
+    u = q(a.getPropValue("y")),
+    l = q(a.getPropValue("x")),
     c = t.getCardSize(s) !== ve,
     g = Math.round(l),
     m = Math.round(l + d) - 1,
@@ -363,7 +363,7 @@ var qe = class {
           r > 0 && o && (r += V(o));
           const l = V(n),
             c = i.filter((e) => this._cards.get(e)?.visible),
-            g = (a.layoutCreator || ke)(c);
+            g = (a.layoutCreator || Ie)(c);
           let m = 0;
           for (const _ of i) {
             const t = g.get(_);
@@ -491,7 +491,7 @@ var qe = class {
     },
   };
 function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
-  const s = G({ size: he.small }, { large: { size: he.medium }, extraLarge: { size: he.big } }),
+  const s = z({ size: he.small }, { large: { size: he.medium }, extraLarge: { size: he.big } }),
     { screenHeightRem: a } = j(),
     i =
       r ??
@@ -502,7 +502,7 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
       const e = (0, ee.useRef)([]),
         t = (0, ee.useRef)(!1),
         r = (0, ee.useRef)(!1),
-        s = H(() => {
+        s = G(() => {
           if (t.current || !r.current) return;
           const a = e.current.shift();
           a &&
@@ -517,13 +517,13 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
               }));
         });
       return {
-        enqueue: H(
+        enqueue: G(
           (t) =>
             new Promise((r, a) => {
               (e.current.push({ promise: t, resolve: r, reject: a }), s());
             }),
         ),
-        runDequeue: H(() => {
+        runDequeue: G(() => {
           ((r.current = !0), s());
         }),
       };
@@ -531,7 +531,7 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
     d = (0, ee.useRef)(null),
     u = (0, ee.useRef)(!1),
     l = (0, ee.useRef)(new qe({ size: s.size, visibleRowsAmount: i, groups: t })),
-    c = H((e) => {
+    c = G((e) => {
       const t = d.current?.querySelectorAll(`.${Le.borderHelper}`);
       t &&
         (function (e, t, r) {
@@ -543,7 +543,7 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
           }
         })(t, l.current, e);
     }),
-    g = H(async (e) => {
+    g = G(async (e) => {
       (c(),
         await l.current.runCardAnimations((t, r) => {
           const s = e({ id: t, settings: r });
@@ -551,7 +551,7 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
         }),
         c());
     }),
-    m = H(async (e = !0) => {
+    m = G(async (e = !0) => {
       let t = 0,
         r = 0;
       await g(({ id: s, settings: a }) => {
@@ -561,11 +561,11 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
         let d = 0;
         return (
           n !== o && (0 === a.getPropGoalValue("x") && (n > o ? t++ : r++), (d = n > o ? t : r)),
-          { delay: e ? 0 : 100 * d, to: i, immediate: e, config: Ie }
+          { delay: e ? 0 : 100 * d, to: i, immediate: e, config: ke }
         );
       });
     }),
-    _ = H(async (e, t = ye.appear) => {
+    _ = G(async (e, t = ye.appear) => {
       const r = e.filter((e) => {
         const t = l.current.getCard(e);
         return void 0 !== t && !t.visible;
@@ -577,7 +577,7 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
       const s = ze[t];
       await g((e) => s(e.id, r, l.current));
     }),
-    p = H((e, t = !0) => !(t && !l.current.getCard(e)?.visible) && l.current.isCardDisplaying(e)),
+    p = G((e, t = !0) => !(t && !l.current.getCard(e)?.visible) && l.current.isCardDisplaying(e)),
     f = (0, ee.useMemo)(
       () => ({
         registerCard: (e, t) => {
@@ -628,7 +628,7 @@ function Ge({ children: e, groups: t, maxVisibleRowsAmount: r }) {
     }),
     (0, ee.useEffect)(
       () =>
-        K(() => {
+        T(() => {
           (l.current.clearCachedLayout(), m());
         }),
       [m],
@@ -675,7 +675,7 @@ var He = { rewardPath: "rewardPath", quests: "quests", keys: "keys", shop: "shop
     const t = e?.showDelay || 400,
       r = (0, ee.useRef)({ ...e.args }),
       s = (0, ee.useRef)(null),
-      a = h(),
+      a = p(),
       i = u({ ...e, showDelay: 0, args: r.current });
     return {
       containerRef: s,
@@ -687,8 +687,8 @@ var He = { rewardPath: "rewardPath", quests: "quests", keys: "keys", shop: "shop
               const t = s.current.getBoundingClientRect(),
                 a = s.current.parentElement?.getBoundingClientRect();
               (Object.assign(r.current, e.args),
-                (r.current.positionY = Math.floor(L(t.y)) - 16),
-                (r.current.positionX = Math.floor(L(a?.x || t.x)) - 10));
+                (r.current.positionY = Math.floor(q(t.y)) - 16),
+                (r.current.positionX = Math.floor(q(a?.x || t.x)) - 10));
             }
             i.onMouseEnter(o);
           }, t);
@@ -699,14 +699,14 @@ var He = { rewardPath: "rewardPath", quests: "quests", keys: "keys", shop: "shop
       },
     };
   };
-function Ke(e) {
+function Te(e) {
   const t = fe(),
     r = (0, ee.useRef)([]),
     s = (0, ee.useRef)(!1),
     [a, i] = (0, ee.useState)(e);
   return (
     (0, ee.useEffect)(() => {
-      C.shallow(a, e) || r.current.push(e);
+      h.shallow(a, e) || r.current.push(e);
     }),
     (0, ee.useEffect)(() => {
       if (s.current) return;
@@ -727,7 +727,7 @@ function Ke(e) {
     a
   );
 }
-var Te = (0, ee.forwardRef)(function (
+var Ke = (0, ee.forwardRef)(function (
     {
       children: e,
       id: t,
@@ -741,47 +741,47 @@ var Te = (0, ee.forwardRef)(function (
       hasFullBorder: l = !1,
       leaveSound: c,
       hoverSound: g = N.highlight,
-      clickSound: m = N.click,
-      className: _,
-      onClick: f,
-      onHover: h,
+      clickSound: _ = N.click,
+      className: p,
+      onClick: h,
+      onHover: v,
       onActive: C,
-      onMouseEnter: w,
+      onMouseEnter: y,
       onMouseLeave: b,
-      ...k
+      ...I
     },
     R,
   ) {
     const j = fe(),
       [P, A] = x(() => xe, []),
       M = (0, ee.useRef)(null),
-      B = (0, ee.useRef)(Q),
-      S = H((e) => P[e].get()),
-      q = H((e) => P[e].goal),
-      L = H(async (e) => {
+      B = (0, ee.useRef)(H),
+      S = G((e) => P[e].get()),
+      q = G((e) => P[e].goal),
+      z = G(async (e) => {
         await new Promise((t) => {
           ((B.current = t),
             Promise.all(A.start(e)).then(() => {
-              (t(), (B.current = Q));
+              (t(), (B.current = H));
             }));
         });
       });
     return (
-      I(() => {
+      k(() => {
         j.registerCard(t, {
           position: s,
           groupId: r,
           getPropValue: S,
           getPropGoalValue: q,
-          startLayoutAnimation: L,
+          startLayoutAnimation: z,
           visible: i,
         });
       }),
-      p(() => {
+      m(() => {
         (B.current?.(), j.unregisterCard(t));
       }),
-      (0, te.jsxs)(y.div, {
-        ...k,
+      (0, te.jsxs)(w.div, {
+        ...I,
         style: { ...P, pointerEvents: P.opacity.to((e) => (1 === e ? "auto" : "none")) },
         className: d(
           Le.base,
@@ -789,18 +789,18 @@ var Te = (0, ee.forwardRef)(function (
           o && Le.base__hovered,
           n && Le.base__active,
           u && Le.base__extraLarge,
-          _,
+          p,
         ),
-        ref: v([R, M]),
+        ref: f([R, M]),
         onClick: () => {
-          a || (z.sound(m), f());
+          a || (L.sound(_), h());
         },
         onMouseUp: () => C && C(!1),
         onMouseEnter: (e) => {
-          (w?.(e), a || (g && z.sound(g), h && h(!0)));
+          (y?.(e), a || (g && L.sound(g), v && v(!0)));
         },
         onMouseLeave: () => {
-          (b?.(), a || (c && z.sound(c), h && h(!1), C && C(!1)));
+          (b?.(), a || (c && L.sound(c), v && v(!1), C && C(!1)));
         },
         onMouseDown: () => {
           a || (C && C(!0));
@@ -813,7 +813,7 @@ var Te = (0, ee.forwardRef)(function (
       })
     );
   }),
-  [$e, We] = w()(
+  [We, $e] = v()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ click: e.createCallbackNoArgs("onClick") }),
   ),
@@ -835,8 +835,8 @@ var Te = (0, ee.forwardRef)(function (
     key: "KeyCard_key_84788ae6",
     keyIcon: "KeyCard_keyIcon_e3907da8",
   },
-  Oe = $(({ hasFullBorder: e, withBackground: t, className: r }) => {
-    const { model: s, controls: i } = We(),
+  Oe = W(({ hasFullBorder: e, withBackground: t, className: r }) => {
+    const { model: s, controls: i } = $e(),
       { keys: o, isCompleted: n, isDisabled: u } = s.root.get(),
       { breakpoint: l } = j(),
       [c, g] = (0, ee.useState)(!1),
@@ -845,11 +845,11 @@ var Te = (0, ee.forwardRef)(function (
     (0, ee.useEffect)(() => {
       p.applyLayout();
     }, [p]);
-    const f = (0, ee.useRef)(o),
-      h = o > 9999,
-      C = h ? `${a(9999, 0)}+` : a(o, 0);
+    const h = (0, ee.useRef)(o),
+      v = o > 9999,
+      C = v ? `${a(9999, 0)}+` : a(o, 0);
     ((0, ee.useEffect)(() => {
-      f.current !== o && (f.current = o);
+      h.current !== o && (h.current = o);
     }, [o]),
       (0, ee.useEffect)(() => {
         let e, t;
@@ -858,9 +858,9 @@ var Te = (0, ee.forwardRef)(function (
             m ||
             c ||
             (e = setTimeout(() => {
-              (z.sound(D),
+              (L.sound(D),
                 (t = setInterval(() => {
-                  z.sound(D);
+                  L.sound(D);
                 }, 25e3)));
             }, 5e3)),
           () => {
@@ -868,7 +868,7 @@ var Te = (0, ee.forwardRef)(function (
           }
         );
       }, [m, n, c]));
-    const w = G(
+    const w = z(
         { value: Y.C24x24 },
         { large: { value: Y.C70x70 }, extraLarge: { value: Y.C86x86 } },
       ),
@@ -882,12 +882,12 @@ var Te = (0, ee.forwardRef)(function (
           R.views.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId"),
         decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
       }),
-      { containerRef: x, tooltipProps: I } = Ee({
+      { containerRef: x, tooltipProps: k } = Ee({
         resId: R.aliases.halloween.shared.Keys("resId"),
         contentId: R.views.halloween.mono.lobby.tooltips.key_tooltip("resId"),
       });
-    return (0, te.jsx)(Te, {
-      ref: v([y, x]),
+    return (0, te.jsx)(Ke, {
+      ref: f([y, x]),
       ...b,
       id: "keys",
       groupId: He.keys,
@@ -896,23 +896,23 @@ var Te = (0, ee.forwardRef)(function (
       onHover: (e) => g(e),
       hovered: c,
       active: m,
-      onClick: u ? Q : i.click,
+      onClick: u ? H : i.click,
       className: r,
       hasFullBorder: e,
       isDisabled: u,
       hoverSound: O,
-      leaveSound: W,
+      leaveSound: $,
       children: (0, te.jsxs)("div", {
         className: De.base,
         children: [
           t && (0, te.jsx)("div", { className: De.bg }),
           (0, te.jsx)(
-            k,
+            I,
             { text: R.strings.halloween_lobby.keyCard.name(), className: De.text },
             `keys${l.name}`,
           ),
           (0, te.jsx)("div", {
-            ...I,
+            ...k,
             className: De.key,
             children: (0, te.jsx)("div", {
               className: d(De.blink, !m && !c && o > 0 && De.blink__anim),
@@ -921,11 +921,11 @@ var Te = (0, ee.forwardRef)(function (
                 children: [
                   (0, te.jsx)("div", {
                     className: De.keyText,
-                    children: h
+                    children: v
                       ? C
-                      : (0, te.jsx)(X, {
+                      : (0, te.jsx)(F, {
                           isFormatted: !0,
-                          previousNumber: f.current,
+                          previousNumber: h.current,
                           currentNumber: o,
                         }),
                   }),
@@ -943,15 +943,15 @@ var Te = (0, ee.forwardRef)(function (
   });
 function Fe(e) {
   const t = R.aliases.halloween.shared.Keys("resId");
-  return (0, te.jsx)(n, {
+  return (0, te.jsx)(b, {
     id: t,
-    children: (0, te.jsx)($e, {
+    children: (0, te.jsx)(We, {
       options: (0, ee.useMemo)(() => ({ rootId: t }), [t]),
       children: (0, te.jsx)(Oe, { ...e }),
     }),
   });
 }
-var [Ue, Ze] = w()(({ observableModel: e }) => ({ quests: e.arrayClone("quests") }), Q),
+var [Ue, Ze] = v()(({ observableModel: e }) => ({ quests: e.arrayClone("quests") }), H),
   Xe = { from: { opacity: 0 }, config: { duration: 200, easing: Re } },
   Ye = { to: { scale: 1, opacity: 0.8 }, config: { duration: 300, easing: Re } },
   Je = { to: { scale: 0, opacity: 0 }, config: { duration: 300, easing: Re } };
@@ -975,11 +975,11 @@ var et = "QuestsCard_icon_aa7c2d27",
   ht = "QuestsCard_delta_30b150db",
   vt = "QuestsCard_glow_6baa2b09",
   Ct = "QuestsCard_reward_28bd9040",
-  wt = b.resolve("intl"),
+  wt = y.resolve("intl"),
   yt = (e, t, r) => {
     let s;
     return (
-      (s = t === T.extraLarge ? "c_48x48" : r ? "c_72x72" : "c_36x36"),
+      (s = t === K.extraLarge ? "c_48x48" : r ? "c_72x72" : "c_36x36"),
       `R.images.halloween.gui.maps.icons.gsw.conditions.${s}.${e}`
     );
   },
@@ -989,41 +989,41 @@ var et = "QuestsCard_icon_aa7c2d27",
       id: t,
       name: s,
       conditionName: a,
-      currentProgress: o,
-      maximumProgress: n,
-      earned: u,
-      bonus: l,
-      isHangar: p = !1,
-      hasFullBorder: f = !1,
-      className: h,
+      currentProgress: n,
+      maximumProgress: u,
+      earned: l,
+      bonus: m,
+      isHangar: _ = !1,
+      hasFullBorder: p = !1,
+      className: f,
     },
-    v,
+    h,
   ) {
-    const C = j(),
-      w = G(
-        { iconSize: 36, rewardSize: g.Small },
-        { extraLarge: { iconSize: 48, rewardSize: g.Big } },
+    const v = j(),
+      y = z(
+        { iconSize: 36, rewardSize: o.Small },
+        { extraLarge: { iconSize: 48, rewardSize: o.Big } },
       ),
       {
         iconStyle: b,
-        completedIconStyle: I,
+        completedIconStyle: k,
         progressStyle: N,
         deltaGlowStyle: A,
         actualProgress: M,
       } = (function (e, t, r, s) {
         const a = t - r,
           [o, n] = (0, ee.useState)(a),
-          { play: d } = m(),
+          { play: d } = c(),
           [u, l] = x(() => ({
             to: { currentProgress: a, deltaLeft: 0, deltaWidth: 0 },
             config: { duration: 1e3, easing: Re },
           })),
-          [c, g] = x(() => Xe),
+          [m, _] = x(() => Xe),
           [p, f] = x(() => Ye),
           [h, v] = x(() => Je),
-          C = H(async (t) => {
+          C = G(async (t) => {
             if (e > 0) {
-              (g.start({ opacity: 1 }), d(re.umg_widget_quest_progress));
+              (_.start({ opacity: 1 }), d(re.umg_widget_quest_progress));
               const r = t < o,
                 s = i(r ? t : o, e);
               (await Promise.all(
@@ -1033,20 +1033,20 @@ var et = "QuestsCard_icon_aa7c2d27",
                   [r ? "onStart" : "onRest"]: () => n(t),
                 }),
               ),
-                g.start({ opacity: 0 }));
+                _.start({ opacity: 0 }));
             }
           }),
-          w = H(async () => {
+          w = G(async () => {
             t !== o && (await C(t));
           }),
-          y = H(async (t, r = !1) => {
+          y = G(async (t, r = !1) => {
             if (r)
               return (
                 f.start({ ...Je.to, immediate: !0 }),
                 void v.start({ ...Ye.to, immediate: !0 })
               );
             (C(e),
-              t && (await _(1e3)),
+              t && (await g(1e3)),
               await Promise.all(f.start(Je.to)),
               d(re.umg_widget_quest_complete),
               await Promise.all(v.start(Ye.to)),
@@ -1060,101 +1060,101 @@ var et = "QuestsCard_icon_aa7c2d27",
           {
             progressStyle: u,
             actualProgress: o,
-            deltaGlowStyle: c,
+            deltaGlowStyle: m,
             iconStyle: p,
             completedIconStyle: h,
           }
         );
-      })(n, o, u, v),
-      { containerRef: q, tooltipProps: L } = Ee({
+      })(u, n, l, h),
+      { containerRef: S, tooltipProps: q } = Ee({
         resId: R.aliases.halloween.shared.Quests("resId"),
         contentId: R.views.halloween.mono.lobby.tooltips.daily_quests_tooltip("resId"),
         args: { questId: t },
       });
-    return (0, te.jsx)(Te, {
+    return (0, te.jsx)(Ke, {
       id: t,
       groupId: He.quests,
       position: e,
-      ref: q,
-      ...L,
-      hasFullBorder: f,
+      ref: S,
+      ...q,
+      hasFullBorder: p,
       isDisabled: !0,
-      className: d(ot, h),
+      className: d(ot, f),
       active: !1,
       children: (0, te.jsxs)("div", {
         className: nt,
         children: [
-          (0, te.jsx)(y.div, { style: { opacity: I.opacity }, className: dt }),
-          !p && (0, te.jsx)("div", { className: ut }),
+          (0, te.jsx)(w.div, { style: { opacity: k.opacity }, className: dt }),
+          !_ && (0, te.jsx)("div", { className: ut }),
           (0, te.jsxs)("div", {
             className: lt,
             children: [
-              (0, te.jsx)(y.div, {
+              (0, te.jsx)(w.div, {
                 style: b,
                 className: et,
                 children: (0, te.jsx)(P, {
-                  path: yt(a, C.breakpoint.name, C.upscale),
-                  width: w.iconSize,
-                  height: w.iconSize,
+                  path: yt(a, v.breakpoint.name, v.upscale),
+                  width: y.iconSize,
+                  height: y.iconSize,
                 }),
               }),
-              (0, te.jsx)(y.div, { style: I, className: tt }),
+              (0, te.jsx)(w.div, { style: k, className: tt }),
             ],
           }),
-          n > 0
+          u > 0
             ? (0, te.jsxs)("div", {
                 className: _t,
                 children: [
                   (0, te.jsxs)("div", {
                     className: pt,
                     children: [
-                      (0, te.jsx)(k, { text: s, tooltipDisabled: !0, className: gt }),
+                      (0, te.jsx)(I, { text: s, tooltipDisabled: !0, className: gt }),
                       (0, te.jsx)(r, {
                         className: mt,
                         text: R.strings.halloween_lobby.common.progress(),
                         params: {
-                          value: (0, te.jsx)(y.div, {
+                          value: (0, te.jsx)(w.div, {
                             className: ft,
                             children: N.currentProgress.to((e) =>
                               wt.formatNumber("integral", Math.ceil(e)),
                             ),
                           }),
-                          maxValue: n,
+                          maxValue: u,
                         },
                       }),
                     ],
                   }),
-                  (0, te.jsxs)(S, {
+                  (0, te.jsxs)(B, {
                     size: "small",
                     className: rt,
                     classNames: { background: it, backgroundPattern: st },
                     filledClassNames: { pattern: st },
                     value: M,
-                    maxValue: n,
+                    maxValue: u,
                     children: [
                       (0, te.jsx)("div", { className: at }),
-                      (0, te.jsx)(y.div, {
+                      (0, te.jsx)(w.div, {
                         style: {
                           width: N.deltaWidth.to((e) => `${e}%`),
                           left: N.deltaLeft.to((e) => `${e}%`),
                         },
                         className: ht,
-                        children: (0, te.jsx)(y.div, { style: A, className: vt }),
+                        children: (0, te.jsx)(w.div, { style: A, className: vt }),
                       }),
                     ],
                   }),
                 ],
               })
-            : (0, te.jsx)(k, { text: s, tooltipDisabled: !0, className: ct }),
-          (0, te.jsx)(B, {
-            name: l.name,
-            value: U(l),
+            : (0, te.jsx)(I, { text: s, tooltipDisabled: !0, className: ct }),
+          (0, te.jsx)(Q, {
+            name: m.name,
+            value: Z(m),
             className: Ct,
-            size: w.rewardSize,
-            special: l.overlayType,
-            image: Z(l, w.rewardSize),
-            valueType: c(l.name),
-            tooltipArgs: F(l, t, R.aliases.halloween.shared.Quests("resId")),
+            size: y.rewardSize,
+            special: m.overlayType,
+            image: X(m, y.rewardSize),
+            valueType: C(m.name),
+            tooltipArgs: U(m, t, R.aliases.halloween.shared.Quests("resId")),
           }),
         ],
       }),
@@ -1162,7 +1162,7 @@ var et = "QuestsCard_icon_aa7c2d27",
   });
 function xt({ children: e }) {
   const t = R.aliases.halloween.shared.Quests("resId");
-  return (0, te.jsx)(n, {
+  return (0, te.jsx)(b, {
     id: t,
     children: (0, te.jsx)(Ue, {
       options: (0, ee.useMemo)(() => ({ rootId: t }), [t]),
@@ -1172,7 +1172,7 @@ function xt({ children: e }) {
 }
 export {
   re as _,
-  Te as a,
+  Ke as a,
   Ve as c,
   Ge as d,
   ye as f,
@@ -1182,7 +1182,7 @@ export {
   Qe as l,
   he as m,
   bt as n,
-  Ke as o,
+  Te as o,
   be as p,
   Ze as r,
   Ee as s,

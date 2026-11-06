@@ -1,28 +1,28 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Ii as s,
-  Qt as i,
-  Ri as l,
-  Tn as a,
-  Tt as t,
-  Vi as c,
-  Vr as r,
-  Wr as n,
-  Xt as o,
-  bn as h,
-  bt as C,
-  en as d,
-  ri as p,
-  s as m,
-  t as _,
-  vr as v,
-  wt as g,
-  yt as x,
+  Nt as i,
+  Ot as l,
+  Pt as a,
+  Qt as t,
+  Ri as c,
+  Tn as r,
+  Vi as n,
+  Vr as o,
+  Wr as h,
+  Xt as C,
+  bn as d,
+  en as p,
+  kt as m,
+  ri as _,
+  s as v,
+  t as g,
+  vr as x,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { n as u } from "../../chunks/vendor.js";
 import { n as j } from "../../chunks/hangar_carousel_vehicle_view_model.js";
-var [w, f] = a()(
+var [w, f] = r()(
     ({ observableModel: e }) => ({
       ...e.primitives([
         "vehicleName",
@@ -36,26 +36,26 @@ var [w, f] = a()(
       ]),
       slots: e.arrayClone("crewSlots"),
     }),
-    p,
+    _,
   ),
-  H = e(l(), 1),
-  N = v(),
+  H = e(c(), 1),
+  N = x(),
   V = 331,
   y = 9,
   L = "R.images.halloween.gui.maps.icons.library.tooltip_divider",
   T = (0, H.memo)(function ({ className: e }) {
-    return (0, N.jsx)(d, { path: L, width: V, height: y, className: e });
+    return (0, N.jsx)(p, { path: L, width: V, height: y, className: e });
   }),
   b = "Earnings_94dd8e9c",
   M = "Earnings_icon_1455b4c4",
   R = "Earnings_bonusTitle_41f6d8a2",
   Z = "Earnings_bonusDescription_8869599a",
-  E = c.resolve("strings");
-function k({ className: e }) {
+  k = n.resolve("strings");
+function E({ className: e }) {
   return (0, N.jsxs)("div", {
     className: s(b, e),
     children: [
-      (0, N.jsx)(d, {
+      (0, N.jsx)(p, {
         path: "R.images.halloween.gui.maps.icons.key.keys_orange_70x70",
         className: M,
         width: 70,
@@ -63,20 +63,20 @@ function k({ className: e }) {
       }),
       (0, N.jsx)("div", {
         className: R,
-        children: E.readOrEmpty("halloween_tooltips.vehicle.bonusTitle"),
+        children: k.readOrEmpty("halloween_tooltips.vehicle.bonusTitle"),
       }),
       (0, N.jsx)("div", {
         className: Z,
-        children: E.readOrEmpty("halloween_tooltips.vehicle.eventBonus"),
+        children: k.readOrEmpty("halloween_tooltips.vehicle.eventBonus"),
       }),
     ],
   });
 }
-(t.lightTank, t.mediumTank, t.heavyTank, t.SPG, t["AT-SPG"]);
+(a.lightTank, a.mediumTank, a.heavyTank, a.SPG, a["AT-SPG"]);
 var A = "crewRoles",
   B = "TankmanRole_3bb08c81",
   D = {
-    [_.commander]: (e) =>
+    [g.commander]: (e) =>
       (0, N.jsx)("svg", {
         width: 18,
         height: 18,
@@ -90,7 +90,7 @@ var A = "crewRoles",
           d: "M15.8941 4.6285C15.8456 4.45146 15.7404 4.29519 15.5947 4.18358C15.449 4.07198 15.2707 4.01118 15.0871 4.0105H11.5201V4.8631H9.84012V4.0105H8.16012V4.8631H6.48012V4.0105H2.91372C2.72995 4.01092 2.55139 4.07159 2.40541 4.18322C2.25943 4.29485 2.15409 4.45126 2.10552 4.6285L0.72852 9.5191C0.642995 9.82414 0.599791 10.1395 0.600119 10.4563V15.9475C0.598522 16.1719 0.686107 16.3878 0.843622 16.5477C1.00114 16.7076 1.21569 16.7984 1.44012 16.8001H4.80012C5.02455 16.7984 5.2391 16.7076 5.39662 16.5477C5.55413 16.3878 5.64172 16.1719 5.64012 15.9475V11.6845C5.63852 11.4601 5.72611 11.2442 5.88362 11.0843C6.04114 10.9244 6.25569 10.8336 6.48012 10.8319H8.16012V11.6845H9.84012V10.8319H11.5201C11.7445 10.8336 11.9591 10.9244 12.1166 11.0843C12.2741 11.2442 12.3617 11.4601 12.3601 11.6845V15.9475C12.3585 16.1719 12.4461 16.3878 12.6036 16.5477C12.7611 16.7076 12.9757 16.7984 13.2001 16.8001H16.5601C16.7845 16.7984 16.9991 16.7076 17.1566 16.5477C17.3141 16.3878 17.4017 16.1719 17.4001 15.9475V10.4563C17.4002 10.139 17.3565 9.82327 17.2705 9.5179L15.8941 4.6285ZM8.16012 9.1285H6.48012V6.5683H8.16012V9.1285ZM11.5201 9.1285H9.84012V6.5683H11.5201V9.1285ZM13.2001 0.600098H12.3601C12.1357 0.601842 11.9211 0.692631 11.7636 0.852509C11.6061 1.01239 11.5185 1.22827 11.5201 1.4527V2.3053C11.5185 2.52973 11.6061 2.74561 11.7636 2.90549C11.9211 3.06536 12.1357 3.15615 12.3601 3.1579H13.2001C13.4245 3.15615 13.6391 3.06536 13.7966 2.90549C13.9541 2.74561 14.0417 2.52973 14.0401 2.3053V1.4527C14.0417 1.22827 13.9541 1.01239 13.7966 0.852509C13.6391 0.692631 13.4245 0.601842 13.2001 0.600098ZM5.64012 0.600098H4.80012C4.57569 0.601842 4.36114 0.692631 4.20362 0.852509C4.04611 1.01239 3.95852 1.22827 3.96012 1.4527V2.3053C3.95852 2.52973 4.04611 2.74561 4.20362 2.90549C4.36114 3.06536 4.57569 3.15615 4.80012 3.1579H5.64012C5.86455 3.15615 6.0791 3.06536 6.23662 2.90549C6.39413 2.74561 6.48172 2.52973 6.48012 2.3053V1.4527C6.48172 1.22827 6.39413 1.01239 6.23662 0.852509C6.0791 0.692631 5.86455 0.601842 5.64012 0.600098Z",
         }),
       }),
-    [_.driver]: (e) =>
+    [g.driver]: (e) =>
       (0, N.jsxs)("svg", {
         width: 18,
         height: 18,
@@ -115,7 +115,7 @@ var A = "crewRoles",
           }),
         ],
       }),
-    [_.gunner]: (e) =>
+    [g.gunner]: (e) =>
       (0, N.jsxs)("svg", {
         width: 18,
         height: 18,
@@ -140,7 +140,7 @@ var A = "crewRoles",
           }),
         ],
       }),
-    [_.loader]: (e) =>
+    [g.loader]: (e) =>
       (0, N.jsx)("svg", {
         width: 18,
         height: 18,
@@ -154,7 +154,7 @@ var A = "crewRoles",
           d: "M16.646 12.8005H12.8456C12.7484 11.3725 12.6938 10.1461 12.6938 9.4003C12.6938 3.8077 14.7458 0.600697 14.7458 0.600697C16.1795 3.30687 16.8873 6.33844 16.8002 9.3997C16.8002 10.1449 16.7432 11.3749 16.646 12.8005ZM7.0988 12.8005C7.0016 11.3725 6.947 10.1461 6.947 9.4003C6.947 3.8071 9.0002 0.600098 9.0002 0.600098C10.4332 3.30667 11.1402 6.33845 11.0522 9.3997C11.0522 10.1449 10.9976 11.3737 10.9004 12.7999H7.0988V12.8005ZM1.35199 12.8005C1.25479 11.3725 1.2002 10.1461 1.2002 9.4003C1.2002 3.8071 3.25219 0.600098 3.25219 0.600098C4.68517 3.30667 5.39216 6.33845 5.30419 9.3997C5.30419 10.1449 5.24899 11.3737 5.15239 12.7999H1.35199V12.8005ZM4.9328 16.6009H3.9452L3.8402 17.4001H2.6372L2.52199 16.6003H1.56859C1.44859 15.4411 1.45339 14.2741 1.37599 13.2001H5.1254C5.048 14.2747 5.0516 15.4411 4.9322 16.6003L4.9328 16.6009ZM10.679 16.6009H9.692L9.5894 17.4001H8.384L8.26879 16.6003H7.32019C7.20019 15.4411 7.20499 14.2741 7.12759 13.2001H10.8728C10.7954 14.2747 10.799 15.4411 10.6802 16.6003L10.679 16.6009ZM16.4258 16.6009H15.4382L15.3362 17.4001H14.1302L14.015 16.6003H13.0658C12.9458 15.4411 12.9506 14.2741 12.8732 13.2001H16.6202C16.5398 14.2747 16.5464 15.4411 16.427 16.6003L16.4258 16.6009Z",
         }),
       }),
-    [_.radioman]: (e) =>
+    [g.radioman]: (e) =>
       (0, N.jsxs)("svg", {
         width: 18,
         height: 18,
@@ -187,23 +187,23 @@ function P({ role: e = "", className: i }) {
 }
 var S = "Row_title_6c4bc0c8",
   O = "Row_title__colon_6c475686",
-  $ = o("Row", "Row_a52ddf2a");
-function F({ className: e, title: l, params: a, children: t }) {
-  const r = c.resolve("strings");
+  $ = C("Row", "Row_a52ddf2a");
+function F({ className: e, title: i, params: l, children: a }) {
+  const c = n.resolve("strings");
   return (0, N.jsxs)($, {
     className: e,
     children: [
-      void 0 !== l &&
+      void 0 !== i &&
         (0, N.jsxs)(N.Fragment, {
           children: [
-            (0, N.jsx)(i, { className: S, path: `tooltips.vehicle.${l}`, params: a }),
+            (0, N.jsx)(t, { className: S, path: `tooltips.vehicle.${i}`, params: l }),
             (0, N.jsx)("div", {
               className: s(S, O),
-              children: r.readOrEmpty("common.common.colon"),
+              children: c.readOrEmpty("common.common.colon"),
             }),
           ],
         }),
-      t,
+      a,
     ],
   });
 }
@@ -211,19 +211,19 @@ var I = "Crew_2339425e",
   Q = "Crew_79af07ed",
   G = "Crew_icon_26258836",
   K = "Crew_sign_a456f030",
-  z = c.resolve("strings");
+  z = n.resolve("strings");
 function U({ className: e, slots: i }) {
   return (0, N.jsx)(F, {
     title: A,
     params: { count: i.length },
     className: s(I, e),
-    children: n(i, (e) =>
+    children: h(i, (e) =>
       (0, N.jsxs)(
         "div",
         {
           className: Q,
           children: [
-            (0, N.jsx)(P, { role: r(e.roles, 0), className: G }),
+            (0, N.jsx)(P, { role: o(e.roles, 0), className: G }),
             e.roles.length > 1 &&
               (0, N.jsx)("div", { className: K, children: z.readOrEmpty("crew_perks.sign.plus") }),
           ],
@@ -238,21 +238,21 @@ var W = "Header_c890a2dc",
   q = "Header_name_6445d707",
   J = "Header_description_c9393f08",
   Y = u(function ({ className: e }) {
-    const { model: i } = f(),
-      l = g(i.vehicleType.get());
+    const { model: t } = f(),
+      c = i(t.vehicleType.get());
     return (0, N.jsxs)("div", {
       className: s(W, e),
       children: [
-        ((a = l),
-        "string" == typeof a &&
-          a in t &&
-          (0, N.jsx)(x, { type: l, size: C.x64x64, premium: i.isElite.get(), className: X })),
-        (0, N.jsx)("div", { className: q, children: i.userName.get() }),
-        (0, N.jsx)("div", { className: J, children: i.userDescription.get() }),
-        (0, N.jsx)(U, { slots: i.slots.get() }),
+        ((r = c),
+        "string" == typeof r &&
+          r in a &&
+          (0, N.jsx)(l, { type: c, size: m.x64x64, premium: t.isElite.get(), className: X })),
+        (0, N.jsx)("div", { className: q, children: t.userName.get() }),
+        (0, N.jsx)("div", { className: J, children: t.userDescription.get() }),
+        (0, N.jsx)(U, { slots: t.slots.get() }),
       ],
     });
-    var a;
+    var r;
   }),
   ee = "Highlight_94f24c6a",
   se = "Highlight_highLightBg_d94a1117",
@@ -273,12 +273,12 @@ var te = "VehicleFeature_a07ec3e0",
   ce = "VehicleFeature_icon_1db75070",
   re = "VehicleFeature_featureName_58f0c4f8",
   ne = "VehicleFeature_featureDescription_6a0032a4",
-  oe = c.resolve("strings");
+  oe = n.resolve("strings");
 function he({ className: e, vehicleName: i }) {
   return (0, N.jsxs)("div", {
     className: s(te, e),
     children: [
-      (0, N.jsx)(d, {
+      (0, N.jsx)(p, {
         path: `R.images.halloween.gui.maps.icons.ttcType.c_48x48.${i}`,
         width: 48,
         height: 48,
@@ -316,31 +316,31 @@ var Ce = "VehicleTooltipApp_cornerIcon_b39a0f52",
   },
   we = u(function () {
     const { model: e } = f(),
-      l = e.isElite.get(),
-      a = e.isDailyKeyQuestVisible.get(),
-      t = e.isStatusVisible.get(),
+      i = e.isElite.get(),
+      l = e.isDailyKeyQuestVisible.get(),
+      a = e.isStatusVisible.get(),
       c = e.vehicleState.get();
-    return (0, N.jsx)(m, {
-      children: (0, N.jsxs)(m.Decorator, {
+    return (0, N.jsx)(v, {
+      children: (0, N.jsxs)(v.Decorator, {
         children: [
-          (0, N.jsx)(d, {
-            path: "tooltip." + (l ? "topElite" : "topStandart"),
+          (0, N.jsx)(p, {
+            path: "tooltip." + (i ? "topElite" : "topStandart"),
             className: Ce,
             width: 328,
             height: 200,
           }),
           (0, N.jsxs)("div", {
-            className: s(de, a && pe),
+            className: s(de, l && pe),
             children: [
               (0, N.jsx)(Y, { className: me }),
               (0, N.jsx)(ae, {
                 className: ve,
                 children: (0, N.jsx)(he, { vehicleName: e.vehicleName.get(), className: _e }),
               }),
-              a && (0, N.jsx)(k, { className: ge }),
-              a && t && (0, N.jsx)(T, { className: xe }),
-              t &&
-                (0, N.jsx)(i, {
+              l && (0, N.jsx)(E, { className: ge }),
+              l && a && (0, N.jsx)(T, { className: xe }),
+              a &&
+                (0, N.jsx)(t, {
                   style: { color: je(c) },
                   className: ue,
                   path: `halloween_tooltips.vehicle.state.${c}.title`,
@@ -351,4 +351,4 @@ var Ce = "VehicleTooltipApp_cornerIcon_b39a0f52",
       }),
     });
   });
-h((0, N.jsx)(w, { children: (0, N.jsx)(we, {}) }));
+d((0, N.jsx)(w, { children: (0, N.jsx)(we, {}) }));

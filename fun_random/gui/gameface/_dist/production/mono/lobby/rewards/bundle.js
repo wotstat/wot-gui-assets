@@ -1,23 +1,23 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  En as a,
-  N as s,
+  A as a,
+  En as s,
   Oa as d,
-  P as r,
-  Pi as i,
-  Pr as n,
-  Ur as t,
-  Ya as l,
-  Zn as _,
-  _i as o,
-  _r as c,
-  ar as m,
-  bi as w,
-  dr as u,
-  fr as b,
-  ga as f,
-  gr as x,
-  ir as p,
+  Pi as r,
+  Pr as i,
+  Ur as n,
+  Ya as t,
+  Zn as l,
+  _i as _,
+  _r as o,
+  ar as c,
+  bi as m,
+  dr as w,
+  fr as u,
+  ga as b,
+  gr as f,
+  ir as x,
+  j as p,
   nr as g,
   or as h,
   rr as j,
@@ -27,21 +27,21 @@ import {
   vi as A,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { l as M, r as C, u as I } from "../chunks/vendor.js";
+import { c as M, l as C, u as I } from "../chunks/vendor.js";
 import { a as S, n as $ } from "../chunks/readResource.js";
-var P = e(l(), 1),
-  k = e(M(), 1),
+var k = e(t(), 1),
+  P = e(C(), 1),
   z = "Footer_f09fca09",
   E = "Footer_buttonContainer_cc670971",
   U = A(),
-  H = (e) => (e >= w.Medium ? r.medium : r.small),
-  O = ({ onClick: e, className: a }) => {
-    const { mediaSize: d } = o();
+  H = (e) => (e >= m.Medium ? p.medium : p.small),
+  O = ({ onClick: e, className: s }) => {
+    const { mediaSize: d } = _();
     return (0, U.jsx)("div", {
-      className: (0, k.default)(z, a),
+      className: (0, P.default)(z, s),
       children: (0, U.jsx)("div", {
         className: E,
-        children: (0, U.jsx)(s, {
+        children: (0, U.jsx)(a, {
           size: H(d),
           onClick: e,
           children: R.strings.fun_random.rewardsView.footer.acceptButton(),
@@ -62,28 +62,28 @@ var P = e(l(), 1),
         s && (0, U.jsx)("div", { className: q, children: s }),
       ],
     }),
-  [G, L] = c()(
+  [G, L] = o()(
     ({ observableModel: e }) => {
       const a = {
           root: e.object(),
           mainRewards: e.array("mainRewards"),
           additionalRewards: e.array("additionalRewards"),
         },
-        s = x(
+        s = f(
           (e) => {
             const s = y(a.mainRewards.get(), e);
             if (!s) throw new Error(`mainReward with index ${e} was not found`);
             return { ...s };
           },
-          { equals: f },
+          { equals: b },
         ),
-        d = x(
+        d = f(
           (e) => {
             const s = y(a.additionalRewards.get(), e);
             if (!s) throw new Error(`additionalReward with index ${e} was not found`);
             return { ...s };
           },
-          { equals: f },
+          { equals: b },
         );
       return { ...a, computes: { mainReward: s, additionalReward: d } };
     },
@@ -106,13 +106,13 @@ var P = e(l(), 1),
   Z = (e, a, s = !0, d = "", r = !0) => {
     const { name: i, value: n, label: t } = e,
       l = i === v.PremiumPlus && !D.includes(Number(n)),
-      _ = l ? m.PremiumUniversal : i;
+      _ = l ? c.PremiumUniversal : i;
     return {
-      name: l ? m.PremiumUniversal : i || e.item,
+      name: l ? c.PremiumUniversal : i || e.item,
       image: Y(d, e, a),
       value: !r && F.includes(i) ? void 0 : n,
       special: e.overlayType,
-      valueType: p(_),
+      valueType: x(_),
       tooltipArgs: s
         ? j({ tooltipId: e.tooltipId }, Number(e.tooltipContentId))
         : { isEnabled: !1 },
@@ -122,12 +122,12 @@ var P = e(l(), 1),
   },
   J = (e, a = 0) => ({ appear: a + 400 + 200 * e, enter: 600 }),
   K = (e) => 1300 + 400 * e,
-  Q = I(({ index: e, className: s, mainRewardsEnabled: d = !1 }) => {
+  Q = I(({ index: e, className: a, mainRewardsEnabled: d = !1 }) => {
     const { model: r } = L(),
       i = d ? r.computes.mainReward(e) : r.computes.additionalReward(e),
-      { mediaSize: n } = o(),
-      t = n >= w.Medium ? h.Big : h.Small;
-    return (0, U.jsx)(a, { ...Z(i, t), size: t, className: s });
+      { mediaSize: n } = _(),
+      t = n >= m.Medium ? h.Big : h.Small;
+    return (0, U.jsx)(s, { ...Z(i, t), size: t, className: a });
   }),
   X = "AdditionalRewards_8af994f7",
   ee = "AdditionalRewards_title_dd32b80a",
@@ -137,34 +137,34 @@ var P = e(l(), 1),
   re = I(({ className: e }) => {
     const { model: a } = L(),
       s = a.additionalRewards.get().length,
-      { run: r, clear: t } = n();
+      { run: n, clear: t } = i();
     return (
-      (0, P.useEffect)(
+      (0, k.useEffect)(
         () => (
-          r(() => {
+          n(() => {
             d.sound("gui_random_reward_icon");
           }, K(a.mainRewards.get().length)),
           () => {
             t();
           }
         ),
-        [t, a.mainRewards, r],
+        [t, a.mainRewards, n],
       ),
       (0, U.jsxs)("div", {
-        className: (0, k.default)(X, e),
+        className: (0, P.default)(X, e),
         style: { "--baseDelay": `${K(a.mainRewards.get().length)}ms` },
         children: [
           (0, U.jsx)("div", { className: ee, children: de.additionalRewards.title() }),
           (0, U.jsxs)("div", {
             className: ae,
             children: [
-              i(
+              r(
                 a.mainRewards.get().length,
                 (e) =>
                   e >= 4 &&
                   (0, U.jsx)(Q, { index: e, className: se, mainRewardsEnabled: !0 }, e + s),
               ),
-              i(s, (e) => (0, U.jsx)(Q, { index: e, className: se }, e)),
+              r(s, (e) => (0, U.jsx)(Q, { index: e, className: se }, e)),
             ],
           }),
         ],
@@ -175,7 +175,7 @@ var P = e(l(), 1),
   ne = "Glow_cc887482",
   te = ({ className: e }) =>
     (0, U.jsx)("div", {
-      className: (0, k.default)(ie, e),
+      className: (0, P.default)(ie, e),
       children: (0, U.jsx)("div", { className: ne }),
     }),
   le = {
@@ -200,33 +200,33 @@ var P = e(l(), 1),
     raysAppearance: "Reward_raysAppearance_21f091ec",
     rotate: "Reward_rotate_21f091ec",
   },
-  _e = I(({ rewardSize: e, rewardIndex: s }) => {
-    const r = (0, P.useRef)(null),
+  _e = I(({ rewardSize: e, rewardIndex: a }) => {
+    const r = (0, k.useRef)(null),
       { model: i } = L(),
       { assetsPointer: n } = i.root.get(),
-      t = i.computes.mainReward(s),
+      t = i.computes.mainReward(a),
       { name: l, isCompensation: _ } = t,
-      [o, c] = (0, P.useState)(!0),
+      [o, c] = (0, k.useState)(!0),
       m = Z(t, e, !o, n, !1),
       { label: w, valueType: u } = m;
-    return (0, U.jsx)(C, {
+    return (0, U.jsx)(M, {
       appear: !0,
       in: !0,
       nodeRef: r,
-      timeout: J(s, 1300),
+      timeout: J(a, 1300),
       onEntered: () => {
         (d.sound("gui_random_reward_appear"), c(!1));
       },
-      children: (s) =>
+      children: (a) =>
         (0, U.jsxs)("div", {
           ref: r,
-          className: (0, k.default)(le.base, le[`base__${s}`], le[`base__${l}`], le[`base__${e}`]),
+          className: (0, P.default)(le.base, le[`base__${a}`], le[`base__${l}`], le[`base__${e}`]),
           children: [
-            (0, U.jsx)(a, {
+            (0, U.jsx)(s, {
               ...m,
               size: e,
               className: le.reward,
-              classNames: { info: (0, k.default)(le.info, le[`info__${u}`]) },
+              classNames: { info: (0, P.default)(le.info, le[`info__${u}`]) },
             }),
             _ && (0, U.jsx)("div", { className: le.compensationIcon }),
             (0, U.jsx)("div", { className: le.title, children: w }),
@@ -239,7 +239,7 @@ var P = e(l(), 1),
     const { model: a } = L();
     return (0, U.jsx)("div", {
       className: oe,
-      children: i(
+      children: r(
         a.mainRewards.get().length,
         (a) => a < 4 && (0, U.jsx)(_e, { rewardIndex: a, rewardSize: e }, `reward-${a}`),
       ),
@@ -262,15 +262,15 @@ var P = e(l(), 1),
   },
   we = I(() => {
     const { model: e } = L(),
-      { mediaSize: a } = o(),
+      { mediaSize: a } = _(),
       s = ((e, a) =>
-        a >= w.Large
+        a >= m.Large
           ? e < 3
             ? h.S600x450
             : h.S400x300
-          : 1 === e && a === w.Medium
+          : 1 === e && a === m.Medium
             ? h.S600x450
-            : a >= w.Small
+            : a >= m.Small
               ? e <= 3
                 ? h.S400x300
                 : h.S296x222
@@ -278,7 +278,7 @@ var P = e(l(), 1),
                 ? h.S296x222
                 : h.S232x174)(Math.min(e.mainRewards.get().length, 4), a);
     return (0, U.jsxs)("div", {
-      className: (0, k.default)(me.base, me[`base__${s}`]),
+      className: (0, P.default)(me.base, me[`base__${s}`]),
       children: [
         (0, U.jsx)(te, { className: me.glow }),
         (0, U.jsx)("div", { className: me.ribbon }),
@@ -304,11 +304,11 @@ var P = e(l(), 1),
       d = e.mainRewards.get().length,
       r = e.additionalRewards.get().length > 0 || d > 4,
       i = 1 === d;
-    t(a.closeWindow);
-    const { dynamicTexts: n } = S(null, { assetsPointer: s }),
-      l = {
-        title: _(ve.rewardsView.subheader(), { subModeName: n.capsUserName() }),
-        subtitle: n.rewardsView.header(),
+    n(a.closeWindow);
+    const { dynamicTexts: t } = S(null, { assetsPointer: s }),
+      _ = {
+        title: l(ve.rewardsView.subheader(), { subModeName: t.capsUserName() }),
+        subtitle: t.rewardsView.header(),
       },
       o = $(s).library.prime_times_bg();
     return (0, U.jsxs)("div", {
@@ -333,13 +333,13 @@ var P = e(l(), 1),
               children: [
                 (0, U.jsx)("div", {
                   className: pe,
-                  children: (0, U.jsx)(B, { title: l.title, status: l.subtitle }),
+                  children: (0, U.jsx)(B, { title: _.title, status: _.subtitle }),
                 }),
                 (0, U.jsxs)("div", {
-                  className: (0, k.default)(ge),
+                  className: (0, P.default)(ge),
                   children: [
                     (0, U.jsx)(we, {}),
-                    r && (0, U.jsx)(re, { className: (0, k.default)(he, i && je) }),
+                    r && (0, U.jsx)(re, { className: (0, P.default)(he, i && je) }),
                   ],
                 }),
               ],
@@ -350,4 +350,4 @@ var P = e(l(), 1),
       ],
     });
   });
-b((0, U.jsx)(G, { children: (0, U.jsx)(u, { children: (0, U.jsx)(ye, {}) }) }));
+u((0, U.jsx)(G, { children: (0, U.jsx)(w, { children: (0, U.jsx)(ye, {}) }) }));

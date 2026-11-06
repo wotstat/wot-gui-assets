@@ -4,26 +4,26 @@ import {
   Aa as a,
   Ba as r,
   Cn as t,
-  Fr as o,
-  Gt as n,
-  H as i,
-  Hr as l,
-  Ir as c,
-  Kr as d,
-  Rr as m,
-  Va as g,
-  Wr as u,
-  c as p,
-  cr as f,
-  d as _,
-  do as h,
-  g as v,
-  gi as x,
-  h as w,
+  D as o,
+  E as n,
+  Fr as i,
+  Gt as l,
+  H as c,
+  Hr as d,
+  Ir as m,
+  Kr as u,
+  Rr as g,
+  S as p,
+  Va as f,
+  Wr as _,
+  c as h,
+  cr as v,
+  do as x,
+  gi as w,
   l as b,
   lo as y,
-  lr as j,
-  or as S,
+  lr as S,
+  or as j,
   qr as P,
   u as N,
   ur as C,
@@ -34,38 +34,38 @@ import "../chunks/_wg-global-styles.js";
 import { s as z } from "../chunks/vendor.js";
 import { n as B, t as V } from "../chunks/level_badge.js";
 import { t as M } from "../chunks/custom_reward.js";
-var O = e(h(), 1),
-  E = { from: { y: g(-40), opacity: 0 }, config: { duration: 400, easing: u.easeOutSine } },
+var O = e(x(), 1),
+  E = { from: { y: f(-40), opacity: 0 }, config: { duration: 400, easing: _.easeOutSine } },
   F = { to: { y: 0, opacity: 1 }, delay: 1500 },
   I = {
     from: { opacity: 0, transform: "scale(0.8)" },
-    config: { duration: 400, easing: u.easeOutCubic },
+    config: { duration: 400, easing: _.easeOutCubic },
   },
   L = { to: { opacity: 1, transform: "scale(1)" }, delay: 1850, duration: 400 },
   $ = { to: { opacity: 0 } },
-  q = { from: { y: g(-10), opacity: 0 }, config: { duration: 350, easing: u.easeOutSine } },
+  q = { from: { y: f(-10), opacity: 0 }, config: { duration: 350, easing: _.easeOutSine } },
   H = { to: { y: 0, opacity: 1 }, delay: 100 },
-  T = { from: { opacity: 1 }, config: { duration: 300, easing: u.easeOutSine } },
+  T = { from: { opacity: 1 }, config: { duration: 300, easing: _.easeOutSine } },
   W = { to: { opacity: 0 } },
   D = { to: { opacity: 1 } },
   G = {
-    from: { opacity: 0, y: g(40) },
+    from: { opacity: 0, y: f(40) },
     to: { opacity: 1, y: 0 },
     delay: 1200,
-    config: { duration: 120, easing: u.easeOutCubic },
+    config: { duration: 120, easing: _.easeOutCubic },
   },
   U = {
     from: { y: r(60), transform: "translateX(50%)", opacity: 0 },
-    config: { duration: 400, easing: u.easeOutSine },
+    config: { duration: 400, easing: _.easeOutSine },
   },
   K = { to: { y: 0, opacity: 1 }, delay: 300 },
   Q = { from: { transform: "scale(0.4)", opacity: 0 } },
   X = {
     to: { transform: "scale(1)", opacity: 1 },
-    config: { duration: 280, easing: u.easeInOutSine },
+    config: { duration: 280, easing: _.easeInOutSine },
   },
   J = { to: { transform: "scale(0.4)", opacity: 0 } },
-  Y = { from: { y: 0 }, config: { duration: 300, easing: u.easeInOutSine } },
+  Y = { from: { y: 0 }, config: { duration: 300, easing: _.easeInOutSine } },
   Z = "initial",
   ee = "rank",
   se = "rewards",
@@ -88,7 +88,7 @@ var O = e(h(), 1),
           ]),
           rewards: e.arrayClone("rewards"),
         },
-        a = j.primitive(() => {
+        a = S.primitive(() => {
           const e = [],
             a = s.prevProgress.get(),
             r = s.currProgress.get();
@@ -116,7 +116,7 @@ var O = e(h(), 1),
   ne = (0, O.createContext)(null),
   ie = z(function ({ children: e }) {
     const { model: s, controls: a } = te(),
-      r = x(
+      r = w(
         { progressionShift: 78 },
         {
           medium: { progressionShift: 50 },
@@ -126,22 +126,22 @@ var O = e(h(), 1),
       ),
       [t, o] = (0, O.useState)(Z),
       [n, i] = (0, O.useState)(0),
-      [l, c] = m(() => E),
-      [d, u] = m(() => q),
-      [p, f] = m(() => T),
-      [_, h] = m(() => I),
-      [v, w] = m(() => Y),
+      [l, c] = g(() => E),
+      [d, m] = g(() => q),
+      [u, p] = g(() => T),
+      [_, h] = g(() => I),
+      [v, x] = g(() => Y),
       b = s.prevProgress.get(),
       y = s.currProgress.get(),
-      j = n + 1 < s.computes.progressionSequence().length,
-      S = s.isMaxLevel.get(),
+      S = n + 1 < s.computes.progressionSequence().length,
+      j = s.isMaxLevel.get(),
       P = ae(y, !0).level >= s.maxLevel.get(),
       N = (0, O.useCallback)(
         (e) => {
-          (j ? i((e) => e + 1) : u.start(H),
+          (S ? i((e) => e + 1) : m.start(H),
             e &&
               t === ee &&
-              (f.start({
+              (p.start({
                 ...W,
                 onRest: () => {
                   (a.ribbonStartsPlaying(), o(se));
@@ -149,7 +149,7 @@ var O = e(h(), 1),
               }),
               !P && h.start($)));
         },
-        [f, h, u, a, j, t, P],
+        [p, h, m, a, S, t, P],
       );
     return (
       (0, O.useEffect)(() => {
@@ -167,20 +167,20 @@ var O = e(h(), 1),
               h.start(L));
             break;
           case ee:
-            (y === b || S) && u.start(H);
+            (y === b || j) && m.start(H);
             break;
           case se:
-            (u.start(H), f.start(D), w.start(((e = r.progressionShift), { to: { y: g(e) } })));
+            (m.start(H), p.start(D), x.start(((e = r.progressionShift), { to: { y: f(e) } })));
         }
         var e;
-      }, [c, f, h, w, u, a, t, r.progressionShift, y, b, S]),
+      }, [c, p, h, x, m, a, t, r.progressionShift, y, b, j]),
       (0, oe.jsx)(ne.Provider, {
         value: {
           animationStep: t,
           progressionStepIndex: n,
           contentStyle: l,
           footerStyle: d,
-          switchContentStyle: p,
+          switchContentStyle: u,
           glowStyle: _,
           progressionStyle: v,
           progressAnimFinished: N,
@@ -193,8 +193,8 @@ var O = e(h(), 1),
   ce = "Footer_claimButtonContainer_d2687e3",
   de = "Footer_button_94a6f5c1",
   me = "Footer_bubble_cae5f121",
-  ge = "Footer_valueContainer_4c15c602",
-  ue = k.resolve("strings"),
+  ue = "Footer_valueContainer_4c15c602",
+  ge = k.resolve("strings"),
   pe = z(function ({ animationStep: e, className: r }) {
     const { model: t, controls: o } = te(),
       n = t.amountRewardsToClaim.get(),
@@ -218,7 +218,7 @@ var O = e(h(), 1),
                   size: s.sizes.medium,
                   className: de,
                   onClick: o.claimRewards,
-                  children: ue.readOrEmpty("fl_post_battle_rewards.buttons.selectRewards"),
+                  children: ge.readOrEmpty("fl_post_battle_rewards.buttons.selectRewards"),
                 }),
                 (0, oe.jsx)("div", {
                   className: me,
@@ -226,7 +226,7 @@ var O = e(h(), 1),
                     children: (0, oe.jsx)(b.Value, {
                       value: n,
                       size: N.medium,
-                      classNames: { valueContainer: ge },
+                      classNames: { valueContainer: ue },
                     }),
                   }),
                 }),
@@ -237,7 +237,7 @@ var O = e(h(), 1),
             size: s.sizes.medium,
             className: de,
             onClick: o.continue,
-            children: ue.readOrEmpty("fl_post_battle_rewards.buttons.continue"),
+            children: ge.readOrEmpty("fl_post_battle_rewards.buttons.continue"),
           }),
         ],
       })
@@ -292,7 +292,7 @@ var O = e(h(), 1),
           (s.style.width = "0%"),
           0 != a)
         ) {
-          const e = new c({
+          const e = new m({
             ...r,
             from: { ...r?.from, width: 0 },
             to: { ...r?.to, width: 100 },
@@ -311,15 +311,15 @@ var O = e(h(), 1),
       }, [r, i, l]),
       (0, oe.jsxs)("div", {
         ...t,
-        ref: f([o]),
+        ref: v([o]),
         className: y(t.className, xe),
         children: [(0, oe.jsx)("div", { className: we, ref: n }), t.children],
       })
     );
   }),
   ye = "Progression_c5ec1889",
-  je = "Progression_info_75a8001c",
-  Se = "Progression_label_61efd8f5",
+  Se = "Progression_info_75a8001c",
+  je = "Progression_label_61efd8f5",
   Pe = "Progression_labelNext_731b04f",
   Ne = "Progression_labelExp_10c8b821",
   Ce = "Progression_experience_e617c990",
@@ -334,43 +334,43 @@ var O = e(h(), 1),
     currentProgress: s,
     isProgressAllowed: a,
     progressAnimFinished: r,
-    className: n,
+    className: o,
   }) {
-    const { model: l, controls: c } = te(),
-      [d, g] = (0, O.useState)(!0),
-      [p, f] = m(() => Q),
-      _ = (0, O.useMemo)(
+    const { model: n, controls: l } = te(),
+      [d, m] = (0, O.useState)(!0),
+      [u, p] = g(() => Q),
+      f = (0, O.useMemo)(
         () => ({
           delay: d ? 800 : 450,
-          config: { duration: 2e3, easing: u.easeOutQuad },
+          config: { duration: 2e3, easing: _.easeOutQuad },
           onStart: () => {
-            c.progressBarAnimationStart();
+            l.progressBarAnimationStart();
           },
           onRest: () => {
-            c.progressBarAnimationComplete();
+            l.progressBarAnimationComplete();
             const e = 100 === ae(s, !0).levelProgress;
             (r(e),
               e &&
-                (g(!1),
-                f.start({
+                (m(!1),
+                p.start({
                   ...X,
                   onRest: () => {
-                    f.start(J);
+                    p.start(J);
                   },
                 })));
           },
         }),
-        [c, s, r, d, f],
+        [l, s, r, d, p],
       ),
       h = s === e ? ae(s).levelProgress : ae(s, !0).levelProgress,
-      v = l.achievedPoints.get();
+      v = n.achievedPoints.get();
     return (0, oe.jsxs)("div", {
-      className: y(ye, n),
+      className: y(ye, o),
       children: [
         (0, oe.jsxs)("div", {
-          className: je,
+          className: Se,
           children: [
-            (0, oe.jsx)("div", { className: Se, children: ae(e).level }),
+            (0, oe.jsx)("div", { className: je, children: ae(e).level }),
             v > 0 &&
               (0, oe.jsxs)("div", {
                 className: Ce,
@@ -385,12 +385,12 @@ var O = e(h(), 1),
               }),
             (0, oe.jsx)("div", {
               className: Re,
-              children: (0, oe.jsx)(o.div, { style: p, className: Ae }),
+              children: (0, oe.jsx)(i.div, { style: u, className: Ae }),
             }),
             (0, oe.jsx)("div", { className: Pe, children: ae(e).level + 1 }),
           ],
         }),
-        (0, oe.jsx)(i, {
+        (0, oe.jsx)(c, {
           size: "full",
           value: ae(e).levelProgress,
           maxValue: 100,
@@ -402,7 +402,7 @@ var O = e(h(), 1),
               initPrevValue: ae(e).levelProgress,
               initValue: h,
               initMaxValue: 100,
-              animationProps: _,
+              animationProps: f,
               className: Ve,
             }),
         }),
@@ -428,49 +428,49 @@ var Fe = "Rewards_200712a6",
   We = k.resolve("images"),
   De = z(function ({ className: e }) {
     const { model: s } = te(),
-      a = x(
-        { rewardSize: w.Small, badgeSize: B.x190 },
-        { medium: { rewardSize: w.Big, badgeSize: B.x270 }, large: { badgeSize: B.x320 } },
+      a = w(
+        { rewardSize: n.Small, badgeSize: B.x190 },
+        { medium: { rewardSize: n.Big, badgeSize: B.x270 }, large: { badgeSize: B.x320 } },
       ),
       r = s.rewards.get(),
       t = ae(s.currProgress.get(), !0).level,
-      n = t >= s.maxLevel.get(),
-      i = Math.min(r.length, 6),
+      o = t >= s.maxLevel.get(),
+      l = Math.min(r.length, 6),
       c = `${We.readOrEmpty(`quests.bonuses.${a.rewardSize}.default`)}`,
-      d = _(Te.readOrEmpty("tooltips.quests.awards.additional.bottom"), {
+      m = p(Te.readOrEmpty("tooltips.quests.awards.additional.bottom"), {
         count: r.length - 6 + 1,
       }),
-      g = {
+      u = {
         contentId: He.read((e) => e.lobby.tooltips.AdditionalRewardsTooltip("resId")),
         args: { showCount: 6 },
       },
-      u = l(i, G),
-      [f, h] = m(() => U);
+      f = d(l, G),
+      [_, v] = g(() => U);
     return (
       (0, O.useEffect)(() => {
-        h.start(K);
-      }, [h]),
+        v.start(K);
+      }, [v]),
       (0, oe.jsxs)("div", {
-        className: y(Fe, n && Le, e),
+        className: y(Fe, o && Le, e),
         children: [
-          (0, oe.jsx)(o.div, { style: f, className: Ie }),
+          (0, oe.jsx)(i.div, { style: _, className: Ie }),
           (0, oe.jsx)(V, { level: t, size: a.badgeSize }),
           (0, oe.jsx)("div", {
             className: $e,
-            children: u.map((e, s) => {
+            children: f.map((e, s) => {
               const t = r[s];
               return (0, oe.jsx)(
-                o.div,
+                i.div,
                 {
                   style: e,
                   children:
                     r.length > 6 && s + 1 === 6
-                      ? (0, oe.jsx)(p, {
+                      ? (0, oe.jsx)(h, {
                           name: "more",
                           image: c,
                           size: a.rewardSize,
-                          value: d,
-                          tooltipArgs: g,
+                          value: m,
+                          tooltipArgs: u,
                           className: qe,
                         })
                       : t
@@ -496,15 +496,15 @@ var Fe = "Rewards_200712a6",
   es = "PostBattleRewardsView_footer_2bb3ea6d",
   ss = z(function () {
     const { model: e, controls: s } = te();
-    d(s.close);
+    u(s.close);
     const {
         animationStep: a,
         progressionStepIndex: r,
         contentStyle: t,
         footerStyle: n,
-        switchContentStyle: i,
-        glowStyle: l,
-        progressionStyle: c,
+        switchContentStyle: l,
+        glowStyle: c,
+        progressionStyle: d,
         progressAnimFinished: m,
       } = (() => {
         const e = (0, O.useContext)(ne);
@@ -512,14 +512,14 @@ var Fe = "Rewards_200712a6",
         return e;
       })(),
       g = e.computes.progressionSequence(),
-      u = e.isMaxLevel.get(),
-      p = e.maxLevel.get(),
-      f = g[r];
+      p = e.isMaxLevel.get(),
+      f = e.maxLevel.get(),
+      _ = g[r];
     return (0, oe.jsxs)("div", {
       className: Ge,
       children: [
-        (0, oe.jsx)(v, { onClose: s.close, className: Ue }),
-        (0, oe.jsxs)(o.div, {
+        (0, oe.jsx)(o, { onClose: s.close, className: Ue }),
+        (0, oe.jsxs)(i.div, {
           style: t,
           className: Ke,
           children: [
@@ -529,30 +529,30 @@ var Fe = "Rewards_200712a6",
               children: [
                 (0, oe.jsx)("div", {
                   className: Je,
-                  children: (0, oe.jsx)(o.div, { style: l, className: Ye }),
+                  children: (0, oe.jsx)(i.div, { style: c, className: Ye }),
                 }),
-                (0, oe.jsx)(o.div, {
-                  style: i,
+                (0, oe.jsx)(i.div, {
+                  style: l,
                   children:
                     a === se
                       ? (0, oe.jsx)(De, {})
                       : (0, oe.jsx)(Ee, { rank: e.rank.get(), className: Ze }),
                 }),
-                f &&
-                  !u &&
-                  f.from < p &&
-                  (0, oe.jsx)(o.div, {
-                    style: c,
+                _ &&
+                  !p &&
+                  _.from < f &&
+                  (0, oe.jsx)(i.div, {
+                    style: d,
                     children: (0, oe.jsx)(Me, {
-                      prevProgress: f.from,
-                      currentProgress: f.to,
+                      prevProgress: _.from,
+                      currentProgress: _.to,
                       isProgressAllowed: a !== Z,
                       progressAnimFinished: m,
                     }),
                   }),
               ],
             }),
-            (0, oe.jsx)(o.div, {
+            (0, oe.jsx)(i.div, {
               style: n,
               children: (0, oe.jsx)(pe, { animationStep: a, className: es }),
             }),
@@ -561,8 +561,8 @@ var Fe = "Rewards_200712a6",
       ],
     });
   });
-S(
-  (0, oe.jsx)(n, {
+j(
+  (0, oe.jsx)(l, {
     children: (0, oe.jsx)(re, { children: (0, oe.jsx)(ie, { children: (0, oe.jsx)(ss, {}) }) }),
   }),
 );

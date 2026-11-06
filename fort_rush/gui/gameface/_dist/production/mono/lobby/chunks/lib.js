@@ -13528,7 +13528,75 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   },
   formatString = (e, t, s) =>
     e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (s && e in s ? s[e] : splitWords(e, t))),
-  base$5 = "Textbutton_b1283086",
+  base$5 = "Formattext_bb80854d",
+  styles$5 = { base: base$5 },
+  FormatText = ({
+    binding: e,
+    text: t = "",
+    classMix: s,
+    alignment: r = Alignment.left,
+    formatWithBrackets: n,
+  }) => {
+    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
+    const a = n && e ? format(t, e) : t;
+    return jsxRuntimeExports.jsx(reactExports.Fragment, {
+      children: a
+        .split("\n")
+        .map((t, n) =>
+          jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: cx(styles$5.base, s),
+              children: formatString(t, r, e).map((e, t) =>
+                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
+              ),
+            },
+            `${t}-${n}`,
+          ),
+        ),
+    });
+  },
+  base$4 = "CloseButton_7488a1b8",
+  base__medium = "CloseButton_base__medium_97d04067",
+  base__small = "CloseButton_base__small_c1b29bae",
+  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
+  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
+  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
+  styles$4 = {
+    base: base$4,
+    base__medium: base__medium,
+    base__small: base__small,
+    base__extraSmall: base__extraSmall,
+    base__x96x96: base__x96x96,
+    base__x32x32: base__x32x32,
+  },
+  sizes = { medium: "medium", small: "small", extraSmall: "extraSmall" },
+  upscaleImageSizes = {
+    [sizes.medium]: "x96x96",
+    [sizes.small]: sizes.medium,
+    [sizes.extraSmall]: "x32x32",
+  };
+function CloseButton({
+  size: e = sizes.medium,
+  hoverSound: t = sounds$1.highlight,
+  clickSound: s = sounds$1.click,
+  className: r,
+  onHover: n,
+  onClose: a,
+}) {
+  const o = useUpscale(styles$4[`base__${e}`], styles$4[`base__${upscaleImageSizes[e]}`]);
+  return jsxRuntimeExports.jsx("div", {
+    className: cx(styles$4.base, o, r),
+    onMouseEnter: () => {
+      (play$1.sound(t), n?.());
+    },
+    onClick: () => {
+      (play$1.sound(s), a());
+    },
+  });
+}
+CloseButton.size = sizes;
+const base$3 = "Textbutton_b1283086",
   base__right = "Textbutton_base__right_78d4c03f",
   icon = "Textbutton_icon_9ba4c60",
   icon__back = "Textbutton_icon__back_599b35e4",
@@ -13544,8 +13612,8 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
   goto = "Textbutton_goto_d2c81cbd",
   base__left = "Textbutton_base__left_599b35e4",
   shine = "Textbutton_shine_527e4656",
-  styles$5 = {
-    base: base$5,
+  styles$3 = {
+    base: base$3,
     base__right: base__right,
     icon: icon,
     icon__back: icon__back,
@@ -13602,7 +13670,7 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
         [i],
       );
     return jsxRuntimeExports.jsxs("div", {
-      className: cx(styles$5.base, styles$5[`base__${l}`], styles$5[`base__${u}`], r?.base),
+      className: cx(styles$3.base, styles$3[`base__${l}`], styles$3[`base__${u}`], r?.base),
       onMouseEnter: m,
       onMouseLeave: p,
       onMouseDown: E,
@@ -13610,85 +13678,17 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, " "),
       onClick: t,
       ..._,
       children: [
-        "info" !== l && jsxRuntimeExports.jsx("div", { className: styles$5.shine }),
+        "info" !== l && jsxRuntimeExports.jsx("div", { className: styles$3.shine }),
         jsxRuntimeExports.jsx("div", {
-          className: cx(styles$5.icon, styles$5[`icon__${l}`], styles$5[`icon__${u}`], r?.icon),
-          children: jsxRuntimeExports.jsx("div", { className: cx(styles$5.glow, r?.glow) }),
+          className: cx(styles$3.icon, styles$3[`icon__${l}`], styles$3[`icon__${u}`], r?.icon),
+          children: jsxRuntimeExports.jsx("div", { className: cx(styles$3.glow, r?.glow) }),
         }),
         jsxRuntimeExports.jsx("div", {
-          className: cx(styles$5.caption, styles$5[`caption__${l}`], r?.caption),
+          className: cx(styles$3.caption, styles$3[`caption__${l}`], r?.caption),
           children: e,
         }),
-        s && jsxRuntimeExports.jsx("div", { className: cx(styles$5.goto, r?.goto), children: s }),
+        s && jsxRuntimeExports.jsx("div", { className: cx(styles$3.goto, r?.goto), children: s }),
       ],
-    });
-  },
-  base$4 = "CloseButton_7488a1b8",
-  base__medium = "CloseButton_base__medium_97d04067",
-  base__small = "CloseButton_base__small_c1b29bae",
-  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
-  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
-  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
-  styles$4 = {
-    base: base$4,
-    base__medium: base__medium,
-    base__small: base__small,
-    base__extraSmall: base__extraSmall,
-    base__x96x96: base__x96x96,
-    base__x32x32: base__x32x32,
-  },
-  sizes = { medium: "medium", small: "small", extraSmall: "extraSmall" },
-  upscaleImageSizes = {
-    [sizes.medium]: "x96x96",
-    [sizes.small]: sizes.medium,
-    [sizes.extraSmall]: "x32x32",
-  };
-function CloseButton({
-  size: e = sizes.medium,
-  hoverSound: t = sounds$1.highlight,
-  clickSound: s = sounds$1.click,
-  className: r,
-  onHover: n,
-  onClose: a,
-}) {
-  const o = useUpscale(styles$4[`base__${e}`], styles$4[`base__${upscaleImageSizes[e]}`]);
-  return jsxRuntimeExports.jsx("div", {
-    className: cx(styles$4.base, o, r),
-    onMouseEnter: () => {
-      (play$1.sound(t), n?.());
-    },
-    onClick: () => {
-      (play$1.sound(s), a());
-    },
-  });
-}
-CloseButton.size = sizes;
-const base$3 = "Formattext_bb80854d",
-  styles$3 = { base: base$3 },
-  FormatText = ({
-    binding: e,
-    text: t = "",
-    classMix: s,
-    alignment: r = Alignment.left,
-    formatWithBrackets: n,
-  }) => {
-    if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
-    const a = n && e ? format(t, e) : t;
-    return jsxRuntimeExports.jsx(reactExports.Fragment, {
-      children: a
-        .split("\n")
-        .map((t, n) =>
-          jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: cx(styles$3.base, s),
-              children: formatString(t, r, e).map((e, t) =>
-                jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
-              ),
-            },
-            `${t}-${n}`,
-          ),
-        ),
     });
   },
   useMount = (e) => {
@@ -14087,9 +14087,9 @@ export {
   Background as d7,
   Switch as d8,
   Route as d9,
-  RewardType as dA,
-  BonusNames as dB,
-  FormatText as dC,
+  TextButton as dA,
+  RewardType as dB,
+  BonusNames as dC,
   TooltipDecorator as dD,
   includes as dE,
   FormatNumber as dF,
@@ -14116,12 +14116,12 @@ export {
   MediaHeight as dr,
   MediaWidth as ds,
   useCallbackOnEsc as dt,
-  CButton as du,
-  MediaSize as dv,
-  ButtonSize as dw,
-  formatPrintf as dx,
-  TextButton as dy,
-  CloseButton as dz,
+  FormatText as du,
+  formatPrintf as dv,
+  CloseButton as dw,
+  CButton as dx,
+  MediaSize as dy,
+  ButtonSize as dz,
   easings as e,
   format$2 as f,
   find as g,

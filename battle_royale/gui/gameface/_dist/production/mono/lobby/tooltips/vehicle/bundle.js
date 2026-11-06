@@ -2,11 +2,11 @@ import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Bt as s,
   Gt as a,
-  H as i,
-  Nn as t,
+  Nn as i,
+  Q as t,
   Ut as n,
-  W as c,
-  Yr as o,
+  Yr as c,
+  et as o,
   gt as l,
   jr as r,
   ni as d,
@@ -56,7 +56,7 @@ var [v, y] = a()(({ observableModel: e }) => {
   A = "Section_paramsTypeContainer_e4739f53",
   I = "Section_icon_dc43b4b3",
   T = "Section_description_2a41345d",
-  $ = t(),
+  $ = i(),
   P = d.resolve("strings"),
   V = R.images.battle_royale.gui.maps.icons.techParams;
 function k({ type: e, className: s }) {
@@ -122,15 +122,15 @@ var C = {
     status__warning: "App_status__warning_48295791",
     section: "App_section_1f0fb308",
   },
-  M = e(o(), 1),
+  M = e(c(), 1),
   q = m(function () {
     const { model: e } = y(),
       {
         vehicleName: s,
         vehicleNation: a,
-        vehicleType: t,
+        vehicleType: i,
         statusLevel: n,
-        statusText: o,
+        statusText: c,
       } = e.vehicleInfo.get(),
       {
         hasDailyBonus: r,
@@ -148,11 +148,11 @@ var C = {
         (0, $.jsxs)("div", {
           className: C.vehicleInfo,
           children: [
-            c(t) && (0, $.jsx)(i.Type, { type: t, size: i.Type.sizes.x64x64 }),
+            o(i) && (0, $.jsx)(t.Type, { type: i, size: t.Type.sizes.x64x64 }),
             (0, $.jsxs)("div", {
               className: C.vehicleContainer,
               children: [
-                (0, $.jsx)(i.Name, { className: C.vehicleName, children: s }),
+                (0, $.jsx)(t.Name, { className: C.vehicleName, children: s }),
                 (0, $.jsx)("div", {
                   className: C.modeDescription,
                   children: R.strings.battle_royale.tooltips.vehicle.description(),
@@ -197,7 +197,7 @@ var C = {
         }),
         (0, $.jsx)("div", { className: C.separator }),
         j.map((e, s) => (0, M.createElement)(w, { ...e, key: s, className: C.section })),
-        (0, $.jsx)("div", { className: _(C.status, C[`status__${n}`]), children: o }),
+        (0, $.jsx)("div", { className: _(C.status, C[`status__${n}`]), children: c }),
       ],
     });
   });

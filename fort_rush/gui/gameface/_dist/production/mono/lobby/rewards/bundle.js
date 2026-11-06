@@ -1,8 +1,8 @@
 import {
   E as e,
-  du as a,
-  dv as s,
-  dw as d,
+  dx as a,
+  dy as s,
+  dz as d,
   l as r,
   dq as i,
   h as n,
@@ -12,14 +12,14 @@ import {
   b4 as c,
   q as o,
   dt as w,
-  dx as m,
-  dy as b,
+  dv as m,
+  dA as b,
   ak as x,
   an as f,
 } from "../chunks/lib.js";
 import { j as u, a5 as p, h, N as j, r as g, ac as N } from "../chunks/vendor.js";
 import { a as v, b as y } from "../chunks/readResource.js";
-import { f as M, g as A, M as I, a as C, R as k, b as z } from "../chunks/helpers.js";
+import { f as A, g as M, M as I, a as C, R as k, b as z } from "../chunks/helpers.js";
 const $ = "Footer_f09fca09",
   S = "Footer_buttonContainer_cc670971",
   E = (e) => (e >= s.Medium ? d.medium : d.small),
@@ -82,7 +82,7 @@ const $ = "Footer_f09fca09",
       n = r ? i.computes.mainReward(a) : i.computes.additionalReward(a),
       { mediaSize: l } = e(),
       c = l >= s.Medium ? t.Big : t.Small,
-      o = M(n, c);
+      o = A(n, c);
     return u.jsx(_, { ...o, size: c, className: d });
   }),
   G = "AdditionalRewards_8af994f7",
@@ -99,7 +99,7 @@ const $ = "Footer_f09fca09",
         () => (
           d(() => {
             c.sound("gui_random_reward_icon");
-          }, A(a.mainRewards.get().length)),
+          }, M(a.mainRewards.get().length)),
           () => {
             r();
           }
@@ -108,7 +108,7 @@ const $ = "Footer_f09fca09",
       ),
       u.jsxs("div", {
         className: p(G, e),
-        style: { "--baseDelay": `${A(a.mainRewards.get().length)}ms` },
+        style: { "--baseDelay": `${M(a.mainRewards.get().length)}ms` },
         children: [
           u.jsx("div", { className: T, children: J.additionalRewards.title() }),
           u.jsxs("div", {
@@ -159,7 +159,7 @@ const $ = "Footer_f09fca09",
       i = d.computes.mainReward(a),
       { name: n, isCompensation: t } = i,
       [l, o] = g.useState(!0),
-      w = M(i, e, !l, r, !1),
+      w = A(i, e, !l, r, !1),
       { label: m, valueType: b } = w;
     return u.jsx(N, {
       appear: !0,

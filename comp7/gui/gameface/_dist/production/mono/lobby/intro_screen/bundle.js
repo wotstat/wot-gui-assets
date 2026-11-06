@@ -24,8 +24,8 @@ import { a as x, i as S } from "../chunks/vendor.js";
 /* empty css               */ import { n as j, t as v } from "../chunks/schedule_model.js";
 import { t as I } from "../chunks/use_server_time_polling.js";
 import { t as k } from "../chunks/get_roman_levels.js";
-import { t as N } from "../chunks/get_button_size.js";
-import { t as w } from "../chunks/schedule_subheading.js";
+import { t as N } from "../chunks/schedule_subheading.js";
+import { t as w } from "../chunks/get_button_size.js";
 import { t as A } from "../chunks/arrow_button.js";
 var C = e(a(), 1),
   [D, T] = l()(
@@ -85,7 +85,7 @@ var C = e(a(), 1),
       (0, E.jsx)("div", {
         className: q.base,
         children:
-          t < a ? (0, E.jsx)(U, { timeLeft: a - t, className: q.countDown }) : (0, E.jsx)(w, {}),
+          t < a ? (0, E.jsx)(U, { timeLeft: a - t, className: q.countDown }) : (0, E.jsx)(N, {}),
       })
     );
   }),
@@ -231,7 +231,7 @@ var C = e(a(), 1),
             className: ue,
             children: (0, E.jsx)(p, {
               theme: p.themes.primary,
-              size: N(s),
+              size: w(s),
               className: me,
               onClick: e.close,
               children: R.strings.comp7_ext.intro.confirmButton(),

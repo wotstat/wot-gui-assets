@@ -1,30 +1,30 @@
 import { r as e } from "./rolldown-runtime.js";
 import {
   $r as t,
-  D as s,
-  Fn as n,
-  Gt as o,
-  L as r,
-  Lr as a,
-  Mn as i,
-  Nn as c,
-  O as l,
-  Xr as d,
-  Yr as u,
-  ei as m,
-  ni as p,
-  nn as g,
+  Fn as s,
+  Gt as n,
+  L as o,
+  Lr as r,
+  Mn as a,
+  Nn as i,
+  R as c,
+  Xr as l,
+  Yr as d,
+  ei as u,
+  ni as m,
+  nn as p,
+  q as g,
   qr as f,
   ti as x,
   ur as b,
   xt as h,
 } from "./lib.js";
 import { i as y, n as v, t as _ } from "./vendor.js";
-var N = e(u()),
+var N = e(d()),
   w = (function (e) {
     return ((e.Common = "common"), (e.Rare = "rare"), (e.Epic = "epic"), e);
   })({});
-var E = class extends d {
+var E = class extends l {
     root;
     prefix;
     constructor(e, t) {
@@ -45,7 +45,7 @@ var E = class extends d {
           }
           throw new Error("R class with images field is not defined");
         })(this.root, n);
-      return void 0 === o ? ("silent" !== s && m(`Resource not found: ${n}`, s), t()) : o;
+      return void 0 === o ? ("silent" !== s && u(`Resource not found: ${n}`, s), t()) : o;
     }
     readOrEmpty(e, t = "warn") {
       return this.readOr(e, () => "", t);
@@ -53,12 +53,12 @@ var E = class extends d {
   },
   I = "lootbox_images",
   O = "lootbox_sounds";
-(p.register(I, _(() => new t(window.R.images)).singleton()),
-  p.register(O, _(() => new E(window.R.sounds)).singleton()));
-var j = p.resolve(I),
-  $ = p.resolve("videos"),
-  C = p.resolve(O),
-  P = p.resolve("strings"),
+(m.register(I, _(() => new t(window.R.images)).singleton()),
+  m.register(O, _(() => new E(window.R.sounds)).singleton()));
+var j = m.resolve(I),
+  $ = m.resolve("videos"),
+  C = m.resolve(O),
+  P = m.resolve("strings"),
   M = (e, t) => {
     switch (e) {
       case R.images:
@@ -169,7 +169,7 @@ var V = (e, t) => {
     }
     return s;
   },
-  D = ({ type: e, filePath: t, eventName: s }, n = !1) => {
+  S = ({ type: e, filePath: t, eventName: s }, n = !1) => {
     const {
       parent: o,
       path: r,
@@ -204,8 +204,8 @@ var V = (e, t) => {
       ? { eventResource: n ? V(o, r) : M(o, r), defaultResource: n ? V(o, a) : M(o, a) }
       : null;
   },
-  S = ({ type: e, filePath: t, eventName: s }) => {
-    const n = D({ type: e, filePath: t, eventName: s });
+  D = ({ type: e, filePath: t, eventName: s }) => {
+    const n = S({ type: e, filePath: t, eventName: s });
     if (!n || (!n.eventResource && !n.defaultResource))
       return (console.info(`Unreachable code: unknown resource (${e} ${s} ${t})`), "");
     const { eventResource: o, defaultResource: r } = n;
@@ -218,7 +218,7 @@ var V = (e, t) => {
         ? ((s[n] = ((e, t, s) =>
             Object.keys(e).reduce((n, o) => {
               const r = e[o];
-              return (void 0 !== r && (n[o] = S({ type: t, filePath: r, eventName: s })), n);
+              return (void 0 !== r && (n[o] = D({ type: t, filePath: r, eventName: s })), n);
             }, {}))(o, n, t)),
           s)
         : s;
@@ -240,7 +240,7 @@ var V = (e, t) => {
   Y = (function (e) {
     return ((e.Boxes = "boxes"), (e.Empty = "empty"), e);
   })({}),
-  [W, F] = o()(
+  [W, F] = n()(
     ({ observableModel: e }) => {
       const t = e.object().get().eventName,
         s = { root: e.object(), style: b.box(G(t, T.EntryPoint)), resources: b.box(z(H, t)) },
@@ -262,15 +262,15 @@ var V = (e, t) => {
   J = "Glow_base__hover_bba0fce1",
   K = "Glow_video_2d774833",
   Q = "Glow_img_90334d0",
-  ee = c(),
+  ee = i(),
   te = y(function ({ hover: e = !1, className: t }) {
-    const { model: n } = F(),
-      { images: o, videos: r } = n.resources.get(),
-      a = n.style.get(),
+    const { model: s } = F(),
+      { images: n, videos: r } = s.resources.get(),
+      a = s.style.get(),
       i = ((e, t) => {
         const s = q(e, t);
         return { src: s, type: s.split(":")[0] };
-      })(o.shine, r.glow);
+      })(n.shine, r.glow);
     return (0, ee.jsx)("div", {
       className: f(Z, e && J, t),
       style: {
@@ -279,7 +279,7 @@ var V = (e, t) => {
       },
       children:
         i.type === X
-          ? (0, ee.jsx)(s, { loop: !0, autoplay: !0, className: K, src: i.src })
+          ? (0, ee.jsx)(o, { loop: !0, autoplay: !0, className: K, src: i.src })
           : (0, ee.jsx)("div", { className: Q, style: { backgroundImage: `url(${i.src})` } }),
     });
   }),
@@ -298,7 +298,7 @@ var oe = "Counter_e7ec423c";
 function re({ count: e, text: t, maxText: s, className: n }) {
   return (0, ee.jsx)("div", {
     className: f(oe, n),
-    children: e < 1e3 ? (0, ee.jsx)(r, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
+    children: e < 1e3 ? (0, ee.jsx)(g, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
   });
 }
 var ae = {
@@ -311,29 +311,29 @@ var ae = {
   },
   ie = y(function ({ className: e }) {
     const { model: t } = F(),
-      { breakpoint: s } = i(),
+      { breakpoint: n } = a(),
       { texts: o } = t.resources.get(),
-      { boxesCount: r, eventExpireTime: a } = t.root.get(),
-      c = t.computes.getState(),
-      d = s.weight > n.small.weight ? l.size.x32x32 : l.size.x24x24,
-      u = 259200 >= a,
-      m = u || c === Y.Empty;
+      { boxesCount: r, eventExpireTime: i } = t.root.get(),
+      l = t.computes.getState(),
+      d = n.weight > s.small.weight ? c.size.x32x32 : c.size.x24x24,
+      u = 259200 >= i,
+      m = u || l === Y.Empty;
     return (0, ee.jsxs)("div", {
       className: f(ae.base, e),
       children: [
         m &&
           (0, ee.jsx)("div", {
-            className: f(ae.additional, c !== Y.Boxes && ae.additional__center),
+            className: f(ae.additional, l !== Y.Boxes && ae.additional__center),
             children: u
-              ? (0, ee.jsx)(l, {
+              ? (0, ee.jsx)(c, {
                   className: ae.timer,
                   classNames: { label: ae.timerLabel },
-                  start: a,
+                  start: i,
                   size: d,
                 })
               : (0, ee.jsx)("div", { className: ae.text, children: o.boxes }),
           }),
-        c === Y.Boxes &&
+        l === Y.Boxes &&
           (0, ee.jsx)(re, {
             className: ae.counter,
             maxText: o.maxBoxesCount,
@@ -351,18 +351,18 @@ var ae = {
   pe = "App_info_be3fbaea",
   ge = "App_icon_879c8615";
 var fe = y(function () {
-  const e = p.resolve("sounds"),
-    t = p.resolve("aliases"),
-    s = p.resolve("views"),
-    n = g({
+  const e = m.resolve("sounds"),
+    t = m.resolve("aliases"),
+    s = m.resolve("views"),
+    n = p({
       resId: t.read((e) => e.hangar.shared.LootboxEntryPoint("resId")),
       contentId: s.read((e) => e.mono.lootbox.tooltips.entry_point("resId")),
     }),
-    [o, r] = (0, N.useState)(!1),
+    [o, a] = (0, N.useState)(!1),
     { model: i, controls: c } = F(),
     { isEnabled: l } = i.root.get(),
     d = i.computes.getState(),
-    { images: u, videos: m, sounds: x } = i.resources.get(),
+    { images: u, videos: g, sounds: x } = i.resources.get(),
     b = i.style.get(),
     h = o ? 1 + b.icon[`${d}IconBrightness`] : 1,
     y = d === Y.Empty ? u.iconEmpty : u.iconGold;
@@ -377,9 +377,9 @@ var fe = y(function () {
           (e.play("yes1"), c.showLanding());
         },
         onMouseEnter: function () {
-          (a.sound(x.entryHover), r(!0));
+          (r.sound(x.entryHover), a(!0));
         },
-        onMouseLeave: () => r(!1),
+        onMouseLeave: () => a(!1),
         children: [
           (0, ee.jsx)(ie, { className: pe }),
           d === Y.Boxes && l && (0, ee.jsx)(te, { className: ue, hover: o }),
@@ -390,7 +390,7 @@ var fe = y(function () {
   });
 });
 function xe() {
-  const e = p.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
+  const e = m.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
   return (0, ee.jsx)(W, {
     options: (0, N.useMemo)(() => ({ rootId: e }), [e]),
     children: (0, ee.jsx)(fe, {}),

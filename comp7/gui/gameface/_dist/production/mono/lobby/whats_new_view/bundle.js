@@ -29,8 +29,8 @@ import { a as M, i as I } from "../chunks/vendor.js";
 /* empty css               */ import { n as C, t as V } from "../chunks/schedule_model.js";
 import { i as y } from "../chunks/enums.js";
 import { n as T } from "../chunks/consts.js";
-import { t as k } from "../chunks/get_button_size.js";
-import { t as A } from "../chunks/schedule_subheading.js";
+import { t as k } from "../chunks/schedule_subheading.js";
+import { t as A } from "../chunks/get_button_size.js";
 import { n as U, t as S } from "../chunks/vehicle_name.js";
 import { t as B } from "../chunks/close_button.js";
 var [$, W] = h()(
@@ -154,7 +154,7 @@ var Y = M(function () {
           className: ce,
           children: R.strings.comp7_ext.whatsNewView.banner.title.large(),
         }),
-        (0, H.jsx)(A, { hasSeasonName: !1, className: ne }),
+        (0, H.jsx)(k, { hasSeasonName: !1, className: ne }),
         a === y.Third &&
           (0, H.jsxs)("div", {
             className: ie,
@@ -490,7 +490,7 @@ var Be = {
               ),
               (0, H.jsx)(u, {
                 theme: u.themes.primary,
-                size: k(s),
+                size: A(s),
                 className: Be.button,
                 onClick: e.close,
                 children: R.strings.comp7_ext.whatsNewView.button.ok(),

@@ -1,13 +1,13 @@
 import { r as e } from "./rolldown-runtime.js";
 import {
   Co as t,
-  J as o,
-  Ka as s,
-  Or as n,
-  So as r,
-  To as a,
-  Y as i,
-  Zn as c,
+  In as o,
+  J as s,
+  Ka as n,
+  Or as r,
+  So as a,
+  To as i,
+  Y as c,
   _i as l,
   ar as d,
   go as u,
@@ -24,7 +24,7 @@ var N = e(x()),
   w = (function (e) {
     return ((e.Common = "common"), (e.Rare = "rare"), (e.Epic = "epic"), e);
   })({});
-var E = class extends h {
+var I = class extends h {
     root;
     prefix;
     constructor(e, t) {
@@ -51,14 +51,14 @@ var E = class extends h {
       return this.readOr(e, () => "", t);
     }
   },
-  I = "lootbox_images",
+  E = "lootbox_images",
   O = "lootbox_sounds";
-(a.register(I, _(() => new r(window.R.images)).singleton()),
-  a.register(O, _(() => new E(window.R.sounds)).singleton()));
-var j = a.resolve(I),
-  $ = a.resolve("videos"),
-  C = a.resolve(O),
-  P = a.resolve("strings"),
+(i.register(E, _(() => new a(window.R.images)).singleton()),
+  i.register(O, _(() => new I(window.R.sounds)).singleton()));
+var j = i.resolve(E),
+  $ = i.resolve("videos"),
+  C = i.resolve(O),
+  P = i.resolve("strings"),
   M = (e, t) => {
     switch (e) {
       case R.images:
@@ -253,33 +253,33 @@ var V = (e, t) => {
     ({ externalModel: e }) => ({ showLanding: e.createCallbackNoArgs("onEntryClick") }),
   ),
   U = (e) => !!e && !e.includes("customizable/default"),
-  Z = (e, t) => {
+  J = (e, t) => {
     return ((o = e), U((s = t)) ? s : U(o) ? o : s || o);
     var o, s;
   },
-  J = "video",
-  K = (w.Common, w.Common, w.Rare, w.Rare, "Glow_2571a3a9"),
+  K = "video",
+  Z = (w.Common, w.Common, w.Rare, w.Rare, "Glow_2571a3a9"),
   q = "Glow_base__hover_bba0fce1",
   Q = "Glow_video_2d774833",
   X = "Glow_img_90334d0",
   ee = m(),
   te = v(function ({ hover: e = !1, className: t }) {
-    const { model: s } = F(),
-      { images: n, videos: r } = s.resources.get(),
-      a = s.style.get(),
+    const { model: o } = F(),
+      { images: n, videos: r } = o.resources.get(),
+      a = o.style.get(),
       i = ((e, t) => {
-        const o = Z(e, t);
+        const o = J(e, t);
         return { src: o, type: o.split(":")[0] };
       })(n.shine, r.glow);
     return (0, ee.jsx)("div", {
-      className: u(K, e && q, t),
+      className: u(Z, e && q, t),
       style: {
         "--opacity-initial": a.shine.opacity.initial,
         "--opacity-hover": a.shine.opacity.hover,
       },
       children:
-        i.type === J
-          ? (0, ee.jsx)(o, { loop: !0, autoplay: !0, className: Q, src: i.src })
+        i.type === K
+          ? (0, ee.jsx)(s, { loop: !0, autoplay: !0, className: Q, src: i.src })
           : (0, ee.jsx)("div", { className: X, style: { backgroundImage: `url(${i.src})` } }),
     });
   }),
@@ -295,10 +295,10 @@ function se({ image: e, brightness: t, disabled: o, className: s, ...n }) {
   });
 }
 var ne = "Counter_e7ec423c";
-function re({ count: e, text: t, maxText: o, className: s }) {
+function re({ count: e, text: t, maxText: s, className: n }) {
   return (0, ee.jsx)("div", {
-    className: u(ne, s),
-    children: e < 1e3 ? (0, ee.jsx)(c, { text: t, params: { count: e }, upgradeLegacy: !0 }) : o,
+    className: u(ne, n),
+    children: e < 1e3 ? (0, ee.jsx)(o, { text: t, params: { count: e }, upgradeLegacy: !0 }) : s,
   });
 }
 var ae = {
@@ -315,7 +315,7 @@ var ae = {
       { texts: s } = t.resources.get(),
       { boxesCount: n, eventExpireTime: r } = t.root.get(),
       a = t.computes.getState(),
-      c = o.weight > l.small.weight ? i.size.x32x32 : i.size.x24x24,
+      i = o.weight > l.small.weight ? c.size.x32x32 : c.size.x24x24,
       d = 259200 >= r,
       m = d || a === Y.Empty;
     return (0, ee.jsxs)("div", {
@@ -325,11 +325,11 @@ var ae = {
           (0, ee.jsx)("div", {
             className: u(ae.additional, a !== Y.Boxes && ae.additional__center),
             children: d
-              ? (0, ee.jsx)(i, {
+              ? (0, ee.jsx)(c, {
                   className: ae.timer,
                   classNames: { label: ae.timerLabel },
                   start: r,
-                  size: c,
+                  size: i,
                 })
               : (0, ee.jsx)("div", { className: ae.text, children: s.boxes }),
           }),
@@ -351,38 +351,38 @@ var ae = {
   pe = "App_info_be3fbaea",
   ge = "App_icon_879c8615";
 var fe = v(function () {
-  const e = a.resolve("sounds"),
-    t = a.resolve("aliases"),
-    o = a.resolve("views"),
-    r = n({
+  const e = i.resolve("sounds"),
+    t = i.resolve("aliases"),
+    o = i.resolve("views"),
+    s = r({
       resId: t.read((e) => e.hangar.shared.LootboxEntryPoint("resId")),
       contentId: o.read((e) => e.mono.lootbox.tooltips.entry_point("resId")),
     }),
-    [i, c] = (0, N.useState)(!1),
+    [a, c] = (0, N.useState)(!1),
     { model: l, controls: d } = F(),
     { isEnabled: m } = l.root.get(),
     p = l.computes.getState(),
     { images: g, videos: f, sounds: x } = l.resources.get(),
     b = l.style.get(),
-    h = i ? 1 + b.icon[`${p}IconBrightness`] : 1,
+    h = a ? 1 + b.icon[`${p}IconBrightness`] : 1,
     y = p === Y.Empty ? g.iconEmpty : g.iconGold;
   return (0, ee.jsx)("div", {
     className: u(ce, !m && de),
     children: (0, ee.jsx)("div", {
       className: le,
-      ...r,
+      ...s,
       children: (0, ee.jsxs)("div", {
         className: me,
         onClick: function () {
           (e.play("yes1"), d.showLanding());
         },
         onMouseEnter: function () {
-          (s.sound(x.entryHover), c(!0));
+          (n.sound(x.entryHover), c(!0));
         },
         onMouseLeave: () => c(!1),
         children: [
           (0, ee.jsx)(ie, { className: pe }),
-          p === Y.Boxes && m && (0, ee.jsx)(te, { className: ue, hover: i }),
+          p === Y.Boxes && m && (0, ee.jsx)(te, { className: ue, hover: a }),
           (0, ee.jsx)(se, { disabled: !m, image: y, brightness: h, className: ge }),
         ],
       }),
@@ -390,7 +390,7 @@ var fe = v(function () {
   });
 });
 function xe() {
-  const e = a.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
+  const e = i.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId"));
   return (0, ee.jsx)(W, {
     options: (0, N.useMemo)(() => ({ rootId: e }), [e]),
     children: (0, ee.jsx)(fe, {}),
