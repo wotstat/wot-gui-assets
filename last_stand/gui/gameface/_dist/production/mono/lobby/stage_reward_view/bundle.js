@@ -3,15 +3,15 @@ import {
   $n as s,
   Aa as a,
   Ca as r,
-  En as t,
+  Fn as t,
   J as i,
   Ka as l,
   Mn as d,
   Pa as n,
   Qn as o,
-  Ur as c,
-  Vr as m,
-  Xn as u,
+  Un as c,
+  Ur as m,
+  Vr as u,
   cr as p,
   fr as g,
   hi as y,
@@ -88,57 +88,57 @@ var C = e(b(), 1),
   M = "RewardList_ribbonImage_5f4554d1",
   q = "RewardList_ribbonImage__gold_7c6e7caa",
   D = "RewardList_highlight_9ef1e53a",
-  H = "RewardList_shine_17629f60",
-  P = "RewardList_radial_73b144ff",
-  V = "RewardList_reward_7bab5c66",
-  W = "RewardList_rewardValue_e037495",
-  F = "RewardList_other_aaca6476",
+  F = "RewardList_shine_17629f60",
+  H = "RewardList_radial_73b144ff",
+  P = "RewardList_reward_7bab5c66",
+  V = "RewardList_rewardValue_e037495",
+  W = "RewardList_other_aaca6476",
   J = "RewardList_otherContent_1c49f8e0",
   K = "RewardList_divider_7285fc8",
-  X = y(),
-  G = k[B.RIBBON].delay + 150,
+  G = y(),
+  X = k[B.RIBBON].delay + 150,
   Y = () => l.sound(T),
   Z = f(function ({ isAnimationCanceled: e }) {
     const { model: s } = O(),
-      a = h({ size: d.S296x222 }, { large: { size: d.S400x300 } }),
+      a = h({ size: c.S296x222 }, { large: { size: c.S400x300 } }),
       r = s.computes.isSpecialReward();
-    return (0, X.jsxs)("div", {
+    return (0, G.jsxs)("div", {
       className: $,
       children: [
         r &&
-          (0, X.jsxs)("div", {
+          (0, G.jsxs)("div", {
             className: D,
             children: [
-              (0, X.jsx)(i, {
-                className: (0, I.default)(H),
+              (0, G.jsx)(i, {
+                className: (0, I.default)(F),
                 src: R.videos.last_stand.rays(),
                 autoplay: !0,
                 loop: !0,
               }),
-              (0, X.jsx)("div", { className: P }),
+              (0, G.jsx)("div", { className: H }),
             ],
           }),
-        (0, X.jsxs)(v, {
+        (0, G.jsxs)(v, {
           className: U,
           ...k[B.RIBBON],
           isCanceled: e,
           children: [
-            (0, X.jsx)("div", { className: (0, I.default)(M, r && q) }),
-            (0, X.jsx)("div", {
+            (0, G.jsx)("div", { className: (0, I.default)(M, r && q) }),
+            (0, G.jsx)("div", {
               className: Q,
               children: w(s.computes.mainRewards(), (s, r) =>
-                (0, X.jsx)(
+                (0, G.jsx)(
                   v,
                   {
-                    className: V,
+                    className: P,
                     ...k[B.REWARD],
-                    delay: G + 150 * r,
+                    delay: X + 150 * r,
                     isCanceled: e,
                     onStart: Y,
-                    children: (0, X.jsx)(t, {
+                    children: (0, G.jsx)(d, {
                       name: s.name,
                       value: A(s),
-                      classNames: { info: W },
+                      classNames: { info: V },
                       size: a.size,
                       special: s.overlayType,
                       image: L(s, a.size),
@@ -151,30 +151,30 @@ var C = e(b(), 1),
               ),
             }),
             s.computes.hasOtherRewards() &&
-              (0, X.jsx)("div", {
-                className: F,
-                children: (0, X.jsxs)(v, {
+              (0, G.jsx)("div", {
+                className: W,
+                children: (0, G.jsxs)(v, {
                   className: J,
                   ...k[B.OTHER],
-                  delay: G + 600,
+                  delay: X + 600,
                   isCanceled: e,
                   children: [
-                    (0, X.jsx)("div", {
+                    (0, G.jsx)("div", {
                       children: R.strings.last_stand_lobby.stageReward.rewards.received(),
                     }),
-                    (0, X.jsx)("div", {
+                    (0, G.jsx)("div", {
                       className: Q,
                       children: w(s.computes.otherRewards(), (e, s) =>
-                        (0, X.jsx)(
-                          t,
+                        (0, G.jsx)(
+                          d,
                           {
-                            className: V,
-                            classNames: { info: W },
+                            className: P,
+                            classNames: { info: V },
                             name: e.name,
                             value: A(e),
-                            size: d.Big,
+                            size: c.Big,
                             special: e.overlayType,
-                            image: L(e, d.Big),
+                            image: L(e, c.Big),
                             valueType: z(e.name),
                             tooltipArgs: E(e),
                           },
@@ -182,7 +182,7 @@ var C = e(b(), 1),
                         ),
                       ),
                     }),
-                    (0, X.jsx)("div", { className: K }),
+                    (0, G.jsx)("div", { className: K }),
                   ],
                 }),
               }),
@@ -199,9 +199,9 @@ var C = e(b(), 1),
   ie = "StageRewardApp_closeBtn_ee72ce32",
   le = f(function () {
     const [e, r] = (0, C.useState)(!1),
-      { model: t, controls: i } = O();
-    (m(i.close), c(a.ENTER, i.close), c(a.SPACE, i.close));
-    const l = h(
+      { model: i, controls: l } = O();
+    (u(l.close), m(a.ENTER, l.close), m(a.SPACE, l.close));
+    const d = h(
         { size: s.sizes.extraSmall },
         {
           medium: { size: s.sizes.small },
@@ -209,48 +209,48 @@ var C = e(b(), 1),
           extraLarge: { size: s.sizes.large },
         },
       ),
-      d =
-        ((n = t.isLastArtefact.get()),
-        t.isQuestReward.get() ? "special" : n ? "stageFinal" : "stage");
-    var n;
-    return (0, X.jsxs)("div", {
+      n =
+        ((c = i.isLastArtefact.get()),
+        i.isQuestReward.get() ? "special" : c ? "stageFinal" : "stage");
+    var c;
+    return (0, G.jsxs)("div", {
       className: ee,
       onClick: () => r(!0),
       children: [
-        (0, X.jsx)("div", { className: se }),
-        (0, X.jsx)(v, {
+        (0, G.jsx)("div", { className: se }),
+        (0, G.jsx)(v, {
           ...k[B.SUBTITLE],
           isCanceled: e,
-          children: (0, X.jsx)(u, {
-            path: `R.strings.last_stand_lobby.stageReward.${d}.subheader`,
+          children: (0, G.jsx)(t, {
+            path: `R.strings.last_stand_lobby.stageReward.${n}.subheader`,
             className: ae,
-            params: { number: t.artefactNumber.get() },
+            params: { number: i.artefactNumber.get() },
           }),
         }),
-        (0, X.jsx)(v, {
+        (0, G.jsx)(v, {
           ...k[B.TITLE],
           isCanceled: e,
-          children: (0, X.jsx)(u, {
+          children: (0, G.jsx)(t, {
             className: re,
-            path: `R.strings.last_stand_lobby.stageReward.${d}.header`,
+            path: `R.strings.last_stand_lobby.stageReward.${n}.header`,
           }),
         }),
-        (0, X.jsx)(Z, { isAnimationCanceled: e }),
-        (0, X.jsx)("div", {
+        (0, G.jsx)(Z, { isAnimationCanceled: e }),
+        (0, G.jsx)("div", {
           className: te,
-          children: (0, X.jsx)(v, {
+          children: (0, G.jsx)(v, {
             ...k[B.BUTTON],
             isCanceled: e,
-            children: (0, X.jsx)(s, {
-              size: l.size,
+            children: (0, G.jsx)(s, {
+              size: d.size,
               theme: s.themes.primary,
-              onClick: i.close,
+              onClick: l.close,
               children: R.strings.last_stand_lobby.common.yes(),
             }),
           }),
         }),
-        (0, X.jsx)("div", { className: ie, children: (0, X.jsx)(o, { onClose: i.close }) }),
+        (0, G.jsx)("div", { className: ie, children: (0, G.jsx)(o, { onClose: l.close }) }),
       ],
     });
   });
-p((0, X.jsx)(S, { children: (0, X.jsx)(j, { children: (0, X.jsx)(le, {}) }) }));
+p((0, G.jsx)(S, { children: (0, G.jsx)(j, { children: (0, G.jsx)(le, {}) }) }));

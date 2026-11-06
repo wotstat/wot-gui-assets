@@ -1,70 +1,70 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   Ai as t,
-  At as a,
-  Cn as n,
-  Ct as s,
-  Di as o,
-  Dr as r,
-  Ei as i,
-  Er as l,
-  F as c,
-  Fi as d,
-  Fn as u,
-  Gn as _,
-  I as b,
-  Ii as m,
-  In as p,
-  J as f,
-  K as g,
-  L as v,
-  Ln as h,
-  Mi as y,
-  Mn as x,
-  Mr as N,
-  Ni as B,
-  O as j,
-  Oi as k,
-  On as I,
-  Pi as E,
-  Pn as A,
-  Qt as T,
-  R as S,
-  Ri as C,
-  Rn as P,
-  Ti as O,
-  Tn as W,
+  Cn as a,
+  Di as n,
+  Dr as s,
+  Ei as o,
+  Er as r,
+  F as i,
+  Fi as l,
+  Fn as c,
+  G as d,
+  Gn as u,
+  I as _,
+  Ii as b,
+  In as m,
+  L as p,
+  Ln as f,
+  Mi as g,
+  Mn as v,
+  Mr as h,
+  Mt as y,
+  Ni as x,
+  O as N,
+  Oi as B,
+  On as j,
+  Ot as k,
+  Pi as I,
+  Pn as E,
+  Qt as A,
+  R as T,
+  Ri as S,
+  Rn as C,
+  Ti as P,
+  Tn as O,
   Vi as M,
-  Wr as D,
-  Wt as w,
-  Xr as H,
-  Xt as V,
-  _ as z,
-  _r as L,
-  ai as F,
-  bn as $,
+  Wr as W,
+  Wt as D,
+  Xr as w,
+  Xt as H,
+  _ as V,
+  _r as z,
+  ai as L,
+  bn as F,
+  ct as $,
   en as U,
-  fr as K,
-  g as G,
+  fr as G,
+  g as K,
   hr as q,
-  ht as Y,
-  ir as J,
-  it as Q,
-  ji as X,
-  ki as Z,
-  mt as ee,
-  pr as te,
-  qt as ae,
-  ri as ne,
-  tr as se,
-  ut as oe,
-  vr as re,
-  wr as ie,
-  xn as le,
-  yn as ce,
-  yt as de,
-  z as ue,
-  zi as _e,
+  ir as Y,
+  ji as J,
+  ki as Q,
+  mt as X,
+  pr as Z,
+  q as ee,
+  qt as te,
+  ri as ae,
+  tr as ne,
+  vr as se,
+  vt as oe,
+  wr as re,
+  xn as ie,
+  yn as le,
+  yt as ce,
+  z as de,
+  zi as ue,
+  zt as _e,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { a as be, i as me, n as pe, o as fe, s as ge } from "../chunks/vendor.js";
@@ -73,8 +73,8 @@ import { t as ye } from "../chunks/number_animation.js";
 var xe = (function (e) {
     return ((e.Hangar = "hangar"), (e.Default = "default"), e);
   })({}),
-  [Ne, Be] = W("HeaderStateModel")((e) => ({ features: e.observableModel.dict("features") })),
-  [je, ke] = W()(
+  [Ne, Be] = O("HeaderStateModel")((e) => ({ features: e.observableModel.dict("features") })),
+  [je, ke] = O()(
     ({ observableModel: e }) => ({
       ...e.primitives(["pageTitle", "backNavigationDescription", "backNavigationAllowed"]),
       infoButtons: e.arrayClone("infoButtons"),
@@ -84,10 +84,10 @@ var xe = (function (e) {
       doInfoAction: e.createCallback((e) => ({ index: e }), "onInfoAction"),
     }),
   ),
-  [Ie, Ee] = W("CurrentVehicleInfoProvider")(({ observableModel: e }) => {
+  [Ie, Ee] = O("CurrentVehicleInfoProvider")(({ observableModel: e }) => {
     const t = { vehicles: e.dictRef("vehicles") };
     return {
-      vehicle: n.shallow(() => {
+      vehicle: a.shallow(() => {
         try {
           const e = t.vehicles.entries()[0];
           if (e) {
@@ -99,12 +99,12 @@ var xe = (function (e) {
         }
       }),
     };
-  }, ne),
-  [Ae, Te] = W("HeaderProvider")(({ observableModel: e }) => e.primitives(["oldStyle"]), ne),
+  }, ae),
+  [Ae, Te] = O("HeaderProvider")(({ observableModel: e }) => e.primitives(["oldStyle"]), ae),
   Se = "playerReady",
   Ce = "searchingBattle",
   Pe = "battleReady",
-  [Oe, We] = W("PrebattleProvider")(
+  [Oe, Me] = O("PrebattleProvider")(
     ({ observableModel: e }) => {
       const t = {
           ...e.primitives([
@@ -116,28 +116,28 @@ var xe = (function (e) {
           ]),
           states: e.dict("states"),
           battleVehicle: e.transform((e) => {
-            if (s(e.type)) return { ...e, type: e.type };
+            if (y(e.type)) return { ...e, type: e.type };
           }, "battleVehicle"),
         },
-        a = n.primitive(() => t.battleStatus.get() === Ce),
-        o = n.primitive(() => t.battleStatus.get() === Pe);
-      return { ...t, computes: { isSearchingBattle: a, isBattleReady: o } };
+        n = a.primitive(() => t.battleStatus.get() === Ce),
+        s = a.primitive(() => t.battleStatus.get() === Pe);
+      return { ...t, computes: { isSearchingBattle: n, isBattleReady: s } };
     },
     ({ externalModel: e }) => ({
       actionPrebattle: e.createCallback((e) => ({ action: e }), "onAction"),
     }),
   ),
-  [Me, De] = W("PremiumShopProvider")(
+  [We, De] = O("PremiumShopProvider")(
     ({ observableModel: e }) => ({ ...e.primitives({ isPremiumShop: "premiumShopEnabled" }) }),
     ({ externalModel: e }) => ({
       openPremiumShop: e.createCallbackNoArgs("onOpenExternalPremiumShop"),
     }),
   ),
-  [Re, we] = W("TutorialProvider")(
+  [Re, we] = O("TutorialProvider")(
     ({ observableModel: e }) => {
       const t = { triggers: e.arrayClone("triggers.items") },
-        a = n.primitive(() => t.triggers.get().length);
-      return { ...t, computes: { triggersCount: a } };
+        n = a.primitive(() => t.triggers.get().length);
+      return { ...t, computes: { triggersCount: n } };
     },
     ({ externalModel: e }) => ({
       onTriggerActivated: e.createCallback(
@@ -146,44 +146,44 @@ var xe = (function (e) {
       ),
     }),
   ),
-  He = e(C(), 1),
-  [Ve, ze] = W("BattleStartProvider")(
+  He = e(S(), 1),
+  [Ve, ze] = O("BattleStartProvider")(
     ({ observableModel: e }) => ({ ...e.primitives(["tooltip"]) }),
-    ne,
+    ae,
   );
 var Le = "active",
   Fe = "ready",
   $e = "notReady",
   Ue = "disabled";
-var Ke = {
+var Ge = {
     backgroundEffect: "BackgroundEffects_backgroundEffect_7bb0c1b5",
     base: "BackgroundEffects_47bdcaf9",
     backgroundEffect__rays: "BackgroundEffects_backgroundEffect__rays_4ebbd8d0",
   },
-  Ge = re(),
+  Ke = se(),
   qe = "rays";
 var Ye = (0, He.memo)(function ({ buttonState: e, className: t }) {
     const a = e === Le ? [qe] : [];
     const n = M.resolve("videos"),
-      s = v(a, {
+      s = p(a, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
         leave: { opacity: 0 },
         config: { duration: 100 },
         trail: 500,
       });
-    return (0, Ge.jsx)("div", {
-      className: m(Ke.base, t),
+    return (0, Ke.jsx)("div", {
+      className: b(Ge.base, t),
       children: s((e, t) =>
-        (0, Ge.jsx)(c.div, {
+        (0, Ke.jsx)(i.div, {
           style: e,
-          children: (0, Ge.jsx)(
-            w,
+          children: (0, Ke.jsx)(
+            D,
             {
               loop: !0,
               autoplay: !0,
               src: n.readOrEmpty(`header_footer.battle_button.${t}`),
-              className: m(Ke.backgroundEffect, Ke[`backgroundEffect__${t}`]),
+              className: b(Ge.backgroundEffect, Ge[`backgroundEffect__${t}`]),
             },
             t,
           ),
@@ -195,11 +195,11 @@ var Ye = (0, He.memo)(function ({ buttonState: e, className: t }) {
   Qe = "ButtonEffects_bdb5411e",
   Xe = (0, He.memo)(function ({ className: e, onAnimationStarted: t }) {
     const a = M.resolve("videos"),
-      n = K({ value: "small" }, { large: { value: "large" } });
-    return (0, Ge.jsx)("div", {
-      className: m(Qe, e),
-      children: (0, Ge.jsx)(
-        w,
+      n = G({ value: "small" }, { large: { value: "large" } });
+    return (0, Ke.jsx)("div", {
+      className: b(Qe, e),
+      children: (0, Ke.jsx)(
+        D,
         {
           autoplay: !0,
           loop: !0,
@@ -224,17 +224,17 @@ var Ye = (0, He.memo)(function ({ buttonState: e, className: t }) {
     textOverlay: "ButtonText_textOverlay_1bcba7de",
   };
 function et({ buttonState: e, buttonText: t, animationActive: a, onAnimationEnded: n }) {
-  const s = b({
+  const s = _({
     opacity: a ? 0.9 : 0,
-    config: { duration: a ? 3600 : 1e3, easing: a ? d.easeInCirc : d.easeOutCirc },
+    config: { duration: a ? 3600 : 1e3, easing: a ? l.easeInCirc : l.easeOutCirc },
     onRest: () => {
       a && n();
     },
   });
   return e === Le
-    ? (0, Ge.jsx)(c.div, { className: Ze.textGlow, style: s, children: t })
+    ? (0, Ke.jsx)(i.div, { className: Ze.textGlow, style: s, children: t })
     : e === Fe
-      ? (0, Ge.jsx)("div", { className: Ze.textGlow, children: t })
+      ? (0, Ke.jsx)("div", { className: Ze.textGlow, children: t })
       : null;
 }
 var tt = pe(function ({
@@ -244,9 +244,9 @@ var tt = pe(function ({
     onAnimationEnded: n,
     className: s,
   }) {
-    const o = We(),
+    const o = Me(),
       r = M.resolve("strings"),
-      i = _e.toUpperCase(
+      i = ue.toUpperCase(
         r.readOrEmpty(
           (function (e, t) {
             return "battleStartAction" === e
@@ -257,14 +257,14 @@ var tt = pe(function ({
           })(e, o.model.states.get(Se)),
         ),
       );
-    return (0, Ge.jsxs)("div", {
-      className: m(Ze.base, Ze[`base__${t}`], s),
+    return (0, Ke.jsxs)("div", {
+      className: b(Ze.base, Ze[`base__${t}`], s),
       children: [
-        (0, Ge.jsx)(z, {
+        (0, Ke.jsx)(V, {
           classNames: { base: Ze.textWrapper, text: Ze.text, textOverlay: Ze.textOverlay },
           children: i,
         }),
-        (0, Ge.jsx)(et, { buttonState: t, buttonText: i, animationActive: a, onAnimationEnded: n }),
+        (0, Ke.jsx)(et, { buttonState: t, buttonText: i, animationActive: a, onAnimationEnded: n }),
       ],
     });
   }),
@@ -295,14 +295,14 @@ var tt = pe(function ({
     className: o,
   }) {
     const r = ze(),
-      i = We(),
+      i = Me(),
       l = r.model.tooltip.get(),
       c = (function (e) {
         const t = e.match(/{HEADER}(.*?){\/HEADER}/)?.[1],
           a = e.match(/{BODY}(.*?){\/BODY}/)?.[1],
           n = e.match(/{NOTE}(.*?){\/NOTE}/)?.[1],
           s = e.match(/{ATTENTION}(.*?){\/ATTENTION}/)?.[1];
-        return A({
+        return E({
           header: t,
           body: a,
           alert: s,
@@ -313,19 +313,19 @@ var tt = pe(function ({
       })(l),
       d = e === Ue;
     const u = a && nt.includes(a) && nt.includes(e);
-    return (0, Ge.jsx)("div", {
+    return (0, Ke.jsx)("div", {
       ...(d && l && c),
       className: o,
-      children: (0, Ge.jsxs)(Q, {
-        theme: Q.themes.custom,
+      children: (0, Ke.jsxs)($, {
+        theme: $.themes.custom,
         disabled: d,
         autoAlignContent: !1,
         onClick: function () {
           d || i.controls.actionPrebattle(n);
         },
-        className: m(at.button, at[`button__${e}`]),
+        className: b(at.button, at[`button__${e}`]),
         classNames: {
-          background: m(at.background, at[`background__${e}`], t && !u && at.background__appear),
+          background: b(at.background, at[`background__${e}`], t && !u && at.background__appear),
           content: at.content,
           border: at.border,
           overlay: at.overlay,
@@ -335,8 +335,8 @@ var tt = pe(function ({
         children: [
           t &&
             !u &&
-            (0, Ge.jsx)("div", {
-              className: m(at.background, at.background__dissapear, at[`background__${a}`]),
+            (0, Ke.jsx)("div", {
+              className: b(at.background, at.background__dissapear, at[`background__${a}`]),
             }),
           s,
         ],
@@ -358,32 +358,32 @@ var tt = pe(function ({
   },
   rt = "FightButton",
   it = "enabled_change",
-  lt = V("BattleButton", ot.base),
+  lt = H("BattleButton", ot.base),
   ct = pe(function ({ classNames: e }) {
-    const t = We(),
+    const t = Me(),
       [a, n] = (0, He.useState)(!1),
       [s, o] = (0, He.useState)(!1),
       [r, i] = (0, He.useState)(),
       { model: l, controls: c } = we(),
       d = l.computes.triggersCount(),
-      u = P(),
+      u = C(),
       _ = "BATTLE_ROYALE_TOURNAMENT" === t.model.queueType.get(),
-      b = "TRAINING" === t.model.currentMode.get(),
+      m = "TRAINING" === t.model.currentMode.get(),
       p =
-        (!t.model.states.get("playerCreator") && !b && t.model.states.get("readinessAvailable")) ||
+        (!t.model.states.get("playerCreator") && !m && t.model.states.get("readinessAvailable")) ||
         _
           ? "readyAction"
           : "battleStartAction",
       f = (function (e, t, a) {
         return t ? Ue : "battleStartAction" === e ? Le : a ? $e : Fe;
       })(p, !t.model.states.get("actionEnabled"), t.model.states.get(Se)),
-      g = J(f),
+      g = Y(f),
       v = f === Ue;
     return (
       (0, He.useEffect)(
         () =>
           me(() => {
-            const e = H(l.triggers.get(), (e) => e.componentId === rt);
+            const e = w(l.triggers.get(), (e) => e.componentId === rt);
             ((d > 0 && e) || (g && f !== g)) && c.onTriggerActivated(rt, it, !0);
           }),
         [f, c, l.triggers, g, d],
@@ -403,24 +403,24 @@ var tt = pe(function ({
         },
         [],
       ),
-      (0, Ge.jsxs)(lt, {
+      (0, Ke.jsxs)(lt, {
         className: e?.base,
         id: "fight-button",
         children: [
-          (0, Ge.jsx)(Ye, { buttonState: f, className: m(ot.backgroundEffects, e?.effect) }),
-          (0, Ge.jsxs)(st, {
+          (0, Ke.jsx)(Ye, { buttonState: f, className: b(ot.backgroundEffects, e?.effect) }),
+          (0, Ke.jsxs)(st, {
             actionType: p,
             buttonState: f,
             transitionActive: s,
             transitionFromState: r,
             className: e?.content,
             children: [
-              !v && (0, Ge.jsx)("div", { className: m(ot.reflector, ot[`reflector__${f}`]) }),
+              !v && (0, Ke.jsx)("div", { className: b(ot.reflector, ot[`reflector__${f}`]) }),
               f === Le &&
-                (0, Ge.jsx)(Xe, { className: ot.buttonEffects, onAnimationStarted: () => n(!0) }),
-              (0, Ge.jsx)("div", { className: ot.hoverOverlay }),
-              (0, Ge.jsx)("div", { className: m(ot.desaturation, !v && ot.desaturation__hidden) }),
-              (0, Ge.jsx)(tt, {
+                (0, Ke.jsx)(Xe, { className: ot.buttonEffects, onAnimationStarted: () => n(!0) }),
+              (0, Ke.jsx)("div", { className: ot.hoverOverlay }),
+              (0, Ke.jsx)("div", { className: b(ot.desaturation, !v && ot.desaturation__hidden) }),
+              (0, Ke.jsx)(tt, {
                 actionType: p,
                 buttonState: f,
                 animationActive: a,
@@ -434,27 +434,27 @@ var tt = pe(function ({
     );
   }),
   dt = (0, He.memo)(({ options: e, ...t }) =>
-    (0, Ge.jsx)(Ve, { options: e, children: (0, Ge.jsx)(ct, { ...t }) }),
+    (0, Ke.jsx)(Ve, { options: e, children: (0, Ke.jsx)(ct, { ...t }) }),
   );
 function ut() {
-  const e = ue().paramsStruct.routeType;
+  const e = de().paramsStruct.routeType;
   return "string" == typeof e ? e : xe.Default;
 }
 var _t = "Divider_9939af4b";
 function bt(e) {
-  return (0, Ge.jsx)(U, { path: "ui.noise", className: m(_t, e.className), fit: "cover" });
+  return (0, Ke.jsx)(U, { path: "ui.noise", className: b(_t, e.className), fit: "cover" });
 }
 function mt({ children: e, className: t }) {
   const a = He.Children.toArray(e);
   return a.length <= 1
     ? e
-    : (0, Ge.jsx)(Ge.Fragment, {
+    : (0, Ke.jsx)(Ke.Fragment, {
         children: a
           .filter((e) => e)
           .map((e, a) =>
-            (0, Ge.jsxs)(
+            (0, Ke.jsxs)(
               He.Fragment,
-              { children: [a > 0 && (0, Ge.jsx)(bt, { className: t }), e] },
+              { children: [a > 0 && (0, Ke.jsx)(bt, { className: t }), e] },
               a,
             ),
           ),
@@ -477,9 +477,9 @@ var pt = {
     i,
   ) {
     const l = n || s,
-      c = A({ header: n, body: s }),
-      d = q(e, te);
-    return (0, Ge.jsxs)(Q, {
+      c = E({ header: n, body: s }),
+      d = q(e, Z);
+    return (0, Ke.jsxs)($, {
       ...r,
       onClick: function (e) {
         (l && c.onClick(), r.onClick?.(e));
@@ -491,20 +491,20 @@ var pt = {
         (c.onMouseLeave(), r.onMouseLeave?.(e));
       },
       ref: i,
-      size: Q.sizes.small,
-      theme: Q.themes.secondary,
+      size: $.sizes.small,
+      theme: $.themes.secondary,
       autoAlignContent: !1,
-      className: m(pt.base, pt[`base__${e}Size`], r.className),
-      classNames: { ...o, content: m(pt.content, a && pt.content__label, o?.content) },
+      className: b(pt.base, pt[`base__${e}Size`], r.className),
+      classNames: { ...o, content: b(pt.content, a && pt.content__label, o?.content) },
       children: [
-        (0, Ge.jsx)("div", { className: pt.border }),
-        (0, Ge.jsx)(U, {
+        (0, Ke.jsx)("div", { className: pt.border }),
+        (0, Ke.jsx)(U, {
           className: pt.icon,
           path: `header_footer.info_icon_${t}_${d}`,
           height: gt[e],
           width: gt[e],
         }),
-        a && (0, Ge.jsx)("div", { className: pt.label, children: a }),
+        a && (0, Ke.jsx)("div", { className: pt.label, children: a }),
       ],
     });
   });
@@ -524,120 +524,120 @@ var ht = "NavigationBar_425ae997",
   Ct = "NavigationBar_hiddenLabel_1fa48c6e",
   Pt = "NavigationBar_base__ready_69a10af0",
   Ot = "NavigationBar_base__animating_69a10af0",
-  Wt = "NavigationBar_hiddenLabelInner_8490d7c",
-  Mt = "NavigationBar_infoButton_8aaee3f9",
+  Mt = "NavigationBar_hiddenLabelInner_8490d7c",
+  Wt = "NavigationBar_infoButton_8aaee3f9",
   Dt = "NavigationBar_infoButton__last_efa963fb";
 function Rt({ classNames: e = {} }) {
-  return (0, Ge.jsxs)("div", {
-    className: m(Bt, e.icon),
+  return (0, Ke.jsxs)("div", {
+    className: b(Bt, e.icon),
     children: [
-      (0, Ge.jsx)("div", { className: m(jt, kt, e.iconImage, e.iconImage__default) }),
-      (0, Ge.jsx)("div", { className: m(jt, It, e.iconImage, e.iconImage__hover) }),
-      (0, Ge.jsx)("div", { className: m(jt, Et, e.iconImage, e.iconImage__active) }),
+      (0, Ke.jsx)("div", { className: b(jt, kt, e.iconImage, e.iconImage__default) }),
+      (0, Ke.jsx)("div", { className: b(jt, It, e.iconImage, e.iconImage__hover) }),
+      (0, Ke.jsx)("div", { className: b(jt, Et, e.iconImage, e.iconImage__active) }),
     ],
   });
 }
 var wt = pe(function ({
     classNames: e = {},
     className: t,
-    garageNavigationAllowed: n,
-    battleButtonVisible: s,
+    garageNavigationAllowed: a,
+    battleButtonVisible: n,
   }) {
-    const { model: o, controls: r } = ke(),
-      i = I(),
-      l = M.resolve("strings"),
-      c = o.pageTitle.get(),
-      d = o.backNavigationAllowed.get(),
-      u = o.backNavigationDescription.get(),
-      b = o.infoButtons.get();
+    const { model: s, controls: o } = ke(),
+      r = j(),
+      i = M.resolve("strings"),
+      l = s.pageTitle.get(),
+      c = s.backNavigationAllowed.get(),
+      d = s.backNavigationDescription.get(),
+      _ = s.infoButtons.get();
+    function m(e) {
+      r.play("mouse-enter", { target: "NavigationButton", original: e });
+    }
     function p(e) {
-      i.play("mouse-enter", { target: "NavigationButton", original: e });
-    }
-    function f(e) {
       return function () {
-        r.doInfoAction(e);
+        o.doInfoAction(e);
       };
     }
-    const g = L(),
-      v = M.resolve("intl"),
-      h = (0, He.useRef)(null),
+    const f = z(),
+      g = M.resolve("intl"),
+      v = (0, He.useRef)(null),
       [y, x] = (0, He.useState)(0),
-      [B, j] = (0, He.useState)(!1),
-      [k, E] = (0, He.useState)(!1);
-    _(() => {
-      (j(!0), x(h.current?.offsetWidth ? h.current?.offsetWidth + 1 : 0));
-      const e = N(() => E(!0));
+      [N, B] = (0, He.useState)(!1),
+      [k, I] = (0, He.useState)(!1);
+    u(() => {
+      (B(!0), x(v.current?.offsetWidth ? v.current?.offsetWidth + 1 : 0));
+      const e = h(() => I(!0));
       return () => {
-        (j(!1), x(0), E(!1), e());
+        (B(!1), x(0), I(!1), e());
       };
-    }, [g.screenWidthRem, g.breakpoint.name, n, s, d, u, c]);
-    const A = K({ value: vt.sizes.small }, { extraLarge: { value: vt.sizes.medium } });
-    return (0, Ge.jsxs)("div", {
-      className: m(ht, B && Pt, k && Ot, t, e.base),
+    }, [f.screenWidthRem, f.breakpoint.name, a, n, c, d, l]);
+    const E = G({ value: vt.sizes.small }, { extraLarge: { value: vt.sizes.medium } });
+    return (0, Ke.jsxs)("div", {
+      className: b(ht, N && Pt, k && Ot, t, e.base),
       children: [
-        (0, Ge.jsxs)(mt, {
-          className: m(Tt, e.divider),
+        (0, Ke.jsxs)(mt, {
+          className: b(Tt, e.divider),
           children: [
-            n &&
-              (0, Ge.jsxs)("div", {
-                className: m(yt, At, e.button, e.button__garageNavigation),
+            a &&
+              (0, Ke.jsxs)("div", {
+                className: b(yt, At, e.button, e.button__garageNavigation),
                 "data-test-id": "garageButton",
                 onClick: function (e) {
-                  (i.play("click", { target: "NavigationButton", original: e }),
-                    r.navigateTo("garage"));
+                  (r.play("click", { target: "NavigationButton", original: e }),
+                    o.navigateTo("garage"));
                 },
-                onMouseEnter: p,
+                onMouseEnter: m,
                 children: [
-                  (0, Ge.jsx)(Rt, { classNames: e }),
-                  (0, Ge.jsx)("div", {
-                    className: m(Nt, e.label),
-                    children: v.toUpperCase(l.readOrEmpty("menu.headerButtons.hangar")),
+                  (0, Ke.jsx)(Rt, { classNames: e }),
+                  (0, Ke.jsx)("div", {
+                    className: b(Nt, e.label),
+                    children: g.toUpperCase(i.readOrEmpty("menu.headerButtons.hangar")),
                   }),
                 ],
               }),
-            d &&
-              (0, Ge.jsx)(Ge.Fragment, {
-                children: (0, Ge.jsxs)("div", {
-                  className: m(yt, xt, e.button, e.button__backNavigation),
+            c &&
+              (0, Ke.jsx)(Ke.Fragment, {
+                children: (0, Ke.jsxs)("div", {
+                  className: b(yt, xt, e.button, e.button__backNavigation),
                   onClick: function (e) {
-                    (i.play("click", { target: "NavigationButton", original: e }),
-                      r.navigateTo("back"));
+                    (r.play("click", { target: "NavigationButton", original: e }),
+                      o.navigateTo("back"));
                   },
-                  onMouseEnter: p,
+                  onMouseEnter: m,
                   children: [
-                    (0, Ge.jsx)(Rt, { classNames: e }),
-                    (0, Ge.jsx)("div", {
-                      className: m(Nt, e.label),
-                      children: v.toUpperCase(l.readOrEmpty("menu.headerButtons.navigation.back")),
+                    (0, Ke.jsx)(Rt, { classNames: e }),
+                    (0, Ke.jsx)("div", {
+                      className: b(Nt, e.label),
+                      children: g.toUpperCase(i.readOrEmpty("menu.headerButtons.navigation.back")),
                     }),
-                    u &&
-                      (0, Ge.jsx)("div", {
-                        ref: h,
-                        className: m(Ct, e.hiddenLabel),
+                    d &&
+                      (0, Ke.jsx)("div", {
+                        ref: v,
+                        className: b(Ct, e.hiddenLabel),
                         style: { "--width": `${y}px` },
-                        children: (0, Ge.jsx)(a, { className: Wt, text: v.toUpperCase(u) }),
+                        children: (0, Ke.jsx)(_e, { className: Mt, text: g.toUpperCase(d) }),
                       }),
                   ],
                 }),
               }),
-            c &&
-              (0, Ge.jsx)(Ge.Fragment, {
-                children: (0, Ge.jsx)("div", {
-                  className: m(St, e.title),
-                  children: (0, Ge.jsx)(a, { text: v.toUpperCase(c) }),
+            l &&
+              (0, Ke.jsx)(Ke.Fragment, {
+                children: (0, Ke.jsx)("div", {
+                  className: b(St, e.title),
+                  children: (0, Ke.jsx)(_e, { text: g.toUpperCase(l) }),
                 }),
               }),
           ],
         }),
-        b.length > 0 &&
-          D(b, (t, a) =>
-            (0, Ge.jsx)(
+        _.length > 0 &&
+          W(_, (t, a) =>
+            (0, Ke.jsx)(
               "div",
               {
-                className: m(Mt, a === b.length - 1 && Dt, e?.infoButton),
-                children: (0, Ge.jsx)(vt, {
-                  size: A.value,
-                  onClick: f(a),
+                className: b(Wt, a === _.length - 1 && Dt, e?.infoButton),
+                children: (0, Ke.jsx)(vt, {
+                  size: E.value,
+                  onClick: p(a),
                   infoType: t.type,
                   label: t.label,
                   tooltipHeader: t.tooltipHeader,
@@ -667,26 +667,26 @@ var wt = pe(function ({
   zt = (function (e) {
     return ((e.Inactive = "Inactive"), (e.Active = "Active"), (e.Cancelled = "Cancelled"), e);
   })({}),
-  Lt = F(
-    l((e) => e > 0),
-    r(Z),
+  Lt = L(
+    r((e) => e > 0),
+    s(Q),
   ),
   Ft = [
-    [X, O],
-    [y, i],
-    [B, o],
-    [E, () => o(1)],
+    [J, P],
+    [g, o],
+    [x, n],
+    [I, () => n(1)],
   ];
 function $t(e) {
   if (e) {
-    const a = t(e, k());
+    const a = t(e, B());
     for (const [e, t] of Ft) {
       const n = Math.ceil(e(a));
       if (n > 0) return t(n);
     }
   }
 }
-var [Ut, Kt] = W("UserAccountProvider")(
+var [Ut, Gt] = O("UserAccountProvider")(
     ({ observableModel: e, cleanup: t }) => {
       const a = e.object("userInfo"),
         n = e.object("subscriptions.wotPlus"),
@@ -744,7 +744,7 @@ var [Ut, Kt] = W("UserAccountProvider")(
       openPremiumSubscriptionPage: e.createCallbackNoArgs("subscriptions.onOpenPremium"),
     }),
   ),
-  Gt = "PlayersProfile_b15b3eb3",
+  Kt = "PlayersProfile_b15b3eb3",
   qt = "PlayersProfile_playerInfo_89f70778",
   Yt = "PlayersProfile_playerInfoWrapper_2ed6c121",
   Jt = "PlayersProfile_badgeWrapper_910cac78",
@@ -757,114 +757,114 @@ var [Ut, Kt] = W("UserAccountProvider")(
   na = "PlayersProfile_anonymizerIcon_8632eb46",
   sa = "PlayersProfile_alertIcon_b8de5d15",
   oa = M.resolve("strings"),
-  ra = V("PlayersProfile", Gt, { variants: { alertVisible: { true: aa } } }),
+  ra = H("PlayersProfile", Kt, { variants: { alertVisible: { true: aa } } }),
   ia = new Set([Ht.ADD_NEEDED, Ht.ADDED]),
   la = { width: "48rem", height: "48rem", marginLeft: "-35rem" },
   ca = pe(function () {
-    const e = I(),
-      t = A({
+    const e = j(),
+      t = E({
         header: oa.readOrEmpty("tooltips.header.account.header"),
         body: oa.readOrEmpty("tooltips.header.account.body"),
       }),
-      { model: n, controls: s } = Kt(),
+      { model: a, controls: n } = Gt(),
       {
-        userName: o,
-        badgeID: r,
-        isInClan: i,
-        clanAbbrev: l,
-        suffixBadgeID: c,
-        teamKiller: d,
-        hasSteamAccount: u,
-        steamEmailStatus: _,
-        anonymized: b,
-        email: p,
-      } = n.userInfo.get(),
-      f = h(
+        userName: s,
+        badgeID: o,
+        isInClan: r,
+        clanAbbrev: i,
+        suffixBadgeID: l,
+        teamKiller: c,
+        hasSteamAccount: d,
+        steamEmailStatus: u,
+        anonymized: _,
+        email: m,
+      } = a.userInfo.get(),
+      p = f(
         "AccountCompletion",
-        (0, He.useMemo)(() => [p], [p]),
+        (0, He.useMemo)(() => [m], [m]),
       ),
-      g = u && ia.has(_);
-    const v = q(G.Badge.sizes.x48x48, G.Badge.sizes.x80x80),
-      y = q(G.Stripe.sizes.medium, G.Stripe.sizes.big);
-    return (0, Ge.jsxs)(ra, {
+      g = d && ia.has(u);
+    const v = q(K.Badge.sizes.x48x48, K.Badge.sizes.x80x80),
+      h = q(K.Stripe.sizes.medium, K.Stripe.sizes.big);
+    return (0, Ke.jsxs)(ra, {
       alertVisible: g,
       children: [
-        (0, Ge.jsxs)(G, {
+        (0, Ke.jsxs)(K, {
           ...t,
           className: qt,
           onClick: function (a) {
             (e.play("click", { target: "player-info", original: a }),
               t.onClick(),
-              s.openAccountDashboard());
+              n.openAccountDashboard());
           },
           onMouseEnter: function (a) {
             (e.play("mouse-enter", { target: "player-info", original: a }), t.onMouseEnter(a));
           },
           children: [
-            r > 0 &&
-              (0, Ge.jsx)("div", {
+            o > 0 &&
+              (0, Ke.jsx)("div", {
                 className: Jt,
-                children: (0, Ge.jsx)(G.Badge, {
-                  badgeId: String(r),
+                children: (0, Ke.jsx)(K.Badge, {
+                  badgeId: String(o),
                   width: 48,
                   height: 48,
                   size: v,
                   className: Xt,
                 }),
               }),
-            (0, Ge.jsxs)(G.Wrapper, {
+            (0, Ke.jsxs)(K.Wrapper, {
               className: Yt,
               children: [
-                (0, Ge.jsx)(G.Name, {
-                  className: m(Zt, ea, d && ta),
-                  children: (0, Ge.jsx)(a, { text: o }),
+                (0, Ke.jsx)(K.Name, {
+                  className: b(Zt, ea, c && ta),
+                  children: (0, Ke.jsx)(_e, { text: s }),
                 }),
-                i &&
-                  (0, Ge.jsx)(G.ClanTag, {
+                r &&
+                  (0, Ke.jsx)(K.ClanTag, {
                     className: Zt,
-                    children: (0, Ge.jsx)(T, {
+                    children: (0, Ke.jsx)(A, {
                       upgradeLegacy: !0,
                       path: "common.clanTag",
-                      params: { abbrev: l },
+                      params: { abbrev: i },
                     }),
                   }),
               ],
             }),
-            c > 0 &&
-              (0, Ge.jsx)("div", {
+            l > 0 &&
+              (0, Ke.jsx)("div", {
                 className: Qt,
-                children: (0, Ge.jsx)(G.Stripe, {
-                  badgeId: String(c),
-                  size: y,
-                  stripeIcon: G.Stripe.icons.stripe.medium,
-                  stipeBadgeIcon: G.Stripe.icons.badge.medium,
+                children: (0, Ke.jsx)(K.Stripe, {
+                  badgeId: String(l),
+                  size: h,
+                  stripeIcon: K.Stripe.icons.stripe.medium,
+                  stipeBadgeIcon: K.Stripe.icons.badge.medium,
                   style: la,
                 }),
               }),
-            b && (0, Ge.jsx)("div", { className: na }),
+            _ && (0, Ke.jsx)("div", { className: na }),
           ],
         }),
-        g && (0, Ge.jsx)("div", { ...f, className: sa }),
+        g && (0, Ke.jsx)("div", { ...p, className: sa }),
       ],
     });
   }),
   da = (0, He.memo)(({ options: e, ...t }) =>
-    (0, Ge.jsx)(Ut, { options: e, children: (0, Ge.jsx)(ca, { ...t }) }),
+    (0, Ke.jsx)(Ut, { options: e, children: (0, Ke.jsx)(ca, { ...t }) }),
   ),
   ua = "Premiums_text_82711911",
   _a = "Premiums_text__premShop_a067f33c",
   ba = "Premiums_premiumShopImg_99a91f62",
-  ma = V("PremiumShop", m("Premiums_e458a55f", "Premiums_base__clickable_dd8e69b8")),
+  ma = H("PremiumShop", b("Premiums_e458a55f", "Premiums_base__clickable_dd8e69b8")),
   pa = M.resolve("strings");
 function fa() {
   const { model: e, controls: t } = De(),
-    a = I(),
-    n = A({
+    a = j(),
+    n = E({
       header: pa.readOrEmpty("tooltips.header.premShop.header"),
       body: pa.readOrEmpty("tooltips.header.premShop.body"),
     });
   if (e.premiumShopEnabled.get())
-    return (0, Ge.jsxs)(ma, {
+    return (0, Ke.jsxs)(ma, {
       ...n,
       onClick: function (e) {
         (n.onClick(),
@@ -875,9 +875,9 @@ function fa() {
         (n.onMouseEnter(e), a.play("mouse-enter", { target: "premium-shop", original: e }));
       },
       children: [
-        (0, Ge.jsx)("div", { className: ba }),
-        (0, Ge.jsx)("div", {
-          className: m(ua, _a),
+        (0, Ke.jsx)("div", { className: ba }),
+        (0, Ke.jsx)("div", {
+          className: b(ua, _a),
           children: pa.readOrEmpty("menu.headerButtons.btnLabel.premShop"),
         }),
       ],
@@ -889,30 +889,30 @@ var ga = "UserProfile_2146e52",
   ya = ha.read((e) => e.lobby_header.default.UserAccount("resId")),
   xa = ha.read((e) => e.lobby_header.default.PremShop("resId"));
 function Na({ className: e }) {
-  const t = g(ya);
-  return (0, Ge.jsx)("div", {
-    className: m(ga, e),
-    children: (0, Ge.jsxs)(mt, {
+  const t = d(ya);
+  return (0, Ke.jsx)("div", {
+    className: b(ga, e),
+    children: (0, Ke.jsxs)(mt, {
       className: va,
-      children: [t && (0, Ge.jsx)(da, { options: { rootId: ya } }), xa && (0, Ge.jsx)(fa, {})],
+      children: [t && (0, Ke.jsx)(da, { options: { rootId: ya } }), xa && (0, Ke.jsx)(fa, {})],
     }),
   });
 }
 var Ba = pe(function ({ garageNavigationAllowed: e, battleButtonVisible: t, classNames: a }) {
     return ut() === xe.Hangar
-      ? (0, Ge.jsx)(Na, { className: a?.userProfile })
-      : (0, Ge.jsx)(wt, {
+      ? (0, Ke.jsx)(Na, { className: a?.userProfile })
+      : (0, Ke.jsx)(wt, {
           classNames: a?.navigationBar,
           garageNavigationAllowed: e,
           battleButtonVisible: t,
         });
   }),
-  [ja, ka] = W("WalletModel")(
+  [ja, ka] = O("WalletModel")(
     ({ observableModel: e }) => {
       const t = { currencies: e.dict("currencies") };
       return {
         ...t,
-        list: n.shallow((e) =>
+        list: a.shallow((e) =>
           Array.from(t.currencies.keys.values()).sort((t, a) => {
             const n = e.indexOf(t),
               s = e.indexOf(a),
@@ -934,19 +934,19 @@ var Ba = pe(function ({ garageNavigationAllowed: e, battleButtonVisible: t, clas
   Ca = "Hint_onlyHintText_751386e1",
   Pa = "Hint_discountValue_b1f389fc",
   Oa = "Hint_discountHintTitle_9db2d839",
-  Wa = "Hint_hintText_6f3fa83f",
-  Ma = "Hint_hintTitle_135a3ed",
+  Ma = "Hint_hintText_6f3fa83f",
+  Wa = "Hint_hintTitle_135a3ed",
   Da = "Hint_discountValue__withHint_e7bbe38f";
 function Ra({ classNames: e }) {
   const t = M.resolve("strings");
-  return (0, Ge.jsxs)("div", {
-    className: m(Ta, e?.onlyDiscount),
+  return (0, Ke.jsxs)("div", {
+    className: b(Ta, e?.onlyDiscount),
     children: [
-      (0, Ge.jsx)("div", { className: m(Ea, e?.discountBackground) }),
-      (0, Ge.jsx)(ae.Root, {
-        children: (0, Ge.jsx)(ae.Value, {
+      (0, Ke.jsx)("div", { className: b(Ea, e?.discountBackground) }),
+      (0, Ke.jsx)(te.Root, {
+        children: (0, Ke.jsx)(te.Value, {
           value: t.readOrEmpty("common.common.percent"),
-          classNames: { valueContainer: m(Aa, e?.discount), value: m(Pa, e?.discountValue) },
+          classNames: { valueContainer: b(Aa, e?.discount), value: b(Pa, e?.discountValue) },
         }),
       }),
     ],
@@ -955,12 +955,12 @@ function Ra({ classNames: e }) {
 function wa({ type: e, classNames: t }) {
   const a = M.resolve("intl"),
     n = M.resolve("strings");
-  return (0, Ge.jsx)("div", {
-    className: m(Wa, Ca, t?.hintText, t?.onlyHintText),
-    children: (0, Ge.jsx)(z, {
+  return (0, Ke.jsx)("div", {
+    className: b(Ma, Ca, t?.hintText, t?.onlyHintText),
+    children: (0, Ke.jsx)(V, {
       classNames: t?.textGradient,
-      children: (0, Ge.jsx)("div", {
-        className: m(Ma, t?.hintTitle),
+      children: (0, Ke.jsx)("div", {
+        className: b(Wa, t?.hintTitle),
         children: a.toUpperCase(n.readOrEmpty(`menu.headerButtons.btnLabel.${e}`)),
       }),
     }),
@@ -969,28 +969,28 @@ function wa({ type: e, classNames: t }) {
 function Ha({ classNames: e, type: t }) {
   const a = M.resolve("intl"),
     n = M.resolve("strings");
-  return (0, Ge.jsxs)("div", {
-    className: m(Sa, e?.discountWithHintText),
+  return (0, Ke.jsxs)("div", {
+    className: b(Sa, e?.discountWithHintText),
     children: [
-      (0, Ge.jsx)("div", { className: m(Ea, e?.discountBackground) }),
-      (0, Ge.jsx)("div", {
-        className: m(Oa, e?.discountHintTitle),
+      (0, Ke.jsx)("div", { className: b(Ea, e?.discountBackground) }),
+      (0, Ke.jsx)("div", {
+        className: b(Oa, e?.discountHintTitle),
         children: a.toUpperCase(n.readOrEmpty(`menu.headerButtons.btnLabel.${t}`)),
       }),
-      (0, Ge.jsx)(ae.Root, {
-        children: (0, Ge.jsx)(ae.Value, {
+      (0, Ke.jsx)(te.Root, {
+        children: (0, Ke.jsx)(te.Value, {
           value: n.readOrEmpty("common.common.percent"),
-          classNames: { valueContainer: m(Aa, e?.discount), value: m(Pa, Da, e?.discountValue) },
+          classNames: { valueContainer: b(Aa, e?.discount), value: b(Pa, Da, e?.discountValue) },
         }),
       }),
     ],
   });
 }
 function Va({ classNames: e, type: t }) {
-  return (0, Ge.jsxs)("div", {
-    className: m(Ia, e?.base),
+  return (0, Ke.jsxs)("div", {
+    className: b(Ia, e?.base),
     children: [
-      (0, Ge.jsx)(Ra, {
+      (0, Ke.jsx)(Ra, {
         classNames: {
           onlyDiscount: e?.onlyDiscount,
           discountBackground: e?.discountBackground,
@@ -998,7 +998,7 @@ function Va({ classNames: e, type: t }) {
           discountValue: e?.discountValue,
         },
       }),
-      (0, Ge.jsx)(wa, {
+      (0, Ke.jsx)(wa, {
         type: t,
         classNames: {
           hintText: e?.hintText,
@@ -1006,7 +1006,7 @@ function Va({ classNames: e, type: t }) {
           onlyHintText: e?.onlyHintText,
         },
       }),
-      (0, Ge.jsx)(Ha, { classNames: e, type: t }),
+      (0, Ke.jsx)(Ha, { classNames: e, type: t }),
     ],
   });
 }
@@ -1035,68 +1035,68 @@ function $a({ wgMoneyAvailable: e, value: t, type: a, classNames: n }) {
   const s = (0, He.useRef)(null),
     o = M.resolve("intl"),
     r = M.resolve("strings"),
-    i = K(
+    i = G(
       {
         displayValue: () =>
           t >= La
-            ? { abbreviated: !0, value: ie(t, Fa, "floor") / La }
+            ? { abbreviated: !0, value: re(t, Fa, "floor") / La }
             : { abbreviated: !1, value: t },
       },
       {
         medium: {
           displayValue: () =>
             t >= 1e7
-              ? { abbreviated: !0, value: ie(t, Fa, "floor") / La }
+              ? { abbreviated: !0, value: re(t, Fa, "floor") / La }
               : { abbreviated: !1, value: t },
         },
         large: {
           displayValue: () =>
             t >= 1e8
-              ? { abbreviated: !0, value: ie(t, Fa, "floor") / La }
+              ? { abbreviated: !0, value: re(t, Fa, "floor") / La }
               : { value: t, abbreviated: !1 },
         },
       },
     );
   if (!1 === e)
-    return (0, Ge.jsxs)("div", {
-      className: m(za.value, za.value__unavailable, n?.value),
+    return (0, Ke.jsxs)("div", {
+      className: b(za.value, za.value__unavailable, n?.value),
       children: [
-        (0, Ge.jsx)("div", {
+        (0, Ke.jsx)("div", {
           className: za.dash,
           children: r.readOrEmpty("common.common.semi_dash"),
         }),
-        (0, Ge.jsx)("div", {
+        (0, Ke.jsx)("div", {
           className: za.dash,
           children: r.readOrEmpty("common.common.semi_dash"),
         }),
       ],
     });
   const l = i.displayValue();
-  return (0, Ge.jsx)("div", {
+  return (0, Ke.jsx)("div", {
     ref: s,
-    className: m(za.value, n?.base),
+    className: b(za.value, n?.base),
     children: l.abbreviated
-      ? (0, Ge.jsx)(T, {
+      ? (0, Ke.jsx)(A, {
           path: "menu.hangar_header.million",
           params: { value: l.value },
           brackets: { start: "%(", end: ")s" },
-          className: m(za.formattedValue, n?.formattedValue),
+          className: b(za.formattedValue, n?.formattedValue),
         })
-      : o.formatNumber(a === Y.gold ? "gold" : "integral", l.value),
+      : o.formatNumber(a === ce.gold ? "gold" : "integral", l.value),
   });
 }
 var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
     const { controls: s } = ka(),
-      o = I(),
+      o = j(),
       r = "AVAILABLE" === e.status,
       i = (function (e, t, a, n) {
         const s = M.resolve("strings"),
-          o = A({
+          o = E({
             header: s.readOrEmpty(`tooltips.header.buttons.${e}.header`),
             body: s.readOrEmpty(`tooltips.header.buttons.${e}.body`),
           }),
           r = (0, He.useMemo)(() => ({ disabled: "string" != typeof a || "" === a }), [a]),
-          i = u(
+          i = c(
             a,
             (0, He.useMemo)(() => [n], [n]),
             r,
@@ -1104,13 +1104,13 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
         return !1 === t ? o : i;
       })(t, r, e.tooltipType, e.value),
       l = q(
-        K({ size: ee.extraSmall }, { large: { size: ee.small }, extraLarge: { size: ee.medium } })
+        G({ size: oe.extraSmall }, { large: { size: oe.small }, extraLarge: { size: oe.medium } })
           .size,
-        ee.small,
+        oe.small,
       );
-    return (0, Ge.jsxs)("div", {
+    return (0, Ke.jsxs)("div", {
       ...i,
-      className: m(
+      className: b(
         za.base,
         r ? za.base__interactive : za.base__nonInteractive,
         e.discount > 0 && za.base__discount,
@@ -1124,15 +1124,15 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
           r && (o.play("click", { target: "WalletCurrency", original: e }), s.currencyAction(t)));
       },
       children: [
-        (0, Ge.jsx)("div", {
-          className: m(za.currencyWrapper, n?.currencyWrapper),
-          children: (0, Ge.jsx)(oe, {
+        (0, Ke.jsx)("div", {
+          className: b(za.currencyWrapper, n?.currencyWrapper),
+          children: (0, Ke.jsx)(X, {
             reverse: !0,
-            classNames: { ...n?.currency, icon: m(za.currencyIcon, n?.currency?.icon) },
+            classNames: { ...n?.currency, icon: b(za.currencyIcon, n?.currency?.icon) },
             type: t,
             size: l,
             "data-test-id": t,
-            children: (0, Ge.jsx)($a, {
+            children: (0, Ke.jsx)($a, {
               wgMoneyAvailable: r,
               value: e.value,
               type: t,
@@ -1141,47 +1141,47 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
           }),
         }),
         r &&
-          (0, Ge.jsx)("div", {
-            className: m(za.hintWrapper, n?.hintWrapper),
-            children: (0, Ge.jsx)(Va, {
+          (0, Ke.jsx)("div", {
+            className: b(za.hintWrapper, n?.hintWrapper),
+            children: (0, Ke.jsx)(Va, {
               type: t,
               classNames: {
                 ...n?.hint,
-                discountWithHintText: m(za.discountWithHintText, n?.hint?.discountWithHintText),
-                onlyDiscount: m(za.onlyDiscount, n?.hint?.onlyDiscount),
-                onlyHintText: m(za.onlyHintText, n?.hint?.onlyHintText),
-                base: m(za.hint, n?.hint?.base),
-                textGradient: { text: za.text, textOverlay: m(za.text, za.text__overlay) },
+                discountWithHintText: b(za.discountWithHintText, n?.hint?.discountWithHintText),
+                onlyDiscount: b(za.onlyDiscount, n?.hint?.onlyDiscount),
+                onlyHintText: b(za.onlyHintText, n?.hint?.onlyHintText),
+                base: b(za.hint, n?.hint?.base),
+                textGradient: { text: za.text, textOverlay: b(za.text, za.text__overlay) },
               },
             }),
           }),
       ],
     });
   }),
-  Ka = pe(function (e) {
+  Ga = pe(function (e) {
     const t = ka().model.currencies.get(e.type);
     return t
-      ? (0, Ge.jsx)(Ua, { ...e, currency: t })
+      ? (0, Ke.jsx)(Ua, { ...e, currency: t })
       : (console.error(`Currency with type ${e.type} is not defined`), null);
   }),
-  Ga = "Wallet_fc600169",
-  qa = [Y.crystal, Y.gold, Y.credits],
+  Ka = "Wallet_fc600169",
+  qa = [ce.crystal, ce.gold, ce.credits],
   Ya = pe(function ({ className: e, classNames: t, currenciesOrder: a = qa }) {
     const { model: n } = ka(),
       s = n.list(a);
-    return (0, Ge.jsx)("div", {
+    return (0, Ke.jsx)("div", {
       "data-name": "Wallet",
-      className: m(Ga, e),
-      children: s.map((e) => (0, Ge.jsx)(Ka, { type: e, classNames: t }, e)),
+      className: b(Ka, e),
+      children: s.map((e) => (0, Ke.jsx)(Ga, { type: e, classNames: t }, e)),
     });
   }),
   Ja = (0, He.memo)(({ className: e, classNames: t, currenciesOrder: a, ...n }) =>
-    (0, Ge.jsx)(ja, {
+    (0, Ke.jsx)(ja, {
       ...n,
-      children: (0, Ge.jsx)(Ya, { className: e, classNames: t, currenciesOrder: a }),
+      children: (0, Ke.jsx)(Ya, { className: e, classNames: t, currenciesOrder: a }),
     }),
   ),
-  [Qa, Xa] = W()(
+  [Qa, Xa] = O()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ keysClick: e.createCallbackNoArgs("onClick") }),
   ),
@@ -1196,9 +1196,9 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
   ln = pe(function () {
     const { model: e, controls: t } = Xa(),
       { amount: a, isDisabled: n } = e.root.get(),
-      s = I(),
+      s = j(),
       o = (0, He.useRef)(a),
-      r = p({
+      r = m({
         resId: R.aliases.halloween.lobby_header.Keys("resId"),
         contentId: R.views.halloween.mono.lobby.tooltips.key_tooltip("resId"),
       });
@@ -1206,9 +1206,9 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
       (0, He.useEffect)(() => {
         o.current !== a && (o.current = a);
       }, [a]),
-      (0, Ge.jsxs)("div", {
+      (0, Ke.jsxs)("div", {
         ...r,
-        className: m(Za, !n && en),
+        className: b(Za, !n && en),
         onClick: function (e) {
           (r.onClick(), n || (s.play("click", { target: "keys", original: e }), t.keysClick()));
         },
@@ -1220,19 +1220,19 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
         },
         "data-test-id": "keysButton",
         children: [
-          (0, Ge.jsx)(w, {
+          (0, Ke.jsx)(D, {
             src: R.videos.halloween.header.keys_bg(),
             className: tn,
             loop: !0,
             autoplay: !0,
           }),
-          (0, Ge.jsxs)("div", {
+          (0, Ke.jsxs)("div", {
             className: an,
             children: [
-              (0, Ge.jsx)(T, {
+              (0, Ke.jsx)(A, {
                 path: "halloween_lobby.hangar.header.keys",
                 params: {
-                  value: (0, Ge.jsx)(ye, {
+                  value: (0, Ke.jsx)(ye, {
                     previousNumber: o.current,
                     currentNumber: a,
                     isFormatted: !0,
@@ -1241,20 +1241,20 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
                 className: nn,
                 split: !0,
               }),
-              (0, Ge.jsx)("div", {
+              (0, Ke.jsx)("div", {
                 className: sn,
-                children: (0, Ge.jsx)("div", { className: on }),
+                children: (0, Ke.jsx)("div", { className: on }),
               }),
             ],
           }),
           !n &&
-            (0, Ge.jsx)("div", { className: rn, children: R.strings.halloween_lobby.keys.get() }),
+            (0, Ke.jsx)("div", { className: rn, children: R.strings.halloween_lobby.keys.get() }),
         ],
       })
     );
   }),
   cn = (0, He.memo)(({ options: e, ...t }) =>
-    (0, Ge.jsx)(Qa, { options: e, children: (0, Ge.jsx)(ln, { ...t }) }),
+    (0, Ke.jsx)(Qa, { options: e, children: (0, Ke.jsx)(ln, { ...t }) }),
   ),
   dn = "RightSide_9a4b4625",
   un = "RightSide_separator_fea82003",
@@ -1262,15 +1262,15 @@ var Ua = pe(function ({ currency: e, type: t, className: a, classNames: n }) {
   bn = _n.read((e) => e.halloween.lobby_header.Keys("resId")),
   mn = _n.read((e) => e.lobby_header.default.Wallet("resId")),
   pn = function () {
-    const e = g(bn),
-      t = g(mn);
-    return (0, Ge.jsx)("div", {
+    const e = d(bn),
+      t = d(mn);
+    return (0, Ke.jsx)("div", {
       className: dn,
-      children: (0, Ge.jsxs)(mt, {
+      children: (0, Ke.jsxs)(mt, {
         className: un,
         children: [
-          e && (0, Ge.jsx)(cn, { options: { rootId: bn } }),
-          t && (0, Ge.jsx)(Ja, { options: { rootId: mn } }),
+          e && (0, Ke.jsx)(cn, { options: { rootId: bn } }),
+          t && (0, Ke.jsx)(Ja, { options: { rootId: mn } }),
         ],
       }),
     });
@@ -1290,7 +1290,7 @@ var gn = "VehicleInfo_4b77df3f",
   vn = "VehicleInfo_details_3cde71e7",
   hn = "VehicleInfo_vehicleType_5f8aaab4",
   yn = pe(function ({ className: e }) {
-    const t = We(),
+    const t = Me(),
       a = Ee(),
       n =
         ((s = t.model.currentModeId.get()),
@@ -1299,18 +1299,18 @@ var gn = "VehicleInfo_4b77df3f",
     const o = a.model.vehicle();
     if (void 0 !== o)
       return n
-        ? (0, Ge.jsx)(T, {
-            className: m(gn, e),
+        ? (0, Ke.jsx)(A, {
+            className: b(gn, e),
             path: "menu.headerButtons.battle.vehicleInfo",
             params: {
               mode: t.model.currentMode.get(),
-              level: (0, Ge.jsx)(f, { value: o.level, className: vn }),
-              type: (0, Ge.jsx)(de, { className: hn, type: o.type, size: de.sizes.x24x24 }),
-              name: (0, Ge.jsx)("div", { className: vn, children: o.shortName }),
+              level: (0, Ke.jsx)(ee, { value: o.level, className: vn }),
+              type: (0, Ke.jsx)(k, { className: hn, type: o.type, size: k.sizes.x24x24 }),
+              name: (0, Ke.jsx)("div", { className: vn, children: o.shortName }),
             },
           })
-        : (0, Ge.jsx)(T, {
-            className: m(gn, e),
+        : (0, Ke.jsx)(A, {
+            className: b(gn, e),
             path: "menu.headerButtons.battle.modeInfo",
             params: { mode: t.model.currentMode.get() },
           });
@@ -1335,7 +1335,7 @@ var gn = "VehicleInfo_4b77df3f",
     battleButtonEffects: "App_battleButtonEffects_1da8cd9d",
     vehicleInfoWrapper: "App_vehicleInfoWrapper_9f2ec684",
   },
-  Nn = V("Header", xn.base, {
+  Nn = H("Header", xn.base, {
     variants: {
       oldStyle: { true: xn.base__oldStyle },
       battleButtonVisible: { true: xn.base__battleButtonVisible },
@@ -1345,43 +1345,43 @@ var gn = "VehicleInfo_4b77df3f",
   jn = new Set([Ce, Pe]),
   kn = new Set(["mapsTraining"]);
 var In = pe(function () {
-    const e = se(0, 250),
-      t = ue(),
+    const e = ne(0, 250),
+      t = de(),
       a = Te(),
-      n = We(),
+      n = Me(),
       [s, o] = (0, He.useState)(!1),
       r = n.model.battleStatus.get(),
       i = n.model.battleButtonAlwaysOn.get(),
       l = !n.model.computes.isSearchingBattle() && !n.model.computes.isBattleReady(),
       c = ut(),
-      d = Boolean(
-        j(t.location, {
+      u = Boolean(
+        N(t.location, {
           paths: ["/hangar/allVehicles", ":/hangar/allVehicles", "/postBattleResults"],
         }),
       ),
-      u = t.location.includes("/postBattleResults"),
-      _ = g(Bn),
-      b = n.model.currentModeId.get();
+      _ = t.location.includes("/postBattleResults"),
+      m = d(Bn),
+      p = n.model.currentModeId.get();
     return (
       (0, He.useEffect)(() => {
-        _
-          ? u && kn.has(b)
+        m
+          ? _ && kn.has(p)
             ? o(!1)
             : i
               ? o(!0)
               : jn.has(r)
                 ? o(!1)
-                : o(c === xe.Hangar || d || u)
+                : o(c === xe.Hangar || u || _)
           : o(!1);
-      }, [i, r, c, d, u, _, b]),
-      (0, Ge.jsxs)(Nn, {
+      }, [i, r, c, u, _, m, p]),
+      (0, Ke.jsxs)(Nn, {
         ref: e,
         oldStyle: a.model.oldStyle.get(),
         battleButtonVisible: s,
         children: [
-          (0, Ge.jsx)("div", {
+          (0, Ke.jsx)("div", {
             className: xn.leftSide,
-            children: (0, Ge.jsx)(Ba, {
+            children: (0, Ke.jsx)(Ba, {
               garageNavigationAllowed: l,
               battleButtonVisible: s,
               classNames: {
@@ -1398,33 +1398,33 @@ var In = pe(function () {
             }),
           }),
           s &&
-            (0, Ge.jsxs)(Ge.Fragment, {
+            (0, Ke.jsxs)(Ke.Fragment, {
               children: [
-                (0, Ge.jsx)(dt, {
+                (0, Ke.jsx)(dt, {
                   options: { rootId: Bn },
                   classNames: {
-                    base: m(
+                    base: b(
                       xn.battleButton,
-                      c === xe.Hangar || d
+                      c === xe.Hangar || u
                         ? xn.battleButton__withoutFadein
                         : xn.battleButton__fadein,
                     ),
                     effect: xn.battleButtonEffects,
                   },
                 }),
-                u &&
-                  (0, Ge.jsx)("div", {
+                _ &&
+                  (0, Ke.jsx)("div", {
                     className: xn.vehicleInfoWrapper,
-                    children: (0, Ge.jsx)(yn, {}),
+                    children: (0, Ke.jsx)(yn, {}),
                   }),
               ],
             }),
-          (0, Ge.jsx)("div", {
-            className: m(xn.rightSide, s && xn.rightSide__battleButtonVisible),
+          (0, Ke.jsx)("div", {
+            className: b(xn.rightSide, s && xn.rightSide__battleButtonVisible),
             children:
               !n.model.computes.isSearchingBattle() &&
               !n.model.computes.isBattleReady() &&
-              (0, Ge.jsx)(pn, {}),
+              (0, Ke.jsx)(pn, {}),
           }),
         ],
       })
@@ -1436,17 +1436,17 @@ var In = pe(function () {
     "mouse-leave": { keys: ve },
   },
   An = M.resolve("aliases"),
-  Tn = x(En);
-$(
-  new le()
-    .addWithProps(ce, { soundsOverrides: Tn })
+  Tn = v(En);
+F(
+  new ie()
+    .addWithProps(le, { soundsOverrides: Tn })
     .add(Ae)
-    .addWithProps(S, {
+    .addWithProps(T, {
       context: "model.router",
       rootId: An.read((e) => e.lobby_header.default.HeaderState("resId")),
     })
     .addWithProps(Re, { options: { context: "tutorialModel" } })
-    .addWithProps(Me, {
+    .addWithProps(We, {
       options: { rootId: An.read((e) => e.lobby_header.default.PremShop("resId")) },
     })
     .addWithProps(Oe, {
@@ -1461,5 +1461,5 @@ $(
     .addWithProps(je, {
       options: { rootId: An.read((e) => e.lobby_header.default.NavigationBar("resId")) },
     })
-    .render((0, Ge.jsx)(In, {})),
+    .render((0, Ke.jsx)(In, {})),
 );

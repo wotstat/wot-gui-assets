@@ -3,51 +3,51 @@ import {
   $n as a,
   $t as s,
   Cn as t,
-  En as n,
-  Fa as l,
-  Fr as r,
-  Gn as i,
-  Hn as o,
-  In as d,
-  Jn as c,
-  Ka as _,
-  Kn as u,
-  Lr as b,
-  Mn as m,
-  Nn as f,
-  Or as y,
-  Pa as p,
-  Qa as h,
-  Qn as x,
-  Qt as g,
+  Dn as n,
+  En as l,
+  Fa as r,
+  Fr as i,
+  In as o,
+  Ka as d,
+  Ln as c,
+  Lr as _,
+  Mn as u,
+  Nn as b,
+  On as m,
+  Or as f,
+  Pa as y,
+  Qa as p,
+  Qn as h,
+  Qt as x,
+  Tn as g,
   To as v,
   Un as N,
   Ur as I,
-  Vn as j,
-  Wn as w,
-  Za as C,
-  Zn as S,
-  _n as D,
-  ao as B,
-  ci as A,
-  cr as T,
-  fi as E,
-  fr as P,
-  go as k,
-  gr as L,
-  hi as q,
-  hn as H,
-  ii as $,
-  ka as W,
-  mn as M,
-  no as G,
-  pr as z,
-  qa as O,
-  qn as V,
-  sr as F,
-  ui as U,
-  va as K,
-  vo as Q,
+  Wn as j,
+  Za as w,
+  _n as C,
+  ao as S,
+  ci as D,
+  cr as B,
+  fi as A,
+  fr as T,
+  go as E,
+  gr as P,
+  hi as k,
+  hn as L,
+  ii as q,
+  ka as H,
+  kn as $,
+  mn as W,
+  no as M,
+  pr as O,
+  qa as z,
+  qn as G,
+  sr as V,
+  ui as F,
+  va as U,
+  vo as K,
+  wn as Q,
   xn as Y,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
@@ -55,9 +55,9 @@ import { o as Z, s as J } from "../chunks/vendor.js";
 import { n as X, t as ee } from "../chunks/spring_wrapper.js";
 import { d as ae, l as se, u as te } from "../chunks/sound.js";
 import { a as ne, c as le, n as re, o as ie, s as oe } from "../chunks/utils.js";
-var de = e(Q()),
+var de = e(K()),
   ce = e(J(), 1),
-  [_e, ue] = z()(
+  [_e, ue] = O()(
     ({ observableModel: e }) => {
       const a = {
           root: e.object(),
@@ -67,8 +67,8 @@ var de = e(Q()),
           playerVehicle: e.object("playerInfo.vehicle"),
           rewards: e.array("rewards"),
         },
-        s = P(() => a.rewards.get().length),
-        t = P(() => a.root.get().currentPhase - 1);
+        s = T(() => a.rewards.get().length),
+        t = T(() => a.root.get().currentPhase - 1);
       return { ...a, computes: { getRewardsLength: s, completedPhase: t } };
     },
     ({ externalModel: e }) => ({ close: e.createCallbackNoArgs("onClose") }),
@@ -188,7 +188,7 @@ var de = e(Q()),
   Ie = "BattleInfo_containerText_99e1a870",
   je = "BattleInfo_firstLine_b7c4be88",
   we = "BattleInfo_secondLine_6c48744f",
-  Ce = q(),
+  Ce = k(),
   Se = v.resolve("strings"),
   De = Z(function ({ className: e }) {
     const { model: a } = ue(),
@@ -199,7 +199,7 @@ var de = e(Q()),
       children: (0, Ce.jsxs)("div", {
         className: Ie,
         children: [
-          (0, Ce.jsx)(c, {
+          (0, Ce.jsx)(b, {
             classMix: je,
             text: R.strings.last_stand_battle_results.info.mapName(),
             binding: {
@@ -209,7 +209,7 @@ var de = e(Q()),
             isTruncationAvailable: !0,
             isTooltipEnable: !0,
           }),
-          (0, Ce.jsx)(c, {
+          (0, Ce.jsx)(b, {
             classMix: we,
             text: R.strings.last_stand_battle_results.info.dateAndDuration(),
             isTruncationAvailable: !0,
@@ -249,9 +249,9 @@ var qe = "Header_3f691153",
   $e = "Header_title_6cbfc85",
   We = "Header_base__lose_65f475ba",
   Me = "Header_base__win_65f475ba",
-  Ge = "Header_subTitle_968d7458",
+  Oe = "Header_subTitle_968d7458",
   ze = "Header_iconWarning_3db7a0bd",
-  Oe = "Header_record_deec923",
+  Ge = "Header_record_deec923",
   Ve = "Header_glow_1d360861",
   Fe = "Header_containerGlow_72d9d90a",
   Ue = "Header_topContainer_b30c86eb",
@@ -276,9 +276,9 @@ var qe = "Header_3f691153",
         completedMissions: r,
       } = a.root.get(),
       i = a.computes.completedPhase(),
-      { banType: o } = a.playerInfo.get(),
-      d = t && o === Be.NotBanned,
-      c = (s && !t) || !s;
+      { banType: d } = a.playerInfo.get(),
+      c = t && d === Be.NotBanned,
+      _ = (s && !t) || !s;
     return (0, Ce.jsxs)("div", {
       className: (0, ce.default)(qe, s ? Me : We),
       children: [
@@ -299,7 +299,7 @@ var qe = "Header_3f691153",
                   ...ge(be.HEADER_TITLE, s),
                   isCanceled: e,
                   className: Ue,
-                  children: (0, Ce.jsx)(S, {
+                  children: (0, Ce.jsx)(o, {
                     lang: R.strings.settings.LANGUAGE_CODE(),
                     className: $e,
                     text: R.strings.last_stand_battle_results.title.win(),
@@ -322,7 +322,7 @@ var qe = "Header_3f691153",
               ...ge(be.HEADER_TITLE, s),
               isCanceled: e,
               className: Ue,
-              children: (0, Ce.jsx)(S, {
+              children: (0, Ce.jsx)(o, {
                 lang: R.strings.settings.LANGUAGE_CODE(),
                 className: $e,
                 ...Je(i),
@@ -337,23 +337,23 @@ var qe = "Header_3f691153",
           children: [
             !s &&
               (0, Ce.jsx)("div", {
-                className: Ge,
+                className: Oe,
                 lang: R.strings.settings.LANGUAGE_CODE(),
                 children: R.strings.last_stand_battle_results.subtitle.lose(),
               }),
             s &&
               !t &&
               (0, Ce.jsx)("div", {
-                className: Ge,
+                className: Oe,
                 lang: R.strings.settings.LANGUAGE_CODE(),
                 children: R.strings.last_stand_battle_results.subtitle.win(),
               }),
             t &&
               (0, Ce.jsx)("div", {
                 className: Ue,
-                children: (0, Ce.jsx)(V, {
-                  ...((_ = !d),
-                  _
+                children: (0, Ce.jsx)($, {
+                  ...((u = !c),
+                  u
                     ? {
                         decoratorId:
                           R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
@@ -368,7 +368,7 @@ var qe = "Header_3f691153",
                           R.views.last_stand.mono.lobby.tooltips.difficulty_tooltip("resId"),
                       }),
                   children: (0, Ce.jsxs)("div", {
-                    className: (0, ce.default)(Ke, c ? Ye : Qe),
+                    className: (0, ce.default)(Ke, _ ? Ye : Qe),
                     children: [
                       (0, Ce.jsx)("div", {
                         className: Ze,
@@ -378,10 +378,10 @@ var qe = "Header_3f691153",
                           missionCount: l,
                         }),
                       }),
-                      o !== Be.NotBanned && (0, Ce.jsx)("div", { className: ze }),
-                      d &&
+                      d !== Be.NotBanned && (0, Ce.jsx)("div", { className: ze }),
+                      c &&
                         (0, Ce.jsx)("div", {
-                          className: Oe,
+                          className: Ge,
                           children: R.strings.last_stand_battle_results.time.record(),
                         }),
                     ],
@@ -392,7 +392,7 @@ var qe = "Header_3f691153",
         }),
       ],
     });
-    var _;
+    var u;
   }),
   ea = {
     base: "VehicleType_7a98563c",
@@ -424,7 +424,7 @@ var qe = "Header_3f691153",
     return (0, Ce.jsx)("div", {
       className: (0, ce.default)(ea.base, ea[`base__${t}`], s),
       style: {
-        backgroundImage: `url('R.images.last_stand.gui.maps.icons.vehicleTypes.flat.${a}.${t}.${G(e)}')`,
+        backgroundImage: `url('R.images.last_stand.gui.maps.icons.vehicleTypes.flat.${a}.${t}.${M(e)}')`,
       },
     });
   }),
@@ -455,13 +455,13 @@ var qe = "Header_3f691153",
             (0, Ce.jsxs)("div", {
               className: da,
               children: [
-                (0, Ce.jsx)(c, {
+                (0, Ce.jsx)(b, {
                   classMix: _a,
                   text: t,
                   isTruncationAvailable: !0,
                   isTooltipEnable: !0,
-                  alignContent: j.FlexEnd,
-                  justifyContent: j.FlexEnd,
+                  alignContent: c.FlexEnd,
+                  justifyContent: c.FlexEnd,
                 }),
                 n &&
                   (0, Ce.jsxs)("span", {
@@ -485,11 +485,11 @@ var qe = "Header_3f691153",
             }),
             (0, Ce.jsx)("div", {
               className: ma,
-              children: (0, Ce.jsx)(c, {
+              children: (0, Ce.jsx)(b, {
                 text: R.strings.last_stand_battle_results.info.respawnCount(),
                 binding: { count: s },
-                alignContent: j.FlexEnd,
-                justifyContent: j.FlexEnd,
+                alignContent: c.FlexEnd,
+                justifyContent: c.FlexEnd,
               }),
             }),
           ],
@@ -498,7 +498,7 @@ var qe = "Header_3f691153",
           className: ra,
           children: (0, Ce.jsx)("div", {
             className: ia,
-            style: { backgroundImage: `url('${R.images.gui.maps.icons.vehicle.$dyn(`${G(i)}`)}')` },
+            style: { backgroundImage: `url('${R.images.gui.maps.icons.vehicle.$dyn(`${M(i)}`)}')` },
           }),
         }),
       ],
@@ -508,42 +508,42 @@ var qe = "Header_3f691153",
   xa = (e) => e,
   ga = (e, a) => {
     const s = Math.floor(e);
-    return a ? B(s, 0) : s;
+    return a ? S(s, 0) : s;
   },
   va = (0, de.memo)(function ({
-    renderText: e = (e) => (0, Ce.jsx)(r.div, { children: e }),
+    renderText: e = (e) => (0, Ce.jsx)(i.div, { children: e }),
     prefix: a = "",
     currentNumber: s,
     previousNumber: t = 0,
     delay: n,
     duration: l,
-    className: i,
+    className: r,
     isCanceled: o,
     isFormatted: d = !1,
     onStart: c,
-    onRest: _,
+    onRest: u,
   }) {
-    const [u, m] = (0, de.useState)(o);
+    const [b, m] = (0, de.useState)(o);
     (0, de.useEffect)(() => {
       m(o);
     }, [o]);
-    const f = b({
+    const f = _({
       from: { val: t },
       to: { val: s },
       delay: n,
       config: { duration: l, easing: xa },
-      cancel: u,
-      reverse: u,
+      cancel: b,
+      reverse: b,
       onStart: c,
       onRest: () => {
-        (m(!0), _?.());
+        (m(!0), u?.());
       },
     });
     return (0, Ce.jsxs)("div", {
-      className: (0, ce.default)(ha, i),
+      className: (0, ce.default)(ha, r),
       children: [
         a,
-        u ? e(ga(s, d)) : (0, Ce.jsx)(r.div, { children: e(f.val.to((e) => ga(e, d))) }),
+        b ? e(ga(s, d)) : (0, Ce.jsx)(i.div, { children: e(f.val.to((e) => ga(e, d))) }),
       ],
     });
   }),
@@ -554,54 +554,54 @@ var qe = "Header_3f691153",
   wa = "RewardItem_value__credit_ada7aa49",
   Ca = "RewardItem_reward_beeec68f",
   Sa = "RewardItem_reward__single_ceef77e8",
-  Da = [f.BattlePassPoints, f.EquipCoin],
+  Da = [j.BattlePassPoints, j.EquipCoin],
   Ba = Z(function ({ index: e, reward: a, isAnimCanceled: s }) {
     const { model: t } = ue(),
-      { isWin: l } = t.root.get(),
-      r = d.includes(a.name),
-      i = Da.includes(a.name),
-      o = a.name == f.Crystal,
-      c = a.name == f.Credits,
-      u = r || i || "ls_progress_point" == a.name,
-      b = r || (i && "ls_progress_point" !== a.name),
-      p = ge(be.REWARD, l).delay + 300 * e,
-      h = l ? { ...Ne[ve.MAIN_REWARD_WIN] }.duration : { ...Ne[ve.MAIN_REWARD_LOSE] }.duration,
-      x = U(
-        { currencySize: Y.large, rewardSize: m.Small },
+      { isWin: n } = t.root.get(),
+      l = G.includes(a.name),
+      r = Da.includes(a.name),
+      i = a.name == j.Crystal,
+      o = a.name == j.Credits,
+      c = l || r || "ls_progress_point" == a.name,
+      _ = l || (r && "ls_progress_point" !== a.name),
+      b = ge(be.REWARD, n).delay + 300 * e,
+      m = n ? { ...Ne[ve.MAIN_REWARD_WIN] }.duration : { ...Ne[ve.MAIN_REWARD_LOSE] }.duration,
+      y = F(
+        { currencySize: Y.large, rewardSize: N.Small },
         {
-          medium: { currencySize: Y.large, rewardSize: m.Small },
-          large: { currencySize: Y.extraLarge, rewardSize: m.Big },
+          medium: { currencySize: Y.large, rewardSize: N.Small },
+          large: { currencySize: Y.extraLarge, rewardSize: N.Big },
         },
       ),
-      g = ie(a),
-      v = y({ contentId: g?.contentId ?? 0, args: g?.args, resId: g?.resId });
+      p = ie(a),
+      h = f({ contentId: p?.contentId ?? 0, args: p?.args, resId: p?.resId });
     return (0, Ce.jsxs)("div", {
       className: Na,
-      ...v,
+      ...h,
       children: [
-        u &&
+        c &&
           (0, Ce.jsx)("div", {
-            className: (0, ce.default)(Ra, o && Ia, c && wa, a.name == f.Gold && ja),
+            className: (0, ce.default)(Ra, i && Ia, o && wa, a.name == j.Gold && ja),
             children: (0, Ce.jsx)(va, {
-              delay: p,
-              duration: h,
+              delay: b,
+              duration: m,
               isCanceled: s,
               isFormatted: !0,
               currentNumber: parseInt(a.value),
-              onStart: () => _.sound("ev_last_stand_pbs_screen_points_start"),
-              onRest: () => _.sound("ev_last_stand_pbs_screen_points_end"),
+              onStart: () => d.sound("ev_last_stand_pbs_screen_points_start"),
+              onRest: () => d.sound("ev_last_stand_pbs_screen_points_end"),
             }),
           }),
-        b
-          ? (0, Ce.jsx)(D, { size: x.currencySize, type: a.name })
-          : (0, Ce.jsx)(n, {
+        _
+          ? (0, Ce.jsx)(C, { size: y.currencySize, type: a.name })
+          : (0, Ce.jsx)(u, {
               name: a.name,
-              value: u ? void 0 : le(a),
+              value: c ? void 0 : le(a),
               special: a.overlayType,
-              image: ne(a, x.rewardSize),
+              image: ne(a, y.rewardSize),
               valueType: oe(a.name),
-              size: x.rewardSize,
-              className: (0, ce.default)(Ca, !u && Sa),
+              size: y.rewardSize,
+              className: (0, ce.default)(Ca, !c && Sa),
             }),
       ],
     });
@@ -617,7 +617,7 @@ var qe = "Header_3f691153",
   $a = "Rewards_container_1c98b40e",
   Wa = R.strings.last_stand_battle_results.ribbon,
   Ma = (e, a) => (e ? (a ? Wa.banRecord() : Wa.ban()) : Wa.noReward()),
-  Ga = Z(function ({ isAnimCanceled: e }) {
+  Oa = Z(function ({ isAnimCanceled: e }) {
     const { model: a } = ue(),
       { isWin: s, newRecord: t } = a.root.get(),
       { banType: n } = a.playerInfo.get(),
@@ -632,7 +632,7 @@ var qe = "Header_3f691153",
         children: i
           ? (0, Ce.jsx)("div", {
               className: Ea,
-              children: K(a.rewards.get(), (a, t) =>
+              children: U(a.rewards.get(), (a, t) =>
                 (0, de.createElement)(
                   X,
                   {
@@ -641,7 +641,7 @@ var qe = "Header_3f691153",
                     isCanceled: e,
                     key: `${a.name}_${t}`,
                     className: $a,
-                    onStart: () => _.sound(te),
+                    onStart: () => d.sound(te),
                   },
                   (0, Ce.jsx)(Ba, { index: t, isAnimCanceled: e, reward: a }),
                 ),
@@ -668,7 +668,7 @@ var qe = "Header_3f691153",
       e
     );
   })({}),
-  Oa = {
+  Ga = {
     base: "SortHelper_9d778842",
     base__active: "SortHelper_base__active_dbd69244",
     base__selected: "SortHelper_base__selected_123b8b20",
@@ -689,41 +689,41 @@ function Ua({
 }) {
   return (0, Ce.jsxs)("div", {
     className: (0, ce.default)(
-      Oa.base,
-      t && Oa.base__active,
+      Ga.base,
+      t && Ga.base__active,
       a,
-      s && Oa.base__selected,
-      Oa[`base__${Qa[n]}`],
+      s && Ga.base__selected,
+      Ga[`base__${Qa[n]}`],
     ),
     onClick: () => {
-      t && (e(l), _.click());
+      t && (e(l), d.click());
     },
     onMouseEnter: () => {
-      t && _.highlight();
+      t && d.highlight();
     },
     children: [
       r,
-      s && t && (0, Ce.jsx)("div", { className: Oa.arrow }),
-      s && (0, Ce.jsx)("div", { className: Oa.line }),
+      s && t && (0, Ce.jsx)("div", { className: Ga.arrow }),
+      s && (0, Ce.jsx)("div", { className: Ga.line }),
     ],
   });
 }
-var Ka = [N, i, w, "SPG", o],
+var Ka = [g, n, l, "SPG", Q],
   Qa = (function (e) {
     return ((e[(e.desc = 1)] = "desc"), (e[(e.asc = -1)] = "asc"), e);
   })({}),
-  [Ya, Za] = z()(
+  [Ya, Za] = O()(
     ({ observableModel: e }) => {
-      const a = A.box(za.Place),
-        s = A.box(1),
+      const a = D.box(za.Place),
+        s = D.box(1),
         t = {
           root: e.object(),
           team: e.array("team", []),
           visibleColumns: e.array("columnSettings.visibleColumns"),
         },
-        n = P(
+        n = T(
           () =>
-            K(t.team.get(), l)
+            U(t.team.get(), r)
               .slice()
               .sort((e, t) => {
                 const n = String(a) === za.Place ? -1 * Number(s) : Number(s);
@@ -736,12 +736,12 @@ var Ka = [N, i, w, "SPG", o],
                     : n * (Ka.indexOf(e.vehicle.vehicleType) - Ka.indexOf(t.vehicle.vehicleType))
                   : n * (t.stats[a] - e.stats[a]);
               }),
-          { equals: p },
+          { equals: y },
         );
       return { ...t, sortBy: a, sortDirection: s, computes: { getSortedTeam: n } };
     },
     ({ externalModel: e, model: a }) => ({
-      setSortBy: $((e) => {
+      setSortBy: q((e) => {
         (e === a.sortBy.get()
           ? a.sortDirection.set(-1 * a.sortDirection.get())
           : a.sortDirection.set(1),
@@ -812,7 +812,7 @@ var ts = "Divider_80a19f4b",
     return (0, Ce.jsx)("div", {
       ...s,
       ref: n,
-      className: k(ts, e?.base, a),
+      className: E(ts, e?.base, a),
       children: (0, Ce.jsx)(t, {
         className: e?.image,
         width: "100%",
@@ -954,13 +954,13 @@ var is = {
           children: (0, Ce.jsxs)("div", {
             className: cs.base,
             children: [
-              (0, Ce.jsx)(H, {
+              (0, Ce.jsx)(L, {
                 body: R.strings.last_stand_tooltips.teamList.squad.header(),
                 children: (0, Ce.jsx)("div", {
                   children: (0, Ce.jsx)(ds, { icon: os.SquadSmall, className: cs.squad }),
                 }),
               }),
-              (0, Ce.jsx)(H, {
+              (0, Ce.jsx)(L, {
                 body: R.strings.last_stand_tooltips.teamList.name.header(),
                 children: (0, Ce.jsx)("span", {
                   className: (0, ce.default)(cs.text, cs[`text__${r}`]),
@@ -972,7 +972,7 @@ var is = {
         }),
         (0, Ce.jsx)(ss, {
           cellStyle: as.Actions,
-          children: (0, Ce.jsx)(H, {
+          children: (0, Ce.jsx)(L, {
             header: R.strings.last_stand_tooltips.teamList.actions.header(),
             body: R.strings.last_stand_tooltips.teamList.actions.body(),
             children: (0, Ce.jsx)("div", {
@@ -987,7 +987,7 @@ var is = {
             {
               cellStyle: _s(e),
               bordered: !0,
-              children: (0, Ce.jsx)(V, {
+              children: (0, Ce.jsx)($, {
                 ...us(e, n),
                 children: (0, Ce.jsx)("div", {
                   className: (0, ce.default)(cs.cell, cs[`cell__${n}`]),
@@ -1125,7 +1125,7 @@ var is = {
         [f, p, t, n],
       ),
       g = (0, de.useMemo)(() => ({ body: Ds[p].tooltipBody }), [p]),
-      v = L(
+      v = P(
         (0, de.useMemo)(
           () => ({
             args: { playerId: t, userName: n, clanAbbrev: l, clientArenaIdx: i, vehicleCD: r },
@@ -1139,7 +1139,7 @@ var is = {
     return (0, Ce.jsxs)("div", {
       className: (0, ce.default)(ms, e),
       children: [
-        (0, Ce.jsx)(H, {
+        (0, Ce.jsx)(L, {
           body: Ss[y].tooltipBody,
           children: (0, Ce.jsx)("div", {
             className: fs,
@@ -1159,7 +1159,7 @@ var is = {
                 }),
           }),
         }),
-        (0, Ce.jsx)(H, {
+        (0, Ce.jsx)(L, {
           ...g,
           children: (0, Ce.jsx)("div", {
             className: fs,
@@ -1179,7 +1179,7 @@ var is = {
                 }),
           }),
         }),
-        (0, Ce.jsx)(H, {
+        (0, Ce.jsx)(L, {
           body: R.strings.last_stand_tooltips.battleResult.interaction.menu(),
           children: (0, Ce.jsx)("div", {
             children: (0, Ce.jsx)("div", {
@@ -1215,7 +1215,7 @@ var is = {
     isAlive: d,
     isReady: c,
   }) {
-    const _ = L(
+    const _ = P(
       (0, de.useMemo)(
         () => ({
           args: { playerId: t, userName: n, clanAbbrev: i, clientArenaIdx: o, vehicleCD: l },
@@ -1287,7 +1287,7 @@ function Ps({ user: e, squadNum: a, isOwnSquad: s = !1, banType: t, isCurrentPla
         className: (0, ce.default)(Ts.nickName, o && Ts.nickName__withSquad),
         children: [
           t !== Be.NotBanned &&
-            (0, Ce.jsx)(H, {
+            (0, Ce.jsx)(L, {
               ...(() => {
                 if (t === Be.NotBanned) return { body: void 0, header: void 0 };
                 const e = R.strings.last_stand_tooltips.teamList.$dyn(t);
@@ -1301,7 +1301,7 @@ function Ps({ user: e, squadNum: a, isOwnSquad: s = !1, banType: t, isCurrentPla
             }),
           (0, Ce.jsx)("div", {
             className: Ts.name,
-            children: (0, Ce.jsx)(M, {
+            children: (0, Ce.jsx)(W, {
               ...e,
               igrType: e.igrType,
               badge: e.badge,
@@ -1337,7 +1337,7 @@ var ks = {
     isCrowned: n,
     isCurrentPlayer: l,
   }) {
-    const r = B(e, 1);
+    const r = S(e, 1);
     return (0, Ce.jsxs)("div", {
       className: (0, ce.default)(ks.base, l && ks.base__currentPlayer, a && ks.base__max),
       children: [
@@ -1356,13 +1356,13 @@ var ks = {
   $s = "VehicleInfo_label_70315f59",
   Ws = "VehicleInfo_premiumIGR_aca7dde6",
   Ms = "VehicleInfo_vehType_af7fa755",
-  Gs = Z(function ({ vehicleShortName: e, vehicleType: a, tags: t }) {
+  Os = Z(function ({ vehicleShortName: e, vehicleType: a, tags: t }) {
     return (0, Ce.jsxs)("div", {
       className: Hs,
       children: [
-        (0, Ce.jsx)(g, { size: s.x48x48, type: a, className: Ms }),
+        (0, Ce.jsx)(x, { size: s.x48x48, type: a, className: Ms }),
         na(t, "premiumIGR") && (0, Ce.jsx)("div", { className: Ws }),
-        (0, Ce.jsx)(c, { text: e, classMix: $s, isTruncationAvailable: !0, isTooltipEnable: !0 }),
+        (0, Ce.jsx)(b, { text: e, classMix: $s, isTruncationAvailable: !0, isTooltipEnable: !0 }),
       ],
     });
   }),
@@ -1442,7 +1442,7 @@ var ks = {
               isPlatoonRequestSent: u,
             }),
         }),
-        (0, Ce.jsx)(ss, { cellStyle: as.Vehicle, children: (0, Ce.jsx)(Gs, { ...r }) }),
+        (0, Ce.jsx)(ss, { cellStyle: as.Vehicle, children: (0, Ce.jsx)(Os, { ...r }) }),
         c.map((e) => {
           const a = e === za.Place ? 1 === o[e] : d[e] === o[e] && o[e] > 0,
             t = !o[za.Damage];
@@ -1465,7 +1465,7 @@ var ks = {
       ],
     });
   }),
-  Os = (function (e) {
+  Gs = (function (e) {
     return ((e.Default = "default"), (e.Red = "red"), (e.Gold = "gold"), e);
   })({}),
   Vs = (function (e) {
@@ -1473,15 +1473,15 @@ var ks = {
   })({}),
   Fs = "TeamList_81df03aa",
   Us = (e) => ({
-    bgColor: e.isCurrentPlayer ? Os.Gold : Os.Default,
+    bgColor: e.isCurrentPlayer ? Gs.Gold : Gs.Default,
     textColor: e.isCurrentPlayer || e.isOwnSquad ? Vs.Gold : Vs.Default,
   }),
   Ks = Z(function ({ className: e, isSortable: a = !1, tableType: s = Ja.TabWindow }) {
     const { model: t, controls: n } = Za(),
-      r = t.sortDirection.get(),
+      l = t.sortDirection.get(),
       i = t.sortBy.get(),
       o = t.computes.getSortedTeam(),
-      d = K(t.visibleColumns.get(), l),
+      d = U(t.visibleColumns.get(), r),
       c = (0, de.useCallback)(
         (e) => {
           n.setSortBy(e);
@@ -1491,7 +1491,7 @@ var ks = {
       _ = {};
     return (
       d.forEach((e) => {
-        const a = K(t.team.get(), (a) => a.stats[e]);
+        const a = U(t.team.get(), (a) => a.stats[e]);
         _[e] = Math.max(...a);
       }),
       (0, Ce.jsx)("div", {
@@ -1504,7 +1504,7 @@ var ks = {
               sortEnabled: a,
               onSortChanged: c,
               sortBy: i,
-              sortDirection: r,
+              sortDirection: l,
               tableType: s,
             }),
             o.map((e) =>
@@ -1528,7 +1528,7 @@ function Qs(e) {
 }
 var Ys = (0, de.memo)(function (e) {
     const { resId: a, ...s } = e;
-    return (0, Ce.jsx)(E, {
+    return (0, Ce.jsx)(A, {
       children: (0, Ce.jsx)(Ya, {
         options: (0, de.useMemo)(() => ({ rootId: a }), [a]),
         children: (0, Ce.jsx)(Qs, { ...s }),
@@ -1573,15 +1573,15 @@ var Ys = (0, de.memo)(function (e) {
     const { model: e, controls: s } = ue(),
       { isWin: t, difficultyLevel: n } = e.root.get(),
       l = e.computes.getRewardsLength() > 0;
-    (I(W.ESCAPE, s.close), I(W.ENTER, s.close));
+    (I(H.ESCAPE, s.close), I(H.ENTER, s.close));
     const [r, i] = (0, de.useState)(!1),
-      [o, d] = (0, de.useState)(O("rem")),
+      [o, d] = (0, de.useState)(z("rem")),
       [c, _] = (0, de.useState)(!1);
     ((0, de.useEffect)(() => {
       const e = () => {
-        (2030 < o.width ? _(!0) : _(!1), d(O("rem")));
+        (2030 < o.width ? _(!0) : _(!1), d(z("rem")));
       };
-      (e(), C(e), h(e));
+      (e(), w(e), p(e));
     }, [o.width]),
       (0, de.useEffect)(() => {
         const e = () => {
@@ -1594,7 +1594,7 @@ var Ys = (0, de.memo)(function (e) {
           }
         );
       }, []));
-    const u = U(
+    const u = F(
       { size: a.sizes.extraSmall },
       {
         medium: { size: a.sizes.small },
@@ -1635,7 +1635,7 @@ var Ys = (0, de.memo)(function (e) {
                 children: [
                   l && (0, Ce.jsx)("div", { className: (0, ce.default)(ct, t && _t) }),
                   (0, Ce.jsx)("div", { className: mt }),
-                  (0, Ce.jsx)(Ga, { isAnimCanceled: r }),
+                  (0, Ce.jsx)(Oa, { isAnimCanceled: r }),
                 ],
               }),
               (0, Ce.jsx)(X, {
@@ -1669,8 +1669,8 @@ var Ys = (0, de.memo)(function (e) {
             children: R.strings.last_stand_lobby.common.yes(),
           }),
         }),
-        (0, Ce.jsx)(x, { className: tt, onClose: s.close }),
+        (0, Ce.jsx)(h, { className: tt, onClose: s.close }),
       ],
     });
   });
-T((0, Ce.jsx)(F, { children: (0, Ce.jsx)(_e, { children: (0, Ce.jsx)(xt, {}) }) }));
+B((0, Ce.jsx)(V, { children: (0, Ce.jsx)(_e, { children: (0, Ce.jsx)(xt, {}) }) }));

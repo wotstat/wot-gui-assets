@@ -1,24 +1,24 @@
 import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
-  En as e,
+  Bn as e,
   G as a,
-  Ia as r,
-  Mn as t,
-  On as n,
-  Pn as o,
+  Gn as r,
+  Hn as t,
+  Ia as n,
+  Mn as o,
   To as l,
-  c as i,
-  cr as c,
-  hi as d,
-  io as _,
-  ir as m,
-  jn as x,
-  kn as u,
-  pr as g,
-  s as j,
-  sr as p,
-  va as b,
-  vo as v,
+  Un as i,
+  c,
+  cr as d,
+  hi as _,
+  io as m,
+  ir as x,
+  pr as u,
+  s as g,
+  sr as j,
+  va as p,
+  vo as b,
+  zn as v,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { o as N, s as h } from "../../chunks/vendor.js";
@@ -32,27 +32,27 @@ var P = (function (s) {
       s
     );
   })({}),
-  k = s(v(), 1),
-  [E, S] = g()(
+  k = s(b(), 1),
+  [E, S] = u()(
     ({ observableModel: s }) => ({
       root: s.object(),
       rewardsCommon: s.array("rewardsCommon"),
       rewardsElite: s.array("rewardsElite"),
     }),
-    r,
+    n,
   ),
   y = s(h(), 1),
-  C = "IconTextBlock_4710821f",
-  B = "IconTextBlock_icon_753334c6",
+  B = "IconTextBlock_4710821f",
+  C = "IconTextBlock_icon_753334c6",
   T = "IconTextBlock_text_e1bd5a75",
-  I = d(),
+  I = _(),
   O = (0, k.memo)(function ({ icon: s, text: e, className: a }) {
     const r = (0, k.useMemo)(() => ({ backgroundImage: `url(${s})` }), [s]);
     return (0, I.jsxs)("div", {
-      className: (0, y.default)(C, a),
+      className: (0, y.default)(B, a),
       children: [
-        (0, I.jsx)("div", { className: B, style: r }),
-        (0, I.jsx)(j, { classMix: T, text: e }),
+        (0, I.jsx)("div", { className: C, style: r }),
+        (0, I.jsx)(g, { classMix: T, text: e }),
       ],
     });
   }),
@@ -89,9 +89,9 @@ var $ = "Rewards_69001186";
 function Y({ className: s = "", children: e = null }) {
   return (0, I.jsx)("div", { className: (0, y.default)($, s), children: e });
 }
-var F = "Separator_a3ff07";
-function z({ className: s = "" }) {
-  return (0, I.jsx)("div", { className: (0, y.default)(F, s) });
+var z = "Separator_a3ff07";
+function F({ className: s = "" }) {
+  return (0, I.jsx)("div", { className: (0, y.default)(z, s) });
 }
 var V = "EndSoon_f7bd83d6",
   X = "EndSoon_content_a59b8e14",
@@ -215,7 +215,7 @@ var ds = "Progression_af1cb3b",
           children: [
             (0, I.jsx)("div", {
               className: hs,
-              children: (0, I.jsx)(m, {
+              children: (0, I.jsx)(x, {
                 text: R.strings.battle_pass.tooltips.inProgress.chapter(),
                 binding: { name: ws.readOrEmpty(`R.strings.battle_pass.chapter.fullName.c_${e}`) },
               }),
@@ -243,17 +243,17 @@ var ds = "Progression_af1cb3b",
     overlay: "RewardsBlock_overlay_adaa44ea",
   },
   Rs = [
-    o.PROGRESSION_STYLE_UPGRADED_1,
-    o.PROGRESSION_STYLE_UPGRADED_2,
-    o.PROGRESSION_STYLE_UPGRADED_3,
-    o.PROGRESSION_STYLE_UPGRADED_4,
+    r.PROGRESSION_STYLE_UPGRADED_1,
+    r.PROGRESSION_STYLE_UPGRADED_2,
+    r.PROGRESSION_STYLE_UPGRADED_3,
+    r.PROGRESSION_STYLE_UPGRADED_4,
   ];
 function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
-  const o = r.length > 1 && r.length % 2 == 1,
+  const n = r.length > 1 && r.length % 2 == 1,
     l = 1 === r.length,
-    i = 2 === r.length,
-    c = l ? t.S180x135 : t.Small,
-    d = r.every(({ value: s }) => {
+    c = 2 === r.length,
+    d = l ? i.S180x135 : i.Small,
+    _ = r.every(({ value: s }) => {
       const e = Number(s.value);
       return !isNaN(e) && e > 1;
     });
@@ -267,28 +267,28 @@ function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
       (0, I.jsx)("div", {
         className: (0, y.default)(Ps.rewardsList, a && Ps.rewardsList__locked),
         children: r.map((s, a) => {
-          const r = ((s, e) => ({
+          const r = ((s, a) => ({
               name: s.item || s.name,
-              image: u(s, e),
+              image: e(s, a),
               special: s.overlayType,
               value: s.value,
-              valueType: x(s.name),
-            }))(s.value, c),
-            t = null !== n(r.special),
-            _ = r.special && Rs.includes(r.special);
-          return (0, k.createElement)(e, {
+              valueType: t(s.name),
+            }))(s.value, d),
+            i = null !== v(r.special),
+            m = r.special && Rs.includes(r.special);
+          return (0, k.createElement)(o, {
             ...r,
-            size: c,
+            size: d,
             key: `${r.name}_${a}`,
             className: (0, y.default)(
-              !i && Ps.reward,
+              !c && Ps.reward,
               a > 0 && Ps.reward__next,
-              _ && Ps.reward__styleUpgrade,
-              d && !o && Ps.reward__wide,
-              o && a % 2 == 1 && Ps.reward__shiftUp,
+              m && Ps.reward__styleUpgrade,
+              _ && !n && Ps.reward__wide,
+              n && a % 2 == 1 && Ps.reward__shiftUp,
               l && Ps.reward__single,
             ),
-            classNames: { overlay: (0, y.default)(!t && l && Ps.overlay) },
+            classNames: { overlay: (0, y.default)(!i && l && Ps.overlay) },
           });
         }),
       }),
@@ -298,8 +298,8 @@ function ks({ label: s, isLocked: a = !1, rewards: { items: r } }) {
 var Es = "InProgressContent_a8ca87b2",
   Ss = "InProgressContent_content_524dcedb",
   ys = "InProgressContent_rewards_63eaef96",
-  Cs = "InProgressContent_unlockBattlePass_21685866",
-  Bs = "InProgressContent_claim_3d8980c7",
+  Bs = "InProgressContent_unlockBattlePass_21685866",
+  Cs = "InProgressContent_claim_3d8980c7",
   Ts = "InProgressContent_separatorWrapper_4624de44",
   Is = R.strings.battle_pass.tooltips,
   Os = N(function () {
@@ -328,14 +328,14 @@ var Es = "InProgressContent_a8ca87b2",
               (0, I.jsx)(O, {
                 icon: R.images.gui.maps.icons.battlePass.progression.icon_lock_current_small(),
                 text: Is.unlockBattlePass(),
-                className: Cs,
+                className: Bs,
               }),
           ],
         }),
         (0, I.jsx)(H, {}),
         l &&
           (0, I.jsxs)(I.Fragment, {
-            children: [(0, I.jsx)(z, { className: Ts }), (0, I.jsx)(D, { className: Bs })],
+            children: [(0, I.jsx)(F, { className: Ts }), (0, I.jsx)(D, { className: Cs })],
           }),
         o && (0, I.jsx)(es, {}),
       ],
@@ -362,23 +362,23 @@ var Ds = {
     rewards: "RewardsBlock_rewards_259e5467",
     reward__big: "RewardsBlock_reward__big_6e09459f",
   },
-  Ms = (s, e) => ({
+  Ms = (s, a) => ({
     name: s.item || s.name,
-    image: u(s, e),
+    image: e(s, a),
     special: s.overlayType,
     value: s.value,
-    valueType: x(s.name),
+    valueType: t(s.name),
   });
-function As({ rewards: { items: s }, className: a = "" }) {
-  const r = s.length < 3 ? t.S180x135 : t.Big;
+function As({ rewards: { items: s }, className: e = "" }) {
+  const a = s.length < 3 ? i.S180x135 : i.Big;
   return (0, I.jsxs)("div", {
-    className: (0, y.default)(Ds.base, a),
+    className: (0, y.default)(Ds.base, e),
     children: [
       (0, I.jsx)("div", { className: Ds.ribbon }),
       (0, I.jsx)("div", {
         className: Ds.rewards,
-        children: b(s, (s, a) =>
-          (0, I.jsx)(e, { ...Ms(s, r), className: Ds[`reward__${r}`], size: r }, `${s.name}_${a}`),
+        children: p(s, (s, e) =>
+          (0, I.jsx)(o, { ...Ms(s, a), className: Ds[`reward__${a}`], size: a }, `${s.name}_${e}`),
         ),
       }),
     ],
@@ -387,8 +387,8 @@ function As({ rewards: { items: s }, className: a = "" }) {
 var Hs = "PostProgressionContent_61673cb3",
   $s = "PostProgressionContent_header_77b88a64",
   Ys = "PostProgressionContent_content_1f2bfa15",
-  Fs = "PostProgressionContent_rewardsBlock_f655ecd1",
-  zs = "PostProgressionContent_claim_9123d952",
+  zs = "PostProgressionContent_rewardsBlock_f655ecd1",
+  Fs = "PostProgressionContent_claim_9123d952",
   Vs = "PostProgressionContent_separatorFirst_83f78bef",
   Xs = "PostProgressionContent_separatorSecond_17c63b4",
   Ws = "PostProgressionContent_unlockBattlePass_c45d32a9",
@@ -401,14 +401,14 @@ var Hs = "PostProgressionContent_61673cb3",
       className: Hs,
       children: [
         (0, I.jsx)(Us, { className: $s }),
-        (0, I.jsx)(As, { rewards: r, className: Fs }),
+        (0, I.jsx)(As, { rewards: r, className: zs }),
         (0, I.jsx)(H, {}),
-        (t || !e) && (0, I.jsx)(z, { className: Vs }),
+        (t || !e) && (0, I.jsx)(F, { className: Vs }),
         (0, I.jsxs)("div", {
           className: Ys,
           children: [
-            t && (0, I.jsx)(D, { className: (0, y.default)(e && zs) }),
-            t && !e && (0, I.jsx)(z, { className: Xs }),
+            t && (0, I.jsx)(D, { className: (0, y.default)(e && Fs) }),
+            t && !e && (0, I.jsx)(F, { className: Xs }),
             !e &&
               (0, I.jsx)("div", {
                 children: (0, I.jsx)(O, {
@@ -427,11 +427,11 @@ var Hs = "PostProgressionContent_61673cb3",
       { chapterType: e } = s.root.get();
     return e === P.POST_PROGRESSION ? (0, I.jsx)(qs, {}) : (0, I.jsx)(Os, {});
   });
-c(
+d(
   (0, I.jsx)(E, {
-    children: (0, I.jsx)(p, {
-      children: (0, I.jsx)(i, {
-        children: (0, I.jsx)(i.Decorator, { children: (0, I.jsx)(Js, {}) }),
+    children: (0, I.jsx)(j, {
+      children: (0, I.jsx)(c, {
+        children: (0, I.jsx)(c.Decorator, { children: (0, I.jsx)(Js, {}) }),
       }),
     }),
   }),

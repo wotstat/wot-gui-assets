@@ -2,11 +2,11 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as a,
   Aa as s,
-  Jn as t,
-  Ka as o,
-  Qn as i,
-  Ur as n,
-  Vn as r,
+  Ka as t,
+  Ln as o,
+  Nn as i,
+  Qn as n,
+  Ur as r,
   Vr as l,
   _i as c,
   cr as d,
@@ -47,12 +47,12 @@ var I = { y: 0, opacity: 1 },
     button: { from: { y: -10, opacity: 0 }, to: I, delay: 1200, duration: j },
   },
   C = e(y()),
-  B = "InfoImage_dcfad64c",
-  N = m();
+  N = "InfoImage_dcfad64c",
+  B = m();
 function A({ image: e, imageBig: a }) {
   const { breakpoint: s } = g();
-  return (0, N.jsx)("div", {
-    className: B,
+  return (0, B.jsx)("div", {
+    className: N,
     style: ((e, a) => {
       let t = e;
       return (s.weight > c.medium.weight && (t = a), { backgroundImage: `url('${t}')` });
@@ -64,26 +64,26 @@ var v = "InfoBlock_f854eb14",
   T = "InfoBlock_title_2476dc97",
   E = "InfoBlock_subTitle_a648caba",
   z = C.memo(function ({ items: e, canceledAnim: a = !1 }) {
-    return (0, N.jsx)("div", {
+    return (0, B.jsx)("div", {
       className: v,
       children: u(e, (e, s) =>
         (0, C.createElement)(
           h,
-          { isCanceled: a, ...k[`block${s + 1}`], onStart: () => o.sound(f), key: `block_${s}` },
-          (0, N.jsxs)("div", {
+          { isCanceled: a, ...k[`block${s + 1}`], onStart: () => t.sound(f), key: `block_${s}` },
+          (0, B.jsxs)("div", {
             className: M,
             children: [
-              (0, N.jsx)(A, { image: e.image, imageBig: e.imageBig }),
-              (0, N.jsxs)(h, {
+              (0, B.jsx)(A, { image: e.image, imageBig: e.imageBig }),
+              (0, B.jsxs)(h, {
                 isCanceled: a,
                 ...k[`title${s + 1}`],
                 children: [
-                  (0, N.jsx)("div", { className: T, children: e.header }),
-                  (0, N.jsx)(t, {
+                  (0, B.jsx)("div", { className: T, children: e.header }),
+                  (0, B.jsx)(i, {
                     classMix: E,
                     text: e.text,
-                    alignContent: r.Center,
-                    justifyContent: r.Center,
+                    alignContent: o.Center,
+                    justifyContent: o.Center,
                     binding: e.binding,
                   }),
                 ],
@@ -105,9 +105,9 @@ var v = "InfoBlock_f854eb14",
   U = "MetaIntroApp_header_b706abdc",
   D = "MetaIntroApp_bottomContainer_341b7343",
   H = "MetaIntroApp_topContainer_9352c5d0",
-  V = "MetaIntroApp_btn_4fa2f453",
-  J = "MetaIntroApp_closeBtn_f6844130",
-  P = [
+  P = "MetaIntroApp_btn_4fa2f453",
+  Q = "MetaIntroApp_closeBtn_f6844130",
+  V = [
     {
       header: R.strings.last_stand_lobby.metaIntro.header.fight(),
       text: R.strings.last_stand_lobby.metaIntro.description.fight(),
@@ -127,11 +127,11 @@ var v = "InfoBlock_f854eb14",
       imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
     },
   ],
-  Q = () => {
+  q = () => {
     const { controls: e } = L(),
       [t, o] = (0, C.useState)(!1);
-    (l(e.onClose), n(s.ENTER, e.onClose), n(s.SPACE, e.onClose));
-    const r = b(
+    (l(e.onClose), r(s.ENTER, e.onClose), r(s.SPACE, e.onClose));
+    const i = b(
       { size: a.sizes.extraSmall },
       {
         medium: { size: a.sizes.small },
@@ -139,37 +139,37 @@ var v = "InfoBlock_f854eb14",
         extraLarge: { size: a.sizes.large },
       },
     );
-    return (0, N.jsxs)("div", {
+    return (0, B.jsxs)("div", {
       className: $,
       onClick: () => o(!0),
       children: [
-        (0, N.jsx)(i, { className: J, onClose: e.onClose }),
-        (0, N.jsx)("div", { className: O }),
-        (0, N.jsx)(h, {
+        (0, B.jsx)(n, { className: Q, onClose: e.onClose }),
+        (0, B.jsx)("div", { className: O }),
+        (0, B.jsx)(h, {
           className: H,
           isCanceled: t,
           ...k[x.HEADER],
-          children: (0, N.jsx)("div", {
+          children: (0, B.jsx)("div", {
             className: U,
             children: R.strings.last_stand_lobby.metaIntro.title(),
           }),
         }),
-        (0, N.jsx)("div", {
+        (0, B.jsx)("div", {
           className: K,
-          children: (0, N.jsx)("div", {
+          children: (0, B.jsx)("div", {
             className: S,
-            children: (0, N.jsx)(z, { canceledAnim: t, items: P }),
+            children: (0, B.jsx)(z, { canceledAnim: t, items: V }),
           }),
         }),
-        (0, N.jsx)(h, {
+        (0, B.jsx)(h, {
           isCanceled: t,
           className: D,
           ...k[x.BUTTON],
-          children: (0, N.jsx)("div", {
-            className: V,
-            children: (0, N.jsx)(a, {
+          children: (0, B.jsx)("div", {
+            className: P,
+            children: (0, B.jsx)(a, {
               theme: a.themes.primary,
-              size: r.size,
+              size: i.size,
               onClick: e.onClose,
               children: R.strings.last_stand_lobby.common.yes(),
             }),
@@ -178,4 +178,4 @@ var v = "InfoBlock_f854eb14",
       ],
     });
   };
-d((0, N.jsx)(p, { children: (0, N.jsx)(w, { children: (0, N.jsx)(Q, {}) }) }));
+d((0, B.jsx)(p, { children: (0, B.jsx)(w, { children: (0, B.jsx)(q, {}) }) }));

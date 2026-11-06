@@ -1,21 +1,21 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $r as s,
-  Gr as a,
-  Jn as n,
-  Kn as o,
-  Mt as r,
-  Nt as i,
-  Qt as t,
-  Ri as l,
-  Rt as c,
-  Tn as d,
-  Wt as m,
-  bn as u,
-  en as p,
-  jt as _,
-  mi as h,
-  mr as b,
+  Dt as a,
+  Gr as n,
+  Jn as o,
+  Kn as r,
+  Qt as i,
+  Ri as t,
+  Tn as l,
+  Wt as c,
+  at as d,
+  bn as m,
+  en as u,
+  it as p,
+  mi as _,
+  mr as h,
+  rt as b,
   vr as j,
   wn as f,
 } from "../chunks/lib.js";
@@ -26,12 +26,12 @@ import { t as N } from "../chunks/sound.js";
 import { n as w, r as v, t as A } from "../chunks/button.js";
 import { t as S } from "../chunks/close_button.js";
 import { a as k, n as T } from "../chunks/utils.js";
-var E = e(l(), 1),
-  [L, $] = d()(
+var E = e(t(), 1),
+  [L, $] = l()(
     ({ observableModel: e }) => {
       const s = { root: e.object(), bonuses: e.array("bonuses", []) },
-        n = f(() => a(s.bonuses.get(), (e) => ({ ...e }))),
-        o = f(() => n()[0] ?? null);
+        a = f(() => n(s.bonuses.get(), (e) => ({ ...e }))),
+        o = f(() => a()[0] ?? null);
       return { ...s, computes: { firstBonus: o } };
     },
     ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs("onClose") }),
@@ -59,29 +59,29 @@ var E = e(l(), 1),
     },
   },
   q = "Footer_description_a18ad01f",
-  J = "Footer_buttons_87ee5915",
-  K = "Footer_button_efd8c55a",
-  Q = j(),
-  V = x(function ({ isAnimationCanceled: e, onClose: s, className: a }) {
-    return (0, Q.jsxs)("div", {
+  D = "Footer_buttons_87ee5915",
+  J = "Footer_button_efd8c55a",
+  K = j(),
+  Q = x(function ({ isAnimationCanceled: e, onClose: s, className: a }) {
+    return (0, K.jsxs)("div", {
       className: a,
       children: [
-        (0, Q.jsx)(g, {
+        (0, K.jsx)(g, {
           ...P[B],
           isCanceled: e,
-          children: (0, Q.jsx)(t, {
+          children: (0, K.jsx)(i, {
             className: q,
             path: "R.strings.halloween_lobby.storyChoiceAward.community",
           }),
         }),
-        (0, Q.jsx)("div", {
-          className: J,
-          children: (0, Q.jsx)(g, {
+        (0, K.jsx)("div", {
+          className: D,
+          children: (0, K.jsx)(g, {
             ...P[B],
-            className: K,
-            onStart: () => h.sound(N),
+            className: J,
+            onStart: () => _.sound(N),
             isCanceled: e,
-            children: (0, Q.jsx)(A, {
+            children: (0, K.jsx)(A, {
               type: v.Secondary,
               caption: R.strings.halloween_lobby.common.yes(),
               size: w.ExtraLarge,
@@ -92,8 +92,8 @@ var E = e(l(), 1),
       ],
     });
   }),
-  W = e(y(), 1),
-  D = "Header_titleBox_a98c2191",
+  V = e(y(), 1),
+  W = "Header_titleBox_a98c2191",
   U = "Header_line_f20f5d27",
   X = "Header_line__inverted_447adaa7",
   Y = "Header_square_549b0fb7",
@@ -101,31 +101,31 @@ var E = e(l(), 1),
   ee = "Header_title_9fb4ca38",
   se = x(function ({ isAnimationCanceled: e, className: s }) {
     const { model: a } = $();
-    return (0, Q.jsxs)("div", {
+    return (0, K.jsxs)("div", {
       className: s,
       children: [
-        (0, Q.jsx)(g, {
+        (0, K.jsx)(g, {
           ...P[H],
           isCanceled: e,
-          children: (0, Q.jsxs)("div", {
-            className: D,
+          children: (0, K.jsxs)("div", {
+            className: W,
             children: [
-              (0, Q.jsx)("div", { className: U, children: (0, Q.jsx)("div", { className: Y }) }),
-              (0, Q.jsx)("div", {
+              (0, K.jsx)("div", { className: U, children: (0, K.jsx)("div", { className: Y }) }),
+              (0, K.jsx)("div", {
                 className: Z,
                 children: R.strings.halloween_lobby.storyChoiceAward.subtitle(),
               }),
-              (0, Q.jsx)("div", {
-                className: (0, W.default)(U, X),
-                children: (0, Q.jsx)("div", { className: Y }),
+              (0, K.jsx)("div", {
+                className: (0, V.default)(U, X),
+                children: (0, K.jsx)("div", { className: Y }),
               }),
             ],
           }),
         }),
-        (0, Q.jsx)(g, {
+        (0, K.jsx)(g, {
           ...P[O],
           isCanceled: e,
-          children: (0, Q.jsx)(t, { className: ee, path: a.root.get().title }),
+          children: (0, K.jsx)(i, { className: ee, path: a.root.get().title }),
         }),
       ],
     });
@@ -142,40 +142,40 @@ var E = e(l(), 1),
   me = P[z].delay + 200,
   ue = "R.images.halloween.gui.maps.icons.common.ribbon",
   pe = x(function ({ isAnimationCanceled: e, className: s }) {
-    const { model: a } = $(),
-      n = (0, E.useRef)(null),
-      [o, t] = (0, E.useState)(!1);
+    const { model: n } = $(),
+      o = (0, E.useRef)(null),
+      [r, i] = (0, E.useState)(!1);
     (0, E.useEffect)(() => {
-      o && n.current?.play();
-    }, [o]);
-    const l = a.computes.firstBonus(),
-      d = b({ size: r.S300x300 }, { large: { size: r.S450x450 } });
-    return (0, Q.jsxs)("div", {
-      className: (0, W.default)(ae, s),
+      r && o.current?.play();
+    }, [r]);
+    const t = n.computes.firstBonus(),
+      l = h({ size: p.S300x300 }, { large: { size: p.S450x450 } });
+    return (0, K.jsxs)("div", {
+      className: (0, V.default)(ae, s),
       children: [
-        (0, Q.jsx)("div", {
+        (0, K.jsx)("div", {
           className: ie,
-          children: (0, Q.jsxs)(g, {
+          children: (0, K.jsxs)(g, {
             ...P[M],
             isCanceled: e,
             children: [
-              (0, Q.jsx)(m, {
-                ref: n,
+              (0, K.jsx)(c, {
+                ref: o,
                 className: te,
                 src: R.videos.halloween.rays(),
                 loop: !0,
-                onLoadedMetadata: () => t(!0),
+                onLoadedMetadata: () => i(!0),
               }),
-              (0, Q.jsx)(p, { className: le, path: `${ue}.radial_lines` }),
+              (0, K.jsx)(u, { className: le, path: `${ue}.radial_lines` }),
             ],
           }),
         }),
-        (0, Q.jsxs)(g, {
+        (0, K.jsxs)(g, {
           className: ne,
           ...P[z],
           isCanceled: e,
           children: [
-            (0, Q.jsx)(p, {
+            (0, K.jsx)(u, {
               className: re,
               path: `${ue}.normal.small`,
               adaptive: {
@@ -183,24 +183,24 @@ var E = e(l(), 1),
                 large: { path: `${ue}.normal.big` },
               },
             }),
-            l &&
-              (0, Q.jsx)("div", {
+            t &&
+              (0, K.jsx)("div", {
                 className: oe,
-                children: (0, Q.jsx)(g, {
+                children: (0, K.jsx)(g, {
                   className: ce,
                   ...P[F],
                   delay: me + 200,
                   isCanceled: e,
-                  children: (0, Q.jsx)(_, {
+                  children: (0, K.jsx)(b, {
                     className: ce,
-                    name: l.name,
-                    value: l.value,
+                    name: t.name,
+                    value: t.value,
                     classNames: { info: de },
-                    size: d.size,
-                    special: l.overlayType,
-                    image: `R.images.halloween.gui.maps.icons.achievement.${d.size}.${l.icon}`,
-                    valueType: l.name === i.BattlaPassFinalAchievement ? c.STRING : k(l.name),
-                    tooltipArgs: T(l, "", 0),
+                    size: l.size,
+                    special: t.overlayType,
+                    image: `R.images.halloween.gui.maps.icons.achievement.${l.size}.${t.icon}`,
+                    valueType: t.name === d.BattlaPassFinalAchievement ? a.STRING : k(t.name),
+                    tooltipArgs: T(t, "", 0),
                   }),
                 }),
               }),
@@ -217,18 +217,18 @@ var E = e(l(), 1),
   xe = "AwardCongratsScreenApp_footer_9b164001",
   ye = x(function () {
     const { controls: e } = $(),
-      [a, r] = (0, E.useState)(!1);
-    (o(e.onClose), n(s.ENTER, e.onClose), n(s.SPACE, e.onClose));
-    return (0, Q.jsxs)("div", {
+      [a, n] = (0, E.useState)(!1);
+    (r(e.onClose), o(s.ENTER, e.onClose), o(s.SPACE, e.onClose));
+    return (0, K.jsxs)("div", {
       className: _e,
-      onClick: () => r(!0),
+      onClick: () => n(!0),
       children: [
-        (0, Q.jsx)("div", { className: he }),
-        (0, Q.jsx)(se, { isAnimationCanceled: a, className: je }),
-        (0, Q.jsx)(pe, { isAnimationCanceled: a, className: fe }),
-        (0, Q.jsx)(V, { isAnimationCanceled: a, onClose: e.onClose, className: xe }),
-        (0, Q.jsx)(S, { className: be, onClose: e.onClose }),
+        (0, K.jsx)("div", { className: he }),
+        (0, K.jsx)(se, { isAnimationCanceled: a, className: je }),
+        (0, K.jsx)(pe, { isAnimationCanceled: a, className: fe }),
+        (0, K.jsx)(Q, { isAnimationCanceled: a, onClose: e.onClose, className: xe }),
+        (0, K.jsx)(S, { className: be, onClose: e.onClose }),
       ],
     });
   });
-u((0, Q.jsx)(L, { children: (0, Q.jsx)(ye, {}) }));
+m((0, K.jsx)(L, { children: (0, K.jsx)(ye, {}) }));

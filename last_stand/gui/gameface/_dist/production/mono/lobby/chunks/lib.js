@@ -27440,522 +27440,141 @@ function CloseButton({
   });
 }
 CloseButton.size = sizes$12;
-var NodeTypes = { Text: 1, Tag: 2, Var: 3 };
-function parseArguments(e) {
-  const t = [];
-  let n = "",
-    r = !1,
-    a = !1,
-    o = "";
-  for (let i = 0; i < e.length; i++) {
-    const s = e[i];
-    ("'" !== s && '"' !== s) || a || r
-      ? s === o && a
-        ? ((a = !1), (n += s))
-        : "(" !== s || a
-          ? ")" === s && r && !a
-            ? ((r = !1), (n += s))
-            : " " !== s || r || a
-              ? (n += s)
-              : n && (t.push(n), (n = ""))
-          : ((r = !0), (n += s))
-      : ((a = !0), (o = s), (n += s));
-  }
-  return (n && t.push(n), t);
-}
-function parse$1(e, t) {
-  const n = [],
-    r = [];
-  let a = "",
-    o = !1,
-    i = "",
-    s = 0;
-  for (let u = 0; u < e.length; u++) {
-    const l = e[u];
-    if (l === t.start[0] && e.slice(u, u + t.start.length) === t.start)
-      (a &&
-        (r.length > 0
-          ? r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: a })
-          : n.push({ type: NodeTypes.Text, value: a }),
-        (a = "")),
-        (o = !0),
-        (u += t.start.length - 1));
-    else if (l === t.end[0] && e.slice(u, u + t.end.length) === t.end) {
-      ((o = !1), (u += t.end.length - 1));
-      const e = i.trim();
-      if (e.startsWith("@")) {
-        const t = e.slice(1).trim(),
-          a = { type: NodeTypes.Tag, attrs: t.split("|"), instanceId: ++s, children: [] };
-        (r.length > 0 ? r[r.length - 1].node.children.push(a) : n.push(a),
-          r.push({ node: a, startIndex: n.length }));
-      } else if ("/" === e) r.length > 0 && r.pop();
-      else {
-        const t = { type: NodeTypes.Var, instanceId: ++s, name: e };
-        r.length > 0 ? r[r.length - 1].node.children.push(t) : n.push(t);
-      }
-      i = "";
-    } else o ? (i += l) : (a += l);
-  }
-  return (
-    a &&
-      (r.length
-        ? r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: a })
-        : n.push({ type: NodeTypes.Text, value: a })),
-    n
-  );
-}
-var COLORS =
-    "blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom",
-  base$45 = "FormatText_db904f12",
-  base__fullSize = "FormatText_base__fullSize_a514958e",
-  nowrap = "FormatText_nowrap_ff69eca3",
-  format_text_module_default = {
-    COLORS: COLORS,
-    base: base$45,
-    base__fullSize: base__fullSize,
-    nowrap: nowrap,
-  },
-  legacyColors = new Set(format_text_module_default.COLORS?.split(", ") ?? []),
-  keyId = 0;
-function takeKey() {
-  return ++keyId;
-}
-var startsWithPunctuationRe =
-  /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u0E00-\u0E7F\u3000-\u303F\uFF00-\uFFEF\]]/u;
-function splitString(e) {
-  const t = resources.resolve("langCode");
-  return addSpaceAndMap(
-    splitLocale(e, t),
-    t,
-    (e, t) => e && (0, import_jsx_runtime.jsx)("span", { children: e }, `${e}${t}`),
-  );
-}
-function splitArray(e) {
-  const t = [];
-  for (let n = 0; n < e.length; n++) {
-    const r = e[n],
-      a = e[n + 1];
-    if ("string" != typeof a || !startsWithPunctuationRe.test(a)) {
-      t.push(split(r));
-      continue;
-    }
-    const o = splitString(a.slice(1));
-    (t.push(
-      (0, import_jsx_runtime.jsxs)(
-        import_react.Fragment,
-        {
-          children: [
-            (0, import_jsx_runtime.jsxs)("span", {
-              className: format_text_module_default.nowrap,
-              children: [split(r), a[0]],
-            }),
-            o,
-          ],
-        },
-        takeKey(),
-      ),
-    ),
-      (n += 1));
-  }
-  return t;
-}
-function split(e) {
-  return Array.isArray(e)
-    ? splitArray(e)
-    : "string" == typeof e
-      ? (0, import_jsx_runtime.jsx)(import_react.Fragment, { children: splitString(e) }, takeKey())
-      : e;
-}
-function style(e, ...t) {
-  return (0, import_jsx_runtime.jsx)(
-    "span",
-    {
-      style: t.reduce((n, r) => {
-        if (Array.isArray(r)) {
-          const [e, t] = r;
-          return ((n[e] = t), n);
-        }
-        return (console.warn(`Invalid argument ${r} in ${e}: ${t}`), n);
-      }, {}),
-      children: e,
-    },
-    takeKey(),
-  );
-}
-function className(e, ...t) {
-  return (0, import_jsx_runtime.jsx)(
-    "span",
-    { className: t.filter((e) => "string" == typeof e && e.length > 0).join(" "), children: e },
-    takeKey(),
-  );
-}
-var color = (e, t) => ["color", t],
-  fontSize = (e, t) => ["fontSize", t],
-  fontWeight = (e, t) => ["fontWeight", t],
-  textDecoration = (e, t) => ["textDecoration", t],
-  bold = (e) => ["fontWeight", "bold"];
-function colorLegacy(e, t) {
-  const n = takeKey();
-  return legacyColors.has(String(t))
-    ? (0, import_jsx_runtime.jsx)(
-        "span",
-        { className: `FormatText_colorLegacy__${t}`, children: e },
-        n,
-      )
-    : (0, import_jsx_runtime.jsx)("span", { style: { color: `#${t}` }, children: e }, n);
-}
-var defaultFormatters = {
-  class: className,
-  colorLegacy: colorLegacy,
-  bold: bold,
-  split: split,
-  style: style,
-  color: color,
-  fontSize: fontSize,
-  fontWeight: fontWeight,
-  textDecoration: textDecoration,
-};
-function applyFunction(e, t, n, r) {
-  const a = n.map((t) => {
-      if ("string" != typeof t) return t;
-      const n = t.trim();
-      if (n.startsWith("(") && n.endsWith(")")) {
-        const [t, ...a] = n.slice(1, -1).split(" ");
-        return t ? applyFunction(e, t, a, r) : e;
-      }
-      return n.startsWith("'") && n.endsWith("'") ? n.slice(1, -1) : n;
-    }),
-    o = r[t];
-  return o ? o(e, ...a) : (console.error(`Function ${t} is not registered`), e);
-}
-function applyFunctions(e, t, n) {
-  return e.reduce((e, t) => {
-    const [r, ...a] = parseArguments(t.trim());
-    return r ? applyFunction(e, r, a, n) : e;
-  }, t);
-}
-function isEnd(e) {
-  return !((e >= "a" && e <= "z") || (e >= "A" && e <= "Z") || (e >= "0" && e <= "9") || "_" === e);
-}
-function resolveAttrParams(e, t) {
-  for (let n = 0; n < e.length; n++)
-    if ("$" === e[n]) {
-      let r = n + 1;
-      for (; r < e.length && !isEnd(e[r]);) r++;
-      const a = e.slice(n + 1, r),
-        o = t[a];
-      if (o) return resolveAttrParams(e.replace(`$${a}`, String(o)), t);
-    }
-  return e;
-}
-function resolveAttrsParams(e, t) {
-  const n = [];
-  for (let r = 0; r < e.length; r++) n[r] = resolveAttrParams(e[r], t);
-  return n;
-}
-var primitives = ["number", "string", "undefined"];
-function render(e, t, n = {}, r = !0) {
-  r && (keyId = 0);
-  const a = [];
-  function o(e) {
-    if (primitives.includes(typeof e)) {
-      const t = a.at(-1);
-      if ("string" == typeof t) return void (a[a.length - 1] = t + e);
-    }
-    a.push(e);
-  }
-  for (const i of e)
-    if (i.type === NodeTypes.Text) o(i.value);
-    else if (i.type === NodeTypes.Var)
-      null === n[i.name] || primitives.includes(typeof n[i.name])
-        ? o(n[i.name] ?? `{{${i.name}}}`)
-        : a.push(
-            (0, import_jsx_runtime.jsx)(
-              import_react.Fragment,
-              { children: n[i.name] },
-              `var-${i.name}-${i.instanceId}`,
-            ),
-          );
-    else if (i.type === NodeTypes.Tag) {
-      const e = render(i.children, t, n, !1),
-        r = applyFunctions(resolveAttrsParams(i.attrs, n), e, t);
-      a.push(r);
-    }
-  return a;
-}
-function upgradeColorTag(e) {
-  return e
-    .replace(
-      /%\(([a-zA-Z0-9]+)_(Open|Start)\)s(.+?)%\(\1_(Close|End)\)s/,
-      "{{@ colorLegacy '$1'}}$3{{/}}",
-    )
-    .replace(
-      /\{([a-zA-Z0-9]+)_(Open|Start)\}(.+?)\{\1_(Close|End)\}/gi,
-      "{{@ colorLegacy '$1'}}$3{{/}}",
-    );
-}
-function upgradeVariables(e) {
-  return e.replace(/%\((\w+|\d)\)(?:s|d)?/gi, "{{$1}}").replace(/(?<!\{)\{(\w+|\d)\}/g, "{{$1}}");
-}
-function upgradeSymbols(e) {
-  return e.replaceAll("&nbsp;", " ").replaceAll("&zwnbsp;", "\ufeff");
-}
-function upgradeLegacy(e) {
-  return pipe$1(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
-}
-var defaultBrackets = { start: "{{", end: "}}" },
-  FormatText = (0, import_react.memo)(function (e) {
-    const {
-        brackets: t = defaultBrackets,
-        text: n,
-        params: r,
-        upgradeLegacy: a,
-        fullSize: o,
-        inline: i,
-        formatters: s,
-        split: u,
-        ...l
-      } = e,
-      c = (0, import_react.useMemo)(
-        () => (e.upgradeLegacy ? upgradeLegacy(e.text) : e.text),
-        [e.text, e.upgradeLegacy],
-      ),
-      d = (0, import_react.useMemo)(
-        () => (e.formatters ? { ...defaultFormatters, ...e.formatters } : defaultFormatters),
-        [e.formatters],
-      ),
-      f = (0, import_react.useMemo)(() => parse$1(u ? `{{@ split}}${c}{{/}}` : c, t), [t, c, u]),
-      p = (0, import_react.useMemo)(() => render(f, d, e.params), [f, d, e.params]),
-      m = clsx(
-        format_text_module_default.base,
-        o && format_text_module_default.base__fullSize,
-        l.className,
-      );
-    return e.inline
-      ? (console.warn(
-          "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
-          "Use 'split' prop instead.",
-        ),
-        (0, import_jsx_runtime.jsx)("p", {
-          ...l,
-          className: m,
-          ref: (e) => {
-            e?.setAttribute("cohinline", "true");
-          },
-          children: p,
-        }))
-      : (0, import_jsx_runtime.jsx)("span", { ...l, className: m, children: p });
-  });
-function FormatString({ path: e, ...t }) {
-  return (0, import_jsx_runtime.jsx)(FormatText, {
-    text: resources.resolve("strings").readOrEmpty(e),
-    ...t,
-  });
-}
-function FormatPluralString({ path: e, count: t, ...n }) {
-  return (0, import_jsx_runtime.jsx)(FormatText, {
-    text: resources.resolve("strings").pluralOrEmpty(e, t),
-    ...n,
-  });
-}
-function isSerializableReactNode(e) {
-  return (
-    !(null != e && !["string", "number", "boolean"].includes(typeof e)) ||
-    (!(0, import_react.isValidElement)(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
-  );
-}
-var base$44 = "MultilineOverflow_ec9f8e47",
-  content$9 = "MultilineOverflow_content_b539970d",
-  multiline_overflow_module_default = { base: base$44, content: content$9 };
-function isSerializableParams(e) {
-  return !e || Object.values(e).every(isSerializableReactNode);
-}
-function cloneNode(e) {
-  return e instanceof HTMLElement
-    ? e.cloneNode(!0)
-    : e.nodeType === Node.TEXT_NODE
-      ? document.createTextNode(e.nodeValue ?? "")
-      : void 0;
-}
-var MultilineOverflow = (0, import_react.forwardRef)(function (
-  {
-    text: e,
-    brackets: t,
-    params: n,
-    formatters: r,
-    upgradeLegacy: a,
-    split: o = !0,
-    onMouseEnter: i,
-    onMouseLeave: s,
-    onClick: u,
-    tooltipDisabled: l = !1,
-    tooltip: c,
-    className: d,
-    classNames: f,
-    style: p,
-    styleBase: m,
-    styleText: _,
-    ...h
-  },
-  g,
-) {
-  const b = (0, import_react.useRef)(null),
-    v = (0, import_react.useRef)(null),
-    [y, E] = (0, import_react.useState)(!1);
-  (0, import_react.useEffect)(() => {
-    if (0 === e.length) return;
-    const t = b.current,
-      n = v.current;
-    if (!t || !n) return;
-    const r = document.createElement("div");
-    function a() {
-      if (!t || !n) return;
-      const e = t.children[0];
-      if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-      (r.remove(),
-        (r.className = clsx(multiline_overflow_module_default.content, t.children[0].className)),
-        (r.innerHTML = ""),
-        e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
-      const a = e.childNodes.length - 1;
-      let o = a;
-      for (; o >= 0; o--) {
-        const n = e.childNodes[o];
-        if (n instanceof HTMLElement && !(n.offsetTop + n.offsetHeight > t.clientHeight)) break;
-      }
-      if (o === a) E(!1);
-      else {
-        E(!0);
-        const a = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-        for (
-          r.style.visibility = "", r.style.left = `${a.x}px`, r.style.top = `${a.y}px`;
-          o >= 0;
-          o--
-        ) {
-          const t = e.childNodes[o];
-          if (
-            t instanceof HTMLElement &&
-            !(t.offsetLeft + t.offsetWidth + n.offsetWidth > e.clientWidth)
-          )
-            break;
-        }
-        for (let t = 0; t <= o; t++) {
-          const n = e.childNodes[t];
-          if (!(n instanceof HTMLElement)) continue;
-          const a = cloneNode(n);
-          a ? r.appendChild(a) : console.warn("Unexpected type of target node", n);
-        }
-        const i = n.cloneNode(!0);
-        (i.removeAttribute("style"), r.appendChild(i), t.appendChild(r));
-      }
-    }
-    const o = new ResizeObserver(a);
+var RewardType$1 = (function (e) {
     return (
-      o.observe(t),
-      new DisposeBuilder()
-        .add(addEventListener(window, "resize", a))
-        .add(o.disconnect.bind(o))
-        .add(r.remove.bind(r)).dispose
+      (e.Items = "items"),
+      (e.Equipment = "equipment"),
+      (e.Xp = "xp"),
+      (e.XpFactor = "xpFactor"),
+      (e.Blueprints = "blueprints"),
+      (e.BlueprintsAny = "blueprintsAny"),
+      (e.Goodies = "goodies"),
+      (e.Berths = "berths"),
+      (e.Slots = "slots"),
+      (e.Tokens = "tokens"),
+      (e.CrewSkins = "crewSkins"),
+      (e.CrewBooks = "crewBooks"),
+      (e.Customizations = "customizations"),
+      (e.CreditsFactor = "creditsFactor"),
+      (e.Tankman = "tankman"),
+      (e.Tankwoman = "tankwoman"),
+      (e.TankmenXp = "tankmenXP"),
+      (e.TankmenXpFactor = "tankmenXPFactor"),
+      (e.FreeXpFactor = "freeXPFactor"),
+      (e.BattleToken = "battleToken"),
+      (e.PremiumUniversal = "premium_universal"),
+      (e.Gold = "gold"),
+      (e.Credits = "credits"),
+      (e.Crystal = "crystal"),
+      (e.FreeXp = "freeXP"),
+      (e.Premium = "premium"),
+      (e.PremiumPlus = "premium_plus"),
+      (e.BattlePassPoints = "battlePassPoints"),
+      (e.BattlePassSelectToken = "battlePassSelectToken"),
+      (e.BattlePassTicket = "lootBox_commonTicket"),
+      (e.BattlePassTaler = "bptaler"),
+      (e.StyleProgressToken = "styleProgressToken"),
+      (e.TmanToken = "tmanToken"),
+      (e.NaturalCover = "naturalCover"),
+      (e.BpCoin = "bpcoin"),
+      (e.BattlaPassFinalAchievement = "dossier_achievement"),
+      (e.BattleBadge = "dossier_badge"),
+      (e.BonusX5 = "battle_bonus_x5"),
+      (e.CrewBonusX3 = "crew_bonus_x3"),
+      (e.Vehicles = "vehicles"),
+      (e.EpicSelectToken = "epicSelectToken"),
+      (e.Comp7TokenWeeklyReward = "comp7TokenWeeklyReward"),
+      (e.DeluxeGift = "deluxe_gift"),
+      (e.BattleBoosterGift = "battleBooster_gift"),
+      (e.ModernizedDevicesT1Gift = "modernized_devices_t1_gift"),
+      (e.ModernizedDevicesT2Gift = "modernized_devices_t2_gift"),
+      (e.ModernizedDevicesT3Gift = "modernized_devices_t3_gift"),
+      (e.OptionalDevice = "optionalDevice"),
+      (e.EquipCoin = "equipCoin"),
+      (e.LootBox = "lootBox"),
+      (e.BrCoin = "brcoin"),
+      (e.Attachment = "attachment"),
+      (e.Pet = "pet"),
+      e
     );
-  }, [g, e]);
-  const S = isSerializableParams(n),
-    A = useParamTooltip(
-      "format_text",
-      (0, import_react.useMemo)(
-        () => ({
-          text: e,
-          params: S ? n : void 0,
-          split: o,
-          upgradeLegacy: a,
-          brackets: t,
-          resId: resources.resolve("views").read((e) => e.mono.tooltips.tooltips("resId")),
-        }),
-        [e, t, o, a, n, S],
-      ),
-    ),
-    x = c ?? A;
-  if (
-    ((0, import_react.useEffect)(() => {
-      l || y || x.onMouseLeave();
-    }, [y, x, c, l, S]),
-    0 === e.length)
-  )
-    return null;
-  return (0, import_jsx_runtime.jsxs)("div", {
-    ...h,
-    onMouseEnter: function (e) {
-      (i?.(e), y && !l && x.onMouseEnter(e));
-    },
-    onClick: function (e) {
-      (u?.(e), l || x.onClick());
-    },
-    onMouseLeave: function (e) {
-      (s?.(e), l || x.onMouseLeave());
-    },
-    ref: assignRefs([g, b]),
-    className: clsx(multiline_overflow_module_default.base, d, f?.base),
-    style: { ...p, ...m },
-    children: [
-      (0, import_jsx_runtime.jsx)(FormatText, {
-        text: e,
-        brackets: t,
-        params: n,
-        upgradeLegacy: a,
-        split: o,
-        formatters: r,
-        className: f?.text,
-        style: { ..._, visibility: y ? "hidden" : void 0 },
-      }),
-      (0, import_jsx_runtime.jsx)("div", {
-        ref: v,
-        style: { visibility: "hidden", position: "absolute" },
-        children: "...",
-      }),
-    ],
-  });
-});
-function FormatTextSplited({ className: e, ...t }) {
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: e,
-    children: t.text
-      .split("\n")
-      .map((e) => (0, import_jsx_runtime.jsx)(FormatText, { ...t, text: e }, e)),
-  });
-}
-function ExtendedText(e) {
-  return (
-    void 0 !== e.onSizeChanged &&
-      console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
-    void 0 !== e.targetId &&
-      console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'),
-    (0, import_jsx_runtime.jsx)(
-      e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited,
-      {
-        split: e.split ?? !0,
-        text: e.text,
-        params: e.binding,
-        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
-        upgradeLegacy: !0,
-        className: clsx(e.className, e.classMix),
-      },
-    )
-  );
-}
-var getFromCallStack = (e = 1) => {
-    const t = new Error().stack;
-    let n,
-      r = R.invalid("resId"),
-      a = "";
+  })({}),
+  ImageSize$1 = (function (e) {
     return (
-      t &&
-        ((a = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
-        (n = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
-        window.__feature &&
-          window.__feature !== n &&
-          window.subViews[n] &&
-          (r = window.subViews[n].id)),
-      { callerUrl: a, caller: n, stack: t, resId: r }
+      (e.Big = "big"),
+      (e.Small = "small"),
+      (e.Mini = "mini"),
+      (e.S600x450 = "s600x450"),
+      (e.S400x300 = "s400x300"),
+      (e.S296x222 = "s296x222"),
+      (e.S232x174 = "s232x174"),
+      (e.S180x135 = "s180x135"),
+      (e.S128x100 = "s128x100"),
+      (e.S80x80 = "s80x80"),
+      (e.S64x64 = "s64x64"),
+      (e.S48x48 = "s48x48"),
+      e
     );
-  },
+  })({}),
+  ValueTypes$1 = (function (e) {
+    return (
+      (e.MULTI = "multi"),
+      (e.CURRENCY = "currency"),
+      (e.PREMIUM_PLUS = "premium_plus"),
+      (e.NUMBER = "number"),
+      (e.STRING = "string"),
+      e
+    );
+  })({}),
+  Specials$1 = (function (e) {
+    return (
+      (e.ATTACHMENT_RARE = "rare"),
+      (e.ATTACHMENT_EPIC = "epic"),
+      (e.ATTACHMENT_LEGENDARY = "legendary"),
+      (e.BATTLE_BOOSTER = "battleBooster"),
+      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+      (e.EQUIPMENT_PLUS = "equipmentPlus"),
+      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
+      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
+      e
+    );
+  })({}),
+  HighlightClasses$1 = (function (e) {
+    return ((e.BATTLE_BOOSTER = "battleBooster"), e);
+  })({}),
+  OverlayClasses$1 = (function (e) {
+    return (
+      (e.ATTACHMENT_RARE = "rare"),
+      (e.ATTACHMENT_EPIC = "epic"),
+      (e.ATTACHMENT_LEGENDARY = "legendary"),
+      (e.BATTLE_BOOSTER = "battleBooster"),
+      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+      (e.EQUIPMENT_PLUS = "equipmentPlus"),
+      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
+      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
+      e
+    );
+  })({}),
+  NORMALIZE_OVERLAYS_LIST = ["attachment"],
   ClickOutsideManager$1 = class e {
     entries = [];
     _listenMouse = !1;
@@ -28288,289 +27907,10 @@ var SystemLocale = {
     SystemLocale: SystemLocale,
     UserLocale: UserLocale,
   };
-window.ViewEnvHelper = ViewEnvHelper;
-var SHOW_DELAY_MIN = 100,
-  SHOW_DELAY_DEFAULT = 400;
-function getViewEventArguments(e) {
-  return Object.entries(e || {}).map(([e, t]) => {
-    const n = { __Type: "GFValueProxy", name: e };
-    switch (typeof t) {
-      case "number":
-        n.number = t;
-        break;
-      case "boolean":
-        n.bool = t;
-        break;
-      case "undefined":
-        break;
-      default:
-        n.string = t.toString();
-    }
-    return n;
-  });
-}
-var handleViewEvent = (e, t, n = {}, r = 0) => {
-    viewEnv.handleViewEvent({
-      __Type: "GFViewEventProxy",
-      type: ViewEventType.TOOLTIP,
-      contentID: e,
-      decoratorID: t,
-      targetID: r,
-      ...n,
-    });
-  },
-  Tooltip$2 = ({
-    children: e,
-    contentId: t,
-    args: n,
-    onMouseEnter: r,
-    onMouseLeave: a,
-    onMouseDown: o,
-    onClick: i,
-    ignoreShowDelay: s = !1,
-    ignoreMouseClick: u = !1,
-    decoratorId: l = 0,
-    isEnabled: c = !0,
-    targetId: d = 0,
-    onShow: f,
-    onHide: p,
-    ...m
-  }) => {
-    const _ = (0, import_react.useRef)({
-        timeoutId: 0,
-        isVisible: !1,
-        prevTarget: null,
-        hideTimerId: null,
-      }),
-      h = (0, import_react.useMemo)(() => d || getFromCallStack().resId, [d]),
-      g = (0, import_react.useCallback)(() => {
-        (_.current.isVisible && _.current.timeoutId) ||
-          (handleViewEvent(
-            t,
-            l,
-            { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(n) },
-            h,
-          ),
-          f && f(),
-          (_.current.isVisible = !0));
-      }, [t, l, n, h, f]),
-      b = (0, import_react.useCallback)(() => {
-        if (_.current.isVisible || _.current.timeoutId) {
-          const e = _.current.timeoutId;
-          (e > 0 && (clearTimeout(e), (_.current.timeoutId = 0)),
-            handleViewEvent(t, l, { on: !1 }, h),
-            _.current.isVisible && p && p(),
-            (_.current.isVisible = !1));
-        }
-      }, [t, l, h, p]),
-      v = (0, import_react.useCallback)((e) => {
-        _.current.isVisible &&
-          ((_.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-          (_.current.hideTimerId = window.setTimeout(() => {
-            const t = document.elementFromPoint(e.clientX, e.clientY);
-            t && !t.isSameNode(_.current.prevTarget) && b();
-          }, 200)));
-      }, []);
-    ((0, import_react.useEffect)(() => {
-      const e = _.current.hideTimerId;
-      return (
-        document.addEventListener("wheel", v, { capture: !0 }),
-        () => {
-          (document.removeEventListener("wheel", v, { capture: !0 }), e && window.clearTimeout(e));
-        }
-      );
-    }, []),
-      (0, import_react.useEffect)(() => {
-        !1 === c && b();
-      }, [c, b]),
-      (0, import_react.useEffect)(
-        () => (
-          window.addEventListener("mouseleave", b),
-          () => {
-            (window.removeEventListener("mouseleave", b), b());
-          }
-        ),
-        [b],
-      ));
-    return c
-      ? (0, import_react.cloneElement)(e, {
-          onMouseEnter:
-            ((y = e.props.onMouseEnter),
-            (e) => {
-              (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                (clearTimeout(_.current.timeoutId),
-                (_.current.timeoutId = window.setTimeout(
-                  g,
-                  s ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT,
-                )),
-                r && r(e),
-                y && y(e));
-            }),
-          onMouseLeave: ((e) => (t) => {
-            (b(), a?.(t), e?.(t));
-          })(e.props.onMouseLeave),
-          onClick: ((e) => (t) => {
-            (!1 === u && b(), i?.(t), e?.(t));
-          })(e.props.onClick),
-          onMouseDown: ((e) => (t) => {
-            (!1 === u && b(), o?.(t), e?.(t));
-          })(e.props.onMouseDown),
-          ...m,
-        })
-      : e;
-    var y;
-  },
-  LIGHT_TANK = "lightTank",
-  MEDIUM_TANK = "mediumTank",
-  HEAVY_TANK = "heavyTank",
-  AT_SPG = "AT-SPG",
-  PREMIUM_IGR_TAG = "premiumIGR",
-  Alignment = (function (e) {
-    return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
-  })({}),
-  THAI_LANGUAGE_CODE = "th",
-  SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"],
-  IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(
-    R.strings.settings.LANGUAGE_CODE().toLowerCase(),
-  ),
-  RewardType$1 = (function (e) {
-    return (
-      (e.Items = "items"),
-      (e.Equipment = "equipment"),
-      (e.Xp = "xp"),
-      (e.XpFactor = "xpFactor"),
-      (e.Blueprints = "blueprints"),
-      (e.BlueprintsAny = "blueprintsAny"),
-      (e.Goodies = "goodies"),
-      (e.Berths = "berths"),
-      (e.Slots = "slots"),
-      (e.Tokens = "tokens"),
-      (e.CrewSkins = "crewSkins"),
-      (e.CrewBooks = "crewBooks"),
-      (e.Customizations = "customizations"),
-      (e.CreditsFactor = "creditsFactor"),
-      (e.Tankman = "tankman"),
-      (e.Tankwoman = "tankwoman"),
-      (e.TankmenXp = "tankmenXP"),
-      (e.TankmenXpFactor = "tankmenXPFactor"),
-      (e.FreeXpFactor = "freeXPFactor"),
-      (e.BattleToken = "battleToken"),
-      (e.PremiumUniversal = "premium_universal"),
-      (e.Gold = "gold"),
-      (e.Credits = "credits"),
-      (e.Crystal = "crystal"),
-      (e.FreeXp = "freeXP"),
-      (e.Premium = "premium"),
-      (e.PremiumPlus = "premium_plus"),
-      (e.BattlePassPoints = "battlePassPoints"),
-      (e.BattlePassSelectToken = "battlePassSelectToken"),
-      (e.BattlePassTicket = "lootBox_commonTicket"),
-      (e.BattlePassTaler = "bptaler"),
-      (e.StyleProgressToken = "styleProgressToken"),
-      (e.TmanToken = "tmanToken"),
-      (e.NaturalCover = "naturalCover"),
-      (e.BpCoin = "bpcoin"),
-      (e.BattlaPassFinalAchievement = "dossier_achievement"),
-      (e.BattleBadge = "dossier_badge"),
-      (e.BonusX5 = "battle_bonus_x5"),
-      (e.CrewBonusX3 = "crew_bonus_x3"),
-      (e.Vehicles = "vehicles"),
-      (e.EpicSelectToken = "epicSelectToken"),
-      (e.Comp7TokenWeeklyReward = "comp7TokenWeeklyReward"),
-      (e.DeluxeGift = "deluxe_gift"),
-      (e.BattleBoosterGift = "battleBooster_gift"),
-      (e.ModernizedDevicesT1Gift = "modernized_devices_t1_gift"),
-      (e.ModernizedDevicesT2Gift = "modernized_devices_t2_gift"),
-      (e.ModernizedDevicesT3Gift = "modernized_devices_t3_gift"),
-      (e.OptionalDevice = "optionalDevice"),
-      (e.EquipCoin = "equipCoin"),
-      (e.LootBox = "lootBox"),
-      (e.BrCoin = "brcoin"),
-      (e.Attachment = "attachment"),
-      (e.Pet = "pet"),
-      e
-    );
-  })({}),
-  ImageSize$1 = (function (e) {
-    return (
-      (e.Big = "big"),
-      (e.Small = "small"),
-      (e.Mini = "mini"),
-      (e.S600x450 = "s600x450"),
-      (e.S400x300 = "s400x300"),
-      (e.S296x222 = "s296x222"),
-      (e.S232x174 = "s232x174"),
-      (e.S180x135 = "s180x135"),
-      (e.S128x100 = "s128x100"),
-      (e.S80x80 = "s80x80"),
-      (e.S64x64 = "s64x64"),
-      (e.S48x48 = "s48x48"),
-      e
-    );
-  })({}),
-  ValueTypes$1 = (function (e) {
-    return (
-      (e.MULTI = "multi"),
-      (e.CURRENCY = "currency"),
-      (e.PREMIUM_PLUS = "premium_plus"),
-      (e.NUMBER = "number"),
-      (e.STRING = "string"),
-      e
-    );
-  })({}),
-  Specials$1 = (function (e) {
-    return (
-      (e.ATTACHMENT_RARE = "rare"),
-      (e.ATTACHMENT_EPIC = "epic"),
-      (e.ATTACHMENT_LEGENDARY = "legendary"),
-      (e.BATTLE_BOOSTER = "battleBooster"),
-      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-      (e.EQUIPMENT_PLUS = "equipmentPlus"),
-      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
-      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
-      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
-      e
-    );
-  })({}),
-  HighlightClasses$1 = (function (e) {
-    return ((e.BATTLE_BOOSTER = "battleBooster"), e);
-  })({}),
-  OverlayClasses$1 = (function (e) {
-    return (
-      (e.ATTACHMENT_RARE = "rare"),
-      (e.ATTACHMENT_EPIC = "epic"),
-      (e.ATTACHMENT_LEGENDARY = "legendary"),
-      (e.BATTLE_BOOSTER = "battleBooster"),
-      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-      (e.EQUIPMENT_PLUS = "equipmentPlus"),
-      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
-      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
-      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
-      e
-    );
-  })({}),
-  NORMALIZE_OVERLAYS_LIST = ["attachment"];
 function getNumberFormatType(e) {
   return "gold" === e ? NumberFormatType.GOLD : NumberFormatType.INTEGRAL;
 }
+window.ViewEnvHelper = ViewEnvHelper;
 var FormatNumber = ({ value: e, format: t = "integral" }) => {
     const n = getNumberFormatType(t),
       r = SystemLocale.getNumberFormat(e, n);
@@ -29150,7 +28490,515 @@ var FormatNumber = ({ value: e, format: t = "integral" }) => {
       const n = 0 === e.indexOf("%") ? 2 : 1;
       return String(t[e.slice(n, -n)]);
     }),
-  base__s24x24 = "Reward_base__s24x24_954b5cee",
+  Alignment = (function (e) {
+    return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
+  })({}),
+  THAI_LANGUAGE_CODE = "th",
+  SPLIT_BY_SYMBOL_LANGUAGE_CODES = ["zh_cn", "zh_sg", "zh_tw", "ja", "th"],
+  IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(
+    R.strings.settings.LANGUAGE_CODE().toLowerCase(),
+  ),
+  NodeTypes = { Text: 1, Tag: 2, Var: 3 };
+function parseArguments(e) {
+  const t = [];
+  let n = "",
+    r = !1,
+    a = !1,
+    o = "";
+  for (let i = 0; i < e.length; i++) {
+    const s = e[i];
+    ("'" !== s && '"' !== s) || a || r
+      ? s === o && a
+        ? ((a = !1), (n += s))
+        : "(" !== s || a
+          ? ")" === s && r && !a
+            ? ((r = !1), (n += s))
+            : " " !== s || r || a
+              ? (n += s)
+              : n && (t.push(n), (n = ""))
+          : ((r = !0), (n += s))
+      : ((a = !0), (o = s), (n += s));
+  }
+  return (n && t.push(n), t);
+}
+function parse$1(e, t) {
+  const n = [],
+    r = [];
+  let a = "",
+    o = !1,
+    i = "",
+    s = 0;
+  for (let u = 0; u < e.length; u++) {
+    const l = e[u];
+    if (l === t.start[0] && e.slice(u, u + t.start.length) === t.start)
+      (a &&
+        (r.length > 0
+          ? r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: a })
+          : n.push({ type: NodeTypes.Text, value: a }),
+        (a = "")),
+        (o = !0),
+        (u += t.start.length - 1));
+    else if (l === t.end[0] && e.slice(u, u + t.end.length) === t.end) {
+      ((o = !1), (u += t.end.length - 1));
+      const e = i.trim();
+      if (e.startsWith("@")) {
+        const t = e.slice(1).trim(),
+          a = { type: NodeTypes.Tag, attrs: t.split("|"), instanceId: ++s, children: [] };
+        (r.length > 0 ? r[r.length - 1].node.children.push(a) : n.push(a),
+          r.push({ node: a, startIndex: n.length }));
+      } else if ("/" === e) r.length > 0 && r.pop();
+      else {
+        const t = { type: NodeTypes.Var, instanceId: ++s, name: e };
+        r.length > 0 ? r[r.length - 1].node.children.push(t) : n.push(t);
+      }
+      i = "";
+    } else o ? (i += l) : (a += l);
+  }
+  return (
+    a &&
+      (r.length
+        ? r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: a })
+        : n.push({ type: NodeTypes.Text, value: a })),
+    n
+  );
+}
+var COLORS =
+    "blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom",
+  base$45 = "FormatText_db904f12",
+  base__fullSize = "FormatText_base__fullSize_a514958e",
+  nowrap = "FormatText_nowrap_ff69eca3",
+  format_text_module_default = {
+    COLORS: COLORS,
+    base: base$45,
+    base__fullSize: base__fullSize,
+    nowrap: nowrap,
+  },
+  legacyColors = new Set(format_text_module_default.COLORS?.split(", ") ?? []),
+  keyId = 0;
+function takeKey() {
+  return ++keyId;
+}
+var startsWithPunctuationRe =
+  /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u0E00-\u0E7F\u3000-\u303F\uFF00-\uFFEF\]]/u;
+function splitString(e) {
+  const t = resources.resolve("langCode");
+  return addSpaceAndMap(
+    splitLocale(e, t),
+    t,
+    (e, t) => e && (0, import_jsx_runtime.jsx)("span", { children: e }, `${e}${t}`),
+  );
+}
+function splitArray(e) {
+  const t = [];
+  for (let n = 0; n < e.length; n++) {
+    const r = e[n],
+      a = e[n + 1];
+    if ("string" != typeof a || !startsWithPunctuationRe.test(a)) {
+      t.push(split(r));
+      continue;
+    }
+    const o = splitString(a.slice(1));
+    (t.push(
+      (0, import_jsx_runtime.jsxs)(
+        import_react.Fragment,
+        {
+          children: [
+            (0, import_jsx_runtime.jsxs)("span", {
+              className: format_text_module_default.nowrap,
+              children: [split(r), a[0]],
+            }),
+            o,
+          ],
+        },
+        takeKey(),
+      ),
+    ),
+      (n += 1));
+  }
+  return t;
+}
+function split(e) {
+  return Array.isArray(e)
+    ? splitArray(e)
+    : "string" == typeof e
+      ? (0, import_jsx_runtime.jsx)(import_react.Fragment, { children: splitString(e) }, takeKey())
+      : e;
+}
+function style(e, ...t) {
+  return (0, import_jsx_runtime.jsx)(
+    "span",
+    {
+      style: t.reduce((n, r) => {
+        if (Array.isArray(r)) {
+          const [e, t] = r;
+          return ((n[e] = t), n);
+        }
+        return (console.warn(`Invalid argument ${r} in ${e}: ${t}`), n);
+      }, {}),
+      children: e,
+    },
+    takeKey(),
+  );
+}
+function className(e, ...t) {
+  return (0, import_jsx_runtime.jsx)(
+    "span",
+    { className: t.filter((e) => "string" == typeof e && e.length > 0).join(" "), children: e },
+    takeKey(),
+  );
+}
+var color = (e, t) => ["color", t],
+  fontSize = (e, t) => ["fontSize", t],
+  fontWeight = (e, t) => ["fontWeight", t],
+  textDecoration = (e, t) => ["textDecoration", t],
+  bold = (e) => ["fontWeight", "bold"];
+function colorLegacy(e, t) {
+  const n = takeKey();
+  return legacyColors.has(String(t))
+    ? (0, import_jsx_runtime.jsx)(
+        "span",
+        { className: `FormatText_colorLegacy__${t}`, children: e },
+        n,
+      )
+    : (0, import_jsx_runtime.jsx)("span", { style: { color: `#${t}` }, children: e }, n);
+}
+var defaultFormatters = {
+  class: className,
+  colorLegacy: colorLegacy,
+  bold: bold,
+  split: split,
+  style: style,
+  color: color,
+  fontSize: fontSize,
+  fontWeight: fontWeight,
+  textDecoration: textDecoration,
+};
+function applyFunction(e, t, n, r) {
+  const a = n.map((t) => {
+      if ("string" != typeof t) return t;
+      const n = t.trim();
+      if (n.startsWith("(") && n.endsWith(")")) {
+        const [t, ...a] = n.slice(1, -1).split(" ");
+        return t ? applyFunction(e, t, a, r) : e;
+      }
+      return n.startsWith("'") && n.endsWith("'") ? n.slice(1, -1) : n;
+    }),
+    o = r[t];
+  return o ? o(e, ...a) : (console.error(`Function ${t} is not registered`), e);
+}
+function applyFunctions(e, t, n) {
+  return e.reduce((e, t) => {
+    const [r, ...a] = parseArguments(t.trim());
+    return r ? applyFunction(e, r, a, n) : e;
+  }, t);
+}
+function isEnd(e) {
+  return !((e >= "a" && e <= "z") || (e >= "A" && e <= "Z") || (e >= "0" && e <= "9") || "_" === e);
+}
+function resolveAttrParams(e, t) {
+  for (let n = 0; n < e.length; n++)
+    if ("$" === e[n]) {
+      let r = n + 1;
+      for (; r < e.length && !isEnd(e[r]);) r++;
+      const a = e.slice(n + 1, r),
+        o = t[a];
+      if (o) return resolveAttrParams(e.replace(`$${a}`, String(o)), t);
+    }
+  return e;
+}
+function resolveAttrsParams(e, t) {
+  const n = [];
+  for (let r = 0; r < e.length; r++) n[r] = resolveAttrParams(e[r], t);
+  return n;
+}
+var primitives = ["number", "string", "undefined"];
+function render(e, t, n = {}, r = !0) {
+  r && (keyId = 0);
+  const a = [];
+  function o(e) {
+    if (primitives.includes(typeof e)) {
+      const t = a.at(-1);
+      if ("string" == typeof t) return void (a[a.length - 1] = t + e);
+    }
+    a.push(e);
+  }
+  for (const i of e)
+    if (i.type === NodeTypes.Text) o(i.value);
+    else if (i.type === NodeTypes.Var)
+      null === n[i.name] || primitives.includes(typeof n[i.name])
+        ? o(n[i.name] ?? `{{${i.name}}}`)
+        : a.push(
+            (0, import_jsx_runtime.jsx)(
+              import_react.Fragment,
+              { children: n[i.name] },
+              `var-${i.name}-${i.instanceId}`,
+            ),
+          );
+    else if (i.type === NodeTypes.Tag) {
+      const e = render(i.children, t, n, !1),
+        r = applyFunctions(resolveAttrsParams(i.attrs, n), e, t);
+      a.push(r);
+    }
+  return a;
+}
+function upgradeColorTag(e) {
+  return e
+    .replace(
+      /%\(([a-zA-Z0-9]+)_(Open|Start)\)s(.+?)%\(\1_(Close|End)\)s/,
+      "{{@ colorLegacy '$1'}}$3{{/}}",
+    )
+    .replace(
+      /\{([a-zA-Z0-9]+)_(Open|Start)\}(.+?)\{\1_(Close|End)\}/gi,
+      "{{@ colorLegacy '$1'}}$3{{/}}",
+    );
+}
+function upgradeVariables(e) {
+  return e.replace(/%\((\w+|\d)\)(?:s|d)?/gi, "{{$1}}").replace(/(?<!\{)\{(\w+|\d)\}/g, "{{$1}}");
+}
+function upgradeSymbols(e) {
+  return e.replaceAll("&nbsp;", " ").replaceAll("&zwnbsp;", "\ufeff");
+}
+function upgradeLegacy(e) {
+  return pipe$1(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
+}
+var defaultBrackets = { start: "{{", end: "}}" },
+  FormatText = (0, import_react.memo)(function (e) {
+    const {
+        brackets: t = defaultBrackets,
+        text: n,
+        params: r,
+        upgradeLegacy: a,
+        fullSize: o,
+        inline: i,
+        formatters: s,
+        split: u,
+        ...l
+      } = e,
+      c = (0, import_react.useMemo)(
+        () => (e.upgradeLegacy ? upgradeLegacy(e.text) : e.text),
+        [e.text, e.upgradeLegacy],
+      ),
+      d = (0, import_react.useMemo)(
+        () => (e.formatters ? { ...defaultFormatters, ...e.formatters } : defaultFormatters),
+        [e.formatters],
+      ),
+      f = (0, import_react.useMemo)(() => parse$1(u ? `{{@ split}}${c}{{/}}` : c, t), [t, c, u]),
+      p = (0, import_react.useMemo)(() => render(f, d, e.params), [f, d, e.params]),
+      m = clsx(
+        format_text_module_default.base,
+        o && format_text_module_default.base__fullSize,
+        l.className,
+      );
+    return e.inline
+      ? (console.warn(
+          "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
+          "Use 'split' prop instead.",
+        ),
+        (0, import_jsx_runtime.jsx)("p", {
+          ...l,
+          className: m,
+          ref: (e) => {
+            e?.setAttribute("cohinline", "true");
+          },
+          children: p,
+        }))
+      : (0, import_jsx_runtime.jsx)("span", { ...l, className: m, children: p });
+  });
+function FormatString({ path: e, ...t }) {
+  return (0, import_jsx_runtime.jsx)(FormatText, {
+    text: resources.resolve("strings").readOrEmpty(e),
+    ...t,
+  });
+}
+function FormatPluralString({ path: e, count: t, ...n }) {
+  return (0, import_jsx_runtime.jsx)(FormatText, {
+    text: resources.resolve("strings").pluralOrEmpty(e, t),
+    ...n,
+  });
+}
+function isSerializableReactNode(e) {
+  return (
+    !(null != e && !["string", "number", "boolean"].includes(typeof e)) ||
+    (!(0, import_react.isValidElement)(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
+  );
+}
+var base$44 = "MultilineOverflow_ec9f8e47",
+  content$9 = "MultilineOverflow_content_b539970d",
+  multiline_overflow_module_default = { base: base$44, content: content$9 };
+function isSerializableParams(e) {
+  return !e || Object.values(e).every(isSerializableReactNode);
+}
+function cloneNode(e) {
+  return e instanceof HTMLElement
+    ? e.cloneNode(!0)
+    : e.nodeType === Node.TEXT_NODE
+      ? document.createTextNode(e.nodeValue ?? "")
+      : void 0;
+}
+var MultilineOverflow = (0, import_react.forwardRef)(function (
+  {
+    text: e,
+    brackets: t,
+    params: n,
+    formatters: r,
+    upgradeLegacy: a,
+    split: o = !0,
+    onMouseEnter: i,
+    onMouseLeave: s,
+    onClick: u,
+    tooltipDisabled: l = !1,
+    tooltip: c,
+    className: d,
+    classNames: f,
+    style: p,
+    styleBase: m,
+    styleText: _,
+    ...h
+  },
+  g,
+) {
+  const b = (0, import_react.useRef)(null),
+    v = (0, import_react.useRef)(null),
+    [y, E] = (0, import_react.useState)(!1);
+  (0, import_react.useEffect)(() => {
+    if (0 === e.length) return;
+    const t = b.current,
+      n = v.current;
+    if (!t || !n) return;
+    const r = document.createElement("div");
+    function a() {
+      if (!t || !n) return;
+      const e = t.children[0];
+      if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
+      (r.remove(),
+        (r.className = clsx(multiline_overflow_module_default.content, t.children[0].className)),
+        (r.innerHTML = ""),
+        e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
+      const a = e.childNodes.length - 1;
+      let o = a;
+      for (; o >= 0; o--) {
+        const n = e.childNodes[o];
+        if (n instanceof HTMLElement && !(n.offsetTop + n.offsetHeight > t.clientHeight)) break;
+      }
+      if (o === a) E(!1);
+      else {
+        E(!0);
+        const a = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+        for (
+          r.style.visibility = "", r.style.left = `${a.x}px`, r.style.top = `${a.y}px`;
+          o >= 0;
+          o--
+        ) {
+          const t = e.childNodes[o];
+          if (
+            t instanceof HTMLElement &&
+            !(t.offsetLeft + t.offsetWidth + n.offsetWidth > e.clientWidth)
+          )
+            break;
+        }
+        for (let t = 0; t <= o; t++) {
+          const n = e.childNodes[t];
+          if (!(n instanceof HTMLElement)) continue;
+          const a = cloneNode(n);
+          a ? r.appendChild(a) : console.warn("Unexpected type of target node", n);
+        }
+        const i = n.cloneNode(!0);
+        (i.removeAttribute("style"), r.appendChild(i), t.appendChild(r));
+      }
+    }
+    const o = new ResizeObserver(a);
+    return (
+      o.observe(t),
+      new DisposeBuilder()
+        .add(addEventListener(window, "resize", a))
+        .add(o.disconnect.bind(o))
+        .add(r.remove.bind(r)).dispose
+    );
+  }, [g, e]);
+  const S = isSerializableParams(n),
+    A = useParamTooltip(
+      "format_text",
+      (0, import_react.useMemo)(
+        () => ({
+          text: e,
+          params: S ? n : void 0,
+          split: o,
+          upgradeLegacy: a,
+          brackets: t,
+          resId: resources.resolve("views").read((e) => e.mono.tooltips.tooltips("resId")),
+        }),
+        [e, t, o, a, n, S],
+      ),
+    ),
+    x = c ?? A;
+  if (
+    ((0, import_react.useEffect)(() => {
+      l || y || x.onMouseLeave();
+    }, [y, x, c, l, S]),
+    0 === e.length)
+  )
+    return null;
+  return (0, import_jsx_runtime.jsxs)("div", {
+    ...h,
+    onMouseEnter: function (e) {
+      (i?.(e), y && !l && x.onMouseEnter(e));
+    },
+    onClick: function (e) {
+      (u?.(e), l || x.onClick());
+    },
+    onMouseLeave: function (e) {
+      (s?.(e), l || x.onMouseLeave());
+    },
+    ref: assignRefs([g, b]),
+    className: clsx(multiline_overflow_module_default.base, d, f?.base),
+    style: { ...p, ...m },
+    children: [
+      (0, import_jsx_runtime.jsx)(FormatText, {
+        text: e,
+        brackets: t,
+        params: n,
+        upgradeLegacy: a,
+        split: o,
+        formatters: r,
+        className: f?.text,
+        style: { ..._, visibility: y ? "hidden" : void 0 },
+      }),
+      (0, import_jsx_runtime.jsx)("div", {
+        ref: v,
+        style: { visibility: "hidden", position: "absolute" },
+        children: "...",
+      }),
+    ],
+  });
+});
+function FormatTextSplited({ className: e, ...t }) {
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: e,
+    children: t.text
+      .split("\n")
+      .map((e) => (0, import_jsx_runtime.jsx)(FormatText, { ...t, text: e }, e)),
+  });
+}
+function ExtendedText(e) {
+  return (
+    void 0 !== e.onSizeChanged &&
+      console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
+    void 0 !== e.targetId &&
+      console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'),
+    (0, import_jsx_runtime.jsx)(
+      e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited,
+      {
+        split: e.split ?? !0,
+        text: e.text,
+        params: e.binding,
+        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
+        upgradeLegacy: !0,
+        className: clsx(e.className, e.classMix),
+      },
+    )
+  );
+}
+var base__s24x24 = "Reward_base__s24x24_954b5cee",
   base__s48x48$1 = "Reward_base__s48x48_21f091ec",
   base__small$3 = "Reward_base__small_3eddf28d",
   base__s80x80$1 = "Reward_base__s80x80_21f091ec",
@@ -29460,6 +29308,158 @@ var base$42 = "RewardsList_b956755b",
             ),
     });
   }),
+  getFromCallStack = (e = 1) => {
+    const t = new Error().stack;
+    let n,
+      r = R.invalid("resId"),
+      a = "";
+    return (
+      t &&
+        ((a = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ""),
+        (n = t.split("\n")[e].split(".js")[0].split("/").pop() || ""),
+        window.__feature &&
+          window.__feature !== n &&
+          window.subViews[n] &&
+          (r = window.subViews[n].id)),
+      { callerUrl: a, caller: n, stack: t, resId: r }
+    );
+  },
+  SHOW_DELAY_MIN = 100,
+  SHOW_DELAY_DEFAULT = 400;
+function getViewEventArguments(e) {
+  return Object.entries(e || {}).map(([e, t]) => {
+    const n = { __Type: "GFValueProxy", name: e };
+    switch (typeof t) {
+      case "number":
+        n.number = t;
+        break;
+      case "boolean":
+        n.bool = t;
+        break;
+      case "undefined":
+        break;
+      default:
+        n.string = t.toString();
+    }
+    return n;
+  });
+}
+var handleViewEvent = (e, t, n = {}, r = 0) => {
+    viewEnv.handleViewEvent({
+      __Type: "GFViewEventProxy",
+      type: ViewEventType.TOOLTIP,
+      contentID: e,
+      decoratorID: t,
+      targetID: r,
+      ...n,
+    });
+  },
+  Tooltip$2 = ({
+    children: e,
+    contentId: t,
+    args: n,
+    onMouseEnter: r,
+    onMouseLeave: a,
+    onMouseDown: o,
+    onClick: i,
+    ignoreShowDelay: s = !1,
+    ignoreMouseClick: u = !1,
+    decoratorId: l = 0,
+    isEnabled: c = !0,
+    targetId: d = 0,
+    onShow: f,
+    onHide: p,
+    ...m
+  }) => {
+    const _ = (0, import_react.useRef)({
+        timeoutId: 0,
+        isVisible: !1,
+        prevTarget: null,
+        hideTimerId: null,
+      }),
+      h = (0, import_react.useMemo)(() => d || getFromCallStack().resId, [d]),
+      g = (0, import_react.useCallback)(() => {
+        (_.current.isVisible && _.current.timeoutId) ||
+          (handleViewEvent(
+            t,
+            l,
+            { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(n) },
+            h,
+          ),
+          f && f(),
+          (_.current.isVisible = !0));
+      }, [t, l, n, h, f]),
+      b = (0, import_react.useCallback)(() => {
+        if (_.current.isVisible || _.current.timeoutId) {
+          const e = _.current.timeoutId;
+          (e > 0 && (clearTimeout(e), (_.current.timeoutId = 0)),
+            handleViewEvent(t, l, { on: !1 }, h),
+            _.current.isVisible && p && p(),
+            (_.current.isVisible = !1));
+        }
+      }, [t, l, h, p]),
+      v = (0, import_react.useCallback)((e) => {
+        _.current.isVisible &&
+          ((_.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+          (_.current.hideTimerId = window.setTimeout(() => {
+            const t = document.elementFromPoint(e.clientX, e.clientY);
+            t && !t.isSameNode(_.current.prevTarget) && b();
+          }, 200)));
+      }, []);
+    ((0, import_react.useEffect)(() => {
+      const e = _.current.hideTimerId;
+      return (
+        document.addEventListener("wheel", v, { capture: !0 }),
+        () => {
+          (document.removeEventListener("wheel", v, { capture: !0 }), e && window.clearTimeout(e));
+        }
+      );
+    }, []),
+      (0, import_react.useEffect)(() => {
+        !1 === c && b();
+      }, [c, b]),
+      (0, import_react.useEffect)(
+        () => (
+          window.addEventListener("mouseleave", b),
+          () => {
+            (window.removeEventListener("mouseleave", b), b());
+          }
+        ),
+        [b],
+      ));
+    return c
+      ? (0, import_react.cloneElement)(e, {
+          onMouseEnter:
+            ((y = e.props.onMouseEnter),
+            (e) => {
+              (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
+                (clearTimeout(_.current.timeoutId),
+                (_.current.timeoutId = window.setTimeout(
+                  g,
+                  s ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT,
+                )),
+                r && r(e),
+                y && y(e));
+            }),
+          onMouseLeave: ((e) => (t) => {
+            (b(), a?.(t), e?.(t));
+          })(e.props.onMouseLeave),
+          onClick: ((e) => (t) => {
+            (!1 === u && b(), i?.(t), e?.(t));
+          })(e.props.onClick),
+          onMouseDown: ((e) => (t) => {
+            (!1 === u && b(), o?.(t), e?.(t));
+          })(e.props.onMouseDown),
+          ...m,
+        })
+      : e;
+    var y;
+  },
+  LIGHT_TANK = "lightTank",
+  MEDIUM_TANK = "mediumTank",
+  HEAVY_TANK = "heavyTank",
+  AT_SPG = "AT-SPG",
+  PREMIUM_IGR_TAG = "premiumIGR",
   undef = () => {};
 function withResolvePath(e) {
   const t = e;
@@ -36797,13 +36797,13 @@ export {
   Tooltip$1 as A,
   keyStringCodes as Aa,
   toRoman as Ai,
-  getRewardTooltipConfig as An,
+  renderResolvedString as An,
   useParallaxSprings as Ar,
   usePopover as At,
   List as B,
   initExternalPaddings$1 as Ba,
   action$1 as Bi,
-  ValueTypes$1 as Bn,
+  getRewardImage as Bn,
   useTransition$1 as Br,
   literal as Bt,
   imageSizes as C,
@@ -36816,79 +36816,79 @@ export {
   useDragAndDrop as D,
   isNonNullable as Da,
   LOWER_ALPHABET as Di,
-  formatPrintf as Dn,
+  MEDIUM_TANK as Dn,
   useSpecialTooltip as Dr,
   toggleSizes as Dt,
   DragAndDrop as E,
   toArray$1 as Ea,
   parseValid as Ei,
-  Reward$1 as En,
+  LIGHT_TANK as En,
   useSimpleTooltip as Er,
   Toggle as Et,
   UnknownVehicleImage as F,
   identity as Fa,
   createLayoutReadyInEffect$1 as Fi,
-  ValueTypes as Fn,
+  FormatString as Fn,
   animated as Fr,
   useRouter as Ft,
   ProgressBar as G,
   sendEvent$2 as Ga,
   getAdministration$1 as Gi,
-  MEDIUM_TANK as Gn,
+  Specials as Gn,
   useHandleKeyup as Gr,
   optional as Gt,
   directions$1 as H,
   remToPx$1 as Ha,
   computed$1 as Hi,
-  AT_SPG as Hn,
+  getRewardValueType as Hn,
   useCloseOnEsc as Hr,
   minValue as Ht,
   VehicleImage as I,
   noop$4 as Ia,
   makeActions as Ii,
-  currencyValueTypes$1 as In,
+  FormatText as In,
   config as Ir,
   createParser as It,
   Video as J,
   graphicsQuality$1 as Ja,
   isAction$1 as Ji,
-  ExtendedText as Jn,
+  getRewardImage$1 as Jn,
   useMount$1 as Jr,
   string as Jt,
   ErrorHandler as K,
   play$1 as Ka,
   getDependencyTree$1 as Ki,
-  PREMIUM_IGR_TAG as Kn,
+  ValueTypes as Kn,
   useInsideEvent as Kr,
   parse as Kt,
   Checkbox as L,
   getKeyNameFromScanCode as La,
   $mobx$1 as Li,
-  getRewardImage$1 as Ln,
+  Alignment as Ln,
   useSpring as Lr,
   array as Lt,
   perkStates as M,
   DisposeBuilder as Ma,
   mapRange as Mi,
-  ImageSize as Mn,
+  Reward$1 as Mn,
   useSkipFrame as Mr,
   createOptionalDLProvider as Mt,
   roles as N,
   addEventListener as Na,
   assert$1 as Ni,
-  RewardType as Nn,
+  ExtendedText as Nn,
   useScaleState as Nr,
   useLazyModel as Nt,
   BackportTooltip$1 as O,
   iter as Oa,
   NUMBERS_ALPHABET as Oi,
-  getOverlay as On,
+  PREMIUM_IGR_TAG as On,
   useTooltip as Or,
   toggleThemes as Ot,
   RentalCounter as P,
   constFalse as Pa,
   createTimeoutInEffect as Pi,
-  Specials as Pn,
+  MultilineOverflow as Pn,
   useResize as Pr,
   ModelRouterProvider as Pt,
   isEmptyObject as Q,
@@ -36900,7 +36900,7 @@ export {
   sizes$5 as R,
   enableFullScreenModeSupported$1 as Ra,
   ObservableMap$1 as Ri,
-  getRewardValueType$1 as Rn,
+  formatPrintf as Rn,
   useSpringValue as Rr,
   boolean as Rt,
   LoadoutItem as S,
@@ -36913,44 +36913,44 @@ export {
   sizes$3 as T,
   sort as Ta,
   calcPercent as Ti,
-  renderString as Tn,
+  HEAVY_TANK as Tn,
   resources as To,
   useParamTooltip as Tr,
   Slottable as Tt,
   Accordion as U,
   setContentReady as Ua,
   configure$1 as Ui,
-  HEAVY_TANK as Un,
+  ImageSize as Un,
   useKeydownListener as Ur,
   number as Ut,
   VehicleInfo as V,
   pxToRem$1 as Va,
   autorun$1 as Vi,
-  Alignment as Vn,
+  getRewardTooltipConfig as Vn,
   useCallbackOnEsc as Vr,
   minLength as Vt,
   KeyButton as W,
   get$1 as Wa,
   extendObservable$1 as Wi,
-  LIGHT_TANK as Wn,
+  RewardType as Wn,
   useHandleKeydown as Wr,
   object as Wt,
   formats as X,
   mouse$1 as Xa,
   isComputedProp$1 as Xi,
-  FormatString as Xn,
+  ImageSize$1 as Xn,
   useEmitter as Xr,
   union as Xt,
   Timer as Y,
   writeClipboard as Ya,
   isComputed$1 as Yi,
-  MultilineOverflow as Yn,
+  getRewardValueType$1 as Yn,
   useUnmount$1 as Yr,
   transform as Yt,
   sizes$7 as Z,
   onRescale as Za,
   isComputingDerivation$1 as Zi,
-  FormatText as Zn,
+  ValueTypes$1 as Zn,
   useDebounce as Zr,
   nationById as Zt,
   useCardContext as _,
@@ -37025,13 +37025,13 @@ export {
   fromModel as j,
   promiseWithResolvers as ja,
   delay as ji,
-  getRewardValueType as jn,
+  renderString as jn,
   useTimeout as jr,
   LazyModel as jt,
   SimpleTooltip as k,
   keyCodes as ka,
   createString as ki,
-  getRewardImage as kn,
+  Tooltip$2 as kn,
   useWulfTooltip as kr,
   Popover as kt,
   DateRange_default as l,
@@ -37072,7 +37072,7 @@ export {
   ProgressBar$1 as q,
   getSize$2 as qa,
   getGlobalState$1 as qi,
-  Tooltip$2 as qn,
+  currencyValueTypes$1 as qn,
   useIsFirstRender as qr,
   pipe as qt,
   sizes as r,
@@ -37113,7 +37113,7 @@ export {
   overlayTypes as w,
   some as wa,
   MAX_i32 as wi,
-  renderResolvedString as wn,
+  AT_SPG as wn,
   concatWithPath as wo,
   useBackdropTooltip as wr,
   Slot$1 as wt,
@@ -37134,7 +37134,7 @@ export {
   ScrollVelocityGuardContent as z,
   forceTriggerMouseMove$1 as za,
   Reaction$1 as zi,
-  ImageSize$1 as zn,
+  getOverlay as zn,
   useSprings as zr,
   integer as zt,
 };

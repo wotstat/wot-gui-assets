@@ -34,14 +34,14 @@ import {
   yo as B,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { a as M, i as Q, n as $ } from "../chunks/vendor.js";
+import { a as M, i as Q, r as $ } from "../chunks/vendor.js";
 /* empty css               */ import { r as H } from "../chunks/enums.js";
 import { a as U, i as V, o as E, t as P } from "../chunks/rank_emblem.js";
 import { n as Y, t as O } from "../chunks/get_division_name.js";
 import { i as q, n as W, r as z } from "../chunks/get_rank_name.js";
 import { t as D } from "../chunks/qualification_emblem.js";
-import { t as F } from "../chunks/get_button_size.js";
-import { n as K } from "../chunks/get_season_name.js";
+import { n as F } from "../chunks/get_season_name.js";
+import { t as K } from "../chunks/get_button_size.js";
 import { n as G, t as J } from "../chunks/vehicle_name.js";
 import { t as X } from "../chunks/qualification_battle_item.js";
 import { t as Z } from "../chunks/get_comp7_reward.js";
@@ -356,7 +356,7 @@ var re = (function (e) {
     }) => {
       const { model: n, controls: r } = _e(),
         { mediaSize: t } = u(),
-        d = F(t);
+        d = K(t);
       return (0, me.jsxs)("div", {
         className: (0, oe.default)(ea, e),
         children: [
@@ -1306,7 +1306,7 @@ var re = (function (e) {
               className: Is,
               children: d ? R.strings.comp7_ext.rewardsScreen.noSeasonResult() : W(n),
             }),
-            (0, me.jsx)("div", { className: Cs, children: K(r) }),
+            (0, me.jsx)("div", { className: Cs, children: F(r) }),
           ],
         }),
       ],

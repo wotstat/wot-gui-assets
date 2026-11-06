@@ -3,11 +3,11 @@ import {
   S as s,
   b as t,
   ht as a,
-  lt as r,
-  m as p,
+  lt as p,
+  m as r,
   ot as n,
   q as c,
-  r as l,
+  t as l,
   w as o,
 } from "../../chunks/lib.js";
 import { n as d } from "../../chunks/base.js";
@@ -16,7 +16,7 @@ var [i, x] = o()(({ observableModel: s }) => {
     const t = { root: s.object(), steps: s.arrayClone("steps") },
       a = e(() => n(t.steps.get(), (e) => e.fixedRewards));
     return { ...t, computes: { fixedRewards: a } };
-  }, r),
+  }, p),
   u = "StepTemplate_13e807c4",
   _ = "StepTemplate_step_da05a15f",
   j = "StepTemplate_currency_284c3971",
@@ -27,7 +27,7 @@ function v({ step: e, info: s }) {
     className: u,
     children: [
       (0, f.jsx)(t, { className: _, text: s.text, params: s.params }),
-      (0, f.jsx)(p, {
+      (0, f.jsx)(r, {
         type: e.name || "",
         reverse: !0,
         className: j,
@@ -46,7 +46,7 @@ var b = "App_2f9ddec3",
   S = m(function () {
     const { model: e } = x(),
       { bundleType: s } = e.root.get(),
-      r = e.computes
+      p = e.computes
         .fixedRewards()
         .map((e) => e[0])
         .reduce((e, s, t) => {
@@ -58,33 +58,33 @@ var b = "App_2f9ddec3",
             e
           );
         }, []);
-    const { getText: p } = d(s),
-      n = R.strings.open_bundle.currency.$dyn(r[0].name),
+    const { getText: r } = d(s),
+      n = R.strings.open_bundle.currency.$dyn(p[0].name),
       c = (e) =>
         e.end === e.start
-          ? { text: p("tooltips.steps.singleStep"), params: { step: e.end + 1 } }
-          : { text: p("tooltips.steps.template"), params: { start: e.start + 1, end: e.end + 1 } };
+          ? { text: r("tooltips.steps.singleStep"), params: { step: e.end + 1 } }
+          : { text: r("tooltips.steps.template"), params: { start: e.start + 1, end: e.end + 1 } };
     return (0, f.jsx)(l, {
       children: (0, f.jsx)(l.Decorator, {
         children: (0, f.jsxs)("div", {
-          className: a(b, r.length > 10 && N),
+          className: a(b, p.length > 10 && N),
           children: [
             (0, f.jsx)(t, {
               className: g,
-              text: p("tooltips.steps.header"),
+              text: r("tooltips.steps.header"),
               params: { currency: n },
             }),
             (0, f.jsx)(t, {
               className: y,
-              text: p("tooltips.steps.description"),
+              text: r("tooltips.steps.description"),
               params: { currency: n },
             }),
             (0, f.jsxs)(f.Fragment, {
               children: [
-                (0, f.jsx)(t, { className: T, text: p("tooltips.steps.steps") }),
+                (0, f.jsx)(t, { className: T, text: r("tooltips.steps.steps") }),
                 (0, f.jsx)("div", {
                   className: A,
-                  children: r.map((e, s) => (0, f.jsx)(v, { step: e, info: c(e) }, s)),
+                  children: p.map((e, s) => (0, f.jsx)(v, { step: e, info: c(e) }, s)),
                 }),
               ],
             }),
@@ -93,4 +93,4 @@ var b = "App_2f9ddec3",
       }),
     });
   });
-s((0, f.jsx)(i, { children: (0, f.jsx)(S, {}) })).then(r);
+s((0, f.jsx)(i, { children: (0, f.jsx)(S, {}) })).then(p);

@@ -16,10 +16,10 @@ import {
   h as u,
   m as _,
   mi as f,
-  p as v,
-  vr as g,
-  yi as j,
-  zt as b,
+  ot as v,
+  p as g,
+  vr as j,
+  yi as b,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as w, t as x } from "../chunks/vendor.js";
@@ -55,7 +55,7 @@ var M = e(r(), 1),
   Z = "ContainerAnimation_videoLoop_906f1a50",
   ee = "ContainerAnimation_frame_ad065ff6",
   ae = "ContainerAnimation_base__animationStarted_448f44b3",
-  se = g(),
+  se = j(),
   oe = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
   te = (e, a, s, o) => (s ? o.width / e : o.height / a),
   re = (0, M.memo)(function ({
@@ -107,7 +107,7 @@ var M = e(r(), 1),
           children: [
             (0, se.jsx)("div", { className: Y }),
             !l.isLow() &&
-              (0, se.jsx)(b, {
+              (0, se.jsx)(v, {
                 ref: n,
                 src: R.videos.halloween.promo_loop(),
                 className: Z,
@@ -141,7 +141,7 @@ function ne({ closeAnimationStarted: e }) {
     };
   return (
     (0, M.useEffect)(() => {
-      (f.sound(W), r(), m(r), j(r));
+      (f.sound(W), r(), m(r), b(r));
     }, []),
     (0, se.jsx)("div", {
       className: ie,
@@ -184,9 +184,9 @@ var ce = "PromoWindowApp_27b45ae4",
         endDate: m,
         regularArtefactsLength: p,
       } = e.root.get(),
-      [h, g] = (0, M.useState)(!1),
+      [h, v] = (0, M.useState)(!1),
       j = () => {
-        g(!0);
+        v(!0);
       };
     return (
       (0, M.useEffect)(() => {
@@ -225,7 +225,7 @@ var ce = "PromoWindowApp_27b45ae4",
               params: {
                 dateRange: (0, se.jsx)("div", {
                   className: _e,
-                  children: (0, se.jsx)(v, {
+                  children: (0, se.jsx)(g, {
                     start: l,
                     end: m,
                     rangeType: u.Date,

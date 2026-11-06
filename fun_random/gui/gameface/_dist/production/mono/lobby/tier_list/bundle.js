@@ -1,19 +1,19 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   Ca as s,
-  En as a,
-  Et as o,
-  Nn as l,
-  Ur as r,
-  Ya as t,
-  Zn as i,
-  _r as n,
-  dr as c,
-  fr as d,
-  hi as b,
-  ia as m,
-  ir as x,
-  kt as _,
+  Ct as a,
+  En as o,
+  Et as l,
+  Nn as r,
+  Ur as t,
+  Ya as i,
+  Zn as n,
+  _r as c,
+  dr as d,
+  fr as b,
+  hi as m,
+  ia as x,
+  ir as _,
   nr as p,
   or as j,
   rr as h,
@@ -22,7 +22,7 @@ import {
 import "../chunks/_wg-global-styles.js";
 import { l as u, u as v } from "../chunks/vendor.js";
 import { a as g, n as N } from "../chunks/readResource.js";
-var [y, f] = n()(
+var [y, f] = c()(
     ({ observableModel: e }) => ({ root: e.object(), lootBoxes: e.array("lootBoxes") }),
     ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs("onClose") }),
   ),
@@ -40,22 +40,22 @@ var [y, f] = n()(
     percent: "RewardRow_percent_86c62b10",
   },
   I = w(),
-  B = v(({ rewards: e, iconKey: s, label: o, showRewardsNames: r }) => {
+  B = v(({ rewards: e, iconKey: s, label: a, showRewardsNames: l }) => {
     const { model: t } = f(),
-      { assetsPointer: n } = t.root.get(),
+      { assetsPointer: i } = t.root.get(),
       c = t.lootBoxes.get().length > 2 ? j.Big : j.S232x174,
       d = ((e, s) =>
-        m(e, (e) => ({
+        x(e, (e) => ({
           name: e.name,
           image: p(e, s),
           value: e.value,
           special: e.overlayType,
-          valueType: x(e.name),
+          valueType: _(e.name),
           tooltipArgs: h({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)),
           label: e.label,
           probability: e.probability,
         })))(e, c),
-      b = N(n).progression.bonuses.big;
+      b = N(i).progression.bonuses.big;
     return (0, I.jsxs)("div", {
       className: (0, k.default)(A.base, A[`base__${c}`]),
       children: [
@@ -66,7 +66,7 @@ var [y, f] = n()(
               className: A.boxIcon,
               style: { backgroundImage: `url(${b.$dyn(s)})` },
             }),
-            (0, I.jsx)("div", { className: A.boxLabel, children: o }),
+            (0, I.jsx)("div", { className: A.boxLabel, children: a }),
           ],
         }),
         (0, I.jsx)("div", { className: A.divider }),
@@ -74,18 +74,18 @@ var [y, f] = n()(
           className: A.items,
           children:
             d.length > 0 &&
-            m(d, (e, s) =>
+            x(d, (e, s) =>
               (0, I.jsxs)(
                 "div",
                 {
                   className: A.item,
                   children: [
-                    (0, I.jsx)(a, { ...e, size: c }),
-                    r && e.label && (0, I.jsx)(l, { classMix: A.label, text: e.label }),
+                    (0, I.jsx)(o, { ...e, size: c }),
+                    l && e.label && (0, I.jsx)(r, { classMix: A.label, text: e.label }),
                     Boolean(e.probability) &&
                       (0, I.jsx)("div", {
                         className: A.percent,
-                        children: i(R.strings.common.percentValue(), { value: e.probability }),
+                        children: n(R.strings.common.percentValue(), { value: e.probability }),
                       }),
                   ],
                 },
@@ -97,13 +97,13 @@ var [y, f] = n()(
     });
   }),
   C = "RewardList_3134028b",
-  L = e(t(), 1),
+  L = e(i(), 1),
   E = v(() => {
     const { model: e } = f(),
       s = e.lootBoxes.get();
     return (0, I.jsx)("div", {
       className: C,
-      children: s.length > 0 && m(s, (e, s) => (0, L.createElement)(B, { ...e, key: s })),
+      children: s.length > 0 && x(s, (e, s) => (0, L.createElement)(B, { ...e, key: s })),
     });
   }),
   $ = "App_41da450e",
@@ -115,27 +115,27 @@ var [y, f] = n()(
   z = "App_scroll_90d3bf78",
   K = v(() => {
     const { model: e, controls: s } = f(),
-      { assetsPointer: a } = e.root.get(),
-      { closeWindow: l } = s;
-    r(l);
-    const { dynamicTexts: t } = g("tierList", { assetsPointer: a });
+      { assetsPointer: o } = e.root.get(),
+      { closeWindow: r } = s;
+    t(r);
+    const { dynamicTexts: i } = g("tierList", { assetsPointer: o });
     return (0, I.jsxs)("div", {
       className: $,
       children: [
         (0, I.jsx)("div", {
           className: M,
-          style: { backgroundImage: `url('${N(a).library.tier_list_bg()}')` },
+          style: { backgroundImage: `url('${N(o).library.tier_list_bg()}')` },
         }),
-        (0, I.jsx)(o, {
-          children: (0, I.jsxs)(_, {
+        (0, I.jsx)(a, {
+          children: (0, I.jsxs)(l, {
             scrollClassNames: { content: P },
             className: z,
             children: [
               (0, I.jsxs)("div", {
                 className: T,
                 children: [
-                  (0, I.jsx)("div", { className: S, children: t.title() }),
-                  (0, I.jsx)("div", { className: W, children: t.description() }),
+                  (0, I.jsx)("div", { className: S, children: i.title() }),
+                  (0, I.jsx)("div", { className: W, children: i.description() }),
                 ],
               }),
               (0, I.jsx)(E, {}),
@@ -145,9 +145,9 @@ var [y, f] = n()(
       ],
     });
   });
-d(
+b(
   (0, I.jsx)(y, {
-    children: (0, I.jsx)(b, { children: (0, I.jsx)(c, { children: (0, I.jsx)(K, {}) }) }),
+    children: (0, I.jsx)(m, { children: (0, I.jsx)(d, { children: (0, I.jsx)(K, {}) }) }),
   }),
   { fullScreen: !0 },
 ).then(() => s(document.getElementById("root")));

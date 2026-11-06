@@ -10,8 +10,8 @@ import {
   mt as t,
   ri as d,
   s as n,
-  ut as p,
-  vr as h,
+  vr as p,
+  vt as h,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { n as m } from "../../chunks/vendor.js";
@@ -24,8 +24,8 @@ var [j, b] = l()(
     }),
     d,
   ),
-  u = "PriceBlock_a2666c85",
-  v = "PriceBlock_purchaseBlock_80f0261d",
+  v = "PriceBlock_a2666c85",
+  u = "PriceBlock_purchaseBlock_80f0261d",
   N = "PriceBlock_leftPart_a94526a8",
   y = "PriceBlock_rightPart_2cafc276",
   f = "PriceBlock_requiredLine_a54d4e9e",
@@ -38,24 +38,24 @@ var [j, b] = l()(
   w = "PriceBlock_vehiclesList_f0dfb5fd",
   q = "PriceBlock_requiredHeader_650a325e",
   $ = "PriceBlock_requiredDescription_72775fa",
-  C = h(),
+  C = p(),
   D = R.strings.tooltips.boostersWindow.booster.activateInfo,
   L = m(function ({ className: s }) {
     const { model: l } = b(),
       { abilityPrice: c, currencyType: r, requiredMore: d, inDepot: n } = l.root.get(),
-      h = l.inVehiclesList.get(),
+      p = l.inVehiclesList.get(),
       m = d > 0,
-      _ = n > 0 || h.length > 0;
+      _ = n > 0 || p.length > 0;
     return (0, C.jsxs)("div", {
-      className: e(u, s),
+      className: e(v, s),
       children: [
         (0, C.jsx)(x, {}),
         (0, C.jsxs)("div", {
-          className: v,
+          className: u,
           children: [
             (0, C.jsx)("div", {
               className: N,
-              children: (0, C.jsx)(p, { type: r, size: t.extraSmall, reverse: !0, children: c }),
+              children: (0, C.jsx)(t, { type: r, size: h.extraSmall, reverse: !0, children: c }),
             }),
             (0, C.jsxs)("div", {
               className: y,
@@ -66,9 +66,9 @@ var [j, b] = l()(
                     path: "halloween_tooltips.ability.required",
                     params: {
                       required: (0, C.jsx)("div", { className: k, children: D.notEnough() }),
-                      value: (0, C.jsx)(p, {
+                      value: (0, C.jsx)(t, {
                         type: r,
-                        size: t.extraSmall,
+                        size: h.extraSmall,
                         reverse: !0,
                         children: d,
                       }),
@@ -104,14 +104,14 @@ var [j, b] = l()(
                     (0, C.jsx)("div", { className: y, children: D.inDepot() }),
                   ],
                 }),
-              h.length > 0 &&
+              p.length > 0 &&
                 (0, C.jsxs)("div", {
                   className: B,
                   children: [
                     (0, C.jsxs)("div", {
                       className: N,
                       children: [
-                        h.length,
+                        p.length,
                         (0, C.jsx)("div", {
                           className: T,
                           children: (0, C.jsx)(o, {
@@ -123,14 +123,14 @@ var [j, b] = l()(
                     }),
                     (0, C.jsx)("div", {
                       className: y,
-                      children: a(h, (s, e) =>
+                      children: a(p, (s, e) =>
                         (0, C.jsxs)(
                           "div",
                           {
                             className: w,
                             children: [
                               s,
-                              e + 1 < h.length && R.strings.tank_setup.tooltips.separator.other(),
+                              e + 1 < p.length && R.strings.tank_setup.tooltips.separator.other(),
                             ],
                           },
                           `${s}+${e}`,
