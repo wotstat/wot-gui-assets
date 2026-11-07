@@ -5,7 +5,7 @@ import {
   ap as a,
   dE as _,
   dF as l,
-  dC as c,
+  du as c,
   ak as t,
   dD as o,
 } from "../../chunks/lib.js";
@@ -152,16 +152,16 @@ const j = {
           }),
       ],
     }),
-  C = {
+  F = {
     base: "Content_bd627888",
     title: "Content_title_9e9cd55a",
     block: "Content_block_604708c6",
     block__additional: "Content_block__additional_315b276a",
   },
-  F = m(() => {
+  V = m(() => {
     const { model: e } = g();
     return r.jsx("div", {
-      className: C.base,
+      className: F.base,
       children: i(
         e.computes.getResultsList(),
         (e, s) =>
@@ -169,11 +169,11 @@ const j = {
           r.jsxs(
             "div",
             {
-              className: d(C.block, e.isAdditional && C.block__additional),
+              className: d(F.block, e.isAdditional && F.block__additional),
               children: [
-                e.title && !e.isTotal && r.jsx("div", { className: C.title, children: e.title }),
+                e.title && !e.isTotal && r.jsx("div", { className: F.title, children: e.title }),
                 r.jsx("div", {
-                  className: C.list,
+                  className: F.list,
                   children: i(e.records, (s, i) =>
                     r.jsx(
                       A,
@@ -189,14 +189,14 @@ const j = {
       ),
     });
   }),
-  V = "Footer_1b733abe",
+  C = "Footer_1b733abe",
   S = "Footer_icon_cb4ec2ad",
   $ = "Footer_description_398ba227",
   D = m(() => {
     const { model: e } = g(),
       { premiumAdvertising: s } = e.root.get();
     return r.jsxs("div", {
-      className: V,
+      className: C,
       children: [r.jsx("div", { className: S }), r.jsx("div", { className: $, children: s })],
     });
   }),
@@ -227,7 +227,7 @@ const j = {
       className: U.base,
       children: [
         r.jsx("div", { className: U.header, children: r.jsx(O, {}) }),
-        r.jsx("div", { className: U.header, children: r.jsx(F, {}) }),
+        r.jsx("div", { className: U.header, children: r.jsx(V, {}) }),
         s && r.jsx("div", { className: U.footer, children: r.jsx(D, {}) }),
       ],
     });

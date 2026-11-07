@@ -2,8 +2,8 @@ import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   $a as t,
   Ia as i,
-  To as a,
-  Zn as o,
+  In as a,
+  To as o,
   cr as l,
   hi as e,
   o as n,
@@ -12,8 +12,8 @@ import {
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { o as p, s as c } from "../../chunks/vendor.js";
-import { t as m } from "../../chunks/string-utils.js";
-import { n as _, t as j } from "../../chunks/story_point.js";
+import { n as m, t as _ } from "../../chunks/story_point.js";
+import { t as j } from "../../chunks/string-utils.js";
 var h = s(c(), 1),
   [x, v] = d()(({ observableModel: s }) => ({ root: s.object() }), i),
   N = "PointsTooltipApp_84924c5f",
@@ -30,13 +30,13 @@ var h = s(c(), 1),
   E = "PointsTooltipApp_info_260d1667",
   G = "PointsTooltipApp_bottomText_b9270a2",
   O = e(),
-  $ = a.resolve("strings"),
+  $ = o.resolve("strings"),
   w = (s) => (s > 0 ? `+${s}` : s),
   M = p(function () {
     const { model: s } = v(),
       {
         isPostBattle: i,
-        endDate: a,
+        endDate: o,
         effective: l,
         obelisk: e,
         missionDaily: n,
@@ -51,8 +51,8 @@ var h = s(c(), 1),
           className: b,
           children: R.strings.last_stand_tooltips.points.header(),
         }),
-        (0, O.jsx)(j, { size: _.s80x80, classNames: { base: g } }),
-        (0, O.jsx)(o, {
+        (0, O.jsx)(_, { size: m.s80x80, classNames: { base: g } }),
+        (0, O.jsx)(a, {
           className: f,
           text: R.strings.last_stand_tooltips.points.body(),
           params: { bundle_name: $.readOrEmpty(`R.strings.last_stand_lobby.bundle.name.${p}`) },
@@ -124,7 +124,7 @@ var h = s(c(), 1),
                         className: y,
                         children: R.strings.last_stand_tooltips.points.completeMissionDaily(),
                       }),
-                      (0, O.jsx)(o, {
+                      (0, O.jsx)(a, {
                         className: y,
                         text: R.strings.last_stand_tooltips.points.gold(),
                         params: {
@@ -144,8 +144,8 @@ var h = s(c(), 1),
             (0, O.jsx)("div", {
               className: G,
               lang: R.strings.settings.LANGUAGE_CODE(),
-              children: m(R.strings.last_stand_tooltips.points.bottom(), {
-                date: t(a, r.ShortDateTime),
+              children: j(R.strings.last_stand_tooltips.points.bottom(), {
+                date: t(o, r.ShortDateTime),
               }),
             }),
           ],

@@ -9,18 +9,18 @@ import {
   dG as l,
   de as i,
   dd as n,
-  dC as c,
-  dx as p,
+  du as c,
+  dv as p,
   q as _,
   ak as m,
   dD as x,
 } from "../../chunks/lib.js";
-import { h, N as u, j as w, a5 as b } from "../../chunks/vendor.js";
+import { h as u, N as h, j as w, a5 as b } from "../../chunks/vendor.js";
 import { b as j } from "../../chunks/readResource.js";
 const [f, v] = e()(({ observableModel: e }) => {
     const t = { root: e.object(), rewards: e.array("rewards") },
-      l = h(() => t.rewards.get().length),
-      i = h(
+      l = u(() => t.rewards.get().length),
+      i = u(
         (e) => {
           const a = r(t.rewards.get(), e);
           if (!a) throw Error(`No reward found with index: ${e}`);
@@ -46,7 +46,7 @@ const [f, v] = e()(({ observableModel: e }) => {
     percent: "LootBoxReward_percent_7dd115ee",
     separator: "LootBoxReward_separator_6fa555ac",
   },
-  g = u(({ index: e }) => {
+  g = h(({ index: e }) => {
     const { model: a } = v(),
       r = a.computes.length(),
       s = a.computes.reward(e),
@@ -89,7 +89,7 @@ const [f, v] = e()(({ observableModel: e }) => {
   C = "App_title_711c3638",
   k = "App_description_975d9f61",
   T = "App_content_a6dab835",
-  I = u(() => {
+  I = h(() => {
     const { model: e } = v(),
       { iconKey: a, label: r, assetsPointer: s } = e.root.get(),
       o = e.computes.length(),

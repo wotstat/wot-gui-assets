@@ -14670,10 +14670,10 @@ var NA = tn(function ({ className: e }) {
     const { model: t } = hE();
     return t.isPaused.get() ? null : (0, vr.jsx)(TP, { id: qP, className: e });
   }),
-  kA = "IntroOverlay_glow_5fc31c94",
+  kA = "IntroOverlay_glow_ef690a2a",
   SA = "IntroOverlay_hoverHelper_9cec2539",
   PA = "IntroOverlay_8d89d328",
-  EA = "IntroOverlay_base__extraChapter_d35cc3d4",
+  EA = "IntroOverlay_base__extraChapter_7749fdaf",
   AA = "IntroOverlay_base__holiday_2f0d6d76",
   MA = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
   TA = "IntroOverlay_borderNoise_3087bf34",

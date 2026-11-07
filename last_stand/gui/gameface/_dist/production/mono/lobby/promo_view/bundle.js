@@ -2,14 +2,14 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $n as s,
   Fr as a,
-  Jn as t,
-  Ka as r,
+  Ka as t,
+  Ln as r,
   Lr as o,
-  Nr as n,
-  Qa as i,
-  Qn as c,
-  Ur as d,
-  Vn as l,
+  Nn as n,
+  Nr as i,
+  Qa as c,
+  Qn as d,
+  Ur as l,
   Vr as h,
   Za as m,
   cr as p,
@@ -37,24 +37,24 @@ var P = e(x(), 1),
   W = 1080,
   B = S / W,
   H = { width: 300, height: 150 },
-  U = { y: 0, opacity: 1 },
-  $ = (function (e) {
+  L = { y: 0, opacity: 1 },
+  U = (function (e) {
     return ((e.HEADER = "header"), (e.SUBHEADER = "subheader"), (e.BUTTON = "button"), e);
   })({}),
-  L = {
-    header: { from: { y: -10, opacity: 0 }, to: U, delay: 1e3, duration: 500 },
-    subheader: { from: { y: -10, opacity: 0 }, to: U, delay: 1150, duration: 500 },
-    button: { from: { y: -10, opacity: 0 }, to: U, delay: 1450, duration: 1e3 },
+  $ = {
+    header: { from: { y: -10, opacity: 0 }, to: L, delay: 1e3, duration: 500 },
+    subheader: { from: { y: -10, opacity: 0 }, to: L, delay: 1150, duration: 500 },
+    button: { from: { y: -10, opacity: 0 }, to: L, delay: 1450, duration: 1e3 },
   },
   M = "ContainerAnimation_dc99b0bc",
   z = "ContainerAnimation_content_9f9d6eae",
   O = "ContainerAnimation_img_89f111a1",
   Q = "ContainerAnimation_frame_d123d03b",
-  V = "ContainerAnimation_base__started_448f44b3",
-  q = f(),
-  F = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
-  J = (e, s, a, t) => (a ? t.width / e : t.height / s),
-  K = (0, P.memo)(function ({
+  q = "ContainerAnimation_base__started_448f44b3",
+  F = f(),
+  K = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
+  V = (e, s, a, t) => (a ? t.width / e : t.height / s),
+  Z = (0, P.memo)(function ({
     isStarted: e,
     scaleCover: s,
     screenWidth: t,
@@ -71,40 +71,40 @@ var P = e(x(), 1),
           h.start({
             to: [
               {
-                transform: `scale(${J(t, r, i, { width: r * B * 0.6, height: (t / B) * 0.6 })})`,
+                transform: `scale(${V(t, r, i, { width: r * B * 0.6, height: (t / B) * 0.6 })})`,
                 x: 0,
                 y: 0,
                 opacity: 1,
                 config: { duration: 800 },
               },
               {
-                transform: `scale(${J(t, r, i, H)})`,
+                transform: `scale(${V(t, r, i, H)})`,
                 x: ((t / 2 - 200) / s) * n,
                 y: ((-r / 2 + 180) / s) * n,
                 opacity: 0,
                 config: { duration: 1e3 },
               },
             ],
-            config: { easing: F },
+            config: { easing: K },
           });
       }, [h, i, e, n, r, s, t]),
       (0, P.useEffect)(() => {
         const s = d.current;
         s && (e ? s.pause() : s.play());
       }, [e]),
-      (0, q.jsx)("div", {
-        className: (0, D.default)(M, e && V, c),
-        children: (0, q.jsxs)(a.div, {
+      (0, F.jsx)("div", {
+        className: (0, D.default)(M, e && q, c),
+        children: (0, F.jsxs)(a.div, {
           className: z,
           style: l,
-          children: [(0, q.jsx)("div", { className: O }), (0, q.jsx)("div", { className: Q })],
+          children: [(0, F.jsx)("div", { className: O }), (0, F.jsx)("div", { className: Q })],
         }),
       })
     );
   }),
-  Z = "PromoApp_vignetteBg_ae9ebec",
-  G = "PromoApp_6e17783a",
-  I = "PromoApp_container_c21d069a",
+  G = "PromoApp_vignetteBg_ae9ebec",
+  I = "PromoApp_6e17783a",
+  J = "PromoApp_container_c21d069a",
   X = "PromoApp_header_70c24a9c",
   Y = "PromoApp_base__started_a4fe4c39",
   ee = "PromoApp_subheader_e22f84af",
@@ -118,19 +118,19 @@ var P = e(x(), 1),
     const { model: e, controls: a } = k(),
       { startDate: o, endDate: p, regularArtefactsLength: f } = e.root.get(),
       [b, v] = (0, P.useState)(!1),
-      x = n(),
+      x = i(),
       C = () => {
         v(!0);
       };
     ((0, P.useEffect)(() => {
       if (b) {
-        r.sound(w);
+        t.sound(w);
         const e = setTimeout(a.close, 1800);
         return () => clearTimeout(e);
       }
     }, [a.close, b]),
       h(C),
-      d(_.ENTER, C));
+      l(_.ENTER, C));
     const [A, T] = (0, P.useState)({ width: 0, height: 0, scaleCover: 1, isCoverWidth: !1 }),
       H = () => {
         const e = j("rem");
@@ -147,16 +147,16 @@ var P = e(x(), 1),
       };
     return (
       (0, P.useEffect)(() => {
-        (r.sound(E), H(), i(H), m(H));
+        (t.sound(E), H(), c(H), m(H));
       }, []),
-      (0, q.jsxs)("div", {
-        className: (0, D.default)(G, b && Y),
+      (0, F.jsxs)("div", {
+        className: (0, D.default)(I, b && Y),
         children: [
-          (0, q.jsx)(c, { className: oe, onClose: C }),
-          (0, q.jsx)("div", {
-            className: I,
+          (0, F.jsx)(d, { className: oe, onClose: C }),
+          (0, F.jsx)("div", {
+            className: J,
             style: { width: S * x, height: W * x, transform: `scale(${A.scaleCover})` },
-            children: (0, q.jsx)(K, {
+            children: (0, F.jsx)(Z, {
               isStarted: b,
               scaleCover: A.scaleCover,
               screenHeight: A.height,
@@ -165,21 +165,21 @@ var P = e(x(), 1),
               isCoverWidth: A.isCoverWidth,
             }),
           }),
-          (0, q.jsx)("div", { className: Z }),
-          (0, q.jsx)("div", { className: se }),
-          (0, q.jsx)(N, {
+          (0, F.jsx)("div", { className: G }),
+          (0, F.jsx)("div", { className: se }),
+          (0, F.jsx)(N, {
             className: te,
-            ...L[$.HEADER],
-            children: (0, q.jsx)("div", { className: X, children: ne.header() }),
+            ...$[U.HEADER],
+            children: (0, F.jsx)("div", { className: X, children: ne.header() }),
           }),
-          (0, q.jsx)(N, {
+          (0, F.jsx)(N, {
             className: te,
-            ...L[$.SUBHEADER],
-            children: (0, q.jsx)(t, {
+            ...$[U.SUBHEADER],
+            children: (0, F.jsx)(n, {
               classMix: ee,
               text: ne.subheader(),
               binding: {
-                dateRange: (0, q.jsx)(g, {
+                dateRange: (0, F.jsx)(g, {
                   start: o,
                   end: p,
                   rangeType: u.DateShort,
@@ -188,16 +188,16 @@ var P = e(x(), 1),
                 }),
                 regularArtefactsLength: f,
               },
-              alignContent: l.Center,
-              justifyContent: l.Center,
+              alignContent: r.Center,
+              justifyContent: r.Center,
             }),
           }),
-          (0, q.jsx)(N, {
+          (0, F.jsx)(N, {
             className: ae,
-            ...L[$.BUTTON],
-            children: (0, q.jsx)("div", {
+            ...$[U.BUTTON],
+            children: (0, F.jsx)("div", {
               className: re,
-              children: (0, q.jsx)(s, {
+              children: (0, F.jsx)(s, {
                 theme: s.themes.primary,
                 size: s.sizes.large,
                 onClick: C,
@@ -209,4 +209,4 @@ var P = e(x(), 1),
       })
     );
   });
-p((0, q.jsx)(v, { children: (0, q.jsx)(T, { children: (0, q.jsx)(ie, {}) }) }));
+p((0, F.jsx)(v, { children: (0, F.jsx)(T, { children: (0, F.jsx)(ie, {}) }) }));

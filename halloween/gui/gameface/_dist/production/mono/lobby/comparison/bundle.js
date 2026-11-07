@@ -2,12 +2,12 @@ import { r as a } from "../chunks/rolldown-runtime.js";
 import {
   $r as e,
   Br as s,
-  Ct as o,
-  Gt as r,
-  H as n,
-  Ii as t,
-  Jn as i,
-  Kn as l,
+  Gt as o,
+  Ii as r,
+  Jn as n,
+  Kn as t,
+  Mt as i,
+  Ot as l,
   Qt as c,
   Ri as d,
   Tn as m,
@@ -23,21 +23,21 @@ import {
   gn as C,
   mi as N,
   mn as W,
-  pi as v,
-  pn as j,
-  ri as g,
-  sn as I,
-  vn as A,
-  vr as E,
-  wn as S,
-  xn as H,
-  yn as T,
-  yt as k,
+  nt as v,
+  pi as j,
+  pn as g,
+  ri as I,
+  sn as A,
+  vn as E,
+  vr as S,
+  wn as H,
+  xn as T,
+  yn as k,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as D, t as M } from "../chunks/vendor.js";
-import { n as L, t as B } from "../chunks/spring_wrapper.js";
-import { d as O, f as $, t as U, u as z } from "../chunks/sound.js";
+import { n as L, t as O } from "../chunks/spring_wrapper.js";
+import { d as B, f as $, t as U, u as z } from "../chunks/sound.js";
 import { i as P, r as X } from "../chunks/text.js";
 import { n as G, r as Q, t as F } from "../chunks/button.js";
 import { t as J } from "../chunks/close_button.js";
@@ -81,7 +81,7 @@ var Z = a(d(), 1),
       to: { filter: "blur(0px)", transform: "translate(-50%) scale(1, 0.1)", opacity: 0 },
       delay: 0,
       duration: 1750,
-      easingType: B.EaseOutQuint,
+      easingType: O.EaseOutQuint,
     },
     button: {
       from: { y: -5, transform: "translate(-50%)", opacity: 0 },
@@ -100,8 +100,8 @@ var Z = a(d(), 1),
   ra = "DataHeader_iconWrapper_54951fa3",
   na = "DataHeader_icon_94898581",
   ta = "DataHeader_description_c843163a",
-  ia = E();
-function la({ index: a, isAnimationCanceled: e, categoryName: s, className: o }) {
+  ia = S();
+function la({ index: a, isAnimationCanceled: e, categoryName: s, className: r }) {
   const { breakpoint: n, upscale: t } = h(),
     i = w["cs" === R.strings.settings.LANGUAGE_CODE() ? "large" : "medium"].weight,
     l = n.weight >= i;
@@ -109,11 +109,11 @@ function la({ index: a, isAnimationCanceled: e, categoryName: s, className: o })
     ...ea[aa.ROW],
     isCanceled: e,
     delay: 1e3 + 650 * a,
-    className: (0, q.default)(oa, o),
+    className: (0, q.default)(oa, r),
     children: [
       (0, ia.jsx)("div", {
         className: ra,
-        children: (0, ia.jsx)(r, {
+        children: (0, ia.jsx)(o, {
           asChild: !0,
           params: {
             body:
@@ -138,15 +138,15 @@ function la({ index: a, isAnimationCanceled: e, categoryName: s, className: o })
 }
 var [ca, da] = m()(({ observableModel: a }) => {
     const e = { vehicles: a.arrayClone("vehicles") },
-      o = S(() => e.vehicles.get().length),
-      r = S(() =>
+      o = H(() => e.vehicles.get().length),
+      r = H(() =>
         p(e.vehicles.get(), (a) => ({
           userName: a.userName,
           vehicleName: a.vehicleName,
           vehicleType: a.vehicleType,
         })),
       ),
-      n = S(() => {
+      n = H(() => {
         const a = [],
           o = [],
           r = [];
@@ -162,7 +162,7 @@ var [ca, da] = m()(({ observableModel: a }) => {
         );
       });
     return { ...e, computes: { header: r, params: n, vehicleCount: o } };
-  }, g),
+  }, I),
   ma = "Bar_d07946c5",
   pa = "Bar_21c60d85",
   _a = "Bar_barLine_b5adb3d4",
@@ -183,7 +183,7 @@ var [ca, da] = m()(({ observableModel: a }) => {
             from: { width: "0%" },
             to: { width: `${s}%` },
             delay: 1375 + 650 * e + 75 * a,
-            easingType: B.EaseOutQuint,
+            easingType: O.EaseOutQuint,
             duration: 500,
             className: _a,
             isCanceled: o,
@@ -244,22 +244,22 @@ function Ca({
 }
 var Na = "DataRow_7883cfd";
 function Wa({ index: a, values: e, isAnimationCanceled: s, className: o }) {
-  const r = a,
-    n = (0, Z.useCallback)(() => {
+  const n = a,
+    t = (0, Z.useCallback)(() => {
       N.sound($);
     }, []);
   return (0, ia.jsx)(L, {
     ...ea[aa.ROW],
     isCanceled: s,
     delay: 1e3 + 650 * a,
-    className: t(Na, o),
-    onStart: n,
+    className: r(Na, o),
+    onStart: t,
     children: p(e, (a, o) =>
       (0, ia.jsx)(
         Ca,
         {
           index: o,
-          hiLevelIndex: r,
+          hiLevelIndex: n,
           value: a,
           valueMin: Math.min(...e),
           valueMax: Math.max(...e),
@@ -285,32 +285,32 @@ function Da({
   index: a,
   userName: e,
   vehicleType: s,
-  vehicleName: r,
+  vehicleName: o,
   isAnimationCanceled: n,
-  isUpscaled: i,
-  className: l,
+  isUpscaled: t,
+  className: c,
 }) {
   return (0, ia.jsxs)(L, {
     ...ea[aa.HEADER_ITEM],
     isCanceled: n,
     delay: 250 + 75 * a,
-    className: t(va, l),
+    className: r(va, c),
     children: [
       a > 0 &&
         (0, ia.jsxs)("div", {
           className: Ha,
           children: [
             (0, ia.jsx)("div", { className: Ta }),
-            (0, ia.jsx)("div", { className: t(Ta, ka) }),
+            (0, ia.jsx)("div", { className: r(Ta, ka) }),
           ],
         }),
       (0, ia.jsxs)("div", {
         className: Ia,
-        children: [o(s) && (0, ia.jsx)(k, { type: s, size: k.sizes.x24x24 }), e],
+        children: [i(s) && (0, ia.jsx)(l, { type: s, size: l.sizes.x24x24 }), e],
       }),
       (0, ia.jsx)("div", {
         className: ja,
-        children: (0, ia.jsx)(b, { path: `vehicle.x380x304.${r}`, className: ga }),
+        children: (0, ia.jsx)(b, { path: `vehicle.x380x304.${o}`, className: ga }),
       }),
       (0, ia.jsxs)(L, {
         ...ea[aa.HEADER_ITEM_TXT],
@@ -321,12 +321,12 @@ function Da({
           (0, ia.jsx)("div", {
             className: Ra,
             children: (0, ia.jsx)(b, {
-              path: `R.images.halloween.gui.maps.icons.comparisonWindow.ttcIcons.${i ? r + "_upscale" : r}`,
+              path: `R.images.halloween.gui.maps.icons.comparisonWindow.ttcIcons.${t ? o + "_upscale" : o}`,
               className: Sa,
             }),
           }),
           (0, ia.jsx)(_, {
-            text: K(R.strings.halloween_lobby.comparisonWindow.tank.ttcType.$dyn(r)),
+            text: K(R.strings.halloween_lobby.comparisonWindow.tank.ttcType.$dyn(o)),
             classNames: { text: Ea },
           }),
         ],
@@ -336,16 +336,16 @@ function Da({
 }
 var Ma = "Header_ca74c781",
   La = "Header_lip_ab5e7e6a",
-  Ba = D(function ({ className: a, isAnimationCanceled: e }) {
+  Oa = D(function ({ className: a, isAnimationCanceled: e }) {
     const {
         model: { computes: s },
       } = da(),
       o = s.header(),
-      r = h().upscale;
+      n = h().upscale;
     return (
-      (0, Z.useEffect)(() => N.sound(O), []),
+      (0, Z.useEffect)(() => N.sound(B), []),
       (0, ia.jsxs)("div", {
-        className: t(Ma, a),
+        className: r(Ma, a),
         children: [
           (0, ia.jsx)(L, { ...ea[aa.LIP], isCanceled: e, className: La }),
           p(o, (a, s) =>
@@ -355,7 +355,7 @@ var Ma = "Header_ca74c781",
                 style: { zIndex: o.length - s },
                 children: (0, ia.jsx)(Da, {
                   isAnimationCanceled: e,
-                  isUpscaled: r,
+                  isUpscaled: n,
                   index: s,
                   ...a,
                 }),
@@ -367,7 +367,7 @@ var Ma = "Header_ca74c781",
       })
     );
   }),
-  Oa = {
+  Ba = {
     base: "ComparisonWindowApp_bff2c467",
     base__withScroll: "ComparisonWindowApp_base__withScroll_403ae64c",
     closeBtn: "ComparisonWindowApp_closeBtn_5fff20fb",
@@ -401,8 +401,8 @@ var Ma = "Header_ca74c781",
       } = da(),
       s = a.vehicleCount(),
       o = a.params(),
-      [r, c] = (0, Z.useState)(!1),
-      d = y(
+      [i, l] = (0, Z.useState)(!1),
+      c = y(
         { isScrollEnable: s > 7 },
         {
           small: { isScrollEnable: s > 8 },
@@ -411,11 +411,11 @@ var Ma = "Header_ca74c781",
           extraLarge: { isScrollEnable: s > 11 },
         },
       );
-    (l(() => v.close()),
-      i(e.ENTER, () => v.close()),
+    (t(() => j.close()),
+      n(e.ENTER, () => j.close()),
       (0, Z.useEffect)(() => {
         const a = () => {
-          c(!0);
+          l(!0);
         };
         return (
           window.addEventListener("keydown", a),
@@ -424,104 +424,104 @@ var Ma = "Header_ca74c781",
           }
         );
       }, []));
-    const m = (0, Z.useCallback)(() => N.sound(U), []),
-      _ = (0, Z.useCallback)(() => v.close(), []),
-      { api: h } = A();
-    f(h);
-    const [u, w] = C(h);
+    const d = (0, Z.useCallback)(() => N.sound(U), []),
+      m = (0, Z.useCallback)(() => j.close(), []),
+      { api: _ } = E();
+    f(_);
+    const [h, u] = C(_);
     return (0, ia.jsxs)("div", {
-      className: t(Oa.base, d.isScrollEnable && Oa.base__withScroll),
-      onClick: () => c(!0),
+      className: r(Ba.base, c.isScrollEnable && Ba.base__withScroll),
+      onClick: () => l(!0),
       children: [
-        (0, ia.jsx)(J, { className: Oa.closeBtn, onClose: () => v.close() }),
+        (0, ia.jsx)(J, { className: Ba.closeBtn, onClose: () => j.close() }),
         (0, ia.jsx)(L, {
           ...ea[aa.TITLE],
-          isCanceled: r,
-          className: Oa.titleContainer,
+          isCanceled: i,
+          className: Ba.titleContainer,
           children: (0, ia.jsx)(X, {
             type: P.MetaHeading,
             text: R.strings.halloween_lobby.comparisonWindow.title(),
-            justifyContent: n.Center,
-            className: Oa.title,
+            justifyContent: v.Center,
+            className: Ba.title,
             shadow: !0,
           }),
         }),
         (0, ia.jsxs)("div", {
-          className: t(Oa.content, d.isScrollEnable && Oa.content__withScroll),
+          className: r(Ba.content, c.isScrollEnable && Ba.content__withScroll),
           children: [
             (0, ia.jsx)("div", {
-              className: Oa.dataHeaders,
+              className: Ba.dataHeaders,
               children: p(o, ({ categoryName: a }, e) =>
                 (0, ia.jsx)(
                   la,
-                  { index: e, isAnimationCanceled: r, categoryName: a, className: Oa.dataHeader },
+                  { index: e, isAnimationCanceled: i, categoryName: a, className: Ba.dataHeader },
                   e,
                 ),
               ),
             }),
-            d.isScrollEnable &&
+            c.isScrollEnable &&
               (0, ia.jsx)("div", {
-                className: t(Oa.shadowWrapper, u && Oa.shadowWrapper__hide),
+                className: r(Ba.shadowWrapper, h && Ba.shadowWrapper__hide),
                 children: (0, ia.jsx)(b, {
                   path: "R.images.halloween.gui.maps.icons.comparisonWindow.shadow",
-                  className: Oa.scrollShadow,
+                  className: Ba.scrollShadow,
                 }),
               }),
             (0, ia.jsxs)(x, {
-              className: t(Oa.area, !d.isScrollEnable && Oa.area__withoutScroll),
+              className: r(Ba.area, !c.isScrollEnable && Ba.area__withoutScroll),
               classNames: {
-                wrapper: t(
-                  Oa.scrollWrapper,
-                  Oa[`scrollWrapper__${j(u, w)}`],
-                  !d.isScrollEnable && Oa.scrollWrapper__withoutScroll,
+                wrapper: r(
+                  Ba.scrollWrapper,
+                  Ba[`scrollWrapper__${g(h, u)}`],
+                  !c.isScrollEnable && Ba.scrollWrapper__withoutScroll,
                 ),
-                content: t(d.isScrollEnable && Oa.scrollContent),
+                content: r(c.isScrollEnable && Ba.scrollContent),
               },
               children: [
-                (0, ia.jsx)(Ba, { className: Oa.headerRow, isAnimationCanceled: r }),
+                (0, ia.jsx)(Oa, { className: Ba.headerRow, isAnimationCanceled: i }),
                 p(o, (a, e) =>
                   (0, ia.jsx)(
                     Wa,
-                    { isAnimationCanceled: r, index: e, className: Oa.dataRow, ...a },
+                    { isAnimationCanceled: i, index: e, className: Ba.dataRow, ...a },
                     `${o[e]?.categoryName}`,
                   ),
                 ),
               ],
             }),
-            d.isScrollEnable &&
+            c.isScrollEnable &&
               (0, ia.jsx)("div", {
-                className: t(
-                  Oa.shadowWrapper,
-                  Oa.shadowWrapper__right,
-                  w && Oa.shadowWrapper__hide,
+                className: r(
+                  Ba.shadowWrapper,
+                  Ba.shadowWrapper__right,
+                  u && Ba.shadowWrapper__hide,
                 ),
                 children: (0, ia.jsx)(b, {
                   path: "R.images.halloween.gui.maps.icons.comparisonWindow.shadow",
-                  className: t(Oa.scrollShadow, Oa.scrollShadow__right),
+                  className: r(Ba.scrollShadow, Ba.scrollShadow__right),
                 }),
               }),
           ],
         }),
-        d.isScrollEnable && (0, ia.jsx)(W, { classNames: { base: Oa.scrollBar } }),
+        c.isScrollEnable && (0, ia.jsx)(W, { classNames: { base: Ba.scrollBar } }),
         (0, ia.jsx)(L, {
           ...ea[aa.BUTTON],
-          onStart: m,
-          isCanceled: r,
-          className: Oa.btn,
+          onStart: d,
+          isCanceled: i,
+          className: Ba.btn,
           children: (0, ia.jsx)(F, {
             type: Q.Secondary,
             caption: R.strings.halloween_lobby.common.yes(),
             size: G.ExtraLarge,
-            onClick: _,
+            onClick: m,
           }),
         }),
       ],
     });
   });
 u(
-  new H()
-    .add(T)
+  new T()
+    .add(k)
     .add(ca)
-    .add(I)
+    .add(A)
     .render((0, ia.jsx)($a, {})),
 );

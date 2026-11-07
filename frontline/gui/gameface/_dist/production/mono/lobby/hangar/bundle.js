@@ -13056,10 +13056,10 @@ var mk = Rs(function ({ className: e }) {
     const { model: t } = tS();
     return t.isPaused.get() ? null : (0, nr.jsx)(bI, { id: MI, className: e });
   }),
-  pk = "IntroOverlay_glow_5fc31c94",
+  pk = "IntroOverlay_glow_ef690a2a",
   _k = "IntroOverlay_hoverHelper_9cec2539",
   hk = "IntroOverlay_8d89d328",
-  gk = "IntroOverlay_base__extraChapter_d35cc3d4",
+  gk = "IntroOverlay_base__extraChapter_7749fdaf",
   fk = "IntroOverlay_base__holiday_2f0d6d76",
   vk = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
   bk = "IntroOverlay_borderNoise_3087bf34",

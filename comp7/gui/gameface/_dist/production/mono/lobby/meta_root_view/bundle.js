@@ -119,8 +119,8 @@ import { i as fa, n as xa, r as ba, t as va } from "../chunks/get_rank_name.js";
 import { t as Sa } from "../chunks/qualification_emblem.js";
 import { t as wa } from "../chunks/weekly_quests_model.js";
 import { n as ja } from "../chunks/consts.js";
-import { t as Na } from "../chunks/get_button_size.js";
-import { n as Ca, t as Pa } from "../chunks/schedule_subheading.js";
+import { n as Na, t as Ca } from "../chunks/schedule_subheading.js";
+import { t as Pa } from "../chunks/get_button_size.js";
 import { t as ka } from "../chunks/arrow_button.js";
 import { n as Ra, t as Ia } from "../chunks/get_division_points_step.js";
 import { t as ya } from "../chunks/divine_glow.js";
@@ -482,7 +482,7 @@ var Ya = e(c()),
           children: (0, Ka.jsx)(De, {
             theme: De.themes.secondary,
             disabled: t,
-            size: Na(r),
+            size: Pa(r),
             className: Is,
             onClick: () => {
               t || (q.click(), s.refresh());
@@ -1217,7 +1217,7 @@ var Ya = e(c()),
     return (0, Ka.jsxs)("div", {
       className: (0, Ga.default)(Tt, e),
       children: [
-        (0, Ka.jsx)(Pa, {}),
+        (0, Ka.jsx)(Ca, {}),
         t &&
           (0, Ka.jsx)("div", {
             className: Dt,
@@ -3330,7 +3330,7 @@ var od = aa(({ className: e }) => {
         "data-test-id": "progression-page",
         children: [
           rs() && r && (0, Ka.jsx)(Zt, { className: ld }),
-          (0, Ka.jsx)(Pa, { className: cd }),
+          (0, Ka.jsx)(Ca, { className: cd }),
           r
             ? (0, Ka.jsx)("div", { className: _d, children: (0, Ka.jsx)(od, { className: md }) })
             : (0, Ka.jsx)("div", {
@@ -3796,7 +3796,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
       className: Zd,
       "data-test-id": "rank-rewards-page",
       children: [
-        (0, Ka.jsx)(Pa, {}),
+        (0, Ka.jsx)(Ca, {}),
         (0, Ka.jsx)(p.div, {
           className: ec,
           style: w,
@@ -4891,7 +4891,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
             className: t_.buttonContainer,
             children: (0, Ka.jsx)(De, {
               theme: De.themes.primary,
-              size: Na(t),
+              size: Pa(t),
               onClick: o,
               onMouseEnter: () => {
                 n && q.highlight();
@@ -4991,7 +4991,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
               className: g_,
               children: (0, Ka.jsx)(De, {
                 theme: De.themes.primary,
-                size: Na(t),
+                size: Pa(t),
                 onClick: a.goToHangar,
                 className: p_,
                 children: R.strings.comp7_ext.products.actions.toHangar(),
@@ -5008,7 +5008,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
             className: g_,
             children: (0, Ka.jsx)(De, {
               theme: De.themes.primary,
-              size: Na(t),
+              size: Pa(t),
               onMouseEnter: () => {
                 e || q.highlight();
               },
@@ -5090,7 +5090,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
               className: w_,
               children: (0, Ka.jsx)(De, {
                 theme: De.themes.primary,
-                size: Na(t),
+                size: Pa(t),
                 onClick: () => {
                   (q.sound(R.sounds.comp_7_shop_purchase_preview()), s.restore());
                 },
@@ -5214,7 +5214,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
                 }),
               }),
             t !== oc.Error && (0, Ka.jsx)("div", { className: T_ }),
-            (0, Ka.jsx)("div", { className: D_, children: (0, Ka.jsx)(Pa, { classNames: O_ }) }),
+            (0, Ka.jsx)("div", { className: D_, children: (0, Ka.jsx)(Ca, { classNames: O_ }) }),
             (0, Ka.jsx)(p.div, { className: E_, style: e, children: (0, Ka.jsx)(i, {}) }),
           ],
         })
@@ -5830,7 +5830,7 @@ var jd = (e, a) => (e > a ? a - 1 : void 0),
       className: xm,
       "data-test-id": "weekly-quests-page",
       children: [
-        (0, Ka.jsx)(Pa, {}),
+        (0, Ka.jsx)(Ca, {}),
         (0, Ka.jsxs)(p.div, {
           className: bm,
           style: e,
@@ -7128,7 +7128,7 @@ var [Um, Vm] = de()(
                   ],
                 }),
           }),
-          (0, Ka.jsx)(Pa, { className: Kh }),
+          (0, Ka.jsx)(Ca, { className: Kh }),
         ],
       })
     );
@@ -7247,7 +7247,7 @@ var [Um, Vm] = de()(
             return (0, Ka.jsx)("div", {
               children: n
                 ? String(R.strings.comp7_ext.yearlyStatistics.seasonDate.$num(e))
-                : (0, Ka.jsx)(a, { text: R.strings.comp7_ext.season.range(), binding: Ca(r, t) }),
+                : (0, Ka.jsx)(a, { text: R.strings.comp7_ext.season.range(), binding: Na(r, t) }),
             });
           case Oa.JustStarted:
           case Oa.EndSoon:
@@ -7444,7 +7444,7 @@ var [Um, Vm] = de()(
       className: Vg.base,
       "data-test-id": "yearly-statistics-page",
       children: [
-        (0, Ka.jsx)("div", { className: Vg.heading, children: (0, Ka.jsx)(Pa, {}) }),
+        (0, Ka.jsx)("div", { className: Vg.heading, children: (0, Ka.jsx)(Ca, {}) }),
         (0, Ka.jsx)(p.div, {
           style: a,
           className: Vg.contentWrapper,

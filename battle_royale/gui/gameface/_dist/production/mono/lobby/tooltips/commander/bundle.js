@@ -1,14 +1,14 @@
 import {
   Bt as a,
-  C as s,
+  F as s,
   Gt as e,
-  Nn as r,
-  T as n,
+  N as r,
+  Nn as n,
   Ut as t,
   jr as i,
-  ni as m,
-  t as o,
-  y as c,
+  k as m,
+  ni as o,
+  t as c,
   zt as d,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
@@ -27,38 +27,38 @@ var [l, j] = e()((a) => {
 var _,
   f = "App_11090d07",
   v = "App_headerContainer_c897879f",
-  h = "App_icon_961e61e2",
-  u = "App_specialtyName_1072bf2a",
-  N = "App_commanderName_d9ad769f",
+  N = "App_icon_961e61e2",
+  h = "App_specialtyName_1072bf2a",
+  u = "App_commanderName_d9ad769f",
   x = "App_separator_f627df4c",
   y = "App_description_1072bf2a",
-  b = r(),
-  A = m.resolve("strings"),
-  k = s({ commanderNation: n() }),
+  b = n(),
+  A = o.resolve("strings"),
+  k = r({ commanderNation: s() }),
   g =
-    ((_ = c(k)),
+    ((_ = m(k)),
     function () {
       return j().model.computes.params(_);
     }),
   E = p(function () {
     const { commanderNation: a } = g();
-    return (0, b.jsx)(o, {
-      children: (0, b.jsx)(o.Decorator, {
+    return (0, b.jsx)(c, {
+      children: (0, b.jsx)(c.Decorator, {
         children: (0, b.jsxs)("div", {
           className: f,
           children: [
             (0, b.jsxs)("div", {
               className: v,
               children: [
-                (0, b.jsx)("div", { className: h }),
+                (0, b.jsx)("div", { className: N }),
                 (0, b.jsx)("div", {
-                  className: u,
+                  className: h,
                   children: A.readOrEmpty("battle_royale.commanderInfo.commonRank"),
                 }),
               ],
             }),
             (0, b.jsx)("div", {
-              className: N,
+              className: u,
               children: A.readOrEmpty(`battle_royale.commanderInfo.fullName.${a}`),
             }),
             (0, b.jsx)("div", { className: x }),

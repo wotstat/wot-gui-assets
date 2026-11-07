@@ -1,4 +1,4 @@
-import { Ia as s, Jn as o, To as t, c as e, cr as a, hi as r, pr as l } from "../../chunks/lib.js";
+import { Ia as s, Nn as o, To as t, c as e, cr as a, hi as r, pr as l } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { o as i } from "../../chunks/vendor.js";
 var [p, d] = l()(({ observableModel: s }) => ({ root: s.object() }), s),

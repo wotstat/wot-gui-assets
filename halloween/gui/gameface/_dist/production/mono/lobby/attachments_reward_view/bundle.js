@@ -4,12 +4,12 @@ import {
   Tn as s,
   _r as t,
   bn as r,
-  pi as n,
-  qn as o,
-  vr as i,
-  wi as c,
-  yr as l,
-  zt as d,
+  ot as n,
+  pi as o,
+  qn as i,
+  vr as c,
+  wi as l,
+  yr as d,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as m, t as p } from "../chunks/vendor.js";
@@ -43,27 +43,27 @@ var f = e(a(), 1),
     buttons: "RewardScreenApp_buttons_7052db55",
     button: "RewardScreenApp_button_53d627a8",
   },
-  y = i(),
+  y = c(),
   A = {
-    [l.extraSmall]: "s400x300",
-    [l.small]: "s400x300",
-    [l.medium]: "s400x300",
-    [l.large]: "s600x450",
-    [l.extraLarge]: "s900x675",
+    [d.extraSmall]: "s400x300",
+    [d.small]: "s400x300",
+    [d.medium]: "s400x300",
+    [d.large]: "s600x450",
+    [d.extraLarge]: "s900x675",
   },
   v = m(() => {
     const { model: e } = w(),
-      { name: a, title: s, rarity: r, hasNextScreen: i } = e.root.get(),
-      { breakpoint: l } = t(),
+      { name: a, title: s, rarity: r, hasNextScreen: c } = e.root.get(),
+      { breakpoint: d } = t(),
       [m, p] = (0, f.useState)(!0);
     return (
-      o(),
+      i(),
       (0, y.jsxs)("div", {
         className: S.base,
         children: [
           (0, y.jsx)("div", {
             className: S.closeButton,
-            children: (0, y.jsx)(x, { onClose: () => n.close() }),
+            children: (0, y.jsx)(x, { onClose: () => o.close() }),
           }),
           (0, y.jsxs)("div", {
             className: S.content,
@@ -74,17 +74,17 @@ var f = e(a(), 1),
                   (0, y.jsx)("div", {
                     className: S.icon,
                     style: {
-                      backgroundImage: `url('R.images.gui.maps.vehicles.attachments.${A[l.name]}.${a}')`,
+                      backgroundImage: `url('R.images.gui.maps.vehicles.attachments.${A[d.name]}.${a}')`,
                     },
                   }),
                   m &&
-                    (0, y.jsx)(d, {
+                    (0, y.jsx)(n, {
                       className: S.animation,
                       src: R.videos.rarity.$dyn(`intro_${r}`),
                       autoplay: !0,
                       onEnded: () => p(!1),
                     }),
-                  (0, y.jsx)(d, {
+                  (0, y.jsx)(n, {
                     className: (0, g.default)(S.animation, m && S.animation__hidden),
                     src: R.videos.rarity.$dyn(`cycle_${r}`),
                     autoplay: !m,
@@ -95,13 +95,13 @@ var f = e(a(), 1),
               (0, y.jsxs)("div", {
                 className: (0, g.default)(S.footer, S[`footer__${r}`]),
                 children: [
-                  (0, y.jsx)("div", { className: S.title, children: c(s) }),
+                  (0, y.jsx)("div", { className: S.title, children: l(s) }),
                   (0, y.jsx)("div", {
                     className: S.subTitle,
                     children: h(
                       R.strings.vehicle_customization.customization.RarityRewardScreen.subtitle(),
                       {
-                        rarity: c(
+                        rarity: l(
                           String(R.strings.vehicle_customization.customization.rarity.$dyn(r)),
                         ),
                       },
@@ -116,11 +116,11 @@ var f = e(a(), 1),
             children: (0, y.jsx)(u, {
               className: S.button,
               type: b.Secondary,
-              caption: i
+              caption: c
                 ? R.strings.halloween_lobby.common.btnContinue()
                 : R.strings.halloween_lobby.common.yes(),
               size: _.ExtraLarge,
-              onClick: () => n.close(),
+              onClick: () => o.close(),
             }),
           }),
         ],

@@ -3,9 +3,9 @@ import {
   $t as i,
   H as s,
   Tn as a,
-  U as n,
-  Ut as t,
-  bn as o,
+  Ut as n,
+  bn as t,
+  nt as o,
   o as r,
   ri as l,
   vr as p,
@@ -38,7 +38,7 @@ var d = e(c(), 1),
   j = R.strings.halloween_tooltips.bannerTooltip,
   T = () => {
     const { model: e } = b(),
-      { performanceRisk: a, endDate: o, date: r } = e.root.get();
+      { performanceRisk: a, endDate: t, date: r } = e.root.get();
     return (0, x.jsxs)("div", {
       className: (0, d.default)(h.base, h[`base__${a}`]),
       children: [
@@ -51,10 +51,10 @@ var d = e(c(), 1),
               className: h.description,
               children: (0, x.jsx)(i, { split: !0, text: j.description() }),
             }),
-            (0, x.jsx)(t, {
+            (0, x.jsx)(n, {
               classMix: h.callToAction,
               text: R.strings.halloween_tooltips.bannerTooltip.callToAction(),
-              alignContent: s.Center,
+              alignContent: o.Center,
               binding: {
                 mode: (0, x.jsx)("div", {
                   className: h.modeLabel,
@@ -78,16 +78,16 @@ var d = e(c(), 1),
                 ],
               }),
             (0, x.jsx)("div", { className: h.dots }),
-            (0, x.jsx)(t, {
+            (0, x.jsx)(n, {
               text: R.strings.halloween_tooltips.bannerTooltip.available(),
               classMix: h.timerStatus,
-              alignContent: s.Center,
-              justifyContent: s.Center,
-              binding: { timer: (0, x.jsx)(n, { size: "x24x24", type: "accent", start: o - r }) },
+              alignContent: o.Center,
+              justifyContent: o.Center,
+              binding: { timer: (0, x.jsx)(s, { size: "x24x24", type: "accent", start: t - r }) },
             }),
           ],
         }),
       ],
     });
   };
-o((0, x.jsx)(_, { children: (0, x.jsx)(r, { children: (0, x.jsx)(T, {}) }) }));
+t((0, x.jsx)(_, { children: (0, x.jsx)(r, { children: (0, x.jsx)(T, {}) }) }));

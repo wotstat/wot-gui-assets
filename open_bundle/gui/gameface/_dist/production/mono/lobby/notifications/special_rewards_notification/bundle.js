@@ -14,8 +14,8 @@ import {
   ot as m,
   p as u,
   q as b,
-  s as p,
-  t as h,
+  r as p,
+  s as h,
   v as x,
   w,
   x as f,
@@ -86,7 +86,7 @@ var O = {
   q = "main",
   Q = "additional",
   Y = g.resolve("images"),
-  G = [p.EQUIPMENT_TROPHY_BASIC, p.EQUIPMENT_TROPHY_UPGRADED],
+  G = [h.EQUIPMENT_TROPHY_BASIC, h.EQUIPMENT_TROPHY_UPGRADED],
   V = N(function ({ reward: e, type: s = Q, className: a = "" }) {
     const { count: n, name: t, icon: i, overlayType: o } = e,
       c = s === Q ? A.Big : A.S180x135,
@@ -142,8 +142,8 @@ var X = "Preview_d1fe5e07",
       n = s.bundleType.get(),
       t = s.isButtonDisabled.get(),
       { getText: c } = j(n),
-      l = s.computes.mainBonus(),
-      d = c(
+      d = s.computes.mainBonus(),
+      _ = c(
         ((e) => {
           switch (e) {
             case P.vehicles:
@@ -153,7 +153,7 @@ var X = "Preview_d1fe5e07",
             default:
               return "notifications.specialReward.showStyle";
           }
-        })(l.name),
+        })(d.name),
       );
     return (0, D.jsx)("div", {
       className: r(X, e),
@@ -163,9 +163,9 @@ var X = "Preview_d1fe5e07",
         theme: u.secondary,
         size: o.small,
         onClick: function () {
-          a.showPreview(l.name, l.id);
+          a.showPreview(d.name, d.id);
         },
-        children: (0, D.jsx)(h, { text: d }),
+        children: (0, D.jsx)(l, { text: _ }),
       }),
     });
   }),
@@ -184,11 +184,11 @@ var X = "Preview_d1fe5e07",
       { getExtImage: t } = j(n),
       i = e.computes.mainBonus(),
       o = e.computes.additionalBonuses(),
-      d = Boolean(i),
-      _ = o.length > 0,
-      m = d && k(i);
-    return (0, D.jsxs)(l, {
-      className: r(ae, s && ne, !_ && te, !m && ie),
+      l = Boolean(i),
+      d = o.length > 0,
+      _ = l && k(i);
+    return (0, D.jsxs)(p, {
+      className: r(ae, s && ne, !d && te, !_ && ie),
       children: [
         (0, D.jsx)(v, { image: t("specialRewardsNotification.background"), className: se }),
         s && (0, D.jsx)(a, { size: x.small, onClose: c, className: oe }),
@@ -196,9 +196,9 @@ var X = "Preview_d1fe5e07",
           className: re,
           children: [
             (0, D.jsx)(W, { bundleType: n }),
-            d && (0, D.jsx)(V, { reward: i, type: q, className: ce }),
-            _ && (0, D.jsx)(K, {}),
-            m && (0, D.jsx)(ee, {}),
+            l && (0, D.jsx)(V, { reward: i, type: q, className: ce }),
+            d && (0, D.jsx)(K, {}),
+            _ && (0, D.jsx)(ee, {}),
           ],
         }),
       ],

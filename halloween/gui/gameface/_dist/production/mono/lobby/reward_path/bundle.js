@@ -2,19 +2,19 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   A as a,
   Bt as s,
-  Hn as t,
-  Hr as r,
-  Ht as i,
-  Ii as n,
-  It as c,
+  Et as t,
+  Hn as r,
+  Hr as i,
+  Ht as n,
+  Ii as c,
   Kn as o,
   Li as l,
-  Lt as d,
-  Mr as _,
-  On as m,
-  Ri as f,
-  Sn as b,
-  Tn as u,
+  Mr as d,
+  On as _,
+  Ri as m,
+  Sn as f,
+  Tn as b,
+  Tt as u,
   Un as h,
   Ut as p,
   Wn as g,
@@ -22,24 +22,24 @@ import {
   _i as v,
   _n as j,
   bn as A,
-  ci as w,
-  d as N,
+  bt as w,
+  ci as N,
+  d as k,
   en as I,
-  f as k,
-  fn as C,
-  gt as S,
+  f as C,
+  fn as S,
   hn as y,
   jn as P,
   mi as B,
   oi as M,
-  sn as T,
-  u as H,
-  un as L,
-  vn as E,
-  vr as z,
-  yn as O,
-  zn as V,
-  zt as $,
+  ot as T,
+  sn as H,
+  u as L,
+  un as E,
+  vn as O,
+  vr as V,
+  yn as z,
+  zn as $,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as W, t as q } from "../chunks/vendor.js";
@@ -63,8 +63,8 @@ var ne = {
     animationConfig: { ...j.animationConfig, tension: 120 },
   },
   ce = { bp_slide: P("bp_slide") },
-  oe = e(f(), 1),
-  [le, de] = u()(
+  oe = e(m(), 1),
+  [le, de] = b()(
     ({ observableModel: e }) => ({
       root: e.object(),
       mainGiftVehicle: e.object("mainGiftVehicle"),
@@ -119,58 +119,58 @@ var ne = {
     base__animated: "ArtefactItem_base__animated_8bfb1d48",
     fade: "ArtefactItem_fade_8bfb1d48",
   },
-  ue = z(),
+  ue = V(),
   he = "final",
   pe = (0, oe.memo)(
     (0, oe.forwardRef)(function (
       {
         id: e,
         index: a,
-        state: t,
-        rewards: n,
+        state: r,
+        rewards: c,
         types: o,
         className: l,
-        selected: _,
-        canceledAnim: m,
-        isClaimVisible: f,
-        onClick: u,
+        selected: d,
+        canceledAnim: _,
+        isClaimVisible: m,
+        onClick: b,
         onCrewButtonClick: p,
         onSelectedItemShown: v,
       },
       j,
     ) {
-      const [A, w] = (0, oe.useState)(!1),
-        C = t === fe.Open,
-        y = r(o, he),
+      const [A, N] = (0, oe.useState)(!1),
+        S = r === fe.Open,
+        y = i(o, he),
         P = a.toString().padStart(2, "0"),
-        M = y && C ? he : a,
-        [T, L] = g(() => ({ x: -20, opacity: 0 }));
+        M = y && S ? he : a,
+        [T, H] = g(() => ({ x: -20, opacity: 0 }));
       (0, oe.useEffect)(() => {
-        L.start({
+        H.start({
           to: { x: 0, opacity: 1 },
-          delay: m ? 0 : 120 * a,
+          delay: _ ? 0 : 120 * a,
           config: { tension: 75, friction: 8 },
-          immediate: m,
+          immediate: _,
           onStart: () => {
-            (_ && v && v(), B.sound(F));
+            (d && v && v(), B.sound(F));
           },
         });
-      }, [L, m, a, v, _]);
+      }, [H, _, a, v, d]);
       return (0, ue.jsxs)(h.div, {
         className: (0, me.default)(
           be.base,
-          be[`base__${t}`],
+          be[`base__${r}`],
           A && be.base__hover,
-          _ && be.base__selected,
+          d && be.base__selected,
           l,
         ),
         style: T,
-        ref: b([j]),
+        ref: f([j]),
         children: [
           (0, ue.jsxs)("div", {
             className: be.index,
             children: [
-              !y && (C ? P : (0, ue.jsx)(G, { type: D.LightRed, text: P })),
+              !y && (S ? P : (0, ue.jsx)(G, { type: D.LightRed, text: P })),
               y && (0, ue.jsx)("div", { className: be.kingReward }),
               (0, ue.jsx)("div", { className: be.indexShadow }),
             ],
@@ -178,12 +178,12 @@ var ne = {
           (0, ue.jsxs)("div", {
             className: be.info,
             onMouseEnter: () => {
-              (B.highlight(), w(!0));
+              (B.highlight(), N(!0));
             },
-            onMouseLeave: () => w(!1),
+            onMouseLeave: () => N(!1),
             children: [
               (0, ue.jsx)("div", { className: be.infoMask }),
-              (0, ue.jsx)(i, {
+              (0, ue.jsx)(n, {
                 contentId: R.views.halloween.mono.lobby.tooltips.mission_tooltip("resId"),
                 args: { artefactID: e },
                 children: (0, ue.jsxs)(I, {
@@ -191,16 +191,16 @@ var ne = {
                   className: be.icon,
                   onMouseEnter: B.highlight,
                   onClick: () => {
-                    (B.click(), u(e));
+                    (B.click(), b(e));
                   },
                   children: [
                     (0, ue.jsx)("div", { className: be.overlay }),
-                    _ && !f && (0, ue.jsx)("div", { className: be.selected }),
+                    d && !m && (0, ue.jsx)("div", { className: be.selected }),
                   ],
                 }),
               }),
-              t !== fe.InProgress && !f && (0, ue.jsx)("div", { className: be.tick }),
-              x(n, (a, s) =>
+              r !== fe.InProgress && !m && (0, ue.jsx)("div", { className: be.tick }),
+              x(c, (a, s) =>
                 (0, ue.jsxs)(
                   "div",
                   {
@@ -208,7 +208,7 @@ var ne = {
                     children: [
                       a.isRewardShined && (0, ue.jsx)("div", { className: be.shine }),
                       (0, ue.jsx)(
-                        S,
+                        w,
                         {
                           name: a.name,
                           value: K(a),
@@ -216,10 +216,10 @@ var ne = {
                             be.reward,
                             a.isRewardShined && be.reward__shine,
                           ),
-                          size: d.Small,
+                          size: t.Small,
                           special: a.overlayType,
-                          image: J(a, d.Small),
-                          valueType: c(a.name),
+                          image: J(a, t.Small),
+                          valueType: u(a.name),
                           tooltipArgs: U(a),
                         },
                         `${a.name}${e}${s}`,
@@ -229,16 +229,16 @@ var ne = {
                   `${a.name}${s}`,
                 ),
               ),
-              f &&
+              m &&
                 (0, ue.jsxs)("div", {
                   className: be.buttonHolder,
                   children: [
                     (0, ue.jsx)("div", { className: be.buttonLight }),
                     (0, ue.jsx)("div", {
                       className: be.buttonInner,
-                      children: (0, ue.jsxs)(H, {
-                        type: k.ghost,
-                        size: N.small,
+                      children: (0, ue.jsxs)(L, {
+                        type: C.ghost,
+                        size: k.small,
                         onClick: () => {
                           p();
                         },
@@ -274,62 +274,62 @@ var ne = {
     divider__cancel: "Artefacts_divider__cancel_a2faf44e",
   },
   xe = W(function ({ canceledAnim: e, className: a }) {
-    const { model: s, controls: r } = de(),
+    const { model: s, controls: t } = de(),
       i = s.artefacts.get(),
-      n = m(),
-      c = V(),
+      n = _(),
+      c = $(),
       o = s.root.get().selectedArtefactID,
       l = Number(o.replace(/\D/g, "")),
-      d = (0, oe.useRef)([]),
+      m = (0, oe.useRef)([]),
       [f, b] = (0, oe.useState)(!1),
       [u, h] = (0, oe.useState)(!1),
       [p, g] = (0, oe.useState)(!1),
-      { api: v } = E(),
+      { api: v } = O(),
       { animationScroll: j, applyScroll: A } = v,
-      w = L(v, y.horizontal, void 0, { gapBeforeStart: 5 }),
+      w = E(v, y.horizontal, void 0, { gapBeforeStart: 5 }),
       N = (0, oe.useCallback)(
         function (e) {
           const a = v.getWrapperSize(),
             s = v.animationScroll.scrollPosition.get(),
-            t = d.current[e - 1];
+            t = m.current[e - 1];
           if (!t || !a) return;
           const r = t.offsetLeft - a / 2 + t.offsetWidth / 2;
           (0 === s && r < 0) || s === r || (n.play("bp_slide"), v.applyScroll(r));
         },
         [v, n],
       ),
-      I = (0, oe.useCallback)((e) => {
-        d.current.push(e);
+      k = (0, oe.useCallback)((e) => {
+        m.current.push(e);
       }, []),
-      k = (0, oe.useCallback)(() => {
+      I = (0, oe.useCallback)(() => {
         const e = v.getWrapperSize(),
           a = v.getContainerSize();
         e && a && b(e < a);
       }, [v]),
-      S = (0, oe.useCallback)(() => {
+      C = (0, oe.useCallback)(() => {
         g(!0);
       }, []);
     return (
       (0, oe.useEffect)(
         () =>
-          _(() => {
-            ("idle" === w.type && j.scrollPosition.idle && A(j.scrollPosition.get()), k());
+          d(() => {
+            ("idle" === w.type && j.scrollPosition.idle && A(j.scrollPosition.get()), I());
           }),
-        [k, j.scrollPosition, w, A],
+        [I, j.scrollPosition, w, A],
       ),
       (0, oe.useEffect)(() => {
         void 0 !== l && f && !u && p && (h(!0), c.run(() => N(l)));
       }, [l, N, c, f, u, p]),
-      t(() => {
-        k();
-      }, [k]),
+      r(() => {
+        I();
+      }, [I]),
       (0, ue.jsxs)(ue.Fragment, {
         children: [
           (0, ue.jsx)("div", {
             className: (0, me.default)(ge.base, a),
             children: (0, ue.jsx)("div", {
               className: ge.scroll,
-              children: (0, ue.jsx)(C, {
+              children: (0, ue.jsx)(S, {
                 areaClassName: ge.scrollArea,
                 barClassNames: { base: ge.scrollBarPosition },
                 classNames: {
@@ -345,13 +345,13 @@ var ne = {
                         children: [
                           (0, ue.jsx)(pe, {
                             ...a,
-                            ref: I,
+                            ref: k,
                             selected: a.id === o,
                             isClaimVisible: a.isClaimVisible,
                             canceledAnim: e,
-                            onClick: r.goToMission,
-                            onCrewButtonClick: r.goToCrewSelect,
-                            onSelectedItemShown: S,
+                            onClick: t.goToMission,
+                            onCrewButtonClick: t.goToCrewSelect,
+                            onSelectedItemShown: C,
                           }),
                           s < i.length - 1 &&
                             (0, ue.jsx)("div", {
@@ -375,13 +375,13 @@ var ne = {
     );
   });
 function ve(e) {
-  return (0, ue.jsx)(T, { settings: ne, children: (0, ue.jsx)(xe, { ...e }) });
+  return (0, ue.jsx)(H, { settings: ne, children: (0, ue.jsx)(xe, { ...e }) });
 }
 var je = "Header_be28ef0f",
   Ae = "Header_shadow_4800c832",
   we = "Header_subTitle_84e11aa1",
   Ne = "Header_count_d92f79a5";
-function Ie({ isCompleted: e, progress: a, className: s }) {
+function ke({ isCompleted: e, progress: a, className: s }) {
   return (0, ue.jsxs)("div", {
     className: (0, me.default)(je, s),
     children: [
@@ -396,9 +396,9 @@ function Ie({ isCompleted: e, progress: a, className: s }) {
     ],
   });
 }
-var ke = "quests",
+var Ie = "quests",
   Ce = new Map([
-    [ke, { position: 0 }],
+    [Ie, { position: 0 }],
     [
       "keys",
       {
@@ -440,9 +440,9 @@ var ke = "quests",
   Re = { base: "RewardPathWidget_2f29fe5e" },
   ye = W(function ({ className: e }) {
     const { model: s } = te(),
-      t = se({ [ke]: s.quests.get().length > 0 });
+      t = se({ [Ie]: s.quests.get().length > 0 });
     return (0, ue.jsx)("div", {
-      className: n(Re.base, e),
+      className: c(Re.base, e),
       children: (0, ue.jsxs)("div", {
         className: Re.cardsBlock,
         children: [
@@ -453,7 +453,7 @@ var ke = "quests",
     });
   });
 function Pe(e) {
-  return (0, ue.jsx)(O, {
+  return (0, ue.jsx)(z, {
     soundsOverrides: ie,
     children: (0, ue.jsx)(Y, {
       children: (0, ue.jsx)(X, {
@@ -469,9 +469,9 @@ var Be = "RewardPathApp_7f1678b4",
   He = "RewardPathApp_base__cancel_f7ecbfc",
   Le = "RewardPathApp_video_static_frame_ac99e31",
   Ee = "RewardPathApp_video_595e463b",
-  ze = "RewardPathApp_tank_f5b79404",
-  Oe = "RewardPathApp_header_57b512b8",
-  Ve = "RewardPathApp_cardsBlock_931d993",
+  Oe = "RewardPathApp_tank_f5b79404",
+  Ve = "RewardPathApp_header_57b512b8",
+  ze = "RewardPathApp_cardsBlock_931d993",
   $e = "RewardPathApp_giftedVehicle_c05dba18",
   We = "RewardPathApp_artefacts_1c84995d",
   qe = W(() => {
@@ -482,16 +482,16 @@ var Be = "RewardPathApp_7f1678b4",
     return (
       (0, oe.useEffect)(() => a.viewLoaded(), [a]),
       (0, ue.jsxs)("div", {
-        className: n(Be, r && He),
+        className: c(Be, r && He),
         onClick: () => i(!0),
         children: [
           (0, ue.jsxs)("div", {
             className: Te,
             children: [
-              (0, ue.jsx)("div", { className: ze }),
+              (0, ue.jsx)("div", { className: Oe }),
               v.isLow()
                 ? (0, ue.jsx)("div", { className: Le })
-                : (0, ue.jsx)($, {
+                : (0, ue.jsx)(T, {
                     src: R.videos.halloween.king_reward(),
                     className: Ee,
                     loop: !0,
@@ -500,9 +500,9 @@ var Be = "RewardPathApp_7f1678b4",
             ],
           }),
           (0, ue.jsx)("div", { className: Me }),
-          (0, ue.jsx)(Pe, { className: Ve }),
+          (0, ue.jsx)(Pe, { className: ze }),
           (0, ue.jsx)(Q, { ...e.mainGiftVehicle.get(), onClick: a.preview, className: $e }),
-          (0, ue.jsx)(Ie, { className: Oe, isCompleted: s, progress: t }),
+          (0, ue.jsx)(ke, { className: Ve, isCompleted: s, progress: t }),
           (0, ue.jsx)(ve, { className: We, canceledAnim: r }),
         ],
       })
@@ -510,8 +510,8 @@ var Be = "RewardPathApp_7f1678b4",
   });
 A(
   (0, ue.jsx)(le, {
-    children: (0, ue.jsx)(O, { soundsOverrides: ce, children: (0, ue.jsx)(qe, {}) }),
+    children: (0, ue.jsx)(z, { soundsOverrides: ce, children: (0, ue.jsx)(qe, {}) }),
   }),
 )
-  .then(() => w(document.getElementById("root")))
+  .then(() => N(document.getElementById("root")))
   .then(() => M());

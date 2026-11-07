@@ -1,15 +1,15 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $r as t,
-  H as s,
-  Jn as o,
-  Kn as a,
-  Ri as n,
-  Tn as r,
-  Tr as l,
-  Ut as i,
-  bn as c,
-  mi as d,
+  Jn as s,
+  Kn as o,
+  Ri as a,
+  Tn as n,
+  Tr as r,
+  Ut as l,
+  bn as i,
+  mi as c,
+  nt as d,
   vr as p,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
@@ -19,8 +19,8 @@ import { T as h, t as b } from "../chunks/sound.js";
 import { i as j, r as y } from "../chunks/text.js";
 import { n as C, r as x, t as u } from "../chunks/button.js";
 import { t as f } from "../chunks/close_button.js";
-var I = e(n(), 1),
-  [g, N] = r()(
+var I = e(a(), 1),
+  [g, N] = n()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs("onClose") }),
   ),
@@ -65,18 +65,18 @@ var I = e(n(), 1),
   P = "MetaIntroApp_closeBtn_f6844130",
   $ = p(),
   q = m(() => {
-    const { model: e, controls: n } = N(),
-      { level: r, name: c } = e.root.get(),
+    const { model: e, controls: a } = N(),
+      { level: n, name: i } = e.root.get(),
       [p, m] = (0, I.useState)(!1);
     return (
-      a(n.onClose),
-      o(t.ENTER, n.onClose),
-      o(t.SPACE, n.onClose),
+      o(a.onClose),
+      s(t.ENTER, a.onClose),
+      s(t.SPACE, a.onClose),
       (0, $.jsxs)("div", {
         className: A,
         onClick: () => m(!0),
         children: [
-          (0, $.jsx)(f, { className: P, onClose: n.onClose }),
+          (0, $.jsx)(f, { className: P, onClose: a.onClose }),
           (0, $.jsx)(_, {
             className: z,
             isCanceled: p,
@@ -96,7 +96,7 @@ var I = e(n(), 1),
                 (0, $.jsx)(_, {
                   isCanceled: p,
                   ...v[k.BLOCK_1],
-                  onStart: () => d.sound(h),
+                  onStart: () => c.sound(h),
                   children: (0, $.jsxs)("div", {
                     className: B,
                     children: [
@@ -109,11 +109,11 @@ var I = e(n(), 1),
                             className: O,
                             children: R.strings.halloween_lobby.metaIntro.header.fight(),
                           }),
-                          (0, $.jsx)(i, {
+                          (0, $.jsx)(l, {
                             classMix: K,
                             text: R.strings.halloween_lobby.metaIntro.description.fight(),
-                            alignContent: s.Center,
-                            justifyContent: s.Center,
+                            alignContent: d.Center,
+                            justifyContent: d.Center,
                           }),
                         ],
                       }),
@@ -123,7 +123,7 @@ var I = e(n(), 1),
                 (0, $.jsx)(_, {
                   isCanceled: p,
                   ...v[k.BLOCK_2],
-                  onStart: () => d.sound(h),
+                  onStart: () => c.sound(h),
                   children: (0, $.jsxs)("div", {
                     className: B,
                     children: [
@@ -136,11 +136,11 @@ var I = e(n(), 1),
                             className: O,
                             children: R.strings.halloween_lobby.metaIntro.header.progress(),
                           }),
-                          (0, $.jsx)(i, {
+                          (0, $.jsx)(l, {
                             classMix: K,
                             text: R.strings.halloween_lobby.metaIntro.description.progress(),
-                            alignContent: s.Center,
-                            justifyContent: s.Center,
+                            alignContent: d.Center,
+                            justifyContent: d.Center,
                           }),
                         ],
                       }),
@@ -150,7 +150,7 @@ var I = e(n(), 1),
                 (0, $.jsx)(_, {
                   isCanceled: p,
                   ...v[k.BLOCK_3],
-                  onStart: () => d.sound(h),
+                  onStart: () => c.sound(h),
                   children: (0, $.jsxs)("div", {
                     className: B,
                     children: [
@@ -163,12 +163,12 @@ var I = e(n(), 1),
                             className: O,
                             children: R.strings.halloween_lobby.metaIntro.header.reward(),
                           }),
-                          (0, $.jsx)(i, {
+                          (0, $.jsx)(l, {
                             classMix: K,
                             text: R.strings.halloween_lobby.metaIntro.description.reward(),
-                            alignContent: s.Center,
-                            justifyContent: s.Center,
-                            binding: { level: l(r), tankName: c },
+                            alignContent: d.Center,
+                            justifyContent: d.Center,
+                            binding: { level: r(n), tankName: i },
                           }),
                         ],
                       }),
@@ -182,14 +182,14 @@ var I = e(n(), 1),
             isCanceled: p,
             className: D,
             ...v[k.BUTTON],
-            onStart: () => d.sound(b),
+            onStart: () => c.sound(b),
             children: (0, $.jsx)("div", {
               className: J,
               children: (0, $.jsx)(u, {
                 type: x.Secondary,
                 caption: R.strings.halloween_lobby.common.yes(),
                 size: C.ExtraLarge,
-                onClick: n.onClose,
+                onClick: a.onClose,
               }),
             }),
           }),
@@ -197,4 +197,4 @@ var I = e(n(), 1),
       })
     );
   });
-c((0, $.jsx)(g, { children: (0, $.jsx)(q, {}) }));
+i((0, $.jsx)(g, { children: (0, $.jsx)(q, {}) }));

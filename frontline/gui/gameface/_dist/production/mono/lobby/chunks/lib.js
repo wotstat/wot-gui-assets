@@ -35671,6 +35671,403 @@ var Lines = (0, import_react.memo)(
     }),
   ),
   statusTypes = { done: "done", locked: "locked", alert: "alert" },
+  root$11 = "CloseButton_root_987cb365",
+  base$11 = "CloseButton_7488a1b8",
+  base__medium$1 = "CloseButton_base__medium_97d04067",
+  base__small$3 = "CloseButton_base__small_c1b29bae",
+  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
+  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
+  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
+  close_button_module_default = {
+    "media-wrapper": "CloseButton_media-wrapper_987cb365",
+    root: root$11,
+    base: base$11,
+    base__medium: base__medium$1,
+    base__small: base__small$3,
+    base__extraSmall: base__extraSmall,
+    base__x96x96: base__x96x96,
+    base__x32x32: base__x32x32,
+  },
+  sizes$5 = { medium: "medium", small: "small", extraSmall: "extraSmall" },
+  upscaleImageSizes = {
+    [sizes$5.medium]: "x96x96",
+    [sizes$5.small]: sizes$5.medium,
+    [sizes$5.extraSmall]: "x32x32",
+  };
+function CloseButton({
+  size: e = sizes$5.medium,
+  hoverSound: t = sounds$1.highlight,
+  clickSound: n = sounds$1.click,
+  className: r,
+  onHover: a,
+  onClose: o,
+}) {
+  const i = useUpscale(
+    close_button_module_default[`base__${e}`],
+    close_button_module_default[`base__${upscaleImageSizes[e]}`],
+  );
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
+    onMouseEnter: () => {
+      (play$1.sound(t), a?.());
+    },
+    onClick: () => {
+      (play$1.sound(n), o());
+    },
+  });
+}
+CloseButton.size = sizes$5;
+var RewardType = (function (e) {
+    return (
+      (e.Items = "items"),
+      (e.Equipment = "equipment"),
+      (e.Xp = "xp"),
+      (e.XpFactor = "xpFactor"),
+      (e.Blueprints = "blueprints"),
+      (e.BlueprintsAny = "blueprintsAny"),
+      (e.Goodies = "goodies"),
+      (e.Berths = "berths"),
+      (e.Slots = "slots"),
+      (e.Tokens = "tokens"),
+      (e.CrewSkins = "crewSkins"),
+      (e.CrewBooks = "crewBooks"),
+      (e.Customizations = "customizations"),
+      (e.CreditsFactor = "creditsFactor"),
+      (e.Tankman = "tankman"),
+      (e.Tankwoman = "tankwoman"),
+      (e.TankmenXp = "tankmenXP"),
+      (e.TankmenXpFactor = "tankmenXPFactor"),
+      (e.FreeXpFactor = "freeXPFactor"),
+      (e.BattleToken = "battleToken"),
+      (e.PremiumUniversal = "premium_universal"),
+      (e.Gold = "gold"),
+      (e.Credits = "credits"),
+      (e.Crystal = "crystal"),
+      (e.FreeXp = "freeXP"),
+      (e.Premium = "premium"),
+      (e.PremiumPlus = "premium_plus"),
+      (e.BattlePassPoints = "battlePassPoints"),
+      (e.BattlePassSelectToken = "battlePassSelectToken"),
+      (e.StyleProgressToken = "styleProgressToken"),
+      (e.TmanToken = "tmanToken"),
+      (e.NaturalCover = "naturalCover"),
+      (e.BpCoin = "bpcoin"),
+      (e.BattlaPassFinalAchievement = "dossier_achievement"),
+      (e.BattleBadge = "dossier_badge"),
+      (e.BonusX5 = "battle_bonus_x5"),
+      (e.CrewBonusX3 = "crew_bonus_x3"),
+      (e.Vehicles = "vehicles"),
+      (e.EpicSelectToken = "epicSelectToken"),
+      (e.Comp7TokenWeeklyReward = "comp7TokenWeeklyReward"),
+      (e.DeluxeGift = "deluxe_gift"),
+      (e.BattleBoosterGift = "battleBooster_gift"),
+      (e.OptionalDevice = "optionalDevice"),
+      (e.EquipCoin = "equipCoin"),
+      (e.LootBox = "lootBox"),
+      (e.BrCoin = "brcoin"),
+      (e.Pet = "pet"),
+      e
+    );
+  })({}),
+  ImageSize = (function (e) {
+    return (
+      (e.Big = "big"),
+      (e.Small = "small"),
+      (e.Mini = "mini"),
+      (e.S600x450 = "s600x450"),
+      (e.S400x300 = "s400x300"),
+      (e.S296x222 = "s296x222"),
+      (e.S232x174 = "s232x174"),
+      (e.S180x135 = "s180x135"),
+      (e.S128x100 = "s128x100"),
+      (e.S80x80 = "s80x80"),
+      (e.S64x64 = "s64x64"),
+      (e.S48x48 = "s48x48"),
+      (e.S24x24 = "s24x24"),
+      (e.S300x300 = "s300x300"),
+      (e.S450x450 = "s450x450"),
+      e
+    );
+  })({}),
+  ValueTypes = (function (e) {
+    return (
+      (e.MULTI = "multi"),
+      (e.CURRENCY = "currency"),
+      (e.PREMIUM_PLUS = "premium_plus"),
+      (e.NUMBER = "number"),
+      (e.STRING = "string"),
+      e
+    );
+  })({}),
+  Specials = (function (e) {
+    return (
+      (e.ATTACHMENT_RARE = "rare"),
+      (e.ATTACHMENT_EPIC = "epic"),
+      (e.ATTACHMENT_LEGENDARY = "legendary"),
+      (e.BATTLE_BOOSTER = "battleBooster"),
+      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+      (e.EQUIPMENT_PLUS = "equipmentPlus"),
+      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
+      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
+      e
+    );
+  })({}),
+  HighlightClasses = (function (e) {
+    return ((e.BATTLE_BOOSTER = "battleBooster"), e);
+  })({}),
+  OverlayClasses = (function (e) {
+    return (
+      (e.ATTACHMENT_RARE = "rare"),
+      (e.ATTACHMENT_EPIC = "epic"),
+      (e.ATTACHMENT_LEGENDARY = "legendary"),
+      (e.BATTLE_BOOSTER = "battleBooster"),
+      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+      (e.EQUIPMENT_PLUS = "equipmentPlus"),
+      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
+      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
+      e
+    );
+  })({}),
+  multiValueTypes = [
+    RewardType.Items,
+    RewardType.Equipment,
+    RewardType.Xp,
+    RewardType.XpFactor,
+    RewardType.Blueprints,
+    RewardType.BlueprintsAny,
+    RewardType.Goodies,
+    RewardType.Berths,
+    RewardType.Slots,
+    RewardType.Tokens,
+    RewardType.CrewSkins,
+    RewardType.CrewBooks,
+    RewardType.Customizations,
+    RewardType.CreditsFactor,
+    RewardType.TankmenXp,
+    RewardType.TankmenXpFactor,
+    RewardType.FreeXpFactor,
+    RewardType.BattleToken,
+    RewardType.LootBox,
+    RewardType.PremiumUniversal,
+    RewardType.NaturalCover,
+    RewardType.BpCoin,
+    RewardType.BattlePassSelectToken,
+    RewardType.BattlaPassFinalAchievement,
+    RewardType.BattleBadge,
+    RewardType.BonusX5,
+    RewardType.CrewBonusX3,
+    RewardType.EpicSelectToken,
+    RewardType.Comp7TokenWeeklyReward,
+    RewardType.DeluxeGift,
+    RewardType.BattleBoosterGift,
+    RewardType.OptionalDevice,
+    RewardType.TmanToken,
+    RewardType.Pet,
+  ],
+  currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
+  numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
+  premiumValueTypes = [RewardType.PremiumPlus, RewardType.Premium],
+  getSizeFolder = (e) => {
+    switch (e) {
+      case ImageSize.S600x450:
+        return "c_600x450";
+      case ImageSize.S400x300:
+        return "c_400x300";
+      case ImageSize.S296x222:
+        return "c_296x222";
+      case ImageSize.S232x174:
+        return "c_232x174";
+      case ImageSize.Big:
+        return "c_80x80";
+      case ImageSize.Small:
+        return "c_48x48";
+      default:
+        return e;
+    }
+  },
+  getRewardValueType = (e) =>
+    multiValueTypes.includes(e)
+      ? ValueTypes.MULTI
+      : currencyValueTypes.includes(e)
+        ? ValueTypes.CURRENCY
+        : numberValueTypes.includes(e)
+          ? ValueTypes.NUMBER
+          : premiumValueTypes.includes(e)
+            ? ValueTypes.PREMIUM_PLUS
+            : ValueTypes.STRING,
+  DOG_TAG_FOLDER_NAMES = ["engravings", "backgrounds"],
+  DOG_TAG_DEFAULT_ICON_NAME = ["engraving", "background"],
+  getDogTypeImage = (e, t, n) => {
+    const r = DOG_TAG_FOLDER_NAMES[e];
+    if (r) {
+      const a = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(r),
+        o = a.$dyn(n);
+      return !o && DOG_TAG_DEFAULT_ICON_NAME[e]
+        ? `${a.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}`
+        : `${o}`;
+    }
+    return (
+      console.error(
+        "Unreachable branch: add dogTagType and icon folder for corresponding icon matching",
+      ),
+      ""
+    );
+  },
+  getRewardImage = (e, t = ImageSize.Small) => {
+    const { name: n, type: r, value: a, icon: o, item: i, dogTagType: s } = e,
+      u = t === ImageSize.S24x24 ? ImageSize.Small : t,
+      l = getSizeFolder(u);
+    switch (n) {
+      case "basic":
+      case "plus":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}_${a}`;
+      case "premium":
+      case "premium_plus":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}_${a}`;
+      case "items":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${i}`;
+      case "blueprints":
+      case "blueprintsAny":
+      case "finalBlueprints":
+        return `R.images.gui.maps.icons.blueprints.fragment.${u}.${o}`;
+      case "tokens":
+      case "lootBox":
+      case "battleToken":
+        return "big" === t
+          ? e.iconBig.replace("..", "img://gui")
+          : e.iconSmall.replace("..", "img://gui");
+      case "customizations":
+      case "styleProgress":
+      case "crewSkins":
+      case "goodies":
+      case "groups":
+      case "tmanToken":
+      case "battlePassSelectToken":
+      case "pet":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
+      case "crewBooks":
+        return `R.images.gui.maps.icons.crewBooks.books.${u}.${o}`;
+      case "dogTagComponents":
+        return getDogTypeImage(s, u, o);
+      case "dossier_badge":
+        return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${o}`;
+      case "dossier_achievement":
+        return `R.images.gui.maps.icons.achievement.${l}.${o}`;
+      case "xp":
+      case "xpFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
+      case "creditsFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.credits`;
+      case "tankmenXPFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.tankmenXP`;
+      case "dailyXPFactor":
+      case "freeXPFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
+      case "premiumTank":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
+      case "styleProgressToken":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
+      case "collectionItem":
+        return `R.images.gui.maps.icons.collectionItems.${l}.${o}`;
+      default:
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}`;
+    }
+  },
+  getRewardTooltipConfig = (e, t) => ({ args: e, contentId: t }),
+  SIZES_WITH_BOTTOM_HIGHLIGHT = [ImageSize.Small, ImageSize.Big],
+  getBottomHighlight = (e, t) => {
+    if (void 0 === t || !SIZES_WITH_BOTTOM_HIGHLIGHT.includes(e)) return null;
+    switch (t) {
+      case Specials.BATTLE_BOOSTER:
+      case Specials.BATTLE_BOOSTER_REPLACE:
+        return HighlightClasses.BATTLE_BOOSTER;
+    }
+  },
+  getOverlay = (e) => {
+    if (void 0 === e) return null;
+    switch (e) {
+      case Specials.BATTLE_BOOSTER:
+        return OverlayClasses.BATTLE_BOOSTER;
+      case Specials.BATTLE_BOOSTER_REPLACE:
+        return OverlayClasses.BATTLE_BOOSTER_REPLACE;
+      case Specials.BUILT_IN_EQUIPMENT:
+        return OverlayClasses.BUILT_IN_EQUIPMENT;
+      case Specials.EQUIPMENT_PLUS:
+        return OverlayClasses.EQUIPMENT_PLUS;
+      case Specials.EQUIPMENT_TROPHY_BASIC:
+        return OverlayClasses.EQUIPMENT_TROPHY_BASIC;
+      case Specials.EQUIPMENT_TROPHY_UPGRADED:
+        return OverlayClasses.EQUIPMENT_TROPHY_UPGRADED;
+      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_1:
+        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_1;
+      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_2:
+        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_2;
+      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_3:
+        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_3;
+      case Specials.PROGRESSION_STYLE_UPGRADED_1:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_1;
+      case Specials.PROGRESSION_STYLE_UPGRADED_2:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_2;
+      case Specials.PROGRESSION_STYLE_UPGRADED_3:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_3;
+      case Specials.PROGRESSION_STYLE_UPGRADED_4:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_4;
+      case Specials.PROGRESSION_STYLE_UPGRADED_5:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
+      case Specials.PROGRESSION_STYLE_UPGRADED_6:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
+      case Specials.ATTACHMENT_RARE:
+        return OverlayClasses.ATTACHMENT_RARE;
+      case Specials.ATTACHMENT_EPIC:
+        return OverlayClasses.ATTACHMENT_EPIC;
+      case Specials.ATTACHMENT_LEGENDARY:
+        return OverlayClasses.ATTACHMENT_LEGENDARY;
+    }
+  },
+  getFormattedValue = (e, t) => {
+    const n = resources.resolve("intl");
+    if (void 0 === e) return null;
+    switch (t) {
+      case ValueTypes.MULTI: {
+        const t = Number(e);
+        return isFinite(t) && t > 1 ? `x${Math.floor(t)}` : null;
+      }
+      case ValueTypes.CURRENCY:
+      case ValueTypes.NUMBER:
+        return n.formatNumber(n.numberFormats[0] || "integral", Number(e));
+      case ValueTypes.PREMIUM_PLUS: {
+        const t = Number(e);
+        return isNaN(t) ? e : null;
+      }
+      default:
+        return e;
+    }
+  },
+  formatPrintf = (e, t) =>
+    e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
+      const n = 0 === e.indexOf("%") ? 2 : 1;
+      return String(t[e.slice(n, -n)]);
+    }),
   measureTypes = { measuring: "measuring", noneRef: "none-ref", measured: "measured" },
   initialState = { type: "measuring" };
 function useMeasure() {
@@ -38484,8 +38881,8 @@ function TableProvider({
     );
   return (0, import_jsx_runtime.jsx)(TableContext.Provider, { value: h, children: e });
 }
-var root$11 = "Table_root_ef69bf65",
-  base$11 = "Table_85be883a",
+var root$10 = "Table_root_ef69bf65",
+  base$10 = "Table_85be883a",
   row = "Table_row_881b7550",
   header = "Table_header_ef69bf65",
   footer = "Table_footer_ef69bf65",
@@ -38495,8 +38892,8 @@ var root$11 = "Table_root_ef69bf65",
   contentResponsiveCellWrapper = "Table_contentResponsiveCellWrapper_ddee221c",
   table_module_default = {
     "media-wrapper": "Table_media-wrapper_ef69bf65",
-    root: root$11,
-    base: base$11,
+    root: root$10,
+    base: base$10,
     row: row,
     header: header,
     footer: footer,
@@ -38701,16 +39098,16 @@ var Base$8 = defineStyledComponent("Table", table_module_default.base),
   (Table.Row = Row),
   (Table.Cell = Cell),
   (Table.behaviours = columnBehaviours));
-var sizes$5 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
+var sizes$4 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
   paths$1 = {
-    [sizes$5.x24x24]: "library.gray_eye_24x24",
-    [sizes$5.x32x32]: "library.gray_eye_32x32",
-    [sizes$5.x48x48]: "library.gray_eye_48x48",
+    [sizes$4.x24x24]: "library.gray_eye_24x24",
+    [sizes$4.x32x32]: "library.gray_eye_32x32",
+    [sizes$4.x48x48]: "library.gray_eye_48x48",
   },
   sizesConfig$5 = {
-    [sizes$5.x24x24]: { width: "24rem", height: "24rem" },
-    [sizes$5.x32x32]: { width: "32rem", height: "32rem" },
-    [sizes$5.x48x48]: { width: "48rem", height: "48rem" },
+    [sizes$4.x24x24]: { width: "24rem", height: "24rem" },
+    [sizes$4.x32x32]: { width: "32rem", height: "32rem" },
+    [sizes$4.x48x48]: { width: "48rem", height: "48rem" },
   },
   Base$7 = defineStyledComponent("PlayerInfoAnonymizer", { element: Image$1 }),
   AnonymizerIcon = (0, import_react.forwardRef)(function (
@@ -38733,9 +39130,9 @@ var sizes$5 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
       className: a,
     });
   });
-AnonymizerIcon.sizes = sizes$5;
-var root$10 = "PlayerInfo_root_56d02918",
-  base$10 = "PlayerInfo_89eea88b",
+AnonymizerIcon.sizes = sizes$4;
+var root$9 = "PlayerInfo_root_56d02918",
+  base$9 = "PlayerInfo_89eea88b",
   badge = "PlayerInfo_badge_9f134a01",
   name = "PlayerInfo_name_120449f9",
   name__medium = "PlayerInfo_name__medium_4066d463",
@@ -38749,8 +39146,8 @@ var root$10 = "PlayerInfo_root_56d02918",
   stripeBadge = "PlayerInfo_stripeBadge_605bfd0a",
   player_info_module_default = {
     "media-wrapper": "PlayerInfo_media-wrapper_56d02918",
-    root: root$10,
-    base: base$10,
+    root: root$9,
+    base: base$9,
     badge: badge,
     name: name,
     name__medium: name__medium,
@@ -38763,11 +39160,11 @@ var root$10 = "PlayerInfo_root_56d02918",
     stripe__big: stripe__big,
     stripeBadge: stripeBadge,
   },
-  sizes$4 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
+  sizes$3 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
   sizesConfig$4 = {
-    [sizes$4.x24x24]: { width: "24rem", height: "24rem" },
-    [sizes$4.x48x48]: { width: "48rem", height: "48rem" },
-    [sizes$4.x80x80]: { width: "80rem", height: "80rem" },
+    [sizes$3.x24x24]: { width: "24rem", height: "24rem" },
+    [sizes$3.x48x48]: { width: "48rem", height: "48rem" },
+    [sizes$3.x80x80]: { width: "80rem", height: "80rem" },
   },
   Base$6 = defineStyledComponent("PlayerInfoBadge", { element: Image$1 }),
   Badge = (0, import_react.forwardRef)(function (
@@ -38802,19 +39199,19 @@ function ClanTag({ size: e, className: t, children: n, ...r }) {
     children: n,
   });
 }
-Badge.sizes = sizes$4;
-var sizes$3 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10x10" },
+Badge.sizes = sizes$3;
+var sizes$2 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10x10" },
   paths = {
-    [sizes$3.x10x10]: "library.premium_igr_ico",
-    [sizes$3.x26x16]: "library.premium_igr_small",
-    [sizes$3.x34x16]: "library.premium_small",
-    [sizes$3.x64x28]: "library.premium_igr_big",
+    [sizes$2.x10x10]: "library.premium_igr_ico",
+    [sizes$2.x26x16]: "library.premium_igr_small",
+    [sizes$2.x34x16]: "library.premium_small",
+    [sizes$2.x64x28]: "library.premium_igr_big",
   },
   sizesConfig$3 = {
-    [sizes$3.x10x10]: { width: "10rem", height: "10rem" },
-    [sizes$3.x26x16]: { width: "26rem", height: "16rem" },
-    [sizes$3.x34x16]: { width: "34rem", height: "16rem" },
-    [sizes$3.x64x28]: { width: "64rem", height: "28rem" },
+    [sizes$2.x10x10]: { width: "10rem", height: "10rem" },
+    [sizes$2.x26x16]: { width: "26rem", height: "16rem" },
+    [sizes$2.x34x16]: { width: "34rem", height: "16rem" },
+    [sizes$2.x64x28]: { width: "64rem", height: "28rem" },
   },
   Base$5 = defineStyledComponent("PlayerInfoIgr", { element: Image$1 }),
   IgrIcon = (0, import_react.forwardRef)(function (
@@ -38847,30 +39244,30 @@ function Name({ size: e, className: t, children: n }) {
     children: n,
   });
 }
-IgrIcon.sizes = sizes$3;
-var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "big" },
+IgrIcon.sizes = sizes$2;
+var sizes$1 = { default: "default", regular: "regular", medium: "medium", big: "big" },
   stripeFolders = {
-    [sizes$2.default]: "c_64x24",
-    [sizes$2.regular]: "c_68x28",
-    [sizes$2.medium]: "c_68x28",
-    [sizes$2.big]: "c_100x40",
+    [sizes$1.default]: "c_64x24",
+    [sizes$1.regular]: "c_68x28",
+    [sizes$1.medium]: "c_68x28",
+    [sizes$1.big]: "c_100x40",
   },
   badgeFolders = {
-    [sizes$2.default]: "c_24x24",
-    [sizes$2.regular]: "c_32x32",
-    [sizes$2.medium]: "c_48x48",
-    [sizes$2.big]: "c_80x80",
+    [sizes$1.default]: "c_24x24",
+    [sizes$1.regular]: "c_32x32",
+    [sizes$1.medium]: "c_48x48",
+    [sizes$1.big]: "c_80x80",
   },
   sizesConfig$2 = {
-    [sizes$2.default]: { width: "24rem", height: "24rem", marginLeft: "-15rem" },
-    [sizes$2.regular]: { width: "32rem", height: "32rem", marginLeft: "-19rem" },
-    [sizes$2.medium]: { width: "48rem", height: "48rem", marginLeft: "-32rem" },
-    [sizes$2.big]: { width: "80rem", height: "80rem", marginLeft: "-25rem" },
+    [sizes$1.default]: { width: "24rem", height: "24rem", marginLeft: "-15rem" },
+    [sizes$1.regular]: { width: "32rem", height: "32rem", marginLeft: "-19rem" },
+    [sizes$1.medium]: { width: "48rem", height: "48rem", marginLeft: "-32rem" },
+    [sizes$1.big]: { width: "80rem", height: "80rem", marginLeft: "-25rem" },
   },
   Base$4 = defineStyledComponent("StripeBadgeIcon", { element: Image$1 }),
   StripeBadgeIcon = (0, import_react.forwardRef)(function (
     {
-      size: e = sizes$2.default,
+      size: e = sizes$1.default,
       badgeId: t,
       stripeExists: n,
       path: r = `library.badges.${badgeFolders[e]}.badge_${t}`,
@@ -38893,15 +39290,15 @@ var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "
     });
   }),
   sizesConfig$1 = {
-    [sizes$2.default]: { width: "64rem", height: "24rem" },
-    [sizes$2.regular]: { width: "68rem", height: "24rem" },
-    [sizes$2.medium]: { width: "68rem", height: "28rem" },
-    [sizes$2.big]: { width: "100rem", height: "40rem" },
+    [sizes$1.default]: { width: "64rem", height: "24rem" },
+    [sizes$1.regular]: { width: "68rem", height: "24rem" },
+    [sizes$1.medium]: { width: "68rem", height: "28rem" },
+    [sizes$1.big]: { width: "100rem", height: "40rem" },
   },
   Base$3 = defineStyledComponent("StripeIcon", { element: Image$1 }),
   StripeIcon = (0, import_react.forwardRef)(function (
     {
-      size: e = sizes$2.default,
+      size: e = sizes$1.default,
       badgeId: t,
       stripeExists: n,
       path: r = `library.badges.strips.${stripeFolders[e]}.strip_${t}`,
@@ -38927,7 +39324,7 @@ var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "
   Base$2 = defineStyledComponent("PlayerInfoStripe", player_info_module_default.stripe),
   Stripe = (0, import_react.forwardRef)(function (
     {
-      size: e = sizes$2.default,
+      size: e = sizes$1.default,
       badgeId: t,
       classNames: n,
       className: r,
@@ -38965,7 +39362,7 @@ var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "
       ],
     });
   });
-((Stripe.sizes = sizes$2), (Stripe.icons = sizesConfig));
+((Stripe.sizes = sizes$1), (Stripe.icons = sizesConfig));
 var Base$1 = defineStyledComponent("AccountInfo", player_info_module_default.base),
   Wrapper = defineStyledComponent("AccountInfoWrapper", player_info_module_default.base),
   PlayerInfo = (0, import_react.forwardRef)((e, t) =>
@@ -38981,404 +39378,7 @@ function isValidBreakpoint(e) {
   (PlayerInfo.AnonymizerIcon = AnonymizerIcon),
   (PlayerInfo.Stripe = Stripe),
   (PlayerInfo.Wrapper = Wrapper));
-var root$9 = "CloseButton_root_987cb365",
-  base$9 = "CloseButton_7488a1b8",
-  base__medium$1 = "CloseButton_base__medium_97d04067",
-  base__small$3 = "CloseButton_base__small_c1b29bae",
-  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
-  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
-  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
-  close_button_module_default = {
-    "media-wrapper": "CloseButton_media-wrapper_987cb365",
-    root: root$9,
-    base: base$9,
-    base__medium: base__medium$1,
-    base__small: base__small$3,
-    base__extraSmall: base__extraSmall,
-    base__x96x96: base__x96x96,
-    base__x32x32: base__x32x32,
-  },
-  sizes$1 = { medium: "medium", small: "small", extraSmall: "extraSmall" },
-  upscaleImageSizes = {
-    [sizes$1.medium]: "x96x96",
-    [sizes$1.small]: sizes$1.medium,
-    [sizes$1.extraSmall]: "x32x32",
-  };
-function CloseButton({
-  size: e = sizes$1.medium,
-  hoverSound: t = sounds$1.highlight,
-  clickSound: n = sounds$1.click,
-  className: r,
-  onHover: a,
-  onClose: o,
-}) {
-  const i = useUpscale(
-    close_button_module_default[`base__${e}`],
-    close_button_module_default[`base__${upscaleImageSizes[e]}`],
-  );
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
-    onMouseEnter: () => {
-      (play$1.sound(t), a?.());
-    },
-    onClick: () => {
-      (play$1.sound(n), o());
-    },
-  });
-}
-CloseButton.size = sizes$1;
-var RewardType = (function (e) {
-    return (
-      (e.Items = "items"),
-      (e.Equipment = "equipment"),
-      (e.Xp = "xp"),
-      (e.XpFactor = "xpFactor"),
-      (e.Blueprints = "blueprints"),
-      (e.BlueprintsAny = "blueprintsAny"),
-      (e.Goodies = "goodies"),
-      (e.Berths = "berths"),
-      (e.Slots = "slots"),
-      (e.Tokens = "tokens"),
-      (e.CrewSkins = "crewSkins"),
-      (e.CrewBooks = "crewBooks"),
-      (e.Customizations = "customizations"),
-      (e.CreditsFactor = "creditsFactor"),
-      (e.Tankman = "tankman"),
-      (e.Tankwoman = "tankwoman"),
-      (e.TankmenXp = "tankmenXP"),
-      (e.TankmenXpFactor = "tankmenXPFactor"),
-      (e.FreeXpFactor = "freeXPFactor"),
-      (e.BattleToken = "battleToken"),
-      (e.PremiumUniversal = "premium_universal"),
-      (e.Gold = "gold"),
-      (e.Credits = "credits"),
-      (e.Crystal = "crystal"),
-      (e.FreeXp = "freeXP"),
-      (e.Premium = "premium"),
-      (e.PremiumPlus = "premium_plus"),
-      (e.BattlePassPoints = "battlePassPoints"),
-      (e.BattlePassSelectToken = "battlePassSelectToken"),
-      (e.StyleProgressToken = "styleProgressToken"),
-      (e.TmanToken = "tmanToken"),
-      (e.NaturalCover = "naturalCover"),
-      (e.BpCoin = "bpcoin"),
-      (e.BattlaPassFinalAchievement = "dossier_achievement"),
-      (e.BattleBadge = "dossier_badge"),
-      (e.BonusX5 = "battle_bonus_x5"),
-      (e.CrewBonusX3 = "crew_bonus_x3"),
-      (e.Vehicles = "vehicles"),
-      (e.EpicSelectToken = "epicSelectToken"),
-      (e.Comp7TokenWeeklyReward = "comp7TokenWeeklyReward"),
-      (e.DeluxeGift = "deluxe_gift"),
-      (e.BattleBoosterGift = "battleBooster_gift"),
-      (e.OptionalDevice = "optionalDevice"),
-      (e.EquipCoin = "equipCoin"),
-      (e.LootBox = "lootBox"),
-      (e.BrCoin = "brcoin"),
-      (e.Pet = "pet"),
-      e
-    );
-  })({}),
-  ImageSize = (function (e) {
-    return (
-      (e.Big = "big"),
-      (e.Small = "small"),
-      (e.Mini = "mini"),
-      (e.S600x450 = "s600x450"),
-      (e.S400x300 = "s400x300"),
-      (e.S296x222 = "s296x222"),
-      (e.S232x174 = "s232x174"),
-      (e.S180x135 = "s180x135"),
-      (e.S128x100 = "s128x100"),
-      (e.S80x80 = "s80x80"),
-      (e.S64x64 = "s64x64"),
-      (e.S48x48 = "s48x48"),
-      (e.S24x24 = "s24x24"),
-      (e.S300x300 = "s300x300"),
-      (e.S450x450 = "s450x450"),
-      e
-    );
-  })({}),
-  ValueTypes = (function (e) {
-    return (
-      (e.MULTI = "multi"),
-      (e.CURRENCY = "currency"),
-      (e.PREMIUM_PLUS = "premium_plus"),
-      (e.NUMBER = "number"),
-      (e.STRING = "string"),
-      e
-    );
-  })({}),
-  Specials = (function (e) {
-    return (
-      (e.ATTACHMENT_RARE = "rare"),
-      (e.ATTACHMENT_EPIC = "epic"),
-      (e.ATTACHMENT_LEGENDARY = "legendary"),
-      (e.BATTLE_BOOSTER = "battleBooster"),
-      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-      (e.EQUIPMENT_PLUS = "equipmentPlus"),
-      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
-      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
-      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
-      e
-    );
-  })({}),
-  HighlightClasses = (function (e) {
-    return ((e.BATTLE_BOOSTER = "battleBooster"), e);
-  })({}),
-  OverlayClasses = (function (e) {
-    return (
-      (e.ATTACHMENT_RARE = "rare"),
-      (e.ATTACHMENT_EPIC = "epic"),
-      (e.ATTACHMENT_LEGENDARY = "legendary"),
-      (e.BATTLE_BOOSTER = "battleBooster"),
-      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-      (e.EQUIPMENT_PLUS = "equipmentPlus"),
-      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
-      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
-      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
-      e
-    );
-  })({}),
-  multiValueTypes = [
-    RewardType.Items,
-    RewardType.Equipment,
-    RewardType.Xp,
-    RewardType.XpFactor,
-    RewardType.Blueprints,
-    RewardType.BlueprintsAny,
-    RewardType.Goodies,
-    RewardType.Berths,
-    RewardType.Slots,
-    RewardType.Tokens,
-    RewardType.CrewSkins,
-    RewardType.CrewBooks,
-    RewardType.Customizations,
-    RewardType.CreditsFactor,
-    RewardType.TankmenXp,
-    RewardType.TankmenXpFactor,
-    RewardType.FreeXpFactor,
-    RewardType.BattleToken,
-    RewardType.LootBox,
-    RewardType.PremiumUniversal,
-    RewardType.NaturalCover,
-    RewardType.BpCoin,
-    RewardType.BattlePassSelectToken,
-    RewardType.BattlaPassFinalAchievement,
-    RewardType.BattleBadge,
-    RewardType.BonusX5,
-    RewardType.CrewBonusX3,
-    RewardType.EpicSelectToken,
-    RewardType.Comp7TokenWeeklyReward,
-    RewardType.DeluxeGift,
-    RewardType.BattleBoosterGift,
-    RewardType.OptionalDevice,
-    RewardType.TmanToken,
-    RewardType.Pet,
-  ],
-  currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
-  numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
-  premiumValueTypes = [RewardType.PremiumPlus, RewardType.Premium],
-  getSizeFolder = (e) => {
-    switch (e) {
-      case ImageSize.S600x450:
-        return "c_600x450";
-      case ImageSize.S400x300:
-        return "c_400x300";
-      case ImageSize.S296x222:
-        return "c_296x222";
-      case ImageSize.S232x174:
-        return "c_232x174";
-      case ImageSize.Big:
-        return "c_80x80";
-      case ImageSize.Small:
-        return "c_48x48";
-      default:
-        return e;
-    }
-  },
-  getRewardValueType = (e) =>
-    multiValueTypes.includes(e)
-      ? ValueTypes.MULTI
-      : currencyValueTypes.includes(e)
-        ? ValueTypes.CURRENCY
-        : numberValueTypes.includes(e)
-          ? ValueTypes.NUMBER
-          : premiumValueTypes.includes(e)
-            ? ValueTypes.PREMIUM_PLUS
-            : ValueTypes.STRING,
-  DOG_TAG_FOLDER_NAMES = ["engravings", "backgrounds"],
-  DOG_TAG_DEFAULT_ICON_NAME = ["engraving", "background"],
-  getDogTypeImage = (e, t, n) => {
-    const r = DOG_TAG_FOLDER_NAMES[e];
-    if (r) {
-      const a = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(r),
-        o = a.$dyn(n);
-      return !o && DOG_TAG_DEFAULT_ICON_NAME[e]
-        ? `${a.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}`
-        : `${o}`;
-    }
-    return (
-      console.error(
-        "Unreachable branch: add dogTagType and icon folder for corresponding icon matching",
-      ),
-      ""
-    );
-  },
-  getRewardImage = (e, t = ImageSize.Small) => {
-    const { name: n, type: r, value: a, icon: o, item: i, dogTagType: s } = e,
-      u = t === ImageSize.S24x24 ? ImageSize.Small : t,
-      l = getSizeFolder(u);
-    switch (n) {
-      case "basic":
-      case "plus":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}_${a}`;
-      case "premium":
-      case "premium_plus":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}_${a}`;
-      case "items":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${i}`;
-      case "blueprints":
-      case "blueprintsAny":
-      case "finalBlueprints":
-        return `R.images.gui.maps.icons.blueprints.fragment.${u}.${o}`;
-      case "tokens":
-      case "lootBox":
-      case "battleToken":
-        return "big" === t
-          ? e.iconBig.replace("..", "img://gui")
-          : e.iconSmall.replace("..", "img://gui");
-      case "customizations":
-      case "styleProgress":
-      case "crewSkins":
-      case "goodies":
-      case "groups":
-      case "tmanToken":
-      case "battlePassSelectToken":
-      case "pet":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
-      case "crewBooks":
-        return `R.images.gui.maps.icons.crewBooks.books.${u}.${o}`;
-      case "dogTagComponents":
-        return getDogTypeImage(s, u, o);
-      case "dossier_badge":
-        return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${o}`;
-      case "dossier_achievement":
-        return `R.images.gui.maps.icons.achievement.${l}.${o}`;
-      case "xp":
-      case "xpFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
-      case "creditsFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.credits`;
-      case "tankmenXPFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.tankmenXP`;
-      case "dailyXPFactor":
-      case "freeXPFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
-      case "premiumTank":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
-      case "styleProgressToken":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
-      case "collectionItem":
-        return `R.images.gui.maps.icons.collectionItems.${l}.${o}`;
-      default:
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}`;
-    }
-  },
-  getRewardTooltipConfig = (e, t) => ({ args: e, contentId: t }),
-  SIZES_WITH_BOTTOM_HIGHLIGHT = [ImageSize.Small, ImageSize.Big],
-  getBottomHighlight = (e, t) => {
-    if (void 0 === t || !SIZES_WITH_BOTTOM_HIGHLIGHT.includes(e)) return null;
-    switch (t) {
-      case Specials.BATTLE_BOOSTER:
-      case Specials.BATTLE_BOOSTER_REPLACE:
-        return HighlightClasses.BATTLE_BOOSTER;
-    }
-  },
-  getOverlay = (e) => {
-    if (void 0 === e) return null;
-    switch (e) {
-      case Specials.BATTLE_BOOSTER:
-        return OverlayClasses.BATTLE_BOOSTER;
-      case Specials.BATTLE_BOOSTER_REPLACE:
-        return OverlayClasses.BATTLE_BOOSTER_REPLACE;
-      case Specials.BUILT_IN_EQUIPMENT:
-        return OverlayClasses.BUILT_IN_EQUIPMENT;
-      case Specials.EQUIPMENT_PLUS:
-        return OverlayClasses.EQUIPMENT_PLUS;
-      case Specials.EQUIPMENT_TROPHY_BASIC:
-        return OverlayClasses.EQUIPMENT_TROPHY_BASIC;
-      case Specials.EQUIPMENT_TROPHY_UPGRADED:
-        return OverlayClasses.EQUIPMENT_TROPHY_UPGRADED;
-      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_1:
-        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_1;
-      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_2:
-        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_2;
-      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_3:
-        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_3;
-      case Specials.PROGRESSION_STYLE_UPGRADED_1:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_1;
-      case Specials.PROGRESSION_STYLE_UPGRADED_2:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_2;
-      case Specials.PROGRESSION_STYLE_UPGRADED_3:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_3;
-      case Specials.PROGRESSION_STYLE_UPGRADED_4:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_4;
-      case Specials.PROGRESSION_STYLE_UPGRADED_5:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
-      case Specials.PROGRESSION_STYLE_UPGRADED_6:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
-      case Specials.ATTACHMENT_RARE:
-        return OverlayClasses.ATTACHMENT_RARE;
-      case Specials.ATTACHMENT_EPIC:
-        return OverlayClasses.ATTACHMENT_EPIC;
-      case Specials.ATTACHMENT_LEGENDARY:
-        return OverlayClasses.ATTACHMENT_LEGENDARY;
-    }
-  },
-  getFormattedValue = (e, t) => {
-    const n = resources.resolve("intl");
-    if (void 0 === e) return null;
-    switch (t) {
-      case ValueTypes.MULTI: {
-        const t = Number(e);
-        return isFinite(t) && t > 1 ? `x${Math.floor(t)}` : null;
-      }
-      case ValueTypes.CURRENCY:
-      case ValueTypes.NUMBER:
-        return n.formatNumber(n.numberFormats[0] || "integral", Number(e));
-      case ValueTypes.PREMIUM_PLUS: {
-        const t = Number(e);
-        return isNaN(t) ? e : null;
-      }
-      default:
-        return e;
-    }
-  },
-  formatPrintf = (e, t) =>
-    e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-      const n = 0 === e.indexOf("%") ? 2 : 1;
-      return String(t[e.slice(n, -n)]);
-    }),
-  sizes = { small: "small", medium: "medium" },
+var sizes = { small: "small", medium: "medium" },
   types = { bubble: "bubble", discount: "discount", custom: "custom" },
   imageSizes = { [sizes.small]: 48, [sizes.medium]: 60 };
 function getImagePath(e, t, n) {
@@ -40253,19 +40253,19 @@ export {
   vehicleState as Bn,
   useSpringValue as Br,
   LazyModel as Bt,
-  tableParts as C,
+  getRewardImage as C,
   mapNonNullable as Ca,
   breakpointsByType as Ci,
   FormatString as Cn,
   useParamTooltip as Cr,
   UnknownVehicleImage as Ct,
-  useMeasure as D,
+  CloseButton as D,
   toArray$1 as Da,
   isNumber as Di,
   boolean as Dn,
   useWulfTooltip as Dr,
   currencyTypes as Dt,
-  measureTypes as E,
+  ImageSize as E,
   sort as Ea,
   comparer$1 as Ei,
   array as En,
@@ -40349,13 +40349,13 @@ export {
   transform as Rn,
   useSpring as Rr,
   asMemoized as Rt,
-  columnBehaviours as S,
+  formatPrintf as S,
   mapExists as Sa,
   breakpoints as Si,
   renderString as Sn,
   useBackdropTooltip as Sr,
   RentalCounter as St,
-  createColumnHelper as T,
+  getRewardValueType as T,
   some as Ta,
   mouseButtons as Ti,
   createParser as Tn,
@@ -40397,7 +40397,7 @@ export {
   isTypeValidValue as Zn,
   useIsFirstRender as Zr,
   Checkbox as Zt,
-  isValidBreakpoint as _,
+  tableParts as _,
   findIndexLast as _a,
   useUpscale as _i,
   usePopover as _n,
@@ -40411,7 +40411,7 @@ export {
   now as ao,
   nationById as ar,
   Toggle as at,
-  TableProvider as b,
+  measureTypes as b,
   insertBefore as ba,
   useMedia as bi,
   observer as bn,
@@ -40424,7 +40424,7 @@ export {
   easings$1 as co,
   assignRefs as cr,
   Input as ct,
-  formatPrintf as d,
+  isValidBreakpoint as d,
   transaction$1 as da,
   getDependencyTree as di,
   useScrollByDragElements as dn,
@@ -40437,21 +40437,21 @@ export {
   format$2 as eo,
   types$5 as er,
   Switcher$1 as et,
-  getRewardImage as f,
+  PlayerInfo as f,
   every as fa,
   makeObservable as fi,
   Area$1 as fn,
   SoundsRClassProvider as fo,
   useExternalPaddings as fr,
   Sprite as ft,
-  CloseButton as g,
+  columnBehaviours as g,
   findIndex$1 as ga,
   useAdaptive as gi,
   Popover as gn,
   logBySeverity as go,
   SoundsProvider as gr,
   Slot$1 as gt,
-  ImageSize as h,
+  useTableContext as h,
   find as ha,
   useAdaptiveWidth as hi,
   TruncatedText as hn,
@@ -40484,7 +40484,7 @@ export {
   clsx as lo,
   computeds as lr,
   useInput as lt,
-  getRewardValueType as m,
+  TableProvider as m,
   filterMap as ma,
   runInAction as mi,
   useHorizontalScroll as mn,
@@ -40505,7 +40505,7 @@ export {
   seconds as oo,
   runView as or,
   toggleSizes as ot,
-  getRewardTooltipConfig as p,
+  Table as p,
   filter as pa,
   observable as pi,
   useScrollBounding as pn,
@@ -40546,26 +40546,26 @@ export {
   require_react_dom as uo,
   initializeModelWithContext as ur,
   placeholderVisibility as ut,
-  PlayerInfo as v,
+  flexRender as v,
   get as va,
   MediaWrapper as vi,
   Image$1 as vn,
   resources as vo,
   useSoundsOptional as vr,
   fromAccountModel as vt,
-  flexRender as w,
+  getRewardTooltipConfig as w,
   reduce as wa,
   readKey as wi,
   FormatText$1 as wn,
   useSimpleTooltip as wr,
   VehicleImage as wt,
-  useTableContext as x,
+  useMeasure as x,
   map as xa,
   require_jsx_runtime as xi,
   renderResolvedString as xn,
   createTargetOverrides as xr,
   roles as xt,
-  Table as y,
+  createColumnHelper as y,
   groupMapBy as ya,
   MediaWrapperElement as yi,
   defineStyledComponent as yn,

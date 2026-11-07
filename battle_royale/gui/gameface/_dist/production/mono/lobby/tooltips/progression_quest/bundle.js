@@ -1,85 +1,85 @@
 import {
   Bt as e,
-  Gt as s,
-  Nn as t,
-  Vr as o,
-  _ as r,
-  f as i,
-  g as a,
-  h as n,
-  jr as d,
-  ni as l,
-  v as u,
+  D as s,
+  E as t,
+  Gt as o,
+  Nn as r,
+  O as i,
+  S as a,
+  T as n,
+  Vr as d,
+  jr as l,
+  ni as u,
   yr as p,
   zt as c,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { n as m, t as _ } from "../../chunks/extended_tooltip_decorator.js";
-var [x, b] = s()(
+var [x, b] = o()(
     ({ observableModel: e }) => ({
       ...e.primitives(["countdown", "id", "description"]),
       bonuses: e.arrayClone("bonuses"),
     }),
-    d,
+    l,
   ),
-  g = t();
-function v({ bonuses: e, questId: s, size: t, resId: o, ...d }) {
+  I = r();
+function g({ bonuses: e, questId: o, size: r, resId: i, ...d }) {
   const l = p(e, (e) => ({
-      size: t,
+      size: r,
       name: e.name,
-      image: n(e, t),
+      image: n(e, r),
       value: e.value,
-      valueType: r(e.name),
+      valueType: s(e.name),
       special: "overlayType" in e ? e.overlayType : void 0,
       tooltipArgs: {
-        ...a(
-          { tooltipId: `${s}:${e.tooltipId}` },
+        ...t(
+          { tooltipId: `${o}:${e.tooltipId}` },
           Number(e.tooltipContentId) ||
             R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent("resId"),
         ),
-        resId: o,
+        resId: i,
       },
     })),
     u = {
       contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip("resId"),
-      args: { showFromIndex: d.count, questId: s },
-      resId: o,
+      args: { showFromIndex: d.count, questId: o },
+      resId: i,
     };
-  return (0, g.jsx)(i, { ...d, data: l, boxRewardTooltip: u, size: t });
+  return (0, I.jsx)(a, { ...d, data: l, boxRewardTooltip: u, size: r });
 }
-var I = "ProgressionQuest_rewardsText_f9c93221",
+var v = "ProgressionQuest_rewardsText_f9c93221",
   w = "ProgressionQuest_divider_c563a46d",
   y = "ProgressionQuest_rewardItem_48a2c60b",
   h = "ProgressionQuest_rewards_a5087287",
-  j = l.resolve("strings"),
-  T = l.resolve("aliases"),
-  f = () => {
+  j = u.resolve("strings"),
+  T = u.resolve("aliases"),
+  q = () => {
     const { model: e } = b(),
       s = e.bonuses.get(),
       t = e.countdown.get();
-    return (0, g.jsxs)(_, {
+    return (0, I.jsxs)(_, {
       header: j.readOrEmpty("battle_royale_extention.tooltip.quest.header"),
-      description: o(e.description.get()),
+      description: d(e.description.get()),
       timerText: "user_missions.tooltip.daily_quests.expires",
       timerTimeLeft: t,
       children: [
-        (0, g.jsx)(m, { className: w }),
-        (0, g.jsx)("div", {
-          className: I,
+        (0, I.jsx)(m, { className: w }),
+        (0, I.jsx)("div", {
+          className: v,
           children: j.pluralOrEmpty(
             "battle_royale_extention.tooltip.daily_quests.reward",
             s.length,
           ),
         }),
-        (0, g.jsx)(v, {
+        (0, I.jsx)(g, {
           bonuses: s,
           questId: e.id.get(),
           resId: T.read((e) => e.user_missions.hangarWidget.Quests("resId")),
-          size: u.Small,
+          size: i.Small,
           rewardItemClassMix: y,
           classMix: h,
         }),
       ],
     });
   };
-e((0, g.jsx)(c, { children: (0, g.jsx)(x, { children: (0, g.jsx)(f, {}) }) }));
+e((0, I.jsx)(c, { children: (0, I.jsx)(x, { children: (0, I.jsx)(q, {}) }) }));

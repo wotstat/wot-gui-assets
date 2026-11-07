@@ -1,14 +1,14 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
-  Bt as t,
-  Ma as s,
-  Wn as a,
-  Za as i,
+  Ma as t,
+  Wn as s,
+  Za as a,
+  _n as i,
   _r as n,
   fr as r,
-  g as o,
-  o as c,
-  vi as p,
+  o,
+  vi as c,
+  vn as p,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { l as m, u as d } from "../../chunks/vendor.js";
@@ -42,12 +42,12 @@ var f = e(m(), 1),
     timer: "App_timer_581f55cf",
     inactiveDescription: "App_inactiveDescription_a9335078",
   },
-  j = p(),
+  j = c(),
   v = R.strings.fun_random.entryPoint.tooltip.state,
   u = d(() => {
-    const e = s,
+    const e = t,
       { model: n } = x(),
-      { modeState: r, startTime: c, leftTime: p, endTime: m } = n.root.get();
+      { modeState: r, startTime: o, leftTime: c, endTime: m } = n.root.get();
     switch (r) {
       case "finished":
         return (0, j.jsxs)(j.Fragment, {
@@ -56,7 +56,7 @@ var f = e(m(), 1),
             (0, j.jsxs)("div", {
               className: b.inactiveTimer,
               children: [
-                (0, j.jsx)(t, {
+                (0, j.jsx)(i, {
                   className: b.timer,
                   path: "ui_kit.datetime.x16x16.cooldown",
                   width: 16,
@@ -71,14 +71,14 @@ var f = e(m(), 1),
           ],
         });
       case "inactive":
-        return (0, j.jsx)(a, {
+        return (0, j.jsx)(s, {
           text: v.ceasefire(),
           params: {
-            timer: (0, j.jsx)(o, {
-              start: p,
-              format: o.format.default,
-              type: o.type.cooldown,
-              size: o.size.x24x24,
+            timer: (0, j.jsx)(p, {
+              start: c,
+              format: p.format.default,
+              type: p.type.cooldown,
+              size: p.size.x24x24,
             }),
           },
         });
@@ -89,30 +89,30 @@ var f = e(m(), 1),
             (0, j.jsxs)("div", {
               className: b.inactiveTimer,
               children: [
-                (0, j.jsx)(t, {
+                (0, j.jsx)(i, {
                   className: b.timer,
                   path: "ui_kit.datetime.x16x16.cooldown",
                   width: 16,
                   height: 16,
                 }),
-                (0, j.jsx)(a, {
+                (0, j.jsx)(s, {
                   className: b.inactiveDescription,
                   text: R.strings.user_missions.common.daterange.divider(),
-                  params: { startDate: e(c, i.DayMonthFull), endDate: e(m, i.DayMonthFull) },
+                  params: { startDate: e(o, a.DayMonthFull), endDate: e(m, a.DayMonthFull) },
                 }),
               ],
             }),
           ],
         });
       default:
-        return (0, j.jsx)(a, {
+        return (0, j.jsx)(s, {
           text: v.progress(),
           params: {
-            timer: (0, j.jsx)(o, {
-              start: p,
-              format: o.format.default,
-              type: o.type.accent,
-              size: o.size.x24x24,
+            timer: (0, j.jsx)(p, {
+              start: c,
+              format: p.format.default,
+              type: p.type.accent,
+              size: p.size.x24x24,
             }),
           },
         });
@@ -120,15 +120,15 @@ var f = e(m(), 1),
   }),
   g = d(() => {
     const { model: e } = x(),
-      { assetsPointer: s, modeState: i } = e.root.get(),
+      { assetsPointer: t, modeState: a } = e.root.get(),
       n = e.performance.get(),
-      { dynamicTexts: r } = l(null, { assetsPointer: s });
+      { dynamicTexts: r } = l(null, { assetsPointer: t });
     return (0, j.jsxs)("div", {
-      className: (0, f.default)(b.base, b[`base__${i}`], b[`base__${n.performanceRisk}`]),
+      className: (0, f.default)(b.base, b[`base__${a}`], b[`base__${n.performanceRisk}`]),
       children: [
         (0, j.jsx)("img", {
           className: b.topContentBg,
-          src: _(s).event_banner_tooltip.bg(),
+          src: _(t).event_banner_tooltip.bg(),
           alt: "background",
         }),
         (0, j.jsx)("div", {
@@ -138,8 +138,8 @@ var f = e(m(), 1),
         (0, j.jsxs)("div", {
           className: b.bottomContent,
           children: [
-            (0, j.jsx)(a, { text: r.entryPoint.tooltip.description(), className: b.paragraph }),
-            (0, j.jsx)(a, {
+            (0, j.jsx)(s, { text: r.entryPoint.tooltip.description(), className: b.paragraph }),
+            (0, j.jsx)(s, {
               text: R.strings.fun_random.entryPoint.tooltip.modeDescription(),
               params: {
                 mode: (0, j.jsx)("div", {
@@ -153,7 +153,7 @@ var f = e(m(), 1),
               (0, j.jsxs)("div", {
                 className: b.performance,
                 children: [
-                  (0, j.jsx)(t, {
+                  (0, j.jsx)(i, {
                     className: b.performanceIcon,
                     path: "library.alertIcon",
                     width: 16,
@@ -178,4 +178,4 @@ var f = e(m(), 1),
       ],
     });
   });
-r((0, j.jsx)(h, { children: (0, j.jsx)(c, { children: (0, j.jsx)(g, {}) }) }));
+r((0, j.jsx)(h, { children: (0, j.jsx)(o, { children: (0, j.jsx)(g, {}) }) }));
