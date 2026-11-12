@@ -15106,7 +15106,7 @@ var mM = "Progression_de15ce34",
       className: Js(AM, !r && MM),
       isDisabled: r,
       onClick: () => {
-        (u.onClick(), r || (h(), t.openBattlePass()));
+        (u.onClick(), r || (a("click"), h(), t.openBattlePass()));
       },
       onMouseEnter: (e) => {
         (u.onMouseEnter(e),

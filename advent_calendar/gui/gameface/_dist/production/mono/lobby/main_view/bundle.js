@@ -1,52 +1,52 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   B as a,
-  Ct as t,
-  D as s,
-  E as n,
-  F as o,
-  G as r,
-  I as i,
-  J as l,
-  O as d,
-  P as c,
-  R as f,
-  T as g,
-  Tt as u,
-  U as m,
-  V as h,
-  W as p,
-  X as _,
-  _t as y,
-  at as x,
-  bt as v,
-  ct as w,
-  d as b,
-  dt as C,
-  et as S,
-  f as I,
-  h as N,
-  it as j,
-  k as E,
-  l as O,
-  m as D,
-  mt as P,
-  nt as A,
-  ot as k,
-  p as T,
-  pt as V,
-  rt as F,
-  st as $,
-  tt as B,
-  u as q,
-  ut as H,
+  C as t,
+  Ct as s,
+  D as n,
+  E as o,
+  F as r,
+  G as i,
+  I as l,
+  J as d,
+  O as c,
+  P as f,
+  R as g,
+  S as u,
+  T as m,
+  Tt as p,
+  U as h,
+  V as _,
+  W as y,
+  X as x,
+  _ as v,
+  _t as w,
+  at as b,
+  b as C,
+  bt as S,
+  ct as I,
+  dt as N,
+  et as j,
+  it as E,
+  k as O,
+  mt as D,
+  nt as P,
+  ot as A,
+  p as k,
+  pt as T,
+  rt as V,
+  st as F,
+  tt as $,
+  ut as B,
+  w as q,
+  x as H,
   xt as W,
   z,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as L, t as M } from "../chunks/vendor.js";
-import { n as Y, r as G, t as Q } from "../chunks/format.js";
-import { a as X, c as U, i as J, n as K, r as Z, s as ee, t as ae } from "../chunks/easings.js";
+import { a as Y, c as G, i as Q, n as X, r as U, s as J, t as K } from "../chunks/easings.js";
+import { n as Z, r as ee, t as ae } from "../chunks/format.js";
 import { n as te, t as se } from "../chunks/balance.js";
 var ne = (function (e) {
     return (
@@ -63,25 +63,25 @@ var ne = (function (e) {
   re = (function (e) {
     return ((e.OPEN_DOOR = "openDoor"), e);
   })({}),
-  ie = e(t(), 1),
-  [le, de] = E()(
+  ie = e(s(), 1),
+  [le, de] = O()(
     ({ observableModel: e, externalModel: a, readByPath: t, cleanup: s }) => {
       const n = () => {
           return (
             (e = t("doors")),
             (a = ({ dayId: e }) => e),
             (s = (e) => ({ ...e })),
-            C(e, (e, t) => ((e[a(t)] = s(t)), e), {})
+            N(e, (e, t) => ((e[a(t)] = s(t)), e), {})
           );
           var e, a, s;
         },
         o = e.primitives(["startTime", "postEventStartDate", "postEventEndDate"]),
         { isCalendarCompleted: r } = e.primitives(["isCalendarCompleted"]),
-        i = S.box(r.get()),
+        i = j.box(r.get()),
         l = {
-          doors: S.box(n()),
+          doors: j.box(n()),
           progression: e.primitives(["isCompleted"], "progressionRewards"),
-          eventBus: S.box(null),
+          eventBus: j.box(null),
           progressionRewards: e.array("progressionRewards.rewards"),
           ...e.primitives([
             "statePhase",
@@ -100,11 +100,11 @@ var ne = (function (e) {
           ]),
         };
       (a.subscribe(
-        _(() => l.doors.set(n())),
+        x(() => l.doors.set(n())),
         "doors",
       ),
         a.subscribe(
-          _(() => {
+          x(() => {
             const e = t("event");
             l.eventBus.set({
               eventType: e.eventType,
@@ -114,35 +114,35 @@ var ne = (function (e) {
           "event",
         ),
         s(
-          B(
+          $(
             () => r.get(),
-            _(() => i.set(r.get())),
+            x(() => i.set(r.get())),
             { delay: 1500 },
           ),
         ));
-      const c = d(
+      const d = c(
           (e) => {
             const a = l.doors.get()[e];
             if (!a) throw new Error(`Door with id ${e} not found`);
             return a;
           },
-          { equals: $.shallow },
+          { equals: F.shallow },
         ),
-        f = d(() =>
+        f = c(() =>
           Object.values(l.doors.get()).reduce(
             (e, a) => (a.doorState !== ne.READY_TO_OPEN ? e : !e || a.dayId < e ? a.dayId : e),
             void 0,
           ),
         ),
-        g = d(() => r.get() && i.get()),
-        u = d(() => ({
+        g = c(() => r.get() && i.get()),
+        u = c(() => ({
           startDate: o.startTime.get(),
           endDate: o.postEventStartDate.get() - 86400,
         })),
-        m = d(() => ({ startDate: o.postEventStartDate.get(), endDate: o.postEventEndDate.get() }));
+        m = c(() => ({ startDate: o.postEventStartDate.get(), endDate: o.postEventEndDate.get() }));
       return {
         ...l,
-        computes: { door: c, activeDay: f, eventCompleted: g, activePhase: u, postActivePhase: m },
+        computes: { door: d, activeDay: f, eventCompleted: g, activePhase: u, postActivePhase: m },
       };
     },
     ({ externalModel: e }) => ({
@@ -158,14 +158,14 @@ var ne = (function (e) {
       infoClick: e.createCallbackNoArgs("onInfoClick"),
     }),
   );
-var ce = e(x(), 1),
-  fe = ie.createContext({ on: () => P, once: () => P, off: P, trigger: P }),
-  ge = M(({ children: e }) => {
-    const a = U(),
+var ce = e(b(), 1),
+  fe = ie.createContext({ on: () => D, once: () => D, off: D, trigger: D }),
+  ge = L(({ children: e }) => {
+    const a = G(),
       { model: t } = de();
     return (
-      p(() =>
-        B(
+      y(() =>
+        $(
           () => t.eventBus.get(),
           (e) => {
             if (e && e.eventType === re.OPEN_DOOR) return a.trigger("onOpenDoor", e.payload.doorId);
@@ -176,10 +176,10 @@ var ce = e(x(), 1),
     );
   }),
   ue = () => (0, ie.useContext)(fe),
-  me = e(L(), 1),
-  he = ({ items: e, getValue: a, timeout: t }) => {
+  me = e(M(), 1),
+  pe = ({ items: e, getValue: a, timeout: t }) => {
     const [s, n] = (0, ie.useState)(e.map((e) => ({ data: e, state: "idle" }))),
-      o = i();
+      o = l();
     return (
       (0, ie.useEffect)(() => {
         if (o.isRunning) return;
@@ -205,7 +205,7 @@ var ce = e(x(), 1),
       s
     );
   },
-  pe = (e, a) => e.toDateString() === a.toDateString(),
+  he = (e, a) => e.toDateString() === a.toDateString(),
   _e = (function (e) {
     return ((e.ACTIVE_PHASE = "activePhase"), (e.POST_ACTIVE_PHASE = "postActivePhase"), e);
   })({}),
@@ -221,27 +221,27 @@ var ce = e(x(), 1),
     base__unavailable: "DoorCurrency_base__unavailable_5a8b00c1",
     icon: "DoorCurrency_icon_3cb2aad4",
   },
-  ve = M(({ dayId: e }) => {
+  ve = L(({ dayId: e }) => {
     const { model: a } = de(),
-      t = a.currencyName.get(),
-      s = a.currencyIcon.get(),
-      { isEnoughResources: n, price: o } = a.computes.door(e),
-      r = F({ currencySizes: I.sizes.extraSmall }, { large: { currencySizes: I.sizes.small } });
-    return a.statePhase.get() === _e.POST_ACTIVE_PHASE && Boolean(o)
-      ? (0, ce.jsx)(I, {
+      s = a.currencyName.get(),
+      n = a.currencyIcon.get(),
+      { isEnoughResources: o, price: r } = a.computes.door(e),
+      i = V({ currencySizes: t.sizes.extraSmall }, { large: { currencySizes: t.sizes.small } });
+    return a.statePhase.get() === _e.POST_ACTIVE_PHASE && Boolean(r)
+      ? (0, ce.jsx)(t, {
           classNames: {
             base: (0, me.default)(
               xe.base,
-              xe[`base__${t}`],
-              (!n || !a.isWalletAvailable.get()) && xe.base__unavailable,
+              xe[`base__${s}`],
+              (!o || !a.isWalletAvailable.get()) && xe.base__unavailable,
             ),
             icon: xe.icon,
           },
-          type: t,
-          size: r.currencySizes,
-          imagePath: s || void 0,
+          type: s,
+          size: i.currencySizes,
+          imagePath: n || void 0,
           reverse: !0,
-          children: o,
+          children: r,
         })
       : null;
   }),
@@ -275,12 +275,12 @@ var ce = e(x(), 1),
     [oe.NY_EVENT]: R.images.advent_calendar.gui.maps.icons.mainView.marks.nyEvent(),
     [oe.WDR]: R.images.advent_calendar.gui.maps.icons.mainView.marks.wdr(),
   },
-  Oe = M(({ dayId: e }) => {
+  Oe = L(({ dayId: e }) => {
     const { model: a } = de(),
-      t = J[e];
+      t = Q[e];
     if (!t) return null;
     const s = (e, t) => {
-        const s = X[t]?.[e];
+        const s = Y[t]?.[e];
         return s ? a.doors.get()[s] : void 0;
       },
       n = [
@@ -295,7 +295,7 @@ var ce = e(x(), 1),
       children: (0, ce.jsx)("div", {
         className: Ne,
         children: n.map((e, a) => {
-          const t = J[e.dayId];
+          const t = Q[e.dayId];
           return t
             ? (0, ce.jsx)(
                 "div",
@@ -317,7 +317,7 @@ var ce = e(x(), 1),
   De = "DoorWrapper_5395b30e",
   Pe = {
     Wrapper: ({ children: e, className: a, style: t, dayId: s, doorState: n, ...o }) => {
-      const r = J[s];
+      const r = Q[s];
       return r
         ? (0, ce.jsx)("div", {
             className: (0, me.default)(De, a, `door-${r.width}x${r.height}`),
@@ -355,10 +355,10 @@ var ce = e(x(), 1),
   ke = (e, a) => {
     if (!a) return { body: R.strings.advent_calendar.server_error() };
     const t = new Date(1e3 * e),
-      s = { date: Q(e), time: G(e) };
-    return pe(new Date(), t)
+      s = { date: ae(e), time: ee(e) };
+    return he(new Date(), t)
       ? { body: Ae.availableToday(), bindings: s }
-      : pe(new Date(Date.now() + 864e5), t)
+      : he(new Date(Date.now() + 864e5), t)
         ? { body: Ae.availableTomorrow(), bindings: s }
         : {
             header: Ae.availableSometime.title(),
@@ -366,7 +366,7 @@ var ce = e(x(), 1),
             bindings: s,
           };
   },
-  Te = M(({ door: e }) => {
+  Te = L(({ door: e }) => {
     const { model: a } = de();
     return (0, ce.jsx)(Pe.Wrapper, {
       dayId: e.dayId,
@@ -382,7 +382,7 @@ var ce = e(x(), 1),
     });
   }),
   Ve = R.strings.advent_calendar.mainView.tooltip,
-  Fe = M(({ door: e }) => {
+  Fe = L(({ door: e }) => {
     const { model: a } = de(),
       t = (() => {
         if (!a.isWalletAvailable.get()) return { body: R.strings.advent_calendar.server_error() };
@@ -391,7 +391,7 @@ var ce = e(x(), 1),
             return {
               header: Ve.expired.title(),
               body: Ve.expired.description(),
-              bindings: Y(
+              bindings: Z(
                 a.computes.postActivePhase().startDate,
                 a.computes.postActivePhase().endDate,
               ),
@@ -849,7 +849,7 @@ var ce = e(x(), 1),
 var na = (e, a) => ({ ...e, img: a }),
   oa = (e, a, t = 0) => {
     const s = (function (e) {
-      const a = O(e);
+      const a = C(e);
       return (t) => ({ ...a(t), width: e.width, height: e.height });
     })(a);
     return ((e, a, t, s, n = 0) => {
@@ -880,7 +880,7 @@ var na = (e, a) => ({ ...e, img: a }),
       n = (function () {
         const e = (0, ie.useRef)(0);
         return (
-          r(() => {
+          i(() => {
             window.cancelAnimationFrame(e.current);
           }),
           (0, ie.useMemo)(
@@ -948,7 +948,7 @@ var na = (e, a) => ({ ...e, img: a }),
           getCurrentFrame: () => s.current,
           onLoad: (e, a) => {
             const s = [...new Set([...t.current.values()].map(({ img: e }) => e))][e];
-            if (!s) return P;
+            if (!s) return D;
             if (0 === s.width) {
               const e = () => {
                 (s.removeEventListener("load", e), a());
@@ -960,7 +960,7 @@ var na = (e, a) => ({ ...e, img: a }),
                 }
               );
             }
-            return (a(), P);
+            return (a(), D);
           },
         };
       }, [e, n])
@@ -984,7 +984,7 @@ var na = (e, a) => ({ ...e, img: a }),
     return ((e.Init = "init"), (e.Idle = "idle"), (e.Hover = "hover"), (e.Open = "open"), e);
   })({}),
   da = (e) => {
-    const t = i(),
+    const t = l(),
       {
         gridConfigs: s,
         frameConfigs: n,
@@ -1008,20 +1008,20 @@ var na = (e, a) => ({ ...e, img: a }),
         })(e)
       ],
       r = (0, ie.useRef)(null),
-      l = (0, ie.useRef)(null),
-      { animate: d, getCurrentFrame: c, onLoad: f, setFrame: g } = ra(l, s),
+      i = (0, ie.useRef)(null),
+      { animate: d, getCurrentFrame: c, onLoad: f, setFrame: g } = ra(i, s),
       u = (0, ie.useRef)("init"),
       m = (0, ie.useRef)(!1),
-      [h, p] = a(() => ({ x: "-50%", y: "-50%", scale: 1, opacity: 0 })),
-      [_, x] = a(() => ({ opacity: 0 })),
-      [, v] = a(() => ({
+      [p, h] = a(() => ({ x: "-50%", y: "-50%", scale: 1, opacity: 0 })),
+      [_, y] = a(() => ({ opacity: 0 })),
+      [, x] = a(() => ({
         opacity: 1,
         onChange: ({ value: e }) => {
           (r.current && (r.current.style.opacity = e.opacity.toString()),
-            l.current && (l.current.style.opacity = e.opacity.toString()));
+            i.current && (i.current.style.opacity = e.opacity.toString()));
         },
       })),
-      w = (0, ie.useMemo)(() => {
+      v = (0, ie.useMemo)(() => {
         const a = (a) => {
             const t = r.current;
             if (n[a] && t) {
@@ -1031,32 +1031,32 @@ var na = (e, a) => ({ ...e, img: a }),
           },
           s = () =>
             new Promise((e) => {
-              (p.start({
+              (h.start({
                 to: [{ opacity: 1, scale: 1.2 }, { scale: 1 }],
-                config: { duration: ta.glowIn, easing: K },
+                config: { duration: ta.glowIn, easing: X },
                 onRest: () => e(),
               }),
-                x.start({
+                y.start({
                   opacity: 0.8,
-                  config: { duration: ta.init, easing: Z },
+                  config: { duration: ta.init, easing: U },
                   delay: ta.glowIn,
                 }));
             }),
-          i = (e) => {
+          l = (e) => {
             d({ frameTime: 33, onAnimate: a, ...e });
           },
           f = () => {
             ((m.current = !0),
               r.current && (r.current.style.pointerEvents = "none"),
-              l.current && (l.current.style.display = "none"));
+              i.current && (i.current.style.display = "none"));
           };
         return {
           tearOff: (e, a = !1) => {
             a
               ? ((u.current = "idle"),
-                h.opacity.set(1),
+                p.opacity.set(1),
                 _.opacity.set(0.8),
-                i({ startFrameIndex: Ze, endFrameIndex: Ze }))
+                l({ startFrameIndex: Ze, endFrameIndex: Ze }))
               : t.run(async () => {
                   if ("init" === u.current) {
                     u.current = "idle";
@@ -1064,56 +1064,56 @@ var na = (e, a) => ({ ...e, img: a }),
                       await s();
                     } finally {
                       "idle" === u.current &&
-                        (y.sound("adv_stamp_highlight"), i({ endFrameIndex: Ze }));
+                        (w.sound("adv_stamp_highlight"), l({ endFrameIndex: Ze }));
                     }
                   }
                 }, e);
           },
           open: (e = !0) => (
             (u.current = "open"),
-            y.sound("adv_stamp_get"),
-            p.start({
+            w.sound("adv_stamp_get"),
+            h.start({
               to: { opacity: 0, scale: 1.4 },
-              config: { duration: ta.glowOut, easing: K },
+              config: { duration: ta.glowOut, easing: X },
               delay: sa.glowOut,
             }),
-            x.start({
+            y.start({
               to: { opacity: 0 },
-              config: { duration: ta.glowOut, easing: K },
+              config: { duration: ta.glowOut, easing: X },
               delay: sa.glowOut,
             }),
             e
-              ? (i({ startFrameIndex: ea, onFinish: f }), o.rewardShow)
-              : (v.start({
+              ? (l({ startFrameIndex: ea, onFinish: f }), o.rewardShow)
+              : (x.start({
                   to: { opacity: 0 },
-                  config: { duration: ta.glowOut, easing: K },
+                  config: { duration: ta.glowOut, easing: X },
                   delay: sa.glowOut,
                   onRest: f,
                 }),
                 sa.glowOut)
           ),
           enter: () => {
-            (y.sound("adv_stamp_highlight"),
+            (w.sound("adv_stamp_highlight"),
               "init" === u.current
-                ? (s().catch(P), i({ endFrameIndex: Ze }))
-                : (p.start({ to: [{ scale: 1.1 }], config: { duration: ta.accent, easing: Z } }),
-                  i({ endFrameIndex: ea })),
+                ? (s().catch(D), l({ endFrameIndex: Ze }))
+                : (h.start({ to: [{ scale: 1.1 }], config: { duration: ta.accent, easing: U } }),
+                  l({ endFrameIndex: ea })),
               (u.current = "hover"));
           },
           leave: () => {
             ((u.current = "idle"),
-              p.start({ to: [{ scale: 1 }], config: { duration: ta.accent, easing: K } }),
-              i({ endFrameIndex: Ze }));
+              h.start({ to: [{ scale: 1 }], config: { duration: ta.accent, easing: X } }),
+              l({ endFrameIndex: Ze }));
           },
           restore: () => {
             (m.current && f(), a(c()), g(c()));
           },
         };
-      }, [d, o.rewardShow, n, c, p, h.opacity, t, e, g, x, _.opacity, v]);
+      }, [d, o.rewardShow, n, c, h, p.opacity, t, e, g, y, _.opacity, x]);
     return (
       (0, ie.useEffect)(() => f(0, () => g(c())), []),
       (0, ie.useEffect)(() => f(1, () => g(c())), []),
-      { glowStyle: h, shineStyle: _, doorRef: r, canvasRef: l, state: u, api: w }
+      { glowStyle: p, shineStyle: _, doorRef: r, canvasRef: i, state: u, api: v }
     );
   },
   ca = "ReadyToOpenDoor_glow_f05f65a1",
@@ -1121,27 +1121,27 @@ var na = (e, a) => ({ ...e, img: a }),
   ga = "ReadyToOpenDoor_shineWrapper_beec9637",
   ua = "ReadyToOpenDoor_shine_83ddbe86",
   ma = "ReadyToOpenDoor_frontSide_cb8701bb",
-  ha = "ReadyToOpenDoor_backSide_416774b3",
-  pa = M(({ door: e }) => {
-    const { breakpoint: a } = j(),
+  pa = "ReadyToOpenDoor_backSide_416774b3",
+  ha = L(({ door: e }) => {
+    const { breakpoint: a } = E(),
       { model: t, controls: s } = de(),
       n = ue(),
-      o = J[e.dayId] || { x: 0, y: 0, width: 0, height: 0 },
-      r = i(),
-      { shineStyle: l, glowStyle: d, state: c, doorRef: g, canvasRef: u, api: m } = da(o),
-      h = (e) => () => {
+      o = Q[e.dayId] || { x: 0, y: 0, width: 0, height: 0 },
+      r = l(),
+      { shineStyle: i, glowStyle: d, state: c, doorRef: f, canvasRef: u, api: m } = da(o),
+      p = (e) => () => {
         c.current !== la.Open && !t.doorOpenBlocked.get() && t.isWalletAvailable.get() && e();
       },
-      _ = h(() => {
+      h = p(() => {
         if (t.statePhase.get() === _e.POST_ACTIVE_PHASE) return s.showPurchaseDialog(e.dayId);
         s.openDoor(e.dayId);
       }),
-      y = h(m.enter),
-      x = h(m.leave);
-    (p(() => {
+      _ = p(m.enter),
+      x = p(m.leave);
+    (y(() => {
       e.openAnimationRequired || m.tearOff(0, !0);
     }),
-      p(() =>
+      y(() =>
         n.on("onOpenDoor", (a) => {
           a === e.dayId &&
             (() => {
@@ -1150,12 +1150,12 @@ var na = (e, a) => ({ ...e, img: a }),
             })();
         }),
       ),
-      p(() =>
+      y(() =>
         n.on("onTearOff", (a, t, s = 0) => {
           a === e.dayId && m.tearOff(s + 1e3 * t);
         }),
       ),
-      ie.useEffect(() => w(m.restore), [m, a.name]));
+      ie.useEffect(() => I(m.restore), [m, a.name]));
     const v = t.isWalletAvailable.get()
       ? t.statePhase.get() !== _e.POST_ACTIVE_PHASE || e.isEnoughResources
         ? void 0
@@ -1167,11 +1167,11 @@ var na = (e, a) => ({ ...e, img: a }),
         dayId: e.dayId,
         doorState: e.doorState,
         children: [
-          (0, ce.jsx)(f.div, { className: ca, style: d }),
-          (0, ce.jsx)(f.div, {
+          (0, ce.jsx)(g.div, { className: ca, style: d }),
+          (0, ce.jsx)(g.div, {
             className: ga,
-            style: l,
-            children: (0, ce.jsx)(q, {
+            style: i,
+            children: (0, ce.jsx)(H, {
               className: ua,
               src: R.videos.advent_calendar.shine(),
               autoplay: !0,
@@ -1179,32 +1179,32 @@ var na = (e, a) => ({ ...e, img: a }),
             }),
           }),
           (0, ce.jsxs)(Pe.FrontSide, {
-            ref: g,
-            onMouseEnter: y,
+            ref: f,
+            onMouseEnter: _,
             onMouseLeave: x,
-            onClick: _,
+            onClick: h,
             className: ma,
             tooltipArgs: v,
             children: [
-              (0, ce.jsx)(f.div, { className: fa, style: { opacity: d.opacity } }),
+              (0, ce.jsx)(g.div, { className: fa, style: { opacity: d.opacity } }),
               (0, ce.jsx)(Pe.Day, { dayId: e.dayId, doorState: e.doorState }),
               (0, ce.jsx)(Pe.Currency, { dayId: e.dayId }),
               (0, ce.jsx)(Pe.Mark, { dayId: e.dayId }),
             ],
           }),
-          (0, ce.jsx)("canvas", { ref: u, className: ha }),
+          (0, ce.jsx)("canvas", { ref: u, className: pa }),
         ],
       },
       a.name,
     );
   }),
   _a = "DoorResolver_enter_cee4635f",
-  ya = M(({ dayId: e }) => {
+  ya = L(({ dayId: e }) => {
     const { model: a } = de(),
       t = a.computes.door(e),
       s = t.doorState === ne.OPENED ? 2e3 : 300;
     return (0, ce.jsx)(ce.Fragment, {
-      children: he({ getValue: V, items: [t.doorState], timeout: s }).map(({ data: e, state: a }) =>
+      children: pe({ getValue: T, items: [t.doorState], timeout: s }).map(({ data: e, state: a }) =>
         (0, ce.jsx)(
           "div",
           {
@@ -1217,7 +1217,7 @@ var na = (e, a) => ({ ...e, img: a }),
                 case ne.EXPIRED:
                   return (0, ce.jsx)(Fe, { door: a });
                 case ne.READY_TO_OPEN:
-                  return (0, ce.jsx)(pa, { door: a });
+                  return (0, ce.jsx)(ha, { door: a });
                 default:
                   return (0, ce.jsx)("div", {});
               }
@@ -1241,33 +1241,33 @@ var na = (e, a) => ({ ...e, img: a }),
   Ea = "Calendar_linkButtonIconWrapper_afd5f6de",
   Oa = "Calendar_linkButtonIcon_46d54fd7",
   Da = R.strings.advent_calendar.mainView,
-  Pa = Object.keys(ee).reduce(
+  Pa = Object.keys(J).reduce(
     (e, a) => (
-      (e[`--${a}_width`] = `${ee[a].widthRatio}rem`),
-      (e[`--${a}_height`] = `${ee[a].heightRatio}rem`),
-      (e[`--${a}_offset`] = `${ee[a].topOffset}rem`),
+      (e[`--${a}_width`] = `${J[a].widthRatio}rem`),
+      (e[`--${a}_height`] = `${J[a].heightRatio}rem`),
+      (e[`--${a}_offset`] = `${J[a].topOffset}rem`),
       e
     ),
     {},
   ),
-  Aa = M(() => {
+  Aa = L(() => {
     const { model: e, controls: t } = de(),
       s = ue(),
-      n = F(
-        { buttonSize: N.sizes.extraSmall },
-        { medium: { buttonSize: N.sizes.small }, extraLarge: { buttonSize: N.sizes.medium } },
+      n = V(
+        { buttonSize: q.sizes.extraSmall },
+        { medium: { buttonSize: q.sizes.small }, extraLarge: { buttonSize: q.sizes.medium } },
       ),
       [o, r] = a(() => ({ opacity: 1 })),
       [i, l] = a(() => ({ opacity: 0.7 }));
-    (p(() =>
+    (y(() =>
       s.on("onOpenDoor", () => {
         const a = Object.values(e.doors.get());
         a.filter((e) => e.doorState === ne.OPENED).length === a.length - 1 &&
           (r.start({ opacity: 0, delay: 2500 }), l.start({ opacity: 0, delay: 2500 }));
       }),
     ),
-      p(() =>
-        B(
+      y(() =>
+        $(
           () => Object.values(e.doors.get()).every((e) => e.doorState === ne.OPENED),
           (e, a) => {
             a && !e && (r.start({ opacity: 1 }), l.start({ opacity: 0.7 }));
@@ -1289,15 +1289,15 @@ var na = (e, a) => ({ ...e, img: a }),
         (0, ce.jsxs)("div", {
           className: (0, me.default)(va, e.computes.eventCompleted() && wa),
           children: [
-            (0, ce.jsx)(f.div, { className: (0, me.default)(Ca, Sa), style: i }),
-            (0, ce.jsx)(f.div, { className: (0, me.default)(Ca, Ia), style: o }),
-            Object.keys(J).map((e) => (0, ce.jsx)(ya, { dayId: Number(e) }, e)),
+            (0, ce.jsx)(g.div, { className: (0, me.default)(Ca, Sa), style: i }),
+            (0, ce.jsx)(g.div, { className: (0, me.default)(Ca, Ia), style: o }),
+            Object.keys(Q).map((e) => (0, ce.jsx)(ya, { dayId: Number(e) }, e)),
           ],
         }),
         (0, ce.jsx)("div", {
           className: Na,
-          children: (0, ce.jsxs)(N, {
-            theme: N.themes.secondary,
+          children: (0, ce.jsxs)(q, {
+            theme: q.themes.secondary,
             size: n.buttonSize,
             onClick: d,
             children: [
@@ -1338,7 +1338,7 @@ var na = (e, a) => ({ ...e, img: a }),
   za = "ProgressStatus_stage_cae40b2a",
   La = "ProgressStatus_slash_3257b615",
   Ma = R.strings.common.common,
-  Ya = M(
+  Ya = L(
     ({
       isReceived: e,
       isInProgress: t,
@@ -1348,50 +1348,50 @@ var na = (e, a) => ({ ...e, img: a }),
       isPostEvent: r,
       setTriggerBlurAnimation: i,
     }) => {
-      const { model: d, controls: c } = de(),
-        g = d.progression.isCompleted.get(),
-        u = l(g),
-        m = l(t),
-        p = l(s),
-        [_, x] = (0, ie.useState)(!1),
-        w = h(),
-        b = a({
-          ref: w,
+      const { model: l, controls: c } = de(),
+        f = l.progression.isCompleted.get(),
+        u = d(f),
+        m = d(t),
+        p = d(s),
+        [h, y] = (0, ie.useState)(!1),
+        x = _(),
+        v = a({
+          ref: x,
           from: { opacity: 1, transform: "translateY(0rem)" },
           to: { opacity: 0, transform: "translateY(-5rem)" },
           transform: "translateY(0rem)",
-          config: { duration: 800, easing: ae },
-          onRest: () => y.sound("adv_fill_in"),
+          config: { duration: 800, easing: K },
+          onRest: () => w.sound("adv_fill_in"),
         }),
-        C = h(),
-        R = a({
-          ref: C,
+        b = _(),
+        C = a({
+          ref: b,
           from: { opacity: 0, transform: "translateY(5rem)" },
           to: { opacity: 1, transform: "translateY(0rem)" },
-          config: { duration: 100, easing: v.easeOutQuad },
+          config: { duration: 100, easing: S.easeOutQuad },
           onRest: () => i(!0),
         }),
-        S = h(),
+        R = _(),
         I = a({
-          ref: S,
+          ref: R,
           from: { opacity: 0 },
           to: { opacity: 1 },
-          config: { duration: 200, easing: v.easeOutQuad },
+          config: { duration: 200, easing: S.easeOutQuad },
           onRest: () => {
-            S.start({
+            R.start({
               to: { opacity: 0 },
-              config: { duration: 500, easing: v.easeInQuad },
+              config: { duration: 500, easing: S.easeInQuad },
               onRest: () => {
-                (x(!1), c.progressionRewardCompleted());
+                (y(!1), c.progressionRewardCompleted());
               },
             });
           },
         });
-      z(_ ? [w, C, S] : []);
+      z(h ? [x, b, R] : []);
       const [N, j] = a(() => ({ opacity: !t || r ? 1 : 0.5 })),
         [E, O] = a(() => ({ opacity: !t || r ? 0.5 : 1 })),
         [D, P] = a(() => ({ textShadow: Va })),
-        [A, k] = a(() => ({ opacity: g ? 0 : 1, transform: "translateY(0rem)" }));
+        [A, k] = a(() => ({ opacity: f ? 0 : 1, transform: "translateY(0rem)" }));
       return (
         (0, ie.useEffect)(() => {
           t &&
@@ -1400,13 +1400,13 @@ var na = (e, a) => ({ ...e, img: a }),
                   from: { opacity: 0.5 },
                   to: { opacity: 1 },
                   delay: 1e3,
-                  config: { duration: 200, easing: v.easeInQuad },
+                  config: { duration: 200, easing: S.easeInQuad },
                   onRest: () => {
                     P.start({
                       from: { textShadow: Va },
                       to: { textShadow: Fa },
                       reverse: !0,
-                      config: { duration: 300, easing: v.easeInQuad },
+                      config: { duration: 300, easing: S.easeInQuad },
                     });
                   },
                 }),
@@ -1414,48 +1414,48 @@ var na = (e, a) => ({ ...e, img: a }),
                   from: { opacity: 1 },
                   to: { opacity: 0.5 },
                   delay: 1e3,
-                  config: { duration: 200, easing: v.easeInQuad },
+                  config: { duration: 200, easing: S.easeInQuad },
                 }))
               : P.start({
                   from: { textShadow: Va },
                   to: { textShadow: Fa },
-                  config: { duration: 300, easing: v.easeInQuad },
+                  config: { duration: 300, easing: S.easeInQuad },
                   reverse: !0,
                   onRest: () => {
-                    _ || (s === n ? x(!0) : Number.isInteger(p) && c.animationCompleted());
+                    h || (s === n ? y(!0) : Number.isInteger(p) && c.animationCompleted());
                   },
                 }));
         }, [s, O, j, P, t, m, n, c, p]),
         (0, ie.useEffect)(() => {
-          g &&
+          f &&
             !1 === u &&
             k.start({
               from: { opacity: 1, transform: "translateY(0rem)" },
               to: { opacity: 0, transform: "translateY(-5rem)" },
               delay: o,
-              config: { duration: 800, easing: ae },
+              config: { duration: 800, easing: K },
             });
-        }, [k, o, g, u]),
-        (0, ce.jsx)(f.div, {
+        }, [k, o, f, u]),
+        (0, ce.jsx)(g.div, {
           style: A,
           className: $a,
           children: e
             ? (0, ce.jsx)("span", { className: Wa })
             : (0, ce.jsxs)(ce.Fragment, {
                 children: [
-                  (0, ce.jsx)(f.div, {
-                    style: R,
+                  (0, ce.jsx)(g.div, {
+                    style: C,
                     children: (0, ce.jsx)("span", { className: Wa }),
                   }),
-                  (0, ce.jsx)(f.div, { style: I, className: Ba }),
-                  (0, ce.jsx)(f.div, {
-                    style: b,
-                    children: (0, ce.jsxs)(f.div, {
+                  (0, ce.jsx)(g.div, { style: I, className: Ba }),
+                  (0, ce.jsx)(g.div, {
+                    style: v,
+                    children: (0, ce.jsxs)(g.div, {
                       style: E,
                       className: qa,
                       children: [
-                        (0, ce.jsx)(f.div, { style: D, children: s }),
-                        (0, ce.jsxs)(f.div, {
+                        (0, ce.jsx)(g.div, { style: D, children: s }),
+                        (0, ce.jsxs)(g.div, {
                           style: N,
                           className: Ha,
                           children: [
@@ -1485,7 +1485,7 @@ var na = (e, a) => ({ ...e, img: a }),
   et = "AnimationReward_imageWrapper_3f6b7438",
   at = "AnimationReward_lootBoxGlow_8877f155",
   tt = R.strings.advent_calendar.progressionRewards,
-  st = M(
+  st = L(
     ({
       isLastReward: e,
       isReceived: t,
@@ -1494,66 +1494,66 @@ var na = (e, a) => ({ ...e, img: a }),
       actualOpenedDoorsAmount: o,
       rewardType: r,
       requiredOpenedDoorsAmount: i,
-      tooltipContentId: d,
-      tooltipId: g,
+      tooltipContentId: l,
+      tooltipId: c,
       isPostEvent: u,
     }) => {
-      const { model: m, controls: h } = de(),
-        { breakpoint: p } = j(),
+      const { model: m, controls: p } = de(),
+        { breakpoint: h } = E(),
         _ = m.progression.isCompleted.get(),
-        [x, w] = (0, ie.useState)(!1),
-        b = l(t),
-        [C, R] = a(() => ({ opacity: _ || t ? 0.5 : 1 })),
-        [S, I] = a(() => ({ opacity: _ ? 0 : 1 })),
-        [N, E] = a(() => ({ opacity: t ? 0 : 0.5, transform: "translate(-50%, -50%)" })),
-        O = c({ contentId: d, args: { tooltipId: g } });
+        [y, x] = (0, ie.useState)(!1),
+        v = d(t),
+        [b, C] = a(() => ({ opacity: _ || t ? 0.5 : 1 })),
+        [R, I] = a(() => ({ opacity: _ ? 0 : 1 })),
+        [N, j] = a(() => ({ opacity: t ? 0 : 0.5, transform: "translate(-50%, -50%)" })),
+        O = f({ contentId: l, args: { tooltipId: c } });
       return (
         (0, ie.useEffect)(() => {
-          x &&
-            (R.start({
+          y &&
+            (C.start({
               from: { opacity: 1 },
               to: { opacity: 0.5 },
-              config: { duration: 200, easing: v.easeInQuad },
+              config: { duration: 200, easing: S.easeInQuad },
             }),
             I.start({
               from: { opacity: 1 },
               to: { opacity: 0 },
-              config: { duration: 200, easing: v.easeInQuad },
+              config: { duration: 200, easing: S.easeInQuad },
             }));
-        }, [R, I, x]),
+        }, [C, I, y]),
         (0, ie.useEffect)(() => {
           t &&
-            !1 === b &&
-            (e || y.sound("adv_progress_level"),
-            E.start({
+            !1 === v &&
+            (e || w.sound("adv_progress_level"),
+            j.start({
               from: { opacity: 0.5, transform: "translate(-50%, -50%)" },
               to: { opacity: 0, transform: "translate(-50%, -100%)" },
-              config: { duration: 800, easing: ae },
+              config: { duration: 800, easing: K },
               onRest: () => {
-                _ || h.animationCompleted();
+                _ || p.animationCompleted();
               },
             }));
-        }, [t, e, E, b, h, _]),
+        }, [t, e, j, v, p, _]),
         (0, ce.jsxs)("div", {
           className: (0, me.default)(Ga, r === Ta.BIG_LOOTBOX && Xa, t && Ja),
           children: [
             (0, ce.jsxs)("div", {
               className: Qa,
               children: [
-                (0, ce.jsxs)(f.div, {
-                  style: C,
+                (0, ce.jsxs)(g.div, {
+                  style: b,
                   className: et,
                   ...O,
                   children: [
-                    r === Ta.BIG_LOOTBOX && (0, ce.jsx)(f.div, { style: S, className: at }),
+                    r === Ta.BIG_LOOTBOX && (0, ce.jsx)(g.div, { style: R, className: at }),
                     (0, ce.jsx)("div", {
                       className: Za,
                       style: {
                         backgroundImage:
                           "" +
                           ((D = r),
-                          (A = p.weight),
-                          (P = 1 == A > k.medium.weight ? "big" : "small"),
+                          (k = h.weight),
+                          (P = 1 == k > A.medium.weight ? "big" : "small"),
                           `url(R.images.advent_calendar.gui.maps.icons.mainView.progression.${D}_${P})`),
                       },
                     }),
@@ -1567,7 +1567,7 @@ var na = (e, a) => ({ ...e, img: a }),
                     actualOpenedDoorsAmount: o,
                     requiredOpenedDoorsAmount: i,
                     completedDelay: n,
-                    setTriggerBlurAnimation: w,
+                    setTriggerBlurAnimation: x,
                     isPostEvent: u,
                   },
                   u.toString(),
@@ -1582,13 +1582,13 @@ var na = (e, a) => ({ ...e, img: a }),
                     header: tt.tooltip.lock.title(),
                     body: tt.tooltip.lock.description(),
                   },
-                  children: (0, ce.jsx)(f.div, { style: N, className: Ka }),
+                  children: (0, ce.jsx)(g.div, { style: N, className: Ka }),
                 }),
               }),
           ],
         })
       );
-      var D, P, A;
+      var D, P, k;
     },
   ),
   nt = "Title_30ab97fa",
@@ -1600,7 +1600,7 @@ var na = (e, a) => ({ ...e, img: a }),
   ct = "Title_postTitle__locked_fab62b4d",
   ft = "Title_lock_1c902cd7",
   gt = R.strings.advent_calendar.mainView,
-  ut = M(({ activePhaseCompleted: e, completed: a }) => {
+  ut = L(({ activePhaseCompleted: e, completed: a }) => {
     const { model: t } = de(),
       s = t.statePhase.get(),
       n = t.progression.isCompleted.get();
@@ -1612,7 +1612,7 @@ var na = (e, a) => ({ ...e, img: a }),
                 className: dt,
                 children: [
                   (0, ce.jsx)("span", { className: it }),
-                  (0, ce.jsx)(g, { className: ot, text: gt.footer.progressionFinished.title() }),
+                  (0, ce.jsx)(v, { className: ot, text: gt.footer.progressionFinished.title() }),
                 ],
               })
             : (0, ce.jsxs)("div", {
@@ -1622,13 +1622,13 @@ var na = (e, a) => ({ ...e, img: a }),
                   (0, ce.jsx)(te, {
                     tooltipArgs: {
                       body: R.strings.advent_calendar.progressionRewards.tooltip.postActivePhase.title(),
-                      bindings: Y(
+                      bindings: Z(
                         t.computes.activePhase().startDate,
                         t.computes.postActivePhase().startDate,
                       ),
                     },
                     children: (0, ce.jsx)("div", {
-                      children: (0, ce.jsx)(g, { className: ot, text: gt.footer.expired.title() }),
+                      children: (0, ce.jsx)(v, { className: ot, text: gt.footer.expired.title() }),
                     }),
                   }),
                 ],
@@ -1637,20 +1637,20 @@ var na = (e, a) => ({ ...e, img: a }),
       : (0, ce.jsxs)("div", {
           className: nt,
           children: [
-            (0, ce.jsxs)(f.div, {
+            (0, ce.jsxs)(g.div, {
               style: a,
               className: lt,
               children: [
                 (0, ce.jsx)("span", { className: it }),
-                (0, ce.jsx)(g, { className: ot, text: gt.footer.progressionFinished.title() }),
+                (0, ce.jsx)(v, { className: ot, text: gt.footer.progressionFinished.title() }),
               ],
             }),
-            (0, ce.jsx)(f.div, {
+            (0, ce.jsx)(g.div, {
               style: e,
-              children: (0, ce.jsx)(g, {
+              children: (0, ce.jsx)(v, {
                 className: (0, me.default)(ot, rt),
                 text: gt.footer.progressionNotFinished.title(),
-                params: { endDate: Q(t.computes.postActivePhase().startDate) },
+                params: { endDate: ae(t.computes.postActivePhase().startDate) },
                 upgradeLegacy: !0,
               }),
             }),
@@ -1658,43 +1658,43 @@ var na = (e, a) => ({ ...e, img: a }),
         });
   }),
   mt = "Footer_6cf7952",
-  ht = "Footer_base__hidden_44e170f6",
-  pt = "Footer_title_b40b5fba",
-  _t = M(() => {
+  pt = "Footer_base__hidden_44e170f6",
+  ht = "Footer_title_b40b5fba",
+  _t = L(() => {
     const { model: e, controls: t } = de(),
       s = e.progressionRewards.get(),
       n = e.progression.isCompleted.get(),
       o = e.statePhase.get(),
-      r = l(n),
-      [i, d] = a(() => ({ opacity: n ? 0 : 1, config: { duration: 900, easing: v.easeInQuad } })),
+      r = d(n),
+      [i, l] = a(() => ({ opacity: n ? 0 : 1, config: { duration: 900, easing: S.easeInQuad } })),
       [c, f] = a(() => ({ opacity: n ? 1 : 0, transform: "translateY(-40%)" }));
     (0, ie.useEffect)(() => {
       n &&
         !1 === r &&
-        d.start({
+        l.start({
           from: { opacity: 1 },
           to: { opacity: 0 },
           delay: 600,
           onRest: () => {
-            (y.sound("adv_progress_full"),
+            (w.sound("adv_progress_full"),
               f.start({
                 from: { opacity: 0, transform: "translateY(-40%)" },
                 to: { opacity: 1, transform: "translateY(-50%)" },
-                config: { duration: 100, easing: v.easeOutQuad },
+                config: { duration: 100, easing: S.easeOutQuad },
                 onRest: () => t.animationCompleted(),
               }));
           },
         });
-    }, [d, f, n, r, t]);
+    }, [l, f, n, r, t]);
     const g = e.computes.eventCompleted() || e.isIntroScreenVisible.get();
     return (0, ce.jsxs)("div", {
-      className: (0, me.default)(mt, g && ht),
+      className: (0, me.default)(mt, g && pt),
       children: [
         (0, ce.jsx)("div", {
-          className: pt,
+          className: ht,
           children: (0, ce.jsx)(ut, { activePhaseCompleted: i, completed: c }),
         }),
-        H(s, (e, a) =>
+        B(s, (e, a) =>
           (0, ce.jsx)(
             st,
             {
@@ -1745,24 +1745,24 @@ var na = (e, a) => ({ ...e, img: a }),
   Vt = "Header_close_8c2f6b61",
   Ft = "Header_hidden_20fc4480",
   $t = R.strings.advent_calendar.mainView,
-  Bt = M(function () {
+  Bt = L(function () {
     const { model: e, controls: a } = de(),
       t = e.isIntroScreenVisible.get(),
       s = e.computes.eventCompleted(),
-      n = F({ buttonSize: N.sizes.extraSmall }, { extraLarge: { buttonSize: N.sizes.small } }),
+      n = V({ buttonSize: q.sizes.extraSmall }, { extraLarge: { buttonSize: q.sizes.small } }),
       o = (() => {
         switch (e.statePhase.get()) {
           case _e.ACTIVE_PHASE:
             return {
               text: $t.activePhase.subTitle(),
               params: {
-                ...Y(e.computes.activePhase().startDate, e.computes.postActivePhase().startDate),
+                ...Z(e.computes.activePhase().startDate, e.computes.postActivePhase().startDate),
               },
             };
           case _e.POST_ACTIVE_PHASE:
             return {
               text: $t.postActivePhase.subTitle(),
-              params: { date: Q(e.computes.postActivePhase().endDate) },
+              params: { date: ae(e.computes.postActivePhase().endDate) },
             };
         }
       })(),
@@ -1770,8 +1770,8 @@ var na = (e, a) => ({ ...e, img: a }),
     return (0, ce.jsxs)("div", {
       className: St,
       children: [
-        (0, ce.jsxs)(N, {
-          theme: N.themes.secondary,
+        (0, ce.jsxs)(q, {
+          theme: q.themes.secondary,
           size: n.buttonSize,
           className: W(It, (t || s) && Ft),
           onClick: a.infoClick,
@@ -1788,7 +1788,7 @@ var na = (e, a) => ({ ...e, img: a }),
               children: [
                 (0, ce.jsx)(Rt, { className: Pt, text: $t.title() }),
                 e.statePhase.get() === _e.ACTIVE_PHASE &&
-                  (0, ce.jsx)(b, {
+                  (0, ce.jsx)(u, {
                     contentId:
                       R.views.advent_calendar.mono.lobby.tooltips.advent_calendar_all_rewards_tooltip(
                         "resId",
@@ -1799,7 +1799,7 @@ var na = (e, a) => ({ ...e, img: a }),
             }),
             (e.subTitle.get() || o.text)
               .split("\n")
-              .map((e) => (0, ce.jsx)(g, { params: o.params, className: kt, text: e }, e)),
+              .map((e) => (0, ce.jsx)(v, { params: o.params, className: kt, text: e }, e)),
             (0, ce.jsx)("div", { className: Ot }),
           ],
         }),
@@ -1815,7 +1815,7 @@ var na = (e, a) => ({ ...e, img: a }),
                 isWalletAvailable: e.isWalletAvailable.get(),
                 currencyTooltipId: e.currencyTooltipId.get(),
               }),
-            (0, ce.jsx)(D, { onClose: a.close, className: W(Vt, t && Ft) }),
+            (0, ce.jsx)(k, { onClose: a.close, className: W(Vt, t && Ft) }),
           ],
         }),
       ],
@@ -1828,7 +1828,7 @@ var na = (e, a) => ({ ...e, img: a }),
   Lt = "App_content__ready_97f2f2ea",
   Mt = "App_content__slowReady_e5d53eda",
   Yt = "App_content__blurred_9be9f4f5",
-  Gt = u.resolve("images"),
+  Gt = p.resolve("images"),
   Qt = [
     Gt.readOrEmpty("R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.c_160x1x1"),
     Gt.readOrEmpty("R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.c_160x2x1"),
@@ -1836,11 +1836,11 @@ var na = (e, a) => ({ ...e, img: a }),
     Gt.readOrEmpty("R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.c_160x1x2"),
     Gt.readOrEmpty("R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.c_160x3x1"),
   ],
-  Xt = M(() => {
+  Xt = L(() => {
     const { model: e, controls: a } = de(),
       { trigger: t } = ue(),
-      s = i();
-    (m(a.close), o(Qt));
+      s = l();
+    (h(a.close), r(Qt));
     const n = (a) => {
       Object.values(e.doors.get())
         .filter((e) => e.openAnimationRequired && e.doorState === ne.READY_TO_OPEN)
@@ -1850,16 +1850,16 @@ var na = (e, a) => ({ ...e, img: a }),
         });
     };
     return (
-      p(() => (s.run(() => n(0), 1e3), () => s.clear())),
-      p(() => {
+      y(() => (s.run(() => n(0), 1e3), () => s.clear())),
+      y(() => {
         if (!e.computes.eventCompleted())
-          return A(
+          return P(
             () => e.computes.eventCompleted(),
-            () => y.sound("adv_postcard"),
+            () => w.sound("adv_postcard"),
           );
       }),
-      p(() =>
-        B(
+      y(() =>
+        $(
           () => e.doors.get(),
           () => n(0),
           { delay: 400 },
@@ -1881,9 +1881,9 @@ var na = (e, a) => ({ ...e, img: a }),
       })
     );
   });
-(T(),
-  s(
-    (0, ce.jsx)(n, {
+(o(),
+  n(
+    (0, ce.jsx)(m, {
       children: (0, ce.jsx)(le, { children: (0, ce.jsx)(ge, { children: (0, ce.jsx)(Xt, {}) }) }),
     }),
   ));

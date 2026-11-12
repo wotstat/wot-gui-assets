@@ -1,22 +1,22 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  D as s,
-  E as a,
+  C as s,
+  D as a,
   T as r,
   Tt as c,
   U as t,
-  at as l,
-  f as n,
-  h as o,
-  k as i,
-  m as d,
-  rt as u,
+  _ as l,
+  at as n,
+  k as o,
+  p as i,
+  rt as d,
+  w as u,
   xt as p,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { t as m } from "../chunks/vendor.js";
-import { n as g, t as _ } from "../chunks/balance.js";
-var [b, h] = i("AdventCalednarPurchaseDialogModel")(
+import { n as m } from "../chunks/vendor.js";
+import { n as _, t as g } from "../chunks/balance.js";
+var [b, h] = o("AdventCalednarPurchaseDialogModel")(
     ({ observableModel: e }) => ({
       ...e.primitives([
         "dayId",
@@ -40,12 +40,12 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
   N = "Footer_title_e93267fa",
   f = "Footer_subTitle_7454c09a",
   A = "Footer_alertIcon_8f0e5ff",
-  z = e(l(), 1),
+  z = e(n(), 1),
   C = c.resolve("strings"),
   E = m(() => {
     const { model: e, controls: s } = h(),
       a = e.isWalletAvailable.get(),
-      r = u({ buttonSize: o.sizes.medium }, { large: { buttonSize: o.sizes.large } });
+      r = d({ buttonSize: u.sizes.medium }, { large: { buttonSize: u.sizes.large } });
     return e.notEnoughResource.get()
       ? (0, z.jsxs)(z.Fragment, {
           children: [
@@ -65,7 +65,7 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
             }),
             (0, z.jsx)("div", {
               className: p(v, j),
-              children: (0, z.jsx)(o, {
+              children: (0, z.jsx)(u, {
                 theme: "secondary",
                 size: r.buttonSize,
                 onClick: s.close,
@@ -78,10 +78,10 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
       : (0, z.jsxs)("div", {
           className: v,
           children: [
-            (0, z.jsx)(g, {
+            (0, z.jsx)(_, {
               tooltipArgs: { body: R.strings.advent_calendar.server_error() },
               disabled: a,
-              children: (0, z.jsx)(o, {
+              children: (0, z.jsx)(u, {
                 size: r.buttonSize,
                 onClick: s.accept,
                 disabled: !a,
@@ -89,7 +89,7 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
                 children: C.readOrEmpty("R.strings.advent_calendar.purchaseView.open"),
               }),
             }),
-            (0, z.jsx)(o, {
+            (0, z.jsx)(u, {
               theme: "secondary",
               size: r.buttonSize,
               onClick: s.close,
@@ -100,11 +100,11 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
         });
   }),
   k = "Navigation_close_6db0c433",
-  V = m(() => {
+  w = m(() => {
     const { controls: e } = h();
-    return (0, z.jsx)(d, { onClose: e.close, className: k });
+    return (0, z.jsx)(i, { onClose: e.close, className: k });
   }),
-  w = "App_9f64e833",
+  V = "App_9f64e833",
   F = "App_balancePanel_9bceebfc",
   S = "App_content_e154287a",
   T = "App_title_b5f9b4b0",
@@ -113,36 +113,36 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
   W = "App_price_46993a6f",
   M = c.resolve("strings"),
   D = m(() => {
-    const { model: e, controls: s } = h(),
-      a = u({ currencySize: n.sizes.large }, { large: { currencySize: n.sizes.extraLarge } });
+    const { model: e, controls: a } = h(),
+      r = d({ currencySize: s.sizes.large }, { large: { currencySize: s.sizes.extraLarge } });
     return (
-      t(s.close),
+      t(a.close),
       (0, z.jsxs)("div", {
-        className: w,
+        className: V,
         children: [
           (0, z.jsx)("div", { className: O }),
-          (0, z.jsx)(_, {
+          (0, z.jsx)(g, {
             currencyName: e.currentResource.get(),
             balanceCurrencyValue: e.balanceCurrencyValue.get(),
             isWalletAvailable: e.isWalletAvailable.get(),
             currencyTooltipId: e.currencyTooltipId.get(),
             className: F,
           }),
-          (0, z.jsx)(V, {}),
+          (0, z.jsx)(w, {}),
           (0, z.jsxs)("div", {
             className: S,
             children: [
-              (0, z.jsx)(r, {
+              (0, z.jsx)(l, {
                 text: M.readOrEmpty("R.strings.advent_calendar.purchaseView.title"),
                 params: { day: e.dayId.get(), color: "#ffe4c0" },
                 className: T,
               }),
               (0, z.jsx)("div", { className: I }),
-              (0, z.jsx)(n, {
+              (0, z.jsx)(s, {
                 type: e.currentResource.get(),
                 reverse: !0,
                 enough: !e.notEnoughResource.get() && e.isWalletAvailable.get(),
-                size: a.currencySize,
+                size: r.currencySize,
                 className: W,
                 children: e.price.get(),
               }),
@@ -153,4 +153,4 @@ var [b, h] = i("AdventCalednarPurchaseDialogModel")(
       })
     );
   });
-s((0, z.jsx)(a, { children: (0, z.jsx)(b, { children: (0, z.jsx)(D, {}) }) }));
+a((0, z.jsx)(r, { children: (0, z.jsx)(b, { children: (0, z.jsx)(D, {}) }) }));

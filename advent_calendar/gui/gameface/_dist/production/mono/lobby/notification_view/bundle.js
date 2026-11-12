@@ -7,21 +7,21 @@ import {
   K as o,
   T as i,
   W as c,
-  _t as r,
-  at as l,
-  gt as d,
-  h as p,
-  ht as _,
-  i as u,
-  k as m,
-  lt as g,
+  _ as r,
+  _t as l,
+  at as d,
+  gt as _,
+  ht as p,
+  k as u,
+  lt as m,
+  m as g,
   mt as f,
-  p as v,
-  q as b,
-  r as h,
+  q as v,
+  r as b,
+  w as j,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
-import { n as j, t as x } from "../chunks/vendor.js";
+import { n as h, t as x } from "../chunks/vendor.js";
 import { t as k } from "../chunks/format.js";
 var A = e(s(), 1),
   N = (function (e) {
@@ -57,10 +57,10 @@ var A = e(s(), 1),
         },
       }.withPlugins,
     ),
-    controls: () => g({ onClick: () => console.log("onClick") }),
+    controls: () => m({ onClick: () => console.log("onClick") }),
   },
-  E = e(j(), 1),
-  [P, B] = m()(
+  E = e(x(), 1),
+  [P, B] = u()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({ onClick: e.createCallbackNoArgs("onClick") }),
   ),
@@ -68,19 +68,19 @@ var A = e(s(), 1),
   U = "Background_base__popUp_e2773e75",
   O = "Background_border_96e049c8",
   T = "Background_image_c86a58b6",
-  I = e(l(), 1);
-function L({ isPopUp: e }) {
+  I = e(d(), 1);
+function w({ isPopUp: e }) {
   return (0, I.jsxs)("div", {
     className: (0, E.default)(C, e && U),
     children: [(0, I.jsx)("div", { className: O }), (0, I.jsx)("div", { className: T })],
   });
 }
-var S = "CloseButton_6ff70f96",
-  w = ({ classNames: e }) =>
+var L = "CloseButton_6ff70f96",
+  S = ({ classNames: e }) =>
     (0, I.jsx)("div", {
-      className: (0, E.default)(S, e?.base),
-      onMouseEnter: () => r.sound(R.sounds.highlight()),
-      onClick: () => r.sound(R.sounds.cancelcloseno()),
+      className: (0, E.default)(L, e?.base),
+      onMouseEnter: () => l.sound(R.sounds.highlight()),
+      onClick: () => l.sound(R.sounds.cancelcloseno()),
     }),
   y = "Decorator_4202b3ce",
   V = "Decorator_base__popUp_aeffa563",
@@ -89,21 +89,21 @@ var S = "CloseButton_6ff70f96",
   W = "Decorator_backgroundWrapper_481f57ee",
   Y = "Decorator_lipTop_977ea454",
   q = "Decorator_lipBottom_fc59f66d",
-  z = x(function ({ children: e, className: a }) {
+  z = h(function ({ children: e, className: a }) {
     const { model: s } = B(),
       { isPopUp: t, backgroundPlugin: n } = s.root.get(),
       i = (0, A.useRef)(null);
     return (
       c(() => {
-        t && r.sound("adv_notification");
+        t && l.sound("adv_notification");
       }),
       o(
         i,
-        b(() => {
+        v(() => {
           if (!i.current) return;
-          const e = Math.min(i.current.getBoundingClientRect().height, _(500)),
-            a = _(288);
-          d(a, e);
+          const e = Math.min(i.current.getBoundingClientRect().height, p(500)),
+            a = p(288);
+          _(a, e);
         }),
       ),
       (0, I.jsxs)("div", {
@@ -111,10 +111,10 @@ var S = "CloseButton_6ff70f96",
         className: (0, E.default)(y, t && V, a),
         children: [
           (0, I.jsx)("div", { className: F, children: e }),
-          t && (0, I.jsx)(w, { classNames: { base: M } }),
+          t && (0, I.jsx)(S, { classNames: { base: M } }),
           (0, I.jsx)("div", {
             className: W,
-            children: n ? (0, I.jsx)(u, { src: n, isPopUp: t }) : (0, I.jsx)(L, { isPopUp: t }),
+            children: n ? (0, I.jsx)(g, { src: n, isPopUp: t }) : (0, I.jsx)(w, { isPopUp: t }),
           }),
           !t &&
             (0, I.jsxs)(I.Fragment, {
@@ -147,48 +147,48 @@ var S = "CloseButton_6ff70f96",
       action: ae.postEvent.action(),
     },
   },
-  te = x(function () {
+  te = h(function () {
     const { model: e, controls: a } = B(),
       {
         state: s,
         eventEndDate: t,
         isPopUp: n,
         isButtonDisabled: o,
-        descriptionPlugin: c,
-        rewardImagePath: r,
+        descriptionPlugin: i,
+        rewardImagePath: c,
       } = e.root.get(),
       { title: l, description: d, action: _ } = se[s],
-      m = !!d,
-      g = k(t);
-    return (0, I.jsx)(h, {
+      p = !!d,
+      u = k(t);
+    return (0, I.jsx)(b, {
       children: (0, I.jsx)(z, {
         isPopUp: n,
         children: (0, I.jsxs)("div", {
-          className: (0, E.default)(K, n && $, m && Q),
+          className: (0, E.default)(K, n && $, p && Q),
           children: [
-            (0, I.jsx)("div", { className: G, children: (0, I.jsx)(i, { text: l, className: H }) }),
-            (0, I.jsx)("div", { style: { backgroundImage: `url(${r})` }, className: J }),
-            m &&
-              (c
-                ? (0, I.jsx)(u, {
-                    src: c,
+            (0, I.jsx)("div", { className: G, children: (0, I.jsx)(r, { text: l, className: H }) }),
+            (0, I.jsx)("div", { style: { backgroundImage: `url(${c})` }, className: J }),
+            p &&
+              (i
+                ? (0, I.jsx)(g, {
+                    src: i,
                     state: s,
-                    date: g,
-                    fallback: (0, I.jsx)(i, {
+                    date: u,
+                    fallback: (0, I.jsx)(r, {
                       text: d,
                       className: (0, E.default)(X, Z),
-                      params: { date: g },
+                      params: { date: u },
                     }),
                   })
-                : (0, I.jsx)(i, { text: d, className: X, params: { date: g } })),
+                : (0, I.jsx)(r, { text: d, className: X, params: { date: u } })),
             (0, I.jsx)("div", {
-              children: (0, I.jsx)(p, {
-                theme: p.themes.secondary,
+              children: (0, I.jsx)(j, {
+                theme: j.themes.secondary,
                 onClick: a.onClick,
                 size: "small",
                 className: ee,
                 disabled: o,
-                children: (0, I.jsx)(i, { text: _ }),
+                children: (0, I.jsx)(r, { text: _ }),
               }),
             }),
           ],
@@ -196,9 +196,9 @@ var S = "CloseButton_6ff70f96",
       }),
     });
   });
-(v(),
+(n(),
   t(
-    (0, I.jsx)(n, {
+    (0, I.jsx)(i, {
       children: (0, I.jsx)(P, { mode: "real", mocks: D, children: (0, I.jsx)(te, {}) }),
     }),
   ));

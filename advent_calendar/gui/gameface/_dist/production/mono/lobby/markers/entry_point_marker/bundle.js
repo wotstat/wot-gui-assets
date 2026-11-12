@@ -2,10 +2,10 @@ import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Ct as s,
   D as a,
-  E as r,
-  H as t,
-  L as n,
-  R as o,
+  H as r,
+  L as t,
+  R as n,
+  T as o,
   Tt as i,
   at as c,
   ct as l,
@@ -16,7 +16,7 @@ import {
   xt as f,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { t as x } from "../../chunks/vendor.js";
+import { n as x } from "../../chunks/vendor.js";
 var j = e(s(), 1),
   [u, h] = _("MarkerViewModel")(({ observableModel: e }) => ({ root: e.object() }), p),
   v = "Counter_481de7c",
@@ -39,9 +39,9 @@ var j = e(s(), 1),
     className: s,
     startColor: a = "#213da1",
     endColor: r = "#4361c8",
-    classNames: t,
+    classNames: n,
   }) => {
-    const o = n();
+    const o = t();
     return (0, N.jsxs)("div", {
       className: f(C, s),
       children: [
@@ -74,7 +74,7 @@ var j = e(s(), 1),
           ],
         }),
         e,
-        (0, N.jsx)("div", { className: f(A, t?.arrow) }),
+        (0, N.jsx)("div", { className: f(A, n?.arrow) }),
       ],
     });
   },
@@ -82,7 +82,7 @@ var j = e(s(), 1),
   M = "MarkerContent_content_133418e",
   D = "MarkerContent_gradient_393ed7e1",
   O = j.memo((e) => {
-    const s = t(e, {
+    const s = r(e, {
       from: { opacity: 0, transform: "translate(-50%, 50%)" },
       enter: { opacity: 1, transform: "translate(-50%, -50%)" },
       leave: { opacity: 0, transform: "translate(-50%, -150%)" },
@@ -91,7 +91,7 @@ var j = e(s(), 1),
     return (0, N.jsx)("div", {
       className: f(w, e.className),
       children: s((e, { markerContent: s }) =>
-        (0, N.jsxs)(o.div, {
+        (0, N.jsxs)(n.div, {
           style: e,
           className: M,
           children: [s, (0, N.jsx)("div", { className: D, children: s })],
@@ -105,10 +105,10 @@ var j = e(s(), 1),
   H = "App_base__hidden_4f2b7a98",
   L = "App_base__animated_3a64b9d0",
   R = "App_inner_ee191014",
-  V = "App_icon_92c2e8f4",
-  B = "App_counter_293a558e",
-  P = i.resolve("strings"),
-  S = x(function () {
+  T = "App_icon_92c2e8f4",
+  V = "App_counter_293a558e",
+  B = i.resolve("strings"),
+  P = x(function () {
     const { model: e } = h(),
       { breakpoint: s } = m(),
       a = (0, j.useRef)(null),
@@ -129,19 +129,19 @@ var j = e(s(), 1),
       (0, N.jsx)("div", {
         className: f(G, I, (!r || 0 === o) && H, t && U, n && L),
         ref: a,
-        lang: P.readOrEmpty("settings.LANGUAGE_CODE"),
+        lang: B.readOrEmpty("settings.LANGUAGE_CODE"),
         children: t
           ? (0, N.jsx)("div", {
               className: R,
               children: (0, N.jsx)("div", {
-                className: V,
+                className: T,
                 children: (0, N.jsx)(O, {
-                  markerContent: P.readOrEmpty("advent_calendar.marker.exclamationMark"),
+                  markerContent: B.readOrEmpty("advent_calendar.marker.exclamationMark"),
                 }),
               }),
             })
-          : (0, N.jsx)(E, { className: B, children: (0, N.jsx)(k, { count: o }) }),
+          : (0, N.jsx)(E, { className: V, children: (0, N.jsx)(k, { count: o }) }),
       })
     );
   });
-a((0, N.jsx)(r, { children: (0, N.jsx)(u, { children: (0, N.jsx)(S, {}) }) }));
+a((0, N.jsx)(o, { children: (0, N.jsx)(u, { children: (0, N.jsx)(P, {}) }) }));

@@ -44698,148 +44698,6 @@ var base$10 = "Bubble_df22310d",
     Value: Value,
     Icon: Icon,
   },
-  DEFAULT_FRAME_TIME = 33,
-  DEFAULTS = { FRAME_TIME: 33, INITIAL_FRAME_INDEX: 0, LOOP: !0, STATE: "play" };
-function createGridImgSourceGetter(e) {
-  const { chunk: t } = e,
-    n = t.rows * t.columns;
-  return (r) => {
-    const a = r % n,
-      o = (a % t.columns) * e.width,
-      i = Math.trunc(a / t.columns) * e.height;
-    return { path: e.getChunkPath(Math.trunc(r / n)), x: o, y: i };
-  };
-}
-function addChunkIndexToEndPath(e) {
-  return (t) => `${e}${t}`;
-}
-var CanvasSequence = (0, import_react.memo)(function ({
-    width: e,
-    height: t,
-    getImageSource: n,
-    frameCount: r,
-    onAnimate: a,
-    frameTime: o = DEFAULTS.FRAME_TIME,
-    initialFrameIndex: i = DEFAULTS.INITIAL_FRAME_INDEX,
-    lastFrameIndex: s = r - 1,
-    loop: l = DEFAULTS.LOOP,
-    state: u = DEFAULTS.STATE,
-    onAnimationDone: c,
-    onAnimationComplete: d,
-    poster: p,
-    ...f
-  }) {
-    const _ = (0, import_react.useRef)(null);
-    return (
-      (0, import_react.useEffect)(() => {
-        const e = _.current;
-        if (!e) return;
-        const t = e.getContext("2d"),
-          r = (n) => {
-            (t.clearRect(0, 0, e.width, e.height), t.drawImage(n.img, -n.x, -n.y));
-          };
-        switch (u) {
-          case "play":
-            return (function () {
-              const e = generateImages(i, s, n),
-                t = createFrameCounter(i, s),
-                u = window.setInterval(() => {
-                  const n = t(),
-                    o = e.get(n);
-                  o
-                    ? (a?.(n, o), r(o), n === s && (d?.(), l || (c?.(), window.clearInterval(u))))
-                    : console.error("frameImage was not provided in frameImages Map");
-                }, o);
-              return () => window.clearInterval(u);
-            })();
-          case "stop":
-            return (function () {
-              const e = 0 === i && p ? { path: p, x: 0, y: 0 } : n(i),
-                t = new Image();
-              t.src = e.path;
-              const a = () => r(createFrameImage(e, t));
-              return (t.addEventListener("load", a), () => t.removeEventListener("load", a));
-            })();
-          default:
-            return console.error("[CanvasSequence] Unreachable state!");
-        }
-      }, [o, n, i, s, l, a, d, c, p, u]),
-      (0, import_jsx_runtime.jsx)("canvas", { ...f, width: e, height: t, ref: _ })
-    );
-  }),
-  createFrameCounter = (e, t) => {
-    let n = e;
-    return () => {
-      const r = n;
-      return ((n += 1), n > t && (n = e), r);
-    };
-  },
-  createFrameImage = (e, t) => ({ ...e, img: t }),
-  generateImages = (e, t, n) => {
-    const r = new Map(),
-      a = {};
-    for (let o = e; o <= t; o++) {
-      const e = n(o),
-        t = a[e.path];
-      if (t) r.set(o, createFrameImage(e, t));
-      else {
-        const t = new Image();
-        ((a[e.path] = t),
-          (t.src = e.path),
-          (t.onerror = () => {
-            console.error(`[CanvasSequence] Error loading image(${o})`, e.path, `(${e.x},${e.y})`);
-          }),
-          r.set(o, createFrameImage(e, t)));
-      }
-    }
-    return r;
-  },
-  textOverlay = "GradientText_textOverlay_2d67fbb8",
-  base$9 = "GradientText_5009d812",
-  fadeIn$10 = "GradientText_fadeIn_f58bf640",
-  fadeInThreeQuarters$10 = "GradientText_fadeInThreeQuarters_f58bf640",
-  fadeInHalf$10 = "GradientText_fadeInHalf_f58bf640",
-  fadeOut$10 = "GradientText_fadeOut_f58bf640",
-  fadeInWithScale$10 = "GradientText_fadeInWithScale_f58bf640",
-  slideUp$10 = "GradientText_slideUp_f58bf640",
-  scale$10 = "GradientText_scale_f58bf640",
-  raysAppearance$10 = "GradientText_raysAppearance_f58bf640",
-  rotate$10 = "GradientText_rotate_f58bf640",
-  glowAppearance$10 = "GradientText_glowAppearance_f58bf640",
-  highlightAppearance$10 = "GradientText_highlightAppearance_f58bf640",
-  blink$10 = "GradientText_blink_f58bf640",
-  slideUpIn$10 = "GradientText_slideUpIn_f58bf640",
-  gradient_text_module_default = {
-    textOverlay: textOverlay,
-    base: base$9,
-    fadeIn: fadeIn$10,
-    fadeInThreeQuarters: fadeInThreeQuarters$10,
-    fadeInHalf: fadeInHalf$10,
-    fadeOut: fadeOut$10,
-    fadeInWithScale: fadeInWithScale$10,
-    slideUp: slideUp$10,
-    scale: scale$10,
-    raysAppearance: raysAppearance$10,
-    rotate: rotate$10,
-    "reverse-rotate": "GradientText_reverse-rotate_f58bf640",
-    glowAppearance: glowAppearance$10,
-    highlightAppearance: highlightAppearance$10,
-    blink: blink$10,
-    slideUpIn: slideUpIn$10,
-  },
-  GradientText = (0, import_react.forwardRef)(function ({ classNames: e, children: t }, n) {
-    return (0, import_jsx_runtime.jsxs)("div", {
-      ref: n,
-      className: clsx(gradient_text_module_default.base, e?.base),
-      children: [
-        (0, import_jsx_runtime.jsx)("div", { className: e?.text, children: t }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: clsx(gradient_text_module_default.textOverlay, e?.textOverlay),
-          children: t,
-        }),
-      ],
-    });
-  }),
   awilix_browser_exports = __exportAll({
     AwilixError: () => AwilixError,
     AwilixRegistrationError: () => AwilixRegistrationError,
@@ -48197,7 +48055,7 @@ var DEV$1 = void 0,
     insert: () => insert,
     isDev: () => !1,
     isServer: () => !1,
-    memo: () => memo$6,
+    memo: () => memo$7,
     mergeProps: () => mergeProps,
     render: () => render,
     renderToStream: () => renderToStream,
@@ -48712,7 +48570,7 @@ var DelegatedEvents = new Set([
     "noindex",
     "search",
   ]),
-  memo$6 = (e) => createMemo(() => e());
+  memo$7 = (e) => createMemo(() => e());
 function reconcileArrays(e, t, n) {
   let r = n.length,
     a = t.length,
@@ -50388,7 +50246,53 @@ function isReactElementType(e) {
 function isReactComponent$1(e) {
   return ("function" == typeof e && !e.prototype?.isReactComponent) || isReactElementType(e);
 }
-var measureTypes = { measuring: "measuring", noneRef: "none-ref", measured: "measured" },
+var textOverlay = "GradientText_textOverlay_2d67fbb8",
+  base$9 = "GradientText_5009d812",
+  fadeIn$10 = "GradientText_fadeIn_f58bf640",
+  fadeInThreeQuarters$10 = "GradientText_fadeInThreeQuarters_f58bf640",
+  fadeInHalf$10 = "GradientText_fadeInHalf_f58bf640",
+  fadeOut$10 = "GradientText_fadeOut_f58bf640",
+  fadeInWithScale$10 = "GradientText_fadeInWithScale_f58bf640",
+  slideUp$10 = "GradientText_slideUp_f58bf640",
+  scale$10 = "GradientText_scale_f58bf640",
+  raysAppearance$10 = "GradientText_raysAppearance_f58bf640",
+  rotate$10 = "GradientText_rotate_f58bf640",
+  glowAppearance$10 = "GradientText_glowAppearance_f58bf640",
+  highlightAppearance$10 = "GradientText_highlightAppearance_f58bf640",
+  blink$10 = "GradientText_blink_f58bf640",
+  slideUpIn$10 = "GradientText_slideUpIn_f58bf640",
+  gradient_text_module_default = {
+    textOverlay: textOverlay,
+    base: base$9,
+    fadeIn: fadeIn$10,
+    fadeInThreeQuarters: fadeInThreeQuarters$10,
+    fadeInHalf: fadeInHalf$10,
+    fadeOut: fadeOut$10,
+    fadeInWithScale: fadeInWithScale$10,
+    slideUp: slideUp$10,
+    scale: scale$10,
+    raysAppearance: raysAppearance$10,
+    rotate: rotate$10,
+    "reverse-rotate": "GradientText_reverse-rotate_f58bf640",
+    glowAppearance: glowAppearance$10,
+    highlightAppearance: highlightAppearance$10,
+    blink: blink$10,
+    slideUpIn: slideUpIn$10,
+  },
+  GradientText = (0, import_react.forwardRef)(function ({ classNames: e, children: t }, n) {
+    return (0, import_jsx_runtime.jsxs)("div", {
+      ref: n,
+      className: clsx(gradient_text_module_default.base, e?.base),
+      children: [
+        (0, import_jsx_runtime.jsx)("div", { className: e?.text, children: t }),
+        (0, import_jsx_runtime.jsx)("div", {
+          className: clsx(gradient_text_module_default.textOverlay, e?.textOverlay),
+          children: t,
+        }),
+      ],
+    });
+  }),
+  measureTypes = { measuring: "measuring", noneRef: "none-ref", measured: "measured" },
   initialState = { type: "measuring" };
 function useMeasure() {
   const e = (0, import_react.useRef)(null),
@@ -50454,7 +50358,7 @@ function flattenBy(e, t) {
     };
   return (r(e), n);
 }
-function memo$5(e, t, n) {
+function memo$6(e, t, n) {
   let r,
     a = [];
   return (o) => {
@@ -50506,7 +50410,7 @@ function createCell(e, t, n, r) {
       var t;
       return null != (t = a.getValue()) ? t : e.options.renderFallbackValue;
     },
-    getContext: memo$5(
+    getContext: memo$6(
       () => [e, n, t, a],
       (e, t, n, r) => ({
         table: e,
@@ -50569,7 +50473,7 @@ function createColumn(e, t, n, r) {
     depth: n,
     columnDef: i,
     columns: [],
-    getFlatColumns: memo$5(
+    getFlatColumns: memo$6(
       () => [!0],
       () => {
         var e;
@@ -50577,7 +50481,7 @@ function createColumn(e, t, n, r) {
       },
       getMemoOptions(e.options, "debugColumns", "column.getFlatColumns"),
     ),
-    getLeafColumns: memo$5(
+    getLeafColumns: memo$6(
       () => [e._getOrderColumnsFn()],
       (e) => {
         var t;
@@ -50623,7 +50527,7 @@ function createHeader(e, t, n) {
 }
 var Headers = {
   createTable: (e) => {
-    ((e.getHeaderGroups = memo$5(
+    ((e.getHeaderGroups = memo$6(
       () => [
         e.getAllColumns(),
         e.getVisibleLeafColumns(),
@@ -50656,7 +50560,7 @@ var Headers = {
       },
       getMemoOptions(e.options, debug, "getHeaderGroups"),
     )),
-      (e.getCenterHeaderGroups = memo$5(
+      (e.getCenterHeaderGroups = memo$6(
         () => [
           e.getAllColumns(),
           e.getVisibleLeafColumns(),
@@ -50674,7 +50578,7 @@ var Headers = {
           ),
         getMemoOptions(e.options, debug, "getCenterHeaderGroups"),
       )),
-      (e.getLeftHeaderGroups = memo$5(
+      (e.getLeftHeaderGroups = memo$6(
         () => [e.getAllColumns(), e.getVisibleLeafColumns(), e.getState().columnPinning.left],
         (t, n, r) => {
           var a;
@@ -50690,7 +50594,7 @@ var Headers = {
         },
         getMemoOptions(e.options, debug, "getLeftHeaderGroups"),
       )),
-      (e.getRightHeaderGroups = memo$5(
+      (e.getRightHeaderGroups = memo$6(
         () => [e.getAllColumns(), e.getVisibleLeafColumns(), e.getState().columnPinning.right],
         (t, n, r) => {
           var a;
@@ -50706,47 +50610,47 @@ var Headers = {
         },
         getMemoOptions(e.options, debug, "getRightHeaderGroups"),
       )),
-      (e.getFooterGroups = memo$5(
+      (e.getFooterGroups = memo$6(
         () => [e.getHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getFooterGroups"),
       )),
-      (e.getLeftFooterGroups = memo$5(
+      (e.getLeftFooterGroups = memo$6(
         () => [e.getLeftHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getLeftFooterGroups"),
       )),
-      (e.getCenterFooterGroups = memo$5(
+      (e.getCenterFooterGroups = memo$6(
         () => [e.getCenterHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getCenterFooterGroups"),
       )),
-      (e.getRightFooterGroups = memo$5(
+      (e.getRightFooterGroups = memo$6(
         () => [e.getRightHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getRightFooterGroups"),
       )),
-      (e.getFlatHeaders = memo$5(
+      (e.getFlatHeaders = memo$6(
         () => [e.getHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getFlatHeaders"),
       )),
-      (e.getLeftFlatHeaders = memo$5(
+      (e.getLeftFlatHeaders = memo$6(
         () => [e.getLeftHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getLeftFlatHeaders"),
       )),
-      (e.getCenterFlatHeaders = memo$5(
+      (e.getCenterFlatHeaders = memo$6(
         () => [e.getCenterHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getCenterFlatHeaders"),
       )),
-      (e.getRightFlatHeaders = memo$5(
+      (e.getRightFlatHeaders = memo$6(
         () => [e.getRightHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getRightFlatHeaders"),
       )),
-      (e.getCenterLeafHeaders = memo$5(
+      (e.getCenterLeafHeaders = memo$6(
         () => [e.getCenterFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -50755,7 +50659,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getCenterLeafHeaders"),
       )),
-      (e.getLeftLeafHeaders = memo$5(
+      (e.getLeftLeafHeaders = memo$6(
         () => [e.getLeftFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -50764,7 +50668,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getLeftLeafHeaders"),
       )),
-      (e.getRightLeafHeaders = memo$5(
+      (e.getRightLeafHeaders = memo$6(
         () => [e.getRightFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -50773,7 +50677,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getRightLeafHeaders"),
       )),
-      (e.getLeafHeaders = memo$5(
+      (e.getLeafHeaders = memo$6(
         () => [e.getLeftHeaderGroups(), e.getCenterHeaderGroups(), e.getRightHeaderGroups()],
         (e, t, n) => {
           var r, a, o, i, s, l;
@@ -50904,12 +50808,12 @@ var createRow = (e, t, n, r, a, o, i) => {
         }
         return e.reverse();
       },
-      getAllCells: memo$5(
+      getAllCells: memo$6(
         () => [e.getAllLeafColumns()],
         (t) => t.map((t) => createCell(e, s, t, t.id)),
         getMemoOptions(e.options, "debugRows", "getAllCells"),
       ),
-      _getAllCellsByColumnId: memo$5(
+      _getAllCellsByColumnId: memo$6(
         () => [s.getAllCells()],
         (e) => e.reduce((e, t) => ((e[t.column.id] = t), e), {}),
         getMemoOptions(e.options, "debugRows", "getAllCellsByColumnId"),
@@ -51322,7 +51226,7 @@ var ColumnOrdering = {
     getInitialState: (e) => ({ columnOrder: [], ...e }),
     getDefaultOptions: (e) => ({ onColumnOrderChange: makeStateUpdater("columnOrder", e) }),
     createColumn: (e, t) => {
-      ((e.getIndex = memo$5(
+      ((e.getIndex = memo$6(
         (e) => [_getVisibleLeafColumns(t, e)],
         (t) => t.findIndex((t) => t.id === e.id),
         getMemoOptions(t.options, "debugColumns", "getIndex"),
@@ -51344,7 +51248,7 @@ var ColumnOrdering = {
           var n;
           e.setColumnOrder(t ? [] : null != (n = e.initialState.columnOrder) ? n : []);
         }),
-        (e._getOrderColumnsFn = memo$5(
+        (e._getOrderColumnsFn = memo$6(
           () => [e.getState().columnOrder, e.getState().grouping, e.options.groupedColumnMode],
           (e, t, n) => (r) => {
             let a = [];
@@ -51442,7 +51346,7 @@ var ColumnOrdering = {
         }));
     },
     createRow: (e, t) => {
-      ((e.getCenterVisibleCells = memo$5(
+      ((e.getCenterVisibleCells = memo$6(
         () => [
           e._getAllVisibleCells(),
           t.getState().columnPinning.left,
@@ -51454,7 +51358,7 @@ var ColumnOrdering = {
         },
         getMemoOptions(t.options, "debugRows", "getCenterVisibleCells"),
       )),
-        (e.getLeftVisibleCells = memo$5(
+        (e.getLeftVisibleCells = memo$6(
           () => [e._getAllVisibleCells(), t.getState().columnPinning.left],
           (e, t) =>
             (null != t ? t : [])
@@ -51463,7 +51367,7 @@ var ColumnOrdering = {
               .map((e) => ({ ...e, position: "left" })),
           getMemoOptions(t.options, "debugRows", "getLeftVisibleCells"),
         )),
-        (e.getRightVisibleCells = memo$5(
+        (e.getRightVisibleCells = memo$6(
           () => [e._getAllVisibleCells(), t.getState().columnPinning.right],
           (e, t) =>
             (null != t ? t : [])
@@ -51497,17 +51401,17 @@ var ColumnOrdering = {
                 (null == (o = r.right) ? void 0 : o.length),
               );
         }),
-        (e.getLeftLeafColumns = memo$5(
+        (e.getLeftLeafColumns = memo$6(
           () => [e.getAllLeafColumns(), e.getState().columnPinning.left],
           (e, t) => (null != t ? t : []).map((t) => e.find((e) => e.id === t)).filter(Boolean),
           getMemoOptions(e.options, "debugColumns", "getLeftLeafColumns"),
         )),
-        (e.getRightLeafColumns = memo$5(
+        (e.getRightLeafColumns = memo$6(
           () => [e.getAllLeafColumns(), e.getState().columnPinning.right],
           (e, t) => (null != t ? t : []).map((t) => e.find((e) => e.id === t)).filter(Boolean),
           getMemoOptions(e.options, "debugColumns", "getRightLeafColumns"),
         )),
-        (e.getCenterLeafColumns = memo$5(
+        (e.getCenterLeafColumns = memo$6(
           () => [
             e.getAllLeafColumns(),
             e.getState().columnPinning.left,
@@ -51558,12 +51462,12 @@ var defaultColumnSizing = { size: 150, minSize: 20, maxSize: Number.MAX_SAFE_INT
           null != (a = e.columnDef.maxSize) ? a : defaultColumnSizing.maxSize,
         );
       }),
-        (e.getStart = memo$5(
+        (e.getStart = memo$6(
           (e) => [e, _getVisibleLeafColumns(t, e), t.getState().columnSizing],
           (t, n) => n.slice(0, e.getIndex(t)).reduce((e, t) => e + t.getSize(), 0),
           getMemoOptions(t.options, "debugColumns", "getStart"),
         )),
-        (e.getAfter = memo$5(
+        (e.getAfter = memo$6(
           (e) => [e, _getVisibleLeafColumns(t, e), t.getState().columnSizing],
           (t, n) => n.slice(e.getIndex(t) + 1).reduce((e, t) => e + t.getSize(), 0),
           getMemoOptions(t.options, "debugColumns", "getAfter"),
@@ -51807,12 +51711,12 @@ var ColumnVisibility = {
       }));
   },
   createRow: (e, t) => {
-    ((e._getAllVisibleCells = memo$5(
+    ((e._getAllVisibleCells = memo$6(
       () => [e.getAllCells(), t.getState().columnVisibility],
       (e) => e.filter((e) => e.column.getIsVisible()),
       getMemoOptions(t.options, "debugRows", "_getAllVisibleCells"),
     )),
-      (e.getVisibleCells = memo$5(
+      (e.getVisibleCells = memo$6(
         () => [e.getLeftVisibleCells(), e.getCenterVisibleCells(), e.getRightVisibleCells()],
         (e, t, n) => [...e, ...t, ...n],
         getMemoOptions(t.options, "debugRows", "getVisibleCells"),
@@ -51820,7 +51724,7 @@ var ColumnVisibility = {
   },
   createTable: (e) => {
     const t = (t, n) =>
-      memo$5(
+      memo$6(
         () => [
           n(),
           n()
@@ -52178,7 +52082,7 @@ var GlobalFaceting = {
             let a = functionalUpdate(t, null != (r = e.options.pageCount) ? r : -1);
             return ("number" == typeof a && (a = Math.max(-1, a)), { ...n, pageCount: a });
           })),
-        (e.getPageOptions = memo$5(
+        (e.getPageOptions = memo$6(
           () => [e.getPageCount()],
           (e) => {
             let t = [];
@@ -52335,17 +52239,17 @@ var GlobalFaceting = {
             .filter(Boolean)
             .map((e) => ({ ...e, position: r }));
         }),
-        (e.getTopRows = memo$5(
+        (e.getTopRows = memo$6(
           () => [e.getRowModel().rows, e.getState().rowPinning.top],
           (t, n) => e._getPinnedRows(t, n, "top"),
           getMemoOptions(e.options, "debugRows", "getTopRows"),
         )),
-        (e.getBottomRows = memo$5(
+        (e.getBottomRows = memo$6(
           () => [e.getRowModel().rows, e.getState().rowPinning.bottom],
           (t, n) => e._getPinnedRows(t, n, "bottom"),
           getMemoOptions(e.options, "debugRows", "getBottomRows"),
         )),
-        (e.getCenterRows = memo$5(
+        (e.getCenterRows = memo$6(
           () => [e.getRowModel().rows, e.getState().rowPinning.top, e.getState().rowPinning.bottom],
           (e, t, n) => {
             const r = new Set([...(null != t ? t : []), ...(null != n ? n : [])]);
@@ -52399,19 +52303,19 @@ var GlobalFaceting = {
             );
           })),
         (e.getPreSelectedRowModel = () => e.getCoreRowModel()),
-        (e.getSelectedRowModel = memo$5(
+        (e.getSelectedRowModel = memo$6(
           () => [e.getState().rowSelection, e.getCoreRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
           getMemoOptions(e.options, "debugTable", "getSelectedRowModel"),
         )),
-        (e.getFilteredSelectedRowModel = memo$5(
+        (e.getFilteredSelectedRowModel = memo$6(
           () => [e.getState().rowSelection, e.getFilteredRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
           getMemoOptions(e.options, "debugTable", "getFilteredSelectedRowModel"),
         )),
-        (e.getGroupedSelectedRowModel = memo$5(
+        (e.getGroupedSelectedRowModel = memo$6(
           () => [e.getState().rowSelection, e.getSortedRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
@@ -52858,7 +52762,7 @@ function createTable(e) {
       if (!n && ((n = a.getCoreRowModel().rowsById[e]), !n)) throw new Error();
       return n;
     },
-    _getDefaultColumnDef: memo$5(
+    _getDefaultColumnDef: memo$6(
       () => [a.options.defaultColumn],
       (e) => {
         var t;
@@ -52888,7 +52792,7 @@ function createTable(e) {
       getMemoOptions(e, "debugColumns", "_getDefaultColumnDef"),
     ),
     _getColumnDefs: () => a.options.columns,
-    getAllColumns: memo$5(
+    getAllColumns: memo$6(
       () => [a._getColumnDefs()],
       (e) => {
         const t = function (e, n, r) {
@@ -52905,17 +52809,17 @@ function createTable(e) {
       },
       getMemoOptions(e, "debugColumns", "getAllColumns"),
     ),
-    getAllFlatColumns: memo$5(
+    getAllFlatColumns: memo$6(
       () => [a.getAllColumns()],
       (e) => e.flatMap((e) => e.getFlatColumns()),
       getMemoOptions(e, "debugColumns", "getAllFlatColumns"),
     ),
-    _getAllFlatColumnsById: memo$5(
+    _getAllFlatColumnsById: memo$6(
       () => [a.getAllFlatColumns()],
       (e) => e.reduce((e, t) => ((e[t.id] = t), e), {}),
       getMemoOptions(e, "debugColumns", "getAllFlatColumnsById"),
     ),
-    getAllLeafColumns: memo$5(
+    getAllLeafColumns: memo$6(
       () => [a.getAllColumns(), a._getOrderColumnsFn()],
       (e, t) => t(e.flatMap((e) => e.getLeafColumns())),
       getMemoOptions(e, "debugColumns", "getAllLeafColumns"),
@@ -52931,7 +52835,7 @@ function createTable(e) {
 }
 function getCoreRowModel() {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [e.options.data],
       (t) => {
         const n = { rows: [], flatRows: [], rowsById: {} },
@@ -53027,7 +52931,7 @@ function filterRowModelFromRoot(e, t, n) {
 }
 function getFilteredRowModel() {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [e.getPreFilteredRowModel(), e.getState().columnFilters, e.getState().globalFilter],
       (t, n, r) => {
         if (!t.rows.length || ((null == n || !n.length) && !r)) {
@@ -53111,7 +53015,7 @@ function getFilteredRowModel() {
 }
 function getPaginationRowModel(e) {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [
         e.getState().pagination,
         e.getPrePaginationRowModel(),
@@ -53139,7 +53043,7 @@ function getPaginationRowModel(e) {
 }
 function getSortedRowModel() {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [e.getState().sorting, e.getPreSortedRowModel()],
       (t, n) => {
         if (!n.rows.length || null == t || !t.length) return n;
@@ -54725,7 +54629,103 @@ function isValidBreakpoint(e) {
   (ProgressBar.sizes = sizes),
   (ProgressBar.statuses = statuses),
   (ProgressBar.animations = animations));
-var base$1 = "Counter_dc10b86a",
+var DEFAULT_FRAME_TIME = 33,
+  DEFAULTS = { FRAME_TIME: 33, INITIAL_FRAME_INDEX: 0, LOOP: !0, STATE: "play" };
+function createGridImgSourceGetter(e) {
+  const { chunk: t } = e,
+    n = t.rows * t.columns;
+  return (r) => {
+    const a = r % n,
+      o = (a % t.columns) * e.width,
+      i = Math.trunc(a / t.columns) * e.height;
+    return { path: e.getChunkPath(Math.trunc(r / n)), x: o, y: i };
+  };
+}
+function addChunkIndexToEndPath(e) {
+  return (t) => `${e}${t}`;
+}
+var CanvasSequence = (0, import_react.memo)(function ({
+    width: e,
+    height: t,
+    getImageSource: n,
+    frameCount: r,
+    onAnimate: a,
+    frameTime: o = DEFAULTS.FRAME_TIME,
+    initialFrameIndex: i = DEFAULTS.INITIAL_FRAME_INDEX,
+    lastFrameIndex: s = r - 1,
+    loop: l = DEFAULTS.LOOP,
+    state: u = DEFAULTS.STATE,
+    onAnimationDone: c,
+    onAnimationComplete: d,
+    poster: p,
+    ...f
+  }) {
+    const _ = (0, import_react.useRef)(null);
+    return (
+      (0, import_react.useEffect)(() => {
+        const e = _.current;
+        if (!e) return;
+        const t = e.getContext("2d"),
+          r = (n) => {
+            (t.clearRect(0, 0, e.width, e.height), t.drawImage(n.img, -n.x, -n.y));
+          };
+        switch (u) {
+          case "play":
+            return (function () {
+              const e = generateImages(i, s, n),
+                t = createFrameCounter(i, s),
+                u = window.setInterval(() => {
+                  const n = t(),
+                    o = e.get(n);
+                  o
+                    ? (a?.(n, o), r(o), n === s && (d?.(), l || (c?.(), window.clearInterval(u))))
+                    : console.error("frameImage was not provided in frameImages Map");
+                }, o);
+              return () => window.clearInterval(u);
+            })();
+          case "stop":
+            return (function () {
+              const e = 0 === i && p ? { path: p, x: 0, y: 0 } : n(i),
+                t = new Image();
+              t.src = e.path;
+              const a = () => r(createFrameImage(e, t));
+              return (t.addEventListener("load", a), () => t.removeEventListener("load", a));
+            })();
+          default:
+            return console.error("[CanvasSequence] Unreachable state!");
+        }
+      }, [o, n, i, s, l, a, d, c, p, u]),
+      (0, import_jsx_runtime.jsx)("canvas", { ...f, width: e, height: t, ref: _ })
+    );
+  }),
+  createFrameCounter = (e, t) => {
+    let n = e;
+    return () => {
+      const r = n;
+      return ((n += 1), n > t && (n = e), r);
+    };
+  },
+  createFrameImage = (e, t) => ({ ...e, img: t }),
+  generateImages = (e, t, n) => {
+    const r = new Map(),
+      a = {};
+    for (let o = e; o <= t; o++) {
+      const e = n(o),
+        t = a[e.path];
+      if (t) r.set(o, createFrameImage(e, t));
+      else {
+        const t = new Image();
+        ((a[e.path] = t),
+          (t.src = e.path),
+          (t.onerror = () => {
+            console.error(`[CanvasSequence] Error loading image(${o})`, e.path, `(${e.x},${e.y})`);
+          }),
+          r.set(o, createFrameImage(e, t)));
+      }
+    }
+    return r;
+  },
+  base$1 = "Counter_dc10b86a",
   show = "Counter_show_f40ddf91",
   base__big = "Counter_base__big_6bd2877c",
   base__small = "Counter_base__small_631cb8e0",
@@ -55106,7 +55106,7 @@ export {
   DisposeBuilder as Ro,
   Button$1 as Rr,
   VehicleImage as Rt,
-  createGridImgSourceGetter as S,
+  loadPlugin as S,
   configure as Sa,
   useBackportContextMenu as Si,
   toggleThemes as Sn,
@@ -55164,7 +55164,7 @@ export {
   sendEvent$3 as Zo,
   minLength as Zr,
   Currency as Zt,
-  injectGFPlugins as _,
+  measureTypes as _,
   usePrevious as _a,
   initializeModelWithContext as _i,
   sizes$16 as _n,
@@ -55172,7 +55172,7 @@ export {
   roles$1 as _r,
   now$1 as _s,
   Slot as _t,
-  PlayerInfo as a,
+  createGridImgSourceGetter as a,
   useIsUnmounted as aa,
   string as ai,
   SimpleTooltip$1 as an,
@@ -55180,7 +55180,7 @@ export {
   observer as ar,
   capitalize as as,
   getRewardValueType$1 as at,
-  CanvasSequence as b,
+  isReactComponent$1 as b,
   autorun as ba,
   useAdjustScreenWidth as bi,
   Toggle as bn,
@@ -55188,7 +55188,7 @@ export {
   isRentVehicle as br,
   easings$2 as bs,
   sizes$10 as bt,
-  useTableContext as c,
+  PlayerInfo as c,
   useMount$1 as ca,
   defineStyledComponent as ci,
   directions$1 as cn,
@@ -55196,7 +55196,7 @@ export {
   FormatString as cr,
   ONE_DAY$1 as cs,
   Timer as ct,
-  flexRender as d,
+  useTableContext as d,
   useEmitter as da,
   useRouter as di,
   useTransition$1 as dn,
@@ -55211,7 +55211,7 @@ export {
   Slottable as er,
   graphicsQuality$1 as es,
   Tooltip as et,
-  createColumnHelper as f,
+  columnBehaviours as f,
   useDebounce as fa,
   runView as fi,
   Accordion as fn,
@@ -55219,7 +55219,7 @@ export {
   atSpgRoles as fr,
   format$2 as fs,
   sizes$8 as ft,
-  isReactComponent$1 as g,
+  getFilteredRowModel as g,
   useEvent as ga,
   computedFn$1 as gi,
   VehicleType as gn,
@@ -55227,7 +55227,7 @@ export {
   mediumTankRoles as gr,
   greaterThanOrEqual as gs,
   DragAndDrop as gt,
-  useMeasure as h,
+  createColumnHelper as h,
   useRefResizeObserver as ha,
   computeds as hi,
   useLazyModel as hn,
@@ -55235,7 +55235,7 @@ export {
   lightTankRoles as hr,
   fromMs as hs,
   isEmptyObject as ht,
-  ProgressBar as i,
+  addChunkIndexToEndPath as i,
   useHandleKeyup as ia,
   safeParse as ii,
   BackportTooltip as in,
@@ -55257,7 +55257,7 @@ export {
   slice as ko,
   FormatTextWithColorTags as kr,
   fromModel as kt,
-  columnBehaviours as l,
+  Table as l,
   useUnmount$1 as la,
   Video$1 as li,
   animated as ln,
@@ -55265,7 +55265,7 @@ export {
   FormatText as lr,
   ONE_HOUR$1 as ls,
   formatValue as lt,
-  measureTypes as m,
+  flexRender as m,
   throttle_default as ma,
   assignRefs as mi,
   createOptionalDLProvider as mn,
@@ -55281,7 +55281,7 @@ export {
   usePopover as nr,
   mouse$1 as ns,
   Reward$1 as nt,
-  Table as o,
+  isValidBreakpoint as o,
   useInsideEvent as oa,
   transform as oi,
   Tooltip$1 as on,
@@ -55289,7 +55289,7 @@ export {
   renderResolvedString as or,
   normalizeResource as os,
   ImageSize$1 as ot,
-  getFilteredRowModel as p,
+  tableParts as p,
   debounce_default as pa,
   JSXBuilder as pi,
   LazyModel as pn,
@@ -55304,7 +55304,7 @@ export {
   pxToRem$1 as qo,
   enum_ as qr,
   Card as qt,
-  isValidBreakpoint as r,
+  CanvasSequence as r,
   useHandleKeydown as ra,
   pipe as ri,
   BackdropTooltip as rn,
@@ -55312,7 +55312,7 @@ export {
   Image$1 as rr,
   onRescale as rs,
   formatPrintf as rt,
-  TableProvider as s,
+  ProgressBar as s,
   useIsFirstRender as sa,
   union as si,
   VehicleInfo as sn,
@@ -55328,7 +55328,7 @@ export {
   Popover as tr,
   writeClipboard as ts,
   Rewards$1 as tt,
-  tableParts as u,
+  TableProvider as u,
   useInterval as ua,
   ModelRouterProvider as ui,
   useSpring as un,
@@ -55336,7 +55336,7 @@ export {
   vehicleState as ur,
   ONE_WEEK$1 as us,
   FormattedValue as ut,
-  loadPlugin as v,
+  useMeasure as v,
   Reaction as va,
   createSimpleGetter as vi,
   VehicleRole as vn,
@@ -55352,7 +55352,7 @@ export {
   types$5 as wr,
   intl$4 as ws,
   Spinner as wt,
-  addChunkIndexToEndPath as x,
+  injectGFPlugins as x,
   comparer as xa,
   useClickOutside as xi,
   toggleSizes as xn,

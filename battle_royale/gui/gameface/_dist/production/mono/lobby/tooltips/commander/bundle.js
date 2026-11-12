@@ -1,58 +1,58 @@
 import {
   Bt as a,
-  Gt as s,
-  Nn as e,
-  Ut as r,
-  g as n,
-  jr as t,
-  m,
-  ni as i,
+  C as s,
+  Gt as e,
+  Nn as r,
+  T as n,
+  Ut as t,
+  jr as i,
+  ni as m,
   t as o,
-  u as c,
+  y as c,
   zt as d,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { i as p } from "../../chunks/vendor.js";
-var [l, j] = s()((a) => {
+var [l, j] = e()((a) => {
   const s = a.observableModel.primitives(["params", "type"]);
   return {
     type: s.type,
     computes: {
-      params: r.primitive(function (a) {
+      params: t.primitive(function (a) {
         return a(s.params.get());
       }),
     },
   };
-}, t);
+}, i);
 var _,
   f = "App_11090d07",
-  u = "App_headerContainer_c897879f",
-  v = "App_icon_961e61e2",
-  h = "App_specialtyName_1072bf2a",
+  v = "App_headerContainer_c897879f",
+  h = "App_icon_961e61e2",
+  u = "App_specialtyName_1072bf2a",
   N = "App_commanderName_d9ad769f",
   x = "App_separator_f627df4c",
   y = "App_description_1072bf2a",
-  b = e(),
-  A = i.resolve("strings"),
-  g = m({ commanderNation: n() }),
-  k =
-    ((_ = c(g)),
+  b = r(),
+  A = m.resolve("strings"),
+  k = s({ commanderNation: n() }),
+  g =
+    ((_ = c(k)),
     function () {
       return j().model.computes.params(_);
     }),
   E = p(function () {
-    const { commanderNation: a } = k();
+    const { commanderNation: a } = g();
     return (0, b.jsx)(o, {
       children: (0, b.jsx)(o.Decorator, {
         children: (0, b.jsxs)("div", {
           className: f,
           children: [
             (0, b.jsxs)("div", {
-              className: u,
+              className: v,
               children: [
-                (0, b.jsx)("div", { className: v }),
+                (0, b.jsx)("div", { className: h }),
                 (0, b.jsx)("div", {
-                  className: h,
+                  className: u,
                   children: A.readOrEmpty("battle_royale.commanderInfo.commonRank"),
                 }),
               ],

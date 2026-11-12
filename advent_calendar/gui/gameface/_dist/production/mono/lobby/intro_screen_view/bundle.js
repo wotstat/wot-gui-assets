@@ -2,25 +2,25 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   Ct as s,
   D as a,
-  E as t,
-  T as i,
-  U as o,
+  T as t,
+  U as i,
+  _ as o,
   at as l,
   ct as c,
-  g as n,
-  h as r,
-  j as d,
-  k as m,
-  m as p,
-  rt as _,
+  i as n,
+  j as r,
+  k as d,
+  p as m,
+  rt as p,
+  w as _,
   yt as b,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { n as u, t as h } from "../chunks/vendor.js";
 import { n as j, t as x } from "../chunks/format.js";
 var k = e(s(), 1),
-  v = e(u(), 1),
-  [A, N] = m()(
+  v = e(h(), 1),
+  [A, N] = d()(
     ({ observableModel: e }) => ({ root: e.object() }),
     ({ externalModel: e }) => ({
       close: e.createCallbackNoArgs("onClose"),
@@ -29,12 +29,12 @@ var k = e(s(), 1),
   ),
   f = "$animationDuration",
   g = "App_title_687e6fe1",
-  C = "App_close_d7247dd",
-  w = "App_vignette_486ba272",
+  w = "App_close_d7247dd",
+  C = "App_vignette_486ba272",
   D = "App_block_f20d1540",
   T = "App_buttonWrapper_29e2644c",
-  E = "App_base__openedFirstTime_0",
-  z = "App_base__animationEnabled_0",
+  z = "App_base__openedFirstTime_0",
+  E = "App_base__animationEnabled_0",
   S = "App_base__hidden_0",
   y = "App_92926bd4",
   G = "App_content_76ba0f3b",
@@ -49,10 +49,10 @@ var k = e(s(), 1),
   V = e(l(), 1),
   $ = R.strings.advent_calendar.introScreenView,
   q = Number(f),
-  B = h(() => {
+  B = u(() => {
     const { model: e, controls: s } = N(),
-      { startDate: a, endDate: t, isOpenedFirstTime: l, isAnimationEnabled: d } = e.root.get(),
-      m = _({ buttonSize: r.sizes.medium }, { large: { buttonSize: r.sizes.large } }),
+      { startDate: a, endDate: t, isOpenedFirstTime: l, isAnimationEnabled: r } = e.root.get(),
+      d = p({ buttonSize: _.sizes.medium }, { large: { buttonSize: _.sizes.large } }),
       u = (0, k.useRef)(Date.now()),
       h = (0, k.useRef)(),
       [A, f] = (0, k.useState)(!0),
@@ -62,7 +62,7 @@ var k = e(s(), 1),
         const e = Math.floor(Math.min(Date.now() - u.current, q));
         h.current = setTimeout(s.close, e);
       }, [s]);
-    (o(B),
+    (i(B),
       (0, k.useEffect)(
         () =>
           c(() => {
@@ -77,10 +77,10 @@ var k = e(s(), 1),
       (0, k.useEffect)(() => () => H(), [H]),
       (0, V.jsxs)("div", {
         lang: R.strings.settings.LANGUAGE_CODE(),
-        className: (0, v.default)(y, A && S, d && z, l && E),
+        className: (0, v.default)(y, A && S, r && E, l && z),
         children: [
-          (0, V.jsx)("div", { className: w }),
-          (0, V.jsx)("div", { className: C, children: (0, V.jsx)(p, { onClose: B }) }),
+          (0, V.jsx)("div", { className: C }),
+          (0, V.jsx)("div", { className: w, children: (0, V.jsx)(m, { onClose: B }) }),
           (0, V.jsx)("div", { className: g, children: $.title() }),
           (0, V.jsxs)("div", {
             className: G,
@@ -127,7 +127,7 @@ var k = e(s(), 1),
                       (0, V.jsx)("div", { className: O, children: $.blockTitle.magicLootbox() }),
                       (0, V.jsx)("div", {
                         className: Y,
-                        children: (0, V.jsx)(i, {
+                        children: (0, V.jsx)(o, {
                           className: U,
                           text: b($.blockDescription.magicLootbox()),
                           params: { date: x(t) },
@@ -143,9 +143,9 @@ var k = e(s(), 1),
           }),
           (0, V.jsx)("div", {
             className: T,
-            children: (0, V.jsx)(r, {
-              theme: r.themes.primary,
-              size: m.buttonSize,
+            children: (0, V.jsx)(_, {
+              theme: _.themes.primary,
+              size: d.buttonSize,
               soundTarget: "intro_view:prim_button",
               onClick: B,
               children: $.buttonTitle(),
@@ -155,5 +155,5 @@ var k = e(s(), 1),
       })
     );
   }),
-  H = d({ click: { "intro_view:prim_button": "yes1" } });
+  H = r({ click: { "intro_view:prim_button": "yes1" } });
 a((0, V.jsx)(t, { soundsOverrides: H, children: (0, V.jsx)(A, { children: (0, V.jsx)(B, {}) }) }));

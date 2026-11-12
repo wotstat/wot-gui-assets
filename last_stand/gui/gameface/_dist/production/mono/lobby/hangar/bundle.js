@@ -4643,7 +4643,7 @@ var Cu = "Progression_de15ce34",
       className: Yt($u, !r && Hu),
       isDisabled: r,
       onClick: () => {
-        (u.onClick(), r || (h(), t.openBattlePass()));
+        (u.onClick(), r || (a("click"), h(), t.openBattlePass()));
       },
       onMouseEnter: (e) => {
         (u.onMouseEnter(e),

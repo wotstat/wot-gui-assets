@@ -2,13 +2,13 @@ import {
   S as e,
   _ as s,
   b as a,
-  d as t,
-  f as n,
+  d as n,
+  f as t,
   ht as o,
   lt as l,
-  p as r,
-  q as p,
-  r as i,
+  n as r,
+  p,
+  q as i,
   v as c,
   w as d,
   x as m,
@@ -26,12 +26,12 @@ var [_, x] = d()(
   A = "App_text_5fad3fdf",
   N = "App_button_70ba73d9",
   v = "App_close_654073f5",
-  k = p(),
+  k = i(),
   y = u(function () {
-    const { model: e, controls: p } = x(),
+    const { model: e, controls: i } = x(),
       { bundleType: d, isPopUp: m, isButtonDisabled: u } = e.root.get(),
       { getExtImage: _, getText: y } = b(d);
-    return (0, k.jsxs)(i, {
+    return (0, k.jsxs)(r, {
       className: o(h, m && g),
       children: [
         (0, k.jsxs)("div", {
@@ -46,11 +46,11 @@ var [_, x] = d()(
               className: A,
               params: { eventName: y("bundle.name") },
             }),
-            (0, k.jsx)(t, {
+            (0, k.jsx)(n, {
               className: N,
-              size: n.small,
-              onClick: p.openBundle,
-              theme: r.secondary,
+              size: t.small,
+              onClick: i.openBundle,
+              theme: p.secondary,
               disabled: u,
               children: y("entryPoint.button"),
             }),

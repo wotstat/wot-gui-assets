@@ -35701,6 +35701,789 @@ var Lines = (0, import_react.memo)(
     }),
   ),
   statusTypes = { done: "done", locked: "locked", alert: "alert" },
+  root$11 = "CloseButton_root_987cb365",
+  base$11 = "CloseButton_7488a1b8",
+  base__medium$1 = "CloseButton_base__medium_97d04067",
+  base__small$3 = "CloseButton_base__small_c1b29bae",
+  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
+  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
+  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
+  close_button_module_default = {
+    "media-wrapper": "CloseButton_media-wrapper_987cb365",
+    root: root$11,
+    base: base$11,
+    base__medium: base__medium$1,
+    base__small: base__small$3,
+    base__extraSmall: base__extraSmall,
+    base__x96x96: base__x96x96,
+    base__x32x32: base__x32x32,
+  },
+  sizes$5 = { medium: "medium", small: "small", extraSmall: "extraSmall" },
+  upscaleImageSizes = {
+    [sizes$5.medium]: "x96x96",
+    [sizes$5.small]: sizes$5.medium,
+    [sizes$5.extraSmall]: "x32x32",
+  };
+function CloseButton({
+  size: e = sizes$5.medium,
+  hoverSound: t = sounds$1.highlight,
+  clickSound: n = sounds$1.click,
+  className: r,
+  onHover: a,
+  onClose: o,
+}) {
+  const i = useUpscale(
+    close_button_module_default[`base__${e}`],
+    close_button_module_default[`base__${upscaleImageSizes[e]}`],
+  );
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
+    onMouseEnter: () => {
+      (play$1.sound(t), a?.());
+    },
+    onClick: () => {
+      (play$1.sound(n), o());
+    },
+  });
+}
+CloseButton.size = sizes$5;
+var sizes$4 = { small: "small", medium: "medium" },
+  types = { bubble: "bubble", discount: "discount", custom: "custom" },
+  imageSizes = { [sizes$4.small]: 48, [sizes$4.medium]: 60 };
+function getImagePath(e, t, n) {
+  return e === types.bubble || e === types.discount ? `library.notification.${e}_${t}x${t}` : n;
+}
+function Icon({ className: e, size: t = sizes$4.small, type: n, imagePath: r }) {
+  const a = imageSizes[t];
+  return (0, import_jsx_runtime.jsx)(Image$1, {
+    width: a,
+    height: a,
+    path: getImagePath(n, a, r),
+    className: e,
+  });
+}
+var root$10 = "Value_root_75b9f355",
+  base$10 = "Value_880359b5",
+  base__small$2 = "Value_base__small_533886b2",
+  base__text = "Value_base__text_3c091067",
+  base__medium = "Value_base__medium_c1f8595d",
+  value$1 = "Value_29975a5b",
+  value__small = "Value_value__small_f3df7ae5",
+  value__medium = "Value_value__medium_62a482c",
+  value_module_default = {
+    "media-wrapper": "Value_media-wrapper_75b9f355",
+    root: root$10,
+    base: base$10,
+    base__small: base__small$2,
+    base__text: base__text,
+    base__medium: base__medium,
+    value: value$1,
+    value__small: value__small,
+    value__medium: value__medium,
+  },
+  intl = resources.resolve("intl"),
+  DEFAULT_MAX_VALUE = 99;
+function formatNumber(e, t) {
+  return e > t
+    ? (0, import_jsx_runtime.jsx)(FormatString, { path: "common.valuePlus", params: { value: t } })
+    : intl.formatNumber("integral", e);
+}
+function getValue(e, t) {
+  return "number" == typeof e ? formatNumber(e, t) : e;
+}
+function Value({
+  classNames: e,
+  size: t = sizes$4.small,
+  value: n,
+  maxValue: r = DEFAULT_MAX_VALUE,
+}) {
+  return (0, import_jsx_runtime.jsx)("div", {
+    className: clsx(
+      value_module_default.base,
+      value_module_default[`base__${t}`],
+      "string" == typeof n && value_module_default.base__text,
+      e?.valueContainer,
+    ),
+    children: (0, import_jsx_runtime.jsx)("div", {
+      className: clsx(value_module_default.value, value_module_default[`value__${t}`], e?.value),
+      children: getValue(n, r),
+    }),
+  });
+}
+var root$9 = "Bubble_root_fdf0621f",
+  base$9 = "Bubble_df22310d",
+  base__hidden$1 = "Bubble_base__hidden_1700314d",
+  bubble_module_default = {
+    "media-wrapper": "Bubble_media-wrapper_fdf0621f",
+    root: root$9,
+    base: base$9,
+    base__hidden: base__hidden$1,
+  },
+  Bubble = {
+    Root: defineStyledComponent("Bubble", bubble_module_default.base, {
+      variants: { hidden: { true: bubble_module_default.base__hidden } },
+    }),
+    Value: Value,
+    Icon: Icon,
+  },
+  RewardType = (function (e) {
+    return (
+      (e.Items = "items"),
+      (e.Equipment = "equipment"),
+      (e.Xp = "xp"),
+      (e.XpFactor = "xpFactor"),
+      (e.Blueprints = "blueprints"),
+      (e.BlueprintsAny = "blueprintsAny"),
+      (e.Goodies = "goodies"),
+      (e.Berths = "berths"),
+      (e.Slots = "slots"),
+      (e.Tokens = "tokens"),
+      (e.CrewSkins = "crewSkins"),
+      (e.CrewBooks = "crewBooks"),
+      (e.Customizations = "customizations"),
+      (e.CreditsFactor = "creditsFactor"),
+      (e.Tankman = "tankman"),
+      (e.Tankwoman = "tankwoman"),
+      (e.TankmenXp = "tankmenXP"),
+      (e.TankmenXpFactor = "tankmenXPFactor"),
+      (e.FreeXpFactor = "freeXPFactor"),
+      (e.BattleToken = "battleToken"),
+      (e.PremiumUniversal = "premium_universal"),
+      (e.Gold = "gold"),
+      (e.Credits = "credits"),
+      (e.Crystal = "crystal"),
+      (e.FreeXp = "freeXP"),
+      (e.Premium = "premium"),
+      (e.PremiumPlus = "premium_plus"),
+      (e.BattlePassPoints = "battlePassPoints"),
+      (e.BattlePassSelectToken = "battlePassSelectToken"),
+      (e.StyleProgressToken = "styleProgressToken"),
+      (e.TmanToken = "tmanToken"),
+      (e.NaturalCover = "naturalCover"),
+      (e.BpCoin = "bpcoin"),
+      (e.BattlaPassFinalAchievement = "dossier_achievement"),
+      (e.BattleBadge = "dossier_badge"),
+      (e.BonusX5 = "battle_bonus_x5"),
+      (e.CrewBonusX3 = "crew_bonus_x3"),
+      (e.Vehicles = "vehicles"),
+      (e.EpicSelectToken = "epicSelectToken"),
+      (e.Comp7TokenWeeklyReward = "comp7TokenWeeklyReward"),
+      (e.DeluxeGift = "deluxe_gift"),
+      (e.BattleBoosterGift = "battleBooster_gift"),
+      (e.OptionalDevice = "optionalDevice"),
+      (e.EquipCoin = "equipCoin"),
+      (e.LootBox = "lootBox"),
+      (e.BrCoin = "brcoin"),
+      (e.Pet = "pet"),
+      e
+    );
+  })({}),
+  ImageSize = (function (e) {
+    return (
+      (e.Big = "big"),
+      (e.Small = "small"),
+      (e.Mini = "mini"),
+      (e.S600x450 = "s600x450"),
+      (e.S400x300 = "s400x300"),
+      (e.S296x222 = "s296x222"),
+      (e.S232x174 = "s232x174"),
+      (e.S180x135 = "s180x135"),
+      (e.S128x100 = "s128x100"),
+      (e.S80x80 = "s80x80"),
+      (e.S64x64 = "s64x64"),
+      (e.S48x48 = "s48x48"),
+      (e.S24x24 = "s24x24"),
+      (e.S300x300 = "s300x300"),
+      (e.S450x450 = "s450x450"),
+      e
+    );
+  })({}),
+  ValueTypes = (function (e) {
+    return (
+      (e.MULTI = "multi"),
+      (e.CURRENCY = "currency"),
+      (e.PREMIUM_PLUS = "premium_plus"),
+      (e.NUMBER = "number"),
+      (e.STRING = "string"),
+      e
+    );
+  })({}),
+  Specials = (function (e) {
+    return (
+      (e.ATTACHMENT_RARE = "rare"),
+      (e.ATTACHMENT_EPIC = "epic"),
+      (e.ATTACHMENT_LEGENDARY = "legendary"),
+      (e.BATTLE_BOOSTER = "battleBooster"),
+      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+      (e.EQUIPMENT_PLUS = "equipmentPlus"),
+      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
+      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
+      e
+    );
+  })({}),
+  HighlightClasses = (function (e) {
+    return ((e.BATTLE_BOOSTER = "battleBooster"), e);
+  })({}),
+  OverlayClasses = (function (e) {
+    return (
+      (e.ATTACHMENT_RARE = "rare"),
+      (e.ATTACHMENT_EPIC = "epic"),
+      (e.ATTACHMENT_LEGENDARY = "legendary"),
+      (e.BATTLE_BOOSTER = "battleBooster"),
+      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
+      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
+      (e.EQUIPMENT_PLUS = "equipmentPlus"),
+      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
+      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
+      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
+      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
+      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
+      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
+      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
+      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
+      e
+    );
+  })({}),
+  multiValueTypes = [
+    RewardType.Items,
+    RewardType.Equipment,
+    RewardType.Xp,
+    RewardType.XpFactor,
+    RewardType.Blueprints,
+    RewardType.BlueprintsAny,
+    RewardType.Goodies,
+    RewardType.Berths,
+    RewardType.Slots,
+    RewardType.Tokens,
+    RewardType.CrewSkins,
+    RewardType.CrewBooks,
+    RewardType.Customizations,
+    RewardType.CreditsFactor,
+    RewardType.TankmenXp,
+    RewardType.TankmenXpFactor,
+    RewardType.FreeXpFactor,
+    RewardType.BattleToken,
+    RewardType.LootBox,
+    RewardType.PremiumUniversal,
+    RewardType.NaturalCover,
+    RewardType.BpCoin,
+    RewardType.BattlePassSelectToken,
+    RewardType.BattlaPassFinalAchievement,
+    RewardType.BattleBadge,
+    RewardType.BonusX5,
+    RewardType.CrewBonusX3,
+    RewardType.EpicSelectToken,
+    RewardType.Comp7TokenWeeklyReward,
+    RewardType.DeluxeGift,
+    RewardType.BattleBoosterGift,
+    RewardType.OptionalDevice,
+    RewardType.TmanToken,
+    RewardType.Pet,
+  ],
+  currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
+  numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
+  premiumValueTypes = [RewardType.PremiumPlus, RewardType.Premium],
+  getSizeFolder = (e) => {
+    switch (e) {
+      case ImageSize.S600x450:
+        return "c_600x450";
+      case ImageSize.S400x300:
+        return "c_400x300";
+      case ImageSize.S296x222:
+        return "c_296x222";
+      case ImageSize.S232x174:
+        return "c_232x174";
+      case ImageSize.Big:
+        return "c_80x80";
+      case ImageSize.Small:
+        return "c_48x48";
+      default:
+        return e;
+    }
+  },
+  getRewardValueType = (e) =>
+    multiValueTypes.includes(e)
+      ? ValueTypes.MULTI
+      : currencyValueTypes.includes(e)
+        ? ValueTypes.CURRENCY
+        : numberValueTypes.includes(e)
+          ? ValueTypes.NUMBER
+          : premiumValueTypes.includes(e)
+            ? ValueTypes.PREMIUM_PLUS
+            : ValueTypes.STRING,
+  DOG_TAG_FOLDER_NAMES = ["engravings", "backgrounds"],
+  DOG_TAG_DEFAULT_ICON_NAME = ["engraving", "background"],
+  getDogTypeImage = (e, t, n) => {
+    const r = DOG_TAG_FOLDER_NAMES[e];
+    if (r) {
+      const a = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(r),
+        o = a.$dyn(n);
+      return !o && DOG_TAG_DEFAULT_ICON_NAME[e]
+        ? `${a.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}`
+        : `${o}`;
+    }
+    return (
+      console.error(
+        "Unreachable branch: add dogTagType and icon folder for corresponding icon matching",
+      ),
+      ""
+    );
+  },
+  getRewardImage = (e, t = ImageSize.Small) => {
+    const { name: n, type: r, value: a, icon: o, item: i, dogTagType: s } = e,
+      u = t === ImageSize.S24x24 ? ImageSize.Small : t,
+      l = getSizeFolder(u);
+    switch (n) {
+      case "basic":
+      case "plus":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}_${a}`;
+      case "premium":
+      case "premium_plus":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}_${a}`;
+      case "items":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${i}`;
+      case "blueprints":
+      case "blueprintsAny":
+      case "finalBlueprints":
+        return `R.images.gui.maps.icons.blueprints.fragment.${u}.${o}`;
+      case "tokens":
+      case "lootBox":
+      case "battleToken":
+        return "big" === t
+          ? e.iconBig.replace("..", "img://gui")
+          : e.iconSmall.replace("..", "img://gui");
+      case "customizations":
+      case "styleProgress":
+      case "crewSkins":
+      case "goodies":
+      case "groups":
+      case "tmanToken":
+      case "battlePassSelectToken":
+      case "pet":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
+      case "crewBooks":
+        return `R.images.gui.maps.icons.crewBooks.books.${u}.${o}`;
+      case "dogTagComponents":
+        return getDogTypeImage(s, u, o);
+      case "dossier_badge":
+        return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${o}`;
+      case "dossier_achievement":
+        return `R.images.gui.maps.icons.achievement.${l}.${o}`;
+      case "xp":
+      case "xpFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
+      case "creditsFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.credits`;
+      case "tankmenXPFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.tankmenXP`;
+      case "dailyXPFactor":
+      case "freeXPFactor":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
+      case "premiumTank":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
+      case "styleProgressToken":
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
+      case "collectionItem":
+        return `R.images.gui.maps.icons.collectionItems.${l}.${o}`;
+      default:
+        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}`;
+    }
+  },
+  getRewardTooltipConfig = (e, t) => ({ args: e, contentId: t }),
+  SIZES_WITH_BOTTOM_HIGHLIGHT = [ImageSize.Small, ImageSize.Big],
+  getBottomHighlight = (e, t) => {
+    if (void 0 === t || !SIZES_WITH_BOTTOM_HIGHLIGHT.includes(e)) return null;
+    switch (t) {
+      case Specials.BATTLE_BOOSTER:
+      case Specials.BATTLE_BOOSTER_REPLACE:
+        return HighlightClasses.BATTLE_BOOSTER;
+    }
+  },
+  getOverlay = (e) => {
+    if (void 0 === e) return null;
+    switch (e) {
+      case Specials.BATTLE_BOOSTER:
+        return OverlayClasses.BATTLE_BOOSTER;
+      case Specials.BATTLE_BOOSTER_REPLACE:
+        return OverlayClasses.BATTLE_BOOSTER_REPLACE;
+      case Specials.BUILT_IN_EQUIPMENT:
+        return OverlayClasses.BUILT_IN_EQUIPMENT;
+      case Specials.EQUIPMENT_PLUS:
+        return OverlayClasses.EQUIPMENT_PLUS;
+      case Specials.EQUIPMENT_TROPHY_BASIC:
+        return OverlayClasses.EQUIPMENT_TROPHY_BASIC;
+      case Specials.EQUIPMENT_TROPHY_UPGRADED:
+        return OverlayClasses.EQUIPMENT_TROPHY_UPGRADED;
+      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_1:
+        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_1;
+      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_2:
+        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_2;
+      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_3:
+        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_3;
+      case Specials.PROGRESSION_STYLE_UPGRADED_1:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_1;
+      case Specials.PROGRESSION_STYLE_UPGRADED_2:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_2;
+      case Specials.PROGRESSION_STYLE_UPGRADED_3:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_3;
+      case Specials.PROGRESSION_STYLE_UPGRADED_4:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_4;
+      case Specials.PROGRESSION_STYLE_UPGRADED_5:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
+      case Specials.PROGRESSION_STYLE_UPGRADED_6:
+        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
+      case Specials.ATTACHMENT_RARE:
+        return OverlayClasses.ATTACHMENT_RARE;
+      case Specials.ATTACHMENT_EPIC:
+        return OverlayClasses.ATTACHMENT_EPIC;
+      case Specials.ATTACHMENT_LEGENDARY:
+        return OverlayClasses.ATTACHMENT_LEGENDARY;
+    }
+  },
+  getFormattedValue = (e, t) => {
+    const n = resources.resolve("intl");
+    if (void 0 === e) return null;
+    switch (t) {
+      case ValueTypes.MULTI: {
+        const t = Number(e);
+        return isFinite(t) && t > 1 ? `x${Math.floor(t)}` : null;
+      }
+      case ValueTypes.CURRENCY:
+      case ValueTypes.NUMBER:
+        return n.formatNumber(n.numberFormats[0] || "integral", Number(e));
+      case ValueTypes.PREMIUM_PLUS: {
+        const t = Number(e);
+        return isNaN(t) ? e : null;
+      }
+      default:
+        return e;
+    }
+  },
+  formatPrintf = (e, t) =>
+    e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
+      const n = 0 === e.indexOf("%") ? 2 : 1;
+      return String(t[e.slice(n, -n)]);
+    }),
+  root$8 = "Reward_root_21f091ec",
+  base__s24x24 = "Reward_base__s24x24_954b5cee",
+  base__s48x48 = "Reward_base__s48x48_21f091ec",
+  base__small$1 = "Reward_base__small_3eddf28d",
+  base__s80x80 = "Reward_base__s80x80_21f091ec",
+  base__big$1 = "Reward_base__big_e23f2c77",
+  base__s128x100 = "Reward_base__s128x100_1e08e04b",
+  base__s180x135 = "Reward_base__s180x135_93fc57c",
+  base__s232x174 = "Reward_base__s232x174_2904ea89",
+  base__s296x222 = "Reward_base__s296x222_52f0615b",
+  base__s400x300 = "Reward_base__s400x300_a8627e1b",
+  base__s600x450 = "Reward_base__s600x450_e27f3852",
+  base__s300x300 = "Reward_base__s300x300_b3d79936",
+  base__s450x450 = "Reward_base__s450x450_8b0abaf7",
+  base$8 = "Reward_d65e1e12",
+  base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
+  tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
+  icon$2 = "Reward_icon_e152f13b",
+  overlay = "Reward_overlay_8cbe65c9",
+  highlight = "Reward_highlight_f1cd08e0",
+  image__s24x24 = "Reward_image__s24x24_954b5cee",
+  image__s48x48 = "Reward_image__s48x48_21f091ec",
+  image__small = "Reward_image__small_3eddf28d",
+  image__s80x80 = "Reward_image__s80x80_21f091ec",
+  image__big = "Reward_image__big_e23f2c77",
+  image__s128x100 = "Reward_image__s128x100_1e08e04b",
+  image__s180x135 = "Reward_image__s180x135_93fc57c",
+  image__s232x174 = "Reward_image__s232x174_2904ea89",
+  image__s296x222 = "Reward_image__s296x222_52f0615b",
+  image__s400x300 = "Reward_image__s400x300_a8627e1b",
+  image__s600x450 = "Reward_image__s600x450_e27f3852",
+  image__s300x300 = "Reward_image__s300x300_b3d79936",
+  image__s450x450 = "Reward_image__s450x450_8b0abaf7",
+  image = "Reward_image_810ec3a2",
+  image__fixedBox = "Reward_image__fixedBox_e45bdd8a",
+  info = "Reward_info_26d38c48",
+  info__multi = "Reward_info__multi_465d34bd",
+  info__credits = "Reward_info__credits_1643219",
+  info__gold = "Reward_info__gold_c751be5d",
+  info__crystal = "Reward_info__crystal_18ccfdd0",
+  info__premiumTank = "Reward_info__premiumTank_7862152",
+  title = "Reward_title_fbcf4b5",
+  timer = "Reward_timer_22ba7b8b",
+  reward_module_default = {
+    "media-wrapper": "Reward_media-wrapper_21f091ec",
+    root: root$8,
+    base__s24x24: base__s24x24,
+    base__s48x48: base__s48x48,
+    base__small: base__small$1,
+    base__s80x80: base__s80x80,
+    base__big: base__big$1,
+    base__s128x100: base__s128x100,
+    base__s180x135: base__s180x135,
+    base__s232x174: base__s232x174,
+    base__s296x222: base__s296x222,
+    base__s400x300: base__s400x300,
+    base__s600x450: base__s600x450,
+    base__s300x300: base__s300x300,
+    base__s450x450: base__s450x450,
+    base: base$8,
+    base__dynamicBox: base__dynamicBox,
+    tooltipWrapper: tooltipWrapper,
+    icon: icon$2,
+    overlay: overlay,
+    highlight: highlight,
+    image__s24x24: image__s24x24,
+    image__s48x48: image__s48x48,
+    image__small: image__small,
+    image__s80x80: image__s80x80,
+    image__big: image__big,
+    image__s128x100: image__s128x100,
+    image__s180x135: image__s180x135,
+    image__s232x174: image__s232x174,
+    image__s296x222: image__s296x222,
+    image__s400x300: image__s400x300,
+    image__s600x450: image__s600x450,
+    image__s300x300: image__s300x300,
+    image__s450x450: image__s450x450,
+    image: image,
+    image__fixedBox: image__fixedBox,
+    info: info,
+    info__multi: info__multi,
+    info__credits: info__credits,
+    info__gold: info__gold,
+    info__crystal: info__crystal,
+    info__premiumTank: info__premiumTank,
+    title: title,
+    timer: timer,
+  },
+  images = resources.resolve("images"),
+  SIZE_MAP = new Map([
+    [ImageSize.S24x24, ImageSize.Small],
+    [ImageSize.S48x48, ImageSize.Small],
+  ]),
+  Reward = ({
+    name: e,
+    image: t,
+    isPeriodic: n = !1,
+    isFixedBoxSize: r = !0,
+    size: a = ImageSize.Big,
+    special: o,
+    value: i,
+    valueType: s,
+    title: u,
+    style: l,
+    className: c,
+    classNames: d,
+    tooltipArgs: f,
+    periodicIconTooltipArgs: m,
+  }) => {
+    const p = SIZE_MAP.has(a) ? SIZE_MAP.get(a) : a,
+      _ = getBottomHighlight(a, o),
+      h = getOverlay(o),
+      g = getFormattedValue(i, s),
+      b = useTooltip({
+        contentId: f?.contentId ?? 0,
+        args: f?.args,
+        resId: f?.resId,
+        decoratorId: f?.decoratorId,
+      }),
+      v = useSimpleTooltip({ header: m?.header, body: m?.body });
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        reward_module_default.base,
+        reward_module_default[`base__${a}`],
+        !r && reward_module_default.base__dynamicBox,
+        c,
+      ),
+      style: l,
+      ...b,
+      children: [
+        (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+          children: [
+            (0, import_jsx_runtime.jsxs)("div", {
+              className: (0, import_classnames.default)(
+                reward_module_default.image,
+                r ? reward_module_default.image__fixedBox : reward_module_default[`image__${a}`],
+                d?.image,
+              ),
+              children: [
+                _ &&
+                  (0, import_jsx_runtime.jsx)("div", {
+                    className: (0, import_classnames.default)(
+                      reward_module_default.highlight,
+                      d?.highlight,
+                    ),
+                    style: {
+                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${_}_highlight`)})`,
+                    },
+                  }),
+                t &&
+                  (0, import_jsx_runtime.jsx)("div", {
+                    className: (0, import_classnames.default)(
+                      reward_module_default.icon,
+                      d?.rewardIcon,
+                    ),
+                    style: { backgroundImage: `url(${t})` },
+                  }),
+                h &&
+                  (0, import_jsx_runtime.jsx)("div", {
+                    className: (0, import_classnames.default)(
+                      reward_module_default.overlay,
+                      d?.overlay,
+                    ),
+                    style: {
+                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${h}_overlay`)})`,
+                    },
+                  }),
+              ],
+            }),
+            g &&
+              (0, import_jsx_runtime.jsx)("div", {
+                className: (0, import_classnames.default)(
+                  reward_module_default.info,
+                  reward_module_default[`info__${e}`],
+                  s === ValueTypes.MULTI && reward_module_default.info__multi,
+                  d?.info,
+                ),
+                children: g,
+              }),
+            u &&
+              (0, import_jsx_runtime.jsx)("div", {
+                className: reward_module_default.title,
+                children: u,
+              }),
+          ],
+        }),
+        n &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: (0, import_classnames.default)(reward_module_default.timer, d?.periodicIcon),
+            ...v,
+          }),
+      ],
+    });
+  },
+  root$7 = "RewardsList_root_bed41ebf",
+  base$7 = "RewardsList_b956755b",
+  base__vertical = "RewardsList_base__vertical_59db3c9f",
+  reward = "RewardsList_reward_fc200613",
+  reward__vertical = "RewardsList_reward__vertical_5f09c6e0",
+  boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
+  rewards_list_module_default = {
+    "media-wrapper": "RewardsList_media-wrapper_bed41ebf",
+    root: root$7,
+    base: base$7,
+    base__vertical: base__vertical,
+    reward: reward,
+    reward__vertical: reward__vertical,
+    boxRewardClassName: boxRewardClassName,
+  },
+  sizeToDefault = { [ImageSize.S24x24]: ImageSize.Small, [ImageSize.S48x48]: ImageSize.Small },
+  Rewards = (0, import_react.memo)(function ({
+    data: e,
+    isFixedBoxSize: t,
+    size: n = ImageSize.Big,
+    isVertical: r = !1,
+    count: a,
+    classMix: o,
+    rewardItemClassMix: i,
+    boxRewardTooltip: s,
+    boxRewardValue: u,
+    boxRewardClassName: l,
+    boxRewardClassNames: c,
+  }) {
+    const d = resources.resolve("strings"),
+      f = resources.resolve("images"),
+      m =
+        "number" == typeof a && a < e.length
+          ? `${f.readOrEmpty(`quests.bonuses.${sizeToDefault[n] ?? n}.default`)}`
+          : void 0,
+      p =
+        u ||
+        renderString(upgradeLegacy(d.readOrEmpty("tooltips.quests.awards.additional.bottom")), {
+          count: e.length - (a || 0),
+        });
+    return (0, import_jsx_runtime.jsx)("div", {
+      className: (0, import_classnames.default)(
+        rewards_list_module_default.base,
+        r && rewards_list_module_default.base__vertical,
+        o,
+      ),
+      children:
+        void 0 !== m
+          ? (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+              children: [
+                e
+                  .slice(0, a)
+                  .map((e, a) =>
+                    (0, import_jsx_runtime.jsx)(
+                      "div",
+                      {
+                        className: (0, import_classnames.default)(
+                          rewards_list_module_default.reward,
+                          r && rewards_list_module_default.reward__vertical,
+                          i,
+                        ),
+                        children: (0, import_jsx_runtime.jsx)(Reward, {
+                          size: n,
+                          isFixedBoxSize: t,
+                          ...e,
+                        }),
+                      },
+                      a,
+                    ),
+                  ),
+                (0, import_jsx_runtime.jsx)("div", {
+                  className: (0, import_classnames.default)(
+                    rewards_list_module_default.reward,
+                    r && rewards_list_module_default.reward__vertical,
+                    i,
+                  ),
+                  children: (0, import_jsx_runtime.jsx)(Reward, {
+                    name: "more",
+                    isFixedBoxSize: t,
+                    image: m,
+                    size: n,
+                    value: p,
+                    tooltipArgs: s,
+                    className: (0, import_classnames.default)(
+                      rewards_list_module_default.boxRewardClassName,
+                      l,
+                    ),
+                    classNames: c,
+                  }),
+                }),
+              ],
+            })
+          : e.map((e, a) =>
+              (0, import_jsx_runtime.jsx)(
+                "div",
+                {
+                  className: (0, import_classnames.default)(
+                    rewards_list_module_default.reward,
+                    r && rewards_list_module_default.reward__vertical,
+                    i,
+                  ),
+                  children: (0, import_jsx_runtime.jsx)(Reward, {
+                    size: n,
+                    isFixedBoxSize: t,
+                    ...e,
+                  }),
+                },
+                a,
+              ),
+            ),
+    });
+  }),
   measureTypes = { measuring: "measuring", noneRef: "none-ref", measured: "measured" },
   initialState = { type: "measuring" };
 function useMeasure() {
@@ -35767,7 +36550,7 @@ function flattenBy(e, t) {
     };
   return (r(e), n);
 }
-function memo$2(e, t, n) {
+function memo$1(e, t, n) {
   let r,
     a = [];
   return (o) => {
@@ -35819,7 +36602,7 @@ function createCell(e, t, n, r) {
       var t;
       return null != (t = a.getValue()) ? t : e.options.renderFallbackValue;
     },
-    getContext: memo$2(
+    getContext: memo$1(
       () => [e, n, t, a],
       (e, t, n, r) => ({
         table: e,
@@ -35882,7 +36665,7 @@ function createColumn(e, t, n, r) {
     depth: n,
     columnDef: i,
     columns: [],
-    getFlatColumns: memo$2(
+    getFlatColumns: memo$1(
       () => [!0],
       () => {
         var e;
@@ -35890,7 +36673,7 @@ function createColumn(e, t, n, r) {
       },
       getMemoOptions(e.options, "debugColumns", "column.getFlatColumns"),
     ),
-    getLeafColumns: memo$2(
+    getLeafColumns: memo$1(
       () => [e._getOrderColumnsFn()],
       (e) => {
         var t;
@@ -35936,7 +36719,7 @@ function createHeader(e, t, n) {
 }
 var Headers = {
   createTable: (e) => {
-    ((e.getHeaderGroups = memo$2(
+    ((e.getHeaderGroups = memo$1(
       () => [
         e.getAllColumns(),
         e.getVisibleLeafColumns(),
@@ -35969,7 +36752,7 @@ var Headers = {
       },
       getMemoOptions(e.options, debug, "getHeaderGroups"),
     )),
-      (e.getCenterHeaderGroups = memo$2(
+      (e.getCenterHeaderGroups = memo$1(
         () => [
           e.getAllColumns(),
           e.getVisibleLeafColumns(),
@@ -35987,7 +36770,7 @@ var Headers = {
           ),
         getMemoOptions(e.options, debug, "getCenterHeaderGroups"),
       )),
-      (e.getLeftHeaderGroups = memo$2(
+      (e.getLeftHeaderGroups = memo$1(
         () => [e.getAllColumns(), e.getVisibleLeafColumns(), e.getState().columnPinning.left],
         (t, n, r) => {
           var a;
@@ -36003,7 +36786,7 @@ var Headers = {
         },
         getMemoOptions(e.options, debug, "getLeftHeaderGroups"),
       )),
-      (e.getRightHeaderGroups = memo$2(
+      (e.getRightHeaderGroups = memo$1(
         () => [e.getAllColumns(), e.getVisibleLeafColumns(), e.getState().columnPinning.right],
         (t, n, r) => {
           var a;
@@ -36019,47 +36802,47 @@ var Headers = {
         },
         getMemoOptions(e.options, debug, "getRightHeaderGroups"),
       )),
-      (e.getFooterGroups = memo$2(
+      (e.getFooterGroups = memo$1(
         () => [e.getHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getFooterGroups"),
       )),
-      (e.getLeftFooterGroups = memo$2(
+      (e.getLeftFooterGroups = memo$1(
         () => [e.getLeftHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getLeftFooterGroups"),
       )),
-      (e.getCenterFooterGroups = memo$2(
+      (e.getCenterFooterGroups = memo$1(
         () => [e.getCenterHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getCenterFooterGroups"),
       )),
-      (e.getRightFooterGroups = memo$2(
+      (e.getRightFooterGroups = memo$1(
         () => [e.getRightHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getRightFooterGroups"),
       )),
-      (e.getFlatHeaders = memo$2(
+      (e.getFlatHeaders = memo$1(
         () => [e.getHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getFlatHeaders"),
       )),
-      (e.getLeftFlatHeaders = memo$2(
+      (e.getLeftFlatHeaders = memo$1(
         () => [e.getLeftHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getLeftFlatHeaders"),
       )),
-      (e.getCenterFlatHeaders = memo$2(
+      (e.getCenterFlatHeaders = memo$1(
         () => [e.getCenterHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getCenterFlatHeaders"),
       )),
-      (e.getRightFlatHeaders = memo$2(
+      (e.getRightFlatHeaders = memo$1(
         () => [e.getRightHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getRightFlatHeaders"),
       )),
-      (e.getCenterLeafHeaders = memo$2(
+      (e.getCenterLeafHeaders = memo$1(
         () => [e.getCenterFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -36068,7 +36851,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getCenterLeafHeaders"),
       )),
-      (e.getLeftLeafHeaders = memo$2(
+      (e.getLeftLeafHeaders = memo$1(
         () => [e.getLeftFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -36077,7 +36860,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getLeftLeafHeaders"),
       )),
-      (e.getRightLeafHeaders = memo$2(
+      (e.getRightLeafHeaders = memo$1(
         () => [e.getRightFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -36086,7 +36869,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getRightLeafHeaders"),
       )),
-      (e.getLeafHeaders = memo$2(
+      (e.getLeafHeaders = memo$1(
         () => [e.getLeftHeaderGroups(), e.getCenterHeaderGroups(), e.getRightHeaderGroups()],
         (e, t, n) => {
           var r, a, o, i, s, u;
@@ -36217,12 +37000,12 @@ var createRow = (e, t, n, r, a, o, i) => {
         }
         return e.reverse();
       },
-      getAllCells: memo$2(
+      getAllCells: memo$1(
         () => [e.getAllLeafColumns()],
         (t) => t.map((t) => createCell(e, s, t, t.id)),
         getMemoOptions(e.options, "debugRows", "getAllCells"),
       ),
-      _getAllCellsByColumnId: memo$2(
+      _getAllCellsByColumnId: memo$1(
         () => [s.getAllCells()],
         (e) => e.reduce((e, t) => ((e[t.column.id] = t), e), {}),
         getMemoOptions(e.options, "debugRows", "getAllCellsByColumnId"),
@@ -36635,7 +37418,7 @@ var ColumnOrdering = {
     getInitialState: (e) => ({ columnOrder: [], ...e }),
     getDefaultOptions: (e) => ({ onColumnOrderChange: makeStateUpdater("columnOrder", e) }),
     createColumn: (e, t) => {
-      ((e.getIndex = memo$2(
+      ((e.getIndex = memo$1(
         (e) => [_getVisibleLeafColumns(t, e)],
         (t) => t.findIndex((t) => t.id === e.id),
         getMemoOptions(t.options, "debugColumns", "getIndex"),
@@ -36657,7 +37440,7 @@ var ColumnOrdering = {
           var n;
           e.setColumnOrder(t ? [] : null != (n = e.initialState.columnOrder) ? n : []);
         }),
-        (e._getOrderColumnsFn = memo$2(
+        (e._getOrderColumnsFn = memo$1(
           () => [e.getState().columnOrder, e.getState().grouping, e.options.groupedColumnMode],
           (e, t, n) => (r) => {
             let a = [];
@@ -36755,7 +37538,7 @@ var ColumnOrdering = {
         }));
     },
     createRow: (e, t) => {
-      ((e.getCenterVisibleCells = memo$2(
+      ((e.getCenterVisibleCells = memo$1(
         () => [
           e._getAllVisibleCells(),
           t.getState().columnPinning.left,
@@ -36767,7 +37550,7 @@ var ColumnOrdering = {
         },
         getMemoOptions(t.options, "debugRows", "getCenterVisibleCells"),
       )),
-        (e.getLeftVisibleCells = memo$2(
+        (e.getLeftVisibleCells = memo$1(
           () => [e._getAllVisibleCells(), t.getState().columnPinning.left],
           (e, t) =>
             (null != t ? t : [])
@@ -36776,7 +37559,7 @@ var ColumnOrdering = {
               .map((e) => ({ ...e, position: "left" })),
           getMemoOptions(t.options, "debugRows", "getLeftVisibleCells"),
         )),
-        (e.getRightVisibleCells = memo$2(
+        (e.getRightVisibleCells = memo$1(
           () => [e._getAllVisibleCells(), t.getState().columnPinning.right],
           (e, t) =>
             (null != t ? t : [])
@@ -36810,17 +37593,17 @@ var ColumnOrdering = {
                 (null == (o = r.right) ? void 0 : o.length),
               );
         }),
-        (e.getLeftLeafColumns = memo$2(
+        (e.getLeftLeafColumns = memo$1(
           () => [e.getAllLeafColumns(), e.getState().columnPinning.left],
           (e, t) => (null != t ? t : []).map((t) => e.find((e) => e.id === t)).filter(Boolean),
           getMemoOptions(e.options, "debugColumns", "getLeftLeafColumns"),
         )),
-        (e.getRightLeafColumns = memo$2(
+        (e.getRightLeafColumns = memo$1(
           () => [e.getAllLeafColumns(), e.getState().columnPinning.right],
           (e, t) => (null != t ? t : []).map((t) => e.find((e) => e.id === t)).filter(Boolean),
           getMemoOptions(e.options, "debugColumns", "getRightLeafColumns"),
         )),
-        (e.getCenterLeafColumns = memo$2(
+        (e.getCenterLeafColumns = memo$1(
           () => [
             e.getAllLeafColumns(),
             e.getState().columnPinning.left,
@@ -36871,12 +37654,12 @@ var defaultColumnSizing = { size: 150, minSize: 20, maxSize: Number.MAX_SAFE_INT
           null != (a = e.columnDef.maxSize) ? a : defaultColumnSizing.maxSize,
         );
       }),
-        (e.getStart = memo$2(
+        (e.getStart = memo$1(
           (e) => [e, _getVisibleLeafColumns(t, e), t.getState().columnSizing],
           (t, n) => n.slice(0, e.getIndex(t)).reduce((e, t) => e + t.getSize(), 0),
           getMemoOptions(t.options, "debugColumns", "getStart"),
         )),
-        (e.getAfter = memo$2(
+        (e.getAfter = memo$1(
           (e) => [e, _getVisibleLeafColumns(t, e), t.getState().columnSizing],
           (t, n) => n.slice(e.getIndex(t) + 1).reduce((e, t) => e + t.getSize(), 0),
           getMemoOptions(t.options, "debugColumns", "getAfter"),
@@ -37120,12 +37903,12 @@ var ColumnVisibility = {
       }));
   },
   createRow: (e, t) => {
-    ((e._getAllVisibleCells = memo$2(
+    ((e._getAllVisibleCells = memo$1(
       () => [e.getAllCells(), t.getState().columnVisibility],
       (e) => e.filter((e) => e.column.getIsVisible()),
       getMemoOptions(t.options, "debugRows", "_getAllVisibleCells"),
     )),
-      (e.getVisibleCells = memo$2(
+      (e.getVisibleCells = memo$1(
         () => [e.getLeftVisibleCells(), e.getCenterVisibleCells(), e.getRightVisibleCells()],
         (e, t, n) => [...e, ...t, ...n],
         getMemoOptions(t.options, "debugRows", "getVisibleCells"),
@@ -37133,7 +37916,7 @@ var ColumnVisibility = {
   },
   createTable: (e) => {
     const t = (t, n) =>
-      memo$2(
+      memo$1(
         () => [
           n(),
           n()
@@ -37491,7 +38274,7 @@ var GlobalFaceting = {
             let a = functionalUpdate(t, null != (r = e.options.pageCount) ? r : -1);
             return ("number" == typeof a && (a = Math.max(-1, a)), { ...n, pageCount: a });
           })),
-        (e.getPageOptions = memo$2(
+        (e.getPageOptions = memo$1(
           () => [e.getPageCount()],
           (e) => {
             let t = [];
@@ -37648,17 +38431,17 @@ var GlobalFaceting = {
             .filter(Boolean)
             .map((e) => ({ ...e, position: r }));
         }),
-        (e.getTopRows = memo$2(
+        (e.getTopRows = memo$1(
           () => [e.getRowModel().rows, e.getState().rowPinning.top],
           (t, n) => e._getPinnedRows(t, n, "top"),
           getMemoOptions(e.options, "debugRows", "getTopRows"),
         )),
-        (e.getBottomRows = memo$2(
+        (e.getBottomRows = memo$1(
           () => [e.getRowModel().rows, e.getState().rowPinning.bottom],
           (t, n) => e._getPinnedRows(t, n, "bottom"),
           getMemoOptions(e.options, "debugRows", "getBottomRows"),
         )),
-        (e.getCenterRows = memo$2(
+        (e.getCenterRows = memo$1(
           () => [e.getRowModel().rows, e.getState().rowPinning.top, e.getState().rowPinning.bottom],
           (e, t, n) => {
             const r = new Set([...(null != t ? t : []), ...(null != n ? n : [])]);
@@ -37712,19 +38495,19 @@ var GlobalFaceting = {
             );
           })),
         (e.getPreSelectedRowModel = () => e.getCoreRowModel()),
-        (e.getSelectedRowModel = memo$2(
+        (e.getSelectedRowModel = memo$1(
           () => [e.getState().rowSelection, e.getCoreRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
           getMemoOptions(e.options, "debugTable", "getSelectedRowModel"),
         )),
-        (e.getFilteredSelectedRowModel = memo$2(
+        (e.getFilteredSelectedRowModel = memo$1(
           () => [e.getState().rowSelection, e.getFilteredRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
           getMemoOptions(e.options, "debugTable", "getFilteredSelectedRowModel"),
         )),
-        (e.getGroupedSelectedRowModel = memo$2(
+        (e.getGroupedSelectedRowModel = memo$1(
           () => [e.getState().rowSelection, e.getSortedRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
@@ -38171,7 +38954,7 @@ function createTable(e) {
       if (!n && ((n = a.getCoreRowModel().rowsById[e]), !n)) throw new Error();
       return n;
     },
-    _getDefaultColumnDef: memo$2(
+    _getDefaultColumnDef: memo$1(
       () => [a.options.defaultColumn],
       (e) => {
         var t;
@@ -38201,7 +38984,7 @@ function createTable(e) {
       getMemoOptions(e, "debugColumns", "_getDefaultColumnDef"),
     ),
     _getColumnDefs: () => a.options.columns,
-    getAllColumns: memo$2(
+    getAllColumns: memo$1(
       () => [a._getColumnDefs()],
       (e) => {
         const t = function (e, n, r) {
@@ -38218,17 +39001,17 @@ function createTable(e) {
       },
       getMemoOptions(e, "debugColumns", "getAllColumns"),
     ),
-    getAllFlatColumns: memo$2(
+    getAllFlatColumns: memo$1(
       () => [a.getAllColumns()],
       (e) => e.flatMap((e) => e.getFlatColumns()),
       getMemoOptions(e, "debugColumns", "getAllFlatColumns"),
     ),
-    _getAllFlatColumnsById: memo$2(
+    _getAllFlatColumnsById: memo$1(
       () => [a.getAllFlatColumns()],
       (e) => e.reduce((e, t) => ((e[t.id] = t), e), {}),
       getMemoOptions(e, "debugColumns", "getAllFlatColumnsById"),
     ),
-    getAllLeafColumns: memo$2(
+    getAllLeafColumns: memo$1(
       () => [a.getAllColumns(), a._getOrderColumnsFn()],
       (e, t) => t(e.flatMap((e) => e.getLeafColumns())),
       getMemoOptions(e, "debugColumns", "getAllLeafColumns"),
@@ -38244,7 +39027,7 @@ function createTable(e) {
 }
 function getCoreRowModel() {
   return (e) =>
-    memo$2(
+    memo$1(
       () => [e.options.data],
       (t) => {
         const n = { rows: [], flatRows: [], rowsById: {} },
@@ -38285,7 +39068,7 @@ function expandRows(e) {
 }
 function getPaginationRowModel(e) {
   return (e) =>
-    memo$2(
+    memo$1(
       () => [
         e.getState().pagination,
         e.getPrePaginationRowModel(),
@@ -38313,7 +39096,7 @@ function getPaginationRowModel(e) {
 }
 function getSortedRowModel() {
   return (e) =>
-    memo$2(
+    memo$1(
       () => [e.getState().sorting, e.getPreSortedRowModel()],
       (t, n) => {
         if (!n.rows.length || null == t || !t.length) return n;
@@ -38514,8 +39297,8 @@ function TableProvider({
     );
   return (0, import_jsx_runtime.jsx)(TableContext.Provider, { value: h, children: e });
 }
-var root$11 = "Table_root_ef69bf65",
-  base$11 = "Table_85be883a",
+var root$6 = "Table_root_ef69bf65",
+  base$6 = "Table_85be883a",
   row = "Table_row_881b7550",
   header = "Table_header_ef69bf65",
   footer = "Table_footer_ef69bf65",
@@ -38525,8 +39308,8 @@ var root$11 = "Table_root_ef69bf65",
   contentResponsiveCellWrapper = "Table_contentResponsiveCellWrapper_ddee221c",
   table_module_default = {
     "media-wrapper": "Table_media-wrapper_ef69bf65",
-    root: root$11,
-    base: base$11,
+    root: root$6,
+    base: base$6,
     row: row,
     header: header,
     footer: footer,
@@ -38731,16 +39514,16 @@ var Base$8 = defineStyledComponent("Table", table_module_default.base),
   (Table.Row = Row),
   (Table.Cell = Cell),
   (Table.behaviours = columnBehaviours));
-var sizes$5 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
+var sizes$3 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
   paths$1 = {
-    [sizes$5.x24x24]: "library.gray_eye_24x24",
-    [sizes$5.x32x32]: "library.gray_eye_32x32",
-    [sizes$5.x48x48]: "library.gray_eye_48x48",
+    [sizes$3.x24x24]: "library.gray_eye_24x24",
+    [sizes$3.x32x32]: "library.gray_eye_32x32",
+    [sizes$3.x48x48]: "library.gray_eye_48x48",
   },
   sizesConfig$5 = {
-    [sizes$5.x24x24]: { width: "24rem", height: "24rem" },
-    [sizes$5.x32x32]: { width: "32rem", height: "32rem" },
-    [sizes$5.x48x48]: { width: "48rem", height: "48rem" },
+    [sizes$3.x24x24]: { width: "24rem", height: "24rem" },
+    [sizes$3.x32x32]: { width: "32rem", height: "32rem" },
+    [sizes$3.x48x48]: { width: "48rem", height: "48rem" },
   },
   Base$7 = defineStyledComponent("PlayerInfoAnonymizer", { element: Image$1 }),
   AnonymizerIcon = (0, import_react.forwardRef)(function (
@@ -38763,9 +39546,9 @@ var sizes$5 = { x24x24: "24x24", x32x32: "32x32", x48x48: "48x48" },
       className: a,
     });
   });
-AnonymizerIcon.sizes = sizes$5;
-var root$10 = "PlayerInfo_root_56d02918",
-  base$10 = "PlayerInfo_89eea88b",
+AnonymizerIcon.sizes = sizes$3;
+var root$5 = "PlayerInfo_root_56d02918",
+  base$5 = "PlayerInfo_89eea88b",
   badge = "PlayerInfo_badge_9f134a01",
   name = "PlayerInfo_name_120449f9",
   name__medium = "PlayerInfo_name__medium_4066d463",
@@ -38779,8 +39562,8 @@ var root$10 = "PlayerInfo_root_56d02918",
   stripeBadge = "PlayerInfo_stripeBadge_605bfd0a",
   player_info_module_default = {
     "media-wrapper": "PlayerInfo_media-wrapper_56d02918",
-    root: root$10,
-    base: base$10,
+    root: root$5,
+    base: base$5,
     badge: badge,
     name: name,
     name__medium: name__medium,
@@ -38793,11 +39576,11 @@ var root$10 = "PlayerInfo_root_56d02918",
     stripe__big: stripe__big,
     stripeBadge: stripeBadge,
   },
-  sizes$4 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
+  sizes$2 = { x24x24: "24x24", x48x48: "48x48", x80x80: "80x80" },
   sizesConfig$4 = {
-    [sizes$4.x24x24]: { width: "24rem", height: "24rem" },
-    [sizes$4.x48x48]: { width: "48rem", height: "48rem" },
-    [sizes$4.x80x80]: { width: "80rem", height: "80rem" },
+    [sizes$2.x24x24]: { width: "24rem", height: "24rem" },
+    [sizes$2.x48x48]: { width: "48rem", height: "48rem" },
+    [sizes$2.x80x80]: { width: "80rem", height: "80rem" },
   },
   Base$6 = defineStyledComponent("PlayerInfoBadge", { element: Image$1 }),
   Badge = (0, import_react.forwardRef)(function (
@@ -38832,19 +39615,19 @@ function ClanTag({ size: e, className: t, children: n, ...r }) {
     children: n,
   });
 }
-Badge.sizes = sizes$4;
-var sizes$3 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10x10" },
+Badge.sizes = sizes$2;
+var sizes$1 = { x64x28: "64x28", x34x16: "34x16", x26x16: "26x16", x10x10: "10x10" },
   paths = {
-    [sizes$3.x10x10]: "library.premium_igr_ico",
-    [sizes$3.x26x16]: "library.premium_igr_small",
-    [sizes$3.x34x16]: "library.premium_small",
-    [sizes$3.x64x28]: "library.premium_igr_big",
+    [sizes$1.x10x10]: "library.premium_igr_ico",
+    [sizes$1.x26x16]: "library.premium_igr_small",
+    [sizes$1.x34x16]: "library.premium_small",
+    [sizes$1.x64x28]: "library.premium_igr_big",
   },
   sizesConfig$3 = {
-    [sizes$3.x10x10]: { width: "10rem", height: "10rem" },
-    [sizes$3.x26x16]: { width: "26rem", height: "16rem" },
-    [sizes$3.x34x16]: { width: "34rem", height: "16rem" },
-    [sizes$3.x64x28]: { width: "64rem", height: "28rem" },
+    [sizes$1.x10x10]: { width: "10rem", height: "10rem" },
+    [sizes$1.x26x16]: { width: "26rem", height: "16rem" },
+    [sizes$1.x34x16]: { width: "34rem", height: "16rem" },
+    [sizes$1.x64x28]: { width: "64rem", height: "28rem" },
   },
   Base$5 = defineStyledComponent("PlayerInfoIgr", { element: Image$1 }),
   IgrIcon = (0, import_react.forwardRef)(function (
@@ -38877,30 +39660,30 @@ function Name({ size: e, className: t, children: n }) {
     children: n,
   });
 }
-IgrIcon.sizes = sizes$3;
-var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "big" },
+IgrIcon.sizes = sizes$1;
+var sizes = { default: "default", regular: "regular", medium: "medium", big: "big" },
   stripeFolders = {
-    [sizes$2.default]: "c_64x24",
-    [sizes$2.regular]: "c_68x28",
-    [sizes$2.medium]: "c_68x28",
-    [sizes$2.big]: "c_100x40",
+    [sizes.default]: "c_64x24",
+    [sizes.regular]: "c_68x28",
+    [sizes.medium]: "c_68x28",
+    [sizes.big]: "c_100x40",
   },
   badgeFolders = {
-    [sizes$2.default]: "c_24x24",
-    [sizes$2.regular]: "c_32x32",
-    [sizes$2.medium]: "c_48x48",
-    [sizes$2.big]: "c_80x80",
+    [sizes.default]: "c_24x24",
+    [sizes.regular]: "c_32x32",
+    [sizes.medium]: "c_48x48",
+    [sizes.big]: "c_80x80",
   },
   sizesConfig$2 = {
-    [sizes$2.default]: { width: "24rem", height: "24rem", marginLeft: "-15rem" },
-    [sizes$2.regular]: { width: "32rem", height: "32rem", marginLeft: "-19rem" },
-    [sizes$2.medium]: { width: "48rem", height: "48rem", marginLeft: "-32rem" },
-    [sizes$2.big]: { width: "80rem", height: "80rem", marginLeft: "-25rem" },
+    [sizes.default]: { width: "24rem", height: "24rem", marginLeft: "-15rem" },
+    [sizes.regular]: { width: "32rem", height: "32rem", marginLeft: "-19rem" },
+    [sizes.medium]: { width: "48rem", height: "48rem", marginLeft: "-32rem" },
+    [sizes.big]: { width: "80rem", height: "80rem", marginLeft: "-25rem" },
   },
   Base$4 = defineStyledComponent("StripeBadgeIcon", { element: Image$1 }),
   StripeBadgeIcon = (0, import_react.forwardRef)(function (
     {
-      size: e = sizes$2.default,
+      size: e = sizes.default,
       badgeId: t,
       stripeExists: n,
       path: r = `library.badges.${badgeFolders[e]}.badge_${t}`,
@@ -38923,15 +39706,15 @@ var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "
     });
   }),
   sizesConfig$1 = {
-    [sizes$2.default]: { width: "64rem", height: "24rem" },
-    [sizes$2.regular]: { width: "68rem", height: "24rem" },
-    [sizes$2.medium]: { width: "68rem", height: "28rem" },
-    [sizes$2.big]: { width: "100rem", height: "40rem" },
+    [sizes.default]: { width: "64rem", height: "24rem" },
+    [sizes.regular]: { width: "68rem", height: "24rem" },
+    [sizes.medium]: { width: "68rem", height: "28rem" },
+    [sizes.big]: { width: "100rem", height: "40rem" },
   },
   Base$3 = defineStyledComponent("StripeIcon", { element: Image$1 }),
   StripeIcon = (0, import_react.forwardRef)(function (
     {
-      size: e = sizes$2.default,
+      size: e = sizes.default,
       badgeId: t,
       stripeExists: n,
       path: r = `library.badges.strips.${stripeFolders[e]}.strip_${t}`,
@@ -38957,7 +39740,7 @@ var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "
   Base$2 = defineStyledComponent("PlayerInfoStripe", player_info_module_default.stripe),
   Stripe = (0, import_react.forwardRef)(function (
     {
-      size: e = sizes$2.default,
+      size: e = sizes.default,
       badgeId: t,
       classNames: n,
       className: r,
@@ -38995,7 +39778,7 @@ var sizes$2 = { default: "default", regular: "regular", medium: "medium", big: "
       ],
     });
   });
-((Stripe.sizes = sizes$2), (Stripe.icons = sizesConfig));
+((Stripe.sizes = sizes), (Stripe.icons = sizesConfig));
 var Base$1 = defineStyledComponent("AccountInfo", player_info_module_default.base),
   Wrapper = defineStyledComponent("AccountInfoWrapper", player_info_module_default.base),
   PlayerInfo = (0, import_react.forwardRef)((e, t) =>
@@ -39011,790 +39794,7 @@ function isValidBreakpoint(e) {
   (PlayerInfo.AnonymizerIcon = AnonymizerIcon),
   (PlayerInfo.Stripe = Stripe),
   (PlayerInfo.Wrapper = Wrapper));
-var root$9 = "CloseButton_root_987cb365",
-  base$9 = "CloseButton_7488a1b8",
-  base__medium$1 = "CloseButton_base__medium_97d04067",
-  base__small$3 = "CloseButton_base__small_c1b29bae",
-  base__extraSmall = "CloseButton_base__extraSmall_f52764c1",
-  base__x96x96 = "CloseButton_base__x96x96_8157b84d",
-  base__x32x32 = "CloseButton_base__x32x32_6466ea31",
-  close_button_module_default = {
-    "media-wrapper": "CloseButton_media-wrapper_987cb365",
-    root: root$9,
-    base: base$9,
-    base__medium: base__medium$1,
-    base__small: base__small$3,
-    base__extraSmall: base__extraSmall,
-    base__x96x96: base__x96x96,
-    base__x32x32: base__x32x32,
-  },
-  sizes$1 = { medium: "medium", small: "small", extraSmall: "extraSmall" },
-  upscaleImageSizes = {
-    [sizes$1.medium]: "x96x96",
-    [sizes$1.small]: sizes$1.medium,
-    [sizes$1.extraSmall]: "x32x32",
-  };
-function CloseButton({
-  size: e = sizes$1.medium,
-  hoverSound: t = sounds$1.highlight,
-  clickSound: n = sounds$1.click,
-  className: r,
-  onHover: a,
-  onClose: o,
-}) {
-  const i = useUpscale(
-    close_button_module_default[`base__${e}`],
-    close_button_module_default[`base__${upscaleImageSizes[e]}`],
-  );
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: (0, import_classnames.default)(close_button_module_default.base, i, r),
-    onMouseEnter: () => {
-      (play$1.sound(t), a?.());
-    },
-    onClick: () => {
-      (play$1.sound(n), o());
-    },
-  });
-}
-CloseButton.size = sizes$1;
-var RewardType = (function (e) {
-    return (
-      (e.Items = "items"),
-      (e.Equipment = "equipment"),
-      (e.Xp = "xp"),
-      (e.XpFactor = "xpFactor"),
-      (e.Blueprints = "blueprints"),
-      (e.BlueprintsAny = "blueprintsAny"),
-      (e.Goodies = "goodies"),
-      (e.Berths = "berths"),
-      (e.Slots = "slots"),
-      (e.Tokens = "tokens"),
-      (e.CrewSkins = "crewSkins"),
-      (e.CrewBooks = "crewBooks"),
-      (e.Customizations = "customizations"),
-      (e.CreditsFactor = "creditsFactor"),
-      (e.Tankman = "tankman"),
-      (e.Tankwoman = "tankwoman"),
-      (e.TankmenXp = "tankmenXP"),
-      (e.TankmenXpFactor = "tankmenXPFactor"),
-      (e.FreeXpFactor = "freeXPFactor"),
-      (e.BattleToken = "battleToken"),
-      (e.PremiumUniversal = "premium_universal"),
-      (e.Gold = "gold"),
-      (e.Credits = "credits"),
-      (e.Crystal = "crystal"),
-      (e.FreeXp = "freeXP"),
-      (e.Premium = "premium"),
-      (e.PremiumPlus = "premium_plus"),
-      (e.BattlePassPoints = "battlePassPoints"),
-      (e.BattlePassSelectToken = "battlePassSelectToken"),
-      (e.StyleProgressToken = "styleProgressToken"),
-      (e.TmanToken = "tmanToken"),
-      (e.NaturalCover = "naturalCover"),
-      (e.BpCoin = "bpcoin"),
-      (e.BattlaPassFinalAchievement = "dossier_achievement"),
-      (e.BattleBadge = "dossier_badge"),
-      (e.BonusX5 = "battle_bonus_x5"),
-      (e.CrewBonusX3 = "crew_bonus_x3"),
-      (e.Vehicles = "vehicles"),
-      (e.EpicSelectToken = "epicSelectToken"),
-      (e.Comp7TokenWeeklyReward = "comp7TokenWeeklyReward"),
-      (e.DeluxeGift = "deluxe_gift"),
-      (e.BattleBoosterGift = "battleBooster_gift"),
-      (e.OptionalDevice = "optionalDevice"),
-      (e.EquipCoin = "equipCoin"),
-      (e.LootBox = "lootBox"),
-      (e.BrCoin = "brcoin"),
-      (e.Pet = "pet"),
-      e
-    );
-  })({}),
-  ImageSize = (function (e) {
-    return (
-      (e.Big = "big"),
-      (e.Small = "small"),
-      (e.Mini = "mini"),
-      (e.S600x450 = "s600x450"),
-      (e.S400x300 = "s400x300"),
-      (e.S296x222 = "s296x222"),
-      (e.S232x174 = "s232x174"),
-      (e.S180x135 = "s180x135"),
-      (e.S128x100 = "s128x100"),
-      (e.S80x80 = "s80x80"),
-      (e.S64x64 = "s64x64"),
-      (e.S48x48 = "s48x48"),
-      (e.S24x24 = "s24x24"),
-      (e.S300x300 = "s300x300"),
-      (e.S450x450 = "s450x450"),
-      e
-    );
-  })({}),
-  ValueTypes = (function (e) {
-    return (
-      (e.MULTI = "multi"),
-      (e.CURRENCY = "currency"),
-      (e.PREMIUM_PLUS = "premium_plus"),
-      (e.NUMBER = "number"),
-      (e.STRING = "string"),
-      e
-    );
-  })({}),
-  Specials = (function (e) {
-    return (
-      (e.ATTACHMENT_RARE = "rare"),
-      (e.ATTACHMENT_EPIC = "epic"),
-      (e.ATTACHMENT_LEGENDARY = "legendary"),
-      (e.BATTLE_BOOSTER = "battleBooster"),
-      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-      (e.EQUIPMENT_PLUS = "equipmentPlus"),
-      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
-      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
-      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
-      e
-    );
-  })({}),
-  HighlightClasses = (function (e) {
-    return ((e.BATTLE_BOOSTER = "battleBooster"), e);
-  })({}),
-  OverlayClasses = (function (e) {
-    return (
-      (e.ATTACHMENT_RARE = "rare"),
-      (e.ATTACHMENT_EPIC = "epic"),
-      (e.ATTACHMENT_LEGENDARY = "legendary"),
-      (e.BATTLE_BOOSTER = "battleBooster"),
-      (e.BATTLE_BOOSTER_REPLACE = "battleBoosterReplace"),
-      (e.BUILT_IN_EQUIPMENT = "builtInEquipment"),
-      (e.EQUIPMENT_PLUS = "equipmentPlus"),
-      (e.EQUIPMENT_TROPHY_BASIC = "equipmentTrophyBasic"),
-      (e.EQUIPMENT_TROPHY_UPGRADED = "equipmentTrophyUpgraded"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = "equipmentModernized_1"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = "equipmentModernized_2"),
-      (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = "equipmentModernized_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_1 = "progressionStyleUpgraded_1"),
-      (e.PROGRESSION_STYLE_UPGRADED_2 = "progressionStyleUpgraded_2"),
-      (e.PROGRESSION_STYLE_UPGRADED_3 = "progressionStyleUpgraded_3"),
-      (e.PROGRESSION_STYLE_UPGRADED_4 = "progressionStyleUpgraded_4"),
-      (e.PROGRESSION_STYLE_UPGRADED_5 = "progressionStyleUpgraded_5"),
-      (e.PROGRESSION_STYLE_UPGRADED_6 = "progressionStyleUpgraded_6"),
-      e
-    );
-  })({}),
-  multiValueTypes = [
-    RewardType.Items,
-    RewardType.Equipment,
-    RewardType.Xp,
-    RewardType.XpFactor,
-    RewardType.Blueprints,
-    RewardType.BlueprintsAny,
-    RewardType.Goodies,
-    RewardType.Berths,
-    RewardType.Slots,
-    RewardType.Tokens,
-    RewardType.CrewSkins,
-    RewardType.CrewBooks,
-    RewardType.Customizations,
-    RewardType.CreditsFactor,
-    RewardType.TankmenXp,
-    RewardType.TankmenXpFactor,
-    RewardType.FreeXpFactor,
-    RewardType.BattleToken,
-    RewardType.LootBox,
-    RewardType.PremiumUniversal,
-    RewardType.NaturalCover,
-    RewardType.BpCoin,
-    RewardType.BattlePassSelectToken,
-    RewardType.BattlaPassFinalAchievement,
-    RewardType.BattleBadge,
-    RewardType.BonusX5,
-    RewardType.CrewBonusX3,
-    RewardType.EpicSelectToken,
-    RewardType.Comp7TokenWeeklyReward,
-    RewardType.DeluxeGift,
-    RewardType.BattleBoosterGift,
-    RewardType.OptionalDevice,
-    RewardType.TmanToken,
-    RewardType.Pet,
-  ],
-  currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
-  numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
-  premiumValueTypes = [RewardType.PremiumPlus, RewardType.Premium],
-  getSizeFolder = (e) => {
-    switch (e) {
-      case ImageSize.S600x450:
-        return "c_600x450";
-      case ImageSize.S400x300:
-        return "c_400x300";
-      case ImageSize.S296x222:
-        return "c_296x222";
-      case ImageSize.S232x174:
-        return "c_232x174";
-      case ImageSize.Big:
-        return "c_80x80";
-      case ImageSize.Small:
-        return "c_48x48";
-      default:
-        return e;
-    }
-  },
-  getRewardValueType = (e) =>
-    multiValueTypes.includes(e)
-      ? ValueTypes.MULTI
-      : currencyValueTypes.includes(e)
-        ? ValueTypes.CURRENCY
-        : numberValueTypes.includes(e)
-          ? ValueTypes.NUMBER
-          : premiumValueTypes.includes(e)
-            ? ValueTypes.PREMIUM_PLUS
-            : ValueTypes.STRING,
-  DOG_TAG_FOLDER_NAMES = ["engravings", "backgrounds"],
-  DOG_TAG_DEFAULT_ICON_NAME = ["engraving", "background"],
-  getDogTypeImage = (e, t, n) => {
-    const r = DOG_TAG_FOLDER_NAMES[e];
-    if (r) {
-      const a = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(r),
-        o = a.$dyn(n);
-      return !o && DOG_TAG_DEFAULT_ICON_NAME[e]
-        ? `${a.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}`
-        : `${o}`;
-    }
-    return (
-      console.error(
-        "Unreachable branch: add dogTagType and icon folder for corresponding icon matching",
-      ),
-      ""
-    );
-  },
-  getRewardImage = (e, t = ImageSize.Small) => {
-    const { name: n, type: r, value: a, icon: o, item: i, dogTagType: s } = e,
-      u = t === ImageSize.S24x24 ? ImageSize.Small : t,
-      l = getSizeFolder(u);
-    switch (n) {
-      case "basic":
-      case "plus":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}_${a}`;
-      case "premium":
-      case "premium_plus":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}_${a}`;
-      case "items":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${i}`;
-      case "blueprints":
-      case "blueprintsAny":
-      case "finalBlueprints":
-        return `R.images.gui.maps.icons.blueprints.fragment.${u}.${o}`;
-      case "tokens":
-      case "lootBox":
-      case "battleToken":
-        return "big" === t
-          ? e.iconBig.replace("..", "img://gui")
-          : e.iconSmall.replace("..", "img://gui");
-      case "customizations":
-      case "styleProgress":
-      case "crewSkins":
-      case "goodies":
-      case "groups":
-      case "tmanToken":
-      case "battlePassSelectToken":
-      case "pet":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
-      case "crewBooks":
-        return `R.images.gui.maps.icons.crewBooks.books.${u}.${o}`;
-      case "dogTagComponents":
-        return getDogTypeImage(s, u, o);
-      case "dossier_badge":
-        return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${o}`;
-      case "dossier_achievement":
-        return `R.images.gui.maps.icons.achievement.${l}.${o}`;
-      case "xp":
-      case "xpFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
-      case "creditsFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.credits`;
-      case "tankmenXPFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.tankmenXP`;
-      case "dailyXPFactor":
-      case "freeXPFactor":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
-      case "premiumTank":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
-      case "styleProgressToken":
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
-      case "collectionItem":
-        return `R.images.gui.maps.icons.collectionItems.${l}.${o}`;
-      default:
-        return `R.images.gui.maps.icons.quests.bonuses.${u}.${n}`;
-    }
-  },
-  getRewardTooltipConfig = (e, t) => ({ args: e, contentId: t }),
-  SIZES_WITH_BOTTOM_HIGHLIGHT = [ImageSize.Small, ImageSize.Big],
-  getBottomHighlight = (e, t) => {
-    if (void 0 === t || !SIZES_WITH_BOTTOM_HIGHLIGHT.includes(e)) return null;
-    switch (t) {
-      case Specials.BATTLE_BOOSTER:
-      case Specials.BATTLE_BOOSTER_REPLACE:
-        return HighlightClasses.BATTLE_BOOSTER;
-    }
-  },
-  getOverlay = (e) => {
-    if (void 0 === e) return null;
-    switch (e) {
-      case Specials.BATTLE_BOOSTER:
-        return OverlayClasses.BATTLE_BOOSTER;
-      case Specials.BATTLE_BOOSTER_REPLACE:
-        return OverlayClasses.BATTLE_BOOSTER_REPLACE;
-      case Specials.BUILT_IN_EQUIPMENT:
-        return OverlayClasses.BUILT_IN_EQUIPMENT;
-      case Specials.EQUIPMENT_PLUS:
-        return OverlayClasses.EQUIPMENT_PLUS;
-      case Specials.EQUIPMENT_TROPHY_BASIC:
-        return OverlayClasses.EQUIPMENT_TROPHY_BASIC;
-      case Specials.EQUIPMENT_TROPHY_UPGRADED:
-        return OverlayClasses.EQUIPMENT_TROPHY_UPGRADED;
-      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_1:
-        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_1;
-      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_2:
-        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_2;
-      case Specials.EQUIPMENT_MODERNIZED_UPGRADED_3:
-        return OverlayClasses.EQUIPMENT_MODERNIZED_UPGRADED_3;
-      case Specials.PROGRESSION_STYLE_UPGRADED_1:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_1;
-      case Specials.PROGRESSION_STYLE_UPGRADED_2:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_2;
-      case Specials.PROGRESSION_STYLE_UPGRADED_3:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_3;
-      case Specials.PROGRESSION_STYLE_UPGRADED_4:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_4;
-      case Specials.PROGRESSION_STYLE_UPGRADED_5:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
-      case Specials.PROGRESSION_STYLE_UPGRADED_6:
-        return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
-      case Specials.ATTACHMENT_RARE:
-        return OverlayClasses.ATTACHMENT_RARE;
-      case Specials.ATTACHMENT_EPIC:
-        return OverlayClasses.ATTACHMENT_EPIC;
-      case Specials.ATTACHMENT_LEGENDARY:
-        return OverlayClasses.ATTACHMENT_LEGENDARY;
-    }
-  },
-  getFormattedValue = (e, t) => {
-    const n = resources.resolve("intl");
-    if (void 0 === e) return null;
-    switch (t) {
-      case ValueTypes.MULTI: {
-        const t = Number(e);
-        return isFinite(t) && t > 1 ? `x${Math.floor(t)}` : null;
-      }
-      case ValueTypes.CURRENCY:
-      case ValueTypes.NUMBER:
-        return n.formatNumber(n.numberFormats[0] || "integral", Number(e));
-      case ValueTypes.PREMIUM_PLUS: {
-        const t = Number(e);
-        return isNaN(t) ? e : null;
-      }
-      default:
-        return e;
-    }
-  },
-  formatPrintf = (e, t) =>
-    e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-      const n = 0 === e.indexOf("%") ? 2 : 1;
-      return String(t[e.slice(n, -n)]);
-    }),
-  sizes = { small: "small", medium: "medium" },
-  types = { bubble: "bubble", discount: "discount", custom: "custom" },
-  imageSizes = { [sizes.small]: 48, [sizes.medium]: 60 };
-function getImagePath(e, t, n) {
-  return e === types.bubble || e === types.discount ? `library.notification.${e}_${t}x${t}` : n;
-}
-function Icon({ className: e, size: t = sizes.small, type: n, imagePath: r }) {
-  const a = imageSizes[t];
-  return (0, import_jsx_runtime.jsx)(Image$1, {
-    width: a,
-    height: a,
-    path: getImagePath(n, a, r),
-    className: e,
-  });
-}
-var root$8 = "Value_root_75b9f355",
-  base$8 = "Value_880359b5",
-  base__small$2 = "Value_base__small_533886b2",
-  base__text = "Value_base__text_3c091067",
-  base__medium = "Value_base__medium_c1f8595d",
-  value$1 = "Value_29975a5b",
-  value__small = "Value_value__small_f3df7ae5",
-  value__medium = "Value_value__medium_62a482c",
-  value_module_default = {
-    "media-wrapper": "Value_media-wrapper_75b9f355",
-    root: root$8,
-    base: base$8,
-    base__small: base__small$2,
-    base__text: base__text,
-    base__medium: base__medium,
-    value: value$1,
-    value__small: value__small,
-    value__medium: value__medium,
-  },
-  intl = resources.resolve("intl"),
-  DEFAULT_MAX_VALUE = 99;
-function formatNumber(e, t) {
-  return e > t
-    ? (0, import_jsx_runtime.jsx)(FormatString, { path: "common.valuePlus", params: { value: t } })
-    : intl.formatNumber("integral", e);
-}
-function getValue(e, t) {
-  return "number" == typeof e ? formatNumber(e, t) : e;
-}
-function Value({
-  classNames: e,
-  size: t = sizes.small,
-  value: n,
-  maxValue: r = DEFAULT_MAX_VALUE,
-}) {
-  return (0, import_jsx_runtime.jsx)("div", {
-    className: clsx(
-      value_module_default.base,
-      value_module_default[`base__${t}`],
-      "string" == typeof n && value_module_default.base__text,
-      e?.valueContainer,
-    ),
-    children: (0, import_jsx_runtime.jsx)("div", {
-      className: clsx(value_module_default.value, value_module_default[`value__${t}`], e?.value),
-      children: getValue(n, r),
-    }),
-  });
-}
-var root$7 = "Bubble_root_fdf0621f",
-  base$7 = "Bubble_df22310d",
-  base__hidden$1 = "Bubble_base__hidden_1700314d",
-  bubble_module_default = {
-    "media-wrapper": "Bubble_media-wrapper_fdf0621f",
-    root: root$7,
-    base: base$7,
-    base__hidden: base__hidden$1,
-  },
-  Bubble = {
-    Root: defineStyledComponent("Bubble", bubble_module_default.base, {
-      variants: { hidden: { true: bubble_module_default.base__hidden } },
-    }),
-    Value: Value,
-    Icon: Icon,
-  },
-  root$6 = "Reward_root_21f091ec",
-  base__s24x24 = "Reward_base__s24x24_954b5cee",
-  base__s48x48 = "Reward_base__s48x48_21f091ec",
-  base__small$1 = "Reward_base__small_3eddf28d",
-  base__s80x80 = "Reward_base__s80x80_21f091ec",
-  base__big$1 = "Reward_base__big_e23f2c77",
-  base__s128x100 = "Reward_base__s128x100_1e08e04b",
-  base__s180x135 = "Reward_base__s180x135_93fc57c",
-  base__s232x174 = "Reward_base__s232x174_2904ea89",
-  base__s296x222 = "Reward_base__s296x222_52f0615b",
-  base__s400x300 = "Reward_base__s400x300_a8627e1b",
-  base__s600x450 = "Reward_base__s600x450_e27f3852",
-  base__s300x300 = "Reward_base__s300x300_b3d79936",
-  base__s450x450 = "Reward_base__s450x450_8b0abaf7",
-  base$6 = "Reward_d65e1e12",
-  base__dynamicBox = "Reward_base__dynamicBox_45d7782b",
-  tooltipWrapper = "Reward_tooltipWrapper_75b925a5",
-  icon$2 = "Reward_icon_e152f13b",
-  overlay = "Reward_overlay_8cbe65c9",
-  highlight = "Reward_highlight_f1cd08e0",
-  image__s24x24 = "Reward_image__s24x24_954b5cee",
-  image__s48x48 = "Reward_image__s48x48_21f091ec",
-  image__small = "Reward_image__small_3eddf28d",
-  image__s80x80 = "Reward_image__s80x80_21f091ec",
-  image__big = "Reward_image__big_e23f2c77",
-  image__s128x100 = "Reward_image__s128x100_1e08e04b",
-  image__s180x135 = "Reward_image__s180x135_93fc57c",
-  image__s232x174 = "Reward_image__s232x174_2904ea89",
-  image__s296x222 = "Reward_image__s296x222_52f0615b",
-  image__s400x300 = "Reward_image__s400x300_a8627e1b",
-  image__s600x450 = "Reward_image__s600x450_e27f3852",
-  image__s300x300 = "Reward_image__s300x300_b3d79936",
-  image__s450x450 = "Reward_image__s450x450_8b0abaf7",
-  image = "Reward_image_810ec3a2",
-  image__fixedBox = "Reward_image__fixedBox_e45bdd8a",
-  info = "Reward_info_26d38c48",
-  info__multi = "Reward_info__multi_465d34bd",
-  info__credits = "Reward_info__credits_1643219",
-  info__gold = "Reward_info__gold_c751be5d",
-  info__crystal = "Reward_info__crystal_18ccfdd0",
-  info__premiumTank = "Reward_info__premiumTank_7862152",
-  title = "Reward_title_fbcf4b5",
-  timer = "Reward_timer_22ba7b8b",
-  reward_module_default = {
-    "media-wrapper": "Reward_media-wrapper_21f091ec",
-    root: root$6,
-    base__s24x24: base__s24x24,
-    base__s48x48: base__s48x48,
-    base__small: base__small$1,
-    base__s80x80: base__s80x80,
-    base__big: base__big$1,
-    base__s128x100: base__s128x100,
-    base__s180x135: base__s180x135,
-    base__s232x174: base__s232x174,
-    base__s296x222: base__s296x222,
-    base__s400x300: base__s400x300,
-    base__s600x450: base__s600x450,
-    base__s300x300: base__s300x300,
-    base__s450x450: base__s450x450,
-    base: base$6,
-    base__dynamicBox: base__dynamicBox,
-    tooltipWrapper: tooltipWrapper,
-    icon: icon$2,
-    overlay: overlay,
-    highlight: highlight,
-    image__s24x24: image__s24x24,
-    image__s48x48: image__s48x48,
-    image__small: image__small,
-    image__s80x80: image__s80x80,
-    image__big: image__big,
-    image__s128x100: image__s128x100,
-    image__s180x135: image__s180x135,
-    image__s232x174: image__s232x174,
-    image__s296x222: image__s296x222,
-    image__s400x300: image__s400x300,
-    image__s600x450: image__s600x450,
-    image__s300x300: image__s300x300,
-    image__s450x450: image__s450x450,
-    image: image,
-    image__fixedBox: image__fixedBox,
-    info: info,
-    info__multi: info__multi,
-    info__credits: info__credits,
-    info__gold: info__gold,
-    info__crystal: info__crystal,
-    info__premiumTank: info__premiumTank,
-    title: title,
-    timer: timer,
-  },
-  images = resources.resolve("images"),
-  SIZE_MAP = new Map([
-    [ImageSize.S24x24, ImageSize.Small],
-    [ImageSize.S48x48, ImageSize.Small],
-  ]),
-  Reward = ({
-    name: e,
-    image: t,
-    isPeriodic: n = !1,
-    isFixedBoxSize: r = !0,
-    size: a = ImageSize.Big,
-    special: o,
-    value: i,
-    valueType: s,
-    title: u,
-    style: l,
-    className: c,
-    classNames: d,
-    tooltipArgs: f,
-    periodicIconTooltipArgs: m,
-  }) => {
-    const p = SIZE_MAP.has(a) ? SIZE_MAP.get(a) : a,
-      _ = getBottomHighlight(a, o),
-      h = getOverlay(o),
-      g = getFormattedValue(i, s),
-      b = useTooltip({
-        contentId: f?.contentId ?? 0,
-        args: f?.args,
-        resId: f?.resId,
-        decoratorId: f?.decoratorId,
-      }),
-      v = useSimpleTooltip({ header: m?.header, body: m?.body });
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        reward_module_default.base,
-        reward_module_default[`base__${a}`],
-        !r && reward_module_default.base__dynamicBox,
-        c,
-      ),
-      style: l,
-      ...b,
-      children: [
-        (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-          children: [
-            (0, import_jsx_runtime.jsxs)("div", {
-              className: (0, import_classnames.default)(
-                reward_module_default.image,
-                r ? reward_module_default.image__fixedBox : reward_module_default[`image__${a}`],
-                d?.image,
-              ),
-              children: [
-                _ &&
-                  (0, import_jsx_runtime.jsx)("div", {
-                    className: (0, import_classnames.default)(
-                      reward_module_default.highlight,
-                      d?.highlight,
-                    ),
-                    style: {
-                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${_}_highlight`)})`,
-                    },
-                  }),
-                t &&
-                  (0, import_jsx_runtime.jsx)("div", {
-                    className: (0, import_classnames.default)(
-                      reward_module_default.icon,
-                      d?.rewardIcon,
-                    ),
-                    style: { backgroundImage: `url(${t})` },
-                  }),
-                h &&
-                  (0, import_jsx_runtime.jsx)("div", {
-                    className: (0, import_classnames.default)(
-                      reward_module_default.overlay,
-                      d?.overlay,
-                    ),
-                    style: {
-                      backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${h}_overlay`)})`,
-                    },
-                  }),
-              ],
-            }),
-            g &&
-              (0, import_jsx_runtime.jsx)("div", {
-                className: (0, import_classnames.default)(
-                  reward_module_default.info,
-                  reward_module_default[`info__${e}`],
-                  s === ValueTypes.MULTI && reward_module_default.info__multi,
-                  d?.info,
-                ),
-                children: g,
-              }),
-            u &&
-              (0, import_jsx_runtime.jsx)("div", {
-                className: reward_module_default.title,
-                children: u,
-              }),
-          ],
-        }),
-        n &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: (0, import_classnames.default)(reward_module_default.timer, d?.periodicIcon),
-            ...v,
-          }),
-      ],
-    });
-  },
-  root$5 = "RewardsList_root_bed41ebf",
-  base$5 = "RewardsList_b956755b",
-  base__vertical = "RewardsList_base__vertical_59db3c9f",
-  reward = "RewardsList_reward_fc200613",
-  reward__vertical = "RewardsList_reward__vertical_5f09c6e0",
-  boxRewardClassName = "RewardsList_boxRewardClassName_882c908d",
-  rewards_list_module_default = {
-    "media-wrapper": "RewardsList_media-wrapper_bed41ebf",
-    root: root$5,
-    base: base$5,
-    base__vertical: base__vertical,
-    reward: reward,
-    reward__vertical: reward__vertical,
-    boxRewardClassName: boxRewardClassName,
-  },
-  sizeToDefault = { [ImageSize.S24x24]: ImageSize.Small, [ImageSize.S48x48]: ImageSize.Small },
-  Rewards = (0, import_react.memo)(function ({
-    data: e,
-    isFixedBoxSize: t,
-    size: n = ImageSize.Big,
-    isVertical: r = !1,
-    count: a,
-    classMix: o,
-    rewardItemClassMix: i,
-    boxRewardTooltip: s,
-    boxRewardValue: u,
-    boxRewardClassName: l,
-    boxRewardClassNames: c,
-  }) {
-    const d = resources.resolve("strings"),
-      f = resources.resolve("images"),
-      m =
-        "number" == typeof a && a < e.length
-          ? `${f.readOrEmpty(`quests.bonuses.${sizeToDefault[n] ?? n}.default`)}`
-          : void 0,
-      p =
-        u ||
-        renderString(upgradeLegacy(d.readOrEmpty("tooltips.quests.awards.additional.bottom")), {
-          count: e.length - (a || 0),
-        });
-    return (0, import_jsx_runtime.jsx)("div", {
-      className: (0, import_classnames.default)(
-        rewards_list_module_default.base,
-        r && rewards_list_module_default.base__vertical,
-        o,
-      ),
-      children:
-        void 0 !== m
-          ? (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-              children: [
-                e
-                  .slice(0, a)
-                  .map((e, a) =>
-                    (0, import_jsx_runtime.jsx)(
-                      "div",
-                      {
-                        className: (0, import_classnames.default)(
-                          rewards_list_module_default.reward,
-                          r && rewards_list_module_default.reward__vertical,
-                          i,
-                        ),
-                        children: (0, import_jsx_runtime.jsx)(Reward, {
-                          size: n,
-                          isFixedBoxSize: t,
-                          ...e,
-                        }),
-                      },
-                      a,
-                    ),
-                  ),
-                (0, import_jsx_runtime.jsx)("div", {
-                  className: (0, import_classnames.default)(
-                    rewards_list_module_default.reward,
-                    r && rewards_list_module_default.reward__vertical,
-                    i,
-                  ),
-                  children: (0, import_jsx_runtime.jsx)(Reward, {
-                    name: "more",
-                    isFixedBoxSize: t,
-                    image: m,
-                    size: n,
-                    value: p,
-                    tooltipArgs: s,
-                    className: (0, import_classnames.default)(
-                      rewards_list_module_default.boxRewardClassName,
-                      l,
-                    ),
-                    classNames: c,
-                  }),
-                }),
-              ],
-            })
-          : e.map((e, a) =>
-              (0, import_jsx_runtime.jsx)(
-                "div",
-                {
-                  className: (0, import_classnames.default)(
-                    rewards_list_module_default.reward,
-                    r && rewards_list_module_default.reward__vertical,
-                    i,
-                  ),
-                  children: (0, import_jsx_runtime.jsx)(Reward, {
-                    size: n,
-                    isFixedBoxSize: t,
-                    ...e,
-                  }),
-                },
-                a,
-              ),
-            ),
-    });
-  }),
-  Alignment = (function (e) {
+var Alignment = (function (e) {
     return ((e.FlexStart = "flex-start"), (e.Center = "center"), (e.FlexEnd = "flex-end"), e);
   })({}),
   THAI_LANGUAGE_CODE = "th",
@@ -40283,19 +40283,19 @@ export {
   vehicleState as Bn,
   useSpringValue as Br,
   LazyModel as Bt,
-  tableParts as C,
+  getRewardValueType as C,
   mapNonNullable as Ca,
   breakpointsByType as Ci,
   FormatString as Cn,
   useParamTooltip as Cr,
   UnknownVehicleImage as Ct,
-  useMeasure as D,
+  CloseButton as D,
   toArray$1 as Da,
   isNumber as Di,
   boolean as Dn,
   useWulfTooltip as Dr,
   currencyTypes as Dt,
-  measureTypes as E,
+  sizes$4 as E,
   sort as Ea,
   comparer$1 as Ei,
   array as En,
@@ -40379,13 +40379,13 @@ export {
   transform as Rn,
   useSpring as Rr,
   asMemoized as Rt,
-  columnBehaviours as S,
+  getRewardTooltipConfig as S,
   mapExists as Sa,
   breakpoints as Si,
   renderString as Sn,
   useBackdropTooltip as Sr,
   RentalCounter as St,
-  createColumnHelper as T,
+  Bubble as T,
   some as Ta,
   mouseButtons as Ti,
   createParser as Tn,
@@ -40427,7 +40427,7 @@ export {
   isTypeValidValue as Zn,
   useIsFirstRender as Zr,
   Checkbox as Zt,
-  isValidBreakpoint as _,
+  measureTypes as _,
   findIndexLast as _a,
   useUpscale as _i,
   usePopover as _n,
@@ -40441,20 +40441,20 @@ export {
   greaterThanOrEqual as ao,
   nationById as ar,
   Toggle as at,
-  TableProvider as b,
+  formatPrintf as b,
   insertBefore as ba,
   useMedia as bi,
   observer as bn,
   createSoundPlay as br,
   perkStates as bt,
-  Reward as c,
+  isValidBreakpoint as c,
   onBecomeUnobserved$1 as ca,
   action as ci,
   useVerticalScroll as cn,
   subtract as co,
   assignRefs as cr,
   Input as ct,
-  formatPrintf as d,
+  TableProvider as d,
   transaction$1 as da,
   getDependencyTree as di,
   useScrollByDragElements as dn,
@@ -40467,21 +40467,21 @@ export {
   getRealFormat as eo,
   types$5 as er,
   Switcher$1 as et,
-  getRewardImage as f,
+  useTableContext as f,
   every as fa,
   makeObservable as fi,
   Area$1 as fn,
   require_react as fo,
   useExternalPaddings as fr,
   Sprite as ft,
-  CloseButton as g,
+  createColumnHelper as g,
   findIndex$1 as ga,
   useAdaptive as gi,
   Popover as gn,
   ImagesRClassProvider as go,
   SoundsProvider as gr,
   Slot$1 as gt,
-  ImageSize as h,
+  flexRender as h,
   find as ha,
   useAdaptiveWidth as hi,
   TruncatedText as hn,
@@ -40507,14 +40507,14 @@ export {
   literal as kn,
   useTimeout as kr,
   imageSizes$2 as kt,
-  Bubble as l,
+  PlayerInfo as l,
   reaction$1 as la,
   autorun as li,
   Base$31 as ln,
   easings$1 as lo,
   computeds as lr,
   useInput as lt,
-  getRewardValueType as m,
+  tableParts as m,
   filterMap as ma,
   runInAction as mi,
   useHorizontalScroll as mn,
@@ -40535,7 +40535,7 @@ export {
   now as oo,
   runView as or,
   toggleSizes as ot,
-  getRewardTooltipConfig as p,
+  columnBehaviours as p,
   filter as pa,
   observable as pi,
   useScrollBounding as pn,
@@ -40569,33 +40569,33 @@ export {
   format$2 as to,
   AT_SPG as tr,
   Background as tt,
-  sizes as u,
+  Table as u,
   runInAction$1 as ua,
   configure as ui,
   dragDirections as un,
   clsx as uo,
   initializeModelWithContext as ur,
   placeholderVisibility as ut,
-  PlayerInfo as v,
+  useMeasure as v,
   get as va,
   MediaWrapper as vi,
   Image$1 as vn,
   concatWithPath as vo,
   useSoundsOptional as vr,
   fromAccountModel as vt,
-  flexRender as w,
+  ImageSize as w,
   reduce as wa,
   readKey as wi,
   FormatText$1 as wn,
   useSimpleTooltip as wr,
   VehicleImage as wt,
-  useTableContext as x,
+  getRewardImage as x,
   map as xa,
   require_jsx_runtime as xi,
   renderResolvedString as xn,
   createTargetOverrides as xr,
   roles as xt,
-  Table as y,
+  Reward as y,
   groupMapBy as ya,
   MediaWrapperElement as yi,
   defineStyledComponent as yn,

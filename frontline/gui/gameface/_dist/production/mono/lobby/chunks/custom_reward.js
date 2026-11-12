@@ -1,42 +1,42 @@
 import { r as a } from "./rolldown-runtime.js";
-import { c as e, f as s, fo as i, h as t, m as o, p as l, uo as r, xi as m } from "./lib.js";
-var c = (function (a) {
+import { C as e, S as s, fo as i, uo as t, w as o, x as l, xi as r, y as m } from "./lib.js";
+var n = (function (a) {
     return ((a.Static = "static"), (a.Claimable = "claimable"), a);
   })({}),
-  n = (i(), "CustomReward_197314c4"),
+  c = (i(), "CustomReward_197314c4"),
   d = "CustomReward_base__disable_51f6e5f1",
   u = "CustomReward_animWrapper_f3d190a6",
   p = "CustomReward_glow_11133e2",
   f = "CustomReward_glowReverse_48fff15c",
-  _ = m();
+  _ = r();
 function v({
   claimState: a,
   name: i,
-  icon: m,
+  icon: r,
   rewardSize: v,
   value: w,
-  tooltipId: b,
-  tooltipContentId: C,
-  isDisable: j,
-  className: x,
+  tooltipId: C,
+  tooltipContentId: b,
+  isDisable: x,
+  className: j,
   overlayType: g,
 }) {
-  const N = a === c.Claimable;
+  const N = a === n.Claimable;
   return (0, _.jsxs)("div", {
-    className: r(n, j && d, x),
+    className: t(c, x && d, j),
     children: [
       N &&
         (0, _.jsxs)("div", {
           className: u,
           children: [(0, _.jsx)("div", { className: p }), (0, _.jsx)("div", { className: f })],
         }),
-      (0, _.jsx)(e, {
+      (0, _.jsx)(m, {
         name: i,
-        image: s({ name: i, icon: m }, t.Big),
+        image: l({ name: i, icon: r }, o.Big),
         size: v,
         value: w.toString(),
-        valueType: o(i),
-        tooltipArgs: l({ tooltipId: b }, Number(C)),
+        valueType: e(i),
+        tooltipArgs: s({ tooltipId: C }, Number(b)),
         special: g,
       }),
     ],

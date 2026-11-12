@@ -31,8 +31,8 @@ import {
   Dt as w,
   Ea as N,
   Ei as I,
-  En as S,
-  Er as k,
+  En as k,
+  Er as S,
   Et as P,
   F as E,
   Fa as M,
@@ -84,8 +84,8 @@ import {
   Oi as we,
   On as Ne,
   Or as Ie,
-  Ot as Se,
-  P as ke,
+  Ot as ke,
+  P as Se,
   Pa as Pe,
   Pi as Ee,
   Pn as Me,
@@ -138,8 +138,8 @@ import {
   _a as wt,
   _i as Nt,
   _n as It,
-  _r as St,
-  _t as kt,
+  _r as kt,
+  _t as St,
   ai as Pt,
   an as Et,
   ar as Mt,
@@ -192,8 +192,8 @@ import {
   kt as wa,
   ln as Na,
   lr as Ia,
-  lt as Sa,
-  ma as ka,
+  lt as ka,
+  ma as Sa,
   mn as Pa,
   mo as Ea,
   mt as Ma,
@@ -246,8 +246,8 @@ import {
   xt as ws,
   ya as Ns,
   yi as Is,
-  yn as Ss,
-  yo as ks,
+  yn as ks,
+  yo as Ss,
   yr as Ps,
   yt as Es,
   z as Ms,
@@ -510,7 +510,7 @@ var [xn, yn] = ds("FilterVehiclesProvider")(
       a = Ia.structural((e) => t.get(e));
     return { ids: Ia.primitive(() => t.keys), get: a };
   }),
-  [In, Sn] = ds("VehiclesProvider")(
+  [In, kn] = ds("VehiclesProvider")(
     ({ observableModel: e }) => {
       const t = { vehicles: e.dictRef("vehicles") };
       return {
@@ -546,7 +546,7 @@ var [xn, yn] = ds("FilterVehiclesProvider")(
     Z,
     { useRequires: () => ({ statistics: Nn() }) },
   ),
-  [kn, Pn] = ds("MyVehiclesProvider")(
+  [Sn, Pn] = ds("MyVehiclesProvider")(
     (e) => {
       const t = e.requires.statistic.model.ids,
         a = Ia.structural((a) => {
@@ -563,9 +563,9 @@ var [xn, yn] = ds("FilterVehiclesProvider")(
       return { get: a, getAll: s, amount: Ia.primitive(() => s().length), ids: t };
     },
     Z,
-    { useRequires: () => ({ vehicles: Sn(), statistic: Nn() }) },
+    { useRequires: () => ({ vehicles: kn(), statistic: Nn() }) },
   ),
-  En = ks.resolve("strings");
+  En = Ss.resolve("strings");
 var Mn = ve(ha + me),
   Ln = () => `${Date.now().toString(16)}_${Mn(3)}`;
 function An(e, t, a = 1) {
@@ -591,7 +591,7 @@ var Vn = "delete",
     title: oe(),
     createdAt: G(pe(), Ne(), ga(0)),
     modifiedAt: G(pe(), Ne(), ga(0)),
-    list: S(G(pe(), Ne())),
+    list: k(G(pe(), Ne())),
   }),
   $n = G(
     oe(),
@@ -604,7 +604,7 @@ var Vn = "delete",
     (be({ title: oe() }),
     be({
       titles: G(
-        S(oe()),
+        k(oe()),
         Re((e) => new Set(e)),
       ),
     }),
@@ -769,7 +769,7 @@ var Vn = "delete",
           ),
         };
       },
-      { useRequires: () => ({ vehicles: Sn(), myVehicles: Pn(), filters: yn(), statistic: Nn() }) },
+      { useRequires: () => ({ vehicles: kn(), myVehicles: Pn(), filters: yn(), statistic: Nn() }) },
     )),
   Un = () => (0, Cn.useContext)(Gn),
   Kn = "pending",
@@ -880,7 +880,7 @@ var Vn = "delete",
     {
       useRequires: () => ({
         myVehicles: Pn(),
-        vehicles: Sn(),
+        vehicles: kn(),
         statistic: Nn(),
         filters: yn(),
         playlists: Un(),
@@ -965,7 +965,7 @@ var Vn = "delete",
         e.model.changesInPlaylistSelection.clear();
       }),
     }),
-    { useRequires: () => ({ vehicles: Sn(), playlists: Zn(), vehicleStatistics: Nn() }) },
+    { useRequires: () => ({ vehicles: kn(), playlists: Zn(), vehicleStatistics: Nn() }) },
   ),
   sr = () => (0, Cn.useContext)(ar),
   nr = Cs(),
@@ -1035,7 +1035,7 @@ var Vn = "delete",
   lr = "Buttons_button_aeef4019",
   cr = "Buttons_button__create_61690fd8",
   dr = "Buttons_icon_378ba619",
-  ur = ks.resolve("strings"),
+  ur = Ss.resolve("strings"),
   mr = Dt(function () {
     const { model: e, controls: t } = tr();
     return (0, nr.jsxs)("div", {
@@ -1130,8 +1130,8 @@ var Vn = "delete",
   }),
   Nr = "Vehicle_name_f5f779f6",
   Ir = "Vehicle_level_c03ad304",
-  Sr = "Vehicle_type_9905a21f",
-  kr = Dt(function () {
+  kr = "Vehicle_type_9905a21f",
+  Sr = Dt(function () {
     const { model: e } = tr(),
       t = e.computeds.vehicle();
     if (void 0 === t) return null;
@@ -1142,7 +1142,7 @@ var Vn = "delete",
         yt(t.type) &&
           (0, nr.jsx)(se.Type, {
             size: se.Type.sizes.x24x24,
-            className: Sr,
+            className: kr,
             type: t.type,
             premium: t.elite,
           }),
@@ -1155,7 +1155,7 @@ var Vn = "delete",
   Er = "Styles_header_dcb2494f",
   Mr = "Styles_body_504cd01f",
   Lr = "Styles_title_ece3f15e",
-  Ar = ks.resolve("strings");
+  Ar = Ss.resolve("strings");
 function Tr({ className: e }) {
   return (0, nr.jsxs)(na.Header, {
     className: cs(Er, e),
@@ -1166,7 +1166,7 @@ function Tr({ className: e }) {
           text: Ar.readOrEmpty("playlists.managaeble_playlists.header.title"),
         }),
       }),
-      (0, nr.jsx)(kr, {}),
+      (0, nr.jsx)(Sr, {}),
     ],
   });
 }
@@ -1320,7 +1320,7 @@ function Wr() {
 }
 var qr = Ke(be({ key: oe(), name: oe() })),
   Zr = be({ value: Ts([pe(), oe()]), state: oe() }),
-  Gr = (Ke(Zr), Ke(S(Zr))),
+  Gr = (Ke(Zr), Ke(k(Zr))),
   Ur = "boost",
   Kr = "reduce",
   Xr = "none";
@@ -1348,7 +1348,7 @@ function ei(e) {
 }
 function ti(e, t) {
   const { key: a, name: s } = t,
-    n = ks.resolve("strings");
+    n = Ss.resolve("strings");
   return "" !== s && "" !== a
     ? n.readOr(`tank_setup.kpi.bonus.ttc.${a}.${s}`, () =>
         n.readOrEmpty(`tank_setup.kpi.bonus.${a}.${s}`),
@@ -1420,10 +1420,10 @@ var [ai, si] = ds("TechParamsProvider")(
     icon: "Detail_icon_9a3f3ac3",
     description: "Detail_description_f080f1e6",
   },
-  pi = ks.resolve("strings"),
-  _i = ks.resolve("images"),
-  hi = ks.resolve("aliases"),
-  gi = ks.resolve("intl");
+  pi = Ss.resolve("strings"),
+  _i = Ss.resolve("images"),
+  hi = Ss.resolve("aliases"),
+  gi = Ss.resolve("intl");
 function fi({
   id: e,
   values: t,
@@ -1601,8 +1601,8 @@ function Ii(e, t, a) {
           });
         })(t, e);
 }
-var Si = "Indicator_be35e8ce",
-  ki = "Indicator_baseIndicator_804d6503",
+var ki = "Indicator_be35e8ce",
+  Si = "Indicator_baseIndicator_804d6503",
   Pi = "Indicator_filledIndicatorsContainer_87d2b117",
   Ei = "Indicator_currentIndicator_6d6696af",
   Mi = "Indicator_boostIndicator_1f6d9ad3",
@@ -1646,9 +1646,9 @@ function Vi({ className: e, currentIndicator: t, reduceIndicator: a, boostIndica
       },
     });
   return (0, nr.jsxs)("div", {
-    className: cs(Si, e),
+    className: cs(ki, e),
     children: [
-      (0, nr.jsx)("div", { className: ki }),
+      (0, nr.jsx)("div", { className: Si }),
       (0, nr.jsxs)("div", {
         className: Pi,
         children: [
@@ -1808,7 +1808,7 @@ var zi = "ParamsType_d8788f0e",
       }),
   };
 function Yi({ type: e }) {
-  const t = ks.resolve("strings"),
+  const t = Ss.resolve("strings"),
     a = Xi[e];
   if (a)
     return (0, nr.jsxs)("div", {
@@ -1826,7 +1826,7 @@ var Ji = "Section_5872c61",
   to = "Section_detailsContainer_41624a97",
   ao = "Section_arrow_931be12",
   so = "Section_arrow__opened_9ccaa82",
-  no = ks.resolve("aliases"),
+  no = Ss.resolve("aliases"),
   ro = Dt(function ({
     indicatorList: e,
     status: t,
@@ -1842,7 +1842,7 @@ var Ji = "Section_5872c61",
     const [u, m] = Cn.useState(n),
       p = Cn.useRef(0),
       { api: _ } = Rt(),
-      h = St(),
+      h = kt(),
       { controls: g, rootId: f } = si();
     s(() => clearTimeout(p.current));
     const v = Cn.useMemo(() => ({ tooltipId: c, paramId: a, extendedTooltip: !0 }), [a, c]),
@@ -1951,7 +1951,7 @@ var Ji = "Section_5872c61",
   }),
   lo = Dt(function ({ indicatorAmount: e = 10, className: t, classNames: a }) {
     const { model: s } = si(),
-      n = St();
+      n = kt();
     return (
       (0, Cn.useEffect)(() => {
         n.play("animation", { target: "vehicle-ttc-section:accordion-summary" });
@@ -2088,8 +2088,8 @@ var Ji = "Section_5872c61",
   wo = "PopularLoadouts_noDataLegendary_8871a45c",
   No = "PopularLoadouts_noData_44c73d25",
   Io = "PopularLoadouts_vehicleNotAvailable_6aaecb23",
-  So = "PopularLoadouts_noData_text_44c73d25",
-  ko = "PopularLoadouts_vehicleNotAvailable_text_f6a0ffe8",
+  ko = "PopularLoadouts_noData_text_44c73d25",
+  So = "PopularLoadouts_vehicleNotAvailable_text_f6a0ffe8",
   Po = "PopularLoadouts_scrollWrapper_f6e40aea",
   Eo = "PopularLoadouts_scroll_5547fb14",
   Mo = "PopularLoadouts_verticalBar_4b7df3ca",
@@ -2153,9 +2153,9 @@ function rl({ popularity: e, optionalDevice: t, isHovered: a }) {
     ],
   });
 }
-var il = ks.resolve("aliases"),
-  ol = ks.resolve("views"),
-  ll = ks.resolve("strings"),
+var il = Ss.resolve("aliases"),
+  ol = Ss.resolve("views"),
+  ll = Ss.resolve("strings"),
   cl = Rs(function ({
     notSuitableVehicle: e,
     noData: t,
@@ -2165,7 +2165,7 @@ var il = ks.resolve("aliases"),
     optionalDevicesResultType: r,
     setCurrentPage: i,
   }) {
-    const o = St(),
+    const o = kt(),
       [l, c] = (0, Cn.useState)(!1),
       { model: d, controls: u } = go(),
       m = d.computes.modeType() === po.Comp7,
@@ -2178,7 +2178,7 @@ var il = ks.resolve("aliases"),
         () => Array.from({ length: 3 }, (e, t) => f[t] ?? { popularity: 0, items: [] }),
         [f],
       ),
-      b = k({
+      b = S({
         resId: il.read((e) => e.hangar.shared.OptionalDevicesAssistant("resId")),
         contentId: ol.read((e) => e.lobby.tanksetup.tooltips.PopularLoadoutsTooltip("resId")),
         args: { sourceVehicleCompDescr: _, optionalDevicesResultType: r },
@@ -2195,7 +2195,7 @@ var il = ks.resolve("aliases"),
       return (0, nr.jsx)("div", {
         className: Io,
         children: (0, nr.jsx)("div", {
-          className: ko,
+          className: So,
           children: ll.readOrEmpty("tank_setup.popularLoadouts.vehicleNotAvailable"),
         }),
       });
@@ -2203,7 +2203,7 @@ var il = ks.resolve("aliases"),
       return (0, nr.jsx)("div", {
         className: No,
         children: (0, nr.jsx)("div", {
-          className: So,
+          className: ko,
           children: ll.readOrEmpty("tank_setup.popularLoadouts.noData"),
         }),
       });
@@ -2342,8 +2342,8 @@ var il = ks.resolve("aliases"),
   vl = "TankInfo_vehicleInfo_6633e061",
   bl = "TankInfo_summary_1066f4ee",
   xl = "TankInfo_accordionDetails_e30a5dd6",
-  yl = ks.resolve("aliases"),
-  Cl = Ss("LoadoutScreenTankInfo"),
+  yl = Ss.resolve("aliases"),
+  Cl = ks("LoadoutScreenTankInfo"),
   jl = $e({ summary: bl, accordionDetails: xl }),
   wl = Rs(function ({ rootId: e, className: t, children: a }) {
     const s = Qn().model.selectedVehicle(),
@@ -2383,15 +2383,15 @@ var Il = Rs(function ({ className: e }) {
       children: dt().location.startsWith("/hangar/loadout/equipment") && (0, nr.jsx)(Nl, {}),
     });
   }),
-  Sl = "ScreenWrapper_39a2fe74",
-  kl = "ScreenWrapper_inner_f586f6da",
+  kl = "ScreenWrapper_39a2fe74",
+  Sl = "ScreenWrapper_inner_f586f6da",
   Pl = "ScreenWrapper_content_42e9ccec",
   El = "ScreenWrapper_info_b6387d23",
   Ml = "ScreenWrapper_flag_bc3e1d2e",
-  Ll = ks.resolve("aliases"),
-  Al = Ss("LoadoutScreenWrapper", Sl),
-  Tl = Ss("ScreenWrapperInfo", El),
-  Dl = Ss("ScreenWrapperContent", Pl);
+  Ll = Ss.resolve("aliases"),
+  Al = ks("LoadoutScreenWrapper", kl),
+  Tl = ks("ScreenWrapperInfo", El),
+  Dl = ks("ScreenWrapperContent", Pl);
 var Bl = (0, Cn.createContext)({ ttcEnabled: !1 });
 function Ol({ classNames: e, children: t }) {
   const a = Qn().model.selectedVehicle();
@@ -2400,7 +2400,7 @@ function Ol({ classNames: e, children: t }) {
     children: [
       a &&
         (0, nr.jsx)(_s, { className: cs(Ml, e?.flag), path: `flags.c_600x450.${Mt(a.nationId)}` }),
-      (0, nr.jsx)("div", { className: kl, children: t }),
+      (0, nr.jsx)("div", { className: Sl, children: t }),
     ],
   });
 }
@@ -2542,7 +2542,7 @@ var Yl = "Slot_977dd8f1",
       return (0, nr.jsx)("div", {
         className: _c,
         children: (0, nr.jsx)(Ye, {
-          type: Se.currency,
+          type: ke.currency,
           size: d.extraSmall,
           enabled: i,
           classNames: { icon: hc },
@@ -2579,12 +2579,12 @@ var Yl = "Slot_977dd8f1",
   });
 function vc({ type: e, width: t, height: a, doubleRow: s, className: n }) {
   const r = Qn(),
-    i = St(),
+    i = kt(),
     o = r.model.slots.price.value.get(),
     l = r.model.slots.price.defaultValue.get(),
     c = r.model.slots.discount.get();
   r.model.telecomRentStatus.get();
-  const d = ks.resolve("strings"),
+  const d = Ss.resolve("strings"),
     u = Nt(`hangar.carousel.actionCards.x48x48.${e}`, `hangar.carousel.actionCards.x96x96.${e}`),
     m = bs({
       header: d.readOrEmpty(`tooltips.tanks_carousel.${Hl[e]}.header`),
@@ -2641,8 +2641,8 @@ var bc = "54033",
   wc = "ammoNotFull",
   Nc = "crewNotFull",
   Ic = "exploded",
-  Sc = "destroyed",
-  kc = "damaged",
+  kc = "destroyed",
+  Sc = "damaged",
   Pc = "rentable",
   Ec = "rentableAgain",
   Mc = "rentalIsOver",
@@ -2656,8 +2656,8 @@ var bc = "54033",
     [wc]: "ammo",
     [Nc]: "crew",
     [Ic]: "repair",
-    [Sc]: "repair",
     [kc]: "repair",
+    [Sc]: "repair",
     [Pc]: "rental",
     [Ec]: "rental",
     [Mc]: "rental",
@@ -2732,7 +2732,7 @@ var Uc = "Background_1089bc1c",
   ad = "Background_vehicle_23ef6e2b",
   sd = "Background_vehicle__dimmed_7f14a6c7",
   nd = "Background_crystal__limit_61072361",
-  rd = Ss("Favorite", "Background_favorite_d98f92cc", {
+  rd = ks("Favorite", "Background_favorite_d98f92cc", {
     variants: { active: { true: "Background_favorite__active_7f14a6c7" } },
   });
 function id({ nationId: e, selected: t, active: a, className: s }) {
@@ -2800,7 +2800,7 @@ var cd = "Bonuses_8169b4b3",
   gd = "Bonuses_base__double_ca1cd57b",
   fd = "Bonuses_icon_3991db74",
   vd = "Bonuses_text_a556857c",
-  bd = ks.resolve("strings");
+  bd = Ss.resolve("strings");
 function xd({
   bonusMultiplier: e,
   vehicleId: t,
@@ -2809,7 +2809,7 @@ function xd({
   classNames: n,
 }) {
   const r = Hc(e),
-    i = k({
+    i = S({
       resId: R.aliases.hangar.shared.VehiclesStatistics("resId"),
       contentId: R.views.mono.rest_bonus.tooltips.rest_bonus_tooltip("resId"),
       args: { intCD: t },
@@ -2880,16 +2880,16 @@ var yd = Dt(function ({ vehicle: e, statistic: t, doubleRow: a, ...s }) {
     identifierIcon__super: "Information_identifierIcon__super_34b8f5c2",
     identifierIcon__changeNation: "Information_identifierIcon__changeNation_dfee83c8",
   },
-  jd = Ss("VehicleName", {
+  jd = ks("VehicleName", {
     element: (e) => (0, nr.jsx)(se.Name, { ...e }),
     className: Cd.text,
     cva: { variants: { premium: { true: Cd.text__premium } } },
   });
 function wd({ statistic: e, vehicle: t, className: a, status: s }) {
-  const n = ks.resolve("views"),
-    r = ks.resolve("aliases"),
-    i = ks.resolve("strings"),
-    o = k({
+  const n = Ss.resolve("views"),
+    r = Ss.resolve("aliases"),
+    i = Ss.resolve("strings"),
+    o = S({
       resId: r.read((e) => e.hangar.shared.VehiclesStatistics("resId")),
       contentId: n.read((e) =>
         "paused" !== s
@@ -2987,7 +2987,7 @@ function Id({ vehicle: e, className: t, classNames: a }) {
     ],
   });
 }
-var Sd = Dt(function ({ vehicle: e, statistic: t, selected: a, doubleRow: s, ...n }) {
+var kd = Dt(function ({ vehicle: e, statistic: t, selected: a, doubleRow: s, ...n }) {
     const r = Qn(),
       i = r.model.bpState.active.get(),
       o = r.model.bpState.status.get();
@@ -3006,7 +3006,7 @@ var Sd = Dt(function ({ vehicle: e, statistic: t, selected: a, doubleRow: s, ...
       ],
     });
   }),
-  kd = {
+  Sd = {
     "media-wrapper": "Overlay_media-wrapper_3c7155a",
     root: "Overlay_root_3c7155a",
     base: "Overlay_ef16c91",
@@ -3016,9 +3016,9 @@ var Sd = Dt(function ({ vehicle: e, statistic: t, selected: a, doubleRow: s, ...
     alertText: "Overlay_alertText_ca764641",
     alertText__light: "Overlay_alertText__light_bece984e",
   };
-Ss("Disable", kd.disable);
+ks("Disable", Sd.disable);
 function Pd({ status: e, classNames: t, className: a }) {
-  const s = ks.resolve("images"),
+  const s = Ss.resolve("images"),
     n = Nt(
       `hangar.carousel.cards.alerts.${Vc[e]}`,
       `hangar.carousel.cards.alerts.${Vc[e]}_upscale`,
@@ -3029,12 +3029,12 @@ function Pd({ status: e, classNames: t, className: a }) {
     ),
     i = e === Bc || e === Dc;
   return (0, nr.jsxs)("div", {
-    className: cs(kd.alert, a),
+    className: cs(Sd.alert, a),
     children: [
-      (0, nr.jsx)(_s, { className: cs(kd.alertIcon, t?.icon), path: s.has(n) ? n : r }),
+      (0, nr.jsx)(_s, { className: cs(Sd.alertIcon, t?.icon), path: s.has(n) ? n : r }),
       (0, nr.jsx)(f, {
         upgradeLegacy: !0,
-        className: cs(kd.alertText, i && kd.alertText__light, t?.text),
+        className: cs(Sd.alertText, i && Sd.alertText__light, t?.text),
         path: `menu.tankCarousel.vehicleStates.${e}`,
         params: { icon: (0, nr.jsx)(_s, { path: "library.premium_small", width: 34, height: 16 }) },
       }),
@@ -3046,7 +3046,7 @@ function Ed({ statistic: e, doubleRow: t, locked: a, ...s }) {
   return n || a
     ? (0, nr.jsx)("div", {
         ...s,
-        className: cs(kd.base, t && kd.base__double, s.className),
+        className: cs(Sd.base, t && Sd.base__double, s.className),
         children: n && (0, nr.jsx)(Pd, { status: e.status }),
       })
     : null;
@@ -3055,8 +3055,8 @@ var Md = "Card_e79008fd",
   Ld = "Card_base__double_f8b7f334",
   Ad = "Card_content_a6141b08",
   Td = "Card_border_e9cb9a85",
-  Dd = ks.resolve("views"),
-  Bd = ks.resolve("aliases"),
+  Dd = Ss.resolve("views"),
+  Bd = Ss.resolve("aliases"),
   Od = Dt(function ({
     vehicleId: e,
     selected: t = !1,
@@ -3066,9 +3066,9 @@ var Md = "Card_e79008fd",
     ...r
   }) {
     const i = Qn(),
-      o = Sn().model.get(e),
+      o = kn().model.get(e),
       l = Nn().model.get(e),
-      c = St(),
+      c = kt(),
       d = i.model.current.inventoryId.get(),
       u = i.model.prebattleModeActive(),
       m = i.model.bpState.active.get(),
@@ -3142,7 +3142,7 @@ function Rd({
       "vehicle",
       (0, Cn.useMemo)(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
     ),
-    u = k({
+    u = S({
       resId: Bd.read((e) => e.hangar.shared.VehiclesInventory("resId")),
       contentId: Dd.read((e) => e.mono.hangar.vehicle_tooltip("resId")),
       args: Cn.useMemo(() => ({ inventoryId: e?.inventoryId }), [e?.inventoryId]),
@@ -3161,7 +3161,7 @@ function Rd({
             (0, nr.jsxs)("div", {
               className: Ad,
               children: [
-                (0, nr.jsx)(Sd, { vehicle: e, selected: a, statistic: t, doubleRow: s }),
+                (0, nr.jsx)(kd, { vehicle: e, selected: a, statistic: t, doubleRow: s }),
                 (0, nr.jsx)(yd, { vehicle: e, statistic: t, doubleRow: s }),
               ],
             }),
@@ -3295,19 +3295,19 @@ var qd = Dt(function (e) {
         ((w = u),
         (N = r ? [] : b.left),
         (I = x),
-        (S = v),
-        (k = c),
+        (k = v),
+        (S = c),
         (0, Cn.useMemo)(() => {
-          if (!S) return { activeSlotsAmount: 0, activeSlotsIds: [] };
+          if (!k) return { activeSlotsAmount: 0, activeSlotsIds: [] };
           const e = w.length + N.length + I.length,
-            t = ((k - (e % k)) % k) + k,
-            a = Math.max(0, S + k - e);
+            t = ((S - (e % S)) % S) + S,
+            a = Math.max(0, k + S - e);
           return {
             activeSlotsAmount: e,
             activeSlotsIds: [...N, ...w, ...I, ...Array(0 === a ? t : a).fill("emptySlot")],
           };
-        }, [N, k, w, S, I]));
-    var w, N, I, S, k;
+        }, [N, S, w, k, I]));
+    var w, N, I, k, S;
     return (
       Wl(n, f, d, c, u.length),
       (function (e, t, a, s, n) {
@@ -3361,7 +3361,7 @@ var qd = Dt(function (e) {
   Gd = "EmptyStateMessage_923658c6",
   Ud = "EmptyStateMessage_title_278b22ff",
   Kd = "EmptyStateMessage_description_5a4f259e",
-  Xd = ks.resolve("strings"),
+  Xd = Ss.resolve("strings"),
   Yd = Dt(function (e) {
     const t = Un(),
       a = Qn(),
@@ -3565,8 +3565,8 @@ var ru = {
   lu = "Profile_role_b3df2c53",
   cu = "Profile_name_5c9b6f18",
   du = "Profile_name__maxLevel_85270e75",
-  uu = ks.resolve("strings"),
-  mu = ks.resolve("aliases");
+  uu = Ss.resolve("strings"),
+  mu = Ss.resolve("aliases");
 function pu({ role: e = "", className: t }) {
   const a = ru[e];
   if (a) return (0, nr.jsx)(a, { className: t });
@@ -3637,10 +3637,10 @@ var gu = "Tankman_content_4548f2cf",
     disabled: "DogSlot_disabled_e7b0f05e",
     disabled__active: "DogSlot_disabled__active_9672028d",
   },
-  ju = ks.resolve("strings"),
+  ju = Ss.resolve("strings"),
   wu = Rs(function () {
     const { model: e, controls: t } = tu(),
-      a = St(),
+      a = kt(),
       s = e.computes.disabled(),
       r = e.vehicleNation.get();
     return (0, nr.jsx)(Ma, {
@@ -3696,8 +3696,8 @@ var gu = "Tankman_content_4548f2cf",
   }),
   Nu = "retrainingProgress",
   Iu = "unsuitableTankman",
-  Su = "default";
-var ku = "new_skill",
+  ku = "default";
+var Su = "new_skill",
   Pu = "default",
   Eu = "active",
   Mu = "activeDisable",
@@ -3740,7 +3740,7 @@ function Fu(e) {
     });
   for (let u = 0; u < s; u++) {
     const e = 100 !== n && u === s - 1 ? Ot.learning : Ot.learned;
-    d.push({ id: t, name: ku, state: e, vehEfficacy: r, efficacy: i, role: o, nativeTank: l });
+    d.push({ id: t, name: Su, state: e, vehEfficacy: r, efficacy: i, role: o, nativeTank: l });
   }
   return d;
 }
@@ -3847,8 +3847,8 @@ var Gu = "EfficiencyIndicator_d9560b90",
   Uu = "EfficiencyIndicator_base__bonus_a4144984",
   Ku = "EfficiencyIndicator_percent_147766be",
   Xu = "EfficiencyIndicator_icon_fb03a020",
-  Yu = ks.resolve("intl"),
-  Ju = ks.resolve("aliases");
+  Yu = Ss.resolve("intl"),
+  Ju = Ss.resolve("aliases");
 function Qu({ bonusPerks: e, skillsEfficiency: t, className: a }) {
   const { tankmanId: s, slotState: n } = nu(),
     r = Yu.formatNumber("integral", 100 * t),
@@ -3878,9 +3878,9 @@ function Qu({ bonusPerks: e, skillsEfficiency: t, className: a }) {
     })(),
   });
 }
-var em = ks.resolve("aliases"),
-  tm = ks.resolve("views"),
-  am = ks.resolve("strings");
+var em = Ss.resolve("aliases"),
+  tm = Ss.resolve("views"),
+  am = Ss.resolve("strings");
 function sm({
   children: e,
   bonus: t,
@@ -3964,7 +3964,7 @@ function rm(e) {
       instruction: d,
       className: u,
     } = e,
-    m = t === ku,
+    m = t === Su,
     p = Zu({
       withInstruction: t === d,
       state: a,
@@ -3998,7 +3998,7 @@ var im = "Row_94492f2a",
   cm = "Row_container_6520803b",
   dm = "Row_container__compression_f3e2cd48",
   um = "Row_currentProgress_4c0ce954",
-  mm = ks.resolve("strings");
+  mm = Ss.resolve("strings");
 function pm({
   perks: e,
   bonusPerk: t = !1,
@@ -4057,7 +4057,7 @@ function hm({ tankman: e, className: t }) {
     className: cs(_m.base, t),
     children: [
       a &&
-        a !== Su &&
+        a !== ku &&
         (0, nr.jsx)(Qu, {
           className: _m.efficiency,
           bonusPerks: e.bonusPerks.length > 0,
@@ -4095,15 +4095,15 @@ var gm = "Slot_tooltipArea_cfc61e36",
   wm = "Slot_vehicleInfo_b3de9df4",
   Nm = "Slot_vehicleInfo__active_c2f01f1b",
   Im = "Slot_overlay_a7b614c0",
-  Sm = "Slot_overlay__active_4dbffa31",
-  km = "Slot_overlay__bonusPerk_7bdbfd9e",
+  km = "Slot_overlay__active_4dbffa31",
+  Sm = "Slot_overlay__bonusPerk_7bdbfd9e",
   Pm = "Slot_overlay__hover_b85ae7f7",
   Em = "Slot_overlay__warning_8fedfb92",
   Mm = "Slot_overlay__disabled_cd31780",
-  Lm = ks.resolve("aliases"),
+  Lm = Ss.resolve("aliases"),
   Am = Rs(function ({ tankmanId: e, roles: t, id: a, tankmanAnimation: s }) {
     const [n, r] = (0, Cn.useState)(!1),
-      i = St(),
+      i = kt(),
       { model: o, controls: l } = tu(),
       c = o.computes.disabled(),
       d = o.vehicleType.get(),
@@ -4117,7 +4117,7 @@ var gm = "Slot_tooltipArea_cfc61e36",
             ? e.insideNativeTank || -1 !== e.currentVehicleSkillsEfficiency
               ? Nu
               : Iu
-            : Su;
+            : ku;
       })(p),
       g = h === Iu,
       v = da(
@@ -4145,8 +4145,8 @@ var gm = "Slot_tooltipArea_cfc61e36",
               params: { resId: Lm.read((e) => e.hangar.shared.Crew("resId")), args: b },
               className: gm,
             }),
-          (0, nr.jsx)("div", { className: cs(Im, Pm, n && Sm) }),
-          (0, nr.jsx)("div", { className: cs(Im, Em, g && Sm) }),
+          (0, nr.jsx)("div", { className: cs(Im, Pm, n && km) }),
+          (0, nr.jsx)("div", { className: cs(Im, Em, g && km) }),
           (0, nr.jsx)(yu, {
             customizedSkin: p?.customizedSkin ?? !1,
             skinId: p?.crewSkinId.replace("tankman_", ""),
@@ -4172,7 +4172,7 @@ var gm = "Slot_tooltipArea_cfc61e36",
                   }),
             ],
           }),
-          (0, nr.jsx)("div", { className: cs(Im, Mm, c && Sm, p?.bonusPerks.length && km) }),
+          (0, nr.jsx)("div", { className: cs(Im, Mm, c && km, p?.bonusPerks.length && Sm) }),
         ],
       }),
     });
@@ -4223,7 +4223,7 @@ var gm = "Slot_tooltipArea_cfc61e36",
       })
     );
   }),
-  Om = ks.resolve("aliases");
+  Om = Ss.resolve("aliases");
 function Vm({ className: e }) {
   return (0, nr.jsx)(eu, {
     options: { rootId: Om.read((e) => e.hangar.shared.Crew("resId")) },
@@ -4392,7 +4392,7 @@ function Fm({ value: e, ...t }) {
     className: t.className,
   });
 }
-var Wm = Ss("IconContainer", "Icon_container_83f4dd0e"),
+var Wm = ks("IconContainer", "Icon_container_83f4dd0e"),
   qm = Dt(function (e) {
     const t = Qn(),
       a = Zn().model.byIdUnsafe(e.id);
@@ -4409,7 +4409,7 @@ var Wm = Ss("IconContainer", "Icon_container_83f4dd0e"),
         });
   });
 function Zm(e) {
-  const t = ks.resolve("strings"),
+  const t = Ss.resolve("strings"),
     a = bs({
       header: t
         .readOrEmpty("playlists.validation.unavailable.title")
@@ -4604,7 +4604,7 @@ var Gm = (e) =>
     base__copiedStatus: "CopyButton_base__copiedStatus_49d34ed8",
     icon__exportDone: "CopyButton_icon__exportDone_8d5db080",
   },
-  Xm = ks.resolve("strings"),
+  Xm = Ss.resolve("strings"),
   Ym = function (e) {
     const [t, a] = (0, Cn.useState)("copy"),
       s = ja(),
@@ -4612,7 +4612,7 @@ var Gm = (e) =>
         header: Xm.readOrEmpty("playlists.share.copy_button.title"),
         body: Xm.readOrEmpty("playlists.share.copy_button.body"),
       }),
-      r = St();
+      r = kt();
     return (0, nr.jsxs)("div", {
       ...n,
       "data-test-id": "copyButton",
@@ -4768,9 +4768,9 @@ var Gm = (e) =>
     }),
   Qm = "EditButton_e0942ef0",
   ep = "EditButton_icon_a08c89e9",
-  tp = ks.resolve("strings");
+  tp = Ss.resolve("strings");
 function ap({ id: e, className: t }) {
-  const a = St(),
+  const a = kt(),
     s = dt(),
     n = bs({
       header: tp.readOrEmpty("playlists.edit_button.title"),
@@ -4903,7 +4903,7 @@ var np = "Item_background_5cb932c1",
           children: (0, nr.jsxs)("span", {
             children: [
               (0, nr.jsx)(Fm, { value: "checked", className: lp }),
-              ks.resolve("strings").readOrEmpty("pages.titles.allVehicles"),
+              Ss.resolve("strings").readOrEmpty("pages.titles.allVehicles"),
             ],
           }),
         }),
@@ -4920,10 +4920,10 @@ var np = "Item_background_5cb932c1",
       children: [(0, nr.jsx)(hp, {}), e.map((e) => (0, nr.jsx)(_p, { id: e }, e))],
     });
   }),
-  yp = Ss("Divider", gp),
+  yp = ks("Divider", gp),
   Cp = Dt(function (e) {
     const t = Zn(),
-      a = ks.resolve("strings"),
+      a = Ss.resolve("strings"),
       [s, n] = qt("add");
     return (0, nr.jsxs)(e.asChild ? ia : Gt, {
       className: vp,
@@ -4939,7 +4939,7 @@ var np = "Item_background_5cb932c1",
   }),
   jp = function (e) {
     const t = Zn(),
-      a = ks.resolve("strings"),
+      a = Ss.resolve("strings"),
       [s, n] = qt("import");
     return (0, nr.jsxs)(e.asChild ? ia : Gt, {
       className: vp,
@@ -4959,8 +4959,8 @@ var np = "Item_background_5cb932c1",
   wp = "Dropdown_popover_b5203d93",
   Np = "Dropdown_scrollContent_7363dda3",
   Ip = "Dropdown_bar_2d94e05e",
-  Sp = "Dropdown_area_a34c2ecf",
-  kp = "Dropdown_area__begin_af756086",
+  kp = "Dropdown_area_a34c2ecf",
+  Sp = "Dropdown_area__begin_af756086",
   Pp = "Dropdown_area__end_3b89247a",
   Ep = "Dropdown_list_41b8eefe",
   Mp = "Dropdown_triggers_b8372e20",
@@ -4971,7 +4971,7 @@ var np = "Item_background_5cb932c1",
   Bp = "Dropdown_alertIcon_61f05dd3",
   Op = "Dropdown_arrow_5a21c825",
   Vp = "Dropdown_arrow__opened_ef9f7c1d",
-  Rp = ks.resolve("strings"),
+  Rp = Ss.resolve("strings"),
   Hp = [25, 25],
   $p = $e({ container: Dp, icon: Bp }),
   zp = $e({ container: Dp }),
@@ -4984,7 +4984,7 @@ var np = "Item_background_5cb932c1",
         if (s) return u(() => u(e.recalculateContent));
       }, [s, e.recalculateContent]),
       (0, nr.jsx)(ma, {
-        className: cs(Sp, !t && kp, !a && Pp),
+        className: cs(kp, !t && Sp, !a && Pp),
         classNames: { content: Np },
         children: (0, nr.jsx)(xp, {}),
       })
@@ -5051,7 +5051,7 @@ var Zp = Dt(function (e) {
   Gp = Dt(function (e) {
     const t = Un(),
       a = t?.model.current(),
-      s = St(),
+      s = kt(),
       n = bs({ header: a?.title, body: Rp.readOrEmpty("playlists.trigger.explain") });
     if (!t || !1 === t.model.enabled.get()) return e.fallback;
     const r = e.asChild ? ia : "div";
@@ -5077,7 +5077,7 @@ var Zp = Dt(function (e) {
             "data-test-id": "playlistDropdown",
             className: cs(Ap, e.className),
             children: [
-              (0, nr.jsx)(kt, { children: e.children }),
+              (0, nr.jsx)(St, { children: e.children }),
               a
                 ? (0, nr.jsx)(Zp, {
                     limit: e.limit,
@@ -5144,7 +5144,7 @@ var Xp = {
     const t = Kp(),
       a = t.tooltipHeaderMap ?? Js,
       s = t.tooltipBodyMap ?? Qs,
-      n = ks.resolve("strings"),
+      n = Ss.resolve("strings"),
       r =
         e.tooltip.body !== Xs
           ? n.readOrEmpty(`tank_carousel_filter.tooltip.${s[e.tooltip.body]}.body`)
@@ -5293,7 +5293,7 @@ var r_ = Dt(function (e) {
   });
 });
 function i_() {
-  const e = Sa(),
+  const e = ka(),
     [t, a] = (0, Cn.useState)(!1);
   return (
     (0, Cn.useEffect)(() => {
@@ -5314,7 +5314,7 @@ function i_() {
   );
 }
 function o_({ fieldClassName: e, value: t, ...a }) {
-  const s = ks.resolve("strings");
+  const s = Ss.resolve("strings");
   return (0, nr.jsxs)(zt.Provider, {
     value: t,
     children: [
@@ -5343,8 +5343,8 @@ function o_({ fieldClassName: e, value: t, ...a }) {
   });
 }
 function l_({ current: e, total: t, className: a }) {
-  const s = ks.resolve("intl"),
-    n = ks.resolve("strings");
+  const s = Ss.resolve("intl"),
+    n = Ss.resolve("strings");
   return (0, nr.jsxs)(na.Header, {
     className: cs(Xp.header, a),
     children: [
@@ -5436,12 +5436,12 @@ var c_ = (0, Cn.memo)(function (e) {
     (0, Cn.forwardRef)(function ({ current: e, total: t, classNames: a, onReset: s, ...n }, r) {
       const i = Kp(),
         o = It(),
-        l = ks.resolve("intl"),
-        c = ks.resolve("strings"),
+        l = Ss.resolve("intl"),
+        c = Ss.resolve("strings"),
         d = Nt("hangar.filter.filter_button", "hangar.filter.filter_button_upscale"),
         u = Nt("ui_kit.close_button.icon_small", "ui_kit.close_button.icon_medium"),
         m = i.hasFilter(),
-        p = St();
+        p = kt();
       return (0, nr.jsx)(Lt, {
         ...n,
         ref: r,
@@ -5507,7 +5507,7 @@ var c_ = (0, Cn.memo)(function (e) {
     return (0, nr.jsx)(l_, { current: a, total: t });
   }),
   g_ = Dt(function ({ classNames: e }) {
-    const t = ks.resolve("strings"),
+    const t = Ss.resolve("strings"),
       a = Qn(),
       s = a.model.vehicles.amount(),
       n = a.model.current.amount(),
@@ -5533,7 +5533,7 @@ var c_ = (0, Cn.memo)(function (e) {
   f_ = Dt(function ({ children: e }) {
     const t = yn(),
       a = t.model.carouselRowCount.get(),
-      s = ks.resolve("strings");
+      s = Ss.resolve("strings");
     const r = bs({
         header: s.readOrEmpty("tank_carousel_filter.tooltip.toggleSwitchCarousel.header"),
         body: s.readOrEmpty("tank_carousel_filter.tooltip.toggleSwitchCarousel.body"),
@@ -5777,13 +5777,13 @@ var c_ = (0, Cn.memo)(function (e) {
   w_ = "Header_base__ttcDisabled_bc60795e",
   N_ = "Header_title_ae11a84e",
   I_ = "Header_playlist_2dc961b7",
-  S_ = "Header_toggles_ecb415bd",
-  k_ = "Header_toggle_a0b149a9",
+  k_ = "Header_toggles_ecb415bd",
+  S_ = "Header_toggle_a0b149a9",
   P_ = "Header_text_aace6b88",
   E_ = "Header_icon_dbebe5f6",
   M_ = "Header_editPlaylist_86a9c19a",
   L_ = "Header_divider_696b4d0d",
-  A_ = ks.resolve("strings"),
+  A_ = Ss.resolve("strings"),
   T_ = Rs(function (e) {
     const t = Wr()?.model.computed.ttcEnabled();
     return (0, nr.jsxs)("div", {
@@ -5834,12 +5834,12 @@ var c_ = (0, Cn.memo)(function (e) {
       a = t?.model.computed.noSelectedVehicle();
     return t && a
       ? (0, nr.jsxs)("div", {
-          className: cs(S_, e.className),
+          className: cs(k_, e.className),
           children: [
             (0, nr.jsxs)(Lt, {
               activated: t.model.crewEnabled.get(),
               onClick: t.controls.crew.toggle,
-              className: k_,
+              className: S_,
               children: [
                 (0, nr.jsx)(y_, { className: E_ }),
                 (0, nr.jsx)("div", {
@@ -5851,7 +5851,7 @@ var c_ = (0, Cn.memo)(function (e) {
             (0, nr.jsxs)(Lt, {
               activated: t.model.ttcEnabled.get(),
               onClick: t.controls.ttc.toggle,
-              className: k_,
+              className: S_,
               children: [
                 (0, nr.jsx)(C_, { className: E_ }),
                 (0, nr.jsx)("div", {
@@ -5882,12 +5882,12 @@ var c_ = (0, Cn.memo)(function (e) {
     crewWidget: "AllVehicles_crewWidget_2dd93f19",
   },
   V_ = { paths: ["/:hangar/"], exact: !1 },
-  R_ = it($r, { rootId: ks.resolve("aliases").read((e) => e.hangar.shared.Settings("resId")) }),
+  R_ = it($r, { rootId: Ss.resolve("aliases").read((e) => e.hangar.shared.Settings("resId")) }),
   H_ = Rs(function () {
     return (
       (function (e) {
         const t = dt(),
-          a = St(),
+          a = kt(),
           s = ce(t.location, e?.match ?? V_),
           n = null !== s;
         function r() {
@@ -6267,7 +6267,7 @@ var bh = "Carousel_draggingOverlay_2ac699b0",
       const e = Xa(500, !0, () =>
         lt.contextMenu.hide(
           0,
-          ks.resolve("aliases").read((e) => e.common.contextMenu.Backport("resId")),
+          Ss.resolve("aliases").read((e) => e.common.contextMenu.Backport("resId")),
         ),
       );
       return (
@@ -6379,7 +6379,7 @@ function Ih() {
     e
   );
 }
-var Sh = Dt(function ({ id: e, playlistState: t = Fn, vehicleIds: a = [], children: s }) {
+var kh = Dt(function ({ id: e, playlistState: t = Fn, vehicleIds: a = [], children: s }) {
   const n = Zn(),
     [r, i] = (0, Cn.useState)(t === Fn),
     o = On(n.model.byId(e)),
@@ -6446,7 +6446,7 @@ var Sh = Dt(function ({ id: e, playlistState: t = Fn, vehicleIds: a = [], childr
     c ? (0, nr.jsx)(Nh.Provider, { value: c, children: s }) : null
   );
 });
-function kh(e) {
+function Sh(e) {
   return (0, nr.jsx)("svg", {
     viewBox: "0 0 24 24",
     fill: "none",
@@ -6475,12 +6475,12 @@ var Ph = "PreviewCard_6db624e2",
   Rh = "PreviewCard_aboutText_920fe732",
   Hh = "PreviewCard_overlay_10333cbb",
   $h = "PreviewCard_remove_dcd51e1a",
-  zh = ks.resolve("strings"),
+  zh = Ss.resolve("strings"),
   Fh = Dt(function ({ vehicleId: e, scroll: t, children: a, ...s }) {
     const r = Zn(),
       i = r.model.vehicles.get(e),
       o = Ih(),
-      l = St(),
+      l = kt(),
       c = r.model.myVehicles.ids().has(e.toString()),
       d = r.model.isElite(e),
       u = Nt(24, 48);
@@ -6538,7 +6538,7 @@ var Ph = "PreviewCard_6db624e2",
                 disabled: !i.comparable,
                 onClick: () => r.controls.goToAboutVehicle(e),
                 children: [
-                  (0, nr.jsx)(kh, { className: Vh, width: u, height: u }),
+                  (0, nr.jsx)(Sh, { className: Vh, width: u, height: u }),
                   (0, nr.jsx)("span", {
                     className: Rh,
                     children: zh.readOrEmpty("playlists.card.about_vehicle"),
@@ -6645,7 +6645,7 @@ var Zh = Dt(function () {
   tg = "Filter_body_b75e3f7b",
   ag = "Filter_scroll_aff9469e",
   sg = Dt(function () {
-    const e = ks.resolve("strings"),
+    const e = Ss.resolve("strings"),
       t = Kp(),
       a = t.search.get();
     return (0, nr.jsx)(zt.Provider, {
@@ -6667,7 +6667,7 @@ var Zh = Dt(function () {
     });
   }),
   ng = Dt(function () {
-    const e = ks.resolve("strings"),
+    const e = Ss.resolve("strings"),
       t = Zn(),
       a = t.model.myVehicles.amount(),
       s = t.model.filteredAmount(),
@@ -6730,7 +6730,7 @@ var Zh = Dt(function () {
   dg = "Footer_button_5b899796",
   ug = { default: { size: n.sizes.extraSmall }, breakpoints: { medium: { size: n.sizes.small } } },
   mg = Dt(function (e) {
-    const t = ks.resolve("strings"),
+    const t = Ss.resolve("strings"),
       a = sa(ug.default, ug.breakpoints),
       s = Zn();
     return (0, nr.jsxs)("div", {
@@ -6826,7 +6826,7 @@ var gg = {
       children: t,
     });
   }),
-  vg = ks.resolve("strings"),
+  vg = Ss.resolve("strings"),
   bg = [25, 25],
   xg = Dt(function (e) {
     const t = Zn().model.byIdFull(e.id);
@@ -6946,8 +6946,8 @@ var gg = {
   wg = "Background_flag_bc133c8d",
   Ng = "Background_vehicle_7973c233",
   Ig = "Background_favorite_e48910a";
-function Sg({ vehicle: e }) {
-  const t = ks.resolve("images"),
+function kg({ vehicle: e }) {
+  const t = Ss.resolve("images"),
     a = `vehicle.x190x152.${Zn().model.vehicleImage(e.vehicleId)}`;
   return (0, nr.jsxs)("div", {
     className: cs(jg),
@@ -6968,7 +6968,7 @@ function Sg({ vehicle: e }) {
     ],
   });
 }
-var kg = "VehicleInformation_b9ce6636",
+var Sg = "VehicleInformation_b9ce6636",
   Pg = "VehicleInformation_base__selected_49aec79f",
   Eg = "VehicleInformation_vehicleInfo_3bdce6bd",
   Mg = "VehicleInformation_text_12254eae",
@@ -6979,9 +6979,9 @@ var kg = "VehicleInformation_b9ce6636",
     const a = Zn().model.isElite(e.id),
       s = e.premium;
     return (0, nr.jsxs)("div", {
-      className: cs(kg, t && Pg),
+      className: cs(Sg, t && Pg),
       children: [
-        (0, nr.jsx)(Sg, { vehicle: e }),
+        (0, nr.jsx)(kg, { vehicle: e }),
         (0, nr.jsxs)(se, {
           className: Eg,
           children: [
@@ -6999,7 +6999,7 @@ var kg = "VehicleInformation_b9ce6636",
   Vg = "Card_actionIcon_538a4b93",
   Rg = "card_close",
   Hg = "card_add",
-  $g = Ss("Slot", "Card_a05790e2", {
+  $g = ks("Slot", "Card_a05790e2", {
     variants: {
       selected: { true: "Card_base__selected_f4c22d1c" },
       dragging: { true: "Card_base__dragging_f4c22d1c" },
@@ -7024,7 +7024,7 @@ var Fg = Dt(function ({
     onClick: r,
     ...i
   }) {
-    const o = St(),
+    const o = kt(),
       [l, c] = (0, Cn.useState)(!1),
       [d, u] = (0, Cn.useState)(!1),
       m = pa(),
@@ -7082,7 +7082,7 @@ var Fg = Dt(function ({
   Xg = "List_area__end_9baec685",
   Yg = Dt(function ({ id: e, children: t, disabled: a, soundTarget: s, ...n }) {
     const r = hg(),
-      i = St(),
+      i = kt(),
       o = pa(),
       l = Boolean(o.item) && o.item.getAttribute("data-drop-item") === e,
       c = Ba(l);
@@ -7195,8 +7195,8 @@ var Jg = [25, 25],
   tf = "Name_decoration_82a70e4e",
   af = "Name_placeholder_36222a38";
 function sf({ children: e }) {
-  const t = St(),
-    { focus: a } = Sa();
+  const t = kt(),
+    { focus: a } = ka();
   return (0, nr.jsx)("div", {
     className: tf,
     onMouseEnter: function (e) {
@@ -7223,7 +7223,7 @@ var nf = Dt(function () {
             (a(e.target.value), n());
           },
           "data-test-id": "playlistName",
-          children: ks.resolve("strings").readOrEmpty("playlists.editScreen.input.placeholder"),
+          children: Ss.resolve("strings").readOrEmpty("playlists.editScreen.input.placeholder"),
         }),
       }),
     });
@@ -7244,7 +7244,7 @@ var nf = Dt(function () {
       a = Ih(),
       r = a.id,
       i = a.playlist(),
-      o = ks.resolve("strings"),
+      o = Ss.resolve("strings"),
       l = pa();
     s(t.controls.filters.reset);
     const c = (0, Cn.useMemo)(
@@ -7311,7 +7311,7 @@ var nf = Dt(function () {
       : (console.error(`Unknown ${r} as playlist`), null);
   }),
   vf = Dt(function ({ className: e, ...t }) {
-    return (0, nr.jsx)(Sh, {
+    return (0, nr.jsx)(kh, {
       ...t,
       children: (0, nr.jsxs)(Ja, {
         children: [
@@ -7416,11 +7416,11 @@ function Nf(e) {
   console.error("TeaserWidget: rootId is not given");
 }
 var If = "AllVehiclesButton_3837d663",
-  Sf = "AllVehiclesButton_grid_64f1c816",
-  kf = "AllVehiclesButton_content_75d29fb4";
+  kf = "AllVehiclesButton_grid_64f1c816",
+  Sf = "AllVehiclesButton_content_75d29fb4";
 function Pf(e) {
-  const t = St(),
-    a = ks.resolve("strings"),
+  const t = kt(),
+    a = Ss.resolve("strings"),
     s = dt(),
     r = Nt("hangar.filter.all_vehicle_button", "hangar.filter.all_vehicle_button_upscale"),
     o = bs({
@@ -7440,7 +7440,7 @@ function Pf(e) {
       (o.onClick(), l());
     },
     children: [
-      (0, nr.jsx)(_s, { className: Sf, path: r }),
+      (0, nr.jsx)(_s, { className: kf, path: r }),
       (0, nr.jsx)(Ta, {
         keyCode: i.SPACE,
         onActive: function (e) {
@@ -7448,7 +7448,7 @@ function Pf(e) {
             l());
         },
         silent: !0,
-        classNames: { content: kf },
+        classNames: { content: Sf },
         children: (0, nr.jsx)(Ta.Code, {}),
       }),
     ],
@@ -7472,7 +7472,7 @@ var Ef = "/hangar/{root}",
   );
 function Of() {
   return (0, nr.jsx)(_, {
-    id: ks.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId")),
+    id: Ss.resolve("aliases").read((e) => e.hangar.shared.LootboxEntryPoint("resId")),
     children: (0, nr.jsx)(Cn.Suspense, {
       children: (0, nr.jsx)("div", {
         className: Tf,
@@ -7532,9 +7532,9 @@ var Vf = (0, Cn.memo)(function () {
         shapeRendering: "crispEdges",
       }),
     }),
-  ov = ks.resolve("strings"),
-  lv = ks.resolve("views"),
-  cv = ks.resolve("aliases");
+  ov = Ss.resolve("strings"),
+  lv = Ss.resolve("views"),
+  cv = Ss.resolve("aliases");
 var dv = (e) =>
     (0, nr.jsx)("svg", {
       width: 24,
@@ -7554,7 +7554,7 @@ var dv = (e) =>
   mv = "Trainings_toggleContent_8fe22dba",
   pv = "Trainings_image_cc494d75",
   _v = "Trainings_image__on_3cef43a",
-  hv = Ss("Trainings", "Trainings_f0a414b9"),
+  hv = ks("Trainings", "Trainings_f0a414b9"),
   gv = Rs(function (e) {
     const { model: t, controls: a } = tu(),
       s = t.state.get(),
@@ -7575,7 +7575,7 @@ var dv = (e) =>
           body: ov.readOrEmpty(`crew_widget.tooltip.buttonsBar.${t}.body`),
         });
       })(n),
-      u = k({
+      u = S({
         resId: cv.read((e) => e.hangar.shared.Crew("resId")),
         contentId: lv.read((e) => e.lobby.crew.CrewHeaderTooltipView("resId")),
       }),
@@ -7792,8 +7792,8 @@ var jv = [Ff, Wf],
   Iv = (function (e) {
     return ((e[(e.NORMAL = 0)] = "NORMAL"), (e[(e.WARNING = 1)] = "WARNING"), e);
   })({}),
-  Sv = ks.resolve("strings");
-var kv = {
+  kv = Ss.resolve("strings");
+var Sv = {
     "media-wrapper": "PanelSwitcher_media-wrapper_a8240ce9",
     root: "PanelSwitcher_root_a8240ce9",
     base: "PanelSwitcher_5e94cb32",
@@ -7821,15 +7821,15 @@ function Bv(e) {
     ((a = e.groupId),
     (s = e.modifier),
     bs({
-      header: Sv.readOrEmpty("tank_setup.tooltips.prebattleSwitchIndicator.title"),
-      body: Sv.readOrEmpty(`tank_setup.tooltips.prebattleSwitchIndicator.desc.c_${a}.${s}`),
+      header: kv.readOrEmpty("tank_setup.tooltips.prebattleSwitchIndicator.title"),
+      body: kv.readOrEmpty(`tank_setup.tooltips.prebattleSwitchIndicator.desc.c_${a}.${s}`),
     }));
   var a, s;
   const n = e.itemStates[0] === Iv.WARNING,
     r = e.itemStates[1] === Iv.WARNING,
     i = 1 === e.currentIndex;
   return (0, nr.jsxs)("div", {
-    className: cs(kv.base, e.className),
+    className: cs(Sv.base, e.className),
     children: [
       (0, nr.jsxs)(Xt, {
         type: Xt.types.vertical,
@@ -7840,27 +7840,27 @@ function Bv(e) {
         size: Xt.sizes.small,
         checked: i,
         classNames: {
-          base: cs(kv.switcher, Dv(e.currentIndex, e.itemStates) && kv.switcher__warning),
-          overlay: kv.switcherOverlay,
+          base: cs(Sv.switcher, Dv(e.currentIndex, e.itemStates) && Sv.switcher__warning),
+          overlay: Sv.switcherOverlay,
         },
         children: [
           (0, nr.jsx)(Xt.Item, {
-            className: cs(kv.item, n && kv.item__warning),
-            children: (0, nr.jsx)(_s, { path: Tv(Lv, n ? Ev : Pv), className: kv.itemIcon }),
+            className: cs(Sv.item, n && Sv.item__warning),
+            children: (0, nr.jsx)(_s, { path: Tv(Lv, n ? Ev : Pv), className: Sv.itemIcon }),
           }),
           (0, nr.jsx)(Xt.Item, {
-            className: cs(kv.item, r && kv.item__warning),
-            children: (0, nr.jsx)(_s, { path: Tv(Av, r ? Ev : Pv), className: kv.itemIcon }),
+            className: cs(Sv.item, r && Sv.item__warning),
+            children: (0, nr.jsx)(_s, { path: Tv(Av, r ? Ev : Pv), className: Sv.itemIcon }),
           }),
           (0, nr.jsx)(Xt.SelectedItem, {
-            children: (0, nr.jsx)(_s, { path: Tv(i ? Av : Lv, Mv), className: kv.itemIcon }),
+            children: (0, nr.jsx)(_s, { path: Tv(i ? Av : Lv, Mv), className: Sv.itemIcon }),
           }),
         ],
       }),
       (0, nr.jsx)(_s, {
         ...(e.prebattleSwitchDisabled && t),
         path: "loadout.switcher.indicator_" + (e.prebattleSwitchDisabled ? "active" : "default"),
-        className: cs(kv.indicator, !e.prebattleSwitchDisabled && kv.indicator__inactive),
+        className: cs(Sv.indicator, !e.prebattleSwitchDisabled && Sv.indicator__inactive),
       }),
     ],
   });
@@ -8299,8 +8299,8 @@ var bb = "Animated_90a4d541",
   wb = "battleBoosterReplace",
   Nb = "battleBooster",
   Ib = "equipmentPlus",
-  Sb = "builtInEquipment",
-  kb = "equipmentModernized";
+  kb = "builtInEquipment",
+  Sb = "equipmentModernized";
 function Pb(e) {
   switch (e) {
     case Fe.extraSmall:
@@ -8331,11 +8331,11 @@ function Mb(e) {
       return Ae.directiveBooster;
     case wb:
       return Ae.directiveSubstitute;
-    case Sb:
+    case kb:
       return Ae.builtInEquipment;
     case Ib:
       return Ae.improved;
-    case kb:
+    case Sb:
       return Ae.experimental;
     case yb:
     case Cb:
@@ -8506,7 +8506,7 @@ var Ob = Rs(function ({ children: e, itemPosition: t, itemWidth: a, onDrop: s })
   Gb = "UnmountButton_image_5b9a272b";
 function Ub({ onClick: e, className: t }) {
   const [a, s] = (0, Cn.useState)(!1),
-    n = St();
+    n = kt();
   return (0, nr.jsx)("div", {
     onMouseEnter: function (e) {
       (n.play("mouse-enter", { target: "loadout-panel:slot:unmount-button", original: e }), s(!0));
@@ -8533,11 +8533,11 @@ var Kb = "Consumable_98851be5",
   tx = "Consumable_unmountButton_43731923",
   ax = "Consumable_unmountButton__hidden_250735bc",
   sx = "Consumable_selectedOverlay_fd3226e6",
-  nx = ks.resolve("strings"),
-  rx = ks.resolve("aliases"),
+  nx = Ss.resolve("strings"),
+  rx = Ss.resolve("aliases"),
   ix = `${zf}DropArea`,
   ox = Rs(function ({ slot: e, disabled: t, selected: a, withKey: s = !1, onClick: n }) {
-    const r = St(),
+    const r = kt(),
       { model: i, controls: o } = Jv(),
       l = Nv().model,
       c = dt(),
@@ -8873,9 +8873,9 @@ var vx = "Specialization_border_1d1ddf4e",
   wx = "Specialization_icon_453cdca5",
   Nx = "Specialization_base__disabled_12d00a3f",
   Ix = "Specialization_base__active_12d00a3f",
-  Sx = Ss("Specialization"),
-  kx = Rs(function ({ specialization: e, className: t, id: a, disabled: s = !1 }) {
-    const n = St(),
+  kx = ks("Specialization"),
+  Sx = Rs(function ({ specialization: e, className: t, id: a, disabled: s = !1 }) {
+    const n = kt(),
       { controls: r } = Nv(),
       i = dt().location.includes("/loadout"),
       o = e.dynamic && i,
@@ -8893,7 +8893,7 @@ var vx = "Specialization_border_1d1ddf4e",
       "hangarSlotSpec",
       (0, Cn.useMemo)(() => [e.type, e.dynamic, e.clickable], [e]),
     );
-    return (0, nr.jsxs)(Sx, {
+    return (0, nr.jsxs)(kx, {
       className: cs(xx, o && yx, s && Nx, e.active && Ix, t),
       onClick: function (e) {
         (c.onClick(),
@@ -8925,7 +8925,7 @@ var vx = "Specialization_border_1d1ddf4e",
   Tx = "Equipment_unmountButton_7376ff29",
   Dx = "Equipment_unmountButton__hidden_f9f46440",
   Bx = "Equipment_selectedOverlay_866b638b",
-  Ox = ks.resolve("aliases"),
+  Ox = Ss.resolve("aliases"),
   Vx = `${Hf}DropArea`;
 function Rx(e) {
   switch (e) {
@@ -8946,7 +8946,7 @@ var Hx = Rs(function ({ slot: e, disabled: t, selected: a, onClick: s }) {
       { controls: r } = nb(),
       { model: i } = Nv(),
       [o, l] = (0, Cn.useState)(!1),
-      c = St(),
+      c = kt(),
       d = dt(),
       u = Db(),
       m = sa(
@@ -9047,7 +9047,7 @@ var Hx = Rs(function ({ slot: e, disabled: t, selected: a, onClick: s }) {
             }),
           }),
           e.specialization &&
-            (0, nr.jsx)(kx, {
+            (0, nr.jsx)(Sx, {
               specialization: e.specialization,
               className: Ax,
               id: e.intCD,
@@ -9070,7 +9070,7 @@ var Hx = Rs(function ({ slot: e, disabled: t, selected: a, onClick: s }) {
   Zx = "Instuction_selectedOverlay_f19fc301",
   Gx = "Instuction_item_e5ebc3b8",
   Ux = "Instuction_item__withAttention_80199f58",
-  Kx = ks.resolve("aliases");
+  Kx = Ss.resolve("aliases");
 function Xx(e) {
   switch (e) {
     case Yf:
@@ -9099,7 +9099,7 @@ var Yx = Rs(({ slot: e, disabled: t, selected: a, onClick: s }) => {
     const { model: n, controls: r } = ob(),
       i = a ? n.computes.instructionById(e.intCD) : e,
       [o, l] = (0, Cn.useState)(!1),
-      c = St(),
+      c = kt(),
       d = dt(),
       u = sa(
         { value: Fe.small },
@@ -9209,7 +9209,7 @@ function gy({ mechanic: e, className: t }) {
     },
   });
 }
-var fy = ks.resolve("aliases"),
+var fy = Ss.resolve("aliases"),
   vy = "small",
   by = "x64x64",
   xy = "medium",
@@ -9252,7 +9252,7 @@ var fy = ks.resolve("aliases"),
       ),
       _ = t ? o.computes.shell(r.id) : r;
     if (!_) return;
-    const h = ks.resolve("strings").readOrEmpty(`readable_key_names.${r.keyName}`),
+    const h = Ss.resolve("strings").readOrEmpty(`readable_key_names.${r.keyName}`),
       g = a && h && "KEY_NONE" !== r.keyName;
     return (0, nr.jsxs)("div", {
       ...d,
@@ -9333,7 +9333,7 @@ function Ny({
   onClick: i,
 }) {
   const [o, l] = (0, Cn.useState)(!1),
-    c = St(),
+    c = kt(),
     d = sa(
       { value: Fe.small },
       { large: { value: Fe.large }, extraLarge: { value: Fe.extraLarge } },
@@ -9425,18 +9425,18 @@ var Iy = Rs(function ({
       }),
     });
   }),
-  Sy = "Divider_44f20b3a",
-  ky = "Divider_dividerImage_9dcc5cfc";
+  ky = "Divider_44f20b3a",
+  Sy = "Divider_dividerImage_9dcc5cfc";
 function Py({ className: e }) {
   return (0, nr.jsx)("div", {
-    className: cs(Sy, e),
+    className: cs(ky, e),
     children: (0, nr.jsx)(_s, {
       path: "loadout.panel_border",
       repeat: "repeat",
       fit: "auto",
       width: "100%",
       height: "100%",
-      className: ky,
+      className: Sy,
     }),
   });
 }
@@ -9540,7 +9540,7 @@ var Ey = Rs(function ({
         })
       : null;
   }),
-  Hy = ks.resolve("aliases"),
+  Hy = Ss.resolve("aliases"),
   $y = { [$f]: Iy, default: Ry },
   zy = { [zf]: ox, [Ff]: Yx, [Hf]: Hx },
   Fy = (e) => ({ options: { rootId: e } }),
@@ -9586,7 +9586,7 @@ var Gy = Rs(function ({ index: e, vehicleId: t, groupIndex: a, onSectionClick: s
         const a = r.computes.isSectionSelected(e);
         (!s && a) || s?.(e, t);
       }),
-      c = St(),
+      c = kt(),
       d = (0, Cn.useMemo)(() => {
         function e() {
           c.play("swipe", { target: "loadout-panel:ammunition_panel:section" });
@@ -9651,7 +9651,7 @@ var Gy = Rs(function ({ index: e, vehicleId: t, groupIndex: a, onSectionClick: s
             {
               className: Ty,
               children: [
-                ka(
+                Sa(
                   r,
                   (e) => e.slots.length > 0,
                   (e, s) =>
@@ -9713,7 +9713,7 @@ var Gy = Rs(function ({ index: e, vehicleId: t, groupIndex: a, onSectionClick: s
     }),
   Jy = "DogPaw_84e7ee48",
   Qy = "DogPaw_icon_5261d625",
-  eC = ks.resolve("strings");
+  eC = Ss.resolve("strings");
 function tC({ onClick: e }) {
   const t = bs({ body: eC.readOrEmpty("crew.dogPawTooltip.details.body") });
   return (0, nr.jsx)(n, {
@@ -9775,7 +9775,7 @@ function _C({ skinId: e, customizedSkin: t }) {
       : `tankmen.icons.big.${xt(e)}`
     : "loadout.crew.no_tankman_red";
 }
-var hC = Ss("Tankman", lC.base),
+var hC = ks("Tankman", lC.base),
   gC = (0, Cn.memo)(function ({
     skinId: e,
     customizedSkin: t,
@@ -9831,17 +9831,17 @@ var hC = Ss("Tankman", lC.base),
   wC = "Slot_statusOverlay_e74c1f89",
   NC = "Slot_statusIcon_fe4620f1",
   IC = "Slot_statusIcon__role_3c0a5c22",
-  SC = "Slot_statusIcon__untrainedPenalty_2d3a3a74",
-  kC = "Slot_retrainingProgress_10d488a1",
+  kC = "Slot_statusIcon__untrainedPenalty_2d3a3a74",
+  SC = "Slot_retrainingProgress_10d488a1",
   PC = "Slot_newPerk_88d9a967",
   EC = "Slot_newPerk__disabled_1d609e12",
   MC = "Slot_glowBg_e3e687b5",
-  LC = ks.resolve("strings"),
+  LC = Ss.resolve("strings"),
   AC = "DogSlot",
-  TC = Ss("DogSlot", cs(fC, xC), { variants: { state: { true: bC } } }),
+  TC = ks("DogSlot", cs(fC, xC), { variants: { state: { true: bC } } }),
   DC = Rs(function () {
     const [e, t] = (0, Cn.useState)(!1),
-      a = St(),
+      a = kt(),
       { model: s, controls: n } = tu(),
       r = s.computes.disabled(),
       i = s.vehicleNation.get(),
@@ -9991,7 +9991,7 @@ function VC({ role: e = "", className: t }) {
 var RC = "NewPerk_count_dccb920a",
   HC = "NewPerk_iconPlus_4dc7d532",
   $C = "NewPerk_iconGlow_2e9bc817",
-  zC = Ss("NewPerk", "NewPerk_2d8eff13");
+  zC = ks("NewPerk", "NewPerk_2d8eff13");
 function FC({ className: e, count: t, baseRef: a }) {
   return (0, nr.jsxs)(zC, {
     ref: a,
@@ -10026,8 +10026,8 @@ var WC = (e) =>
   ZC = "RetrainingProgress_background_accc6ddf",
   GC = "RetrainingProgress_content_b4685fd0",
   UC = "RetrainingProgress_icon_f4b2dc6",
-  KC = ks.resolve("intl"),
-  XC = Ss("RetrainingProgress", qC);
+  KC = Ss.resolve("intl"),
+  XC = ks("RetrainingProgress", qC);
 function YC({ value: e, className: t }) {
   const a = KC.formatNumber("integral", 100 * e);
   return (0, nr.jsxs)(XC, {
@@ -10053,8 +10053,8 @@ var JC = {
     perk: "TankmanLevel_perk_390beec8",
     borderImage__noise: "TankmanLevel_borderImage__noise_e53df2b",
   },
-  QC = ks.resolve("images"),
-  ej = Ss("Perk");
+  QC = Ss.resolve("images"),
+  ej = ks("Perk");
 function tj({ value: e, main: t, ...a }) {
   const s = t ? "components.button.default_border_pattern_radius_4" : "loadout.crew.dashed_border";
   return (0, nr.jsxs)(ej, {
@@ -10069,7 +10069,7 @@ function tj({ value: e, main: t, ...a }) {
     ],
   });
 }
-var aj = Ss("TankmanLevel", JC.base);
+var aj = ks("TankmanLevel", JC.base);
 function sj({ perkValue: e, bonusPerkValue: t }) {
   return (0, nr.jsxs)(aj, {
     children: [
@@ -10136,7 +10136,7 @@ var nj = (e) =>
         }),
       ],
     }),
-  rj = ks.resolve("views"),
+  rj = Ss.resolve("views"),
   ij = "CrewSlot",
   oj = {
     retrainingProgress: "retrainingProgress",
@@ -10154,7 +10154,7 @@ var lj = Rs(function ({
     tooltipShowDelay: i,
   }) {
     const [o, l] = (0, Cn.useState)(!1),
-      c = St(),
+      c = kt(),
       { model: d, controls: u } = tu(),
       m = d.computes.disabled(),
       p = -1 !== t,
@@ -10245,13 +10245,13 @@ var lj = Rs(function ({
                   return (0, nr.jsxs)(nr.Fragment, {
                     children: [
                       (0, nr.jsx)("div", { className: wC }),
-                      (0, nr.jsx)(nj, { className: cs(NC, SC) }),
+                      (0, nr.jsx)(nj, { className: cs(NC, kC) }),
                     ],
                   });
                 case oj.retrainingProgress:
                   return (0, nr.jsx)(YC, {
                     value: _.currentVehicleSkillsEfficiency,
-                    className: kC,
+                    className: SC,
                   });
                 case oj.withPerks:
                   return (0, nr.jsx)(sj, { perkValue: _.perks.length, bonusPerkValue: g });
@@ -10267,7 +10267,7 @@ var lj = Rs(function ({
   dj = "CrewPanel_borderImage_50acd0ba",
   uj = "CrewPanel_slots_57c050b6",
   mj = "CrewPanel_slotWrapper_acbcfc00",
-  pj = Ss("CrewPanel", "CrewPanel_82d22bfe"),
+  pj = ks("CrewPanel", "CrewPanel_82d22bfe"),
   _j = Rs(
     (0, Cn.forwardRef)(function (e, t) {
       const [a, s] = (0, Cn.useState)(!1),
@@ -10324,7 +10324,7 @@ var lj = Rs(function ({
     }),
   ),
   hj = { "crew-slot-click": Bt("yes1"), "dog-slot-click": Bt("rudy") },
-  gj = Ss("LoadoutPanel"),
+  gj = ks("LoadoutPanel"),
   fj = (0, Cn.forwardRef)(function ({ children: e, className: t, ...a }, s) {
     return (0, nr.jsx)(gj, { className: t, ref: s, ...a, children: e });
   }),
@@ -10376,15 +10376,15 @@ var [yj, Cj] = ds()(
   wj = "AbilitySlot_slot_1ab0f1c8",
   Nj = "AbilitySlot_icon_df0d34df",
   Ij = "AbilitySlot_rank_66378d47",
-  Sj = "AbilitySlot_rank__disabled_29c0b2b7",
-  kj = "AbilitySlot_unmountButton_899c51e",
+  kj = "AbilitySlot_rank__disabled_29c0b2b7",
+  Sj = "AbilitySlot_unmountButton_899c51e",
   Pj = "AbilitySlot_hotKeyLabel_62f1366",
   Ej = "AbilitySlot_text_4c669b80",
   Mj = "AbilitySlot_categoryWrapper_22b1884c",
   Lj = "AbilitySlot_categoryIcon_9ed01598",
-  Aj = ks.resolve("aliases"),
-  Tj = ks.resolve("views"),
-  Dj = ks.resolve("strings"),
+  Aj = Ss.resolve("aliases"),
+  Tj = Ss.resolve("views"),
+  Dj = Ss.resolve("strings"),
   Bj = Rs(function ({
     idx: e,
     intCD: t,
@@ -10395,7 +10395,7 @@ var [yj, Cj] = ds()(
   }) {
     const { model: i } = Nv(),
       { model: o } = Cj(),
-      l = St(),
+      l = kt(),
       c = dt(),
       [d, u] = (0, Cn.useState)(!1),
       m = i.computes.isSlotSelected(e, Wf),
@@ -10404,7 +10404,7 @@ var [yj, Cj] = ds()(
       h = o.modeState.get() === $s,
       g = i.disabled.get() || _ || h,
       f = Dj.readOrEmpty(`readable_key_names.${a}`),
-      v = k(
+      v = S(
         _ || h
           ? {
               resId: Aj.read((e) => e.hangar.shared.Loadout("resId")),
@@ -10429,7 +10429,7 @@ var [yj, Cj] = ds()(
               args: { intCD: t, tooltipId: vj },
             },
       ),
-      b = k({
+      b = S({
         resId: Aj.read((e) => e.frontline.loadout.BattleAbilities("resId")),
         contentId: Tj.read((e) => e.frontline.mono.lobby.tooltips.skill_order_tooltip("resId")),
       }),
@@ -10479,9 +10479,9 @@ var [yj, Cj] = ds()(
             style: {
               backgroundImage: `url(${R.images.frontline.gui.maps.icons.ranksSilver.c_24x24.$dyn(`rank_${r.rank}`)})`,
             },
-            className: cs(Ij, g && Sj),
+            className: cs(Ij, g && kj),
           }),
-        !r.mounted && (0, nr.jsx)(Ub, { onClick: () => s(r.intCD, e), className: kj }),
+        !r.mounted && (0, nr.jsx)(Ub, { onClick: () => s(r.intCD, e), className: Sj }),
         (0, nr.jsx)("div", {
           ...b,
           className: Mj,
@@ -10548,7 +10548,7 @@ var [yj, Cj] = ds()(
   Gj = "LoadoutPanel_ammunitionPanel_baf41791",
   Uj = new ts().addWithProps(ra, { overrides: hj }),
   Kj = { [Ff]: Mf.instructions, [zf]: Mf.consumables, [Hf]: Mf.equipments, [$f]: Mf.shells },
-  Xj = ks.resolve("aliases").read((e) => e.hangar.shared.Crew("resId")),
+  Xj = Ss.resolve("aliases").read((e) => e.hangar.shared.Crew("resId")),
   Yj = { rootId: Xj };
 function Jj({ screenModeEnabled: e, className: t }) {
   const a = dt(),
@@ -10585,7 +10585,7 @@ function Jj({ screenModeEnabled: e, className: t }) {
     }),
   });
 }
-var Qj = ks.resolve("aliases"),
+var Qj = Ss.resolve("aliases"),
   ew = "small",
   tw = "large",
   aw = "vehicle",
@@ -10673,7 +10673,7 @@ var bw = be({
     state: oe(),
     counter: pe(),
     stateReason: Me(oe()),
-    researchItems: Me(S(oe())),
+    researchItems: Me(k(oe())),
     params: Me(
       be({
         tooltipKey: Me(oe()),
@@ -10752,17 +10752,17 @@ var bw = be({
   ww = "MenuButton_base__disabled_2d840da1",
   Nw = "MenuButton_base__opened_d9d84dd",
   Iw = "MenuButton_background_80afe673",
-  Sw = "MenuButton_background__hidden_a0ead688",
-  kw = "MenuButton_overlay_fdbd550d",
+  kw = "MenuButton_background__hidden_a0ead688",
+  Sw = "MenuButton_overlay_fdbd550d",
   Pw = "MenuButton_arrow_5a0b183c",
   Ew = "MenuButton_icon_e994a077",
-  Mw = Ss("MenuButton", {
+  Mw = ks("MenuButton", {
     element: "div",
     className: "MenuButton_3f57027c",
     cva: { variants: { state: { [hw]: ww, opened: Nw } } },
   }),
-  Lw = ks.resolve("strings"),
-  Aw = ks.resolve("views"),
+  Lw = Ss.resolve("strings"),
+  Aw = Ss.resolve("views"),
   Tw = Rs(function ({
     type: e,
     opened: t,
@@ -10778,7 +10778,7 @@ var bw = be({
   }) {
     const u = jw(),
       [m, p] = (0, Cn.useState)(!1),
-      _ = St(),
+      _ = kt(),
       h = Ba(t),
       { model: g } = yw(),
       f = u.model.vehicleMenu?.[e]?.get(),
@@ -10790,7 +10790,7 @@ var bw = be({
       w = (e === sw && s) || y ? _w : a,
       N = y ? _w : w,
       I = bs({ body: Lw.readOrEmpty("crew_operations.return.error.noPrevious") }),
-      S = v(
+      k = v(
         "simple",
         (0, Cn.useMemo)(
           () => ({
@@ -10806,23 +10806,23 @@ var bw = be({
     (0, Cn.useEffect)(() => {
       t && !1 === h && _.play("expand", { target: "vehicle-menu-widget:button" });
     }, [t, h, _]);
-    const k = y && e === sw && "battleNeeded" === x ? I : y ? void 0 : S;
+    const S = y && e === sw && "battleNeeded" === x ? I : y ? void 0 : k;
     return (0, nr.jsxs)(Mw, {
       ...d,
-      ...k,
+      ...S,
       state: C,
       onMouseEnter: function (e) {
-        (k?.onMouseEnter(e),
+        (S?.onMouseEnter(e),
           y ||
             (_.play("mouse-enter", { target: "vehicle-menu-widget:button", original: e }),
             p(!0),
             i?.(e)));
       },
       onMouseLeave: function () {
-        (p(!1), k?.onMouseLeave());
+        (p(!1), S?.onMouseLeave());
       },
       onClick: function (t) {
-        (k?.onClick(),
+        (S?.onClick(),
           y || (_.play("click", { target: "vehicle-menu-widget:button", original: t }), o(e)));
       },
       "data-test-id": e,
@@ -10833,16 +10833,16 @@ var bw = be({
             children: [
               (0, nr.jsx)(_s, {
                 path: `hangar.vehicleMenu.${j}.btn_${w}`,
-                className: cs(Iw, (m || t) && Sw, l?.background),
+                className: cs(Iw, (m || t) && kw, l?.background),
               }),
               (0, nr.jsx)(_s, {
                 path: `hangar.vehicleMenu.${j}.btn_${w}_opened`,
-                className: cs(Iw, !t && Sw, l?.backgroundOpened),
+                className: cs(Iw, !t && kw, l?.backgroundOpened),
               }),
               !t &&
                 (0, nr.jsx)(_s, {
                   path: `hangar.vehicleMenu.${j}.btn_${w}_hover`,
-                  className: cs(Iw, !m && Sw, l?.backgroundHovered),
+                  className: cs(Iw, !m && kw, l?.backgroundHovered),
                 }),
             ],
           }),
@@ -10860,7 +10860,7 @@ var bw = be({
         y &&
           (0, nr.jsx)(_s, {
             path: `hangar.vehicleMenu.${j}.btn_disabled`,
-            className: cs(kw, l?.overlay),
+            className: cs(Sw, l?.overlay),
           }),
       ],
     });
@@ -10890,14 +10890,14 @@ var bw = be({
     hotKeyContent: "MenuItem_hotKeyContent_8c7bbb86",
     warningIcon: "MenuItem_warningIcon_9a54d136",
   },
-  Bw = ks.resolve("strings"),
-  Ow = ks.resolve("intl"),
+  Bw = Ss.resolve("strings"),
+  Ow = Ss.resolve("intl"),
   Vw = (e) => {
     const [t, a] = rs(Ht(es(e), Va()), ["h", "m"]);
     return `${((e) => String(Math.max(parseInt(e), 0)).padStart(2, "0"))(t)}:${((e) => String(Math.max(parseInt(e, 10) || 0, 1)).padStart(2, "0"))(a)}`;
   },
   Rw = Rs(function ({ id: e, size: t = ew, researchItem: a, onClick: s }) {
-    const n = St(),
+    const n = kt(),
       { model: r } = yw(),
       { state: i, stateReason: o, counter: l, params: c } = r.computes.getMenuItem(e),
       d = Nt(t, "upscale"),
@@ -11026,7 +11026,7 @@ var bw = be({
       r = s.opened.get(),
       i = s.screenID.get(),
       o = s.computes.researchItem(),
-      l = ks.resolve("strings"),
+      l = Ss.resolve("strings"),
       c = bs({ body: l.readOrEmpty("crew_operations.return.error.noPrevious") }),
       d = tt(r, {
         from: { opacity: 0 },
@@ -11112,7 +11112,7 @@ var bw = be({
   eN = new Set(["text", "search", "url", "tel", "email", "password", "number"]);
 var tN = Rs(function () {
     const e = jw().model.vehicleMenu,
-      t = St(),
+      t = kt(),
       { model: a, controls: s } = yw(),
       n = a.opened.get();
     (Y(n ? "Escape" : "NONE", s.close), Y(n ? "Space" : "NONE", s.close));
@@ -11155,7 +11155,7 @@ var tN = Rs(function () {
     menu__crew: "VehicleMenuWidget_menu__crew_9d49d2d3",
     menu__customization: "VehicleMenuWidget_menu__customization_7cda5bdd",
   },
-  sN = { rootId: ks.resolve("aliases").read((e) => e.hangar.shared.KeyBindings("resId")) },
+  sN = { rootId: Ss.resolve("aliases").read((e) => e.hangar.shared.KeyBindings("resId")) },
   nN = Rs(function ({ className: e, keyBindingsProviderOptions: t = sN }) {
     const { model: a, controls: s } = yw(),
       n = a.screenID.get(),
@@ -11234,7 +11234,7 @@ var tN = Rs(function () {
   }),
   rN = "VehicleMenu_menu_2b35ec",
   iN = "VehicleMenu_menu__screenMode_bf623a9b",
-  oN = { rootId: ks.resolve("aliases").read((e) => e.hangar.shared.VehicleMenu("resId")) };
+  oN = { rootId: Ss.resolve("aliases").read((e) => e.hangar.shared.VehicleMenu("resId")) };
 function lN({ className: e, screenModeEnabled: t }) {
   return (0, nr.jsx)(xw, {
     options: oN,
@@ -11246,7 +11246,7 @@ var cN = (e) => {
     a = (0, Cn.useRef)({ ...e.args }),
     s = (0, Cn.useRef)(null),
     n = ja(),
-    r = k({ ...e, showDelay: 0, args: a.current });
+    r = S({ ...e, showDelay: 0, args: a.current });
   return {
     containerRef: s,
     tooltipProps: {
@@ -11305,10 +11305,10 @@ function IN(e) {
   }
   return t;
 }
-function SN(e) {
+function kN(e) {
   return -(Math.cos(Math.PI * e) - 1) / 2;
 }
-var kN = { duration: 400, easing: SN };
+var SN = { duration: 400, easing: kN };
 new Map([
   [yN, { position: 0 }],
   [
@@ -11363,23 +11363,23 @@ new Map([
     },
   ],
 ]);
-var PN = { duration: 200, easing: SN };
+var PN = { duration: 200, easing: kN };
 function EN(e, t, a, s = !0) {
   const n = a.getCardAnimationProps(e),
     r = a.getCardRow(e),
     i = a.getMaxCardRow(t),
     o = a.getVisibleRowsAmount(),
-    l = s ? kN.duration : 0,
+    l = s ? SN.duration : 0,
     c = t.includes(e);
   return {
     from: c ? { ...n, opacity: 0 } : {},
     to: n,
     delay: c ? l + Math.max(100 * (o - i), 0) : Math.max(100 * (o - i - r), 0),
-    config: kN,
+    config: SN,
   };
 }
 function MN(e) {
-  return { to: { x: $(nt(e) + 100), opacity: 0 }, config: { duration: 300, easing: SN } };
+  return { to: { x: $(nt(e) + 100), opacity: 0 }, config: { duration: 300, easing: kN } };
 }
 function LN(e, t, a) {
   const s = e.dataset.id,
@@ -11757,7 +11757,7 @@ function zN({
         let l = 0;
         return (
           o !== i && (0 === n.getPropGoalValue("x") && (o > i ? t++ : a++), (l = o > i ? t : a)),
-          { delay: e ? 0 : 100 * l, to: r, immediate: e, config: kN }
+          { delay: e ? 0 : 100 * l, to: r, immediate: e, config: SN }
         );
       });
     }),
@@ -12324,7 +12324,7 @@ function hI({ registerAnimation: e, id: t, animName: a, elementId: s = t, config
     [t, a, n, s, e],
   );
 }
-var gI = { from: { opacity: 0 }, config: { duration: 400, easing: SN } },
+var gI = { from: { opacity: 0 }, config: { duration: 400, easing: kN } },
   fI = { from: { opacity: 0 }, to: { opacity: 1 } };
 var vI = {
     "media-wrapper": "BorderAnimation_media-wrapper_389afe4",
@@ -12365,24 +12365,24 @@ var vI = {
       })
     );
   }),
-  yI = { to: { val: 100 }, config: { duration: 1e3, easing: SN } },
+  yI = { to: { val: 100 }, config: { duration: 1e3, easing: kN } },
   CI = { from: { val: 100 }, to: { val: 0 } };
 function jI(e) {
   return `brightness(${1 + e / 100}) contrast(${1 + (e / 100) * 0.5})`;
 }
 var wI = "bgContrastAnimation";
-var NI = { from: { val: 0 }, config: { duration: 600, easing: SN } },
+var NI = { from: { val: 0 }, config: { duration: 600, easing: kN } },
   II = { from: { val: 0 }, to: { val: 50 } };
-function SI(e) {
+function kI(e) {
   return `${50 + e}% ${50 + e}%`;
 }
-var kI = "maskAnimation";
+var SI = "maskAnimation";
 var PI = "maskAppearAnimationHook",
-  EI = { [wI]: {}, [kI]: {}, [bI]: {} };
+  EI = { [wI]: {}, [SI]: {}, [bI]: {} };
 function MI({ id: e, elementId: t, onComplete: a }) {
   const { startGroupAnimation: s, registerAnimation: n, emitter: r } = UN(),
     i = (0, Cn.useCallback)(() => r.trigger(KN(e, wI, t), e, t), [t, r, e]),
-    o = (0, Cn.useCallback)(() => r.trigger(KN(e, kI, t), e, t), [t, r, e]),
+    o = (0, Cn.useCallback)(() => r.trigger(KN(e, SI, t), e, t), [t, r, e]),
     l = (0, Cn.useCallback)(
       async ({ immediate: s }) => {
         (await a?.(s), r.trigger(KN(e, PI, t), e, t));
@@ -12419,7 +12419,7 @@ function MI({ id: e, elementId: t, onComplete: a }) {
       config: (0, Cn.useMemo)(() => ({ start: p, skip: Z }), [p]),
     }),
     hI({ id: e, elementId: t, registerAnimation: n, animName: wI, config: d }),
-    hI({ id: e, elementId: t, registerAnimation: n, animName: kI, config: m }),
+    hI({ id: e, elementId: t, registerAnimation: n, animName: SI, config: m }),
     (0, Cn.useMemo)(() => ({ maskPosition: u, backgroundContrast: c }), [c, u])
   );
 }
@@ -12467,7 +12467,7 @@ var LI = "battlePassCardId",
   KI = "x160x160",
   XI = "x240x240",
   YI = "x320x320",
-  JI = ks.resolve("images"),
+  JI = Ss.resolve("images"),
   QI = function ({
     iconSize: e,
     shieldSize: t,
@@ -12513,10 +12513,10 @@ var LI = "battlePassCardId",
       ],
     });
   };
-function eS(e, t) {
+function ek(e, t) {
   const [a, s] = He(() => ({
       from: { opacity: 0 },
-      config: { duration: 400, easing: SN },
+      config: { duration: 400, easing: kN },
       onRest: t,
     })),
     n = Pt(({ immediate: t }) => {
@@ -12524,7 +12524,7 @@ function eS(e, t) {
     });
   return { spring: a, config: (0, Cn.useMemo)(() => ({ start: n, skip: Z }), [n]) };
 }
-var [tS, aS] = ds()(
+var [tk, ak] = ds()(
     ({ observableModel: e }) => {
       const t = {
           ...e.primitives([
@@ -12556,23 +12556,23 @@ var [tS, aS] = ds()(
       widgetUnmounted: e.createCallbackNoArgs("onWidgetUnmounted"),
     }),
   ),
-  sS = "Emblem_6b62c957",
-  nS = "Emblem_base__paused_e22ad928",
-  rS = "Emblem_4187dd4f",
-  iS = "emblemFadeInAnimation",
-  oS = Rs(function ({ id: e, elementId: t, className: a }) {
-    const { model: s } = aS(),
+  sk = "Emblem_6b62c957",
+  nk = "Emblem_base__paused_e22ad928",
+  rk = "Emblem_4187dd4f",
+  ik = "emblemFadeInAnimation",
+  ok = Rs(function ({ id: e, elementId: t, className: a }) {
+    const { model: s } = ak(),
       n = s.chapterID.get(),
       r = s.isBought.get(),
       { registerAnimation: i, emitter: o } = UN(),
-      { spring: l, config: c } = eS(
+      { spring: l, config: c } = ek(
         0,
-        Pt(() => o.trigger(KN(e, iS, t), e, t)),
+        Pt(() => o.trigger(KN(e, ik, t), e, t)),
       );
     return (
-      hI({ id: e, elementId: t, registerAnimation: i, animName: iS, config: c }),
+      hI({ id: e, elementId: t, registerAnimation: i, animName: ik, config: c }),
       (0, nr.jsx)("div", {
-        className: cs(sS, s.isPaused.get() && nS, a),
+        className: cs(sk, s.isPaused.get() && nk, a),
         children: (0, nr.jsx)(A.div, {
           style: l,
           children: (0, nr.jsx)(QI, {
@@ -12581,40 +12581,40 @@ var [tS, aS] = ds()(
             containerSize: TI,
             bpPurchased: r,
             chapterID: n,
-            className: rS,
+            className: rk,
           }),
         }),
       })
     );
   });
-function lS(e, t) {
+function lk(e, t) {
   const { readyForAnimations: a } = mN();
   (0, Cn.useEffect)(() => {
     if (a.current) return e();
   }, t);
 }
-var cS = ks.resolve("images"),
-  dS = ks.resolve("views"),
-  uS = ks.resolve("strings"),
-  mS = ks.resolve("aliases"),
-  pS = ks.resolve("videos"),
-  _S = (0, Cn.createContext)(!1);
-function hS(e, t, a, s, n, r) {
+var ck = Ss.resolve("images"),
+  dk = Ss.resolve("views"),
+  uk = Ss.resolve("strings"),
+  mk = Ss.resolve("aliases"),
+  pk = Ss.resolve("videos"),
+  _k = (0, Cn.createContext)(!1);
+function hk(e, t, a, s, n, r) {
   const i = `${t}${a ? "_extra" : ""}${s ? "_holiday" : ""}${r ? "_small" : ""}`;
   return { seasonPath: `${e}.season_${n}.${i}`, defaultPath: `${e}.default.${i}` };
 }
-function gS(e, t, a, s, n) {
-  const { seasonPath: r, defaultPath: i } = hS("battlePass.widget.background", e, t, a, s, n);
-  return cS.has(r) ? r : i;
+function gk(e, t, a, s, n) {
+  const { seasonPath: r, defaultPath: i } = hk("battlePass.widget.background", e, t, a, s, n);
+  return ck.has(r) ? r : i;
 }
-function fS() {
-  return (0, Cn.useContext)(_S);
+function fk() {
+  return (0, Cn.useContext)(_k);
 }
-function vS(e, t) {
+function vk(e, t) {
   return e && (t === dI.Intro || t === dI.Progression);
 }
-var bS = Rs(function ({ useAdaptiveFormat: e = !0 }) {
-    const { model: t } = aS(),
+var bk = Rs(function ({ useAdaptiveFormat: e = !0 }) {
+    const { model: t } = ak(),
       a = dN(),
       s = a ? ot.format.compact : ot.format.default,
       n = t.timeLeft.get();
@@ -12624,17 +12624,17 @@ var bS = Rs(function ({ useAdaptiveFormat: e = !0 }) {
       n,
     );
   }),
-  xS = "Labels_e5066e86",
-  yS = "Labels_title_d94e713e",
-  CS = "Labels_subTitleWrapper_79f4007c",
-  jS = "Labels_subTitleItem_b9fe06e5",
-  wS = "Labels_subTitle_c850cc3d",
-  NS = "Labels_lockIcon_c336fd47",
-  IS = "Labels_descriptionText_1d25fcad",
-  SS = ks.resolve("strings"),
-  kS = "labelsFadeInAnimation",
-  PS = Rs(function ({ id: e, elementId: t, className: a }) {
-    const { model: s } = aS(),
+  xk = "Labels_e5066e86",
+  yk = "Labels_title_d94e713e",
+  Ck = "Labels_subTitleWrapper_79f4007c",
+  jk = "Labels_subTitleItem_b9fe06e5",
+  wk = "Labels_subTitle_c850cc3d",
+  Nk = "Labels_lockIcon_c336fd47",
+  Ik = "Labels_descriptionText_1d25fcad",
+  kk = Ss.resolve("strings"),
+  Sk = "labelsFadeInAnimation",
+  Pk = Rs(function ({ id: e, elementId: t, className: a }) {
+    const { model: s } = ak(),
       n =
         ((r = s.hasExtraChapter.get()),
         (i = s.isHoliday.get()),
@@ -12647,29 +12647,29 @@ var bS = Rs(function ({ useAdaptiveFormat: e = !0 }) {
               : "select_chapter");
     var r, i;
     const { registerAnimation: o, emitter: l } = UN(),
-      { spring: c, config: d } = eS(
+      { spring: c, config: d } = ek(
         1e3,
-        Pt(() => l.trigger(KN(e, kS, t), e, t)),
+        Pt(() => l.trigger(KN(e, Sk, t), e, t)),
       );
-    hI({ id: e, elementId: t, registerAnimation: o, animName: kS, config: d });
+    hI({ id: e, elementId: t, registerAnimation: o, animName: Sk, config: d });
     const {
       labelStyle: u,
       countdownStyle: m,
       lockStyle: p,
     } = (function () {
-      const e = fS(),
-        { model: t } = aS(),
+      const e = fk(),
+        { model: t } = ak(),
         a = t.widgetState.get(),
         s = t.isPaused.get(),
-        n = vS(e, a),
+        n = vk(e, a),
         r = (0, Cn.useRef)(n),
         i = (0, Cn.useRef)(s),
-        o = { duration: 400, easing: SN },
+        o = { duration: 400, easing: kN },
         [l, c] = He(() => ({ from: { opacity: s ? 1 : 0, x: 0 }, config: o })),
         [d, u] = He(() => ({ from: { opacity: n && !s ? 1 : 0, x: 0 }, config: o })),
         [m, p] = He(() => ({ from: { opacity: n || s ? 0 : 1, x: 0 }, config: o }));
       return (
-        lS(() => {
+        lk(() => {
           if (i.current === s && r.current === n) return;
           const e = (e, t) => (e ? c : t ? u : p),
             t = e(i.current, r.current),
@@ -12692,34 +12692,34 @@ var bS = Rs(function ({ useAdaptiveFormat: e = !0 }) {
     return s.widgetState.get() !== dI.Progression || s.isPaused.get()
       ? (0, nr.jsxs)(A.div, {
           style: c,
-          className: cs(xS, a),
+          className: cs(xk, a),
           children: [
             (0, nr.jsx)("div", {
-              className: yS,
-              children: SS.read("user_missions.battle_pass_widget.title"),
+              className: yk,
+              children: kk.read("user_missions.battle_pass_widget.title"),
             }),
             (0, nr.jsxs)("div", {
-              className: CS,
+              className: Ck,
               children: [
                 (0, nr.jsxs)(A.div, {
                   style: p,
-                  className: cs(jS, wS),
+                  className: cs(jk, wk),
                   children: [
-                    (0, nr.jsx)("div", { className: NS }),
-                    SS.read("user_missions.battle_pass_widget.sub_title.unavailable"),
+                    (0, nr.jsx)("div", { className: Nk }),
+                    kk.read("user_missions.battle_pass_widget.sub_title.unavailable"),
                   ],
                 }),
                 (0, nr.jsx)(A.div, {
                   style: m,
-                  className: jS,
-                  children: (0, nr.jsx)(bS, { useAdaptiveFormat: !1 }),
+                  className: jk,
+                  children: (0, nr.jsx)(bk, { useAdaptiveFormat: !1 }),
                 }),
                 (0, nr.jsx)(A.div, {
                   style: u,
-                  className: cs(jS, wS),
+                  className: cs(jk, wk),
                   children: (0, nr.jsx)(D, {
-                    text: SS.read(`user_missions.battle_pass_widget.sub_title.${n}`),
-                    classMix: cs(IS),
+                    text: kk.read(`user_missions.battle_pass_widget.sub_title.${n}`),
+                    classMix: cs(Ik),
                     isTruncationAvailable: !0,
                   }),
                 }),
@@ -12729,43 +12729,43 @@ var bS = Rs(function ({ useAdaptiveFormat: e = !0 }) {
         })
       : null;
   }),
-  ES = { [bI]: {}, [kS]: {}, [iS]: {}, [PI]: {} };
-async function MS(e, t = !1) {
+  Ek = { [bI]: {}, [Sk]: {}, [ik]: {}, [PI]: {} };
+async function Mk(e, t = !1) {
   await new Promise((a) => {
     e({
       groupId: LI,
       providerCfg: { triggerCallback: a, animCallParams: { immediate: t } },
-      groupCfg: ES,
+      groupCfg: Ek,
     });
   });
 }
-function LS(e, t, a, s, n) {
+function Lk(e, t, a, s, n) {
   e.isUnmounting("battlePassCardId") ||
     (t === uI.Ready
       ? e
           .enqueue(async () => {
-            (a(qN.umg_widget_event_appear), await e.appear([LI]), await MS(n));
+            (a(qN.umg_widget_event_appear), await e.appear([LI]), await Mk(n));
           })
           .then(() => {
             s();
           })
       : t === uI.Played &&
-        (e.updateCard(LI, { visible: !0 }), MS(n, !0), e.enqueue(async () => e.applyLayout())));
+        (e.updateCard(LI, { visible: !0 }), Mk(n, !0), e.enqueue(async () => e.applyLayout())));
 }
-var AS = { duration: 700, easing: SN },
-  TS = { from: { translateX: "-160%" }, config: AS },
-  DS = { from: { opacity: 0 }, config: AS },
-  BS = { from: { translateX: "-160%" }, to: { translateX: "160%" } },
-  OS = { from: { opacity: 0 }, to: [{ opacity: 1 }, { opacity: 0, config: { duration: 1e3 } }] };
-var VS = "HighlightAnimation_splashContainer_6f7161d2",
-  RS = "HighlightAnimation_helperContainer_67199b30",
-  HS = "HighlightAnimation_a926f19b",
-  $S = "HighlightAnimation_helper_ab64de86",
-  zS = "HighlightAnimation_helper__one_bf874504",
-  FS = "HighlightAnimation_helper__two_5ddebb7f",
-  WS = "HighlightAnimation_helper__three_e838fe5d",
-  qS = "widgetCardHighlight",
-  ZS = (0, Cn.memo)(function ({
+var Ak = { duration: 700, easing: kN },
+  Tk = { from: { translateX: "-160%" }, config: Ak },
+  Dk = { from: { opacity: 0 }, config: Ak },
+  Bk = { from: { translateX: "-160%" }, to: { translateX: "160%" } },
+  Ok = { from: { opacity: 0 }, to: [{ opacity: 1 }, { opacity: 0, config: { duration: 1e3 } }] };
+var Vk = "HighlightAnimation_splashContainer_6f7161d2",
+  Rk = "HighlightAnimation_helperContainer_67199b30",
+  Hk = "HighlightAnimation_a926f19b",
+  $k = "HighlightAnimation_helper_ab64de86",
+  zk = "HighlightAnimation_helper__one_bf874504",
+  Fk = "HighlightAnimation_helper__two_5ddebb7f",
+  Wk = "HighlightAnimation_helper__three_e838fe5d",
+  qk = "widgetCardHighlight",
+  Zk = (0, Cn.memo)(function ({
     id: e,
     elementId: t,
     withOverlaySplash: a = !1,
@@ -12778,30 +12778,30 @@ var VS = "HighlightAnimation_splashContainer_6f7161d2",
         splashStyles: l,
         config: c,
       } = (function (e) {
-        const [t, a] = He(() => TS),
-          [s, n] = He(() => DS),
+        const [t, a] = He(() => Tk),
+          [s, n] = He(() => Dk),
           r = Pt(() => {
-            (a.start({ ...BS, reset: !0 }), n.start({ ...OS, reset: !0, onRest: e }));
+            (a.start({ ...Bk, reset: !0 }), n.start({ ...Ok, reset: !0, onRest: e }));
           });
         return (0, Cn.useMemo)(
           () => ({ highlightStyles: t, splashStyles: s, config: { start: r, skip: Z } }),
           [t, s, r],
         );
-      })(Pt(() => i.trigger(KN(e, qS, t), e, t)));
+      })(Pt(() => i.trigger(KN(e, qk, t), e, t)));
     return (
-      hI({ id: e, elementId: t, registerAnimation: r, animName: qS, config: c }),
+      hI({ id: e, elementId: t, registerAnimation: r, animName: qk, config: c }),
       (0, nr.jsxs)(nr.Fragment, {
         children: [
-          a && (0, nr.jsx)(A.div, { style: l, className: VS, children: s }),
+          a && (0, nr.jsx)(A.div, { style: l, className: Vk, children: s }),
           (0, nr.jsx)("div", {
-            className: cs(HS, n),
+            className: cs(Hk, n),
             children: (0, nr.jsxs)(A.div, {
               style: o,
-              className: RS,
+              className: Rk,
               children: [
-                (0, nr.jsx)("div", { className: cs($S, zS) }),
-                (0, nr.jsx)("div", { className: cs($S, FS) }),
-                (0, nr.jsx)("div", { className: cs($S, WS) }),
+                (0, nr.jsx)("div", { className: cs($k, zk) }),
+                (0, nr.jsx)("div", { className: cs($k, Fk) }),
+                (0, nr.jsx)("div", { className: cs($k, Wk) }),
               ],
             }),
           }),
@@ -12809,13 +12809,13 @@ var VS = "HighlightAnimation_splashContainer_6f7161d2",
       })
     );
   });
-var GS = ks.resolve("strings"),
-  US = "progressionLabelsAnimation",
-  KS = Rs(function ({ className: e, id: t, elementId: a }) {
+var Gk = Ss.resolve("strings"),
+  Uk = "progressionLabelsAnimation",
+  Kk = Rs(function ({ className: e, id: t, elementId: a }) {
     const { spring: s, config: n } = (function () {
         const [e, t] = He(() => ({
             from: { x: 0, opacity: 0 },
-            config: { duration: 400, easing: SN },
+            config: { duration: 400, easing: kN },
           })),
           a = (0, Cn.useCallback)(
             (e, a) => {
@@ -12844,22 +12844,22 @@ var GS = ks.resolve("strings"),
       })(),
       { registerAnimation: r } = UN();
     return (
-      hI({ id: t, elementId: a, registerAnimation: r, animName: US, config: n }),
+      hI({ id: t, elementId: a, registerAnimation: r, animName: Uk, config: n }),
       (0, nr.jsxs)(A.div, {
         style: s,
-        className: cs(xS, e),
+        className: cs(xk, e),
         children: [
           (0, nr.jsx)("div", {
-            className: yS,
-            children: GS.read("user_missions.battle_pass_widget.title"),
+            className: yk,
+            children: Gk.read("user_missions.battle_pass_widget.title"),
           }),
           (0, nr.jsx)("div", {
-            className: CS,
+            className: Ck,
             children: (0, nr.jsxs)("div", {
-              className: cs(jS, wS),
+              className: cs(jk, wk),
               children: [
-                (0, nr.jsx)("div", { className: NS }),
-                GS.read("user_missions.battle_pass_widget.sub_title.unavailable"),
+                (0, nr.jsx)("div", { className: Nk }),
+                Gk.read("user_missions.battle_pass_widget.sub_title.unavailable"),
               ],
             }),
           }),
@@ -12867,30 +12867,30 @@ var GS = ks.resolve("strings"),
       })
     );
   }),
-  XS = { pointsEarned: 0, deltaLeft: 0, deltaWidth: 0, level: 0, immediate: !0 },
-  YS = { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: SN } },
-  JS = { from: { opacity: 0 }, config: { duration: 200, easing: SN } },
-  QS = {
-    init: { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: SN } },
+  Xk = { pointsEarned: 0, deltaLeft: 0, deltaWidth: 0, level: 0, immediate: !0 },
+  Yk = { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: kN } },
+  Jk = { from: { opacity: 0 }, config: { duration: 200, easing: kN } },
+  Qk = {
+    init: { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: kN } },
     paused: { from: { opacity: 1, x: 0 }, to: { opacity: 0, x: $(40) } },
     unPaused: { from: { opacity: 0, x: $(-20) }, to: { opacity: 1, x: 0 }, delay: 400 },
   },
-  ek = "progressOpacity";
-var tk = "progressAnimation";
-var ak = "SelectRewardIcon_79dc47ef",
-  sk = "SelectRewardIcon_animatedIcon_7df05741",
-  nk = "rewardIconAnimation",
-  rk = { to: 1, config: { duration: 750 } },
-  ik = { to: 0, config: { duration: 500 } },
-  ok = {
+  eS = "progressOpacity";
+var tS = "progressAnimation";
+var aS = "SelectRewardIcon_79dc47ef",
+  sS = "SelectRewardIcon_animatedIcon_7df05741",
+  nS = "rewardIconAnimation",
+  rS = { to: 1, config: { duration: 750 } },
+  iS = { to: 0, config: { duration: 500 } },
+  oS = {
     from: { opacity: 0 },
     to: [{ opacity: 1 }, { opacity: 0 }, { opacity: 1 }, { opacity: 0 }],
     config: { duration: 1e3 },
     pause: !0,
   },
-  lk = (0, Cn.memo)(function ({ id: e, className: t }) {
+  lS = (0, Cn.memo)(function ({ id: e, className: t }) {
     const { registerAnimation: a } = UN(),
-      { play: s } = St(),
+      { play: s } = kt(),
       { opacity: n, config: r } = (function (e, t) {
         const a = p(e, { onRest: Pt(() => t?.()) }),
           s = Pt((e) => {
@@ -12901,30 +12901,30 @@ var ak = "SelectRewardIcon_79dc47ef",
           });
         return (0, Cn.useMemo)(() => ({ opacity: a, config: { start: s, skip: n } }), [a, n, s]);
       })(0),
-      [i, o] = He(() => ok),
+      [i, o] = He(() => oS),
       l = Pt(({ isPaused: e }) => {
         e
-          ? r.start(ik)
-          : (s(qN.umg_widget_event_reward), r.start(rk), o.start({ ...ok, pause: !1, reset: !0 }));
+          ? r.start(iS)
+          : (s(qN.umg_widget_event_reward), r.start(rS), o.start({ ...oS, pause: !1, reset: !0 }));
       }),
       c = Pt(({ isPaused: e }) => {
-        e ? r.skip(ik) : r.skip(rk);
+        e ? r.skip(iS) : r.skip(rS);
       });
     return (
       hI({
         registerAnimation: a,
         id: e,
-        animName: nk,
+        animName: nS,
         config: (0, Cn.useMemo)(() => ({ start: l, skip: c }), [c, l]),
       }),
       (0, nr.jsx)(A.div, {
         style: { opacity: n },
-        className: cs(ak, t),
-        children: (0, nr.jsx)(A.div, { style: i, className: sk }),
+        className: cs(aS, t),
+        children: (0, nr.jsx)(A.div, { style: i, className: sS }),
       })
     );
   });
-function ck({ current: e, earned: t, max: a, level: s }) {
+function cS({ current: e, earned: t, max: a, level: s }) {
   return {
     pointsEarned: e + t,
     level: s,
@@ -12933,19 +12933,19 @@ function ck({ current: e, earned: t, max: a, level: s }) {
     config: { duration: 50 * t },
   };
 }
-function dk(e, t, a, s) {
+function dS(e, t, a, s) {
   const n = t != e.level,
     r = s - e.pointsEarned,
     i = a - e.pointsEarned,
-    o = { phase_1: ck({ current: e.pointsEarned, earned: n ? r : i, max: s, level: e.level }) };
-  return (n && (o.phase_2 = ck({ current: 0, earned: a, max: s, level: t })), o);
+    o = { phase_1: cS({ current: e.pointsEarned, earned: n ? r : i, max: s, level: e.level }) };
+  return (n && (o.phase_2 = cS({ current: 0, earned: a, max: s, level: t })), o);
 }
-var uk = { highlight: { id: LI, animName: qS }, rewardIcon: { id: LI, animName: nk } };
-function mk() {
+var uS = { highlight: { id: LI, animName: qk }, rewardIcon: { id: LI, animName: nS } };
+function mS() {
   const e = Ct(),
     t = mN(),
-    { model: a, controls: s } = aS(),
-    { play: n } = St(),
+    { model: a, controls: s } = ak(),
+    { play: n } = kt(),
     r = a.isPaused.get(),
     i = a.level.get(),
     o = a.pointsEarned.get(),
@@ -12973,12 +12973,12 @@ function mk() {
       const m = n > 0,
         p = m && n != e.rewardsHash;
       (t != e.level || a != e.pointsEarned
-        ? d({ id: LI, animName: tk, animCallParams: dk(e, t, a, s) })
-        : p && !r && d({ id: LI, animName: qS }),
-        m && d({ ...uk.rewardIcon, providerCfg: { skip: !p }, animCallParams: { isPaused: r } }),
-        d({ id: LI, animName: ek, animCallParams: { isPaused: r }, providerCfg: { skip: !0 } }),
-        d({ id: LI, animName: US, animCallParams: { isPaused: r }, providerCfg: { skip: !0 } }),
-        LS(i, o, c, l, u));
+        ? d({ id: LI, animName: tS, animCallParams: dS(e, t, a, s) })
+        : p && !r && d({ id: LI, animName: qk }),
+        m && d({ ...uS.rewardIcon, providerCfg: { skip: !p }, animCallParams: { isPaused: r } }),
+        d({ id: LI, animName: eS, animCallParams: { isPaused: r }, providerCfg: { skip: !0 } }),
+        d({ id: LI, animName: Uk, animCallParams: { isPaused: r }, providerCfg: { skip: !0 } }),
+        Lk(i, o, c, l, u));
     });
   })({
     level: i,
@@ -13008,11 +13008,11 @@ function mk() {
       (_I(!e, () => {
         (a === c && d === s) ||
           n.enqueue(async () => {
-            (i(qN.umg_widget_event_appear), await MS(o));
+            (i(qN.umg_widget_event_appear), await Mk(o));
           });
       }),
         _I(!e, () => {
-          t !== l && LS(n, t, i, r, o);
+          t !== l && Lk(n, t, i, r, o);
         }));
     })({
       api: t,
@@ -13037,8 +13037,8 @@ function mk() {
         const e = s != t.pointsEarned || a != t.level,
           l = r !== o;
         e && !l
-          ? i({ id: LI, animName: tk, animCallParams: dk(t, a, s, n) })
-          : l && i(uk.highlight);
+          ? i({ id: LI, animName: tS, animCallParams: dS(t, a, s, n) })
+          : l && i(uS.highlight);
       });
     })({
       isFirstRender: e,
@@ -13056,27 +13056,27 @@ function mk() {
         const e = a != r,
           i = t > 0 && t != n;
         (e &&
-          (s({ id: LI, animName: ek, animCallParams: { isPaused: a } }),
-          s({ id: LI, animName: US, animCallParams: { isPaused: a } })),
-          (i || e) && s({ ...uk.rewardIcon, animCallParams: { isPaused: a } }),
-          i && !a && s(uk.highlight),
+          (s({ id: LI, animName: eS, animCallParams: { isPaused: a } }),
+          s({ id: LI, animName: Uk, animCallParams: { isPaused: a } })),
+          (i || e) && s({ ...uS.rewardIcon, animCallParams: { isPaused: a } }),
+          i && !a && s(uS.highlight),
           e && !a && s({ id: LI, animName: bI }));
       });
     })({ isFirstRender: e, rewardsHash: c, isPaused: r }));
 }
-var pk = Rs(function ({ className: e }) {
-    const { model: t } = aS();
+var pS = Rs(function ({ className: e }) {
+    const { model: t } = ak();
     return t.isPaused.get() ? null : (0, nr.jsx)(xI, { id: LI, className: e });
   }),
-  _k = "IntroOverlay_glow_5fc31c94",
-  hk = "IntroOverlay_hoverHelper_9cec2539",
-  gk = "IntroOverlay_8d89d328",
-  fk = "IntroOverlay_base__extraChapter_d35cc3d4",
-  vk = "IntroOverlay_base__holiday_2f0d6d76",
-  bk = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
-  xk = "IntroOverlay_borderNoise_3087bf34",
-  yk = Rs(function ({ className: e, withOverlay: t = !0 }) {
-    const { model: a } = aS();
+  _S = "IntroOverlay_glow_5fc31c94",
+  hS = "IntroOverlay_hoverHelper_9cec2539",
+  gS = "IntroOverlay_8d89d328",
+  fS = "IntroOverlay_base__extraChapter_d35cc3d4",
+  vS = "IntroOverlay_base__holiday_2f0d6d76",
+  bS = "IntroOverlay_hoverHelper__withOverlay_ce4fe777",
+  xS = "IntroOverlay_borderNoise_3087bf34",
+  yS = Rs(function ({ className: e, withOverlay: t = !0 }) {
+    const { model: a } = ak();
     if (a.isPaused.get()) return null;
     const s =
         a.widgetState.get() === dI.Intro
@@ -13084,31 +13084,31 @@ var pk = Rs(function ({ className: e }) {
           : a.isExtraChapter.get() || a.isExtraChapterHighlighted.get(),
       n = a.isHoliday.get();
     return (0, nr.jsxs)("div", {
-      className: cs(gk, s && fk, n && vk, e),
+      className: cs(gS, s && fS, n && vS, e),
       children: [
-        (0, nr.jsx)("div", { className: _k }),
-        (0, nr.jsx)("div", { className: cs(hk, t && bk) }),
-        (0, nr.jsx)("div", { className: xk }),
+        (0, nr.jsx)("div", { className: _S }),
+        (0, nr.jsx)("div", { className: cs(hS, t && bS) }),
+        (0, nr.jsx)("div", { className: xS }),
       ],
     });
   }),
-  Ck = Rs(function ({ id: e, elementId: t, className: a }) {
-    const { model: s } = aS(),
+  CS = Rs(function ({ id: e, elementId: t, className: a }) {
+    const { model: s } = ak(),
       { startAnimation: n } = UN(),
-      r = fS(),
+      r = fk(),
       i = s.isExtraChapterHighlighted.get(),
       o = s.widgetState.get(),
       l = !i && o === dI.Progression;
     return (
-      lS(() => {
-        vS(r, o) &&
+      lk(() => {
+        vk(r, o) &&
           n({
             id: e,
-            animName: qS,
+            animName: qk,
             soundCfg: o === dI.Intro ? qN.umg_widget_event_timer : qN.umg_widget_event_timer_simple,
           });
       }, [r, o]),
-      (0, nr.jsx)(ZS, {
+      (0, nr.jsx)(Zk, {
         id: e,
         elementId: t,
         withOverlaySplash: l,
@@ -13117,28 +13117,28 @@ var pk = Rs(function ({ className: e }) {
           l &&
           (0, nr.jsxs)(nr.Fragment, {
             children: [
-              (0, nr.jsx)(yk, { id: e, className: a, withOverlay: !1 }),
-              (0, nr.jsx)(pk, { id: e, className: a }),
+              (0, nr.jsx)(yS, { id: e, className: a, withOverlay: !1 }),
+              (0, nr.jsx)(pS, { id: e, className: a }),
             ],
           }),
       })
     );
   }),
-  jk = "CompletedOverlay_b04581f5";
-var wk = "Intro_backgroundWrapper_dc209870",
-  Nk = "Intro_background_e3bffd74",
-  Ik = "Intro_2a905b68",
-  Sk = "Intro_base__paused_129a2cdc",
-  kk = "Intro_backgroundSize_6e0dec55",
-  Pk = "Intro_icon_946c0059",
-  Ek = Rs(function ({ id: e, elementId: t, className: a }) {
-    const { model: s } = aS(),
+  jS = "CompletedOverlay_b04581f5";
+var wS = "Intro_backgroundWrapper_dc209870",
+  NS = "Intro_background_e3bffd74",
+  IS = "Intro_2a905b68",
+  kS = "Intro_base__paused_129a2cdc",
+  SS = "Intro_backgroundSize_6e0dec55",
+  PS = "Intro_icon_946c0059",
+  ES = Rs(function ({ id: e, elementId: t, className: a }) {
+    const { model: s } = ak(),
       n = s.isPaused.get(),
       r = s.isHoliday.get(),
       { imagePath: i, videoPath: o } = (function (e = "bg") {
-        const { model: t } = aS(),
+        const { model: t } = ak(),
           a = dN(),
-          { seasonPath: s } = hS(
+          { seasonPath: s } = hk(
             "battle_pass.widget.background",
             e,
             t.hasExtraChapter.get(),
@@ -13147,11 +13147,11 @@ var wk = "Intro_backgroundWrapper_dc209870",
             a,
           );
         return {
-          imagePath: gS(e, t.hasExtraChapter.get(), t.isHoliday.get(), t.season.get(), a),
-          videoPath: pS.read(s),
+          imagePath: gk(e, t.hasExtraChapter.get(), t.isHoliday.get(), t.season.get(), a),
+          videoPath: pk.read(s),
         };
       })(),
-      [l, c] = He(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: SN } })),
+      [l, c] = He(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: kN } })),
       { maskPosition: d, backgroundContrast: u } = MI({
         id: e,
         elementId: t,
@@ -13163,25 +13163,25 @@ var wk = "Intro_backgroundWrapper_dc209870",
         ),
       });
     return (0, nr.jsxs)(A.div, {
-      style: { maskPosition: d.val.to((e) => SI(-e)), filter: u.val.to(jI) },
-      className: cs(Ik, n && Sk, a),
+      style: { maskPosition: d.val.to((e) => kI(-e)), filter: u.val.to(jI) },
+      className: cs(IS, n && kS, a),
       children: [
         (0, nr.jsx)(A.div, {
-          style: { maskPosition: d.val.to(SI) },
-          className: wk,
+          style: { maskPosition: d.val.to(kI) },
+          className: wS,
           children: o
             ? (0, nr.jsx)("div", {
-                className: kk,
-                children: (0, nr.jsx)(Je, { src: o, className: Nk, autoplay: !0, loop: !0 }, o),
+                className: SS,
+                children: (0, nr.jsx)(Je, { src: o, className: NS, autoplay: !0, loop: !0 }, o),
               })
-            : (0, nr.jsx)(_s, { path: i, className: Nk }),
+            : (0, nr.jsx)(_s, { path: i, className: NS }),
         }),
         !r &&
           (0, nr.jsx)(A.div, {
             style: l,
             children: (0, nr.jsx)(_s, {
               path: "battlePass.widget.not_chosen",
-              className: Pk,
+              className: PS,
               width: 60,
               height: 60,
             }),
@@ -13189,58 +13189,58 @@ var wk = "Intro_backgroundWrapper_dc209870",
       ],
     });
   }),
-  Mk = "Index_f505a04a",
-  Lk = (0, Cn.memo)(function (e) {
-    return (0, nr.jsx)(H, { ...e, classNames: { background: Mk } });
+  MS = "Index_f505a04a",
+  LS = (0, Cn.memo)(function (e) {
+    return (0, nr.jsx)(H, { ...e, classNames: { background: MS } });
   }),
-  Ak = { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: SN } },
-  Tk = { from: { opacity: 0, x: $(-20) }, to: { opacity: 1, x: 0 } };
-var Dk = "Progression_de15ce34",
-  Bk = "Progression_label_67b446d",
-  Ok = "Progression_levelWrapper_20ffa2cd",
-  Vk = "Progression_countdownWrapper_32ed00dc",
-  Rk = "Progression_countdownSeparator_8d7ba9e7",
-  Hk = "Progression_progress_f05295ff",
-  $k = "Progression_pointsEarned_f0502458",
-  zk = "Progression_progressSeparator_9c752d50",
-  Fk = "Progression_progressBar_9c5d3f74",
-  Wk = "Progression_levelPoints_f1c3b9c0",
-  qk = "Progression_delta_2b36b7f6",
-  Zk = "Progression_glow_bdccbc96",
-  Gk = Rs(function ({ id: e, elementId: t, className: a }) {
-    const { model: s } = aS(),
-      n = fS(),
+  AS = { from: { opacity: 1, x: 0 }, config: { duration: 400, easing: kN } },
+  TS = { from: { opacity: 0, x: $(-20) }, to: { opacity: 1, x: 0 } };
+var DS = "Progression_de15ce34",
+  BS = "Progression_label_67b446d",
+  OS = "Progression_levelWrapper_20ffa2cd",
+  VS = "Progression_countdownWrapper_32ed00dc",
+  RS = "Progression_countdownSeparator_8d7ba9e7",
+  HS = "Progression_progress_f05295ff",
+  $S = "Progression_pointsEarned_f0502458",
+  zS = "Progression_progressSeparator_9c752d50",
+  FS = "Progression_progressBar_9c5d3f74",
+  WS = "Progression_levelPoints_f1c3b9c0",
+  qS = "Progression_delta_2b36b7f6",
+  ZS = "Progression_glow_bdccbc96",
+  GS = Rs(function ({ id: e, elementId: t, className: a }) {
+    const { model: s } = ak(),
+      n = fk(),
       r = s.levelPoints.get(),
       { pointsEarned: i, level: o } = s.lastSeenState.get(),
       l = (function () {
-        const e = fS(),
-          { model: t } = aS(),
-          [a, s] = He(() => Ak),
-          n = vS(e, t.widgetState.get());
+        const e = fk(),
+          { model: t } = ak(),
+          [a, s] = He(() => AS),
+          n = vk(e, t.widgetState.get());
         return (
-          lS(() => {
-            n && s.start(Tk);
+          lk(() => {
+            n && s.start(TS);
           }, [n, s]),
           a
         );
       })(),
       { baseSpring: c } = (function ({ id: e, elementId: t }) {
         const { registerAnimation: a } = UN(),
-          [s, n] = He(() => QS.init),
+          [s, n] = He(() => Qk.init),
           r = Pt((e) => {
-            e.isPaused ? n.start({ ...QS.paused }) : n.start({ ...QS.unPaused });
+            e.isPaused ? n.start({ ...Qk.paused }) : n.start({ ...Qk.unPaused });
           }),
           i = Pt((e) => {
             e.isPaused
-              ? n.start({ ...QS.paused, immediate: !0 })
-              : n.start({ ...QS.unPaused, delay: 0, immediate: !0 });
+              ? n.start({ ...Qk.paused, immediate: !0 })
+              : n.start({ ...Qk.unPaused, delay: 0, immediate: !0 });
           });
         return (
           hI({
             id: e,
             elementId: t,
             registerAnimation: a,
-            animName: ek,
+            animName: eS,
             config: (0, Cn.useMemo)(() => ({ start: r, skip: i }), [i, r]),
           }),
           (0, Cn.useMemo)(() => ({ baseSpring: s }), [s])
@@ -13254,8 +13254,8 @@ var Dk = "Progression_de15ce34",
       } = (function ({ id: e, elementId: t, pointsEarned: a, level: s, levelPoints: n }) {
         const { startAnimation: r, registerAnimation: i } = UN(),
           [o, l] = (0, Cn.useState)(a),
-          [c, d] = He(() => ({ ...YS })),
-          [u, m] = He(() => ({ ...JS })),
+          [c, d] = He(() => ({ ...Yk })),
+          [u, m] = He(() => ({ ...Jk })),
           [p, _] = He(() => ({
             from: { pointsEarned: a, level: s, deltaLeft: ya(a, n), deltaWidth: 0 },
           })),
@@ -13269,14 +13269,14 @@ var Dk = "Progression_de15ce34",
                     await e(t),
                     l(t.pointsEarned),
                     a &&
-                      (await e({ ...XS, level: t.level }),
+                      (await e({ ...Xk, level: t.level }),
                       l(0),
                       await Promise.all(
                         d.start({
                           to: async (t) => {
                             (await t({ x: $(40), opacity: 0 }),
                               await t({ x: $(-20), opacity: 0, immediate: !0 }),
-                              r({ id: LI, animName: qS }),
+                              r({ id: LI, animName: qk }),
                               await e({ level: a.level, immediate: !0 }),
                               await t({ x: 0, opacity: 1 }));
                           },
@@ -13293,7 +13293,7 @@ var Dk = "Progression_de15ce34",
             id: e,
             elementId: t,
             registerAnimation: i,
-            animName: tk,
+            animName: tS,
             config: (0, Cn.useMemo)(() => ({ start: h, skip: Z }), [h]),
           }),
           (0, Cn.useMemo)(
@@ -13309,13 +13309,13 @@ var Dk = "Progression_de15ce34",
       })({ id: e, elementId: t, pointsEarned: i, level: o, levelPoints: r });
     return (0, nr.jsxs)(A.div, {
       style: c,
-      className: cs(Dk, a),
+      className: cs(DS, a),
       children: [
         (0, nr.jsxs)("div", {
-          className: Bk,
+          className: BS,
           children: [
             (0, nr.jsxs)("div", {
-              className: Ok,
+              className: OS,
               children: [
                 (0, nr.jsx)(A.div, {
                   style: p,
@@ -13329,35 +13329,35 @@ var Dk = "Progression_de15ce34",
                 n &&
                   (0, nr.jsxs)(A.div, {
                     style: l,
-                    className: Vk,
+                    className: VS,
                     children: [
                       (0, nr.jsx)(f, {
-                        className: Rk,
+                        className: RS,
                         path: "user_missions.battle_pass_widget.countdownSeparator",
                       }),
-                      (0, nr.jsx)(bS, {}),
+                      (0, nr.jsx)(bk, {}),
                     ],
                   }),
               ],
             }),
             (0, nr.jsx)(f, {
-              className: Hk,
+              className: HS,
               path: "user_missions.battle_pass_widget.progress",
               params: {
                 pointsEarned: (0, nr.jsx)(A.div, {
-                  className: $k,
+                  className: $S,
                   children: d.pointsEarned.to((e) => Math.round(e) % r),
                 }),
-                levelPoints: (0, nr.jsx)("div", { className: Wk, children: r }),
-                progressSeparatorClass: zk,
+                levelPoints: (0, nr.jsx)("div", { className: WS, children: r }),
+                progressSeparatorClass: zS,
               },
             }),
           ],
         }),
         r > 0 &&
-          (0, nr.jsx)(Lk, {
+          (0, nr.jsx)(LS, {
             size: "small",
-            className: Fk,
+            className: FS,
             value: u,
             maxValue: r,
             children: (0, nr.jsx)(A.div, {
@@ -13365,66 +13365,66 @@ var Dk = "Progression_de15ce34",
                 width: d.deltaWidth.to((e) => `${e}%`),
                 left: d.deltaLeft.to((e) => `${e}%`),
               },
-              className: qk,
-              children: (0, nr.jsx)(A.div, { style: m, className: Zk }),
+              className: qS,
+              children: (0, nr.jsx)(A.div, { style: m, className: ZS }),
             }),
           }),
       ],
     });
   }),
-  Uk = "ProgressionOverlay_3554586a",
-  Kk = "ProgressionOverlay_wrapper_db2f9b96",
-  Xk = "ProgressionOverlay_base__paused_ecd0a7ba",
-  Yk = "ProgressionOverlay_hoverHelper_9949a6b8",
-  Jk = Rs(function ({ className: e, id: t }) {
-    const { model: a } = aS(),
+  US = "ProgressionOverlay_3554586a",
+  KS = "ProgressionOverlay_wrapper_db2f9b96",
+  XS = "ProgressionOverlay_base__paused_ecd0a7ba",
+  YS = "ProgressionOverlay_hoverHelper_9949a6b8",
+  JS = Rs(function ({ className: e, id: t }) {
+    const { model: a } = ak(),
       s = a.isExtraChapterHighlighted.get(),
-      n = p(s ? 1 : 0, { config: { duration: 400, easing: SN } });
+      n = p(s ? 1 : 0, { config: { duration: 400, easing: kN } });
     return (
-      lS(() => {
+      lk(() => {
         n.start(s ? 1 : 0);
       }, [s, n]),
       (0, nr.jsxs)("div", {
-        className: (0, mI.default)(Uk, a.isPaused.get() && Xk),
+        className: (0, mI.default)(US, a.isPaused.get() && XS),
         children: [
           (0, nr.jsxs)(A.div, {
             style: { opacity: n },
-            className: Kk,
+            className: KS,
             children: [
-              (0, nr.jsx)(yk, { id: t, className: e, withOverlay: !1 }),
-              (0, nr.jsx)(pk, { id: t, className: e }),
+              (0, nr.jsx)(yS, { id: t, className: e, withOverlay: !1 }),
+              (0, nr.jsx)(pS, { id: t, className: e }),
             ],
           }),
           (0, nr.jsx)(A.div, {
             style: { opacity: n.to((e) => 1 - e) },
-            className: (0, mI.default)(e, Yk),
+            className: (0, mI.default)(e, YS),
           }),
         ],
       })
     );
   }),
-  Qk = "BattlePass_layer_1bbff8f0",
+  QS = "BattlePass_layer_1bbff8f0",
   eP = "BattlePass_96294458",
   tP = "BattlePass_base__enabled_8ccab86c",
   aP = "BattlePass_rewardIcon_25776ae1",
   sP = new Map([
-    [dI.Intro, [Ek, yk, PS, pk]],
-    [dI.Progression, [Gk, Jk, KS, oS]],
+    [dI.Intro, [ES, yS, Pk, pS]],
+    [dI.Progression, [GS, JS, Kk, ok]],
     [
       dI.Completed,
       [
-        PS,
+        Pk,
         function ({ className: e }) {
-          return (0, nr.jsx)("div", { className: (0, mI.default)(jk, e) });
+          return (0, nr.jsx)("div", { className: (0, mI.default)(jS, e) });
         },
-        oS,
+        ok,
       ],
     ],
   ]),
   nP = Rs(function () {
-    const { model: e, controls: t } = aS();
-    mk();
-    const { play: a } = St(),
+    const { model: e, controls: t } = ak();
+    mS();
+    const { play: a } = kt(),
       n = e.widgetState.get(),
       r = e.timeLeft.get(),
       i = e.isPaused.get(),
@@ -13434,19 +13434,19 @@ var Dk = "Progression_de15ce34",
       d = e.rewardsHash.get(),
       { containerRef: u, tooltipProps: m } = cN(
         (function (e, t) {
-          const a = mS.read((e) => e.user_missions.hangarWidget.BattlePass("resId"));
+          const a = mk.read((e) => e.user_missions.hangarWidget.BattlePass("resId"));
           return t
             ? {
                 resId: a,
-                contentId: dS.read((e) =>
+                contentId: dk.read((e) =>
                   e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId"),
                 ),
-                decoratorId: dS.read((e) =>
+                decoratorId: dk.read((e) =>
                   e.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
                 ),
                 args: {
-                  body: uS.read("battle_pass.tooltips.entryPoint.disabled.body"),
-                  header: uS.read("battle_pass.tooltips.entryPoint.disabled.header"),
+                  body: uk.read("battle_pass.tooltips.entryPoint.disabled.body"),
+                  header: uk.read("battle_pass.tooltips.entryPoint.disabled.header"),
                 },
               }
             : { resId: a, contentId: e };
@@ -13485,7 +13485,7 @@ var Dk = "Progression_de15ce34",
       className: cs(eP, !i && tP),
       isDisabled: i,
       onClick: () => {
-        (m.onClick(), i || (g(), t.openBattlePass()));
+        (m.onClick(), i || (a("click"), g(), t.openBattlePass()));
       },
       onMouseEnter: (e) => {
         (m.onMouseEnter(e),
@@ -13498,25 +13498,25 @@ var Dk = "Progression_de15ce34",
       },
       ref: u,
       children: [
-        (0, nr.jsxs)(_S.Provider, {
+        (0, nr.jsxs)(_k.Provider, {
           value: _,
           children: [
             f &&
               f.map((e, t) =>
-                (0, nr.jsx)(e, { id: "battlePassCardId", className: Qk }, `${n}-${t}`),
+                (0, nr.jsx)(e, { id: "battlePassCardId", className: QS }, `${n}-${t}`),
               ),
-            (0, nr.jsx)(Ck, { id: LI, className: Qk }),
+            (0, nr.jsx)(CS, { id: LI, className: QS }),
           ],
         }),
-        d > 0 && (0, nr.jsx)(lk, { id: "battlePassCardId", className: aP }),
+        d > 0 && (0, nr.jsx)(lS, { id: "battlePassCardId", className: aP }),
       ],
     });
   }),
   rP = {
-    rootId: ks.resolve("aliases").read((e) => e.user_missions.hangarWidget.BattlePass("resId")),
+    rootId: Ss.resolve("aliases").read((e) => e.user_missions.hangarWidget.BattlePass("resId")),
   },
   iP = (0, Cn.memo)(function () {
-    return (0, nr.jsx)(tS, { options: rP, children: (0, nr.jsx)(nP, {}) });
+    return (0, nr.jsx)(tk, { options: rP, children: (0, nr.jsx)(nP, {}) });
   }),
   [oP, lP] = ds()(
     ({ observableModel: e }) => ({
@@ -13550,12 +13550,12 @@ var Dk = "Progression_de15ce34",
   hP = "BattleAbilities_priceBlock_ba6f26ce",
   gP = "BattleAbilities_text_a1bcf9fc",
   fP = "BattleAbilities_glow_66715a1c",
-  vP = ks.resolve("aliases"),
-  bP = ks.resolve("views"),
-  xP = ks.resolve("strings"),
+  vP = Ss.resolve("aliases"),
+  bP = Ss.resolve("views"),
+  xP = Ss.resolve("strings"),
   yP = Rs(function () {
     const { model: e, controls: t } = lP(),
-      { play: a } = St(),
+      { play: a } = kt(),
       s = !(e.isCurrentCycleActive.get() && e.isSelectedSuitableVehicle.get()),
       n = e.modeState.get(),
       r = n === Hs,
@@ -13625,14 +13625,14 @@ var Dk = "Progression_de15ce34",
   wP = "BorderAnimation_border_a443d5de",
   NP = "BorderAnimation_borderImage_a901acf8",
   IP = "BorderAnimation_borderAnimation_1a02c9de",
-  SP = { to: { opacity: 1 }, config: { duration: 300, easing: SN } },
-  kP = { to: { opacity: 0 }, config: { duration: 600, easing: SN } },
+  kP = { to: { opacity: 1 }, config: { duration: 300, easing: kN } },
+  SP = { to: { opacity: 0 }, config: { duration: 600, easing: kN } },
   PP = { delay: 2700, from: { opacity: 1 }, to: { opacity: 0 } },
   EP = { delay: 800, from: { opacity: 0 }, to: [{ opacity: 1 }, { opacity: 0, delay: 100 }] },
   MP = "flBorderHighlight";
 function LP({ id: e, elementId: t, className: a }) {
-  const [s, n] = He(() => SP),
-    [r, i] = He(() => kP),
+  const [s, n] = He(() => kP),
+    [r, i] = He(() => SP),
     { registerAnimation: o, startAnimation: l } = UN();
   return (
     hI({
@@ -13681,11 +13681,11 @@ var AP = "Progression_background_2466805d",
   XP = "Progression_textShadow_e8ff0ae6",
   YP = "Progression_message_8e75feb3",
   JP = "progression",
-  QP = ks.resolve("strings"),
-  eE = ks.resolve("intl"),
-  tE = ks.resolve("views"),
-  aE = ks.resolve("aliases"),
-  sE = ks.resolve("videos"),
+  QP = Ss.resolve("strings"),
+  eE = Ss.resolve("intl"),
+  tE = Ss.resolve("views"),
+  aE = Ss.resolve("aliases"),
+  sE = Ss.resolve("videos"),
   nE = Rs(function () {
     !(function () {
       const { model: e } = lP(),
@@ -13696,16 +13696,16 @@ var AP = "Progression_background_2466805d",
         r = n && a !== s;
       (Be(() => {
         n &&
-          t({ id: JP, animName: nk, animCallParams: { isPaused: !1 }, providerCfg: { skip: !r } });
+          t({ id: JP, animName: nS, animCallParams: { isPaused: !1 }, providerCfg: { skip: !r } });
       }),
         (0, Cn.useEffect)(() => {
           r &&
-            (t({ id: JP, animName: nk, animCallParams: { isPaused: !1 } }),
-            t({ id: JP, animName: qS }),
+            (t({ id: JP, animName: nS, animCallParams: { isPaused: !1 } }),
+            t({ id: JP, animName: qk }),
             t({ id: JP, animName: MP }));
         }));
     })();
-    const { play: e } = St(),
+    const { play: e } = kt(),
       { model: t, controls: a } = lP(),
       s = t.isMaxLevel.get(),
       n = t.currentProgress.get(),
@@ -13808,7 +13808,7 @@ var AP = "Progression_background_2466805d",
                       (0, nr.jsx)("div", { className: FP }),
                     ],
                   }),
-                  (0, nr.jsx)(Lk, { className: RP, value: n, maxValue: r }),
+                  (0, nr.jsx)(LS, { className: RP, value: n, maxValue: r }),
                 ],
               }),
           ],
@@ -13817,8 +13817,8 @@ var AP = "Progression_background_2466805d",
           (0, nr.jsxs)(nr.Fragment, {
             children: [
               (0, nr.jsx)(LP, { id: "progression", className: TP }, u),
-              (0, nr.jsx)(ZS, { id: "progression", className: TP }),
-              (0, nr.jsx)(lk, { id: "progression", className: ZP }),
+              (0, nr.jsx)(Zk, { id: "progression", className: TP }),
+              (0, nr.jsx)(lS, { id: "progression", className: ZP }),
             ],
           }),
       ],
@@ -13839,11 +13839,11 @@ var AP = "Progression_background_2466805d",
   fE = "HighlightAnimation_glowLine__one_bf874504",
   vE = "HighlightAnimation_glowLine__two_5ddebb7f",
   bE = "HighlightAnimation_glowLine__three_4b0794ad",
-  xE = { to: { opacity: 0 }, config: { duration: 300, easing: SN } },
+  xE = { to: { opacity: 0 }, config: { duration: 300, easing: kN } },
   yE = { delay: 3e3, from: { opacity: 0 }, to: { opacity: 1 } };
 function CE({ className: e }) {
   const [t, a] = He(() => xE),
-    { play: s } = St();
+    { play: s } = kt();
   return (
     (0, Cn.useEffect)(() => {
       a.start({
@@ -13893,13 +13893,13 @@ var jE = "RentalTanks_highlight_fbb41243",
   wE = "RentalTanks_background_7f28206b",
   NE = "RentalTanks_a8cdde8f",
   IE = "RentalTanks_base__disabled_dc6483fa",
-  SE = "RentalTanks_content_87d92422",
-  kE = ks.resolve("aliases"),
-  PE = ks.resolve("views"),
-  EE = ks.resolve("strings"),
+  kE = "RentalTanks_content_87d92422",
+  SE = Ss.resolve("aliases"),
+  PE = Ss.resolve("views"),
+  EE = Ss.resolve("strings"),
   ME = Rs(function () {
     const { model: e, controls: t } = lP(),
-      { play: a } = St(),
+      { play: a } = kt(),
       s = e.isCurrentCycleActive.get(),
       n = e.modeState.get(),
       r = n === Hs,
@@ -13909,7 +13909,7 @@ var jE = "RentalTanks_highlight_fbb41243",
           e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId"),
         ),
         decoratorId: PE.read((e) => e.common.tooltip_window.tooltip_window.TooltipWindow("resId")),
-        resId: kE.read((e) => e.user_missions.hangarWidget.Events("resId")),
+        resId: SE.read((e) => e.user_missions.hangarWidget.Events("resId")),
         args:
           r || i
             ? {
@@ -13942,7 +13942,7 @@ var jE = "RentalTanks_highlight_fbb41243",
       children: [
         (0, nr.jsx)("div", { className: wE }),
         (0, nr.jsx)("div", {
-          className: SE,
+          className: kE,
           children: EE.readOrEmpty("fl_info_page.addons.cellRent.header"),
         }),
         e.isRentHighlighted.get() && (0, nr.jsx)(CE, { className: jE }),
@@ -13950,7 +13950,7 @@ var jE = "RentalTanks_highlight_fbb41243",
     });
   }),
   LE = "HangarWidget_3b2c10a",
-  AE = { rootId: ks.resolve("aliases").read((e) => e.user_missions.hangarWidget.Events("resId")) },
+  AE = { rootId: Ss.resolve("aliases").read((e) => e.user_missions.hangarWidget.Events("resId")) },
   TE = Rs(({ className: e }) => {
     const { model: t } = WN(),
       a = (function (e) {
@@ -13967,7 +13967,7 @@ var jE = "RentalTanks_highlight_fbb41243",
             const e = a.current.shift();
             if (!e) return;
             s.current = !0;
-            const i = ka(
+            const i = Sa(
               Object.entries(e),
               ([e, t]) => n[e] && !t,
               ([e]) => e,
@@ -13992,7 +13992,7 @@ var jE = "RentalTanks_highlight_fbb41243",
       ],
     });
   }),
-  DE = { rootId: ks.resolve("aliases").read((e) => e.frontline.shared.UserMissions("resId")) },
+  DE = { rootId: Ss.resolve("aliases").read((e) => e.frontline.shared.UserMissions("resId")) },
   BE = ({ className: e }) =>
     (0, nr.jsx)(V, {
       soundsOverrides: ZN,
@@ -14010,7 +14010,7 @@ var jE = "RentalTanks_highlight_fbb41243",
   VE = "HeroTankMarker_base__visible_d8b5c003",
   RE = "HeroTankMarker_vehicleName_a789e6e5",
   HE = "HeroTankMarker_vehicleType_d8b5c003",
-  $E = Ss("HeroTankInfo"),
+  $E = ks("HeroTankInfo"),
   zE = Rs(
     (0, Cn.forwardRef)(function (e, t) {
       const { model: a } = qs(),
@@ -14102,8 +14102,8 @@ var jE = "RentalTanks_highlight_fbb41243",
     clanEmblem: "MenuItem_clanEmblem_fe5255ab",
   },
   nM = "forts",
-  rM = ks.resolve("intl"),
-  iM = ks.resolve("strings"),
+  rM = Ss.resolve("intl"),
+  iM = Ss.resolve("strings"),
   oM = {
     [JE]: "tooltips.header.battleType",
     [GE]: "tooltips.header.buttons.tournaments",
@@ -14132,7 +14132,7 @@ function dM({
   modeIconPath: o,
   battleTypesPath: l = "R.images.gui.maps.icons",
 }) {
-  const c = St(),
+  const c = kt(),
     d = e === UE && r,
     u = bs(
       (0, Cn.useMemo)(
@@ -14307,11 +14307,11 @@ var fM = "VehicleInfoWidget_b24b193a",
       });
   }),
   [NM, IM] = ds("PetObjectTooltipModel")(({ observableModel: e }) => ({ root: e.object() }), Z),
-  SM = ks.resolve("aliases"),
-  kM = ks.resolve("views"),
-  PM = SM.read((e) => e.hangar.shared.PetObjectTooltip("resId")),
-  EM = kM.read((e) => e.mono.pet_system.tooltips.pet_storage_tooltip("resId")),
-  MM = kM.read((e) => e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId")),
+  kM = Ss.resolve("aliases"),
+  SM = Ss.resolve("views"),
+  PM = kM.read((e) => e.hangar.shared.PetObjectTooltip("resId")),
+  EM = SM.read((e) => e.mono.pet_system.tooltips.pet_storage_tooltip("resId")),
+  MM = SM.read((e) => e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent("resId")),
   LM = Dt(function () {
     const { model: e } = IM(),
       { isStorageTooltipVisible: t, is3dObjectTooltipVisible: a } = e.root.get();
@@ -14370,7 +14370,7 @@ var fM = "VehicleInfoWidget_b24b193a",
   UM = "HangarScreen_vehicleInfo__withAlert_9fd52100",
   KM = "HangarScreen_mainMenu_3ca9189a",
   XM = "HangarScreen_userMissions_22518280",
-  YM = ks.resolve("aliases"),
+  YM = Ss.resolve("aliases"),
   JM = YM.read((e) => e.hangar.shared.HeroTank("resId")),
   QM = YM.read((e) => e.hangar.shared.PetObjectTooltip("resId")),
   eL = { rootId: YM.read((e) => e.hangar.shared.MainMenu("resId")) },
@@ -14410,10 +14410,10 @@ var fM = "VehicleInfoWidget_b24b193a",
   nL = "ConfirmationPanel_plus_335af158",
   rL = "ConfirmationPanel_buttons_ad07fa9b",
   iL = (e) => e > 0,
-  oL = Ss("LeftBlock", "ConfirmationPanel_leftBlock_798f4c44"),
-  lL = Ss("Currencies", sL),
-  cL = Ss("Buttons", rL),
-  dL = Ss("ConfirmationPanel", aL);
+  oL = ks("LeftBlock", "ConfirmationPanel_leftBlock_798f4c44"),
+  lL = ks("Currencies", sL),
+  cL = ks("Buttons", rL),
+  dL = ks("ConfirmationPanel", aL);
 function uL(e) {
   return (0, nr.jsx)(lL, {
     className: e.className,
@@ -14440,9 +14440,9 @@ var jL = (0, Cn.memo)(function ({ type: e, price: t }) {
     const a = sa({ value: d.small }, { large: { value: d.medium } });
     return (0, nr.jsxs)(P, {
       ...bs({
-        body: ks
-          .resolve("strings")
-          .readOrEmpty(`tank_setup.dealPanel.tooltip.purchasedWith.${t.currency}`),
+        body: Ss.resolve("strings").readOrEmpty(
+          `tank_setup.dealPanel.tooltip.purchasedWith.${t.currency}`,
+        ),
       }),
       reverse: !0,
       type: e ?? "formattedCurrency",
@@ -14461,16 +14461,16 @@ var jL = (0, Cn.memo)(function ({ type: e, price: t }) {
       ],
     });
   }),
-  wL = ks.resolve("strings"),
+  wL = Ss.resolve("strings"),
   NL = "general",
   IL = "consumables",
-  SL = "shells",
-  kL = "boosters",
+  kL = "shells",
+  SL = "boosters",
   PL = "repair";
 function EL(e) {
   if (e && w.includes(e)) return e;
 }
-var ML = { [Zf]: kL, [Gf]: SL, [Uf]: IL },
+var ML = { [Zf]: SL, [Gf]: kL, [Uf]: IL },
   LL = Rs(function ({ type: e, className: t }) {
     const a = sa({ value: Oe.small }, { large: { value: Oe.medium } }),
       { model: s, controls: r } = Jv(),
@@ -14527,7 +14527,7 @@ var ML = { [Zf]: kL, [Gf]: SL, [Uf]: IL },
       v = !!p && (f.canConfirm || f.prices.length > 0),
       b = Ba(v),
       x = void 0 !== h,
-      y = St();
+      y = kt();
     return (
       (0, Cn.useEffect)(() => {
         (v && !1 === b && y.play("expand", { target: "loadout:deal-panel" }),
@@ -14597,7 +14597,7 @@ var ML = { [Zf]: kL, [Gf]: SL, [Uf]: IL },
   TL = "Counter_current_2e9b96d1",
   DL = "Counter_total_7d9a1992";
 function BL({ current: e, total: t, className: a }) {
-  const s = ks.resolve("intl");
+  const s = Ss.resolve("intl");
   return (0, nr.jsx)(f, {
     className: cs(AL, a),
     path: "common.progress",
@@ -14616,7 +14616,7 @@ var OL = "Depot_dots_e22e1616",
   $L = "Depot_value__count_c6469680",
   zL = "Depot_valueContainer_7c59dac8",
   FL = "Depot_slash_13b22cce",
-  WL = ks.resolve("strings"),
+  WL = Ss.resolve("strings"),
   qL = ({ inDepotCount: e, itemsInVehicle: t }) => {
     const a = t >= 0;
     return (0, nr.jsxs)("div", {
@@ -14661,9 +14661,9 @@ var OL = "Depot_dots_e22e1616",
   },
   ZL = "MechanicHeader_200c7176",
   GL = "MechanicHeader_textLabel_4f093ea6",
-  UL = ks.resolve("strings"),
-  KL = ks.resolve("images"),
-  XL = ks.resolve("views"),
+  UL = Ss.resolve("strings"),
+  KL = Ss.resolve("images"),
+  XL = Ss.resolve("views"),
   YL = "x16x16",
   JL = "x24x24",
   QL = "x32x32";
@@ -14702,7 +14702,7 @@ function eA({
   });
 }
 var tA = "ParamNameInfo_aa238861",
-  aA = ks.resolve("strings"),
+  aA = Ss.resolve("strings"),
   sA = "x16x16",
   nA = "x24x24",
   rA = "x32x32",
@@ -14763,17 +14763,17 @@ var dA = "Properties_dots_1fc83e37",
   wA = "Properties_specialIconContainer_d0657e5",
   NA = "Properties_slash_d36afb1c",
   IA = "Properties_specialIcon_6ce31e02",
-  SA = ks.resolve("strings"),
-  kA = ks.resolve("views");
+  kA = Ss.resolve("strings"),
+  SA = Ss.resolve("views");
 function PA({ item: e, columnDefsLength: t }) {
-  const a = SA.readOrEmpty("common.common.slash"),
+  const a = kA.readOrEmpty("common.common.slash"),
     s = _b.find((t) => e.values.some((e) => e.mechanic === t)),
     n = v(
       "special_mechanic",
       (0, Cn.useMemo)(
         () => ({
           textPath: `tooltips.specialMechanics.${s}.${e.paramName}`,
-          resId: kA.read((e) => e.mono.hangar.tooltips("resId")),
+          resId: SA.read((e) => e.mono.hangar.tooltips("resId")),
         }),
         [e.paramName, s],
       ),
@@ -14793,7 +14793,7 @@ function PA({ item: e, columnDefsLength: t }) {
         children: [
           (0, nr.jsx)(ca, {
             className: vA,
-            text: SA.readOrEmpty(`menu.moduleInfo.params.${e.paramName}`),
+            text: kA.readOrEmpty(`menu.moduleInfo.params.${e.paramName}`),
           }),
           (0, nr.jsx)("div", { className: mA, children: e.metricValue }),
           iA.includes(e.paramName) && (0, nr.jsx)(oA, { paramName: e.paramName, className: yA }),
@@ -14903,7 +14903,7 @@ var EA = Rs(function ({ properties: e }) {
   WA = "Purchase_icon_76ffe763",
   qA = "Purchase_icon__currency_d2625764",
   ZA = "Purchase_icon__withDiscount_2c2820e6",
-  GA = ks.resolve("strings"),
+  GA = Ss.resolve("strings"),
   UA = Rs(({ shell: e }) => {
     const { boughtCount: t, totalPrice: a, price: s, itemPrice: n } = e,
       r = e.price.previousPrice[0],
@@ -14941,7 +14941,7 @@ var EA = Rs(function ({ properties: e }) {
                   (0, nr.jsx)(
                     Ye,
                     {
-                      type: Se.currency,
+                      type: ke.currency,
                       enabled: i,
                       size: o.value,
                       classNames: { base: cs(zA, !i && FA), discount: cs(WA, i && ZA) },
@@ -14991,8 +14991,8 @@ var EA = Rs(function ({ properties: e }) {
     });
   }),
   KA = "ShellMechanicOverlay_f424d415",
-  XA = ks.resolve("views"),
-  YA = ks.resolve("strings"),
+  XA = Ss.resolve("views"),
+  YA = Ss.resolve("strings"),
   JA = "x32x32",
   QA = "x48x48",
   eT = "x64x64";
@@ -15034,13 +15034,13 @@ var aT = "Shell_fullArea_7aaeeab0",
   mT = "Shell_slider_4d24fb7c",
   pT = "Shell_thumb_5a51073f",
   _T = "Shell_shellMechanic_1edd0a97",
-  hT = ks.resolve("aliases"),
-  gT = ks.resolve("images"),
-  fT = ks.resolve("strings"),
-  vT = ks.resolve("intl"),
+  hT = Ss.resolve("aliases"),
+  gT = Ss.resolve("images"),
+  fT = Ss.resolve("strings"),
+  vT = Ss.resolve("intl"),
   bT = "big",
   xT = "large",
-  yT = Ss("Shell", nT),
+  yT = ks("Shell", nT),
   CT = Rs(({ value: e, index: t }) => {
     const { model: a, controls: s } = fb(),
       n = a.ammoMaxSize.get() - a.installedCount.get() + e.count,
@@ -15067,7 +15067,7 @@ var aT = "Shell_fullArea_7aaeeab0",
         ),
       ),
       l = sa({ value: bT }, { large: { value: xT } }),
-      c = sa({ value: ke.small }, { medium: { value: ke.medium } }),
+      c = sa({ value: Se.small }, { medium: { value: Se.medium } }),
       d = (0, Cn.useCallback)((e, t) => s.updateShellCount(e, t), [s]);
     return (0, nr.jsxs)(yT, {
       children: [
@@ -15097,7 +15097,7 @@ var aT = "Shell_fullArea_7aaeeab0",
           size: c.value,
           onValueChange: (t) => d(e.intCD, t),
           children: [
-            c.value === ke.medium && (0, nr.jsx)(ge.Controls, { className: sT }),
+            c.value === Se.medium && (0, nr.jsx)(ge.Controls, { className: sT }),
             (0, nr.jsx)(ge.LimitationArea, { className: aT }),
             (0, nr.jsx)(ge.Thumb, { className: pT }),
             (0, nr.jsx)(ge.InteractiveArea, { className: aT }),
@@ -15148,7 +15148,7 @@ var aT = "Shell_fullArea_7aaeeab0",
   }),
   NT = "SwapButton_20088d5c",
   IT = "SwapButton_icon_cd2823d0";
-function ST({ index: e, onSwap: t }) {
+function kT({ index: e, onSwap: t }) {
   return (0, nr.jsx)(n, {
     theme: n.themes.secondary,
     id: `swap-${e}`,
@@ -15160,7 +15160,7 @@ function ST({ index: e, onSwap: t }) {
     children: (0, nr.jsx)("div", { className: IT }),
   });
 }
-var kT = "ShellsSetup_fc3cf257",
+var ST = "ShellsSetup_fc3cf257",
   PT = "ShellsSetup_counter_107998e7",
   ET = "ShellsSetup_container_eef616b1";
 function MT(e, t) {
@@ -15185,7 +15185,7 @@ var LT = Rs(function () {
       r(!1);
     }
     return (0, nr.jsxs)("div", {
-      className: kT,
+      className: ST,
       children: [
         (0, nr.jsx)(BL, {
           className: PT,
@@ -15208,7 +15208,7 @@ var LT = Rs(function () {
                       leftID: i,
                       swapping: n,
                     }),
-                  s < a.length - 1 && (0, nr.jsx)(ST, { index: s, onSwap: l }),
+                  s < a.length - 1 && (0, nr.jsx)(kT, { index: s, onSwap: l }),
                 ],
               },
               s,
@@ -15250,8 +15250,8 @@ var HT = "Action_ab2a2b2e",
   $T = "Action_base__disabled_b9b41a41",
   zT = "Action_button_4133ceee",
   FT = "Action_icon_f3030341",
-  WT = ks.resolve("images"),
-  qT = ks.resolve("strings"),
+  WT = Ss.resolve("images"),
+  qT = Ss.resolve("strings"),
   ZT = ["cancel", "undo"],
   GT = (e, t) => (2 === t ? `${e}_last_modernized` : `${e}_modernized`),
   UT = (0, Cn.forwardRef)(function (
@@ -15315,7 +15315,7 @@ var HT = "Action_ab2a2b2e",
     "options-show": "Actions_options-show_9b5544a9",
     actionItem: "Actions_actionItem_7ebdfdac",
   },
-  XT = ks.resolve("strings");
+  XT = Ss.resolve("strings");
 function YT({ availableActions: e, buyMoreDisabled: t, onActionClick: a, className: s }) {
   return (0, nr.jsxs)("div", {
     className: cs(KT.base, KT["base__" + (e.length ? "shown" : "hidden")], s),
@@ -15341,11 +15341,11 @@ function JT(e) {
       return Ae.directiveBooster;
     case wb:
       return Ae.directiveSubstitute;
-    case Sb:
+    case kb:
       return Ae.builtInEquipment;
     case Ib:
       return Ae.improved;
-    case kb:
+    case Sb:
       return Ae.experimental;
     case yb:
     case Cb:
@@ -15404,7 +15404,7 @@ function nD({
               (0, nr.jsx)(Ye, {
                 size: i.value,
                 enabled: !s && t.length > 0,
-                type: Se.currency,
+                type: ke.currency,
                 children: (0, nr.jsx)(P, {
                   type: o,
                   reverse: n,
@@ -15474,7 +15474,7 @@ var uD = "LoadoutItem_49fa5e5c",
   yD = "LoadoutItem_text_b7eb40cc",
   CD = "LoadoutItem_text__short_192105ec",
   jD = [Hv, Vv, Rv, Ov],
-  wD = Ss("ConsumablesItem", uD),
+  wD = ks("ConsumablesItem", uD),
   ND = { colorTag: "#64ba21", whiteSpanish: "rgba(var(--color-general-primary-rgb), 0.9)" },
   ID = function ({ intCD: e, selected: t, item: a, controls: s }) {
     const {
@@ -15544,12 +15544,12 @@ var uD = "LoadoutItem_49fa5e5c",
       }),
     });
   },
-  SD = Rs((e) => {
+  kD = Rs((e) => {
     const { model: t, controls: a } = Jv(),
       s = t.computes.consumableById(e.intCD);
     if (s) return (0, nr.jsx)(ID, { ...e, item: s, controls: a });
   }),
-  kD = ks.resolve("images");
+  SD = Ss.resolve("images");
 function PD({
   modernized: e,
   level: t,
@@ -15591,7 +15591,7 @@ function PD({
           onClick: a,
           className: KT.actionItem,
           freeToDemount: s,
-          imageSource: kD.readOrEmpty("loadout.actions.demount"),
+          imageSource: SD.readOrEmpty("loadout.actions.demount"),
         }),
       o.includes("demount_from_setups") &&
         (0, nr.jsx)(UT, {
@@ -15611,7 +15611,7 @@ function PD({
     ],
   });
 }
-var ED = ks.resolve("strings"),
+var ED = Ss.resolve("strings"),
   MD = { calcValue: 0, isPositive: !0, valueKey: "default" };
 function LD({ values: e, localeName: t }) {
   const a = $a(e, ({ valueKey: e }) => e === t).pop();
@@ -15640,7 +15640,7 @@ var DD = "Bonuses_2e425c2b",
   RD = "Bonuses_unit_dd3c8074",
   HD = "Bonuses_base__special_ca1cd57b",
   $D = "Bonuses_icon_bf2ddda6",
-  zD = ks.resolve("strings");
+  zD = Ss.resolve("strings");
 function FD({ effect: e, special: t, bonuses: a }) {
   const s = sa({ value: e ? 2 : 3 }, { large: { value: e ? 3 : 4 } });
   return (0, nr.jsxs)("div", {
@@ -15683,7 +15683,7 @@ var WD = "Specializations_c4673376",
   qD = "Specializations_item_64ba5e4a",
   ZD = "Specializations_specializationType_b4c7a75d",
   GD = "Specializations_inactiveIcon_45a44cf7",
-  UD = Ss("Specializations");
+  UD = ks("Specializations");
 function KD({ specializations: e, className: t }) {
   return (0, nr.jsx)(UD, {
     className: cs(WD, t),
@@ -15713,7 +15713,7 @@ function XD(e) {
       return 0;
   }
 }
-var YD = Ss("EquipmentsItem", uD),
+var YD = ks("EquipmentsItem", uD),
   JD = function ({ intCD: e, selected: t, item: a, controls: s }) {
     const {
         activeSpecsMask: n,
@@ -15740,8 +15740,8 @@ var YD = Ss("EquipmentsItem", uD),
       } = a,
       N = _ > -1,
       I = de(),
-      S = h && "similar_device_already_installed" === C,
-      { availableActions: k } = (0, Cn.useMemo)(() => {
+      k = h && "similar_device_already_installed" === C,
+      { availableActions: S } = (0, Cn.useMemo)(() => {
         const e = new Set();
         var a;
         return (
@@ -15768,10 +15768,10 @@ var YD = Ss("EquipmentsItem", uD),
       ),
       E = (0, Cn.useCallback)(() => {
         if (h) return;
-        const e = k.values().next().value;
+        const e = S.values().next().value;
         P(void 0 !== e && "upgrade" !== e ? e : Ov);
-      }, [k, P, h]),
-      M = k.values().next().value;
+      }, [S, P, h]),
+      M = S.values().next().value;
     return (0, nr.jsx)(YD, {
       className: cs(h && _D, h && mD),
       onClick: E,
@@ -15798,20 +15798,20 @@ var YD = Ss("EquipmentsItem", uD),
             price: w,
             possibleZeroCount: u || p || 0 === w.price.length,
             className: bD,
-            show: 0 === k.size || ("upgrade" === M && !I.hover && !I.selected && !N),
+            show: 0 === S.size || ("upgrade" === M && !I.hover && !I.selected && !N),
           }),
           (0, nr.jsx)(PD, {
             className: xD,
             modernized: p,
             level: l,
             onActionClick: P,
-            availableActions: Array.from(k),
+            availableActions: Array.from(S),
             freeToDemount: y,
             installed: N,
             mouseOverCard: I.hover || I.selected,
             destroyTooltipBodyPath: j,
           }),
-          !S && (0, nr.jsx)(KD, { specializations: o.specializations, className: vD }),
+          !k && (0, nr.jsx)(KD, { specializations: o.specializations, className: vD }),
         ],
       }),
     });
@@ -15822,7 +15822,7 @@ var YD = Ss("EquipmentsItem", uD),
     if (s) return (0, nr.jsx)(JD, { ...e, item: s, controls: a });
     console.error("Unable to render equipment item", e.intCD, e.type);
   }),
-  eB = Ss("InstructionsItem", uD),
+  eB = ks("InstructionsItem", uD),
   tB = { Equipment: "equipmentInstructions", Crew: "crewInstructions" },
   aB = { colorTag: "#64ba21", whiteSpanish: "rgba(var(--color-general-primary-rgb), 0.9)" },
   sB = function ({ intCD: e, item: t, controls: a }) {
@@ -15903,7 +15903,7 @@ var rB = {
     root: "AmmunitionCard_root_32904bc2",
     card: "AmmunitionCard_card_2bd54c54",
   },
-  iB = ks.resolve("aliases");
+  iB = Ss.resolve("aliases");
 var oB = Rs(function ({ card: e, type: t, currentTab: a, className: s }) {
     const { model: n } = Nv(),
       {
@@ -15990,7 +15990,7 @@ var oB = Rs(function ({ card: e, type: t, currentTab: a, className: s }) {
             return a ? (0, nr.jsx)(QD, { intCD: e, selected: t, type: a }) : null;
           }
           case Uf:
-            return (0, nr.jsx)(SD, { intCD: e, selected: t });
+            return (0, nr.jsx)(kD, { intCD: e, selected: t });
           case Zf: {
             const t = fs(tB, s);
             return t ? (0, nr.jsx)(nB, { intCD: e, type: t }) : null;
@@ -16057,7 +16057,7 @@ var dB = e(Os()),
   mB = { [TT]: "trophy", [BT]: "modernized" };
 function pB({ introductionType: e }) {
   const t = mB[e],
-    a = ks.resolve("strings");
+    a = Ss.resolve("strings");
   return (0, nr.jsx)(f, {
     split: !0,
     upgradeLegacy: !0,
@@ -16080,9 +16080,9 @@ function pB({ introductionType: e }) {
 var _B = { [TT]: "trophy", [BT]: "modernized" },
   hB = { [TT]: "modules.trophyOverlay", [BT]: "modules.modernizedOverlay" };
 function gB({ introductionType: e }) {
-  const t = ks
-      .resolve("strings")
-      .readOrEmpty(`tank_setup.introduction.title.withoutEquipments.${_B[e]}`),
+  const t = Ss.resolve("strings").readOrEmpty(
+      `tank_setup.introduction.title.withoutEquipments.${_B[e]}`,
+    ),
     a = hB[e];
   return (0, nr.jsxs)("div", {
     className: uB.base,
@@ -16195,15 +16195,15 @@ function CB(e) {
 }
 var jB = "SpecializationFilter_48673c87",
   wB = "SpecializationFilter_content_f790a5c2",
-  NB = ks.resolve("strings"),
+  NB = Ss.resolve("strings"),
   IB = {
     [Xf.Firepower]: "loadout:ammunition_setup:specialization-filter:firepower",
     [Xf.Survivability]: "loadout:ammunition_setup:specialization-filter:survivability",
     [Xf.Stealth]: "loadout:ammunition_setup:specialization-filter:stealth",
     [Xf.Mobility]: "loadout:ammunition_setup:specialization-filter:mobility",
   },
-  SB = Rs(function ({ specialization: e, className: t }) {
-    const a = St(),
+  kB = Rs(function ({ specialization: e, className: t }) {
+    const a = kt(),
       { model: s, controls: n } = nb(),
       r = s.standardEquipmentsFilters.get().has(e),
       i = Ba(r),
@@ -16232,9 +16232,9 @@ var jB = "SpecializationFilter_48673c87",
       })
     );
   }),
-  kB = ks.resolve("aliases"),
-  PB = ks.resolve("views"),
-  EB = ks.resolve("intl"),
+  SB = Ss.resolve("aliases"),
+  PB = Ss.resolve("views"),
+  EB = Ss.resolve("intl"),
   MB = "simple",
   LB = "trophy",
   AB = "deluxe",
@@ -16242,11 +16242,11 @@ var jB = "SpecializationFilter_48673c87",
   DB = { [AT]: MB, [TT]: LB, [DT]: AB, [BT]: TB };
 function BB({ id: e, label: t, className: a }) {
   const s = DB[e],
-    n = k(
+    n = S(
       (0, Cn.useMemo)(
         () => ({
           contentId: PB.read((e) => e.lobby.tanksetup.tooltips.SetupTabTooltipView("resId")),
-          resId: kB.read((e) => e.hangar.shared.Equipments("resId")),
+          resId: SB.read((e) => e.hangar.shared.Equipments("resId")),
           disabled: !s,
           args: { name: s },
         }),
@@ -16297,7 +16297,7 @@ var OB = "TabsNavigation_tabsNavigation_f7e0f60f",
     button: "WorkbenchPanel_button_853070e2",
     buttonContent: "WorkbenchPanel_buttonContent_24857913",
   },
-  FB = ks.resolve("strings"),
+  FB = Ss.resolve("strings"),
   WB = Rs(({ className: e }) => {
     const { model: t, controls: a } = nb(),
       s = Xe("equipCoinInfo"),
@@ -16355,7 +16355,7 @@ var OB = "TabsNavigation_tabsNavigation_f7e0f60f",
     ],
   },
   QB = { [qf]: AT, [Zf]: OT },
-  eO = ks.resolve("strings");
+  eO = Ss.resolve("strings");
 function tO(e) {
   switch (e) {
     case Nb:
@@ -16364,7 +16364,7 @@ function tO(e) {
       return VT;
     case Ib:
       return DT;
-    case kb:
+    case Sb:
       return BT;
     case yb:
     case Cb:
@@ -16376,7 +16376,7 @@ function tO(e) {
 }
 var aO = Object.values(Xf),
   sO = Rs(function ({ type: e }) {
-    const t = St(),
+    const t = kt(),
       { model: a } = Nv(),
       { controls: n } = nb(),
       { groupIndex: r, item: i } = a.computes.selectedSlotGroupAndItem(),
@@ -16439,7 +16439,7 @@ var aO = Object.values(Xf),
                           return (0, nr.jsx)("div", {
                             className: XB,
                             children: aO.map((e, t) =>
-                              (0, nr.jsx)(SB, { specialization: e, className: YB }, t),
+                              (0, nr.jsx)(kB, { specialization: e, className: YB }, t),
                             ),
                           });
                         case BT:
@@ -16604,8 +16604,8 @@ var [iO, oO] = ds("BattleAbilitiesSetupModel")(
   }),
   xO = "BattleAbilityCard_card_d58548ac",
   yO = "BattleAbilityCard_card__inactive_bbf99946",
-  CO = ks.resolve("aliases"),
-  jO = ks.resolve("views"),
+  CO = Ss.resolve("aliases"),
+  jO = Ss.resolve("views"),
   wO = Rs(function ({ card: e, className: t }) {
     const { model: a } = Nv(),
       { model: s } = oO(),
@@ -16616,7 +16616,7 @@ var [iO, oO] = ds("BattleAbilitiesSetupModel")(
       m = d && c !== i,
       p = s.pointsAmount.get() < n && l;
     return (0, nr.jsx)("div", {
-      ...k({
+      ...S({
         resId: CO.read((e) => e.hangar.shared.Loadout("resId")),
         contentId: jO.read((e) => e.frontline.mono.lobby.tooltips.battle_ability_tooltip("resId")),
         args: (0, Cn.useMemo)(() => ({ intCD: o, slotId: c, tooltipId: vj }), [o, c]),
@@ -16647,8 +16647,8 @@ var [iO, oO] = ds("BattleAbilitiesSetupModel")(
     verticalBar: "Content_verticalBar_17a90908",
   },
   IO = "top",
-  SO = "bottom",
-  kO = "both",
+  kO = "bottom",
+  SO = "both",
   PO = "none";
 var EO = Rs(function () {
   const { model: e } = oO(),
@@ -16663,7 +16663,7 @@ var EO = Rs(function () {
           ((e = n.getContainerSize() ?? 0),
           (t = n.getWrapperSize() ?? 0),
           (a = n.animationScroll.scrollPosition.get()),
-          e <= t ? PO : a <= 10 ? SO : t + a >= e - 10 ? IO : kO),
+          e <= t ? PO : a <= 10 ? kO : t + a >= e - 10 ? IO : SO),
         );
       };
       return (
@@ -16710,7 +16710,7 @@ var LO = "DealPanel_leftBlock_e9fb0b4a",
   WO = "DealPanel_pointsAmountLabel__notEnough_cf06c872",
   qO = "DealPanel_pointsIcon_d6a0c845",
   ZO = "DealPanel_glow_2b356996",
-  GO = ks.resolve("strings"),
+  GO = Ss.resolve("strings"),
   UO = Rs(function ({ className: e }) {
     const t = sa({ value: Oe.small }, { large: { value: Oe.medium } }),
       { model: a, controls: s } = oO(),
@@ -16721,7 +16721,7 @@ var LO = "DealPanel_leftBlock_e9fb0b4a",
       c = o > a.pointsAmount.get(),
       d = l || a.dealData.get().canConfirm,
       u = Ba(d),
-      m = St(),
+      m = kt(),
       p = bs({ body: GO.readOrEmpty(`fl_tooltips.battleAbilities.checkbox.${r}`) }),
       _ = bs({ body: GO.readOrEmpty("fl_tooltips.battleAbilities.button.notEnough") });
     return (
@@ -16799,7 +16799,7 @@ var LO = "DealPanel_leftBlock_e9fb0b4a",
   KO = "CategoryFilter_46392f33",
   XO = "CategoryFilter_toggle_e4db16bd",
   YO = "CategoryFilter_icon_1c04c3d6",
-  JO = ks.resolve("strings"),
+  JO = Ss.resolve("strings"),
   QO = function ({ category: e, onClick: t, isActive: a }) {
     const s = bs({
         header: JO.readOrEmpty(`fl_tooltips.battleAbilityFilter.${e}.header`),
@@ -16832,7 +16832,7 @@ var LO = "DealPanel_leftBlock_e9fb0b4a",
   nV = "Header_pointsIcon_e3e9c8ec",
   rV = "Header_glow_deb8ac55",
   iV = "Header_filters_c4dbdf68",
-  oV = ks.resolve("strings"),
+  oV = Ss.resolve("strings"),
   lV = Rs(function () {
     const { model: e, controls: t } = oO(),
       a = bs({
@@ -16900,7 +16900,7 @@ var pV = {
   _V = "none",
   hV = "default",
   gV = "active",
-  fV = ks.resolve("sounds");
+  fV = Ss.resolve("sounds");
 function vV({ isActive: e, index: t, arrowType: a, onClick: s, className: n }) {
   return (0, nr.jsxs)("div", {
     className: cs(pV.base, e && pV.base__active, n),
@@ -16922,8 +16922,8 @@ var bV = "SkillParam_337d5af9",
   wV = "SkillParam_diffValueLabel_f10f7b4c",
   NV = "SkillParam_valueLabel_df9e7597",
   IV = "SkillParam_progress_77e4b0f9",
-  SV = "SkillParam_progressValueLine_82f4b8bc",
-  kV = "SkillParam_progressValue_bc9e0ecb",
+  kV = "SkillParam_progressValueLine_82f4b8bc",
+  SV = "SkillParam_progressValue_bc9e0ecb",
   PV = "SkillParam_darkenLine_6f217dca",
   EV = "SkillParam_progressDelta_e5501f5d";
 function MV({ currentParam: e, firstParam: t, lastParam: a }) {
@@ -16986,10 +16986,10 @@ function MV({ currentParam: e, firstParam: t, lastParam: a }) {
           className: IV,
           children: [
             (0, nr.jsxs)("div", {
-              className: kV,
+              className: SV,
               style: l,
               children: [
-                (0, nr.jsx)("div", { className: SV }),
+                (0, nr.jsx)("div", { className: kV }),
                 (0, nr.jsx)("div", { className: PV }),
               ],
             }),
@@ -17010,8 +17010,8 @@ var LV = "Levels_5c605e6b",
   HV = "Levels_caret_7b3e7929",
   $V = "Levels_params_e874639",
   zV = "Levels_infoIcon_121b814f",
-  FV = ks.resolve("views"),
-  WV = ks.resolve("strings"),
+  FV = Ss.resolve("views"),
+  WV = Ss.resolve("strings"),
   qV = Rs(function () {
     const { model: e, controls: t } = oO(),
       { selectedLevel: a, levelInfos: s } = e.detailsData.get(),
@@ -17020,7 +17020,7 @@ var LV = "Levels_5c605e6b",
       i = s[s.length - 1]?.params,
       o = s[a]?.params,
       l = { left: 60 * a + 12 + "rem" },
-      c = k({
+      c = S({
         contentId: FV.read((e) => e.frontline.mono.lobby.tooltips.level_reserves_tooltip("resId")),
       }),
       d = (0, Cn.useCallback)((e) => t.levelChange(e), [t]);
@@ -17151,7 +17151,7 @@ var LV = "Levels_5c605e6b",
   uR = "ScreenWrapper_content_42e9ccec",
   mR = "ScreenWrapper_info_1c5f8ae5",
   pR = "ScreenWrapper_flag_bc3e1d2e",
-  _R = Ss("LoadoutScreenWrapper", "ScreenWrapper_39a2fe74"),
+  _R = ks("LoadoutScreenWrapper", "ScreenWrapper_39a2fe74"),
   hR = Rs(function ({ classNames: e }) {
     const t = Qn().model.selectedVehicle();
     return (0, nr.jsxs)(_R, {
@@ -17174,7 +17174,7 @@ var LV = "Levels_5c605e6b",
   }),
   gR = "LoadoutScreen_b66d9141",
   fR = "LoadoutScreen_info_1918746a",
-  vR = ks.resolve("aliases");
+  vR = Ss.resolve("aliases");
 function bR(e, t) {
   return { options: { rootId: t.read(e) } };
 }
@@ -17221,10 +17221,10 @@ var CR = "Page_c86c7327",
   wR = "Page_carousel__double_b4782e51",
   NR = "Page_carouselButtons_4148fb",
   IR = "Page_filterPopover_f4402d4f",
-  SR = "Page_filterTrigger_9d14c53b",
-  kR = "Page_filterTriggerContent_fe0f376c",
+  kR = "Page_filterTrigger_9d14c53b",
+  SR = "Page_filterTriggerContent_fe0f376c",
   PR = "Page_teaserWidget_ab2c33e0",
-  ER = { rootId: ks.resolve("aliases").read((e) => e.hangar.shared.Teaser("resId")) },
+  ER = { rootId: Ss.resolve("aliases").read((e) => e.hangar.shared.Teaser("resId")) },
   MR = [Mf.equipments, Mf.instructions, Mf.shells, Mf.consumables, Mf.battleAbilities, Lf, Ef],
   LR = [Lf, Ef],
   AR = Rs(function () {
@@ -17259,7 +17259,7 @@ var CR = "Page_c86c7327",
                 (0, nr.jsxs)("div", {
                   className: NR,
                   children: [
-                    (0, nr.jsx)(b_, { classNames: { base: IR, trigger: SR, triggerContent: kR } }),
+                    (0, nr.jsx)(b_, { classNames: { base: IR, trigger: kR, triggerContent: SR } }),
                     (0, nr.jsx)(Pf, {}),
                   ],
                 }),
@@ -17275,7 +17275,7 @@ var CR = "Page_c86c7327",
 function DR() {
   return (0, nr.jsx)("div", { className: TR, children: (0, nr.jsx)(AR, {}) });
 }
-var BR = ks.resolve("aliases");
+var BR = Ss.resolve("aliases");
 function OR(e, t) {
   return { options: { rootId: t.read(e) } };
 }
@@ -17391,7 +17391,7 @@ Ra(
       Ws,
       OR((e) => e.hangar.shared.HeroTank("resId"), BR),
     )
-    .add(kn)
+    .add(Sn)
     .addWithProps(
       qn,
       OR((e) => e.hangar.shared.VehiclePlaylists("resId"), BR),

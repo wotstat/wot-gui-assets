@@ -2,12 +2,12 @@ import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   $a as s,
   Cn as a,
-  Fi as i,
-  G as l,
-  Gt as r,
-  Kr as n,
-  d as t,
-  g as o,
+  D as i,
+  Fi as l,
+  G as r,
+  Gt as n,
+  Kr as t,
+  b as o,
   in as c,
   or as _,
   rn as d,
@@ -24,7 +24,7 @@ var j = [
     {
       header: "fl_info_page.addons.cellRent.header",
       text: "fl_info_page.addons.cellRent.text_9",
-      binding: { vehiclesLevel: i(8) },
+      binding: { vehiclesLevel: l(8) },
     },
     { header: "fl_info_page.addons.cellTime.header", text: "fl_info_page.addons.cellTime.text" },
     {
@@ -339,15 +339,15 @@ var [fe, me] = p()(
   Ie = h(function () {
     const { model: e } = me(),
       a = Math.round((e.endTimestamp.get() - e.startTimestamp.get()) / s),
-      l = ((e, s = 3) => {
+      i = ((e, s = 3) => {
         const a = [];
         for (let i = 0; i < e.length; i += s) a.push(e.slice(i, i + s));
         return a;
       })(
-        ((e, s, a, l) => {
-          const r = i(9),
-            n = i(8),
-            o = [
+        ((e, s, a, i) => {
+          const r = l(9),
+            n = l(8),
+            t = [
               {
                 image: R.images.frontline.gui.maps.icons.about.epic(),
                 header: { value: "fl_info_page.main.cellFrontline.header" },
@@ -366,18 +366,18 @@ var [fe, me] = p()(
             ];
           return (
             a &&
-              o.push({
+              t.push({
                 image: R.images.frontline.gui.maps.icons.about.scenarios(),
                 header: { value: "fl_info_page.main.cellScenarios.header" },
                 text: { value: "fl_info_page.main.cellScenarios.text" },
               }),
             s &&
-              o.push({
+              t.push({
                 image: R.images.frontline.gui.maps.icons.about.battlepass(),
                 header: { value: "fl_info_page.main.cellPass.header" },
                 text: { value: "fl_info_page.main.cellPass.text" },
               }),
-            o.push({
+            t.push({
               image: R.images.frontline.gui.maps.icons.about.level_8(),
               header: {
                 value: "fl_info_page.main.cellLevels.header",
@@ -390,16 +390,16 @@ var [fe, me] = p()(
                 binding: { vehiclesLevel: n },
               },
             }),
-            o.push({
+            t.push({
               image: R.images.frontline.gui.maps.icons.about.episodic(),
               header: { value: "fl_info_page.main.cellDuration.header" },
               text: {
                 value: "fl_info_page.main.cellDuration.text",
-                binding: { days: t(R.strings.fl_common.day(l), { duration: l }) },
+                binding: { days: o(R.strings.fl_common.day(i), { duration: i }) },
               },
             }),
             e &&
-              o.push({
+              t.push({
                 image: R.images.frontline.gui.maps.icons.about.level_9(),
                 header: {
                   value: "fl_info_page.main.cellLevel9.header",
@@ -407,7 +407,7 @@ var [fe, me] = p()(
                 },
                 text: { value: "fl_info_page.main.cellLevel9.text", binding: { vehiclesLevel: r } },
               }),
-            o
+            t
           );
         })(
           e.isNinthLevelEnabled.get(),
@@ -423,7 +423,7 @@ var [fe, me] = p()(
           (0, y.jsx)(S, { path: "fl_info_page.main.sectionHeader" }),
           (0, y.jsx)("div", {
             className: xe,
-            children: m(l, (e, s) =>
+            children: m(i, (e, s) =>
               (0, y.jsx)(
                 "div",
                 {
@@ -513,7 +513,7 @@ var [fe, me] = p()(
           (0, y.jsx)(S, { path: "fl_info_page.rules.sectionHeader" }),
           (0, y.jsx)("div", {
             className: ye,
-            children: m(s, ({ text: e, list: s, header: a, image: i }, r) =>
+            children: m(s, ({ text: e, list: s, header: a, image: i }, l) =>
               (0, y.jsxs)(
                 "div",
                 {
@@ -522,7 +522,7 @@ var [fe, me] = p()(
                     (0, y.jsx)("div", { className: Te, style: { backgroundImage: `url(${i})` } }),
                     (0, y.jsx)($, { className: Pe, path: a }),
                     m(e, (e, s) =>
-                      (0, y.jsx)(l, { classMix: we, text: Fe.readOrEmpty(e) }, `rule-text-${s}`),
+                      (0, y.jsx)(r, { classMix: we, text: Fe.readOrEmpty(e) }, `rule-text-${s}`),
                     ),
                     (0, y.jsx)("div", {
                       className: Se,
@@ -542,7 +542,7 @@ var [fe, me] = p()(
                     }),
                   ],
                 },
-                `rule-${r}`,
+                `rule-${l}`,
               ),
             ),
           }),
@@ -849,7 +849,7 @@ function Rs() {
         }),
         (0, y.jsx)("div", {
           className: js,
-          children: m(Is, ({ label: e, cells: s, icon: a }, l) =>
+          children: m(Is, ({ label: e, cells: s, icon: a }, i) =>
             (0, y.jsxs)(
               "div",
               {
@@ -877,7 +877,7 @@ function Rs() {
                               path: Number.isInteger(e)
                                 ? "fl_info_page.reserveCategories.progression.tableCell"
                                 : e,
-                              params: { level: i(e), levelNext: i(e + 1) },
+                              params: { level: l(e), levelNext: l(e + 1) },
                             }),
                         },
                         `cell_${s}`,
@@ -885,7 +885,7 @@ function Rs() {
                     ),
                 ],
               },
-              `column_${l}`,
+              `column_${i}`,
             ),
           ),
         }),
@@ -1024,14 +1024,14 @@ var Us = "InfoView_1674491c",
   sa = x.resolve("strings"),
   aa = h(function () {
     const { controls: e, model: s } = me(),
-      i = s.isBattlePassAvailable.get(),
-      { start: l, end: r } = ea.formatRange(s.startTimestamp.get(), s.endTimestamp.get());
+      l = s.isBattlePassAvailable.get(),
+      { start: r, end: n } = ea.formatRange(s.startTimestamp.get(), s.endTimestamp.get());
     return (
-      n(e.close),
+      t(e.close),
       (0, y.jsxs)("div", {
         className: Us,
         children: [
-          (0, y.jsx)(o, { className: qs, onClose: e.close }),
+          (0, y.jsx)(i, { className: qs, onClose: e.close }),
           (0, y.jsxs)("div", {
             className: Ks,
             children: [
@@ -1040,8 +1040,8 @@ var Us = "InfoView_1674491c",
                 text: ea.toLowerCase(sa.readOrEmpty("datetime_formats.dateRange.stringDivider")),
                 className: Js,
                 params: {
-                  start: (0, y.jsx)("div", { className: Qs, children: l }),
-                  end: (0, y.jsx)("div", { className: Qs, children: r }),
+                  start: (0, y.jsx)("div", { className: Qs, children: r }),
+                  end: (0, y.jsx)("div", { className: Qs, children: n }),
                 },
                 upgradeLegacy: !0,
                 split: !0,
@@ -1062,8 +1062,8 @@ var Us = "InfoView_1674491c",
                           (0, y.jsx)(Ve, {}),
                           (0, y.jsx)(as, {}),
                           (0, y.jsx)(Os, {}),
-                          (0, y.jsx)(V, { withDivider: i }),
-                          i && (0, y.jsx)(ee, {}),
+                          (0, y.jsx)(V, { withDivider: l }),
+                          l && (0, y.jsx)(ee, {}),
                         ],
                       }),
                     }),
@@ -1078,5 +1078,5 @@ var Us = "InfoView_1674491c",
     );
   });
 window.requestAnimationFrame(() => {
-  _((0, y.jsx)(r, { children: (0, y.jsx)(fe, { children: (0, y.jsx)(aa, {}) }) }));
+  _((0, y.jsx)(n, { children: (0, y.jsx)(fe, { children: (0, y.jsx)(aa, {}) }) }));
 });

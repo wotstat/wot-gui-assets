@@ -1,29 +1,29 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
   B as t,
-  C as a,
-  Ct as s,
-  D as n,
-  E as o,
-  I as r,
-  O as i,
-  R as l,
-  S as c,
-  T as d,
-  U as u,
-  W as g,
-  _ as m,
-  _t as y,
-  a as h,
-  at as b,
-  b as _,
-  bt as p,
-  c as x,
-  h as w,
-  it as f,
-  k as v,
-  l as S,
-  m as D,
+  Ct as a,
+  D as s,
+  E as n,
+  I as o,
+  O as r,
+  R as i,
+  T as l,
+  U as c,
+  W as d,
+  _ as u,
+  _t as g,
+  a as m,
+  at as y,
+  b as h,
+  bt as b,
+  c as _,
+  d as p,
+  f as x,
+  g as w,
+  h as f,
+  it as v,
+  k as S,
+  l as D,
   mt as C,
   n as j,
   nt as N,
@@ -31,9 +31,9 @@ import {
   p as E,
   rt as P,
   s as O,
-  v as I,
-  w as k,
-  x as A,
+  u as I,
+  v as k,
+  w as A,
   xt as B,
   y as z,
 } from "../chunks/lib.js";
@@ -49,7 +49,7 @@ import {
   s as Y,
   t as V,
 } from "../chunks/easings.js";
-var G = e(s(), 1),
+var G = e(a(), 1),
   q = (function (e) {
     return (
       (e.RegularDay = "regularDay"),
@@ -66,14 +66,14 @@ var G = e(s(), 1),
       e
     );
   })({}),
-  J = e(b(), 1),
+  J = e(y(), 1),
   K = G.createContext({ on: () => C, once: () => C, off: C, trigger: C }),
   Z = ({ children: e }) => {
     const t = U();
     return (0, J.jsx)(K.Provider, { value: t, children: e });
   },
   ee = () => (0, G.useContext)(K),
-  [te, ae] = v()(
+  [te, ae] = S()(
     ({ observableModel: e }) => {
       const t = {
         bonuses: e.arrayClone("bonuses"),
@@ -91,7 +91,7 @@ var G = e(s(), 1),
       return {
         ...t,
         computes: {
-          readyToClose: i(() =>
+          readyToClose: r(() =>
             [W.OPEN_DOOR_SUCCESS, W.OPEN_DOOR_FAILED].includes(t.openDoorStatus.get()),
           ),
         },
@@ -104,7 +104,7 @@ var G = e(s(), 1),
       setBlur: e.createCallback((e) => ({ setBlur: e }), "onSetBlur"),
     }),
   ),
-  se = e($(), 1),
+  se = e(L(), 1),
   ne = "Spinner_9656c013",
   oe = (e) => (0, J.jsx)("div", { ...e, className: (0, se.default)(ne, e.className) }),
   re = "Footer_13834ef0",
@@ -112,26 +112,26 @@ var G = e(s(), 1),
   le = "Footer_loading_60599415",
   ce = "Footer_loadingText_ec90e893",
   de = R.strings.advent_calendar.rewardView,
-  ue = L(() => {
+  ue = $(() => {
     const { model: e, controls: a } = ae(),
-      { on: s, once: n, trigger: o } = ee(),
-      i = r(),
-      c = P({ buttonSize: w.sizes.medium }, { large: { buttonSize: w.sizes.large } }),
-      [d, u] = t(() => ({ opacity: 0, y: "20rem", visibility: "hidden" })),
+      { on: s, once: n, trigger: r } = ee(),
+      l = o(),
+      c = P({ buttonSize: A.sizes.medium }, { large: { buttonSize: A.sizes.large } }),
+      [u, g] = t(() => ({ opacity: 0, y: "20rem", visibility: "hidden" })),
       [m, y] = t(() => ({ opacity: 0, y: "20rem", visibility: "hidden" }));
     return (
-      g(() =>
+      d(() =>
         s("onHeaderAnimationStart", () => {
-          (i.run(() => {
+          (l.run(() => {
             a.rewardsShown();
           }, 800),
-            u.start({
+            g.start({
               to: { opacity: 1, y: "0rem", visibility: "visible" },
               config: { duration: 200, easing: M },
             }));
         }),
       ),
-      g(() =>
+      d(() =>
         n("onCloseStart", () => {
           y.start({
             to: { opacity: 0, y: "20rem", visibility: "hidden" },
@@ -140,23 +140,23 @@ var G = e(s(), 1),
           });
         }),
       ),
-      g(() =>
+      d(() =>
         N(
           () => e.computes.readyToClose(),
           () => {
-            u.start({
+            g.start({
               to: { opacity: 0, y: "-20rem", visibility: "hidden" },
               onRest: () => {
                 (e.awardDayState.get() !== q.RegularDay &&
                   e.openDoorStatus.get() !== W.OPEN_DOOR_FAILED) ||
-                  o("onCloseStart");
+                  r("onCloseStart");
               },
               config: { duration: 200, easing: X },
             });
           },
         ),
       ),
-      g(() =>
+      d(() =>
         N(
           () => e.openDoorStatus.get() === W.OPEN_DOOR_SUCCESS,
           () => {
@@ -169,9 +169,9 @@ var G = e(s(), 1),
       ),
       (0, J.jsxs)(J.Fragment, {
         children: [
-          (0, J.jsxs)(l.div, {
+          (0, J.jsxs)(i.div, {
             className: le,
-            style: d,
+            style: u,
             children: [
               (0, J.jsx)(oe, {}),
               (0, J.jsx)("span", {
@@ -180,33 +180,33 @@ var G = e(s(), 1),
               }),
             ],
           }),
-          (0, J.jsx)(l.div, {
+          (0, J.jsx)(i.div, {
             className: re,
             style: m,
             children: (() => {
               const t = e.awardDayState.get();
               return t === q.SpecialDay || (t === q.ProgressionQuest && !e.showBoxesButton.get())
-                ? (0, J.jsx)(w, {
-                    theme: w.themes.primary,
+                ? (0, J.jsx)(A, {
+                    theme: A.themes.primary,
                     size: c.buttonSize,
-                    onClick: () => o("onCloseStart"),
+                    onClick: () => r("onCloseStart"),
                     className: ie,
                     children: de.confirm(),
                   })
                 : t === q.ProgressionQuest
                   ? (0, J.jsxs)(J.Fragment, {
                       children: [
-                        (0, J.jsx)(w, {
-                          theme: w.themes.primary,
+                        (0, J.jsx)(A, {
+                          theme: A.themes.primary,
                           size: c.buttonSize,
-                          onClick: () => o("onCloseStart", "boxes"),
+                          onClick: () => r("onCloseStart", "boxes"),
                           className: ie,
                           children: de.goToBoxes(),
                         }),
-                        (0, J.jsx)(w, {
-                          theme: w.themes.secondary,
+                        (0, J.jsx)(A, {
+                          theme: A.themes.secondary,
                           size: c.buttonSize,
-                          onClick: () => o("onCloseStart"),
+                          onClick: () => r("onCloseStart"),
                           className: ie,
                           children: de.confirm(),
                         }),
@@ -229,11 +229,11 @@ var G = e(s(), 1),
   ye = "Header_subTitle_7974beab",
   he = "Header_shadow_93c4efae",
   be = R.strings.advent_calendar.rewardView,
-  _e = L(() => {
+  _e = $(() => {
     const { model: e } = ae(),
       { on: a, once: s, trigger: n } = ee(),
       [o, r] = t(() => ({ opacity: 0, y: "-20rem" }));
-    (g(() =>
+    (d(() =>
       a("onLastRewardAnimationStart", () => {
         r.start({
           to: { opacity: 1, y: "0rem" },
@@ -245,7 +245,7 @@ var G = e(s(), 1),
         });
       }),
     ),
-      g(() =>
+      d(() =>
         s("onCloseStart", () => {
           r.start({
             to: { opacity: 0, y: "-20rem" },
@@ -254,7 +254,7 @@ var G = e(s(), 1),
           });
         }),
       ));
-    const i = (() => {
+    const l = (() => {
       switch (e.awardDayState.get()) {
         case q.RegularDay:
           return null;
@@ -279,17 +279,17 @@ var G = e(s(), 1),
         }
       }
     })();
-    return i
-      ? (0, J.jsxs)(l.div, {
+    return l
+      ? (0, J.jsxs)(i.div, {
           className: ge,
           style: o,
           children: [
             (0, J.jsx)("div", { className: he }),
-            (0, J.jsx)(d, { className: me, text: i.title, params: i.binding, upgradeLegacy: !0 }),
-            (0, J.jsx)(d, {
+            (0, J.jsx)(u, { className: me, text: l.title, params: l.binding, upgradeLegacy: !0 }),
+            (0, J.jsx)(u, {
               className: ye,
-              text: i.subTitle,
-              params: i.binding,
+              text: l.subTitle,
+              params: l.binding,
               upgradeLegacy: !0,
             }),
           ],
@@ -298,11 +298,11 @@ var G = e(s(), 1),
   });
 function pe(e) {
   const t = _(e.name);
-  return [k.MULTI, k.PREMIUM_PLUS].includes(t) ? e.label : m(e.value, t);
+  return [x.MULTI, x.PREMIUM_PLUS].includes(t) ? e.label : m(e.value, t);
 }
-function xe(e, t = A.Small) {
-  return (e.name !== c.LootBox && e.name !== c.BattleToken) || !("icon" in e)
-    ? I(e, t)
+function xe(e, t = D.Small) {
+  return (e.name !== I.LootBox && e.name !== I.BattleToken) || !("icon" in e)
+    ? T(e, t)
     : `R.images.gui.maps.icons.quests.bonuses.${t}.${e.icon}`;
 }
 var we = {
@@ -320,74 +320,74 @@ var we = {
     base__s400x300: "Reward_base__s400x300_21f091ec",
     base__s296x222: "Reward_base__s296x222_21f091ec",
   },
-  fe = L(function ({
+  fe = $(function ({
     bonus: e,
-    dayId: s,
-    index: n,
-    size: o,
-    RewardPlugin: r,
-    RewardInfoPlugin: i,
+    dayId: a,
+    index: s,
+    size: n,
+    RewardPlugin: o,
+    RewardInfoPlugin: r,
   }) {
-    const { model: c } = ae(),
-      { breakpoint: d } = f(),
-      { once: u, trigger: h } = ee(),
-      b = (0, G.useRef)(null),
-      x = (0, G.useRef)(!1),
-      w = c.awardDayState.get() === q.RegularDay,
-      v = c.rewardPlugin.get(),
-      S = c.rewardInfoPlugin.get(),
-      [R, D] = t(() => ({ opacity: 0, scale: 0.25, x: "-50%", y: "-50%" })),
-      [, C] = t(() => ({
+    const { model: l } = ae(),
+      { breakpoint: c } = v(),
+      { once: u, trigger: y } = ee(),
+      h = (0, G.useRef)(null),
+      w = (0, G.useRef)(!1),
+      f = l.awardDayState.get() === q.RegularDay,
+      S = l.rewardPlugin.get(),
+      R = l.rewardInfoPlugin.get(),
+      [C, N] = t(() => ({ opacity: 0, scale: 0.25, x: "-50%", y: "-50%" })),
+      [, T] = t(() => ({
         x: "0rem",
         y: "0rem",
         opacity: 0,
         scale: 0.25,
         brightness: 3,
         onChange: ({ value: { opacity: e, x: t, y: a, scale: s, brightness: n } }) => {
-          const o = b.current;
+          const o = h.current;
           o &&
             ((o.style.opacity = e),
             (o.style.transform = `translateX(${t}) translateY(${a}) scale(${s})`),
             (o.style.filter = `brightness(${n * n})`));
         },
       })),
-      [N, T] = t(() => ({ opacity: 0, y: "2rem" })),
-      E = () => {
+      [E, P] = t(() => ({ opacity: 0, y: "2rem" })),
+      I = () => {
         const e = (() => {
-            switch (o) {
-              case A.S296x222:
+            switch (n) {
+              case D.S296x222:
                 return { width: 296, height: 222 };
-              case A.S400x300:
+              case D.S400x300:
                 return { width: 400, height: 300 };
-              case A.S600x450:
+              case D.S600x450:
                 return { width: 600, height: 450 };
               default:
                 return (
-                  console.error(`[ImageSize] Unknown size! (${o})`),
+                  console.error(`[ImageSize] Unknown size! (${n})`),
                   { width: 296, height: 222 }
                 );
             }
           })(),
           t = viewEnv.remToPx(e.width),
           a = viewEnv.remToPx(e.height),
-          { width: s, height: r } = viewEnv.getClientSizePx();
+          { width: o, height: r } = viewEnv.getClientSizePx();
         return {
           width: t,
           height: a,
           top: r / 2 - a / 2,
-          left: s / 2 - (t * c.bonuses.get().length) / 2 + t * n,
+          left: o / 2 - (t * l.bonuses.get().length) / 2 + t * s,
         };
       },
-      P = () => {
-        const e = H[s],
-          t = viewEnv.remToPx(Y[d.name].widthRatio),
-          a = viewEnv.remToPx(Y[d.name].heightRatio),
-          n = viewEnv.remToPx(Y[d.name].topOffset),
-          { width: o, height: r, top: i, left: l } = E(),
+      k = () => {
+        const e = H[a],
+          t = viewEnv.remToPx(Y[c.name].widthRatio),
+          s = viewEnv.remToPx(Y[c.name].heightRatio),
+          n = viewEnv.remToPx(Y[c.name].topOffset),
+          { width: o, height: r, top: i, left: d } = I(),
           { width: u, height: g } = viewEnv.getClientSizePx(),
-          m = l + o / 2,
+          m = d + o / 2,
           y = i + r / 2;
-        if (!e || c.awardDayState.get() === q.ProgressionQuest)
+        if (!e || l.awardDayState.get() === q.ProgressionQuest)
           return {
             startX: "0rem",
             startY: "100%",
@@ -395,9 +395,9 @@ var we = {
             endY: `${viewEnv.pxToRem(g - y)}rem`,
           };
         const h = u / 2 - ((F[0]?.length || 0) * t) / 2,
-          b = g / 2 - (F.length * a) / 2 + n,
+          b = g / 2 - (F.length * s) / 2 + n,
           _ = h + e.x * t + (e.width * t) / 2,
-          p = b + e.y * a + (e.height * a) / 2;
+          p = b + e.y * s + (e.height * s) / 2;
         return {
           startX: `${viewEnv.pxToRem(_ - m)}rem`,
           startY: `${viewEnv.pxToRem(p - y)}rem`,
@@ -405,36 +405,36 @@ var we = {
           endY: `${viewEnv.pxToRem(g - y)}rem`,
         };
       };
-    g(
+    d(
       () => (
-        c.awardDayState.get() !== q.ProgressionQuest && c.isAnimationEnabled.get()
+        l.awardDayState.get() !== q.ProgressionQuest && l.isAnimationEnabled.get()
           ? (() => {
-              const e = P();
+              const e = k();
               e &&
-                C.start({
+                T.start({
                   from: { x: e.startX, y: e.startY },
                   to: { opacity: 1, scale: 0.35 },
                   config: { duration: 100, easing: X },
-                  delay: 300 * n,
+                  delay: 300 * s,
                   onStart: () => {
-                    (y.sound("adv_reward_icon"),
-                      D.start({
+                    (g.sound("adv_reward_icon"),
+                      N.start({
                         to: { opacity: 1, scale: 1 },
                         config: { duration: Q, easing: X },
                       }));
                   },
                   onRest: () => {
-                    x.current ||
-                      C.start({
+                    w.current ||
+                      T.start({
                         to: { opacity: 1, scale: 1, brightness: 1, x: "0rem", y: "0rem" },
-                        config: { duration: 800, easing: p.easeOutCubic },
+                        config: { duration: 800, easing: b.easeOutCubic },
                         delay: 100,
                         onStart: () => {
-                          c.bonuses.get().length - 1 === n && h("onLastRewardAnimationStart");
+                          l.bonuses.get().length - 1 === s && y("onLastRewardAnimationStart");
                         },
                         onRest: async () => {
-                          x.current ||
-                            T.start({
+                          w.current ||
+                            P.start({
                               to: { opacity: 1, y: "0rem" },
                               config: { duration: 100, easing: X },
                             });
@@ -443,50 +443,50 @@ var we = {
                   },
                 });
             })()
-          : C.start({
+          : T.start({
               from: { opacity: -2, scale: 0.35, brightness: 1, x: "0rem", y: "100%" },
               to: { opacity: 1, scale: 1, brightness: 1, x: "0rem", y: "0rem" },
-              config: { duration: 800, easing: p.easeOutCubic },
+              config: { duration: 800, easing: b.easeOutCubic },
               onStart: () => {
-                (y.sound("adv_reward_icon"),
-                  c.bonuses.get().length - 1 === n && h("onLastRewardAnimationStart"));
+                (g.sound("adv_reward_icon"),
+                  l.bonuses.get().length - 1 === s && y("onLastRewardAnimationStart"));
               },
               onRest: () => {
-                x.current ||
-                  T.start({ to: { opacity: 1, y: "0rem" }, config: { duration: 100, easing: X } });
+                w.current ||
+                  P.start({ to: { opacity: 1, y: "0rem" }, config: { duration: 100, easing: X } });
               },
             }),
         u("onCloseStart", () => {
-          ((x.current = !0),
-            c.isAnimationEnabled.get()
+          ((w.current = !0),
+            l.isAnimationEnabled.get()
               ? (() => {
-                  const e = P();
+                  const e = k();
                   e &&
-                    T.start({
+                    P.start({
                       to: { opacity: -0.1 },
                       config: { duration: 100, easing: M },
-                      delay: 200 * n,
+                      delay: 200 * s,
                       onRest: () => {
-                        C.start({
+                        T.start({
                           to: { opacity: 0, scale: 0.25, x: e.endX, y: e.endY },
                           config: { duration: 800, easing: V },
                           onRest: () => {
-                            c.bonuses.get().length - 1 === n && h("onCloseEnd");
+                            l.bonuses.get().length - 1 === s && y("onCloseEnd");
                           },
                         });
                       },
                     });
                 })()
-              : T.start({
+              : P.start({
                   to: { opacity: -0.1 },
                   config: { duration: 100, easing: M },
-                  delay: 200 * n,
+                  delay: 200 * s,
                   onRest: () => {
-                    C.start({
+                    T.start({
                       to: { opacity: 0, scale: 1, x: "0", y: "100%" },
                       config: { duration: 800, easing: V },
                       onRest: () => {
-                        c.bonuses.get().length - 1 === n && h("onCloseEnd");
+                        l.bonuses.get().length - 1 === s && y("onCloseEnd");
                       },
                     });
                   },
@@ -494,51 +494,51 @@ var we = {
         })
       ),
     );
-    const O = c.awardDayState.get() !== q.RegularDay;
+    const A = l.awardDayState.get() !== q.RegularDay;
     return (0, J.jsxs)("div", {
-      ref: b,
-      className: B(we.base, we[`base__${o}`], w && we.base__highlighted),
-      style: { zIndex: c.bonuses.get().length - n },
+      ref: h,
+      className: B(we.base, we[`base__${n}`], f && we.base__highlighted),
+      style: { zIndex: l.bonuses.get().length - s },
       children: [
-        w && (0, J.jsx)(l.div, { className: we.shadow, style: R }),
-        v
-          ? r
-            ? (0, J.jsx)(r, { bonus: e, size: o, withTooltip: O })
+        f && (0, J.jsx)(i.div, { className: we.shadow, style: C }),
+        S
+          ? o
+            ? (0, J.jsx)(o, { bonus: e, size: n, withTooltip: A })
             : null
           : (0, J.jsx)(j, {
               name: e.name,
-              image: xe(e, o),
-              size: o,
-              tooltipArgs: O ? z({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)) : void 0,
+              image: xe(e, n),
+              size: n,
+              tooltipArgs: A ? O({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)) : void 0,
               special:
                 "overlayType" in e &&
                 e.overlayType &&
                 (($ = e.overlayType),
-                ("string" == typeof $ && Object.values(a).includes($)) ||
+                ("string" == typeof $ && Object.values(p).includes($)) ||
                   (console.warn(`Invalid overlayType value: ${$}`), 0))
                   ? e.overlayType
                   : void 0,
             }),
-        (0, J.jsx)(l.div, {
+        (0, J.jsx)(i.div, {
           className: B(we.info, we[`info__${e.name}`]),
-          style: N,
-          children: S
-            ? i
-              ? (0, J.jsx)(i, { bonus: e, classNames: { counter: we.counter, label: we.label } })
+          style: E,
+          children: R
+            ? r
+              ? (0, J.jsx)(r, { bonus: e, classNames: { counter: we.counter, label: we.label } })
               : null
             : (0, J.jsxs)(J.Fragment, {
                 children: [
                   (0, J.jsx)("div", { className: we.label, children: pe(e) }),
                   (0, J.jsx)("div", {
                     className: we.counter,
-                    children: ((I = e), _(I.name) === k.MULTI ? m(I.value, k.MULTI) : null),
+                    children: ((z = e), _(z.name) === x.MULTI ? m(z.value, x.MULTI) : null),
                   }),
                 ],
               }),
         }),
       ],
     });
-    var I, $;
+    var z, $;
   }),
   ve = "Rewards_4b1e77a4";
 function Se(e) {
@@ -548,21 +548,21 @@ function Se(e) {
   if ("function" != typeof e.result)
     return (console.error("Incorrect plugin result type " + typeof e.result), null);
   const t = e.result;
-  return T(t) ? t : (console.error("Plugin result is not a React component"), null);
+  return w(t) ? t : (console.error("Plugin result is not a React component"), null);
 }
 var Re = {
-    extraSmall: { small: A.S296x222, big: A.S400x300 },
-    small: { small: A.S296x222, big: A.S400x300 },
-    medium: { small: A.S400x300, big: A.S400x300 },
-    large: { small: A.S400x300, big: A.S600x450 },
-    extraLarge: { small: A.S400x300, big: A.S600x450 },
+    extraSmall: { small: D.S296x222, big: D.S400x300 },
+    small: { small: D.S296x222, big: D.S400x300 },
+    medium: { small: D.S400x300, big: D.S400x300 },
+    large: { small: D.S400x300, big: D.S600x450 },
+    extraLarge: { small: D.S400x300, big: D.S600x450 },
   },
-  De = L(() => {
+  De = $(() => {
     const { model: e } = ae(),
       t = e.bonuses.get(),
-      { breakpoint: a } = f(),
-      s = Se(h(e.rewardPlugin.get())),
-      n = Se(h(e.rewardInfoPlugin.get())),
+      { breakpoint: a } = v(),
+      s = Se(f(e.rewardPlugin.get())),
+      n = Se(f(e.rewardInfoPlugin.get())),
       { small: o, big: r } = Re[a.name],
       i = t.length > 1 ? o : r;
     return (0, J.jsx)("div", {
@@ -594,27 +594,27 @@ var Re = {
     height: 400,
     frameCount: 50,
     chunk: { count: 2, rows: 5, columns: 5 },
-    getChunkPath: x("R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_"),
+    getChunkPath: z("R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_"),
   },
-  Ie = L(() => {
+  Ie = $(() => {
     const { model: e } = ae(),
       { on: a, once: s } = ee(),
       n = e.bonuses.get().length,
       [o, r] = t(() => ({ opacity: 0, y: "20rem" }));
     return (
-      g(() =>
+      d(() =>
         a("onHeaderAnimationStart", () => {
           r.start({
             to: { opacity: 1, y: "0rem" },
             config: { duration: 200, easing: X },
             delay: 100,
             onStart: () => {
-              e.awardDayState.get() !== q.RegularDay && y.sound("adv_reward_ribbon");
+              e.awardDayState.get() !== q.RegularDay && g.sound("adv_reward_ribbon");
             },
           });
         }),
       ),
-      g(() =>
+      d(() =>
         s("onCloseStart", () => {
           r.start({
             to: { opacity: 0, y: "20rem" },
@@ -625,7 +625,7 @@ var Re = {
       ),
       e.awardDayState.get() === q.RegularDay
         ? null
-        : (0, J.jsxs)(l.div, {
+        : (0, J.jsxs)(i.div, {
             className: Ce,
             style: o,
             children: [
@@ -635,11 +635,11 @@ var Re = {
                 children: [
                   (1 === n || 3 === n) && (0, J.jsx)("div", { className: Te }),
                   n % 2 == 1 &&
-                    (0, J.jsx)(O, {
+                    (0, J.jsx)(k, {
                       width: Oe.width,
                       height: Oe.height,
                       frameCount: Oe.frameCount,
-                      getImageSource: S(Oe),
+                      getImageSource: h(Oe),
                       frameTime: 50,
                       className: Ee,
                     }),
@@ -653,39 +653,39 @@ var Re = {
   ke = "App_60b35649",
   Ae = "App_background_c855b7f0",
   Be = "App_close_af249285",
-  ze = L(() => {
+  ze = $(() => {
     const { model: e, controls: a } = ae(),
       { on: s, once: n, trigger: o } = ee(),
-      [r, i] = t(() => ({ opacity: 0 })),
-      [c, d] = t(() => ({ opacity: 0, visibility: "hidden" }));
-    function m() {
+      [r, l] = t(() => ({ opacity: 0 })),
+      [u, m] = t(() => ({ opacity: 0, visibility: "hidden" }));
+    function y() {
       e.computes.readyToClose() && o("onCloseStart");
     }
     return (
-      u(m),
-      g(() => {
+      c(y),
+      d(() => {
         if (!e.bonuses.get().length) return a.close();
       }),
-      g(() =>
+      d(() =>
         s("onLastRewardAnimationStart", () => {
           (a.setBlur(!0),
-            i.start({ to: { opacity: 1 }, config: { duration: Q, easing: p.easeOutCubic } }));
+            l.start({ to: { opacity: 1 }, config: { duration: Q, easing: b.easeOutCubic } }));
         }),
       ),
-      g(() => {
+      d(() => {
         const t = [];
         let o = "";
         return (
           t.push(
             n("onCloseStart", (t) => {
               ((o = t),
-                y.sound("adv_whoosh"),
+                g.sound("adv_whoosh"),
                 a.setBlur(!1),
-                i.start({
+                l.start({
                   to: { opacity: 0 },
                   config: { duration: 200 * (e.bonuses.get().length - 1) + 800, easing: M },
                 }),
-                d.start({ immediate: !0, to: { opacity: 0, visibility: "hidden" } }));
+                m.start({ immediate: !0, to: { opacity: 0, visibility: "hidden" } }));
             }),
           ),
           t.push(
@@ -698,13 +698,13 @@ var Re = {
           }
         );
       }),
-      g(() =>
+      d(() =>
         N(
           () => e.computes.readyToClose(),
           () => {
-            d.start({
+            m.start({
               to: { opacity: 1, visibility: "visible" },
-              config: { duration: Q, easing: p.easeOutCubic },
+              config: { duration: Q, easing: b.easeOutCubic },
             });
           },
         ),
@@ -713,9 +713,9 @@ var Re = {
         className: ke,
         lang: R.strings.settings.LANGUAGE_CODE(),
         children: [
-          (0, J.jsx)(l.div, { className: Ae, style: r }),
+          (0, J.jsx)(i.div, { className: Ae, style: r }),
           e.awardDayState.get() !== q.RegularDay &&
-            (0, J.jsx)(l.div, { className: Be, style: c, children: (0, J.jsx)(D, { onClose: m }) }),
+            (0, J.jsx)(i.div, { className: Be, style: u, children: (0, J.jsx)(E, { onClose: y }) }),
           (0, J.jsx)(_e, {}),
           (0, J.jsx)(Ie, {}),
           (0, J.jsx)(De, {}),
@@ -724,9 +724,9 @@ var Re = {
       })
     );
   });
-(E(),
-  n(
-    (0, J.jsx)(o, {
+(n(),
+  s(
+    (0, J.jsx)(l, {
       children: (0, J.jsx)(Z, { children: (0, J.jsx)(te, { children: (0, J.jsx)(ze, {}) }) }),
     }),
   ));

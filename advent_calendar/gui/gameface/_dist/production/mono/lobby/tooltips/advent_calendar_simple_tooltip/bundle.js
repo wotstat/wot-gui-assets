@@ -2,46 +2,55 @@ import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   Ct as a,
   D as e,
-  T as r,
-  X as t,
-  at as o,
-  et as l,
+  X as r,
+  _ as t,
+  at as l,
+  et as o,
   ft as i,
   k as p,
-  t as c,
+  t as n,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 a();
-var [d, n] = p()(({ externalModel: s, readByPath: a }) => {
+var [c, d] = p()(({ externalModel: s, readByPath: a }) => {
     const e = () => JSON.parse(a("payload")),
-      r = { tooltipArgs: l.box(e()) };
+      t = { tooltipArgs: o.box(e()) };
     return (
       s.subscribe(
-        t(() => r.tooltipArgs.set(e())),
+        r(() => t.tooltipArgs.set(e())),
         "payload",
       ),
-      { ...r }
+      { ...t }
     );
   }, i),
   m = "App_39cb063c",
   g = "App_header_846f0386",
-  x = "App_description_d873f135",
-  h = s(o(), 1),
+  x = "App_description_5e854530",
+  h = s(l(), 1),
   j = () => {
-    const { model: s } = n(),
-      { header: a, body: e, bindings: t } = s.tooltipArgs.get();
+    const { model: s } = d(),
+      { header: a, body: e, bindings: r } = s.tooltipArgs.get();
     return a || e
-      ? (0, h.jsx)(c, {
-          children: (0, h.jsx)(c.Decorator, {
+      ? (0, h.jsx)(n, {
+          children: (0, h.jsx)(n.Decorator, {
             children: (0, h.jsxs)("div", {
               className: m,
               children: [
-                a && (0, h.jsx)(r, { className: g, text: a, params: t, upgradeLegacy: !0 }),
-                e && (0, h.jsx)(r, { className: x, text: e, params: t, upgradeLegacy: !0 }),
+                a && (0, h.jsx)(t, { className: g, text: a, params: r, upgradeLegacy: !0 }),
+                e &&
+                  e
+                    .split("\n")
+                    .map((s, a) =>
+                      (0, h.jsx)(
+                        t,
+                        { className: x, text: s, params: r, split: !0, upgradeLegacy: !0 },
+                        a,
+                      ),
+                    ),
               ],
             }),
           }),
         })
       : (viewEnv.resizeViewRem(1, 1), null);
   };
-e((0, h.jsx)(d, { children: (0, h.jsx)(j, {}) }));
+e((0, h.jsx)(c, { children: (0, h.jsx)(j, {}) }));

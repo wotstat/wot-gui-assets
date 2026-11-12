@@ -1,21 +1,21 @@
 import { r as a } from "./rolldown-runtime.js";
 import {
-  Ct as e,
-  M as l,
-  N as r,
-  Tt as s,
-  at as t,
-  d as n,
-  f as d,
-  i as o,
+  C as e,
+  Ct as l,
+  M as r,
+  N as s,
+  S as t,
+  Tt as n,
+  at as d,
+  m as o,
   xt as i,
 } from "./lib.js";
-e();
-var c = a(t(), 1),
-  b = s.resolve("views"),
+l();
+var c = a(d(), 1),
+  b = n.resolve("views"),
   p = ({ children: a, tooltipArgs: e, disabled: l }) =>
     e
-      ? (0, c.jsx)(n, {
+      ? (0, c.jsx)(t, {
           contentId: b.read((a) =>
             a.advent_calendar.mono.lobby.tooltips.advent_calendar_simple_tooltip("resId"),
           ),
@@ -26,29 +26,29 @@ var c = a(t(), 1),
       : a,
   m = "Balance_54b92dbf",
   v = "Balance_currency_6b73737",
-  y = s.resolve("strings");
+  y = n.resolve("strings");
 function u({
   balancePluginPath: a,
-  isWalletAvailable: e,
-  currencyName: s,
-  balanceCurrencyValue: t,
-  currencyTooltipId: n,
+  isWalletAvailable: l,
+  currencyName: t,
+  balanceCurrencyValue: n,
+  currencyTooltipId: d,
   className: b,
 }) {
-  const p = l({
+  const p = r({
       header: y.readOrEmpty("R.strings.advent_calendar.balance.tooltip.unavailable.header"),
       body: y.readOrEmpty("R.strings.advent_calendar.balance.tooltip.unavailable.body"),
     }),
-    u = r(n || void 0);
+    u = s(d || void 0);
   return a
     ? (0, c.jsx)(o, { src: a })
     : (0, c.jsx)("div", {
-        ...(e ? u : p),
+        ...(l ? u : p),
         className: i(m, b),
-        children: (0, c.jsx)(d, {
+        children: (0, c.jsx)(e, {
           className: v,
-          type: s,
-          children: e ? t : y.readOrEmpty("R.strings.advent_calendar.balance.dashes"),
+          type: t,
+          children: l ? n : y.readOrEmpty("R.strings.advent_calendar.balance.dashes"),
         }),
       });
 }

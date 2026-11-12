@@ -1,54 +1,54 @@
 import {
   Bt as s,
-  Gt as a,
-  Nn as e,
-  Ut as t,
-  W as r,
-  g as c,
-  jr as i,
-  m as n,
-  ni as o,
-  p,
+  C as a,
+  Gt as e,
+  L as t,
+  Nn as r,
+  S as c,
+  T as i,
+  Ut as n,
+  jr as o,
+  ni as p,
   t as l,
-  u as d,
+  y as d,
   zt as m,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
-import { i as u } from "../../chunks/vendor.js";
-import { t as j } from "../../chunks/common.js";
-var [x, _] = a()((s) => {
+import { i as j } from "../../chunks/vendor.js";
+import { t as u } from "../../chunks/common.js";
+var [x, _] = e()((s) => {
   const a = s.observableModel.primitives(["params", "type"]);
   return {
     type: a.type,
     computes: {
-      params: t.primitive(function (s) {
+      params: n.primitive(function (s) {
         return s(a.params.get());
       }),
     },
   };
-}, i);
+}, o);
 var h,
   v = "App_21e3a147",
   g = "App_header_62566856",
-  N = "App_icon_24de08c2",
-  b = "App_headerContainer_b23d7c80",
-  f = "App_title_5ec15df",
-  y = "App_cooldown_1072bf2a",
+  y = "App_icon_24de08c2",
+  N = "App_headerContainer_b23d7c80",
+  b = "App_title_5ec15df",
+  f = "App_cooldown_1072bf2a",
   A = "App_content_80741629",
   k = "App_container_58b78fd8",
   w = "App_description_fecd9a89",
-  S = e(),
+  S = r(),
   L = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
-  $ =
-    ((h = d(n({ title: c(), iconName: c(), cooldownSeconds: p(), description: c() }))),
+  C =
+    ((h = d(a({ title: i(), iconName: i(), cooldownSeconds: c(), description: i() }))),
     function () {
       return _().model.computes.params(h);
     }),
-  z = o.resolve("strings"),
-  B = u(function () {
-    const { title: s, iconName: a, cooldownSeconds: e, description: t } = $(),
-      c = j(z.readOrEmpty("tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime")),
-      i = j(t);
+  T = p.resolve("strings"),
+  $ = j(function () {
+    const { title: s, iconName: a, cooldownSeconds: e, description: r } = C(),
+      c = u(T.readOrEmpty("tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime")),
+      i = u(r);
     return (0, S.jsx)(l, {
       children: (0, S.jsx)(l.Decorator, {
         children: (0, S.jsx)("div", {
@@ -60,21 +60,21 @@ var h,
                 className: g,
                 children: [
                   (0, S.jsx)("div", {
-                    className: N,
+                    className: y,
                     style: { backgroundImage: `url(${L.$dyn(a)})` },
                   }),
                   (0, S.jsxs)("div", {
-                    className: b,
+                    className: N,
                     children: [
-                      (0, S.jsx)("div", { className: f, children: s }),
+                      (0, S.jsx)("div", { className: b, children: s }),
                       c.map(({ text: s, params: a }) =>
                         (0, S.jsx)(
-                          r,
+                          t,
                           {
                             upgradeLegacy: !0,
                             text: s,
                             params: { ...a, cooldown: e },
-                            className: y,
+                            className: f,
                           },
                           s,
                         ),
@@ -87,7 +87,7 @@ var h,
                 className: A,
                 children: i.map(({ text: s, params: a }) =>
                   (0, S.jsx)(
-                    r,
+                    t,
                     { upgradeLegacy: !0, text: s, params: { ...a }, className: w, split: !0 },
                     s,
                   ),
@@ -99,4 +99,4 @@ var h,
       }),
     });
   });
-s((0, S.jsxs)(m, { children: [(0, S.jsx)(x, { children: (0, S.jsx)(B, {}) }), ","] }));
+s((0, S.jsxs)(m, { children: [(0, S.jsx)(x, { children: (0, S.jsx)($, {}) }), ","] }));

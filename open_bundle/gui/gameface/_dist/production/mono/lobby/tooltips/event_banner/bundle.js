@@ -1,4 +1,4 @@
-import { S as s, b as e, l as t, lt as a, q as r, t as o, w as n } from "../../chunks/lib.js";
+import { S as s, b as e, l as t, lt as a, q as r, r as o, w as n } from "../../chunks/lib.js";
 import { n as c } from "../../chunks/base.js";
 import { t as i } from "../../chunks/vendor.js";
 import { t as m } from "../../chunks/background.js";

@@ -2,7 +2,7 @@ import { r as s } from "../../chunks/rolldown-runtime.js";
 import {
   Ct as e,
   D as a,
-  T as t,
+  _ as t,
   at as i,
   ft as r,
   k as o,
@@ -10,7 +10,7 @@ import {
   ut as n,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
-import { n as c } from "../../chunks/vendor.js";
+import { t as c } from "../../chunks/vendor.js";
 e();
 var [d, m] = o()(({ observableModel: s }) => ({ rewards: s.array("rewards") }), r),
   _ = s(c(), 1),
@@ -50,20 +50,20 @@ var N = ({ section: s }) =>
   S = "App_10e23c06",
   k = "App_title_b196b40c",
   A = "App_subTitle_e2d532bd",
-  T = R.strings.advent_calendar.mainView.tooltip.allRewards,
-  $ = () => {
+  $ = R.strings.advent_calendar.mainView.tooltip.allRewards,
+  B = () => {
     const { model: s } = m();
     return (0, f.jsx)(l, {
       children: (0, f.jsx)(l.Decorator, {
         children: (0, f.jsxs)("div", {
           className: S,
           children: [
-            (0, f.jsx)(t, { className: k, text: T.title() }),
-            (0, f.jsx)(t, { className: A, text: T.subTitle() }),
+            (0, f.jsx)(t, { className: k, text: $.title() }),
+            (0, f.jsx)(t, { className: A, text: $.subTitle() }),
             n(s.rewards.get(), (s, e) => (0, f.jsx)(N, { section: s }, e)),
           ],
         }),
       }),
     });
   };
-a((0, f.jsx)(d, { children: (0, f.jsx)($, {}) }));
+a((0, f.jsx)(d, { children: (0, f.jsx)(B, {}) }));

@@ -1,31 +1,31 @@
 import {
   Bt as s,
-  Gt as e,
-  Nn as a,
-  Ut as t,
-  W as r,
-  jr as i,
-  m as n,
-  ni as o,
-  p as l,
+  C as e,
+  Gt as a,
+  L as t,
+  Nn as r,
+  S as i,
+  Ut as n,
+  jr as o,
+  ni as l,
   t as c,
-  u as d,
+  y as d,
   zt as p,
 } from "../../chunks/lib.js";
 import "../../chunks/globals.js";
 import { i as m } from "../../chunks/vendor.js";
 import { t as x } from "../../chunks/common.js";
-var [j, u] = e()((s) => {
+var [j, u] = a()((s) => {
   const e = s.observableModel.primitives(["params", "type"]);
   return {
     type: e.type,
     computes: {
-      params: t.primitive(function (s) {
+      params: n.primitive(function (s) {
         return s(e.params.get());
       }),
     },
   };
-}, i);
+}, o);
 var _,
   v = "Content_2a67c3d5",
   h = "Content_2f46cd49",
@@ -33,17 +33,17 @@ var _,
   f = "Content_container_f73799e6",
   b = "Content_title_cc6d6a31",
   y = "Content_description_c744435f",
-  g = a(),
+  g = r(),
   w = R.strings.battle_royale.tooltips.respawn,
   C =
-    ((_ = d(n({ platoonTimeToResurrect: l(), platoonRespawnPeriod: l(), soloRespawnPeriod: l() }))),
+    ((_ = d(e({ platoonTimeToResurrect: i(), platoonRespawnPeriod: i(), soloRespawnPeriod: i() }))),
     function () {
       return u().model.computes.params(_);
     }),
-  H = o.resolve("strings"),
+  H = l.resolve("strings"),
   T = m(function () {
     const { platoonTimeToResurrect: s, soloRespawnPeriod: e, platoonRespawnPeriod: a } = C(),
-      t = x(H.readOrEmpty("battle_royale.tooltips.respawn.solo.description")),
+      r = x(H.readOrEmpty("battle_royale.tooltips.respawn.solo.description")),
       i = x(H.readOrEmpty("battle_royale.tooltips.respawn.platoon.description"));
     return (0, g.jsx)("div", {
       className: v,
@@ -60,9 +60,9 @@ var _,
               className: f,
               children: [
                 (0, g.jsx)("div", { className: b, children: w.solo.title() }),
-                t.map(({ text: s, params: a }) =>
+                r.map(({ text: s, params: a }) =>
                   (0, g.jsx)(
-                    r,
+                    t,
                     {
                       upgradeLegacy: !0,
                       text: s,
@@ -79,13 +79,13 @@ var _,
               className: f,
               children: [
                 (0, g.jsx)("div", { className: b, children: w.platoon.title() }),
-                i.map(({ text: e, params: t }) =>
+                i.map(({ text: e, params: r }) =>
                   (0, g.jsx)(
-                    r,
+                    t,
                     {
                       upgradeLegacy: !0,
                       text: e,
-                      params: { ...t, timeToResurrect: s, duration: a },
+                      params: { ...r, timeToResurrect: s, duration: a },
                       className: y,
                       split: !0,
                     },
@@ -101,7 +101,7 @@ var _,
   }),
   k = "Footer_82c68168",
   P = "Footer_text_c859c809";
-function E() {
+function L() {
   return (0, g.jsx)("div", {
     className: k,
     children: (0, g.jsxs)("span", {
@@ -110,17 +110,17 @@ function E() {
     }),
   });
 }
-var F = "Header_9a6b431",
-  L = "Header_icon_937d671c",
+var E = "Header_9a6b431",
+  F = "Header_icon_937d671c",
   O = "Header_description_7d3252af",
   z = "Header_title_6d0764fe",
   A = "Header_subtitle_c9393f08",
   B = R.strings.battle_royale.tooltips.respawn;
 function D() {
   return (0, g.jsxs)("div", {
-    className: F,
+    className: E,
     children: [
-      (0, g.jsx)("div", { className: L }),
+      (0, g.jsx)("div", { className: F }),
       (0, g.jsxs)("div", {
         className: O,
         children: [
@@ -137,7 +137,7 @@ function M() {
     children: (0, g.jsx)(c.Decorator, {
       children: (0, g.jsxs)("div", {
         className: G,
-        children: [(0, g.jsx)(D, {}), (0, g.jsx)(T, {}), (0, g.jsx)(E, {})],
+        children: [(0, g.jsx)(D, {}), (0, g.jsx)(T, {}), (0, g.jsx)(L, {})],
       }),
     }),
   });
