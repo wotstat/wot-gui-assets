@@ -755,7 +755,7 @@
           };
         window.ViewEnvHelper = g;
       },
-      8269: (u, e, t) => {
+      5721: (u, e, t) => {
         var n = t(6179),
           A = t.n(n),
           E = t(493),
@@ -952,7 +952,7 @@
           P = (u) =>
             u < 60
               ? R.strings.fun_random.entryPoint.lessMinute()
-              : ((u, e = !0) =>
+              : ((u, e = !0, t = !1) =>
                   u.days > 7 && e
                     ? o(R.strings.common.duration.days(), { days: u.days })
                     : u.days >= 1
@@ -962,7 +962,7 @@
                       : u.hours >= 1
                         ? 0 === u.minutes
                           ? o(R.strings.common.duration.hours(), { hours: u.hours })
-                          : `${o(R.strings.common.duration.hours(), { hours: u.hours })} ${o(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                          : `${o(R.strings.common.duration.hours(), { hours: u.hours })} ${o(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                         : o(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
                   (function (u = 0) {
                     let e = u;
@@ -1226,6 +1226,6 @@
         t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
       (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
     })());
-  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(8269));
+  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(5721));
   __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

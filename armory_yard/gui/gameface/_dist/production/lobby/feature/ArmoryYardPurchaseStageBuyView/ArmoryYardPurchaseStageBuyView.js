@@ -1256,7 +1256,7 @@
         var P = t(493),
           O = t.n(P);
         let N, H, I, G, U, W, X, j, q;
-        function z(u) {
+        function V(u) {
           engine.call("PlaySound", u);
         }
         (!(function (u) {
@@ -1279,6 +1279,7 @@
             (u.TankmenXpFactor = "tankmenXPFactor"),
             (u.FreeXpFactor = "freeXPFactor"),
             (u.BattleToken = "battleToken"),
+            (u.Entitlements = "entitlements"),
             (u.PremiumUniversal = "premium_universal"),
             (u.Gold = "gold"),
             (u.Credits = "credits"),
@@ -1291,7 +1292,6 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
-            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -1324,7 +1324,11 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.RazlomCoin = "razlom_coin"));
+            (u.NyPetGoodies = "nyPetGoodies"),
+            (u.HiddenVehicle = "hidden_vehicle"),
+            (u.NyStaticDogTag = "nyStaticDogTag"),
+            (u.NyToys = "nyToys"),
+            (u.NyLootboxFragment = "nyLootboxFragment"));
         })(N || (N = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -1424,7 +1428,7 @@
           (function (u) {
             u.ProgressionStyle = "progressionStyle";
           })(q || (q = {})));
-        const V = {
+        const Y = {
             base: "TextButton_base_b6",
             base__right: "TextButton_base__right_39",
             icon: "TextButton_icon_17",
@@ -1442,7 +1446,7 @@
             base__left: "TextButton_base__left_ff",
             shine: "TextButton_shine_e2",
           },
-          Y = [
+          z = [
             "caption",
             "onClick",
             "goto",
@@ -1477,7 +1481,7 @@
               (this._onMouseEnter = (u) => (e) => {
                 (u && u(e),
                   this.setState({ hover: !0 }),
-                  this.props.soundHover && z(this.props.soundHover));
+                  this.props.soundHover && V(this.props.soundHover));
               }),
               (this._onMouseLeave = (u) => (e) => {
                 (u && u(e), this.setState({ hover: !1, click: !1 }));
@@ -1485,7 +1489,7 @@
               (this._onMouseDown = (u) => (e) => {
                 (u && u(e),
                   this.setState({ click: !0 }),
-                  this.props.soundClick && z(this.props.soundClick));
+                  this.props.soundClick && V(this.props.soundClick));
               }),
               (this._onMouseUp = (u) => (e) => {
                 (u && u(e), this.setState({ click: !1 }));
@@ -1516,12 +1520,12 @@
                     a = Object.keys(u);
                   for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                   return n;
-                })(u, Y)),
-              A = C()(V.base, V[`base__${o}`], V[`base__${a}`], null == i ? void 0 : i.base),
-              F = C()(V.icon, V[`icon__${o}`], V[`icon__${a}`], null == i ? void 0 : i.icon),
-              D = C()(V.glow, null == i ? void 0 : i.glow),
-              m = C()(V.caption, V[`caption__${o}`], null == i ? void 0 : i.caption),
-              d = C()(V.goto, null == i ? void 0 : i.goto);
+                })(u, z)),
+              A = C()(Y.base, Y[`base__${o}`], Y[`base__${a}`], null == i ? void 0 : i.base),
+              F = C()(Y.icon, Y[`icon__${o}`], Y[`icon__${a}`], null == i ? void 0 : i.icon),
+              D = C()(Y.glow, null == i ? void 0 : i.glow),
+              m = C()(Y.caption, Y[`caption__${o}`], null == i ? void 0 : i.caption),
+              d = C()(Y.goto, null == i ? void 0 : i.goto);
             return n().createElement(
               "div",
               K(
@@ -1537,7 +1541,7 @@
                 },
                 c,
               ),
-              "info" !== o && n().createElement("div", { className: V.shine }),
+              "info" !== o && n().createElement("div", { className: Y.shine }),
               n().createElement(
                 "div",
                 { className: F },
@@ -2316,7 +2320,7 @@
             );
           }),
           qu = R.strings.armory_yard.purchaseStage.buyTokens.description,
-          zu = (0, r.memo)(() =>
+          Vu = (0, r.memo)(() =>
             n().createElement(
               "div",
               { className: "Description_base_b8" },
@@ -2324,7 +2328,7 @@
               n().createElement(ju, { className: "Description_description_be", text: qu.body() }),
             ),
           ),
-          Vu = {
+          Yu = {
             base: "CButton_base_40",
             base__main: "CButton_base__main_42",
             base__primary: "CButton_base__primary_7f",
@@ -2347,7 +2351,7 @@
             base__highlightActive: "CButton_base__highlightActive_b2",
             content: "CButton_content_cc",
           };
-        let Yu, Ku;
+        let zu, Ku;
         (!(function (u) {
           ((u.main = "main"),
             (u.primary = "primary"),
@@ -2355,7 +2359,7 @@
             (u.primaryRed = "primaryRed"),
             (u.secondary = "secondary"),
             (u.ghost = "ghost"));
-        })(Yu || (Yu = {})),
+        })(zu || (zu = {})),
           (function (u) {
             ((u.extraSmall = "extraSmall"), (u.small = "small"), (u.medium = "medium"));
           })(Ku || (Ku = {})));
@@ -2402,7 +2406,7 @@
             ),
             T = (0, r.useCallback)(
               (u) => {
-                o || (null !== s && z(s), E && E(u), x(!0));
+                o || (null !== s && V(s), E && E(u), x(!0));
               },
               [o, s, E],
             ),
@@ -2420,7 +2424,7 @@
             ),
             k = (0, r.useCallback)(
               (u) => {
-                o || (null !== l && z(l), c && c(u), t && w(), v(!0));
+                o || (null !== l && V(l), c && c(u), t && w(), v(!0));
               },
               [o, l, c, w, t],
             ),
@@ -2431,18 +2435,18 @@
               [o, F],
             ),
             O = C()(
-              Vu.base,
-              Vu[`base__${a}`],
+              Yu.base,
+              Yu[`base__${a}`],
               {
-                [Vu.base__disabled]: o,
-                [Vu[`base__${e}`]]: e,
-                [Vu.base__focus]: B,
-                [Vu.base__highlightActive]: p,
-                [Vu.base__firstHover]: f,
+                [Yu.base__disabled]: o,
+                [Yu[`base__${e}`]]: e,
+                [Yu.base__focus]: B,
+                [Yu.base__highlightActive]: p,
+                [Yu.base__firstHover]: f,
               },
               i,
             ),
-            N = C()(Vu.state, Vu.state__default);
+            N = C()(Yu.state, Yu.state__default);
           return (
             (0, r.useEffect)(
               () => (
@@ -2468,30 +2472,30 @@
                 onMouseLeave: P,
                 onClick: y,
               },
-              a !== Yu.ghost &&
+              a !== zu.ghost &&
                 n().createElement(
                   n().Fragment,
                   null,
-                  n().createElement("div", { className: Vu.back }),
-                  n().createElement("span", { className: Vu.texture }),
+                  n().createElement("div", { className: Yu.back }),
+                  n().createElement("span", { className: Yu.texture }),
                 ),
               n().createElement(
                 "span",
                 { className: N },
-                n().createElement("span", { className: Vu.stateDisabled }),
-                n().createElement("span", { className: Vu.stateHighlightHover }),
-                n().createElement("span", { className: Vu.stateHighlightActive }),
+                n().createElement("span", { className: Yu.stateDisabled }),
+                n().createElement("span", { className: Yu.stateHighlightHover }),
+                n().createElement("span", { className: Yu.stateHighlightActive }),
               ),
               n().createElement(
                 "span",
-                { className: Vu.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                { className: Yu.content, lang: R.strings.settings.LANGUAGE_CODE() },
                 u,
               ),
             )
           );
         };
         $u.defaultProps = {
-          type: Yu.primary,
+          type: zu.primary,
           isFocused: !1,
           soundHover: "highlight",
           soundClick: "play",
@@ -2883,7 +2887,7 @@
           me = "TokensStepper_btn__scaled_9a",
           de = "play",
           Be = /\d+/,
-          Ce = () => z("highlight"),
+          Ce = () => V("highlight"),
           ge = ({
             value: u,
             minValue: e,
@@ -2993,7 +2997,7 @@
                   ),
                   onMouseEnter: Ce,
                   onClick: () => {
-                    _ && (z(de), l());
+                    _ && (V(de), l());
                   },
                 }),
                 n().createElement("div", {
@@ -3006,7 +3010,7 @@
                   ),
                   onMouseEnter: Ce,
                   onClick: () => {
-                    c && (z(de), E());
+                    c && (V(de), E());
                   },
                 }),
               ),
@@ -3036,10 +3040,10 @@
               {
                 className: pe.base,
                 onClick: () => {
-                  (e(u), i(!1), z("play"));
+                  (e(u), i(!1), V("play"));
                 },
                 onMouseEnter: () => {
-                  t || (i(!0), z("highlight"));
+                  t || (i(!0), V("highlight"));
                 },
                 onMouseLeave: () => {
                   t || i(!1);
@@ -3188,7 +3192,7 @@
                     n().createElement(
                       Qu,
                       {
-                        type: Yu.main,
+                        type: zu.main,
                         mixClass: "Footer_buyButton_d2",
                         onClick: () => i(l, f),
                         disabled: !b,
@@ -3302,7 +3306,7 @@
                   n().createElement(
                     "div",
                     { className: "App_description_ab" },
-                    n().createElement(zu, null),
+                    n().createElement(Vu, null),
                   ),
                   n().createElement("div", { className: "App_tokenImage_13" }),
                 ),

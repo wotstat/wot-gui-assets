@@ -594,12 +594,12 @@
 .MainReward_icon_14 {
   width: 200rem;
   height: 118rem;
-  background: url("R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_1") center /
-    contain no-repeat;
+  background: url("R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_1_200x118")
+    center / contain no-repeat;
 }
 
 .MainReward_icon__main_af {
-  background-image: url("R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_2");
+  background-image: url("R.images.armory_yard.gui.maps.icons.common.final_reward.main_reward_2_200x118");
 }
 
 .MainReward_preview_af {
@@ -802,7 +802,6 @@
   height: 116rem;
   position: relative;
 }
-
 .Step_progress_c9 {
   width: 96rem;
   height: 4rem;
@@ -810,17 +809,19 @@
   top: 24rem;
   left: 21rem;
 }
-
-.Step_progress__first_82,
-.Step_progress__right_57 {
+.Step_progress__first_82 {
   width: 117rem;
   left: 0;
 }
-
+.Step_progress__right_57 {
+  width: 117rem;
+  left: 0;
+  mask-image: linear-gradient(to right, transparent 0%, #fff 80%);
+}
 .Step_progress__left_30 {
   width: 117rem;
+  mask-image: linear-gradient(to right, #fff 20%, transparent 100%);
 }
-
 .Step_icon_b0 {
   width: 46rem;
   height: 52rem;
@@ -830,7 +831,6 @@
   z-index: 99;
   cursor: pointer;
 }
-
 .Step_reward_df {
   width: 138rem;
   height: 82rem;
@@ -838,7 +838,6 @@
   top: 30rem;
   left: 0;
 }
-
 .Step_line_c5 {
   width: 3rem;
   height: 64rem;
@@ -846,11 +845,10 @@
   top: 52rem;
   right: 22rem;
 }
-
 .Step_mainReward_b6 {
   position: absolute;
   bottom: 33rem;
-  left: 96rem;
+  left: 86rem;
   z-index: 1;
 }
 
@@ -2133,6 +2131,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
   width: 1124rem;
 }
 .Footer_productCounter_dd {
+  height: 32rem;
   margin-left: 8rem;
   position: relative;
 }

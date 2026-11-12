@@ -38,6 +38,7 @@
               (e.TankmenXpFactor = "tankmenXPFactor"),
               (e.FreeXpFactor = "freeXPFactor"),
               (e.BattleToken = "battleToken"),
+              (e.Entitlements = "entitlements"),
               (e.PremiumUniversal = "premium_universal"),
               (e.Gold = "gold"),
               (e.Credits = "credits"),
@@ -50,7 +51,6 @@
               (e.SelectableBonus = "selectableBonus"),
               (e.StyleProgressToken = "styleProgressToken"),
               (e.TmanToken = "tmanToken"),
-              (e.PortalEventDiscount25 = "portalEventDiscountToken"),
               (e.NaturalCover = "naturalCover"),
               (e.BpCoin = "bpcoin"),
               (e.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -83,7 +83,11 @@
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
               (e.RewardsSlots = "rewardsSlots"),
-              (e.RazlomCoin = "razlom_coin"));
+              (e.NyPetGoodies = "nyPetGoodies"),
+              (e.HiddenVehicle = "hidden_vehicle"),
+              (e.NyStaticDogTag = "nyStaticDogTag"),
+              (e.NyToys = "nyToys"),
+              (e.NyLootboxFragment = "nyLootboxFragment"));
           })(n || (n = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -206,6 +210,7 @@
           n.E4.TankmenXpFactor,
           n.E4.FreeXpFactor,
           n.E4.BattleToken,
+          n.E4.Entitlements,
           n.E4.PremiumUniversal,
           n.E4.NaturalCover,
           n.E4.BpCoin,
@@ -220,6 +225,9 @@
           n.E4.Comp7TokenWeeklyReward,
           n.E4.Comp7TokenCouponReward,
           n.E4.BattleBoosterGift,
+          n.E4.NewYearFillers,
+          n.E4.NewYearInvoice,
+          n.E4.LootBoxToken,
           n.E4.CosmicLootboxCommon,
           n.E4.CosmicLootboxSilver,
           n.E4.SelectableBonus,
@@ -227,10 +235,14 @@
           n.E4.PremiumPlusUniversal,
           n.E4.GoldenTicket,
           n.E4.RewardsSlots,
+          n.E4.NyPetGoodies,
+          n.E4.HiddenVehicle,
+          n.E4.NyLootboxFragment,
           n.E4.Gold,
           n.E4.Credits,
           n.E4.Crystal,
           n.E4.FreeXp,
+          n.E4.NewYearToyFragments,
           n.E4.BattlePassPoints,
           n.E4.PremiumPlus,
           n.E4.Premium,
@@ -415,9 +427,9 @@
             addPreloadTexture: () => a,
             children: () => n,
             displayStatus: () => i.W,
-            displayStatusIs: () => f,
+            displayStatusIs: () => y,
             events: () => r.U,
-            extraSize: () => k,
+            extraSize: () => f,
             forceTriggerMouseMove: () => O,
             freezeTextureBeforeResize: () => m,
             getBrowserTexturePath: () => l,
@@ -436,7 +448,7 @@
             setEventHandled: () => g,
             setInputPaddingsRem: () => _,
             setSidePaddingsRem: () => d,
-            whenTutorialReady: () => y,
+            whenTutorialReady: () => k,
           }));
         var n = o(3722),
           i = o(6112),
@@ -500,11 +512,11 @@
         function R() {
           return viewEnv.getShowingStatus();
         }
-        const f = Object.keys(i.W).reduce(
+        const y = Object.keys(i.W).reduce(
             (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
             {},
           ),
-          k = {
+          f = {
             set: (e, t) => {
               viewEnv.setExtraSizeRem(e, t);
             },
@@ -512,7 +524,7 @@
               viewEnv.getExtraSizeRem(e, t);
             },
           },
-          y = Promise.all([
+          k = Promise.all([
             new Promise((e) => {
               window.isDomBuilt ? e() : r.U.onDomBuilt(e);
             }),
@@ -922,7 +934,7 @@
           };
         var S = o(7572);
         const O = i.instance,
-          f = {
+          y = {
             DataTracker: r.Z,
             ViewModel: S.Z,
             ViewEventType: _,
@@ -1011,7 +1023,7 @@
             SystemLocale: s,
             UserLocale: a,
           };
-        window.ViewEnvHelper = f;
+        window.ViewEnvHelper = y;
       },
       3458: (e, t, o) => {
         let n, i;
@@ -1050,7 +1062,8 @@
               (e.RewardVideo = "reward_video"),
               (e.Welcome = "welcome"),
               (e.LootBoxesShortStats = "lootboxes_short_stats"),
-              (e.LootBoxesFullStats = "lootboxes_full_stats"));
+              (e.LootBoxesFullStats = "lootboxes_full_stats"),
+              (e.OpenBySelection = "open_by_selection"));
           })(r || (r = {})),
           (function (e) {
             ((e.IconPossibleRewardGroup = "icon_possible_reward_group"),
@@ -1064,6 +1077,7 @@
               (e.MinorRewards = "minor_rewards"),
               (e.RewardVideo = "reward_video"),
               (e.RewardToopltip = "reward_tooltip"),
+              (e.StageRotationHeader = "stage_rotation_header"),
               (e.RewardRotationToopltip = "reward_totation_tooltip"),
               (e.ContinueButton = "continue_button"),
               (e.OpenOneMoreButton = "open_one_more_button"),
@@ -1071,6 +1085,7 @@
               (e.OpenInHangarButton = "open_in_hangar_button"),
               (e.OKButton = "ok_button"),
               (e.CloseButton = "close_button"),
+              (e.CloseEvent = "close_event"),
               (e.StatisticButton = "statistic_button"),
               (e.StatisticESCButton = "statistic_esc_button"),
               (e.statisticOutsideClick = "statistic_outside_click"),

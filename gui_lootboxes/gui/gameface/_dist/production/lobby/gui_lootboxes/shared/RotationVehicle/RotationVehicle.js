@@ -71,9 +71,9 @@
                 for (F = 0; F < E.length; F++) ((t = E[F]), e.indexOf(t) >= 0 || (A[t] = u[t]));
                 return A;
               })(u, r);
-            const M = (0, n.useState)(!1),
-              k = M[0],
-              y = M[1],
+            const y = (0, n.useState)(!1),
+              M = y[0],
+              k = y[1],
               T = (0, n.useState)(!1),
               R = T[0],
               S = T[1],
@@ -110,13 +110,13 @@
               ),
               K = (0, n.useCallback)(
                 (u) => {
-                  (y(!0), m && m(u), c && (0, E.G)(c), B && I());
+                  (k(!0), m && m(u), c && (0, E.G)(c), B && I());
                 },
                 [B, m, I, c],
               ),
               q = (0, n.useCallback)(
                 (u) => {
-                  (y(!1), f && f(u));
+                  (k(!1), f && f(u));
                 },
                 [f],
               ),
@@ -128,7 +128,7 @@
               ),
               H = (0, n.useCallback)(
                 (u) => {
-                  (y(!1), S(!1), p && p(u));
+                  (k(!1), S(!1), p && p(u));
                 },
                 [p],
               ),
@@ -147,7 +147,7 @@
               Y = A()(
                 i.Z.base,
                 F && i.Z.base__visibleLabel,
-                k && i.Z.base__mouseDown,
+                M && i.Z.base__mouseDown,
                 R && i.Z.base__hovered,
                 x && i.Z.base__focused,
                 null == b ? void 0 : b.base,
@@ -1018,7 +1018,8 @@
               (u.RewardVideo = "reward_video"),
               (u.Welcome = "welcome"),
               (u.LootBoxesShortStats = "lootboxes_short_stats"),
-              (u.LootBoxesFullStats = "lootboxes_full_stats"));
+              (u.LootBoxesFullStats = "lootboxes_full_stats"),
+              (u.OpenBySelection = "open_by_selection"));
           })(E || (E = {})),
           (function (u) {
             ((u.IconPossibleRewardGroup = "icon_possible_reward_group"),
@@ -1032,6 +1033,7 @@
               (u.MinorRewards = "minor_rewards"),
               (u.RewardVideo = "reward_video"),
               (u.RewardToopltip = "reward_tooltip"),
+              (u.StageRotationHeader = "stage_rotation_header"),
               (u.RewardRotationToopltip = "reward_totation_tooltip"),
               (u.ContinueButton = "continue_button"),
               (u.OpenOneMoreButton = "open_one_more_button"),
@@ -1039,6 +1041,7 @@
               (u.OpenInHangarButton = "open_in_hangar_button"),
               (u.OKButton = "ok_button"),
               (u.CloseButton = "close_button"),
+              (u.CloseEvent = "close_event"),
               (u.StatisticButton = "statistic_button"),
               (u.StatisticESCButton = "statistic_esc_button"),
               (u.statisticOutsideClick = "statistic_outside_click"),

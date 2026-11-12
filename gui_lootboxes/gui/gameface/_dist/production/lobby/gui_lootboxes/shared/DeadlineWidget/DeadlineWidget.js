@@ -1604,7 +1604,8 @@
               (u.RewardVideo = "reward_video"),
               (u.Welcome = "welcome"),
               (u.LootBoxesShortStats = "lootboxes_short_stats"),
-              (u.LootBoxesFullStats = "lootboxes_full_stats"));
+              (u.LootBoxesFullStats = "lootboxes_full_stats"),
+              (u.OpenBySelection = "open_by_selection"));
           })(F || (F = {})),
           (function (u) {
             ((u.IconPossibleRewardGroup = "icon_possible_reward_group"),
@@ -1618,6 +1619,7 @@
               (u.MinorRewards = "minor_rewards"),
               (u.RewardVideo = "reward_video"),
               (u.RewardToopltip = "reward_tooltip"),
+              (u.StageRotationHeader = "stage_rotation_header"),
               (u.RewardRotationToopltip = "reward_totation_tooltip"),
               (u.ContinueButton = "continue_button"),
               (u.OpenOneMoreButton = "open_one_more_button"),
@@ -1625,6 +1627,7 @@
               (u.OpenInHangarButton = "open_in_hangar_button"),
               (u.OKButton = "ok_button"),
               (u.CloseButton = "close_button"),
+              (u.CloseEvent = "close_event"),
               (u.StatisticButton = "statistic_button"),
               (u.StatisticESCButton = "statistic_esc_button"),
               (u.statisticOutsideClick = "statistic_outside_click"),

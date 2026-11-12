@@ -823,7 +823,7 @@
           };
         window.ViewEnvHelper = f;
       },
-      3102: (u, e, t) => {
+      5399: (u, e, t) => {
         "use strict";
         var r = t(6179),
           n = t.n(r);
@@ -1172,18 +1172,18 @@
         var k = t(493),
           O = t.n(k),
           N = t(9887),
-          H = t.n(N);
-        const I = ["xl", "lg", "md", "sm", "xs"],
-          G = (u) => u.includes("_") && ((u) => I.includes(u))(u.split("_").at(-1)),
-          U = [h.ExtraLarge, h.Large, h.Medium, h.Small, h.ExtraSmall],
-          W = (u, e) =>
+          I = t.n(N);
+        const H = ["xl", "lg", "md", "sm", "xs"],
+          G = (u) => u.includes("_") && ((u) => H.includes(u))(u.split("_").at(-1)),
+          W = [h.ExtraLarge, h.Large, h.Medium, h.Small, h.ExtraSmall],
+          U = (u, e) =>
             Object.keys(u).reduce((t, r) => {
               if (r in t) return t;
               if (G(r)) {
                 const n = r.split("_").slice(0, -1).join("_");
                 if (n in t) return t;
-                const a = U.indexOf(e),
-                  o = (-1 !== a ? I.slice(a) : [])
+                const a = W.indexOf(e),
+                  o = (-1 !== a ? H.slice(a) : [])
                     .map((u) => n + "_" + u)
                     .find((e) => void 0 !== u[e]),
                   i = o ? u[o] : void 0;
@@ -1192,14 +1192,14 @@
               const n = u[r];
               return (
                 void 0 === n ||
-                  ((u, e) => I.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
+                  ((u, e) => H.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
                   (t[r] = n),
                 t
               );
             }, {}),
-          X = (u, e = W) => {
+          X = (u, e = U) => {
             const t = (
-              (u, e = W) =>
+              (u, e = U) =>
               (t) => {
                 const a = f().mediaSize,
                   o = (0, r.useMemo)(() => e(t, a), [t, a]);
@@ -1284,7 +1284,7 @@
             Y.apply(this, arguments)
           );
         }
-        Object.keys(H());
+        Object.keys(I());
         const z = {
             XL: { mt: j.mt__XL, mr: j.mr__XL, mb: j.mb__XL, ml: j.ml__XL },
             LG: { mt: j.mt__LG, mr: j.mr__LG, mb: j.mb__LG, ml: j.ml__LG },
@@ -1294,8 +1294,8 @@
             SM: { mt: j.mt__SM, mr: j.mr__SM, mb: j.mb__SM, ml: j.ml__SM },
             XS: { mt: j.mt__XS, mr: j.mr__XS, mb: j.mb__XS, ml: j.ml__XS },
           },
-          $ = (Object.keys(z), ["mt", "mr", "mb", "ml"]),
-          V = { mt: "marginTop", mr: "marginRight", mb: "marginBottom", ml: "marginLeft" },
+          V = (Object.keys(z), ["mt", "mr", "mb", "ml"]),
+          $ = { mt: "marginTop", mr: "marginRight", mb: "marginBottom", ml: "marginLeft" },
           K = X((u) => {
             let e = u.className,
               t = u.width,
@@ -1341,8 +1341,8 @@
               k = u.flex,
               O = void 0 === k ? (P || R ? `${P ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : k,
               N = u.style,
-              H = u.children,
-              I = (function (u, e) {
+              I = u.children,
+              H = (function (u, e) {
                 if (null == u) return {};
                 var t,
                   r,
@@ -1354,14 +1354,14 @@
             const G = (0, r.useMemo)(() => {
                 const u = { mt: l, mr: E, mb: _, ml: F },
                   e = ((u) =>
-                    $.reduce((e, t) => {
+                    V.reduce((e, t) => {
                       const r = u[t];
                       return r && "number" != typeof r ? e.concat(z[!0 === r ? "MD" : r][t]) : e;
                     }, []))(u),
                   r = ((u) =>
-                    $.reduce((e, t) => {
+                    V.reduce((e, t) => {
                       const r = u[t];
-                      return ("number" == typeof r && (e[V[t]] = r + "rem"), e);
+                      return ("number" == typeof r && (e[$[t]] = r + "rem"), e);
                     }, {}))(u);
                 return {
                   computedStyle: Object.assign({}, N, r, {
@@ -1378,9 +1378,9 @@
                   computedClassNames: e,
                 };
               }, [t, a, l, E, _, F, N, O, S, B, L, x, w]),
-              U = G.computedStyle,
-              W = G.computedClassNames;
-            return n().createElement("div", Y({ className: C()(j.base, ...W, e), style: U }, I), H);
+              W = G.computedStyle,
+              U = G.computedClassNames;
+            return n().createElement("div", Y({ className: C()(j.base, ...U, e), style: W }, H), I);
           });
         function Q(u) {
           engine.call("PlaySound", u);
@@ -1576,6 +1576,7 @@
             (u.TankmenXpFactor = "tankmenXPFactor"),
             (u.FreeXpFactor = "freeXPFactor"),
             (u.BattleToken = "battleToken"),
+            (u.Entitlements = "entitlements"),
             (u.PremiumUniversal = "premium_universal"),
             (u.Gold = "gold"),
             (u.Credits = "credits"),
@@ -1588,7 +1589,6 @@
             (u.SelectableBonus = "selectableBonus"),
             (u.StyleProgressToken = "styleProgressToken"),
             (u.TmanToken = "tmanToken"),
-            (u.PortalEventDiscount25 = "portalEventDiscountToken"),
             (u.NaturalCover = "naturalCover"),
             (u.BpCoin = "bpcoin"),
             (u.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -1621,7 +1621,11 @@
             (u.GoldenTicket = "goldenticket"),
             (u.LbStyleProgress = "lbStyleProgress"),
             (u.RewardsSlots = "rewardsSlots"),
-            (u.RazlomCoin = "razlom_coin"));
+            (u.NyPetGoodies = "nyPetGoodies"),
+            (u.HiddenVehicle = "hidden_vehicle"),
+            (u.NyStaticDogTag = "nyStaticDogTag"),
+            (u.NyToys = "nyToys"),
+            (u.NyLootboxFragment = "nyLootboxFragment"));
         })(lu || (lu = {})),
           (function (u) {
             ((u.Gold = "gold"),
@@ -2317,11 +2321,11 @@
             );
           };
         Nu.defaultProps = { isEnough: !0 };
-        const Hu = n().memo(Nu);
-        let Iu;
+        const Iu = n().memo(Nu);
+        let Hu;
         !(function (u) {
           ((u[(u.left = 0)] = "left"), (u[(u.right = 1)] = "right"));
-        })(Iu || (Iu = {}));
+        })(Hu || (Hu = {}));
         const Gu = (u, e, t) => {
             if (t % 2) {
               const t = u.pop();
@@ -2329,7 +2333,7 @@
             }
             return [...u, e];
           },
-          Uu = (u, e, t) => {
+          Wu = (u, e, t) => {
             if (0 === t) return [e];
             if (t % 2) return [...u, " " === e ? " " : e];
             {
@@ -2337,7 +2341,7 @@
               return [...u, t + e];
             }
           },
-          Wu = (u, e, t = Iu.left) => u.split(e).reduce(t === Iu.left ? Gu : Uu, []),
+          Uu = (u, e, t = Hu.left) => u.split(e).reduce(t === Hu.left ? Gu : Wu, []),
           Xu = (() => {
             const u = new RegExp(
               /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -2360,7 +2364,7 @@
                 .match(u);
           })(),
           ju = ["zh_cn", "zh_sg", "zh_tw"],
-          qu = ({ binding: u, text: e = "", classMix: t, alignment: a = Iu.left }) =>
+          qu = ({ binding: u, text: e = "", classMix: t, alignment: a = Hu.left }) =>
             null === e
               ? (console.error("FormatText was supplied with 'null'"), null)
               : n().createElement(
@@ -2374,18 +2378,18 @@
                         u.split(/%\((.*?)\)(?:[sd])?/g).map((u) =>
                           t && u in t
                             ? t[u]
-                            : ((u, e = Iu.left) => {
+                            : ((u, e = Hu.left) => {
                                 const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
                                 return ju.includes(t)
                                   ? Xu(u)
-                                  : ((u, e = Iu.left) => {
+                                  : ((u, e = Hu.left) => {
                                       let t = [];
                                       const r =
                                           /(?<=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])(\x2D)(?=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])/gu,
                                         n = u.replace(/&nbsp;/g, " ");
                                       return (
-                                        Wu(n, /( )/, e).forEach(
-                                          (u) => (t = t.concat(Wu(u, r, Iu.left))),
+                                        Uu(n, /( )/, e).forEach(
+                                          (u) => (t = t.concat(Uu(u, r, Hu.left))),
                                         ),
                                         t
                                       );
@@ -2399,7 +2403,7 @@
                 );
         var Yu = t(3532),
           zu = t.n(Yu);
-        const $u = {
+        const Vu = {
             "paragraph-P10": "Text_paragraph-P10_2c",
             "paragraph-P12": "Text_paragraph-P12_22",
             "paragraph-P14": "Text_paragraph-P14_a7",
@@ -2443,7 +2447,7 @@
             BOND: "Text_BOND_be",
             PROM: "Text_PROM_65",
           },
-          Vu = [
+          $u = [
             "text",
             "variant",
             "className",
@@ -2470,7 +2474,7 @@
             Ku.apply(this, arguments)
           );
         }
-        Object.keys(H());
+        Object.keys(I());
         const Qu = Object.keys(zu()),
           Zu = { mt: "MD", mr: "SM", mb: "SM", ml: "SM" },
           Ju = { mt: "SM", mr: "XS", mb: "XS", ml: "XS" },
@@ -2510,7 +2514,7 @@
             (u) =>
               u
                 ? ((u) => Qu.includes(u))(u)
-                  ? { colorClassName: $u[u] }
+                  ? { colorClassName: Vu[u] }
                   : { colorStyle: { color: u } }
                 : {}),
           re = X((u) => {
@@ -2537,7 +2541,7 @@
                   a = Object.keys(u);
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
-              })(u, Vu);
+              })(u, $u);
             const g = (0, r.useMemo)(() => {
                 const u = te(o),
                   e = u.colorClassName,
@@ -2551,7 +2555,7 @@
               K,
               Ku(
                 {
-                  className: C()($u.base, t && $u[t], h, a),
+                  className: C()(Vu.base, t && Vu[t], h, a),
                   style: p,
                   mt: !0 === s ? ee[t || "paragraph-P16"].mt : s,
                   mr: !0 === c ? ee[t || "paragraph-P16"].mr : c,
@@ -2593,14 +2597,43 @@
           Ae = (u, e) => le.bundlesBg[Ee[e]].$dyn(u) || le.bundlesBg[Ee[e]].default(),
           Fe = (u) => (ce.filter((e) => u === e).length ? Lu.small : Lu.big),
           me = "small",
-          de = "Bundle_card_71",
-          De = "Bundle_cardGlow_0d",
-          Be = "Bundle_metall_0f",
-          Ce = "Bundle_discountGlow_00",
-          ge = R.strings.armory_yard.bundles,
-          pe = "WHITE_SPANISH",
-          he = "CREAM",
-          be = n().memo(({ levelCount: u, discountPercent: e, price: t, type: a, discount: o }) => {
+          de = {
+            base: "Bundle_base_db",
+            glow: "Bundle_glow_25",
+            glow__hover: "Bundle_glow__hover_a0",
+            card: "Bundle_card_71",
+            card__hovered: "Bundle_card__hovered_c7",
+            cardGlow: "Bundle_cardGlow_0d",
+            cardGlow__hovered: "Bundle_cardGlow__hovered_1c",
+            animateBorder: "Bundle_animateBorder_25",
+            opacity: "Bundle_opacity_dd",
+            metall: "Bundle_metall_0f",
+            metall__hovered: "Bundle_metall__hovered_e6",
+            imagePercentWrapper: "Bundle_imagePercentWrapper_b8",
+            discountWrapper: "Bundle_discountWrapper_7d",
+            discount: "Bundle_discount_5a",
+            discount__hover: "Bundle_discount__hover_53",
+            bundleImageWrapper: "Bundle_bundleImageWrapper_39",
+            bundleImage: "Bundle_bundleImage_c9",
+            bgImageWrapper: "Bundle_bgImageWrapper_b0",
+            bgImage: "Bundle_bgImage_e7",
+            bgImage__hover: "Bundle_bgImage__hover_0d",
+            bundleTitle: "Bundle_bundleTitle_48",
+            buildingText: "Bundle_buildingText_28",
+            buyWraper: "Bundle_buyWraper_f5",
+            price: "Bundle_price_a6",
+            withoutDiscountWrapper: "Bundle_withoutDiscountWrapper_ca",
+            crosOutPrice: "Bundle_crosOutPrice_6b",
+            priceWithoutDiscount: "Bundle_priceWithoutDiscount_27",
+            buyButton: "Bundle_buyButton_cc",
+            buttonText: "Bundle_buttonText_16",
+            discountGlow: "Bundle_discountGlow_00",
+            discountGlow__hovered: "Bundle_discountGlow__hovered_f8",
+          },
+          De = R.strings.armory_yard.bundles,
+          Be = "WHITE_SPANISH",
+          Ce = "CREAM",
+          ge = n().memo(({ levelCount: u, discountPercent: e, price: t, type: a, discount: o }) => {
             const i = t.price.find((u) => u.name === lu.Gold),
               l = (0, r.useState)(!1),
               s = l[0],
@@ -2640,73 +2673,79 @@
               }, []);
             return n().createElement(
               K,
-              { className: "Bundle_base_db", column: !0, onMouseEnter: g, onMouseLeave: p },
-              s && n().createElement("div", { className: "Bundle_animateBorder_25" }),
-              n().createElement("div", {
-                className: C()("Bundle_glow_25", s && "Bundle_glow__hover_a0"),
-              }),
+              { className: de.base, column: !0, onMouseEnter: g, onMouseLeave: p },
+              s && n().createElement("div", { className: de.animateBorder }),
+              n().createElement("div", { className: C()(de.glow, s && de.glow__hover) }),
               c((u, e) =>
                 e
                   ? n().createElement(
                       n().Fragment,
                       null,
                       n().createElement(ne.animated.div, {
-                        className: C()(de, "Bundle_card__hovered_c7"),
+                        className: C()(de.card, de.card__hovered),
                         style: u,
                       }),
                       n().createElement(ne.animated.div, {
-                        className: C()(De, "Bundle_cardGlow__hovered_1c"),
+                        className: C()(de.cardGlow, de.cardGlow__hovered),
                         style: u,
                       }),
                       n().createElement(ne.animated.div, {
-                        className: C()(Be, "Bundle_metall__hovered_e6"),
+                        className: C()(de.metall, de.metall__hovered),
                         style: u,
                       }),
                     )
                   : n().createElement(
                       n().Fragment,
                       null,
-                      n().createElement(ne.animated.div, { className: de, style: u }),
-                      n().createElement(ne.animated.div, { className: De, style: u }),
-                      n().createElement(ne.animated.div, { className: Be, style: u }),
+                      n().createElement(ne.animated.div, { className: de.card, style: u }),
+                      n().createElement(ne.animated.div, { className: de.cardGlow, style: u }),
+                      n().createElement(ne.animated.div, { className: de.metall, style: u }),
                     ),
               ),
               n().createElement(
                 K,
-                { className: "Bundle_bgImageWrapper_b0" },
+                { className: de.bgImageWrapper },
                 n().createElement(ne.animated.div, {
-                  className: C()("Bundle_bgImage_e7", s && "Bundle_bgImage__hover_0d"),
+                  className: C()(de.bgImage, s && de.bgImage__hover),
                   style: Object.assign({}, m, { backgroundImage: `url(${Ae(a, B)})` }),
                 }),
               ),
               n().createElement(
                 K,
-                { className: "Bundle_imagePercentWrapper_b8", column: !0, center: !0 },
+                { className: de.imagePercentWrapper, column: !0, center: !0 },
                 n().createElement(
                   K,
-                  { className: "Bundle_discountWrapper_7d" },
+                  { className: de.discountWrapper },
                   n().createElement(re, {
-                    className: C()("Bundle_discount_5a", s && "Bundle_discount__hover_53"),
-                    text: ge.discount(),
+                    className: C()(de.discount, s && de.discount__hover),
+                    text: De.discount(),
                     format: {
-                      binding: { discount: n().createElement(re, { text: String(e), color: pe }) },
+                      binding: { discount: n().createElement(re, { text: String(e), color: Be }) },
                     },
-                    color: pe,
+                    color: Be,
                   }),
                   B === h.ExtraLarge
                     ? F(
                         (u, e) =>
-                          !e && n().createElement(ne.animated.div, { className: Ce, style: u }),
+                          !e &&
+                          n().createElement(ne.animated.div, {
+                            className: de.discountGlow,
+                            style: u,
+                          }),
                       )
                     : _(
                         (u, e) =>
-                          !e && n().createElement(ne.animated.div, { className: Ce, style: u }),
+                          !e &&
+                          n().createElement(ne.animated.div, {
+                            className: de.discountGlow,
+                            style: u,
+                          }),
                       ),
                   A(
                     (u, e) =>
                       e &&
                       n().createElement(ne.animated.div, {
-                        className: C()(Ce, "Bundle_discountGlow__hovered_f8"),
+                        className: C()(de.discountGlow, de.discountGlow__hovered),
                         style: u,
                       }),
                   ),
@@ -2714,51 +2753,44 @@
                 n().createElement(
                   ne.animated.div,
                   {
-                    className: C()(
-                      "Bundle_bundleImageWrapper_39",
-                      s && "Bundle_bundleImageWrapper__hover_3e",
-                    ),
+                    className: C()(de.bundleImageWrapper, s && de.bundleImageWrapper__hover),
                     style: a === me ? D : d,
                   },
                   n().createElement(K, {
-                    className: "Bundle_bundleImage_c9",
+                    className: de.bundleImage,
                     style: { backgroundImage: `url(${_e(a, B)})` },
                   }),
                 ),
               ),
               n().createElement(re, {
-                className: "Bundle_bundleTitle_48",
-                text: ge.bundleTitle(u),
+                className: de.bundleTitle,
+                text: De.bundleTitle(u),
                 format: {
-                  binding: { levelCount: n().createElement(re, { text: String(u), color: he }) },
+                  binding: { levelCount: n().createElement(re, { text: String(u), color: Ce }) },
                 },
-                color: he,
+                color: Ce,
               }),
-              n().createElement(re, {
-                text: ge.building(),
-                className: "Bundle_buildingText_28",
-                color: pe,
-              }),
+              n().createElement(re, { text: De.building(), className: de.buildingText, color: Be }),
               n().createElement(
                 K,
-                { className: "Bundle_buyWraper_f5" },
+                { className: de.buyWraper },
                 n().createElement(
                   K,
-                  { className: "Bundle_price_a6" },
+                  { className: de.price },
                   n().createElement(
                     K,
-                    { className: "Bundle_withoutDiscountWrapper_ca" },
-                    n().createElement("div", { className: "Bundle_crosOutPrice_6b" }),
+                    { className: de.withoutDiscountWrapper },
+                    n().createElement("div", { className: de.crosOutPrice }),
                     n().createElement(
                       "div",
-                      { className: "Bundle_priceWithoutDiscount_27" },
+                      { className: de.priceWithoutDiscount },
                       n().createElement(ku, {
                         value: Number(null == i ? void 0 : i.value),
                         format: null == o ? void 0 : o.name,
                       }),
                     ),
                   ),
-                  n().createElement(Hu, {
+                  n().createElement(Iu, {
                     type: String(null == o ? void 0 : o.name),
                     value: Number(null == o ? void 0 : o.value),
                     size: Fe(B),
@@ -2766,16 +2798,13 @@
                 ),
                 n().createElement(
                   Mu,
-                  { type: wu.main, mixClass: "Bundle_buyButton_cc", soundClick: null },
-                  n().createElement(re, {
-                    text: ge.buyBundle(),
-                    className: "Bundle_buttonText_16",
-                  }),
+                  { type: wu.main, mixClass: de.buyButton, soundClick: null },
+                  n().createElement(re, { text: De.buyBundle(), className: de.buttonText }),
                 ),
               ),
             );
           }),
-          ve = (0, iu.observer)(() => {
+          pe = (0, iu.observer)(() => {
             const u = xu(),
               e = u.model,
               t = u.controls,
@@ -2801,7 +2830,7 @@
                     key: u.index,
                     onClick: o(u.index),
                   },
-                  n().createElement(be, {
+                  n().createElement(ge, {
                     price: u.price,
                     discount: r,
                     discountPercent: u.discountPercent,
@@ -2812,7 +2841,7 @@
               }),
             );
           }),
-          fe = [
+          he = [
             "children",
             "contentId",
             "args",
@@ -2828,7 +2857,7 @@
             "onShow",
             "onHide",
           ];
-        function xe(u) {
+        function be(u) {
           return Object.entries(u || {}).map(([u, e]) => {
             const t = { __Type: "GFValueProxy", name: u };
             switch (typeof e) {
@@ -2846,7 +2875,7 @@
             return t;
           });
         }
-        const ye = (u, e, t = {}, r = 0) => {
+        const ve = (u, e, t = {}, r = 0) => {
             viewEnv.handleViewEvent(
               Object.assign(
                 {
@@ -2860,7 +2889,7 @@
               ),
             );
           },
-          we = (u) => {
+          fe = (u) => {
             let e = u.children,
               t = u.contentId,
               n = u.args,
@@ -2888,7 +2917,7 @@
                   a = Object.keys(u);
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
-              })(u, fe);
+              })(u, he);
             const h = (0, r.useRef)({
                 timeoutId: 0,
                 isVisible: !1,
@@ -2916,7 +2945,7 @@
               ),
               v = (0, r.useCallback)(() => {
                 (h.current.isVisible && h.current.timeoutId) ||
-                  (ye(t, F, { isMouseEvent: !0, on: !0, arguments: xe(n) }, b),
+                  (ve(t, F, { isMouseEvent: !0, on: !0, arguments: be(n) }, b),
                   C && C(),
                   (h.current.isVisible = !0));
               }, [t, F, n, b, C]),
@@ -2924,7 +2953,7 @@
                 if (h.current.isVisible || h.current.timeoutId) {
                   const u = h.current.timeoutId;
                   (u > 0 && (clearTimeout(u), (h.current.timeoutId = 0)),
-                    ye(t, F, { on: !1 }, b),
+                    ve(t, F, { on: !1 }, b),
                     h.current.isVisible && g && g(),
                     (h.current.isVisible = !1));
                 }
@@ -2990,10 +3019,10 @@
             );
             var y;
           },
-          Se = ["children", "body", "header", "note", "alert", "args"];
-        function Te() {
+          xe = ["children", "body", "header", "note", "alert", "args"];
+        function ye() {
           return (
-            (Te =
+            (ye =
               Object.assign ||
               function (u) {
                 for (var e = 1; e < arguments.length; e++) {
@@ -3002,11 +3031,11 @@
                 }
                 return u;
               }),
-            Te.apply(this, arguments)
+            ye.apply(this, arguments)
           );
         }
-        const Me = R.views.common.tooltip_window.simple_tooltip_content,
-          Le = (u) => {
+        const we = R.views.common.tooltip_window.simple_tooltip_content,
+          Se = (u) => {
             let e = u.children,
               t = u.body,
               a = u.header,
@@ -3021,19 +3050,19 @@
                   a = Object.keys(u);
                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                 return n;
-              })(u, Se);
+              })(u, xe);
             const E = (0, r.useMemo)(() => {
               const u = Object.assign({}, l, { body: t, header: a, note: o, alert: i });
               for (const e in u) void 0 === u[e] && delete u[e];
               return u;
             }, [i, t, a, o, l]);
             return n().createElement(
-              we,
-              Te(
+              fe,
+              ye(
                 {
                   contentId:
                     ((c = null == l ? void 0 : l.hasHtmlContent),
-                    c ? Me.SimpleTooltipHtmlContent("resId") : Me.SimpleTooltipContent("resId")),
+                    c ? we.SimpleTooltipHtmlContent("resId") : we.SimpleTooltipContent("resId")),
                   decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow("resId"),
                   args: E,
                 },
@@ -3043,11 +3072,11 @@
             );
             var c;
           },
-          Pe = "Footer_bg_d2",
-          Re = "Footer_footerCurrency_ce",
-          ke = "Footer_tokenPrice_7d",
-          Oe = R.strings.armory_yard.bundles,
-          Ne = n().memo(({ price: u, crystalPrice: e, onBuyTokens: t }) => {
+          Te = "Footer_bg_d2",
+          Me = "Footer_footerCurrency_ce",
+          Le = "Footer_tokenPrice_7d",
+          Pe = R.strings.armory_yard.bundles,
+          Re = n().memo(({ price: u, crystalPrice: e, onBuyTokens: t }) => {
             const a = f().mediaSize,
               o = (0, r.useState)(!1),
               i = o[0],
@@ -3061,10 +3090,10 @@
                 l(!1);
               }, []),
               A = a === h.ExtraSmall || a === h.Small,
-              F = A ? Oe.buyTokenShort() : Oe.buyToken();
+              F = A ? Pe.buyTokenShort() : Pe.buyToken();
             return n().createElement(
-              Le,
-              { body: Oe.buyTokenTooltip(), isEnabled: A },
+              Se,
+              { body: Pe.buyTokenTooltip(), isEnabled: A },
               n().createElement(
                 K,
                 { className: "Footer_base_73", onClick: t, onMouseEnter: c, onMouseLeave: _ },
@@ -3075,10 +3104,10 @@
                 s((u, e) =>
                   e
                     ? n().createElement(ne.animated.div, {
-                        className: C()(Pe, "Footer_bg__hover_07"),
+                        className: C()(Te, "Footer_bg__hover_07"),
                         style: u,
                       })
-                    : n().createElement(ne.animated.div, { className: Pe, style: u }),
+                    : n().createElement(ne.animated.div, { className: Te, style: u }),
                 ),
                 n().createElement("div", { className: "Footer_metall_8c" }),
                 n().createElement("div", {
@@ -3095,21 +3124,21 @@
                   n().createElement(
                     K,
                     { className: "Footer_tokenPriceWrapper_c8", row: !0 },
-                    n().createElement(re, { text: Oe.tokenPrice(), className: ke }),
+                    n().createElement(re, { text: Pe.tokenPrice(), className: Le }),
                     n().createElement(
                       K,
-                      { className: Re },
-                      u && n().createElement(Hu, { type: u.name, value: u.value, size: "small" }),
+                      { className: Me },
+                      u && n().createElement(Iu, { type: u.name, value: u.value, size: "small" }),
                     ),
                     n().createElement(re, {
-                      text: Oe.separatorOr(),
-                      className: C()(ke, "Footer_tokenPrice__or_66"),
+                      text: Pe.separatorOr(),
+                      className: C()(Le, "Footer_tokenPrice__or_66"),
                     }),
                     n().createElement(
                       K,
-                      { className: Re },
+                      { className: Me },
                       u &&
-                        n().createElement(Hu, {
+                        n().createElement(Iu, {
                           type: null == e ? void 0 : e.name,
                           value: (null == e ? void 0 : e.value) || 0,
                           size: "small",
@@ -3124,7 +3153,7 @@
                     Mu,
                     { type: wu.primary, mixClass: "Footer_buyButton_e7", soundClick: null },
                     n().createElement(re, {
-                      text: Oe.buyTokenCaption(),
+                      text: Pe.buyTokenCaption(),
                       className: "Footer_buttonText_65",
                     }),
                   ),
@@ -3132,91 +3161,75 @@
               ),
             );
           }),
-          He = "Header_subtitle_4b",
-          Ie = "Header_subtitle__bottom_cf",
-          Ge = R.strings.armory_yard.bundles,
-          Ue = "WHITE_ORANGE",
-          We = n().memo(({ currentLevel: u }) =>
+          ke = "Header_subtitle_4b",
+          Oe = R.strings.armory_yard.bundles,
+          Ne = "WHITE_ORANGE",
+          Ie = n().memo(({ currentLevel: u }) =>
             n().createElement(
               K,
               { className: "Header_base_d7", column: !0, center: !0 },
               n().createElement(re, {
                 className: "Header_upperTitle_ce",
-                text: Ge.upperTitle(),
-                color: Ue,
+                text: Oe.upperTitle(),
+                color: Ne,
               }),
-              n().createElement(re, { className: "Header_title_ec", text: Ge.title(), color: Ue }),
+              n().createElement(re, { className: "Header_title_ec", text: Oe.title(), color: Ne }),
               n().createElement(
                 K,
                 { className: "Header_subtitleWrapper_12" },
                 n().createElement(re, {
-                  className: C()(He, "Header_subtitle__one_57"),
-                  text: Ge.subtitleOne(),
-                  color: Ue,
+                  className: C()(ke, "Header_subtitle__one_57"),
+                  text: Oe.subtitle(),
+                  color: Ne,
                 }),
-                n().createElement(re, {
-                  className: He,
-                  text: Ge.subtitleOptions(),
-                  format: {
-                    binding: {
-                      firstSubtitle: n().createElement(re, {
-                        className: C()(He, Ie),
-                        text: Ge.subtitleTwo(),
-                        color: Ue,
-                      }),
-                      secondSubtitle:
-                        u > 0
-                          ? n().createElement(re, {
-                              className: C()(He, Ie),
-                              text: Ge.subtitleThree(),
-                              color: Ue,
-                            })
-                          : "",
-                      thirdSubtitle:
-                        u > 0
-                          ? n().createElement(re, {
-                              className: "Header_currentLevel_2b",
-                              text: String(u),
-                              color: "$CREAM",
-                            })
-                          : "",
+                Boolean(u) &&
+                  n().createElement(re, {
+                    className: C()(ke, "Header_subtitle__bottom_cf"),
+                    text: Oe.secondSubtitle(),
+                    color: Ne,
+                    format: {
+                      binding: {
+                        currentLevel: n().createElement(re, {
+                          className: "Header_currentLevel_2b",
+                          text: String(u),
+                          color: "$CREAM",
+                        }),
+                      },
                     },
-                  },
-                  color: Ue,
-                }),
+                  }),
               ),
             ),
           );
-        let Xe;
-        var je;
-        (((je = Xe || (Xe = {})).SHORT_DATE = "short-date"),
-          (je.SHORT_TIME = "short-time"),
-          (je.SHORT_DATE_TIME = "short-date-time"),
-          (je.FULL_DATE = "full-date"),
-          (je.FULL_DATE_TIME = "full-date-time"),
-          (je.MONTH = "month"),
-          (je.MONTH_DATE = "month-date"),
-          (je.DATE_MONTH = "date-month"),
-          (je.MONTH_YEAR = "month-year"),
-          (je.WEEK_DAY = "week-day"),
-          (je.WEEK_DAY_TIME = "week-day-time"),
-          (je.YEAR = "year"),
-          (je.DATE_YEAR = "date-year"));
+        let He;
+        var Ge;
+        (((Ge = He || (He = {})).SHORT_DATE = "short-date"),
+          (Ge.SHORT_TIME = "short-time"),
+          (Ge.SHORT_DATE_TIME = "short-date-time"),
+          (Ge.FULL_DATE = "full-date"),
+          (Ge.FULL_DATE_TIME = "full-date-time"),
+          (Ge.MONTH = "month"),
+          (Ge.MONTH_DATE = "month-date"),
+          (Ge.DATE_MONTH = "date-month"),
+          (Ge.MONTH_YEAR = "month-year"),
+          (Ge.WEEK_DAY = "week-day"),
+          (Ge.WEEK_DAY_TIME = "week-day-time"),
+          (Ge.YEAR = "year"),
+          (Ge.DATE_YEAR = "date-year"));
         Date.now();
-        const qe = "Timer_timerText_18",
-          Ye = "Timer_timerText__alert_2f",
-          ze = "Timer_glow_1d",
-          $e = "Timer_separator_be",
-          Ve = R.strings.armory_yard.bundles,
-          Ke = "CREAM",
-          Qe = n().memo(({ endTime: u, currentTime: e }) =>
+        const We = "Timer_timerText_18",
+          Ue = "Timer_timerText__alert_2f",
+          Xe = "Timer_glow_1d",
+          je = "Timer_separator_be",
+          qe = R.strings.armory_yard.bundles,
+          Ye = "CREAM",
+          ze = n().memo(({ endTime: u, currentTime: e }) =>
             n().createElement(
               K,
               { className: "Timer_base_af", center: !0 },
-              n().createElement("div", { className: $e }),
+              n().createElement("div", { className: je }),
               n().createElement(re, {
                 className: "Timer_availableText_12",
-                text: Ve.bundlesAvailable(),
+                text: qe.bundlesAvailable(),
               }),
               n().createElement("div", { className: "Timer_timer_7d" }),
               n().createElement(
@@ -3234,72 +3247,80 @@
                   })(u - e);
                   return t.days > 0
                     ? n().createElement(re, {
-                        text: t.hours > 0 ? Ve.countdown.daysWithHours() : Ve.countdown.days(),
-                        className: qe,
+                        text: t.hours > 0 ? qe.countdown.daysWithHours() : qe.countdown.days(),
+                        className: We,
                         format: {
                           binding: {
-                            day: n().createElement(re, { text: String(t.days), color: Ke }),
-                            hour: n().createElement(re, { text: String(t.hours), color: Ke }),
+                            day: n().createElement(re, { text: String(t.days), color: Ye }),
+                            hour: n().createElement(re, { text: String(t.hours), color: Ye }),
                           },
                         },
-                        color: Ke,
+                        color: Ye,
                       })
                     : t.hours > 0
                       ? n().createElement(
                           n().Fragment,
                           null,
-                          n().createElement("div", { className: ze }),
+                          n().createElement("div", { className: Xe }),
                           n().createElement(re, {
                             text:
                               t.minutes > 0
-                                ? Ve.countdown.hoursWithMinutes()
-                                : Ve.countdown.hours(),
-                            className: C()(qe, Ye),
+                                ? qe.countdown.hoursWithMinutes()
+                                : qe.countdown.hours(),
+                            className: C()(We, Ue),
                             format: {
                               binding: {
-                                hour: n().createElement(re, { text: String(t.hours), color: Ke }),
-                                min: n().createElement(re, { text: String(t.minutes), color: Ke }),
+                                hour: n().createElement(re, { text: String(t.hours), color: Ye }),
+                                min: n().createElement(re, { text: String(t.minutes), color: Ye }),
                               },
                             },
-                            color: Ke,
+                            color: Ye,
                           }),
                         )
                       : t.minutes > 0
                         ? n().createElement(
                             n().Fragment,
                             null,
-                            n().createElement("div", { className: ze }),
+                            n().createElement("div", { className: Xe }),
                             n().createElement(re, {
-                              text: Ve.countdown.min(),
-                              className: C()(qe, Ye),
+                              text: qe.countdown.min(),
+                              className: C()(We, Ue),
                               format: {
                                 binding: {
                                   min: n().createElement(re, {
                                     text: String(t.minutes),
-                                    color: Ke,
+                                    color: Ye,
                                   }),
                                 },
                               },
-                              color: Ke,
+                              color: Ye,
                             }),
                           )
                         : n().createElement(
                             n().Fragment,
                             null,
-                            n().createElement("div", { className: ze }),
+                            n().createElement("div", { className: Xe }),
                             n().createElement(re, {
-                              text: Ve.countdown.sec(),
-                              className: C()(qe, Ye),
-                              color: Ke,
+                              text: qe.countdown.sec(),
+                              className: C()(We, Ue),
+                              color: Ye,
                             }),
                           );
                 })(u, e),
               ),
-              n().createElement("div", { className: C()($e, "Timer_separator__rotated_11") }),
+              n().createElement("div", { className: C()(je, "Timer_separator__rotated_11") }),
             ),
           ),
-          Ze = R.strings.armory_yard.bundles,
-          Je = (0, iu.observer)(() => {
+          Ve = (0, r.memo)(({ classname: u }) =>
+            n().createElement(
+              "div",
+              { className: C()("Vignette_base_22", u) },
+              n().createElement("div", { className: "Vignette_default_f0" }),
+              n().createElement("div", { className: "Vignette_iced_86" }),
+            ),
+          ),
+          $e = R.strings.armory_yard.bundles,
+          Ke = (0, iu.observer)(() => {
             viewEnv.clearInternalCacheAfterFinalize();
             const u = xu(),
               e = u.model,
@@ -3333,12 +3354,13 @@
               n().createElement(
                 K,
                 { className: "App_base_26", center: !0 },
+                n().createElement(Ve, null),
                 n().createElement(
                   K,
                   { className: "App_close_81" },
                   n().createElement(tu, {
-                    caption: Ze.backCaption(),
-                    goto: Ze.backGoto(),
+                    caption: $e.backCaption(),
+                    goto: $e.backGoto(),
                     onClick: t.close,
                   }),
                 ),
@@ -3348,24 +3370,24 @@
                   n().createElement(
                     K,
                     { className: "App_header_38", center: !0 },
-                    n().createElement(We, { currentLevel: i + 1 }),
+                    n().createElement(Ie, { currentLevel: i + 1 }),
                   ),
                   n().createElement(
                     K,
                     { className: "App_bundles_9c" },
-                    n().createElement(ve, null),
-                    n().createElement(Qe, { endTime: s, currentTime: A }),
+                    n().createElement(pe, null),
+                    n().createElement(ze, { endTime: s, currentTime: A }),
                   ),
                   n().createElement(
                     K,
                     { className: "App_footer_9a", center: !0 },
-                    n().createElement(Ne, { price: E, crystalPrice: c, onBuyTokens: m }),
+                    n().createElement(Re, { price: E, crystalPrice: c, onBuyTokens: m }),
                   ),
                 ),
               )
             );
           }),
-          ut = {
+          Qe = {
             isBlurEnabled: !0,
             currentLevel: 23,
             endTime: (Date.now() + 5365e4) / 1e3,
@@ -3415,8 +3437,8 @@
               discount: [{ name: "gold", value: 0, isEnough: !0 }],
             },
           },
-          et = {
-            getter: ((tt = ut), (u) => (u ? u.split(".").reduce((u, e) => u[e], tt) : tt)),
+          Ze = {
+            getter: ((Je = Qe), (u) => (u ? u.split(".").reduce((u, e) => u[e], Je) : Je)),
             controls: () =>
               (function (u) {
                 const e = {};
@@ -3438,13 +3460,13 @@
                 },
               }),
           };
-        var tt;
+        var Je;
         engine.whenReady.then(() => {
           O().render(
             n().createElement(
               fu,
-              { mode: "real", mocks: et },
-              n().createElement(P, null, n().createElement(Je, null)),
+              { mode: "real", mocks: Ze },
+              n().createElement(P, null, n().createElement(Ke, null)),
             ),
             document.getElementById("root"),
           );
@@ -3528,6 +3550,6 @@
         t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
       (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
     })());
-  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(3102));
+  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(5399));
   __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

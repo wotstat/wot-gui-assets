@@ -258,6 +258,7 @@
               (e.TankmenXpFactor = "tankmenXPFactor"),
               (e.FreeXpFactor = "freeXPFactor"),
               (e.BattleToken = "battleToken"),
+              (e.Entitlements = "entitlements"),
               (e.PremiumUniversal = "premium_universal"),
               (e.Gold = "gold"),
               (e.Credits = "credits"),
@@ -270,7 +271,6 @@
               (e.SelectableBonus = "selectableBonus"),
               (e.StyleProgressToken = "styleProgressToken"),
               (e.TmanToken = "tmanToken"),
-              (e.PortalEventDiscount25 = "portalEventDiscountToken"),
               (e.NaturalCover = "naturalCover"),
               (e.BpCoin = "bpcoin"),
               (e.BattlaPassFinalAchievement = "dossier_achievement"),
@@ -303,7 +303,11 @@
               (e.GoldenTicket = "goldenticket"),
               (e.LbStyleProgress = "lbStyleProgress"),
               (e.RewardsSlots = "rewardsSlots"),
-              (e.RazlomCoin = "razlom_coin"));
+              (e.NyPetGoodies = "nyPetGoodies"),
+              (e.HiddenVehicle = "hidden_vehicle"),
+              (e.NyStaticDogTag = "nyStaticDogTag"),
+              (e.NyToys = "nyToys"),
+              (e.NyLootboxFragment = "nyLootboxFragment"));
           })(r || (r = {})),
           (function (e) {
             ((e.Gold = "gold"),
@@ -426,6 +430,7 @@
           r.E4.TankmenXpFactor,
           r.E4.FreeXpFactor,
           r.E4.BattleToken,
+          r.E4.Entitlements,
           r.E4.PremiumUniversal,
           r.E4.NaturalCover,
           r.E4.BpCoin,
@@ -440,6 +445,9 @@
           r.E4.Comp7TokenWeeklyReward,
           r.E4.Comp7TokenCouponReward,
           r.E4.BattleBoosterGift,
+          r.E4.NewYearFillers,
+          r.E4.NewYearInvoice,
+          r.E4.LootBoxToken,
           r.E4.CosmicLootboxCommon,
           r.E4.CosmicLootboxSilver,
           r.E4.SelectableBonus,
@@ -447,10 +455,14 @@
           r.E4.PremiumPlusUniversal,
           r.E4.GoldenTicket,
           r.E4.RewardsSlots,
+          r.E4.NyPetGoodies,
+          r.E4.HiddenVehicle,
+          r.E4.NyLootboxFragment,
           r.E4.Gold,
           r.E4.Credits,
           r.E4.Crystal,
           r.E4.FreeXp,
+          r.E4.NewYearToyFragments,
           r.E4.BattlePassPoints,
           r.E4.PremiumPlus,
           r.E4.Premium,
@@ -638,10 +650,10 @@
             displayStatusIs: () => O,
             events: () => n.U,
             extraSize: () => R,
-            forceTriggerMouseMove: () => f,
+            forceTriggerMouseMove: () => x,
             freezeTextureBeforeResize: () => g,
             getBrowserTexturePath: () => d,
-            getDisplayStatus: () => x,
+            getDisplayStatus: () => f,
             getScale: () => E,
             getSize: () => c,
             getViewGlobalPosition: () => h,
@@ -656,7 +668,7 @@
             setEventHandled: () => P,
             setInputPaddingsRem: () => l,
             setSidePaddingsRem: () => u,
-            whenTutorialReady: () => L,
+            whenTutorialReady: () => y,
           }));
         var r = i(3722),
           a = i(6112),
@@ -714,10 +726,10 @@
         function T() {
           return viewEnv.isEventHandled();
         }
-        function f() {
+        function x() {
           viewEnv.forceTriggerMouseMove();
         }
-        function x() {
+        function f() {
           return viewEnv.getShowingStatus();
         }
         const O = Object.keys(a.W).reduce(
@@ -732,7 +744,7 @@
               viewEnv.getExtraSizeRem(e, t);
             },
           },
-          L = Promise.all([
+          y = Promise.all([
             new Promise((e) => {
               window.isDomBuilt ? e() : n.U.onDomBuilt(e);
             }),
@@ -1175,8 +1187,8 @@
             e.keyCode === h.n.ESCAPE && t();
           };
         var T = i(7572);
-        const f = a.instance,
-          x = {
+        const x = a.instance,
+          f = {
             DataTracker: n.Z,
             ViewModel: T.Z,
             ViewEventType: l,
@@ -1261,11 +1273,11 @@
                 }
               return i;
             },
-            ClickOutsideManager: f,
+            ClickOutsideManager: x,
             SystemLocale: o,
             UserLocale: s,
           };
-        window.ViewEnvHelper = x;
+        window.ViewEnvHelper = f;
       },
       3458: (e, t, i) => {
         let r, a;
@@ -1318,7 +1330,8 @@
               (e.RewardVideo = "reward_video"),
               (e.Welcome = "welcome"),
               (e.LootBoxesShortStats = "lootboxes_short_stats"),
-              (e.LootBoxesFullStats = "lootboxes_full_stats"));
+              (e.LootBoxesFullStats = "lootboxes_full_stats"),
+              (e.OpenBySelection = "open_by_selection"));
           })(n || (n = {})),
           (function (e) {
             ((e.IconPossibleRewardGroup = "icon_possible_reward_group"),
@@ -1332,6 +1345,7 @@
               (e.MinorRewards = "minor_rewards"),
               (e.RewardVideo = "reward_video"),
               (e.RewardToopltip = "reward_tooltip"),
+              (e.StageRotationHeader = "stage_rotation_header"),
               (e.RewardRotationToopltip = "reward_totation_tooltip"),
               (e.ContinueButton = "continue_button"),
               (e.OpenOneMoreButton = "open_one_more_button"),
@@ -1339,6 +1353,7 @@
               (e.OpenInHangarButton = "open_in_hangar_button"),
               (e.OKButton = "ok_button"),
               (e.CloseButton = "close_button"),
+              (e.CloseEvent = "close_event"),
               (e.StatisticButton = "statistic_button"),
               (e.StatisticESCButton = "statistic_esc_button"),
               (e.statisticOutsideClick = "statistic_outside_click"),

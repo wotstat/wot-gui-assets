@@ -823,7 +823,7 @@
           };
         window.ViewEnvHelper = v;
       },
-      8578: (u, e, t) => {
+      9700: (u, e, t) => {
         "use strict";
         var _ = t(6179),
           a = t.n(_);
@@ -2242,18 +2242,18 @@
           }) => {
             const n = r === Mu && u === H.PurchaseStage,
               l = u === H.PurchaseStage && (r === ku || "big" === r),
-              o = Su(t - _).days > 0,
+              o = Su(t - _).days <= 7 || u === H.PurchaseStage,
               s = C()(
                 Xu.base,
                 Xu[`base__${u}`],
                 Xu[`base__${u}__${r}`],
-                o && Xu[`base__${u}__${r}__clockHidden`],
+                !o && Xu[`base__${u}__${r}__clockHidden`],
               );
             return a().createElement(
               "div",
               { className: s },
               (l || u === H.Active || u === H.Completed || i) &&
-                !o &&
+                o &&
                 a().createElement("div", {
                   className: C()(
                     Xu.icon,
@@ -2982,6 +2982,6 @@
         t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
       (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
     })());
-  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(8578));
+  var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(9700));
   __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

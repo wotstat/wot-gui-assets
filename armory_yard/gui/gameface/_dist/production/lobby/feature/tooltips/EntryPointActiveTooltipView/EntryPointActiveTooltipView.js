@@ -2706,11 +2706,9 @@
             return s().createElement(
               "div",
               { className: "Tokens_base_ba" },
-              s().createElement(su, { className: "Tokens_header_55", text: Ae.tokensHeader() }),
-              s().createElement("div", { className: "Tokens_icon_78" }),
               s().createElement(
                 "div",
-                { className: "Tokens_value_1d" },
+                { className: "Tokens_header_55" },
                 s().createElement(su, {
                   text: Ae.tokensValue(),
                   format: {
