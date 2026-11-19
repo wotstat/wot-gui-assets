@@ -2577,7 +2577,10 @@
             { id: 1, value: Et },
             { id: 2, value: Et },
           ],
-          Bt = (e) => Dt().map((t, u) => Object.assign({}, t, { value: e[u] || Et })),
+          Bt = (e) =>
+            Dt().map((t, u) =>
+              Object.assign({}, t, { value: e[u] && -1 !== e[u].componentID ? e[u] : Et }),
+            ),
           gt = ((e, t) => {
             const u = (0, r.createContext)({});
             return [
@@ -2941,8 +2944,8 @@
             return Math.max(0, Math.min(100, Math.round(u)));
           },
           Rt = (e) => {
-            if ((e < 0 && (e = 0), 0 === e)) return { text: R.strings.ny.raidView.emptyTime() };
-            if (e < 60) return { text: R.strings.ny.raidView.secondsTime(), binding: { sec: e } };
+            if ((e < 0 && (e = 0), e < 60))
+              return { text: R.strings.ny.raidView.secondsTime(), binding: { sec: e } };
             const t = Math.floor(e / 60),
               u = Math.floor(t / 60),
               n = t % 60;
@@ -3385,9 +3388,12 @@
               _ = (0, r.useState)(!1),
               A = _[0],
               p = _[1],
-              F = m || E || !c || l > 0,
-              D = !F || d,
-              B = ((e, t, u) =>
+              F = (0, r.useState)(!1),
+              D = F[0],
+              B = F[1],
+              g = m || E || !c || l > 0,
+              b = !g || d,
+              h = ((e, t, u) =>
                 u
                   ? { isEnabled: !1 }
                   : t
@@ -3402,26 +3408,26 @@
               { className: "ActionButtons_base_57" },
               i().createElement(
                 Wt,
-                { tooltipArgs: B },
+                { tooltipArgs: h },
                 i().createElement(
                   "div",
                   {
                     className: C()(
                       "ActionButtons_actionButton_eb",
-                      F && "ActionButtons_actionButton__disabled_58",
+                      g && "ActionButtons_actionButton__disabled_58",
                       d && "ActionButtons_actionButton__rewards_98",
                       e.includes(wt.SendButtonOpacity) &&
                         "ActionButtons_actionButton__inOpacity_8c",
                       e.includes(wt.SendButtonLocked) && "ActionButtons_actionButton__locked_30",
                     ),
                     onMouseEnter: () => {
-                      D && (p(!0), Be.playHighlight());
+                      b && (p(!0), Be.playHighlight());
                     },
                     onMouseLeave: () => {
                       p(!1);
                     },
                     onClick: () => {
-                      if (!F || d) {
+                      if (!g || d) {
                         if ((Be.playClick(), d))
                           return (a.removeAllItems(), void s.onReceiveReward());
                         E || t("raid");
@@ -3432,7 +3438,7 @@
                   i().createElement("div", {
                     className: C()(
                       "ActionButtons_disabledPattern_c5",
-                      F && "ActionButtons_disabledPattern__visible_59",
+                      g && "ActionButtons_disabledPattern__visible_59",
                     ),
                   }),
                   d &&
@@ -3445,7 +3451,7 @@
                     className: jt,
                     text: d ? Xt.button.action.finish() : Xt.button.action.start(),
                   }),
-                  D &&
+                  b &&
                     i().createElement("div", {
                       className: C()(
                         "ActionButtons_hover_a6",
@@ -3464,7 +3470,10 @@
                     e.includes(wt.RecipeButtonLocked) && "ActionButtons_recipeButton__locked_09",
                   ),
                   onMouseEnter: () => {
-                    Be.playHighlight();
+                    (B(!0), Be.playHighlight());
+                  },
+                  onMouseLeave: () => {
+                    B(!1);
                   },
                   onClick: (e) => {
                     (e.stopPropagation(), Be.playClick(), u());
@@ -3472,6 +3481,12 @@
                 },
                 e.includes(wt.RecipeButtonBlink) && i().createElement("div", { className: zt }),
                 i().createElement(Fe, { className: jt, text: Xt.button.recipies() }),
+                i().createElement("div", {
+                  className: C()(
+                    "ActionButtons_recipeHover_3b",
+                    D && "ActionButtons_recipeHover__visible_8d",
+                  ),
+                }),
               ),
             );
           }),
@@ -5369,8 +5384,9 @@
               A = (0, r.useState)(c + n),
               p = A[0],
               F = A[1],
-              D = Rt(_ || d),
-              B = n > 0;
+              D = (_ || d) > 0,
+              B = Rt(_ || d),
+              g = n > 0;
             return (
               (0, r.useEffect)(() => {
                 F(c + n);
@@ -5399,6 +5415,7 @@
                           className: C()(
                             "RaidStatus_timerTitle_c0",
                             e.includes(wt.TimerOpacity) && "RaidStatus_timerTitle__inOpacity_7e",
+                            !D && "RaidStatus_timerTitle__hidden_34",
                           ),
                         },
                         i().createElement(Fe, {
@@ -5424,13 +5441,18 @@
                             ),
                           },
                           i().createElement("div", { className: "RaidStatus_timerIcon_23" }),
-                          i().createElement(Fe, {
-                            className: "RaidStatus_timerText_0e",
-                            text: D.text,
-                            format: { binding: D.binding },
-                          }),
+                          D
+                            ? i().createElement(Fe, {
+                                className: "RaidStatus_timerText_0e",
+                                text: B.text,
+                                format: { binding: B.binding },
+                              })
+                            : i().createElement(Fe, {
+                                className: "RaidStatus_unknownTimeText_a9",
+                                text: Fn.unknownTime(),
+                              }),
                         ),
-                        B &&
+                        g &&
                           i().createElement(pn, {
                             className: C()(
                               "RaidStatus_accelerationButton_97",
@@ -5606,37 +5628,42 @@
                       }),
                     ),
                   ),
-                  t.receiptRewards.map((t, u) =>
+                  t.receiptRewards.map((u, a) =>
                     i().createElement(
                       "div",
-                      { key: `recipeReward_${e}_${u}`, className: gn },
+                      { key: `recipeReward_${e}_${a}`, className: gn },
                       i().createElement(
                         "div",
                         { className: Cn },
-                        i().createElement(qt, hn({}, t, { tooltipArgs: d ? t.tooltipArgs : {} })),
+                        !n &&
+                          i().createElement(
+                            "div",
+                            { className: "RecipeItem_limitCounterWrapper_c5" },
+                            b &&
+                              i().createElement(
+                                Ne,
+                                { body: fn.limitedReward() },
+                                i().createElement(Fe, {
+                                  className: "RecipeItem_limitCounterText_10",
+                                  text: vn.limitText(),
+                                  format: {
+                                    binding: {
+                                      limit: i().createElement(Fe, {
+                                        className: "RecipeItem_limitCounter_ce",
+                                        text: vn.limit(),
+                                        format: {
+                                          binding: { from: t.limit - t.usageCount, to: t.limit },
+                                        },
+                                      }),
+                                    },
+                                  },
+                                }),
+                              ),
+                          ),
+                        i().createElement(qt, hn({}, u, { tooltipArgs: d ? u.tooltipArgs : {} })),
                       ),
                     ),
                   ),
-                  !n &&
-                    i().createElement(
-                      "div",
-                      { className: "RecipeItem_limitCounterWrapper_c5" },
-                      b
-                        ? i().createElement(
-                            Ne,
-                            { body: fn.limitedReward() },
-                            i().createElement(Fe, {
-                              className: "RecipeItem_limitCounter_ce",
-                              text: vn.limit(),
-                              format: { binding: { from: t.usageCount, to: t.limit } },
-                            }),
-                          )
-                        : i().createElement(
-                            Ne,
-                            { body: fn.unlimitedReward() },
-                            i().createElement("div", { className: "RecipeItem_limitIcon_50" }),
-                          ),
-                    ),
                   a && i().createElement("div", { className: "RecipeItem_itemsSeparator_80" }),
                 ),
                 t.isDisabled &&
@@ -5717,7 +5744,7 @@
                 { className: "RecipeList_base_61" },
                 i().createElement(
                   yu.Vertical.Area.Default,
-                  { api: c },
+                  { api: c, barClassNames: { base: "RecipeList_scrollbar_48" } },
                   i().createElement(
                     "div",
                     {
@@ -5731,11 +5758,7 @@
                       ? i().createElement(
                           "div",
                           { className: "RecipeList_infoWrapper_0a" },
-                          i().createElement(
-                            Ne,
-                            { body: Tn.recipes.history.empty() },
-                            i().createElement("div", { className: "RecipeList_infoIcon_3f" }),
-                          ),
+                          i().createElement("div", { className: "RecipeList_infoIcon_3f" }),
                           i().createElement(Fe, {
                             className: "RecipeList_infoText_4b",
                             text: g ? yn.emptyTab.history() : yn.emptyTab.discovered(),

@@ -3669,39 +3669,45 @@
                     }),
                   ),
                   !c &&
-                    -1 !== l &&
                     n().createElement(
                       "div",
-                      { className: C()(Qe.subheader, F && Qe.subheader__visible) },
-                      0 !== l &&
+                      { className: C()(Qe.subheader, F && -1 !== l && Qe.subheader__visible) },
+                      -1 !== l &&
                         n().createElement(
                           n().Fragment,
                           null,
-                          n().createElement(
-                            "div",
-                            { className: Qe.gradientHeaderTitle },
-                            (l > 3 || !A) &&
+                          0 !== l &&
+                            n().createElement(
+                              n().Fragment,
+                              null,
                               n().createElement(
                                 "div",
-                                { className: Qe.headerTitleEffects },
-                                n().createElement(z, { value: l }),
+                                { className: Qe.gradientHeaderTitle },
+                                (l > 3 || !A) &&
+                                  n().createElement(
+                                    "div",
+                                    { className: Qe.headerTitleEffects },
+                                    n().createElement(z, { value: l }),
+                                  ),
+                                n().createElement(
+                                  "div",
+                                  {
+                                    className: C()(Qe.headerTitle, Qe[`headerTitle__position${l}`]),
+                                  },
+                                  n().createElement(z, { value: l }),
+                                ),
                               ),
-                            n().createElement(
-                              "div",
-                              { className: C()(Qe.headerTitle, Qe[`headerTitle__position${l}`]) },
-                              n().createElement(z, { value: l }),
+                              n().createElement(ku, {
+                                className: Qe.yourPosition,
+                                text: Ze.yourPosition(),
+                              }),
                             ),
-                          ),
                           n().createElement(ku, {
-                            className: Qe.yourPosition,
-                            text: Ze.yourPosition(),
+                            className: Qe.top,
+                            text: A ? Ze.top() : Ze.positioned(),
+                            format: { binding: { top: n().createElement(z, { value: E }) } },
                           }),
                         ),
-                      n().createElement(ku, {
-                        className: Qe.top,
-                        text: A ? Ze.top() : Ze.positioned(),
-                        format: { binding: { top: n().createElement(z, { value: E }) } },
-                      }),
                     ),
                   n().createElement(
                     "div",

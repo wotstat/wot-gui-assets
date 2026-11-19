@@ -11134,14 +11134,15 @@
             base: "PositionRewards_base_c2",
             title: "PositionRewards_title_ec",
             rewards: "PositionRewards_rewards_66",
-            rewards__one: "PositionRewards_rewards__one_12",
-            rewards__lootbox: "PositionRewards_rewards__lootbox_01",
+            rewards__1: "PositionRewards_rewards__1_7f",
+            rewards__2: "PositionRewards_rewards__2_4a",
+            rewards__3: "PositionRewards_rewards__3_e1",
             reward: "PositionRewards_reward_22",
+            reward__singleVehicle: "PositionRewards_reward__singleVehicle_71",
             reward__vehicles: "PositionRewards_reward__vehicles_a3",
             reward__several: "PositionRewards_reward__several_16",
             reward__badge: "PositionRewards_reward__badge_78",
             rewards__minor: "PositionRewards_rewards__minor_98",
-            rewards__fragment: "PositionRewards_rewards__fragment_32",
             rewardInfo: "PositionRewards_rewardInfo_19",
             reward__nyLootboxFragment: "PositionRewards_reward__nyLootboxFragment_66",
             reward__nyLootboxFragmentSingle: "PositionRewards_reward__nyLootboxFragmentSingle_6e",
@@ -11177,10 +11178,11 @@
               _ = (e) =>
                 c()(
                   Vs.reward,
-                  Vs[`reward__${e}`],
                   n && e !== wt.Vehicles && Vs.reward__several,
                   e === wt.NyLootboxFragment && 1 === t && Vs.reward__nyLootboxFragmentSingle,
                   e === wt.BattleBadge && Vs.reward__badge,
+                  e === wt.Vehicles && t > 1 && Vs.reward__vehicles,
+                  e === wt.Vehicles && 1 === t && Vs.reward__singleVehicle,
                 );
             return l().createElement(
               "div",
@@ -11194,6 +11196,7 @@
                 {
                   className: c()(
                     Vs.rewards,
+                    Vs[`rewards__${t}`],
                     1 === t && Vs.rewards__one,
                     n && o && Vs.rewards__fragment,
                     n && r && Vs.rewards__lootbox,
@@ -13295,24 +13298,31 @@
                         );
                       }));
                 }, [h, a, o, _]));
-              const I = { backgroundImage: `url(${du.categories.mainIcon.$dyn(b)})` },
-                M = { backgroundImage: `url(${cu.c_34x34.$dyn(b)})` },
-                L = { backgroundImage: `url(${du.categories.mainIcon.$dyn(b)})` },
-                O = { backgroundImage: `url(${du.categories.mainIcon.$dyn(`${b}_select`)})` },
-                W = { backgroundImage: `url(${du.categories.mainIcon.$dyn(`${b}_select_mask`)})` },
-                $ = { backgroundImage: `url(${du.categories.background.$dyn(`${b}_select`)})` },
-                V = { backgroundImage: `url(${du.categories.progress.pointLight.$dyn(b)})` },
-                U = { backgroundImage: `url(${du.common.blinks.$dyn(b)})` },
-                G = (0, s.useCallback)(
+              const I = (0, s.useRef)(n),
+                M = (0, s.useRef)(!1);
+              (0, s.useEffect)(() => {
+                (!I.current && n && (M.current = i),
+                  I.current && !n && (M.current && u(null), (M.current = !1)),
+                  (I.current = n));
+              }, [n, i, u]);
+              const L = { backgroundImage: `url(${du.categories.mainIcon.$dyn(b)})` },
+                O = { backgroundImage: `url(${cu.c_34x34.$dyn(b)})` },
+                W = { backgroundImage: `url(${du.categories.mainIcon.$dyn(b)})` },
+                $ = { backgroundImage: `url(${du.categories.mainIcon.$dyn(`${b}_select`)})` },
+                V = { backgroundImage: `url(${du.categories.mainIcon.$dyn(`${b}_select_mask`)})` },
+                U = { backgroundImage: `url(${du.categories.background.$dyn(`${b}_select`)})` },
+                G = { backgroundImage: `url(${du.categories.progress.pointLight.$dyn(b)})` },
+                z = { backgroundImage: `url(${du.common.blinks.$dyn(b)})` },
+                j = (0, s.useCallback)(
                   (e) => {
                     S || D || (e.stopPropagation(), E(!1, !0), B.$.playClick(), u(b));
                   },
                   [E, D, S, u, b],
                 ),
-                z = (e) => {
+                q = (e) => {
                   S || D || T(e, b);
                 },
-                j = (e, t) => {
+                Z = (e, t) => {
                   _((n) =>
                     n.map((a, o) => {
                       if (o === e)
@@ -13366,7 +13376,7 @@
                     contentId:
                       R.views.new_year.lobby.new_year.popovers.NyPetItemActivatePopover("resId"),
                     direction: tn.Right,
-                    onClick: G,
+                    onClick: j,
                     args: { type: b },
                     isEnabled: !S && !D,
                   },
@@ -13402,7 +13412,7 @@
                         "Indicator_backgroundSelected_79",
                         i && "Indicator_backgroundSelected__visible_11",
                       ),
-                      style: $,
+                      style: U,
                     }),
                     l().createElement("div", {
                       className: c()(
@@ -13414,22 +13424,22 @@
                       "div",
                       {
                         className: "Indicator_mainIcon_ae",
-                        style: I,
-                        onClick: () => z(Pa.PetWidgetIconButton),
+                        style: L,
+                        onClick: () => q(Pa.PetWidgetIconButton),
                       },
                       l().createElement("div", {
                         className: c()(
                           "Indicator_mainIconHovered_4b",
                           P && !i && "Indicator_mainIconHovered__visible_49",
                         ),
-                        style: L,
+                        style: W,
                       }),
                       l().createElement("div", {
                         className: c()(
                           "Indicator_mainIconSelected_e8",
                           i && "Indicator_mainIconSelected__visible_83",
                         ),
-                        style: O,
+                        style: $,
                       }),
                       l().createElement("div", { className: "Indicator_mainIconMask_3a" }),
                       l().createElement("div", {
@@ -13437,14 +13447,14 @@
                           "Indicator_mainIconSelectedMask_ae",
                           i && "Indicator_mainIconSelectedMask__visible_93",
                         ),
-                        style: W,
+                        style: V,
                       }),
                       l().createElement(
                         "div",
                         { className: "Indicator_categoryWrapper_0a" },
                         l().createElement("div", {
                           className: "Indicator_mainCategoryImageIcon_1d",
-                          style: M,
+                          style: O,
                         }),
                         D &&
                           !S &&
@@ -13473,7 +13483,7 @@
                       "div",
                       {
                         className: "Indicator_bodyBackground_25",
-                        onClick: () => z(Pa.PetWidgetIndicatorButton),
+                        onClick: () => q(Pa.PetWidgetIndicatorButton),
                       },
                       l().createElement(
                         "div",
@@ -13533,7 +13543,7 @@
                                     e.type === b &&
                                     l().createElement("div", {
                                       className: "Indicator_blink_4a",
-                                      style: U,
+                                      style: z,
                                       onAnimationEnd: () => m(null),
                                     }),
                                   l().createElement("div", {
@@ -13542,7 +13552,7 @@
                                       mu(n, t.pointsInProgress, d) &&
                                         "Indicator_activeLight__visible_2a",
                                     ),
-                                    style: V,
+                                    style: G,
                                   }),
                                 ),
                               ),
@@ -13559,7 +13569,7 @@
                                     iu({}, e, {
                                       index: t,
                                       scaleDowngradeTime: A,
-                                      onComplete: j,
+                                      onComplete: Z,
                                       wasOverflowed: C,
                                       onResetWasOverflowed: p,
                                       onProgressFillSound: g,
@@ -13585,7 +13595,7 @@
                         "div",
                         {
                           className: "Indicator_actionButton_04",
-                          onClick: () => z(Pa.PetWidgetTextButton),
+                          onClick: () => q(Pa.PetWidgetTextButton),
                         },
                         l().createElement(ql, { isDisabled: S || D, label: lu.button.$dyn(b) }),
                       ),
@@ -14060,7 +14070,10 @@
             { id: 1, value: Pu },
             { id: 2, value: Pu },
           ],
-          Ou = (e) => Lu().map((t, n) => Object.assign({}, t, { value: e[n] || Pu })),
+          Ou = (e) =>
+            Lu().map((t, n) =>
+              Object.assign({}, t, { value: e[n] && -1 !== e[n].componentID ? e[n] : Pu }),
+            ),
           Hu = vn()(
             ({ observableModel: e }) => {
               const t = {
@@ -14329,9 +14342,7 @@
                 x = i.computes.getLockedPetIndicators(),
                 I = _ === z.Raid,
                 M = ((e) => {
-                  if ((e < 0 && (e = 0), 0 === e))
-                    return { text: R.strings.ny.raidView.emptyTime() };
-                  if (e < 60)
+                  if ((e < 0 && (e = 0), e < 60))
                     return { text: R.strings.ny.raidView.secondsTime(), binding: { sec: e } };
                   const t = Math.floor(e / 60),
                     n = Math.floor(t / 60),
@@ -14355,7 +14366,10 @@
                 K = Z[1],
                 J = (0, s.useState)([]),
                 ee = J[0],
-                te = J[1];
+                te = J[1],
+                ae = (0, s.useCallback)(() => {
+                  ((0, B.G)(R.sounds.ny_vo_terentiy_help_stop()), u.onRaidSpeedup());
+                }, [u]);
               return (
                 (0, s.useEffect)(() => {
                   V && (0, B.G)(R.sounds.hangar_newyear_raccoon_indication());
@@ -14428,7 +14442,7 @@
                       l().createElement(Vu, {
                         className: Uu.speedBtn,
                         isDisabled: !y,
-                        onSpeed: u.onRaidSpeedup,
+                        onSpeed: ae,
                         maxBoostLimit: A,
                         boostAmount: C,
                         boostAccrualTime: D,
@@ -17197,7 +17211,9 @@
                   O || y
                     ? {
                         closeBtnText: jd.customizationZone(),
-                        handleBtnClick: () => n.onCustomizationObjectClose(),
+                        handleBtnClick: () => {
+                          (n.onCustomizationObjectClose(), n.onClickSlot(hr));
+                        },
                         closeType: "back",
                         closeSide: "left",
                       }

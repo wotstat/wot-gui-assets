@@ -2968,26 +2968,33 @@
                           );
                         }));
                   }, [C, a, i, d]));
-                const M = { backgroundImage: `url(${he.categories.mainIcon.$dyn(D)})` },
-                  P = { backgroundImage: `url(${pe.c_34x34.$dyn(D)})` },
-                  I = { backgroundImage: `url(${he.categories.mainIcon.$dyn(D)})` },
-                  k = { backgroundImage: `url(${he.categories.mainIcon.$dyn(`${D}_select`)})` },
-                  N = {
+                const M = (0, r.useRef)(t),
+                  P = (0, r.useRef)(!1);
+                (0, r.useEffect)(() => {
+                  (!M.current && t && (P.current = c),
+                    M.current && !t && (P.current && l(null), (P.current = !1)),
+                    (M.current = t));
+                }, [t, c, l]);
+                const I = { backgroundImage: `url(${he.categories.mainIcon.$dyn(D)})` },
+                  k = { backgroundImage: `url(${pe.c_34x34.$dyn(D)})` },
+                  N = { backgroundImage: `url(${he.categories.mainIcon.$dyn(D)})` },
+                  H = { backgroundImage: `url(${he.categories.mainIcon.$dyn(`${D}_select`)})` },
+                  W = {
                     backgroundImage: `url(${he.categories.mainIcon.$dyn(`${D}_select_mask`)})`,
                   },
-                  H = { backgroundImage: `url(${he.categories.background.$dyn(`${D}_select`)})` },
-                  W = { backgroundImage: `url(${he.categories.progress.pointLight.$dyn(D)})` },
-                  j = { backgroundImage: `url(${he.common.blinks.$dyn(D)})` },
-                  U = (0, r.useCallback)(
+                  j = { backgroundImage: `url(${he.categories.background.$dyn(`${D}_select`)})` },
+                  U = { backgroundImage: `url(${he.categories.progress.pointLight.$dyn(D)})` },
+                  G = { backgroundImage: `url(${he.common.blinks.$dyn(D)})` },
+                  V = (0, r.useCallback)(
                     (u) => {
                       w || f || (u.stopPropagation(), _(!1, !0), bu.playClick(), l(D));
                     },
                     [_, f, w, l, D],
                   ),
-                  G = (u) => {
+                  $ = (u) => {
                     w || f || S(u, D);
                   },
-                  V = (u, e) => {
+                  X = (u, e) => {
                     d((t) =>
                       t.map((r, n) => {
                         if (n === u)
@@ -3041,7 +3048,7 @@
                       contentId:
                         R.views.new_year.lobby.new_year.popovers.NyPetItemActivatePopover("resId"),
                       direction: fu.Right,
-                      onClick: U,
+                      onClick: V,
                       args: { type: D },
                       isEnabled: !w && !f,
                     },
@@ -3077,7 +3084,7 @@
                           "Indicator_backgroundSelected_79",
                           c && "Indicator_backgroundSelected__visible_11",
                         ),
-                        style: H,
+                        style: j,
                       }),
                       n().createElement("div", {
                         className: s()(
@@ -3089,22 +3096,22 @@
                         "div",
                         {
                           className: "Indicator_mainIcon_ae",
-                          style: M,
-                          onClick: () => G(Wu.PetWidgetIconButton),
+                          style: I,
+                          onClick: () => $(Wu.PetWidgetIconButton),
                         },
                         n().createElement("div", {
                           className: s()(
                             "Indicator_mainIconHovered_4b",
                             T && !c && "Indicator_mainIconHovered__visible_49",
                           ),
-                          style: I,
+                          style: N,
                         }),
                         n().createElement("div", {
                           className: s()(
                             "Indicator_mainIconSelected_e8",
                             c && "Indicator_mainIconSelected__visible_83",
                           ),
-                          style: k,
+                          style: H,
                         }),
                         n().createElement("div", { className: "Indicator_mainIconMask_3a" }),
                         n().createElement("div", {
@@ -3112,14 +3119,14 @@
                             "Indicator_mainIconSelectedMask_ae",
                             c && "Indicator_mainIconSelectedMask__visible_93",
                           ),
-                          style: N,
+                          style: W,
                         }),
                         n().createElement(
                           "div",
                           { className: "Indicator_categoryWrapper_0a" },
                           n().createElement("div", {
                             className: "Indicator_mainCategoryImageIcon_1d",
-                            style: P,
+                            style: k,
                           }),
                           f &&
                             !w &&
@@ -3148,7 +3155,7 @@
                         "div",
                         {
                           className: "Indicator_bodyBackground_25",
-                          onClick: () => G(Wu.PetWidgetIndicatorButton),
+                          onClick: () => $(Wu.PetWidgetIndicatorButton),
                         },
                         n().createElement(
                           "div",
@@ -3208,7 +3215,7 @@
                                       u.type === D &&
                                       n().createElement("div", {
                                         className: "Indicator_blink_4a",
-                                        style: j,
+                                        style: G,
                                         onAnimationEnd: () => A(null),
                                       }),
                                     n().createElement("div", {
@@ -3217,7 +3224,7 @@
                                         be(t, e.pointsInProgress, E) &&
                                           "Indicator_activeLight__visible_2a",
                                       ),
-                                      style: W,
+                                      style: U,
                                     }),
                                   ),
                                 ),
@@ -3234,7 +3241,7 @@
                                       De({}, u, {
                                         index: e,
                                         scaleDowngradeTime: v,
-                                        onComplete: V,
+                                        onComplete: X,
                                         wasOverflowed: h,
                                         onResetWasOverflowed: F,
                                         onProgressFillSound: m,
@@ -3253,11 +3260,11 @@
                               R.views.new_year.lobby.new_year.tooltips.CommonTooltip("resId"),
                             args: {
                               description: w
-                                ? (($ = Ce.disabled()),
-                                  (X = { value: String(y) }),
-                                  $.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
+                                ? ((K = Ce.disabled()),
+                                  (Y = { value: String(y) }),
+                                  K.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
                                     const e = 0 === u.indexOf("%") ? 2 : 1;
-                                    return String(X[u.slice(e, -e)]);
+                                    return String(Y[u.slice(e, -e)]);
                                   }))
                                 : ge.$dyn(D),
                             },
@@ -3267,7 +3274,7 @@
                           "div",
                           {
                             className: "Indicator_actionButton_04",
-                            onClick: () => G(Wu.PetWidgetTextButton),
+                            onClick: () => $(Wu.PetWidgetTextButton),
                           },
                           n().createElement(ee, { isDisabled: w || f, label: Ce.button.$dyn(D) }),
                         ),
@@ -3275,7 +3282,7 @@
                     ),
                   ),
                 );
-                var $, X;
+                var K, Y;
               },
             ),
             "SlotIndicators_base_a4"),

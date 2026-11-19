@@ -1462,8 +1462,8 @@
             XS: { mt: j.mt__XS, mr: j.mr__XS, mb: j.mb__XS, ml: j.ml__XS },
           },
           z = (Object.keys($), ["mt", "mr", "mb", "ml"]),
-          V = { mt: "marginTop", mr: "marginRight", mb: "marginBottom", ml: "marginLeft" },
-          K = X((u) => {
+          K = { mt: "marginTop", mr: "marginRight", mb: "marginBottom", ml: "marginLeft" },
+          V = X((u) => {
             let e = u.className,
               t = u.width,
               n = u.height,
@@ -1528,7 +1528,7 @@
                   r = ((u) =>
                     z.reduce((e, t) => {
                       const r = u[t];
-                      return ("number" == typeof r && (e[V[t]] = r + "rem"), e);
+                      return ("number" == typeof r && (e[K[t]] = r + "rem"), e);
                     }, {}))(u);
                 return {
                   computedStyle: Object.assign({}, N, r, {
@@ -1779,7 +1779,7 @@
               g = C.computedStyle,
               h = C.colorClassName;
             return a().createElement(
-              K,
+              V,
               ou(
                 {
                   className: p()(iu.base, t && iu[t], h, n),
@@ -2274,8 +2274,11 @@
             { id: 1, value: Xu },
             { id: 2, value: Xu },
           ],
-          Vu = (u) => zu().map((e, t) => Object.assign({}, e, { value: u[t] || Xu })),
-          Ku = c()(
+          Ku = (u) =>
+            zu().map((e, t) =>
+              Object.assign({}, e, { value: u[t] && -1 !== u[t].componentID ? u[t] : Xu }),
+            ),
+          Vu = c()(
             ({ observableModel: u }) => {
               const e = {
                   root: u.object(),
@@ -2310,7 +2313,7 @@
                   hasEmptyItems: () => i().some((u) => u.value === Xu),
                 },
                 syncSelectedRaidItems: (0, E.action)(() => {
-                  (e.selectedRaidItems.set(Vu(t())),
+                  (e.selectedRaidItems.set(Ku(t())),
                     e.previewRaidItems.set(null),
                     e.isPreview.set(!1));
                 }),
@@ -2318,7 +2321,7 @@
                   e.selectedRaidId.set(u);
                 }),
                 addItemsAll: (0, E.action)((u) => {
-                  (e.selectedRaidItems.set(Vu(u)),
+                  (e.selectedRaidItems.set(Ku(u)),
                     e.previewRaidItems.set(null),
                     e.isPreview.set(!1));
                 }),
@@ -2357,7 +2360,7 @@
                     const u = t.some((u) => u.value !== Xu);
                     e.previewRaidItems.set(u ? t : null);
                   }
-                  (e.selectedRaidItems.set(Vu(u)), e.isPreview.set(!0));
+                  (e.selectedRaidItems.set(Ku(u)), e.isPreview.set(!0));
                 }),
                 clearPreviewItems: (0, E.action)(() => {
                   (e.selectedRaidItems.set(e.previewRaidItems.get() || zu()),
@@ -2408,11 +2411,11 @@
             }),
           ),
           Qu =
-            (Ku[0],
-            Ku[1],
+            (Vu[0],
+            Vu[1],
             (u) => {
-              if ((u < 0 && (u = 0), 0 === u)) return { text: R.strings.ny.raidView.emptyTime() };
-              if (u < 60) return { text: R.strings.ny.raidView.secondsTime(), binding: { sec: u } };
+              if ((u < 0 && (u = 0), u < 60))
+                return { text: R.strings.ny.raidView.secondsTime(), binding: { sec: u } };
               const e = Math.floor(u / 60),
                 t = Math.floor(e / 60),
                 r = e % 60;

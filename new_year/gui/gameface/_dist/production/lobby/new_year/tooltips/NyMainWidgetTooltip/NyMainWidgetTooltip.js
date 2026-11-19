@@ -1993,12 +1993,12 @@
                           null,
                           a().createElement(vu, { className: Su, text: yu.pet.title() }),
                           a().createElement(vu, { className: Tu, text: yu.pet.description() }),
-                          (r || t) && a().createElement("div", { className: Mu }),
                         ),
                       t &&
                         a().createElement(
                           a().Fragment,
                           null,
+                          !n && a().createElement("div", { className: Mu }),
                           a().createElement(vu, { className: Su, text: yu.leaderBoard.title() }),
                           a().createElement(vu, {
                             className: Tu,

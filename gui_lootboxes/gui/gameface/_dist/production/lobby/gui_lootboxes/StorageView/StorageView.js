@@ -5873,21 +5873,23 @@
                     );
                   let r = null,
                     a = !1;
-                  const i = ((e, t, u, o) =>
-                      new Promise((n, r) => {
+                  const i = ((e, t, u, o, n) =>
+                      new Promise((r, a) => {
                         if (!e || "function" != typeof e.play)
-                          return r(new Error("Invalid video element"));
-                        let a;
-                        const i = () => {
-                            (cancelAnimationFrame(a), e.pause());
+                          return a(new Error("Invalid video element"));
+                        let i;
+                        const s = () => {
+                            (cancelAnimationFrame(i), e.pause());
                           },
-                          s = () => {
-                            if (!o())
-                              return (
-                                i(),
-                                void r(new Error("Segment aborted: invalidated by newer FSM"))
-                              );
-                            e.currentTime >= u - 0.05 ? (i(), n()) : (a = requestAnimationFrame(s));
+                          l = () => {
+                            if (!n())
+                              return o()
+                                ? void (e.currentTime >= u - 0.05
+                                    ? (s(), r())
+                                    : (i = requestAnimationFrame(l)))
+                                : (s(),
+                                  void a(new Error("Segment aborted: invalidated by newer FSM")));
+                            r();
                           };
                         try {
                           e.currentTime = t;
@@ -5895,16 +5897,16 @@
                           u && "function" == typeof u.then
                             ? u
                                 .then(() => {
-                                  a = requestAnimationFrame(s);
+                                  i = requestAnimationFrame(l);
                                 })
                                 .catch((e) => {
-                                  (i(), r(e));
+                                  n() ? r() : (s(), a(e));
                                 })
-                            : (a = requestAnimationFrame(s));
+                            : (i = requestAnimationFrame(l));
                         } catch (e) {
-                          (i(), r(e));
+                          (s(), a(e));
                         }
-                      }))(t, o.startTime, o.endTime, E)
+                      }))(t, o.startTime, o.endTime, E, () => a)
                       .then(() => {
                         a ||
                           ((a = !0),

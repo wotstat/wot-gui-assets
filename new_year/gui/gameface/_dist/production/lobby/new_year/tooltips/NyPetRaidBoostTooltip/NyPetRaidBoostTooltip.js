@@ -2388,7 +2388,10 @@
             { id: 1, value: Vu },
             { id: 2, value: Vu },
           ],
-          te = (u) => ee().map((e, t) => Object.assign({}, e, { value: u[t] || Vu })),
+          te = (u) =>
+            ee().map((e, t) =>
+              Object.assign({}, e, { value: u[t] && -1 !== u[t].componentID ? u[t] : Vu }),
+            ),
           re = C()(
             ({ observableModel: u }) => {
               const e = {
@@ -2541,8 +2544,7 @@
               o = s.hours,
               E = s.minutes,
               A = ((u) => {
-                if ((u < 0 && (u = 0), 0 === u)) return { text: R.strings.ny.raidView.emptyTime() };
-                if (u < 60)
+                if ((u < 0 && (u = 0), u < 60))
                   return { text: R.strings.ny.raidView.secondsTime(), binding: { sec: u } };
                 const e = Math.floor(u / 60),
                   t = Math.floor(e / 60),
