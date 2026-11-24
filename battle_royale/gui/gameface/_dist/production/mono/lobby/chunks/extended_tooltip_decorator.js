@@ -1,9 +1,9 @@
-import { H as e, K as s, Nn as a, R as t, q as r, qr as i, t as d } from "./lib.js";
+import { A as e, E as s, Nn as a, dt as t, qr as r, t as i, ut as d } from "./lib.js";
 var o = "Divider_7a72bfaf",
   c = "Divider_b60e7313",
   l = a(),
   x = ({ className: e }) =>
-    (0, l.jsx)("div", { className: i(o, e), children: (0, l.jsx)("div", { className: c }) }),
+    (0, l.jsx)("div", { className: r(o, e), children: (0, l.jsx)("div", { className: c }) }),
   n = "ExtendedTooltipDecorator_312a767e",
   m = "ExtendedTooltipDecorator_header_420fb2c1",
   j = "ExtendedTooltipDecorator_description_a984d854",
@@ -11,19 +11,19 @@ var o = "Divider_7a72bfaf",
   _ = "ExtendedTooltipDecorator_divider_24cd0041";
 function h({
   header: a,
-  description: i,
+  description: r,
   timerText: o,
   timerTimeLeft: c = 0,
   isTruncationAvailable: h = !0,
   children: v,
 }) {
-  return (0, l.jsx)(d, {
-    children: (0, l.jsx)(d.Decorator, {
+  return (0, l.jsx)(i, {
+    children: (0, l.jsx)(i.Decorator, {
       children: (0, l.jsxs)("div", {
         className: n,
         children: [
-          a && (0, l.jsx)(r, { text: a, className: m }),
-          h ? (0, l.jsx)(e, { text: i, classMix: j }) : (0, l.jsx)(r, { text: i, className: j }),
+          a && (0, l.jsx)(t, { text: a, className: m }),
+          h ? (0, l.jsx)(e, { text: r, classMix: j }) : (0, l.jsx)(t, { text: r, className: j }),
           v,
           c > 0 &&
             o &&
@@ -31,7 +31,7 @@ function h({
               className: p,
               children: [
                 (0, l.jsx)(x, { className: _ }),
-                (0, l.jsx)(s, { path: o, params: { timeLeft: (0, l.jsx)(t, { start: c }) } }),
+                (0, l.jsx)(d, { path: o, params: { timeLeft: (0, l.jsx)(s, { start: c }) } }),
               ],
             }),
         ],

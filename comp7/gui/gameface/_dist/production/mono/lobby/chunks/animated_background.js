@@ -1,5 +1,5 @@
 import { r as a } from "./rolldown-runtime.js";
-import { Cs as s, Ho as e, Na as i, S as n, b as t, es as r, x as m } from "./lib.js";
+import { Cs as s, Ho as e, Na as i, a as n, es as t, i as r, r as m } from "./lib.js";
 import { i as o } from "./vendor.js";
 s();
 var c = a(o(), 1),
@@ -13,16 +13,16 @@ var c = a(o(), 1),
     height: 400,
     frameCount: 50,
     chunk: { count: 2, rows: 5, columns: 5 },
-    getChunkPath: m("R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_"),
+    getChunkPath: r("R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_"),
   },
   _ = n(f),
   j = ({ className: a }) =>
     (0, l.jsx)("div", {
       className: (0, c.default)(d, a),
-      children: r.isHigh()
+      children: t.isHigh()
         ? (0, l.jsxs)(l.Fragment, {
             children: [
-              (0, l.jsx)(t, {
+              (0, l.jsx)(m, {
                 onAnimationDone: e,
                 width: f.width,
                 height: f.height,

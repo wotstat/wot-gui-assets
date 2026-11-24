@@ -4,47 +4,47 @@ import {
   Dt as a,
   Er as t,
   Et as l,
-  Gt as i,
-  Ir as n,
-  Lr as r,
-  Lt as o,
-  Mn as _,
-  Mt as c,
-  Nn as d,
-  Ot as m,
-  Pn as b,
-  Un as u,
-  Vn as h,
-  Vt as p,
-  Wn as g,
-  Wt as x,
-  Yr as f,
-  Zr as v,
-  _ as w,
-  b as N,
-  d as S,
-  f as j,
-  gt as P,
-  it as L,
-  m as y,
-  mn as E,
-  p as I,
-  qr as C,
-  rt as T,
-  v as B,
-  vr as k,
-  vt as A,
-  y as $,
+  G as i,
+  Gt as n,
+  H as r,
+  Ir as o,
+  J as _,
+  Lr as c,
+  Lt as d,
+  Mn as m,
+  Mt as b,
+  Nn as u,
+  Ot as h,
+  Pn as p,
+  Un as g,
+  V as x,
+  Vn as f,
+  Vt as v,
+  W as w,
+  Wn as N,
+  Wt as S,
+  X as j,
+  Y as P,
+  Yr as L,
+  Z as E,
+  Zr as y,
+  et as I,
+  gt as C,
+  mn as T,
+  qr as B,
+  tt as k,
+  vr as A,
+  vt as $,
   zn as W,
   zt as M,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
 import { i as D, r as z } from "../chunks/vendor.js";
-var F = e(f(), 1),
-  O = (function (e) {
+var F = e(L(), 1),
+  G = (function (e) {
     return ((e.Solo = "solo"), (e.RandomPlatoon = "randomPlatoon"), (e.Platoon = "platoon"), e);
   })({}),
-  [Q, G] = i()(
+  [O, Q] = n()(
     ({ observableModel: e }) => {
       const s = {
           root: e.object(),
@@ -58,30 +58,30 @@ var F = e(f(), 1),
           battleRewardsListWithPremium: e.array("personalResults.battleRewardsListWithPremium"),
           eventInfo: e.object("eventInfo"),
         },
-        a = x((e) => {
-          const a = k(s.placeList.get(), e);
+        a = S((e) => {
+          const a = A(s.placeList.get(), e);
           if (!a) throw new Error(`Cannot find placeItem on index: ${e}`);
           return { ...a };
         }),
-        t = x((e, a) => {
-          const t = k(s.placeList.get(), e);
+        t = S((e, a) => {
+          const t = A(s.placeList.get(), e);
           if (!t) throw new Error(`rowItem: Cannot find placeItemIndex: ${e}`);
-          const l = k(t.playersList, a);
+          const l = A(t.playersList, a);
           if (!l) throw new Error(`rowItem: Cannot find rowItemIndex: ${a}`);
           return { ...l };
         }),
-        l = x((e) => {
-          const a = k(s.statsList.get(), e);
+        l = S((e) => {
+          const a = A(s.statsList.get(), e);
           if (!a) throw new Error(`statItem: Cannot find index: ${e}`);
           return { ...a };
         }),
-        i = x((e) => {
-          const a = k(s.battleRewardsList.get(), e);
+        i = S((e) => {
+          const a = A(s.battleRewardsList.get(), e);
           if (!a) throw new Error(`battleRewardItem: Cannot find index: ${e}`);
           return { ...a };
         }),
-        n = x((e) => {
-          const a = k(s.battleRewardsListWithPremium.get(), e);
+        n = S((e) => {
+          const a = A(s.battleRewardsListWithPremium.get(), e);
           if (!a) throw new Error(`battleRewardItemWithPremium: Cannot find index: ${e}`);
           return { ...a };
         });
@@ -107,7 +107,7 @@ var F = e(f(), 1),
   q = "Platoon_name_29efeb49",
   Z = "Platoon_clan_fd35fee",
   K = "Platoon_icon_79a1062b",
-  X = d(),
+  X = u(),
   Y = ({ userName: e, clanAbbrev: s, battleType: a }) => {
     const t = R.images.battle_royale.gui.maps.icons.battleResults.battle_type.$dyn(a);
     return (0, X.jsxs)(X.Fragment, {
@@ -126,7 +126,7 @@ var F = e(f(), 1),
               children: [
                 (0, X.jsx)("div", { className: q, children: e }),
                 s &&
-                  (0, X.jsx)(P, {
+                  (0, X.jsx)(C, {
                     text: R.strings.battle_royale.battleResult.playerBattleTypeStatus.clan(),
                     binding: { clanAbbrev: s },
                     classMix: Z,
@@ -146,14 +146,14 @@ var F = e(f(), 1),
   te = "PlayerBattleTypeStatus_icon_5e9cf20f",
   le = "PlayerBattleTypeStatus_button_7801e3",
   ie = D(function () {
-    const { model: e, controls: s } = G(),
+    const { model: e, controls: s } = Q(),
       { battleType: a, isPlatoonWindowOpen: t } = e.battleTypeInfo.get(),
       { userName: l, clanAbbrev: i } = e.userInfo.get();
     return (0, X.jsx)("div", {
       className: J,
       children: (() => {
         switch (a) {
-          case O.Solo:
+          case G.Solo:
             return (0, X.jsxs)(X.Fragment, {
               children: [
                 (0, X.jsxs)("div", {
@@ -174,14 +174,14 @@ var F = e(f(), 1),
                 (0, X.jsx)("div", { className: te }),
               ],
             });
-          case O.RandomPlatoon:
+          case G.RandomPlatoon:
             return (0, X.jsxs)(X.Fragment, {
               children: [
                 (0, X.jsx)(Y, { userName: l, clanAbbrev: i, battleType: a }),
-                (0, X.jsx)(o, {
-                  theme: o.themes.primary,
+                (0, X.jsx)(d, {
+                  theme: d.themes.primary,
                   onClick: s.invite,
-                  size: o.sizes.small,
+                  size: d.sizes.small,
                   className: le,
                   autoAlignContent: !1,
                   disabled: t,
@@ -190,7 +190,7 @@ var F = e(f(), 1),
                 }),
               ],
             });
-          case O.Platoon:
+          case G.Platoon:
             return (0, X.jsx)(Y, { userName: l, clanAbbrev: i, battleType: a });
           default:
             return (console.error(`Invalid battle type ${a}`), null);
@@ -215,37 +215,37 @@ var F = e(f(), 1),
     kills: "Content_kills_b32bff77",
   },
   re = D(function ({ itemIndex: e, rowIndex: s, isPlatoon: a, isRowHovered: t }) {
-    const { model: i } = G(),
+    const { model: i } = Q(),
       { type: n, anonymizerNick: r, user: o } = i.computes.rowItem(e, s),
       _ = "rowBrPlayer" === n || "rowBrPlatoon" === n,
-      [d, m] = (0, F.useState)(!1),
-      b = R.images.gui.maps.icons.battleRoyale.vehicleTypes.$dyn(o.vehicleType),
+      [c, d] = (0, F.useState)(!1),
+      m = R.images.gui.maps.icons.battleRoyale.vehicleTypes.$dyn(o.vehicleType),
       u = o.clanAbbrev ? `[${o.clanAbbrev}]` : null,
-      h = A(
+      h = $(
         "rowBrEnemy" === n
           ? R.strings.battle_royale.battleResult.stats.anonymizer.enemy.header()
           : R.strings.battle_royale.battleResult.stats.anonymizer.header(),
         { name: r },
       );
     return (0, X.jsxs)("div", {
-      className: C(
+      className: B(
         ne.base,
         ne[`base__${n}`],
         a && ne.base__platoon,
-        (_ || t || d) && ne.base__hover,
+        (_ || t || c) && ne.base__hover,
       ),
       onMouseEnter: () => {
-        a && m(!0);
+        a && d(!0);
       },
       onMouseLeave: () => {
-        a && m(!1);
+        a && d(!1);
       },
       children: [
         (0, X.jsxs)("div", {
           className: ne.name,
           children: [
             o.userName &&
-              (0, X.jsx)($, {
+              (0, X.jsx)(j, {
                 args: {
                   userName: o.userName,
                   databaseID: o.databaseID,
@@ -253,7 +253,7 @@ var F = e(f(), 1),
                 },
                 children: (0, X.jsx)("div", {
                   className: ne.userName,
-                  children: (0, X.jsx)(B, { content: o.userName }),
+                  children: (0, X.jsx)(P, { content: o.userName }),
                 }),
               }),
             u && (0, X.jsx)("span", { className: ne.clanTag, children: u }),
@@ -271,7 +271,7 @@ var F = e(f(), 1),
           children: [
             (0, X.jsx)("div", {
               className: ne.vehicleTypeIcon,
-              style: { backgroundImage: `url(${b})` },
+              style: { backgroundImage: `url(${m})` },
             }),
             (0, X.jsx)("span", { className: ne.vehicleName, children: o.vehicleName }),
           ],
@@ -279,7 +279,7 @@ var F = e(f(), 1),
         (0, X.jsx)("span", { className: ne.level, children: W(o.vehicleLevel) }),
         (0, X.jsx)("span", {
           className: ne.damage,
-          children: (0, X.jsx)(c, { value: o.damage, format: "integral" }),
+          children: (0, X.jsx)(b, { value: o.damage, format: "integral" }),
         }),
         (0, X.jsx)("span", { className: ne.kills, children: o.kills }),
       ],
@@ -291,11 +291,11 @@ var F = e(f(), 1),
   de = "LeaderboardRow_players_cb86b55",
   me = "LeaderboardRow_base__platoon_33865fd8",
   be = D(function ({ index: e }) {
-    const { model: s } = G(),
+    const { model: s } = Q(),
       { place: a, isSquadMode: t, playersList: l } = s.computes.placeItem(e),
       [i, n] = (0, F.useState)(!1);
     return (0, X.jsxs)("div", {
-      className: C(oe, 0 === e && _e, t && me),
+      className: B(oe, 0 === e && _e, t && me),
       onMouseEnter: () => {
         t || n(!0);
       },
@@ -306,7 +306,7 @@ var F = e(f(), 1),
         (0, X.jsx)("div", { className: ce, children: a }),
         (0, X.jsx)("div", {
           className: de,
-          children: h(l.length, (s) =>
+          children: f(l.length, (s) =>
             (0, X.jsx)(
               re,
               { itemIndex: e, rowIndex: s, isPlatoon: t, isRowHovered: i },
@@ -325,7 +325,7 @@ var F = e(f(), 1),
   fe = "Leaderboard_kills_282ff7c1",
   ve = "Leaderboard_content_db78b069",
   we = D(function () {
-    const { model: e } = G(),
+    const { model: e } = Q(),
       s = e.placeList.get();
     return (0, X.jsx)("div", {
       className: ue,
@@ -343,11 +343,11 @@ var F = e(f(), 1),
                   (0, X.jsx)("div", { className: fe }),
                 ],
               }),
-              (0, X.jsx)(T, {
-                children: (0, X.jsx)(L, {
+              (0, X.jsx)(I, {
+                children: (0, X.jsx)(k, {
                   children: (0, X.jsx)("div", {
                     className: pe,
-                    children: h(e.placeList.get().length, (e) => (0, X.jsx)(be, { index: e }, e)),
+                    children: f(e.placeList.get().length, (e) => (0, X.jsx)(be, { index: e }, e)),
                   }),
                 }),
               }),
@@ -393,13 +393,13 @@ var Le = (e) => {
       return "l";
   }
 };
-function ye(e, s, a) {
+function Ee(e, s, a) {
   const t = s ? "BP" : "";
   return {
     backgroundImage: `url(${Pe(R.images.gui.maps.icons.battlePass.logo.chapterIcons, e, `${Le(a)}${t}`)})`,
   };
 }
-function Ee(e, s) {
+function ye(e, s) {
   const a = s.postfix ? `_${s.postfix}` : "";
   return (function (e) {
     const s = e.path.$dyn(`${e.name}_${e.id}`),
@@ -462,10 +462,10 @@ function Te({
   showProgressionCompleted: n,
 }) {
   return (0, X.jsxs)("div", {
-    className: C(Ce.base, Ce[`base__${s}`]),
+    className: B(Ce.base, Ce[`base__${s}`]),
     children: [
       (0, X.jsx)("div", {
-        className: C(
+        className: B(
           Ce.text,
           Ce.text__filtered,
           Ce[`text__${s}`],
@@ -477,7 +477,7 @@ function Te({
         children: e,
       }),
       (0, X.jsxs)("div", {
-        className: C(
+        className: B(
           Ce.textWithBlend,
           i && Ce.text__new,
           n && Ce.text__hideWithDelay,
@@ -485,11 +485,11 @@ function Te({
         ),
         children: [
           (0, X.jsx)("div", {
-            className: C(Ce.text, Ce.text__blended, Ce[`text__${s}`], t && Ce.text__rewardScreen),
+            className: B(Ce.text, Ce.text__blended, Ce[`text__${s}`], t && Ce.text__rewardScreen),
             children: e,
           }),
           (0, X.jsx)("div", {
-            className: C(
+            className: B(
               Ce.textMask,
               a && Ce.textMask__gold,
               t && Ce.textMask__animated,
@@ -580,14 +580,14 @@ function Ae({
     children: [
       f
         ? (0, X.jsx)("div", {
-            className: C(Be.icon, p && Be[`icon${p}`], x && Be[`icon__animated${h}`]),
+            className: B(Be.icon, p && Be[`icon${p}`], x && Be[`icon__animated${h}`]),
             style: {
               backgroundImage: `url(${(() => {
                 const e = R.images.gui.maps.icons.battlePass.logo,
                   s = ke(i, a);
                 if (v) {
                   if (d)
-                    return Ee(
+                    return ye(
                       { path: e.icon, name: Ie.Season, id: c },
                       { name: "icon", postfix: s },
                     );
@@ -598,7 +598,7 @@ function Ae({
             },
           })
         : (0, X.jsx)("div", {
-            className: C(
+            className: B(
               Be.label,
               Be[`label${p}`],
               g && Be.label__new,
@@ -624,7 +624,7 @@ function Ae({
           }),
       e &&
         (0, X.jsx)("div", {
-          className: C(
+          className: B(
             Be.label,
             Be[`label${p}`],
             g && Be.label__new,
@@ -666,10 +666,10 @@ function We({
   size: l,
 }) {
   return (0, X.jsx)("div", {
-    className: C($e.base, $e[`base__${l}`], a && $e.base__completed, !a && t && $e.base__hidden),
+    className: B($e.base, $e[`base__${l}`], a && $e.base__completed, !a && t && $e.base__hidden),
     children: (0, X.jsx)(
-      I,
-      { size: w.Small, value: e.to || 0, deltaFrom: e.from || 0, disabled: s },
+      w,
+      { size: _.Small, value: e.to || 0, deltaFrom: e.from || 0, disabled: s },
       e.to,
     ),
   });
@@ -701,12 +701,12 @@ var Me = {
   De = (e, s) =>
     e ? "gold" : s === Re.Completed || s === Re.CompletedRightNow ? "completed" : "initial",
   ze = (e, s, a, t, l) => ({
-    backgroundImage: `url(${Ee({ path: R.images.gui.maps.icons.battlePass.logo.emblem, name: Ie.Chapter, id: t }, { name: "emblem", postfix: `${e ? "open" : "closed"}_${De(s, a)}${l.length > 0 ? `_${l}` : ""}` })})`,
+    backgroundImage: `url(${ye({ path: R.images.gui.maps.icons.battlePass.logo.emblem, name: Ie.Chapter, id: t }, { name: "emblem", postfix: `${e ? "open" : "closed"}_${De(s, a)}${l.length > 0 ? `_${l}` : ""}` })})`,
   }),
   Fe = (e, s) => ({
-    backgroundImage: `url(${Ee({ path: R.images.gui.maps.icons.battlePass.logo.extra, name: Ie.Season, id: e }, { name: "extra", postfix: s })})`,
+    backgroundImage: `url(${ye({ path: R.images.gui.maps.icons.battlePass.logo.extra, name: Ie.Season, id: e }, { name: "extra", postfix: s })})`,
   });
-function Oe(e) {
+function Ge(e) {
   const {
       progression: s,
       size: a,
@@ -743,9 +743,9 @@ function Oe(e) {
   return (0, X.jsxs)("div", {
     className: Me.base,
     children: [
-      d && (0, X.jsx)("div", { className: C(Me.extra, h && Me[`extra__${h}`]), style: Fe(b, h) }),
+      d && (0, X.jsx)("div", { className: B(Me.extra, h && Me[`extra__${h}`]), style: Fe(b, h) }),
       (0, X.jsx)("div", {
-        className: C(Me.image, h && Me[`image__${h}`], u && Me.image__clickable),
+        className: B(Me.image, h && Me[`image__${h}`], u && Me.image__clickable),
         style: ze(o, g, t, m, h),
         children:
           t !== Re.AwaitSeason &&
@@ -779,8 +779,8 @@ function Oe(e) {
     ],
   });
 }
-var Qe = "BattlePassEmblem_2351dcce",
-  Ge = "BattlePassEmblem_flag_9cf2a3c2",
+var Oe = "BattlePassEmblem_2351dcce",
+  Qe = "BattlePassEmblem_flag_9cf2a3c2",
   Ve = "BattlePassEmblem_flag__isChapterChosen_fb6754",
   He = "BattlePassEmblem_emblem_94d19d99",
   Ue = "BattlePassEmblem_chapterLogoIcon_f12144a0",
@@ -789,63 +789,63 @@ var Qe = "BattlePassEmblem_2351dcce",
     backgroundImage: `url(${Pe(R.images.gui.maps.icons.battlePass.logo.flag, e, s ? "s" : "m")})`,
   }),
   Ke = D(function () {
-    const { model: e, controls: s } = G(),
+    const { model: e, controls: s } = Q(),
       {
         hasExtra: a,
         freePoints: t,
         chapterID: l,
         currentLevel: i,
         currentLevelPoints: n,
-        isBattlePassPurchased: o,
-        progressionState: c,
-        chapterState: d,
-        seasonNum: m,
+        isBattlePassPurchased: r,
+        progressionState: o,
+        chapterState: _,
+        seasonNum: d,
       } = e.battlePassProgress.get(),
-      u = { level: i, from: n },
-      h = c === Ne,
-      p = 0 !== l && d === Se.Active,
+      b = { level: i, from: n },
+      u = o === Ne,
+      h = 0 !== l && _ === Se.Active,
       g =
         (function (e) {
           return void 0 !== e.from && (e.level > 1 || e.from > 0);
-        })(u) && p,
-      x = h ? Re.Completed : g ? (o ? Re.Bought : Re.Free) : Re.ChapterNotChosen,
-      { mediaSize: f } = _(),
-      v = f <= b.Small,
+        })(b) && h,
+      x = u ? Re.Completed : g ? (r ? Re.Bought : Re.Free) : Re.ChapterNotChosen,
+      { mediaSize: f } = m(),
+      v = f <= p.Small,
       w = v ? je.Micro : je.Small,
       N = x === Re.Completed,
       S = g && !N,
       j = x === Re.Bought,
-      R = h && t > 0;
+      R = u && t > 0;
     return (0, X.jsxs)("div", {
-      className: Qe,
+      className: Oe,
       onClick: s.submit,
       onMouseDown: () => {
-        r.click();
+        c.click();
       },
       onMouseOver: () => {
-        r.highlight();
+        c.highlight();
       },
       children: [
-        !h && g && (0, X.jsx)("div", { className: C(Ge, S && Ve), style: Ze(l, v) }),
+        !u && g && (0, X.jsx)("div", { className: B(Qe, S && Ve), style: Ze(l, v) }),
         (0, X.jsxs)("div", {
           className: He,
           children: [
-            (0, X.jsx)(Oe, {
-              progression: u,
+            (0, X.jsx)(Ge, {
+              progression: b,
               size: w,
               battlePassState: x,
-              hasBattlePass: o,
-              isChapterChosen: p,
+              hasBattlePass: r,
+              isChapterChosen: h,
               isProgression: !1,
               chapterID: l,
-              seasonNum: m,
+              seasonNum: d,
               hasBeenActive: g,
               showProgressBar: !1,
               isOpen: S || R,
               isExtra: a,
               clickable: !1,
             }),
-            S && (0, X.jsx)("div", { className: Ue, style: ye(l, j, w) }),
+            S && (0, X.jsx)("div", { className: Ue, style: Ee(l, j, w) }),
             R && (0, X.jsx)("div", { className: qe, children: t }),
           ],
         }),
@@ -878,73 +878,73 @@ function Ye(e, s) {
       : R.strings.battle_royale.battleResult.battlePassWidget.tooltips.chapterNotChosen();
 }
 var Je = D(function ({ animationTrigger: e, isAnimationSkipped: s }) {
-    const { model: a } = G(),
+    const { model: a } = Q(),
       {
         maxPoints: t,
-        earnedPoints: i,
-        currentLevelPoints: n,
+        earnedPoints: n,
+        currentLevelPoints: r,
         progressionState: o,
         chapterID: _,
-        chapterState: c,
-        freePoints: d,
+        chapterState: d,
+        freePoints: m,
       } = a.battlePassProgress.get(),
-      m = R.strings.battle_royale.battleResult.battlePassWidget,
-      [b, h] = (0, F.useState)(y.delta.duration),
-      [p, g] = (0, F.useState)(!0),
-      x = Boolean(i),
-      f = o === Ne,
-      v = 0 !== _ && c === Se.Active,
-      w = (0, F.useMemo)(() => ({ ...y, freezed: p, delta: { duration: b, delay: 0 } }), [p, b]);
+      b = R.strings.battle_royale.battleResult.battlePassWidget,
+      [u, h] = (0, F.useState)(i.delta.duration),
+      [p, x] = (0, F.useState)(!0),
+      f = Boolean(n),
+      v = o === Ne,
+      N = 0 !== _ && d === Se.Active,
+      S = (0, F.useMemo)(() => ({ ...i, freezed: p, delta: { duration: u, delay: 0 } }), [p, u]);
     return (
       (0, F.useEffect)(() => {
-        if (x && e && !s)
+        if (f && e && !s)
           return (
-            g(!1),
-            r.sound(R.sounds.bp_progress_bar_start()),
-            u(() => {
-              r.sound(R.sounds.bp_progress_bar_stop());
-            }, y.delta.duration)
+            x(!1),
+            c.sound(R.sounds.bp_progress_bar_start()),
+            g(() => {
+              c.sound(R.sounds.bp_progress_bar_stop());
+            }, i.delta.duration)
           );
-      }, [e, s, x]),
+      }, [e, s, f]),
       (0, F.useEffect)(() => {
-        x && s && (h(0), r.sound(R.sounds.bp_progress_bar_stop()), e || g(!1));
-      }, [e, s, x]),
+        f && s && (h(0), c.sound(R.sounds.bp_progress_bar_stop()), e || x(!1));
+      }, [e, s, f]),
       (0, X.jsxs)("div", {
-        className: C(
+        className: B(
           Xe.base,
           Xe[`base__${o}`],
-          !f && v && Xe.base__progress,
-          !f && !v && Xe.base__chapterNotChosen,
+          !v && N && Xe.base__progress,
+          !v && !N && Xe.base__chapterNotChosen,
         ),
         children: [
           (0, X.jsx)(l, {
-            body: Ye(f, v),
+            body: Ye(v, N),
             children: (0, X.jsx)("div", { children: (0, X.jsx)(Ke, {}) }),
           }),
           (0, X.jsxs)("div", {
             className: Xe.content,
             children: [
-              (0, X.jsx)("div", { className: Xe.title, children: m.title() }),
-              !f &&
-                !v &&
+              (0, X.jsx)("div", { className: Xe.title, children: b.title() }),
+              !v &&
+                !N &&
                 (0, X.jsx)("div", {
                   className: Xe.chapterNotChosen,
-                  children: (0, X.jsx)(P, {
+                  children: (0, X.jsx)(C, {
                     classMix: Xe.chapterText,
-                    text: m.chapterNotChosen(),
+                    text: b.chapterNotChosen(),
                     binding: {
-                      points: (0, X.jsx)("span", { className: Xe.notUsedPoints, children: d }),
+                      points: (0, X.jsx)("span", { className: Xe.notUsedPoints, children: m }),
                       icon: (0, X.jsx)("span", { className: Xe.icon }),
                     },
                   }),
                 }),
-              f &&
+              v &&
                 (0, X.jsx)("div", {
                   className: Xe.progressionCompleted,
-                  children: m.progressionCompleted(),
+                  children: b.progressionCompleted(),
                 }),
-              !f &&
-                v &&
+              !v &&
+                N &&
                 (0, X.jsxs)(X.Fragment, {
                   children: [
                     (0, X.jsxs)("div", {
@@ -952,19 +952,19 @@ var Je = D(function ({ animationTrigger: e, isAnimationSkipped: s }) {
                       children: [
                         (0, X.jsx)("div", {
                           className: Xe.progressionBar,
-                          children: (0, X.jsx)(I, {
-                            deltaFrom: n - i,
-                            value: n,
+                          children: (0, X.jsx)(w, {
+                            deltaFrom: r - n,
+                            value: r,
                             maxValue: t,
-                            animationSettings: w,
+                            animationSettings: S,
                           }),
                         }),
-                        x &&
+                        f &&
                           (0, X.jsxs)("div", {
                             className: Xe.achievedPoints,
                             children: [
                               (0, X.jsx)("span", { className: Xe.plus, children: "+" }),
-                              i,
+                              n,
                             ],
                           }),
                       ],
@@ -972,7 +972,7 @@ var Je = D(function ({ animationTrigger: e, isAnimationSkipped: s }) {
                     (0, X.jsxs)("div", {
                       className: Xe.pointsStats,
                       children: [
-                        n,
+                        r,
                         "/",
                         (0, X.jsx)("span", { className: Xe.pointsMax, children: t }),
                         (0, X.jsx)("span", { className: Xe.icon }),
@@ -1016,7 +1016,7 @@ function os({ questCompleted: e }) {
               className: rs,
               children: (0, X.jsx)("div", {
                 className: ns,
-                children: A(
+                children: $(
                   R.strings.battle_royale.battleResult.battleQuestsWidget.questsComplete(),
                   { count: e },
                 ),
@@ -1029,7 +1029,7 @@ function os({ questCompleted: e }) {
   });
 }
 function _s(e) {
-  return "xp" === e ? j.tankXP : e;
+  return "xp" === e ? r.tankXP : e;
 }
 var cs = {
   currency: "BattleRewardItem_currency_bd140696",
@@ -1037,21 +1037,21 @@ var cs = {
   currencyIcon__brProgressionToken: "BattleRewardItem_currencyIcon__brProgressionToken_42621f68",
 };
 function ds({ value: e, type: s, className: a }) {
-  const { mediaSize: t } = _(),
+  const { mediaSize: t } = m(),
     l = (function (e) {
-      return e >= b.Medium ? S.sizes.extraLarge : S.sizes.large;
+      return e >= p.Medium ? x.sizes.extraLarge : x.sizes.large;
     })(t);
-  return (0, X.jsx)(m, {
+  return (0, X.jsx)(h, {
     contentId: R.views.battle_royale.mono.lobby.tooltips.reward_currency_tooltip("resId"),
     args: { currencyType: s },
     children: (0, X.jsx)("div", {
-      children: (0, X.jsx)(S, {
+      children: (0, X.jsx)(x, {
         className: a,
         type: _s(s),
         size: l,
         reverse: !0,
-        classNames: { base: cs.currency, icon: C(cs.currencyIcon, cs[`currencyIcon__${s}`]) },
-        children: v.formatNumber("integral", e),
+        classNames: { base: cs.currency, icon: B(cs.currencyIcon, cs[`currencyIcon__${s}`]) },
+        children: y.formatNumber("integral", e),
       }),
     }),
   });
@@ -1065,7 +1065,7 @@ var ms = D(function ({
     itemFinishState: i,
     itemStartState: n,
   }) {
-    const { model: r } = G(),
+    const { model: r } = Q(),
       o = (0, F.useRef)(null),
       _ = r.computes.battleRewardItem(e);
     return (0, X.jsx)(
@@ -1091,31 +1091,31 @@ var ms = D(function ({
     itemStartState: l,
     itemFinishState: i,
   }) {
-    const { model: n } = G(),
-      o = n.battleRewardsList.get(),
-      [_, c] = (0, F.useState)(-1),
-      d = o.length,
+    const { model: n } = Q(),
+      r = n.battleRewardsList.get(),
+      [o, _] = (0, F.useState)(-1),
+      d = r.length,
       m = (0, F.useCallback)(() => {
         if (s) return;
-        const e = _ + 1;
-        e < d ? (r.sound(R.sounds.BR_result_numbers()), c(e)) : a && a();
-      }, [d, _, a, s]);
+        const e = o + 1;
+        e < d ? (c.sound(R.sounds.BR_result_numbers()), _(e)) : a && a();
+      }, [d, o, a, s]);
     return (
       (0, F.useEffect)(() => {
-        e && !s && (r.sound(R.sounds.BR_result_numbers()), c(0));
+        e && !s && (c.sound(R.sounds.BR_result_numbers()), _(0));
       }, [e, s]),
       (0, F.useEffect)(() => {
-        s && c(d);
+        s && _(d);
       }, [d, s]),
       (0, X.jsx)("div", {
         className: bs,
-        children: h(n.battleRewardsList.get().length, (e) =>
+        children: f(n.battleRewardsList.get().length, (e) =>
           (0, X.jsx)(
             ms,
             {
               index: e,
               transitionTimeout: t,
-              animationStage: _,
+              animationStage: o,
               isAnimationSkipped: s,
               onRewardAnimationEnteredHandler: m,
               itemFinishState: i,
@@ -1133,18 +1133,18 @@ var ms = D(function ({
     currencyIcon__brProgressionToken: "PremiumRewardItem_currencyIcon__brProgressionToken_f952c334",
   },
   ps = D(function ({ index: e, className: s }) {
-    const { mediaSize: a } = _(),
-      { model: t } = G(),
+    const { mediaSize: a } = m(),
+      { model: t } = Q(),
       { value: i, type: n } = t.computes.battleRewardItemWithPremium(e);
     return (0, X.jsx)(l, {
       body: R.strings.battle_royale.battleResult.premiumRewards.tooltip(),
-      children: (0, X.jsx)(S, {
+      children: (0, X.jsx)(x, {
         className: s,
         type: _s(n),
-        size: S.sizes.small,
+        size: x.sizes.small,
         reverse: !0,
-        classNames: { base: hs.currency, icon: C(hs.currencyIcon, hs[`currencyIcon__${n}`]) },
-        children: v.formatNumber("integral", i),
+        classNames: { base: hs.currency, icon: B(hs.currencyIcon, hs[`currencyIcon__${n}`]) },
+        children: y.formatNumber("integral", i),
       }),
     });
   }),
@@ -1159,12 +1159,12 @@ var ms = D(function ({
   Rs = "PremiumRewards_premiumLine_5072fcaa",
   Ps = "PremiumRewards_premiumWrapper_8d58728a",
   Ls = "PremiumRewards_premiumTitleWrapper_da464bb7",
-  ys = "PremiumRewards_premiumIcon_531d7a14",
-  Es = "PremiumRewards_premiumText_d6344dac",
+  Es = "PremiumRewards_premiumIcon_531d7a14",
+  ys = "PremiumRewards_premiumText_d6344dac",
   Is = "PremiumRewards_rewardsList_f87dd884",
   Cs = "PremiumRewards_rewardsItem_48ce88c3",
   Ts = D(function () {
-    const { model: e } = G();
+    const { model: e } = Q();
     return (0, X.jsx)("div", {
       className: gs,
       children: (0, X.jsxs)("div", {
@@ -1173,16 +1173,16 @@ var ms = D(function ({
           (0, X.jsxs)("div", {
             className: Rs,
             children: [
-              (0, X.jsx)("div", { className: C(xs, fs) }),
-              (0, X.jsx)("div", { className: C(ws, Ns) }),
+              (0, X.jsx)("div", { className: B(xs, fs) }),
+              (0, X.jsx)("div", { className: B(ws, Ns) }),
             ],
           }),
           (0, X.jsxs)("div", {
             className: Ls,
             children: [
-              (0, X.jsx)("div", { className: ys }),
+              (0, X.jsx)("div", { className: Es }),
               (0, X.jsx)("div", {
-                className: Es,
+                className: ys,
                 children: R.strings.battle_royale.battleResult.premiumRewards.title(),
               }),
             ],
@@ -1191,7 +1191,7 @@ var ms = D(function ({
             className: Ps,
             children: (0, X.jsx)("div", {
               className: Is,
-              children: h(e.battleRewardsListWithPremium.get().length, (e) =>
+              children: f(e.battleRewardsListWithPremium.get().length, (e) =>
                 (0, X.jsx)(ps, { index: e, className: Cs }, e),
               ),
             }),
@@ -1199,8 +1199,8 @@ var ms = D(function ({
           (0, X.jsxs)("div", {
             className: Rs,
             children: [
-              (0, X.jsx)("div", { className: C(xs, vs) }),
-              (0, X.jsx)("div", { className: C(ws, Ss) }),
+              (0, X.jsx)("div", { className: B(xs, vs) }),
+              (0, X.jsx)("div", { className: B(ws, Ss) }),
             ],
           }),
         ],
@@ -1220,21 +1220,21 @@ var ms = D(function ({
     base__stPatrick: "Ribbon_base__stPatrick_18efb3f8",
   },
   ks = D(function ({ isWinner: e, hasPremium: s }) {
-    const { model: a } = G(),
+    const { model: a } = Q(),
       t = a.battleRewardsListWithPremium.get(),
       { subMode: l } = a.eventInfo.get();
     return (0, X.jsxs)("div", {
-      className: C(
+      className: B(
         Bs.base,
         s ? Bs.base__prem : Bs.base__basic,
         e ? Bs.base__win : Bs.base__loose,
         Bs[`base__${l}`],
       ),
       children: [
-        (0, X.jsx)("div", { className: C(Bs.shadow, Bs.shadow__top) }),
+        (0, X.jsx)("div", { className: B(Bs.shadow, Bs.shadow__top) }),
         (0, X.jsx)("div", { className: Bs.ribbonIcon }),
         !s && t.length > 0 && (0, X.jsx)(Ts, {}),
-        (0, X.jsx)("div", { className: C(Bs.shadow, Bs.shadow__bottom) }),
+        (0, X.jsx)("div", { className: B(Bs.shadow, Bs.shadow__bottom) }),
       ],
     });
   }),
@@ -1263,7 +1263,7 @@ function $s({ currentValue: e, maxValue: s, type: a }) {
           children: [
             (0, X.jsx)("span", {
               className: As.currentValue,
-              children: (0, X.jsx)(c, { value: e }),
+              children: (0, X.jsx)(b, { value: e }),
             }),
             s >= 0 &&
               (0, X.jsxs)(X.Fragment, {
@@ -1292,7 +1292,7 @@ var Ws = D(function ({
     itemFinishState: n,
     itemStartState: r,
   }) {
-    const { model: o } = G(),
+    const { model: o } = Q(),
       _ = o.computes.statItem(e),
       c = (0, F.useRef)(null);
     return (0, X.jsx)(
@@ -1323,32 +1323,32 @@ var Ws = D(function ({
     itemFinishState: i,
     isWinner: n,
   }) {
-    const { model: o } = G(),
-      _ = o.statsList.get().length,
-      [c, d] = (0, F.useState)(-1),
+    const { model: r } = Q(),
+      o = r.statsList.get().length,
+      [_, d] = (0, F.useState)(-1),
       m = (0, F.useCallback)(() => {
         if (s) return;
-        const e = c + 1;
-        e < _ ? (r.sound(R.sounds.BR_result_effectiveness()), d(e)) : a && a();
-      }, [_, c, a, s]);
+        const e = _ + 1;
+        e < o ? (c.sound(R.sounds.BR_result_effectiveness()), d(e)) : a && a();
+      }, [o, _, a, s]);
     return (
       (0, F.useEffect)(() => {
         if (e && !s) {
           if ((d(0), n)) return;
-          r.sound(R.sounds.BR_result_effectiveness());
+          c.sound(R.sounds.BR_result_effectiveness());
         }
       }, [e, s, n]),
       (0, F.useEffect)(() => {
-        s && d(_);
-      }, [s, _]),
+        s && d(o);
+      }, [s, o]),
       (0, X.jsx)("div", {
         className: Ms,
-        children: h(o.statsList.get().length, (e) =>
+        children: f(r.statsList.get().length, (e) =>
           (0, X.jsx)(
             Ws,
             {
               index: e,
-              animationStage: c,
+              animationStage: _,
               onStatAnimationEnteredHandler: m,
               transitionTimeout: t,
               itemStartState: l,
@@ -1363,9 +1363,9 @@ var Ws = D(function ({
   }),
   zs = "Title_2dc5a334",
   Fs = "Title_titleWrapper_7218c35b",
-  Os = "Title_base__win_2e63cf3",
-  Qs = "Title_titleBg_2d6066ff",
-  Gs = "Title_place_3b10ba5c",
+  Gs = "Title_base__win_2e63cf3",
+  Os = "Title_titleBg_2d6066ff",
+  Qs = "Title_place_3b10ba5c",
   Vs = "Title_base__winner_2e63cf3",
   Hs = "Title_base__firstPlace_2e63cf3",
   Us = "Title_wreathIcon_407217cb",
@@ -1401,42 +1401,42 @@ function ta({
   vehicleType: l,
   vehicleName: i,
   onAnimationComplete: n,
-  animationTrigger: o,
-  isAnimationSkipped: _,
+  animationTrigger: r,
+  isAnimationSkipped: o,
 }) {
-  const c = (0, F.useRef)(null),
+  const _ = (0, F.useRef)(null),
     d = (0, F.useRef)(null),
     m = (0, F.useRef)(null),
     b = (0, F.useRef)(null),
-    h = (0, F.useRef)(null),
-    [p, g] = (0, F.useState)(-1),
+    u = (0, F.useRef)(null),
+    [h, p] = (0, F.useState)(-1),
     x = R.images.gui.maps.icons.battleRoyale.vehicleTypes.$dyn(l);
   ((0, F.useEffect)(() => {
-    o && !_ && g(0);
-  }, [o, _]),
+    r && !o && p(0);
+  }, [r, o]),
     (0, F.useEffect)(() => {
-      _ && g(3);
-    }, [_]),
+      o && p(3);
+    }, [o]),
     (0, F.useEffect)(() => {
-      if (!(p < 0 || p >= 3 || _)) return u(() => g(p + 1), ea[p]);
-    }, [p, _]),
+      if (!(h < 0 || h >= 3 || o)) return g(() => p(h + 1), ea[h]);
+    }, [h, o]),
     (0, F.useEffect)(() => {
-      0 === p && r.sound(R.sounds.BR_result_screen());
-    }, [p]));
+      0 === h && c.sound(R.sounds.BR_result_screen());
+    }, [h]));
   const f = (0, F.useCallback)(() => {
-    _ || (n && n());
-  }, [n, _]);
+    o || (n && n());
+  }, [n, o]);
   return (0, X.jsxs)("div", {
-    className: C(zs, s && Os, !s && Zs, s && !e && Vs, e && Hs),
+    className: B(zs, s && Gs, !s && Zs, s && !e && Vs, e && Hs),
     children: [
       s &&
         (0, X.jsx)(z, {
           timeout: sa[0],
-          in: p >= 0,
-          enter: !_,
+          in: h >= 0,
+          enter: !o,
           classNames: aa.WREATH_ICON,
-          nodeRef: c,
-          children: (0, X.jsx)("div", { className: Us, ref: c }),
+          nodeRef: _,
+          children: (0, X.jsx)("div", { className: Us, ref: _ }),
         }),
       (0, X.jsxs)("div", {
         className: Fs,
@@ -1444,39 +1444,39 @@ function ta({
           s &&
             (0, X.jsx)(z, {
               timeout: sa[2],
-              in: p >= 2,
-              enter: !_,
+              in: h >= 2,
+              enter: !o,
               classNames: aa.PLACE,
               nodeRef: d,
-              children: (0, X.jsx)("div", { className: Gs, ref: d, children: a }),
+              children: (0, X.jsx)("div", { className: Qs, ref: d, children: a }),
             }),
           e &&
             (0, X.jsx)(z, {
               timeout: sa[1],
-              in: p >= 1,
-              enter: !_,
+              in: h >= 1,
+              enter: !o,
               classNames: aa.TITLE_BG,
               nodeRef: m,
-              children: (0, X.jsx)("div", { className: Qs, ref: m }),
+              children: (0, X.jsx)("div", { className: Os, ref: m }),
             }),
           (0, X.jsx)(z, {
             timeout: sa[2],
-            in: p >= 2,
-            enter: !_,
+            in: h >= 2,
+            enter: !o,
             classNames: aa.TITLE,
             nodeRef: b,
             children: (0, X.jsx)("div", { className: qs, ref: b, children: t }),
           }),
           (0, X.jsx)(z, {
             timeout: sa[3],
-            in: p >= 3,
-            enter: !_,
+            in: h >= 3,
+            enter: !o,
             onEntered: f,
             classNames: aa.VEHICLE,
-            nodeRef: h,
+            nodeRef: u,
             children: (0, X.jsxs)("div", {
               className: Ks,
-              ref: h,
+              ref: u,
               children: [
                 (0, X.jsx)("div", { className: Xs, style: { backgroundImage: `url(${x})` } }),
                 (0, X.jsx)("div", { className: Ys, children: i }),
@@ -1527,9 +1527,9 @@ var la = "Result_a4461d66",
   }) {
     const i = (0, F.useRef)(null),
       n = (0, F.useRef)(null),
-      o = (0, F.useRef)(null),
-      [_, c] = (0, F.useState)(-1),
-      { model: d } = G(),
+      r = (0, F.useRef)(null),
+      [o, _] = (0, F.useState)(-1),
+      { model: d } = Q(),
       m = d.personalResults.get(),
       b = d.battlePassProgress.get(),
       {
@@ -1544,25 +1544,25 @@ var la = "Result_a4461d66",
       w = "disabled" !== b.battlePassState,
       N = (0, F.useCallback)(() => {
         if (a) return;
-        let s = _ + 1;
+        let s = o + 1;
         switch (s) {
           case 4:
             0 === b.earnedPoints && (s += 1);
             break;
           case 2:
-            r.sound(R.sounds.BR_result_redtape());
+            c.sound(R.sounds.BR_result_redtape());
         }
-        (5 === s && e && e(), c(s));
-      }, [a, _, b.earnedPoints, e]);
+        (5 === s && e && e(), _(s));
+      }, [a, o, b.earnedPoints, e]);
     ((0, F.useEffect)(() => {
-      s && !a && c(0);
+      s && !a && _(0);
     }, [s, a]),
       (0, F.useEffect)(() => {
-        a && c(5);
+        a && _(5);
       }, [a]));
     const S = h ? systemLocale.toUpperCase(h) : "";
     return (0, X.jsxs)("div", {
-      className: C(la, t && pa, !t && na),
+      className: B(la, t && pa, !t && na),
       children: [
         (0, X.jsx)("div", {
           className: ia,
@@ -1573,7 +1573,7 @@ var la = "Result_a4461d66",
             isWinner: t,
             vehicleType: p,
             vehicleName: S,
-            animationTrigger: _ >= 0,
+            animationTrigger: o >= 0,
             isAnimationSkipped: a,
             onAnimationComplete: N,
           }),
@@ -1582,7 +1582,7 @@ var la = "Result_a4461d66",
           className: ra,
           children: [
             (0, X.jsx)(Ds, {
-              animationTrigger: _ >= 1,
+              animationTrigger: o >= 1,
               isAnimationSkipped: a,
               onAnimationComplete: N,
               itemStartState: oa,
@@ -1596,21 +1596,21 @@ var la = "Result_a4461d66",
                 children: [
                   (0, X.jsx)(z, {
                     timeout: 500,
-                    in: _ >= 2,
+                    in: o >= 2,
                     enter: !a,
                     classNames: va.RIBBON,
                     onEntered: N,
-                    nodeRef: o,
+                    nodeRef: r,
                     children: (0, X.jsx)("div", {
                       className: ca,
-                      ref: o,
+                      ref: r,
                       children: (0, X.jsx)(ks, { isWinner: t, hasPremium: x }),
                     }),
                   }),
                   (0, X.jsx)("div", {
                     className: da,
                     children: (0, X.jsx)(us, {
-                      animationTrigger: _ >= 3,
+                      animationTrigger: o >= 3,
                       isAnimationSkipped: a,
                       onAnimationComplete: N,
                       itemStartState: x ? ba : ma,
@@ -1621,12 +1621,12 @@ var la = "Result_a4461d66",
                 ],
               }),
             (0, X.jsxs)("div", {
-              className: C(ga, a || (_ >= 4 && xa)),
+              className: B(ga, a || (o >= 4 && xa)),
               children: [
                 w &&
                   (0, X.jsx)(z, {
                     timeout: 500,
-                    in: _ >= 4,
+                    in: o >= 4,
                     enter: !a,
                     classNames: va.BATTLE_PASS_WIDGET,
                     onEntered: N,
@@ -1634,19 +1634,19 @@ var la = "Result_a4461d66",
                     children: (0, X.jsx)("div", {
                       className: ua,
                       ref: n,
-                      children: (0, X.jsx)(Je, { animationTrigger: _ >= 5, isAnimationSkipped: a }),
+                      children: (0, X.jsx)(Je, { animationTrigger: o >= 5, isAnimationSkipped: a }),
                     }),
                   }),
                 f > 0 &&
                   (0, X.jsx)(z, {
                     timeout: 500,
-                    in: _ >= 4,
+                    in: o >= 4,
                     enter: !a,
                     classNames: va.BATTLE_QUESTS_WIDGET,
                     onEntered: N,
                     nodeRef: i,
                     children: (0, X.jsx)("div", {
-                      className: C(ua, w && ha),
+                      className: B(ua, w && ha),
                       ref: i,
                       children: (0, X.jsx)(os, { questCompleted: f }),
                     }),
@@ -1684,14 +1684,14 @@ var la = "Result_a4461d66",
     const e = (0, F.useRef)(null),
       s = (0, F.useRef)(null),
       a = (0, F.useRef)(null),
-      { model: l } = G(),
+      { model: l } = Q(),
       { mapName: i } = l.root.get(),
-      { place: r } = l.personalResults.get(),
-      [o, _] = (0, F.useState)("results"),
+      { place: n } = l.personalResults.get(),
+      [r, _] = (0, F.useState)("results"),
       [c, d] = (0, F.useState)({ animationStage: -1, isSkipped: !1 });
     (0, F.useEffect)(
       () =>
-        g(() => {
+        N(() => {
           d({ animationStage: 0, isSkipped: !1 });
         }),
       [],
@@ -1706,20 +1706,20 @@ var la = "Result_a4461d66",
         [c.isSkipped, m],
       ),
       u = (0, F.useCallback)(() => {
-        n.close();
+        o.close();
       }, []),
       h = (0, F.useCallback)(() => {
         c.isSkipped ? u() : m();
       }, [c.isSkipped, u, m]);
-    E(t.ESCAPE, h);
+    T(t.ESCAPE, h);
     const p = (0, F.useCallback)(() => {
         c.isSkipped ||
           ((c.animationStage += 1), 4 === c.animationStage ? (c.isSkipped = !0) : d({ ...c }));
       }, [c]),
-      x = Na.includes(r),
-      f = 1 === r;
+      g = Na.includes(n),
+      x = 1 === n;
     return (0, X.jsxs)("div", {
-      className: C(Sa.base, Sa[`base__${l.eventInfo.get().subMode}`]),
+      className: B(Sa.base, Sa[`base__${l.eventInfo.get().subMode}`]),
       children: [
         (0, X.jsx)(z, {
           in: c.animationStage >= 0,
@@ -1729,7 +1729,7 @@ var la = "Result_a4461d66",
           onEntered: p,
           nodeRef: s,
           children: (0, X.jsxs)("div", {
-            className: C(Sa.background, x && Sa.background__win),
+            className: B(Sa.background, g && Sa.background__win),
             ref: s,
             children: [
               (0, X.jsx)("div", { className: Sa.shadow }),
@@ -1738,17 +1738,17 @@ var la = "Result_a4461d66",
           }),
         }),
         (0, X.jsx)("div", {
-          className: C(Sa.tabContent, "results" === o && Sa.tabContent__visible),
+          className: B(Sa.tabContent, "results" === r && Sa.tabContent__visible),
           children: (0, X.jsx)(wa, {
             animationTrigger: c.animationStage >= 2,
             isAnimationSkipped: c.isSkipped,
             onAnimationComplete: p,
-            isWinner: x,
-            isFirstPlace: f,
+            isWinner: g,
+            isFirstPlace: x,
           }),
         }),
         (0, X.jsx)("div", {
-          className: C(Sa.tabContent, "leaderboard" === o && Sa.tabContent__visible),
+          className: B(Sa.tabContent, "leaderboard" === r && Sa.tabContent__visible),
           children: (0, X.jsx)(we, {}),
         }),
         (0, X.jsx)(z, {
@@ -1758,23 +1758,23 @@ var la = "Result_a4461d66",
           classNames: Ra.HORIZONTAL_TABS,
           onEntered: p,
           nodeRef: e,
-          children: (0, X.jsx)(N, {
-            active: o,
+          children: (0, X.jsx)(E, {
+            active: r,
             theme: "primary",
             size: "medium",
             onActiveChange: b,
-            children: (0, X.jsxs)(N.Switcher, {
+            children: (0, X.jsxs)(E.Switcher, {
               ref: e,
               className: Sa.horizontalTabs,
               children: [
-                (0, X.jsx)(N.Tab, {
+                (0, X.jsx)(E.Tab, {
                   tabId: "results",
                   children: (0, X.jsx)("div", {
                     className: Sa.tabInner,
                     children: R.strings.battle_royale.battleResult.tab.result(),
                   }),
                 }),
-                (0, X.jsx)(N.Tab, {
+                (0, X.jsx)(E.Tab, {
                   tabId: "leaderboard",
                   children: (0, X.jsx)("div", {
                     className: Sa.tabInner,
@@ -1805,9 +1805,9 @@ var la = "Result_a4461d66",
     });
   });
 s(
-  new p()
+  new v()
     .add(M)
-    .add(Q)
+    .add(O)
     .render((0, X.jsx)(Pa, {})),
   { fullScreen: !0 },
 );

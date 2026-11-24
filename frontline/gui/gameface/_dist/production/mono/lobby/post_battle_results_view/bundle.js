@@ -5,56 +5,56 @@ import {
   At as s,
   Ba as r,
   Bi as n,
-  Cn as i,
-  Di as l,
-  Ea as o,
-  Ei as c,
-  Er as d,
-  Et as m,
-  F as u,
-  Fr as f,
-  Gr as _,
-  Gt as p,
-  I as h,
-  Ii as b,
-  Jn as v,
-  Jr as g,
-  Ka as x,
-  La as y,
-  Na as N,
-  Pr as j,
-  Qr as w,
-  R as I,
-  Ri as S,
-  Rr as C,
-  Si as P,
-  Sr as T,
-  U as D,
-  Ua as B,
-  Ut as A,
-  Va as V,
-  Vr as k,
-  Wt as E,
-  Xt as z,
-  _ as H,
-  _n as O,
-  _r as F,
-  b as X,
-  bi as G,
-  ci as $,
-  cn as L,
-  co as M,
-  d as W,
-  do as K,
-  en as q,
-  eo as U,
-  f as Z,
-  g as Y,
+  C as i,
+  Cn as l,
+  D as o,
+  Di as c,
+  E as d,
+  Ea as m,
+  Ei as u,
+  Er as f,
+  Et as _,
+  F as p,
+  Fr as h,
+  Gr as b,
+  Gt as v,
+  Ha as g,
+  I as x,
+  Ii as y,
+  Jn as N,
+  Jr as j,
+  Pa as w,
+  Pr as I,
+  Qr as S,
+  R as C,
+  Ra as P,
+  Ri as T,
+  Rr as D,
+  S as B,
+  Si as A,
+  Sr as V,
+  T as k,
+  U as E,
+  Ut as z,
+  Va as H,
+  Vr as O,
+  Wa as F,
+  Wt as X,
+  Xt as G,
+  _ as $,
+  _n as L,
+  _r as M,
+  b as W,
+  bi as K,
+  ci as q,
+  cn as U,
+  en as Z,
+  fo as Y,
   gi as J,
   gn as Q,
-  h as ee,
-  ha as ae,
-  hn as te,
+  ha as ee,
+  hn as ae,
+  ho as te,
   ii as se,
   in as re,
   jr as ne,
@@ -63,28 +63,28 @@ import {
   li as oe,
   lo as ce,
   lr as de,
-  m as me,
-  ma as ue,
-  mi as fe,
-  mo as _e,
-  mr as pe,
-  oi as he,
-  oo as be,
-  or as ve,
-  p as ge,
-  pi as xe,
-  pn as ye,
-  po as Ne,
-  qt as je,
-  rn as we,
-  sn as Ie,
-  sr as Re,
+  ma as me,
+  mi as ue,
+  mo as fe,
+  mr as _e,
+  oi as pe,
+  or as he,
+  pi as be,
+  pn as ve,
+  qa as ge,
+  qt as xe,
+  rn as ye,
+  sn as Ne,
+  so as je,
+  sr as we,
+  to as Ie,
+  uo as Re,
   ur as Se,
   v as Ce,
   va as Pe,
   vn as Te,
-  vo as De,
-  vt as Be,
+  vt as De,
+  w as Be,
   wa as Ae,
   wr as Ve,
   wt as ke,
@@ -95,7 +95,7 @@ import {
   y as Fe,
   yi as Xe,
   yn as Ge,
-  za as $e,
+  yo as $e,
   zi as Le,
   zr as Me,
 } from "../chunks/lib.js";
@@ -119,7 +119,7 @@ var qe = (function (e) {
   })({});
 function Ze(e) {
   return function (a) {
-    return e(oe(() => fe(a)));
+    return e(oe(() => ue(a)));
   };
 }
 var Ye = { overview: "overview", teamScore: "teamScore", financialReport: "financialReport" },
@@ -433,12 +433,12 @@ function Wt(e) {
     objectivesDestroyed: e.objectivesDestroyed,
     zoneCaptured: e.zoneCaptured,
     detailedStatistics: ze(e.detailedStatistics, Mt),
-    vehicle: e.vehicle.longName ? { ...v(e.vehicle), longName: e.vehicle.longName } : null,
+    vehicle: e.vehicle.longName ? { ...N(e.vehicle), longName: e.vehicle.longName } : null,
   };
 }
 function Kt(e) {
-  const a = ae(e.vehiclesStats, (e) => e.isGeneralInfo)?.detailedStatistics ?? [],
-    t = ae(a, (e) => e.labelKey === Ot.TeamHitsDamage)?.value,
+  const a = ee(e.vehiclesStats, (e) => e.isGeneralInfo)?.detailedStatistics ?? [],
+    t = ee(a, (e) => e.labelKey === Ot.TeamHitsDamage)?.value,
     s = void 0 !== t ? Pe(t, 0) : 0,
     r = e.efficiencyValues.kills - s;
   return {
@@ -447,7 +447,7 @@ function Kt(e) {
     rank: e.rank,
     respawns: e.respawns,
     achievements: ze(e.achievements, $t),
-    account: Be(e.userNames),
+    account: De(e.userNames),
     vehicles: ze(e.vehiclesStats, Wt),
     efficiencyValues: {
       ...((n = e?.efficiencyValues),
@@ -467,7 +467,7 @@ var qt = {
   damageAssistedStun: { value: 0, count: 0 },
   damageBlockedByArmor: { value: 0, count: 0 },
 };
-var Ut = De.resolve("strings"),
+var Ut = $e.resolve("strings"),
   Zt = "rank",
   Yt = "right",
   Jt = "left",
@@ -483,7 +483,7 @@ function as(e) {
         : (console.error(`Achievement ${e.name} with a group ${e.groupID} is not detected`), Qt);
 }
 function ts(e) {
-  return o(e, (e, a) => {
+  return m(e, (e, a) => {
     const t = as(e),
       s = as(a),
       r = es.indexOf(t),
@@ -530,20 +530,20 @@ var [ps, hs] = Se()(
         },
         r = {
           battleInfo: a.transform(Ft, "battleInfo"),
-          allPlayersDictionary: xe.box({}),
+          allPlayersDictionary: be.box({}),
           personalEfficiency: {
-            opened: xe.box(!1),
+            opened: be.box(!1),
             achievements: a.transform((e) => ts(ze(e, $t)), "achievements"),
-            statistics: { details: xe.box([]) },
+            statistics: { details: be.box([]) },
           },
           teamsStatistic: {
-            allies: xe.box([]),
-            enemies: xe.box([]),
-            sorting: xe.box({ column: qe.Player, sortDirection: Ue.Desc }),
-            selectedRow: xe.box(),
-            selectedVehicle: xe.box(null),
+            allies: be.box([]),
+            enemies: be.box([]),
+            sorting: be.box({ column: qe.Player, sortDirection: Ue.Desc }),
+            selectedRow: be.box(),
+            selectedVehicle: be.box(null),
           },
-          user: { names: xe.box() },
+          user: { names: be.box() },
         };
       (Ze(t)(() => {
         const e = {};
@@ -575,22 +575,22 @@ var [ps, hs] = Se()(
           return (
             e &&
             (function ({ anyPremium: e, credits: a, xp: t }) {
-              const s = ae(a, (e) => e.paramName === Qa),
-                r = ae(t, (e) => e.paramName === wa),
+              const s = ee(a, (e) => e.paramName === Qa),
+                r = ee(t, (e) => e.paramName === wa),
                 n = [];
               return (s && n.push(Gt(s, e)), r && n.push(Gt(r, e)), n);
             })({ anyPremium: s.hasAnyPremium.get(), credits: e.credits.total, xp: e.xp.total })
           );
         }),
         i = de.shallow(() => {
-          const e = ae(r.teamsStatistic.allies.get(), (e) => e.personal);
+          const e = ee(r.teamsStatistic.allies.get(), (e) => e.personal);
           return (Le(void 0 !== e, "Personal info is not found"), e);
         }),
         l = de.shallow(() => {
           const e = r.teamsStatistic.selectedRow.get();
           if (void 0 === e) return;
           const a = (e.team === cs ? r.teamsStatistic.allies : r.teamsStatistic.enemies).get();
-          return ae(a, (a) => a.account.username === e.username);
+          return ee(a, (a) => a.account.username === e.username);
         }),
         o = de.shallow(() => {
           const e = r.allPlayersDictionary.get();
@@ -640,7 +640,7 @@ var [ps, hs] = Se()(
               })(t);
               if (
                 (function (e) {
-                  return c.structural(e, qt);
+                  return u.structural(e, qt);
                 })(s)
               )
                 return a;
@@ -669,29 +669,29 @@ var [ps, hs] = Se()(
       return {
         close: e.createCallbackNoArgs("onClose"),
         teamEfficiency: {
-          sort: $((e) => {
+          sort: q((e) => {
             (a.teamsStatistic.sorting.set(e), t(e));
           }),
-          selectRow: $((e) => {
+          selectRow: q((e) => {
             const t = a.teamsStatistic.selectedRow.get();
             t?.team !== e?.team || t?.username !== e?.username
               ? (a.teamsStatistic.selectedRow.set(e), a.teamsStatistic.selectedVehicle.set(null))
               : a.teamsStatistic.selectedRow.set(void 0);
           }),
-          selectVehicle: $((e) => {
+          selectVehicle: q((e) => {
             a.teamsStatistic.selectedVehicle.set(e);
           }),
         },
       };
     },
   ),
-  bs = e(K(), 1),
+  bs = e(Y(), 1),
   vs = He(),
   gs = "initial",
   xs = "first",
   ys = "second",
   Ns = "third",
-  js = M.cubicBezier(0.33, 0, 0.25, 1),
+  js = ce.cubicBezier(0.33, 0, 0.25, 1),
   ws = 400,
   Is = (0, bs.createContext)(null);
 function Rs() {
@@ -706,7 +706,7 @@ function Ss({ children: e }) {
   const [a, t] = (0, bs.useState)(gs),
     [s, r] = (0, bs.useState)(new Set()),
     n = le(),
-    i = F(),
+    i = M(),
     l = Me(),
     o = Me(),
     c = Me(),
@@ -731,7 +731,7 @@ function Ss({ children: e }) {
             y: "0",
             config: { duration: ws, easing: js },
             onRest: () => {
-              (t(ys), r((e) => b(e, xs)));
+              (t(ys), r((e) => y(e, xs)));
             },
           })
         );
@@ -742,7 +742,7 @@ function Ss({ children: e }) {
             y: "0",
             config: { duration: ws, easing: js },
             onRest: () => {
-              r((e) => b(e, ys));
+              r((e) => y(e, ys));
             },
           }),
           void n.run(() => {
@@ -756,7 +756,7 @@ function Ss({ children: e }) {
             opacity: 1,
             config: { duration: ws, easing: js },
             onRest: () => {
-              r((e) => b(e, Ns));
+              r((e) => y(e, Ns));
             },
           }));
         break;
@@ -787,35 +787,35 @@ var Ts = (e, a) => (e > 0 ? (a > 0 ? "minutesAndSeconds" : "minutesOnly") : "sec
       ...e,
       "data-name": "BattleInfo",
       ref: a,
-      className: ce(Cs, e.className),
+      className: Re(Cs, e.className),
     });
   });
 ((Ds.Arena = function ({ arenaName: e, scenario: a, finishReason: t, className: s }) {
-  return (0, vs.jsx)(i, {
+  return (0, vs.jsx)(l, {
     path: "fl_post_battle_results.battleInfo.arena",
     params: { arenaName: e, scenario: a, finishReason: t },
-    className: ce(Ps, s),
+    className: Re(Ps, s),
   });
 }),
   (Ds.StartTime = ({ battleStartTime: e, battleDuration: a, className: t }) => {
-    const [s, r] = U(be(a), ["m", "s"]);
-    return (0, vs.jsx)(i, {
+    const [s, r] = Ie(je(a), ["m", "s"]);
+    return (0, vs.jsx)(l, {
       path: "fl_post_battle_results.battleInfo.time",
       params: {
-        date: Ne.formatDateTime(_e.ShortDate, e),
-        time: Ne.formatDateTime(_e.ShortTime, e),
-        duration: (0, vs.jsx)(i, {
+        date: fe.formatDateTime(te.ShortDate, e),
+        time: fe.formatDateTime(te.ShortTime, e),
+        duration: (0, vs.jsx)(l, {
           path: `fl_post_battle_results.battleInfo.timeLeft.${Ts(Number(s), Number(r))}`,
           params: { minutes: s, seconds: r },
         }),
       },
-      className: ce(Ps, t),
+      className: Re(Ps, t),
     });
   }));
 var Bs = "Divider_80a19f4b";
 function As({ classNames: e }) {
   return (0, vs.jsx)("div", {
-    className: ce(Bs, e?.base),
+    className: Re(Bs, e?.base),
     children: (0, vs.jsx)(Te, {
       className: e?.image,
       width: "100%",
@@ -831,22 +831,22 @@ var Vs = "Header_content_b9e0be90",
   zs = "Header_dividerImage_19f6e11",
   Hs = Ge("Header", "Header_70aa1da5"),
   Os = (0, bs.forwardRef)(({ title: e, children: a, classNames: t, ...s }, r) => {
-    const n = De.resolve("strings");
+    const n = $e.resolve("strings");
     return (0, vs.jsxs)(Hs, {
       ...s,
       ref: r,
       children: [
         (0, vs.jsxs)("div", {
-          className: ce(Vs, t?.content),
+          className: Re(Vs, t?.content),
           children: [
             (0, vs.jsx)("div", {
-              className: ce(ks, t?.title),
-              children: Ne.toUpperCase(n.readOrEmpty(e)),
+              className: Re(ks, t?.title),
+              children: fe.toUpperCase(n.readOrEmpty(e)),
             }),
             a,
           ],
         }),
-        (0, vs.jsx)(As, { classNames: { base: ce(Es, t?.divider), image: zs } }),
+        (0, vs.jsx)(As, { classNames: { base: Re(Es, t?.divider), image: zs } }),
       ],
     });
   }),
@@ -949,7 +949,7 @@ function Qs(e, a) {
 }
 function er(e, a) {
   return ((t = (function (e, a) {
-    const t = ue(
+    const t = me(
         a,
         (e) => dt.has(e.paramName),
         (e) => Zs({ freeXp: e }),
@@ -1009,7 +1009,7 @@ var [nr, ir] = Se()(
       const a = {
           ...e.primitives(["hasAnyPremium", "hasWotPlus"], "financialReport"),
           vehiclesFinancialStats: e.arrayClone("financialReport.vehiclesFinancialStats"),
-          selectedVehicle: xe.box(null),
+          selectedVehicle: be.box(null),
         },
         t = de.primitive(() => {
           const e = a.selectedVehicle.get();
@@ -1062,7 +1062,7 @@ var [nr, ir] = Se()(
       return { ...a, computes: { experience: s, credits: r, crystals: n } };
     },
     ({ model: e }) => ({
-      selectVehicle: $((a) => {
+      selectVehicle: q((a) => {
         e.selectedVehicle.set(a);
       }),
     }),
@@ -1074,22 +1074,22 @@ var [nr, ir] = Se()(
   mr = "ListItem_labelIcon_acb0da4",
   ur = Ge("ListItem", "ListItem_bcdaabbd"),
   fr = (0, bs.forwardRef)(
-    ({ labelKey: e, children: a, classNames: t, params: s, labelIconPath: r, ...n }, l) => {
-      const o = De.resolve("images");
+    ({ labelKey: e, children: a, classNames: t, params: s, labelIconPath: r, ...n }, i) => {
+      const o = $e.resolve("images");
       return (0, vs.jsxs)(ur, {
         ...n,
-        ref: l,
+        ref: i,
         "data-test-id": `${e}`,
         children: [
           (0, vs.jsxs)("div", {
-            className: ce(cr, void 0 !== r && dr, t?.label),
+            className: Re(cr, void 0 !== r && dr, t?.label),
             children: [
               void 0 !== r &&
                 (0, vs.jsx)("div", {
                   style: { backgroundImage: `url(${o.readOrEmpty(r)})` },
-                  className: ce(mr, t?.icon),
+                  className: Re(mr, t?.icon),
                 }),
-              (0, vs.jsx)(i, { upgradeLegacy: !0, path: e, params: s }),
+              (0, vs.jsx)(l, { upgradeLegacy: !0, path: e, params: s }),
             ],
           }),
           (0, vs.jsxs)("div", {
@@ -1117,13 +1117,13 @@ var [nr, ir] = Se()(
           ...t,
           labelKey: vr[r],
           classNames: { label: br, ...t.classNames },
-          children: (0, vs.jsx)(m, {
+          children: (0, vs.jsx)(_, {
             reverse: !0,
             type: "crystal",
             size: s.small,
             children: (0, vs.jsx)("div", {
-              className: ce(_r, n < 0 && hr, a && pr),
-              children: Ne.formatNumber("integral", n),
+              className: Re(_r, n < 0 && hr, a && pr),
+              children: fe.formatNumber("integral", n),
             }),
           }),
         })
@@ -1178,17 +1178,17 @@ var Tr = "Header_cbd845ec",
       return (0, vs.jsx)(Os, {
         ...a,
         ref: t,
-        className: ce(Tr, e),
+        className: Re(Tr, e),
         title: "battle_results.details.credits",
         children: (0, vs.jsxs)("div", {
           className: Dr,
           children: [
             (0, vs.jsx)("div", {
-              className: ce(Br, !r && Ar),
-              children: (0, vs.jsx)(i, { path: "battle_results.common.details.noPremTitle" }),
+              className: Re(Br, !r && Ar),
+              children: (0, vs.jsx)(l, { path: "battle_results.common.details.noPremTitle" }),
             }),
             (0, vs.jsxs)("div", {
-              className: ce(Br, r && Ar, Vr),
+              className: Re(Br, r && Ar, Vr),
               children: [
                 (0, vs.jsx)("div", {
                   className: kr,
@@ -1198,7 +1198,7 @@ var Tr = "Header_cbd845ec",
                     path: "post_battle.wot_premium_32x32",
                   }),
                 }),
-                (0, vs.jsx)(i, { path: "battle_results.getPremiumPopover.prem" }),
+                (0, vs.jsx)(l, { path: "battle_results.getPremiumPopover.prem" }),
               ],
             }),
           ],
@@ -1241,19 +1241,19 @@ var Tr = "Header_cbd845ec",
   Gr = "IncomeStatement_scrollContent__initialized_ce1144d0",
   $r = Ge("CreditsIncomeStatement"),
   Lr = ({ children: e }) => {
-    const a = zr(L().api);
-    return (0, vs.jsx)(re, { classNames: { wrapper: Fr, content: ce(Xr, a && Gr) }, children: e });
+    const a = zr(U().api);
+    return (0, vs.jsx)(re, { classNames: { wrapper: Fr, content: Re(Xr, a && Gr) }, children: e });
   },
   Mr = (0, bs.forwardRef)(({ children: e, className: a, scrollable: t, ...s }, r) =>
     (0, vs.jsx)($r, {
-      className: ce(Hr, a),
+      className: Re(Hr, a),
       ...s,
       ref: r,
       children: t
-        ? (0, vs.jsxs)(we, {
+        ? (0, vs.jsxs)(ye, {
             children: [
               (0, vs.jsx)(Lr, { children: e }),
-              (0, vs.jsx)(Ie, { classNames: { base: Or } }),
+              (0, vs.jsx)(Ne, { classNames: { base: Or } }),
             ],
           })
         : e,
@@ -1264,22 +1264,22 @@ var Tr = "Header_cbd845ec",
   qr = "Record_value__decreasing_8cff45fa",
   Ur = ({ formatter: e, value: a, modifier: t, currency: s, classNames: r, iconPath: n }) => {
     if (void 0 === a) return null;
-    const l = t === xt || a < 0;
+    const i = t === xt || a < 0;
     return (0, vs.jsxs)("div", {
-      className: ce(Wr, r?.base),
+      className: Re(Wr, r?.base),
       children: [
         (0, vs.jsxs)("div", {
-          className: ce(Kr, l && qr, r?.value),
+          className: Re(Kr, i && qr, r?.value),
           "data-test-id": `${s}`,
           children: [
             We(t)
-              .with(gt, () => (0, vs.jsx)(i, { path: "common.multiplierSmall" }))
-              .with(vt, () => (0, vs.jsx)(i, { path: "common.multiplierSmall" }))
-              .with(xt, () => (0, vs.jsx)(i, { path: "common.multiplierSmall" }))
-              .with(Nt, () => (0, vs.jsx)(i, { path: "common.plus" }))
+              .with(gt, () => (0, vs.jsx)(l, { path: "common.multiplierSmall" }))
+              .with(vt, () => (0, vs.jsx)(l, { path: "common.multiplierSmall" }))
+              .with(xt, () => (0, vs.jsx)(l, { path: "common.multiplierSmall" }))
+              .with(Nt, () => (0, vs.jsx)(l, { path: "common.plus" }))
               .otherwise(() => null),
             e(a, s),
-            t === yt && (0, vs.jsx)(i, { path: "common.common.percent" }),
+            t === yt && (0, vs.jsx)(l, { path: "common.common.percent" }),
           ],
         }),
         n && (0, vs.jsx)(Te, { width: 24, height: 24, path: n }),
@@ -1317,32 +1317,32 @@ var on = ({
   }) => {
     function l(e, a) {
       return "aogasFactor" === n
-        ? Ne.formatReal("fractional", e)
-        : Ne.formatNumber("gold" === a ? "gold" : "integral", e);
+        ? fe.formatReal("fractional", e)
+        : fe.formatNumber("gold" === a ? "gold" : "integral", e);
     }
     return (0, vs.jsxs)("div", {
-      className: ce(Zr, s && Yr),
+      className: Re(Zr, s && Yr),
       children: [
         (0, vs.jsx)("div", {
-          className: ce(Jr, en, ln({ paramName: n, wotPlusActive: i, value: e }) && Qr),
+          className: Re(Jr, en, ln({ paramName: n, wotPlusActive: i, value: e }) && Qr),
           children: (0, vs.jsx)(Ur, {
             formatter: l,
             value: e,
             currency: ta,
             modifier: t,
-            classNames: { value: ce(sn, r && rn) },
+            classNames: { value: Re(sn, r && rn) },
             iconPath: zt(ta, n),
           }),
         }),
         void 0 !== a &&
           (0, vs.jsx)("div", { className: an, children: (0, vs.jsx)("div", { className: tn }) }),
         (0, vs.jsx)("div", {
-          className: ce(Jr, 0 === a && Qr),
+          className: Re(Jr, 0 === a && Qr),
           children: (0, vs.jsx)(Ur, {
             value: a,
             currency: sa,
             modifier: t,
-            classNames: { value: ce(sn, nn, r && rn) },
+            classNames: { value: Re(sn, nn, r && rn) },
             formatter: l,
             iconPath: zt(sa, n),
           }),
@@ -1395,7 +1395,7 @@ var on = ({
       ...t,
       labelIconPath: fn[i],
       labelKey: `battle_results.details.calculations.${f}`,
-      classNames: { label: ce(dn, "wotPlusBonusCredits" === i && mn) },
+      classNames: { label: Re(dn, "wotPlusBonusCredits" === i && mn) },
       params: { ...(m && { bonusFactor: wt(m) }), ...(u && { bonusFactor: It(u) }) },
       children: (0, vs.jsxs)("div", {
         className: cn,
@@ -1432,7 +1432,7 @@ var on = ({
       return (0, vs.jsx)(Mr, {
         ...t,
         ref: s,
-        className: ce(pn, a && hn, e),
+        className: Re(pn, a && hn, e),
         scrollable: a,
         children: ze(n.records, (e) => (0, vs.jsx)(_n, { record: e, className: bn }, e.paramName)),
       });
@@ -1460,7 +1460,7 @@ var on = ({
   In = "Credits_base__scroll_759f08f3",
   Rn = Ge("Credits"),
   Sn = (0, bs.forwardRef)(({ scrollable: e, className: a, ...t }, s) =>
-    (0, vs.jsx)(Rn, { ...t, ref: s, className: ce(wn, e && In, a) }),
+    (0, vs.jsx)(Rn, { ...t, ref: s, className: Re(wn, e && In, a) }),
   );
 ((Sn.Header = Er), (Sn.Item = _n), (Sn.Total = jn), (Sn.IncomeStatement = vn));
 var Cn = (0, bs.forwardRef)((e, a) =>
@@ -1502,37 +1502,37 @@ var Xn = ({
     function l(a) {
       switch (e) {
         case ma:
-          return Ne.formatReal("woZeroDigits", a);
+          return fe.formatReal("woZeroDigits", a);
         case nt:
-          return Ne.formatReal("fractional", a);
+          return fe.formatReal("fractional", a);
         default:
-          return Ne.formatNumber("integral", a);
+          return fe.formatNumber("integral", a);
       }
     }
     return (0, vs.jsxs)("div", {
-      className: ce(Pn, r && Tn),
+      className: Re(Pn, r && Tn),
       children: [
         (0, vs.jsx)("div", {
-          className: ce(Dn, An, Fn({ wotPlusActive: i, paramName: e, value: a }) && Bn),
+          className: Re(Dn, An, Fn({ wotPlusActive: i, paramName: e, value: a }) && Bn),
           children: (0, vs.jsx)(Ur, {
             value: a,
             currency: "xp",
             modifier: On(e, a) ? s : void 0,
             formatter: l,
-            classNames: { value: ce(En, n && zn) },
+            classNames: { value: Re(En, n && zn) },
             iconPath: zt("xp", e),
           }),
         }),
         void 0 !== t &&
           (0, vs.jsx)("div", { className: Vn, children: (0, vs.jsx)("div", { className: kn }) }),
         (0, vs.jsx)("div", {
-          className: ce(Dn, Fn({ wotPlusActive: i, paramName: e, value: t }) && Bn),
+          className: Re(Dn, Fn({ wotPlusActive: i, paramName: e, value: t }) && Bn),
           children: (0, vs.jsx)(Ur, {
             value: t,
             currency: aa,
             modifier: On(e, t) ? s : void 0,
             formatter: l,
-            classNames: { value: ce(En, Hn, n && zn) },
+            classNames: { value: Re(En, Hn, n && zn) },
             iconPath: zt(aa, e),
           }),
         }),
@@ -1582,7 +1582,7 @@ var Xn = ({
   Un = () =>
     (0, vs.jsx)("span", {
       className: Ln,
-      children: (0, vs.jsx)(i, { path: "battle_results.details.calculations.maximum" }),
+      children: (0, vs.jsx)(l, { path: "battle_results.details.calculations.maximum" }),
     }),
   Zn = Ke(
     ({
@@ -1602,7 +1602,7 @@ var Xn = ({
         labelIconPath: Kn[e],
         labelKey: `battle_results.details.calculations.${m}`,
         params: { ...(u && { bonusFactor: wt(u) }), ...(d && { maximum: (0, vs.jsx)(Un, {}) }) },
-        classNames: { label: ce($n, qn.has(e) && Mn) },
+        classNames: { label: Re($n, qn.has(e) && Mn) },
         children: (0, vs.jsxs)("div", {
           className: Gn,
           children: [
@@ -1637,7 +1637,7 @@ var Xn = ({
       return (0, vs.jsx)(Mr, {
         ...t,
         ref: s,
-        className: ce(Yn, a && Jn, e),
+        className: Re(Yn, a && Jn, e),
         scrollable: a,
         children: ze(n.records, (e) => (0, vs.jsx)(Zn, { record: e, className: Qn }, e.paramName)),
       });
@@ -1665,7 +1665,7 @@ var Xn = ({
   li = "Experience_base__scroll_f75d07c6",
   oi = Ge("Experience"),
   ci = (0, bs.forwardRef)(({ scrollable: e, className: a, ...t }, s) =>
-    (0, vs.jsx)(oi, { ...t, ref: s, className: ce(ii, e && li, a) }),
+    (0, vs.jsx)(oi, { ...t, ref: s, className: Re(ii, e && li, a) }),
   );
 ((ci.Header = Cn), (ci.Item = Zn), (ci.Total = ni), (ci.IncomeStatement = ei));
 var di = {
@@ -1689,22 +1689,22 @@ var di = {
   },
   mi = [25, 25],
   ui = function ({ onSelect: e, options: a, value: t }) {
-    const { api: s } = L(),
-      [r, i] = ye(s, mi),
-      { opened: l, close: o } = O();
+    const { api: s } = U(),
+      [r, i] = ve(s, mi),
+      { opened: l, close: o } = L();
     return (
       (0, bs.useEffect)(() => {
         if (l) return n(() => n(s.recalculateContent));
       }, [l, s.recalculateContent]),
       (0, vs.jsx)(re, {
-        className: ce(di.area, !r && di.area__begin, !i && di.area__end),
+        className: Re(di.area, !r && di.area__begin, !i && di.area__end),
         classNames: { content: di.scrollContent },
         children: a.map((a) =>
           (0, vs.jsx)(
             "div",
             {
-              className: ce(di.base, a.id === t && di.base__selected),
-              children: (0, vs.jsxs)(q, {
+              className: Re(di.base, a.id === t && di.base__selected),
+              children: (0, vs.jsxs)(Z, {
                 className: di.button,
                 onClick: () => {
                   (o(), e(a.id));
@@ -1715,9 +1715,9 @@ var di = {
                     className: di.itemLabelWrapper,
                     children: [
                       (0, vs.jsx)("div", { className: di.selectIcon }),
-                      a.level && (0, vs.jsx)(z, { value: a.level, className: di.vehicleLevel }),
+                      a.level && (0, vs.jsx)(G, { value: a.level, className: di.vehicleLevel }),
                       a.type &&
-                        (0, vs.jsx)(je, { type: a.type, size: "x24x24", className: di.vehicleGap }),
+                        (0, vs.jsx)(xe, { type: a.type, size: "x24x24", className: di.vehicleGap }),
                       (0, vs.jsx)("div", { className: di.vehicleName, children: a.label }),
                     ],
                   }),
@@ -1741,10 +1741,10 @@ var di = {
             (0, vs.jsx)(Q.Tip, { position: "top", size: "80rem", offset: "120rem" }),
             (0, vs.jsx)("div", {
               className: di.list,
-              children: (0, vs.jsxs)(we, {
+              children: (0, vs.jsxs)(ye, {
                 children: [
                   (0, vs.jsx)(ui, { ...e }),
-                  (0, vs.jsx)(Ie, { classNames: { base: di.bar } }),
+                  (0, vs.jsx)(Ne, { classNames: { base: di.bar } }),
                 ],
               }),
             }),
@@ -1758,8 +1758,8 @@ var di = {
   hi = "Trigger_arrow__opened_38ae933",
   bi = "Trigger_arrowWrapper_68451ace",
   vi = function (e) {
-    const a = F(),
-      t = O();
+    const a = M(),
+      t = L();
     return (0, vs.jsx)(Q.Trigger, {
       children: (s) =>
         (0, vs.jsx)(vs.Fragment, {
@@ -1777,7 +1777,7 @@ var di = {
               e.children,
               (0, vs.jsx)("div", {
                 className: bi,
-                children: (0, vs.jsx)("div", { className: ce(pi, t.opened && hi) }),
+                children: (0, vs.jsx)("div", { className: Re(pi, t.opened && hi) }),
               }),
             ],
           }),
@@ -1790,7 +1790,7 @@ var di = {
   Ni = "VehicleSelector_label_14dee5e6",
   ji = function (e) {
     const { value: a } = e,
-      t = ae(e.options, (e) => e.id === a);
+      t = ee(e.options, (e) => e.id === a);
     return (0, vs.jsxs)(Q, {
       children: [
         (0, vs.jsx)(fi, { ...e }),
@@ -1798,8 +1798,8 @@ var di = {
           children: (0, vs.jsxs)("div", {
             className: Ni,
             children: [
-              t?.level && (0, vs.jsx)(z, { value: t.level, className: xi }),
-              t?.type && (0, vs.jsx)(je, { type: t.type, size: "x24x24", className: yi }),
+              t?.level && (0, vs.jsx)(G, { value: t.level, className: xi }),
+              t?.type && (0, vs.jsx)(xe, { type: t.type, size: "x24x24", className: yi }),
               (0, vs.jsx)("div", { className: gi, children: t.label }),
             ],
           }),
@@ -1809,7 +1809,7 @@ var di = {
   },
   wi = "FinancialReportVehicleSelector_c6ca6e82",
   Ii = Ke(function () {
-    const e = De.resolve("strings"),
+    const e = $e.resolve("strings"),
       { model: a, controls: t } = ir(),
       s = a.vehiclesFinancialStats.get(),
       r = a.selectedVehicle.get();
@@ -1931,7 +1931,7 @@ var Hi = { x: 50, y: -30, scale: 1.2, opacity: 0 };
 function Oi({ children: e, achievements: a, springsProps: t }) {
   const [s, r] = (0, bs.useState)(new Set()),
     [n, i] = (0, bs.useState)(void 0),
-    [l, o] = k(a.length, () => ({ from: { ...Hi, ...t?.from }, ...t }), [a.length, t]),
+    [l, o] = O(a.length, () => ({ from: { ...Hi, ...t?.from }, ...t }), [a.length, t]),
     c = (0, bs.useMemo)(
       () => ({
         api: o,
@@ -1957,18 +1957,18 @@ var Fi = {
     { achievement: e, index: a, width: t, height: s, classNames: r },
     n,
   ) {
-    const i = T({
+    const i = V({
         args: (0, bs.useMemo)(
           () => ({ tooltipId: e.tooltipId, tooltipArgs: e.tooltipArgs }),
           [e.tooltipId, e.tooltipArgs],
         ),
       }),
-      l = F(),
+      l = M(),
       { hoverIndex: o, setHoverIndex: c } = zi();
     return (0, vs.jsx)("div", {
       ...i,
       ref: n,
-      className: ce(Fi.base, Fi[`base__${is(a, o)}`], r?.achievement),
+      className: Re(Fi.base, Fi[`base__${is(a, o)}`], r?.achievement),
       onMouseEnter: function (e) {
         (l.play("mouse-enter", { original: e, target: "achievements:achievement" }),
           i.onMouseEnter(e),
@@ -1993,7 +1993,7 @@ var Fi = {
                 width: t,
                 height: s,
                 path: `achievement.x240x240.${e.iconName}`,
-                className: ce(Fi.icon, r?.icon),
+                className: Re(Fi.icon, r?.icon),
               },
               e.iconName,
             ),
@@ -2018,10 +2018,10 @@ var Fi = {
     const o = (0, bs.useRef)(null),
       { springs: c, achievements: d, completedAnimationIndexes: m, hoverIndex: u } = zi();
     return (
-      _(() => {
+      b(() => {
         if (null === o.current) return;
         const a = o.current.offsetWidth + Math.floor((t / e.length) * 2),
-          r = V(i);
+          r = g(i);
         l(s, a < r ? Math.floor((r - a) / 2) : 0);
       }, [e.length, r, i, l]),
       (0, vs.jsx)("div", {
@@ -2030,13 +2030,13 @@ var Fi = {
         children: ze(e, (t, s) => {
           const i = d.length - a - s - 1;
           return (0, vs.jsx)(
-            f.div,
+            h.div,
             {
               ref: 0 === s ? o : void 0,
               className: Mi,
               style: { ...c[i], zIndex: a + s === u ? e.length + 1 : e.length - s },
               children: (0, vs.jsx)(Xi, {
-                classNames: { achievement: ce(Wi, !1 === m.has(i) && Ki) },
+                classNames: { achievement: Re(Wi, !1 === m.has(i) && Ki) },
                 achievement: t,
                 width: r,
                 height: n,
@@ -2056,12 +2056,12 @@ var Fi = {
       children: ze(e, (l, o) => {
         const c = r.length - o - 1;
         return (0, vs.jsx)(
-          f.div,
+          h.div,
           {
             className: Mi,
             style: { ...s[c], zIndex: o === i ? e.length + 1 : e.length - o },
             children: (0, vs.jsx)(Xi, {
-              classNames: { achievement: ce(Wi, !n.has(c) && Ki) },
+              classNames: { achievement: Re(Wi, !n.has(c) && Ki) },
               achievement: l,
               width: a,
               height: t,
@@ -2113,7 +2113,7 @@ var Fi = {
     return 0 === t.length
       ? null
       : (0, vs.jsxs)("div", {
-          className: ce(Gi, e),
+          className: Re(Gi, e),
           children: [
             s.rank.length > 0 &&
               (0, vs.jsx)(Ui, {
@@ -2139,10 +2139,10 @@ var Fi = {
   Ji = "AnimatedNumber_slotMachineDigit_a9587a5a",
   Qi = "AnimatedNumber_plugChar_c66678",
   el = "AnimatedNumber_digitsList_2065427d",
-  al = M.cubicBezier(0.33, 0, 0.25, 1);
+  al = ce.cubicBezier(0.33, 0, 0.25, 1);
 function tl({ symbol: e, step: a, delay: t, first: s, handleFirstRest: r }) {
   const [n, i] = (0, bs.useState)(!1),
-    [l, o] = C(() => ({ from: { y: 0, opacity: 0 } })),
+    [l, o] = D(() => ({ from: { y: 0, opacity: 0 } })),
     c = /^\d$/.test(e);
   const d = c ? parseInt(e) : 1;
   return (
@@ -2166,10 +2166,10 @@ function tl({ symbol: e, step: a, delay: t, first: s, handleFirstRest: r }) {
       className: Ji,
       children: [
         (0, vs.jsx)("div", { className: Qi, children: e }),
-        (0, vs.jsx)(f.div, {
+        (0, vs.jsx)(h.div, {
           style: l,
           className: el,
-          children: S(0, d + 1, (t) =>
+          children: T(0, d + 1, (t) =>
             c
               ? (0, vs.jsx)("div", { children: t }, t)
               : (0, vs.jsx)("div", { style: { height: a }, children: t > 0 ? e : null }, t),
@@ -2186,21 +2186,21 @@ var sl = (0, bs.memo)(function ({
     handleAnimationFinished: s,
     type: r,
   }) {
-    const [n, i] = Ee(),
+    const [n, i] = o(),
       l = (0, bs.useMemo)(() => e.split(""), [e]),
-      o = (0, bs.useCallback)(() => s(r), [s, r]);
+      c = (0, bs.useCallback)(() => s(r), [s, r]);
     return (0, vs.jsx)("div", {
       ref: n,
-      className: ce(Yi, t),
+      className: Re(Yi, t),
       children: l.map((t, s) =>
         (0, vs.jsx)(
           tl,
           {
             first: 0 === s,
-            handleFirstRest: o,
+            handleFirstRest: c,
             delay: 200 * (l.length - s),
             symbol: t,
-            step: i.type === X.measured && a ? i.size.height : 0,
+            step: i.type === d.measured && a ? i.size.height : 0,
           },
           `${e}-${s}`,
         ),
@@ -2223,18 +2223,18 @@ function dl({
 }) {
   return ((e) => cl.includes(e))(e)
     ? 0 !== a || s
-      ? (0, vs.jsx)(m, {
+      ? (0, vs.jsx)(_, {
           reverse: !0,
           type: ol[e],
           size: t,
           className: rl,
-          classNames: { icon: ce(nl, r && il) },
+          classNames: { icon: Re(nl, r && il) },
           children: (0, vs.jsx)(sl, {
             className: ll,
             readyToAnimate: r,
             type: e,
             handleAnimationFinished: n,
-            value: Ne.formatNumber(e === ie.gold ? "gold" : "integral", a),
+            value: fe.formatNumber(e === ie.gold ? "gold" : "integral", a),
           }),
         })
       : null
@@ -2246,8 +2246,8 @@ var ml = Ge("Currencies", "Currencies_5b11a533"),
       [r, n] = (0, bs.useState)(new Set()),
       { model: i } = hs(),
       l = i.computes.earnedCurrencies(),
-      o = he(l),
-      c = F(),
+      o = pe(l),
+      c = M(),
       { step: d } = Rs(),
       m = J({ value: s.medium }, { medium: { value: s.large }, large: { value: s.extraLarge } });
     ((0, bs.useEffect)(() => {
@@ -2261,7 +2261,7 @@ var ml = Ge("Currencies", "Currencies_5b11a533"),
           c.play("stopRolling", { target: "overview:currencies" });
       }, [l, c, r]));
     const u = (0, bs.useCallback)(function (e) {
-      n((a) => b(a, e));
+      n((a) => y(a, e));
     }, []);
     return (0, vs.jsx)(ml, {
       className: e,
@@ -2280,10 +2280,10 @@ function pl({ status: e }) {
   return "win" === e ? "post_battle.epic_victory_ribbon" : "post_battle.epic_defeat_draw_ribbon";
 }
 function hl({ status: e }) {
-  const a = De.resolve("videos");
+  const a = $e.resolve("videos");
   return (0, vs.jsx)("div", {
     className: fl,
-    children: (0, vs.jsx)(D, {
+    children: (0, vs.jsx)(E, {
       loop: !0,
       autoplay: !0,
       className: _l,
@@ -2309,24 +2309,24 @@ var bl = "account",
     [wl]: "library.eyebrow",
     [Il]: "library.gear_with_gap",
   };
-var Sl = { behaviour: Y.contentResponsive, minSize: "0rem", maxSize: "1000rem" },
+var Sl = { behaviour: B.contentResponsive, minSize: "0rem", maxSize: "1000rem" },
   Cl =
-    (P.extraSmall,
-    Y.static,
-    P.medium,
-    Y.static,
-    P.large,
-    Y.static,
-    P.extraLarge,
-    Y.static,
-    P.extraSmall,
-    Y.static,
-    P.medium,
-    Y.static,
-    P.large,
-    Y.static,
-    P.extraLarge,
-    Y.static,
+    (A.extraSmall,
+    B.static,
+    A.medium,
+    B.static,
+    A.large,
+    B.static,
+    A.extraLarge,
+    B.static,
+    A.extraSmall,
+    B.static,
+    A.medium,
+    B.static,
+    A.large,
+    B.static,
+    A.extraLarge,
+    B.static,
     (0, bs.createContext)(null));
 function Pl() {
   const e = (0, bs.useContext)(Cl);
@@ -2350,31 +2350,33 @@ var Dl = "HeaderCell_cellWithValue_78949e6d",
   Hl = "HeaderCell_text_35220206";
 function Ol({ info: e, name: a, className: t }) {
   const { iconsConfig: s } = Pl(),
-    r = d({
-      contentId: De.resolve("views").read((e) =>
-        a === Il
-          ? e.mono.post_battle.tooltips.critical_damage("resId")
-          : e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
-      ),
+    r = f({
+      contentId: $e
+        .resolve("views")
+        .read((e) =>
+          a === Il
+            ? e.mono.post_battle.tooltips.critical_damage("resId")
+            : e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
+        ),
       args: { paramType: a },
     }),
     n = Ae(
       e.table.getRowModel().rows,
       (e, t) => {
         const s = t.getValue(a),
-          r = l(s) ? s : s.value;
+          r = c(s) ? s : s.value;
         return e + (a === wl && r > 0 ? 1 : r);
       },
       0,
     ),
     i = s[a] ?? "";
   return (0, vs.jsx)("div", {
-    className: ce(Dl, t),
+    className: Re(Dl, t),
     children: (0, vs.jsxs)("div", {
       ...r,
       className: Vl,
       children: [
-        (0, vs.jsx)("div", { className: El, children: Ne.formatNumber("integral", n) }),
+        (0, vs.jsx)("div", { className: El, children: fe.formatNumber("integral", n) }),
         (0, vs.jsx)("div", {
           className: kl,
           children: (0, vs.jsx)(Te, { width: "100%", height: "100%", path: i }),
@@ -2384,7 +2386,7 @@ function Ol({ info: e, name: a, className: t }) {
   });
 }
 function Fl({ name: e, info: a, className: t }) {
-  const s = De.resolve("strings");
+  const s = $e.resolve("strings");
   switch (e) {
     case gl:
     case xl:
@@ -2410,37 +2412,39 @@ var Xl = "IconCell_99b0caec",
   Gl =
     ((0, bs.memo)(function ({ value: e, name: a, userName: t, className: s }) {
       const { iconsConfig: r } = Pl(),
-        n = d({
-          contentId: De.resolve("views").read((e) =>
-            e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
-          ),
+        n = f({
+          contentId: $e
+            .resolve("views")
+            .read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
           args: (0, bs.useMemo)(() => ({ userName: t, paramType: a }), [a, t]),
         });
       if (0 === e) return null;
       const i = r[a] ?? "";
       return (0, vs.jsx)("div", {
         ...n,
-        className: ce(Xl, s),
+        className: Re(Xl, s),
         children: (0, vs.jsx)(Te, { width: "32rem", height: "32rem", path: i }),
       });
     }),
     "NumberCell_c62bf499"),
   $l =
     ((0, bs.memo)(function ({ value: e, userName: a, name: t, className: s }) {
-      const r = d({
-        contentId: De.resolve("views").read((e) =>
-          t === Il
-            ? e.mono.post_battle.tooltips.critical_damage("resId")
-            : e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
-        ),
+      const r = f({
+        contentId: $e
+          .resolve("views")
+          .read((e) =>
+            t === Il
+              ? e.mono.post_battle.tooltips.critical_damage("resId")
+              : e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
+          ),
         args: (0, bs.useMemo)(() => ({ userName: a, paramType: t }), [t, a]),
       });
       return 0 === e
         ? null
         : (0, vs.jsx)("div", {
             ...r,
-            className: ce(Gl, s),
-            children: Ne.formatNumber("integral", e),
+            className: Re(Gl, s),
+            children: fe.formatNumber("integral", e),
           });
     }),
     {
@@ -2465,30 +2469,30 @@ function Ll({ count: e }) {
         : (0, vs.jsx)("div", {
             ...a,
             className: $l.roundedCount,
-            children: (0, vs.jsx)(i, {
+            children: (0, vs.jsx)(l, {
               path: "common.numberAbbrev",
-              params: { value: Ne.formatNumber("integral", Math.min(t, 99)) },
+              params: { value: fe.formatNumber("integral", Math.min(t, 99)) },
             }),
           }),
   });
 }
 (0, bs.memo)(function ({ value: e, count: a, name: t, userName: s, className: r }) {
   const { iconsConfig: n } = Pl(),
-    i = d({
-      contentId: De.resolve("views").read((e) =>
-        e.lobby.tooltips.BattleResultsStatsTooltipView("resId"),
-      ),
+    i = f({
+      contentId: $e
+        .resolve("views")
+        .read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView("resId")),
       args: (0, bs.useMemo)(() => ({ userName: s, paramType: t }), [t, s]),
     });
   if (0 === e && 0 === a) return null;
   const l = n[t] ?? "";
   return (0, vs.jsxs)("div", {
     ...i,
-    className: ce($l.base, r),
+    className: Re($l.base, r),
     children: [
-      e > 0 && Ne.formatNumber("integral", e),
+      e > 0 && fe.formatNumber("integral", e),
       (0, vs.jsxs)("div", {
-        className: ce($l.counter, 0 === a && $l.counter__hidden),
+        className: Re($l.counter, 0 === a && $l.counter__hidden),
         children: [
           (0, vs.jsx)(Te, { className: $l.icon, width: "32rem", height: "32rem", path: l }),
           a >= 2 && (0, vs.jsx)(Ll, { count: a }),
@@ -2499,71 +2503,71 @@ function Ll({ count: e }) {
 });
 var Ml = "Index_align_5032d1bf",
   Wl = "Index_align__right_9d371d4f",
-  Kl = Fe();
+  Kl = k();
 function ql() {
   return [
     Kl.accessor("killed", {
       id: gl,
-      header: (e) => (0, vs.jsx)(Fl, { info: e, name: gl, className: ce(Bl, Al) }),
+      header: (e) => (0, vs.jsx)(Fl, { info: e, name: gl, className: Re(Bl, Al) }),
       enableSorting: !1,
-      meta: { column: Sl, className: ce(Ml, Wl) },
+      meta: { column: Sl, className: Re(Ml, Wl) },
     }),
     Kl.accessor("damageDealt", {
       id: xl,
       header: (e) => (0, vs.jsx)(Fl, { info: e, name: xl, className: Bl }),
       enableSorting: !1,
-      meta: { className: ce(Ml, Wl), column: Sl },
+      meta: { className: Re(Ml, Wl), column: Sl },
     }),
     Kl.accessor("damageBlockedByArmor", {
       id: yl,
       header: (e) => (0, vs.jsx)(Fl, { info: e, name: yl, className: Bl }),
       enableSorting: !1,
-      meta: { className: ce(Ml, Wl), column: Sl },
+      meta: { className: Re(Ml, Wl), column: Sl },
     }),
     Kl.accessor("damageAssisted", {
       id: Nl,
       header: (e) => (0, vs.jsx)(Fl, { info: e, name: Nl, className: Bl }),
       enableSorting: !1,
-      meta: { className: ce(Ml, Wl), column: Sl },
+      meta: { className: Re(Ml, Wl), column: Sl },
     }),
     Kl.accessor("damageAssistedStun", {
       id: jl,
       header: (e) => (0, vs.jsx)(Fl, { info: e, name: jl, className: Bl }),
       enableSorting: !1,
-      meta: { className: ce(Ml, Wl), column: Sl },
+      meta: { className: Re(Ml, Wl), column: Sl },
     }),
     Kl.accessor("spotted", {
       id: wl,
       header: (e) => (0, vs.jsx)(Fl, { info: e, name: wl, className: Bl }),
       enableSorting: !1,
-      meta: { className: ce(Ml, Wl), column: Sl },
+      meta: { className: Re(Ml, Wl), column: Sl },
     }),
     Kl.accessor("criticalDamage", {
       id: Il,
       header: (e) => (0, vs.jsx)(Fl, { info: e, name: Il, className: Bl }),
       enableSorting: !1,
-      meta: { className: ce(Ml, Wl), column: Sl },
+      meta: { className: Re(Ml, Wl), column: Sl },
     }),
   ];
 }
 var Ul = "TableHeader_row_a81d3e65",
   Zl = (0, bs.memo)(function ({ classNames: e }) {
-    const { table: a } = ee();
-    return (0, vs.jsx)(ge.Header, {
+    const { table: a } = Ee();
+    return (0, vs.jsx)(Fe.Header, {
       className: e?.base,
       children: ze(a.getHeaderGroups(), (a, t) =>
         (0, vs.jsx)(
-          ge.Row,
+          Fe.Row,
           {
-            className: ce(Ul, e?.row),
+            className: Re(Ul, e?.row),
             children: ze(a.headers, (a, s) =>
               (0, vs.jsx)(
-                ge.Cell,
+                Fe.Cell,
                 {
                   onClick: a.column.getToggleSortingHandler(),
                   className: e?.cell,
-                  cell: { ...a, rowIndex: t, index: s, tablePart: H.header },
-                  children: !a.isPlaceholder && Ce(a.column.columnDef.header, a.getContext()),
+                  cell: { ...a, rowIndex: t, index: s, tablePart: i.header },
+                  children: !a.isPlaceholder && Be(a.column.columnDef.header, a.getContext()),
                 },
                 a.id,
               ),
@@ -2575,15 +2579,15 @@ var Ul = "TableHeader_row_a81d3e65",
     });
   }),
   Yl = function ({ data: e, config: a, className: t }) {
-    const s = G();
+    const s = K();
     return (0, vs.jsx)(Tl, {
-      children: (0, vs.jsx)(me, {
+      children: (0, vs.jsx)(W, {
         data: e,
         columns: a,
         enableMultiRowSelection: !1,
         getRowId: (e) => e.account.username,
         children: (0, vs.jsx)(
-          ge,
+          Fe,
           { className: t, children: (0, vs.jsx)(Zl, {}) },
           s.breakpoint.name,
         ),
@@ -2599,12 +2603,12 @@ var Ul = "TableHeader_row_a81d3e65",
     const { model: e } = hs(),
       a = e.computes.personalEfficiency(),
       t = e.battleInfo.get().finishReasonClarification,
-      s = De.resolve("strings"),
+      s = $e.resolve("strings"),
       { personalEfficiencyRef: r } = Rs(),
-      [n] = C(() => ({ from: { opacity: 0 }, ref: r })),
+      [n] = D(() => ({ from: { opacity: 0 }, ref: r })),
       i = (0, bs.useMemo)(ql, []);
     return 0 === a.length
-      ? (0, vs.jsxs)(f.div, {
+      ? (0, vs.jsxs)(h.div, {
           style: n,
           className: Jl,
           children: [
@@ -2621,7 +2625,7 @@ var Ul = "TableHeader_row_a81d3e65",
         })
       : (0, vs.jsx)("div", {
           className: eo,
-          children: (0, vs.jsxs)(f.div, {
+          children: (0, vs.jsxs)(h.div, {
             style: n,
             children: [
               "" !== t &&
@@ -2659,13 +2663,13 @@ var Ul = "TableHeader_row_a81d3e65",
   },
   no = Ge("Overview", ro.base),
   io = Ke(function ({ className: e }) {
-    const a = De.resolve("strings"),
-      t = F(),
+    const a = $e.resolve("strings"),
+      t = M(),
       { model: s } = hs(),
       r = s.personalEfficiency.achievements.get(),
       { step: n, battleStatusRef: i, earnedCurrenciesRef: l } = Rs(),
-      [o] = C(() => ({ from: { opacity: 0, y: "-10rem" }, ref: i })),
-      [c] = C(() => ({ from: { opacity: 0, y: "-10rem" }, ref: l })),
+      [o] = D(() => ({ from: { opacity: 0, y: "-10rem" }, ref: i })),
+      [c] = D(() => ({ from: { opacity: 0, y: "-10rem" }, ref: l })),
       { api: d, setCompletedAnimationIndexes: m } = zi(),
       u = s.battleInfo.get()?.winStatus;
     return (
@@ -2681,9 +2685,9 @@ var Ul = "TableHeader_row_a81d3e65",
               y: 0,
               scale: 1,
               delay: 200 * s + n,
-              config: { duration: 400 + i, easing: M.cubicBezier(1, 0, 0.95, 1) },
+              config: { duration: 400 + i, easing: ce.cubicBezier(1, 0, 0.95, 1) },
               onRest() {
-                (t.play("achievementAppeared", { target: "overview" }), m((e) => b(e, s)));
+                (t.play("achievementAppeared", { target: "overview" }), m((e) => y(e, s)));
               },
             };
           }),
@@ -2692,7 +2696,7 @@ var Ul = "TableHeader_row_a81d3e65",
               delay: 150 + 200 * t + (e - 500 * Math.log(r.length - t)),
               config: {
                 duration: 250 + (a - 150 * Math.log(r.length - t)),
-                easing: M.cubicBezier(0.33, 0, 0.25, 1),
+                easing: ce.cubicBezier(0.33, 0, 0.25, 1),
               },
             })));
         }
@@ -2700,27 +2704,27 @@ var Ul = "TableHeader_row_a81d3e65",
       (0, vs.jsxs)(no, {
         className: e,
         children: [
-          (0, vs.jsx)("div", { className: ce(ro.background, u && ro[`background__${u}`]) }),
+          (0, vs.jsx)("div", { className: Re(ro.background, u && ro[`background__${u}`]) }),
           (0, vs.jsx)("div", { className: ro.cornerShadow }),
-          (0, vs.jsx)("div", { className: ce(ro.bottomGradient, u && ro[`bottomGradient__${u}`]) }),
+          (0, vs.jsx)("div", { className: Re(ro.bottomGradient, u && ro[`bottomGradient__${u}`]) }),
           (0, vs.jsxs)("div", {
-            className: ce(ro.info, 0 === r.length && ro.info__withoutMedals),
+            className: Re(ro.info, 0 === r.length && ro.info__withoutMedals),
             children: [
               (0, vs.jsx)(hl, { status: u }),
               (0, vs.jsx)("div", {
                 className: ro.statusWrapper,
-                children: (0, vs.jsx)(f.div, {
+                children: (0, vs.jsx)(h.div, {
                   style: o,
                   className: ro.status,
                   children: (0, vs.jsx)("div", {
                     className: ro.statusText,
                     "data-test-id": "winStatus",
-                    children: Ne.toUpperCase(a.readOrEmpty(`battle_results.status.${u}`)),
+                    children: fe.toUpperCase(a.readOrEmpty(`battle_results.status.${u}`)),
                   }),
                 }),
               }),
               (0, vs.jsx)(Zi, { className: ro.achievements }),
-              (0, vs.jsx)(f.div, {
+              (0, vs.jsx)(h.div, {
                 style: c,
                 className: ro.currencies,
                 children: (0, vs.jsx)(ul, {}),
@@ -2744,7 +2748,7 @@ var Ul = "TableHeader_row_a81d3e65",
     return (0, vs.jsx)("div", {
       ...t,
       ref: s,
-      className: ce(oo, e?.base, a),
+      className: Re(oo, e?.base, a),
       children: (0, vs.jsx)(Te, {
         className: e?.image,
         width: "100%",
@@ -2778,8 +2782,8 @@ var fo = (0, bs.forwardRef)(function (
     { achievement: e, achievementsLength: a, index: t, hoverIndex: s, setHoverIndex: r, ...n },
     i,
   ) {
-    const l = F(),
-      o = T({ args: { tooltipId: e.tooltipId, tooltipArgs: e.tooltipArgs } }),
+    const l = M(),
+      o = V({ args: { tooltipId: e.tooltipId, tooltipArgs: e.tooltipArgs } }),
       c = J(
         { width: "48rem", height: "48rem", path: `achievement.c_48x48.${e.iconName}` },
         { medium: { width: "67rem", height: "71rem", path: `achievement.${e.iconName}` } },
@@ -2787,7 +2791,7 @@ var fo = (0, bs.forwardRef)(function (
     return (0, vs.jsx)("div", {
       ...n,
       ...o,
-      className: ce(mo.achievement, mo[`achievement__${uo(t, s)}`]),
+      className: Re(mo.achievement, mo[`achievement__${uo(t, s)}`]),
       style: { zIndex: t === s ? a + 1 : a - t },
       onMouseEnter: function (e) {
         (o.onMouseEnter(e),
@@ -2811,7 +2815,7 @@ var fo = (0, bs.forwardRef)(function (
     squadIndex: r,
     personal: n,
   }) {
-    const l = De.resolve("strings"),
+    const i = $e.resolve("strings"),
       [o, c] = (0, bs.useState)(void 0),
       { model: d, controls: m } = hs(),
       u = d.teamsStatistic.selectedVehicle.get(),
@@ -2821,10 +2825,10 @@ var fo = (0, bs.forwardRef)(function (
         { medium: { width: "290rem", height: "232rem" } },
       ),
       p = Ve({
-        header: l
+        header: i
           .readOrEmpty("tooltips.anonymizer.teamStats.header")
           .replace("%(name)s", a.username),
-        body: l.readOrEmpty("tooltips.anonymizer.teamStats.body"),
+        body: i.readOrEmpty("tooltips.anonymizer.teamStats.body"),
       }),
       h = _s({ personal: n, platoonType: fs(e, f.squadIndex, r), anonymizer: a.anonymizer });
     return (0, vs.jsxs)("div", {
@@ -2839,44 +2843,44 @@ var fo = (0, bs.forwardRef)(function (
         (0, vs.jsxs)("div", {
           className: mo.info,
           children: [
-            (0, vs.jsxs)(Z, {
+            (0, vs.jsxs)(Ce, {
               className: mo.accountInfo,
               children: [
                 "" !== a.badge &&
-                  (0, vs.jsx)(Z.Badge, {
+                  (0, vs.jsx)(Ce.Badge, {
                     className: mo.accountInfoGap,
-                    size: Z.Badge.sizes.x48x48,
+                    size: Ce.Badge.sizes.x48x48,
                     badgeId: a.badge,
                   }),
-                (0, vs.jsx)(Z.Name, {
-                  className: ce(mo.accountName, mo.accountInfoGap),
-                  children: (0, vs.jsx)(te, { text: h ? a.fakeUsername : a.username }),
+                (0, vs.jsx)(Ce.Name, {
+                  className: Re(mo.accountName, mo.accountInfoGap),
+                  children: (0, vs.jsx)(ae, { text: h ? a.fakeUsername : a.username }),
                 }),
                 "" !== a.clanAbbreviation &&
                   !h &&
-                  (0, vs.jsx)(Z.ClanTag, {
+                  (0, vs.jsx)(Ce.ClanTag, {
                     className: mo.clanAbbreviation,
-                    children: (0, vs.jsx)(i, {
+                    children: (0, vs.jsx)(l, {
                       path: "common.clanTag",
                       params: { abbrev: a.clanAbbreviation },
                       brackets: { start: "{", end: "}" },
                     }),
                   }),
                 0 !== a.igrType &&
-                  (0, vs.jsx)(Z.IgrIcon, {
-                    size: Z.IgrIcon.sizes.x64x28,
+                  (0, vs.jsx)(Ce.IgrIcon, {
+                    size: Ce.IgrIcon.sizes.x64x28,
                     className: mo.accountInfoGap,
                   }),
                 "" !== a.suffixBadge &&
-                  (0, vs.jsx)(Z.Stripe, {
-                    size: Z.Stripe.sizes.regular,
+                  (0, vs.jsx)(Ce.Stripe, {
+                    size: Ce.Stripe.sizes.regular,
                     badgeId: a.suffixBadge,
                     className: mo.accountInfoGap,
                   }),
                 a.anonymizer &&
-                  (0, vs.jsx)(Z.AnonymizerIcon, {
+                  (0, vs.jsx)(Ce.AnonymizerIcon, {
                     ...p,
-                    size: Z.AnonymizerIcon.sizes.x32x32,
+                    size: Ce.AnonymizerIcon.sizes.x32x32,
                     className: mo.anonymizerIcon,
                   }),
               ],
@@ -2888,7 +2892,7 @@ var fo = (0, bs.forwardRef)(function (
                   a || !e
                     ? {
                         id: null,
-                        label: l.readOrEmpty("fl_post_battle_results.battleInfo.all_from_battle"),
+                        label: i.readOrEmpty("fl_post_battle_results.battleInfo.all_from_battle"),
                       }
                     : { id: e.techName, label: e.name, level: e.tier, type: e.type },
                 ),
@@ -2919,19 +2923,19 @@ var fo = (0, bs.forwardRef)(function (
     });
   }),
   po = Ge("StatisticsLabel"),
-  ho = De.resolve("strings"),
+  ho = $e.resolve("strings"),
   bo = (0, bs.forwardRef)(function ({ labelKey: e, ...a }, t) {
     return (0, vs.jsx)(po, { ...a, ref: t, children: ho.readOrEmpty(e) });
   }),
   vo = "Value_798a6cdd",
   go = "Value_separator_798a6cdd",
-  xo = De.resolve("strings");
+  xo = $e.resolve("strings");
 function yo(e, a) {
   switch (e) {
     case Ht.Integer:
-      return Ne.formatNumber("integral", a);
+      return fe.formatNumber("integral", a);
     case Ht.Float:
-      return Ne.formatReal("fractional", a);
+      return fe.formatReal("fractional", a);
     default:
       return a;
   }
@@ -2952,19 +2956,19 @@ var No = Ge("StatisticsValue", vo),
     return (0, vs.jsx)(No, {
       ...i,
       ref: l,
-      className: ce(n?.base, r),
+      className: Re(n?.base, r),
       children: ze(a, (r, i) =>
         (0, vs.jsxs)(
           bs.Fragment,
           {
             children: [
               (0, vs.jsx)("div", {
-                className: ce(0 === r && n?.zeroValue, r < 0 && n?.negativeValue),
+                className: Re(0 === r && n?.zeroValue, r < 0 && n?.negativeValue),
                 children: yo(t, r),
               }),
               i < a.length - 1 &&
                 (0, vs.jsxs)("div", {
-                  className: ce(go, n?.separator),
+                  className: Re(go, n?.separator),
                   children: [" ", xo.readOrEmpty(s), " "],
                 }),
             ],
@@ -2982,15 +2986,15 @@ var No = Ge("StatisticsValue", vo),
   Po = Ge("StatisticsItem", Ro),
   To = Ge("StatisticsItemSeparator", So);
 function Do({ children: e, scrollbarProps: a, scrollAreaProps: t }) {
-  const s = zr(L().api);
+  const s = zr(U().api);
   return (0, vs.jsxs)(vs.Fragment, {
     children: [
       (0, vs.jsx)(re, {
         ...t,
-        classNames: { ...t?.classNames, content: ce(wo, s && Io, t?.classNames?.content) },
+        classNames: { ...t?.classNames, content: Re(wo, s && Io, t?.classNames?.content) },
         children: e,
       }),
-      (0, vs.jsx)(Ie, { ...a }),
+      (0, vs.jsx)(Ne, { ...a }),
     ],
   });
 }
@@ -2998,7 +3002,7 @@ var Bo = (0, bs.forwardRef)(function ({ scrollbarProps: e, scrollAreaProps: a, .
   return (0, vs.jsx)(Co, {
     ...t,
     ref: s,
-    children: (0, vs.jsx)(we, {
+    children: (0, vs.jsx)(ye, {
       children: (0, vs.jsx)(Do, { ...t, scrollbarProps: e, scrollAreaProps: a }),
     }),
   });
@@ -3018,28 +3022,28 @@ var Ao = "PlayerStatistics_scrollbar_987bbca2",
   Lo = "PlayerStatistics_separatorSquare_5e440c20";
 function Mo({ squareSize: e = 1, spacing: a = 2, backgroundColor: t = "#d9d9d9" }) {
   const s = (0, bs.useRef)(null),
-    [i, l] = (0, bs.useState)(0),
-    o = e + a,
-    c = (0, bs.useCallback)(() => {
+    [r, i] = (0, bs.useState)(0),
+    l = e + a,
+    o = (0, bs.useCallback)(() => {
       const e = s.current;
       if (null !== e) {
         const a = e.getBoundingClientRect().width,
-          t = r(a);
-        l(Math.floor(t / o));
+          t = H(a);
+        i(Math.floor(t / l));
       }
-    }, [o]);
+    }, [l]);
   return (
-    j(c, [s.current, o, c]),
-    (0, bs.useEffect)(() => n(c), [c]),
+    I(o, [s.current, l, o]),
+    (0, bs.useEffect)(() => n(o), [o]),
     (0, vs.jsx)("div", {
       ref: s,
       className: $o,
-      children: Array.from({ length: i }).map((a, s) =>
+      children: Array.from({ length: r }).map((a, s) =>
         (0, vs.jsx)(
           "div",
           {
             className: Lo,
-            style: { backgroundColor: t, width: `${e}rem`, height: `${e}rem`, left: s * o + "rem" },
+            style: { backgroundColor: t, width: `${e}rem`, height: `${e}rem`, left: s * l + "rem" },
           },
           s,
         ),
@@ -3047,7 +3051,7 @@ function Mo({ squareSize: e = 1, spacing: a = 2, backgroundColor: t = "#d9d9d9" 
     })
   );
 }
-var Wo = De.resolve("strings"),
+var Wo = $e.resolve("strings"),
   Ko = (e) =>
     "boolean" == typeof e
       ? e
@@ -3071,7 +3075,7 @@ function qo({ list: e, frontLineParams: a, isGeneralInfo: t }) {
                   labelKey: `fl_post_battle_results.battleInfo.labels_${e}`,
                 }),
                 (0, vs.jsx)(Bo.Separator, { className: ko, children: (0, vs.jsx)(Mo, {}) }),
-                (0, vs.jsx)("div", { className: ce(Oo, !a && Fo), children: Ko(a) }),
+                (0, vs.jsx)("div", { className: Re(Oo, !a && Fo), children: Ko(a) }),
               ],
             },
             e,
@@ -3103,7 +3107,7 @@ function qo({ list: e, frontLineParams: a, isGeneralInfo: t }) {
                   (0, vs.jsxs)(
                     Bo.Item,
                     {
-                      className: ce(Eo, Go),
+                      className: Re(Eo, Go),
                       children: [
                         (0, vs.jsx)(Bo.Label, {
                           className: Ho,
@@ -3143,17 +3147,17 @@ var Uo = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
       r = t.teamsStatistic.selectedVehicle.get(),
       n = t.computes.efficiencyDetails(),
       i = (0, bs.useMemo)(
-        () => ae(n?.vehicles ?? [], (e) => (r ? e.vehicle?.techName === r : e.isGeneralInfo)),
+        () => ee(n?.vehicles ?? [], (e) => (r ? e.vehicle?.techName === r : e.isGeneralInfo)),
         [r, n?.vehicles],
       ),
-      l = F(),
+      l = M(),
       o = (0, bs.useRef)(null);
     return (
       (0, bs.useEffect)(() => {
-        const e = x.down(([, e]) => {
+        const e = ge.down(([, e]) => {
             "outside" === e && s.teamEfficiency.selectRow(void 0);
           }),
-          a = N(window, "click", (e) => {
+          a = w(window, "click", (e) => {
             if (o.current) {
               const { clientX: a, clientY: t } = e,
                 r = o.current.getBoundingClientRect();
@@ -3233,50 +3237,50 @@ var Uo = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   hc = "AccountInfoCell_igrIcon_158694e7",
   bc = "AccountInfoCell_stripe_fefba7b2",
   vc = Ke(function ({ account: e, team: a, platoon: t, className: s, classNames: r, ...n }) {
-    const { model: l } = hs(),
-      o = l.computes.personalInfo(),
+    const { model: i } = hs(),
+      o = i.computes.personalInfo(),
       c = _s({
         personal: o.account.username === e.username,
         platoonType: fs(a, o.squadIndex, t),
         anonymizer: e.anonymizer,
       });
-    return (0, vs.jsxs)(Z, {
+    return (0, vs.jsxs)(Ce, {
       ...n,
-      className: ce(mc, s),
+      className: Re(mc, s),
       children: [
         "" !== e.badge &&
-          (0, vs.jsx)(Z.Badge, {
-            size: Z.Badge.sizes.x24x24,
+          (0, vs.jsx)(Ce.Badge, {
+            size: Ce.Badge.sizes.x24x24,
             badgeId: e.badge,
-            className: ce(_c, r?.badge),
+            className: Re(_c, r?.badge),
           }),
-        (0, vs.jsx)(Z.Name, {
-          className: ce(uc, r?.username),
-          children: (0, vs.jsx)(te, { text: c ? e.fakeUsername : e.username }),
+        (0, vs.jsx)(Ce.Name, {
+          className: Re(uc, r?.username),
+          children: (0, vs.jsx)(ae, { text: c ? e.fakeUsername : e.username }),
         }),
         "" !== e.clanAbbreviation &&
           !c &&
-          (0, vs.jsx)(Z.ClanTag, {
-            className: ce(fc, r?.clanAbbreviation),
-            children: (0, vs.jsx)(i, {
+          (0, vs.jsx)(Ce.ClanTag, {
+            className: Re(fc, r?.clanAbbreviation),
+            children: (0, vs.jsx)(l, {
               path: "common.clanTag",
               params: { abbrev: e.clanAbbreviation },
               brackets: { start: "{", end: "}" },
             }),
           }),
         0 !== e.igrType &&
-          (0, vs.jsx)(Z.IgrIcon, { size: Z.IgrIcon.sizes.x34x16, className: ce(hc, r?.igrIcon) }),
+          (0, vs.jsx)(Ce.IgrIcon, { size: Ce.IgrIcon.sizes.x34x16, className: Re(hc, r?.igrIcon) }),
         "" !== e.suffixBadge &&
-          (0, vs.jsx)(Z.Stripe, {
-            size: Z.Stripe.sizes.default,
+          (0, vs.jsx)(Ce.Stripe, {
+            size: Ce.Stripe.sizes.default,
             badgeId: e.suffixBadge,
             className: bc,
             classNames: r?.suffixBadge,
           }),
         e.anonymizer &&
-          (0, vs.jsx)(Z.AnonymizerIcon, {
-            size: Z.AnonymizerIcon.sizes.x24x24,
-            className: ce(pc, r?.anonymizerIcon),
+          (0, vs.jsx)(Ce.AnonymizerIcon, {
+            size: Ce.AnonymizerIcon.sizes.x24x24,
+            className: Re(pc, r?.anonymizerIcon),
           }),
       ],
     });
@@ -3284,7 +3288,7 @@ var Uo = "EfficiencyDetails_efficiencyDetails__allies_20b1febc",
   gc = "AchievementsCell_achievementCell_e9bf973c",
   xc = "AchievementsCell_achievementsAmount_349c209a";
 function yc({ achievements: e }) {
-  const a = De.resolve("strings"),
+  const a = $e.resolve("strings"),
     t = Ve({ body: ze(ts(e), (e) => a.readOrEmpty(`achievements.${e.name}`)).join("\n") }),
     s = e.length;
   return 0 === s
@@ -3294,36 +3298,36 @@ function yc({ achievements: e }) {
         className: gc,
         children: [
           (0, vs.jsx)(Te, { path: "library.medal", width: "32rem", height: "32rem" }),
-          (0, vs.jsx)("div", { className: xc, children: Ne.formatNumber("integral", s) }),
+          (0, vs.jsx)("div", { className: xc, children: fe.formatNumber("integral", s) }),
         ],
       });
 }
-var Nc = { behaviour: Y.static, size: "32rem" },
-  jc = { behaviour: Y.static, size: "294rem" },
-  wc = { behaviour: Y.static, size: "392rem" },
-  Ic = { behaviour: Y.static, size: "496rem" },
-  Rc = { behaviour: Y.static, size: "40rem" },
-  Sc = { behaviour: Y.static, size: "60rem" },
-  Cc = { behaviour: Y.static, size: "56rem" },
-  Pc = { behaviour: Y.static, size: "60rem" },
-  Tc = { behaviour: Y.static, size: "80rem" },
-  Dc = { behaviour: Y.static, size: "40rem" },
-  Bc = { behaviour: Y.static, size: "60rem" },
-  Ac = { behaviour: Y.static, size: "56rem" },
-  Vc = { behaviour: Y.static, size: "60rem" },
-  kc = { behaviour: Y.static, size: "80rem" },
-  Ec = { behaviour: Y.static, size: "40rem" },
-  zc = { behaviour: Y.static, size: "56rem" },
-  Hc = { behaviour: Y.static, size: "40rem" },
+var Nc = { behaviour: B.static, size: "32rem" },
+  jc = { behaviour: B.static, size: "294rem" },
+  wc = { behaviour: B.static, size: "392rem" },
+  Ic = { behaviour: B.static, size: "496rem" },
+  Rc = { behaviour: B.static, size: "40rem" },
+  Sc = { behaviour: B.static, size: "60rem" },
+  Cc = { behaviour: B.static, size: "56rem" },
+  Pc = { behaviour: B.static, size: "60rem" },
+  Tc = { behaviour: B.static, size: "80rem" },
+  Dc = { behaviour: B.static, size: "40rem" },
+  Bc = { behaviour: B.static, size: "60rem" },
+  Ac = { behaviour: B.static, size: "56rem" },
+  Vc = { behaviour: B.static, size: "60rem" },
+  kc = { behaviour: B.static, size: "80rem" },
+  Ec = { behaviour: B.static, size: "40rem" },
+  zc = { behaviour: B.static, size: "56rem" },
+  Hc = { behaviour: B.static, size: "40rem" },
   Oc = {
-    [sc]: { [P.extraSmall]: Nc, [P.medium]: Nc, [P.large]: Nc, [P.extraLarge]: Nc },
-    [rc]: { [P.extraSmall]: jc, [P.medium]: wc, [P.large]: wc, [P.extraLarge]: Ic },
-    [nc]: { [P.extraSmall]: Rc, [P.medium]: Sc, [P.large]: Sc, [P.extraLarge]: Sc },
-    [ic]: { [P.extraSmall]: Cc, [P.medium]: Pc, [P.large]: Pc, [P.extraLarge]: Tc },
-    [lc]: { [P.extraSmall]: Dc, [P.medium]: Bc, [P.large]: Bc, [P.extraLarge]: Bc },
-    [oc]: { [P.extraSmall]: Ac, [P.medium]: Vc, [P.large]: Vc, [P.extraLarge]: kc },
-    [cc]: { [P.extraSmall]: Ec, [P.medium]: zc, [P.large]: zc, [P.extraLarge]: zc },
-    [dc]: { [P.extraSmall]: Hc, [P.medium]: Hc, [P.large]: Hc, [P.extraLarge]: Hc },
+    [sc]: { [A.extraSmall]: Nc, [A.medium]: Nc, [A.large]: Nc, [A.extraLarge]: Nc },
+    [rc]: { [A.extraSmall]: jc, [A.medium]: wc, [A.large]: wc, [A.extraLarge]: Ic },
+    [nc]: { [A.extraSmall]: Rc, [A.medium]: Sc, [A.large]: Sc, [A.extraLarge]: Sc },
+    [ic]: { [A.extraSmall]: Cc, [A.medium]: Pc, [A.large]: Pc, [A.extraLarge]: Tc },
+    [lc]: { [A.extraSmall]: Dc, [A.medium]: Bc, [A.large]: Bc, [A.extraLarge]: Bc },
+    [oc]: { [A.extraSmall]: Ac, [A.medium]: Vc, [A.large]: Vc, [A.extraLarge]: kc },
+    [cc]: { [A.extraSmall]: Ec, [A.medium]: zc, [A.large]: zc, [A.extraLarge]: zc },
+    [dc]: { [A.extraSmall]: Hc, [A.medium]: Hc, [A.large]: Hc, [A.extraLarge]: Hc },
   },
   Fc = {
     "media-wrapper": "HeaderCell_media-wrapper_204e6a44",
@@ -3357,7 +3361,7 @@ var Nc = { behaviour: Y.static, size: "32rem" },
   },
   Lc = (0, bs.forwardRef)(function ({ name: e, team: a, column: t, className: s, ...r }, n) {
     const i = t.getIsSorted(),
-      l = De.resolve("strings"),
+      l = $e.resolve("strings"),
       o = Ve({
         header: l.readOrEmpty(`battle_results.team.${$c[e]}.header`),
         body: l.readOrEmpty(`battle_results.team.${$c[e]}.body`),
@@ -3368,7 +3372,7 @@ var Nc = { behaviour: Y.static, size: "32rem" },
       ...r,
       ...o,
       ref: n,
-      className: ce(
+      className: Re(
         Fc.headerCell,
         c ? Fc.headerCell__text : Fc.headerCell__icon,
         i && Fc[`headerCell__${i}`],
@@ -3390,7 +3394,7 @@ var Nc = { behaviour: Y.static, size: "32rem" },
 function Wc({ value: e, className: a, showZero: t = !0 }) {
   return !1 === t && 0 === e
     ? null
-    : (0, vs.jsx)("div", { className: ce(Mc, a), children: Ne.formatNumber("integral", e) });
+    : (0, vs.jsx)("div", { className: Re(Mc, a), children: fe.formatNumber("integral", e) });
 }
 var Kc = {
     "media-wrapper": "PlatoonCell_media-wrapper_45cd697",
@@ -3410,7 +3414,7 @@ var Kc = {
       className: Kc.platoon,
       children: [
         (0, vs.jsx)(Te, { path: r, width: "32rem", height: "32rem" }),
-        (0, vs.jsx)("div", { className: ce(Kc.platoonText, Kc[`platoonText__${s}`]), children: e }),
+        (0, vs.jsx)("div", { className: Re(Kc.platoonText, Kc[`platoonText__${s}`]), children: e }),
       ],
     });
   }),
@@ -3456,7 +3460,7 @@ var Jc = "EfficiencyTable_efficiencyTable__allies_b2f99733",
     selectedOverlayDivider__bottom: "TableBodyRow_selectedOverlayDivider__bottom_20b949b4",
     selectedOverlayImage: "TableBodyRow_selectedOverlayImage_9c09afd1",
   },
-  md = Fe(),
+  md = k(),
   ud = (e, a, t) => {
     const s = e.getValue("account"),
       r = e.getValue("squadIndex");
@@ -3475,7 +3479,7 @@ var Jc = "EfficiencyTable_efficiencyTable__allies_b2f99733",
             n = ud(a, t, s);
           return r.localeCompare(n);
         })(t, s, a, e),
-      r = "small" === t ? P.extraSmall : t;
+      r = "small" === t ? A.extraSmall : t;
     return [
       md.accessor("squadIndex", {
         id: sc,
@@ -3570,20 +3574,20 @@ var Jc = "EfficiencyTable_efficiencyTable__allies_b2f99733",
   hd = "Header_rowDividerImage_19f6e11",
   bd = "Header_cell_70aa1da5";
 function vd({ className: e }) {
-  const { table: a } = ee(),
-    t = F();
-  return (0, vs.jsxs)(ge.Header, {
+  const { table: a } = Ee(),
+    t = M();
+  return (0, vs.jsxs)(Fe.Header, {
     className: e,
     children: [
       (0, vs.jsx)(co, { classNames: { base: pd, image: hd } }),
       ze(a.getHeaderGroups(), (e, a) =>
         (0, vs.jsx)(
-          ge.Row,
+          Fe.Row,
           {
             className: _d,
             children: ze(e.headers, (e, s) => {
               return (0, vs.jsx)(
-                ge.Cell,
+                Fe.Cell,
                 {
                   onClick:
                     ((r = e.column.getToggleSortingHandler()),
@@ -3599,9 +3603,9 @@ function vd({ className: e }) {
                       target: "team-efficiency:efficiency-table:header:cell",
                       original: e,
                     }),
-                  cell: { ...e, rowIndex: a, index: s, tablePart: H.header },
+                  cell: { ...e, rowIndex: a, index: s, tablePart: i.header },
                   className: bd,
-                  children: !e.isPlaceholder && Ce(e.column.columnDef.header, e.getContext()),
+                  children: !e.isPlaceholder && Be(e.column.columnDef.header, e.getContext()),
                 },
                 e.id,
               );
@@ -3623,10 +3627,10 @@ var gd = "SelectedRowTail_selectedRowTail_8abda9c8",
   Id = "SelectedRowTail_rowDividerImage_d11f29d5";
 function Rd({ className: e, short: a }) {
   return (0, vs.jsxs)("div", {
-    className: ce(gd, !a && xd, e),
+    className: Re(gd, !a && xd, e),
     children: [
       (0, vs.jsx)(co, { classNames: { base: jd, image: Id } }),
-      (0, vs.jsx)(co, { classNames: { base: ce(jd, wd), image: Id } }),
+      (0, vs.jsx)(co, { classNames: { base: Re(jd, wd), image: Id } }),
       (0, vs.jsx)("div", { className: yd }),
       (0, vs.jsx)("div", { className: Nd }),
     ],
@@ -3636,39 +3640,39 @@ var Sd = "personal",
   Cd = "personalSquad",
   Pd = "none",
   Td = Ke(function ({ row: e, team: a, rowIndex: s, scrollbarVisible: r }) {
-    const { model: n, controls: i } = hs(),
-      l = F(),
-      o = t(
+    const { model: n, controls: l } = hs(),
+      o = M(),
+      c = t(
         (t) => {
           (t.stopPropagation(),
-            l.play("click", { original: t, target: "team-efficiency:efficiency-table:body:row" }),
-            i.teamEfficiency.selectRow({ team: a, username: e.original.account.username }));
+            o.play("click", { original: t, target: "team-efficiency:efficiency-table:body:row" }),
+            l.teamEfficiency.selectRow({ team: a, username: e.original.account.username }));
         },
-        [i.teamEfficiency, e.original.account.username, l, a],
+        [l.teamEfficiency, e.original.account.username, o, a],
         20,
       ),
-      c = n.teamsStatistic.selectedRow.get(),
-      d = n.computes.personalInfo(),
-      m =
-        d.account.username === e.original.account.username
+      d = n.teamsStatistic.selectedRow.get(),
+      m = n.computes.personalInfo(),
+      u =
+        m.account.username === e.original.account.username
           ? Sd
-          : fs(a, d.squadIndex, e.original.squadIndex) === ms
+          : fs(a, m.squadIndex, e.original.squadIndex) === ms
             ? Cd
             : Pd,
-      u = e.original.account.teamKiller,
-      f = c?.team === a && c.username === e.original.account.username,
-      _ = pe({ args: { databaseID: e.original.databaseId } });
-    return (0, vs.jsxs)(ge.Row, {
-      ...(m !== Sd && _),
+      f = e.original.account.teamKiller,
+      _ = d?.team === a && d.username === e.original.account.username,
+      p = _e({ args: { databaseID: e.original.databaseId } });
+    return (0, vs.jsxs)(Fe.Row, {
+      ...(u !== Sd && p),
       onMouseEnter: (e) =>
-        l.play("mouse-enter", { target: "team-efficiency:efficiency-table:body:row", original: e }),
-      className: ce(
+        o.play("mouse-enter", { target: "team-efficiency:efficiency-table:body:row", original: e }),
+      className: Re(
         dd.tableBodyRow,
-        f && dd.tableBodyRow__selected,
-        m !== Pd && dd[`tableBodyRow__${m}`],
-        u && dd.tableBodyRow__teamKiller,
+        _ && dd.tableBodyRow__selected,
+        u !== Pd && dd[`tableBodyRow__${u}`],
+        f && dd.tableBodyRow__teamKiller,
       ),
-      onClick: o,
+      onClick: c,
       children: [
         (0, vs.jsxs)("div", {
           className: dd.selectedOverlay,
@@ -3678,23 +3682,23 @@ var Sd = "personal",
             }),
             (0, vs.jsx)(co, {
               classNames: {
-                base: ce(dd.selectedOverlayDivider, dd.selectedOverlayDivider__bottom),
+                base: Re(dd.selectedOverlayDivider, dd.selectedOverlayDivider__bottom),
                 image: dd.selectedOverlayImage,
               },
             }),
             (0, vs.jsx)(Rd, {
               short: r && a === cs,
-              className: ce(dd.selectedRowTail, dd[`selectedRowTail__${a}`]),
+              className: Re(dd.selectedRowTail, dd[`selectedRowTail__${a}`]),
             }),
           ],
         }),
         (0, vs.jsx)(co, { classNames: { base: dd.rowDivider, image: dd.rowDividerImage } }),
         ze(e.getVisibleCells(), (e, a) =>
           (0, vs.jsx)(
-            ge.Cell,
+            Fe.Cell,
             {
-              cell: { ...e, rowIndex: s, index: a, tablePart: H.body },
-              children: Ce(e.column.columnDef.cell, e.getContext()),
+              cell: { ...e, rowIndex: s, index: a, tablePart: i.body },
+              children: Be(e.column.columnDef.cell, e.getContext()),
             },
             e.id,
           ),
@@ -3703,12 +3707,12 @@ var Sd = "personal",
     });
   });
 function Dd({ team: e }) {
-  const { table: a } = ee(),
-    { api: t } = L(),
+  const { table: a } = Ee(),
+    { api: t } = U(),
     s = ne(),
     r = (0, bs.useRef)(null),
     [n, i] = (0, bs.useState)(!1),
-    [l, o] = C(() => ({ from: { maskSize: "100% 100%" } }));
+    [l, o] = D(() => ({ from: { maskSize: "100% 100%" } }));
   return (
     (0, bs.useEffect)(() => {
       function e() {
@@ -3738,10 +3742,10 @@ function Dd({ team: e }) {
         }
       );
     }, [t, s, o]),
-    (0, vs.jsxs)(ge.Body, {
+    (0, vs.jsxs)(Fe.Body, {
       className: id,
       children: [
-        (0, vs.jsx)(f.div, {
+        (0, vs.jsx)(h.div, {
           className: cd,
           style: l,
           children: (0, vs.jsx)(re, {
@@ -3755,7 +3759,7 @@ function Dd({ team: e }) {
             }),
           }),
         }),
-        (0, vs.jsx)(Ie, { classNames: { base: ld } }),
+        (0, vs.jsx)(Ne, { classNames: { base: ld } }),
       ],
     })
   );
@@ -3779,7 +3783,7 @@ var Bd = Ge("TeamEfficiencyTable", td, { variants: { team: { [cs]: Jc, [ds]: Qc 
         () => [{ id: Ad[i.column], desc: i.sortDirection === Ue.Desc }],
         [i.column, i.sortDirection],
       ),
-      o = G().breakpoint.name,
+      o = K().breakpoint.name,
       c = (0, bs.useCallback)(
         (e) => {
           const a = (e instanceof Function ? e(l) : e)[0] ?? { id: nc, desc: !0 };
@@ -3792,8 +3796,8 @@ var Bd = Ge("TeamEfficiencyTable", td, { variants: { team: { [cs]: Jc, [ds]: Qc 
       ),
       d = (0, bs.useMemo)(() => fd({ team: e, personalInfo: n, breakpointName: o }), [e, o, n]);
     return (
-      Le(W(o), `Such breakpoint ${o} is not supported`),
-      (0, vs.jsx)(me, {
+      Le($(o), `Such breakpoint ${o} is not supported`),
+      (0, vs.jsx)(W, {
         columns: d,
         data: a,
         enableMultiRowSelection: !1,
@@ -3806,12 +3810,12 @@ var Bd = Ge("TeamEfficiencyTable", td, { variants: { team: { [cs]: Jc, [ds]: Qc 
           team: e,
           className: t,
           children: (0, vs.jsxs)(
-            ge,
+            Fe,
             {
               className: nd,
               children: [
                 (0, vs.jsx)(vd, { className: ed }),
-                (0, vs.jsx)(we, { children: (0, vs.jsx)(Dd, { team: e }) }),
+                (0, vs.jsx)(ye, { children: (0, vs.jsx)(Dd, { team: e }) }),
               ],
             },
             o,
@@ -3836,10 +3840,10 @@ var Bd = Ge("TeamEfficiencyTable", td, { variants: { team: { [cs]: Jc, [ds]: Qc 
       children: (0, vs.jsxs)("div", {
         className: kd,
         children: [
-          (0, vs.jsx)(tc, { team: ds, className: ce(Hd, r?.team === ds && Od) }),
-          (0, vs.jsx)(Vd, { data: t, team: cs, className: ce(Ed, r?.team === ds && zd) }),
-          (0, vs.jsx)(tc, { team: cs, className: ce(Hd, r?.team === cs && Od) }),
-          (0, vs.jsx)(Vd, { data: s, team: ds, className: ce(Ed, r?.team === cs && zd) }),
+          (0, vs.jsx)(tc, { team: ds, className: Re(Hd, r?.team === ds && Od) }),
+          (0, vs.jsx)(Vd, { data: t, team: cs, className: Re(Ed, r?.team === ds && zd) }),
+          (0, vs.jsx)(tc, { team: cs, className: Re(Hd, r?.team === cs && Od) }),
+          (0, vs.jsx)(Vd, { data: s, team: ds, className: Re(Ed, r?.team === cs && zd) }),
         ],
       }),
     });
@@ -3863,29 +3867,29 @@ var Bd = Ge("TeamEfficiencyTable", td, { variants: { team: { [cs]: Jc, [ds]: Qc 
   $d = Ge("PostBattle", Gd.base),
   Ld = Ge("PostBattleNavigation", Gd.navigation);
 function Md() {
-  const { active: e } = I();
+  const { active: e } = C();
   return (0, vs.jsxs)("div", {
     className: Gd[`content__${e}`],
     children: [
-      (0, vs.jsx)(lo, { className: ce(Gd.tab, Gd.tab__overview) }),
-      (0, vs.jsx)(Xd, { className: ce(Gd.tab, Gd.tab__teamScore) }),
-      (0, vs.jsx)(ki, { className: ce(Gd.tab, Gd.tab__financialReport) }),
+      (0, vs.jsx)(lo, { className: Re(Gd.tab, Gd.tab__overview) }),
+      (0, vs.jsx)(Xd, { className: Re(Gd.tab, Gd.tab__teamScore) }),
+      (0, vs.jsx)(ki, { className: Re(Gd.tab, Gd.tab__financialReport) }),
     ],
   });
 }
 var Wd = Ke(function () {
-  const e = De.resolve("strings"),
+  const e = $e.resolve("strings"),
     { battleInfoRef: t, navigationRef: s, completedSteps: r } = Rs(),
-    [n] = C(() => ({ from: { opacity: 0, y: "-10rem" }, ref: s })),
-    [i] = C(() => ({ from: { opacity: 0 }, ref: t })),
+    [n] = D(() => ({ from: { opacity: 0, y: "-10rem" }, ref: s })),
+    [i] = D(() => ({ from: { opacity: 0 }, ref: t })),
     { model: l, controls: o } = hs(),
     c = l.battleInfo.get(),
-    { active: d } = I();
+    { active: d } = C();
   return (
-    g(a.ESCAPE, o.close),
-    w(() => {
+    j(a.ESCAPE, o.close),
+    S(() => {
       function e(e) {
-        e.altKey || e.shiftKey || e.ctrlKey || B.tooltip.hideAll();
+        e.altKey || e.shiftKey || e.ctrlKey || F.tooltip.hideAll();
       }
       return (
         document.addEventListener("keydown", e),
@@ -3895,31 +3899,31 @@ var Wd = Ke(function () {
       );
     }),
     (0, vs.jsxs)($d, {
-      className: ce(Gd.base, Gd[`base__${d}`]),
+      className: Re(Gd.base, Gd[`base__${d}`]),
       children: [
         (0, vs.jsx)(Md, {}),
-        (0, vs.jsx)(f.div, {
+        (0, vs.jsx)(h.div, {
           style: n,
           children: (0, vs.jsx)(Ld, {
             className: !r.has(ys) && Gd.navigation__disabled,
-            children: (0, vs.jsxs)(u.Switcher, {
+            children: (0, vs.jsxs)(p.Switcher, {
               className: Gd.switcher,
               children: [
-                (0, vs.jsx)(u.Tab, {
+                (0, vs.jsx)(p.Tab, {
                   tabId: Ye.overview,
-                  children: Ne.toUpperCase(
+                  children: fe.toUpperCase(
                     e.readOrEmpty("battle_results.battleResult.navigation.battleResults"),
                   ),
                 }),
-                (0, vs.jsx)(u.Tab, {
+                (0, vs.jsx)(p.Tab, {
                   tabId: Ye.teamScore,
-                  children: Ne.toUpperCase(
+                  children: fe.toUpperCase(
                     e.readOrEmpty("battle_results.battleResult.navigation.teamEfficiency"),
                   ),
                 }),
-                (0, vs.jsx)(u.Tab, {
+                (0, vs.jsx)(p.Tab, {
                   tabId: Ye.financialReport,
-                  children: Ne.toUpperCase(
+                  children: fe.toUpperCase(
                     e.readOrEmpty("battle_results.battleResult.navigation.financialReport"),
                   ),
                 }),
@@ -3928,7 +3932,7 @@ var Wd = Ke(function () {
           }),
         }),
         c &&
-          (0, vs.jsx)(f.div, {
+          (0, vs.jsx)(h.div, {
             className: Gd.info,
             style: i,
             children: (0, vs.jsxs)(Ds, {
@@ -3950,12 +3954,12 @@ var Wd = Ke(function () {
   );
 });
 function Kd() {
-  const e = E(),
+  const e = X(),
     { size: a } = J(
-      { size: h.small },
-      { large: { size: h.medium }, extraLarge: { size: h.large } },
+      { size: x.small },
+      { large: { size: x.medium }, extraLarge: { size: x.large } },
     );
-  return (0, vs.jsx)(u, {
+  return (0, vs.jsx)(p, {
     theme: "primary",
     size: a,
     active: ea(e.location),
@@ -3994,12 +3998,12 @@ var qd = Oe({
   exitResult: { "post-battle": "ue_06_result_exit" },
   notificationBubbleAppeared: { "mission-progress:bubble": "gui_pbs_notification_bubble" },
 });
-ve(
-  new Re()
+he(
+  new we()
     .add(ps)
-    .addWithProps(p, { soundsOverrides: qd })
-    .addWithProps(A, { context: "model.router" })
+    .addWithProps(v, { soundsOverrides: qd })
+    .addWithProps(z, { context: "model.router" })
     .render((0, vs.jsx)(Kd, {})),
 )
-  .then(() => $e(document.getElementById("root")))
-  .then(() => y());
+  .then(() => r(document.getElementById("root")))
+  .then(() => P());

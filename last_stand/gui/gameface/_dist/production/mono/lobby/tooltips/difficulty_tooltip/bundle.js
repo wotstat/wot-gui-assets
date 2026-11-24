@@ -1,42 +1,42 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as s,
-  Fn as a,
-  Ia as i,
-  Mi as t,
-  Nr as d,
-  Pa as r,
+  Ia as a,
+  Mi as i,
+  Nr as t,
+  Pa as d,
+  Rn as r,
   To as l,
   Xn as o,
-  Yn as c,
-  a as _,
-  cr as p,
-  fr as n,
-  ha as f,
-  hi as m,
-  o as u,
-  pr as h,
-  va as x,
-  vo as j,
+  a as c,
+  cr as _,
+  fr as p,
+  ha as n,
+  hi as f,
+  o as m,
+  pr as u,
+  va as h,
+  vo as x,
+  zn as j,
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { o as v, s as y } from "../../chunks/vendor.js";
-import { t as b } from "../../chunks/story_point.js";
-import { i as w, r as g } from "../../chunks/utils.js";
+import { i as b, r as w } from "../../chunks/utils.js";
+import { t as g } from "../../chunks/story_point.js";
 var N = e(y(), 1),
-  [D, T] = h()(({ observableModel: e }) => {
+  [D, T] = u()(({ observableModel: e }) => {
     const s = { root: e.object(), rewardsByWave: e.array("rewardsByWave") },
-      a = n(
+      a = p(
         (e) => {
-          const a = f(s.rewardsByWave.get(), e);
+          const a = n(s.rewardsByWave.get(), e);
           if (!a) throw Error(`No rewards found for index: ${s.rewardsByWave.get()}`);
           return a;
         },
-        { equals: r },
+        { equals: d },
       );
     return { ...s, computes: { getRewardsByWaveIndex: a } };
-  }, i),
-  k = e(j(), 1),
+  }, a),
+  k = e(x(), 1),
   A = "Shield_fdadec95",
   $ = "Shield_content_4d1de7b4",
   W = "Shield_content__completed_df6f2492",
@@ -44,49 +44,49 @@ var N = e(y(), 1),
   R = "Shield_icon__completed_27443cc3",
   S = "Shield_check_c7a26a19",
   B = "Shield_index_726c9af4",
-  L = m(),
-  P = k.memo(function ({ completed: e, index: s = -1, className: a }) {
+  z = f(),
+  L = k.memo(function ({ completed: e, index: s = -1, className: a }) {
     const i = s >= 0;
-    return (0, L.jsx)("div", {
+    return (0, z.jsx)("div", {
       className: (0, N.default)(A, a),
       children:
         i && e
-          ? (0, L.jsx)("div", { className: S })
-          : (0, L.jsxs)("div", {
+          ? (0, z.jsx)("div", { className: S })
+          : (0, z.jsxs)("div", {
               className: (0, N.default)($, e && W),
               children: [
-                (0, L.jsx)("div", { className: (0, N.default)(H, e && R) }),
-                i && (0, L.jsx)("div", { className: B, children: s }),
+                (0, z.jsx)("div", { className: (0, N.default)(H, e && R) }),
+                i && (0, z.jsx)("div", { className: B, children: s }),
               ],
             }),
     });
   }),
-  z = "Rewards_9ead941e",
+  P = "Rewards_9ead941e",
   E = "Rewards_base__last_653802ba",
-  F = "Rewards_shield_57f47719",
-  I = "Rewards_reward_7511df10",
-  M = "Rewards_reward__received_62b5a47f",
-  C = "Rewards_container_4b1e77a4",
+  I = "Rewards_shield_57f47719",
+  M = "Rewards_reward_7511df10",
+  C = "Rewards_reward__received_62b5a47f",
+  F = "Rewards_container_4b1e77a4",
   O = v(function ({ wave: e, isLast: s }) {
     const { model: a } = T(),
       { isReceived: i, index: t, rewards: d } = a.computes.getRewardsByWaveIndex(e);
-    return (0, L.jsx)("div", {
-      className: (0, N.default)(z, s && E),
-      children: (0, L.jsxs)("div", {
-        className: C,
+    return (0, z.jsx)("div", {
+      className: (0, N.default)(P, s && E),
+      children: (0, z.jsxs)("div", {
+        className: F,
         children: [
-          (0, L.jsx)(P, { index: t, completed: i, className: F }),
-          x(d, (e, s) =>
-            (0, L.jsx)(
-              _,
+          (0, z.jsx)(L, { index: t, completed: i, className: I }),
+          h(d, (e, s) =>
+            (0, z.jsx)(
+              c,
               {
                 name: e.name,
-                value: w(e),
-                className: (0, N.default)(I, i && M),
-                size: o.Small,
+                value: b(e),
+                className: (0, N.default)(M, i && C),
+                size: j.Small,
                 special: e.overlayType,
-                image: g(e, o.Small),
-                valueType: c(e.name),
+                image: w(e, j.Small),
+                valueType: r(e.name),
               },
               `${e.name}${s}`,
             ),
@@ -114,35 +114,35 @@ var N = e(y(), 1),
     lockDescr: "DifficultyTooltipApp_lockDescr_a41a7031",
   },
   X = l.resolve("strings"),
-  Y = "last_stand_lobby.difficult.tooltip",
-  G = v(function () {
+  G = "last_stand_lobby.difficult.tooltip",
+  J = v(function () {
     const { model: e } = T(),
-      i = d(),
+      a = t(),
       {
-        level: r,
-        state: l,
-        isLocked: o,
+        level: d,
+        state: r,
+        isLocked: l,
         isHangar: c,
         maxCompletedMissions: _,
         modifier: p,
       } = e.root.get(),
-      n = `level${r}`,
+      n = `level${d}`,
       f = _ > 0,
       m = e.rewardsByWave.get();
-    return (0, L.jsxs)("div", {
+    return (0, z.jsxs)("div", {
       className: q.base,
       children: [
-        (0, L.jsx)(a, { className: q.header, path: `${Y}.header.${n}` }),
-        (0, L.jsxs)("div", {
+        (0, z.jsx)(o, { className: q.header, path: `${G}.header.${n}` }),
+        (0, z.jsxs)("div", {
           className: (0, N.default)(q.subHeaderWrapper, !c && q.subHeaderWrapper__high),
           children: [
-            (0, L.jsx)(P, { completed: f }),
-            (0, L.jsx)(a, {
+            (0, z.jsx)(L, { completed: f }),
+            (0, z.jsx)(o, {
               className: q.subHeader,
-              path: `${Y}.subHeader`,
+              path: `${G}.subHeader`,
               upgradeLegacy: !0,
               params: {
-                count: (0, L.jsx)("div", {
+                count: (0, z.jsx)("div", {
                   className: (0, N.default)(q.missions, f && q.missions__completed),
                   children: _,
                 }),
@@ -151,58 +151,58 @@ var N = e(y(), 1),
           ],
         }),
         c &&
-          (0, L.jsx)(a, {
+          (0, z.jsx)(o, {
             className: q.description,
-            path: `${Y}.description.${n}`,
+            path: `${G}.description.${n}`,
             split: !0,
             params: {
-              modifier: (0, L.jsx)(b, {
+              modifier: (0, z.jsx)(g, {
                 modifier: p,
-                size: b.sizes.s16x16,
+                size: g.sizes.s16x16,
                 classNames: { base: q.storyPoint },
               }),
             },
           }),
         m.length > 0 &&
-          (0, L.jsxs)(L.Fragment, {
+          (0, z.jsxs)(z.Fragment, {
             children: [
-              (0, L.jsx)("div", { className: q.dots }),
-              (0, L.jsx)("div", {
+              (0, z.jsx)("div", { className: q.dots }),
+              (0, z.jsx)("div", {
                 className: q.rewardsDescr,
-                children: X.readOrEmpty(`${Y}.description.reward`),
+                children: X.readOrEmpty(`${G}.description.reward`),
               }),
-              (0, L.jsx)("div", {
+              (0, z.jsx)("div", {
                 className: q.rewards,
-                children: t(m.length, (e) =>
-                  (0, L.jsx)(O, { wave: e, isLast: c && e == m.length - 1 }, e),
+                children: i(m.length, (e) =>
+                  (0, z.jsx)(O, { wave: e, isLast: c && e == m.length - 1 }, e),
                 ),
               }),
             ],
           }),
         c &&
-          (0, L.jsxs)(L.Fragment, {
+          (0, z.jsxs)(z.Fragment, {
             children: [
-              (0, L.jsx)("div", { className: (0, N.default)(q.dots, q.dots__text) }),
-              (0, L.jsxs)("div", {
-                className: (0, N.default)(q.state, o && q.state__locked, q[`state__${l}`]),
+              (0, z.jsx)("div", { className: (0, N.default)(q.dots, q.dots__text) }),
+              (0, z.jsxs)("div", {
+                className: (0, N.default)(q.state, l && q.state__locked, q[`state__${r}`]),
                 children: [
-                  o &&
-                    (0, L.jsx)(s, {
+                  l &&
+                    (0, z.jsx)(s, {
                       path:
                         "R.images.last_stand.gui.maps.icons.difficulties." +
-                        (1 === i ? "icon_lock_small" : "icon_lock_big"),
+                        (1 === a ? "icon_lock_small" : "icon_lock_big"),
                       width: 18,
                       height: 18,
                     }),
-                  X.readOrEmpty(o ? `${Y}.locked` : `${Y}.state.${l}`),
+                  X.readOrEmpty(l ? `${G}.locked` : `${G}.state.${r}`),
                 ],
               }),
-              o &&
-                r > 1 &&
-                (0, L.jsx)(a, { className: q.lockDescr, path: `${Y}.lockedDescr.${n}` }),
+              l &&
+                d > 1 &&
+                (0, z.jsx)(o, { className: q.lockDescr, path: `${G}.lockedDescr.${n}` }),
             ],
           }),
       ],
     });
   });
-p((0, L.jsx)(D, { children: (0, L.jsx)(u, { children: (0, L.jsx)(G, {}) }) }));
+_((0, z.jsx)(D, { children: (0, z.jsx)(m, { children: (0, z.jsx)(J, {}) }) }));

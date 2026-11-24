@@ -642,6 +642,38 @@ var timeFormats = { full: DateTimeFormatsEnum.FullTime, short: DateTimeFormatsEn
 function formatTime(e, t, n = !0) {
   return window.regionalDateTime.getRegionalDateTime(t, e, n);
 }
+function getDateParts(e) {
+  const t = new Date(1e3 * e);
+  return {
+    year: t.getFullYear(),
+    month: t.getMonth() + 1,
+    hours: t.getHours(),
+    minutes: t.getMinutes(),
+    seconds: t.getSeconds(),
+  };
+}
+function isSameTime(e, t) {
+  return e.hours === t.hours && e.minutes === t.minutes && e.seconds === t.seconds;
+}
+function getRangeFormatPath(e, t) {
+  const n = e.year === t.year;
+  return [
+    "datetime_formats",
+    "dateRange",
+    "dateWithYear",
+    n ? "sameYear" : "differentYear",
+    n && e.month === t.month ? "sameMonth" : "differentMonth",
+    isSameTime(e, t) ? "sameTime" : "differentTime",
+  ].join(".");
+}
+function formatRange(e, t) {
+  const n = getRangeFormatPath(getDateParts(e), getDateParts(t)),
+    r = resources.resolve("strings");
+  return {
+    start: window.regionalDateTime.getFormattedDateTime(e, r.readOrEmpty(`${n}.start`), !0),
+    end: window.regionalDateTime.getFormattedDateTime(t, r.readOrEmpty(`${n}.end`), !0),
+  };
+}
 var intl$4 = {
     isNumberFormat: isNumberFormat,
     formatNumber: formatNumber$1,
@@ -653,6 +685,7 @@ var intl$4 = {
     dateTimeFormats: DateTimeFormatsEnum,
     formatTime: formatTime,
     timeFormats: timeFormatList,
+    formatRange: formatRange,
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
   },
@@ -24764,15 +24797,12 @@ var useScaleState$1 = () => {
     const [e, t] = (0, import_react.useState)(getScale$2());
     return (
       (0, import_react.useEffect)(() => {
-        const e = () => {
-          t(getScale$2());
+        const e = () => t(getScale$2()),
+          n = onResize$1(e),
+          r = onRescale(e);
+        return () => {
+          (n(), r());
         };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
       }, []),
       e
     );
@@ -28328,7 +28358,11 @@ function Portal$1({
     $ = (0, import_react.useMemo)(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
-    );
+    ),
+    [y, S] = useSpring$1(() => ({
+      from: { opacity: 0, transform: v[r] },
+      config: { easing: easings$2.easeInOutCubic, duration: 250 },
+    }));
   (0, import_react.useEffect)(() => {
     _.current = void 0;
     const e = f.current;
@@ -28340,7 +28374,7 @@ function Portal$1({
       if (!p.opened) return void h(void 0);
       if (!1 === l(p, { callerBounding: t, containerBounding: a, bodyBounding: o })) return;
       if (s) {
-        if (_.current && !isEqual$1(_.current, t)) return void p.close();
+        if (_.current && !isEqual$1(_.current, t)) return (S.set({ opacity: 0 }), void p.close());
         _.current = t;
       }
       const i = getUpdatedPosition(r, g, t, a, o);
@@ -28351,8 +28385,8 @@ function Portal$1({
         }));
     });
     return (o.start(), o.stop);
-  }, [p, l, s, g, n, b, p.id, p.portal, p.trigger, r, p.opened]);
-  const y = (0, import_react.useCallback)(() => {
+  }, [p, l, s, S, g, n, b, p.id, p.portal, p.trigger, r, p.opened]);
+  const A = (0, import_react.useCallback)(() => {
     const e = f.current;
     e &&
       document.activeElement &&
@@ -28360,7 +28394,7 @@ function Portal$1({
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  ((0, import_react.useEffect)(() => p.subscribe.onBeforeClose(y), [p.subscribe, y]),
+  ((0, import_react.useEffect)(() => p.subscribe.onBeforeClose(A), [p.subscribe, A]),
     useHandleKeydown(i && p.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
       p.close();
     }),
@@ -28397,21 +28431,17 @@ function Portal$1({
           }),
         ).dispose;
     }, [p]));
-  const [S, A] = useSpring$1(() => ({
-      from: { opacity: 0, transform: v[r] },
-      config: { easing: easings$2.easeInOutCubic, duration: 250 },
-    })),
-    w = import_react.useRef(v);
+  const w = import_react.useRef(v);
   return (
     (w.current = v),
     (0, import_react.useEffect)(() => {
       if (!m) return;
       const e = { opacity: 0, transform: w.current[m] };
-      A.start({
+      S.start({
         from: p.opened ? e : void 0,
         to: p.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [A, m, p.opened]),
+    }, [S, m, p.opened]),
     !p.opened && o
       ? null
       : (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
@@ -28423,11 +28453,11 @@ function Portal$1({
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: S.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: S.opacity.to((e) => (0 !== e || p.opened ? "block" : "none")),
+                pointerEvents: y.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: y.opacity.to((e) => (0 !== e || p.opened ? "block" : "none")),
                 ...d.style,
               },
-              children: (0, import_jsx_runtime.jsx)(animated$1.div, { style: S, children: e }),
+              children: (0, import_jsx_runtime.jsx)(animated$1.div, { style: y, children: e }),
             }),
             $,
           ),
@@ -29114,7 +29144,7 @@ function useScrollBounding(e, [t, n] = IGNORE_DEFAULT) {
   );
 }
 var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
-  background$10 = "Thumb_background_b893084a",
+  background$10 = "Thumb_background_7f3dd6ac",
   border$8 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
   icon$13 = "Thumb_icon_dca8bf26",
@@ -44668,102 +44698,6 @@ var base$10 = "Bubble_df22310d",
     Value: Value,
     Icon: Icon,
   },
-  DEFAULT_FRAME_TIME = 33,
-  DEFAULTS = { FRAME_TIME: 33, INITIAL_FRAME_INDEX: 0, LOOP: !0, STATE: "play" };
-function createGridImgSourceGetter(e) {
-  const { chunk: t } = e,
-    n = t.rows * t.columns;
-  return (r) => {
-    const a = r % n,
-      o = (a % t.columns) * e.width,
-      i = Math.trunc(a / t.columns) * e.height;
-    return { path: e.getChunkPath(Math.trunc(r / n)), x: o, y: i };
-  };
-}
-function addChunkIndexToEndPath(e) {
-  return (t) => `${e}${t}`;
-}
-var CanvasSequence = (0, import_react.memo)(function ({
-    width: e,
-    height: t,
-    getImageSource: n,
-    frameCount: r,
-    onAnimate: a,
-    frameTime: o = DEFAULTS.FRAME_TIME,
-    initialFrameIndex: i = DEFAULTS.INITIAL_FRAME_INDEX,
-    lastFrameIndex: s = r - 1,
-    loop: l = DEFAULTS.LOOP,
-    state: u = DEFAULTS.STATE,
-    onAnimationDone: c,
-    onAnimationComplete: d,
-    poster: p,
-    ...f
-  }) {
-    const _ = (0, import_react.useRef)(null);
-    return (
-      (0, import_react.useEffect)(() => {
-        const e = _.current;
-        if (!e) return;
-        const t = e.getContext("2d"),
-          r = (n) => {
-            (t.clearRect(0, 0, e.width, e.height), t.drawImage(n.img, -n.x, -n.y));
-          };
-        switch (u) {
-          case "play":
-            return (function () {
-              const e = generateImages(i, s, n),
-                t = createFrameCounter(i, s),
-                u = window.setInterval(() => {
-                  const n = t(),
-                    o = e.get(n);
-                  o
-                    ? (a?.(n, o), r(o), n === s && (d?.(), l || (c?.(), window.clearInterval(u))))
-                    : console.error("frameImage was not provided in frameImages Map");
-                }, o);
-              return () => window.clearInterval(u);
-            })();
-          case "stop":
-            return (function () {
-              const e = 0 === i && p ? { path: p, x: 0, y: 0 } : n(i),
-                t = new Image();
-              t.src = e.path;
-              const a = () => r(createFrameImage(e, t));
-              return (t.addEventListener("load", a), () => t.removeEventListener("load", a));
-            })();
-          default:
-            return console.error("[CanvasSequence] Unreachable state!");
-        }
-      }, [o, n, i, s, l, a, d, c, p, u]),
-      (0, import_jsx_runtime.jsx)("canvas", { ...f, width: e, height: t, ref: _ })
-    );
-  }),
-  createFrameCounter = (e, t) => {
-    let n = e;
-    return () => {
-      const r = n;
-      return ((n += 1), n > t && (n = e), r);
-    };
-  },
-  createFrameImage = (e, t) => ({ ...e, img: t }),
-  generateImages = (e, t, n) => {
-    const r = new Map(),
-      a = {};
-    for (let o = e; o <= t; o++) {
-      const e = n(o),
-        t = a[e.path];
-      if (t) r.set(o, createFrameImage(e, t));
-      else {
-        const t = new Image();
-        ((a[e.path] = t),
-          (t.src = e.path),
-          (t.onerror = () => {
-            console.error(`[CanvasSequence] Error loading image(${o})`, e.path, `(${e.x},${e.y})`);
-          }),
-          r.set(o, createFrameImage(e, t)));
-      }
-    }
-    return r;
-  },
   awilix_browser_exports = __exportAll({
     AwilixError: () => AwilixError,
     AwilixRegistrationError: () => AwilixRegistrationError,
@@ -48121,7 +48055,7 @@ var DEV$1 = void 0,
     insert: () => insert,
     isDev: () => !1,
     isServer: () => !1,
-    memo: () => memo$6,
+    memo: () => memo$7,
     mergeProps: () => mergeProps,
     render: () => render,
     renderToStream: () => renderToStream,
@@ -48636,7 +48570,7 @@ var DelegatedEvents = new Set([
     "noindex",
     "search",
   ]),
-  memo$6 = (e) => createMemo(() => e());
+  memo$7 = (e) => createMemo(() => e());
 function reconcileArrays(e, t, n) {
   let r = n.length,
     a = t.length,
@@ -50424,7 +50358,7 @@ function flattenBy(e, t) {
     };
   return (r(e), n);
 }
-function memo$5(e, t, n) {
+function memo$6(e, t, n) {
   let r,
     a = [];
   return (o) => {
@@ -50476,7 +50410,7 @@ function createCell(e, t, n, r) {
       var t;
       return null != (t = a.getValue()) ? t : e.options.renderFallbackValue;
     },
-    getContext: memo$5(
+    getContext: memo$6(
       () => [e, n, t, a],
       (e, t, n, r) => ({
         table: e,
@@ -50539,7 +50473,7 @@ function createColumn(e, t, n, r) {
     depth: n,
     columnDef: i,
     columns: [],
-    getFlatColumns: memo$5(
+    getFlatColumns: memo$6(
       () => [!0],
       () => {
         var e;
@@ -50547,7 +50481,7 @@ function createColumn(e, t, n, r) {
       },
       getMemoOptions(e.options, "debugColumns", "column.getFlatColumns"),
     ),
-    getLeafColumns: memo$5(
+    getLeafColumns: memo$6(
       () => [e._getOrderColumnsFn()],
       (e) => {
         var t;
@@ -50593,7 +50527,7 @@ function createHeader(e, t, n) {
 }
 var Headers = {
   createTable: (e) => {
-    ((e.getHeaderGroups = memo$5(
+    ((e.getHeaderGroups = memo$6(
       () => [
         e.getAllColumns(),
         e.getVisibleLeafColumns(),
@@ -50626,7 +50560,7 @@ var Headers = {
       },
       getMemoOptions(e.options, debug, "getHeaderGroups"),
     )),
-      (e.getCenterHeaderGroups = memo$5(
+      (e.getCenterHeaderGroups = memo$6(
         () => [
           e.getAllColumns(),
           e.getVisibleLeafColumns(),
@@ -50644,7 +50578,7 @@ var Headers = {
           ),
         getMemoOptions(e.options, debug, "getCenterHeaderGroups"),
       )),
-      (e.getLeftHeaderGroups = memo$5(
+      (e.getLeftHeaderGroups = memo$6(
         () => [e.getAllColumns(), e.getVisibleLeafColumns(), e.getState().columnPinning.left],
         (t, n, r) => {
           var a;
@@ -50660,7 +50594,7 @@ var Headers = {
         },
         getMemoOptions(e.options, debug, "getLeftHeaderGroups"),
       )),
-      (e.getRightHeaderGroups = memo$5(
+      (e.getRightHeaderGroups = memo$6(
         () => [e.getAllColumns(), e.getVisibleLeafColumns(), e.getState().columnPinning.right],
         (t, n, r) => {
           var a;
@@ -50676,47 +50610,47 @@ var Headers = {
         },
         getMemoOptions(e.options, debug, "getRightHeaderGroups"),
       )),
-      (e.getFooterGroups = memo$5(
+      (e.getFooterGroups = memo$6(
         () => [e.getHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getFooterGroups"),
       )),
-      (e.getLeftFooterGroups = memo$5(
+      (e.getLeftFooterGroups = memo$6(
         () => [e.getLeftHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getLeftFooterGroups"),
       )),
-      (e.getCenterFooterGroups = memo$5(
+      (e.getCenterFooterGroups = memo$6(
         () => [e.getCenterHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getCenterFooterGroups"),
       )),
-      (e.getRightFooterGroups = memo$5(
+      (e.getRightFooterGroups = memo$6(
         () => [e.getRightHeaderGroups()],
         (e) => [...e].reverse(),
         getMemoOptions(e.options, debug, "getRightFooterGroups"),
       )),
-      (e.getFlatHeaders = memo$5(
+      (e.getFlatHeaders = memo$6(
         () => [e.getHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getFlatHeaders"),
       )),
-      (e.getLeftFlatHeaders = memo$5(
+      (e.getLeftFlatHeaders = memo$6(
         () => [e.getLeftHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getLeftFlatHeaders"),
       )),
-      (e.getCenterFlatHeaders = memo$5(
+      (e.getCenterFlatHeaders = memo$6(
         () => [e.getCenterHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getCenterFlatHeaders"),
       )),
-      (e.getRightFlatHeaders = memo$5(
+      (e.getRightFlatHeaders = memo$6(
         () => [e.getRightHeaderGroups()],
         (e) => e.map((e) => e.headers).flat(),
         getMemoOptions(e.options, debug, "getRightFlatHeaders"),
       )),
-      (e.getCenterLeafHeaders = memo$5(
+      (e.getCenterLeafHeaders = memo$6(
         () => [e.getCenterFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -50725,7 +50659,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getCenterLeafHeaders"),
       )),
-      (e.getLeftLeafHeaders = memo$5(
+      (e.getLeftLeafHeaders = memo$6(
         () => [e.getLeftFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -50734,7 +50668,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getLeftLeafHeaders"),
       )),
-      (e.getRightLeafHeaders = memo$5(
+      (e.getRightLeafHeaders = memo$6(
         () => [e.getRightFlatHeaders()],
         (e) =>
           e.filter((e) => {
@@ -50743,7 +50677,7 @@ var Headers = {
           }),
         getMemoOptions(e.options, debug, "getRightLeafHeaders"),
       )),
-      (e.getLeafHeaders = memo$5(
+      (e.getLeafHeaders = memo$6(
         () => [e.getLeftHeaderGroups(), e.getCenterHeaderGroups(), e.getRightHeaderGroups()],
         (e, t, n) => {
           var r, a, o, i, s, l;
@@ -50874,12 +50808,12 @@ var createRow = (e, t, n, r, a, o, i) => {
         }
         return e.reverse();
       },
-      getAllCells: memo$5(
+      getAllCells: memo$6(
         () => [e.getAllLeafColumns()],
         (t) => t.map((t) => createCell(e, s, t, t.id)),
         getMemoOptions(e.options, "debugRows", "getAllCells"),
       ),
-      _getAllCellsByColumnId: memo$5(
+      _getAllCellsByColumnId: memo$6(
         () => [s.getAllCells()],
         (e) => e.reduce((e, t) => ((e[t.column.id] = t), e), {}),
         getMemoOptions(e.options, "debugRows", "getAllCellsByColumnId"),
@@ -51292,7 +51226,7 @@ var ColumnOrdering = {
     getInitialState: (e) => ({ columnOrder: [], ...e }),
     getDefaultOptions: (e) => ({ onColumnOrderChange: makeStateUpdater("columnOrder", e) }),
     createColumn: (e, t) => {
-      ((e.getIndex = memo$5(
+      ((e.getIndex = memo$6(
         (e) => [_getVisibleLeafColumns(t, e)],
         (t) => t.findIndex((t) => t.id === e.id),
         getMemoOptions(t.options, "debugColumns", "getIndex"),
@@ -51314,7 +51248,7 @@ var ColumnOrdering = {
           var n;
           e.setColumnOrder(t ? [] : null != (n = e.initialState.columnOrder) ? n : []);
         }),
-        (e._getOrderColumnsFn = memo$5(
+        (e._getOrderColumnsFn = memo$6(
           () => [e.getState().columnOrder, e.getState().grouping, e.options.groupedColumnMode],
           (e, t, n) => (r) => {
             let a = [];
@@ -51412,7 +51346,7 @@ var ColumnOrdering = {
         }));
     },
     createRow: (e, t) => {
-      ((e.getCenterVisibleCells = memo$5(
+      ((e.getCenterVisibleCells = memo$6(
         () => [
           e._getAllVisibleCells(),
           t.getState().columnPinning.left,
@@ -51424,7 +51358,7 @@ var ColumnOrdering = {
         },
         getMemoOptions(t.options, "debugRows", "getCenterVisibleCells"),
       )),
-        (e.getLeftVisibleCells = memo$5(
+        (e.getLeftVisibleCells = memo$6(
           () => [e._getAllVisibleCells(), t.getState().columnPinning.left],
           (e, t) =>
             (null != t ? t : [])
@@ -51433,7 +51367,7 @@ var ColumnOrdering = {
               .map((e) => ({ ...e, position: "left" })),
           getMemoOptions(t.options, "debugRows", "getLeftVisibleCells"),
         )),
-        (e.getRightVisibleCells = memo$5(
+        (e.getRightVisibleCells = memo$6(
           () => [e._getAllVisibleCells(), t.getState().columnPinning.right],
           (e, t) =>
             (null != t ? t : [])
@@ -51467,17 +51401,17 @@ var ColumnOrdering = {
                 (null == (o = r.right) ? void 0 : o.length),
               );
         }),
-        (e.getLeftLeafColumns = memo$5(
+        (e.getLeftLeafColumns = memo$6(
           () => [e.getAllLeafColumns(), e.getState().columnPinning.left],
           (e, t) => (null != t ? t : []).map((t) => e.find((e) => e.id === t)).filter(Boolean),
           getMemoOptions(e.options, "debugColumns", "getLeftLeafColumns"),
         )),
-        (e.getRightLeafColumns = memo$5(
+        (e.getRightLeafColumns = memo$6(
           () => [e.getAllLeafColumns(), e.getState().columnPinning.right],
           (e, t) => (null != t ? t : []).map((t) => e.find((e) => e.id === t)).filter(Boolean),
           getMemoOptions(e.options, "debugColumns", "getRightLeafColumns"),
         )),
-        (e.getCenterLeafColumns = memo$5(
+        (e.getCenterLeafColumns = memo$6(
           () => [
             e.getAllLeafColumns(),
             e.getState().columnPinning.left,
@@ -51528,12 +51462,12 @@ var defaultColumnSizing = { size: 150, minSize: 20, maxSize: Number.MAX_SAFE_INT
           null != (a = e.columnDef.maxSize) ? a : defaultColumnSizing.maxSize,
         );
       }),
-        (e.getStart = memo$5(
+        (e.getStart = memo$6(
           (e) => [e, _getVisibleLeafColumns(t, e), t.getState().columnSizing],
           (t, n) => n.slice(0, e.getIndex(t)).reduce((e, t) => e + t.getSize(), 0),
           getMemoOptions(t.options, "debugColumns", "getStart"),
         )),
-        (e.getAfter = memo$5(
+        (e.getAfter = memo$6(
           (e) => [e, _getVisibleLeafColumns(t, e), t.getState().columnSizing],
           (t, n) => n.slice(e.getIndex(t) + 1).reduce((e, t) => e + t.getSize(), 0),
           getMemoOptions(t.options, "debugColumns", "getAfter"),
@@ -51777,12 +51711,12 @@ var ColumnVisibility = {
       }));
   },
   createRow: (e, t) => {
-    ((e._getAllVisibleCells = memo$5(
+    ((e._getAllVisibleCells = memo$6(
       () => [e.getAllCells(), t.getState().columnVisibility],
       (e) => e.filter((e) => e.column.getIsVisible()),
       getMemoOptions(t.options, "debugRows", "_getAllVisibleCells"),
     )),
-      (e.getVisibleCells = memo$5(
+      (e.getVisibleCells = memo$6(
         () => [e.getLeftVisibleCells(), e.getCenterVisibleCells(), e.getRightVisibleCells()],
         (e, t, n) => [...e, ...t, ...n],
         getMemoOptions(t.options, "debugRows", "getVisibleCells"),
@@ -51790,7 +51724,7 @@ var ColumnVisibility = {
   },
   createTable: (e) => {
     const t = (t, n) =>
-      memo$5(
+      memo$6(
         () => [
           n(),
           n()
@@ -52148,7 +52082,7 @@ var GlobalFaceting = {
             let a = functionalUpdate(t, null != (r = e.options.pageCount) ? r : -1);
             return ("number" == typeof a && (a = Math.max(-1, a)), { ...n, pageCount: a });
           })),
-        (e.getPageOptions = memo$5(
+        (e.getPageOptions = memo$6(
           () => [e.getPageCount()],
           (e) => {
             let t = [];
@@ -52305,17 +52239,17 @@ var GlobalFaceting = {
             .filter(Boolean)
             .map((e) => ({ ...e, position: r }));
         }),
-        (e.getTopRows = memo$5(
+        (e.getTopRows = memo$6(
           () => [e.getRowModel().rows, e.getState().rowPinning.top],
           (t, n) => e._getPinnedRows(t, n, "top"),
           getMemoOptions(e.options, "debugRows", "getTopRows"),
         )),
-        (e.getBottomRows = memo$5(
+        (e.getBottomRows = memo$6(
           () => [e.getRowModel().rows, e.getState().rowPinning.bottom],
           (t, n) => e._getPinnedRows(t, n, "bottom"),
           getMemoOptions(e.options, "debugRows", "getBottomRows"),
         )),
-        (e.getCenterRows = memo$5(
+        (e.getCenterRows = memo$6(
           () => [e.getRowModel().rows, e.getState().rowPinning.top, e.getState().rowPinning.bottom],
           (e, t, n) => {
             const r = new Set([...(null != t ? t : []), ...(null != n ? n : [])]);
@@ -52369,19 +52303,19 @@ var GlobalFaceting = {
             );
           })),
         (e.getPreSelectedRowModel = () => e.getCoreRowModel()),
-        (e.getSelectedRowModel = memo$5(
+        (e.getSelectedRowModel = memo$6(
           () => [e.getState().rowSelection, e.getCoreRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
           getMemoOptions(e.options, "debugTable", "getSelectedRowModel"),
         )),
-        (e.getFilteredSelectedRowModel = memo$5(
+        (e.getFilteredSelectedRowModel = memo$6(
           () => [e.getState().rowSelection, e.getFilteredRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
           getMemoOptions(e.options, "debugTable", "getFilteredSelectedRowModel"),
         )),
-        (e.getGroupedSelectedRowModel = memo$5(
+        (e.getGroupedSelectedRowModel = memo$6(
           () => [e.getState().rowSelection, e.getSortedRowModel()],
           (t, n) =>
             Object.keys(t).length ? selectRowsFn(e, n) : { rows: [], flatRows: [], rowsById: {} },
@@ -52828,7 +52762,7 @@ function createTable(e) {
       if (!n && ((n = a.getCoreRowModel().rowsById[e]), !n)) throw new Error();
       return n;
     },
-    _getDefaultColumnDef: memo$5(
+    _getDefaultColumnDef: memo$6(
       () => [a.options.defaultColumn],
       (e) => {
         var t;
@@ -52858,7 +52792,7 @@ function createTable(e) {
       getMemoOptions(e, "debugColumns", "_getDefaultColumnDef"),
     ),
     _getColumnDefs: () => a.options.columns,
-    getAllColumns: memo$5(
+    getAllColumns: memo$6(
       () => [a._getColumnDefs()],
       (e) => {
         const t = function (e, n, r) {
@@ -52875,17 +52809,17 @@ function createTable(e) {
       },
       getMemoOptions(e, "debugColumns", "getAllColumns"),
     ),
-    getAllFlatColumns: memo$5(
+    getAllFlatColumns: memo$6(
       () => [a.getAllColumns()],
       (e) => e.flatMap((e) => e.getFlatColumns()),
       getMemoOptions(e, "debugColumns", "getAllFlatColumns"),
     ),
-    _getAllFlatColumnsById: memo$5(
+    _getAllFlatColumnsById: memo$6(
       () => [a.getAllFlatColumns()],
       (e) => e.reduce((e, t) => ((e[t.id] = t), e), {}),
       getMemoOptions(e, "debugColumns", "getAllFlatColumnsById"),
     ),
-    getAllLeafColumns: memo$5(
+    getAllLeafColumns: memo$6(
       () => [a.getAllColumns(), a._getOrderColumnsFn()],
       (e, t) => t(e.flatMap((e) => e.getLeafColumns())),
       getMemoOptions(e, "debugColumns", "getAllLeafColumns"),
@@ -52901,7 +52835,7 @@ function createTable(e) {
 }
 function getCoreRowModel() {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [e.options.data],
       (t) => {
         const n = { rows: [], flatRows: [], rowsById: {} },
@@ -52997,7 +52931,7 @@ function filterRowModelFromRoot(e, t, n) {
 }
 function getFilteredRowModel() {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [e.getPreFilteredRowModel(), e.getState().columnFilters, e.getState().globalFilter],
       (t, n, r) => {
         if (!t.rows.length || ((null == n || !n.length) && !r)) {
@@ -53081,7 +53015,7 @@ function getFilteredRowModel() {
 }
 function getPaginationRowModel(e) {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [
         e.getState().pagination,
         e.getPrePaginationRowModel(),
@@ -53109,7 +53043,7 @@ function getPaginationRowModel(e) {
 }
 function getSortedRowModel() {
   return (e) =>
-    memo$5(
+    memo$6(
       () => [e.getState().sorting, e.getPreSortedRowModel()],
       (t, n) => {
         if (!n.rows.length || null == t || !t.length) return n;
@@ -54695,7 +54629,103 @@ function isValidBreakpoint(e) {
   (ProgressBar.sizes = sizes),
   (ProgressBar.statuses = statuses),
   (ProgressBar.animations = animations));
-var base$1 = "Counter_dc10b86a",
+var DEFAULT_FRAME_TIME = 33,
+  DEFAULTS = { FRAME_TIME: 33, INITIAL_FRAME_INDEX: 0, LOOP: !0, STATE: "play" };
+function createGridImgSourceGetter(e) {
+  const { chunk: t } = e,
+    n = t.rows * t.columns;
+  return (r) => {
+    const a = r % n,
+      o = (a % t.columns) * e.width,
+      i = Math.trunc(a / t.columns) * e.height;
+    return { path: e.getChunkPath(Math.trunc(r / n)), x: o, y: i };
+  };
+}
+function addChunkIndexToEndPath(e) {
+  return (t) => `${e}${t}`;
+}
+var CanvasSequence = (0, import_react.memo)(function ({
+    width: e,
+    height: t,
+    getImageSource: n,
+    frameCount: r,
+    onAnimate: a,
+    frameTime: o = DEFAULTS.FRAME_TIME,
+    initialFrameIndex: i = DEFAULTS.INITIAL_FRAME_INDEX,
+    lastFrameIndex: s = r - 1,
+    loop: l = DEFAULTS.LOOP,
+    state: u = DEFAULTS.STATE,
+    onAnimationDone: c,
+    onAnimationComplete: d,
+    poster: p,
+    ...f
+  }) {
+    const _ = (0, import_react.useRef)(null);
+    return (
+      (0, import_react.useEffect)(() => {
+        const e = _.current;
+        if (!e) return;
+        const t = e.getContext("2d"),
+          r = (n) => {
+            (t.clearRect(0, 0, e.width, e.height), t.drawImage(n.img, -n.x, -n.y));
+          };
+        switch (u) {
+          case "play":
+            return (function () {
+              const e = generateImages(i, s, n),
+                t = createFrameCounter(i, s),
+                u = window.setInterval(() => {
+                  const n = t(),
+                    o = e.get(n);
+                  o
+                    ? (a?.(n, o), r(o), n === s && (d?.(), l || (c?.(), window.clearInterval(u))))
+                    : console.error("frameImage was not provided in frameImages Map");
+                }, o);
+              return () => window.clearInterval(u);
+            })();
+          case "stop":
+            return (function () {
+              const e = 0 === i && p ? { path: p, x: 0, y: 0 } : n(i),
+                t = new Image();
+              t.src = e.path;
+              const a = () => r(createFrameImage(e, t));
+              return (t.addEventListener("load", a), () => t.removeEventListener("load", a));
+            })();
+          default:
+            return console.error("[CanvasSequence] Unreachable state!");
+        }
+      }, [o, n, i, s, l, a, d, c, p, u]),
+      (0, import_jsx_runtime.jsx)("canvas", { ...f, width: e, height: t, ref: _ })
+    );
+  }),
+  createFrameCounter = (e, t) => {
+    let n = e;
+    return () => {
+      const r = n;
+      return ((n += 1), n > t && (n = e), r);
+    };
+  },
+  createFrameImage = (e, t) => ({ ...e, img: t }),
+  generateImages = (e, t, n) => {
+    const r = new Map(),
+      a = {};
+    for (let o = e; o <= t; o++) {
+      const e = n(o),
+        t = a[e.path];
+      if (t) r.set(o, createFrameImage(e, t));
+      else {
+        const t = new Image();
+        ((a[e.path] = t),
+          (t.src = e.path),
+          (t.onerror = () => {
+            console.error(`[CanvasSequence] Error loading image(${o})`, e.path, `(${e.x},${e.y})`);
+          }),
+          r.set(o, createFrameImage(e, t)));
+      }
+    }
+    return r;
+  },
+  base$1 = "Counter_dc10b86a",
   show = "Counter_show_f40ddf91",
   base__big = "Counter_base__big_6bd2877c",
   base__small = "Counter_base__small_631cb8e0",
@@ -55076,7 +55106,7 @@ export {
   DisposeBuilder as Ro,
   isTypeValidValue as Rr,
   perkStates as Rt,
-  createGridImgSourceGetter as S,
+  loadPlugin as S,
   configure as Sa,
   useBackportContextMenu as Si,
   useSpring as Sn,
@@ -55134,7 +55164,7 @@ export {
   sendEvent$3 as Zo,
   minLength as Zr,
   Tooltip$1 as Zt,
-  isReactComponent$1 as _,
+  measureTypes as _,
   usePrevious as _a,
   initializeModelWithContext as _i,
   SimpleTooltip$1 as _n,
@@ -55142,7 +55172,7 @@ export {
   Popover as _r,
   now$1 as _s,
   formatValue as _t,
-  PlayerInfo as a,
+  createGridImgSourceGetter as a,
   useIsUnmounted as aa,
   string as ai,
   useCardsWrapperContext as an,
@@ -55150,7 +55180,7 @@ export {
   Direction as ar,
   capitalize as as,
   GrowAnimationState as at,
-  CanvasSequence as b,
+  isReactComponent$1 as b,
   autorun as ba,
   useAdjustScreenWidth as bi,
   directions$1 as bn,
@@ -55158,7 +55188,7 @@ export {
   Img as br,
   easings$2 as bs,
   sizes$8 as bt,
-  useTableContext as c,
+  PlayerInfo as c,
   useMount$1 as ca,
   defineStyledComponent as ci,
   Currency as cn,
@@ -55166,7 +55196,7 @@ export {
   useHorizontalScroll as cr,
   ONE_DAY$1 as cs,
   Tooltip as ct,
-  flexRender as d,
+  useTableContext as d,
   useEmitter as da,
   useRouter as di,
   imageSizes$2 as dn,
@@ -55181,7 +55211,7 @@ export {
   useScrollByDragElements as er,
   graphicsQuality$1 as es,
   formatPrintf as et,
-  createColumnHelper as f,
+  columnBehaviours as f,
   useDebounce as fa,
   runView as fi,
   sizes$15 as fn,
@@ -55189,7 +55219,7 @@ export {
   Slottable as fr,
   format$2 as fs,
   getRewardImage$1 as ft,
-  GradientText as g,
+  getFilteredRowModel as g,
   useEvent as ga,
   computedFn$1 as gi,
   BackportTooltip$1 as gn,
@@ -55197,7 +55227,7 @@ export {
   themes$1 as gr,
   greaterThanOrEqual as gs,
   Timer as gt,
-  useMeasure as h,
+  createColumnHelper as h,
   useRefResizeObserver as ha,
   computeds as hi,
   BackdropTooltip as hn,
@@ -55205,7 +55235,7 @@ export {
   sizes$19 as hr,
   fromMs as hs,
   ProgressBar$2 as ht,
-  ProgressBar as i,
+  addChunkIndexToEndPath as i,
   useHandleKeyup as ia,
   safeParse as ii,
   Card as in,
@@ -55227,7 +55257,7 @@ export {
   slice as ko,
   atSpgRoles as kr,
   useDragAndDrop as kt,
-  columnBehaviours as l,
+  Table as l,
   useUnmount$1 as la,
   Video$1 as li,
   currencyTypes as ln,
@@ -55235,7 +55265,7 @@ export {
   asMemoized as lr,
   ONE_HOUR$1 as ls,
   Rewards$1 as lt,
-  measureTypes as m,
+  flexRender as m,
   throttle_default as ma,
   assignRefs as mi,
   require_classnames as mn,
@@ -55251,7 +55281,7 @@ export {
   Bar$1 as nr,
   mouse$1 as ns,
   ProgressBar$1 as nt,
-  Table as o,
+  isValidBreakpoint as o,
   useInsideEvent as oa,
   transform as oi,
   useCardContext as on,
@@ -55259,7 +55289,7 @@ export {
   defaultSettings as or,
   normalizeResource as os,
   AnimationType as ot,
-  getFilteredRowModel as p,
+  tableParts as p,
   debounce_default as pa,
   JSXBuilder as pi,
   types$3 as pn,
@@ -55274,7 +55304,7 @@ export {
   pxToRem$1 as qo,
   enum_ as qr,
   ErrorHandler as qt,
-  isValidBreakpoint as r,
+  CanvasSequence as r,
   useHandleKeydown as ra,
   pipe as ri,
   CardsWrapper as rn,
@@ -55282,7 +55312,7 @@ export {
   useScrollBounding as rr,
   onRescale as rs,
   defaultAnimationSettings as rt,
-  TableProvider as s,
+  ProgressBar as s,
   useIsFirstRender as sa,
   union as si,
   WithDiscount as sn,
@@ -55298,7 +55328,7 @@ export {
   Area$1 as tr,
   writeClipboard as ts,
   FormatNumber as tt,
-  tableParts as u,
+  TableProvider as u,
   useInterval as ua,
   ModelRouterProvider as ui,
   discountTypes as un,
@@ -55306,7 +55336,7 @@ export {
   TruncatedText as ur,
   ONE_WEEK$1 as us,
   Reward$1 as ut,
-  injectGFPlugins as v,
+  useMeasure as v,
   Reaction as va,
   createSimpleGetter as vi,
   Tooltip$2 as vn,
@@ -55322,7 +55352,7 @@ export {
   renderString as wr,
   intl$4 as ws,
   DragAndDrop as wt,
-  addChunkIndexToEndPath as x,
+  injectGFPlugins as x,
   comparer as xa,
   useClickOutside as xi,
   animated as xn,
@@ -55330,7 +55360,7 @@ export {
   observer as xr,
   clsx as xs,
   ExtendedText as xt,
-  loadPlugin as y,
+  GradientText as y,
   action as ya,
   useExternalPaddings as yi,
   VehicleInfo as yn,

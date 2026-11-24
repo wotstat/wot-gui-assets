@@ -2,11 +2,11 @@ import {
   $ as e,
   $t as s,
   Cn as t,
-  Fn as a,
-  Ia as r,
-  Qt as i,
-  Sn as l,
-  To as n,
+  Ia as a,
+  Qt as r,
+  Sn as i,
+  To as l,
+  Xn as n,
   _n as c,
   bo as o,
   c as m,
@@ -42,8 +42,8 @@ import {
 } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { a as V, o as H } from "../../chunks/vendor.js";
-import { o as z, r as B, t as W, u as F } from "../../chunks/tankman_role.js";
-var [X, Q] = S("VehicleTooltipModelProvider")(({ observableModel: e }) => {
+import { o as z, r as B, t as W, u as X } from "../../chunks/tankman_role.js";
+var [F, Q] = S("VehicleTooltipModelProvider")(({ observableModel: e }) => {
     const s = {
         ...e.primitives(["status", "stateLevel", "bpEntityValid"]),
         statistics: e.object("statistics"),
@@ -83,7 +83,7 @@ var [X, Q] = S("VehicleTooltipModelProvider")(({ observableModel: e }) => {
         hasSpecialMechanics: c,
       },
     };
-  }, r),
+  }, a),
   q = "INACTIVE",
   K = "ACTIVE",
   U = "CANCELLED",
@@ -122,22 +122,22 @@ var me = "Row_a52ddf2a",
   ue = "Row_title__colon_6c475686",
   pe = g(),
   he = $("Row", me);
-function _e({ className: e, title: s, params: t, children: r }) {
-  const i = n.resolve("strings");
+function _e({ className: e, title: s, params: t, children: a }) {
+  const r = l.resolve("strings");
   return (0, pe.jsxs)(he, {
     className: e,
     children: [
       void 0 !== s &&
         (0, pe.jsxs)(pe.Fragment, {
           children: [
-            (0, pe.jsx)(a, { className: de, path: `tooltips.vehicle.${s}`, params: t }),
+            (0, pe.jsx)(n, { className: de, path: `tooltips.vehicle.${s}`, params: t }),
             (0, pe.jsx)("div", {
               className: x(de, ue),
-              children: i.readOrEmpty("common.common.colon"),
+              children: r.readOrEmpty("common.common.colon"),
             }),
           ],
         }),
-      r,
+      a,
     ],
   });
 }
@@ -148,7 +148,7 @@ var xe = "Crew_2339425e",
   fe = V(function ({ className: e }) {
     const { model: s } = Q(),
       t = s.slots.get(),
-      a = n.resolve("strings");
+      a = l.resolve("strings");
     return (0, pe.jsx)(_e, {
       title: ie,
       params: { count: t.length },
@@ -176,7 +176,7 @@ var xe = "Crew_2339425e",
   Ne = "Rent_rentValue_f91a4efd",
   be = "Rent_text_94f0c0d7";
 function Te({ rentPeriodLeft: e, rentType: s }) {
-  const a = n.resolve("strings"),
+  const a = l.resolve("strings"),
     r = u("ui_kit.rental_counter.rent_x24x24", "ui_kit.rental_counter.rent_x48x48");
   return (0, pe.jsxs)(_e, {
     children: [
@@ -215,7 +215,7 @@ var Ce = V(function () {
   we = V(function ({ className: s }) {
     const { model: t } = Q(),
       { type: a, role: r } = t.statistics.get(),
-      i = n.resolve("strings");
+      i = l.resolve("strings");
     return (0, pe.jsxs)(_e, {
       className: x(Se, s),
       title: re,
@@ -229,7 +229,7 @@ var Ce = V(function () {
       ],
     });
   }),
-  Oe = n.resolve("strings"),
+  Oe = l.resolve("strings"),
   ke = V(function ({ className: e }) {
     return (0, pe.jsx)(_e, {
       className: e,
@@ -241,7 +241,7 @@ var Ce = V(function () {
     tradeInIcon: "TradeIn_tradeInIcon_2cde5b72",
     text: "TradeIn_text_1e5d2ead",
   },
-  Le = n.resolve("strings"),
+  Le = l.resolve("strings"),
   $e = V(function ({ className: e }) {
     return (0, pe.jsxs)(_e, {
       className: x(Pe.base, e),
@@ -261,24 +261,24 @@ var Ce = V(function () {
   Ge = "WotPlus_wotPlus__timer_fb00f649",
   Ae = V(function ({ className: e }) {
     const { model: s } = Q(),
-      { wotPlusExpiryTime: t, wotPlusState: r } = s.earnings.get(),
-      i = n.resolve("strings");
+      { wotPlusExpiryTime: t, wotPlusState: a } = s.earnings.get(),
+      r = l.resolve("strings");
     return (0, pe.jsxs)(pe.Fragment, {
       children: [
         (0, pe.jsx)(_e, {
           className: e,
           children: (0, pe.jsx)("div", {
             className: Ie,
-            children: i.readOrEmpty("tooltips.vehicle.wotPlusRenting.title"),
+            children: r.readOrEmpty("tooltips.vehicle.wotPlusRenting.title"),
           }),
         }),
-        r !== K &&
+        a !== K &&
           (0, pe.jsx)(_e, {
             className: e,
             children: (() => {
-              switch (r) {
+              switch (a) {
                 case U:
-                  return (0, pe.jsx)(a, {
+                  return (0, pe.jsx)(n, {
                     upgradeLegacy: !0,
                     className: x(Ie, Ge),
                     path: "tooltips.vehicle.wotPlusRenting.remainingTime",
@@ -287,10 +287,10 @@ var Ce = V(function () {
                 case q:
                   return (0, pe.jsx)("div", {
                     className: x(Ie, Ge),
-                    children: i.readOrEmpty("tooltips.vehicle.wotPlusRenting.inactive"),
+                    children: r.readOrEmpty("tooltips.vehicle.wotPlusRenting.inactive"),
                   });
                 default:
-                  return (console.error(`Unknown wotPlus state: ${r}`), null);
+                  return (console.error(`Unknown wotPlus state: ${a}`), null);
               }
             })(),
           }),
@@ -305,17 +305,17 @@ var Ce = V(function () {
   Be = $("Header"),
   We = V(function ({ className: e }) {
     const { model: s } = Q(),
-      { wotPlus: t, telecomRent: r, tradeIn: i } = s.earnings.get(),
-      { name: l, role: n, type: c, elite: o, level: m } = s.statistics.get(),
-      d = w(n);
+      { wotPlus: t, telecomRent: a, tradeIn: r } = s.earnings.get(),
+      { name: i, role: l, type: c, elite: o, level: m } = s.statistics.get(),
+      d = w(l);
     return (0, pe.jsxs)(Be, {
       className: e,
       children: [
-        (0, pe.jsx)("div", { className: Me, children: l }),
+        (0, pe.jsx)("div", { className: Me, children: i }),
         (0, pe.jsx)(_e, {
           className: De,
           title: ae,
-          children: (0, pe.jsx)(a, {
+          children: (0, pe.jsx)(n, {
             className: He,
             path: `tooltips.tankCaruselTooltip.vehicleType.tier.${o ? "elite" : "normal"}.${b(c)}`,
             params: { tier: (0, pe.jsx)(I, { value: m, className: Ve }) },
@@ -324,14 +324,14 @@ var Ce = V(function () {
         "without_role" !== d && d !== O.spg && (0, pe.jsx)(we, { className: ze }),
         (0, pe.jsx)(fe, { className: ze }),
         t && (0, pe.jsx)(Ae, { className: ze }),
-        r && (0, pe.jsx)(ke, { className: ze }),
-        i && (0, pe.jsx)($e, {}),
+        a && (0, pe.jsx)(ke, { className: ze }),
+        r && (0, pe.jsx)($e, {}),
         (0, pe.jsx)(Ce, {}),
       ],
     });
   }),
-  Fe = "EliteSystem_leftColumn_6aa7810f",
-  Xe = "EliteSystem_c476a5a0",
+  Xe = "EliteSystem_leftColumn_6aa7810f",
+  Fe = "EliteSystem_c476a5a0",
   Qe = "EliteSystem_eliteSystem_5a135969",
   qe = "EliteSystem_eliteSystem__prestige_2b06b89c",
   Ke = "EliteSystem_values_c91f1a15",
@@ -341,22 +341,22 @@ var Ce = V(function () {
   Ye = "EliteSystem_xp_4e0b1db9",
   es = "EliteSystem_progressBarBorder_45636892",
   ss = V(function ({ className: e }) {
-    const s = n.resolve("strings"),
+    const s = l.resolve("strings"),
       { model: t } = Q(),
       {
         prestigeLevel: a,
         prestigeGrade: r,
-        prestigeType: i,
+        prestigeType: n,
         prestigeXp: m,
         prestigeXpNextLevel: d,
       } = t.serviceRecords.get(),
-      u = i === N.prestige;
+      u = n === N.prestige;
     return (0, pe.jsxs)(_e, {
-      className: x(Xe, e),
+      className: x(Fe, e),
       children: [
         (0, pe.jsx)("div", {
-          className: Fe,
-          children: (0, pe.jsx)(P, { level: a, grade: r, type: i, size: E.xs }),
+          className: Xe,
+          children: (0, pe.jsx)(P, { level: a, grade: r, type: n, size: E.xs }),
         }),
         (0, pe.jsxs)("div", {
           className: x(Qe, u && qe),
@@ -374,7 +374,7 @@ var Ce = V(function () {
                   (0, pe.jsxs)(c, {
                     reverse: !0,
                     size: D.small,
-                    type: l.tankXP,
+                    type: i.tankXP,
                     classNames: { base: Ue, icon: Ze },
                     children: [
                       (0, pe.jsx)("div", { children: o.formatNumber("integral", d) }),
@@ -410,24 +410,24 @@ var Ce = V(function () {
   },
   as = V(function () {
     const { model: e } = Q(),
-      { marksOnGunPercentage: s, marksOnGun: r } = e.serviceRecords.get(),
-      i = n.resolve("strings");
+      { marksOnGunPercentage: s, marksOnGun: a } = e.serviceRecords.get(),
+      r = l.resolve("strings");
     return (0, pe.jsxs)(_e, {
       children: [
         (0, pe.jsxs)("div", {
           className: ts.leftColumn,
           children: [
-            (0, pe.jsx)(a, {
+            (0, pe.jsx)(n, {
               upgradeLegacy: !0,
               path: "common.percentValue",
               params: { value: o.formatReal("woZeroDigits", Number(s)) },
             }),
-            (0, pe.jsx)(t, { path: `library.marksOnGun.mark_${r}`, width: 24, height: 24 }),
+            (0, pe.jsx)(t, { path: `library.marksOnGun.mark_${a}`, width: 24, height: 24 }),
           ],
         }),
         (0, pe.jsx)("div", {
           className: ts.text,
-          children: i.pluralOrEmpty("achievements.marksOnGun.count", r),
+          children: r.pluralOrEmpty("achievements.marksOnGun.count", a),
         }),
       ],
     });
@@ -435,7 +435,7 @@ var Ce = V(function () {
   rs = V(function () {
     const { model: e } = Q(),
       { marksOfMastery: s } = e.serviceRecords.get(),
-      r = u(
+      a = u(
         `tooltip.proficiency.class_icons_${Y[s]}`,
         `tooltip.proficiency.class_icons_${Y[s]}_upscale`,
       );
@@ -443,17 +443,17 @@ var Ce = V(function () {
       children: [
         (0, pe.jsx)("div", {
           className: ts.leftColumn,
-          children: (0, pe.jsx)(t, { path: r, width: 24, height: 24 }),
+          children: (0, pe.jsx)(t, { path: a, width: 24, height: 24 }),
         }),
-        (0, pe.jsx)(a, { className: ts.text, path: `achievements.markOfMastery${Y[s]}` }),
+        (0, pe.jsx)(n, { className: ts.text, path: `achievements.markOfMastery${Y[s]}` }),
       ],
     });
   });
 function is({ rate: e }) {
-  const s = n.resolve("strings");
+  const s = l.resolve("strings");
   return (0, pe.jsxs)(_e, {
     children: [
-      (0, pe.jsx)(a, {
+      (0, pe.jsx)(n, {
         upgradeLegacy: !0,
         className: ts.leftColumn,
         path: "common.percentValue",
@@ -473,9 +473,9 @@ var ls,
         marksOfMastery: a,
         winsCount: r,
         battlesCount: i,
-        marksOnGun: l,
+        marksOnGun: n,
       } = s.serviceRecords.get(),
-      c = n.resolve("strings"),
+      c = l.resolve("strings"),
       o = i > 0 ? (r / i) * 100 : 0;
     return (0, pe.jsxs)(cs, {
       className: e,
@@ -486,7 +486,7 @@ var ls,
         }),
         s.computes.elite() && "undefined" !== t && (0, pe.jsx)(ss, { className: ts.eliteSystem }),
         a > 0 && (0, pe.jsx)(rs, {}),
-        l > 0 && (0, pe.jsx)(as, {}),
+        n > 0 && (0, pe.jsx)(as, {}),
         i > 0 && (0, pe.jsx)(is, { rate: o }),
       ],
     });
@@ -502,14 +502,14 @@ var ls,
   ds = $("SpecialAbility", ms.base),
   us = V(function ({ className: e }) {
     const { model: s } = Q(),
-      r = s.mechanics.get(),
-      i = n.resolve("strings"),
-      l = (e) => (e === B.GOLD ? "special" : "common");
+      a = s.mechanics.get(),
+      r = l.resolve("strings"),
+      i = (e) => (e === B.GOLD ? "special" : "common");
     return (0, pe.jsxs)(ds, {
       className: e,
       children: [
         (0, pe.jsx)("div", { className: ms.gradient }),
-        A(r, (e, s) => {
+        A(a, (e, s) => {
           if (!(e.priority < 1))
             return (0, pe.jsxs)(
               _e,
@@ -532,15 +532,15 @@ var ls,
                     children: [
                       (0, pe.jsx)("div", {
                         className: ms.title,
-                        children: i.readOrEmpty(
-                          `vehicle_hub.abilities.${l(e.rank)}.name.${e.name}`,
+                        children: r.readOrEmpty(
+                          `vehicle_hub.abilities.${i(e.rank)}.name.${e.name}`,
                         ),
                       }),
                       (0, pe.jsx)("div", {
                         className: ms.text,
-                        children: (0, pe.jsx)(a, {
+                        children: (0, pe.jsx)(n, {
                           split: !0,
-                          path: `vehicle_hub.abilities.${l(e.rank)}.shortDescription.${e.name}`,
+                          path: `vehicle_hub.abilities.${i(e.rank)}.shortDescription.${e.name}`,
                         }),
                       }),
                     ],
@@ -562,31 +562,31 @@ var ls,
   js = "Tooltip_section__header_c649b074",
   fs = "Tooltip_status_29b423b3",
   ys = H(function ({ className: e }) {
-    const { model: r } = Q(),
-      { type: l } = r.statistics.get();
+    const { model: a } = Q(),
+      { type: i } = a.statistics.get();
     return (0, pe.jsx)(m, {
       className: e,
       children: (0, pe.jsxs)(m.Decorator, {
         className: ps,
         children: [
-          se(l) &&
-            (0, pe.jsx)(i, {
-              type: l,
-              premium: r.computes.elite(),
+          se(i) &&
+            (0, pe.jsx)(r, {
+              type: i,
+              premium: a.computes.elite(),
               size: s.x64x64,
-              className: x(xs, r.computes.elite() && vs),
+              className: x(xs, a.computes.elite() && vs),
             }),
           (0, pe.jsxs)("div", {
-            className: x(hs, r.computes.elite() && _s),
+            className: x(hs, a.computes.elite() && _s),
             children: [
               (0, pe.jsx)(We, { className: x(gs, js) }),
-              r.computes.hasSpecialMechanics() && (0, pe.jsx)(us, { className: gs }),
-              r.computes.serviceRecords() && (0, pe.jsx)(os, { className: gs }),
-              (0, pe.jsx)(a, {
+              a.computes.hasSpecialMechanics() && (0, pe.jsx)(us, { className: gs }),
+              a.computes.serviceRecords() && (0, pe.jsx)(os, { className: gs }),
+              (0, pe.jsx)(n, {
                 upgradeLegacy: !0,
-                style: { color: ee(r.stateLevel.get()) },
+                style: { color: ee(a.stateLevel.get()) },
                 className: fs,
-                path: `tooltips.vehicleStatus.${r.status.get()}.header`,
+                path: `tooltips.vehicleStatus.${a.status.get()}.header`,
                 params: {
                   icon: (0, pe.jsx)(t, {
                     path: "library.premium_igr_small",
@@ -601,13 +601,13 @@ var ls,
       }),
     });
   }),
-  Ns = n.resolve("aliases");
+  Ns = l.resolve("aliases");
 d(
   new y()
-    .add(X)
+    .add(F)
     .add(k)
     .addWithProps(
-      F,
+      X,
       ((ls = (e) => e.common.shared.DynamicEconomics("resId")),
       (ns = Ns),
       { options: { rootId: ns.read(ls) } }),
