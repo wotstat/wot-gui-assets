@@ -1,5 +1,5 @@
 import { r as t } from "../../chunks/rolldown-runtime.js";
-import { Fa as s, a as e, do as i, or as a, ur as l, wn as o, xi as r } from "../../chunks/lib.js";
+import { Ia as s, a as e, fo as i, or as a, ur as l, wn as o, xi as r } from "../../chunks/lib.js";
 import "../../chunks/_wg-global-styles.js";
 import { s as d } from "../../chunks/vendor.js";
 i();

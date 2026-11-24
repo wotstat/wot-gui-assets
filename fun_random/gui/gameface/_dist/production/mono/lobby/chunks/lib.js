@@ -642,6 +642,38 @@ var timeFormats = { full: DateTimeFormatsEnum.FullTime, short: DateTimeFormatsEn
 function formatTime$1(e, t, n = !0) {
   return window.regionalDateTime.getRegionalDateTime(t, e, n);
 }
+function getDateParts(e) {
+  const t = new Date(1e3 * e);
+  return {
+    year: t.getFullYear(),
+    month: t.getMonth() + 1,
+    hours: t.getHours(),
+    minutes: t.getMinutes(),
+    seconds: t.getSeconds(),
+  };
+}
+function isSameTime(e, t) {
+  return e.hours === t.hours && e.minutes === t.minutes && e.seconds === t.seconds;
+}
+function getRangeFormatPath(e, t) {
+  const n = e.year === t.year;
+  return [
+    "datetime_formats",
+    "dateRange",
+    "dateWithYear",
+    n ? "sameYear" : "differentYear",
+    n && e.month === t.month ? "sameMonth" : "differentMonth",
+    isSameTime(e, t) ? "sameTime" : "differentTime",
+  ].join(".");
+}
+function formatRange(e, t) {
+  const n = getRangeFormatPath(getDateParts(e), getDateParts(t)),
+    r = resources.resolve("strings");
+  return {
+    start: window.regionalDateTime.getFormattedDateTime(e, r.readOrEmpty(`${n}.start`), !0),
+    end: window.regionalDateTime.getFormattedDateTime(t, r.readOrEmpty(`${n}.end`), !0),
+  };
+}
 var intl$3 = {
     isNumberFormat: isNumberFormat,
     formatNumber: formatNumber,
@@ -653,6 +685,7 @@ var intl$3 = {
     dateTimeFormats: DateTimeFormatsEnum,
     formatTime: formatTime$1,
     timeFormats: timeFormatList,
+    formatRange: formatRange,
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
   },
@@ -24027,15 +24060,12 @@ var useScaleState$1 = () => {
     const [e, t] = (0, import_react.useState)(getScale$2());
     return (
       (0, import_react.useEffect)(() => {
-        const e = () => {
-          t(getScale$2());
+        const e = () => t(getScale$2()),
+          n = onResize$1(e),
+          r = onRescale(e);
+        return () => {
+          (n(), r());
         };
-        return (
-          window.addEventListener("resize", e),
-          () => {
-            window.removeEventListener("resize", e);
-          }
-        );
       }, []),
       e
     );
@@ -33164,379 +33194,289 @@ var defaultTheme = Orange,
       children: formatTime(Math.abs(c) < 3600 ? n : t, c, r),
     });
   },
-  formats = {
-    superCompact: "superCompact",
-    compact: "compact",
-    default: "default",
-    detailed: "detailed",
-  },
-  sizes$10 = {
-    x16x16: "x16x16",
-    x24x24: "x24x24",
-    x32x32: "x32x32",
-    x48x48: "x48x48",
-    x80x80: "x80x80",
-  },
-  types$4 = { accent: "accent", cooldown: "cooldown" },
-  item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
-  item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
-  item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
-  item__x48x48 = "FormattedValue_item__x48x48_43bf6d1b",
-  item__x80x80 = "FormattedValue_item__x80x80_c03e8347",
-  part__x16x16 = "FormattedValue_part__x16x16_2186b32f",
-  part__x24x24 = "FormattedValue_part__x24x24_2186b32f",
-  part__x32x32 = "FormattedValue_part__x32x32_f9323fe3",
-  part__x48x48 = "FormattedValue_part__x48x48_bd002d69",
-  part__x80x80 = "FormattedValue_part__x80x80_dca9ec18",
-  detailedSeparator = "FormattedValue_detailedSeparator_30bfaeef",
-  detailedSeparator__x16x16 = "FormattedValue_detailedSeparator__x16x16_2b8550e4",
-  detailedSeparator__x24x24 = "FormattedValue_detailedSeparator__x24x24_2b8550e4",
-  detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
-  detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
-  detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
-  formatted_value_module_default = {
-    item__x16x16: item__x16x16,
-    item__x24x24: item__x24x24,
-    item__x32x32: item__x32x32,
-    item__x48x48: item__x48x48,
-    item__x80x80: item__x80x80,
-    part__x16x16: part__x16x16,
-    part__x24x24: part__x24x24,
-    part__x32x32: part__x32x32,
-    part__x48x48: part__x48x48,
-    part__x80x80: part__x80x80,
-    detailedSeparator: detailedSeparator,
-    detailedSeparator__x16x16: detailedSeparator__x16x16,
-    detailedSeparator__x24x24: detailedSeparator__x24x24,
-    detailedSeparator__x32x32: detailedSeparator__x32x32,
-    detailedSeparator__x48x48: detailedSeparator__x48x48,
-    detailedSeparator__x80x80: detailedSeparator__x80x80,
-  };
-function FormattedValue({ size: e, preFormatted: t }) {
-  const n = [];
-  for (let r = 0; r < t.items.length; ++r)
-    (t.separator &&
-      r > 0 &&
-      n.push(
-        (0, import_jsx_runtime.jsx)(
-          "span",
-          {
-            className: (0, import_classnames.default)(
-              formatted_value_module_default.detailedSeparator,
-              formatted_value_module_default[`detailedSeparator__${e}`],
-            ),
-          },
-          "separator",
-        ),
-      ),
-      n.push(
-        (0, import_jsx_runtime.jsx)(
-          "span",
-          {
-            className: (0, import_classnames.default)(
-              formatted_value_module_default.item,
-              formatted_value_module_default[`item__${e}`],
-            ),
-            children: t.items[r]
-              ?.split(" ")
-              .map((t, n) =>
-                (0, import_jsx_runtime.jsx)(
-                  "span",
-                  {
-                    className: (0, import_classnames.default)(
-                      formatted_value_module_default.part,
-                      formatted_value_module_default[`part__${e}`],
-                    ),
-                    children: t,
-                  },
-                  `part_${n}`,
-                ),
-              ),
-          },
-          `item_${r}`,
-        ),
-      ));
-  return n;
-}
-var STRING_RESOURCES = resources.resolve("strings"),
-  COLON = ":",
-  DAYS_FORMAT = "D",
-  HOURS_FORMAT = "h",
-  MINUTES_FORMAT = "m",
-  DEFAULT_MIN_VALUE = 1,
-  FORMAT_PARTS = {
-    [formats.compact]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
-    [formats.default]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
-    [formats.detailed]: [DAYS_FORMAT, "hh", "mm", "ss"],
-  },
-  FORMATTER = {
-    [formats.compact]: compactFormatter,
-    [formats.default]: defaultFormatter,
-    [formats.detailed]: detailedFormatter,
-  },
-  LOCALE_FORMATTERS = {
-    [DAYS_FORMAT]: (e) =>
-      format$1(
-        STRING_RESOURCES.readOr("common.timer.days", () => DAYS_FORMAT.toLowerCase()),
-        { days: e },
-      ),
-    [HOURS_FORMAT]: (e) =>
-      format$1(
-        STRING_RESOURCES.readOr("common.timer.hours", () => HOURS_FORMAT),
-        { hours: e },
-      ),
-    [MINUTES_FORMAT]: (e) =>
-      format$1(
-        STRING_RESOURCES.readOr("common.timer.minutes", () => MINUTES_FORMAT),
-        { minutes: e },
-      ),
-  };
-function detailedFormatter(e) {
-  const [t, ...n] = e,
-    r = n.join(COLON);
-  return { separator: !0, items: Number(t) > 0 ? [LOCALE_FORMATTERS[DAYS_FORMAT]?.(t), r] : [r] };
-}
-function defaultFormatter(e, t) {
-  let n = 0;
-  const r = e.length - 1,
-    a = FORMAT_PARTS[t],
-    o = { separator: !1, items: [] };
-  for (; n < r && !(Number(e[n]) > 0); ++n);
-  return (
-    a[n] === MINUTES_FORMAT && 0 === Number(e[n])
-      ? (o.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)])
-      : (o.items = [n, n + 1].map((t) => LOCALE_FORMATTERS[a[t]]?.(e[t]))),
-    o
-  );
-}
-function compactFormatter(e, t) {
-  const n = e.length,
-    r = FORMAT_PARTS[t],
-    a = { separator: !1, items: [] };
-  for (let o = 0; o < n; ++o)
-    if (Number(e[o]) > 0) return ((a.items = [LOCALE_FORMATTERS[r[o]]?.(e[o])]), a);
-  return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
-}
-var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
-  base$46 = "Timer_dac0a0aa",
-  icon$9 = "Timer_icon_a61415df",
-  icon__x16x16$1 = "Timer_icon__x16x16_5bab55e2",
-  icon__accent = "Timer_icon__accent_2cf70c3b",
-  icon__cooldown = "Timer_icon__cooldown_4a26d3f",
-  icon__x24x24$1 = "Timer_icon__x24x24_31571381",
-  icon__x32x32$1 = "Timer_icon__x32x32_807dde34",
-  icon__x48x48$1 = "Timer_icon__x48x48_ae779a9e",
-  icon__x80x80 = "Timer_icon__x80x80_251aafea",
-  label$2 = "Timer_label_1565f308",
-  label__x16x16 = "Timer_label__x16x16_e3ff224",
-  label__x24x24 = "Timer_label__x24x24_ca748cca",
-  label__x32x32 = "Timer_label__x32x32_13cccf38",
-  label__x48x48 = "Timer_label__x48x48_e3a9b542",
-  label__x80x80 = "Timer_label__x80x80_10a84ee6",
-  label__accent = "Timer_label__accent_ac7d4f7b",
-  label__cooldown = "Timer_label__cooldown_c2349ab9",
-  timer_module_default = {
+  ButtonType = (function (e) {
+    return (
+      (e.main = "main"),
+      (e.primary = "primary"),
+      (e.primaryGreen = "primaryGreen"),
+      (e.primaryRed = "primaryRed"),
+      (e.secondary = "secondary"),
+      (e.ghost = "ghost"),
+      e
+    );
+  })({}),
+  ButtonSize = (function (e) {
+    return (
+      (e.extraSmall = "extraSmall"),
+      (e.small = "small"),
+      (e.medium = "medium"),
+      (e.large = "large"),
+      e
+    );
+  })({}),
+  base$46 = "Cbutton_24fc9a0c",
+  base__main = "Cbutton_base__main_2f199578",
+  base__primary = "Cbutton_base__primary_9da8a692",
+  base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
+  base__primaryRed = "Cbutton_base__primaryRed_d184ac",
+  base__secondary = "Cbutton_base__secondary_22ff48c2",
+  base__ghost = "Cbutton_base__ghost_fd3acf91",
+  base__extraSmall = "Cbutton_base__extraSmall_f64ebb9e",
+  base__small$6 = "Cbutton_base__small_a71bc2a9",
+  base__medium$5 = "Cbutton_base__medium_d82a1b14",
+  base__large = "Cbutton_base__large_f02aee17",
+  base__disabled$5 = "Cbutton_base__disabled_96f239bb",
+  back = "Cbutton_back_ffaa618f",
+  texture = "Cbutton_texture_f462b307",
+  state = "Cbutton_state_bf8d0bab",
+  base__focus = "Cbutton_base__focus_180a9717",
+  stateHighlightHover = "Cbutton_stateHighlightHover_7e2b860e",
+  stateHighlightActive = "Cbutton_stateHighlightActive_f3d8fd6a",
+  stateDisabled = "Cbutton_stateDisabled_7b91392f",
+  base__highlightActive = "Cbutton_base__highlightActive_180a9717",
+  content$10 = "Cbutton_content_faaa9067",
+  CButton_module_default = {
     base: base$46,
-    icon: icon$9,
-    icon__x16x16: icon__x16x16$1,
-    icon__accent: icon__accent,
-    icon__cooldown: icon__cooldown,
-    icon__x24x24: icon__x24x24$1,
-    icon__x32x32: icon__x32x32$1,
-    icon__x48x48: icon__x48x48$1,
-    icon__x80x80: icon__x80x80,
-    label: label$2,
-    label__x16x16: label__x16x16,
-    label__x24x24: label__x24x24,
-    label__x32x32: label__x32x32,
-    label__x48x48: label__x48x48,
-    label__x80x80: label__x80x80,
-    label__accent: label__accent,
-    label__cooldown: label__cooldown,
-  };
-function Timer({
-  start: e,
-  limit: t = 0,
-  tick: n = 1,
-  size: r = sizes$10.x24x24,
-  type: a = types$4.accent,
-  format: o = formats.default,
-  autostart: i = !0,
-  className: s,
-  classNames: u,
-}) {
-  const [l] = useTicker(
-    (0, import_react.useMemo)(
-      () => ({
-        type: "countdown",
-        start: isDuration(e) ? e : seconds(e),
-        limit: isDuration(t) ? t : seconds(t),
-        tick: isDuration(n) ? n : seconds(n),
-        autostart: i,
-      }),
-      [i, t, e, n],
-    ),
-  );
-  return (0, import_jsx_runtime.jsxs)("div", {
-    className: (0, import_classnames.default)(timer_module_default.base, s),
-    children: [
-      (0, import_jsx_runtime.jsx)("div", {
+    base__main: base__main,
+    base__primary: base__primary,
+    base__primaryGreen: base__primaryGreen,
+    base__primaryRed: base__primaryRed,
+    base__secondary: base__secondary,
+    base__ghost: base__ghost,
+    base__extraSmall: base__extraSmall,
+    base__small: base__small$6,
+    base__medium: base__medium$5,
+    base__large: base__large,
+    base__disabled: base__disabled$5,
+    back: back,
+    texture: texture,
+    state: state,
+    base__focus: base__focus,
+    stateHighlightHover: stateHighlightHover,
+    stateHighlightActive: stateHighlightActive,
+    stateDisabled: stateDisabled,
+    base__highlightActive: base__highlightActive,
+    content: content$10,
+  },
+  Button = ({
+    children: e,
+    size: t,
+    disabled: n,
+    mixClass: r,
+    onMouseEnter: a,
+    onMouseMove: o,
+    onMouseDown: i,
+    onMouseUp: s,
+    onMouseLeave: u,
+    onClick: l,
+    isFocused: c = !1,
+    type: d = ButtonType.primary,
+    soundHover: f = "highlight",
+    soundClick: p = "play",
+  }) => {
+    const m = (0, import_react.useRef)(null),
+      [_, h] = (0, import_react.useState)(c),
+      [g, b] = (0, import_react.useState)(!1);
+    return (
+      (0, import_react.useEffect)(() => {
+        function e(e) {
+          _ && null !== m.current && !m.current.contains(e.target) && h(!1);
+        }
+        return (
+          document.addEventListener("mousedown", e),
+          () => {
+            document.removeEventListener("mousedown", e);
+          }
+        );
+      }, [_]),
+      (0, import_react.useEffect)(() => {
+        h(c);
+      }, [c]),
+      (0, import_jsx_runtime.jsxs)("div", {
+        ref: m,
         className: (0, import_classnames.default)(
-          timer_module_default.icon,
-          timer_module_default[`icon__${r}`],
-          timer_module_default[`icon__${a}`],
-          u?.icon,
+          CButton_module_default.base,
+          CButton_module_default[`base__${d}`],
+          n && CButton_module_default.base__disabled,
+          t && CButton_module_default[`base__${t}`],
+          _ && CButton_module_default.base__focus,
+          g && CButton_module_default.base__highlightActive,
+          r,
         ),
-      }),
-      o !== formats.superCompact &&
+        onMouseEnter: function (e) {
+          n || (null !== f && playSound(f), a && a(e));
+        },
+        onMouseMove: function (e) {
+          o && o(e);
+        },
+        onMouseUp: function (e) {
+          n || (s && s(e), b(!1));
+        },
+        onMouseDown: function (e) {
+          if (n) return;
+          const t = e.button === MOUSE_BUTTON_CODES.LEFT;
+          (null !== p && t && playSound(p),
+            i && i(e),
+            c && (n || (m.current && (m.current.focus(), h(!0)))),
+            t && b(!0));
+        },
+        onMouseLeave: function (e) {
+          n || (u && u(e), b(!1));
+        },
+        onClick: function (e) {
+          n || (l && l(e));
+        },
+        children: [
+          d !== ButtonType.ghost &&
+            (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
+              children: [
+                (0, import_jsx_runtime.jsx)("div", { className: CButton_module_default.back }),
+                (0, import_jsx_runtime.jsx)("span", { className: CButton_module_default.texture }),
+              ],
+            }),
+          (0, import_jsx_runtime.jsxs)("span", {
+            className: (0, import_classnames.default)(
+              CButton_module_default.state,
+              CButton_module_default.state__default,
+            ),
+            children: [
+              (0, import_jsx_runtime.jsx)("span", {
+                className: CButton_module_default.stateDisabled,
+              }),
+              (0, import_jsx_runtime.jsx)("span", {
+                className: CButton_module_default.stateHighlightHover,
+              }),
+              (0, import_jsx_runtime.jsx)("span", {
+                className: CButton_module_default.stateHighlightActive,
+              }),
+            ],
+          }),
+          (0, import_jsx_runtime.jsx)("span", {
+            className: CButton_module_default.content,
+            lang: R.strings.settings.LANGUAGE_CODE(),
+            children: e,
+          }),
+        ],
+      })
+    );
+  },
+  CButton = Button,
+  base$45 = "Textbutton_b1283086",
+  base__right$1 = "Textbutton_base__right_78d4c03f",
+  icon$9 = "Textbutton_icon_9ba4c60",
+  icon__back = "Textbutton_icon__back_599b35e4",
+  icon__forward = "Textbutton_icon__forward_4ef35d4d",
+  icon__close = "Textbutton_icon__close_b2af8bd5",
+  icon__info = "Textbutton_icon__info_6cbc7293",
+  glow$2 = "Textbutton_glow_1ddc70ba",
+  caption$1 = "Textbutton_caption_4350685c",
+  caption__back = "Textbutton_caption__back_599b35e4",
+  caption__forward = "Textbutton_caption__forward_599b35e4",
+  caption__close = "Textbutton_caption__close_c29bdb5",
+  caption__info = "Textbutton_caption__info_ccd96b67",
+  goto = "Textbutton_goto_d2c81cbd",
+  base__left$1 = "Textbutton_base__left_599b35e4",
+  shine = "Textbutton_shine_527e4656",
+  TextButton_module_default = {
+    base: base$45,
+    base__right: base__right$1,
+    icon: icon$9,
+    icon__back: icon__back,
+    icon__forward: icon__forward,
+    icon__close: icon__close,
+    icon__info: icon__info,
+    glow: glow$2,
+    caption: caption$1,
+    caption__back: caption__back,
+    caption__forward: caption__forward,
+    caption__close: caption__close,
+    caption__info: caption__info,
+    goto: goto,
+    base__left: base__left$1,
+    shine: shine,
+  },
+  TextButton = ({
+    caption: e,
+    onClick: t,
+    goto: n,
+    classNames: r,
+    onMouseEnter: a,
+    onMouseLeave: o,
+    onMouseDown: i,
+    onMouseUp: s,
+    side: u = "left",
+    type: l = "back",
+    soundHover: c = "highlight",
+    soundClick: d = "play",
+    ...f
+  }) => {
+    const p = (0, import_react.useCallback)(
+        (e) => {
+          (a?.(e), env.sound.play.sound(c));
+        },
+        [a, c],
+      ),
+      m = (0, import_react.useCallback)(
+        (e) => {
+          o?.(e);
+        },
+        [o],
+      ),
+      _ = (0, import_react.useCallback)(
+        (e) => {
+          (i?.(e), env.sound.play.sound(d));
+        },
+        [i, d],
+      ),
+      h = (0, import_react.useCallback)(
+        (e) => {
+          s?.(e);
+        },
+        [s],
+      );
+    return (0, import_jsx_runtime.jsxs)("div", {
+      className: (0, import_classnames.default)(
+        TextButton_module_default.base,
+        TextButton_module_default[`base__${l}`],
+        TextButton_module_default[`base__${u}`],
+        r?.base,
+      ),
+      onMouseEnter: p,
+      onMouseLeave: m,
+      onMouseDown: _,
+      onMouseUp: h,
+      onClick: t,
+      ...f,
+      children: [
+        "info" !== l &&
+          (0, import_jsx_runtime.jsx)("div", { className: TextButton_module_default.shine }),
         (0, import_jsx_runtime.jsx)("div", {
           className: (0, import_classnames.default)(
-            timer_module_default.label,
-            timer_module_default[`label__${r}`],
-            timer_module_default[`label__${a}`],
-            u?.label,
+            TextButton_module_default.icon,
+            TextButton_module_default[`icon__${l}`],
+            TextButton_module_default[`icon__${u}`],
+            r?.icon,
           ),
-          children: (0, import_jsx_runtime.jsx)(FormattedValue, {
-            size: r,
-            preFormatted: formatValue(l, o),
+          children: (0, import_jsx_runtime.jsx)("div", {
+            className: (0, import_classnames.default)(TextButton_module_default.glow, r?.glow),
           }),
         }),
-    ],
-  });
-}
-((Timer.format = formats), (Timer.size = sizes$10), (Timer.type = types$4));
-var undef = () => {};
-function withResolvePath(e) {
-  const t = e;
-  return (0, import_react.forwardRef)(function (e, n) {
-    const r = useAdaptive(e, e.adaptive),
-      { path: a, ...o } = r,
-      i = r.images ?? resources.resolve("images"),
-      s = { ...o, ref: n };
-    {
-      const e = a ? i.readOr(a, undef, "warn") : void 0;
-      return e
-        ? (0, import_jsx_runtime.jsx)(t, { ...s, src: e })
-        : (0, import_jsx_runtime.jsx)(t, { ...s, unknown: !0 });
-    }
-  });
-}
-var defaultUnknownStyle = {
-    background:
-      "linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)",
-    backgroundSize: "20rem 20rem",
-    backgroundPosition: "0 0, 0 10rem, 10rem -10rem, -10rem 0rem",
-    backgroundColor: "#000",
-  },
-  ResourceImage = (0, import_react.forwardRef)(function (e, t) {
-    if (!e.src) {
-      const {
-        repeat: n,
-        fit: r,
-        position: a,
-        width: o,
-        src: i,
-        height: s,
-        unselectable: u,
-        unknownStyle: l = defaultUnknownStyle,
-        ...c
-      } = e;
-      return (0, import_jsx_runtime.jsx)("div", {
-        ...c,
-        ref: t,
-        style: { width: e.width, height: e.height, ...l, ...e.style },
-      });
-    }
-    const {
-      repeat: n,
-      fit: r,
-      position: a,
-      width: o,
-      height: i,
-      unknownStyle: s,
-      unselectable: u,
-      ...l
-    } = e;
-    return (0, import_jsx_runtime.jsx)("div", {
-      ...l,
-      ref: t,
-      style: {
-        backgroundImage: `url(${e.src})`,
-        backgroundRepeat: n ?? "no-repeat",
-        backgroundSize: r ?? "contain",
-        backgroundPosition: a ?? "center center",
-        width: "number" == typeof o ? `${o}rem` : o,
-        height: "number" == typeof i ? `${i}rem` : i,
-        ...l.style,
-      },
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(
+            TextButton_module_default.caption,
+            TextButton_module_default[`caption__${l}`],
+            r?.caption,
+          ),
+          children: e,
+        }),
+        n &&
+          (0, import_jsx_runtime.jsx)("div", {
+            className: (0, import_classnames.default)(TextButton_module_default.goto, r?.goto),
+            children: n,
+          }),
+      ],
     });
-  }),
-  Image$1 = withResolvePath(
-    (0, import_react.forwardRef)(function (e, t) {
-      if (e.unknown) {
-        const {
-          repeat: n,
-          fit: r,
-          position: a,
-          width: o,
-          src: i,
-          height: s,
-          unselectable: u,
-          unknown: l,
-          unknownStyle: c = defaultUnknownStyle,
-          ...d
-        } = e;
-        return (0, import_jsx_runtime.jsx)("div", {
-          ...d,
-          ref: t,
-          style: { width: e.width, height: e.height, ...c, ...e.style },
-        });
-      }
-      const {
-        repeat: n,
-        fit: r,
-        position: a,
-        width: o,
-        height: i,
-        unknownStyle: s,
-        unknown: u,
-        unselectable: l,
-        ...c
-      } = e;
-      return (0, import_jsx_runtime.jsx)("div", {
-        ...c,
-        ref: t,
-        style: {
-          backgroundImage: `url(${e.src})`,
-          backgroundRepeat: n ?? "no-repeat",
-          backgroundSize: r ?? "contain",
-          backgroundPosition: a ?? "center center",
-          width: "number" == typeof o ? `${o}rem` : o,
-          height: "number" == typeof i ? `${i}rem` : i,
-          ...c.style,
-        },
-      });
-    }),
-  ),
-  Img = withResolvePath(
-    (0, import_react.forwardRef)(function (e, t) {
-      const {
-        width: n,
-        height: r,
-        src: a,
-        unselectable: o,
-        unknown: i,
-        unknownStyle: s = defaultUnknownStyle,
-        ...u
-      } = e;
-      return e.unknown
-        ? (0, import_jsx_runtime.jsx)("div", {
-            ...u,
-            style: { width: e.width, height: e.height, ...s },
-          })
-        : (0, import_jsx_runtime.jsx)("img", { ...u, ref: t, src: a, width: n, height: r });
-    }),
-  ),
+  },
   UNKNOWN_NATION = "none",
   list = [
     "ussr",
@@ -33552,14 +33492,14 @@ var defaultUnknownStyle = {
     "italy",
   ],
   nationById = (e) => list[e] ?? "none",
-  types$3 = {
+  types$4 = {
     lightTank: LIGHT_TANK,
     mediumTank: MEDIUM_TANK,
     heavyTank: HEAVY_TANK,
     SPG: "SPG",
     "AT-SPG": AT_SPG,
   },
-  typeValues = Object.values(types$3),
+  typeValues = Object.values(types$4),
   normilizeVehicleType = (e) => e.replace("-", "_"),
   isTypeValidValue = (e) => typeValues.includes(e);
 function getVehicleImageKey(e) {
@@ -34120,7 +34060,139 @@ function ModelRouterProvider({
     f = (0, import_react.useMemo)(() => ({ ...c, ...d }), [d, c]);
   return (0, import_jsx_runtime.jsx)(RouterContext.Provider, { value: f, children: e });
 }
-var contextInstance$1 = (0, import_react.createContext)(null),
+var undef = () => {};
+function withResolvePath(e) {
+  const t = e;
+  return (0, import_react.forwardRef)(function (e, n) {
+    const r = useAdaptive(e, e.adaptive),
+      { path: a, ...o } = r,
+      i = r.images ?? resources.resolve("images"),
+      s = { ...o, ref: n };
+    {
+      const e = a ? i.readOr(a, undef, "warn") : void 0;
+      return e
+        ? (0, import_jsx_runtime.jsx)(t, { ...s, src: e })
+        : (0, import_jsx_runtime.jsx)(t, { ...s, unknown: !0 });
+    }
+  });
+}
+var defaultUnknownStyle = {
+    background:
+      "linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)",
+    backgroundSize: "20rem 20rem",
+    backgroundPosition: "0 0, 0 10rem, 10rem -10rem, -10rem 0rem",
+    backgroundColor: "#000",
+  },
+  ResourceImage = (0, import_react.forwardRef)(function (e, t) {
+    if (!e.src) {
+      const {
+        repeat: n,
+        fit: r,
+        position: a,
+        width: o,
+        src: i,
+        height: s,
+        unselectable: u,
+        unknownStyle: l = defaultUnknownStyle,
+        ...c
+      } = e;
+      return (0, import_jsx_runtime.jsx)("div", {
+        ...c,
+        ref: t,
+        style: { width: e.width, height: e.height, ...l, ...e.style },
+      });
+    }
+    const {
+      repeat: n,
+      fit: r,
+      position: a,
+      width: o,
+      height: i,
+      unknownStyle: s,
+      unselectable: u,
+      ...l
+    } = e;
+    return (0, import_jsx_runtime.jsx)("div", {
+      ...l,
+      ref: t,
+      style: {
+        backgroundImage: `url(${e.src})`,
+        backgroundRepeat: n ?? "no-repeat",
+        backgroundSize: r ?? "contain",
+        backgroundPosition: a ?? "center center",
+        width: "number" == typeof o ? `${o}rem` : o,
+        height: "number" == typeof i ? `${i}rem` : i,
+        ...l.style,
+      },
+    });
+  }),
+  Image$1 = withResolvePath(
+    (0, import_react.forwardRef)(function (e, t) {
+      if (e.unknown) {
+        const {
+          repeat: n,
+          fit: r,
+          position: a,
+          width: o,
+          src: i,
+          height: s,
+          unselectable: u,
+          unknown: l,
+          unknownStyle: c = defaultUnknownStyle,
+          ...d
+        } = e;
+        return (0, import_jsx_runtime.jsx)("div", {
+          ...d,
+          ref: t,
+          style: { width: e.width, height: e.height, ...c, ...e.style },
+        });
+      }
+      const {
+        repeat: n,
+        fit: r,
+        position: a,
+        width: o,
+        height: i,
+        unknownStyle: s,
+        unknown: u,
+        unselectable: l,
+        ...c
+      } = e;
+      return (0, import_jsx_runtime.jsx)("div", {
+        ...c,
+        ref: t,
+        style: {
+          backgroundImage: `url(${e.src})`,
+          backgroundRepeat: n ?? "no-repeat",
+          backgroundSize: r ?? "contain",
+          backgroundPosition: a ?? "center center",
+          width: "number" == typeof o ? `${o}rem` : o,
+          height: "number" == typeof i ? `${i}rem` : i,
+          ...c.style,
+        },
+      });
+    }),
+  ),
+  Img = withResolvePath(
+    (0, import_react.forwardRef)(function (e, t) {
+      const {
+        width: n,
+        height: r,
+        src: a,
+        unselectable: o,
+        unknown: i,
+        unknownStyle: s = defaultUnknownStyle,
+        ...u
+      } = e;
+      return e.unknown
+        ? (0, import_jsx_runtime.jsx)("div", {
+            ...u,
+            style: { width: e.width, height: e.height, ...s },
+          })
+        : (0, import_jsx_runtime.jsx)("img", { ...u, ref: t, src: a, width: n, height: r });
+    }),
+  ),
+  contextInstance$1 = (0, import_react.createContext)(null),
   positions$1 = { left: "left", right: "right", top: "top", bottom: "bottom" },
   positionList = Object.values(positions$1),
   verticalPositions = ["top", "bottom"],
@@ -34260,7 +34332,11 @@ function Portal({
     y = (0, import_react.useMemo)(
       () => (t ? (document.querySelector(t) ?? document.body) : document.body),
       [t],
-    );
+    ),
+    [E, $] = useSpring$1(() => ({
+      from: { opacity: 0, transform: v[r] },
+      config: { easing: easings$2.easeInOutCubic, duration: 250 },
+    }));
   (0, import_react.useEffect)(() => {
     m.current = void 0;
     const e = p.current;
@@ -34272,7 +34348,7 @@ function Portal({
       if (!f.opened) return void h(void 0);
       if (!1 === u(f, { callerBounding: t, containerBounding: a, bodyBounding: o })) return;
       if (s) {
-        if (m.current && !isEqual$1(m.current, t)) return void f.close();
+        if (m.current && !isEqual$1(m.current, t)) return ($.set({ opacity: 0 }), void f.close());
         m.current = t;
       }
       const i = getUpdatedPosition(r, g, t, a, o);
@@ -34283,8 +34359,8 @@ function Portal({
         }));
     });
     return (o.start(), o.stop);
-  }, [f, u, s, g, n, b, f.id, f.portal, f.trigger, r, f.opened]);
-  const E = (0, import_react.useCallback)(() => {
+  }, [f, u, s, $, g, n, b, f.id, f.portal, f.trigger, r, f.opened]);
+  const S = (0, import_react.useCallback)(() => {
     const e = p.current;
     e &&
       document.activeElement &&
@@ -34292,7 +34368,7 @@ function Portal({
       e.contains(document.activeElement) &&
       document.activeElement.blur();
   }, []);
-  ((0, import_react.useEffect)(() => f.subscribe.onBeforeClose(E), [f.subscribe, E]),
+  ((0, import_react.useEffect)(() => f.subscribe.onBeforeClose(S), [f.subscribe, S]),
     useHandleKeydown(i && f.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
       f.close();
     }),
@@ -34329,21 +34405,17 @@ function Portal({
           }),
         ).dispose;
     }, [f]));
-  const [$, S] = useSpring$1(() => ({
-      from: { opacity: 0, transform: v[r] },
-      config: { easing: easings$2.easeInOutCubic, duration: 250 },
-    })),
-    A = import_react.useRef(v);
+  const A = import_react.useRef(v);
   return (
     (A.current = v),
     (0, import_react.useEffect)(() => {
       if (!_) return;
       const e = { opacity: 0, transform: A.current[_] };
-      S.start({
+      $.start({
         from: f.opened ? e : void 0,
         to: f.opened ? { opacity: 1, transform: "translate(0rem, 0rem) scale(1)" } : e,
       });
-    }, [S, _, f.opened]),
+    }, [$, _, f.opened]),
     !f.opened && o
       ? null
       : (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
@@ -34355,11 +34427,11 @@ function Portal({
                 position: "absolute",
                 top: "0",
                 left: "0",
-                pointerEvents: $.opacity.to((e) => (1 === e ? "auto" : "none")),
-                display: $.opacity.to((e) => (0 !== e || f.opened ? "block" : "none")),
+                pointerEvents: E.opacity.to((e) => (1 === e ? "auto" : "none")),
+                display: E.opacity.to((e) => (0 !== e || f.opened ? "block" : "none")),
                 ...d.style,
               },
-              children: (0, import_jsx_runtime.jsx)(animated$1.div, { style: $, children: e }),
+              children: (0, import_jsx_runtime.jsx)(animated$1.div, { style: E, children: e }),
             }),
             y,
           ),
@@ -34396,11 +34468,11 @@ function updatePosition(e, t, n, r, a, o, i, s) {
     applyTransform(n, a.top - u, r, s, i);
   }
 }
-var base$45 = "PopoverTip_163a336f",
+var base$44 = "PopoverTip_163a336f",
   arrow$1 = "PopoverTip_arrow_44c7d6a5",
-  glow$2 = "PopoverTip_glow_da3f9be9",
+  glow$1 = "PopoverTip_glow_da3f9be9",
   popover_tip_module_default = {
-    base: base$45,
+    base: base$44,
     "base__flip-left": "PopoverTip_base__flip-left_3cc0dadc",
     "base__flip-right": "PopoverTip_base__flip-right_6a5605b6",
     "base__flip-top": "PopoverTip_base__flip-top_6bcc69e1",
@@ -34410,7 +34482,7 @@ var base$45 = "PopoverTip_163a336f",
     "arrow__position-bottom": "PopoverTip_arrow__position-bottom_9d75ac12",
     "arrow__position-left": "PopoverTip_arrow__position-left_ca4ced33",
     "arrow__position-right": "PopoverTip_arrow__position-right_9dc94f7a",
-    glow: glow$2,
+    glow: glow$1,
   },
   verticals = [positions$1.top, positions$1.bottom],
   horizontals = [positions$1.left, positions$1.right],
@@ -34727,11 +34799,11 @@ function useScrollBounding(e, [t, n] = IGNORE_DEFAULT) {
   );
 }
 var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
-  background$6 = "Thumb_background_b893084a",
+  background$6 = "Thumb_background_7f3dd6ac",
   border$5 = "Thumb_border_5749138b",
   innerBorder = "Thumb_innerBorder_42bafd18",
   icon$8 = "Thumb_icon_dca8bf26",
-  base$44 = "Thumb_6ff3e706",
+  base$43 = "Thumb_6ff3e706",
   base__vertical$1 = "Thumb_base__vertical_55a67c91",
   base__horizontal = "Thumb_base__horizontal_27ca7ace",
   base__active$1 = "Thumb_base__active_830942bb",
@@ -34740,7 +34812,7 @@ var scrollOrientations = { horizontal: "horizontal", vertical: "vertical" },
     border: border$5,
     innerBorder: innerBorder,
     icon: icon$8,
-    base: base$44,
+    base: base$43,
     base__vertical: base__vertical$1,
     base__horizontal: base__horizontal,
     base__active: base__active$1,
@@ -35020,7 +35092,7 @@ function useBarHandlers(e, t, n, r, a, o, i) {
   );
 }
 var rail$1 = "HorizontalBar_rail_37858d8f",
-  base$43 = "HorizontalBar_4df27ac3",
+  base$42 = "HorizontalBar_4df27ac3",
   track$1 = "HorizontalBar_track_649dc296",
   rail__left = "HorizontalBar_rail__left_1a906b4e",
   rail__right = "HorizontalBar_rail__right_cd24364e",
@@ -35029,7 +35101,7 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
   button$3 = "HorizontalBar_button_cbabd91",
   horizontal_bar_module_default = {
     rail: rail$1,
-    base: base$43,
+    base: base$42,
     track: track$1,
     rail__left: rail__left,
     rail__right: rail__right,
@@ -35149,14 +35221,14 @@ var rail$1 = "HorizontalBar_rail_37858d8f",
       ],
     });
   }),
-  base$42 = "HorizontalScroll_5b201d2b",
+  base$41 = "HorizontalScroll_5b201d2b",
   wrapper$2 = "HorizontalScroll_wrapper_2fb60496",
   wrapper__left = "HorizontalScroll_wrapper__left_adacfff",
   wrapper__right = "HorizontalScroll_wrapper__right_a6825027",
   wrapper__both = "HorizontalScroll_wrapper__both_7917ea88",
   defaultScrollArea = "HorizontalScroll_defaultScrollArea_a5c0f45",
   horizontal_scroll_module_default = {
-    base: base$42,
+    base: base$41,
     wrapper: wrapper$2,
     wrapper__left: wrapper__left,
     wrapper__right: wrapper__right,
@@ -35361,7 +35433,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   },
   useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
   rail = "VerticalBar_rail_3d663c9",
-  base$41 = "VerticalBar_7187fa00",
+  base$40 = "VerticalBar_7187fa00",
   track = "VerticalBar_track_ff482708",
   rail__top = "VerticalBar_rail__top_ee531f43",
   rail__bottom = "VerticalBar_rail__bottom_3eaa33b1",
@@ -35370,7 +35442,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   button$2 = "VerticalBar_button_7b0e4aca",
   vertical_bar_module_default = {
     rail: rail,
-    base: base$41,
+    base: base$40,
     track: track,
     rail__top: rail__top,
     rail__bottom: rail__bottom,
@@ -35499,7 +35571,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
           : maskDirections.bottom
         : maskDirections.top
       : maskDirections.both,
-  content$10 = "VerticalScroll_content_f30246e6",
+  content$9 = "VerticalScroll_content_f30246e6",
   content__top = "VerticalScroll_content__top_b27098a4",
   content__bottom = "VerticalScroll_content__bottom_d6604290",
   content__both = "VerticalScroll_content__both_8d905712",
@@ -35507,7 +35579,7 @@ var DEFAULT_VERTICAL_API_CONFIG = {
   bar = "VerticalScroll_bar_c5afe570",
   area = "VerticalScroll_area_a3c0086a",
   vertical_scroll_module_default = {
-    content: content$10,
+    content: content$9,
     content__top: content__top,
     content__bottom: content__bottom,
     content__both: content__both,
@@ -35583,11 +35655,11 @@ Area.Default = DefaultScroll;
 var background$5 = "Checkbox_background_ae1fc797",
   border$4 = "Checkbox_border_e1946121",
   overlay$2 = "Checkbox_overlay_de55e0a5",
-  base$40 = "Checkbox_e00b9a0",
+  base$39 = "Checkbox_e00b9a0",
   base__enabled = "Checkbox_base__enabled_5bfdfae9",
-  label$1 = "Checkbox_label_58a00a56",
-  base__small$6 = "Checkbox_base__small_70ef629e",
-  base__medium$5 = "Checkbox_base__medium_70ef629e",
+  label$2 = "Checkbox_label_58a00a56",
+  base__small$5 = "Checkbox_base__small_70ef629e",
+  base__medium$4 = "Checkbox_base__medium_70ef629e",
   base__checked = "Checkbox_base__checked_70ef629e",
   checkIcon = "Checkbox_checkIcon_968885f3",
   check = "Checkbox_check_8341731a",
@@ -35595,11 +35667,11 @@ var background$5 = "Checkbox_background_ae1fc797",
     background: background$5,
     border: border$4,
     overlay: overlay$2,
-    base: base$40,
+    base: base$39,
     base__enabled: base__enabled,
-    label: label$1,
-    base__small: base__small$6,
-    base__medium: base__medium$5,
+    label: label$2,
+    base__small: base__small$5,
+    base__medium: base__medium$4,
     base__checked: base__checked,
     checkIcon: checkIcon,
     check: check,
@@ -35623,12 +35695,12 @@ var background$5 = "Checkbox_background_ae1fc797",
       ],
     });
   }),
-  sizes$9 = { medium: "medium", small: "small" },
+  sizes$10 = { medium: "medium", small: "small" },
   Base$16 = defineStyledComponent("Checkbox", checkbox_module_default.base, {
     variants: {
       size: {
-        [sizes$9.small]: checkbox_module_default.base__small,
-        [sizes$9.medium]: checkbox_module_default.base__medium,
+        [sizes$10.small]: checkbox_module_default.base__small,
+        [sizes$10.medium]: checkbox_module_default.base__medium,
       },
       checked: { true: checkbox_module_default.base__checked },
       state: { enabled: checkbox_module_default.base__enabled },
@@ -35637,7 +35709,7 @@ var background$5 = "Checkbox_background_ae1fc797",
   HeadlessCheckbox = (0, import_react.forwardRef)(function (
     {
       checked: e,
-      size: t = sizes$9.medium,
+      size: t = sizes$10.medium,
       disabled: n = !1,
       children: r,
       onMouseEnter: a,
@@ -35689,8 +35761,8 @@ var Checkbox = (0, import_react.forwardRef)(function (
       ],
     });
   }),
-  base$39 = "VehicleLevel_3c938122",
-  vehicle_level_module_default = { base: base$39 },
+  base$38 = "VehicleLevel_3c938122",
+  vehicle_level_module_default = { base: base$38 },
   numberTypes = { arabic: "arabic", roman: "roman" };
 function getLevelType(e, t) {
   return e || (t ? numberTypes.arabic : numberTypes.roman);
@@ -35711,12 +35783,12 @@ var TYPE_PRESTIGE = "prestige",
   lengths = { short: "short", medium: "medium", long: "long" },
   iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
   icon$7 = (e, t, n) => ("prestige" === t ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${n}`),
-  base$38 = "VehiclePrestigeLevel_a750cce",
+  base$37 = "VehiclePrestigeLevel_a750cce",
   icon$6 = "VehiclePrestigeLevel_icon_ef024cc3",
-  base__left$1 = "VehiclePrestigeLevel_base__left_4426b46c",
+  base__left = "VehiclePrestigeLevel_base__left_4426b46c",
   level = "VehiclePrestigeLevel_level_10f410ba",
   level__short = "VehiclePrestigeLevel_level__short_d1939fb1",
-  base__right$1 = "VehiclePrestigeLevel_base__right_4426b46c",
+  base__right = "VehiclePrestigeLevel_base__right_4426b46c",
   level__medium = "VehiclePrestigeLevel_level__medium_90aed80f",
   level__long = "VehiclePrestigeLevel_level__long_26625167",
   base__iron = "VehiclePrestigeLevel_base__iron_4426b46c",
@@ -35725,12 +35797,12 @@ var TYPE_PRESTIGE = "prestige",
   base__gold$1 = "VehiclePrestigeLevel_base__gold_4426b46c",
   base__enamel = "VehiclePrestigeLevel_base__enamel_4426b46c",
   vehicle_prestige_level_module_default = {
-    base: base$38,
+    base: base$37,
     icon: icon$6,
-    base__left: base__left$1,
+    base__left: base__left,
     level: level,
     level__short: level__short,
-    base__right: base__right$1,
+    base__right: base__right,
     level__medium: level__medium,
     level__long: level__long,
     base__iron: base__iron,
@@ -35769,25 +35841,25 @@ function PrestigeLevel({ level: e, grade: t, type: n, direction: r, classNames: 
       });
 }
 PrestigeLevel.direction = directions$1;
-var base$37 = "VehicleRole_e70537d3",
-  icon__x16x16 = "VehicleRole_icon__x16x16_f444f190",
-  icon__x24x24 = "VehicleRole_icon__x24x24_cc02d077",
-  icon__x32x32 = "VehicleRole_icon__x32x32_2180a099",
-  icon__x48x48 = "VehicleRole_icon__x48x48_2a01e86c",
+var base$36 = "VehicleRole_e70537d3",
+  icon__x16x16$1 = "VehicleRole_icon__x16x16_f444f190",
+  icon__x24x24$1 = "VehicleRole_icon__x24x24_cc02d077",
+  icon__x32x32$1 = "VehicleRole_icon__x32x32_2180a099",
+  icon__x48x48$1 = "VehicleRole_icon__x48x48_2a01e86c",
   vehicle_role_module_default = {
-    base: base$37,
-    icon__x16x16: icon__x16x16,
-    icon__x24x24: icon__x24x24,
-    icon__x32x32: icon__x32x32,
-    icon__x48x48: icon__x48x48,
+    base: base$36,
+    icon__x16x16: icon__x16x16$1,
+    icon__x24x24: icon__x24x24$1,
+    icon__x32x32: icon__x32x32$1,
+    icon__x48x48: icon__x48x48$1,
   },
-  sizes$8 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
+  sizes$9 = { x16x16: "x16x16", x24x24: "x24x24", x32x32: "x32x32", x48x48: "x48x48" },
   images$1 = resources.resolve("images"),
   VehicleRole = (0, import_react.forwardRef)(function (
-    { roleKey: e, size: t = sizes$8.x24x24, classNames: n, ...r },
+    { roleKey: e, size: t = sizes$9.x24x24, classNames: n, ...r },
     a,
   ) {
-    const o = useUpscale(t, sizes$8.x32x32);
+    const o = useUpscale(t, sizes$9.x32x32);
     return (0, import_jsx_runtime.jsx)("div", {
       ...r,
       ref: a,
@@ -35798,17 +35870,17 @@ var base$37 = "VehicleRole_e70537d3",
       }),
     });
   });
-VehicleRole.sizes = sizes$8;
-var sizes$7 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
+VehicleRole.sizes = sizes$9;
+var sizes$8 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x96x96" },
   upscaledSizes = { x24x24: "x64x64", x48x48: "x96x96", x64x64: "x96x96", x96x96: "x96x96" },
   mapTypes = {
-    [types$3.lightTank]: "light_tank",
-    [types$3.mediumTank]: "medium_tank",
-    [types$3.heavyTank]: "heavy_tank",
-    [types$3.SPG]: "spg",
-    [types$3["AT-SPG"]]: "tank_destroyer",
+    [types$4.lightTank]: "light_tank",
+    [types$4.mediumTank]: "medium_tank",
+    [types$4.heavyTank]: "heavy_tank",
+    [types$4.SPG]: "spg",
+    [types$4["AT-SPG"]]: "tank_destroyer",
   },
-  base$36 = "VehicleType_30b4aab0",
+  base$35 = "VehicleType_30b4aab0",
   base__x24x24 = "VehicleType_base__x24x24_a3dc7aa3",
   base__x48x48 = "VehicleType_base__x48x48_cb59f57a",
   base__x64x64 = "VehicleType_base__x64x64_bb9b890",
@@ -35819,7 +35891,7 @@ var sizes$7 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x
   base__premium__x96x96 = "VehicleType_base__premium__x96x96_d837a523",
   icon$5 = "VehicleType_icon_b15d2628",
   vehicle_type_module_default = {
-    base: base$36,
+    base: base$35,
     base__x24x24: base__x24x24,
     base__x48x48: base__x48x48,
     base__x64x64: base__x64x64,
@@ -35831,10 +35903,10 @@ var sizes$7 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x
     icon: icon$5,
   },
   VehicleType = (0, import_react.forwardRef)(function (
-    { type: e, size: t = sizes$7.x48x48, premium: n = !1, fit: r = "contain", ...a },
+    { type: e, size: t = sizes$8.x48x48, premium: n = !1, fit: r = "contain", ...a },
     o,
   ) {
-    const i = useUpscale(sizes$7[t], upscaledSizes[t]);
+    const i = useUpscale(sizes$8[t], upscaledSizes[t]);
     return (0, import_jsx_runtime.jsx)(Image$1, {
       ...a,
       ref: o,
@@ -35849,11 +35921,11 @@ var sizes$7 = { x24x24: "x24x24", x48x48: "x48x48", x64x64: "x64x64", x96x96: "x
       path: `ui_kit.vehicle_type.${i}.${n ? "premium_" : ""}${normalizeResource(mapTypes[e])}_${i}`,
     });
   });
-((VehicleType.types = types$3), (VehicleType.sizes = sizes$7));
-var base$35 = "VehicleInfo_1732f1f0",
+((VehicleType.types = types$4), (VehicleType.sizes = sizes$8));
+var base$34 = "VehicleInfo_1732f1f0",
   name = "VehicleInfo_name_3989ca04",
   name__premium = "VehicleInfo_name__premium_258b3b93",
-  vehicle_info_module_default = { base: base$35, name: name, name__premium: name__premium },
+  vehicle_info_module_default = { base: base$34, name: name, name__premium: name__premium },
   VehicleName = defineStyledComponent("VehicleName", vehicle_info_module_default.name, {
     variants: { premium: { true: vehicle_info_module_default.name__premium } },
   }),
@@ -35891,7 +35963,7 @@ var ErrorHandler = class extends import_react.Component {
         : this.props.children;
     }
   },
-  types$2 = {
+  types$3 = {
     tankXP: "tankXP",
     freeXP: "freeXP",
     credits: "credits",
@@ -35909,9 +35981,9 @@ var ErrorHandler = class extends import_react.Component {
     brProgressionToken: "brProgressionToken",
     battlePassPoints: "battlePassPoints",
   },
-  currencyTypes = Object.values(types$2),
+  currencyTypes = Object.values(types$3),
   discountTypes = { currency: "currency", experience: "experience", custom: "custom" },
-  sizes$6 = {
+  sizes$7 = {
     extraSmall: "extraSmall",
     small: "small",
     medium: "medium",
@@ -35920,30 +35992,30 @@ var ErrorHandler = class extends import_react.Component {
     xxl: "xxl",
   },
   imageSizes$1 = {
-    [sizes$6.extraSmall]: 16,
-    [sizes$6.small]: 24,
-    [sizes$6.medium]: 32,
-    [sizes$6.large]: 48,
-    [sizes$6.extraLarge]: 80,
-    [sizes$6.xxl]: 96,
+    [sizes$7.extraSmall]: 16,
+    [sizes$7.small]: 24,
+    [sizes$7.medium]: 32,
+    [sizes$7.large]: 48,
+    [sizes$7.extraLarge]: 80,
+    [sizes$7.xxl]: 96,
   },
   upscaledImageSizes = {
-    [sizes$6.extraSmall]: 32,
-    [sizes$6.small]: 48,
-    [sizes$6.medium]: 32,
-    [sizes$6.large]: 96,
-    [sizes$6.extraLarge]: 80,
-    [sizes$6.xxl]: 96,
+    [sizes$7.extraSmall]: 32,
+    [sizes$7.small]: 48,
+    [sizes$7.medium]: 32,
+    [sizes$7.large]: 96,
+    [sizes$7.extraLarge]: 80,
+    [sizes$7.xxl]: 96,
   },
   discountSizesConfig = {
-    [sizes$6.extraSmall]: { width: "60rem", height: "36rem" },
-    [sizes$6.small]: { width: "80rem", height: "48rem" },
-    [sizes$6.medium]: { width: "80rem", height: "48rem" },
-    [sizes$6.large]: { width: "106rem", height: "64rem" },
-    [sizes$6.extraLarge]: { width: "140rem", height: "84rem" },
-    [sizes$6.xxl]: { width: "140rem", height: "84rem" },
+    [sizes$7.extraSmall]: { width: "60rem", height: "36rem" },
+    [sizes$7.small]: { width: "80rem", height: "48rem" },
+    [sizes$7.medium]: { width: "80rem", height: "48rem" },
+    [sizes$7.large]: { width: "106rem", height: "64rem" },
+    [sizes$7.extraLarge]: { width: "140rem", height: "84rem" },
+    [sizes$7.xxl]: { width: "140rem", height: "84rem" },
   },
-  base$34 = "Currency_72d4be39",
+  base$33 = "Currency_72d4be39",
   base__reverse = "Currency_base__reverse_f12e61b0",
   base__notEnough = "Currency_base__notEnough_9a7842f",
   base__credits = "Currency_base__credits_7b9ae721",
@@ -35952,7 +36024,7 @@ var ErrorHandler = class extends import_react.Component {
   base__crystal = "Currency_base__crystal_f830cb47",
   base__tankXP = "Currency_base__tankXP_1707c68b",
   currency_module_default = {
-    base: base$34,
+    base: base$33,
     base__reverse: base__reverse,
     base__notEnough: base__notEnough,
     base__credits: base__credits,
@@ -35966,7 +36038,7 @@ var ErrorHandler = class extends import_react.Component {
     variants: { reverse: { true: currency_module_default.base__reverse } },
   });
 function formatCurrencyValue(e, t) {
-  const n = t === types$2.gold ? "gold" : "integral";
+  const n = t === types$3.gold ? "gold" : "integral";
   return Array.isArray(e)
     ? e.map((e) => ("number" == typeof e ? intl$1.formatNumber(n, e) : e))
     : "number" == typeof e
@@ -35979,7 +36051,7 @@ function Currency({
   className: n,
   classNames: r,
   imagePath: a,
-  size: o = sizes$6.small,
+  size: o = sizes$7.small,
   enough: i = !0,
   ...s
 }) {
@@ -36008,8 +36080,8 @@ function Currency({
     ],
   });
 }
-((Currency.sizes = sizes$6), (Currency.types = types$2));
-var base$33 = "WithDiscount_b8b3aa7f",
+((Currency.sizes = sizes$7), (Currency.types = types$3));
+var base$32 = "WithDiscount_b8b3aa7f",
   discount = "WithDiscount_discount_f7ce1b97",
   icon$4 = "WithDiscount_icon_a6c57ca8",
   icon__extraSmall = "WithDiscount_icon__extraSmall_97673105",
@@ -36019,7 +36091,7 @@ var base$33 = "WithDiscount_b8b3aa7f",
   icon__extraLarge = "WithDiscount_icon__extraLarge_9d22aa45",
   icon__xxl = "WithDiscount_icon__xxl_4080bb18",
   with_discount_module_default = {
-    base: base$33,
+    base: base$32,
     discount: discount,
     icon: icon$4,
     icon__extraSmall: icon__extraSmall,
@@ -36032,7 +36104,7 @@ var base$33 = "WithDiscount_b8b3aa7f",
 function WithDiscount({
   children: e,
   imagePath: t,
-  size: n = sizes$6.small,
+  size: n = sizes$7.small,
   customImageSize: r,
   type: a,
   enabled: o = !1,
@@ -36055,7 +36127,7 @@ function WithDiscount({
             width: u.width,
             height: u.height,
             path:
-              t ?? `library.currency.discount_${a}_${n === sizes$6.xxl ? sizes$6.extraLarge : n}`,
+              t ?? `library.currency.discount_${a}_${n === sizes$7.xxl ? sizes$7.extraLarge : n}`,
             className: clsx(
               with_discount_module_default.icon,
               s?.icon,
@@ -36074,25 +36146,25 @@ var base__x120x96 = "VehicleImage_base__x120x96_32ca06f1",
     base__x190x152: base__x190x152,
     base__x380x304: base__x380x304,
   },
-  sizes$5 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
+  sizes$6 = { x120x96: "x120x96", x190x152: "x190x152", x380x304: "x380x304" },
   Base$14 = defineStyledComponent("VehicleImage", {
     element: Image$1,
     className: vehicle_image_module_default.base,
     cva: {
       variants: {
         size: {
-          [sizes$5.x120x96]: vehicle_image_module_default.base__x120x96,
-          [sizes$5.x190x152]: vehicle_image_module_default.base__x190x152,
-          [sizes$5.x380x304]: vehicle_image_module_default.base__x380x304,
+          [sizes$6.x120x96]: vehicle_image_module_default.base__x120x96,
+          [sizes$6.x190x152]: vehicle_image_module_default.base__x190x152,
+          [sizes$6.x380x304]: vehicle_image_module_default.base__x380x304,
         },
       },
     },
   });
-function UnknownVehicleImage({ size: e = sizes$5.x380x304, ...t }) {
+function UnknownVehicleImage({ size: e = sizes$6.x380x304, ...t }) {
   return (0, import_jsx_runtime.jsx)(Base$14, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
 }
 var VehicleImage = (0, import_react.forwardRef)(function (
-  { size: e = sizes$5.x380x304, name: t, width: n, height: r, className: a, ...o },
+  { size: e = sizes$6.x380x304, name: t, width: n, height: r, className: a, ...o },
   i,
 ) {
   const s = resources.resolve("images"),
@@ -36137,18 +36209,18 @@ function useCalculateLeftTime(e) {
         ? hours(1)
         : hours(0);
 }
-((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$5));
-var base$32 = "IconCounter_33c660e9",
-  icon_counter_module_default = { base: base$32 };
+((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$6));
+var base$31 = "IconCounter_33c660e9",
+  icon_counter_module_default = { base: base$31 };
 function IconCounter({ className: e }) {
   return (0, import_jsx_runtime.jsx)("div", {
     className: clsx(icon_counter_module_default.base, e),
   });
 }
-var base$31 = "ShortCounter_d2d7b370",
+var base$30 = "ShortCounter_d2d7b370",
   text = "ShortCounter_text_ecf2e742",
   count = "ShortCounter_count_d7a74fd8",
-  short_counter_module_default = { base: base$31, text: text, count: count },
+  short_counter_module_default = { base: base$30, text: text, count: count },
   ShortCounter = (0, import_react.forwardRef)(function (
     { time: e, wins: t, battles: n, classNames: r, ...a },
     o,
@@ -36464,13 +36536,13 @@ function useKeyButtonContext() {
 }
 var background$4 = "KeyButton_background_8a852f95",
   border$3 = "KeyButton_border_b1c50f01",
-  base$30 = "KeyButton_8fd343f8",
-  content$9 = "KeyButton_content_3ab1d990",
+  base$29 = "KeyButton_8fd343f8",
+  content$8 = "KeyButton_content_3ab1d990",
   key_button_module_default = {
     background: background$4,
     border: border$3,
-    base: base$30,
-    content: content$9,
+    base: base$29,
+    content: content$8,
   },
   StyledBase = defineStyledComponent("KeyButton", key_button_module_default.base);
 function Base$13({ children: e, onClick: t, onMouseEnter: n, ...r }) {
@@ -36643,7 +36715,7 @@ function Route({ component: e, exact: t }) {
 }
 var states = { default: "default", alert: "alert", error: "error", done: "done" },
   messageTypes = { alert: "alert", error: "error" },
-  types$1 = {
+  types$2 = {
     text: "text",
     password: "password",
     number: "number",
@@ -36651,9 +36723,9 @@ var states = { default: "default", alert: "alert", error: "error", done: "done" 
     email: "email",
     integer: "integer",
   },
-  sizes$4 = { medium: "medium", large: "large" },
+  sizes$5 = { medium: "medium", large: "large" },
   icons = { search: "search" },
-  defaultConfig = { type: types$1.text, size: sizes$4.medium, state: states.default, disabled: !1 },
+  defaultConfig = { type: types$2.text, size: sizes$5.medium, state: states.default, disabled: !1 },
   placeholderVisibility = { focusedOrValue: "focusedOrValue", value: "value" },
   contextInstance = (0, import_react.createContext)(null);
 function useInput() {
@@ -36918,9 +36990,9 @@ var Placeholder = (0, import_react.forwardRef)(function (
           onChange: function (e) {
             if (c) return (e.preventDefault(), void f.current?.blur());
             const { value: t } = e.target;
-            (u === types$1.number
+            (u === types$2.number
               ? (e.target.value = cleanInputNumber(t))
-              : u === types$1.integer && (e.target.value = cleanInputInteger(t)),
+              : u === types$2.integer && (e.target.value = cleanInputInteger(t)),
               i.onChange?.(e));
           },
           onFocus: function (e) {
@@ -37002,9 +37074,9 @@ var Input = (0, import_react.forwardRef)(function (
     }),
   });
 });
-((Input.types = types$1),
+((Input.types = types$2),
   (Input.messageTypes = messageTypes),
-  (Input.sizes = sizes$4),
+  (Input.sizes = sizes$5),
   (Input.states = states),
   (Input.icons = icons),
   (Input.Provider = Provider),
@@ -37016,28 +37088,28 @@ var Input = (0, import_react.forwardRef)(function (
   (Input.ClearButton = ClearButton));
 var toggleThemes = { primary: "primary", custom: "custom" },
   toggleSizes = { extraSmall: "extraSmall", small: "small", medium: "medium" },
-  base$29 = "Toggle_cdf77db0",
+  base$28 = "Toggle_cdf77db0",
   base__fullSizeContent = "Toggle_base__fullSizeContent_1b52d9ec",
   base__activated = "Toggle_base__activated_d584e080",
-  base__disabled$5 = "Toggle_base__disabled_b564a69b",
+  base__disabled$4 = "Toggle_base__disabled_b564a69b",
   background$3 = "Toggle_background_78cd67c0",
   border$2 = "Toggle_border_3d0d0d39",
   bulb = "Toggle_bulb_fe6d0fba",
   overlay$1 = "Toggle_overlay_e2999686",
-  content$8 = "Toggle_content_17eff4d2",
+  content$7 = "Toggle_content_17eff4d2",
   toggle_module_default = {
-    base: base$29,
+    base: base$28,
     "base__size-small": "Toggle_base__size-small_b76142a1",
     "base__size-medium": "Toggle_base__size-medium_a0d408f5",
     base__fullSizeContent: base__fullSizeContent,
     "base__theme-primary": "Toggle_base__theme-primary_3e3de333",
     base__activated: base__activated,
-    base__disabled: base__disabled$5,
+    base__disabled: base__disabled$4,
     background: background$3,
     border: border$2,
     bulb: bulb,
     overlay: overlay$1,
-    content: content$8,
+    content: content$7,
   },
   Base$12 = defineStyledComponent("Toggle", toggle_module_default.base, {
     variants: {
@@ -37192,10 +37264,10 @@ function useHoverState(e) {
   const [t, n] = (0, import_react.useState)(!1);
   return [t ? `${e}_hover` : e, n];
 }
-var base$28 = "Background_39e8f2ed",
+var base$27 = "Background_39e8f2ed",
   pattern$3 = "Background_pattern_8cad1521",
   noise = "Background_noise_e3254bb3",
-  background_module_default = { base: base$28, pattern: pattern$3, noise: noise };
+  background_module_default = { base: base$27, pattern: pattern$3, noise: noise };
 function Background({ className: e, classNames: t }) {
   return (0, import_jsx_runtime.jsxs)("div", {
     className: clsx(e, background_module_default.base),
@@ -37209,8 +37281,8 @@ function Background({ className: e, classNames: t }) {
     ],
   });
 }
-var base$27 = "AnimatedDetails_c70d3863",
-  animated_details_module_default = { base: base$27 },
+var base$26 = "AnimatedDetails_c70d3863",
+  animated_details_module_default = { base: base$26 },
   AnimatedDetails = (0, import_react.forwardRef)(function (
     { opened: e, children: t, className: n, animationSettings: r = {}, ...a },
     o,
@@ -37280,9 +37352,9 @@ var arrow = "Arrow_f1570a91",
       ),
     });
   }),
-  content$7 = "Details_content_a5a56462",
+  content$6 = "Details_content_a5a56462",
   content__opened = "Details_content__opened_cc21f43f",
-  details_module_default = { content: content$7, content__opened: content__opened },
+  details_module_default = { content: content$6, content__opened: content__opened },
   Details = (0, import_react.forwardRef)(function (e, t) {
     const { opened: n } = useAccordion();
     return (0, import_jsx_runtime.jsx)("div", {
@@ -37328,8 +37400,8 @@ var arrow = "Arrow_f1570a91",
       ],
     });
   }),
-  base$26 = "Accordion_2b56632",
-  accordion_module_default = { base: base$26 },
+  base$25 = "Accordion_2b56632",
+  accordion_module_default = { base: base$25 },
   Accordion = (0, import_react.forwardRef)(function ({ opened: e, ...t }, n) {
     return (0, import_jsx_runtime.jsx)(Context$2.Provider, {
       value: { opened: e },
@@ -37345,10 +37417,10 @@ var arrow = "Arrow_f1570a91",
   (Accordion.Details = Details),
   (Accordion.AnimatedDetails = AnimatedDetails),
   (Accordion.Arrow = Arrow));
-var base$25 = "ScrollVelocityGuardContent_6b5de46d",
+var base$24 = "ScrollVelocityGuardContent_6b5de46d",
   base__disableInteractivity = "ScrollVelocityGuardContent_base__disableInteractivity_e6c30513",
   scroll_velocity_guard_content_module_default = {
-    base: base$25,
+    base: base$24,
     base__disableInteractivity: base__disableInteractivity,
   },
   DEFAULT_VELOCITY_LIMITATION = 1;
@@ -37521,173 +37593,6 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
   WulfTooltip = createTooltipComponent(useWulfTooltipAdapter, "WulfTooltip"),
   SpecialTooltip = createTooltipComponent(useSpecialTooltipAdapter, "SpecialTooltip"),
   BackportTooltip = createTooltipComponent(useBackdropTooltip, "BackportTooltip"),
-  ButtonType = (function (e) {
-    return (
-      (e.main = "main"),
-      (e.primary = "primary"),
-      (e.primaryGreen = "primaryGreen"),
-      (e.primaryRed = "primaryRed"),
-      (e.secondary = "secondary"),
-      (e.ghost = "ghost"),
-      e
-    );
-  })({}),
-  ButtonSize = (function (e) {
-    return (
-      (e.extraSmall = "extraSmall"),
-      (e.small = "small"),
-      (e.medium = "medium"),
-      (e.large = "large"),
-      e
-    );
-  })({}),
-  base$24 = "Cbutton_24fc9a0c",
-  base__main = "Cbutton_base__main_2f199578",
-  base__primary = "Cbutton_base__primary_9da8a692",
-  base__primaryGreen = "Cbutton_base__primaryGreen_74301f4e",
-  base__primaryRed = "Cbutton_base__primaryRed_d184ac",
-  base__secondary = "Cbutton_base__secondary_22ff48c2",
-  base__ghost = "Cbutton_base__ghost_fd3acf91",
-  base__extraSmall = "Cbutton_base__extraSmall_f64ebb9e",
-  base__small$5 = "Cbutton_base__small_a71bc2a9",
-  base__medium$4 = "Cbutton_base__medium_d82a1b14",
-  base__large = "Cbutton_base__large_f02aee17",
-  base__disabled$4 = "Cbutton_base__disabled_96f239bb",
-  back = "Cbutton_back_ffaa618f",
-  texture = "Cbutton_texture_f462b307",
-  state = "Cbutton_state_bf8d0bab",
-  base__focus = "Cbutton_base__focus_180a9717",
-  stateHighlightHover = "Cbutton_stateHighlightHover_7e2b860e",
-  stateHighlightActive = "Cbutton_stateHighlightActive_f3d8fd6a",
-  stateDisabled = "Cbutton_stateDisabled_7b91392f",
-  base__highlightActive = "Cbutton_base__highlightActive_180a9717",
-  content$6 = "Cbutton_content_faaa9067",
-  CButton_module_default = {
-    base: base$24,
-    base__main: base__main,
-    base__primary: base__primary,
-    base__primaryGreen: base__primaryGreen,
-    base__primaryRed: base__primaryRed,
-    base__secondary: base__secondary,
-    base__ghost: base__ghost,
-    base__extraSmall: base__extraSmall,
-    base__small: base__small$5,
-    base__medium: base__medium$4,
-    base__large: base__large,
-    base__disabled: base__disabled$4,
-    back: back,
-    texture: texture,
-    state: state,
-    base__focus: base__focus,
-    stateHighlightHover: stateHighlightHover,
-    stateHighlightActive: stateHighlightActive,
-    stateDisabled: stateDisabled,
-    base__highlightActive: base__highlightActive,
-    content: content$6,
-  },
-  Button = ({
-    children: e,
-    size: t,
-    disabled: n,
-    mixClass: r,
-    onMouseEnter: a,
-    onMouseMove: o,
-    onMouseDown: i,
-    onMouseUp: s,
-    onMouseLeave: u,
-    onClick: l,
-    isFocused: c = !1,
-    type: d = ButtonType.primary,
-    soundHover: f = "highlight",
-    soundClick: p = "play",
-  }) => {
-    const m = (0, import_react.useRef)(null),
-      [_, h] = (0, import_react.useState)(c),
-      [g, b] = (0, import_react.useState)(!1);
-    return (
-      (0, import_react.useEffect)(() => {
-        function e(e) {
-          _ && null !== m.current && !m.current.contains(e.target) && h(!1);
-        }
-        return (
-          document.addEventListener("mousedown", e),
-          () => {
-            document.removeEventListener("mousedown", e);
-          }
-        );
-      }, [_]),
-      (0, import_react.useEffect)(() => {
-        h(c);
-      }, [c]),
-      (0, import_jsx_runtime.jsxs)("div", {
-        ref: m,
-        className: (0, import_classnames.default)(
-          CButton_module_default.base,
-          CButton_module_default[`base__${d}`],
-          n && CButton_module_default.base__disabled,
-          t && CButton_module_default[`base__${t}`],
-          _ && CButton_module_default.base__focus,
-          g && CButton_module_default.base__highlightActive,
-          r,
-        ),
-        onMouseEnter: function (e) {
-          n || (null !== f && playSound(f), a && a(e));
-        },
-        onMouseMove: function (e) {
-          o && o(e);
-        },
-        onMouseUp: function (e) {
-          n || (s && s(e), b(!1));
-        },
-        onMouseDown: function (e) {
-          if (n) return;
-          const t = e.button === MOUSE_BUTTON_CODES.LEFT;
-          (null !== p && t && playSound(p),
-            i && i(e),
-            c && (n || (m.current && (m.current.focus(), h(!0)))),
-            t && b(!0));
-        },
-        onMouseLeave: function (e) {
-          n || (u && u(e), b(!1));
-        },
-        onClick: function (e) {
-          n || (l && l(e));
-        },
-        children: [
-          d !== ButtonType.ghost &&
-            (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
-              children: [
-                (0, import_jsx_runtime.jsx)("div", { className: CButton_module_default.back }),
-                (0, import_jsx_runtime.jsx)("span", { className: CButton_module_default.texture }),
-              ],
-            }),
-          (0, import_jsx_runtime.jsxs)("span", {
-            className: (0, import_classnames.default)(
-              CButton_module_default.state,
-              CButton_module_default.state__default,
-            ),
-            children: [
-              (0, import_jsx_runtime.jsx)("span", {
-                className: CButton_module_default.stateDisabled,
-              }),
-              (0, import_jsx_runtime.jsx)("span", {
-                className: CButton_module_default.stateHighlightHover,
-              }),
-              (0, import_jsx_runtime.jsx)("span", {
-                className: CButton_module_default.stateHighlightActive,
-              }),
-            ],
-          }),
-          (0, import_jsx_runtime.jsx)("span", {
-            className: CButton_module_default.content,
-            lang: R.strings.settings.LANGUAGE_CODE(),
-            children: e,
-          }),
-        ],
-      })
-    );
-  },
-  CButton = Button,
   base$23 = "Error_741eaf3c",
   alertIcon = "Error_alertIcon_e771a05c",
   errorCaption = "Error_errorCaption_89c19a4f",
@@ -37716,17 +37621,11 @@ var Tooltip$1 = createTooltipComponent(useTooltip, "Tooltip"),
       ],
     }),
   base$22 = "Spinner_9ec19f90",
-  caption$1 = "Spinner_caption_a44b585",
+  caption = "Spinner_caption_a44b585",
   gear = "Spinner_gear_13ca7433",
   spin = "Spinner_spin_88c33ad6",
   logo = "Spinner_logo_22e624b",
-  Spinner_module_default = {
-    base: base$22,
-    caption: caption$1,
-    gear: gear,
-    spin: spin,
-    logo: logo,
-  },
+  Spinner_module_default = { base: base$22, caption: caption, gear: gear, spin: spin, logo: logo },
   Spinner = ({ message: e, className: t, classNames: n }) =>
     (0, import_jsx_runtime.jsxs)("div", {
       className: (0, import_classnames.default)(Spinner_module_default.base, t),
@@ -37850,31 +37749,31 @@ function SelectedItem({ children: e, classNames: t }) {
     }),
   });
 }
-var sizes$3 = { small: "small", medium: "medium" },
-  types = { vertical: "vertical", horizontal: "horizontal" },
+var sizes$4 = { small: "small", medium: "medium" },
+  types$1 = { vertical: "vertical", horizontal: "horizontal" },
   Base$11 = defineStyledComponent("Button", switcher_module_default.base, {
     variants: {
       type: {
-        [types.horizontal]: switcher_module_default["base__type-horizontal"],
-        [types.vertical]: switcher_module_default["base__type-vertical"],
+        [types$1.horizontal]: switcher_module_default["base__type-horizontal"],
+        [types$1.vertical]: switcher_module_default["base__type-vertical"],
       },
       size: {
-        [sizes$3.small]: switcher_module_default["base__size-small"],
-        [sizes$3.medium]: switcher_module_default["base__size-medium"],
+        [sizes$4.small]: switcher_module_default["base__size-small"],
+        [sizes$4.medium]: switcher_module_default["base__size-medium"],
       },
       state: { disabled: switcher_module_default.base__disabled },
     },
-    defaultVariants: { type: types.vertical, size: sizes$3.small },
+    defaultVariants: { type: types$1.vertical, size: sizes$4.small },
   }),
   Item = defineStyledComponent("ButtonItem", switcher_module_default.item),
   Switcher = (0, import_react.forwardRef)(function (
     {
-      type: e = types.vertical,
+      type: e = types$1.vertical,
       checked: t,
       onMouseEnter: n,
       onSwitch: r,
       onClick: a,
-      size: o = sizes$3.small,
+      size: o = sizes$4.small,
       disabled: i = !1,
       autoAlignContent: s = !1,
       classNames: u,
@@ -37926,14 +37825,14 @@ var sizes$3 = { small: "small", medium: "medium" },
   });
 ((Switcher.Item = Item),
   (Switcher.SelectedItem = SelectedItem),
-  (Switcher.types = types),
-  (Switcher.sizes = sizes$3));
+  (Switcher.types = types$1),
+  (Switcher.sizes = sizes$4));
 var context = (0, import_react.createContext)(null);
 function useDragAndDrop() {
   const e = (0, import_react.useContext)(context);
   return (assert$1(null !== e, "DragAndDropContext is null"), e);
 }
-var sizes$2 = {
+var sizes$3 = {
     s24x24: "s24x24",
     s48x48: "s48x48",
     s64x64: "s64x64",
@@ -37962,24 +37861,24 @@ var sizes$2 = {
     overlayTypes.builtInEquipment,
   ],
   imageSizes = {
-    [sizes$2.s24x24]: { width: 24, height: 24 },
-    [sizes$2.s48x48]: { width: 48, height: 48 },
-    [sizes$2.s64x64]: { width: 64, height: 64 },
-    [sizes$2.s80x80]: { width: 80, height: 80 },
-    [sizes$2.s180x135]: { width: 180, height: 135 },
-    [sizes$2.s232x174]: { width: 232, height: 174 },
-    [sizes$2.s296x222]: { width: 296, height: 222 },
-    [sizes$2.s360x270]: { width: 360, height: 270 },
-    [sizes$2.s400x300]: { width: 400, height: 300 },
-    [sizes$2.s600x450]: { width: 600, height: 450 },
+    [sizes$3.s24x24]: { width: 24, height: 24 },
+    [sizes$3.s48x48]: { width: 48, height: 48 },
+    [sizes$3.s64x64]: { width: 64, height: 64 },
+    [sizes$3.s80x80]: { width: 80, height: 80 },
+    [sizes$3.s180x135]: { width: 180, height: 135 },
+    [sizes$3.s232x174]: { width: 232, height: 174 },
+    [sizes$3.s296x222]: { width: 296, height: 222 },
+    [sizes$3.s360x270]: { width: 360, height: 270 },
+    [sizes$3.s400x300]: { width: 400, height: 300 },
+    [sizes$3.s600x450]: { width: 600, height: 450 },
   },
   Base$10 = defineStyledComponent("LoadoutItem", { element: Image$1 });
 function getItemSizeFolderName(e) {
   switch (e) {
-    case sizes$2.s80x80:
-    case sizes$2.s64x64:
+    case sizes$3.s80x80:
+    case sizes$3.s64x64:
       return "big";
-    case sizes$2.s48x48:
+    case sizes$3.s48x48:
       return "small";
     default:
       return e;
@@ -38003,7 +37902,7 @@ var LoadoutItem = (0, import_react.forwardRef)(function (
 ) {
   const f =
       t ||
-      (r === sizes$2.s24x24
+      (r === sizes$3.s24x24
         ? `vehParams.tooltips.bonuses.${e}`
         : `quests.bonuses.${getItemSizeFolderName(r)}.${e}`),
     p = (() => {
@@ -38011,7 +37910,7 @@ var LoadoutItem = (0, import_react.forwardRef)(function (
       if (a === overlayTypes.custom)
         return void console.error("custom overlay passed without image source path");
       if (a === overlayTypes.none) return;
-      const e = r === sizes$2.s64x64 ? sizes$2.s80x80 : r;
+      const e = r === sizes$3.s64x64 ? sizes$3.s80x80 : r;
       return overlayTypesWithoutLevel.includes(a)
         ? `components.loadout_item.overlays.${e}.${a}`
         : o
@@ -38032,7 +37931,7 @@ var LoadoutItem = (0, import_react.forwardRef)(function (
       (0, import_jsx_runtime.jsx)(Image$1, { path: p, width: "100%", height: "100%" }),
   });
 });
-((LoadoutItem.sizes = sizes$2), (LoadoutItem.overlayTypes = overlayTypes));
+((LoadoutItem.sizes = sizes$3), (LoadoutItem.overlayTypes = overlayTypes));
 var selectedOverlay = "Slot_selectedOverlay_5b63484a",
   disabledOverlay$1 = "Slot_disabledOverlay_4d0ab64b",
   content$4 = "Slot_content_dbf98123",
@@ -38057,15 +37956,15 @@ var selectedOverlay = "Slot_selectedOverlay_5b63484a",
     content__disabled: content__disabled,
     emptyContent: emptyContent,
   },
-  sizes$1 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
+  sizes$2 = { small: "small", medium: "medium", large: "large", extraLarge: "extraLarge" },
   Content = defineStyledComponent("SlotContent"),
   Base$9 = defineStyledComponent("Slot", slot_module_default.slot, {
     variants: {
       size: {
-        [sizes$1.small]: slot_module_default.slot__small,
-        [sizes$1.medium]: slot_module_default.slot__medium,
-        [sizes$1.large]: slot_module_default.slot__large,
-        [sizes$1.extraLarge]: slot_module_default.slot__extraLarge,
+        [sizes$2.small]: slot_module_default.slot__small,
+        [sizes$2.medium]: slot_module_default.slot__medium,
+        [sizes$2.large]: slot_module_default.slot__large,
+        [sizes$2.extraLarge]: slot_module_default.slot__extraLarge,
       },
       hovered: { true: slot_module_default.slot__hovered },
       selected: { true: slot_module_default.slot__selected },
@@ -38116,7 +38015,7 @@ var selectedOverlay = "Slot_selectedOverlay_5b63484a",
       ],
     });
   });
-((Slot.sizes = sizes$1), (Slot.Empty = EmptySlot));
+((Slot.sizes = sizes$2), (Slot.Empty = EmptySlot));
 var DragArea = (0, import_react.forwardRef)(({ children: e, ...t }, n) => {
     const r = (0, import_react.useRef)(null),
       a = useDragAndDrop();
@@ -38698,8 +38597,8 @@ function ProgressBar({
 }
 var delta = "Delta_5c8185db",
   delta__increase = "Delta_delta__increase_e6e76b0b",
-  glow$1 = "Delta_glow_8e83fd7a",
-  delta_module_default = { delta: delta, delta__increase: delta__increase, glow: glow$1 },
+  glow = "Delta_glow_8e83fd7a",
+  delta_module_default = { delta: delta, delta__increase: delta__increase, glow: glow },
   Delta = (0, import_react.memo)(function ({
     initValue: e,
     initMaxValue: t,
@@ -38763,7 +38662,247 @@ var delta = "Delta_5c8185db",
         ],
       })
     );
+  }),
+  formats = {
+    superCompact: "superCompact",
+    compact: "compact",
+    default: "default",
+    detailed: "detailed",
+  },
+  sizes$1 = {
+    x16x16: "x16x16",
+    x24x24: "x24x24",
+    x32x32: "x32x32",
+    x48x48: "x48x48",
+    x80x80: "x80x80",
+  },
+  types = { accent: "accent", cooldown: "cooldown" },
+  item__x16x16 = "FormattedValue_item__x16x16_9eb36ff5",
+  item__x24x24 = "FormattedValue_item__x24x24_9eb36ff5",
+  item__x32x32 = "FormattedValue_item__x32x32_bd66be3c",
+  item__x48x48 = "FormattedValue_item__x48x48_43bf6d1b",
+  item__x80x80 = "FormattedValue_item__x80x80_c03e8347",
+  part__x16x16 = "FormattedValue_part__x16x16_2186b32f",
+  part__x24x24 = "FormattedValue_part__x24x24_2186b32f",
+  part__x32x32 = "FormattedValue_part__x32x32_f9323fe3",
+  part__x48x48 = "FormattedValue_part__x48x48_bd002d69",
+  part__x80x80 = "FormattedValue_part__x80x80_dca9ec18",
+  detailedSeparator = "FormattedValue_detailedSeparator_30bfaeef",
+  detailedSeparator__x16x16 = "FormattedValue_detailedSeparator__x16x16_2b8550e4",
+  detailedSeparator__x24x24 = "FormattedValue_detailedSeparator__x24x24_2b8550e4",
+  detailedSeparator__x32x32 = "FormattedValue_detailedSeparator__x32x32_bc7822fa",
+  detailedSeparator__x48x48 = "FormattedValue_detailedSeparator__x48x48_4cb1e66b",
+  detailedSeparator__x80x80 = "FormattedValue_detailedSeparator__x80x80_2c1c84ee",
+  formatted_value_module_default = {
+    item__x16x16: item__x16x16,
+    item__x24x24: item__x24x24,
+    item__x32x32: item__x32x32,
+    item__x48x48: item__x48x48,
+    item__x80x80: item__x80x80,
+    part__x16x16: part__x16x16,
+    part__x24x24: part__x24x24,
+    part__x32x32: part__x32x32,
+    part__x48x48: part__x48x48,
+    part__x80x80: part__x80x80,
+    detailedSeparator: detailedSeparator,
+    detailedSeparator__x16x16: detailedSeparator__x16x16,
+    detailedSeparator__x24x24: detailedSeparator__x24x24,
+    detailedSeparator__x32x32: detailedSeparator__x32x32,
+    detailedSeparator__x48x48: detailedSeparator__x48x48,
+    detailedSeparator__x80x80: detailedSeparator__x80x80,
+  };
+function FormattedValue({ size: e, preFormatted: t }) {
+  const n = [];
+  for (let r = 0; r < t.items.length; ++r)
+    (t.separator &&
+      r > 0 &&
+      n.push(
+        (0, import_jsx_runtime.jsx)(
+          "span",
+          {
+            className: (0, import_classnames.default)(
+              formatted_value_module_default.detailedSeparator,
+              formatted_value_module_default[`detailedSeparator__${e}`],
+            ),
+          },
+          "separator",
+        ),
+      ),
+      n.push(
+        (0, import_jsx_runtime.jsx)(
+          "span",
+          {
+            className: (0, import_classnames.default)(
+              formatted_value_module_default.item,
+              formatted_value_module_default[`item__${e}`],
+            ),
+            children: t.items[r]
+              ?.split(" ")
+              .map((t, n) =>
+                (0, import_jsx_runtime.jsx)(
+                  "span",
+                  {
+                    className: (0, import_classnames.default)(
+                      formatted_value_module_default.part,
+                      formatted_value_module_default[`part__${e}`],
+                    ),
+                    children: t,
+                  },
+                  `part_${n}`,
+                ),
+              ),
+          },
+          `item_${r}`,
+        ),
+      ));
+  return n;
+}
+var STRING_RESOURCES = resources.resolve("strings"),
+  COLON = ":",
+  DAYS_FORMAT = "D",
+  HOURS_FORMAT = "h",
+  MINUTES_FORMAT = "m",
+  DEFAULT_MIN_VALUE = 1,
+  FORMAT_PARTS = {
+    [formats.compact]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
+    [formats.default]: [DAYS_FORMAT, HOURS_FORMAT, MINUTES_FORMAT],
+    [formats.detailed]: [DAYS_FORMAT, "hh", "mm", "ss"],
+  },
+  FORMATTER = {
+    [formats.compact]: compactFormatter,
+    [formats.default]: defaultFormatter,
+    [formats.detailed]: detailedFormatter,
+  },
+  LOCALE_FORMATTERS = {
+    [DAYS_FORMAT]: (e) =>
+      format$1(
+        STRING_RESOURCES.readOr("common.timer.days", () => DAYS_FORMAT.toLowerCase()),
+        { days: e },
+      ),
+    [HOURS_FORMAT]: (e) =>
+      format$1(
+        STRING_RESOURCES.readOr("common.timer.hours", () => HOURS_FORMAT),
+        { hours: e },
+      ),
+    [MINUTES_FORMAT]: (e) =>
+      format$1(
+        STRING_RESOURCES.readOr("common.timer.minutes", () => MINUTES_FORMAT),
+        { minutes: e },
+      ),
+  };
+function detailedFormatter(e) {
+  const [t, ...n] = e,
+    r = n.join(COLON);
+  return { separator: !0, items: Number(t) > 0 ? [LOCALE_FORMATTERS[DAYS_FORMAT]?.(t), r] : [r] };
+}
+function defaultFormatter(e, t) {
+  let n = 0;
+  const r = e.length - 1,
+    a = FORMAT_PARTS[t],
+    o = { separator: !1, items: [] };
+  for (; n < r && !(Number(e[n]) > 0); ++n);
+  return (
+    a[n] === MINUTES_FORMAT && 0 === Number(e[n])
+      ? (o.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)])
+      : (o.items = [n, n + 1].map((t) => LOCALE_FORMATTERS[a[t]]?.(e[t]))),
+    o
+  );
+}
+function compactFormatter(e, t) {
+  const n = e.length,
+    r = FORMAT_PARTS[t],
+    a = { separator: !1, items: [] };
+  for (let o = 0; o < n; ++o)
+    if (Number(e[o]) > 0) return ((a.items = [LOCALE_FORMATTERS[r[o]]?.(e[o])]), a);
+  return ((a.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), a);
+}
+var formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
+  base$16 = "Timer_dac0a0aa",
+  icon$2 = "Timer_icon_a61415df",
+  icon__x16x16 = "Timer_icon__x16x16_5bab55e2",
+  icon__accent = "Timer_icon__accent_2cf70c3b",
+  icon__cooldown = "Timer_icon__cooldown_4a26d3f",
+  icon__x24x24 = "Timer_icon__x24x24_31571381",
+  icon__x32x32 = "Timer_icon__x32x32_807dde34",
+  icon__x48x48 = "Timer_icon__x48x48_ae779a9e",
+  icon__x80x80 = "Timer_icon__x80x80_251aafea",
+  label$1 = "Timer_label_1565f308",
+  label__x16x16 = "Timer_label__x16x16_e3ff224",
+  label__x24x24 = "Timer_label__x24x24_ca748cca",
+  label__x32x32 = "Timer_label__x32x32_13cccf38",
+  label__x48x48 = "Timer_label__x48x48_e3a9b542",
+  label__x80x80 = "Timer_label__x80x80_10a84ee6",
+  label__accent = "Timer_label__accent_ac7d4f7b",
+  label__cooldown = "Timer_label__cooldown_c2349ab9",
+  timer_module_default = {
+    base: base$16,
+    icon: icon$2,
+    icon__x16x16: icon__x16x16,
+    icon__accent: icon__accent,
+    icon__cooldown: icon__cooldown,
+    icon__x24x24: icon__x24x24,
+    icon__x32x32: icon__x32x32,
+    icon__x48x48: icon__x48x48,
+    icon__x80x80: icon__x80x80,
+    label: label$1,
+    label__x16x16: label__x16x16,
+    label__x24x24: label__x24x24,
+    label__x32x32: label__x32x32,
+    label__x48x48: label__x48x48,
+    label__x80x80: label__x80x80,
+    label__accent: label__accent,
+    label__cooldown: label__cooldown,
+  };
+function Timer({
+  start: e,
+  limit: t = 0,
+  tick: n = 1,
+  size: r = sizes$1.x24x24,
+  type: a = types.accent,
+  format: o = formats.default,
+  autostart: i = !0,
+  className: s,
+  classNames: u,
+}) {
+  const [l] = useTicker(
+    (0, import_react.useMemo)(
+      () => ({
+        type: "countdown",
+        start: isDuration(e) ? e : seconds(e),
+        limit: isDuration(t) ? t : seconds(t),
+        tick: isDuration(n) ? n : seconds(n),
+        autostart: i,
+      }),
+      [i, t, e, n],
+    ),
+  );
+  return (0, import_jsx_runtime.jsxs)("div", {
+    className: (0, import_classnames.default)(timer_module_default.base, s),
+    children: [
+      (0, import_jsx_runtime.jsx)("div", {
+        className: (0, import_classnames.default)(
+          timer_module_default.icon,
+          timer_module_default[`icon__${r}`],
+          timer_module_default[`icon__${a}`],
+          u?.icon,
+        ),
+      }),
+      o !== formats.superCompact &&
+        (0, import_jsx_runtime.jsx)("div", {
+          className: (0, import_classnames.default)(
+            timer_module_default.label,
+            timer_module_default[`label__${r}`],
+            timer_module_default[`label__${a}`],
+            u?.label,
+          ),
+          children: (0, import_jsx_runtime.jsx)(FormattedValue, {
+            size: r,
+            preFormatted: formatValue(l, o),
+          }),
+        }),
+    ],
   });
+}
 function FormatTextSplited({ className: e, ...t }) {
   return (0, import_jsx_runtime.jsx)("div", {
     className: e,
@@ -38791,6 +38930,7 @@ function ExtendedText(e) {
     )
   );
 }
+((Timer.format = formats), (Timer.size = sizes$1), (Timer.type = types));
 var sizes = { small: "small", medium: "medium", full: "full" },
   positions = { above: "above", below: "below" },
   BASE_COMPONENT_NAME = "Slider";
@@ -38887,12 +39027,12 @@ function SliderProvider({
     );
   return (0, import_jsx_runtime.jsx)(Context.Provider, { value: y, children: s });
 }
-var base$16 = "Controls_9c96becc",
+var base$15 = "Controls_9c96becc",
   button = "Controls_button_1d659791",
   button__plus = "Controls_button__plus_f8015a9d",
   button__disabled = "Controls_button__disabled_ebe779af",
   controls_module_default = {
-    base: base$16,
+    base: base$15,
     button: button,
     button__plus: button__plus,
     button__disabled: button__disabled,
@@ -38942,8 +39082,8 @@ function Controls({ classNames: e, ref: t, ...n }) {
         ],
       });
 }
-var base$15 = "CurrentValue_4191c6b5",
-  current_value_module_default = { base: base$15 };
+var base$14 = "CurrentValue_4191c6b5",
+  current_value_module_default = { base: base$14 };
 function CurrentValue({ className: e, children: t }) {
   const { value: n } = useSlider();
   return (0, import_jsx_runtime.jsx)("div", {
@@ -38974,14 +39114,14 @@ function useHideOverlappingIndicators({ dynamicRef: e, staticRefs: t }) {
       });
     }, [n.previousValue, n.value, e, a, t]));
 }
-var base$14 = "Indicators_f2e99d31",
+var base$13 = "Indicators_f2e99d31",
   step = "Indicators_step_e782b546",
   step__above = "Indicators_step__above_37358f97",
   step__below = "Indicators_step__below_bc3fb991",
   indicator = "Indicators_indicator_8484a8c7",
   label = "Indicators_label_f8c7ff1e",
   indicators_module_default = {
-    base: base$14,
+    base: base$13,
     step: step,
     step__above: step__above,
     step__below: step__below,
@@ -39041,8 +39181,8 @@ function Indicators({ position: e = "above", count: t, className: n, classNames:
   });
 }
 ((Indicators.Step = Step), (Indicators.positions = positions));
-var base$13 = "InteractiveArea_8d75e351",
-  interactive_area_module_default = { base: base$13 };
+var base$12 = "InteractiveArea_8d75e351",
+  interactive_area_module_default = { base: base$12 };
 function HeadlessInteractiveArea({
   className: e,
   disabled: t,
@@ -39084,14 +39224,14 @@ function InteractiveArea(e) {
     handleSliderClick: a,
   });
 }
-var base$12 = "LimitationArea_2c45b7ff",
+var base$11 = "LimitationArea_2c45b7ff",
   base__disabled$2 = "LimitationArea_base__disabled_fc664e1d",
   wrapper = "LimitationArea_wrapper_d530fcbf",
   base__small$3 = "LimitationArea_base__small_87cf0441",
   pattern$1 = "LimitationArea_pattern_33f143bb",
   base__medium$2 = "LimitationArea_base__medium_87cf0441",
   limitation_area_module_default = {
-    base: base$12,
+    base: base$11,
     base__disabled: base__disabled$2,
     wrapper: wrapper,
     base__small: base__small$3,
@@ -39138,7 +39278,7 @@ function LimitationArea(e) {
     disabled: a,
   });
 }
-var base$11 = "Thumb_94183346",
+var base$10 = "Thumb_94183346",
   base__small$2 = "Thumb_base__small_ecf8adad",
   thumb = "Thumb_caea3cfd",
   base__medium$1 = "Thumb_base__medium_830942bb",
@@ -39146,7 +39286,7 @@ var base$11 = "Thumb_94183346",
   base__full = "Thumb_base__full_830942bb",
   content$2 = "Thumb_content_efe659d0",
   thumb_module_default = {
-    base: base$11,
+    base: base$10,
     base__small: base__small$2,
     thumb: thumb,
     base__medium: base__medium$1,
@@ -39209,7 +39349,7 @@ function Thumb(e) {
   });
 }
 var hover = "Slider_hover_9553506b",
-  base$10 = "Slider_2f883184",
+  base$9 = "Slider_2f883184",
   base__disabled$1 = "Slider_base__disabled_913c9ec5",
   base__small$1 = "Slider_base__small_263edf46",
   base__medium = "Slider_base__medium_263edf46",
@@ -39219,7 +39359,7 @@ var hover = "Slider_hover_9553506b",
   border = "Slider_border_4aa39164",
   slider_module_default = {
     hover: hover,
-    base: base$10,
+    base: base$9,
     base__disabled: base__disabled$1,
     base__small: base__small$1,
     base__medium: base__medium,
@@ -39338,7 +39478,7 @@ function useCardsWrapperContextOptional() {
   return (0, import_react.useContext)(CardsWrapperContext);
 }
 var CardsWrapperContextProvider = CardsWrapperContext.Provider,
-  base$9 = "Content_8eaaf71a",
+  base$8 = "Content_8eaaf71a",
   content$1 = "Content_ab8563af",
   disabledOverlay = "Content_disabledOverlay_af87c441",
   base__multiple = "Content_base__multiple_da09528a",
@@ -39348,7 +39488,7 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   base__selected$1 = "Content_base__selected_da09528a",
   multipleCorner = "Content_multipleCorner_151c26ee",
   content_module_default = {
-    base: base$9,
+    base: base$8,
     content: content$1,
     disabledOverlay: disabledOverlay,
     base__multiple: base__multiple,
@@ -39411,8 +39551,8 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
       })
     );
   },
-  base$8 = "Status_68bd9bc6",
-  icon$2 = "Status_icon_cef4536",
+  base$7 = "Status_68bd9bc6",
+  icon$1 = "Status_icon_cef4536",
   base__done = "Status_base__done_35b9a31c",
   base__doneSmall = "Status_base__doneSmall_35b9a31c",
   base__alert = "Status_base__alert_35b9a31c",
@@ -39424,8 +39564,8 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   blur = "Status_blur_5675b854",
   glowBig = "Status_glowBig_5954041c",
   status_module_default = {
-    base: base$8,
-    icon: icon$2,
+    base: base$7,
+    icon: icon$1,
     base__done: base__done,
     base__doneSmall: base__doneSmall,
     base__alert: base__alert,
@@ -39491,7 +39631,7 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
       ],
     });
   },
-  base$7 = "Card_f0963ece",
+  base$6 = "Card_f0963ece",
   base__wrapped = "Card_base__wrapped_c6eb8737",
   base__disableMouse = "Card_base__disableMouse_5cd80216",
   base__hover = "Card_base__hover_f4c22d1c",
@@ -39504,7 +39644,7 @@ var CardsWrapperContextProvider = CardsWrapperContext.Provider,
   base__selectedHover = "Card_base__selectedHover_f4c22d1c",
   centerBorder = "Card_centerBorder_8a0f28ae",
   card_module_default = {
-    base: base$7,
+    base: base$6,
     base__wrapped: base__wrapped,
     base__disableMouse: base__disableMouse,
     base__hover: base__hover,
@@ -39784,12 +39924,12 @@ var Lines = (0, import_react.memo)(
       );
     },
   ),
-  base$6 = "CardsWrapper_3b6cc4f6",
+  base$5 = "CardsWrapper_3b6cc4f6",
   card = "CardsWrapper_card_c7fc9ee7",
   centerBorderCommon = "CardsWrapper_centerBorderCommon_b4b27a11",
   outerBorderCommon = "CardsWrapper_outerBorderCommon_f4887371",
   cards_wrapper_module_default = {
-    base: base$6,
+    base: base$5,
     card: card,
     centerBorderCommon: centerBorderCommon,
     outerBorderCommon: outerBorderCommon,
@@ -39871,122 +40011,6 @@ var Lines = (0, import_react.memo)(
     }),
   ),
   statusTypes = { done: "done", locked: "locked", alert: "alert" },
-  base$5 = "Textbutton_b1283086",
-  base__right = "Textbutton_base__right_78d4c03f",
-  icon$1 = "Textbutton_icon_9ba4c60",
-  icon__back = "Textbutton_icon__back_599b35e4",
-  icon__forward = "Textbutton_icon__forward_4ef35d4d",
-  icon__close = "Textbutton_icon__close_b2af8bd5",
-  icon__info = "Textbutton_icon__info_6cbc7293",
-  glow = "Textbutton_glow_1ddc70ba",
-  caption = "Textbutton_caption_4350685c",
-  caption__back = "Textbutton_caption__back_599b35e4",
-  caption__forward = "Textbutton_caption__forward_599b35e4",
-  caption__close = "Textbutton_caption__close_c29bdb5",
-  caption__info = "Textbutton_caption__info_ccd96b67",
-  goto = "Textbutton_goto_d2c81cbd",
-  base__left = "Textbutton_base__left_599b35e4",
-  shine = "Textbutton_shine_527e4656",
-  TextButton_module_default = {
-    base: base$5,
-    base__right: base__right,
-    icon: icon$1,
-    icon__back: icon__back,
-    icon__forward: icon__forward,
-    icon__close: icon__close,
-    icon__info: icon__info,
-    glow: glow,
-    caption: caption,
-    caption__back: caption__back,
-    caption__forward: caption__forward,
-    caption__close: caption__close,
-    caption__info: caption__info,
-    goto: goto,
-    base__left: base__left,
-    shine: shine,
-  },
-  TextButton = ({
-    caption: e,
-    onClick: t,
-    goto: n,
-    classNames: r,
-    onMouseEnter: a,
-    onMouseLeave: o,
-    onMouseDown: i,
-    onMouseUp: s,
-    side: u = "left",
-    type: l = "back",
-    soundHover: c = "highlight",
-    soundClick: d = "play",
-    ...f
-  }) => {
-    const p = (0, import_react.useCallback)(
-        (e) => {
-          (a?.(e), env.sound.play.sound(c));
-        },
-        [a, c],
-      ),
-      m = (0, import_react.useCallback)(
-        (e) => {
-          o?.(e);
-        },
-        [o],
-      ),
-      _ = (0, import_react.useCallback)(
-        (e) => {
-          (i?.(e), env.sound.play.sound(d));
-        },
-        [i, d],
-      ),
-      h = (0, import_react.useCallback)(
-        (e) => {
-          s?.(e);
-        },
-        [s],
-      );
-    return (0, import_jsx_runtime.jsxs)("div", {
-      className: (0, import_classnames.default)(
-        TextButton_module_default.base,
-        TextButton_module_default[`base__${l}`],
-        TextButton_module_default[`base__${u}`],
-        r?.base,
-      ),
-      onMouseEnter: p,
-      onMouseLeave: m,
-      onMouseDown: _,
-      onMouseUp: h,
-      onClick: t,
-      ...f,
-      children: [
-        "info" !== l &&
-          (0, import_jsx_runtime.jsx)("div", { className: TextButton_module_default.shine }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(
-            TextButton_module_default.icon,
-            TextButton_module_default[`icon__${l}`],
-            TextButton_module_default[`icon__${u}`],
-            r?.icon,
-          ),
-          children: (0, import_jsx_runtime.jsx)("div", {
-            className: (0, import_classnames.default)(TextButton_module_default.glow, r?.glow),
-          }),
-        }),
-        (0, import_jsx_runtime.jsx)("div", {
-          className: (0, import_classnames.default)(
-            TextButton_module_default.caption,
-            TextButton_module_default[`caption__${l}`],
-            r?.caption,
-          ),
-          children: e,
-        }),
-        n &&
-          (0, import_jsx_runtime.jsx)("div", {
-            className: (0, import_classnames.default)(TextButton_module_default.goto, r?.goto),
-            children: n,
-          }),
-      ],
-    });
-  },
   useMount = (e) => {
     (0, import_react.useEffect)(e, []);
   },
@@ -40362,8 +40386,8 @@ export {
   findIndexLast as $i,
   HEAVY_TANK as $n,
   debounce_default as $r,
-  string as $t,
-  CButton as A,
+  pipe as $t,
+  Switcher as A,
   mouse$1 as Aa,
   NUMBERS_ALPHABET as Ai,
   useVerticalScrollApi as An,
@@ -40374,20 +40398,20 @@ export {
   Reaction$1 as Bi,
   defineStyledComponent as Bn,
   config$1 as Br,
-  renderString as Bt,
-  LoadoutItem as C,
+  renderResolvedString as Bt,
+  DragAndDrop as C,
   initExternalPaddings$1 as Ca,
   breakpointsByType as Ci,
   ProgressBar$1 as Cn,
   SoundsProvider as Cr,
   Base$17 as Ct,
-  useDragAndDrop as D,
+  overlayTypes as D,
   sendEvent$3 as Da,
   isNumber as Di,
   AnimationType as Dn,
   createTargetOverrides as Dr,
   Bar as Dt,
-  sizes$2 as E,
+  getItemSizeFolderName as E,
   get$1 as Ea,
   comparer$1 as Ei,
   Reward as En,
@@ -40404,13 +40428,13 @@ export {
   makeObservable$1 as Gi,
   ColorizedPlayerNickname as Gn,
   useHandleKeydown as Gr,
-  literal as Gt,
+  integer as Gt,
   Sprite as H,
   greaterThanOrEqual as Ha,
   autorun$1 as Hi,
   themes$1 as Hn,
   useTransition$1 as Hr,
-  array as Ht,
+  createParser as Ht,
   perkStates as I,
   MS_IN_SECOND$1 as Ia,
   createLayoutReadyInEffect$1 as Ii,
@@ -40422,19 +40446,19 @@ export {
   every as Ji,
   Tooltip$2 as Jn,
   useIsFirstRender as Jr,
-  number as Jt,
+  minValue as Jt,
   Toggle as K,
   easings$2 as Ka,
   observable$1 as Ki,
   getPlayerThemesColor as Kn,
   useHandleKeyup as Kr,
-  minLength as Kt,
+  literal as Kt,
   roles as L,
   getRealFormat as La,
   createMockControls as Li,
   themes as Ln,
   useScaleState$1 as Lr,
-  ModelRouterProvider as Lt,
+  Image$1 as Lt,
   BackportTooltip as M,
   getRegionalDateTime$1 as Ma,
   toRoman as Mi,
@@ -40447,7 +40471,7 @@ export {
   FormatText as Nn,
   useWulfTooltip as Nr,
   useScrollBounding as Nt,
-  Switcher as O,
+  sizes$3 as O,
   play$1 as Oa,
   MAX_i32 as Oi,
   Size as On,
@@ -40464,20 +40488,20 @@ export {
   findIndex$2 as Qi,
   AT_SPG as Qn,
   useDebounce as Qr,
-  pipe as Qt,
+  parse as Qt,
   ScrollVelocityGuardContent as R,
   format$2 as Ra,
   chunks as Ri,
   Button$1 as Rn,
   useResize as Rr,
-  useRouter as Rt,
-  Slot as S,
+  ModelRouterProvider as Rt,
+  SceneWrapper as S,
   forceTriggerMouseMove$1 as Sa,
   breakpoints as Si,
   BackportContextMenu as Sn,
   useSpecialContextMenu as Sr,
-  sizes$9 as St,
-  overlayTypes as T,
+  sizes$10 as St,
+  LoadoutItem as T,
   remToPx$1 as Ta,
   mouseButtons as Ti,
   FormatTextWithColorTags as Tn,
@@ -40488,190 +40512,190 @@ export {
   configure$1 as Ui,
   FormatString as Un,
   useCallbackOnEsc as Ur,
-  boolean as Ut,
+  array as Ut,
   useHoverState as V,
   fromMs as Va,
   action$1 as Vi,
   sizes$12 as Vn,
   useSpring$1 as Vr,
-  createParser as Vt,
+  renderString as Vt,
   Slot$1 as W,
   seconds as Wa,
   getDependencyTree$1 as Wi,
   FormatText$1 as Wn,
   useKeydownListener as Wr,
-  integer as Wt,
+  boolean as Wt,
   useInput as X,
   intl$3 as Xa,
   filterMap as Xi,
   DateTime_default as Xn,
   useUnmount as Xr,
-  optional as Xt,
+  object as Xt,
   Input as Y,
   require_react as Ya,
   filter as Yi,
   require_classnames as Yn,
   useMount$1 as Yr,
-  object as Yt,
+  number as Yt,
   placeholderVisibility as Z,
   DateTimeFormatsEnum as Za,
   find as Zi,
   formatPrintf as Zn,
   useEmitter$1 as Zr,
-  parse as Zt,
-  ProgressBar as _,
+  optional as Zt,
+  sizes$1 as _,
   identity as _a,
   useMedia as _i,
-  Image$1 as _n,
+  nationById as _n,
   initializeModelWithContext as _r,
   VehicleType as _t,
   Tooltip as a,
   mapExists as aa,
   autorun as ai,
-  getRoleByKey as an,
+  atSpgRoles as an,
   BonusNames as ar,
   List as at,
-  SceneWrapper as b,
+  MultilineOverflow as b,
   getKeyNameFromScanCode as ba,
   MediaSize as bi,
-  sizes$10 as bn,
+  ButtonSize as bn,
   useExternalPaddings as br,
   VehicleLevel as bt,
-  statusTypes as c,
+  CardsWrapper as c,
   some as ca,
   getDependencyTree as ci,
-  mediumTankRoles as cn,
+  lightTankRoles as cn,
   Specials as cr,
   WithDiscount as ct,
-  useCardsWrapperContext as d,
+  useCardContext as d,
   isNonNullable as da,
   reaction as di,
-  isRentVehicle as dn,
+  getVehicleImageKey as dn,
   UIProvider as dr,
   discountTypes as dt,
   forEach as ea,
   throttle_default$1 as ei,
-  transform as en,
+  string as en,
   LIGHT_TANK as er,
   matchPath as et,
-  useCardContext as f,
+  Slider as f,
   iter as fa,
   useAdaptiveWidth as fi,
-  isTypeValidValue as fn,
+  isRentVehicle as fn,
   runView as fr,
   imageSizes$1 as ft,
-  Delta as g,
+  formats as g,
   constFalse as ga,
   MediaWrapperElement as gi,
-  nationById as gn,
+  types$4 as gn,
   computedFn as gr,
   VehicleInfo as gt,
-  ExtendedText as h,
+  Timer as h,
   DisposeBuilder as ha,
   MediaWrapper as hi,
-  types$3 as hn,
+  sameTanksRemap as hn,
   computeds as hr,
   ErrorHandler as ht,
   Rewards as i,
   map as ia,
   action as ii,
-  atSpgRoles as in,
+  WITHOUT_ROLE as in,
   getRewardValueType as ir,
   useLazyModel as it,
-  ButtonSize as j,
+  Waiting as j,
   onRescale as ja,
   createString as ji,
   animated as jn,
   useSpecialTooltip as jr,
   useScrollByDragElements as jt,
-  Waiting as k,
+  useDragAndDrop as k,
   writeClipboard as ka,
   LOWER_ALPHABET as ki,
   Scroll as kn,
   useParamTooltip as kr,
   Base$18 as kt,
-  CardsWrapper as l,
+  Card as l,
   sort as la,
   makeObservable as li,
-  roles$1 as ln,
+  mediumTankRoles as ln,
   ValueTypes as lr,
   Currency as lt,
-  sizes as m,
+  ExtendedText as m,
   promiseWithResolvers as ma,
   useUpscale as mi,
-  sameTanksRemap as mn,
+  normilizeVehicleType as mn,
   assignRefs as mr,
-  types$2 as mt,
+  types$3 as mt,
   Countdown_default as n,
   groupMapBy as na,
   usePrevious as ni,
-  vehicleState as nn,
+  union as nn,
   getRewardImage as nr,
   LazyModel as nt,
   TooltipDecorator as o,
   mapNonNullable as oa,
   computed as oi,
-  heavyTankRoles as on,
+  getRoleByKey as on,
   ImageSize as or,
   RentalCounter as ot,
-  Slider as p,
+  sizes as p,
   keyCodes as pa,
   useAdaptive as pi,
-  normilizeVehicleType as pn,
+  isTypeValidValue as pn,
   JSXBuilder as pr,
-  sizes$6 as pt,
+  sizes$7 as pt,
   toggleSizes as q,
   clsx as qa,
   runInAction$1 as qi,
   SimpleTooltip$1 as qn,
   useInsideEvent as qr,
-  minValue as qt,
+  minLength as qt,
   CountdownStyle as r,
   includes as ra,
   Reaction as ri,
-  WITHOUT_ROLE as rn,
+  vehicleState as rn,
   getRewardTooltipConfig as rr,
   createOptionalDLProvider as rt,
-  TextButton as s,
+  statusTypes as s,
   reduce as sa,
   configure as si,
-  lightTankRoles as sn,
+  heavyTankRoles as sn,
   RewardType as sr,
   VehicleImage as st,
   Counter as t,
   get as ta,
   useEvent$1 as ti,
-  union as tn,
+  transform as tn,
   MEDIUM_TANK as tr,
   KeyButton as tt,
-  Card as u,
+  useCardsWrapperContext as u,
   toArray$2 as ua,
   observable as ui,
-  getVehicleImageKey as un,
+  roles$1 as un,
   FormatNumber as ur,
   currencyTypes as ut,
-  MultilineOverflow as v,
+  Delta as v,
   noop$4 as va,
   require_jsx_runtime as vi,
-  Timer as vn,
+  TextButton as vn,
   createSimpleGetter as vr,
   VehicleRole as vt,
-  getItemSizeFolderName as w,
+  Slot as w,
   pxToRem$1 as wa,
   readKey as wi,
   SimpleAnimationState as wn,
   useSounds as wr,
   Area as wt,
-  DragAndDrop as x,
+  isEmptyObject as x,
   enableFullScreenModeSupported$1 as xa,
   MediaWidth as xi,
   Timer$1 as xn,
   useClickOutside as xr,
   Checkbox as xt,
-  isEmptyObject as y,
+  ProgressBar as y,
   clamp$3 as ya,
   MediaHeight as yi,
-  formats as yn,
+  CButton as yn,
   useTransitionGroupRefs as yr,
   directions$1 as yt,
   Accordion as z,
@@ -40679,5 +40703,5 @@ export {
   makeActions as zi,
   HeadlessButton as zn,
   animated$1 as zr,
-  renderResolvedString as zt,
+  useRouter as zt,
 };

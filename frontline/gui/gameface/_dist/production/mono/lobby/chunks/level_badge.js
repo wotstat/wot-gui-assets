@@ -1,5 +1,5 @@
 import { r as e } from "./rolldown-runtime.js";
-import { U as _, br as a, do as c, vo as s, xi as o } from "./lib.js";
+import { U as _, br as a, fo as c, xi as s, yo as o } from "./lib.js";
 import { i as d } from "./vendor.js";
 var i = {
     bg0: [0],
@@ -31,7 +31,7 @@ var i = {
     icon__bg5: "LevelBadge_icon__bg5_9ce59da6",
     video: "LevelBadge_video_74ea48c7",
   },
-  r = o(),
+  r = s(),
   v = {
     x110: "c_110x110",
     x130: "c_130x130",
@@ -40,7 +40,7 @@ var i = {
     x320: "c_320x320",
   },
   x = new Map([[v.x110, v.x130]]),
-  t = s.resolve("videos");
+  t = o.resolve("videos");
 function m({ level: e, size: a, showAnimation: c }) {
   const s = x.has(a) ? x.get(a) : a,
     o = ((e) => Object.keys(i).find((_) => i[_].includes(e)) || "bg0")(e),

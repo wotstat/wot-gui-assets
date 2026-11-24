@@ -2,11 +2,11 @@ import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Bt as s,
   Gt as a,
-  Nn as i,
-  Q as t,
-  Ut as n,
-  Yr as c,
-  et as o,
+  I as i,
+  Nn as t,
+  P as n,
+  Ut as c,
+  Yr as o,
   gt as l,
   jr as r,
   ni as d,
@@ -24,7 +24,7 @@ var [v, y] = a()(({ observableModel: e }) => {
         eventInfo: e.object("eventInfo"),
         dailyBonus: e.object("dailyBonus"),
       },
-      a = n.structural(() =>
+      a = c.structural(() =>
         Object.entries(s.techParams.get()).map(([e, s]) => {
           return {
             type: e,
@@ -56,45 +56,45 @@ var [v, y] = a()(({ observableModel: e }) => {
   A = "Section_paramsTypeContainer_e4739f53",
   I = "Section_icon_dc43b4b3",
   T = "Section_description_2a41345d",
-  $ = i(),
-  P = d.resolve("strings"),
+  P = t(),
+  $ = d.resolve("strings"),
   V = R.images.battle_royale.gui.maps.icons.techParams;
 function k({ type: e, className: s }) {
-  return (0, $.jsxs)("div", {
+  return (0, P.jsxs)("div", {
     className: _(A, s),
     children: [
-      (0, $.jsx)("div", { className: I, style: { backgroundImage: `url(${V.$dyn(e)})` } }),
-      (0, $.jsx)("div", {
+      (0, P.jsx)("div", { className: I, style: { backgroundImage: `url(${V.$dyn(e)})` } }),
+      (0, P.jsx)("div", {
         className: T,
-        children: P.readOrEmpty(`battle_royale.techParams.type.${e}`),
+        children: $.readOrEmpty(`battle_royale.techParams.type.${e}`),
       }),
     ],
   });
 }
 function D({ className: e, filledValue: s, baseValue: a }) {
-  return (0, $.jsxs)("div", {
+  return (0, P.jsxs)("div", {
     className: _(f, e),
     children: [
-      (0, $.jsxs)("div", {
+      (0, P.jsxs)("div", {
         className: N,
         children: [
-          (0, $.jsx)("div", { className: g, style: { width: `${s}%` } }),
-          (0, $.jsx)("div", { className: B, style: { width: `${a}%` } }),
+          (0, P.jsx)("div", { className: g, style: { width: `${s}%` } }),
+          (0, P.jsx)("div", { className: B, style: { width: `${a}%` } }),
         ],
       }),
-      (0, $.jsx)("div", { className: S, style: { width: `${s}%` } }),
+      (0, P.jsx)("div", { className: S, style: { width: `${s}%` } }),
     ],
   });
 }
 function w({ type: e, indicatorsValue: s, className: a }) {
-  return (0, $.jsxs)("div", {
+  return (0, P.jsxs)("div", {
     className: _(j, a),
     children: [
-      (0, $.jsx)(k, { type: e }),
-      (0, $.jsx)("div", {
+      (0, P.jsx)(k, { type: e }),
+      (0, P.jsx)("div", {
         className: b,
         children: s.map(({ filledValueIndicator: e, baseValueIndicator: s }, a) =>
-          (0, $.jsx)(D, { baseValue: s, filledValue: e, className: x }, `${a}-${s}-${e}`),
+          (0, P.jsx)(D, { baseValue: s, filledValue: e, className: x }, `${a}-${s}-${e}`),
         ),
       }),
     ],
@@ -122,15 +122,15 @@ var C = {
     status__warning: "App_status__warning_48295791",
     section: "App_section_1f0fb308",
   },
-  M = e(c(), 1),
+  M = e(o(), 1),
   q = m(function () {
     const { model: e } = y(),
       {
         vehicleName: s,
         vehicleNation: a,
-        vehicleType: i,
-        statusLevel: n,
-        statusText: c,
+        vehicleType: t,
+        statusLevel: c,
+        statusText: o,
       } = e.vehicleInfo.get(),
       {
         hasDailyBonus: r,
@@ -141,19 +141,19 @@ var C = {
       } = e.dailyBonus.get(),
       v = e.eventInfo.get().subMode,
       j = e.computes.techParams();
-    return (0, $.jsxs)("div", {
+    return (0, P.jsxs)("div", {
       className: _(C.base, C[`base__${v}`]),
       children: [
-        (0, $.jsx)("div", { className: C.bg }),
-        (0, $.jsxs)("div", {
+        (0, P.jsx)("div", { className: C.bg }),
+        (0, P.jsxs)("div", {
           className: C.vehicleInfo,
           children: [
-            o(i) && (0, $.jsx)(t.Type, { type: i, size: t.Type.sizes.x64x64 }),
-            (0, $.jsxs)("div", {
+            i(t) && (0, P.jsx)(n.Type, { type: t, size: n.Type.sizes.x64x64 }),
+            (0, P.jsxs)("div", {
               className: C.vehicleContainer,
               children: [
-                (0, $.jsx)(t.Name, { className: C.vehicleName, children: s }),
-                (0, $.jsx)("div", {
+                (0, P.jsx)(n.Name, { className: C.vehicleName, children: s }),
+                (0, P.jsx)("div", {
                   className: C.modeDescription,
                   children: R.strings.battle_royale.tooltips.vehicle.description(),
                 }),
@@ -162,25 +162,25 @@ var C = {
           ],
         }),
         r &&
-          (0, $.jsxs)($.Fragment, {
+          (0, P.jsxs)(P.Fragment, {
             children: [
-              (0, $.jsx)("div", { className: C.separator }),
-              (0, $.jsxs)("div", {
+              (0, P.jsx)("div", { className: C.separator }),
+              (0, P.jsxs)("div", {
                 className: C.dailyBonusSection,
                 children: [
-                  (0, $.jsxs)("div", {
+                  (0, P.jsxs)("div", {
                     className: C.dailyBonusSectionBg,
                     children: [
-                      (0, $.jsx)("div", { className: C.dailyBonusSectionBg1 }),
-                      (0, $.jsx)("div", { className: C.dailyBonusSectionBg2 }),
+                      (0, P.jsx)("div", { className: C.dailyBonusSectionBg1 }),
+                      (0, P.jsx)("div", { className: C.dailyBonusSectionBg2 }),
                     ],
                   }),
-                  (0, $.jsx)("div", {
+                  (0, P.jsx)("div", {
                     className: C.dailyBonusText,
-                    children: (0, $.jsx)(l, {
+                    children: (0, P.jsx)(l, {
                       text: R.strings.battle_royale_extention.dailyBonus.description(),
                       binding: {
-                        dailyBonus: (0, $.jsx)(h, { dailyBonusFactor: d, coinType: m }),
+                        dailyBonus: (0, P.jsx)(h, { dailyBonusFactor: d, coinType: m }),
                         soloTopPlaces: p,
                         squadTopPlaces: u,
                       },
@@ -190,22 +190,22 @@ var C = {
               }),
             ],
           }),
-        (0, $.jsx)("div", { className: C.separator }),
-        (0, $.jsx)("div", {
+        (0, P.jsx)("div", { className: C.separator }),
+        (0, P.jsx)("div", {
           className: C.vehicleDescription,
           children: `${R.strings.tooltips.battle_royale.hangar.vehicle.description.$dyn(a)}`,
         }),
-        (0, $.jsx)("div", { className: C.separator }),
+        (0, P.jsx)("div", { className: C.separator }),
         j.map((e, s) => (0, M.createElement)(w, { ...e, key: s, className: C.section })),
-        (0, $.jsx)("div", { className: _(C.status, C[`status__${n}`]), children: c }),
+        (0, P.jsx)("div", { className: _(C.status, C[`status__${c}`]), children: o }),
       ],
     });
   });
 s(
-  (0, $.jsx)(u, {
-    children: (0, $.jsx)(v, {
-      children: (0, $.jsx)(p, {
-        children: (0, $.jsx)(p.Decorator, { children: (0, $.jsx)(q, {}) }),
+  (0, P.jsx)(u, {
+    children: (0, P.jsx)(v, {
+      children: (0, P.jsx)(p, {
+        children: (0, P.jsx)(p.Decorator, { children: (0, P.jsx)(q, {}) }),
       }),
     }),
   }),

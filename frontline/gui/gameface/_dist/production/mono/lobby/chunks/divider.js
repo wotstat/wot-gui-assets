@@ -1,4 +1,4 @@
-import { lo as s, xi as a } from "./lib.js";
+import { uo as s, xi as a } from "./lib.js";
 var e = "Divider_35efe770",
   i = "Divider_db17be24",
   r = a(),
