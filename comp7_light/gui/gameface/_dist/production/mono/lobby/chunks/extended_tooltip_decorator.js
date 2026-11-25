@@ -1,10 +1,10 @@
 import { r as e } from "./rolldown-runtime.js";
-import { Cr as r, Ro as s, Z as i, gr as t, oa as a, wr as o } from "./lib.js";
+import { Cr as r, G as s, Ro as i, gr as t, oa as a, wr as o } from "./lib.js";
 var d = "Divider_7a72bfaf",
   c = "Divider_1eaf72bd",
   l = e(a(), 1),
   n = ({ className: e }) =>
-    (0, l.jsx)("div", { className: s(d, e), children: (0, l.jsx)("div", { className: c }) }),
+    (0, l.jsx)("div", { className: i(d, e), children: (0, l.jsx)("div", { className: c }) }),
   x = "ExtendedTooltipDecorator_312a767e",
   m = "ExtendedTooltipDecorator_header_37374fa6",
   _ = "ExtendedTooltipDecorator_base__invertedColors_d4c2e366",
@@ -24,10 +24,10 @@ function f({
   return (0, l.jsx)(r, {
     children: (0, l.jsx)(r.Decorator, {
       children: (0, l.jsxs)("div", {
-        className: s(x, c && _, b),
+        className: i(x, c && _, b),
         children: [
           e && (0, l.jsx)(o, { text: e, classMix: m }),
-          (0, l.jsx)(i, { text: a, binding: d, classMix: j }),
+          (0, l.jsx)(s, { text: a, binding: d, classMix: j }),
           h,
           f > 0 &&
             (0, l.jsxs)("div", {

@@ -4,10 +4,10 @@ import {
   Ai as r,
   Cr as s,
   Et as t,
-  In as n,
-  Qn as i,
-  To as o,
-  Vr as l,
+  Qn as n,
+  To as i,
+  Vr as o,
+  Zn as l,
   bi as c,
   cr as d,
   dt as _,
@@ -42,41 +42,41 @@ var C = e(g(), 1),
   P = "NarrationText_voicerToggle_7996a30f",
   $ = "NarrationText_voicerImage_ddd59b26",
   z = "NarrationText_textWrapper_7851e39a",
-  I = "NarrationText_title_c6323ea8",
-  O = "NarrationText_shadow_c558de93",
-  B = "NarrationText_scrollTextWrapper_2966ec7f",
+  O = "NarrationText_title_c6323ea8",
+  B = "NarrationText_shadow_c558de93",
+  I = "NarrationText_scrollTextWrapper_2966ec7f",
   V = "NarrationText_scrollContentWrapper_5d272dcd",
   L = "NarrationText_text_7fbf87ef",
   M = "NarrationText_highlightText_c7174a16",
   q = "NarrationText_highlightText__secondary_e31000ce",
   D = "NarrationText_titleParagraph_117b3e67",
   Q = "NarrationText_paragraph_a1fd10d6",
-  G = "NarrationText_nowrap_e19b022d",
-  H = m(),
-  J =
+  Z = "NarrationText_nowrap_e19b022d",
+  G = m(),
+  H =
     /^[*"'ー.,、。，:;：；！？》」•%)(!?\u0EAF\u0E3B\u0E3F\u0E31\u0E32\u0E33\u0E47-\u0E4F\u0E5A-\u0E5F\u3000-\u303F\uFF00-\uFFEF\]]/u,
-  K = { split: Y },
-  U = 0;
-function X() {
-  return "ls-" + ++U;
+  J = { split: X },
+  K = 0;
+function U() {
+  return "ls-" + ++K;
 }
-function Y(e) {
+function X(e) {
   return Array.isArray(e)
     ? (function (e) {
         const a = [];
         for (let r = 0; r < e.length; r++) {
           const s = e[r],
             t = e[r + 1];
-          if ("string" != typeof t || !J.test(t)) {
-            a.push(Y(s));
+          if ("string" != typeof t || !H.test(t)) {
+            a.push(X(s));
             continue;
           }
-          const n = Z(t.slice(1));
+          const n = Y(t.slice(1));
           (a.push(
-            (0, H.jsxs)(
+            (0, G.jsxs)(
               C.Fragment,
-              { children: [(0, H.jsxs)("span", { className: G, children: [Y(s), t[0]] }), n] },
-              X(),
+              { children: [(0, G.jsxs)("span", { className: Z, children: [X(s), t[0]] }), n] },
+              U(),
             ),
           ),
             (r += 1));
@@ -84,67 +84,67 @@ function Y(e) {
         return a;
       })(e)
     : "string" == typeof e
-      ? (0, H.jsx)(C.Fragment, { children: Z(e) }, X())
+      ? (0, G.jsx)(C.Fragment, { children: Y(e) }, U())
       : e;
 }
-function Z(e) {
-  const a = o.resolve("langCode");
-  return j(c(e, a), a, (e, a) => e && (0, H.jsx)("span", { children: e }, `${e}${a}`));
+function Y(e) {
+  const a = i.resolve("langCode");
+  return j(c(e, a), a, (e, a) => e && (0, G.jsx)("span", { children: e }, `${e}${a}`));
 }
 var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
-    const i = o.resolve("strings"),
-      { model: l, controls: c } = k();
-    return (0, H.jsxs)("div", {
+    const n = i.resolve("strings"),
+      { model: o, controls: c } = k();
+    return (0, G.jsxs)("div", {
       className: u(F, s && W, a && w),
       children: [
-        (0, H.jsxs)(t, {
+        (0, G.jsxs)(t, {
           className: P,
           size: t.sizes.small,
-          activated: Boolean(l.root.get().isVoiceoverActive),
+          activated: Boolean(o.root.get().isVoiceoverActive),
           onClick: c.onVoiceoverToggle,
           children: [
-            (0, H.jsx)("div", { className: $ }),
-            i.readOrEmpty("R.strings.last_stand_lobby.narration.actions.voiceover"),
+            (0, G.jsx)("div", { className: $ }),
+            n.readOrEmpty("R.strings.last_stand_lobby.narration.actions.voiceover"),
           ],
         }),
-        (0, H.jsxs)("div", {
+        (0, G.jsxs)("div", {
           className: z,
           children: [
-            (0, H.jsx)(n, {
+            (0, G.jsx)(l, {
               params: { number: r(e) },
-              text: i.readOrEmpty(
+              text: n.readOrEmpty(
                 `R.strings.last_stand_lobby.narration.narrationTitle.ls_artefact_${e}`,
               ),
-              className: I,
+              className: O,
             }),
-            (0, H.jsxs)("div", {
-              className: B,
+            (0, G.jsxs)("div", {
+              className: I,
               children: [
-                (0, H.jsx)("div", { className: O }),
-                (0, H.jsxs)(
+                (0, G.jsx)("div", { className: B }),
+                (0, G.jsxs)(
                   p,
                   {
                     children: [
-                      (0, H.jsx)(_, {
+                      (0, G.jsx)(_, {
                         className: V,
-                        children: (0, H.jsx)("div", {
+                        children: (0, G.jsx)("div", {
                           className: L,
-                          children: (0, H.jsx)(n, {
+                          children: (0, G.jsx)(l, {
                             split: !0,
                             params: {
-                              pargraphStart: (0, H.jsx)("div", { className: Q }),
-                              titleParagraph: (0, H.jsx)("div", { className: D }),
+                              pargraphStart: (0, G.jsx)("div", { className: Q }),
+                              titleParagraph: (0, G.jsx)("div", { className: D }),
                               highlightText: M,
                               highlightSecondaryText: u(M, q),
                             },
-                            text: i.readOrEmpty(
+                            text: n.readOrEmpty(
                               `R.strings.last_stand_lobby.narration.narrationText.ls_narration_${e}`,
                             ),
-                            formatters: K,
+                            formatters: J,
                           }),
                         }),
                       }),
-                      (0, H.jsx)(N, {}),
+                      (0, G.jsx)(N, {}),
                     ],
                   },
                   `slide${e}`,
@@ -169,20 +169,20 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
     onLoadCompleted: t,
     isFirst: n,
   }) {
-    return (0, H.jsxs)("div", {
+    return (0, G.jsxs)("div", {
       className: re,
       children: [
-        (0, H.jsx)("div", {
+        (0, G.jsx)("div", {
           className: u(se, r && n && te, s && ne),
-          children: (0, H.jsx)(y, {
+          children: (0, G.jsx)(y, {
             refParent: e,
             slideIndex: a,
             backgroundPath: `R.images.last_stand.gui.maps.icons.backgrounds.bg_${a}`,
             onLoadCompleted: t,
           }),
         }),
-        (0, H.jsx)("div", { className: ae }),
-        (0, H.jsx)(ee, { index: a, isAnimationPlaying: s, isFirst: r && n }),
+        (0, G.jsx)("div", { className: ae }),
+        (0, G.jsx)(ee, { index: a, isAnimationPlaying: s, isFirst: r && n }),
       ],
     });
   },
@@ -204,15 +204,15 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
   ve = "NarrationSlider_prevArrow_f0d71b7f",
   Te = "NarrationSlider_nextArrow_ab02e93d",
   Se = v(function ({ baseRef: e }) {
-    const s = o.resolve("strings"),
+    const s = i.resolve("strings"),
       { model: t, controls: n } = k(),
-      { slideNumber: i, isNextDisabled: l } = t.root.get(),
-      [c, d] = (0, C.useState)(i),
+      { slideNumber: o, isNextDisabled: l } = t.root.get(),
+      [c, d] = (0, C.useState)(o),
       [_, m] = (0, C.useState)(!0),
       [N, b] = (0, C.useState)(!1),
       h = f(),
-      p = i + 1,
-      g = i - 1,
+      p = o + 1,
+      g = o - 1,
       j = p <= 4,
       v = (0, C.useRef)(null),
       T = (0, C.useRef)(null),
@@ -229,8 +229,8 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
         [n, N],
       );
     (0, C.useEffect)(() => {
-      i !== c && y(i, !0);
-    }, [i, c, y]);
+      o !== c && y(o, !0);
+    }, [o, c, y]);
     const E = (0, C.useCallback)(() => {
       (m(!1),
         null !== T.current && clearTimeout(T.current),
@@ -246,13 +246,13 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
         },
         [],
       ),
-      (0, H.jsxs)("div", {
+      (0, G.jsxs)("div", {
         className: ce,
         children: [
-          (0, H.jsxs)("div", {
+          (0, G.jsxs)("div", {
             className: u(fe, _ ? he : pe),
             children: [
-              (0, H.jsx)(ie, {
+              (0, G.jsx)(ie, {
                 baseRef: e,
                 selectedIndex: c,
                 onLoadCompleted: E,
@@ -260,8 +260,8 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
                 isAnimationStart: _,
                 isAnimationPlaying: N,
               }),
-              (0, H.jsx)("div", { className: u(oe, _ ? de : _e) }),
-              (0, H.jsx)(S, {
+              (0, G.jsx)("div", { className: u(oe, _ ? de : _e) }),
+              (0, G.jsx)(S, {
                 src: R.videos.last_stand.slide_overlay(),
                 className: u(le, N ? je : ge),
                 paused: !N,
@@ -270,40 +270,40 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
             ],
           }),
           Boolean(g) &&
-            (0, H.jsxs)("div", {
+            (0, G.jsxs)("div", {
               className: u(me, Ne),
               children: [
-                (0, H.jsx)("div", { className: be, children: r(g) }),
-                (0, H.jsx)(a, {
+                (0, G.jsx)("div", { className: be, children: r(g) }),
+                (0, G.jsx)(a, {
                   disabled: N,
                   onClick: () => y(g),
                   className: ue,
                   theme: a.themes.secondary,
                   size: a.sizes.small,
                   soundTarget: "ls_slider:navigation_button",
-                  children: (0, H.jsx)("div", { className: ve }),
+                  children: (0, G.jsx)("div", { className: ve }),
                 }),
               ],
             }),
           j &&
-            (0, H.jsxs)("div", {
+            (0, G.jsxs)("div", {
               className: u(me, xe),
               children: [
-                (0, H.jsx)("div", { className: be, children: r(p) }),
-                (0, H.jsx)(x, {
+                (0, G.jsx)("div", { className: be, children: r(p) }),
+                (0, G.jsx)(x, {
                   isEnabled: l,
                   header: s.readOrEmpty("R.strings.last_stand_lobby.narration.tooltips.nextStory"),
                   body: s.readOrEmpty(
-                    `R.strings.last_stand_lobby.narration.tooltips.disabledNextEpisode_${i}`,
+                    `R.strings.last_stand_lobby.narration.tooltips.disabledNextEpisode_${o}`,
                   ),
-                  children: (0, H.jsx)(a, {
+                  children: (0, G.jsx)(a, {
                     disabled: N || l,
                     onClick: () => y(p),
                     className: ue,
                     theme: a.themes.secondary,
                     size: a.sizes.small,
                     soundTarget: "ls_slider:navigation_button",
-                    children: (0, H.jsx)("div", { className: Te }),
+                    children: (0, G.jsx)("div", { className: Te }),
                   }),
                 }),
               ],
@@ -319,20 +319,20 @@ var ee = v(function ({ index: e, isFirst: a, isAnimationPlaying: s }) {
     const { controls: e } = k(),
       a = (0, C.useRef)(null);
     return (
-      l(e.onClose),
-      (0, H.jsxs)("div", {
+      o(e.onClose),
+      (0, G.jsxs)("div", {
         className: ye,
         children: [
-          (0, H.jsx)("div", { className: Ce, ref: a }),
-          (0, H.jsx)(Se, { baseRef: a }),
-          (0, H.jsx)(i, { className: Ee, onClose: e.onClose }),
+          (0, G.jsx)("div", { className: Ce, ref: a }),
+          (0, G.jsx)(Se, { baseRef: a }),
+          (0, G.jsx)(n, { className: Ee, onClose: e.onClose }),
         ],
       })
     );
   });
 d(
-  (0, H.jsx)(h, {
+  (0, G.jsx)(h, {
     soundsOverrides: s({ click: { [A]: T } }),
-    children: (0, H.jsx)(E, { children: (0, H.jsx)(ke, {}) }),
+    children: (0, G.jsx)(E, { children: (0, G.jsx)(ke, {}) }),
   }),
 );

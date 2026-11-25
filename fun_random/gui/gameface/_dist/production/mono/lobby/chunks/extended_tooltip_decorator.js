@@ -1,20 +1,20 @@
-import { Un as e, Wn as s, a, h as i, qa as r, vi as t, vn as o } from "./lib.js";
+import { Un as e, Wn as s, a, h as i, m as r, qa as t, vi as o } from "./lib.js";
 var d = "Divider_7a72bfaf",
   c = "Divider_5e35d515",
-  n = t(),
+  n = o(),
   l = ({ className: e }) =>
-    (0, n.jsx)("div", { className: r(d, e), children: (0, n.jsx)("div", { className: c }) }),
+    (0, n.jsx)("div", { className: t(d, e), children: (0, n.jsx)("div", { className: c }) }),
   m = "ExtendedTooltipDecorator_312a767e",
   x = "ExtendedTooltipDecorator_header_37374fa6",
   _ = "ExtendedTooltipDecorator_base__invertedColors_d4c2e366",
   p = "ExtendedTooltipDecorator_description_edb17499",
   j = "ExtendedTooltipDecorator_timerBlock_7b7647e1",
-  v = "ExtendedTooltipDecorator_divider_24cd0041";
-function h({
-  header: t,
+  h = "ExtendedTooltipDecorator_divider_24cd0041";
+function v({
+  header: o,
   description: d,
   descriptionParams: c,
-  invertedColors: h,
+  invertedColors: v,
   timerTimeLeft: D = 0,
   timerPath: N = "user_missions.tooltip.common.timer",
   className: f,
@@ -23,20 +23,20 @@ function h({
   return (0, n.jsx)(a, {
     children: (0, n.jsx)(a.Decorator, {
       children: (0, n.jsxs)("div", {
-        className: r(m, h && _, f),
+        className: t(m, v && _, f),
         children: [
-          t &&
-            ("string" == typeof t
-              ? (0, n.jsx)(s, { text: String(t), className: x })
-              : (0, n.jsx)("div", { className: x, children: t })),
-          (0, n.jsx)(i, { text: d, binding: c, classMix: p }),
+          o &&
+            ("string" == typeof o
+              ? (0, n.jsx)(s, { text: String(o), className: x })
+              : (0, n.jsx)("div", { className: x, children: o })),
+          (0, n.jsx)(r, { text: d, binding: c, classMix: p }),
           T,
           D > 0 &&
             (0, n.jsxs)("div", {
               className: j,
               children: [
-                (0, n.jsx)(l, { className: v }),
-                (0, n.jsx)(e, { path: N, params: { timeLeft: (0, n.jsx)(o, { start: D }) } }),
+                (0, n.jsx)(l, { className: h }),
+                (0, n.jsx)(e, { path: N, params: { timeLeft: (0, n.jsx)(i, { start: D }) } }),
               ],
             }),
         ],
@@ -44,4 +44,4 @@ function h({
     }),
   });
 }
-export { l as n, h as t };
+export { l as n, v as t };

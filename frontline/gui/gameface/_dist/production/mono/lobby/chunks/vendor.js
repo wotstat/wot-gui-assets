@@ -16,23 +16,23 @@ import {
   do as m,
   ea as g,
   fi as y,
-  ia as b,
-  la as v,
-  na as w,
-  oa as _,
-  qi as P,
-  ra as O,
-  sa as j,
-  si as x,
-  ta as S,
-  ua as k,
-  ui as A,
-  uo as I,
+  fo as b,
+  ia as v,
+  la as w,
+  na as _,
+  oa as P,
+  qi as O,
+  ra as j,
+  sa as x,
+  si as S,
+  ta as k,
+  ua as A,
+  ui as I,
 } from "./lib.js";
-var V = e(m());
+var V = e(b());
 if (!V.useState) throw new Error("mobx-react-lite requires React with Hooks support");
 if (!y) throw new Error("mobx-react-lite@3 requires mobx at least version 6 to be available");
-var M = e(I());
+var M = e(m());
 function E(e) {
   e();
 }
@@ -117,7 +117,7 @@ var R,
     (null === (t = e.reaction) || void 0 === t || t.dispose(), (e.reaction = null));
   }),
   z = t((e) => {
-    var t = m();
+    var t = b();
     var n =
         "function" == typeof Object.is
           ? Object.is
@@ -178,7 +178,7 @@ var R,
     t.exports = z();
   })();
 function N(e) {
-  e.reaction = new x("observer".concat(e.name), function () {
+  e.reaction = new S("observer".concat(e.name), function () {
     var t;
     ((e.stateVersion = Symbol()), null === (t = e.onStoreChange) || void 0 === t || t.call(e));
   });
@@ -286,7 +286,7 @@ function K(e, t) {
 var G,
   W,
   Z = { $$typeof: !0, render: !0, compare: !0, type: !0, displayName: !0 };
-((W = M.unstable_batchedUpdates) || (W = E), A({ reactionScheduler: W }));
+((W = M.unstable_batchedUpdates) || (W = E), I({ reactionScheduler: W }));
 G = T.finalizeAllImmediately;
 var X = he(),
   Y = (e) => ue(e, X),
@@ -3128,7 +3128,7 @@ var lo,
             value: void 0,
           }),
           d(this),
-          k(function () {
+          A(function () {
             ((n.current = t), (n.subscription = e.subscribe(n)));
           }));
       }
@@ -3164,7 +3164,7 @@ var lo,
             ((this.current = e), this.dispose());
           },
         }),
-        co([_.ref], e.prototype, "current", void 0),
+        co([P.ref], e.prototype, "current", void 0),
         co([r.bound], e.prototype, "next", null),
         co([r.bound], e.prototype, "complete", null),
         co([r.bound], e.prototype, "error", null));
@@ -3208,13 +3208,13 @@ var lo,
             enumerable: !0,
             configurable: !0,
             writable: !0,
-            value: _.map({}),
+            value: P.map({}),
           }),
           Object.defineProperty(this, "localComputedValues", {
             enumerable: !0,
             configurable: !0,
             writable: !0,
-            value: _.map({}),
+            value: P.map({}),
           }),
           Object.defineProperty(this, "isPropertyDirty", {
             enumerable: !0,
@@ -3225,7 +3225,7 @@ var lo,
             },
           }),
           d(this),
-          to(O(e), "createViewModel expects an observable object"));
+          to(j(e), "createViewModel expects an observable object"));
         var o = ro(this);
         ro(e).forEach(function (i) {
           var a;
@@ -3240,7 +3240,7 @@ var lo,
               var u = l(e, i),
                 c = u.derivation.bind(t),
                 d = null === (a = u.setter_) || void 0 === a ? void 0 : a.bind(t);
-              t.localComputedValues.set(i, P(c, { set: d }));
+              t.localComputedValues.set(i, O(c, { set: d }));
             }
             var h = Object.getOwnPropertyDescriptor(e, i),
               f = h ? { enumerable: h.enumerable } : {};
@@ -3288,10 +3288,10 @@ var lo,
           writable: !0,
           value: function () {
             var e = this;
-            (b(this.localValues).forEach(function (t) {
+            (v(this.localValues).forEach(function (t) {
               var n = e.localValues.get(t),
                 r = e.model[t];
-              S(r) ? r.replace(n) : w(r) ? (r.clear(), r.merge(n)) : i(n) || (e.model[t] = n);
+              k(r) ? r.replace(n) : _(r) ? (r.clear(), r.merge(n)) : i(n) || (e.model[t] = n);
             }),
               this.localValues.clear());
           },
@@ -3312,8 +3312,8 @@ var lo,
             this.localValues.delete(e);
           },
         }),
-        fo([P], e.prototype, "isDirty", null),
-        fo([P], e.prototype, "changedValues", null),
+        fo([O], e.prototype, "isDirty", null),
+        fo([O], e.prototype, "changedValues", null),
         fo([r.bound], e.prototype, "submit", null),
         fo([r.bound], e.prototype, "reset", null),
         fo([r.bound], e.prototype, "resetProperty", null));
@@ -3389,7 +3389,7 @@ var lo,
           (l._base = t));
         for (var c = 0; c < t.length; c++) l._addItem(t[c]);
         return (
-          (l._disposeBaseObserver = j(l._base, function (e) {
+          (l._disposeBaseObserver = x(l._base, function (e) {
             if ("splice" === e.type)
               f(function () {
                 for (var t = 0, n = e.removed; t < n.length; t++) {
@@ -3456,7 +3456,7 @@ var lo,
             var n = e.prototype.get.call(this, t);
             return (
               void 0 === n &&
-                ((n = _([], { name: "GroupArray[" + this._keyToName(t) + "]", deep: !1 })),
+                ((n = P([], { name: "GroupArray[" + this._keyToName(t) + "]", deep: !1 })),
                 e.prototype.set.call(this, t, n)),
               n
             );
@@ -3486,7 +3486,7 @@ var lo,
               o = {
                 groupByValue: n,
                 groupArrIndex: r.length,
-                reaction: v(
+                reaction: w(
                   function () {
                     return t._groupBy(e);
                   },
@@ -3727,7 +3727,7 @@ function wo(e, t) {
       var f = e.apply(this, a);
       return (o.onCleanup && o.onCleanup.apply(o, vo([f], a)), f);
     }
-    var p = P(
+    var p = O(
       function () {
         return (c = e.apply(s, a));
       },

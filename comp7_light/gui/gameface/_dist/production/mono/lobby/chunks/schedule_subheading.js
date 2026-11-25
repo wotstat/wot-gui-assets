@@ -1,13 +1,13 @@
 import { r as s } from "./rolldown-runtime.js";
 import {
   Bo as e,
-  D as a,
-  Do as t,
-  Eo as o,
-  Ho as n,
-  Nr as r,
-  O as i,
-  To as m,
+  Do as a,
+  Eo as t,
+  Ho as o,
+  Nr as n,
+  To as r,
+  dr as i,
+  fr as m,
   oa as d,
   wr as l,
 } from "./lib.js";
@@ -15,7 +15,7 @@ import { a as c, o as x } from "./vendor.js";
 import { t as p } from "./use_server_time_polling.js";
 import { n as j } from "./schedule_model.js";
 e();
-var g = (s) => {
+var f = (s) => {
     const e = Math.floor(s);
     return {
       totalSecondsLeft: e,
@@ -25,25 +25,25 @@ var g = (s) => {
       totalDays: Math.floor(e / 86400),
     };
   },
-  h = s(d()),
-  f = R.strings.comp7_ext.season,
-  N = (s, e, a = n.ShortDate) => ({
-    startDate: (0, h.jsx)(i, { datetime: s, format: a }),
-    endDate: (0, h.jsx)(i, { datetime: e, format: a }),
+  g = s(d()),
+  h = R.strings.comp7_ext.season,
+  N = (s, e, a = o.ShortDate) => ({
+    startDate: (0, g.jsx)(m, { datetime: s, format: a }),
+    endDate: (0, g.jsx)(m, { datetime: e, format: a }),
   }),
   u = (s, e, a) => {
     const t = e - a,
-      o = ((s, e) => g(s - e))(e, a);
+      o = ((s, e) => f(s - e))(e, a);
     return t >= 604800
-      ? (0, h.jsx)(l, { text: f.range(), binding: N(s, e) })
+      ? (0, g.jsx)(l, { text: h.range(), binding: N(s, e) })
       : t >= 86400
-        ? (0, h.jsx)(l, { text: f.daysLeft(), binding: o })
+        ? (0, g.jsx)(l, { text: h.daysLeft(), binding: o })
         : t >= 3600
-          ? (0, h.jsx)(l, { text: f.hoursLeft(), binding: o })
+          ? (0, g.jsx)(l, { text: h.hoursLeft(), binding: o })
           : t >= 60
-            ? (0, h.jsx)(l, { text: f.minutesLeft(), binding: o })
+            ? (0, g.jsx)(l, { text: h.minutesLeft(), binding: o })
             : t >= 1
-              ? (0, h.jsx)(l, { text: f.secondsLeft(), binding: o })
+              ? (0, g.jsx)(l, { text: h.secondsLeft(), binding: o })
               : void 0;
   },
   v = R.strings.comp7_ext,
@@ -51,54 +51,54 @@ var g = (s) => {
   _ = s(x()),
   b = "ActiveSeasonState_7be3b725",
   T = "ActiveSeasonState_calendarIcon_cc4d1c6a",
-  D = "ActiveSeasonState_divider_e45543ee",
-  I = ({
+  I = "ActiveSeasonState_divider_e45543ee",
+  D = ({
     startTimestamp: s,
     endTimestamp: e,
     currentTimestamp: a,
     seasonName: t,
     tooltipId: o = "",
-    hasSeasonName: n = !0,
+    hasSeasonName: r = !0,
     classNames: i,
   }) =>
-    (0, h.jsx)(r, {
+    (0, g.jsx)(n, {
       args: { tooltipId: o },
       isEnabled: Boolean(o),
-      children: (0, h.jsxs)("div", {
+      children: (0, g.jsxs)("div", {
         className: b,
         children: [
-          (0, h.jsx)("div", { className: (0, _.default)(T, i?.calendarIcon) }),
-          n && (0, h.jsxs)(h.Fragment, { children: [S(t), (0, h.jsx)("div", { className: D })] }),
+          (0, g.jsx)("div", { className: (0, _.default)(T, i?.calendarIcon) }),
+          r && (0, g.jsxs)(g.Fragment, { children: [S(t), (0, g.jsx)("div", { className: I })] }),
           u(s, e, a),
         ],
       }),
     }),
   L = "ScheduleSubheading_6a634a68",
-  M = c(({ className: s, classNames: e, hasSeasonName: t = !0 }) => {
-    const { model: o, controls: n } = j(),
-      r = o.season.startTimestamp.get(),
-      i = o.season.endTimestamp.get(),
-      m = o.season.serverTimestamp.get(),
-      d = o.season.name.get();
+  M = c(({ className: s, classNames: e, hasSeasonName: a = !0 }) => {
+    const { model: t, controls: o } = j(),
+      n = t.season.startTimestamp.get(),
+      r = t.season.endTimestamp.get(),
+      m = t.season.serverTimestamp.get(),
+      d = t.season.name.get();
     return (
-      p(m, i, n.pollServerTime),
-      (0, h.jsx)("div", {
+      p(m, r, o.pollServerTime),
+      (0, g.jsx)("div", {
         className: (0, _.default)(L, s),
         children:
-          m < i
-            ? (0, h.jsx)("div", {
+          m < r
+            ? (0, g.jsx)("div", {
                 className: e?.activeSeasonState,
-                children: (0, h.jsx)(I, {
-                  startTimestamp: r,
-                  endTimestamp: i,
+                children: (0, g.jsx)(D, {
+                  startTimestamp: n,
+                  endTimestamp: r,
                   currentTimestamp: m,
                   seasonName: d,
-                  tooltipId: o.root.get().tooltipId,
-                  hasSeasonName: t,
+                  tooltipId: t.root.get().tooltipId,
+                  hasSeasonName: a,
                   classNames: e?.scheduleClassNames,
                 }),
               })
-            : (0, h.jsx)(a, {
+            : (0, g.jsx)(i, {
                 text: R.strings.comp7_ext.season.over(),
                 binding: { seasonName: S(d) },
               }),

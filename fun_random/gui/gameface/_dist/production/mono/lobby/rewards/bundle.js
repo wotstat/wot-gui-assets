@@ -1,48 +1,48 @@
 import { r as e } from "../chunks/rolldown-runtime.js";
 import {
-  A as a,
-  En as s,
-  Oa as d,
-  Pi as r,
-  Pr as i,
-  Ur as n,
-  Ya as t,
-  Zn as l,
-  _i as _,
-  _r as o,
-  ar as c,
-  bi as m,
+  En as a,
+  Oa as s,
+  Pi as d,
+  Pr as r,
+  Ur as i,
+  Ya as n,
+  Zn as t,
+  _i as l,
+  _r as _,
+  ar as o,
+  bi as c,
+  bn as m,
   dr as w,
   fr as u,
   ga as b,
   gr as f,
   ir as x,
-  j as p,
-  nr as g,
-  or as h,
-  rr as j,
-  s as N,
-  sr as v,
-  ta as y,
-  vi as A,
+  nr as p,
+  or as g,
+  rr as h,
+  sr as j,
+  ta as v,
+  vi as N,
+  vn as y,
+  yn as A,
 } from "../chunks/lib.js";
 import "../chunks/_wg-global-styles.js";
 import { c as M, l as C, u as I } from "../chunks/vendor.js";
 import { a as S, n as $ } from "../chunks/readResource.js";
-var k = e(t(), 1),
+var k = e(n(), 1),
   P = e(C(), 1),
   z = "Footer_f09fca09",
   E = "Footer_buttonContainer_cc670971",
-  U = A(),
-  H = (e) => (e >= m.Medium ? p.medium : p.small),
-  O = ({ onClick: e, className: s }) => {
-    const { mediaSize: d } = _();
+  U = N(),
+  H = (e) => (e >= c.Medium ? m.medium : m.small),
+  O = ({ onClick: e, className: a }) => {
+    const { mediaSize: s } = l();
     return (0, U.jsx)("div", {
-      className: (0, P.default)(z, s),
+      className: (0, P.default)(z, a),
       children: (0, U.jsx)("div", {
         className: E,
-        children: (0, U.jsx)(a, {
-          size: H(d),
+        children: (0, U.jsx)(A, {
+          size: H(s),
           onClick: e,
           children: R.strings.fun_random.rewardsView.footer.acceptButton(),
         }),
@@ -62,7 +62,7 @@ var k = e(t(), 1),
         s && (0, U.jsx)("div", { className: q, children: s }),
       ],
     }),
-  [G, L] = o()(
+  [G, L] = _()(
     ({ observableModel: e }) => {
       const a = {
           root: e.object(),
@@ -71,7 +71,7 @@ var k = e(t(), 1),
         },
         s = f(
           (e) => {
-            const s = y(a.mainRewards.get(), e);
+            const s = v(a.mainRewards.get(), e);
             if (!s) throw new Error(`mainReward with index ${e} was not found`);
             return { ...s };
           },
@@ -79,7 +79,7 @@ var k = e(t(), 1),
         ),
         d = f(
           (e) => {
-            const s = y(a.additionalRewards.get(), e);
+            const s = v(a.additionalRewards.get(), e);
             if (!s) throw new Error(`additionalReward with index ${e} was not found`);
             return { ...s };
           },
@@ -89,32 +89,32 @@ var k = e(t(), 1),
     },
     ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs("onClose") }),
   ),
-  F = [v.Gold, v.Credits],
+  F = [j.Gold, j.Credits],
   D = [1, 2, 3, 7, 14, 30, 90, 180, 360],
   Y = (e, a, s) => {
     const { name: d, icon: r, value: i } = a;
-    if ("" !== e && d === v.Vehicles) {
+    if ("" !== e && d === j.Vehicles) {
       const a = $(e)?.rewards?.$dyn(`vehicle_${r.toLowerCase()}_${s}`);
       return (
         a || R.images.fun_random.gui.maps.icons.feature.rewards.bonuses.$dyn(`vehicle_default_${s}`)
       );
     }
-    return d !== v.PremiumPlus || D.includes(Number(i))
-      ? g(a, s)
+    return d !== j.PremiumPlus || D.includes(Number(i))
+      ? p(a, s)
       : `R.images.gui.maps.icons.quests.bonuses.${s}.premium_plus_1`;
   },
   Z = (e, a, s = !0, d = "", r = !0) => {
     const { name: i, value: n, label: t } = e,
-      l = i === v.PremiumPlus && !D.includes(Number(n)),
-      _ = l ? c.PremiumUniversal : i;
+      l = i === j.PremiumPlus && !D.includes(Number(n)),
+      _ = l ? o.PremiumUniversal : i;
     return {
-      name: l ? c.PremiumUniversal : i || e.item,
+      name: l ? o.PremiumUniversal : i || e.item,
       image: Y(d, e, a),
       value: !r && F.includes(i) ? void 0 : n,
       special: e.overlayType,
       valueType: x(_),
       tooltipArgs: s
-        ? j({ tooltipId: e.tooltipId }, Number(e.tooltipContentId))
+        ? h({ tooltipId: e.tooltipId }, Number(e.tooltipContentId))
         : { isEnabled: !1 },
       label: r || !F.includes(i) ? t : n,
       isCompensation: e.isCompensation,
@@ -122,12 +122,12 @@ var k = e(t(), 1),
   },
   J = (e, a = 0) => ({ appear: a + 400 + 200 * e, enter: 600 }),
   K = (e) => 1300 + 400 * e,
-  Q = I(({ index: e, className: a, mainRewardsEnabled: d = !1 }) => {
+  Q = I(({ index: e, className: s, mainRewardsEnabled: d = !1 }) => {
     const { model: r } = L(),
       i = d ? r.computes.mainReward(e) : r.computes.additionalReward(e),
-      { mediaSize: n } = _(),
-      t = n >= m.Medium ? h.Big : h.Small;
-    return (0, U.jsx)(s, { ...Z(i, t), size: t, className: a });
+      { mediaSize: n } = l(),
+      t = n >= c.Medium ? g.Big : g.Small;
+    return (0, U.jsx)(a, { ...Z(i, t), size: t, className: s });
   }),
   X = "AdditionalRewards_8af994f7",
   ee = "AdditionalRewards_title_dd32b80a",
@@ -136,13 +136,13 @@ var k = e(t(), 1),
   de = R.strings.fun_random.rewardsView,
   re = I(({ className: e }) => {
     const { model: a } = L(),
-      s = a.additionalRewards.get().length,
-      { run: n, clear: t } = i();
+      i = a.additionalRewards.get().length,
+      { run: n, clear: t } = r();
     return (
       (0, k.useEffect)(
         () => (
           n(() => {
-            d.sound("gui_random_reward_icon");
+            s.sound("gui_random_reward_icon");
           }, K(a.mainRewards.get().length)),
           () => {
             t();
@@ -158,13 +158,13 @@ var k = e(t(), 1),
           (0, U.jsxs)("div", {
             className: ae,
             children: [
-              r(
+              d(
                 a.mainRewards.get().length,
                 (e) =>
                   e >= 4 &&
-                  (0, U.jsx)(Q, { index: e, className: se, mainRewardsEnabled: !0 }, e + s),
+                  (0, U.jsx)(Q, { index: e, className: se, mainRewardsEnabled: !0 }, e + i),
               ),
-              r(s, (e) => (0, U.jsx)(Q, { index: e, className: se }, e)),
+              d(i, (e) => (0, U.jsx)(Q, { index: e, className: se }, e)),
             ],
           }),
         ],
@@ -200,11 +200,11 @@ var k = e(t(), 1),
     raysAppearance: "Reward_raysAppearance_21f091ec",
     rotate: "Reward_rotate_21f091ec",
   },
-  _e = I(({ rewardSize: e, rewardIndex: a }) => {
+  _e = I(({ rewardSize: e, rewardIndex: d }) => {
     const r = (0, k.useRef)(null),
       { model: i } = L(),
       { assetsPointer: n } = i.root.get(),
-      t = i.computes.mainReward(a),
+      t = i.computes.mainReward(d),
       { name: l, isCompensation: _ } = t,
       [o, c] = (0, k.useState)(!0),
       m = Z(t, e, !o, n, !1),
@@ -213,16 +213,16 @@ var k = e(t(), 1),
       appear: !0,
       in: !0,
       nodeRef: r,
-      timeout: J(a, 1300),
+      timeout: J(d, 1300),
       onEntered: () => {
-        (d.sound("gui_random_reward_appear"), c(!1));
+        (s.sound("gui_random_reward_appear"), c(!1));
       },
-      children: (a) =>
+      children: (s) =>
         (0, U.jsxs)("div", {
           ref: r,
-          className: (0, P.default)(le.base, le[`base__${a}`], le[`base__${l}`], le[`base__${e}`]),
+          className: (0, P.default)(le.base, le[`base__${s}`], le[`base__${l}`], le[`base__${e}`]),
           children: [
-            (0, U.jsx)(s, {
+            (0, U.jsx)(a, {
               ...m,
               size: e,
               className: le.reward,
@@ -239,7 +239,7 @@ var k = e(t(), 1),
     const { model: a } = L();
     return (0, U.jsx)("div", {
       className: oe,
-      children: r(
+      children: d(
         a.mainRewards.get().length,
         (a) => a < 4 && (0, U.jsx)(_e, { rewardIndex: a, rewardSize: e }, `reward-${a}`),
       ),
@@ -262,21 +262,21 @@ var k = e(t(), 1),
   },
   we = I(() => {
     const { model: e } = L(),
-      { mediaSize: a } = _(),
+      { mediaSize: a } = l(),
       s = ((e, a) =>
-        a >= m.Large
+        a >= c.Large
           ? e < 3
-            ? h.S600x450
-            : h.S400x300
-          : 1 === e && a === m.Medium
-            ? h.S600x450
-            : a >= m.Small
+            ? g.S600x450
+            : g.S400x300
+          : 1 === e && a === c.Medium
+            ? g.S600x450
+            : a >= c.Small
               ? e <= 3
-                ? h.S400x300
-                : h.S296x222
+                ? g.S400x300
+                : g.S296x222
               : e <= 3
-                ? h.S296x222
-                : h.S232x174)(Math.min(e.mainRewards.get().length, 4), a);
+                ? g.S296x222
+                : g.S232x174)(Math.min(e.mainRewards.get().length, 4), a);
     return (0, U.jsxs)("div", {
       className: (0, P.default)(me.base, me[`base__${s}`]),
       children: [
@@ -296,19 +296,19 @@ var k = e(t(), 1),
   ge = "App_rewards_26dd76c",
   he = "App_additionalRewards_c1b35d06",
   je = "App_additionalRewards__largeReward_566b91c4",
-  Ne = "App_footer_4c3bf70d",
-  ve = R.strings.fun_random,
+  ve = "App_footer_4c3bf70d",
+  Ne = R.strings.fun_random,
   ye = I(() => {
     const { model: e, controls: a } = L(),
       { assetsPointer: s } = e.root.get(),
       d = e.mainRewards.get().length,
       r = e.additionalRewards.get().length > 0 || d > 4,
-      i = 1 === d;
-    n(a.closeWindow);
-    const { dynamicTexts: t } = S(null, { assetsPointer: s }),
+      n = 1 === d;
+    i(a.closeWindow);
+    const { dynamicTexts: l } = S(null, { assetsPointer: s }),
       _ = {
-        title: l(ve.rewardsView.subheader(), { subModeName: t.capsUserName() }),
-        subtitle: t.rewardsView.header(),
+        title: t(Ne.rewardsView.subheader(), { subModeName: l.capsUserName() }),
+        subtitle: l.rewardsView.header(),
       },
       o = $(s).library.prime_times_bg();
     return (0, U.jsxs)("div", {
@@ -321,7 +321,7 @@ var k = e(t(), 1),
           children: [
             (0, U.jsx)("div", {
               className: Re,
-              children: (0, U.jsx)(N, {
+              children: (0, U.jsx)(y, {
                 caption: R.strings.menu.viewHeader.closeBtn.label(),
                 type: "close",
                 side: "right",
@@ -339,12 +339,12 @@ var k = e(t(), 1),
                   className: (0, P.default)(ge),
                   children: [
                     (0, U.jsx)(we, {}),
-                    r && (0, U.jsx)(re, { className: (0, P.default)(he, i && je) }),
+                    r && (0, U.jsx)(re, { className: (0, P.default)(he, n && je) }),
                   ],
                 }),
               ],
             }),
-            (0, U.jsx)(O, { onClick: a.closeWindow, className: Ne }),
+            (0, U.jsx)(O, { onClick: a.closeWindow, className: ve }),
           ],
         }),
       ],

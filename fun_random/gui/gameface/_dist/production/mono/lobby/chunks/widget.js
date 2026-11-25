@@ -10,14 +10,14 @@ import {
   Wa as c,
   Ya as l,
   _r as d,
-  h as m,
+  m,
   n as p,
   qa as u,
   r as _,
-  s as g,
-  t as h,
-  vi as x,
-  vr as v,
+  t as g,
+  vi as h,
+  vn as v,
+  vr as x,
   wr as b,
   za as f,
   zi as T,
@@ -28,7 +28,7 @@ var w = (function (e) {
 })({});
 (w.News, w.News, w.ShopPromo, Math.floor(Date.now() / 1e3));
 var y = {
-    getter: v({
+    getter: x({
       type: w.News,
       description:
         "Watch very interesting video, with very long, very very interesting and meaningful description!",
@@ -72,12 +72,12 @@ var y = {
     extendedText: "Teaser_extendedText_286b5b73",
     countdown: "Teaser_countdown_40e45fc1",
   },
-  M = x(),
+  M = h(),
   B = "Teaser:Base",
   E = N(function ({ className: e, classNames: a }) {
     const { model: l, controls: d } = C(),
-      x = l.type.get() || w.News,
-      v = l.postCounter.get(),
+      h = l.type.get() || w.News,
+      x = l.postCounter.get(),
       T = l.text.get(),
       N = l.description.get(),
       y = l.finishTime.get(),
@@ -126,7 +126,7 @@ var y = {
       }, [E]),
       I
         ? (0, M.jsxs)("div", {
-            className: u(W.base, W[`base__${x}Type`], j && W.base__video, e),
+            className: u(W.base, W[`base__${h}Type`], j && W.base__video, e),
             onClick: function (e) {
               (P.play("click", { target: B, original: e }), d.onClick());
             },
@@ -158,16 +158,16 @@ var y = {
                     className: u(W.title, a?.title),
                     children: [
                       S.readOrEmpty("menu.promo.teaser.title"),
-                      Boolean(v) &&
-                        v > 0 &&
-                        (0, M.jsx)(h, {
+                      Boolean(x) &&
+                        x > 0 &&
+                        (0, M.jsx)(g, {
                           className: u(W.counter, a?.counter),
-                          value: v,
+                          value: x,
                           size: "small",
                         }),
                     ],
                   }),
-                  (0, M.jsx)(g, {
+                  (0, M.jsx)(v, {
                     type: "close",
                     side: "right",
                     classNames: { base: u(W.closeButton, a?.closeButton) },
