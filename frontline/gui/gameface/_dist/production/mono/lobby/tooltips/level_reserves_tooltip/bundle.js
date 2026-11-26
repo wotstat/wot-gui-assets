@@ -1,10 +1,10 @@
 import { r as e } from "../../chunks/rolldown-runtime.js";
 import {
   Cn as s,
-  Fa as l,
-  Fi as a,
+  Fi as l,
+  Ia as a,
   a as t,
-  do as o,
+  fo as o,
   or as r,
   ur as i,
   xa as v,
@@ -14,17 +14,17 @@ import "../../chunks/_wg-global-styles.js";
 import { s as c } from "../../chunks/vendor.js";
 import { t as n } from "../../chunks/divider.js";
 import { t as m } from "../../chunks/head_decorator.js";
-var d = e(o(), 1),
-  [_, h] = i()(
+var _ = e(o(), 1),
+  [d, h] = i()(
     ({ observableModel: e }) => ({
       ...e.primitives(["hasOptionalReserves"]),
       levels: e.array("levels"),
     }),
-    l,
+    a,
   ),
   j = "LevelReservesTooltip_2862b15f",
-  x = "LevelReservesTooltip_title_64be79bb",
-  f = "LevelReservesTooltip_description_91eb551b",
+  f = "LevelReservesTooltip_title_64be79bb",
+  x = "LevelReservesTooltip_description_91eb551b",
   b = "LevelReservesTooltip_levelTitle_f50b450",
   N = "LevelReservesTooltip_levelBlock_83ac4a4c",
   T = "LevelReservesTooltip_lastLevelWrapper_c74891af",
@@ -34,9 +34,9 @@ var d = e(o(), 1),
   k = p(),
   y = c(function () {
     const { model: e } = h(),
-      l = e.hasOptionalReserves.get(),
+      a = e.hasOptionalReserves.get(),
       o = e.levels.get(),
-      r = l ? o.length + 1 : o.length;
+      r = a ? o.length + 1 : o.length;
     return (0, k.jsx)(t, {
       children: (0, k.jsx)(t.Decorator, {
         children: (0, k.jsxs)("div", {
@@ -45,47 +45,47 @@ var d = e(o(), 1),
             (0, k.jsxs)(m, {
               className: u,
               children: [
-                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.title", className: x }),
-                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.desc", className: f }),
+                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.title", className: f }),
+                (0, k.jsx)(s, { path: "fl_tooltips.levelReserves.desc", className: x }),
               ],
             }),
             (0, k.jsxs)("div", {
               className: g,
               children: [
                 (0, k.jsx)(n, {}),
-                v(o, (e, l) =>
+                v(o, (e, a) =>
                   (0, k.jsxs)(
-                    d.Fragment,
+                    _.Fragment,
                     {
                       children: [
                         (0, k.jsxs)("div", {
                           className: N,
                           children: [
                             (0, k.jsx)(s, {
-                              params: { lvl: a(l + 1) },
+                              params: { lvl: l(a + 1) },
                               path: "fl_tooltips.levelReserves.levelTitle",
                               className: b,
                               split: !0,
                             }),
                             (0, k.jsx)(s, {
-                              path: l
+                              path: a
                                 ? "fl_tooltips.levelReserves.level"
                                 : "fl_tooltips.levelReserves.levelAvailable",
                               params: {
                                 lvl: R.strings.fl_info_page.progression.ranksTable.$dyn(e),
                               },
                               split: !0,
-                              className: f,
+                              className: x,
                             }),
                           ],
                         }),
                         (0, k.jsx)(n, {}),
                       ],
                     },
-                    `level_${l}`,
+                    `level_${a}`,
                   ),
                 ),
-                l &&
+                a &&
                   (0, k.jsxs)("div", {
                     className: T,
                     children: [
@@ -94,13 +94,13 @@ var d = e(o(), 1),
                         children: [
                           (0, k.jsx)(s, {
                             path: "fl_tooltips.levelReserves.levelTitle",
-                            params: { lvl: a(r) },
+                            params: { lvl: l(r) },
                             split: !0,
                             className: b,
                           }),
                           (0, k.jsx)(s, {
                             path: "fl_tooltips.levelReserves.optionalReserve",
-                            className: f,
+                            className: x,
                             split: !0,
                           }),
                         ],
@@ -111,7 +111,7 @@ var d = e(o(), 1),
               ],
             }),
             (0, k.jsx)(s, {
-              params: { lvl: a(r) },
+              params: { lvl: l(r) },
               path: "fl_tooltips.levelReserves.info",
               className: L,
               split: !0,
@@ -121,4 +121,4 @@ var d = e(o(), 1),
       }),
     });
   });
-r((0, k.jsx)(_, { children: (0, k.jsx)(y, {}) }));
+r((0, k.jsx)(d, { children: (0, k.jsx)(y, {}) }));

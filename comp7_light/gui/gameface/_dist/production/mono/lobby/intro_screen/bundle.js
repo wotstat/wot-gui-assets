@@ -7,17 +7,17 @@ import {
   Gr as n,
   Ii as i,
   Kr as o,
-  T as l,
-  Ta as d,
-  Zr as _,
-  aa as c,
+  Ta as l,
+  Zr as d,
+  aa as _,
+  cr as c,
   go as u,
   ji as m,
-  oa as h,
-  sa as b,
-  to as g,
-  uo as f,
-  w as p,
+  lr as h,
+  oa as b,
+  sa as g,
+  to as f,
+  uo as p,
   wr as w,
 } from "../chunks/lib.js";
 import "../chunks/globals.js";
@@ -26,23 +26,23 @@ import { t as x } from "../chunks/get_roman_levels.js";
 import { t as A } from "../chunks/use_server_time_polling.js";
 import { n as j, t as I } from "../chunks/schedule_model.js";
 import { t as N } from "../chunks/schedule_subheading.js";
-var B = (e) => (e >= b.Large ? r.sizes.medium : r.sizes.small),
+var B = (e) => (e >= g.Large ? r.sizes.medium : r.sizes.small),
   y = e(s(), 1),
-  [k, T] = _()(
+  [k, D] = d()(
     ({ observableModel: e }) => ({ root: e.object(), vehicleLevels: e.array("vehicleLevels") }),
     ({ externalModel: e }) => ({ close: e.createCallbackNoArgs("onClose") }),
   ),
-  D = e(v(), 1),
+  T = e(v(), 1),
   C = "CountDownSubheading_3410a94d",
   $ = "CountDownSubheading_highlight_4e42571e",
   L = "CountDownSubheading_timeLeftText_83a0f10d",
   z = "CountDownSubheading_countDownContainer_95936a62",
   M = "CountDownSubheading_countDownText_c438ad0f",
   E = "CountDownSubheading_timer_dfa1cd55",
-  O = e(h(), 1),
+  O = e(b(), 1),
   U = ({ timeLeft: e, className: a }) =>
     (0, O.jsx)("div", {
-      className: (0, D.default)(C, a),
+      className: (0, T.default)(C, a),
       children: (0, O.jsx)(w, {
         text: R.strings.comp7_light.countDown.text(),
         binding: {
@@ -51,7 +51,7 @@ var B = (e) => (e >= b.Large ? r.sizes.medium : r.sizes.small),
             children: [
               (0, O.jsx)("div", { className: $ }),
               (0, O.jsx)("div", { className: E }),
-              (0, O.jsx)(p, { duration: e, icon: l.None, classNames: { text: M } }),
+              (0, O.jsx)(c, { duration: e, icon: h.None, classNames: { text: M } }),
             ],
           }),
         },
@@ -131,9 +131,9 @@ function F({
   onMouseEnter: i,
   ...o
 }) {
-  const l = (0, D.default)(Q.layer, n?.layer);
+  const l = (0, T.default)(Q.layer, n?.layer);
   return (0, O.jsx)("div", {
-    className: (0, D.default)(Q.base, Q[`base__${a}`], Q[`base__${e}`], s && Q.base__disabled, t),
+    className: (0, T.default)(Q.base, Q[`base__${a}`], Q[`base__${e}`], s && Q.base__disabled, t),
     onMouseEnter: (e) => {
       (i?.(e), u.sound(r));
     },
@@ -144,7 +144,7 @@ function F({
         (0, O.jsx)(
           "div",
           {
-            className: (0, D.default)(l, Q[`layer__${a}`]),
+            className: (0, T.default)(l, Q[`layer__${a}`]),
             style: { backgroundImage: `url(R.images.comp7_light.gui.maps.icons.arrows.${a}_${e})` },
           },
           a,
@@ -159,7 +159,7 @@ var K = "Slide_680b9fee",
   J = "Slide_description_a6104f8",
   P = R.strings.comp7_light.intro,
   V = S(({ id: e }) => {
-    const { model: a } = T(),
+    const { model: a } = D(),
       s = `url(${R.images.comp7_light.gui.maps.icons.metaIntro.$dyn(e)})`,
       r = x(a.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
     return (0, O.jsxs)("div", {
@@ -191,7 +191,7 @@ var K = "Slide_680b9fee",
     const [a, s] = (0, y.useState)(0),
       [r, n] = (0, y.useState)(!1),
       o = 0 === a,
-      l = a === _e - 1;
+      d = a === _e - 1;
     (i(() => {
       const e = () => {
         n(!0);
@@ -206,33 +206,33 @@ var K = "Slide_680b9fee",
       (0, y.useEffect)(
         () =>
           t(() =>
-            d(() => {
+            l(() => {
               r && n(!1);
             }, 500),
           ),
         [r],
       ));
     const _ = ce(o, () => s(a - 1)),
-      c = ce(l, () => s(a + 1));
+      c = ce(d, () => s(a + 1));
     return (
-      m(g.ARROW_LEFT, _),
-      m(g.ARROW_RIGHT, c),
+      m(f.ARROW_LEFT, _),
+      m(f.ARROW_RIGHT, c),
       (0, O.jsxs)("div", {
-        className: (0, D.default)(X, e),
+        className: (0, T.default)(X, e),
         style: { "--currentSlideIndex": a, "--transitionDuration": "500ms" },
         children: [
           (0, O.jsx)(F, {
             size: "medium",
             direction: "left",
             disabled: o,
-            className: (0, D.default)(te, ne),
+            className: (0, T.default)(te, ne),
             onClick: _,
           }),
           (0, O.jsx)(F, {
             size: "medium",
             direction: "right",
-            disabled: l,
-            className: (0, D.default)(te, ie),
+            disabled: d,
+            className: (0, T.default)(te, ie),
             onClick: c,
           }),
           (0, O.jsxs)("div", {
@@ -243,12 +243,12 @@ var K = "Slide_680b9fee",
                 children: [a + 1, (0, O.jsx)("div", { className: le, children: "/" }), _e],
               }),
               (0, O.jsx)("div", {
-                className: (0, D.default)(ee, r && ae),
+                className: (0, T.default)(ee, r && ae),
                 children: de.map((e, s) =>
                   (0, O.jsx)(
                     "div",
                     {
-                      className: (0, D.default)(se, s === a && re),
+                      className: (0, T.default)(se, s === a && re),
                       children: (0, O.jsx)(V, { id: e }),
                     },
                     `slide-${s}`,
@@ -267,8 +267,8 @@ var K = "Slide_680b9fee",
   ge = "App_buttonWrapper_bc918676",
   fe = "App_button_b6edc495",
   pe = S(function () {
-    const { controls: e } = T(),
-      { mediaSize: s } = c();
+    const { controls: e } = D(),
+      { mediaSize: s } = _();
     return (
       a(e.close),
       (0, O.jsxs)("div", {
@@ -290,7 +290,7 @@ var K = "Slide_680b9fee",
       })
     );
   });
-(f("comp7_light/gui/maps/icons/backgrounds/intro_bg.dds"),
+(p("comp7_light/gui/maps/icons/backgrounds/intro_bg.dds"),
   o(
     (0, O.jsx)(n, {
       children: (0, O.jsx)(k, {

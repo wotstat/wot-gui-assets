@@ -155,8 +155,41 @@ function formatDateTime(e, t, r = !0) {
 function formatTime(e, t, r = !0) {
   return window.regionalDateTime.getRegionalDateTime(t, e, r);
 }
+function getDateParts(e) {
+  const t = /* @__PURE__ */ new Date(1e3 * e);
+  return {
+    year: t.getFullYear(),
+    month: t.getMonth() + 1,
+    hours: t.getHours(),
+    minutes: t.getMinutes(),
+    seconds: t.getSeconds(),
+  };
+}
+function isSameTime(e, t) {
+  return e.hours === t.hours && e.minutes === t.minutes && e.seconds === t.seconds;
+}
+function getRangeFormatPath(e, t) {
+  const r = e.year === t.year;
+  return [
+    "datetime_formats",
+    "dateRange",
+    "dateWithYear",
+    r ? "sameYear" : "differentYear",
+    r && e.month === t.month ? "sameMonth" : "differentMonth",
+    isSameTime(e, t) ? "sameTime" : "differentTime",
+  ].join(".");
+}
+function formatRange(e, t) {
+  const r = getRangeFormatPath(getDateParts(e), getDateParts(t)),
+    a = resources.resolve("strings");
+  return {
+    start: window.regionalDateTime.getFormattedDateTime(e, a.readOrEmpty(`${r}.start`), !0),
+    end: window.regionalDateTime.getFormattedDateTime(t, a.readOrEmpty(`${r}.end`), !0),
+  };
+}
 var init_intl$1 = __esmMin(() => {
     (init_date_time_formats(),
+      init_container(),
       (numberFormats = { integral: 0, gold: 1 }),
       (realFormats = { fractional: 0, woZeroDigits: 1 }),
       (numberFormatList = Object.keys(numberFormats)),
@@ -174,6 +207,7 @@ var init_intl$1 = __esmMin(() => {
         dateTimeFormats: DateTimeFormatsEnum,
         formatTime: formatTime,
         timeFormats: timeFormatList,
+        formatRange: formatRange,
         toUpperCase: (e) => window.systemLocale.toUpperCase(e),
         toLowerCase: (e) => window.systemLocale.toLowerCase(e),
       }));
