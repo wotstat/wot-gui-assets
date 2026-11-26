@@ -13960,14 +13960,16 @@
                 x = (0, s.useMemo)(() => ne(m, g), [g, m]),
                 I = null == (A = J[p]) ? void 0 : A.rules;
               (0, s.useEffect)(() => {
-                B ||
-                  S === o ||
-                  (k.run(() => {
-                    T(!0);
-                  }, 3e3),
-                  P.run(() => {
-                    D(o);
-                  }, 3150));
+                (P.clear(),
+                  k.clear(),
+                  B ||
+                    S === o ||
+                    (k.run(() => {
+                      T(!0);
+                    }, 3e3),
+                    P.run(() => {
+                      D(o);
+                    }, 3150)));
               }, [o]);
               const M = {
                   backgroundImage: `url(${R.images.new_year.gui.maps.icons.newYear.mainView.petView.header.state.$dyn(S)})`,

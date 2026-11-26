@@ -2403,7 +2403,7 @@
               }, [t]);
               const B = (0, a.useCallback)(
                   (t) => {
-                    !u && t >= D && (Y(R.sounds.ny_gui_legend_reward()), e(!0));
+                    !u && t >= D && e(!0);
                   },
                   [u, D],
                 ),
